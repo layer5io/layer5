@@ -60,13 +60,13 @@ const WebBasedForm = () => {
   };
 
   const laststep = () => {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     setStepNumber(stepNumber - 1);
   };
 
   useEffect(() => {
     if (submit) {
-      axios.post("https://hook.us1.make.com/nd4srs976am5a4h5i17g3qmd4gq8defu", {
+      axios.post("https://hook.us1.make.com/v66ana9yf3w11k4a1rf3epwquur1s9rd", {
         memberFormOne,
         MemberFormThirdValue,
         MemberFormFourValue,
@@ -153,36 +153,36 @@ const WebBasedForm = () => {
               <div role="group" aria-labelledby="my-radio-group">
                 <label>
                   <Field type="radio" name="tshirtSize" value="XS" />
-                XS
+                  XS
                 </label>
                 <br></br>
                 <label>
                   <Field type="radio" name="tshirtSize" value="S" />
-                S
+                  S
                 </label>
                 <br></br>
                 <label>
                   <Field type="radio" name="tshirtSize" value="M" />
-                M
+                  M
                 </label>
                 <br></br>
                 <label>
                   <Field type="radio" name="tshirtSize" value="L" />
-                L
+                  L
                 </label>
                 <br></br>
                 <label>
                   <Field type="radio" name="tshirtSize" value="XL" />
-                XL
+                  XL
                 </label>
                 <br></br>
                 <label>
                   <Field type="radio" name="tshirtSize" value="XXL" />
-                XXL
+                  XXL
                 </label>
               </div>
               <label htmlFor="picture" className="form-name">Picture</label>
-              <Field type="url" className="text-field" id="picture" name="picture"  validate={validatePictureUrl}/>
+              <Field type="url" className="text-field" id="picture" name="picture" validate={validatePictureUrl} />
               {errors.picture && touched.picture && <div style={{ margin: "0px", color: "red", fontSize: "16px" }}>{errors.picture}</div>}
               <p className="para label">Please provide a link to your profile photo. Profile photos are used for <Link to="/community/members">community member profiles</Link> of longstanding community members.</p>
               <Button secondary type="submit" className="btn" title="Next Step" /> <br /><br /><br /><br />
@@ -225,7 +225,7 @@ const WebBasedForm = () => {
           <br /><br />
           <div className="btn-wrapper">
             <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous Step</button>
-            <Button onClick={() => setStepNumber(2)}$secondary type="submit" className="btn-next" title="Next Step" />
+            <Button onClick={() => setStepNumber(2)} $secondary type="submit" className="btn-next" title="Next Step" />
           </div>
         </div>
 

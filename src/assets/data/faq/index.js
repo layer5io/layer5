@@ -80,7 +80,7 @@ const data = {
         "I have already operating Kubernetes Clusters. Should I use Meshery?",
       category: "Meshery",
       answer: [
-        "Yes, as a management plane, Meshery provides value in a number of ways post-adoption Kubernetes. For example, Meshery analyzes your deployments in evaluation of cloud native best practices and patterns, highlighting where you might be deviating.","Meshery performs deep discovery of your environment and currently running applications and infrastructure.",
+        "Yes, as a management plane, Meshery provides value in a number of ways post-adoption Kubernetes. For example, Meshery analyzes your deployments in evaluation of cloud native best practices and patterns, highlighting where you might be deviating.", "Meshery performs deep discovery of your environment and currently running applications and infrastructure.",
       ],
       link: "/cloud-native-management/meshery",
       linktext: "Meshery",
@@ -125,14 +125,14 @@ const data = {
         "The Cloud Native Playground (aka Meshery Playground) is a managed instance of Meshery that offers a sandbox environment in which half of Kanvas<sup>BETA</sup>&nbsp;functionality is enabled (Designer mode) and the other half of Kanvas<sup>BETA</sup> functionality is disabled (Visualizer mode).",
         "The sandbox environment is not connected to an active Kuberentes cluster, and as such, specific actions within Kanvas Designer are also disabled. Meshery and Kanvas are feature-rich, sophisticated management applications for cloud native infrastructure. To access their full set of capabilities, simply deploy your own copy of Meshery into the environment of your choosing.",
       ],
-    },    
+    },
     {
       question: "Are designs that I create in the Meshery Playground saved or will I look any work that I do in the playground?",
       category: "Meshery",
       answer: [
         "All of the designs that you have created in the Meshery Playground are saved to your user account and will be available to you each time that you return to the Playground. The designs will also be available in your other Meshery deployments.",
       ],
-    },    
+    },
 
     //
     // INTEGRATIONS
@@ -192,8 +192,8 @@ const data = {
       link: "https://layer5.io/cloud-native-management/kanvas",
       linktext: "Kanvas Beta",
       answer: [
-       "Kanvas is available in beta today. Signup for Kanvas beta access and use Kanvas for free.",
-       "Your request for early access will be processeed as quicky as possible but due to the large influx of program participation requests, it may take some time before system access is granted. In the meantime to help you familiarize with Meshery, the maintainers team will send you additional information about the early access program."
+        "Kanvas is available in beta today. Signup for Kanvas beta access and use Kanvas for free.",
+        "Your request for early access will be processeed as quicky as possible but due to the large influx of program participation requests, it may take some time before system access is granted. In the meantime to help you familiarize with Meshery, the maintainers team will send you additional information about the early access program."
       ]
     },
     {
@@ -203,10 +203,10 @@ const data = {
       linktext: "Kanvas Beta",
       answer: [
         "Kanvas is cloud native collaboration tool for managing your infrastructure and applications. Kanvas has two modes: Visualizer for operating your actively running Kubernetes clusters and Designer for configuring your Kubernetes clusters and creating your creating your application deployments.",
-       "Kanvas is in beta mode and you can ask for early access to try it out.",
+        "Kanvas is in beta mode and you can ask for early access to try it out.",
       ]
     },
-    
+
     //
     // PRICING
     //
@@ -259,8 +259,10 @@ const data = {
       question: "Do you have special pricing for open source / non-profit projects?",
       category: "Pricing",
       answer: [
-        "Yes, we offer significant discounts for open source projects. Contact us at hello@layer5.io with the details of your open source project to apply for discount.",
+        "Yes, we offer significant discounts for open source projects. Visit open source pricing page and sign up with details of your open source project to apply for discount.",
       ],
+      linktext: "Open source pricing",
+      link: "/pricing/open-source-program"
     },
 
     //
@@ -306,7 +308,7 @@ const data = {
       ],
     },
 
-     //
+    //
     // CAREERS / INTERNSHIPS
     //
 
@@ -356,7 +358,7 @@ const data = {
         "Internships are offered based on our commitment to supporting individuals who make a meaningful impact in the community and on our projects. While experience in other projects is wonderful and can be helpful as individuals strive to contribute meaningfully here, it is not a determining factor in whether or not an internship is appropriate to award. The metric we use is whether the individual demonstrates a sustained and positive impact on the projects we steward. We extend support to anyone who achieves this, often in the form of an internship if it proves beneficial to the individual.",
       ],
     },
-    
+
     //
     // OTHER
     //

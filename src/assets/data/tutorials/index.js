@@ -75,7 +75,7 @@ const data = [
     },
     {
         date: "2021-07-27",
-        topic: "Contributing to Meshery API Swagger Documentation" ,
+        topic: "Contributing to Meshery API Swagger Documentation",
         resources: {
             recording: "https://www.youtube.com/watch?v=NAvt6B5kNIQ"
         },
@@ -99,7 +99,7 @@ const data = [
                 name: "Zihan Kuang"
             }
         ]
-    },    
+    },
     {
         date: "2025-04-17",
         topic: "End-to-end Testing in Meshery CLI",
@@ -185,6 +185,20 @@ const data = [
             {
                 link: "/community/members/shlok-mishra",
                 name: "Shlok Mishra"
+            },
+        ],
+    },
+    {
+        date: "2025-06-19",
+        topic: "Meshery Models",
+        resources: {
+            slides: "https://docs.google.com/presentation/d/1XSnDpXeloE9c7FOHGy2l82YbykHl49njUN1RgFoe_ac/edit?usp=sharing",
+            recording: "https://www.youtube.com/watch?v=K2gmdIlGXNo"
+        },
+        presenters: [
+            {
+                link: "/community/members/aabid-sofi",
+                name: "Aabid Sofi"
             },
         ],
     },
