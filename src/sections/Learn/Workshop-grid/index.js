@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Container, Row, Col } from "../../../reusecore/Layout";
@@ -18,6 +18,7 @@ const WorkshopsPage = () => {
   const [content, setContent] = useState(false);
   const [open, setOpen] = useState(false);
   const [ID, setID] = useState("");
+  const workshopRefs = useRef({});
 
   const data = useStaticQuery(
     graphql`query allWorkshops {
@@ -55,23 +56,54 @@ const WorkshopsPage = () => {
 }`
   );
 
+  const scrollToWorkshop = (id) => {
+    if (workshopRefs.current[id]) {
+      const element = workshopRefs.current[id];
+      const headerOffset = 80;
+      const offsetPosition = element.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   const toggleActive = (id) => {
-    if (open){
-      if (ID === id){
+    if (open) {
+      if (ID === id) {
+        const currentRef = workshopRefs.current[id];
         setOpen(false);
         setContent(false);
         setID("");
+        setTimeout(() => {
+          if (currentRef) {
+            const headerOffset = 80;
+            const offsetPosition = currentRef.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
+          }
+        }, 100);
       } else {
+        const targetId = id;
         setOpen(false);
         setContent(false);
-        setID(id);
-        setContent(true);
-        setOpen(true);
+        setID("");
+        setTimeout(() => {
+          setID(targetId);
+          setContent(true);
+          setOpen(true);
+          setTimeout(() => {
+            scrollToWorkshop(targetId);
+          }, 100);
+        }, 100);
       }
     } else {
       setID(id);
       setContent(true);
       setOpen(true);
+      setTimeout(() => scrollToWorkshop(id), 100);
     }
   };
 
@@ -88,7 +120,7 @@ const WorkshopsPage = () => {
               {data.allMdx.nodes.map(({ id, frontmatter, fields, body }) => (
                 <Col {...content && ID === id ? { $xs: 12, $sm: 12, $lg: 12 } : { $xs: 12, $sm: 6, $lg: 4 } } key={id} className="workshop-grid-col">
                   <div className="workshop-grid-card">
-                    <WorkshopCard frontmatter={frontmatter} content={content} ID={ID} id={id} />
+                    <WorkshopCard frontmatter={frontmatter} content={content} ID={ID} id={id} ref={el => workshopRefs.current[id] = el} />
                     <div className={content && ID === id ? "active" : "text-contents"}>
                       <div className="content">
                         <MDXRenderer>{body}</MDXRenderer>
@@ -97,9 +129,9 @@ const WorkshopsPage = () => {
                     <div className={content && ID === id ? "btn-and-status-open" : "btn-and-status"}>
                       <div className="social-icons">
                         {frontmatter.slack && frontmatter.status === "delivered" && content && ID === id ?
-                          <a href={frontmatter.slack} target = "_blank" rel="noreferrer" className="links">
+                          <a href={frontmatter.slack} target="_blank" rel="noreferrer" className="links">
                             <img src={Slack} alt="Slack"/>
-                                                        Slack
+                            Slack
                           </a> : ""}
                       </div>
                       <div className={content && ID === id ? "linkAndReadBtns-open" : "linkAndReadBtns"}>
@@ -122,7 +154,7 @@ const WorkshopsPage = () => {
             }} className="rqst-workshop">
               <img src={WorkshopImage} alt="WorkshopImage" className="bottom-image" />
               <Button $primary $url="mailto:support@layer5.io" $external={true}>
-                                Request A Workshop
+                Request A Workshop
               </Button>
             </Row>
           </div>
