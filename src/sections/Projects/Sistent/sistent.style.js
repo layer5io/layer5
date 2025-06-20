@@ -67,17 +67,18 @@ const SistentWrapper = styled.div`
     @media screen and (min-width: 751px) {
       padding-top: 1rem;
     }
-  }
+  } 
   .sidebar {
-    margin: 0;
-    padding: 0;
-    width: 250px;
-    background-color: ${(props) => props.theme.secondaryLightColor};
-    position: absolute;
-    height: 150rem;
-    overflow: auto;
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  }
+  margin: 0;
+  padding: 0;
+  width: 250px;
+  background-color: ${(props) => props.theme.secondaryLightColor};
+  position: sticky;
+  top: 7rem;
+  max-height: 80vh;
+  overflow-y: auto;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
 
   .sidebar a {
     display: block;
