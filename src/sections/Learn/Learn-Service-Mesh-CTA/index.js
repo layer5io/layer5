@@ -3,10 +3,11 @@ import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 import { Col, Container, Row } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
+import Locator from "../../Kanvas/kanvas-cta/locator.svg";
 
-const ServiceMeshImage = "./service-mesh.svg";
+const KanvasImage = "./locator.svg";
 
-const LearnServiceMeshCTAWrapper = styled.div`
+const KanvasCTAWrapper = styled.div`
     background-color:${props => props.theme.grey141414ToGreyFAFAFA};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     Button:hover {
@@ -41,22 +42,22 @@ const LearnServiceMeshCTAWrapper = styled.div`
     }
 `;
 
-const LearnServiceMeshCTA = () => {
+const KanvasCTA = () => {
   return (
-    <LearnServiceMeshCTAWrapper>
+    <KanvasCTAWrapper>
       <Container>
         <Row className="section-wrapper" $Vcenter>
           <Col className="content" $sm={12} $md={6} $lg={6}>
-            <h2>Learn Meshery with interactive labs</h2>
-            <Button $secondary title="Let's Learn" $url="/learn/service-mesh-labs" />
+            <h2>Explore Kanvas Design System</h2>
+            <Button $secondary title="Explore Kanvas" $url="/learn/kanvas" />
           </Col>
           <Col className="image" $sm={12} $md={6} $lg={6}>
-            <StaticImage src={ServiceMeshImage} alt="Learn how to configure Kubernetes" objectFit="contain" />
+            <StaticImage src={KanvasImage} alt="Explore Kanvas Design System" objectFit="contain" />
           </Col>
         </Row>
       </Container>
-    </LearnServiceMeshCTAWrapper>
+    </KanvasCTAWrapper>
   );
 };
 
-export default LearnServiceMeshCTA;
+export default KanvasCTA;
