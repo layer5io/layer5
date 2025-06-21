@@ -239,4 +239,22 @@ export const MembersGridWrapper = styled.div`
       margin: 1rem;
     }
   }
+  .members-grid {
+    display: grid;
+    row-gap: calc(2.5rem + 25px);
+    column-gap: 30px;
+    grid-auto-rows: 1fr;
+    @media (min-width: 315px) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    @media (min-width: 576px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
 `;
