@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "../../reusecore/Button";
 import { Col, Row, Container } from "../../reusecore/Layout";
 import PlanCardWrapper from "./planCard.style";
@@ -29,7 +29,7 @@ const PlanCard = ({ planData , isYearly }) => {
 
                 {x.tier === "Personal" ? <div className="pricing-label">Free Forever</div> : null}
 
-                {x.tier === "Team Designer" ? <div className="featured-label">Most Popular</div> : null}
+                {x.tier === "Enterprise" ? <div className="featured-label">Most Popular</div> : null}
 
                 {/* {x.pricing_coming_soon && (
                   <div className="pricing_coming_soon">
