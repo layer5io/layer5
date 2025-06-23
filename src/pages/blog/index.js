@@ -90,6 +90,7 @@ const Blog = (props) => {
       />
     <h2>Animated Card start</h2>
     <TestAnimatedCardPage />
+    <h2>Animated Card end</h2>
     </>
   );
 };
