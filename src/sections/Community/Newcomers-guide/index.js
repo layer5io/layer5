@@ -225,7 +225,7 @@ const NewcomersGuide = () => {
             </Col>
           </Row>
         </div>
-        <div className="table-wrapper">
+        <div className="table-wrapper" id="tutorials">
           <h2>Tutorials</h2>
           <h5>Checkout some of the resources to get going</h5>
           <TutorialsTable />
