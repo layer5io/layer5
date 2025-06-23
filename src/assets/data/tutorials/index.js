@@ -188,6 +188,20 @@ const data = [
             },
         ],
     },
+    {
+        date: "2025-06-19",
+        topic: "Meshery Models",
+        resources: {
+            slides: "https://docs.google.com/presentation/d/1XSnDpXeloE9c7FOHGy2l82YbykHl49njUN1RgFoe_ac/edit?usp=sharing",
+            recording: "https://www.youtube.com/watch?v=K2gmdIlGXNo"
+        },
+        presenters: [
+            {
+                link: "/community/members/aabid-sofi",
+                name: "Aabid Sofi"
+            },
+        ],
+    },
 ];
 
 export default data;
