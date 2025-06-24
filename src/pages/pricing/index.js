@@ -1,8 +1,8 @@
 import React from "react";
-import SEO from "../components/seo";
+import SEO from "../../components/seo";
 
 
-import PricingPage from "../sections/Pricing";
+import PricingPage from "../../sections/Pricing";
 const Pricing = () => {
   return (
     <>

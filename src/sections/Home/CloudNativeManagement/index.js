@@ -8,7 +8,6 @@ import playIcon from "../../../assets/images/homePage-images/play-button.webp";
 import ReactPlayer from "react-player/youtube";
 
 import BannerSectionWrapper from "./statement.style";
-import { Link } from "gatsby";
 
 import imgHero from "../../../assets/images/kanvas/KanvasDesigner.png";
 

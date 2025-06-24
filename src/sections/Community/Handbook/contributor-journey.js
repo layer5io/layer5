@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
-import { Link } from "gatsby";
 import NewcomersMap from "../Newcomers-guide/newcomers-map";
 import TOC from "../../../components/handbook-navigation/index";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
@@ -32,19 +31,8 @@ const Intro = () => {
               <h2>About Layer5</h2>
             </a>
             <p>
-              Layer5 is an open source-first company and community of cloud native engineers. We are the creator and
-              maintainer of
-              <Link to="/blog/announcements/a-standard-interface-for-service-meshes">
-                {" "}
-                service mesh standards{" "}
-              </Link>
-              and also the maker of <Link to="/meshery">Meshery </Link>,
-              the
-              <Link to="/cloud-native-management/meshery">
-                {" "}
-                Cloud Native Management Plane{" "}
-              </Link>
-              .<br />
+                At Layer5, we champion developer-defined infrastructure, giving engineers the power to reshape application delivery. We empower operators in reimagining how they manage modern infrastructure: collaboratively.
+              <br />
               Layer5 is not just a company, we are also:
             </p>
             <h4>Community First</h4>
@@ -73,7 +61,7 @@ const Intro = () => {
             </a>
             <ul>
               <li>
-                <span>To build a large collection of service meshes.</span>
+                <span>To build a large collection of cloud native technologies.</span>
               </li>
               <li>
                 <span>

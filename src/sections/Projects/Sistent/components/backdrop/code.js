@@ -2,18 +2,18 @@ import { useLocation } from "@reach/router";
 import { navigate } from "gatsby";
 import React from "react";
 
-import { Container, SistentThemeProvider } from "@layer5/sistent";
+import { Container, SistentThemeProvider } from "@sistent/sistent";
 import { SistentLayout } from "../../sistent-layout";
 import { CodeBlock } from "../button/code-block";
 
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
-import { Backdrop, Button, CircularProgress } from "@layer5/sistent";
+import { Backdrop, Button, CircularProgress } from "@sistent/sistent";
 
 const codes = [
   `
-  import { Backdrop, Button, CircularProgress } from "@layer5/sistent";
+  import { Backdrop, Button, CircularProgress } from "@sistent/sistent";
 
   // declare states and functions to handle open and close operation
 
