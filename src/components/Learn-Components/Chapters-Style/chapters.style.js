@@ -18,12 +18,33 @@ export const ChapterStyle = styled.div`
   }
   }
 
-  div[style*="width:100%"][style*="height:auto"] {
+  div[style*="width: 100%"][style*="overflow"] {
     aspect-ratio: unset !important;
-    margin: 20px;
+    overflow: unset !important;
+    margin: 20px 0px 20px 0px !important;
   }
 
-  .image-design {
+  .image-design-icons {
     object-fit: contain !important; 
+
+    @media (max-width: 768px) {
+      width: clamp(200px, 60vw, 400px) !important;
+      height: auto !important;
+      max-width: none !important;
+    }
+    
+    @media (max-width: 480px) {
+      width: clamp(150px, 70vw, 350px) !important;
+    }
+
   }
+  
+  .image-design {
+    object-fit: contain !important;
+  }
+
+  .image-design-2 {
+    aspect-ratio: unset !important;
+    object-fit: contain !important;
+  } 
 `;
