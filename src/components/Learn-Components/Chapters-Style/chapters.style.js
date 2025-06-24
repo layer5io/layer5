@@ -18,7 +18,7 @@ export const ChapterStyle = styled.div`
   }
   }
 
-  div[style*="width: 100%"][style*="overflow"] {
+  div[style*="width:100%"][style*="overflow"] {
     aspect-ratio: unset !important;
     overflow: unset !important;
     margin: 20px 0px 20px 0px !important;
