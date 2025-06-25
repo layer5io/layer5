@@ -5,17 +5,18 @@ import TOC from "../../../components/SistentNavigation";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
 import SistentPagination from "../../../components/SistentNavigation/pagination";
 
+import { Link } from "gatsby";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 import { CodeBlock } from "./components/button/code-block";
-import { SistentThemeProvider } from "@layer5/sistent";
-import { Button } from "@layer5/sistent";
+import { SistentThemeProvider } from "@sistent/sistent";
+import { Button } from "@sistent/sistent";
 
 const contents = [{ id: 0, link: "#About Sistent", text: "About Sistent" }];
 
 const codes = [
-  "npm i @layer5/sistent",
-  `  import { SistentThemeProvider } from "@layer5/sistent";
-  import { Button } from "@layer5/sistent";
+  "npm i @sistent/sistent",
+  `  import { SistentThemeProvider } from "@sistent/sistent";
+  import { Button } from "@sistent/sistent";
      
   <SistentThemeProvider>
     <Button variant="contained">Filled</Button>
@@ -40,7 +41,7 @@ const SistentAbout = () => {
               <h2>About Sistent</h2>
             </a>
             <p>
-              Sistent is the Layer5 Design System - an open source design system
+              Sistent an open source design system
               that offers building blocks to create consistent, accessible, and
               user-friendly interfaces. It's aimed at developers who want to
               design applications aligned with the same brand and ensure a
@@ -52,13 +53,12 @@ const SistentAbout = () => {
               components, icons, and design tokens that developers can readily
               integrate into their applications. By using Sistent, developers
               can save time and effort while maintaining a high-quality user
-              experience throughout Layer5 products.
+              experience.
             </p>
             <p>
               <b>
-                Sistent provides a consistent user experience across Layer5
-                projects and any frontend software projects that choose to use
-                Sistent, too.
+                Sistent provides a consistent user experience across any frontend
+                software projects that choose to use it.
               </b>
             </p>
             <p>
@@ -77,6 +77,11 @@ const SistentAbout = () => {
               (please do!), let us know, and we will help you get started on
               contributing.
             </p>
+            <h3>Layer5 Brand Resources</h3>
+            <ul>
+              <li><Link to="/brand/brand-guide.pdf">Brand Guide</Link></li>
+              <li><Link to="/brand">Logos and Brand Kits</Link></li>
+            </ul>
             <a id="Installation">
               <h2>Installation and Quickstart</h2>
             </a>
@@ -86,7 +91,7 @@ const SistentAbout = () => {
             </div>
             <p>
               After installation, you can import Sistent theme and any Sistent
-              component from "@layer5/sistent". The component needs to be
+              component from "@sistent/sistent". The component needs to be
               included inside "SistentThemeProvider".
             </p>
             <p>Taking button as an example:</p>
