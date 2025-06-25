@@ -19,6 +19,7 @@ const PartnerItemWrapper = styled.section`
         display: flex;
         justify-content: center;
         flex-wrap: nowrap;
+        overflow: hidden;
         @media(max-width: 1400px){
             flex-wrap: wrap;
         }
@@ -58,6 +59,9 @@ const PartnerItemWrapper = styled.section`
          }
 
         flex-shrink: 3;
+
+        min-width: 150px;
+        transition: transform 0.3s ease-in-out;
     
 
        
