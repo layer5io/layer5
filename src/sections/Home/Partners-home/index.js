@@ -1,5 +1,4 @@
-
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import PartnerItemWrapper from "./partnerSection.style";
@@ -9,7 +8,7 @@ import Slider from "react-slick";
 
 const settings = {
   initialSlide: 1,
-  lazyLoad: true,
+  lazyLoad: false, // disable slick's lazyLoad
   arrows: false,
   dots: false,
   infinite: true,
@@ -28,6 +27,23 @@ const settings = {
 };
 
 const Projects = () => {
+  const [allImagesLoaded, setAllImagesLoaded] = useState(false);
+
+  useEffect(() => {
+    const imagePromises = partners.map(partner => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = partner.imageLink;
+        img.onload = resolve;
+        img.onerror = reject;
+      });
+    });
+
+    Promise.all(imagePromises)
+      .then(() => setAllImagesLoaded(true))
+      .catch(() => setAllImagesLoaded(true)); // still render even if some fail
+  }, []);
+
   return (
     <PartnerItemWrapper>
       <Container>
@@ -41,15 +57,27 @@ const Projects = () => {
           </SectionTitle>
         </Row>
       </Container>
-      <Slider {...settings}>
-        {partners.map((partner, index) => (
-          <Link className="partner-card" to={partner.imageRoute} key={index}>
-            <div className={partner.innerDivStyle}>
-              <img className="partner-image" id={partner.name} loading="lazy" src={partner.imageLink} alt={partner.name} width={partner.imageWidth} height={partner.imageHeight} />
-            </div>
-          </Link>
-        ))}
-      </Slider>
+
+      {allImagesLoaded ? (
+        <Slider {...settings}>
+          {partners.map((partner, index) => (
+            <Link className="partner-card" to={partner.imageRoute} key={index}>
+              <div className={partner.innerDivStyle}>
+                <img
+                  className="partner-image"
+                  id={partner.name}
+                  src={partner.imageLink}
+                  alt={partner.name}
+                  width={partner.imageWidth}
+                  height={partner.imageHeight}
+                />
+              </div>
+            </Link>
+          ))}
+        </Slider>
+      ) : (
+        <div style={{ height: "100px", textAlign: "center" }}>Loading...</div>
+      )}
     </PartnerItemWrapper>
   );
 };
