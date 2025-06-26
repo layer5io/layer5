@@ -47,7 +47,7 @@ const FeaturesSection = () => {
         </div> */}
         <div className="section-header">
           <h2>Cloud native infrastructure is complex.</h2>
-          <h1>Design it <span>visually, collaboratively</span></h1>
+          <h1>Design it <span>visually and collaboratively</span></h1>
           {/* <h1>
             <span>Meshery</span> supports the most service meshes.
           </h1> */}
