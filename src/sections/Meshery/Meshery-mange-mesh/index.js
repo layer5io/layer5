@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Button from "../../../reusecore/Button";
 import { GiClockwork } from "@react-icons/all-files/gi/GiClockwork";
 import { StaticImage } from "gatsby-plugin-image";
-
+import KanvasVisualizerViews from "../../Home/Playground-home";
 const  MultiMesh = "./multi-mesh.svg";
 
 const ManageMeshWrapper = styled.div`
@@ -37,7 +37,8 @@ const MesheryManageMesh = () => {
   return (
     <ManageMeshWrapper>
       <Container>
-        <Row $Vcenter>
+        <KanvasVisualizerViews />
+        {/* <Row $Vcenter>
           <Col $sm={12} $lg={6}>
             <h2>Manage your Mesh</h2>
             <p>Manage all aspects of running your service mesh no matter what service mesh you're running</p>
@@ -48,7 +49,7 @@ const MesheryManageMesh = () => {
           <Col $sm={12} $lg={6}>
             <StaticImage src={MultiMesh} alt="Meshery multi-mesh" className="multi-mesh-img"/>
           </Col>
-        </Row>
+        </Row> */}
       </Container>
     </ManageMeshWrapper>
   );
