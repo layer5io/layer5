@@ -25,7 +25,7 @@ const LifecycleFeature = () => {
       { content: "Discover, deploy, and visualize Kubernetes clusters", className: "--on" },
       { content: "Dry-run capabilities and change previews in pull requests", className: "--on" },
       { content: "Meshery CLI (mesheryctl) for streamlined cluster ops", className: "--on" },
-      { content: "Bulk import of infrastructure from GitHub", className: "--on" },
+      { content: "Bulk import of infrastructure as code from GitHub", className: "--on" },
       { content: "Helm chart generation and environment configuration", className: "--on" },
       { content: "Workspaces for centralized team and project management", className: "--on" },
       { content: "Environments for grouped resource access and control", className: "--on" },
