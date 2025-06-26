@@ -53,7 +53,7 @@ const LifecycleFeature = () => {
       { content: "Version control and inline design review tools", className: "--on" },
       { content: "Custom models with OCI registry support", className: "--on" },
       { content: "Web terminal for direct container/pod access", className: "--on" },
-      { content: "Extension points: gRPC adapters, hot-loadable React/Golang", className: "--on" },
+      { content: "Extension points: gRPC adapters, hot-loadable React and Golang plugins", className: "--on" },
       { content: "REST and GraphQL APIs for platform extensibility", className: "--on" }
     ],
     count: {
