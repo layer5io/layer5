@@ -12,7 +12,7 @@ jobs:
     name: Notify Slack on star
     runs-on: ubuntu-latest
     steps:
-      - name: Get current star count
+      - name: Star Count 
         run: |
           echo "STARS=$(curl --silent 'https://api.github.com/repos/${{ github.repository }}' -H 'Accept: application/vnd.github.preview' | jq '.stargazers_count')" >> $GITHUB_ENV
       - name: Notify Slack
