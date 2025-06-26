@@ -113,9 +113,9 @@ const MesheryFeatures = () => {
               title: "Cloud Native Catalog & Patterns",
               description:
                 "Access 400+ curated design patterns and templates. Share, clone, and customize designs with built -in best practices for common deployment scenarios.", content: (
-                  <div className="feature-expose-full">
-                    <StaticImage
-                      src={img4}
+                <div className="feature-expose-full">
+                  <StaticImage
+                    src={img4}
                     alt="Cloud Native Catalog and Patterns"
                     loading="lazy"
                   />
@@ -133,9 +133,9 @@ const MesheryFeatures = () => {
               title: "Environments & GitOps Integration",
               description:
                 "Manage resources as groups with Environments. Get infrastructure snapshots in pull requests and preview deployments before merging changes.", content: (
-                  <div className="feature-expose">
-                    <img
-                      src={img5}
+                <div className="feature-expose">
+                  <img
+                    src={img5}
                     alt="Environments and GitOps Integration"
                     loading="lazy"
                   />
@@ -156,15 +156,15 @@ const MesheryFeatures = () => {
               title: "Advanced Policy Management with OPA",
               description:
                 "Context-aware policies for applications using Open Policy Agent integration. Enforce configuration best practices without writing Rego query language.", content: (
-                  <div className="feature-expose-full">
-                    <img
-                      src={img6}
+                <div className="feature-expose-full">
+                  <img
+                    src={img6}
                     alt="Policy Management with OPA"
                     loading="lazy"
                   />
                   <p>
                     Meshery uses context-aware relationships to define how and when components interrelate with one another.
-                    Meshery supports a variety of relationships between components. These relationships are categorized into two types: semantic and non-semantic. 
+                    Meshery supports a variety of relationships between components. These relationships are categorized into two types: semantic and non-semantic.
                   </p>
                 </div>
               ),
