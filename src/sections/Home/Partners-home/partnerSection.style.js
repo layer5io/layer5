@@ -116,6 +116,29 @@ const PartnerItemWrapper = styled.section`
             padding: 2.5rem;
         }
      } */
+
+     .loading-indicator {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 120px;
+    }
+
+    .loader {
+        width: 32px;
+        height: 32px;
+        border: 4px solid rgba(0, 0, 0, 0.2);
+        border-top: 4px solid ${props => props.theme.green009A89ToGreen00B39F};
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
 `;
 
 export default PartnerItemWrapper;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import PartnerItemWrapper from "./partnerSection.style";
@@ -8,7 +8,7 @@ import Slider from "react-slick";
 
 const settings = {
   initialSlide: 1,
-  lazyLoad: false, // disable slick's lazyLoad
+  lazyLoad: false, // disabled to avoid visual glitches
   arrows: false,
   dots: false,
   infinite: true,
@@ -30,18 +30,21 @@ const Projects = () => {
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
 
   useEffect(() => {
-    const imagePromises = partners.map(partner => {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.src = partner.imageLink;
-        img.onload = resolve;
-        img.onerror = reject;
-      });
-    });
+    let loadedCount = 0;
 
-    Promise.all(imagePromises)
-      .then(() => setAllImagesLoaded(true))
-      .catch(() => setAllImagesLoaded(true)); // still render even if some fail
+    const handleImageLoad = () => {
+      loadedCount += 1;
+      if (loadedCount === partners.length) {
+        setAllImagesLoaded(true);
+      }
+    };
+
+    partners.forEach((partner) => {
+      const img = new Image();
+      img.src = partner.imageLink;
+      img.onload = handleImageLoad;
+      img.onerror = handleImageLoad; // count failed as loaded
+    });
   }, []);
 
   return (
@@ -58,7 +61,11 @@ const Projects = () => {
         </Row>
       </Container>
 
-      {allImagesLoaded ? (
+      {!allImagesLoaded ? (
+        <div className="loading-indicator">
+          <span className="loader" />
+        </div>
+      ) : (
         <Slider {...settings}>
           {partners.map((partner, index) => (
             <Link className="partner-card" to={partner.imageRoute} key={index}>
@@ -75,8 +82,6 @@ const Projects = () => {
             </Link>
           ))}
         </Slider>
-      ) : (
-        <div style={{ height: "100px", textAlign: "center" }}>Loading...</div>
       )}
     </PartnerItemWrapper>
   );
