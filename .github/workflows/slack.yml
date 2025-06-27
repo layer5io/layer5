@@ -18,7 +18,7 @@ jobs:
       - name: Notify Slack
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-        uses: pullreminders/slack-action@master
+        uses: pullreminders/slack-action@v1.0.9
         with:
           args: '{\"channel\":\"CSK7N9TGX\",\"text\":\"${{ github.actor }} just starred ${{ github.repository }}! (https://github.com/${{ github.repository }}/stargazers) Total ⭐️: ${{ env.STARS }}\"}'
 
@@ -30,7 +30,7 @@ jobs:
       - name: Notify Slack
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-        uses: pullreminders/slack-action@master
+        uses: pullreminders/slack-action@v1.0.9
         with:
           args: '{\"channel\":\"C019426UBNY\",\"type\":\"section\",\"text\":\":new: Good first issue up for grabs: ${{ github.event.issue.title }} - ${{ github.event.issue.html_url }} \"}'
                                                                             
