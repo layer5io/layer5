@@ -35,7 +35,7 @@
     "@fullcalendar/interaction": "^6.0.1",
     "@fullcalendar/react": "^6.1.8",
     "@layer5/meshery-design-embed": "^0.4.0",
-    "@layer5/sistent": "^0.14.182",
+    "@sistent/sistent": "^0.14.201",
     "@loadable/component": "^5.16.4",
     "@mdx-js/mdx": "1.6.22",
     "@mdx-js/react": "1.6.22",

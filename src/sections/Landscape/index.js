@@ -138,8 +138,8 @@ const LandscapeGrid = () => {
                   alt="Service Mesh Landscape"
                 />
                 <div>
-                  <p>The Layer5 Service Mesh Landscape is a community-curated collection of service mesh projects.
-                                    We encourage project maintainers to directly update and represent their service mesh’s functional
+                  <p>The Service Mesh Landscape is a community-curated collection of service mesh projects.
+                  We encourage project maintainers to directly update and represent their service mesh’s functional
                                     and non-functional details.
                   </p>
                   <p className="text-gray">Found a discrepancy, missing or out-dated information?</p>

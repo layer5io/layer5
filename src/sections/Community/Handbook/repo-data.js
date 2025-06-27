@@ -80,8 +80,8 @@ export const repo_data = [
         image: gnh,
         site: "https://getnighthawk.dev",
         language: "Jekyll",
-        maintainers_name: ["Uzair Shaikh"],
-        link: ["https://layer5.io/community/members/uzair-shaikh"],
+        maintainers_name: ["Vacant"],
+        link: [""],
         repository: "https://github.com/layer5io/getnighthawk",
       },
       {
@@ -164,8 +164,8 @@ export const repo_data = [
         image: five,
         site: "https://docs.layer5.io/",
         language: "Hugo",
-        maintainers_name: ["Vacant"],
-        link: [""],
+        maintainers_name: ["Zihan Kuang"],
+        link: ["https://layer5.io/community/members/zihan-kuang"],
         repository: "https://github.com/layer5io/docs",
       },
     ],
@@ -191,7 +191,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description:
-          "A workshop that teaches about service meshes through the lens of Istio.",
+          "A workshop that teaches about modern infrastructure through the lens of Istio.",
         repository: "https://github.com/layer5io/istio-service-mesh-workshop",
       },
       {
@@ -201,7 +201,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description:
-          "An advanced workshop that teaches about service meshes through the lens of Istio.",
+          "An advanced workshop that teaches about modern infrastructure   through the lens of Istio.",
         repository:
           "https://github.com/layer5io/advanced-istio-service-mesh-workshop",
       },
@@ -212,7 +212,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description:
-          "A workshop that teaches about service meshes through the lens of Linkerd.",
+          "A workshop that teaches about modern infrastructure through the lens of Linkerd.",
         repository: "https://github.com/layer5io/linkerd-service-mesh-workshop",
       },
       {
@@ -244,9 +244,8 @@ export const repo_data = [
         project: "Meshery",
         image: meshery,
         language: "Golang, gRPC",
-        maintainers_name: ["Uzair Shaikh", "Antonette Caldwell"],
+        maintainers_name: ["Antonette Caldwell"],
         link: [
-          "https://layer5.io/community/members/uzair-shaikh",
           "https://layer5.io/community/members/antonette-caldwell",
         ],
         description:
@@ -282,7 +281,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description:
-          "MeshSync is a multi-mesh resource discovery application which is also a custom kubernetes controller.",
+          "MeshSync is a multi-cluster resource discovery application which is also a custom Kubernetes controller.",
         repository: "https://github.com/meshery/meshsync",
       },
       {
@@ -333,7 +332,7 @@ export const repo_data = [
         repository: "https://github.com/meshery/helm-kanvas-snapshot",
       },
       {
-        project: "Kubectl kanvas snapshot",
+        project: "Kubectl Kanvas Snapshot",
         image: kanvasLogo,
         language: "Golang",
         maintainers_name: ["Vacant"],
@@ -410,8 +409,8 @@ export const repo_data = [
         project: "Gowrk2",
         image: meshery,
         language: "Golang",
-        maintainers_name: ["Uzair Shaikh"],
-        link: ["https://layer5.io/community/members/uzair-shaikh"],
+        maintainers_name: ["Vacant"],
+        link: [""],
         description:
           "Augmentation of wrk2 to produce output compatible with Meshery’s visualization of performance test results.",
         repository: "https://github.com/layer5io/gowrk2",
@@ -420,8 +419,8 @@ export const repo_data = [
         project: "Nighthawk",
         image: gnh,
         language: "Golang, gRPC",
-        maintainers_name: ["Uzair Shaikh"],
-        link: ["https://layer5.io/community/members/uzair-shaikh"],
+        maintainers_name: ["Vacant"],
+        link: [""],
         description:
           "Augmentation of Envoy Nighthawk to produce output compatible with Meshery’s visualization of performance test results",
         repository: "https://github.com/layer5io/nighthawk-go",
@@ -586,8 +585,8 @@ export const repo_data = [
         project: "Meshery Adapter for Cilium Service Mesh",
         image: ciliumLogo,
         language: "Golang, gRPC",
-        maintainers_name: ["Uzair Shaikh"],
-        link: ["https://layer5.io/community/members/uzair-shaikh"],
+        maintainers_name: ["Vacant"],
+        link: [""],
         description: "Meshery adapter for management of Cilium Service Mesh.",
         repository: "https://github.com/meshery/meshery-cilium",
       },

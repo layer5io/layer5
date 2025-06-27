@@ -23,11 +23,11 @@ const data = {
           className: "--on"
         },
         {
-          content: "Define a set of conformance tests and what behavior is expected of a conforming service mesh implementation.",
+          content: "Define a set of conformance tests and what behavior is expected of a conforming implementation.",
           className: "--on"
         },
         {
-          content: "Built into each participating service mesh project’s release tooling.",
+          content: "Built into each participating project’s release tooling.",
           className: "--on"
         }
       ],

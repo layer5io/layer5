@@ -19,7 +19,7 @@ const WhoWeAre = () => {
               <p className="demo-2">Who Are We?</p>
               <h1>Industry stewards</h1>
               {/* <h2>Open standards creators</h2> */}
-              <p className="demo">Recognized Cloud Native leaders. Service mesh authorities.</p>
+              <p className="demo">Recognized Cloud Native leaders.</p>
             </SectionTitle>
           </Col>
         </Row>
@@ -54,22 +54,14 @@ const WhoWeAre = () => {
       <Row className="second-row">
         <Col $xs={12} $sm={6} $md={6} $lg={3} className="columnWrap">
           <div className="item">
-            <img src={checkCircle} alt="Service Mesh Interface Maintainers" />
-            <p>Service Mesh Interface Maintainers</p>
-          </div>
-        </Col>
-        {/* </Row>
-      <Row className="row"> */}
-        <Col $xs={12} $sm={6} $md={6} $lg={3} className="columnWrap">
-          <div className="item">
-            <img src={checkCircle} alt="Service Mesh Performance Maintainers" />
-            <p>Service Mesh Performance Maintainers</p>
+            <img src={checkCircle} alt="Cloud Native Performance Maintainers" />
+            <p>Cloud Native Performance Maintainers</p>
           </div>
         </Col>
         <Col $xs={12} $sm={6} $md={6} $lg={3} className="columnWrap">
           <div className="item">
-            <img src={checkCircle} alt="Service Mesh Authors and Trainers" />
-            <p>Service Mesh Authors</p>
+            <img src={checkCircle} alt="Kubernetes Authors and Trainers" />
+            <p>Kubernetes Authors and Trainers</p>
           </div>
         </Col>
         <Col $xs={12} $sm={6} $md={6} $lg={3} className="columnWrap">
@@ -82,20 +74,20 @@ const WhoWeAre = () => {
       <Row className="third-row">
         <Col $xs={12} $sm={6} $md={6} $lg={3} className="columnWrap">
           <div className="item">
-            <img src={checkCircle} alt="CNCF Service Mesh Working Group" />
-            <p>CNCF Service Mesh Working Group Chairs</p>
+            <img src={checkCircle} alt="CNCF Working Group" />
+            <p>CNCF Working Group Chairs</p>
           </div>
         </Col>
         <Col $xs={12} $sm={6} $md={6} $lg={3} className="columnWrap">
           <div className="item">
-            <img src={checkCircle} alt="Service Mesh Authors and Trainers" />
+            <img src={checkCircle} alt="Kubernetes Certified Administrators" />
             <p>Kubernetes Certified Administrators</p>
           </div>
         </Col>
         <Col $xs={12} $sm={6} $md={6} $lg={3} className="columnWrap">
           <div className="item">
-            <img src={checkCircle} alt="CNCF Special Interest Group Network Chair" />
-            <p>CNCF Special Interest Group Network Chairs</p>
+            <img src={checkCircle} alt="CNCF TAG Network Chair" />
+            <p>CNCF Technical Advisory Group Chairs</p>
           </div>
         </Col>
       </Row>

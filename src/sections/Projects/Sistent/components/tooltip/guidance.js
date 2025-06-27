@@ -8,7 +8,7 @@ import {
   Typography,
   CustomTooltip,
   Grid,
-} from "@layer5/sistent";
+} from "@sistent/sistent";
 import { Row } from "../../../../../reusecore/Layout";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";

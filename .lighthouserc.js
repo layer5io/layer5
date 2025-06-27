@@ -11,7 +11,7 @@ module.exports = {
           "http://localhost/cloud-native-management/kanvas/index.html",
           "http://localhost/learn/learning-paths/index.html",
           "http://localhost/learn/service-mesh-books/index.html",
-          "http://localhost/learn/service-mesh-workshops/index.html",
+          "http://localhost/learn/workshops/index.html",
           "http://localhost/learn/index.html",
           "http://localhost/blog/index.html",
           "http://localhost/resources/index.html",

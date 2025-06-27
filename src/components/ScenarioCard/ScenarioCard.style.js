@@ -81,17 +81,15 @@ export const ScenarioCardWrapper = styled.div`
             &:hover {
                 color: white;
             }
-        } 
-        justify-content:center; 
+        }
+        justify-content:center;
         margin-top:4rem;
         width:100%;
     }
-    
+
 
 	.active {
-		display: blwock;
 		width: 100%;
-		height: 100%;
 		padding: 1.5rem;
         overflow: hidden;
 	}
@@ -113,7 +111,7 @@ export const ScenarioCardWrapper = styled.div`
         }
     }
     .open-animate {
-        height: 640px;
+        display: flex;
         transition: height 0.2s ease-in;
     }
     .close-animate {

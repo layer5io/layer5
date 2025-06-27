@@ -60,7 +60,7 @@ const DockerExtensionMeshery = () => {
               <Col $lg={10}>
                 <div className="feature-title">Visual designer for cloud native applications and infrastructure</div> {" "}
                 <i>
-                Using <Link to="/cloud-native-management/kanvas">Kanvas</Link> as a visual topology for designing Docker Compose applications, operating Kubernetes, service meshes, and their workloads.
+                Using <Link to="/cloud-native-management/kanvas">Kanvas</Link> as a visual topology for designing Docker Compose applications, operating Kubernetes and their workloads.
                 </i>
               </Col>
               <Col className="docker-extension-meshery" $lg={2}>

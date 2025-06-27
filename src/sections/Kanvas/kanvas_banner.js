@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import KanvasIcon from "./kanvas-icon.svg";
 import KanvasBtn from "./kanvas-buttons";
 
 const BannerSectionWrapper = styled.div`

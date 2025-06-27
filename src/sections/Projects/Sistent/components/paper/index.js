@@ -4,7 +4,7 @@ import TabButton from "../../../../../reusecore/Button";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
-import { Paper, SistentThemeProvider } from "@layer5/sistent";
+import { Paper, SistentThemeProvider } from "@sistent/sistent";
 
 const SistentPaper = () => {
   const location = useLocation();

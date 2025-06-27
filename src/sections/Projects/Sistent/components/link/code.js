@@ -2,7 +2,7 @@ import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
-import { SistentThemeProvider, Link } from "@layer5/sistent";
+import { SistentThemeProvider, Link } from "@sistent/sistent";
 import { CodeBlock } from "../button/code-block";
 // import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import { SistentLayout } from "../../sistent-layout";

@@ -7,8 +7,8 @@ import Button from "../../reusecore/Button";
 const messages = [
   "Oh, no. Please pardon our meshy site.",
   "Oops. Please excuse the mesh.",
-  "Looks like this page doesn't exists. What a mesh!",
-  "Things tend to get a bit meshy around here.",
+  "Looks like this page doesn't exists. Blame it on YAML.",
+  "Someone uses spaces instead of tabs.",
   "Please pardon our mesh.",
   "How did this mesh happen?",
   "Well, isn't this a mesh?",
@@ -27,7 +27,7 @@ const L404 = () => {
         <h1 className="message"> {message} </h1>
         <h2 className="subtitle">Page does not exist.</h2>
         <div className="button-row">
-          <img src={serviceMesh} alt="service meshed" className="mesh" />
+          <img src={serviceMesh} alt="Missing page" className="mesh" />
           <Button id="return-layer5" aria-label="return-to-layer5-page" $secondary $url="/" $external={false} >Return to Layer5</Button>
         </div>
       </Container>

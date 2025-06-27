@@ -2,7 +2,7 @@ import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { Row } from "../../../../../reusecore/Layout";
-import { SistentThemeProvider, Pagination } from "@layer5/sistent";
+import { SistentThemeProvider, Pagination } from "@sistent/sistent";
 import { SistentLayout } from "../../sistent-layout";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";

@@ -6,7 +6,7 @@ import {
   Button,
   CustomTooltip,
   Box,
-} from "@layer5/sistent";
+} from "@sistent/sistent";
 import TabButton from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
 import { Row } from "../../../../../reusecore/Layout";

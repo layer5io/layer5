@@ -1,6 +1,6 @@
 import React from "react";
 import { Row } from "../../../../../reusecore/Layout";
-import { SistentThemeProvider } from "@layer5/sistent";
+import { SistentThemeProvider } from "@sistent/sistent";
 import { SistentLayout } from "../../sistent-layout";
 import {
   FormHelperText,

@@ -14,8 +14,6 @@ const SMI = () => {
 export default SMI;
 export const Head = () => {
   return  <SEO title="Service Mesh Interface (SMI)"
-    description="Layer5 is the maker of Meshery and Service Mesh Performance (SMP) and maintainers of Service Mesh Interface (SMI).
-            We are the largest collection of cloud native projects and their maintainers in the world.
-            Contact Layer5 for help with operating a service mesh."
+    description="Integrate and wrap your operational processes around a service mesh without fear of lock-in. SMI provides a standard interface on Kubernetes and a basic feature set for the most common use cases."
     image="/images/servicemeshinterface-icon-color.webp" />;
 };

@@ -13,7 +13,5 @@ const Privacy = () => {
 };
 export default Privacy;
 export const Head = () => {
-  return <SEO title="Privacy" description="Contact Layer5 for help with operating a service mesh.
-  Layer5 is the makers of Meshery and service mesh standards.
-  We are the largest collection of service mesh projects and their maintainers in the world." />;
+  return <SEO title="Privacy" description="At Layer5, we value your right to privacy." />;
 };

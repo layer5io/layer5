@@ -50,7 +50,7 @@ const Repository = () => {
             </p>
 
             <p>
-              Note that the Layer5 community spans <strong>five</strong> GitHub
+              Note that the Layer5 community spans <strong>six</strong> GitHub
               organizations:
             </p>
 
