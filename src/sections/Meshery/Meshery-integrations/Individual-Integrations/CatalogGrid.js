@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ComponentsWrapper } from "./Component.style";
-import { CatalogCard, SistentThemeProviderWithoutBaseLine } from "@layer5/sistent";
+import { CatalogCard, SistentThemeProviderWithoutBaseLine } from "@sistent/sistent";
 import axios from "axios";
 import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
 import Button from "../../../../reusecore/Button";

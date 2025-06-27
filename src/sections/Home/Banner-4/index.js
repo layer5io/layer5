@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 // import { Link } from "gatsby";
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
@@ -22,6 +22,8 @@ import { getImage } from "gatsby-plugin-image";
 import useHasMounted from "../../../utils/useHasMounted";
 
 const Banner1 = (props) => {
+  const [videoReady, setVideoReady] = useState(false);
+  const thumbnailRef = useRef(null);
 
   const { heroImage } = useStaticQuery(
     graphql`
@@ -46,6 +48,37 @@ const Banner1 = (props) => {
 
   const hasMounted = useHasMounted();
 
+  // Set video as ready immediately after mount to avoid loading message
+  useEffect(() => {
+    if (hasMounted) {
+      // Force the video to be marked as ready after a short delay
+      // This ensures that even if events don't fire, the loading message will disappear
+      const timer = setTimeout(() => {
+        setVideoReady(true);
+      }, 1000);
+
+      // Preload the thumbnail
+      const img = new Image();
+      img.src = videoThumbnail;
+      img.onload = () => {
+        // Mark video as ready when thumbnail loads
+        setVideoReady(true);
+      };
+
+      return () => clearTimeout(timer);
+    }
+  }, [hasMounted]);
+
+  // Multiple handlers to ensure the video gets marked as ready
+  const handleVideoReady = () => {
+    setVideoReady(true);
+  };
+
+  const handleThumbnailClick = () => {
+    // Set ready when user clicks on thumbnail
+    setVideoReady(true);
+  };
+
   return (
     <Banner1SectionWrapper {...props}>
       <BGImg title="heroImage" image={pluginImage}>
@@ -61,10 +94,6 @@ const Banner1 = (props) => {
                 <h2>
                   Collaborate to innovate
                 </h2>
-                {/* <h1>Take the blinders off</h1>
-                <h2>
-                  cloud native management
-                </h2> */}
               </SectionTitle>
               <span className="vintage-box-container">
                 <VintageBox $right={true} $vintageOne={true}>
@@ -80,32 +109,45 @@ const Banner1 = (props) => {
           </Col>
           {hasMounted && window.innerWidth > 760 && (
             <Col $sm={4} $lg={6} className="section-title-wrapper video-col">
-              <ReactPlayer
-                url="https://youtu.be/034nVaQUyME?si=Yya8m6i7JUoSdZm4"
-                playing
-                controls
-                light={videoThumbnail}
-                playIcon={
-                  <img
-                    src={playIcon}
-                    className="playBtn"
-                    loading="lazy"
-                    alt="Play"
-                    role="button"
-                    aria-label="Play"
-                    style={{ fontSize: "24px" }}
-                  />
-                }
-                width="90%"
-                height="30vw"
-                style={{ margin: "auto" }}
-                className="embedVideo"
-              />
-              {/* <Link to="/cloud-native-management/kanvas">
-                <video autoPlay muted loop preload="metadata" className="kanvasVideo">
-                  <source src={kanvasVideo} type="video/mp4"></source>
-                </video>
-              </Link> */}
+              <div
+                className={`video-wrapper ${videoReady ? "video-loaded" : ""}`}
+                ref={thumbnailRef}
+                onClick={handleThumbnailClick}
+              >
+                <ReactPlayer
+                  url="https://youtu.be/034nVaQUyME?si=Yya8m6i7JUoSdZm4"
+                  playing
+                  controls
+                  light={videoThumbnail}
+                  playIcon={
+                    <img
+                      src={playIcon}
+                      className="playBtn"
+                      loading="eager"
+                      alt="Play"
+                      role="button"
+                      aria-label="Play"
+                      style={{ fontSize: "24px" }}
+                    />
+                  }
+                  width="100%"
+                  height="100%"
+                  className="embedVideo"
+                  onReady={handleVideoReady}
+                  onStart={handleVideoReady}
+                  onPlay={handleVideoReady}
+                  onBufferEnd={handleVideoReady}
+                  onClickPreview={handleVideoReady}
+                  config={{
+                    youtube: {
+                      playerVars: {
+                        rel: 0,
+                        modestbranding: 1,
+                      }
+                    }
+                  }}
+                />
+              </div>
             </Col>
           )}
         </Row>

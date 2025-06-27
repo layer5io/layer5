@@ -6,7 +6,7 @@ import {
   SistentThemeProvider,
   ToggleButton,
   ToggleButtonGroup,
-} from "@layer5/sistent";
+} from "@sistent/sistent";
 import { SistentLayout } from "../../sistent-layout";
 import { CodeBlock } from "../button/code-block";
 import TabButton from "../../../../../reusecore/Button";
