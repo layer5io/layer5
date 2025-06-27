@@ -14,7 +14,7 @@ const Contact = () => {
 };
 export default Contact;
 export const Head = () => {
-  return <SEO title="Contact" description="Contact Layer5 for help managing your cloud native infrastructre and apps. Layer5 is the maker of Meshery and service mesh standards.">
+  return <SEO title="Contact" description="Contact us for assistance with your cloud native journey, whether you are a beginner or an expert. We are here to help you with your questions and provide the support you need." >
     <Script src="https://v8hx52m354g0.statuspage.io/embed/script.js" />
   </SEO>;
 };
