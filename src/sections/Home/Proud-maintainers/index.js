@@ -29,8 +29,7 @@ const ProudMaintainers = () => {
           </SectionTitle>
 
           <p className="project-text">
-            We are the world’s largest collection of service mesh practitioners
-            and maintainers of leading open source projects.
+            At Layer5, we champion developer-defined infrastructure, giving engineers the power to reshape application delivery. We empower operators in reimagining how they manage modern infrastructure: collaboratively.
           </p>
 
         </Row>
@@ -51,12 +50,6 @@ const ProudMaintainers = () => {
             <Linkerd alt="Linkerd" />
           </div>
         </Col>
-        {/* <Col $xs={3} $sm={3} $md={3} $lg={2}>
-          <div className="proj_icon_2">
-            <img src={ServiceMesh} alt="Service Mesh" />
-            <h4>Service Mesh</h4>
-          </div>
-        </Col> */}
         <Col $xs={3} $sm={3} $md={3} $lg={3} className="proj_row_1_col">
           <div className="proj_icon_1">
             <Meshery alt="Meshery" />
