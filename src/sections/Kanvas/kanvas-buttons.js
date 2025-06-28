@@ -31,7 +31,7 @@ const KanvasBtn = ({ title, style }) => {
       />
       <Button
         aria-label="Book a demo"
-        $primary
+        $secondary
         $external={true}
         title="Book a demo"
         alt="Book a demo"

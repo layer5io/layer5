@@ -1,7 +1,7 @@
 import React from "react";
 import { CodeBlock } from "../button/code-block";
 
-import { SistentThemeProvider } from "@layer5/sistent";
+import { SistentThemeProvider } from "@sistent/sistent";
 
 import { SistentLayout } from "../../sistent-layout";
 
@@ -15,7 +15,8 @@ import {
   OutlinedInput,
   Select,
 } from "@mui/material";
-import { Header, SectionNav } from ".";
+import SectionNav from "./section-nav";
+import Header from "./header";
 
 const codes = {
   "variant-outlined": `<Select>
