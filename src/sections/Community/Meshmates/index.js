@@ -17,7 +17,7 @@ const Meshmates = () => {
     graphql`query meshmates {
   allMdx(
     sort: {frontmatter: {name: ASC}}
-    filter: {fields: {collection: {eq: "members"}}, frontmatter: {meshmate: {eq: "yes"}, emeritus: {ne: "yes"}, status: { ne: "Inactive" }}}
+    filter: {fields: {collection: {eq: "members"}}, frontmatter: {meshmate: {eq: "yes"}}}
   ) {
     nodes {
       id
@@ -48,6 +48,19 @@ const Meshmates = () => {
 }`
   );
 
+  // Separate MeshMates by status and emeritus flag
+  const activeMeshMates = data.allMdx.nodes.filter(
+    ({ frontmatter }) => frontmatter.emeritus !== "yes" && frontmatter.status !== "Inactive"
+  );
+
+  const inactiveMeshMates = data.allMdx.nodes.filter(
+    ({ frontmatter }) => frontmatter.emeritus !== "yes" && frontmatter.status === "Inactive"
+  );
+
+  const emeritusMeshMates = data.allMdx.nodes.filter(
+    ({ frontmatter }) => frontmatter.emeritus === "yes"
+  );
+
   return (
     <MeshMatesWrapper>
       <Container>
@@ -67,18 +80,51 @@ const Meshmates = () => {
           </Col>
         </Row>
         <div className="meshmates-grid">
-          <h1> Our MeshMates </h1>
-          <p> MeshMate is a distinction that Layer5 awards select members of the community that who innately align with the Layer5 culture of helping others, paying it forward, and have a commitment to sharing their knowledge of Layer5 projects with the community. MeshMates are Layer5 ambassadors (not employees) and their commitment to helping others and sharing their expertise has a huge impact on the Layer5 community – don’t hesitate to reach out to them! </p>
+          <h1> Active MeshMates </h1>
+          <p> MeshMate is a distinction that Layer5 awards select members of the community that who innately align with the Layer5 culture of helping others, paying it forward, and have a commitment to sharing their knowledge of Layer5 projects with the community. MeshMates are Layer5 ambassadors (not employees) and their commitment to helping others and sharing their expertise has a huge impact on the Layer5 community – don't hesitate to reach out to them! </p>
           <Row style={{
             flexWrap: "wrap"
           }}>
-            {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
+            {activeMeshMates.map(({ id, frontmatter, fields }) => (
               <Col $xs={12} $sm={6} $lg={4} key={id}>
                 <ProfileCard frontmatter={frontmatter} cardlink={fields.slug} />
               </Col>
             ))}
           </Row>
         </div>
+
+        {inactiveMeshMates.length > 0 && (
+          <div className="meshmates-grid inactive-section">
+            <h1> Inactive MeshMates </h1>
+            <p> These MeshMates are currently on hiatus from active participation in the program but remain valued members of our community. </p>
+            <Row style={{
+              flexWrap: "wrap"
+            }}>
+              {inactiveMeshMates.map(({ id, frontmatter, fields }) => (
+                <Col $xs={12} $sm={6} $lg={4} key={id}>
+                  <ProfileCard frontmatter={frontmatter} cardlink={fields.slug} />
+                </Col>
+              ))}
+            </Row>
+          </div>
+        )}
+
+        {emeritusMeshMates.length > 0 && (
+          <div className="meshmates-grid emeritus-section">
+            <h1> Emeritus MeshMates </h1>
+            <p> These MeshMates have previously served the Layer5 community with distinction. While they are no longer active in the MeshMate program, their contributions and impact continue to influence our community. </p>
+            <Row style={{
+              flexWrap: "wrap"
+            }}>
+              {emeritusMeshMates.map(({ id, frontmatter, fields }) => (
+                <Col $xs={12} $sm={6} $lg={4} key={id}>
+                  <ProfileCard frontmatter={frontmatter} cardlink={fields.slug} />
+                </Col>
+              ))}
+            </Row>
+          </div>
+        )}
+
         <div className="expect">
           <h5> What to Expect </h5>
           <h2> Engaging with a MeshMate</h2>

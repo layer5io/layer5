@@ -2,7 +2,7 @@ import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
-import { SistentThemeProvider, Box } from "@layer5/sistent";
+import { SistentThemeProvider, Box } from "@sistent/sistent";
 import { CodeBlock } from "../button/code-block";
 import { SistentLayout } from "../../sistent-layout";
 

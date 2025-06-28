@@ -59,6 +59,7 @@ body,html {
 
 body {
   font-size: 1.125rem;
+  overflow: clip;
   line-height: 28px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
