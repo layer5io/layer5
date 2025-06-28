@@ -106,7 +106,7 @@ const ViewsSectionWrapper = styled.div`
       /* max-width: 90%; */
       padding-bottom: 2%;
     }
-  }
+  
 
   h4 {
       max-width: 90%;
@@ -215,7 +215,8 @@ const ViewsSectionWrapper = styled.div`
       height:150px;
       padding: 2rem;
       box-sizing: border-box;
-      background-color: ${(props) => props.theme.backgroundColor}; 
+      background-color: ${(props) => props.theme.backgroundColor};
+      color: ${(props) => props.theme.whiteEightToBlack}; 
       margin-bottom: 1rem; 
       border-radius: 1rem;
       //box-shadow: ${(props) => props.theme.boxShadowGreen00D3A9ToBlackTwoFive};
@@ -233,6 +234,7 @@ const ViewsSectionWrapper = styled.div`
     .box .boxText {
       margin-top: 1rem;
       text-align: center;
+      color: ${(props) => props.theme.whiteEightToBlack};
     }
 
     @media only screen and (max-width: 700px) {
