@@ -13,5 +13,5 @@ const Faq = () => {
 };
 export default Faq;
 export const Head = () => {
-  return  <SEO title="Writing Program" description="Work with authors and technologists from around the world to share your knowledge of cloud native infrastructure, infrastructure as code, modern application management, Kubernetes, service meshes and related technologies." />;
+  return  <SEO title="Writing Program" description="Work with authors and technologists from around the world to share your knowledge of cloud native infrastructure, infrastructure as code, modern application management, Kubernetes, cloud native and related technologies." />;
 };

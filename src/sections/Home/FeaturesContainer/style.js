@@ -4,6 +4,10 @@ export const Container = styled.div`
     max-width: 1170px;
     padding: 0 1rem;
     margin: 5rem auto 0;
+    min-height: 400px; /* Add explicit min-height */
+    width: 100%; /* Add explicit width */
+    position: relative; /* Add position for better layout control */
+    
     .title {
         opacity: 0;
         transform: translateY(20px) scale(0.95);
@@ -12,6 +16,7 @@ export const Container = styled.div`
         text-align: center;
         font-weight: 400;
         color: ${props => props.theme.greyDEE3DEToGreen3C494F};
+        min-height: 1.2em; /* Reserve space for title */
          span {
             color: ${(props) => props.theme.text};
             font-weight: 700;
@@ -26,6 +31,7 @@ export const Container = styled.div`
         margin-top: 1rem;
         margin-bottom: 3rem;
         font-size: 1.5rem;
+        min-height: 1.5em; /* Reserve space for subtitle */
     }
     
     .fade-out {

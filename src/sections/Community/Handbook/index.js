@@ -74,7 +74,7 @@ const handbookHome = () => {
 
         <HandbookCard
           title="Projects"
-          description="Layer5 Projects: Layer5, Meshery, Service Mesh Performance, NightHawk"
+          description="Layer5 Projects: Layer5, Meshery, Kanvas, NightHawk"
           to="/community/handbook/projects"
         />
 
@@ -112,6 +112,12 @@ const handbookHome = () => {
           title="FAQs"
           description="General frequently asked questions (FAQ) about Layer5 and people who contribute through reporting issues, to submit pull requests or patches, and other activities."
           to="/community/handbook/faq"
+        />
+
+        <HandbookCard
+          title="GitHub Organization Membership"
+          description="Recognition of consistent contributors through GitHub organization invitations, outlining membership requirements, invitation process, and responsibilities."
+          to="/community/handbook/instructions"
         />
       </div>
     </HandbookWrapper>

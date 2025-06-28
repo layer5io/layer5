@@ -423,7 +423,7 @@ const Catalog = () => {
       <Container className="catalog-container">
         <div className="patterns">
           <p className="caption descr">
-          Kanvas is a sophisticated and delightfully intuitive tool for designing and operating cloud native infrastructure for Kubernetes. Choose freestyle composition of your infrastructure by drawing shapes, lines, text, and icons to represent the components and relationships of your Kubernetes clusters or quickstart by selecting a pattern the catalog of predefined templates.
+          Kanvas is a sophisticated and delightfully intuitive tool for designing and operating cloud native infrastructure for Kubernetes and Clouds. Choose freestyle composition of your infrastructure by drawing shapes, lines, text, and icons to represent the components and relationships of your Kubernetes clusters or quickstart by selecting a pattern the catalog of predefined templates.
           </p>
         </div>
       </Container>
