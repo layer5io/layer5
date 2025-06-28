@@ -2,7 +2,23 @@ import styled from "styled-components";
 export const HandbookWrapper = styled.div`
 
     .content > a:first-of-type > h2:first-of-type {
+      margin-top: 1rem;
       padding-top: 1rem;
+    }
+
+    .content > a:first-of-type > h3:first-of-type {
+      margin-top: 1rem;
+      padding-top: 1rem;
+    }
+
+    .content .conduct-first-paragraph {
+      @media (min-width: 750px) {
+        margin-top: -9rem;
+      }
+
+      @media screen and (min-width: 768px) {
+        margin-top: -6rem;
+      }
     }
 
     .highlight{
@@ -46,22 +62,23 @@ export const HandbookWrapper = styled.div`
         margin-top: -7rem;
       }
       @media (min-width: 750px) {
-        margin-top: -36rem;
+        margin-top: -54rem;
         margin-left: 20rem;
       }
+
       display: flex;
 
       @media screen and (min-width: 768px) and (max-height: 1145px) {
-       margin-top : -62vh ;
+        margin-top : -87vh ;
+      }
 
-
-  }
       @media screen and (min-width: 1280px) and (max-width: 1350px) {
         margin-left:16rem;
       }
     }
+
     .conduct-section{
-      @media screen and (min-width: 751px) {
+      @media screen and (min-width: 750px) {
         margin-top:-43rem;
       }
             @media screen and (min-width: 768px) and (max-height: 1145px) {
@@ -115,6 +132,9 @@ export const HandbookWrapper = styled.div`
       h1 {
           line-height: 10rem;
           color: white;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
       }
     }
 
@@ -298,7 +318,7 @@ export const HandbookWrapper = styled.div`
         padding-top: 7rem;
       }
       .page-section{
-        margin-top: -2rem;
+        margin-top: -6rem;
         margin-left: 0;
         padding: 1rem 2.5rem;
       
