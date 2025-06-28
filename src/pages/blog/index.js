@@ -4,6 +4,8 @@ import SEO from "../../components/seo";
 import BlogGrid from "../../sections/Blog/Blog-grid";
 import { graphql } from "gatsby";
 import loadable from "@loadable/component";
+import TestAnimatedCardPage from "../test-animated-card";
+
 const BlogList = loadable(() => import ("../../sections/Blog/Blog-list"));
 
 export const query = graphql`query allBlogs {
@@ -72,6 +74,9 @@ const Blog = (props) => {
   };
   return (
     <>
+    <h2>Animated Card start</h2>
+    <TestAnimatedCardPage />
+    <h2>Animated Card end</h2>
       <BlogView
         isListView={isListView}
         setListView={setListView}
@@ -86,7 +91,7 @@ const Blog = (props) => {
         currentPage={currentPage}
         queryResults={queryResults}
       />
-
+    
     </>
   );
 };
