@@ -86,8 +86,7 @@ table {
 		}
 	}
 	
-	th, tr{
-		&:hover{
+	td:hover{
 			box-shadow: 0px 0px 15px -10px ${props => props.theme.whiteToBlack};
 			transform: translateY(0px);
 		}
