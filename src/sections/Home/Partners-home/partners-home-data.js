@@ -10,6 +10,7 @@ import intel from "../../../assets/images/partners/intel-grey.svg";
 import vmware from "../../../assets/images/partners/vmware.svg";
 import cncf from "../../../assets/images/partners/cncf/horizontal/black/cncf-black.svg";
 import metabittrading from "../../../assets/images/partners/metabit-trading-logo-gray.svg";
+import digitalocean from "../../../assets/images/partners/digitalocean-black.svg";
 import citibank from "../../../assets/images/partners/citibank_black.svg";
 import ayapay from "../../../assets/images/partners/aya_pay_black.svg";
 
@@ -110,6 +111,14 @@ export const partners = [
     innerDivStyle: "partner__block__inner ",
     imageHeight: 130,
     imageWidth: 120,
+  },
+  {
+    name: "DigitalOcean",
+    imageLink: digitalocean,
+    imageRoute: "/partners#digitalocean",
+    innerDivStyle: "partner__block__inner ",
+    imageHeight: 533,
+    imageWidth: 809,
   },
   {
     name: "Citibank",

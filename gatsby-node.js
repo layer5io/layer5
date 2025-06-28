@@ -6,6 +6,7 @@
  */
 
 const path = require("path");
+const fs = require("fs");
 const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
@@ -72,8 +73,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     isPermanent: true,
   });
   createRedirect({
+    fromPath: "/learn/workshops",
+    toPath: "/learn/workshops",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
     fromPath: "/workshops",
-    toPath: "/learn/service-mesh-workshops",
+    toPath: "/learn/workshops",
     redirectInBrowser: true,
     isPermanent: true,
   });
@@ -797,15 +804,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     components.forEach((name) => {
       pageTypes.forEach(({ suffix, file }) => {
-        const path = `/projects/sistent/components/${name}${suffix}`;
+        const pagePath = `/projects/sistent/components/${name}${suffix}`;
         const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
-        try {
-          createPage({
-            path,
-            component: require.resolve(componentPath),
-          });
-        } catch (error) {
-          console.error(`Error creating page for ${path}:`, error);
+        if (fs.existsSync(path.resolve(componentPath))) {
+          try {
+            createPage({
+              path: pagePath,
+              component: require.resolve(componentPath),
+            });
+          } catch (error) {
+            console.error(`Error creating page for "${pagePath}":`, error);
+          }
+        } else {
+          console.info(`Skipping creating page "${pagePath}" - file not found: "${componentPath}"`);
         }
       });
     });
@@ -1101,7 +1112,7 @@ exports.createSchemaCustomization = ({ actions }) => {
   createTypes(typeDefs);
 };
 
-const fs = require("fs");
+
 
 exports.onPostBuild = async ({ graphql, reporter }) => {
   const result = await graphql(`
