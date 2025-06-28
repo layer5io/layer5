@@ -9,7 +9,7 @@ import ReactPlayer from "react-player/youtube";
 
 import BannerSectionWrapper from "./statement.style";
 
-import imgHero from "../../../assets/images/kanvas/KanvasDesigner.png";
+import imgHero from "../../../assets/images/meshery-dashboard-hero-image.png";
 
 const BannerDefault = () => {
   return (
