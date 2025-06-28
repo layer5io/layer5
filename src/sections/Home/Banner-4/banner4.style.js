@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 const Banner1SectionWrapper = styled.section`
     display: none;
+    min-height: 600px; /* Add explicit min-height */
+    position: relative; /* Add position for better layout control */
+    width: 100%; /* Add explicit width */
+    padding: 7rem 0; /* Add explicit padding to maintain consistent spacing */
+    
     p {
         font-size: 21px;
         font-weight: 300;
@@ -31,48 +36,77 @@ const Banner1SectionWrapper = styled.section`
             }
         }
     }
-    .embedVideo {
+    
+    /* Video container with fixed aspect ratio to prevent layout shifts */
+    .video-wrapper {
         position: relative;
-        min-width:25%;
-        max-width:100%;
+        width: 90%;
+        margin: auto;
+        height: 0;
+        padding-bottom: 50.625%; /* 16:9 aspect ratio (9/16 = 0.5625) */
+        overflow: hidden;
+        border-radius: 8px;
+        background: ${props => props.theme.DarkTheme ? "rgba(0, 0, 0, 0.2)" : "rgba(0, 0, 0, 0.05)"};
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        
+        /* Loading placeholder */
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: ${props => props.theme.DarkTheme ? "#ffffff80" : "#00000080"};
+            z-index: 0; /* Lower z-index so it doesn't block interactions */
+            opacity: 0.7;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        &.video-loaded::before {
+            opacity: 0;
+            visibility: hidden; /* Completely hide the element */
+        }
+    }
+    
+    .embedVideo {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
         object-fit: cover;
-        /* height: 44vw !important;
-        border-radius: 2.5%;
-        transition: 0.2s ease-in-out;
-        box-shadow: 0px 3px 20px 4px rgba(0, 179, 159, 0.5); */
+        z-index: 1; /* Ensure video player is above the loading message */
 
         .react-player__preview {
-        border-radius: 1.5%;
+            border-radius: 8px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-size: cover;
+            z-index: 2; /* Ensure preview is clickable */
         }
 
         .react-player__play-icon {
-        transform: scale(3, 3);
+            transform: scale(3, 3);
         }
 
         iframe {
-        border-radius: 2.5%;
-        }
-
-        @media (max-width: 768px) {
-        height: 54vw !important;
+            border-radius: 8px;
         }
 
         &:hover {
-        /* box-shadow: 0px 3px 20px 4px rgba(0, 179, 159, 0.75);
-        .react-player__play-icon {
-            border-color: transparent transparent transparent #EBC017 !important;
-        } */
-        .playBtn {
-        box-shadow: 0px 0px 16px 3px #00B39F;
-        }
+            .playBtn {
+                box-shadow: 0px 0px 16px 3px #00B39F;
+            }
         }
     }
+    
     .kanvasVideo {
         position: relative;
         min-width:25%;
         max-width:100%;
         object-fit: cover;
-}
+    }
     .vintage-box-container {
         display: flex;
     }
@@ -127,6 +161,7 @@ const Banner1SectionWrapper = styled.section`
         border-radius: 50%;
         height: 4rem;
         width: 4rem;
+        z-index: 3; /* Highest z-index to ensure it's clickable */
     }
     @media only screen and (max-width: 1200px) {
         .section-title {

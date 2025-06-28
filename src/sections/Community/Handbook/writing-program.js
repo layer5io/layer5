@@ -38,8 +38,8 @@ const Writers = () => {
               give back to the community, and help us produce great content. We
               collaborate with authors and technologists from around the world
               to produce high quality articles, blog posts, tutorials and other
-              cloud native resources on Meshery, Kubernetes, service meshes,
-              Docker and related technologies.
+              cloud native resources on Meshery, Kubernetes, CNCF, Docker and
+              related technologies.
             </p>
             <h2>Why should you participate?</h2>
             <div className="list">
@@ -237,7 +237,7 @@ const Writers = () => {
                 <Col $sm={12} $md={6} $lg={4}>
                   <Link
                     className="project-card"
-                    to="/learn/service-mesh-workshops"
+                    to="/learn/workshops"
                   >
                     <div className="content_type">
                       <img src={workshop} alt="Workshop" />

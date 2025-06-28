@@ -48,6 +48,11 @@ img{
     border-radius: 50%;
     width: 6vw;
     height: 6vw;
+    object-fit: contain;
+    @media screen and (max-width: 1300px) {
+        height: 5rem;
+        width: 5rem;
+    }
 }
 
 .quote-source {
@@ -106,7 +111,13 @@ const InlineQuotes = ({ person, title, quote,image }) => {
         {(image || person || title) && <hr />}
         {
           image &&
-          <img src={image}></img>
+          <img
+            src={image}
+            alt={`${person || "Quote author"}`}
+            width="96"
+            height="96"
+            style={{ objectFit: "cover" }}
+          />
         }
         <div className="quote-source">
           <h5>{person}</h5>
