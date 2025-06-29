@@ -5,7 +5,6 @@ import { graphql } from "gatsby";
 
 import EventSingle from "../sections/Community/Event-single";
 
-import KanvasCTA from "../sections/Kanvas/kanvas-cta";
 import Subscribe from "../sections/subscribe/subscribe";
 import SEO from "../components/seo";
 
@@ -46,7 +45,6 @@ const EventSinglePage = ({ data }) => {
 
 
       <EventSingle data={data} />
-      <KanvasCTA />
       <Subscribe />
 
     </>
