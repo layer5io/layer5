@@ -66,7 +66,7 @@ const WebBasedForm = () => {
 
   useEffect(() => {
     if (submit) {
-      axios.post("https://hook.us1.make.com/nd4srs976am5a4h5i17g3qmd4gq8defu", {
+      axios.post("https://hook.us1.make.com/v66ana9yf3w11k4a1rf3epwquur1s9rd", {
         memberFormOne,
         MemberFormThirdValue,
         MemberFormFourValue,
@@ -234,52 +234,6 @@ const WebBasedForm = () => {
     );
   };
 
-  // const Standerby = () => {
-  //   return (
-  //     <Container>
-  //       <div className="container-1">
-  //         <Row>
-  //           <Col $lg={6} $md={6} $sm={12}>
-  //             <div className="text">
-  //               <h2>Community First</h2>
-  //               <p>
-  //                 The Layer5 community represents the largest collection of
-  //                 service mesh projects and their maintainers in the world.
-  //               </p>
-  //             </div>
-  //           </Col>
-  //           <Col $lg={6} $md={6} $sm={12}>
-  //             <img src={img1} alt="Community photo" />
-  //           </Col>
-  //         </Row>
-  //       </div>
-
-  //       <div className="container-1">
-  //         <Row>
-  //           <Col $lg={6} $md={6} $sm={12}>
-  //             <img src={img2} alt="Open source photo" />
-  //           </Col>
-  //           <Col $lg={6} $md={6} $sm={12}>
-  //             <div className="text">
-  //               <h2>Open Source First</h2>
-  //               <p>
-  //                 Our projects establish industry standards and enable service
-  //                 developers, owners, and operators with repeatable patterns and
-  //                 best practices for managing all aspects of distributed
-  //                 services. Our shared commitment to the open source spirit push
-  //                 the Layer5 community and its projects forward.
-  //               </p>
-  //             </div>
-  //           </Col>
-  //         </Row>
-  //       </div>
-  //       <br /><br />
-  //       <button onClick={standerbyBack} className="btn-prev1"><span className="back">&larr;</span> Previous step</button>
-  //       <br /><br />
-  //     </Container>
-  //   );
-  // };
-
   const MemberFormThird = () => {
     return (
       <Container>
@@ -314,10 +268,10 @@ const WebBasedForm = () => {
             <label>
               <Field type="checkbox"
                 name="projects"
-                value="Service Mesh Performance (SMP)"
+                value="Cloud Native Performance (CMP)"
                 className="form-check"
               />
-              <span className="checkbox-label">Service Mesh Performance (SMP)</span>
+              <span className="checkbox-label">Cloud Native Performance (CMP)</span>
             </label>
             <br />
             <label>
@@ -332,19 +286,10 @@ const WebBasedForm = () => {
             <label>
               <Field type="checkbox"
                 name="projects"
-                value="Service Mesh Landscape"
+                value="Kanvas"
                 className="form-check"
               />
-              <span className="checkbox-label">Service Mesh Landscape</span>
-            </label>
-            <br />
-            <label>
-              <Field type="checkbox"
-                name="projects"
-                value="WASM Filter Hub"
-                className="form-check"
-              />
-              <span className="checkbox-label">WASM Filter Hub</span>
+              <span className="checkbox-label">Kanvas</span>
             </label>
             <br />
             <label>
@@ -386,10 +331,10 @@ const WebBasedForm = () => {
             <label>
               <Field type="checkbox"
                 name="tutorials"
-                value="Introduction to Service Meshes"
+                value="Introduction to Kanvas"
                 className="form-check"
               />
-              <span className="checkbox-label">Introduction to Service Meshes</span>
+              <span className="checkbox-label">Introduction to Kanvas</span>
             </label>
             <br />
             <label>
@@ -404,28 +349,19 @@ const WebBasedForm = () => {
             <label>
               <Field type="checkbox"
                 name="tutorials"
-                value="How to evaluate service mesh performance and analyze the data"
+                value="How gRPC is used in Meshery and Cloud Native Performance (CMP)"
                 className="form-check"
               />
-              <span className="checkbox-label">How to evaluate service mesh performance and analyze the data</span>
+              <span className="checkbox-label">How CRDTs are used in Meshery to facilitate distributed data synchronization</span>
             </label>
             <br />
             <label>
               <Field type="checkbox"
                 name="tutorials"
-                value="How gRPC is used in Meshery and Service Mesh Performance (SMP)"
+                value="How Jekyll, Hugo, Gatsby websites work and how to contribute to Layer5 projects"
                 className="form-check"
               />
-              <span className="checkbox-label">How gRPC is used in Meshery and Service Mesh Performance (SMP)</span>
-            </label>
-            <br />
-            <label>
-              <Field type="checkbox"
-                name="tutorials"
-                value="How Jekyll websites work and how to contribute to Layer5 projects"
-                className="form-check"
-              />
-              <span className="checkbox-label">How Jekyll websites work and how to contribute to Layer5 projects</span>
+              <span className="checkbox-label">How Jekyll, Hugo, Gatsby websites work and how to contribute to Layer5 projects</span>
             </label>
             <br />
             <label>
@@ -440,19 +376,10 @@ const WebBasedForm = () => {
             <label>
               <Field type="checkbox"
                 name="tutorials"
-                value="Introduction to Gatsby and Layer5"
+                value="Introduction to AWS with Meshery"
                 className="form-check"
               />
-              <span className="checkbox-label">Introduction to Gatsby and Layer5</span>
-            </label>
-            <br />
-            <label>
-              <Field type="checkbox"
-                name="tutorials"
-                value="Introduction to Istio"
-                className="form-check"
-              />
-              <span className="checkbox-label">Introduction to Istio</span>
+              <span className="checkbox-label">Introduction to AWS with Meshery</span>
             </label>
             <br />
             <label>
@@ -638,7 +565,7 @@ const WebBasedForm = () => {
               />
               <span>Ok</span>
             </label>
-            <p className="form-name">I see works of other contributors being highlighted in the Layer5, Meshery, and SMP Twitter feeds, the Meshery and SMP showcases, and in the Layer5 YouTube channel.</p>
+            <p className="form-name">I see works of other contributors being highlighted in the Layer5social channels.</p>
             <p className="para label">We try to elevate the works of our contributors. All of our community members are proud of their work and so are we! We want their work and names to be recognized across our collective technology industry. Be sure to follow and engage with these Twitter accounts, YouTube, and LinkedIn accounts.</p>
             <label>
               <Field type="checkbox"
@@ -689,7 +616,7 @@ const WebBasedForm = () => {
             <Button $primary className="btn-one" type="button" title="Community Handbook" $url="https://layer5.io/community/handbook" />
             <Button $secondary className="btn-two" type="button" title="Newcomers Roadmap" $url="https://layer5.io/community/newcomers" />
           </div>
-          <p>We are pleased to have you as a new member!</p>
+          <p>We are pleased to have you as a new member! You have been added to the community mailing list. You can also access the <Link to="/community/calendar">community calendar</Link> to stay updated on weekly meetings. If you prefer not to receive emails, you can <Link to="/unsubscribe">unsubscribe</Link> at anytime.</p>
         </div>
       </Container>
     );

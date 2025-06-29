@@ -121,12 +121,19 @@ const componentsData = [
   },
   {
     id: 16,
+    name: "Icons",
+    description: "Sistent provides a comprehensive collection of icons that can be used across your projects. These icons are designed to be consistent with the overall design language of the Sistent design system, ensuring a cohesive user experience.",
+    url: "/projects/sistent/components/icons",
+    src: "/icons",
+  },
+  {
+    id: 17,
     name: "Tabs",
     description:
         "Tabs component allows users to switch between multiple views or sections within the same page, improving content organization and navigation.",
     url: "/projects/sistent/components/tabs",
     src: "/tabs",
-  },
+  },  
 ];
 
 module.exports = { componentsData };

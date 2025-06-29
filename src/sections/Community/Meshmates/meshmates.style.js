@@ -105,6 +105,34 @@ const MeshMatesWrapper = styled.div`
             }
         }
     }
+
+    .inactive-section {
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid ${props => props.theme.grey212121Toblack}; 
+        
+        h1 {
+            color: ${props => props.theme.secondaryColor};
+        }
+        
+        p {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .emeritus-section {
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid ${props => props.theme.grey212121Toblack};
+        
+        h1 {
+            color: ${props => props.theme.primaryColor};
+        }
+        
+        p {
+            margin-bottom: 2rem;
+        }
+    }
 `;
 
 export default MeshMatesWrapper;
