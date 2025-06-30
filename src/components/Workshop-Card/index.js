@@ -16,8 +16,7 @@ const WorkshopCardContent = ({ frontmatter, content, ID, id }) => {
         </div>
         <div className={content && ID === id ? "card-content-open" : "card-content"}>
           <div>
-            <h3 className="title">{frontmatter.title}</h3>
-            <a href={frontmatter.profile}> - {frontmatter.trainer}</a>
+            <h6 className="title">{frontmatter.title}</h6>
           </div>
         </div>
       </div>
