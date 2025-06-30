@@ -12,7 +12,7 @@ const Image = ({ childImageSharp, extension, publicURL, alt, imgStyle, ...rest }
           width="100%"
           height="auto"
           style={{
-            objectFit: imgStyle?.objectFit || "contain",
+            objectFit: imgStyle?.objectFit || "cover",
             ...imgStyle
           }}
         />
