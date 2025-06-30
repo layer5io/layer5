@@ -232,7 +232,7 @@ const WorkflowSection = () => {
                                 <h2>Execute with efficiency</h2>
 
                                 <ul>
-                                    <li>Spend less time learning and execute more with predefined service mesh patterns that allow accurate configuration and management of service meshes.</li>
+                                    <li>Spend less time learning and execute more with predefined cloud native patterns that allow accurate configuration and management of cloud nativees.</li>
                                     <li>Reduce human error, adjust traffic routing, and de-provision services when no longer required.</li>
                                 </ul>
                                 <div className="img-container">
@@ -251,8 +251,8 @@ const WorkflowSection = () => {
                             <div>
                                 <h2>Organize all deployments</h2>
                                 <ul>
-                                    <li>Utilize Meshery's user-friendly interface, to manage service mesh deployments by observing for and de-provisioning specific mesh configurations that are no longer required.</li>
-                                    <li>Capture and sync your configuration changes and service mesh events across various service mesh implementations making use of the unified data plane that MeshSync provides.</li>
+                                    <li>Utilize Meshery's user-friendly interface, to manage cloud native deployments by observing for and de-provisioning specific mesh configurations that are no longer required.</li>
+                                    <li>Capture and sync your configuration changes and cloud native events across various cloud native implementations making use of the unified data plane that MeshSync provides.</li>
                                 </ul>
                             </div>
                         </div>
@@ -289,7 +289,7 @@ const WorkflowSection = () => {
                             <div className="card-icon">
                                 <img src={CubeTreeIcon} />
                             </div>
-                            <p>Predefined patterns provide design guides for configuration of service meshes to ensure resilience.</p>
+                            <p>Predefined patterns provide design guides for configuration of cloud nativees to ensure resilience.</p>
                         </div>
                     </Col>
 
