@@ -47,7 +47,7 @@ const SolutionsDetailsWrapper = styled.div`
                       }
                 }
 
-                .service{
+                .details-para{
                     color: ${props => props.theme.tertiaryColor};
                     font-size: 16px;
                     padding: 0 0 1.25rem 1.875rem;
@@ -90,7 +90,7 @@ const SolutionsDetails = () => {
                               <Row>
                                 <Col $lg={6} $md={6} $sm={12}>
                                   <div className="text">
-                                    <p>Meshery helps users weigh the value of their cloud native deployments against the overhead cost incurred in running different deployment scenarios and different configurations. This empowers them with much needed information they require to optimize decision making for the business.Predefined patterns and profiles are already setup to make the configuration of service mesh and its features simpler both to understand and execute. This reduces the learning curve required to implement complex service mesh functionalities. Less time spent learning means appropriate utilization of resources which further minimizes incurred cost.</p>
+                                    <p>Meshery helps users weigh the value of their cloud native deployments against the overhead cost incurred in running different deployment scenarios and different configurations. This empowers them with much needed information they require to optimize decision making for the business.Predefined patterns and profiles are already setup to make the configuration of cloud native infrastructure and its features simpler both to understand and execute. This reduces the learning curve required to implement complex cloud native infrastructure functionalities. Less time spent learning means appropriate utilization of resources which further minimizes incurred cost.</p>
                                   </div>
                     
                                 </Col>
@@ -101,25 +101,25 @@ const SolutionsDetails = () => {
                                       <tbody>
                                         <tr>
                                           <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
-                                          <td className="service">
-                                          Make use of our established service mesh patterns since they promote best practices for handling incidents and failures and will guide you on how to design and configure your service mesh for optimal resilience.
+                                          <td className="details-para">
+                                          Make use of our established cloud native infrastructure patterns since they promote best practices for handling incidents and failures and will guide you on how to design and configure your cloud native infrastructure for optimal resilience.
                                           </td>
                                         </tr>
                                         <tr>
                                           <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
-                                          <td className="service">
-                                           Find in our playbooks, step-by-step procedures for identifying, diagnosing, and resolving common incidents that can occur in service mesh environments.
+                                          <td className="details-para">
+                                           Find in our playbooks, step-by-step procedures for identifying, diagnosing, and resolving common incidents that can occur in cloud native infrastructure environments.
                                           </td>
                                         </tr>
                                         <tr>
                                           <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
-                                          <td className="service">
-                                         Use Meshery’s integration of the Chaos Toolkit and our readily available chaos experiment template to mitigate cost when you streamline and speed up workflow while defining and executing controlled chaos experiments on your service mesh deployments.
+                                          <td className="details-para">
+                                         Use Meshery's integration of the Chaos Toolkit and our readily available chaos experiment template to mitigate cost when you streamline and speed up workflow while defining and executing controlled chaos experiments on your cloud native infrastructure deployments.
                                           </td>
                                         </tr>
                                         <tr>
                                           <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
-                                          <td className="service">
+                                          <td className="details-para">
                                           Accurately monitor applications and infrastructure during chaos tests. Using data-driven insights gained from monitoring, you are able to observe how the system behaves under stress and when failures occur and then make improvements in your architecture using this information.
                                           </td>
                                         </tr>
