@@ -33,7 +33,6 @@ const WorkshopCardWrapper = styled.div`
   .image-container {
     display: block;
     width: 100%;
-    height: 50%;
     overflow: hidden;
   }
 
