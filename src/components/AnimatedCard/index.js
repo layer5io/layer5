@@ -16,9 +16,12 @@ const AnimatedCard = ({
   const { isDark } = useStyledDarkMode();
   const canvasRef = useRef(null);
 
-  // Wave visualizer logic (only if showVisualizer is true)
+  // Automatically disable visualizer in light mode for better visual contrast
+  const shouldShowVisualizer = isDark && showVisualizer;
+
+  // Wave visualizer logic (only if shouldShowVisualizer is true)
   useEffect(() => {
-    if (!showVisualizer || !canvasRef.current) return;
+    if (!shouldShowVisualizer || !canvasRef.current) return;
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
@@ -47,7 +50,8 @@ const AnimatedCard = ({
     }
 
     function draw() {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+      // Theme-aware background
+      ctx.fillStyle = isDark ? 'rgba(0, 0, 0, 0.8)' : 'rgba(255, 255, 255, 0.1)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       for (let i = 0; i < 8; i++) {
@@ -68,12 +72,21 @@ const AnimatedCard = ({
         }
 
         const intensity = Math.min(1, freq * 0.3);
-        const r = Math.min(255, 200 + intensity * 55);
-        const g = Math.min(255, 230 + intensity * 25);
-        const b = 200;
-
+        
+        // Theme-aware wave colors
+        if (isDark) {
+          const r = Math.min(255, 200 + intensity * 55);
+          const g = Math.min(255, 230 + intensity * 25);
+          const b = 200;
+          ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, 0.4)`;
+        } else {
+          const r = Math.min(255, 100 + intensity * 55);
+          const g = Math.min(255, 150 + intensity * 25);
+          const b = 255;
+          ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, 0.6)`;
+        }
+        
         ctx.lineWidth = 0.5 + (i * 0.2);
-        ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, 0.4)`;
         ctx.stroke();
       }
     }
@@ -97,7 +110,7 @@ const AnimatedCard = ({
       }
       window.removeEventListener('resize', handleResize);
     };
-  }, [showVisualizer]);
+  }, [shouldShowVisualizer, isDark]);
 
   // Safe prop access with fallbacks
   const cardTitle = frontmatter?.title || "Default Title";
@@ -112,8 +125,8 @@ const AnimatedCard = ({
   // If using original layout, render like the existing Card but with animations
   if (useOriginalLayout) {
     return (
-      <AnimatedCardWrapper fixed={!!frontmatter?.abstract}>
-        {showVisualizer && (
+      <AnimatedCardWrapper fixed={!!frontmatter?.abstract} $isDark={isDark}>
+        {shouldShowVisualizer && (
           <canvas 
             ref={canvasRef}
             className="wave-visualizer"
@@ -191,8 +204,8 @@ const AnimatedCard = ({
 
   // New HTML-based design
   return (
-    <AnimatedCardWrapper>
-      {showVisualizer && (
+    <AnimatedCardWrapper $isDark={isDark}>
+      {shouldShowVisualizer && (
         <canvas 
           ref={canvasRef}
           className="wave-visualizer"
@@ -301,11 +314,13 @@ const AnimatedCard = ({
         <div className="glass-divider"></div>
         
         <div className="card-content">
-          {/* Tags (from HTML design) */}
+          {/* Dynamic tags (from frontmatter or defaults) */}
           <div className="tags-container">
-            <span className="tag tag-aws">AWS</span>
-            <span className="tag tag-azure">Azure</span>
-            <span className="tag tag-gcp">GCP</span>
+            {(frontmatter?.tags || ["AWS", "Azure", "GCP"]).map((tag, index) => (
+              <span key={index} className={`tag tag-${tag.toLowerCase()}`}>
+                {tag}
+              </span>
+            ))}
           </div>
           
           <h3 className="card-title">{cardTitle}</h3>

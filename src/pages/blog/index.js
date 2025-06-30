@@ -74,9 +74,6 @@ const Blog = (props) => {
   };
   return (
     <>
-    <h2>Animated Card start</h2>
-    <TestAnimatedCardPage />
-    <h2>Animated Card end</h2>
       <BlogView
         isListView={isListView}
         setListView={setListView}
@@ -91,6 +88,9 @@ const Blog = (props) => {
         currentPage={currentPage}
         queryResults={queryResults}
       />
+      <h2>Animated Card start</h2>
+    <TestAnimatedCardPage />
+    <h2>Animated Card end</h2>
     
     </>
   );

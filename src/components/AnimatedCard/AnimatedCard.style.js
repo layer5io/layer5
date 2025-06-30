@@ -35,9 +35,11 @@ export const AnimatedCardWrapper = styled.div`
     z-index: 0;
   }
 
-  /* Glass utility class from HTML */
+  /* Glass utility class from HTML - Theme aware */
   .glass {
-    background: rgba(255, 255, 255, 0.05);
+    background: ${props => props.$isDark 
+      ? 'rgba(255, 255, 255, 0.05)' 
+      : 'rgba(0, 0, 0, 0.05)'};
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
   }
@@ -57,10 +59,12 @@ export const AnimatedCardWrapper = styled.div`
     &:nth-child(4) { animation-delay: -3s; }
   }
 
-  /* Gradient border exactly from HTML */
+  /* Gradient border - Theme aware */
   .gradient-border {
     position: relative;
-    background: linear-gradient(135deg, rgba(0, 179, 159, 0.1), rgba(59, 130, 246, 0.1), rgba(0, 211, 169, 0.1));
+    background: ${props => props.$isDark
+      ? 'linear-gradient(135deg, rgba(0, 179, 159, 0.1), rgba(59, 130, 246, 0.1), rgba(0, 211, 169, 0.1))'
+      : 'linear-gradient(135deg, rgba(0, 179, 159, 0.2), rgba(59, 130, 246, 0.2), rgba(0, 211, 169, 0.2))'};
     
     &::before {
       content: '';
@@ -75,68 +79,48 @@ export const AnimatedCardWrapper = styled.div`
     }
   }
 
-  /* Inner glow exactly from HTML */
+  /* Inner glow - Theme aware */
   .inner-glow {
-    box-shadow: 
-      inset 0 0 20px rgba(0, 179, 159, 0.3),
-      inset 0 0 40px rgba(59, 130, 246, 0.2),
-      0 0 30px rgba(0, 211, 169, 0.4);
+    box-shadow: ${props => props.$isDark
+      ? `inset 0 0 20px rgba(0, 179, 159, 0.3),
+         inset 0 0 40px rgba(59, 130, 246, 0.2),
+         0 0 30px rgba(0, 211, 169, 0.4)`
+      : `inset 0 0 20px rgba(0, 179, 159, 0.2),
+         inset 0 0 40px rgba(59, 130, 246, 0.1),
+         0 0 30px rgba(0, 211, 169, 0.3)`};
   }
 
-  /* Card border exactly from HTML */
-  .card-border {
-    background: rgba(0, 179, 159, 0.08);
-    border: 1px solid rgba(0, 179, 159, 0.3);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 
-      0 0 0 1px rgba(0, 179, 159, 0.3),
-      inset 0 0 30px rgba(0, 179, 159, 0.1),
-      inset 0 0 60px rgba(0, 211, 169, 0.05),
-      0 0 50px rgba(0, 211, 169, 0.2);
-  }
-
-  /* Main card container - matches HTML structure */
-  .animated-card-container {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    z-index: 10;
-  }
-
-  .card-wrapper {
-    width: 100%;
-    position: relative;
-    max-width: 20rem; /* max-w-xs from HTML */
-  }
-
-  /* Card content - matches HTML classes */
+  /* Card content - Theme aware */
   .animated-card-content {
     position: relative;
     overflow: hidden;
-    border-radius: 1rem; /* rounded-2xl */
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
-    animation: ${float} 6s ease-in-out infinite; /* animate-float */
+    animation: ${float} 6s ease-in-out infinite;
     
-    /* Apply card-border styles */
-    background: rgba(0, 179, 159, 0.08);
-    border: 1px solid rgba(0, 179, 159, 0.3);
+    /* Theme-aware card styling */
+    background: ${props => props.$isDark
+      ? 'rgba(0, 179, 159, 0.08)'
+      : 'rgba(255, 255, 255, 0.9)'};
+    border: 1px solid ${props => props.$isDark
+      ? 'rgba(0, 179, 159, 0.3)'
+      : 'rgba(0, 179, 159, 0.2)'};
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    box-shadow: 
-      0 0 0 1px rgba(0, 179, 159, 0.3),
-      inset 0 0 30px rgba(0, 179, 159, 0.1),
-      inset 0 0 60px rgba(0, 211, 169, 0.05),
-      0 0 50px rgba(0, 211, 169, 0.2);
+    box-shadow: ${props => props.$isDark
+      ? `0 0 0 1px rgba(0, 179, 159, 0.3),
+         inset 0 0 30px rgba(0, 179, 159, 0.1),
+         inset 0 0 60px rgba(0, 211, 169, 0.05),
+         0 0 50px rgba(0, 211, 169, 0.2)`
+      : `0 4px 6px rgba(0, 0, 0, 0.1),
+         0 1px 3px rgba(0, 0, 0, 0.08),
+         inset 0 0 0 1px rgba(255, 255, 255, 0.1)`};
   }
 
-  /* Database Schema Preview - matches HTML */
+  /* Preview section */
   .preview-section {
-    padding: 1rem; /* p-4 */
+    padding: 1rem;
     display: flex;
     justify-content: center;
     position: relative;
@@ -144,13 +128,15 @@ export const AnimatedCardWrapper = styled.div`
 
   .preview-container {
     width: 100%;
-    height: 12rem; /* h-48 */
-    border-radius: 0.75rem; /* rounded-xl */
+    height: 12rem;
+    border-radius: 0.75rem;
     overflow: hidden;
     position: relative;
     
-    /* Apply gradient-border and inner-glow */
-    background: linear-gradient(135deg, rgba(0, 179, 159, 0.1), rgba(59, 130, 246, 0.1), rgba(0, 211, 169, 0.1));
+    /* Theme-aware background */
+    background: ${props => props.$isDark
+      ? 'linear-gradient(135deg, rgba(0, 179, 159, 0.1), rgba(59, 130, 246, 0.1), rgba(0, 211, 169, 0.1))'
+      : 'linear-gradient(135deg, rgba(0, 179, 159, 0.15), rgba(59, 130, 246, 0.15), rgba(0, 211, 169, 0.15))'};
     
     &::before {
       content: '';
@@ -164,25 +150,28 @@ export const AnimatedCardWrapper = styled.div`
       -webkit-mask-composite: xor;
     }
     
-    box-shadow: 
-      inset 0 0 20px rgba(0, 179, 159, 0.3),
-      inset 0 0 40px rgba(59, 130, 246, 0.2),
-      0 0 30px rgba(0, 211, 169, 0.4);
+    box-shadow: ${props => props.$isDark
+      ? `inset 0 0 20px rgba(0, 179, 159, 0.3),
+         inset 0 0 40px rgba(59, 130, 246, 0.2),
+         0 0 30px rgba(0, 211, 169, 0.4)`
+      : `inset 0 0 20px rgba(0, 179, 159, 0.2),
+         inset 0 0 40px rgba(59, 130, 246, 0.1),
+         0 0 20px rgba(0, 211, 169, 0.2)`};
   }
 
-  /* Animated grid background - matches HTML */
+  /* Animated grid background */
   .grid-background {
     position: absolute;
     inset: 0;
-    opacity: 0.1; /* opacity-10 */
+    opacity: 0.1;
     
     .animated-grid {
       width: 100%;
       height: 100%;
-      animation: ${pulse} 2s ease-in-out infinite; /* animate-pulse */
+      animation: ${pulse} 2s ease-in-out infinite;
       background-image: 
-        linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px), 
-        linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px);
+        linear-gradient(90deg, ${props => props.$isDark ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.3)'} 1px, transparent 1px), 
+        linear-gradient(${props => props.$isDark ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.3)'} 1px, transparent 1px);
       background-size: 15px 15px;
     }
   }
@@ -196,7 +185,7 @@ export const AnimatedCardWrapper = styled.div`
     pointer-events: none;
   }
 
-  /* Animated Database Tables container */
+  /* Database tables container */
   .database-tables {
     position: absolute;
     inset: 0;
@@ -204,50 +193,19 @@ export const AnimatedCardWrapper = styled.div`
     height: 100%;
   }
 
-  /* Kanvas icon hub - matches HTML positioning */
-  .kanvas-icon {
-    position: absolute;
-    bottom: 0.5rem; /* bottom-2 */
-    left: 0.5rem; /* left-2 */
-    transform: translateX(-50%);
-    animation: ${schemaPulse} 4s ease-in-out infinite; /* animate-schema-pulse */
-    
-    .icon-container {
-      width: 2rem; /* w-8 */
-      height: 2rem; /* h-8 */
-      border-radius: 0.75rem; /* rounded-xl */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(79, 70, 229, 0.3); /* border-indigo-400/30 */
-      
-      /* Apply glass and inner-glow */
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      box-shadow: 
-        inset 0 0 20px rgba(0, 179, 159, 0.3),
-        inset 0 0 40px rgba(59, 130, 246, 0.2),
-        0 0 30px rgba(0, 211, 169, 0.4);
-      
-      svg {
-        width: 100%;
-        height: 100%;
-      }
-    }
-  }
-
-  /* Floating table cards - exact positioning from HTML */
+  /* Floating table cards - Theme aware */
   .table-card {
     position: absolute;
-    width: 4rem; /* w-16 */
-    height: 3rem; /* h-12 */
-    border-radius: 0.5rem; /* rounded-lg */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-lg */
+    width: 4rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     
-    /* Apply glass, gradient-border */
-    background: rgba(255, 255, 255, 0.05);
+    /* Theme-aware styling */
+    background: ${props => props.$isDark 
+      ? 'rgba(255, 255, 255, 0.05)' 
+      : 'rgba(255, 255, 255, 0.8)'};
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     
@@ -264,17 +222,17 @@ export const AnimatedCardWrapper = styled.div`
     }
   }
 
-  /* Exact positioning from HTML */
+  /* Table positioning */
   .table-card-1 {
-    left: 0.75rem; /* left-3 */
-    top: 3rem; /* top-12 */
+    left: 0.75rem;
+    top: 3rem;
     animation: ${float} 6s ease-in-out infinite;
     animation-delay: -1s;
   }
 
   .table-card-2 {
-    right: 0.75rem; /* right-3 */
-    top: 3rem; /* top-12 */
+    right: 0.75rem;
+    top: 3rem;
     animation: ${float} 6s ease-in-out infinite;
     animation-delay: -2s;
   }
@@ -282,7 +240,7 @@ export const AnimatedCardWrapper = styled.div`
   .table-card-3 {
     left: 50%;
     transform: translateX(-50%);
-    top: 6rem; /* top-24 */
+    top: 6rem;
     animation: ${float} 6s ease-in-out infinite;
     animation-delay: -3s;
   }
@@ -290,18 +248,20 @@ export const AnimatedCardWrapper = styled.div`
   .table-card-4 {
     left: 50%;
     transform: translateX(-50%);
-    bottom: 0.75rem; /* bottom-3 */
+    bottom: 0.75rem;
     animation: ${float} 6s ease-in-out infinite;
     animation-delay: 0s;
   }
 
-  /* Table headers with exact gradients from HTML */
+  /* Table headers - Theme aware */
   .table-header {
-    color: white;
-    font-size: 0.4375rem; /* text-[7px] */
-    padding: 0.375rem 0.375rem 0.125rem; /* px-1.5 py-0.5 */
+    color: ${props => props.$isDark ? 'white' : '#1f2937'};
+    font-size: 0.4375rem;
+    padding: 0.375rem 0.375rem 0.125rem;
     font-weight: 500;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* border-white/10 */
+    border-bottom: 1px solid ${props => props.$isDark 
+      ? 'rgba(255, 255, 255, 0.1)' 
+      : 'rgba(0, 0, 0, 0.1)'};
     
     &.designs {
       background: linear-gradient(to right, rgba(79, 70, 229, 0.2), rgba(59, 130, 246, 0.2));
@@ -320,53 +280,55 @@ export const AnimatedCardWrapper = styled.div`
     }
   }
 
-  /* Table content styling */
+  /* Table content */
   .table-content {
-    padding: 0.375rem; /* px-1.5 py-0.5 */
+    padding: 0.375rem;
     display: flex;
     flex-direction: column;
-    gap: 0.125rem; /* space-y-0.5 */
+    gap: 0.125rem;
   }
 
   .table-row {
     display: flex;
     align-items: center;
-    gap: 0.125rem; /* space-x-0.5 */
+    gap: 0.125rem;
   }
 
-  /* Status dots with exact colors from HTML */
+  /* Status dots */
   .status-dot {
     border-radius: 50%;
     
     &.yellow {
-      width: 0.25rem; /* w-1 */
-      height: 0.25rem; /* h-1 */
-      background: #fbbf24; /* bg-yellow-400 */
+      width: 0.25rem;
+      height: 0.25rem;
+      background: #fbbf24;
     }
     
     &.blue {
       width: 0.25rem;
       height: 0.25rem;
-      background: #60a5fa; /* bg-blue-400 */
+      background: #60a5fa;
     }
     
     &.green {
       width: 0.25rem;
       height: 0.25rem;
-      background: #34d399; /* bg-green-400 */
+      background: #34d399;
     }
     
     &.orange {
       width: 0.25rem;
       height: 0.25rem;
-      background: #fb923c; /* bg-orange-400 */
+      background: #fb923c;
     }
   }
 
-  /* Table lines with exact sizing from HTML */
+  /* Table lines - Theme aware */
   .table-line {
-    height: 0.125rem; /* h-0.5 */
-    background: rgba(255, 255, 255, 0.3); /* bg-white/30 */
+    height: 0.125rem;
+    background: ${props => props.$isDark 
+      ? 'rgba(255, 255, 255, 0.3)' 
+      : 'rgba(0, 0, 0, 0.3)'};
     border-radius: 0.125rem;
     
     &.w-4 { width: 1rem; }
@@ -376,21 +338,23 @@ export const AnimatedCardWrapper = styled.div`
     &.w-5 { width: 1.25rem; }
   }
 
-  /* Glass divider - matches HTML */
+  /* Glass divider - Theme aware */
   .glass-divider {
     width: 100%;
-    height: 1px; /* h-px */
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+    height: 1px;
+    background: ${props => props.$isDark
+      ? 'linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent)'
+      : 'linear-gradient(to right, transparent, rgba(0, 0, 0, 0.2), transparent)'};
   }
 
-  /* Content section - matches HTML padding */
+  /* Content section */
   .card-content {
-    padding: 1rem; /* p-4 */
+    padding: 1rem;
   }
 
-  /* Tags exactly from HTML */
+  /* Tags - Theme aware */
   .tags-container {
-    margin-bottom: 0.75rem; /* mb-3 */
+    margin-bottom: 0.75rem;
     display: flex;
     flex-wrap: wrap;
     gap: 0.25rem;
@@ -398,210 +362,334 @@ export const AnimatedCardWrapper = styled.div`
 
   .tag {
     display: inline-block;
-    padding: 0.25rem 0.75rem; /* px-3 py-1 */
-    border-radius: 9999px; /* rounded-full */
-    font-size: 0.75rem; /* text-xs */
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
     font-weight: 500;
-    margin-bottom: 0.75rem; /* mb-3 */
+    margin-bottom: 0.75rem;
     
-    /* Apply glass styling */
-    background: rgba(255, 255, 255, 0.05);
+    /* Theme-aware glass styling */
+    background: ${props => props.$isDark 
+      ? 'rgba(255, 255, 255, 0.05)' 
+      : 'rgba(255, 255, 255, 0.8)'};
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     
     &.tag-aws {
-      color: #fb923c; /* text-orange-300 */
-      border: 1px solid rgba(251, 146, 60, 0.3); /* border-orange-400/30 */
-    }
-    
-    &.tag-azure {
-      color: #a78bfa; /* text-indigo-300 */
-      border: 1px solid rgba(79, 70, 229, 0.3); /* border-indigo-400/30 */
-    }
-    
-    &.tag-gcp {
-      color: #38bdf8; /* text-sky-300 */
-      border: 1px solid rgba(14, 165, 233, 0.3); /* border-sky-400/30 */
-    }
-  }
+      color: #fb923c;
+      border: 1px solid rgba(251, 146, 60, 0.3);
+   }
+   
+   &.tag-azure {
+     color: #a78bfa;
+     border: 1px solid rgba(79, 70, 229, 0.3);
+   }
+   
+   &.tag-gcp {
+     color: #38bdf8;
+     border: 1px solid rgba(14, 165, 233, 0.3);
+   }
+ }
 
-  /* Title exactly from HTML */
-  .card-title {
-    font-size: 1.125rem; /* text-lg */
-    font-weight: 500;
-    color: white;
-    margin-bottom: 0.5rem; /* mb-2 */
-  }
+ /* Title - Theme aware */
+ .card-title {
+   font-size: 1.125rem;
+   font-weight: 500;
+   color: ${props => props.$isDark ? 'white' : '#1f2937'};
+   margin-bottom: 0.5rem;
+ }
 
-  /* Description exactly from HTML */
-  .card-description {
-    color: rgba(255, 255, 255, 0.7); /* text-white/70 */
-    margin-bottom: 1rem; /* mb-4 */
-    line-height: 1.5; /* leading-relaxed */
-    font-size: 0.75rem; /* text-xs */
-  }
+ /* Description - Theme aware */
+ .card-description {
+   color: ${props => props.$isDark 
+     ? 'rgba(255, 255, 255, 0.7)' 
+     : 'rgba(0, 0, 0, 0.7)'};
+   margin-bottom: 1rem;
+   line-height: 1.5;
+   font-size: 0.75rem;
+ }
 
-  /* Actions exactly from HTML */
-  .card-actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+ /* Actions */
+ .card-actions {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 0.5rem;
+ }
 
-  .action-btn {
-    color: #34d399; /* text-green-400 */
-    text-decoration: none;
-    transition: color 0.3s ease;
-    display: flex;
-    align-items: center;
-    font-size: 0.75rem; /* text-xs */
-    font-weight: 500;
-    padding: 0.375rem 0.75rem; /* px-3 py-1.5 */
-    border-radius: 0.5rem; /* rounded-lg */
-    border: 1px solid rgba(52, 211, 153, 0.3); /* border-green-400/30 */
-    
-    /* Apply glass styling */
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    
-    &:hover {
-      color: #10b981; /* hover:text-green-300 */
-    }
-    
-    svg {
-      width: 0.75rem; /* w-3 */
-      height: 0.75rem; /* h-3 */
-      margin-left: 0.25rem; /* ml-1 */
-    }
-  }
+ /* Action button - Theme aware */
+ .action-btn {
+   color: #34d399;
+   text-decoration: none;
+   transition: color 0.3s ease;
+   display: flex;
+   align-items: center;
+   font-size: 0.75rem;
+   font-weight: 500;
+   padding: 0.375rem 0.75rem;
+   border-radius: 0.5rem;
+   border: 1px solid rgba(52, 211, 153, 0.3);
+   
+   /* Theme-aware glass styling */
+   background: ${props => props.$isDark 
+     ? 'rgba(255, 255, 255, 0.05)' 
+     : 'rgba(255, 255, 255, 0.8)'};
+   backdrop-filter: blur(20px);
+   -webkit-backdrop-filter: blur(20px);
+   
+   &:hover {
+     color: #10b981;
+   }
+   
+   svg {
+     width: 0.75rem;
+     height: 0.75rem;
+     margin-left: 0.25rem;
+   }
+ }
 
-  .status-badge {
-    color: rgba(0, 0, 0, 0.5); /* text-black-400/50 */
-    font-size: 0.75rem; /* text-xs */
-    padding: 0.25rem 0.5rem; /* px-2 py-1 */
-    border-radius: 9999px; /* rounded-full */
-    border: 1px solid rgba(156, 163, 175, 0.1); /* border-gray-400/10 */
-    
-    /* Apply glass styling */
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
+ /* Status badge - Theme aware */
+ .status-badge {
+   color: ${props => props.$isDark 
+     ? 'rgba(255, 255, 255, 0.5)' 
+     : 'rgba(0, 0, 0, 0.5)'};
+   font-size: 0.75rem;
+   padding: 0.25rem 0.5rem;
+   border-radius: 9999px;
+   border: 1px solid ${props => props.$isDark 
+     ? 'rgba(255, 255, 255, 0.1)' 
+     : 'rgba(0, 0, 0, 0.1)'};
+   
+   /* Theme-aware glass styling */
+   background: ${props => props.$isDark 
+     ? 'rgba(255, 255, 255, 0.05)' 
+     : 'rgba(255, 255, 255, 0.8)'};
+   backdrop-filter: blur(20px);
+   -webkit-backdrop-filter: blur(20px);
+ }
 
-  /* Post thumb block for regular cards */
-  .post-thumb-block {
-    overflow: hidden;
-    height: 11.5rem;
-    border-top-right-radius: 0.5rem;
-    border-top-left-radius: 0.5rem;
+ /* Post meta block - Theme aware */
+ .post-meta-block {
+   height: auto;
+   display: flex;
+   margin-bottom: 0.5rem;
+   flex-wrap: wrap;
+   gap: 0.5rem;
+   
+   .author {
+     text-align: end;
+   }
+   
+   .author, p {
+     color: ${props => props.theme?.whiteSixToBlackSix || (props.$isDark ? '#999' : '#666')};
+     font-size: 0.9rem;
+     font-weight: 400;
+     flex: auto;
+     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+   }
+   
+   .type {
+     text-align: end;
+     font-size: 1rem;
+     font-weight: 400;
+   }
+ }
 
-    .gatsby-image-wrapper, .old-gatsby-image-wrapper {
-      height: 100%;
-      margin-top: 0.2rem;
-      transition: all 0.3s ease-in;
-    }
+ /* Post thumb block for regular cards */
+ .post-thumb-block {
+   overflow: hidden;
+   height: 11.5rem;
+   border-top-right-radius: 0.5rem;
+   border-top-left-radius: 0.5rem;
 
-    img {
-      height: inherit;
-      max-height: 180px;
-      display: block;
-      text-align: center;
-      margin: auto;
-    }
-  }
+   .gatsby-image-wrapper, .old-gatsby-image-wrapper {
+     height: 100%;
+     margin-top: 0.2rem;
+     transition: all 0.3s ease-in;
+   }
 
-  /* Original Card styles for backward compatibility */
-  .post-block {
-    margin-bottom: 2rem;
-    border-radius: 0.5rem;
-    background-color: ${props => props.theme?.grey212121ToWhite || '#fff'};
-    box-shadow: 0px 2px 6px 0px ${props => props.theme?.green00D3A9ToBlackTwo || 'rgba(0, 211, 169, 0.2)'};
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-    animation: ${float} 6s ease-in-out infinite;
+   img {
+     height: inherit;
+     max-height: 180px;
+     display: block;
+     text-align: center;
+     margin: auto;
+   }
+ }
 
-    &:hover {
-      box-shadow: 0px 2px 15px 4px ${props => props.theme?.whiteNineToBlackOne || 'rgba(255, 255, 255, 0.1)'};
-      
-      .post-thumb-block {
-        .gatsby-image-wrapper, .old-gatsby-image-wrapper {
-          transform: scale3d(1.1, 1.1, 1);
-        }
-      }
-    }
-  }
+ /* Original Card styles for backward compatibility - Theme aware */
+ .post-block {
+   margin-bottom: 2rem;
+   border-radius: 0.5rem;
+   background-color: ${props => props.theme?.grey212121ToWhite || (props.$isDark ? '#212121' : '#fff')};
+   box-shadow: 0px 2px 6px 0px ${props => props.theme?.green00D3A9ToBlackTwo || 'rgba(0, 211, 169, 0.2)'};
+   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+   animation: ${float} 6s ease-in-out infinite;
 
-  .post-content-block {
-    padding: 1rem 2rem;
-    height: 8rem;
-  }
+   &:hover {
+     box-shadow: 0px 2px 15px 4px ${props => props.theme?.whiteNineToBlackOne || (props.$isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)')};
+     
+     .post-thumb-block {
+       .gatsby-image-wrapper, .old-gatsby-image-wrapper {
+         transform: scale3d(1.1, 1.1, 1);
+       }
+     }
+   }
+ }
 
-  .post-title {
-    font-size: 1.4rem;
-    font-weight: 400;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+ .post-content-block {
+   padding: 1rem 2rem;
+   height: auto;
+   min-height: 8rem;
+ }
 
-  .post-meta-block {
-    height: auto;
-    display: flex;
-    margin-bottom: 0.5rem;
-    
-    .author {
-      text-align: end;
-    }
-    
-    .author, p {
-      color: ${props => props.theme?.whiteSixToBlackSix || '#666'};
-      font-size: 0.9rem;
-      font-weight: 400;
-      flex: auto;
-      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-    
-    .type {
-      text-align: end;
-      font-size: 1rem;
-      font-weight: 400;
-    }
-  }
+ .post-title {
+   font-size: 1.4rem;
+   font-weight: 400;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   color: ${props => props.theme?.textColor || (props.$isDark ? '#fff' : '#000')};
+ }
 
-  .readmore-btn-wrapper {
-    display: flex;
-    justify-content: flex-start;
-  }
+ .readmore-btn-wrapper {
+   display: flex;
+   justify-content: flex-start;
+   flex-wrap: wrap;
+   gap: 0.5rem;
+ }
 
-  .readmore-btn, .external-link-btn {
-    color: ${props => props.theme?.whiteFourToBlackFour || '#333'};
-    display: flex;
-    flex: auto;
-    align-items: center;
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-    text-decoration: none;
-    
-    svg {
-      font-size: 1.5rem;
-      transition: all 0.3s;
-    }
-    
-    &:hover {
-      color: ${props => props.theme?.secondaryColor || '#00b39f'};
-      
-      svg {
-        transform: scale(1.2);
-      }
-    }
-  }
+ .readmore-btn, .external-link-btn {
+   color: ${props => props.theme?.whiteFourToBlackFour || (props.$isDark ? '#ccc' : '#333')};
+   display: flex;
+   flex: auto;
+   align-items: center;
+   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+   text-decoration: none;
+   
+   svg {
+     font-size: 1.5rem;
+     transition: all 0.3s;
+   }
+   
+   &:hover {
+     color: ${props => props.theme?.secondaryColor || '#00b39f'};
+     
+     svg {
+       transform: scale(1.2);
+     }
+   }
+ }
 
-  .external-link-btn {
-    justify-content: flex-end;
-    
-    svg {
-      font-size: 2rem;
-      padding: 0.25rem;
-      position: relative;
-    }
-  }
+ .external-link-btn {
+   justify-content: flex-end;
+   
+   svg {
+     font-size: 2rem;
+     padding: 0.25rem;
+     position: relative;
+   }
+ }
+
+ /* Mobile Responsive Design */
+ @media screen and (max-width: 768px) {
+   .animated-card-content {
+     margin: 0 0.5rem;
+   }
+   
+   .preview-container {
+     height: 8rem; /* Smaller on mobile */
+   }
+   
+   .table-card {
+     width: 3rem; /* Smaller floating tables */
+     height: 2.5rem;
+   }
+   
+   .table-header {
+     font-size: 0.375rem;
+     padding: 0.25rem;
+   }
+   
+   .card-content {
+     padding: 0.75rem;
+   }
+   
+   .card-title {
+     font-size: 1rem;
+   }
+   
+   .card-description {
+     font-size: 0.875rem;
+   }
+   
+   .tags-container {
+     gap: 0.125rem;
+   }
+   
+   .tag {
+     padding: 0.125rem 0.5rem;
+     font-size: 0.625rem;
+   }
+   
+   .card-actions {
+     flex-direction: column;
+     align-items: stretch;
+     gap: 0.75rem;
+   }
+   
+   .action-btn {
+     justify-content: center;
+   }
+   
+   /* Original card mobile styles */
+   .post-block {
+     width: auto;
+     margin: auto auto 2rem;
+   }
+   
+   .post-content-block {
+     height: auto;
+     min-height: 10rem;
+     padding: 1rem;
+   }
+   
+   .post-title {
+     font-size: 1.2rem;
+     white-space: normal;
+   }
+   
+   .post-meta-block {
+     flex-direction: column;
+     gap: 0.25rem;
+     
+     .author {
+       text-align: start;
+     }
+   }
+ }
+
+ @media screen and (max-width: 480px) {
+   .preview-container {
+     height: 6rem;
+   }
+   
+   .table-card {
+     width: 2.5rem;
+     height: 2rem;
+   }
+   
+   .card-content {
+     padding: 0.5rem;
+   }
+   
+   .card-title {
+     font-size: 0.875rem;
+   }
+   
+   .post-content-block {
+     padding: 0.75rem;
+   }
+ }
 `;
