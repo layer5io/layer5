@@ -49,6 +49,11 @@ export const HandbookWrapper = styled.div`
         margin-top: -36rem;
         margin-left: 20rem;
       }
+      @media (max-width: 749px) {
+        margin-top: 0;
+        margin-left: 0;
+        padding-top: 2rem;
+      }
       display: flex;
 
       @media screen and (min-width: 768px) and (max-height: 1145px) {
@@ -298,8 +303,8 @@ export const HandbookWrapper = styled.div`
         padding-top: 7rem;
       }
       .page-section{
-        margin-top: -2rem;
-        margin-left: 0;
+        margin-top: 0; !important
+        margin-left: 0; !important
         padding: 1rem 2.5rem;
       
         .table-container {
