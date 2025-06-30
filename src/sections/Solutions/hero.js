@@ -88,7 +88,7 @@ const Hero = () => {
                   $secondary
                   title="Book a demo"
                   $external={true}
-                  $url=""
+                  $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true"
                 />
               </div>
             </Col>
