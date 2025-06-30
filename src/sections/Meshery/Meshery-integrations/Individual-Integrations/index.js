@@ -63,7 +63,7 @@ const IndividualIntegrations = ({ data }) => {
   return (
     <IntegrationPageWrapper>
       <section className="herosection">
-        <Image {...frontmatter.integrationIcon} alt={frontmatter.title} />
+        <Image {...frontmatter.integrationIcon} alt={frontmatter.title} imgStyle={{ objectFit: "contain" }} />
         <h2>
           {frontmatter.title} with <span className="hero-header">Meshery</span>
         </h2>
