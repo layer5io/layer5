@@ -1,10 +1,10 @@
 import React, { useState, useCallback, useMemo } from "react";
 import PropTypes from "prop-types";
-import { SistentThemeProvider, KubernetesIcon, DesignIcon, CustomTooltip } from "@layer5/sistent";
+import { SistentThemeProvider, KubernetesIcon, DesignIcon, CustomTooltip } from "@sistent/sistent";
 import { SistentLayout } from "../../sistent-layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import debounce from "lodash.debounce";
-import * as Icons from "@layer5/sistent";
+import * as Icons from "@sistent/sistent";
 import Code from "../../../../../components/CodeBlock";
 
 // Example code snippets for usage
@@ -14,7 +14,7 @@ const codes = [
     SistentThemeProvider,
     KubernetesIcon,
     DesignIcon,
-  } from "@layer5/sistent";
+  } from "@sistent/sistent";
   `,
   `
   <SistentThemeProvider>
@@ -45,7 +45,7 @@ const IconCard = ({ icon, isDark }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleIconClick = async () => {
-    const importStatement = `import { ${icon.name} } from "@layer5/sistent";`;
+    const importStatement = `import { ${icon.name} } from "@sistent/sistent";`;
     try {
       await navigator.clipboard.writeText(importStatement);
       setShowPopup(true);
@@ -71,7 +71,7 @@ const IconCard = ({ icon, isDark }) => {
             }}
           >
             {
-              `import { ${icon.name} } from "@layer5/sistent";`
+              `import { ${icon.name} } from "@sistent/sistent";`
             }
           </h6>
           <button
