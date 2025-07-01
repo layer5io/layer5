@@ -1,0 +1,81 @@
+import CodeBlock from "../../../../reusecore/CodeBlock";
+
+## Dialog
+
+The `dialog` component provide a model interface for displaying important information or interactive content such as forms. It is built using a collection of smaller reusable Sistent components.
+
+---
+
+### Related Components
+
+- `Dialog`
+- `DialogTitle`
+- `DialogContent`
+- `DialogContentText`
+- `DialogActions`
+- `Slide`
+
+These components work together to form a complete Dialog UI.
+
+---
+
+### Usage Example
+
+<CodeBlock language="jsx">
+{`
+import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
+  Slide,
+  Button
+} from "@layer5/sistent";
+
+function SlideTransition(props) {
+  return <Slide direction="up" {...props} />;
+}
+
+<Dialog open={open} TransitionComponent={SlideTransition} onClose={handleClose}>
+  <DialogTitle>{"Use Google's location service?"}</DialogTitle>
+  <DialogContent>
+    <DialogContentText>
+      Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
+    </DialogContentText>
+  </DialogContent>
+  <DialogActions>
+    <Button onClick={handleClose}>Disagree</Button>
+    <Button onClick={handleAgree}>Agree</Button>
+  </DialogActions>
+</Dialog>
+`}
+</CodeBlock>
+
+---
+
+### Component Descriptions
+
+- **Dialog**: Root wrapper component for the modal interface.
+- **DialogTitle**: Header text shown at the top of the dialog.
+- **DialogContent**: Main content area for form elements or details.
+- **DialogContentText**: Subtext or description used within content.
+- **DialogActions**: Container for action buttons (e.g., Cancel, Submit).
+- **Slide**: Optional transition component used for slide-in animation.
+
+---
+
+### Styling Guidelines
+
+- Wrap all components correctly inside Dialog.
+- maintain consistent spacing between DialogContent and DialogActions.
+- Use slide for animated entry/exit when needed.
+
+
+### Accessibility Notes
+
+- Use `aria-labelledby` and `aria-describedby` props to improve accessibility.
+- Ensure buttons have clear text labels.
+- Avoid using Dialogs for non-critical UI to preserve user experience.
+
+---
