@@ -16,10 +16,10 @@ const AnimatedCard = ({
   const { isDark } = useStyledDarkMode();
   const canvasRef = useRef(null);
 
-  // Automatically disable visualizer in light mode for better visual contrast
-  const shouldShowVisualizer = isDark && showVisualizer;
+  // Enable visualizer in both light and dark mode when requested
+  const shouldShowVisualizer = showVisualizer;
 
-  // Wave visualizer logic (only if shouldShowVisualizer is true)
+  // Wave visualizer logic (works in both themes)
   useEffect(() => {
     if (!shouldShowVisualizer || !canvasRef.current) return;
 
@@ -51,7 +51,11 @@ const AnimatedCard = ({
 
     function draw() {
       // Theme-aware background
-      ctx.fillStyle = isDark ? 'rgba(0, 0, 0, 0.8)' : 'rgba(255, 255, 255, 0.1)';
+      if (isDark) {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+      } else {
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+      }
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       for (let i = 0; i < 8; i++) {
@@ -75,15 +79,17 @@ const AnimatedCard = ({
         
         // Theme-aware wave colors
         if (isDark) {
+          // Dark mode: Warm colors
           const r = Math.min(255, 200 + intensity * 55);
           const g = Math.min(255, 230 + intensity * 25);
           const b = 200;
           ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, 0.4)`;
         } else {
-          const r = Math.min(255, 100 + intensity * 55);
-          const g = Math.min(255, 150 + intensity * 25);
-          const b = 255;
-          ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, 0.6)`;
+          // Light mode: Cool colors with better contrast
+          const r = Math.min(150, 50 + intensity * 100);
+          const g = Math.min(200, 100 + intensity * 100);
+          const b = Math.min(255, 150 + intensity * 105);
+          ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, 0.3)`;
         }
         
         ctx.lineWidth = 0.5 + (i * 0.2);
@@ -111,6 +117,58 @@ const AnimatedCard = ({
       window.removeEventListener('resize', handleResize);
     };
   }, [shouldShowVisualizer, isDark]);
+
+  // Helper function to get tag color mapping
+  const getTagColorClass = (tag) => {
+    const normalizedTag = tag.toLowerCase();
+    
+    // AWS/Azure/GCP get special styling
+    if (normalizedTag === 'aws') return 'tag-aws';
+    if (normalizedTag === 'azure') return 'tag-azure';
+    if (normalizedTag === 'gcp') return 'tag-gcp';
+    
+    // Other tags get dynamic colors based on common categories
+    const tagColorMap = {
+      // Cloud platforms
+      'kubernetes': 'tag-kubernetes',
+      'docker': 'tag-docker',
+      'openshift': 'tag-openshift',
+      
+      // DevOps tools
+      'devops': 'tag-devops',
+      'cicd': 'tag-cicd',
+      'jenkins': 'tag-jenkins',
+      
+      // Service mesh
+      'istio': 'tag-istio',
+      'linkerd': 'tag-linkerd',
+      'consul': 'tag-consul',
+      
+      // Monitoring
+      'prometheus': 'tag-prometheus',
+      'grafana': 'tag-grafana',
+      'monitoring': 'tag-monitoring',
+      
+      // Languages/Frameworks
+      'golang': 'tag-golang',
+      'javascript': 'tag-javascript',
+      'python': 'tag-python',
+      'react': 'tag-react',
+      
+      // Content types
+      'tutorial': 'tag-tutorial',
+      'guide': 'tag-guide',
+      'blog': 'tag-blog',
+      'news': 'tag-news',
+      
+      // Performance
+      'performance': 'tag-performance',
+      'security': 'tag-security',
+      'testing': 'tag-testing'
+    };
+    
+    return tagColorMap[normalizedTag] || 'tag-default';
+  };
 
   // Safe prop access with fallbacks
   const cardTitle = frontmatter?.title || "Default Title";
@@ -314,10 +372,10 @@ const AnimatedCard = ({
         <div className="glass-divider"></div>
         
         <div className="card-content">
-          {/* Dynamic tags (from frontmatter or defaults) */}
+          {/* Dynamic tags with proper styling */}
           <div className="tags-container">
             {(frontmatter?.tags || ["AWS", "Azure", "GCP"]).map((tag, index) => (
-              <span key={index} className={`tag tag-${tag.toLowerCase()}`}>
+              <span key={index} className={`tag ${getTagColorClass(tag)}`}>
                 {tag}
               </span>
             ))}
@@ -374,7 +432,7 @@ const AnimatedCard = ({
                 Learn More <IoIosArrowRoundForward />
               </span>
             )}
-            <span className="status-badge">Live</span>
+            {/* <span className="status-badge">Live</span> */}
           </div>
         </div>
       </div>
