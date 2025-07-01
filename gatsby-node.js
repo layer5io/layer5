@@ -73,6 +73,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     isPermanent: true,
   });
   createRedirect({
+    fromPath: "/learn/service-mesh-workshops",
+    toPath: "/learn/workshops",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
     fromPath: "/workshops",
     toPath: "/learn/workshops",
     redirectInBrowser: true,

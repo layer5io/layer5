@@ -42,6 +42,11 @@ const WorkshopCardWrapper = styled.div`
     width: 100%;
     height: auto;
     margin-bottom: 1.25rem;
+
+    .image {
+      height: 35rem;
+    }
+      
   }
 
   .image {
@@ -67,7 +72,7 @@ const WorkshopCardWrapper = styled.div`
     display: block;
     width: 100%;
     text-align: center;
-    margin-top: 0.625rem;
+    margin-top: -5rem;
     transition: all 0.25s ease-in;
   }
 
