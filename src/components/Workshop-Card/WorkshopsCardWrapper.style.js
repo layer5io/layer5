@@ -67,7 +67,7 @@ const WorkshopCardWrapper = styled.div`
     display: block;
     width: 100%;
     text-align: center;
-    margin-top: -5rem;
+    margin-top: 0.625rem;
     transition: all 0.25s ease-in;
   }
 
