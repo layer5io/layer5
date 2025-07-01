@@ -42,11 +42,6 @@ const WorkshopCardWrapper = styled.div`
     width: 100%;
     height: auto;
     margin-bottom: 1.25rem;
-
-    .image {
-      height: 35rem;
-    }
-      
   }
 
   .image {
