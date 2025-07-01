@@ -42,6 +42,11 @@ const WorkshopCardWrapper = styled.div`
     width: 100%;
     height: auto;
     margin-bottom: 1.25rem;
+
+    .image {
+      height: 40rem;
+    }
+      
   }
 
   .image {
@@ -52,7 +57,7 @@ const WorkshopCardWrapper = styled.div`
     box-shadow: 0 0 black;
 
     .gatsby-image-wrapper,.old-gatsby-image-wrapper {
-      height: 90%;
+      height: 100%;
     }
   }
 
