@@ -16,10 +16,11 @@ const BannerSectionWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  background: ${(props) => props.theme.blackToWhite || "transparent"};
   padding: 6rem 2rem;
   min-height: 30rem;
   overflow: hidden;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
   @media (max-width: 992px) {
     padding: 4rem 2rem;
@@ -49,8 +50,9 @@ const SpiralLayer = styled(SpiralBg)`
   height: auto;               
   z-index: 0;
   
-  filter: blur(5px);
+  filter: blur(5px) ${(props) => props.theme.siteLinkBrightness ? `brightness(${props.theme.siteLinkBrightness})` : ""};
   will-change: filter;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 `;
 
 const GradientLayer = styled.div`
@@ -61,23 +63,21 @@ const GradientLayer = styled.div`
   height: 100%;
   z-index: 1;
 
-  background: 
- 
+  background: ${(props) => props.theme.bannerGradientBackgroundToWhite || `
     linear-gradient(
       180deg,
       rgba(0, 13, 18, 0.5)   0%,
       rgba(0, 13, 18, 0  ) 100%
     ),
- 
     linear-gradient(
       99.08deg,
       rgba(0,  13, 18, 0.12) 6.95%,
       rgba(81, 99,107, 0.4 ) 57.85%
-    );
+    )`};
 
- 
   filter: blur(20px);
   will-change: filter;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 `;
 
 
@@ -123,8 +123,9 @@ const MainHeading = styled.h1`
   font-weight: 600;
   font-size: 64px;
   line-height: 1.1;
-  color: ${({ theme }) => theme.white || "#ffffff"};
+  color: ${({ theme }) => theme.whiteToBlack || "#ffffff"};
   margin: 0;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
   @media (max-width: 600px) {
     br {
@@ -140,9 +141,10 @@ const SubHeading = styled.h2`
   line-height: 36px;       
   letter-spacing: 0;       
   vertical-align: middle;   
-  color: ${({ theme }) => theme.white || "#ffffff"};
+  color: ${({ theme }) => theme.whiteToBlack || "#ffffff"};
   margin: 0;
   max-width: 500px;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
   @media (max-width: 992px) {
     max-width: 100%;
@@ -169,6 +171,8 @@ const BannerGraphic = styled.div`
     height: auto;
     display: block;
     max-height: 400px;
+    filter: ${(props) => props.theme.siteLinkBrightness ? `brightness(${props.theme.siteLinkBrightness})` : "brightness(1.0)"};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
   @media (max-width: 992px) {

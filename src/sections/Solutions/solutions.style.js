@@ -4,6 +4,8 @@ const SolutionsWrapper = styled.div`
 
   display: flex;
   flex-direction: column;
+  background: ${(props) => props.theme.body};
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
   :div:first-child {
     align-items: center;
@@ -12,6 +14,8 @@ const SolutionsWrapper = styled.div`
   .heading{
       text-align: center;
       padding: 1rem 0;
+      color: ${(props) => props.theme.text};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   .catalog {
     margin: 1rem;
@@ -22,11 +26,18 @@ const SolutionsWrapper = styled.div`
 
       .desc-text {
         padding: 0 1rem 0 1rem;
+        color: ${(props) => props.theme.text};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        
         h1{
             font-weight: 600;
+            color: ${(props) => props.theme.text};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .heading-1 {
             font-weight: 500;
+            color: ${(props) => props.theme.text};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .heading-2 {
             font-weight: 700;
@@ -35,8 +46,9 @@ const SolutionsWrapper = styled.div`
             transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .desc-p {
-
             margin: 1.875rem 0 2.5rem 0;
+            color: ${(props) => props.theme.text};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
       }
   }

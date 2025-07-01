@@ -12,9 +12,10 @@ const IssuesSectionWrapper = styled.section`
 
   display: flex;
   justify-content: center;
-  background: transparent;
+  background: ${(props) => props.theme.blackToWhite || "transparent"};
   padding: 6rem 2rem;
   overflow: hidden;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
   @media (max-width: 992px) {
     padding: 4rem 2rem;
@@ -41,8 +42,9 @@ const IssuesHeading = styled.h2`
   font-size: 56px;
   line-height: 64px;
   letter-spacing: 0;
-  color: ${({ theme }) => theme.white || "#ffffff"};
+  color: ${({ theme }) => theme.whiteToBlack || "#ffffff"};
   margin: 0;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
   @media (max-width: 600px) {
     text-align: center;
@@ -79,8 +81,9 @@ const IssuesText = styled.p`
   line-height: 28px;
   letter-spacing: 0;
   vertical-align: middle;
-  color: ${({ theme }) => theme.white || "#ffffff"};
+  color: ${({ theme }) => theme.whiteToBlack || "#ffffff"};
   margin: 0;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
   @media (max-width: 600px) {
     font-size: 15px;

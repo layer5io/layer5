@@ -9,8 +9,9 @@ const BtnContainer = styled.div`
         justify-content: center;
         Button {
             font-size: 20px;
-            color: black !important;
+            color: ${(props) => props.theme.blackToWhite} !important;
             font-weight: 600;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
     @media (max-width: 418px) {
@@ -21,7 +22,7 @@ const BtnContainer = styled.div`
     }
 `;
 
-const DemoBtn = ({ title, style }) => {
+const DemoBtn = ({ style }) => {
   return (
     <BtnContainer className="btn" style={style} >
       <Button
