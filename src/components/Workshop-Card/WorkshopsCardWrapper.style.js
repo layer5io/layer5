@@ -26,12 +26,14 @@ const WorkshopCardWrapper = styled.div`
 
   .title {
     text-align: center;
+    font-size: 1.25rem;
     padding-bottom: 0.625rem;
   }
 
   .image-container {
     display: block;
     width: 100%;
+    height: 50%;
     overflow: hidden;
   }
 
