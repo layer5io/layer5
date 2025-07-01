@@ -35,7 +35,7 @@ const PictureSliderWrapper = styled.div`
 
     .slick-prev,
     .slick-next {
-      display: none !important;
+      display: none ;
     }
   }
 
