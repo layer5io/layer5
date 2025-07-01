@@ -33,7 +33,7 @@ const WorkshopCardWrapper = styled.div`
   .image-container {
     display: block;
     width: 100%;
-    height: 50%;
+    height: 65%;
     overflow: hidden;
   }
 
@@ -59,7 +59,7 @@ const WorkshopCardWrapper = styled.div`
   .card-content {
     display: block;
     width: 100%;
-    padding-top: 0.625rem;
+    padding: 1rem;
     transition: all 0.25s ease-in;
   }
 
