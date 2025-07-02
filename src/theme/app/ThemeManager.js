@@ -44,13 +44,23 @@ export const ThemeManagerProvider = (props) => {
     setDidLoad(true);
   }, []);
 
-  const toggleDark = (value) => {
-    const newIsDark = value ?? !isDark;
-    const theme = newIsDark ? ThemeSetting.DARK : ThemeSetting.LIGHT;
-    setIsDark(newIsDark);
-    setThemeSetting(theme);
-    localStorage.setItem(DarkThemeKey, theme);
-  };
+ const toggleDark = (value) => {
+  const newIsDark = value ?? !isDark;
+  const theme = newIsDark ? ThemeSetting.DARK : ThemeSetting.LIGHT;
+
+  setIsDark(newIsDark);
+  setThemeSetting(theme);
+  localStorage.setItem(DarkThemeKey, theme);
+   
+  setTimeout(() => {
+    document.querySelectorAll("table, thead, tbody, tr, td, th").forEach((el) => {
+      el.style.display = "none";
+      void el.offsetHeight;
+      el.style.display = "";
+    });
+  }, 100); \
+};
+
 
   const changeThemeSetting = (setting) => {
     switch (setting) {
