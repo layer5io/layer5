@@ -2,6 +2,21 @@ import styled from "styled-components";
 
 export const MemberSingleWrapper = styled.div`
   margin: 4.5rem 0 3.125rem 0;
+
+  @media screen and (max-width: 1000px) {
+    .page-heading {
+      text-align: center;
+    }
+
+    .profile-image-col {
+      text-align: center;
+    }
+
+    .member-details {
+      flex-wrap: wrap !important;
+    }
+  }
+
   .backBtn {
     font-weight: 600;
     margin-bottom: 1rem;

@@ -57,10 +57,10 @@ const MemberSingle = ({ frontmatter }) => {
             </Col>
             <Col xs={12} sm={12} lg={6}>
               <h1 className="page-heading">Layer5 Community Member</h1>
-            </Col>
+            </Col>Layer5 Community Member
           </Row>
-          <Row>
-            <Col $xs={12} $sm={12} $lg={6}>
+          <Row className="member-details">
+            <Col $xs={12} $sm={12} $lg={6} className="profile-image-col">
               <Image
                 className={
                   status.includes("Inactive")
