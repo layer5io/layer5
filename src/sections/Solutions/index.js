@@ -8,6 +8,7 @@ import ManageProcedures from "./manage-procedures";
 import OrganizeDeployments from "./organize-deployments";
 import Review from "./review";
 import QASection from "./qa-section";
+import WhatsNext from "./whats-next";
 
 const Solutions = (props) => {
   return (
@@ -20,6 +21,7 @@ const Solutions = (props) => {
         <OrganizeDeployments/>
         <Review/>
         <QASection/>
+        <WhatsNext/>
       </Container>
     </SolutionsWrapper>
   );

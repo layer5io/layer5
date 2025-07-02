@@ -1,5 +1,5 @@
-import React from "react";
 import styled from "styled-components";
+import React from "react";
 import reviewerImage from "./images/reviewer.svg";
 
 const ReviewWrapper = styled.section`

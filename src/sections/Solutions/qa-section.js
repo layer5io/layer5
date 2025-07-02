@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import { useState } from "react";
+import React from "react";
+import styled from "styled-components";
 
 const QAWrapper = styled.section`
   width: 100vw;
@@ -65,7 +66,7 @@ const QuestionText = styled.h3`
   font-family: "Qanelas Soft", sans-serif;
   font-weight: 600;
   font-size: 1.2rem;
-  color: ${props => props.isOpen ? '#00B39F' : 'white'};
+  color: ${props => props.isOpen ? "#00B39F" : "white"};
   margin: 0;
   transition: color 0.3s ease;
   
@@ -81,18 +82,18 @@ const ToggleIcon = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
-  color: ${props => props.isOpen ? '#00B39F' : 'white'};
+  color: ${props => props.isOpen ? "#00B39F" : "white"};
   transition: all 0.3s ease;
   font-weight: 300;
   
   &::before {
-    content: '${props => props.isOpen ? '−' : '+'}';
+    content: '${props => props.isOpen ? "−" : "+"}';
   }
 `;
 
 const AnswerContent = styled.div`
-  padding: ${props => props.isOpen ? '0 2rem 2rem 2rem' : '0 2rem'};
-  max-height: ${props => props.isOpen ? '500px' : '0'};
+  padding: ${props => props.isOpen ? "0 2rem 2rem 2rem" : "0 2rem"};
+  max-height: ${props => props.isOpen ? "500px" : "0"};
   overflow: hidden;
   transition: all 0.3s ease;
 `;
@@ -109,51 +110,51 @@ const AnswerText = styled.p`
 `;
 
 const QASection = () => {
-  const [openIndex, setOpenIndex] = useState(0); // First item open by default
+    const [openIndex, setOpenIndex] = useState(0); // First item open by default
 
-  const qaData = [
-    {
-      question: "Lorem ipsum dolor sit amet consectetur?",
-      answer: "Lorem ipsum dolor sit amet consectetur. Aliquam odio enim aliquam tristique nisl volutpat maecenas ullamcorper. Id lobortis id amet orci enim eget fringilla. Faucibus praesent proin id sed vitae nam. Placerat placerat tincidunt turpis bibendum tristique est in sit urna. Nibh facilisi fringilla consequat lobortis vel habitant erat mattis. Consectetur semper dignissim proin phasellus adipiscing elementum id. Est at vulputate diam faucibus molestie erat a. Phasellus placerat aliquam pellentesque sed egestas convallis. Aliquam senectus urna vel phasellus purus nec."
-    },
-    {
-      question: "Lorem ipsum dolor sit amet consectetur?",
-      answer: "Lorem ipsum dolor sit amet consectetur. Aliquam odio enim aliquam tristique nisl volutpat maecenas ullamcorper. Id lobortis id amet orci enim eget fringilla. Faucibus praesent proin id sed vitae nam. Placerat placerat tincidunt turpis bibendum tristique est in sit urna. Nibh facilisi fringilla consequat lobortis vel habitant erat mattis. Consectetur semper dignissim proin phasellus adipiscing elementum id. Est at vulputate diam faucibus molestie erat a. Phasellus placerat aliquam pellentesque sed egestas convallis. Aliquam senectus urna vel phasellus purus nec."
-    },
-    {
-      question: "Lorem ipsum dolor sit amet consectetur?",
-      answer: "Lorem ipsum dolor sit amet consectetur. Aliquam odio enim aliquam tristique nisl volutpat maecenas ullamcorper. Id lobortis id amet orci enim eget fringilla. Faucibus praesent proin id sed vitae nam. Placerat placerat tincidunt turpis bibendum tristique est in sit urna. Nibh facilisi fringilla consequat lobortis vel habitant erat mattis. Consectetur semper dignissim proin phasellus adipiscing elementum id. Est at vulputate diam faucibus molestie erat a. Phasellus placerat aliquam pellentesque sed egestas convallis. Aliquam senectus urna vel phasellus purus nec."
-    }
-  ];
+    const qaData = [
+        {
+            question: "Lorem ipsum dolor sit amet consectetur?",
+            answer: "Lorem ipsum dolor sit amet consectetur. Aliquam odio enim aliquam tristique nisl volutpat maecenas ullamcorper. Id lobortis id amet orci enim eget fringilla. Faucibus praesent proin id sed vitae nam. Placerat placerat tincidunt turpis bibendum tristique est in sit urna. Nibh facilisi fringilla consequat lobortis vel habitant erat mattis. Consectetur semper dignissim proin phasellus adipiscing elementum id. Est at vulputate diam faucibus molestie erat a. Phasellus placerat aliquam pellentesque sed egestas convallis. Aliquam senectus urna vel phasellus purus nec."
+        },
+        {
+            question: "Lorem ipsum dolor sit amet consectetur?",
+            answer: "Lorem ipsum dolor sit amet consectetur. Aliquam odio enim aliquam tristique nisl volutpat maecenas ullamcorper. Id lobortis id amet orci enim eget fringilla. Faucibus praesent proin id sed vitae nam. Placerat placerat tincidunt turpis bibendum tristique est in sit urna. Nibh facilisi fringilla consequat lobortis vel habitant erat mattis. Consectetur semper dignissim proin phasellus adipiscing elementum id. Est at vulputate diam faucibus molestie erat a. Phasellus placerat aliquam pellentesque sed egestas convallis. Aliquam senectus urna vel phasellus purus nec."
+        },
+        {
+            question: "Lorem ipsum dolor sit amet consectetur?",
+            answer: "Lorem ipsum dolor sit amet consectetur. Aliquam odio enim aliquam tristique nisl volutpat maecenas ullamcorper. Id lobortis id amet orci enim eget fringilla. Faucibus praesent proin id sed vitae nam. Placerat placerat tincidunt turpis bibendum tristique est in sit urna. Nibh facilisi fringilla consequat lobortis vel habitant erat mattis. Consectetur semper dignissim proin phasellus adipiscing elementum id. Est at vulputate diam faucibus molestie erat a. Phasellus placerat aliquam pellentesque sed egestas convallis. Aliquam senectus urna vel phasellus purus nec."
+        }
+    ];
 
-  const toggleQuestion = (index) => {
-    setOpenIndex(openIndex === index ? -1 : index);
-  };
+    const toggleQuestion = (index) => {
+        setOpenIndex(openIndex === index ? -1 : index);
+    };
 
-  return (
-    <QAWrapper>
-      <Inner>
-        <Title>Some answers to more of your questions</Title>
-        <QAList>
-          {qaData.map((item, index) => (
-            <QAItem key={index}>
-              <QuestionHeader onClick={() => toggleQuestion(index)}>
-                <QuestionText isOpen={openIndex === index}>
-                  {item.question}
-                </QuestionText>
-                <ToggleIcon isOpen={openIndex === index} />
-              </QuestionHeader>
-              <AnswerContent isOpen={openIndex === index}>
-                <AnswerText isOpen={openIndex === index}>
-                  {item.answer}
-                </AnswerText>
-              </AnswerContent>
-            </QAItem>
-          ))}
-        </QAList>
-      </Inner>
-    </QAWrapper>
-  );
+    return (
+        <QAWrapper>
+            <Inner>
+                <Title>Some answers to more of your questions</Title>
+                <QAList>
+                    {qaData.map((item, index) => (
+                        <QAItem key={index}>
+                            <QuestionHeader onClick={() => toggleQuestion(index)}>
+                                <QuestionText isOpen={openIndex === index}>
+                                    {item.question}
+                                </QuestionText>
+                                <ToggleIcon isOpen={openIndex === index} />
+                            </QuestionHeader>
+                            <AnswerContent isOpen={openIndex === index}>
+                                <AnswerText isOpen={openIndex === index}>
+                                    {item.answer}
+                                </AnswerText>
+                            </AnswerContent>
+                        </QAItem>
+                    ))}
+                </QAList>
+            </Inner>
+        </QAWrapper>
+    );
 };
 
 export default QASection;
