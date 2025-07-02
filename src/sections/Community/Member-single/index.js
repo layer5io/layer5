@@ -57,7 +57,7 @@ const MemberSingle = ({ frontmatter }) => {
             </Col>
             <Col xs={12} sm={12} lg={6}>
               <h1 className="page-heading">Layer5 Community Member</h1>
-            </Col>Layer5 Community Member
+            </Col>
           </Row>
           <Row className="member-details">
             <Col $xs={12} $sm={12} $lg={6} className="profile-image-col">
