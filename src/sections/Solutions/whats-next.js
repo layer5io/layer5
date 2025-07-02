@@ -1,6 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
-
+import styled from "styled-components";
+import React from "react";  
 const WhatsNextWrapper = styled.section`
   width: 100vw;
   position: relative;
@@ -11,6 +10,10 @@ const WhatsNextWrapper = styled.section`
   background: ${props => props.theme.blackToWhite};
   padding: 6rem 0;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  @media (max-width: 768px) {
+    padding: 4rem 0;
+  }
 `;
 
 const Inner = styled.div`
@@ -26,6 +29,11 @@ const Inner = styled.div`
     flex-direction: column;
     gap: 3rem;
     padding: 0 2rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+    gap: 2rem;
   }
 `;
 
@@ -58,24 +66,26 @@ const Description = styled.p`
 const RightCard = styled.div`
   background: #00B39F;
   border-radius: 20px;
-  width: 452px;
-  height: 352px;
   padding: 52px 40px;
-  gap: 4px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex-shrink: 0;
+  min-width: 300px;
+  max-width: 452px;
 
   @media (max-width: 992px) {
     width: 100%;
-    height: auto;
-    min-height: 352px;
+    max-width: 100%;
+    min-width: auto;
   }
 
-  @media (max-width: 500px) {
-    width: 100%;
-    height: auto;
+  @media (max-width: 768px) {
     padding: 40px 30px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 30px 20px;
   }
 `;
 
@@ -145,9 +155,9 @@ const WhatsNext = () => {
                     <CardDescription>
                         See specific products that execute our solution propositions.
                     </CardDescription>
-          <CallToAction href="https://cloud.layer5.io/login" target="_blank" rel="noopener noreferrer">
-            Set up your free account
-          </CallToAction>
+                    <CallToAction href="https://cloud.layer5.io/login" target="_blank" rel="noopener noreferrer">
+                        Set up your free account
+                    </CallToAction>
                 </RightCard>
             </Inner>
         </WhatsNextWrapper>

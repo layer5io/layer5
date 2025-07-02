@@ -53,6 +53,10 @@ const SpiralLayer = styled(SpiralBg)`
   filter: blur(5px) ${(props) => props.theme.siteLinkBrightness ? `brightness(${props.theme.siteLinkBrightness})` : ""};
   will-change: filter;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 const GradientLayer = styled.div`
@@ -177,6 +181,10 @@ const BannerGraphic = styled.div`
 
   @media (max-width: 992px) {
     max-width: 500px;
+  }
+
+  @media (max-width: 900px) {
+    display: none;
   }
 
   @media (max-width: 600px) {

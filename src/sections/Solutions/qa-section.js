@@ -14,6 +14,10 @@ const QAWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 4rem 0;
+  }
 `;
 
 const Inner = styled.div`
@@ -21,6 +25,10 @@ const Inner = styled.div`
   max-width: 1140px;
   margin: 0 auto;
   padding: 0 2rem;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
 `;
 
 const Title = styled.h2`
@@ -60,6 +68,14 @@ const QuestionHeader = styled.div`
   &:hover {
     background: rgba(255, 255, 255, 0.05);
   }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+  }
 `;
 
 const QuestionText = styled.h3`
@@ -96,6 +112,14 @@ const AnswerContent = styled.div`
   max-height: ${props => props.isOpen ? "500px" : "0"};
   overflow: hidden;
   transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: ${props => props.isOpen ? "0 1.5rem 1.5rem 1.5rem" : "0 1.5rem"};
+  }
+
+  @media (max-width: 480px) {
+    padding: ${props => props.isOpen ? "0 1rem 1rem 1rem" : "0 1rem"};
+  }
 `;
 
 const AnswerText = styled.p`

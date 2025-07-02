@@ -16,6 +16,10 @@ const ReviewWrapper = styled.section`
   justify-content: center;
   align-items: center;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  @media (max-width: 768px) {
+    padding: 4rem 0;
+  }
 `;
 
 const ReviewCard = styled.div`
@@ -27,6 +31,15 @@ const ReviewCard = styled.div`
   text-align: center;
   position: relative;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 3rem 2rem 2rem 2rem;
+    width: 95%;
+  }
+
+  @media (max-width: 480px) {
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+  }
 `;
 
 const Avatar = styled.img`
