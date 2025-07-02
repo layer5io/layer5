@@ -13,7 +13,7 @@ const ManageProceduresWrapper = styled.section`
   margin-left: -50vw;
   margin-right: -50vw;
   background: ${(props) => props.theme.blackToWhite || "transparent"};
-  padding: 6rem 0;
+  padding: 3rem 0;
   overflow: hidden;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 

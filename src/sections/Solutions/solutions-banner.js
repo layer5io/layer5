@@ -1,5 +1,5 @@
-import React from "react";
 import styled from "styled-components";
+import React from "react";
 import DemoBtn from "./solutions-buttons";
 
 import { ReactComponent as HeroGraphicSVG } from "./images/solutions-cost.svg";
@@ -17,7 +17,7 @@ const BannerSectionWrapper = styled.section`
   align-items: center;
   justify-content: center;
   background: ${(props) => props.theme.blackToWhite || "transparent"};
-  padding: 6rem 2rem;
+  padding: 3rem 2rem;
   min-height: 30rem;
   overflow: hidden;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
