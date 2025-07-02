@@ -37,7 +37,7 @@ export const HandbookWrapper = styled.div`
     }
 
     .page-section{
-      margin-top: -36rem;
+      margin-top: -47rem;
       margin-left: 20rem;
       h2{
         padding-top: 7rem;
@@ -48,7 +48,7 @@ export const HandbookWrapper = styled.div`
         margin-top: -7rem;
       }
       display: flex;
-      
+
       @media screen and (min-width: 1280px) and (max-width: 1350px) {
         margin-left:16rem;
       }
