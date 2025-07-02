@@ -177,110 +177,110 @@ const ChecklistText = styled.p`
 
 // Custom SVG checkmark
 const CheckmarkSVG = () => (
-  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
-      fill="#00B39F"
-    />
-  </svg>
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+            fill="#00B39F"
+        />
+    </svg>
 );
 
 const MinimizeComplexitySection = () => {
-  return (
-    <MinimizeComplexitySectionWrapper>
-      <Container>
-        <Inner>
-          <MainHeading>
-            Minimize complexity and<br />
-            automate workflows
-          </MainHeading>
+    return (
+        <MinimizeComplexitySectionWrapper>
+            <Container>
+                <Inner>
+                    <MainHeading>
+                        Minimize complexity and<br />
+                        automate workflows
+                    </MainHeading>
 
-          <ContentWrapper>
-            <LeftColumn>
-              <DescriptionText>
-                Meshery helps users weigh the value of their cloud native deployments against the 
-                overhead cost incurred in running different deployment scenarios and different 
-                configurations. This empowers them with much needed information they require 
-                to optimize decision making for the business.
-              </DescriptionText>
-              
-              <DescriptionText>
-                Predefined patterns and profiles are already setup to make the configuration of 
-                service mesh and its features simpler both to understand and execute. This 
-                reduces the learning curve required to implement complex service mesh 
-                functionalities. Less time spent learning means appropriate utilization of 
-                resources which further minimizes incurred cost.
-              </DescriptionText>
+                    <ContentWrapper>
+                        <LeftColumn>
+                            <DescriptionText>
+                                Meshery helps users weigh the value of their cloud native deployments against the
+                                overhead cost incurred in running different deployment scenarios and different
+                                configurations. This empowers them with much needed information they require
+                                to optimize decision making for the business.
+                            </DescriptionText>
 
-              <ProductsHeading>
-                Layers Products and Tools Deployed
-              </ProductsHeading>
-              
-              <ProductIcons>
-                <MesheryLogo />
-                <MeshsyncLogo />
-                <ServiceMeshLogo />
-              </ProductIcons>
-            </LeftColumn>
+                            <DescriptionText>
+                                Predefined patterns and profiles are already setup to make the configuration of
+                                service mesh and its features simpler both to understand and execute. This
+                                reduces the learning curve required to implement complex service mesh
+                                functionalities. Less time spent learning means appropriate utilization of
+                                resources which further minimizes incurred cost.
+                            </DescriptionText>
 
-            <RightColumn>
-              <RightHeading>
-                Expect efficiency when you apply our suggestions and utilize our 
-                toolset with respect to incident management and chaos 
-                experiment discharge. Achieve optimization as you:
-              </RightHeading>
+                            <ProductsHeading>
+                                Layers Products and Tools Deployed
+                            </ProductsHeading>
 
-              <ChecklistItem>
-                <CheckIcon>
-                  <CheckmarkSVG />
-                </CheckIcon>
-                <ChecklistText>
-                  Make use of our established service mesh patterns since they promote best 
-                  practices for handling incidents and failures and will guide you on how to 
-                  design and configure your service mesh for optimal resilience.
-                </ChecklistText>
-              </ChecklistItem>
+                            <ProductIcons>
+                                <MesheryLogo />
+                                <MeshsyncLogo />
+                                <ServiceMeshLogo />
+                            </ProductIcons>
+                        </LeftColumn>
 
-              <ChecklistItem>
-                <CheckIcon>
-                  <CheckmarkSVG />
-                </CheckIcon>
-                <ChecklistText>
-                  Find in our playbooks, step-by-step procedures for identifying, diagnosing, 
-                  and resolving common incidents that can occur in service mesh 
-                  environments.
-                </ChecklistText>
-              </ChecklistItem>
+                        <RightColumn>
+                            <RightHeading>
+                                Expect efficiency when you apply our suggestions and utilize our
+                                toolset with respect to incident management and chaos
+                                experiment discharge. Achieve optimization as you:
+                            </RightHeading>
 
-              <ChecklistItem>
-                <CheckIcon>
-                  <CheckmarkSVG />
-                </CheckIcon>
-                <ChecklistText>
-                  Use Meshery's integration of the Chaos Toolkit and our readily available 
-                  chaos experiment template to mitigate cost when you streamline and 
-                  speed up workflow while defining and executing controlled chaos 
-                  experiments on your service mesh deployments.
-                </ChecklistText>
-              </ChecklistItem>
+                            <ChecklistItem>
+                                <CheckIcon>
+                                    <CheckmarkSVG />
+                                </CheckIcon>
+                                <ChecklistText>
+                                    Make use of our established service mesh patterns since they promote best
+                                    practices for handling incidents and failures and will guide you on how to
+                                    design and configure your service mesh for optimal resilience.
+                                </ChecklistText>
+                            </ChecklistItem>
 
-              <ChecklistItem>
-                <CheckIcon>
-                  <CheckmarkSVG />
-                </CheckIcon>
-                <ChecklistText>
-                  Accurately monitor applications and infrastructure during chaos tests. 
-                  Using data-driven insights gained from monitoring, you are able to observe 
-                  how the system behaves under stress and when failures occur and then 
-                  make improvements in your architecture using this information.
-                </ChecklistText>
-              </ChecklistItem>
-            </RightColumn>
-          </ContentWrapper>
-        </Inner>
-      </Container>
-    </MinimizeComplexitySectionWrapper>
-  );
+                            <ChecklistItem>
+                                <CheckIcon>
+                                    <CheckmarkSVG />
+                                </CheckIcon>
+                                <ChecklistText>
+                                    Find in our playbooks, step-by-step procedures for identifying, diagnosing,
+                                    and resolving common incidents that can occur in service mesh
+                                    environments.
+                                </ChecklistText>
+                            </ChecklistItem>
+
+                            <ChecklistItem>
+                                <CheckIcon>
+                                    <CheckmarkSVG />
+                                </CheckIcon>
+                                <ChecklistText>
+                                    Use Meshery's integration of the Chaos Toolkit and our readily available
+                                    chaos experiment template to mitigate cost when you streamline and
+                                    speed up workflow while defining and executing controlled chaos
+                                    experiments on your service mesh deployments.
+                                </ChecklistText>
+                            </ChecklistItem>
+
+                            <ChecklistItem>
+                                <CheckIcon>
+                                    <CheckmarkSVG />
+                                </CheckIcon>
+                                <ChecklistText>
+                                    Accurately monitor applications and infrastructure during chaos tests.
+                                    Using data-driven insights gained from monitoring, you are able to observe
+                                    how the system behaves under stress and when failures occur and then
+                                    make improvements in your architecture using this information.
+                                </ChecklistText>
+                            </ChecklistItem>
+                        </RightColumn>
+                    </ContentWrapper>
+                </Inner>
+            </Container>
+        </MinimizeComplexitySectionWrapper>
+    );
 };
 
 export default MinimizeComplexitySection;

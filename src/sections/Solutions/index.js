@@ -1,9 +1,10 @@
 import React from "react";
 import { Container } from "../../reusecore/Layout";
-import BannerSection from "./solutions-banner";
-import SolutionsWrapper from "./solutions.style";
-import IssuesSection from "./solutions-issues";
 import MinimizeComplexitySection from "./minimize-complexity-section";
+import BannerSection from "./solutions-banner";
+import IssuesSection from "./solutions-issues";
+import SolutionsWrapper from "./solutions.style";
+import ManageProcedures from "./manage-procedures";
 
 const Solutions = (props) => {
   return (
@@ -12,6 +13,7 @@ const Solutions = (props) => {
         <BannerSection />
         <IssuesSection />
         <MinimizeComplexitySection />
+        <ManageProcedures />
       </Container>
     </SolutionsWrapper>
   );

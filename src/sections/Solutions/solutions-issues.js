@@ -92,6 +92,15 @@ const IssuesText = styled.p`
 `;
 
 const IssuesSection = () => {
+  const [isClient, setClient] = React.useState(false);
+  React.useEffect(() => {
+    setClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
+
   return (
     <IssuesSectionWrapper>
       <Container>
