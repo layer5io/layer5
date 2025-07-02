@@ -10,6 +10,7 @@ export const MemberSingleWrapper = styled.div`
 
     .profile-header {
       flex-direction: column;
+      margin-bottom: 1.5rem;
     }
 
     .profile-image-col {
