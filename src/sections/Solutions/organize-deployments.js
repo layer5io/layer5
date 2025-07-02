@@ -138,57 +138,57 @@ const SmallCardText = styled.p`
 
 
 const OrganizeDeployments = () => {
-    return (
-        <OrganizeDeploymentsWrapper>
-            <Inner>
-                <MainCard>
-                    <MainCardContent>
-                        <CardHeader>
-                            <img src={DeployIcon} alt="Organize all deployments" />
-                            <CardTitle>Organize all deployments</CardTitle>
-                        </CardHeader>
-                        <CardBody>
-                            <CardText>
+  return (
+    <OrganizeDeploymentsWrapper>
+      <Inner>
+        <MainCard>
+          <MainCardContent>
+            <CardHeader>
+              <img src={DeployIcon} alt="Organize all deployments" />
+              <CardTitle>Organize all deployments</CardTitle>
+            </CardHeader>
+            <CardBody>
+              <CardText>
                                 Utilize Meshery's user-friendly interface, to manage service mesh deployments by observing for and de-provisioning specific mesh configurations that are no longer required.
-                            </CardText>
-                            <CardText>
+              </CardText>
+              <CardText>
                                 Capture and sync your configuration changes and service mesh events across various service mesh implementations making use of the unified data plane that MeshSync provides.
-                            </CardText>
-                        </CardBody>
-                    </MainCardContent>
-                    <MainCardImage>
-                        <img src={DeployImage} alt="Deployments Diagram" />
-                    </MainCardImage>
-                </MainCard>
-                <SmallCardsWrapper>
-                    <SmallCard>
-                        <SmallCardIcon src={IntegrationIcon} alt="Integration" />
-                        <SmallCardText>
+              </CardText>
+            </CardBody>
+          </MainCardContent>
+          <MainCardImage>
+            <img src={DeployImage} alt="Deployments Diagram" />
+          </MainCardImage>
+        </MainCard>
+        <SmallCardsWrapper>
+          <SmallCard>
+            <SmallCardIcon src={IntegrationIcon} alt="Integration" />
+            <SmallCardText>
                             Integrate tools already in use and get rid of potential frustrations that could hinder maximum functionality.
-                        </SmallCardText>
-                    </SmallCard>
-                    <SmallCard>
-                        <SmallCardIcon src={MoneyIcon} alt="Compare cost" />
-                        <SmallCardText>
+            </SmallCardText>
+          </SmallCard>
+          <SmallCard>
+            <SmallCardIcon src={MoneyIcon} alt="Compare cost" />
+            <SmallCardText>
                             Compare cost incurred in running scenarios and configurations to value of deployed resources.
-                        </SmallCardText>
-                    </SmallCard>
-                    <SmallCard>
-                        <SmallCardIcon src={PatternsIcon} alt="Predefined patterns" />
-                        <SmallCardText>
+            </SmallCardText>
+          </SmallCard>
+          <SmallCard>
+            <SmallCardIcon src={PatternsIcon} alt="Predefined patterns" />
+            <SmallCardText>
                             Predefined patterns provide design guides for configuration of service meshes to ensure resilience.
-                        </SmallCardText>
-                    </SmallCard>
-                    <SmallCard>
-                        <SmallCardIcon src={ChaosIcon} alt="Chaos engineering" />
-                        <SmallCardText>
+            </SmallCardText>
+          </SmallCard>
+          <SmallCard>
+            <SmallCardIcon src={ChaosIcon} alt="Chaos engineering" />
+            <SmallCardText>
                             Incorporation of chaos engineering tools facilitates conduction of controlled chaos experiments.
-                        </SmallCardText>
-                    </SmallCard>
-                </SmallCardsWrapper>
-            </Inner>
-        </OrganizeDeploymentsWrapper>
-    );
+            </SmallCardText>
+          </SmallCard>
+        </SmallCardsWrapper>
+      </Inner>
+    </OrganizeDeploymentsWrapper>
+  );
 };
 
 export default OrganizeDeployments;

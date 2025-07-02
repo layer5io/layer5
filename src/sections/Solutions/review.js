@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import reviewerImage from './images/reviewer.svg';
+import React from "react";
+import styled from "styled-components";
+import reviewerImage from "./images/reviewer.svg";
 
 const ReviewWrapper = styled.section`
   width: 100vw;

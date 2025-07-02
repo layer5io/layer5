@@ -107,45 +107,45 @@ const CardImage = styled.img`
 `;
 
 const ManageProcedures = () => {
-    return (
-        <ManageProceduresWrapper>
-            <Inner>
-                <Heading>Manage procedures and output conveniently</Heading>
-                <CardsWrapper>
-                    <Card>
-                        <CardHeader>
-                            <img src={OptimizeWorkflowIcon} alt="Optimize Workflow" />
-                            <CardTitle>Optimize workflow</CardTitle>
-                        </CardHeader>
-                        <CardBody>
-                            <CardText>
+  return (
+    <ManageProceduresWrapper>
+      <Inner>
+        <Heading>Manage procedures and output conveniently</Heading>
+        <CardsWrapper>
+          <Card>
+            <CardHeader>
+              <img src={OptimizeWorkflowIcon} alt="Optimize Workflow" />
+              <CardTitle>Optimize workflow</CardTitle>
+            </CardHeader>
+            <CardBody>
+              <CardText>
                                 Streamline and accelerate workflow while you monitor infrastructure during controlled chaos tests and thus diminish cost.
-                            </CardText>
-                            <CardText>
+              </CardText>
+              <CardText>
                                 Further use data insights gathered while monitoring to optimize your architecture.
-                            </CardText>
-                        </CardBody>
-                        <CardImage src={OptimizeWorkflowImage} alt="Optimize Workflow Diagram" />
-                    </Card>
-                    <Card>
-                        <CardHeader>
-                            <img src={ExecuteWithEfficiencyIcon} alt="Execute with efficiency" />
-                            <CardTitle>Execute with efficiency</CardTitle>
-                        </CardHeader>
-                        <CardBody>
-                            <CardText>
+              </CardText>
+            </CardBody>
+            <CardImage src={OptimizeWorkflowImage} alt="Optimize Workflow Diagram" />
+          </Card>
+          <Card>
+            <CardHeader>
+              <img src={ExecuteWithEfficiencyIcon} alt="Execute with efficiency" />
+              <CardTitle>Execute with efficiency</CardTitle>
+            </CardHeader>
+            <CardBody>
+              <CardText>
                                 Spend less time learning and execute more with predefined service mesh patterns that allow accurate configuration and management of service meshes.
-                            </CardText>
-                            <CardText>
+              </CardText>
+              <CardText>
                                 Reduce human error, adjust traffic routing, and de-provision services when no longer required.
-                            </CardText>
-                        </CardBody>
-                        <CardImage src={ExecuteWithEfficiencyImage} alt="Execute with Efficiency Diagram" />
-                    </Card>
-                </CardsWrapper>
-            </Inner>
-        </ManageProceduresWrapper>
-    );
+              </CardText>
+            </CardBody>
+            <CardImage src={ExecuteWithEfficiencyImage} alt="Execute with Efficiency Diagram" />
+          </Card>
+        </CardsWrapper>
+      </Inner>
+    </ManageProceduresWrapper>
+  );
 };
 
 export default ManageProcedures;
