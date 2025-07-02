@@ -37,8 +37,14 @@ export const HandbookWrapper = styled.div`
     }
 
     .page-section{
-      margin-top: -47rem;
+      margin-top: -49rem;
       margin-left: 20rem;
+
+       @media screen and (max-width: 751px) {
+        margin-top: 0;
+        margin-left: 0;
+      }
+
       h2{
         padding-top: 7rem;
         margin-top: -7rem;
@@ -48,27 +54,10 @@ export const HandbookWrapper = styled.div`
         margin-top: -7rem;
       }
       display: flex;
-
-      @media screen and (min-width: 1280px) and (max-width: 1350px) {
-        margin-left:16rem;
-      }
-    }
-    .conduct-section{
-      @media screen and (min-width: 751px) {
-        margin-top:-43rem;
-      }
-            @media screen and (min-width: 768px) and (max-height: 1145px) {
-       margin-top : -66vh ! important;
-
     }
 
   }
 
-    }
-    .page-section .heading-top{
-      @media screen and (min-width: 751px) {
-        padding-top:1rem;
-      }
     }
     .sidebar {
         margin: 0;
