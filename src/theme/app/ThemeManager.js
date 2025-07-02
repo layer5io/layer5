@@ -44,6 +44,28 @@ export const ThemeManagerProvider = (props) => {
     setDidLoad(true);
   }, []);
 
+  useEffect(() => {
+  if (!didLoad) return;
+
+  const body = document.body;
+
+  if (isDark) {
+    body.classList.add("dark");
+    body.classList.remove("light");
+  } else {
+    body.classList.add("light");
+    body.classList.remove("dark");
+  }
+
+  requestAnimationFrame(() => {
+    document.querySelectorAll("table").forEach((table) => {
+      table.style.display = "none";
+      void table.offsetHeight;
+      table.style.display = "";
+    });
+  });
+  }, [isDark, didLoad]);
+
   const toggleDark = (value) => {
     const newIsDark = value ?? !isDark;
     const theme = newIsDark ? ThemeSetting.DARK : ThemeSetting.LIGHT;

@@ -150,3 +150,15 @@ body {
     max-width: 1110px;
     margin: auto;
 }
+
+body.dark table tbody tr,
+body.dark table thead tr {
+  background-color: #2a2a2a !important;
+  color: #f0f0f0 !important;
+}
+
+body.light table tbody tr,
+body.light table thead tr {
+  background-color: #ffffff !important;
+  color: #212121 !important;
+}
