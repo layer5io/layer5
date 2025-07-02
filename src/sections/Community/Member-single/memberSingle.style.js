@@ -5,7 +5,11 @@ export const MemberSingleWrapper = styled.div`
 
   @media screen and (max-width: 1000px) {
     .page-heading {
-      text-align: center;
+      text-align: center !important;
+    }
+
+    .profile-header {
+      flex-direction: column;
     }
 
     .profile-image-col {
@@ -20,9 +24,6 @@ export const MemberSingleWrapper = styled.div`
   .backBtn {
     font-weight: 600;
     margin-bottom: 1rem;
-    @media screen and (max-width: 62rem) {
-      display: none;
-    }
     a {
       display: flex;
       color: ${(props) => props.theme.primaryColor};

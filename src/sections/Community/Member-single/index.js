@@ -46,7 +46,7 @@ const MemberSingle = ({ frontmatter }) => {
     <MemberSingleWrapper>
       <Container>
         <div>
-          <Row>
+          <Row className="profile-header" >
             <Col xs={12} sm={12} lg={6}>
               <div className="backBtn">
                 <Link to="/community/members">
