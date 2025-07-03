@@ -118,7 +118,8 @@ const Header = () => {
         <Container>
           <Row className="row platform-header-row">
             <Col className="col header-detail" $md={6}>
-              <h1 className="header-title">Platdorm Engineering</h1>
+              <h1 className="header-title">Platform Engineering</h1>
+
               <p className="header-title-description">
                 Deliver reliable self-service toolchains and workflows for all dev teams, at scale, with observability, security, and automation.
               </p>
