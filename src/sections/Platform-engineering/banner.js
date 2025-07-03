@@ -11,7 +11,8 @@ const BestPracticesBanner = () => {
           Discover best practices and reusable templates for Kubernetes and cloud-native infrastructure.
         </span>
         <Button $primary title="Cloud native catalog" $url="/cloud-native-management/catalog">
-          <BsArrowUpRight size={16} className="icon-right" />
+          <BsArrowUpRight size={16} className="icon-left" />
+
         </Button>
       </div>
     </ObservabilityBannerWrapper>
