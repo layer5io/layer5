@@ -26,14 +26,14 @@ const WorkshopCardWrapper = styled.div`
 
   .title {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     padding-bottom: 0.625rem;
   }
 
   .image-container {
     display: block;
     width: 100%;
-    height: 50%;
+    height: 65%;
     overflow: hidden;
   }
 
@@ -42,6 +42,10 @@ const WorkshopCardWrapper = styled.div`
     width: 100%;
     height: auto;
     margin-bottom: 1.25rem;
+    
+    img{
+      object-fit: contain !important;
+    }
   }
 
   .image {
@@ -53,13 +57,15 @@ const WorkshopCardWrapper = styled.div`
 
     .gatsby-image-wrapper,.old-gatsby-image-wrapper {
       height: 90%;
+      max-height: 40rem;
+
     }
   }
 
   .card-content {
     display: block;
     width: 100%;
-    padding-top: 0.625rem;
+    padding: 1rem;
     transition: all 0.25s ease-in;
   }
 

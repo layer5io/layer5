@@ -23,7 +23,7 @@ const WorkshopsPage = () => {
     graphql`query allWorkshops {
   allMdx(
     sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
+    filter: {fields: {collection: {eq: "workshops"}}}
   ) {
     nodes {
       id

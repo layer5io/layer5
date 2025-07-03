@@ -193,7 +193,7 @@ const WorkshopsSection = () => {
     graphql`query workshopsList {
   allMdx(
     sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
+    filter: {fields: {collection: {eq: "workshops"}}}
   ) {
     nodes {
       frontmatter {
