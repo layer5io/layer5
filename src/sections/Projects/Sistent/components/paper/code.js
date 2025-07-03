@@ -3,7 +3,7 @@ import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import TabButton from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
-import { SistentThemeProvider, Paper } from "@layer5/sistent";
+import { SistentThemeProvider, Paper } from "@sistent/sistent";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import { CodeBlock } from "../button/code-block";
 

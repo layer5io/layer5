@@ -1,5 +1,5 @@
 import React from "react";
-import { SistentThemeProvider } from "@layer5/sistent";
+import { SistentThemeProvider } from "@sistent/sistent";
 import { SistentLayout } from "../../sistent-layout";
 import { Row } from "../../../../../reusecore/Layout";
 

@@ -23,13 +23,13 @@ import MesheryArchitecture from "./meshery-architecture.webp";
 
 <BlogWrapper>
 
-[Meshery](https://meshery.io) is the cloud native management plane offering lifecycle, configuration and performance management of service meshes and their workloads.
+[Meshery](https://meshery.io) is the cloud native management plane offering lifecycle, configuration and performance management of cloud native infrastructure and their workloads.
 
-Layer5 community members are hard at work providing our users with easy access to any service mesh and myriad management features. New releases for Meshery are published on a frequent cadence with new features and bug fixes. Today, we are announcing version 0.4.0 of Meshery. This summary highlights Meshery's latest developments and elucidates new features.
+Layer5 community members are hard at work providing our users with easy access to any cloud native infrastructureand myriad management features. New releases for Meshery are published on a frequent cadence with new features and bug fixes. Today, we are announcing version 0.4.0 of Meshery. This summary highlights Meshery's latest developments and elucidates new features.
 
 ## What's New?
 
-The v0.4.0 release of Meshery introduces a plethora of new features and bug fixes across service mesh environments spanning Meshery and it's various adapters.
+The v0.4.0 release of Meshery introduces a plethora of new features and bug fixes across cloud native infrastructure environments spanning Meshery and it's various adapters.
 
 ### Meshery's CLI: `mesheryctl`
 **New Command Structure**<br/>
@@ -37,13 +37,13 @@ The v0.4.0 release of Meshery introduces a plethora of new features and bug fixe
 - Global Commands and Flags
 - Meshery Lifecycle Management
 - Performance Management
-- Service Mesh Lifecycle Management
+- Infrastructure Lifecycle Management
 - Workload Lifecycle Management
 
 Organizing commnands [under these categories](https://docs.meshery.io/reference/mesheryctl) is done with both the intention to make `mesheryctl` functions intuitively at your fingertips, but also to make room for forthcoming functionality.
 
 **Exposing Performance Management in the CLI**<br/>
-`perf:` a new `mesheryctl`command. Introduction of new performance sub-commands, now benchmark your service mesh at the tip of your fingers using our new CLI command `perf`.
+`perf:` a new `mesheryctl`command. Introduction of new performance sub-commands, now benchmark your cloud native infrastructure at the tip of your fingers using our new CLI command `perf`.
 
 **Support for Scoop** <br/>
 Support extended to Scoop Bucket. You can now install mesheryctl on your Windows machine with Scoop Bucket. Visit the [Meshery Scoop Bucket](https://github.com/layer5io/scoop-bucket) to install Meshery on Windows.
@@ -54,15 +54,15 @@ The `cleanup` is used to reset your Meshery deployment configuration back to its
 ### MeshSync<br/>
 <img src={operator} class="image-right" alt="meshery-operator-dark" />
 
--  A component of the [Meshery Operator](https://github.com/layer5io/meshery-operator), MeshSync can scan the environment to get the deployment details of specific types of service meshes and the connected Kubernetes cluster.
--  MeshSync is a new component addition to Meshery. Meshery needs to be constantly updated given that service meshes and their underlying infrastructure are dynamic, constantly changing.  Meshery operations should be resilient in the face of this change.
--  MeshSync brings a service mesh agnostic object model that defines relationships between all objects under management.
+-  A component of the [Meshery Operator](https://github.com/layer5io/meshery-operator), MeshSync can scan the environment to get the deployment details of specific types of cloud native infrastructure and the connected Kubernetes cluster.
+-  MeshSync is a new component addition to Meshery. Meshery needs to be constantly updated given that cloud native infrastructure and their underlying infrastructure are dynamic, constantly changing.  Meshery operations should be resilient in the face of this change.
+-  MeshSync brings a infrastructure agnostic object model that defines relationships between all objects under management.
 
 ### Meshery Adapter for Citrix Service Mesh (beta)<br/>
 
 <img src={MesheryArchitecture} class="image-right" alt="meshery-architecture" />
 
-- [Citrix Service Mesh](https://github.com/layer5io/meshery-cpx) is now a supported service mesh. Meshery incorporates support for the Citrix ADC CPX, which is a cloud-ready, container-based application delivery controller that can be provisioned on a Docker host.
+- [Citrix Service Mesh](https://github.com/layer5io/meshery-cpx) is now a supported integration. Meshery incorporates support for the Citrix ADC CPX, which is a cloud-ready, container-based application delivery controller that can be provisioned on a Docker host.
 - CPX runs as the Istio Data Plane component, displacing Envoy as the default data plane service proxy.<br/>
 
 ### Security & Authentication
@@ -93,6 +93,6 @@ The `cleanup` is used to reset your Meshery deployment configuration back to its
 To get a more comprehensive list of the bug fixes and enhancements packaged in the v0.4.0 release, see the [Meshery Documentation](https://docs.meshery.io/project/releases)
 
 
-_**P.S.: If these topics excite you and you want to explore the beautiful realm of service meshes, come and say "Hi" on our [Slack Channel](http://slack.layer5.io) and one of us will reach out to you!**_
+_**P.S.: If these topics excite you and you want to explore the beautiful realm of cloud native infrastructure, come and say "Hi" on our [Slack Channel](http://slack.layer5.io) and one of us will reach out to you!**_
 
 </BlogWrapper>
