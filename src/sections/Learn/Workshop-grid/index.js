@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Container, Row, Col } from "../../../reusecore/Layout";
@@ -55,25 +55,43 @@ const WorkshopsPage = () => {
 }`
   );
 
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const scrollRefMap = useRef({});
+
+
   const toggleActive = (id) => {
-    if (open){
-      if (ID === id){
-        setOpen(false);
-        setContent(false);
-        setID("");
-      } else {
-        setOpen(false);
-        setContent(false);
-        setID(id);
-        setContent(true);
-        setOpen(true);
+    const targetElement = scrollRefMap.current[id];
+
+    if (open && ID === id) {
+      setOpen(false);
+      setContent(false);
+      setID("");
+
+      if (targetElement) {
+        // Wait for DOM to collapse, then scroll
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            const rect = targetElement.getBoundingClientRect();
+            const y = rect.top + window.scrollY; // adjust for header
+            window.scrollTo({
+              top: y,
+              behavior: "smooth",
+            });
+          });
+        });
       }
     } else {
+      if (targetElement) {
+        const rect = targetElement.getBoundingClientRect();
+        const y = rect.top + window.scrollY - 20;
+        setScrollPosition(y);
+      }
       setID(id);
       setContent(true);
       setOpen(true);
     }
   };
+
 
   return (
     <WorkshopPageWrapper>
@@ -87,7 +105,9 @@ const WorkshopsPage = () => {
             }}>
               {data.allMdx.nodes.map(({ id, frontmatter, fields, body }) => (
                 <Col {...content && ID === id ? { $xs: 12, $sm: 12, $lg: 12 } : { $xs: 12, $sm: 6, $lg: 4 } } key={id} className="workshop-grid-col">
-                  <div className="workshop-grid-card">
+                  <div className="workshop-grid-card" ref={(el) => {
+                    if (el) scrollRefMap.current[id] = el;
+                  }}>
                     <WorkshopCard frontmatter={frontmatter} content={content} ID={ID} id={id} />
                     <div className={content && ID === id ? "active" : "text-contents"}>
                       <div className="content">
@@ -104,10 +124,23 @@ const WorkshopsPage = () => {
                       </div>
                       <div className={content && ID === id ? "linkAndReadBtns-open" : "linkAndReadBtns"}>
                         <div className="expand">
-                          {content && ID === id ?
-                            <button onClick={() => toggleActive(id)} className="readmeBtn"> Read Less <BsArrowUp className="icon" size={30} /></button> :
-                            <button onClick={() => toggleActive(id)} className="readmeBtn readmreBtn"> Read More <BsArrowDown className="icon" size={30} /></button> }
+                          {content && ID === id ? (
+                            <button
+                              onClick={() => toggleActive(id)}
+                              className="readmeBtn"
+                            >
+                              Read Less <BsArrowUp className="icon" size={30} />
+                            </button>
+                          ) : (
+                            <button
+                              onClick={() => toggleActive(id)}
+                              className="readmeBtn readmreBtn"
+                            >
+                              Read More <BsArrowDown className="icon" size={30} />
+                            </button>
+                          )}
                         </div>
+
                         <div className="externalLink">
                           <Link to={fields.slug} className="siteLink"><FaRegWindowMaximize style={{ height: "25px", width: "auto" }} /></Link>
                         </div>
