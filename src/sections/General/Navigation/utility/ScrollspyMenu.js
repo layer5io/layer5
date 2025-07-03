@@ -36,6 +36,10 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
     setIsWrapperVisible(false);
   };
 
+  const closeDropdown = () => {
+    setActiveState(null);
+  };
+
   const [transitionRef, inView] = useInView({ threshold: 0.7 });
 
   useEffect(() => {
@@ -57,7 +61,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
           }
           onMouseOver={() => handleMouseOver(index)}
         >
-          <Link to={menu.path} className="menu-link" activeClassName="nav-link-active">
+          <Link to={menu.path} className="menu-link" activeClassName="nav-link-active" onClick={closeDropdown}>
             <span>
               {menu.name}
             </span>
@@ -69,16 +73,16 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
           <ul className="dropdown" style={{ zIndex: "101" }}>
             <div className="nav-grid">
               <div className="hr">
-                <Link className="section" to={activeState.path} activeClassName="nav-link-active">{activeState.name}
+                <Link className="section" to={activeState.path} activeClassName="nav-link-active" onClick={closeDropdown}>{activeState.name}
                 </Link>
                 {activeState.subItems.map((subItem, i) => {
                   return (
                     <li key={i}>
                       {subItem.externalLink ?
-                        <a href={subItem.path} target="_blank" className={subItem.sepLine && "sub-item"} rel="noreferrer">
+                        <a href={subItem.path} target="_blank" className={subItem.sepLine && "sub-item"} rel="noreferrer" onClick={closeDropdown}>
                           {subItem.name}
                         </a>
-                        : <Link to={subItem.path} partiallyActive={false} className={subItem.sepLine && "sub-item"} activeClassName="nav-link-active">
+                        : <Link to={subItem.path} partiallyActive={false} className={subItem.sepLine && "sub-item"} activeClassName="nav-link-active" onClick={closeDropdown}>
                           {subItem.name}
                         </Link>
                       }
@@ -88,12 +92,12 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                 <div className="action-items">
                   {activeState.actionItems.map((actionItem, i) => (
                     (actionItem.actionName === "Join the discussion" ?
-                      <a key={i} href={actionItem.actionLink} target="_blank" className="action-link" rel="noreferrer">
+                      <a key={i} href={actionItem.actionLink} target="_blank" className="action-link" rel="noreferrer" onClick={closeDropdown}>
                         <span className="readmore-btn">
                           {actionItem.actionName} <IoIosArrowRoundForward />
                         </span>
                       </a>
-                      : (<Link key={i} to={actionItem.actionLink} partiallyActive={true} className="action-link">
+                      : (<Link key={i} to={actionItem.actionLink} partiallyActive={true} className="action-link" onClick={closeDropdown}>
                         <span className="readmore-btn">
                           {actionItem.actionName} <IoIosArrowRoundForward />
                         </span>
@@ -109,7 +113,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                   <Card frontmatter={blogData[activeState.name].nodes[1].frontmatter} fields={blogData[activeState.name].nodes[1].fields} />
                 </div>) : (
                 <>
-                  <Link to="/cloud-native-management/kanvas">
+                  <Link to="/cloud-native-management/kanvas" onClick={closeDropdown}>
                     <div className="single-card">
                       <div className="transition-container" ref={transitionRef}>
                         <img className="canvas" src={isDark ? EmptyDark : EmptyLight} alt="" />
