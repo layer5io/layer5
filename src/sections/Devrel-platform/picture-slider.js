@@ -7,15 +7,13 @@ import DesignPNG from "./images/design_mac.png";
 import TutorialPNG from "./images/tutorial_mac.png";
 
 const PictureSliderWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
 
   .slick-slider {
     margin-top: 1rem;
-    width: 100%;
 
     .slick-list {
       width: 100%;
@@ -29,16 +27,6 @@ const PictureSliderWrapper = styled.div`
     }
   }
 
-  @media (max-width: 36rem) {
-    overflow: hidden;
-    position: relative;
-
-    .slick-prev,
-    .slick-next {
-      display: none ;
-    }
-  }
-
   .slick-track {
     display: flex;
 
@@ -48,16 +36,24 @@ const PictureSliderWrapper = styled.div`
       justify-content: center;
 
       img {
-        max-width: 100%;
-        height: auto;
+        width: 100%;
+        max-height: 500px;
         object-fit: contain;
       }
+    }
+  }
+
+  @media (max-width: 850px) {
+    .slick-prev,
+    .slick-next {
+      display: none ;
     }
   }
 `;
 
 const PictureSlider = () => {
   const data = [ChallangePNG, TutorialPNG, DesignPNG];
+
   const settings = {
     dots: false,
     infinite: true,
@@ -65,14 +61,34 @@ const PictureSlider = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          autoplay: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          autoplay: true,
+        },
+      },
+    ],
   };
 
   return (
     <PictureSliderWrapper>
       <Slider {...settings}>
         {data.map((image, index) => (
-          <img key={index} src={image} alt="content" />
+          <img key={index} src={image} alt={`slide-${index}`} />
         ))}
       </Slider>
     </PictureSliderWrapper>
