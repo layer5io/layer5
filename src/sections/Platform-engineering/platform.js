@@ -6,11 +6,16 @@ import { StaticImage } from "gatsby-plugin-image";
 import BestPracticesBanner from "./banner";
 import RelatedPosts from "../../components/Related-Posts";
 import { graphql, useStaticQuery } from "gatsby";
-import MesheryDashboardImg from "./meshery-dashboard-hero-image.png";
+import MesheryDashboardImg from "./images/meshery-dashboard-hero-image.png";
+import DeliveryCylesImg from "./images/delivery-cycles.png";
+import ScaleDevopsImg from "./images/scale-devops-practices.png";
+import MesheryPerfImg from "./images/meshery-performance.gif";
+import KanvasCollaborativeDesignerImg from "../Devrel-platform/images/layer5-kanvas-designer.webp";
 import Integrations from "../../sections/Home/Playground-home";
 import InlineQuotes from "../../components/Inline-quotes";
 import Maxi from "../../collections/members/maximiliano-churichi/Maximiliano-Churichi.webp";
 import PlatformWrapper from "./platform-style";
+import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox";
 
 const Platform = () => {
   const data = useStaticQuery(
@@ -57,7 +62,7 @@ const Platform = () => {
   `);
   const posts = data.relatedPosts.nodes;
 
-  const dashboardImg = "./meshery-dashboard-hero-image.png";
+  const MesheryIntegrationsImg = "./images/meshery-integrations.jpg";
   return (
     <PlatformWrapper>
       <Container className="platform-details-container">
@@ -66,20 +71,20 @@ const Platform = () => {
           <p>
             Platform engineering can be defined as the process of designing, building, and maintaining a stable and scalable foundation upon which software applications and services can be developed, deployed, and operated. It involves creating a set of reusable and customizable components, tools, and frameworks that enable developers to build and deploy applications with greater efficiency and speed.
           </p>
-          <StaticImage src={dashboardImg} alt="what is platform engineering" />
+          <StaticImage src={MesheryIntegrationsImg} alt="what is platform engineering" />
         </div>
         <BestPracticesBanner />
         <h1 style={{ textAlign: "center" }}>Benefits of Platform Engineering</h1>
         <PlatformSection
           heading="Drive standardization and consistency"
           caption="Establish unified deployment practices across your organization through consistent tooling, reusable infrastructure components, and centralized governance. Create a foundation where teams can deploy confidently using proven patterns and standardized configurations that reduce variability and increase reliability."
-          image={MesheryDashboardImg}
+          image={KanvasCollaborativeDesignerImg}
         />
 
         <PlatformSection
           heading="Utilize resources more efficiently"
           caption="Optimize infrastructure utilization by implementing intelligent resource allocation, automated scaling policies, and performance-driven decisions. Eliminate waste through data-driven insights and right-sizing recommendations that align resource consumption with actual workload demands."
-          image={MesheryDashboardImg}
+          image={MesheryPerfImg}
           $reverse
         />
 
@@ -92,14 +97,14 @@ const Platform = () => {
         <PlatformSection
           heading="Scale DevOps practices"
           caption="Extend DevOps methodologies organization-wide through platform automation, standardized pipelines, and collaborative infrastructure management. Bridge the gap between development and operations teams with shared tooling and consistent deployment processes across all environments."
-          image={MesheryDashboardImg}
+          image={ScaleDevopsImg}
           $reverse
         />
 
         <PlatformSection
           heading="Accelerate delivery cycles"
           caption="Compress time-from-idea-to-production through automated infrastructure provisioning, integrated testing pipelines, and rapid deployment capabilities. Reduce manual bottlenecks and enable continuous delivery through platform-driven automation and validation processes."
-          image={MesheryDashboardImg}
+          image={DeliveryCylesImg}
         />
 
         <InlineQuotes
@@ -130,7 +135,12 @@ const PlatformSection = ({ heading, caption, image, $reverse }) => {
       </Col>
       <Col $md={6} className="platform-image">
         <div className="img-wrapper">
-          <img src={image} alt={heading} />
+          <SimpleReactLightbox>
+            <SRLWrapper>
+              <img src={image} alt={heading} />
+            </SRLWrapper>
+          </SimpleReactLightbox>
+
         </div>
       </Col>
     </StyledRow>
@@ -224,6 +234,7 @@ const StyledRow = styled(Row)`
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: zoom-in;
       
       .calalog-image {
         @media (max-width: 767px) {

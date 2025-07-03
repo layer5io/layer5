@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Row, Col, Container } from "../../reusecore/Layout";
-import MesheryDashboard from "./meshery-dashboard-hero-image.png";
+import MesheryDashboard from "./images/meshery-dashboard-hero-image.png";
 import Button from "../../reusecore/Button";
 import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox";
 import { Link } from "gatsby";
