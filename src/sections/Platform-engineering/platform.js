@@ -57,8 +57,6 @@ const Platform = () => {
   `);
   const posts = data.relatedPosts.nodes;
 
-
-  // const { isDark } = useStyledDarkMode();
   const dashboardImg = "./meshery-dashboard-hero-image.png";
   return (
     <PlatformWrapper>
@@ -82,7 +80,7 @@ const Platform = () => {
           heading="Utilize resources more efficiently"
           caption="Optimize infrastructure utilization by implementing intelligent resource allocation, automated scaling policies, and performance-driven decisions. Eliminate waste through data-driven insights and right-sizing recommendations that align resource consumption with actual workload demands."
           image={MesheryDashboardImg}
-          reverse
+          $reverse
         />
 
         <PlatformSection
@@ -95,7 +93,7 @@ const Platform = () => {
           heading="Scale DevOps practices"
           caption="Extend DevOps methodologies organization-wide through platform automation, standardized pipelines, and collaborative infrastructure management. Bridge the gap between development and operations teams with shared tooling and consistent deployment processes across all environments."
           image={MesheryDashboardImg}
-          reverse
+          $reverse
         />
 
         <PlatformSection
@@ -123,9 +121,9 @@ const Platform = () => {
 };
 
 
-const PlatformSection = ({ heading, caption, image, reverse }) => {
+const PlatformSection = ({ heading, caption, image, $reverse }) => {
   return (
-    <StyledRow className="platform" reverse={reverse}>
+    <StyledRow className="platform" $reverse={$reverse}>
       <Col $md={6} className="platform-detail">
         <h2 className="heading">{heading}</h2>
         <p className="caption">{caption}</p>
@@ -140,11 +138,101 @@ const PlatformSection = ({ heading, caption, image, reverse }) => {
 };
 
 const StyledRow = styled(Row)`
-  flex-direction: ${({ reverse }) => (reverse ? "row-reverse" : "row")};
+  flex-direction: ${({ $reverse }) => ($reverse ? "row-reverse" : "row")};
+  display: flex;
+  padding: 5rem 0;
+  gap: 2rem;
+  color: ${(props) => props.theme.tertiaryColor};
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  
   @media (max-width: 768px) {
     flex-direction: column;
+    padding: 2rem 0;
+  }
+  
+  @media (max-width: 468px) {
+    flex-direction: column;
+  }
+  
+  .platform-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: ${(props) => props.theme.tertiaryColor};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    
+    @media (max-width: 767px) {
+      order: 1;
+    }
+    
+    .heading {
+      font-size: 3.125rem;
+      line-height: 3.813rem;
+      color: ${(props) => props.theme.tertiaryColor};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      margin-bottom: 2rem;
+      
+      @media (max-width: 992px) {
+        font-size: 2.8rem;
+        line-height: 3rem;
+      }
+      
+      @media (max-width: 767px) {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        text-align: center;
+        padding-left: 100px;
+        padding-right: 100px;
+        margin-bottom: 1rem;
+      }
+      
+      @media (max-width: 467px) {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+    }
+    
+    .caption {
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 2rem;
+      color: ${(props) => props.theme.tertiaryColor};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      opacity: 0.8;
+      
+      @media (max-width: 767px) {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        text-align: center;
+        padding-left: 100px;
+        padding-right: 100px;
+      }
+      
+      @media (max-width: 467px) {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+    }
+  }
+  
+  .platform-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    .img-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      .calalog-image {
+        @media (max-width: 767px) {
+          max-width: 80%;
+          margin-bottom: 1.25rem;
+        }
+      }
+    }
   }
 `;
-
 
 export default Platform;

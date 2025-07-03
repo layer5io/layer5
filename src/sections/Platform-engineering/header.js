@@ -41,9 +41,7 @@ const PlatformEngineeringWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     min-height: 40rem;
-    background: ${(props) => props.isDark
-    ? "linear-gradient(0deg, #121212 33.89%, rgba(0, 179, 159, 0.74) 99.81%)"
-    : "linear-gradient(0deg, rgba(255, 255, 255, 0.38) 33.89%, rgba(0, 179, 159, 0.74) 99.81%)"};
+    background: ${(props) => props.$isDark ? "linear-gradient(0deg, #121212 33.89%, rgba(0, 179, 159, 0.74) 99.81%)" : "linear-gradient(0deg, rgba(255, 255, 255, 0.38) 33.89%, rgba(0, 179, 159, 0.74) 99.81%)"};
 
     .platform-header-row {
       justify-content: space-between;
@@ -97,6 +95,9 @@ const PlatformEngineeringWrapper = styled.div`
         padding-right: 0;
         text-align: center;
       }
+      .header-buttons{
+         justify-content: center;
+      }
 
       .header-title {
         margin-bottom: 10px;
@@ -113,7 +114,7 @@ const PlatformEngineeringWrapper = styled.div`
 const Header = () => {
   const { isDark } = useStyledDarkMode();
   return (
-    <PlatformEngineeringWrapper isDark={isDark}>
+    <PlatformEngineeringWrapper $isDark={isDark}>
       <div className="platform-engineering header">
         <Container>
           <Row className="row platform-header-row">
@@ -131,15 +132,15 @@ const Header = () => {
                   $url="https://kanvas.new"
                 />
                 <span className="see-doc-link">
-                    <Link to={"/kanvas"}>See Documentation</Link>
-                    <FaArrowRight />
+                  <Link to={"/kanvas"}>See Documentation</Link>
+                  <FaArrowRight />
                 </span>
               </div>
             </Col>
             <Col className="col platform" $md={6}>
-            <SimpleReactLightbox>
+              <SimpleReactLightbox>
                 <SRLWrapper>
-              <img src={MesheryDashboard} alt="Meshery Dashboard" />
+                  <img src={MesheryDashboard} alt="Meshery Dashboard" />
                 </SRLWrapper>
               </SimpleReactLightbox>
             </Col>
