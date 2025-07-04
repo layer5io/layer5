@@ -17,7 +17,7 @@ const LifecycleFeature = () => {
 
   const lifecycleFeatureData = {
     name: "Lifecycle",
-    description: "Manage & operate your cloud native infra from discovery to deployment.",
+    description: "Manage and operate your cloud native infra from discovery to deployment.",
     link: "#",
     btnText: "Discover your clusters",
     services: [
@@ -41,7 +41,7 @@ const LifecycleFeature = () => {
 
   const configurationFeatureData = {
     name: "Configuration",
-    description: "Design, validate, & version your infra with visual tools & best practices.",
+    description: "Design, validate, and version your infra with visual tools and best practices.",
     link: "#",
     btnText: "Get Started",
     services: [
@@ -65,7 +65,7 @@ const LifecycleFeature = () => {
 
   const performanceFeatureData = {
     name: "Optimization",
-    description: "Assess, benchmark, & improve the performance of your infra.",
+    description: "Assess, benchmark, and improve the performance of your infra.",
     link: "#",
     btnText: "Start Performance Testing",
     services: [
@@ -75,7 +75,7 @@ const LifecycleFeature = () => {
       { content: "Statistical reporting: latency histograms, buckets", className: "--on" },
       { content: "Cloud Native Performance spec compliance", className: "--on" },
       { content: "Historical performance tracking across versions", className: "--on" },
-      { content: "Prometheus & Grafana integration for metrics", className: "--on" },
+      { content: "Prometheus and Grafana integration for metrics", className: "--on" },
       { content: "Support for soak, burst, and capacity tests", className: "--on" },
       { content: "HTTP, TCP, and gRPC load generation support", className: "--on" },
       { content: "Behavioral comparison of CNFs across deployments", className: "--on" }
