@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from "../../../../reusecore/Layout";
 import DesignerFeaturesWrapper from "./DesignerFeatures.style";
 import DesignerFeaturesDiagram from "./DesignerFeatures_diagram";
@@ -14,7 +14,20 @@ export default function DesignerFeatures({ features }) {
     new Array(features.length).fill(false)
   );
 
-  useGsapTimeline({ trigger: ".design-trigger-container", featureContainerName: ".design-features", yPercent: -300 });
+  useGsapTimeline({ trigger: ".design-trigger-container", featureContainerName: ".design-features", yPercent: -100 });
+
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const [cursorOverArrow, setcursorOverArrow] = useState(false);
   const handleEnter = () => {

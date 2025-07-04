@@ -16,7 +16,7 @@ const useGsapTimeline = ({ trigger, featureContainerName,yPercent }) => {
   useIsomorphicLayoutEffect(() => {
     let mm = gsap.matchMedia();
 
-    mm.add("(min-width: 800px)", () => {
+    mm.add("(min-width: 768px)", () => {
       const context = gsap.context(() => {
         const _timeline = gsap.timeline({
           defaults: {
@@ -29,15 +29,17 @@ const useGsapTimeline = ({ trigger, featureContainerName,yPercent }) => {
             start: "top top+=96px",
             end: "bottom top",
             // markers: true,
-            scrub: true,
+            scrub: 0.5,
             pin: true,
-            toggleActions: "play pause resume reset"
+            toggleActions: "play pause resume reset",
+            refreshPriority: -1, 
+            invalidateOnRefresh: true, 
           },
         });
 
         _timeline.to(featureContainerName,{
-          yPercent,
-          ease: "power1.inOut",
+          yPercent: -50,
+          ease: "none",
         });
       });
       return () => {

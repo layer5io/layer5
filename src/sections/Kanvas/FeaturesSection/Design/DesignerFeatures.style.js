@@ -12,10 +12,10 @@ margin-top: 1rem;
   
 }
 
-.scroll{
-    position: sticky;
-    top: calc(50vh - 249px);
-}
+// .scroll{
+//     position: sticky;
+//     top: calc(50vh - 249px);
+// }
 
   .contentContainer {
     display: flex;
@@ -53,9 +53,9 @@ margin-top: 1rem;
   .diagram {
     width: 591px;
     min-width: 40rem;
-    position: sticky;
-    top: 0;
-    z-index: 0;
+    // position: sticky;
+    // top: 0;
+    z-index: -1;
     margin-top:auto;
     margin-bottom:auto;
     height:100%;
@@ -189,6 +189,18 @@ margin-top: 1rem;
     transform: translateX(0.4rem);
     transition: transform 0.5s ease-in-out;
   }
+
+  @media (max-width: 767px) {
+  .design-trigger-container {
+    /* Disable any transform on mobile */
+    transform: none !important;
+  }
+
+  .design-features {
+    /* Reset any GSAP transforms on mobile */
+    transform: none !important;
+  }
+}
 
 `;
 

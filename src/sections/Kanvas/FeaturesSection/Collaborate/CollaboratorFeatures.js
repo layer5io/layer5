@@ -3,7 +3,7 @@ import { Container } from "../../../../reusecore/Layout";
 import CollaboratorFeaturesWrapper from "./CollaboratorFeatures.style";
 import CollaboratorFeaturesDiagram from "./CollaboratorFeatures_diagram";
 import Feature from "../../features";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useGsapTimeline from "../useGsapTimeline";
 import { Link } from "gatsby";
 import LinkArrow from "../../images/link-arrow.svg";
@@ -14,7 +14,22 @@ export default function CollaboratorFeatures({ features }) {
   const [viewportStatus, setViewportStatus] = useState(
     new Array(features.length).fill(false)
   );
-  useGsapTimeline({ trigger: ".collaborator-trigger-container", featureContainerName: ".collaborator-features", yPercent: -300 });
+  useGsapTimeline({ trigger: ".collaborator-trigger-container", featureContainerName: ".collaborator-features", yPercent: -100 });
+
+
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const [cursorOverArrow, setcursorOverArrow] = useState(false);
   const handleEnter = () => {
     if (!cursorOverArrow)

@@ -7,10 +7,10 @@ const CollaboratorFeaturesWrapper = styled.section`
     padding: 0;
   }
 
-  .scroll {
-    position: sticky;
-    top: calc(50vh - 249px);
-  }
+  // .scroll {
+  //   position: sticky;
+  //   top: calc(50vh - 249px);
+  // }
 
   .contentContainer {
     display: flex;
@@ -20,7 +20,7 @@ const CollaboratorFeaturesWrapper = styled.section`
     ::-webkit-scrollbar {
       display: none;
     }
-    @media (min-width: 799px) {
+    @media (min-width: 768px) {
         max-height: 600px;
       }
     @media (max-width: 767px) {
@@ -46,8 +46,8 @@ const CollaboratorFeaturesWrapper = styled.section`
   .diagram {
     width: 591px;
     min-width: 47rem;
-    position: sticky;
-    top: 0;
+    // position: sticky;
+    // top: 0;
     z-index: -1;
     margin-top:auto;
     margin-bottom:auto;
@@ -175,7 +175,7 @@ const CollaboratorFeaturesWrapper = styled.section`
   }
 
   .hideInMobile{
-    @media (max-width: 799px) {
+    @media (max-width: 767px) {
       display:none;
     }
 }
@@ -186,6 +186,30 @@ const CollaboratorFeaturesWrapper = styled.section`
     transform: translateX(0.4rem);
     transition: transform 0.5s ease-in-out;
   }
+
+  @media (max-width: 767px) {
+  .visualizer-trigger-container {
+    /* Disable any transform on mobile */
+    transform: none !important;
+  }
+  
+  .visualizer-features {
+    /* Reset any GSAP transforms on mobile */
+    transform: none !important;
+  }
+
+  @media (max-width: 767px) {
+  .collaborator-trigger-container {
+    /* Disable any transform on mobile */
+    transform: none !important;
+  }
+
+  .collaborator-features {
+    /* Reset any GSAP transforms on mobile */
+    transform: none !important;
+    }
+  }
+}
 `;
 
 export default CollaboratorFeaturesWrapper;

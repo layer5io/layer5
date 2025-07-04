@@ -7,10 +7,10 @@ const VisualizerFeaturesWrapper = styled.section`
     padding: 0;
   }
 
-  .scroll {
-    position: sticky;
-    top: calc(50vh - 249px);
-  }
+  // .scroll {
+  //   position: sticky;
+  //   top: calc(50vh - 249px);
+  // }
 
   .contentContainer {
     display: flex;
@@ -20,7 +20,7 @@ const VisualizerFeaturesWrapper = styled.section`
       display: none;
     }
 
-    @media (min-width: 799px) {
+    @media (min-width: 768px) {
       max-height: 600px;
     }
     @media (max-width: 767px) {
@@ -48,7 +48,7 @@ const VisualizerFeaturesWrapper = styled.section`
     width: 591px;
     min-width: 40rem;
     position: sticky;
-    top: 0;
+    // top: 0;
     z-index: -1;
     margin-top:auto;
     margin-bottom:auto;
@@ -174,7 +174,7 @@ const VisualizerFeaturesWrapper = styled.section`
     transition: ease-in-out;
   }
   .hideInMobile{
-    @media (max-width: 799px) {
+    @media (max-width: 767px) {
       display:none;
     }
 }
@@ -186,6 +186,20 @@ const VisualizerFeaturesWrapper = styled.section`
     transform: translateX(0.4rem);
     transition: transform 0.5s ease-in-out;
   }
+    
+  
+  // testing a new feature
+  @media (max-width: 767px) {
+  .visualizer-trigger-container {
+    /* Disable any transform on mobile */
+    transform: none !important;
+  }
+  
+  .visualizer-features {
+    /* Reset any GSAP transforms on mobile */
+    transform: none !important;
+  }
+} 
 `;
 
 export default VisualizerFeaturesWrapper;

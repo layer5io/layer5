@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from "../../../../reusecore/Layout";
 import VisualizerFeaturesWrapper from "./VisualizerFeatures.style";
 import VisualizerFeaturesDiagram from "./VisualizerFeatures_diagram";
@@ -15,8 +15,26 @@ export default function VisualizerFeatures({ features }) {
     new Array(features.length).fill(false)
   );
 
-  useGsapTimeline({ trigger: ".visualizer-trigger-container", featureContainerName: ".visualizer-features", yPercent: -100 });
+  // useGsapTimeline({ trigger: ".visualizer-trigger-container", featureContainerName: ".visualizer-features", yPercent: -100 });
+  // Only run GSAP on desktop
+  useGsapTimeline({ 
+    trigger: ".visualizer-trigger-container", 
+    featureContainerName: ".visualizer-features", 
+    yPercent: -100 
+  });
 
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   const [cursorOverArrow, setcursorOverArrow] = useState(false);
   const handleEnter = () => {
     if (!cursorOverArrow)
