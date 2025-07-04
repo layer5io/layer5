@@ -90,7 +90,7 @@ const MesheryFeatures = () => {
             },
             {
               id: "five",
-              title: "Performance Management & Load Testing",
+              title: "Performance Management and Load Testing",
               description:
                 "Comprehensive performance testing with multiple load generators (Fortio, Wrk2, Nighthawk). Create reusable performance profiles and track historical performance data.",
               learnMoreLink: "https://playground.meshery.io/performance",
@@ -110,7 +110,7 @@ const MesheryFeatures = () => {
             },
             {
               id: "six",
-              title: "Cloud Native Catalog & Patterns",
+              title: "Cloud Native Catalog and Patterns",
               description:
                 "Access 400+ curated design patterns and templates. Share, clone, and customize designs with built -in best practices for common deployment scenarios.", content: (
                 <div className="feature-expose-full">
@@ -130,7 +130,7 @@ const MesheryFeatures = () => {
             },
             {
               id: "seven",
-              title: "Environments & GitOps Integration",
+              title: "Environments and GitOps Integration",
               description:
                 "Manage resources as groups with Environments. Get infrastructure snapshots in pull requests and preview deployments before merging changes.", content: (
                 <div className="feature-expose">
