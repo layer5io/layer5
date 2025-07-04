@@ -36,6 +36,7 @@ import Phillip from "../../sections/Pricing/reviews/phillip-ulberg.jpeg";
 import Alex from "../../sections/Pricing/reviews/alex-hokanson.jpeg";
 import TeaserModal from "../../components/TeaserModal";
 import GuyM from "./images/guym.jpg";
+import Abdechakour from "../../sections/Pricing/reviews/abdechakour-h.jpeg";
 
 
 const Kanvas = (props) => {
@@ -52,12 +53,15 @@ const Kanvas = (props) => {
                 {
                   title: "Designer Mode",
                   description:
-                    "Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components. Using a service mesh? Visually configure your Envoy filter chain. Using Prometheus? Explore all available metrics. Using Grafana? Ingest your existing boards and panels. Using GitOps? Integrate advanced performance analysis into your pipeline.",
+                    "Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components and Cloud services. Collaborate wtih teammates using this self-service engineering platform. Using GitOps? Integrate advanced performance analysis into your pipeline.",
                   content: (
                     <img
                       src={designerImage}
                       alt="Designer Mode"
                       className="designer-img modes-image"
+                      width="100%"
+                      height="auto"
+                      style={{ aspectRatio: "16/9" }}
                     />
                   ),
                 },
@@ -70,6 +74,9 @@ const Kanvas = (props) => {
                       src={visualizerImage}
                       alt="Operator Mode"
                       className="modes-image"
+                      width="100%"
+                      height="auto"
+                      style={{ aspectRatio: "16/9" }}
                     />
                   ),
                 },
@@ -80,14 +87,14 @@ const Kanvas = (props) => {
           <InlineQuotes
             person="Guy Menahem"
             title="Software Engineer at AWS"
-            quote="I love visuals creating IaC. I think it can be amazingly impactful for self serve platforms."
+            quote="I love visuals for creating IaC. I think it can be amazingly impactful for self-serve platforms for developers."
             image={GuyM}/>
           <DesignerFeatures
             features={
               [
                 {
                   title: "Design your deployments the way you want",
-                  description: "Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components. Say goodbye to YAML configurations.",
+                  description: "Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components and Cloud services. Say goodbye to YAML configurations.",
                   imgContent: (
                     <RoleBind1 id="design-image1" style={{ transform: "translateX(-2rem)" }} alt="design-image1" />
                   )
@@ -124,7 +131,7 @@ const Kanvas = (props) => {
             features={
               [
                 {
-                  title: "All your Kubernetes clusters under a common management",
+                  title: "All your Kubernetes and Cloud infrastructure under a common management",
                   description: "Deploy designs, apply patterns, manage and operate your deployments and services in real-time.",
                   imgContent: (
                     <Visualize1 id="visualize-image1" alt="visualize-image1" />
@@ -132,17 +139,17 @@ const Kanvas = (props) => {
                 },
                 {
                   title: "Continuous visibility across all of your clusters and workloads.",
-                  description: "Import your existing Kubernetes, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers.",
+                  description: "Import your existing Kubernetes, Kustomize, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers.",
                   imgContent: (
                     <Visualize2 id="visualize-image2" alt="visualize-image2" />
                   )
                 },
               ]} />
           <InlineQuotes
-            quote="Guys, I love Kanvas! This tool is crazy!"
-            person="Ala Eddine BENHASSIR"
-            title="Networks & Systems Engineer at AYRADE"
-            image={Ala}/>
+            quote="Wow, just tried Kanvas and it's exactly what I needed! Dragging that Helm chart was so smooth, and the smart features really caught my attention. Definitely sharing this with my dev team before everyone else discovers it!"
+            person="Abdechakour Hrouchan"
+            title="Software Engineer at Atlas Cloud Services"
+            image={Abdechakour} />
 
           <CollaboratorFeatures
             features={
@@ -152,7 +159,14 @@ const Kanvas = (props) => {
                   description: "Designer and Operator live side-by-side, so all design work, from ideation to operation, can be found in one place.",
                   imgContent: (
                     <>
-                      <img id="avatar-1" src={Avatar1} alt="" />
+                      <img
+                        id="avatar-1"
+                        src={Avatar1}
+                        alt=""
+                        width="48"
+                        height="48"
+                        style={{ objectFit: "cover" }}
+                      />
                       <Collab1 id="collaborate-image1" alt="collaborate-image1" />
                     </>
                   )
@@ -164,34 +178,55 @@ const Kanvas = (props) => {
                 // },
                 {
                   title: "Create. Iterate. Repeat.",
-                  description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely.",
+                  description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you're working in the office or remotely.",
                   imgContent: (
                     <>
-                      <img id="avatar-2" src={Avatar2} alt="avatar-2" />
+                      <img
+                        id="avatar-2"
+                        src={Avatar2}
+                        alt="avatar-2"
+                        width="48"
+                        height="48"
+                        style={{ objectFit: "cover" }}
+                      />
                       <Collab2 id="collaborate-image2" alt="collaborate-image2" />
                     </>
                   )
                 },
                 {
                   title: "Where your teams share the same language",
-                  description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely.",
+                  description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you're working in the office or remotely.",
                   imgContent: (
                     <>
-                      <img id="avatar-3" src={Avatar3} alt="avatar-3" />
+                      <img
+                        id="avatar-3"
+                        src={Avatar3}
+                        alt="avatar-3"
+                        width="48"
+                        height="48"
+                        style={{ objectFit: "cover" }}
+                      />
                       <Collab3 id="collaborate-image3" alt="collaborate-image3" />
                     </>
                   )
                 },
                 // {
                 //   title: "Where your teams share the same language",
-                //   description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you’re working in the office or remotely."
+                //   description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you're working in the office or remotely."
                 // },
                 {
                   title: "Inclusive collaboration from start to finish",
                   description: "Kanvas is an end-to-end management platform, here to help teams understand problems, explore options, and build solutions—together.",
                   imgContent: (
                     <>
-                      <img id="avatar-3" src={Avatar3} alt="avatar-3" />
+                      <img
+                        id="avatar-3"
+                        src={Avatar3}
+                        alt="avatar-3"
+                        width="48"
+                        height="48"
+                        style={{ objectFit: "cover" }}
+                      />
                       <Collab4 id="collaborate-image4" alt="collaborate-image4" />
                     </>
                   )
@@ -251,6 +286,11 @@ const Kanvas = (props) => {
           {/* <MesheryAction /> */}
           <KanvasBtn style={{ marginBottom: "2rem" }} />
           <Platform />
+          <InlineQuotes
+            quote="Guys, I love Kanvas! This tool is crazy!"
+            person="Ala Eddine BENHASSIR"
+            title="Networks & Systems Engineer at AYRADE"
+            image={Ala}/>
         </Container>
       </div>
       <>

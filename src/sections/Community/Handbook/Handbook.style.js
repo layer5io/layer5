@@ -208,11 +208,15 @@ export const HandbookWrapper = styled.div`
       cursor: pointer;
       padding: 0.2em;
     }
-
     input[type=checkbox] {
       display: none;
     }
 
+    /* Exception: keep checkbox visible inside .dark-theme-toggle */
+    .dark-theme-toggle input[type="checkbox"] {
+      display: inline-block;
+    }
+      
     input[type=checkbox] + label:before {
       content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 4 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');;
       border: 0.1em solid #000;

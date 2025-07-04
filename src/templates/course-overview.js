@@ -67,6 +67,7 @@ export const query = graphql`
           course
           learnpath
           chapter
+          section
         }
       }
     }

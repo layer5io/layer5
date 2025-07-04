@@ -6,8 +6,11 @@ const GlobalStyle = createGlobalStyle`
     background: ${(props) => props.theme.secondaryColor};
     color: #FFFFFF;
 }
+    * {
+  margin: 0;
+  box-sizing: border-box;
+}
 
-  *,
   *::before,
   *::after {
     box-sizing: inherit;
@@ -50,10 +53,13 @@ html{
 
 body,html {
     margin: 0;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
   font-size: 1.125rem;
+  overflow: clip;
   line-height: 28px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -8,6 +8,7 @@ import github_icon from "../../assets/images/socialIcons/github.svg";
 import youtube_icon from "../../assets/images/socialIcons/youtube.svg";
 import docker_icon from "../../assets/images/socialIcons/docker.svg";
 import linkedin_icon from "../../assets/images/socialIcons/linkedin-light.svg";
+import bluesky_icon from "../../assets/images/socialIcons/bluesky.svg";
 import SocialLinksWrapper from "./sociallinkscolor.style";
 
 const SocialLinksColor = () => {
@@ -36,6 +37,19 @@ const SocialLinksColor = () => {
             className="footer_twitter"
           >
             <TwitterIcon />
+          </a>
+          <a
+            className="bluesky_icon"
+            href="https://bsky.app/profile/layer5.bsky.social"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              className="bluesky"
+              height="30px"
+              src={bluesky_icon}
+              alt="bluesky"
+            />
           </a>
           <a
             href="https://github.com/layer5io"

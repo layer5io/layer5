@@ -52,8 +52,10 @@ const SetupPreReqWrapper = styled.div`
                 }
             }
             p {
-                color: ${props => props.theme.text};
                 transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+            p, ul, b {
+             color: ${props => props.theme.text};
             }
         }
     }

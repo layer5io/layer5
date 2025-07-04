@@ -2,6 +2,9 @@ name: Build and Deploy Site
 on:
   push:
     branches: [master]
+    paths-ignore:
+      - .github/*
+      
   workflow_dispatch:
   workflow_call:
     
