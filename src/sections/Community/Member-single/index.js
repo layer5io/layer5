@@ -46,7 +46,7 @@ const MemberSingle = ({ frontmatter }) => {
     <MemberSingleWrapper>
       <Container>
         <div>
-          <Row>
+          <Row className="profile-header" >
             <Col xs={12} sm={12} lg={6}>
               <div className="backBtn">
                 <Link to="/community/members">
@@ -59,8 +59,8 @@ const MemberSingle = ({ frontmatter }) => {
               <h1 className="page-heading">Layer5 Community Member</h1>
             </Col>
           </Row>
-          <Row>
-            <Col $xs={12} $sm={12} $lg={6}>
+          <Row className="member-details">
+            <Col $xs={12} $sm={12} $lg={6} className="profile-image-col">
               <Image
                 className={
                   status.includes("Inactive")
