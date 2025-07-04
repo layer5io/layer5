@@ -218,7 +218,7 @@ const MesheryPlatforms = () => {
     <MesheryPlatformsWrapper>
       <div className="content">
         <Row $Hcenter className="step-1">
-          <p>1 step install to managing service meshes</p>
+          <p>Start managing cloud native infrastructure easily with a single command. </p>
           <h2><span>Step 1:</span> Choose your platform</h2>
         </Row>
         <Row className="supported-platforms">
@@ -240,7 +240,8 @@ const MesheryPlatforms = () => {
         </Container>
         <Row $Hcenter className="step-2">
           <Col>
-            <h2><span>Step 2:</span> Manage your mesh</h2>
+            <h2><span>Step 2:</span> Manage your Cloud Native Infra</h2>
+            <p>There is no step 2. Login and manage cloud native infrastructure! For more detailed instructions, visit <a href="https://docs.meshery.io">Meshery Docs</a></p>
             <img src={MesheryLogo} alt="Meshery" className="meshery-logo" />
           </Col>
         </Row>
