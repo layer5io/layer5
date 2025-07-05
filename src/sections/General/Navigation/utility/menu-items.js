@@ -37,6 +37,11 @@ const Data = {
           path: "/solutions/devrel-platform-for-kubernetes-and-cloud-native-content",
           sepLine: true,
         },
+        {
+          name: "Platform Engineering",
+          path: "/solutions/platform-engineering",
+          sepLine: true,
+        },
       ],
       actionItems: [
         {
