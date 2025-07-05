@@ -1,17 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import { Container } from "../../../reusecore/Layout";
-import Terminal from "../../../components/Terminal";
+// import Terminal from "../../../components/Terminal";
 import Features from "../../../components/Features-carousel";
-import img3 from "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
-import img5 from "./feature-images/meshsync.svg";
-import img6 from "./feature-images/meshery-extensibility.svg";
+import img3 from "./feature-images/meshery-performance.gif";
+import img5 from "./feature-images/meshery-snapshot.png";
+import img6 from "./feature-images/edge_mount_relationship_pod_persistent_volume.svg";
 import { StaticImage } from "gatsby-plugin-image";
-
-const img1 = "./feature-images/meshery-configuration-management.webp";
-const img2 = "./feature-images/meshery-wasm.webp";
-const img4 = "./feature-images/meshery-and-grafana.webp";
-const img7 = "../../../assets/images/docker-extension/docker-extension-meshery.webp";
+import img2 from "./feature-images/workspace.gif";
+import multiClusterGif from "./feature-images/multi-cluster-management.gif";
+const img1 = "../../../assets/images/kanvas/KanvasDesigner.png";
+const img4 = "./feature-images/meshery-catalog.png";
+const img7 = "./feature-images/extensions.png";
 
 const MesheryFeaturesWrapper = styled.div`
     margin: auto;
@@ -45,252 +45,130 @@ const MesheryFeatures = () => {
         <Features
           features={[
             {
-              id: "first" ,
-              title: "Operational Best Practices",
+              id: "first",
+              title: "Infrastructure as Design with Kanvas",
               description:
-                "Benefit from the operational expertise of the world’s foremost cloud native management software and the designs they use.",
-              learnMoreLink: "/books/service-mesh-patterns",
-              content: <StaticImage src={img1} alt="Operational Best Practices" loading="lazy" />,
+                "Visually and collaboratively design your cloud native infrastructure using Meshery's drag-and-drop designer. Leverage 300+ integrations and context-aware relationships between components.",
+              learnMoreLink: "/kanvas",
+              content: <StaticImage src={img1} alt="Infrastructure as Design with Kanvas" loading="lazy" />,
             },
             {
-              id: "second" ,
-              title: "Adaptive WebAssembly Filters for Envoy",
+              id: "second",
+              title: "Workspaces: Team Collaboration Hub",
               description:
-                "Dynamically offload application infrastructure logic.",
-              learnMoreLink: "/projects/image-hub",
+                "Your team's Google Drive for cloud native projects. Organize work, collaborate with teams, and control access to Environments and resources with shared workspaces.",
+              learnMoreLink: "https://docs.meshery.io/concepts/logical/workspaces",
               content: (
-                <StaticImage src={img2} alt="Adaptive WebAssembly Filters for Envoy" loading="lazy" />
+                <img src={img2} alt="Workspaces Team Collaboration" loading="lazy" />
               ),
             },
             {
-              id: "third" ,
-              title: "Integration with ArgoCD",
+              id: "third",
+              title: "Multi-Cluster Kubernetes Management",
               description:
-                "Canary new releases of your applicatioons intelligently. Leverage your existing ArgoCD workflows.",
-              learnMoreLink: "/",
+                "Manage multiple Kubernetes clusters across any infrastructure from a single console. Perform dry-run deployments and validate configurations before applying changes.",
+              learnMoreLink: "https://docs.meshery.io/guides/configuration-management/",
               content: (
-                <Terminal
-                  lines={[
-                    {
-                      code: "$ mesheryctl pattern apply -f canary-v3.yaml",
-                      color: "white",
-                    },
-                    { code: "» Deploying...", color: "navy" },
-                    {
-                      code: "✓ Deployment successfully rolled out!",
-                      color: "green",
-                    },
-                    { code: " " },
-                    { code: "» Traffic splitting...", color: "navy" },
-                    {
-                      code: "✓ 5% of user requests to v3.",
-                      color: "green",
-                    },
-                    {
-                      code: "✓ 30% of user requests to v3.",
-                      color: "green",
-                    },
-                    {
-                      code: "✓ 60% of user requests to v3.",
-                      color: "green",
-                    },
-                    {
-                      code: "✓ 90% of user requests to v3.",
-                      color: "green",
-                    },
-                    {
-                      code: "✓ 100% of user requests to v3.",
-                      color: "green",
-                    },
-                    { code: " " },
-                    {
-                      code: "Pattern successfully applied. Rollout of 'canary-v3' completed.",
-                      color: "navy",
-                    },
-                    {
-                      code: "» Prerelease URL: https://payments-v3.meshery.run",
-                      color: "green",
-                    },
-                    {
-                      code: "» Release URL: https://payments.meshery.run",
-                      color: "green",
-                    },
-                  ]}
-                />
+                <img src={multiClusterGif} alt="Workspaces Team Collaboration" loading="lazy" />
               ),
             },
             {
-              id: "fourth" ,
-              title: "Docker Extension for Meshery",
+              id: "fourth",
+              title: "Platform Engineering with Extension Points",
               description:
-                "Wrangle cloud native apps using Docker Desktop and Meshery",
+                "Build your internal developer platform with Meshery's extensive extensibility. Includes REST/GraphQL APIs, gRPC adapters, hot-loadable ReactJS components, and Golang plugins.",
               content: (
                 <div className="feature-expose-full">
-                  <StaticImage src={img7} alt="Meshery, Docker Extension for Meshery" loading="lazy" />
+                  <StaticImage src={img7} alt="Platform Engineering Extension Points" loading="lazy" />
                   <p>
-                  From the convenience of your Docker Desktop interface, connect Meshery with your Kubernetes cluster. Watch as MeshSync discovers all of your Kuberentes clusters. Visually design your Docker-based infrastructure. Choose from hundreds of ready-made design patterns using Meshery Catalog. Use our no-code designer, Kanvas to collaboratively design and operate your infra.
+                    Meshery's numerous extension points make it ideal as the foundation of your internal developer platform.
+                    Create custom models, import/export as OCI images, and extend functionality through multiple integration patterns.
                   </p>
                 </div>
               ),
-              learnMoreLink: "/docker-extension-meshery",
+              learnMoreLink: "https://meshery.io/extensions",
             },
             {
-              id: "five" ,
-              title: "Meshery Operator",
-              description: "",
-              learnMoreLink:
-                "/cloud-native-management/meshery/meshery-operator",
+              id: "five",
+              title: "Performance Management and Load Testing",
+              description:
+                "Comprehensive performance testing with multiple load generators (Fortio, Wrk2, Nighthawk). Create reusable performance profiles and track historical performance data.",
+              learnMoreLink: "https://playground.meshery.io/performance",
               content: (
                 <div className="feature-expose">
-                  <img src={img3} alt="Kubernetes Operator for Meshery" loading="lazy" />
+                  <img src={img3} alt="Performance Management" loading="lazy" />
                   <p>
-                    Your infrastructure is dynamic. Changes to your infrastructure and your applications occur with great frequency. Whether you make a change directly or another system makes a change, Meshery Operator helps Meshery stay in lockstep with your ever-evolving infrastructure. {" "}
+                    Built-in statistical analysis, performance profiles for consistent testing,
+                    and integration with Prometheus and Grafana for comprehensive metrics collection.
                   </p>
                   <p>
-                    Meshery is continually cognizant of such changes. The
-                    Kubernetes operator for Meshery, supports discovery and
-                    eventing of greenfield and brownfield of your workloads, services, deployments, replicasets, pods, containers, services, persistent volumes... all of your Kubernetes-based infrastructure.
+                    Compare performance across infrastructure deployments, track application
+                    performance from version to version, and baseline your workload performance.
                   </p>
                 </div>
               ),
             },
             {
-              id: "six" ,
-              title: "Integration with Prometheus and Grafana",
-              description: "",
-              content: (
+              id: "six",
+              title: "Cloud Native Catalog and Patterns",
+              description:
+                "Access 400+ curated design patterns and templates. Share, clone, and customize designs with built -in best practices for common deployment scenarios.", content: (
                 <div className="feature-expose-full">
                   <StaticImage
                     src={img4}
-                    alt="Prometheus and Grafana integration with Meshery"
+                    alt="Cloud Native Catalog and Patterns"
                     loading="lazy"
                   />
                   <p>
-                    Key to the efficient operation of any service mesh is the
-                    measurement and management of it’s performance.
-                  </p>
-                  <p>
-                    Meshery provides performance test results alongside
-                    environment metrics, including service mesh control and data
-                    plane metrics as well as cluster node resource metrics, so
-                    that operators may easily understand the overhead of their
-                    service mesh’s control plane and data plane in context of
-                    the overhead incurred on nodes within the cluster.
+                    Design configurator with templates from the catalog, version control for
+                    infrastructure configurations, and export to multiple formats including
+                    Kubernetes Manifest, Helm Chart, and Docker Compose.
                   </p>
                 </div>
               ),
+              learnMoreLink: "/catalog",
             },
-            // {
-            //   title: "CI/CD and Version Control Integration",
-            //   description:
-            //     "Integrate with existing CI/CD providers and version control providers like GitHub, CircleCI, Jenksins, and more",
-            //   //learnMoreLink: "/",
-            //   content: (
-            //     <Terminal
-            //       title="config.yaml"
-            //       lines={[
-            //         {
-            //           code: "env:",
-            //           color: "white",
-            //         },
-            //         {
-            //           indent: 1,
-            //           code:
-            //             "SERVER_TOKEN: ${{ secrets.SERVER_TOKEN }}",
-            //           color: "white",
-            //         },
-            //         {
-            //           indent: 1,
-            //           code: "SERVER_ADDR: meshery.example.com:9701",
-            //           color: "white",
-            //         },
-            //         {
-            //           code: "steps:",
-            //           color: "white",
-            //         },
-            //         {
-            //           indent: 1,
-            //           code: "- uses: actions/checkout@v2",
-            //           color: "white",
-            //         },
-            //         {
-            //           indent: 1,
-            //           code: "- uses: layer5/action-setup-layer5",
-            //           color: "white",
-            //         },
-            //         {
-            //           indent: 1,
-            //           code: "with:",
-            //           color: "white",
-            //         },
-            //         {
-            //           indent: 2,
-            //           code: "version: '0.1.0'",
-            //           color: "white",
-            //         },
-            //         {
-            //           code: "- run: meshery init",
-            //           color: "white",
-            //         },
-            //         {
-            //           code: "- run: meshery up",
-            //           color: "white",
-            //         },
-            //       ]}
-            //     />
-            //   ),
-            // },
             {
-              id: "seven" ,
-              title: "MeshSync",
-              description: "Strict control of service mesh behavior.",
-              //learnMoreLink: "/",
-              content: (
+              id: "seven",
+              title: "Environments and GitOps Integration",
+              description:
+                "Manage resources as groups with Environments. Get infrastructure snapshots in pull requests and preview deployments before merging changes.", content: (
                 <div className="feature-expose">
                   <img
                     src={img5}
-                    alt="Meshery, the extensible cloud native manager"
+                    alt="Environments and GitOps Integration"
                     loading="lazy"
                   />
                   <p>
-                    With MeshSync was designed from the ground up to perform
-                    tiered discovery of your Kubernetes enviroment by
-                    incorporating tiered discovery and a unique method of
-                    fingerprinting each running mesh and workload.
+                    Environments make it easier to manage, share, and work with collections
+                    of resources as a group, instead of dealing with connections and credentials individually.
                   </p>
                   <p>
-                    MeshSync's working snapshot of the state of each cluster and
-                    service mesh under management is stored in-memory and
-                    continuously refreshed.
+                    Visual insights in GitHub pull requests help verify workload designs
+                    and Kubernetes configurations before accepting and merging changes.
                   </p>
                 </div>
               ),
+              learnMoreLink: "/concepts/logical/environments",
             },
             {
-              id: "eight" ,
-              title: "Extensible Management Plane",
+              id: "eight",
+              title: "Advanced Policy Management with OPA",
               description:
-                "Plug in different service meshes, load generators and providers.",
-              content: (
+                "Context-aware policies for applications using Open Policy Agent integration. Enforce configuration best practices without writing Rego query language.", content: (
                 <div className="feature-expose-full">
                   <img
                     src={img6}
-                    alt="Meshery, the extensible cloud native manager"
+                    alt="Policy Management with OPA"
                     loading="lazy"
                   />
                   <p>
-                    Meshery is not just an application. It is a set of
-                    microservices where the central component is itself called
-                    Meshery. Integrators may extend Meshery by taking advantage
-                    of designated Extension Points.
-                  </p>
-                  <p>
-                    Extension points come in various forms and are available
-                    through Meshery’s architecture.
+                    Meshery uses context-aware relationships to define how and when components interrelate with one another.
+                    Meshery supports a variety of relationships between components. These relationships are categorized into two types: semantic and non-semantic.
                   </p>
                 </div>
               ),
-              learnMoreLink: "https://docs.meshery.io/extensibility",
+              learnMoreLink: "https://docs.meshery.io/concepts/logical/relationships#types-of-relationships",
             },
           ]}
         />

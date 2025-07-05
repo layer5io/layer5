@@ -5,14 +5,13 @@ const Image = ({ childImageSharp, extension, publicURL, alt, imgStyle, ...rest }
 
   if (!childImageSharp && extension === "svg") {
     return (
-      <div className="old-gatsby-image-wrapper" style={{ width: "100%", height: "auto", aspectRatio: "16/9" }}>
+      <div className="old-gatsby-image-wrapper" style={{ width: "100%", height: "auto" }}>
         <img
           src={publicURL}
           alt={alt || "Blog image"}
           width="100%"
           height="auto"
           style={{
-            aspectRatio: "16/9",
             objectFit: imgStyle?.objectFit || "cover",
             ...imgStyle
           }}
