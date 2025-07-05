@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CodeBlock } from "../button/code-block";
-import { Switch, FormControlLabel, SistentThemeProvider } from "@layer5/sistent";
+import { Switch, FormControlLabel, SistentThemeProvider } from "@sistent/sistent";
 import { SistentLayout } from "../../sistent-layout";
 
 const codes = [
