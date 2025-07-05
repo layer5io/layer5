@@ -3,8 +3,13 @@ import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
 import {
-  Dialog, DialogTitle, DialogContent, DialogActions, Button, SistentThemeProvider
-} from "@layer5/sistent";
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Button,
+  SistentThemeProvider
+} from "@sistent/sistent";
 
 import { SistentLayout } from "../../sistent-layout";
 import TabButton from "../../../../../reusecore/Button";
