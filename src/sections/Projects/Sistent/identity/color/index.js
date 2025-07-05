@@ -7,7 +7,7 @@ import ContextVisuals1 from "../../../../../assets/images/app/projects/sistent/c
 import ContextVisuals2 from "../../../../../assets/images/app/projects/sistent/context-visuals-2.png";
 import ContextVisuals3 from "../../../../../assets/images/app/projects/sistent/context-visuals-3.png";
 import ContextVisuals4 from "../../../../../assets/images/app/projects/sistent/context-visuals-4.png";
-import { useTheme, Tooltip, Snackbar, IconButton, styled, NoSsr } from "@layer5/sistent";
+import { useTheme, Tooltip, Snackbar, IconButton, styled, NoSsr } from "@sistent/sistent";
 import { SistentLayout } from "../../sistent-layout";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
