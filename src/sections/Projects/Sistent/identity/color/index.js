@@ -1,20 +1,105 @@
-import React from "react";
+import React, { useState } from "react";
 import { navigate } from "gatsby";
 import { Row, Col } from "../../../../../reusecore/Layout";
 import { useLocation } from "@reach/router";
 import Button from "../../../../../reusecore/Button";
-import { SistentLayout } from "../../sistent-layout";
-import TonalPallete from "../../../../../assets/images/app/projects/sistent/tonal-palettes.png";
-import TonalPalleteDark from "../../../../../assets/images/app/projects/sistent/tonal-palettes-dark.png";
 import ContextVisuals1 from "../../../../../assets/images/app/projects/sistent/context-visuals-1.png";
 import ContextVisuals2 from "../../../../../assets/images/app/projects/sistent/context-visuals-2.png";
 import ContextVisuals3 from "../../../../../assets/images/app/projects/sistent/context-visuals-3.png";
 import ContextVisuals4 from "../../../../../assets/images/app/projects/sistent/context-visuals-4.png";
-import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
+import { useTheme, Tooltip, Snackbar, IconButton, styled, NoSsr } from "@sistent/sistent";
+import { SistentLayout } from "../../sistent-layout";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+
+const ColorCards = styled("div")(() => ({
+  display: "flex",
+  flexWrap: "wrap",
+  gap: "2rem",
+  margin: "2rem 0",
+  justifyContent: "center",
+}));
+
+const ColorCard = styled("div")(() => ({
+  width: "300px",
+  borderRadius: "8px",
+  boxShadow: "0px 5px 10px 1px rgba(0, 179, 159, 0.5)",
+  cursor: "pointer",
+  userSelect: "none",
+}));
+
+const Swatch = styled("div")(({ color }) => ({
+  height: "100px",
+  borderRadius: "8px 8px 0 0",
+  backgroundColor: color,
+}));
+
+const ColorInfo = styled("div")(() => ({
+  padding: "1rem",
+  textAlign: "center",
+}));
+
+const CodeRow = styled("div")(() => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "0.5rem",
+  fontFamily: "monospace",
+  fontSize: "0.85rem",
+  userSelect: "text",
+  padding: "6px 10px",
+}));
 
 const SistentIdentityColor = () => {
   const location = useLocation();
-  const { isDark } = useStyledDarkMode();
+  const theme = useTheme();
+
+  const colors = [
+    {
+      name: "Keppel Green",
+      color: "#00B39F",
+      hex: "#00B39F",
+      rgb: "rgb(0, 179, 159)",
+      token: "theme.palette.background.brand.default",
+    },
+    {
+      name: "Caribbean Green",
+      color: "#00D3A9",
+      hex: "#00D3A9",
+      rgb: "rgb(0, 211, 169)",
+      token: "theme.palette.background.graphics.default",
+    },
+    {
+      name: "Saffron Yellow",
+      color: "#EBC017",
+      hex: "#EBC017",
+      rgb: "rgb(235, 192, 23)",
+      token: "theme.palette.background.cta.default",
+    },
+    {
+      name: "Charcoal",
+      color: "#3C494F",
+      hex: "#3C494F",
+      rgb: "rgb(60, 73, 79)",
+      token: "theme.palette.background.default",
+    },
+    {
+      name: "Accent Grey",
+      color: "#647881",
+      hex: "#647881",
+      rgb: "rgb(100, 120, 129)",
+      token: "theme.palette.background.secondary",
+    },
+  ];
+
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMsg, setSnackbarMsg] = useState("");
+
+  const handleCopy = (text) => {
+    navigator.clipboard.writeText(text).then(() => {
+      setSnackbarMsg(`Copied ${text} to clipboard!`);
+      setSnackbarOpen(true);
+    });
+  };
 
   return (
     <SistentLayout title="Color">
@@ -139,16 +224,71 @@ const SistentIdentityColor = () => {
             to complement these greens and create harmonious implementations.
             These five colors combine to form a foundation for the color system.
           </p>
-          <Row Hcenter className="image-container">
-            <Col md={8} lg={8} sm={12}>
-              <img
-                src={isDark ? TonalPalleteDark : TonalPallete}
-                alt="Tonal Palette"
-              />
-            </Col>
-          </Row>
-          <a id="Layer Hirarchy">
-            <h2>Layer Hirarchy</h2>
+          <NoSsr>
+            <ColorCards>
+              {colors.map(({ name, color, hex, token, rgb }, idx) => (
+                <ColorCard key={idx}>
+                  <Swatch color={color} />
+                  <ColorInfo>
+                    <h4>{name}</h4>
+                    <CodeRow>
+                      <span>HEX: {hex}</span>
+                      <Tooltip title="Copy HEX">
+                        <IconButton
+                          onClick={() => handleCopy(hex)}
+                          aria-label={`Copy HEX color code of ${name}`}
+                          sx={{
+                            color: theme.palette.icon?.default,
+                            "&:hover": {
+                              color: theme.palette.icon?.brand,
+                            },
+                          }}
+                        >
+                          <ContentCopyIcon />
+                        </IconButton>
+                      </Tooltip>
+                    </CodeRow>
+                    <CodeRow>
+                      <span>Sistent Token</span>
+                      <Tooltip title={`Copy Token: ${token}`}>
+                        <IconButton
+                          onClick={() => handleCopy(token)}
+                          aria-label={`Copy Sistent token of ${name}`}
+                          sx={{
+                            color: theme.palette.icon?.default,
+                            "&:hover": {
+                              color: theme.palette.icon?.brand,
+                            },
+                          }}
+                        >
+                          <ContentCopyIcon />
+                        </IconButton>
+                      </Tooltip>
+                    </CodeRow>
+                    <CodeRow>
+                      <span>RGB</span>
+                      <Tooltip title={`Copy RBG: ${rgb}`}>
+                        <IconButton
+                          onClick={() => handleCopy(rgb)}
+                          aria-label={`Copy RGB of ${name}`}
+                          sx={{
+                            color: theme.palette.icon?.default,
+                            "&:hover": {
+                              color: theme.palette.icon?.brand,
+                            },
+                          }}
+                        >
+                          <ContentCopyIcon />
+                        </IconButton>
+                      </Tooltip>
+                    </CodeRow>
+                  </ColorInfo>
+                </ColorCard>
+              ))}
+            </ColorCards>
+          </NoSsr>
+          <a id="Layer Hierarchy">
+            <h2>Layer Hierarchy</h2>
           </a>
           <p>
             For backgrounds and surfaces, colors in the neutral palettes are
@@ -254,6 +394,12 @@ const SistentIdentityColor = () => {
           </p>
         </div>
       </div>
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={1500}
+        onClose={() => setSnackbarOpen(false)}
+        message={snackbarMsg}
+      />
     </SistentLayout>
   );
 };
