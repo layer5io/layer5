@@ -2,21 +2,6 @@ import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
-import BrandColors from "../../../../../assets/images/app/projects/sistent/brand-colors-table.png";
-import GreyscaleColors from "../../../../../assets/images/app/projects/sistent/greyscale-colors-table.png";
-import BgColors from "../../../../../assets/images/app/projects/sistent/bg-colors-table.png";
-import FunctionColors from "../../../../../assets/images/app/projects/sistent/function-colors-table.png";
-import TextColors from "../../../../../assets/images/app/projects/sistent/text-colors-table.png";
-import BorderColors from "../../../../../assets/images/app/projects/sistent/border-colors-table.png";
-import ComponentColors from "../../../../../assets/images/app/projects/sistent/components-table.png";
-
-import BrandColorsDark from "../../../../../assets/images/app/projects/sistent/brand-colors-table-dark.png";
-import GreyscaleColorsDark from "../../../../../assets/images/app/projects/sistent/greyscale-colors-table-dark.png";
-import BgColorsDark from "../../../../../assets/images/app/projects/sistent/bg-colors-table-dark.png";
-import FunctionColorsDark from "../../../../../assets/images/app/projects/sistent/function-colors-table-dark.png";
-import TextColorsDark from "../../../../../assets/images/app/projects/sistent/text-colors-table-dark.png";
-import BorderColorsDark from "../../../../../assets/images/app/projects/sistent/border-colors-table-dark.png";
-import ComponentColorsDark from "../../../../../assets/images/app/projects/sistent/components-table-dark.png";
 
 import { SistentLayout } from "../../sistent-layout";
 import { Col, Row } from "../../../../../reusecore/Layout";
@@ -443,7 +428,7 @@ const PreviewTextBox = styled("p")(({ theme, tokenName }) => {
     "text-error": theme.palette.text.error,
   };
 
-  const resolvedColors = colorsMap[tokenName] ; 
+  const resolvedColors = colorsMap[tokenName] ;
 
   return {
     color: resolvedColors,
@@ -593,7 +578,7 @@ const ColorCode = () => {
                       {brandColors.map((col, idx) => (
                         <TableRow
                           key={col.tokenName}
-                          sx={{ backgroundColor: idx % 2 === 0 ? white : tableGrey }}
+
                         >
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.name}</StyledTableCell>
@@ -633,7 +618,7 @@ const ColorCode = () => {
                       {greyscaleColors.map((col, idx) => (
                         <TableRow
                           key={col.tokenName}
-                          sx={{ backgroundColor: idx % 2 === 0 ? white : tableGrey }}
+
                         >
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.name}</StyledTableCell>
@@ -674,7 +659,7 @@ const ColorCode = () => {
                       {functionColors.map((col, idx) => (
                         <TableRow
                           key={col.tokenName}
-                          sx={{ backgroundColor: idx % 2 === 0 ? white : tableGrey }}
+
                         >
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.name}</StyledTableCell>
@@ -724,7 +709,7 @@ const ColorCode = () => {
                       {backgroundColors.map((col, idx) => (
                         <TableRow
                           key={col.tokenName}
-                          sx={{ backgroundColor: idx % 2 === 0 ? white : tableGrey }}
+
                         >
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
@@ -767,7 +752,7 @@ const ColorCode = () => {
                       {textColors.map((col, idx) => (
                         <TableRow
                           key={col.tokenName}
-                          sx={{ backgroundColor: idx % 2 === 0 ? white : tableGrey }}
+
                         >
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
@@ -810,7 +795,7 @@ const ColorCode = () => {
                       {borderColors.map((col, idx) => (
                         <TableRow
                           key={col.tokenName}
-                          sx={{ backgroundColor: idx % 2 === 0 ? white : tableGrey }}
+
                         >
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
@@ -858,7 +843,7 @@ const ColorCode = () => {
                       {componentColors.map((col, idx) => (
                         <TableRow
                           key={col.tokenName}
-                          sx={{ backgroundColor: idx % 2 === 0 ? white : tableGrey }}
+
                         >
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
