@@ -6,7 +6,7 @@ import {
   SistentThemeProvider,
   Switch,
   FormControlLabel,
-} from "@layer5/sistent";
+} from "@sistent/sistent";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import { SistentLayout } from "../../sistent-layout";
