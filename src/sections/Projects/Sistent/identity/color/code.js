@@ -8,7 +8,7 @@ import { Col, Row } from "../../../../../reusecore/Layout";
 import Button from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
-import { styled, Table, TableContainer, TableCell, TableRow, TableHead, TableBody, useTheme, SistentThemeProvider } from "@sistent/sistent";
+import { styled, Table, TableContainer, TableCell, TableRow, TableHead, TableBody, SistentThemeProvider } from "@sistent/sistent";
 
 const brandColors = [
   { tokenName: "keppel-70", token: "theme.palette.brand.default", name: "Keppel", hex: "#DAf3EB" },
@@ -489,9 +489,9 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   borderBottom: `1px solid ${theme.palette.divider}`,
 }));
 
-const StyledHeaderCell = styled(StyledTableCell)(({ theme }) => ({
+const StyledHeaderCell = styled(StyledTableCell)({
   fontWeight: 600,
-}));
+});
 
 const ColorCode = () => {
   const { isDark } = useStyledDarkMode();
@@ -575,7 +575,7 @@ const ColorCode = () => {
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                      {brandColors.map((col, idx) => (
+                      {brandColors.map((col) => (
                         <TableRow
                           key={col.tokenName}
 
@@ -615,7 +615,7 @@ const ColorCode = () => {
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                      {greyscaleColors.map((col, idx) => (
+                      {greyscaleColors.map((col) => (
                         <TableRow
                           key={col.tokenName}
 
@@ -656,7 +656,7 @@ const ColorCode = () => {
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                      {functionColors.map((col, idx) => (
+                      {functionColors.map((col) => (
                         <TableRow
                           key={col.tokenName}
 
@@ -706,7 +706,7 @@ const ColorCode = () => {
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                      {backgroundColors.map((col, idx) => (
+                      {backgroundColors.map((col) => (
                         <TableRow
                           key={col.tokenName}
 
@@ -749,7 +749,7 @@ const ColorCode = () => {
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                      {textColors.map((col, idx) => (
+                      {textColors.map((col) => (
                         <TableRow
                           key={col.tokenName}
 
@@ -792,7 +792,7 @@ const ColorCode = () => {
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                      {borderColors.map((col, idx) => (
+                      {borderColors.map((col) => (
                         <TableRow
                           key={col.tokenName}
 
@@ -840,7 +840,7 @@ const ColorCode = () => {
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                      {componentColors.map((col, idx) => (
+                      {componentColors.map((col) => (
                         <TableRow
                           key={col.tokenName}
 
