@@ -22,7 +22,6 @@ const CommunityGuide = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            {" "}
             <a id="Community Guidelines">
               <h2 id="communityGuidelines">Community Guidelines</h2>
             </a>
