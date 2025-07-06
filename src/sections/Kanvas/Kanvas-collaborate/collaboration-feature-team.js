@@ -131,7 +131,7 @@ const CollaborationFeatureTeam = () => {
         <div className="hero-image" ref={locatorRef}>
           <img
             src={componentGif}
-            alt="Conversation feature illustration"
+            alt="Shared Component Library"
           />
         </div>
         <div className="hero-text">
@@ -147,7 +147,7 @@ const CollaborationFeatureTeam = () => {
         <div className="hero-image" ref={locatorRef}>
           <img
             src={versionHistory}
-            alt="Conversation feature illustration"
+            alt="Version Control & History"
           />
         </div>
       </div>
@@ -155,7 +155,7 @@ const CollaborationFeatureTeam = () => {
         <div className="hero-image" ref={locatorRef}>
           <img
             src={undoRedo}
-            alt="Conversation feature illustration"
+            alt="Undo & Revert Changes"
           />
         </div>
         <div className="hero-text">
