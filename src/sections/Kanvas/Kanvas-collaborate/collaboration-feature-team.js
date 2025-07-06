@@ -116,7 +116,7 @@ const CollaborationFeatureTeam = () => {
         </div>
       </StyledDiv>
       <StyledDiv reverse={false}>
-        <div className="hero-image" ref={locatorRef}>
+        <div className="hero-image">
           <img
             src={conversationImage}
             alt="Conversation feature illustration"
@@ -128,7 +128,7 @@ const CollaborationFeatureTeam = () => {
         </div>
       </StyledDiv>
       <StyledDiv reverse={true}>
-        <div className="hero-image" ref={locatorRef}>
+        <div className="hero-image">
           <img
             src={componentGif}
             alt="Shared Component Library"
@@ -140,7 +140,7 @@ const CollaborationFeatureTeam = () => {
         </div>
       </StyledDiv>
       <StyledDiv reverse={false}>
-        <div className="hero-image" ref={locatorRef}>
+        <div className="hero-image">
           <img
             src={versionHistory}
             alt="Version Control & History"
@@ -152,7 +152,7 @@ const CollaborationFeatureTeam = () => {
         </div>
       </StyledDiv>
       <StyledDiv reverse={true}>
-        <div className="hero-image" ref={locatorRef}>
+        <div className="hero-image">
           <img
             src={undoRedo}
             alt="Undo & Revert Changes"
