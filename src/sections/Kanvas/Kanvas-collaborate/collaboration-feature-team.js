@@ -23,24 +23,6 @@ const CollaborationFeatureWrapper = styled.div`
       flex-direction: column-reverse;
     } */
 
-    .hero-div {
-      position: relative;
-      transition: 0.5s;
-      display: flex;
-      flex-direction: row-reverse;
-      background-color: ${props => props.theme.grey121212ToWhite};;
-      max-width: 90%;
-      height: fit-content;
-      justify-content: space-between;
-      align-items: center;
-      padding: 2% 5% 8%;
-      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-      @media only screen and (max-width: 767px) {
-        text-align: center;
-        flex-direction: column-reverse;
-      }
-    }
-
     .hero-text {
         display: flex;
         flex-direction: column;
@@ -90,6 +72,24 @@ const CollaborationFeatureWrapper = styled.div`
 
 `;
 
+const StyledDiv = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: ${({ reverse }) => (reverse ? "row-reverse" : "row")};
+  background-color: ${(props) => props.theme.grey121212ToWhite};
+  max-width: 90%;
+  height: fit-content;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2% 5% 8%;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+    text-align: center;
+  }
+`;
+
 const CollaborationFeatureTeam = () => {
   const [locatorRef, inView] = useInView({ threshold: 0.5 });
   // const [sectionRef, sectionView] = useInView({ threshold: 1.0 });
@@ -106,7 +106,7 @@ const CollaborationFeatureTeam = () => {
 
   return (
     <CollaborationFeatureWrapper>
-      <div className="hero-div">
+      <StyledDiv reverse={true} >
         <div className="hero-image" ref={locatorRef}>
           <CollaborationImg className={imageInView ? "visible" : ""} alt="" />
         </div>
@@ -114,20 +114,20 @@ const CollaborationFeatureTeam = () => {
           <h2><span>Collaborate with your Team</span></h2>
           <p>Build an iterative design flow with live collaboration that keeps you in the loop whether you are working in the office or remotely.</p>
         </div>
-      </div>
-      <div className="hero-div">
-        <div className="hero-text">
-          <h2><span>Integrated Chat</span></h2>
-          <p>Add comments directly on components to give feedback or ask questions. Great for discussing changes without leaving the canvas.</p>
-        </div>
+      </StyledDiv>
+      <StyledDiv reverse={false}>
         <div className="hero-image" ref={locatorRef}>
           <img
             src={conversationImage}
             alt="Conversation feature illustration"
           />
         </div>
-      </div>
-      <div className="hero-div">
+        <div className="hero-text">
+          <h2><span>Integrated Chat</span></h2>
+          <p>Add comments directly on components to give feedback or ask questions. Great for discussing changes without leaving the canvas.</p>
+        </div>
+      </StyledDiv>
+      <StyledDiv reverse={true}>
         <div className="hero-image" ref={locatorRef}>
           <img
             src={componentGif}
@@ -138,20 +138,20 @@ const CollaborationFeatureTeam = () => {
           <h2><span>Shared Component Library</span></h2>
           <p>Access a common library of reusable components and patterns. Save time by using or modifying shared elements.</p>
         </div>
-      </div>
-      <div className="hero-div">
-        <div className="hero-text">
-          <h2><span>Version Control & History</span></h2>
-          <p>Save different versions of your design and go back anytime. Compare past and present designs to see improvements.</p>
-        </div>
+      </StyledDiv>
+      <StyledDiv reverse={false}>
         <div className="hero-image" ref={locatorRef}>
           <img
             src={versionHistory}
             alt="Version Control & History"
           />
         </div>
-      </div>
-      <div className="hero-div">
+        <div className="hero-text">
+          <h2><span>Version Control & History</span></h2>
+          <p>Save different versions of your design and go back anytime. Compare past and present designs to see improvements.</p>
+        </div>
+      </StyledDiv>
+      <StyledDiv reverse={true}>
         <div className="hero-image" ref={locatorRef}>
           <img
             src={undoRedo}
@@ -162,7 +162,7 @@ const CollaborationFeatureTeam = () => {
           <h2><span>Undo & Revert Changes</span></h2>
           <p>Made a mistake? No worries — you can easily undo recent actions. Go back to a previous state without losing your progress.</p>
         </div>
-      </div>
+      </StyledDiv>
     </CollaborationFeatureWrapper>
   );
 };
