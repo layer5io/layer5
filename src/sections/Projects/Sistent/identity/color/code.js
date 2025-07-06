@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
@@ -8,7 +8,8 @@ import { Col, Row } from "../../../../../reusecore/Layout";
 import Button from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
-import { styled, Table, TableContainer, TableCell, TableRow, TableHead, TableBody, SistentThemeProvider } from "@sistent/sistent";
+import {  styled,  Table, TableContainer, TableCell, TableRow, TableHead, TableBody, SistentThemeProvider, CustomTooltip, Box, } from "@sistent/sistent";
+import { copyToClipboard } from "../../../../../components/CodeBlock/copy-to-clipboard.js";
 
 const brandColors = [
   { tokenName: "keppel-70", token: "theme.palette.brand.default", name: "Keppel", hex: "#DAf3EB" },
@@ -403,6 +404,47 @@ const componentColors = [
 ];
 
 
+const CopyColor = ({ hex , token }) => {
+  const [copyText, setCopyText] = useState("Copy");
+  const [showCopy, setShowCopy] = useState(false);
+
+  const handleCopy = async () => {
+    await copyToClipboard(hex || token);
+    setCopyText("Copied");
+    setTimeout(() => setCopyText("Copy"), 1000);
+  };
+
+  return (
+    <CustomTooltip
+      title={copyText === "Copied" ? "Copied" : "Copy"}
+      enterDelay={800}
+      leaveDelay={10}
+      placement="right"
+    >
+      <Box
+        sx={{
+          position: "relative",
+          display: "inline-flex",
+          alignItems: "center",
+          cursor: "pointer",
+          padding: "2px 4px",
+          borderRadius: "3px",
+          transition: "background-color 0.2s ease",
+          "&:hover": {
+            backgroundColor: (theme) =>
+              theme.palette.action?.hover || "rgba(0, 0, 0, 0.04)",
+          },
+        }}
+        onMouseEnter={() => setShowCopy(true)}
+        onMouseLeave={() => setShowCopy(false)}
+        onClick={handleCopy}
+      >
+        <span>{hex || token }</span>
+      </Box>
+    </CustomTooltip>
+  );
+};
+
 const PreviewBox = styled("div")(({ theme, bgcolor }) => ({
   backgroundColor: bgcolor,
   width: "1.6rem",
@@ -411,7 +453,9 @@ const PreviewBox = styled("div")(({ theme, bgcolor }) => ({
   border: `1px solid ${theme.palette.divider}`,
   boxShadow: "inset 0 0 3px rgba(0,0,0,0.15)",
   margin: "0 auto",
+
 }));
+
 
 const PreviewTextBox = styled("p")(({ theme, tokenName }) => {
   const colorsMap = {
@@ -582,9 +626,9 @@ const ColorCode = () => {
                         >
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.name}</StyledTableCell>
-                          <StyledTableCell>{col.hex}</StyledTableCell>
+                          <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            {col.token}
+                            <CopyColor hex={col.token} />
                           </StyledTableCell>
                           <StyledTableCell align="center">
                             <PreviewBox bgcolor={col.hex} />
@@ -622,9 +666,9 @@ const ColorCode = () => {
                         >
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.name}</StyledTableCell>
-                          <StyledTableCell>{col.hex}</StyledTableCell>
+                          <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            {col.token}
+                            <CopyColor hex={col.token} />
                           </StyledTableCell>
                           <StyledTableCell align="center">
                             <PreviewBox bgcolor={col.hex} />
@@ -663,9 +707,9 @@ const ColorCode = () => {
                         >
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.name}</StyledTableCell>
-                          <StyledTableCell>{col.hex}</StyledTableCell>
+                          <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            {col.token}
+                            <CopyColor hex={col.token} />
                           </StyledTableCell>
                           <StyledTableCell align="center">
                             <PreviewBox bgcolor={col.hex} />
@@ -713,9 +757,9 @@ const ColorCode = () => {
                         >
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
-                          <StyledTableCell>{col.hex}</StyledTableCell>
+                          <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            {col.token}
+                            <CopyColor hex={col.token} />
                           </StyledTableCell>
                           <StyledTableCell align="center">
                             <PreviewBox bgcolor={col.hex} />
@@ -756,9 +800,9 @@ const ColorCode = () => {
                         >
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
-                          <StyledTableCell>{col.hex}</StyledTableCell>
+                          <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            {col.token}
+                            <CopyColor hex={col.token} />
                           </StyledTableCell>
                           <StyledTableCell align="center">
                             <PreviewTextBox tokenName={col.tokenName} >Aa</PreviewTextBox>
@@ -799,9 +843,9 @@ const ColorCode = () => {
                         >
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
-                          <StyledTableCell>{col.hex}</StyledTableCell>
+                          <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            {col.token}
+                            <CopyColor hex={col.token} />
                           </StyledTableCell>
                           <StyledTableCell align="center">
                             <PreviewBorderBox tokenName={col.tokenName} />
@@ -847,9 +891,9 @@ const ColorCode = () => {
                         >
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
-                          <StyledTableCell>{col.hex}</StyledTableCell>
+                          <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            {col.token}
+                            <CopyColor hex={col.token} />
                           </StyledTableCell>
                           <StyledTableCell align="center">
                             <PreviewBox bgcolor={col.hex} />
