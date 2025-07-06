@@ -117,7 +117,7 @@ const CollaborationFeatureTeam = () => {
       </StyledDiv>
       <StyledDiv reverse={false}>
         <div className="hero-image">
-          <img
+          <ImageWithAnimation
             src={conversationImage}
             alt="Conversation feature illustration"
           />
@@ -129,7 +129,7 @@ const CollaborationFeatureTeam = () => {
       </StyledDiv>
       <StyledDiv reverse={true}>
         <div className="hero-image">
-          <img
+          <ImageWithAnimation
             src={componentGif}
             alt="Shared Component Library"
           />
@@ -141,7 +141,7 @@ const CollaborationFeatureTeam = () => {
       </StyledDiv>
       <StyledDiv reverse={false}>
         <div className="hero-image">
-          <img
+          <ImageWithAnimation
             src={versionHistory}
             alt="Version Control & History"
           />
@@ -153,7 +153,7 @@ const CollaborationFeatureTeam = () => {
       </StyledDiv>
       <StyledDiv reverse={true}>
         <div className="hero-image">
-          <img
+          <ImageWithAnimation
             src={undoRedo}
             alt="Undo & Revert Changes"
           />
@@ -168,3 +168,31 @@ const CollaborationFeatureTeam = () => {
 };
 
 export default CollaborationFeatureTeam;
+
+
+const StyledImage = styled.img`
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.img-animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+  }
+`;
+
+const ImageWithAnimation = ({ src, alt }) => {
+  const [ref, inView] = useInView({ threshold: 0.4 });
+  return (
+    <StyledImage
+      ref={ref}
+      src={src}
+      alt={alt}
+      className={inView ? "img-animate" : ""}
+    />
+  );
+};
