@@ -64,7 +64,7 @@
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-loadable-components-ssr": "^4.3.2",
     "gatsby-plugin-manifest": "^5.11.0",
-    "gatsby-plugin-mdx": "3.20.0",
+    "gatsby-plugin-mdx": "5.14.1",
     "gatsby-plugin-meta-redirect": "github:layer5labs/gatsby-plugin-meta-redirect",
     "gatsby-plugin-preload-fonts": "^4.11.0",
     "gatsby-plugin-robots-txt": "^1.8.0",
