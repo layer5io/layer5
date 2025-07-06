@@ -3,13 +3,18 @@ import styled from "styled-components";
 import { ReactComponent as CollaborationImg } from "./../FeaturesSection/Collaborate/images/collab4-colorMode.svg";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
+import conversationImage from "./images/conversation.png";
+import componentGif from "./images/components.gif";
+import versionHistory from "./images/versionHistory.png";
+import undoRedo from "./images/undoRedo.png";
 
 const CollaborationFeatureWrapper = styled.div`
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     /* background-color: ${props => props.theme.grey121212ToWhite};;
     max-width: 90%; */
+    width: 100%;
     justify-content: center;
     /* align-items: center; */
      padding: 5% 5% 8%;
@@ -55,11 +60,6 @@ const CollaborationFeatureWrapper = styled.div`
     .hero-image {
       flex: 0 0 50%;
       max-width: 50%;
-    }
-
-    img {
-      opacity: 0;
-      transition: opacity ease-out 0.5s;
     }
 
     svg {
@@ -108,11 +108,59 @@ const CollaborationFeatureTeam = () => {
     <CollaborationFeatureWrapper>
       <div className="hero-div">
         <div className="hero-image" ref={locatorRef}>
-          <CollaborationImg className={imageInView ? "visible" : ""}  alt=""/>
+          <CollaborationImg className={imageInView ? "visible" : ""} alt="" />
         </div>
         <div className="hero-text">
           <h2><span>Collaborate with your Team</span></h2>
           <p>Build an iterative design flow with live collaboration that keeps you in the loop whether you are working in the office or remotely.</p>
+        </div>
+      </div>
+      <div className="hero-div">
+        <div className="hero-text">
+          <h2><span>Integrated Chat</span></h2>
+          <p>Add comments directly on components to give feedback or ask questions. Great for discussing changes without leaving the canvas.</p>
+        </div>
+        <div className="hero-image" ref={locatorRef}>
+          <img
+            src={conversationImage}
+            alt="Conversation feature illustration"
+          />
+        </div>
+      </div>
+      <div className="hero-div">
+        <div className="hero-image" ref={locatorRef}>
+          <img
+            src={componentGif}
+            alt="Conversation feature illustration"
+          />
+        </div>
+        <div className="hero-text">
+          <h2><span>Shared Component Library</span></h2>
+          <p>Access a common library of reusable components and patterns. Save time by using or modifying shared elements.</p>
+        </div>
+      </div>
+      <div className="hero-div">
+        <div className="hero-text">
+          <h2><span>Version Control & History</span></h2>
+          <p>Save different versions of your design and go back anytime. Compare past and present designs to see improvements.</p>
+        </div>
+        <div className="hero-image" ref={locatorRef}>
+          <img
+            src={versionHistory}
+            alt="Conversation feature illustration"
+          />
+        </div>
+      </div>
+      <div className="hero-div">
+        <div className="hero-image" ref={locatorRef}>
+          <img
+            src={undoRedo}
+            alt="Conversation feature illustration"
+          />
+        </div>
+        <div className="hero-text">
+          <h2><span>Undo & Revert Changes</span></h2>
+          <p>Made a mistake? No worries — you can easily undo recent actions. Go back to a previous state without losing your progress.</p>
         </div>
       </div>
     </CollaborationFeatureWrapper>
