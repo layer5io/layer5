@@ -123,8 +123,8 @@ const CollaborationFeatureTeam = () => {
           />
         </div>
         <div className="hero-text">
-          <h2><span>Integrated Chat</span></h2>
-          <p>Add comments directly on components to give feedback or ask questions. Great for discussing changes without leaving the canvas.</p>
+          <h2><span>Integrated Comments</span></h2>
+          <p>Add comments directly to give feedback or ask questions. Great for discussing changes without leaving the canvas.</p>
         </div>
       </StyledDiv>
       <StyledDiv reverse={true}>
@@ -136,19 +136,19 @@ const CollaborationFeatureTeam = () => {
         </div>
         <div className="hero-text">
           <h2><span>Shared Component Library</span></h2>
-          <p>Access a common library of reusable components and patterns. Save time by using or modifying shared elements.</p>
+          <p>Access to a library of reusable components and designs. Save time by using or modifying shared designs.</p>
         </div>
       </StyledDiv>
       <StyledDiv reverse={false}>
         <div className="hero-image">
           <ImageWithAnimation
             src={versionHistory}
-            alt="Version Control & History"
+            alt="Live Activity Log"
           />
         </div>
         <div className="hero-text">
-          <h2><span>Version Control & History</span></h2>
-          <p>Save different versions of your design and go back anytime. Compare past and present designs to see improvements.</p>
+          <h2><span>Live Activity Log</span></h2>
+          <p>See real-time updates of edits, comments, and actions by you and your team.</p>
         </div>
       </StyledDiv>
       <StyledDiv reverse={true}>
