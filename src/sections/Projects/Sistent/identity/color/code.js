@@ -538,11 +538,13 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   fontSize: "0.875rem",
   padding: "0.75rem",
   borderBottom: `1px solid ${theme.palette.divider}`,
+  borderRadius: "4px",
 }));
 
-const StyledHeaderCell = styled(StyledTableCell)({
+const StyledHeaderCell = styled(StyledTableCell)(({ theme }) => ({
   fontWeight: 600,
-});
+  color: theme.palette.background.default,
+}));
 
 const ColorCode = () => {
   const { isDark } = useStyledDarkMode();
