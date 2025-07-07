@@ -543,7 +543,6 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
 const StyledHeaderCell = styled(StyledTableCell)(({ theme }) => ({
   fontWeight: 600,
-  color: theme.palette.background.default,
 }));
 
 const ColorCode = () => {
