@@ -6,11 +6,11 @@ import { StaticImage } from "gatsby-plugin-image";
 import BestPracticesBanner from "./banner";
 import RelatedPosts from "../../components/Related-Posts";
 import { graphql, useStaticQuery } from "gatsby";
-import MesheryDashboardImg from "./images/meshery-dashboard-hero-image.png";
+import Workspace from "./images/workspace.png";
 import DeliveryCylesImg from "./images/delivery-cycles.png";
 import ScaleDevopsImg from "./images/scale-devops-practices.png";
-import MesheryPerfImg from "./images/meshery-performance.gif";
-import KanvasCollaborativeDesignerImg from "../Devrel-platform/images/layer5-kanvas-designer.webp";
+import CatalogImg from "./images/catalog-light.svg";
+import ComponentLibrary from "./images/components.gif";
 import Integrations from "../../sections/Home/Playground-home";
 import InlineQuotes from "../../components/Inline-quotes";
 import Maxi from "../../collections/members/maximiliano-churichi/Maximiliano-Churichi.webp";
@@ -76,22 +76,22 @@ const Platform = () => {
         <BestPracticesBanner />
         <h1 style={{ textAlign: "center" }}>Benefits of Platform Engineering</h1>
         <PlatformSection
-          heading="Drive standardization and consistency"
-          caption="Establish unified deployment practices across your organization through consistent tooling, reusable infrastructure components, and centralized governance. Create a foundation where teams can deploy confidently using proven patterns and standardized configurations that reduce variability and increase reliability."
-          image={KanvasCollaborativeDesignerImg}
+          heading="Visualize and Design Infrastructure Effortlessly"
+          caption="Leverage the model and component library to visually design cloud-native infrastructure using pre-built tools and patterns. Simplify architecture creation with reusable components and drag-and-drop precision."
+          image={ComponentLibrary}
         />
 
         <PlatformSection
-          heading="Utilize resources more efficiently"
-          caption="Optimize infrastructure utilization by implementing intelligent resource allocation, automated scaling policies, and performance-driven decisions. Eliminate waste through data-driven insights and right-sizing recommendations that align resource consumption with actual workload demands."
-          image={MesheryPerfImg}
+          heading="Leverage Ready-to-Use Building Blocks"
+          caption="Speed up development and architecture design with a rich library of reusable components. Empower teams to assemble systems quickly using proven, out-of-the-box patterns."
+          image={CatalogImg}
           $reverse
         />
 
         <PlatformSection
           heading="Enhance developer productivity"
           caption="Remove infrastructure complexity from developer workflows by providing self-service portals, automated provisioning, and pre-configured environments. Enable teams to focus on feature development rather than operational overhead through streamlined tooling and instant access to development resources."
-          image={MesheryDashboardImg}
+          image={Workspace}
         />
 
         <PlatformSection
@@ -229,17 +229,28 @@ const StyledRow = styled(Row)`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
     .img-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
       cursor: zoom-in;
-      
-      .calalog-image {
+
+      img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+
         @media (max-width: 767px) {
-          max-width: 80%;
-          margin-bottom: 1.25rem;
+          width: 300px;
+          height: 200px;
+          object-fit: cover;
+        }
+
+        @media (max-width: 467px) {
+          width: 100%;
+          height: 180px;
+          object-fit: cover;
         }
       }
     }
