@@ -162,7 +162,7 @@ export const HandbookWrapper = styled.div`
     }
 
     td, th {
-      border: 0.05rem solid ${(props) => props.theme.primaryLightColor};
+      border: 0.05rem solid ${(props) => props.theme.primaryTestLightColor};
       text-align: left;
       padding: 0.5rem;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -180,7 +180,7 @@ export const HandbookWrapper = styled.div`
     }
 
     tbody:nth-child(even) {
-      background-color: ${(props) => props.theme.secondaryLightColorTwo};
+      background-color: ${(props) => props.theme.secondaryTestLightColorTwo};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 

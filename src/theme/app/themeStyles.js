@@ -15,6 +15,7 @@ const lighttheme = {
 
   // silver chalice (light gray)
   primaryLightColor: "#b3b3b3",
+  primaryTestLightColor: "#2C2C2C",
 
   // keppel (dark green)
   primaryLightColorTwo: "#00d3a9",
@@ -24,6 +25,7 @@ const lighttheme = {
   secondaryColor: "#00b39f",
   caribbeanGreenColor: "#00d3a9",
   secondaryLightColorTwo: "#F3FFFD",
+  secondaryTestLightColorTwo: "rgba(0,179,159, .4)",
 
   // lighter gray
   secondaryLightColor: "#FAFAFA",
@@ -248,7 +250,7 @@ export const darktheme = {
 
   // silver chalice (light gray)
   primaryLightColor: "#2C2C2C",
-
+  primaryTestLightColor: "#2C2C2C",
   // keppel (dark green)
   primaryLightColorTwo: "#2C2C2C",
   keppelColor: "#00d3a9",
@@ -257,7 +259,7 @@ export const darktheme = {
   secondaryColor: "#00b39f",
   caribbeanGreenColor: "#00d3a9",
   secondaryLightColorTwo: "rgba(0,179,159, .4)",
-
+  secondaryTestLightColorTwo: "rgba(0,179,159, .4)",
   // lighter gray
   secondaryLightColor: "#000000",
 
