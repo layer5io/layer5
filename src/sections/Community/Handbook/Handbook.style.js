@@ -1,6 +1,78 @@
 import styled from "styled-components";
 export const HandbookWrapper = styled.div`
 
+/* repository overview  */
+div.accessRequired {
+  font-size: small;
+  line-height: .9rem;
+  font-style: italic;
+}
+details.invite-only {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: ${(props) => props.theme.grey313131ToGreenC9FCF6};
+  span {
+    font-weight: bold;
+    display: inline;
+  }
+}
+
+table {
+      border-collapse: collapse;
+      width: 98%;
+      margin: 1rem 0 2rem 0;
+      .github-icon{
+        height: 1.7rem;
+        width:auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        filter: invert(${(props) => props.theme.meshInterfaceLogoFilter});
+      }
+      .site-icon{
+        height: 1.6rem;
+        width:auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .inline {
+        display: inline;
+        vertical-align: bottom;
+      }
+      .smp-action{
+        filter: invert(${(props) => props.theme.meshInterfaceLogoFilter});
+      }
+    }
+
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    td, th {
+      border: 0.05rem solid ${(props) => props.theme.primaryLightColor};
+      text-align: left;
+      padding: 0.5rem;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .archived-project {
+      opacity: 0.3;
+      background-color: #808080;
+      // pointer-events: none;
+    }
+
+    .linkscol{
+      text-align: center;
+      width:8%;
+    }
+
+    tbody:nth-child(even) {
+      background-color: ${(props) => props.theme.secondaryLightColorTwo};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
     .content > a:first-of-type > h2:first-of-type {
       padding-top: 1rem;
     }
@@ -126,62 +198,6 @@ export const HandbookWrapper = styled.div`
 
     #sign-off{
       padding-bottom: 4rem;
-    }
-
-    table {
-      border-collapse: collapse;
-      width: 98%;
-      margin: 1rem 0 2rem 0;
-      .github-icon{
-        height: 1.7rem;
-        width:auto;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        filter: invert(${(props) => props.theme.meshInterfaceLogoFilter});
-      }
-      .site-icon{
-        height: 1.6rem;
-        width:auto;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .inline {
-        display: inline;
-        vertical-align: bottom;
-      }
-      .smp-action{
-        filter: invert(${(props) => props.theme.meshInterfaceLogoFilter});
-      }
-    }
-
-    .table-container {
-      width: 100%;
-      overflow-x: auto;
-    }
-
-    td, th {
-      border: 0.05rem solid ${(props) => props.theme.primaryTestLightColor};
-      text-align: left;
-      padding: 0.5rem;
-      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-
-    .archived-project {
-      opacity: 0.3;
-      background-color: #808080;
-      // pointer-events: none;
-    }
-
-    .linkscol{
-      text-align: center;
-      width:8%;
-    }
-
-    tbody:nth-child(even) {
-      background-color: ${(props) => props.theme.secondaryTestLightColorTwo};
-      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .codes{
@@ -571,19 +587,5 @@ width: 90%;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 }
-/* repository overview  */
-div.accessRequired {
-  font-size: small;
-  line-height: .9rem;
-  font-style: italic;
-}
-details.invite-only {
-  margin: 1rem;
-  padding: 1rem;
-  background-color: ${(props) => props.theme.grey313131ToGreenC9FCF6};
-  span {
-    font-weight: bold;
-    display: inline;
-  }
-}
+
 `;
