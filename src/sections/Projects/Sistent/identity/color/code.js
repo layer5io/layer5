@@ -518,7 +518,7 @@ const PreviewBorderBox = styled("div")(({ theme , tokenName }) => {
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   "&:nth-child(odd)": {
-    backgroundColor: theme.palette.background.default, 
+    backgroundColor: theme.palette.background.default,
   },
   "&:nth-child(even)": {
     backgroundColor: theme.palette.background.secondary,
@@ -541,7 +541,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   borderRadius: "4px",
 }));
 
-const StyledHeaderCell = styled(StyledTableCell)(({ theme }) => ({
+const StyledHeaderCell = styled(StyledTableCell)(() => ({
   fontWeight: 600,
 }));
 
@@ -628,7 +628,7 @@ const ColorCode = () => {
                     </TableHead>
                     <TableBody>
                       {brandColors.map((col) => (
-                      <StyledTableRow key={col.tokenName}>
+                        <StyledTableRow key={col.tokenName}>
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.name}</StyledTableCell>
                           <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
@@ -665,7 +665,7 @@ const ColorCode = () => {
                     </TableHead>
                     <TableBody>
                       {greyscaleColors.map((col) => (
-                        <StyledTableRow key={col.tokenName}> 
+                        <StyledTableRow key={col.tokenName}>
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.name}</StyledTableCell>
                           <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
@@ -830,7 +830,7 @@ const ColorCode = () => {
                     </TableHead>
                     <TableBody>
                       {borderColors.map((col) => (
-                       <StyledTableRow key={col.tokenName}>
+                        <StyledTableRow key={col.tokenName}>
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
                           <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
