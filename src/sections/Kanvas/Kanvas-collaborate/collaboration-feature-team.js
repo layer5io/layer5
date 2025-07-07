@@ -17,7 +17,7 @@ const CollaborationFeatureWrapper = styled.div`
     max-width: 90%; */
     width: 100%;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
      padding: 5% 5% 8%;
     /* @media only screen and (max-width: 767px) {
       text-align: center;
@@ -46,6 +46,9 @@ const CollaborationFeatureWrapper = styled.div`
     }
 
     img {
+        width: 600px;
+        height: 300px;
+        object-fit: cover;
         opacity: 0;
         transform: translateY(30px);
         transition: opacity 0.6s ease, transform 0.6s ease;
