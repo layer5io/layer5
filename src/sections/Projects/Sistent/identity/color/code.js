@@ -516,7 +516,14 @@ const PreviewBorderBox = styled("div")(({ theme , tokenName }) => {
   };
 });
 
-
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  "&:nth-child(odd)": {
+    backgroundColor: theme.palette.background.default, 
+  },
+  "&:nth-child(even)": {
+    backgroundColor: theme.palette.background.secondary,
+  },
+}));
 
 
 const StyledTableContainer = styled(TableContainer)(() => ({
@@ -620,10 +627,7 @@ const ColorCode = () => {
                     </TableHead>
                     <TableBody>
                       {brandColors.map((col) => (
-                        <TableRow
-                          key={col.tokenName}
-
-                        >
+                      <StyledTableRow key={col.tokenName}>
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.name}</StyledTableCell>
                           <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
@@ -633,7 +637,7 @@ const ColorCode = () => {
                           <StyledTableCell align="center">
                             <PreviewBox bgcolor={col.hex} />
                           </StyledTableCell>
-                        </TableRow>
+                        </StyledTableRow>
                       ))}
                     </TableBody>
                   </Table>
@@ -660,10 +664,7 @@ const ColorCode = () => {
                     </TableHead>
                     <TableBody>
                       {greyscaleColors.map((col) => (
-                        <TableRow
-                          key={col.tokenName}
-
-                        >
+                        <StyledTableRow key={col.tokenName}> 
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.name}</StyledTableCell>
                           <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
@@ -673,7 +674,7 @@ const ColorCode = () => {
                           <StyledTableCell align="center">
                             <PreviewBox bgcolor={col.hex} />
                           </StyledTableCell>
-                        </TableRow>
+                        </StyledTableRow>
                       ))}
                     </TableBody>
                   </Table>
@@ -701,10 +702,7 @@ const ColorCode = () => {
                     </TableHead>
                     <TableBody>
                       {functionColors.map((col) => (
-                        <TableRow
-                          key={col.tokenName}
-
-                        >
+                        <StyledTableRow key={col.tokenName}>
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.name}</StyledTableCell>
                           <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
@@ -714,7 +712,7 @@ const ColorCode = () => {
                           <StyledTableCell align="center">
                             <PreviewBox bgcolor={col.hex} />
                           </StyledTableCell>
-                        </TableRow>
+                        </StyledTableRow>
                       ))}
                     </TableBody>
                   </Table>
@@ -751,10 +749,7 @@ const ColorCode = () => {
                     </TableHead>
                     <TableBody>
                       {backgroundColors.map((col) => (
-                        <TableRow
-                          key={col.tokenName}
-
-                        >
+                        <StyledTableRow key={col.tokenName}>
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
                           <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
@@ -767,7 +762,7 @@ const ColorCode = () => {
                           <StyledTableCell >
                             {col.role}
                           </StyledTableCell>
-                        </TableRow>
+                        </StyledTableRow>
                       ))}
                     </TableBody>
                   </Table>
@@ -794,10 +789,7 @@ const ColorCode = () => {
                     </TableHead>
                     <TableBody>
                       {textColors.map((col) => (
-                        <TableRow
-                          key={col.tokenName}
-
-                        >
+                        <StyledTableRow key={col.tokenName}>
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
                           <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
@@ -810,7 +802,7 @@ const ColorCode = () => {
                           <StyledTableCell>
                             {col.role}
                           </StyledTableCell>
-                        </TableRow>
+                        </StyledTableRow>
                       ))}
                     </TableBody>
                   </Table>
@@ -837,10 +829,7 @@ const ColorCode = () => {
                     </TableHead>
                     <TableBody>
                       {borderColors.map((col) => (
-                        <TableRow
-                          key={col.tokenName}
-
-                        >
+                       <StyledTableRow key={col.tokenName}>
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
                           <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
@@ -853,7 +842,7 @@ const ColorCode = () => {
                           <StyledTableCell>
                             {col.role}
                           </StyledTableCell>
-                        </TableRow>
+                        </StyledTableRow>
                       ))}
                     </TableBody>
                   </Table>
@@ -885,10 +874,7 @@ const ColorCode = () => {
                     </TableHead>
                     <TableBody>
                       {componentColors.map((col) => (
-                        <TableRow
-                          key={col.tokenName}
-
-                        >
+                        <StyledTableRow key={col.tokenName}>
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
                           <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
@@ -901,7 +887,7 @@ const ColorCode = () => {
                           <StyledTableCell >
                             {col.role}
                           </StyledTableCell>
-                        </TableRow>
+                        </StyledTableRow>
                       ))}
                     </TableBody>
                   </Table>
