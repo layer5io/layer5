@@ -237,9 +237,9 @@ const StyledRow = styled(Row)`
       cursor: zoom-in;
 
       img {
-        max-width: 100%;
-        height: auto;
-        object-fit: contain;
+        width: 600px;
+        height: 300px;
+        object-fit: cover;
 
         @media (max-width: 767px) {
           width: 300px;
