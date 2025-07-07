@@ -5,9 +5,9 @@ import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 
 import ConversationImg from "./images/conversation.png";
-import ComponentsGif from "./images/components.gif"
-import ActivityLogsImg from "./images/activity-logs.png"
-import UndoRedoImg from "./images/undo-redo.png"
+import ComponentsGif from "./images/components.gif";
+import ActivityLogsImg from "./images/activity-logs.png";
+import UndoRedoImg from "./images/undo-redo.png";
 
 const CollaborationFeatureWrapper = styled.div`
 
