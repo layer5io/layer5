@@ -62,18 +62,7 @@ export const HandbookWrapper = styled.div`
       }
     }
 
-    .conduct-section{
-      @media screen and (min-width: 750px) {
-        margin-top:-43rem;
-      }
-            @media screen and (min-width: 768px) and (max-height: 1145px) {
-       margin-top : -66vh ! important;
 
-    }
-
-  }
-
-    }
     .page-section .heading-top{
       @media screen and (min-width: 751px) {
         padding-top:1rem;
