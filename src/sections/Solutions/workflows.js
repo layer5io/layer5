@@ -13,6 +13,7 @@ import CubeTreeIcon from "./images/patterns-icon.svg";
 import DollarSignIcon from "./images/money-icon.svg";
 
 const WorkflowSectionWrapper = styled.div`
+    margin-bottom: 2.5rem;
     .section-title {
       text-align: center;
     }
@@ -45,11 +46,6 @@ const WorkflowSectionWrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-
-    
-    
-    
-    
 
     .card-header {
       display: flex;
@@ -125,7 +121,6 @@ const WorkflowSectionWrapper = styled.div`
         align-items: center;
         justify-content: center;
         font-size: 1.5rem;
-        margin-bottom: 1rem;
     }
     
     h4 {
@@ -288,7 +283,7 @@ const WorkflowSection = () => {
             <div className="content">
               <div className="card-header">
                 <div className="circle">
-                  {/* <DeployIcon /> */}
+                  <img src={DeployIcon} />
                 </div>
                 <h2>Organize all deployments</h2>
               </div>
