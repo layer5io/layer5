@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
-
-
 import { SistentLayout } from "../../sistent-layout";
 import { Col, Row } from "../../../../../reusecore/Layout";
 import Button from "../../../../../reusecore/Button";
@@ -447,8 +445,8 @@ const CopyColor = ({ hex , token }) => {
 
 const PreviewBox = styled("div")(({ theme, bgcolor }) => ({
   backgroundColor: bgcolor,
-  width: "1.6rem",
-  height: "1.6rem",
+  width: "2.6rem",
+  height: "2.6rem",
   borderRadius: "6px",
   border: `1px solid ${theme.palette.divider}`,
   boxShadow: "inset 0 0 3px rgba(0,0,0,0.15)",
@@ -486,6 +484,7 @@ const PreviewTextBox = styled("p")(({ theme, tokenName }) => {
     justifyContent: "center",
     fontSize: "1rem",
     fontWeight: "bold",
+    backgroundColor: theme.palette.background.tertiary,
   };
 });
 
@@ -501,8 +500,8 @@ const PreviewBorderBox = styled("div")(({ theme , tokenName }) => {
 
   return {
     backgroundColor: "transparent",
-    width: "1.6rem",
-    height: "1.6rem",
+    width: "2.6rem",
+    height: "2.6rem",
     borderRadius: "6px",
     border: `1px solid ${resolvedColors}`,
     boxShadow: "inset 0 0 3px rgba(0,0,0,0.15)",
@@ -535,7 +534,7 @@ const StyledTableContainer = styled(TableContainer)(() => ({
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   color: theme.palette.text.secondary,
-  fontSize: "0.875rem",
+  fontSize: "0.975rem",
   padding: "0.75rem",
   borderBottom: `1px solid ${theme.palette.divider}`,
   borderRadius: "4px",
@@ -631,7 +630,7 @@ const ColorCode = () => {
                         <StyledTableRow key={col.tokenName}>
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.name}</StyledTableCell>
-                          <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
+                          <StyledTableCell>{col.hex}</StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
                             <CopyColor hex={col.token} />
                           </StyledTableCell>
@@ -668,7 +667,7 @@ const ColorCode = () => {
                         <StyledTableRow key={col.tokenName}>
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.name}</StyledTableCell>
-                          <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
+                          <StyledTableCell>{col.hex}</StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
                             <CopyColor hex={col.token} />
                           </StyledTableCell>
@@ -706,7 +705,7 @@ const ColorCode = () => {
                         <StyledTableRow key={col.tokenName}>
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.name}</StyledTableCell>
-                          <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
+                          <StyledTableCell>{col.hex}</StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
                             <CopyColor hex={col.token} />
                           </StyledTableCell>
@@ -753,7 +752,7 @@ const ColorCode = () => {
                         <StyledTableRow key={col.tokenName}>
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
-                          <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
+                          <StyledTableCell>{col.hex}</StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
                             <CopyColor hex={col.token} />
                           </StyledTableCell>
@@ -793,7 +792,7 @@ const ColorCode = () => {
                         <StyledTableRow key={col.tokenName}>
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
-                          <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
+                          <StyledTableCell>{col.hex}</StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
                             <CopyColor hex={col.token} />
                           </StyledTableCell>
@@ -833,7 +832,7 @@ const ColorCode = () => {
                         <StyledTableRow key={col.tokenName}>
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
-                          <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
+                          <StyledTableCell>{col.hex}</StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
                             <CopyColor hex={col.token} />
                           </StyledTableCell>
@@ -878,7 +877,7 @@ const ColorCode = () => {
                         <StyledTableRow key={col.tokenName}>
                           <StyledTableCell>{col.tokenName}</StyledTableCell>
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
-                          <StyledTableCell><CopyColor hex={col.hex} /></StyledTableCell>
+                          <StyledTableCell>{col.hex}</StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
                             <CopyColor hex={col.token} />
                           </StyledTableCell>
