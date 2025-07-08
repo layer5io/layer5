@@ -40,14 +40,14 @@ const MesheryManageMesh = () => {
         <KanvasVisualizerViews />
         {/* <Row $Vcenter>
           <Col $sm={12} $lg={6}>
-            <h2>Manage your Mesh</h2>
-            <p>Manage all aspects of running your service mesh no matter what service mesh you're running</p>
+            <h2>Manage your Infrastructure</h2>
+            <p>Manage all aspects of running your infrastructure no matter what platform you're running</p>
             <Button $primary className="banner-btn" title="How Meshery Works" $url="/cloud-native-management/meshery/operating-cloud-native-infra">
               <GiClockwork size={21} className="button-icon" />
             </Button>
           </Col>
           <Col $sm={12} $lg={6}>
-            <StaticImage src={MultiMesh} alt="Meshery multi-mesh" className="multi-mesh-img"/>
+            <StaticImage src={MultiMesh} alt="Kanvas" className="multi-mesh-img"/>
           </Col>
         </Row> */}
       </Container>
