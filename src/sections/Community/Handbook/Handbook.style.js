@@ -1,6 +1,43 @@
 import styled from "styled-components";
 export const HandbookWrapper = styled.div`
 
+
+.writing_program{
+width: 90%;
+@media only screen and (max-width: 900px){
+  width: 100%;
+}
+.list{
+  padding: 1.875rem 0px;
+  table, tr, td{
+    border:none;
+   }
+  .text{
+    p{
+      color: ${props => props.theme.tertiaryColor};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+  }
+  .listed{
+      text-align: left;
+      .table{
+          .icon{
+              height: 2.5rem;
+              width: 2.5rem;
+              vertical-align: top;
+          }
+          .skill{
+              color: ${props => props.theme.tertiaryColor};
+              font-size: 16px;
+              padding: 0 0 1.25rem 1.8rem;
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+              h4{
+                  font-weight: 600;
+              }
+          }
+      }
+  }
+}
     .content > a:first-of-type > h2:first-of-type {
       padding-top: 1rem;
     }
@@ -471,43 +508,6 @@ export const HandbookWrapper = styled.div`
     width: 10rem;
   }
 
-
-.writing_program{
-width: 90%;
-@media only screen and (max-width: 900px){
-  width: 100%;
-}
-.list{
-  padding: 1.875rem 0px;
-  table, tr, td{
-    border:none;
-   }
-  .text{
-    p{
-      color: ${props => props.theme.tertiaryColor};
-      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-  }
-  .listed{
-      text-align: left;
-      .table{
-          .icon{
-              height: 2.5rem;
-              width: 2.5rem;
-              vertical-align: top;
-          }
-          .skill{
-              color: ${props => props.theme.tertiaryColor};
-              font-size: 16px;
-              padding: 0 0 1.25rem 1.8rem;
-              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-              h4{
-                  font-weight: 600;
-              }
-          }
-      }
-  }
-}
 .content_list{
   position: relative;
   width: 100%;
