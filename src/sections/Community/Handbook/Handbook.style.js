@@ -33,18 +33,19 @@ export const HandbookWrapper = styled.div`
     }
 
     .page-section{
-      @media (min-width: 751px) and (max-width: 1920px) {
+      @media (min-width: 751px){
         margin-top: -55rem;
         margin-left: 20rem;
         padding: 2rem 3rem;
       }
-      @media (min-width: 751px) and (min-width: 1599px) {
+      @media (min-width: 1600px) {
         margin-top: -60rem;
       }
       @media (max-width: 750px) {
         margin-top: -6rem;
       }
     }
+      
     .page-section h2,
     .page-section h2.heading-top {
       padding-top: 1rem;
@@ -218,9 +219,7 @@ export const HandbookWrapper = styled.div`
       stroke: ${props => props.theme.green00D3A9ToGreen00B39F};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-    svg {
-      color: "pink";
-    }
+
     input[type=checkbox]:checked + label:before {
       content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="black" viewBox="0 4 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');;
 
