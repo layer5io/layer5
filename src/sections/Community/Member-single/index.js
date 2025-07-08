@@ -77,7 +77,7 @@ const MemberSingle = ({ frontmatter }) => {
                 <div className="name">{name}</div>
                 {position && <div className="position">{position}</div>}
               </div>
-              <div className="body">
+              <div className="info-body">
                 {location && (
                   <div className="text location">
                     <span className="bold">{location}</span>

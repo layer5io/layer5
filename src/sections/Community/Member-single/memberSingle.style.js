@@ -3,10 +3,8 @@ import styled from "styled-components";
 export const MemberSingleWrapper = styled.div`
   margin: 4.5rem 0 3.125rem 0;
 
-  @media screen and (max-width: 1000px) {
-    .page-heading {
-      text-align: center !important;
-    }
+  @media screen and (max-width: 62.5rem) {
+    margin: 1rem 0 3.125rem 0;
 
     .profile-header {
       flex-direction: column;
@@ -18,7 +16,7 @@ export const MemberSingleWrapper = styled.div`
     }
 
     .member-details {
-      flex-wrap: wrap !important;
+      flex-wrap: wrap;
     }
   }
 
@@ -49,6 +47,10 @@ export const MemberSingleWrapper = styled.div`
     color: ${(props) => props.theme.primaryColor};
     text-align: left;
     font-weight: 400;
+
+    @media screen and (max-width: 62.5rem) {
+      text-align: center;
+    }
   }
   ul {
     list-style: none;
@@ -58,7 +60,7 @@ export const MemberSingleWrapper = styled.div`
     transition: 0.9s;
   }
 
-  .body {
+  .info-body {
     display: block;
     position: relative;
     text-align: center;
