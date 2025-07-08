@@ -5,7 +5,7 @@ const Data = {
   menuItems: [
     {
       name: "Solutions",
-      path: "/cloud-native-management/kanvas",
+      path: "/solutions",
       subItems: [
         {
           name: "Developer-defined Infrastructure",
