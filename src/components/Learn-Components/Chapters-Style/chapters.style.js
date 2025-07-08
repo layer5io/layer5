@@ -16,5 +16,11 @@ export const ChapterStyle = styled.div`
       color: ${(props) => props.theme.primaryColor};
     }
   }
-  }
+    .meshery-design-images{
+      object-fit: contain !important;
+    }
+
+    div[style*="width:100%"][style*="height:auto"]{
+      aspect-ratio: unset !important;
+    }
 `;
