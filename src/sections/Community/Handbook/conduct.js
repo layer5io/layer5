@@ -16,7 +16,9 @@ const CodeofConduct = () => {
       <div className="page-section conduct-section">
         <Container>
           <div className="content">
-            <p className="conduct-first-paragraph">Layer5 follows the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a> which states that:</p>
+            <a id="COC">
+              <h2 id="code-of-conduct">Layer5 follows the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a> which states that:</h2>
+            </a>
             <p>As contributors and maintainers of this project, and in the interest of fostering an open and welcoming community, we pledge to respect all people who contribute through reporting issues, to post feature requests, to update documentation, to submit pull requests or patches, and other activities.</p>
             <p>We are committed to participating in this project as a harassment-free experience for everyone, regardless of the level of experience, gender, gender identity, and expression, sexual orientation, disability, personal appearance, body size, race, ethnicity, age, religion, or nationality.</p>
             <p>Examples of unacceptable behavior by participants include:</p>

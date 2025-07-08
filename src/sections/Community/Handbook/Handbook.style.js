@@ -6,21 +6,6 @@ export const HandbookWrapper = styled.div`
       padding-top: 1rem;
     }
 
-    .content > a:first-of-type > h3:first-of-type {
-      margin-top: 1rem;
-      padding-top: 1rem;
-    }
-
-    .content .conduct-first-paragraph {
-      @media (min-width: 750px) {
-        margin-top: -9rem;
-      }
-
-      @media screen and (min-width: 768px) {
-        margin-top: -6rem;
-      }
-    }
-
     .highlight{
       font-weight: 600;
     }
@@ -348,7 +333,7 @@ export const HandbookWrapper = styled.div`
         padding-top: 4rem;
       }
       .page-section{
-        margin-top: -2rem;
+        margin-top: -6rem;
         margin-left: 0rem;
       }
       table{
