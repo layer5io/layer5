@@ -62,7 +62,6 @@ export const HandbookWrapper = styled.div`
       }
     }
 
-
     .page-section .heading-top{
       @media screen and (min-width: 751px) {
         padding-top:1rem;
@@ -292,7 +291,7 @@ export const HandbookWrapper = styled.div`
         padding-top: 7rem;
       }
       .page-section{
-        margin-top: -6rem;
+        margin-top: -12rem;
         margin-left: 0;
         padding: 1rem 2.5rem;
       
@@ -322,7 +321,7 @@ export const HandbookWrapper = styled.div`
         padding-top: 4rem;
       }
       .page-section{
-        margin-top: -6rem;
+        margin-top: -12rem;
         margin-left: 0rem;
       }
       table{
