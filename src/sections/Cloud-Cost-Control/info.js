@@ -108,11 +108,15 @@ const SolutionsDetails = () => {
                 <div className="tools">
                   <p>LAYER5 PRODUCTS AND TOOLS DEPLOYED</p>
                   <div className="logos">
-                    <a href="https://layer5.io/cloud-native-management/meshery">
+                    <a href="https://github.com/meshery/meshery">
                       <img src={mesheryLogo} />
                     </a>
-                    <img src={serviceMeshLogo} />
-                    <img src={meshsyncLogo} />
+                    <a href="https://github.com/service-mesh-patterns/service-mesh-patterns">
+                      <img src={serviceMeshLogo} />
+                    </a>
+                    <a href="https://github.com/meshery/meshsync">
+                      <img src={meshsyncLogo} />
+                    </a>
                   </div>
                 </div>
 
