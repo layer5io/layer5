@@ -21,7 +21,7 @@ const WorkflowSectionWrapper = styled.div`
             margin: 3.125rem 0 0;
             width: 100%;
             min-height: 21.25rem;
-            padding: 0 1.25rem 5rem;
+            padding: 0 1.25rem 0;
             border-radius: 1.5rem;
 
             @media screen and (max-width: 1000px) {
@@ -163,7 +163,7 @@ const CardsContainer = styled.div`
 
         .img-container{
           display: flex;
-          flex-direction: center;
+          justify-content: center;
         }
         
         p {

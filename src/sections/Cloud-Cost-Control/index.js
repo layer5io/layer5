@@ -4,7 +4,7 @@ import SolutionsDetails from "./info";
 import WorkflowSection from "./workflows";
 import SolutionsPreFooter from "./pre-footer";
 
-const SolutionPage = () => {
+const CloudCostControl = () => {
   return (
     <>
       <SolutionHeader />
@@ -15,4 +15,4 @@ const SolutionPage = () => {
   );
 };
 
-export default SolutionPage;
+export default CloudCostControl;

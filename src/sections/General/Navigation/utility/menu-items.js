@@ -5,7 +5,7 @@ const Data = {
   menuItems: [
     {
       name: "Solutions",
-      path: "/solutions",
+      path: "/cloud-native-management/kanvas",
       subItems: [
         {
           name: "Developer-defined Infrastructure",
@@ -40,6 +40,11 @@ const Data = {
         {
           name: "Platform Engineering",
           path: "/solutions/platform-engineering",
+          sepLine: true,
+        },
+         {
+          name: "Cloud Cost Control",
+          path: "/solutions/cloud-cost-control",
           sepLine: true,
         },
       ],

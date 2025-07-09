@@ -200,7 +200,7 @@ const Footer = ({ location }) => {
               </div>
               <div className="footer-sections odd-col">
                 <h3 className="section-title">
-                  <Link className="title-link" to="/solutions">
+                  <Link className="title-link" to="/kanvas">
                     SOLUTIONS
                   </Link>
                 </h3>
