@@ -12,7 +12,7 @@ const CloudCostControlPage = () => {
 };
 export default CloudCostControlPage;
 export const Head = () => {
-  return  <SEO title="Cloud Cost Control page"
+  return  <SEO title="Cloud Cost Control"
     description="Optimize costs, reduce risks, and take control of infrastructure with Layer5’s cloud-native management solutions."
     image={"/images/solutions-cost.png"}
   />;
