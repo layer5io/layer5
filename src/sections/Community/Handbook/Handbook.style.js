@@ -34,12 +34,9 @@ export const HandbookWrapper = styled.div`
 
     .page-section{
       @media (min-width: 751px){
-        margin-top: -40rem;
+        margin-top: -52rem;
         margin-left: 20rem;
         padding: 2rem 3rem;
-      }
-      @media (min-width: 1600px) {
-        margin-top: -40rem;
       }
       @media (max-width: 750px) {
         margin-top: -6rem;
