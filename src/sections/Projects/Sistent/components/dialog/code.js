@@ -117,14 +117,14 @@ const DialogCode = () => {
             <Dialog open={openForm} onClose={() => setOpenForm(false)}>
               <DialogTitle>Subscribe</DialogTitle>
               <DialogContent>
-                <form style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <form style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                   <label>
                     Email Address:
-                    <input type="email" placeholder="you@example.com" style={{ width: '100%', padding: '0.5rem' }} />
+                    <input type="email" placeholder="you@example.com" style={{ width: "100%", padding: "0.5rem" }} />
                   </label>
                   <label>
                     Name:
-                    <input type="text" placeholder="John Doe" style={{ width: '100%', padding: '0.5rem' }} />
+                    <input type="text" placeholder="John Doe" style={{ width: "100%", padding: "0.5rem" }} />
                   </label>
                 </form>
               </DialogContent>
