@@ -37,6 +37,8 @@ const DialogCode = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
   const [open, setOpen] = useState(false);
+  const [openFull, setOpenFull] = useState(false);
+  const [openForm, setOpenForm] = useState(false);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -87,6 +89,51 @@ const DialogCode = () => {
 
           <h3 style={{ marginTop: "2rem" }}>Code Snippet</h3>
           <CodeBlock name="dialog-basic" code={dialogCodeExample} />
+
+          {/* Full Screen Dialog */}
+          <h3 style={{ marginTop: "3rem" }}>Full-Screen Dialog Example</h3>
+          <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+            <Button onClick={() => setOpenFull(true)}>Open Full-Screen Dialog</Button>
+            <Dialog
+              open={openFull}
+              onClose={() => setOpenFull(false)}
+              style={{ width: "100%", height: "100vh", maxWidth: "none" }}
+            >
+              <DialogTitle>Full-Screen Dialog</DialogTitle>
+              <DialogContent>
+                <p>This dialog stretches to full screen. Use it when the user's full attention is needed.</p>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={() => setOpenFull(false)}>Cancel</Button>
+                <Button color="primary" onClick={() => setOpenFull(false)}>Save</Button>
+              </DialogActions>
+            </Dialog>
+          </SistentThemeProvider>
+
+          {/* Form Inside Dialog */}
+          <h3 style={{ marginTop: "3rem" }}>Dialog with Form Example</h3>
+          <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+            <Button onClick={() => setOpenForm(true)}>Open Form Dialog</Button>
+            <Dialog open={openForm} onClose={() => setOpenForm(false)}>
+              <DialogTitle>Subscribe</DialogTitle>
+              <DialogContent>
+                <form style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <label>
+                    Email Address:
+                    <input type="email" placeholder="you@example.com" style={{ width: '100%', padding: '0.5rem' }} />
+                  </label>
+                  <label>
+                    Name:
+                    <input type="text" placeholder="John Doe" style={{ width: '100%', padding: '0.5rem' }} />
+                  </label>
+                </form>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={() => setOpenForm(false)}>Cancel</Button>
+                <Button color="primary" onClick={() => setOpenForm(false)}>Subscribe</Button>
+              </DialogActions>
+            </Dialog>
+          </SistentThemeProvider>
         </div>
       </div>
     </SistentLayout>
