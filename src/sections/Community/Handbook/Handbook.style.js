@@ -10,15 +10,6 @@ export const HandbookWrapper = styled.div`
     .highlight{
       font-weight: 600;
     }
-
-    .main-content {
-      display: flex;
-      flex: 1;
-      
-      @media (max-width: 750px) {
-        flex-direction: column;
-      }
-    }
     .content{
       width:100%;
       padding-bottom: 2rem;
@@ -42,7 +33,7 @@ export const HandbookWrapper = styled.div`
 
     .page-section{
       @media (min-width: 751px){
-        margin-top: -52rem;
+        margin-top: -54rem;
         position: relative;
         margin-left: 20rem;
         padding: 2rem 3rem;
@@ -88,11 +79,6 @@ export const HandbookWrapper = styled.div`
       background-color:${(props) => props.theme.secondaryLightColor};
       color: white;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-
-    .sidebar-content-container {
-      display: flex;
-      min-height: calc(100vh - 10rem); /* 减去header高度 */
     }
 
     .page-header-section {
