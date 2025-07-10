@@ -126,6 +126,14 @@ const componentsData = [
     url: "/projects/sistent/components/icons",
     src: "/icons"
   },
+  {
+    id: 18,
+    name: "Menu",
+    description: "Menus provide a list of options or actions in a dropdown interface, triggered by user interaction.",
+    url: "/projects/sistent/components/menu",
+    src: "/menu",
+  },
+
 ];
 
 module.exports = { componentsData };
