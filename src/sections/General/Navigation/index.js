@@ -248,15 +248,18 @@ const Navigation = () => {
     dropDownRef.current.classList.remove("expand");
   };
 
-  const changeDropdownState = () => {
-    setExpand(false);
-    closeDropDown();
+  const handleNavigationClick = (e) => {
+    // Check if the click is on a section or link
+    if (e.target.tagName === "A" || e.target.tagName === "BUTTON" || e.target.closest("a") || e.target.closest("button")) {
+      setDropDown(false);
+    }
   };
 
   return (
     <NavigationWrap
       className={`nav-block ${scroll ? "scrolled" : ""}`}
       ref={navWrapRef}
+      onClick={handleNavigationClick}
     >
       <Container className="nav-container">
         <div className="navbar-wrap">
@@ -295,7 +298,7 @@ const Navigation = () => {
                     >
                       <Link
                         to={menu.path}
-                        onClick={changeDropdownState}
+                        onClick={closeDropDown}
                         className="menu-item"
                         activeClassName="nav-link-active"
                       >
@@ -311,8 +314,8 @@ const Navigation = () => {
                                     href={subItems.path}
                                     target="_blank"
                                     onClick={() => {
-                                      changeDropdownState();
                                       closeDropDown();
+                                      setDropDown(false);
                                     }}
                                     className="mobile-sub-menu-item"
                                     rel="noreferrer"
@@ -323,7 +326,7 @@ const Navigation = () => {
                                   <Link
                                     to={subItems.path}
                                     onClick={() => {
-                                      changeDropdownState();
+                                      setDropDown(false);
                                       closeDropDown();
                                     }}
                                     className={subItems.sepLine ? "mobile-sub-menu-item" : "mobile-nested-menu"}
