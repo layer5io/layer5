@@ -64,16 +64,9 @@ const CardComponentWrapper = styled.div`
     flex-direction: column;
     justify-content: space-between;
     gap: 1.5rem;
-    h3 {
-        max-width: 70%;
-        @media only screen and (max-width: 500px) {
-            max-width: 100%;
-        }   
-    }
-    @media only screen and (max-width: 500px) {
-        text-align: center;
-        align-item: center;
-    }  
+    text-align: center;
+    align-item: center;
+ 
   }
 
   .image-wrapper {

@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../reusecore/Button";
+import BannerImg from "./images/deploy.svg";
 
 const SolutionBannerWrapper = styled.div`
     .banner {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         background: ${props => props.theme.linearToLinear2};
-        /* background-color: ${props => props.theme.grey121212ToWhite}; */
         max-width: 1920px;
         width: 100%;
         height: fit-content;
@@ -16,9 +16,10 @@ const SolutionBannerWrapper = styled.div`
         padding: 4% 5% 6%;
         /* transform: rotateX(40deg); */
 
-        /* @media only screen and (max-width: 500px) {
-            max-height: 400px;
-        } */
+        @media only screen and (max-width: 900px) {
+            flex-direction: column;
+            gap: 2rem;
+        }
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
         svg {
@@ -36,10 +37,17 @@ const SolutionBannerWrapper = styled.div`
     .banner-text {
         display: flex;
         flex-direction: column;
-        text-align: center;
-        align-items: center;
+        text-align: left;
+        align-items: start;
         z-index: 1;
         padding-top: 2%;
+        max-width: 60%;
+
+        @media only screen and (max-width: 900px) {
+            text-align: center;
+            align-items: center;
+            max-width: 100%;
+        }
 
         .yellow-text {
             color: #ebc017;
@@ -126,6 +134,9 @@ const SolutionsBanner = () => {
               $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true"
             />
           </div>
+        </div>
+        <div className="banner-image">
+          <img src={BannerImg} alt="solutions" />
         </div>
       </div>
     </SolutionBannerWrapper>
