@@ -11,6 +11,14 @@ export const HandbookWrapper = styled.div`
       font-weight: 600;
     }
 
+    .main-content {
+      display: flex;
+      flex: 1;
+      
+      @media (max-width: 750px) {
+        flex-direction: column;
+      }
+    }
     .content{
       width:100%;
       padding-bottom: 2rem;
@@ -35,11 +43,13 @@ export const HandbookWrapper = styled.div`
     .page-section{
       @media (min-width: 751px){
         margin-top: -52rem;
+        position: relative;
         margin-left: 20rem;
         padding: 2rem 3rem;
       }
       @media (max-width: 750px) {
-        margin-top: -6rem;
+        margin-top: -4rem;
+        margin-left: 2rem;
       }
     }
       
@@ -50,32 +60,39 @@ export const HandbookWrapper = styled.div`
     }
     
     .sidebar {
-        margin: 0;
-        padding: 0;
-        width: 250px;
-        background-color:${(props) => props.theme.secondaryLightColor};
-        height: 150rem;
-        overflow: auto;
-        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      margin: 0;
+      padding: 0;
+      width: 250px;
+      background-color:${(props) => props.theme.secondaryLightColor};
+      height: auto;
+      min-height: 100%;
+      flex-shrink: 0;
+      overflow: auto;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .sidebar a {
-        display: block;
-        color: black;
-        padding: 16px;
-        text-decoration: none;
+      display: block;
+      color: black;
+      padding: 16px;
+      text-decoration: none;
     }
 
     .sidebar a.active {
-        background-color: ${(props) => props.theme.primaryLightColorTwo};
-        color: white;
-        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      background-color: ${(props) => props.theme.primaryLightColorTwo};
+      color: white;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .sidebar a:hover:not(.active) {
-        background-color:${(props) => props.theme.secondaryLightColor};
-        color: white;
-        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      background-color:${(props) => props.theme.secondaryLightColor};
+      color: white;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .sidebar-content-container {
+      display: flex;
+      min-height: calc(100vh - 10rem); /* 减去header高度 */
     }
 
     .page-header-section {
