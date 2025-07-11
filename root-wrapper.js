@@ -9,14 +9,14 @@ import { ContextWrapper } from "./context-wrapper";
 // Custom image component for better CLS scores
 const OptimizedImage = props => {
   return (
-    <div style={{ width: "100%", height: "auto", aspectRatio: props.aspectRatio || "16/9", overflow: "hidden" }}>
+    <div style={{ width: "100%", height: "auto" }}>
       <img
         {...props}
         width={props.width || "100%"}
         height={props.height || "auto"}
         style={{
-          objectFit: props.objectFit || "cover",
-          aspectRatio: props.aspectRatio || "16/9",
+          objectFit: props.objectFit || "contain",
+          margin: "20px 0px",
           ...props.style
         }}
         loading="lazy"
