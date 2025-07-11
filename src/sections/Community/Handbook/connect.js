@@ -54,7 +54,7 @@ const Connect = () => {
               </li>
               <li>
                 <a href="https://smp-spec.io/subscribe">
-                  Service Mesh Performance mailing list
+                  Cloud Native Performance mailing list
                 </a>
               </li>
             </ul>
@@ -110,17 +110,17 @@ const Connect = () => {
               </li>
               <li>
                 <a href="mailto:community@smp-spec.io">
-                  Service Mesh Performance Community
+                  Cloud Native Performance Community
                 </a>
               </li>
               <li>
                 <a href="mailto:maintainers@smp-spec.io">
-                  Service Mesh Performance Maintainers
+                  Cloud Native Performance Maintainers
                 </a>
               </li>
               <li>
                 <a href="mailto:user-group@smp-spec.io">
-                  Service Mesh Performance Users
+                  Cloud Native Performance Users
                 </a>
               </li>
               <li>
