@@ -32,6 +32,9 @@ export const HandbookWrapper = styled.div`
     }
 
     .page-section{
+      display: flex;
+      flex-direction: row;    
+      align-items: flex-start;
       @media (min-width: 751px){
         margin-top: -54rem;
         position: relative;
