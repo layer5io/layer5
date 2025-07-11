@@ -331,7 +331,7 @@ export const HandbookWrapper = styled.div`
       align-items:left;
       justify-content:space-around;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       overflow:hidden;
       .active{
         font-weight:5000;
