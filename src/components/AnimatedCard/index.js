@@ -119,55 +119,10 @@ const AnimatedCard = ({
   }, [shouldShowVisualizer, isDark]);
 
   // Helper function to get tag color mapping
-  const getTagColorClass = (tag) => {
-    const normalizedTag = tag.toLowerCase();
-    
-    // AWS/Azure/GCP get special styling
-    if (normalizedTag === 'aws') return 'tag-aws';
-    if (normalizedTag === 'azure') return 'tag-azure';
-    if (normalizedTag === 'gcp') return 'tag-gcp';
-    
-    // Other tags get dynamic colors based on common categories
-    const tagColorMap = {
-      // Cloud platforms
-      'kubernetes': 'tag-kubernetes',
-      'docker': 'tag-docker',
-      'openshift': 'tag-openshift',
-      
-      // DevOps tools
-      'devops': 'tag-devops',
-      'cicd': 'tag-cicd',
-      'jenkins': 'tag-jenkins',
-      
-      // Service mesh
-      'istio': 'tag-istio',
-      'linkerd': 'tag-linkerd',
-      'consul': 'tag-consul',
-      
-      // Monitoring
-      'prometheus': 'tag-prometheus',
-      'grafana': 'tag-grafana',
-      'monitoring': 'tag-monitoring',
-      
-      // Languages/Frameworks
-      'golang': 'tag-golang',
-      'javascript': 'tag-javascript',
-      'python': 'tag-python',
-      'react': 'tag-react',
-      
-      // Content types
-      'tutorial': 'tag-tutorial',
-      'guide': 'tag-guide',
-      'blog': 'tag-blog',
-      'news': 'tag-news',
-      
-      // Performance
-      'performance': 'tag-performance',
-      'security': 'tag-security',
-      'testing': 'tag-testing'
-    };
-    
-    return tagColorMap[normalizedTag] || 'tag-default';
+  const getTagColorClass = (tag, index) => {
+  // Cycle through the three primary colors based on position
+  const colorClasses = ['tag-primary', 'tag-secondary', 'tag-tertiary'];
+  return colorClasses[index % 3];
   };
 
   // Safe prop access with fallbacks
@@ -375,7 +330,7 @@ const AnimatedCard = ({
           {/* Dynamic tags with proper styling */}
           <div className="tags-container">
             {(frontmatter?.tags || ["AWS", "Azure", "GCP"]).map((tag, index) => (
-              <span key={index} className={`tag ${getTagColorClass(tag)}`}>
+              <span key={index} className={`tag ${getTagColorClass(tag, index)}`}>
                 {tag}
               </span>
             ))}
