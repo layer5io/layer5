@@ -20,7 +20,7 @@ const authorField = (author, isSlugAvailable) => {
   );
 };
 
-const PageHeader = ({ category, title, img, feedlink, subtitle, author, thumbnail, superscript, date }) => {
+const PageHeader = ({ category, title, img, feedlink, subtitle, author, thumbnail, superscript, date, noAspectRatio = false }) => {
   let isSlugAvailable = false;
   if (author){
     const validMembers = useStaticQuery(
