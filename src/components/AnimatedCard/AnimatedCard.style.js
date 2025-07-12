@@ -11,10 +11,10 @@ const dataStream = keyframes`
   100% { stroke-dashoffset: 0; }
 `;
 
-const schemaPulse = keyframes`
-  0%, 100% { transform: scale(1); opacity: 0.8; }
-  50% { transform: scale(1.03); opacity: 1; }
-`;
+// const schemaPulse = keyframes`
+//   0%, 100% { transform: scale(1); opacity: 0.8; }
+//   50% { transform: scale(1.03); opacity: 1; }
+// `;
 
 const pulse = keyframes`
   0%, 100% { opacity: 1; }

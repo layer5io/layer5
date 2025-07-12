@@ -6,7 +6,7 @@ import Image from "../image";
 import { AnimatedCardWrapper } from "./AnimatedCard.style";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
-const AnimatedCard = ({ 
+const AnimatedCard = ({
   frontmatter = {}, // Default to empty object
   fields = null, // Allow null
   showVisualizer = false,
@@ -24,10 +24,10 @@ const AnimatedCard = ({
     if (!shouldShowVisualizer || !canvasRef.current) return;
 
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     let time = 0;
     let animationId;
-    
+
     let waveData = Array(8).fill(0).map(() => ({
       value: Math.random() * 0.5 + 0.1,
       targetValue: Math.random() * 0.15 + 0.1,
@@ -52,9 +52,9 @@ const AnimatedCard = ({
     function draw() {
       // Theme-aware background
       if (isDark) {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+        ctx.fillStyle = "rgba(0, 0, 0, 0.8)";
       } else {
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+        ctx.fillStyle = "rgba(255, 255, 255, 0.2)";
       }
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -76,7 +76,7 @@ const AnimatedCard = ({
         }
 
         const intensity = Math.min(1, freq * 0.3);
-        
+
         // Theme-aware wave colors
         if (isDark) {
           // Dark mode: Warm colors
@@ -91,7 +91,7 @@ const AnimatedCard = ({
           const b = Math.min(255, 150 + intensity * 105);
           ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, 0.3)`;
         }
-        
+
         ctx.lineWidth = 0.5 + (i * 0.2);
         ctx.stroke();
       }
@@ -108,21 +108,21 @@ const AnimatedCard = ({
     animate();
 
     const handleResize = () => resizeCanvas();
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       if (animationId) {
         cancelAnimationFrame(animationId);
       }
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, [shouldShowVisualizer, isDark]);
 
   // Helper function to get tag color mapping
   const getTagColorClass = (tag, index) => {
   // Cycle through the three primary colors based on position
-  const colorClasses = ['tag-primary', 'tag-secondary', 'tag-tertiary'];
-  return colorClasses[index % 3];
+    const colorClasses = ["tag-primary", "tag-secondary", "tag-tertiary"];
+    return colorClasses[index % 3];
   };
 
   // Safe prop access with fallbacks
@@ -140,21 +140,21 @@ const AnimatedCard = ({
     return (
       <AnimatedCardWrapper fixed={!!frontmatter?.abstract} $isDark={isDark}>
         {shouldShowVisualizer && (
-          <canvas 
+          <canvas
             ref={canvasRef}
             className="wave-visualizer"
             style={{
-              position: 'absolute',
+              position: "absolute",
               top: 0,
               left: 0,
-              width: '100%',
-              height: '100%',
+              width: "100%",
+              height: "100%",
               zIndex: -1,
-              pointerEvents: 'none'
+              pointerEvents: "none"
             }}
           />
         )}
-        
+
         <div className="post-block">
           {hasThumbnail && (
             <div className="post-thumb-block">
@@ -219,12 +219,12 @@ const AnimatedCard = ({
   return (
     <AnimatedCardWrapper $isDark={isDark}>
       {shouldShowVisualizer && (
-        <canvas 
+        <canvas
           ref={canvasRef}
           className="wave-visualizer"
         />
       )}
-      
+
       <div className="animated-card-content">
         {/* Schema Preview OR regular thumbnail */}
         {showSchemaPreview ? (
@@ -234,23 +234,23 @@ const AnimatedCard = ({
               <div className="grid-background">
                 <div className="animated-grid"></div>
               </div>
-              
+
               {/* Database connections SVG */}
               <svg className="connections-svg" viewBox="0 0 320 180">
                 <defs>
                   <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: "#4f46e5", stopOpacity: 0.8}} />
-                    <stop offset="50%" style={{stopColor: "#00b39f", stopOpacity: 1}} />
-                    <stop offset="100%" style={{stopColor: "#8b5cf6", stopOpacity: 0.8}} />
+                    <stop offset="0%" style={{ stopColor: "#4f46e5", stopOpacity: 0.8 }} />
+                    <stop offset="50%" style={{ stopColor: "#00b39f", stopOpacity: 1 }} />
+                    <stop offset="100%" style={{ stopColor: "#8b5cf6", stopOpacity: 0.8 }} />
                   </linearGradient>
                 </defs>
-                
+
                 <g stroke="url(#connectionGradient)" strokeWidth="1.5" fill="none">
                   <path className="connector" d="M75,40 L140,60 L140,90 L200,90" />
                   <path className="connector" d="M225,90 L240,90 L240,60 L240,60" />
                   <path className="connector" d="M140,90 L140,120 L220,120" />
                   <path className="connector" d="M225,120 L240,120 L240,150 L220,150" />
-                  
+
                   <circle cx="75" cy="40" r="3" fill="#4f46e5"/>
                   <circle cx="225" cy="90" r="3" fill="#3b82f6"/>
                   <circle cx="245" cy="60" r="3" fill="#8b5cf6"/>
@@ -258,7 +258,7 @@ const AnimatedCard = ({
                   <circle cx="225" cy="150" r="3" fill="#ef4444"/>
                 </g>
               </svg>
-              
+
               {/* Floating table cards */}
               <div className="database-tables">
                 <div className="table-card table-card-1">
@@ -272,7 +272,7 @@ const AnimatedCard = ({
                     <div className="table-line w-7"></div>
                   </div>
                 </div>
-                
+
                 <div className="table-card table-card-2">
                   <div className="table-header relationships">relationships</div>
                   <div className="table-content">
@@ -284,7 +284,7 @@ const AnimatedCard = ({
                     <div className="table-line w-5"></div>
                   </div>
                 </div>
-                
+
                 <div className="table-card table-card-3">
                   <div className="table-header models">models</div>
                   <div className="table-content">
@@ -296,7 +296,7 @@ const AnimatedCard = ({
                     <div className="table-line w-4"></div>
                   </div>
                 </div>
-                
+
                 <div className="table-card table-card-4">
                   <div className="table-header components">components</div>
                   <div className="table-content">
@@ -323,9 +323,9 @@ const AnimatedCard = ({
             </div>
           )
         )}
-        
+
         <div className="glass-divider"></div>
-        
+
         <div className="card-content">
           {/* Dynamic tags with proper styling */}
           <div className="tags-container">
@@ -335,10 +335,10 @@ const AnimatedCard = ({
               </span>
             ))}
           </div>
-          
+
           <h3 className="card-title">{cardTitle}</h3>
           <p className="card-description">{cardDescription}</p>
-          
+
           {/* Safe meta block */}
           {(hasDate || hasAuthor || hasType) && (
             <div className="post-meta-block">
@@ -359,7 +359,7 @@ const AnimatedCard = ({
               )}
             </div>
           )}
-          
+
           {/* Safe action buttons */}
           <div className="card-actions">
             {hasSlug && hasExternalUrl && (
@@ -383,7 +383,7 @@ const AnimatedCard = ({
               </a>
             )}
             {!hasSlug && !hasExternalUrl && (
-              <span className="action-btn" style={{ cursor: 'default' }}>
+              <span className="action-btn" style={{ cursor: "default" }}>
                 Learn More <IoIosArrowRoundForward />
               </span>
             )}
