@@ -54,7 +54,7 @@ const SistentMenu = () => {
           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
             <Button onClick={handleOpen}>Open Menu</Button>
             <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
-              <MenuList>
+              <MenuList border="1px solid" borderColor="gray.200" boxShadow="md">
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
                 <MenuItem onClick={handleClose}>Settings</MenuItem>
                 <MenuItem onClick={handleClose}>Logout</MenuItem>

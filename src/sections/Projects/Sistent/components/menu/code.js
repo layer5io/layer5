@@ -63,10 +63,10 @@ const MenuCode = () => {
           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
             <Button onClick={handleOpen}>Options</Button>
             <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
-              <MenuList>
-                <MenuItem onClick={handleClose}>Edit</MenuItem>
-                <MenuItem onClick={handleClose}>Move</MenuItem>
-                <MenuItem onClick={handleClose}>Delete</MenuItem>
+              <MenuList border="1px solid" borderColor="gray.200" boxShadow="md">
+                <MenuItem onClick={handleClose}>Option 1</MenuItem>
+                <MenuItem onClick={handleClose}>Option 2</MenuItem>
+                <MenuItem onClick={handleClose}>Option 3</MenuItem>
               </MenuList>
             </Menu>
           </SistentThemeProvider>

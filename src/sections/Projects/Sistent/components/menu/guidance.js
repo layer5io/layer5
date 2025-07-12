@@ -54,7 +54,7 @@ const MenuGuidance = () => {
           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
             <Button onClick={handleOpen}>Actions</Button>
             <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
-              <MenuList>
+              <MenuList border="1px solid" borderColor="gray.200" boxShadow="md">
                 <MenuItem onClick={handleClose}>Download</MenuItem>
                 <MenuItem onClick={handleClose}>Share</MenuItem>
                 <MenuItem onClick={handleClose}>Archive</MenuItem>
