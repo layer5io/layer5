@@ -10,7 +10,7 @@ import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const codes = [
-  `<Input placeholder="Placeholder goes here" type="text" />`,
+  "<Input placeholder=\"Placeholder goes here\" type=\"text\" />",
   `<Input
   placeholder="Placeholder goes here"
   type="text"
