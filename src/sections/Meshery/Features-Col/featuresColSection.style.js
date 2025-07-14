@@ -93,6 +93,7 @@ export const FeatureTitleInfoContainer = styled.div`
 `;
 
 export const FeatureInfoContainer = styled.div`
+  margin-top: 1.2rem;
   flex-grow: 1;
   .table {
     .icon {

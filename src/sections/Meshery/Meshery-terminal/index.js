@@ -22,7 +22,7 @@ const MesheryTerminal = () => {
       <Container>
         <Hero
           title="Single Step Installation"
-          initialdescription="No faster way to start managing any service mesh than with a single step to download, install, and run Meshery:"
+          initialdescription="No faster way to start managing any infrastrucutre than with a single step to download, install, and run Meshery:"
           // links={[
           //   {
           //     text: "Download, Install, and Run Meshery",
@@ -340,20 +340,20 @@ const MesheryTerminal = () => {
               description: (
                 <>
                   <p>
-                    Meshery provides service mesh and application performance measurement and management.
+                    Meshery provides cloud native infrastructure and application performance measurement and management.
                   </p>
                   <p>
-                    Meshery natively supports the <Link to="/projects/cloud-native-performance">Service Mesh Performance</Link> (SMP) specification.
+                    Meshery natively supports the <Link to="/projects/cloud-native-performance">Cloud Native Performance</Link> (SMP) specification.
                   </p>
                   <p>
-                    Use performance test profiles to schedule and continuously verify your service mesh is performing in accordance with your SLOs.
+                    Use performance test profiles to schedule and continuously verify your application is performing in accordance with your SLOs.
                   </p>
                 </>
               ),
               logos: [
                 {
                   url: SMP,
-                  alt: "Service Mesh Performance",
+                  alt: "Cloud Native Performance",
                 }
               ],
               terminal: {
@@ -379,26 +379,26 @@ const MesheryTerminal = () => {
                     frames: 2,
                     color: "gray",
                     code: [
-                      "⠋ Analyzing service mesh",
-                      "⠙ Analyzing service mesh",
-                      "⠹ Analyzing service mesh",
-                      "⠸ Analyzing service mesh",
-                      "⠼ Analyzing service mesh",
-                      "⠴ Analyzing service mesh",
-                      "⠦ Analyzing service mesh",
-                      "⠧ Analyzing service mesh",
-                      "⠇ Analyzing service mesh",
-                      "⠏ Analyzing service mesh",
-                      "⠋ Analyzing service mesh",
-                      "⠙ Analyzing service mesh",
-                      "⠹ Analyzing service mesh",
-                      "⠸ Analyzing service mesh",
-                      "⠼ Analyzing service mesh",
-                      "⠴ Analyzing service mesh",
-                      "⠦ Analyzing service mesh",
-                      "⠧ Analyzing service mesh",
-                      "⠇ Analyzing service mesh",
-                      "⠏ Analyzing service mesh",
+                      "⠋ Analyzing infrastructure",
+                      "⠙ Analyzing infrastructure",
+                      "⠹ Analyzing infrastructure",
+                      "⠸ Analyzing infrastructure",
+                      "⠼ Analyzing infrastructure",
+                      "⠴ Analyzing infrastructure",
+                      "⠦ Analyzing infrastructure",
+                      "⠧ Analyzing infrastructure",
+                      "⠇ Analyzing infrastructure",
+                      "⠏ Analyzing infrastructure",
+                      "⠋ Analyzing infrastructure",
+                      "⠙ Analyzing infrastructure",
+                      "⠹ Analyzing infrastructure",
+                      "⠸ Analyzing infrastructure",
+                      "⠼ Analyzing infrastructure",
+                      "⠴ Analyzing infrastructure",
+                      "⠦ Analyzing infrastructure",
+                      "⠧ Analyzing infrastructure",
+                      "⠇ Analyzing infrastructure",
+                      "⠏ Analyzing infrastructure",
                       "✓ Analysis complete.",
                     ],
                   },
