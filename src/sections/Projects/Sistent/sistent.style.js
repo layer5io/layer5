@@ -626,7 +626,6 @@ const SistentWrapper = styled.div`
 
   .main-content {
     padding-top: 1rem;
-    min-height: 50vh;
   }
 
   .image-container {
