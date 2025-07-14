@@ -1,8 +1,3 @@
-# Security headers to prevent clickjacking
-/*
-  X-Frame-Options: SAMEORIGIN
-  Content-Security-Policy: frame-ancestors 'self'
-
 # Cache static resources for 10 months
 /*.js
 /*.css
