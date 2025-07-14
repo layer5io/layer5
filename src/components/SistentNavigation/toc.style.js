@@ -46,7 +46,7 @@ const TOCWrapper = styled.div`
     flex-grow: 1;
     overflow-y: auto;
     padding-right: 0.5rem;
-    max-height: 73vh;
+    max-height: 530px;
     position: sticky;
     z-index: 1000;
   }
