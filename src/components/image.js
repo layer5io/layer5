@@ -19,7 +19,6 @@ const Image = ({ childImageSharp, extension, publicURL, alt, imgStyle, ...rest }
       </div>
     );
   }
-  console.log(childImageSharp, publicURL);
 
   return <GatsbyImage
     key={publicURL}
