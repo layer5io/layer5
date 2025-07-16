@@ -120,7 +120,7 @@ const Faq = () => {
               <h3>What if I can’t find an open issue to work on?</h3>
               <p>
                 Look for stale issues or browse{" "}
-                <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/issues?q=is%3Aopen%20is%3Aissue%20archived%3Afalse%20(org%3Ameshery%20OR%20org%3Aservice-mesh-performance%20OR%20org%3Aservice-mesh-patterns%20OR%20org%3Ameshery-extensions)%20label%3A%22help%20wanted%22" target="_blank" rel="noopener noreferrer">
                   help-wanted issues
                 </a>{" "}
                 across the Layer5 orgs.
