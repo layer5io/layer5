@@ -18,11 +18,11 @@ module.exports = {
   trailingSlash: "never",
   plugins: [
     {
-      resolve: `gatsby-plugin-netlify`,
+      resolve: "gatsby-plugin-netlify",
       options: {
         headers: {
-          '/*': [ 
-            'X-Frame-Options: SAMEORIGIN',
+          "/*": [
+            "X-Frame-Options: SAMEORIGIN",
             "Content-Security-Policy: frame-ancestors 'self'",
           ],
         },
