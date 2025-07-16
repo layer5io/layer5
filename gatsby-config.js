@@ -521,8 +521,8 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/collections/service-mesh-workshops`,
-        name: "service-mesh-workshops",
+        path: `${__dirname}/src/collections/workshops`,
+        name: "workshops",
       },
     },
     {
