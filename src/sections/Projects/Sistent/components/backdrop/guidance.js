@@ -3,9 +3,11 @@ import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { SistentLayout } from "../../sistent-layout";
 import TabButton from "../../../../../reusecore/Button";
+import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const BackdropGuidance = () => {
   const location = useLocation();
+  const { isDark } = useStyledDarkMode();
 
   return (
     <SistentLayout title="Backdrop">
@@ -91,7 +93,7 @@ const BackdropGuidance = () => {
 
           <table>
             <thead>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr style={{ backgroundColor: isDark ? "#121212" : "#F2F2F2" }}>
                 <th>Name</th>
                 <th>Type</th>
                 <th>Default</th>
@@ -99,7 +101,7 @@ const BackdropGuidance = () => {
               </tr>
             </thead>
             <tbody>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr style={{ backgroundColor: isDark ? "#121212" : "#F2F2F2" }}>
                 <td>
                   <code>open*</code>
                 </td>
@@ -111,7 +113,7 @@ const BackdropGuidance = () => {
                   If <code>true</code>, the component is shown.
                 </td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr style={{ backgroundColor: isDark ? "#121212" : "#F2F2F2" }}>
                 <td>
                   <code>children</code>
                 </td>
@@ -121,7 +123,7 @@ const BackdropGuidance = () => {
                 <td>-</td>
                 <td>The content of the component.</td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr style={{ backgroundColor: isDark ? "#121212" : "#F2F2F2" }}>
                 <td>
                   <code>classes</code>
                 </td>
@@ -134,7 +136,7 @@ const BackdropGuidance = () => {
                   CSS classes API below for more details.
                 </td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr style={{ backgroundColor: isDark ? "#121212" : "#F2F2F2" }}>
                 <td>
                   <code>component</code>
                 </td>
@@ -147,7 +149,7 @@ const BackdropGuidance = () => {
                   an HTML element or a component.
                 </td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr style={{ backgroundColor: isDark ? "#121212" : "#F2F2F2" }}>
                 <td>
                   <code>components</code>
                 </td>
@@ -164,7 +166,7 @@ const BackdropGuidance = () => {
                   deprecated APIs for more details.
                 </td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr style={{ backgroundColor: isDark ? "#121212" : "#F2F2F2" }}>
                 <td>
                   <code>componentsProps</code>
                 </td>
@@ -181,7 +183,7 @@ const BackdropGuidance = () => {
                   prop instead. This prop will be removed in v7.
                 </td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr style={{ backgroundColor: isDark ? "#121212" : "#F2F2F2" }}>
                 <td>
                   <code>invisible</code>
                 </td>
@@ -196,7 +198,7 @@ const BackdropGuidance = () => {
                   popovers or custom selects.
                 </td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr style={{ backgroundColor: isDark ? "#121212" : "#F2F2F2" }}>
                 <td>
                   <code>slotProps</code>
                 </td>
@@ -208,7 +210,7 @@ const BackdropGuidance = () => {
                 </td>
                 <td>The props used for each slot inside the component.</td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr style={{ backgroundColor: isDark ? "#121212" : "#F2F2F2" }}>
                 <td>
                   <code>slots</code>
                 </td>
@@ -220,7 +222,7 @@ const BackdropGuidance = () => {
                 </td>
                 <td>The components used for each slot inside.</td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr style={{ backgroundColor: isDark ? "#121212" : "#F2F2F2" }}>
                 <td>
                   <code>sx</code>
                 </td>
@@ -235,7 +237,7 @@ const BackdropGuidance = () => {
                   details.
                 </td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr style={{ backgroundColor: isDark ? "#121212" : "#F2F2F2" }}>
                 <td>
                   <code>TransitionComponent</code>
                 </td>
@@ -250,7 +252,7 @@ const BackdropGuidance = () => {
                   component requirements.
                 </td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr style={{ backgroundColor: isDark ? "#121212" : "#F2F2F2" }}>
                 <td>
                   <code>transitionDuration</code>
                 </td>
