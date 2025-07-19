@@ -133,7 +133,14 @@ const componentsData = [
     url: "/projects/sistent/components/dialog",
     src: "/dialog",
   },
-
+  {
+    id: 18,
+    name: "Avatar",
+    description:
+      "An Avatar component is used to visually represent a user, profile, or entity, typically through an image, initials, or icon. It is commonly used in interfaces to indicate identity.",
+    url: "/projects/sistent/components/avatar",
+    src: "/avatar",
+  },
 ];
 
 module.exports = { componentsData };
