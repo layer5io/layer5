@@ -104,6 +104,7 @@ const TOCWrapper = styled.div`
     width: auto;
     .toc-toggle-btn {
       display: inline-block;
+      z-index: 2;
     }
     .go-back {
       margin-left: 0;
