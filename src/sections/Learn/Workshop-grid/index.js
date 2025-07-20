@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Container, Row, Col } from "../../../reusecore/Layout";
@@ -18,6 +18,7 @@ const WorkshopsPage = () => {
   const [content, setContent] = useState(false);
   const [open, setOpen] = useState(false);
   const [ID, setID] = useState("");
+  const cardRefs = useRef({});
 
   const data = useStaticQuery(
     graphql`query allWorkshops {
@@ -61,6 +62,9 @@ const WorkshopsPage = () => {
         setOpen(false);
         setContent(false);
         setID("");
+        if (cardRefs.current[id]) {
+          cardRefs.current[id].scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       } else {
         setOpen(false);
         setContent(false);
@@ -86,7 +90,7 @@ const WorkshopsPage = () => {
               flexWrap: "wrap"
             }}>
               {data.allMdx.nodes.map(({ id, frontmatter, fields, body }) => (
-                <Col {...content && ID === id ? { $xs: 12, $sm: 12, $lg: 12 } : { $xs: 12, $sm: 6, $lg: 4 } } key={id} className="workshop-grid-col">
+                <Col {...content && ID === id ? { $xs: 12, $sm: 12, $lg: 12 } : { $xs: 12, $sm: 6, $lg: 4 } } key={id} className="workshop-grid-col" ref={(el) => (cardRefs.current[id] = el)}>
                   <div className="workshop-grid-card">
                     <WorkshopCard frontmatter={frontmatter} content={content} ID={ID} id={id} />
                     <div className={content && ID === id ? "active" : "text-contents"}>
