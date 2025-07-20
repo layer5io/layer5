@@ -73,8 +73,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     isPermanent: true,
   });
   createRedirect({
+    fromPath: "/learn/service-mesh-workshops",
+    toPath: "/learn/workshops",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
     fromPath: "/workshops",
-    toPath: "/learn/service-mesh-workshops",
+    toPath: "/learn/workshops",
     redirectInBrowser: true,
     isPermanent: true,
   });
@@ -511,7 +517,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
       singleWorkshop: allMdx(
-        filter: { fields: { collection: { eq: "service-mesh-workshops" } } }
+        filter: { fields: { collection: { eq: "workshops" } } }
       ) {
         nodes {
           fields {
@@ -923,7 +929,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
           slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
           break;
         case "service-mesh-books":
-        case "service-mesh-workshops":
+        case "workshops":
         case "service-mesh-labs":
           slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
           break;
