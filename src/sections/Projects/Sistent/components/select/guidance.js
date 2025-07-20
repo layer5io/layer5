@@ -1,6 +1,6 @@
 import React from "react";
 import { Row } from "../../../../../reusecore/Layout";
-import { SistentThemeProvider } from "@layer5/sistent";
+import { SistentThemeProvider } from "@sistent/sistent";
 import { SistentLayout } from "../../sistent-layout";
 import {
   FormHelperText,
@@ -13,7 +13,8 @@ import {
   OutlinedInput,
 } from "@mui/material";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
-import { Header, SectionNav } from ".";
+import SectionNav from "./section-nav";
+import Header from "./header";
 const SelectGuidance = () => {
   const { isDark } = useStyledDarkMode();
   const [selectedAge, setSelectedAge] = React.useState("");

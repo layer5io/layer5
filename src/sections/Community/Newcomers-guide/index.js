@@ -14,6 +14,7 @@ import { StaticImage } from "gatsby-plugin-image";
 const CommunityImage2 = "../Community-pictures/five-finding-issue.png";
 const CommunityImage3 = "../../../assets/images/newcomers-page-images/community-collage.webp";
 const FiveWorking = "../Community-pictures/five-working.png";
+const CommunityHandbook = "../Community-pictures/community-handbook.webp";
 
 const NewcomersGuide = () => {
   const [hover, setHover] = useState(false);
@@ -91,7 +92,7 @@ const NewcomersGuide = () => {
             </Col>
             <Col $sm={12} $lg={6}>
               <h3>Finding an Issue to Work On</h3>
-              <p>Note that the Layer5 community spans five GitHub organizations. See all in the <Link to="/community/handbook/repository-overview">repository overview</Link>.</p>
+              <p>Note that the Layer5 community spans six GitHub organizations. See all in the <Link to="/community/handbook/repository-overview">repository overview</Link>.</p>
               <ol type="i">
                 <li>
                   Browse the list of{" "}
@@ -160,7 +161,7 @@ const NewcomersGuide = () => {
                 <li>
                   Be sure to{" "}
                   <a
-                    href="https://github.com/layer5io/meshery/blob/master/CONTRIBUTING.md#signing-off-on-commits-developer-certificate-of-origin"
+                    href="https://docs.meshery.io/project/contributing#general-contribution-flow"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -194,12 +195,28 @@ const NewcomersGuide = () => {
               <StaticImage src={FiveWorking} alt="Five Working Image" />
             </Col>
           </Row>
-          <Row style={{
-            flexWrap: "wrap"
-          }} className="step">
+          <Row style={{ flexWrap: "wrap" }} className="step">
             <Col $sm={12} $lg={6} className="community-collage">
-              <StaticImage src={CommunityImage3} alt="Community Image" />
+              <a className="book-container" href="https://layer5.io/community/handbook/">
+                <div className="book">
+                  <div>
+                    <StaticImage src={CommunityHandbook} alt="Community Image" />
+                  </div>
+                </div>
+              </a>
             </Col>
+            <Col $sm={12} $lg={6}>
+              <h3>Explore the Meshery Community</h3>
+              <p>
+              The community is growing at a tremendous rate. We value our connections
+              and that is what makes us unique. Whether it is your first meeting or
+              your tenth contribution, we want to make sure that you are supported and
+              equipped to take advantage of all of that the community has to offer.
+              </p>
+            </Col>
+          </Row>
+
+          <Row style={{ flexWrap: "wrap" }} className="step">
             <Col $sm={12} $lg={6}>
               <h3>While Your Issue is Under Review</h3>
               <p>
@@ -211,21 +228,25 @@ const NewcomersGuide = () => {
                   href="https://discuss.layer5.io/"
                   target="_blank"
                   rel="noreferrer"
-                > discussion forum
+                >
+        discussion forum
                 </a>, join our{" "}
                 <a
                   href="https://slack.layer5.io/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Slack workspace
+        Slack workspace
                 </a>{" "}
-                and take a look at all our <Link to="/projects">projects</Link>.
+      and take a look at all our <Link to="/projects">projects</Link>.
               </p>
+            </Col>
+            <Col $sm={12} $lg={6} className="community-collage">
+              <StaticImage src={CommunityImage3} alt="Community Image" />
             </Col>
           </Row>
         </div>
-        <div className="table-wrapper">
+        <div className="table-wrapper" id="tutorials">
           <h2>Tutorials</h2>
           <h5>Checkout some of the resources to get going</h5>
           <TutorialsTable />

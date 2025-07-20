@@ -10,7 +10,6 @@ import axios from "axios";
 // import smp_dark_text from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
 // import smp_light_text from "../../../assets/images/service-mesh-performance/stacked/smp-light-text.svg";
 import kanvas_color from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
-import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
 import { ReactComponent as Logo } from "../../../assets/images/app/layer5-colorMode.svg";
@@ -21,6 +20,8 @@ import CloudIcon from "./utility/CloudIcon.js";
 import LogoutIcon from "./utility/LogoutIcon.js";
 // import LogoutIcon from "./utility/LogoutIcon.js";
 import KanvasIcon from "./utility/KanvasIcon.js";
+import Layer5CloudDarkIcon from "./utility/Layer5CloudDarkIcon.svg";
+import Layer5CloudLightIcon from "./utility/Layer5CloudLightIcon.svg";
 
 const Navigation = () => {
   let data = useStaticQuery(
@@ -128,6 +129,7 @@ const Navigation = () => {
   }
 }`
   );
+  const { isDark, toggleDark } = useStyledDarkMode();
   data["Products"] = {
     nodes: [
       {
@@ -144,12 +146,12 @@ const Navigation = () => {
       {
         frontmatter: {
           thumbnail: {
-            img: meshery,
+            img: isDark ? Layer5CloudLightIcon : Layer5CloudDarkIcon,
           },
-          title: "Meshery, the Cloud Native Manager",
+          title: "Layer5 Cloud & Catalog",
         },
         fields: {
-          slug: "/cloud-native-management/meshery",
+          slug: "/cloud-native-management/catalog",
         },
       },
     ],
@@ -161,7 +163,6 @@ const Navigation = () => {
   const [expand, setExpand] = useState(false);
   const [scroll, setScroll] = useState(false);
   const [dropDown, setDropDown] = useState(false);
-  const { isDark, toggleDark } = useStyledDarkMode();
   const themeToggler = () => toggleDark();
   const [userData, setUserData] = useState(null);
   const dropDownRef = useRef();
@@ -187,6 +188,9 @@ const Navigation = () => {
     const fetchData = async () => {
       try {
         const token = getCookieValue("provider_token");
+        if (!token) { // no token: don't proceed
+          return;
+        }
         const response = await axios.get(CLOUD_USER_API, {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -200,7 +204,12 @@ const Navigation = () => {
         const data = response.data;
         setUserData(data);
       } catch (error) {
-        console.error("There was a problem with your fetch operation:", error);
+        if (error?.response?.status === 401) {
+          // unauthorized token
+        } else {
+          // only for debugging purposes, no need to log
+          //  console.error("There was a problem with your fetch operation:", error);
+        }
       }
     };
 
@@ -317,7 +326,7 @@ const Navigation = () => {
                                       changeDropdownState();
                                       closeDropDown();
                                     }}
-                                    className="mobile-sub-menu-item"
+                                    className={subItems.sepLine ? "mobile-sub-menu-item" : "mobile-nested-menu"}
                                     activeClassName="nav-link-active"
                                   >
                                     {subItems.name}
