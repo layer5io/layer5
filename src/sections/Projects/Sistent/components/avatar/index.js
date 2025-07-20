@@ -2,11 +2,11 @@ import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import profilePicture from "../../../../../assets/images/sistent/placeholder/user.webp";
-import { SistentThemeProvider, Avatar, Button } from "@sistent/sistent";
+import { SistentThemeProvider, Avatar } from "@sistent/sistent";
 import TabButton from "../../../../../reusecore/Button";
 import { FaUser } from "@react-icons/all-files/fa/FaUser";
 import { SistentLayout } from "../../sistent-layout";
-import { Col, Row } from "../../../../../reusecore/Layout";
+import { Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const SistentAvatar = () => {
