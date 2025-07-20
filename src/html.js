@@ -16,12 +16,6 @@ export default function HTML(props) {
           httpEquiv="Content-Security-Policy"
           content="frame-ancestors 'self'; default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.gstatic.com https://v8hx52m354g0.statuspage.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; frame-src 'self' https://www.youtube.com https://w.soundcloud.com https://calcotestudios.com https://docs.google.com https://us15.list-manage.com https://hook.us1.make.com https://hook.us2.make.com https://calcotestudios.us15.list-manage.com;"
         />
-
-        <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
-
-        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-        <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-        
         {/* eslint-disable-next-line react/no-unknown-property*/}
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="anonymous" />
         <link
