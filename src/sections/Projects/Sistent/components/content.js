@@ -126,6 +126,14 @@ const componentsData = [
     url: "/projects/sistent/components/icons",
     src: "/icons"
   },
+  {
+    id: 17,
+    name: "Dialog",
+    description: "Dialogs display important prompts or confirmation requests that interrupt user interaction flow.",
+    url: "/projects/sistent/components/dialog",
+    src: "/dialog",
+  },
+
 ];
 
 module.exports = { componentsData };

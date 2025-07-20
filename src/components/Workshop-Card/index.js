@@ -8,7 +8,7 @@ const WorkshopCardContent = ({ frontmatter, content, ID, id }) => {
       <div className={content && ID === id ? "main-open" : "main"}>
         <div className={content && ID === id ? "image-container-open" : "image-container"}>
           <div className="image">
-            <Image {...frontmatter.thumbnail} imgStyle={{ objectFit: "cover" }} alt={frontmatter.title} />
+            <Image {...frontmatter.thumbnail} imgStyle={{ objectFit: "contain" }} alt={frontmatter.title} />
           </div>
         </div>
         <div className="upcomingContainer">
@@ -17,7 +17,6 @@ const WorkshopCardContent = ({ frontmatter, content, ID, id }) => {
         <div className={content && ID === id ? "card-content-open" : "card-content"}>
           <div>
             <h3 className="title">{frontmatter.title}</h3>
-            <p className="para">{frontmatter.abstract}</p>
           </div>
         </div>
       </div>

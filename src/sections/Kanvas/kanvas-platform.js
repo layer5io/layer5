@@ -34,6 +34,10 @@ const PlatformWrapper = styled.div`
   }
 }
 
+.kanvas-item {
+  cursor: pointer;
+}
+
 .block--right {
   background-color: #00b39f;
   margin-left: -8rem;
@@ -156,18 +160,22 @@ const Platform = () => {
 
       <div className="blocks">
         <div className="block block--left">
-          <h1>Self-Hosted</h1>
-          <img src={SelfHosted} alt="Kanvas Self-hosted" />
-          <p>
-            Keep your Kanvas designs internal to your workplace. Get remote support from Layer5 when you need it.
-          </p>
+          <a className="kanvas-item" href="https://docs.layer5.io/cloud/self-hosted" target="_blank" rel="noopener noreferrer">
+            <h1>Self-Hosted</h1>
+            <img src={SelfHosted} alt="Kanvas Self-hosted" />
+            <p>
+              Keep your Kanvas designs internal to your workplace. Get remote support from Layer5 when you need it.
+            </p>
+          </a>
         </div>
         <div className="block block--right">
-          <h1>Cloud</h1>
-          <img src={CloudHosted} alt="Kanvas Cloud" />
-          <p>
-            Connect to Layer5 Cloud and have your Kanvasdesigns versioned and available for team sharing and real-time collaboration.
-          </p>
+          <a className="kanvas-item" href="https://docs.layer5.io/cloud" target="_blank" rel="noopener noreferrer">
+            <h1>Cloud</h1>
+            <img src={CloudHosted} alt="Kanvas Cloud" />
+            <p>
+              Connect to Layer5 Cloud and have your Kanvas designs versioned and available for team sharing and real-time collaboration.
+            </p>
+          </a>
         </div>
       </div>
     </PlatformWrapper >

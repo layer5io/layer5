@@ -37,6 +37,11 @@ const Data = {
           path: "/solutions/devrel-platform-for-kubernetes-and-cloud-native-content",
           sepLine: true,
         },
+        {
+          name: "Platform Engineering",
+          path: "/solutions/platform-engineering",
+          sepLine: true,
+        },
       ],
       actionItems: [
         {
@@ -44,45 +49,6 @@ const Data = {
           actionLink: "/pricing",
         },
       ],
-
-      // subItems: [
-      //     {
-      //         name: "Current Home",
-      //         path: "/",
-      //         sepLine: true
-      //     },
-      //     {
-      //         name: "Temp Example: Classic",
-      //         path: "/classic",
-      //         sepLine: true
-      //     },
-      //     {
-      //         name: "Temp Example: Modern",
-      //         path: "/modern",
-      //         sepLine: true
-      //     },
-      //     {
-      //         name: "Temp Example: Hosting",
-      //         path: "/hosting",
-      //         sepLine: true
-      //     }
-      // ],
-      // actionItems: [
-      //   {
-      //     actionName: "All projects",
-      //     actionLink: "/projects",
-      //   },
-      // ],
-      // actionName: "Home",
-      // actionLink: "/",
-      // div1: {
-      //     src: img1,
-      //     descr: "How I schooled my seniors"
-      // },
-      // div2: {
-      //     src: img2,
-      //     descr: "Service Mesh Istio patterns for multitenancy"
-      // }
     },
     {
       name: "Products",
@@ -165,7 +131,7 @@ const Data = {
     //     },
     //     {
     //       name: "Workshops",
-    //       path: "/learn/service-mesh-workshops",
+    //       path: "/learn/workshops",
     //       sepLine: true
     //     },
     //     {
@@ -315,7 +281,7 @@ const Data = {
         // },
         {
           name: "Workshops",
-          path: "/learn/service-mesh-workshops",
+          path: "/learn/workshops",
         },
         {
           name: "Learning Paths",

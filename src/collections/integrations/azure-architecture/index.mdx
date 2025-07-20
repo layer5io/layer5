@@ -1,0 +1,645 @@
+---
+title: Azure Architecture
+subtitle: Collaborative and visual infrastructure as design for Azure Architecture
+integrationIcon: icons/color/azure-architecture-color.svg
+darkModeIntegrationIcon: icons/white/azure-architecture-white.svg
+docURL: https://docs.meshery.io/extensibility/integrations/azure-architecture
+description: 
+category: Orchestration & Management
+subcategory: Application Definition & Image Build
+registrant: meshery
+components: [
+{
+"name": "remote-rendering",
+"colorIcon": "icons/components/remote-rendering/icons/color/remote-rendering-color.svg",
+"whiteIcon": "icons/components/remote-rendering/icons/white/remote-rendering-white.svg",
+"description": "",
+},
+{
+"name": "spatial-anchor-accounts",
+"colorIcon": "icons/components/spatial-anchor-accounts/icons/color/spatial-anchor-accounts-color.svg",
+"whiteIcon": "icons/components/spatial-anchor-accounts/icons/white/spatial-anchor-accounts-white.svg",
+"description": "",
+},
+{
+"name": "alerts",
+"colorIcon": "icons/components/alerts/icons/color/alerts-color.svg",
+"whiteIcon": "icons/components/alerts/icons/white/alerts-white.svg",
+"description": "",
+},
+{
+"name": "resource-graph-explorer",
+"colorIcon": "icons/components/resource-graph-explorer/icons/color/resource-graph-explorer-color.svg",
+"whiteIcon": "icons/components/resource-graph-explorer/icons/white/resource-graph-explorer-white.svg",
+"description": "",
+},
+{
+"name": "application-insights",
+"colorIcon": "icons/components/application-insights/icons/color/application-insights-color.svg",
+"whiteIcon": "icons/components/application-insights/icons/white/application-insights-white.svg",
+"description": "",
+},
+{
+"name": "intune-trends",
+"colorIcon": "icons/components/intune-trends/icons/color/intune-trends-color.svg",
+"whiteIcon": "icons/components/intune-trends/icons/white/intune-trends-white.svg",
+"description": "",
+},
+{
+"name": "customer-lockbox-for-microsoft-azure",
+"colorIcon": "icons/components/customer-lockbox-for-microsoft-azure/icons/color/customer-lockbox-for-microsoft-azure-color.svg",
+"whiteIcon": "icons/components/customer-lockbox-for-microsoft-azure/icons/white/customer-lockbox-for-microsoft-azure-white.svg",
+"description": "",
+},
+{
+"name": "arc-machines",
+"colorIcon": "icons/components/arc-machines/icons/color/arc-machines-color.svg",
+"whiteIcon": "icons/components/arc-machines/icons/white/arc-machines-white.svg",
+"description": "",
+},
+{
+"name": "scheduler-job-collections",
+"colorIcon": "icons/components/scheduler-job-collections/icons/color/scheduler-job-collections-color.svg",
+"whiteIcon": "icons/components/scheduler-job-collections/icons/white/scheduler-job-collections-white.svg",
+"description": "",
+},
+{
+"name": "azure-lighthouse",
+"colorIcon": "icons/components/azure-lighthouse/icons/color/azure-lighthouse-color.svg",
+"whiteIcon": "icons/components/azure-lighthouse/icons/white/azure-lighthouse-white.svg",
+"description": "",
+},
+{
+"name": "resources-provider",
+"colorIcon": "icons/components/resources-provider/icons/color/resources-provider-color.svg",
+"whiteIcon": "icons/components/resources-provider/icons/white/resources-provider-white.svg",
+"description": "",
+},
+{
+"name": "solutions",
+"colorIcon": "icons/components/solutions/icons/color/solutions-color.svg",
+"whiteIcon": "icons/components/solutions/icons/white/solutions-white.svg",
+"description": "",
+},
+{
+"name": "service-catalog-mad",
+"colorIcon": "icons/components/service-catalog-mad/icons/color/service-catalog-mad-color.svg",
+"whiteIcon": "icons/components/service-catalog-mad/icons/white/service-catalog-mad-white.svg",
+"description": "",
+},
+{
+"name": "education",
+"colorIcon": "icons/components/education/icons/color/education-color.svg",
+"whiteIcon": "icons/components/education/icons/white/education-white.svg",
+"description": "",
+},
+{
+"name": "cost-management-and-billing",
+"colorIcon": "icons/components/cost-management-and-billing/icons/color/cost-management-and-billing-color.svg",
+"whiteIcon": "icons/components/cost-management-and-billing/icons/white/cost-management-and-billing-white.svg",
+"description": "",
+},
+{
+"name": "automation-accounts",
+"colorIcon": "icons/components/automation-accounts/icons/color/automation-accounts-color.svg",
+"whiteIcon": "icons/components/automation-accounts/icons/white/automation-accounts-white.svg",
+"description": "",
+},
+{
+"name": "diagnostics-settings",
+"colorIcon": "icons/components/diagnostics-settings/icons/color/diagnostics-settings-color.svg",
+"whiteIcon": "icons/components/diagnostics-settings/icons/white/diagnostics-settings-white.svg",
+"description": "",
+},
+{
+"name": "managed-desktop",
+"colorIcon": "icons/components/managed-desktop/icons/color/managed-desktop-color.svg",
+"whiteIcon": "icons/components/managed-desktop/icons/white/managed-desktop-white.svg",
+"description": "",
+},
+{
+"name": "activity-log",
+"colorIcon": "icons/components/activity-log/icons/color/activity-log-color.svg",
+"whiteIcon": "icons/components/activity-log/icons/white/activity-log-white.svg",
+"description": "",
+},
+{
+"name": "log-analytics-workspaces",
+"colorIcon": "icons/components/log-analytics-workspaces/icons/color/log-analytics-workspaces-color.svg",
+"whiteIcon": "icons/components/log-analytics-workspaces/icons/white/log-analytics-workspaces-white.svg",
+"description": "",
+},
+{
+"name": "metrics",
+"colorIcon": "icons/components/metrics/icons/color/metrics-color.svg",
+"whiteIcon": "icons/components/metrics/icons/white/metrics-white.svg",
+"description": "",
+},
+{
+"name": "monitor",
+"colorIcon": "icons/components/monitor/icons/color/monitor-color.svg",
+"whiteIcon": "icons/components/monitor/icons/white/monitor-white.svg",
+"description": "",
+},
+{
+"name": "universal-print",
+"colorIcon": "icons/components/universal-print/icons/color/universal-print-color.svg",
+"whiteIcon": "icons/components/universal-print/icons/white/universal-print-white.svg",
+"description": "",
+},
+{
+"name": "advisor",
+"colorIcon": "icons/components/advisor/icons/color/advisor-color.svg",
+"whiteIcon": "icons/components/advisor/icons/white/advisor-white.svg",
+"description": "",
+},
+{
+"name": "recovery-services-vaults",
+"colorIcon": "icons/components/recovery-services-vaults/icons/color/recovery-services-vaults-color.svg",
+"whiteIcon": "icons/components/recovery-services-vaults/icons/white/recovery-services-vaults-white.svg",
+"description": "",
+},
+{
+"name": "blueprints",
+"colorIcon": "icons/components/blueprints/icons/color/blueprints-color.svg",
+"whiteIcon": "icons/components/blueprints/icons/white/blueprints-white.svg",
+"description": "",
+},
+{
+"name": "azure-arc",
+"colorIcon": "icons/components/azure-arc/icons/color/azure-arc-color.svg",
+"whiteIcon": "icons/components/azure-arc/icons/white/azure-arc-white.svg",
+"description": "",
+},
+{
+"name": "compliance",
+"colorIcon": "icons/components/compliance/icons/color/compliance-color.svg",
+"whiteIcon": "icons/components/compliance/icons/white/compliance-white.svg",
+"description": "",
+},
+{
+"name": "my-customers",
+"colorIcon": "icons/components/my-customers/icons/color/my-customers-color.svg",
+"whiteIcon": "icons/components/my-customers/icons/white/my-customers-white.svg",
+"description": "",
+},
+{
+"name": "machines-azure-arc",
+"colorIcon": "icons/components/machines-azure-arc/icons/color/machines-azure-arc-color.svg",
+"whiteIcon": "icons/components/machines-azure-arc/icons/white/machines-azure-arc-white.svg",
+"description": "",
+},
+{
+"name": "user-privacy",
+"colorIcon": "icons/components/user-privacy/icons/color/user-privacy-color.svg",
+"whiteIcon": "icons/components/user-privacy/icons/white/user-privacy-white.svg",
+"description": "",
+},
+{
+"name": "service-providers",
+"colorIcon": "icons/components/service-providers/icons/color/service-providers-color.svg",
+"whiteIcon": "icons/components/service-providers/icons/white/service-providers-white.svg",
+"description": "",
+},
+{
+"name": "policy",
+"colorIcon": "icons/components/policy/icons/color/policy-color.svg",
+"whiteIcon": "icons/components/policy/icons/white/policy-white.svg",
+"description": "",
+},
+{
+"name": "operation-log-(classic)",
+"colorIcon": "icons/components/operation-log-(classic)/icons/color/operation-log-(classic)-color.svg",
+"whiteIcon": "icons/components/operation-log-(classic)/icons/white/operation-log-(classic)-white.svg",
+"description": "",
+},
+{
+"name": "managed-applications-center",
+"colorIcon": "icons/components/managed-applications-center/icons/color/managed-applications-center-color.svg",
+"whiteIcon": "icons/components/managed-applications-center/icons/white/managed-applications-center-white.svg",
+"description": "",
+},
+{
+"name": "user-subscriptions",
+"colorIcon": "icons/components/user-subscriptions/icons/color/user-subscriptions-color.svg",
+"whiteIcon": "icons/components/user-subscriptions/icons/white/user-subscriptions-white.svg",
+"description": "",
+},
+{
+"name": "offers",
+"colorIcon": "icons/components/offers/icons/color/offers-color.svg",
+"whiteIcon": "icons/components/offers/icons/white/offers-white.svg",
+"description": "",
+},
+{
+"name": "updates",
+"colorIcon": "icons/components/updates/icons/color/updates-color.svg",
+"whiteIcon": "icons/components/updates/icons/white/updates-white.svg",
+"description": "",
+},
+{
+"name": "multi-tenancy",
+"colorIcon": "icons/components/multi-tenancy/icons/color/multi-tenancy-color.svg",
+"whiteIcon": "icons/components/multi-tenancy/icons/white/multi-tenancy-white.svg",
+"description": "",
+},
+{
+"name": "capacity",
+"colorIcon": "icons/components/capacity/icons/color/capacity-color.svg",
+"whiteIcon": "icons/components/capacity/icons/white/capacity-white.svg",
+"description": "",
+},
+{
+"name": "plans",
+"colorIcon": "icons/components/plans/icons/color/plans-color.svg",
+"whiteIcon": "icons/components/plans/icons/white/plans-white.svg",
+"description": "",
+},
+{
+"name": "infrastructure-backup",
+"colorIcon": "icons/components/infrastructure-backup/icons/color/infrastructure-backup-color.svg",
+"whiteIcon": "icons/components/infrastructure-backup/icons/white/infrastructure-backup-white.svg",
+"description": "",
+},
+{
+"name": "azure-database-migration-services",
+"colorIcon": "icons/components/azure-database-migration-services/icons/color/azure-database-migration-services-color.svg",
+"whiteIcon": "icons/components/azure-database-migration-services/icons/white/azure-database-migration-services-white.svg",
+"description": "",
+},
+{
+"name": "azure-synapse-analytics",
+"colorIcon": "icons/components/azure-synapse-analytics/icons/color/azure-synapse-analytics-color.svg",
+"whiteIcon": "icons/components/azure-synapse-analytics/icons/white/azure-synapse-analytics-white.svg",
+"description": "",
+},
+{
+"name": "ssis-lift-and-shift-ir",
+"colorIcon": "icons/components/ssis-lift-and-shift-ir/icons/color/ssis-lift-and-shift-ir-color.svg",
+"whiteIcon": "icons/components/ssis-lift-and-shift-ir/icons/white/ssis-lift-and-shift-ir-white.svg",
+"description": "",
+},
+{
+"name": "azure-database-my-sql-server",
+"colorIcon": "icons/components/azure-database-my-sql-server/icons/color/azure-database-my-sql-server-color.svg",
+"whiteIcon": "icons/components/azure-database-my-sql-server/icons/white/azure-database-my-sql-server-white.svg",
+"description": "",
+},
+{
+"name": "azure-purview-accounts",
+"colorIcon": "icons/components/azure-purview-accounts/icons/color/azure-purview-accounts-color.svg",
+"whiteIcon": "icons/components/azure-purview-accounts/icons/white/azure-purview-accounts-white.svg",
+"description": "",
+},
+{
+"name": "oracle-database",
+"colorIcon": "icons/components/oracle-database/icons/color/oracle-database-color.svg",
+"whiteIcon": "icons/components/oracle-database/icons/white/oracle-database-white.svg",
+"description": "",
+},
+{
+"name": "azure-sql-server-stretch-databases",
+"colorIcon": "icons/components/azure-sql-server-stretch-databases/icons/color/azure-sql-server-stretch-databases-color.svg",
+"whiteIcon": "icons/components/azure-sql-server-stretch-databases/icons/white/azure-sql-server-stretch-databases-white.svg",
+"description": "",
+},
+{
+"name": "azure-database-postgre-sql-server-group",
+"colorIcon": "icons/components/azure-database-postgre-sql-server-group/icons/color/azure-database-postgre-sql-server-group-color.svg",
+"whiteIcon": "icons/components/azure-database-postgre-sql-server-group/icons/white/azure-database-postgre-sql-server-group-white.svg",
+"description": "",
+},
+{
+"name": "azure-sql-edge",
+"colorIcon": "icons/components/azure-sql-edge/icons/color/azure-sql-edge-color.svg",
+"whiteIcon": "icons/components/azure-sql-edge/icons/white/azure-sql-edge-white.svg",
+"description": "",
+},
+{
+"name": "instance-pools",
+"colorIcon": "icons/components/instance-pools/icons/color/instance-pools-color.svg",
+"whiteIcon": "icons/components/instance-pools/icons/white/instance-pools-white.svg",
+"description": "",
+},
+{
+"name": "elastic-job-agents",
+"colorIcon": "icons/components/elastic-job-agents/icons/color/elastic-job-agents-color.svg",
+"whiteIcon": "icons/components/elastic-job-agents/icons/white/elastic-job-agents-white.svg",
+"description": "",
+},
+{
+"name": "azure-cosmos-db",
+"colorIcon": "icons/components/azure-cosmos-db/icons/color/azure-cosmos-db-color.svg",
+"whiteIcon": "icons/components/azure-cosmos-db/icons/white/azure-cosmos-db-white.svg",
+"description": "",
+},
+{
+"name": "sql-elastic-pools",
+"colorIcon": "icons/components/sql-elastic-pools/icons/color/sql-elastic-pools-color.svg",
+"whiteIcon": "icons/components/sql-elastic-pools/icons/white/sql-elastic-pools-white.svg",
+"description": "",
+},
+{
+"name": "sql-managed-instance",
+"colorIcon": "icons/components/sql-managed-instance/icons/color/sql-managed-instance-color.svg",
+"whiteIcon": "icons/components/sql-managed-instance/icons/white/sql-managed-instance-white.svg",
+"description": "",
+},
+{
+"name": "azure-data-explorer-clusters",
+"colorIcon": "icons/components/azure-data-explorer-clusters/icons/color/azure-data-explorer-clusters-color.svg",
+"whiteIcon": "icons/components/azure-data-explorer-clusters/icons/white/azure-data-explorer-clusters-white.svg",
+"description": "",
+},
+{
+"name": "azure-database-maria-db-server",
+"colorIcon": "icons/components/azure-database-maria-db-server/icons/color/azure-database-maria-db-server-color.svg",
+"whiteIcon": "icons/components/azure-database-maria-db-server/icons/white/azure-database-maria-db-server-white.svg",
+"description": "",
+},
+{
+"name": "azure-sql",
+"colorIcon": "icons/components/azure-sql/icons/color/azure-sql-color.svg",
+"whiteIcon": "icons/components/azure-sql/icons/white/azure-sql-white.svg",
+"description": "",
+},
+{
+"name": "sql-server-registries",
+"colorIcon": "icons/components/sql-server-registries/icons/color/sql-server-registries-color.svg",
+"whiteIcon": "icons/components/sql-server-registries/icons/white/sql-server-registries-white.svg",
+"description": "",
+},
+{
+"name": "azure-sql-vm",
+"colorIcon": "icons/components/azure-sql-vm/icons/color/azure-sql-vm-color.svg",
+"whiteIcon": "icons/components/azure-sql-vm/icons/white/azure-sql-vm-white.svg",
+"description": "",
+},
+{
+"name": "virtual-clusters",
+"colorIcon": "icons/components/virtual-clusters/icons/color/virtual-clusters-color.svg",
+"whiteIcon": "icons/components/virtual-clusters/icons/white/virtual-clusters-white.svg",
+"description": "",
+},
+{
+"name": "sql-server",
+"colorIcon": "icons/components/sql-server/icons/color/sql-server-color.svg",
+"whiteIcon": "icons/components/sql-server/icons/white/sql-server-white.svg",
+"description": "",
+},
+{
+"name": "managed-database",
+"colorIcon": "icons/components/managed-database/icons/color/managed-database-color.svg",
+"whiteIcon": "icons/components/managed-database/icons/white/managed-database-white.svg",
+"description": "",
+},
+{
+"name": "data-factories",
+"colorIcon": "icons/components/data-factories/icons/color/data-factories-color.svg",
+"whiteIcon": "icons/components/data-factories/icons/white/data-factories-white.svg",
+"description": "",
+},
+{
+"name": "cache-redis",
+"colorIcon": "icons/components/cache-redis/icons/color/cache-redis-color.svg",
+"whiteIcon": "icons/components/cache-redis/icons/white/cache-redis-white.svg",
+"description": "",
+},
+{
+"name": "sql-data-warehouses",
+"colorIcon": "icons/components/sql-data-warehouses/icons/color/sql-data-warehouses-color.svg",
+"whiteIcon": "icons/components/sql-data-warehouses/icons/white/sql-data-warehouses-white.svg",
+"description": "",
+},
+{
+"name": "azure-database-postgre-sql-server",
+"colorIcon": "icons/components/azure-database-postgre-sql-server/icons/color/azure-database-postgre-sql-server-color.svg",
+"whiteIcon": "icons/components/azure-database-postgre-sql-server/icons/white/azure-database-postgre-sql-server-white.svg",
+"description": "",
+},
+{
+"name": "sql-database",
+"colorIcon": "icons/components/sql-database/icons/color/sql-database-color.svg",
+"whiteIcon": "icons/components/sql-database/icons/white/sql-database-white.svg",
+"description": "",
+},
+{
+"name": "code-optimization",
+"colorIcon": "icons/components/code-optimization/icons/color/code-optimization-color.svg",
+"whiteIcon": "icons/components/code-optimization/icons/white/code-optimization-white.svg",
+"description": "",
+},
+{
+"name": "application-insights",
+"colorIcon": "icons/components/application-insights/icons/color/application-insights-color.svg",
+"whiteIcon": "icons/components/application-insights/icons/white/application-insights-white.svg",
+"description": "",
+},
+{
+"name": "api-connections",
+"colorIcon": "icons/components/api-connections/icons/color/api-connections-color.svg",
+"whiteIcon": "icons/components/api-connections/icons/white/api-connections-white.svg",
+"description": "",
+},
+{
+"name": "cloud-test",
+"colorIcon": "icons/components/cloud-test/icons/color/cloud-test-color.svg",
+"whiteIcon": "icons/components/cloud-test/icons/white/cloud-test-white.svg",
+"description": "",
+},
+{
+"name": "lab-services",
+"colorIcon": "icons/components/lab-services/icons/color/lab-services-color.svg",
+"whiteIcon": "icons/components/lab-services/icons/white/lab-services-white.svg",
+"description": "",
+},
+{
+"name": "dev-ops-starter",
+"colorIcon": "icons/components/dev-ops-starter/icons/color/dev-ops-starter-color.svg",
+"whiteIcon": "icons/components/dev-ops-starter/icons/white/dev-ops-starter-white.svg",
+"description": "",
+},
+{
+"name": "lab-accounts",
+"colorIcon": "icons/components/lab-accounts/icons/color/lab-accounts-color.svg",
+"whiteIcon": "icons/components/lab-accounts/icons/white/lab-accounts-white.svg",
+"description": "",
+},
+{
+"name": "api-management-services",
+"colorIcon": "icons/components/api-management-services/icons/color/api-management-services-color.svg",
+"whiteIcon": "icons/components/api-management-services/icons/white/api-management-services-white.svg",
+"description": "",
+},
+{
+"name": "azure-dev-ops",
+"colorIcon": "icons/components/azure-dev-ops/icons/color/azure-dev-ops-color.svg",
+"whiteIcon": "icons/components/azure-dev-ops/icons/white/azure-dev-ops-white.svg",
+"description": "",
+},
+{
+"name": "change-analysis",
+"colorIcon": "icons/components/change-analysis/icons/color/change-analysis-color.svg",
+"whiteIcon": "icons/components/change-analysis/icons/white/change-analysis-white.svg",
+"description": "",
+},
+{
+"name": "load-testing",
+"colorIcon": "icons/components/load-testing/icons/color/load-testing-color.svg",
+"whiteIcon": "icons/components/load-testing/icons/white/load-testing-white.svg",
+"description": "",
+},
+{
+"name": "dev-test-labs",
+"colorIcon": "icons/components/dev-test-labs/icons/color/dev-test-labs-color.svg",
+"whiteIcon": "icons/components/dev-test-labs/icons/white/dev-test-labs-white.svg",
+"description": "",
+},
+{
+"name": "application-insights",
+"colorIcon": "icons/components/application-insights/icons/color/application-insights-color.svg",
+"whiteIcon": "icons/components/application-insights/icons/white/application-insights-white.svg",
+"description": "",
+},
+{
+"name": "auto-scale",
+"colorIcon": "icons/components/auto-scale/icons/color/auto-scale-color.svg",
+"whiteIcon": "icons/components/auto-scale/icons/white/auto-scale-white.svg",
+"description": "",
+},
+{
+"name": "azure-workbooks",
+"colorIcon": "icons/components/azure-workbooks/icons/color/azure-workbooks-color.svg",
+"whiteIcon": "icons/components/azure-workbooks/icons/white/azure-workbooks-white.svg",
+"description": "",
+},
+{
+"name": "diagnostics-settings",
+"colorIcon": "icons/components/diagnostics-settings/icons/color/diagnostics-settings-color.svg",
+"whiteIcon": "icons/components/diagnostics-settings/icons/white/diagnostics-settings-white.svg",
+"description": "",
+},
+{
+"name": "activity-log",
+"colorIcon": "icons/components/activity-log/icons/color/activity-log-color.svg",
+"whiteIcon": "icons/components/activity-log/icons/white/activity-log-white.svg",
+"description": "",
+},
+{
+"name": "log-analytics-workspaces",
+"colorIcon": "icons/components/log-analytics-workspaces/icons/color/log-analytics-workspaces-color.svg",
+"whiteIcon": "icons/components/log-analytics-workspaces/icons/white/log-analytics-workspaces-white.svg",
+"description": "",
+},
+{
+"name": "metrics",
+"colorIcon": "icons/components/metrics/icons/color/metrics-color.svg",
+"whiteIcon": "icons/components/metrics/icons/white/metrics-white.svg",
+"description": "",
+},
+{
+"name": "azure-monitors-for-sap-solutions",
+"colorIcon": "icons/components/azure-monitors-for-sap-solutions/icons/color/azure-monitors-for-sap-solutions-color.svg",
+"whiteIcon": "icons/components/azure-monitors-for-sap-solutions/icons/white/azure-monitors-for-sap-solutions-white.svg",
+"description": "",
+},
+{
+"name": "monitor",
+"colorIcon": "icons/components/monitor/icons/color/monitor-color.svg",
+"whiteIcon": "icons/components/monitor/icons/white/monitor-white.svg",
+"description": "",
+},
+{
+"name": "network-watcher",
+"colorIcon": "icons/components/network-watcher/icons/color/network-watcher-color.svg",
+"whiteIcon": "icons/components/network-watcher/icons/white/network-watcher-white.svg",
+"description": "",
+},
+{
+"name": "change-analysis",
+"colorIcon": "icons/components/change-analysis/icons/color/change-analysis-color.svg",
+"whiteIcon": "icons/components/change-analysis/icons/white/change-analysis-white.svg",
+"description": "",
+},
+{
+"name": "entra-identity-custom-roles",
+"colorIcon": "icons/components/entra-identity-custom-roles/icons/color/entra-identity-custom-roles-color.svg",
+"whiteIcon": "icons/components/entra-identity-custom-roles/icons/white/entra-identity-custom-roles-white.svg",
+"description": "",
+},
+{
+"name": "entra-internet-access",
+"colorIcon": "icons/components/entra-internet-access/icons/color/entra-internet-access-color.svg",
+"whiteIcon": "icons/components/entra-internet-access/icons/white/entra-internet-access-white.svg",
+"description": "",
+},
+{
+"name": "security",
+"colorIcon": "icons/components/security/icons/color/security-color.svg",
+"whiteIcon": "icons/components/security/icons/white/security-white.svg",
+"description": "",
+},
+{
+"name": "entra-privleged-identity-management",
+"colorIcon": "icons/components/entra-privleged-identity-management/icons/color/entra-privleged-identity-management-color.svg",
+"whiteIcon": "icons/components/entra-privleged-identity-management/icons/white/entra-privleged-identity-management-white.svg",
+"description": "",
+},
+{
+"name": "users",
+"colorIcon": "icons/components/users/icons/color/users-color.svg",
+"whiteIcon": "icons/components/users/icons/white/users-white.svg",
+"description": "",
+},
+{
+"name": "api-proxy",
+"colorIcon": "icons/components/api-proxy/icons/color/api-proxy-color.svg",
+"whiteIcon": "icons/components/api-proxy/icons/white/api-proxy-white.svg",
+"description": "",
+},
+{
+"name": "entra-connect",
+"colorIcon": "icons/components/entra-connect/icons/color/entra-connect-color.svg",
+"whiteIcon": "icons/components/entra-connect/icons/white/entra-connect-white.svg",
+"description": "",
+},
+{
+"name": "entra-domain-services",
+"colorIcon": "icons/components/entra-domain-services/icons/color/entra-domain-services-color.svg",
+"whiteIcon": "icons/components/entra-domain-services/icons/white/entra-domain-services-white.svg",
+"description": "",
+},
+{
+"name": "verification-as-a-service",
+"colorIcon": "icons/components/verification-as-a-service/icons/color/verification-as-a-service-color.svg",
+"whiteIcon": "icons/components/verification-as-a-service/icons/white/verification-as-a-service-white.svg",
+"description": "",
+},
+{
+"name": "identity-governance",
+"colorIcon": "icons/components/identity-governance/icons/color/identity-governance-color.svg",
+"whiteIcon": "icons/components/identity-governance/icons/white/identity-governance-white.svg",
+"description": "",
+}]
+featureList: [
+  "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads.",
+  "Invite anyone to review and make changes to your private designs.",
+  "Ongoing synchronization of Kubernetes configuration and changes across any number of clusters."
+]
+workingSlides: [
+  ../_images/kanvas-visualizer.png,
+  ../_images/kanvas-designer.png
+]
+howItWorks: "Collaborative Infrastructure as Design"
+howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
+published: TRUE
+---
+<p>
+Azure is the cloud computing platform developed by Microsoft.
+</p>
+<p>
+    Collaboratively and visually diagram your cloud native infrastructure with GitOps-style pipeline integration. Design, test, and manage configuration your Kubernetes-based, containerized applications as a visual topology.
+</p>
+<p>
+    Looking for best practice cloud native design and deployment best practices? Choose from thousands of pre-built components in Kanvas. Choose from hundreds of ready-made design patterns by importing templates from Meshery Catalog or use our low code designer, Kanvas, to create and deploy your own cloud native infrastructure designs.
+</p>
