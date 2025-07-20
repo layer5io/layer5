@@ -43,7 +43,7 @@ const Footer = ({ location }) => {
             "/programs",
             "/projects/",
             "/resources/",
-            "/service-mesh-workshops/",
+            "/workshops/",
           ].some((check) => {
             returnPath = check;
             return path.startsWith(check);
