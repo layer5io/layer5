@@ -15,14 +15,14 @@ const MagicScriptTag = (props) => {
           let colorMode;
           switch (themeFromLocalStorage) {
               case '${ThemeSetting.SYSTEM}':
-                colorMode = isDarkModeActive() ? '${ThemeSetting.DARK}' : '{ThemeSetting.LIGHT}'
-                break
+                colorMode = isDarkModeActive() ? '${ThemeSetting.DARK}' : '${ThemeSetting.LIGHT}';
+                break;
               case '${ThemeSetting.DARK}':
               case '${ThemeSetting.LIGHT}':
-                colorMode = themeFromLocalStorage
-                break
+                colorMode = themeFromLocalStorage;
+                break;
               default:
-                  colorMode = '${ThemeSetting.LIGHT}'
+                  colorMode = '${ThemeSetting.LIGHT}';
             }
           const root = document.documentElement;
           const iterate = (obj) => {
@@ -34,8 +34,8 @@ const MagicScriptTag = (props) => {
                  }
                  })
           }
-          const parsedTheme = JSON.parse('${JSON.stringify(props.theme)}')
-          const theme = parsedTheme[colorMode]
+          const parsedTheme = JSON.parse('${JSON.stringify(props.theme)}');
+          const theme = parsedTheme[colorMode];
           iterate(theme)
           root.style.setProperty('--initial-color-mode', colorMode);  
        })()
@@ -43,6 +43,41 @@ const MagicScriptTag = (props) => {
   return <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />;
 };
 
-export const onRenderBody = ( { setPreBodyComponents }) => {
-  setPreBodyComponents(<MagicScriptTag key="theme-injection" theme={themes} />);
+const AntiClickjackStyle = (
+  <style
+    key="anti-clickjack-style"
+    id="antiClickjack"
+    dangerouslySetInnerHTML={{
+      __html: "body{display:none !important;}",
+    }}
+  />
+);
+
+const AntiClickjackScript = (
+  <script
+    key="anti-clickjack-script"
+    type="text/javascript"
+    dangerouslySetInnerHTML={{
+      __html: `
+        if (self === top) {
+          var antiClickjack = document.getElementById("antiClickjack");
+          if (antiClickjack && antiClickjack.parentNode) {
+            antiClickjack.parentNode.removeChild(antiClickjack);
+          }
+        } else {
+          top.location = self.location;
+        }
+      `,
+    }}
+  />
+);
+
+export const onRenderBody = ({ setHeadComponents, setPreBodyComponents }) => {
+  setHeadComponents([
+    AntiClickjackStyle,
+    AntiClickjackScript,
+  ]);
+  setPreBodyComponents([
+    <MagicScriptTag key="theme-injection" theme={themes} />,
+  ]);
 };
