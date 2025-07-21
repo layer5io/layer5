@@ -72,7 +72,7 @@ h2, h5{
 
 /* Highlighted column */
 
-.price-table tr td:nth-child(3) {
+.price-table tr td:nth-child(5) {
     background: rgba(0,179,159,0.1);
     padding: 8px 48px;
 }
@@ -203,9 +203,9 @@ const Comparison = () => {
               <tr>
                 <th className="price-blank"></th>
                 <th className="price-blank"></th>
+                <th className="price-blank"></th>
+                <th className="price-blank"></th>
                 <th className="price-table-popular">Most popular</th>
-                <th className="price-blank"></th>
-                <th className="price-blank"></th>
               </tr>
               <tr className="price-table-head">
                 <td></td>
