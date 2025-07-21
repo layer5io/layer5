@@ -14,7 +14,7 @@ export default function CollaboratorFeatures({ features }) {
   const [viewportStatus, setViewportStatus] = useState(
     new Array(features.length).fill(false)
   );
-  useGsapTimeline({ trigger: ".collaborator-trigger-container", featureContainerName: ".collaborator-features", yPercent: -300 });
+  useGsapTimeline({ trigger: ".collaborator-trigger-container", featureContainerName: ".collaborator-features", yPercent: -120 });
   const [cursorOverArrow, setcursorOverArrow] = useState(false);
   const handleEnter = () => {
     if (!cursorOverArrow)
