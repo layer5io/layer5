@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 const StyledTable = styled.table`
   tr {
-    background-color: ${props => props.theme.grey121212ToWhite};
+    background-color:${props => props.theme.grey121212ToWhite};
   }
 `;
 
