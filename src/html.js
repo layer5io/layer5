@@ -30,12 +30,10 @@ export default function HTML(props) {
       <body {...props.bodyAttributes}>
         <script dangerouslySetInnerHTML={{
           __html:
-            `(function() {
-              // Prevent clickjacking by blocking iframe embedding
-              if (window.top !== window.self) {
-                window.top.location = window.self.location;
-              }
-              
+            `if (window.top !== window.self) {
+              window.top.location = window.location.href;
+            }
+            (function() {
 							try {
                 var banner = sessionStorage.getItem('banner');
                 if (banner === null)
