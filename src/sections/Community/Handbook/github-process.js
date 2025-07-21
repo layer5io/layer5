@@ -181,7 +181,6 @@ const SecurityVulnerabilitiesPage = () => {
             <table>
               <thead>
                 <tr>
-    
                   <th>Label</th>
                   <th>Description</th>
                   <th>Color</th>
