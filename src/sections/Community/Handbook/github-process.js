@@ -122,7 +122,7 @@ const SecurityVulnerabilitiesPage = () => {
               </tbody>
             </table>
 
-            <h2>📑 Layer5 Issue Labels Guide</h2>
+            <h2>Layer5 Issue Labels Guide</h2>
             <p>
               Well-chosen issue labels keep our repositories organized, make contributing easier, and help everyone—from maintainers to first-time contributors—find relevant tasks quickly. Below, we explain each major label category and when to use them.
             </p>
