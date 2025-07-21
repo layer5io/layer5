@@ -127,13 +127,19 @@ const componentsData = [
     src: "/icons"
   },
   {
+    id: 17,
+    name: "Dialog",
+    description: "Dialogs display important prompts or confirmation requests that interrupt user interaction flow.",
+    url: "/projects/sistent/components/dialog",
+    src: "/dialog",
+  },
+  {
     id: 18,
     name: "Menu",
     description: "Menus provide a list of options or actions in a dropdown interface, triggered by user interaction.",
     url: "/projects/sistent/components/menu",
     src: "/menu",
   },
-
 ];
 
 module.exports = { componentsData };
