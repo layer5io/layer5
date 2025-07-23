@@ -92,7 +92,7 @@ const Guidance = () => {
             <li>
               Example lazy loading implementation:
               <code>
-                {'<Avatar loading="lazy" src="/path/to/optimized/image.jpg"/>'}
+                {"<Avatar loading=\"lazy\" src=\"/path/to/optimized/image.jpg\"/>"}
               </code>
             </li>
           </ul>

@@ -14,14 +14,14 @@ const avatarExamples = [
     title: "Image Avatar",
     description: "Display user profile images.",
     element: <Avatar src={user} alt="User Name" />,
-    code: `<Avatar src="/path/to/user-image.jpg" alt="User Name" />`,
+    code: "<Avatar src=\"/path/to/user-image.jpg\" alt=\"User Name\" />",
     id: "image-avatar",
   },
   {
     title: "Initials Avatar",
     description: "Use initials when an image is unavailable.",
     element: <Avatar>JD</Avatar>,
-    code: `<Avatar>JD</Avatar>`,
+    code: "<Avatar>JD</Avatar>",
     id: "initials-avatar",
   },
   {
@@ -32,7 +32,7 @@ const avatarExamples = [
         <FaUser />
       </Avatar>
     ),
-    code: `<Avatar><UserIcon /></Avatar>`,
+    code: "<Avatar><UserIcon /></Avatar>",
     id: "icon-avatar",
   },
   {
