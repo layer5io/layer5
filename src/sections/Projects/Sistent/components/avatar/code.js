@@ -1,125 +1,3 @@
-// import React, { useState } from "react";
-//
-// import { Avatar, SistentThemeProvider } from "@sistent/sistent";
-// import { SistentLayout } from "../../sistent-layout";
-// import TabButton from "../../../../../reusecore/Button";
-// import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
-// import { CodeBlock } from "../button/code-block";
-// import user from "../../../../../assets/images/sistent/placeholder/user.webp";
-// import { FaUser } from "@react-icons/all-files/fa/FaUser";
-//
-// const AvatarComponent = () => {
-//   const { isDark } = useStyledDarkMode();
-//   const [activeTab, setActiveTab] = useState("Overview");
-//
-//   const codes = [
-//     "<Avatar src='/path/to/user-image.jpg' alt='User Name' />",
-//     `<Avatar>
-//       JD
-//      </Avatar>`,
-//     `<Avatar>
-//      <UserIcon />
-//      </Avatar>`,
-//     `<Avatar size="small" />
-//      <Avatar size="medium" />
-//      <Avatar size="large" />`,
-//     `<Avatar
-//       sx={{
-//          border: 'px solid',
-//          boxShadow: 2
-//        }}
-//      />`,
-//   ];
-//   return (
-//     <SistentLayout title="Avatar">
-//       <div className="content">
-//         <a id="Identity">
-//           <h2>Avatar Component</h2>
-//         </a>
-//         <div className="filterBtns">
-//           {"Overview Guidance Code".split(" ").map((tab) => (
-//             <TabButton
-//               key={tab}
-//               title={tab}
-//               className={activeTab === tab ? "active" : ""}
-//               onClick={() => setActiveTab(tab)}
-//             />
-//           ))}
-//         </div>
-//         <p>
-//           The Avatar component provides a flexible visual representation of
-//           users or entities across digital interfaces, supporting images,
-//           initials, and icons.
-//         </p>
-//
-//         {activeTab === "Code" && (
-//           <div className="code-examples">
-//             <h3>Avatar Implementation Variants</h3>
-//             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-//               {/* Image avatar */}
-//               <h4>Image Avatar</h4>
-//               <p>Display user profile images</p>
-//               <div className="showcase">
-//                 <div className="items">
-//                   <Avatar src={user} alt="User Name" />
-//                 </div>
-//                 <CodeBlock name="image-avatar" code={codes[0]} />
-//               </div>
-//               {/* Initials avatar  */}
-//               <h4>Initials Avatar</h4>
-//               <p>Use initials when image is unavailable</p>
-//               <div className="showcase">
-//                 <div className="items">
-//                   <Avatar>JD</Avatar>
-//                 </div>
-//                 <CodeBlock name="initials-avatar" code={codes[1]} />
-//               </div>
-//               {/* Icon avatar */}
-//               <h4>Icon Avatar</h4>
-//               <p>Use icons for generic representation</p>
-//               <div className="showcase">
-//                 <div className="items">
-//                   <Avatar>
-//                     <FaUser />
-//                   </Avatar>
-//                 </div>
-//                 <CodeBlock name="icon-avatar" code={codes[2]} />
-//               </div>
-//               {/* Sized avatar */}
-//               <h4>Sized Avatarr</h4>
-//               <p>Adjust avatar sizes for different context </p>
-//               <div className="showcase">
-//                 <div className="items">
-//                   <Avatar size="small" />
-//                   <Avatar size="medium" />
-//                   <Avatar size="large" />
-//                 </div>
-//                 <CodeBlock name="sized-avatar" code={codes[3]} />
-//               </div>
-//               {/* Custom styling */}
-//               <h4>Custom Styling</h4>
-//               <p>Apply custom styles and themes</p>
-//               <div className="showcase">
-//                 <div className="items">
-//                   <Avatar
-//                     src="/image.jpg"
-//                     sx={{
-//                       border: "px solid primary.main",
-//                       boxShadow: 2,
-//                     }}
-//                   />
-//                 </div>
-//                 <CodeBlock name="custom-avatar" code={codes[4]} />
-//               </div>
-//             </SistentThemeProvider>
-//           </div>
-//         )}
-//       </div>
-//     </SistentLayout>
-//   );
-// };
-//
-// export default AvatarComponent;
 import React, { useState } from "react";
 import { Avatar, SistentThemeProvider } from "@sistent/sistent";
 import { SistentLayout } from "../../sistent-layout";
@@ -206,9 +84,15 @@ const AvatarComponent = () => {
     <SistentLayout title="Avatar">
       <section className="content">
         <a id="Identity">
-          <h2>Avatar Component</h2>
+          <h2>Avatar</h2>
         </a>
-
+        <p>
+          Below are code examples demonstrating different ways to use the{" "}
+          <code>Avatar</code> component—including image-based avatars, initials,
+          icons, sizing variations, and custom styling. These implementations
+          showcase the flexibility and adaptability of the component across
+          various interface needs.
+        </p>
         <div className="filterBtns">
           {TABS.map((tab) => (
             <TabButton

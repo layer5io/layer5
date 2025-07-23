@@ -122,14 +122,16 @@ const componentsData = [
   {
     id: 16,
     name: "Icons",
-    description: "Sistent provides a comprehensive collection of icons that can be used across your projects. These icons are designed to be consistent with the overall design language of the Sistent design system, ensuring a cohesive user experience.",
+    description:
+      "Sistent provides a comprehensive collection of icons that can be used across your projects. These icons are designed to be consistent with the overall design language of the Sistent design system, ensuring a cohesive user experience.",
     url: "/projects/sistent/components/icons",
-    src: "/icons"
+    src: "/icons",
   },
   {
     id: 17,
     name: "Dialog",
-    description: "Dialogs display important prompts or confirmation requests that interrupt user interaction flow.",
+    description:
+      "Dialogs display important prompts or confirmation requests that interrupt user interaction flow.",
     url: "/projects/sistent/components/dialog",
     src: "/dialog",
   },
@@ -137,9 +139,17 @@ const componentsData = [
     id: 18,
     name: "Avatar",
     description:
-      "An Avatar component is used to visually represent a user, profile, or entity, typically through an image, initials, or icon. It is commonly used in interfaces to indicate identity.",
+      "An Avatar component is used to visually represent a user, profile, or entity, typically through an image, initials, or icon.",
     url: "/projects/sistent/components/avatar",
     src: "/avatar",
+  },
+  {
+    id: 19,
+    name: "AvatarGroup",
+    description:
+      "An AvatarGroup component is used to display a collection of Avatars together, typically representing a group of users, collaborators, or participants.",
+    url: "/projects/sistent/components/avatar-group",
+    src: "/avatar-group",
   },
 ];
 

@@ -8,7 +8,7 @@ const Guidance = () => {
   return (
     <SistentLayout title="Avatar">
       <div className="content">
-        <h2>Avatar Usage Guidelines</h2>
+        <h2>Avatar</h2>
         <p>
           The Avatar component represents a user using an image, initials, or an
           icon. It is a crucial UI element for providing visual identity across
@@ -92,7 +92,7 @@ const Guidance = () => {
             <li>
               Example lazy loading implementation:
               <code>
-                {"<Avatar loading=\"lazy\" src=\"/path/to/optimized/image.jpg\"/>"}
+                {'<Avatar loading="lazy" src="/path/to/optimized/image.jpg"/>'}
               </code>
             </li>
           </ul>
