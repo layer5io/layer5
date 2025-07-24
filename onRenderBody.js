@@ -25,15 +25,16 @@ const MagicScriptTag = (props) => {
                   colorMode = '${ThemeSetting.LIGHT}'
             }
           const root = document.documentElement;
-          const iterate = (obj) => {
+              const iterate = (obj) => {
+              if (!obj) return; 
               Object.keys(obj).forEach(key => {
-                 if (typeof obj[key] === 'object') {
-                      iterate(obj[key])
-                 } else {
-                   root.style.setProperty("--" + key, obj[key])
-                 }
-                 })
-          }
+                if (typeof obj[key] === 'object') {
+                  iterate(obj[key])
+                } else {
+                  root.style.setProperty("--" + key, obj[key])
+                }
+              })
+            }
           const parsedTheme = JSON.parse('${JSON.stringify(props.theme)}')
           const theme = parsedTheme[colorMode]
           iterate(theme)
