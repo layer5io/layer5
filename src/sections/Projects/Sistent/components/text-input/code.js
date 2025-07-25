@@ -76,13 +76,6 @@ const TextInputCode = () => {
           />
         </div>
         <div className="main-content">
-          <p>
-            Text inputs are important elements that help users interact with an
-            experience by providing text commands that will in turn return
-            expected results. These commands can range from providing a free
-            range of personal information to entering a limited number of
-            characters for a use case.
-          </p>
           <a id="Design">
             <h2>Design</h2>
           </a>
