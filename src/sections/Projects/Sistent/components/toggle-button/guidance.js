@@ -6,7 +6,7 @@ import {
   ToggleButton,
   ToggleButtonGroup,
   SistentThemeProvider,
-} from "@layer5/sistent";
+} from "@sistent/sistent";
 import { SistentLayout } from "../../sistent-layout";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
