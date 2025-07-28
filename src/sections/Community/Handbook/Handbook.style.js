@@ -1,7 +1,10 @@
 import styled from "styled-components";
 export const HandbookWrapper = styled.div`
+    /* Ensure consistent initial layout for SSR */
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    position: relative;
 
     .content > a:first-of-type > h2:first-of-type {
       padding-top: 1rem;
@@ -14,19 +17,19 @@ export const HandbookWrapper = styled.div`
       width:100%;
       padding-bottom: 2rem;
       ul > li {
-        color: ${(props) => props.theme.text};
+        color: ${(props) => props.theme.text || "#000"};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       ol > li {
-        color: ${(props) => props.theme.menuColor};
+        color: ${(props) => props.theme.menuColor || "#000"};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       ul > li > span {
-        color: ${(props) => props.theme.text};
+        color: ${(props) => props.theme.text || "#000"};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       ol > li > span {
-        color: ${(props) => props.theme.text};
+        color: ${(props) => props.theme.text || "#000"};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
     }
@@ -57,7 +60,7 @@ export const HandbookWrapper = styled.div`
       margin: 0;
       padding: 0;
       width: 250px;
-      background-color:${(props) => props.theme.secondaryLightColor};
+      background-color:${(props) => props.theme.secondaryLightColor || "#f0f0f0"};
       height: auto;
       min-height: 100%;
       flex-shrink: 0;
@@ -73,25 +76,74 @@ export const HandbookWrapper = styled.div`
     }
 
     .sidebar a.active {
-      background-color: ${(props) => props.theme.primaryLightColorTwo};
+      background-color: ${(props) => props.theme.primaryLightColorTwo || "#007acc"};
       color: white;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .sidebar a:hover:not(.active) {
-      background-color:${(props) => props.theme.secondaryLightColor};
+      background-color:${(props) => props.theme.secondaryLightColor || "#f0f0f0"};
       color: white;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
+    /* SSR-safe header with strict dimension control */
     .page-header-section {
-      height: 10rem;
-      text-align: center;
+      position: relative;
+      width: 100%;
+      height: 160px;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background: rgb(71,126,150);
       background: linear-gradient(250deg, rgba(71,126,150,1) 0%, rgba(0,179,159,1) 35%, rgba(60,73,79,1) 100%);
-      h1 {
-          line-height: 10rem;
-          color: white;
+      /* Prevent layout shift during hydration */
+      contain: layout;
+    }
+
+    .page-header-section h1 {
+      margin: 0;
+      padding: 0 1rem;
+      width: 100%;
+      max-width: 1200px;
+      color: white;
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      box-sizing: border-box;
+      /* Use standard system fonts to avoid FOUT */
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    @media screen and (max-width: 768px) {
+      .page-header-section {
+        height: auto;
+        min-height: 140px;
+        padding: 1rem 0;
+      }
+      
+      .page-header-section h1 {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        padding: 0 1rem;
+        word-wrap: break-word;
+        hyphens: auto;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .page-header-section {
+        min-height: 120px;
+        padding: 0.75rem 0;
+      }
+      
+      .page-header-section h1 {
+        font-size: 1.25rem;
+        line-height: 1.1;
+        padding: 0 0.75rem;
       }
     }
 
@@ -115,7 +167,7 @@ export const HandbookWrapper = styled.div`
         display: block;
         margin-left: auto;
         margin-right: auto;
-        filter: invert(${(props) => props.theme.meshInterfaceLogoFilter});
+        filter: invert(${(props) => props.theme.meshInterfaceLogoFilter || 0});
       }
       .site-icon{
         height: 1.6rem;
@@ -129,7 +181,7 @@ export const HandbookWrapper = styled.div`
         vertical-align: bottom;
       }
       .smp-action{
-        filter: invert(${(props) => props.theme.meshInterfaceLogoFilter});
+        filter: invert(${(props) => props.theme.meshInterfaceLogoFilter || 0});
       }
     }
 
@@ -139,7 +191,7 @@ export const HandbookWrapper = styled.div`
     }
 
     td, th {
-      border: 0.05rem solid ${(props) => props.theme.primaryLightColor};
+      border: 0.05rem solid ${(props) => props.theme.primaryLightColor || "#ccc"};
       text-align: left;
       padding: 0.5rem;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -157,7 +209,7 @@ export const HandbookWrapper = styled.div`
     }
 
     tbody:nth-child(even) {
-      background-color: ${(props) => props.theme.secondaryLightColorTwo};
+      background-color: ${(props) => props.theme.secondaryLightColorTwo || "#f9f9f9"};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
@@ -195,7 +247,7 @@ export const HandbookWrapper = styled.div`
     }
       
     input[type=checkbox] + label:before {
-      content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 4 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');;
+      content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 4 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');
       border: 0.1em solid #000;
       border-radius: 0.2em;
       display: inline-block;
@@ -204,7 +256,6 @@ export const HandbookWrapper = styled.div`
       padding-left: 0.2em;
       padding-bottom: 0.3em;
       margin-right: 0.5em;
-
       margin-bottom: 0.15em;
       vertical-align: bottom;
       color: transparent;
@@ -215,19 +266,18 @@ export const HandbookWrapper = styled.div`
       transform: scale(0);
     }
     rect {
-      fill:  ${props => props.theme.grey313131ToGreenC9FCF6};
+      fill:  ${props => props.theme.grey313131ToGreenC9FCF6 || "#313131"};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);  
     }
     path {
-      stroke: ${props => props.theme.green00D3A9ToGreen00B39F};
+      stroke: ${props => props.theme.green00D3A9ToGreen00B39F || "#00D3A9"};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     input[type=checkbox]:checked + label:before {
-      content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="black" viewBox="0 4 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');;
-
-      background-color: ${(props) => props.theme.keppelColor};
-      border-color: ${(props) => props.theme.primaryLightColorTwo};
+      content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="black" viewBox="4 4 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');
+      background-color: ${(props) => props.theme.keppelColor || "#00B39F"};
+      border-color: ${(props) => props.theme.primaryLightColorTwo || "#007acc"};
       color: #fff;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
@@ -239,8 +289,8 @@ export const HandbookWrapper = styled.div`
 
     input[type=checkbox]:checked:disabled + label:before {
       transform: scale(1);
-      background-color: ${(props) => props.theme.secondaryLightColor};
-      border-color: ${(props) => props.theme.secondaryLightColor};
+      background-color: ${(props) => props.theme.secondaryLightColor || "#f0f0f0"};
+      border-color: ${(props) => props.theme.secondaryLightColor || "#f0f0f0"};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
@@ -335,7 +385,7 @@ export const HandbookWrapper = styled.div`
       overflow:hidden;
       .active{
         font-weight:5000;
-        color: ${(props) => props.theme.secondaryColor};
+        color: ${(props) => props.theme.secondaryColor || "#333"};
       }
       ul{
         list-style: none;
@@ -362,7 +412,7 @@ export const HandbookWrapper = styled.div`
       }
       .text{
         p{
-          color: ${props => props.theme.tertiaryColor};
+          color: ${props => props.theme.tertiaryColor || "#666"};
           transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
       }
@@ -375,7 +425,7 @@ export const HandbookWrapper = styled.div`
                   vertical-align: top;
               }
               .skill{
-                  color: ${props => props.theme.tertiaryColor};
+                  color: ${props => props.theme.tertiaryColor || "#666"};
                   font-size: 16px;
                   padding: 0 0 1.25rem 1.8rem;
                   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -396,11 +446,11 @@ export const HandbookWrapper = styled.div`
     .content_type { 
       display: flex;
       flex-direction: column;
-      background: ${props => props.theme.grey212121ToWhite};
-      box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.green00D3A9ToGreyE6E6E6};
+      background: ${props => props.theme.grey212121ToWhite || "#212121"};
+      box-shadow: 0px 0px ${props => props.theme.projectShadowsize || "10px"} ${props => props.theme.green00D3A9ToGreyE6E6E6 || "#00D3A9"};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       &:hover{
-        box-shadow: 0px 0px 5px ${props => props.theme.primaryColor};
+        box-shadow: 0px 0px 5px ${props => props.theme.primaryColor || "#007acc"};
       }
       padding: 12% 6% 12% 6%;
       height: 220px;
@@ -411,11 +461,11 @@ export const HandbookWrapper = styled.div`
         margin-bottom: auto; 
         margin-top: 0.5rem;
         font-weight: 700;
-        color: ${props => props.theme.secondaryColor}
+        color: ${props => props.theme.secondaryColor || "#333"}
       }
       p{
         font-weight: 300;
-        color: ${props => props.theme.text};
+        color: ${props => props.theme.text || "#000"};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       img{
@@ -425,7 +475,7 @@ export const HandbookWrapper = styled.div`
     }
     .process {
       margin: 10px auto;
-      border-left: solid 2px ${(props) => props.theme.tertiaryColor};
+      border-left: solid 2px ${(props) => props.theme.tertiaryColor || "#666"};
       padding: 0px 20px 0px 20px;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     } 
@@ -441,9 +491,9 @@ export const HandbookWrapper = styled.div`
       width: 20px;
       height: 20px;
       display: block;
-      border: 3px solid ${(props) => props.theme.tertiaryColor};
+      border: 3px solid ${(props) => props.theme.tertiaryColor || "#666"};
       border-radius: 50%;
-      background-color: ${(props) => props.theme.secondaryColor};
+      background-color: ${(props) => props.theme.secondaryColor || "#333"};
       top: 25px;
       left: -32px;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -458,7 +508,7 @@ export const HandbookWrapper = styled.div`
     details.invite-only {
       margin: 1rem;
       padding: 1rem;
-      background-color: ${(props) => props.theme.grey313131ToGreenC9FCF6};
+      background-color: ${(props) => props.theme.grey313131ToGreenC9FCF6 || "#313131"};
       span {
         font-weight: bold;
         display: inline;
