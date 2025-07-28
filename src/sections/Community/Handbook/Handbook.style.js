@@ -17,19 +17,19 @@ export const HandbookWrapper = styled.div`
       width:100%;
       padding-bottom: 2rem;
       ul > li {
-        color: ${(props) => props.theme.text || "#000"};
+        color: ${(props) => props.theme.text || '#000'};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       ol > li {
-        color: ${(props) => props.theme.menuColor || "#000"};
+        color: ${(props) => props.theme.menuColor || '#000'};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       ul > li > span {
-        color: ${(props) => props.theme.text || "#000"};
+        color: ${(props) => props.theme.text || '#000'};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       ol > li > span {
-        color: ${(props) => props.theme.text || "#000"};
+        color: ${(props) => props.theme.text || '#000'};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
     }
@@ -60,7 +60,7 @@ export const HandbookWrapper = styled.div`
       margin: 0;
       padding: 0;
       width: 250px;
-      background-color:${(props) => props.theme.secondaryLightColor || "#f0f0f0"};
+      background-color:${(props) => props.theme.secondaryLightColor || '#f0f0f0'};
       height: auto;
       min-height: 100%;
       flex-shrink: 0;
@@ -76,13 +76,13 @@ export const HandbookWrapper = styled.div`
     }
 
     .sidebar a.active {
-      background-color: ${(props) => props.theme.primaryLightColorTwo || "#007acc"};
+      background-color: ${(props) => props.theme.primaryLightColorTwo || '#007acc'};
       color: white;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .sidebar a:hover:not(.active) {
-      background-color:${(props) => props.theme.secondaryLightColor || "#f0f0f0"};
+      background-color:${(props) => props.theme.secondaryLightColor || '#f0f0f0'};
       color: white;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
@@ -191,7 +191,7 @@ export const HandbookWrapper = styled.div`
     }
 
     td, th {
-      border: 0.05rem solid ${(props) => props.theme.primaryLightColor || "#ccc"};
+      border: 0.05rem solid ${(props) => props.theme.primaryLightColor || '#ccc'};
       text-align: left;
       padding: 0.5rem;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -209,7 +209,7 @@ export const HandbookWrapper = styled.div`
     }
 
     tbody:nth-child(even) {
-      background-color: ${(props) => props.theme.secondaryLightColorTwo || "#f9f9f9"};
+      background-color: ${(props) => props.theme.secondaryLightColorTwo || '#f9f9f9'};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
@@ -266,18 +266,18 @@ export const HandbookWrapper = styled.div`
       transform: scale(0);
     }
     rect {
-      fill:  ${props => props.theme.grey313131ToGreenC9FCF6 || "#313131"};
+      fill:  ${props => props.theme.grey313131ToGreenC9FCF6 || '#313131'};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);  
     }
     path {
-      stroke: ${props => props.theme.green00D3A9ToGreen00B39F || "#00D3A9"};
+      stroke: ${props => props.theme.green00D3A9ToGreen00B39F || '#00D3A9'};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     input[type=checkbox]:checked + label:before {
       content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="black" viewBox="4 4 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');
-      background-color: ${(props) => props.theme.keppelColor || "#00B39F"};
-      border-color: ${(props) => props.theme.primaryLightColorTwo || "#007acc"};
+      background-color: ${(props) => props.theme.keppelColor || '#00B39F'};
+      border-color: ${(props) => props.theme.primaryLightColorTwo || '#007acc'};
       color: #fff;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
@@ -289,8 +289,8 @@ export const HandbookWrapper = styled.div`
 
     input[type=checkbox]:checked:disabled + label:before {
       transform: scale(1);
-      background-color: ${(props) => props.theme.secondaryLightColor || "#f0f0f0"};
-      border-color: ${(props) => props.theme.secondaryLightColor || "#f0f0f0"};
+      background-color: ${(props) => props.theme.secondaryLightColor || '#f0f0f0'};
+      border-color: ${(props) => props.theme.secondaryLightColor || '#f0f0f0'};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
@@ -385,7 +385,7 @@ export const HandbookWrapper = styled.div`
       overflow:hidden;
       .active{
         font-weight:5000;
-        color: ${(props) => props.theme.secondaryColor || "#333"};
+        color: ${(props) => props.theme.secondaryColor || '#333'};
       }
       ul{
         list-style: none;
@@ -412,7 +412,7 @@ export const HandbookWrapper = styled.div`
       }
       .text{
         p{
-          color: ${props => props.theme.tertiaryColor || "#666"};
+          color: ${props => props.theme.tertiaryColor || '#666'};
           transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
       }
@@ -425,7 +425,7 @@ export const HandbookWrapper = styled.div`
                   vertical-align: top;
               }
               .skill{
-                  color: ${props => props.theme.tertiaryColor || "#666"};
+                  color: ${props => props.theme.tertiaryColor || '#666'};
                   font-size: 16px;
                   padding: 0 0 1.25rem 1.8rem;
                   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -446,11 +446,11 @@ export const HandbookWrapper = styled.div`
     .content_type { 
       display: flex;
       flex-direction: column;
-      background: ${props => props.theme.grey212121ToWhite || "#212121"};
-      box-shadow: 0px 0px ${props => props.theme.projectShadowsize || "10px"} ${props => props.theme.green00D3A9ToGreyE6E6E6 || "#00D3A9"};
+      background: ${props => props.theme.grey212121ToWhite || '#212121'};
+      box-shadow: 0px 0px ${props => props.theme.projectShadowsize || '10px'} ${props => props.theme.green00D3A9ToGreyE6E6E6 || '#00D3A9'};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       &:hover{
-        box-shadow: 0px 0px 5px ${props => props.theme.primaryColor || "#007acc"};
+        box-shadow: 0px 0px 5px ${props => props.theme.primaryColor || '#007acc'};
       }
       padding: 12% 6% 12% 6%;
       height: 220px;
@@ -461,11 +461,11 @@ export const HandbookWrapper = styled.div`
         margin-bottom: auto; 
         margin-top: 0.5rem;
         font-weight: 700;
-        color: ${props => props.theme.secondaryColor || "#333"}
+        color: ${props => props.theme.secondaryColor || '#333'}
       }
       p{
         font-weight: 300;
-        color: ${props => props.theme.text || "#000"};
+        color: ${props => props.theme.text || '#000'};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       img{
@@ -475,7 +475,7 @@ export const HandbookWrapper = styled.div`
     }
     .process {
       margin: 10px auto;
-      border-left: solid 2px ${(props) => props.theme.tertiaryColor || "#666"};
+      border-left: solid 2px ${(props) => props.theme.tertiaryColor || '#666'};
       padding: 0px 20px 0px 20px;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     } 
@@ -491,9 +491,9 @@ export const HandbookWrapper = styled.div`
       width: 20px;
       height: 20px;
       display: block;
-      border: 3px solid ${(props) => props.theme.tertiaryColor || "#666"};
+      border: 3px solid ${(props) => props.theme.tertiaryColor || '#666'};
       border-radius: 50%;
-      background-color: ${(props) => props.theme.secondaryColor || "#333"};
+      background-color: ${(props) => props.theme.secondaryColor || '#333'};
       top: 25px;
       left: -32px;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -508,7 +508,7 @@ export const HandbookWrapper = styled.div`
     details.invite-only {
       margin: 1rem;
       padding: 1rem;
-      background-color: ${(props) => props.theme.grey313131ToGreenC9FCF6 || "#313131"};
+      background-color: ${(props) => props.theme.grey313131ToGreenC9FCF6 || '#313131'};
       span {
         font-weight: bold;
         display: inline;
