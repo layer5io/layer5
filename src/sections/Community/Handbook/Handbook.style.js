@@ -9,7 +9,6 @@ export const HandbookWrapper = styled.div`
     .content > a:first-of-type > h2:first-of-type {
       padding-top: 1rem;
     }
-
     .highlight{
       font-weight: 600;
     }
