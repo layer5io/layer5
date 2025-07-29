@@ -23,6 +23,7 @@ import docsLogo from "../../../assets/images/docs/docs.svg";
 import mesheryCatalogLogo from "../../../assets/images/meshery/meshery-catalog.svg";
 import dockerExtensionLogo from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
 import KanvasLogo from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
+import EmployeeLogo from "../../../assets/images/employee/employee.svg";
 import Button from "../../../reusecore/Button";
 import { ReactComponent as TwitterIcon } from "../../../assets/images/socialIcons/twitter.svg";
 
@@ -296,6 +297,20 @@ const MemberSingle = ({ frontmatter }) => {
                             </Link>
                           </li>
                           <span className="tooltip-text writer">Writer</span>
+                        </div>
+                      )}
+                      {badges.includes("employee") && (
+                        <div className="tooltip">
+                          <li>
+                            <Link to="/careers">
+                              <img
+                                className="profile-social-links"
+                                src={EmployeeLogo}
+                                alt="Employee Logo"
+                              />
+                            </Link>
+                          </li>
+                          <span className="tooltip-text employee">Employee</span>
                         </div>
                       )}
                     </ul>
