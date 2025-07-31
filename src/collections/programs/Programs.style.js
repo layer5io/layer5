@@ -5,11 +5,16 @@ export const ProgramsWrapper = styled.div`
         color: ${props => props.theme.keppelColor};
         overflow-wrap: break-word;
     }
+    div[style*="aspect-ratio"] {
+        aspect-ratio: unset !important;
+        overflow: visible !important;
+    }
     img{
         width: 19vw;
         float: right;
         margin-left: 40px;
         margin-bottom: 30px;
+        aspect-ratio: unset !important;
         &.hacktoberfest-img {
             width: 50%;
 
