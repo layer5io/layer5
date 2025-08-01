@@ -62,15 +62,6 @@ const Guidance = () => {
             <li>
               <strong>Fallback Mechanisms:</strong> Implement robust fallback
               strategies:
-              <code>
-                {
-                  "<Avatar src={userImage} alt={userName} fallback={<Avatar>{userInitials}</Avatar>}/>"
-                }
-              </code>
-            </li>
-            <li>
-              Maintain consistent avatar sizing and style across the
-              application.
             </li>
             <li>Optimize image resolution for performance and clarity.</li>
           </ul>
@@ -89,26 +80,12 @@ const Guidance = () => {
             <li>Use image compression techniques.</li>
             <li>Implement lazy loading for avatar images.</li>
             <li>Cache avatar images to reduce network requests.</li>
-            <li>
-              Example lazy loading implementation:
-              <code>
-                {"<Avatar loading=\"lazy\" src=\"/path/to/optimized/image.jpg\"/>"}
-              </code>
-            </li>
           </ul>
 
           <h3>Advanced Customization</h3>
           <ul>
             <li>Theme-aware color generation for initial avatars.</li>
             <li>Status indicators (online/offline/away).</li>
-            <li>
-              Example status badge:
-              <code>
-                {
-                  "<Avatar src={userImage} status=\"online\" statusProps={{ color: 'green', position: 'bottom-right' }}/>"
-                }
-              </code>
-            </li>
           </ul>
 
           <h3>Common Integration Patterns</h3>
