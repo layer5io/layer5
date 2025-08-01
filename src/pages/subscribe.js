@@ -1,13 +1,13 @@
 import React from "react";
 import SEO from "../components/seo";
-
+import KanvasCTA from "../sections/Kanvas/kanvas-cta";
 
 import ContactSubscribeSection from "../components/ContactCard";
 const SubscribeSection = () => {
   return (
     <>
       <ContactSubscribeSection />
-
+      <KanvasCTA />
     </>
   );
 };
