@@ -35,28 +35,28 @@ const AboutTheAuthor = (props) => {
             <div className="share-section">
               <h3>Share</h3>
               <div className="share-icons-container">
-                <a 
-                  aria-label="Share on X" 
-                  title="Share on X" 
-                  href={`https://x.com/intent/tweet?text=${encodeURIComponent(shareQuote || 'Check out this article!')}&url=${encodeURIComponent(location.href)}&hashtags=layer5&via=layer5`}
+                <a
+                  aria-label="Share on X"
+                  title="Share on X"
+                  href={`https://x.com/intent/tweet?text=${encodeURIComponent(shareQuote || "Check out this article!")}&url=${encodeURIComponent(location.href)}&hashtags=layer5&via=layer5`}
                   rel="noopener noreferrer"
                   className="icon"
                 >
                   <AiOutlineTwitter />
                 </a>
-                <a 
-                  aria-label="Share on Facebook" 
-                  title="Share on Facebook" 
-                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}&t=${encodeURIComponent(shareQuote || 'Check out this article!')}`}
+                <a
+                  aria-label="Share on Facebook"
+                  title="Share on Facebook"
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}&t=${encodeURIComponent(shareQuote || "Check out this article!")}`}
                   rel="noopener noreferrer"
                   className="icon"
                 >
                   <FaFacebookF />
                 </a>
-                <a 
-                  aria-label="Share on Linkedin" 
-                  title="Share on Linkedin" 
-                  href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(location.href)}&summary=${encodeURIComponent(shareQuote || 'Check out this article!')}`}
+                <a
+                  aria-label="Share on Linkedin"
+                  title="Share on Linkedin"
+                  href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(location.href)}&summary=${encodeURIComponent(shareQuote || "Check out this article!")}`}
                   rel="noopener noreferrer"
                   className="icon"
                 >
