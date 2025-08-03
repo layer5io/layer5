@@ -10,17 +10,11 @@ import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const codes = [
-  "<Input placeholder=\"Placeholder goes here\" type=\"text\" />",
+  "<Input placeholder=\"Enter your name\" />",
   `<Input
-  placeholder="Placeholder goes here"
-  type="text"
-  size="medium"
+  placeholder="Share your thoughts..."
+  multiline
 />`,
-  `<Input
-  placeholder="Placeholder goes here"
-  type="text"
-  size="small"
-/>`
 ];
 
 const TextInputCode = () => {
@@ -34,11 +28,8 @@ const TextInputCode = () => {
           <h2>Text Input</h2>
         </a>
         <p>
-          Text inputs are important elements that help users interact with an
-          experience by providing text commands that will in turn return
-          expected results. These commands can range from providing a free range
-          of personal information to entering a limited number of characters for
-          a use case.
+          The <code>Input</code> component enables users to enter text data in forms and interfaces.
+          It provides a clean, accessible way to collect user information with support for different input types and multiline text.
         </p>
         <div className="filterBtns">
           <TabButton
@@ -76,108 +67,44 @@ const TextInputCode = () => {
           />
         </div>
         <div className="main-content">
-          <a id="Design">
-            <h2>Design</h2>
+          <p>
+            The Input component provides flexible text input capabilities with minimal configuration.
+            It integrates with Sistent's theming system while maintaining native HTML input behavior
+            for optimal performance and accessibility.
+          </p>
+
+          <a id="Basic Input">
+            <h2>Basic Input</h2>
           </a>
           <p>
-            Instead of various types for use across designs, the text input has
-            just one type to ensure simplicity and efficiency. It is preferable
-            that inputs are as minimal as possible since the sole function that
-            they generally perform is to ensure that users are able to send in
-            data and receive corresponding information.
+            A simple input field for collecting single-line text data. This is the most common form of text input.
           </p>
           <div className="showcase">
-            <div className="tf-items">
-              <Row $Hcenter>
-                <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                  <div style={{ margin: "20px 0" }}>
-                    <Input placeholder="Placeholder goes here" type="text" />
-                  </div>
-                </SistentThemeProvider>
-              </Row>
+            <div className="items">
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                <Input placeholder="Enter your name" />
+              </SistentThemeProvider>
             </div>
             <CodeBlock name="basic-input" code={codes[0]} />
           </div>
-          <a id="Sizes">
-            <h2>Sizes</h2>
+
+          <a id="Multiline Input">
+            <h2>Multiline Input</h2>
           </a>
           <p>
-            Since input fields have a responsive width that adjusts depending on
-            the need and use case, size considerations are mostly directed at
-            the height of the field. This means that the size of text inputs
-            adjust only relative to the height of the text field. Because text
-            inputs are mostly used in tandem with buttons, to ensure design
-            consistency, text inputs and buttons have similar size requirements.
-          </p>
-          <h3>56px / 3.5rem</h3>
-          <p>
-            The 56px text input is the first field size. It is the largest text
-            input available for use and it is available for both mobile and
-            desktop resolutions, but it serves in different capacities across
-            these different resolutions.
+            For longer text content that may span multiple lines. The input automatically expands vertically as users type.
           </p>
           <div className="showcase">
-            <div className="tf-items">
-              <Row $Hcenter>
-                <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                  <div style={{ margin: "20px 0" }}>
-                    <Input
-                      placeholder="Placeholder goes here"
-                      type="text"
-                      size="medium"
-                    />
-                  </div>
-                </SistentThemeProvider>
-              </Row>
+            <div className="items">
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                <Input
+                  placeholder="Share your thoughts..."
+                  multiline
+                />
+              </SistentThemeProvider>
             </div>
-            <CodeBlock name="medium-input" code={codes[1]} />
+            <CodeBlock name="multiline-input" code={codes[1]} />
           </div>
-          <h3>48px / 3rem</h3>
-          <p>
-            The 48px text input is the second field size in use and it is
-            available from mobile to desktop resolutions, even though it serves
-            in different capacities across these screen sizes.
-          </p>
-          <div className="showcase">
-            <div className="tf-items">
-              <Row $Hcenter>
-                <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                  <div style={{ margin: "20px 0" }}>
-                    <Input
-                      placeholder="Placeholder goes here"
-                      type="text"
-                      size="small"
-                    />
-                  </div>
-                </SistentThemeProvider>
-              </Row>
-            </div>
-            <CodeBlock name="small-input" code={codes[2]} />
-          </div>
-          <p>
-            <strong>NOTE:</strong>
-          </p>
-          <p>
-            These sizes are being specified with numerical values because though
-            the same size is used across screen resolutions, they have different
-            roles. On desktop for instance, the 56px text input is a the default
-            size, and 48px the small size, while on mobile, 56px is large and
-            48px is the default size. Preferred text input sizes (height) are
-            usually arrived at through exploration and proper consideration of
-            industry standards and best practices.
-          </p>
-          <a id="Adding Icons">
-            <h2>Adding Icons</h2>
-          </a>
-          <p>
-            Icons can be used often in text inputs to aid in understanding the
-            required parameters for a given field or to provide options that can
-            help to improve the experience as a user navigates a given set of
-            text inputs. Depending on the context, icons can be placed on the
-            left and right at different times or even at the same time. The
-            icons should be aligned to the left or right side of the input field
-            and not to the center, while text remains left aligned.
-          </p>
         </div>
       </div>
     </SistentLayout>

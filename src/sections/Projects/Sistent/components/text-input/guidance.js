@@ -8,6 +8,7 @@ import { SistentLayout } from "../../sistent-layout";
 
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
+
 const TextInputGuidance = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
@@ -19,11 +20,8 @@ const TextInputGuidance = () => {
           <h2>Text Input</h2>
         </a>
         <p>
-          Text inputs are important elements that help users interact with an
-          experience by providing text commands that will in turn return
-          expected results. These commands can range from providing a free range
-          of personal information to entering a limited number of characters for
-          a use case.
+          The Input component is a fundamental form element that enables efficient text data collection.
+          It adapts to different content types and user contexts while maintaining accessibility and usability standards.
         </p>
         <div className="filterBtns">
           <TabButton
@@ -62,64 +60,63 @@ const TextInputGuidance = () => {
         </div>
         <div className="main-content">
           <p>
-            Although we have only one type of text input to be used, there are
-            different roles that they can function in that ensure that these
-            inputs prove sufficient for multiple use cases.
+            Input components are essential elements in user interfaces, enabling users to enter and edit text data.
+            Their design and implementation are crucial for creating effective forms and data collection experiences.
           </p>
+
           <a id="Function">
             <h2>Function</h2>
           </a>
-          <p></p>
-          <h3>Default</h3>
+          <p>Input components serve various functions in user interfaces:</p>
+
+          <h3>Single-line Text Input</h3>
           <p>
-            Default text inputs are used for most of the input needs across an
-            interface. From filling up forms to entering text content in
-            provided form fields to complete an action or a task. this text
-            input is mostly utilized. Icons are not seldom required in this text
-            input, however, they can included when extremely necessary.
+            These inputs collect brief text data such as names, emails, or search queries.
+            They should be appropriately sized and provide clear visual feedback to users.
           </p>
-          <Row $Hcenter>
+          <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Input placeholder="PlaceHolder" />
+              <Input placeholder="Enter your email" type="email" />
             </SistentThemeProvider>
           </Row>
-          <h3>Multiline</h3>
+
+          <h3>Multi-line Text Input</h3>
           <p>
-            Multiline text input functions for input that requires more than one
-            line of text. This text input adjusts vertically based on the amount
-            of lines of text entered into the text field.
+            Multi-line inputs accommodate longer text content like comments, descriptions, or messages.
+            They automatically expand to fit content and provide users with adequate space for expression.
           </p>
-          <Row $Hcenter>
+          <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Input placeholder="Placeholder" multiline />
+              <Input
+                placeholder="Share your feedback..."
+                multiline
+              />
             </SistentThemeProvider>
           </Row>
-          <a id="Labelling">
-            <h2>Labelling</h2>
+          <a id="Placeholder Guidelines">
+            <h2>Placeholder Guidelines</h2>
           </a>
           <p>
-            A couple of elements come together to support the input field
-            depending on the context in is being used. These elements either
-            provide added information or provide much needed support to ensure
-            users are able to complete intended tasks.
+            Placeholder text is crucial for guiding users and setting expectations.
+            Effective placeholders improve usability and reduce form completion errors.
           </p>
-          <h3>Label</h3>
+
+          <h3>Descriptive Text</h3>
           <p>
-            The label is an optional feature that can accompany the text input.
-            It an be used to point out what is required in the input field.
+            Use clear, descriptive placeholder text that indicates the expected input format or provides helpful examples.
+            Avoid generic placeholders that don't add value to the user experience.
           </p>
-          <h3>Required</h3>
+
+          <h3>Concise Language</h3>
           <p>
-            This type of label that is usually applied in forms to inform users
-            of a compulsary information that is to be provided in order to
-            complete the form. It is represented by an asterisk mark (*) that
-            appears after the label text.
+            Keep placeholder text brief and to the point. Long placeholders can be truncated on smaller screens
+            and may overwhelm the input field visually.
           </p>
-          <h3>Helper text</h3>
+
+          <h3>Accessibility Considerations</h3>
           <p>
-            Helper text appears at the bottom of the input field and it is
-            primarily to serve as an alert for the user to inform them based on
-            the input they have entered but only where necessary.
+            Ensure placeholder text has sufficient contrast and doesn't rely solely on color to convey information.
+            Placeholders should complement, not replace, proper form labels for screen reader accessibility.
           </p>
         </div>
       </div>
