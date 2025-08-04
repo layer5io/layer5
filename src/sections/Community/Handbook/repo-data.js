@@ -58,7 +58,7 @@ export const repo_data = [
         image: meshery,
         site: "https://github.com/meshery/meshery/tree/master/ui",
         language: "NextJS, React.js, MaterialUI and Billboard.js",
-        maintainers_name: ["Antonette Caldwell", "Aabid Sofi"],
+        maintainers_name: ["Antonette Caldwell", "Aabid Sofi", "Ian Whitney"],
         link: [
           "https://layer5.io/community/members/antonette-caldwell",
           "https://layer5.io/community/members/aabid-sofi",
