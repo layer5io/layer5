@@ -62,6 +62,7 @@ export const repo_data = [
         link: [
           "https://layer5.io/community/members/antonette-caldwell",
           "https://layer5.io/community/members/aabid-sofi",
+          "https://layer5.io/community/members/ian-whitney"
         ],
         repository: "https://github.com/meshery/meshery/tree/master/ui",
       },
