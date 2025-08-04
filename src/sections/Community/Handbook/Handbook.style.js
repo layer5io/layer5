@@ -113,8 +113,6 @@ export const HandbookWrapper = styled.div`
       line-height: 1.2;
       text-align: center;
       box-sizing: border-box;
-      /* Use standard system fonts to avoid FOUT */
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     }
 
     @media screen and (max-width: 768px) {
