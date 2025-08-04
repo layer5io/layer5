@@ -35,13 +35,13 @@ const AboutTheAuthor = (props) => {
             <div className="share-section">
               <h3>Share</h3>
               <div className="share-icons-container">
-                <TwitterShareButton url={location.href} title={shareQuote || "Check out this article!"} className="icon">
+                <TwitterShareButton url={location.href} title={shareQuote} className="icon">
                   <AiOutlineTwitter />
                 </TwitterShareButton>
-                <FacebookShareButton url={location.href} quote={shareQuote || "Check out this article!"} className="icon">
+                <FacebookShareButton url={location.href} quote={shareQuote} className="icon">
                   <FaFacebookF />
                 </FacebookShareButton>
-                <LinkedinShareButton url={location.href} title={shareQuote || "Check out this article!"} className="icon">
+                <LinkedinShareButton url={location.href} title={shareQuote} className="icon">
                   <FaLinkedin />
                 </LinkedinShareButton>
               </div>
