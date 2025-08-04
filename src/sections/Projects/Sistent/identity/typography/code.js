@@ -390,6 +390,8 @@ const TypographyCode = () => {
           </p>
           
           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+          <Row className="table-container" $Hcenter>
+          <Col md={12} sx={{ px: 0 }}>
             <StyledTableContainer>
               <Table size="small">
                 <TableHead>
@@ -421,6 +423,8 @@ const TypographyCode = () => {
                 </TableBody>
               </Table>
             </StyledTableContainer>
+            </Col>
+            </Row>
           </SistentThemeProvider>
 
           <a id="Semantic Category">
@@ -433,6 +437,8 @@ const TypographyCode = () => {
           </p>
        
           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+          <Row className="table-container" $Hcenter>
+          <Col md={12} sx={{ px: 0 }}>
             <StyledTableContainer>
               <Table size="small">
                 <TableHead>
@@ -491,6 +497,8 @@ const TypographyCode = () => {
                 </TableBody>
               </Table>
             </StyledTableContainer>
+            </Col>
+            </Row>
           </SistentThemeProvider>
 
         </div>
