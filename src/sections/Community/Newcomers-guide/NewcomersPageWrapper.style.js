@@ -122,6 +122,7 @@ export const NewcomersGuideWrapper = styled.section`
     .community-collage {
       text-align: center ;
       min-width: 45vmin;
+      overflow: hidden; /* Prevent book from overflowing */
       
     }
     .community-img{
@@ -136,6 +137,12 @@ export const NewcomersGuideWrapper = styled.section`
     align-items: center;
     justify-content: center;
     perspective: 600px;
+    max-width: 100%; /* Ensure it doesn't exceed container width */
+    margin: 0 auto; /* Center the book */
+    
+    @media (max-width: 992px) {
+      margin-bottom: 2rem; /* Add space between book and text on mobile */
+    }
   }
 
   @keyframes initAnimation {
@@ -159,6 +166,8 @@ export const NewcomersGuideWrapper = styled.section`
     transform: rotateY(-30deg);
     transition: 1s ease;
     animation: 1s ease 0s 1 initAnimation;
+    margin: 0 auto; /* Center the book */
+    max-width: 200px; /* Ensure it doesn't exceed expected width */
   }
 
   .book:hover {
