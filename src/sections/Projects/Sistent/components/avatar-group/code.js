@@ -174,11 +174,13 @@ const AvatarGroupComponent = () => {
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               {avatarGroupExamples.map(
                 ({ title, description, element, code, id }) => (
-                  <section className="showcase" key={id}>
+                  <section key={id}>
                     <h4>{title}</h4>
                     <p>{description}</p>
-                    <div className="items">{element}</div>
-                    <CodeBlock name={id} code={code} />
+                    <div className="showcase">
+                      <div className="items">{element}</div>
+                      <CodeBlock name={id} code={code} />
+                    </div>
                   </section>
                 ),
               )}
