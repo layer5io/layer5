@@ -119,6 +119,13 @@ const UnsubscribedWrapper = styled.div`
             width:100%;
         }
     }
+
+    /* Override Kanvas text styling to make only "Kanvas" bold */
+    .CTAbody {
+        h2 span {
+            font-weight: bold !important;
+        }
+    }
 `;
 
 export default UnsubscribedWrapper;
