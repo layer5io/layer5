@@ -120,13 +120,17 @@ export const NewcomersGuideWrapper = styled.section`
       }
     }
     .community-collage {
-      text-align: center ;
+      text-align: center;
       min-width: 45vmin;
-      overflow: hidden; /* Prevent book from overflowing */
-      
+      overflow: visible; /* Allow book to be fully visible */
+      padding: 3rem 0; /* More padding to ensure content isn't cut off */
+      position: relative;
+      margin: 1rem auto;
     }
     .community-img{
-      text-align:center;
+      text-align: center;
+      position: relative;
+      z-index: 2;
     }
     .table-wrapper{
       text-align: center;
@@ -136,12 +140,18 @@ export const NewcomersGuideWrapper = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    perspective: 600px;
+    perspective: 1500px; /* Increased perspective for better 3D effect */
     max-width: 100%; /* Ensure it doesn't exceed container width */
     margin: 0 auto; /* Center the book */
+    position: relative;
+    z-index: 1;
+    padding: 3rem 1rem; /* More padding all around */
+    height: auto; /* Allow height to adjust based on content */
+    min-height: 400px; /* Minimum height to ensure book fits */
     
     @media (max-width: 992px) {
       margin-bottom: 2rem; /* Add space between book and text on mobile */
+      perspective: 1200px; /* Slightly reduced perspective for mobile */
     }
   }
 
@@ -150,7 +160,7 @@ export const NewcomersGuideWrapper = styled.section`
       transform: rotateY(0deg);
     }
     100% {
-      transform: rotateY(-30deg);
+      transform: rotateY(-20deg);
     }
   }
 
@@ -159,15 +169,16 @@ export const NewcomersGuideWrapper = styled.section`
   }
 
   .book {
-    min-width: 200px;
-    min-height: 300px;
+    width: 250px; /* Even wider to prevent text cutoff */
+    height: 350px; /* Even taller to ensure full content visibility */
     position: relative;
     transform-style: preserve-3d;
-    transform: rotateY(-30deg);
+    transform: rotateY(-20deg); /* Less rotation to show more of the cover */
     transition: 1s ease;
     animation: 1s ease 0s 1 initAnimation;
     margin: 0 auto; /* Center the book */
-    max-width: 200px; /* Ensure it doesn't exceed expected width */
+    display: block;
+    transform-origin: center;
   }
 
   .book:hover {
@@ -179,10 +190,11 @@ export const NewcomersGuideWrapper = styled.section`
     top: 0;
     left: 0;
     background-color: #171a12;
-    width: 200px;
-    height: 300px;
+    width: 250px;
+    height: 350px;
     transform: translateZ(25px);
     border-radius: 0 2px 2px 0;
+    background-size: 100% 100%; /* Make sure image content covers the entire front cover */
   }
 
   .book::before {
@@ -191,8 +203,8 @@ export const NewcomersGuideWrapper = styled.section`
     left: 0;
     top: 3px;
     width: 48px;
-    height: 294px;
-    transform: translateX(172px) rotateY(90deg);
+    height: 344px; /* Adjusted to match new height */
+    transform: translateX(222px) rotateY(90deg); /* Adjusted to match new width */
     background: linear-gradient(
       90deg,
       #fff 0%,
@@ -224,12 +236,20 @@ export const NewcomersGuideWrapper = styled.section`
     top: 0;
     left: 0;
     content: " ";
-    width: 200px;
-    height: 300px;
+    width: 250px; /* Match new width */
+    height: 350px; /* Match new height */
     transform: translateZ(-25px);
     background-color: #292929;
     border-radius: 0 2px 2px 0;
-    box-shadow: -2px 1px 30px 2px #666;
+    box-shadow: -8px 3px 30px 5px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
+  }
+  
+  /* Fix to ensure the image on the book cover is displayed fully */
+  .book img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 2px 2px 0;
   }
     @media only screen and (max-width: 991px) {
       .heading-start {
