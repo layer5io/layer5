@@ -21,7 +21,7 @@ const NewcomersMapWrapper = styled.div`
   #newcomers-guide {
     path {
       fill: ${(props) =>
-  props.handleHover
+  props.$handleHover
     ? (props) => props.theme.secondaryColor
     : "#3c494e"};
       transition: 0.5s;
@@ -37,7 +37,7 @@ const NewcomersMapWrapper = styled.div`
 
 const NewcomersMap = ({ handleMouseHover = false }) => {
   return (
-    <NewcomersMapWrapper handleHover={handleMouseHover}>
+    <NewcomersMapWrapper $handleHover={handleMouseHover}>
       <svg
         id="Layer_1"
         data-name="Layer 1"

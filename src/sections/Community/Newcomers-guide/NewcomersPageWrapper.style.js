@@ -123,9 +123,9 @@ export const NewcomersGuideWrapper = styled.section`
       text-align: center;
       min-width: 45vmin;
       overflow: visible; /* Allow book to be fully visible */
-      padding: 3rem 0; /* More padding to ensure content isn't cut off */
+      padding: 0; /* No padding */
       position: relative;
-      margin: 1rem auto;
+      margin: 0 auto;
     }
     .community-img{
       text-align: center;
@@ -134,24 +134,27 @@ export const NewcomersGuideWrapper = styled.section`
     }
     .table-wrapper{
       text-align: center;
-      margin-bottom: 4rem;
+      margin-top: 0; /* No top margin */
+      margin-bottom: 2rem; /* Reduced bottom margin */
     }
     .book-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    perspective: 1500px; /* Increased perspective for better 3D effect */
+    perspective: 1500px; /* Perspective for 3D effect */
     max-width: 100%; /* Ensure it doesn't exceed container width */
-    margin: 0 auto; /* Center the book */
+    margin: 0 auto -10px; /* Adjusted to leave just 1 point of space below */
     position: relative;
     z-index: 1;
-    padding: 3rem 1rem; /* More padding all around */
+    padding: 0; /* No padding */
     height: auto; /* Allow height to adjust based on content */
-    min-height: 400px; /* Minimum height to ensure book fits */
+    min-height: 300px; /* Further reduced minimum height */
     
     @media (max-width: 992px) {
-      margin-bottom: 2rem; /* Add space between book and text on mobile */
+      margin-bottom: 0.5rem; /* Minimal space between book and text on mobile */
       perspective: 1200px; /* Slightly reduced perspective for mobile */
+      width: 100%; /* Ensure it takes full width available */
+      overflow: hidden; /* Prevent overflow on mobile */
     }
   }
 
@@ -160,7 +163,7 @@ export const NewcomersGuideWrapper = styled.section`
       transform: rotateY(0deg);
     }
     100% {
-      transform: rotateY(-20deg);
+      transform: rotateY(-30deg);
     }
   }
 
@@ -169,16 +172,13 @@ export const NewcomersGuideWrapper = styled.section`
   }
 
   .book {
-    width: 250px; /* Even wider to prevent text cutoff */
-    height: 350px; /* Even taller to ensure full content visibility */
+    min-width: 200px;
+    min-height: 300px;
     position: relative;
     transform-style: preserve-3d;
-    transform: rotateY(-20deg); /* Less rotation to show more of the cover */
+    transform: rotateY(-30deg);
     transition: 1s ease;
     animation: 1s ease 0s 1 initAnimation;
-    margin: 0 auto; /* Center the book */
-    display: block;
-    transform-origin: center;
   }
 
   .book:hover {
@@ -190,8 +190,8 @@ export const NewcomersGuideWrapper = styled.section`
     top: 0;
     left: 0;
     background-color: #171a12;
-    width: 250px;
-    height: 350px;
+    width: 220px;
+    height: 320px;
     transform: translateZ(25px);
     border-radius: 0 2px 2px 0;
     background-size: 100% 100%; /* Make sure image content covers the entire front cover */
@@ -203,8 +203,8 @@ export const NewcomersGuideWrapper = styled.section`
     left: 0;
     top: 3px;
     width: 48px;
-    height: 344px; /* Adjusted to match new height */
-    transform: translateX(222px) rotateY(90deg); /* Adjusted to match new width */
+    height: 314px; /* Adjusted to match reduced height */
+    transform: translateX(192px) rotateY(90deg); /* Adjusted to match reduced width */
     background: linear-gradient(
       90deg,
       #fff 0%,
@@ -236,12 +236,12 @@ export const NewcomersGuideWrapper = styled.section`
     top: 0;
     left: 0;
     content: " ";
-    width: 250px; /* Match new width */
-    height: 350px; /* Match new height */
+    width: 220px; /* Match reduced width */
+    height: 320px; /* Match reduced height */
     transform: translateZ(-25px);
     background-color: #292929;
     border-radius: 0 2px 2px 0;
-    box-shadow: -8px 3px 30px 5px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
+    box-shadow: -10px 5px 15px 5px rgba(0, 0, 0, 0.5); /* Enhanced shadow for better 3D effect */
   }
   
   /* Fix to ensure the image on the book cover is displayed fully */
@@ -250,6 +250,11 @@ export const NewcomersGuideWrapper = styled.section`
     height: 100%;
     object-fit: cover;
     border-radius: 0 2px 2px 0;
+  }
+  
+  /* Reduce spacing for the "While Your Issue is Under Review" section */
+  h1, h2, h3 {
+    margin-top: 0.5rem; /* Minimize top margin for headings */
   }
     @media only screen and (max-width: 991px) {
       .heading-start {
