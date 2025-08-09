@@ -19,8 +19,9 @@ const SistentTextInput = () => {
           <h2>Text Input</h2>
         </a>
         <p>
-          The <code>Input</code> component enables users to enter text data in forms and interfaces.
-          It provides a clean, accessible way to collect user information with support for different input types and multiline text.
+          The Input component is a versatile form control that enables users to enter and edit text data.
+          It supports various input types, validation states, and customization options to create
+          accessible and user-friendly data collection experiences.
         </p>
         <div className="filterBtns">
           <TabButton
@@ -59,41 +60,67 @@ const SistentTextInput = () => {
         </div>
         <div className="main-content">
           <p>
-            The Input component differs from other form elements in that it's designed to be lightweight and flexible.
-            Unlike specialized components like Select or Checkbox, Input handles free-form text entry with minimal styling,
-            making it ideal for various text collection needs across your application.
+            Input components are fundamental building blocks for forms and data collection interfaces.
+            They provide immediate feedback to users and help maintain data quality through validation
+            and formatting features. The component adapts to different content types while maintaining
+            consistency with your design system.
           </p>
-
           <a id="Usage">
             <h2>Usage</h2>
           </a>
           <p>
-            The Input component renders as a standard HTML input by default, but supports multiline text areas when needed.
-            It integrates seamlessly with Sistent's theming system while maintaining native HTML input behavior.
+            The component can be used in several main variants:
           </p>
-
-          <h3>Basic Input</h3>
+          <ul>
+            <li><p><b>Standard:</b> Single-line text input for basic data collection</p></li>
+            <li><p><b>Multiline:</b> Multi-line text area for longer content</p></li>
+          </ul>
+          <a id="Basic Example">
+            <h3>Basic Example</h3>
+          </a>
           <p>
-            The simplest form of the Input component for collecting single-line text data.
+            Below is a simple example of how to use the Input component.
           </p>
+          <br />
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Input placeholder="Enter your name" />
             </SistentThemeProvider>
           </Row>
-
-          <h3>Multiline Input</h3>
+          <br />
+          <a id="Key Features">
+            <h2>Key Features</h2>
+          </a>
           <p>
-            For longer text content, the multiline variant renders as a textarea that expands based on content.
+            You can customize the appearance and behavior of the Input component using
+            various props to define how the component renders and interacts with users.
           </p>
-          <Row $Hcenter className="image-container">
-            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Input
-                placeholder="Enter your message..."
-                multiline
-              />
-            </SistentThemeProvider>
-          </Row>
+          <h3>Input Types</h3>
+          <ul>
+            <li><p><b>Text:</b> Standard text input for general text data</p></li>
+            <li><p><b>Email:</b> Email input with built-in validation</p></li>
+            <li><p><b>Password:</b> Password input with hidden text</p></li>
+            <li><p><b>Number:</b> Numeric input with increment/decrement controls</p></li>
+            <li><p><b>Tel:</b> Telephone number input</p></li>
+            <li><p><b>URL:</b> URL input with validation</p></li>
+            <li><p><b>Search:</b> Search input with optimized styling</p></li>
+          </ul>
+          <h3>Visual Features</h3>
+          <ul>
+            <li><p><b>Standard:</b> Clean, minimalist input styling</p></li>
+            <li><p><b>Multiline:</b> Expandable text area for longer content</p></li>
+          </ul>
+          <h3>Customization Options</h3>
+          <ul>
+            <li><p><b>Color:</b> Primary, secondary, success, error, warning color themes</p></li>
+            <li><p><b>Label:</b> Descriptive labels for accessibility</p></li>
+            <li><p><b>Helper Text:</b> Additional guidance or validation messages</p></li>
+            <li><p><b>Placeholder:</b> Hint text showing expected input format</p></li>
+            <li><p><b>Disabled State:</b> Non-interactive state for read-only contexts</p></li>
+            <li><p><b>Required:</b> Indicates mandatory fields</p></li>
+            <li><p><b>Error State:</b> Visual feedback for validation errors</p></li>
+            <li><p><b>Start/End Adornments:</b> Icons or text before/after input content</p></li>
+          </ul>
         </div>
       </div>
     </SistentLayout>
