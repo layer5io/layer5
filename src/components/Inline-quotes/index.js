@@ -111,7 +111,13 @@ const InlineQuotes = ({ person, title, quote,image }) => {
         {(image || person || title) && <hr />}
         {
           image &&
-          <img src={image}></img>
+          <img
+            src={image}
+            alt={`${person || "Quote author"}`}
+            width="96"
+            height="96"
+            style={{ objectFit: "cover" }}
+          />
         }
         <div className="quote-source">
           <h5>{person}</h5>
