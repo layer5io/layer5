@@ -133,6 +133,14 @@ const componentsData = [
     url: "/projects/sistent/components/dialog",
     src: "/dialog",
   },
+  {
+    id: 18,
+    name: "Circular Progress",
+    description:
+      "The Circular Progress component displays a circular loading indicator that represents the progress in your application",
+    url: "/projects/sistent/components/circularprogress",
+    src: "/circularprogress",
+  },
 
 ];
 
