@@ -6,7 +6,7 @@ export const meet_links_data = [
     slack_link: "https://layer5io.slack.com/archives/C015QJKUMPU",
     meeting_minutes: "https://bit.ly/2XK4eQV",
     meeting_link: "https://meet.layer5.io/websites",
-    meeting_recordings: "https://www.youtube.com/watch?v=Zba0b0ZojOI&list=PL3A-A6hPO2IO1ZuLj3cbOTdi-hlkF4Lqu",
+    meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IO1ZuLj3cbOTdi-hlkF4Lqu",
   },
   {
     day: "Tuesdays",
@@ -15,7 +15,7 @@ export const meet_links_data = [
     slack_link: "https://mesheryio.slack.com/archives/C02F90W866T",
     meeting_minutes: "https://bit.ly/3aXOaAs",
     meeting_link: "https://meet.layer5.io/kanvas",
-    meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0",
+    meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IO_yzN83wSJJUNQActzCJvO",
   },
   {
     day: "Wednesdays",
@@ -24,7 +24,7 @@ export const meet_links_data = [
     slack_link: "https://layer5io.slack.com/archives/CFGG6U10E",
     meeting_minutes: "https://bit.ly/31OGQTk",
     meeting_link: "https://meet.meshery.io/dev",
-    meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0",
+    meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2INMUzQc-9vT6Jz_VQQpsSS0",
   },
   {
     day: "2nd & 4th Thursday",
@@ -33,7 +33,7 @@ export const meet_links_data = [
     slack_link: "https://layer5io.slack.com/archives/C011VPREG2Z",
     meeting_minutes: "https://docs.google.com/document/d/1GrVdGHZAYeu6wHNLLoiaKNqBtk7enXE9XeDRCvdA4bY/edit",
     meeting_link: "https://meet.meshery.io/ci",
-    meeting_recordings: "https://www.youtube.com/watch?v=wnySRmqfOqw&list=PLutOg_DiPjIZzuVOeWZjC7CSeb0bhaoS5",
+    meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IM7rYiKxG4l3eQNc6X3IUex",
   },
   {
     day: "Thursdays",
@@ -42,7 +42,7 @@ export const meet_links_data = [
     slack_link: "https://layer5io.slack.com/archives/C019426UBNY",
     meeting_minutes: "https://docs.google.com/document/d/1aHarIyIL__HRq_4klYOUsEXP5SQLlmb50W17yKdNmpU/edit#",
     meeting_link: "https://meet.layer5.io/newcomers",
-    meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0",
+    meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2INVEknQ4R-VwDMUT9yM_FSm",
   },
   {
     day: "Fridays",

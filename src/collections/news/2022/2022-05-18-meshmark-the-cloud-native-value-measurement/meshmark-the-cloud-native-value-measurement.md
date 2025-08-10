@@ -7,7 +7,7 @@ thumbnail: ../../../../assets/images/meshmark/stacked/meshmark-dark-full.webp
 darkthumbnail: ../../../../assets/images/meshmark/stacked/meshmark-dark-full.webp
 category: "Press Release"
 presskit: "/press/kits/MeshMark-press-kit.zip"
-description: "Layer5, a provider of cloud native management software, announced today the general availability of the Meshery Docker Extension. Complementing Docker Desktop's role as the go-to Kubernetes environment for cloud native developers, the Meshery Docker Extension provides easy access to the next layer of cloud native infrastructure: service meshes. As an inaugural Docker Extensions Partner and a maker of industry-defining, cloud native software, Layer5’s integration of Meshery provides a visual pathway for existing Docker Compose applications to move into Kubernetes and onto any service mesh."
+description: "Layer5, a provider of cloud native management software, announced today the general availability of the Meshery Docker Extension. Complementing Docker Desktop's role as the go-to Kubernetes environment for cloud native developers, the Meshery Docker Extension provides easy access to the next layer of cloud native infrastructure. As an inaugural Docker Extensions Partner and a maker of industry-defining, cloud native software, Layer5’s integration of Meshery provides a visual pathway for existing Docker Compose applications to move into Kubernetes and onto any Cloud."
 tags:
  - Announcements
  - Meshery

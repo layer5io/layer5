@@ -17,7 +17,7 @@ const SecurityVulnerabilitiesPage = () => {
             <h2>Issue and PR Labels and Templates, Bots</h2><br/>
             <h3><strong>Overview</strong></h3><br />
             <p>The Layer5 GitHub Process emphasizes consistent pull requests and issue labels to streamline continuous integration and reduce overhead across the growing repository collection.</p>
-            <p>The number of repositories under the “Layer5io” organization is growing. In order to ensure consistency across the repositories and to decrease the time it takes for a continuous integration (GitHub Actions) to execute, consistent use of pull request and issue labels will aid in the reduction of overhead.</p>
+            <p>The number of repositories under the "Layer5io" organization is growing. In order to ensure consistency across the repositories and to decrease the time it takes for a continuous integration (GitHub Actions) to execute, consistent use of pull request and issue labels will aid in the reduction of overhead.</p>
 
             <h3>Issue and Pull Request Templates</h3>
             <p>Layer5 uses issue and pull request templates. See the `.github` folder in any repo for examples.</p>
@@ -49,11 +49,11 @@ const SecurityVulnerabilitiesPage = () => {
                 </tr>
                 <tr>
                   <td>DOCKER_PASSWORD</td>
-                  <td>Belongs to user “mesheryci”</td>
+                  <td>Belongs to user "mesheryci"</td>
                 </tr>
                 <tr>
                   <td>DOCKER_USERNAME</td>
-                  <td>“mesheryci”</td>
+                  <td>"mesheryci"</td>
                 </tr>
                 <tr>
                   <td>NETLIFY_AUTH_TOKEN</td>
@@ -65,11 +65,11 @@ const SecurityVulnerabilitiesPage = () => {
                 </tr>
                 <tr>
                   <td>RELEASEDRAFTER_PAT</td>
-                  <td>Belongs to user “l5io”</td>
+                  <td>Belongs to user "l5io"</td>
                 </tr>
                 <tr>
                   <td>RELEASE_NOTES_PAT</td>
-                  <td>Belongs to user “l5io”</td>
+                  <td>Belongs to user "l5io"</td>
                 </tr>
                 <tr>
                   <td>SLACK_BOT_TOKEN</td>
@@ -81,7 +81,7 @@ const SecurityVulnerabilitiesPage = () => {
                 </tr>
                 <tr>
                   <td>NODE_VERSION</td>
-                  <td>“v18” as of Nov 15, 2022.</td>
+                  <td>"v18" as of Nov 15, 2022.</td>
                 </tr>
                 <tr>
                   <td>GO_VERSION</td>
@@ -93,7 +93,7 @@ const SecurityVulnerabilitiesPage = () => {
                 </tr>
                 <tr>
                   <td>NPM_TOKEN</td>
-                  <td>l5io user’s token for publishing packages</td>
+                  <td>l5io user's token for publishing packages</td>
                 </tr>
                 <tr>
                   <td>INTEGRATION_SPREADSHEET_CRED</td>
@@ -122,293 +122,229 @@ const SecurityVulnerabilitiesPage = () => {
               </tbody>
             </table>
 
-            <h3>Labels for Issues</h3>
-            <p>The following list of GitHub issue labels are applied organization-wide. New repositories created as of June 13th, 2020 will contain these labels by default.</p>
+            <h2>Layer5 Issue Labels Guide</h2>
+            <p>
+              Well-chosen issue labels keep our repositories organized, make contributing easier, and help everyone—from maintainers to first-time contributors—find relevant tasks quickly. Below, we explain each major label category and when to use them.
+            </p>
 
+            <h3>Area Labels</h3>
+            <p>
+              Area labels specify which part of the project an issue or PR relates to—such as documentation, user interface, or continuous integration. Using area labels helps contributors with specific interests or expertise find and filter issues that are relevant to them, and helps project maintainers prioritize or assign tasks more efficiently. Assign an area label any time you create or triage an issue/PR that falls within a specific domain (docs, UI, CI, performance, etc.).
+            </p>
             <table>
               <thead>
                 <tr>
-                  <th><b>labels</b></th>
-                  <th><b>Description</b></th>
-                  <th><b>Color</b></th>
+                  <th>Label</th>
+                  <th>Description</th>
+                  <th>Color</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>area/ci</td>
-                  <td>Continuous integration | Build and release</td>
-                  <td>#5319e1</td>
-                </tr>
-                <tr>
-                  <td>area/docs</td>
-                  <td>Improvements or additions to documentation</td>
-                  <td>#5319e2</td>
-                </tr>
-                <tr>
-                  <td>area/lifecycle</td>
-                  <td>Lifecycle management (install, uninstall, configure) related</td>
-                  <td>#5319e3</td>
-                </tr>
-                <tr>
-                  <td>area/performance</td>
-                  <td>Performance management</td>
-                  <td>#5319e4</td>
-                </tr>
-                <tr>
-                  <td>area/tests</td>
-                  <td>Testing / quality assurance</td>
-                  <td>#5319e5</td>
-                </tr>
-                <tr>
-                  <td>area/ui</td>
-                  <td>User Interface</td>
-                  <td>#5319e6</td>
-                </tr>
-                <tr>
-                  <td>area/workloads</td>
-                  <td>Applications / services</td>
-                  <td>#5319e7</td>
-                </tr>
-                <tr>
-                  <td>area/helm</td>
-                  <td>Helm charts issues</td>
-                  <td>#5319e8</td>
-                </tr>
-                <tr>
-                  <td>component/api</td>
-                  <td>API related</td>
-                  <td>#3a0485</td>
-                </tr>
-                <tr>
-                  <td>component/mesheryctl</td>
-                  <td>Meshery CLI related</td>
-                  <td>#3a0486</td>
-                </tr>
-                <tr>
-                  <td>component/ui</td>
-                  <td></td>
-                  <td>#3a0486</td>
-                </tr>
-                <tr>
-                  <td>component/filters</td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>component/patterns</td>
-                  <td></td>
-                  <td>#3a0486</td>
-                </tr>
-                <tr>
-                  <td>component/meshsync</td>
-                  <td>MeshSync related</td>
-                  <td>#3a0487</td>
-                </tr>
-                <tr>
-                  <td>component/meshery-perf</td>
-                  <td>Meshery-perf related</td>
-                  <td>#3a0488</td>
-                </tr>
-                <tr>
-                  <td>good first issue</td>
-                  <td>Good for newcomers</td>
-                  <td>#7057ff</td>
-                </tr>
-                <tr>
-                  <td>help wanted</td>
-                  <td>Extra attention is needed</td>
-                  <td>#35f48e</td>
-                </tr>
-                <tr>
-                  <td>issue/invite</td>
-                  <td>When applied, this label triggers a to send an invitation to the issue author to join the respective GH org. Invitations are missing appropriate team assignments, however.</td>
-                  <td>#eeeeee</td>
-                </tr>
-                <tr>
-                  <td>issue/blocked</td>
-                  <td>Issue is blocked</td>
-                  <td>#eeeeee</td>
-                </tr>
-                <tr>
-                  <td>issue/design required</td>
-                  <td>A labeler bot comments with a note stipulating the a design specification required prior to proceeding.</td>
-                  <td>#eeeeee</td>
-                </tr>
-                <tr>
-                  <td>issue/duplicate</td>
-                  <td>This issue or pull request already exists</td>
-                  <td>#eeeeee</td>
-                </tr>
-                <tr>
-                  <td>issue/invalid</td>
-                  <td>This doesn't seem right</td>
-                  <td>#eeeeee</td>
-                </tr>
-                <tr>
-                  <td>issue/stale</td>
-                  <td>Issue has not had any activity for an extended period of time. Label is most often applied by a stale bot, working under specific inactivity timeouts.</td>
-                  <td>#eeeeee</td>
-                </tr>
-                <tr>
-                  <td>issue/tweet</td>
-                  <td>Posts</td>
-                  <td>#eeeeee</td>
-                </tr>
-                <tr>
-                  <td>issue/remind</td>
-                  <td>A labeler bot comments on the issue with a helpful reminder to the current assignee that help is available, if needed, and a reminder that their issue remains outstanding (undone).</td>
-                  <td>#eeeeee</td>
-                </tr>
-                <tr>
-                  <td>issue/willfix</td>
-                  <td>This issue will be worked on. The stale bot honors this label and skips staleness consideration of issues with this label.</td>
-                  <td>#eeeeee</td>
-                </tr>
-                <tr>
-                  <td>kind/bug</td>
-                  <td>Something isn't working</td>
-                  <td>#088073</td>
-                </tr>
-                <tr>
-                  <td>kind/child</td>
-                  <td>One of a number of issues relating to an epic</td>
-                  <td>#088074</td>
-                </tr>
-                <tr>
-                  <td>kind/chore</td>
-                  <td>Necessary task</td>
-                  <td>#088075</td>
-                </tr>
-                <tr>
-                  <td>kind/enhancement</td>
-                  <td>Improvement in current feature</td>
-                  <td>#088076</td>
-                </tr>
-                <tr>
-                  <td>kind/epic</td>
-                  <td>An issue that describes a set of concerns (issues)</td>
-                  <td>#088077</td>
-                </tr>
-                <tr>
-                  <td>kind/feature</td>
-                  <td>New major feature or request</td>
-                  <td>#088078</td>
-                </tr>
-                <tr>
-                  <td>kind/proposal</td>
-                  <td>Proposal request for project</td>
-                  <td>#088079</td>
-                </tr>
-                <tr>
-                  <td>kind/question</td>
-                  <td>Further information is requested</td>
-                  <td>#088080</td>
-                </tr>
-                <tr>
-                  <td>language/go</td>
-                  <td>Golang related</td>
-                  <td>#16e2e2</td>
-                </tr>
-                <tr>
-                  <td>language/javascript</td>
-                  <td>Javascript related</td>
-                  <td>#16e2e3</td>
-                </tr>
-                <tr>
-                  <td>language/ruby</td>
-                  <td>Ruby related</td>
-                  <td>#16e2e4</td>
-                </tr>
-                <tr>
-                  <td>pr/dependencies</td>
-                  <td>Dependabot or manual dependencies addressed in this PR</td>
-                  <td>#0366d5</td>
-                </tr>
-                <tr>
-                  <td>pr/do-not-merge</td>
-                  <td>PRs not ready to be merged</td>
-                  <td>#0366d6</td>
-                </tr>
-                <tr>
-                  <td>pr/draft</td>
-                  <td>WIP/Draft pull request</td>
-                  <td>#0366d7</td>
-                </tr>
-                <tr>
-                  <td>pr/on hold</td>
-                  <td>PR/Issue on hold</td>
-                  <td>#0366d8</td>
-                </tr>
-                <tr>
-                  <td>priority/urgent</td>
-                  <td>Issue to be addressed urgently</td>
-                  <td>#f60205</td>
-                </tr>
-                <tr>
-                  <td>priority/high</td>
-                  <td>High priority issue</td>
-                  <td>#d60205</td>
-                </tr>
-                <tr>
-                  <td>priority/low</td>
-                  <td>Low priority issue</td>
-                  <td>#a60205</td>
-                </tr>
-                <tr>
-                  <td>service-mesh/app-mesh</td>
-                  <td>Issues related to App Mesh</td>
-                  <td>#57b6cc</td>
-                </tr>
-                <tr>
-                  <td>service-mesh/consul</td>
-                  <td>Issues related to Consul</td>
-                  <td>#57b6cc</td>
-                </tr>
-                <tr>
-                  <td>service-mesh/cpx</td>
-                  <td>Issues related to CPX</td>
-                  <td>#57b6cc</td>
-                </tr>
-                <tr>
-                  <td>service-mesh/istio</td>
-                  <td>Issues related to Istio</td>
-                  <td>#57b6cc</td>
-                </tr>
-                <tr>
-                  <td>service-mesh/kuma</td>
-                  <td>Issues related to Kuma</td>
-                  <td>#57b6cc</td>
-                </tr>
-                <tr>
-                  <td>service-mesh/linkerd</td>
-                  <td>Issues related to Linkerd</td>
-                  <td>#57b6cc</td>
-                </tr>
-                <tr>
-                  <td>service-mesh/maesh</td>
-                  <td>Issues related to Maesh</td>
-                  <td>#57b6cc</td>
-                </tr>
-                <tr>
-                  <td>service-mesh/nginx</td>
-                  <td>ssues related to NGINX SM</td>
-                  <td>#57b6cc</td>
-                </tr>
-                <tr>
-                  <td>service-mesh/nsm</td>
-                  <td>Issues related to NSM</td>
-                  <td>#57b6cc</td>
-                </tr>
-                <tr>
-                  <td>service-mesh/tanzu</td>
-                  <td>Issues related to Tanzu</td>
-                  <td>#57b6cc</td>
-                </tr>
+                <tr><td>area/ci</td><td>Continuous integration, build &amp; release</td><td>#5319e1</td></tr>
+                <tr><td>area/docs</td><td>Improvements/additions to documentation</td><td>#5319e2</td></tr>
+                <tr><td>area/lifecycle</td><td>Lifecycle management (install, uninstall, configure)</td><td>#5319e3</td></tr>
+                <tr><td>area/performance</td><td>Performance management</td><td>#5319e4</td></tr>
+                <tr><td>area/tests</td><td>Testing / quality assurance</td><td>#5319e5</td></tr>
+                <tr><td>area/ui</td><td>User interface</td><td>#5319e6</td></tr>
+                <tr><td>area/workloads</td><td>Applications / services</td><td>#5319e7</td></tr>
+                <tr><td>area/helm</td><td>Helm charts issues</td><td>#5319e8</td></tr>
               </tbody>
             </table>
 
+            <h3>Component Labels</h3>
+            <p>
+              Component labels indicate which software module or subsystem is affected by an issue. This ensures issues are routed to the right maintainers and allows more detailed filtering beyond the broader area labels. Attach a component label when your issue/PR impacts a specific module (e.g., a CLI tool, API, or pattern engine).
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Label</th>
+                  <th>Description</th>
+                  <th>Color</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>component/api</td><td>API related</td><td>#3a0485</td></tr>
+                <tr><td>component/mesheryctl</td><td>Meshery CLI related</td><td>#3a0486</td></tr>
+                <tr><td>component/ui</td><td>UI component related</td><td>#3a0486</td></tr>
+                <tr><td>component/filters</td><td>Filters related</td><td>#3a0486</td></tr>
+                <tr><td>component/patterns</td><td>Patterns related</td><td>#3a0486</td></tr>
+                <tr><td>component/meshsync</td><td>MeshSync component related</td><td>#3a0487</td></tr>
+                <tr><td>component/meshery-perf</td><td>Meshery-perf related</td><td>#3a0488</td></tr>
+              </tbody>
+            </table>
+
+            <h3>Programming Language Labels</h3>
+            <p>
+              Programming language labels highlight the primary language used in the issue or PR. This helps contributors looking for language-specific work, and aids in code review or help requests. Use a programming language label if the change, bug, or feature is specific to a particular language (e.g., a Go backend bug, a JavaScript UI enhancement).
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Label</th>
+                  <th>Description</th>
+                  <th>Color</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>language/go</td><td>Golang related</td><td>#16e2e2</td></tr>
+                <tr><td>language/javascript</td><td>Javascript</td><td>#16e2e3</td></tr>
+                <tr><td>language/ruby</td><td>Ruby</td><td>#16e2e4</td></tr>
+              </tbody>
+            </table>
+
+            <h3>PR (Pull Request) Labels</h3>
+            <p>
+              PR labels manage the state or special requirements of a pull request, like indicating it's a draft, dependent on others, or not yet ready for merging. Apply a PR label if your pull request isn't ready, should not be merged, updates dependencies, or is on hold.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Label</th>
+                  <th>Description</th>
+                  <th>Color</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>pr/dependencies</td><td>Updates addressed dependencies</td><td>#0366d5</td></tr>
+                <tr><td>pr/do-not-merge</td><td>Not ready for merging</td><td>#0366d6</td></tr>
+                <tr><td>pr/draft</td><td>Work in progress/draft PR</td><td>#0366d7</td></tr>
+                <tr><td>pr/on hold</td><td>PR/Issue on hold</td><td>#0366d8</td></tr>
+              </tbody>
+            </table>
+
+            <h3>Issue Process &amp; Status Labels</h3>
+            <p>
+              These labels show the current status of an issue—such as blocked, duplicate, in need of a design, or if an action (like an invitation) should be triggered. Some are used by bots to automate reminders or mark stale issues. Apply these when the situation applies (e.g. "blocked" if work can't proceed, "design required" if more planning is needed).
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Label</th>
+                  <th>Description</th>
+                  <th>Color</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>issue/invite</td><td>Invitation for author to join GH org</td><td>#eeeeee</td></tr>
+                <tr><td>issue/blocked</td><td>Issue is blocked</td><td>#eeeeee</td></tr>
+                <tr><td>issue/design required</td><td>Requires a design prior to proceeding</td><td>#eeeeee</td></tr>
+                <tr><td>issue/duplicate</td><td>Issue or PR already exists</td><td>#eeeeee</td></tr>
+                <tr><td>issue/invalid</td><td>This doesn't seem right</td><td>#eeeeee</td></tr>
+                <tr><td>issue/stale</td><td>No activity for an extended period (often applied automatically)</td><td>#eeeeee</td></tr>
+                <tr><td>issue/tweet</td><td>Posts (for social or outreach)</td><td>#eeeeee</td></tr>
+                <tr><td>issue/remind</td><td>Reminder comment to assignee</td><td>#eeeeee</td></tr>
+                <tr><td>issue/willfix</td><td>Issue will be worked on ("stale" bot skips)</td><td>#eeeeee</td></tr>
+              </tbody>
+            </table>
+
+            <h3>Kind Labels</h3>
+            <p>
+              Kind labels classify the general type of change or discussion: bug, feature, chore, enhancement, epic, question, or proposal. This improves searchability and helps teams organize their workflows. Use the kind label that best describes your issue or PR.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Label</th>
+                  <th>Description</th>
+                  <th>Color</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>kind/bug</td><td>Something isn't working</td><td>#088073</td></tr>
+                <tr><td>kind/child</td><td>Child of a larger Epic</td><td>#088074</td></tr>
+                <tr><td>kind/chore</td><td>Maintenance or other necessary task</td><td>#088075</td></tr>
+                <tr><td>kind/enhancement</td><td>Improvement to an existing feature</td><td>#088076</td></tr>
+                <tr><td>kind/epic</td><td>An umbrella issue, covers many issues</td><td>#088077</td></tr>
+                <tr><td>kind/feature</td><td>New major feature or request</td><td>#088078</td></tr>
+                <tr><td>kind/proposal</td><td>Suggestion or proposal for change</td><td>#088079</td></tr>
+                <tr><td>kind/question</td><td>Explanation or further info requested</td><td>#088080</td></tr>
+              </tbody>
+            </table>
+
+            <h3>Priority Labels</h3>
+            <p>
+              Priority labels help teams triage and allocate attention, making it clear which issues are urgent and which can wait. Always apply a priority label, adjusting as priorities shift or as issues are escalated or downgraded.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Label</th>
+                  <th>Description</th>
+                  <th>Color</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>priority/urgent</td><td>Needs immediate attention</td><td>#f60205</td></tr>
+                <tr><td>priority/high</td><td>High priority issue</td><td>#d60205</td></tr>
+                <tr><td>priority/low</td><td>Lower priority, can wait</td><td>#a60205</td></tr>
+              </tbody>
+            </table>
+
+            <h3>Service Mesh Labels</h3>
+            <p>
+              Service mesh labels point out which mesh technology or ecosystem the issue pertains to. This is vital for projects supporting multiple meshes, enabling modular attention and expertise. Use these when your change or report is specific to one mesh (like Istio or Linkerd).
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Label</th>
+                  <th>Description</th>
+                  <th>Color</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>service-mesh/app-mesh</td><td>App Mesh</td><td>#57b6cc</td></tr>
+                <tr><td>service-mesh/consul</td><td>Consul</td><td>#57b6cc</td></tr>
+                <tr><td>service-mesh/cpx</td><td>CPX</td><td>#57b6cc</td></tr>
+                <tr><td>service-mesh/istio</td><td>Istio</td><td>#57b6cc</td></tr>
+                <tr><td>service-mesh/kuma</td><td>Kuma</td><td>#57b6cc</td></tr>
+                <tr><td>service-mesh/linkerd</td><td>Linkerd</td><td>#57b6cc</td></tr>
+                <tr><td>service-mesh/maesh</td><td>Maesh</td><td>#57b6cc</td></tr>
+                <tr><td>service-mesh/nginx</td><td>NGINX SM</td><td>#57b6cc</td></tr>
+                <tr><td>service-mesh/nsm</td><td>NSM</td><td>#57b6cc</td></tr>
+                <tr><td>service-mesh/tanzu</td><td>Tanzu</td><td>#57b6cc</td></tr>
+              </tbody>
+            </table>
+
+            <h3>Help &amp; Onboarding Labels</h3>
+            <p>
+              Help labels signal issues where some support is needed, or which are especially suitable for newcomers. These labels foster open source engagement and make onboarding easier for new contributors. Apply these to issues where you'd appreciate community help (<code>help wanted</code>) or for issues that are clearly documented, small in scope, and ideal for first-timers (<code>good first issue</code>).
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Label</th>
+                  <th>Description</th>
+                  <th>Color</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>help wanted</td><td>Maintainers need help here</td><td>#35f48e</td></tr>
+                <tr><td>good first issue</td><td>Good for new contributors</td><td>#7057ff</td></tr>
+              </tbody>
+            </table>
+
+            <h3>Best Practices &amp; Example</h3>
+            <ul>
+              <li><b>Apply all relevant labels</b>: an issue may belong to an area, a component, a kind, have a priority, AND be language-specific.</li>
+              <li><b>Update labels as issues evolve</b>: don't hesitate to add or remove as information changes.</li>
+              <li><b>When in doubt, ask!</b>: The <a href="https://layer5.io/community">Layer5 community Slack</a> is a welcoming place.</li>
+            </ul>
+
+            <strong>Example:</strong><br />
+            <p>
+              If you find a documentation error regarding Meshery's CLI, that's an easy fix, you might use these labels:<br/>
+              <code>area/docs, component/mesheryctl, kind/bug, priority/low, good first issue</code>
+            </p>
+
+            <h3>Questions or Suggestions?</h3>
+            <p>
+              Labels missing? Unclear usage? Open a discussion or tag a maintainer in your issue, or bring it up in <a href="https://layer5.io/community">community Slack</a>.
+            </p>
+
             <h3>List for Pull Requests</h3>
-            <p>The following list of pull request labels will be used to both indicate purpose or status of the PR to maintainers, and significantly, they will be used in conditional logic during workflow execution to determine the PR’s appropriate path through the CI flow.</p>
+            <p>The following list of pull request labels will be used to both indicate purpose or status of the PR to maintainers, and significantly, they will be used in conditional logic during workflow execution to determine the PR's appropriate path through the CI flow.</p>
             <ul>
               <li><b>Refactor</b> - Chore related pull request</li>
               <li><b>Fix</b> - Bug fixes PRs</li>

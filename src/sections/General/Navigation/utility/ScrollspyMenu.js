@@ -36,6 +36,12 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
     setIsWrapperVisible(false);
   };
 
+  const handleLinkClick = (e) => {
+    e.stopPropagation();
+    setIsWrapperVisible(false);
+    setActiveState(null);
+  };
+
   const [transitionRef, inView] = useInView({ threshold: 0.7 });
 
   useEffect(() => {
@@ -57,7 +63,12 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
           }
           onMouseOver={() => handleMouseOver(index)}
         >
-          <Link to={menu.path} className="menu-link" activeClassName="nav-link-active">
+          <Link
+            to={menu.path}
+            className="menu-link"
+            activeClassName="nav-link-active"
+            onClick={handleLinkClick}
+          >
             <span>
               {menu.name}
             </span>
@@ -69,16 +80,34 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
           <ul className="dropdown" style={{ zIndex: "101" }}>
             <div className="nav-grid">
               <div className="hr">
-                <Link className="section" to={activeState.path} activeClassName="nav-link-active">{activeState.name}
+                <Link
+                  className="section"
+                  to={activeState.path}
+                  activeClassName="nav-link-active"
+                  onClick={handleLinkClick}
+                >
+                  {activeState.name}
                 </Link>
                 {activeState.subItems.map((subItem, i) => {
                   return (
                     <li key={i}>
                       {subItem.externalLink ?
-                        <a href={subItem.path} target="_blank" className={subItem.sepLine && "sub-item"} rel="noreferrer">
+                        <a
+                          href={subItem.path}
+                          target="_blank"
+                          className={subItem.sepLine && "sub-item"}
+                          rel="noreferrer"
+                          onClick={handleLinkClick}
+                        >
                           {subItem.name}
                         </a>
-                        : <Link to={subItem.path} partiallyActive={false} className={subItem.sepLine && "sub-item"} activeClassName="nav-link-active">
+                        : <Link
+                          to={subItem.path}
+                          partiallyActive={false}
+                          className={subItem.sepLine && "sub-item"}
+                          activeClassName="nav-link-active"
+                          onClick={handleLinkClick}
+                        >
                           {subItem.name}
                         </Link>
                       }
@@ -88,19 +117,32 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                 <div className="action-items">
                   {activeState.actionItems.map((actionItem, i) => (
                     (actionItem.actionName === "Join the discussion" ?
-                      <a key={i} href={actionItem.actionLink} target="_blank" className="action-link" rel="noreferrer">
+                      <a
+                        key={i}
+                        href={actionItem.actionLink}
+                        target="_blank"
+                        className="action-link"
+                        rel="noreferrer"
+                        onClick={handleLinkClick}
+                      >
                         <span className="readmore-btn">
                           {actionItem.actionName} <IoIosArrowRoundForward />
                         </span>
                       </a>
-                      : (<Link key={i} to={actionItem.actionLink} partiallyActive={true} className="action-link">
+                      : <Link
+                        key={i}
+                        to={actionItem.actionLink}
+                        partiallyActive={true}
+                        className="action-link"
+                        onClick={handleLinkClick}
+                      >
                         <span className="readmore-btn">
                           {actionItem.actionName} <IoIosArrowRoundForward />
                         </span>
                       </Link>
-                      )
                     )
-                  ))}
+                  )
+                  )}
                 </div>
               </div>
               {blogData[activeState.name].nodes.length !== 0 ? (
@@ -109,7 +151,10 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                   <Card frontmatter={blogData[activeState.name].nodes[1].frontmatter} fields={blogData[activeState.name].nodes[1].fields} />
                 </div>) : (
                 <>
-                  <Link to="/cloud-native-management/kanvas">
+                  <Link
+                    to="/cloud-native-management/kanvas"
+                    onClick={handleLinkClick}
+                  >
                     <div className="single-card">
                       <div className="transition-container" ref={transitionRef}>
                         <img className="canvas" src={isDark ? EmptyDark : EmptyLight} alt="" />
@@ -131,7 +176,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
               }
             </div>
           </ul>
-          {isWrapVisible && <div className="wrap"  style={{ zIndex: "100" }} />}
+          {isWrapVisible && <div className="wrap" style={{ zIndex: "100", display: isWrapVisible ? "block" : "none" }} />}
         </React.Fragment>
       )}
     </ul>

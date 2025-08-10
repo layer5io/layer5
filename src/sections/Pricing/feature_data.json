@@ -1182,5 +1182,37 @@
       "enterprise": ""
     },
     "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "",
+    "category": "Academy",
+    "functionOrder": "",
+    "function": "Extending the Academy",
+    "feature": "High-level guide to the Academy architecture and workflow",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "docs": "https://docs.layer5.io/cloud/academy/extending-the-academy/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "",
+    "category": "Academy",
+    "functionOrder": "",
+    "function": "Creating a Learning Path",
+    "feature": "Step-by-step tutorial for creating custom learning paths",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "docs": "https://docs.layer5.io/cloud/academy/creating-your-learning-path/"
   }
 ]

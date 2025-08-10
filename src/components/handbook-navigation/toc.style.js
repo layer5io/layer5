@@ -11,11 +11,6 @@ const TOCWrapper = styled.div`
   width:15rem;
   padding-bottom: 2rem;
 
-   @media screen and (min-width: 768px) and (max-height: 1145px) {
-        height : calc(100vh - 10rem);
-        overflow-y : auto 
-
-  }
   @media screen and (min-width: 1280px) and (max-width: 1350px) {
         margin-left:0.2rem;
   }

@@ -3,14 +3,14 @@ import React from "react";
 import { Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import Slider from "react-slick";
-import Slide1 from "../images/service mesh performance example.gif";
-import Slide2 from "../images/meshery_benchmark_screen.webp";
-import Slide3 from "../images/meshery-configuration-management.webp";
+import Slide1 from "../../../assets/images/kanvas/gifs/start-from-scratch.gif";
+import Slide2 from "../../../assets/images/kanvas/gifs/catalog.gif";
+import Slide3 from "../../../assets/images/kanvas/gifs/rendered-design.png";
 import FeaturesSectionWrapper from "./features-section.style";
 import { StaticImage } from "gatsby-plugin-image";
 
-const slide2Path = "../images/meshery_benchmark_screen.webp";
-const slide3Path = "../images/meshery-configuration-management.webp";
+const slide2Path = "../../../assets/images/kanvas/gifs/catalog.gif";
+const slide3Path = "../../../assets/images/kanvas/gifs/rendered-design.png";
 
 const slides_list = [Slide1, Slide2, Slide3];
 
@@ -46,22 +46,22 @@ const FeaturesSection = () => {
           <img src={meshery_logo} alt="Meshery Logo" />
         </div> */}
         <div className="section-header">
-          <h2>Distributed systems are hard.</h2>
-          <h1>Get the <span>most out</span> of yours</h1>
+          <h2>Cloud native infrastructure is complex.</h2>
+          <h1>Design it <span>visually and collaboratively</span></h1>
           {/* <h1>
             <span>Meshery</span> supports the most service meshes.
           </h1> */}
           <p>
-            No matter where you run your workloads, Meshery just works.
+            No matter where you run your workloads, Meshery's Kanvas makes Kubernetes and cloud infrastructure design intuitive and collaborative.
           </p>
         </div>
         <div className="smp-section">
           {/* <h4>No matter what service mesh you use, Meshery just works.</h4> */}
           <Row className="smp-section-row">
             <Col $xs={12} $xl={4} className="smp-section-data">
-              <h2>The Performance Yardstick: MeshMark</h2>
+              <h2>The Visual Designer: Kanvas</h2>
               <p>
-                Assess the value of your cloud native infrastructure in context of its cost. Benchmark and manage the performance of your          application across different cloud native infrastructure. Compare and manage cloud native overhead.
+                Drag, drop, and deploy your infrastructure with ease. Kanvas, built on Meshery, simplifies Kubernetes and cloud management through intuitive visual designer and operator.
               </p>
             </Col>
             <Col $xs={12} $xl={8} className="smp-section-caraousel">
@@ -93,7 +93,7 @@ const FeaturesSection = () => {
               <Button $secondary className="mgmt_button" title="Manage" $url="/cloud-native-management/meshery/operating-cloud-native-infra" />
             </Col>
             <Col $xs={12} $sm={6} $md={4}>
-              <Button $secondary className="mgmt_button" title="Patterns" $url="/learn/service-mesh-books/service-mesh-patterns" />
+              <Button $secondary className="mgmt_button" title="Catalog" $url="/cloud-native-management/catalog" />
             </Col>
           </div>
         </div>

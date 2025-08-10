@@ -326,7 +326,7 @@ const Navigation = () => {
                                       changeDropdownState();
                                       closeDropDown();
                                     }}
-                                    className="mobile-sub-menu-item"
+                                    className={subItems.sepLine ? "mobile-sub-menu-item" : "mobile-nested-menu"}
                                     activeClassName="nav-link-active"
                                   >
                                     {subItems.name}

@@ -69,7 +69,7 @@ export const MesheryPlatformsWrapper = styled.div`
           text-transform: uppercase;
         }
         h2{
-          padding-bottom: 2rem;
+          padding-bottom: 1rem;
         }
         img {
           width: 20vw;

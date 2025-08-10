@@ -648,6 +648,10 @@ const NavigationWrap = styled.header`
     .mobile-sub-menu-item {
       font-size: 1.1rem;
     }
+    .mobile-nested-menu {
+       font-size: 1.1rem;
+       margin-left: 1rem;
+    }
   }
 
   .nav-link-active {
