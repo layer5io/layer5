@@ -137,6 +137,14 @@ const componentsData = [
   },
   {
     id: 18,
+    name: "Circular Progress",
+    description:
+      "The Circular Progress component displays a circular loading indicator that represents the progress in your application",
+    url: "/projects/sistent/components/circularprogress",
+    src: "/circularprogress",
+  },
+  {
+    id: 19,
     name: "Avatar",
     description:
       "An Avatar component is used to visually represent a user, profile, or entity, typically through an image, initials, or icon.",
@@ -144,7 +152,7 @@ const componentsData = [
     src: "/avatar",
   },
   {
-    id: 19,
+    id: 20,
     name: "AvatarGroup",
     description:
       "An AvatarGroup component is used to display a collection of Avatars together, typically representing a group of users, collaborators, or participants.",
