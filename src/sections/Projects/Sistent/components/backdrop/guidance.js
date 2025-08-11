@@ -3,6 +3,13 @@ import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { SistentLayout } from "../../sistent-layout";
 import TabButton from "../../../../../reusecore/Button";
+import styled from "styled-components";
+
+const StyledTable = styled.table`
+  tr {
+    background-color:${props => props.theme.grey121212ToWhite};
+  }
+`;
 
 const BackdropGuidance = () => {
   const location = useLocation();
@@ -89,9 +96,9 @@ const BackdropGuidance = () => {
           </a>
           <p>Props of the Fade component are also available.</p>
 
-          <table>
+          <StyledTable>
             <thead>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr>
                 <th>Name</th>
                 <th>Type</th>
                 <th>Default</th>
@@ -99,7 +106,7 @@ const BackdropGuidance = () => {
               </tr>
             </thead>
             <tbody>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr>
                 <td>
                   <code>open*</code>
                 </td>
@@ -111,7 +118,7 @@ const BackdropGuidance = () => {
                   If <code>true</code>, the component is shown.
                 </td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr>
                 <td>
                   <code>children</code>
                 </td>
@@ -121,7 +128,7 @@ const BackdropGuidance = () => {
                 <td>-</td>
                 <td>The content of the component.</td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr>
                 <td>
                   <code>classes</code>
                 </td>
@@ -134,7 +141,7 @@ const BackdropGuidance = () => {
                   CSS classes API below for more details.
                 </td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr>
                 <td>
                   <code>component</code>
                 </td>
@@ -147,7 +154,7 @@ const BackdropGuidance = () => {
                   an HTML element or a component.
                 </td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr>
                 <td>
                   <code>components</code>
                 </td>
@@ -164,7 +171,7 @@ const BackdropGuidance = () => {
                   deprecated APIs for more details.
                 </td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr>
                 <td>
                   <code>componentsProps</code>
                 </td>
@@ -181,7 +188,7 @@ const BackdropGuidance = () => {
                   prop instead. This prop will be removed in v7.
                 </td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr>
                 <td>
                   <code>invisible</code>
                 </td>
@@ -196,7 +203,7 @@ const BackdropGuidance = () => {
                   popovers or custom selects.
                 </td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr>
                 <td>
                   <code>slotProps</code>
                 </td>
@@ -208,7 +215,7 @@ const BackdropGuidance = () => {
                 </td>
                 <td>The props used for each slot inside the component.</td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr>
                 <td>
                   <code>slots</code>
                 </td>
@@ -220,7 +227,7 @@ const BackdropGuidance = () => {
                 </td>
                 <td>The components used for each slot inside.</td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr>
                 <td>
                   <code>sx</code>
                 </td>
@@ -235,7 +242,7 @@ const BackdropGuidance = () => {
                   details.
                 </td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr>
                 <td>
                   <code>TransitionComponent</code>
                 </td>
@@ -250,7 +257,7 @@ const BackdropGuidance = () => {
                   component requirements.
                 </td>
               </tr>
-              <tr style={{ backgroundColor: "#121212" }}>
+              <tr>
                 <td>
                   <code>transitionDuration</code>
                 </td>
@@ -266,7 +273,7 @@ const BackdropGuidance = () => {
                 </td>
               </tr>
             </tbody>
-          </table>
+          </StyledTable>
 
           <a id="Labeling">
             <h2>Labeling</h2>
