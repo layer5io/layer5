@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { SistentLayout } from "../../sistent-layout";
-import { SistentThemeProvider, Button, Input } from "@sistent/sistent";
+import { SistentThemeProvider, Input } from "@sistent/sistent";
 import { Row } from "../../../../../reusecore/Layout";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
@@ -112,12 +112,11 @@ const TextInputGuidance = () => {
           </Row>
           <div style={{ marginTop: "15px", display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "center" }}>
             {colors.map((color) => (
-              <Button
+              <TabButton
                 key={color}
-                variant={currentColor === color ? "contained" : "outlined"}
-                label={color.charAt(0).toUpperCase() + color.slice(1)}
-                size="small"
+                className={currentColor === color ? "active" : ""}
                 onClick={() => setCurrentColor(color)}
+                title={color.charAt(0).toUpperCase() + color.slice(1)}
               />
             ))}
           </div>
@@ -141,12 +140,11 @@ const TextInputGuidance = () => {
           </Row>
           <div style={{ marginTop: "15px", display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "center" }}>
             {types.map((type) => (
-              <Button
+              <TabButton
                 key={type}
-                variant={currentType === type ? "contained" : "outlined"}
-                label={type.charAt(0).toUpperCase() + type.slice(1)}
-                size="small"
+                className={currentType === type ? "active" : ""}
                 onClick={() => setCurrentType(type)}
+                title={type.charAt(0).toUpperCase() + type.slice(1)}
               />
             ))}
           </div>
@@ -159,7 +157,6 @@ const TextInputGuidance = () => {
             Input components support various states to provide feedback and control user interaction.
             These examples demonstrate different state combinations:
           </p>
-
           <div style={{ display: "flex", flexDirection: "column", gap: "20px", alignItems: "center" }}>
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <div style={{ display: "flex", flexDirection: "column", gap: "16px", alignItems: "center", width: "100%" }}>
@@ -196,7 +193,6 @@ const TextInputGuidance = () => {
           <a id="Best Practices">
             <h2>Best Practices</h2>
           </a>
-
           <h3>Accessibility</h3>
           <p>
             Always provide clear labels for screen readers and ensure sufficient color contrast.
