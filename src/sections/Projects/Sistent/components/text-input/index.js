@@ -110,7 +110,7 @@ const SistentTextInput = () => {
             <li><p><b>Standard:</b> Clean, minimalist input styling</p></li>
             <li><p><b>Multiline:</b> Expandable text area for longer content</p></li>
           </ul>
-          <h3>Customization Options</h3>
+          <h3>Component Props</h3>
           <ul>
             <li><p><b>Color:</b> Primary, secondary, success, error, warning color themes</p></li>
             <li><p><b>Label:</b> Descriptive labels for accessibility</p></li>
