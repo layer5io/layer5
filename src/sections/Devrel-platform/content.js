@@ -10,6 +10,8 @@ import InlineQuotes from "../../components/Inline-quotes";
 import YashSharmaIMg from "../../collections/members/yash-sharma/yash-sharma.webp";
 import NicJacksonImg from "../../collections/members/nicholas-jackson/nic-jackson.webp";
 import RutkIkegahImg from "../../collections/members/ruth-ikegah/ruth-ikegah.jpg";
+import meshmate from "../../assets/images/meshmate/meshmate.svg";
+
 const DevrelContentWrapper = styled.div`
   min-height: fit-content;
   border-width: 2px 2px 2px 2px;
@@ -334,8 +336,8 @@ const DevrelContent = () => {
                   </div>
                   <div className="badge-item">
                     <img
-                      src="https://badges.layer5.io/assets/badges/meshery/meshery.png"
-                      alt="Meshery Badge"
+                      src={meshmate}
+                      alt="Meshmate Badge"
                     />
                   </div>
                 </div>
