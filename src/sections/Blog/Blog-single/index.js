@@ -130,13 +130,13 @@ const BlogSingle = ({ data }) => {
               <div className="post-share-mobile">
                 <div className="share-icons-container">
                   <h4>Share Post:</h4>
-                  <TwitterShareButton $url={location.href} title={shareQuote}>
+                  <TwitterShareButton url={location.href} title={shareQuote}>
                     <AiOutlineTwitter />
                   </TwitterShareButton>
-                  <FacebookShareButton $url={location.href} quote={shareQuote}>
+                  <FacebookShareButton url={location.href} quote={shareQuote}>
                     <FaFacebookF />
                   </FacebookShareButton>
-                  <LinkedinShareButton $url={location.href}>
+                  <LinkedinShareButton url={location.href} title={shareQuote}>
                     <FaLinkedin />
                   </LinkedinShareButton>
                   <CopyToClipboard text={location.href} title="Copy link" onCopy={() => setCopied(true)}>
