@@ -16,6 +16,7 @@ import LogStream from "./images/log-stream.svg";
 import LogStreamSearch from "./images/log-stream-search.svg";
 import { useState } from "react";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
+import DocsIcon from "../../Pricing/icons/docs.js";
 
 const VisualizerFeaturesWrapper = styled.div`
 
@@ -120,7 +121,7 @@ z-index: 10;
       transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out 0.3s;
       /* transition: transform 1s ease-in-out 0.2s; */
     }
-`;
+  }`;
 
 const KanvasisualizerFeatures = () => {
   const [isHovered, setisHovered] = useState(false);
@@ -140,73 +141,76 @@ const KanvasisualizerFeatures = () => {
 
   return (
     <VisualizerFeaturesWrapper>
-      <Row>
-        <div className="project__block__wrap">
-          <Col $sm={12} $md={6} $lg={4}>
-            <div className={(isHovered && hoveredFeature != "Feature1") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(1)} onMouseOut={handleMouseOut}>
-              <div className="feature-image">
-                <img src={ApplicationImportBoxes} alt="Application Import" style={{ position: "absolute" }} />
-                <img src={ApplicationImportArrows} alt="" className={hoveredFeature == "Feature1" ? "secondary-image-visible" : "secondary-image"} />
-              </div>
-              <h3>Application Import</h3>
-              <p>Import your existing Kubernetes, Helm, or Docker Compose applications.</p>
+  <Row>
+    <div className="project__block__wrap">
+      <Col $sm={12} $md={6} $lg={4}>
+          <div className={(isHovered && hoveredFeature != "Feature1") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(1)} onMouseOut={handleMouseOut} style={{ position: 'relative' }}>
+            <div className="feature-image">
+              <img src={ApplicationImportBoxes} alt="Application Import" style={{ position: "absolute" }} />
+              <img src={ApplicationImportArrows} alt="" className={hoveredFeature == "Feature1" ? "secondary-image-visible" : "secondary-image"} />
             </div>
-          </Col>
-          <Col $sm={12} $md={6} $lg={4}>
-            <div className={(isHovered && hoveredFeature != "Feature2") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(2)} onMouseOut={handleMouseOut}>
-              <div className="feature-image">
-                <img src={PerformanceMetrics} alt="Performance Metrics" style={{ position: "absolute" }} />
-                <img src={PerformanceMetricsGraph} alt="" className={hoveredFeature == "Feature2" ? "secondary-image-visible" : "secondary-image"} />
-              </div>
-              <h3>Real-time performance metrics</h3>
-              <p>Monitor your clusters performing in action, set alerts and work with object-specific metrics.</p>
+            <h3>Application Import</h3>
+            <p>Import your existing Kubernetes, Helm, or Docker Compose applications.</p>
             </div>
-          </Col>
-          <Col $sm={12} $md={6} $lg={4}>
-            <div className={(isHovered && hoveredFeature != "Feature3") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(3)} onMouseOut={handleMouseOut}>
-              <div className="feature-image">
-                <img src={InteractiveTerminal} alt="Interactive Terminal" style={{ position: "absolute", width: "80%", zIndex: "0" }} />
-                <img src={InteractiveTerminalCode} alt="" className={hoveredFeature == "Feature3" ? "secondary-image-visible" : "secondary-image"} style={{ position: "relative", width: "80%", zIndex: "10" }} />
-              </div>
-              <h3>Interactive Terminal</h3>
-              <p>Establish sessions with one or more pods at a time.</p>
+      </Col>
+      <Col $sm={12} $md={6} $lg={4}>
+          <div className={(isHovered && hoveredFeature != "Feature2") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(2)} onMouseOut={handleMouseOut} style={{ position: 'relative' }}>
+            <div className="feature-image">
+              <img src={PerformanceMetrics} alt="Performance Metrics" style={{ position: "absolute" }} />
+              <img src={PerformanceMetricsGraph} alt="" className={hoveredFeature == "Feature2" ? "secondary-image-visible" : "secondary-image"} />
             </div>
-          </Col>
-          <Col $sm={12} $md={6} $lg={4}>
-            <div className={(isHovered && hoveredFeature != "Feature4") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(4)} onMouseOut={handleMouseOut}>
-              <div className="feature-image">
-                <img src={TimelineDVRClock} alt="Timeline" style={{ position: "absolute", width: "80%" }} />
-                <img src={TimelineDVR} alt="" className={hoveredFeature == "Feature4" ? "secondary-image-visible" : "secondary-image"} style={{ width: "80%" }} />
-              </div>
-              <h3>Timeline (DVR)</h3>
-              <p>Playback service transactions. Scrub over the history of changes to your deployments.</p>
+            <h3>Real-time performance metrics</h3>
+            <p>Monitor your clusters performing in action, set alerts and work with object-specific metrics.</p>
+          </div>
+      </Col>
+      <Col $sm={12} $md={6} $lg={4}>
+        <a href="https://docs.layer5.io/kanvas/operator/" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+          <div className={(isHovered && hoveredFeature != "Feature3") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(3)} onMouseOut={handleMouseOut} style={{ position: 'relative' }}>
+            <div className="feature-image">
+              <img src={InteractiveTerminal} alt="Interactive Terminal" style={{ position: "absolute", width: "80%", zIndex: "0" }} />
+              <img src={InteractiveTerminalCode} alt="" className={hoveredFeature == "Feature3" ? "secondary-image-visible" : "secondary-image"} style={{ position: "relative", width: "80%", zIndex: "10" }} />
             </div>
-          </Col>
-          <Col $sm={12} $md={6} $lg={4}>
-            <div className={(isHovered && hoveredFeature != "Feature5") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(5)} onMouseOut={handleMouseOut}>
-              <div className="feature-image">
-                <img src={isDark ? ServicePerformanceGearDark : ServicePerformanceGearLight} alt="Service Performance" style={{ position: "absolute", zIndex: "0" }} />
-                <ServicePerformanceMeter alt="" className={hoveredFeature == "Feature5" ? "meter-visible" : "secondary-image"}
-                  style={{ height: "auto", width: "70%",position: "relative", zIndex: "10", transformOrigin: "center center" }}
-                />
-              </div>
-              <h3>Service Performance</h3>
-              <p>Continuous visibility across all of your clusters and workloads metrics.</p>
+            <h3>Interactive Terminal</h3>
+            <p>Establish sessions with one or more pods at a time.</p>
+            <DocsIcon style={{ position: 'absolute', top: '16px', right: '16px', color: '#00D3A9' }} className="docs" />
+          </div>
+        </a>
+      </Col>
+      <Col $sm={12} $md={6} $lg={4}>
+          <div className={(isHovered && hoveredFeature != "Feature4") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(4)} onMouseOut={handleMouseOut} style={{ position: 'relative' }}>
+            <div className="feature-image">
+              <img src={TimelineDVRClock} alt="Timeline" style={{ position: "absolute", width: "80%" }} />
+              <img src={TimelineDVR} alt="" className={hoveredFeature == "Feature4" ? "secondary-image-visible" : "secondary-image"} style={{ width: "80%" }} />
             </div>
-          </Col>
-          <Col $sm={12} $md={6} $lg={4}>
-            <div className={(isHovered && hoveredFeature != "Feature6") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(6)} onMouseOut={handleMouseOut}>
-              <div className="feature-image">
-                <img src={LogStream} alt="Log Stream" style={{ position: "absolute" }} />
-                <img src={LogStreamSearch} alt="" className={hoveredFeature == "Feature6" ? "secondary-image-visible" : "secondary-image"} />
-              </div>
-              <h3>Log Stream</h3>
-              <p>Stream and filter through the logs using keywords for multiple Kubernetes Pods simultaneously.</p>
+            <h3>Timeline (DVR)</h3>
+            <p>Playback service transactions. Scrub over the history of changes to your deployments.</p>
             </div>
-          </Col>
-        </div>
-      </Row>
-    </VisualizerFeaturesWrapper>
+      </Col>
+      <Col $sm={12} $md={6} $lg={4}>
+          <div className={(isHovered && hoveredFeature != "Feature5") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(5)} onMouseOut={handleMouseOut} style={{ position: 'relative' }}>
+            <div className="feature-image">
+              <img src={isDark ? ServicePerformanceGearDark : ServicePerformanceGearLight} alt="Service Performance" style={{ position: "absolute", zIndex: "0" }} />
+              <ServicePerformanceMeter alt="" className={hoveredFeature == "Feature5" ? "meter-visible" : "secondary-image"}
+                style={{ height: "auto", width: "70%",position: "relative", zIndex: "10", transformOrigin: "center center" }}
+              />
+            </div>
+            <h3>Service Performance</h3>
+            <p>Continuous visibility across all of your clusters and workloads metrics.</p>
+            </div>
+      </Col>
+      <Col $sm={12} $md={6} $lg={4}>
+          <div className={(isHovered && hoveredFeature != "Feature6") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(6)} onMouseOut={handleMouseOut} style={{ position: 'relative' }}>
+            <div className="feature-image">
+              <img src={LogStream} alt="Log Stream" style={{ position: "absolute" }} />
+              <img src={LogStreamSearch} alt="" className={hoveredFeature == "Feature6" ? "secondary-image-visible" : "secondary-image"} />
+            </div>
+            <h3>Log Stream</h3>
+            <p>Stream and filter through the logs using keywords for multiple Kubernetes Pods simultaneously.</p>
+          </div>
+      </Col>
+    </div>
+  </Row>
+</VisualizerFeaturesWrapper>
 
   );
 };
