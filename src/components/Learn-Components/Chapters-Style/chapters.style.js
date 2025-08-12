@@ -34,7 +34,6 @@ export const ChapterStyle = styled.div`
     width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto;
 
     @media (max-width: 768px) {
       max-width: 100%;
