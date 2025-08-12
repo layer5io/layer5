@@ -1188,8 +1188,8 @@
     "categoryOrder": "",
     "category": "Academy",
     "functionOrder": "",
-    "function": "Extending the Academy",
-    "feature": "High-level guide to the Academy architecture and workflow",
+    "function": "Academy",
+    "feature": "",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
@@ -1197,15 +1197,15 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": "https://docs.layer5.io/cloud/academy/extending-the-academy/"
+    "docs": "https://docs.layer5.io/cloud/academy/"
   },
   {
     "theme": "",
     "categoryOrder": "",
     "category": "Academy",
     "functionOrder": "",
-    "function": "Creating a Learning Path",
-    "feature": "Step-by-step tutorial for creating custom learning paths",
+    "function": "Content Creator Guide",
+    "feature": "",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
@@ -1213,6 +1213,70 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": "https://docs.layer5.io/cloud/academy/creating-your-learning-path/"
+    "docs": "https://docs.layer5.io/cloud/academy/creating-content/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "",
+    "category": "Academy",
+    "functionOrder": "",
+    "function": "Extending the Academy",
+    "feature": "",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "docs": "https://docs.layer5.io/cloud/academy/creating-content/extending-the-academy/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "",
+    "category": "Academy",
+    "functionOrder": "",
+    "function": "Creating Your First Learning Path",
+    "feature": "",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "docs": "https://docs.layer5.io/cloud/academy/creating-content/creating-your-learning-path/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "",
+    "category": "Academy",
+    "functionOrder": "",
+    "function": "Integrating Assessments in the Academy",
+    "feature": "",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "docs": "https://docs.layer5.io/cloud/academy/creating-content/integrating-assessments-in-the-academy/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "",
+    "category": "Academy",
+    "functionOrder": "",
+    "function": "Building Certifications",
+    "feature": "",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "docs": "https://docs.layer5.io/cloud/academy/creating-content/building-certifications/"
   }
 ]
