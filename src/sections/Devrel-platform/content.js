@@ -10,7 +10,7 @@ import InlineQuotes from "../../components/Inline-quotes";
 import YashSharmaIMg from "../../collections/members/yash-sharma/yash-sharma.webp";
 import NicJacksonImg from "../../collections/members/nicholas-jackson/nic-jackson.webp";
 import RutkIkegahImg from "../../collections/members/ruth-ikegah/ruth-ikegah.jpg";
-import meshmate from "../../assets/images/meshmate/meshmate.svg";
+import meshmate from "../../assets/images/meshmate/meshmate-badge.png";
 
 const DevrelContentWrapper = styled.div`
   min-height: fit-content;
