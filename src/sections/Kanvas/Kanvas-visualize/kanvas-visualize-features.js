@@ -156,49 +156,49 @@ const KanvasisualizerFeatures = () => {
       <Row>
         <div className="project__block__wrap">
           <Col $sm={12} $md={6} $lg={4}>
-           <a href="https://docs.layer5.io/kanvas/getting-started/import-designs/" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
-            <div className={(isHovered && hoveredFeature != "Feature1") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(1)} onMouseOut={handleMouseOut}>
-              <div className="docs-icon-wrapper">
-                <DocsIcon style={{ color: '#00D3A9' }} className="docs" />
+            <a href="https://docs.layer5.io/kanvas/getting-started/import-designs/" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
+              <div className={(isHovered && hoveredFeature != "Feature1") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(1)} onMouseOut={handleMouseOut}>
+                <div className="docs-icon-wrapper">
+                  <DocsIcon style={{ color: "#00D3A9" }} className="docs" />
+                </div>
+                <div className="feature-image">
+                  <img src={ApplicationImportBoxes} alt="Application Import" style={{ position: "absolute" }} />
+                  <img src={ApplicationImportArrows} alt="" className={hoveredFeature == "Feature1" ? "secondary-image-visible" : "secondary-image"} />
+                </div>
+                <h3>Application Import</h3>
+                <p>Import your existing Kubernetes, Helm, or Docker Compose applications.</p>
               </div>
-              <div className="feature-image">
-                <img src={ApplicationImportBoxes} alt="Application Import" style={{ position: "absolute" }} />
-                <img src={ApplicationImportArrows} alt="" className={hoveredFeature == "Feature1" ? "secondary-image-visible" : "secondary-image"} />
-              </div>
-              <h3>Application Import</h3>
-              <p>Import your existing Kubernetes, Helm, or Docker Compose applications.</p>
-            </div>
             </a>
           </Col>
           <Col $sm={12} $md={6} $lg={4}>
-            <a href="https://docs.layer5.io/kanvas/operator/resource-details/" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
-            <div className={(isHovered && hoveredFeature != "Feature2") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(2)} onMouseOut={handleMouseOut}>
-              <div className="docs-icon-wrapper">
-                <DocsIcon style={{ color: '#00D3A9' }} className="docs" />
+            <a href="https://docs.layer5.io/kanvas/operator/resource-details/" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
+              <div className={(isHovered && hoveredFeature != "Feature2") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(2)} onMouseOut={handleMouseOut}>
+                <div className="docs-icon-wrapper">
+                  <DocsIcon style={{ color: "#00D3A9" }} className="docs" />
+                </div>
+                <div className="feature-image">
+                  <img src={PerformanceMetrics} alt="Performance Metrics" style={{ position: "absolute" }} />
+                  <img src={PerformanceMetricsGraph} alt="" className={hoveredFeature == "Feature2" ? "secondary-image-visible" : "secondary-image"} />
+                </div>
+                <h3>Real-time performance metrics</h3>
+                <p>Monitor your clusters performing in action, set alerts and work with object-specific metrics.</p>
               </div>
-              <div className="feature-image">
-                <img src={PerformanceMetrics} alt="Performance Metrics" style={{ position: "absolute" }} />
-                <img src={PerformanceMetricsGraph} alt="" className={hoveredFeature == "Feature2" ? "secondary-image-visible" : "secondary-image"} />
-              </div>
-              <h3>Real-time performance metrics</h3>
-              <p>Monitor your clusters performing in action, set alerts and work with object-specific metrics.</p>
-            </div>
             </a>
           </Col>
           <Col $sm={12} $md={6} $lg={4}>
-          <a href="https://docs.layer5.io/kanvas/operator/#understanding-interactive-terminal" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
-            <div className={(isHovered && hoveredFeature != "Feature3") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(3)} onMouseOut={handleMouseOut}>
-              <div className="docs-icon-wrapper">
-                <DocsIcon style={{ color: '#00D3A9' }} className="docs" />
+            <a href="https://docs.layer5.io/kanvas/operator/#understanding-interactive-terminal" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
+              <div className={(isHovered && hoveredFeature != "Feature3") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(3)} onMouseOut={handleMouseOut}>
+                <div className="docs-icon-wrapper">
+                  <DocsIcon style={{ color: "#00D3A9" }} className="docs" />
+                </div>
+                <div className="feature-image">
+                  <img src={InteractiveTerminal} alt="Interactive Terminal" style={{ position: "absolute", width: "80%", zIndex: "0" }} />
+                  <img src={InteractiveTerminalCode} alt="" className={hoveredFeature == "Feature3" ? "secondary-image-visible" : "secondary-image"} style={{ position: "relative", width: "80%", zIndex: "10" }} />
+                </div>
+                <h3>Interactive Terminal</h3>
+                <p>Establish sessions with one or more pods at a time.</p>
               </div>
-              <div className="feature-image">
-                <img src={InteractiveTerminal} alt="Interactive Terminal" style={{ position: "absolute", width: "80%", zIndex: "0" }} />
-                <img src={InteractiveTerminalCode} alt="" className={hoveredFeature == "Feature3" ? "secondary-image-visible" : "secondary-image"} style={{ position: "relative", width: "80%", zIndex: "10" }} />
-              </div>
-              <h3>Interactive Terminal</h3>
-              <p>Establish sessions with one or more pods at a time.</p>
-            </div>
-          </a>
+            </a>
           </Col>
           <Col $sm={12} $md={6} $lg={4}>
             <div className={(isHovered && hoveredFeature != "Feature4") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(4)} onMouseOut={handleMouseOut}>
@@ -223,18 +223,18 @@ const KanvasisualizerFeatures = () => {
             </div>
           </Col>
           <Col $sm={12} $md={6} $lg={4}>
-          <a href="https://docs.layer5.io/kanvas/operator/#understanding-log-streamer" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
-            <div className={(isHovered && hoveredFeature != "Feature6") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(6)} onMouseOut={handleMouseOut}>
-              <div className="docs-icon-wrapper">
-                <DocsIcon style={{ color: '#00D3A9' }} className="docs" />
+            <a href="https://docs.layer5.io/kanvas/operator/#understanding-log-streamer" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
+              <div className={(isHovered && hoveredFeature != "Feature6") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(6)} onMouseOut={handleMouseOut}>
+                <div className="docs-icon-wrapper">
+                  <DocsIcon style={{ color: "#00D3A9" }} className="docs" />
+                </div>
+                <div className="feature-image">
+                  <img src={LogStream} alt="Log Stream" style={{ position: "absolute" }} />
+                  <img src={LogStreamSearch} alt="" className={hoveredFeature == "Feature6" ? "secondary-image-visible" : "secondary-image"} />
+                </div>
+                <h3>Log Stream</h3>
+                <p>Stream and filter through the logs using keywords for multiple Kubernetes Pods simultaneously.</p>
               </div>
-              <div className="feature-image">
-                <img src={LogStream} alt="Log Stream" style={{ position: "absolute" }} />
-                <img src={LogStreamSearch} alt="" className={hoveredFeature == "Feature6" ? "secondary-image-visible" : "secondary-image"} />
-              </div>
-              <h3>Log Stream</h3>
-              <p>Stream and filter through the logs using keywords for multiple Kubernetes Pods simultaneously.</p>
-            </div>
             </a>
           </Col>
         </div>
