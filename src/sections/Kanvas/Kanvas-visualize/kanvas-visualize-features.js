@@ -16,6 +16,7 @@ import LogStream from "./images/log-stream.svg";
 import LogStreamSearch from "./images/log-stream-search.svg";
 import { useState } from "react";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
+import DocsIcon from "../../Pricing/icons/docs.js";
 
 const VisualizerFeaturesWrapper = styled.div`
 
@@ -120,7 +121,7 @@ z-index: 10;
       transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out 0.3s;
       /* transition: transform 1s ease-in-out 0.2s; */
     }
-`;
+  }`;
 
 const KanvasisualizerFeatures = () => {
   const [isHovered, setisHovered] = useState(false);
@@ -163,6 +164,7 @@ const KanvasisualizerFeatures = () => {
             </div>
           </Col>
           <Col $sm={12} $md={6} $lg={4}>
+          <a href="https://docs.layer5.io/kanvas/operator/" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
             <div className={(isHovered && hoveredFeature != "Feature3") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(3)} onMouseOut={handleMouseOut}>
               <div className="feature-image">
                 <img src={InteractiveTerminal} alt="Interactive Terminal" style={{ position: "absolute", width: "80%", zIndex: "0" }} />
@@ -170,7 +172,9 @@ const KanvasisualizerFeatures = () => {
               </div>
               <h3>Interactive Terminal</h3>
               <p>Establish sessions with one or more pods at a time.</p>
+              <DocsIcon style={{ position: 'absolute', top: '16px', right: '16px', color: '#00D3A9' }} className="docs" />
             </div>
+          </a>
           </Col>
           <Col $sm={12} $md={6} $lg={4}>
             <div className={(isHovered && hoveredFeature != "Feature4") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(4)} onMouseOut={handleMouseOut}>
