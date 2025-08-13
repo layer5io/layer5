@@ -33,38 +33,119 @@ export const ResourcePageWrapper = styled.div`
             margin:0;
         }
     }
-    .btn-container {
+    
+    .pagination-container {
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
-        margin: 0 auto 2rem;
-      }
-      .btn {
-        width: 2rem;
-        height: 2rem;
+        align-items: center;
+        margin: 2rem auto;
+        max-width: 600px;
+        border-radius: 30px;
+        background-color: ${props => props.theme.grey212121ToWhite};
+        padding: 0.5rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .page-numbers {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .page-btn {
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0.25rem;
         border-radius: 5px;
-        cursor: pointer;
-        margin: 0.5rem;
-        transition: all 0.3s linear;
-        :hover {
-            box-shadow: 0px 1px 5px 1px rgba(0, 179, 159, 0.5);
-        }
-      }
-      .page-btn {
-        background: ${props => props.theme.grey212121ToWhite};
-        border: solid 2px;
-        border-color: ${props => props.theme.secondaryColor};
+        border: none;
+        background: transparent;
         color: ${props => props.theme.whiteEightToBlack};
-      }
-      .active-btn {
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        
+        &:hover {
+            background: ${props => props.theme.secondaryColor};
+            color: white;
+        }
+    }
+    
+    .active-btn {
         background: ${props => props.theme.secondaryColor};
-        border-color: transparent;
-        color: #fff;
-      }  
+        color: white;
+    }
+    
+    .pagination-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 1rem;
+        border: none;
+        background: transparent;
+        color: ${props => props.theme.whiteEightToBlack};
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border-radius: 5px;
+        
+        &:hover:not(.disabled-btn) {
+            background: ${props => props.theme.secondaryColor};
+            color: white;
+        }
+        
+        .arrow-icon {
+            font-size: 0.8rem;
+            margin: 0 0.5rem;
+        }
+    }
+    
+    .prev-btn {
+        margin-right: auto;
+    }
+    
+    .next-btn {
+        margin-left: auto;
+    }
+    
+    .disabled-btn {
+        opacity: 0.5;
+        cursor: not-allowed;
+        &:hover {
+            background: transparent;
+            box-shadow: none;
+        }
+    }
+    
+    .ellipsis {
+        width: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: ${props => props.theme.whiteEightToBlack};
+    }
 
     @media only screen and (max-width: 575px) {
         .resource-grid-wrapper{
             margin: 0 auto 5rem;
+        }
+        
+        .pagination-container {
+            flex-wrap: wrap;
+            padding: 0.5rem 0.25rem;
+        }
+        
+        .page-btn {
+            width: 2rem;
+            height: 2rem;
+            margin: 0 0.1rem;
+        }
+        
+        .pagination-btn {
+            padding: 0.5rem;
+            font-size: 0.9rem;
         }
     }
 
