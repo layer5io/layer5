@@ -1189,7 +1189,7 @@
     "category": "Academy",
     "functionOrder": "",
     "function": "Academy",
-    "feature": "",
+    "feature": "Building, managing, and extending Layer5 Academy learning paths.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
@@ -1205,7 +1205,7 @@
     "category": "Academy",
     "functionOrder": "",
     "function": "Content Creator Guide",
-    "feature": "",
+    "feature": "Learn how to create, manage, and publish learning paths, challenges, and certifications on the Layer5 Academy platform.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
@@ -1221,7 +1221,7 @@
     "category": "Academy",
     "functionOrder": "",
     "function": "Extending the Academy",
-    "feature": "",
+    "feature": "A high-level guide to understanding the architecture, features, and workflow for creating custom content on the Layer5 Academy platform.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
@@ -1237,7 +1237,7 @@
     "category": "Academy",
     "functionOrder": "",
     "function": "Creating Your First Learning Path",
-    "feature": "",
+    "feature": "A hands-on tutorial that walks you through creating, structuring, and testing a custom learning path for the Layer5 Academy.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
@@ -1253,7 +1253,7 @@
     "category": "Academy",
     "functionOrder": "",
     "function": "Integrating Assessments in the Academy",
-    "feature": "",
+    "feature": "Learn how to spice up the Academy with interactive assessments that keep learners engaged.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
@@ -1269,7 +1269,7 @@
     "category": "Academy",
     "functionOrder": "",
     "function": "Building Certifications",
-    "feature": "",
+    "feature": "A step-by-step guide to building a professional certification in the Academy.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
