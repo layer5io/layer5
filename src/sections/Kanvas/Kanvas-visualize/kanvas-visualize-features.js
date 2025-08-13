@@ -126,12 +126,8 @@ z-index: 10;
 
   .docs-icon-wrapper {
     position: absolute;
-    top: 2.5rem;
-    right: 0.8rem;
-    z-index: 20;
-    display: flex;
-    justify-content: flex-end;
-    width: auto;
+    top: 16px;
+    right: 16px;
   }
 `;
 
