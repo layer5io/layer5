@@ -243,5 +243,4 @@ const KanvasisualizerFeatures = () => {
 
   );
 };
-
 export default KanvasisualizerFeatures;
