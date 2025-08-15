@@ -141,6 +141,14 @@ const componentsData = [
     url: "/projects/sistent/components/circularprogress",
     src: "/circularprogress",
   },
+  {
+    id: 19,
+    name: "Tabs",
+    description:
+      "Tabs organize and allow navigation between groups of content that are related and at the same level of hierarchy.",
+    url: "/projects/sistent/components/tabs",
+    src: "/tabs",
+  },
 
 ];
 
