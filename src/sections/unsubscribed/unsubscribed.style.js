@@ -123,7 +123,7 @@ const UnsubscribedWrapper = styled.div`
     /* Override Kanvas text styling to make only "Kanvas" bold */
     .CTAbody {
         h2 span {
-            font-weight: bold !important;
+            font-weight: bold;
         }
     }
 `;
