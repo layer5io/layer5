@@ -75,22 +75,22 @@ const SistentSwitch = () => {
           <p>
             The Switch supports different states including <strong>active</strong>, <strong>inactive</strong>, and <strong>disabled</strong>. Visual feedback is immediate, allowing users to quickly understand the current status of a toggle.
           </p>
-          <Row $Hcenter className="image-container" style={{ display: 'flex', alignItems: 'center' }}>
-            <div style={{ fontSize: '1.5rem', marginRight: '48px', minWidth: '180px' }}>Checked</div>
+          <Row $Hcenter className="image-container" style={{ display: "flex", alignItems: "center" }}>
+            <div style={{ fontSize: "1.5rem", marginRight: "48px", minWidth: "180px" }}>Checked</div>
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Switch checked />
             </SistentThemeProvider>
           </Row>
 
-          <Row $Hcenter className="image-container" style={{ display: 'flex', alignItems: 'center' }}>
-            <div style={{ fontSize: '1.5rem', marginRight: '48px', minWidth: '180px' }}>Unchecked</div>
+          <Row $Hcenter className="image-container" style={{ display: "flex", alignItems: "center" }}>
+            <div style={{ fontSize: "1.5rem", marginRight: "48px", minWidth: "180px" }}>Unchecked</div>
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Switch checked={false} />
             </SistentThemeProvider>
           </Row>
-          
-          <Row $Hcenter className="image-container" style={{ display: 'flex', alignItems: 'center' }}>
-            <div style={{ fontSize: '1.5rem', marginRight: '48px', minWidth: '180px' }}>Disabled</div>
+
+          <Row $Hcenter className="image-container" style={{ display: "flex", alignItems: "center" }}>
+            <div style={{ fontSize: "1.5rem", marginRight: "48px", minWidth: "180px" }}>Disabled</div>
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Switch checked={false} disabled />
             </SistentThemeProvider>
@@ -126,14 +126,14 @@ const SistentSwitch = () => {
             <strong>small</strong>. The small size is particularly useful for
             dense layouts and compact UI patterns.
           </p>
-          <Row $Hcenter className="image-container" style={{ display: 'flex', alignItems: 'center' }}>
-            <div style={{ fontSize: '1.5rem', marginRight: '48px', minWidth: '180px' }}>Medium (default)</div>
+          <Row $Hcenter className="image-container" style={{ display: "flex", alignItems: "center" }}>
+            <div style={{ fontSize: "1.5rem", marginRight: "48px", minWidth: "180px" }}>Medium (default)</div>
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Switch checked />
             </SistentThemeProvider>
           </Row>
-          <Row $Hcenter className="image-container" style={{ display: 'flex', alignItems: 'center' }}>
-            <div style={{ fontSize: '1.5rem', marginRight: '48px' }}>Small</div>
+          <Row $Hcenter className="image-container" style={{ display: "flex", alignItems: "center" }}>
+            <div style={{ fontSize: "1.5rem", marginRight: "48px" }}>Small</div>
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <Switch size="small" checked />
             </SistentThemeProvider>

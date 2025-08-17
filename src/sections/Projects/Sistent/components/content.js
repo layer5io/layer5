@@ -141,6 +141,13 @@ const componentsData = [
     url: "/projects/sistent/components/circularprogress",
     src: "/circularprogress",
   },
+  {
+    id: 19,
+    name: "Switch",
+    description: "The Switch component allows users to toggle the state of a single setting on or off.",
+    url: "/projects/sistent/components/switch",
+    src: "/switch"
+  },
 
 ];
 
