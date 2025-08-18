@@ -122,7 +122,7 @@ const SwitchGuidance = () => {
             <h2>Sizing</h2>
           </a>
           <p>
-            The default Switch size is medium, which fits most use cases. Use
+            The default Switch size is medium, which fits most use cases.Use 
             <code>size="small"</code> when space is constrained or when embedding
             toggles into compact elements such as tables, cards, or toolbars.
           </p>
