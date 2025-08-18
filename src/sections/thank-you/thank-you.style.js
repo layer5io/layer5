@@ -11,7 +11,7 @@ const SubscribeWrapper = styled.div`
         width: 100%;
         text-align: center;
     }
-    h2 span{
+    .parentcard h2 span{
         color:${props => props.theme.secondaryColor};
     }
     
@@ -106,13 +106,6 @@ const SubscribeWrapper = styled.div`
         #mce-EMAIL{
             margin:1.5625rem 0;
             width:100%;
-        }
-    }
-
-    /* Override Kanvas text styling to make only "Kanvas" white */
-    .CTAbody {
-        h2 span {
-            color: ${props => props.theme.white};
         }
     }
 `;

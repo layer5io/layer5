@@ -11,7 +11,7 @@ const UnsubscribedWrapper = styled.div`
         width: 100%;
         text-align: center;
     }
-    h2,h3,h4,h5{
+    .parentcard h2,h3,h4,h5{
         text-align: center;
         font-weight: normal;
         margin-top: 1.5rem;
@@ -117,13 +117,6 @@ const UnsubscribedWrapper = styled.div`
         #mce-EMAIL{
             margin:1.5625rem 0;
             width:100%;
-        }
-    }
-
-    /* Override Kanvas text styling to make only "Kanvas" bold */
-    .CTAbody {
-        h2 span {
-            font-weight: bold;
         }
     }
 `;
