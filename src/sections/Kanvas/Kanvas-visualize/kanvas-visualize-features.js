@@ -191,7 +191,7 @@ const KanvasisualizerFeatures = () => {
               <div className="feature-image">
                 <img src={isDark ? ServicePerformanceGearDark : ServicePerformanceGearLight} alt="Service Performance" style={{ position: "absolute", zIndex: "0" }} />
                 <ServicePerformanceMeter alt="" className={hoveredFeature == "Feature5" ? "meter-visible" : "secondary-image"}
-                  style={{ height: "auto", width: "70%",position: "relative", zIndex: "10", transformOrigin: "center center" }}
+                  style={{ height: "auto", width: "70%", position: "relative", zIndex: "10", transformOrigin: "center center" }}
                 />
               </div>
               <h3>Service Performance</h3>
