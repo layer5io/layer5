@@ -1,0 +1,55 @@
+---
+title: Kanvas vs Kiali
+date: 2025-08-18 10:00:00 -0530
+thumbnail: 
+darkthumbnail: 
+description: "Comaprison of Kanvas and Kiali"
+type: Comparison
+category: Comparison
+tags:
+  - Kanvas , Kiali
+featured: false
+published: true
+resource: true
+---
+
+<h3> Kanvas vs Kiali </h3>
+<br></br>
+
+| Feature                         | **Layer5 Kanvas**                                             | **Kiali**                                                                                                                    |
+| ------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| **Open Source**                 | No                                                            | Open Source (Apache v2)                                                                                                      |
+| **Governance**                  | Layer5                                                        | Red Hat                                                                                                                      |
+| **SaaS**                        | Yes                                                           | Yes                                                                                                                          |
+| **On-premises**                 | Yes                                                           | —                                                                                                                            |
+| **Orchestration**               | Yes                                                           | Yes                                                                                                                          |
+| **Cloud**                       | No                                                            | No                                                                                                                           |
+| **Kubernetes Native**           | Yes                                                           | Yes                                                                                                                          |
+| **Community**                   | Yes                                                           | Yes                                                                                                                          |
+| **Pricing**                     | TBD                                                           | Free                                                                                                                         |
+| **Frontend Tech**               | Cytoscape, React, Next.js                                     | Cytoscape, React, PatternFly                                                                                                 |
+| **Backend Tech**                | Go (MeshSync)                                                 | Go, Shell                                                                                                                    |
+| **Synchronization Model**       | Event-driven (MeshSync: Kubernetes Controller)                | Polling from Prometheus                                                                                                      |
+| **Architecture / Deployment**   | Dynamic injection                                             | Backend runs in containers; stateless frontend in React/TypeScript; relies on Istio/Cluster API, Prometheus, Jaeger, Grafana |
+| **Integrations**                | Environments, Workspaces, Projects                            | Istio, Prometheus, Jaeger, Grafana                                                                                           |
+| **Multi-user**                  | Yes                                                           | Yes (concurrent access)                                                                                                      |
+| **Topology – Views**            | 8 levels of views                                             | 2 levels (namespace overview, service/workload view)                                                                         |
+| **Topology – Entities**         | Applications, Filters, Patterns, Components                   | Workload, Service, App, Service Entry, Operation node (?)                                                                    |
+| **Edge Labels**                 | Node-to-node, group-to-group                                  | RPS, % Request, Latency                                                                                                      |
+| **Edge States**                 | —                                                             | Animations + visual cues (success, errors, request density, latency)                                                         |
+| **Badges / Icons**              | —                                                             | mTLS badge, circuit breaker, missing sidecar, virtual services                                                               |
+| **Graph Types**                 | —                                                             | App, Service, Versionized, Workload graphs                                                                                   |
+| **Graph Layouts**               | —                                                             | Dagre, Cola, Compound Spring Embedder                                                                                        |
+| **Search / Filter**             | Yes (Visualizer)                                              | Namespaces, filters                                                                                                          |
+| **Topology Details**            | Detail Pane & Designer Pane                                   | Panels with namespace stats, request traffic, component health, mTLS %                                                       |
+| **Export / Translate**          | PNG, JPG, JSON                                                | —                                                                                                                            |
+| **Actions / Operations**        | Validation (SMI, config analysis, performance tests)          | Validations, Routing Wizards, Istio config editing                                                                           |
+| **Workload Ops**                | Onboard / Remove workloads                                    | Manage workloads via Istio config                                                                                            |
+| **Sidecar Ops**                 | Add / Remove / Logs / Exec Shell                              | Sidecar management (via Istio configs)                                                                                       |
+| **Visual Designer**             | Yes                                                           | —                                                                                                                            |
+| **Multiplayer Visual Designer** | Yes (collaborative, like Google Docs for service mesh design) | —                                                                                                                            |
+| **GitOps / Pipeline**           | GitHub Actions integration (snapshots, performance tests)     | —                                                                                                                            |
+| **Timeline (DVR)**              | —                                                             | Yes (rewind graphs to previous state using Prometheus data)                                                                  |
+| **Audit Trail**                 | —                                                             | —                                                                                                                            |
+| **Extra Features**              | Collaborative service mesh design & management                | Deep Istio integration, validations, routing wizards                                                                         |
+
