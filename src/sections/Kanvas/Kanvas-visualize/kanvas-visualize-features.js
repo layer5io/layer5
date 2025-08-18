@@ -164,17 +164,17 @@ const KanvasisualizerFeatures = () => {
             </div>
           </Col>
           <Col $sm={12} $md={6} $lg={4}>
-          <a href="https://docs.layer5.io/kanvas/operator/" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
-            <div className={(isHovered && hoveredFeature != "Feature3") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(3)} onMouseOut={handleMouseOut}>
-              <div className="feature-image">
-                <img src={InteractiveTerminal} alt="Interactive Terminal" style={{ position: "absolute", width: "80%", zIndex: "0" }} />
-                <img src={InteractiveTerminalCode} alt="" className={hoveredFeature == "Feature3" ? "secondary-image-visible" : "secondary-image"} style={{ position: "relative", width: "80%", zIndex: "10" }} />
+            <a href="https://docs.layer5.io/kanvas/operator/" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
+              <div className={(isHovered && hoveredFeature != "Feature3") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(3)} onMouseOut={handleMouseOut}>
+                <div className="feature-image">
+                  <img src={InteractiveTerminal} alt="Interactive Terminal" style={{ position: "absolute", width: "80%", zIndex: "0" }} />
+                  <img src={InteractiveTerminalCode} alt="" className={hoveredFeature == "Feature3" ? "secondary-image-visible" : "secondary-image"} style={{ position: "relative", width: "80%", zIndex: "10" }} />
+                </div>
+                <h3>Interactive Terminal</h3>
+                <p>Establish sessions with one or more pods at a time.</p>
+                <DocsIcon style={{ position: "absolute", top: "16px", right: "16px", color: "#00D3A9" }} className="docs" />
               </div>
-              <h3>Interactive Terminal</h3>
-              <p>Establish sessions with one or more pods at a time.</p>
-              <DocsIcon style={{ position: 'absolute', top: '16px', right: '16px', color: '#00D3A9' }} className="docs" />
-            </div>
-          </a>
+            </a>
           </Col>
           <Col $sm={12} $md={6} $lg={4}>
             <div className={(isHovered && hoveredFeature != "Feature4") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(4)} onMouseOut={handleMouseOut}>
