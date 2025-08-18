@@ -553,19 +553,11 @@ const SistentTabsCode = () => {
                     <Tab label="Step 3" />
                   </Tabs>
                   <Box sx={{ mt: 2 }}>
-                    <button
+                    <TabButton
                       onClick={handleControlledNext}
-                      style={{
-                        padding: "8px 16px",
-                        background: isDark ? "#1976d2" : "#1976d2",
-                        color: "white",
-                        border: "none",
-                        borderRadius: "4px",
-                        cursor: "pointer"
-                      }}
                     >
                       Next Step
-                    </button>
+                    </TabButton>
                   </Box>
                   <TabPanel value={controlledValue} index={0}>
                     Step 1 Content
