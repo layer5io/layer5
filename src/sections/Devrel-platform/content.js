@@ -183,6 +183,9 @@ const DevrelContentWrapper = styled.div`
                 top: 10.75rem;
                 left: calc(50% + 2rem);
               }
+            .meshmate-badge {
+              width: 90%;
+            }  
           }
         }
       }
@@ -212,6 +215,11 @@ const DevrelContentWrapper = styled.div`
                 top: 8.75rem;
                 left: calc(50% + 0rem);
               }
+              .meshmate-badge {
+                width: 90%;
+                height: 105%;
+                margin-left: 1rem;
+                margin-top: 0.6rem;
             }
           }
         }
@@ -338,6 +346,7 @@ const DevrelContent = () => {
                     <img
                       src="https://badges.layer5.io/assets/badges/meshmate/meshmate.png"
                       alt="Meshmate Badge"
+                      className="meshmate-badge"
                     />
                   </div>
                 </div>
