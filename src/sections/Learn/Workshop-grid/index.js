@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXRenderer } from "../../../utils/mdx-renderer";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import WorkshopCard from "../../../components/Workshop-Card";
 import PageHeader from "../../../reusecore/PageHeader";

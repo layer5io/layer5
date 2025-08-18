@@ -1,5 +1,5 @@
 import React from "react";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXRenderer } from "../../../utils/mdx-renderer";
 import { SRLWrapper } from "simple-react-lightbox";
 import { graphql, useStaticQuery } from "gatsby";
 import { Container, Row, Col } from "../../../reusecore/Layout";

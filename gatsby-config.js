@@ -122,7 +122,7 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.excerpt || node.frontmatter.description || "" }],
                 });
               });
             },
@@ -134,7 +134,7 @@ module.exports = {
   ) {
     nodes {
       body
-      html
+      excerpt
       frontmatter {
         title
         author
@@ -169,7 +169,7 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.excerpt || node.frontmatter.description || "" }],
                 });
               });
             },
@@ -181,7 +181,7 @@ module.exports = {
   ) {
     nodes {
       body
-      html
+      excerpt
       frontmatter {
         title
         author
@@ -215,7 +215,7 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.excerpt || node.frontmatter.description || "" }],
                 });
               });
             },
@@ -227,7 +227,7 @@ module.exports = {
   ) {
     nodes {
       body
-      html
+      excerpt
       frontmatter {
         title
         author
@@ -264,7 +264,7 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.excerpt || node.frontmatter.description || "" }],
                 });
               });
             },
@@ -276,7 +276,7 @@ module.exports = {
   ) {
     nodes {
       body
-      html
+      excerpt
       frontmatter {
         title
         author
@@ -313,7 +313,7 @@ module.exports = {
                       node.frontmatter.thumbnail.publicURL,
                   },
                   custom_elements: [
-                    { "content:encoded": node.html },
+                    { "content:encoded": node.excerpt || node.frontmatter.description || "" },
                     { "content:type": node.frontmatter.type },
                     { "content:category": node.frontmatter.category },
                     { "content:tags": node.frontmatter.tags?.join(", ") || "" },
@@ -336,7 +336,7 @@ module.exports = {
   ) {
     nodes {
       body
-      html
+      excerpt
       frontmatter {
         title
         author
@@ -375,7 +375,7 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.excerpt || node.frontmatter.description || "" }],
                 });
               });
             },
@@ -387,7 +387,7 @@ module.exports = {
   ) {
     nodes {
       body
-      html
+      excerpt
       frontmatter {
         title
         author
@@ -422,7 +422,7 @@ module.exports = {
                       site.siteMetadata.siteUrl +
                       node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.excerpt || node.frontmatter.description || "" }],
                 });
               });
             },
@@ -434,7 +434,7 @@ module.exports = {
   ) {
     nodes {
       body
-      html
+      excerpt
       frontmatter {
         title
         author
