@@ -403,19 +403,11 @@ const TabsGuidance = () => {
                     <Tab label="Step 3" />
                   </Tabs>
                   <Box sx={{ mt: 2, mb: 2 }}>
-                    <button
+                    <TabButton
                       onClick={handleControlledNext}
-                      style={{
-                        padding: "8px 16px",
-                        background: isDark ? "#1976d2" : "#1976d2",
-                        color: "white",
-                        border: "none",
-                        borderRadius: "4px",
-                        cursor: "pointer"
-                      }}
                     >
                       Next Step
-                    </button>
+                    </TabButton>
                   </Box>
                   <TabPanel value={controlledValue} index={0}>
                     <strong>Step 1</strong> - Initial setup and configuration
