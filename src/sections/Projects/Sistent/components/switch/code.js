@@ -78,7 +78,7 @@ const SwitchCode = () => {
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <Switch/>
+                <Switch checked={checked} />
               </SistentThemeProvider>
             </div>
             <CodeBlock name="basic-switch" code={codes[0]} />
