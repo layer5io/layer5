@@ -4,6 +4,7 @@ export const ResourcesWrapper = styled.div`
   
   div.comparison h3 {
     text-align: left;
+    margin-top: 2rem;
   }
   
   .sub-heading {
