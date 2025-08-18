@@ -122,9 +122,7 @@ const SwitchGuidance = () => {
             <h2>Sizing</h2>
           </a>
           <p>
-            The default Switch size is medium, which fits most use cases.Use 
-            <code>size="small"</code> when space is constrained or when embedding
-            toggles into compact elements such as tables, cards, or toolbars.
+            The default Switch size is medium, which fits most use cases. Use <code>size="small"</code> when you have limited space or need to place toggles inside compact UI elements like tables, cards, or toolbars.
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
