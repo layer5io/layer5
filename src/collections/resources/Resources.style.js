@@ -1,6 +1,11 @@
 import styled from "styled-components";
 export const ResourcesWrapper = styled.div`
   color: #000;
+  
+  div.comparison h3 {
+    text-align: left;
+  }
+  
   .sub-heading {
     color: gray;
     position: relative;
