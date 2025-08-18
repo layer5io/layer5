@@ -128,6 +128,7 @@ z-index: 10;
     position: absolute;
     top: 16px;
     right: 16px;
+    color: ${props => props.theme.secondaryColor};
   }
 `;
 
@@ -155,7 +156,7 @@ const KanvasisualizerFeatures = () => {
             <a href="https://docs.layer5.io/kanvas/getting-started/import-designs/" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
               <div className={(isHovered && hoveredFeature != "Feature1") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(1)} onMouseOut={handleMouseOut}>
                 <div className="docs-icon-wrapper">
-                  <DocsIcon style={{ color: "#00D3A9" }} className="docs" />
+                  <DocsIcon/>
                 </div>
                 <div className="feature-image">
                   <img src={ApplicationImportBoxes} alt="Application Import" style={{ position: "absolute" }} />
@@ -170,7 +171,7 @@ const KanvasisualizerFeatures = () => {
             <a href="https://docs.layer5.io/kanvas/operator/resource-details/" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
               <div className={(isHovered && hoveredFeature != "Feature2") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(2)} onMouseOut={handleMouseOut}>
                 <div className="docs-icon-wrapper">
-                  <DocsIcon style={{ color: "#00D3A9" }} className="docs" />
+                  <DocsIcon/>
                 </div>
                 <div className="feature-image">
                   <img src={PerformanceMetrics} alt="Performance Metrics" style={{ position: "absolute" }} />
@@ -185,7 +186,7 @@ const KanvasisualizerFeatures = () => {
             <a href="https://docs.layer5.io/kanvas/operator/#understanding-interactive-terminal" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
               <div className={(isHovered && hoveredFeature != "Feature3") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(3)} onMouseOut={handleMouseOut}>
                 <div className="docs-icon-wrapper">
-                  <DocsIcon style={{ color: "#00D3A9" }} className="docs" />
+                  <DocsIcon/>
                 </div>
                 <div className="feature-image">
                   <img src={InteractiveTerminal} alt="Interactive Terminal" style={{ position: "absolute", width: "80%", zIndex: "0" }} />
@@ -222,7 +223,7 @@ const KanvasisualizerFeatures = () => {
             <a href="https://docs.layer5.io/kanvas/operator/#understanding-log-streamer" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
               <div className={(isHovered && hoveredFeature != "Feature6") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(6)} onMouseOut={handleMouseOut}>
                 <div className="docs-icon-wrapper">
-                  <DocsIcon style={{ color: "#00D3A9" }} className="docs" />
+                  <DocsIcon/>
                 </div>
                 <div className="feature-image">
                   <img src={LogStream} alt="Log Stream" style={{ position: "absolute" }} />
