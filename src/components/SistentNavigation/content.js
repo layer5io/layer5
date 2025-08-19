@@ -62,7 +62,7 @@ export const content = [
   { id: 43, link: "/projects/sistent/components/select", text: "Select" },
   { id: 44, link: "/projects/sistent/components/select/guidance", text: "Select" },
   { id: 45, link: "/projects/sistent/components/select/code", text: "Select" },
-  
+
   { id: 46, link: "/projects/sistent/components/switch", text: "Switch" },
   { id: 47, link: "/projects/sistent/components/switch/guidance", text: "Switch" },
   { id: 48, link: "/projects/sistent/components/switch/code", text: "Switch" },
