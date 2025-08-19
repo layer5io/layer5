@@ -437,6 +437,7 @@ const CopyColor = ({ hex, token, copyValue }) => {
         isCopied: false
       }));
 
+      // Reset error state after 1.5 seconds
       setTimeout(() => {
         setCopyState(prev => ({
           ...prev,
@@ -508,6 +509,7 @@ const CopyColor = ({ hex, token, copyValue }) => {
           color: (theme) => theme.palette.text.primary,
           transition: "all 0.2s ease-in-out",
           outline: "none",
+          minWidth: "fit-content", // Prevent width changes
           "&:hover": {
             backgroundColor: (theme) =>
               theme.palette.action?.hover || "rgba(0, 0, 0, 0.04)",
@@ -527,11 +529,9 @@ const CopyColor = ({ hex, token, copyValue }) => {
           },
           ...(copyState.isCopied && {
             backgroundColor: (theme) => theme.palette.success.light,
-            color: (theme) => theme.palette.success.contrastText,
           }),
           ...(copyState.text === "Failed" && {
             backgroundColor: (theme) => theme.palette.error.light,
-            color: (theme) => theme.palette.error.contrastText,
           }),
         }}
         onClick={handleCopy}
@@ -540,18 +540,20 @@ const CopyColor = ({ hex, token, copyValue }) => {
         onKeyPress={handleKeyPress}
       >
         <span>{getCopyValue()}</span>
-        {copyState.isHovered && !copyState.isCopied && (
-          <Box
-            component="span"
-            sx={{
-              marginLeft: "4px",
-              fontSize: "0.75rem",
-              opacity: 0.7,
-            }}
-          >
-            {copyState.text}
-          </Box>
-        )}
+        <Box
+          component="span"
+          sx={{
+            marginLeft: "4px",
+            fontSize: "0.75rem",
+            opacity: copyState.isHovered && !copyState.isCopied ? 0.7 : 0,
+            visibility: copyState.isHovered && !copyState.isCopied ? "visible" : "hidden",
+            minWidth: "32px",
+            textAlign: "left",
+            transition: "opacity 0.2s ease-in-out",
+          }}
+        >
+          {copyState.text}
+        </Box>
       </Box>
     </CustomTooltip>
   );
