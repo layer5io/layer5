@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { SistentLayout } from "../../sistent-layout";
@@ -402,39 +402,156 @@ const componentColors = [
 ];
 
 
-const CopyColor = ({ hex , token }) => {
-  const [copyText, setCopyText] = useState("Copy");
+// Enhanced CopyColor Component with Better UX
+const CopyColor = ({ hex, token, copyValue }) => {
+  const [copyState, setCopyState] = useState({
+    text: "Copy",
+    isCopied: false,
+    isHovered: false
+  });
 
-  const handleCopy = async () => {
-    await copyToClipboard(hex || token);
-    setCopyText("Copied");
-    setTimeout(() => setCopyText("Copy"), 1000);
+  const handleCopy = useCallback(async () => {
+    try {
+      const valueToCopy = copyValue || hex || token;
+      await copyToClipboard(valueToCopy);
+      
+      setCopyState({
+        text: "Copied!",
+        isCopied: true,
+        isHovered: copyState.isHovered
+      });
+
+      // Reset after 2 seconds
+      setTimeout(() => {
+        setCopyState(prev => ({
+          ...prev,
+          text: "Copy",
+          isCopied: false
+        }));
+      }, 2000);
+    } catch (error) {
+      console.error("Failed to copy to clipboard:", error);
+      setCopyState(prev => ({
+        ...prev,
+        text: "Failed",
+        isCopied: false
+      }));
+
+      setTimeout(() => {
+        setCopyState(prev => ({
+          ...prev,
+          text: "Copy",
+          isCopied: false
+        }));
+      }, 1500);
+    }
+  }, [copyValue, hex, token, copyState.isHovered]);
+
+  const handleMouseEnter = useCallback(() => {
+    setCopyState(prev => ({
+      ...prev,
+      isHovered: true
+    }));
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setCopyState(prev => ({
+      ...prev,
+      isHovered: false
+    }));
+  }, []);
+
+  const handleKeyPress = useCallback((event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      handleCopy();
+    }
+  }, [handleCopy]);
+
+  const getTooltipTitle = () => {
+    if (copyState.isCopied) {
+      return "Copied to clipboard!";
+    }
+    if (copyState.text === "Failed") {
+      return "Failed to copy. Try again.";
+    }
+    return "Click to copy to clipboard";
+  };
+
+  const getCopyValue = () => {
+    return copyValue || hex || token;
   };
 
   return (
     <CustomTooltip
-      title={copyText === "Copied" ? "Copied" : "Copy"}
-      enterDelay={800}
-      leaveDelay={10}
-      placement="right"
+      title={getTooltipTitle()}
+      enterDelay={600}
+      leaveDelay={100}
+      placement="top"
     >
       <Box
+        component="button"
+        role="button"
+        tabIndex={0}
+        aria-label={`Copy ${getCopyValue()} to clipboard`}
         sx={{
           position: "relative",
           display: "inline-flex",
           alignItems: "center",
           cursor: "pointer",
-          padding: "2px 4px",
-          borderRadius: "3px",
-          transition: "background-color 0.2s ease",
+          padding: "4px 8px",
+          borderRadius: "4px",
+          border: "none",
+          background: "transparent",
+          fontFamily: "monospace",
+          fontSize: "0.875rem",
+          color: (theme) => theme.palette.text.primary,
+          transition: "all 0.2s ease-in-out",
+          outline: "none",
           "&:hover": {
             backgroundColor: (theme) =>
               theme.palette.action?.hover || "rgba(0, 0, 0, 0.04)",
+            transform: "translateY(-1px)",
+            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
           },
+          "&:focus": {
+            backgroundColor: (theme) =>
+              theme.palette.action?.hover || "rgba(0, 0, 0, 0.04)",
+            outline: "2px solid",
+            outlineColor: (theme) => theme.palette.primary.main,
+            outlineOffset: "2px",
+          },
+          "&:active": {
+            transform: "translateY(0)",
+            boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
+          },
+          ...(copyState.isCopied && {
+            backgroundColor: (theme) => theme.palette.success.light,
+            color: (theme) => theme.palette.success.contrastText,
+          }),
+          ...(copyState.text === "Failed" && {
+            backgroundColor: (theme) => theme.palette.error.light,
+            color: (theme) => theme.palette.error.contrastText,
+          }),
         }}
         onClick={handleCopy}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onKeyPress={handleKeyPress}
       >
-        <span>{hex || token }</span>
+        <span>{getCopyValue()}</span>
+        {copyState.isHovered && !copyState.isCopied && (
+          <Box
+            component="span"
+            sx={{
+              marginLeft: "4px",
+              fontSize: "0.75rem",
+              opacity: 0.7,
+            }}
+          >
+            {copyState.text}
+          </Box>
+        )}
       </Box>
     </CustomTooltip>
   );
