@@ -36,14 +36,14 @@ It is the backbone of the platform, enabling instructors to easily design, struc
 
 | Feature | Moocit | Layer5 | Notes |
 |---------|--------|--------|-------|
-| Content Variety | ✅ | ✅ | Supports text, images, videos, PDFs |
-| Interactive Learning | ✅ | ✅ | Quizzes, polls, drag-and-drop, peer review, self-assessment |
-| Learning Paths/Tracks | ✅ | ✅ | Sequential paths and prerequisites |
-| Course Publishing | ✅ | ✅ | Layer5 approach to content creation and publishing is gitflow based with version-controlled publishing. Moocit's approach is web-based with incremental instant releases. |
-| Course Management | ✅ | ✅ | Tools to organize, assign, and manage |
-| Course Tracking | ✅ | ✅ | Track learner progress and completion |
-| Course Authoring | ⚠️ | ✅ | Moocit: uses an antiquated Open edX platform with XML-based authoring. Layer5: uses a modern Hugo static site generator with Markdown-based authoring. |
-| Public Catalog | ❌ | ✅ | Layer5 provides comprehensive discoverability; Moocit lacks full public catalog. |
+| Content Variety | ✅ | ✅ | Both: Support text, images, videos, PDFs |
+| Interactive Learning | ✅ | ✅ | Both: Quizzes, tests, self-assessment |
+| Learning Paths/Tracks | ✅ | ✅ | Both: Support sequential paths and prerequisites |
+| Course Publishing | ✅ | ✅ | Moocit: Web-based approach to content creation and publishing with incremental instant and scheduled releases. Layer5: Gitflow based approach to content creation and publishing is gitflow based with version-controlled publishing.  |
+| Course Management | ✅ | ✅ | Both: Tools to organize, assign, and manage |
+| Course Tracking | ✅ | ✅ | Both: Track learner progress and completion |
+| Course Authoring | ⚠️ | ✅ | Moocit: uses the Open edX platform with XML-based authoring. Layer5: uses a modern Hugo static site generator with Markdown-based authoring. |
+| Public Catalog | ❌ | ✅ | Moocit: Lacks browsable, public catalog. Layer5: Provides comprehensive discoverability with browsable, public catalog. |
 
 ### Learner Experience
 
@@ -51,14 +51,15 @@ Learner experience emphasizes intuitive design, collaboration, and flexibility. 
 
 | Feature | Moocit | Layer5 | Notes |
 |---------|--------|--------|-------|
-| Learner Portal | ✅ | ✅ | Centralized access to materials |
-| Learner Profile | — | — | Limited support for interactive profiles |
-| Mobile Learning | ✅ | ✅ | Multi-device access |
-| Certificate Generation | ✅ | ✅ | Shareable certifications |
-| Social Learning | ✅ | ✅ | Forums, discussions, and Kanvas collaboration |
-| Synchronous Learning | ❌ | ✅ | Real-time collaboration in Kanvas |
-| Self-Paced Learning | ❌ | ✅ | Learner-driven pacing |
-| Hands-on Labs | ❌ | Kanvas labs   |  Layer5 emphasizes real-time collaboration through Kanvas|
+| Learner Portal | ✅ | ✅ | |
+| Self-paced Learning | ✅ | ✅ | |
+| Instructor-led Learning | ✅ | ✅ | | 
+| Mobile Learning | ✅ | ✅ | |
+| Certificate Generation | ✅ | ✅ | Both: Shareable certifications |
+| Social Learning | ✅ | ✅ | Both: Forums, discussions. Layer5: Kanvas and Slack. |
+| Learner Profile | ⚠️ | ✅| Moocit: Limited support for interactive profiles. Layer5: Comprehensive learner profiles with progress tracking and social features. |
+| Group / Synchronous Learning | ❌ | ✅ | Layer5: Real-time, collaborative learning. |
+| Hands-on Labs | ❌ | ✅ | Layer5:  through Kanvas |
 
 ### Administration & Analytics
 
@@ -66,19 +67,16 @@ Both platforms deliver robust administration capabilities with user management, 
 
 | Feature | Moocit | Layer5 | Notes |
 |---------|--------|--------|-------|
-| User Management | ✅ | ✅ | Manage accounts, roles, and permissions |
-| Assessment Management | ✅ | ✅ | Build and evaluate assessments |
-| Gradebook | ✅ | ✅ | Track grades and scores |
-| Advanced Analytics | ✅ | ✅ | Learner performance, insights |
-| Reporting & Statistics | ✅ | ✅ | Learning patterns and outcomes |
-| Customization | ✅ | ✅ | Themes, prerequisites, conditional displays |
-| Third-Party Integrations | — | — | Limited visibility |
-| Stripe | ✅ | ✅ | Payment processing |
-| Single Sign-On (SSO) | ❌ | ✅ | Enhanced access control |
-| Branded Academy Invitations | ❌ | ✅ | Approval queues, domain-based allowances |
-| Branded Content Announcements | ❌ | ✅ | New challenge/course announcements |
-| Public Clouds | ❌ | ✅ | AWS, Azure, GCP, DigitalOcean |
-| Orchestration Support | ❌ | ✅ | Hundreds of CNCF ecosystem integrations |
+| Assessment Management | ✅ | ✅ | Both: Build and evaluate assessments. |
+| Gradebook | ✅ | ✅ | Both: Track grades and scores. |
+| Reporting & Statistics | ✅ | ✅ | Both: Insights into learner engagement and performance. |
+| User Management | ⚠️ | ✅ | Moocit: Manage user accounts. Layer5: Manage user accounts with granular and customizable permissions and roles. |
+| Group Creation and Management |  ✅ | ✅ | Both: Allow instructors to organize students and content into different groups. |
+| Single Sign-On (SSO) | ❌ | ✅ | Layer5: Enhanced identity and granular access control. |
+| Branded Academy Invitations | ❌ | ✅ | Layer5: Approval queues, domain-based allowances. |
+| Branded Content Announcements | ❌ | ✅ | Layer5: New content announcements |
+| Public Clouds | ❌ | ✅ | Layer5: AWS, Azure, GCP, DigitalOcean, and an Kubernetes service |
+| Orchestration Support | ❌ | ✅ | Layer5: Hundreds of CNCF ecosystem integrations |
 
 ### Additional Features
 
@@ -87,16 +85,14 @@ Extra functionalities make the platforms more engaging. While both cover gamific
 | Feature | Moocit | Layer5 | Notes |
 |---------|--------|--------|-------|
 | Gamification | ✅ | ✅ | Layer5: badges and learning leaderboards. |
-| eCommerce Management | ✅ | ✅ | Both platforms support Stripe as a built-in integration. |
-| White-labeling | ✅ | ✅ | Superior branding flexibility in Layer5 |
-| Chatbot Support | ⚠️ | ✅ | Moocit: website chat. Layer5: community-centric Slack |
+| eCommerce Management | ✅ | ✅ | Both: Support Stripe as a built-in integration. |
+| White-labeling | ✅ | ✅ | Layer5: Superior branding flexibility. |
+| Chatbot Support | ⚠️ | ✅ | Moocit: website chat. Layer5: community-centric Slack. |
 | Cloud Native Focused | ❌ | ✅  | Layer5 is a cloud native ecosystem stalwart, tightly aligned with the CNCF. |
-
-
 
 ## Summary
 
-Moocit lacks content attribution and orchestration with hands-on labs. Feature comparison with [Moocit](https://moocit.com/) highlights the strengths of Layer5 Academy in terms of content creation, learner experience, and administrative capabilities.
+While Moocit lacks content attribution and seamless orchestration with hands-on labs, Layer5 Academy stands out by enabling true learning through interactive, hands-on labs powered by Kanvas—where real learning happens. Layer5 Academy's labs drive students to utilize third-party public cloud providers' infrastructure, meaning more time spent on hands-on activities can increase costs for users paying for their chosen provider's resources. However, public cloud providers featuring Academy content and labs can incentivize adoption by offering credits and discount codes, presented to learners after enrolling in a Challenge, Learning Path, or Certification. Furthermore, Layer5 enhances administrative efficiency with support for bulk invitations for new learners and email announcements for new academy content, underscoring its superior strengths in content creation, learner experience, and administrative capabilities compared to Moocit.
 
 </div>
 </ResourcesWrapper>
