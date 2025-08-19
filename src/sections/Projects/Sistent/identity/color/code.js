@@ -414,7 +414,7 @@ const CopyColor = ({ hex, token, copyValue }) => {
     try {
       const valueToCopy = copyValue || hex || token;
       await copyToClipboard(valueToCopy);
-      
+
       setCopyState({
         text: "Copied!",
         isCopied: true,
