@@ -62,16 +62,20 @@ export const content = [
   { id: 43, link: "/projects/sistent/components/select", text: "Select" },
   { id: 44, link: "/projects/sistent/components/select/guidance", text: "Select" },
   { id: 45, link: "/projects/sistent/components/select/code", text: "Select" },
+  
+  { id: 46, link: "/projects/sistent/components/switch", text: "Switch" },
+  { id: 47, link: "/projects/sistent/components/switch/guidance", text: "Switch" },
+  { id: 48, link: "/projects/sistent/components/switch/code", text: "Switch" },
 
-  { id: 46, link: "/projects/sistent/components/text-field", text: "Text Field" },
-  { id: 47, link: "/projects/sistent/components/text-field/guidance", text: "Text Field" },
-  { id: 48, link: "/projects/sistent/components/text-field/code", text: "Text Field" },
+  { id: 49, link: "/projects/sistent/components/text-field", text: "Text Field" },
+  { id: 50, link: "/projects/sistent/components/text-field/guidance", text: "Text Field" },
+  { id: 51, link: "/projects/sistent/components/text-field/code", text: "Text Field" },
 
-  { id: 49, link: "/projects/sistent/components/text-input", text: "Text Input" },
-  { id: 50, link: "/projects/sistent/components/text-input/guidance", text: "Text Input" },
-  { id: 51, link: "/projects/sistent/components/text-input/code", text: "Text Input" },
+  { id: 52, link: "/projects/sistent/components/text-input", text: "Text Input" },
+  { id: 53, link: "/projects/sistent/components/text-input/guidance", text: "Text Input" },
+  { id: 54, link: "/projects/sistent/components/text-input/code", text: "Text Input" },
 
-  { id: 52, link: "/projects/sistent/components/tooltip", text: "Tooltip" },
-  { id: 53, link: "/projects/sistent/components/tooltip/guidance", text: "Tooltip" },
-  { id: 54, link: "/projects/sistent/components/tooltip/code", text: "Tooltip" },
+  { id: 55, link: "/projects/sistent/components/tooltip", text: "Tooltip" },
+  { id: 56, link: "/projects/sistent/components/tooltip/guidance", text: "Tooltip" },
+  { id: 57, link: "/projects/sistent/components/tooltip/code", text: "Tooltip" },
 ];
