@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import { HiOutlineChevronLeft } from "@react-icons/all-files/hi/HiOutlineChevronLeft";
 import { Link } from "gatsby";
-import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
-import { IoIosArrowDropdownCircle } from "@react-icons/all-files/io/IoIosArrowDropdownCircle";
 import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { componentsData } from "../../sections/Projects/Sistent/components/content";
 
 import TOCWrapper from "./toc.style";
 import { IoIosArrowDown } from "@react-icons/all-files/io/IoIosArrowDown";
-import { IoIosArrowUp } from "@react-icons/all-files/io/IoIosArrowUp";
 
 import { useLocation } from "@reach/router";
 
