@@ -1189,7 +1189,7 @@
     "category": "Academy",
     "functionOrder": "",
     "function": "Academy",
-    "feature": "Building, managing, and extending Layer5 Academy learning paths.",
+    "feature": "A comprehensive learning management system for creators and instructors on how to build, manage, and extend educational content like learning paths, challenges, and certifications with an inclusive, collaborative, hands-on learning environment for students.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
@@ -1211,7 +1211,7 @@
       "free": "",
       "teamDesigner": "",
       "teamOperator": "",
-      "enterprise": "x"
+      "enterprise": ""
     },
     "docs": "https://docs.layer5.io/cloud/academy/creating-content/"
   },
@@ -1227,7 +1227,7 @@
       "free": "",
       "teamDesigner": "",
       "teamOperator": "",
-      "enterprise": "x"
+      "enterprise": ""
     },
     "docs": "https://docs.layer5.io/cloud/academy/creating-content/extending-the-academy/"
   },
@@ -1243,7 +1243,7 @@
       "free": "",
       "teamDesigner": "",
       "teamOperator": "",
-      "enterprise": "x"
+      "enterprise": ""
     },
     "docs": "https://docs.layer5.io/cloud/academy/creating-content/creating-your-learning-path/"
   },
@@ -1259,7 +1259,7 @@
       "free": "",
       "teamDesigner": "",
       "teamOperator": "",
-      "enterprise": "x"
+      "enterprise": ""
     },
     "docs": "https://docs.layer5.io/cloud/academy/creating-content/integrating-assessments-in-the-academy/"
   },
@@ -1275,8 +1275,24 @@
       "free": "",
       "teamDesigner": "",
       "teamOperator": "",
-      "enterprise": "x"
+      "enterprise": ""
     },
     "docs": "https://docs.layer5.io/cloud/academy/creating-content/building-certifications/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "",
+    "category": "",
+    "functionOrder": "",
+    "function": "Academy Instructor Console Guide",
+    "feature": "A comprehensive guide to using the Instructor Console. Learn how to track learner progress, analyze test performance, and manage your academy’s content and metrics.",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": ""
+    },
+    "docs": "https://docs.layer5.io/cloud/academy/creating-content/instructor-console-guide/"
   }
 ]
