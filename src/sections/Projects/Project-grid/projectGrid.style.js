@@ -164,7 +164,7 @@ export const ProjectWrapper = styled.div`
     grid-column: 6/8;
     grid-row: 1/3;
     img {
-      width: 75px;
+      width: 105px;
       align-self: center;
     }
     h5 {
