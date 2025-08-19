@@ -641,22 +641,6 @@
   },
   {
     "theme": "",
-    "categoryOrder": "",
-    "category": "",
-    "functionOrder": "",
-    "function": "",
-    "feature": "",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "docs": ""
-  },
-  {
-    "theme": "",
     "categoryOrder": "5",
     "category": "Identity & Access Management",
     "functionOrder": "501",
@@ -1169,23 +1153,7 @@
   },
   {
     "theme": "",
-    "categoryOrder": "",
-    "category": "",
-    "functionOrder": "",
-    "function": "",
-    "feature": "",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
+    "categoryOrder": "add-on",
     "category": "Academy",
     "functionOrder": "",
     "function": "Academy",
@@ -1202,97 +1170,17 @@
   {
     "theme": "",
     "categoryOrder": "",
-    "category": "Academy",
-    "functionOrder": "",
-    "function": "Content Creator Guide",
-    "feature": "Learn how to create, manage, and publish learning paths, challenges, and certifications on the Layer5 Academy platform.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "docs": "https://docs.layer5.io/cloud/academy/creating-content/"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
-    "category": "Academy",
-    "functionOrder": "",
-    "function": "Extending the Academy",
-    "feature": "A high-level guide to understanding the architecture, features, and workflow for creating custom content on the Layer5 Academy platform.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "docs": "https://docs.layer5.io/cloud/academy/creating-content/extending-the-academy/"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
-    "category": "Academy",
-    "functionOrder": "",
-    "function": "Creating Your First Learning Path",
-    "feature": "A hands-on tutorial that walks you through creating, structuring, and testing a custom learning path for the Layer5 Academy.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "docs": "https://docs.layer5.io/cloud/academy/creating-content/creating-your-learning-path/"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
-    "category": "Academy",
-    "functionOrder": "",
-    "function": "Integrating Assessments in the Academy",
-    "feature": "Learn how to spice up the Academy with interactive assessments that keep learners engaged.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "docs": "https://docs.layer5.io/cloud/academy/creating-content/integrating-assessments-in-the-academy/"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
-    "category": "Academy",
-    "functionOrder": "",
-    "function": "Building Certifications",
-    "feature": "A step-by-step guide to building a professional certification in the Academy.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "docs": "https://docs.layer5.io/cloud/academy/creating-content/building-certifications/"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
     "category": "",
     "functionOrder": "",
-    "function": "Academy Instructor Console Guide",
-    "feature": "A comprehensive guide to using the Instructor Console. Learn how to track learner progress, analyze test performance, and manage your academy’s content and metrics.",
-    "subscription_tier": "Enterprise",
+    "function": "",
+    "feature": "",
+    "subscription_tier": "",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": ""
     },
-    "docs": "https://docs.layer5.io/cloud/academy/creating-content/instructor-console-guide/"
+    "docs": ""
   }
 ]
