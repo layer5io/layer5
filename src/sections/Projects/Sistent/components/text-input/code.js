@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
@@ -58,7 +58,6 @@ const codes = [
 const TextInputCode = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
-  const [inputValue, setInputValue] = useState("");
 
   return (
     <SistentLayout title="Text Input">
