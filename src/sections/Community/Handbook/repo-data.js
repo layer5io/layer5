@@ -40,8 +40,8 @@ export const repo_data = [
         image: meshery,
         site: "https://meshery.io",
         language: "Jekyll",
-        maintainers_name: ["Vivek Vishal"],
-        link: ["https://layer5.io/community/members/vivek-vishal"],
+        maintainers_name: ["Vacant"],
+        link: [""],
         repository: "https://github.com/meshery/meshery.io",
       },
       {
@@ -49,8 +49,8 @@ export const repo_data = [
         image: meshery,
         site: "http://docs.meshery.io",
         language: "Jekyll",
-        maintainers_name: ["Vivek Vishal"],
-        link: ["https://layer5.io/community/members/vivek-vishal"],
+        maintainers_name: ["Vacant"],
+        link: [""],
         repository: "https://github.com/meshery/meshery/tree/master/docs",
       },
       {
@@ -102,8 +102,8 @@ export const repo_data = [
         image: five,
         site: "https://discuss.layer5.io",
         language: "Discourse",
-        maintainers_name: ["Vivek Vishal"],
-        link: ["https://layer5.io/community/members/vivek-vishal"],
+        maintainers_name: ["Vacant"],
+        link: [""],
         repository: " https://discuss.layer5.io",
       },
       {
