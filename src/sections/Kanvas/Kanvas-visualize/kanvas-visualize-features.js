@@ -237,7 +237,6 @@ const KanvasisualizerFeatures = () => {
         </div>
       </Row>
     </VisualizerFeaturesWrapper>
-
   );
 };
 export default KanvasisualizerFeatures;
