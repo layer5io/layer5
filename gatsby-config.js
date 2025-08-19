@@ -477,6 +477,7 @@ module.exports = {
         mdxOptions: {
           remarkPlugins: [],
           rehypePlugins: [],
+          development: process.env.NODE_ENV === "development",
         },
       },
     },

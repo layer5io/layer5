@@ -1,47 +1,41 @@
 import React from "react";
+import { renderToString } from "react-dom/server";
 
-// Compatibility wrapper for MDXRenderer which was removed in gatsby-plugin-mdx v5
-// In gatsby-plugin-mdx v5, MDX content is handled differently
+// For gatsby-plugin-mdx v5, we need to handle MDX content properly
 const MDXRenderer = ({ children }) => {
-  // Debug logging
-  console.log('MDXRenderer received:', typeof children, children);
+  // In gatsby-plugin-mdx v5, the body should be a compiled MDX component
   
-  // For gatsby-plugin-mdx v5, the MDX content should be rendered as JSX
-  // If children is already JSX (React component), render it directly
+  // If it's a function (compiled MDX component), execute it
+  if (typeof children === 'function') {
+    try {
+      const Component = children;
+      return <Component />;
+    } catch (error) {
+      console.error('Error rendering MDX function:', error);
+      return <div>Error rendering MDX content</div>;
+    }
+  }
+  
+  // If it's already a React element, return it
   if (React.isValidElement(children)) {
-    console.log('Rendering as React element');
     return children;
   }
   
-  // If it's a function (compiled MDX), call it
-  if (typeof children === 'function') {
-    console.log('Rendering as function component');
-    const Component = children;
-    return <Component />;
+  // If it's an object that looks like a React element, render it
+  if (children && typeof children === 'object' && (children.type || children.$$typeof)) {
+    return children;
   }
   
-  // For gatsby-plugin-mdx v5, we need to handle JSX content properly
-  // The body should be a React component function that we can render
-  try {
-    if (children && typeof children === 'object' && children.type) {
-      console.log('Rendering as object with type');
-      // It's already a React element
-      return children;
-    }
-    
-    // Try to evaluate as JSX if it's a string
-    if (typeof children === 'string') {
-      console.log('Rendering string as HTML - this might be the issue!');
-      // This is likely plain HTML, render it safely
+  // If it's a string that looks like HTML, render it
+  if (typeof children === 'string') {
+    // Check if it contains JSX or HTML
+    if (children.includes('<') || children.includes('import ')) {
       return <div dangerouslySetInnerHTML={{ __html: children }} />;
     }
-  } catch (error) {
-    console.error('Error rendering MDX content:', error);
-    return <div>Error rendering content</div>;
+    return <div>{children}</div>;
   }
   
-  // Otherwise, try to render as JSX
-  console.log('Rendering as fragment');
+  // Default: try to render whatever we got
   return <>{children}</>;
 };
 
