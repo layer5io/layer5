@@ -143,13 +143,18 @@ const componentsData = [
   },
   {
     id: 19,
+    name: "Switch",
+    description: "The Switch component allows users to toggle the state of a single setting on or off.",
+    url: "/projects/sistent/components/switch",
+    src: "/switch"
+  },
+  {
+    id: 20,
     name: "Tabs",
-    description:
-      "Tabs organize and allow navigation between groups of content that are related and at the same level of hierarchy.",
+    description: "Tabs organize and allow navigation between groups of content that are related and at the same level of hierarchy.",
     url: "/projects/sistent/components/tabs",
     src: "/tabs",
-  },
-
+  }
 ];
 
 module.exports = { componentsData };
