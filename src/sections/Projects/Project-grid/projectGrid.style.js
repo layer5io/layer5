@@ -175,7 +175,7 @@ export const ProjectWrapper = styled.div`
 
   // Sistent
   .project__card.sistent {
-    grid-column: 1/3;
+    grid-column: 1/2;
     grid-row: 1/3;
     img {
       width: 85px;
@@ -186,6 +186,20 @@ export const ProjectWrapper = styled.div`
       align-self: center;
     }
   }
+
+  // Academy
+  .project__card.academy {
+    grid-column: 2/3;
+    grid-row: 1/3;
+    img {
+      width: 85px;
+      align-self: center;
+      margin-bottom: 14px;
+    }
+    h5 {
+      align-self: center;
+    }
+}
 
   // Service Mesh Performance
   .project__card.five {
