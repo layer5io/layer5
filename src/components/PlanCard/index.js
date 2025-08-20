@@ -100,7 +100,6 @@ const PlanCard = ({ planData, isYearly }) => {
                       : "price-button-link"
                   }
                   $url={planLink[x.tier] ?? "https://cloud.layer5.io/account/plans"}
-                  aria-label={x.tier === "Personal" ? "Join for free" : `Subscribe to ${x.tier}`}
                 >
                   {x.tier === "Personal" ? "Join for Free" : "Subscribe"}
                 </Button>
