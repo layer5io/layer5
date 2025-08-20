@@ -124,8 +124,8 @@ const CommunityPage = () => {
                   </div>
                   <div className="badge-item">
                     <img
-                      src="https://badges.layer5.io/assets/badges/meshery/meshery.png"
-                      alt="Meshery Badge"
+                      src="https://badges.layer5.io/assets/badges/meshmate/meshmate.png"
+                      alt="Meshmate Badge"
                     />
                   </div>
                 </div>

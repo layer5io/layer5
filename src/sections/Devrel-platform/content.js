@@ -10,6 +10,8 @@ import InlineQuotes from "../../components/Inline-quotes";
 import YashSharmaIMg from "../../collections/members/yash-sharma/yash-sharma.webp";
 import NicJacksonImg from "../../collections/members/nicholas-jackson/nic-jackson.webp";
 import RutkIkegahImg from "../../collections/members/ruth-ikegah/ruth-ikegah.jpg";
+
+
 const DevrelContentWrapper = styled.div`
   min-height: fit-content;
   border-width: 2px 2px 2px 2px;
@@ -181,6 +183,9 @@ const DevrelContentWrapper = styled.div`
                 top: 10.75rem;
                 left: calc(50% + 2rem);
               }
+            .meshmate-badge {
+              width: 90%;
+            }  
           }
         }
       }
@@ -210,6 +215,11 @@ const DevrelContentWrapper = styled.div`
                 top: 8.75rem;
                 left: calc(50% + 0rem);
               }
+              .meshmate-badge {
+                width: 90%;
+                height: 105%;
+                margin-left: 1rem;
+                margin-top: 0.6rem;
             }
           }
         }
@@ -334,8 +344,9 @@ const DevrelContent = () => {
                   </div>
                   <div className="badge-item">
                     <img
-                      src="https://badges.layer5.io/assets/badges/meshery/meshery.png"
-                      alt="Meshery Badge"
+                      src="https://badges.layer5.io/assets/badges/meshmate/meshmate.png"
+                      alt="Meshmate Badge"
+                      className="meshmate-badge"
                     />
                   </div>
                 </div>
