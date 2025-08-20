@@ -102,7 +102,7 @@ export const PricingAddons = ({ isYearly = false }) => {
         const addonPrice = isYearly ? selectedAddon.yearlyPrice : selectedAddon.monthlyPrice;
         baseTotal = addonPrice * quantity;
       }
-      
+
       // Handle Academy Practical Learning (sub-addon)
       let supportTotal = 0;
       if (selectedAddon?.id === "academy" && labLearners) {
@@ -112,7 +112,7 @@ export const PricingAddons = ({ isYearly = false }) => {
           supportTotal = supportPrice;
         }
       }
-      
+
       setTotalPrice(baseTotal + supportTotal);
     } else {
       setTotalPrice(0);
@@ -261,7 +261,7 @@ export const PricingAddons = ({ isYearly = false }) => {
               </Typography>
             </Box>
           </Box>
-         
+
         </Box> */}
             </FeatureDetails>
           </Box>
@@ -269,7 +269,7 @@ export const PricingAddons = ({ isYearly = false }) => {
       </>
       )}
       </Box>
-      
+
                 {selectedAddon && (
                   <>
                     {/* Quantity Slider */}
