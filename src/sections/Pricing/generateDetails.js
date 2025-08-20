@@ -29,6 +29,7 @@ function generateDetails(data) {
     { id: 8, name: "Security", icon: Security },
     { id: 9, name: "Managed Service Provider", icon: Support },
     { id: 10, name: "Support and Deployment", icon: Support },
+    { id: 11, name: "Academy", icon: Academy}
     // { id: 11, name: "Support and Deployment", icon: Support },
   ];
 
