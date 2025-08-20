@@ -17,8 +17,8 @@ function generatePlans(data) {
     "TeamDesigner": {
       tier: "Team Designer",
       featured: false,
-      monthlyprice: 16,
-      yearlyprice: 164,
+      monthlyprice: 8,
+      yearlyprice: 68,
       byline: "Advanced collaboration for declarative DevOps",
       byline2: "← Everything included in Free, plus...",
       button: ["Start Free Trial", "https://cloud.layer5.io"],
@@ -26,8 +26,8 @@ function generatePlans(data) {
     "TeamOperator": {
       tier: "Team Operator",
       featured: false,
-      monthlyprice: 16,
-      yearlyprice: 164,
+      monthlyprice: 8,
+      yearlyprice: 68,
       // pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Advanced collaboration for imperative DevOps",
       byline2: "← Everything included in Free, plus...",
@@ -36,12 +36,25 @@ function generatePlans(data) {
     "Enterprise": {
       tier: "Enterprise",
       featured: true,
-      monthlyprice: 44,
-      yearlyprice: 449,
+      monthlyprice: 22,
+      yearlyprice: 248,
       pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Flexible deployment, and MSP multi-tenancy.",
       byline2: "← Everything included in Team, plus...",
-      button: ["Contact Sales", "https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8"],
+      button: [
+        "Contact Sales",
+        "https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8",
+      ],
+      addOnPricing: {
+        learnerOptions: [
+          { learners: 0, monthlyPerUser: 44 }, 
+          { learners: 50, monthlyPerUser: 1.73}, 
+          { learners: 150, monthlyPerUser: 1.73}, 
+          { learners: 250, monthlyPerUser: 1.38 }, 
+          { learners: 500, monthlyPerUser: 0.87 }, 
+          { learners: 1000, monthlyPerUser: 0.59 }, 
+        ],
+      },
     },
   };
 
@@ -57,7 +70,7 @@ function generatePlans(data) {
       })
       .filter((item) => {
         const matches =
-          item.subscription_tier === tierName; //&& !item.exclude === "x";
+          item.subscription_tier === tierName  && item.categoryOrder !== "add-on"; //&& !item.exclude === "x";
         return matches;
       })
       .map((item, index) => {
@@ -73,9 +86,22 @@ function generatePlans(data) {
         return mappedItem;
       })
       .sort((a, b) => a.categoryOrder - b.categoryOrder || a.functionOrder - b.functionOrder);
+
+    const addOns = tierName === "Enterprise"
+      ? data
+          .filter((item) => item.categoryOrder === "add-on")
+          .map((item, index) => ({
+            id: index,
+            name: item.function,
+            description: item.feature,
+            docs: item.docs,
+          }))
+      : [];
+
     return {
       ...tierInfo,
       summary: summary.length > 0 ? summary : [],
+      addOns,
     };
   });
   return plans;
