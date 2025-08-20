@@ -6,8 +6,8 @@ import FeatureDetails from "./collapsible-details";
 import { Slider, Typography, Box, Switch, FormControlLabel } from "@mui/material";
 
 const PlanCard = ({ planData, isYearly }) => {
-  const [learnerIndex, setLearnerIndex] = useState(0); // Index for slider (0–6)
-  const [includeHandsOn, setIncludeHandsOn] = useState(false); // Toggle for Hands-on Learner
+  const [learnerIndex, setLearnerIndex] = useState(0); 
+  const [includeHandsOn, setIncludeHandsOn] = useState(false); 
 
   if (!planData || !Array.isArray(planData) || planData.length === 0) {
     return <div>No plan data available</div>;
@@ -16,7 +16,7 @@ const PlanCard = ({ planData, isYearly }) => {
     "Personal": "https://cloud.layer5.io/account/plans",
     "Team Designer": "https://cloud.layer5.io/account/plans/upgrade?plan=49b77ce8-eeea-4ec4-adf3-48979a14b140",
     "Team Operator": "https://cloud.layer5.io/account/plans/upgrade?plan=f7a5b2b5-b36b-421e-9211-f4dfb204e5b3",
-    Enterprise: "https://cloud.layer5.io/account/plans/upgrade?plan=ad68ce59-8c5a-42b0-955c-9b2b2f7c98e3",
+    "Enterprise": "https://cloud.layer5.io/account/plans/upgrade?plan=ad68ce59-8c5a-42b0-955c-9b2b2f7c98e3"
   };
 
   const calculateAddOnPrice = (plan, index) => {
@@ -37,11 +37,19 @@ const PlanCard = ({ planData, isYearly }) => {
       <Container>
         <Row $Hcenter>
           {planData.map((x) => (
+            // <Col $xl={4} $lg={2} $md={1} $sm={1} key={x.tier}>
             <Col key={x.tier}>
-              {/* Main Plan Card */}
               <div className={`${x.featured ? "featured" : ""} pricing-table`}>
-                {x.tier === "Personal" && <div className="pricing-label">Free Forever</div>}
-                {x.tier === "Team Designer" && <div className="featured-label">Most Popular</div>}
+
+                {x.tier === "Personal" ? <div className="pricing-label">Free Forever</div> : null}
+
+                {x.tier === "Enterprise" ? <div className="featured-label">Most Popular</div> : null}
+
+                {/* {x.pricing_coming_soon && (
+                  <div className="pricing_coming_soon">
+                    {x.pricing_coming_soon}
+                  </div>
+                )} */}
 
                 <h2>{x.tier}</h2>
                 <h5 className="byline">{x.byline}</h5>
@@ -50,33 +58,41 @@ const PlanCard = ({ planData, isYearly }) => {
                   {isYearly ? (
                     x.yearlyprice !== undefined ? (
                       <div className="price">
-                        <span className="price-amount">
-                          <sup>$</sup>
-                          {x.yearlyprice === 0 ? "0" : x.yearlyprice.toFixed(0)}
+                        <span className="price-amount"><sup>$</sup>
+                          {x.yearlyprice === 0
+                            ? "0"
+                            : x.yearlyprice.toFixed(0)}
                         </span>
                         <span className="currency">USD</span>
                         <span className="price-per">per user/year</span>
                       </div>
                     ) : (
-                      <div className="pricing_coming_soon">{x.pricing_coming_soon}</div>
+                      <div className="pricing_coming_soon">
+                        {x.pricing_coming_soon}
+                      </div>
                     )
                   ) : (
                     x.monthlyprice !== undefined ? (
                       <div className="price">
-                        <span className="price-amount">
-                          <sup>$</sup>
-                          {x.monthlyprice === 0 ? "0" : x.monthlyprice.toFixed(0)}
+                        <span className="price-amount"><sup>$</sup>
+                          {x.monthlyprice === 0
+                            ? "0"
+                            : x.monthlyprice.toFixed(0)}
                         </span>
                         <span className="currency">USD</span>
                         <span className="price-per">per user/month</span>
                       </div>
                     ) : (
-                      <div className="pricing_coming_soon">{x.pricing_coming_soon}</div>
+                      <div className="pricing_coming_soon">
+                        {x.pricing_coming_soon}
+                      </div>
                     )
                   )}
                 </div>
 
+
                 <Button
+                  // disabled={x.tier === "Team Operator"}
                   $primary
                   className={
                     x.button[0] === "Coming Soon"
