@@ -223,105 +223,37 @@ export const PricingAddons = ({ isYearly = false }) => {
                   {/* Quantity Slider */}
                   <Box>
                     <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 2 }}>
-                      <Typography variant="h6" fontWeight="600">
-                        Quantity:{" "}
-                        {selectedAddon.id === "academy"
-                          ? selectedAddon.learnerOptions[quantityIndex].learners === 1001
-                            ? "1,000+"
-                            : selectedAddon.learnerOptions[quantityIndex].learners
-                          : quantityIndex}{" "}
-                        {selectedAddon.unitLabel}
+                      <Typography variant="h6" fontWeight="600" sx={{ fontSize: "1.1rem" }}>
+                      Quantity: {quantity} {selectedAddon.unitLabel}
                       </Typography>
                       <Chip
-                        label={formatPrice(totalPrice)}
+                        label={formatPrice((isYearly ? selectedAddon.yearlyPrice : selectedAddon.basePrice) * quantity)}
                         color="primary"
                         variant="outlined"
-                        sx={{
-                          fontWeight: "bold",
-                          fontSize: "0.9rem",
-                          transition: "all 0.3s ease-in-out",
-                        }}
+                        sx={{ fontWeight: "bold", fontSize: "0.9rem" }}
                       />
                     </Box>
 
                     <Box sx={{ px: 1 }}>
-                      {selectedAddon.id === "academy" ? (
-                        <Slider
-                          value={quantityIndex}
-                          onChange={handleQuantityChange}
-                          min={0}
-                          max={selectedAddon.learnerOptions.length - 1}
-                          step={null}
-                          marks={selectedAddon.learnerOptions.map((option, index) => ({
-                            value: index,
-                          }))}
-                          valueLabelDisplay="auto"
-                          valueLabelFormat={(value) => {
-                            const option = selectedAddon.learnerOptions[value];
-                            const learners = option.learners === 1001 ? 1001 : option.learners;
-                            const basePrice = learners === 0 ? option.monthlyPerUser : learners * option.monthlyPerUser;
-                            const price = labLearners ? basePrice * 2 : basePrice;
-                            return `${option.learners === 1001 ? "1,000+" : option.learners} (${formatPrice(price)})`;
-                          }}
-                          sx={{
-                            color: "primary.main",
-                            "& .MuiSlider-markLabel": {
-                              color: "text.primary",
-                            },
-                            "& .MuiSlider-thumb": {
-                              width: 20,
-                              height: 20,
-                              "&:hover, &.Mui-focusVisible": {
-                                boxShadow: "0 0 0 8px rgba(0, 179, 159, 0.16)",
-                              },
-                            },
-                            "& .MuiSlider-rail": {
-                              opacity: 0.3,
-                            },
-                            "& .MuiSlider-track": {
-                              border: "none",
-                            },
-                          }}
-                          aria-label="Number of theory learners for Academy add-on"
+                      <Slider
+                        value={quantityIndex}
+                        onChange={(event, newValue) => setQuantityIndex(newValue)}
+                        min={0}
+                        max={learnerOptions.length - 1}
+                        step={null}
+                        marks={learnerOptions.map((option, index) => ({
+                        value: index,
+                        label: option.learners === 1000 ? "1,000+" : option.learners,
+                        }))}
                         />
-                      ) : (
-                        <Slider
-                          value={quantityIndex}
-                          onChange={handleQuantityChange}
-                          min={1}
-                          max={selectedAddon.maxUnits}
-                          step={1}
-                          valueLabelDisplay="auto"
-                          valueLabelFormat={(value) => `${value} (${formatPrice(selectedAddon.basePrice * value)})`}
-                          sx={{
-                            color: "primary.main",
-                            "& .MuiSlider-thumb": {
-                              width: 20,
-                              height: 20,
-                              "&:hover, &.Mui-focusVisible": {
-                                boxShadow: "0 0 0 8px rgba(0, 179, 159, 0.16)",
-                              },
-                            },
-                            "& .MuiSlider-rail": {
-                              opacity: 0.3,
-                            },
-                            "& .MuiSlider-track": {
-                              border: "none",
-                            },
-                            mb: 2,
-                          }}
-                        />
-                      )}
-                      {selectedAddon.id !== "academy" && (
-                        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                          <Typography variant="body2" color="text.secondary">
-                            1
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            {selectedAddon.maxUnits}
-                          </Typography>
-                        </Box>
-                      )}
+                      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+                        <Typography variant="body2" color="text.secondary">
+                        1
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {selectedAddon.maxUnits}
+                        </Typography>
+                      </Box>
                     </Box>
                   </Box>
 
