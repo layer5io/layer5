@@ -148,7 +148,13 @@ const componentsData = [
     url: "/projects/sistent/components/switch",
     src: "/switch"
   },
-
+  {
+    id: 20,
+    name: "Tabs",
+    description: "Tabs organize and allow navigation between groups of content that are related and at the same level of hierarchy.",
+    url: "/projects/sistent/components/tabs",
+    src: "/tabs",
+  }
 ];
 
 module.exports = { componentsData };

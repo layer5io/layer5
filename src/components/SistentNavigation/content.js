@@ -67,15 +67,19 @@ export const content = [
   { id: 47, link: "/projects/sistent/components/switch/guidance", text: "Switch" },
   { id: 48, link: "/projects/sistent/components/switch/code", text: "Switch" },
 
-  { id: 49, link: "/projects/sistent/components/text-field", text: "Text Field" },
-  { id: 50, link: "/projects/sistent/components/text-field/guidance", text: "Text Field" },
-  { id: 51, link: "/projects/sistent/components/text-field/code", text: "Text Field" },
+  { id: 49, link: "/projects/sistent/components/tabs", text: "Tabs" },
+  { id: 50, link: "/projects/sistent/components/tabs/guidance", text: "Tabs" },
+  { id: 51, link: "/projects/sistent/components/tabs/code", text: "Tabs" },
 
-  { id: 52, link: "/projects/sistent/components/text-input", text: "Text Input" },
-  { id: 53, link: "/projects/sistent/components/text-input/guidance", text: "Text Input" },
-  { id: 54, link: "/projects/sistent/components/text-input/code", text: "Text Input" },
+  { id: 52, link: "/projects/sistent/components/text-field", text: "Text Field" },
+  { id: 53, link: "/projects/sistent/components/text-field/guidance", text: "Text Field" },
+  { id: 54, link: "/projects/sistent/components/text-field/code", text: "Text Field" },
 
-  { id: 55, link: "/projects/sistent/components/tooltip", text: "Tooltip" },
-  { id: 56, link: "/projects/sistent/components/tooltip/guidance", text: "Tooltip" },
-  { id: 57, link: "/projects/sistent/components/tooltip/code", text: "Tooltip" },
+  { id: 55, link: "/projects/sistent/components/text-input", text: "Text Input" },
+  { id: 56, link: "/projects/sistent/components/text-input/guidance", text: "Text Input" },
+  { id: 57, link: "/projects/sistent/components/text-input/code", text: "Text Input" },
+
+  { id: 58, link: "/projects/sistent/components/tooltip", text: "Tooltip" },
+  { id: 59, link: "/projects/sistent/components/tooltip/guidance", text: "Tooltip" },
+  { id: 60, link: "/projects/sistent/components/tooltip/code", text: "Tooltip" },
 ];
