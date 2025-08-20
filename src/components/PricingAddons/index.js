@@ -21,10 +21,10 @@ const addOns = [
     id: "academy",
     name: "Academy",
     description: "A comprehensive learning management system for creators and instructors on how to build, manage, and extend educational content like learning paths, challenges, and certifications.",
-    monthlyPrice: 1,
-    yearlyPrice: 10, // ~15% discount for yearly
+    subdescription: "Theoretical Learning and Practical Learning packages by number of learners",
+    // monthlyPrice: 1,
+    // yearlyPrice: 10, // ~15% discount for yearly
     icon: <AcademyIcon primaryFill={"#eee"} secondaryFill={"#eee"} />,
-    // icon: <AcademyIcon primaryFill={(theme) => theme.palette.background.inverselight} secondaryFill={(theme) => theme.palette.text.default} />,
     unitLabel: "learners",
     maxUnits: 5000,
     features: ["Learning Paths", "Challenges", "Certifications", "Instructor Console"],
@@ -72,15 +72,27 @@ export const PricingAddons = ({ isYearly = false }) => {
 
   useEffect(() => {
     if (selectedAddon) {
-      const addonPrice = isYearly ? selectedAddon.yearlyPrice : selectedAddon.monthlyPrice;
-      const baseTotal = addonPrice * quantity;
+      let baseTotal = 0;
+      if (selectedAddon.id === "academy") {
+        // For academy, use the learner options pricing
+        const currentLearnerOption = learnerOptions[quantityIndex];
+        const monthlyPerUserCost = currentLearnerOption.monthlyPerUser;
+        const yearlyPerUserCost = monthlyPerUserCost * 12 * 0.85; // 15% discount for yearly
+        baseTotal = isYearly
+          ? yearlyPerUserCost * currentLearnerOption.learners
+          : monthlyPerUserCost * currentLearnerOption.learners;
+      } else {
+        // For other addons, use the standard pricing
+        const addonPrice = isYearly ? selectedAddon.yearlyPrice : selectedAddon.monthlyPrice;
+        baseTotal = addonPrice * quantity;
+      }
       const supportPrice = isYearly ? secondaryOptions[0].yearlyPrice : secondaryOptions[0].monthlyPrice;
       const supportTotal = labLearners ? supportPrice : 0;
       setTotalPrice(baseTotal + supportTotal);
     } else {
       setTotalPrice(0);
     }
-  }, [selectedAddon, quantity, labLearners, isYearly]);
+  }, [selectedAddon, quantity, quantityIndex, labLearners, isYearly]);
 
   const handleAddonChange = (addonId) => {
     const addon = addOns.find((a) => a.id === addonId);
@@ -101,7 +113,7 @@ export const PricingAddons = ({ isYearly = false }) => {
   return (
     <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
       <CssBaseline />
-      
+
       <Container maxWidth="lg" sx={{ my: 4 }}>
         <PlanCardWrapper>
           <Card
@@ -156,7 +168,10 @@ export const PricingAddons = ({ isYearly = false }) => {
                                 {addon.name}
                               </Typography>
                               <Typography variant="body2" color="text.secondary">
-                                {formatPrice(isYearly ? addon.yearlyPrice : addon.monthlyPrice)} per {addon.unitLabel.slice(0, -1)}{isYearly ? "/year" : "/month"}
+                                {addon.id === "academy"
+                                  ? addon.subdescription
+                                  : `${formatPrice(isYearly ? addon.yearlyPrice : addon.monthlyPrice)} per ${addon.unitLabel.slice(0, -1)}${isYearly ? "/year" : "/month"}`
+                                }
                               </Typography>
                             </Box>
                           </Box>
@@ -166,32 +181,30 @@ export const PricingAddons = ({ isYearly = false }) => {
                   </FormControl>
 
                   {selectedAddon && (
-                    <Paper elevation={0} sx={{ mt: 2, p: 3, color: "primary.contrastText", borderRadius: 2 }}>
-                      <div className="pricing-features">
-                        <div className="feature">
-                          <FeatureDetails
-                            category={selectedAddon.name}
-                            description={selectedAddon.description}
-                          >
-                            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: 1 }}>
-                              {selectedAddon.features.map((feature, index) => (
-                                <Chip
-                                  key={index}
-                                  icon={<CheckCircle sx={{ fontSize: 12 }} />}
-                                  label={feature}
-                                  size="small"
-                                  sx={{
-                                    backgroundColor: "rgba(0, 179, 159, 0.1)",
-                                    color: "text.primary",
-                                    "& .MuiChip-icon": { color: "primary.main" },
-                                  }}
-                                />
-                              ))}
-                            </Box>
-                          </FeatureDetails>
-                        </div>
+                    <div className="pricing-features">
+                      <div className="feature">
+                        <FeatureDetails
+                          category={selectedAddon.name}
+                          description={selectedAddon.description}
+                        >
+                          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: 1 }}>
+                            {selectedAddon.features.map((feature, index) => (
+                              <Chip
+                                key={index}
+                                icon={<CheckCircle sx={{ fontSize: 12 }} />}
+                                label={feature}
+                                size="small"
+                                sx={{
+                                  backgroundColor: "rgba(0, 179, 159, 0.1)",
+                                  color: "text.primary",
+                                  "& .MuiChip-icon": { color: "primary.main" },
+                                }}
+                              />
+                            ))}
+                          </Box>
+                        </FeatureDetails>
                       </div>
-                    </Paper>
+                    </div>
                   )}
                 </Box>
 
@@ -201,10 +214,22 @@ export const PricingAddons = ({ isYearly = false }) => {
                     <Box>
                       <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 2 }}>
                         <Typography variant="h6" fontWeight="600" sx={{ fontSize: "1.1rem" }}>
-                          <Box component="span" sx={{ fontWeight: "normal" }}>QUANTITY:</Box> {quantity} {selectedAddon.unitLabel}
+                          <Box component="span" sx={{ fontWeight: "normal" }}>QUANTITY:</Box> {selectedAddon.id === "academy" ? learnerOptions[quantityIndex].learners : quantity} {selectedAddon.unitLabel}
                         </Typography>
                         <Chip
-                          label={formatPrice((isYearly ? selectedAddon.yearlyPrice : selectedAddon.monthlyPrice) * quantity)}
+                          label={(() => {
+                            if (selectedAddon.id === "academy") {
+                              const currentLearnerOption = learnerOptions[quantityIndex];
+                              const monthlyPerUserCost = currentLearnerOption.monthlyPerUser;
+                              const yearlyPerUserCost = monthlyPerUserCost * 12 * 0.85;
+                              const totalCost = isYearly
+                                ? yearlyPerUserCost * currentLearnerOption.learners
+                                : monthlyPerUserCost * currentLearnerOption.learners;
+                              return formatPrice(totalCost);
+                            } else {
+                              return formatPrice((isYearly ? selectedAddon.yearlyPrice : selectedAddon.monthlyPrice) * quantity);
+                            }
+                          })()}
                           color="primary"
                           variant="outlined"
                           sx={{ fontWeight: "bold", fontSize: "0.9rem" }}
@@ -301,10 +326,22 @@ export const PricingAddons = ({ isYearly = false }) => {
                       <Box sx={{ display: "flex", flexDirection: "column", gap: 2, mb: 3 }}>
                         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                           <Typography variant="body1">
-                            {selectedAddon.name} × {quantity}
+                            {selectedAddon.name} × {selectedAddon.id === "academy" ? learnerOptions[quantityIndex].learners : quantity}
                           </Typography>
                           <Typography variant="body1" fontWeight="500">
-                            {formatPrice((isYearly ? selectedAddon.yearlyPrice : selectedAddon.monthlyPrice) * quantity)}
+                            {(() => {
+                              if (selectedAddon.id === "academy") {
+                                const currentLearnerOption = learnerOptions[quantityIndex];
+                                const monthlyPerUserCost = currentLearnerOption.monthlyPerUser;
+                                const yearlyPerUserCost = monthlyPerUserCost * 12 * 0.85;
+                                const totalCost = isYearly
+                                  ? yearlyPerUserCost * currentLearnerOption.learners
+                                  : monthlyPerUserCost * currentLearnerOption.learners;
+                                return formatPrice(totalCost);
+                              } else {
+                                return formatPrice((isYearly ? selectedAddon.yearlyPrice : selectedAddon.monthlyPrice) * quantity);
+                              }
+                            })()}
                           </Typography>
                         </Box>
 
