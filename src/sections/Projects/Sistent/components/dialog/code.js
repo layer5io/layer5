@@ -76,13 +76,13 @@ const DialogCode = () => {
         <div className="main-content">
           <p>Here is a live example of the Dialog component in action:</p>
           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-            <Button onClick={handleOpen}>Open Dialog</Button>
+            <Button variant="contained" onClick={handleOpen}>Open Dialog</Button>
             <Dialog open={open} onClose={handleClose}>
               <DialogTitle>Confirm Action</DialogTitle>
               <DialogContent>Do you want to proceed with this action?</DialogContent>
               <DialogActions>
-                <Button onClick={handleClose}>Cancel</Button>
-                <Button color="primary" onClick={handleClose}>Confirm</Button>
+                <Button variant="contained" onClick={handleClose}>Cancel</Button>
+                <Button variant="contained" color="primary" onClick={handleClose}>Confirm</Button>
               </DialogActions>
             </Dialog>
           </SistentThemeProvider>
@@ -93,7 +93,7 @@ const DialogCode = () => {
           {/* Full Screen Dialog */}
           <h3 style={{ marginTop: "3rem" }}>Full-Screen Dialog Example</h3>
           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-            <Button onClick={() => setOpenFull(true)}>Open Full-Screen Dialog</Button>
+            <Button variant="contained" onClick={() => setOpenFull(true)}>Open Full-Screen Dialog</Button>
             <Dialog
               open={openFull}
               onClose={() => setOpenFull(false)}
@@ -104,8 +104,8 @@ const DialogCode = () => {
                 <p>This dialog stretches to full screen. Use it when the user's full attention is needed.</p>
               </DialogContent>
               <DialogActions>
-                <Button onClick={() => setOpenFull(false)}>Cancel</Button>
-                <Button color="primary" onClick={() => setOpenFull(false)}>Save</Button>
+                <Button variant="contained" onClick={() => setOpenFull(false)}>Cancel</Button>
+                <Button variant="contained" color="primary" onClick={() => setOpenFull(false)}>Save</Button>
               </DialogActions>
             </Dialog>
           </SistentThemeProvider>
@@ -113,7 +113,7 @@ const DialogCode = () => {
           {/* Form Inside Dialog */}
           <h3 style={{ marginTop: "3rem" }}>Dialog with Form Example</h3>
           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-            <Button onClick={() => setOpenForm(true)}>Open Form Dialog</Button>
+            <Button variant="contained" onClick={() => setOpenForm(true)}>Open Form Dialog</Button>
             <Dialog open={openForm} onClose={() => setOpenForm(false)}>
               <DialogTitle>Subscribe</DialogTitle>
               <DialogContent>
@@ -129,8 +129,8 @@ const DialogCode = () => {
                 </form>
               </DialogContent>
               <DialogActions>
-                <Button onClick={() => setOpenForm(false)}>Cancel</Button>
-                <Button color="primary" onClick={() => setOpenForm(false)}>Subscribe</Button>
+                <Button variant="contained" onClick={() => setOpenForm(false)}>Cancel</Button>
+                <Button variant="contained" color="primary" onClick={() => setOpenForm(false)}>Subscribe</Button>
               </DialogActions>
             </Dialog>
           </SistentThemeProvider>

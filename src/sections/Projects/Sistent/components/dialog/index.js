@@ -85,15 +85,15 @@ const SistentDialog = () => {
           <br />
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Button onClick={handleOpen}>Open Dialog</Button>
+              <Button variant="contained" onClick={handleOpen}>Open Dialog</Button>
               <Dialog open={open} onClose={handleClose}>
                 <DialogTitle>Confirm Action</DialogTitle>
                 <DialogContent>
                   Do you want to proceed with this action?
                 </DialogContent>
                 <DialogActions>
-                  <Button onClick={handleClose}>Cancel</Button>
-                  <Button color="primary" onClick={handleClose}>
+                  <Button variant="contained"  onClick={handleClose}>Cancel</Button>
+                  <Button variant="contained" color="primary" onClick={handleClose}>
                     Confirm
                   </Button>
                 </DialogActions>

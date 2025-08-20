@@ -98,15 +98,15 @@ const DialogGuidance = () => {
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Button onClick={() => setOpenBasic(true)}>Open Basic Dialog</Button>
+              <Button variant="contained" onClick={() => setOpenBasic(true)}>Open Basic Dialog</Button>
               <Dialog open={openBasic} onClose={() => setOpenBasic(false)}>
                 <DialogTitle>Confirm Action</DialogTitle>
                 <DialogContent>
                   Do you want to proceed with this action?
                 </DialogContent>
                 <DialogActions>
-                  <Button onClick={() => setOpenBasic(false)}>Cancel</Button>
-                  <Button color="primary" onClick={() => setOpenBasic(false)}>
+                  <Button variant="contained" onClick={() => setOpenBasic(false)}>Cancel</Button>
+                  <Button variant="contained" color="primary" onClick={() => setOpenBasic(false)}>
                     Confirm
                   </Button>
                 </DialogActions>
@@ -124,7 +124,7 @@ const DialogGuidance = () => {
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Button onClick={() => setOpenForm(true)}>Open Form Dialog</Button>
+              <Button variant="contained" onClick={() => setOpenForm(true)}>Open Form Dialog</Button>
               <Dialog open={openForm} onClose={() => setOpenForm(false)}>
                 <DialogTitle>Subscribe</DialogTitle>
                 <DialogContent>
@@ -144,8 +144,8 @@ const DialogGuidance = () => {
                   </div>
                 </DialogContent>
                 <DialogActions>
-                  <Button onClick={() => setOpenForm(false)}>Cancel</Button>
-                  <Button color="primary" onClick={() => setOpenForm(false)}>
+                  <Button variant="contained" onClick={() => setOpenForm(false)}>Cancel</Button>
+                  <Button variant="contained" color="primary" onClick={() => setOpenForm(false)}>
                     Subscribe
                   </Button>
                 </DialogActions>
@@ -163,7 +163,7 @@ const DialogGuidance = () => {
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Button onClick={() => setOpenFullScreen(true)}>Open Full-Screen Dialog</Button>
+              <Button variant="contained" onClick={() => setOpenFullScreen(true)}>Open Full-Screen Dialog</Button>
               <Dialog
                 open={openFullScreen}
                 onClose={() => setOpenFullScreen(false)}
@@ -179,7 +179,7 @@ const DialogGuidance = () => {
                 </DialogContent>
                 <DialogActions>
                   <Button onClick={() => setOpenFullScreen(false)}>Cancel</Button>
-                  <Button color="primary" onClick={() => setOpenFullScreen(false)}>
+                  <Button variant="contained" color="primary" onClick={() => setOpenFullScreen(false)}>
                     Save
                   </Button>
                 </DialogActions>
