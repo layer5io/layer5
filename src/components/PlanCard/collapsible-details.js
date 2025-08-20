@@ -65,7 +65,7 @@ const FeatureDetailsWrapper = styled.div`
   }
 `;
 
-const FeatureDetails = ({ category, description, tier }) => {
+const FeatureDetails = ({ category, description, tier, children }) => {
   const [expand, setExpand] = React.useState(false);
 
   const BetaTag = () => <span className="beta-tag">Coming Soon</span>;
@@ -73,7 +73,7 @@ const FeatureDetails = ({ category, description, tier }) => {
   return (
     <FeatureDetailsWrapper>
       <div onClick={() => setExpand(!expand)}>
-        {description && (
+        {(description || children) && (
           <div className="toggle-btn">
             {expand ? (
               <MdExpandMore
@@ -93,9 +93,16 @@ const FeatureDetails = ({ category, description, tier }) => {
           {tier === "Team-Beta" && <BetaTag />}
         </h5>
         <div className="details">
-          <p className={`closed ${expand ? "open" : ""}`}
-            dangerouslySetInnerHTML={{ __html: description }}>
-          </p>
+          {description && (
+            <p className={`closed ${expand ? "open" : ""}`}
+              dangerouslySetInnerHTML={{ __html: description }}>
+            </p>
+          )}
+          {children && (
+            <div className={`closed ${expand ? "open" : ""}`}>
+              {children}
+            </div>
+          )}
         </div>
       </div>
     </FeatureDetailsWrapper>
