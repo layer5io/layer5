@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Card, CardContent, CardHeader, Typography, FormControl, InputLabel, Select, MenuItem, Slider, Switch, FormControlLabel, Chip, Container, Paper, SistentThemeProvider, CssBaseline
+import { Box, Card, CardContent, CardHeader, Typography, FormControl, InputLabel, Select, MenuItem, Slider, Switch, FormControlLabel, Chip, Container, Paper, SistentThemeProvider, CssBaseline, CustomTooltip
 } from "@sistent/sistent";
 import { Calculate, CloudOutlined, Group, CheckCircle } from "@mui/icons-material";
 import AcademyIcon from "./AcademyIcon";
@@ -244,8 +244,21 @@ export const PricingAddons = ({ isYearly = false }) => {
                           max={learnerOptions.length - 1}
                           step={null}
                           marks={learnerOptions.map((option, index) => ({
-                            value: index,
-                            label: option.learners === 1000 ? "1,000+" : option.learners,
+                                value: index,
+                            label: (
+                              <CustomTooltip
+                                title={formatPrice(
+                                  (isYearly
+                                    ? option.monthlyPerUser * 12 * 0.85
+                                    : option.monthlyPerUser
+                                  ) * option.learners
+                                )}
+                                arrow
+                                placement="top"
+                              >
+                                <span>{option.learners === 1000 ? "1,000+" : option.learners}</span>
+                              </CustomTooltip>
+                            ),
                           }))}
                         />
                         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
