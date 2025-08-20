@@ -378,7 +378,7 @@ const textColors = [
   { "tokenName": "text-tertiary", "token": "theme.palette.text.tertiary", "Alias_of": "charcoal-60", "hex": "#8c999e", "role": "Second level text color to indicate lower prominence and establish visual hierarchy." },
   { "tokenName": "text-inverse", "token": "theme.palette.text.inverse", "Alias_of": "charcoal-10", "hex": "#000d12", "role": "This text color is the polar opposite of the default text color in any theme." },
   { "tokenName": "text-disabled", "token": "theme.palette.text.disabled", "Alias_of": "charcoal-50", "hex": "#647176", "role": "This text color is the polar opposite of the default text color in any theme." },
-  { "tokenName": "text-constant-white", "token": "theme.palette.text.constant.white", "Alias_of": "charcoal-100", "hex": "#fdfdfd", "role": "This text color remains constant across both themes and is used on surfaces that don’t change as themes change." },
+  { "tokenName": "text-constant-white", "token": "theme.palette.text.constant.white", "Alias_of": "charcoal-100", "hex": "#fdfdfd", "role": "This text color remains constant across both themes and is used on surfaces that don't change as themes change." },
   { "tokenName": "text-brand", "token": "theme.palette.text.brand", "Alias_of": "keppel-40", "hex": "#00b39f", "role": "Color for text relating to the brand." },
   { "tokenName": "text-info", "token": "theme.palette.text.info", "Alias_of": "blue-40", "hex": "#2196f3", "role": "Color for text relating to notifications and information." },
   { "tokenName": "text-success", "token": "theme.palette.text.success", "Alias_of": "green-40", "hex": "#36bc3b", "role": "Color for text relating to success." },
@@ -402,7 +402,6 @@ const componentColors = [
 ];
 
 
-// Enhanced CopyColor Component with Better UX
 const CopyColor = ({ hex, token, copyValue }) => {
   const [copyState, setCopyState] = useState({
     text: "Copy",
@@ -418,42 +417,42 @@ const CopyColor = ({ hex, token, copyValue }) => {
       setCopyState({
         text: "Copied!",
         isCopied: true,
-        isHovered: copyState.isHovered
+        isHovered: false
       });
 
-      // Reset after 2 seconds
       setTimeout(() => {
-        setCopyState(prev => ({
-          ...prev,
+        setCopyState({
           text: "Copy",
-          isCopied: false
-        }));
+          isCopied: false,
+          isHovered: false
+        });
       }, 2000);
     } catch (error) {
       console.error("Failed to copy to clipboard:", error);
-      setCopyState(prev => ({
-        ...prev,
+      setCopyState({
         text: "Failed",
-        isCopied: false
-      }));
+        isCopied: false,
+        isHovered: false
+      });
 
-      // Reset error state after 1.5 seconds
       setTimeout(() => {
-        setCopyState(prev => ({
-          ...prev,
+        setCopyState({
           text: "Copy",
-          isCopied: false
-        }));
+          isCopied: false,
+          isHovered: false
+        });
       }, 1500);
     }
-  }, [copyValue, hex, token, copyState.isHovered]);
+  }, [copyValue, hex, token]);
 
   const handleMouseEnter = useCallback(() => {
-    setCopyState(prev => ({
-      ...prev,
-      isHovered: true
-    }));
-  }, []);
+    if (!copyState.isCopied) {
+      setCopyState(prev => ({
+        ...prev,
+        isHovered: true
+      }));
+    }
+  }, [copyState.isCopied]);
 
   const handleMouseLeave = useCallback(() => {
     setCopyState(prev => ({
@@ -488,7 +487,7 @@ const CopyColor = ({ hex, token, copyValue }) => {
       title={getTooltipTitle()}
       enterDelay={600}
       leaveDelay={100}
-      placement="top"
+      placement="right"
     >
       <Box
         component="button"
@@ -509,12 +508,13 @@ const CopyColor = ({ hex, token, copyValue }) => {
           color: (theme) => theme.palette.text.primary,
           transition: "all 0.2s ease-in-out",
           outline: "none",
-          minWidth: "fit-content", // Prevent width changes
+          width: "fit-content",
+          minWidth: "200px",
           "&:hover": {
             backgroundColor: (theme) =>
-              theme.palette.action?.hover || "rgba(0, 0, 0, 0.04)",
-            transform: "translateY(-1px)",
-            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+              !copyState.isCopied && (theme.palette.action?.hover || "rgba(0, 0, 0, 0.04)"),
+            transform: !copyState.isCopied ? "translateY(-1px)" : "none",
+            boxShadow: !copyState.isCopied ? "0 2px 4px rgba(0, 0, 0, 0.1)" : "none",
           },
           "&:focus": {
             backgroundColor: (theme) =>
@@ -528,10 +528,24 @@ const CopyColor = ({ hex, token, copyValue }) => {
             boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
           },
           ...(copyState.isCopied && {
-            backgroundColor: (theme) => theme.palette.success.light,
+            border: "2px solid",
+            borderColor: (theme) => theme.palette.success.main,
+            backgroundColor: "transparent",
+            "&:hover": {
+              backgroundColor: "transparent",
+              transform: "none",
+              boxShadow: "none",
+            }
           }),
           ...(copyState.text === "Failed" && {
-            backgroundColor: (theme) => theme.palette.error.light,
+            border: "2px solid",
+            borderColor: (theme) => theme.palette.error.main,
+            backgroundColor: "transparent",
+            "&:hover": {
+              backgroundColor: "transparent",
+              transform: "none",
+              boxShadow: "none",
+            }
           }),
         }}
         onClick={handleCopy}
@@ -545,11 +559,10 @@ const CopyColor = ({ hex, token, copyValue }) => {
           sx={{
             marginLeft: "4px",
             fontSize: "0.75rem",
-            opacity: copyState.isHovered && !copyState.isCopied ? 0.7 : 0,
-            visibility: copyState.isHovered && !copyState.isCopied ? "visible" : "hidden",
-            minWidth: "32px",
-            textAlign: "left",
-            transition: "opacity 0.2s ease-in-out",
+            opacity: 0,
+            visibility: "hidden",
+            width: "0px",
+            overflow: "hidden",
           }}
         >
           {copyState.text}
