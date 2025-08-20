@@ -20,7 +20,8 @@ import {
   CssBaseline
 } from "@sistent/sistent";
 import {
-  Calculate, CloudOutlined,
+  Calculate,
+  CloudOutlined,
   Group,
   CheckCircle,
 } from "@mui/icons-material";
@@ -33,7 +34,9 @@ const addOns = [
     name: "Academy",
     description: "A comprehensive learning management system for creators and instructors on how to build, manage, and extend educational content like learning paths, challenges, and certifications.",
     basePrice: 1,
-    icon: <AcademyIcon primaryFill={(theme) => theme.palette.background.inverselight} secondaryFill={(theme) => theme.palette.text.default} />,
+    yearlyPrice: 10, // ~15% discount for yearly
+    icon: <AcademyIcon primaryFill={"#eee"} secondaryFill={"#eee"} />,
+    // icon: <AcademyIcon primaryFill={(theme) => theme.palette.background.inverselight} secondaryFill={(theme) => theme.palette.text.default} />,
     unitLabel: "learners",
     maxUnits: 5000,
     features: ["Learning Paths", "Challenges", "Certifications", "Instructor Console"],
@@ -41,8 +44,9 @@ const addOns = [
   {
     id: "meshery-server",
     name: "Managed Meshery Servers",
-    description: "Managed cloud instances for comprehensive service mesh operations and monitoring",
+    description: "Managed cloud instances for comprehensive infrastructure configuration and lifecycle management",
     basePrice: 64,
+    yearlyPrice: 650, // ~15% discount for yearly
     icon: <CloudOutlined />,
     unitLabel: "servers",
     maxUnits: 100,
@@ -53,6 +57,7 @@ const addOns = [
     name: "Team Collaboration Seats",
     description: "Additional seats for enhanced team collaboration and workspace management",
     basePrice: 16,
+    yearlyPrice: 163, // ~15% discount for yearly
     icon: <Group />,
     unitLabel: "seats",
     maxUnits: 200,
@@ -65,11 +70,12 @@ const secondaryOptions = [
     name: "Lab Learners",
     description: "An inclusive, collaborative, hands-on learning environment for students.",
     price: 299,
+    yearlyPrice: 3050, // ~15% discount for yearly
     features: ["Hands-on Learning", "Collaborative Instruction", "Visual Design", "Orchestrated Infrastructure"],
   },
 ];
 
-export const PricingAddons = () => {
+export const PricingAddons = ({ isYearly = false }) => {
   const [selectedAddon, setSelectedAddon] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [labLearners, setLabLearners] = useState(false);
@@ -77,13 +83,15 @@ export const PricingAddons = () => {
 
   useEffect(() => {
     if (selectedAddon) {
-      const baseTotal = selectedAddon.basePrice * quantity;
-      const supportTotal = labLearners ? secondaryOptions[0].price : 0;
+      const addonPrice = isYearly ? selectedAddon.yearlyPrice : selectedAddon.basePrice;
+      const baseTotal = addonPrice * quantity;
+      const supportPrice = isYearly ? secondaryOptions[0].yearlyPrice : secondaryOptions[0].price;
+      const supportTotal = labLearners ? supportPrice : 0;
       setTotalPrice(baseTotal + supportTotal);
     } else {
       setTotalPrice(0);
     }
-  }, [selectedAddon, quantity, labLearners]);
+  }, [selectedAddon, quantity, labLearners, isYearly]);
 
   const handleAddonChange = (addonId) => {
     const addon = addOns.find((a) => a.id === addonId);
@@ -102,12 +110,10 @@ export const PricingAddons = () => {
     }).format(price);
   };
 
-  const ColorGuidance = () => {
-    const { isDark } = useStyledDarkMode();
-    return isDark ? "dark" : "light";
-  };
+  const { isDark } = useStyledDarkMode();
+
   return (
-    <SistentThemeProvider initialMode={ColorGuidance()}>
+    <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
       <CssBaseline />
       <Container maxWidth="lg" sx={{ my: 4 }}>
         <Card
@@ -162,7 +168,7 @@ export const PricingAddons = () => {
                               {addon.name}
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                              {formatPrice(addon.basePrice)} per {addon.unitLabel.slice(0, -1)}
+                              {formatPrice(isYearly ? addon.yearlyPrice : addon.basePrice)} per {addon.unitLabel.slice(0, -1)}{isYearly ? "/year" : "/month"}
                             </Typography>
                           </Box>
                         </Box>
@@ -177,12 +183,11 @@ export const PricingAddons = () => {
                     sx={{
                       mt: 2,
                       p: 3,
-                      backgroundColor: "primary.light",
                       color: "primary.contrastText",
                       borderRadius: 2,
                     }}
                   >
-                    <Typography variant="body2" sx={{ mb: 2 }}>
+                    <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
                       {selectedAddon.description}
                     </Typography>
                     <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
@@ -209,11 +214,11 @@ export const PricingAddons = () => {
                   {/* Quantity Slider */}
                   <Box>
                     <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 2 }}>
-                      <Typography variant="h6" fontWeight="600">
+                      <Typography variant="h6" fontWeight="600" sx={{ fontSize: "1.1rem" }}>
                       Quantity: {quantity} {selectedAddon.unitLabel}
                       </Typography>
                       <Chip
-                        label={formatPrice(selectedAddon.basePrice * quantity)}
+                        label={formatPrice((isYearly ? selectedAddon.yearlyPrice : selectedAddon.basePrice) * quantity)}
                         color="primary"
                         variant="outlined"
                         sx={{ fontWeight: "bold", fontSize: "0.9rem" }}
@@ -270,7 +275,7 @@ export const PricingAddons = () => {
                           </Box>
                           <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
                             <Chip
-                              label={labLearners ? formatPrice(secondaryOptions[0].price) : "Disabled"}
+                              label={labLearners ? formatPrice(isYearly ? secondaryOptions[0].yearlyPrice : secondaryOptions[0].price) : "Disabled"}
                               color={labLearners ? "success" : "default"}
                               sx={{ minWidth: 100 }}
                             />
@@ -303,7 +308,7 @@ export const PricingAddons = () => {
                     }}
                   >
                     <Typography variant="h6" gutterBottom fontWeight="600">
-                    Price Breakdown
+                    Subtotal
                     </Typography>
 
                     <Box sx={{ display: "flex", flexDirection: "column", gap: 2, mb: 3 }}>
@@ -312,7 +317,7 @@ export const PricingAddons = () => {
                           {selectedAddon.name} × {quantity}
                         </Typography>
                         <Typography variant="body1" fontWeight="500">
-                          {formatPrice(selectedAddon.basePrice * quantity)}
+                          {formatPrice((isYearly ? selectedAddon.yearlyPrice : selectedAddon.basePrice) * quantity)}
                         </Typography>
                       </Box>
 
@@ -322,7 +327,7 @@ export const PricingAddons = () => {
                             {secondaryOptions[0].name}
                           </Typography>
                           <Typography variant="body1" fontWeight="500">
-                            {formatPrice(secondaryOptions[0].price)}
+                            {formatPrice(isYearly ? secondaryOptions[0].yearlyPrice : secondaryOptions[0].price)}
                           </Typography>
                         </Box>
                       )}
@@ -331,17 +336,16 @@ export const PricingAddons = () => {
 
                       <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                         <Typography variant="h5" fontWeight="bold">
-                        Total Monthly Cost
+                        Total {isYearly ? "Annual" : "Monthly"} Cost
                         </Typography>
-                        <Typography variant="h4" fontWeight="bold" color="primary.main">
+                        <Typography variant="h4" fontWeight="bold" color="primary.light">
                           {formatPrice(totalPrice)}
                         </Typography>
                       </Box>
                     </Box>
 
                     <Typography variant="caption" color="text.secondary">
-                    * Prices shown are monthly subscription costs. Annual subscriptions receive a 15% discount.
-                    Contact our sales team for enterprise pricing and custom configurations.
+                    * Prices shown are {isYearly ? "annual" : "monthly"} subscription costs. {isYearly ? "Monthly subscriptions are available at standard rates." : "Annual subscriptions receive a 15% discount."} Contact our sales team for enterprise pricing and custom configurations.
                     </Typography>
                   </Paper>
                 </>
