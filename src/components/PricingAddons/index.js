@@ -7,6 +7,15 @@ import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 import FeatureDetails from "../PlanCard/collapsible-details";
 import PlanCardWrapper from "../PlanCard/planCard.style";
 
+const learnerOptions = [
+  { learners: 0, monthlyPerUser: 0 },
+  { learners: 50, monthlyPerUser: 1.73 },
+  { learners: 150, monthlyPerUser: 1.73 },
+  { learners: 250, monthlyPerUser: 1.38 },
+  { learners: 500, monthlyPerUser: 0.87 },
+  { learners: 1000, monthlyPerUser: 0.59 },
+];
+
 const addOns = [
   {
     id: "academy",
@@ -59,6 +68,7 @@ export const PricingAddons = ({ isYearly = false }) => {
   const [quantity, setQuantity] = useState(1);
   const [labLearners, setLabLearners] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [quantityIndex, setQuantityIndex] = useState(0);
 
   useEffect(() => {
     if (selectedAddon) {
@@ -78,9 +88,6 @@ export const PricingAddons = ({ isYearly = false }) => {
     setQuantity(1);
   };
 
-  const handleQuantityChange = (_, newValue) => {
-    setQuantity(Array.isArray(newValue) ? newValue[0] : newValue);
-  };
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat("en-US", {
@@ -94,8 +101,9 @@ export const PricingAddons = ({ isYearly = false }) => {
   return (
     <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
       <CssBaseline />
-      <PlanCardWrapper>
-        <Container maxWidth="lg" sx={{ my: 4 }}>
+      
+      <Container maxWidth="lg" sx={{ my: 4 }}>
+        <PlanCardWrapper>
           <Card
             elevation={0}
             sx={{
@@ -205,13 +213,15 @@ export const PricingAddons = ({ isYearly = false }) => {
 
                       <Box sx={{ px: 1 }}>
                         <Slider
-                          value={quantity}
-                          onChange={handleQuantityChange}
-                          min={1}
-                          max={selectedAddon.maxUnits}
-                          step={1}
-                          valueLabelDisplay="auto"
-                          sx={{ mb: 2 }}
+                          value={quantityIndex}
+                          onChange={(event, newValue) => setQuantityIndex(newValue)}
+                          min={0}
+                          max={learnerOptions.length - 1}
+                          step={null}
+                          marks={learnerOptions.map((option, index) => ({
+                            value: index,
+                            label: option.learners === 1000 ? "1,000+" : option.learners,
+                          }))}
                         />
                         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
                           <Typography variant="body2" color="text.secondary">
@@ -330,13 +340,14 @@ export const PricingAddons = ({ isYearly = false }) => {
               </Box>
             </CardContent>
           </Card>
-        </Container>
-        {/* <Chip
+        </PlanCardWrapper>
+      </Container>
+      {/* <Chip
     label={labLearners ? formatPrice(isYearly ? secondaryOptions[0].yearlyPrice : secondaryOptions[0].price) : "Hands-on Learning disabled"}
     color={labLearners ? "success" : "default"}
     sx={{ minWidth: 100 }}
   /> */}
-      </PlanCardWrapper>
+
     </SistentThemeProvider>
 
   );
