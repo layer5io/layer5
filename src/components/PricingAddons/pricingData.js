@@ -28,7 +28,7 @@ export const getAddOns = (theme) => [
           { learners: 500, monthlyPerUser: 0.80, yearlyPerUser: 0.67, currency: "$" },
           { learners: 1000, monthlyPerUser: 0.49, yearlyPerUser: 0.49, currency: "$" },
           { learners: 2500, monthlyPerUser: 0.44, yearlyPerUser: 0.44, currency: "$" },
-          { learners: "2500+", monthlyPerUser: "contact us", yearlyPerUser: "contact us", currency: "$" },
+          // { learners: "2500+", monthlyPerUser: "contact us", yearlyPerUser: "contact us", currency: "$" },
         ],
         features: ["Learning Paths", "Challenges", "Certifications", "Instructor Console"],
       },
@@ -42,7 +42,7 @@ export const getAddOns = (theme) => [
           { learners: 500, monthlyPerUser: 0.80, yearlyPerUser: 0.67, currency: "$" },
           { learners: 1000, monthlyPerUser: 0.49, yearlyPerUser: 0.49, currency: "$" },
           { learners: 2500, monthlyPerUser: 0.44, yearlyPerUser: 0.44, currency: "$" },
-          { learners: "2500+", monthlyPerUser: "contact us", yearlyPerUser: "contact us", currency: "$" },
+          // { learners: "2500+", monthlyPerUser: "contact us", yearlyPerUser: "contact us", currency: "$" },
         ],
         features: ["Hands-on Learning", "Collaborative Instruction", "Visual Design", "Orchestrated Infrastructure"],
       }
