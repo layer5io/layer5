@@ -29,7 +29,7 @@ const PlanCard = ({ planData , isYearly }) => {
 
                 {x.tier === "Personal" ? <div className="pricing-label">Free Forever</div> : null}
 
-                {x.tier === "Enterprise" ? <div className="featured-label">Most Popular</div> : null}
+                {x.tier === "Team Designer" ? <div className="featured-label">Most Popular</div> : null}
 
                 {/* {x.pricing_coming_soon && (
                   <div className="pricing_coming_soon">
