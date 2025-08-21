@@ -19,7 +19,7 @@ export const PricingAddons = ({ isYearly = false }) => {
   const theme = useTheme();
 
   const addOns = getAddOns(theme);
-
+  const [isDetailsExpanded, setIsDetailsExpanded] = useState(false);
   useEffect(() => {
     if (selectedAddon) {
       let baseTotal = 0;
@@ -61,6 +61,7 @@ export const PricingAddons = ({ isYearly = false }) => {
     setSelectedAddon(addon || null);
     setQuantity(1);
     setSelectedSubAddOns({}); // Reset sub-addons when changing main addon
+    setIsDetailsExpanded(false);
   };
 
   const handleSubAddOnToggle = (subAddOnId, isChecked) => {
@@ -148,22 +149,28 @@ export const PricingAddons = ({ isYearly = false }) => {
                   {selectedAddon?.id === "academy" && (
                     <>
                       <Box className="pricing-features" sx={{ marginTop: "-2rem" }}>
-                        {selectedAddon.subAddOns?.map((subAddOn) => (
-                          <FormControlLabel
-                            key={subAddOn.id}
-                            control={<Switch
-                              checked={selectedSubAddOns[subAddOn.id] || false}
-                              onChange={(e) => handleSubAddOnToggle(subAddOn.id, e.target.checked)}
-                              color="primary" />}
-                            label={subAddOn.name}
-                            sx={{ mb: 2, display: "block" }}
-                          />
-                        ))}
+                        <Box onClick={(e) => e.stopPropagation()}>
+                          {selectedAddon.subAddOns?.map((subAddOn) => (
+                            <FormControlLabel
+                              key={subAddOn.id}
+                              control={
+                                <Switch
+                                  checked={selectedSubAddOns[subAddOn.id] || false}
+                                  onChange={(e) => handleSubAddOnToggle(subAddOn.id, e.target.checked)}
+                                  color="primary"
+                                />
+                              }
+                              label={subAddOn.name}
+                              sx={{ mb: 2, display: "block" }}
+                            />
+                          ))}
+                        </Box>
 
                         <Box className="feature">
                           <FeatureDetails
                             category={selectedAddon.name}
                             description={selectedAddon.description}
+                            onToggle={(isOpen) => setIsDetailsExpanded(isOpen)}
                           >
                             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: 1 }}>
                               {selectedAddon?.features?.map((feature, index) => (
@@ -199,7 +206,11 @@ export const PricingAddons = ({ isYearly = false }) => {
                             </Box>
 
                             {/* Academy Quantity Slider */}
-                            <Box sx={{ mt: 3 }}>
+                            {isDetailsExpanded && academyPlans?.length > 0 && (
+                            <Box sx={{ mt: 3 }}
+                                onClick={(e) => e.stopPropagation()}
+                                onMouseDown={(e) => e.stopPropagation()}
+                            >
                               <Typography variant="h6" fontWeight="600" sx={{ fontSize: "1.1rem", mb: 2 }}>
                                 <Box component="span" sx={{ fontWeight: "normal" }}>QUANTITY: </Box>
                                 {academyPlans[quantityIndex].learners} {selectedAddon?.unitLabel}
@@ -240,6 +251,7 @@ export const PricingAddons = ({ isYearly = false }) => {
                                 </Typography>
                               </Box>
                             </Box>
+                            )}
                           </FeatureDetails>
                         </Box>
                       </Box>
