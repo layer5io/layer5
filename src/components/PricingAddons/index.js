@@ -23,7 +23,7 @@ export const PricingAddons = ({ isYearly = false }) => {
   useEffect(() => {
     if (selectedAddon) {
       let baseTotal = 0;
-      if (selectedAddon.id === "academy") {
+      if (selectedAddon.id === "academy" || selectedAddon.id === "academy-theory") {
         // For academy, use the learner options pricing
         const currentLearnerOption = academyPlans[quantityIndex];
         const monthlyPerUserCost = currentLearnerOption.monthlyPerUser;
@@ -39,7 +39,7 @@ export const PricingAddons = ({ isYearly = false }) => {
 
       // Handle Academy Sub-AddOns (any selected sub-addons)
       let subAddOnTotal = 0;
-      if (selectedAddon?.id === "academy" && selectedAddon.subAddOns) {
+      if ((selectedAddon?.id === "academy" || selectedAddon.id === "academy-theory") && selectedAddon.subAddOns) {
         selectedAddon.subAddOns.forEach(subAddOn => {
           if (selectedSubAddOns[subAddOn.id]) {
             const subAddOnPrice = isYearly ? subAddOn.yearlyPrice : subAddOn.monthlyPrice;
@@ -130,7 +130,7 @@ export const PricingAddons = ({ isYearly = false }) => {
                                 {addon.name}
                               </Typography>
                               <Typography variant="body2" color="text.secondary" sx={{ fontStyle: "italic" }}>
-                                {addon.id === "academy"
+                                {(addon.id === "academy" || addon.id === "academy-theory")
                                   ? addon.description
                                   : (() => {
                                       const period = isYearly ? "/year" : "/month";
@@ -347,11 +347,11 @@ export const PricingAddons = ({ isYearly = false }) => {
                       <Box sx={{ display: "flex", flexDirection: "column", gap: 2, mb: 3 }}>
                         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                           <Typography variant="body1">
-                            {selectedAddon?.name} × {selectedAddon?.id === "academy" ? academyPlans[quantityIndex].learners : quantity}
+                            {selectedAddon?.name} × {(selectedAddon?.id === "academy" || selectedAddon?.id === "academy-theory") ? academyPlans[quantityIndex].learners : quantity}
                           </Typography>
                           <Typography variant="body1" fontWeight="500">
                             {(() => {
-                              if (selectedAddon?.id === "academy") {
+                              if (selectedAddon?.id === "academy" || selectedAddon?.id === "academy-theory") {
                                 const currentLearnerOption = academyPlans[quantityIndex];
                                 const monthlyPerUserCost = currentLearnerOption.monthlyPerUser;
                                 const yearlyPerUserCost = currentLearnerOption.yearlyPerUser;
@@ -366,7 +366,7 @@ export const PricingAddons = ({ isYearly = false }) => {
                           </Typography>
                         </Box>
 
-                        {selectedAddon?.id === "academy" && selectedAddon.subAddOns?.map((subAddOn) => (
+                        {(selectedAddon?.id === "academy" || selectedAddon?.id === "academy-theory") && selectedAddon.subAddOns?.map((subAddOn) => (
                           selectedSubAddOns[subAddOn.id] && (
                             <Box key={subAddOn.id} sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                               <Typography variant="body1">
