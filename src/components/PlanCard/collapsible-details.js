@@ -7,44 +7,50 @@ const FeatureDetailsWrapper = styled.div`
   display: inline;
   cursor: pointer;
 
-  .open {
-    margin: 0rem;
-    list-style: none;
-    height: auto !important;
-    opacity: 1 !important;
+  .details > * {
+    max-height: 0;
+    opacity: 0;
+    margin: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: opacity 0.2s ease-in-out, 
+                max-height 0.3s ease-in-out 0.1s,
+                margin 0.3s ease-in-out 0.1s,
+                visibility 0s linear 0.4s;
+  }
+
+  .details > .open {
+    max-height: 200px;
+    opacity: 1;
     margin-bottom: 1rem;
-    transition: all 0.4s !important;
+    visibility: visible;
+    transition: visibility 0s linear,
+                opacity 0.2s ease-in-out 0.1s, 
+                max-height 0.3s ease-in-out 0.2s,
+                margin 0.3s ease-in-out 0.2s;
   }
 
   .toggle-icon {
     width: 1.2rem;
     height: 1.2rem;
     fill: ${(props) => props.theme.primaryColor};
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .toggle-icon.expanded {
+    transform: rotate(90deg);
   }
 
   p {
     font-size: 0.9rem;
     margin: 0.5rem;
     color: ${(props) => props.theme.greyC1C1C1ToGreyB3B3B3};
-    transition: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
   .toggle-btn {
     display: inline-block;
     float: left;
     vertical-align: middle;
-  }
-
-  .closed {
-    opacity: 1;
-    height: 0;
-    transition: none;
-    visibility: hidden;
-  }
-
-  .open {
-    visibility: visible;
   }
 
   h5 {
@@ -93,10 +99,10 @@ const FeatureDetails = ({ category, description, tier, children, onToggle }) => 
         </h5>
         <div className="details">
           {description && (
-            <p className={`closed ${expand ? "open" : ""}`} dangerouslySetInnerHTML={{ __html: description }} />
+            <p className={expand ? "open" : ""} dangerouslySetInnerHTML={{ __html: description }} />
           )}
           {children && (
-            <div className={`closed ${expand ? "open" : ""}`}>
+            <div className={expand ? "open" : ""}>
               {children}
             </div>
           )}

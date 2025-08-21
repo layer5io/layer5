@@ -1,23 +1,9 @@
 import React from "react";
-import { CloudOutlined, Group } from "@mui/icons-material";
+import { Cloud, Group } from "@mui/icons-material";
 import AcademyIcon from "./AcademyIcon";
 
-// Academy learning plans with tiered pricing
-export const academyPlans = [
-  // { learners: 0, monthlyPerUser: 0 },
-  // { learners: 50, monthlyPerUser: 1.73, currency: "$" },
-  // { learners: 150, monthlyPerUser: 1.73, currency: "$" },
-  { learners: 250, monthlyPerUser: 1.29, yearlyPerUser: 1.05, currency: "$" },
-  { learners: 500, monthlyPerUser: 0.80, yearlyPerUser: 0.67, currency: "$" },
-  { learners: 1000, monthlyPerUser: 0.49, yearlyPerUser: 0.49, currency: "$" },
-  { learners: 2500, monthlyPerUser: 0.44, yearlyPerUser: 0.44, currency: "$" },
-];
+// Academy add-ons have tiered pricing based on the number of learners
 
-/**
- * Generate theme-aware add-ons configuration
- * @param {Object} theme - The theme object from useTheme hook
- * @returns {Array} Array of add-on configurations with theme-aware styling
- */
 export const getAddOns = (theme) => [
   {
     id: "academy",
@@ -25,7 +11,7 @@ export const getAddOns = (theme) => [
     description: "A comprehensive learning management system for creators and learners.",
     icon: <AcademyIcon
       primaryFill={theme?.palette?.background?.inverse || "#00B39F"}
-      secondaryFill={theme?.palette?.background?.inverse || "#FFFFFF"}
+      secondaryFill={theme?.palette?.background?.inverse || "#eee"}
     />,
     unitLabel: "learners",
     maxUnits: 5000,
@@ -37,8 +23,13 @@ export const getAddOns = (theme) => [
         description: "A comprehensive learning management system for creators and instructors on how to build, manage, and extend educational content like learning paths, challenges, and certifications.",
         unitLabel: "learners",
         maxUnits: 5000,
-        monthlyPrice: 0, // Free theoretical learning
-        yearlyPrice: 0,
+        pricing: [
+          { learners: 250, monthlyPerUser: 1.29, yearlyPerUser: 1.05, currency: "$" },
+          { learners: 500, monthlyPerUser: 0.80, yearlyPerUser: 0.67, currency: "$" },
+          { learners: 1000, monthlyPerUser: 0.49, yearlyPerUser: 0.49, currency: "$" },
+          { learners: 2500, monthlyPerUser: 0.44, yearlyPerUser: 0.44, currency: "$" },
+          { learners: "2500+", monthlyPerUser: "contact us", yearlyPerUser: "contact us", currency: "$" },
+        ],
         features: ["Learning Paths", "Challenges", "Certifications", "Instructor Console"],
       },
       {
@@ -46,8 +37,13 @@ export const getAddOns = (theme) => [
         name: "Practical Learning",
         description: "An inclusive, collaborative, hands-on learning environment with labs for students.",
         maxUnits: 5000,
-        monthlyPrice: 50, // Premium hands-on learning
-        yearlyPrice: 500, // ~15% discount for yearly
+        pricing: [
+          { learners: 250, monthlyPerUser: 1.29, yearlyPerUser: 1.05, currency: "$" },
+          { learners: 500, monthlyPerUser: 0.80, yearlyPerUser: 0.67, currency: "$" },
+          { learners: 1000, monthlyPerUser: 0.49, yearlyPerUser: 0.49, currency: "$" },
+          { learners: 2500, monthlyPerUser: 0.44, yearlyPerUser: 0.44, currency: "$" },
+          { learners: "2500+", monthlyPerUser: "contact us", yearlyPerUser: "contact us", currency: "$" },
+        ],
         features: ["Hands-on Learning", "Collaborative Instruction", "Visual Design", "Orchestrated Infrastructure"],
       }
     ],
@@ -58,7 +54,7 @@ export const getAddOns = (theme) => [
     description: "Managed cloud instances for comprehensive infrastructure configuration and lifecycle management",
     monthlyPrice: 64,
     yearlyPrice: 653, // ~15% discount for yearly
-    icon: <CloudOutlined sx={{ color: theme?.palette?.background?.inverse || "#FFFFFF" }} />,
+    icon: <Cloud sx={{ color: theme?.palette?.background?.inverse || "#FFFFFF" }} />,
     unitLabel: "servers",
     maxUnits: 50,
     features: ["Automated deployment", "Real-time monitoring", "Multi-cluster support", "Performance analytics"],
