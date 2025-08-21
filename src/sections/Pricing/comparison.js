@@ -202,10 +202,10 @@ const Comparison = () => {
             <tbody>
               <tr>
                 <th className="price-blank"></th>
-                <th className="price-blank"></th>
-                <th className="price-blank"></th>
-                <th className="price-blank"></th>
+                  <th className="price-blank"></th>
                 <th className="price-table-popular">Most popular</th>
+                <th className="price-blank"></th>
+                <th className="price-blank"></th>
               </tr>
               <tr className="price-table-head">
                 <td></td>

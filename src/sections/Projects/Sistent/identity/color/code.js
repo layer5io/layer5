@@ -404,7 +404,6 @@ const componentColors = [
 
 const CopyColor = ({ hex , token }) => {
   const [copyText, setCopyText] = useState("Copy");
-  const [showCopy, setShowCopy] = useState(false);
 
   const handleCopy = async () => {
     await copyToClipboard(hex || token);
@@ -433,8 +432,6 @@ const CopyColor = ({ hex , token }) => {
               theme.palette.action?.hover || "rgba(0, 0, 0, 0.04)",
           },
         }}
-        onMouseEnter={() => setShowCopy(true)}
-        onMouseLeave={() => setShowCopy(false)}
         onClick={handleCopy}
       >
         <span>{hex || token }</span>

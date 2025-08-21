@@ -17,8 +17,8 @@ function generatePlans(data) {
     "TeamDesigner": {
       tier: "Team Designer",
       featured: false,
-      monthlyprice: 8,
-      yearlyprice: 68,
+      monthlyprice: 16,
+      yearlyprice: 164,
       byline: "Advanced collaboration for declarative DevOps",
       byline2: "← Everything included in Free, plus...",
       button: ["Start Free Trial", "https://cloud.layer5.io"],
@@ -26,8 +26,8 @@ function generatePlans(data) {
     "TeamOperator": {
       tier: "Team Operator",
       featured: false,
-      monthlyprice: 8,
-      yearlyprice: 68,
+      monthlyprice: 16,
+      yearlyprice: 164,
       // pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Advanced collaboration for imperative DevOps",
       byline2: "← Everything included in Free, plus...",
@@ -36,8 +36,8 @@ function generatePlans(data) {
     "Enterprise": {
       tier: "Enterprise",
       featured: true,
-      monthlyprice: 22,
-      yearlyprice: 248,
+      monthlyprice: 44,
+      yearlyprice: 449,
       pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Flexible deployment, and MSP multi-tenancy.",
       byline2: "← Everything included in Team, plus...",

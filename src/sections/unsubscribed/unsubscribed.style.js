@@ -11,7 +11,7 @@ const UnsubscribedWrapper = styled.div`
         width: 100%;
         text-align: center;
     }
-    h2,h3,h4,h5{
+    .parentcard h2,h3,h4,h5{
         text-align: center;
         font-weight: normal;
         margin-top: 1.5rem;

@@ -1,11 +1,7 @@
 import React from "react";
-import { Col, Container, Row } from "../../../reusecore/Layout";
+import { Container } from "../../../reusecore/Layout";
 import styled from "styled-components";
-import Button from "../../../reusecore/Button";
-import { GiClockwork } from "@react-icons/all-files/gi/GiClockwork";
-import { StaticImage } from "gatsby-plugin-image";
 import KanvasVisualizerViews from "../../Home/Playground-home";
-const  MultiMesh = "./multi-mesh.svg";
 
 const ManageMeshWrapper = styled.div`
   margin: 4rem auto;

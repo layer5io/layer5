@@ -13,7 +13,8 @@ export const options =  [
       { id: 8, value: "Infographic", label: "Infographic" },
       { id: 9, value: "Guide", label: "Guide" },
       { id: 10, value: "FAQ", label: "FAQ" },
-      { id: 11, value: "Interview", label: "Interview" }]
+      { id: 11, value: "Interview", label: "Interview" },
+      { id: 12, value: "Comparison", label: "Comparison" }]
   },
   {
     category: "Product",
