@@ -157,7 +157,7 @@ export const PricingAddons = ({ isYearly = false }) => {
                             sx={{ mb: 2, display: "block" }}
                           />
                         ))}
-                        
+
                         <Box className="feature">
                           <FeatureDetails
                             category={selectedAddon.name}
