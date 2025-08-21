@@ -166,7 +166,7 @@ export const PricingAddons = ({ isYearly = false }) => {
                             description={selectedAddon.description}
                           >
                             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: 1 }}>
-                              {selectedAddon.features.map((feature, index) => (
+                              {selectedAddon?.features?.map((feature, index) => (
                                 <Chip
                                   key={`main-${index}`}
                                   icon={<CheckCircle sx={{ fontSize: 12 }} />}
