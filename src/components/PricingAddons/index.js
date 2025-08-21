@@ -259,7 +259,7 @@ export const PricingAddons = ({ isYearly = false }) => {
                   )}
 
                   {/* SELECTED ADD-ON DETAILS - Other Plans */}
-                  {selectedAddon?.id !== "academy" && (
+                  {selectedAddon && selectedAddon?.id !== "academy" && (
                     <>
                       <Box sx={{ mt: 3 }}>
                         <Typography variant="h6" fontWeight="600" sx={{ fontSize: "1.1rem", mb: 2 }}>
