@@ -22,14 +22,14 @@ export const getAddOns = (theme) => [
   {
     id: "academy",
     name: "Academy",
-    description: "A comprehensive learning management system for creators and instructors on how to build, manage, and extend educational content like learning paths, challenges, and certifications.",
+    description: "A comprehensive learning management system for creators and learners.",
     icon: <AcademyIcon
-      primaryFill={theme?.palette?.primary?.light || "#00B39F"}
+      primaryFill={theme?.palette?.background?.inverse || "#00B39F"}
       secondaryFill={theme?.palette?.background?.inverse || "#FFFFFF"}
     />,
     unitLabel: "learners",
     maxUnits: 5000,
-    features: ["Learning Paths", "Challenges", "Certifications", "Instructor Console"],
+    // features: ["Learning Paths", "Challenges", "Certifications", "Instructor Console"],
     subAddOns: [
       {
         id: "academy-theory",
@@ -69,7 +69,7 @@ export const getAddOns = (theme) => [
     description: "This premium offering delivers a secure, high-performance WebRTC solution, purpose-built for real-time, multiplayer collaboration across distributed teams. Powered by Conflict-Free Replicated Data Types (CRDT), this feature ensures seamless, low-latency synchronization of cloud native designs, configurations, and operational workflows, even in complex multi-cluster Kubernetes and public Cloud environments.",
     monthlyPrice: 1.50,
     yearlyPrice: 15.30, // ~15% discount for yearly
-    icon: <Group sx={{ color: theme?.palette?.background?.secondary || "#00B39F" }} />,
+    icon: <Group sx={{ color: theme?.palette?.background?.inverse || "#00B39F" }} />,
     unitLabel: "collaborators",
     maxUnits: 200,
     features: ["Enhanced Security", "Guaranteed SLAs", "Conflict-Free Synchronization", "Real-Time Collaboration"],

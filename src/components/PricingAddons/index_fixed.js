@@ -88,6 +88,7 @@ export const PricingAddons = ({ isYearly = false }) => {
             sx={{
               maxWidth: 800,
               mx: "auto",
+              marginTop: "6rem",
               border: "1px solid",
               borderColor: "primary.main",
               borderRadius: 3,
@@ -199,7 +200,9 @@ export const PricingAddons = ({ isYearly = false }) => {
                             {/* Academy Quantity Slider */}
                             <Box sx={{ mt: 3 }}>
                               <Typography variant="h6" fontWeight="600" sx={{ fontSize: "1.1rem", mb: 2 }}>
-                                <Box component="span" sx={{ fontWeight: "normal" }}>QUANTITY: </Box>
+                                <Box component="span" sx={{ fontWeight: "normal" }}>
+                                  QUANTITY:
+                                </Box>
                                 {academyPlans[quantityIndex].learners} {selectedAddon?.unitLabel}
                               </Typography>
                               <Slider
@@ -216,7 +219,7 @@ export const PricingAddons = ({ isYearly = false }) => {
                                 }}
                                 max={academyPlans.length - 1}
                                 step={null}
-                                sx={{ mb: 4 }}
+                                sx={{ mb: 4, width: "80%" }}
                                 marks={academyPlans.map((option, index) => ({
                                   value: index,
                                   label: (
@@ -245,7 +248,7 @@ export const PricingAddons = ({ isYearly = false }) => {
                   )}
 
                   {/* SELECTED ADD-ON DETAILS - Other Plans */}
-                  {selectedAddon?.id !== "academy" && (
+                  {selectedAddon?.id !== "academy" && selectedAddon && (
                     <>
                       <Box sx={{ mt: 3 }}>
                         <Typography variant="h6" fontWeight="600" sx={{ fontSize: "1.1rem", mb: 2 }}>
