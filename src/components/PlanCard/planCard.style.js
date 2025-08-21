@@ -219,6 +219,17 @@ const PlanCardWrapper = styled.section`
   font-weight: 500;
   transition: 0.3s;
   background: ${(props) => props.theme.secondaryColor};
+
+}
+.addon-chip {
+  background-color: rgba(0, 179, 159, 0.15);
+  color: ${(props) => props.theme.text.light};
+  border: 1px solid;
+  border-color: ${(props) => props.theme.secondaryColor};
+
+}
+.addon-chip .MuiChip-icon {
+    color: ${(props) => props.theme.secondaryColor};
 }
 `;
 
