@@ -91,6 +91,8 @@ export const PricingAddons = ({ isYearly = false }) => {
               border: "1px solid",
               borderColor: "primary.main",
               borderRadius: 3,
+              zIndex: 1,
+              marginTop: "64px",
             }}
           >
             <CardHeader
