@@ -461,12 +461,6 @@ const CopyColor = ({ hex, token, copyValue }) => {
     }));
   }, []);
 
-  const handleKeyPress = useCallback((event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      handleCopy();
-    }
-  }, [handleCopy]);
 
   const getTooltipTitle = () => {
     if (copyState.isCopied) {
@@ -551,7 +545,6 @@ const CopyColor = ({ hex, token, copyValue }) => {
         onClick={handleCopy}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        onKeyPress={handleKeyPress}
       >
         <span>{getCopyValue()}</span>
         <Box
