@@ -93,6 +93,7 @@ Let's explore a few of these categories.
 1. **Triangles**:
 
     <img
+      class="image-design-icons"
       src={Triangles}
       align="center"
       width="25%"
@@ -105,9 +106,10 @@ Let's explore a few of these categories.
     - **Examples**: API Service, Service.
 
 
-1. **Rectangles**:
+2. **Rectangles**:
 
     <img
+      class="image-design-icons"
       src={Rectangles}
       align="center"
       width="25%"
@@ -121,9 +123,10 @@ Let's explore a few of these categories.
 
     - **Examples**: Namespace, Node, Pod, ReplicaSet, DaemonSet, Horizontal Pod Autoscaler.
 
-1. **User Icons**:
+3. **User Icons**:
 
     <img
+      class="image-design-icons"
       src={Users}
       align="center"
       width="25%"
@@ -135,9 +138,10 @@ Let's explore a few of these categories.
 
     - **Examples**: ClusterRole, Role, Service Account etc.
 
-1. **Cylinders**:
+4. **Cylinders**:
 
     <img
+      class="image-design-icons"
       src={Cylinders}
       align="center"
       width="25%"
@@ -163,6 +167,7 @@ Note that users have the flexibility to **customize** these arrow styles to suit
 **Edge Relationships**
 
 <img
+  class="image-design-icons"
   src={DashedArrows}
   align="center"
   width="25%"
@@ -173,6 +178,7 @@ These are used to indicate traffic flow and relationships between components. Th
 **Annotations**
 
 <img
+  class="image-design-icons"
   src={AnnotationArrow}
   align="center"
   width="25%"
@@ -185,6 +191,7 @@ These are used to denote annotations or static connections between components. T
 1. **Edge-Network Relationship**: Represented by a dashed arrow with **port/network protocol**.
 
 <img
+  class="image-design-icons"
   src={NetworkEdgeRelationship}
   align="center"
   width="50%"
@@ -205,6 +212,7 @@ These are used to denote annotations or static connections between components. T
 The intermediary component (such as a RoleBinding) connects the two, defining how permissions are assigned. For example, a dashed arrow from a `Role` to a `ServiceAccount` with a `RoleBinding` in the middle shows the connection established by the RoleBinding, which links the specific role to the service account and grants the appropriate permissions.
 
 <img
+  class="image-design-icons"
   src={EdgePermissions}
   align="center"
   width="50%"
@@ -213,7 +221,8 @@ The intermediary component (such as a RoleBinding) connects the two, defining ho
 **Creating Edge-Permission Relationships Between Components**
 
 <a href={edgePermissionGif}>
-  <img src={edgePermissionGif} width="100%" align="center" />
+  <img src={edgePermissionGif} width="100%" align="center" 
+  />
 </a>
 
 
@@ -227,20 +236,17 @@ Meshery extends and offers support for numerous [integrations](https://docs.mesh
 In Meshery, these integrated components are distinctly represented by their specific logos as icons and various shapes. These components can be found in `Components` in the dock.
 
 <img
+  class="image-design-icons"
   src={Integrations}
   align="center"
   width="50%"
-  style={{ 
-    marginTop: '20px', 
-    marginBottom: '20px', 
-  }} 
 />
 <h5 class="chapter-sub-heading">_Example of integration components in Meshery_</h5>
 
 Below is a Meshery Design with AWS Components.
 
 <MesheryDesignEmbed
-  style={{ border: "1px solid #eee" }}
+  style={{ border: "1px solid #eee" , margin: "15px 0px 15px 0px"}}
   embedId="embedded-design-79d1f362-39b3-46f2-b658-42a16984f88e"
   embedScriptSrc="/embed-test/embedded-design-awscomplex.js"
 />
@@ -271,14 +277,15 @@ Annotations can be created using Meshery's Diagramming tools found in the dock a
 1. **Images**:  Images can be added to the design to represent components, logos, or any visual aid that supports understanding the architecture.
 
 <a href={AnnotationExampleGif}>
-  <img src={AnnotationExampleGif} width="100%" align="center" />
+  <img src={AnnotationExampleGif} width="100%" align="center" 
+  />
 </a>
 
 
 The design below includes annotations such as sections, images, arrows, and various shapes.
 
 <MesheryDesignEmbed
-  style={{ border: "1px solid #eee" }}
+  style={{ border: "1px solid #eee" , margin: "15px 0px 15px 0px"}}
   embedId="embedded-design-a83f0098-2f91-4275-b075-c8676e842804"
   embedScriptSrc="/embed-test/embedded-design-annotations-example.js"
 />
@@ -292,14 +299,16 @@ While default shapes, colors, and icons are provided for components and annotati
 **Customizing Kubernetes Components**
 
 <a href={CustomizeKubernetesGif}>
-  <img src={CustomizeKubernetesGif} width="100%" align="center" />
+  <img src={CustomizeKubernetesGif} width="100%" align="center" 
+  />
 </a>
 
 
 **Creating and Customizing Arrow Annotations**
 
 <a href={CreateAnnotationGif}>
-  <img src={CreateAnnotationGif} width="100%" align="center" />
+  <img src={CreateAnnotationGif} width="100%" align="center" 
+  />
 </a>
 
 

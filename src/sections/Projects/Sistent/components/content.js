@@ -126,6 +126,35 @@ const componentsData = [
     url: "/projects/sistent/components/icons",
     src: "/icons"
   },
+  {
+    id: 17,
+    name: "Dialog",
+    description: "Dialogs display important prompts or confirmation requests that interrupt user interaction flow.",
+    url: "/projects/sistent/components/dialog",
+    src: "/dialog",
+  },
+  {
+    id: 18,
+    name: "Circular Progress",
+    description:
+      "The Circular Progress component displays a circular loading indicator that represents the progress in your application",
+    url: "/projects/sistent/components/circularprogress",
+    src: "/circularprogress",
+  },
+  {
+    id: 19,
+    name: "Switch",
+    description: "The Switch component allows users to toggle the state of a single setting on or off.",
+    url: "/projects/sistent/components/switch",
+    src: "/switch"
+  },
+  {
+    id: 20,
+    name: "Tabs",
+    description: "Tabs organize and allow navigation between groups of content that are related and at the same level of hierarchy.",
+    url: "/projects/sistent/components/tabs",
+    src: "/tabs",
+  }
 ];
 
 module.exports = { componentsData };
