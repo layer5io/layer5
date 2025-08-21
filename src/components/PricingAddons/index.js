@@ -20,6 +20,12 @@ export const PricingAddons = ({ isYearly = false }) => {
 
   const addOns = getAddOns(theme);
   const [isDetailsExpanded, setIsDetailsExpanded] = useState(false);
+  const [expandedSubSections, setExpandedSubSections] = useState({});
+
+  const handleSubToggle = (id, isOpen) => {
+    setExpandedSubSections(prev => ({ ...prev, [id]: isOpen }));
+  };
+
   useEffect(() => {
     if (selectedAddon) {
       let baseTotal = 0;
@@ -166,94 +172,87 @@ export const PricingAddons = ({ isYearly = false }) => {
                           ))}
                         </Box>
 
-                        <Box className="feature">
-                          <FeatureDetails
-                            category={selectedAddon.name}
-                            description={selectedAddon.description}
-                            onToggle={(isOpen) => setIsDetailsExpanded(isOpen)}
-                          >
-                            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: 1 }}>
-                              {selectedAddon?.features?.map((feature, index) => (
-                                <Chip
-                                  key={`main-${index}`}
-                                  icon={<CheckCircle sx={{ fontSize: 12 }} />}
-                                  label={feature}
-                                  size="small"
-                                  sx={{
-                                    backgroundColor: "transparent",
-                                    color: "text.primary",
-                                    "& .MuiChip-icon": { color: "primary.main" },
-                                  }} />
-                              ))}
+                        {selectedAddon.subAddOns?.map((subAddOn) => (
+                          selectedSubAddOns[subAddOn.id] && (
+                            <Box key={subAddOn.id} className="feature">
+                              <FeatureDetails
+                                category={subAddOn.name}
+                                description={subAddOn.description}
+                                onToggle={(isOpen) => handleSubToggle(subAddOn.id, isOpen)}
+                              >
+                                <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: 1 }}>
+                                  {subAddOn.features?.map((feature, index) => (
+                                    <Chip
+                                      key={`${subAddOn.id}-${index}`}
+                                      icon={<CheckCircle sx={{ fontSize: 12 }} />}
+                                      label={feature}
+                                      size="small"
+                                      sx={{
+                                        backgroundColor: "rgba(0, 179, 159, 0.15)",
+                                        color: "text.primary",
+                                        "& .MuiChip-icon": { color: "primary.main" },
+                                        border: "1px solid",
+                                        borderColor: "primary.main"
+                                      }} />
+                                  ))}
+                                </Box>
 
-                              {/* Show features from selected subAddOns */}
-                              {selectedAddon.subAddOns?.map((subAddOn) => (
-                                selectedSubAddOns[subAddOn.id] && subAddOn.features?.map((feature, index) => (
-                                  <Chip
-                                    key={`${subAddOn.id}-${index}`}
-                                    icon={<CheckCircle sx={{ fontSize: 12 }} />}
-                                    label={feature}
-                                    size="small"
-                                    sx={{
-                                      backgroundColor: "rgba(0, 179, 159, 0.15)",
-                                      color: "text.primary",
-                                      "& .MuiChip-icon": { color: "primary.main" },
-                                      border: "1px solid",
-                                      borderColor: "primary.main"
-                                    }} />
-                                ))
-                              ))}
-                            </Box>
-
-                            {/* Academy Quantity Slider */}
-                            {isDetailsExpanded && academyPlans?.length > 0 && (
-                            <Box sx={{ mt: 3 }}
-                                onClick={(e) => e.stopPropagation()}
-                                onMouseDown={(e) => e.stopPropagation()}
-                            >
-                              <Typography variant="h6" fontWeight="600" sx={{ fontSize: "1.1rem", mb: 2 }}>
-                                <Box component="span" sx={{ fontWeight: "normal" }}>QUANTITY: </Box>
-                                {academyPlans[quantityIndex].learners} {selectedAddon?.unitLabel}
-                              </Typography>
-                              <Slider
-                                value={quantityIndex}
-                                onChange={(event, newValue) => setQuantityIndex(newValue)}
-                                min={0}
-                                valueLabelDisplay="auto"
-                                valueLabelFormat={(value) => {
-                                  const option = academyPlans[value];
-                                  const pricePerUser = isYearly ? option.yearlyPerUser : option.monthlyPerUser;
-                                  const totalPrice = pricePerUser * option.learners;
-                                  const period = isYearly ? "/year" : "/month";
-                                  return `${option.learners} learners - ${formatPrice(totalPrice)}${period}`;
-                                }}
-                                max={academyPlans.length - 1}
-                                step={null}
-                                sx={{ mb: 4 }}
-                                marks={academyPlans.map((option, index) => ({
-                                  value: index,
-                                  label: (
-                                    <Box sx={{ textAlign: "center", fontSize: "0.75rem" }}>
-                                      <Box>{option.learners === 1000 ? "1,000+" : option.learners}</Box>
-                                      <Box sx={{ color: "primary.main", fontWeight: "bold", mt: 0.5 }}>
-                                        {formatPrice(isYearly ? option.yearlyPerUser * option.learners : option.monthlyPerUser * option.learners)}
-                                      </Box>
+                                {/* Sub-AddOn Quantity Slider */}
+                                {expandedSubSections[subAddOn.id] && academyPlans?.length > 0 && (
+                                  <Box sx={{ mt: 3 }}
+                                    onClick={(e) => e.stopPropagation()}
+                                    onMouseDown={(e) => e.stopPropagation()}
+                                  >
+                                    <Typography variant="h6" fontWeight="600" sx={{ fontSize: "1.1rem", mb: 2 }}>
+                                      <Box component="span" sx={{ fontWeight: "normal" }}>QUANTITY: </Box>
+                                      {academyPlans[quantityIndex].learners} learners
+                                    </Typography>
+                                    <Slider
+                                      value={quantityIndex}
+                                      onChange={(event, newValue) => setQuantityIndex(newValue)}
+                                      min={0}
+                                      valueLabelDisplay="auto"
+                                      valueLabelFormat={(value) => {
+                                        const option = academyPlans[value];
+                                        if (subAddOn.id === "academy-theory") {
+                                          const pricePerUser = isYearly ? option.yearlyPerUser : option.monthlyPerUser;
+                                          const totalPrice = pricePerUser * option.learners;
+                                          const period = isYearly ? "/year" : "/month";
+                                          return `${option.learners} learners - ${formatPrice(totalPrice)}${period}`;
+                                        }
+                                        return `${option.learners} learners`;
+                                      }}
+                                      max={academyPlans.length - 1}
+                                      step={null}
+                                      sx={{ mb: 4 }}
+                                      marks={academyPlans.map((option, index) => ({
+                                        value: index,
+                                        label: (
+                                          <Box sx={{ textAlign: "center", fontSize: "0.75rem" }}>
+                                            <Box>{option.learners === 1000 ? "1,000+" : option.learners}</Box>
+                                            {subAddOn.id === "academy-theory" && (
+                                              <Box sx={{ color: "primary.main", fontWeight: "bold", mt: 0.5 }}>
+                                                {formatPrice(isYearly ? option.yearlyPerUser * option.learners : option.monthlyPerUser * option.learners)}
+                                              </Box>
+                                            )}
+                                          </Box>
+                                        ),
+                                      }))}
+                                    />
+                                    <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+                                      <Typography variant="body2" color="text.secondary">
+                                        learners
+                                      </Typography>
+                                      <Typography variant="body2" color="text.secondary">
+                                        {subAddOn.maxUnits}
+                                      </Typography>
                                     </Box>
-                                  ),
-                                }))}
-                              />
-                              <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                                <Typography variant="body2" color="text.secondary">
-                                  learners
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                  {selectedAddon?.maxUnits}
-                                </Typography>
-                              </Box>
+                                  </Box>
+                                )}
+                              </FeatureDetails>
                             </Box>
-                            )}
-                          </FeatureDetails>
-                        </Box>
+                          )
+                        ))}
                       </Box>
                     </>
                   )}
