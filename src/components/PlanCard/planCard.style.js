@@ -138,6 +138,15 @@ const PlanCardWrapper = styled.section`
   .pricing-features {
     margin-top: 2rem;
     line-height: 1rem;
+    .add-on-separator {
+      margin: 1.5rem 0 1rem 0;
+      .add-on-line {
+        border: none;
+        border-top: 1px solid ${(props) => props.theme.greyDCDCDCToGrey3B3B3B};
+        opacity: 0.5;
+        margin: 0;
+      }
+    }
     .feature {
       margin: 0rem 0rem;
       line-height: 1rem;
