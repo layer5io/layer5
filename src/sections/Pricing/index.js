@@ -6,6 +6,7 @@ import Reviews from "./review-slider";
 import options from "./generatePlans";
 import PlanCard from "../../components/PlanCard";
 import OpenSourceBanner from "./openSource";
+import { PricingAddons } from "../../components/PricingAddons";
 
 const Pricing = () => {
   // const [monthly, setMonthly] = useState(false);
@@ -45,6 +46,9 @@ const Pricing = () => {
 
       <div className="wrapper">
         <PlanCard planData={options} isYearly={isYearly}/>
+      </div>
+      <div className="wrapper">
+        <PricingAddons sx={{ marginTop: "6rem" }} isYearly={isYearly} />
       </div>
       <Comparison />
       <Reviews />
