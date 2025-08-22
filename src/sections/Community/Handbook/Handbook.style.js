@@ -1,14 +1,12 @@
 import styled from "styled-components";
 export const HandbookWrapper = styled.div`
-    /* Ensure consistent initial layout for SSR */
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    position: relative;
 
     .content > a:first-of-type > h2:first-of-type {
       padding-top: 1rem;
     }
+
     .highlight{
       font-weight: 600;
     }
@@ -86,61 +84,22 @@ export const HandbookWrapper = styled.div`
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
-    /* SSR-safe header with strict dimension control */
     .page-header-section {
-      position: relative;
-      width: 100%;
-      height: 160px;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      min-height: 10rem;
+      text-align: center;
       background: rgb(71,126,150);
       background: linear-gradient(250deg, rgba(71,126,150,1) 0%, rgba(0,179,159,1) 35%, rgba(60,73,79,1) 100%);
-      /* Prevent layout shift during hydration */
-      contain: layout;
-    }
-
-    .page-header-section h1 {
-      margin: 0;
-      padding: 0 1rem;
-      width: 100%;
-      max-width: 1200px;
-      color: white;
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1.2;
-      text-align: center;
-      box-sizing: border-box;
-    }
-
-    @media screen and (max-width: 768px) {
-      .page-header-section {
-        height: auto;
-        min-height: 140px;
-        padding: 1rem 0;
+      padding: 1rem 0;
+      h1 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 8rem;
       }
-      
-      .page-header-section h1 {
-        font-size: 1.5rem;
-        line-height: 1.2;
-        padding: 0 1rem;
-        word-wrap: break-word;
-        hyphens: auto;
-      }
-    }
-
-    @media screen and (max-width: 480px) {
-      .page-header-section {
-        min-height: 120px;
-        padding: 0.75rem 0;
-      }
-      
-      .page-header-section h1 {
-        font-size: 1.25rem;
-        line-height: 1.1;
-        padding: 0 0.75rem;
+      @media (max-width: 680px) {
+          h1 {
+              font-size: 1.75rem;
+          }
       }
     }
 
@@ -244,7 +203,7 @@ export const HandbookWrapper = styled.div`
     }
       
     input[type=checkbox] + label:before {
-      content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="4 4 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');
+      content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 4 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');;
       border: 0.1em solid #000;
       border-radius: 0.2em;
       display: inline-block;
@@ -253,6 +212,7 @@ export const HandbookWrapper = styled.div`
       padding-left: 0.2em;
       padding-bottom: 0.3em;
       margin-right: 0.5em;
+
       margin-bottom: 0.15em;
       vertical-align: bottom;
       color: transparent;
@@ -272,7 +232,8 @@ export const HandbookWrapper = styled.div`
     }
 
     input[type=checkbox]:checked + label:before {
-      content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="black" viewBox="4 4 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');
+      content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="black" viewBox="0 4 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');;
+
       background-color: ${(props) => props.theme.keppelColor};
       border-color: ${(props) => props.theme.primaryLightColorTwo};
       color: #fff;
