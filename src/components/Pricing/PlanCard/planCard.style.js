@@ -138,6 +138,22 @@ const PlanCardWrapper = styled.section`
   .pricing-features {
     margin-top: 2rem;
     line-height: 1rem;
+    .add-on-separator {
+      margin: 1.5rem 0 1rem 0;
+      .add-on-label {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: ${(props) => props.theme.secondaryColor};
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+      .add-on-line {
+        border: none;
+        border-top: 1px solid ${(props) => props.theme.greyDCDCDCToGrey3B3B3B};
+        opacity: 0.5;
+        margin: 0;
+      }
+    }
     .feature {
       margin: 0rem 0rem;
       line-height: 1rem;
@@ -210,6 +226,17 @@ const PlanCardWrapper = styled.section`
   font-weight: 500;
   transition: 0.3s;
   background: ${(props) => props.theme.secondaryColor};
+
+}
+.addon-chip {
+  background-color: rgba(0, 179, 159, 0.15);
+  color: ${(props) => props.theme.text.light};
+  border: 1px solid;
+  border-color: ${(props) => props.theme.secondaryColor};
+
+}
+.addon-chip .MuiChip-icon {
+    color: ${(props) => props.theme.secondaryColor};
 }
 `;
 
