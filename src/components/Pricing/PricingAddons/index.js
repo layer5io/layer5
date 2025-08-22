@@ -309,7 +309,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                                   color="primary" />}
                             sx={{ display: "flex", justifySelf: "flex-end", marginRight: -1, marginTop: "-0.5rem", marginLeft: 1, padding: 0, alignItems: "flex-start" }}
                           />
-                          <FeatureDetails 
+                          <FeatureDetails
                             category="Practical Learning"
                             description="An inclusive, collaborative, hands-on learning environment powered by Kanvas with labs for students."
                           >
@@ -354,7 +354,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                             } else {
                               targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory");
                             }
-                            
+
                             if (targetSubAddon?.pricing && targetSubAddon.pricing[value]) {
                               const option = targetSubAddon.pricing[value];
                               const pricePerUser = isYearly ? option.yearlyPerUser : option.monthlyPerUser;
@@ -406,12 +406,12 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                             } else {
                               targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory");
                             }
-                            
+
                             return targetSubAddon?.pricing?.map((option, index) => ({
                               value: index,
                               label: (
                                 <Box sx={{ textAlign: "center", fontSize: "1.25rem" }}>
-                                  
+
                                   <Box>{option.learners === "2500+" ? "2,500+" : option.learners}</Box>
                                   <Box sx={{ color: "primary.main", mb: 1.5, fontSize: ".9rem" }}>
                                     {option.currency}{isYearly ? option.yearlyPerUser : option.monthlyPerUser}/{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
