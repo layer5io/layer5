@@ -145,6 +145,20 @@ const componentsData = [
   },
   {
     id: 19,
+    name: "Switch",
+    description: "The Switch component allows users to toggle the state of a single setting on or off.",
+    url: "/projects/sistent/components/switch",
+    src: "/switch"
+  },
+  {
+    id: 20,
+    name: "Tabs",
+    description: "Tabs organize and allow navigation between groups of content that are related and at the same level of hierarchy.",
+    url: "/projects/sistent/components/tabs",
+    src: "/tabs",
+  },
+  {
+    id: 21,
     name: "Avatar",
     description:
       "An Avatar component is used to visually represent a user, profile, or entity, typically through an image, initials, or icon.",
@@ -152,7 +166,7 @@ const componentsData = [
     src: "/avatar",
   },
   {
-    id: 20,
+    id: 22,
     name: "AvatarGroup",
     description:
       "An AvatarGroup component is used to display a collection of Avatars together, typically representing a group of users, collaborators, or participants.",
