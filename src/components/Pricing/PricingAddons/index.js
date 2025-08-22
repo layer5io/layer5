@@ -285,9 +285,9 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                             description="A comprehensive learning management system for creators and instructors on how to build, manage, and extend educational content like learning paths, challenges, and certifications."
                           >
                             <Box sx={{ display: "flex", flexDirection: "row", flexWrap: "wrap", gap: 1, my: 1, mt: 1 }}>
-                              {selectedAddon?.features?.map((feature, index) => (
+                              {selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory")?.features?.map((feature, index) => (
                                 <Chip
-                                  key={`main-${index}`}
+                                  key={`theory-${index}`}
                                   icon={<CheckCircle sx={{ fontSize: 12 }} />}
                                   label={feature}
                                   size="small"
@@ -298,18 +298,6 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                                     "& .MuiChip-icon": { color: "primary.main" },
                                   }} />
                               ))}
-                              <Chip icon={<CheckCircle sx={{ height: "1rem" }} />}
-                                label="Learning Paths" size="large" className="addon-chip"
-                              />
-                              <Chip icon={<CheckCircle sx={{ height: "1rem" }} />}
-                                label="Challenges" size="large" className="addon-chip"
-                              />
-                              <Chip icon={<CheckCircle sx={{ height: "1rem" }} />}
-                                label="Certifications" size="large" className="addon-chip"
-                              />
-                              <Chip icon={<CheckCircle sx={{ height: "1rem" }} />}
-                                label="Instructor Console" size="large" className="addon-chip"
-                              />
                             </Box>
                           </FeatureDetails>
                         </Box>
@@ -322,14 +310,14 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                               color="primary" />}
                             sx={{ display: "block", alignContent: "flex-start" }}
                           />
-                          <FeatureDetails sx={{ marginTop: ".5rem", alignSelf: "flex-start" }}
+                          <FeatureDetails 
                             category="Practical Learning"
                             description="An inclusive, collaborative, hands-on learning environment powered by Kanvas with labs for students."
                           >
                             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, my: 1, mt: 1 }}>
-                              {selectedAddon?.features?.map((feature, index) => (
+                              {selectedAddon?.subAddOns?.find(sub => sub.id === "academy-practical")?.features?.map((feature, index) => (
                                 <Chip
-                                  key={`main-${index}`}
+                                  key={`practical-${index}`}
                                   icon={<CheckCircle sx={{ fontSize: 12 }} />}
                                   label={feature}
                                   size="small"
@@ -339,18 +327,6 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                                     "& .MuiChip-icon": { color: "primary.main" },
                                   }} />
                               ))}
-                              <Chip icon={<CheckCircle sx={{ height: "1rem" }} />}
-                                label="Hands-on Learning" size="large" className="addon-chip"
-                              />
-                              <Chip icon={<CheckCircle sx={{ height: "1rem" }} />}
-                                label="Collaborative Instruction" size="large" className="addon-chip"
-                              />
-                              <Chip icon={<CheckCircle sx={{ height: "1rem" }} />}
-                                label="Visual Design" size="large" className="addon-chip"
-                              />
-                              <Chip icon={<CheckCircle sx={{ height: "1rem" }} />}
-                                label="Orchestrated Infrastructure" size="large" className="addon-chip"
-                              />
                             </Box>
                           </FeatureDetails>
                         </Box>
