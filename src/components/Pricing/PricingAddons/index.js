@@ -299,16 +299,16 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                                   }} />
                               ))}
                               <Chip icon={<CheckCircle sx={{ height: "1rem" }} />}
-                                label="Hands-on Learning" size="large" className="addon-chip"
+                                label="Learning Paths" size="large" className="addon-chip"
                               />
                               <Chip icon={<CheckCircle sx={{ height: "1rem" }} />}
-                                label="Collaborative Instruction" size="large" className="addon-chip"
+                                label="Challenges" size="large" className="addon-chip"
                               />
                               <Chip icon={<CheckCircle sx={{ height: "1rem" }} />}
-                                label="Visual Design" size="large" className="addon-chip"
+                                label="Certifications" size="large" className="addon-chip"
                               />
                               <Chip icon={<CheckCircle sx={{ height: "1rem" }} />}
-                                label="Orchestrated Infrastructure" size="large" className="addon-chip"
+                                label="Instructor Console" size="large" className="addon-chip"
                               />
                             </Box>
                           </FeatureDetails>
@@ -340,16 +340,16 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                                   }} />
                               ))}
                               <Chip icon={<CheckCircle sx={{ height: "1rem" }} />}
-                                label="Learning Paths" size="large" className="addon-chip"
+                                label="Hands-on Learning" size="large" className="addon-chip"
                               />
                               <Chip icon={<CheckCircle sx={{ height: "1rem" }} />}
-                                label="Challenges" size="large" className="addon-chip"
+                                label="Collaborative Instruction" size="large" className="addon-chip"
                               />
                               <Chip icon={<CheckCircle sx={{ height: "1rem" }} />}
-                                label="Certifications" size="large" className="addon-chip"
+                                label="Visual Design" size="large" className="addon-chip"
                               />
                               <Chip icon={<CheckCircle sx={{ height: "1rem" }} />}
-                                label="Instructor Console" size="large" className="addon-chip"
+                                label="Orchestrated Infrastructure" size="large" className="addon-chip"
                               />
                             </Box>
                           </FeatureDetails>

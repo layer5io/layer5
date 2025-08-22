@@ -86,7 +86,7 @@ export const getAddOns = (theme) => [
     unitLabel: "servers",
     maxUnits: 50,
     pricing: [
-      { units: 1, monthlyPerUnit: 64, yearlyPerUnit: 54.40, currency: "$" }, 
+      { units: 1, monthlyPerUnit: 64, yearlyPerUnit: 54.40, currency: "$" },
       { units: 25, monthlyPerUnit: 64, yearlyPerUnit: 54.40, currency: "$" },
       { units: 50, monthlyPerUnit: 64, yearlyPerUnit: 54.40, currency: "$" },
     ],
@@ -102,9 +102,9 @@ export const getAddOns = (theme) => [
     unitLabel: "collaborators",
     maxUnits: 200,
     pricing: [
-      { units: 1, monthlyPerUnit: 2, yearlyPerUnit: 1.70, currency: "$" }, 
-      { units: 100, monthlyPerUnit: 1.50, yearlyPerUnit: 1.275, currency: "$" }, 
-      { units: 200, monthlyPerUnit: 1.50, yearlyPerUnit: 1.275, currency: "$" }, 
+      { units: 1, monthlyPerUnit: 2, yearlyPerUnit: 1.70, currency: "$" },
+      { units: 100, monthlyPerUnit: 1.50, yearlyPerUnit: 1.275, currency: "$" },
+      { units: 200, monthlyPerUnit: 1.50, yearlyPerUnit: 1.275, currency: "$" },
     ],
     features: ["Enhanced Security", "Guaranteed SLAs", "Conflict-Free Synchronization", "Real-Time Collaboration"],
   },
