@@ -269,15 +269,18 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
 
                   {selectedAddon?.id === "academy" && (
                     <>
-                      <Box className="pricing-features" sx={{ marginTop: "-1rem" }}>
-                        <Box className="feature" sx={{ display: "flex", alignContent: "center", justifyContent: "space-evenly", flexWrap: "nowrap", gap: 1 }}>
+                      <Box className="pricing-features">
+                        <Typography variant="h6" sx={{ marginBottom: 2, marginTop: -2 }}>
+                          Add-On Features
+                        </Typography>
+                        <Box className="feature" sx={{ display: "flex", alignContent: "center", justifyContent: "flex-start", flexWrap: "nowrap", gap: 1 }}>
                           <FormControlLabel
                             key="academy-theory"
                             control={<Switch disabled
                               checked={selectedSubAddOns["academy-theory"] || false}
                               onChange={(e) => handleSubAddOnToggle("academy-theory", e.target.checked)}
                               color="primary" />}
-                            sx={{ display: "block", alignContent: "flex-start", padding: 0, margin: 0 }}
+                            sx={{ display: "flex", justifySelf: "flex-end", marginRight: -1, marginTop: "-0.5rem", marginLeft: 1, padding: 0, alignItems: "flex-start" }}
                           />
                           <FeatureDetails
                             sx={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}
@@ -288,44 +291,37 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                               {selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory")?.features?.map((feature, index) => (
                                 <Chip
                                   key={`theory-${index}`}
-                                  icon={<CheckCircle sx={{ fontSize: 12 }} />}
+                                  icon={<CheckCircle />}
                                   label={feature}
-                                  size="small"
-                                  sx={{
-                                    backgroundColor: "transparent",
-                                    color: "text.primary",
-                                    width: "fit-content",
-                                    "& .MuiChip-icon": { color: "primary.main" },
-                                  }} />
+                                  size="large"
+                                  className="addon-chip"
+                                  />
                               ))}
                             </Box>
                           </FeatureDetails>
                         </Box>
-                        <Box className="feature" sx={{ display: "flex", flexWrap: "nowrap", alignItems: "flex-start", gap: 1 }}>
+                        <Box className="feature" sx={{ display: "flex", flexWrap: "nowrap", justifyContent: "flex-end", alignItems: "flex-start", gap: 1, }}>
                           <FormControlLabel
                             key="academy-practical"
-                            control={<Switch sx={{ margin: 0, display: "flex", gap: 1, alignSelf: "flex-start" }}
-                              checked={selectedSubAddOns["academy-practical"] || false}
-                              onChange={(e) => handleSubAddOnToggle("academy-practical", e.target.checked)}
-                              color="primary" />}
-                            sx={{ display: "block", alignContent: "flex-start" }}
+                            control={<Switch sx={{ margin: 0, display: "flex", gap: 1, alignSelf: "flex-end" }}
+                                  checked={selectedSubAddOns["academy-practical"] || false}
+                                  onChange={(e) => handleSubAddOnToggle("academy-practical", e.target.checked)}
+                                  color="primary" />}
+                            sx={{ display: "flex", justifySelf: "flex-end", marginRight: -1, marginTop: "-0.5rem", marginLeft: 1, padding: 0, alignItems: "flex-start" }}
                           />
                           <FeatureDetails 
                             category="Practical Learning"
                             description="An inclusive, collaborative, hands-on learning environment powered by Kanvas with labs for students."
                           >
-                            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, my: 1, mt: 1 }}>
+                            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, my: .5, mt: 1 }}>
                               {selectedAddon?.subAddOns?.find(sub => sub.id === "academy-practical")?.features?.map((feature, index) => (
                                 <Chip
                                   key={`practical-${index}`}
-                                  icon={<CheckCircle sx={{ fontSize: 12 }} />}
+                                  icon={<CheckCircle />}
                                   label={feature}
-                                  size="small"
-                                  sx={{
-                                    backgroundColor: "transparent",
-                                    color: "text.primary",
-                                    "& .MuiChip-icon": { color: "primary.main" },
-                                  }} />
+                                  size="large"
+                                  className="addon-chip"
+                                  />
                               ))}
                             </Box>
                           </FeatureDetails>
@@ -333,16 +329,34 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                       </Box>
 
                       <Box sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: 1, mt: 2 }}>
-                        <Typography variant="h6" sx={{ justifySelf: "center", textAlign: "center", width: "100%", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>Learners</Typography>
+                        <Typography variant="h6" sx={{ justifySelf: "center", textAlign: "center", width: "100%", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
+                          {(() => {
+                            // Determine which sub-addon to show learner count for
+                            let targetSubAddon = null;
+                            if (selectedSubAddOns["academy-practical"]) {
+                              targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-practical");
+                            } else {
+                              targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory");
+                            }
+                            return targetSubAddon?.pricing?.[quantityIndex]?.learners || 0;
+                          })()} Learners
+                        </Typography>
                         <Slider
                           value={quantityIndex}
                           onChange={(event, newValue) => setQuantityIndex(newValue)}
                           min={0}
                           valueLabelDisplay="auto"
                           valueLabelFormat={(value) => {
-                            const theorySubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory");
-                            if (theorySubAddon?.pricing && theorySubAddon.pricing[value]) {
-                              const option = theorySubAddon.pricing[value];
+                            // Determine which sub-addon to show pricing for
+                            let targetSubAddon = null;
+                            if (selectedSubAddOns["academy-practical"]) {
+                              targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-practical");
+                            } else {
+                              targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory");
+                            }
+                            
+                            if (targetSubAddon?.pricing && targetSubAddon.pricing[value]) {
+                              const option = targetSubAddon.pricing[value];
                               const pricePerUser = isYearly ? option.yearlyPerUser : option.monthlyPerUser;
                               const totalPrice = pricePerUser * option.learners;
                               const period = isYearly ? "/year" : "/month";
@@ -350,7 +364,16 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                             }
                             return "";
                           }}
-                          max={selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory")?.pricing?.length - 1 || 0}
+                          max={(() => {
+                            // Determine which sub-addon to use for max value
+                            let targetSubAddon = null;
+                            if (selectedSubAddOns["academy-practical"]) {
+                              targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-practical");
+                            } else {
+                              targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory");
+                            }
+                            return (targetSubAddon?.pricing?.length - 1) || 0;
+                          })()}
                           step={null}
                           sx={{
                             mb: 2,
@@ -375,18 +398,32 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                               fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
                             },
                           }}
-                          marks={selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory")?.pricing?.map((option, index) => ({
-                            value: index,
-                            label: (
-                              <Box sx={{ textAlign: "center", fontSize: "1.25rem" }}>
-                                <Box>{option.learners === "2500+" ? "2,500+" : option.learners}</Box>
-                              </Box>
-                            ),
-                          })) || []}
+                          marks={(() => {
+                            // Determine which sub-addon to show pricing for based on selection
+                            let targetSubAddon = null;
+                            if (selectedSubAddOns["academy-practical"]) {
+                              targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-practical");
+                            } else {
+                              targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory");
+                            }
+                            
+                            return targetSubAddon?.pricing?.map((option, index) => ({
+                              value: index,
+                              label: (
+                                <Box sx={{ textAlign: "center", fontSize: "1.25rem" }}>
+                                  
+                                  <Box>{option.learners === "2500+" ? "2,500+" : option.learners}</Box>
+                                  <Box sx={{ color: "primary.main", mb: 1.5, fontSize: ".9rem" }}>
+                                    {option.currency}{isYearly ? option.yearlyPerUser : option.monthlyPerUser}/{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
+                                  </Box>
+                                </Box>
+                              ),
+                            })) || [];
+                          })()}
                         />
-                        <Box sx={{ display: "flex", my: 2, justifyContent: "space-between" }}>
+                        <Box sx={{ display: "flex", my: 5, justifyContent: "space-between" }}>
                           <Typography variant="body2" sx={{ fontStyle: "italic", color: "text.secondary", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
-                            Looking for a plan larger than 2,500 learners? Great! <Link to="/company/contact">Let us know</Link>.
+                            Looking for a plan larger than 2,500 learners? Great! <a href="/company/contact">Let us know</a>.
                           </Typography>
                         </Box>
                       </Box>
