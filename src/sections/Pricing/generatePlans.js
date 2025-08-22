@@ -72,7 +72,17 @@ function generatePlans(data) {
 
         return mappedItem;
       })
-      .sort((a, b) => a.categoryOrder - b.categoryOrder || a.functionOrder - b.functionOrder);
+      .sort((a, b) => {
+        // Handle "add-on" category order - should come last
+        if (a.categoryOrder === "add-on" && b.categoryOrder !== "add-on") return 1;
+        if (a.categoryOrder !== "add-on" && b.categoryOrder === "add-on") return -1;
+        if (a.categoryOrder === "add-on" && b.categoryOrder === "add-on") {
+          return a.functionOrder - b.functionOrder;
+        }
+
+        // Normal numeric sorting for non add-on categories
+        return a.categoryOrder - b.categoryOrder || a.functionOrder - b.functionOrder;
+      });
     return {
       ...tierInfo,
       summary: summary.length > 0 ? summary : [],
