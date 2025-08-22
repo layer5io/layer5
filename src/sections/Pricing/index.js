@@ -29,8 +29,8 @@ const Pricing = () => {
       <div className="wrapper">
         <PlanCard planData={options} isYearly={isYearly}/>
       </div>
-      <div className="wrapper" style={{ marginTop: "6rem" }}>
-        <PricingAddons isYearly={isYearly}/>
+      <div style={{ marginTop: "7rem", marginBottom: "3rem" }}>
+        <PricingAddons isYearly={isYearly} setIsYearly={setIsYearly}/>
       </div>
       <Comparison />
       <Reviews />
