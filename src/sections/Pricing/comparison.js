@@ -72,7 +72,7 @@ h2, h5{
 
 /* Highlighted column */
 
-.price-table tr td:nth-child(5) {
+.price-table tr td:nth-child(3) {
     background: rgba(0,179,159,0.1);
     padding: 8px 48px;
 }
