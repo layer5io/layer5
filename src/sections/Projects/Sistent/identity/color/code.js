@@ -464,7 +464,7 @@ const CopyColor = ({ hex, token, copyValue }) => {
 
   const getTooltipTitle = () => {
     if (copyState.isCopied) {
-      return "Copied to clipboard!";
+      return "Copied";
     }
     if (copyState.text === "Failed") {
       return "Failed to copy. Try again.";
