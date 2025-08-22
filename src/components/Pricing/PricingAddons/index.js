@@ -178,7 +178,20 @@ export const PricingAddons = ({ isYearly = false }) => {
               avatar={<Calculate color="primary" sx={{ fontSize: 24, color: theme.palette.background.secondary }} />}
               title={
                 <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 1 }}>
-                  <Typography variant="h5" component="h3" fontWeight="bold" sx={{ fontSize: 16, fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
+                  <Typography
+                    variant="h2"
+                    component="h3"
+                    fontWeight="bold"
+                    sx={{
+                      fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
+                      marginBottom: "1rem",
+                      color: (props) => props.theme.greyDCDCDCToGrey3B3B3B,
+                      fontSize: "1.5rem",
+                      fontWeight: 600,
+                      textAlign: "center",
+                      transition: "0.8s cubic-bezier(0.2, 0.8, 0.2, 1)",
+                    }}
+                  >
                     Enterprise Add-ons
                   </Typography>
                   {/* <Typography variant="h4" component="h4" fontWeight="bold" sx={{ fontSize: 18, fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
