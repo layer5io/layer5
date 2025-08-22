@@ -6,6 +6,7 @@ import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 import { getAddOns } from "./pricingData";
 import FeatureDetails from "../PlanCard/collapsible-details";
 import PlanCardWrapper from "../PlanCard/planCard.style";
+import Button from "../../../reusecore/Button";
 
 
 /* eslint-disable indent */
@@ -94,6 +95,65 @@ export const PricingAddons = ({ isYearly = false }) => {
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(price);
+  };
+
+  // Helper function to get the correct plan link for Academy sub-addons
+  const getPlanLinkForAcademy = () => {
+    if (!selectedAddon || selectedAddon.id !== "academy") {
+      return { link: "#", name: "Subscribe" };
+    }
+
+    // For Academy, we need to handle multiple potential sub-addons
+    // Priority: if practical learning is selected, use that; otherwise use theory
+    let targetSubAddon = null;
+    let targetSubAddonName = "";
+
+    // Check if practical learning is selected
+    if (selectedSubAddOns["academy-practical"]) {
+      targetSubAddon = selectedAddon.subAddOns?.find(sub => sub.id === "academy-practical");
+      targetSubAddonName = "with Practical Learning";
+    } else {
+      // Use theoretical learning (base addon that's always included)
+      targetSubAddon = selectedAddon.subAddOns?.find(sub => sub.id === "academy-theory");
+      targetSubAddonName = "";
+    }
+
+    if (!targetSubAddon?.planLink || !targetSubAddon.pricing?.[quantityIndex]) {
+      return { link: "#", name: "Subscribe" };
+    }
+
+    const currentCadence = isYearlyState ? "yearly" : "monthly";
+    const currentLearnerCount = targetSubAddon.pricing[quantityIndex].learners;
+
+    // Find the matching plan link based on cadence and learner count
+    const matchingPlanLink = targetSubAddon.planLink.find(
+      plan => plan.cadence === currentCadence && plan.learners === currentLearnerCount
+    );
+
+    if (matchingPlanLink) {
+      return {
+        link: matchingPlanLink.link,
+        name: `Subscribe (${currentLearnerCount} learners${targetSubAddonName ? " " + targetSubAddonName : ""})`
+      };
+    }
+
+    // Fallback if no exact match
+    return { link: "#", name: "Subscribe" };
+  };
+
+  // Helper function to get plan link for other addons
+  const getPlanLinkForOtherAddons = () => {
+    if (!selectedAddon || selectedAddon.id === "academy") {
+      return { link: "#", name: "Subscribe" };
+    }
+
+    // For non-Academy addons, they don't have specific plan links in the current data structure
+    // So we'll create a generic subscription link - this might need to be updated
+    // with actual subscription URLs when they become available
+    return {
+      link: "#", // This should be updated with actual subscription URL
+      name: `Subscribe to ${selectedAddon.name}`
+    };
   };
 
   return (
@@ -385,9 +445,6 @@ Add-on Selection
           })) || []}
         />
       <Box sx={{ display: "flex", my: 2, justifyContent: "space-between" }}>
-        {/* <Typography variant="body2" color="text.secondary" sx={{ fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
-          learners
-        </Typography> */}
         <Typography variant="body2" sx={{ fontStyle: "italic", color: "text.secondary", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
           Looking for a plan larger than 2,500 learners? Great! <Link to="/contact">Let us know</Link>.
           {/* {selectedAddon?.maxUnits} */}
@@ -574,6 +631,14 @@ Add-on Selection
             /{isYearlyState ? "annually" : "monthly"}
         </Typography>
       </Typography>
+    </Box>
+    <Box sx={{ display: "flex", justifyContent: "center", mt: 1 }}>
+      <Button
+        $primary
+        $url={selectedAddon?.id === "academy" ? getPlanLinkForAcademy().link : getPlanLinkForOtherAddons().link}
+      >
+        {selectedAddon?.id === "academy" ? getPlanLinkForAcademy().name : getPlanLinkForOtherAddons().name}
+      </Button>
     </Box>
   </Box>
 
