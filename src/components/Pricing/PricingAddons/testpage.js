@@ -4,7 +4,7 @@ import { PricingAddons } from ".";
 
 import { SistentThemeProvider, Box, Typography, Container, CssBaseline } from "@sistent/sistent";
 
-import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 
 const TestPage = () => {

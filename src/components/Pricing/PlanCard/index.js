@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "../../reusecore/Button";
-import { Col, Row, Container } from "../../reusecore/Layout";
+import Button from "../../../reusecore/Button";
+import { Col, Row, Container } from "../../../reusecore/Layout";
 import PlanCardWrapper from "./planCard.style";
 import FeatureDetails from "./collapsible-details";
 
@@ -103,7 +103,9 @@ const PlanCard = ({ planData , isYearly }) => {
                         <div key={t.id}>
                           {isFirstAddOn && (
                             <div className="add-on-separator">
+                              <span className="add-on-label">Add-on Features</span>
                               <hr className="add-on-line" />
+                             
                             </div>
                           )}
                           <div className="feature">

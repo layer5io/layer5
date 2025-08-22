@@ -4,9 +4,9 @@ import Comparison from "./comparison";
 import FAQ from "../General/Faq";
 import Reviews from "./review-slider";
 import options from "./generatePlans";
-import PlanCard from "../../components/PlanCard";
+import PlanCard from "../../components/Pricing/PlanCard";
 import OpenSourceBanner from "./openSource";
-import { PricingAddons } from "../../components/PricingAddons";
+import { PricingAddons } from "../../components/Pricing/PricingAddons";
 import SubscriptionToggle from "./SubscriptionToggle";
 
 const Pricing = () => {

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import details  from "./generateDetails";
 import { Container } from "../../reusecore/Layout";
 // import FeatureDetails from "./collapsible-details";
-import FeatureDetails from "../../components/PlanCard/collapsible-details";
+import FeatureDetails from "../../components/Pricing/PlanCard/collapsible-details";
 
 
 const ComparisonWrapper = styled.div`

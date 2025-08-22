@@ -140,6 +140,13 @@ const PlanCardWrapper = styled.section`
     line-height: 1rem;
     .add-on-separator {
       margin: 1.5rem 0 1rem 0;
+      .add-on-label {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: ${(props) => props.theme.secondaryColor};
+        margin-bottom: 0.5rem;
+        display: block;
+      }
       .add-on-line {
         border: none;
         border-top: 1px solid ${(props) => props.theme.greyDCDCDCToGrey3B3B3B};

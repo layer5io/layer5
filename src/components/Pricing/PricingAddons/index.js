@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Box, Card, CardContent, CardHeader, Typography, FormControl, InputLabel, Select, MenuItem, Slider, Switch, FormControlLabel, Chip, Container, Link, Paper, SistentThemeProvider, CssBaseline, useTheme } from "@sistent/sistent";
 import { Calculate, CheckCircle } from "@mui/icons-material";
-import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 import { getAddOns } from "./pricingData";
 import FeatureDetails from "../PlanCard/collapsible-details";
 import PlanCardWrapper from "../PlanCard/planCard.style";
