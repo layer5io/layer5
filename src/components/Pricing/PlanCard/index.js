@@ -105,7 +105,7 @@ const PlanCard = ({ planData , isYearly }) => {
                             <div className="add-on-separator">
                               <span className="add-on-label">Add-on Features</span>
                               <hr className="add-on-line" />
-                             
+
                             </div>
                           )}
                           <div className="feature">
