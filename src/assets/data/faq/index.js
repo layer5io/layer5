@@ -229,8 +229,9 @@ const data = {
       question: "What is the refund policy?",
       category: "Pricing",
       answer: [
-        "Users can cancel or downgrade at anytime.",
-        "Your next billing statement will be prorated based on your date of cancelation or downgrade.",
+        "You can cancel at anytime.",
+        "We totally get that plans can change, and we're here to make things as straight-forward as possible. At Layer5, we have a no-refund policy for all our subscription plans. That means once your payment goes through, it's non-refundable, even if you haven't used much of the time left in your billing cycle. This helps us keep delivering awesome access to our cloud native tools, collaborative features, performance testing, multi-cloud setups, and all the learning goodies in Layer5 Academy and Kanvas.",
+        "If you're ready to cancel, no worries — just head to your account settings to cancel anytime. That'll stop any future renewals and charges, but you'll still enjoy full access until your current period ends. We're all about helping you explore first, so feel free to try our Free Forever plan to dip your toes in with things like built-in models, community support, and basic testing before going paid.",
       ],
     },
     {
@@ -245,14 +246,14 @@ const data = {
       question: "What happens if I accidentally don't renew or forget to renew my subscription?",
       category: "Pricing",
       answer: [
-        "Continuity of your infrastructure and applicaiton management is important to us as it is to you. Meshery will continue to operate under the Free tier features and usage limits. Your historical data will continue to be available to you. You can renew your subscription to have higher-level plan features reenabled at any time.",
+        "Continuity of your infrastructure and application management is important to us as it is to you. Layer5 Cloud and Kanvas will continue to operate under the Free tier features and usage limits. Your historical data will continue to be available to you. You can renew your subscription to have higher-level plan features reenabled at any time.",
       ],
     },
     {
       question: "Are there other pricing options?",
       category: "Pricing",
       answer: [
-        "Annual and monthly plans are available. We can customize billing plans to meet your needs. For a detailed explanation of billing, please see our Billing FAQ.",
+        "Annual and monthly plans are available. Some plans have add-ons available. We can customize billing plans to meet your needs. For a detailed explanation of billing, please see our Billing FAQ.",
       ],
     },
     {
@@ -283,7 +284,9 @@ const data = {
       question: "When does the billing cycle start and stop?",
       category: "Billing",
       answer: [
-        "The billing cycle begins the first of the month regardless of when you sign up. Your first month is prorated based on your actual sign-up date. Layer5 meters the count of elements under management on a daily basis. The billable count of elements under management is calculated at the end of the month using the maximum count (high water mark) of the lower 99 percent of usage for those days. Layer5 excludes the top 1% to reduce the impact of spikes in usage on your bill. The billable count of elements under management is based on the average number of elements for the month. See your Usage in Layer5 Cloud. Billing pages are only accessible to users with the Meshery Admin Role.",
+        "The billing cycle begins the first day of the subscription period.",
+        "Layer5 meters the count of active users and systems under management on a daily basis. The billable count of users and elements under management is calculated at the end of the month using the maximum count (high water mark) of the lower 99 percent of usage for those days.",
+        "Layer5 excludes the top 1% to reduce the impact of spikes in usage on your bill. The billable count of active users and elements under management is based on the average number of elements for the month. See your Usage in Layer5 Cloud. Billing pages are only accessible to users with the Org Billing Admin role.",
       ],
     },
     {
@@ -292,6 +295,8 @@ const data = {
       answer: [
         "You can view your account's subscription, your other paid features and products, and your next billing date in your account's billing settings",
       ],
+      link: "https://cloud.layer5.io/account/subscriptions",
+      linktext: "Manage Subscriptions",
     },
     {
       question: "What happens if payment fails?",
@@ -305,6 +310,14 @@ const data = {
       category: "Billing",
       answer: [
         "You can unlock the paid features on your account and trigger a new payment attempt by updating the payment method on your account. To learn more about how to manage your payments, visit the Billing section of your Layer5 Cloud account.",
+      ],
+    },
+    {
+      question: "What about refunds for yearly subscriptions if I cancel early?",
+      category: "Billing",
+      answer: [
+        "Great question, and we're happy to clarify! For yearly subscriptions (which often come at a nice discount compared to monthly billing), we stick to the same no-refund policy. You'll have full-year access to all the cool stuff, including advanced service mesh courses, hands-on labs, multi-cluster management, and enterprise features. ",
+        "If you cancel early, it just prevents the auto-renewal for next year, and you'll keep using everything until your paid term wraps up—no refunds for the remaining months. We designed it this way to support our ongoing platform improvements. If you're unsure, the Free Forever plan is a low-pressure way to check out the basics first!",
       ],
     },
 
