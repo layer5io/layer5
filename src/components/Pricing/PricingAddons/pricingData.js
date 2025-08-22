@@ -85,6 +85,11 @@ export const getAddOns = (theme) => [
     icon: <Cloud sx={{ color: theme?.palette?.background?.inverse || "#FFFFFF" }} />,
     unitLabel: "servers",
     maxUnits: 50,
+    pricing: [
+      { units: 1, monthlyPerUnit: 64, yearlyPerUnit: 54.40, currency: "$" }, // 64 * 12 * 0.85 / 12 ≈ 54.40
+      { units: 25, monthlyPerUnit: 64, yearlyPerUnit: 54.40, currency: "$" }, // 1600 / 25 = 64
+      { units: 50, monthlyPerUnit: 64, yearlyPerUnit: 54.40, currency: "$" }, // 3200 / 50 = 64
+    ],
     features: ["Automated deployment", "Real-time monitoring", "Multi-cluster support", "Performance analytics"],
   },
   {
@@ -96,6 +101,11 @@ export const getAddOns = (theme) => [
     icon: <Group sx={{ color: theme?.palette?.background?.inverse || "#00B39F" }} />,
     unitLabel: "collaborators",
     maxUnits: 200,
+    pricing: [
+      { units: 1, monthlyPerUnit: 2, yearlyPerUnit: 1.70, currency: "$" }, // 2 * 12 * 0.85 / 12 ≈ 1.70
+      { units: 100, monthlyPerUnit: 1.50, yearlyPerUnit: 1.275, currency: "$" }, // 150 / 100 = 1.50
+      { units: 200, monthlyPerUnit: 1.50, yearlyPerUnit: 1.275, currency: "$" }, // 300 / 200 = 1.50
+    ],
     features: ["Enhanced Security", "Guaranteed SLAs", "Conflict-Free Synchronization", "Real-Time Collaboration"],
   },
 ];

@@ -41,10 +41,16 @@ export const PricingAddons = ({ isYearly = false }) => {
             : monthlyPerUserCost * currentLearnerOption.learners;
         }
       } else {
-        // For other addons, use the standard pricing
-        const addonPrice = isYearlyState ? selectedAddon.yearlyPrice : selectedAddon.monthlyPrice;
-        baseTotal = addonPrice * quantity;
+      // Non-Academy pricing
+      if (selectedAddon.pricing && selectedAddon.pricing[quantityIndex]) {
+        const currentOption = selectedAddon.pricing[quantityIndex];
+        const monthlyPerUnitCost = currentOption.monthlyPerUnit;
+        const yearlyPerUnitCost = currentOption.yearlyPerUnit;
+        baseTotal = isYearlyState
+          ? yearlyPerUnitCost * currentOption.units
+          : monthlyPerUnitCost * currentOption.units;
       }
+    }
 
       // Handle Academy Sub-AddOns (any selected sub-addons, excluding theory which is the base)
       let subAddOnTotal = 0;
@@ -71,7 +77,7 @@ export const PricingAddons = ({ isYearly = false }) => {
   const handleAddonChange = (addonId) => {
     const addon = addOns.find((a) => a.id === addonId);
     setSelectedAddon(addon || null);
-    setQuantity(1); // eslint-disable-next-line no-unused-vars
+    setQuantityIndex(0); // eslint-disable-next-line no-unused-vars
 
     // If Academy is selected, automatically include the "academy-theory" sub-addon
     if (addon?.id === "academy") {
@@ -446,7 +452,7 @@ Add-on Selection
         />
       <Box sx={{ display: "flex", my: 2, justifyContent: "space-between" }}>
         <Typography variant="body2" sx={{ fontStyle: "italic", color: "text.secondary", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
-          Looking for a plan larger than 2,500 learners? Great! <Link to="/contact">Let us know</Link>.
+          Looking for a plan larger than 2,500 learners? Great! <Link to="/company/contact">Let us know</Link>.
           {/* {selectedAddon?.maxUnits} */}
         </Typography>
       </Box>
@@ -457,22 +463,26 @@ Add-on Selection
                   {/* SELECTED ADD-ON DETAILS - Other Plans */}
                   {selectedAddon !== null && selectedAddon.id !== "academy" && (
                     <>
-                      <Box sx={{ mt: 2, justifyContent: "center",  }}>
-                        <Typography variant="h6" fontWeight="600" sx={{ fontSize: "1rem", mb: 1, }}>
-                          {/* <Box component="span" sx={{ fontWeight: "normal" }}>QUANTITY: </Box> */}
-                          {quantity} {selectedAddon?.unitLabel}
+                      <Box sx={{ mt: 2, justifyContent: "center" }}>
+                        <Typography variant="h6" fontWeight="600" sx={{ fontSize: "1rem", mb: 1 }}>
+                          {selectedAddon.pricing?.[quantityIndex]?.units || 0} {selectedAddon?.unitLabel}
                         </Typography>
                         <Slider
-                          value={quantity}
-                          onChange={(event, newValue) => setQuantity(newValue)}
-                          min={1}
-                          max={selectedAddon?.maxUnits || 50}
+                          value={quantityIndex}
+                          onChange={(event, newValue) => setQuantityIndex(newValue)}
+                          min={0}
+                          max={selectedAddon?.pricing?.length - 1 || 0}
+                          step={null}
                           valueLabelDisplay="auto"
                           valueLabelFormat={(value) => {
-                            const unitPrice = isYearlyState ? selectedAddon?.yearlyPrice : selectedAddon?.monthlyPrice;
-                            const totalPrice = (unitPrice || 0) * value;
-                            const period = isYearlyState ? "/year" : "/month";
-                            return `${value} ${selectedAddon?.unitLabel?.slice(0, -1) || "unit"} - ${formatPrice(totalPrice)}${period}`;
+                            if (selectedAddon?.pricing && selectedAddon.pricing[value]) {
+                              const option = selectedAddon.pricing[value];
+                              const unitPrice = isYearlyState ? option.yearlyPerUnit : option.monthlyPerUnit;
+                              const totalPrice = unitPrice * option.units;
+                              const period = isYearlyState ? "/year" : "/month";
+                              return `${option.units} ${selectedAddon?.unitLabel?.slice(0, -1) || "unit"} - ${formatPrice(totalPrice)}${period}`;
+                            }
+                            return "";
                           }}
                           sx={{
                             mb: 2,
@@ -496,48 +506,24 @@ Add-on Selection
                               fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
                             },
                           }}
-                          marks={[
-                            {
-                              value: 1,
-                              label: (
-                                <Box sx={{ textAlign: "center", fontSize: "0.75rem" }}>
-                                  <Box>1</Box>
-                                  <Box sx={{ color: "primary.main", fontWeight: "bold", mt: 0.5 }}>
-                                    {formatPrice(isYearlyState ? selectedAddon?.yearlyPrice || 0 : selectedAddon?.monthlyPrice || 0)}
-                                  </Box>
+                          marks={selectedAddon?.pricing?.map((option, index) => ({
+                            value: index,
+                            label: (
+                              <Box sx={{ textAlign: "center", fontSize: index === 0 ? "0.75rem" : "1rem" }}>
+                                <Box>{option.units}</Box>
+                                <Box sx={{ color: "primary.main", fontWeight: "bold", mt: 0.5 }}>
+                                  {formatPrice(isYearlyState ? option.yearlyPerUnit * option.units : option.monthlyPerUnit * option.units)}
                                 </Box>
-                              )
-                            },
-                            {
-                              value: Math.floor((selectedAddon?.maxUnits || 50) / 2),
-                              label: (
-                                <Box sx={{ textAlign: "center", fontSize: "1rem" }}>
-                                  <Box>{Math.floor((selectedAddon?.maxUnits || 50) / 2)}</Box>
-                                  <Box sx={{ color: "primary.main", fontWeight: "bold", mt: 0.5 }}>
-                                    {formatPrice((isYearlyState ? selectedAddon?.yearlyPrice || 0 : selectedAddon?.monthlyPrice || 0) * Math.floor((selectedAddon?.maxUnits || 50) / 2))}
-                                  </Box>
-                                </Box>
-                              )
-                            },
-                            {
-                              value: selectedAddon?.maxUnits || 50,
-                              label: (
-                                <Box sx={{ textAlign: "center", fontSize: "1rem" }}>
-                                  <Box>{selectedAddon?.maxUnits || 50}</Box>
-                                  <Box sx={{ color: "primary.main", fontWeight: "bold", mt: 0.5 }}>
-                                    {formatPrice((isYearlyState ? selectedAddon?.yearlyPrice || 0 : selectedAddon?.monthlyPrice || 0) * (selectedAddon?.maxUnits || 50))}
-                                  </Box>
-                                </Box>
-                              )
-                            }
-                          ]}
+                              </Box>
+                            ),
+                          })) || []}
                         />
                         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
                           <Typography variant="body2" color="text.secondary">
-                            1
+                            {selectedAddon?.pricing?.[0]?.units || 1}
                           </Typography>
                           <Typography variant="body2" color="text.secondary">
-                            {selectedAddon?.maxUnits}
+                            {selectedAddon?.pricing?.[selectedAddon.pricing.length - 1]?.units || 50}
                           </Typography>
                         </Box>
                       </Box>
@@ -602,7 +588,7 @@ Add-on Selection
           <Box key={subAddOn.id} sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <Typography variant="body1" sx={{ marginLeft: .5, fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
               {subAddOn.name} × {subAddOn.pricing?.[quantityIndex]?.learners || 0}
-            </Typography>``
+            </Typography>
             <Typography variant="body1" sx={{ marginRight: .5, fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }} fontWeight="500">
               {formatPrice(
                 (() => {
