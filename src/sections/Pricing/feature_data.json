@@ -1137,8 +1137,8 @@
   },
   {
     "theme": "",
-    "categoryOrder": "",
-    "category": "",
+    "categoryOrder": "add-on",
+    "category": "Academy",
     "functionOrder": "1101",
     "function": "Academy",
     "feature": "A comprehensive learning management system for creators and instructors on how to build, manage, and extend educational content like learning paths, challenges, and certifications with an inclusive, collaborative, hands-on learning environment for students.",
