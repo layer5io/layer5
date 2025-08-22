@@ -1170,32 +1170,32 @@
   {
     "theme": "",
     "categoryOrder": "add-on",
-    "category": "Academy",
-    "functionOrder": "2",
-    "function": "Academy Practical Learning",
-    "feature": "An inclusive, collaborative, hands-on learning environment for students.",
-    "subscription_tier": "Enterprise",
+    "category": "Kanvas",
+    "functionOrder": "",
+    "function": "Dedicated WebRTC",
+    "feature": "This premium offering delivers a secure, high-performance WebRTC solution, purpose-built for real-time, multiplayer collaboration across distributed teams. Powered by Conflict-Free Replicated Data Types (CRDT), this feature ensures seamless, low-latency synchronization of cloud native designs, configurations, and operational workflows, even in complex multi-cluster Kubernetes and public Cloud environments.",
+    "subscription_tier": "",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": "https://docs.layer5.io/cloud/academy/"
+    "docs": ""
   },
   {
     "theme": "",
-    "categoryOrder": "",
-    "category": "",
+    "categoryOrder": "add-on",
+    "category": "Meshery",
     "functionOrder": "",
-    "function": "",
-    "feature": "",
+    "function": "Managed Meshery Servers",
+    "feature": "Managed cloud instances for comprehensive infrastructure configuration and lifecycle management.",
     "subscription_tier": "",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
       "teamOperator": "",
-      "enterprise": ""
+      "enterprise": "x"
     },
     "docs": ""
   }
