@@ -120,42 +120,21 @@ export const NewcomersGuideWrapper = styled.section`
       }
     }
     .community-collage {
-      text-align: center;
+      text-align: center ;
       min-width: 45vmin;
-      overflow: visible; /* Allow book to be fully visible */
-      padding: 0; /* No padding */
-      position: relative;
-      margin: 0 auto;
     }
     .community-img{
-      text-align: center;
-      position: relative;
-      z-index: 2;
+      text-align:center;
     }
     .table-wrapper{
       text-align: center;
-      margin-top: 0; /* No top margin */
-      margin-bottom: 2rem; /* Reduced bottom margin */
+      margin-bottom: 4rem;
     }
     .book-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    perspective: 1500px; /* Perspective for 3D effect */
-    max-width: 100%; /* Ensure it doesn't exceed container width */
-    margin: 0 auto -10px; /* Adjusted to leave just 1 point of space below */
-    position: relative;
-    z-index: 1;
-    padding: 0; /* No padding */
-    height: auto; /* Allow height to adjust based on content */
-    min-height: 300px; /* Further reduced minimum height */
-    
-    @media (max-width: 992px) {
-      margin-bottom: 0.5rem; /* Minimal space between book and text on mobile */
-      perspective: 1200px; /* Slightly reduced perspective for mobile */
-      width: 100%; /* Ensure it takes full width available */
-      overflow: hidden; /* Prevent overflow on mobile */
-    }
+    perspective: 600px;
   }
 
   @keyframes initAnimation {
@@ -174,11 +153,14 @@ export const NewcomersGuideWrapper = styled.section`
   .book {
     min-width: 200px;
     min-height: 300px;
+    width: 200px;
+    height: 300px;
     position: relative;
     transform-style: preserve-3d;
     transform: rotateY(-30deg);
     transition: 1s ease;
     animation: 1s ease 0s 1 initAnimation;
+    overflow: visible;
   }
 
   .book:hover {
@@ -190,11 +172,11 @@ export const NewcomersGuideWrapper = styled.section`
     top: 0;
     left: 0;
     background-color: #171a12;
-    width: 220px;
-    height: 320px;
+    width: 100%;
+    height: 100%;
     transform: translateZ(25px);
     border-radius: 0 2px 2px 0;
-    background-size: 100% 100%; /* Make sure image content covers the entire front cover */
+    overflow: visible;
   }
 
   .book::before {
@@ -203,8 +185,8 @@ export const NewcomersGuideWrapper = styled.section`
     left: 0;
     top: 3px;
     width: 48px;
-    height: 314px; /* Adjusted to match reduced height */
-    transform: translateX(192px) rotateY(90deg); /* Adjusted to match reduced width */
+    height: calc(100% - 6px);
+    transform: translateX(172px) rotateY(90deg);
     background: linear-gradient(
       90deg,
       #fff 0%,
@@ -236,25 +218,12 @@ export const NewcomersGuideWrapper = styled.section`
     top: 0;
     left: 0;
     content: " ";
-    width: 220px; /* Match reduced width */
-    height: 320px; /* Match reduced height */
+    width: 100%;
+    height: 100%;
     transform: translateZ(-25px);
     background-color: #292929;
     border-radius: 0 2px 2px 0;
-    box-shadow: -10px 5px 15px 5px rgba(0, 0, 0, 0.5); /* Enhanced shadow for better 3D effect */
-  }
-  
-  /* Fix to ensure the image on the book cover is displayed fully */
-  .book img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0 2px 2px 0;
-  }
-  
-  /* Reduce spacing for the "While Your Issue is Under Review" section */
-  h1, h2, h3 {
-    margin-top: 0.5rem; /* Minimize top margin for headings */
+    box-shadow: -2px 1px 30px 2px #666;
   }
     @media only screen and (max-width: 991px) {
       .heading-start {
@@ -279,6 +248,11 @@ export const NewcomersGuideWrapper = styled.section`
           margin-top: -1.5rem;
         }
       }
+  }   
+  @media only screen and (max-width: 450px) {
+    .book-container {
+      margin-bottom: 1rem;
+    }
   }
 `;
 
