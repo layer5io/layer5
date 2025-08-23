@@ -1028,7 +1028,7 @@
     "categoryOrder": "9",
     "category": "Managed Service Provider",
     "functionOrder": "902",
-    "function": "The weekly Newcomers meeting held every Thursday offers an overview of the community and projects. It’s an ideal place to start: https://layer5.io/community/calendar. In the meeting, you will be assisted in merging your first pull request on Meshery. Here’s an overview of the tech involved in the projects - https://layer5.io/community/handbook/repository-overview",
+    "function": "Public Profiles for Users",
     "feature": "See public user profile details, public activities and public resources.",
     "subscription_tier": "",
     "comparison_tiers": {
@@ -1044,7 +1044,7 @@
     "categoryOrder": "9",
     "category": "Managed Service Provider",
     "functionOrder": "903",
-    "function": "Recognition Program BadgesYou're most welcome to join any / all of the meetings that strike your fancy.",
+    "function": "Recognition Program Badges",
     "feature": "Badges are visual indicators of achievements or milestones that users can earn in order to recognizing activity milestones, encouraging positive behavior, mark progress, and gamifying platform experience.",
     "subscription_tier": "",
     "comparison_tiers": {
@@ -1137,27 +1137,27 @@
   },
   {
     "theme": "",
-    "categoryOrder": "",
-    "category": "",
-    "functionOrder": "",
-    "function": "",
-    "feature": "",
-    "subscription_tier": "",
+    "categoryOrder": "add-on",
+    "category": "Academy",
+    "functionOrder": "1101",
+    "function": "Academy",
+    "feature": "A comprehensive learning management system for creators and instructors on how to build, manage, and extend educational content like learning paths, challenges, and certifications with an inclusive, collaborative, hands-on learning environment for students.",
+    "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
       "teamOperator": "",
-      "enterprise": ""
+      "enterprise": "x"
     },
     "docs": ""
   },
   {
     "theme": "",
     "categoryOrder": "add-on",
-    "category": "Academy",
-    "functionOrder": "1",
-    "function": "Academy Theoretical Learning",
-    "feature": "A comprehensive learning management system for creators and instructors on how to build, manage, and extend educational content like learning paths, challenges, and certifications.",
+    "category": "Kanvas",
+    "functionOrder": "1104",
+    "function": "Dedicated WebRTC",
+    "feature": "This premium offering delivers a secure, high-performance WebRTC solution, purpose-built for real-time, multiplayer collaboration across distributed teams. Powered by Conflict-Free Replicated Data Types (CRDT), this feature ensures seamless, low-latency synchronization of cloud native designs, configurations, and operational workflows, even in complex multi-cluster Kubernetes and public Cloud environments.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
@@ -1165,37 +1165,21 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": "https://docs.layer5.io/cloud/academy/"
+    "docs": ""
   },
   {
     "theme": "",
     "categoryOrder": "add-on",
-    "category": "Academy",
-    "functionOrder": "2",
-    "function": "Academy Practical Learning",
-    "feature": "An inclusive, collaborative, hands-on learning environment for students.",
+    "category": "Meshery",
+    "functionOrder": "1105",
+    "function": "Managed Meshery Servers",
+    "feature": "Managed cloud instances for comprehensive infrastructure configuration and lifecycle management.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
-    },
-    "docs": "https://docs.layer5.io/cloud/academy/"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
-    "category": "",
-    "functionOrder": "",
-    "function": "",
-    "feature": "",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
     },
     "docs": ""
   }
