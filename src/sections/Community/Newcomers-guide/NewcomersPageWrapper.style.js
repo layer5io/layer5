@@ -182,6 +182,13 @@ export const NewcomersGuideWrapper = styled.section`
     border-radius: 0 2px 2px 0;
     overflow: visible;
   }
+  
+  .book > :first-child img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
 
   .book::before {
     position: absolute;
@@ -252,7 +259,7 @@ export const NewcomersGuideWrapper = styled.section`
           margin-top: -1.5rem;
         }
       }
-  }   
+  }  
   }
 `;
 
