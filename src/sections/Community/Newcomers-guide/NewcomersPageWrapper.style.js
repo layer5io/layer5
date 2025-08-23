@@ -258,6 +258,17 @@ export const NewcomersGuideWrapper = styled.section`
         h2 {
           margin-top: -1.5rem;
         }
+      }  
+      /* For "Explore the Meshery Community" section */
+      .community-collage {
+        order: 2;
+      }
+      /* For "Finding an Issue" section - apply to Col */
+      .col-finding-an-issue {
+        order: 2;
+      }
+      .col-newcomers-form {
+        margin-bottom: 1.5rem;
       }
   }  
   }
