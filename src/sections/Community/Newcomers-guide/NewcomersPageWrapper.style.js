@@ -122,6 +122,7 @@ export const NewcomersGuideWrapper = styled.section`
     .community-collage {
       text-align: center ;
       min-width: 45vmin;
+      margin-bottom: 1rem;
     }
     .community-img{
       text-align:center;
@@ -129,6 +130,9 @@ export const NewcomersGuideWrapper = styled.section`
     .table-wrapper{
       text-align: center;
       margin-bottom: 4rem;
+      h5 {
+        margin-bottom: 2.5rem;
+      }
     }
     .book-container {
     display: flex;
@@ -249,10 +253,6 @@ export const NewcomersGuideWrapper = styled.section`
         }
       }
   }   
-  @media only screen and (max-width: 450px) {
-    .book-container {
-      margin-bottom: 1rem;
-    }
   }
 `;
 
