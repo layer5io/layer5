@@ -155,8 +155,6 @@ export const NewcomersGuideWrapper = styled.section`
   }
 
   .book {
-    min-width: 200px;
-    min-height: 300px;
     width: 200px;
     height: 300px;
     position: relative;
