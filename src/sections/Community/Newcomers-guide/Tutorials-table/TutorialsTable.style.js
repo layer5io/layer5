@@ -9,7 +9,7 @@ export const TutorialsTableWrapper = styled.div`
     width: 100%;
     min-width: 600px;
     border-collapse: collapse;
-    margin: 2rem auto;
+    margin: 0 auto 2rem auto;
     
     @media (max-width: 375px) {
       margin: 0.5rem auto;
