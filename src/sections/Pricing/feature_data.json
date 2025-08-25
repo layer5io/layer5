@@ -1028,7 +1028,7 @@
     "categoryOrder": "9",
     "category": "Managed Service Provider",
     "functionOrder": "902",
-    "function": "The weekly Newcomers meeting held every Thursday offers an overview of the community and projects. It’s an ideal place to start: https://layer5.io/community/calendar. In the meeting, you will be assisted in merging your first pull request on Meshery. Here’s an overview of the tech involved in the projects - https://layer5.io/community/handbook/repository-overview",
+    "function": "Public Profiles for Users",
     "feature": "See public user profile details, public activities and public resources.",
     "subscription_tier": "",
     "comparison_tiers": {
@@ -1044,7 +1044,7 @@
     "categoryOrder": "9",
     "category": "Managed Service Provider",
     "functionOrder": "903",
-    "function": "Recognition Program BadgesYou're most welcome to join any / all of the meetings that strike your fancy.",
+    "function": "Recognition Program Badges",
     "feature": "Badges are visual indicators of achievements or milestones that users can earn in order to recognizing activity milestones, encouraging positive behavior, mark progress, and gamifying platform experience.",
     "subscription_tier": "",
     "comparison_tiers": {
