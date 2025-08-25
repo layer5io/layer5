@@ -1,0 +1,21 @@
+a[href^="http"]:after {
+  content: " ↗";
+  font-size: 0.8em;
+}
+
+a[href^="http"]:has(img),
+a[href^="http"]:has(div),
+a[href^="http"]:has(button) {
+  &::after {
+    content: none;
+  }
+}
+
+a[href^="https://layer5.io/"]::after {
+  content: none;
+}
+
+a[href^="/"]:after,
+a[href^="#"]:after {
+  content: none;
+}
