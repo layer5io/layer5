@@ -415,7 +415,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
 
                                   <Box>{option.learners === "2500+" ? "2,500+" : option.learners}</Box>
                                   <Box sx={{ color: "primary.main", mb: 1.5, fontSize: ".9rem" }}>
-                                    {option.currency}{isYearly ? option.yearlyPerUser : option.monthlyPerUser}/{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
+                                    {option.currency}{isYearly ? option.yearlyPerUser : option.monthlyPerUser}<br />{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
                                   </Box>
                                 </Box>
                               ),
