@@ -13,7 +13,7 @@ import Identity from "./icons/identity.svg";
 import Support from "./icons/support.svg";
 import Catalog from "./icons/catalog.svg";
 import Security from "./icons/security.svg";
-import Academy from "./icons/academy.svg";
+import Academy from "../../components/Pricing/PricingAddons/AcademyIcon;
 import Docs from "./icons/docs.js";
 
 
