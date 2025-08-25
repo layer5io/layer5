@@ -248,10 +248,10 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                             <Box sx={{ display: "flex", alignItems: "center", gap: 2, py: 1 }}>
                               {addon.icon}
                               <Box>
-                                <Typography variant="body1" fontWeight="500" sx={{ fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
+                                <Typography variant="body1" fontWeight="500" sx={{ wordBreak: "break-word", whiteSpace: "normal", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
                                   {addon.name}
                                 </Typography>
-                                <Typography variant="body2" color="text.secondary" sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden", fontStyle: "italic", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
+                                <Typography variant="body2" color="text.secondary" sx={{ wordBreak: "break-word", whiteSpace: "normal", fontStyle: "italic", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
                                   {addon.id === "academy"
                                     ? addon.description
                                     : (() => {
