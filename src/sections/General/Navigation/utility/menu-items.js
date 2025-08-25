@@ -42,6 +42,11 @@ const Data = {
           path: "/solutions/platform-engineering",
           sepLine: true,
         },
+        {
+          name: "Cloud Cost Control",
+          path: "/solutions/cloud-cost-control",
+          sepLine: true,
+        },
       ],
       actionItems: [
         {
