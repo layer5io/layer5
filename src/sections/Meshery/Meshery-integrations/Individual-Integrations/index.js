@@ -1,7 +1,7 @@
 import React from "react";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import Button from "../../../../reusecore/Button";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXRenderer } from "../../../../utils/mdx-renderer";
 import CTA_Book from "./cta-book";
 import PerformanceCTA from "./cta-performance";
 import Image from "../../../../components/image";

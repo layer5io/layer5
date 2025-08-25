@@ -1,6 +1,6 @@
 import React from "react";
 import slugify from "../../../utils/slugify";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXRenderer } from "../../../utils/mdx-renderer";
 import { SRLWrapper } from "simple-react-lightbox";
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";

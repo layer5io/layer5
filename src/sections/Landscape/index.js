@@ -91,7 +91,7 @@ const LandscapeGrid = () => {
               </h2>
               <ServiceMeshTimeline  />
               <h2 id="service-mesh-comaprison-matrix" className="sub-heading landscape-section-heading">
-                                Service Mesh Comparison Matrix
+                                Service Mesh Comparison
               </h2>
               {hasMounted ?
                 <Tabs defaultIndex={2} className="landscape-table">

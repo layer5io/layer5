@@ -11,7 +11,6 @@ import ResourceSingle from "../sections/Resources/Resource-single";
 import SimpleReactLightbox from "simple-react-lightbox";
 export const query = graphql`query ResourcesBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
-    body
     frontmatter {
       title
       subtitle
@@ -35,7 +34,7 @@ export const query = graphql`query ResourcesBySlug($slug: String!) {
 }
 `;
 
-const ResourceSinglePage = ({ data }) => {
+const ResourceSinglePage = ({ data, children }) => {
 
 
   return (
@@ -44,7 +43,9 @@ const ResourceSinglePage = ({ data }) => {
 
 
       <SimpleReactLightbox>
-        <ResourceSingle data={data} />
+        <ResourceSingle data={data}>
+          {children}
+        </ResourceSingle>
       </SimpleReactLightbox>
 
     </>
