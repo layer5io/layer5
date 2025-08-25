@@ -7,10 +7,10 @@ export const HeroWrapper = styled.div`
     font-weight: 600;
   }
 
-  padding: 12rem 0 20rem 0;
+  padding: 4rem 0 4rem 0;
 
   @media (max-width: 800px) {
-    padding: 2rem 0 10rem 0;
+    padding: 1rem 0 2rem 0;
   }
 
    .content {
