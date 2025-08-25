@@ -144,11 +144,12 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
   return (
     <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
       <CssBaseline>
-        <Container maxWidth="md" sx={{ my: 2, px: 2 }}>
+        <Container maxWidth="md" sx={{ my: 2, px: 2, overflow: "visible" }}>
           <PlanCardWrapper>
             <Card
               elevation={2}
               sx={{
+                overflow: "visible",
                 maxWidth: 600,
                 mx: "auto",
                 border: "1px solid",
