@@ -82,10 +82,10 @@ const NewcomersGuide = () => {
               <h3>Fill in the Community Member Form</h3>
               <p>Help us get to know you, so that we can highlight projects and initiatives that align with your interests. Fill-in a community member form. Gain access to community resources.</p>
             </Col>
-            <Col $sm={12} $lg={6}>
+            <Col $sm={12} $lg={6} className="col-newcomers-form">
               <Button $primary className="newcomers-form" title="Submit a Member Form" $url="/newcomer" $external={false} />
             </Col>
-            <Col $sm={12} $lg={6}>
+            <Col $sm={12} $lg={6} className="col-finding-an-issue">
               <div className="finding-an-issue">
                 <StaticImage src={CommunityImage2} alt="Five Working Image" />
               </div>
