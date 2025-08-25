@@ -233,11 +233,29 @@ const PlanCardWrapper = styled.section`
   color: ${(props) => props.theme.text.light};
   border: 1px solid;
   border-color: ${(props) => props.theme.secondaryColor};
-
+  min-width: 40%;
+  justify-content: flex-start;
+  display: flex;
 }
 .addon-chip .MuiChip-icon {
     color: ${(props) => props.theme.secondaryColor};
+    line-height: 1rem;
 }
+
+.MuiTypography-root {
+  font-family: "Qanelas Soft", "Open Sans", sans-serif;
+}
+  .MuiSlider-root {
+  "& .MuiSlider-mark": {
+    fontSize: "12px",
+    color: ${(props) => props.theme.text.light};
+  },
+  "& .MuiSlider-markLabel": {
+    fontSize: "12px",
+    color: ${(props) => props.theme.secondaryColor};
+  },
+  }
+});
 `;
 
 export default PlanCardWrapper;

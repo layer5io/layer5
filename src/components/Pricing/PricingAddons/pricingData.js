@@ -25,6 +25,7 @@ export const getAddOns = (theme) => [
       secondaryFill={theme?.palette?.background?.inverse || "#eee"}
     />,
     unitLabel: "learners",
+    unitLabelSingular: "learner",
     maxUnits: 5000,
     // features: ["Learning Paths", "Challenges", "Certifications", "Instructor Console"],
     subAddOns: [
@@ -33,6 +34,7 @@ export const getAddOns = (theme) => [
         name: "Theoretical Learning",
         description: "A comprehensive learning management system for creators and instructors on how to build, manage, and extend educational content like learning paths, challenges, and certifications.",
         unitLabel: "learners",
+        unitLabelSingular: "learner",
         maxUnits: 5000,
         pricing: [
           { learners: 250, monthlyPerUser: 1.29, yearlyPerUser: 1.05, currency: "$" },
@@ -57,6 +59,8 @@ export const getAddOns = (theme) => [
         name: "Practical Learning",
         description: "An inclusive, collaborative, hands-on learning environment with labs for students.",
         maxUnits: 5000,
+        unitLabel: "learners",
+        unitLabelSingular: "learner",
         pricing: [
           { learners: 250, monthlyPerUser: 1.29, yearlyPerUser: 1.05, currency: "$" },
           { learners: 500, monthlyPerUser: 0.80, yearlyPerUser: 0.67, currency: "$" },
@@ -84,7 +88,13 @@ export const getAddOns = (theme) => [
     yearlyPrice: 653, // ~15% discount for yearly
     icon: <Cloud sx={{ color: theme?.palette?.background?.inverse || "#FFFFFF" }} />,
     unitLabel: "servers",
+    unitLabelSingular: "server",
     maxUnits: 50,
+    pricing: [
+      { units: 1, monthlyPerUnit: 64, yearlyPerUnit: 54.40, currency: "$" },
+      { units: 25, monthlyPerUnit: 64, yearlyPerUnit: 54.40, currency: "$" },
+      { units: 50, monthlyPerUnit: 64, yearlyPerUnit: 54.40, currency: "$" },
+    ],
     features: ["Automated deployment", "Real-time monitoring", "Multi-cluster support", "Performance analytics"],
   },
   {
@@ -95,7 +105,13 @@ export const getAddOns = (theme) => [
     yearlyPrice: 15.30, // ~15% discount for yearly
     icon: <Group sx={{ color: theme?.palette?.background?.inverse || "#00B39F" }} />,
     unitLabel: "collaborators",
+    unitLabelSingular: "collaborator",
     maxUnits: 200,
+    pricing: [
+      { units: 1, monthlyPerUnit: 2, yearlyPerUnit: 1.70, currency: "$" },
+      { units: 100, monthlyPerUnit: 1.50, yearlyPerUnit: 1.275, currency: "$" },
+      { units: 200, monthlyPerUnit: 1.50, yearlyPerUnit: 1.275, currency: "$" },
+    ],
     features: ["Enhanced Security", "Guaranteed SLAs", "Conflict-Free Synchronization", "Real-Time Collaboration"],
   },
 ];
