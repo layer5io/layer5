@@ -18,19 +18,6 @@ module.exports = {
   trailingSlash: "never",
   plugins: [
     {
-      resolve: "gatsby-plugin-netlify",
-      options: {
-        headers: {
-          "/*": [
-            "X-Frame-Options: SAMEORIGIN",
-            "Content-Security-Policy: frame-ancestors 'self'",
-          ],
-        },
-        mergeSecurityHeaders: true,
-        mergeCachingHeaders: true,
-      },
-    },
-    {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
         disable: true,
