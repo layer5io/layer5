@@ -388,6 +388,10 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                               fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
                               borderRadius: "8px",
                               padding: "8px 12px",
+                              whiteSpace: { xs: "normal", sm: "nowrap" },       // default for sm+ is nowrap
+                              maxWidth: { xs: "150px", sm: "none" },            // remove maxWidth for sm+
+                              textAlign: { xs: "center", sm: "left" },          // default alignment for sm+
+                              overflowWrap: { xs: "break-word", sm: "normal" },
                               "&:before": {
                                 borderTopColor: "#363F49",
                               },
