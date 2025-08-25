@@ -388,9 +388,9 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                               fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
                               borderRadius: "8px",
                               padding: "8px 12px",
-                              whiteSpace: { xs: "normal", sm: "nowrap" },       // default for sm+ is nowrap
-                              maxWidth: { xs: "150px", sm: "none" },            // remove maxWidth for sm+
-                              textAlign: { xs: "center", sm: "left" },          // default alignment for sm+
+                              whiteSpace: { xs: "normal", sm: "nowrap" },
+                              maxWidth: { xs: "150px", sm: "none" },
+                              textAlign: { xs: "center", sm: "left" },
                               overflowWrap: { xs: "break-word", sm: "normal" },
                               "&:before": {
                                 borderTopColor: "#363F49",
@@ -417,7 +417,15 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                               label: (
                                 <Box sx={{ textAlign: "center", fontSize: "1.25rem", fontWeight: "bold" }}>
                                   <Box>{option.learners === "2500+" ? "2,500+" : option.learners}</Box>
-                                  <Box sx={{ color: "text.secondary", mb: 1.5, fontSize: ".9rem" }}>
+                                  <Box
+                                    sx={{
+                                      color: "text.secondary",
+                                      mb: 1.5,
+                                      fontSize: {
+                                        xs: "0.75rem",
+                                        sm: "0.9rem",
+                                      }
+                                    }}>
                                     {option.currency}{isYearly ? option.yearlyPerUser : option.monthlyPerUser}<br />{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
                                   </Box>
                                 </Box>
@@ -569,7 +577,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                         <Typography variant="h6" sx={{ textTransform: "uppercase", fontSize: 12, textAlign: "right", margin: 0, fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }} gutterBottom color="text.secondary" fontWeight="300">
                           TOTAL
                         </Typography>
-                        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                           <Typography variant="body1" gutterBottom color="text.secondary" fontWeight="300" sx={{ textTransform: "uppercase", fontSize: 14, textAlign: "left", margin: 0, fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
                             {isYearly ? "Yearly" : "Monthly"} Cost
                           </Typography>
