@@ -29,9 +29,11 @@ const useGsapTimeline = ({ trigger, featureContainerName,yPercent }) => {
             start: "top top+=96px",
             end: "bottom top",
             // markers: true,
-            scrub: true,
+            // changed value of scrub from true to 30 to add delay to the animation so people can read the text before it is gone if people scroll fast
+            scrub: 30,
             pin: true,
-            toggleActions: "play pause resume reset"
+            // changed the toggleActions to play complete reverse reset so that the animation can be reversed when the user scrolls back up
+            toggleActions: "play complete reverse reset"
           },
         });
 
