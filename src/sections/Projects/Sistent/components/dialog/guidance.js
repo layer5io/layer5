@@ -177,11 +177,9 @@ const DialogGuidance = () => {
                     full attention is needed for complex tasks or on mobile devices.
                   </p>
                 </DialogContent>
-                <DialogActions>
-                  <Button onClick={() => setOpenFullScreen(false)}>Cancel</Button>
-                  <Button variant="contained" color="primary" onClick={() => setOpenFullScreen(false)}>
-                    Save
-                  </Button>
+                <DialogActions style={{ justifyContent: "flex-start", paddingLeft: "24px" }}>
+                  <Button variant="contained" onClick={() => setOpenFullScreen(false)}>Cancel</Button>
+                  <Button variant="contained" color="secondary" onClick={() => setOpenFullScreen(false)}>Delete</Button>
                 </DialogActions>
               </Dialog>
             </SistentThemeProvider>

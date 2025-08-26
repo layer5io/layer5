@@ -206,7 +206,7 @@ const DialogCode = () => {
                       full attention is needed for complex tasks or on mobile devices.
                     </p>
                   </DialogContent>
-                  <DialogActions>
+                  <DialogActions style={{ justifyContent: "flex-start", paddingLeft: "24px" }}>
                     <Button variant="contained" onClick={() => setOpenFull(false)}>Cancel</Button>
                     <Button variant="contained" color="primary" onClick={() => setOpenFull(false)}>
                       Save

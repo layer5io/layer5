@@ -92,7 +92,7 @@ const SistentDialog = () => {
                   Do you want to proceed with this action?
                 </DialogContent>
                 <DialogActions>
-                  <Button variant="contained"  onClick={handleClose}>Cancel</Button>
+                  <Button variant="contained" onClick={handleClose}>Cancel</Button>
                   <Button variant="contained" color="primary" onClick={handleClose}>
                     Confirm
                   </Button>
