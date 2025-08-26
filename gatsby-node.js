@@ -45,255 +45,255 @@ if (process.env.CI === "true") {
 exports.createPages = async ({ actions, graphql, reporter }) => {
   // Create client-side redirects (these only work in prod deployment)
   const { createRedirect } = actions;
-  // createRedirect({
-  //   fromPath: "/books",
-  //   toPath: "/learn/service-mesh-books",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/books/the-enterprise-path-to-service-mesh-architectures",
-  //   toPath:
-  //     "/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath:
-  //     "/books/the-enterprise-path-to-service-mesh-architectures-2nd-edition",
-  //   toPath:
-  //     "/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/books/istio-up-and-running",
-  //   toPath: "/learn/service-mesh-books/istio-up-and-running",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/learn/service-mesh-workshops",
-  //   toPath: "/learn/workshops",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/workshops",
-  //   toPath: "/learn/workshops",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/labs",
-  //   toPath: "/learn/service-mesh-labs",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/meshery",
-  //   toPath: "/cloud-native-management/meshery",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/service-mesh-management/meshery",
-  //   toPath: "/cloud-native-management/meshery",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/service-mesh-management/meshery/operating-service-meshes",
-  //   toPath: "/cloud-native-management/meshery/operating-cloud-native-infra",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/cloud-native-management/meshery/operating-service-meshes",
-  //   toPath: "/cloud-native-management/meshery/operating-cloud-native-infra",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/service-mesh-management/meshery/getting-started",
-  //   toPath: "/cloud-native-management/meshery/getting-started",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/landscape",
-  //   toPath: "/service-mesh-landscape",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/events",
-  //   toPath: "/community/events",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/programs",
-  //   toPath: "/careers/programs",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/about",
-  //   toPath: "/company/about",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/brand",
-  //   toPath: "/company/brand",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/contact",
-  //   toPath: "/company/contact",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/news",
-  //   toPath: "/company/news",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/service-meshes",
-  //   toPath: "/service-mesh-landscape",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/calendar",
-  //   toPath: "/community/calendar",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/smi",
-  //   toPath: "/projects/service-mesh-interface-conformance",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/projects/getnighthawk",
-  //   toPath: "/projects/nighthawk",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/projects/getnighthawk",
-  //   toPath: "/projects/nighthawk",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/projects/service-mesh-performance",
-  //   toPath: "/projects/cloud-native-performance",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/blog/category/service-mesh-performance",
-  //   toPath: "/blog/category/service-mesh",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/blog/category/service-mesh-performance/",
-  //   toPath: "/blog/category/service-mesh",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/blog/tag/smi",
-  //   toPath: "/blog/tag/service-mesh-interface",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/catalog",
-  //   toPath: "/cloud-native-management/catalog",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/cloud-native-management/meshery/integrations/argocd-operator",
-  //   toPath: "/cloud-native-management/meshery/integrations/argo-cd-operator",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/cloud-native-management/meshery/integrations/argocd-operator/",
-  //   toPath: "/cloud-native-management/meshery/integrations/argo-cd-operator",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/blog/category/landscape",
-  //   toPath: "/blog/tag/landscape",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/blog/category/landscape/",
-  //   toPath: "/blog/tag/landscape",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/blog/category/service-mesh-specifications",
-  //   toPath: "/blog/category/service-mesh",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/orchestration-management",
-  //   toPath: "/solutions/orchestration-management",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/cloud-native-management/gitops",
-  //   toPath: "/solutions/gitops",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/cloud-native-management/gitops/snapshot",
-  //   toPath: "/solutions/gitops/snapshot",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/cloud-native-management/gitops/performance-management",
-  //   toPath: "/solutions/gitops/performance-management",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/blog/announcements/meshery-5000-star-milestone",
-  //   toPath: "/blog/announcements/mesherys-5000-star-milestone",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
+  createRedirect({
+    fromPath: "/books",
+    toPath: "/learn/service-mesh-books",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/books/the-enterprise-path-to-service-mesh-architectures",
+    toPath:
+      "/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath:
+      "/books/the-enterprise-path-to-service-mesh-architectures-2nd-edition",
+    toPath:
+      "/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/books/istio-up-and-running",
+    toPath: "/learn/service-mesh-books/istio-up-and-running",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/learn/service-mesh-workshops",
+    toPath: "/learn/workshops",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/workshops",
+    toPath: "/learn/workshops",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/labs",
+    toPath: "/learn/service-mesh-labs",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/meshery",
+    toPath: "/cloud-native-management/meshery",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/service-mesh-management/meshery",
+    toPath: "/cloud-native-management/meshery",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/service-mesh-management/meshery/operating-service-meshes",
+    toPath: "/cloud-native-management/meshery/operating-cloud-native-infra",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/cloud-native-management/meshery/operating-service-meshes",
+    toPath: "/cloud-native-management/meshery/operating-cloud-native-infra",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/service-mesh-management/meshery/getting-started",
+    toPath: "/cloud-native-management/meshery/getting-started",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/landscape",
+    toPath: "/service-mesh-landscape",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/events",
+    toPath: "/community/events",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/programs",
+    toPath: "/careers/programs",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/about",
+    toPath: "/company/about",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/brand",
+    toPath: "/company/brand",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/contact",
+    toPath: "/company/contact",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/news",
+    toPath: "/company/news",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/service-meshes",
+    toPath: "/service-mesh-landscape",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/calendar",
+    toPath: "/community/calendar",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/smi",
+    toPath: "/projects/service-mesh-interface-conformance",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/projects/getnighthawk",
+    toPath: "/projects/nighthawk",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/projects/getnighthawk",
+    toPath: "/projects/nighthawk",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/projects/service-mesh-performance",
+    toPath: "/projects/cloud-native-performance",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/blog/category/service-mesh-performance",
+    toPath: "/blog/category/service-mesh",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/blog/category/service-mesh-performance/",
+    toPath: "/blog/category/service-mesh",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/blog/tag/smi",
+    toPath: "/blog/tag/service-mesh-interface",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/catalog",
+    toPath: "/cloud-native-management/catalog",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/cloud-native-management/meshery/integrations/argocd-operator",
+    toPath: "/cloud-native-management/meshery/integrations/argo-cd-operator",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/cloud-native-management/meshery/integrations/argocd-operator/",
+    toPath: "/cloud-native-management/meshery/integrations/argo-cd-operator",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/blog/category/landscape",
+    toPath: "/blog/tag/landscape",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/blog/category/landscape/",
+    toPath: "/blog/tag/landscape",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/blog/category/service-mesh-specifications",
+    toPath: "/blog/category/service-mesh",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/orchestration-management",
+    toPath: "/solutions/orchestration-management",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/cloud-native-management/gitops",
+    toPath: "/solutions/gitops",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/cloud-native-management/gitops/snapshot",
+    toPath: "/solutions/gitops/snapshot",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/cloud-native-management/gitops/performance-management",
+    toPath: "/solutions/gitops/performance-management",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/blog/announcements/meshery-5000-star-milestone",
+    toPath: "/blog/announcements/mesherys-5000-star-milestone",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
 
   // //****
   // // External Resource Redirects
   // //****
 
-  // // New Community Member (Google Form)
-  // createRedirect({
-  //   fromPath: "/newcomer",
-  //   toPath: "/newcomers",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
+  // New Community Member (Google Form)
+  createRedirect({
+    fromPath: "/newcomer",
+    toPath: "/newcomers",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
   createRedirect({
     fromPath: "/kanvas",
     toPath: "/cloud-native-management/kanvas",
@@ -336,38 +336,38 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     redirectInBrowser: true,
     isPermanent: true,
   });
-  // createRedirect({
-  //   fromPath: "/resources/cloud-native/hpes-adoption-of-meshery-and-meshmap",
-  //   toPath: "/resources/case-study/hpes-adoption-of-meshery-and-meshmap",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/sitemap.xml",
-  //   toPath: "/sitemap-index.xml",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
-  // createRedirect({
-  //   fromPath: "/products/nighthawk",
-  //   toPath: "/projects/nighthawk",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
+  createRedirect({
+    fromPath: "/resources/cloud-native/hpes-adoption-of-meshery-and-meshmap",
+    toPath: "/resources/case-study/hpes-adoption-of-meshery-and-meshmap",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/sitemap.xml",
+    toPath: "/sitemap-index.xml",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
+    fromPath: "/products/nighthawk",
+    toPath: "/projects/nighthawk",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
 
-  // createRedirect({
-  //   fromPath: "/products/service-mesh-performance",
-  //   toPath: "/projects/cloud-native-performance",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
+  createRedirect({
+    fromPath: "/products/service-mesh-performance",
+    toPath: "/projects/cloud-native-performance",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
 
-  // createRedirect({
-  //   fromPath: "/products/service-mesh-performance-specification",
-  //   toPath: "/projects/cloud-native-performance",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
+  createRedirect({
+    fromPath: "/products/service-mesh-performance-specification",
+    toPath: "/projects/cloud-native-performance",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
 
   createRedirect({
     fromPath: "/cloud-native-management/meshmap/collaborate",
@@ -376,19 +376,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     isPermanent: true,
   });
 
-  // createRedirect({
-  //   fromPath: "/blog/tag/meshery-open-source",
-  //   toPath: "/blog/tag/open-source",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
+  createRedirect({
+    fromPath: "/blog/tag/meshery-open-source",
+    toPath: "/blog/tag/open-source",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
 
-  // createRedirect({
-  //   fromPath: "/blog/category/opensource",
-  //   toPath: "/blog/category/open-source",
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // });
+  createRedirect({
+    fromPath: "/blog/category/opensource",
+    toPath: "/blog/category/open-source",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
 
   createRedirect({
     fromPath: "/cloud-native-management/meshmap/design",
@@ -404,425 +404,425 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     isPermanent: true,
   });
   // Create Pages
-//   const { createPage } = actions;
+    const { createPage } = actions;
 
-//   const envCreatePage = (props) => {
-//     if (process.env.CI === "true") {
-//       const { path, ...rest } = props;
+    const envCreatePage = (props) => {
+      if (process.env.CI === "true") {
+        const { path, ...rest } = props;
 
-//       createRedirect({
-//         fromPath: `/${path}/`,
-//         toPath: `/${path}`,
-//         redirectInBrowser: true,
-//         isPermanent: true,
-//       });
+        createRedirect({
+          fromPath: `/${path}/`,
+          toPath: `/${path}`,
+          redirectInBrowser: true,
+          isPermanent: true,
+        });
 
-//       return createPage({
-//         path: `${path}.html`,
-//         matchPath: path,
-//         ...rest,
-//       });
-//     }
-//     return createPage(props);
-//   };
+        return createPage({
+          path: `${path}.html`,
+          matchPath: path,
+          ...rest,
+        });
+      }
+      return createPage(props);
+    };
 
-//   const blogPostTemplate = path.resolve("src/templates/blog-single.js");
-//   const blogCategoryListTemplate = path.resolve(
-//     "src/templates/blog-category-list.js"
-//   );
-//   const blogTagListTemplate = path.resolve("src/templates/blog-tag-list.js");
+    const blogPostTemplate = path.resolve("src/templates/blog-single.js");
+    const blogCategoryListTemplate = path.resolve(
+      "src/templates/blog-category-list.js"
+    );
+    const blogTagListTemplate = path.resolve("src/templates/blog-tag-list.js");
 
-//   const EventsTemplate = path.resolve("src/templates/events.js");
+    const EventsTemplate = path.resolve("src/templates/events.js");
 
-//   const EventTemplate = path.resolve("src/templates/event-single.js");
+    const EventTemplate = path.resolve("src/templates/event-single.js");
 
-//   const NewsPostTemplate = path.resolve("src/templates/news-single.js");
+    const NewsPostTemplate = path.resolve("src/templates/news-single.js");
 
-//   const BookPostTemplate = path.resolve("src/templates/book-single.js");
+    const BookPostTemplate = path.resolve("src/templates/book-single.js");
 
-//   const ProgramPostTemplate = path.resolve("src/templates/program-single.js");
+    const ProgramPostTemplate = path.resolve("src/templates/program-single.js");
 
-//   const MultiProgramPostTemplate = path.resolve(
-//     "src/templates/program-multiple.js"
-//   );
+    const MultiProgramPostTemplate = path.resolve(
+      "src/templates/program-multiple.js"
+    );
 
-//   const CareerPostTemplate = path.resolve("src/templates/career-single.js");
+    const CareerPostTemplate = path.resolve("src/templates/career-single.js");
 
-//   const MemberTemplate = path.resolve("src/templates/member-single.js");
+    const MemberTemplate = path.resolve("src/templates/member-single.js");
 
-//   const MemberBioTemplate = path.resolve("src/templates/executive-bio.js");
+    const MemberBioTemplate = path.resolve("src/templates/executive-bio.js");
 
-//   const WorkshopTemplate = path.resolve("src/templates/workshop-single.js");
+    const WorkshopTemplate = path.resolve("src/templates/workshop-single.js");
 
-//   const LabTemplate = path.resolve("src/templates/lab-single.js");
+    const LabTemplate = path.resolve("src/templates/lab-single.js");
 
-//   const resourcePostTemplate = path.resolve("src/templates/resource-single.js");
-//   const integrationTemplate = path.resolve("src/templates/integrations.js");
+    const resourcePostTemplate = path.resolve("src/templates/resource-single.js");
+    const integrationTemplate = path.resolve("src/templates/integrations.js");
 
-//   const res = await graphql(`
-//     {
-//       allPosts: allMdx(filter: { frontmatter: { published: { eq: true } } }) {
-//         nodes {
-//           frontmatter {
-//             program
-//             programSlug
-//           }
-//           fields {
-//             collection
-//             slug
-//           }
-//         }
-//       }
-//       blogTags: allMdx(
-//         filter: {
-//           fields: { collection: { eq: "blog" } }
-//           frontmatter: { published: { eq: true } }
-//         }
-//       ) {
-//         group(field: { frontmatter: { tags: SELECT } }) {
-//           nodes {
-//             id
-//           }
-//           fieldValue
-//         }
-//       }
-//       blogCategory: allMdx(
-//         filter: {
-//           fields: { collection: { eq: "blog" } }
-//           frontmatter: { published: { eq: true } }
-//         }
-//       ) {
-//         group(field: { frontmatter: { category: SELECT } }) {
-//           nodes {
-//             id
-//           }
-//           fieldValue
-//         }
-//       }
-//       memberBio: allMdx(
-//         filter: {
-//           fields: { collection: { eq: "members" } }
-//           frontmatter: { published: { eq: true }, executive_bio: { eq: true } }
-//         }
-//       ) {
-//         nodes {
-//           frontmatter {
-//             name
-//             permalink
-//           }
-//           fields {
-//             slug
-//             collection
-//           }
-//         }
-//       }
-//       singleWorkshop: allMdx(
-//         filter: { fields: { collection: { eq: "workshops" } } }
-//       ) {
-//         nodes {
-//           fields {
-//             slug
-//             collection
-//           }
-//         }
-//       }
-//       labs: allMdx(
-//         filter: { fields: { collection: { eq: "service-mesh-labs" } } }
-//       ) {
-//         nodes {
-//           fields {
-//             slug
-//             collection
-//           }
-//         }
-//       }
-//       learncontent: allMdx(
-//         filter: { fields: { collection: { eq: "content-learn" } } }
-//       ) {
-//         nodes {
-//           fields {
-//             learnpath
-//             slug
-//             course
-//             section
-//             chapter
-//             pageType
-//             collection
-//           }
-//         }
-//       }
-//     }
-//   `);
+    const res = await graphql(`
+      {
+        allPosts: allMdx(filter: { frontmatter: { published: { eq: true } } }) {
+          nodes {
+            frontmatter {
+              program
+              programSlug
+            }
+            fields {
+              collection
+              slug
+            }
+          }
+        }
+        blogTags: allMdx(
+          filter: {
+            fields: { collection: { eq: "blog" } }
+            frontmatter: { published: { eq: true } }
+          }
+        ) {
+          group(field: { frontmatter: { tags: SELECT } }) {
+            nodes {
+              id
+            }
+            fieldValue
+          }
+        }
+        blogCategory: allMdx(
+          filter: {
+            fields: { collection: { eq: "blog" } }
+            frontmatter: { published: { eq: true } }
+          }
+        ) {
+          group(field: { frontmatter: { category: SELECT } }) {
+            nodes {
+              id
+            }
+            fieldValue
+          }
+        }
+        memberBio: allMdx(
+          filter: {
+            fields: { collection: { eq: "members" } }
+            frontmatter: { published: { eq: true }, executive_bio: { eq: true } }
+          }
+        ) {
+          nodes {
+            frontmatter {
+              name
+              permalink
+            }
+            fields {
+              slug
+              collection
+            }
+          }
+        }
+        singleWorkshop: allMdx(
+          filter: { fields: { collection: { eq: "workshops" } } }
+        ) {
+          nodes {
+            fields {
+              slug
+              collection
+            }
+          }
+        }
+        labs: allMdx(
+          filter: { fields: { collection: { eq: "service-mesh-labs" } } }
+        ) {
+          nodes {
+            fields {
+              slug
+              collection
+            }
+          }
+        }
+        learncontent: allMdx(
+          filter: { fields: { collection: { eq: "content-learn" } } }
+        ) {
+          nodes {
+            fields {
+              learnpath
+              slug
+              course
+              section
+              chapter
+              pageType
+              collection
+            }
+          }
+        }
+      }
+    `);
 
-//   // handle errors
-//   if (res.errors) {
-//     reporter.panicOnBuild("Error while running GraphQL query.");
-//     return;
-//   }
+    // handle errors
+    if (res.errors) {
+      reporter.panicOnBuild("Error while running GraphQL query.");
+      return;
+    }
 
-//   const allNodes = res.data.allPosts.nodes;
+    const allNodes = res.data.allPosts.nodes;
 
-//   const blogs = allNodes.filter((node) => node.fields.collection === "blog");
+    const blogs = allNodes.filter((node) => node.fields.collection === "blog");
 
-//   const resources = allNodes.filter(
-//     (node) => node.fields.collection === "resources"
-//   );
+    const resources = allNodes.filter(
+      (node) => node.fields.collection === "resources"
+    );
 
-//   const news = allNodes.filter((node) => node.fields.collection === "news");
+    const news = allNodes.filter((node) => node.fields.collection === "news");
 
-//   const books = allNodes.filter(
-//     (node) => node.fields.collection === "service-mesh-books"
-//   );
+    const books = allNodes.filter(
+      (node) => node.fields.collection === "service-mesh-books"
+    );
 
-//   const events = allNodes.filter((node) => node.fields.collection === "events");
+    const events = allNodes.filter((node) => node.fields.collection === "events");
 
-//   const programs = allNodes.filter(
-//     (node) => node.fields.collection === "programs"
-//   );
+    const programs = allNodes.filter(
+      (node) => node.fields.collection === "programs"
+    );
 
-//   const careers = allNodes.filter(
-//     (node) => node.fields.collection === "careers"
-//   );
+    const careers = allNodes.filter(
+      (node) => node.fields.collection === "careers"
+    );
 
-//   const members = allNodes.filter(
-//     (node) => node.fields.collection === "members"
-//   );
+    const members = allNodes.filter(
+      (node) => node.fields.collection === "members"
+    );
 
-//   const integrations = allNodes.filter(
-//     (nodes) => nodes.fields.collection === "integrations"
-//   );
+    const integrations = allNodes.filter(
+      (nodes) => nodes.fields.collection === "integrations"
+    );
 
-//   const singleWorkshop = res.data.singleWorkshop.nodes;
-//   const labs = res.data.labs.nodes;
+    const singleWorkshop = res.data.singleWorkshop.nodes;
+    const labs = res.data.labs.nodes;
 
-//   paginate({
-//     createPage: envCreatePage,
-//     items: events,
-//     itemsPerPage: 9,
-//     pathPrefix: "/community/events",
-//     component: EventsTemplate,
-//   });
+    paginate({
+      createPage: envCreatePage,
+      items: events,
+      itemsPerPage: 9,
+      pathPrefix: "/community/events",
+      component: EventsTemplate,
+    });
 
-//   blogs.forEach((blog) => {
-//     envCreatePage({
-//       path: blog.fields.slug,
-//       component: blogPostTemplate,
-//       context: {
-//         slug: blog.fields.slug,
-//       },
-//     });
-//   });
+    blogs.forEach((blog) => {
+      envCreatePage({
+        path: blog.fields.slug,
+        component: blogPostTemplate,
+        context: {
+          slug: blog.fields.slug,
+        },
+      });
+    });
 
-//   const blogCategory = res.data.blogCategory.group;
-//   blogCategory.forEach((category) => {
-//     envCreatePage({
-//       path: `/blog/category/${slugify(category.fieldValue)}`,
-//       component: blogCategoryListTemplate,
-//       context: {
-//         category: category.fieldValue,
-//       },
-//     });
-//   });
+    const blogCategory = res.data.blogCategory.group;
+    blogCategory.forEach((category) => {
+      envCreatePage({
+        path: `/blog/category/${slugify(category.fieldValue)}`,
+        component: blogCategoryListTemplate,
+        context: {
+          category: category.fieldValue,
+        },
+      });
+    });
 
-//   const BlogTags = res.data.blogTags.group;
-//   BlogTags.forEach((tag) => {
-//     envCreatePage({
-//       path: `/blog/tag/${slugify(tag.fieldValue)}`,
-//       component: blogTagListTemplate,
-//       context: {
-//         tag: tag.fieldValue,
-//       },
-//     });
-//   });
+    const BlogTags = res.data.blogTags.group;
+    BlogTags.forEach((tag) => {
+      envCreatePage({
+        path: `/blog/tag/${slugify(tag.fieldValue)}`,
+        component: blogTagListTemplate,
+        context: {
+          tag: tag.fieldValue,
+        },
+      });
+    });
 
-//   resources.forEach((resource) => {
-//     envCreatePage({
-//       path: resource.fields.slug,
-//       component: resourcePostTemplate,
-//       context: {
-//         slug: resource.fields.slug,
-//       },
-//     });
-//   });
+    resources.forEach((resource) => {
+      envCreatePage({
+        path: resource.fields.slug,
+        component: resourcePostTemplate,
+        context: {
+          slug: resource.fields.slug,
+        },
+      });
+    });
 
-//   news.forEach((singleNews) => {
-//     envCreatePage({
-//       path: singleNews.fields.slug,
-//       component: NewsPostTemplate,
-//       context: {
-//         slug: singleNews.fields.slug,
-//       },
-//     });
-//   });
+    news.forEach((singleNews) => {
+      envCreatePage({
+        path: singleNews.fields.slug,
+        component: NewsPostTemplate,
+        context: {
+          slug: singleNews.fields.slug,
+        },
+      });
+    });
 
-//   books.forEach((book) => {
-//     envCreatePage({
-//       path: book.fields.slug,
-//       component: BookPostTemplate,
-//       context: {
-//         slug: book.fields.slug,
-//       },
-//     });
-//   });
+    books.forEach((book) => {
+      envCreatePage({
+        path: book.fields.slug,
+        component: BookPostTemplate,
+        context: {
+          slug: book.fields.slug,
+        },
+      });
+    });
 
-//   events.forEach((event) => {
-//     envCreatePage({
-//       path: event.fields.slug,
-//       component: EventTemplate,
-//       context: {
-//         slug: event.fields.slug,
-//       },
-//     });
-//   });
+    events.forEach((event) => {
+      envCreatePage({
+        path: event.fields.slug,
+        component: EventTemplate,
+        context: {
+          slug: event.fields.slug,
+        },
+      });
+    });
 
-//   programs.forEach((program) => {
-//     envCreatePage({
-//       path: program.fields.slug,
-//       component: ProgramPostTemplate,
-//       context: {
-//         slug: program.fields.slug,
-//       },
-//     });
-//   });
+    programs.forEach((program) => {
+      envCreatePage({
+        path: program.fields.slug,
+        component: ProgramPostTemplate,
+        context: {
+          slug: program.fields.slug,
+        },
+      });
+    });
 
-//   careers.forEach((career) => {
-//     envCreatePage({
-//       path: career.fields.slug,
-//       component: CareerPostTemplate,
-//       context: {
-//         slug: career.fields.slug,
-//       },
-//     });
-//   });
+    careers.forEach((career) => {
+      envCreatePage({
+        path: career.fields.slug,
+        component: CareerPostTemplate,
+        context: {
+          slug: career.fields.slug,
+        },
+      });
+    });
 
-//   members.forEach((member) => {
-//     envCreatePage({
-//       path: member.fields.slug,
-//       component: MemberTemplate,
-//       context: {
-//         slug: member.fields.slug,
-//       },
-//     });
-//   });
+    members.forEach((member) => {
+      envCreatePage({
+        path: member.fields.slug,
+        component: MemberTemplate,
+        context: {
+          slug: member.fields.slug,
+        },
+      });
+    });
 
-//   const MemberBio = res.data.memberBio.nodes;
-//   MemberBio.forEach((memberbio) => {
-//     envCreatePage({
-//       path: `${memberbio.fields.slug}/bio`,
-//       component: MemberBioTemplate,
-//       context: {
-//         member: memberbio.frontmatter.name,
-//       },
-//     });
-//   });
+    const MemberBio = res.data.memberBio.nodes;
+    MemberBio.forEach((memberbio) => {
+      envCreatePage({
+        path: `${memberbio.fields.slug}/bio`,
+        component: MemberBioTemplate,
+        context: {
+          member: memberbio.frontmatter.name,
+        },
+      });
+    });
 
-//   singleWorkshop.forEach((workshop) => {
-//     envCreatePage({
-//       path: workshop.fields.slug,
-//       component: WorkshopTemplate,
-//       context: {
-//         slug: workshop.fields.slug,
-//       },
-//     });
-//   });
+    singleWorkshop.forEach((workshop) => {
+      envCreatePage({
+        path: workshop.fields.slug,
+        component: WorkshopTemplate,
+        context: {
+          slug: workshop.fields.slug,
+        },
+      });
+    });
 
-//   labs.forEach((lab) => {
-//     envCreatePage({
-//       path: lab.fields.slug,
-//       component: LabTemplate,
-//       context: {
-//         slug: lab.fields.slug,
-//       },
-//     });
-//   });
+    labs.forEach((lab) => {
+      envCreatePage({
+        path: lab.fields.slug,
+        component: LabTemplate,
+        context: {
+          slug: lab.fields.slug,
+        },
+      });
+    });
 
-//   integrations.forEach((integration) => {
-//     envCreatePage({
-//       path: `/cloud-native-management/meshery${integration.fields.slug}`,
-//       component: integrationTemplate,
-//       context: {
-//         slug: integration.fields.slug,
-//         name: "_images/" + integration.fields.slug.split("/")[2],
-//       },
-//     });
-//   });
+    integrations.forEach((integration) => {
+      envCreatePage({
+        path: `/cloud-native-management/meshery${integration.fields.slug}`,
+        component: integrationTemplate,
+        context: {
+          slug: integration.fields.slug,
+          name: "_images/" + integration.fields.slug.split("/")[2],
+        },
+      });
+    });
 
-//   let programsArray = [];
-//   programs.forEach((program) => {
-//     if (
-//       programsArray.indexOf(program.frontmatter.program) >= 0 &&
-//       program.frontmatter.program === "Layer5"
-//     ) {
-//       return false;
-//     } else {
-//       programsArray.push(program.frontmatter.program);
-//       envCreatePage({
-//         path: `/programs/${program.frontmatter.programSlug}`,
-//         component: MultiProgramPostTemplate,
-//         context: {
-//           program: program.frontmatter.program,
-//         },
-//       });
-//     }
-//   });
+    let programsArray = [];
+    programs.forEach((program) => {
+      if (
+        programsArray.indexOf(program.frontmatter.program) >= 0 &&
+        program.frontmatter.program === "Layer5"
+      ) {
+        return false;
+      } else {
+        programsArray.push(program.frontmatter.program);
+        envCreatePage({
+          path: `/programs/${program.frontmatter.programSlug}`,
+          component: MultiProgramPostTemplate,
+          context: {
+            program: program.frontmatter.program,
+          },
+        });
+      }
+    });
 
-//   const learnNodes = res.data.learncontent.nodes;
+    const learnNodes = res.data.learncontent.nodes;
 
-//   learnNodes.forEach((node) => {
-//     if (node.fields) {
-//       const { pageType } = node.fields;
+    learnNodes.forEach((node) => {
+      if (node.fields) {
+        const { pageType } = node.fields;
 
-//       if (pageType === "learnpath") {
-//         createCoursesListPage({ envCreatePage, node });
-//         return;
-//       }
+        if (pageType === "learnpath") {
+          createCoursesListPage({ envCreatePage, node });
+          return;
+        }
 
-//       if (pageType === "course") {
-//         createCourseOverviewPage({ envCreatePage, node });
-//         return;
-//       }
+        if (pageType === "course") {
+          createCourseOverviewPage({ envCreatePage, node });
+          return;
+        }
 
-//       if (pageType === "chapter") {
-//         createChapterPage({ envCreatePage, node });
-//         return;
-//       }
+        if (pageType === "chapter") {
+          createChapterPage({ envCreatePage, node });
+          return;
+        }
 
-//       if (pageType === "section") {
-//         createSectionPage({ envCreatePage, node });
-//         return;
-//       }
-//     }
-//   });
+        if (pageType === "section") {
+          createSectionPage({ envCreatePage, node });
+          return;
+        }
+      }
+    });
 
-//   const components = componentsData.map((component) => component.src.replace("/", ""));
-//   const createComponentPages = (createPage, components) => {
-//     const pageTypes = [
-//       { suffix: "", file: "index.js" },
-//       { suffix: "/guidance", file: "guidance.js" },
-//       { suffix: "/code", file: "code.js" },
-//     ];
+    const components = componentsData.map((component) => component.src.replace("/", ""));
+    const createComponentPages = (createPage, components) => {
+      const pageTypes = [
+        { suffix: "", file: "index.js" },
+        { suffix: "/guidance", file: "guidance.js" },
+        { suffix: "/code", file: "code.js" },
+      ];
 
-//     components.forEach((name) => {
-//       pageTypes.forEach(({ suffix, file }) => {
-//         const pagePath = `/projects/sistent/components/${name}${suffix}`;
-//         const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
-//         if (fs.existsSync(path.resolve(componentPath))) {
-//           try {
-//             createPage({
-//               path: pagePath,
-//               component: require.resolve(componentPath),
-//             });
-//           } catch (error) {
-//             console.error(`Error creating page for "${pagePath}":`, error);
-//           }
-//         } else {
-//           console.info(`Skipping creating page "${pagePath}" - file not found: "${componentPath}"`);
-//         }
-//       });
-//     });
-//   };
+      components.forEach((name) => {
+        pageTypes.forEach(({ suffix, file }) => {
+          const pagePath = `/projects/sistent/components/${name}${suffix}`;
+          const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
+          if (fs.existsSync(path.resolve(componentPath))) {
+            try {
+              createPage({
+                path: pagePath,
+                component: require.resolve(componentPath),
+              });
+            } catch (error) {
+              console.error(`Error creating page for "${pagePath}":`, error);
+            }
+          } else {
+            console.info(`Skipping creating page "${pagePath}" - file not found: "${componentPath}"`);
+          }
+        });
+      });
+    };
 
-//   createComponentPages(createPage, components);
+  createComponentPages(createPage, components);
 };
 
 // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
