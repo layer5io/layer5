@@ -173,6 +173,13 @@ const componentsData = [
     url: "/projects/sistent/components/avatar-group",
     src: "/avatar-group",
   },
+  {
+    id: 23,
+    name: "Badge",
+    description: "A badge is a small component that displays a number or status indicator, often used to show notifications or messages.",
+    url: "/projects/sistent/components/badge",
+    src: "/badge",
+  }
 ];
 
 module.exports = { componentsData };
