@@ -119,22 +119,22 @@ const ToolbarCode = () => {
           </p>
           <div className="showcase">
             <div style={{ height: "300px", position: "relative", overflow: "hidden" }}>
-            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Toolbar fixed>
-                <Button><ArrowBackIcon /></Button>
-                <Button><ArrowForwardIcon /></Button>
-                <Button><RefreshIcon /></Button>
-              </Toolbar>
-              <div style={{ height: "240px", overflowY: "auto", padding: "16px" }}>
-                <div style={{ height: "300px" }}>
-                  <p>Scrollable content goes here...</p>
-                  <p>More content...</p>
-                  <p>Even more content...</p>
-                  <p>Keep scrolling to see the toolbar stay fixed.</p>
-                  <p><strong>Toolbar in Sistent:</strong> Provides a consistent and accessible way to group key actions for users at the top of your application.</p>
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                <Toolbar fixed>
+                  <Button><ArrowBackIcon /></Button>
+                  <Button><ArrowForwardIcon /></Button>
+                  <Button><RefreshIcon /></Button>
+                </Toolbar>
+                <div style={{ height: "240px", overflowY: "auto", padding: "16px" }}>
+                  <div style={{ height: "300px" }}>
+                    <p>Scrollable content goes here...</p>
+                    <p>More content...</p>
+                    <p>Even more content...</p>
+                    <p>Keep scrolling to see the toolbar stay fixed.</p>
+                    <p><strong>Toolbar in Sistent:</strong> Provides a consistent and accessible way to group key actions for users at the top of your application.</p>
+                  </div>
                 </div>
-              </div>
-            </SistentThemeProvider>
+              </SistentThemeProvider>
             </div>
             <CodeBlock name="fixed-toolbar" code={codes[1]} />
           </div>
