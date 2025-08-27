@@ -41,7 +41,7 @@ export const content = [
   { id: 28, link: "/projects/sistent/components/container", text: "Container" },
   { id: 29, link: "/projects/sistent/components/container/guidance", text: "Container" },
   { id: 30, link: "/projects/sistent/components/container/code", text: "Container" },
-  
+
   { id: 31, link: "/projects/sistent/components/dialog", text: "Dialog" },
   { id: 32, link: "/projects/sistent/components/dialog/guidance", text: "Dialog" },
   { id: 33, link: "/projects/sistent/components/dialog/code", text: "Dialog" },
