@@ -1,5 +1,3 @@
-import { link } from "joi";
-
 export const content = [
   // About
   { id: 0, link: "/projects/sistent/about", text: "About Sistent" },
