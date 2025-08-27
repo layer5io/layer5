@@ -144,11 +144,12 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
   return (
     <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
       <CssBaseline>
-        <Container maxWidth="md" sx={{ my: 2, px: 2 }}>
+        <Container maxWidth="md" sx={{ my: 2, px: 2, overflow: "visible" }}>
           <PlanCardWrapper>
             <Card
               elevation={2}
               sx={{
+                overflow: "visible",
                 maxWidth: 600,
                 mx: "auto",
                 border: "1px solid",
@@ -410,18 +411,17 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                             return targetSubAddon?.pricing?.map((option, index) => ({
                               value: index,
                               label: (
-                                <Box sx={{ textAlign: "center", fontSize: "1.25rem" }}>
-
+                                <Box sx={{ textAlign: "center", fontSize: "1.25rem", fontWeight: "bold" }}>
                                   <Box>{option.learners === "2500+" ? "2,500+" : option.learners}</Box>
-                                  <Box sx={{ color: "primary.main", mb: 1.5, fontSize: ".9rem" }}>
-                                    {option.currency}{isYearly ? option.yearlyPerUser : option.monthlyPerUser}/{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
+                                  <Box sx={{ color: "text.secondary", mb: 1.5, fontSize: ".9rem" }}>
+                                    {option.currency}{isYearly ? option.yearlyPerUser : option.monthlyPerUser}<br />{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
                                   </Box>
                                 </Box>
                               ),
                             })) || [];
                           })()}
                         />
-                        <Box sx={{ display: "flex", my: 5, justifyContent: "space-between" }}>
+                        <Box sx={{ display: "flex", my: 8, justifyContent: "space-between" }}>
                           <Typography variant="body2" sx={{ fontStyle: "italic", color: "text.secondary", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
                             Looking for a plan larger than 2,500 learners? Great! <a href="/company/contact">Let us know</a>.
                           </Typography>
