@@ -82,9 +82,9 @@ const Banner1 = (props) => {
   return (
     <Banner1SectionWrapper {...props}>
       <BGImg title="heroImage" image={pluginImage}>
-        <Row style={{ marginRight: 0 }}>
-          <Col $sm={4} $lg={6} className="section-title-wrapper text-col">
-            <Container $fullWidthSM>
+        <Container>
+          <Row style={{ marginRight: 0 }}>
+            <Col $sm={4} $lg={6} className="section-title-wrapper text-col">
               <SectionTitle
                 className="section-title"
                 $leftAlign={true}
@@ -105,52 +105,52 @@ const Banner1 = (props) => {
                   </Button>
                 </VintageBox>
               </span>
-            </Container>
-          </Col>
-          {hasMounted && window.innerWidth > 760 && (
-            <Col $sm={4} $lg={6} className="section-title-wrapper video-col">
-              <div
-                className={`video-wrapper ${videoReady ? "video-loaded" : ""}`}
-                ref={thumbnailRef}
-                onClick={handleThumbnailClick}
-              >
-                <ReactPlayer
-                  url="https://youtu.be/034nVaQUyME?si=Yya8m6i7JUoSdZm4"
-                  playing
-                  controls
-                  light={videoThumbnail}
-                  playIcon={
-                    <img
-                      src={playIcon}
-                      className="playBtn"
-                      loading="eager"
-                      alt="Play"
-                      role="button"
-                      aria-label="Play"
-                      style={{ fontSize: "24px" }}
-                    />
-                  }
-                  width="100%"
-                  height="100%"
-                  className="embedVideo"
-                  onReady={handleVideoReady}
-                  onStart={handleVideoReady}
-                  onPlay={handleVideoReady}
-                  onBufferEnd={handleVideoReady}
-                  onClickPreview={handleVideoReady}
-                  config={{
-                    youtube: {
-                      playerVars: {
-                        rel: 0,
-                        modestbranding: 1,
-                      }
-                    }
-                  }}
-                />
-              </div>
             </Col>
-          )}
-        </Row>
+            {hasMounted && window.innerWidth > 760 && (
+              <Col $sm={4} $lg={6} className="section-title-wrapper video-col">
+                <div
+                  className={`video-wrapper ${videoReady ? "video-loaded" : ""}`}
+                  ref={thumbnailRef}
+                  onClick={handleThumbnailClick}
+                >
+                  <ReactPlayer
+                    url="https://youtu.be/034nVaQUyME?si=Yya8m6i7JUoSdZm4"
+                    playing
+                    controls
+                    light={videoThumbnail}
+                    playIcon={
+                      <img
+                        src={playIcon}
+                        className="playBtn"
+                        loading="eager"
+                        alt="Play"
+                        role="button"
+                        aria-label="Play"
+                        style={{ fontSize: "24px" }}
+                      />
+                    }
+                    width="100%"
+                    height="100%"
+                    className="embedVideo"
+                    onReady={handleVideoReady}
+                    onStart={handleVideoReady}
+                    onPlay={handleVideoReady}
+                    onBufferEnd={handleVideoReady}
+                    onClickPreview={handleVideoReady}
+                    config={{
+                      youtube: {
+                        playerVars: {
+                          rel: 0,
+                          modestbranding: 1,
+                        }
+                      }
+                    }}
+                  />
+                </div>
+              </Col>
+            )}
+          </Row>
+        </Container>
       </BGImg>
     </Banner1SectionWrapper>
   );

@@ -40,10 +40,11 @@ const Banner1SectionWrapper = styled.section`
     /* Video container with fixed aspect ratio to prevent layout shifts */
     .video-wrapper {
         position: relative;
-        width: 90%;
+        width: 95%;
+        max-width: 600px;
         margin: auto;
         height: 0;
-        padding-bottom: 50.625%; /* 16:9 aspect ratio (9/16 = 0.5625) */
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
         overflow: hidden;
         border-radius: 8px;
         background: ${props => props.theme.DarkTheme ? "rgba(0, 0, 0, 0.2)" : "rgba(0, 0, 0, 0.05)"};
@@ -227,6 +228,9 @@ const Banner1SectionWrapper = styled.section`
         .video-col{
             display: none;
         }
+        .text-col {
+            width: 100%;
+        }
         .section-title {
             h1 {
                 margin: 0rem;
@@ -248,7 +252,14 @@ const Banner1SectionWrapper = styled.section`
         }
         .kanvasVideo {
             top: 1rem;
+        }
     }
+    
+    @media only screen and (max-width: 992px) and (min-width: 768px) {
+        .video-wrapper {
+            width: 100%;
+            max-width: 500px;
+        }
     }
     @media only screen and (max-width: 480px) {
         padding: 2rem 0;
