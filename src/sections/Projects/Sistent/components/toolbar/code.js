@@ -6,16 +6,12 @@ import { CodeBlock } from "../button/code-block";
 import { SistentLayout } from "../../sistent-layout";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
-import AddIcon from "@mui/icons-material/Add";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
 import SearchIcon from "@mui/icons-material/Search";
 import HomeIcon from "@mui/icons-material/Home";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import SettingsIcon from "@mui/icons-material/Settings";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 const codes = [
   `  <SistentThemeProvider>
@@ -31,28 +27,13 @@ const codes = [
          <Button><ArrowForwardIcon /></Button>
          <Button><RefreshIcon /></Button>
        </Toolbar>
-  </SistentThemeProvider>`,
-  `  <SistentThemeProvider>
-       <Toolbar>
-         <Button disabled>Disabled</Button>
-         <Button>Active</Button>
-         <Button>Normal</Button>
-       </Toolbar>
+        /* Further content goes here. */
   </SistentThemeProvider>`,
   `  <SistentThemeProvider>
        <Toolbar variant="dense">
          <Button><HomeIcon /></Button>
          <Button><SearchIcon /></Button>
          <Button><SettingsIcon /></Button>
-       </Toolbar>
-  </SistentThemeProvider>`,
-  `  <SistentThemeProvider>
-       <Toolbar>
-         <Button><AddIcon /></Button>
-         <Button><EditIcon /></Button>
-         <div style={{ marginLeft: "auto" }}>
-           <Button><MoreVertIcon /></Button>
-         </div>
        </Toolbar>
   </SistentThemeProvider>`,
 ];
@@ -137,14 +118,23 @@ const ToolbarCode = () => {
             stays in place during scrolling.
           </p>
           <div className="showcase">
-            <div className="items">
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <Toolbar fixed>
-                  <Button><ArrowBackIcon /></Button>
-                  <Button><ArrowForwardIcon /></Button>
-                  <Button><RefreshIcon /></Button>
-                </Toolbar>
-              </SistentThemeProvider>
+            <div style={{ height: "300px", position: "relative", overflow: "hidden" }}>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <Toolbar fixed>
+                <Button><ArrowBackIcon /></Button>
+                <Button><ArrowForwardIcon /></Button>
+                <Button><RefreshIcon /></Button>
+              </Toolbar>
+              <div style={{ height: "240px", overflowY: "auto", padding: "16px" }}>
+                <div style={{ height: "300px" }}>
+                  <p>Scrollable content goes here...</p>
+                  <p>More content...</p>
+                  <p>Even more content...</p>
+                  <p>Keep scrolling to see the toolbar stay fixed.</p>
+                  <p><strong>Toolbar in Sistent:</strong> Provides a consistent and accessible way to group key actions for users at the top of your application.</p>
+                </div>
+              </div>
+            </SistentThemeProvider>
             </div>
             <CodeBlock name="fixed-toolbar" code={codes[1]} />
           </div>
@@ -165,7 +155,7 @@ const ToolbarCode = () => {
                 </Toolbar>
               </SistentThemeProvider>
             </div>
-            <CodeBlock name="dense-toolbar" code={codes[3]} />
+            <CodeBlock name="dense-toolbar" code={codes[2]} />
           </div>
 
         </div>

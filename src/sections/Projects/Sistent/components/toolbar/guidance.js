@@ -147,13 +147,23 @@ const ToolbarGuidance = () => {
             scrolling, providing persistent access to common actions.
           </p>
           <Row $Hcenter className="image-container">
-            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Toolbar fixed>
-                <Button><HomeIcon /></Button>
-                <Button><SearchIcon /></Button>
-                <Button><SettingsIcon /></Button>
-              </Toolbar>
-            </SistentThemeProvider>
+            <div style={{ height: "300px", position: "relative", overflow: "hidden", width: "100%" }}>
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                <Toolbar fixed>
+                  <Button><HomeIcon /></Button>
+                  <Button><SearchIcon /></Button>
+                  <Button><SettingsIcon /></Button>
+                </Toolbar>
+                <div style={{ height: "240px", overflowY: "auto", padding: "16px" }}>
+                  <div style={{ height: "300px" }}>
+                    <p><strong>Sistent Toolbar:</strong> The Sistent toolbar provides users with quick access to essential navigation and settings, ensuring a seamless experience across the application.</p>
+                    <p>With a fixed position, the toolbar remains visible as you scroll, making key actions always accessible.</p>
+                    <p>Use the Home icon to return to the dashboard, the Search icon to find resources, and the Settings icon to customize your preferences.</p>
+                    <p>Sistent is designed for clarity, accessibility, and ease of use, helping users stay productive and focused.</p>
+                  </div>
+                </div>
+              </SistentThemeProvider>
+            </div>
           </Row>
           <h3>Contextual Toolbar</h3>
           <p>
@@ -186,21 +196,12 @@ const ToolbarGuidance = () => {
                   <>
                     <Button>Font</Button>
                     <Button>Size</Button>
-                    <Button><b>B</b></Button>
-                    <Button><i>I</i></Button>
-                    <Button><u>U</u></Button>
                     <Button>Text Color</Button>
-                    <Button>Highlight</Button>
-                    <Button>Link</Button>
-                    <Button>Comment</Button>
                   </>
                 ) : (
                   <>
                     <Button>Crop</Button>
                     <Button>Replace Image</Button>
-                    <Button>Alt Text</Button>
-                    <Button>Align</Button>
-                    <Button>Wrap Text</Button>
                     <Button>Size</Button>
                   </>
                 )}
