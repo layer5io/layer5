@@ -1,3 +1,5 @@
+import { link } from "joi";
+
 export const content = [
   // About
   { id: 0, link: "/projects/sistent/about", text: "About Sistent" },
@@ -84,7 +86,11 @@ export const content = [
   { id: 60, link: "/projects/sistent/components/text-input/guidance", text: "Text Input" },
   { id: 61, link: "/projects/sistent/components/text-input/code", text: "Text Input" },
 
-  { id: 62, link: "/projects/sistent/components/tooltip", text: "Tooltip" },
-  { id: 63, link: "/projects/sistent/components/tooltip/guidance", text: "Tooltip" },
-  { id: 64, link: "/projects/sistent/components/tooltip/code", text: "Tooltip" },
+  { id: 62, link: "/projects/sistent/components/toolbar", text: "Toolbar" },
+  { id: 63, link: "/projects/sistent/components/toolbar/guidance", text: "Toolbar" },
+  { id: 64, link: "/projects/sistent/components/toolbar/code", text: "Toolbar" },
+
+  { id: 65, link: "/projects/sistent/components/tooltip", text: "Tooltip" },
+  { id: 66, link: "/projects/sistent/components/tooltip/guidance", text: "Tooltip" },
+  { id: 67, link: "/projects/sistent/components/tooltip/code", text: "Tooltip" },
 ];
