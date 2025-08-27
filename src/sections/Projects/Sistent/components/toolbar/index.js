@@ -48,7 +48,7 @@ const ToolbarOverview = () => {
   // Dropdown toggle and option select handlers
   const toggleDropdown = () => setDropdownOpen((prev) => !prev);
   const handleOptionClick = (option, icon) => {
-          setSelectedOption(option);
+    setSelectedOption(option);
     setSelectedIcon(icon);
     setDropdownOpen(false);
   };
@@ -67,8 +67,8 @@ const ToolbarOverview = () => {
           <h2>Toolbar</h2>
         </a>
         <p>
-          The Toolbar is a horizontal layout container used to organize and group actions or interactive elements. 
-          It helps streamline workflows and keeps related actions in one place, providing users with easy access 
+          The Toolbar is a horizontal layout container used to organize and group actions or interactive elements.
+          It helps streamline workflows and keeps related actions in one place, providing users with easy access
           to frequently used commands.
         </p>
 
@@ -108,7 +108,7 @@ const ToolbarOverview = () => {
 
         <div className="main-content">
           <p>
-            Toolbars are essential UI components that provide convenient access to actions and tools. 
+            Toolbars are essential UI components that provide convenient access to actions and tools.
             They can be placed at various locations within your interface and configured to suit different needs.
           </p>
 
@@ -120,7 +120,7 @@ const ToolbarOverview = () => {
             They can be customized with various controls including buttons, dropdowns, search fields, and more.<br />
             Some of the basic examples are shown below.
           </p>
-          
+
           <h3>Standard Toolbar</h3>
           <p>
             A standard toolbar with basic action buttons:
@@ -155,47 +155,47 @@ const ToolbarOverview = () => {
           <p>
             A toolbar with actions and a dropdown menu:
           </p>
-            <Row $Hcenter className="image-container">
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <Toolbar>
-                  <Button><AddIcon /></Button>
-                  <Button><EditIcon /></Button>
-                  <div style={{ position: "relative", marginLeft: "auto" }}>
-                    <Button onClick={toggleDropdown}>
-                      {selectedOption === "More" ? (
-                        <>More <MoreVertIcon style={{ marginLeft: "4px" }} /></>
-                      ) : (
-                        <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                          {selectedIcon}
-                          {selectedOption}
-                        </div>
-                      )}
-                    </Button>
-                    {dropdownOpen && (
-                      <div style={getDropdownStyle(isDark)}>
-                        {options.map(
-                          (option, index) => (
-                            <div
-                              key={index}
-                              style={{
-                                ...dropdownItem,
-                                display: "flex",
-                                alignItems: "center",
-                                gap: "8px",
-                              }}
-                              onClick={() => handleOptionClick(option.name, option.icon)}
-                            >
-                              {React.cloneElement(option.icon, { fontSize: "small" })}
-                              {option.name}
-                            </div>
-                          )
-                        )}
+          <Row $Hcenter className="image-container">
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <Toolbar>
+                <Button><AddIcon /></Button>
+                <Button><EditIcon /></Button>
+                <div style={{ position: "relative", marginLeft: "auto" }}>
+                  <Button onClick={toggleDropdown}>
+                    {selectedOption === "More" ? (
+                      <>More <MoreVertIcon style={{ marginLeft: "4px" }} /></>
+                    ) : (
+                      <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                        {selectedIcon}
+                        {selectedOption}
                       </div>
                     )}
-                  </div>
-                </Toolbar>
-              </SistentThemeProvider>
-            </Row>
+                  </Button>
+                  {dropdownOpen && (
+                    <div style={getDropdownStyle(isDark)}>
+                      {options.map(
+                        (option, index) => (
+                          <div
+                            key={index}
+                            style={{
+                              ...dropdownItem,
+                              display: "flex",
+                              alignItems: "center",
+                              gap: "8px",
+                            }}
+                            onClick={() => handleOptionClick(option.name, option.icon)}
+                          >
+                            {React.cloneElement(option.icon, { fontSize: "small" })}
+                            {option.name}
+                          </div>
+                        )
+                      )}
+                    </div>
+                  )}
+                </div>
+              </Toolbar>
+            </SistentThemeProvider>
+          </Row>
 
           <h3>Search Toolbar</h3>
           <p>
@@ -206,8 +206,8 @@ const ToolbarOverview = () => {
             <Col sm={12}>
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <Toolbar>
-                  <div style={{ 
-                    display: "flex", 
+                  <div style={{
+                    display: "flex",
                     alignItems: "center",
                     border: "1px solid",
                     borderRadius: "4px",
@@ -216,7 +216,7 @@ const ToolbarOverview = () => {
                     maxWidth: "300px"
                   }}>
                     <SearchIcon style={{ marginRight: "8px" }} />
-                    <div style={{ 
+                    <div style={{
                       height: "32px",
                       lineHeight: "32px",
                     }}>Search...</div>
@@ -243,7 +243,7 @@ const ToolbarOverview = () => {
           </ul>
 
           <p>
-            When designing toolbars, consider the user's workflow and prioritize the most frequently used actions 
+            When designing toolbars, consider the user's workflow and prioritize the most frequently used actions
             to improve efficiency and usability.
           </p>
         </div>
