@@ -17,3 +17,4 @@ jobs:
           target: |
             ./src/**/*.md
             ./src/**/*.html
+            ./src/**/*.js
