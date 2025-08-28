@@ -40,8 +40,8 @@ export const repo_data = [
         image: meshery,
         site: "https://meshery.io",
         language: "Jekyll",
-        maintainers_name: ["Vivek Vishal"],
-        link: ["https://layer5.io/community/members/vivek-vishal"],
+        maintainers_name: ["Vacant"],
+        link: [""],
         repository: "https://github.com/meshery/meshery.io",
       },
       {
@@ -49,8 +49,8 @@ export const repo_data = [
         image: meshery,
         site: "http://docs.meshery.io",
         language: "Jekyll",
-        maintainers_name: ["Vivek Vishal"],
-        link: ["https://layer5.io/community/members/vivek-vishal"],
+        maintainers_name: ["Vacant"],
+        link: [""],
         repository: "https://github.com/meshery/meshery/tree/master/docs",
       },
       {
@@ -58,10 +58,11 @@ export const repo_data = [
         image: meshery,
         site: "https://github.com/meshery/meshery/tree/master/ui",
         language: "NextJS, React.js, MaterialUI and Billboard.js",
-        maintainers_name: ["Antonette Caldwell", "Aabid Sofi"],
+        maintainers_name: ["Antonette Caldwell", "Aabid Sofi", "Ian Whitney"],
         link: [
           "https://layer5.io/community/members/antonette-caldwell",
           "https://layer5.io/community/members/aabid-sofi",
+          "https://layer5.io/community/members/ian-whitney"
         ],
         repository: "https://github.com/meshery/meshery/tree/master/ui",
       },
@@ -80,8 +81,8 @@ export const repo_data = [
         image: gnh,
         site: "https://getnighthawk.dev",
         language: "Jekyll",
-        maintainers_name: ["Uzair Shaikh"],
-        link: ["https://layer5.io/community/members/uzair-shaikh"],
+        maintainers_name: ["Vacant"],
+        link: [""],
         repository: "https://github.com/layer5io/getnighthawk",
       },
       {
@@ -101,8 +102,8 @@ export const repo_data = [
         image: five,
         site: "https://discuss.layer5.io",
         language: "Discourse",
-        maintainers_name: ["Vivek Vishal"],
-        link: ["https://layer5.io/community/members/vivek-vishal"],
+        maintainers_name: ["Vacant"],
+        link: [""],
         repository: " https://discuss.layer5.io",
       },
       {
@@ -164,9 +165,57 @@ export const repo_data = [
         image: five,
         site: "https://docs.layer5.io/",
         language: "Hugo",
-        maintainers_name: ["Vacant"],
-        link: [""],
+        maintainers_name: ["Zihan Kuang"],
+        link: ["https://layer5.io/community/members/zihan-kuang"],
         repository: "https://github.com/layer5io/docs",
+      },
+      {
+        project: "Academy Theme",
+        image: five,
+        site: "https://github.com/layer5io/academy-theme",
+        language: "Hugo",
+        maintainers_name: ["Zihan Kuang", "Aabid Sofi"],
+        link: [
+          "https://layer5.io/community/members/zihan-kuang",
+          "https://layer5.io/community/members/aabid-sofi"
+        ],
+        repository: "https://github.com/layer5io/academy-theme",
+      },
+      {
+        project: "Academy Build",
+        image: five,
+        site: "https://github.com/layer5io/academy-build",
+        language: "Hugo build / GitHub Action",
+        maintainers_name: ["Aabid Sofi"],
+        link: ["https://layer5.io/community/members/aabid-sofi"],
+        repository: "https://github.com/layer5io/academy-build",
+      },
+      {
+        project: "Academy Example",
+        image: five,
+        site: "https://github.com/layer5io/academy-example",
+        language: "Hugo",
+        maintainers_name: ["Zihan Kuang"],
+        link: ["https://layer5.io/community/members/zihan-kuang"],
+        repository: "https://github.com/layer5io/academy-example",
+      },
+      {
+        project: "Exoscale Academy",
+        image: five,
+        site: "https://github.com/layer5io/exoscale-academy",
+        language: "Hugo",
+        maintainers_name: ["Vacant"],
+        link: ["#"],
+        repository: "https://github.com/layer5io/exoscale-academy",
+      },
+      {
+        project: "Layer5 Academy",
+        image: five,
+        site: "https://github.com/layer5io/layer5-academy",
+        language: "Hugo",
+        maintainers_name: ["Vacant"],
+        link: ["#"],
+        repository: "https://github.com/layer5io/layer5-academy",
       },
     ],
   },
@@ -191,7 +240,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description:
-          "A workshop that teaches about service meshes through the lens of Istio.",
+          "A workshop that teaches about modern infrastructure through the lens of Istio.",
         repository: "https://github.com/layer5io/istio-service-mesh-workshop",
       },
       {
@@ -201,7 +250,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description:
-          "An advanced workshop that teaches about service meshes through the lens of Istio.",
+          "An advanced workshop that teaches about modern infrastructure   through the lens of Istio.",
         repository:
           "https://github.com/layer5io/advanced-istio-service-mesh-workshop",
       },
@@ -212,7 +261,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description:
-          "A workshop that teaches about service meshes through the lens of Linkerd.",
+          "A workshop that teaches about modern infrastructure through the lens of Linkerd.",
         repository: "https://github.com/layer5io/linkerd-service-mesh-workshop",
       },
       {
@@ -244,9 +293,8 @@ export const repo_data = [
         project: "Meshery",
         image: meshery,
         language: "Golang, gRPC",
-        maintainers_name: ["Uzair Shaikh", "Antonette Caldwell"],
+        maintainers_name: ["Antonette Caldwell"],
         link: [
-          "https://layer5.io/community/members/uzair-shaikh",
           "https://layer5.io/community/members/antonette-caldwell",
         ],
         description:
@@ -282,7 +330,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description:
-          "MeshSync is a multi-mesh resource discovery application which is also a custom kubernetes controller.",
+          "MeshSync is a multi-cluster resource discovery application which is also a custom Kubernetes controller.",
         repository: "https://github.com/meshery/meshsync",
       },
       {
@@ -333,7 +381,7 @@ export const repo_data = [
         repository: "https://github.com/meshery/helm-kanvas-snapshot",
       },
       {
-        project: "Kubectl kanvas snapshot",
+        project: "Kubectl Kanvas Snapshot",
         image: kanvasLogo,
         language: "Golang",
         maintainers_name: ["Vacant"],
@@ -410,8 +458,8 @@ export const repo_data = [
         project: "Gowrk2",
         image: meshery,
         language: "Golang",
-        maintainers_name: ["Uzair Shaikh"],
-        link: ["https://layer5.io/community/members/uzair-shaikh"],
+        maintainers_name: ["Vacant"],
+        link: [""],
         description:
           "Augmentation of wrk2 to produce output compatible with Meshery’s visualization of performance test results.",
         repository: "https://github.com/layer5io/gowrk2",
@@ -420,8 +468,8 @@ export const repo_data = [
         project: "Nighthawk",
         image: gnh,
         language: "Golang, gRPC",
-        maintainers_name: ["Uzair Shaikh"],
-        link: ["https://layer5.io/community/members/uzair-shaikh"],
+        maintainers_name: ["Vacant"],
+        link: [""],
         description:
           "Augmentation of Envoy Nighthawk to produce output compatible with Meshery’s visualization of performance test results",
         repository: "https://github.com/layer5io/nighthawk-go",
@@ -586,8 +634,8 @@ export const repo_data = [
         project: "Meshery Adapter for Cilium Service Mesh",
         image: ciliumLogo,
         language: "Golang, gRPC",
-        maintainers_name: ["Uzair Shaikh"],
-        link: ["https://layer5.io/community/members/uzair-shaikh"],
+        maintainers_name: ["Vacant"],
+        link: [""],
         description: "Meshery adapter for management of Cilium Service Mesh.",
         repository: "https://github.com/meshery/meshery-cilium",
       },

@@ -8,6 +8,10 @@ import PictureSlider from "./picture-slider";
 import JourneySection from "./JourneySection";
 import InlineQuotes from "../../components/Inline-quotes";
 import YashSharmaIMg from "../../collections/members/yash-sharma/yash-sharma.webp";
+import NicJacksonImg from "../../collections/members/nicholas-jackson/nic-jackson.webp";
+import RutkIkegahImg from "../../collections/members/ruth-ikegah/ruth-ikegah.jpg";
+
+
 const DevrelContentWrapper = styled.div`
   min-height: fit-content;
   border-width: 2px 2px 2px 2px;
@@ -179,6 +183,9 @@ const DevrelContentWrapper = styled.div`
                 top: 10.75rem;
                 left: calc(50% + 2rem);
               }
+            .meshmate-badge {
+              width: 90%;
+            }  
           }
         }
       }
@@ -208,6 +215,11 @@ const DevrelContentWrapper = styled.div`
                 top: 8.75rem;
                 left: calc(50% + 0rem);
               }
+              .meshmate-badge {
+                width: 90%;
+                height: 105%;
+                margin-left: 1rem;
+                margin-top: 0.6rem;
             }
           }
         }
@@ -245,7 +257,9 @@ const DevrelContent = () => {
           <Row className="devrel">
             <Col $md={6} className="devrel-image">
               <div className="image-wrapper">
-                <img src={IntegrationDesigner} />
+                <a href="https://kanvas.new/" target="_blank" rel="noopener noreferrer">
+                  <img src={IntegrationDesigner} />
+                </a>
               </div>
             </Col>
             <Col $md={6} className="devrel-detail">
@@ -256,6 +270,13 @@ const DevrelContent = () => {
                 <li><b>Multi-Player Teaching & Presentations:</b> Conduct live demos and training sessions where participants can follow along in real-time, whether you're presenting at a conference, or leading a workshop.</li>
               </ul>
             </Col>
+          </Row>
+          <Row>
+            <InlineQuotes
+              person="Nic Jackson"
+              title="Principal Developer Advocate at HashiCorp"
+              quote="As someone who often presents complex cloud native architectures, Meshery's collaborative environment has become my go-to platform for interactive demonstrations and workshops."
+              image={NicJacksonImg}/>
           </Row>
           <Row className="devrel">
             <Col $md={6} className="devrel-detail">
@@ -289,13 +310,20 @@ const DevrelContent = () => {
               </ul>
             </Col>
           </Row>
+          <Row>
+            <InlineQuotes
+              person="Ruth Ikegah"
+              title="Open Source Program Manager and GitHub Star"
+              quote="Layer5's platform helps me create engaging content for developers while building my professional brand. The analytics guide my content strategy and the public profile showcases my expertise to the cloud native community."
+              image={RutkIkegahImg}/>
+          </Row>
           <Row className="devrel">
             <Col $md={6} className="devrel-detail recognition-section">
               <h2 className="heading">
               Recognition Program
               </h2>
               <ul className="caption">
-                <li><b>Achievement Badges:</b> Earn badges for key milestones, like streaming logs from a Kubernetes Pod for the first time.</li>
+                <li><b>Achievement <a href="https://badges.layer5.io">Badges</a>:</b> Earn badges for key milestones, like streaming logs from a Kubernetes Pod for the first time.</li>
                 <li><b>Leaderboard Visibility:</b> Participate in challenges, compete on leaderboards, and stand out in the community.</li>
                 <li><b>Featured Mentions:</b> Get recognized when your content becomes popular, with shoutouts from the project.</li>
               </ul>
@@ -318,8 +346,9 @@ const DevrelContent = () => {
                   </div>
                   <div className="badge-item">
                     <img
-                      src="https://badges.layer5.io/assets/badges/meshery/meshery.png"
-                      alt="Meshery Badge"
+                      src="https://badges.layer5.io/assets/badges/meshmate/meshmate.png"
+                      alt="Meshmate Badge"
+                      className="meshmate-badge"
                     />
                   </div>
                 </div>

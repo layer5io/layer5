@@ -4,37 +4,21 @@ import Comparison from "./comparison";
 import FAQ from "../General/Faq";
 import Reviews from "./review-slider";
 import options from "./generatePlans";
-import PlanCard from "../../components/PlanCard";
+import PlanCard from "../../components/Pricing/PlanCard";
+import OpenSourceBanner from "./openSource";
+import { PricingAddons } from "../../components/Pricing/PricingAddons";
+import SubscriptionToggle from "./SubscriptionToggle";
 
 const Pricing = () => {
   // const [monthly, setMonthly] = useState(false);
   const [isYearly, setIsYearly] = useState(false);
-
-  const handleToggle = () => {
-    setIsYearly((prev) => !prev);
-  };
 
   return (
     <PricingWrapper>
       <div className="headers">
         <h1 className="header-heading">Plans For Every Team Size</h1>
 
-        <div className="toggle-container">
-          <div className="toggle">
-            <span
-              className={!isYearly ? "active" : ""}
-              onClick={() => handleToggle(false)} // Call handleToggle
-            >
-              Monthly
-            </span>
-            <span
-              className={isYearly ? "active" : ""}
-              onClick={() => handleToggle(true)} // Call handleToggle
-            >
-              Yearly
-            </span>
-          </div>
-        </div>
+        <SubscriptionToggle isYearly={isYearly} setIsYearly={setIsYearly} />
 
         {/* <svg className="header-svg" aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
           <polygon fill="white" points="0,100 100,0 100,100"/>
@@ -45,8 +29,12 @@ const Pricing = () => {
       <div className="wrapper">
         <PlanCard planData={options} isYearly={isYearly}/>
       </div>
+      <div style={{ marginTop: "7rem", marginBottom: "3rem" }}>
+        <PricingAddons isYearly={isYearly} setIsYearly={setIsYearly}/>
+      </div>
       <Comparison />
       <Reviews />
+      <OpenSourceBanner />
       <FAQ category={["Pricing", "Billing"]} />
     </PricingWrapper>
   );
