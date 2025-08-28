@@ -116,7 +116,7 @@ const SistentAbout = () => {
                   <Code codeString="npm install &lt;path-to-sistent-on-local-machine&gt;" />
                   <p>Example:</p>
                   <Code
-                    codeString={"# relative path\nnpm install ../../sistent\n\n# absolute path\nnpm install /home/five/code/sistent"}
+                    codeString={"# relative path\npm install ../../sistent\n\n# absolute path\npm install /home/five/code/sistent"}
                   />
                   <p>This will update your Sistent dependency to:</p>
                   <Code codeString={"\"@layer5/sistent\" : \"file:../../sistent\""} />
