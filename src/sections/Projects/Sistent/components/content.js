@@ -179,7 +179,15 @@ const componentsData = [
     description: "A badge is a small component that displays a number or status indicator, often used to show notifications or messages.",
     url: "/projects/sistent/components/badge",
     src: "/badge",
-  }
+  },
+  {
+    id: 24,
+    name: "Toolbar",
+    description:
+    "The toolbar is a horizontal container for grouping interactive elements like buttons, filters, or navigation controls, typically placed at the top of a UI section.",
+    url: "/projects/sistent/components/toolbar",
+    src: "/toolbar",
+  },
 ];
 
 module.exports = { componentsData };
