@@ -73,6 +73,7 @@ const SwiperContainer = styled.div`
       width: auto;
     }
   }
+  
   @media (max-width: 577px) {
     .card {
       width: 62vw;
