@@ -70,9 +70,9 @@ const contributingGuide = () => {
                   To do this, you'll need to add a remote. An example of the
                   command is given below:
                   <div className="codes">
-                    <Code codeString="git remote add upstream https://github.com/layer5io/meshery.git " />
+                    <Code codeString="git remote add upstream https://github.com/layer5io/layer5.git " />
                   </div>
-                  Here “meshery" is used as the example repo. Be sure to
+                  Here “layer5" is used as the example repo. Be sure to
                   reference the actual repo you are contributing to.
                 </span>
               </li>

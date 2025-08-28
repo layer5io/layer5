@@ -257,7 +257,9 @@ const DevrelContent = () => {
           <Row className="devrel">
             <Col $md={6} className="devrel-image">
               <div className="image-wrapper">
-                <img src={IntegrationDesigner} />
+                <a href="https://kanvas.new/" target="_blank" rel="noopener noreferrer">
+                  <img src={IntegrationDesigner} />
+                </a>
               </div>
             </Col>
             <Col $md={6} className="devrel-detail">
@@ -321,7 +323,7 @@ const DevrelContent = () => {
               Recognition Program
               </h2>
               <ul className="caption">
-                <li><b>Achievement Badges:</b> Earn badges for key milestones, like streaming logs from a Kubernetes Pod for the first time.</li>
+                <li><b>Achievement <a href="https://badges.layer5.io">Badges</a>:</b> Earn badges for key milestones, like streaming logs from a Kubernetes Pod for the first time.</li>
                 <li><b>Leaderboard Visibility:</b> Participate in challenges, compete on leaderboards, and stand out in the community.</li>
                 <li><b>Featured Mentions:</b> Get recognized when your content becomes popular, with shoutouts from the project.</li>
               </ul>

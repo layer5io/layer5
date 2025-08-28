@@ -162,15 +162,15 @@ const DialogCode = () => {
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <Button onClick={handleOpen}>Open Dialog</Button>
+                <Button variant="contained" onClick={handleOpen}>Open Dialog</Button>
                 <Dialog open={open} onClose={handleClose}>
                   <DialogTitle>Confirm Action</DialogTitle>
                   <DialogContent>
                     Do you want to proceed with this action?
                   </DialogContent>
                   <DialogActions>
-                    <Button onClick={handleClose}>Cancel</Button>
-                    <Button color="primary" onClick={handleClose}>
+                    <Button variant="contained" onClick={handleClose}>Cancel</Button>
+                    <Button variant="contained" color="primary" onClick={handleClose}>
                       Confirm
                     </Button>
                   </DialogActions>
@@ -190,7 +190,7 @@ const DialogCode = () => {
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <Button onClick={() => setOpenFull(true)}>
+                <Button variant="contained" onClick={() => setOpenFull(true)}>
                   Open Full-Screen Dialog
                 </Button>
                 <Dialog
@@ -206,9 +206,9 @@ const DialogCode = () => {
                       full attention is needed for complex tasks or on mobile devices.
                     </p>
                   </DialogContent>
-                  <DialogActions>
-                    <Button onClick={() => setOpenFull(false)}>Cancel</Button>
-                    <Button color="primary" onClick={() => setOpenFull(false)}>
+                  <DialogActions style={{ justifyContent: "flex-start", paddingLeft: "24px" }}>
+                    <Button variant="contained" onClick={() => setOpenFull(false)}>Cancel</Button>
+                    <Button variant="contained" color="primary" onClick={() => setOpenFull(false)}>
                       Save
                     </Button>
                   </DialogActions>
@@ -228,7 +228,7 @@ const DialogCode = () => {
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <Button onClick={() => setOpenForm(true)}>
+                <Button variant="contained" onClick={() => setOpenForm(true)}>
                   Open Form Dialog
                 </Button>
                 <Dialog open={openForm} onClose={() => setOpenForm(false)}>
@@ -250,8 +250,8 @@ const DialogCode = () => {
                     </div>
                   </DialogContent>
                   <DialogActions>
-                    <Button onClick={() => setOpenForm(false)}>Cancel</Button>
-                    <Button color="primary" onClick={() => setOpenForm(false)}>
+                    <Button variant="contained" onClick={() => setOpenForm(false)}>Cancel</Button>
+                    <Button variant="contained" color="primary" onClick={() => setOpenForm(false)}>
                       Subscribe
                     </Button>
                   </DialogActions>

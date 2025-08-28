@@ -2,14 +2,22 @@ import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
-import { Dialog, DialogTitle, DialogContent, DialogActions, Button, SistentThemeProvider } from "@sistent/sistent";
-import { SistentLayout } from "../../sistent-layout";
+import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Button,
+  SistentThemeProvider
+} from "@sistent/sistent";
+import { Row } from "../../../../../reusecore/Layout";
 import TabButton from "../../../../../reusecore/Button";
+import { SistentLayout } from "../../sistent-layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const SistentDialog = () => {
-  const { isDark } = useStyledDarkMode();
   const location = useLocation();
+  const { isDark } = useStyledDarkMode();
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => setOpen(true);
@@ -19,58 +27,90 @@ const SistentDialog = () => {
     <SistentLayout title="Dialog">
       <div className="content">
         <a id="Identity">
-          <h2>Understanding the Dialog Component</h2>
+          <h2>Dialog</h2>
         </a>
         <p>
-          Dialogs are modal components that appear on top of the main content to convey critical information
-          or to prompt the user for a decision. They block interaction with the rest of the interface until
-          dismissed or confirmed. In user interface design, they serve an essential role in making applications
-          interactive and responsive to user inputs.
+          The Dialog component is a modal window that appears on top of the main content to focus
+          user attention on specific tasks or information. It provides a controlled way to present
+          confirmations, forms, alerts, and detailed content without navigating away from the
+          current context.
         </p>
-        <p>
-          The Dialog component in the Sistent design system is flexible and customizable, providing developers
-          with a consistent and accessible modal window to use across various parts of the application. It can be
-          used for confirmations, forms, alerts, and even feature walkthroughs. Proper use of dialogs ensures that
-          users are clearly guided in their interactions without overwhelming them.
-        </p>
-
         <div className="filterBtns">
           <TabButton
-            title="Overview"
-            className={location.pathname === "/projects/sistent/components/dialog" ? "active" : ""}
+            className={
+              location.pathname === "/projects/sistent/components/dialog"
+                ? "active"
+                : ""
+            }
             onClick={() => navigate("/projects/sistent/components/dialog")}
+            title="Overview"
           />
           <TabButton
+            className={
+              location.pathname ===
+              "/projects/sistent/components/dialog/guidance"
+                ? "active"
+                : ""
+            }
+            onClick={() =>
+              navigate("/projects/sistent/components/dialog/guidance")
+            }
             title="Guidance"
-            className={location.pathname === "/projects/sistent/components/dialog/guidance" ? "active" : ""}
-            onClick={() => navigate("/projects/sistent/components/dialog/guidance")}
           />
           <TabButton
+            className={
+              location.pathname ===
+              "/projects/sistent/components/dialog/code"
+                ? "active"
+                : ""
+            }
+            onClick={() =>
+              navigate("/projects/sistent/components/dialog/code")
+            }
             title="Code"
-            className={location.pathname === "/projects/sistent/components/dialog/code" ? "active" : ""}
-            onClick={() => navigate("/projects/sistent/components/dialog/code")}
           />
         </div>
-
         <div className="main-content">
-          <a id="Basic Usage">
+          <p>
+            Dialog components provide modal windows that focus user attention on specific tasks
+            or information. They overlay the main content and require user interaction before
+            returning to the underlying interface.
+          </p>
+          <a id="Basic Example">
             <h3>Basic Example</h3>
           </a>
           <p>
-            The following example demonstrates a simple usage of the Dialog component. It includes a button
-            that, when clicked, triggers a modal containing a title, some content, and two action buttons.
+            Below is a simple example of how to use the Dialog component.
           </p>
-          <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-            <Button onClick={handleOpen}>Open Dialog</Button>
-            <Dialog open={open} onClose={handleClose}>
-              <DialogTitle>Dialog Title</DialogTitle>
-              <DialogContent>This is a simple dialog box used for demonstration purposes.</DialogContent>
-              <DialogActions>
-                <Button onClick={handleClose}>Cancel</Button>
-                <Button onClick={handleClose} color="primary">Confirm</Button>
-              </DialogActions>
-            </Dialog>
-          </SistentThemeProvider>
+          <br />
+          <Row $Hcenter className="image-container">
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <Button variant="contained" onClick={handleOpen}>Open Dialog</Button>
+              <Dialog open={open} onClose={handleClose}>
+                <DialogTitle>Confirm Action</DialogTitle>
+                <DialogContent>
+                  Do you want to proceed with this action?
+                </DialogContent>
+                <DialogActions>
+                  <Button variant="contained" onClick={handleClose}>Cancel</Button>
+                  <Button variant="contained" color="primary" onClick={handleClose}>
+                    Confirm
+                  </Button>
+                </DialogActions>
+              </Dialog>
+            </SistentThemeProvider>
+          </Row>
+          <a id="Usage">
+            <h2>Usage</h2>
+          </a>
+          <p>
+            The component can be used in several main variants:
+          </p>
+          <ul>
+            <li><p><b>Standard:</b> Basic modal dialog for confirmations and simple interactions</p></li>
+            <li><p><b>Form:</b> Dialog containing input fields for data collection</p></li>
+            <li><p><b>Full-screen:</b> Expanded dialog for complex forms or mobile interfaces</p></li>
+          </ul>
         </div>
       </div>
     </SistentLayout>

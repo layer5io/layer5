@@ -207,32 +207,9 @@ const JourneySection = () => {
           <Button
             $primary
             $external={true}
-            title="Explore Layer5 Cloud"
+            title="Start Your DevRel Journey With Layer5 Cloud"
             alt="Explore cloud"
             $url="https://cloud.layer5.io/"
-          />
-          <Button
-            $primary
-            $external={true}
-            title="Explore Kanvas"
-            alt="Explore Meshery Playground"
-            $url="https://kanvas.new/"
-          />
-          <Button
-            aria-label="Book a demo"
-            $primary
-            $external={true}
-            title="Talk to team"
-            alt="Book a demo"
-            $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true"
-          />
-          <Button
-            aria-label="Recognition program"
-            $primary
-            $external={true}
-            title="Recogntion Program"
-            alt="recogntion program"
-            $url="https://badges.layer5.io"
           />
         </div>
       </Container>

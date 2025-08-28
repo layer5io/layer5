@@ -122,7 +122,7 @@ export const NewcomersGuideWrapper = styled.section`
     .community-collage {
       text-align: center ;
       min-width: 45vmin;
-      
+      margin-bottom: 1rem;
     }
     .community-img{
       text-align:center;
@@ -130,6 +130,9 @@ export const NewcomersGuideWrapper = styled.section`
     .table-wrapper{
       text-align: center;
       margin-bottom: 4rem;
+      h5 {
+        margin-bottom: 2.5rem;
+      }
     }
     .book-container {
     display: flex;
@@ -152,13 +155,14 @@ export const NewcomersGuideWrapper = styled.section`
   }
 
   .book {
-    min-width: 200px;
-    min-height: 300px;
+    width: 200px;
+    height: 300px;
     position: relative;
     transform-style: preserve-3d;
     transform: rotateY(-30deg);
     transition: 1s ease;
     animation: 1s ease 0s 1 initAnimation;
+    overflow: visible;
   }
 
   .book:hover {
@@ -170,10 +174,18 @@ export const NewcomersGuideWrapper = styled.section`
     top: 0;
     left: 0;
     background-color: #171a12;
-    width: 200px;
-    height: 300px;
+    width: 100%;
+    height: 100%;
     transform: translateZ(25px);
     border-radius: 0 2px 2px 0;
+    overflow: visible;
+  }
+  
+  .book > :first-child img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 
   .book::before {
@@ -182,7 +194,7 @@ export const NewcomersGuideWrapper = styled.section`
     left: 0;
     top: 3px;
     width: 48px;
-    height: 294px;
+    height: calc(100% - 6px);
     transform: translateX(172px) rotateY(90deg);
     background: linear-gradient(
       90deg,
@@ -215,8 +227,8 @@ export const NewcomersGuideWrapper = styled.section`
     top: 0;
     left: 0;
     content: " ";
-    width: 200px;
-    height: 300px;
+    width: 100%;
+    height: 100%;
     transform: translateZ(-25px);
     background-color: #292929;
     border-radius: 0 2px 2px 0;
@@ -244,7 +256,19 @@ export const NewcomersGuideWrapper = styled.section`
         h2 {
           margin-top: -1.5rem;
         }
+      }  
+      /* For "Explore the Meshery Community" section */
+      .community-collage {
+        order: 2;
       }
+      /* For "Finding an Issue" section - apply to Col */
+      .col-finding-an-issue {
+        order: 2;
+      }
+      .col-newcomers-form {
+        margin-bottom: 1.5rem;
+      }
+  }  
   }
 `;
 

@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "../../reusecore/Button";
-import { Col, Row, Container } from "../../reusecore/Layout";
+import Button from "../../../reusecore/Button";
+import { Col, Row, Container } from "../../../reusecore/Layout";
 import PlanCardWrapper from "./planCard.style";
 import FeatureDetails from "./collapsible-details";
 
@@ -94,15 +94,30 @@ const PlanCard = ({ planData , isYearly }) => {
 
                 <div className="pricing-features">
                   {x.summary &&
-                    x.summary.map((t) => (
-                      <div className="feature" key={t.id}>
-                        <FeatureDetails
-                          category={t.category}
-                          description={t.description}
-                          tier={t.tier}
-                        />
-                      </div>
-                    ))}
+                    x.summary.map((t, index) => {
+                      // Check if this is the first add-on feature
+                      const isFirstAddOn = t.categoryOrder === "add-on" &&
+                        (index === 0 || x.summary[index - 1].categoryOrder !== "add-on");
+
+                      return (
+                        <div key={t.id}>
+                          {isFirstAddOn && (
+                            <div className="add-on-separator">
+                              <span className="add-on-label">Add-on Features</span>
+                              <hr className="add-on-line" />
+
+                            </div>
+                          )}
+                          <div className="feature">
+                            <FeatureDetails
+                              category={t.category}
+                              description={t.description}
+                              tier={t.tier}
+                            />
+                          </div>
+                        </div>
+                      );
+                    })}
                 </div>
 
               </div>
