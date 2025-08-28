@@ -61,7 +61,7 @@ There are two modes on the Actions button:
 In this chapter, we focus on utilizing the first option to provide a comprehensive view of the deployment process.
 
 <a href={action}>
-  <img src={action} width="100%" align="center" />
+  <img src={action} class="chapter-image" style={{ margin: "0 auto" }}/>
 </a>
 
 <h2 class="chapter-sub-heading">Design Validation</h2>
@@ -85,15 +85,15 @@ This comprehensive validation ensures that:
 1. Click on the **Validate** Icon.
 
     <a href={performingValidation} >
-      <img src={performingValidation} width="100%" align="center" />
+      <img src={performingValidation} class="chapter-image" style={{ margin: "0 auto" }}/>
     </a>
 
    If the validation is successful, you will see a modal displaying the number of components validated and the number of annotations, similar to the one shown below:
 
-   {" "}
+
 
    <a href={successfulValidation} >
-      <img src={successfulValidation} width="100%" align="center" />
+      <img src={successfulValidation} class="chapter-image" style={{ margin: "0 auto" }}/>
     </a>
 
 <h3 class="chapter-sub-heading">Handling Validation Errors</h3>
@@ -107,7 +107,7 @@ A common validation error is:
 1. **Missing Required Field**: This happens when a required field is not provided. For example, in the image below, the first error indicates that the field ".spec.template.spec.containers.0.env.0" must have a value.
 
    <a href={validationError} >
-      <img src={validationError} width="100%" align="center" />
+      <img src={validationError} class="chapter-image" style={{ margin: "0 auto" }}/>
     </a>
 
 To troubleshoot and remediate validation issues:
@@ -132,7 +132,7 @@ A dry run in Meshery simulates the deployment of your design in the selected tar
 1. Re-run the dry run to ensure all issues have been resolved.
 
    <a href={successfulDryRun} >
-      <img src={successfulDryRun} width="100%" align="center" />
+      <img src={successfulDryRun} class="chapter-image" style={{ margin: "0 auto" }}/>
     </a>
 
 <h3 class="chapter-sub-heading">Examples of Dry Run Errors</h3>
@@ -142,17 +142,17 @@ Some examples of dry run errors are:
 1. **Invalid Field Value**: The error message indicates that a field has an invalid value. For instance, in the image below, the fields "spec > ports[0] > port" and "spec > ports[0] > targetPort" have invalid values of 0. These values must be between 1 and 65535, inclusive.
 
    <a href={drInvalidField1}>
-    <img src={drInvalidField1} width="100%" align="center" style="margin-bottom:20px;"/>
+    <img src={drInvalidField1} class="chapter-image" style={{ margin: "0 auto 20px" }} />
    </a>
 
    <a href={drInvalidField2}>
-    <img src={drInvalidField2} width="100%" align="center" />
+    <img src={drInvalidField2} class="chapter-image" style={{ margin: "0 auto" }}/>
    </a>
 
 1. **Missing Required Field**
 
    <a href={missingField}>
-    <img src={missingField} width="100%" align="center" />
+    <img src={missingField} class="chapter-image" style={{ margin: "0 auto" }}/>
    </a>
 
 1. **Missing Dependencies**: In this case, the error occurs because a Kubernetes [Custom Resource Definition](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) (CRD) should have been deployed first before attempting to deploy this component.
@@ -160,7 +160,7 @@ Some examples of dry run errors are:
    To resolve this, ensure that all necessary dependencies, such as CRDs, are deployed before deploying the components that rely on them.
 
    <a href={missingResource}>
-    <img src={missingResource} width="100%" align="center" />
+    <img src={missingResource} class="chapter-image" style={{ margin: "0 auto" }}/>
    </a>
 
 <h2 class="chapter-sub-heading">Environment Selection</h2>
@@ -176,25 +176,25 @@ You can add an environment through the deployment modal by following these steps
 1. Click on **Add Environments**
 
    <a href={addEnv}>
-    <img src={addEnv} width="100%" align="center" />
+    <img src={addEnv} class="chapter-image" style={{ margin: "0 auto" }}/>
    </a>
 
 1. Select **Create** and put in a name for the environment, _e.g.Development_, and **Save**.
 
    <a href={createEnv}>
-    <img src={createEnv} width="100%" align="center" />
+    <img src={createEnv} class="chapter-image" style={{ margin: "0 auto" }}/>
    </a>
 
 1. After creating the environment you add connections to the environment, here we want to add a Kubernetes cluster. Click on the **arrows** icon to open the Development Resources modal.
 
    <a href={assignConn}>
-    <img src={assignConn} width="100%" align="center" />
+    <img src={assignConn} class="chapter-image" style={{ margin: "0 auto" }}/>
    </a>
 
    **Available Connections** on the left side shows a list of Kubernetes clusters that are currently managed by Meshery.
 
    <a href={kubeConn}>
-    <img src={kubeConn} width="100%" align="center" />
+    <img src={kubeConn} class="chapter-image" style={{ margin: "0 auto" }}/>
    </a>
 
 
@@ -207,7 +207,7 @@ You can add an environment through the deployment modal by following these steps
 During the deployment, if a connection has not yet been added to your environment, it will appear as shown below.
 
 <a href={missingCon}>
-  <img src={missingCon} width="100%" align="center" />
+  <img src={missingCon} class="chapter-image" style={{ margin: "0 auto" }}/>
 </a>
 
 In this scenario, to add a new environment.
@@ -225,7 +225,7 @@ Another way to add a connection to an Environment is by selecting an environment
 1. Identify the desired connection. Under the **Environment** section, click the dropdown menu to add and select the environment you want to associate with your connection.
 
    <a href={envConn}>
-     <img src={envConn} width="100%" align="center" />
+     <img src={envConn} class="chapter-image" style={{ margin: "0 auto" }}/>
    </a>
 
 <h3 class="chapter-sub-heading">Verifying Kubernetes Connections</h3>
@@ -234,7 +234,7 @@ The Kubernetes connection icon at the top right corner of the screen shows the l
 Clicking on the icon will invoke an ad hoc connectivity test between your Meshery Server and the specific Kubernetes cluster. Should this check fail, verify the health of your Meshery Operator deployment within that cluster.
 
 <a href={connList}>
-  <img src={connList} width="100%" align="center" />
+  <img src={connList} class="chapter-image" style={{ margin: "0 auto" }}/>
 </a>
 
 <h3 class="chapter-sub-heading">Environment Error</h3>
@@ -242,7 +242,7 @@ Clicking on the icon will invoke an ad hoc connectivity test between your Mesher
 If your environment is not properly set up before deployment, you may encounter the error below.
 
 <a href={envError}>
-  <img src={envError} width="100%" align="center" />
+  <img src={envError} class="chapter-image" style={{ margin: "0 auto" }}/>
 </a>
 
 To handle this error follow the suitable steps for adding a connection to your environment as previously discussed.
@@ -278,7 +278,7 @@ You have the option of using the live cluster provided by Meshery Playground or 
 1. Click **Finish**.
 
    <a href={successDeploy}>
-    <img src={successDeploy} width="100%" align="center" />
+    <img src={successDeploy} class="chapter-image" style={{ margin: "0 auto" }}/>
    </a>
 
 <h3 class="chapter-sub-heading">Deployment Errors</h3>
@@ -286,13 +286,13 @@ You have the option of using the live cluster provided by Meshery Playground or 
 1. **Missing Namespace**: This error occurs when you attempt to create a Kubernetes resource without specifying a namespace. Kubernetes requires that all resources have an associated namespace.
 
    <a href={missingNs}>
-    <img src={missingNs} width="100%" align="center" />
+    <img src={missingNs} class="chapter-image" style={{ margin: "0 auto" }}/>
    </a>
 
 1. **Empty Label Selector**: This error indicates an empty label selector.
 
    <a href={emptyLs}>
-    <img src={emptyLs} width="100%" align="center" />
+    <img src={emptyLs} class="chapter-image" style={{ margin: "0 auto" }}/>
    </a>
 
 <h3 class="chapter-sub-heading">Troubleshooting Errors</h3>
@@ -306,7 +306,7 @@ For the comprehensive list of error codes refer to [Error Code Reference](https:
 If you encounter persistent issues, consider consulting the [Meshery Community forum](https://discuss.layer5.io/c/meshery/5).
 
 <a href={errorCode}>
-  <img src={errorCode} width="100%" align="center" />
+  <img src={errorCode} class="chapter-image" style={{ margin: "0 auto" }}/>
 </a>
 
 <h3 class="chapter-sub-heading">Using the Notification Center for Troubleshooting</h3>
@@ -322,11 +322,11 @@ The Notification Center in Meshery helps manage events during the deployment pro
 1. Keeps a log of past notifications, allowing you to track and review previous errors and their resolutions.
 
 <a href={notification}>
-  <img src={notification} width="100%" align="center" style="margin-bottom:30px;" />
+  <img src={notification} class="chapter-image" style={{ margin: "0 auto" }}/>
 </a>
 
 <a href={notificationCenter}>
-  <img src={notificationCenter} width="100%" align="center" />
+  <img src={notificationCenter} class="chapter-image" style={{ margin: "10px auto" }} />
 </a>
 
 By actively monitoring the Notification Center, you can promptly address issues as they arise, ensuring a smoother deployment process. Learn more about [Managing Events with the Notification Center](https://docs.meshery.io/guides/events-management).
@@ -339,7 +339,7 @@ To undeploy the resources
 1. Click on the **Undeploy** icon.
 
    <a href={undeploy}>
-    <img src={undeploy} width="100%" align="center" />
+    <img src={undeploy} class="chapter-image" style={{ margin: "0 auto" }}/>
    </a>
 
 
