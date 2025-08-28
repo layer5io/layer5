@@ -1,0 +1,19 @@
+name: Broken Link Checker
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+
+      - name: Broken Link Check
+        uses: technote-space/broken-link-checker-action@v2
+        with:
+          target: |
+            ./src/**/*.md
+            ./src/**/*.html
