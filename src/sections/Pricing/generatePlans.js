@@ -16,7 +16,7 @@ function generatePlans(data) {
     },
     "TeamDesigner": {
       tier: "Team Designer",
-      featured: false,
+      featured: true,
       monthlyprice: 16,
       yearlyprice: 164,
       byline: "Advanced collaboration for declarative DevOps",
@@ -35,7 +35,7 @@ function generatePlans(data) {
     },
     "Enterprise": {
       tier: "Enterprise",
-      featured: true,
+      featured: false,
       monthlyprice: 44,
       yearlyprice: 449,
       pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
@@ -72,7 +72,17 @@ function generatePlans(data) {
 
         return mappedItem;
       })
-      .sort((a, b) => a.categoryOrder - b.categoryOrder || a.functionOrder - b.functionOrder);
+      .sort((a, b) => {
+        // Handle "add-on" category order - should come last
+        if (a.categoryOrder === "add-on" && b.categoryOrder !== "add-on") return 1;
+        if (a.categoryOrder !== "add-on" && b.categoryOrder === "add-on") return -1;
+        if (a.categoryOrder === "add-on" && b.categoryOrder === "add-on") {
+          return a.functionOrder - b.functionOrder;
+        }
+
+        // Normal numeric sorting for non add-on categories
+        return a.categoryOrder - b.categoryOrder || a.functionOrder - b.functionOrder;
+      });
     return {
       ...tierInfo,
       summary: summary.length > 0 ? summary : [],
