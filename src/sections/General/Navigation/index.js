@@ -345,6 +345,10 @@ const Navigation = () => {
                                 target="_blank"
                                 className="mobile-sub-action-item"
                                 rel="noreferrer"
+                                onClick={() => {
+                                  changeDropdownState();
+                                  closeDropDown();
+                                }}
                               >
                                 <span className="readmore-btn">
                                   {actionItem.actionName} <IoIosArrowRoundForward />
@@ -355,6 +359,10 @@ const Navigation = () => {
                                 to={actionItem.actionLink}
                                 partiallyActive={true}
                                 className="mobile-sub-action-item"
+                                onClick={() => {
+                                  changeDropdownState();
+                                  closeDropDown();
+                                }}
                               >
                                 <span className="readmore-btn">
                                   {actionItem.actionName} <IoIosArrowRoundForward />
