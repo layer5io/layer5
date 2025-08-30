@@ -1,43 +1,39 @@
 import React from "react";
 import styled from "styled-components";
-import details from "./generateDetails";
+import details  from "./generateDetails";
 import { Container } from "../../reusecore/Layout";
 // import FeatureDetails from "./collapsible-details";
 import FeatureDetails from "../../components/Pricing/PlanCard/collapsible-details";
+import { useRef } from "react";
 
 const ComparisonWrapper = styled.div`
-  margin: 6rem auto;
-  @media (min-width: 2048px) {
-    margin: 15rem auto;
-  }
+margin: 6rem auto;
+@media (min-width: 2048px) {
+  margin: 15rem auto;
+}
 
-  h2,
-  h5 {
-    text-align: center;
-  }
+h2, h5{
+  text-align: center;
+}
 
-  .main {
-    box-shadow: 0 0 24px ${(props) => props.theme.whiteOneFiveToBlackOneFive};
+.main {
+    box-shadow: 0 0 24px ${props => props.theme.whiteOneFiveToBlackOneFive};
     margin: 2rem auto;
     display: block;
-    overflow-x: scroll;
-    overflow-y: hidden;
     transition: 0.6s cubic-bezier(0.5, 1);
-  }
-  .price-table {
+}
+.price-table {
     width: 100%;
     border-collapse: collapse;
     border: 0 none;
     table-layout: fixed;
-  }
-  .price-table tr:not(:last-child) {
-    border-bottom: 1px solid
-      ${(props) => props.theme.whiteZeroThreeToBlackZeroThree};
+}
+.price-table tr:not(:last-child) {
+    border-bottom: 1px solid ${props => props.theme.whiteZeroThreeToBlackZeroThree};
     transition: 0.6s cubic-bezier(0.5, 1);
-  }
-  .price-table tr td {
-    border-left: 1px solid
-      ${(props) => props.theme.whiteZeroFiveToBlackZeroFive};
+}
+.price-table tr td {
+    border-left: 1px solid ${props => props.theme.whiteZeroFiveToBlackZeroFive};
     padding: 0rem 2rem;
     font-size: 1rem;
     vertical-align: middle;
@@ -49,63 +45,78 @@ const ComparisonWrapper = styled.div`
       padding-top: 1rem;
       font-size: 1.2rem;
     }
-  }
-  .price-table tr td:first-child {
+}
+.price-table tr td:first-child {
     border-left: 0 none;
     width: 100%;
     justify-content: flex-start;
     text-align: left;
-  }
-  .price-table tr td:not(:first-child) {
+}
+.price-table tr td:not(:first-child) {
     text-align: center;
+}
+.price-table tr:nth-child(even) {
+}
+.price-table-header-sticky {
+    overflow-x: scroll;
+    position: sticky;
+    top: -0.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: ${(props) => props.theme.whiteZeroThreeToBlackZeroThree}
+      ${(props) => props.theme.whiteZeroThreeToBlackZeroThree};
   }
-  .price-table tr:nth-child(even) {
+  @media (min-width: 1100px) {
+    .price-table-header-sticky {
+      top: 0.5rem;
+    }
   }
-
-  .price-table tr:hover {
-    background-color: ${(props) => props.theme.secondaryLightColor};
+.price-table-body-scroll {
+    overflow-x: scroll;
+    scrollbar-width: none;
+  }
+.price-table tr:hover {
+    background-color: ${props => props.theme.secondaryLightColor};
     transition: 0.6s cubic-bezier(0.5, 1);
-  }
-  .price-table .fa-check {
+}
+.price-table .fa-check {
     color: #5336ca;
-  }
-  .price-table .fa-times {
-    color: #d8d6e3;
-  }
-  .price-table col {
-    width: 8rem;
-  }
-  .price-table col:nth-child(1) {
-    width: clamp(20rem, 40vw, 38rem);
-  }
-  .price-table col:nth-child(5) {
-    width: 9rem;
-  }
+}
+.price-table .fa-times {
+    color: #D8D6E3;
+}
+.price-table col {
+  width: 8rem;
+}
+.price-table col:nth-child(1) {
+  width: clamp(20rem, 40vw, 38rem);
+}
+.price-table col:nth-child(5) {
+  width: 9rem;
+}
+/* Highlighted column */
 
-  /* Highlighted column */
-
-  .price-table tr td:nth-child(3) {
-    background: rgba(0, 179, 159, 0.1);
+.price-table tr td:nth-child(3) {
+    background: rgba(0,179,159,0.1);
     padding: 8px 48px;
-  }
+}
 
-  .price-table tr.price-table-head td {
+.price-table tr.price-table-head td {
     font-size: 1.15rem;
     line-height: 1.5rem;
     font-weight: 600;
-    padding: 0.5rem;
+    padding: .5rem;
     text-transform: uppercase;
-  }
-  .price-table tr.price-table-head {
-    background-color: ${(props) => props.theme.secondaryColor};
-    color: #ffffff;
-  }
-  .price-table td.price {
+}
+.price-table tr.price-table-head {
+    background-color:${props => props.theme.secondaryColor};
+    color: #FFFFFF;
+}
+.price-table td.price {
     padding: 16px 24px;
     font-size: 20px;
     font-weight: 600;
-  }
-  .price-table td.price .button {
+}
+.price-table td.price .button {
     padding: 1rem 1.5rem;
     margin-top: 16px;
     font-size: 12px;
@@ -113,104 +124,115 @@ const ComparisonWrapper = styled.div`
     text-transform: uppercase;
     display: inline-block;
     border-radius: 64px;
-  }
-  .price-table th.price-table-popular {
+}
+.price-table th.price-table-popular {
     border-top: 3px solid #00b39f;
-    color: ${(props) => props.theme.saffronColor};
-    background-color: rgba(0, 179, 159, 0.1);
+    color:${props => props.theme.saffronColor};
+    background-color:rgba(0,179,159,0.1);
     text-transform: uppercase;
     font-size: 12px;
     padding: 12px 48px;
     font-weight: 700;
-  }
-  .price-table .price-blank {
-    background-color: ${(props) => props.theme.secondaryDarkColor};
+}
+.price-table .price-blank {
+    background-color: ${props => props.theme.secondaryDarkColor};
     border: 0 none;
     transition: 0.6s cubic-bezier(0.5, 1);
-  }
+}
 
-  .category {
-    display: inline-block;
-    margin: 0 1rem;
-  }
+.category {
+  display: inline-block;
+  margin: 0 1rem;
+}
 
-  .icon {
+.icon {
     height: 4rem;
     width: auto;
     fill: #00b39f;
     display: inline-block;
+}
+.no-icon {
+  height: 1.5rem;
+  width: auto;
+  fill: red;
+}
+.yes-icon {
+  height: 1.5rem;
+  width: auto;
+  fill: #00b39f;
+}
+.toggle-btn {
+  margin-top: 1rem;
+}
+.details {
+  p {
+    color: #7A848E;
+    margin-left: 1.1rem;
   }
-  .no-icon {
-    height: 1.5rem;
-    width: auto;
-    fill: red;
-  }
-  .yes-icon {
-    height: 1.5rem;
-    width: auto;
-    fill: #00b39f;
-  }
-  .toggle-btn {
-    margin-top: 1rem;
-  }
-  .details {
-    p {
-      color: #7a848e;
-      margin-left: 1.1rem;
+}
+.category-icon {
+  
+}
+.categories {
+  display: flex;
+  width: 100%;
+  text-align: left;
+  align-items: center;
+  margin: 1rem auto;
+}
+.docs {
+  width:1rem;
+  height:1rem;
+}
+
+td.feature {
+  padding: auto;
+  margin: 0px;
+}
+.feature-link-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.feature-name {
+  margin-right: 0.5rem; 
+}
+
+.feature-link {
+  color: #00b39f;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.feature-link > svg {
+    &:hover { 
+      opacity:.5;
     }
   }
-  .category-icon {
-  }
-  .categories {
-    display: flex;
-    width: 100%;
-    text-align: left;
-    align-items: center;
-    margin: 1rem auto;
-  }
-  .docs {
-    width: 1rem;
-    height: 1rem;
-  }
-
-  td.feature {
-    padding: auto;
-    margin: 0px;
-  }
-  .feature-link-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .feature-name {
-    margin-right: 0.5rem;
-  }
-
-  .feature-link {
-    color: #00b39f;
-    text-decoration: none;
-    font-size: 0.9rem;
-  }
-  .feature-link > svg {
-    &:hover {
-      opacity: 0.5;
-    }
-  }
-  .feature-link:hover {
-    text-decoration: underline;
-  }
+.feature-link:hover {
+  text-decoration: underline;
+}
 `;
 
 const Comparison = () => {
+  /* REF FOR SCROLL SYNC*/
+  const headerScrollRef = useRef(null);
+  const bodyScrollRef = useRef(null);
+  const handleHeadBodyScroll = () => {
+    bodyScrollRef.current.scrollLeft = headerScrollRef.current.scrollLeft;
+  };
+  const handleBodyHeadScroll = () => {
+    headerScrollRef.current.scrollLeft = bodyScrollRef.current.scrollLeft;
+  };
   return (
     <ComparisonWrapper>
       <h2>Compare All Features</h2>
       <h5 id={"feature-comparison"}>Choose a plan that’s right for you</h5>
       <Container>
         <div className="main">
-          <div className="price-table-header-sticky">
-            <table>
+          <div
+            className="price-table-header-sticky" ref={headerScrollRef} onScroll={handleHeadBodyScroll}>
+            <table className="price-table">
               <colgroup>
                 <col />
                 <col />
@@ -236,7 +258,7 @@ const Comparison = () => {
               </tbody>
             </table>
           </div>
-          <div className="price-table-body-scroll">
+          <div className="price-table-body-scroll" ref={bodyScrollRef} onScroll={handleBodyHeadScroll}>
             <table className="price-table">
               <colgroup>
                 <col />
