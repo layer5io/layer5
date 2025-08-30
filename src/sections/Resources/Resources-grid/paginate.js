@@ -1,15 +1,8 @@
 import React from "react";
 import { ResourcePageWrapper } from "./resourceGrid.style";
-import { FaChevronLeft } from "@react-icons/all-files/fa/FaChevronLeft";
-import { FaChevronRight } from "@react-icons/all-files/fa/FaChevronRight";
 
 const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
-  const pageNumbers = [];
   const totalPages = Math.ceil(totalPosts / postsPerPage);
-
-  for (let i = 1; i <= totalPages; i++) {
-    pageNumbers.push(i);
-  }
 
   const handlePrevious = () => {
     if (currentPage > 1) {
@@ -24,66 +17,77 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   };
 
   const getVisiblePageNumbers = () => {
-    if (totalPages <= 5) {
-      return pageNumbers;
+    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 575;
+    const maxVisible = isMobile ? 3 : 5;
+    
+    if (totalPages <= maxVisible) {
+      return Array.from({ length: totalPages }, (_, i) => i + 1);
     }
 
-    const visiblePages = [];
-
-    visiblePages.push(1);
-
-    if (currentPage > 3) {
-      visiblePages.push("...");
+    const pages = [];
+    
+    if (isMobile) {
+      // Mobile: Show fewer pages
+      if (currentPage <= 2) {
+        pages.push(1, 2, 3);
+        if (totalPages > 3) pages.push("...");
+      } else if (currentPage >= totalPages - 1) {
+        if (totalPages > 3) pages.push("...");
+        pages.push(totalPages - 2, totalPages - 1, totalPages);
+      } else {
+        pages.push("...", currentPage - 1, currentPage, currentPage + 1, "...");
+      }
+    } else {
+      // Desktop: Original logic
+      pages.push(1);
+      if (currentPage > 3) pages.push("...");
+      for (let i = Math.max(2, currentPage - 1); i <= Math.min(currentPage + 1, totalPages - 1); i++) {
+        pages.push(i);
+      }
+      if (currentPage < totalPages - 2) pages.push("...");
+      if (totalPages > 1) pages.push(totalPages);
     }
 
-    for (let i = Math.max(2, currentPage - 1); i <= Math.min(currentPage + 1, totalPages - 1); i++) {
-      visiblePages.push(i);
-    }
-
-    if (currentPage < totalPages - 2) {
-      visiblePages.push("...");
-    }
-
-    if (totalPages > 1) {
-      visiblePages.push(totalPages);
-    }
-
-    return visiblePages;
+    return pages;
   };
 
-  const visiblePageNumbers = getVisiblePageNumbers();
+  const visiblePages = getVisiblePageNumbers();
 
   return (
     <ResourcePageWrapper>
       <div className="pagination-container">
         <button
           onClick={handlePrevious}
-          className={`pagination-btn prev-btn ${currentPage === 1 ? "disabled-btn" : ""}`}
+          className={`pagination-btn prev-btn ${currentPage === 1 ? 'disabled-btn' : ''}`}
           disabled={currentPage === 1}
         >
-          <FaChevronLeft className="arrow-icon" /> Previous
+          Previous
         </button>
 
         <div className="page-numbers">
-          {visiblePageNumbers.map((item, index) => (
-            item === "..." ?
-              <span key={`ellipsis-${index}`} className="ellipsis">...</span> :
+          {visiblePages.map((page, idx) =>
+            page === "..." ? (
+              <span key={`ellipsis-${idx}`} className="ellipsis">
+                ...
+              </span>
+            ) : (
               <button
-                key={item}
-                onClick={() => paginate(item)}
-                className={item === currentPage ? "page-btn active-btn" : "page-btn"}
+                key={page}
+                onClick={() => paginate(page)}
+                className={page === currentPage ? "page-btn active-btn" : "page-btn"}
               >
-                {item}
+                {page}
               </button>
-          ))}
+            )
+          )}
         </div>
 
         <button
           onClick={handleNext}
-          className={`pagination-btn next-btn ${currentPage === totalPages ? "disabled-btn" : ""}`}
+          className={`pagination-btn next-btn ${currentPage === totalPages ? 'disabled-btn' : ''}`}
           disabled={currentPage === totalPages}
         >
-          Next <FaChevronRight className="arrow-icon" />
+          Next
         </button>
       </div>
     </ResourcePageWrapper>
@@ -91,3 +95,4 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
 };
 
 export default Pagination;
+
