@@ -28,6 +28,7 @@ const ComparisonWrapper = styled.div`
     width: 100%;
     border-collapse: collapse;
     border: 0 none;
+    table-layout: fixed;
   }
   .price-table tr:not(:last-child) {
     border-bottom: 1px solid
@@ -70,6 +71,15 @@ const ComparisonWrapper = styled.div`
   }
   .price-table .fa-times {
     color: #d8d6e3;
+  }
+  .price-table col {
+    width: 8rem;
+  }
+  .price-table col:nth-child(1) {
+    width: clamp(20rem, 40vw, 38rem);
+  }
+  .price-table col:nth-child(5) {
+    width: 9rem;
   }
 
   /* Highlighted column */
@@ -201,6 +211,13 @@ const Comparison = () => {
         <div className="main">
           <div className="price-table-header-sticky">
             <table>
+              <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+              </colgroup>
               <tbody>
                 <tr>
                   <th className="price-blank"></th>
@@ -221,6 +238,13 @@ const Comparison = () => {
           </div>
           <div className="price-table-body-scroll">
             <table className="price-table">
+              <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+              </colgroup>
               <tbody>
                 {details.map((x) => (
                   <>
