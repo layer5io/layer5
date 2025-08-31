@@ -11,6 +11,7 @@ import mesheryLogo from "../../assets/images/meshery/icon-only/meshery-logo-ligh
 import cloudicon from "./images/cloud.svg";
 import layer5 from "../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
 import kanvas from "../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
+import academy from "../../assets/images/academy/academy.svg";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 import PlanCard from "../../components/PlanCard";
 import { Row } from "../../reusecore/Layout";
@@ -45,6 +46,14 @@ const CardsData = [
     //as there is no soluton page.
     url: "https://docs.layer5.io/cloud"
   },
+  {
+    id: 4,
+    logo: academy,
+    title: "Academy",
+    icon: [cloudicon, desktop],
+    text: "Master cloud native technologies through hands-on courses, interactive labs, and real-world projects.",
+    url: "/products/academy"
+  }
 ];
 
 const index = () => {

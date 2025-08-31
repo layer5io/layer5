@@ -73,6 +73,11 @@ const Data = {
           sepLine: true,
         },
         {
+          name: "Academy",
+          path: "/products/academy",
+          sepLine: true,
+        },
+        {
           name: "Open source projects",
           path: "/projects",
           sepLine: true,
