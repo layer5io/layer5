@@ -218,7 +218,6 @@ const Comparison = () => {
   /* REF FOR SCROLL SYNC*/
   const headerScrollRef = useRef(null);
   const bodyScrollRef = useRef(null);
-  
   const handleHeadBodyScroll = () => {
     bodyScrollRef.current.scrollLeft = headerScrollRef.current.scrollLeft;
   };
