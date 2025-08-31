@@ -1,10 +1,12 @@
 name: lighthouseci
 on:
   workflow_dispatch:
-  pull_request:
-    paths-ignore:
-      - "*.md"
-      - "*.github/**"
+  schedule:
+    - cron: '0 3 * * *' # Runs every day at 3am UTC
+  # pull_request:
+    # paths-ignore:
+    #   - "*.md"
+    #   - "*.github/**"
 
 jobs:
   lighthouseci:

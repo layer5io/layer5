@@ -8,7 +8,7 @@ export const StepsListWrapper = styled.div`
         
         & > li {
             &:not(:last-of-type) {
-                margin-bottom: 600px;
+                margin-bottom: 150px;
                 
                 @media (max-width: 850px) {
                     margin-bottom: 88px;

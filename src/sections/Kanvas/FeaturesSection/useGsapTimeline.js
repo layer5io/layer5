@@ -29,9 +29,11 @@ const useGsapTimeline = ({ trigger, featureContainerName,yPercent }) => {
             start: "top top+=96px",
             end: "bottom top",
             // markers: true,
-            scrub: true,
+            // Changed the value of scrub from true to 2 to make the animation smoother
+            scrub: 2,
             pin: true,
-            toggleActions: "play pause resume reset"
+            // Changed the toggle actions to play complete reverse reset so that it correctly follows the scroll position
+            toggleActions: "play complete reverse reset"
           },
         });
 
