@@ -218,12 +218,14 @@ const Comparison = () => {
   /* REF FOR SCROLL SYNC*/
   const headerScrollRef = useRef(null);
   const bodyScrollRef = useRef(null);
+  
   const handleHeadBodyScroll = () => {
     bodyScrollRef.current.scrollLeft = headerScrollRef.current.scrollLeft;
   };
   const handleBodyHeadScroll = () => {
     headerScrollRef.current.scrollLeft = bodyScrollRef.current.scrollLeft;
   };
+  /* */
   return (
     <ComparisonWrapper>
       <h2>Compare All Features</h2>
