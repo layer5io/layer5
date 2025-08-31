@@ -6,6 +6,7 @@
  */
 
 const path = require("path");
+const fs = require("fs");
 const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
@@ -72,8 +73,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     isPermanent: true,
   });
   createRedirect({
+    fromPath: "/learn/service-mesh-workshops",
+    toPath: "/learn/workshops",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+  createRedirect({
     fromPath: "/workshops",
-    toPath: "/learn/service-mesh-workshops",
+    toPath: "/learn/workshops",
     redirectInBrowser: true,
     isPermanent: true,
   });
@@ -341,6 +348,61 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     redirectInBrowser: true,
     isPermanent: true,
   });
+  createRedirect({
+    fromPath: "/products/nighthawk",
+    toPath: "/projects/nighthawk",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+
+  createRedirect({
+    fromPath: "/products/service-mesh-performance",
+    toPath: "/projects/cloud-native-performance",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+
+  createRedirect({
+    fromPath: "/products/service-mesh-performance-specification",
+    toPath: "/projects/cloud-native-performance",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+
+  createRedirect({
+    fromPath: "/cloud-native-management/meshmap/collaborate",
+    toPath: "/cloud-native-management/kanvas/collaborate",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+
+  createRedirect({
+    fromPath: "/blog/tag/meshery-open-source",
+    toPath: "/blog/tag/open-source",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+
+  createRedirect({
+    fromPath: "/blog/category/opensource",
+    toPath: "/blog/category/open-source",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+
+  createRedirect({
+    fromPath: "/cloud-native-management/meshmap/design",
+    toPath: "/cloud-native-management/kanvas/design",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+
+  createRedirect({
+    fromPath: "/cloud-native-management/meshmap/collaborate/peer-reviews",
+    toPath: "/cloud-native-management/kanvas/collaborate/peer-reviews",
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
   // Create Pages
   const { createPage } = actions;
 
@@ -446,6 +508,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         nodes {
           frontmatter {
             name
+            permalink
           }
           fields {
             slug
@@ -454,7 +517,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
       singleWorkshop: allMdx(
-        filter: { fields: { collection: { eq: "service-mesh-workshops" } } }
+        filter: { fields: { collection: { eq: "workshops" } } }
       ) {
         nodes {
           fields {
@@ -741,15 +804,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     components.forEach((name) => {
       pageTypes.forEach(({ suffix, file }) => {
-        const path = `/projects/sistent/components/${name}${suffix}`;
+        const pagePath = `/projects/sistent/components/${name}${suffix}`;
         const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
-        try {
-          createPage({
-            path,
-            component: require.resolve(componentPath),
-          });
-        } catch (error) {
-          console.error(`Error creating page for ${path}:`, error);
+        if (fs.existsSync(path.resolve(componentPath))) {
+          try {
+            createPage({
+              path: pagePath,
+              component: require.resolve(componentPath),
+            });
+          } catch (error) {
+            console.error(`Error creating page for "${pagePath}":`, error);
+          }
+        } else {
+          console.info(`Skipping creating page "${pagePath}" - file not found: "${componentPath}"`);
         }
       });
     });
@@ -827,88 +894,97 @@ const onCreateChapterNode = ({ actions, node, slug }) => {
   createNodeField({ node, name: "pageType", value: "chapter" });
 };
 
+// Add this helper function to determine if we should process a node
+const shouldOnCreateNode = ({ node }) => {
+  return node.internal.type === "Mdx";
+};
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
+  // Check if we should process this node
+  if (!shouldOnCreateNode({ node })) {
+    return;
+  }
+
   const { createNodeField } = actions;
-  if (node.internal.type === "Mdx") {
-    const collection = getNode(node.parent).sourceInstanceName;
-    createNodeField({
-      name: "collection",
-      node,
-      value: collection,
-    });
-    if (collection !== "content-learn") {
-      let slug = "";
-      if (node.frontmatter.permalink) {
-        slug = `/${collection}/${node.frontmatter.permalink}`;
-      } else {
-        switch (collection) {
-          case "blog":
-            if (node.frontmatter.published)
-              slug = `/${collection}/${slugify(
-                node.frontmatter.category
-              )}/${slugify(node.frontmatter.title)}`;
-            break;
-          case "news":
-            slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
-            break;
-          case "service-mesh-books":
-          case "service-mesh-workshops":
-          case "service-mesh-labs":
-            slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
-            break;
-          case "resources":
-            if (node.frontmatter.published)
-              slug = `/${collection}/${slugify(
-                node.frontmatter.category
-              )}/${slugify(node.frontmatter.title)}`;
-            break;
-          case "members":
-            if (node.frontmatter.published)
-              slug = `/community/members/${slugify(node.frontmatter.name)}`;
-            break;
-          case "events":
-            if (node.frontmatter.title)
-              slug = `/community/events/${slugify(node.frontmatter.title)}`;
-            break;
-          default:
-            slug = `/${collection}/${slugify(node.frontmatter.title)}`;
-        }
-      }
-      createNodeField({
-        name: "slug",
-        node,
-        value: slug,
-      });
+  const collection = getNode(node.parent).sourceInstanceName;
+  createNodeField({
+    name: "collection",
+    node,
+    value: collection,
+  });
+
+  if (collection !== "content-learn") {
+    let slug = "";
+    if (node.frontmatter.permalink) {
+      slug = `/${collection}/${node.frontmatter.permalink}`;
     } else {
-      const slug = createFilePath({
-        node,
-        getNode,
-        basePath: "content-learn",
-        trailingSlash: false,
-      });
-
-      // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
-      const parts = slug.split("/").filter((p) => !!p);
-
-      if (parts.length === 1) {
-        onCreatePathNode({ actions, node, slug });
-        return;
+      switch (collection) {
+        case "blog":
+          if (node.frontmatter.published)
+            slug = `/${collection}/${slugify(
+              node.frontmatter.category
+            )}/${slugify(node.frontmatter.title)}`;
+          break;
+        case "news":
+          slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
+          break;
+        case "service-mesh-books":
+        case "workshops":
+        case "service-mesh-labs":
+          slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
+          break;
+        case "resources":
+          if (node.frontmatter.published)
+            slug = `/${collection}/${slugify(
+              node.frontmatter.category
+            )}/${slugify(node.frontmatter.title)}`;
+          break;
+        case "members":
+          if (node.frontmatter.published)
+            slug = `/community/members/${node.frontmatter.permalink ?? slugify(node.frontmatter.name)}`;
+          break;
+        case "events":
+          if (node.frontmatter.title)
+            slug = `/community/events/${slugify(node.frontmatter.title)}`;
+          break;
+        default:
+          slug = `/${collection}/${slugify(node.frontmatter.title)}`;
       }
+    }
+    createNodeField({
+      name: "slug",
+      node,
+      value: slug,
+    });
+  } else {
+    const slug = createFilePath({
+      node,
+      getNode,
+      basePath: "content-learn",
+      trailingSlash: false,
+    });
 
-      if (parts.length === 2) {
-        onCreateCourseNode({ actions, node, slug });
-        return;
-      }
+    // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
+    const parts = slug.split("/").filter((p) => !!p);
 
-      if (parts.length === 3) {
-        onCreateSectionNode({ actions, node, slug });
-        return;
-      }
+    if (parts.length === 1) {
+      onCreatePathNode({ actions, node, slug });
+      return;
+    }
 
-      if (parts.length === 4) {
-        onCreateChapterNode({ actions, node, slug });
-        return;
-      }
+    if (parts.length === 2) {
+      onCreateCourseNode({ actions, node, slug });
+      return;
+    }
+
+    if (parts.length === 3) {
+      onCreateSectionNode({ actions, node, slug });
+      return;
+    }
+
+    if (parts.length === 4) {
+      onCreateChapterNode({ actions, node, slug });
+      return;
     }
   }
 };
@@ -930,13 +1006,14 @@ const createCoursesListPage = ({ envCreatePage, node }) => {
 };
 
 const createCourseOverviewPage = ({ envCreatePage, node }) => {
-  const { learnpath, slug, course, pageType, permalink } = node.fields;
+  const { learnpath, slug, course, pageType, permalink,section } = node.fields;
 
   envCreatePage({
     path: `${slug}`,
     component: path.resolve("src/templates/course-overview.js"),
     context: {
       learnpath,
+      section,
       slug,
       course,
       pageType,
@@ -1029,12 +1106,13 @@ exports.createSchemaCustomization = ({ actions }) => {
        video: String,
        community_manager: String,
        docURL: String,
+       permalink: String,
      }
    `;
   createTypes(typeDefs);
 };
 
-const fs = require("fs");
+
 
 exports.onPostBuild = async ({ graphql, reporter }) => {
   const result = await graphql(`

@@ -1,0 +1,42 @@
+---
+docType: "Chapter"
+id: "deploy-redis"
+chapterTitle: "Deploy Redis"
+description: "This chapter covers the deployment of Redis Statestore"
+videos: 0
+lectures: 4
+order: 3
+---
+import * as React from "react";
+import MesheryDesignEmbed from "@layer5/meshery-design-embed";
+import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
+import daprRedis from "../../../../src/assets/images/learning-path/dapr/redis-dapr.png";
+
+<ChapterStyle>
+
+<h3 class="chapter-sub-heading">Import Redis Helm Chart and Deploy to Cluster</h3>
+
+1. Follow the same steps used for the Dapr deployment to import this [Redis helm chart](https://charts.bitnami.com/bitnami/redis-19.6.2.tgz) into Meshery and deploy.
+
+<MesheryDesignEmbed
+  style={{ border: "1px solid #eee" }}
+  embedId="embedded-design-c3dcee44-6b8a-498f-a44c-66682ccf4d2a"
+  embedScriptSrc="/embed-test/embedded-design-redis.js"
+/>
+
+2. Click **Actions** to deploy, then click **Open In Visualizer**.
+3. In **Visualizer** mode, use the filter to adjust the views of the resources in the cluster.
+  - For **View Selector** select **Single Node**.
+  - For **Kinds** select the resources you want to see including _Deployments,Pods, Services, Statefulset, Secret, Replicaset, Endpoints and Endpoint slices_.
+  - For **Namespaces** select _dapr_system_ and _default_.
+
+These filter settings will allow you to view both Dapr resources within the _dapr-system_ namespace and Redis resources within the default namespace.
+
+<a href={daprRedis}>
+  <img src={daprRedis} width="100%" align="center" />
+</a>
+
+
+Next, let's deploy the Dapr state store component that will manage this Redis state store.
+
+</ChapterStyle>

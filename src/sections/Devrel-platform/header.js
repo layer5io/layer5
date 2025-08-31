@@ -74,7 +74,7 @@ const Header = () => {
             <Col className="col header__detail" $md={6}>
               <h1 className="header__title">DevRel Platform for Kubernetes and Cloud Native Content</h1>
               <p className="header__title_description">
-              Are you a CNCF Ambassador, Docker Captain, AWS Hero, Google Developer Expert, or cloud native enthusiast looking to showcase your expertise and grow your following? The Meshery Cloud and Playground offers a powerful platform to create, share, and teach cloud native technologies while building your personal brand and expanding your reach.
+              Are you a CNCF Ambassador, Docker Captain, AWS Hero, Google Developer Expert, or cloud native enthusiast looking to showcase your expertise and grow your following? Layer5 offers a powerful platform to create, share, and teach cloud native technologies while building your personal brand and expanding your reach.
 
                 {/* Meshery provides a comprehensive platform that transforms how you create and share technical content: */}
 
