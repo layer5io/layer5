@@ -13,7 +13,7 @@ import layer5 from "../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.
 import kanvas from "../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 import academy from "../../assets/images/academy/academy.svg";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
-import PlanCard from "../../components/PlanCard";
+import PlanCard from "../../components/Pricing/PlanCard";
 import { Row } from "../../reusecore/Layout";
 import Reviews from "../Pricing/review-slider";
 import options from "../Pricing/generatePlans";

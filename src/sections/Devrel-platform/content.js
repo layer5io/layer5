@@ -10,6 +10,8 @@ import InlineQuotes from "../../components/Inline-quotes";
 import YashSharmaIMg from "../../collections/members/yash-sharma/yash-sharma.webp";
 import NicJacksonImg from "../../collections/members/nicholas-jackson/nic-jackson.webp";
 import RutkIkegahImg from "../../collections/members/ruth-ikegah/ruth-ikegah.jpg";
+
+
 const DevrelContentWrapper = styled.div`
   min-height: fit-content;
   border-width: 2px 2px 2px 2px;
@@ -181,6 +183,9 @@ const DevrelContentWrapper = styled.div`
                 top: 10.75rem;
                 left: calc(50% + 2rem);
               }
+            .meshmate-badge {
+              width: 90%;
+            }  
           }
         }
       }
@@ -210,6 +215,11 @@ const DevrelContentWrapper = styled.div`
                 top: 8.75rem;
                 left: calc(50% + 0rem);
               }
+              .meshmate-badge {
+                width: 90%;
+                height: 105%;
+                margin-left: 1rem;
+                margin-top: 0.6rem;
             }
           }
         }
@@ -247,7 +257,9 @@ const DevrelContent = () => {
           <Row className="devrel">
             <Col $md={6} className="devrel-image">
               <div className="image-wrapper">
-                <img src={IntegrationDesigner} />
+                <a href="https://kanvas.new/" target="_blank" rel="noopener noreferrer">
+                  <img src={IntegrationDesigner} />
+                </a>
               </div>
             </Col>
             <Col $md={6} className="devrel-detail">
@@ -311,7 +323,7 @@ const DevrelContent = () => {
               Recognition Program
               </h2>
               <ul className="caption">
-                <li><b>Achievement Badges:</b> Earn badges for key milestones, like streaming logs from a Kubernetes Pod for the first time.</li>
+                <li><b>Achievement <a href="https://badges.layer5.io">Badges</a>:</b> Earn badges for key milestones, like streaming logs from a Kubernetes Pod for the first time.</li>
                 <li><b>Leaderboard Visibility:</b> Participate in challenges, compete on leaderboards, and stand out in the community.</li>
                 <li><b>Featured Mentions:</b> Get recognized when your content becomes popular, with shoutouts from the project.</li>
               </ul>
@@ -334,8 +346,9 @@ const DevrelContent = () => {
                   </div>
                   <div className="badge-item">
                     <img
-                      src="https://badges.layer5.io/assets/badges/meshery/meshery.png"
-                      alt="Meshery Badge"
+                      src="https://badges.layer5.io/assets/badges/meshmate/meshmate.png"
+                      alt="Meshmate Badge"
+                      className="meshmate-badge"
                     />
                   </div>
                 </div>

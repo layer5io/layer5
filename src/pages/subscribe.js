@@ -3,10 +3,13 @@ import SEO from "../components/seo";
 
 
 import ContactSubscribeSection from "../components/ContactCard";
+import KanvasCTA from "../sections/Kanvas/kanvas-cta";
+
 const SubscribeSection = () => {
   return (
     <>
       <ContactSubscribeSection />
+      <KanvasCTA />
 
     </>
   );
