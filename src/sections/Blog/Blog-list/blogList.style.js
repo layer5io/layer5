@@ -68,14 +68,22 @@ export const BlogPageWrapper = styled.div`
 
 	@media screen and (max-width:992px){
 		.post-block{
-			height: 10rem;
+			height: 18rem;
 			width: auto;
+			flex-direction: column;
+			align-items: stretch;
 		}
 		.post-thumb-block{
-			height: 15rem;
-	
+			width: 100%;
+			height: 16rem;
 			img{
-				max-height:15rem;
+				width: 100%;
+				height: 100%;
+				margin-top: 0.5rem;
+				margin-left: 0;
+				object-fit: cover;
+				border-radius: 0.5rem;
+				display: block;
 			}
 		}
 	}
