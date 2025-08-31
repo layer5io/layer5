@@ -27,9 +27,10 @@ export const BlogPageWrapper = styled.div`
 		width: 25%;
 		img{
 			padding: 0px;
-			margin-left: 0.5rem;
+			margin-top: 0.5rem;
 			width: 100%;
 			height: 100%;
+			margin-left: 0;
 		}
 	}
 
@@ -81,7 +82,22 @@ export const BlogPageWrapper = styled.div`
 
 	@media screen and (max-width:576px){
 		.post-block{
-			height: 9rem;
+			height: 18rem;
+			flex-direction: column;
+			align-items: stretch;
+		}
+		.post-thumb-block{
+			width: 100%;
+			height: 12rem;
+			img{
+				width: 100%;
+				height: 100%;
+				margin-top: 0.5rem;
+				margin-left: 0;
+				object-fit: cover;
+				border-radius: 0.5rem;
+				display: block;
+			}
 		}
 		.blog-list-wrapper{
 			margin: 1.5rem auto 5rem;
@@ -91,6 +107,7 @@ export const BlogPageWrapper = styled.div`
 		}
 		.post-content-block{
 			height: fit-content;
+			width: 100%;
 		}
 		.tooltip-search{
 			display: block;
