@@ -1,10 +1,8 @@
 import styled from "styled-components";
-
 const SwiperContainer = styled.div`
   @media (min-width: 768px) {
     display: none;
   }
-  
   .swiper-slide {
     border-radius: 20px;
   }
