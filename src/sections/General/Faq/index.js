@@ -69,7 +69,10 @@ const Faq = (props) => {
         <Accordion allowMultipleExpanded={false} allowZeroExpanded={true}>
           {faq_keys.map((key, index) => (
             <React.Fragment key={index}>
-              <h2 className="category_name">{key}</h2>
+              {props.title !== false && (
+                <h2 className="category_name">{key}</h2>
+              )}
+
               {faqs[key].map((faq, index) => (
                 <AccordionItem key={index}>
                   <AccordionTitle>

@@ -40,7 +40,25 @@ const PictureSliderWrapper = styled.div`
         max-height: 550px; 
         height: auto;
         object-fit: contain; 
+        border: 2px solid #e0e0e0;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        border-radius: 5px;
       }
+
+      .screenshot {
+      display: block;
+      box-shadow: var(--box-shadow-primary) !important;
+      border-radius: 5px;
+      margin-left: auto;
+      margin-right: auto;
+      background: #868e96
+          url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2244%22%20height%3D%2212%22%20viewBox%3D%220%200%2044%2012%22%3E%3Ccircle%20cx%3D%226%22%20cy%3D%226%22%20r%3D%224%22%20fill%3D%22%23eee%22%20%2F%3E%3Ccircle%20cx%3D%2222%22%20cy%3D%226%22%20r%3D%224%22%20fill%3D%22%23eee%22%20%2F%3E%3Ccircle%20cx%3D%2238%22%20cy%3D%226%22%20r%3D%224%22%20fill%3D%22%23eee%22%20%2F%3E%3C%2Fsvg%3E")
+          4px 4px no-repeat;
+      padding: 20px 0 0 0;
+      position: relative;
+      width: 100%;
+    }
+
     }
   }
 
@@ -95,7 +113,7 @@ const PictureSlider = () => {
     <PictureSliderWrapper>
       <Slider {...settings}>
         {data.map((image, index) => (
-          <img key={index} src={image} alt={`slide-${index}`} />
+          <img key={index} src={image} alt={`slide-${index}`} className="screenshot"/>
         ))}
       </Slider>
     </PictureSliderWrapper>

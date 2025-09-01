@@ -5,7 +5,7 @@ import Labs from "../images/labs.png";
 import Badges from "../images/badges.png";
 import Progress from "../images/progress.png";
 import styled from "styled-components";
-import FAQs from "./FAQ/FAQs";
+import FAQ from "../../../sections/General/Faq";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 import Container from "../../../reusecore/Layout/Container";
 
@@ -187,7 +187,6 @@ const AcademyFeaturesWrapper = styled.div`
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #00B39F, #00D3A9);
     z-index: 2;
   }
 
@@ -197,7 +196,6 @@ const AcademyFeaturesWrapper = styled.div`
       ? "0 20px 60px rgba(0,179,159,0.2)"
       : "0 20px 60px rgba(0,179,159,0.15)"
     };
-    border-color: #00B39F;
   }
 
   .image {
@@ -209,8 +207,18 @@ const AcademyFeaturesWrapper = styled.div`
     transition: transform 0.3s ease;
   }
 
-  .image-container:hover .image {
-    transform: scale(1.02);
+  .screenshot {
+    display: block;
+    box-shadow: var(--box-shadow-primary) !important;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #868e96
+        url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2244%22%20height%3D%2212%22%20viewBox%3D%220%200%2044%2012%22%3E%3Ccircle%20cx%3D%226%22%20cy%3D%226%22%20r%3D%224%22%20fill%3D%22%23eee%22%20%2F%3E%3Ccircle%20cx%3D%2222%22%20cy%3D%226%22%20r%3D%224%22%20fill%3D%22%23eee%22%20%2F%3E%3Ccircle%20cx%3D%2238%22%20cy%3D%226%22%20r%3D%224%22%20fill%3D%22%23eee%22%20%2F%3E%3C%2Fsvg%3E")
+        4px 4px no-repeat;
+    padding: 20px 0 0 0;
+    position: relative;
+    width: 100%;
   }
 
   .badge {
@@ -524,7 +532,7 @@ const Layer5AcademyFeatures = () => {
                             <img
                               src={section.image}
                               alt={section.imageAlt}
-                              className="image"
+                              className="image screenshot"
                               loading="lazy"
                             />
                           </div>
@@ -541,7 +549,7 @@ const Layer5AcademyFeatures = () => {
                             <img
                               src={section.image}
                               alt={section.imageAlt}
-                              className="image"
+                              className="image screenshot"
                               loading="lazy"
                             />
                           </div>
@@ -566,7 +574,7 @@ const Layer5AcademyFeatures = () => {
             ))}
           </div>
 
-          <FAQs/>
+          <FAQ category={["Academy"]} title={false} />
 
           <div className="cta">
             <Card className="cta-card">

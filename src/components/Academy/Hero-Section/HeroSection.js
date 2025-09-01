@@ -90,24 +90,19 @@ const AcademyHeaderWrapper = styled.div`
     .cards-container {
       position: relative;
       width: 100%;
-      max-width: 400px;
-      height: 500px;
+      max-width: 450px;
+      height: 550px;
     }
 
     .card {
       position: absolute;
-      width: 280px;
-      height: 140px;
+      width: 320px;
+      height: 160px;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 20px 40px rgba(0, 179, 159, 0.15);
       transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       border: 1px solid rgba(0, 179, 159, 0.2);
-      
-      &:hover {
-        transform: translateY(-8px) scale(1.02);
-        box-shadow: 0 30px 60px rgba(0, 179, 159, 0.25);
-      }
 
       img {
         width: 100%;
@@ -116,9 +111,6 @@ const AcademyHeaderWrapper = styled.div`
         transition: transform 0.4s ease;
       }
 
-      &:hover img {
-        transform: scale(1.05);
-      }
     }
 
     .card-1 {
@@ -132,7 +124,7 @@ const AcademyHeaderWrapper = styled.div`
     }
 
     .card-2 {
-      top: 180px;
+      top: 200px;
       right: 0;
       z-index: 2;
       opacity: 0;
@@ -214,17 +206,17 @@ const AcademyHeaderWrapper = styled.div`
 
       .academy-visual {
         margin-top: 1.5rem;
-        min-height: 400px;
+        min-height: 430px;
       }
 
       .cards-container {
-        max-width: 320px;
-        height: 380px;
+        max-width: 360px;
+        height: 420px;
       }
 
       .card {
-        width: 200px;
-        height: 100px;
+        width: 230px;
+        height: 115px;
       }
 
       .card-1 {
@@ -233,7 +225,7 @@ const AcademyHeaderWrapper = styled.div`
       }
 
       .card-2 {
-        top: 140px;
+        top: 155px;
         right: 0;
         left: auto;
       }
@@ -258,6 +250,20 @@ const AcademyHeaderWrapper = styled.div`
       
       .header__description {
         font-size: 1.125rem;
+      }
+
+      .cards-container {
+        max-width: 420px;
+        height: 520px;
+      }
+
+      .card {
+        width: 300px;
+        height: 150px;
+      }
+
+      .card-2 {
+        top: 185px;
       }
     }
   }
