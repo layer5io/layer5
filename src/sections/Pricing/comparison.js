@@ -61,7 +61,6 @@ h2, h5{
     overflow-x: scroll;
     position: sticky;
     top: -0.5rem;
-    scrollbar-width: thin;
     scrollbar-color: ${(props) => props.theme.whiteZeroThreeToBlackZeroThree}
       ${(props) => props.theme.whiteZeroThreeToBlackZeroThree};
   }
@@ -72,7 +71,7 @@ h2, h5{
   }
 .price-table-body-scroll {
     overflow-x: scroll;
-    scrollbar-width: none;
+    scrollbar-width: auto;
   }
 .price-table tr:hover {
     background-color: ${props => props.theme.secondaryLightColor};
