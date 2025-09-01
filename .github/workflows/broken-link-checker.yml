@@ -20,7 +20,7 @@ jobs:
           npm run build
 
       - name: Run Linkinator (404s only, non-blocking)
-        run: npm run link:check
+        run: npx linkinator ./public --recurse --skip '404.html' --retry || true
 
       - name: Finish
         run: echo "Link check completed"
