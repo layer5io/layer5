@@ -1,0 +1,30 @@
+name: Broken Link Checker
+
+on:
+  pull_request:
+    branches: [master]
+    types: [opened, reopened, synchronize]
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Build Gatsby Site
+        run: npm run noIndex
+
+      - name: Run Linkinator (404s only, non-blocking)
+        run: npm run link:check
+
+      - name: Finish
+        run: echo "Link check completed"
