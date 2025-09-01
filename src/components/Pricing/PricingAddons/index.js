@@ -1,6 +1,6 @@
 /* eslint-disable indent */
 import React, { useState, useEffect } from "react";
-import { Box, Card, CardContent, CardHeader, Typography, FormControl, InputLabel, Select, MenuItem, Slider, Switch, FormControlLabel, Chip, Container, Link, Paper, SistentThemeProvider, CssBaseline, useTheme } from "@sistent/sistent";
+import { Box, Card, CardContent, CardHeader, Typography, FormControl, InputLabel, Select, MenuItem, Slider, Switch, FormControlLabel, Chip, Container, Paper, SistentThemeProvider, CssBaseline, useTheme } from "@sistent/sistent";
 import { Calculate, CheckCircle } from "@mui/icons-material";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 import { getAddOns } from "./pricingData";
@@ -10,7 +10,8 @@ import Button from "../../../reusecore/Button";
 
 export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
   const [selectedAddon, setSelectedAddon] = useState(null);
-  const [quantity, setQuantity] = useState(1);
+  // const [quantity, setQuantity] = useState(1);
+  const quantity = 1;
   const [selectedSubAddOns, setSelectedSubAddOns] = useState({});
   const [totalPrice, setTotalPrice] = useState(0);
   const [quantityIndex, setQuantityIndex] = useState(0);
