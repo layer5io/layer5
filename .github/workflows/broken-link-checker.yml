@@ -9,19 +9,15 @@ jobs:
   check-links:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Checkout 🛎️
+        uses: actions/checkout@master
         with:
-          node-version: 20
+          fetch-depth: 1
 
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
-
-      - name: Build Gatsby Site
-        run: npm run noIndex
+      - name: Install and Build 🔧
+        run: |
+          npm install --legacy-peer-deps
+          npm run build
 
       - name: Run Linkinator (404s only, non-blocking)
         run: npm run link:check
