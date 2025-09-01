@@ -19,8 +19,11 @@ jobs:
           npm install --legacy-peer-deps
           npm run build
 
-      - name: Run Linkinator (404s only, non-blocking)
-        run: npx linkinator ./public --recurse --skip '404.html' --retry || true
+      - name: List public folder
+        run: ls -R ./public
 
+      - name: Run Linkinator (404s only, non-blocking)
+        run: npx linkinator $GITHUB_WORKSPACE/public --recurse --skip '404.html' --retry || true
+        
       - name: Finish
         run: echo "Link check completed"
