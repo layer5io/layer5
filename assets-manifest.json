@@ -176,9 +176,9 @@
   "a7ae287b.js": "a7ae287b-5816de39860ea2284762.js",
   "ac581ebe-a427cc4901b447354e36.js.map": "ac581ebe-a427cc4901b447354e36.js.map",
   "ac581ebe.js": "ac581ebe-a427cc4901b447354e36.js",
-  "app-b216f376a0f5c649fd20.js.LICENSE.txt": "app-b216f376a0f5c649fd20.js.LICENSE.txt",
-  "app-b216f376a0f5c649fd20.js.map": "app-b216f376a0f5c649fd20.js.map",
-  "app.js": "app-b216f376a0f5c649fd20.js",
+  "app-4f7712dace153b62921a.js.LICENSE.txt": "app-4f7712dace153b62921a.js.LICENSE.txt",
+  "app-4f7712dace153b62921a.js.map": "app-4f7712dace153b62921a.js.map",
+  "app.js": "app-4f7712dace153b62921a.js",
   "b5f6012b-4fcb407730b824193c12.js.map": "b5f6012b-4fcb407730b824193c12.js.map",
   "b5f6012b.js": "b5f6012b-4fcb407730b824193c12.js",
   "b66a268f464608e6dd2ebe4655d843ec5478d744-e658746c7114344b1db1.js.map": "b66a268f464608e6dd2ebe4655d843ec5478d744-e658746c7114344b1db1.js.map",
@@ -351,8 +351,8 @@
   "component---src-pages-newcomers-js.js": "component---src-pages-newcomers-js-330a0b20248e3f666d83.js",
   "component---src-pages-partners-js-f5f3ad934b2c229ad385.js.map": "component---src-pages-partners-js-f5f3ad934b2c229ad385.js.map",
   "component---src-pages-partners-js.js": "component---src-pages-partners-js-f5f3ad934b2c229ad385.js",
-  "component---src-pages-pricing-index-js-27a91292ce1dd84f2bb6.js.map": "component---src-pages-pricing-index-js-27a91292ce1dd84f2bb6.js.map",
-  "component---src-pages-pricing-index-js.js": "component---src-pages-pricing-index-js-27a91292ce1dd84f2bb6.js",
+  "component---src-pages-pricing-index-js-078c0f58aaafff4785c7.js.map": "component---src-pages-pricing-index-js-078c0f58aaafff4785c7.js.map",
+  "component---src-pages-pricing-index-js.js": "component---src-pages-pricing-index-js-078c0f58aaafff4785c7.js",
   "component---src-pages-pricing-open-source-program-js-6d558da1a4a0aa1736bd.js.map": "component---src-pages-pricing-open-source-program-js-6d558da1a4a0aa1736bd.js.map",
   "component---src-pages-pricing-open-source-program-js.js": "component---src-pages-pricing-open-source-program-js-6d558da1a4a0aa1736bd.js",
   "component---src-pages-products-index-js-b98057775fc84721632c.js.LICENSE.txt": "component---src-pages-products-index-js-b98057775fc84721632c.js.LICENSE.txt",
@@ -1358,6 +1358,6 @@
   "static/yash-sharma.webp": "static/yash-sharma-54aa26b6e5743f0557cfc76aa9797f2d.webp",
   "static/yogi.webp": "static/yogi-d00ca1cc48ab74938a23d4359ef3fb01.webp",
   "styles.css": "styles.3eeb5ca3b888f853e355.css",
-  "webpack-runtime-b4425cf73296dd60ad8b.js.map": "webpack-runtime-b4425cf73296dd60ad8b.js.map",
-  "webpack-runtime.js": "webpack-runtime-b4425cf73296dd60ad8b.js"
+  "webpack-runtime-b1f1f0190b6fe9344d77.js.map": "webpack-runtime-b1f1f0190b6fe9344d77.js.map",
+  "webpack-runtime.js": "webpack-runtime-b1f1f0190b6fe9344d77.js"
 }
