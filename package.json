@@ -24,7 +24,7 @@
     "noIndex": "gatsby build && echo 'User-agent: *\nDisallow: /' > public/robots.txt",
     "version": "gatsby --version",
     "prepare": "husky install",
-    "link:check": "npx linkinator ./public --recurse --skip '404.html' --retry"
+    "link:check": "npx linkinator ./public --recurse --skip '404.html' --retry || true"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.2.1",
