@@ -12,7 +12,7 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@master
         with:
-          fetch-depth: 1
+          fetch-depth: 0
 
       - name: Install and Build 🔧
         run: |
