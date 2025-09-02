@@ -239,6 +239,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                     <FormControl fullWidth>
                       <InputLabel sx={{ fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>Optionally, choose one or more add-ons</InputLabel>
                       <Select
+                        fullWidth
                         value={selectedAddon?.id || ""}
                         onChange={(e) => handleAddonChange(e.target.value)}
                         label="Optionally, choose one or more add-ons"
@@ -249,13 +250,13 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                       >
                         {addOns.map((addon) => (
                           <MenuItem key={addon.id} value={addon.id}>
-                            <Box sx={{ display: "flex", alignItems: "center", gap: 2, py: 1 }}>
+                            <Box sx={{ display: "flex", alignItems: "center", gap: 2, py: 1, width: "100%" }}>
                               {addon.icon}
-                              <Box>
-                                <Typography variant="body1" fontWeight="500" sx={{ textOverflow: "ellipsis",whiteSpace: "normal", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
+                              <Box  sx={{ minWidth: 0, flex: 1 }}>
+                                <Typography noWrap variant="body1" fontWeight="500" sx={{ overflow: "hidden", textOverflow: "ellipsis",whiteSpace: "nowrap", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
                                   {addon.name}
                                 </Typography>
-                                <Typography variant="body2" color="text.secondary" sx={{ textOverflow: "ellipsis", whiteSpace: "normal", fontStyle: "italic", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
+                                <Typography noWrap variant="body2" color="text.secondary" sx={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", fontStyle: "italic", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
                                   {addon.id === "academy"
                                     ? addon.description
                                     : (() => {
