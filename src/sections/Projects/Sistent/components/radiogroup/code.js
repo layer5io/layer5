@@ -41,7 +41,7 @@ const SistentRadioGroup = () => {
 
   const [value, setValue] = React.useState("Layer5");
   const handleChange = (event) => setValue(event.target.value);
-  
+
   const [selectedDisabledOption, setSelectedDisabledOption] = React.useState("Layer5");
   const handleDisabledChange = (event) => setSelectedDisabledOption(event.target.value);
 
@@ -125,7 +125,7 @@ const SistentRadioGroup = () => {
             </div>
             <CodeBlock name="radiogroup-example" code={codes[0]} />
           </div>
-          
+
           <a id="Disabled RadioGroup">
             <h2>Disabled Options</h2>
           </a>
@@ -143,7 +143,7 @@ const SistentRadioGroup = () => {
             </div>
             <CodeBlock name="radiogroup-disabled" code={codes[1]} />
           </div>
-          
+
           <a id="Row RadioGroup">
             <h2>Row Layout</h2>
           </a>
@@ -161,7 +161,7 @@ const SistentRadioGroup = () => {
             </div>
             <CodeBlock name="radiogroup-row" code={codes[2]} />
           </div>
-          
+
           <a id="LabelPlacement RadioGroup">
             <h2>Label Placement</h2>
           </a>
@@ -170,30 +170,30 @@ const SistentRadioGroup = () => {
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <Container maxWidth="sm">
                   <RadioGroup row value={selectedLabelOption} onChange={handleLabelChange}>
-                    <FormControlLabel 
-                      value="end" 
-                      control={<Radio />} 
-                      label="End (Default)" 
-                      labelPlacement="end" 
+                    <FormControlLabel
+                      value="end"
+                      control={<Radio />}
+                      label="End (Default)"
+                      labelPlacement="end"
                     />
-                    <FormControlLabel 
-                      value="top" 
-                      control={<Radio />} 
-                      label="Top" 
-                      labelPlacement="top" 
+                    <FormControlLabel
+                      value="top"
+                      control={<Radio />}
+                      label="Top"
+                      labelPlacement="top"
                     />
-                    <FormControlLabel 
-                      value="bottom" 
-                      control={<Radio />} 
-                      label="Bottom" 
-                      labelPlacement="bottom" 
+                    <FormControlLabel
+                      value="bottom"
+                      control={<Radio />}
+                      label="Bottom"
+                      labelPlacement="bottom"
                     />
-                    <FormControlLabel 
-                      value="start" 
-                      control={<Radio />} 
-                      label="Start" 
-                      labelPlacement="start" 
-                    /> 
+                    <FormControlLabel
+                      value="start"
+                      control={<Radio />}
+                      label="Start"
+                      labelPlacement="start"
+                    />
                   </RadioGroup>
                 </Container>
               </SistentThemeProvider>

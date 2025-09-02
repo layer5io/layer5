@@ -198,13 +198,13 @@ const RadioGroupGuidance = () => {
           <a id="BestPractices">
             <h2>Best Practices</h2>
           </a>
-              <ul>
-                <li><strong>Single-choice only:</strong> Use RadioGroup when users must select just one option from a set. For multiple selections, use checkboxes instead.</li>
-                <li><strong>Clear labeling:</strong> Provide short, descriptive labels for each radio option to help users understand their choices quickly.</li>
-                <li><strong>Logical grouping:</strong> Visually and semantically group related radio options together to improve clarity and accessibility.</li>
-                <li><strong>Default selection:</strong> Set a sensible default value to guide users and streamline their decision-making process.</li>
-                <li><strong>Horizontal layout:</strong> Use the <code>row</code> prop for horizontal alignment when space is limited or when options are closely related.</li>
-              </ul>
+          <ul>
+            <li><strong>Single-choice only:</strong> Use RadioGroup when users must select just one option from a set. For multiple selections, use checkboxes instead.</li>
+            <li><strong>Clear labeling:</strong> Provide short, descriptive labels for each radio option to help users understand their choices quickly.</li>
+            <li><strong>Logical grouping:</strong> Visually and semantically group related radio options together to improve clarity and accessibility.</li>
+            <li><strong>Default selection:</strong> Set a sensible default value to guide users and streamline their decision-making process.</li>
+            <li><strong>Horizontal layout:</strong> Use the <code>row</code> prop for horizontal alignment when space is limited or when options are closely related.</li>
+          </ul>
         </div>
       </div>
     </SistentLayout>

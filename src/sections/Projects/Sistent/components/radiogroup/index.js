@@ -119,36 +119,36 @@ const SistentRadioGroup = () => {
               </RadioGroup>
             </SistentThemeProvider>
           </Row>
-          
+
           <h3>Label Placement</h3>
           <p>You can change the placement of the label with the <code>labelPlacement</code> prop.</p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <RadioGroup row value={selectedLabelOption} onChange={handleLabelChange}>
-                <FormControlLabel 
-                  value="end" 
-                  control={<Radio />} 
-                  label="End (Default)" 
-                  labelPlacement="end" 
+                <FormControlLabel
+                  value="end"
+                  control={<Radio />}
+                  label="End (Default)"
+                  labelPlacement="end"
                 />
-                <FormControlLabel 
-                  value="top" 
-                  control={<Radio />} 
-                  label="Top" 
-                  labelPlacement="top" 
+                <FormControlLabel
+                  value="top"
+                  control={<Radio />}
+                  label="Top"
+                  labelPlacement="top"
                 />
-                <FormControlLabel 
-                  value="bottom" 
-                  control={<Radio />} 
-                  label="Bottom" 
-                  labelPlacement="bottom" 
+                <FormControlLabel
+                  value="bottom"
+                  control={<Radio />}
+                  label="Bottom"
+                  labelPlacement="bottom"
                 />
-                <FormControlLabel 
-                  value="start" 
-                  control={<Radio />} 
-                  label="Start" 
-                  labelPlacement="start" 
-                /> 
+                <FormControlLabel
+                  value="start"
+                  control={<Radio />}
+                  label="Start"
+                  labelPlacement="start"
+                />
               </RadioGroup>
             </SistentThemeProvider>
           </Row>

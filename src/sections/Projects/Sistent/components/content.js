@@ -188,7 +188,7 @@ const componentsData = [
     url: "/projects/sistent/components/toolbar",
     src: "/toolbar",
   },
-   {
+  {
     "id": 25,
     "name": "RadioGroup",
     "description": "Sistent offers a well-structured RadioGroup component that allows users to select one option from a set.",

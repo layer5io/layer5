@@ -68,9 +68,9 @@ export const content = [
   { id: 48, link: "/projects/sistent/components/popper/guidance", text: "Popper" },
   { id: 49, link: "/projects/sistent/components/popper/code", text: "Popper" },
 
-  {id: 50,link: "/projects/sistent/components/radiogroup",text: "RadioGroup"},
-  {id: 51,link: "/projects/sistent/components/radiogroup/guidance",text: "RadioGroup"},
-  {id: 52,link: "/projects/sistent/components/radiogroup/code",text: "RadioGroup"},
+  { id: 50,link: "/projects/sistent/components/radiogroup",text: "RadioGroup" },
+  { id: 51,link: "/projects/sistent/components/radiogroup/guidance",text: "RadioGroup" },
+  { id: 52,link: "/projects/sistent/components/radiogroup/code",text: "RadioGroup" },
 
   { id: 53, link: "/projects/sistent/components/select", text: "Select" },
   { id: 54, link: "/projects/sistent/components/select/guidance", text: "Select" },
