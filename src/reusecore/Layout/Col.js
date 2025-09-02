@@ -12,17 +12,18 @@ const ColWrapper = styled.div`
     position: relative;
     width: 100%;
     box-sizing: border-box;
-    padding: 0; // Remove negative padding
+    padding: 0; 
 
-    flex: 1 1 calc((100% - 120px) / 4);
-    max-width: calc((100% - 120px) / 4);
+    flex: 0 1 300px; 
+    max-width: 300px;
+    width: 100%;
 
     @media (max-width: 1200px) {
-    flex: 1 1 calc((100% - 40px) / 2);
-    max-width: calc((100% - 40px) / 2);
+    flex: 0 1 45%;
+    max-width: 45%;
     }
     @media (max-width: 768px) {
-    flex: 1 1 100%;
+    flex: 0 1 100%;
     max-width: 100%;
     }
     @media (min-width: 315px) {
