@@ -152,10 +152,6 @@ const RadioGroupGuidance = () => {
                   </td>
                   <td>
                     Callback fired when a radio button is selected.
-                    <strong>Signature:</strong>
-                    <code>
-                      {"function(event: React.ChangeEvent, value: string) => void"}
-                    </code>
                   </td>
                 </tr>
                 <tr>
