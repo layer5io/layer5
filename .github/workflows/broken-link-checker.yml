@@ -21,8 +21,11 @@ jobs:
           npm run version
           npm run noIndex
 
-      - name: Run Linkinator (404s only, non-blocking)
-        run: npx linkinator ./public --recurse --skip '404.html' --retry --concurrency 5 --timeout 30000 || true
+      - name: Serve site
+        run: npx serve ./public -l 5000 &
+      
+      - name: Run Linkinator
+        run: npx linkinator http://localhost:5000 --retry --concurrency 5 || true
         
       - name: Finish
         run: echo "Link check completed"
