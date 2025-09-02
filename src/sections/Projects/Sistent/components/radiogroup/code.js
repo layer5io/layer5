@@ -9,7 +9,7 @@ import { CodeBlock } from "../button/code-block";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
-import { RadioGroup, Radio, FormControlLabel } from "@layer5/sistent";
+import { RadioGroup, Radio, FormControlLabel } from "@sistent/sistent";
 
 const codes = [
   `<RadioGroup value={value} onChange={handleChange}>
@@ -38,7 +38,7 @@ const codes = [
 const SistentRadioGroup = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
-  
+
   const [value, setValue] = React.useState("Layer5");
   const handleChange = (event) => setValue(event.target.value);
   
