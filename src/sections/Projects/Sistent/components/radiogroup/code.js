@@ -19,7 +19,7 @@ const codes = [
   </RadioGroup>`,
   `<RadioGroup value={selectedDisabledOption} onChange={handleDisabledChange}>
   <FormControlLabel value="Layer5" control={<Radio />} label="Layer5" />
-  <FormControlLabel value="Meshery-Cloud (Disabled)" control={<Radio />} label="Meshery-Cloud (Private)" disabled />
+  <FormControlLabel value="Meshery-Cloud (Private)" control={<Radio />} label="Meshery-Cloud (Private)" disabled />
   <FormControlLabel value="Sistent Design System" control={<Radio />} label="Sistent Design System" />
 </RadioGroup>`,
   `<RadioGroup row value={selectedRowOption} onChange={handleRowChange}>
@@ -135,7 +135,7 @@ const SistentRadioGroup = () => {
                 <Container maxWidth="sm">
                   <RadioGroup value={selectedDisabledOption} onChange={handleDisabledChange}>
                     <FormControlLabel value="Layer5" control={<Radio />} label="Layer5" />
-                    <FormControlLabel value="Meshery-Cloud (Disabled)" control={<Radio />} label="Meshery-Cloud (Disabled)" disabled />
+                    <FormControlLabel value="Meshery-Cloud (Private)" control={<Radio />} label="Meshery-Cloud (private)" disabled />
                     <FormControlLabel value="Sistent Design System" control={<Radio />} label="Sistent Design System" />
                   </RadioGroup>
                 </Container>
