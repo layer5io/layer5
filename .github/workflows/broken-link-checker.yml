@@ -17,13 +17,12 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm install --legacy-peer-deps
-          npm run build
-
-      - name: List public folder
-        run: ls -R ./public
+          node -v
+          npm run version
+          npm run noIndex
 
       - name: Run Linkinator (404s only, non-blocking)
-        run: npx linkinator $GITHUB_WORKSPACE/public --recurse --skip '404.html' --retry || true
+        run: npx linkinator ./public --recurse --skip '404.html' --retry --concurrency 5 --timeout 30000 || true
         
       - name: Finish
         run: echo "Link check completed"
