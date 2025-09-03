@@ -18,7 +18,8 @@ import {
   Chip,
   CssBaseline,
   TextField,
-  useTheme
+  useTheme,
+  SistentThemeProvider
 } from  "@sistent/sistent";
 import { Calculate, CheckCircle } from "@mui/icons-material";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
@@ -26,7 +27,6 @@ import { getAddOns } from "./pricingData";
 import FeatureDetails from "../PlanCard/collapsible-details";
 import PlanCardWrapper from "../PlanCard/planCard.style";
 import Button from "../../../reusecore/Button";
-import { SistentThemeProvider } from "@sistent/sistent";
 
 export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan }) => {
   const [selectedAddon, setSelectedAddon] = useState(null);
@@ -281,7 +281,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan })
                                     ? addon.description
                                     : (() => {
                                       const period = isYearly ? "/year" : "/month";
-                                      return `${formatPrice(isYearly ? addon.yearlyprice : addon.monthlyprice)} per ${addon.unitLabel.slice(0, -1)}${period}`;
+                                      return `${formatPrice(isYearly ? addon.yearlyPrice : addon.monthlyPrice)} per ${addon.unitLabel.slice(0, -1)}${period}`;
                                     })()
                                   }
                                 </Typography>
@@ -566,7 +566,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan })
                           }
                           return formatPrice(0);
                         } else {
-                          return formatPrice((isYearly ? selectedAddon?.yearlyprice : selectedAddon?.monthlyprice) * quantity);
+                          return formatPrice((isYearly ? selectedAddon?.yearlyPrice : selectedAddon?.monthlyPrice) * quantity);
                         }
                       })()}
                     </Typography>
