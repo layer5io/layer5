@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import styled from "styled-components";
 
 import LearningPath1 from "../images/learning-path1.png";
-import LearningPath2 from "../images/learning-path2.png";
+import LearningPath2 from "../images/learning-path3.png";
 import LearningPath4 from "../images/learning-path4.png";
 
 const PictureSliderWrapper = styled.div`
@@ -22,7 +22,7 @@ const PictureSliderWrapper = styled.div`
     .slick-prev,
     .slick-next {
       &:before {
-        color: ${(props) => props.theme.tertiaryColor};
+        color: ${(props) => props.theme.secondaryColor};
       }
     }
   }
@@ -40,15 +40,13 @@ const PictureSliderWrapper = styled.div`
         max-height: 550px; 
         height: auto;
         object-fit: contain; 
-        border: 2px solid #e0e0e0;
+        border: ${props => props.isDark ? "none" : "2px solid #e0e0e0"};
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-        border-radius: 5px;
       }
 
       .screenshot {
       display: block;
-      box-shadow: var(--box-shadow-primary) !important;
-      border-radius: 5px;
+      box-shadow: var(--box-shadow-primary);
       margin-left: auto;
       margin-right: auto;
       background: #868e96
@@ -57,6 +55,7 @@ const PictureSliderWrapper = styled.div`
       padding: 20px 0 0 0;
       position: relative;
       width: 100%;
+      border-radius: 20px;
     }
 
     }
@@ -76,7 +75,7 @@ const PictureSliderWrapper = styled.div`
 
 
 
-const PictureSlider = () => {
+const PictureSlider = (props) => {
   const data = [LearningPath1, LearningPath2, LearningPath4];
 
   const settings = {
@@ -110,7 +109,7 @@ const PictureSlider = () => {
   };
 
   return (
-    <PictureSliderWrapper>
+    <PictureSliderWrapper isDark={props.isDark}>
       <Slider {...settings}>
         {data.map((image, index) => (
           <img key={index} src={image} alt={`slide-${index}`} className="screenshot"/>

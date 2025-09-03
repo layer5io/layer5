@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
-import { featuresData, sectionContent } from "./OutlineFeaturesData";
+import { tabFeaturesData, sectionContent, audienceConfig } from "./OutlineFeaturesData";
 
 const OutlinedFeaturesWrapper = styled.div`
   width: 100%;
@@ -14,6 +14,7 @@ const OutlinedFeaturesWrapper = styled.div`
   
   .features-container {
     display: flex;
+    flex-direction: column;
     width: 80%;
     justify-content: center;
     align-items: center;
@@ -21,7 +22,7 @@ const OutlinedFeaturesWrapper = styled.div`
     margin: 0 auto;
   }
 
-  .features-container::before{
+  .features-container::before {
     content: '';
     position: absolute;
     top: 0;
@@ -41,14 +42,8 @@ const OutlinedFeaturesWrapper = styled.div`
     width: 100%;
     height: fit-content;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     margin-bottom: 1rem;
-    
-    &:before {
-      position: absolute;
-      right: -2rem;
-      bottom: 0;
-    }
   }
 
   .project__block__inner {
@@ -76,7 +71,7 @@ const OutlinedFeaturesWrapper = styled.div`
       margin: auto;
       font-weight: 700;
       font-size: 1.6rem;
-      color: #00D3A9;
+      color: ${props => props.isDark ? "#00D3A9" : "#00b39f"};
       text-align: center;
       justify-content: center;
       margin-bottom: 0.7rem;
@@ -101,10 +96,9 @@ const OutlinedFeaturesWrapper = styled.div`
     .feature-icon {
       width: 70px;
       height: 70px;
-      color: #00D3A9;
+      color: ${props => props.isDark ? "#00D3A9" : "#00b39f"};
       transition: all 0.3s ease;
       
-      /* Ensure SVG inherits color */
       svg {
         color: inherit;
       }
@@ -112,7 +106,6 @@ const OutlinedFeaturesWrapper = styled.div`
 
     &:hover .feature-icon {
       transform: scale(1.1);
-      color: #00F5C4;
     }
   }
 
@@ -161,6 +154,132 @@ const OutlinedFeaturesWrapper = styled.div`
       opacity: 0.8;
       color: ${props => props.isDark ? "#cccccc" : "#666666"};
       line-height: 1.5;
+    }
+  }
+
+  .audience-tabs {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid ${props => props.isDark ? "#333" : "#e6e6e6"};
+    background: ${props => props.isDark ? "#1a1a1a" : "#f8f8f8"};
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+
+    @media (max-width: 640px) {
+      flex-direction: column;
+      border-bottom: none;
+      border-right: 1px solid ${props => props.isDark ? "#333" : "#e6e6e6"};
+      border-radius: 12px 12px 0px 0px;
+      width: auto;
+      min-width: 120px;
+    }
+  }
+
+  .tab-button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: ${props => props.isDark ? "#cccccc" : "#666666"};
+
+    &.active {
+      background: #00B39F;
+      color: #ffffff;
+      box-shadow: 0px 2px 8px rgba(0, 179, 159, 0.3);
+    }
+
+    &:not(.active):hover {
+      background: ${props => props.isDark ? "#333333" : "#ffffff"};
+      color: ${props => props.isDark ? "#00D3A9" : "#00b39f"};
+    }
+
+    .tab-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .tab-text-full {
+      display: inline;
+    }
+
+    .tab-text-short {
+      display: none;
+    }
+
+    @media (max-width: 640px) {
+      flex: none;
+      padding: 1rem 0.75rem;
+      font-size: 0.85rem;
+      text-align: center;
+      width: 100%;
+      border-bottom: 1px solid ${props => props.isDark ? "#333" : "#e6e6e6"};
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .tab-text-full {
+        display: inline;
+      }
+
+      .tab-text-short {
+        display: none;
+      }
+
+      .tab-icon {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  .tabs-content-wrapper {
+    width: 100%;
+    
+    @media (max-width: 640px) {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  .tab-content-section {
+    background: ${props => props.isDark ? "#1a1a1a" : "#f8f8f8"};
+    border-radius: 0 0 12px 12px;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    border: 1px solid ${props => props.isDark ? "none" : "#e6e6e6"};
+    border-top: none;
+
+    @media (max-width: 640px) {
+      border-radius: 0 0px 12px 12px;
+      border-top: 1px solid ${props => props.isDark ? "#333" : "#e6e6e6"};
+      border-left: none;
+      flex: 1;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .tab-subtitle {
+    text-align: center;
+    margin-bottom: 2.5rem; 
+    color: ${props => props.isDark ? "#ffffff" : "#333333"}; 
+    font-size: 1.5rem; 
+    opacity: 1; 
+    font-weight: 500; 
+    line-height: 1.4;
+
+    @media (max-width: 640px) {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
     }
   }
 
@@ -222,24 +341,61 @@ const OutlinedFeaturesWrapper = styled.div`
         line-height: 1.5;
       }
     }
+
+    .audience-tabs {
+      flex-direction: column;
+      border-radius: 12px 12px 0 0;
+      border-right: none;
+      border-bottom: 1px solid ${props => props.isDark ? "#333" : "#e6e6e6"};
+      width: 100%;
+      min-width: unset;
+    }
+
+    .tab-content-section {
+      border-radius: 0 0 12px 12px;
+      border-top: none;
+      border-left: 1px solid ${props => props.isDark ? "none" : "#e6e6e6"};
+    }
+
+    .tab-button {
+      justify-content: center;
+      text-align: center;
+      border-bottom: none;
+      border-right: 1px solid ${props => props.isDark ? "#333" : "#e6e6e6"};
+      
+      &:last-child {
+        border-right: none;
+      }
+
+      .tab-text-full {
+        display: none;
+      }
+
+      .tab-text-short {
+        display: inline;
+      }
+    }
   }
 `;
 
 const OutlinedFeaturesSection = () => {
+  const [activeTab, setActiveTab] = useState("developers");
   const [hoveredFeature, setHoveredFeature] = useState("");
   const [isHovered, setIsHovered] = useState(false);
-
   const { isDark } = useStyledDarkMode();
 
-  const handleMouseOver = (index) => {
+  const handleMouseOver = (featureId) => {
     setIsHovered(true);
-    setHoveredFeature(`Feature${index}`);
+    setHoveredFeature(featureId);
   };
 
   const handleMouseOut = () => {
     setIsHovered(false);
     setHoveredFeature("");
   };
+
+  const currentAudience = audienceConfig[activeTab];
+  const currentTabFeatures = tabFeaturesData[activeTab];
 
   return (
     <OutlinedFeaturesWrapper isDark={isDark}>
@@ -250,29 +406,55 @@ const OutlinedFeaturesSection = () => {
             <p>{sectionContent.subtitle}</p>
           </div>
 
-          <div className="row">
-            {featuresData.map((feature, index) => {
-              const IconComponent = feature.icon;
-              return (
-                <div key={index} className="col">
-                  <div
-                    className={
-                      (isHovered && hoveredFeature !== `Feature${index + 1}`)
-                        ? "project__block__inner darken"
-                        : "project__block__inner"
-                    }
-                    onMouseOver={() => handleMouseOver(index + 1)}
-                    onMouseOut={handleMouseOut}
+          <div className="tabs-content-wrapper">
+            <div className="audience-tabs">
+              {Object.entries(audienceConfig).map(([key, audience]) => {
+                const IconComponent = audience.icon;
+                return (
+                  <button
+                    key={key}
+                    onClick={() => setActiveTab(key)}
+                    className={`tab-button ${activeTab === key ? "active" : ""}`}
                   >
-                    <div className="feature-icon-container">
-                      <IconComponent className="feature-icon" />
+                    <IconComponent className="tab-icon" />
+                    <span className="tab-text-full">{audience.title}</span>
+                    <span className="tab-text-short">{audience.title.split(" ")[1]}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="tab-content-section">
+              <div className="tab-subtitle">
+                {currentAudience.subtitle}
+              </div>
+
+              <div className="row">
+                {currentTabFeatures.map((feature, index) => {
+                  const IconComponent = feature.icon;
+                  const featureKey = `tab-feature-${index}`;
+                  return (
+                    <div key={featureKey} className="col">
+                      <div
+                        className={
+                          (isHovered && hoveredFeature !== featureKey)
+                            ? "project__block__inner darken"
+                            : "project__block__inner"
+                        }
+                        onMouseOver={() => handleMouseOver(featureKey)}
+                        onMouseOut={handleMouseOut}
+                      >
+                        <div className="feature-icon-container">
+                          <IconComponent className="feature-icon" />
+                        </div>
+                        <h3>{feature.title}</h3>
+                        <p>{feature.description}</p>
+                      </div>
                     </div>
-                    <h3>{feature.title}</h3>
-                    <p>{feature.description}</p>
-                  </div>
-                </div>
-              );
-            })}
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </div>

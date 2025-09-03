@@ -526,7 +526,7 @@ const Layer5AcademyFeatures = () => {
                       </div>
                       <div className="visual">
                         {section.hasSlider ? (
-                          <PictureSlider maxImages={4} />
+                          <PictureSlider maxImages={4} isDark={isDark}/>
                         ) : (
                           <div className="image-container">
                             <img
