@@ -1,20 +1,41 @@
 /* eslint-disable indent */
 import React, { useState, useEffect } from "react";
-import { Box, Card, CardContent, CardHeader, Typography, FormControl, InputLabel, Select, MenuItem, Slider, Switch, FormControlLabel, Chip, Container, Paper, SistentThemeProvider, CssBaseline, useTheme } from "@sistent/sistent";
+import {
+  Container,
+  Card,
+  CardHeader,
+  CardContent,
+  Typography,
+  Box,
+  Select,
+  MenuItem,
+  FormControl,
+  InputLabel,
+  Slider,
+  Paper,
+  Switch,
+  FormControlLabel,
+  Chip,
+  CssBaseline,
+  TextField,
+  useTheme
+} from  "@sistent/sistent";
 import { Calculate, CheckCircle } from "@mui/icons-material";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 import { getAddOns } from "./pricingData";
 import FeatureDetails from "../PlanCard/collapsible-details";
 import PlanCardWrapper from "../PlanCard/planCard.style";
 import Button from "../../../reusecore/Button";
+import { SistentThemeProvider } from "@sistent/sistent";
 
-export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
+export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan }) => {
   const [selectedAddon, setSelectedAddon] = useState(null);
   // const [quantity, setQuantity] = useState(1);
   const quantity = 1;
   const [selectedSubAddOns, setSelectedSubAddOns] = useState({});
   const [totalPrice, setTotalPrice] = useState(0);
   const [quantityIndex, setQuantityIndex] = useState(0);
+  const [enterpriseUsers, setEnterpriseUsers] = useState(1);
 
   const { isDark } = useStyledDarkMode();
   const theme = useTheme();
@@ -49,9 +70,9 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
 
       let subAddOnTotal = 0;
       if (selectedAddon?.id === "academy" && selectedAddon.subAddOns) {
-        selectedAddon.subAddOns.forEach(subAddOn => {
-          if (selectedSubAddOns[subAddOn.id] && subAddOn.id !== "academy-theory") {
-            const subAddOnPricing = subAddOn.pricing && subAddOn.pricing[quantityIndex];
+        selectedAddon.subAddOns.forEach(subAddon => {
+          if (selectedSubAddOns[subAddon.id] && subAddon.id !== "academy-theory") {
+            const subAddOnPricing = subAddon.pricing && subAddon.pricing[quantityIndex];
             if (subAddOnPricing) {
               const subAddOnPerUserCost = isYearly ? subAddOnPricing.yearlyPerUser : subAddOnPricing.monthlyPerUser;
               subAddOnTotal += subAddOnPerUserCost * subAddOnPricing.learners;
@@ -60,11 +81,13 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
         });
       }
 
-      setTotalPrice(baseTotal + subAddOnTotal);
+      const enterpriseUsersCost = (isYearly ? enterprisePlan.yearlyprice : enterprisePlan.monthlyprice) * (enterpriseUsers > 0 ? enterpriseUsers : 1);
+
+      setTotalPrice(baseTotal + subAddOnTotal + enterpriseUsersCost);
     } else {
       setTotalPrice(0);
     }
-  }, [selectedAddon, quantity, quantityIndex, selectedSubAddOns, isYearly]);
+  }, [selectedAddon, quantity, quantityIndex, selectedSubAddOns, isYearly, enterpriseUsers, enterprisePlan]);
 
   const handleAddonChange = (addonId) => {
     const addon = addOns.find((a) => a.id === addonId);
@@ -122,9 +145,10 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
     );
 
     if (matchingPlanLink) {
+      const enterpriseUserText = enterpriseUsers > 0 ? ` and ${enterpriseUsers} enterprise user${enterpriseUsers > 1 ? "s" : ""}` : "";
       return {
         link: matchingPlanLink.link,
-        name: `Subscribe (${currentLearnerCount} learners${targetSubAddonName ? " " + targetSubAddonName : ""})`
+        name: `Subscribe (${currentLearnerCount} learners${targetSubAddonName ? " " + targetSubAddonName : ""}${enterpriseUserText})`
       };
     }
 
@@ -256,9 +280,9 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                                   {addon.id === "academy"
                                     ? addon.description
                                     : (() => {
-                                        const period = isYearly ? "/year" : "/month";
-                                        return `${formatPrice(isYearly ? addon.yearlyPrice : addon.monthlyPrice)} per ${addon.unitLabel.slice(0, -1)}${period}`;
-                                      })()
+                                      const period = isYearly ? "/year" : "/month";
+                                      return `${formatPrice(isYearly ? addon.yearlyprice : addon.monthlyprice)} per ${addon.unitLabel.slice(0, -1)}${period}`;
+                                    })()
                                   }
                                 </Typography>
                               </Box>
@@ -297,7 +321,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                                   label={feature}
                                   size="large"
                                   className="addon-chip"
-                                  />
+                                />
                               ))}
                             </Box>
                           </FeatureDetails>
@@ -306,9 +330,9 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                           <FormControlLabel
                             key="academy-practical"
                             control={<Switch sx={{ margin: 0, display: "flex", gap: 1, alignSelf: "flex-end" }}
-                                  checked={selectedSubAddOns["academy-practical"] || false}
-                                  onChange={(e) => handleSubAddOnToggle("academy-practical", e.target.checked)}
-                                  color="primary" />}
+                              checked={selectedSubAddOns["academy-practical"] || false}
+                              onChange={(e) => handleSubAddOnToggle("academy-practical", e.target.checked)}
+                              color="primary" />}
                             sx={{ display: "flex", justifySelf: "flex-end", marginRight: -1, marginTop: "-0.5rem", marginLeft: 1, padding: 0, alignItems: "flex-start" }}
                           />
                           <FeatureDetails
@@ -323,7 +347,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                                   label={feature}
                                   size="large"
                                   className="addon-chip"
-                                  />
+                                />
                               ))}
                             </Box>
                           </FeatureDetails>
@@ -491,111 +515,137 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
                       </Box>
                     </>
                   )}
-
-                  {selectedAddon && (
-                    <Paper
-                      elevation={1}
-                      sx={{
-                        p: 2.5,
-                        mt: 2,
-                        background: "linear-gradient(135deg, rgba(0, 179, 159, 0.08) 0%, rgba(0, 179, 159, 0.12) 100%)",
-                        border: "1px solid",
-                        borderColor: "primary.main",
-                        borderRadius: 2,
-                      }}
-                    >
-                      <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.75rem" }}>
-                        <Typography variant="h6" sx={{ fontSize: 12, textTransform: "uppercase", textAlign: "left", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }} gutterBottom color="text.secondary" fontWeight="300">
-                          Add-on  ×  Quantity
-                        </Typography>
-                        <Typography variant="h6" sx={{ fontSize: 12, textAlign: "right", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }} gutterBottom color="text.secondary" fontWeight="300">
-                          SUBTOTAL
-                        </Typography>
-                      </Box>
-
-                      <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5, mb: 2 }}>
-                        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                          <Typography variant="body1" sx={{ marginLeft: .5, fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
-                            {selectedAddon?.id === "academy" ?
-                              `Theoretical Learning × ${selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory")?.pricing?.[quantityIndex]?.learners || 0}` :
-                              `${selectedAddon?.name} × ${quantity}`
-                            }
-                          </Typography>
-                          <Typography variant="body1" fontWeight="500" sx={{ marginRight: .5, fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
-                            {(() => {
-                              if (selectedAddon?.id === "academy") {
-                                const theorySubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory");
-                                if (theorySubAddon?.pricing && theorySubAddon.pricing[quantityIndex]) {
-                                  const currentLearnerOption = theorySubAddon.pricing[quantityIndex];
-                                  const monthlyPerUserCost = currentLearnerOption.monthlyPerUser;
-                                  const yearlyPerUserCost = currentLearnerOption.yearlyPerUser;
-                                  const totalCost = isYearly
-                                    ? yearlyPerUserCost * currentLearnerOption.learners
-                                    : monthlyPerUserCost * currentLearnerOption.learners;
-                                  return formatPrice(totalCost);
-                                }
-                                return formatPrice(0);
-                              } else {
-                                return formatPrice((isYearly ? selectedAddon?.yearlyPrice : selectedAddon?.monthlyPrice) * quantity);
-                              }
-                            })()}
-                          </Typography>
-                        </Box>
-
-                        {selectedAddon?.id === "academy" && selectedAddon.subAddOns?.map((subAddOn) => (
-                          selectedSubAddOns[subAddOn.id] && subAddOn.id !== "academy-theory" && (
-                            <Box key={subAddOn.id} sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                              <Typography variant="body1" sx={{ marginLeft: .5, fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
-                                {subAddOn.name} × {subAddOn.pricing?.[quantityIndex]?.learners || 0}
-                              </Typography>
-                              <Typography variant="body1" sx={{ marginRight: .5, fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }} fontWeight="500">
-                                {formatPrice(
-                                  (() => {
-                                    const subAddOnPricing = subAddOn.pricing && subAddOn.pricing[quantityIndex];
-                                    if (subAddOnPricing) {
-                                      const subAddOnPerUserCost = isYearly ? subAddOnPricing.yearlyPerUser : subAddOnPricing.monthlyPerUser;
-                                      return subAddOnPerUserCost * subAddOnPricing.learners;
-                                    }
-                                    return 0;
-                                  })()
-                                )}
-                              </Typography>
-                            </Box>
-                          )
-                        ))}
-                        <Typography variant="h6" sx={{ textTransform: "uppercase", fontSize: 12, textAlign: "right", margin: 0, fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }} gutterBottom color="text.secondary" fontWeight="300">
-                          TOTAL
-                        </Typography>
-                        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                          <Typography variant="body1" gutterBottom color="text.secondary" fontWeight="300" sx={{ textTransform: "uppercase", fontSize: 14, textAlign: "left", margin: 0, fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
-                            {isYearly ? "Yearly" : "Monthly"} Cost
-                          </Typography>
-                          <Typography variant="h4" fontWeight="bold" sx={{ fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
-                            {formatPrice(totalPrice)}
-                            <Typography variant="h4" component="span" style={{ fontSize: ".8rem", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
-                              /{isYearly ? "annually" : "monthly"}
-                            </Typography>
-                          </Typography>
-                        </Box>
-                        <Box sx={{ display: "flex", justifyContent: "center", mt: 1 }}>
-                          <Button
-                            $primary
-                            $url={selectedAddon?.id === "academy" ? getPlanLinkForAcademy().link : getPlanLinkForOtherAddons().link}
-                          >
-                            {selectedAddon?.id === "academy" ? getPlanLinkForAcademy().name : getPlanLinkForOtherAddons().name}
-                          </Button>
-                        </Box>
-                      </Box>
-
-                      <Typography sx={{ lineHeight: "1rem", fontSize: "0.8rem", fontStyle: "italic", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }} color="text.secondary">
-                        *Prices shown are {isYearly ? "annual" : "monthly"} subscription costs. {isYearly ? "Monthly subscriptions are available at standard rates." : "Annual subscriptions receive a 15% discount."} Contact our sales team for enterprise pricing and custom configurations.
-                      </Typography>
-                    </Paper>
-                  )}
                 </Box>
               </CardContent>
             </Card>
           </PlanCardWrapper>
+          {selectedAddon && (
+            <Box>
+              <Paper
+                elevation={1}
+                sx={{
+                  p: 2.5,
+                  mt: 2,
+                  background: "linear-gradient(135deg, rgba(0, 179, 159, 0.08) 0%, rgba(0, 179, 159, 0.12) 100%)",
+                  border: "1px solid",
+                  borderColor: "primary.main",
+                  borderRadius: 2,
+                  maxWidth: 600,
+                  mx: "auto",
+                }}
+              >
+                <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.75rem" }}>
+                  <Typography variant="h6" sx={{ fontSize: 12, textTransform: "uppercase", textAlign: "left", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }} gutterBottom color="text.secondary" fontWeight="300">
+                    Add-on  ×  Quantity
+                  </Typography>
+                  <Typography variant="h6" sx={{ fontSize: 12, textAlign: "right", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }} gutterBottom color="text.secondary" fontWeight="300">
+                    SUBTOTAL
+                  </Typography>
+                </Box>
+
+                <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5, mb: 2 }}>
+                  <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <Typography variant="body1" sx={{ marginLeft: .5, fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
+                      {selectedAddon?.id === "academy" ?
+                        `Theoretical Learning × ${selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory")?.pricing?.[quantityIndex]?.learners || 0}` :
+                        `${selectedAddon?.name} × ${quantity}`
+                      }
+                    </Typography>
+                    <Typography variant="body1" fontWeight="500" sx={{ marginRight: .5, fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
+                      {(() => {
+                        if (selectedAddon?.id === "academy") {
+                          const theorySubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory");
+                          if (theorySubAddon?.pricing && theorySubAddon.pricing[quantityIndex]) {
+                            const currentLearnerOption = theorySubAddon.pricing[quantityIndex];
+                            const monthlyPerUserCost = currentLearnerOption.monthlyPerUser;
+                            const yearlyPerUserCost = currentLearnerOption.yearlyPerUser;
+                            const totalCost = isYearly
+                              ? yearlyPerUserCost * currentLearnerOption.learners
+                              : monthlyPerUserCost * currentLearnerOption.learners;
+                            return formatPrice(totalCost);
+                          }
+                          return formatPrice(0);
+                        } else {
+                          return formatPrice((isYearly ? selectedAddon?.yearlyprice : selectedAddon?.monthlyprice) * quantity);
+                        }
+                      })()}
+                    </Typography>
+                  </Box>
+
+                  {selectedAddon?.id === "academy" && selectedAddon.subAddOns?.map((subAddOn) => (
+                    selectedSubAddOns[subAddOn.id] && subAddOn.id !== "academy-theory" && (
+                      <Box key={subAddOn.id} sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                        <Typography variant="body1" sx={{ marginLeft: .5, fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
+                          {subAddOn.name} × {subAddOn.pricing?.[quantityIndex]?.learners || 0}
+                        </Typography>
+                        <Typography variant="body1" sx={{ marginRight: .5, fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }} fontWeight="500">
+                          {formatPrice(
+                            (() => {
+                              const subAddOnPricing = subAddOn.pricing && subAddOn.pricing[quantityIndex];
+                              if (subAddOnPricing) {
+                                const subAddOnPerUserCost = isYearly ? subAddOnPricing.yearlyPerUser : subAddOnPricing.monthlyPerUser;
+                                return subAddOnPerUserCost * subAddOnPricing.learners;
+                              }
+                              return 0;
+                            })()
+                          )}
+                        </Typography>
+                      </Box>
+                    )
+                  ))}
+
+                  <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <Box sx={{ display: "flex", alignItems: "center" }}>
+                      <Typography variant="body1" sx={{ marginLeft: .5, fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
+                        Enterprise User ×
+                      </Typography>
+                      <TextField
+                        type="number"
+                        value={enterpriseUsers}
+                        onChange={(e) => setEnterpriseUsers(parseInt(e.target.value, 10))}
+                        inputProps={{ min: 1, style: { textAlign: "center" } }}
+                        sx={{
+                          width: "5rem", ml: 1,
+                          "& .MuiInputBase-input": {
+                            py: "0.25rem"
+                          }
+                        }}
+                      />
+                    </Box>
+                    <Typography variant="body1" fontWeight="500" sx={{ marginRight: .5, fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
+                      {formatPrice((isYearly ? enterprisePlan.yearlyprice : enterprisePlan.monthlyprice) * (enterpriseUsers > 0 ? enterpriseUsers : 1))}
+                    </Typography>
+                  </Box>
+                  <Typography variant="h6" sx={{ textTransform: "uppercase", fontSize: 12, textAlign: "right", margin: 0, fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }} gutterBottom color="text.secondary" fontWeight="300">
+                    TOTAL
+                  </Typography>
+                  <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <Typography variant="body1" gutterBottom color="text.secondary" fontWeight="300" sx={{ textTransform: "uppercase", fontSize: 14, textAlign: "left", margin: 0, fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
+                      {isYearly ? "Yearly" : "Monthly"} Cost
+                    </Typography>
+                    <Typography variant="h4" fontWeight="bold" sx={{ fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
+                      {formatPrice(totalPrice)}
+                      <Typography variant="h4" component="span" style={{ fontSize: ".8rem", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
+                        /{isYearly ? "annually" : "monthly"}
+                      </Typography>
+                    </Typography>
+                  </Box>
+                  <Box sx={{ display: "flex", justifyContent: "center", mt: 1 }}>
+                    <Button
+                      $primary
+                      $url={selectedAddon?.id === "academy" ? getPlanLinkForAcademy().link : getPlanLinkForOtherAddons().link}
+                    >
+                      {selectedAddon?.id === "academy" ? getPlanLinkForAcademy().name : getPlanLinkForOtherAddons().name}
+                    </Button>
+                  </Box>
+                </Box>
+
+                <Typography sx={{ lineHeight: "1rem", fontSize: "0.8rem", fontStyle: "italic", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }} color="text.secondary">
+                  *Prices shown are {isYearly ? "annual" : "monthly"} subscription costs. {isYearly ? "Monthly subscriptions are available at standard rates." : "Annual subscriptions receive a 15% discount."} Contact our sales team for enterprise pricing and custom configurations.
+                </Typography>
+              </Paper>
+            </Box>
+          )}
         </Container>
       </CssBaseline>
     </SistentThemeProvider>
