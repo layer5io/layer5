@@ -70,9 +70,9 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan })
 
       let subAddOnTotal = 0;
       if (selectedAddon?.id === "academy" && selectedAddon.subAddOns) {
-        selectedAddon.subAddOns.forEach(subAddon => {
-          if (selectedSubAddOns[subAddon.id] && subAddon.id !== "academy-theory") {
-            const subAddOnPricing = subAddon.pricing && subAddon.pricing[quantityIndex];
+        selectedAddon.subAddOns.forEach(subAddOn => {
+          if (selectedSubAddOns[subAddOn.id] && subAddOn.id !== "academy-theory") {
+            const subAddOnPricing = subAddOn.pricing && subAddOn.pricing[quantityIndex];
             if (subAddOnPricing) {
               const subAddOnPerUserCost = isYearly ? subAddOnPricing.yearlyPerUser : subAddOnPricing.monthlyPerUser;
               subAddOnTotal += subAddOnPerUserCost * subAddOnPricing.learners;
