@@ -182,6 +182,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan })
                 borderRadius: 2,
                 zIndex: 1,
                 marginTop: "24px",
+                paddingBottom: "1rem"
               }}
             >
               <CardHeader
