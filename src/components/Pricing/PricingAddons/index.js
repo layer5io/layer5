@@ -21,12 +21,13 @@ import {
   useTheme,
   SistentThemeProvider
 } from  "@sistent/sistent";
-import { Calculate, CheckCircle } from "@mui/icons-material";
+import { Calculate, CheckCircle, Cloud, Group } from "@mui/icons-material";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 import { getAddOns } from "./pricingData";
 import FeatureDetails from "../PlanCard/collapsible-details";
 import PlanCardWrapper from "../PlanCard/planCard.style";
 import Button from "../../../reusecore/Button";
+import AcademyIcon from "./AcademyIcon";
 
 export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan }) => {
   const [selectedAddon, setSelectedAddon] = useState(null);
@@ -41,8 +42,25 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan })
   const theme = useTheme();
 
   const addOns = React.useMemo(() => {
-    return theme ? getAddOns(theme) : [];
-  }, [theme]);
+    return getAddOns();
+  }, []);
+
+  // Helper function to render icons based on type
+  const renderIcon = (iconType) => {
+    switch (iconType) {
+    case "academy":
+      return <AcademyIcon
+        primaryFill={theme?.palette?.background?.inverse || "#00B39F"}
+        secondaryFill={theme?.palette?.background?.inverse || "#eee"}
+      />;
+    case "cloud":
+      return <Cloud sx={{ color: theme?.palette?.background?.inverse || "#FFFFFF" }} />;
+    case "group":
+      return <Group sx={{ color: theme?.palette?.background?.inverse || "#00B39F" }} />;
+    default:
+      return null;
+    }
+  };
 
   useEffect(() => {
     if (selectedAddon) {
@@ -272,7 +290,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan })
                         {addOns.map((addon) => (
                           <MenuItem key={addon.id} value={addon.id}>
                             <Box sx={{ display: "flex", alignItems: "center", gap: 2, py: 1 }}>
-                              {addon.icon}
+                              {renderIcon(addon.iconType)}
                               <Box>
                                 <Typography variant="body1" fontWeight="500" sx={{ fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
                                   {addon.name}
