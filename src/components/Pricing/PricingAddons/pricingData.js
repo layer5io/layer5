@@ -63,7 +63,7 @@ export const getAddOns = (theme) => [
         unitLabelSingular: "learner",
         pricing: [
           { learners: 250, monthlyPerUser: 1.29, yearlyPerUser: 1.05, currency: "$" },
-          { learners: 500, monthlyPerUser: 0.80, yearlyPerUser: 0.67, currency: "$" },
+          { learners: 500, monthlyPerUser: 0.84, yearlyPerUser: 0.67, currency: "$" },
           { learners: 1000, monthlyPerUser: 0.49, yearlyPerUser: 0.49, currency: "$" },
           { learners: 2500, monthlyPerUser: 0.44, yearlyPerUser: 0.44, currency: "$" },
         ],

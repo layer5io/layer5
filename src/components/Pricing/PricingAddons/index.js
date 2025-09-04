@@ -83,7 +83,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan })
 
       const enterpriseUsersCost = (isYearly ? enterprisePlan.yearlyprice : enterprisePlan.monthlyprice) * (enterpriseUsers > 0 ? enterpriseUsers : 1);
 
-      setTotalPrice(baseTotal + subAddOnTotal + enterpriseUsersCost);
+      setTotalPrice((baseTotal * 12) + subAddOnTotal + enterpriseUsersCost);
     } else {
       setTotalPrice(0);
     }
@@ -145,10 +145,10 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan })
     );
 
     if (matchingPlanLink) {
-      const enterpriseUserText = enterpriseUsers > 0 ? ` and ${enterpriseUsers} enterprise user${enterpriseUsers > 1 ? "s" : ""}` : "";
+      const enterpriseUserSeats = enterpriseUsers > 0 ? ` and ${enterpriseUsers} enterprise user${enterpriseUsers > 1 ? "s" : ""}` : "";
       return {
         link: matchingPlanLink.link,
-        name: `Subscribe (${currentLearnerCount} learners${targetSubAddonName ? " " + targetSubAddonName : ""}${enterpriseUserText})`
+        name: `Subscribe (${currentLearnerCount} learners${targetSubAddonName ? " " + targetSubAddonName : ""}${enterpriseUserSeats})`
       };
     }
 
@@ -447,7 +447,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan })
                             })) || [];
                           })()}
                         />
-                        <Box sx={{ display: "flex", my: 8, justifyContent: "space-between" }}>
+                        <Box sx={{ display: "flex", mt: 2, mb: 2, justifyContent: "space-between" }}>
                           <Typography variant="body2" sx={{ fontStyle: "italic", color: "text.secondary", fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif" }}>
                             Looking for a plan larger than 2,500 learners? Great! <a href="/company/contact">Let us know</a>.
                           </Typography>
