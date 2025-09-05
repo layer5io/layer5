@@ -66,9 +66,9 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan })
         secondaryFill={theme?.palette?.background?.inverse || "#eee"}
       />;
     case "cloud":
-      return <Cloud sx={iconStyles.cloud(theme)} />;
+      return <Cloud />;
     case "group":
-      return <Group sx={iconStyles.group(theme)} />;
+      return <Group />;
     default:
       return null;
     }
@@ -207,7 +207,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan })
               sx={cardStyles.main}
             >
               <CardHeader
-                avatar={<Calculate color="primary" sx={iconStyles.calculate(theme)} />}
+                avatar={<Calculate color="primary" />}
                 title={
                   <Box sx={boxStyles.cardHeaderTitle}>
                     <Typography variant="h5" component="h3" fontWeight="bold" sx={typographyStyles.headerTitle}>
