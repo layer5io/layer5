@@ -37,10 +37,10 @@ export const getAddOns = (theme) => [
         unitLabelSingular: "learner",
         maxUnits: 5000,
         pricing: [
-          { learners: 250, monthlyPerUser: 1.29, yearlyPerUser: 1.05, currency: "$" },
-          { learners: 500, monthlyPerUser: 0.84, yearlyPerUser: 0.67, currency: "$" },
-          { learners: 1000, monthlyPerUser: 0.49, yearlyPerUser: 0.49, currency: "$" },
-          { learners: 2500, monthlyPerUser: 0.44, yearlyPerUser: 0.44, currency: "$" },
+          { learners: 250, monthlyPerUser: 1.10, yearlyPerUser: 11.22, currency: "$" },
+          { learners: 500, monthlyPerUser: 0.67, yearlyPerUser: 6.83, currency: "$" },
+          { learners: 1000, monthlyPerUser: 0.46, yearlyPerUser: 4.69, currency: "$" },
+          { learners: 2500, monthlyPerUser: 0.40, yearlyPerUser: 4.08, currency: "$" },
           // { learners: "2500+", monthlyPerUser: "contact us", yearlyPerUser: "contact us", currency: "$" },
         ],
         planLink: [
@@ -62,10 +62,10 @@ export const getAddOns = (theme) => [
         unitLabel: "learners",
         unitLabelSingular: "learner",
         pricing: [
-          { learners: 250, monthlyPerUser: 1.29, yearlyPerUser: 1.05, currency: "$" },
-          { learners: 500, monthlyPerUser: 0.80, yearlyPerUser: 0.67, currency: "$" },
-          { learners: 1000, monthlyPerUser: 0.49, yearlyPerUser: 0.49, currency: "$" },
-          { learners: 2500, monthlyPerUser: 0.44, yearlyPerUser: 0.44, currency: "$" },
+          { learners: 250, monthlyPerUser: 2.20, yearlyPerUser: 22.44, currency: "$" },
+          { learners: 500, monthlyPerUser: 1.34, yearlyPerUser: 13.67, currency: "$" },
+          { learners: 1000, monthlyPerUser: 0.91, yearlyPerUser: 9.28, currency: "$" },
+          { learners: 2500, monthlyPerUser: 0.80, yearlyPerUser: 8.16, currency: "$" },
         ],
         planLink: [
           { learners: 250, cadence: "monthly", name: "enterprise-add-on-academy-labs-250", link: "https://cloud.layer5.io/account/plans/upgrade?plan=cc52a8c7-8f19-4475-8a43-896711438423", },
