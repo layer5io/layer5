@@ -1,29 +1,12 @@
-import React from "react";
-import { Cloud, Group } from "@mui/icons-material";
-import AcademyIcon from "./AcademyIcon";
-
-
-// const planLink = {
-//   "Personal": "https://cloud.layer5.io/account/plans",
-//   "Team Designer": "https://cloud.layer5.io/account/plans/upgrade?plan=49b77ce8-eeea-4ec4-adf3-48979a14b140",
-//   "Team Operator": "https://cloud.layer5.io/account/plans/upgrade?plan=f7a5b2b5-b36b-421e-9211-f4dfb204e5b3",
-//   "Enterprise": "https://cloud.layer5.io/account/plans/upgrade?plan=ad68ce59-8c5a-42b0-955c-9b2b2f7c98e3"
-// };
-
-
 // Academy add-ons have tiered pricing based on the number of learners
+// Icons are handled separately to avoid serialization issues
 
-
-
-export const getAddOns = (theme) => [
+export const getAddOns = () => [
   {
     id: "academy",
     name: "Academy",
     description: "A comprehensive learning management system for creators and learners.",
-    icon: <AcademyIcon
-      primaryFill={theme?.palette?.background?.inverse || "#00B39F"}
-      secondaryFill={theme?.palette?.background?.inverse || "#eee"}
-    />,
+    iconType: "academy", // Reference to icon type instead of component
     unitLabel: "learners",
     unitLabelSingular: "learner",
     maxUnits: 5000,
@@ -63,7 +46,7 @@ export const getAddOns = (theme) => [
         unitLabelSingular: "learner",
         pricing: [
           { learners: 250, monthlyPerUser: 1.29, yearlyPerUser: 1.05, currency: "$" },
-          { learners: 500, monthlyPerUser: 0.80, yearlyPerUser: 0.67, currency: "$" },
+          { learners: 500, monthlyPerUser: 0.84, yearlyPerUser: 0.67, currency: "$" },
           { learners: 1000, monthlyPerUser: 0.49, yearlyPerUser: 0.49, currency: "$" },
           { learners: 2500, monthlyPerUser: 0.44, yearlyPerUser: 0.44, currency: "$" },
         ],
@@ -86,7 +69,7 @@ export const getAddOns = (theme) => [
     description: "Managed cloud instances for comprehensive infrastructure configuration and lifecycle management",
     monthlyPrice: 64,
     yearlyPrice: 653, // ~15% discount for yearly
-    icon: <Cloud sx={{ color: theme?.palette?.background?.inverse || "#FFFFFF" }} />,
+    iconType: "cloud", // Reference to icon type instead of component
     unitLabel: "servers",
     unitLabelSingular: "server",
     maxUnits: 50,
@@ -103,7 +86,7 @@ export const getAddOns = (theme) => [
     description: "This premium offering delivers a secure, high-performance WebRTC solution, purpose-built for real-time, multiplayer collaboration across distributed teams. Powered by Conflict-Free Replicated Data Types (CRDT), this feature ensures seamless, low-latency synchronization of cloud native designs, configurations, and operational workflows, even in complex multi-cluster Kubernetes and public Cloud environments.",
     monthlyPrice: 1.50,
     yearlyPrice: 15.30, // ~15% discount for yearly
-    icon: <Group sx={{ color: theme?.palette?.background?.inverse || "#00B39F" }} />,
+    iconType: "group", // Reference to icon type instead of component
     unitLabel: "collaborators",
     unitLabelSingular: "collaborator",
     maxUnits: 200,
