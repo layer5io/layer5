@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXRenderer } from "../../../utils/mdx-renderer";
 import { SRLWrapper } from "simple-react-lightbox";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import TOC from "../../../components/Learn-Components/TOC-Chapters";

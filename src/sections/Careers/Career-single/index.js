@@ -1,5 +1,5 @@
 import React from "react";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXRenderer } from "../../../utils/mdx-renderer";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import CareerPageWrapper from "./CareerSingle.style";
