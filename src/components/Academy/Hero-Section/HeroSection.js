@@ -4,7 +4,7 @@ import { Row, Col, Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 
 import Card1Image from "../images/hero1.png";
-import Card2Image from "../images/hero2.png";
+import Card2Image from "../images/hero4.png";
 import Card3Image from "../images/hero3.png";
 
 const AcademyHeaderWrapper = styled.div`
@@ -302,7 +302,7 @@ const Header = ({ isDark }) => {
                 <div className="header__buttons">
                   <Button
                     $primary
-                    title="Start Learning"
+                    title="Get Started"
                     $external={true}
                     $url="https://cloud.layer5.io/academy"
                   />

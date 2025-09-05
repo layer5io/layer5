@@ -574,18 +574,16 @@ const Layer5AcademyFeatures = () => {
             ))}
           </div>
 
-          <FAQ category={["Academy"]} title={false} />
-
           <div className="cta">
             <Card className="cta-card">
               <h3>Ready to Start Learning?</h3>
               <p>Join the cloud native community and advance your skills</p>
               <div className="cta-actions">
                 <Button $primary size="large" $url="https://cloud.layer5.io/academy" $external>
-                Start Learning
+                Join Now
                 </Button>
                 <Button variant="outline" size="large" $url="https://docs.layer5.io/cloud/academy" $external>
-                Documentation
+                Explore Guides
                 </Button>
               </div>
             </Card>
