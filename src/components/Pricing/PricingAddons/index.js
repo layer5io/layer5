@@ -41,7 +41,10 @@ import {
   getSliderStyle
 } from "./styles";
 
-export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan }) => {
+import { formatAndConvertPrice } from "../../../utils/currencies";
+
+export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterprisePlan }) => {
+
   const [selectedAddon, setSelectedAddon] = useState(null);
   // const [quantity, setQuantity] = useState(1);
   const quantity = 1;
@@ -72,6 +75,10 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan })
     default:
       return null;
     }
+  };
+
+  const formatPrice = (price) => {
+      return formatAndConvertPrice(price, currency);
   };
 
   useEffect(() => {
@@ -139,14 +146,6 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan })
     }));
   };
 
-  const formatPrice = (price) => {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(price);
-  };
 
   const getPlanLinkForAcademy = () => {
     if (!selectedAddon || selectedAddon.id !== "academy") {
@@ -390,7 +389,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan })
                                 <Box sx={{ textAlign: "center", fontSize: "1.25rem", fontWeight: "bold" }}>
                                   <Box>{option.learners === "2500+" ? "2,500+" : option.learners}</Box>
                                   <Box sx={{ color: "text.secondary", mb: 1.5, fontSize: ".9rem" }}>
-                                    {option.currency}{isYearly ? option.yearlyPerUser : option.monthlyPerUser}<br />{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
+                                    {formatPrice(isYearly ? option.yearlyPerUser : option.monthlyPerUser)}<br />{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
                                   </Box>
                                 </Box>
                               ),
