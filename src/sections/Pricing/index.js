@@ -72,6 +72,7 @@ const Pricing = () => {
             <FAQ category={["Pricing", "Billing"]} />
         </PricingWrapper>
     );
+
 };
 
 
