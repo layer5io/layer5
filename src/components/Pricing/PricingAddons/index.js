@@ -7,8 +7,9 @@ import { getAddOns } from "./pricingData";
 import FeatureDetails from "../PlanCard/collapsible-details";
 import PlanCardWrapper from "../PlanCard/planCard.style";
 import Button from "../../../reusecore/Button";
+import { formatAndConvertPrice } from "../../../utils/currencies";
 
-export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
+export const PricingAddons = ({ isYearly = false, setIsYearly ,currency }) => {
   const [selectedAddon, setSelectedAddon] = useState(null);
   // const [quantity, setQuantity] = useState(1);
   const quantity = 1;
@@ -22,6 +23,10 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
   const addOns = React.useMemo(() => {
     return theme ? getAddOns(theme) : [];
   }, [theme]);
+
+  const formatPrice = (price) => {
+      return formatAndConvertPrice(price, currency)
+  }
 
   useEffect(() => {
     if (selectedAddon) {
@@ -85,14 +90,6 @@ export const PricingAddons = ({ isYearly = false, setIsYearly }) => {
     }));
   };
 
-  const formatPrice = (price) => {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(price);
-  };
 
   const getPlanLinkForAcademy = () => {
     if (!selectedAddon || selectedAddon.id !== "academy") {
