@@ -19,9 +19,10 @@ const PlanCard = ({ planData , isYearly ,currency }) => {
     "Enterprise": "https://cloud.layer5.io/account/plans/upgrade?plan=ad68ce59-8c5a-42b0-955c-9b2b2f7c98e3"
   };
 
-    const formatPrice = (price) => {
-        return formatAndConvertPrice(price, currency)
-    };
+  const formatPrice = (price) => {
+    console.log("price",price,planData);
+    return formatAndConvertPrice(price, currency);
+  };
 
   return (
     <PlanCardWrapper>
@@ -46,17 +47,17 @@ const PlanCard = ({ planData , isYearly ,currency }) => {
                 <h5 className="byline">{x.byline}</h5>
 
                 <div className="price-container">
-                  
-                      <div className="price">
-                        <span className="price-amount">
-                            {isYearly
-                                ? formatPrice(x.yearlyPrice)
-                                : formatPrice(x.monthlyPrice)}
-                        </span>
-                        <span className="currency">{Currencies[currency]?.name ?? "USD" }  </span>
-                        <span className="price-per">per user/year</span>
-                      </div>
-                                
+
+                  <div className="price">
+                    <span className="price-amount">
+                      {isYearly
+                        ? formatPrice(x.yearlyprice)
+                        : formatPrice(x.monthlyprice)}
+                    </span>
+                    <span className="currency">{Currencies[currency]?.name ?? "USD" }  </span>
+                    <span className="price-per">per user/year</span>
+                  </div>
+
                 </div>
 
 
