@@ -41,7 +41,10 @@ import {
   getSliderStyle
 } from "./styles";
 
-export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan }) => {
+import { formatAndConvertPrice } from "../../../utils/currencies";
+
+export const PricingAddons = ({ isYearly = false, setIsYearly ,currency }) => {
+  
   const [selectedAddon, setSelectedAddon] = useState(null);
   // const [quantity, setQuantity] = useState(1);
   const quantity = 1;
@@ -73,6 +76,10 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan })
       return null;
     }
   };
+
+  const formatPrice = (price) => {
+      return formatAndConvertPrice(price, currency)
+  }
 
   useEffect(() => {
     if (selectedAddon) {
@@ -139,14 +146,6 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan })
     }));
   };
 
-  const formatPrice = (price) => {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(price);
-  };
 
   const getPlanLinkForAcademy = () => {
     if (!selectedAddon || selectedAddon.id !== "academy") {
