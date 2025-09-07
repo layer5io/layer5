@@ -33,7 +33,6 @@ import {
   boxStyles,
   toggleButtonStyles,
   sliderStyles,
-  iconStyles,
   cardStyles,
   formControlStyles,
   featureDetailsStyles,
@@ -249,11 +248,11 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
                           <MenuItem key={addon.id} value={addon.id}>
                             <Box sx={boxStyles.menuItem}>
                               {renderIcon(addon.iconType)}
-                              <Box>
-                                <Typography variant="body1" fontWeight="500" sx={typographyStyles.qanelasFont}>
+                              <Box sx={{ minWidth: 0, flex: 1 }}>
+                                <Typography noWrap variant="body1" fontWeight="500" sx={typographyStyles.ellipsisText}>
                                   {addon.name}
                                 </Typography>
-                                <Typography variant="body2" color="text.secondary" sx={typographyStyles.ellipsisText}>
+                                <Typography nowrap variant="body2" color="text.secondary" sx={typographyStyles.ellipsisText}>
                                   {addon.id === "academy"
                                     ? addon.description
                                     : (() => {
