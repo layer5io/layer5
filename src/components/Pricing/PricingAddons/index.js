@@ -33,7 +33,6 @@ import {
   boxStyles,
   toggleButtonStyles,
   sliderStyles,
-  iconStyles,
   cardStyles,
   formControlStyles,
   featureDetailsStyles,
@@ -236,19 +235,24 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
                     <FormControl fullWidth>
                       <InputLabel sx={typographyStyles.qanelasFont}>Optionally, choose one or more add-ons</InputLabel>
                       <Select
+                        fullWidth
                         value={selectedAddon?.id || ""}
                         onChange={(e) => handleAddonChange(e.target.value)}
                         label="Optionally, choose one or more add-ons"
+                        MenuProps={{
+                          disableScrollLock: true,
+                          disablePortal: true,
+                        }}
                       >
                         {addOns.map((addon) => (
                           <MenuItem key={addon.id} value={addon.id}>
                             <Box sx={boxStyles.menuItem}>
                               {renderIcon(addon.iconType)}
-                              <Box>
-                                <Typography variant="body1" fontWeight="500" sx={typographyStyles.qanelasFont}>
+                              <Box sx={{ minWidth: 0, flex: 1 }}>
+                                <Typography noWrap variant="body1" fontWeight="500" sx={typographyStyles.ellipsisText}>
                                   {addon.name}
                                 </Typography>
-                                <Typography variant="body2" color="text.secondary" sx={typographyStyles.ellipsisText}>
+                                <Typography nowrap variant="body2" color="text.secondary" sx={typographyStyles.ellipsisText}>
                                   {addon.id === "academy"
                                     ? addon.description
                                     : (() => {
@@ -388,7 +392,15 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
                               label: (
                                 <Box sx={{ textAlign: "center", fontSize: "1.25rem", fontWeight: "bold" }}>
                                   <Box>{option.learners === "2500+" ? "2,500+" : option.learners}</Box>
-                                  <Box sx={{ color: "text.secondary", mb: 1.5, fontSize: ".9rem" }}>
+                                  <Box
+                                    sx={{
+                                      color: "text.secondary",
+                                      mb: 1.5,
+                                      fontSize: {
+                                        xs: "0.75rem",
+                                        sm: "0.9rem",
+                                      }
+                                    }}>
                                     {formatPrice(isYearly ? option.yearlyPerUser : option.monthlyPerUser)}<br />{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
                                   </Box>
                                 </Box>
