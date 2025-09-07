@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import designerImage from "../../assets/images/kanvas/KanvasDesigner.webp";
-import visualizerImage from "../../assets/images/kanvas/KanvasVisualizer.webp";
+import designerImage from "../../assets/images/kanvas/KanvasDesigner.png";
+import visualizerImage from "../../assets/images/kanvas/Kanvas-Operator.png";
 
 const KanvasModesWrapper = styled.div`
   margin-top: 0.1rem;
