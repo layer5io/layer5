@@ -3,9 +3,10 @@ import Button from "../../../reusecore/Button";
 import { Col, Row, Container } from "../../../reusecore/Layout";
 import PlanCardWrapper from "./planCard.style";
 import FeatureDetails from "./collapsible-details";
+import { Currencies, formatAndConvertPrice } from "../../../utils/currencies";
 
 
-const PlanCard = ({ planData , isYearly }) => {
+const PlanCard = ({ planData , isYearly ,currency }) => {
 
 
   if (!planData || !Array.isArray(planData) || planData.length === 0) {
@@ -16,6 +17,11 @@ const PlanCard = ({ planData , isYearly }) => {
     "Team Designer": "https://cloud.layer5.io/account/plans/upgrade?plan=49b77ce8-eeea-4ec4-adf3-48979a14b140",
     "Team Operator": "https://cloud.layer5.io/account/plans/upgrade?plan=f7a5b2b5-b36b-421e-9211-f4dfb204e5b3",
     "Enterprise": "https://cloud.layer5.io/account/plans/upgrade?plan=ad68ce59-8c5a-42b0-955c-9b2b2f7c98e3"
+  };
+
+  const formatPrice = (price) => {
+    console.log("price",price,planData);
+    return formatAndConvertPrice(price, currency);
   };
 
   return (
@@ -41,39 +47,17 @@ const PlanCard = ({ planData , isYearly }) => {
                 <h5 className="byline">{x.byline}</h5>
 
                 <div className="price-container">
-                  {isYearly ? (
-                    x.yearlyprice !== undefined ? (
-                      <div className="price">
-                        <span className="price-amount"><sup>$</sup>
-                          {x.yearlyprice === 0
-                            ? "0"
-                            : x.yearlyprice.toFixed(0)}
-                        </span>
-                        <span className="currency">USD</span>
-                        <span className="price-per">per user/year</span>
-                      </div>
-                    ) : (
-                      <div className="pricing_coming_soon">
-                        {x.pricing_coming_soon}
-                      </div>
-                    )
-                  ) : (
-                    x.monthlyprice !== undefined ? (
-                      <div className="price">
-                        <span className="price-amount"><sup>$</sup>
-                          {x.monthlyprice === 0
-                            ? "0"
-                            : x.monthlyprice.toFixed(0)}
-                        </span>
-                        <span className="currency">USD</span>
-                        <span className="price-per">per user/month</span>
-                      </div>
-                    ) : (
-                      <div className="pricing_coming_soon">
-                        {x.pricing_coming_soon}
-                      </div>
-                    )
-                  )}
+
+                  <div className="price">
+                    <span className="price-amount">
+                      {isYearly
+                        ? formatPrice(x.yearlyprice)
+                        : formatPrice(x.monthlyprice)}
+                    </span>
+                    <span className="currency">{Currencies[currency]?.name ?? "USD" }  </span>
+                    <span className="price-per">per user/year</span>
+                  </div>
+
                 </div>
 
 
