@@ -2,12 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { Row, Col, Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
-import Five from "../image/hero-section.png";
-
-
-const AcademyHeaderWrapper = styled.div`
-  font-family: "Qanelas Soft", sans-serif;
-  
+import Cone from "../../../assets/images/gitops/conelight.svg";
+import { ReactComponent as AcademyLogo } from "../../../assets/images/academy/academy.svg";
+const AcademyHeaderWrapper = styled.div`  
   .academy-platform.header {
     background: linear-gradient(135deg, #0a1a1a 0%, #1a2d2d 25%, #2d4a47 50%, #1a2d2d 75%, #0a1a1a 100%);
     padding: 2rem 0;
@@ -94,7 +91,14 @@ const AcademyHeaderWrapper = styled.div`
         }
       }
     }
-
+    .hero-image-container {
+      height: 250px;
+      width: 300px;
+      position: relative;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+    }
 
     /* Mobile Styles */
     @media screen and (max-width: 768px) {
@@ -178,11 +182,13 @@ const Header = ({ isDark }) => {
               </div>
             </Col>
 
-            <Col className="col academy-visual" $lg={5} $md={6}>
-              <div className="cards-container">
-                <img src={Five} alt="Academy Hero Section" />
+            <Col className="hero-image" $lg={6} $md={6}>
+              <div className="hero-image-container">
+                <AcademyLogo className="academy-logo" style={{ position: "absolute", height: "180px", width: "180px" }}/>
+                <img src={Cone} className="cone-image"/>
               </div>
             </Col>
+
           </Row>
         </Container>
       </div>

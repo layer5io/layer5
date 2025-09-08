@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const EnterpriseSectionWrapper = styled.section`
-  font-family: "Qanelas Soft", sans-serif;
   
   &.audience-section.enterprise-section {
     padding: 4rem 0;

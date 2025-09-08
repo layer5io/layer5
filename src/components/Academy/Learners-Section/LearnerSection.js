@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const LearnerSectionWrapper = styled.section`
-  font-family: "Qanelas Soft", sans-serif;
-  
+const LearnerSectionWrapper = styled.section`  
   &.audience-section.learners-section {
     padding: 4rem 0;
     background: ${props => props.theme.body};
