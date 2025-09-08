@@ -6,27 +6,13 @@ import Cone from "../../../assets/images/gitops/conelight.svg";
 import { ReactComponent as AcademyLogo } from "../../../assets/images/academy/academy.svg";
 const AcademyHeaderWrapper = styled.div`  
   .academy-platform.header {
-    background: linear-gradient(135deg, #0a1a1a 0%, #1a2d2d 25%, #2d4a47 50%, #1a2d2d 75%, #0a1a1a 100%);
-    padding: 2rem 0;
-    position: relative;
-    overflow: hidden;
-    
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 20% 80%, rgba(0, 179, 159, 0.15) 0%, transparent 60%),
-                  radial-gradient(circle at 80% 20%, rgba(0, 179, 159, 0.1) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    
-    .container {
-      position: relative;
-      z-index: 2;
-    }
+    min-height: 40rem;
+    background: ${({ theme }) => theme.linearToGreen};
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     
     .header__content {
       display: flex;
@@ -34,12 +20,9 @@ const AcademyHeaderWrapper = styled.div`
       justify-content: center;
     }
     .header__title {
-      color: #ffffff;
-      font-size: 4rem;
-      font-weight: 600;
-      line-height: 1.15;
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.02em;
+      color: ${(props) => props.theme.primaryColor};
+      padding-right: 80px;
+      margin-bottom: 20px;
       
       .highlight {
         background: linear-gradient(135deg, #00b39f, #00d3a9);
