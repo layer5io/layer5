@@ -48,14 +48,15 @@ const AcademyHeaderWrapper = styled.div`
         background-clip: text;
       }
     }
-    .header__subtitle {
-      font-size: 1.75rem;
-      font-weight: 500;
-      color: #b8d4d1;
-      margin-bottom: 2rem;
-      line-height: 1.4;
+    .header__title_description {
+      color: ${(props) => props.theme.tertiaryColor};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      font-weight: 400;
+      font-size: 1.438rem;
+      line-height: 2rem;
+      margin-bottom: 30px;
     }
-    .header__buttons {
+    .header__button_section {
       display: flex;
       gap: 1.5rem;
       align-items: center;
@@ -110,14 +111,18 @@ const AcademyHeaderWrapper = styled.div`
       
       .header__title {
         font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 10px;
       }
       
-      .header__subtitle {
+      .header__title_description {
         font-size: 1.25rem;
+        text-align: center;
+        margin-bottom: 20px;
       }
       
-      
-      .header__buttons {
+      .header__button_section {
+        display: flex;
         justify-content: center;
         
         button {
@@ -167,11 +172,11 @@ const Header = ({ isDark }) => {
                   Learn Cloud Native, <br/><span className="highlight">the Modern Way</span>
                 </h1>
 
-                <p className="header__subtitle">
+                <p className="header__title_description">
                   Interactive courses and labs, real-world practices, and enterprise-ready training, transforming cloud native theory into hands-on expertise.
                 </p>
 
-                <div className="header__buttons">
+                <div className="header__button_section">
                   <Button
                     $primary
                     title="Browse All Programs"
