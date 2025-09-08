@@ -71,7 +71,7 @@ const OutlinedFeaturesWrapper = styled.div`
       margin: auto;
       font-weight: 700;
       font-size: 1.6rem;
-      color: ${props => props.isDark ? "#00D3A9" : "#00b39f"};
+      color: ${props => props.isDark ? "#ffffff" : "#333333"};
       text-align: center;
       justify-content: center;
       margin-bottom: 0.7rem;

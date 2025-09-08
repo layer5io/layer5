@@ -25,6 +25,11 @@ const PictureSliderWrapper = styled.div`
         color: ${(props) => props.theme.secondaryColor};
       }
     }
+
+    .slick-prev,
+    .slick-next {
+      box-shadow: none;
+    }
   }
 
   .slick-track {

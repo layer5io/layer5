@@ -291,7 +291,7 @@ const AcademyFeaturesWrapper = styled.div`
 
   .cta-card {
     background: linear-gradient(135deg, #00B39F 0%, #00D3A9 100%);
-    color: white;
+    color: ${props => props.isDark ? "#ffffff" : "#333333"};
     border-radius: 24px;
     padding: 4rem 2rem;
     text-align: center;
