@@ -114,7 +114,8 @@ export const boxStyles = {
     display: "flex",
     alignItems: "center",
     gap: 2,
-    py: 1
+    py: 1,
+    width: "100%",
   },
   featureContainer: {
     display: "flex",
