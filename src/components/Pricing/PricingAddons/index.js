@@ -90,7 +90,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
           const monthlyPerUserCost = currentLearnerOption.monthlyPerUser;
           const yearlyPerUserCost = currentLearnerOption.yearlyPerUser;
           baseTotal = isYearly
-            ? yearlyPerUserCost * currentLearnerOption.learners * 12 / "yearly"
+            ? yearlyPerUserCost * currentLearnerOption.learners
             : monthlyPerUserCost * currentLearnerOption.learners;
         }
       } else {
@@ -488,7 +488,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
                         if (selectedAddon?.id === "academy") {
                           const theorySubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory");
                           if (theorySubAddon?.pricing && theorySubAddon.pricing[quantityIndex]) {
-                            const currentLearnerOption = theorySubAddon.pricing[quantityIndex];
+                            const currentLearnerOption = theorySubAddon.pricing[quantityIndex];    
                             const monthlyPerUserCost = currentLearnerOption.monthlyPerUser;
                             const yearlyPerUserCost = currentLearnerOption.yearlyPerUser;
                             const totalCost = isYearly
