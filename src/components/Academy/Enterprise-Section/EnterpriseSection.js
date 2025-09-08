@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Button from "../../../reusecore/Button";
 
 const EnterpriseSectionWrapper = styled.section`
   
@@ -272,7 +273,12 @@ const EnterpriseSection = () => {
             <li>Advanced <a href="https://docs.layer5.io/cloud/academy/creating-content/instructor-console-guide/" target="_blank" rel="noopener noreferrer">instructor dashboard</a> with real-time progress tracking, skill assessment, and detailed analytics</li>
             <li>Flexible <a href="#" target="_blank" rel="noopener noreferrer">invitation</a> system: Host public challenges, onboard new partners, and accelerate engineer hiring with structured assessments</li>
           </ul>
-          <a href="#" className="btn btn-primary">Schedule Enterprise Demo</a>
+          <Button
+            $primary
+            title="Schedule Enterprise Demo"
+            $external={true}
+            $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true"
+          />
         </div>
       </div>
     </EnterpriseSectionWrapper>

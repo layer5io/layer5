@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Button from "../../../reusecore/Button";
 
 const LearnerSectionWrapper = styled.section`  
   &.audience-section.learners-section {
@@ -170,7 +171,12 @@ const LearnerSection = () => {
             <li> <a href="https://docs.layer5.io/cloud/academy/platform-development/" target="_blank" rel="noopener noreferrer">Open source</a> contribution opportunities</li>
             <li>Industry expert guidance and best practices</li>
           </ul>
-          <a href="https://docs.layer5.io/cloud/academy/using-the-academy/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Begin with Easy Academy Learner Guide</a>
+          <Button
+            $primary
+            title="Begin with Easy Academy Learner Guide"
+            $external={true}
+            $url="https://docs.layer5.io/cloud/academy/using-the-academy/"
+          />
         </div>
         <div className="stats-container">
           <h3 style={{ marginBottom: "1rem", color: "var(--primary-color)", textAlign: "center" }}>Learning Community</h3>
