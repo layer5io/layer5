@@ -1,6 +1,6 @@
 /* eslint-disable indent */
-import React, { useState, useEffect } from "react";
-import PricingWrapper from "./pricing.style";
+import React from "react";
+
 
 export const SubscriptionToggle = ({ isYearly = false, setIsYearly }) => {
   return (

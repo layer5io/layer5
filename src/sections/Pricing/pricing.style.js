@@ -44,12 +44,12 @@ const PricingWrapper = styled.section`
   margin: 2rem 0;
   font-size: .9rem;
   gap: 10px;
-  width: 85%;
+  width: auto;
 }
 
 .toggle {
   border: 2px solid ${props => props.theme.shadowLightColor};
-  padding: .4rem;
+  padding: .6rem;
  border-radius: .5rem;
 }
 
