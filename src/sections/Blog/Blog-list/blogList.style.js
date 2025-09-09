@@ -74,7 +74,7 @@ export const BlogPageWrapper = styled.div`
 			img{
 				object-fit: cover;
 				margin: 0;
-				padding: 0.5rem;
+				flex: 1;
 			}
 		}
 		.post-content-block{
