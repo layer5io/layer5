@@ -164,6 +164,17 @@ const EnterpriseSectionWrapper = styled.section`
           }
         }
       }
+
+      .button-container {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        
+        @media (max-width: 600px) {
+          justify-content: center;
+        }
+      }
     }
     
     @media (max-width: 768px) {
@@ -227,19 +238,28 @@ const EnterpriseSection = () => {
         </div>
         <div className="audience-text">
           <h2>For <span className="highlight">Enterprise</span> Teams</h2>
-          <p>Accelerate your enterprise platform transformation with structured cloud native training, customizable contents, and enterprise-grade analytics to maximize ROI and reduce risk.</p>
+          <p>Accelerate your enterprise platform transformation with structured cloud native training, customizable contents, and enterprise-grade analytics to maximize ROI and reduce risk. <a href="https://layer5.io/resources/academy/layer5-academy-vs-moocit" target="_blank" rel="noopener noreferrer">Compare Layer5 Academy with traditional platforms.</a></p>
           <ul className="audience-features">
-            <li>Three comprehensive <a href="#" target="_blank" rel="noopener noreferrer">content library</a>: Learning Paths, Challenges, and Certifications for all skill levels and training scenarios</li>
+            <li>Three comprehensive <a href="https://docs.layer5.io/cloud/academy/creating-content/" target="_blank" rel="noopener noreferrer">content library</a>: Learning Paths, Challenges, and Certifications for all skill levels and training scenarios</li>
             <li>Enterprise <a href="https://badges.layer5.io/" target="_blank" rel="noopener noreferrer">badge system</a> to showcase team achievements and drive motivation across your organization</li>
             <li>Advanced <a href="https://docs.layer5.io/cloud/academy/creating-content/instructor-console-guide/" target="_blank" rel="noopener noreferrer">instructor dashboard</a> with real-time progress tracking, skill assessment, and detailed analytics</li>
-            <li>Flexible <a href="#" target="_blank" rel="noopener noreferrer">invitation</a> system: Host public challenges, onboard new partners, and accelerate engineer hiring with structured assessments</li>
+            <li>Flexible invitation system: Host public challenges, onboard new partners, and accelerate engineer hiring with structured assessments</li>
           </ul>
-          <Button
-            $primary
-            title="Schedule Enterprise Demo"
-            $external={true}
-            $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true"
-          />
+          <div className="button-container">
+            <Button
+              $primary
+              title="View Pricing"
+              $external={true}
+              $url="https://layer5.io/pricing"
+            />
+            <Button
+              $primary
+              title="Schedule Enterprise Demo"
+              $external={true}
+              $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true"
+            />
+
+          </div>
         </div>
       </div>
     </EnterpriseSectionWrapper>

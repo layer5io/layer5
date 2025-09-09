@@ -181,21 +181,22 @@ const LearnerSection = () => {
           <h3 style={{ marginBottom: "1rem", color: "var(--primary-color)", textAlign: "center" }}>Learning Community</h3>
           <div className="stats-grid">
             <div className="stat-item">
-              <span className="stat-number">7K+</span>
-              <span className="stat-label">Active Learners</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">50+</span>
-              <span className="stat-label">Hands-on Labs</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">95%</span>
-              <span className="stat-label">Completion Rate</span>
+              <span className="stat-number">3</span>
+              <span className="stat-label">Difficulty Levels</span>
             </div>
             <div className="stat-item">
               <span className="stat-number">24/7</span>
               <span className="stat-label">Community Support</span>
             </div>
+            <div className="stat-item">
+              <span className="stat-number">100%</span>
+              <span className="stat-label">Cloud Native Focused</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-number">100%</span>
+              <span className="stat-label">Community Centric</span>
+            </div>
+
           </div>
         </div>
       </div>
