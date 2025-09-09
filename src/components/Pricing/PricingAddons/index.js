@@ -45,6 +45,7 @@ import { formatAndConvertPrice } from "../../../utils/currencies";
 export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterprisePlan }) => {
 
   const [selectedAddon, setSelectedAddon] = useState(null);
+  const [addonMenuOpen, setAddonMenuOpen] = useState(false);
   // const [quantity, setQuantity] = useState(1);
   const quantity = 1;
   const [selectedSubAddOns, setSelectedSubAddOns] = useState({});
@@ -58,6 +59,19 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
   const addOns = React.useMemo(() => {
     return getAddOns();
   }, []);
+
+  // Close the Select if the user scrolls or resizes (prevents floating/sticky menu)
+  useEffect(() => {
+   if (!addonMenuOpen) return;
+   const close = () => setAddonMenuOpen(false);
+    // use capture so it fires even if nested scroll containers move
+    window.addEventListener("scroll", close, true);
+    window.addEventListener("resize", close, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", close, true);
+      window.removeEventListener("resize", close);
+    };
+  }, [addonMenuOpen]);
 
   // Helper function to render icons based on type
   const renderIcon = (iconType) => {
@@ -237,11 +251,15 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
                       <Select
                         fullWidth
                         value={selectedAddon?.id || ""}
-                        onChange={(e) => handleAddonChange(e.target.value)}
+                      onChange={(e) => handleAddonChange(e.target.value)}
                         label="Optionally, choose one or more add-ons"
+                        open={addonMenuOpen}
+                        onOpen={() => setAddonMenuOpen(true)}
+                        onClose={() => setAddonMenuOpen(false)}
                         MenuProps={{
+                          disablePortal: false,
                           disableScrollLock: true,
-                          disablePortal: true,
+                          PaperProps: { sx: { maxHeight: "60vh" } },
                         }}
                       >
                         {addOns.map((addon) => (
