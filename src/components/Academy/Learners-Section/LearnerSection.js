@@ -95,6 +95,14 @@ const LearnerSectionWrapper = styled.section`
           border-radius: 12px;
           border: ${props => props.isDark ? "1px solid rgba(255, 255, 255, 0.2)" : "1px solid rgba(0, 179, 159, 0.1)"};
           box-shadow: ${props => props.isDark ? "0 8px 32px rgba(0, 0, 0, 0.3)" : "0 4px 12px rgba(0, 0, 0, 0.1)"};
+          transition: all 0.3s ease;
+          
+          &:hover {
+            transform: translateY(-5px) scale(1.02);
+            background: ${props => props.isDark ? "rgba(0, 179, 159, 0.15)" : "rgba(0, 179, 159, 0.05)"};
+            border-color: rgba(0, 179, 159, 0.4);
+            box-shadow: ${props => props.isDark ? "0 12px 40px rgba(0, 179, 159, 0.2)" : "0 8px 25px rgba(0, 179, 159, 0.2)"};
+          }
           
           .stat-number {
             display: block;
@@ -106,11 +114,21 @@ const LearnerSectionWrapper = styled.section`
             animation: pulse 2s infinite;
           }
           
+          &:hover .stat-number {
+            transform: scale(1.1);
+            color: #00d3a9;
+          }
+          
           .stat-label {
             display: block;
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+          }
+          
+          &:hover .stat-label {
+            color: #00b39f;
           }
           
           @keyframes pulse {
