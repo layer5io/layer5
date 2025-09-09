@@ -90,7 +90,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
           const monthlyPerUserCost = currentLearnerOption.monthlyPerUser;
           const yearlyPerUserCost = currentLearnerOption.yearlyPerUser;
           baseTotal = isYearly
-            ? yearlyPerUserCost * currentLearnerOption.learners * 12 / "yearly"
+            ? yearlyPerUserCost * currentLearnerOption.learners
             : monthlyPerUserCost * currentLearnerOption.learners;
         }
       } else {
