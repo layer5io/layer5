@@ -9,41 +9,6 @@ const EnterpriseSectionWrapper = styled.section`
     position: relative;
     overflow: hidden;
     
-    &::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(0, 179, 159, 0.03) 0%, transparent 70%);
-      animation: float 20s ease-in-out infinite;
-      pointer-events: none;
-    }
-    
-    &::after {
-      content: '';
-      position: absolute;
-      top: 20%;
-      right: 10%;
-      width: 100px;
-      height: 100px;
-      background: linear-gradient(45deg, rgba(0, 211, 169, 0.1), rgba(0, 179, 159, 0.05));
-      border-radius: 50%;
-      animation: pulse 3s ease-in-out infinite;
-      pointer-events: none;
-    }
-    
-    @keyframes float {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      33% { transform: translateY(-20px) rotate(1deg); }
-      66% { transform: translateY(10px) rotate(-1deg); }
-    }
-    
-    @keyframes pulse {
-      0%, 100% { opacity: 0.3; transform: scale(1); }
-      50% { opacity: 0.6; transform: scale(1.1); }
-    }
     
     .audience-content {
       max-width: 1200px;
@@ -94,10 +59,6 @@ const EnterpriseSectionWrapper = styled.section`
             
             &.primary {
               color: #00b39f;
-            }
-            
-            &.accent {
-              color: #00d3a9;
             }
           }
         }
@@ -241,7 +202,7 @@ const EnterpriseSection = () => {
               </div>
               <div className="progress-item">
                 <span className="progress-label">⚡ Deployment Velocity</span>
-                <span className="progress-value accent">3x Faster</span>
+                <span className="progress-value primary">3x Faster</span>
               </div>
               <div className="progress-item">
                 <span className="progress-label">💰 Infrastructure Cost</span>

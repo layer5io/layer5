@@ -121,6 +121,12 @@ const AcademyHeaderWrapper = styled.div`
         max-width: 360px;
         height: 420px;
       }
+      
+      .hero-image-container {
+        height: 200px;
+        width: 250px;
+        margin: 0 auto;
+      }
 
     }
     /* Tablet Styles */
@@ -172,7 +178,7 @@ const Header = ({ isDark }) => {
 
             <Col className="hero-image" $lg={6} $md={6}>
               <div className="hero-image-container">
-                <AcademyLogo className="academy-logo" style={{ position: "absolute", height: "180px", width: "180px" }}/>
+                <AcademyLogo className="academy-logo" style={{ position: "absolute", height: "180px", width: "180px", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}/>
                 <img src={Cone} className="cone-image"/>
               </div>
             </Col>
