@@ -1,14 +1,11 @@
 import styled from "styled-components";
-
 const SwiperContainer = styled.div`
   @media (min-width: 768px) {
     display: none;
   }
-
   .swiper-slide {
     border-radius: 20px;
   }
-
   .card.one {
     background: linear-gradient(222deg, #077165 2.76%, #1D2827 117.91%);
   }
@@ -24,19 +21,15 @@ const SwiperContainer = styled.div`
   .card.four {
     background: linear-gradient(180deg, #202020 -32.18%, #18433F 52.35%, #0B7E71 106.65%, #00B39F 142.23%);
   }
-
   .card {
     /* box-shadow: rgb(38, 57, 77, 0.5) 0px 20px 30px -10px; */
     /* box-shadow: none; */
-
     /* background: linear-gradient(
     266.65deg,
     #00b39f 40.19%,
     #477e96 74.31%,
     #3c494f 92.89%
-
   ); */
-
     height: 70vh;
     padding: 1rem;
     border-radius: 20px;
@@ -46,7 +39,7 @@ const SwiperContainer = styled.div`
     justify-content: center;
   }
   .card img {
-    height: 40%;
+    height: 50%;
     width: 100%;
     /* margin-left: 1.5rem; */
   }
@@ -69,32 +62,30 @@ const SwiperContainer = styled.div`
       height: 60vh;
     }
     .card img {
-      height: 30%;
+      height: 40%;
       width: auto;
     }
   }
-
   @media (max-width: 577px) {
     .card {
       width: 62vw;
     }
     h2 {
-      font-size: 1.4rem;
+      font-size: 1.1rem;
     }
     p {
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
   }
-
   @media (max-width: 520px) {
     .card {
       height: 55vh;
     }
     h2 {
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
     p {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
     }
   }
   @media (max-width: 490px) {
@@ -114,7 +105,7 @@ const SwiperContainer = styled.div`
       padding: 0.5rem;
     }
     .card img {
-      height: 30%;
+      height: 40%;
     }
     p {
       line-height: 19px;
@@ -126,16 +117,16 @@ const SwiperContainer = styled.div`
       padding: 0.7rem;
     }
     .card img {
-      height: 25%;
+      height: 35%;
     }
   }
   @media (max-width: 380px) {
     width: 65vw;
     h2 {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
     p {
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       line-height: 18px;
     }
     .card {
@@ -152,30 +143,28 @@ const SwiperContainer = styled.div`
       width: 64vw;
       padding: 0.7rem;
     }
-
-    p {
+    .card h2 {
+      font-size: 0.9rem; /* Added specific targeting */
+    }
+    .card p {
+      font-size: 0.7rem; /* Added specific targeting */
       line-height: 16px;
     }
   }
-
   margin-top: 10%;
   border-radius: 20px;
   width: 57vw;
   text-align: center;
-
   .swiper {
     width: 100%;
     height: 100%;
   }
-
   h1 {
     text-align: center;
   }
-
   h2 {
     margin: 0 0 1rem 0;
   }
-
   h6 {
     margin: 10px 0 2.5rem 0;
   }
