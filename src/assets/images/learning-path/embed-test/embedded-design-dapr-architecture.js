@@ -98,8 +98,8 @@ const data = {
                     },
                     "meshmodel-metadata": {
                       capabilities:
-                        '{"designer":{"show-node-group-badge":false, "edit":{"config":false, "text":false,"lock":true,"shape":{"convert-shape":false},"style":true},"label":{"edit":true,"show":true,"sync-with-config-property":"label"}}}',
-                      defaultData: '{"label":""}',
+                        "{\"designer\":{\"show-node-group-badge\":false, \"edit\":{\"config\":false, \"text\":false,\"lock\":true,\"shape\":{\"convert-shape\":false},\"style\":true},\"label\":{\"edit\":true,\"show\":true,\"sync-with-config-property\":\"label\"}}}",
+                      defaultData: "{\"label\":\"\"}",
                       genealogy: "parent",
                       hasInvalidSchema: true,
                       isAnnotation: true,
@@ -120,7 +120,7 @@ const data = {
                         "z-index": 19
                       },
                       styles:
-                        '{"height":"30px","width":"30px", "background-image":"none","border-width":1,"border-style":"dashed","background-opacity":0.1}',
+                        "{\"height\":\"30px\",\"width\":\"30px\", \"background-image\":\"none\",\"border-width\":1,\"border-style\":\"dashed\",\"background-opacity\":0.1}",
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/meshery-core/color/anchornode-color.svg",
@@ -227,7 +227,7 @@ const data = {
                         "z-index": 15
                       },
                       styles:
-                        '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
+                        "{\"height\":20,\"width\":20,\"padding\":12,\"background-position-y\":4.5,\"x\":\"10px\",\"y\":\"12px\"}",
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
@@ -346,7 +346,7 @@ const data = {
                     id: "8cb14ecd-d658-4ffa-bf94-beffb65c1837",
                     "meshmodel-metadata": {
                       capabilities:
-                        '{\n  "fieldRefs": [\n    {\n      "fieldPath": "spec.template.spec.containers",\n      "jsonSchemaPath": "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",\n      "component": {\n        "kind": "Container",\n        "model": "meshery-core"\n      },\n      "renderChildren": true\n    },\n    {\n      "fieldPath": "spec.template.spec.init Containers",\n      "jsonSchemaPath": "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.init Containers.items.allOf[0]",\n      "component": {\n        "kind": "Container",\n        "model": "meshery-core"\n      },\n      "renderChildren": true\n    }\n  ],\n  "designer": {\n    "edit": {\n      "shape": {\n        "convert-shape": false\n      }\n    }\n  }\n}',
+                        "{\n  \"fieldRefs\": [\n    {\n      \"fieldPath\": \"spec.template.spec.containers\",\n      \"jsonSchemaPath\": \"properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]\",\n      \"component\": {\n        \"kind\": \"Container\",\n        \"model\": \"meshery-core\"\n      },\n      \"renderChildren\": true\n    },\n    {\n      \"fieldPath\": \"spec.template.spec.init Containers\",\n      \"jsonSchemaPath\": \"properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.init Containers.items.allOf[0]\",\n      \"component\": {\n        \"kind\": \"Container\",\n        \"model\": \"meshery-core\"\n      },\n      \"renderChildren\": true\n    }\n  ],\n  \"designer\": {\n    \"edit\": {\n      \"shape\": {\n        \"convert-shape\": false\n      }\n    }\n  }\n}",
                       defaultData: "",
                       genealogy: "parent",
                       isAnnotation: false,
@@ -788,7 +788,7 @@ const data = {
                         zIndex: "3",
                         zIndexCompare: "manual"
                       },
-                      styles: '{"border-width":2,"background-opacity":0.5}',
+                      styles: "{\"border-width\":2,\"background-opacity\":0.5}",
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/deployment-color.svg",
@@ -879,7 +879,7 @@ const data = {
                     id: "909bb49c-1966-411d-9d67-08409091e18b",
                     "meshmodel-metadata": {
                       capabilities:
-                        '{\n  "fieldRefs": [\n    {\n      "fieldPath": "spec.template.spec.containers",\n      "jsonSchemaPath": "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",\n      "component": {\n        "kind": "Container",\n        "model": "meshery-core"\n      },\n      "renderChildren": true\n    },\n    {\n      "fieldPath": "spec.template.spec.init Containers",\n      "jsonSchemaPath": "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.init Containers.items.allOf[0]",\n      "component": {\n        "kind": "Container",\n        "model": "meshery-core"\n      },\n      "renderChildren": true\n    }\n  ],\n  "designer": {\n    "edit": {\n      "shape": {\n        "convert-shape": false\n      }\n    }\n  }\n}',
+                        "{\n  \"fieldRefs\": [\n    {\n      \"fieldPath\": \"spec.template.spec.containers\",\n      \"jsonSchemaPath\": \"properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]\",\n      \"component\": {\n        \"kind\": \"Container\",\n        \"model\": \"meshery-core\"\n      },\n      \"renderChildren\": true\n    },\n    {\n      \"fieldPath\": \"spec.template.spec.init Containers\",\n      \"jsonSchemaPath\": \"properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.init Containers.items.allOf[0]\",\n      \"component\": {\n        \"kind\": \"Container\",\n        \"model\": \"meshery-core\"\n      },\n      \"renderChildren\": true\n    }\n  ],\n  \"designer\": {\n    \"edit\": {\n      \"shape\": {\n        \"convert-shape\": false\n      }\n    }\n  }\n}",
                       defaultData: "",
                       genealogy: "parent",
                       isAnnotation: false,
@@ -900,7 +900,7 @@ const data = {
                         "border-style": "solid",
                         "border-width": 2
                       },
-                      styles: '{"border-width":2,"background-opacity":0.5}',
+                      styles: "{\"border-width\":2,\"background-opacity\":0.5}",
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/deployment-color.svg",
@@ -1000,8 +1000,8 @@ const data = {
                     },
                     "meshmodel-metadata": {
                       capabilities:
-                        '{"designer":{"edit":{"text":true, "config":false,"lock":true,"shape":{"convert-shape":true},"style":true},"label":{"edit":true,"show":true,"sync-with-config-property":"label"}}}',
-                      defaultData: '{"label":""}',
+                        "{\"designer\":{\"edit\":{\"text\":true, \"config\":false,\"lock\":true,\"shape\":{\"convert-shape\":true},\"style\":true},\"label\":{\"edit\":true,\"show\":true,\"sync-with-config-property\":\"label\"}}}",
+                      defaultData: "{\"label\":\"\"}",
                       genealogy: "",
                       hasInvalidSchema: true,
                       isAnnotation: true,
@@ -1029,7 +1029,7 @@ const data = {
                         "z-index": 21
                       },
                       styles:
-                        '{"height":"20px","width":"40px", "background-image":"none","border-width":1,"border-style":"dashed","background-opacity":0,"border-color":"#808080"}',
+                        "{\"height\":\"20px\",\"width\":\"40px\", \"background-image\":\"none\",\"border-width\":1,\"border-style\":\"dashed\",\"background-opacity\":0,\"border-color\":\"#808080\"}",
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/contrail-analytics/color/advancedcronjob-color.svg",
@@ -1152,8 +1152,8 @@ const data = {
                     },
                     "meshmodel-metadata": {
                       capabilities:
-                        '{"designer":{"edit":{"text":true, "config":false,"lock":true,"shape":{"convert-shape":true},"style":true},"label":{"edit":true,"show":true,"sync-with-config-property":"label"}}}',
-                      defaultData: '{"label":""}',
+                        "{\"designer\":{\"edit\":{\"text\":true, \"config\":false,\"lock\":true,\"shape\":{\"convert-shape\":true},\"style\":true},\"label\":{\"edit\":true,\"show\":true,\"sync-with-config-property\":\"label\"}}}",
+                      defaultData: "{\"label\":\"\"}",
                       genealogy: "",
                       hasInvalidSchema: true,
                       isAnnotation: true,
@@ -1181,7 +1181,7 @@ const data = {
                         "z-index": 20
                       },
                       styles:
-                        '{"height":"20px","width":"40px", "background-image":"none","border-width":1,"border-style":"dashed","background-opacity":0,"border-color":"#808080"}',
+                        "{\"height\":\"20px\",\"width\":\"40px\", \"background-image\":\"none\",\"border-width\":1,\"border-style\":\"dashed\",\"background-opacity\":0,\"border-color\":\"#808080\"}",
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/contrail-analytics/color/advancedcronjob-color.svg",
@@ -1255,8 +1255,8 @@ const data = {
                     },
                     "meshmodel-metadata": {
                       capabilities:
-                        '{\n  "designer": {\n    "pass-events-to": "parent", "supportsCompoundDragAndDrop":false,\n    "edit": {\n      "config": false,\n      "copy": false,\n      "delete": false,\n      "duplicate": false,\n      "reset-styles": false,\n      "resolve": false,\n      "lock": false,\n      "shape": {\n        "convert-shape": false\n      },\n      "style": false\n    },\n    "label": {\n      "edit": false,\n      "show": false,\n      "sync-with-config-property": "none"\n    }\n  }\n}',
-                      defaultData: '{"label":""}',
+                        "{\n  \"designer\": {\n    \"pass-events-to\": \"parent\", \"supportsCompoundDragAndDrop\":false,\n    \"edit\": {\n      \"config\": false,\n      \"copy\": false,\n      \"delete\": false,\n      \"duplicate\": false,\n      \"reset-styles\": false,\n      \"resolve\": false,\n      \"lock\": false,\n      \"shape\": {\n        \"convert-shape\": false\n      },\n      \"style\": false\n    },\n    \"label\": {\n      \"edit\": false,\n      \"show\": false,\n      \"sync-with-config-property\": \"none\"\n    }\n  }\n}",
+                      defaultData: "{\"label\":\"\"}",
                       genealogy: "parent",
                       hasInvalidSchema: true,
                       isAnnotation: true,
@@ -1276,7 +1276,7 @@ const data = {
                         "z-index": 17
                       },
                       styles:
-                        '{"height":"30px","width":"30px", "background-image":"none","border-width":0,"border-style":"dashed","background-opacity":0}',
+                        "{\"height\":\"30px\",\"width\":\"30px\", \"background-image\":\"none\",\"border-width\":0,\"border-style\":\"dashed\",\"background-opacity\":0}",
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/meshery-core/color/anchornode-color.svg",
@@ -1453,7 +1453,7 @@ const data = {
                     },
                     "meshmodel-metadata": {
                       capabilities:
-                        '{\n  "designer": {\n    "capabilities": {\n      "config": true,\n      "label": false,\n      "policy": false,\n      "relationships": true,\n      "json-schema": false,\n      "permissions": false,\n      "workflow": false,\n      "gitops": false,\n      "history": false\n    },\n    "supportsCompoundDragAndDrop": false,\n    "edit": {\n      "config": true,\n      "copy": false,\n      "delete": true,\n      "duplicate": false,\n      "reset-styles": false,\n      "resolve": false,\n      "lock": false,\n      "shape": {\n        "convert-shape": true\n      },\n      "style": true\n    },\n    "label": {\n      "edit": false,\n      "show": true,\n      "sync-with-config-property": "name"\n    }\n  }\n}',
+                        "{\n  \"designer\": {\n    \"capabilities\": {\n      \"config\": true,\n      \"label\": false,\n      \"policy\": false,\n      \"relationships\": true,\n      \"json-schema\": false,\n      \"permissions\": false,\n      \"workflow\": false,\n      \"gitops\": false,\n      \"history\": false\n    },\n    \"supportsCompoundDragAndDrop\": false,\n    \"edit\": {\n      \"config\": true,\n      \"copy\": false,\n      \"delete\": true,\n      \"duplicate\": false,\n      \"reset-styles\": false,\n      \"resolve\": false,\n      \"lock\": false,\n      \"shape\": {\n        \"convert-shape\": true\n      },\n      \"style\": true\n    },\n    \"label\": {\n      \"edit\": false,\n      \"show\": true,\n      \"sync-with-config-property\": \"name\"\n    }\n  }\n}",
                       defaultData: "",
                       genealogy: "",
                       hasInvalidSchema: true,
@@ -1602,7 +1602,7 @@ const data = {
                     },
                     "meshmodel-metadata": {
                       capabilities:
-                        '{\n  "designer": {\n    "capabilities": {\n      "config": true,\n      "label": false,\n      "policy": false,\n      "relationships": true,\n      "json-schema": false,\n      "permissions": false,\n      "workflow": false,\n      "gitops": false,\n      "history": false\n    },\n    "supportsCompoundDragAndDrop": false,\n    "edit": {\n      "config": true,\n      "copy": false,\n      "delete": true,\n      "duplicate": false,\n      "reset-styles": false,\n      "resolve": false,\n      "lock": false,\n      "shape": {\n        "convert-shape": true\n      },\n      "style": true\n    },\n    "label": {\n      "edit": false,\n      "show": true,\n      "sync-with-config-property": "name"\n    }\n  }\n}',
+                        "{\n  \"designer\": {\n    \"capabilities\": {\n      \"config\": true,\n      \"label\": false,\n      \"policy\": false,\n      \"relationships\": true,\n      \"json-schema\": false,\n      \"permissions\": false,\n      \"workflow\": false,\n      \"gitops\": false,\n      \"history\": false\n    },\n    \"supportsCompoundDragAndDrop\": false,\n    \"edit\": {\n      \"config\": true,\n      \"copy\": false,\n      \"delete\": true,\n      \"duplicate\": false,\n      \"reset-styles\": false,\n      \"resolve\": false,\n      \"lock\": false,\n      \"shape\": {\n        \"convert-shape\": true\n      },\n      \"style\": true\n    },\n    \"label\": {\n      \"edit\": false,\n      \"show\": true,\n      \"sync-with-config-property\": \"name\"\n    }\n  }\n}",
                       defaultData: "",
                       genealogy: "",
                       hasInvalidSchema: true,
@@ -1770,7 +1770,7 @@ const data = {
                     },
                     "meshmodel-metadata": {
                       capabilities:
-                        '{\n  "designer": {\n    "capabilities": {\n      "config": true,\n      "label": false,\n      "policy": false,\n      "relationships": true,\n      "json-schema": false,\n      "permissions": false,\n      "workflow": false,\n      "gitops": false,\n      "history": false\n    },\n    "supportsCompoundDragAndDrop": false,\n    "edit": {\n      "config": true,\n      "copy": false,\n      "delete": true,\n      "duplicate": false,\n      "reset-styles": false,\n      "resolve": false,\n      "lock": false,\n      "shape": {\n        "convert-shape": true\n      },\n      "style": true\n    },\n    "label": {\n      "edit": false,\n      "show": true,\n      "sync-with-config-property": "name"\n    }\n  }\n}',
+                        "{\n  \"designer\": {\n    \"capabilities\": {\n      \"config\": true,\n      \"label\": false,\n      \"policy\": false,\n      \"relationships\": true,\n      \"json-schema\": false,\n      \"permissions\": false,\n      \"workflow\": false,\n      \"gitops\": false,\n      \"history\": false\n    },\n    \"supportsCompoundDragAndDrop\": false,\n    \"edit\": {\n      \"config\": true,\n      \"copy\": false,\n      \"delete\": true,\n      \"duplicate\": false,\n      \"reset-styles\": false,\n      \"resolve\": false,\n      \"lock\": false,\n      \"shape\": {\n        \"convert-shape\": true\n      },\n      \"style\": true\n    },\n    \"label\": {\n      \"edit\": false,\n      \"show\": true,\n      \"sync-with-config-property\": \"name\"\n    }\n  }\n}",
                       defaultData: "",
                       genealogy: "",
                       hasInvalidSchema: true,
@@ -1914,7 +1914,7 @@ const data = {
                     },
                     "meshmodel-metadata": {
                       capabilities:
-                        '{\n  "designer": {\n    "capabilities": {\n      "config": true,\n      "label": false,\n      "policy": false,\n      "relationships": true,\n      "json-schema": false,\n      "permissions": false,\n      "workflow": false,\n      "gitops": false,\n      "history": false\n    },\n    "supportsCompoundDragAndDrop": false,\n    "edit": {\n      "config": true,\n      "copy": false,\n      "delete": true,\n      "duplicate": false,\n      "reset-styles": false,\n      "resolve": false,\n      "lock": false,\n      "shape": {\n        "convert-shape": true\n      },\n      "style": true\n    },\n    "label": {\n      "edit": false,\n      "show": true,\n      "sync-with-config-property": "name"\n    }\n  }\n}',
+                        "{\n  \"designer\": {\n    \"capabilities\": {\n      \"config\": true,\n      \"label\": false,\n      \"policy\": false,\n      \"relationships\": true,\n      \"json-schema\": false,\n      \"permissions\": false,\n      \"workflow\": false,\n      \"gitops\": false,\n      \"history\": false\n    },\n    \"supportsCompoundDragAndDrop\": false,\n    \"edit\": {\n      \"config\": true,\n      \"copy\": false,\n      \"delete\": true,\n      \"duplicate\": false,\n      \"reset-styles\": false,\n      \"resolve\": false,\n      \"lock\": false,\n      \"shape\": {\n        \"convert-shape\": true\n      },\n      \"style\": true\n    },\n    \"label\": {\n      \"edit\": false,\n      \"show\": true,\n      \"sync-with-config-property\": \"name\"\n    }\n  }\n}",
                       defaultData: "",
                       genealogy: "",
                       hasInvalidSchema: true,
@@ -11201,8 +11201,8 @@ const addStyles = () => {
         font-size: 1.25rem;
    }
      `,
-    head = document.head || document.getElementsByTagName("head")[0],
-    style = document.createElement("style");
+      head = document.head || document.getElementsByTagName("head")[0],
+      style = document.createElement("style");
 
   head.appendChild(style);
 
