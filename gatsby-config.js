@@ -1,6 +1,13 @@
 /* eslint-env node */
 
 module.exports = {
+  developMiddleware: (app) => {
+    app.use((req, res, next) => {
+      res.set('X-Frame-Options', 'SAMEORIGIN');
+      res.set('Content-Security-Policy', "frame-ancestors 'self'");
+      next();
+    });
+  },
   siteMetadata: {
     title: "Layer5 - Expect more from your infrastructure",
     description:
@@ -11,6 +18,21 @@ module.exports = {
     image: "/images/layer5-gradient.webp",
     twitterUsername: "@layer5",
   },
+  headers: [
+    {
+      source: `/*`,
+      headers: [
+        {
+          key: `X-Frame-Options`,
+          value: `SAMEORIGIN`,
+        },
+        {
+          key: `Content-Security-Policy`,
+          value: `frame-ancestors 'self'`,
+        },
+      ]
+    }
+  ],
   flags: {
     FAST_DEV: true,
     PARALLEL_SOURCING: false, // Disable parallel sourcing to reduce memory pressure
@@ -19,13 +41,13 @@ module.exports = {
   trailingSlash: "never",
   plugins: [
     {
-      resolve: "gatsby-plugin-netlify",
+      resolve: 'gatsby-plugin-netlify',
       options: {
         headers: {
-          "/*": [
-            "X-Frame-Options: SAMEORIGIN",
-            "Content-Security-Policy: frame-ancestors 'self'",
-          ],
+          '/*': [
+            'X-Frame-Options: SAMEORIGIN',
+            'Content-Security-Policy: frame-ancestors \'self\'',
+          ]
         },
         mergeSecurityHeaders: true,
         mergeCachingHeaders: true,

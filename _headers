@@ -13,5 +13,6 @@
 /*.html
   Cache-Control: public, max-age=25920000
 
-
-
+/*
+  X-Frame-Options: SAMEORIGIN
+  Content-Security-Policy: frame-ancestors 'self'
