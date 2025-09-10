@@ -3,8 +3,8 @@
 module.exports = {
   developMiddleware: (app) => {
     app.use((req, res, next) => {
-      res.set('X-Frame-Options', 'SAMEORIGIN');
-      res.set('Content-Security-Policy', "frame-ancestors 'self'");
+      res.set("X-Frame-Options", "SAMEORIGIN");
+      res.set("Content-Security-Policy", "frame-ancestors 'self'");
       next();
     });
   },
@@ -20,15 +20,15 @@ module.exports = {
   },
   headers: [
     {
-      source: `/*`,
+      source: "/*",
       headers: [
         {
-          key: `X-Frame-Options`,
-          value: `SAMEORIGIN`,
+          key: "X-Frame-Options",
+          value: "SAMEORIGIN",
         },
         {
-          key: `Content-Security-Policy`,
-          value: `frame-ancestors 'self'`,
+          key: "Content-Security-Policy",
+          value: "frame-ancestors 'self'",
         },
       ]
     }
@@ -41,12 +41,12 @@ module.exports = {
   trailingSlash: "never",
   plugins: [
     {
-      resolve: 'gatsby-plugin-netlify',
+      resolve: "gatsby-plugin-netlify",
       options: {
         headers: {
-          '/*': [
-            'X-Frame-Options: SAMEORIGIN',
-            'Content-Security-Policy: frame-ancestors \'self\'',
+          "/*": [
+            "X-Frame-Options: SAMEORIGIN",
+            "Content-Security-Policy: frame-ancestors 'self'",
           ]
         },
         mergeSecurityHeaders: true,
