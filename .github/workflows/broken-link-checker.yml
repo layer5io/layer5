@@ -1,0 +1,28 @@
+name: Broken Link Checker
+
+on:
+  pull_request:
+    branches: [master]
+    types: [opened, reopened, synchronize]
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 0
+
+      - name: Install and Build 🔧
+        run: |
+          npm install --legacy-peer-deps
+          node -v
+          npm run version
+          npm run noIndex
+      
+      - name: Run Linkinator
+        run: npx linkinator ./public --recurse --skip '404.html' --retry --concurrency 5 --timeout 30000 || true
+        
+      - name: Finish
+        run: echo "Link check completed"
