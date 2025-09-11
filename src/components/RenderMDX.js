@@ -6,7 +6,7 @@ export function RenderMDX({ body }) {
   // eslint-disable-next-line no-new-func
   const Component = React.useMemo(() => {
     try {
-      return new Function('React', 'Button', `return ${body}`)(React, Button);
+      return new Function("React", "Button", `return ${body}`)(React, Button);
     } catch (e) {
       return () => <pre>Error rendering MDX: {e.message}</pre>;
     }

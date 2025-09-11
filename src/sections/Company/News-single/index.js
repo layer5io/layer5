@@ -67,7 +67,7 @@ const NewsSingle = ({ data, children }) => {
             <Row>
               <Col $lg={9} $md={8} $xs={12}>
                 <SRLWrapper>
-              {children}
+                  {children}
                 </SRLWrapper>
               </Col>
               <Col $lg={3} $md={4} $xs={12}>
