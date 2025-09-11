@@ -8,7 +8,7 @@ const ColWrapper = styled.div`
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
-    
+
     @media (min-width: 315px) {
         flex: ${({ $xs }) =>
   ($xs === 1 && `0 0 ${Dimensions[1]}`) ||
