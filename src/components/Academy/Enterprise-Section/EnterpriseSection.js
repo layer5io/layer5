@@ -245,12 +245,12 @@ const EnterpriseSection = () => {
             <li>Advanced <a href="https://docs.layer5.io/cloud/academy/creating-content/instructor-console-guide/" target="_blank" rel="noopener noreferrer">instructor dashboard</a> with real-time progress tracking, skill assessment, and detailed analytics</li>
             <li>Flexible invitation system: Host public challenges, onboard new partners, and accelerate engineer hiring with structured assessments</li>
           </ul>
+
           <div className="button-container">
             <Button
               $primary
               title="View Pricing"
-              $external={true}
-              $url="https://layer5.io/pricing"
+              $url="/pricing"
             />
             <Button
               $primary

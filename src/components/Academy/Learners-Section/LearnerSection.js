@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../../reusecore/Button";
+import { Link } from "gatsby";
 
 const LearnerSectionWrapper = styled.section`  
   &.audience-section.learners-section {
@@ -166,7 +167,10 @@ const LearnerSection = () => {
             <li>Interactive courses and hands-on labs</li>
             <li>Earn industry-recognized <a href="https://cloud.layer5.io/academy?contentType=certification" target="_blank" rel="noopener noreferrer">certifications</a></li>
             <li>Participate in coding <a href="https://cloud.layer5.io/academy?contentType=challenge" target="_blank" rel="noopener noreferrer">challenges</a></li>
-            <li>Community mentorship through <a href="https://layer5.io/community/meshmates" target="_blank" rel="noopener noreferrer">MeshMate</a> program</li>
+            <li>
+              Community mentorship through{" "}
+              <Link to="/community/meshmates">MeshMate </Link> program
+            </li>
             <li> <a href="https://docs.layer5.io/cloud/academy/platform-development/" target="_blank" rel="noopener noreferrer">Open source</a> contribution opportunities</li>
             <li>Industry expert guidance and best practices</li>
           </ul>
