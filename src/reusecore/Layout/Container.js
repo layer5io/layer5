@@ -3,9 +3,9 @@ import styled, { css } from "styled-components";
 
 const ContainerWrapper = styled.div`
 
-    // width: 100%;
-    // padding-right: 15px;
-    // padding-left: 15px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
     margin: 0 auto;
     @media (min-width: 576px) {
         max-width: 100%;
@@ -17,7 +17,7 @@ const ContainerWrapper = styled.div`
         max-width: 960px; 
     }
     @media (min-width: 1200px) {
-        max-width: 1324px; 
+        max-width: 1170px; 
     }
 
     ${props => props.fluid && css`
