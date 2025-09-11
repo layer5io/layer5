@@ -4,7 +4,7 @@ const CatalogIcon = ({
   width,
   height,
   secondaryFill = "#51636B",
-  primaryFill= "#00B39F",
+  primaryFill = "#00B39F",
   style = {}
 }) => (
   <svg
