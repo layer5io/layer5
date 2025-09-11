@@ -255,6 +255,22 @@ const DevrelContent = () => {
       <DevrelContentWrapper>
         <Container className="devrel-container">
           <Row className="devrel">
+            <Col $md={6} className="devrel-detail">
+              <h2 className="heading">
+                Turn Knowledge into Credentials
+              </h2>
+              <ul className="caption">
+                <li><b>Guided Learning Journeys:</b> Advance your cloud native skills through <a href="https://cloud.layer5.io/academy" target="_blank" rel="noopener noreferrer">Layer5 Academy</a>, offering structured paths that combine theory with hands-on labs.</li>
+                <li><b>Interactive Challenges:</b> Strengthen your understanding in real-world scenarios with Academy challenges, powered by <a href="https://meshery.layer5.io/extension/meshmap" target="_blank" rel="noopener noreferrer">Meshery Playground</a>.</li>
+                <li><b>Earn Recognition:</b> Achieve Layer5 Academy certifications and badges, and showcase them directly on your DevRel profile and leaderboards.</li>
+                <li><b>Contribute Back:</b> Share your own tutorials or challenges into Academy, helping others learn while building your reputation.</li>
+              </ul>
+            </Col>
+            <Col $md={6} className="devrel-image">
+              <PictureSlider images="academy" />
+            </Col>
+          </Row>
+          <Row className="devrel">
             <Col $md={6} className="devrel-image">
               <div className="image-wrapper">
                 <a href="https://kanvas.new/" target="_blank" rel="noopener noreferrer">
