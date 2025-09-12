@@ -6,6 +6,13 @@ import ChallangePNG from "./images/challange_mac.png";
 import DesignPNG from "./images/design_mac.png";
 import TutorialPNG from "./images/tutorial_mac.png";
 
+import Academy1PNG from "./images/academy-1.png";
+import Academy2PNG from "./images/academy-2.png";
+import Academy3PNG from "./images/academy-3.png";
+import Academy4PNG from "./images/academy-4.png";
+
+
+
 const PictureSliderWrapper = styled.div`
   width: 100%;
   max-width: 900px;
@@ -51,8 +58,10 @@ const PictureSliderWrapper = styled.div`
   }
 `;
 
-const PictureSlider = () => {
-  const data = [ChallangePNG, TutorialPNG, DesignPNG];
+const PictureSlider = ({ images }) => {
+  const defaultData = [ChallangePNG, TutorialPNG, DesignPNG];
+  const academyData = [Academy1PNG, Academy2PNG, Academy3PNG, Academy4PNG];
+  const data = images === "academy" ? academyData : (images || defaultData);
 
   const settings = {
     dots: false,
