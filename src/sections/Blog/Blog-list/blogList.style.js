@@ -19,9 +19,6 @@ export const BlogPageWrapper = styled.div`
 		align-items: center;
 		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
-	.blog-lists{
-		margin-top: 5rem;
-	}
 	.post-thumb-block{
 		height: 8rem;
 		width: 25%;
@@ -67,30 +64,49 @@ export const BlogPageWrapper = styled.div`
 
 	@media screen and (max-width:992px){
 		.post-block{
-			height: 10rem;
-			width: auto;
+			flex-direction: row;
 		}
 		.post-thumb-block{
-			height: 15rem;
+			height: 8rem;
+			width: 25%;
+			margin-right: 1rem;
 	
 			img{
-				max-height:15rem;
+				object-fit: cover;
+				margin: 0;
+				flex: 1;
 			}
+		}
+		.post-content-block{
+			width: 70%;
+			padding: 0.5rem;
 		}
 	}
 
 	@media screen and (max-width:576px){
 		.post-block{
-			height: 9rem;
+			flex-direction: column;
 		}
 		.blog-list-wrapper{
 			margin: 1.5rem auto 5rem;
 		}
 		.blog-lists{
-			margin-top: 0rem;
+			margin-top: 0;
+		}
+		.post-thumb-block{
+			width: 100%;
+			height: 12rem;
+			margin-right: 0;
+			
+			img{
+				object-fit: cover;
+				padding: 0;
+				margin: 0;
+			}
 		}
 		.post-content-block{
-			height: fit-content;
+			width: 100%;
+			padding: 0.75rem 0.5rem;
 		}
 		.tooltip-search{
 			display: block;
