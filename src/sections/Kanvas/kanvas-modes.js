@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import designerImage from "../../assets/images/kanvas/KanvasDesigner.webp";
-import visualizerImage from "../../assets/images/kanvas/KanvasVisualizer.webp";
+import designerImage from "../../assets/images/kanvas/KanvasDesigner.png";
+import visualizerImage from "../../assets/images/kanvas/Kanvas-Operator.png";
 
 const KanvasModesWrapper = styled.div`
   margin-top: 0.1rem;
@@ -202,6 +202,15 @@ const KanvasModesWrapper = styled.div`
         width: 90%;
       }
     }
+    .visualizer-img {
+      box-shadow: 0px 0.25rem 0.5rem 0rem rgb(0, 0, 0, 0.75);
+      margin: 1rem auto;
+      border-radius: 0.35rem;
+
+      @media only screen and (max-width: 992px) {
+        width: 90%;
+      }
+    }
   }
 
   .flip {
@@ -274,7 +283,7 @@ const KanvasModes = () => {
           </div>
           <div className="content">
             <h1>Apply patterns and manage many Kubernetes clusters</h1>
-            <img src={visualizerImage} alt="Kanvas Operator" onClick={() => setVizEnlarged(!vizEnlarged)} className={vizEnlarged ? "big" : "small"} />
+            <img src={visualizerImage} alt="Kanvas Operator" onClick={() => setVizEnlarged(!vizEnlarged)} className={`visualizer-img ${vizEnlarged ? "big" : "small"}`} />
             <p>
               Deploy designs, apply patterns, manage and operate your deployments in real-time. Bring all your Kubernetes clusters under a common point of management. Interactively connect to terminal sessions or initiate and search log streams from your containers.
             </p>
