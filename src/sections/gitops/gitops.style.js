@@ -100,18 +100,18 @@ export const GitOpsWrapper = styled.section`
                 gap: 1.25rem;
 
                 .hero-image-container {
-                   height: 250px;
-                   width: 300px;
-                   position: relative;
-                   display:flex;
-                   align-items: center;
-                   justify-content: center;
+                  height: 250px;
+                  width: 300px;
+                  position: relative;
+                  display:flex;
+                  align-items: center;
+                  justify-content: center;
 
-                   .kanvas-stack-hero {
-                      position: absolute;
-                      height: 80px;
-                      animation: "floating 3s ease-in-out infinite";
-                   }
+                  .kanvas-stack-hero {
+                    position: absolute;
+                    height: 80px;
+                    animation: "floating 3s ease-in-out infinite";
+                  }
 
                   @media only screen and (min-width: 768px) {
                     height: 542px;

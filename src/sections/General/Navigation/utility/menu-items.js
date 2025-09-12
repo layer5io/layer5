@@ -68,10 +68,19 @@ const Data = {
           path: "/cloud-native-management/kanvas/operate",
         },
         {
-          name: "Cloud + Catalog",
+          name: "Cloud",
           path: "/cloud-native-management/catalog",
           sepLine: true,
         },
+        {
+          name: "Academy",
+          path: "/learn/academy",
+        },
+        {
+          name: "Catalog",
+          path: "/cloud-native-management/catalog",
+        },
+
         {
           name: "Open source projects",
           path: "/projects",
@@ -215,6 +224,7 @@ const Data = {
         {
           actionName: "Discussion forum",
           actionLink: "https://discuss.layer5.io",
+          external: true,
         },
         {
           actionName: "Open source internships",
@@ -248,12 +258,6 @@ const Data = {
           externalLink: true,
         },
         {
-          name: "Academy",
-          path: "https://cloud.layer5.io/academy/overview",
-          sepLine: true,
-          externalLink: true,
-        },
-        {
           name: "Videos",
           path: "https://docs.layer5.io/videos",
           sepLine: true,
@@ -268,6 +272,10 @@ const Data = {
           name: "Learn",
           path: "/learn",
           sepLine: true,
+        },
+        {
+          name: "Academy",
+          path: "/learn/academy",
         },
         {
           name: "Books",
