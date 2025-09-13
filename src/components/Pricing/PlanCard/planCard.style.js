@@ -85,7 +85,7 @@ const PlanCardWrapper = styled.section`
       font-size: 0.75rem;
       font-weight: 500;
       top: 0rem;
-      right: .9rem;
+      right: .0rem;
       color: #eee;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
@@ -98,7 +98,7 @@ const PlanCardWrapper = styled.section`
       font-size: 0.75rem;
       font-weight: 500;
       top: 0rem;
-      right: .9rem;
+      right: .0rem;
       color: #111;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
