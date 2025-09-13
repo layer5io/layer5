@@ -95,7 +95,7 @@ const data = {
                         y: "7.5",
                         "z-index": 46
                       },
-                      styles: "{\"height\":\"22px\", \"width\":\"22px\", \"x\":\"8.5\", \"y\":\"7.5\"}",
+                      styles: '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
@@ -179,7 +179,7 @@ const data = {
                         y: "7",
                         "z-index": 1027
                       },
-                      styles: "{\"height\":\"25px\",\"width\":\"25px\",\"x\":\"7\", \"y\":\"7\"}",
+                      styles: '{"height":"25px","width":"25px","x":"7", "y":"7"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrolebinding-color.svg",
@@ -461,7 +461,7 @@ const data = {
                         "z-index": 23
                       },
                       styles:
-                        "{\"height\":32,\"width\":32,\"background-clip\":\"node\",\"background-image-containment\":\"over\",\"padding\":1,\"background-opacity\":\"0\"}",
+                        '{"height":32,"width":32,"background-clip":"node","background-image-containment":"over","padding":1,"background-opacity":"0"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/secret-color.svg",
@@ -709,7 +709,7 @@ const data = {
                         y: "7",
                         "z-index": 1028
                       },
-                      styles: "{\"height\":\"25px\",\"width\":\"25px\",\"x\":\"7\", \"y\":\"7\"}",
+                      styles: '{"height":"25px","width":"25px","x":"7", "y":"7"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrolebinding-color.svg",
@@ -803,7 +803,7 @@ const data = {
                         "z-index": 39
                       },
                       styles:
-                        "{\"height\":20,\"width\":20,\"padding\":12,\"background-position-y\":4.5,\"x\":\"10px\",\"y\":\"12px\"}",
+                        '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
@@ -889,7 +889,7 @@ const data = {
                         "z-index": 18
                       },
                       styles:
-                        "{\"height\":\"25px\",\"width\":\"25px\",\"x\":\"7\", \"y\":\"7\",\"z-index\":4}",
+                        '{"height":"25px","width":"25px","x":"7", "y":"7","z-index":4}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/rolebinding-color.svg",
@@ -970,7 +970,7 @@ const data = {
                         "z-index": 27
                       },
                       styles:
-                        "{\"height\":\"22px\", \"width\":\"22px\", \"x\":\"8.5\", \"y\":\"7.5\",\"z-index\":4}",
+                        '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5","z-index":4}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/role-color.svg",
@@ -1308,7 +1308,7 @@ const data = {
                         y: "7.5",
                         "z-index": 47
                       },
-                      styles: "{\"height\":\"22px\", \"width\":\"22px\", \"x\":\"8.5\", \"y\":\"7.5\"}",
+                      styles: '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
@@ -1524,7 +1524,7 @@ const data = {
                         "z-index": 1031
                       },
                       styles:
-                        "{\"height\":\"25px\",\"width\":\"25px\",\"x\":\"7\", \"y\":\"7\",\"z-index\":4}",
+                        '{"height":"25px","width":"25px","x":"7", "y":"7","z-index":4}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/rolebinding-color.svg",
@@ -1723,7 +1723,7 @@ const data = {
                     id: "b18d15e9-2f3f-4748-b160-b0c1898a4b04",
                     "meshmodel-metadata": {
                       capabilities:
-                        " {\n  \"designer\": {\n    \"edit\": {\n      \"shape\": {\n        \"convert-shape\": false\n      }\n    }\n  }\n}",
+                        ' {\n  "designer": {\n    "edit": {\n      "shape": {\n        "convert-shape": false\n      }\n    }\n  }\n}',
                       defaultData: "",
                       genealogy: "parent",
                       isAnnotation: false,
@@ -1748,7 +1748,7 @@ const data = {
                         "z-index": 1014
                       },
                       styles:
-                        "{\"height\":\"15\",\"width\":\"15\",\"x\":\"12\",\"y\":\"20\",\"background-opacity\":\"0.2\"}",
+                        '{"height":"15","width":"15","x":"12","y":"20","background-opacity":"0.2"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/statefulset-color.svg",
@@ -1852,7 +1852,7 @@ const data = {
                         y: "7.5",
                         "z-index": 1012
                       },
-                      styles: "{\"height\":\"22px\", \"width\":\"22px\", \"x\":\"8.5\", \"y\":\"7.5\"}",
+                      styles: '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
@@ -2008,7 +2008,7 @@ const data = {
                         y: "7.5",
                         "z-index": 30
                       },
-                      styles: "{\"height\":\"22px\", \"width\":\"22px\", \"x\":\"8.5\", \"y\":\"7.5\"}",
+                      styles: '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
@@ -2133,7 +2133,7 @@ const data = {
                         "z-index": 40
                       },
                       styles:
-                        "{\"height\":\"22px\", \"width\":\"22px\", \"x\":\"8.5\", \"y\":\"7.5\",\"z-index\":4}",
+                        '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5","z-index":4}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/role-color.svg",
@@ -2519,7 +2519,7 @@ const data = {
                         "z-index": 1025
                       },
                       styles:
-                        "{\"height\":\"25px\",\"width\":\"25px\",\"x\":\"7\", \"y\":\"7\",\"z-index\":4}",
+                        '{"height":"25px","width":"25px","x":"7", "y":"7","z-index":4}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/rolebinding-color.svg",
@@ -2640,7 +2640,7 @@ const data = {
                         y: "7.5",
                         "z-index": 33
                       },
-                      styles: "{\"height\":\"22px\", \"width\":\"22px\", \"x\":\"8.5\", \"y\":\"7.5\"}",
+                      styles: '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
@@ -2938,7 +2938,7 @@ const data = {
                                       "sentry Address": { type: "string" },
                                       "token Validators": {
                                         description:
-                                          "Additional token validators to use. When Dapr is running in Kubernetes mode, this is in addition to the built-in \"kubernetes\" validator. In self-hosted mode, enabling a custom validator will disable the built-in \"insecure\" validator.",
+                                          'Additional token validators to use. When Dapr is running in Kubernetes mode, this is in addition to the built-in "kubernetes" validator. In self-hosted mode, enabling a custom validator will disable the built-in "insecure" validator.',
                                         items: {
                                           description:
                                             "ValidatorSpec contains additional token validators to use.",
@@ -3344,7 +3344,7 @@ const data = {
                         "z-index": 24
                       },
                       styles:
-                        "{\"height\":\"22px\", \"width\":\"22px\", \"x\":\"8.5\", \"y\":\"7.5\",\"z-index\":4}",
+                        '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5","z-index":4}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/role-color.svg",
@@ -3432,7 +3432,7 @@ const data = {
                         y: "7",
                         "z-index": 1033
                       },
-                      styles: "{\"height\":\"25px\",\"width\":\"25px\",\"x\":\"7\", \"y\":\"7\"}",
+                      styles: '{"height":"25px","width":"25px","x":"7", "y":"7"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrolebinding-color.svg",
@@ -3649,7 +3649,7 @@ const data = {
                     id: "f49cbd2f-6a98-4b8e-9435-a39f4a4c43ec",
                     "meshmodel-metadata": {
                       capabilities:
-                        "{\n  \"fieldRefs\": [\n    {\n      \"fieldPath\": \"spec.template.spec.containers\",\n      \"jsonSchemaPath\": \"properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]\",\n      \"component\": {\n        \"kind\": \"Container\",\n        \"model\": \"meshery-core\"\n      },\n      \"renderChildren\": true\n    },\n    {\n      \"fieldPath\": \"spec.template.spec.init Containers\",\n      \"jsonSchemaPath\": \"properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.init Containers.items.allOf[0]\",\n      \"component\": {\n        \"kind\": \"Container\",\n        \"model\": \"meshery-core\"\n      },\n      \"renderChildren\": true\n    }\n  ],\n  \"designer\": {\n    \"edit\": {\n      \"shape\": {\n        \"convert-shape\": false\n      }\n    }\n  }\n}",
+                        '{\n  "fieldRefs": [\n    {\n      "fieldPath": "spec.template.spec.containers",\n      "jsonSchemaPath": "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",\n      "component": {\n        "kind": "Container",\n        "model": "meshery-core"\n      },\n      "renderChildren": true\n    },\n    {\n      "fieldPath": "spec.template.spec.init Containers",\n      "jsonSchemaPath": "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.init Containers.items.allOf[0]",\n      "component": {\n        "kind": "Container",\n        "model": "meshery-core"\n      },\n      "renderChildren": true\n    }\n  ],\n  "designer": {\n    "edit": {\n      "shape": {\n        "convert-shape": false\n      }\n    }\n  }\n}',
                       defaultData: "",
                       genealogy: "parent",
                       isAnnotation: false,
@@ -3669,7 +3669,7 @@ const data = {
                         "border-width": 2,
                         "z-index": 43
                       },
-                      styles: "{\"border-width\":2,\"background-opacity\":0.5}",
+                      styles: '{"border-width":2,"background-opacity":0.5}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/deployment-color.svg",
@@ -3757,7 +3757,7 @@ const data = {
                         "z-index": 21
                       },
                       styles:
-                        "{\"height\":20,\"width\":20,\"padding\":12,\"background-position-y\":4.5,\"x\":\"10px\",\"y\":\"12px\"}",
+                        '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
@@ -3980,7 +3980,7 @@ const data = {
                               {
                                 name: "IGNORE_ENTRYPOINT_TOLERATIONS",
                                 value:
-                                  "[{\\\"effect\\\":\\\"NoSchedule\\\",\\\"key\\\":\\\"alibabacloud.com/eci\\\"},{\\\"effect\\\":\\\"NoSchedule\\\",\\\"key\\\":\\\"azure.com/aci\\\"},{\\\"effect\\\":\\\"NoSchedule\\\",\\\"key\\\":\\\"aws\\\"},{\\\"effect\\\":\\\"NoSchedule\\\",\\\"key\\\":\\\"huawei.com/cci\\\"}]"
+                                  '[{\\"effect\\":\\"NoSchedule\\",\\"key\\":\\"alibabacloud.com/eci\\"},{\\"effect\\":\\"NoSchedule\\",\\"key\\":\\"azure.com/aci\\"},{\\"effect\\":\\"NoSchedule\\",\\"key\\":\\"aws\\"},{\\"effect\\":\\"NoSchedule\\",\\"key\\":\\"huawei.com/cci\\"}]'
                               },
                               { name: "ACTORS_ENABLED", value: "true" },
                               { name: "ACTORS_SERVICE_NAME", value: "placement" },
@@ -4073,7 +4073,7 @@ const data = {
                     id: "8cef58f7-c05c-44f3-9a00-e67ff91d86ad",
                     "meshmodel-metadata": {
                       capabilities:
-                        "{\n  \"fieldRefs\": [\n    {\n      \"fieldPath\": \"spec.template.spec.containers\",\n      \"jsonSchemaPath\": \"properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]\",\n      \"component\": {\n        \"kind\": \"Container\",\n        \"model\": \"meshery-core\"\n      },\n      \"renderChildren\": true\n    },\n    {\n      \"fieldPath\": \"spec.template.spec.init Containers\",\n      \"jsonSchemaPath\": \"properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.init Containers.items.allOf[0]\",\n      \"component\": {\n        \"kind\": \"Container\",\n        \"model\": \"meshery-core\"\n      },\n      \"renderChildren\": true\n    }\n  ],\n  \"designer\": {\n    \"edit\": {\n      \"shape\": {\n        \"convert-shape\": false\n      }\n    }\n  }\n}",
+                        '{\n  "fieldRefs": [\n    {\n      "fieldPath": "spec.template.spec.containers",\n      "jsonSchemaPath": "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",\n      "component": {\n        "kind": "Container",\n        "model": "meshery-core"\n      },\n      "renderChildren": true\n    },\n    {\n      "fieldPath": "spec.template.spec.init Containers",\n      "jsonSchemaPath": "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.init Containers.items.allOf[0]",\n      "component": {\n        "kind": "Container",\n        "model": "meshery-core"\n      },\n      "renderChildren": true\n    }\n  ],\n  "designer": {\n    "edit": {\n      "shape": {\n        "convert-shape": false\n      }\n    }\n  }\n}',
                       defaultData: "",
                       genealogy: "parent",
                       isAnnotation: false,
@@ -4093,7 +4093,7 @@ const data = {
                         "border-width": 2,
                         "z-index": 45
                       },
-                      styles: "{\"border-width\":2,\"background-opacity\":0.5}",
+                      styles: '{"border-width":2,"background-opacity":0.5}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/deployment-color.svg",
@@ -4166,7 +4166,7 @@ const data = {
                     },
                     "meshmodel-metadata": {
                       capabilities:
-                        " {\n  \"designer\": {\n    \"edit\": {\n      \"shape\": {\n        \"convert-shape\": false\n      }\n    }\n  }\n}",
+                        ' {\n  "designer": {\n    "edit": {\n      "shape": {\n        "convert-shape": false\n      }\n    }\n  }\n}',
                       defaultData: "",
                       genealogy: "parent",
                       isAnnotation: false,
@@ -4192,7 +4192,7 @@ const data = {
                         "z-index": 16
                       },
                       styles:
-                        "{\"background-image\":\"none\",\"border-width\":2,\"border-style\":\"dashed\",\"background-opacity\":0.5}",
+                        '{"background-image":"none","border-width":2,"border-style":"dashed","background-opacity":0.5}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/namespace-color.svg",
@@ -4541,7 +4541,7 @@ const data = {
                         "z-index": 1030
                       },
                       styles:
-                        "{\"height\":\"25px\",\"width\":\"25px\",\"x\":\"7\", \"y\":\"7\",\"z-index\":4}",
+                        '{"height":"25px","width":"25px","x":"7", "y":"7","z-index":4}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/rolebinding-color.svg",
@@ -4755,7 +4755,7 @@ const data = {
                         y: "7",
                         "z-index": 1029
                       },
-                      styles: "{\"height\":\"25px\",\"width\":\"25px\",\"x\":\"7\", \"y\":\"7\"}",
+                      styles: '{"height":"25px","width":"25px","x":"7", "y":"7"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrolebinding-color.svg",
@@ -4851,7 +4851,7 @@ const data = {
                         "z-index": 1017
                       },
                       styles:
-                        "{\"height\":20,\"width\":20,\"padding\":12,\"background-position-y\":4.5,\"x\":\"10px\",\"y\":\"12px\"}",
+                        '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
@@ -4945,7 +4945,7 @@ const data = {
                         "z-index": 36
                       },
                       styles:
-                        "{\"height\":20,\"width\":20,\"padding\":12,\"background-position-y\":4.5,\"x\":\"10px\",\"y\":\"12px\"}",
+                        '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
@@ -5075,7 +5075,7 @@ const data = {
                         "z-index": 1015
                       },
                       styles:
-                        "{\"height\":\"22px\", \"width\":\"22px\", \"x\":\"8.5\", \"y\":\"7.5\",\"z-index\":4}",
+                        '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5","z-index":4}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/role-color.svg",
@@ -5299,7 +5299,7 @@ const data = {
                     id: "4feca210-ed3b-4f36-8f26-dd13bf070832",
                     "meshmodel-metadata": {
                       capabilities:
-                        " {\n  \"designer\": {\n    \"edit\": {\n      \"shape\": {\n        \"convert-shape\": false\n      }\n    }\n  }\n}",
+                        ' {\n  "designer": {\n    "edit": {\n      "shape": {\n        "convert-shape": false\n      }\n    }\n  }\n}',
                       defaultData: "",
                       genealogy: "parent",
                       isAnnotation: false,
@@ -5324,7 +5324,7 @@ const data = {
                         "z-index": 1011
                       },
                       styles:
-                        "{\"height\":\"15\",\"width\":\"15\",\"x\":\"12\",\"y\":\"20\",\"background-opacity\":\"0.2\"}",
+                        '{"height":"15","width":"15","x":"12","y":"20","background-opacity":"0.2"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/statefulset-color.svg",
@@ -5511,7 +5511,7 @@ const data = {
                     id: "b39527a7-de38-4937-86bb-cffe545198a4",
                     "meshmodel-metadata": {
                       capabilities:
-                        "{\n  \"fieldRefs\": [\n    {\n      \"fieldPath\": \"spec.template.spec.containers\",\n      \"jsonSchemaPath\": \"properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]\",\n      \"component\": {\n        \"kind\": \"Container\",\n        \"model\": \"meshery-core\"\n      },\n      \"renderChildren\": true\n    },\n    {\n      \"fieldPath\": \"spec.template.spec.init Containers\",\n      \"jsonSchemaPath\": \"properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.init Containers.items.allOf[0]\",\n      \"component\": {\n        \"kind\": \"Container\",\n        \"model\": \"meshery-core\"\n      },\n      \"renderChildren\": true\n    }\n  ],\n  \"designer\": {\n    \"edit\": {\n      \"shape\": {\n        \"convert-shape\": false\n      }\n    }\n  }\n}",
+                        '{\n  "fieldRefs": [\n    {\n      "fieldPath": "spec.template.spec.containers",\n      "jsonSchemaPath": "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",\n      "component": {\n        "kind": "Container",\n        "model": "meshery-core"\n      },\n      "renderChildren": true\n    },\n    {\n      "fieldPath": "spec.template.spec.init Containers",\n      "jsonSchemaPath": "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.init Containers.items.allOf[0]",\n      "component": {\n        "kind": "Container",\n        "model": "meshery-core"\n      },\n      "renderChildren": true\n    }\n  ],\n  "designer": {\n    "edit": {\n      "shape": {\n        "convert-shape": false\n      }\n    }\n  }\n}',
                       defaultData: "",
                       genealogy: "parent",
                       isAnnotation: false,
@@ -5531,7 +5531,7 @@ const data = {
                         "border-width": 2,
                         "z-index": 1005
                       },
-                      styles: "{\"border-width\":2,\"background-opacity\":0.5}",
+                      styles: '{"border-width":2,"background-opacity":0.5}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/deployment-color.svg",
@@ -5647,7 +5647,7 @@ const data = {
                         "z-index": 1008
                       },
                       styles:
-                        "{\"height\":20,\"width\":20,\"padding\":12,\"background-position-y\":4.5,\"x\":\"10px\",\"y\":\"12px\"}",
+                        '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
@@ -5844,7 +5844,7 @@ const data = {
                         "z-index": 31
                       },
                       styles:
-                        "{\"height\":20,\"width\":20,\"padding\":12,\"background-position-y\":4.5,\"x\":\"10px\",\"y\":\"12px\"}",
+                        '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
@@ -5932,7 +5932,7 @@ const data = {
                         y: "7",
                         "z-index": 1032
                       },
-                      styles: "{\"height\":\"25px\",\"width\":\"25px\",\"x\":\"7\", \"y\":\"7\"}",
+                      styles: '{"height":"25px","width":"25px","x":"7", "y":"7"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrolebinding-color.svg",
@@ -6201,7 +6201,7 @@ const data = {
                     },
                     "meshmodel-metadata": {
                       capabilities:
-                        "{\n  \"designer\": {\n    \"capabilities\": {\n      \"config\": true,\n      \"label\": false,\n      \"policy\": false,\n      \"relationships\": true,\n      \"json-schema\": false,\n      \"permissions\": false,\n      \"workflow\": false,\n      \"gitops\": false,\n      \"history\": false\n    },\n    \"supportsCompoundDragAndDrop\": false,\n    \"edit\": {\n      \"config\": true,\n      \"copy\": false,\n      \"delete\": true,\n      \"duplicate\": false,\n      \"reset-styles\": false,\n      \"resolve\": false,\n      \"lock\": false,\n      \"shape\": {\n        \"convert-shape\": true\n      },\n      \"style\": true\n    },\n    \"label\": {\n      \"edit\": false,\n      \"show\": true,\n      \"sync-with-config-property\": \"name\"\n    }\n  }\n}",
+                        '{\n  "designer": {\n    "capabilities": {\n      "config": true,\n      "label": false,\n      "policy": false,\n      "relationships": true,\n      "json-schema": false,\n      "permissions": false,\n      "workflow": false,\n      "gitops": false,\n      "history": false\n    },\n    "supportsCompoundDragAndDrop": false,\n    "edit": {\n      "config": true,\n      "copy": false,\n      "delete": true,\n      "duplicate": false,\n      "reset-styles": false,\n      "resolve": false,\n      "lock": false,\n      "shape": {\n        "convert-shape": true\n      },\n      "style": true\n    },\n    "label": {\n      "edit": false,\n      "show": true,\n      "sync-with-config-property": "name"\n    }\n  }\n}',
                       defaultData: "",
                       genealogy: "",
                       hasInvalidSchema: true,
@@ -6296,7 +6296,7 @@ const data = {
                     },
                     "meshmodel-metadata": {
                       capabilities:
-                        "{\n  \"designer\": {\n    \"capabilities\": {\n      \"config\": true,\n      \"label\": false,\n      \"policy\": false,\n      \"relationships\": true,\n      \"json-schema\": false,\n      \"permissions\": false,\n      \"workflow\": false,\n      \"gitops\": false,\n      \"history\": false\n    },\n    \"supportsCompoundDragAndDrop\": false,\n    \"edit\": {\n      \"config\": true,\n      \"copy\": false,\n      \"delete\": true,\n      \"duplicate\": false,\n      \"reset-styles\": false,\n      \"resolve\": false,\n      \"lock\": false,\n      \"shape\": {\n        \"convert-shape\": true\n      },\n      \"style\": true\n    },\n    \"label\": {\n      \"edit\": false,\n      \"show\": true,\n      \"sync-with-config-property\": \"name\"\n    }\n  }\n}",
+                        '{\n  "designer": {\n    "capabilities": {\n      "config": true,\n      "label": false,\n      "policy": false,\n      "relationships": true,\n      "json-schema": false,\n      "permissions": false,\n      "workflow": false,\n      "gitops": false,\n      "history": false\n    },\n    "supportsCompoundDragAndDrop": false,\n    "edit": {\n      "config": true,\n      "copy": false,\n      "delete": true,\n      "duplicate": false,\n      "reset-styles": false,\n      "resolve": false,\n      "lock": false,\n      "shape": {\n        "convert-shape": true\n      },\n      "style": true\n    },\n    "label": {\n      "edit": false,\n      "show": true,\n      "sync-with-config-property": "name"\n    }\n  }\n}',
                       defaultData: "",
                       genealogy: "",
                       hasInvalidSchema: true,
@@ -6391,7 +6391,7 @@ const data = {
                     },
                     "meshmodel-metadata": {
                       capabilities:
-                        "{\n  \"designer\": {\n    \"capabilities\": {\n      \"config\": true,\n      \"label\": false,\n      \"policy\": false,\n      \"relationships\": true,\n      \"json-schema\": false,\n      \"permissions\": false,\n      \"workflow\": false,\n      \"gitops\": false,\n      \"history\": false\n    },\n    \"supportsCompoundDragAndDrop\": false,\n    \"edit\": {\n      \"config\": true,\n      \"copy\": false,\n      \"delete\": true,\n      \"duplicate\": false,\n      \"reset-styles\": false,\n      \"resolve\": false,\n      \"lock\": false,\n      \"shape\": {\n        \"convert-shape\": true\n      },\n      \"style\": true\n    },\n    \"label\": {\n      \"edit\": false,\n      \"show\": true,\n      \"sync-with-config-property\": \"name\"\n    }\n  }\n}",
+                        '{\n  "designer": {\n    "capabilities": {\n      "config": true,\n      "label": false,\n      "policy": false,\n      "relationships": true,\n      "json-schema": false,\n      "permissions": false,\n      "workflow": false,\n      "gitops": false,\n      "history": false\n    },\n    "supportsCompoundDragAndDrop": false,\n    "edit": {\n      "config": true,\n      "copy": false,\n      "delete": true,\n      "duplicate": false,\n      "reset-styles": false,\n      "resolve": false,\n      "lock": false,\n      "shape": {\n        "convert-shape": true\n      },\n      "style": true\n    },\n    "label": {\n      "edit": false,\n      "show": true,\n      "sync-with-config-property": "name"\n    }\n  }\n}',
                       defaultData: "",
                       genealogy: "",
                       hasInvalidSchema: true,
@@ -31415,8 +31415,8 @@ const addStyles = () => {
         font-size: 1.25rem;
    }
      `,
-      head = document.head || document.getElementsByTagName("head")[0],
-      style = document.createElement("style");
+    head = document.head || document.getElementsByTagName("head")[0],
+    style = document.createElement("style");
 
   head.appendChild(style);
 

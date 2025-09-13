@@ -81,7 +81,7 @@ const data = {
                     },
                     "meshmodel-metadata": {
                       capabilities:
-                        "{ \"designer\": { \"edit\": { \"config\": false, \"lock\": true, \"shape\": { \"convert-shape\": true }, \"style\": true }, \"label\": { \"edit\": true, \"show\": true, \"sync-with-config-property\": \"label\" } } }",
+                        '{ "designer": { "edit": { "config": false, "lock": true, "shape": { "convert-shape": true }, "style": true }, "label": { "edit": true, "show": true, "sync-with-config-property": "label" } } }',
                       defaultData: "",
                       genealogy: "",
                       hasInvalidSchema: true,
@@ -199,7 +199,7 @@ const data = {
                     },
                     "meshmodel-metadata": {
                       capabilities:
-                        "{ \"designer\": { \"edit\": { \"config\": false, \"lock\": true, \"shape\": { \"convert-shape\": true }, \"style\": true }, \"label\": { \"edit\": true, \"show\": true, \"sync-with-config-property\": \"label\" } } }",
+                        '{ "designer": { "edit": { "config": false, "lock": true, "shape": { "convert-shape": true }, "style": true }, "label": { "edit": true, "show": true, "sync-with-config-property": "label" } } }',
                       defaultData: "",
                       genealogy: "",
                       hasInvalidSchema: true,
@@ -1595,8 +1595,8 @@ const addStyles = () => {
         font-size: 1.25rem;
    }
      `,
-      head = document.head || document.getElementsByTagName("head")[0],
-      style = document.createElement("style");
+    head = document.head || document.getElementsByTagName("head")[0],
+    style = document.createElement("style");
 
   head.appendChild(style);
 

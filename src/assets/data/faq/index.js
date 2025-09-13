@@ -119,20 +119,20 @@ const data = {
       ],
     },
     {
-      question: "What is the difference between Kanvas and the Cloud Native Playground?",
+      question: `What is the difference between Kanvas and the Cloud Native Playground?`,
       category: "Meshery",
       answer: [
         "The Cloud Native Playground (aka Meshery Playground) is a managed instance of Meshery that offers a sandbox environment in which half of Kanvas<sup>BETA</sup>&nbsp;functionality is enabled (Designer mode) and the other half of Kanvas<sup>BETA</sup> functionality is disabled (Visualizer mode).",
         "The sandbox environment is not connected to an active Kuberentes cluster, and as such, specific actions within Kanvas Designer are also disabled. Meshery and Kanvas are feature-rich, sophisticated management applications for cloud native infrastructure. To access their full set of capabilities, simply deploy your own copy of Meshery into the environment of your choosing.",
       ],
-    },
+    },    
     {
       question: "Are designs that I create in the Meshery Playground saved or will I look any work that I do in the playground?",
       category: "Meshery",
       answer: [
         "All of the designs that you have created in the Meshery Playground are saved to your user account and will be available to you each time that you return to the Playground. The designs will also be available in your other Meshery deployments.",
       ],
-    },
+    },    
 
     //
     // INTEGRATIONS
@@ -192,8 +192,8 @@ const data = {
       link: "https://layer5.io/cloud-native-management/kanvas",
       linktext: "Kanvas Beta",
       answer: [
-        "Kanvas is available in beta today. Signup for Kanvas beta access and use Kanvas for free.",
-        "Your request for early access will be processeed as quicky as possible but due to the large influx of program participation requests, it may take some time before system access is granted. In the meantime to help you familiarize with Meshery, the maintainers team will send you additional information about the early access program."
+       "Kanvas is available in beta today. Signup for Kanvas beta access and use Kanvas for free.",
+       "Your request for early access will be processeed as quicky as possible but due to the large influx of program participation requests, it may take some time before system access is granted. In the meantime to help you familiarize with Meshery, the maintainers team will send you additional information about the early access program."
       ]
     },
     {
@@ -203,10 +203,10 @@ const data = {
       linktext: "Kanvas Beta",
       answer: [
         "Kanvas is cloud native collaboration tool for managing your infrastructure and applications. Kanvas has two modes: Visualizer for operating your actively running Kubernetes clusters and Designer for configuring your Kubernetes clusters and creating your creating your application deployments.",
-        "Kanvas is in beta mode and you can ask for early access to try it out.",
+       "Kanvas is in beta mode and you can ask for early access to try it out.",
       ]
     },
-
+    
     //
     // PRICING
     //
@@ -321,7 +321,7 @@ const data = {
       ],
     },
 
-    //
+     //
     // CAREERS / INTERNSHIPS
     //
 
@@ -343,7 +343,7 @@ const data = {
         "Continuously. Layer5 has internships starting and stopping frequently. Some internships rigidly start and stop on particular dates, while other internships offered start as a batch of candidates show collective readiness. We work with individuals to align the timings of the internship with other activities in their life.",
       ],
       link: "https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+",
-      linktext: "Grab a \"Help Wanted\" Issue",
+      linktext: 'Grab a "Help Wanted" Issue',
     },
     {
       question: "What are characteristics of successful interns?",
@@ -371,7 +371,7 @@ const data = {
         "Internships are offered based on our commitment to supporting individuals who make a meaningful impact in the community and on our projects. While experience in other projects is wonderful and can be helpful as individuals strive to contribute meaningfully here, it is not a determining factor in whether or not an internship is appropriate to award. The metric we use is whether the individual demonstrates a sustained and positive impact on the projects we steward. We extend support to anyone who achieves this, often in the form of an internship if it proves beneficial to the individual.",
       ],
     },
-
+    
     //
     // OTHER
     //
