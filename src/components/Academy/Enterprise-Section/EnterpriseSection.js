@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../../reusecore/Button";
+// import { Link } from "gatsby";
 
 const EnterpriseSectionWrapper = styled.section`
   
@@ -204,7 +205,7 @@ const EnterpriseSection = () => {
     <EnterpriseSectionWrapper className="audience-section enterprise-section fade-in">
       <div className="audience-content">
         <div className="demo-card">
-          <div className="demo-header">With Layer5 Academy:</div>
+          <div className="demo-header">Organizations using Layer5 Academy achieve:</div>
           <div className="demo-content-alt">
             <div style={{ marginBottom: "1.5rem" }}>
               <div className="progress-item">
@@ -237,7 +238,11 @@ const EnterpriseSection = () => {
           </div>
         </div>
         <div className="audience-text">
-          <h2>For <span className="highlight">Enterprise</span> Teams</h2>
+          <h2>For <span className="highlight">Large Organizations</span></h2>
+          {/* <p>
+            Accelerate your enterprise platform transformation with structured cloud native training, customizable contents, and enterprise-grade analytics to maximize ROI and reduce risk.{" "}
+            <Link to="/collections/resources/comparison/layer5-academy-vs-moocit">Compare Layer5 Academy with traditional platforms.</Link>
+          </p> */}
           <p>Accelerate your enterprise platform transformation with structured cloud native training, customizable contents, and enterprise-grade analytics to maximize ROI and reduce risk. <a href="https://layer5.io/resources/academy/layer5-academy-vs-moocit" target="_blank" rel="noopener noreferrer">Compare Layer5 Academy with traditional platforms.</a></p>
           <ul className="audience-features">
             <li>Three comprehensive <a href="https://docs.layer5.io/cloud/academy/creating-content/" target="_blank" rel="noopener noreferrer">content library</a>: Learning Paths, Challenges, and Certifications for all skill levels and training scenarios</li>

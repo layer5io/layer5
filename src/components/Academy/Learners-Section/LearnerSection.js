@@ -160,7 +160,7 @@ const LearnerSection = () => {
     <LearnerSectionWrapper className="audience-section learners-section fade-in">
       <div className="audience-content">
         <div className="audience-text">
-          <h2>For <span className="highlight">Learning</span> Enthusiasts</h2>
+          <h2>For <span className="highlight">Learners</span></h2>
           <p>Whether you're just starting with containers or deepening your microservices architecture knowledge, our comprehensive platform adapts to your learning style and pace.</p>
           <ul className="audience-features">
             <li>Progressive <a href="https://cloud.layer5.io/academy?contentType=learning-path" target="_blank" rel="noopener noreferrer">learning paths</a> tailored to your experience</li>
