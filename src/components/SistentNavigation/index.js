@@ -12,6 +12,9 @@ import { useLocation } from "@reach/router";
 const TOC = () => {
   const [expand, setExpand] = useState(false);
   const location = useLocation();
+  const [expandGettingStarted, setExpandGettingStarted] = useState(
+    location.pathname.includes("/getting-started")
+  );
   const [expandIdenity, setExpandIdentity] = useState(
     location.pathname.includes("/identity")
   );
@@ -52,13 +55,74 @@ const TOC = () => {
       <div className="toc-list">
         <ul className={`toc-ul ${expand ? "toc-ul-open" : ""}`}>
           <li>
-            <Link
-              to="/projects/sistent/about"
-              className="toc-sub-heading toc-sub-inline"
-              activeClassName="active"
-            >
-              About
-            </Link>
+            <div>
+              <li
+                className="toc-sub-heading getting-started"
+                onClick={() => setExpandGettingStarted((prev) => !prev)}
+              >
+                Getting Started
+                {expandGettingStarted ?
+                  <IoIosArrowDown style={{ zIndex: 2 }} /> :
+                  <IoIosArrowForward style={{ zIndex: 2 }} />
+                }
+              </li>
+              {expandGettingStarted && (
+                <div className="getting-started-sublinks">
+                  <li>
+                    <Link
+                      to="/projects/sistent/getting-started/about"
+                      className={`toc-sub-heading toc-sub-inline getting-started-item ${
+                        location.pathname.includes("/projects/sistent/getting-started/about")
+                          ? "active"
+                          : ""
+                      }`}
+                      activeClassName="active"
+                    >
+                      About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/projects/sistent/getting-started/installation"
+                      className={`toc-sub-heading toc-sub-inline getting-started-item ${
+                        location.pathname.includes("/projects/sistent/getting-started/installation")
+                          ? "active"
+                          : ""
+                      }`}
+                      activeClassName="active"
+                    >
+                      Installation
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/projects/sistent/getting-started/usage"
+                      className={`toc-sub-heading toc-sub-inline getting-started-item ${
+                        location.pathname.includes("/projects/sistent/getting-started/usage")
+                          ? "active"
+                          : ""
+                      }`}
+                      activeClassName="active"
+                    >
+                      Usage
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/projects/sistent/getting-started/tokens"
+                      className={`toc-sub-heading toc-sub-inline getting-started-item ${
+                        location.pathname.includes("/projects/sistent/getting-started/tokens")
+                          ? "active"
+                          : ""
+                      }`}
+                      activeClassName="active"
+                    >
+                      Tokens
+                    </Link>
+                  </li>
+                </div>
+              )}
+            </div>
           </li>
           <li>
             <div>
