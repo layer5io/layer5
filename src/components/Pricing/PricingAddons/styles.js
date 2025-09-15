@@ -53,7 +53,8 @@ export const typographyStyles = {
     fontSize: "0.8rem",
     fontStyle: "italic",
     fontFamily: QANELAS_FONT,
-    color: "text.secondary"
+    color: "text.secondary",
+    marginTop: 0.5,
   },
   pricingItemLeft: {
     marginLeft: 0.5,
