@@ -12,7 +12,7 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean && rimraf node_modules",
-    "develop": "gatsby develop",
+    "develop": "NODE_OPTIONS=\"--max-old-space-size=10096\" gatsby develop",
     "dev": "npm run develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
