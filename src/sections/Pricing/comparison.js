@@ -4,7 +4,7 @@ import details  from "./generateDetails";
 import { Container } from "../../reusecore/Layout";
 // import FeatureDetails from "./collapsible-details";
 import FeatureDetails from "../../components/Pricing/PlanCard/collapsible-details";
-
+import { useRef } from "react";
 
 const ComparisonWrapper = styled.div`
 margin: 6rem auto;
@@ -20,14 +20,13 @@ h2, h5{
     box-shadow: 0 0 24px ${props => props.theme.whiteOneFiveToBlackOneFive};
     margin: 2rem auto;
     display: block;
-    overflow-x: scroll;
-    overflow-y:hidden;
     transition: 0.6s cubic-bezier(0.5, 1);
 }
 .price-table {
     width: 100%;
     border-collapse: collapse;
     border: 0 none;
+    table-layout: fixed;
 }
 .price-table tr:not(:last-child) {
     border-bottom: 1px solid ${props => props.theme.whiteZeroThreeToBlackZeroThree};
@@ -58,7 +57,22 @@ h2, h5{
 }
 .price-table tr:nth-child(even) {
 }
-
+.price-table-header-sticky {
+    overflow-x: scroll;
+    position: sticky;
+    top: -0.5rem;
+    scrollbar-color: ${(props) => props.theme.whiteZeroThreeToBlackZeroThree}
+      ${(props) => props.theme.whiteZeroThreeToBlackZeroThree};
+  }
+  @media (min-width: 1100px) {
+    .price-table-header-sticky {
+      top: 0.5rem;
+    }
+  }
+.price-table-body-scroll {
+    overflow-x: scroll;
+    scrollbar-width: auto;
+  }
 .price-table tr:hover {
     background-color: ${props => props.theme.secondaryLightColor};
     transition: 0.6s cubic-bezier(0.5, 1);
@@ -69,7 +83,15 @@ h2, h5{
 .price-table .fa-times {
     color: #D8D6E3;
 }
-
+.price-table col {
+  width: 8rem;
+}
+.price-table col:nth-child(1) {
+  width: clamp(20rem, 40vw, 38rem);
+}
+.price-table col:nth-child(5) {
+  width: 9rem;
+}
 /* Highlighted column */
 
 .price-table tr td:nth-child(3) {
@@ -192,53 +214,94 @@ td.feature {
 `;
 
 const Comparison = () => {
+  /* REF FOR SCROLL SYNC*/
+  const headerScrollRef = useRef(null);
+  const bodyScrollRef = useRef(null);
+  const handleHeadBodyScroll = () => {
+    bodyScrollRef.current.scrollLeft = headerScrollRef.current.scrollLeft;
+  };
+  const handleBodyHeadScroll = () => {
+    headerScrollRef.current.scrollLeft = bodyScrollRef.current.scrollLeft;
+  };
+  /* */
   return (
-    <ComparisonWrapper >
+    <ComparisonWrapper>
       <h2>Compare All Features</h2>
       <h5 id={"feature-comparison"}>Choose a plan that’s right for you</h5>
       <Container>
         <div className="main">
-          <table className="price-table">
-            <tbody>
-              <tr>
-                <th className="price-blank"></th>
-                <th className="price-blank"></th>
-                <th className="price-table-popular">Most popular</th>
-                <th className="price-blank"></th>
-                <th className="price-blank"></th>
-              </tr>
-              <tr className="price-table-head">
-                <td></td>
-                <td>Free</td>
-                <td>Team Designer</td>
-                <td>Team Operator</td>
-                <td>Enterprise</td>
-              </tr>
-
-              {details.map((x) => (
-                <>
-                  <tr key={x.id} >
-                    <td className="categories" colSpan="5">
-                      <img src={x.icon} height={32} className="category-icon" alt={x.category} />
-                      <h3 className="category">{x.category}</h3></td>
-                  </tr>
-                  {x.features.map((f) => (
-                    <tr key={f.feature}>
-                      <td><FeatureDetails category={f.feature} description={f.description} /></td>
-                      <td className="feature">{f.free}</td>
-                      <td className="feature">{f.teamDesigner}</td>
-                      <td className="feature">{f.teamOperator}</td>
-                      <td className="feature">{f.enterprise}</td>
+          <div
+            className="price-table-header-sticky" ref={headerScrollRef} onScroll={handleHeadBodyScroll}>
+            <table className="price-table">
+              <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th className="price-blank"></th>
+                  <th className="price-blank"></th>
+                  <th className="price-table-popular">Most popular</th>
+                  <th className="price-blank"></th>
+                  <th className="price-blank"></th>
+                </tr>
+                <tr className="price-table-head">
+                  <td></td>
+                  <td>Free</td>
+                  <td>Team Designer</td>
+                  <td>Team Operator</td>
+                  <td>Enterprise</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="price-table-body-scroll" ref={bodyScrollRef} onScroll={handleBodyHeadScroll}>
+            <table className="price-table">
+              <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+              </colgroup>
+              <tbody>
+                {details.map((x) => (
+                  <>
+                    <tr key={x.id}>
+                      <td className="categories" colSpan="5">
+                        <img
+                          src={x.icon}
+                          height={32}
+                          className="category-icon"
+                          alt={x.category}
+                        />
+                        <h3 className="category">{x.category}</h3>
+                      </td>
                     </tr>
-                  ))}
-                </>
-              ))}
-
-            </tbody>
-          </table>
+                    {x.features.map((f) => (
+                      <tr key={f.feature}>
+                        <td>
+                          <FeatureDetails
+                            category={f.feature}
+                            description={f.description}
+                          />
+                        </td>
+                        <td className="feature">{f.free}</td>
+                        <td className="feature">{f.teamDesigner}</td>
+                        <td className="feature">{f.teamOperator}</td>
+                        <td className="feature">{f.enterprise}</td>
+                      </tr>
+                    ))}
+                  </>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </Container>
-
     </ComparisonWrapper>
   );
 };
