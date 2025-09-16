@@ -3,14 +3,18 @@ import HeroSection from "../../components/Academy/Hero-Section/HeroSection";
 import LearnerSection from "../../components/Academy/Learners-Section/LearnerSection";
 import EnterpriseSection from "../../components/Academy/Enterprise-Section/EnterpriseSection";
 import SEO from "../../components/seo";
+import  AcademyMobileSwiper  from "../../components/Academy/Features-Section/AcademyFeaturesMobileSwiper";
+import AcademyFeatureCarousel from "../../components/Academy/Features-Section/AcademyFeaturesCarousel";
 
 const AcademySection = () => {
 
   return (
-    <div className="academy-page">
+    <div className="academy-page" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
       <HeroSection />
       <LearnerSection />
       <EnterpriseSection />
+      <AcademyMobileSwiper />
+      <AcademyFeatureCarousel />
     </div>
   );
 };
