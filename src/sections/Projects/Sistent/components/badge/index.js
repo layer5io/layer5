@@ -1,4 +1,4 @@
-
+/* eslint-disable linebreak-style */
 import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
