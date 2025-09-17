@@ -4,11 +4,28 @@ import styled from "styled-components";
 const Dimensions = ["", "8.333333%", "16.666667%", "25%", "33.333333%", "41.666667%", "50%", "58.333333%", "66.666667%", "75%", "83.333333%", "91.666667%", "100%"];
 
 const ColWrapper = styled.div`
+
     position: relative;
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0; 
 
+    flex: 0 1 300px; 
+    max-width: 300px;
+    width: 100%;
+
+    @media (max-width: 1200px) {
+    flex: 0 1 45%;
+    max-width: 45%;
+    }
+    @media (max-width: 768px) {
+    flex: 0 1 100%;
+    max-width: 100%;
+    }
     @media (min-width: 315px) {
         flex: ${({ $xs }) =>
   ($xs === 1 && `0 0 ${Dimensions[1]}`) ||
