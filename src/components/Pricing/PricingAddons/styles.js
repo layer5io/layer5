@@ -285,7 +285,7 @@ export const sliderStyles = {
   },
   baseOther: {
     mb: 4,
-    ml:6,
+    ml: 6,
     width: "80%",
     display: "flex",
     justifyContent: "center"
