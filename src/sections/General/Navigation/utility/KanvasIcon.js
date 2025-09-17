@@ -17,7 +17,7 @@ function KanvasIcon() {
           <polygon fill="#00b39f" points="447.37 348.75 447.37 149.97 275.4 249.52 447.37 348.75"></polygon>
           <polygon fill="#00d3a9" points="52.63 149.59 52.63 349.85 225.87 249.56 52.63 149.59"></polygon>
         </g>
-      </g>    
+      </g>
     </svg>
   );
 }
