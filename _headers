@@ -12,7 +12,3 @@
 # Cache HTML files for 10 months
 /*.html
   Cache-Control: public, max-age=25920000
-
-/*
-  X-Frame-Options: SAMEORIGIN
-  Content-Security-Policy: frame-ancestors 'self'

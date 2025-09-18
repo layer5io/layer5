@@ -44,6 +44,15 @@ const MagicScriptTag = (props) => {
   return <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />;
 };
 
-export const onRenderBody = ( { setPreBodyComponents }) => {
+export const onRenderBody = ( { setPreBodyComponents, setHeadComponents }) => {
   setPreBodyComponents(<MagicScriptTag key="theme-injection" theme={themes} />);
+  setHeadComponents([
+    <meta
+      key="csp"
+      httpEquiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self';"
+    />,
+    <meta key="content-type" httpEquiv="X-Content-Type-Options" content="nosniff" />,
+    <meta key="referrer" httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />,
+  ]);
 };

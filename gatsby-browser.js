@@ -30,5 +30,14 @@ function initGTM() {
   document.head.appendChild(script);
 }
 
+export const onClientEntry = () => {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js").then(() => {
+      console.log("Custom Service Worker Registered ✅");
+    });
+  }
+};
+
+
 export { wrapRootElement } from "./root-wrapper";
 export { wrapPageElement } from "./page-wrapper";
