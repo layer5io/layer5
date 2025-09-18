@@ -18,21 +18,6 @@ module.exports = {
     image: "/images/layer5-gradient.webp",
     twitterUsername: "@layer5",
   },
-  headers: [
-    {
-      source: "/*",
-      headers: [
-        {
-          key: "X-Frame-Options",
-          value: "SAMEORIGIN",
-        },
-        {
-          key: "Content-Security-Policy",
-          value: "frame-ancestors 'self'",
-        },
-      ]
-    }
-  ],
   flags: {
     FAST_DEV: true,
     PARALLEL_SOURCING: false, // Disable parallel sourcing to reduce memory pressure
@@ -40,19 +25,19 @@ module.exports = {
   },
   trailingSlash: "never",
   plugins: [
-    // {
-    //   resolve: "gatsby-plugin-netlify",
-    //   options: {
-    //     headers: {
-    //       "/*": [
-    //         "X-Frame-Options: SAMEORIGIN",
-    //         "Content-Security-Policy: frame-ancestors 'self'",
-    //       ]
-    //     },
-    //     mergeSecurityHeaders: true,
-    //     mergeCachingHeaders: true,
-    //   },
-    // },
+    {
+      resolve: "gatsby-plugin-netlify",
+      options: {
+        headers: {
+          "/*": [
+            "X-Frame-Options: SAMEORIGIN",
+            "Content-Security-Policy: frame-ancestors 'self'",
+          ]
+        },
+        mergeSecurityHeaders: true,
+        mergeCachingHeaders: true,
+      },
+    },
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
