@@ -9,7 +9,7 @@ import AcademyFeatureCarousel from "../../components/Academy/Features-Section/Ac
 const AcademySection = () => {
 
   return (
-    <div className="academy-page" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+    <div className="academy-page">
       <HeroSection />
       <LearnerSection />
       <EnterpriseSection />

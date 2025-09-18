@@ -30,8 +30,8 @@ const CONTENT = [
     title: "Track Your Learning Journey",
     img: Track,
     description:
-      "Stay motivated with clear progress tracking. Follow your completed labs and challenges, and watch your cloud native skills grow step by step.",
-  },
+      "Stay motivated with clear progress tracking as you move forward. Keep an eye on your completed labs, challenges, and milestones, and see how your cloud native skills steadily grow step by step.",
+  }
 ];
 
 const DivWrapper = styled.div`

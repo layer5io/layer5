@@ -36,18 +36,34 @@ const CONTENT = [
     title: "Track Your Learning Journey",
     img: Track,
     description:
-      "Stay motivated with clear progress tracking. Follow your completed labs and challenges, and watch your cloud native skills grow step by step.",
-    gradient: "four",
-  },
+      "Stay motivated with clear progress tracking as you move forward. Keep an eye on your completed labs, challenges, and milestones, and see how your cloud native skills steadily grow step by step.",
+  }
 ];
 
 const DivWrapper = styled.div`
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   .highlight {
     background: linear-gradient(135deg, #00b39f, #00d3a9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+
+  img {
+    max-height: 50%;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    padding-inline: 1rem;
+  }
+
 `;
 
 
@@ -56,7 +72,7 @@ const Card = ({ title, description, img }) => {
     <div className="card">
       <h2>{title}</h2>
       <p>{description}</p>
-      <img style={{ border: "1px solid #444444", borderRadius: "10px" }} src={img} alt="" />
+      <img style={{ border: "1px solid #444444", borderRadius: "10px", height: "50%" }} src={img} alt="" />
     </div>
   );
 };
@@ -65,7 +81,7 @@ const AcademyMobileSwiper = () => {
   return (
     <DivWrapper>
       <SwiperContainer style={{ marginBottom: "10%" }}>
-        <h2>Unlock Your <span className="highlight">Cloud Native</span> Journey</h2>
+        <h2 style={{ marginBottom: "2rem" }}>Unlock Your <span className="highlight">Cloud Native</span> Journey</h2>
         <Swiper
           autoplay={{
             delay: 2000,
