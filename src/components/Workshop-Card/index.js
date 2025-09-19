@@ -1,10 +1,10 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import Image from "../image";
 import WorkshopCardWrapper from "./WorkshopsCardWrapper.style";
 
-const WorkshopCardContent = ({ frontmatter, content, ID, id }) => {
+const WorkshopCardContent = forwardRef(({ frontmatter, content, ID, id }, ref) => {
   return (
-    <WorkshopCardWrapper>
+    <WorkshopCardWrapper ref={ref}>
       <div className={content && ID === id ? "main-open" : "main"}>
         <div className={content && ID === id ? "image-container-open" : "image-container"}>
           <div className="image">
@@ -22,5 +22,6 @@ const WorkshopCardContent = ({ frontmatter, content, ID, id }) => {
       </div>
     </WorkshopCardWrapper>
   );
-};
+});
+
 export default WorkshopCardContent;
