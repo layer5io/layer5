@@ -424,47 +424,38 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
                           {selectedAddon.pricing?.[quantityIndex]?.units || 0} {selectedAddon?.unitLabel}
                         </Typography>
                         <Slider
-                            value={quantityIndex}
-                            onChange={(event, newValue) => setQuantityIndex(newValue)}
-                            min={0}
-                            valueLabelDisplay="auto"
-                            valueLabelFormat={(value) => {
-                              const option = selectedAddon?.pricing?.[value];
-                              if (option) {
-                                const pricePerUnit = isYearly ? option.yearlyPerUnit : option.monthlyPerUnit;
-                                const totalPrice = pricePerUnit * option.units;
-                                const period = isYearly ? "/year" : "/month";
-                                return `${option.units} ${selectedAddon.unitLabel?.slice(0, -1) || "unit"} - ${formatPrice(totalPrice)}${period}`;
-                              }
-                              return "";
-                            }}
-                            max={(selectedAddon?.pricing?.length - 1) || 0}
-                            step={null}
-                            sx={getSliderStyle(sliderStyles.baseOther, "1rem")} // ← use same style as academy
-                            marks={selectedAddon?.pricing?.map((option, index) => ({
-                              value: index,
-                              label: (
-                                <Box sx={{ textAlign: "center", fontSize: "1.25rem", fontWeight: "bold" }}>
-                                  <Box>{option.units}</Box>
-                                  <Box
-                                    sx={{
-                                      color: "text.secondary",
-                                      mb: 1.5,
-                                      fontSize: {
-                                        xs: "0.75rem",
-                                        sm: "0.9rem",
-                                      }
-                                    }}>
-                                    {formatPrice(isYearly ? option.yearlyPerUnit : option.monthlyPerUnit)}<br />{selectedAddon.unitLabel?.slice(0, -1) || "unit"}/{isYearly ? "year" : "month"}
-                                  </Box>
+                          value={quantityIndex}
+                          onChange={(event, newValue) => setQuantityIndex(newValue)}
+                          min={0}
+                          max={selectedAddon?.pricing?.length - 1 || 0}
+                          step={null}
+                          valueLabelDisplay="auto"
+                          valueLabelFormat={(value) => {
+                            if (selectedAddon?.pricing && selectedAddon.pricing[value]) {
+                              const option = selectedAddon.pricing[value];
+                              const unitPrice = isYearly ? option.yearlyPerUnit : option.monthlyPerUnit;
+                              const totalPrice = unitPrice * option.units;
+                              const period = isYearly ? "/year" : "/month";
+                              return `${option.units} ${selectedAddon?.unitLabel?.slice(0, -1) || "unit"} - ${formatPrice(totalPrice)}${period}`;
+                            }
+                            return "";
+                          }}
+                          sx={getSliderStyle(sliderStyles.baseOther, "14px")}
+                          marks={selectedAddon?.pricing?.map((option, index) => ({
+                            value: index,
+                            label: (
+                              <Box sx={boxStyles.sliderMarks}>
+                                <Box>{option.units}</Box>
+                                <Box sx={boxStyles.sliderPriceText}>
+                                  {formatPrice(isYearly ? option.yearlyPerUnit * option.units : option.monthlyPerUnit * option.units)}
                                 </Box>
-                              )
-                            }))}
-                          />
-
+                              </Box>
+                            ),
+                          })) || []}
+                        />
                       </Box>
                     </>
-                  )}
+                   )}
                 </Box>
               </CardContent>
             </Card>
