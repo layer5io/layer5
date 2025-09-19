@@ -135,7 +135,6 @@ module.exports = {
   ) {
     nodes {
       body
-      html
       frontmatter {
         title
         author
@@ -182,7 +181,6 @@ module.exports = {
   ) {
     nodes {
       body
-      html
       frontmatter {
         title
         author
@@ -228,7 +226,6 @@ module.exports = {
   ) {
     nodes {
       body
-      html
       frontmatter {
         title
         author
@@ -277,7 +274,6 @@ module.exports = {
   ) {
     nodes {
       body
-      html
       frontmatter {
         title
         author
@@ -337,7 +333,6 @@ module.exports = {
   ) {
     nodes {
       body
-      html
       frontmatter {
         title
         author
@@ -388,7 +383,6 @@ module.exports = {
   ) {
     nodes {
       body
-      html
       frontmatter {
         title
         author
@@ -435,7 +429,6 @@ module.exports = {
   ) {
     nodes {
       body
-      html
       frontmatter {
         title
         author
