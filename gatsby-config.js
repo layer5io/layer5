@@ -1,6 +1,14 @@
 /* eslint-env node */
 
 module.exports = {
+  pathPrefix: "/layer5",
+  developMiddleware: (app) => {
+    app.use((req, res, next) => {
+      res.set("X-Frame-Options", "SAMEORIGIN");
+      res.set("Content-Security-Policy", "frame-ancestors 'self'");
+      next();
+    });
+  },
   siteMetadata: {
     title: "Layer5 - Expect more from your infrastructure",
     description:
@@ -18,19 +26,19 @@ module.exports = {
   },
   trailingSlash: "never",
   plugins: [
-    {
-      resolve: "gatsby-plugin-netlify",
-      options: {
-        headers: {
-          "/*": [
-            "X-Frame-Options: SAMEORIGIN",
-            "Content-Security-Policy: frame-ancestors 'self'",
-          ],
-        },
-        mergeSecurityHeaders: true,
-        mergeCachingHeaders: true,
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-netlify",
+    //   options: {
+    //     headers: {
+    //       "/*": [
+    //         "X-Frame-Options: SAMEORIGIN",
+    //         "Content-Security-Policy: frame-ancestors 'self'",
+    //       ]
+    //     },
+    //     mergeSecurityHeaders: true,
+    //     mergeCachingHeaders: true,
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
