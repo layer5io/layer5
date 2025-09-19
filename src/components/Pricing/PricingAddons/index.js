@@ -177,7 +177,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
       const enterpriseUserSeats = enterpriseUsers > 0 ? ` and ${enterpriseUsers} enterprise user${enterpriseUsers > 1 ? "s" : ""}` : "";
       return {
         link: matchingPlanLink.link,
-        name: `Subscribe For Add-on`
+        name: "Subscribe For Add-on"
       };
     }
 
@@ -191,7 +191,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
 
     return {
       link: "#",
-      name: `Subscribe For Add-on`
+      name: "Subscribe For Add-on"
     };
   };
 
@@ -552,7 +552,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
                       {formatPrice((isYearly ? enterprisePlan.yearlyprice : enterprisePlan.monthlyprice) * (enterpriseUsers > 0 ? enterpriseUsers : 1))}/{isYearly ? "monthly" : "yearly"}
                     </Typography>
                   </Box>
-                
+
                   <Box sx={boxStyles.flexBetween}>
                     <Typography variant="body1" gutterBottom sx={typographyStyles.subheading}>
                       {isYearly ? "Yearly" : "Monthly"} Cost
