@@ -24,6 +24,18 @@ export const Currencies = {
                 maximumFractionDigits: 2,
             }).format(price * 0.86),
     },
+    INR: {
+        name: "INR",
+        symbol: "₹",
+        rate: 88.32,
+        formatPrice: (price) =>
+            new Intl.NumberFormat("en-US", {
+                style: "currency",
+                currency: "INR",
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 2,
+            }).format(price * rate),
+    },
 };
 
 
