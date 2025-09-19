@@ -4,37 +4,25 @@ import { ReactComponent as CollaborationImg } from "./../FeaturesSection/Collabo
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 
+import ConversationImg from "./images/conversation.png";
+import ComponentsGif from "./images/components.gif";
+import ActivityLogsImg from "./images/activity-logs.png";
+import UndoRedoImg from "./images/undo-redo.png";
+
 const CollaborationFeatureWrapper = styled.div`
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     /* background-color: ${props => props.theme.grey121212ToWhite};;
     max-width: 90%; */
+    width: 100%;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
      padding: 5% 5% 8%;
     /* @media only screen and (max-width: 767px) {
       text-align: center;
       flex-direction: column-reverse;
     } */
-
-    .hero-div {
-      position: relative;
-      transition: 0.5s;
-      display: flex;
-      flex-direction: row-reverse;
-      background-color: ${props => props.theme.grey121212ToWhite};;
-      max-width: 90%;
-      height: fit-content;
-      justify-content: space-between;
-      align-items: center;
-      padding: 2% 5% 8%;
-      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-      @media only screen and (max-width: 767px) {
-        text-align: center;
-        flex-direction: column-reverse;
-      }
-    }
 
     .hero-text {
         display: flex;
@@ -58,8 +46,21 @@ const CollaborationFeatureWrapper = styled.div`
     }
 
     img {
-      opacity: 0;
-      transition: opacity ease-out 0.5s;
+        width: 600px;
+        height: 300px;
+        object-fit: cover;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+
+        &.img-animate {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        @media only screen and (max-width: 767px) {
+          width: 100%;
+        }
     }
 
     svg {
@@ -90,6 +91,36 @@ const CollaborationFeatureWrapper = styled.div`
 
 `;
 
+const StyledDiv = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: ${({ reverse }) => (reverse ? "row-reverse" : "row")};
+  background-color: ${(props) => props.theme.grey121212ToWhite};
+  max-width: 90%;
+  height: fit-content;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2% 5% 8%;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+    text-align: center;
+  }
+`;
+
+const ImageWithAnimation = ({ src, alt }) => {
+  const [ref, inView] = useInView({ threshold: 0.4 });
+  return (
+    <img
+      ref={ref}
+      src={src}
+      alt={alt}
+      className={inView ? "img-animate" : ""}
+    />
+  );
+};
+
 const CollaborationFeatureTeam = () => {
   const [locatorRef, inView] = useInView({ threshold: 0.5 });
   // const [sectionRef, sectionView] = useInView({ threshold: 1.0 });
@@ -106,15 +137,63 @@ const CollaborationFeatureTeam = () => {
 
   return (
     <CollaborationFeatureWrapper>
-      <div className="hero-div">
+      <StyledDiv reverse={true} >
         <div className="hero-image" ref={locatorRef}>
-          <CollaborationImg className={imageInView ? "visible" : ""}  alt=""/>
+          <CollaborationImg className={imageInView ? "visible" : ""} alt="" />
         </div>
         <div className="hero-text">
           <h2><span>Collaborate with your Team</span></h2>
           <p>Build an iterative design flow with live collaboration that keeps you in the loop whether you are working in the office or remotely.</p>
         </div>
-      </div>
+      </StyledDiv>
+      <StyledDiv reverse={false}>
+        <div className="hero-image">
+          <ImageWithAnimation
+            src={ConversationImg}
+            alt="Conversation feature illustration"
+          />
+        </div>
+        <div className="hero-text">
+          <h2><span>Integrated Comments</span></h2>
+          <p>Add comments directly to give feedback or ask questions. Great for discussing changes without leaving the canvas.</p>
+        </div>
+      </StyledDiv>
+      <StyledDiv reverse={true}>
+        <div className="hero-image">
+          <ImageWithAnimation
+            src={ComponentsGif}
+            alt="Shared Component Library"
+          />
+        </div>
+        <div className="hero-text">
+          <h2><span>Shared Component Library</span></h2>
+          <p>Access to a library of reusable components and designs. Save time by using or modifying shared designs.</p>
+        </div>
+      </StyledDiv>
+      <StyledDiv reverse={false}>
+        <div className="hero-image">
+          <ImageWithAnimation
+            src={ActivityLogsImg}
+            alt="Live Activity Log"
+          />
+        </div>
+        <div className="hero-text">
+          <h2><span>Live Activity Log</span></h2>
+          <p>See real-time updates of edits, comments, and actions by you and your team.</p>
+        </div>
+      </StyledDiv>
+      <StyledDiv reverse={true}>
+        <div className="hero-image">
+          <ImageWithAnimation
+            src={UndoRedoImg}
+            alt="Undo & Revert Changes"
+          />
+        </div>
+        <div className="hero-text">
+          <h2><span>Undo & Revert Changes</span></h2>
+          <p>Made a mistake? No worries — you can easily undo recent actions. Go back to a previous state without losing your progress.</p>
+        </div>
+      </StyledDiv>
     </CollaborationFeatureWrapper>
   );
 };
