@@ -1,6 +1,7 @@
 /* eslint-env node */
 
 module.exports = {
+  pathPrefix: "/layer5",
   developMiddleware: (app) => {
     app.use((req, res, next) => {
       res.set("X-Frame-Options", "SAMEORIGIN");

@@ -65,7 +65,7 @@ export const onRenderBody = ({ setPreBodyComponents, setHeadComponents }) => {
     <meta
       key="csp"
       httpEquiv="Content-Security-Policy"
-      content="default-src 'self'; frame-ancestors 'self'"
+      content="frame-ancestors 'self'"
     />,
 
     // Permissions Policy
