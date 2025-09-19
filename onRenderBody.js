@@ -50,7 +50,7 @@ export const onRenderBody = ({ setPreBodyComponents, setHeadComponents }) => {
   // Security headers as meta tags (fallback for when _headers file isn't supported)
   setHeadComponents([
     // X-Frame-Options
-    <meta key="x-frame-options" httpEquiv="X-Frame-Options" content="DENY" />,
+    <meta key="x-frame-options" httpEquiv="X-Frame-Options" content="SAMEORIGIN" />,
 
     // X-Content-Type-Options
     <meta key="x-content-type-options" httpEquiv="X-Content-Type-Options" content="nosniff" />,
@@ -65,7 +65,7 @@ export const onRenderBody = ({ setPreBodyComponents, setHeadComponents }) => {
     <meta
       key="csp"
       httpEquiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self' https:; frame-src 'self' https:; media-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self';"
+      content="default-src 'self'; frame-ancestors 'self'"
     />,
 
     // Permissions Policy

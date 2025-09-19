@@ -20,7 +20,7 @@ self.addEventListener("fetch", (event) => {
 
         const newHeaders = new Headers(responseClone.headers);
 
-        newHeaders.set("X-Frame-Options", "DENY");
+        newHeaders.set("X-Frame-Options", "SAMEORIGIN");
         newHeaders.set("X-Content-Type-Options", "nosniff");
         newHeaders.set("Referrer-Policy", "strict-origin-when-cross-origin");
         newHeaders.set(
