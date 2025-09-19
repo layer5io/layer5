@@ -361,7 +361,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
                               const option = targetSubAddon.pricing[value];
                               const pricePerUser = isYearly ? option.yearlyPerUser : option.monthlyPerUser;
                               const totalPrice = pricePerUser * option.learners;
-                              const period = isYearly ? "/month" : "/month";
+                              const period = isYearly ? "/year" : "/month";
                               return `${option.learners} learners - ${formatPrice(totalPrice)}${period}`;
                             }
                             return "";
