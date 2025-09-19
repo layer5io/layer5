@@ -177,7 +177,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
       const enterpriseUserSeats = enterpriseUsers > 0 ? ` and ${enterpriseUsers} enterprise user${enterpriseUsers > 1 ? "s" : ""}` : "";
       return {
         link: matchingPlanLink.link,
-        name: `Subscribe (${currentLearnerCount} learners${targetSubAddonName ? " " + targetSubAddonName : ""}${enterpriseUserSeats})`
+        name: "Subscribe For Add-on"
       };
     }
 
@@ -191,7 +191,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
 
     return {
       link: "#",
-      name: `Subscribe to ${selectedAddon.name}`
+      name: "Subscribe For Add-on"
     };
   };
 
@@ -361,7 +361,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
                               const option = targetSubAddon.pricing[value];
                               const pricePerUser = isYearly ? option.yearlyPerUser : option.monthlyPerUser;
                               const totalPrice = pricePerUser * option.learners;
-                              const period = isYearly ? "/month" : "/month";
+                              const period = isYearly ? "/year" : "/month";
                               return `${option.learners} learners - ${formatPrice(totalPrice)}${period}`;
                             }
                             return "";
@@ -409,7 +409,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
                           })()}
                         />
                         <Box sx={boxStyles.disclaimerSection}>
-                          <Typography variant="body2" sx={typographyStyles.italic}>
+                          <Typography variant="body2" sx={typographyStyles.italic }>
                             Looking for a plan larger than 2,500 learners? Great! <a href="/company/contact">Let us know</a>.
                           </Typography>
                         </Box>
@@ -420,39 +420,48 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
                   {selectedAddon !== null && selectedAddon.id !== "academy" && (
                     <>
                       <Box sx={boxStyles.unitQuantitySection}>
-                        <Typography variant="h6" fontWeight="600" sx={boxStyles.unitQuantityTitle}>
+                        <Typography variant="h6" sx={boxStyles.unitQuantityTitle}>
                           {selectedAddon.pricing?.[quantityIndex]?.units || 0} {selectedAddon?.unitLabel}
                         </Typography>
                         <Slider
-                          value={quantityIndex}
-                          onChange={(event, newValue) => setQuantityIndex(newValue)}
-                          min={0}
-                          max={selectedAddon?.pricing?.length - 1 || 0}
-                          step={null}
-                          valueLabelDisplay="auto"
-                          valueLabelFormat={(value) => {
-                            if (selectedAddon?.pricing && selectedAddon.pricing[value]) {
-                              const option = selectedAddon.pricing[value];
-                              const unitPrice = isYearly ? option.yearlyPerUnit : option.monthlyPerUnit;
-                              const totalPrice = unitPrice * option.units;
-                              const period = isYearly ? "/year" : "/month";
-                              return `${option.units} ${selectedAddon?.unitLabel?.slice(0, -1) || "unit"} - ${formatPrice(totalPrice)}${period}`;
-                            }
-                            return "";
-                          }}
-                          sx={getSliderStyle(sliderStyles.baseOther, "14px")}
-                          marks={selectedAddon?.pricing?.map((option, index) => ({
-                            value: index,
-                            label: (
-                              <Box sx={boxStyles.sliderMarks}>
-                                <Box>{option.units}</Box>
-                                <Box sx={boxStyles.sliderPriceText}>
-                                  {formatPrice(isYearly ? option.yearlyPerUnit * option.units : option.monthlyPerUnit * option.units)}
+                            value={quantityIndex}
+                            onChange={(event, newValue) => setQuantityIndex(newValue)}
+                            min={0}
+                            valueLabelDisplay="auto"
+                            valueLabelFormat={(value) => {
+                              const option = selectedAddon?.pricing?.[value];
+                              if (option) {
+                                const pricePerUnit = isYearly ? option.yearlyPerUnit : option.monthlyPerUnit;
+                                const totalPrice = pricePerUnit * option.units;
+                                const period = isYearly ? "/year" : "/month";
+                                return `${option.units} ${selectedAddon.unitLabel?.slice(0, -1) || "unit"} - ${formatPrice(totalPrice)}${period}`;
+                              }
+                              return "";
+                            }}
+                            max={(selectedAddon?.pricing?.length - 1) || 0}
+                            step={null}
+                            sx={getSliderStyle(sliderStyles.baseOther, "1rem")} // ← use same style as academy
+                            marks={selectedAddon?.pricing?.map((option, index) => ({
+                              value: index,
+                              label: (
+                                <Box sx={{ textAlign: "center", fontSize: "1.25rem", fontWeight: "bold" }}>
+                                  <Box>{option.units}</Box>
+                                  <Box
+                                    sx={{
+                                      color: "text.secondary",
+                                      mb: 1.5,
+                                      fontSize: {
+                                        xs: "0.75rem",
+                                        sm: "0.9rem",
+                                      }
+                                    }}>
+                                    {formatPrice(isYearly ? option.yearlyPerUnit : option.monthlyPerUnit)}<br />{selectedAddon.unitLabel?.slice(0, -1) || "unit"}/{isYearly ? "year" : "month"}
+                                  </Box>
                                 </Box>
-                              </Box>
-                            ),
-                          })) || []}
-                        />
+                              )
+                            }))}
+                          />
+
                       </Box>
                     </>
                   )}
@@ -468,7 +477,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
               >
                 <Box sx={{ ...boxStyles.flexBetween, ...boxStyles.pricingHeader }}>
                   <Typography variant="h6" sx={typographyStyles.subheading} gutterBottom>
-                    Add-on  ×  Quantity per Subscription Duration
+                    Add-on  ×  Quantity / per Subscription Duration
                   </Typography>
                   <Typography variant="h6" sx={typographyStyles.subheading} gutterBottom>
                     SUBTOTAL
@@ -552,9 +561,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
                       {formatPrice((isYearly ? enterprisePlan.yearlyprice : enterprisePlan.monthlyprice) * (enterpriseUsers > 0 ? enterpriseUsers : 1))}/{isYearly ? "monthly" : "yearly"}
                     </Typography>
                   </Box>
-                  <Typography variant="h6" sx={typographyStyles.subheading} gutterBottom>
-                    TOTAL
-                  </Typography>
+
                   <Box sx={boxStyles.flexBetween}>
                     <Typography variant="body1" gutterBottom sx={typographyStyles.subheading}>
                       {isYearly ? "Yearly" : "Monthly"} Cost
