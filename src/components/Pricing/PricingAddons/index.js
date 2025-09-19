@@ -486,32 +486,41 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
 
                 <Box sx={{ ...boxStyles.flexColumn, ...boxStyles.pricingItems }}>
                   <Box sx={boxStyles.flexBetween}>
-                    <Typography variant="body1" sx={typographyStyles.pricingItemLeft}>
-                      {selectedAddon?.id === "academy" ?
-                        `Theoretical Learning × ${selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory")?.pricing?.[quantityIndex]?.learners || 0}` :
-                        `${selectedAddon?.name} × ${quantity} x ${selectedAddon?.cadence}`
-                      }
-                    </Typography>
-                    <Typography variant="body1" fontWeight="500" sx={typographyStyles.pricingItemRight}>
-                      {(() => {
-                        if (selectedAddon?.id === "academy") {
-                          const theorySubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory");
-                          if (theorySubAddon?.pricing && theorySubAddon.pricing[quantityIndex]) {
-                            const currentLearnerOption = theorySubAddon.pricing[quantityIndex];
-                            const monthlyPerUserCost = currentLearnerOption.monthlyPerUser;
-                            const yearlyPerUserCost = currentLearnerOption.yearlyPerUser;
-                            const totalCost = isYearly
-                              ? yearlyPerUserCost * currentLearnerOption.learners
-                              : monthlyPerUserCost * currentLearnerOption.learners;
-                            return formatPrice(totalCost);
-                          }
-                          return formatPrice(0);
-                        } else {
-                          return formatPrice((isYearly ? selectedAddon?.yearlyPrice : selectedAddon?.monthlyPrice) * quantity);
-                        }
-                      })()}
-                    </Typography>
-                  </Box>
+  <Typography variant="body1" sx={typographyStyles.pricingItemLeft}>
+    {selectedAddon?.id === "academy" ?
+      `Theoretical Learning × ${selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory")?.pricing?.[quantityIndex]?.learners || 0}` :
+      `${selectedAddon?.name} × ${selectedAddon?.pricing?.[quantityIndex]?.units || 0}`
+    }
+  </Typography>
+  <Typography variant="body1" fontWeight="500" sx={typographyStyles.pricingItemRight}>
+    {(() => {
+      if (selectedAddon?.id === "academy") {
+        const theorySubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory");
+        if (theorySubAddon?.pricing && theorySubAddon.pricing[quantityIndex]) {
+          const currentLearnerOption = theorySubAddon.pricing[quantityIndex];
+          const monthlyPerUserCost = currentLearnerOption.monthlyPerUser;
+          const yearlyPerUserCost = currentLearnerOption.yearlyPerUser;
+          const totalCost = isYearly
+            ? yearlyPerUserCost * currentLearnerOption.learners
+            : monthlyPerUserCost * currentLearnerOption.learners;
+          return formatPrice(totalCost);
+        }
+        return formatPrice(0);
+      } else {
+        if (selectedAddon?.pricing && selectedAddon.pricing[quantityIndex]) {
+          const currentOption = selectedAddon.pricing[quantityIndex];
+          const monthlyPerUnitCost = currentOption.monthlyPerUnit;
+          const yearlyPerUnitCost = currentOption.yearlyPerUnit;
+          const totalCost = isYearly
+            ? yearlyPerUnitCost * currentOption.units
+            : monthlyPerUnitCost * currentOption.units;
+          return formatPrice(totalCost);
+        }
+        return formatPrice(0);
+      }
+    })()} /{isYearly ? "yearly" : "monthly"}
+  </Typography>
+</Box>
 
                   {selectedAddon?.id === "academy" && selectedAddon.subAddOns?.map((subAddOn) => (
                     selectedSubAddOns[subAddOn.id] && subAddOn.id !== "academy-theory" && (
