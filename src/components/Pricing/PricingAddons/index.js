@@ -33,7 +33,6 @@ import {
   boxStyles,
   toggleButtonStyles,
   sliderStyles,
-  iconStyles,
   cardStyles,
   formControlStyles,
   featureDetailsStyles,
@@ -41,7 +40,10 @@ import {
   getSliderStyle
 } from "./styles";
 
-export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan }) => {
+import { formatAndConvertPrice } from "../../../utils/currencies";
+
+export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterprisePlan }) => {
+
   const [selectedAddon, setSelectedAddon] = useState(null);
   // const [quantity, setQuantity] = useState(1);
   const quantity = 1;
@@ -74,6 +76,10 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan })
     }
   };
 
+  const formatPrice = (price) => {
+      return formatAndConvertPrice(price, currency);
+  };
+
   useEffect(() => {
     if (selectedAddon) {
       let baseTotal = 0;
@@ -84,7 +90,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan })
           const monthlyPerUserCost = currentLearnerOption.monthlyPerUser;
           const yearlyPerUserCost = currentLearnerOption.yearlyPerUser;
           baseTotal = isYearly
-            ? yearlyPerUserCost * currentLearnerOption.learners * 12 / "yearly"
+            ? yearlyPerUserCost * currentLearnerOption.learners
             : monthlyPerUserCost * currentLearnerOption.learners;
         }
       } else {
@@ -139,14 +145,6 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan })
     }));
   };
 
-  const formatPrice = (price) => {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(price);
-  };
 
   const getPlanLinkForAcademy = () => {
     if (!selectedAddon || selectedAddon.id !== "academy") {
@@ -237,19 +235,24 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan })
                     <FormControl fullWidth>
                       <InputLabel sx={typographyStyles.qanelasFont}>Optionally, choose one or more add-ons</InputLabel>
                       <Select
+                        fullWidth
                         value={selectedAddon?.id || ""}
                         onChange={(e) => handleAddonChange(e.target.value)}
                         label="Optionally, choose one or more add-ons"
+                        MenuProps={{
+                          disableScrollLock: true,
+                          disablePortal: true,
+                        }}
                       >
                         {addOns.map((addon) => (
                           <MenuItem key={addon.id} value={addon.id}>
                             <Box sx={boxStyles.menuItem}>
                               {renderIcon(addon.iconType)}
-                              <Box>
-                                <Typography variant="body1" fontWeight="500" sx={typographyStyles.qanelasFont}>
+                              <Box sx={{ minWidth: 0, flex: 1 }}>
+                                <Typography noWrap variant="body1" fontWeight="500" sx={typographyStyles.ellipsisText}>
                                   {addon.name}
                                 </Typography>
-                                <Typography variant="body2" color="text.secondary" sx={typographyStyles.ellipsisText}>
+                                <Typography nowrap variant="body2" color="text.secondary" sx={typographyStyles.ellipsisText}>
                                   {addon.id === "academy"
                                     ? addon.description
                                     : (() => {
@@ -389,8 +392,16 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, enterprisePlan })
                               label: (
                                 <Box sx={{ textAlign: "center", fontSize: "1.25rem", fontWeight: "bold" }}>
                                   <Box>{option.learners === "2500+" ? "2,500+" : option.learners}</Box>
-                                  <Box sx={{ color: "text.secondary", mb: 1.5, fontSize: ".9rem" }}>
-                                    {option.currency}{isYearly ? option.yearlyPerUser : option.monthlyPerUser}<br />{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
+                                  <Box
+                                    sx={{
+                                      color: "text.secondary",
+                                      mb: 1.5,
+                                      fontSize: {
+                                        xs: "0.75rem",
+                                        sm: "0.9rem",
+                                      }
+                                    }}>
+                                    {formatPrice(isYearly ? option.yearlyPerUser : option.monthlyPerUser)}<br />{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
                                   </Box>
                                 </Box>
                               ),

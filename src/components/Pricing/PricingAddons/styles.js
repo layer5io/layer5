@@ -114,7 +114,8 @@ export const boxStyles = {
     display: "flex",
     alignItems: "center",
     gap: 2,
-    py: 1
+    py: 1,
+    width: "100%",
   },
   featureContainer: {
     display: "flex",
@@ -283,7 +284,9 @@ export const sliderStyles = {
     justifyContent: "center"
   },
   baseOther: {
-    mb: 2,
+    mb: 4,
+    ml: 6,
+    width: "80%",
     display: "flex",
     justifyContent: "center"
   },
