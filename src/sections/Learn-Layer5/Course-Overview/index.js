@@ -8,7 +8,7 @@ import { IoDocumentTextOutline, } from "@react-icons/all-files/io5/IoDocumentTex
 import { IoChevronBackOutline } from "@react-icons/all-files/io5/IoChevronBackOutline";
 import Button from "../../../reusecore/Button";
 import ChapterCard from "../../../components/Learn-Components/Chapter-Card";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+
 import { SRLWrapper } from "simple-react-lightbox";
 import DiscussCallout from "../../Discuss-Callout";
 import SubscribeLearnPath from "../../subscribe/SubscribeLearnPath";
@@ -110,7 +110,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
           <Col $md={12} $lg={8} $xl={7}>
             <h2 className="overview">Overview</h2>
             <SRLWrapper>
-              <MDXRenderer>{course.body}</MDXRenderer>
+              <p>{course.frontmatter.description}</p>
             </SRLWrapper>
             <h2 className="course-toc">Table Of Contents</h2>
             {course.frontmatter.toc.map((item, index) => (

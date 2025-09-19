@@ -9,19 +9,22 @@ import ProgramsSingle from "../sections/Careers/Careers-Programs-single";
 export const query = graphql`
     query ProgramBySlug($slug: String!) {
         mdx(fields: { slug: { eq: $slug } }) {
-            body
+            id
             frontmatter {
                 title
+                program
             }
         }
     }
 `;
 
-const ProgramSinglePage = ({ data }) => {
+const ProgramSinglePage = ({ data, children }) => {
 
   return (
     <>
-      <ProgramsSingle data={data.mdx} />
+      <ProgramsSingle data={data.mdx}>
+        {children}
+      </ProgramsSingle>
 
     </>
   );
