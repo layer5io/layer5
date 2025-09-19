@@ -12,10 +12,10 @@ const AcademySection = () => {
   return (
     <div className="academy-page">
       <HeroSection />
-      <LearnerSection />
-      <EnterpriseSection />
       <AcademyMobileSwiper />
       <AcademyFeatureCarousel />
+      <LearnerSection />
+      <EnterpriseSection />
     </div>
   );
 };
