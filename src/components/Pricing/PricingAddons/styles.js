@@ -1,7 +1,5 @@
 // Common styles for PricingAddons component
 
-import { CurrencyYenRounded } from "@mui/icons-material";
-
 export const QANELAS_FONT = "\"Qanelas Soft\", \"Open Sans\", sans-serif";
 
 // Typography styles
