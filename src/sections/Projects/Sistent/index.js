@@ -14,9 +14,9 @@ const SistentHome = () => {
       </div>
       <div className="community-home-container">
         <HandbookCard
-          title="About"
+          title="Getting Started"
           description="Ensuring clarity and consistency across projects. Empowering developers with modular components, it defines a unified visual language, fostering a seamless and cohesive user experience."
-          to="/projects/sistent/about"
+          to="/projects/sistent/getting-started/about"
         />
         <HandbookCard
           title="Identity"
