@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/layer5io/layer5/graphs/contributors" alt="GitHub contributors">
 <img src="https://img.shields.io/github/contributors/layer5io/layer5.svg" /></a>
-<a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Alayer5labs+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22" alt="Help wanted GitHub issues">
+<a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+(org%3Alayer5io+OR+org%3Ameshery+OR+org%3Alayer5labs+OR+org%3Aservice-mesh-performance+OR+org%3Aservice-mesh-patterns+OR+org%3Ameshery-extensions)+label%3A%22help+wanted%22" alt="Help wanted GitHub issues">
 <img src="https://img.shields.io/github/issues/layer5io/layer5/help%20wanted.svg?color=%23DDDD00" /></a>
 <a href="https://slack.layer5.io" alt="Slack">
 <img src="https://img.shields.io/badge/Slack-@layer5.svg?logo=slack" /></a>
@@ -60,17 +60,6 @@
 
 
 <p style="clear:both;">
-<h2><a href="https://layer5.io/landscape">Service Mesh Landscape</a></h2>
-<a href="https://layer5.io/landscape"><img src=".github/assets/images/buttons/landscape.webp"  
-style="float:left;margin:10px;" width="125px"
-alt="Service Mesh Landscape Ecosystem" align="left"/></a>
-The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a comprehensive collection of prominent service mesh projects and offerings laid out in contrast to one another.
-<br /><br /><br />
-</p>
-<br />
-
-
-<p style="clear:both;">
 <h2><a href="https://layer5.io/projects/cloud-native-performance">Cloud Native Performance</a></h2>
 <a href="https://layer5.io/projects/cloud-native-performance">
 <picture align="left">
@@ -91,7 +80,7 @@ The <a href="https://layer5.io/projects/cloud-native-performance">Cloud Native P
 style="float:left;margin:10px;" width="125px"
 alt="Image Hub" align="left" /></a>
 <a href="https://layer5.io/projects/image-hub">Image Hub</a> is a demo application which runs on <a href="https://docs.meshery.io/service-meshes/adapters/consul">Consul</a> and facilitates exploring WebAssembly modules used as Envoy Filters.
-Image Hub supports Envoy-based data planes. It is compatible with and can be deployed on Istio and Consul service meshes.
+Image Hub supports Envoy-based data planes. It is compatible with and can be deployed on Istio and Consul.
 <br /><br /><br />
 </p>
 <br />
@@ -120,18 +109,6 @@ alt="Learn Layer5" align="left" />
 <br /><br /><br />
 </p>
 <br />
-
-
-<!-- <p style="clear:both;">
-<h2><a href="https://layer5.io/smi">Service Mesh Interface Conformance </a></h2>
-<a href="https://layer5.io/smi"><img src=".github/assets/images/smi-conformance/checklist.svg"
-style="float:left;margin:10px;" width="125px"
-alt="Service Mesh Interface Conformance" align="left" /></a>
-<a href="https://layer5.io/smi">SMI Conformance</a> includes all service mesh projects participating in the Service Mesh Interface specification. It is an easy-to-use, service mesh and SMI-specific tool to give service mesh projects and users a suite of repeatable conformance tests.
-<br /><br /><br />
-</p>
-<br />
- -->
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/projects/nighthawk">Nighthawk</a></h2>
@@ -181,7 +158,7 @@ alt="Meshery Catalog" align="left" />
 ✔️ <em><strong>Discuss</strong></em> in the <a href="https://discuss.layer5.io">Community Forum</a>.<br />
 ✔️ <em><strong>Explore more</strong></em> in the <a href="https://layer5.io/community/handbook">Community Handbook</a>.<br />
 </p>
-<div align="center"><i>Not sure where to start?</i> Grab an open issue with the <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+org%3Alayer5labs+label%3A%22help+wanted%22+">help-wanted label</a>.
+<div align="center"><i>Not sure where to start?</i> Grab an open issue with the <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+(org%3Alayer5io+OR+org%3Ameshery+OR+org%3Alayer5labs+OR+org%3Aservice-mesh-performance+OR+org%3Aservice-mesh-patterns+OR+org%3Ameshery-extensions)+label%3A%22help+wanted%22">help-wanted label</a>.
 </div>
 <br />
 <ul>

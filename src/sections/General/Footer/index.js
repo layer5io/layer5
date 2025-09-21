@@ -43,9 +43,7 @@ const Footer = ({ location }) => {
             "/programs",
             "/projects/",
             "/resources/",
-            "/service-mesh-books/",
-            "/service-mesh-labs/",
-            "/service-mesh-workshops/",
+            "/workshops/",
           ].some((check) => {
             returnPath = check;
             return path.startsWith(check);
@@ -113,9 +111,19 @@ const Footer = ({ location }) => {
                     </a>
                   </li>
                   <li>
+                    <a className="category-link" href="https://cloud.layer5.io/academy/overview">
+                      Academy
+                    </a>
+                  </li>
+                  <li>
                     <Link className="category-link" to="/blog">
                       Blog
                     </Link>
+                  </li>
+                  <li>
+                    <a className="category-link" href="https://docs.layer5.io/videos">
+                      Videos
+                    </a>
                   </li>
                   <li>
                     <Link className="category-link" to="/learn/learning-paths">
@@ -130,25 +138,9 @@ const Footer = ({ location }) => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/learn/service-mesh-books"
-                    >
-                      Service Mesh Books
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className="category-link"
-                      to="/learn/service-mesh-workshops"
+                      to="/learn/workshops"
                     >
                       Cloud Native Workshops
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className="category-link"
-                      to="/service-mesh-landscape"
-                    >
-                      Service Mesh Comparison
                     </Link>
                   </li>
                   {/* <li>
@@ -251,14 +243,6 @@ const Footer = ({ location }) => {
                       GitOps with Cloud Native Insights
                     </Link>
                   </li>
-                  {/* <li>
-                    <Link
-                      className="category-link"
-                      to="/projects/service-mesh-interface-conformance"
-                    >
-                      Service Mesh Interface
-                    </Link>
-                  </li> */}
                   <li>
                     <Link
                       className="category-link"

@@ -5,6 +5,9 @@ const SubscribeWrapper = styled.div`
     padding: 3.125rem 0.625rem;
     overflow: hidden;
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    min-height: 200px; /* Add explicit min-height */
+    position: relative; /* Add position for better layout control */
+    width: 100%; /* Add explicit width */
 
     h2{
         font-weight: 600;

@@ -104,6 +104,19 @@ const Maintainer = () => {
                   (currently) three choices of load generators for
                   characterizing and managing the performance of cloud native infrastructure (e.g. Kubernetes and Docker) and their services. <br />
                 </p>
+                <li>
+                  <h4>
+                    <a href="https://cloud.layer5.io/academy">
+                      Layer5 Academy :
+                    </a>
+                  </h4>{" "}
+                </li>
+                <p>
+                  Layer5 Academy is a learning platform built into Layer5 Cloud. It offers
+                  structured learning paths, interactive challenges, and professional
+                  certifications. Content spans beginner to advanced levels, helping both
+                  developers and organizations skill up in cloud native technologies. <br />
+                </p>
               </ul>
             </p>
             <p>
@@ -133,9 +146,9 @@ const Maintainer = () => {
                 </li>
                 <p>
                   It is a cloud native management plane offering lifecycle
-                  management of more types of cloud native infrastrcture than any other tool                  available today. Meshery facilitates adopting, configuring,
-                  operating, and managing the performance of Kuberenetes workloads and incorporates the collection and display of metrics
-                  from applications running on top of any service mesh.
+                  management of more types of cloud native infrastructure than any other tool
+                  available today. Meshery facilitates adopting, configuring,
+                  operating, and managing the performance of Kuberenetes workloads and incorporates the collection and display of metrics.
                   <br />{" "}
                 </p>
                 <li>

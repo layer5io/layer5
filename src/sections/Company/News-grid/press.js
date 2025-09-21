@@ -31,6 +31,7 @@ h2{
 }
 h4, h5{
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .press_card {
