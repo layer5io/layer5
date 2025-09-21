@@ -9,7 +9,6 @@ import WorkshopSinglePage from "../sections/Learn/Workshop-single/index";
 
 export const query = graphql`query WorkshopBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
-    body
     frontmatter {
       title
       date(formatString: "MMMM Do, YYYY")
@@ -34,7 +33,7 @@ export const query = graphql`query WorkshopBySlug($slug: String!) {
 }
 `;
 
-const WorkshopSingle = ({ data }) => {
+const WorkshopSingle = ({ data, children }) => {
 
 
   return (
@@ -42,7 +41,9 @@ const WorkshopSingle = ({ data }) => {
     <>
 
 
-      <WorkshopSinglePage frontmatter={data.mdx.frontmatter} body={data.mdx.body} />
+      <WorkshopSinglePage frontmatter={data.mdx.frontmatter}>
+        {children}
+      </WorkshopSinglePage>
 
     </>
 
