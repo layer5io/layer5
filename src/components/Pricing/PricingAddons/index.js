@@ -45,49 +45,49 @@ import { formatAndConvertPrice } from "../../../utils/currencies";
 export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterprisePlan }) => {
   const [selectedAddon, setSelectedAddon] = useState(null);
   const [addonMenuOpen, setAddonMenuOpen] = useState(false);
-  // const [quantity, setQuantity] = useState(1);
+  const [scrollY, setScrollY] = useState(0);
   const quantity = 1;
   const [selectedSubAddOns, setSelectedSubAddOns] = useState({});
   const [totalPrice, setTotalPrice] = useState(0);
   const [quantityIndex, setQuantityIndex] = useState(0);
   const [enterpriseUsers, setEnterpriseUsers] = useState(1);
-
   const [perAddonState, setPerAddonState] = useState({});
 
   const { isDark } = useStyledDarkMode();
   const theme = useTheme();
 
-  const addOns = React.useMemo(() => {
-    return getAddOns();
-  }, []);
+  const addOns = React.useMemo(() => getAddOns(), []);
 
   useEffect(() => {
     if (!addonMenuOpen) return;
+    const y = window.scrollY || window.pageYOffset || 0;
+    setScrollY(y);
 
-    const isEventInsideAnyListbox = (evt) => {
-      if (evt?.composedPath) {
-        return evt.composedPath()?.some(
-          (el) => el?.getAttribute && el.getAttribute("role") === "listbox"
-        );
-      }
-      const listboxes = document.querySelectorAll();
-      for (const lb of listboxes) {
-        if (evt?.target === lb || lb.contains(evt?.target)) return true;
-      }
-      return false;
-    };
+    const html = document.documentElement;
+    const body = document.body;
 
-    const onWindowScroll = (e) => {
-      if (isEventInsideAnyListbox(e)) return;
-      setAddonMenuOpen(false);
-    };
-    const onResize = () => setAddonMenuOpen(false);
+    const prevHtmlOverflow = html.style.overflow;
+    const prevHtmlTouchAction = html.style.touchAction;
+    const prevBodyOverflow = body.style.overflow;
+    const prevBodyPosition = body.style.position;
+    const prevBodyTop = body.style.top;
+    const prevBodyWidth = body.style.width;
 
-    window.addEventListener("scroll", onWindowScroll, { passive: true });
-    window.addEventListener("resize", onResize, { passive: true });
+    html.style.overflow = "hidden";
+    html.style.touchAction = "none";
+    body.style.overflow = "hidden";
+    body.style.position = "fixed";
+    body.style.top = `-${y}px`;
+    body.style.width = "100%";
+
     return () => {
-      window.removeEventListener("scroll", onWindowScroll);
-      window.removeEventListener("resize", onResize);
+      html.style.overflow = prevHtmlOverflow;
+      html.style.touchAction = prevHtmlTouchAction;
+      body.style.overflow = prevBodyOverflow;
+      body.style.position = prevBodyPosition;
+      body.style.top = prevBodyTop;
+      body.style.width = prevBodyWidth;
+      window.scrollTo(0, y);
     };
   }, [addonMenuOpen]);
 
@@ -110,9 +110,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
     }
   };
 
-  const formatPrice = (price) => {
-    return formatAndConvertPrice(price, currency);
-  };
+  const formatPrice = (price) => formatAndConvertPrice(price, currency);
 
   useEffect(() => {
     if (selectedAddon) {
@@ -127,15 +125,13 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
             ? yearlyPerUserCost * currentLearnerOption.learners
             : monthlyPerUserCost * currentLearnerOption.learners;
         }
-      } else {
-        if (selectedAddon.pricing && selectedAddon.pricing[quantityIndex]) {
-          const currentOption = selectedAddon.pricing[quantityIndex];
-          const monthlyPerUnitCost = currentOption.monthlyPerUnit;
-          const yearlyPerUnitCost = currentOption.yearlyPerUnit;
-          baseTotal = isYearly
-            ? yearlyPerUnitCost * currentOption.units
-            : monthlyPerUnitCost * currentOption.units;
-        }
+      } else if (selectedAddon.pricing && selectedAddon.pricing[quantityIndex]) {
+        const currentOption = selectedAddon.pricing[quantityIndex];
+        const monthlyPerUnitCost = currentOption.monthlyPerUnit;
+        const yearlyPerUnitCost = currentOption.yearlyPerUnit;
+        baseTotal = isYearly
+          ? yearlyPerUnitCost * currentOption.units
+          : monthlyPerUnitCost * currentOption.units;
       }
 
       let subAddOnTotal = 0;
@@ -158,7 +154,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
     } else {
       setTotalPrice(0);
     }
-  }, [selectedAddon, quantity, quantityIndex, selectedSubAddOns, isYearly, enterpriseUsers, enterprisePlan]);
+  }, [selectedAddon, quantityIndex, selectedSubAddOns, isYearly, enterpriseUsers, enterprisePlan]);
 
   const getDefaultAddonState = (addon) => ({
     quantityIndex: 0,
@@ -256,6 +252,29 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
   return (
     <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
       <CssBaseline>
+        {addonMenuOpen && (
+          <Box
+            onClick={() => setAddonMenuOpen(false)}
+            onWheel={(e) => {
+             e.preventDefault(); e.stopPropagation();
+            }}
+            onTouchMove={(e) => {
+               e.preventDefault(); e.stopPropagation();
+               }}
+            onScroll={(e) => {
+               e.preventDefault(); e.stopPropagation();
+               }}
+            sx={{
+              position: "fixed",
+              inset: 0,
+              zIndex: (t) => ((t?.zIndex?.menu ?? 1200) - 1),
+              backgroundColor: "transparent",
+              pointerEvents: "auto",
+              touchAction: "none",
+            }}
+          />
+        )}
+
         <Container maxWidth="md" sx={boxStyles.container}>
           <PlanCardWrapper>
             <Card elevation={2} sx={cardStyles.main}>
@@ -287,28 +306,19 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
               <CardContent sx={boxStyles.cardContent}>
                 <Box sx={boxStyles.cardContentInner}>
                   <Box>
-                    <FormControl
-                      fullWidth
-                      /*  hover to open */
-                      onMouseEnter={() => setAddonMenuOpen(true)}
-                    >
+                    <FormControl fullWidth>
                       <InputLabel sx={typographyStyles.qanelasFont}>Optionally, choose one or more add-ons</InputLabel>
                       <Select
                         fullWidth
                         value={selectedAddon?.id || ""}
                         onChange={(e) => handleAddonChange(e.target.value)}
                         label="Optionally, choose one or more add-ons"
-                        open={addonMenuOpen}
                         onOpen={() => setAddonMenuOpen(true)}
                         onClose={() => setAddonMenuOpen(false)}
                         MenuProps={{
                           disablePortal: false,
-                          disableScrollLock: true,
                           PaperProps: {
                             sx: { maxHeight: "60vh" },
-                            // keep open while hovering; close on leave; stop scroll bubbling
-                            onMouseEnter: () => setAddonMenuOpen(true),
-                            onMouseLeave: () => setAddonMenuOpen(false),
                             onScrollCapture: (e) => e.stopPropagation(),
                           },
                         }}
@@ -410,7 +420,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                       <Box sx={boxStyles.learnerSection}>
                         <Typography variant="h6" sx={typographyStyles.learnerCount}>
                           {(() => {
-                            // Determine which sub-addon to show learner count for
+                              // Determine which sub-addon to show learner count for
                             let targetSubAddon = null;
                             if (selectedSubAddOns["academy-practical"]) {
                               targetSubAddon = selectedAddon?.subAddOns?.find((sub) => sub.id === "academy-practical");
@@ -568,10 +578,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
           </PlanCardWrapper>
           {selectedAddon && (
             <Box>
-              <Paper
-                elevation={1}
-                sx={boxStyles.pricingPaper}
-              >
+              <Paper elevation={1} sx={boxStyles.pricingPaper}>
                 <Box sx={{ ...boxStyles.flexBetween, ...boxStyles.pricingHeader }}>
                   <Typography variant="h6" sx={typographyStyles.subheading} gutterBottom>
                     Add-on  ×  Quantity per Subscription Duration
@@ -585,9 +592,9 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                   <Box sx={boxStyles.flexBetween}>
                     <Typography variant="body1" sx={typographyStyles.pricingItemLeft}>
                       {selectedAddon?.id === "academy" ?
-                        `Theoretical Learning × ${selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory")?.pricing?.[quantityIndex]?.learners || 0}` :
-                        `${selectedAddon?.name} × ${quantity} x ${selectedAddon?.cadence}`
-                      }
+                       `Theoretical Learning × ${selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory")?.pricing?.[quantityIndex]?.learners || 0}` :
+                         `${selectedAddon?.name} × ${quantity} x ${selectedAddon?.cadence}`
+                        }
                     </Typography>
                     <Typography variant="body1" fontWeight="500" sx={typographyStyles.pricingItemRight}>
                       {(() => {
