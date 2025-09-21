@@ -4,6 +4,7 @@ import Code from "./src/components/CodeBlock";
 import CTA_ImageOnly from "./src/components/Call-To-Actions/CTA_ImageOnly";
 import CTA_FullWidth from "./src/components/Call-To-Actions/CTA_FullWidth";
 import CTA_Bottom from "./src/components/Call-To-Actions/CTA_Bottom";
+import Button from "./src/reusecore/Button";
 import { ContextWrapper } from "./context-wrapper";
 
 // Custom image component for better CLS scores
@@ -41,6 +42,7 @@ const components = {
     }
   },
   img: OptimizedImage,
+  Button,
   CTA_ImageOnly,
   CTA_FullWidth,
   CTA_Bottom
