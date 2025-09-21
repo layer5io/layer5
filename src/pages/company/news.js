@@ -12,7 +12,6 @@ export const query = graphql`query allNews {
   ) {
     nodes {
       id
-      body
       frontmatter {
         title
         date(formatString: "MMMM Do, YYYY")

@@ -16,7 +16,6 @@ export const query = graphql`
       }
     ) {
       nodes {
-        body
         frontmatter {
           courseTitle
           description

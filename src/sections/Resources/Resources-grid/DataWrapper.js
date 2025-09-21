@@ -13,7 +13,6 @@ const DataWrapper = (WrappedComponent) => {
   ) {
     nodes {
       id
-      body
       frontmatter {
         title
         type
