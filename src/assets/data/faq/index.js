@@ -55,15 +55,6 @@ const data = {
     //
 
     {
-      question: "Is Meshery a service mesh?",
-      category: "Meshery",
-      answer: [
-        "No, as the cloud native management plane, Meshery provisions and manages the lifecycle of service meshes and all other kinds of cloud native infrastructure.",
-      ],
-      link: "/cloud-native-management/meshery",
-      linktext: "Run Meshery",
-    },
-    {
       question:
         "Why do I need to authenticate my social account to use Meshery?",
       category: "Meshery",
@@ -86,14 +77,10 @@ const data = {
     },
     {
       question:
-        "I have already selected and am operating a service mesh. Should I use Meshery?",
+        "I have already operating Kubernetes Clusters. Should I use Meshery?",
       category: "Meshery",
       answer: [
-        "As a management plane, Meshery provides value in a number of ways post-adoption of a service mesh. For example, Meshery analyzes your deployments in evaluation of service mesh best practices and patterns, highlighting where you might be deviating. Meshery's Other ways can be articulated in its set of features spanning:",
-        "Lifecycle Management",
-        "Configuration Management",
-        "Performance Management",
-        "Workload Management",
+        "Yes, as a management plane, Meshery provides value in a number of ways post-adoption Kubernetes. For example, Meshery analyzes your deployments in evaluation of cloud native best practices and patterns, highlighting where you might be deviating.","Meshery performs deep discovery of your environment and currently running applications and infrastructure.",
       ],
       link: "/cloud-native-management/meshery",
       linktext: "Meshery",
@@ -152,14 +139,13 @@ const data = {
     //
 
     {
-      question: "How do Meshery Extension Points work?",
+      question: "Is Meshery extensible?",
       category: "Meshery Integrations",
-      link: "https://docs.meshery.io/extensibility",
-      linktext: "Meshery Extensibility",
       answer: [
-        "Meshery is an extensible platform. Customize Meshery using any of its purpose-built extension points.",
-        "Take advantage of these extension points for working with different service meshes via adapters, different load generators and different providers. Use Meshery’s REST API or its GraphQL API both of which allow you to connect to any Kubernetes-native app."
+        "Yes, Meshery is not just an application. Meshery is an extensible platform. Customize Meshery using any of its purpose-built extension points.", "It is a set of microservices where the central component is itself called Meshery. Integrators may extend Meshery by taking advantage of designated Extension Points. Extension points come in various forms and are available through Meshery’s architecture.",
       ],
+      link: "https://docs.meshery.io/extensibility",
+      linktext: "Learn about Meshery's extensibility",
     },
     {
       question: "How can I request a new integration?",
@@ -243,8 +229,9 @@ const data = {
       question: "What is the refund policy?",
       category: "Pricing",
       answer: [
-        "Users can cancel or downgrade at anytime.",
-        "Your next billing statement will be prorated based on your date of cancelation or downgrade.",
+        "You can cancel at anytime.",
+        "We totally get that plans can change, and we're here to make things as straight-forward as possible. At Layer5, we have a no-refund policy for all our subscription plans. That means once your payment goes through, it's non-refundable, even if you haven't used much of the time left in your billing cycle. This helps us keep delivering awesome access to our cloud native tools, collaborative features, performance testing, multi-cloud setups, and all the learning goodies in Layer5 Academy and Kanvas.",
+        "If you're ready to cancel, no worries — just head to your account settings to cancel anytime. That'll stop any future renewals and charges, but you'll still enjoy full access until your current period ends. We're all about helping you explore first, so feel free to try our Free Forever plan to dip your toes in with things like built-in models, community support, and basic testing before going paid.",
       ],
     },
     {
@@ -259,22 +246,24 @@ const data = {
       question: "What happens if I accidentally don't renew or forget to renew my subscription?",
       category: "Pricing",
       answer: [
-        "Continuity of your infrastructure and applicaiton management is important to us as it is to you. Meshery will continue to operate under the Free tier features and usage limits. Your historical data will continue to be available to you. You can renew your subscription to have higher-level plan features reenabled at any time.",
+        "Continuity of your infrastructure and application management is important to us as it is to you. Layer5 Cloud and Kanvas will continue to operate under the Free tier features and usage limits. Your historical data will continue to be available to you. You can renew your subscription to have higher-level plan features reenabled at any time.",
       ],
     },
     {
       question: "Are there other pricing options?",
       category: "Pricing",
       answer: [
-        "Annual and monthly plans are available. We can customize billing plans to meet your needs. For a detailed explanation of billing, please see our Billing FAQ.",
+        "Annual and monthly plans are available. Some plans have add-ons available. We can customize billing plans to meet your needs. For a detailed explanation of billing, please see our Billing FAQ.",
       ],
     },
     {
       question: "Do you have special pricing for open source / non-profit projects?",
       category: "Pricing",
       answer: [
-        "Yes, we offer significant discounts for open source projects. Contact us at hello@layer5.io with the details of your open source project to apply for discount.",
+        "Yes, we offer significant discounts for open source projects. Visit open source pricing page and sign up with details of your open source project to apply for discount.",
       ],
+      linktext: "Open source pricing",
+      link: "/pricing/open-source-program"
     },
 
     //
@@ -295,7 +284,9 @@ const data = {
       question: "When does the billing cycle start and stop?",
       category: "Billing",
       answer: [
-        "The billing cycle begins the first of the month regardless of when you sign up. Your first month is prorated based on your actual sign-up date. Layer5 meters the count of elements under management on a daily basis. The billable count of elements under management is calculated at the end of the month using the maximum count (high water mark) of the lower 99 percent of usage for those days. Layer5 excludes the top 1% to reduce the impact of spikes in usage on your bill. The billable count of elements under management is based on the average number of elements for the month. See your Usage in Layer5 Cloud. Billing pages are only accessible to users with the Meshery Admin Role.",
+        "The billing cycle begins the first day of the subscription period.",
+        "Layer5 meters the count of active users and systems under management on a daily basis. The billable count of users and elements under management is calculated at the end of the month using the maximum count (high water mark) of the lower 99 percent of usage for those days.",
+        "Layer5 excludes the top 1% to reduce the impact of spikes in usage on your bill. The billable count of active users and elements under management is based on the average number of elements for the month. See your Usage in Layer5 Cloud. Billing pages are only accessible to users with the Org Billing Admin role.",
       ],
     },
     {
@@ -304,6 +295,8 @@ const data = {
       answer: [
         "You can view your account's subscription, your other paid features and products, and your next billing date in your account's billing settings",
       ],
+      link: "https://cloud.layer5.io/account/subscriptions",
+      linktext: "Manage Subscriptions",
     },
     {
       question: "What happens if payment fails?",
@@ -319,113 +312,13 @@ const data = {
         "You can unlock the paid features on your account and trigger a new payment attempt by updating the payment method on your account. To learn more about how to manage your payments, visit the Billing section of your Layer5 Cloud account.",
       ],
     },
-
-    //
-    // SERVICE MESH
-    //
-
     {
-      question: "What value does a service mesh provide?",
-      category: "Service Mesh",
+      question: "What about refunds for yearly subscriptions if I cancel early?",
+      category: "Billing",
       answer: [
-        "Service meshes provide visibility, resiliency, traffic, and security control of distributed application services. Much value is promised here, particularly to the extent that much is given without the need to change your application code.",
+        "Great question, and we're happy to clarify! For yearly subscriptions (which often come at a nice discount compared to monthly billing), we stick to the same no-refund policy. You'll have full-year access to all the cool stuff, including advanced service mesh courses, hands-on labs, multi-cluster management, and enterprise features. ",
+        "If you cancel early, it just prevents the auto-renewal for next year, and you'll keep using everything until your paid term wraps up—no refunds for the remaining months. We designed it this way to support our ongoing platform improvements. If you're unsure, the Free Forever plan is a low-pressure way to check out the basics first!",
       ],
-      link: "",
-      linktext: "",
-    },
-    // {
-    //     question: "What is the difference between a service mesh management, control, and data plane?",
-    //     category: "Service Mesh",
-    //     answer: "",
-    //     answer_2: "",
-    //     answer_3: "",
-    //     answer_4: "",
-    //     answer_5: "",
-    //     link: "/blog/service-mesh-planes",
-    //     linktext: "Blog: Understanding Service Mesh Planes",
-    // },
-    {
-      question:
-        "What if I deploy one service mesh, like Istio, then need to switch to another service mesh?",
-      category: "Service Mesh",
-      answer: [
-        "Use of Meshery and the Service Mesh Interface specification help avoid switching costs between service meshes.",
-        "The goal of Service Mesh Interface specifications are to provide an abstract, unified method of interacting with a service mesh.",
-        "See if your service mesh adheres to SMI specifications at the link below.",
-      ],
-      link: "/projects/service-mesh-interface-conformance",
-      linktext: "Service Mesh Interface",
-    },
-    {
-      question: "What are service mesh standards and why do they matter?",
-      category: "Service Mesh",
-      answer: [
-        "Three service mesh abstractions have arisen given the high number of service meshes available (see the Service Mesh Landscape)",
-        "Servcie Mesh Performance (SMP) - A standard for capturing and characterizing service mesh performance.",
-        "Service Mesh Interface (SMI) - A standard interface for using common service mesh functionality on Kubernetes.",
-        "Multi-Vendor Service Mesh Interoperation (Hamlet) - A set of API standards for enabling service mesh federation.",
-      ],
-      link: "https://calcotestudios.com/talks/decks/slides-open-infrastructure-summit-2020-its-a-multi-mesh-world.html",
-      linktext: "See Open Infrastructure Summit Presentation",
-    },
-    {
-      question: "How does a service mesh help me? in my role?",
-      category: "Service Mesh",
-      answer: [
-        "Operators don’t necessarily need to involve Developers to change how many times a service should retry before timing out or to run experiments (known as chaos engineering). They are empowered to affect service behavior independently.",
-        "Customer Success (support) teams can handle the revocation of client access without involving Operators.",
-        "Product Owners can use quota management to enforce price plan limitations for quantity-based consumption of particular services.",
-        "Developers can redirect their internal stakeholders to a canary with beta functionality without involving Operators.",
-        "Security Engineers can declaratively define authentication and authorization policies, enforced by the service mesh.",
-        "Network Engineers are empowered with an extraordinarily high degree of application-level control formerly simply unavailable to them.",
-      ],
-      link: "",
-      linktext: "",
-    },
-    // {
-    //     question: "Why do I need a service mesh?",
-    //     category: "Service Mesh",
-    //     answer: "",
-    //     answer_2: "",
-    //     answer_3: "",
-    //     answer_4: "",
-    //     answer_5: "",
-    //     link: "",
-    //     linktext: "",
-    // },
-    // {
-    //     question: "Which service mesh is right for me?",
-    //     category: "Service Mesh",
-    //     answer: "",
-    //     answer_2: "",
-    //     answer_3: "",
-    //     answer_4: "",
-    //     answer_5: "",
-    //     link: "/service-mesh-landscape",
-    //     linktext: "Service Mesh Landscape",
-    // },
-    // {
-    //   question: "What is a service mesh?",
-    //   category: "Service Mesh",
-    //   answer: [
-    //     "Service meshes provide intent-based networking for microservices describing desired behavior of the network in the face of constantly changing conditions and network topology. At their core, service meshes provide:",
-    //     "A services-first network; A developer-driven network;",
-    //     "A network that is primarily concerned with alleviating application developers from building infrastructure concerns into their application code; A network that empowers operators with the ability to declaratively define network behavior, node identity, and traffic flow through policy;",
-    //     "A network that enables service owners to control application logic without engaging developers to change its code.",
-    //     "Value derived from the layer of tooling that service meshes provide is most evident in the land of microservices. The more services, the more value derived from the mesh. In subsequent chapters, I show how service meshes provide value outside of the use of microservices and containers and help modernize existing services (running on virtual or bare metal servers) as well.",
-    //   ],
-    //   link: "",
-    //   linktext: "",
-    // },
-    {
-      question: "When should I adopt a service mesh?",
-      category: "Service Mesh",
-      answer: [
-        "There are many service meshes to choose from as well as a variety of deployment models. Which is right for you and your organization depends on where you are in your maturity curve (Cloud Native skill set), number of services, underlying infrastructure, and how centric technology is to your business. ",
-        "So, should you deploy a service mesh? More and more the answer is “yes”. Service meshes are quickly becoming a ubiquitous layer in modern infrastructures.",
-      ],
-      link: "/deploy-service-mesh",
-      linktext: "Factors When considering how strongly you need a service mesh",
     },
 
      //

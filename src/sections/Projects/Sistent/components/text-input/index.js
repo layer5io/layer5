@@ -2,8 +2,7 @@ import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
-import { SistentThemeProvider, Input } from "@layer5/sistent";
-
+import { SistentThemeProvider, Input } from "@sistent/sistent";
 import { Row } from "../../../../../reusecore/Layout";
 import TabButton from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
@@ -20,11 +19,9 @@ const SistentTextInput = () => {
           <h2>Text Input</h2>
         </a>
         <p>
-          Text inputs are important elements that help users interact with an
-          experience by providing text commands that will in turn return
-          expected results. These commands can range from providing a free range
-          of personal information to entering a limited number of characters for
-          a use case.
+          The Input component is a versatile form control that enables users to enter and edit text data.
+          It supports various input types, validation states, and customization options to create
+          accessible and user-friendly data collection experiences.
         </p>
         <div className="filterBtns">
           <TabButton
@@ -63,93 +60,67 @@ const SistentTextInput = () => {
         </div>
         <div className="main-content">
           <p>
-            Text inputs are important elements that help users interact with an
-            experience by providing text commands that will in turn return
-            expected results. These commands can range from providing a free
-            range of personal information to entering a limited number of
-            characters for a use case.
+            Input components are fundamental building blocks for forms and data collection interfaces.
+            They provide immediate feedback to users and help maintain data quality through validation
+            and formatting features. The component adapts to different content types while maintaining
+            consistency with your design system.
           </p>
-          <a id="Design">
-            <h2>Design</h2>
+          <a id="Usage">
+            <h2>Usage</h2>
           </a>
           <p>
-            Instead of various types for use across designs, the text input has
-            just one type to ensure simplicity and efficiency. It is preferable
-            that inputs are as minimal as possible since the sole function that
-            they generally perform is to ensure that users are able to send in
-            data and receive corresponding information.
+            The component can be used in several main variants:
           </p>
-          <Row $Hcenter>
-            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Input placeholder="Placeholder goes here" type="text" />
-            </SistentThemeProvider>
-          </Row>
-          <a id="Sizes">
-            <h2>Sizes</h2>
+          <ul>
+            <li><p><b>Standard:</b> Single-line text input for basic data collection</p></li>
+            <li><p><b>Multiline:</b> Multi-line text area for longer content</p></li>
+          </ul>
+          <a id="Basic Example">
+            <h3>Basic Example</h3>
           </a>
           <p>
-            Since input fields have a responsive width that adjusts depending on
-            the need and use case, size considerations are mostly directed at
-            the height of the field. This means that the size of text inputs
-            adjust only relative to the height of the text field. Because text
-            inputs are mostly used in tandem with buttons, to ensure design
-            consistency, text inputs and buttons have similar size requirements.
+            Below is a simple example of how to use the Input component.
           </p>
-          <h3>56px / 3.5rem</h3>
-          <p>
-            The 56px text input is the first field size. It is the largest text
-            input available for use and it is available for both mobile and
-            desktop resolutions, but it serves in different capacities across
-            these different resolutions.
-          </p>
-          <Row $Hcenter>
+          <br />
+          <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Input
-                placeholder="Placeholder goes here"
-                type="text"
-                size="medium"
-              />
+              <Input placeholder="Enter your name" />
             </SistentThemeProvider>
           </Row>
-          <h3>48px / 3rem</h3>
-          <p>
-            The 48px text input is the second field size in use and it is
-            available from mobile to desktop resolutions, even though it serves
-            in different capacities across these screen sizes.
-          </p>
-          <Row $Hcenter>
-            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Input
-                placeholder="Placeholder goes here"
-                type="text"
-                size="small"
-              />
-            </SistentThemeProvider>
-          </Row>
-          <p>
-            <strong>NOTE:</strong>
-          </p>
-          <p>
-            These sizes are being specified with numerical values because though
-            the same size is used across screen resolutions, they have different
-            roles. On desktop for instance, the 56px text input is a the default
-            size, and 48px the small size, while on mobile, 56px is large and
-            48px is the default size. Preferred text input sizes (height) are
-            usually arrived at through exploration and proper consideration of
-            industry standards and best practices.
-          </p>
-          <a id="Adding Icons">
-            <h2>Adding Icons</h2>
+          <br />
+          <a id="Key Features">
+            <h2>Key Features</h2>
           </a>
           <p>
-            Icons can be used often in text inputs to aid in understanding the
-            required parameters for a given field or to provide options that can
-            help to improve the experience as a user navigates a given set of
-            text inputs. Depending on the context, icons can be placed on the
-            left and right at different times or even at the same time. The
-            icons should be aligned to the left or right side of the input field
-            and not to the center, while text remains left aligned.
+            You can customize the appearance and behavior of the Input component using
+            various props to define how the component renders and interacts with users.
           </p>
+          <h3>Input Types</h3>
+          <ul>
+            <li><p><b>Text:</b> Standard text input for general text data</p></li>
+            <li><p><b>Email:</b> Email input with built-in validation</p></li>
+            <li><p><b>Password:</b> Password input with hidden text</p></li>
+            <li><p><b>Number:</b> Numeric input with increment/decrement controls</p></li>
+            <li><p><b>Tel:</b> Telephone number input</p></li>
+            <li><p><b>URL:</b> URL input with validation</p></li>
+            <li><p><b>Search:</b> Search input with optimized styling</p></li>
+          </ul>
+          <h3>Visual Features</h3>
+          <ul>
+            <li><p><b>Standard:</b> Clean, minimalist input styling</p></li>
+            <li><p><b>Multiline:</b> Expandable text area for longer content</p></li>
+          </ul>
+          <h3>Component Props</h3>
+          <ul>
+            <li><p><b>Color:</b> Primary, secondary, success, error, warning color themes</p></li>
+            <li><p><b>Label:</b> Descriptive labels for accessibility</p></li>
+            <li><p><b>Helper Text:</b> Additional guidance or validation messages</p></li>
+            <li><p><b>Placeholder:</b> Hint text showing expected input format</p></li>
+            <li><p><b>Disabled State:</b> Non-interactive state for read-only contexts</p></li>
+            <li><p><b>Required:</b> Indicates mandatory fields</p></li>
+            <li><p><b>Error State:</b> Visual feedback for validation errors</p></li>
+            <li><p><b>Start/End Adornments:</b> Icons or text before/after input content</p></li>
+          </ul>
         </div>
       </div>
     </SistentLayout>

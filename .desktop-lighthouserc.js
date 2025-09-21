@@ -13,7 +13,7 @@ module.exports = {
          "http://localhost/cloud-native-management/kanvas/index.html?desktop",
          "http://localhost/learn/learning-paths/index.html?desktop",
          "http://localhost/learn/service-mesh-books/index.html?desktop",
-         "http://localhost/learn/service-mesh-workshops/index.html?desktop",
+         "http://localhost/learn/workshops/index.html?desktop",
          "http://localhost/learn/index.html?desktop",
          "http://localhost/blog/index.html?desktop",
          "http://localhost/resources/index.html?desktop",

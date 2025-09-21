@@ -22,7 +22,7 @@ const MesheryTerminal = () => {
       <Container>
         <Hero
           title="Single Step Installation"
-          initialdescription="No faster way to start managing any service mesh than with a single step to download, install, and run Meshery:"
+          initialdescription="No faster way to start managing any infrastrucutre than with a single step to download, install, and run Meshery:"
           // links={[
           //   {
           //     text: "Download, Install, and Run Meshery",
@@ -50,10 +50,10 @@ const MesheryTerminal = () => {
               description: (
                 <>
                   <p>
-                    Meshery provides you with a clean, robust, streamlined command-line interface to manage your service meshes:
+                    Meshery provides you with a clean, robust, streamlined command-line interface to manage your cloud native infrastructure.
                   </p>
                   <p>
-                    With <code>mesheryctl</code>, not only you can manage your service meshes, but you can also manage their workloads, mesure their performance, verify conformance to service mesh standards. You can also apply patterns.
+                    With <code>mesheryctl</code>, not only you can manage your infrastructure, but you can also manage their workloads, characterize performance, and apply well-architectued patterns.
                   </p>
                   <p>
                     <code>mesheryctl</code> provides support for all of Meshery's features and many platforms.
@@ -225,13 +225,13 @@ const MesheryTerminal = () => {
               description: (
                 <>
                   <p>
-                    Meshery supports cloud native application patterns using a mesh-agnostic and application-holistic approach: patternfiles.
+                    Meshery supports cloud native application patterns using a cloud-agnostic and application-holistic approach: designs.
                   </p>
                   <p>
-                    Patternfiles stems from multiple open needs, one of which is the desire to define a common practice of both configuring and operating service mesh functionality in a single, universal file.
+                    Meshery designs enable the practice of both configuring and operating functionality in a single, universal file.
                   </p>
                   <p>
-                    With a patternfile, you can capture service mesh behavior in a single file. You can access service mesh-specific differentiation while keeping your patterns short and simple.
+                    With a design, you can capture behavior in a single file. You can access infrastructure-specific differentiation while keeping your patterns short and simple.
                   </p>
                 </>
               ),
@@ -340,20 +340,20 @@ const MesheryTerminal = () => {
               description: (
                 <>
                   <p>
-                    Meshery provides service mesh and application performance measurement and management.
+                    Meshery provides cloud native infrastructure and application performance measurement and management.
                   </p>
                   <p>
-                    Meshery natively supports the <Link to="/projects/cloud-native-performance">Service Mesh Performance</Link> (SMP) specification.
+                    Meshery natively supports the <Link to="/projects/cloud-native-performance">Cloud Native Performance</Link> (SMP) specification.
                   </p>
                   <p>
-                    Use performance test profiles to schedule and continuously verify your service mesh is performing in accordance with your SLOs.
+                    Use performance test profiles to schedule and continuously verify your application is performing in accordance with your SLOs.
                   </p>
                 </>
               ),
               logos: [
                 {
                   url: SMP,
-                  alt: "Service Mesh Performance",
+                  alt: "Cloud Native Performance",
                 }
               ],
               terminal: {
@@ -379,26 +379,26 @@ const MesheryTerminal = () => {
                     frames: 2,
                     color: "gray",
                     code: [
-                      "⠋ Analyzing service mesh",
-                      "⠙ Analyzing service mesh",
-                      "⠹ Analyzing service mesh",
-                      "⠸ Analyzing service mesh",
-                      "⠼ Analyzing service mesh",
-                      "⠴ Analyzing service mesh",
-                      "⠦ Analyzing service mesh",
-                      "⠧ Analyzing service mesh",
-                      "⠇ Analyzing service mesh",
-                      "⠏ Analyzing service mesh",
-                      "⠋ Analyzing service mesh",
-                      "⠙ Analyzing service mesh",
-                      "⠹ Analyzing service mesh",
-                      "⠸ Analyzing service mesh",
-                      "⠼ Analyzing service mesh",
-                      "⠴ Analyzing service mesh",
-                      "⠦ Analyzing service mesh",
-                      "⠧ Analyzing service mesh",
-                      "⠇ Analyzing service mesh",
-                      "⠏ Analyzing service mesh",
+                      "⠋ Analyzing infrastructure",
+                      "⠙ Analyzing infrastructure",
+                      "⠹ Analyzing infrastructure",
+                      "⠸ Analyzing infrastructure",
+                      "⠼ Analyzing infrastructure",
+                      "⠴ Analyzing infrastructure",
+                      "⠦ Analyzing infrastructure",
+                      "⠧ Analyzing infrastructure",
+                      "⠇ Analyzing infrastructure",
+                      "⠏ Analyzing infrastructure",
+                      "⠋ Analyzing infrastructure",
+                      "⠙ Analyzing infrastructure",
+                      "⠹ Analyzing infrastructure",
+                      "⠸ Analyzing infrastructure",
+                      "⠼ Analyzing infrastructure",
+                      "⠴ Analyzing infrastructure",
+                      "⠦ Analyzing infrastructure",
+                      "⠧ Analyzing infrastructure",
+                      "⠇ Analyzing infrastructure",
+                      "⠏ Analyzing infrastructure",
                       "✓ Analysis complete.",
                     ],
                   },

@@ -8,9 +8,13 @@ import IntraPage from "../../../components/handbook-navigation/intra-page";
 
 const contents = [
   {
-    id: 0, link: "#Learning",text: "Learning", },
-  { id: 1, link: "#Eventing", text: "Eventing" },
-  { id: 2, link: "#Blogging", text: "Blogging" },
+    id: 0, link: "#Learning", text: "Learning",
+  },
+  {
+    id: 1, link: "#Academy", text: "Academy",
+  },
+  { id: 2, link: "#Eventing", text: "Eventing" },
+  { id: 3, link: "#Blogging", text: "Blogging" },
 ];
 
 const LearnLayer = () => {
@@ -28,18 +32,33 @@ const LearnLayer = () => {
             <a id="Learning">
               <h2>Learning together</h2>
             </a>
-            <p>As a community, we have put together an excellent set of learning materials and training resources to guide you through learning about cloud native infrastucture and service meshes.</p>
+            <p>As a community, we have put together an excellent set of learning materials and training resources to guide you through learning about cloud native infrastucture.</p>
             <p>You can review the <Link to="/learn">complete list of learning resources</Link> or jump straight to the type of training you prefer:</p>
             <ul>
               <li>Interactive <Link to="/learn/service-mesh-labs">cloud native labs</Link></li>
               <li>Free <Link to="/learn/service-mesh-books">cloud native books</Link></li>
-              <li>Self-paced <Link to="/learn/service-mesh-workshops">scloud nativeh workshops</Link></li>
+              <li>Self-paced <Link to="/learn/workshops">cloud native workshops</Link></li>
               <li>Recorded training and talks on the <a href="https://www.youtube.com/c/Layer5io?sub_confirmation=1/playlists">Layer5 YouTube Channel</a></li>
               <li>Multi-course, multi-mesh <Link to="/learn/learning-paths">cloud native learning paths</Link></li>
             </ul>
             <p>
               These materials were created to be interactive, easy to use, and
               free for all.
+            </p>
+
+            <a id="Academy">
+              <h2>Layer5 Academy</h2>
+            </a>
+            <p>
+              <a href="https://cloud.layer5.io/academy" target="_blank" rel="noopener noreferrer">
+                Layer5 Academy
+              </a>{" "}
+              is a learning platform built into Layer5 Cloud. Get structured learning paths,
+              interactive challenges, and professional certifications. Content spans beginner
+              to advanced levels for both developers and organizations.
+            </p>
+            <p>
+              For more details, check out the <a href="https://docs.layer5.io/cloud/academy/" target="_blank" rel="noopener noreferrer">Academy documentation</a> and explore our <a href="https://github.com/orgs/layer5io/repositories?q=academy" target="_blank" rel="noopener noreferrer">GitHub collections</a>.
             </p>
 
             <a id="Eventing">

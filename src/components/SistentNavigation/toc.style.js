@@ -42,6 +42,15 @@ const TOCWrapper = styled.div`
     margin-bottom: 1rem;
   }
 
+  .toc-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    max-height: 530px;
+    position: sticky;
+    z-index: 1000;
+  }
+
   .toc-sub-heading {
     color: ${(props) => props.theme.text};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -104,6 +113,7 @@ const TOCWrapper = styled.div`
     width: auto;
     .toc-toggle-btn {
       display: inline-block;
+      z-index: 2;
     }
     .go-back {
       margin-left: 0;

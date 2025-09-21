@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import WorkshopCard from "../../../components/Workshop-Card";
 import PageHeader from "../../../reusecore/PageHeader";
@@ -23,12 +23,11 @@ const WorkshopsPage = () => {
     graphql`query allWorkshops {
   allMdx(
     sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
+    filter: {fields: {collection: {eq: "workshops"}}}
   ) {
     nodes {
       id
       
-      body
       frontmatter {
         title
         date(formatString: "MMMM Do, YYYY")
@@ -85,13 +84,13 @@ const WorkshopsPage = () => {
             <Row style={{
               flexWrap: "wrap"
             }}>
-              {data.allMdx.nodes.map(({ id, frontmatter, fields, body }) => (
+              {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
                 <Col {...content && ID === id ? { $xs: 12, $sm: 12, $lg: 12 } : { $xs: 12, $sm: 6, $lg: 4 } } key={id} className="workshop-grid-col">
                   <div className="workshop-grid-card">
                     <WorkshopCard frontmatter={frontmatter} content={content} ID={ID} id={id} />
                     <div className={content && ID === id ? "active" : "text-contents"}>
                       <div className="content">
-                        <MDXRenderer>{body}</MDXRenderer>
+                        <p>{frontmatter.abstract}</p>
                       </div>
                     </div>
                     <div className={content && ID === id ? "btn-and-status-open" : "btn-and-status"}>
