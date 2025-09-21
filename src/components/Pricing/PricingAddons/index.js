@@ -549,7 +549,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
                       />
                     </Box>
                     <Typography variant="body1" fontWeight="500" sx={typographyStyles.pricingItemRight}>
-                      {formatPrice((isYearly ? enterprisePlan.yearlyprice : enterprisePlan.monthlyprice) * (enterpriseUsers > 0 ? enterpriseUsers : 1))}/{isYearly ? "monthly" : "yearly"}
+                      {formatPrice((isYearly ? enterprisePlan.yearlyprice : enterprisePlan.monthlyprice) * (enterpriseUsers > 0 ? enterpriseUsers : 1))}/{isYearly ? "yearly" : "monthly"}
                     </Typography>
                   </Box>
 
