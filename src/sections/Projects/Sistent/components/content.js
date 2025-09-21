@@ -122,9 +122,78 @@ const componentsData = [
   {
     id: 16,
     name: "Icons",
-    description: "Sistent provides a comprehensive collection of icons that can be used across your projects. These icons are designed to be consistent with the overall design language of the Sistent design system, ensuring a cohesive user experience.",
+    description:
+      "Sistent provides a comprehensive collection of icons that can be used across your projects. These icons are designed to be consistent with the overall design language of the Sistent design system, ensuring a cohesive user experience.",
     url: "/projects/sistent/components/icons",
-    src: "/icons"
+    src: "/icons",
+  },
+  {
+    id: 17,
+    name: "Dialog",
+    description:
+      "Dialogs display important prompts or confirmation requests that interrupt user interaction flow.",
+    url: "/projects/sistent/components/dialog",
+    src: "/dialog",
+  },
+  {
+    id: 18,
+    name: "Circular Progress",
+    description:
+      "The Circular Progress component displays a circular loading indicator that represents the progress in your application",
+    url: "/projects/sistent/components/circularprogress",
+    src: "/circularprogress",
+  },
+  {
+    id: 19,
+    name: "Switch",
+    description: "The Switch component allows users to toggle the state of a single setting on or off.",
+    url: "/projects/sistent/components/switch",
+    src: "/switch"
+  },
+  {
+    id: 20,
+    name: "Tabs",
+    description: "Tabs organize and allow navigation between groups of content that are related and at the same level of hierarchy.",
+    url: "/projects/sistent/components/tabs",
+    src: "/tabs",
+  },
+  {
+    id: 21,
+    name: "Avatar",
+    description:
+      "An Avatar component is used to visually represent a user, profile, or entity, typically through an image, initials, or icon.",
+    url: "/projects/sistent/components/avatar",
+    src: "/avatar",
+  },
+  {
+    id: 22,
+    name: "AvatarGroup",
+    description:
+      "An AvatarGroup component is used to display a collection of Avatars together, typically representing a group of users, collaborators, or participants.",
+    url: "/projects/sistent/components/avatar-group",
+    src: "/avatar-group",
+  },
+  {
+    id: 23,
+    name: "Badge",
+    description: "A badge is a small component that displays a number or status indicator, often used to show notifications or messages.",
+    url: "/projects/sistent/components/badge",
+    src: "/badge",
+  },
+  {
+    id: 24,
+    name: "Toolbar",
+    description:
+    "The toolbar is a horizontal container for grouping interactive elements like buttons, filters, or navigation controls, typically placed at the top of a UI section.",
+    url: "/projects/sistent/components/toolbar",
+    src: "/toolbar",
+  },
+  {
+    "id": 25,
+    "name": "RadioGroup",
+    "description": "Sistent offers a well-structured RadioGroup component that allows users to select one option from a set.",
+    "url": "/projects/sistent/components/radiogroup",
+    "src": "/radiogroup"
   },
   {
     id: 17,

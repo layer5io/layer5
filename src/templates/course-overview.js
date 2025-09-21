@@ -16,7 +16,6 @@ export const query = graphql`
       }
     ) {
       nodes {
-        body
         frontmatter {
           courseTitle
           description
@@ -67,6 +66,7 @@ export const query = graphql`
           course
           learnpath
           chapter
+          section
         }
       }
     }

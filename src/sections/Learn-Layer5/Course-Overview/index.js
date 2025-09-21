@@ -8,17 +8,19 @@ import { IoDocumentTextOutline, } from "@react-icons/all-files/io5/IoDocumentTex
 import { IoChevronBackOutline } from "@react-icons/all-files/io5/IoChevronBackOutline";
 import Button from "../../../reusecore/Button";
 import ChapterCard from "../../../components/Learn-Components/Chapter-Card";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+
 import { SRLWrapper } from "simple-react-lightbox";
 import DiscussCallout from "../../Discuss-Callout";
 import SubscribeLearnPath from "../../subscribe/SubscribeLearnPath";
 import BookmarkNotification from "../../../components/Learn-Components/BookmarkNotification";
 
 const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
+
+  const extractedSection = (chapters.length > 0 ? chapters[0].fields.section : "");
   const [hasBookmark, setHasBookmark] = useState(false);
   const [bookmarkUrl, setBookmarkUrl] = useState("");
   const [showNotification, setShowNotification] = useState(true);
-  const serviceMeshImages = course.frontmatter.meshesYouLearn;
+  const serviceMeshImages = course.frontmatter.meshesYouLearn || [];
   const getChapterTitle = (chapter, chapterList) => {
     for (let i = 0; i < chapterList.length; i++) {
       if (chapterList[i].fields.chapter === chapter) return chapterList[i];
@@ -33,7 +35,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
     });
     return serviceMeshes;
   };
-
+  const availableServiceMeshes = getAvailableServiceMeshes();
   const findServiceMeshImage = (images, serviceMesh) => {
     return images.find((image) => image.name.toLowerCase() == serviceMesh);
   };
@@ -43,7 +45,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
       return (
         <div className="service-mesh-courses" key={index}>
           <Image
-            {...findServiceMeshImage(serviceMeshImages, sm).imagepath}
+            {...findServiceMeshImage(serviceMeshImages, sm)?.imagepath}
             className="docker"
             alt={sm}
           />
@@ -108,11 +110,11 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
           <Col $md={12} $lg={8} $xl={7}>
             <h2 className="overview">Overview</h2>
             <SRLWrapper>
-              <MDXRenderer>{course.body}</MDXRenderer>
+              <p>{course.frontmatter.description}</p>
             </SRLWrapper>
             <h2 className="course-toc">Table Of Contents</h2>
             {course.frontmatter.toc.map((item, index) => (
-              <Link key={index} to={`istio/${item}`} className="chapter-link">
+              <Link key={index} to={`${extractedSection}/${item}`} className="chapter-link">
                 <ChapterCard
                   chapterNum={index + 1}
                   chapter={getChapterTitle(item, chapters)}
@@ -122,10 +124,14 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
           </Col>
           <Col $md={12} $lg={4} $xl={5}>
             <div className="service-meshes-you-can-learn">
-              <h2>Service Meshes You can Learn</h2>
-              <ServiceMeshesAvailable
-                serviceMeshes={getAvailableServiceMeshes()}
-              />
+              {console.log("lenght of the service mesh array: ", availableServiceMeshes.length)   }
+              {              console.log("array: ",availableServiceMeshes)}
+              { serviceMeshImages.length !== 0 && availableServiceMeshes.length != 0 && (
+                <>
+                  <h2>Technologies You Can Learn</h2>
+                  <ServiceMeshesAvailable serviceMeshes={availableServiceMeshes} />
+                </>
+              )}
             </div>
             {/* <div className="join-community_text-and_button">
               <h2>Contribute to Layer5</h2>
