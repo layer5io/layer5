@@ -94,8 +94,8 @@
   "a7ae287b.js": "a7ae287b-87f73d7e269b6fe8eb93.js",
   "ac38a4387672353ec059a23673ac1219a2334a79.js": "ac38a4387672353ec059a23673ac1219a2334a79-bb2f9b211421c6c58ec0.js",
   "ac581ebe.js": "ac581ebe-fc1da618b7c5246750b7.js",
-  "app-443026df0c1be541c12b.js.LICENSE.txt": "app-443026df0c1be541c12b.js.LICENSE.txt",
-  "app.js": "app-443026df0c1be541c12b.js",
+  "app-8e9ca866b3755e7dde3b.js.LICENSE.txt": "app-8e9ca866b3755e7dde3b.js.LICENSE.txt",
+  "app.js": "app-8e9ca866b3755e7dde3b.js",
   "b5f6012b.js": "b5f6012b-9eb09b71afbe9368653e.js",
   "b66a268f464608e6dd2ebe4655d843ec5478d744.js": "b66a268f464608e6dd2ebe4655d843ec5478d744-6e3b83ef36f477d91094.js",
   "b70df86a2af5aa9bcac2c26d219ed05ff9125a20.js": "b70df86a2af5aa9bcac2c26d219ed05ff9125a20-a80f0804bcea8a875972.js",
@@ -190,7 +190,7 @@
   "component---src-pages-learn-workshops-js.js": "component---src-pages-learn-workshops-js-d039e7fd2a7ab6382864.js",
   "component---src-pages-newcomers-js.js": "component---src-pages-newcomers-js-305ba774ccc047705ad5.js",
   "component---src-pages-partners-js.js": "component---src-pages-partners-js-996e1de40a12a17f047d.js",
-  "component---src-pages-pricing-index-js.js": "component---src-pages-pricing-index-js-d228c2f511122989b5b1.js",
+  "component---src-pages-pricing-index-js.js": "component---src-pages-pricing-index-js-7cb4d2ea1597bfc27b85.js",
   "component---src-pages-pricing-open-source-program-js.js": "component---src-pages-pricing-open-source-program-js-141d57efcc76011e083d.js",
   "component---src-pages-products-academy-index-js.js": "component---src-pages-products-academy-index-js-3783084bc5643ff53650.js",
   "component---src-pages-products-index-js-49cb3c6db2f402070c22.js.LICENSE.txt": "component---src-pages-products-index-js-49cb3c6db2f402070c22.js.LICENSE.txt",
@@ -666,5 +666,5 @@
   "static/world-image.svg": "static/world-image.e3172b5d.svg",
   "static/yash-sharma.webp": "static/yash-sharma-54aa26b6e5743f0557cfc76aa9797f2d.webp",
   "styles.css": "styles.a075e263715c95fb73d1.css",
-  "webpack-runtime.js": "webpack-runtime-94f76958b755d364dbd4.js"
+  "webpack-runtime.js": "webpack-runtime-1b6b04f3bdab1df20bd9.js"
 }
