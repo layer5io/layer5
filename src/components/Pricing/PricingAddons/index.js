@@ -520,16 +520,17 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
                           {subAddOn.name} × {subAddOn.pricing?.[quantityIndex]?.learners || 0}/{isYearly ? "yearly" : "monthly"}
                         </Typography>
                         <Typography variant="body1" sx={typographyStyles.pricingItemRight} fontWeight="500">
-                          {formatPrice(
+                          {(
                             (() => {
                               const subAddOnPricing = subAddOn.pricing && subAddOn.pricing[quantityIndex];
                               if (subAddOnPricing) {
                                 const subAddOnPerUserCost = isYearly ? subAddOnPricing.yearlyPerUser : subAddOnPricing.monthlyPerUser;
-                                return subAddOnPerUserCost * subAddOnPricing.learners;
+                                const totalCost = subAddOnPerUserCost * subAddOnPricing.learners;
+                                return formatPrice(totalCost);
                               }
                               return 0;
                             })()
-                          )}
+                          )}/{isYearly ? "yearly" : "monthly"}
                         </Typography>
                       </Box>
                     )
@@ -555,7 +556,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
 
                   <Box sx={boxStyles.flexBetween}>
                     <Typography variant="body1" gutterBottom sx={typographyStyles.subheading}>
-                      {isYearly ? "Yearly" : "Monthly"} Cost
+                      Total Cost
                     </Typography>
                     <Typography variant="h4" fontWeight="bold" sx={typographyStyles.qanelasFont}>
                       {formatPrice(totalPrice)}
