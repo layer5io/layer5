@@ -70,8 +70,8 @@ export const getAddOns = () => [
     monthlyPrice: 64,
     yearlyPrice: 653, // ~15% discount for yearly
     iconType: "cloud", // Reference to icon type instead of component
-    unitLabel: "servers",
-    unitLabelSingular: "server",
+    unitLabel: "Servers",
+    unitLabelSingular: "Server",
     maxUnits: 50,
     pricing: [
       { units: 1, monthlyPerUnit: 64, yearlyPerUnit: 54.40, currency: "$" },
@@ -87,8 +87,8 @@ export const getAddOns = () => [
     monthlyPrice: 1.50,
     yearlyPrice: 15.30, // ~15% discount for yearly
     iconType: "group", // Reference to icon type instead of component
-    unitLabel: "collaborators",
-    unitLabelSingular: "collaborator",
+    unitLabel: "Collaborators",
+    unitLabelSingular: "Collaborator",
     maxUnits: 200,
     pricing: [
       { units: 1, monthlyPerUnit: 2, yearlyPerUnit: 1.70, currency: "$" },
