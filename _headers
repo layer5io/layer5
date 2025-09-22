@@ -46,15 +46,15 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/QanelasSoftThinItalic-b2fa0a76c7cbbc8d1a419f1f47509730.otf
   Cache-Control: public, max-age=31536000, immutable
-/static/meshery-operator-dark.aabaafd9.svg
-  Cache-Control: public, max-age=31536000, immutable
 /static/inactive-77f885875597041beb6e27cddb032862.webp
   Cache-Control: public, max-age=31536000, immutable
 /static/active-fe016dcb87865d5b345be9e09c7f53e1.webp
   Cache-Control: public, max-age=31536000, immutable
-/static/sistent-contributor.6ef58876.svg
+/static/meshery-operator-dark.aabaafd9.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/docker-extension-meshery-logo.48c50525.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/sistent-contributor.6ef58876.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/visual-topology.1fe30b52.svg
   Cache-Control: public, max-age=31536000, immutable
@@ -68,63 +68,85 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/SMPTestConfig-510ce0c66a37514d27ed12d83b8af302.png
   Cache-Control: public, max-age=31536000, immutable
-/static/type-scale-2-light-f042fff5e1cc3df2e0dd8e9d1cbd910a.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/type-scale-2-dark-81566b229abacaaf24b566b7331d9799.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/type-scale-3-light-57b35a8fd97cc208865b469cc7d63249.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/type-scale-3-dark-8a426355dd401f3b95a0938280ef74f2.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/nsm-white.640ca47d.svg
-  Cache-Control: public, max-age=31536000, immutable
 /static/space-token-table-1-light-572827aaf4b90918a16c3dba03a37734.png
   Cache-Control: public, max-age=31536000, immutable
 /static/space-token-table-1-dark-f2c31be5647082accfb9629bb79ce921.png
   Cache-Control: public, max-age=31536000, immutable
 /static/space-token-table-2-light-17e47722e59c9326623fd99567a1b30d.png
   Cache-Control: public, max-age=31536000, immutable
-/static/space-token-table-3-light-446e3b8d937a5ff8291b71a0716f7499.png
-  Cache-Control: public, max-age=31536000, immutable
 /static/space-token-table-2-dark-9f90a39e0268bb1aee337b041c8accd4.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/space-token-table-3-light-446e3b8d937a5ff8291b71a0716f7499.png
   Cache-Control: public, max-age=31536000, immutable
 /static/space-token-table-3-dark-35c13c7a780793e0502dcf1921f59574.png
   Cache-Control: public, max-age=31536000, immutable
+/static/type-scale-2-light-f042fff5e1cc3df2e0dd8e9d1cbd910a.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/type-scale-2-dark-81566b229abacaaf24b566b7331d9799.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/type-scale-3-dark-8a426355dd401f3b95a0938280ef74f2.png
+  Cache-Control: public, max-age=31536000, immutable
 /static/tonal-palettes-full-9f774d476b4086f782cfca89afb45aa1.png
   Cache-Control: public, max-age=31536000, immutable
-/static/context-visuals-6-769494a38956ee9f13f9d3de71dd0713.png
+/static/type-scale-3-light-57b35a8fd97cc208865b469cc7d63249.png
   Cache-Control: public, max-age=31536000, immutable
 /static/context-visuals-5-88a5aa8ab7b95e7dfd5b6a43082af066.png
   Cache-Control: public, max-age=31536000, immutable
-/static/tonal-palettes-full-dark-80fbc4e8a7463537620ea3d96dcd4aec.png
-  Cache-Control: public, max-age=31536000, immutable
 /static/context-visuals-6-dark-c5d3c4ddab7b6e186763c542a7f4af77.png
   Cache-Control: public, max-age=31536000, immutable
-/static/book-cover-eea4ddbfdb979daf9295e71101c489fc.webp
+/static/context-visuals-6-769494a38956ee9f13f9d3de71dd0713.png
   Cache-Control: public, max-age=31536000, immutable
-/static/self-service-and-integration-0201f3dafa9981c82bd3af0ec3d1bd0f.gif
+/static/tonal-palettes-full-dark-80fbc4e8a7463537620ea3d96dcd4aec.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/nsm-white.640ca47d.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/challenges-4a91aec111ee592b59d834a9c7d79c54.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/track-07c70dbddf7f4514375e8cdb9392f511.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/badges-cdfd18d44b7f2bd63c777a3af30792e4.png
   Cache-Control: public, max-age=31536000, immutable
 /static/deploy-designs-056b28796b5e8048729ccf63d670dc6a.gif
   Cache-Control: public, max-age=31536000, immutable
-/static/orchestration.741b84b2.svg
-  Cache-Control: public, max-age=31536000, immutable
 /static/environments-9f7e01f6e4d8734352283d357511e8e4.gif
+  Cache-Control: public, max-age=31536000, immutable
+/static/self-service-and-integration-0201f3dafa9981c82bd3af0ec3d1bd0f.gif
   Cache-Control: public, max-age=31536000, immutable
 /static/validate-bb9111bb43ccebb97203750507857c28.gif
   Cache-Control: public, max-age=31536000, immutable
-/static/orchestration-light.c707f407.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/kubernetes.1984069f.svg
-  Cache-Control: public, max-age=31536000, immutable
 /static/cluster-b100f5d31facd01d256c4a6ca907d341.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/config.161226b1.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/collaborate.20cef68e.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/deploy-c8aa998f3b1f96e2bea7403d741ab452.png
   Cache-Control: public, max-age=31536000, immutable
 /static/config-83a60ae70e632258f36f52d2d6b21989.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/orchestration.741b84b2.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/orchestration-light.c707f407.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/whiteboarding.6cc355be.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/cluster.2e7b3d8d.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/switcher-e02ddc26807212ea7afe50d69e718749.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/collaborate.20cef68e.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/academy-catalog-17d9ddb7ffe231cf83a6ed5dc0d76666.gif
+  Cache-Control: public, max-age=31536000, immutable
+/static/kubernetes.1984069f.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/config.161226b1.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/type-scale-1-light-d38cb1be209958bc45ecc7ef54743b61.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/font-pair-light-039ecc4cc1796b22ba3150e856a19cf8.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/type-scale-1-dark-49cd01fa18a78ba80cb8ae68a5f008fa.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/font-pair-dark-694c7b4104a4643f1a7f47d70314182b.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/power-of-meshery-small-9ea8caa52e68355c79cd0d86a7710ece.png
   Cache-Control: public, max-age=31536000, immutable
 /static/whiteboard-1e9f33293030bc98a01945af9740863f.png
   Cache-Control: public, max-age=31536000, immutable
@@ -136,27 +158,11 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/collaboration-36f1cf8785d3ccb18f8ec0777d28183f.gif
   Cache-Control: public, max-age=31536000, immutable
-/static/whiteboarding.6cc355be.svg
+/static/layer5-products-overview.67a67c55.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/switcher-e02ddc26807212ea7afe50d69e718749.png
+/static/layer5-products-overview-dark.e3465d19.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/cluster.2e7b3d8d.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/type-scale-1-light-d38cb1be209958bc45ecc7ef54743b61.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/type-scale-1-dark-49cd01fa18a78ba80cb8ae68a5f008fa.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/font-pair-light-039ecc4cc1796b22ba3150e856a19cf8.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/font-pair-dark-694c7b4104a4643f1a7f47d70314182b.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/challenges-4a91aec111ee592b59d834a9c7d79c54.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/badges-cdfd18d44b7f2bd63c777a3af30792e4.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/track-07c70dbddf7f4514375e8cdb9392f511.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/academy-catalog-17d9ddb7ffe231cf83a6ed5dc0d76666.gif
+/static/smi-table.3c5d11b7.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/context-visuals-2-1484f9530dcc6b1fbbca57c1b30a900c.png
   Cache-Control: public, max-age=31536000, immutable
@@ -166,25 +172,7 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/context-visuals-3-d8895f69abd841050c85e52f75bd387e.png
   Cache-Control: public, max-age=31536000, immutable
-/static/layer5-image-hub-3f4203f10b4fd9894ef9aa061a83312a.webp
-  Cache-Control: public, max-age=31536000, immutable
-/static/smp-white.70f8dbc3.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/service-mesh-performance-specification-example-4fcf4084fc5b57f99a8bfa3962bb3df5.gif
-  Cache-Control: public, max-age=31536000, immutable
-/static/service-mesh-architecture-consul-78b3dbf4d273793f51a1ed8dccc922b8.webp
-  Cache-Control: public, max-age=31536000, immutable
-/static/image-hub-on-consul-with-wasm-and-meshery-80958f357f86009c0f9fd8a20594f6bc.webp
-  Cache-Control: public, max-age=31536000, immutable
-/static/smi-table.3c5d11b7.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/istio-book-giveaway-dcce1c814024eb64a5615640c7de1971.webp
-  Cache-Control: public, max-age=31536000, immutable
-/static/power-of-meshery-small-9ea8caa52e68355c79cd0d86a7710ece.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/layer5-products-overview.67a67c55.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/layer5-products-overview-dark.e3465d19.svg
+/static/book-cover-eea4ddbfdb979daf9295e71101c489fc.webp
   Cache-Control: public, max-age=31536000, immutable
 /static/whiteboarding-light.f994f178.svg
   Cache-Control: public, max-age=31536000, immutable
@@ -194,15 +182,33 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/aws-light.63224022.svg
   Cache-Control: public, max-age=31536000, immutable
+/static/meshery-dashboard-hero-image-2635de33d20d0131faa5d9d5299932f9.png
+  Cache-Control: public, max-age=31536000, immutable
 /static/commenting-white.11cadd04.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/meshery-dashboard-hero-image-2635de33d20d0131faa5d9d5299932f9.png
+/static/smp-white.70f8dbc3.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/service-mesh-performance-specification-example-4fcf4084fc5b57f99a8bfa3962bb3df5.gif
+  Cache-Control: public, max-age=31536000, immutable
+/static/layer5-image-hub-3f4203f10b4fd9894ef9aa061a83312a.webp
+  Cache-Control: public, max-age=31536000, immutable
+/static/service-mesh-architecture-consul-78b3dbf4d273793f51a1ed8dccc922b8.webp
+  Cache-Control: public, max-age=31536000, immutable
+/static/image-hub-on-consul-with-wasm-and-meshery-80958f357f86009c0f9fd8a20594f6bc.webp
   Cache-Control: public, max-age=31536000, immutable
 /static/layer5-products-overview.e3465d19.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/layer5-products-overview-dark.67a67c55.svg
   Cache-Control: public, max-age=31536000, immutable
+/static/istio-book-giveaway-dcce1c814024eb64a5615640c7de1971.webp
+  Cache-Control: public, max-age=31536000, immutable
 /static/workshops.478827c1.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/layer5-collaboration-map.9c8f389e.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/layer5-projects-eddb940ca96094159fe53ecd092bc568.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/layer5-community-stats-e6e5713ce9802b79f8f1952ef62ac37d.png
   Cache-Control: public, max-age=31536000, immutable
 /static/community-b7925abd9cdec65dc5787e41e5ff293c.png
   Cache-Control: public, max-age=31536000, immutable
@@ -212,21 +218,17 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/sharing-is-caring.ffafa132.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/shipped.d8eeacec.svg
-  Cache-Control: public, max-age=31536000, immutable
 /static/streamer.70f8bd9f.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/shipped.d8eeacec.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/security-sentinel-baab79595c59012487d5cffee4b8a539.png
   Cache-Control: public, max-age=31536000, immutable
 /static/kanvas-snapshot.8a2d06b1.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/layer5-collaboration-map.9c8f389e.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/layer5-projects-eddb940ca96094159fe53ecd092bc568.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/layer5-community-stats-e6e5713ce9802b79f8f1952ef62ac37d.png
-  Cache-Control: public, max-age=31536000, immutable
 /static/meet-five-fdbc47677810ad7fb26ab6aec0447ef4.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/the-adventures-of-five-cover-vol2-c6437d8f0e452a1799ee6ec2baa4829b.png
   Cache-Control: public, max-age=31536000, immutable
 /static/KanvasDesigner-e3bbc66d72dedf1345a87890103e31c0.webp
   Cache-Control: public, max-age=31536000, immutable
@@ -234,9 +236,9 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/role-binding-1-colorMode.e756a795.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/role-binding-3-colorMode.522e2ab1.svg
-  Cache-Control: public, max-age=31536000, immutable
 /static/role-binding-2-colorMode.2f9788bd.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/role-binding-3-colorMode.522e2ab1.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/role-binding-4-colorMode.783e08ef.svg
   Cache-Control: public, max-age=31536000, immutable
@@ -248,9 +250,9 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/collab2-colorMode.634939cc.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/collab4-colorMode.9ee75a7c.svg
-  Cache-Control: public, max-age=31536000, immutable
 /static/collab3-colorMode.a6c426e8.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/collab4-colorMode.9ee75a7c.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/kaur-kallas-e3fa99d1f27e85956b3d801ceeb33163.webp
   Cache-Control: public, max-age=31536000, immutable
@@ -264,15 +266,11 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/guym-187eee7d4214f9a39e723af53eaf29d1.jpg
   Cache-Control: public, max-age=31536000, immutable
-/static/the-adventures-of-five-cover-vol2-c6437d8f0e452a1799ee6ec2baa4829b.png
-  Cache-Control: public, max-age=31536000, immutable
 /static/deployment.4618099e.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/dashboard-714a95ccaf4b84bbc6b52f9a415effd7.webm
   Cache-Control: public, max-age=31536000, immutable
 /static/initialization.3aa8c332.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/gcp-diagram-dark.639d347c.svg
+/static/dashboard-714a95ccaf4b84bbc6b52f9a415effd7.webm
   Cache-Control: public, max-age=31536000, immutable
 /static/homebrew.13dfd662.svg
   Cache-Control: public, max-age=31536000, immutable
@@ -284,8 +282,6 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/gke.a54fc8d8.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/linux.d0a2136b.svg
-  Cache-Control: public, max-age=31536000, immutable
 /static/comment.b77548b0.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/use-case-1-cbccd1de369c38fae69ec44ac7e7ea5c.png
@@ -294,15 +290,19 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/use-case-3-b10dcb5d7ec00da40165446dc56aeff3.png
   Cache-Control: public, max-age=31536000, immutable
-/static/smp-hero-cd5f96d67db525045c2aac6a646d9091.webp
+/static/gcp-diagram-dark.639d347c.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/linux.d0a2136b.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/callout-4578e847abdc2ac7a30e5bcdd650134d.webp
   Cache-Control: public, max-age=31536000, immutable
+/static/smp-hero-cd5f96d67db525045c2aac6a646d9091.webp
+  Cache-Control: public, max-age=31536000, immutable
 /static/william-morgan-b1727dbb71ae82ffed62383845916fd4.webp
   Cache-Control: public, max-age=31536000, immutable
-/static/ken-owens-c0a20dfb37045a79b62dd95066b36b69.webp
-  Cache-Control: public, max-age=31536000, immutable
 /static/deepak-dinesh-e0c7e8f0bfd87a0800057da34008a888.webp
+  Cache-Control: public, max-age=31536000, immutable
+/static/ken-owens-c0a20dfb37045a79b62dd95066b36b69.webp
   Cache-Control: public, max-age=31536000, immutable
 /static/liz-rice-4299e15215af7388b4ea31ef3e14c795.jpeg
   Cache-Control: public, max-age=31536000, immutable
@@ -310,33 +310,35 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/otto-van-der-schaaf-0c39fc98ceb15fba857761171580eb15.webp
   Cache-Control: public, max-age=31536000, immutable
-/static/workspace-53f707983dadc59cf6373469daa36013.png
+/static/meshery-dashboard-hero-image.1984069f.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/delivery-cycles-a034d77525bab0d381938c70e0af2f62.png
   Cache-Control: public, max-age=31536000, immutable
-/static/scale-devops-practices-c96337d4e640616aee45532ebecc3f22.png
+/static/workspace-53f707983dadc59cf6373469daa36013.png
   Cache-Control: public, max-age=31536000, immutable
 /static/catalog-light.577be9f8.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/meshery-dashboard-hero-image.1984069f.svg
+/static/scale-devops-practices-c96337d4e640616aee45532ebecc3f22.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/integration-image-colorMode.819b2d68.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/components-5d6b7102c8f4165ac7424c93fac3b514.gif
   Cache-Control: public, max-age=31536000, immutable
 /static/layer5-kanvas-designer-4c521709f369987eecb50e3072328e9e.webp
   Cache-Control: public, max-age=31536000, immutable
-/static/integration-image-colorMode.819b2d68.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/whiteboard-1e9f33293030bc98a01945af9740863f-1e9f33293030bc98a01945af9740863f.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/build-your-profile-542041fef6e1d8f46503ab1581a2720e.png
-  Cache-Control: public, max-age=31536000, immutable
 /static/yash-sharma-54aa26b6e5743f0557cfc76aa9797f2d.webp
   Cache-Control: public, max-age=31536000, immutable
 /static/ruth-ikegah-ef290f91cb471299cfacecdc60b46aa8.jpg
   Cache-Control: public, max-age=31536000, immutable
+/static/meshery_visualizer.41ae3a8d.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/build-your-profile-542041fef6e1d8f46503ab1581a2720e.png
+  Cache-Control: public, max-age=31536000, immutable
 /static/meshery_designer.e827fc97.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/meshery_visualizer.41ae3a8d.svg
+/static/catalog-dark.30702d37.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/whiteboard-1e9f33293030bc98a01945af9740863f-1e9f33293030bc98a01945af9740863f.png
   Cache-Control: public, max-age=31536000, immutable
 /static/University_of_Texas_at_Austin_seal-1685b6114da17fdcaef712b53d3531b9.webp
   Cache-Control: public, max-age=31536000, immutable
@@ -344,9 +346,7 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/UEM_Logo-dfd3d13e7147a5fb6f0338db1349fde1.webp
   Cache-Control: public, max-age=31536000, immutable
-/static/catalog-dark.30702d37.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/recognition-program-dbd5c22a606e943830cfa1168261eaf6.png
+/static/coming-soon-3e7a0d282ee94e816f417bb249c3adb0.webp
   Cache-Control: public, max-age=31536000, immutable
 /static/uem_black.bc4238f6.svg
   Cache-Control: public, max-age=31536000, immutable
@@ -354,15 +354,9 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/nitk_black.8ecafe8f.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/coming-soon-3e7a0d282ee94e816f417bb249c3adb0.webp
-  Cache-Control: public, max-age=31536000, immutable
 /static/meshery-infrastructure-as-diagram-ffb0d9ccfad7998bfdc8629980f0dda9.webp
   Cache-Control: public, max-age=31536000, immutable
-/static/consul.d28a5ea7.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/nsm.ab3c8734.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/cilium.8869f695.svg
+/static/recognition-program-dbd5c22a606e943830cfa1168261eaf6.png
   Cache-Control: public, max-age=31536000, immutable
 /static/openservicemesh-icon-white.77b58343.svg
   Cache-Control: public, max-age=31536000, immutable
@@ -372,39 +366,29 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/layer5-white-bg-8e69fd463f7203a1e35afb1750d37cf3.webp
   Cache-Control: public, max-age=31536000, immutable
-/static/sca.3163ab3a.svg
+/static/service-mesh-patterns-861ac688d88247d676ad28ff11f0ee90.webp
   Cache-Control: public, max-age=31536000, immutable
-/static/gsod-bdae86e80935b6dc17caa4239c795ecc.webp
+/static/service-mesh-patterns-side-white-63f657429918549a413ec983ee9641eb.webp
   Cache-Control: public, max-age=31536000, immutable
 /static/meshery-logo-light-text-2e70742e9703c033a14e7b747ec154f0.webp
   Cache-Control: public, max-age=31536000, immutable
 /static/meshery-logo-light-text-side-1d7ea421d810140ef4aeaa754d86dae5.webp
   Cache-Control: public, max-age=31536000, immutable
-/static/layer5-charcoal-background-e4435683b978739ba514c8e4813ab7b6.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/bookmarks-3133e53640f6af6281d1e214f36172dc.pdf
-  Cache-Control: public, max-age=31536000, immutable
-/static/brand-guide-fc8b85f1cfd53a3ff23e220c9819a4a3.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/stick-figures.43da9868.svg
+/static/service-mesh-pattern-text_white-08d95010232b7f55461f7c8dc9f5ee60.webp
   Cache-Control: public, max-age=31536000, immutable
 /static/meshery-worship-52a610cb3599e0fec784bbe858df2900.png
   Cache-Control: public, max-age=31536000, immutable
-/static/resources-sign.80836bae.svg
+/static/stick-figures.43da9868.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/team-of-fives.d8f3257e.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/service-mesh-patterns-861ac688d88247d676ad28ff11f0ee90.webp
+/static/resources-sign.80836bae.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/service-mesh-patterns-side-white-63f657429918549a413ec983ee9641eb.webp
+/static/layer5-charcoal-background-e4435683b978739ba514c8e4813ab7b6.png
   Cache-Control: public, max-age=31536000, immutable
-/static/meshmaster-full-4dd83cdb65e0218d517f454f35aac8d7.webp
+/static/brand-guide-fc8b85f1cfd53a3ff23e220c9819a4a3.png
   Cache-Control: public, max-age=31536000, immutable
-/static/meshmaster-icon-6faa7b481956d67d6443f3b270891638.webp
-  Cache-Control: public, max-age=31536000, immutable
-/static/service-mesh-pattern-text_white-08d95010232b7f55461f7c8dc9f5ee60.webp
-  Cache-Control: public, max-age=31536000, immutable
-/static/layer5-image-hub-white-71a526b548cbf23ee9f2768fd3706b7f.webp
+/static/bookmarks-3133e53640f6af6281d1e214f36172dc.pdf
   Cache-Control: public, max-age=31536000, immutable
 /static/smp-dark-123dc217a76885c25cb82cdbfa5de298.webp
   Cache-Control: public, max-age=31536000, immutable
@@ -412,7 +396,11 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/smp-white-cd1a2a95654a458e15a82725232bea99.webp
   Cache-Control: public, max-age=31536000, immutable
+/static/meshmaster-full-4dd83cdb65e0218d517f454f35aac8d7.webp
+  Cache-Control: public, max-age=31536000, immutable
 /static/brand-guide-1cc95106c445b73288c0135ff42c90b7.pdf
+  Cache-Control: public, max-age=31536000, immutable
+/static/meshmaster-icon-6faa7b481956d67d6443f3b270891638.webp
   Cache-Control: public, max-age=31536000, immutable
 /static/smp-light-text-side-2c979847712c301ae203e76a16bf3f80.webp
   Cache-Control: public, max-age=31536000, immutable
@@ -422,11 +410,13 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/meshery-operator-b79b0b49ff0fa7109926ff169647f24c.webp
   Cache-Control: public, max-age=31536000, immutable
-/static/meshsync-63fbdfd7dedecbf43050657d1273785e.webp
+/static/layer5-image-hub-white-71a526b548cbf23ee9f2768fd3706b7f.webp
   Cache-Control: public, max-age=31536000, immutable
 /static/meshery-operator-white-d624ad8983d0055928885c84054a3838.webp
   Cache-Control: public, max-age=31536000, immutable
 /static/meshsync-light-3eb66be65812996114f03f3f98473d29.webp
+  Cache-Control: public, max-age=31536000, immutable
+/static/meshsync-63fbdfd7dedecbf43050657d1273785e.webp
   Cache-Control: public, max-age=31536000, immutable
 /static/handbook-dark-d5297ee4f848a835b6de7f95da70693c.webp
   Cache-Control: public, max-age=31536000, immutable
@@ -436,29 +426,33 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/meshmate-of-the-year-2021.a60b8edd.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/whiteboard.264b8247.svg
+/static/consul.d28a5ea7.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/KanvasDesigner-245add3a650b5598c6f009dac5cc0e5e.png
+/static/nsm.ab3c8734.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/cilium.8869f695.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/sca.3163ab3a.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/gsod-bdae86e80935b6dc17caa4239c795ecc.webp
   Cache-Control: public, max-age=31536000, immutable
 /static/Kanvas-Operator-b94a06cadda43b5bfeac93de97242de8.png
   Cache-Control: public, max-age=31536000, immutable
-/static/playground-hero.f029c082.svg
+/static/KanvasDesigner-245add3a650b5598c6f009dac5cc0e5e.png
   Cache-Control: public, max-age=31536000, immutable
-/static/playground-feature-1.81c117fb.svg
+/static/datacenter-crash.4a55b265.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/playground-feature-3.adc1e360.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/playground-feature-2.d3705eab.svg
+/static/ebpf.0a8ae5cd.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/mutual-tls.242b9f25.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/retries.b75ab10d.svg
   Cache-Control: public, max-age=31536000, immutable
+/static/correlate-event.1d96acae.svg
+  Cache-Control: public, max-age=31536000, immutable
 /static/traces.945f0ea7.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/denial.518d4855.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/correlate-event.1d96acae.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/only-wagent.dbf2ab0f.svg
   Cache-Control: public, max-age=31536000, immutable
@@ -468,67 +462,69 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/pre-provision.3b1afd8a.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/retry-deadline.d8a269a1.svg
-  Cache-Control: public, max-age=31536000, immutable
 /static/circuit-breaker.65f4c2e1.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/singleton.14a9a27f.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/multicluster.a044fc64.svg
+/static/retry-deadline.d8a269a1.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/jwt.294448fa.svg
   Cache-Control: public, max-age=31536000, immutable
+/static/multicluster.a044fc64.svg
+  Cache-Control: public, max-age=31536000, immutable
 /static/http.d58be18b.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/ebpf.0a8ae5cd.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/datacenter-crash.4a55b265.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/application-import-boxes.6d1a5a87.svg
+/static/whiteboard.264b8247.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/application-import-arrows.f25317e3.svg
   Cache-Control: public, max-age=31536000, immutable
+/static/application-import-boxes.6d1a5a87.svg
+  Cache-Control: public, max-age=31536000, immutable
 /static/interactive-terminal-code.8d3ad56e.svg
   Cache-Control: public, max-age=31536000, immutable
+/static/playground-hero.f029c082.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/playground-feature-1.81c117fb.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/playground-feature-3.adc1e360.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/playground-feature-2.d3705eab.svg
+  Cache-Control: public, max-age=31536000, immutable
 /static/visualizer-views-colorMode.43514068.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/drag-drop-components-3546a8a6c327c072d7e07226574a1030.gif
-  Cache-Control: public, max-age=31536000, immutable
-/static/connect-components-93f2f1cbc201ffffe8152bea16b202a9.gif
-  Cache-Control: public, max-age=31536000, immutable
-/static/background-dots-pattern.e9f0ea60.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/kanvas-bottom-image-light.e9677db0.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/kanvas-bottom-image-dark.68c50e53.svg
   Cache-Control: public, max-age=31536000, immutable
+/static/background-dots-pattern.e9f0ea60.svg
+  Cache-Control: public, max-age=31536000, immutable
 /static/integration-image-colorMode.90d3dccb.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/share-design-21b62ae547768b44fb3fe7728202f9c9.gif
-  Cache-Control: public, max-age=31536000, immutable
-/static/kubernetes-catalog-dark.fa3b4e4a.svg
+/static/drag-drop-components-3546a8a6c327c072d7e07226574a1030.gif
   Cache-Control: public, max-age=31536000, immutable
 /static/config-54e685b599e3b729b52eaaa7412108a2.gif
   Cache-Control: public, max-age=31536000, immutable
+/static/kubernetes-catalog-dark.fa3b4e4a.svg
+  Cache-Control: public, max-age=31536000, immutable
 /static/deploy-17b55c02f0a5e155cc9ccfee6a24507d.gif
   Cache-Control: public, max-age=31536000, immutable
-/static/merge-design-739bd72f7613a40bd0d7b5eadd37b319.gif
+/static/connect-components-93f2f1cbc201ffffe8152bea16b202a9.gif
   Cache-Control: public, max-age=31536000, immutable
 /static/drag-drop-1f5b2d8702294a0b928446eda2688b83.gif
   Cache-Control: public, max-age=31536000, immutable
 /static/icon-library-0383d3ed43881451b7f826dc4f98a2fd.gif
   Cache-Control: public, max-age=31536000, immutable
-/static/meshery-snapshot-3cc0d7f2e6c947e3e54d68b8dc52cbd1.png
+/static/share-design-21b62ae547768b44fb3fe7728202f9c9.gif
+  Cache-Control: public, max-age=31536000, immutable
+/static/merge-design-739bd72f7613a40bd0d7b5eadd37b319.gif
   Cache-Control: public, max-age=31536000, immutable
 /static/meshery-performance-ce0c5feecc9ec9d563c54be12213096b.gif
   Cache-Control: public, max-age=31536000, immutable
-/static/multi-cluster-management-0631e51a801609b291642a5e9e622636.gif
+/static/meshery-snapshot-3cc0d7f2e6c947e3e54d68b8dc52cbd1.png
   Cache-Control: public, max-age=31536000, immutable
 /static/workspace-fca9ec6d034c41d1be31c64f7dd447c0.gif
   Cache-Control: public, max-age=31536000, immutable
-/static/gcp-catalog-dark.ea41d8da.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/gcp-drag-drop-f23af3dbbf5d823cd392572b40098265.gif
+/static/multi-cluster-management-0631e51a801609b291642a5e9e622636.gif
   Cache-Control: public, max-age=31536000, immutable
 /static/rendered-design-e00309ed95ec6b886d639defa806f939.png
   Cache-Control: public, max-age=31536000, immutable
@@ -536,19 +532,13 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/start-from-scratch-21b5915673335277d79cd425627e8fe5.gif
   Cache-Control: public, max-age=31536000, immutable
+/static/gcp-catalog-dark.ea41d8da.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/calalog-cards.05827dff.svg
+  Cache-Control: public, max-age=31536000, immutable
 /static/templates-dark.1a479a47.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/ingress-gateway-partial-colorMode.10630c88.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/gcp-icon-library-acb8792782a220f3e9407d89561bdf9f.gif
-  Cache-Control: public, max-age=31536000, immutable
-/static/kubernetes-partial-colorMode.aed05e8a.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/prometheus-partial-colorMode.ad7175df.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/pod-partial-colorMode.4cfb3365.svg
-  Cache-Control: public, max-age=31536000, immutable
-/static/service-interface-partial-colorMode.6c94c4e7.svg
+/static/gcp-drag-drop-f23af3dbbf5d823cd392572b40098265.gif
   Cache-Control: public, max-age=31536000, immutable
 /static/deploy-88738aaa2b0070266d2f7c2f262f04eb.gif
   Cache-Control: public, max-age=31536000, immutable
@@ -556,9 +546,21 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/config-cd929ceaeb722e4723d2b17880ecdd92.gif
   Cache-Control: public, max-age=31536000, immutable
-/static/world-image.e3172b5d.svg
-  Cache-Control: public, max-age=31536000, immutable
 /static/icon-library-7a9eca699194351110d483fc21317036.gif
+  Cache-Control: public, max-age=31536000, immutable
+/static/gcp-icon-library-acb8792782a220f3e9407d89561bdf9f.gif
+  Cache-Control: public, max-age=31536000, immutable
+/static/ingress-gateway-partial-colorMode.10630c88.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/kubernetes-partial-colorMode.aed05e8a.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/pod-partial-colorMode.4cfb3365.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/prometheus-partial-colorMode.ad7175df.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/service-interface-partial-colorMode.6c94c4e7.svg
+  Cache-Control: public, max-age=31536000, immutable
+/static/world-image.e3172b5d.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/cert-manager-color.36f526c5.svg
   Cache-Control: public, max-age=31536000, immutable
@@ -567,8 +569,6 @@
 /static/jaeger-color.33539c94.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/kanvas-collaborate-cc24b668ffb445bd748c0023f4dfa5fd.webp
-  Cache-Control: public, max-age=31536000, immutable
-/static/calalog-cards.05827dff.svg
   Cache-Control: public, max-age=31536000, immutable
 /static/aspen-mesh.b700d453.svg
   Cache-Control: public, max-age=31536000, immutable
@@ -580,17 +580,17 @@
   Cache-Control: public, max-age=31536000, immutable
 /static/tencent-cloud-mesh.bab5555d.svg
   Cache-Control: public, max-age=31536000, immutable
-/static/tutorial_mac-260e9b46527d55a2d990a70eca308b66.png
-  Cache-Control: public, max-age=31536000, immutable
 /static/academy-1-0b044348450388b11e65aad301153428.png
   Cache-Control: public, max-age=31536000, immutable
 /static/academy-2-fbb05b3926447e18020d35082951ac07.png
   Cache-Control: public, max-age=31536000, immutable
+/static/academy-3-4f24460da11dede573c098881c33a1ea.png
+  Cache-Control: public, max-age=31536000, immutable
+/static/tutorial_mac-260e9b46527d55a2d990a70eca308b66.png
+  Cache-Control: public, max-age=31536000, immutable
 /static/challange_mac-027028d50c0167e12df87dec3d1c8873.png
   Cache-Control: public, max-age=31536000, immutable
 /static/design_mac-95af46fc0ee4067b7d64a237ce806365.png
-  Cache-Control: public, max-age=31536000, immutable
-/static/academy-3-4f24460da11dede573c098881c33a1ea.png
   Cache-Control: public, max-age=31536000, immutable
 /static/academy-4-dbc0f5c9520ee33b86fe39e050fcf744.png
   Cache-Control: public, max-age=31536000, immutable
@@ -1186,7 +1186,7 @@
   Cache-Control: public, max-age=31536000, immutable
 /96507c311cba306b9bee516ba99239f426b4a9be-34aee90d7f8e1dc6f66f.js.LICENSE.txt
   Cache-Control: public, max-age=31536000, immutable
-/app-4d48423f0517f4435d94.js.LICENSE.txt
+/app-8fbcd5e80ba78a0921f2.js.LICENSE.txt
   Cache-Control: public, max-age=31536000, immutable
 /cdcab288d013849b6bee7f0afe3e2d858ea9b393-11ac90f024e9e1283586.js.LICENSE.txt
   Cache-Control: public, max-age=31536000, immutable
@@ -1252,7 +1252,7 @@
   Cache-Control: public, max-age=31536000, immutable
 /framework-95c67096f8ff8d846ebf.js.LICENSE.txt
   Cache-Control: public, max-age=31536000, immutable
-/app-4d48423f0517f4435d94.js
+/app-8fbcd5e80ba78a0921f2.js
   Cache-Control: public, max-age=31536000, immutable
 /1108-70182562e566d307fada.js
   Cache-Control: public, max-age=31536000, immutable
