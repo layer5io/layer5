@@ -45,7 +45,7 @@ import { formatAndConvertPrice } from "../../../utils/currencies";
 export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterprisePlan }) => {
   const [selectedAddon, setSelectedAddon] = useState(null);
   const [addonMenuOpen, setAddonMenuOpen] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
+  // const [scrollY, setScrollY] = useState(0);
   const quantity = 1;
   const [selectedSubAddOns, setSelectedSubAddOns] = useState({});
   const [totalPrice, setTotalPrice] = useState(0);
@@ -63,7 +63,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
   useEffect(() => {
     if (!addonMenuOpen) return;
     const y = window.scrollY || window.pageYOffset || 0;
-    setScrollY(y);
+    // setScrollY(y);
 
     const html = document.documentElement;
     const body = document.body;
@@ -201,7 +201,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
     });
   };
 
-  
+
   const getPlanLinkForAcademy = () => {
     if (!selectedAddon || selectedAddon.id !== "academy") {
       return { link: "#", name: "Subscribe" };
@@ -280,8 +280,8 @@ user${enterpriseUsers > 1 ? "s" : ""}` : "";
 
         <Container maxWidth="md" sx={boxStyles.container}>
           <PlanCardWrapper>
-            <Card 
-              elevation={2} 
+            <Card
+              elevation={2}
               sx={cardStyles.main}
             >
               <CardHeader
