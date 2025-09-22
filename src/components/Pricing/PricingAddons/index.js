@@ -43,7 +43,7 @@ import {
 import { formatAndConvertPrice } from "../../../utils/currencies";
 
 export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterprisePlan }) => {
-  
+
   const [selectedAddon, setSelectedAddon] = useState(null);
   const [addonMenuOpen, setAddonMenuOpen] = useState(false);
   const quantity = 1;
