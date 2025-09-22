@@ -43,6 +43,7 @@ import {
 import { formatAndConvertPrice } from "../../../utils/currencies";
 
 export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterprisePlan }) => {
+  
   const [selectedAddon, setSelectedAddon] = useState(null);
   const [addonMenuOpen, setAddonMenuOpen] = useState(false);
   const quantity = 1;
@@ -147,7 +148,6 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
           }
         });
       }
-
 
       const enterpriseUsersCost = (isYearly ? enterprisePlan.yearlyprice : enterprisePlan.monthlyprice) * (enterpriseUsers > 0 ? enterpriseUsers : 1);
 
