@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import SEO from "../components/seo";
 
@@ -10,6 +11,7 @@ export const query = graphql`
     query ProgramBySlug($slug: String!) {
         mdx(fields: { slug: { eq: $slug } }) {
             id
+            body
             frontmatter {
                 title
                 program
@@ -18,12 +20,12 @@ export const query = graphql`
     }
 `;
 
-const ProgramSinglePage = ({ data, children }) => {
+const ProgramSinglePage = ({ data }) => {
 
   return (
     <>
       <ProgramsSingle data={data.mdx}>
-        {children}
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
       </ProgramsSingle>
 
     </>

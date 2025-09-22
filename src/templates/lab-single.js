@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 
 import SEO from "../components/seo";
@@ -10,6 +11,7 @@ import LabSinglePage from "../sections/Learn/Lab-single/index";
 export const query = graphql`
     query LabBySlug($slug: String!) {
         mdx(fields: { slug: { eq: $slug } } ) {
+            body
             frontmatter {
                 title
             }
@@ -20,7 +22,7 @@ export const query = graphql`
     }
 `;
 
-const LabSingle = ({ data, children }) => {
+const LabSingle = ({ data }) => {
 
 
   return (
@@ -29,7 +31,7 @@ const LabSingle = ({ data, children }) => {
 
 
       <LabSinglePage frontmatter={data.mdx.frontmatter}>
-        {children}
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
       </LabSinglePage>
 
     </>

@@ -1,56 +1,45 @@
 import React from "react";
 import { graphql } from "gatsby";
-
-import SEO from "../components/seo";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import MemberSingle from "../sections/Community/Member-single";
 
-export const query = graphql`query MemberBySlug($slug: String!) {
-  mdx(fields: {slug: {eq: $slug}}) {
-    frontmatter {
-      name
-      position
-      github
-      twitter
-      layer5
-      meshmate
-      linkedin
-      location
-      badges
-      status
-      bio
-      executive_bio
-      image_path {
-        childImageSharp {
-          gatsbyImageData(width: 500, layout: CONSTRAINED)
+import SEO from "../components/seo";
+
+export const query = graphql`
+  query MemberBySlug($slug: String!) {
+    mdx(fields: { slug: { eq: $slug } }) {
+      body
+      frontmatter {
+        name
+        position
+        bio
+        image_path {
+          childImageSharp {
+            gatsbyImageData(width: 500, layout: CONSTRAINED)
+          }
+          extension
+          publicURL
         }
-        extension
-        publicURL
+        github
+        twitter
+        linkedin
+        location
+        badges
       }
     }
   }
-}
 `;
 
 const MemberSinglePage = ({ data }) => {
-
-
   return (
-
     <>
-
-
-      <MemberSingle
-        frontmatter={data.mdx.frontmatter}
-      />
-
+      <MemberSingle data={data}><MDXRenderer>{data.mdx.body}</MDXRenderer></MemberSingle>
     </>
-
   );
 };
-
 export default MemberSinglePage;
 
 export const Head = ({ data }) => {
-  return <SEO title={data.mdx.frontmatter.name} image={data.mdx.frontmatter.image_path.publicURL} description={data.mdx.frontmatter.bio} />;
+  return <SEO title={data.mdx.frontmatter.name} description={data.mdx.frontmatter.bio} />;
 };

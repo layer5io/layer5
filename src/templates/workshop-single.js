@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 
 import SEO from "../components/seo";
@@ -9,6 +10,7 @@ import WorkshopSinglePage from "../sections/Learn/Workshop-single/index";
 
 export const query = graphql`query WorkshopBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
+    body
     frontmatter {
       title
       date(formatString: "MMMM Do, YYYY")
@@ -33,7 +35,7 @@ export const query = graphql`query WorkshopBySlug($slug: String!) {
 }
 `;
 
-const WorkshopSingle = ({ data, children }) => {
+const WorkshopSingle = ({ data }) => {
 
 
   return (
@@ -42,7 +44,7 @@ const WorkshopSingle = ({ data, children }) => {
 
 
       <WorkshopSinglePage frontmatter={data.mdx.frontmatter}>
-        {children}
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
       </WorkshopSinglePage>
 
     </>

@@ -5,12 +5,13 @@ import SEO from "../components/seo";
 
 
 import BlogSingle from "../sections/Blog/Blog-single";
-
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 
 import SimpleReactLightbox from "simple-react-lightbox";
 export const query = graphql`query BlogsBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
+    body
     frontmatter {
       title
       subtitle
@@ -41,7 +42,7 @@ export const query = graphql`query BlogsBySlug($slug: String!) {
 }
 `;
 
-const BlogSinglePage = ({ data, children }) => {
+const BlogSinglePage = ({ data }) => {
 
 
   return (
@@ -51,7 +52,7 @@ const BlogSinglePage = ({ data, children }) => {
 
       <SimpleReactLightbox>
         <BlogSingle data={data}>
-          {children}
+          <MDXRenderer>{data.mdx.body}</MDXRenderer>
         </BlogSingle>
       </SimpleReactLightbox>
 

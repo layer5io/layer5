@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import SEO from "../components/seo";
 
@@ -8,6 +9,7 @@ import NewsSingle from "../sections/Company/News-single";
 export const query = graphql`
   query NewsBySlug($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
+      body
       frontmatter {
         title
         subtitle
@@ -38,11 +40,11 @@ export const query = graphql`
   }
 `;
 
-const NewsSinglePage = ({ data, children }) => {
+const NewsSinglePage = ({ data }) => {
   return (
     <>
       <NewsSingle data={data}>
-        {children}
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
       </NewsSingle>
     </>
   );
