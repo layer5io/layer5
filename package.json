@@ -10,10 +10,9 @@
     "url": "https://layer5.io"
   },
   "scripts": {
-  "build": "cross-env NODE_OPTIONS=--max-old-space-size=12288 gatsby build",
-  "clean": "gatsby clean",
-  "clean:all": "npm run clean && rimraf node_modules",
-  "develop": "cross-env NODE_OPTIONS=--max-old-space-size=12288 env-cmd -f .env.development gatsby develop",
+  "build": "node --max-old-space-size=8192 node_modules/.bin/gatsby build",
+  "clean": "gatsby clean && rimraf node_modules",
+  "develop": "node --max-old-space-size=8192 node_modules/.bin/env-cmd -f .env.development gatsby develop",
   "dev": "npm run develop",
   "start": "npm run develop",
   "serve": "gatsby serve",
@@ -22,7 +21,7 @@
   "pretest": "eslint --ignore-path .gitignore .",
   "preload-fonts": "gatsby-preload-fonts",
   "deploy": "gatsby build && gh-pages -d public -b master",
-  "noIndex": "gatsby build && echo 'User-agent: *\\nDisallow: /' > public/robots.txt",
+  "noIndex": "gatsby build && echo 'User-agent: *\nDisallow: /' > public/robots.txt",
   "version": "gatsby --version",
   "prepare": "husky install"
   },
