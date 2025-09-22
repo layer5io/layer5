@@ -58,7 +58,7 @@ const Meshmates = () => {
   );
 
   const emeritusMeshMates = data.allMdx.nodes.filter(
-    ({ frontmatter }) => frontmatter.emeritus === "yes"
+    ({ frontmatter }) => frontmatter.emeritus === "yes" || frontmatter.emeritus === true
   );
 
   return (

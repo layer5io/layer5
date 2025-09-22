@@ -10,9 +10,10 @@
     "url": "https://layer5.io"
   },
   "scripts": {
-  "build": "node --max-old-space-size=12288 node_modules/.bin/gatsby build",
-  "clean": "gatsby clean && rimraf node_modules",
-  "develop": "node --max-old-space-size=12288 node_modules/.bin/env-cmd -f .env.development gatsby develop",
+  "build": "cross-env NODE_OPTIONS=--max-old-space-size=12288 gatsby build",
+  "clean": "gatsby clean",
+  "clean:all": "npm run clean && rimraf node_modules",
+  "develop": "cross-env NODE_OPTIONS=--max-old-space-size=12288 env-cmd -f .env.development gatsby develop",
   "dev": "npm run develop",
   "start": "npm run develop",
   "serve": "gatsby serve",
