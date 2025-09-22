@@ -1,12 +1,17 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-
-
 import SEO from "../components/seo";
-
-
 import WorkshopSinglePage from "../sections/Learn/Workshop-single/index";
+import Button from "../reusecore/Button";
+import { Link } from "gatsby";
+
+const components = {
+  Button,
+  Link,
+  p: (props) => <p {...props} style={{ color: "inherit" }} />,
+};
 
 export const query = graphql`query WorkshopBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
@@ -36,19 +41,12 @@ export const query = graphql`query WorkshopBySlug($slug: String!) {
 `;
 
 const WorkshopSingle = ({ data }) => {
-
-
   return (
-
-    <>
-
-
+    <MDXProvider components={components}>
       <WorkshopSinglePage frontmatter={data.mdx.frontmatter}>
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
       </WorkshopSinglePage>
-
-    </>
-
+    </MDXProvider>
   );
 };
 
