@@ -1,13 +1,14 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+
+
 import SEO from "../components/seo";
+
 import CareerSingle from "../sections/Careers/Career-single";
 
 export const query = graphql`
     query CareerBySlug($slug: String!) {
         mdx(fields: { slug: { eq: $slug } }) {
-            body
             frontmatter {
                 title,
                 type,
@@ -22,13 +23,20 @@ export const query = graphql`
     }
 `;
 
-const CareerSinglePage = ({ data }) => {
+const CareerSinglePage = ({ data, children }) => {
+
+
   return (
+
     <>
+
+
       <CareerSingle data={data}>
-        <MDXRenderer>{data.mdx.body}</MDXRenderer>
+        {children}
       </CareerSingle>
+
     </>
+
   );
 };
 

@@ -5,8 +5,6 @@ import CTA_ImageOnly from "./src/components/Call-To-Actions/CTA_ImageOnly";
 import CTA_FullWidth from "./src/components/Call-To-Actions/CTA_FullWidth";
 import CTA_Bottom from "./src/components/Call-To-Actions/CTA_Bottom";
 import Button from "./src/reusecore/Button";
-import { BlogWrapper } from "./src/collections/blog/Blog.style.js";
-import { Link } from "gatsby";
 import { ContextWrapper } from "./context-wrapper";
 
 // Custom image component for better CLS scores
@@ -45,8 +43,6 @@ const components = {
   },
   img: OptimizedImage,
   Button,
-  BlogWrapper,
-  Link,
   CTA_ImageOnly,
   CTA_FullWidth,
   CTA_Bottom

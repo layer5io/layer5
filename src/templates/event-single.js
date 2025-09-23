@@ -1,14 +1,16 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+
+
+
 import EventSingle from "../sections/Community/Event-single";
+
 import LearnServiceMeshCTA from "../sections/Learn/Learn-Service-Mesh-CTA";
 import Subscribe from "../sections/subscribe/subscribe";
 import SEO from "../components/seo";
 
 export const query = graphql`query EventsBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
-    body
     frontmatter {
       attribute {
         name
@@ -34,15 +36,22 @@ export const query = graphql`query EventsBySlug($slug: String!) {
 }
 `;
 
-const EventSinglePage = ({ data }) => {
+const EventSinglePage = ({ data, children }) => {
+
+
   return (
+
     <>
+
+
       <EventSingle data={data}>
-        <MDXRenderer>{data.mdx.body}</MDXRenderer>
+        {children}
       </EventSingle>
       <LearnServiceMeshCTA />
       <Subscribe />
+
     </>
+
   );
 };
 

@@ -120,13 +120,9 @@ const BlogSingle = ({ data, children }) => {
             date={frontmatter.date}
           />
           <div className="single-post-wrapper">
-            {typeof window !== "undefined" ? (
-              <SRLWrapper>
-                {children}
-              </SRLWrapper>
-            ) : (
-              <>{children}</>
-            )}
+            <SRLWrapper>
+              {children}
+            </SRLWrapper>
             <BlogPostSignOff
               author={{ name: frontmatter.author }}
             />
