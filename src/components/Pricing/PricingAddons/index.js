@@ -401,7 +401,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
                                         sm: "0.9rem",
                                       }
                                     }}>
-                                    {formatPrice(isYearly ? option.yearlyPerUser : option.monthlyPerUser)}<br />{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
+                                    {Number(isYearly ? option.yearlyPerUser : option.monthlyPerUser).toFixed(2)}<br />{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
                                   </Box>
                                 </Box>
                               ),
