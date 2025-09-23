@@ -34,7 +34,7 @@ export const Currencies = {
                 currency: "INR",
                 minimumFractionDigits: 0,
                 maximumFractionDigits: 2,
-            }).format(price * rate),
+            }).format(price * 88),
     },
 };
 
