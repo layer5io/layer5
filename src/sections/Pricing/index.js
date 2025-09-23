@@ -13,22 +13,26 @@ import { Currencies } from "../../utils/currencies";
 
 export const CurrencySelect = ({ currency, setCurrency }) => {
   return (
-    <FormControl variant="outlined" size="small" sx={{
-      minWidth: 150,
-      "& .MuiInputLabel-root": { color: "white" }, // label
-      "& .MuiOutlinedInput-notchedOutline": { borderColor: "white" }, // outline
-      "& .MuiSelect-icon": { color: "white" }, // dropdown arrow
-      "& .MuiSelect-select": { color: "white" }, // selected text
-      "&:hover .MuiOutlinedInput-notchedOutline": { borderColor: "white" },
-      "&.Mui-focused .MuiOutlinedInput-notchedOutline": { borderColor: "white" },
-
-    }}>
+    <FormControl
+      variant="outlined"
+      size="small"
+      sx={{
+        minWidth: 150,
+        "& .MuiInputLabel-root": { color: "white" }, 
+        "& .MuiInputLabel-root.Mui-focused": { color: '#00B39F' }, 
+        "& .MuiOutlinedInput-notchedOutline": { borderColor: "white" }, 
+        "& .MuiSelect-icon": { color: "white" }, 
+        "& .MuiSelect-select": { color: "white" }, 
+        "&:hover .MuiOutlinedInput-notchedOutline": { borderColor: "white" }, 
+      }}
+    >
       <InputLabel>Currency</InputLabel>
       <Select
         value={currency}
         sx={{
-
-
+          "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#00B39F", 
+          },
         }}
         onChange={(e) => setCurrency(e.target.value)}
         label="Currency"
