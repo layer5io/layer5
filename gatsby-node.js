@@ -802,39 +802,25 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       { suffix: "/code", file: "code.js" },
     ];
 
+    // Process each component
     components.forEach((name) => {
-      // Skip guidance and code pages for icons component
-      if (name === "icons") {
-        const pagePath = `/projects/sistent/components/${name}`;
-        const componentPath = `./src/sections/Projects/Sistent/components/${name}/index.js`;
-        if (fs.existsSync(path.resolve(componentPath))) {
-          try {
-            createPage({
-              path: pagePath,
-              component: require.resolve(componentPath),
-            });
-          } catch (error) {
-            console.error(`Error creating page for "${pagePath}":`, error);
-          }
-        }
-        return;
-      }
+      // First check which file types exist for this component
+      const availableFiles = pageTypes.filter(({ file }) => {
+        const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
+        return fs.existsSync(path.resolve(componentPath));
+      });
 
-      // For all other components, process all page types
-      pageTypes.forEach(({ suffix, file }) => {
+      // Only create pages for files that actually exist
+      availableFiles.forEach(({ suffix, file }) => {
         const pagePath = `/projects/sistent/components/${name}${suffix}`;
         const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
-        if (fs.existsSync(path.resolve(componentPath))) {
-          try {
-            createPage({
-              path: pagePath,
-              component: require.resolve(componentPath),
-            });
-          } catch (error) {
-            console.error(`Error creating page for "${pagePath}":`, error);
-          }
-        } else {
-          console.info(`Skipping creating page "${pagePath}" - file not found: "${componentPath}"`);
+        try {
+          createPage({
+            path: pagePath,
+            component: require.resolve(componentPath),
+          });
+        } catch (error) {
+          console.error(`Error creating page for "${pagePath}":`, error);
         }
       });
     });
