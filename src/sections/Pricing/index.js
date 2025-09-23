@@ -13,31 +13,33 @@ import { Currencies } from "../../utils/currencies";
 
 export const CurrencySelect = ({ currency, setCurrency }) => {
   return (
-    <FormControl variant="outlined" size="small" sx={{
-      minWidth: 150,
-      "& .MuiInputLabel-root": { color: "white" }, // label
-      "& .MuiOutlinedInput-notchedOutline": { borderColor: "white" }, // outline
-      "& .MuiSelect-icon": { color: "white" }, // dropdown arrow
-      "& .MuiSelect-select": { color: "white" }, // selected text
-      "&:hover .MuiOutlinedInput-notchedOutline": { borderColor: "white" },
-      "&.Mui-focused .MuiOutlinedInput-notchedOutline": { borderColor: "white" },
-
-    }}>
-      <InputLabel>Currency</InputLabel>
+     <FormControl
+      variant="outlined"
+      size="small"
+      sx={{
+        minWidth: 150,
+        "& .MuiInputLabel-root": { color: "white" }, 
+        "& .MuiInputLabel-root.Mui-focused": { color: '#00B39F' }, 
+        "& .MuiOutlinedInput-notchedOutline": { borderColor: "white" }, 
+        "& .MuiSelect-icon": { color: "white" }, 
+        "& .MuiSelect-select": { color: "white" }, 
+        "&:hover .MuiOutlinedInput-notchedOutline": { borderColor: "white" }, 
+      }}
+    >
+      <InputLabel >Currency</InputLabel>
       <Select
         value={currency}
         sx={{
-
-
+          "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#00B39F", 
+          },
         }}
         onChange={(e) => setCurrency(e.target.value)}
         label="Currency"
         renderValue={(value) => (
           <Box sx={{ display: "flex", alignItems: "center", gap: 1, color: "#fff" }}>
             <Typography variant="body1">{Currencies[value].symbol}</Typography>
-            <Typography variant="body2" >
-              {Currencies[value].name}
-            </Typography>
+            <Typography variant="body2">{Currencies[value].name}</Typography>
           </Box>
         )}
       >
@@ -45,9 +47,7 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
           <MenuItem key={code} value={code}>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
               <Typography variant="body1">{symbol}</Typography>
-              <Typography variant="body2" >
-                {name}
-              </Typography>
+              <Typography variant="body2">{name}</Typography>
             </Box>
           </MenuItem>
         ))}
