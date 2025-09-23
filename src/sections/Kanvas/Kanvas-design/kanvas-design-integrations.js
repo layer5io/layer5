@@ -131,7 +131,7 @@ const KanvasIntegrationsSection = () => {
           </h1>
         </div>
         <div>
-          <img className="underline-img" src={UnderlineImg} />
+          <img className="underline-img" src={UnderlineImg} alt="" />
         </div>
         <div>
           <h4>
