@@ -72,7 +72,7 @@ const ResourceSingle = ({ data, children }) => {
               {children}
             </SRLWrapper>
           ) : (
-            children
+            <>{children}</>
           )}
 
           <CTA_Bottom

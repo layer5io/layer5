@@ -125,7 +125,7 @@ const BlogSingle = ({ data, children }) => {
                 {children}
               </SRLWrapper>
             ) : (
-              children
+              <>{children}</>
             )}
             <BlogPostSignOff
               author={{ name: frontmatter.author }}

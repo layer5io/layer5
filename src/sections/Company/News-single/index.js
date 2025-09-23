@@ -49,7 +49,6 @@ const NewsSingle = ({ data, children }) => {
     (post) => post.fields.slug !== fields.slug
   );
 
-  // Render MDX body as a React component
   return (
     <NewsPageWrapper>
       <PageHeader
@@ -71,7 +70,7 @@ const NewsSingle = ({ data, children }) => {
                     {children}
                   </SRLWrapper>
                 ) : (
-                  children
+                  <>{children}</>
                 )}
               </Col>
               <Col $lg={3} $md={4} $xs={12}>
