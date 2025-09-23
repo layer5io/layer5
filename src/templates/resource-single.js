@@ -1,18 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import SEO from "../components/seo";
 import ResourceSingle from "../sections/Resources/Resource-single";
 import SimpleReactLightbox from "simple-react-lightbox";
-import Button from "../reusecore/Button";
-import { Link } from "gatsby";
-
-const components = {
-  Button,
-  Link,
-  p: (props) => <p {...props} style={{ color: "inherit" }} />,
-};
 
 export const query = graphql`query ResourcesBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
@@ -42,13 +33,11 @@ export const query = graphql`query ResourcesBySlug($slug: String!) {
 
 const ResourceSinglePage = ({ data }) => {
   return (
-    <MDXProvider components={components}>
-      <SimpleReactLightbox>
-        <ResourceSingle data={data}>
-          <MDXRenderer>{data.mdx.body}</MDXRenderer>
-        </ResourceSingle>
-      </SimpleReactLightbox>
-    </MDXProvider>
+    <SimpleReactLightbox>
+      <ResourceSingle data={data}>
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      </ResourceSingle>
+    </SimpleReactLightbox>
   );
 };
 

@@ -1,18 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import BookSingle from "../sections/Learn/Book-single";
 import DockerExtensionCTA from "../sections/Docker-Meshery/docker-extension-CTA";
 import SEO from "../components/seo";
-import Button from "../reusecore/Button";
-import { Link } from "gatsby";
-
-const components = {
-  Button,
-  Link,
-  p: (props) => <p {...props} style={{ color: "inherit" }} />,
-};
 
 export const query = graphql`query BookBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
@@ -34,12 +25,12 @@ export const query = graphql`query BookBySlug($slug: String!) {
 
 const BookSinglePage = ({ data }) => {
   return (
-    <MDXProvider components={components}>
+    <>
       <BookSingle data={data}>
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
       </BookSingle>
       <DockerExtensionCTA />
-    </MDXProvider>
+    </>
   );
 };
 

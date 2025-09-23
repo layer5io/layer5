@@ -1,17 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import SEO from "../components/seo";
 import CareerSingle from "../sections/Careers/Career-single";
-import Button from "../reusecore/Button";
-import { Link } from "gatsby";
-
-const components = {
-  Button,
-  Link,
-  p: (props) => <p {...props} style={{ color: "inherit" }} />,
-};
 
 export const query = graphql`
     query CareerBySlug($slug: String!) {
@@ -33,11 +24,11 @@ export const query = graphql`
 
 const CareerSinglePage = ({ data }) => {
   return (
-    <MDXProvider components={components}>
+    <>
       <CareerSingle data={data}>
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
       </CareerSingle>
-    </MDXProvider>
+    </>
   );
 };
 

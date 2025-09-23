@@ -1,19 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import EventSingle from "../sections/Community/Event-single";
 import LearnServiceMeshCTA from "../sections/Learn/Learn-Service-Mesh-CTA";
 import Subscribe from "../sections/subscribe/subscribe";
 import SEO from "../components/seo";
-import Button from "../reusecore/Button";
-import { Link } from "gatsby";
-
-const components = {
-  Button,
-  Link,
-  p: (props) => <p {...props} style={{ color: "inherit" }} />,
-};
 
 export const query = graphql`query EventsBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
@@ -45,13 +36,13 @@ export const query = graphql`query EventsBySlug($slug: String!) {
 
 const EventSinglePage = ({ data }) => {
   return (
-    <MDXProvider components={components}>
+    <>
       <EventSingle data={data}>
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
       </EventSingle>
       <LearnServiceMeshCTA />
       <Subscribe />
-    </MDXProvider>
+    </>
   );
 };
 

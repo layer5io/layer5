@@ -67,9 +67,13 @@ const ResourceSingle = ({ data, children }) => {
       />
       <div className="single-resource-wrapper">
         <Container>
-          <SRLWrapper>
-            {children}
-          </SRLWrapper>
+          {typeof window !== "undefined" ? (
+            <SRLWrapper>
+              {children}
+            </SRLWrapper>
+          ) : (
+            children
+          )}
 
           <CTA_Bottom
             category={"Kanvas"}
