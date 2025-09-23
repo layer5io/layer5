@@ -10,6 +10,7 @@ import IndividualIntegrations from "../sections/Meshery/Meshery-integrations/Ind
 export const query = graphql`
   query IntegrationsBySlug($slug: String!, $name: String!) {
     mdx(fields:{slug:{eq: $slug}}) {
+      body
       frontmatter {
         title
         subtitle
@@ -65,7 +66,7 @@ export const query = graphql`
     }
   }
 `;
-const Integrations = ({ data, children }) => {
+const Integrations = ({ data }) => {
 
 
   return (
@@ -73,9 +74,7 @@ const Integrations = ({ data, children }) => {
     <>
 
 
-      <IndividualIntegrations data={data}>
-        {children}
-      </IndividualIntegrations>
+      <IndividualIntegrations  data={data} />
 
     </>
 
