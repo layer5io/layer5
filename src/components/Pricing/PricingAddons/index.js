@@ -177,7 +177,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
       const enterpriseUserSeats = enterpriseUsers > 0 ? ` and ${enterpriseUsers} enterprise user${enterpriseUsers > 1 ? "s" : ""}` : "";
       return {
         link: matchingPlanLink.link,
-        name: "Subscribe For Add-on"
+        name: "Subscribe"
       };
     }
 
@@ -191,7 +191,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
 
     return {
       link: "#",
-      name: "Subscribe For Add-on"
+      name: "Subscribe For"
     };
   };
 
@@ -509,7 +509,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
         }
         return formatPrice(0);
       }
-    })()} /{isYearly ? "yearly" : "monthly"}
+    })()}/{isYearly ? "yearly" : "monthly"}
   </Typography>
 </Box>
 
