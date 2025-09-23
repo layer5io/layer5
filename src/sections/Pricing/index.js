@@ -18,12 +18,12 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
       size="small"
       sx={{
         minWidth: 150,
-        "& .MuiInputLabel-root": { color: "white" }, 
-        "& .MuiInputLabel-root.Mui-focused": { color: '#00B39F' }, 
-        "& .MuiOutlinedInput-notchedOutline": { borderColor: "white" }, 
-        "& .MuiSelect-icon": { color: "white" }, 
-        "& .MuiSelect-select": { color: "white" }, 
-        "&:hover .MuiOutlinedInput-notchedOutline": { borderColor: "white" }, 
+        "& .MuiInputLabel-root": { color: "white" },
+        "& .MuiInputLabel-root.Mui-focused": { color: "#00B39F" },
+        "& .MuiOutlinedInput-notchedOutline": { borderColor: "white" },
+        "& .MuiSelect-icon": { color: "white" },
+        "& .MuiSelect-select": { color: "white" },
+        "&:hover .MuiOutlinedInput-notchedOutline": { borderColor: "white" },
       }}
     >
       <InputLabel>Currency</InputLabel>
@@ -31,7 +31,7 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
         value={currency}
         sx={{
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#00B39F", 
+            borderColor: "#00B39F",
           },
         }}
         onChange={(e) => setCurrency(e.target.value)}
