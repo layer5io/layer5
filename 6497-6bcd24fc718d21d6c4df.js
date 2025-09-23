@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkLayer5=self.webpackChunkLayer5||[]).push([[6497],{6497:function(e,n,t){t.r(n);var a=t(96540),r=t(21250),m=t(66054);const o=r.default.div.withConfig({displayName:"Meshery-quotes__MesheryQuotesWrapper",componentId:"sc-kfzztq-0"})(["\n    margin-top: 2rem;\n    margin-bottom: 6rem;\n    h2{\n      margin: 0 auto 4rem auto;\n      max-width: 40%;\n      font-weight: 700;\n    }\n"]);n.default=()=>a.createElement(o,null,a.createElement(m.mc,null))}}]);
+//# sourceMappingURL=6497-6bcd24fc718d21d6c4df.js.map

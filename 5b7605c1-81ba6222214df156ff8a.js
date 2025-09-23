@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkLayer5=self.webpackChunkLayer5||[]).push([[6368],{66760:function(e,s,a){a(96540);s.A=a.p+"static/meshery-dashboard-hero-image.1984069f.svg"}}]);

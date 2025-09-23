@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkLayer5=self.webpackChunkLayer5||[]).push([[5176],{5796:function(e,s,a){a(96540);s.A=a.p+"static/bookinfo-with-proxies.d74c061a.svg"}}]);
+//# sourceMappingURL=2aea57f4-d71ffe16df1cd7c8dd2c.js.map
