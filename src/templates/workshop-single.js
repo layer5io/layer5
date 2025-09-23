@@ -9,6 +9,7 @@ import WorkshopSinglePage from "../sections/Learn/Workshop-single/index";
 
 export const query = graphql`query WorkshopBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
+    body
     frontmatter {
       title
       date(formatString: "MMMM Do, YYYY")
@@ -35,6 +36,8 @@ export const query = graphql`query WorkshopBySlug($slug: String!) {
 
 const WorkshopSingle = ({ data, children }) => {
 
+  // In gatsby-plugin-mdx v5, body is a function component
+  const MDXContent = data.mdx.body;
 
   return (
 
@@ -42,7 +45,7 @@ const WorkshopSingle = ({ data, children }) => {
 
 
       <WorkshopSinglePage frontmatter={data.mdx.frontmatter}>
-        {children}
+        {MDXContent ? <MDXContent /> : children}
       </WorkshopSinglePage>
 
     </>

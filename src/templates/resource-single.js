@@ -11,6 +11,7 @@ import ResourceSingle from "../sections/Resources/Resource-single";
 import SimpleReactLightbox from "simple-react-lightbox";
 export const query = graphql`query ResourcesBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
+    body
     frontmatter {
       title
       subtitle
@@ -36,6 +37,8 @@ export const query = graphql`query ResourcesBySlug($slug: String!) {
 
 const ResourceSinglePage = ({ data, children }) => {
 
+  // In gatsby-plugin-mdx v5, body is a function component
+  const MDXContent = data.mdx.body;
 
   return (
 
@@ -44,7 +47,7 @@ const ResourceSinglePage = ({ data, children }) => {
 
       <SimpleReactLightbox>
         <ResourceSingle data={data}>
-          {children}
+          {MDXContent ? <MDXContent /> : children}
         </ResourceSingle>
       </SimpleReactLightbox>
 
