@@ -5,6 +5,12 @@ import CTA_ImageOnly from "./src/components/Call-To-Actions/CTA_ImageOnly";
 import CTA_FullWidth from "./src/components/Call-To-Actions/CTA_FullWidth";
 import CTA_Bottom from "./src/components/Call-To-Actions/CTA_Bottom";
 import Button from "./src/reusecore/Button";
+import { BlogWrapper } from "./src/collections/blog/Blog.style.js";
+import { ResourcesWrapper } from "./src/collections/resources/Resources.style.js";
+import { Link } from "gatsby";
+import DockerExtensionCTA from "./src/sections/Docker-Meshery/docker-extension-CTA.js";
+import PlaygroundCTA from "./src/sections/Playground/playground-CTA.js";
+import Blockquote from "./src/reusecore/Blockquote";
 import { ContextWrapper } from "./context-wrapper";
 
 // Custom image component for better CLS scores
@@ -43,6 +49,12 @@ const components = {
   },
   img: OptimizedImage,
   Button,
+  BlogWrapper,
+  ResourcesWrapper,
+  Link,
+  DockerExtensionCTA,
+  PlaygroundCTA,
+  Blockquote,
   CTA_ImageOnly,
   CTA_FullWidth,
   CTA_Bottom
