@@ -12,7 +12,7 @@ export const query = graphql`query ProgramByName($program: String!) {
     filter: {frontmatter: {program: {eq: $program}}}
   ) {
     nodes {
-      id
+      body
       frontmatter {
         title
         program

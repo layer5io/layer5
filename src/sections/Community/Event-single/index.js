@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
-
+import { MDXRenderer } from "gatsby-plugin-mdx";
 import slugify from "../../../utils/slugify";
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
@@ -48,17 +48,16 @@ const checkSpeaker = (speaker) => {
 };
 
 
-const EventSingle = ({ data, children }) => {
+const EventSingle = ({ data }) => {
 
   //const frontmatter = ({speakers = []});
-  const { frontmatter } = data.mdx;
+  const { frontmatter, body } = data.mdx;
   const isEventPassed = () => {
     const eventDate = new Date(frontmatter.date);
     const currentDate = new Date();
     return eventDate < currentDate;
   };
   const isEventUrlSpecified = !!frontmatter.eurl;
-  // MDXContent expects compiled MDX props
   const showJoinUsButton = !isEventPassed() && isEventUrlSpecified;
   const showRegisterForm = frontmatter.register && !isEventPassed();
   return (
@@ -83,7 +82,7 @@ const EventSingle = ({ data, children }) => {
                 }
               </div>
 
-              {children}
+              <MDXRenderer>{body}</MDXRenderer>
               <ul className="speakers">
                 {
                   frontmatter.speakers && frontmatter.speakers ? "Speakers:" : ""
