@@ -1,6 +1,6 @@
 import React from "react";
 import slugify from "../../../utils/slugify";
-
+import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
@@ -13,7 +13,7 @@ import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDr
 import { Col, Container, Row } from "../../../reusecore/Layout";
 import Image from "../../../components/image";
 
-const MemberBio = ({ frontmatter, children }) => {
+const MemberBio = ({ frontmatter, body }) => {
   const {
     github,
     twitter,
@@ -25,7 +25,6 @@ const MemberBio = ({ frontmatter, children }) => {
     executive_position,
     company,
   } = frontmatter;
-  // Render MDX body as a React component
   return (
     <MemberSingleWrapper>
       <Container>
@@ -53,7 +52,7 @@ const MemberBio = ({ frontmatter, children }) => {
             <Col $xs={12} $sm={12} $lg={9}>
               <h3>Executive Bio</h3>
               <SRLWrapper>
-                {children}
+                <MDXRenderer>{body}</MDXRenderer>
               </SRLWrapper>
             </Col>
             <Col $xs={12} $sm={12} $lg={3}>

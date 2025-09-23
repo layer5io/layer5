@@ -13,6 +13,7 @@ export const query = graphql`query allBlogs {
   ) {
     nodes {
       id
+      body
       frontmatter {
         title
         date(formatString: "MMM Do, YYYY")

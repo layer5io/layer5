@@ -1069,10 +1069,8 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
     },
   });
 
-  // Reduce memory pressure by disabling sourcemaps in dev and build
-  if (stage === "develop" || stage === "develop-html" || stage === "build-javascript" || stage === "build-html") {
+  if (stage === "build-javascript") {
     const config = getConfig();
-    config.devtool = false;
     const miniCssExtractPlugin = config.plugins.find(
       (plugin) => plugin.constructor.name === "MiniCssExtractPlugin"
     );

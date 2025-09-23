@@ -12,6 +12,7 @@ export const query = graphql`query BlogsByCategory($category: String!) {
   ) {
     nodes {
       id
+      body
       frontmatter {
         title
         subtitle
