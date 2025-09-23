@@ -803,6 +803,24 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     ];
 
     components.forEach((name) => {
+      // Skip guidance and code pages for icons component
+      if (name === "icons") {
+        const pagePath = `/projects/sistent/components/${name}`;
+        const componentPath = `./src/sections/Projects/Sistent/components/${name}/index.js`;
+        if (fs.existsSync(path.resolve(componentPath))) {
+          try {
+            createPage({
+              path: pagePath,
+              component: require.resolve(componentPath),
+            });
+          } catch (error) {
+            console.error(`Error creating page for "${pagePath}":`, error);
+          }
+        }
+        return;
+      }
+
+      // For all other components, process all page types
       pageTypes.forEach(({ suffix, file }) => {
         const pagePath = `/projects/sistent/components/${name}${suffix}`;
         const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
