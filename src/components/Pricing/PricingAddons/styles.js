@@ -221,13 +221,17 @@ export const boxStyles = {
     display: "flex",
     alignItems: "center"
   },
-  enterpriseUserInput: {
-    width: "4rem",
-    ml: 1,
-    "& .MuiInputBase-input": {
-      py: "0.25rem"
-    }
+enterpriseUserInput:{
+  width: "50px",
+  ml: 1, 
+  "& .MuiInputBase-input": {
+    py: (theme) => theme.spacing(0.5),
+    paddingRight: 0, 
+    paddingLeft: 0.2,
+    textAlign: "center", 
+    ml: 0.5, 
   },
+},
   totalSection: {
     textAlign: "right",
     margin: 0
