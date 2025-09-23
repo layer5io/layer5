@@ -14,7 +14,6 @@ module.exports = {
   flags: {
     FAST_DEV: true,
     PARALLEL_SOURCING: false, // Disable parallel sourcing to reduce memory pressure
-    DEV_SSR: false, // Disable SSR to avoid build issues
   },
   trailingSlash: "never",
   plugins: [
@@ -467,13 +466,15 @@ module.exports = {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [".mdx", ".md"],
+        gatsbyRemarkPlugins: [],
         mdxOptions: {
           remarkPlugins: [],
           rehypePlugins: [],
         },
-        gatsbyRemarkPlugins: [],
       },
     },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
