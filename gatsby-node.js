@@ -241,14 +241,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const singleWorkshop = res.data.singleWorkshop.nodes;
   const labs = res.data.labs.nodes;
 
-  // Temporarily disabled to test build issues
-  // paginate({
-  //   createPage: envCreatePage,
-  //   items: events,
-  //   itemsPerPage: 9,
-  //   pathPrefix: "/community/events",
-  //   component: EventsTemplate,
-  // });
+  // Re-enable events pagination - SSR issues will need separate investigation
+  paginate({
+    createPage: envCreatePage,
+    items: events,
+    itemsPerPage: 9,
+    pathPrefix: "/community/events",
+    component: EventsTemplate,
+  });
 
   blogs.forEach((blog) => {
     envCreatePage({
@@ -706,15 +706,43 @@ const createSectionPage = ({ envCreatePage, node }) => {
 };
 
 exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      fallback: {
-        path: require.resolve("path-browserify"),
-        process: require.resolve("process/browser"),
-        url: require.resolve("url/"),
+  // Handle SSR externals and global polyfills
+  if (stage === "build-html" || stage === "develop-html") {
+    actions.setWebpackConfig({
+      externals: [
+        "@layer5/meshery-design-embed",
+        "lodash.debounce",
+        "react-select",
+        "cytoscape",
+      ],
+      resolve: {
+        fallback: {
+          path: require.resolve("path-browserify"),
+          process: require.resolve("process/browser"),
+          url: require.resolve("url/"),
+        },
       },
-    },
-  });
+      plugins: [
+        new (require("webpack")).DefinePlugin({
+          global: "globalThis",
+        }),
+        new (require("webpack")).ProvidePlugin({
+          React: "react",
+        }),
+      ],
+    });
+  } else {
+    // For client-side builds
+    actions.setWebpackConfig({
+      resolve: {
+        fallback: {
+          path: require.resolve("path-browserify"),
+          process: require.resolve("process/browser"),
+          url: require.resolve("url/"),
+        },
+      },
+    });
+  }
 
   if (stage === "build-javascript") {
     const config = getConfig();
@@ -814,12 +842,5 @@ exports.onPostBuild = async ({ graphql, reporter }) => {
   fs.writeFileSync(outputPath, JSON.stringify(result, null, 2));
 };
 
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
-  if (stage === "build-html" || stage === "develop-html") {
-    actions.setWebpackConfig({
-      externals: {
-        "@layer5/meshery-design-embed": "{}",
-      },
-    });
-  }
-};
+
+

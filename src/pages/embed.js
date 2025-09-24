@@ -2,7 +2,7 @@ import * as React from "react";
 
 const Testing = () => {
   const [MesheryDesignEmbed, setMesheryDesignEmbed] = React.useState(null);
-  
+
   React.useEffect(() => {
     if (typeof window !== "undefined") {
       import("@layer5/meshery-design-embed").then((module) => {
