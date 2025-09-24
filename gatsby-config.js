@@ -70,27 +70,28 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: "gatsby-plugin-svgr",
-      options: {
-        svgo: true,
-        svgoConfig: {
-          plugins: [
-            "prefixIds",
-            {
-              name: "preset-default",
-              params: {
-                overrides: {
-                  // or disable plugins
-                  inlineStyles: false,
-                  cleanupIds: false,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
+    // Temporarily disabled gatsby-plugin-svgr due to SSR issues
+    // {
+    //   resolve: "gatsby-plugin-svgr",
+    //   options: {
+    //     svgo: true,
+    //     svgoConfig: {
+    //       plugins: [
+    //         "prefixIds",
+    //         {
+    //           name: "preset-default",
+    //           params: {
+    //             overrides: {
+    //               // or disable plugins
+    //               inlineStyles: false,
+    //               cleanupIds: false,
+    //             },
+    //           },
+    //         },
+    //       ],
+    //     },
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-feed",
       options: {

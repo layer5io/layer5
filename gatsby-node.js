@@ -714,6 +714,9 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
         "lodash.debounce",
         "react-select",
         "cytoscape",
+        "hoist-non-react-statics",
+        "custom-media-element",
+        "@babel/runtime",
       ],
       resolve: {
         fallback: {
@@ -722,20 +725,8 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
           url: require.resolve("url/"),
         },
       },
-      module: {
-        rules: [
-          {
-            test: /\.svg$/,
-            use: {
-              loader: "null-loader",
-            },
-          },
-        ],
-      },
+
       plugins: [
-        new (require("webpack")).DefinePlugin({
-          global: "globalThis",
-        }),
         new (require("webpack")).ProvidePlugin({
           React: "react",
         }),
