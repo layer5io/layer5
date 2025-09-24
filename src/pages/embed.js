@@ -1,7 +1,7 @@
 import * as React from "react";
 
 // Dynamically import the component to prevent SSR issues
-const MesheryDesignEmbed = React.lazy(() => 
+const MesheryDesignEmbed = React.lazy(() =>
   import("@layer5/meshery-design-embed").then(module => ({ default: module.default }))
 );
 

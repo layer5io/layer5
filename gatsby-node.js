@@ -904,7 +904,7 @@ const sanitizeDateFields = (node) => {
   if (node.frontmatter && node.frontmatter.date) {
     try {
       // Check if it's a Date object and has a valid getTime method
-      if (node.frontmatter.date instanceof Date && typeof node.frontmatter.date.getTime === 'function') {
+      if (node.frontmatter.date instanceof Date && typeof node.frontmatter.date.getTime === "function") {
         try {
           const timeValue = node.frontmatter.date.getTime();
           if (isNaN(timeValue)) {
@@ -918,7 +918,7 @@ const sanitizeDateFields = (node) => {
           // Error calling getTime(), remove the invalid date
           delete node.frontmatter.date;
         }
-      } else if (typeof node.frontmatter.date === 'string') {
+      } else if (typeof node.frontmatter.date === "string") {
         // Try to parse the date string to validate it
         const parsedDate = new Date(node.frontmatter.date);
         if (isNaN(parsedDate.getTime())) {
@@ -1439,7 +1439,7 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
     });
   }
 
-  // Exclude packages that use @floating-ui since they have export issues  
+  // Exclude packages that use @floating-ui since they have export issues
   if (stage === "develop-html" || stage === "build-html" || stage === "develop") {
     actions.setWebpackConfig({
       module: {
