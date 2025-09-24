@@ -222,11 +222,15 @@ export const boxStyles = {
     alignItems: "center"
   },
   enterpriseUserInput: {
-    width: "4rem",
+    width: "50px",
     ml: 1,
     "& .MuiInputBase-input": {
-      py: "0.25rem"
-    }
+      py: (theme) => theme.spacing(0.5),
+      paddingRight: 0,
+      paddingLeft: 0.2,
+      textAlign: "center",
+      ml: 0.5,
+    },
   },
   totalSection: {
     textAlign: "right",
