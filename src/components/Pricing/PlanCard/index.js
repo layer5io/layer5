@@ -17,7 +17,6 @@ const PlanCard = ({ planData, isYearly, currency }) => {
   };
 
   const formatPrice = (price) => {
-    // Use formatAndConvertPrice to get the converted price with currency symbol
     const formattedPrice = formatAndConvertPrice(price, currency);
     // Remove the currency symbol by extracting only the numeric part
     return parseFloat(formattedPrice.replace(/[^0-9.]/g, ""));
