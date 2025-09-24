@@ -39,11 +39,9 @@ import {
   getToggleButtonStyle,
   getSliderStyle
 } from "./styles";
+import { formatAndConvertPrice, formatSliderPrice } from "../../../utils/currencies";
 
-import { formatAndConvertPrice } from "../../../utils/currencies";
-
-export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterprisePlan }) => {
-
+export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterprisePlan }) => {
   const [selectedAddon, setSelectedAddon] = useState(null);
   // const [quantity, setQuantity] = useState(1);
   const quantity = 1;
@@ -62,22 +60,22 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
   // Helper function to render icons based on type
   const renderIcon = (iconType) => {
     switch (iconType) {
-    case "academy":
-      return <AcademyIcon
-        primaryFill={theme?.palette?.background?.inverse || "#00B39F"}
-        secondaryFill={theme?.palette?.background?.inverse || "#eee"}
-      />;
-    case "cloud":
-      return <Cloud />;
-    case "group":
-      return <Group />;
-    default:
-      return null;
+      case "academy":
+        return <AcademyIcon
+          primaryFill={theme?.palette?.background?.inverse || "#00B39F"}
+          secondaryFill={theme?.palette?.background?.inverse || "#eee"}
+        />;
+      case "cloud":
+        return <Cloud />;
+      case "group":
+        return <Group />;
+      default:
+        return null;
     }
   };
 
   const formatPrice = (price) => {
-      return formatAndConvertPrice(price, currency);
+    return formatAndConvertPrice(price, currency);
   };
 
   useEffect(() => {
@@ -177,7 +175,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
       const enterpriseUserSeats = enterpriseUsers > 0 ? ` and ${enterpriseUsers} enterprise user${enterpriseUsers > 1 ? "s" : ""}` : "";
       return {
         link: matchingPlanLink.link,
-        name: "Subscribe For Add-on"
+        name: "Subscribe"
       };
     }
 
@@ -191,7 +189,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
 
     return {
       link: "#",
-      name: "Subscribe For Add-on"
+      name: "Subscribe For"
     };
   };
 
@@ -256,9 +254,9 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
                                   {addon.id === "academy"
                                     ? addon.description
                                     : (() => {
-                                      const period = isYearly ? "/year" : "/month";
-                                      return `${formatPrice(isYearly ? addon.yearlyPrice : addon.monthlyPrice)} per ${addon.unitLabel.slice(0, -1)}${period}`;
-                                    })()
+                                        const period = isYearly ? "/year" : "/month";
+                                        return `${formatPrice(isYearly ? addon.yearlyPrice : addon.monthlyPrice)} per ${addon.unitLabel.slice(0, -1)}${period}`;
+                                      })()
                                   }
                                 </Typography>
                               </Box>
@@ -401,7 +399,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
                                         sm: "0.9rem",
                                       }
                                     }}>
-                                    {formatPrice(isYearly ? option.yearlyPerUser : option.monthlyPerUser)}<br />{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
+                                    {formatSliderPrice(isYearly ? option.yearlyPerUser : option.monthlyPerUser, currency)}<br />{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
                                   </Box>
                                 </Box>
                               ),
@@ -409,7 +407,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
                           })()}
                         />
                         <Box sx={boxStyles.disclaimerSection}>
-                          <Typography variant="body2" sx={typographyStyles.italic }>
+                          <Typography variant="body2" sx={typographyStyles.italic}>
                             Looking for a plan larger than 2,500 learners? Great! <a href="/company/contact">Let us know</a>.
                           </Typography>
                         </Box>
@@ -447,7 +445,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
                               <Box sx={boxStyles.sliderMarks}>
                                 <Box>{option.units}</Box>
                                 <Box sx={boxStyles.sliderPriceText}>
-                                  {formatPrice(isYearly ? option.yearlyPerUnit * option.units : option.monthlyPerUnit * option.units)}
+                                  {formatSliderPrice(isYearly ? option.yearlyPerUnit : option.monthlyPerUnit, currency)}
                                 </Box>
                               </Box>
                             ),
@@ -455,7 +453,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
                         />
                       </Box>
                     </>
-                   )}
+                  )}
                 </Box>
               </CardContent>
             </Card>
@@ -477,41 +475,41 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
 
                 <Box sx={{ ...boxStyles.flexColumn, ...boxStyles.pricingItems }}>
                   <Box sx={boxStyles.flexBetween}>
-  <Typography variant="body1" sx={typographyStyles.pricingItemLeft}>
-    {selectedAddon?.id === "academy" ?
-      `Theoretical Learning × ${selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory")?.pricing?.[quantityIndex]?.learners || 0}` :
-      `${selectedAddon?.name} × ${selectedAddon?.pricing?.[quantityIndex]?.units || 0}`
-    }
-  </Typography>
-  <Typography variant="body1" fontWeight="500" sx={typographyStyles.pricingItemRight}>
-    {(() => {
-      if (selectedAddon?.id === "academy") {
-        const theorySubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory");
-        if (theorySubAddon?.pricing && theorySubAddon.pricing[quantityIndex]) {
-          const currentLearnerOption = theorySubAddon.pricing[quantityIndex];
-          const monthlyPerUserCost = currentLearnerOption.monthlyPerUser;
-          const yearlyPerUserCost = currentLearnerOption.yearlyPerUser;
-          const totalCost = isYearly
-            ? yearlyPerUserCost * currentLearnerOption.learners
-            : monthlyPerUserCost * currentLearnerOption.learners;
-          return formatPrice(totalCost);
-        }
-        return formatPrice(0);
-      } else {
-        if (selectedAddon?.pricing && selectedAddon.pricing[quantityIndex]) {
-          const currentOption = selectedAddon.pricing[quantityIndex];
-          const monthlyPerUnitCost = currentOption.monthlyPerUnit;
-          const yearlyPerUnitCost = currentOption.yearlyPerUnit;
-          const totalCost = isYearly
-            ? yearlyPerUnitCost * currentOption.units
-            : monthlyPerUnitCost * currentOption.units;
-          return formatPrice(totalCost);
-        }
-        return formatPrice(0);
-      }
-    })()} /{isYearly ? "yearly" : "monthly"}
-  </Typography>
-</Box>
+                    <Typography variant="body1" sx={typographyStyles.pricingItemLeft}>
+                      {selectedAddon?.id === "academy"
+                        ? `Theoretical Learning × ${selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory")?.pricing?.[quantityIndex]?.learners || 0}`
+                        : `${selectedAddon?.name} × ${selectedAddon?.pricing?.[quantityIndex]?.units || 0}`
+                      }
+                    </Typography>
+                    <Typography variant="body1" fontWeight="500" sx={typographyStyles.pricingItemRight}>
+                      {(() => {
+                        if (selectedAddon?.id === "academy") {
+                          const theorySubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory");
+                          if (theorySubAddon?.pricing && theorySubAddon.pricing[quantityIndex]) {
+                            const currentLearnerOption = theorySubAddon.pricing[quantityIndex];
+                            const monthlyPerUserCost = currentLearnerOption.monthlyPerUser;
+                            const yearlyPerUserCost = currentLearnerOption.yearlyPerUser;
+                            const totalCost = isYearly
+                              ? yearlyPerUserCost * currentLearnerOption.learners
+                              : monthlyPerUserCost * currentLearnerOption.learners;
+                            return formatPrice(totalCost);
+                          }
+                          return formatPrice(0);
+                        } else {
+                          if (selectedAddon?.pricing && selectedAddon.pricing[quantityIndex]) {
+                            const currentOption = selectedAddon.pricing[quantityIndex];
+                            const monthlyPerUnitCost = currentOption.monthlyPerUnit;
+                            const yearlyPerUnitCost = currentOption.yearlyPerUnit;
+                            const totalCost = isYearly
+                              ? yearlyPerUnitCost * currentOption.units
+                              : monthlyPerUnitCost * currentOption.units;
+                            return formatPrice(totalCost);
+                          }
+                          return formatPrice(0);
+                        }
+    })()}/{isYearly ? "yearly" : "monthly"}
+                    </Typography>
+                  </Box>
 
                   {selectedAddon?.id === "academy" && selectedAddon.subAddOns?.map((subAddOn) => (
                     selectedSubAddOns[subAddOn.id] && subAddOn.id !== "academy-theory" && (
