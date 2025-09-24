@@ -277,26 +277,37 @@ const data = {
       category: "Pricing",
       answer: [
         "Layer5 Academy is available as an add-on to your Enterprise subscription, priced based on number of active learners.",
-        "Academy functionality is conveniently divided into two offerings: theoretical learning (learning paths, courses, exams) and practical learning (hands-on labs with Kanvas designs).",
+        "Academy functionality is conveniently divided into two offerings: theoretical learning (learning paths, certifications, challenges) and practical learning (hands-on labs in Kanvas).",
       ]
     },
     {
-      question: "Academy: Can I add more learners than my plan quota allows?",
+      question: "Academy: What is an \"active\" learner?",
       category: "Pricing",
       answer: [
-        "Yes. You can exceed your package quota without foreplanning.",
-        "Any additional learners are charged at the same per-user rate as your plan at the end of the month.",
+        "An active learner is any user who has logged into the platform in a given month whether they are currently enrolled in a course or not.",
+        "A learner is any user who at any point accepted an invitation to join your Academy. Learners may or may not have registered for (enrolled in) any of your Academy's offerings.",
+        "An enrolled learner is a user who is currently registered for an offering in your Academy's catalog of curricula. Enrolled learners not are always active learners as students may enroll in a course but not log in during a given month.",
+        "Only active learners count towards your package total. Only active learners are billable.",
       ]
     },
     {
-      question: "Acedemy: What happens if I exceed my plan’s quota?",
+      question: "Academy: Can I add more learners than my selected package allows?",
       category: "Pricing",
       answer: [
-        "Any users above your quota are billed at the same per-user price as your plan. For example, if you’re on the 500-user plan and end the month with 510 users, you’ll be charged for your base 500 users plus 10 additional users.",
+        "Yes, whether you are currently subscribed under a monthly plan or a yearly plan, you can exceed your pre-selected package size without foreplanning.",
+        "At the end of the month, any additional learners beyond your package size are charged at the same per-learner rate.",
+        "For example, if you are on the 500-learner package and end the month with 510 active learners, you will be charged for your base 500 learners plus the cost of 10 additional learners.",
       ]
     },
     {
-      question: "Acedemy: Are withdrawn or completed users billed?",
+      question: "Academy: What happens if my active learners remain under my selected package size?",
+      category: "Pricing",
+      answer: [
+        "You are simply charged for your selected package size.",
+      ]
+    },
+    {
+      question: "Academy: Are withdrawn or completed users billed?",
       category: "Pricing",
       answer: [
         "No. Only users who are actively registered and have not yet completed or withdrawn from a course are counted as active users.",
