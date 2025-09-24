@@ -802,25 +802,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       { suffix: "/code", file: "code.js" },
     ];
 
-    // Process each component
     components.forEach((name) => {
-      // First check which file types exist for this component
-      const availableFiles = pageTypes.filter(({ file }) => {
-        const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
-        return fs.existsSync(path.resolve(componentPath));
-      });
-
-      // Only create pages for files that actually exist
-      availableFiles.forEach(({ suffix, file }) => {
+      pageTypes.forEach(({ suffix, file }) => {
         const pagePath = `/projects/sistent/components/${name}${suffix}`;
         const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
-        try {
-          createPage({
-            path: pagePath,
-            component: require.resolve(componentPath),
-          });
-        } catch (error) {
-          console.error(`Error creating page for "${pagePath}":`, error);
+        if (fs.existsSync(path.resolve(componentPath))) {
+          try {
+            createPage({
+              path: pagePath,
+              component: require.resolve(componentPath),
+            });
+          } catch (error) {
+            console.error(`Error creating page for "${pagePath}":`, error);
+          }
+        } else {
+          console.info(`Skipping creating page "${pagePath}" - file not found: "${componentPath}"`);
         }
       });
     });
