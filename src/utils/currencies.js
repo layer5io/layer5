@@ -1,4 +1,3 @@
-
 export const Currencies = {
     USD: {
         name: "USD",
@@ -34,15 +33,29 @@ export const Currencies = {
                 currency: "INR",
                 minimumFractionDigits: 0,
                 maximumFractionDigits: 2,
-            }).format(price * rate),
+            }).format(price * 88),
     },
 };
-
 
 // the price is in USD
 export const formatAndConvertPrice = (price, currency) => {
     if (Currencies[currency]) {
         return Currencies[currency].formatPrice(price);
     }
-    return price;
-}
+    return price.toFixed(2);
+};
+
+export const formatSliderPrice = (price, currency) => {
+    const currencyConfig = Currencies[currency] || { symbol: "$", rate: 1 };
+    const { symbol, rate } = currencyConfig;
+    
+    const convertedPrice = price * rate;
+    
+    const formattedPrice = convertedPrice.toFixed(2);
+    
+    if (formattedPrice.endsWith(".00")) {
+        return `${symbol}${Math.floor(convertedPrice)}`;
+    }
+    
+    return `${symbol}${formattedPrice}`;
+};

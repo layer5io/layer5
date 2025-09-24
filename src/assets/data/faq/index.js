@@ -11,7 +11,7 @@ const data = {
       category: "Layer5",
       answer: [
         "Yes, all of Layer5's projects are licensed under Apache v2.",
-        "Layer5 also offers extensions to the Meshery project in which Enterprise-centric functionality is commercially offered and supported.",
+        "Layer5 also offers extensions to the Meshery project in which Enterprise-grade functionality is commercially offered and supported.",
       ],
     },
     {
@@ -212,24 +212,26 @@ const data = {
     //
 
     {
-      question: "How can I upgrade, downgrade, or cancel my plan?",
+      question: "Can I upgrade, downgrade, or cancel my plan?",
       category: "Pricing",
       answer: [
-        "Upgrade as needed. Downgrade or cancel at anytime. To make changes to your plan, please get in touch with sales.",
+        "Yes, upgrade, downgrade or cancel at anytime. Whether you are upgrading or downgrading between plans, or canceling your existing subscription, changes take effect at the start/end of your current subscription's billing cycle.",
       ],
+      linktext: "My current plan",
+      link: "https://cloud.layer5.io/account/plans"
     },
     {
-      question: "Do I need to enter my credit card details to sign up to a free plan?",
+      question: "Do I need to enter my credit card details to subscribe to the free plan?",
       category: "Pricing",
       answer: [
-        "No. The Free plan does not require a credit card. It is free and will forever be free. A credit card is required only if you want to upgrade to a more fully-featured plan.",
+        "No. The Free plan does not require a credit card. It is free and will forever be free.",
+        "A credit card is required only if you want to upgrade to a more fully-featured plan.",
       ],
     },
     {
       question: "What is the refund policy?",
       category: "Pricing",
       answer: [
-        "You can cancel at anytime.",
         "We totally get that plans can change, and we're here to make things as straight-forward as possible. At Layer5, we have a no-refund policy for all our subscription plans. That means once your payment goes through, it's non-refundable, even if you haven't used much of the time left in your billing cycle. This helps us keep delivering awesome access to our cloud native tools, collaborative features, performance testing, multi-cloud setups, and all the learning goodies in Layer5 Academy and Kanvas.",
         "If you're ready to cancel, no worries — just head to your account settings to cancel anytime. That'll stop any future renewals and charges, but you'll still enjoy full access until your current period ends. We're all about helping you explore first, so feel free to try our Free Forever plan to dip your toes in with things like built-in models, community support, and basic testing before going paid.",
       ],
@@ -246,15 +248,20 @@ const data = {
       question: "What happens if I accidentally don't renew or forget to renew my subscription?",
       category: "Pricing",
       answer: [
-        "Continuity of your infrastructure and application management is important to us as it is to you. Layer5 Cloud and Kanvas will continue to operate under the Free tier features and usage limits. Your historical data will continue to be available to you. You can renew your subscription to have higher-level plan features reenabled at any time.",
+        "Your account will automatically transition to the Free plan. Layer5 Cloud and Kanvas will continue to operate under the Free tier features and usage limits.",
+        "While your account will no longer be entitled to the features offered a paid plan, rest assured that your historical data will continue to be available to you.",
+        "Renew your subscription to have higher-level plan features reenabled at any time.",
       ],
     },
     {
       question: "Are there other pricing options?",
       category: "Pricing",
       answer: [
-        "Annual and monthly plans are available. Some plans have add-ons available. We can customize billing plans to meet your needs. For a detailed explanation of billing, please see our Billing FAQ.",
+        "Both annual and monthly plans are available. Some plans have add-ons available.",
+        "If your level of use warrants custom pricing, let's talk adjust as needed.",
       ],
+      link: "mailto:sales@layer5.io",
+      linktext: "Contact Sales",
     },
     {
       question: "Do you have special pricing for open source / non-profit projects?",
@@ -264,6 +271,43 @@ const data = {
       ],
       linktext: "Open source pricing",
       link: "/pricing/open-source-program"
+    },
+    {
+      question: "Academy: What is the pricing structure of this add-on?",
+      category: "Pricing",
+      answer: [
+        "Layer5 Academy is available as an add-on to your Enterprise subscription, priced based on number of active learners.",
+        "Academy functionality is conveniently divided into two offerings: theoretical learning (learning paths, courses, exams) and practical learning (hands-on labs with Kanvas designs).",
+      ]
+    },
+    {
+      question: "Academy: Can I add more learners than my plan quota allows?",
+      category: "Pricing",
+      answer: [
+        "Yes. You can exceed your package quota without foreplanning.",
+        "Any additional learners are charged at the same per-user rate as your plan at the end of the month.",
+      ]
+    },
+    {
+      question: "Acedemy: What happens if I exceed my plan’s quota?",
+      category: "Pricing",
+      answer: [
+        "Any users above your quota are billed at the same per-user price as your plan. For example, if you’re on the 500-user plan and end the month with 510 users, you’ll be charged for your base 500 users plus 10 additional users.",
+      ]
+    },
+    {
+      question: "Acedemy: Are withdrawn or completed users billed?",
+      category: "Pricing",
+      answer: [
+        "No. Only users who are actively registered and have not yet completed or withdrawn from a course are counted as active users.",
+      ]
+    },
+    {
+      question: "Academy: How are active learners calculated?",
+      category: "Pricing",
+      answer: [
+        "Active learners are determined as the higher of your active learners or your plan’s quota. For example, on the 500-user plan, even if you have only 450 active users, you will still be billed for 500.",
+      ]
     },
 
     //
