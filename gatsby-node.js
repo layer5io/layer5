@@ -722,6 +722,16 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
           url: require.resolve("url/"),
         },
       },
+      module: {
+        rules: [
+          {
+            test: /\.svg$/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+        ],
+      },
       plugins: [
         new (require("webpack")).DefinePlugin({
           global: "globalThis",
