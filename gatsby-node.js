@@ -718,6 +718,8 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
         "custom-media-element",
         "@babel/runtime",
         "cose-base",
+        "gsap",
+        "gsap/dist/ScrollTrigger",
       ],
       resolve: {
         fallback: {
