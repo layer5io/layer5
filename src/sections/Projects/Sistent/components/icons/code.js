@@ -1,1 +1,3 @@
-//Empty File
+export default function IconsCode() {
+  return null;
+}
