@@ -717,6 +717,7 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
         "hoist-non-react-statics",
         "custom-media-element",
         "@babel/runtime",
+        "cose-base",
       ],
       resolve: {
         fallback: {

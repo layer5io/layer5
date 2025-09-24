@@ -12,7 +12,9 @@ import axios from "axios";
 import kanvas_color from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
-import { ReactComponent as Logo } from "../../../assets/images/app/layer5-colorMode.svg";
+// Temporarily disabled SVG import due to SSR issues
+// import { ReactComponent as Logo } from "../../../assets/images/app/layer5-colorMode.svg";
+const Logo = () => <div>Logo</div>; // Temporary placeholder
 import NavigationWrap from "./navigation.style";
 import DefaultAvatar from "./utility/DefaultAvatar.js";
 import MesheryIcon from "./utility/MesheryIcon.js";
@@ -262,7 +264,8 @@ const Navigation = () => {
       <Container className="nav-container">
         <div className="navbar-wrap">
           <Link aria-label="layer5" to="/" className="logo">
-            <Logo />
+            <Logo />            <img src={isDark ? "/images/app/layer5-white.svg" : "/images/app/layer5-black.svg"} alt="Layer5 Logo" />
+
           </Link>
           <nav className="nav">
             {expand ? (
