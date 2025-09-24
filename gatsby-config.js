@@ -14,6 +14,9 @@ module.exports = {
   flags: {
     FAST_DEV: true,
     PARALLEL_SOURCING: false, // Disable parallel sourcing to reduce memory pressure
+    DETECT_NODE_MUTATIONS: true,
+    DEV_SSR: false, // Disable DEV_SSR to fix React 19 compatibility issues
+    PRESERVE_WEBPACK_CACHE: true, // Preserve webpack cache between builds
   },
   trailingSlash: "never",
   plugins: [
@@ -600,6 +603,8 @@ module.exports = {
       resolve: "gatsby-transformer-sharp",
       options: {
         checkSupportedExtensions: false, // suppress warning about childImageSharp being null
+        defaultQuality: 75,
+        warnOnMissingImageSharp: false,
       },
     },
     {

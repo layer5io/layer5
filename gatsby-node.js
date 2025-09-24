@@ -899,11 +899,53 @@ const shouldOnCreateNode = ({ node }) => {
   return node.internal.type === "Mdx";
 };
 
+// Helper function to sanitize date fields in frontmatter
+const sanitizeDateFields = (node) => {
+  if (node.frontmatter && node.frontmatter.date) {
+    try {
+      // Check if it's a Date object and has a valid getTime method
+      if (node.frontmatter.date instanceof Date && typeof node.frontmatter.date.getTime === 'function') {
+        try {
+          const timeValue = node.frontmatter.date.getTime();
+          if (isNaN(timeValue)) {
+            // Invalid Date object, remove it
+            delete node.frontmatter.date;
+          } else {
+            // Valid Date object, convert to ISO string for consistent serialization
+            node.frontmatter.date = node.frontmatter.date.toISOString();
+          }
+        } catch (dateError) {
+          // Error calling getTime(), remove the invalid date
+          delete node.frontmatter.date;
+        }
+      } else if (typeof node.frontmatter.date === 'string') {
+        // Try to parse the date string to validate it
+        const parsedDate = new Date(node.frontmatter.date);
+        if (isNaN(parsedDate.getTime())) {
+          // Invalid date string, remove it
+          delete node.frontmatter.date;
+        }
+        // Valid date string, keep as is (don't modify)
+      } else {
+        // Neither Date object nor string, remove it
+        delete node.frontmatter.date;
+      }
+    } catch (error) {
+      console.warn(`Error processing date field for node ${node.id}:`, error);
+      delete node.frontmatter.date;
+    }
+  }
+  return node;
+};
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
   // Check if we should process this node
   if (!shouldOnCreateNode({ node })) {
     return;
   }
+
+  // Sanitize any problematic date fields
+  node = sanitizeDateFields(node);
 
   const { createNodeField } = actions;
   const collection = getNode(node.parent).sourceInstanceName;
@@ -1069,6 +1111,554 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
     },
   });
 
+  // Exclude problematic packages only during SSR stages
+  if (stage === "develop-html" || stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /[\\/]embed-test[\\/].*\.js$/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]cytoscape[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]layout-base[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]@mui[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]@material-ui[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]billboard\.js[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]swiper[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]lodash[\\/]lodash\.js$/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]moment[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-share[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]re-resizable[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-draggable[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]xstate[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]stylis[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-slick[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]media-chrome[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]@mux[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-player[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-loadable[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-modal[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-intersection-observer[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-table[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-tsparticles[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-countdown[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-countup[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]lodash\.isequal[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]lodash\.isundefined[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]lodash\.merge[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]resize-observer-polyfill[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]lodash\.[\w]+[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]hoist-non-react-statics[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-player[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-loadable[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-modal[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-intersection-observer[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-table[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-tsparticles[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-countdown[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-countup[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-accessible-accordion[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-copy-to-clipboard[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-debounce-input[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-honeycomb[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-scroll[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-tabs[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-vertical-timeline-component[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-visibility-sensor[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]simple-react-cytoscape[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]simple-react-lightbox[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]prism-react-renderer[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]@layer5[\\/]meshery-design-embed[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]@loadable[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-server-dom-webpack[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+        ],
+      },
+    });
+  }
+
+  // Exclude packages that use @floating-ui since they have export issues  
+  if (stage === "develop-html" || stage === "build-html" || stage === "develop") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /[\\/]node_modules[\\/]@floating-ui[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-select[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-tooltip[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]lodash[\\/]lodash\.js$/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]moment[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-share[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]re-resizable[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-draggable[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]xstate[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]stylis[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-slick[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /media-chrome/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]@mux[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-player[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-loadable[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-modal[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-intersection-observer[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-table[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-tsparticles[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-countdown[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-countup[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-accessible-accordion[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-copy-to-clipboard[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-debounce-input[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-honeycomb[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-scroll[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-tabs[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-vertical-timeline-component[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-visibility-sensor[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]simple-react-cytoscape[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]simple-react-lightbox[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]prism-react-renderer[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]@layer5[\\/]meshery-design-embed[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]@loadable[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+          {
+            test: /[\\/]node_modules[\\/]react-server-dom-webpack[\\/]/,
+            use: {
+              loader: "null-loader",
+            },
+          },
+        ],
+      },
+    });
+  }
+
   if (stage === "build-javascript") {
     const config = getConfig();
     const miniCssExtractPlugin = config.plugins.find(
@@ -1107,6 +1697,8 @@ exports.createSchemaCustomization = ({ actions }) => {
        community_manager: String,
        docURL: String,
        permalink: String,
+       slug: String,
+       redirect_from: [String],
      }
    `;
   createTypes(typeDefs);
