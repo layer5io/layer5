@@ -284,10 +284,9 @@ const data = {
       question: "Academy: What is an \"active\" learner?",
       category: "Pricing",
       answer: [
-        "An active learner is any user who has logged into the platform in a given month whether they are currently enrolled in a course or not.",
+        "An active learner is any user who has logged into the platform in a given month whether they are currently enrolled in a course or not. Only active learners count towards your package total. Only active learners are billable.",
         "A learner is any user who at any point accepted an invitation to join your Academy. Learners may or may not have registered for (enrolled in) any of your Academy's offerings.",
         "An enrolled learner is a user who is currently registered for an offering in your Academy's catalog of curricula. Enrolled learners not are always active learners as students may enroll in a course but not log in during a given month.",
-        "Only active learners count towards your package total. Only active learners are billable.",
       ]
     },
     {
@@ -300,24 +299,25 @@ const data = {
       ]
     },
     {
-      question: "Academy: What happens if my active learners remain under my selected package size?",
+      question: "Academy: What happens if number of active learners remains under my pre-selected plan size, say 2,500?",
       category: "Pricing",
       answer: [
-        "You are simply charged for your selected package size.",
-      ]
-    },
-    {
-      question: "Academy: Are withdrawn or completed users billed?",
-      category: "Pricing",
-      answer: [
-        "No. Only users who are actively registered and have not yet completed or withdrawn from a course are counted as active users.",
+        "You are simply billed for the number of learners under your selected plan size at the end of the month; e.g. 2,500 multiplied by the per-learner price in your subscription plan.",
       ]
     },
     {
       question: "Academy: How are active learners calculated?",
       category: "Pricing",
       answer: [
-        "Active learners are determined as the higher of your active learners or your plan’s quota. For example, on the 500-user plan, even if you have only 450 active users, you will still be billed for 500.",
+        "Active learners are determined as the higher of your active learners or your plan's quota. For example, on the 500 learner plan, even if you have only 450 active learners, you will still be billed according to your plan size of 500 learners.",
+        "Active learners are calculated at the end of each monthly billing cycle. For example, if you are subscribed to the 1,000 learner plan, have 900 active learners on the 1st of the month, 450 active learners on the 11th of the month, and 1,025 active learners on the 17th of the month, you will be billed for 1,025 active learners (1,025 times the per learner price in your subscription plan) as that is your highest count of active learners during the month.",
+      ]
+    },
+    {
+      question: "Academy: Are learners who have withdrawn or who have completed offerings counted against my package total?",
+      category: "Pricing",
+      answer: [
+        "No. Only users who are actively registered and have not yet completed or withdrawn from a course are counted as active users.",
       ]
     },
 
