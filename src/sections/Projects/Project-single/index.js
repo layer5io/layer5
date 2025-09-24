@@ -7,7 +7,7 @@ import PageHeader from "../../../reusecore/PageHeader";
 import ProjectPageWrapper from "./projectSingle.style";
 
 const ProjectSingle = ({ data }) => {
-  const { frontmatter, body } = data.mdx;
+  const { frontmatter, body } = data.allMdx.nodes[0];
   return (
     <ProjectPageWrapper>
       <PageHeader

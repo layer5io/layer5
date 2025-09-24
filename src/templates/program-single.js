@@ -8,11 +8,13 @@ import ProgramsSingle from "../sections/Careers/Careers-Programs-single";
 
 export const query = graphql`
     query ProgramBySlug($slug: String!) {
-        mdx(fields: { slug: { eq: $slug } }) {
+        allMdx(filter: { fields: { slug: { eq: $slug } } }) {
+          nodes {
             body
             frontmatter {
                 title
             }
+          }
         }
     }
 `;

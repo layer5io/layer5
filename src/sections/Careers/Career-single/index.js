@@ -11,7 +11,7 @@ import { HiOutlineCash } from "@react-icons/all-files/hi/HiOutlineCash";
 import { ReactComponent as Logo } from "../../../assets/images/app/layer5-colorMode.svg";
 
 const CareerSingle = ({ data }) => {
-  const { frontmatter, body } = data.mdx;
+  const { frontmatter, body } = data.allMdx.nodes[0];
 
   return (
     <CareerPageWrapper>

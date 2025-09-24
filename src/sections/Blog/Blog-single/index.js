@@ -23,7 +23,7 @@ import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const BlogSingle = ({ data }) => {
   const location = useLocation();
-  const { frontmatter, body, fields } = data.mdx;
+  const { frontmatter, body, fields } = data.allMdx.nodes[0];
   const { relatedPosts: blogData, authors } = useStaticQuery(
     graphql`query relatedPosts {
   relatedPosts: allMdx(

@@ -8,27 +8,26 @@ import SEO from "../components/seo";
 import WorkshopSinglePage from "../sections/Learn/Workshop-single/index";
 
 export const query = graphql`query WorkshopBySlug($slug: String!) {
-  mdx(fields: {slug: {eq: $slug}}) {
-    body
-    frontmatter {
-      title
-      date(formatString: "MMMM Do, YYYY")
-      slack
-      abstract
-      status
-      labs
-      video
-      eurl
-      thumbnail {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
+  allMdx(filter: { fields: { slug: { eq: $slug } } }) {
+    nodes {
+      body
+      frontmatter {
+        title
+        date(formatString: "MMMM Do, YYYY")
+        slack
+        abstract
+        status
+        labs
+        video
+        eurl
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: CONSTRAINED)
+          }
+          extension
+          publicURL
         }
-        extension
-        publicURL
       }
-    }
-    fields {
-      slug
     }
   }
 }

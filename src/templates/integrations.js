@@ -9,47 +9,49 @@ import IndividualIntegrations from "../sections/Meshery/Meshery-integrations/Ind
 
 export const query = graphql`
   query IntegrationsBySlug($slug: String!, $name: String!) {
-    mdx(fields:{slug:{eq: $slug}}) {
-      body
-      frontmatter {
-        title
-        subtitle
-        howItWorks
-        howItWorksDetails
-        integrationIcon {
-          childImageSharp {
-            gatsbyImageData(width: 500, layout: CONSTRAINED)
-          }
-          extension
-          publicURL
-        }
-        docURL
-        category
-        components {
-          name
-          colorIcon {
+    allMdx(filter: { fields: { slug: { eq: $slug } } }) {
+      nodes {
+        body
+        frontmatter {
+          title
+          subtitle
+          howItWorks
+          howItWorksDetails
+          integrationIcon {
             childImageSharp {
               gatsbyImageData(width: 500, layout: CONSTRAINED)
             }
             extension
             publicURL
           }
-          whiteIcon {
+          docURL
+          category
+          components {
+            name
+            colorIcon {
+              childImageSharp {
+                gatsbyImageData(width: 500, layout: CONSTRAINED)
+              }
+              extension
+              publicURL
+            }
+            whiteIcon {
+              childImageSharp {
+                gatsbyImageData(width: 500, layout: CONSTRAINED)
+              }
+              extension
+              publicURL
+            }
+            description
+          }
+          featureList
+          workingSlides {
             childImageSharp {
-              gatsbyImageData(width: 500, layout: CONSTRAINED)
+              gatsbyImageData(layout: FULL_WIDTH)
             }
             extension
             publicURL
           }
-          description
-        }
-        featureList
-        workingSlides {
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
-          }
-          extension
-          publicURL
         }
       }
     }

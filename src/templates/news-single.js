@@ -7,7 +7,8 @@ import NewsSingle from "../sections/Company/News-single";
 
 export const query = graphql`
   query NewsBySlug($slug: String!) {
-    mdx(fields: { slug: { eq: $slug } }) {
+    allMdx(filter: { fields: { slug: { eq: $slug } } }) {
+      nodes {
       body
       frontmatter {
         title
@@ -37,6 +38,7 @@ export const query = graphql`
       }
     }
   }
+}
 `;
 
 const NewsSinglePage = ({ data }) => {

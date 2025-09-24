@@ -6,26 +6,28 @@ import SEO from "../components/seo";
 import MemberSingle from "../sections/Community/Member-single";
 
 export const query = graphql`query MemberBySlug($slug: String!) {
-  mdx(fields: {slug: {eq: $slug}}) {
-    frontmatter {
-      name
-      position
-      github
-      twitter
-      layer5
-      meshmate
-      linkedin
-      location
-      badges
-      status
-      bio
-      executive_bio
-      image_path {
-        childImageSharp {
-          gatsbyImageData(width: 500, layout: CONSTRAINED)
+  allMdx(filter: { fields: { slug: { eq: $slug } } }) {
+    nodes {
+      frontmatter {
+        name
+        position
+        github
+        twitter
+        layer5
+        meshmate
+        linkedin
+        location
+        badges
+        status
+        bio
+        executive_bio
+        image_path {
+          childImageSharp {
+            gatsbyImageData(width: 500, layout: CONSTRAINED)
+          }
+          extension
+          publicURL
         }
-        extension
-        publicURL
       }
     }
   }

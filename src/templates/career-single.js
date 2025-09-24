@@ -8,7 +8,8 @@ import CareerSingle from "../sections/Careers/Career-single";
 
 export const query = graphql`
     query CareerBySlug($slug: String!) {
-        mdx(fields: { slug: { eq: $slug } }) {
+        allMdx(filter: { fields: { slug: { eq: $slug } } }) {
+        nodes {
             body
             frontmatter {
                 title,
@@ -22,6 +23,7 @@ export const query = graphql`
             }
         }
     }
+}
 `;
 
 const CareerSinglePage = ({ data }) => {

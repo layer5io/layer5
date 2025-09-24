@@ -241,13 +241,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const singleWorkshop = res.data.singleWorkshop.nodes;
   const labs = res.data.labs.nodes;
 
-  paginate({
-    createPage: envCreatePage,
-    items: events,
-    itemsPerPage: 9,
-    pathPrefix: "/community/events",
-    component: EventsTemplate,
-  });
+  // Temporarily disabled to test build issues
+  // paginate({
+  //   createPage: envCreatePage,
+  //   items: events,
+  //   itemsPerPage: 9,
+  //   pathPrefix: "/community/events",
+  //   component: EventsTemplate,
+  // });
 
   blogs.forEach((blog) => {
     envCreatePage({
@@ -732,27 +733,50 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
-     type Mdx implements Node {
-       frontmatter: Frontmatter
+     type MdxFields {
+       collection: String
+       slug: String
+       learnpath: String
+       course: String
+       section: String
+       chapter: String
+       pageType: String
      }
-     type Frontmatter {
-       subtitle: String,
-       abstract: String,
-       eurl: String,
-       twitter: String,
-       github: String,
-       layer5: String,
-       meshmate: String,
-       maintainer:String,
-       emeritus: String,
-       link: String,
-       labs: String,
-       slides: String,
-       slack: String,
-       video: String,
-       community_manager: String,
-       docURL: String,
-       permalink: String,
+     
+     type MeshYouLearn {
+       imagepath: File @fileByRelativePath
+       name: String
+     }
+     
+     type MdxFrontmatter {
+       title: String
+       name: String
+       published: Boolean
+       program: String
+       programSlug: String
+       tags: [String]
+       category: String
+       executive_bio: Boolean
+       subtitle: String
+       abstract: String
+       eurl: String
+       twitter: String
+       github: String
+       layer5: String
+       meshmate: String
+       maintainer: String
+       emeritus: String
+       link: String
+       labs: String
+       slides: String
+       slack: String
+       video: String
+       community_manager: String
+       docURL: String
+       permalink: String
+       slug: String
+       cardImage: File @fileByRelativePath
+       meshesYouLearn: [MeshYouLearn]
      }
    `;
   createTypes(typeDefs);
@@ -788,4 +812,14 @@ exports.onPostBuild = async ({ graphql, reporter }) => {
   // Optionally, write the result to a file for easier inspection
   const outputPath = path.resolve(__dirname, "public", "query-result.json");
   fs.writeFileSync(outputPath, JSON.stringify(result, null, 2));
+};
+
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  if (stage === "build-html" || stage === "develop-html") {
+    actions.setWebpackConfig({
+      externals: {
+        "@layer5/meshery-design-embed": "{}",
+      },
+    });
+  }
 };

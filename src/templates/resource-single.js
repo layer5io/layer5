@@ -10,26 +10,28 @@ import ResourceSingle from "../sections/Resources/Resource-single";
 
 import SimpleReactLightbox from "simple-react-lightbox";
 export const query = graphql`query ResourcesBySlug($slug: String!) {
-  mdx(fields: {slug: {eq: $slug}}) {
-    body
-    frontmatter {
-      title
-      subtitle
-      date(formatString: "MMMM Do, YYYY")
-      author
-      category
-      tags
-      description
-      thumbnail {
-        childImageSharp {
-          gatsbyImageData(width: 500, layout: CONSTRAINED)
+  allMdx(filter: { fields: { slug: { eq: $slug } } }) {
+    nodes {
+      body
+      frontmatter {
+        title
+        subtitle
+        date(formatString: "MMMM Do, YYYY")
+        author
+        category
+        tags
+        description
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(width: 500, layout: CONSTRAINED)
+          }
+          extension
+          publicURL
         }
-        extension
-        publicURL
       }
-    }
-    fields {
-      slug
+      fields {
+        slug
+      }
     }
   }
 }

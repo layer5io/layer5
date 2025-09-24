@@ -11,10 +11,12 @@ import DockerExtensionCTA from "../sections/Docker-Meshery/docker-extension-CTA"
 
 import SEO from "../components/seo";
 export const query = graphql`query BookBySlug($slug: String!) {
-  mdx(fields: {slug: {eq: $slug}}) {
+allMdx(filter: { fields: { slug: { eq: $slug } } }) {
+  nodes {
     body
     frontmatter {
       title
+      author
       abstract
       thumbnail {
         childImageSharp {
@@ -24,6 +26,7 @@ export const query = graphql`query BookBySlug($slug: String!) {
         publicURL
       }
     }
+   }
   }
 }
 `;

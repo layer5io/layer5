@@ -6,7 +6,7 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import VintageBox from "../../../reusecore/VintageBox";
 import BGImg from "../../../components/BGImage";
-import ReactPlayer from "react-player/youtube";
+import ReactPlayer from "react-player";
 // import mesheryPlayground from "./meshery-playground-kanvas.png";
 import videoThumbnail from "./meshery-infrastructure-as-diagram.webp";
 

@@ -14,7 +14,7 @@ import CatalogGrid from "./CatalogGrid";
 import { ReactComponent as MesheryLogoBullet } from "../../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 
 const IndividualIntegrations = ({ data }) => {
-  const { frontmatter, body } = data.mdx;
+  const { frontmatter, body } = data.allMdx.nodes[0];
   const screenshotNodes = data.allFile.nodes;
   const finalScreenshots =
     screenshotNodes.length === 0 ? frontmatter.workingSlides : screenshotNodes;

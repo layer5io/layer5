@@ -40,20 +40,20 @@ module.exports = {
       resolve: "gatsby-plugin-sitemap",
       options: {
         query: `
-        {
-          allSitePage {
-            nodes {
-              path
-              matchPath
-            }
-          }
-          site {
-            siteMetadata {
-              siteUrl
-              }
-          }
-        }
-      `,
+  {
+  allSitePage {
+  nodes {
+  path
+  matchPath
+  }
+  }
+  site {
+  siteMetadata {
+  siteUrl
+  }
+  }
+  }
+  `,
         resolvePages: ({ allSitePage: { nodes: allPages } }) => {
           return allPages.map((page) => {
             return { ...page };
@@ -95,17 +95,17 @@ module.exports = {
       resolve: "gatsby-plugin-feed",
       options: {
         query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
+  {
+  site {
+  siteMetadata {
+  title
+  description
+  siteUrl
+  site_url: siteUrl
+  }
+  }
+  }
+  `,
         feeds: [
           {
             serialize: ({ query: { site, allPosts } }) => {
@@ -119,8 +119,8 @@ module.exports = {
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   enclosure: node.frontmatter.thumbnail && {
                     url:
-                      site.siteMetadata.siteUrl +
-                      node.frontmatter.thumbnail.publicURL,
+  site.siteMetadata.siteUrl +
+  node.frontmatter.thumbnail.publicURL,
                   },
                   custom_elements: [{ "content:encoded": node.html }],
                 });
@@ -128,28 +128,27 @@ module.exports = {
             },
             query: `{
   allPosts: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {in: ["blog", "resources", "news"]}}, frontmatter: {published: {eq: true}, category: {nin: ["Programs", "Community", "Events", "FAQ"]}}}
-    limit: 20
+  sort: {frontmatter: {date: DESC}}
+  filter: {fields: {collection: {in: ["blog", "resources", "news"]}}, frontmatter: {published: {eq: true}, category: {nin: ["Programs", "Community", "Events", "FAQ"]}}}
+  limit: 20
   ) {
-    nodes {
-      body
-      frontmatter {
-        title
-        author
-        description
-        date(formatString: "MMM DD YYYY")
-        thumbnail {
-          publicURL
-        }
-      }
-      fields {
-        collection
-        slug
-      }
-    }
+  nodes {
+  frontmatter {
+  title
+  author
+  description
+  date(formatString: "MMM DD YYYY")
+  thumbnail {
+  publicURL
   }
-}`,
+  }
+  fields {
+  collection
+  slug
+  }
+  }
+  }
+  }`,
             output: "/rss.xml",
             title: "Layer5 Technical Posts",
           },
@@ -165,8 +164,8 @@ module.exports = {
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   enclosure: node.frontmatter.thumbnail && {
                     url:
-                      site.siteMetadata.siteUrl +
-                      node.frontmatter.thumbnail.publicURL,
+  site.siteMetadata.siteUrl +
+  node.frontmatter.thumbnail.publicURL,
                   },
                   custom_elements: [{ "content:encoded": node.html }],
                 });
@@ -174,27 +173,27 @@ module.exports = {
             },
             query: `{
   allPosts: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {in: ["news"]}}, frontmatter: {published: {eq: true}}}
-    limit: 20
+  sort: {frontmatter: {date: DESC}}
+  filter: {fields: {collection: {in: ["news"]}}, frontmatter: {published: {eq: true}}}
+  limit: 20
   ) {
-    nodes {
-      body
-      frontmatter {
-        title
-        author
-        date(formatString: "MMM DD YYYY")
-        thumbnail {
-          publicURL
-        }
-      }
-      fields {
-        collection
-        slug
-      }
-    }
+  nodes {
+  body
+  frontmatter {
+  title
+  author
+  date(formatString: "MMM DD YYYY")
+  thumbnail {
+  publicURL
   }
-}`,
+  }
+  fields {
+  collection
+  slug
+  }
+  }
+  }
+  }`,
             output: "/news/feed.xml",
             title: "Layer5 News",
           },
@@ -210,8 +209,8 @@ module.exports = {
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   enclosure: node.frontmatter.thumbnail && {
                     url:
-                      site.siteMetadata.siteUrl +
-                      node.frontmatter.thumbnail.publicURL,
+  site.siteMetadata.siteUrl +
+  node.frontmatter.thumbnail.publicURL,
                   },
                   custom_elements: [{ "content:encoded": node.html }],
                 });
@@ -219,30 +218,30 @@ module.exports = {
             },
             query: `{
   allPosts: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {in: ["resources"]}}, frontmatter: {published: {eq: true}}}
-    limit: 20
+  sort: {frontmatter: {date: DESC}}
+  filter: {fields: {collection: {in: ["resources"]}}, frontmatter: {published: {eq: true}}}
+  limit: 20
   ) {
-    nodes {
-      body
-      frontmatter {
-        title
-        author
-        date(formatString: "MMM DD YYYY")
-        thumbnail {
-          publicURL
-        }
-        darkthumbnail {
-          publicURL
-        }
-      }
-      fields {
-        collection
-        slug
-      }
-    }
+  nodes {
+  body
+  frontmatter {
+  title
+  author
+  date(formatString: "MMM DD YYYY")
+  thumbnail {
+  publicURL
   }
-}`,
+  darkthumbnail {
+  publicURL
+  }
+  }
+  fields {
+  collection
+  slug
+  }
+  }
+  }
+  }`,
             output: "/resources/feed.xml",
             title: "Layer5 Resources",
           },
@@ -258,8 +257,8 @@ module.exports = {
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   enclosure: node.frontmatter.thumbnail && {
                     url:
-                      site.siteMetadata.siteUrl +
-                      node.frontmatter.thumbnail.publicURL,
+  site.siteMetadata.siteUrl +
+  node.frontmatter.thumbnail.publicURL,
                   },
                   custom_elements: [{ "content:encoded": node.html }],
                 });
@@ -267,28 +266,28 @@ module.exports = {
             },
             query: `{
   allPosts: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {in: ["blog", "news"]}}, frontmatter: {published: {eq: true}}}
-    limit: 20
+  sort: {frontmatter: {date: DESC}}
+  filter: {fields: {collection: {in: ["blog", "news"]}}, frontmatter: {published: {eq: true}}}
+  limit: 20
   ) {
-    nodes {
-      body
-      frontmatter {
-        title
-        author
-        description
-        date(formatString: "MMM DD YYYY")
-        thumbnail {
-          publicURL
-        }
-      }
-      fields {
-        collection
-        slug
-      }
-    }
+  nodes {
+  body
+  frontmatter {
+  title
+  author
+  description
+  date(formatString: "MMM DD YYYY")
+  thumbnail {
+  publicURL
   }
-}`,
+  }
+  fields {
+  collection
+  slug
+  }
+  }
+  }
+  }`,
             output: "/rss-contributors.xml",
             title: "Layer5 Contributor Feed",
           },
@@ -299,14 +298,14 @@ module.exports = {
                   title: node.frontmatter.title,
                   author: node.frontmatter.author,
                   description:
-                    node.frontmatter.description || node.frontmatter.subtitle,
+  node.frontmatter.description || node.frontmatter.subtitle,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   enclosure: node.frontmatter.thumbnail && {
                     url:
-                      site.siteMetadata.siteUrl +
-                      node.frontmatter.thumbnail.publicURL,
+  site.siteMetadata.siteUrl +
+  node.frontmatter.thumbnail.publicURL,
                   },
                   custom_elements: [
                     { "content:encoded": node.html },
@@ -319,39 +318,39 @@ module.exports = {
             },
             query: `{
   allPosts: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {
-      fields: {collection: {in: ["blog", "resources", "news", "events"]}}, 
-      frontmatter: {
-      published: { eq: true }
-      category: { in: ["Meshery", "Announcements", "Events"] }
-      tags: { in: ["Community", "Meshery", "mesheryctl"] }
-    }
-    }
-    limit: 30
-  ) {
-    nodes {
-      body
-      frontmatter {
-        title
-        author
-        description
-        subtitle
-        date(formatString: "MMM DD YYYY")
-        type
-        category
-        thumbnail {
-          publicURL
-        }
-        tags
-      }
-      fields {
-        collection
-        slug
-      }
-    }
+  sort: {frontmatter: {date: DESC}}
+  filter: {
+  fields: {collection: {in: ["blog", "resources", "news", "events"]}}, 
+  frontmatter: {
+  published: { eq: true }
+  category: { in: ["Meshery", "Announcements", "Events"] }
+  tags: { in: ["Community", "Meshery", "mesheryctl"] }
   }
-}`,
+  }
+  limit: 30
+  ) {
+  nodes {
+  body
+  frontmatter {
+  title
+  author
+  description
+  subtitle
+  date(formatString: "MMM DD YYYY")
+  type
+  category
+  thumbnail {
+  publicURL
+  }
+  tags
+  }
+  fields {
+  collection
+  slug
+  }
+  }
+  }
+  }`,
             output: "/meshery-community-feed.xml",
             title: "Meshery RSSFeed",
           },
@@ -367,8 +366,8 @@ module.exports = {
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   enclosure: node.frontmatter.thumbnail && {
                     url:
-                      site.siteMetadata.siteUrl +
-                      node.frontmatter.thumbnail.publicURL,
+  site.siteMetadata.siteUrl +
+  node.frontmatter.thumbnail.publicURL,
                   },
                   custom_elements: [{ "content:encoded": node.html }],
                 });
@@ -376,28 +375,28 @@ module.exports = {
             },
             query: `{
   allPosts: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {in: ["blog"]}}, frontmatter: {published: {eq: true}}}
-    limit: 20
+  sort: {frontmatter: {date: DESC}}
+  filter: {fields: {collection: {in: ["blog"]}}, frontmatter: {published: {eq: true}}}
+  limit: 20
   ) {
-    nodes {
-      body
-      frontmatter {
-        title
-        author
-        description
-        date(formatString: "MMM DD YYYY")
-        thumbnail {
-          publicURL
-        }
-      }
-      fields {
-        collection
-        slug
-      }
-    }
+  nodes {
+  body
+  frontmatter {
+  title
+  author
+  description
+  date(formatString: "MMM DD YYYY")
+  thumbnail {
+  publicURL
   }
-}`,
+  }
+  fields {
+  collection
+  slug
+  }
+  }
+  }
+  }`,
             output: "/blog/feed.xml",
             title: "Layer5 Blog",
           },
@@ -413,8 +412,8 @@ module.exports = {
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   enclosure: node.frontmatter.thumbnail && {
                     url:
-                      site.siteMetadata.siteUrl +
-                      node.frontmatter.thumbnail.publicURL,
+  site.siteMetadata.siteUrl +
+  node.frontmatter.thumbnail.publicURL,
                   },
                   custom_elements: [{ "content:encoded": node.html }],
                 });
@@ -422,28 +421,28 @@ module.exports = {
             },
             query: `{
   allPosts: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {in: ["events"]}}, frontmatter: {published: {eq: true}}}
-    limit: 20
+  sort: {frontmatter: {date: DESC}}
+  filter: {fields: {collection: {in: ["events"]}}, frontmatter: {published: {eq: true}}}
+  limit: 20
   ) {
-    nodes {
-      body
-      frontmatter {
-        title
-        author
-        description
-        date(formatString: "MMM DD YYYY")
-        thumbnail {
-          publicURL
-        }
-      }
-      fields {
-        collection
-        slug
-      }
-    }
+  nodes {
+  body
+  frontmatter {
+  title
+  author
+  description
+  date(formatString: "MMM DD YYYY")
+  thumbnail {
+  publicURL
   }
-}`,
+  }
+  fields {
+  collection
+  slug
+  }
+  }
+  }
+  }`,
             output: "/events/feed.xml",
             title: "Layer5 Events",
           },
@@ -474,14 +473,14 @@ module.exports = {
       },
     },
     "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: `${__dirname}/src/assets/images`,
-      },
-    },
+    // "gatsby-transformer-sharp",
+    // {
+    //   resolve: "gatsby-source-filesystem",
+    //   options: {
+    //     name: "images",
+    //     path: `${__dirname}/src/assets/images`,
+    //   },
+    // },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -629,6 +628,6 @@ module.exports = {
       },
     },
     "gatsby-plugin-meta-redirect",
-    // make sure this is always the last one
+  // make sure this is always the last one
   ],
 };
