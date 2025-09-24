@@ -12,7 +12,7 @@ module.exports = {
     twitterUsername: "@layer5",
   },
   flags: {
-    FAST_DEV: true,
+    FAST_DEV: false,
     PARALLEL_SOURCING: false, // Disable parallel sourcing to reduce memory pressure
   },
   trailingSlash: "never",
@@ -28,12 +28,6 @@ module.exports = {
         },
         mergeSecurityHeaders: true,
         mergeCachingHeaders: true,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
-      options: {
-        disable: true,
       },
     },
     {
@@ -70,27 +64,27 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: "gatsby-plugin-svgr",
-      options: {
-        svgo: true,
-        svgoConfig: {
-          plugins: [
-            "prefixIds",
-            {
-              name: "preset-default",
-              params: {
-                overrides: {
-                  // or disable plugins
-                  inlineStyles: false,
-                  cleanupIds: false,
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-svgr",
+    //   options: {
+    //     svgo: true,
+    //     svgoConfig: {
+    //       plugins: [
+    //         "prefixIds",
+    //         {
+    //           name: "preset-default",
+    //           params: {
+    //             overrides: {
+    //               // or disable plugins
+    //               inlineStyles: false,
+    //               cleanupIds: false,
+    //             },
+    //           },
+    //         },
+    //       ],
+    //     },
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-feed",
       options: {
