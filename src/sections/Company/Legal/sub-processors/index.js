@@ -9,7 +9,10 @@ const subProcessors = () => {
   return (
     <TermsWrapper>
       <PageHeader title="Sub-Processors and Service Providers" path="Terms > Sub-Processors and Service Providers" />
-      <table><tr><td>Effective Date: March 8th, 2024</td><td>Version 4</td></tr></table>
+      <p>
+        <i>Effective Date: March 8th, 2024</i><br />
+        <i>Version 4</i>
+      </p>
       <Container>
         <Row>
           <Col $xs={12} $sm={12} $lg={12}>

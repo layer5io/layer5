@@ -10,7 +10,10 @@ const Privacy = () => {
   return (
     <TermsWrapper>
       <PageHeader title="Privacy" path="Terms > Privacy" />
-      <table><tr><td>Effective Date: July 11th, 2023</td><td>Version 3</td></tr></table>
+      <p>
+        <i>Effective Date: July 11th, 2023</i><br />
+        <i>Version 3</i>
+      </p>
       <TOC />
       <Container>
         <Row>
