@@ -250,7 +250,7 @@ const Privacy = () => {
               This includes reviewing website footers, terms of service agreements, and other legal and commercial documents. User or regulatory confusion can lead to misdirected legal notices, data subject requests, or official inquiries, creating unnecessary administrative friction and potential legal complications. Proactively ensuring clarity in all corporate communications is a low-cost, high-impact risk mitigation strategy that reinforces professionalism and transparency.
             </p>
           </Col>
-          <Col $xs={12} $sm={12} $lg={12}>
+          <Col>
             <div className="conduct_heading">
               <h2>Contact information</h2>
             </div>
