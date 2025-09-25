@@ -44,15 +44,15 @@ const Faq = (props) => {
   let faqs = faqs_data.reduce((faq, ind) => {
     const category = ind.category;
     const subcategory = ind.subcategory || "General";
-    
+
     if (!faq[category]) {
       faq[category] = {};
     }
-    
+
     if (!faq[category][subcategory]) {
       faq[category][subcategory] = [];
     }
-    
+
     faq[category][subcategory].push(ind);
     return faq;
   }, {});
