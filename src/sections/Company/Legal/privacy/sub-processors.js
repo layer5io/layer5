@@ -94,12 +94,12 @@ const subProcessors = () => {
                   <td>Used for automating workflows within Layer5 Cloud and open source community.</td>
                 </tr>
                 <tr>
-                    <td>ClickUp</td>
-                    <td>Project Management and Task Tracking</td>
-                    <td>Project management software</td>
-                    <td>Project data, tasks, and user information</td>
-                    <td>United States</td>
-                    <td>Used for managing internal projects and customer support tasks.</td>
+                  <td>ClickUp</td>
+                  <td>Project Management and Task Tracking</td>
+                  <td>Project management software</td>
+                  <td>Project data, tasks, and user information</td>
+                  <td>United States</td>
+                  <td>Used for managing internal projects and customer support tasks.</td>
                 </tr>
               </tbody>
               {/* <tfoot>
@@ -181,8 +181,8 @@ dpo@stripe.com<br />
                   <td><a href="https://www.make.com/en/privacy-and-gdpr">https://www.make.com/en/privacy-and-gdpr</a></td>
                 </tr>
                 <tr>
-                    <td>ClickUp</td>
-                    <td>ClickUp, Inc.<br />
+                  <td>ClickUp</td>
+                  <td>ClickUp, Inc.<br />
                     55 Almaden Blvd, Suite 650<br />
                     San Jose, CA 95113<br />
                     USA<br />
