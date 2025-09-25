@@ -85,6 +85,22 @@ const subProcessors = () => {
                   <td>United States</td>
                   <td>Used for internal team communication and customer support interactions.</td>
                 </tr>
+                <tr>
+                  <td>Celonis, Inc. (make.com)</td>
+                  <td>Layer5 Cloud (for workflow automation), open source community, Slack, and MailChimp</td>
+                  <td>Workflow automation platform</td>
+                  <td>Workflow data and user information</td>
+                  <td>United States</td>
+                  <td>Used for automating workflows within Layer5 Cloud and open source community.</td>
+                </tr>
+                <tr>
+                    <td>ClickUp</td>
+                    <td>Project Management and Task Tracking</td>
+                    <td>Project management software</td>
+                    <td>Project data, tasks, and user information</td>
+                    <td>United States</td>
+                    <td>Used for managing internal projects and customer support tasks.</td>
+                </tr>
               </tbody>
               {/* <tfoot>
                 <th scope="row">INTERNAL DOC#</th>
@@ -153,6 +169,26 @@ dpo@stripe.com<br />
                     dpo@slack.com<br />
                     <a href="https://slack.com/contact">https://slack.com/contact</a></td>
                   <td><a href="https://slack.com/privacy">https://slack.com/privacy</a></td>
+                </tr>
+                <tr>
+                  <td>Celonis, Inc. (make.com)</td>
+                  <td>Celonis, Inc.<br />
+                    800 W El Camino Real, Suite 180<br />
+                    Mountain View, CA 94040<br />
+                    USA<br />
+                    dpo@celonis.com<br />
+                    <a href="https://www.celonis.com/contact/">https://www.celonis.com/contact/</a></td>
+                  <td><a href="https://www.make.com/en/privacy-and-gdpr">https://www.make.com/en/privacy-and-gdpr</a></td>
+                </tr>
+                <tr>
+                    <td>ClickUp</td>
+                    <td>ClickUp, Inc.<br />
+                    55 Almaden Blvd, Suite 650<br />
+                    San Jose, CA 95113<br />
+                    USA<br />
+                    dpo@clickup.com<br />
+                    <a href="https://www.clickup.com/contact">https://www.clickup.com/contact</a></td>
+                  <td><a href="https://www.clickup.com/privacy">https://www.clickup.com/privacy</a></td>
                 </tr>
               </tbody>
             </table>
