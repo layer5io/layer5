@@ -132,31 +132,31 @@ const subProcessors = () => {
                 <tr>
                   <td>GitHub, Inc.</td>
                   <td>GitHub Privacy Office<br />
-88 Colin P. Kelly Jr. Street<br />
-San Francisco, California 94107 USA<br />
-dpo@github.com<br />
+                    88 Colin P. Kelly Jr. Street<br />
+                    San Francisco, California 94107 USA<br />
+                    dpo@github.com<br />
                     <a href="https://support.github.com/contact">https://support.github.com/contact</a></td>
                   <td><a href="https://docs.github.com/en/site-policy/privacy-policies/github-data-protection-addendum">https://docs.github.com/en/site-policy/privacy-policies/github-data-protection-addendum</a></td>
                 </tr>
                 <tr>
                   <td>Cloudflare, Inc.</td>
                   <td>
-101 Townsend Street<br />
-San Francisco, CA 94107<br />
-USA<br />
-Emily Hancock<br />
-Data Protection Officer<br />
-legal@cloudflare.com<br />
+                    101 Townsend Street<br />
+                    San Francisco, CA 94107<br />
+                    USA<br />
+                    Emily Hancock<br />
+                    Data Protection Officer<br />
+                    legal@cloudflare.com<br />
                     <a href="https://www.cloudflare.com/contact/">https://www.cloudflare.com/contact/</a></td>
                   <td><a href="https://www.cloudflare.com/terms/cloudflare-dpa/">https://www.cloudflare.com/terms/cloudflare-dpa/</a></td>
                 </tr>
                 <tr>
                   <td>Stripe</td>
                   <td>Stripe, Inc.<br />
-510 Townsend St.<br />
-San Francisco, CA 94103<br />
-USA<br />
-dpo@stripe.com<br />
+                    510 Townsend St.<br />
+                    San Francisco, CA 94103<br />
+                    USA<br />
+                    dpo@stripe.com<br />
                     <a href="https://support.stripe.com/contact">https://support.stripe.com/contact</a></td>
                   <td><a href="https://stripe.com/privacy">https://stripe.com/privacy</a></td>
                 </tr>
