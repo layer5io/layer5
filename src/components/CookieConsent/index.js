@@ -30,7 +30,7 @@ const CookieConsent = () => {
         }
     }, []);
 
-    const handleResponse = () => {
+    const handleResponse = (response) => {
         localStorage.setItem("cookie_consent", response);
         setOpen(false);
     };
