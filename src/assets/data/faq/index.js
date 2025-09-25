@@ -273,16 +273,18 @@ const data = {
       link: "/pricing/open-source-program"
     },
     {
-      question: "Academy: What is the pricing structure of this add-on?",
+      question: "What is the pricing structure of this add-on?",
       category: "Pricing",
+      subcategory: "Academy",
       answer: [
         "Layer5 Academy is available as an add-on to your Enterprise subscription, priced based on number of active learners.",
         "Academy functionality is conveniently divided into two offerings: theoretical learning (learning paths, certifications, challenges) and practical learning (hands-on labs in Kanvas).",
       ]
     },
     {
-      question: "Academy: What is an \"active\" learner?",
+      question: "What is an \"active\" learner?",
       category: "Pricing",
+      subcategory: "Academy",
       answer: [
         "An active learner is any user who has logged into the platform in a given month whether they are currently enrolled in a course or not. Only active learners count towards your package total. Only active learners are billable.",
         "A learner is any user who at any point accepted an invitation to join your Academy. Learners may or may not have registered for (enrolled in) any of your Academy's offerings.",
@@ -290,8 +292,9 @@ const data = {
       ]
     },
     {
-      question: "Academy: Can I add more learners than my selected package allows?",
+      question: "Can I add more learners than my selected package allows?",
       category: "Pricing",
+      subcategory: "Academy",
       answer: [
         "Yes, whether you are currently subscribed under a monthly plan or a yearly plan, you can exceed your pre-selected package size without foreplanning.",
         "At the end of the month, any additional learners beyond your package size are charged at the same per-learner rate.",
@@ -299,23 +302,26 @@ const data = {
       ]
     },
     {
-      question: "Academy: What happens if number of active learners remains under my pre-selected plan size, say 2,500?",
+      question: "What happens if number of active learners remains under my pre-selected plan size, say 2,500?",
       category: "Pricing",
+      subcategory: "Academy",
       answer: [
         "You are simply billed for the number of learners under your selected plan size at the end of the month; e.g. 2,500 multiplied by the per-learner price in your subscription plan.",
       ]
     },
     {
-      question: "Academy: How are active learners calculated?",
+      question: "How are active learners calculated?",
       category: "Pricing",
+      subcategory: "Academy",
       answer: [
         "Active learners are determined as the higher of your active learners or your plan's quota. For example, on the 500 learner plan, even if you have only 450 active learners, you will still be billed according to your plan size of 500 learners.",
         "Active learners are calculated at the end of each monthly billing cycle. For example, if you are subscribed to the 1,000 learner plan, have 900 active learners on the 1st of the month, 450 active learners on the 11th of the month, and 1,025 active learners on the 17th of the month, you will be billed for 1,025 active learners (1,025 times the per learner price in your subscription plan) as that is your highest count of active learners during the month.",
       ]
     },
     {
-      question: "Academy: Are learners who have withdrawn or who have completed offerings counted against my package total?",
+      question: "Are learners who have withdrawn or who have completed offerings counted against my package total?",
       category: "Pricing",
+      subcategory: "Academy",
       answer: [
         "No. Only users who are actively registered and have not yet completed or withdrawn from a course are counted as active users.",
       ]
@@ -434,4 +440,3 @@ const data = {
   ],
 };
 export default data;
-
