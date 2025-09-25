@@ -12,9 +12,16 @@ const Privacy = () => {
       <Container>
         <Row>
           <Col $xs={12} $sm={12} $lg={12}>
-            <h1>Layer5 Privacy Notice</h1>
             <p>
-              Welcome to Layer5. We are Layer5, Inc., the company behind the cloud native management platform Meshery, the Layer5 Cloud service, and a vibrant global open-source community. We are committed to protecting your privacy and being transparent about how we handle your personal data.
+              Welcome to Layer5. We are Layer5, Inc., the company behind the cloud native management platform Meshery, the Layer5 Cloud service, Kanvas, and a vibrant global open-source community. We are committed to protecting your privacy and being transparent about how we handle your personal data.
+            </p>
+            <p>
+              This Privacy Notice explains what personal data we collect when you visit our websites, use our services, or participate in our community. It also describes why we collect it, how we use and protect it, and what rights you have regarding your personal data.
+            </p>
+            <p>
+              For detailed information about the third-party service providers we work with to deliver our services, please see our <a href="/company/legal/sub-processors">Sub-Processors and Service Providers</a> page.
+            </p><p>
+              Welcome to Layer5. We are Layer5, Inc., the company behind the cloud native management platform Meshery, the Layer5 Cloud service, Kanvas, and a vibrant global open-source community. We are committed to protecting your privacy and being transparent about how we handle your personal data.
             </p>
             <p>
               This Privacy Notice explains what personal data we collect when you visit our websites, use our services, or participate in our community. It also describes why we collect it, how we use and protect it, and what rights you have regarding your personal data.
