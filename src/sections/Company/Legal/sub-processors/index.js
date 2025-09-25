@@ -9,6 +9,7 @@ const subProcessors = () => {
   return (
     <TermsWrapper>
       <PageHeader title="Sub-Processors and Service Providers" path="Terms > Sub-Processors and Service Providers" />
+      <table><tr><td>Effective Date: March 8th, 2024</td><td>Version 4</td></tr></table>
       <Container>
         <Row>
           <Col $xs={12} $sm={12} $lg={12}>
@@ -18,10 +19,28 @@ const subProcessors = () => {
             To deliver our services effectively, Layer5, Inc. partners with various sub-processors, subsidiaries, and support providers. We may share customer data with the entities listed below to support our platform's functionality and performance.
             </p>
 
+            <h3>Data Hosting Locations</h3>
+            <p>To provide our users with transparency about where their data is stored, Layer5 has defined primary hosting locations for its services. Data is stored in a specific region in the United States based on the service used.</p>
+
+            <ul>
+              <li><strong>Layer5 Cloud Account Data (cloud.layer5.io)</strong>: All user account data is hosted in the United States at an Equinix datacenter in Dallas, Texas.</li>
+
+              <li><strong>Kanvas (kanvas.new)</strong>: Design data is hosted in the United States at an Equinix datacenter in Dallas, Texas.</li>
+
+              <li><strong>Layer5 Discussion Forum Data (discuss.layer5.io)</strong>: All forum data is hosted in the United States within the Amazon Web Services (AWS) US East region.</li>
+            </ul>
+
+            <p>Please note that in some cases, certain third-party services (sub-processors) that we use to deliver our services may operate and process data in additional regions.</p>
+
+            <h4>Can I change my data region?</h4>
+
+            <p>Since data is physically stored in a predetermined location, once an account begins storing data it cannot be moved. If you want to switch to a different region, contact your local partner or Enterprise account manager to create a new account hosted in the region of your choice going forward.</p>
+
             <h3>Third-Party Sub-Processors</h3>
             <p>We engage the third-party organizations listed below to host customer data and provide specific functionalities within the Layer5 platform. These partners are integral to our service delivery and infrastructure.</p>
 
             <p>The hosting region for a sub-processor will typically align with your account's designated data region. For details on whether a specific sub-processor applies to your account's data region or service plan, please consult the Additional Information column in the list that follows.</p>
+
             <table className="simple">
               <caption id="tableCaption_01">Table 1: Sub-Processors, Subsidiaries & Support</caption>
               <thead>
@@ -67,7 +86,6 @@ const subProcessors = () => {
                   <td>Content delivery network and DDoS mitigation</td>
                   <td>Web traffic data</td>
                   <td>United States</td>
-                  <td>All accounts</td>
                 </tr>
                 <tr>
                   <td>Stripe</td>
@@ -75,7 +93,7 @@ const subProcessors = () => {
                   <td>Payment processing</td>
                   <td>Payment information</td>
                   <td>United States</td>
-                  <td>All accounts</td>
+                  <td>Commercial accounts only</td>
                 </tr>
                 <tr>
                   <td>Slack</td>
@@ -144,7 +162,7 @@ const subProcessors = () => {
                     San Francisco, California 94107 USA<br />
                     dpo@github.com<br />
                     <a href="https://support.github.com/contact">https://support.github.com/contact</a></td>
-                  <td><a href="https://docs.github.com/en/site-policy/privacy-policies/github-data-protection-addendum">https://docs.github.com/en/site-policy/privacy-policies/github-data-protection-addendum</a></td>
+                  <td><a href="https://docs.github.com/en/site-policy/privacy-policies">https://docs.github.com/en/site-policy/privacy-policies</a></td>
                 </tr>
                 <tr>
                   <td>Cloudflare, Inc.</td>
@@ -210,20 +228,7 @@ const subProcessors = () => {
                 </tr>
               </tbody>
             </table>
-            <h3>Data Hosting Locations</h3>
-            <p>To provide our users with transparency about where their data is stored, Layer5 has defined primary hosting locations for its services. Data is stored in a specific region in the United States based on the service used.</p>
-
-            <p>Layer5 Cloud Account Data (cloud.layer5.io): All user account data is hosted in the United States at an Equinix datacenter in Dallas, Texas.</p>
-
-            <p>Layer5 Discussion Forum Data (discuss.layer5.io): All forum data is hosted in the United States within the Amazon Web Services (AWS) US East region.</p>
-
-            <p>Please note that in some cases, certain third-party services (sub-processors) that we use to deliver our services may operate and process data in additional regions.</p>
             <p>
-
-              <h3>Can I change my data region?</h3>
-
-              <p>Since data is physically stored in a predetermined location, once an account begins storing data it cannot be moved. If you want to switch to a different region, contact your local partner or Enterprise account manager to create a new account hosted in the region of your choice going forward.</p>
-
               <i>Last Updated: Sept 25th, 2025</i>
             </p>
           </Col>

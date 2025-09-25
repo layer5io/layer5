@@ -2,8 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "../../../../reusecore/Layout";
 import TOC from "../../../../components/handbook-navigation/index";
 import TocPagination from "../../../../components/handbook-navigation/TocPagination";
-import { Link } from "gatsby";
-import IntraPage from "../../../../components/handbook-navigation/intra-page";
+// import IntraPage from "../../../../components/handbook-navigation/intra-page";
 import PageHeader from "../../../../reusecore/PageHeader";
 import TermsWrapper from "../terms.style";
 
@@ -11,6 +10,8 @@ const Privacy = () => {
   return (
     <TermsWrapper>
       <PageHeader title="Privacy" path="Terms > Privacy" />
+      <table><tr><td>Effective Date: July 11th, 2023</td><td>Version 3</td></tr></table>
+      <TOC />
       <Container>
         <Row>
           <Col $xs={12} $sm={12} $lg={12}>
@@ -277,6 +278,7 @@ const Privacy = () => {
             </p>
           </Col>
         </Row>
+         <TocPagination />
       </Container>
     </TermsWrapper>
   );
