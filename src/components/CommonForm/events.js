@@ -43,6 +43,7 @@ const EventForm = ({ form, title, submit_title, submit_body }) => {
         occupation: occupation,
         org: org,
         form: form,
+        year: new Date().getFullYear(),
       }}
       onSubmit={values => {
         setMemberFormOne(values);
