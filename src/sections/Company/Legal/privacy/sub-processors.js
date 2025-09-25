@@ -78,12 +78,12 @@ const subProcessors = () => {
                   <td>All accounts</td>
                 </tr>
                 <tr>
-                <td>Slack</td>
-                <td>Internal Communications, Customer support messaging</td>
-                <td>Communication platform</td>
-                <td>Messages, files, and user information</td>
-                <td>United States</td>
-                <td>Used for internal team communication and customer support interactions.</td>
+                  <td>Slack</td>
+                  <td>Internal Communications, Customer support messaging</td>
+                  <td>Communication platform</td>
+                  <td>Messages, files, and user information</td>
+                  <td>United States</td>
+                  <td>Used for internal team communication and customer support interactions.</td>
                 </tr>
               </tbody>
               {/* <tfoot>
@@ -145,8 +145,8 @@ dpo@stripe.com<br />
                   <td><a href="https://stripe.com/privacy">https://stripe.com/privacy</a></td>
                 </tr>
                 <tr>
-                    <td>Slack</td>
-                    <td>Slack Technologies, LLC<br />
+                  <td>Slack</td>
+                  <td>Slack Technologies, LLC<br />
                     500 Howard Street<br />
                     San Francisco, CA 94105<br />
                     USA<br />
