@@ -199,10 +199,7 @@ const Privacy = () => {
               However, if you are not satisfied with our response, you have the right to lodge a complaint with a data protection supervisory authority. This will typically be the authority in the EU country where you live or work, or where the alleged infringement of data protection law occurred.
             </p>
             <hr />
-            <h2>Part III: Strategic Recommendations for Implementation and Ongoing Compliance</h2>
-            <p>
-              The publication of a GDPR-compliant privacy notice is a critical first step, but it must be supported by robust internal processes and technical measures to be effective. The following recommendations provide a strategic roadmap for Layer5 to operationalize its commitment to data privacy and ensure ongoing compliance.
-            </p>
+            <h2>Part III: Commitment to Data Privacy and Ongoing Compliance</h2>
             <h3>Section 3.1: Operationalizing Data Subject Rights</h3>
             <p>
               A privacy notice that promises data subject rights without the internal capacity to fulfill them creates a significant liability. Layer5 must establish a formal, documented process for managing Data Subject Access Requests (DSARs) received at the designated privacy@layer5.io email address.

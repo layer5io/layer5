@@ -14,7 +14,13 @@ position: relative;
     text-align: left;
   }
 }
-
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.address {
+  margin-left: 2rem;
+  }
 @media only screen and (max-width: 420px) {
   .conduct_heading {
     text-align: left;
