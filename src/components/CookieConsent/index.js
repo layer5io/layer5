@@ -46,7 +46,7 @@ const CookieConsent = () => {
                     <Typography variant="body2" color="text.secondary">
                         We use cookies to enhance your browsing experience. By clicking
                         "Accept", you consent to our use of cookies. Read more in our{" "}
-                        <a href="/privacy" target="_blank" rel="noopener noreferrer">
+                        <a href="/company/legal/privacy" target="_blank" rel="noopener noreferrer">
                             Privacy Policy
                         </a>
                         .
