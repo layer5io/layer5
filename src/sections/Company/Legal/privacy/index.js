@@ -50,7 +50,7 @@ const Privacy = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td colSpan="3"><strong>When you browse our website (layer5.io)</strong></td>
+                  <td colSpan="3"><strong>When you browse our websites (layer5.io, getnighthawk.dev, meshery.dev, ) and applications (cloud.layer5.io, kanvas.new)</strong></td>
                 </tr>
                 <tr>
                   <td>To operate, secure, and maintain our website.</td>

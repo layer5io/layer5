@@ -21,6 +21,14 @@ h3 {
 .address {
   margin-left: 2rem;
   }
+table, tr {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+th {
+  font-weight: 700;
+  background
+}
 @media only screen and (max-width: 420px) {
   .conduct_heading {
     text-align: left;
