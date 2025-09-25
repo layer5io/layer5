@@ -101,6 +101,14 @@ const subProcessors = () => {
                   <td>United States</td>
                   <td>Used for managing internal projects and customer support tasks.</td>
                 </tr>
+                <tr>
+                  <td>Atlassian StatusPage</td>
+                  <td>Public Service Status and Incident Communication</td>
+                  <td>Status page hosting and incident communication</td>
+                  <td>Service status data and user information</td>
+                  <td>United States</td>
+                  <td>Used for communicating service status and incidents to users.</td>
+                </tr>
               </tbody>
               {/* <tfoot>
                 <th scope="row">INTERNAL DOC#</th>
@@ -189,6 +197,16 @@ const subProcessors = () => {
                     dpo@clickup.com<br />
                     <a href="https://www.clickup.com/contact">https://www.clickup.com/contact</a></td>
                   <td><a href="https://www.clickup.com/privacy">https://www.clickup.com/privacy</a></td>
+                </tr>
+                <tr>
+                  <td>Atlassian StatusPage</td>
+                  <td>Atlassian, Inc.<br />
+                        350 Bush Street, 6th Floor<br />
+                        San Francisco, CA 94104<br />
+                        USA<br />
+                        dpo@atlassian.com<br />
+                    <a href="https://www.atlassian.com/contact">https://www.atlassian.com/contact</a></td>
+                  <td><a href="https://www.atlassian.com/legal/privacy-policy">https://www.atlassian.com/legal/privacy-policy</a></td>
                 </tr>
               </tbody>
             </table>
