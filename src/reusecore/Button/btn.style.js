@@ -37,8 +37,8 @@ const ButtonStyle = styled.button`
 
     ${props => props.$outlined && css`
         background: transparent;
-        border: 2px solid ${props => props.theme.blackFourToWhiteFour};
-        color: ${props => props.theme.blackToWhite};
+        border: 2px solid ${props => props.theme.whiteToBlack};
+        color: ${props => props.theme.whiteToBlack};
         &:hover{
             box-shadow: 0 2px 10px ${props.theme.whiteFourToBlackFour};
         }
