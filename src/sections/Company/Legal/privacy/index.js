@@ -13,7 +13,6 @@ const Privacy = () => {
         <Row>
           <Col $xs={12} $sm={12} $lg={12}>
             <h1>Layer5 Privacy Notice</h1>
-            <strong>Effective Date:</strong>
             <h3>Section 2.1: Introduction</h3>
             <p>
               Welcome to Layer5. We are Layer5, Inc., the company behind the cloud native management platform Meshery, the Layer5 Cloud service, and a vibrant global open-source community. We are committed to protecting your privacy and being transparent about how we handle your personal data.
