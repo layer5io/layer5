@@ -278,7 +278,7 @@ const Privacy = () => {
             </p>
           </Col>
         </Row>
-         <TocPagination />
+        <TocPagination />
       </Container>
     </TermsWrapper>
   );
