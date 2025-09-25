@@ -250,6 +250,23 @@ const Privacy = () => {
               This includes reviewing website footers, terms of service agreements, and other legal and commercial documents. User or regulatory confusion can lead to misdirected legal notices, data subject requests, or official inquiries, creating unnecessary administrative friction and potential legal complications. Proactively ensuring clarity in all corporate communications is a low-cost, high-impact risk mitigation strategy that reinforces professionalism and transparency.
             </p>
           </Col>
+          <Col $xs={12} $sm={12} $lg={12}>
+            <div className="conduct_heading">
+              <h2>Contact information</h2>
+            </div>
+            <p>We welcome your comments or questions about this privacy policy. You may also contact us as follows:
+            </p>
+            <p className="address">
+              Layer5, Inc<br />
+              1000 Congress Avenue<br />
+              Austin, Texas 78735<br />
+              Email Address: legal@layer5.io<br />
+              Telephone number: 512-810-8200
+            </p>
+            <p>
+              <i>Last Updated: March 8th, 2024</i>
+            </p>
+          </Col>
         </Row>
       </Container>
     </TermsWrapper>
