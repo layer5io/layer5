@@ -1,19 +1,143 @@
 import React from "react";
 import { Container, Row, Col } from "../../../../reusecore/Layout";
-import TOC from "../../../../components/handbook-navigation/index";
-import TocPagination from "../../../../components/handbook-navigation/TocPagination";
-// import IntraPage from "../../../../components/handbook-navigation/intra-page";
 import PageHeader from "../../../../reusecore/PageHeader";
 import TermsWrapper from "../terms.style";
+import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
+import {
+  styled,
+  Table,
+  TableContainer,
+  TableCell,
+  TableRow,
+  TableHead,
+  TableBody,
+  SistentThemeProvider,
+} from "@sistent/sistent";
+
+const StyledTableContainer = styled(TableContainer)(() => ({
+  width: "100%",
+  backgroundColor: "transparent",
+  boxShadow: "none",
+  padding: 0,
+}));
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  "&:nth-child(odd)": {
+    backgroundColor: theme.palette.background.default,
+  },
+  "&:nth-child(even)": {
+    backgroundColor: theme.palette.background.secondary,
+  },
+}));
+
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  color: theme.palette.text.secondary,
+  fontSize: "0.975rem",
+  padding: "0.75rem",
+  borderBottom: `1px solid ${theme.palette.divider}`,
+  borderRadius: "4px",
+}));
+
+const StyledHeaderCell = styled(StyledTableCell)(() => ({
+  fontWeight: 600,
+  backgroundColor: "transparent",
+}));
+
+const privacyData = [
+  {
+    section: "When you browse our websites (layer5.io, getnighthawk.dev, meshery.dev, ) and applications (cloud.layer5.io, kanvas.new)",
+    rows: [
+      {
+        purpose: "To operate, secure, and maintain our website.",
+        categories: "IP Address, device type, browser information, server logs.",
+        lawfulBasis: '<strong>Legitimate Interest</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(f)</a>) - to ensure the security, availability, and performance of our digital properties.',
+        retention: "Up to 26 months for server logs, depending on the specific data and its purpose.",
+      },
+      {
+        purpose: "To analyze website usage and improve user experience.",
+        categories: "Anonymized IP address, cookie identifiers, pages visited, duration of visit, clickstream data.",
+        lawfulBasis: '<strong>Consent</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(a)</a>) - for non-essential analytics and tracking cookies. You can manage your consent through our cookie banner.',
+        retention: "Up to 26 months for analytics data, depending on the specific service used.",
+      },
+    ],
+  },
+  {
+    section: "When you join our community (e.g., Slack, Forum, GitHub)",
+    rows: [
+      {
+        purpose: "To manage your participation and facilitate collaboration in our open-source projects.",
+        categories: "Name, email address, GitHub username, public profile information, content of your contributions (code, comments, issues), and communications.",
+        lawfulBasis: '<strong>Legitimate Interest</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(f)</a>) - to operate, manage, and grow our collaborative open source community.',
+        retention: "Your contributions are retained indefinitely as part of the public project record. Other personal data is retained for the duration of your participation and up to 12 months thereafter.",
+      },
+    ],
+  },
+  {
+    section: "When you sign up for and use Layer5 Cloud",
+    rows: [
+      {
+        purpose: "To create and manage your account and provide our services to you.",
+        categories: "Name, email address, company name, securely hashed password, GitHub user ID (if used for single sign-on).",
+        lawfulBasis: '<strong>Performance of a Contract</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(b)</a>) - this data is necessary to fulfill our contractual obligation to provide the service you have signed up for.',
+        retention: "For the duration of your account activity and up to 12 months thereafter for account reactivation and support purposes.",
+      },
+      {
+        purpose: "To process payments for our paid subscription plans.",
+        categories: "Billing address, payment card information (we do not store full card details; they are securely processed by our payment provider, who provides us with a transaction token and confirmation).",
+        lawfulBasis: '<strong>Performance of a Contract</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(b)</a>).',
+        retention: "Financial data is retained for 7 years to comply with legal and tax obligations.",
+      },
+      {
+        purpose: "To communicate with you about the service (e.g., important updates, security alerts, billing information).",
+        categories: "Email address.",
+        lawfulBasis: '<strong>Performance of a Contract</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(b)</a>) and <strong>Legitimate Interest</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(f)</a>) - to provide you with essential information about the service you are using.',
+        retention: "For the duration of your account activity and up to 12 months thereafter for account reactivation and support purposes.",
+      },
+      {
+        purpose: "To monitor service performance and improve our products.",
+        categories: "Service usage data, API logs, user activity logs, device and browser information.",
+        lawfulBasis: '<strong>Legitimate Interest</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(f)</a>) - to maintain and improve the quality and functionality of our services.',
+        retention: "For the duration of your account activity and up to 12 months thereafter for account reactivation and support purposes.",
+      },
+    ],
+  },
+  {
+    section: "When you contact us for support or information",
+    rows: [
+      {
+        purpose: "To respond to your inquiries and provide customer support.",
+        categories: "Name, email address, and any other information you provide in the content of your message.",
+        lawfulBasis: '<strong>Legitimate Interest</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(f)</a>) - to effectively respond to user inquiries and provide assistance.',
+        retention: "For the duration of the support interaction and up to 12 months thereafter for quality assurance purposes.",
+      },
+    ],
+  },
+  {
+    section: "When you subscribe to our marketing communications",
+    rows: [
+      {
+        purpose: "To send you newsletters, product updates, and other marketing materials.",
+        categories: "Name, email address.",
+        lawfulBasis: '<strong>Consent</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(a)</a>) - you provide your consent when you opt-in to receive these communications, and you can unsubscribe at any time.',
+        retention: "Until you unsubscribe.",
+      },
+    ],
+  },
+];
 
 const Privacy = () => {
+  const { isDark } = useStyledDarkMode();
+
   return (
     <TermsWrapper>
       <PageHeader title="Privacy" path="Terms > Privacy" />
       <Container>
-        <p><small>
-          <i>Effective Date: July 11th, 2023</i><br />
-          <i>Version 3</i></small>
+        <p>
+          <small>
+            <i>Effective Date: July 11th, 2023</i>
+            <br />
+            <i>Version 3</i>
+          </small>
         </p>
         <Row>
           <Col $xs={12} $sm={12} $lg={12}>
@@ -46,94 +170,50 @@ const Privacy = () => {
             <p>
               We process your personal data for a variety of purposes depending on how you interact with us. The table below details what we collect, why we collect it, and the legal justification (lawful basis) under the GDPR for doing so.
             </p>
-            <table className="simple">
-              <caption id="tableCaption_01">Table 1: Summary of Our Data Processing Activitie under GDPR</caption>
-              <thead>
-                <tr>
-                  <th scope="col">Purpose for Processing Your Data</th>
-                  <th scope="col">Categories of Personal Data We Process</th>
-                  <th scope="col">Lawful Basis for Processing (under GDPR)</th>
-                  <th scope="col">Data Retention Duration (<a href="#data-retention">See all</a>)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="section">
-                  <td colSpan="4"><strong>When you browse our websites (layer5.io, getnighthawk.dev, meshery.dev, ) and applications (cloud.layer5.io, kanvas.new)</strong></td>
-                </tr>
-                <tr>
-                  <td>To operate, secure, and maintain our website.</td>
-                  <td>IP Address, device type, browser information, server logs.</td>
-                  <td><strong>Legitimate Interest</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(f)</a>) - to ensure the security, availability, and performance of our digital properties.</td>
-                  <td>Up to 26 months for server logs, depending on the specific data and its purpose.</td>
-                </tr>
-                <tr>
-                  <td>To analyze website usage and improve user experience.</td>
-                  <td>Anonymized IP address, cookie identifiers, pages visited, duration of visit, clickstream data.</td>
-                  <td><strong>Consent</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(a)</a>) - for non-essential analytics and tracking cookies. You can manage your consent through our cookie banner.</td>
-                  <td>Up to 26 months for analytics data, depending on the specific service used.</td>
-                </tr>
-                <tr className="section">
-                  <td colSpan="4"><strong>When you join our community (e.g., Slack, Forum, GitHub)</strong></td>
-                </tr>
-                <tr>
-                  <td>To manage your participation and facilitate collaboration in our open-source projects.</td>
-                  <td>Name, email address, GitHub username, public profile information, content of your contributions (code, comments, issues), and communications.</td>
-                  <td><strong>Legitimate Interest</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(f)</a>) - to operate, manage, and grow our collaborative open source community.</td>
-                  <td>Your contributions are retained indefinitely as part of the public project record. Other personal data is retained for the duration of your participation and up to 12 months thereafter.</td>
-                </tr>
-                <tr className="section">
-                  <td colSpan="4"><strong>When you sign up for and use Layer5 Cloud</strong></td>
-                </tr>
-                <tr>
-                  <td>To create and manage your account and provide our services to you.</td>
-                  <td>Name, email address, company name, securely hashed password, GitHub user ID (if used for single sign-on).</td>
-                  <td><strong>Performance of a Contract</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(b)</a>) - this data is necessary to fulfill our contractual obligation to provide the service you have signed up for.</td>
-                  <td>For the duration of your account activity and up to 12 months thereafter for account reactivation and support purposes.</td>
-                </tr>
-                <tr>
-                  <td>To process payments for our paid subscription plans.</td>
-                  <td>Billing address, payment card information (we do not store full card details; they are securely processed by our payment provider, who provides us with a transaction token and confirmation).</td>
-                  <td><strong>Performance of a Contract</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(b)</a>).</td>
-                  <td>Financial data is retained for 7 years to comply with legal and tax obligations.</td>
-                </tr>
-                <tr>
-                  <td>To communicate with you about the service (e.g., important updates, security alerts, billing information).</td>
-                  <td>Email address.</td>
-                  <td><strong>Performance of a Contract</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(b)</a>) and <strong>Legitimate Interest</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(f)</a>) - to provide you with essential information about the service you are using.</td>
-                  <td>For the duration of your account activity and up to 12 months thereafter for account reactivation and support purposes.</td>
-                </tr>
-                <tr>
-                  <td>To monitor service performance and improve our products.</td>
-                  <td>Service usage data, API logs, user activity logs, device and browser information.</td>
-                  <td><strong>Legitimate Interest</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(f)</a>) - to maintain and improve the quality and functionality of our services.</td>
-                  <td>For the duration of your account activity and up to 12 months thereafter for account reactivation and support purposes.</td>
-                </tr>
-                <tr className="section">
-                  <td colSpan="4"><strong>When you contact us for support or information</strong></td>
-                </tr>
-                <tr>
-                  <td>To respond to your inquiries and provide customer support.</td>
-                  <td>Name, email address, and any other information you provide in the content of your message.</td>
-                  <td><strong>Legitimate Interest</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(f)</a>) - to effectively respond to user inquiries and provide assistance.</td>
-                  <td>For the duration of the support interaction and up to 12 months thereafter for quality assurance purposes.</td>
-                </tr>
-                <tr className="section">
-                  <td colSpan="4"><strong>When you subscribe to our marketing communications</strong></td>
-                </tr>
-                <tr>
-                  <td>To send you newsletters, product updates, and other marketing materials.</td>
-                  <td>Name, email address.</td>
-                  <td><strong>Consent</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(a)</a>) - you provide your consent when you opt-in to receive these communications, and you can unsubscribe at any time.</td>
-                  <td>Until you unsubscribe.</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <th scope="row">INTERNAL DOC#</th>
-                <td>#gdpr-10c</td>
-                <td>#gdpr-2</td>
-                <td>#gdpr-9b</td>
-              </tfoot>
-            </table>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <Row className="table-container" $Hcenter>
+                <Col md={12} sx={{ px: 0 }}>
+                  <StyledTableContainer>
+                    <Table size="small" aria-label="privacy-data">
+                      <caption id="tableCaption_01">Table 1: Summary of Our Data Processing Activities under GDPR</caption>
+                      <TableHead>
+                        <TableRow>
+                          <StyledHeaderCell>Purpose for Processing Your Data</StyledHeaderCell>
+                          <StyledHeaderCell>Categories of Personal Data We Process</StyledHeaderCell>
+                          <StyledHeaderCell>Lawful Basis for Processing (under GDPR)</StyledHeaderCell>
+                          <StyledHeaderCell>Data Retention Duration</StyledHeaderCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {privacyData.map((section, index) => (
+                          <React.Fragment key={index}>
+                            <StyledTableRow>
+                              <StyledTableCell colSpan={4} sx={{ fontWeight: 600 }}>
+                                {section.section}
+                              </StyledTableCell>
+                            </StyledTableRow>
+                            {section.rows.map((row, rowIndex) => (
+                              <StyledTableRow key={`${index}-${rowIndex}`}>
+                                <StyledTableCell>{row.purpose}</StyledTableCell>
+                                <StyledTableCell>{row.categories}</StyledTableCell>
+                                <StyledTableCell dangerouslySetInnerHTML={{ __html: row.lawfulBasis }} />
+                                <StyledTableCell>{row.retention}</StyledTableCell>
+                              </StyledTableRow>
+                            ))}
+                          </React.Fragment>
+                        ))}
+                        <StyledTableRow>
+                          <StyledTableCell sx={{ fontWeight: 600 }}>INTERNAL DOC#</StyledTableCell>
+                          <StyledTableCell>#gdpr-10c</StyledTableCell>
+                          <StyledTableCell>#gdpr-2</StyledTableCell>
+                          <StyledTableCell>#gdpr-9b</StyledTableCell>
+                        </StyledTableRow>
+                      </TableBody>
+                    </Table>
+                  </StyledTableContainer>
+                </Col>
+              </Row>
+            </SistentThemeProvider>
             <h3>Cookies and Tracking Technologies</h3>
             <p>
               We use cookies and similar technologies on our website to help it function, to analyze performance, and to personalize your experience. A cookie is a small text file stored on your device.
@@ -159,15 +239,19 @@ const Privacy = () => {
               <li><strong>Analytics & Monitoring Services:</strong> We use services (e.g., Google Analytics) to help us understand how our website and services are used so we can improve them.</li>
               <li><strong>Communication & Collaboration Platforms:</strong> Our open source community operates on platforms like GitHub and Slack. When you participate, your data is processed by these platforms according to their own privacy policies.</li>
               <li><strong>Business & Support Tools:</strong> We use third-party software for customer support (e.g., ClickUp) and customer relationship management to communicate with you effectively.</li>
-              <li><strong>Email and Marketing Automation Providers:</strong> We use third-party services to send transactional emails and marketing communications (e.g. MailChimp and Google Groups)</li>
+              <li><strong>Email and Marketing Automation Providers:</strong> We use third-party services to send transactional emails and marketing communications (e.g., MailChimp and Google Groups).</li>
             </ul>
             <p>
               We may also disclose your personal data if required to do so by law or in response to valid requests by public authorities (e.g., a court or a government agency).
             </p>
-            <h3>Linked websites and third-party Apps</h3>
-            <p>We may provide access or links to third-party websites, Apps, and services that are outside Layer5's control and governed by the respective third party’s privacy policy, not by this Privacy Statement. We encourage you to review the privacy statements posted on the websites you visit and in the applications you use.</p>
-            <h3>Forums and chat rooms</h3>
-            <p>If you participate in a discussion forum, local communities, or chat room on a Layer5 website, you should be aware that the information you provide there (such as your public profile and comments) will be made broadly available to others and could be used to contact you, to send you unsolicited messages, or for purposes neither Layer5 nor you have control over. Also, please recognize that individual forums and chat rooms may have additional rules and conditions. Layer5 is not responsible for the Personal Data or any other information you choose to submit in these forums. To request removal of your Personal Data from our blog or community forum, please submit a Privacy Request. In some cases, we may not be able to remove all Personal Data and comments. In such cases, we will provide you with a response and explanation.</p>
+            <h3>Linked Websites and Third-Party Apps</h3>
+            <p>
+              We may provide access or links to third-party websites, Apps, and services that are outside Layer5's control and governed by the respective third party’s privacy policy, not by this Privacy Statement. We encourage you to review the privacy statements posted on the websites you visit and in the applications you use.
+            </p>
+            <h3>Forums and Chat Rooms</h3>
+            <p>
+              If you participate in a discussion forum, local communities, or chat room on a Layer5 website, you should be aware that the information you provide there (such as your public profile and comments) will be made broadly available to others and could be used to contact you, to send you unsolicited messages, or for purposes neither Layer5 nor you have control over. Also, please recognize that individual forums and chat rooms may have additional rules and conditions. Layer5 is not responsible for the Personal Data or any other information you choose to submit in these forums. To request removal of your Personal Data from our blog or community forum, please submit a Privacy Request. In some cases, we may not be able to remove all Personal Data and comments. In such cases, we will provide you with a response and explanation.
+            </p>
             <h3>International Transfers of Personal Data</h3>
             <p>
               Layer5, Inc. is based in the United States. Your personal data will be processed in the United States and other countries where our third-party service providers are located. When we transfer personal data from the European Economic Area (EEA), the UK, or Switzerland to other countries, we do so in compliance with applicable data protection laws.
@@ -228,7 +312,7 @@ const Privacy = () => {
             <h2>Commitment to Data Privacy and Ongoing Compliance</h2>
             <h3>Operationalizing Data Subject Rights</h3>
             <p>
-              A privacy notice that promises data subject rights without the internal capacity to fulfill them creates a significant liability. Layer5 must establish a formal, documented process for managing  received at the designated <a href="mailto:privacy@layer5.io">privacy@layer5.io</a> email address.
+              A privacy notice that promises data subject rights without the internal capacity to fulfill them creates a significant liability. Layer5 must establish a formal, documented process for managing received at the designated <a href="mailto:privacy@layer5.io">privacy@layer5.io</a> email address.
             </p>
             <ol>
               <li><strong>Request Logging:</strong> Creating a centralized log to track the date of each request, the identity of the requester, the nature of the request, the deadline for response (30 days), and the date of fulfillment.</li>
@@ -256,9 +340,6 @@ const Privacy = () => {
             <p>
               In accordance with <a href="https://gdpr-info.eu/art-30-gdpr/">Article 30</a> of the GDPR, as a data controller, we maintain an internal Record of Processing Activities (ROPA). This document details all categories of personal data we process, the purposes of processing, data subjects, data recipients, international transfers, retention periods, and security measures.
             </p>
-            {/* <p>
-              The data mapping exercise conducted in Part I of this report and the detailed summary in Table 2 of the new privacy notice serve as an excellent foundation for creating Layer5's ROPA. This internal record should be expanded to include additional legally required details for each processing activity, such as a description of the security measures in place, details of data processors, and information on data protection impact assessments (DPIAs), if any have been conducted. The ROPA is a living document that must be kept up-to-date as Layer5's data processing activities evolve.
-            </p> */}
           </Col>
         </Row>
         <Row>
@@ -266,17 +347,24 @@ const Privacy = () => {
             <div className="conduct_heading">
               <h2 id="how-to-contact-us">How to Contact Us</h2>
             </div>
-            <p>We are committed to proactively ensuring clarity in all corporate communications to reinforce professionalism and transparency. We welcome your comments or questions about this privacy policy. You may also contact us as follows:
+            <p>
+              We are committed to proactively ensuring clarity in all corporate communications to reinforce professionalism and transparency. We welcome your comments or questions about this privacy policy. You may also contact us as follows:
             </p>
             <p className="address">
-              <b>Layer5, Inc</b><br />
-              1000 Congress Avenue<br />
-              Austin, Texas 78735<br />
-              Email Address: legal@layer5.io<br />
+              <b>Layer5, Inc</b>
+              <br />
+              1000 Congress Avenue
+              <br />
+              Austin, Texas 78735
+              <br />
+              Email Address: legal@layer5.io
+              <br />
               Telephone number: 512-810-8200
             </p>
             <p>
-              <small><i>Last Updated: March 8th, 2024</i></small>
+              <small>
+                <i>Last Updated: March 8th, 2024</i>
+              </small>
             </p>
           </Col>
         </Row>
