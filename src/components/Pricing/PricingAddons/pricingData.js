@@ -20,8 +20,8 @@ export const getAddOns = () => [
         unitLabelSingular: "learner",
         maxUnits: 5000,
         pricing: [
-          { learners: 250, monthlyPerUser: 1.10, yearlyPerUser: 11.22, currency: "$" },
-          { learners: 500, monthlyPerUser: 0.67, yearlyPerUser: 6.83, currency: "$" },
+          { learners: 250, monthlyPerUser: 1.08, yearlyPerUser: 10.81, currency: "$" },
+          { learners: 500, monthlyPerUser: 0.68, yearlyPerUser: 6.74, currency: "$" },
           { learners: 1000, monthlyPerUser: 0.46, yearlyPerUser: 4.69, currency: "$" },
           { learners: 2500, monthlyPerUser: 0.40, yearlyPerUser: 4.08, currency: "$" },
           // { learners: "2500+", monthlyPerUser: "contact us", yearlyPerUser: "contact us", currency: "$" },
@@ -45,8 +45,8 @@ export const getAddOns = () => [
         unitLabel: "learners",
         unitLabelSingular: "learner",
         pricing: [
-          { learners: 250, monthlyPerUser: 1.10, yearlyPerUser: 11.22, currency: "$" },
-          { learners: 500, monthlyPerUser: 0.67, yearlyPerUser: 6.83, currency: "$" },
+          { learners: 250, monthlyPerUser: 1.08, yearlyPerUser: 10.81, currency: "$" },
+          { learners: 500, monthlyPerUser: 0.68, yearlyPerUser: 6.74, currency: "$" },
           { learners: 1000, monthlyPerUser: 0.46, yearlyPerUser: 4.69, currency: "$" },
           { learners: 2500, monthlyPerUser: 0.40, yearlyPerUser: 4.08, currency: "$" },
         ],
