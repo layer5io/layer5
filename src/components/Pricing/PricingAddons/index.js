@@ -174,7 +174,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
       const enterpriseUserSeats = enterpriseUsers > 0 ? ` and ${enterpriseUsers} enterprise user${enterpriseUsers > 1 ? "s" : ""}` : "";
       return {
         link: matchingPlanLink.link,
-        name: "Subscribe For Add-on"
+        name: "Subscribe"
       };
     }
 
@@ -188,7 +188,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
 
     return {
       link: "#",
-      name: "Subscribe For Add-on"
+      name: "Subscribe"
     };
   };
 
