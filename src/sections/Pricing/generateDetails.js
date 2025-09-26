@@ -82,8 +82,6 @@ function generateDetails(data) {
           enterprise:
           item.comparison_tiers.enterprise === "X" || item.comparison_tiers.enterprise === "x" ? (
             <GiCheckMark className="yes-icon" />
-          ) : item.comparison_tiers.enterprise === "Add-on" ? (
-            <span className="add-on-text">Add-on</span>
           ) : (
             <MdClose className="no-icon" />
           ),

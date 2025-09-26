@@ -1188,7 +1188,7 @@
     "categoryOrder": "11",
     "category": "Academy",
     "functionOrder": "1104",
-    "function": "Create Learning Contents (Basic)",
+    "function": "Create Learning Contents",
     "feature": "Content authoring tools for educational materials including learning paths, challenges, and certifications with interactive content and assessments.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
@@ -1260,38 +1260,6 @@
       "teamDesigner": "",
       "teamOperator": "",
       "enterprise": "x"
-    },
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "11",
-    "category": "Academy",
-    "functionOrder": "1108",
-    "function": "Theory Learning Module (Enhanced)",
-    "feature": "Advanced theoretical learning modules with interactive labs, whole-level assessments, and comprehensive educational materials.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "Add-on"
-    },
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "11",
-    "category": "Academy",
-    "functionOrder": "1109",
-    "function": "Practical Learning Module (Enhanced)",
-    "feature": "Hands-on practical learning modules with lab environments, real-world scenarios, and interactive exercises.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": "Add-on"
     },
     "docs": ""
   },
