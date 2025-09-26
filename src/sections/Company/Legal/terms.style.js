@@ -50,13 +50,13 @@ td {
 
 thead {
   border-block-end: 2px solid;
-  background: ${props => props.theme.green00B39FToGreyB3B3B3};
+  background: ${props => props.theme.blue6eb0ccToBlue477E96};
 }
 
 tfoot {
   text-align: center;
   border-block: 2px solid;
-  background: ${props => props.theme.green00B39FToGreyB3B3B3};
+  background: ${props => props.theme.blue6eb0ccToBlue477E96};
   font-size: 0.825rem;
 }
 
@@ -79,7 +79,7 @@ td {
 
 thead th,
 tfoot th {
-  background: ${props => props.theme.green00B39FToGreyB3B3B3};
+  background: ${props => props.theme.blue6eb0ccToBlue477E96};
 }
 
 thead th {

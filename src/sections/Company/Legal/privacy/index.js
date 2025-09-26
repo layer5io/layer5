@@ -10,12 +10,11 @@ const Privacy = () => {
   return (
     <TermsWrapper>
       <PageHeader title="Privacy" path="Terms > Privacy" />
-      <p>
-        <i>Effective Date: July 11th, 2023</i><br />
-        <i>Version 3</i>
-      </p>
-      <TOC />
       <Container>
+        <p><small>
+        <i>Effective Date: July 11th, 2023</i><br />
+        <i>Version 3</i></small>
+      </p>
         <Row>
           <Col $xs={12} $sm={12} $lg={12}>
             <p>
@@ -277,11 +276,10 @@ const Privacy = () => {
               Telephone number: 512-810-8200
             </p>
             <p>
-              <i>Last Updated: March 8th, 2024</i>
+            <small><i>Last Updated: March 8th, 2024</i></small>
             </p>
           </Col>
         </Row>
-        <TocPagination />
       </Container>
     </TermsWrapper>
   );
