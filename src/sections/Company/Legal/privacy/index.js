@@ -12,9 +12,9 @@ const Privacy = () => {
       <PageHeader title="Privacy" path="Terms > Privacy" />
       <Container>
         <p><small>
-        <i>Effective Date: July 11th, 2023</i><br />
-        <i>Version 3</i></small>
-      </p>
+          <i>Effective Date: July 11th, 2023</i><br />
+          <i>Version 3</i></small>
+        </p>
         <Row>
           <Col $xs={12} $sm={12} $lg={12}>
             <p>
@@ -276,7 +276,7 @@ const Privacy = () => {
               Telephone number: 512-810-8200
             </p>
             <p>
-            <small><i>Last Updated: March 8th, 2024</i></small>
+              <small><i>Last Updated: March 8th, 2024</i></small>
             </p>
           </Col>
         </Row>
