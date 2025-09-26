@@ -50,13 +50,13 @@ td {
 
 thead {
   border-block-end: 2px solid;
-  background: ${props => props.theme.blue6eb0ccToBlue477E96};
+  background: ${props => props.theme.green00D3A9ToBlackTwo};
 }
 
 tfoot {
   text-align: center;
   border-block: 2px solid;
-  background: ${props => props.theme.blue6eb0ccToBlue477E96};
+  background: ${props => props.theme.green00D3A9ToBlackTwo};
   font-size: 0.825rem;
 }
 
@@ -71,15 +71,9 @@ td {
   vertical-align: middle;
 }
 
-// th:first-child {
-//   position: sticky;
-//   inset-inline-start: 0;
-//   border-inline-end: none;
-// }
-
 thead th,
 tfoot th {
-  background: ${props => props.theme.blue6eb0ccToBlue477E96};
+  background: ${props => props.theme.green00D3A9ToBlackTwo};
 }
 
 thead th {
@@ -89,6 +83,11 @@ thead th {
 td:first-of-type, :where(thead, tfoot) th:nth-child(2) {
   border-inline-start: none;
 }
+// th:first-child {
+//   position: sticky;
+//   inset-inline-start: 0;
+//   border-inline-end: none;
+// }
 
 // th:first-of-type {
 //   width: 10rem;
