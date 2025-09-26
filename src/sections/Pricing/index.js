@@ -7,9 +7,40 @@ import options from "./generatePlans";
 import PlanCard from "../../components/Pricing/PlanCard";
 import OpenSourceBanner from "./openSource";
 import { PricingAddons } from "../../components/Pricing/PricingAddons";
-import SubscriptionToggle from "./SubscriptionToggle";
 import { Box, FormControl, InputLabel, MenuItem, Select, Typography } from "@sistent/sistent";
 import { Currencies } from "../../utils/currencies";
+import {
+  toggleButtonStyles,
+  getToggleButtonStyle,
+} from "../../components/Pricing/PricingAddons/styles.js";
+import { min } from "lodash";
+
+const customToggleButtonStyles = {
+  container: {
+    ...toggleButtonStyles.container, 
+    backgroundColor: "transparent",
+     p: "6px",
+     minHeight: "42px",
+     minWidth: "50px",
+    borderColor:"#ffffffff" 
+  },
+  base: {
+    py: 0.5,
+    px: 4,
+    fontSize: "4rem",
+    ...toggleButtonStyles.base, 
+  },
+};
+
+const getCustomToggleButtonStyle = (isActive, baseStyle) => ({
+  ...getToggleButtonStyle(isActive, baseStyle),
+  backgroundColor: isActive ? "#00B39F" : "transparent", 
+  color: isActive ? "#fffcfcff" : "#fff",
+  fontSize: "1rem",
+  "&:hover": {
+    backgroundColor: isActive ? "#009B8A" : "transparent", 
+  },
+});
 
 export const CurrencySelect = ({ currency, setCurrency }) => {
   return (
@@ -73,7 +104,20 @@ const Pricing = () => {
         <div style={{ display: "flex", "gap": "1rem", alignItems: "center", "justifyContent": "flex-end", width: "85%" }} >
           <CurrencySelect currency={currency} setCurrency={setCurrency} />
 
-          <SubscriptionToggle isYearly={isYearly} setIsYearly={setIsYearly} />
+          <Box sx={customToggleButtonStyles.container}>
+            <Box
+              onClick={() => setIsYearly(false)}
+              sx={getCustomToggleButtonStyle(!isYearly, customToggleButtonStyles.base)}
+            >
+              Monthly
+            </Box>
+            <Box
+              onClick={() => setIsYearly(true)}
+              sx={getCustomToggleButtonStyle(isYearly, customToggleButtonStyles.base)}
+            >
+              Yearly
+            </Box>
+          </Box>
         </div>
 
       </div>
