@@ -21,8 +21,6 @@ export const query = graphql`
             childImageSharp {
               gatsbyImageData(width: 500, layout: CONSTRAINED)
             }
-            extension
-            publicURL
           }
           docURL
           category
@@ -49,8 +47,6 @@ export const query = graphql`
             childImageSharp {
               gatsbyImageData(layout: FULL_WIDTH)
             }
-            extension
-            publicURL
           }
         }
       }
@@ -59,11 +55,11 @@ export const query = graphql`
       filter: {relativeDirectory: {eq: $name}, sourceInstanceName: {eq: "integrations"}}
     ) {
       nodes {
+        extension
+        publicURL
         childImageSharp {
           gatsbyImageData(layout: FULL_WIDTH)
         }
-        extension
-        publicURL
       }
     }
   }

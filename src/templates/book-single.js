@@ -19,11 +19,11 @@ allMdx(filter: { fields: { slug: { eq: $slug } } }) {
       author
       abstract
       thumbnail {
+        extension
+        publicURL
         childImageSharp {
           gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
-        extension
-        publicURL
       }
     }
    }

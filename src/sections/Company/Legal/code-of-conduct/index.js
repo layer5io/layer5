@@ -18,8 +18,8 @@ const Conduct = () => {
               <h2>Introduction</h2>
             </div>
             <div>
-                            We are dedicated to providing a harassment­ free experience for everyone, and we do not tolerate harassment of participants in any form. We ask you to be considerate of others and behave professionally and respectfully to all other participants.
-                            This code and related procedures also apply to unacceptable behavior occurring outside the scope of community activities, in all community venues— online and in-person— as well as in all one-on-one communications, and anywhere such behavior has the potential to adversely affect the safety and well-being of community members. Exhibitors, speakers, sponsors, staff and all other attendees at events organized by Layer5, Inc (virtual and in-person events, meetups, user groups) or held at Layer5,
+              We are dedicated to providing a harassment­ free experience for everyone, and we do not tolerate harassment of participants in any form. We ask you to be considerate of others and behave professionally and respectfully to all other participants.
+              This code and related procedures also apply to unacceptable behavior occurring outside the scope of community activities, in all community venues— online and in-person— as well as in all one-on-one communications, and anywhere such behavior has the potential to adversely affect the safety and well-being of community members. Exhibitors, speakers, sponsors, staff and all other attendees at events organized by Layer5, Inc (virtual and in-person events, meetups, user groups) or held at Layer5,
                             Inc facilities are subject to these Community Guidelines and Code of Conduct.
             </div>
             <br />

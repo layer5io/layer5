@@ -7,11 +7,114 @@ const data = {
     //
 
     {
+      question:
+        "Why do I need to authenticate my social account to use Meshery?",
+      category: "Meshery",
+      subcategory: "Authentication",
+      answer: [
+        "Create your account - avoid having to reconfigure Meshery each time you deploy it. When you use a social account to authenticate to Meshery, your environment configuration persists from session to session. Meshery sources from Mixer Prometheus adapter and uses Prometheus node-exporter.",
+        "Rank your deployment - results of performance tests are anonymously collected using the Cloud Native  Performance, so that Meshery may provide the public service of ranking the speed of your deployment against that of the rest of the world's users.",
+      ],
+      link: "",
+      linktext: "",
+    },
+    {
+      question: "Why use Meshery?",
+      category: "Meshery",
+      subcategory: "General",
+      answer: [
+        "Meshery is an open source, vendor neutral project that facilitates testing across meshes.",
+        "Other performance benchmark tools are not packaged into a mesh testing utility, but are only load-generators unto their own.",
+      ],
+      link: "/projects/cloud-native-performance",
+      linktext: "Cloud Native Performance",
+    },
+    {
+      question:
+        "I have already operating Kubernetes Clusters. Should I use Meshery?",
+      category: "Meshery",
+      subcategory: "General",
+      answer: [
+        "Yes, as a management plane, Meshery provides value in a number of ways post-adoption Kubernetes. For example, Meshery analyzes your deployments in evaluation of cloud native best practices and patterns, highlighting where you might be deviating.","Meshery performs deep discovery of your environment and currently running applications and infrastructure.",
+      ],
+      link: "/cloud-native-management/meshery",
+      linktext: "Meshery",
+    },
+    {
+      question: "Is Meshery open source?",
+      category: "Meshery",
+      subcategory: "General",
+      answer: [
+        "Yes, Meshery is a Cloud Native Computing Foundation (CNCF) project and is licensed under Apache v2.",
+        "As the cloud native management plane, Meshery is an extensible platform, offering multiple extension points within which users and partners can customize and extend Meshery's functionality.",
+      ],
+    },
+    {
+      question: "Can I deploy Meshery / Kanvas on-premises?",
+      category: "Meshery",
+      subcategory: "Deployment",
+      answer: [
+        "Yes, Meshery, Kanvas, and Layer5 Cloud can be deployed on-premises in minutes using Helm charts.",
+        "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
+      ],
+    },
+    {
+      question: "Where is Layer5 Cloud hosted; where is my data stored?",
+      category: "Meshery",
+      subcategory: "Deployment",
+      answer: [
+        "Layer5 Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at hello@layer5.io",
+      ],
+    },
+    {
+      question: "Is it possible to migrate from managed Layer5 Cloud to self-hosted Layer5 Cloud on-premises?",
+      category: "Meshery",
+      subcategory: "Deployment",
+      answer: [
+        "Yes, Meshery, Kanvas, and Layer5 Cloud can be deployed on-premises in minutes using Helm charts.",
+        "A one-time export of your data can be requested as you transition from managed Layer5 Cloud to self-hosted Layer5 Cloud.",
+        "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
+
+      ],
+    },
+    {
+      question: `What is the difference between Kanvas and the Cloud Native Playground?`,
+      category: "Meshery",
+      subcategory: "Kanvas",
+      answer: [
+        "The Cloud Native Playground (aka Meshery Playground) is a managed instance of Meshery that offers a sandbox environment in which half of Kanvas<sup>BETA</sup>&nbsp;functionality is enabled (Designer mode) and the other half of Kanvas<sup>BETA</sup> functionality is disabled (Visualizer mode).",
+        "The sandbox environment is not connected to an active Kuberentes cluster, and as such, specific actions within Kanvas Designer are also disabled. Meshery and Kanvas are feature-rich, sophisticated management applications for cloud native infrastructure. To access their full set of capabilities, simply deploy your own copy of Meshery into the environment of your choosing.",
+      ],
+    },    
+    {
+      question: "Are designs that I create in the Meshery Playground saved or will I look any work that I do in the playground?",
+      category: "Meshery",
+      subcategory: "Kanvas",
+      answer: [
+        "All of the designs that you have created in the Meshery Playground are saved to your user account and will be available to you each time that you return to the Playground. The designs will also be available in your other Meshery deployments.",
+      ],
+    },    
+    {
+      question: "Can I deploy Meshery and its integrations on-premises?",
+      category: "Meshery",
+      subcategory: "Deployment",
+      link: "https://docs.meshery.io/installation/quick-start",
+      linktext: "Quick Start Guide",
+      answer: [
+        "Yes, Meshery can be deployed on-premises with a single command to download, install, and run your own instance of Meshery in your environment."
+      ]
+    },
+
+    //
+    // LAYER5
+    //
+
+    {
       question: "Are Layer5's solutions open source?",
       category: "Layer5",
       answer: [
         "Yes, all of Layer5's projects are licensed under Apache v2.",
-        "Layer5 also offers extensions to the Meshery project in which Enterprise-centric functionality is commercially offered and supported.",
+        "Layer5 also offers extensions to the Meshery project in which Enterprise-grade functionality is commercially offered and supported.",
       ],
     },
     {
@@ -169,12 +272,35 @@ const data = {
     {
       question: "Is Kanvas cloud or a self-hosted solution?",
       category: "Kanvas",
+      subcategory: "Deployment",
       link: "https://layer5.io/cloud-native-management/kanvas",
       linktext: "Learn More",
       answer: [
         "Yes, Kanvas is available both as a hosted solution and is also deployable on-premises as a self-hosted solution.",
         "Kanvas can be self-hosted to keep your designs and applications internal to your premises. You can also choose to have Kanvas hosted as SaaS solution offered by Layer5.",
         "Whether self-hosted or hosted by Layer5, we are here to support you."
+      ]
+    },
+    {
+      question: "How can I try out Kanvas?",
+      category: "Kanvas",
+      subcategory: "Getting Started",
+      link: "https://layer5.io/cloud-native-management/kanvas",
+      linktext: "Kanvas Beta",
+      answer: [
+       "Kanvas is available in beta today. Signup for Kanvas beta access and use Kanvas for free.",
+       "Your request for early access will be processeed as quicky as possible but due to the large influx of program participation requests, it may take some time before system access is granted. In the meantime to help you familiarize with Meshery, the maintainers team will send you additional information about the early access program."
+      ]
+    },
+    {
+      question: "What is Kanvas early access program?",
+      category: "Kanvas",
+      subcategory: "Getting Started",
+      link: "https://layer5.io/cloud-native-management/kanvas",
+      linktext: "Kanvas Beta",
+      answer: [
+        "Kanvas is cloud native collaboration tool for managing your infrastructure and applications. Kanvas has two modes: Visualizer for operating your actively running Kubernetes clusters and Designer for configuring your Kubernetes clusters and creating your creating your application deployments.",
+       "Kanvas is in beta mode and you can ask for early access to try it out.",
       ]
     },
     {
@@ -212,24 +338,26 @@ const data = {
     //
 
     {
-      question: "How can I upgrade, downgrade, or cancel my plan?",
+      question: "Can I upgrade, downgrade, or cancel my plan?",
       category: "Pricing",
       answer: [
-        "Upgrade as needed. Downgrade or cancel at anytime. To make changes to your plan, please get in touch with sales.",
+        "Yes, upgrade, downgrade or cancel at anytime. Whether you are upgrading or downgrading between plans, or canceling your existing subscription, changes take effect at the start/end of your current subscription's billing cycle.",
       ],
+      linktext: "My current plan",
+      link: "https://cloud.layer5.io/account/plans"
     },
     {
-      question: "Do I need to enter my credit card details to sign up to a free plan?",
+      question: "Do I need to enter my credit card details to subscribe to the free plan?",
       category: "Pricing",
       answer: [
-        "No. The Free plan does not require a credit card. It is free and will forever be free. A credit card is required only if you want to upgrade to a more fully-featured plan.",
+        "No. The Free plan does not require a credit card. It is free and will forever be free.",
+        "A credit card is required only if you want to upgrade to a more fully-featured plan.",
       ],
     },
     {
       question: "What is the refund policy?",
       category: "Pricing",
       answer: [
-        "You can cancel at anytime.",
         "We totally get that plans can change, and we're here to make things as straight-forward as possible. At Layer5, we have a no-refund policy for all our subscription plans. That means once your payment goes through, it's non-refundable, even if you haven't used much of the time left in your billing cycle. This helps us keep delivering awesome access to our cloud native tools, collaborative features, performance testing, multi-cloud setups, and all the learning goodies in Layer5 Academy and Kanvas.",
         "If you're ready to cancel, no worries — just head to your account settings to cancel anytime. That'll stop any future renewals and charges, but you'll still enjoy full access until your current period ends. We're all about helping you explore first, so feel free to try our Free Forever plan to dip your toes in with things like built-in models, community support, and basic testing before going paid.",
       ],
@@ -246,15 +374,20 @@ const data = {
       question: "What happens if I accidentally don't renew or forget to renew my subscription?",
       category: "Pricing",
       answer: [
-        "Continuity of your infrastructure and application management is important to us as it is to you. Layer5 Cloud and Kanvas will continue to operate under the Free tier features and usage limits. Your historical data will continue to be available to you. You can renew your subscription to have higher-level plan features reenabled at any time.",
+        "Your account will automatically transition to the Free plan. Layer5 Cloud and Kanvas will continue to operate under the Free tier features and usage limits.",
+        "While your account will no longer be entitled to the features offered a paid plan, rest assured that your historical data will continue to be available to you.",
+        "Renew your subscription to have higher-level plan features reenabled at any time.",
       ],
     },
     {
       question: "Are there other pricing options?",
       category: "Pricing",
       answer: [
-        "Annual and monthly plans are available. Some plans have add-ons available. We can customize billing plans to meet your needs. For a detailed explanation of billing, please see our Billing FAQ.",
+        "Both annual and monthly plans are available. Some plans have add-ons available.",
+        "If your level of use warrants custom pricing, let's talk adjust as needed.",
       ],
+      link: "mailto:sales@layer5.io",
+      linktext: "Contact Sales",
     },
     {
       question: "Do you have special pricing for open source / non-profit projects?",
@@ -265,6 +398,60 @@ const data = {
       linktext: "Open source pricing",
       link: "/pricing/open-source-program"
     },
+    {
+      question: "What is the pricing structure of this add-on?",
+      category: "Pricing",
+      subcategory: "Academy",
+      answer: [
+        "Layer5 Academy is available as an add-on to your Enterprise subscription, priced based on number of active learners.",
+        "Academy functionality is conveniently divided into two offerings: theoretical learning (learning paths, certifications, challenges) and practical learning (hands-on labs in Kanvas).",
+      ]
+    },
+    {
+      question: "What is an \"active\" learner?",
+      category: "Pricing",
+      subcategory: "Academy",
+      answer: [
+        "An active learner is any user who has logged into the platform in a given month whether they are currently enrolled in a course or not. Only active learners count towards your package total. Only active learners are billable.",
+        "A learner is any user who at any point accepted an invitation to join your Academy. Learners may or may not have registered for (enrolled in) any of your Academy's offerings.",
+        "An enrolled learner is a user who is currently registered for an offering in your Academy's catalog of curricula. Enrolled learners not are always active learners as students may enroll in a course but not log in during a given month.",
+      ]
+    },
+    {
+      question: "Can I add more learners than my selected package allows?",
+      category: "Pricing",
+      subcategory: "Academy",
+      answer: [
+        "Yes, whether you are currently subscribed under a monthly plan or a yearly plan, you can exceed your pre-selected package size without foreplanning.",
+        "At the end of the month, any additional learners beyond your package size are charged at the same per-learner rate.",
+        "For example, if you are on the 500-learner package and end the month with 510 active learners, you will be charged for your base 500 learners plus the cost of 10 additional learners.",
+      ]
+    },
+    {
+      question: "What happens if number of active learners remains under my pre-selected plan size, say 2,500?",
+      category: "Pricing",
+      subcategory: "Academy",
+      answer: [
+        "You are simply billed for the number of learners under your selected plan size at the end of the month; e.g. 2,500 multiplied by the per-learner price in your subscription plan.",
+      ]
+    },
+    {
+      question: "How are active learners calculated?",
+      category: "Pricing",
+      subcategory: "Academy",
+      answer: [
+        "Active learners are determined as the higher of your active learners or your plan's quota. For example, on the 500 learner plan, even if you have only 450 active learners, you will still be billed according to your plan size of 500 learners.",
+        "Active learners are calculated at the end of each monthly billing cycle. For example, if you are subscribed to the 1,000 learner plan, have 900 active learners on the 1st of the month, 450 active learners on the 11th of the month, and 1,025 active learners on the 17th of the month, you will be billed for 1,025 active learners (1,025 times the per learner price in your subscription plan) as that is your highest count of active learners during the month.",
+      ]
+    },
+    {
+      question: "Are learners who have withdrawn or who have completed offerings counted against my package total?",
+      category: "Pricing",
+      subcategory: "Academy",
+      answer: [
+        "No. Only users who are actively registered and have not yet completed or withdrawn from a course are counted as active users.",
+      ]
+    },
 
     //
     // BILLING
@@ -273,6 +460,7 @@ const data = {
     {
       question: "What payment methods do you support?",
       category: "Billing",
+      subcategory: "Payment Methods",
       answer: [
         "You can pay for Layer5 Team and Enterprise with a credit card or debit card. If you pay by credit card, billing receipts are available to Administrators for previous months under Billing History. For copies of your invoice, email Layer5 billing.",
         "Layer5 also offers invoicing (ACH or wire). If you pay by ACH or wire, invoices are emailed to the billing email addresses near the 10th business day of each month. If you need an additional copy, email Layer5 billing. Details on where to remit payment can be found on the invoice. To change your payment method, contact your Customer Success Manager."
@@ -283,6 +471,7 @@ const data = {
     {
       question: "When does the billing cycle start and stop?",
       category: "Billing",
+      subcategory: "Billing Cycle",
       answer: [
         "The billing cycle begins the first day of the subscription period.",
         "Layer5 meters the count of active users and systems under management on a daily basis. The billable count of users and elements under management is calculated at the end of the month using the maximum count (high water mark) of the lower 99 percent of usage for those days.",
@@ -292,6 +481,7 @@ const data = {
     {
       question: "How do I view and manage my subscription?",
       category: "Billing",
+      subcategory: "Account Management",
       answer: [
         "You can view your account's subscription, your other paid features and products, and your next billing date in your account's billing settings",
       ],
@@ -301,6 +491,7 @@ const data = {
     {
       question: "What happens if payment fails?",
       category: "Billing",
+      subcategory: "Payment Issues",
       answer: [
         "After an initial failed payment, we apply a 14 day grace period on your account and attempt to process a payment each week. After three failed payments, paid features are locked.",
       ],
@@ -308,6 +499,7 @@ const data = {
     {
       question: "How can I unlock my account after several failed transactions?",
       category: "Billing",
+      subcategory: "Payment Issues",
       answer: [
         "You can unlock the paid features on your account and trigger a new payment attempt by updating the payment method on your account. To learn more about how to manage your payments, visit the Billing section of your Layer5 Cloud account.",
       ],
@@ -379,4 +571,3 @@ const data = {
   ],
 };
 export default data;
-

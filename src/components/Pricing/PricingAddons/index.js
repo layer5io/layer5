@@ -400,6 +400,18 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                                       }
                                     }}>
                                     {formatSliderPrice(isYearly ? option.yearlyPerUser : option.monthlyPerUser, currency)}<br />{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
+                                    {isYearly && (
+                                      <Box
+                                        sx={{
+                                          fontSize: {
+                                            xs: "0.7rem",
+                                            sm: "0.7rem",
+                                          }
+                                        }}
+                                      >
+                                        {formatSliderPrice(option.yearlyPerUser / 12, currency)}/{targetSubAddon.unitLabelSingular}/month
+                                      </Box>
+                                    )}
                                   </Box>
                                 </Box>
                               ),
