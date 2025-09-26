@@ -251,7 +251,7 @@ export const boxStyles = {
     mt: 1
   },
   disclaimerSection: {
-    my: 6,
+    my: 10,
     mb: 2,
     justifyContent: "space-between"
   }
