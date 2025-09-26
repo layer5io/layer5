@@ -17,28 +17,28 @@ import { min } from "lodash";
 
 const customToggleButtonStyles = {
   container: {
-    ...toggleButtonStyles.container, 
+    ...toggleButtonStyles.container,
     backgroundColor: "transparent",
-     p: "6px",
-     minHeight: "42px",
-     minWidth: "50px",
-    borderColor:"#ffffffff" 
+    p: "6px",
+    minHeight: "42px",
+    minWidth: "50px",
+    borderColor: "#ffffffff"
   },
   base: {
     py: 0.5,
     px: 4,
     fontSize: "4rem",
-    ...toggleButtonStyles.base, 
+    ...toggleButtonStyles.base,
   },
 };
 
 const getCustomToggleButtonStyle = (isActive, baseStyle) => ({
   ...getToggleButtonStyle(isActive, baseStyle),
-  backgroundColor: isActive ? "#00B39F" : "transparent", 
+  backgroundColor: isActive ? "#00B39F" : "transparent",
   color: isActive ? "#fffcfcff" : "#fff",
   fontSize: "1rem",
   "&:hover": {
-    backgroundColor: isActive ? "#009B8A" : "transparent", 
+    backgroundColor: isActive ? "#009B8A" : "transparent",
   },
 });
 
