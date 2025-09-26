@@ -2,7 +2,7 @@ import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 const Image = ({ childImageSharp, extension, publicURL, alt, imgStyle, ...rest }) => {
-  if (extension === "svg") {
+  if (extension !== "svg") {
     if (!childImageSharp && extension === "svg") {
       return (
         <div className="old-gatsby-image-wrapper" style={{ width: "100%", height: "auto" }}>
