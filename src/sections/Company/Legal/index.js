@@ -47,7 +47,7 @@ const trustCenter = () => {
           title="Digital Services"
           description="Discover Layer5’s commitment to transparency, user safety, and ethical practices across our digital platforms. Understand our approach to content moderation, user rights, and reporting mechanisms."
           to="/company/legal/digital-service"
-        />        
+        />
       </div>
     </HandbookWrapper>
   );
