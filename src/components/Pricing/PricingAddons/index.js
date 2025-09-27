@@ -200,7 +200,6 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
     });
   };
 
-
   const getPlanLinkForAcademy = () => {
     if (!selectedAddon || selectedAddon.id !== "academy") {
       return { link: "#", name: "Subscribe" };
@@ -248,6 +247,7 @@ user${enterpriseUsers > 1 ? "s" : ""}` : "";
     return {
       link: "#",
       name: `Subscribe to ${selectedAddon.name}`
+      name: "Subscribe"
     };
   };
 
@@ -509,6 +509,33 @@ user${enterpriseUsers > 1 ? "s" : ""}` : "";
                                       }}>
                                       {formatPrice(isYearly ? option.yearlyPerUser : option.monthlyPerUser)}<br />{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
                                     </Box>
+                            return targetSubAddon?.pricing?.map((option, index) => ({
+                              value: index,
+                              label: (
+                                <Box sx={{ textAlign: "center", fontSize: "1.25rem", fontWeight: "bold" }}>
+                                  <Box>{option.learners === "2500+" ? "2,500+" : option.learners}</Box>
+                                  {isYearly && (
+                                      <Box
+                                        sx={{
+                                          fontSize: {
+                                            xs: "0.75rem",
+                                            sm: "0.9rem",
+                                          }
+                                        }}
+                                      >
+                                        {formatSliderPrice(option.yearlyPerUser / 12, currency)}<br/>{targetSubAddon.unitLabelSingular}/month
+                                      </Box>
+                                    )}
+                                  <Box
+                                    sx={{
+                                      color: "text.secondary",
+                                      mb: 1.5,
+                                      fontSize: {
+                                        xs: "0.75rem",
+                                        sm: "0.9rem",
+                                      }
+                                    }}>
+                                    {formatSliderPrice(isYearly ? option.yearlyPerUser : option.monthlyPerUser, currency)}<br/>{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
                                   </Box>
                                 ),
                               })) || []
@@ -620,6 +647,7 @@ user${enterpriseUsers > 1 ? "s" : ""}` : "";
                           return formatPrice((isYearly ? selectedAddon?.yearlyPrice : selectedAddon?.monthlyPrice) * quantity);
                         }
                       })()}
+                      })()} /{isYearly ? "yearly" : "monthly"}
                     </Typography>
                   </Box>
 

@@ -26,7 +26,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@emotion/is-prop-valid": "^1.2.1",
+    "@emotion/is-prop-valid": "^1.4.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@fullcalendar/core": "^6.1.8",
@@ -42,7 +42,7 @@
     "@mui/icons-material": "^6.4.6",
     "@mui/material": "^5.15.11",
     "@react-icons/all-files": "^4.1.0",
-    "@sistent/sistent": "^0.15.8",
+    "@sistent/sistent": "^0.15.9",
     "@svgr/webpack": "^8.0.1",
     "@types/mui-datatables": "^4.3.12",
     "ajv": "^8.17.1",
