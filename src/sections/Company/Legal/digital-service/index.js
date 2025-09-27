@@ -2,11 +2,8 @@ import React from "react";
 import { Container, Row, Col } from "../../../../reusecore/Layout";
 import PageHeader from "../../../../reusecore/PageHeader";
 import TermsWrapper from "../terms.style";
-import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
 
 const DigitalServicesNotice = () => {
-  const { isDark } = useStyledDarkMode();
-
   return (
     <TermsWrapper>
       <PageHeader title="Digital Services Notice" path="Terms > Digital Services" />
