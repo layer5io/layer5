@@ -13,6 +13,10 @@ import {
   TableBody,
   SistentThemeProvider,
 } from "@sistent/sistent";
+import TOC from "../../../../components/legal-navigation/index";
+import TocPagination from "../../../../components/legal-navigation/TocPagination";
+
+
 
 const StyledTableContainer = styled(TableContainer)(() => ({
   width: "100%",
@@ -80,13 +84,15 @@ const CookieNotice = () => {
 
   return (
     <TermsWrapper>
-      <PageHeader title="Cookie Notice" path="Terms > Cookie Notice" />
+      <div className="page-header-section">
+        <h1>Cookie Notice</h1>
+      </div>
+      <TOC />
+      <div className="terms-content">
       <Container>
         <p>
           <small>
             <i>Effective Date: August 1, 2025</i>
-            <br />
-            <i>Last Updated: August 1, 2025</i>
           </small>
         </p>
         <Row>
@@ -213,6 +219,8 @@ const CookieNotice = () => {
           </Col>
         </Row>
       </Container>
+        </div>
+      <TocPagination />
     </TermsWrapper>
   );
 };

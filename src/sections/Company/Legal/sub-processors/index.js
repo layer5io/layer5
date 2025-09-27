@@ -13,6 +13,10 @@ import {
   TableBody,
   SistentThemeProvider,
 } from "@sistent/sistent";
+import TOC from "../../../../components/legal-navigation/index";
+import TocPagination from "../../../../components/legal-navigation/TocPagination";
+
+
 
 // Styled components from Privacy page
 const StyledTableContainer = styled(TableContainer)(() => ({
@@ -180,10 +184,11 @@ const SubProcessors = () => {
 
   return (
     <TermsWrapper>
-      <PageHeader
-        title="Sub-Processors and Service Providers"
-        path="Terms > Sub-Processors and Service Providers"
-      />
+       <div className="page-header-section">
+        <h1>Sub-Processors and Service Providers</h1>
+      </div>
+      <TOC />
+      <div className="terms-content">
       <Container>
         <p>
           <small>
@@ -283,6 +288,8 @@ const SubProcessors = () => {
           </Col>
         </Row>
       </Container>
+      </div>
+      <TocPagination />
     </TermsWrapper>
   );
 };

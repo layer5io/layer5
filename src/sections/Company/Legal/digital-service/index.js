@@ -2,17 +2,21 @@ import React from "react";
 import { Container, Row, Col } from "../../../../reusecore/Layout";
 import PageHeader from "../../../../reusecore/PageHeader";
 import TermsWrapper from "../terms.style";
+import TOC from "../../../../components/legal-navigation/index";
+import TocPagination from "../../../../components/legal-navigation/TocPagination";
 
 const DigitalServicesNotice = () => {
   return (
     <TermsWrapper>
-      <PageHeader title="Digital Services Notice" path="Terms > Digital Services" />
+      <div className="page-header-section">
+        <h1>Digital Service</h1>
+      </div>
+      <TOC />
+      <div className="terms-content">
       <Container>
         <p>
           <small>
             <i>Effective Date: September 27, 2025</i>
-            <br />
-            <i>Last Updated: September 27, 2025</i>
           </small>
         </p>
         <Row>
@@ -99,6 +103,8 @@ const DigitalServicesNotice = () => {
           </Col>
         </Row>
       </Container>
+        </div>
+      <TocPagination />
     </TermsWrapper>
   );
 };

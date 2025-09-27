@@ -13,6 +13,8 @@ import {
   TableBody,
   SistentThemeProvider,
 } from "@sistent/sistent";
+import TOC from "../../../../components/legal-navigation/index";
+import TocPagination from "../../../../components/legal-navigation/TocPagination";
 
 const StyledTableContainer = styled(TableContainer)(() => ({
   width: "100%",
@@ -130,7 +132,11 @@ const Privacy = () => {
 
   return (
     <TermsWrapper>
-      <PageHeader title="Privacy" path="Terms > Privacy" />
+       <div className="page-header-section">
+        <h1>Privacy Policy</h1>
+      </div>
+      <TOC />
+      <div className="terms-content">
       <Container>
         <p>
           <small>
@@ -369,6 +375,8 @@ const Privacy = () => {
           </Col>
         </Row>
       </Container>
+      </div>
+      <TocPagination />
     </TermsWrapper>
   );
 };
