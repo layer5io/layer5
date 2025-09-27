@@ -44,10 +44,9 @@ const MagicScriptTag = (props) => {
   return <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />;
 };
 
-export const onRenderBody = ( { setPreBodyComponents }) => {
+export const onRenderBody = ( { setPreBodyComponents, setHeadComponents }) => {
   setPreBodyComponents(<MagicScriptTag key="theme-injection" theme={themes} />);
 
-  // Security headers as meta tags (fallback for when _headers file isn't supported)
   setHeadComponents([
     // X-Frame-Options
     <meta key="x-frame-options" httpEquiv="X-Frame-Options" content="SAMEORIGIN" />,
