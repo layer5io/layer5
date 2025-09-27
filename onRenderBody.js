@@ -46,4 +46,40 @@ const MagicScriptTag = (props) => {
 
 export const onRenderBody = ( { setPreBodyComponents }) => {
   setPreBodyComponents(<MagicScriptTag key="theme-injection" theme={themes} />);
+
+  // Security headers as meta tags (fallback for when _headers file isn't supported)
+  setHeadComponents([
+    // X-Frame-Options
+    <meta key="x-frame-options" httpEquiv="X-Frame-Options" content="SAMEORIGIN" />,
+
+    // X-Content-Type-Options
+    <meta key="x-content-type-options" httpEquiv="X-Content-Type-Options" content="nosniff" />,
+
+    // X-XSS-Protection
+    <meta key="x-xss-protection" httpEquiv="X-XSS-Protection" content="1; mode=block" />,
+
+    // Referrer Policy
+    <meta key="referrer-policy" name="referrer" content="strict-origin-when-cross-origin" />,
+
+    // Content Security Policy
+    <meta
+      key="csp"
+      httpEquiv="Content-Security-Policy"
+      content="frame-ancestors 'self'"
+    />,
+
+    // Permissions Policy
+    <meta
+      key="permissions-policy"
+      httpEquiv="Permissions-Policy"
+      content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+    />,
+
+    // HTTP Strict Transport Security (HSTS)
+    <meta
+      key="hsts"
+      httpEquiv="Strict-Transport-Security"
+      content="max-age=31536000; includeSubDomains; preload"
+    />
+  ]);
 };

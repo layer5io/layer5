@@ -1,6 +1,13 @@
 /* eslint-env node */
 
 module.exports = {
+  developMiddleware: (app) => {
+    app.use((req, res, next) => {
+      res.set("X-Frame-Options", "SAMEORIGIN");
+      res.set("Content-Security-Policy", "frame-ancestors 'self'");
+      next();
+    });
+  },
   siteMetadata: {
     title: "Layer5 - Expect more from your infrastructure",
     description:
