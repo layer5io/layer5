@@ -24,7 +24,7 @@ const IndexPage = () => {
       <Banner />
       <FeaturesContainer />
       <Partners />
-      <CornerPopup/>
+      <CornerPopup storageKey="homepageShowPopup"/>
       {/* <ServiceMeshManagement /> */}
       <CloudNativeManagement />
       <MesheryIntegration  />
