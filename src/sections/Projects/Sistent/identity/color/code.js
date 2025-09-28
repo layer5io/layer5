@@ -6,7 +6,7 @@ import { Col, Row } from "../../../../../reusecore/Layout";
 import Button from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
-import {  styled,  Table, TableContainer, TableCell, TableRow, TableHead, TableBody, SistentThemeProvider, CustomTooltip, Box, } from "@sistent/sistent";
+import {  styled,  Table, TableContainer, TableCell, TableRow, TableHead, TableBody, SistentThemeProvider } from "@sistent/sistent";
 import CopyValue from "../../../../../components/CopyValue";
 
 const brandColors = [
