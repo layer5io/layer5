@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Button from "../../reusecore/Button";
 import { ReactComponent as CloseIcon } from "./closeIcon.svg";
-import popupImageSmall from "./power-of-meshery-small.webp";
 import CornerPopupWrapper from "./popup.style";
 
-const CornerPopup = ({ storageKey = "showPopup" }) => {
+const CornerPopup = ({ storageKey = "showPopup", image, link, text }) => {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
@@ -27,10 +26,10 @@ const CornerPopup = ({ storageKey = "showPopup" }) => {
             <div className="close-btn" onClick={() => setShowPopup(false)}>
               <CloseIcon />
             </div>
-            <a href="https://play.meshery.io/">
-              <img alt="popup image" className="popup-image" src={popupImageSmall} />
+            <a href={link}>
+              <img alt="popup image" className="popup-image" src={image} />
             </a>
-            <Button $primary className="explore-playground-button" title="Access Playground" $url="https://play.meshery.io/" $external={true}/>
+            <Button $primary className="explore-playground-button" title={text} $url={link} $external={true}/>
           </div>
         </div>
       </div>

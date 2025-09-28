@@ -39,6 +39,7 @@ import TeaserModal from "../../components/TeaserModal";
 import GuyM from "./images/guym.jpg";
 import Abdechakour from "../../sections/Pricing/reviews/abdechakour-h.jpeg";
 import CornerPopup from "../../components/Corner-popup";
+import CornerPopupImage from "../../assets/images/AWS-Diagram/aws.svg";
 
 
 const Kanvas = (props) => {
@@ -46,7 +47,7 @@ const Kanvas = (props) => {
   return (
     <KanvasWrapper>
       <div>
-        <CornerPopup storageKey="kanvasShowPopup"/>
+        <CornerPopup storageKey="kanvasShowPopup" image={CornerPopupImage} link="https://kanvas.new/" text="Access Kanvas"/>
         <Container>
           <KanvasBanner/>
           <div className="mobile-modes">
