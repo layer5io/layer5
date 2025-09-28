@@ -45,10 +45,10 @@ const Kanvas = (props) => {
 
   return (
     <KanvasWrapper>
-      <div >
-          <CornerPopup storageKey="kanvasShowPopup"/>
-          <Container>
-          <KanvasBanner />
+      <div>
+        <CornerPopup storageKey="kanvasShowPopup"/>
+        <Container>
+          <KanvasBanner/>
           <div className="mobile-modes">
             <Features
               heading="Kanvas Modes"
@@ -86,7 +86,7 @@ const Kanvas = (props) => {
               ]}
             />
           </div>
-          <KanvasModes />
+          <KanvasModes/>
           <InlineQuotes
             person="Guy Menahem"
             title="Software Engineer at AWS"
@@ -99,28 +99,28 @@ const Kanvas = (props) => {
                   title: "Design your deployments the way you want",
                   description: "Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components and Cloud services. Say goodbye to YAML configurations.",
                   imgContent: (
-                    <RoleBind1 id="design-image1" style={{ transform: "translateX(-2rem)" }} alt="design-image1" />
+                    <RoleBind1 id="design-image1" style={{ transform: "translateX(-2rem)" }} alt="design-image1"/>
                   )
                 },
                 {
                   title: "Manage your applications visually and intuitively",
                   description: "Play with powerful features including context-aware designs and namespace configurations to easily manage all services.",
                   imgContent: (
-                    <RoleBind2 id="design-image2" alt="design-image2" />
+                    <RoleBind2 id="design-image2" alt="design-image2"/>
                   )
                 },
                 {
                   title: "Build the bridge",
                   description: "Go from developer handoffs to ongoing conversations with a shared language between design and development.",
                   imgContent: (
-                    <RoleBind3 id="design-image3" style={{ transform: "translateX(-2rem)" }} alt="design-image3" />
+                    <RoleBind3 id="design-image3" style={{ transform: "translateX(-2rem)" }} alt="design-image3"/>
                   )
                 },
                 {
                   title: "Stop finger-pointing",
                   description: "Make infrastructure and application management less about finger-pointing and more about collaborating.",
                   imgContent: (
-                    <RoleBind4 id="design-image4" style={{ transform: "translateX(-2rem)" }} alt="design-image4" />
+                    <RoleBind4 id="design-image4" style={{ transform: "translateX(-2rem)" }} alt="design-image4"/>
                   )
                 },
               ]}/>
@@ -137,22 +137,22 @@ const Kanvas = (props) => {
                   title: "All your Kubernetes and Cloud infrastructure under a common management",
                   description: "Deploy designs, apply patterns, manage and operate your deployments and services in real-time.",
                   imgContent: (
-                    <Visualize1 id="visualize-image1" alt="visualize-image1" />
+                    <Visualize1 id="visualize-image1" alt="visualize-image1"/>
                   )
                 },
                 {
                   title: "Continuous visibility across all of your clusters and workloads.",
                   description: "Import your existing Kubernetes, Kustomize, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers.",
                   imgContent: (
-                    <Visualize2 id="visualize-image2" alt="visualize-image2" />
+                    <Visualize2 id="visualize-image2" alt="visualize-image2"/>
                   )
                 },
-              ]} />
+              ]}/>
           <InlineQuotes
             quote="Wow, just tried Kanvas and it's exactly what I needed! Dragging that Helm chart was so smooth, and the smart features really caught my attention. Definitely sharing this with my dev team before everyone else discovers it!"
             person="Abdechakour Hrouchan"
             title="Software Engineer at Atlas Cloud Services"
-            image={Abdechakour} />
+            image={Abdechakour}/>
 
           <CollaboratorFeatures
             features={
@@ -170,7 +170,7 @@ const Kanvas = (props) => {
                         height="48"
                         style={{ objectFit: "cover" }}
                       />
-                      <Collab1 id="collaborate-image1" alt="collaborate-image1" />
+                      <Collab1 id="collaborate-image1" alt="collaborate-image1"/>
                     </>
                   )
                   // Invite any Layer5 Cloud user, or all Meshery users, to work with you on a public design, including making changes and releasing new versions."
@@ -192,7 +192,7 @@ const Kanvas = (props) => {
                         height="48"
                         style={{ objectFit: "cover" }}
                       />
-                      <Collab2 id="collaborate-image2" alt="collaborate-image2" />
+                      <Collab2 id="collaborate-image2" alt="collaborate-image2"/>
                     </>
                   )
                 },
@@ -209,7 +209,7 @@ const Kanvas = (props) => {
                         height="48"
                         style={{ objectFit: "cover" }}
                       />
-                      <Collab3 id="collaborate-image3" alt="collaborate-image3" />
+                      <Collab3 id="collaborate-image3" alt="collaborate-image3"/>
                     </>
                   )
                 },
@@ -230,11 +230,11 @@ const Kanvas = (props) => {
                         height="48"
                         style={{ objectFit: "cover" }}
                       />
-                      <Collab4 id="collaborate-image4" alt="collaborate-image4" />
+                      <Collab4 id="collaborate-image4" alt="collaborate-image4"/>
                     </>
                   )
                 }
-              ]} />
+              ]}/>
           {/* <CollaboratorFeatures
             features={
               [
@@ -286,10 +286,10 @@ const Kanvas = (props) => {
             quote="Do we like Kanvas? ABSOLUTELY!"
             person="Alex"
             title="Infrastructure Engineering at Docker, Inc."
-            image={Alex} />
+            image={Alex}/>
           {/* <MesheryAction /> */}
-          <KanvasBtn style={{ marginBottom: "2rem" }} />
-          <Platform />
+          <KanvasBtn style={{ marginBottom: "2rem" }}/>
+          <Platform/>
           <InlineQuotes
             quote="Guys, I love Kanvas! This tool is crazy!"
             person="Ala Eddine BENHASSIR"
@@ -298,8 +298,8 @@ const Kanvas = (props) => {
         </Container>
       </div>
       <>
-        <Reviews />
-        <TeaserModal title="Kanvas Teaser" open={props?.teaser} />
+        <Reviews/>
+        <TeaserModal title="Kanvas Teaser" open={props?.teaser}/>
       </>
     </KanvasWrapper>
   );
