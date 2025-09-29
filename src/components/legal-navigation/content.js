@@ -4,5 +4,4 @@ export const content = [
   { id: 2, link: "/company/legal/sub-processors", text: "Sub-Processors" },
   { id: 3, link: "/company/legal/terms-of-service", text: "Terms of Service" },
   { id: 4, link: "/company/legal/cookie-notice", text: "Cookie Notice" },
-  { id: 5, link: "/company/legal/digital-service", text: "Digital Service" },
 ];

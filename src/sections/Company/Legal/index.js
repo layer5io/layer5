@@ -43,11 +43,6 @@ const trustCenter = () => {
           description="Learn how Layer5 uses cookies and similar technologies to enhance your experience, support analytics, and protect your privacy. Review the types of cookies we use and manage your preferences."
           to="/company/legal/cookie-notice"
         />
-        <LegalCard
-          title="Digital Services"
-          description="Discover Layer5’s commitment to transparency, user safety, and ethical practices across our digital platforms. Understand our approach to content moderation, user rights, and reporting mechanisms."
-          to="/company/legal/digital-service"
-        />
       </div>
     </HandbookWrapper>
   );
