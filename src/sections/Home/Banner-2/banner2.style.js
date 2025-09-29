@@ -12,6 +12,18 @@ const Banner2SectionWrapper = styled.section`
     background-color: ${props => props.theme.body};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     min-height: 600px; /* Add explicit min-height */
+    @media only screen and (max-width: 760px) {
+        min-height: 320px;
+        padding: 1.2rem 0 1.5rem 0;
+        background-position: bottom 60px right 5px, bottom right;
+        background-size: 18%, 15%;
+    }
+    @media only screen and (max-width: 480px) {
+        min-height: 180px;
+        padding: 0.7rem 0 1rem 0;
+        background-position: bottom 30px right 2px, bottom 10px right;
+        background-size: 13%, 10%;
+    }
     position: relative; /* Add position for better layout control */
     width: 100%; /* Add explicit width */
     
