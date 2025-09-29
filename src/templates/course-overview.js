@@ -24,19 +24,19 @@ export const query = graphql`
           toc
 
           cardImage {
+            extension
+            publicURL
             childImageSharp {
               gatsbyImageData(width: 200, layout: CONSTRAINED)
             }
-            extension
-            publicURL
           }
           meshesYouLearn {
             imagepath {
+              extension
+              publicURL
               childImageSharp {
                 gatsbyImageData(width: 50, layout: CONSTRAINED)
               }
-              extension
-              publicURL
             }
             name
           }

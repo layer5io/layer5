@@ -21,11 +21,11 @@ export const query = graphql`query ResourcesBySlug($slug: String!) {
       tags
       description
       thumbnail {
+        extension
+        publicURL
         childImageSharp {
           gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
-        extension
-        publicURL
       }
     }
     fields {
