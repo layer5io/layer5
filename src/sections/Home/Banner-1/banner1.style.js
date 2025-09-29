@@ -16,7 +16,30 @@ const Banner1SectionWrapper = styled.section`
         top: -10%;
         width: 25%;
         min-height: 150%;
-        height: auto; /* Ensure proper scaling */
+        height: auto;
+        z-index: 1;
+    }
+    @media only screen and (max-width: 760px) {
+        min-height: 320px;
+        padding: 1.2rem 0 1.5rem 0;
+        .background-svg {
+            width: 45vw;
+            min-height: 60vw;
+            top: 10px;
+            right: -10vw;
+            opacity: 0.7;
+        }
+    }
+    @media only screen and (max-width: 480px) {
+        min-height: 220px;
+        padding: 0.7rem 0 1rem 0;
+        .background-svg {
+            width: 60vw;
+            min-height: 40vw;
+            top: 30px;
+            right: -18vw;
+            opacity: 0.5;
+        }
     }
     p {
         font-size: 21px;
