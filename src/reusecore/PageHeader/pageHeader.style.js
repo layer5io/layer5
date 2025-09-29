@@ -30,17 +30,17 @@ const PageHeaderWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%; /* Full width of parent */
-    max-width: 600px; /* Cap container width */
-    margin: 0 auto; /* Center container */
-    padding: 0 1rem; /* Padding for smaller screens */
+    width: 100%;
+    max-width: 700px; 
+    margin: 0 auto; 
+    padding: 0 1rem; 
 
     img {
       margin-top: 0rem; 
       width: 100%; 
-      max-width: 100%; 
-      max-height: 100%; 
-      height: auto; 
+      max-width: auto; 
+      max-height: auto; 
+      height: 100%; 
       object-fit: fill; 
       display: block;
     }
@@ -64,15 +64,15 @@ const PageHeaderWrapper = styled.div`
     }
   }
 
-  /* Responsive adjustments */
+
   @media (max-width: 768px) {
     .feature-image {
-      max-width: 90vw; /* Use viewport width for smaller screens */
+      max-width: 90vw; 
       padding: 0 0.5rem;
 
       img {
-        max-width: 100%; /* Fit container */
-        max-height: 350px; /* Slightly smaller for tablets */
+        max-width: 100%; 
+        max-height: 350px;
       }
     }
   }
@@ -80,7 +80,7 @@ const PageHeaderWrapper = styled.div`
   @media (max-width: 480px) {
     .feature-image {
       img {
-        max-height: 250px; /* Further reduce for phones */
+        max-height: 250px; 
       }
     }
   }
