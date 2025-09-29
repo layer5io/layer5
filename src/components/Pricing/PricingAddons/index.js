@@ -518,7 +518,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                           }
                           return formatPrice(0);
                         }
-                      })()} /{isYearly ? "yearly" : "monthly"}
+                      })()}/{isYearly ? "yearly" : "monthly"}
                     </Typography>
                   </Box>
 
@@ -526,7 +526,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                     selectedSubAddOns[subAddOn.id] && subAddOn.id !== "academy-theory" && (
                       <Box key={subAddOn.id} sx={boxStyles.flexBetween}>
                         <Typography variant="body1" sx={typographyStyles.pricingItemLeft}>
-                          {subAddOn.name} × {subAddOn.pricing?.[quantityIndex]?.learners || 0}/{isYearly ? "yearly" : "monthly"}
+                          {subAddOn.name} × {subAddOn.pricing?.[quantityIndex]?.learners || 0}
                         </Typography>
                         <Typography variant="body1" sx={typographyStyles.pricingItemRight} fontWeight="500">
                           {(
