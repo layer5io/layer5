@@ -37,6 +37,7 @@ const CONTENT = [
     img: Track,
     description:
       "Stay motivated with clear progress tracking as you move forward. Keep an eye on your completed labs, challenges, and milestones, and see how your cloud native skills steadily grow step by step.",
+    gradient: "four"
   }
 ];
 
@@ -81,7 +82,7 @@ const AcademyMobileSwiper = () => {
   return (
     <DivWrapper>
       <SwiperContainer style={{ marginBottom: "10%" }}>
-        <h2 style={{ marginBottom: "2rem" }}>Unlock Your <span className="highlight">Cloud Native</span> Journey</h2>
+        <h2 style={{ marginBottom: "2rem" }}>Unlock Your Cloud Native Journey</h2>
         <Swiper
           autoplay={{
             delay: 2000,
