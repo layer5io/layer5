@@ -51,7 +51,7 @@ const PlanCard = ({ planData, isYearly, currency }) => {
 
                   <div className="price">
                     <span className="price-amount">
-                      <sup>{getCurrencySymbol(currency)}</sup>
+                      <sup><strong>{getCurrencySymbol(currency)}</strong></sup>
                       {isYearly
                         ? formatPrice(x.yearlyprice)
                         : formatPrice(x.monthlyprice)}

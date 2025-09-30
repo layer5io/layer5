@@ -143,7 +143,6 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
     }));
   };
 
-
   const getPlanLinkForAcademy = () => {
     if (!selectedAddon || selectedAddon.id !== "academy") {
       return { link: "#", name: "Subscribe" };
@@ -189,7 +188,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
 
     return {
       link: "#",
-      name: "Subscribe For"
+      name: "Subscribe"
     };
   };
 
@@ -390,6 +389,18 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                               label: (
                                 <Box sx={{ textAlign: "center", fontSize: "1.25rem", fontWeight: "bold" }}>
                                   <Box>{option.learners === "2500+" ? "2,500+" : option.learners}</Box>
+                                  {isYearly && (
+                                      <Box
+                                        sx={{
+                                          fontSize: {
+                                            xs: "0.75rem",
+                                            sm: "0.9rem",
+                                          }
+                                        }}
+                                      >
+                                        {formatSliderPrice(option.yearlyPerUser / 12, currency)}<br/>{targetSubAddon.unitLabelSingular}/month
+                                      </Box>
+                                    )}
                                   <Box
                                     sx={{
                                       color: "text.secondary",
@@ -399,19 +410,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                                         sm: "0.9rem",
                                       }
                                     }}>
-                                    {formatSliderPrice(isYearly ? option.yearlyPerUser : option.monthlyPerUser, currency)}<br />{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
-                                    {isYearly && (
-                                      <Box
-                                        sx={{
-                                          fontSize: {
-                                            xs: "0.7rem",
-                                            sm: "0.7rem",
-                                          }
-                                        }}
-                                      >
-                                        {formatSliderPrice(option.yearlyPerUser / 12, currency)}/{targetSubAddon.unitLabelSingular}/month
-                                      </Box>
-                                    )}
+                                    {formatSliderPrice(isYearly ? option.yearlyPerUser : option.monthlyPerUser, currency)}<br/>{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
                                   </Box>
                                 </Box>
                               ),
@@ -519,7 +518,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                           }
                           return formatPrice(0);
                         }
-    })()}/{isYearly ? "yearly" : "monthly"}
+                      })()}/{isYearly ? "yearly" : "monthly"}
                     </Typography>
                   </Box>
 
@@ -527,7 +526,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                     selectedSubAddOns[subAddOn.id] && subAddOn.id !== "academy-theory" && (
                       <Box key={subAddOn.id} sx={boxStyles.flexBetween}>
                         <Typography variant="body1" sx={typographyStyles.pricingItemLeft}>
-                          {subAddOn.name} × {subAddOn.pricing?.[quantityIndex]?.learners || 0}/{isYearly ? "yearly" : "monthly"}
+                          {subAddOn.name} × {subAddOn.pricing?.[quantityIndex]?.learners || 0}
                         </Typography>
                         <Typography variant="body1" sx={typographyStyles.pricingItemRight} fontWeight="500">
                           {(
