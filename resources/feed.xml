@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5 Resources]]></title><description><![CDATA[Expect more from your infrastructure. Cloud native, open source software for your cloud native infrastructure and applications. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidently run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 30 Sep 2025 04:40:51 GMT</lastBuildDate><item><title><![CDATA[Layer5 Academy vs Moocit]]></title><description><![CDATA[var _excluded = ["components"];
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5 Resources]]></title><description><![CDATA[Expect more from your infrastructure. Cloud native, open source software for your cloud native infrastructure and applications. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidently run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 30 Sep 2025 04:44:04 GMT</lastBuildDate><item><title><![CDATA[Layer5 Academy vs Moocit]]></title><description><![CDATA[var _excluded = ["components"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutProperties(e, t) { if (null == e) return {}; var o, r, i = _objectWithoutPropertiesLoose(e, t); if (Object.getOwnPropertySymbols) { var n = Object.getOwnPropertySymbols(e); for (r = 0; r < n.length; r++) o = n[r], -1 === t.indexOf(o) && {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]); } return i; }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
@@ -1433,44 +1433,7 @@ return function MDXContent(_ref) {
   }))));
 }
 ;
-MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/resources/meshery/an-introduction-to-meshery-webinar-on-demand</link><guid isPermaLink="false">https://layer5.io/resources/meshery/an-introduction-to-meshery-webinar-on-demand</guid><pubDate>Sun, 07 Nov 2021 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/2f4a78ada287ae5dcc2e75fad653f671/meshery-logo-light-text.svg" length="0" type="image/svg+xml"/><content:encoded></content:encoded></item><item><title><![CDATA[Service Mesh FAQs]]></title><description><![CDATA[var _excluded = ["components"];
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-function _objectWithoutProperties(e, t) { if (null == e) return {}; var o, r, i = _objectWithoutPropertiesLoose(e, t); if (Object.getOwnPropertySymbols) { var n = Object.getOwnPropertySymbols(e); for (r = 0; r < n.length; r++) o = n[r], -1 === t.indexOf(o) && {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]); } return i; }
-function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
-/* @jsxRuntime classic */
-/* @jsx mdx */
-
-var _frontmatter = {
-  "title": "Service Mesh FAQs",
-  "thumbnail": "../../../assets/images/service-mesh-icons/service-mesh.svg",
-  "darkthumbnail": "../../../assets/images/service-mesh-icons/service-mesh.svg",
-  "date": "2021-11-05 10:30:05 -0530",
-  "category": "FAQ",
-  "tags": ["Service Mesh", "FAQ"],
-  "type": "FAQ",
-  "featured": false,
-  "published": true,
-  "resource": true
-};
-var layoutProps = {
-  _frontmatter: _frontmatter
-};
-var MDXLayout = "wrapper";
-return function MDXContent(_ref) {
-  var components = _ref.components,
-    props = _objectWithoutProperties(_ref, _excluded);
-  return mdx(MDXLayout, _extends({}, layoutProps, props, {
-    components: components,
-    mdxType: "MDXLayout"
-  }), mdx(ResourcesWrapper, {
-    mdxType: "ResourcesWrapper"
-  }, mdx("div", null, mdx(FAQ, {
-    category: ["Service Mesh"],
-    mdxType: "FAQ"
-  }))), ";");
-}
-;
-MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/resources/faq/service-mesh-faqs</link><guid isPermaLink="false">https://layer5.io/resources/faq/service-mesh-faqs</guid><pubDate>Fri, 05 Nov 2021 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/cb310234b6631abcabb632a85974a3dd/service-mesh.svg" length="0" type="image/svg+xml"/><content:encoded></content:encoded></item><item><title><![CDATA[Meshery FAQs]]></title><description><![CDATA[var _excluded = ["components"];
+MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/resources/meshery/an-introduction-to-meshery-webinar-on-demand</link><guid isPermaLink="false">https://layer5.io/resources/meshery/an-introduction-to-meshery-webinar-on-demand</guid><pubDate>Sun, 07 Nov 2021 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/2f4a78ada287ae5dcc2e75fad653f671/meshery-logo-light-text.svg" length="0" type="image/svg+xml"/><content:encoded></content:encoded></item><item><title><![CDATA[Meshery FAQs]]></title><description><![CDATA[var _excluded = ["components"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutProperties(e, t) { if (null == e) return {}; var o, r, i = _objectWithoutPropertiesLoose(e, t); if (Object.getOwnPropertySymbols) { var n = Object.getOwnPropertySymbols(e); for (r = 0; r < n.length; r++) o = n[r], -1 === t.indexOf(o) && {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]); } return i; }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
@@ -1508,4 +1471,41 @@ return function MDXContent(_ref) {
   }))), ";");
 }
 ;
-MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/resources/faq/meshery-faqs</link><guid isPermaLink="false">https://layer5.io/resources/faq/meshery-faqs</guid><pubDate>Wed, 03 Nov 2021 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/2db8d89cdff9c95760d3235b380b39ea/meshery-logo-dark-text.webp" length="0" type="image/webp"/><content:encoded></content:encoded></item></channel></rss>
+MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/resources/faq/meshery-faqs</link><guid isPermaLink="false">https://layer5.io/resources/faq/meshery-faqs</guid><pubDate>Wed, 03 Nov 2021 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/2db8d89cdff9c95760d3235b380b39ea/meshery-logo-dark-text.webp" length="0" type="image/webp"/><content:encoded></content:encoded></item><item><title><![CDATA[Layer5 FAQs]]></title><description><![CDATA[var _excluded = ["components"];
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _objectWithoutProperties(e, t) { if (null == e) return {}; var o, r, i = _objectWithoutPropertiesLoose(e, t); if (Object.getOwnPropertySymbols) { var n = Object.getOwnPropertySymbols(e); for (r = 0; r < n.length; r++) o = n[r], -1 === t.indexOf(o) && {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]); } return i; }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
+/* @jsxRuntime classic */
+/* @jsx mdx */
+
+var _frontmatter = {
+  "title": "Layer5 FAQs",
+  "thumbnail": "../../../assets/images/layer5/layer5-only/png/layer5-gradient.webp",
+  "darkthumbnail": "../../../assets/images/layer5/layer5-only/png/layer5-gradient.webp",
+  "date": "2021-11-02 10:30:05 -0530",
+  "category": "FAQ",
+  "tags": ["Layer5", "FAQ"],
+  "type": "FAQ",
+  "featured": false,
+  "published": true,
+  "resource": true
+};
+var layoutProps = {
+  _frontmatter: _frontmatter
+};
+var MDXLayout = "wrapper";
+return function MDXContent(_ref) {
+  var components = _ref.components,
+    props = _objectWithoutProperties(_ref, _excluded);
+  return mdx(MDXLayout, _extends({}, layoutProps, props, {
+    components: components,
+    mdxType: "MDXLayout"
+  }), mdx(ResourcesWrapper, {
+    mdxType: "ResourcesWrapper"
+  }, mdx("div", null, mdx(FAQ, {
+    category: ["Layer5"],
+    mdxType: "FAQ"
+  }))));
+}
+;
+MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/resources/faq/layer5-faqs</link><guid isPermaLink="false">https://layer5.io/resources/faq/layer5-faqs</guid><pubDate>Tue, 02 Nov 2021 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/4817b5f110f099c46c7d31dfcab76aeb/layer5-gradient.webp" length="0" type="image/webp"/><content:encoded></content:encoded></item></channel></rss>
