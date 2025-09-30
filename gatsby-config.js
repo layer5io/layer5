@@ -473,6 +473,16 @@ module.exports = {
         },
       },
     },
+    "gatsby-plugin-postcss",
+    {
+      resolve: "gatsby-plugin-purgecss",
+      options: {
+        printRejected: true,
+        develop: true,
+        tailwind: false,
+        ignore: ["prismjs/", "some-other-file.css"],
+      },
+    },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
