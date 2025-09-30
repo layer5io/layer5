@@ -2,13 +2,17 @@ import React from "react";
 import { Container, Row, Col } from "../../../../reusecore/Layout";
 import PageHeader from "../../../../reusecore/PageHeader";
 import TermsWrapper from "../terms.style";
+import TOC from "../../../../components/legal-navigation/index";
+import TocPagination from "../../../../components/legal-navigation/TocPagination";
 
 const Conduct = () => {
   return (
     <TermsWrapper>
-      <PageHeader title="Terms of Service"
-        path="Terms > Terms of Service"
-      />
+      <div className="page-header-section">
+        <h1>Terms of Service</h1>
+      </div>
+      <TOC/>
+      <div className="terms-content">
       <Container>
         <Row>
           <Col $xs={12} $sm={12} $lg={12}>
@@ -149,6 +153,8 @@ Layer5 does not knowingly collect, either online or offline, personal informatio
           </Col>
         </Row>
       </Container>
+      </div>
+      <TocPagination/>
     </TermsWrapper>
   );
 };
