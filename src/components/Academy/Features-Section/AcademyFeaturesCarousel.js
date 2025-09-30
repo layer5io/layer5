@@ -3,9 +3,9 @@ import styled from "styled-components";
 import PopOutCard from "../../PopOutCardCarousel";
 
 import Levels from "./academy-catalog.gif";
-import Challenges from "./challenges.png";
-import Badges from "./badges.png";
-import Track from "./track.png";
+import Challenges from "./challenges.webp";
+import Badges from "./badges.webp";
+import Track from "./track.webp";
 
 const CONTENT = [
   {
