@@ -38,28 +38,6 @@ const data = {
       ],
     },
     {
-      question: "Where is Layer5 Cloud hosted; where is my data stored?",
-      category: "Layer5 Cloud",
-      subcategory: "Privacy",
-      answer: [
-        "Layer5 Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at hello@layer5.io",
-      ],
-      link: "https://layer5.io/company/legal",
-      linktext: "See Layer5 Trust Center"
-    },
-    {
-      question: "Is it possible to migrate from managed Layer5 Cloud to self-hosted Layer5 Cloud on-premises?",
-      category: "Layer5 Cloud",
-      subcategory: "Deployment",
-      answer: [
-        "Yes, Layer5 Cloud and Kanvas can be deployed on-premises in minutes using Helm charts.",
-        "A one-time export of your data can be requested as you transition from managed Layer5 Cloud to self-hosted Layer5 Cloud.",
-        "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
-      ],
-      link: "https://docs.layer5.io/cloud/self-hosted/",
-      "linktext": "Self-hosting documentation",
-    },
-    {
       question: `What is the difference between Kanvas and the Cloud Native Playground?`,
       category: "Meshery",
       subcategory: "Playground",
@@ -103,13 +81,59 @@ const data = {
         // "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
       ],
     },
-     //
+    
+    //
     // LAYER5
     //
 
+    // LAYER5 CLOUD
+    {
+      question: "Where is Layer5 Cloud hosted; where is my data stored?",
+      category: "Layer5 Cloud",
+      subcategory: "Privacy",
+      answer: [
+        "Layer5 Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at privacy@layer5.io",
+      ],
+      link: "https://layer5.io/company/legal",
+      linktext: "See Layer5 Trust Center"
+    },
+    {
+      question: "Is it possible to migrate from managed Layer5 Cloud to self-hosted Layer5 Cloud on-premises?",
+      category: "Layer5 Cloud",
+      subcategory: "Deployment",
+      answer: [
+        "Yes, Layer5 Cloud and Kanvas can be deployed on-premises in minutes using Helm charts.",
+        "A one-time export of your data can be requested as you transition from managed Layer5 Cloud to self-hosted Layer5 Cloud.",
+        "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
+      ],
+      link: "https://docs.layer5.io/cloud/self-hosted/",
+      "linktext": "Self-hosting documentation",
+    },
+    {
+      question: "What data is collection about me, how is it used and how long is it retained?",
+      category: "Layer5 Cloud",
+      subcategory: "Privacy",
+      answer: [
+        "Layer5 Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at hello@layer5.io",
+      ],
+      link: "https://layer5.io/company/legal/sub-processors",
+      linktext: "Open Sub-processors policy in Trust Center"
+    },
+    {
+      question: "Is it possible to migrate from managed Layer5 Cloud to self-hosted Layer5 Cloud on-premises?",
+      category: "Layer5 Cloud",
+      subcategory: "Deployment",
+      answer: [
+        "Yes, Layer5 Cloud can be deployed on-premises in minutes using Helm charts.",
+        "A one-time export of your data can be requested as you transition from managed Layer5 Cloud to self-hosted Layer5 Cloud.",
+      ],
+    },    
+
+    // LAYER% COMMUNITY
     {
       question: "Are Layer5's solutions open source?",
       category: "Layer5",
+      subcategory: "Community",
       answer: [
         "Yes, all of Layer5's projects are licensed under Apache v2.",
         "Layer5 also offers extensions to the Meshery project in which Enterprise-grade functionality is commercially offered and supported.",
@@ -118,6 +142,7 @@ const data = {
     {
       question: "As a member of one of Layer5's GitHub organizations, What is expected of me?",
       category: "Layer5",
+      subcategory: "Community",
       answer: [
         "As a member of one of Layer5's GitHub organizations, your user account is entitled with triage level permissions across all repositories in the org. You are expected to engage where the topic strikes your interest, triaging (assigning, clarifying, labeling, qualifying) any issue you feel comfortable doing so. You are encouraged to review any open pull request and offer feedback to or ask questions to the author.",
         "Layer5 has a number of GitHub organziations in which it's projects are advanced. See the repository overview below."
@@ -128,6 +153,7 @@ const data = {
     {
       question: "As a community member, what can I expect from Layer5? What does Layer5 expect of me?",
       category: "Layer5",
+      subcategory: "Community",
       answer: ["The Layer5 community expects you to get as much or more out of your time than you give to the projects. We expect earnest effort from its contributors. What “earnest effort” means is different for each community member as all have different circumstances. Suffice to say, the more you put into your efforts, the greater your reward will be. Most community contributors stay with the project for many months, if not indefinitely. Length of involvement is entirely up to the individual community member. You can expect to be challenged, to be assisted, to learn, to be recognized for your effort and to have your contributions appreciated.",
         "As a member of the Layer5 community, you are expected to be a good representative of Layer5's cultures and values of helping fellow members and paying it forward as we all learn together. You are expected to offer your ideas and skills to help advance our community and its projects. You are expected to share your experiences with others, to be curious, to be helpful, to ask questions, to challenge others and to be challenged yourself, to spread the word about what we collectively do here, to invite new members, to learn, to share, to make friends, to build a network, to write blog posts, to tweet, to become maintainers, to become MeshMates, to earn an internship, to get hired by Layer5 - - any and all of these things.",
       ],
@@ -137,6 +163,7 @@ const data = {
     {
       question: "I see works of other contributors being highlighted. Will my contributions be highlighted, too?",
       category: "Layer5",
+      subcategory: "Community",
       answer: ["We might not get to everyone, but we try to elevate the works of all of our contributors. All of our community members are proud of their work and so are we! We want their work and names to be recognized across our collective technology industry. Make sure that you follow and engage with the Twitter, YouTube, and LinkedIn accounts."
       ],
       link: "https://x.com/layer5",
@@ -145,27 +172,13 @@ const data = {
     {
       question: "I am not a coder. Can I contribute, too?",
       category: "Layer5",
+      subcategory: "Community",
       answer: ["Yes! Some community members join to code open source projects, others jump in to put those projects to use, some are here to help cultivate and steward our community, while others are here just to hangout and absorb. All members are most welcome. Make sure that you introduce yourself in the Layer5 Slack and let other community members get acquainted with you and vice-versa."
       ],
       link: "https://layer5.io/blog/open-source/ways-to-contribute-at-layer5",
       linktext: "Ways to Contribute at Layer5",
     },
-    {
-      question: "Where is Layer5 Cloud hosted; where is my data stored?",
-      category: "Layer5 Cloud",
-      answer: [
-        "Layer5 Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at hello@layer5.io",
-      ],
-    },
-    {
-      question: "Is it possible to migrate from managed Layer5 Cloud to self-hosted Layer5 Cloud on-premises?",
-      category: "Layer5 Cloud",
-      answer: [
-        "Yes, Layer5 Cloud can be deployed on-premises in minutes using Helm charts.",
-        "A one-time export of your data can be requested as you transition from managed Layer5 Cloud to self-hosted Layer5 Cloud.",
-      ],
-    },    
-
+    
     //
     // INTEGRATIONS
     //
@@ -527,6 +540,8 @@ const data = {
         "Nearly perpetually, yes.",
         "In support of individuals making an impact in our open source projects, we hire individuals directly from our community."
       ],
+      link: "/careers",
+      linktext: "See open roles"
     },
     // {
     //   question: "Is Layer5 hiring?",
