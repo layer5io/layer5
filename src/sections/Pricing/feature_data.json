@@ -1137,11 +1137,107 @@
   },
   {
     "theme": "",
-    "categoryOrder": "add-on",
+    "categoryOrder": "11",
     "category": "Academy",
     "functionOrder": "1101",
-    "function": "Academy",
-    "feature": "A comprehensive learning management system for creators and instructors on how to build, manage, and extend educational content like learning paths, challenges, and certifications with an inclusive, collaborative, hands-on learning environment for students.",
+    "function": "Basic Academy Portal",
+    "feature": "Access to the public Academy platform with free learning paths, challenges, and certifications.",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "11",
+    "category": "Academy",
+    "functionOrder": "1102",
+    "function": "Personal Learning Tracking",
+    "feature": "Track learning progress across courses and view achievements earned.",
+    "subscription_tier": "Free",
+    "comparison_tiers": {
+      "free": "x",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "11",
+    "category": "Academy",
+    "functionOrder": "1103",
+    "function": "Instructor Console",
+    "feature": "Instructor console with detailed analytics and reporting on student progress, course performance, and engagement metrics.",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "11",
+    "category": "Academy",
+    "functionOrder": "1104",
+    "function": "Create Learning Contents",
+    "feature": "Content authoring tools for educational materials including learning paths, challenges, and certifications with interactive content and assessments.",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "11",
+    "category": "Academy",
+    "functionOrder": "1105",
+    "function": "Learner Management",
+    "feature": "Administrative control over all learners in your organization. Enroll users in specific courses and track their progress.",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "11",
+    "category": "Academy",
+    "functionOrder": "1106",
+    "function": "Organization Private Content",
+    "feature": "Internal content repository separate from public Academy. Control access within your organization, create proprietary training materials, and share sensitive or company-specific knowledge.",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "docs": ""
+  },
+  {
+    "theme": "",
+    "categoryOrder": "11",
+    "category": "Academy",
+    "functionOrder": "1107",
+    "function": "White-label Customization",
+    "feature": "Customize the Academy platform with your organization's branding, logos, and visual identity.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
