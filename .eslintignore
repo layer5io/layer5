@@ -17,3 +17,4 @@ README.md
 package.json
 package-lock.json
 static/
+commitlint.config.js
