@@ -153,8 +153,8 @@ export const boxStyles = {
     display: "flex",
     justifyContent: "center",
     flexWrap: "wrap",
-    gap: 1,
-    mt: 2
+    gap: 0,
+    mt: 0
   },
   sliderMarks: {
     textAlign: "center",
