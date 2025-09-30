@@ -6,22 +6,6 @@ const Banner1SectionWrapper = styled.section`
     position: relative; /* Add position for better layout control */
     width: 100%; /* Add explicit width */
     padding: 7rem 0; /* Add explicit padding to maintain consistent spacing */
-    @media only screen and (max-width: 767px) {
-        min-height: 320px;
-        padding: 1.2rem 0 1.5rem 0;
-        .video-wrapper {
-            width: 100%;
-            padding-bottom: 56.25%; /* Maintain 16:9 aspect ratio */
-        }
-    }
-    @media only screen and (max-width: 480px) {
-        min-height: 180px;
-        padding: 0.7rem 0 1rem 0;
-        .video-wrapper {
-            width: 100%;
-            padding-bottom: 60%;
-        }
-    }
     
     p {
         font-size: 21px;
