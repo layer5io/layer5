@@ -161,12 +161,8 @@ const SpacingCode = () => {
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
                             <CopyValue copyValue={spacing.token} />
                           </StyledTableCell>
-                          <StyledTableCell>
-                            <CopyValue copyValue={spacing.px} />
-                          </StyledTableCell>
-                          <StyledTableCell>
-                            <CopyValue copyValue={spacing.rem} />
-                          </StyledTableCell>
+                          <StyledTableCell> {spacing.px} </StyledTableCell>
+                          <StyledTableCell> {spacing.rem} </StyledTableCell>
                           <StyledTableCell align="center">
                             <SpacingVisualBox size={spacing.size} />
                           </StyledTableCell>
