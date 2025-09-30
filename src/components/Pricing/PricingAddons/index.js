@@ -328,18 +328,6 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                       </Box>
 
                       <Box sx={boxStyles.learnerSection}>
-                        <Typography variant="h6" sx={typographyStyles.learnerCount}>
-                          {(() => {
-                            // Determine which sub-addon to show learner count for
-                            let targetSubAddon = null;
-                            if (selectedSubAddOns["academy-practical"]) {
-                              targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-practical");
-                            } else {
-                              targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory");
-                            }
-                            return targetSubAddon?.pricing?.[quantityIndex]?.learners || 0;
-                          })()} Learners
-                        </Typography>
                         <Slider
                           value={quantityIndex}
                           onChange={(event, newValue) => setQuantityIndex(newValue)}
@@ -429,9 +417,6 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                   {selectedAddon !== null && selectedAddon.id !== "academy" && (
                     <>
                       <Box sx={boxStyles.unitQuantitySection}>
-                        <Typography variant="h6" sx={boxStyles.unitQuantityTitle}>
-                          {selectedAddon.pricing?.[quantityIndex]?.units || 0} {selectedAddon?.unitLabel}
-                        </Typography>
                         <Slider
                           value={quantityIndex}
                           onChange={(event, newValue) => setQuantityIndex(newValue)}
