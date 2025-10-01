@@ -345,7 +345,8 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                             if (targetSubAddon?.pricing && targetSubAddon.pricing[value]) {
                               const option = targetSubAddon.pricing[value];
                               const pricePerUser = isYearly ? option.yearlyPerUser : option.monthlyPerUser;
-                              const totalPrice = pricePerUser * option.learners;
+                              const multiplier = selectedSubAddOns["academy-practical"] ? 2 : 1;
+                              const totalPrice = pricePerUser * option.learners * multiplier;
                               const period = isYearly ? "/year" : "/month";
                               return `${option.learners} learners - ${formatPrice(totalPrice)}${period}`;
                             }
@@ -386,7 +387,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                                           }
                                         }}
                                       >
-                                        {formatSliderPrice(option.yearlyPerUser / 12, currency)}<br/>{targetSubAddon.unitLabelSingular}/month
+                                        {formatSliderPrice((option.yearlyPerUser / 12) * (selectedSubAddOns["academy-practical"] ? 2 : 1), currency)}<br/>{targetSubAddon.unitLabelSingular}/month
                                       </Box>
                                     )}
                                   <Box
@@ -398,7 +399,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                                         sm: "0.9rem",
                                       }
                                     }}>
-                                    {formatSliderPrice(isYearly ? option.yearlyPerUser : option.monthlyPerUser, currency)}<br/>{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
+                                    {formatSliderPrice((isYearly ? option.yearlyPerUser : option.monthlyPerUser) * (selectedSubAddOns["academy-practical"] ? 2 : 1), currency)}<br/>{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
                                   </Box>
                                 </Box>
                               ),
