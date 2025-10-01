@@ -6,14 +6,14 @@ darkthumbnail: ./hacktoberfest-layer5-first-pr.webp
 date: 2025-10-03
 eurl: https://youtube.com/live/1-oaEy0Pm5I?feature=share
 type: Event
-speakers: [Ritesh Karankal, Aabid Sofi, Yash Sharma, Eti Ijeoma, Darshan Narasimha]
 published: true
 upcoming: true
 register: true
 ---
 
 import { Link } from "gatsby";
-import hacktoberfestBadge from "./layer5-hacktoberfest2025-badge.png";
+import { Grid2 } from "@sistent/sistent";
+import hacktoberfest2025 from "./layer5-hacktoberfest2025-badge.png";
 import hacktoberfestFirstPR from "./hacktoberfest-layer5-first-pr.webp";
 import hacktoberfestOpenArms from "./hacktoberfest-layer5-open-arms.webp";
 import hacktoberfestTheme from "./hacktoberfest-meshery-theme.webp";
@@ -63,61 +63,83 @@ import hacktoberfestTheme from "./hacktoberfest-meshery-theme.webp";
   <Link to="/community/handbook">Community Handbook</Link>.
 </p>
 
-<div
-  style={{
-    display: "flex",
-    alignItems: "center",
-    flexWrap: "wrap",
-    gap: "30px",
-    margin: "30px 0"
-  }}
->
-  <div style={{ flex: "1 1 300px", minWidth: "250px" }}>
-    <h3 style={{ marginTop: "0", marginBottom: "10px" }}>Earn a Badge</h3>
-    <p style={{ margin: "0" }}>
-      Earn a Hacktoberfest Contributor badge by contributing to Layer5 projects
-      during this Hacktoberfest.
-    </p>
-  </div>
-  <img
-    src={hacktoberfestBadge}
-    style={{ width: "200px", maxWidth: "100%", height: "auto", flexShrink: "0" }}
-    alt="Hacktoberfest Badge"
-  />
-</div>
-
-<h3 style={{ marginBottom: "10px" }}>Event Details</h3>
-
-<ul>
-  <li>
-    <strong>DATE: </strong>October 3rd, 2025
-  </li>
-  <li>
-    <strong>TIME: </strong> 14:00 UTC (9AM CDT | 4PM CEST | 3PM WAT | 7:30PM IST)
-  </li>
-  <li>
-    <strong>LIVESTREAM:</strong>{" "}
-    <a href="https://youtube.com/live/1-oaEy0Pm5I?feature=share">Livestream</a>
-  </li>
-</ul>
-
-<p>Resources:</p>
-
-<ul>
-  <li>
-    <Link to="/blog/open-source/ways-to-contribute-at-layer5">
-      Code and Non-Code Contributing at Layer5
-    </Link>
-  </li>
-  <li>
-    <a href="https://github.com/issues?q=is%3Aopen%20is%3Aissue%20archived%3Afalse%20(org%3Alayer5io%20OR%20org%3Ameshery%20OR%20org%3Aservice-mesh-performance%20OR%20org%3Aservice-mesh-patterns%20OR%3Alayer5labs%20OR%3Ameshery-extensions)%20label%3Ahacktoberfest">
-      Issues for Hacktoberfest
-    </a>
-  </li>
-</ul>
+<Grid2 container spacing={2} style={{ margin: "30px 0" }}>
+  <Grid2 size={{ xs: 12, md: 6 }}>
+    <div style={{ maxWidth: "fit-content" }}>
+      <h3 style={{ marginBottom: "10px" }}>Event Details</h3>
+      <ul style={{ margin: "0", paddingBottom: "0" }}>
+        <li>
+          <strong>DATE: </strong>October 3rd, 2025
+        </li>
+        <li>
+          <strong>TIME: </strong> 14:00 UTC (9AM CDT | 4PM CEST | 3PM WAT | 7:30PM IST)
+        </li>
+        <li>
+          <strong>LIVESTREAM:</strong>{" "}
+          <a href="https://youtube.com/live/1-oaEy0Pm5I?feature=share">Livestream</a>
+        </li>
+      </ul>
+      <p style={{marginTop:"25px"}}>Resources:</p>
+      <ul>
+        <li>
+          <Link to="/blog/open-source/ways-to-contribute-at-layer5">
+            Code and Non-Code Contributing at Layer5
+          </Link>
+        </li>
+        <li>
+          <a href="https://github.com/issues?q=is%3Aopen%20is%3Aissue%20archived%3Afalse%20(org%3Alayer5io%20OR%20org%3Ameshery%20OR%20org%3Aservice-mesh-performance%20OR%20org%3Aservice-mesh-patterns%20OR%20org%3Alayer5labs%20OR%20org%3Ameshery-extensions)%20label%3Ahacktoberfest">
+            Issues for Hacktoberfest
+          </a>
+        </li>
+      </ul>
+       <p style={{marginTop:"25px"}}>Speakers:</p>
+      <ul>
+        <li>
+          <Link to="/community/members/ritesh-karankal">
+            Ritesh Karankal
+          </Link>
+        </li>
+        <li>
+          <Link to="/community/members/aabid-sofi">
+            Aabid Sofi
+          </Link>
+        </li>
+         <li>
+          <Link to="/community/members/yash-sharma">
+            Yash Sharma
+          </Link>
+        </li>
+        <li>
+          <Link to="/community/members/eti-ijeoma">
+            Eti Ijeoma
+          </Link>
+        </li>
+         <li>
+          <Link to="/community/members/darshan-narasimha">
+           Darshan Narasimha
+          </Link>
+        </li>
+      </ul>
+    </div>
+  </Grid2>
+  <Grid2 size={{ xs: 12, md: 6 }}>
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <h3 style={{ marginTop: "0", marginBottom: "10px" }}>Earn a Badge</h3>
+      <p style={{ margin: "0 0 16px 0", textAlign: "center" }}>
+        Earn a Hacktoberfest Contributor badge by contributing to Layer5 projects
+        during this Hacktoberfest.
+      </p>
+      <img
+        src={hacktoberfest2025}
+        style={{ width: "200px", maxWidth: "100%", height: "auto", display: "block", margin: "0 auto" }}
+        alt="Hacktoberfest Badge"
+      />
+    </div>
+  </Grid2>
+</Grid2>
 
 <img
   src={hacktoberfestTheme}
-  style={{ width: "100%", maxWidth: "100%", height: "auto" }}
+  style={{ width: "775px", maxWidth: "100%", height: "auto", display: "block", margin: "0 auto 30px auto" }}
   alt="Hacktoberfest Meshery Theme"
 />
