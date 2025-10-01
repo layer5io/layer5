@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PricingWrapper from "./pricing.style";
 import Comparison from "./comparison";
 import FAQ from "../General/Faq";
@@ -42,101 +42,58 @@ const getCustomToggleButtonStyle = (isActive, baseStyle) => ({
 });
 
 export const CurrencySelect = ({ currency, setCurrency }) => {
-  const [open, setOpen] = useState(false);
-
-  // Lock both <html> and <body> while the dropdown is open
-  useEffect(() => {
-    if (!open) return;
-    const prevBody = document.body.style.overflow;
-    const prevHtml = document.documentElement.style.overflow;
-    document.body.style.overflow = "hidden";
-    document.documentElement.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = prevBody;
-      document.documentElement.style.overflow = prevHtml;
-    };
-  }, [open]);
-
-  const handleClose = () => setOpen(false);
-  const handleOpen = () => setOpen(true);
-
   return (
-    <>
-      {/* Transparent overlay: blocks the page & closes on outside click */}
-      {open && (
-        <Box
-          onMouseDown={handleClose}
-          onTouchStart={handleClose}
-          sx={{
-            position: "fixed",
-            inset: 0,
-            zIndex: 1299, // below MUI Menu (paper is set to 1301)
-          }}
-        />
-      )}
-
-      <FormControl
-        variant="outlined"
-        size="small"
-        sx={{
-          minWidth: 150,
-          "& .MuiInputLabel-root": {
-            color: "white",
-            "&.Mui-focused": { color: "#00B39F" },
+    <FormControl
+      variant="outlined"
+      size="small"
+      sx={{
+        minWidth: 150,
+        "& .MuiInputLabel-root": {
+          color: "white",
+          "&.Mui-focused": { color: "#00B39F" },
+        },
+        "& .MuiOutlinedInput-root": {
+          color: "white",
+          "& .MuiSelect-icon": { color: "white" },
+          "& .MuiOutlinedInput-notchedOutline": { borderColor: "white" },
+          "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#00B39F",
           },
-          "& .MuiOutlinedInput-root": {
-            color: "white",
-            "& .MuiSelect-icon": { color: "white" },
-            "& .MuiOutlinedInput-notchedOutline": { borderColor: "white" },
-            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#00B39F",
-            },
+        },
+        "&:hover": {
+          "& .MuiInputLabel-root": { color: "#00B39F" },
+          "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#00B39F",
+            borderWidth: "2px",
           },
-          "&:hover": {
-            "& .MuiInputLabel-root": { color: "#00B39F" },
-            "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#00B39F",
-              borderWidth: "2px",
-            },
-          },
+        },
+      }}
+    >
+      <InputLabel id="currency-selector-label">Currency</InputLabel>
+      <Select
+        labelId="currency-selector-label"
+        value={currency}
+        onChange={(e) => {
+          setCurrency(e.target.value);
         }}
+        label="Currency"
+        renderValue={(value) => (
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1, color: "#fff" }}>
+            <Typography variant="body1">{Currencies[value]?.symbol}</Typography>
+            <Typography variant="body2">{Currencies[value]?.name}</Typography>
+          </Box>
+        )}
       >
-        <InputLabel id="currency-selector-label">Currency</InputLabel>
-        <Select
-          labelId="currency-selector-label"
-          value={currency}
-          label="Currency"
-          open={open}
-          onOpen={handleOpen}
-          onClose={handleClose}
-          onChange={(e) => {
-            setCurrency(e.target.value);
-            handleClose();
-          }}
-          MenuProps={{
-            disableScrollLock: false,
-            keepMounted: true,
-            PaperProps: { sx: { zIndex: 1301 } }, // ensure menu is above overlay
-            ModalProps: { keepMounted: true, disableScrollLock: false },
-          }}
-          renderValue={(value) => (
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1, color: "#fff" }}>
-              <Typography variant="body1">{Currencies[value]?.symbol}</Typography>
-              <Typography variant="body2">{Currencies[value]?.name}</Typography>
+        {Object.entries(Currencies).map(([code, { symbol, name }]) => (
+          <MenuItem key={code} value={code}>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              <Typography variant="body1">{symbol}</Typography>
+              <Typography variant="body2">{name}</Typography>
             </Box>
-          )}
-        >
-          {Object.entries(Currencies).map(([code, { symbol, name }]) => (
-            <MenuItem key={code} value={code}>
-              <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                <Typography variant="body1">{symbol}</Typography>
-                <Typography variant="body2">{name}</Typography>
-              </Box>
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-    </>
+          </MenuItem>
+        ))}
+      </Select>
+    </FormControl>
   );
 };
 
