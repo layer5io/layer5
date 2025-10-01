@@ -130,7 +130,7 @@ const InternshipPage = ({ hide_heading }) => {
           <div>
             <ProgramsGrid sub_section={true} />
           </div>
-          <FAQ category={["internships"]} />
+          <FAQ category={["careers"]} />
           <div>
             <h1>Participating Partners</h1>
             <div className="grid">

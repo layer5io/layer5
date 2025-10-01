@@ -4,6 +4,7 @@ import { Row, Col, Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import Cone from "../../../assets/images/gitops/conelight.svg";
 import { ReactComponent as AcademyLogo } from "../../../assets/images/academy/academy.svg";
+
 const AcademyHeaderWrapper = styled.div`  
   .academy-platform.header {
     min-height: 40rem;
@@ -19,6 +20,7 @@ const AcademyHeaderWrapper = styled.div`
       flex-direction: column;
       justify-content: center;
     }
+    
     .header__title {
       color: ${(props) => props.theme.primaryColor};
       padding-right: 80px;
@@ -31,6 +33,7 @@ const AcademyHeaderWrapper = styled.div`
         background-clip: text;
       }
     }
+    
     .header__title_description {
       color: ${(props) => props.theme.tertiaryColor};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -39,12 +42,14 @@ const AcademyHeaderWrapper = styled.div`
       line-height: 2rem;
       margin-bottom: 30px;
     }
+    
     .header__button_section {
       display: flex;
       gap: 1.5rem;
       align-items: center;
       flex-wrap: wrap;
     }
+    
     .academy-visual {
       display: flex;
       justify-content: center;
@@ -52,6 +57,7 @@ const AcademyHeaderWrapper = styled.div`
       padding: 1rem 0 2.5rem 0;
       min-height: 500px;
     }
+    
     .cards-container {
       position: relative;
       width: 100%;
@@ -75,37 +81,51 @@ const AcademyHeaderWrapper = styled.div`
         }
       }
     }
+    
     .hero-image-container {
       height: 250px;
       width: 300px;
       position: relative;
-      display:flex;
+      display: flex;
       align-items: center;
       justify-content: center;
+    }
+    
+    .academy-logo {
+      position: absolute;
+      height: 180px;
+      width: 180px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      fill: white;
     }
 
     /* Mobile Styles */
     @media screen and (max-width: 768px) {
       padding: 2rem 0;
+      min-height: auto;
+      
       
       .header__content {
         text-align: center;
       }
       
       .header__title {
-        font-size: 2.5rem;
+        font-size: 2rem;
         text-align: center;
-        margin-bottom: 10px;
+        padding-right: 0;
+        margin-bottom: 1rem;
       }
       
       .header__title_description {
-        font-size: 1.25rem;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 1.5rem;
       }
       
       .header__button_section {
-        display: flex;
         justify-content: center;
         
         button {
@@ -113,37 +133,55 @@ const AcademyHeaderWrapper = styled.div`
           max-width: 260px;
         }
       }
+      
       .academy-visual {
         margin-top: 1.5rem;
-        min-height: 430px;
+        min-height: 300px;
       }
+      
       .cards-container {
         max-width: 360px;
         height: 420px;
       }
       
       .hero-image-container {
-        height: 200px;
-        width: 250px;
-        margin: 0 auto;
+        height: 180px;
+        width: 220px;
+        margin: 2rem auto;
       }
-
+      
+      .academy-logo {
+        height: 140px;
+        width: 140px;
+      }
     }
+
     /* Tablet Styles */
     @media screen and (min-width: 769px) and (max-width: 1024px) {
       padding: 3rem 0;
       
       .header__title {
-        font-size: 3.5rem;
+        font-size: 3rem;
+        padding-right: 40px;
       }
       
-      .header__subtitle {
-        font-size: 1.5rem;
+      .header__title_description {
+        font-size: 1.25rem;
       }
       
       .cards-container {
         max-width: 420px;
         height: 520px;
+      }
+      
+      .hero-image-container {
+        height: 220px;
+        width: 270px;
+      }
+      
+      .academy-logo {
+        height: 160px;
+        width: 160px;
       }
     }
   }
@@ -158,7 +196,7 @@ const Header = ({ isDark }) => {
             <Col className="col" $lg={7} $md={6}>
               <div className="header__content">
                 <h1 className="header__title">
-                  Learn Cloud Native, <br/><span className="highlight">the Modern Way</span>
+                  Learn Cloud Native, the Modern Way
                 </h1>
 
                 <p className="header__title_description">
@@ -182,7 +220,6 @@ const Header = ({ isDark }) => {
                 <img src={Cone} className="cone-image"/>
               </div>
             </Col>
-
           </Row>
         </Container>
       </div>

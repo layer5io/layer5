@@ -26,9 +26,11 @@ const StyledTableContainer = styled(TableContainer)(() => ({
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   "&:nth-child(odd)": {
     backgroundColor: theme.palette.background.default,
+    borderRadius: 0,
   },
   "&:nth-child(even)": {
     backgroundColor: theme.palette.background.secondary,
+    borderRadius: 0,
   },
 }));
 
@@ -37,7 +39,8 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   fontSize: "0.975rem",
   padding: "0.75rem",
   borderBottom: `1px solid ${theme.palette.divider}`,
-  borderRadius: "4px",
+  borderRadius: 0,
+
 }));
 
 const StyledHeaderCell = styled(StyledTableCell)(() => ({
