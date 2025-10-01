@@ -39,9 +39,10 @@ import {
   getToggleButtonStyle,
   getSliderStyle
 } from "./styles";
-import { formatAndConvertPrice, formatSliderPrice } from "../../../utils/currencies";
 
-export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterprisePlan }) => {
+import { formatAndConvertPrice } from "../../../utils/currencies";
+
+export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterprisePlan }) => {
   const [selectedAddon, setSelectedAddon] = useState(null);
   const [addonMenuOpen, setAddonMenuOpen] = useState(false);
   const quantity = 1;
@@ -421,8 +422,7 @@ user${enterpriseUsers > 1 ? "s" : ""}` : "";
                         </Box>
                       </Box>
 
-                      <Box sx={boxStyles.learnerSection}
-                      
+                      <Box sx={boxStyles.learnerSection}>
                         <Typography variant="h6" sx={typographyStyles.learnerCount}>
                           {(() => {
                             // Determine which sub-addon to show learner count for
@@ -435,7 +435,6 @@ user${enterpriseUsers > 1 ? "s" : ""}` : "";
                             return targetSubAddon?.pricing?.[quantityIndex]?.learners || 0;
                           })()}{" "} Learners
                         </Typography>
-                        
                         <Slider
                           value={quantityIndex}
                           onChange={(event, newValue) => {
@@ -466,8 +465,7 @@ user${enterpriseUsers > 1 ? "s" : ""}` : "";
                             if (targetSubAddon?.pricing && targetSubAddon.pricing[value]) {
                               const option = targetSubAddon.pricing[value];
                               const pricePerUser = isYearly ? option.yearlyPerUser : option.monthlyPerUser;
-                              const multiplier = selectedSubAddOns["academy-practical"] ? 2 : 1;
-                              const totalPrice = pricePerUser * option.learners * multiplier;
+                              const totalPrice = pricePerUser * option.learners;
                               const period = isYearly ? "/year" : "/month";
                               return `${option.learners} learners - ${formatPrice(totalPrice)}${period}`;
                             }
@@ -493,7 +491,7 @@ user${enterpriseUsers > 1 ? "s" : ""}` : "";
                             } else {
                               targetSubAddon = selectedAddon?.subAddOns?.find((sub) => sub.id === "academy-theory");
                             }
-                            
+
                             return (
                               targetSubAddon?.pricing?.map((option, index) => ({
                                 value: index,
@@ -511,35 +509,6 @@ user${enterpriseUsers > 1 ? "s" : ""}` : "";
                                       }}>
                                       {formatPrice(isYearly ? option.yearlyPerUser : option.monthlyPerUser)}<br />{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
                                     </Box>
-                                    
-                            return targetSubAddon?.pricing?.map((option, index) => ({
-                              value: index,
-                              label: (
-                                <Box sx={{ textAlign: "center", fontSize: "1.25rem", fontWeight: "bold" }}>
-                                  <Box>{option.learners === "2500+" ? "2,500+" : option.learners}</Box>
-                                  {isYearly && (
-                                      <Box
-                                        sx={{
-                                          fontSize: {
-                                            xs: "0.75rem",
-                                            sm: "0.9rem",
-                                          }
-                                        }}
-                                      >
-                                        {formatSliderPrice((option.yearlyPerUser / 12) * (selectedSubAddOns["academy-practical"] ? 2 : 1), currency)}<br/>{targetSubAddon.unitLabelSingular}/month
-                                      </Box>
-                                    )}
-                                  <Box
-                                    sx={{
-                                      color: "text.secondary",
-                                      mb: 1.5,
-                                      fontSize: {
-                                        xs: "0.75rem",
-                                        sm: "0.9rem",
-                                      }
-                                    }}>
-                                    {formatSliderPrice((isYearly ? option.yearlyPerUser : option.monthlyPerUser) * (selectedSubAddOns["academy-practical"] ? 2 : 1), currency)}<br/>{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
-                                    
                                   </Box>
                                 ),
                               })) || []
@@ -558,11 +527,9 @@ user${enterpriseUsers > 1 ? "s" : ""}` : "";
                   {selectedAddon !== null && selectedAddon.id !== "academy" && (
                     <>
                       <Box sx={boxStyles.unitQuantitySection}>
-                      
                         <Typography variant="h6" fontWeight="600" sx={boxStyles.unitQuantityTitle}>
                           {selectedAddon.pricing?.[quantityIndex]?.units || 0} {selectedAddon?.unitLabel}
                         </Typography>
-                        
                         <Slider
                           value={quantityIndex}
                           onChange={(event, newValue) => {
@@ -652,11 +619,7 @@ user${enterpriseUsers > 1 ? "s" : ""}` : "";
       } else {
                           return formatPrice((isYearly ? selectedAddon?.yearlyPrice : selectedAddon?.monthlyPrice) * quantity);
                         }
-
                       })()}
-                      
-                      })()}/{isYearly ? "yearly" : "monthly"}
-                      
                     </Typography>
                   </Box>
 
@@ -664,7 +627,7 @@ user${enterpriseUsers > 1 ? "s" : ""}` : "";
                     selectedSubAddOns[subAddOn.id] && subAddOn.id !== "academy-theory" && (
                       <Box key={subAddOn.id} sx={boxStyles.flexBetween}>
                         <Typography variant="body1" sx={typographyStyles.pricingItemLeft}>
-                          {subAddOn.name} × {subAddOn.pricing?.[quantityIndex]?.learners || 0}
+                          {subAddOn.name} × {subAddOn.pricing?.[quantityIndex]?.learners || 0}/{isYearly ? "yearly" : "monthly"}
                         </Typography>
                         <Typography variant="body1" sx={typographyStyles.pricingItemRight} fontWeight="500">
                           {(
@@ -735,4 +698,3 @@ user${enterpriseUsers > 1 ? "s" : ""}` : "";
     </SistentThemeProvider>
   );
 };
-
