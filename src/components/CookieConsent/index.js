@@ -8,7 +8,7 @@ import {
   Stack,
 } from "@mui/material";
 
-
+import { Link } from "gatsby";
 import Button from "../../reusecore/Button";
 import styled from "styled-components";
 
@@ -54,10 +54,11 @@ const CookieConsent = () => {
             <Typography variant="body2" >
                             We use cookies to enhance your browsing experience. By clicking
                             "Accept", you consent to our use of cookies. Read more in our{" "}
-              <a href="/company/legal/privacy" target="_blank" rel="noopener noreferrer">
+              <Link to="/company/legal/privacy" target="_self" rel="noopener noreferrer">
                                 Privacy Policy
-              </a>
-                            .
+              </Link> or visit our <Link to="/company/legal" target="_self" rel="noopener noreferrer">
+                                Trust Center
+              </Link>.
             </Typography>
 
             <Box display="flex" justifyContent="flex-end" gap={1}>
