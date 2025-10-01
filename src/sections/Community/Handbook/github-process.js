@@ -35,14 +35,15 @@ const SecurityVulnerabilitiesPage = () => {
             <h3>Organization Secrets</h3>
             <p>Layer5 has the following org-wide secrets available:</p>
 
-            <table>
-              <thead>
-                <tr>
-                  <th><b>Secret Name</b></th>
-                  <th><b>Description</b></th>
-                </tr>
-              </thead>
-              <tbody>
+            <div className="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th><b>Secret Name</b></th>
+                    <th><b>Description</b></th>
+                  </tr>
+                </thead>
+                <tbody>
                 <tr>
                   <td>CYPRESS_RECORD_KEY</td>
                   <td>Needed for recording the Cypress run in the Cypress Dashboard</td>
@@ -57,11 +58,11 @@ const SecurityVulnerabilitiesPage = () => {
                 </tr>
                 <tr>
                   <td>NETLIFY_AUTH_TOKEN</td>
-                  <td></td>
+                  <td>Netlify authentication token used for deployment.</td>
                 </tr>
                 <tr>
                   <td>NETLIFY_SITE_ID</td>
-                  <td></td>
+                  <td>Unique ID of the Netlify site to deploy to.</td>
                 </tr>
                 <tr>
                   <td>RELEASEDRAFTER_PAT</td>
@@ -73,7 +74,7 @@ const SecurityVulnerabilitiesPage = () => {
                 </tr>
                 <tr>
                   <td>SLACK_BOT_TOKEN</td>
-                  <td></td>
+                  <td>Authentication token for the Slack bot integration.</td>
                 </tr>
                 <tr>
                   <td>GITHUB_TOKEN</td>
@@ -121,6 +122,7 @@ const SecurityVulnerabilitiesPage = () => {
                 </tr>
               </tbody>
             </table>
+            </div>
 
             <h2>Layer5 Issue Labels Guide</h2>
             <p>
@@ -131,6 +133,7 @@ const SecurityVulnerabilitiesPage = () => {
             <p>
               Area labels specify which part of the project an issue or PR relates to—such as documentation, user interface, or continuous integration. Using area labels helps contributors with specific interests or expertise find and filter issues that are relevant to them, and helps project maintainers prioritize or assign tasks more efficiently. Assign an area label any time you create or triage an issue/PR that falls within a specific domain (docs, UI, CI, performance, etc.).
             </p>
+            <div className="table-container">
             <table>
               <thead>
                 <tr>
@@ -150,11 +153,13 @@ const SecurityVulnerabilitiesPage = () => {
                 <tr><td>area/helm</td><td>Helm charts issues</td><td>#5319e8</td></tr>
               </tbody>
             </table>
+            </div>
 
             <h3>Component Labels</h3>
             <p>
               Component labels indicate which software module or subsystem is affected by an issue. This ensures issues are routed to the right maintainers and allows more detailed filtering beyond the broader area labels. Attach a component label when your issue/PR impacts a specific module (e.g., a CLI tool, API, or pattern engine).
             </p>
+            <div className="table-container">
             <table>
               <thead>
                 <tr>
@@ -173,11 +178,13 @@ const SecurityVulnerabilitiesPage = () => {
                 <tr><td>component/meshery-perf</td><td>Meshery-perf related</td><td>#3a0488</td></tr>
               </tbody>
             </table>
+            </div>
 
             <h3>Programming Language Labels</h3>
             <p>
               Programming language labels highlight the primary language used in the issue or PR. This helps contributors looking for language-specific work, and aids in code review or help requests. Use a programming language label if the change, bug, or feature is specific to a particular language (e.g., a Go backend bug, a JavaScript UI enhancement).
             </p>
+            <div className="table-container">
             <table>
               <thead>
                 <tr>
@@ -192,11 +199,13 @@ const SecurityVulnerabilitiesPage = () => {
                 <tr><td>language/ruby</td><td>Ruby</td><td>#16e2e4</td></tr>
               </tbody>
             </table>
+            </div>
 
             <h3>PR (Pull Request) Labels</h3>
             <p>
               PR labels manage the state or special requirements of a pull request, like indicating it's a draft, dependent on others, or not yet ready for merging. Apply a PR label if your pull request isn't ready, should not be merged, updates dependencies, or is on hold.
             </p>
+            <div className="table-container">
             <table>
               <thead>
                 <tr>
@@ -212,11 +221,13 @@ const SecurityVulnerabilitiesPage = () => {
                 <tr><td>pr/on hold</td><td>PR/Issue on hold</td><td>#0366d8</td></tr>
               </tbody>
             </table>
+            </div>
 
             <h3>Issue Process &amp; Status Labels</h3>
             <p>
               These labels show the current status of an issue—such as blocked, duplicate, in need of a design, or if an action (like an invitation) should be triggered. Some are used by bots to automate reminders or mark stale issues. Apply these when the situation applies (e.g. "blocked" if work can't proceed, "design required" if more planning is needed).
             </p>
+            <div className="table-container">
             <table>
               <thead>
                 <tr>
@@ -237,11 +248,13 @@ const SecurityVulnerabilitiesPage = () => {
                 <tr><td>issue/willfix</td><td>Issue will be worked on ("stale" bot skips)</td><td>#eeeeee</td></tr>
               </tbody>
             </table>
+            </div>
 
             <h3>Kind Labels</h3>
             <p>
               Kind labels classify the general type of change or discussion: bug, feature, chore, enhancement, epic, question, or proposal. This improves searchability and helps teams organize their workflows. Use the kind label that best describes your issue or PR.
             </p>
+            <div className="table-container">
             <table>
               <thead>
                 <tr>
@@ -261,11 +274,13 @@ const SecurityVulnerabilitiesPage = () => {
                 <tr><td>kind/question</td><td>Explanation or further info requested</td><td>#088080</td></tr>
               </tbody>
             </table>
+            </div>
 
             <h3>Priority Labels</h3>
             <p>
               Priority labels help teams triage and allocate attention, making it clear which issues are urgent and which can wait. Always apply a priority label, adjusting as priorities shift or as issues are escalated or downgraded.
             </p>
+            <div className="table-container">
             <table>
               <thead>
                 <tr>
@@ -280,11 +295,13 @@ const SecurityVulnerabilitiesPage = () => {
                 <tr><td>priority/low</td><td>Lower priority, can wait</td><td>#a60205</td></tr>
               </tbody>
             </table>
+            </div>
 
             <h3>Service Mesh Labels</h3>
             <p>
               Service mesh labels point out which mesh technology or ecosystem the issue pertains to. This is vital for projects supporting multiple meshes, enabling modular attention and expertise. Use these when your change or report is specific to one mesh (like Istio or Linkerd).
             </p>
+            <div className="table-container">
             <table>
               <thead>
                 <tr>
@@ -306,11 +323,13 @@ const SecurityVulnerabilitiesPage = () => {
                 <tr><td>service-mesh/tanzu</td><td>Tanzu</td><td>#57b6cc</td></tr>
               </tbody>
             </table>
+            </div>
 
             <h3>Help &amp; Onboarding Labels</h3>
             <p>
               Help labels signal issues where some support is needed, or which are especially suitable for newcomers. These labels foster open source engagement and make onboarding easier for new contributors. Apply these to issues where you'd appreciate community help (<code>help wanted</code>) or for issues that are clearly documented, small in scope, and ideal for first-timers (<code>good first issue</code>).
             </p>
+            <div className="table-container">
             <table>
               <thead>
                 <tr>
@@ -324,6 +343,7 @@ const SecurityVulnerabilitiesPage = () => {
                 <tr><td>good first issue</td><td>Good for new contributors</td><td>#7057ff</td></tr>
               </tbody>
             </table>
+            </div>
 
             <h3>Best Practices &amp; Example</h3>
             <ul>
