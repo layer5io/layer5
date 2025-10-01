@@ -8,7 +8,7 @@ import {
   Stack,
 } from "@mui/material";
 
-import {Link} from "gatsby";
+import { Link } from "gatsby";
 import Button from "../../reusecore/Button";
 import styled from "styled-components";
 
