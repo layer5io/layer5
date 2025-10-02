@@ -38,8 +38,7 @@ import Alex from "../../sections/Pricing/reviews/alex-hokanson.jpeg";
 import TeaserModal from "../../components/TeaserModal";
 import GuyM from "./images/guym.jpg";
 import Abdechakour from "../../sections/Pricing/reviews/abdechakour-h.jpeg";
-import CornerPopup from "../../components/Corner-popup";
-import CornerPopupImage from "../../assets/images/AWS-Diagram/aws.svg";
+import KanvasCornerPopup from "./kanvas-corner-popup";
 
 
 const Kanvas = (props) => {
@@ -47,7 +46,7 @@ const Kanvas = (props) => {
   return (
     <KanvasWrapper>
       <div>
-        <CornerPopup storageKey="kanvasShowPopup" image={CornerPopupImage} link="https://kanvas.new/" text="Access Kanvas"/>
+        <KanvasCornerPopup />
         <Container>
           <KanvasBanner/>
           <div className="mobile-modes">

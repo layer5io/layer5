@@ -3,7 +3,7 @@ import Button from "../../reusecore/Button";
 import { ReactComponent as CloseIcon } from "./closeIcon.svg";
 import CornerPopupWrapper from "./popup.style";
 
-const CornerPopup = ({ storageKey = "showPopup", image, link, text }) => {
+const CornerPopup = ({ storageKey = "showPopup", link, text, content }) => {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const CornerPopup = ({ storageKey = "showPopup", image, link, text }) => {
               <CloseIcon />
             </div>
             <a href={link}>
-              <img alt="popup image" className="popup-image" src={image} />
+              {content}
             </a>
             <Button $primary className="explore-playground-button" title={text} $url={link} $external={true}/>
           </div>
