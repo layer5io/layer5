@@ -95,3 +95,6 @@ default.profraw
 
 # Temporary files
 spreadsheet.csv
+
+# Commitlint configuration (added to prevent ESLint parsing error)
+commitlint.config.js
