@@ -1,13 +1,13 @@
-import React, {useState} from "react";
-import {HiOutlineChevronLeft} from "@react-icons/all-files/hi/HiOutlineChevronLeft";
-import {Link} from "gatsby";
-import {IoIosArrowForward} from "@react-icons/all-files/io/IoIosArrowForward";
-import {componentsData} from "../../sections/Projects/Sistent/components/content";
+import React, { useState } from "react";
+import { HiOutlineChevronLeft } from "@react-icons/all-files/hi/HiOutlineChevronLeft";
+import { Link } from "gatsby";
+import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
+import { componentsData } from "../../sections/Projects/Sistent/components/content";
 
 import TOCWrapper from "./toc.style";
-import {IoIosArrowDown} from "@react-icons/all-files/io/IoIosArrowDown";
+import { IoIosArrowDown } from "@react-icons/all-files/io/IoIosArrowDown";
 
-import {useLocation} from "@reach/router";
+import { useLocation } from "@reach/router";
 
 const TOC = () => {
   const [expand, setExpand] = useState(false);
@@ -69,8 +69,8 @@ const TOC = () => {
               >
                 Identity
                 {expandIdentity ?
-                  <IoIosArrowDown style={{zIndex: 2}}/> :
-                  <IoIosArrowForward style={{zIndex: 2}}/>
+                  <IoIosArrowDown style={{ zIndex: 2 }}/> :
+                  <IoIosArrowForward style={{ zIndex: 2 }}/>
                 }
               </div>
               {expandIdentity && (
@@ -132,8 +132,8 @@ const TOC = () => {
               >
                 Components
                 {expandComponent ?
-                  <IoIosArrowDown style={{zIndex: 2}}/> :
-                  <IoIosArrowForward style={{zIndex: 2}}/>
+                  <IoIosArrowDown style={{ zIndex: 2 }}/> :
+                  <IoIosArrowForward style={{ zIndex: 2 }}/>
                 }
               </div>
               {expandComponent && (
