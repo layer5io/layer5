@@ -195,6 +195,13 @@ const componentsData = [
     "url": "/projects/sistent/components/radiogroup",
     "src": "/radiogroup"
   },
+  {
+    "id": 26,
+    "name": "Grid",
+    "description": "The Grid component in Sistent provides a flexible and responsive layout system for arranging content in rows and columns.",
+    "url": "/projects/sistent/components/grid",
+    "src": "/grid"
+  }
 ];
 
 module.exports = { componentsData };
