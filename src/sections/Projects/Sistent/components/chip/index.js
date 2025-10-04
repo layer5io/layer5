@@ -159,17 +159,17 @@ const SistentChip = () => {
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Chip 
-                label="Design" 
-                variant="outlined" 
-                icon={<DesignIcon style={{ marginLeft: '8px', marginRight: '8px' }} />}   
-                style={{ paddingLeft: '4px', margin: '0 8px' }}
+              <Chip
+                label="Design"
+                variant="outlined"
+                icon={<DesignIcon style={{ marginLeft: "8px", marginRight: "8px" }} />}
+                style={{ paddingLeft: "4px", margin: "0 8px" }}
               />
-              <Chip 
-                label="WASM" 
-                variant="outlined" 
-                icon={<MesheryFilterIcon style={{ marginLeft: '8px', marginRight: '8px', width:'16px', height:'16px' }} />}   
-                style={{ paddingLeft: '4px', margin: '0 8px' }}
+              <Chip
+                label="WASM"
+                variant="outlined"
+                icon={<MesheryFilterIcon style={{ marginLeft: "8px", marginRight: "8px", width: "16px", height: "16px" }} />}
+                style={{ paddingLeft: "4px", margin: "0 8px" }}
               />
             </SistentThemeProvider>
           </Row>
@@ -182,12 +182,12 @@ const SistentChip = () => {
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Chip label="Primary" color="primary" style={{ margin: '0 5px' }} />
-              <Chip label="Secondary" color="secondary" style={{ margin: '0 5px' }} />
-              <Chip label="Success" color="success" style={{ margin: '0 5px' }} />
-              <Chip label="Error" color="error" style={{ margin: '0 5px' }} />
-              <Chip label="Warning" color="warning" style={{ margin: '0 5px' }} />
-              <Chip label="Info" color="info" style={{ margin: '0 5px' }} />
+              <Chip label="Primary" color="primary" style={{ margin: "0 5px" }} />
+              <Chip label="Secondary" color="secondary" style={{ margin: "0 5px" }} />
+              <Chip label="Success" color="success" style={{ margin: "0 5px" }} />
+              <Chip label="Error" color="error" style={{ margin: "0 5px" }} />
+              <Chip label="Warning" color="warning" style={{ margin: "0 5px" }} />
+              <Chip label="Info" color="info" style={{ margin: "0 5px" }} />
             </SistentThemeProvider>
           </Row>
         </div>
