@@ -7,11 +7,15 @@ const TransitionWrapper = styled.div`
     .popup-container {
         background: ${props => props.theme.linearToLinear2};
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
         border-radius: 12px;
     }
 
     .popup-text {
         display: flex;
+        gap: 2rem;
         flex-direction: column;
         text-align: center;
         z-index: 1;
