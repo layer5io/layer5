@@ -86,11 +86,9 @@ const Footer = ({ location }) => {
             <SocialLinksColor />
           </Col>
         </Row>
-        <Row
-          style={{
-            flexWrap: "wrap",
-          }}
-        >
+        <Row style={{
+          flexWrap: "wrap"
+        }}>
           <Col $xs={12} $lg={3}>
             <p className="desc-info">
               An empowerer of engineers, Layer5 helps you extract more value
@@ -123,10 +121,7 @@ const Footer = ({ location }) => {
                     </Link>
                   </li>
                   <li>
-                    <a
-                      className="category-link"
-                      href="https://docs.layer5.io/videos"
-                    >
+                    <a className="category-link" href="https://docs.layer5.io/videos">
                       Videos
                     </a>
                   </li>
@@ -186,15 +181,15 @@ const Footer = ({ location }) => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/community/handbook">
+                    <Link
+                      className="category-link"
+                      to="/community/handbook"
+                    >
                       Handbook
                     </Link>
                   </li>
                   <li>
-                    <a
-                      className="category-link"
-                      href="https://badges.layer5.io/"
-                    >
+                    <a className="category-link" href="https://badges.layer5.io/">
                       Recognition Program
                     </a>
                   </li>
@@ -213,7 +208,7 @@ const Footer = ({ location }) => {
                       to="/solutions/developer-defined-infrastructure"
                     >
                       Developer-defined Infrastructure
-                      {/* <span className="new-label">NEW</span> */}
+                      { /* <span className="new-label">NEW</span> */}
                     </Link>
                   </li>
                   <li>
@@ -233,15 +228,15 @@ const Footer = ({ location }) => {
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      className="category-link"
-                      to="/cloud-native-management/kanvas/collaborate"
-                    >
+                    <Link className="category-link" to="/cloud-native-management/kanvas/collaborate">
                       Collaborative GitOps
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/solutions/gitops">
+                    <Link
+                      className="category-link"
+                      to="/solutions/gitops"
+                    >
                       GitOps with Cloud Native Insights
                     </Link>
                   </li>
@@ -296,6 +291,7 @@ const Footer = ({ location }) => {
               </div>
             </Row>
             <Row className="subscribe">
+                        
               <form
                 name="contactform"
                 method="post"
