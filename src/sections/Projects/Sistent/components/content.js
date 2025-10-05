@@ -201,7 +201,14 @@ const componentsData = [
     "description": "The Grid component in Sistent provides a flexible and responsive layout system for arranging content in rows and columns.",
     "url": "/projects/sistent/components/grid",
     "src": "/grid"
-  }
+  },
+  {
+    "id": 27,
+    "name": "List",
+    "description": "Lists are essential UI elements that allow items to be organized sequentially in a structured and readable way. They help users view, select, and interact with multiple items conveniently.",
+    "url": "/projects/sistent/components/list",
+    "src": "/list",
+  },
 ];
 
 module.exports = { componentsData };
