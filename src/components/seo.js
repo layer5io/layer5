@@ -25,7 +25,14 @@ export const useSiteMetadata = () => {
 };
 
 
-const SEO = ({ canonical, description,image, schemaMarkup, title,children }) => {
+const SEO = ({ 
+  canonical, 
+  description = "", 
+  image = null, 
+  schemaMarkup, 
+  title = null, 
+  children 
+}) => {
   const { pathname } = useLocation();
   const { title: defaultTitle, description: defaultDescription, image: siteMetadataImage, siteUrl, twitterUsername } = useSiteMetadata();
   const seo = {
@@ -66,14 +73,6 @@ const SEO = ({ canonical, description,image, schemaMarkup, title,children }) => 
       {children}
     </>
   );
-};
-
-SEO.defaultProps = {
-  title: null,
-  lang: "en",
-  meta: [],
-  description: "",
-  image: null,
 };
 
 SEO.propTypes = {
