@@ -222,7 +222,7 @@ export const boxStyles = {
     alignItems: "center"
   },
   enterpriseUserInput: {
-    width: "50px",
+    width: "65px",
     ml: 1,
     "& .MuiInputBase-input": {
       py: (theme) => theme.spacing(0.5),
