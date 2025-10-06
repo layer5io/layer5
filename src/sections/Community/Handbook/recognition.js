@@ -1,41 +1,41 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import { Link } from "gatsby";
-import CommunityLogo from "../../../assets/images/community/community-green.svg";
-import PatternsLogo from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
-import LandscapeGreen from "../../../assets/images/landscape/layer5_landscape_green.svg";
-import ImageHubLogo from "../../../assets/images/image-hub/layer5-image-hub.svg";
-import DockerExtension from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
-import MesheryLogo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-import MesheryOperator from "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
-import ServiceMeshPerformance from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
-import NightHawkLogo from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
+// import CommunityLogo from "../../../assets/images/community/community-green.svg";
+// import PatternsLogo from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
+// import LandscapeGreen from "../../../assets/images/landscape/layer5_landscape_green.svg";
+// import ImageHubLogo from "../../../assets/images/image-hub/layer5-image-hub.svg";
+// import DockerExtension from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
+// import MesheryLogo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
+// import MesheryOperator from "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
+// import ServiceMeshPerformance from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
+// import NightHawkLogo from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
-import uiuxrLogo from "../../../assets/images/uiuxr/uiuxr.svg";
-import writersLogo from "../../../assets/images/writer-program/writer-program-badge.svg";
-import kanvasLogo from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
-import MesheryCatalogLogo from "../../../assets/images/meshery/meshery-catalog.svg";
-import DocsLogo from "../../../assets/images/docs/docs.svg";
-import ApplicationPioneerLogo from "../../../assets/images/application-pioneer/application-pioneer.svg";
-import BringABuddyLogo from "../../../assets/images/bring-a-buddy/bring-a-buddy.svg";
-import DesignPioneerLogo from "../../../assets/images/design-pioneer/design-pioneer.svg";
-import GitOPsWithFriendsLogo from "../../../assets/images/gitops-with-friends/gitops-with-friends.svg";
-import HipHackerLogo from "../../../assets/images/hip-hacker/hip-hacker.svg";
-import NeedForSpeedLogo from "../../../assets/images/need-for-speed/need-for-speed.svg";
-import SharingIsCaringLogo from "../../../assets/images/sharing-is-caring/sharing-is-caring.svg";
-import ShippedLogo from "../../../assets/images/shipped/shipped.svg";
-import StreamerLogo from "../../../assets/images/streamer/streamer.svg";
-import CodeCleanupCrewLogo from "../../../assets/images/code-cleanup-crew/code-cleanup-crew.svg";
-import SecuritySentinelLogo from "../../../assets/images/security-sentinel/security-sentinel.png";
-import LogevityLegendLogo from "../../../assets/images/longevity-legend/longevity-legend.svg";
-import ReviewRockstarLogo from "../../../assets/images/review-rockstar/review-rockstar.svg";
-import KanvasSnapshotLogo from "../../../assets/images/kanvas-snapshot/kanvas-snapshot.svg";
-import SistentContributorLogo from "../../../assets/images/sistent/badges/sistent-contributor.svg";
-import ContinuousContributorLogo from "../../../assets/images/continuous-contributor/continuous-contributor.svg";
-import AcademyLogo from "../../../assets/images/academy/academy.svg";
+// import uiuxrLogo from "../../../assets/images/uiuxr/uiuxr.svg";
+// import writersLogo from "../../../assets/images/writer-program/writer-program-badge.svg";
+// import kanvasLogo from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
+// import MesheryCatalogLogo from "../../../assets/images/meshery/meshery-catalog.svg";
+// import DocsLogo from "../../../assets/images/docs/docs.svg";
+// import ApplicationPioneerLogo from "../../../assets/images/application-pioneer/application-pioneer.svg";
+// import BringABuddyLogo from "../../../assets/images/bring-a-buddy/bring-a-buddy.svg";
+// import DesignPioneerLogo from "../../../assets/images/design-pioneer/design-pioneer.svg";
+// import GitOPsWithFriendsLogo from "../../../assets/images/gitops-with-friends/gitops-with-friends.svg";
+// import HipHackerLogo from "../../../assets/images/hip-hacker/hip-hacker.svg";
+// import NeedForSpeedLogo from "../../../assets/images/need-for-speed/need-for-speed.svg";
+// import SharingIsCaringLogo from "../../../assets/images/sharing-is-caring/sharing-is-caring.svg";
+// import ShippedLogo from "../../../assets/images/shipped/shipped.svg";
+// import StreamerLogo from "../../../assets/images/streamer/streamer.svg";
+// import CodeCleanupCrewLogo from "../../../assets/images/code-cleanup-crew/code-cleanup-crew.svg";
+// import SecuritySentinelLogo from "../../../assets/images/security-sentinel/security-sentinel.png";
+// import LogevityLegendLogo from "../../../assets/images/longevity-legend/longevity-legend.svg";
+// import ReviewRockstarLogo from "../../../assets/images/review-rockstar/review-rockstar.svg";
+// import KanvasSnapshotLogo from "../../../assets/images/kanvas-snapshot/kanvas-snapshot.svg";
+// import SistentContributorLogo from "../../../assets/images/sistent/badges/sistent-contributor.svg";
+// import ContinuousContributorLogo from "../../../assets/images/continuous-contributor/continuous-contributor.svg";
+// import AcademyLogo from "../../../assets/images/academy/academy.svg";
 import BadgesTable from "./BadgesComponent/BadgesTable";
 
 
@@ -52,16 +52,16 @@ const contents = [
   { id: 4, link: "#SocialMedia", text: "Recognition on Social Media Platforms" },
 ];
 
-const badgeStyle = {
-  height: "25px",
-  width: "25px",
-  verticalAlign: "middle",
-  marginRight: "1rem",
-};
+// const badgeStyle = {
+//   height: "25px",
+//   width: "25px",
+//   verticalAlign: "middle",
+//   marginRight: "1rem",
+// };
 
-const badgeListStyle = {
-  listStyleType: "none",
-};
+// const badgeListStyle = {
+//   listStyleType: "none",
+// };
 
 const recognitionsstyle = {
   marginBottom: "0.5rem",
