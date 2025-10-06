@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
@@ -36,6 +36,9 @@ import KanvasSnapshotLogo from "../../../assets/images/kanvas-snapshot/kanvas-sn
 import SistentContributorLogo from "../../../assets/images/sistent/badges/sistent-contributor.svg";
 import ContinuousContributorLogo from "../../../assets/images/continuous-contributor/continuous-contributor.svg";
 import AcademyLogo from "../../../assets/images/academy/academy.svg";
+import BadgesTable from "./BadgesComponent/BadgesTable";
+
+
 
 const contents = [
   { id: 0, link: "#Profile Bages", text: "Profile Bages" },
@@ -109,7 +112,8 @@ const RecognitionPage = () => {
             <p>
               Badges are awarded to community members who have been consistently engaged and impactful within a given area of the community or on a specific project. Every community member, whether contributing with code or not, has the opportunity to obtain any number of badges of recognition of their efforts. Community members are encouraged to collect the whole set!
             </p>
-            <ul style={badgeListStyle}>
+            <BadgesTable />
+            {/* <ul style={badgeListStyle}>
               <p><b>Activity badges:</b></p>
               <li>
                 <img src={DesignPioneerLogo} style={badgeStyle} />
@@ -236,7 +240,7 @@ const RecognitionPage = () => {
                 <img src={DocsLogo} style={badgeStyle} />
                 <b>Docs</b> - awarded to the community members who make consistent and impactful contributions to the <a href="https://docs.meshery.io/">Meshery docs</a> in recognition and appreciation of their efforts.
               </li>
-            </ul>
+            </ul> */}
             <a id="how-to-earn-badges">
               <h3>How can I Earn Badges?</h3>
             </a>
