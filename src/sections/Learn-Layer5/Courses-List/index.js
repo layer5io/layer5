@@ -3,7 +3,7 @@ import { Col, Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import { CoursesListWrapper } from "./courseslist.style";
 import ContentCard from "../../../components/Learn-Components/Content-Card";
-import { HiOutlineChevronLeft } from "@react-icons/all-files/hi/HiOutlineChevronLeft";
+import { HiChevronLeft } from "@react-icons/all-files/hi/HiChevronLeft";
 import SetupPreReq from "../../../components/Learn-Components/Setup-Pre-Requisites";
 import { Link } from "gatsby";
 // import TOC from "../../../components/Learn-Components/TOC-Learning-Path";
@@ -14,7 +14,7 @@ const CoursesList = ({ coursesData, learnPath }) => {
     <CoursesListWrapper>
       <div className="go-back">
         <Link to={"/learn/learning-paths"}>
-          <HiOutlineChevronLeft /> <h3>Learning Paths</h3>
+          <HiChevronLeft /> <h3>Learning Paths</h3>
         </Link>
       </div>
       <PageHeader

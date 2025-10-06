@@ -717,9 +717,14 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
         "hoist-non-react-statics",
         "custom-media-element",
         "@babel/runtime",
+        "@babel/runtime/helpers/**",
         "cose-base",
         "gsap",
         "gsap/dist/ScrollTrigger",
+        "@mui/material/**",
+        "@mui/icons-material/**",
+        "mui-datatables",
+        "swiper/**",
       ],
       resolve: {
         fallback: {

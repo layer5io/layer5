@@ -5,7 +5,7 @@ import Image from "../../../components/image";
 import { Link } from "gatsby";
 
 import { IoDocumentTextOutline, } from "@react-icons/all-files/io5/IoDocumentTextOutline";
-import { IoChevronBackOutline } from "@react-icons/all-files/io5/IoChevronBackOutline";
+import { IoChevronBack } from "@react-icons/all-files/io5/IoChevronBack";
 import Button from "../../../reusecore/Button";
 import ChapterCard from "../../../components/Learn-Components/Chapter-Card";
 import { MDXRenderer } from "gatsby-plugin-mdx";
@@ -65,7 +65,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
     <CourseOverviewWrapper>
       <div className="course-back-btn">
         <Link to={`/learn/learning-paths/${course.fields.learnpath}`}>
-          <IoChevronBackOutline /> <h4>Learning Paths/Courses</h4>
+          <IoChevronBack /> <h4>Learning Paths/Courses</h4>
         </Link>
       </div>
       <div

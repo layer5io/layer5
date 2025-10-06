@@ -3,7 +3,7 @@ import { MeetupStyle } from "./meetups.style";
 import Card from "../../components/Card";
 import { Col, Container, Row } from "../../reusecore/Layout";
 import Pager from "../../components/pager";
-import UpcomingEvents from "../../components/UpcomingEventCard";
+import ClientOnlyUpcomingEvents from "../../components/ClientOnlyUpcomingEvents";
 import PageHeader from "../../reusecore/PageHeader";
 import Button from "../../reusecore/Button";
 import RssFeedIcon from "../../assets/images/socialIcons/rss-sign.svg";
@@ -18,7 +18,7 @@ const Meetups = ({ data, pageContext }) => {
     <MeetupStyle>
       <PageHeader title="Events" path="Community/Events" img={RssFeedIcon} feedlink="/events/feed.xml" />
       <h2 className="event-subhead">Join Layer5 at these events</h2>
-      <UpcomingEvents data={data.allUpcoming} />
+      <ClientOnlyUpcomingEvents data={data.allUpcoming} />
       <Container>
         <div className="filterBtns">
           <Button className={active == "all" ? "active" : ""} onClick={() => setActive("all")} title="All" />

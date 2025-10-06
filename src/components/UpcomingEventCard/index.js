@@ -11,6 +11,9 @@ import slugify from "../../utils/slugify";
 
 
 const UpcomingEvents = ({ data }) => {
+  // Temporarily disabled to debug SSR issues
+  return null;
+  
   return (
     <UpcomingEventsWrapper>
       <div className="blog-slider swiper">

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HiOutlineChevronLeft } from "@react-icons/all-files/hi/HiOutlineChevronLeft";
+import { HiChevronLeft } from "@react-icons/all-files/hi/HiChevronLeft";
 import { Link } from "gatsby";
 import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { componentsData } from "../../sections/Projects/Sistent/components/content";
@@ -28,7 +28,7 @@ const TOC = () => {
     <TOCWrapper>
       <div className="go-back">
         <Link to="/projects/sistent">
-          <HiOutlineChevronLeft />
+          <HiChevronLeft />
           <h4>Table of Contents</h4>
         </Link>
         <div className="toc-toggle-btn">

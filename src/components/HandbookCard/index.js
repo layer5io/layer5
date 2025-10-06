@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { HiOutlineChevronRight } from "@react-icons/all-files/hi/HiOutlineChevronRight";
+import { HiChevronRight } from "@react-icons/all-files/hi/HiChevronRight";
 import { HandbookCardWrapper } from "./HandbookCard.style";
 
 const HandbookCard = ({ title, description, to }) => {
@@ -16,7 +16,7 @@ const HandbookCard = ({ title, description, to }) => {
           {to && (
             <div className="handbook__card--lm__container">
               <a href={to} className="handbook__card--lm">
-                Read More <HiOutlineChevronRight />
+                Read More <HiChevronRight />
               </a>
             </div>
           )}

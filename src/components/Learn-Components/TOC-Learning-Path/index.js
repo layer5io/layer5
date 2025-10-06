@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HiOutlineChevronLeft } from "@react-icons/all-files/hi/HiOutlineChevronLeft";
+import { HiChevronLeft } from "@react-icons/all-files/hi/HiChevronLeft";
 import { Link } from "gatsby";
 import TOCWrapper from "./toc.style";
 import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
@@ -24,7 +24,7 @@ const TOC = ({ coursesData }) => {
     <TOCWrapper>
       <div className="go-back">
         <Link to={"/learn/learning-paths"}>
-          <HiOutlineChevronLeft />
+          <HiChevronLeft />
           <h4>Learning Paths</h4>
         </Link>
         <div className="toc-toggle-btn">

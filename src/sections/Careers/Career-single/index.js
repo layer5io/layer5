@@ -7,7 +7,7 @@ import { FaPlay } from "@react-icons/all-files/fa/FaPlay";
 import { FaGlobeAmericas } from "@react-icons/all-files/fa/FaGlobeAmericas";
 import { FiCalendar } from "@react-icons/all-files/fi/FiCalendar";
 import { FiClock } from "@react-icons/all-files/fi/FiClock";
-import { HiOutlineCash } from "@react-icons/all-files/hi/HiOutlineCash";
+import { HiCash } from "@react-icons/all-files/hi/HiCash";
 import { ReactComponent as Logo } from "../../../assets/images/app/layer5-colorMode.svg";
 
 const CareerSingle = ({ data }) => {
@@ -31,7 +31,7 @@ const CareerSingle = ({ data }) => {
                   <p>{frontmatter.location}</p>
                 </Col>
                 <Col $xs={6} className="job-details-col">
-                  <h5> <HiOutlineCash /> {frontmatter.type === "internship" ? "Stipend" : "Salary"}</h5>
+                  <h5> <HiCash /> {frontmatter.type === "internship" ? "Stipend" : "Salary"}</h5>
                   <p>{frontmatter.salary}</p>
                 </Col>
                 <Col $xs={6} className="job-details-col">
