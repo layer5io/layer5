@@ -11,7 +11,7 @@ const ClientOnlyUpcomingEvents = ({ data }) => {
   if (!isBrowser || !UpcomingEvents) {
     return null;
   }
-  
+
   return <UpcomingEvents data={data} />;
 };
 

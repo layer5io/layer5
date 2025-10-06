@@ -13,8 +13,8 @@ import slugify from "../../utils/slugify";
 const UpcomingEvents = ({ data }) => {
   // Temporarily disabled to debug SSR issues
   return null;
-  
-  return (
+
+  /*return (
     <UpcomingEventsWrapper>
       <div className="blog-slider swiper">
         <div style={{
@@ -56,7 +56,7 @@ const UpcomingEvents = ({ data }) => {
         </div>
       </div>
     </UpcomingEventsWrapper>
-  );
+  );*/
 };
 
 export default UpcomingEvents;
