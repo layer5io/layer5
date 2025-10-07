@@ -13,11 +13,11 @@ export const query = graphql`query allProjects {
       frontmatter {
         title
         thumbnail {
+          extension
+          publicURL
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
-          extension
-          publicURL
         }
       }
       fields {

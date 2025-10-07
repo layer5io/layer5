@@ -24,7 +24,8 @@ export const typographyStyles = {
   italic: {
     fontFamily: QANELAS_FONT,
     fontStyle: "italic",
-    color: "text.secondary"
+    color: "text.secondary",
+    marginTop: 5
   },
   headerTitle: {
     fontSize: 16,
@@ -53,7 +54,9 @@ export const typographyStyles = {
     fontSize: "0.8rem",
     fontStyle: "italic",
     fontFamily: QANELAS_FONT,
-    color: "text.secondary"
+    color: "text.secondary",
+    marginTop: 5,
+    marginBottom: 5,
   },
   pricingItemLeft: {
     marginLeft: 0.5,
@@ -150,8 +153,8 @@ export const boxStyles = {
     display: "flex",
     justifyContent: "center",
     flexWrap: "wrap",
-    gap: 1,
-    mt: 2
+    gap: 0,
+    mt: 0
   },
   sliderMarks: {
     textAlign: "center",
@@ -192,8 +195,10 @@ export const boxStyles = {
     justifyContent: "center"
   },
   unitQuantityTitle: {
-    fontSize: "1rem",
-    mb: 1
+    justifySelf: "center",
+    textAlign: "center",
+    width: "100%",
+    fontFamily: QANELAS_FONT
   },
   pricingPaper: {
     p: 2.5,
@@ -217,11 +222,15 @@ export const boxStyles = {
     alignItems: "center"
   },
   enterpriseUserInput: {
-    width: "5rem",
+    width: "65px",
     ml: 1,
     "& .MuiInputBase-input": {
-      py: "0.25rem"
-    }
+      py: (theme) => theme.spacing(0.5),
+      paddingRight: 0,
+      paddingLeft: 0.2,
+      textAlign: "center",
+      ml: 0.5,
+    },
   },
   totalSection: {
     textAlign: "right",
@@ -242,7 +251,7 @@ export const boxStyles = {
     mt: 1
   },
   disclaimerSection: {
-    my: 6,
+    my: 10,
     mb: 2,
     justifyContent: "space-between"
   }
@@ -284,7 +293,9 @@ export const sliderStyles = {
     justifyContent: "center"
   },
   baseOther: {
-    mb: 2,
+    mb: 6,
+    ml: 7,
+    width: "80%",
     display: "flex",
     justifyContent: "center"
   },
