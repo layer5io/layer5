@@ -11,6 +11,7 @@ import SEO from "../components/seo";
 
 export const query = graphql`query EventsBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
+    body
     frontmatter {
       attribute {
         name
@@ -36,7 +37,7 @@ export const query = graphql`query EventsBySlug($slug: String!) {
 }
 `;
 
-const EventSinglePage = ({ data, children }) => {
+const EventSinglePage = ({ data }) => {
 
 
   return (
@@ -44,9 +45,7 @@ const EventSinglePage = ({ data, children }) => {
     <>
 
 
-      <EventSingle data={data}>
-        {children}
-      </EventSingle>
+      <EventSingle data={data} />
       <LearnServiceMeshCTA />
       <Subscribe />
 
