@@ -68,11 +68,12 @@ export default BlogSinglePage;
 export const Head = ({ data }) => {
   const post = data.allMdx.nodes[0];
   const { frontmatter } = post;
+  const image = frontmatter.thumbnail?.publicURL || frontmatter.darkthumbnail?.publicURL;
 
   return (
     <SEO
       title={frontmatter.title}
-      image={frontmatter.thumbnail.publicURL}
+      image={image}
       description={frontmatter.description}
     />
   );

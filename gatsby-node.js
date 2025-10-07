@@ -45,13 +45,35 @@ if (process.env.CI === "true") {
 
 const { loadRedirects } = require("./src/utils/redirects.js");
 
-exports.createPages = async ({ actions, graphql, reporter }) => {
-  const { createRedirect } = actions;
-  const redirects = loadRedirects();
-  redirects.forEach(redirect => createRedirect(redirect)); // Handles all hardcoded ones dynamically
-  // Create Pages
-  const { createPage } = actions;
+// List of known missing pages that should be handled gracefully
+const missingPages = [
+  "/blog/docker/extending-the-docker-compose-experience-to-service-mesh",
+  "/blog/docker/docker-model-runner",
+  "/resources/service-mesh/service-proxy",
+  "/blog/cloud-native/rethinking-protocol-buffers-with-buf",
+  "/blog/service-mesh-performance/meshmark-cloud-native-value-measurement"
+];
 
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const { createRedirect, createPage } = actions;
+  const redirects = loadRedirects();
+  
+  // Process redirects first
+  redirects.forEach(redirect => createRedirect(redirect));
+  
+  // Create a simple 404 page for missing pages
+  missingPages.forEach(path => {
+    createPage({
+      path: path,
+      component: require.resolve('./src/templates/not-found.js'),
+      context: { 
+        slug: path,
+        isMissingPage: true
+      },
+    });
+  });
+
+  // Environment-specific page creation
   const envCreatePage = (props) => {
     if (process.env.CI === "true") {
       const { path, ...rest } = props;

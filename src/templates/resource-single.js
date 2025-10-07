@@ -57,5 +57,12 @@ const ResourceSinglePage = ({ data }) => {
 export default ResourceSinglePage;
 
 export const Head = ({ data }) => {
-  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} description={data.mdx.frontmatter.description}/>;
+  const resource = data.allMdx.nodes[0];
+  return (
+    <SEO 
+      title={resource.frontmatter.title} 
+      image={resource.frontmatter.thumbnail?.publicURL} 
+      description={resource.frontmatter.description}
+    />
+  );
 };

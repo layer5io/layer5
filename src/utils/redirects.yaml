@@ -1,4 +1,24 @@
 redirects:
+  - fromPath: "/blog/docker/extending-the-docker-compose-experience-to-service-mesh"
+    toPath: "/blog/docker"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/blog/docker/docker-model-runner"
+    toPath: "/blog/docker"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/resources/service-mesh/service-proxy"
+    toPath: "/resources/service-mesh"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/blog/cloud-native/rethinking-protocol-buffers-with-buf"
+    toPath: "/blog/buf-protocols"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/blog/service-mesh-performance/meshmark-cloud-native-value-measurement"
+    toPath: "https://smp-spec.io/meshmark"
+    redirectInBrowser: true
+    isPermanent: true
   - fromPath: "/books"
     toPath: "/learn/service-mesh-books"
     redirectInBrowser: true
