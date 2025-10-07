@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ReactComponent as IntegrationsImage } from "./images/integration-image-colorMode.svg";
+import IntegrationsImage from "./images/integration-image-colorMode.svg";
 import UnderlineImg from "./images/underline.svg";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
@@ -118,10 +118,8 @@ const KanvasIntegrationsSection = () => {
         ref={diagramRef}
         style={{ alignSelf: "center", width: "100%" }}
       >
-        <IntegrationsImage
-          alt="integrations-img"
-          className={imageInView ? "diagram-visible" : "diagram-hidden"}
-        />
+        <img src={IntegrationsImage} alt="integrations-img"
+          className={imageInView ? "diagram-visible" : "diagram-hidden"} />
       </div>
       <div className="hero-text">
         <div>

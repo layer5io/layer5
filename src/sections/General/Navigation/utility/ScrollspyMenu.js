@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link } from "gatsby";
 import Card from "./Card";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
-import { ReactComponent as IngressGatewayImage } from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/ingress-gateway-partial-colorMode.svg";
-import { ReactComponent as KubernetesImage } from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/kubernetes-navbar.svg";
-import { ReactComponent as KubernetesImage1 } from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/kubernetes-navbar-light.svg";
-import { ReactComponent as PodImage } from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/pod-partial-colorMode.svg";
-import { ReactComponent as PrometheusImage } from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/prometheus-partial-colorMode.svg";
-import { ReactComponent as ServiceIntefaceImage } from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/service-interface-partial-colorMode.svg";
+import IngressGatewayImage from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/ingress-gateway-partial-colorMode.svg";
+import KubernetesImage from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/kubernetes-navbar.svg";
+import KubernetesImage1 from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/kubernetes-navbar-light.svg";
+import PodImage from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/pod-partial-colorMode.svg";
+import PrometheusImage from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/prometheus-partial-colorMode.svg";
+import ServiceIntefaceImage from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/service-interface-partial-colorMode.svg";
 import SupportingArrows from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/supporting-arrows.svg";
 import EmptyLight from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/empty-light.svg";
 import EmptyDark from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/empty-dark.svg";
@@ -158,11 +158,11 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                     <div className="single-card">
                       <div className="transition-container" ref={transitionRef}>
                         <img className="canvas" src={isDark ? EmptyDark : EmptyLight} alt="" />
-                        <ServiceIntefaceImage className="service-interface" alt="ServiceIntefaceImage" />
-                        <IngressGatewayImage alt="IngressGatewayImage" className={imageInView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"}/>
-                        {isDark ? <KubernetesImage className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" /> : <KubernetesImage1 className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" />}
-                        <PodImage className={imageInView ? "pod-transition pod" : "pod"} alt="PodImage" />
-                        <PrometheusImage className={imageInView ? "prometheus-transition prometheus" : "prometheus"} alt="PrometheusImage" />
+                        <img src={ServiceIntefaceImage} alt="ServiceIntefaceImage" className="service-interface" />
+                        <img src={IngressGatewayImage} alt="IngressGatewayImage" className={imageInView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"} />
+                        {isDark ? <img src={KubernetesImage} alt="KubernetesImage" className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} /> : <img src={KubernetesImage1} alt="KubernetesImage" className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} />}
+                        <img src={PodImage} alt="PodImage" className={imageInView ? "pod-transition pod" : "pod"} />
+                        <img src={PrometheusImage} alt="PrometheusImage" className={imageInView ? "prometheus-transition prometheus" : "prometheus"} />
                         <img className={imageInView ? "supporting-arrows-transition supporting-arrows" : "supporting-arrows"} src={SupportingArrows} alt="" />
                       </div>
                       <div className="card-text">

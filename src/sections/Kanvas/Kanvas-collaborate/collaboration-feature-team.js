@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ReactComponent as CollaborationImg } from "./../FeaturesSection/Collaborate/images/collab4-colorMode.svg";
+import CollaborationImg from "./../FeaturesSection/Collaborate/images/collab4-colorMode.svg";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 
@@ -108,7 +108,7 @@ const CollaborationFeatureTeam = () => {
     <CollaborationFeatureWrapper>
       <div className="hero-div">
         <div className="hero-image" ref={locatorRef}>
-          <CollaborationImg className={imageInView ? "visible" : ""}  alt=""/>
+          <img src={CollaborationImg} alt="" className={imageInView ? "visible" : ""} />
         </div>
         <div className="hero-text">
           <h2><span>Collaborate with your Team</span></h2>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Row, Col, Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import Cone from "../../../assets/images/gitops/conelight.svg";
-import { ReactComponent as AcademyLogo } from "../../../assets/images/academy/academy.svg";
+import AcademyLogo from "../../../assets/images/academy/academy.svg";
 
 const AcademyHeaderWrapper = styled.div`  
   .academy-platform.header {
@@ -216,7 +216,7 @@ const Header = ({ isDark }) => {
 
             <Col className="hero-image" $lg={6} $md={6}>
               <div className="hero-image-container">
-                <AcademyLogo className="academy-logo" style={{ position: "absolute", height: "180px", width: "180px", top: "50%", left: "50%", transform: "translate(-50%, -50%)", fill: "white" }}/>
+                <img src={AcademyLogo} alt="Academy Logo" className="academy-logo" style={{ position: "absolute", height: "180px", width: "180px", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}/>
                 <img src={Cone} className="cone-image"/>
               </div>
             </Col>

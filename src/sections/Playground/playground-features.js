@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { ReactComponent as PlaygroundFeature1 } from "./images/playground-feature-1.svg";
-import { ReactComponent as PlaygroundFeature2 } from "./images/playground-feature-2.svg";
-import { ReactComponent as PlaygroundFeature3 } from "./images/playground-feature-3.svg";
+import PlaygroundFeature1 from "./images/playground-feature-1.svg";
+import PlaygroundFeature2 from "./images/playground-feature-2.svg";
+import PlaygroundFeature3 from "./images/playground-feature-3.svg";
 import whiteboard_svg from "../../assets/images/whiteboard/whiteboard.svg";
 import comments_svg from "../../assets/images/comments/comment.svg";
 import Button from "../../reusecore/Button";
@@ -115,7 +115,7 @@ const PlaygroundFeatures = () => {
           <h5>Collaborate with other engineers, share your knowledge, and exchange ideas.</h5>
         </div>
         <div className="feature-image" style={{ scale: "0.8" }}>
-          <PlaygroundFeature1 />
+          <img src={PlaygroundFeature1} alt="PlaygroundFeature1"  />
         </div>
       </div>
 
@@ -125,7 +125,7 @@ const PlaygroundFeatures = () => {
           <h5>Explore new cloud native tools without the need for complex setup or configuration. Simply open your browser and go.</h5>
         </div>
         <div className="feature-image" style={{ scale: "0.8" }}>
-          <PlaygroundFeature2 />
+          <img src={PlaygroundFeature2} alt="PlaygroundFeature2"  />
         </div>
       </div>
       <div className="feature">
@@ -134,7 +134,7 @@ const PlaygroundFeatures = () => {
           <h5>Design new cloud native scenarios and easily deploy in the Playground environment. Keep your designs and deploy in your own environment when you’re ready.</h5>
         </div>
         <div className="feature-image" style={{ scale: "0.8" }}>
-          <PlaygroundFeature3 />
+          <img src={PlaygroundFeature3} alt="PlaygroundFeature3"  />
         </div>
       </div>
     </PlaygroundFeaturesWrapper>

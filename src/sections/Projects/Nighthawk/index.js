@@ -3,8 +3,8 @@ import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
-import { ReactComponent as Logo } from "../../../assets/images/nighthawk/with-name/SVG/nighthawk-colorMode.svg";
-import { ReactComponent as SmpIcon } from "./images/smp-colorMode.svg";
+import Logo from "../../../assets/images/nighthawk/with-name/SVG/nighthawk-colorMode.svg";
+import SmpIcon from "./images/smp-colorMode.svg";
 import cloud from "./images/cloud-network_green.svg";
 import cpu from "./images/cpu_green.svg";
 import distributedPerf from "./images/distributed-performance_green.svg";
@@ -34,7 +34,7 @@ const Projects = () => {
         <div className="hero-section">
           <Row>
             <Col $lg={6} $md={6} $sm={12}>
-              <Logo className="logo" alt="Nighthawk Logo"/>
+              <img src={Logo} alt="Nighthawk Logo" className="logo" />
             </Col>
             <Col $lg={6} $md={6} $sm={12}>
               <div className="hero-text">
@@ -112,7 +112,7 @@ const Projects = () => {
               <CardsContainer>
                 <div className="card">
                   <div className="circle">
-                    <SmpIcon className="smp" alt="smp logo" />
+                    <img src={SmpIcon} alt="smp logo" className="smp" />
                   </div>
                   <h2>SERVICE MESH PERFORMANCE COMPATIBILITY</h2>
                   <p>Enabling Standards-based, Distributed Performance Management - Nighthawk integrates Meshery and Nighthawk. Through this integration Meshery facilitates <Link to="/projects/cloud-native-performance">Service Mesh Performance (SMP)</Link> compatibility for Nighthawk.</p>

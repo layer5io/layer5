@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ReactComponent as VisualizerViews } from "./images/visualizer-views-colorMode.svg";
+import VisualizerViews from "./images/visualizer-views-colorMode.svg";
 import VisualizerViewsLines from "./images/visualizer-views-lines.svg";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
@@ -125,7 +125,7 @@ const KanvasVisualizerViews = () => {
     <ViewsSectionWrapper>
       <div className="views-section">
         <div className="hero-image" ref={imageRef}>
-          <VisualizerViews className={imageInView ? "visible" : "not-visible"} alt="" style={{ position: "absolute", top: "0%" }}/>
+          <img src={VisualizerViews} alt="" className={imageInView ? "visible" : "not-visible"} style={{ position: "absolute", top: "0%" }} />
           <img className={imageInView ? "lines-visible" : "not-visible"} src={VisualizerViewsLines} alt="" />
         </div>
         <div className="hero-text">

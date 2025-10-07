@@ -11,7 +11,7 @@ import CommunitySectionWrapper from "./community.style";
 import Five from "./Community-pictures/community.png";
 import NewcomersMap from "./Newcomers-guide/newcomers-map.js";
 import DiscussCallout from "../../sections/Discuss-Callout";
-import { ReactComponent as MeshmateIcon } from "../../assets/images/meshmate/meshmate-stack-colorMode.svg";
+import MeshmateIcon from "../../assets/images/meshmate/meshmate-stack-colorMode.svg";
 import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
@@ -177,7 +177,7 @@ const CommunityPage = () => {
               </p>
             </Col>
             <Col $sm={12} $lg={6}>
-              <MeshmateIcon className="meshmate-img meshmate-img-transparent" />
+              <img src={MeshmateIcon} alt="Meshmate Icon" className="meshmate-img meshmate-img-transparent" />
               <Link className="meshmate-link meshmate-link-transparent" to="/community/meshmates">
                 <h2>Open Source Mentorship Program</h2>
                 <button className="icon" aria-label="mentorship-program">

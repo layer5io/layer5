@@ -8,8 +8,8 @@ import Button from "../../reusecore/Button";
 import SquarePoint from "./SquarePoint";
 import Reviews from "../Pricing/review-slider";
 import { ColumnContainer, ContentRow, TextColumn } from "./common";
-import { ReactComponent as SmpLogo }  from "../../assets/images/service-mesh-performance/stacked/smp-light-text.svg";
-import { ReactComponent as GithubLogo } from "../../collections/integrations/github/icons/color/github-color.svg";
+import SmpLogo from "../../assets/images/service-mesh-performance/stacked/smp-light-text.svg";
+import GithubLogo from "../../collections/integrations/github/icons/color/github-color.svg";
 
 const PerformanceManagementPage = () => {
   return (
@@ -28,7 +28,7 @@ const PerformanceManagementPage = () => {
             <Button primary className="learn-more-btn" title="Go to Documentation" url="https://cloud.layer5.io/connect/github/new"/>
           </TextColumn>
           <ColumnContainer>
-            <SmpLogo className="stack-logo" />
+            <img src={SmpLogo} alt="SmpLogo" className="stack-logo" />
             <img src={Cone} className="kanvas-stack-cone" />
           </ColumnContainer>
         </ContentRow>
@@ -48,7 +48,7 @@ const PerformanceManagementPage = () => {
       <ContentContainerWrapper>
         <ContentRow>
           <ColumnContainer>
-            <GithubLogo className="stack-logo" />
+            <img src={GithubLogo} alt="GithubLogo" className="stack-logo" />
             <img src={Cone} className="kanvas-stack-cone" />
           </ColumnContainer>
 

@@ -7,7 +7,7 @@ import TimelineDVR from "./images/timeline-dvr.svg";
 import TimelineDVRClock from "./images/timeline-dvr-clock.svg";
 import ServicePerformanceGearDark from "./images/service-performance-gear-dark.svg";
 import ServicePerformanceGearLight from "./images/service-performance-gear-light.svg";
-import { ReactComponent as ServicePerformanceMeter } from "./images/service-performance-meter-colorMode.svg";
+import ServicePerformanceMeter from "./images/service-performance-meter-colorMode.svg";
 import ApplicationImportBoxes from "./images/application-import-boxes.svg";
 import ApplicationImportArrows from "./images/application-import-arrows.svg";
 import InteractiveTerminal from "./images/interactive-terminal.svg";
@@ -211,9 +211,8 @@ const KanvasisualizerFeatures = () => {
             <div className={(isHovered && hoveredFeature != "Feature5") ? "project__block__inner darken" : "project__block__inner"} onMouseOver={() => handleMouseOver(5)} onMouseOut={handleMouseOut}>
               <div className="feature-image">
                 <img src={isDark ? ServicePerformanceGearDark : ServicePerformanceGearLight} alt="Service Performance" style={{ position: "absolute", zIndex: "0" }} />
-                <ServicePerformanceMeter alt="" className={hoveredFeature == "Feature5" ? "meter-visible" : "secondary-image"}
-                  style={{ height: "auto", width: "70%",position: "relative", zIndex: "10", transformOrigin: "center center" }}
-                />
+                <img src={ServicePerformanceMeter} alt="" className={hoveredFeature == "Feature5" ? "meter-visible" : "secondary-image"}
+                  style={{ height: "auto", width: "70%",position: "relative", zIndex: "10", transformOrigin: "center center" }} />
               </div>
               <h3>Service Performance</h3>
               <p>Continuous visibility across all of your clusters and workloads metrics.</p>

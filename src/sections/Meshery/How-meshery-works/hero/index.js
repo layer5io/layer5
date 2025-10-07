@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Col, Row } from "../../../../reusecore/Layout";
 import styled from "styled-components";
-import { ReactComponent as HeroImage } from "../images/meshery-operator-dark.svg";
+import HeroImage from "../images/meshery-operator-dark.svg";
 
 const HowMesheryWorksHeroWrapper = styled.div`
     
@@ -74,7 +74,7 @@ const HowMesheryWorksHero = () => {
             <h2>with Meshery Operator and MeshSync.</h2>
           </Col>
           <Col className="hero-img-wrapper" $xs={4} $lg={6}>
-            <HeroImage alt="hero" />
+            <img src={HeroImage} alt="hero" />
           </Col>
         </Row>
       </Container>

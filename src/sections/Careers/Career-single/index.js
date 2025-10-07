@@ -8,7 +8,7 @@ import { FaGlobeAmericas } from "@react-icons/all-files/fa/FaGlobeAmericas";
 import { FiCalendar } from "@react-icons/all-files/fi/FiCalendar";
 import { FiClock } from "@react-icons/all-files/fi/FiClock";
 import { HiCash } from "@react-icons/all-files/hi/HiCash";
-import { ReactComponent as Logo } from "../../../assets/images/app/layer5-colorMode.svg";
+import Logo from "../../../assets/images/app/layer5-colorMode.svg";
 
 const CareerSingle = ({ data }) => {
   const { frontmatter, body } = data.allMdx.nodes[0];
@@ -42,7 +42,7 @@ const CareerSingle = ({ data }) => {
             </Col>
             <Col $xs={12} $md={5} $xl={4} className="logo-col">
               <div className="layer5-logo">
-                <Logo alt="Layer5 logo" />
+                <img src={Logo} alt="Layer5 logo" />
               </div>
             </Col>
           </Row>

@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
-import { ReactComponent as IntegrationsImage } from "./integration-image-colorMode.svg";
+import IntegrationsImage from "./integration-image-colorMode.svg";
 import DesignDefaultWrapper from "./highlight.style";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
@@ -58,7 +58,7 @@ const DesignDefault = () => {
           </Col>
           <Col $sm={12} $md={6} $lg={6} className="right-col" >
             <div ref={diagramRef} style={{ alignSelf: "center", width: "100%" }}>
-              <IntegrationsImage  alt="integrations-img" className={imageInView ? "diagram-visible" : "diagram-hidden"} />
+              <img src={IntegrationsImage} alt="integrations-img" className={imageInView ? "diagram-visible" : "diagram-hidden"} />
             </div>
           </Col>
         </Row>

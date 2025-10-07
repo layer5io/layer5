@@ -1,9 +1,9 @@
 import React from "react";
 import DiagramStyles from "../../diagram/diagram.style";
-import { ReactComponent as Collab1 } from "./images/collab1-colorMode.svg";
-import { ReactComponent as Collab2 } from "./images/collab2-colorMode.svg";
-import { ReactComponent as Collab3 } from "./images/collab3-colorMode.svg";
-import { ReactComponent as Collab4 } from "./images/collab4-colorMode.svg";
+import Collab1 from "./images/collab1-colorMode.svg";
+import Collab2 from "./images/collab2-colorMode.svg";
+import Collab3 from "./images/collab3-colorMode.svg";
+import Collab4 from "./images/collab4-colorMode.svg";
 import Avatar1 from "./images/avatar1.webp";
 import Avatar2 from "./images/avatar2.webp";
 import Avatar3 from "./images/avatar3.webp";
@@ -22,10 +22,10 @@ const CollaboratorFeaturesDiagram = ({ activeExampleIndex }) => {
           <img id="avatar-3" className={(activeExampleIndex >= 2) ? "show" : "render"} src={Avatar3} alt=""  />
         </div>
         <div className="root" ref={ref2} style={{ minHeight: "25rem", minWidth: "41rem" }}>
-          <Collab1 id="collaborate-image1" className={inView2 && activeExampleIndex == 0 ? "show" : "render"} alt="collaborate-image1"  />
-          <Collab2 id="collaborate-image2" className={(activeExampleIndex == 1) ? "show" : "render"} alt="collaborate-image2" />
-          <Collab3 id="collaborate-image3" className={(activeExampleIndex == 2) ? "show" : "render"} alt="collaborate-image3" />
-          <Collab4 id="collaborate-image4" className={(activeExampleIndex >= 3) ? "show" : "render"} alt="collaborate-image4" />
+          <img src={Collab1} id="collaborate-image1" className={inView2 && activeExampleIndex == 0 ? "show" : "render"} alt="collaborate-image1"  />
+          <img src={Collab2} id="collaborate-image2" className={(activeExampleIndex == 1) ? "show" : "render"} alt="collaborate-image2" />
+          <img src={Collab3} id="collaborate-image3" className={(activeExampleIndex == 2) ? "show" : "render"} alt="collaborate-image3" />
+          <img src={Collab4} id="collaborate-image4" className={(activeExampleIndex >= 3) ? "show" : "render"} alt="collaborate-image4" />
         </div>
       </div>
     </DiagramStyles>

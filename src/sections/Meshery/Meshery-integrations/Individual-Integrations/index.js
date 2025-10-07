@@ -11,7 +11,7 @@ import RelatedIntegration from "../IntegrationsGrid";
 import HowMesheryWorksSpecs from "../../../../components/specs";
 import ModelComponents from "./ComponentsGrid";
 import CatalogGrid from "./CatalogGrid";
-import { ReactComponent as MesheryLogoBullet } from "../../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
+import MesheryLogoBullet from "../../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 
 const IndividualIntegrations = ({ data }) => {
   const { frontmatter, body } = data.allMdx.nodes[0];
@@ -75,14 +75,13 @@ const IndividualIntegrations = ({ data }) => {
           <ul>
             {frontmatter.featureList.map((feature, indx) => (
               <li key={indx}>
-                <MesheryLogoBullet
+                <img src={MesheryLogoBullet} alt="MesheryLogoBullet"
                   style={{
                     width: "10px",
                     height: "10px",
                     minWidth: "10px",
                     marginRight: "16px",
-                  }}
-                />
+                  }} />
                 {feature}
               </li>
             ))}

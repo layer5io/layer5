@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 // uncomment if need
-// import { ReactComponent as BannerImage } from "./images/banner-image-colorMode.svg";
-// import { ReactComponent as CytoscapeImg } from "./images/cytoscape-colorMode.svg";
+// import BannerImage from "./images/banner-image-colorMode.svg";
+// import CytoscapeImg from "./images/cytoscape-colorMode.svg";
 // import CytoscapeDemo from "./cytoscape-demo";
 // import CytoscapeCanvas from "./cytoscape-demo";
 // import Graph from "./cytoscapeCanvas";
@@ -155,7 +155,7 @@ const KanvasDesignBanner = () => {
 
   return (
     <DesignBannerWrapper>
-      {/* <BannerImage className="banner-image" alt="BannerImage"/> */}
+      {/* <img src={BannerImage} alt="BannerImage" className="banner-image" /> */}
       <div className="hero-text">
         <h4>Kanvas</h4>
         <h2>Designer</h2>

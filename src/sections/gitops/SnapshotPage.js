@@ -1,6 +1,6 @@
 import React from "react";
 import { PageWrapper,ContentContainerWrapper,HeroContentContainerWrapper, Heading, Description } from "./snapshot.style";
-import { ReactComponent as KanvasStack } from "../../assets/images/kanvas/stacked/kanvas-stacked-white.svg";
+import KanvasStack from "../../assets/images/kanvas/stacked/kanvas-stacked-white.svg";
 import Cone from "../../assets/images/gitops/conelight.svg";
 import GithubActionComment from "../../assets/images/gitops/GithubActionComment.png";
 import Button from "../../reusecore/Button";
@@ -25,7 +25,7 @@ const SnapshotPage = () => {
             <Button primary className="learn-more-btn" title="INSTALL" $url="https://cloud.layer5.io/connect/github/new"/>
           </TextColumn>
           <ColumnContainer>
-            <KanvasStack className="stack-logo" />
+            <img src={KanvasStack} alt="KanvasStack" className="stack-logo" />
             <img src={Cone} className="kanvas-stack-cone" />
           </ColumnContainer>
         </ContentRow>
@@ -52,7 +52,7 @@ const SnapshotPage = () => {
           </TextColumn>
 
           <ColumnContainer>
-            <KanvasStack className="stack-logo" />
+            <img src={KanvasStack} alt="KanvasStack" className="stack-logo" />
             <img src={Cone} className="kanvas-stack-cone" />
           </ColumnContainer>
         </ContentRow>

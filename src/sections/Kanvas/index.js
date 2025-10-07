@@ -14,18 +14,18 @@ import VisualizerFeatures from "./FeaturesSection/Visualize/VisualizerFeatures";
 import KanvasBtn from "./kanvas-buttons.js";
 import Reviews from "../Pricing/review-slider";
 import InlineQuotes from "../../components/Inline-quotes";
-import { ReactComponent as RoleBind1 } from "./FeaturesSection/Design/images/role-binding-1-colorMode.svg";
-import { ReactComponent as RoleBind2 } from "./FeaturesSection/Design/images/role-binding-2-colorMode.svg";
-import { ReactComponent as RoleBind3 } from "./FeaturesSection/Design/images/role-binding-3-colorMode.svg";
-import { ReactComponent as RoleBind4 } from "./FeaturesSection/Design/images/role-binding-4-colorMode.svg";
+import RoleBind1 from "./FeaturesSection/Design/images/role-binding-1-colorMode.svg";
+import RoleBind2 from "./FeaturesSection/Design/images/role-binding-2-colorMode.svg";
+import RoleBind3 from "./FeaturesSection/Design/images/role-binding-3-colorMode.svg";
+import RoleBind4 from "./FeaturesSection/Design/images/role-binding-4-colorMode.svg";
 
-import { ReactComponent as Visualize1 } from "./FeaturesSection/Visualize/images/visualize-1-colorMode.svg";
-import { ReactComponent as Visualize2 } from "./FeaturesSection/Visualize/images/visualize-2-colorMode.svg";
+import Visualize1 from "./FeaturesSection/Visualize/images/visualize-1-colorMode.svg";
+import Visualize2 from "./FeaturesSection/Visualize/images/visualize-2-colorMode.svg";
 
-import { ReactComponent as Collab1 } from "./FeaturesSection/Collaborate/images/collab1-colorMode.svg";
-import { ReactComponent as Collab2 } from "./FeaturesSection/Collaborate/images/collab2-colorMode.svg";
-import { ReactComponent as Collab3 } from "./FeaturesSection/Collaborate/images/collab3-colorMode.svg";
-import { ReactComponent as Collab4 } from "./FeaturesSection/Collaborate/images/collab4-colorMode.svg";
+import Collab1 from "./FeaturesSection/Collaborate/images/collab1-colorMode.svg";
+import Collab2 from "./FeaturesSection/Collaborate/images/collab2-colorMode.svg";
+import Collab3 from "./FeaturesSection/Collaborate/images/collab3-colorMode.svg";
+import Collab4 from "./FeaturesSection/Collaborate/images/collab4-colorMode.svg";
 
 import Avatar1 from "./FeaturesSection/Collaborate/images/avatar1.webp";
 import Avatar2 from "./FeaturesSection/Collaborate/images/avatar2.webp";
@@ -103,21 +103,21 @@ const Kanvas = (props) => {
                   title: "Manage your applications visually and intuitively",
                   description: "Play with powerful features including context-aware designs and namespace configurations to easily manage all services.",
                   imgContent: (
-                    <RoleBind2 id="design-image2" alt="design-image2" />
+                    <img src={RoleBind2} alt="design-image2" id="design-image2" />
                   )
                 },
                 {
                   title: "Build the bridge",
                   description: "Go from developer handoffs to ongoing conversations with a shared language between design and development.",
                   imgContent: (
-                    <RoleBind3 id="design-image3" style={{ transform: "translateX(-2rem)" }} alt="design-image3" />
+                    <img src={RoleBind3} alt="design-image3" id="design-image3" style={{ transform: "translateX(-2rem)" }} />
                   )
                 },
                 {
                   title: "Stop finger-pointing",
                   description: "Make infrastructure and application management less about finger-pointing and more about collaborating.",
                   imgContent: (
-                    <RoleBind4 id="design-image4" style={{ transform: "translateX(-2rem)" }} alt="design-image4" />
+                    <img src={RoleBind4} alt="design-image4" id="design-image4" style={{ transform: "translateX(-2rem)" }} />
                   )
                 },
               ]}/>
@@ -141,7 +141,7 @@ const Kanvas = (props) => {
                   title: "Continuous visibility across all of your clusters and workloads.",
                   description: "Import your existing Kubernetes, Kustomize, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers.",
                   imgContent: (
-                    <Visualize2 id="visualize-image2" alt="visualize-image2" />
+                    <img src={Visualize2} alt="visualize-image2" id="visualize-image2" />
                   )
                 },
               ]} />
@@ -167,7 +167,7 @@ const Kanvas = (props) => {
                         height="48"
                         style={{ objectFit: "cover" }}
                       />
-                      <Collab1 id="collaborate-image1" alt="collaborate-image1" />
+                      <img src={Collab1} alt="collaborate-image1" id="collaborate-image1" />
                     </>
                   )
                   // Invite any Layer5 Cloud user, or all Meshery users, to work with you on a public design, including making changes and releasing new versions."
@@ -189,7 +189,7 @@ const Kanvas = (props) => {
                         height="48"
                         style={{ objectFit: "cover" }}
                       />
-                      <Collab2 id="collaborate-image2" alt="collaborate-image2" />
+                      <img src={Collab2} alt="collaborate-image2" id="collaborate-image2" />
                     </>
                   )
                 },
@@ -206,7 +206,7 @@ const Kanvas = (props) => {
                         height="48"
                         style={{ objectFit: "cover" }}
                       />
-                      <Collab3 id="collaborate-image3" alt="collaborate-image3" />
+                      <img src={Collab3} alt="collaborate-image3" id="collaborate-image3" />
                     </>
                   )
                 },
@@ -227,7 +227,7 @@ const Kanvas = (props) => {
                         height="48"
                         style={{ objectFit: "cover" }}
                       />
-                      <Collab4 id="collaborate-image4" alt="collaborate-image4" />
+                      <img src={Collab4} alt="collaborate-image4" id="collaborate-image4" />
                     </>
                   )
                 }

@@ -24,7 +24,7 @@ import mesheryCatalogLogo from "../../../assets/images/meshery/meshery-catalog.s
 import dockerExtensionLogo from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
 import KanvasLogo from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 import Button from "../../../reusecore/Button";
-import { ReactComponent as TwitterIcon } from "../../../assets/images/socialIcons/twitter.svg";
+import TwitterIcon from "../../../assets/images/socialIcons/twitter.svg";
 
 const MemberSingle = ({ frontmatter }) => {
   const {
@@ -336,7 +336,7 @@ const MemberSingle = ({ frontmatter }) => {
                   {twitter && (
                     <li className="tooltip">
                       <a href={`https://twitter.com/${twitter}`}>
-                        <TwitterIcon className="twitter" size={32} />
+                        <img src={TwitterIcon} className="twitter" alt="Twitter" style={{width: '32px', height: '32px'}} />
                         <span
                           className={`tooltiptext ${
                             twitter.length > 20

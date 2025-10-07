@@ -6,7 +6,7 @@ import CommunityCallCard from "../../../components/CommunityCallCard";
 import MeshMatesWrapper from "./meshmates.style";
 import { useStaticQuery, graphql } from "gatsby";
 import c_icon from "./c-icon.svg";
-import { ReactComponent as MeshmateStackImage } from "../../../assets/images/meshmate/meshmate-stack-colorMode.svg";
+import MeshmateStackImage from "../../../assets/images/meshmate/meshmate-stack-colorMode.svg";
 
 import { Link } from "gatsby";
 import { FiArrowRight } from "@react-icons/all-files/fi/FiArrowRight";
@@ -76,7 +76,7 @@ const Meshmates = () => {
             </p>
           </Col>
           <Col className="meshmate-logo-wrapper" $sm={12} $lg={6}>
-            <MeshmateStackImage alt="meshmate logo" />
+            <img src={MeshmateStackImage} alt="meshmate logo" />
           </Col>
         </Row>
         <div className="meshmates-grid">

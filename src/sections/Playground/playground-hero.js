@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ReactComponent as PlaygroundHeroImage } from "./images/playground-hero.svg";
+import PlaygroundHeroImage from "./images/playground-hero.svg";
 import Button from "../../reusecore/Button";
 
 const PlaygroundHeroWrapper = styled.div`
@@ -63,7 +63,7 @@ const PlaygroundHero = () => {
           <Button $primary className="join-community-button" title="Use Meshery Playground" $url="https://play.meshery.io/" $external="true" />
         </div>
         <div className="hero-image">
-          <PlaygroundHeroImage />
+          <img src={PlaygroundHeroImage} alt="PlaygroundHeroImage"  />
         </div>
       </div>
     </PlaygroundHeroWrapper>

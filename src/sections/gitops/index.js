@@ -9,7 +9,7 @@ import SmpLogo_light from "../../assets/images/service-mesh-performance/icon/smp
 import Reviews from "../Pricing/review-slider";
 import Github_Dark from "../../assets/images/socialIcons/github-dark.svg";
 import Github_Light from "../../assets/images/socialIcons/github-light.svg";
-import { ReactComponent as KanvasStack } from "../../assets/images/kanvas/stacked/kanvas-stacked-white.svg";
+import KanvasStack from "../../assets/images/kanvas/stacked/kanvas-stacked-white.svg";
 import SquarePoint from "./SquarePoint";
 
 
@@ -29,7 +29,7 @@ const GitOpsPage = () => {
           </Col>
           <Col $lg={6} $md={6} className="hero-images">
             <div className="hero-image-container" >
-              <KanvasStack className="kanvas-stack-hero" />
+              <img src={KanvasStack} alt="KanvasStack" className="kanvas-stack-hero" />
               <img src={Cone} />
             </div>
             <div className="hero-image-container">
@@ -86,7 +86,7 @@ const GitOpsPage = () => {
           </Col>
           <Col className="hero-image" $lg={6} $md={6} $xs={12} $sm={10} >
             <div className="image-container" >
-              <KanvasStack className="logo" />
+              <img src={KanvasStack} alt="KanvasStack" className="logo" />
               <img src={Cone} className="cone-image" />
             </div>
           </Col>
