@@ -184,7 +184,7 @@ const componentsData = [
     id: 24,
     name: "Toolbar",
     description:
-    "The toolbar is a horizontal container for grouping interactive elements like buttons, filters, or navigation controls, typically placed at the top of a UI section.",
+      "The toolbar is a horizontal container for grouping interactive elements like buttons, filters, or navigation controls, typically placed at the top of a UI section.",
     url: "/projects/sistent/components/toolbar",
     src: "/toolbar",
   },
@@ -222,6 +222,13 @@ const componentsData = [
     description: "IconButton provides an interactive button component that displays only an icon, ideal for compact UIs where space is limited and actions are easily recognizable through iconography.",
     url: "/projects/sistent/components/iconbutton",
     src: "/iconbutton",
+  },
+  {
+    "id": 29,
+    "name": "FormControlLabel",
+    "description": "A control + label pair used for checkboxes or radio buttons.",
+    "url": "/projects/sistent/components/formcontrollabel",
+    "src": "/formcontrollabel",
   },
 ];
 
