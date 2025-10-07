@@ -135,7 +135,7 @@ const TOCWrapper = styled.div`
     background-color: transparent;
   }
 
-  .identity, .components {
+  .identity, .components, .getting-started {
     display: flex;
     width: 100%;
     justify-content: space-between;

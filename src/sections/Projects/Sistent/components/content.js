@@ -209,6 +209,13 @@ const componentsData = [
     "url": "/projects/sistent/components/list",
     "src": "/list",
   },
+  {
+    "id": 28,
+    "name": "Chip",
+    "description": "Chips are compact elements that represent an input, attribute, or action. They are often used for tags, contacts, or filters.",
+    "url": "/projects/sistent/components/chip",
+    "src": "/chip",
+  },
 ];
 
 module.exports = { componentsData };
