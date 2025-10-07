@@ -31,7 +31,7 @@ const TOC = () => {
     <TOCWrapper>
       <div className="go-back">
         <Link to="/projects/sistent">
-          <HiOutlineChevronLeft />
+          <HiOutlineChevronLeft/>
           <h4>Table of Contents</h4>
         </Link>
         <div className="toc-toggle-btn">
@@ -126,18 +126,19 @@ const TOC = () => {
           </li>
           <li>
             <div>
-              <li
+              <div
+                type="button"
                 className="toc-sub-heading identity"
                 onClick={() => setExpandIdentity((prev) => !prev)}
               >
                 Identity
-                {expandIdenity ?
-                  <IoIosArrowDown style={{ zIndex: 2 }} /> :
-                  <IoIosArrowForward style={{ zIndex: 2 }} />
+                {expandIdentity ?
+                  <IoIosArrowDown style={{ zIndex: 2 }}/> :
+                  <IoIosArrowForward style={{ zIndex: 2 }}/>
                 }
-              </li>
-              {expandIdenity && (
-                <div className="identity-sublinks">
+              </div>
+              {expandIdentity && (
+                <ul className="identity-sublinks">
                   <li>
                     <Link
                       to="/projects/sistent/identity/color"
@@ -183,42 +184,40 @@ const TOC = () => {
                       Typography
                     </Link>
                   </li>
-                </div>
+                </ul>
               )}
             </div>
           </li>
           <li>
             <div>
-              <li
+              <div
                 className="toc-sub-heading components"
                 onClick={() => setExpandComponent((prev) => !prev)}
               >
                 Components
                 {expandComponent ?
-                  <IoIosArrowDown style={{ zIndex: 2 }} /> :
-                  <IoIosArrowForward style={{ zIndex: 2 }} />
+                  <IoIosArrowDown style={{ zIndex: 2 }}/> :
+                  <IoIosArrowForward style={{ zIndex: 2 }}/>
                 }
-              </li>
+              </div>
               {expandComponent && (
-                <div className="components-sublinks">
-                  <li>
-                    {sortedComponentArray.map((component) => (
-                      <li key={component.id}>
-                        <Link
-                          to={component.url}
-                          className={`toc-sub-heading toc-sub-inline components-item ${
-                            location.pathname.split("/")[4] === component.url.split("/")[4]
-                              ? "active"
-                              : ""
-                          }`}
-                          activeClassName="active"
-                        >
-                          {component.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </li>
-                </div>
+                <ul className="components-sublinks">
+                  {sortedComponentArray.map((component) => (
+                    <li key={component.id}>
+                      <Link
+                        to={component.url}
+                        className={`toc-sub-heading toc-sub-inline components-item ${
+                          location.pathname.split("/")[4] === component.url.split("/")[4]
+                            ? "active"
+                            : ""
+                        }`}
+                        activeClassName="active"
+                      >
+                        {component.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               )}
             </div>
           </li>

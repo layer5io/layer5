@@ -32,11 +32,11 @@ export const query = graphql`
             courseTitle
             meshesYouLearn {
             imagepath {
+              extension
+              publicURL
               childImageSharp {
                 gatsbyImageData(width: 50, layout: CONSTRAINED)
               }
-              extension
-              publicURL
             }
             name
           }

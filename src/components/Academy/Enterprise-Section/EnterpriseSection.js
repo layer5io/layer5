@@ -57,10 +57,6 @@ const EnterpriseSectionWrapper = styled.section`
           
           .progress-value {
             font-weight: bold;
-            
-            &.primary {
-              color: #00b39f;
-            }
           }
         }
         
@@ -80,7 +76,6 @@ const EnterpriseSectionWrapper = styled.section`
               display: block;
               font-size: 1.5rem;
               font-weight: 700;
-              color: #00b39f;
               margin-bottom: 0.25rem;
             }
             
@@ -112,13 +107,6 @@ const EnterpriseSectionWrapper = styled.section`
         @keyframes fadeInUp {
           from { opacity: 0; transform: translateY(20px); }
           to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .highlight {
-          background: linear-gradient(135deg, #00b39f, #00d3a9);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
         }
       }
       
@@ -238,7 +226,7 @@ const EnterpriseSection = () => {
           </div>
         </div>
         <div className="audience-text">
-          <h2>For <span className="highlight">Large Organizations</span></h2>
+          <h2>For Large Organizations</h2>
           {/* <p>
             Accelerate your enterprise platform transformation with structured cloud native training, customizable contents, and enterprise-grade analytics to maximize ROI and reduce risk.{" "}
             <Link to="/collections/resources/comparison/layer5-academy-vs-moocit">Compare Layer5 Academy with traditional platforms.</Link>
