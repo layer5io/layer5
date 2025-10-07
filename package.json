@@ -68,6 +68,7 @@
     "gatsby-plugin-meta-redirect": "github:layer5labs/gatsby-plugin-meta-redirect",
     "gatsby-plugin-netlify": "^5.1.1",
     "gatsby-plugin-preload-fonts": "^4.11.0",
+    "gatsby-plugin-purgecss": "^6.2.1",
     "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-sharp": "^5.11.0",
     "gatsby-plugin-sitemap": "^6.11.0",
@@ -113,7 +114,7 @@
     "simple-react-lightbox": "^3.6.9-0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.14",
-    "swiper": "^11.1.15",
+    "swiper": "^12.0.2",
     "url": "^0.11.3",
     "webpack-filter-warnings-plugin": "^1.2.1",
     "xstate": "^5.13.0"

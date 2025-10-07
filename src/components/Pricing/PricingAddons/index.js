@@ -539,8 +539,12 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                       <TextField
                         type="number"
                         value={enterpriseUsers}
-                        onChange={(e) => setEnterpriseUsers(parseInt(e.target.value, 10))}
-                        inputProps={{ min: 1, style: { textAlign: "center" } }}
+                        onChange={(e) => {
+                          const val = parseInt(e.target.value, 10);
+                          if (isNaN(val) || (val >= 1 && val <= 2500)) {
+                            setEnterpriseUsers(val);
+                          }
+                        }}
                         sx={boxStyles.enterpriseUserInput}
                       />
                     </Box>
