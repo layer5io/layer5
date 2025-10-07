@@ -153,8 +153,8 @@ export const boxStyles = {
     display: "flex",
     justifyContent: "center",
     flexWrap: "wrap",
-    gap: 1,
-    mt: 2
+    gap: 0,
+    mt: 0
   },
   sliderMarks: {
     textAlign: "center",
@@ -222,7 +222,7 @@ export const boxStyles = {
     alignItems: "center"
   },
   enterpriseUserInput: {
-    width: "50px",
+    width: "65px",
     ml: 1,
     "& .MuiInputBase-input": {
       py: (theme) => theme.spacing(0.5),
@@ -251,7 +251,7 @@ export const boxStyles = {
     mt: 1
   },
   disclaimerSection: {
-    my: 6,
+    my: 10,
     mb: 2,
     justifyContent: "space-between"
   }

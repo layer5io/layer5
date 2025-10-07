@@ -18,18 +18,18 @@ export const query = graphql`
         description
         presskit
         thumbnail {
+          extension
+          publicURL
           childImageSharp {
             gatsbyImageData(width: 500, layout: CONSTRAINED)
           }
-          extension
-          publicURL
         }
         darkthumbnail {
+          extension
+          publicURL
           childImageSharp {
             gatsbyImageData(width: 500, layout: CONSTRAINED)
           }
-          extension
-          publicURL
         }
       }
       fields {

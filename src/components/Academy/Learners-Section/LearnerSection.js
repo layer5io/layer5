@@ -98,26 +98,13 @@ const LearnerSectionWrapper = styled.section`
           box-shadow: ${props => props.isDark ? "0 8px 32px rgba(0, 0, 0, 0.3)" : "0 4px 12px rgba(0, 0, 0, 0.1)"};
           transition: all 0.3s ease;
           
-          &:hover {
-            transform: translateY(-5px) scale(1.02);
-            background: ${props => props.isDark ? "rgba(0, 179, 159, 0.15)" : "rgba(0, 179, 159, 0.05)"};
-            border-color: rgba(0, 179, 159, 0.4);
-            box-shadow: ${props => props.isDark ? "0 12px 40px rgba(0, 179, 159, 0.2)" : "0 8px 25px rgba(0, 179, 159, 0.2)"};
-          }
-          
           .stat-number {
             display: block;
             font-size: 2rem;
             font-weight: 800;
-            color: #00b39f;
             margin-bottom: 0.5rem;
             transition: all 0.3s ease;
             animation: pulse 2s infinite;
-          }
-          
-          &:hover .stat-number {
-            transform: scale(1.1);
-            color: #00d3a9;
           }
           
           .stat-label {
@@ -128,9 +115,6 @@ const LearnerSectionWrapper = styled.section`
             transition: color 0.3s ease;
           }
           
-          &:hover .stat-label {
-            color: #00b39f;
-          }
           
           @keyframes pulse {
             0% { opacity: 1; }
@@ -160,7 +144,7 @@ const LearnerSection = () => {
     <LearnerSectionWrapper className="audience-section learners-section fade-in">
       <div className="audience-content">
         <div className="audience-text">
-          <h2>For <span className="highlight">Learners</span></h2>
+          <h2>For Learners</h2>
           <p>Whether you're just starting with containers or deepening your microservices architecture knowledge, our comprehensive platform adapts to your learning style and pace.</p>
           <ul className="audience-features">
             <li>Progressive <a href="https://cloud.layer5.io/academy?contentType=learning-path" target="_blank" rel="noopener noreferrer">learning paths</a> tailored to your experience</li>
