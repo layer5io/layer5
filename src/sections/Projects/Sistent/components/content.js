@@ -216,6 +216,13 @@ const componentsData = [
     "url": "/projects/sistent/components/chip",
     "src": "/chip",
   },
+  {
+    "id": 29,
+    "name": "FormControlLabel",
+    "description": "A control + label pair used for checkboxes or radio buttons.",
+    "url": "/projects/sistent/components/formcontrollabel",
+    "src": "/formcontrollabel"
+  },
 ];
 
 module.exports = { componentsData };
