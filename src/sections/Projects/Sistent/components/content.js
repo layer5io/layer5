@@ -209,6 +209,13 @@ const componentsData = [
     "url": "/projects/sistent/components/list",
     "src": "/list",
   },
+  {
+    "id": 28,
+    "name": "Collapse",
+    "description": "The Collapse component is used to create expandable/collapsible content sections. It smoothly animates the height of its children from zero to full height when expanded.",
+    "url": "/projects/sistent/components/collapse",
+    "src": "/collapse",
+  },
 ];
 
 module.exports = { componentsData };
