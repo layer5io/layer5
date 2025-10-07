@@ -57,16 +57,16 @@ const missingPages = [
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createRedirect, createPage } = actions;
   const redirects = loadRedirects();
-  
+
   // Process redirects first
   redirects.forEach(redirect => createRedirect(redirect));
-  
+
   // Create a simple 404 page for missing pages
   missingPages.forEach(path => {
     createPage({
       path: path,
-      component: require.resolve('./src/templates/not-found.js'),
-      context: { 
+      component: require.resolve("./src/templates/not-found.js"),
+      context: {
         slug: path,
         isMissingPage: true
       },

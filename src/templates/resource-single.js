@@ -59,9 +59,9 @@ export default ResourceSinglePage;
 export const Head = ({ data }) => {
   const resource = data.allMdx.nodes[0];
   return (
-    <SEO 
-      title={resource.frontmatter.title} 
-      image={resource.frontmatter.thumbnail?.publicURL} 
+    <SEO
+      title={resource.frontmatter.title}
+      image={resource.frontmatter.thumbnail?.publicURL}
       description={resource.frontmatter.description}
     />
   );
