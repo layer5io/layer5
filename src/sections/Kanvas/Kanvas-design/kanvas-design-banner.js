@@ -166,8 +166,8 @@ const KanvasDesignBanner = () => {
         <Button $secondary title="Experience context-aware design" $url="https://kanvas.new" external={ true } />
         <h5>Upload your Helm Chart or Kubernetes manifest to have your infra diagrammed</h5>
       </div>
-      <img className="dots-upper" src={BackgroundDotsPattern}  />
-      <img className="dots-lower" src={BackgroundDotsPattern}  />
+      <img className="dots-upper" src={BackgroundDotsPattern} alt="" aria-hidden="true" />
+      <img className="dots-lower" src={BackgroundDotsPattern} alt="" aria-hidden="true" />
     </DesignBannerWrapper>
 
   );

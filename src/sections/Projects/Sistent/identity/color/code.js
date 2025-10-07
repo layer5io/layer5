@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { SistentLayout } from "../../sistent-layout";
@@ -6,8 +6,8 @@ import { Col, Row } from "../../../../../reusecore/Layout";
 import Button from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
-import {  styled,  Table, TableContainer, TableCell, TableRow, TableHead, TableBody, SistentThemeProvider, CustomTooltip, Box, } from "@sistent/sistent";
-import { copyToClipboard } from "../../../../../components/CodeBlock/copy-to-clipboard.js";
+import {  styled,  Table, TableContainer, TableCell, TableRow, TableHead, TableBody, SistentThemeProvider } from "@sistent/sistent";
+import CopyValue from "../../../../../components/CopyValue";
 
 const brandColors = [
   { tokenName: "keppel-70", token: "theme.palette.brand.default", name: "Keppel", hex: "#DAf3EB" },
@@ -401,170 +401,6 @@ const componentColors = [
   { tokenName: "icon-disabled", token: "theme.palette.icon.disabled", Alias_of: "charcoal-50", hex: "#647176", role: "Color for icon components." },
 ];
 
-
-const CopyColor = ({ hex, token, copyValue }) => {
-  const [copyState, setCopyState] = useState({
-    text: "Copy",
-    isCopied: false,
-    isHovered: false
-  });
-
-  const handleCopy = useCallback(async () => {
-    try {
-      const valueToCopy = copyValue || hex || token;
-      await copyToClipboard(valueToCopy);
-
-      setCopyState({
-        text: "Copied!",
-        isCopied: true,
-        isHovered: false
-      });
-
-      setTimeout(() => {
-        setCopyState({
-          text: "Copy",
-          isCopied: false,
-          isHovered: false
-        });
-      }, 2000);
-    } catch (error) {
-      console.error("Failed to copy to clipboard:", error);
-      setCopyState({
-        text: "Failed",
-        isCopied: false,
-        isHovered: false
-      });
-
-      setTimeout(() => {
-        setCopyState({
-          text: "Copy",
-          isCopied: false,
-          isHovered: false
-        });
-      }, 1500);
-    }
-  }, [copyValue, hex, token]);
-
-  const handleMouseEnter = useCallback(() => {
-    if (!copyState.isCopied) {
-      setCopyState(prev => ({
-        ...prev,
-        isHovered: true
-      }));
-    }
-  }, [copyState.isCopied]);
-
-  const handleMouseLeave = useCallback(() => {
-    setCopyState(prev => ({
-      ...prev,
-      isHovered: false
-    }));
-  }, []);
-
-
-  const getTooltipTitle = () => {
-    if (copyState.isCopied) {
-      return "Copied";
-    }
-    if (copyState.text === "Failed") {
-      return "Failed to copy. Try again.";
-    }
-    return "Click to copy to clipboard";
-  };
-
-  const getCopyValue = () => {
-    return copyValue || hex || token;
-  };
-
-  return (
-    <CustomTooltip
-      title={getTooltipTitle()}
-      enterDelay={600}
-      leaveDelay={100}
-      placement="right"
-    >
-      <Box
-        component="button"
-        role="button"
-        tabIndex={0}
-        aria-label={`Copy ${getCopyValue()} to clipboard`}
-        sx={{
-          position: "relative",
-          display: "inline-flex",
-          alignItems: "center",
-          cursor: "pointer",
-          padding: "4px 8px",
-          borderRadius: "4px",
-          border: "none",
-          background: "transparent",
-          fontFamily: "monospace",
-          fontSize: "0.875rem",
-          color: (theme) => theme.palette.text.primary,
-          transition: "all 0.2s ease-in-out",
-          outline: "none",
-          width: "fit-content",
-          minWidth: "200px",
-          "&:hover": {
-            backgroundColor: (theme) =>
-              !copyState.isCopied && (theme.palette.action?.hover || "rgba(0, 0, 0, 0.04)"),
-            transform: !copyState.isCopied ? "translateY(-1px)" : "none",
-            boxShadow: !copyState.isCopied ? "0 2px 4px rgba(0, 0, 0, 0.1)" : "none",
-          },
-          "&:focus": {
-            backgroundColor: (theme) =>
-              theme.palette.action?.hover || "rgba(0, 0, 0, 0.04)",
-            outline: "2px solid",
-            outlineColor: (theme) => theme.palette.primary.main,
-            outlineOffset: "2px",
-          },
-          "&:active": {
-            transform: "translateY(0)",
-            boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
-          },
-          ...(copyState.isCopied && {
-            border: "2px solid",
-            borderColor: (theme) => theme.palette.success.main,
-            backgroundColor: "transparent",
-            "&:hover": {
-              backgroundColor: "transparent",
-              transform: "none",
-              boxShadow: "none",
-            }
-          }),
-          ...(copyState.text === "Failed" && {
-            border: "2px solid",
-            borderColor: (theme) => theme.palette.error.main,
-            backgroundColor: "transparent",
-            "&:hover": {
-              backgroundColor: "transparent",
-              transform: "none",
-              boxShadow: "none",
-            }
-          }),
-        }}
-        onClick={handleCopy}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        <span>{getCopyValue()}</span>
-        <Box
-          component="span"
-          sx={{
-            marginLeft: "4px",
-            fontSize: "0.75rem",
-            opacity: 0,
-            visibility: "hidden",
-            width: "0px",
-            overflow: "hidden",
-          }}
-        >
-          {copyState.text}
-        </Box>
-      </Box>
-    </CustomTooltip>
-  );
-};
-
 const PreviewBox = styled("div")(({ theme, bgcolor }) => ({
   backgroundColor: bgcolor,
   width: "2.6rem",
@@ -754,7 +590,7 @@ const ColorCode = () => {
                           <StyledTableCell>{col.name}</StyledTableCell>
                           <StyledTableCell>{col.hex}</StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            <CopyColor hex={col.token} />
+                            <CopyValue copyValue={col.token} />
                           </StyledTableCell>
                           <StyledTableCell align="center">
                             <PreviewBox bgcolor={col.hex} />
@@ -791,7 +627,7 @@ const ColorCode = () => {
                           <StyledTableCell>{col.name}</StyledTableCell>
                           <StyledTableCell>{col.hex}</StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            <CopyColor hex={col.token} />
+                            <CopyValue copyValue={col.token} />
                           </StyledTableCell>
                           <StyledTableCell align="center">
                             <PreviewBox bgcolor={col.hex} />
@@ -829,7 +665,7 @@ const ColorCode = () => {
                           <StyledTableCell>{col.name}</StyledTableCell>
                           <StyledTableCell>{col.hex}</StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            <CopyColor hex={col.token} />
+                            <CopyValue copyValue={col.token} />
                           </StyledTableCell>
                           <StyledTableCell align="center">
                             <PreviewBox bgcolor={col.hex} />
@@ -876,7 +712,7 @@ const ColorCode = () => {
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
                           <StyledTableCell>{col.hex}</StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            <CopyColor hex={col.token} />
+                            <CopyValue copyValue={col.token} />
                           </StyledTableCell>
                           <StyledTableCell align="center">
                             <PreviewBox bgcolor={col.hex} />
@@ -916,7 +752,7 @@ const ColorCode = () => {
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
                           <StyledTableCell>{col.hex}</StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            <CopyColor hex={col.token} />
+                            <CopyValue copyValue={col.token} />
                           </StyledTableCell>
                           <StyledTableCell align="center">
                             <PreviewTextBox tokenName={col.tokenName} >Aa</PreviewTextBox>
@@ -956,7 +792,7 @@ const ColorCode = () => {
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
                           <StyledTableCell>{col.hex}</StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            <CopyColor hex={col.token} />
+                            <CopyValue copyValue={col.token} />
                           </StyledTableCell>
                           <StyledTableCell align="center">
                             <PreviewBorderBox tokenName={col.tokenName} />
@@ -1001,7 +837,7 @@ const ColorCode = () => {
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
                           <StyledTableCell>{col.hex}</StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            <CopyColor hex={col.token} />
+                            <CopyValue copyValue={col.token} />
                           </StyledTableCell>
                           <StyledTableCell align="center">
                             <PreviewBox bgcolor={col.hex} />
