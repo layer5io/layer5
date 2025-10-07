@@ -31,22 +31,22 @@ import { BlogWrapper } from "../../Blog.style.js";
 <li><p>PR authors either attach a video showcasing expected behavior or add written instructions about their fix under <strong>User Acceptance Behavior</strong></p>
 </li>
 <li><p>Now it&#39;s the time to checkout PR in your local system, we can check out any PR like this</p>
-<pre><code class="language-bash">gh pr checkout https://github.com/meshery/meshery/pull/4823
+<pre><code className="language-bash">gh pr checkout https://github.com/meshery/meshery/pull/4823
 </code></pre>
 </li>
 <li><p>You can check if you&#39;re into the same branch as the PR author with </p>
-<pre><code class="language-bash">git branch
+<pre><code className="language-bash">git branch
 </code></pre>
 </li>
 <li><p>Well, if we&#39;re testing a PR related to mesheryctl, we need to build the binary from the same branch. change your directory to <code>mesheryctl</code> folder and run</p>
-<pre><code class="language-bash">make
+<pre><code className="language-bash">make
 </code></pre>
 <p>This will create a mesheryctl binary according to your OS in the same directory</p>
 </li>
 <li><p>Now it&#39;s time to test out this newly built binary according to what&#39;s been tackled in the PR and related issues. For e.g. <code>system start</code> has some new functionality, make sure you followed the pull-request/linked-issue instruction for env setup, as sometimes fix/features are tackling an issue with a specific type of environment.</p>
 </li>
 </ol>
-<pre><code class="language-bash">./mesheryctl system start 
+<pre><code className="language-bash">./mesheryctl system start 
 </code></pre>
 <p>the <code>./</code> helps us in using the newly built cli-binary present in the current directory which we built in 5th step</p>
 <ol start="7">

@@ -19,20 +19,20 @@ import mesheryui from "./mesheryui.webp";
 
 <BlogWrapper>
 
-<div class="intro">
+<div className="intro">
 <p><a href="https://meshery.io/">Meshery</a>'s goal is to make the operation of cloud native infrastructure and the service mesh layer of cloud simplified. Originally created by Layer5, Meshery is an open source project with hundreds of contributors world-wide and is actively maintained by engineers from Red Hat, VMware, Intel, Layer5 and others.</p>
 </div>
 <h2>Setup and run Meshery on AKS</h2>
 <p>The following instructions expects you to have an active Azure subscription, and Azure CLI installed on your system. </p>
 <h3> Spin up the AKS Cluster</h3>
 <p>Create the resource group (a logical group where all our resources will be deployed). The following command creates  a resource group named MesheryGroup in <code>southindia</code> location. </p>
-<pre><code class="language-bash">
+<pre><code className="language-bash">
 az group create --name MesheryGroup --location southindia
 </code></pre>
 
 <p>Create AKS cluster using <code>az aks create</code>. The following command creates aks cluster with a single node. </p>
 
-<pre><code class="language-bash">
+<pre><code className="language-bash">
 az aks create --resource-group MesheryGroup --name MesheryAKS --node-count 1 --generate-ssh-keys
 </code></pre>
 <p>After a few minutes, the command completes and returns a JSON formatted information about the cluster.</p>
