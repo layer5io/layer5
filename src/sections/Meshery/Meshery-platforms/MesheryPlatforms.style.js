@@ -30,13 +30,19 @@ export const MesheryPlatformsWrapper = styled.div`
       }
       .supported-platforms{
         padding-top: 2rem;
-        align-items: center;
-        max-width: 110rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        max-width: 100%;
         margin: 0 auto;
         
         .single-platform{
-          max-height: 6rem;
-          max-width: 12rem;
+          height: 6rem;
+          width: 10rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           border-radius: 1rem;
           margin-bottom: 2rem; 
           background-color: #1e2117;
