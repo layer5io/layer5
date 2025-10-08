@@ -1,38 +1,41 @@
 export const content = [
-  // About
-  { id: 0, link: "/projects/sistent/about", text: "About Sistent" },
+  // Getting Started
+  { id: 0, link: "/projects/sistent/getting-started/about", text: "About" },
+  { id: 1, link: "/projects/sistent/getting-started/installation", text: "Installation" },
+  { id: 2, link: "/projects/sistent/getting-started/usage", text: "Usage" },
+  { id: 3, link: "/projects/sistent/getting-started/tokens", text: "Tokens" },
 
   // Identity
-  { id: 1, link: "/projects/sistent/identity/color", text: "Colors" },
-  { id: 2, link: "/projects/sistent/identity/color/guidance", text: "Colors" },
-  { id: 3, link: "/projects/sistent/identity/color/code", text: "Colors" },
-  { id: 4, link: "/projects/sistent/identity/spacing", text: "Spacing" },
-  { id: 5, link: "/projects/sistent/identity/spacing/guidance", text: "Spacing" },
-  { id: 6, link: "/projects/sistent/identity/spacing/code", text: "Spacing" },
-  { id: 7, link: "/projects/sistent/identity/typography", text: "Typography" },
-  { id: 8, link: "/projects/sistent/identity/typography/guidance", text: "Typography" },
-  { id: 9, link: "/projects/sistent/identity/typography/code", text: "Typography" },
+  { id: 4, link: "/projects/sistent/identity/color", text: "Colors" },
+  { id: 5, link: "/projects/sistent/identity/color/guidance", text: "Colors" },
+  { id: 6, link: "/projects/sistent/identity/color/code", text: "Colors" },
+  { id: 7, link: "/projects/sistent/identity/spacing", text: "Spacing" },
+  { id: 8, link: "/projects/sistent/identity/spacing/guidance", text: "Spacing" },
+  { id: 9, link: "/projects/sistent/identity/spacing/code", text: "Spacing" },
+  { id: 10, link: "/projects/sistent/identity/typography", text: "Typography" },
+  { id: 11, link: "/projects/sistent/identity/typography/guidance", text: "Typography" },
+  { id: 12, link: "/projects/sistent/identity/typography/code", text: "Typography" },
 
   // Components
-  { id: 10, link: "/projects/sistent/components/backdrop", text: "Backdrop" },
-  { id: 11, link: "/projects/sistent/components/backdrop/guidance", text: "Backdrop" },
-  { id: 12, link: "/projects/sistent/components/backdrop/code", text: "Backdrop" },
+  { id: 13, link: "/projects/sistent/components/backdrop", text: "Backdrop" },
+  { id: 14, link: "/projects/sistent/components/backdrop/guidance", text: "Backdrop" },
+  { id: 15, link: "/projects/sistent/components/backdrop/code", text: "Backdrop" },
 
-  { id: 13, link: "/projects/sistent/components/badge", text: "Badge" },
-  { id: 14, link: "/projects/sistent/components/badge/guidance", text: "Badge" },
-  { id: 15, link: "/projects/sistent/components/badge/code", text: "Badge" },
+  { id: 16, link: "/projects/sistent/components/badge", text: "Badge" },
+  { id: 17, link: "/projects/sistent/components/badge/guidance", text: "Badge" },
+  { id: 18, link: "/projects/sistent/components/badge/code", text: "Badge" },
 
-  { id: 16, link: "/projects/sistent/components/box", text: "Box" },
-  { id: 17, link: "/projects/sistent/components/box/guidance", text: "Box" },
-  { id: 18, link: "/projects/sistent/components/box/code", text: "Box" },
+  { id: 19, link: "/projects/sistent/components/box", text: "Box" },
+  { id: 20, link: "/projects/sistent/components/box/guidance", text: "Box" },
+  { id: 21, link: "/projects/sistent/components/box/code", text: "Box" },
 
-  { id: 19, link: "/projects/sistent/components/button", text: "Button" },
-  { id: 20, link: "/projects/sistent/components/button/guidance", text: "Button" },
-  { id: 21, link: "/projects/sistent/components/button/code", text: "Button" },
+  { id: 22, link: "/projects/sistent/components/button", text: "Button" },
+  { id: 23, link: "/projects/sistent/components/button/guidance", text: "Button" },
+  { id: 24, link: "/projects/sistent/components/button/code", text: "Button" },
 
-  { id: 22, link: "/projects/sistent/components/button-group", text: "Button Group" },
-  { id: 23, link: "/projects/sistent/components/button-group/guidance", text: "Button Group" },
-  { id: 24, link: "/projects/sistent/components/button-group/code", text: "Button Group" },
+  { id: 25, link: "/projects/sistent/components/button-group", text: "Button Group" },
+  { id: 26, link: "/projects/sistent/components/button-group/guidance", text: "Button Group" },
+  { id: 27, link: "/projects/sistent/components/button-group/code", text: "Button Group" },
 
   { id: 25, link: "/projects/sistent/components/chip", text: "Chip" },
   { id: 26, link: "/projects/sistent/components/chip/guidance", text: "Chip" },
