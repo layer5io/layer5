@@ -176,8 +176,9 @@ export const boxStyles = {
     mt: 0.5
   },
   sliderPriceText: {
-    color: "primary.main",
-    fontWeight: "bold",
+    color: "text.secondary",
+    fontWeight: "normal",
+    fontSize: "1.2rem",
     mt: 0.5
   },
   academySliderMarks: {
