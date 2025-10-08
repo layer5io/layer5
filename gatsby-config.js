@@ -13,10 +13,23 @@ module.exports = {
   },
   flags: {
     FAST_DEV: true,
-    PARALLEL_SOURCING: true,
+    PARALLEL_SOURCING: false, // Disable parallel sourcing to reduce memory pressure
   },
   trailingSlash: "never",
   plugins: [
+    {
+      resolve: "gatsby-plugin-netlify",
+      options: {
+        headers: {
+          "/*": [
+            "X-Frame-Options: SAMEORIGIN",
+            "Content-Security-Policy: frame-ancestors 'self'",
+          ],
+        },
+        mergeSecurityHeaders: true,
+        mergeCachingHeaders: true,
+      },
+    },
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
@@ -121,7 +134,6 @@ module.exports = {
   ) {
     nodes {
       body
-      html
       frontmatter {
         title
         author
@@ -168,7 +180,6 @@ module.exports = {
   ) {
     nodes {
       body
-      html
       frontmatter {
         title
         author
@@ -214,7 +225,6 @@ module.exports = {
   ) {
     nodes {
       body
-      html
       frontmatter {
         title
         author
@@ -263,7 +273,6 @@ module.exports = {
   ) {
     nodes {
       body
-      html
       frontmatter {
         title
         author
@@ -323,7 +332,6 @@ module.exports = {
   ) {
     nodes {
       body
-      html
       frontmatter {
         title
         author
@@ -374,7 +382,6 @@ module.exports = {
   ) {
     nodes {
       body
-      html
       frontmatter {
         title
         author
@@ -421,7 +428,6 @@ module.exports = {
   ) {
     nodes {
       body
-      html
       frontmatter {
         title
         author
@@ -460,8 +466,15 @@ module.exports = {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [".mdx", ".md"],
+        gatsbyRemarkPlugins: [],
+        mdxOptions: {
+          remarkPlugins: [],
+          rehypePlugins: [],
+        },
       },
     },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -614,6 +627,12 @@ module.exports = {
         sitemap: "https://layer5.io/sitemap-index.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
+    },
+    {
+      resolve: "gatsby-plugin-purgecss",
+      options: {
+        printRejected: true,
+      }
     },
     "gatsby-plugin-meta-redirect",
     // make sure this is always the last one
