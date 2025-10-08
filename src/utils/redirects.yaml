@@ -1,0 +1,225 @@
+redirects:
+  - fromPath: "/books"
+    toPath: "/learn/service-mesh-books"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/books/the-enterprise-path-to-service-mesh-architectures"
+    toPath: "/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"
+    toPath: "/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/books/istio-up-and-running"
+    toPath: "/learn/service-mesh-books/istio-up-and-running"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/learn/service-mesh-workshops"
+    toPath: "/learn/workshops"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/workshops"
+    toPath: "/learn/workshops"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/labs"
+    toPath: "/learn/service-mesh-labs"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/meshery"
+    toPath: "/cloud-native-management/meshery"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/service-mesh-management/meshery"
+    toPath: "/cloud-native-management/meshery"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/service-mesh-management/meshery/operating-service-meshes"
+    toPath: "/cloud-native-management/meshery/operating-cloud-native-infra"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/meshery/operating-service-meshes"
+    toPath: "/cloud-native-management/meshery/operating-cloud-native-infra"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/service-mesh-management/meshery/getting-started"
+    toPath: "/cloud-native-management/meshery/getting-started"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/landscape"
+    toPath: "/service-mesh-landscape"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/events"
+    toPath: "/community/events"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/programs"
+    toPath: "/careers/programs"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/about"
+    toPath: "/company/about"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/brand"
+    toPath: "/company/brand"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/contact"
+    toPath: "/company/contact"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/news"
+    toPath: "/company/news"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/service-meshes"
+    toPath: "/service-mesh-landscape"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/calendar"
+    toPath: "/community/calendar"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/smi"
+    toPath: "/projects/service-mesh-interface-conformance"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/projects/getnighthawk"
+    toPath: "/projects/nighthawk"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/projects/service-mesh-performance"
+    toPath: "/projects/cloud-native-performance"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/blog/category/service-mesh-performance"
+    toPath: "/blog/category/service-mesh"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/blog/category/service-mesh-performance/"
+    toPath: "/blog/category/service-mesh"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/blog/tag/smi"
+    toPath: "/blog/tag/service-mesh-interface"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/catalog"
+    toPath: "/cloud-native-management/catalog"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/meshery/integrations/argocd-operator"
+    toPath: "/cloud-native-management/meshery/integrations/argo-cd-operator"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/meshery/integrations/argocd-operator/"
+    toPath: "/cloud-native-management/meshery/integrations/argo-cd-operator"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/blog/category/landscape"
+    toPath: "/blog/tag/landscape"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/blog/category/landscape/"
+    toPath: "/blog/tag/landscape"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/blog/category/service-mesh-specifications"
+    toPath: "/blog/category/service-mesh"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/orchestration-management"
+    toPath: "/solutions/orchestration-management"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/gitops"
+    toPath: "/solutions/gitops"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/gitops/snapshot"
+    toPath: "/solutions/gitops/snapshot"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/gitops/performance-management"
+    toPath: "/solutions/gitops/performance-management"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/blog/announcements/meshery-5000-star-milestone"
+    toPath: "/blog/announcements/mesherys-5000-star-milestone"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/newcomer"
+    toPath: "/newcomers"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/kanvas"
+    toPath: "/cloud-native-management/kanvas"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/meshmap"
+    toPath: "/cloud-native-management/kanvas"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/meshmap"
+    toPath: "/cloud-native-management/kanvas"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/go/meshmap"
+    toPath: "/cloud-native-management/kanvas"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/kanvas/visualize"
+    toPath: "/cloud-native-management/kanvas/operate"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/kanvas/visualize"
+    toPath: "/cloud-native-management/kanvas/operate"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/kanvas/operate"
+    toPath: "/cloud-native-management/kanvas/operate"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/resources/cloud-native/hpes-adoption-of-meshery-and-meshmap"
+    toPath: "/resources/case-study/hpes-adoption-of-meshery-and-meshmap"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/sitemap.xml"
+    toPath: "/sitemap-index.xml"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/products/nighthawk"
+    toPath: "/projects/nighthawk"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/products/service-mesh-performance"
+    toPath: "/projects/cloud-native-performance"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/products/service-mesh-performance-specification"
+    toPath: "/projects/cloud-native-performance"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/meshmap/collaborate"
+    toPath: "/cloud-native-management/kanvas/collaborate"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/blog/tag/meshery-open-source"
+    toPath: "/blog/tag/open-source"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/blog/category/opensource"
+    toPath: "/blog/category/open-source"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/meshmap/design"
+    toPath: "/cloud-native-management/kanvas/design"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/meshmap/collaborate/peer-reviews"
+    toPath: "/cloud-native-management/kanvas/collaborate/peer-reviews"
+    redirectInBrowser: true
+    isPermanent: true

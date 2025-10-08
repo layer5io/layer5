@@ -14,7 +14,6 @@ module.exports = {
   flags: {
     FAST_DEV: true,
     PARALLEL_SOURCING: false, // Disable parallel sourcing to reduce memory pressure
-    DEV_SSR: false, // Disable SSR to avoid build issues
   },
   trailingSlash: "never",
   plugins: [
@@ -468,8 +467,14 @@ module.exports = {
       options: {
         extensions: [".mdx", ".md"],
         gatsbyRemarkPlugins: [],
+        mdxOptions: {
+          remarkPlugins: [],
+          rehypePlugins: [],
+        },
       },
     },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -622,6 +627,12 @@ module.exports = {
         sitemap: "https://layer5.io/sitemap-index.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
+    },
+    {
+      resolve: "gatsby-plugin-purgecss",
+      options: {
+        printRejected: true,
+      }
     },
     "gatsby-plugin-meta-redirect",
     // make sure this is always the last one
