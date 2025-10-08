@@ -14,6 +14,7 @@ import Navigation from "../sections/General/Navigation";
 import Footer from "../sections/General/Footer";
 // import TopPromotionalBanner from "./TopPromotionalBanner";
 import { GlobalStyle } from "../sections/app.style";
+import CookieConsent from "./CookieConsent";
 
 const Layout = ({ children }) => {
 
@@ -22,6 +23,7 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       {/* <TopPromotionalBanner /> */}
       <Navigation/>
+      <CookieConsent />
       {children}
       <ScrollToTopBtn />
       <Footer location={children.props.location} />

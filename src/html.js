@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-
 export default function HTML(props) {
   return (
     <html lang="en" {...props.htmlAttributes}>
@@ -24,20 +23,45 @@ export default function HTML(props) {
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
-        <script dangerouslySetInnerHTML={{
-          __html:
-            `(function() {
-							try {
-                var banner = sessionStorage.getItem('banner');
-                if (banner === null)
-                  document.body.classList.add('banner1');
-                else
-                  document.body.classList.add('banner' + banner);
-							} catch (e) {
-								return;
-							}
-					})();`,
-        }}
+        {/* Script for theme initialization - needs to run before React renders to prevent flicker */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  // Theme initialization
+                  const darkThemeKey = 'theme';
+                  let initialTheme = 'system';
+                  try {
+                    initialTheme = localStorage.getItem(darkThemeKey) || 'system';
+                  } catch (e) {}
+                  
+                  // Determine initial dark mode
+                  let isDarkMode = false;
+                  if (initialTheme === 'dark') {
+                    isDarkMode = true;
+                  } else if (initialTheme === 'system') {
+                    isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  }
+                  
+                  // Set initial color mode
+                  document.documentElement.style.setProperty(
+                    '--initial-color-mode',
+                    isDarkMode ? 'dark' : 'light'
+                  );
+                  
+                  // Banner initialization
+                  var banner = sessionStorage.getItem('banner');
+                  if (banner === null)
+                    document.body.classList.add('banner1');
+                  else
+                    document.body.classList.add('banner' + banner);
+                } catch (e) {
+                  console.error('Error in theme initialization:', e);
+                }
+              })();
+            `,
+          }}
         />
         {props.preBodyComponents}
         <div

@@ -20,6 +20,7 @@ import kanvas from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.sv
 import catalog from "../../../assets/images/catalog-icon/catalog.svg";
 import sistent from "../../../assets/images/sistent/sistent-logo.svg";
 import SoSpecial from "../../Home/So-Special-Section";
+import academy from "../../../assets/images/academy/academy.svg";
 
 const ProjectPage = () => {
   const { isDark } = useContext(ThemeManagerContext);
@@ -41,6 +42,13 @@ const ProjectPage = () => {
               <div className="project__card-container project__card-container_one">
                 <img src={sistent} alt="Sistent" />
                 <h5>Sistent</h5>
+              </div>
+            </Link>
+            {/*TODD - The URL needs to be changed */}
+            <Link to="https://cloud.layer5.io/academy" className="project__card academy">
+              <div className="project__card-container project__card-container_one">
+                <img src={academy} alt="Academy" />
+                <h5>Academy</h5>
               </div>
             </Link>
             <Link to="/service-mesh-landscape" className="project__card one">
