@@ -1,0 +1,133 @@
+---
+title: "Hacktoberfest Prep 2025: Designing with Meshery"
+description: "Prepare for Hacktoberfest with Layer5 MeshMates and Maintainers. Join seasoned open source maintainers, hack through easy issues, and grow your skills. Discover Newcomers resources and explore the Layer5 Community Handbook."
+thumbnail: ./hacktoberfest-layer5-first-pr.webp
+darkthumbnail: ./hacktoberfest-layer5-first-pr.webp
+date: 2025-10-03
+eurl: https://youtube.com/live/1-oaEy0Pm5I?feature=share
+type: Event
+published: true
+upcoming: true
+register: true
+---
+
+import { Link } from "gatsby";
+import { Grid2 } from "@sistent/sistent";
+import hacktoberfest2025 from "./layer5-hacktoberfest2025-badge.png";
+import hacktoberfestFirstPR from "./hacktoberfest-layer5-first-pr.webp";
+import hacktoberfestOpenArms from "./hacktoberfest-layer5-open-arms.webp";
+
+<p>
+  <Link to="/programs/hacktoberfest">Hacktoberfest</Link> is just around the
+  corner, and it's an exciting opportunity to get involved in Layer5 projects.
+  You might be surprised to learn how even small contributions can make a
+  meaningful impact on a project. As projects grow, issues can easily go
+  unnoticed, and your efforts in resolving them can truly make a difference
+  while also helping you grow as a contributor.
+</p>
+
+<p>
+  As in years past, Layer5 has a number of different projects and a variety of
+  technologies for participants to choose from. For Hacktoberfest 2025, our
+  theme will center on Designing with Meshery.{" "}
+  <Link to="/cloud-native-management/meshery">Meshery</Link> is an extensible,
+  self-service platform for collaborative infrastructure management. Be sure to
+  understand the{" "}
+  <Link to="/blog/meshery/comparing-meshery-models-and-meshery-designs">
+    difference between Meshery Models and Meshery Designs
+  </Link>
+  . The Meshery project is looking for contributors to extend these models to
+  support new cloud native infrastructure and their features.
+</p>
+
+<img
+  src={hacktoberfestOpenArms}
+  style={{
+    width: "100%",
+    maxWidth: "750px",
+    height: "auto",
+    display: "block",
+    margin: "20px 0"
+  }}
+  alt="Hacktoberfest Open Arms"
+/>
+
+<p>
+  Prepare for Hacktoberfest and ready yourself for contributing to CNCF projects
+  the easy way with Layer5 <Link to="/community/meshmates">MeshMates</Link> and
+  Maintainers. Spend an hour with seasoned, open source maintainers and hack
+  your way through. To get a head start, see our{" "}
+  <Link to="/community/newcomers">Newcomers Resources</Link>. Get familiar with
+  the Layer5 community through our{" "}
+  <Link to="/community/handbook">Community Handbook</Link>.
+</p>
+
+<Grid2 container spacing={2} style={{ margin: "30px 0" }}>
+  <Grid2 size={{ xs: 12, md: 6 }}>
+    <div style={{ maxWidth: "fit-content" }}>
+      <h3 style={{ marginBottom: "10px" }}>Event Details</h3>
+      <ul style={{ margin: "0", paddingBottom: "0" }}>
+        <li>
+          <strong>DATE: </strong>October 3rd, 2025
+        </li>
+        <li>
+          <strong>TIME: </strong> 14:00 UTC (9AM CDT | 4PM CEST | 3PM WAT | 7:30PM IST)
+        </li>
+        <li>
+          <strong>LIVESTREAM:</strong>{" "}
+          <a href="https://youtube.com/live/1-oaEy0Pm5I?feature=share">Livestream</a>
+        </li>
+      </ul>
+      <p style={{marginTop:"25px"}}>Resources:</p>
+      <ul>
+        <li>
+          <Link to="/blog/open-source/ways-to-contribute-at-layer5">
+            Code and Non-Code Contributing at Layer5
+          </Link>
+        </li>
+        <li>
+          <a href="https://github.com/issues?q=is%3Aopen%20is%3Aissue%20archived%3Afalse%20(org%3Alayer5io%20OR%20org%3Ameshery%20OR%20org%3Aservice-mesh-performance%20OR%20org%3Aservice-mesh-patterns%20OR%20org%3Alayer5labs%20OR%20org%3Ameshery-extensions)%20label%3Ahacktoberfest">
+            Issues for Hacktoberfest
+          </a>
+        </li>
+      </ul>
+       <p style={{marginTop:"25px"}}>Speakers:</p>
+      <ul>
+        <li>
+          <Link to="/community/members/ritesh-karankal">
+            Ritesh Karankal
+          </Link>
+        </li>
+        <li>
+          <Link to="/community/members/aabid-sofi">
+            Aabid Sofi
+          </Link>
+        </li>
+         <li>
+          <Link to="/community/members/yash-sharma">
+            Yash Sharma
+          </Link>
+        </li>
+        <li>
+          <Link to="/community/members/eti-ijeoma">
+            Eti Ijeoma
+          </Link>
+        </li>
+      </ul>
+    </div>
+  </Grid2>
+  <Grid2 size={{ xs: 12, md: 6 }}>
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <h3 style={{ marginTop: "0", marginBottom: "10px" }}>Earn a Badge</h3>
+      <p style={{ margin: "0 0 16px 0", textAlign: "center" }}>
+        Earn a Hacktoberfest Contributor badge by contributing to Layer5 projects
+        during this Hacktoberfest.
+      </p>
+      <img
+        src={hacktoberfest2025}
+        style={{ width: "200px", maxWidth: "100%", height: "auto", display: "block", margin: "0 auto" }}
+        alt="Hacktoberfest Badge"
+      />
+    </div>
+  </Grid2>
+</Grid2>

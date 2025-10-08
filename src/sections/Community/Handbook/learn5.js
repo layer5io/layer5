@@ -8,9 +8,13 @@ import IntraPage from "../../../components/handbook-navigation/intra-page";
 
 const contents = [
   {
-    id: 0, link: "#Learning",text: "Learning", },
-  { id: 1, link: "#Eventing", text: "Eventing" },
-  { id: 2, link: "#Blogging", text: "Blogging" },
+    id: 0, link: "#Learning", text: "Learning",
+  },
+  {
+    id: 1, link: "#Academy", text: "Academy",
+  },
+  { id: 2, link: "#Eventing", text: "Eventing" },
+  { id: 3, link: "#Blogging", text: "Blogging" },
 ];
 
 const LearnLayer = () => {
@@ -40,6 +44,21 @@ const LearnLayer = () => {
             <p>
               These materials were created to be interactive, easy to use, and
               free for all.
+            </p>
+
+            <a id="Academy">
+              <h2>Layer5 Academy</h2>
+            </a>
+            <p>
+              <a href="https://cloud.layer5.io/academy" target="_blank" rel="noopener noreferrer">
+                Layer5 Academy
+              </a>{" "}
+              is a learning platform built into Layer5 Cloud. Get structured learning paths,
+              interactive challenges, and professional certifications. Content spans beginner
+              to advanced levels for both developers and organizations.
+            </p>
+            <p>
+              For more details, check out the <a href="https://docs.layer5.io/cloud/academy/" target="_blank" rel="noopener noreferrer">Academy documentation</a> and explore our <a href="https://github.com/orgs/layer5io/repositories?q=academy" target="_blank" rel="noopener noreferrer">GitHub collections</a>.
             </p>
 
             <a id="Eventing">
