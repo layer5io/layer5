@@ -42,7 +42,18 @@ const Faq = (props) => {
   }
 
   let faqs = faqs_data.reduce((faq, ind) => {
-    faq[ind.category] = [...faq[ind.category] || [], ind];
+    const category = ind.category;
+    const subcategory = ind.subcategory || "General";
+
+    if (!faq[category]) {
+      faq[category] = {};
+    }
+
+    if (!faq[category][subcategory]) {
+      faq[category][subcategory] = [];
+    }
+
+    faq[category][subcategory].push(ind);
     return faq;
   }, {});
 
@@ -67,38 +78,45 @@ const Faq = (props) => {
           </div> */}
         </SectionTitle>
         <Accordion allowMultipleExpanded={false} allowZeroExpanded={true}>
-          {faq_keys.map((key, index) => (
-            <React.Fragment key={index}>
-              <h2 className="category_name">{key}</h2>
-              {faqs[key].map((faq, index) => (
-                <AccordionItem key={index}>
-                  <AccordionTitle>
-                    <IconWrapper>
-                      <h5>{faq.question}</h5>
-                      <OpenIcon>
-                        <IoIosArrowUp size={22} color="white" />
-                      </OpenIcon>
-                      <CloseIcon>
-                        <IoIosArrowDown size={22} color="white" />
-                      </CloseIcon>
-                    </IconWrapper>
-                  </AccordionTitle>
-                  <AccordionBody>
-                    <div className="inner">
-                      {
-                        faq.answer.length >= 1 ? <ul>{faq.answer.map((ans, id) => (<li key={id}><p key={id}>{ans}</p></li>))}</ul> : <br />
-                      }
-                      {faq.link &&
-                       <div className="faqbutton">
-                         {faq.link.startsWith("/")
-                           ? <Button $primary className="faqbutton" $url={faq.link} title={faq.linktext} $external={false} />
-                           :  <Button $primary className="faqbutton" $url={faq.link} title={faq.linktext} $external={true} />
-                         }
-                       </div>
-                      }
-                    </div>
-                  </AccordionBody>
-                </AccordionItem>
+          {faq_keys.map((categoryKey, categoryIndex) => (
+            <React.Fragment key={categoryIndex}>
+              <h2 className="category_name">{categoryKey}</h2>
+              {Object.keys(faqs[categoryKey]).map((subcategoryKey, subcategoryIndex) => (
+                <React.Fragment key={subcategoryIndex}>
+                  {Object.keys(faqs[categoryKey]).length > 1 && (
+                    <h3 className="subcategory_name">{subcategoryKey}</h3>
+                  )}
+                  {faqs[categoryKey][subcategoryKey].map((faq, faqIndex) => (
+                    <AccordionItem key={faqIndex}>
+                      <AccordionTitle>
+                        <IconWrapper>
+                          <h5>{faq.question}</h5>
+                          <OpenIcon>
+                            <IoIosArrowUp size={22} color="white" />
+                          </OpenIcon>
+                          <CloseIcon>
+                            <IoIosArrowDown size={22} color="white" />
+                          </CloseIcon>
+                        </IconWrapper>
+                      </AccordionTitle>
+                      <AccordionBody>
+                        <div className="inner">
+                          {
+                            faq.answer.length >= 1 ? <ul>{faq.answer.map((ans, id) => (<li key={id}><p key={id}>{ans}</p></li>))}</ul> : <br />
+                          }
+                          {faq.link &&
+                           <div className="faqbutton">
+                             {faq.link.startsWith("/")
+                               ? <Button $primary className="faqbutton" $url={faq.link} title={faq.linktext} $external={false} />
+                               :  <Button $primary className="faqbutton" $url={faq.link} title={faq.linktext} $external={true} />
+                             }
+                           </div>
+                          }
+                        </div>
+                      </AccordionBody>
+                    </AccordionItem>
+                  ))}
+                </React.Fragment>
               ))}
             </React.Fragment>
           ))}

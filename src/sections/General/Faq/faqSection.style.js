@@ -10,6 +10,14 @@ const FaqSectionWrapper = styled.section`
     font-style: italic;
     text-transform: capitalize;
   }
+  .subcategory_name {
+    margin: 1.5rem 0 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: ${props => props.theme.primaryColor};
+    text-transform: capitalize;
+    opacity: 0.8;
+  }
   .accordion__item + .accordion__item {
     border-color: transparent;
   }
