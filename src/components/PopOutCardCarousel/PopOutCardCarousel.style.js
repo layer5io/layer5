@@ -122,7 +122,7 @@ const PopOutCardWrapper = styled.div`
         flex-direction: column;
         text-align: center;
         width: 300px;
-        height: 470px;
+        height: max-content;
         .img {
           margin-inline: auto;
           max-width: 100%;

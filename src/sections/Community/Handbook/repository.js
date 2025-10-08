@@ -14,6 +14,7 @@ import servicemeshpattern from "../../../assets/images/service-mesh-patterns/ser
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
 import Kanvas from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
+import layer5AcademyIcon from "../../../assets/images/academy/academy.svg";
 
 import { Link } from "gatsby";
 
@@ -51,7 +52,7 @@ const Repository = () => {
 
             <p>
               Note that the Layer5 community spans <strong>six</strong> GitHub
-              organizations:
+              organizations and <strong>one</strong> multi-repository collection:
             </p>
 
             <ul className="project-org-list">
@@ -131,6 +132,16 @@ const Repository = () => {
                   &nbsp; Meshery Extensions
                 </a>
                   - a collection of extensions and plugins that enhance Meshery's functionality.
+              </li>
+              <li>
+                <a href="https://github.com/orgs/layer5io/repositories?q=academy">
+                  <img
+                    src={layer5AcademyIcon}
+                    alt="Layer5 Academy logo"
+                  />
+                  &nbsp; Layer5 Academy
+                </a>
+                  - a multi-repository learning platform with structured learning paths, practical challenges, badges and optional certificates, built with modular theme, content, and build repositories.
               </li>
             </ul>
 

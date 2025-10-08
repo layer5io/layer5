@@ -42,6 +42,15 @@ const TOCWrapper = styled.div`
     margin-bottom: 1rem;
   }
 
+  .toc-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    max-height: 530px;
+    position: sticky;
+    z-index: 1000;
+  }
+
   .toc-sub-heading {
     color: ${(props) => props.theme.text};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -126,7 +135,7 @@ const TOCWrapper = styled.div`
     background-color: transparent;
   }
 
-  .identity, .components {
+  .identity, .components, .getting-started {
     display: flex;
     width: 100%;
     justify-content: space-between;

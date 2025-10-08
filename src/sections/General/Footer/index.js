@@ -11,7 +11,7 @@ const Footer = ({ location }) => {
   var currentYear = new Date().getFullYear();
 
   const getUrl = (pathname) => {
-    //remove ".html" that results in live production build
+    // remove ".html" that results in live production build
     if (pathname.endsWith(".html")) {
       pathname = pathname.replace(".html", "");
     }
@@ -28,6 +28,7 @@ const Footer = ({ location }) => {
       "/resources",
       "/learn",
     ];
+
     const test = {
       mdx: function (path) {
         let returnPath = "";
@@ -50,22 +51,36 @@ const Footer = ({ location }) => {
           }) && `src/collections${returnPath}`
         );
       },
+
       learningPath: function (path) {
         return (
           path.startsWith("/learn/learning-paths/") &&
           `content-learn${pathname.replace("learn/learning-paths/", "")}`
         );
       },
+
+      communityMember: function (path) {
+        if (path.startsWith("/community/members/")) {
+          const memberId = path.replace("/community/members/", "");
+          return `src/collections/members/${memberId}/index.mdx`;
+        }
+        return null;
+      },
     };
+
+    if (pathname.startsWith("/community/handbook/")) {
+      const page = pathname.replace("/community/handbook/", "");
+      return `https://github.com/layer5io/layer5/blob/master/src/pages/community/handbook/${page}.js`;
+    }
 
     return test.mdx(pathname)
       ? `https://github.com/layer5io/layer5/tree/master/${test.mdx(pathname)}`
       : test.learningPath(pathname)
-        ? `https://github.com/layer5io/layer5/tree/master/${test.learningPath(
-          pathname
-        )}`
-        : `https://github.com/layer5io/layer5/blob/master/src/pages${pathname == "/" ? "" : pathname
-        }${indexUrl.some((str) => pathname.endsWith(str)) ? "/index" : ""}.js`;
+        ? `https://github.com/layer5io/layer5/tree/master/${test.learningPath(pathname)}`
+        : test.communityMember(pathname)
+          ? `https://github.com/layer5io/layer5/blob/master/${test.communityMember(pathname)}`
+          : `https://github.com/layer5io/layer5/blob/master/src/pages${pathname == "/" ? "" : pathname
+          }${indexUrl.some((str) => pathname.endsWith(str)) ? "/index" : ""}.js`;
   };
 
   return (
@@ -111,9 +126,9 @@ const Footer = ({ location }) => {
                     </a>
                   </li>
                   <li>
-                    <a className="category-link" href="https://cloud.layer5.io/academy/overview">
+                    <Link className="category-link" to="/learn/academy">
                       Academy
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <Link className="category-link" to="/blog">
