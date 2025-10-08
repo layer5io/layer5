@@ -57,6 +57,9 @@ const LearnLayer = () => {
               interactive challenges, and professional certifications. Content spans beginner
               to advanced levels for both developers and organizations.
             </p>
+            <p>
+              For more details, check out the <a href="https://docs.layer5.io/cloud/academy/" target="_blank" rel="noopener noreferrer">Academy documentation</a> and explore our <a href="https://github.com/orgs/layer5io/repositories?q=academy" target="_blank" rel="noopener noreferrer">GitHub collections</a>.
+            </p>
 
             <a id="Eventing">
               <h2>Sharing what you've learned at a technical event</h2>
