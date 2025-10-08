@@ -150,7 +150,7 @@ const NewcomersGuide = () => {
                   Once an issue has been assigned to you, it’s time to get
                   started! Make sure you take a look at the{" "}
                   <a
-                    href="https://docs.meshery.io/project/contributing"
+                    href="https://layer5.io/community/handbook/contribution"
                     target="_blank"
                     rel="noreferrer"
                   >
