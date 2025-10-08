@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { SistentLayout } from "../../sistent-layout";
@@ -6,8 +6,8 @@ import { Col, Row } from "../../../../../reusecore/Layout";
 import Button from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
-import {  styled,  Table, TableContainer, TableCell, TableRow, TableHead, TableBody, SistentThemeProvider, CustomTooltip, Box, } from "@sistent/sistent";
-import { copyToClipboard } from "../../../../../components/CodeBlock/copy-to-clipboard.js";
+import {  styled,  Table, TableContainer, TableCell, TableRow, TableHead, TableBody, SistentThemeProvider } from "@sistent/sistent";
+import CopyValue from "../../../../../components/CopyValue";
 
 const brandColors = [
   { tokenName: "keppel-70", token: "theme.palette.brand.default", name: "Keppel", hex: "#DAf3EB" },
@@ -378,7 +378,7 @@ const textColors = [
   { "tokenName": "text-tertiary", "token": "theme.palette.text.tertiary", "Alias_of": "charcoal-60", "hex": "#8c999e", "role": "Second level text color to indicate lower prominence and establish visual hierarchy." },
   { "tokenName": "text-inverse", "token": "theme.palette.text.inverse", "Alias_of": "charcoal-10", "hex": "#000d12", "role": "This text color is the polar opposite of the default text color in any theme." },
   { "tokenName": "text-disabled", "token": "theme.palette.text.disabled", "Alias_of": "charcoal-50", "hex": "#647176", "role": "This text color is the polar opposite of the default text color in any theme." },
-  { "tokenName": "text-constant-white", "token": "theme.palette.text.constant.white", "Alias_of": "charcoal-100", "hex": "#fdfdfd", "role": "This text color remains constant across both themes and is used on surfaces that don’t change as themes change." },
+  { "tokenName": "text-constant-white", "token": "theme.palette.text.constant.white", "Alias_of": "charcoal-100", "hex": "#fdfdfd", "role": "This text color remains constant across both themes and is used on surfaces that don't change as themes change." },
   { "tokenName": "text-brand", "token": "theme.palette.text.brand", "Alias_of": "keppel-40", "hex": "#00b39f", "role": "Color for text relating to the brand." },
   { "tokenName": "text-info", "token": "theme.palette.text.info", "Alias_of": "blue-40", "hex": "#2196f3", "role": "Color for text relating to notifications and information." },
   { "tokenName": "text-success", "token": "theme.palette.text.success", "Alias_of": "green-40", "hex": "#36bc3b", "role": "Color for text relating to success." },
@@ -400,48 +400,6 @@ const componentColors = [
   { tokenName: "icon-weather", token: "theme.palette.icon.weather", Alias_of: "saffron-40", hex: "#3d4f57", role: "Deafult color for any icon representing theme switching." },
   { tokenName: "icon-disabled", token: "theme.palette.icon.disabled", Alias_of: "charcoal-50", hex: "#647176", role: "Color for icon components." },
 ];
-
-
-const CopyColor = ({ hex , token }) => {
-  const [copyText, setCopyText] = useState("Copy");
-  const [showCopy, setShowCopy] = useState(false);
-
-  const handleCopy = async () => {
-    await copyToClipboard(hex || token);
-    setCopyText("Copied");
-    setTimeout(() => setCopyText("Copy"), 1000);
-  };
-
-  return (
-    <CustomTooltip
-      title={copyText === "Copied" ? "Copied" : "Copy"}
-      enterDelay={800}
-      leaveDelay={10}
-      placement="right"
-    >
-      <Box
-        sx={{
-          position: "relative",
-          display: "inline-flex",
-          alignItems: "center",
-          cursor: "pointer",
-          padding: "2px 4px",
-          borderRadius: "3px",
-          transition: "background-color 0.2s ease",
-          "&:hover": {
-            backgroundColor: (theme) =>
-              theme.palette.action?.hover || "rgba(0, 0, 0, 0.04)",
-          },
-        }}
-        onMouseEnter={() => setShowCopy(true)}
-        onMouseLeave={() => setShowCopy(false)}
-        onClick={handleCopy}
-      >
-        <span>{hex || token }</span>
-      </Box>
-    </CustomTooltip>
-  );
-};
 
 const PreviewBox = styled("div")(({ theme, bgcolor }) => ({
   backgroundColor: bgcolor,
@@ -632,7 +590,7 @@ const ColorCode = () => {
                           <StyledTableCell>{col.name}</StyledTableCell>
                           <StyledTableCell>{col.hex}</StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            <CopyColor hex={col.token} />
+                            <CopyValue copyValue={col.token} />
                           </StyledTableCell>
                           <StyledTableCell align="center">
                             <PreviewBox bgcolor={col.hex} />
@@ -669,7 +627,7 @@ const ColorCode = () => {
                           <StyledTableCell>{col.name}</StyledTableCell>
                           <StyledTableCell>{col.hex}</StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            <CopyColor hex={col.token} />
+                            <CopyValue copyValue={col.token} />
                           </StyledTableCell>
                           <StyledTableCell align="center">
                             <PreviewBox bgcolor={col.hex} />
@@ -707,7 +665,7 @@ const ColorCode = () => {
                           <StyledTableCell>{col.name}</StyledTableCell>
                           <StyledTableCell>{col.hex}</StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            <CopyColor hex={col.token} />
+                            <CopyValue copyValue={col.token} />
                           </StyledTableCell>
                           <StyledTableCell align="center">
                             <PreviewBox bgcolor={col.hex} />
@@ -754,7 +712,7 @@ const ColorCode = () => {
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
                           <StyledTableCell>{col.hex}</StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            <CopyColor hex={col.token} />
+                            <CopyValue copyValue={col.token} />
                           </StyledTableCell>
                           <StyledTableCell align="center">
                             <PreviewBox bgcolor={col.hex} />
@@ -794,7 +752,7 @@ const ColorCode = () => {
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
                           <StyledTableCell>{col.hex}</StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            <CopyColor hex={col.token} />
+                            <CopyValue copyValue={col.token} />
                           </StyledTableCell>
                           <StyledTableCell align="center">
                             <PreviewTextBox tokenName={col.tokenName} >Aa</PreviewTextBox>
@@ -834,7 +792,7 @@ const ColorCode = () => {
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
                           <StyledTableCell>{col.hex}</StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            <CopyColor hex={col.token} />
+                            <CopyValue copyValue={col.token} />
                           </StyledTableCell>
                           <StyledTableCell align="center">
                             <PreviewBorderBox tokenName={col.tokenName} />
@@ -879,7 +837,7 @@ const ColorCode = () => {
                           <StyledTableCell>{col.Alias_of}</StyledTableCell>
                           <StyledTableCell>{col.hex}</StyledTableCell>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            <CopyColor hex={col.token} />
+                            <CopyValue copyValue={col.token} />
                           </StyledTableCell>
                           <StyledTableCell align="center">
                             <PreviewBox bgcolor={col.hex} />

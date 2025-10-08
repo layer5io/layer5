@@ -39,18 +39,18 @@ const Platform = () => {
             category
             tags
             thumbnail {
+              extension
+              publicURL
               childImageSharp {
                 gatsbyImageData(layout: FULL_WIDTH)
               }
-              extension
-              publicURL
             }
             darkthumbnail {
+              extension
+              publicURL
               childImageSharp {
                 gatsbyImageData(layout: FULL_WIDTH)
               }
-              extension
-              publicURL
             }
           }
           fields {

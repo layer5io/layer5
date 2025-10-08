@@ -221,6 +221,12 @@ const Banner1SectionWrapper = styled.section`
         }
     }
     @media only screen and (max-width: 767px) {
+        min-height: 320px;
+        padding: 1.2rem 0 1.5rem 0;
+        .video-wrapper {
+            width: 100%;
+            padding-bottom: 56.25%; /* Maintain 16:9 aspect ratio */
+        }
         .section-title-wrapper {
             min-width: 100%;
         }
@@ -251,6 +257,12 @@ const Banner1SectionWrapper = styled.section`
     }
     }
     @media only screen and (max-width: 480px) {
+        min-height: 180px;
+        padding: 0.7rem 0 1rem 0;
+        .video-wrapper {
+            width: 100%;
+            padding-bottom: 60%;
+        }
         padding: 2rem 0;
         .vintage-box{
             &:before{
