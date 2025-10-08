@@ -215,6 +215,13 @@ const componentsData = [
     "description": "The Collapse component is used to create expandable/collapsible content sections. It smoothly animates the height of its children from zero to full height when expanded.",
     "url": "/projects/sistent/components/collapse",
     "src": "/collapse",
+  }
+  {
+    "id": 29,
+    "name": "Chip",
+    "description": "Chips are compact elements that represent an input, attribute, or action. They are often used for tags, contacts, or filters.",
+    "url": "/projects/sistent/components/chip",
+    "src": "/chip",
   },
 ];
 
