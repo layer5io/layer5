@@ -30,7 +30,7 @@ export const ChapterStyle = styled.div`
 
     /* New reusable class for chapter images */
   .chapter-image {
-    max-width: 500px;
+    max-width: 750px;
     width: 100%;
     height: auto;
     display: block;
