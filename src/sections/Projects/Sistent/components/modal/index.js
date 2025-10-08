@@ -1,16 +1,25 @@
-import React from "react";
-import { SistentLayout } from "../../sistent-layout";
-import TabButton from "../../../../../reusecore/Button";
+import React, { useState } from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
-import ConfirmationBg from "../../../../../assets/images/app/projects/sistent/confirmation.png";
-import ConfirmationDarkBg from "../../../../../assets/images/app/projects/sistent/confirmation-dark.png";
-import { Col, Row } from "../../../../../reusecore/Layout";
+import { SistentLayout } from "../../sistent-layout";
+import {
+  Button,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalButtonSecondary,
+  SistentThemeProvider,
+  Typography,
+} from "@sistent/sistent";
+import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
+import { ActionBox } from "../../sistent.style";
 
 const SistentModal = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
+  const [open, setOpen] = useState(false);
+
   return (
     <SistentLayout title="Modal">
       <div className="content">
@@ -18,98 +27,82 @@ const SistentModal = () => {
           <h2>Modal</h2>
         </a>
         <p>
-          A modal is a container that appears in front of the main content on a
-          page, providing important information or an actionable piece of
-          content for users to execute.
+          A modal is a container that appears in front of the main content on a page, providing important information or an actionable piece of content for users to execute. Modals focus user attention and prevent interaction with the underlying page until dismissed.
         </p>
 
         <div className="filterBtns">
           <TabButton
-            className={
-              location.pathname === "/projects/sistent/components/modal"
-                ? "active"
-                : ""
-            }
+            className={location.pathname === "/projects/sistent/components/modal" ? "active" : ""}
             onClick={() => navigate("/projects/sistent/components/modal")}
             title="Overview"
           />
-          {/* <TabButton
-            className={
-              location.pathname ===
-              "/projects/sistent/components/modal/guidance"
-                ? "active"
-                : ""
-            }
-            onClick={() =>
-              navigate("/projects/sistent/components/modal/guidance")
-            }
-            title="Guidance"
-          /> */}
           <TabButton
-            className={
-              location.pathname === "/projects/sistent/components/modal/code"
-                ? "active"
-                : ""
-            }
+            className={location.pathname === "/projects/sistent/components/modal/guidance" ? "active" : ""}
+            onClick={() => navigate("/projects/sistent/components/modal/guidance")}
+            title="Guidance"
+          />
+          <TabButton
+            className={location.pathname === "/projects/sistent/components/modal/code" ? "active" : ""}
             onClick={() => navigate("/projects/sistent/components/modal/code")}
             title="Code"
           />
         </div>
+
         <div className="main-content">
           <p>
-            A modal is an interface element that assists users by providing
-            added information in the form of a message or prompting an action as
-            users interact with and navigate a solution.
+            The Modal component is essential for communicating important information and collecting user input without losing context. It provides immediate focus and ensures users complete required actions before proceeding.
           </p>
-          <a id="Types">
-            <h2>Types</h2>
+
+          <a id="Basic Example">
+            <h2>Basic Modal</h2>
           </a>
           <p>
-            Modals can be used for various purposes. From conveying information
-            that does not require much action to having a series of other
-            components embedded in them to ensure that users are able to begin
-            tasks and successfully complete them, modals can provide versatility
-            to interfaces while ensuring a simple, intuitive, and efficient
-            design.
+            A simple modal with basic content and standard dismiss functionality. This is the default behavior for displaying information to users.
           </p>
-          <h3>Basic</h3>
+          <div className="showcase">
+            <div className="items">
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                <Button variant="contained" onClick={() => setOpen(true)}>
+                  Open Basic Modal
+                </Button>
+                <Modal open={open} closeModal={() => setOpen(false)} title="Basic Modal">
+                  <ModalBody>
+                    <Typography>
+                      This is a basic modal with simple content. It can contain text, images, or other basic elements to convey information to users.
+                    </Typography>
+                  </ModalBody>
+                  <ModalFooter variant="filled">
+                    <ActionBox>
+                      <ModalButtonSecondary onClick={() => setOpen(false)}>
+                        Close
+                      </ModalButtonSecondary>
+                    </ActionBox>
+                  </ModalFooter>
+                </Modal>
+              </SistentThemeProvider>
+            </div>
+          </div>
+
+          <a id="Modal Types">
+            <h2>Modal Variations</h2>
+          </a>
           <p>
-            The basic modal is one that helps users carry out common actions
-            while navigating our solutions. These modals help to pass across
-            important messages to the user, or assist them in completing common
-            actions that do not require intricate knowledge of the subject
-            matter. Some examples of basic modals can be share links,
-            confirmation messages, feedback prompts and other similarly common
-            actions. These type of modals can be easily identified by the lack
-            of an icon at the top left corner of the modal. They may sometimes
-            include form fields but mostly will just require users to either
-            confirm and cancel actions or make progress while carrying out a
-            particular task.
+            The Modal component supports various types and configurations to handle different use cases and user interactions.
           </p>
-          <Row className="image-container" $Hcenter>
-            <Col md={8} lg={8} sm={12}>
-              <img
-                width="100%"
-                src={isDark ? ConfirmationDarkBg : ConfirmationBg}
-                alt="confirmation"
-              />
-            </Col>
-          </Row>
-          <h3>Action</h3>
-          <p>
-            Action modals help users carry out specific tasks. These would
-            naturally involve more steps than just confirming or rejecting an
-            action. They may include forms, links, and feature specific elements
-            that ensure that users complete crucial tasks along their given
-            flow. They will usually have an icon at the top left corner of the
-            modal to signify what the purpose of this modal is in relation to
-            the given flow as well as help users familiarize with said custom
-            icons for easy identification across our solutions however, this
-            might not be applicable in all cases.
-          </p>
+          <ul>
+            <li><p><b>Basic Modal:</b> Simple content display with minimal interaction</p></li>
+            <li><p><b>Confirmation Modal:</b> Require user confirmation for important or destructive actions</p></li>
+            <li><p><b>Action Modal:</b> Facilitate task completion with forms and interactive controls</p></li>
+            <li><p><b>Informational Modal:</b> Provide detailed information, help content, or contextual guidance</p></li>
+            <li><p><b>Warning Modal:</b> Alert users to potential issues or important considerations</p></li>
+            <li><p><b>Success Modal:</b> Confirm successful completion of actions with positive feedback</p></li>
+            <li><p><b>Error Modal:</b> Communicate failures or issues requiring user attention</p></li>
+            <li><p><b>Nested Modal:</b> Secondary modals that open from within existing modals</p></li>
+          </ul>
         </div>
       </div>
     </SistentLayout>
   );
 };
+
 export default SistentModal;
