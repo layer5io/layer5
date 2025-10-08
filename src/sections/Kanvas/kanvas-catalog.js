@@ -443,19 +443,19 @@ const Catalog = () => {
           {/* Right Section */}
           <section className="services svg-cont">
             <div>
-              <img src={Patterns} />
+              <img src={Patterns} alt="Cloud Native Patterns"/>
               <p>Cloud Native Patterns</p>
             </div>
             <div>
-              <img src={Ebpf} />
+              <img src={Ebpf} alt="eBPF programs" />
               <p className="ebpf-text">eBPF Programs</p>
             </div>
             <div>
-              <img src={Wasm} />
+              <img src={Wasm} alt="WebAssembly filters" />
               <p>WASM Filters</p>
             </div>
             <div>
-              <img src={Opa} />
+              <img src={Opa} alt="OPA policies"/>
               <p>OPA Policies</p>
             </div>
           </section>
@@ -467,49 +467,49 @@ const Catalog = () => {
             <div className="container">
               <div id="carousel">
                 <div className="slide one">
-                  <img src={Mutual_tls} />
+                  <img src={Mutual_tls} alt="Mutual TLS" />
                 </div>
                 <div className="slide two">
-                  <img src={Retries} />
+                  <img src={Retries} alt="Retries" />
                 </div>
                 <div className="slide three">
-                  <img src={Traces} />
+                  <img src={Traces} alt="Distributed Traces" />
                 </div>
                 <div className="slide four">
-                  <img src={Denial} />
+                  <img src={Denial} alt="Denial" />
                 </div>
                 <div className="slide five">
-                  <img src={Correlate_event} />
+                  <img src={Correlate_event} alt="Correlate Event" />
                 </div>
                 <div className="slide six">
-                  <img src={Only_wagent} />
+                  <img src={Only_wagent} alt="Only with Agent" />
                 </div>
                 <div className="slide seven">
-                  <img src={Node_agent} />
+                  <img src={Node_agent} alt="Node Agent" />
                 </div>
                 <div className="slide eight">
-                  <img src={Single_tenant} />
+                  <img src={Single_tenant} alt="Single Tenant" />
                 </div>
                 <div className="slide nine">
-                  <img src={Pre_provison} />
+                  <img src={Pre_provison} alt="Pre-provision" />
                 </div>
                 <div className="slide ten">
-                  <img src={Circuit_breaker} />
+                  <img src={Circuit_breaker} alt="Circuit Breaker" />
                 </div>
                 <div className="slide eleven">
-                  <img src={Retry_deadline} />
+                  <img src={Retry_deadline} alt="Retry with Deadline" />
                 </div>
                 <div className="slide twelve">
-                  <img src={Singleton} />
+                  <img src={Singleton} alt="Singleton Pattern" />
                 </div>
                 <div className="slide thirteen">
-                  <img src={Jwt_transformer} />
+                  <img src={Jwt_transformer} alt="JWT Transformer" />
                 </div>
                 <div className="slide fourteen">
-                  <img src={Multicluster} />
+                  <img src={Multicluster} alt="Multicluster" />
                 </div>
                 <div className="slide fifteen">
-                  <img src={Http_metrics} />
+                  <img src={Http_metrics} alt="HTTP Metrics" />
                 </div>
               </div>
             </div>

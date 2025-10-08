@@ -22,6 +22,7 @@ import LogoutIcon from "./utility/LogoutIcon.js";
 import KanvasIcon from "./utility/KanvasIcon.js";
 import Layer5CloudDarkIcon from "./utility/Layer5CloudDarkIcon.svg";
 import Layer5CloudLightIcon from "./utility/Layer5CloudLightIcon.svg";
+import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward.js";
 
 const Navigation = () => {
   let data = useStaticQuery(
@@ -335,6 +336,41 @@ const Navigation = () => {
                               </li>
                             );
                           })}
+                        {menu.actionItems !== undefined &&
+                          menu.actionItems.map((actionItem, index) => (
+                            (actionItem.actionName === "Join the discussion" ?
+                              <a
+                                key={index}
+                                href={actionItem.actionLink}
+                                target="_blank"
+                                className="mobile-sub-action-item"
+                                rel="noreferrer"
+                                onClick={() => {
+                                  changeDropdownState();
+                                  closeDropDown();
+                                }}
+                              >
+                                <span className="readmore-btn">
+                                  {actionItem.actionName} <IoIosArrowRoundForward />
+                                </span>
+                              </a>
+                              : <Link
+                                key={index}
+                                to={actionItem.actionLink}
+                                partiallyActive={true}
+                                className="mobile-sub-action-item"
+                                onClick={() => {
+                                  changeDropdownState();
+                                  closeDropDown();
+                                }}
+                              >
+                                <span className="readmore-btn">
+                                  {actionItem.actionName} <IoIosArrowRoundForward />
+                                </span>
+                              </Link>
+                            )
+                          ))
+                        }
                       </ul>
                     </li>
                   ))}

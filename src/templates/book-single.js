@@ -17,11 +17,11 @@ export const query = graphql`query BookBySlug($slug: String!) {
       title
       abstract
       thumbnail {
+        extension
+        publicURL
         childImageSharp {
           gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
-        extension
-        publicURL
       }
     }
   }

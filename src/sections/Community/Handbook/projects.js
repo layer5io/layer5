@@ -104,6 +104,19 @@ const Maintainer = () => {
                   (currently) three choices of load generators for
                   characterizing and managing the performance of cloud native infrastructure (e.g. Kubernetes and Docker) and their services. <br />
                 </p>
+                <li>
+                  <h4>
+                    <a href="https://cloud.layer5.io/academy">
+                      Layer5 Academy :
+                    </a>
+                  </h4>{" "}
+                </li>
+                <p>
+                  Layer5 Academy is a learning platform built into Layer5 Cloud. It offers
+                  structured learning paths, interactive challenges, and professional
+                  certifications. Content spans beginner to advanced levels, helping both
+                  developers and organizations skill up in cloud native technologies. <br />
+                </p>
               </ul>
             </p>
             <p>

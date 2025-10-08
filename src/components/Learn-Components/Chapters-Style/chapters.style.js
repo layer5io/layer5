@@ -17,4 +17,14 @@ export const ChapterStyle = styled.div`
     }
   }
   }
+
+  .image-design-icons {
+    object-fit: contain !important; 
+
+    @media (max-width: 768px) {
+      width: clamp(150px, 70vw, 400px) !important;
+      height: auto !important;
+      max-width: none !important;
+    }
+  }
 `;
