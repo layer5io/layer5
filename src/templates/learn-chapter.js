@@ -11,6 +11,7 @@ import SimpleReactLightbox from "simple-react-lightbox";
 export const query = graphql`
   query chapters($slug: String!, $course: String!) {
     chapter: mdx(fields: {slug: {eq: $slug}}) {
+        body
         frontmatter {
           chapterTitle
           description
@@ -31,11 +32,11 @@ export const query = graphql`
             courseTitle
             meshesYouLearn {
             imagepath {
+              extension
+              publicURL
               childImageSharp {
                 gatsbyImageData(width: 50, layout: CONSTRAINED)
               }
-              extension
-              publicURL
             }
             name
           }
@@ -73,7 +74,7 @@ export const query = graphql`
 }
 `;
 
-const SingleChapter = ({ data, location, children }) => {
+const SingleChapter = ({ data, location }) => {
 
   const sortedTOCData = data.TOC.nodes.sort((first, second) => {
     let firstOrder = first.frontmatter?.order ? first.frontmatter.order : 100;
@@ -88,9 +89,7 @@ const SingleChapter = ({ data, location, children }) => {
 
 
       <SimpleReactLightbox>
-        <Chapters chapterData={data.chapter} TOCData={sortedTOCData} courseData={data.course.nodes[0]} location={location} serviceMeshesList={data.serviceMeshesList.nodes}>
-          {children}
-        </Chapters>
+        <Chapters chapterData={data.chapter} TOCData={sortedTOCData} courseData={data.course.nodes[0]} location={location} serviceMeshesList={data.serviceMeshesList.nodes} />
       </SimpleReactLightbox>
 
     </>

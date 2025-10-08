@@ -13,23 +13,24 @@ export const query = graphql`query allBlogs {
   ) {
     nodes {
       id
+      body
       frontmatter {
         title
         date(formatString: "MMM Do, YYYY")
         author
         thumbnail {
+          extension
+          publicURL
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
-          extension
-          publicURL
         }
         darkthumbnail {
+          extension
+          publicURL
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
-          extension
-          publicURL
         }
       }
       fields {

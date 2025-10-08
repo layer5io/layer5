@@ -6,9 +6,9 @@ import "swiper/css/effect-cards";
 import { EffectCards, Pagination, Navigation, Autoplay } from "swiper/modules";
 import styled from "styled-components";
 import Levels from "./academy-catalog.gif";
-import Challenges from "./challenges.png";
-import Badges from "./badges.png";
-import Track from "./track.png";
+import Challenges from "./challenges.webp";
+import Badges from "./badges.webp";
+import Track from "./track.webp";
 
 const CONTENT = [
   {
@@ -37,6 +37,7 @@ const CONTENT = [
     img: Track,
     description:
       "Stay motivated with clear progress tracking as you move forward. Keep an eye on your completed labs, challenges, and milestones, and see how your cloud native skills steadily grow step by step.",
+    gradient: "four"
   }
 ];
 
@@ -81,7 +82,7 @@ const AcademyMobileSwiper = () => {
   return (
     <DivWrapper>
       <SwiperContainer style={{ marginBottom: "10%" }}>
-        <h2 style={{ marginBottom: "2rem" }}>Unlock Your <span className="highlight">Cloud Native</span> Journey</h2>
+        <h2 style={{ marginBottom: "2rem" }}>Unlock Your Cloud Native Journey</h2>
         <Swiper
           autoplay={{
             delay: 2000,
