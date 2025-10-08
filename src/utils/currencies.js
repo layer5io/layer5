@@ -3,36 +3,36 @@ export const Currencies = {
         name: "USD",
         symbol: "$",
         rate: 1,
-        formatPrice: (price) =>
+        formatPrice: (price,roundForDisplay=false) =>
             new Intl.NumberFormat("en-US", {
                 style: "currency",
                 currency: "USD",
-                minimumFractionDigits: 0,
-                maximumFractionDigits: 2,
+                minimumFractionDigits: roundForDisplay ? 0 : 2,
+                maximumFractionDigits: roundForDisplay ? 0 : 2,
             }).format(price),
     },
     EUR: {
         name: "EUR",
         symbol: "€",
         rate: 0.86,
-        formatPrice: (price) =>
+        formatPrice: (price,roundForDisplay=false) =>
             new Intl.NumberFormat("en-US", {
                 style: "currency",
                 currency: "EUR",
-                minimumFractionDigits: 0,
-                maximumFractionDigits: 2,
+                minimumFractionDigits: roundForDisplay ? 0 : 2,
+                maximumFractionDigits: roundForDisplay ? 0 : 2,
             }).format(price * 0.86),
     },
     INR: {
         name: "INR",
         symbol: "₹",
         rate: 88.32,
-        formatPrice: (price) =>
+        formatPrice: (price,roundForDisplay=false) =>
             new Intl.NumberFormat("en-US", {
                 style: "currency",
                 currency: "INR",
-                minimumFractionDigits: 0,
-                maximumFractionDigits: 2,
+                minimumFractionDigits: roundForDisplay ? 0 : 2,
+                maximumFractionDigits: roundForDisplay ? 0 : 2,
             }).format(price * 88),
     },
 };
