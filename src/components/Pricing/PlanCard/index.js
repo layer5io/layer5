@@ -5,10 +5,7 @@ import PlanCardWrapper from "./planCard.style";
 import FeatureDetails from "./collapsible-details";
 import { Currencies, formatAndConvertPrice } from "../../../utils/currencies";
 
-
-const PlanCard = ({ planData , isYearly ,currency }) => {
-
-
+const PlanCard = ({ planData, isYearly, currency }) => {
   if (!planData || !Array.isArray(planData) || planData.length === 0) {
     return <div>No plan data available</div>;
   }
@@ -20,8 +17,12 @@ const PlanCard = ({ planData , isYearly ,currency }) => {
   };
 
   const formatPrice = (price) => {
-    console.log("price",price,planData);
-    return formatAndConvertPrice(price, currency);
+    const formattedPrice = formatAndConvertPrice(price, currency);
+    // Remove the currency symbol by extracting only the numeric part
+    return parseFloat(formattedPrice.replace(/[^0-9.]/g, ""));
+  };
+  const getCurrencySymbol = (currency) => {
+    return Currencies[currency]?.symbol ?? "$";
   };
 
   return (
@@ -50,11 +51,12 @@ const PlanCard = ({ planData , isYearly ,currency }) => {
 
                   <div className="price">
                     <span className="price-amount">
+                      <sup><strong>{getCurrencySymbol(currency)}</strong></sup>
                       {isYearly
                         ? formatPrice(x.yearlyprice)
                         : formatPrice(x.monthlyprice)}
                     </span>
-                    <span className="currency">{Currencies[currency]?.name ?? "USD" }  </span>
+                    <span className="currency">{Currencies[currency]?.name ?? "USD"}</span>
                     <span className="price-per">per user/year</span>
                   </div>
 

@@ -17,39 +17,39 @@ export const query = graphql`
         howItWorks
         howItWorksDetails
         integrationIcon {
+          extension
+          publicURL
           childImageSharp {
             gatsbyImageData(width: 500, layout: CONSTRAINED)
           }
-          extension
-          publicURL
         }
         docURL
         category
         components {
           name
           colorIcon {
+            extension
+            publicURL
             childImageSharp {
               gatsbyImageData(width: 500, layout: CONSTRAINED)
             }
-            extension
-            publicURL
           }
           whiteIcon {
+            extension
+            publicURL
             childImageSharp {
               gatsbyImageData(width: 500, layout: CONSTRAINED)
             }
-            extension
-            publicURL
           }
           description
         }
         featureList
         workingSlides {
+          extension
+          publicURL
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
-          extension
-          publicURL
         }
       }
     }
@@ -57,11 +57,11 @@ export const query = graphql`
       filter: {relativeDirectory: {eq: $name}, sourceInstanceName: {eq: "integrations"}}
     ) {
       nodes {
+        extension
+        publicURL
         childImageSharp {
           gatsbyImageData(layout: FULL_WIDTH)
         }
-        extension
-        publicURL
       }
     }
   }

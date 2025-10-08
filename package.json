@@ -10,9 +10,9 @@
     "url": "https://layer5.io"
   },
   "scripts": {
-    "build": "gatsby build",
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 gatsby build",
     "clean": "gatsby clean && rimraf node_modules",
-    "develop": "GATSBY_CPU_COUNT=12 NODE_OPTIONS=--max-old-space-size=10096 gatsby develop",
+    "develop": "cross-env NODE_OPTIONS=--max-old-space-size=8192 env-cmd -f .env.development gatsby develop",
     "dev": "npm run develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -26,7 +26,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@emotion/is-prop-valid": "^1.2.1",
+    "@emotion/is-prop-valid": "^1.4.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@fullcalendar/core": "^6.1.8",
@@ -42,7 +42,7 @@
     "@mui/icons-material": "^6.4.6",
     "@mui/material": "^5.15.11",
     "@react-icons/all-files": "^4.1.0",
-    "@sistent/sistent": "^0.15.7",
+    "@sistent/sistent": "^0.15.9",
     "@svgr/webpack": "^8.0.1",
     "@types/mui-datatables": "^4.3.12",
     "ajv": "^8.17.1",
@@ -68,6 +68,7 @@
     "gatsby-plugin-meta-redirect": "github:layer5labs/gatsby-plugin-meta-redirect",
     "gatsby-plugin-netlify": "^5.1.1",
     "gatsby-plugin-preload-fonts": "^4.11.0",
+    "gatsby-plugin-purgecss": "^6.2.1",
     "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-sharp": "^5.11.0",
     "gatsby-plugin-sitemap": "^6.11.0",
@@ -106,7 +107,6 @@
     "react-table": "^7.8.0",
     "react-tabs": "^6.0.2",
     "react-tooltip": "^5.19.0",
-    "react-tsparticles": "^2.11.0",
     "react-vertical-timeline-component": "^3.5.2",
     "react-visibility-sensor": "^5.1.1",
     "sharp": "^0.33.5",
@@ -114,7 +114,7 @@
     "simple-react-lightbox": "^3.6.9-0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.14",
-    "swiper": "^11.1.15",
+    "swiper": "^12.0.2",
     "url": "^0.11.3",
     "webpack-filter-warnings-plugin": "^1.2.1",
     "xstate": "^5.13.0"
@@ -125,6 +125,7 @@
     "@babel/eslint-parser": "^7.22.15",
     "babel-plugin-module-resolver": "^5.0.0",
     "cpx": "^1.5.0",
+    "cross-env": "^10.0.0",
     "env-cmd": "^10.1.0",
     "eslint": "^8.46.0",
     "eslint-plugin-react": "^7.37.3",

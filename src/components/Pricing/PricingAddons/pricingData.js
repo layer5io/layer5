@@ -20,8 +20,8 @@ export const getAddOns = () => [
         unitLabelSingular: "learner",
         maxUnits: 5000,
         pricing: [
-          { learners: 250, monthlyPerUser: 1.10, yearlyPerUser: 11.22, currency: "$" },
-          { learners: 500, monthlyPerUser: 0.67, yearlyPerUser: 6.83, currency: "$" },
+          { learners: 250, monthlyPerUser: 1.08, yearlyPerUser: 10.81, currency: "$" },
+          { learners: 500, monthlyPerUser: 0.68, yearlyPerUser: 6.74, currency: "$" },
           { learners: 1000, monthlyPerUser: 0.46, yearlyPerUser: 4.69, currency: "$" },
           { learners: 2500, monthlyPerUser: 0.40, yearlyPerUser: 4.08, currency: "$" },
           // { learners: "2500+", monthlyPerUser: "contact us", yearlyPerUser: "contact us", currency: "$" },
@@ -45,10 +45,10 @@ export const getAddOns = () => [
         unitLabel: "learners",
         unitLabelSingular: "learner",
         pricing: [
-          { learners: 250, monthlyPerUser: 2.20, yearlyPerUser: 22.44, currency: "$" },
-          { learners: 500, monthlyPerUser: 1.34, yearlyPerUser: 13.67, currency: "$" },
-          { learners: 1000, monthlyPerUser: 0.91, yearlyPerUser: 9.28, currency: "$" },
-          { learners: 2500, monthlyPerUser: 0.80, yearlyPerUser: 8.16, currency: "$" },
+          { learners: 250, monthlyPerUser: 1.08, yearlyPerUser: 10.81, currency: "$" },
+          { learners: 500, monthlyPerUser: 0.68, yearlyPerUser: 6.74, currency: "$" },
+          { learners: 1000, monthlyPerUser: 0.46, yearlyPerUser: 4.69, currency: "$" },
+          { learners: 2500, monthlyPerUser: 0.40, yearlyPerUser: 4.08, currency: "$" },
         ],
         planLink: [
           { learners: 250, cadence: "monthly", name: "enterprise-add-on-academy-labs-250", link: "https://cloud.layer5.io/account/plans/upgrade?plan=cc52a8c7-8f19-4475-8a43-896711438423", },
@@ -70,8 +70,8 @@ export const getAddOns = () => [
     monthlyPrice: 64,
     yearlyPrice: 653, // ~15% discount for yearly
     iconType: "cloud", // Reference to icon type instead of component
-    unitLabel: "servers",
-    unitLabelSingular: "server",
+    unitLabel: "Servers",
+    unitLabelSingular: "Server",
     maxUnits: 50,
     pricing: [
       { units: 1, monthlyPerUnit: 64, yearlyPerUnit: 54.40, currency: "$" },
@@ -87,8 +87,8 @@ export const getAddOns = () => [
     monthlyPrice: 1.50,
     yearlyPrice: 15.30, // ~15% discount for yearly
     iconType: "group", // Reference to icon type instead of component
-    unitLabel: "collaborators",
-    unitLabelSingular: "collaborator",
+    unitLabel: "Collaborators",
+    unitLabelSingular: "Collaborator",
     maxUnits: 200,
     pricing: [
       { units: 1, monthlyPerUnit: 2, yearlyPerUnit: 1.70, currency: "$" },
