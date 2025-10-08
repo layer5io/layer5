@@ -20,11 +20,11 @@ export const query = graphql`query WorkshopBySlug($slug: String!) {
       video
       eurl
       thumbnail {
+        extension
+        publicURL
         childImageSharp {
           gatsbyImageData(layout: CONSTRAINED)
         }
-        extension
-        publicURL
       }
     }
     fields {
