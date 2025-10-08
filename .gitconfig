@@ -1,0 +1,4 @@
+[alias]
+  amend = commit -s --amend
+  cm = commit -s -m
+  commit = commit -s
