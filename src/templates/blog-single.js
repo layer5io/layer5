@@ -11,6 +11,7 @@ import BlogSingle from "../sections/Blog/Blog-single";
 import SimpleReactLightbox from "simple-react-lightbox";
 export const query = graphql`query BlogsBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
+    body
     frontmatter {
       title
       subtitle
@@ -20,18 +21,18 @@ export const query = graphql`query BlogsBySlug($slug: String!) {
       category
       tags
       thumbnail {
+        extension
+        publicURL
         childImageSharp {
           gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
-        extension
-        publicURL
       }
       darkthumbnail {
+        extension
+        publicURL
         childImageSharp {
           gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
-        extension
-        publicURL
       }
     }
     fields {
@@ -41,7 +42,7 @@ export const query = graphql`query BlogsBySlug($slug: String!) {
 }
 `;
 
-const BlogSinglePage = ({ data, children }) => {
+const BlogSinglePage = ({ data }) => {
 
 
   return (
@@ -50,9 +51,7 @@ const BlogSinglePage = ({ data, children }) => {
 
 
       <SimpleReactLightbox>
-        <BlogSingle data={data}>
-          {children}
-        </BlogSingle>
+        <BlogSingle  data={data} />
       </SimpleReactLightbox>
 
     </>

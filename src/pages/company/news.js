@@ -12,6 +12,7 @@ export const query = graphql`query allNews {
   ) {
     nodes {
       id
+      body
       frontmatter {
         title
         date(formatString: "MMMM Do, YYYY")
@@ -19,18 +20,18 @@ export const query = graphql`query allNews {
         category
         eurl
         thumbnail {
+          extension
+          publicURL
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
-          extension
-          publicURL
         }
         darkthumbnail {
+          extension
+          publicURL
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
-          extension
-          publicURL
         }
       }
       fields {

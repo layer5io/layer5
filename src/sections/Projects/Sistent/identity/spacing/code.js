@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { SistentLayout } from "../../sistent-layout";
@@ -15,10 +15,8 @@ import {
   TableHead,
   TableBody,
   SistentThemeProvider,
-  CustomTooltip,
-  Box,
 } from "@sistent/sistent";
-import { copyToClipboard } from "../../../../../components/CodeBlock/copy-to-clipboard.js";
+import CopyValue from "../../../../../components/CopyValue";
 
 
 // Table data
@@ -37,44 +35,6 @@ const spacingTokens = [
   { token: "spacing-11", px: "72px (8 × 9)", rem: "4.5rem", size: 72 },
   { token: "spacing-12", px: "80px (8 × 10)", rem: "5rem", size: 80 },
 ];
-
-const CopyCell = ({ value }) => {
-  const [copyText, setCopyText] = useState("Copy");
-
-  const handleCopy = async () => {
-    await copyToClipboard(value);
-    setCopyText("Copied");
-    setTimeout(() => setCopyText("Copy"), 1000);
-  };
-
-  return (
-    <CustomTooltip
-      title={copyText === "Copied" ? "Copied" : "Copy"}
-      enterDelay={800}
-      leaveDelay={10}
-      placement="right"
-    >
-      <Box
-        sx={{
-          position: "relative",
-          display: "inline-flex",
-          alignItems: "center",
-          cursor: "pointer",
-          padding: "2px 4px",
-          borderRadius: "3px",
-          transition: "background-color 0.2s ease",
-          "&:hover": {
-            backgroundColor: (theme) =>
-              theme.palette.action?.hover || "rgba(0, 0, 0, 0.04)",
-          },
-        }}
-        onClick={handleCopy}
-      >
-        <span>{value}</span>
-      </Box>
-    </CustomTooltip>
-  );
-};
 
 const SpacingVisualBox = styled("div")(({ theme, size }) => ({
   backgroundColor: theme.palette.brand?.default || "#00B39F",
@@ -199,14 +159,10 @@ const SpacingCode = () => {
                       {spacingTokens.map((spacing) => (
                         <StyledTableRow key={spacing.token}>
                           <StyledTableCell sx={{ fontFamily: "monospace" }}>
-                            <CopyCell value={spacing.token} />
+                            <CopyValue copyValue={spacing.token} />
                           </StyledTableCell>
-                          <StyledTableCell>
-                            <CopyCell value={spacing.px} />
-                          </StyledTableCell>
-                          <StyledTableCell>
-                            <CopyCell value={spacing.rem} />
-                          </StyledTableCell>
+                          <StyledTableCell> {spacing.px} </StyledTableCell>
+                          <StyledTableCell> {spacing.rem} </StyledTableCell>
                           <StyledTableCell align="center">
                             <SpacingVisualBox size={spacing.size} />
                           </StyledTableCell>

@@ -31,11 +31,11 @@ export const query = graphql`query MemberBioBySlug($member: String!) {
       executive_position
       company
       executive_image {
+        extension
+        publicURL
         childImageSharp {
           gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
-        extension
-        publicURL
       }
     }
 }

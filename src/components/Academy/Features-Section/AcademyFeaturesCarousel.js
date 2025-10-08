@@ -3,9 +3,9 @@ import styled from "styled-components";
 import PopOutCard from "../../PopOutCardCarousel";
 
 import Levels from "./academy-catalog.gif";
-import Challenges from "./challenges.png";
-import Badges from "./badges.png";
-import Track from "./track.png";
+import Challenges from "./challenges.webp";
+import Badges from "./badges.webp";
+import Track from "./track.webp";
 
 const CONTENT = [
   {
@@ -42,7 +42,6 @@ const DivWrapper = styled.div`
   font-size: 1.125rem;
   align-items: center;
   position: relative;
-  margin-bottom: 10%;
   
   .left {
     text-align: center;
@@ -71,6 +70,7 @@ const DivWrapper = styled.div`
 
   @media only screen and (max-width: 999px) {
     padding-block: 3rem;
+    margin-bottom: 10%;
     
     .left {
       margin-bottom: 1rem;
@@ -105,7 +105,7 @@ export default function AcademyFeatureCarousel() {
   return (
     <DivWrapper>
       <div className="left">
-        <h1>Unlock Your <span className="highlight">Cloud Native</span> Journey</h1>
+        <h1>Unlock Your Cloud Native Journey</h1>
       </div>
       <div className="right">
         {CONTENT.map((content, i) => (
