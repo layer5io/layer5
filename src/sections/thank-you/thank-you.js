@@ -1,5 +1,5 @@
 import React from "react";
-import LearnServiceMeshCTA from "../Learn/Learn-Service-Mesh-CTA";
+import KanvasCTA from "../Kanvas/kanvas-cta";
 import ThankYouWrapper from "./thank-you.style";
 
 const ThankYouSection = () => {
@@ -8,7 +8,7 @@ const ThankYouSection = () => {
       <div className="parentcard">
         <h1>Thank you for subscribing!</h1>
       </div>
-      <LearnServiceMeshCTA />
+      <KanvasCTA />
     </ThankYouWrapper>
   );
 };

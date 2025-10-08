@@ -35,6 +35,21 @@ const ButtonStyle = styled.button`
         margin-left: 8px;
     }
 
+    ${props => props.$outlined && css`
+        background: transparent;
+        border: 2px solid ${props => props.theme.whiteToBlack};
+        color: ${props => props.theme.whiteToBlack};
+        &:hover{
+            box-shadow: 0 2px 10px ${props.theme.whiteFourToBlackFour};
+        }
+        &:active{
+            background: ${props => props.theme.lightGrey};
+            box-shadow: 0 2px 10px ${props.theme.blackFourToWhiteFour};
+            transform: scale(0.98);
+        }
+    `}
+
+
     ${props => props.$primary && css`
         color: ${props => props.theme.black};
         background: ${props => props.theme.highlightColor};

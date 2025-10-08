@@ -35,6 +35,7 @@ import ReviewRockstarLogo from "../../../assets/images/review-rockstar/review-ro
 import KanvasSnapshotLogo from "../../../assets/images/kanvas-snapshot/kanvas-snapshot.svg";
 import SistentContributorLogo from "../../../assets/images/sistent/badges/sistent-contributor.svg";
 import ContinuousContributorLogo from "../../../assets/images/continuous-contributor/continuous-contributor.svg";
+import AcademyLogo from "../../../assets/images/academy/academy.svg";
 
 const contents = [
   { id: 0, link: "#Profile Bages", text: "Profile Bages" },
@@ -186,6 +187,10 @@ const RecognitionPage = () => {
               <li>
                 <img src={ServiceMeshPerformance} style={badgeStyle} />
                 <b>Cloud Native Performance</b> - awarded to the community members who make consistent and impactful contributions to the Cloud Native Performance project. Community members who earn this badge occasionally become a project maintainer.
+              </li>
+              <li>
+                <img src={AcademyLogo} style={badgeStyle} />
+                <b>Academy</b> - awarded to the community members who make consistent and impactful contributions to the <Link to="https://cloud.layer5.io/academy/overview">Layer5 Academy</Link> project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer.
               </li>
               <li>
                 <img src={CommunityLogo} style={badgeStyle} />
