@@ -113,11 +113,11 @@ const RecognitionPage = () => {
               <h4>Activity Badges</h4>
               <table style={{ width: "100%", borderCollapse: "collapse", marginBottom: "2rem" }}>
                 <thead>
-                  <tr style={{ borderBottom: "2px solid #ddd", backgroundColor: "#f5f5f5" }}>
-                    <th style={{ textAlign: "left", padding: "12px" }}>Badge</th>
-                    <th style={{ textAlign: "left", padding: "12px" }}>Name</th>
-                    <th style={{ textAlign: "left", padding: "12px" }}>Badge Key</th>
-                    <th style={{ textAlign: "left", padding: "12px" }}>Description</th>
+                  <tr style={{ borderBottom: "2px solid var(--text-color, #ddd)", backgroundColor: "rgba(0, 0, 0, 0.05)" }}>
+                    <th style={{ textAlign: "left", padding: "12px", fontWeight: "600" }}>Badge</th>
+                    <th style={{ textAlign: "left", padding: "12px", fontWeight: "600" }}>Name</th>
+                    <th style={{ textAlign: "left", padding: "12px", fontWeight: "600" }}>Badge Key</th>
+                    <th style={{ textAlign: "left", padding: "12px", fontWeight: "600" }}>Description</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -369,11 +369,11 @@ const RecognitionPage = () => {
               <h4>Special Recognition Badges</h4>
               <table style={{ width: "100%", borderCollapse: "collapse", marginBottom: "2rem" }}>
                 <thead>
-                  <tr style={{ borderBottom: "2px solid #ddd", backgroundColor: "#f5f5f5" }}>
-                    <th style={{ textAlign: "left", padding: "12px" }}>Badge</th>
-                    <th style={{ textAlign: "left", padding: "12px" }}>Name</th>
-                    <th style={{ textAlign: "left", padding: "12px" }}>Badge Key</th>
-                    <th style={{ textAlign: "left", padding: "12px" }}>Description</th>
+                  <tr style={{ borderBottom: "2px solid var(--text-color, #ddd)", backgroundColor: "rgba(0, 0, 0, 0.05)" }}>
+                    <th style={{ textAlign: "left", padding: "12px", fontWeight: "600" }}>Badge</th>
+                    <th style={{ textAlign: "left", padding: "12px", fontWeight: "600" }}>Name</th>
+                    <th style={{ textAlign: "left", padding: "12px", fontWeight: "600" }}>Badge Key</th>
+                    <th style={{ textAlign: "left", padding: "12px", fontWeight: "600" }}>Description</th>
                   </tr>
                 </thead>
                 <tbody>
