@@ -118,9 +118,8 @@ const IconButtonCode = () => {
         </div>
         <div className="main-content">
           <p>
-            IconButtons provide a compact way to trigger actions using only
-            iconography. They're essential for creating clean, space-efficient
-            interfaces.
+            IconButtons provide compact action triggers using iconography,
+            essential for clean, space-efficient interfaces.
           </p>
           <a id="Basic IconButton">
             <h2>Basic IconButton</h2>
@@ -145,8 +144,8 @@ const IconButtonCode = () => {
           </a>
           <p>
             IconButtons come in three sizes: small (32px), medium (40px), and
-            large (48px). Choose the appropriate size based on your interface
-            requirements and accessibility needs.
+            large (48px). Choose based on interface requirements and
+            accessibility needs.
           </p>
           <div className="showcase">
             <div className="items">
@@ -233,130 +232,6 @@ const IconButtonCode = () => {
             </div>
             <CodeBlock name="disabled-iconbutton" code={codes[4]} />
           </div>
-
-          <a id="Props">
-            <h2>Props</h2>
-          </a>
-          <p>
-            The IconButton component accepts all standard button props plus
-            additional customization options:
-          </p>
-
-          <div className="table-container">
-            <table className="props-table">
-              <thead>
-                <tr>
-                  <th>Prop</th>
-                  <th>Type</th>
-                  <th>Default</th>
-                  <th>Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>children</td>
-                  <td>node</td>
-                  <td>-</td>
-                  <td>The icon element to display inside the button</td>
-                </tr>
-                <tr>
-                  <td>size</td>
-                  <td>'small' | 'medium' | 'large'</td>
-                  <td>'medium'</td>
-                  <td>The size of the IconButton</td>
-                </tr>
-                <tr>
-                  <td>color</td>
-                  <td>
-                    'inherit' | 'primary' | 'secondary' | 'error' | 'info' |
-                    'success' | 'warning'
-                  </td>
-                  <td>'inherit'</td>
-                  <td>The color of the IconButton</td>
-                </tr>
-                <tr>
-                  <td>disabled</td>
-                  <td>bool</td>
-                  <td>false</td>
-                  <td>If true, the IconButton is disabled</td>
-                </tr>
-                <tr>
-                  <td>onClick</td>
-                  <td>func</td>
-                  <td>-</td>
-                  <td>Callback fired when the IconButton is clicked</td>
-                </tr>
-                <tr>
-                  <td>aria-label</td>
-                  <td>string</td>
-                  <td>-</td>
-                  <td>Accessibility label for screen readers (required)</td>
-                </tr>
-                <tr>
-                  <td>sx</td>
-                  <td>object</td>
-                  <td>-</td>
-                  <td>System prop for custom styling</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <a id="Best Practices">
-            <h2>Best Practices</h2>
-          </a>
-          <ul>
-            <li>
-              <strong>Always include aria-label:</strong> Essential for
-              accessibility and screen readers
-            </li>
-            <li>
-              <strong>Use recognizable icons:</strong> Choose icons that clearly
-              represent the action
-            </li>
-            <li>
-              <strong>Maintain adequate spacing:</strong> Ensure sufficient
-              space between IconButtons
-            </li>
-            <li>
-              <strong>Provide hover feedback:</strong> Clear visual feedback for
-              interactive states
-            </li>
-            <li>
-              <strong>Consider touch targets:</strong> Use appropriate sizes for
-              mobile interfaces
-            </li>
-            <li>
-              <strong>Test with users:</strong> Verify that icon meanings are
-              clear to your target audience
-            </li>
-          </ul>
-
-          <a id="Common Use Cases">
-            <h2>Common Use Cases</h2>
-          </a>
-          <ul>
-            <li>
-              <strong>Toolbar actions:</strong> Edit, delete, share, and other
-              quick actions
-            </li>
-            <li>
-              <strong>Navigation:</strong> Back, forward, close, and menu
-              toggles
-            </li>
-            <li>
-              <strong>Media controls:</strong> Play, pause, skip, and volume
-              controls
-            </li>
-            <li>
-              <strong>List item actions:</strong> Quick actions for items in
-              lists or tables
-            </li>
-            <li>
-              <strong>Toggle states:</strong> Favorite, bookmark, or
-              follow/unfollow actions
-            </li>
-          </ul>
         </div>
       </div>
     </SistentLayout>

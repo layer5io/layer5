@@ -69,17 +69,16 @@ const SistentIconButton = () => {
         </div>
         <div className="main-content">
           <p>
-            IconButtons are essential components for creating intuitive user
-            interfaces. They combine the functionality of buttons with the
-            visual clarity of icons, making them perfect for actions that are
-            universally understood or where screen real estate is at a premium.
+            IconButtons are compact components that combine button functionality
+            with icon clarity, perfect for space-efficient interfaces and
+            universally recognized actions.
           </p>
           <a id="Types">
             <h2>Types</h2>
           </a>
           <p>
             IconButtons come in different visual styles to establish hierarchy
-            and accommodate various design needs in your interface.
+            and meet various interface needs.
           </p>
           <h3>Standard</h3>
           <p>
@@ -120,14 +119,13 @@ const SistentIconButton = () => {
             <h2>Sizes</h2>
           </a>
           <p>
-            IconButtons support multiple sizes to accommodate different
-            interface contexts and touch target requirements. The size affects
-            both the icon and the interactive area around it.
+            IconButtons support multiple sizes to accommodate different contexts
+            and touch target requirements.
           </p>
           <h3>Small</h3>
           <p>
-            Small IconButtons (32px) are perfect for dense interfaces, toolbars,
-            or secondary actions where space is limited.
+            Small IconButtons (32px) are ideal for dense interfaces and
+            secondary actions where space is limited.
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
@@ -138,9 +136,8 @@ const SistentIconButton = () => {
           </Row>
           <h3>Medium (Default)</h3>
           <p>
-            Medium IconButtons (40px) provide the standard size for most use
-            cases, offering a good balance between compactness and
-            accessibility.
+            Medium IconButtons (40px) provide the standard size, balancing
+            compactness and accessibility.
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
@@ -151,9 +148,8 @@ const SistentIconButton = () => {
           </Row>
           <h3>Large</h3>
           <p>
-            Large IconButtons (48px) are ideal for primary actions, mobile
-            interfaces, or when you need to ensure easy accessibility and touch
-            interaction.
+            Large IconButtons (48px) are ideal for primary actions and mobile
+            interfaces where easy touch interaction is essential.
           </p>
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
