@@ -84,7 +84,7 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
           </Box>
         )}
         MenuProps={{
-          disablePortal: true, // Render menu inside parent so it scrolls naturally
+          disablePortal: true, // Render menu inside parent so it scrolls perfectly
           PaperProps: {
             sx: {
               backgroundColor: "#1E1E1E",
