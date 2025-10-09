@@ -3,7 +3,7 @@ import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
 import { IconButton, SistentThemeProvider } from "@sistent/sistent";
-import { CodeBlock } from "./code-block";
+import { CodeBlock } from "../button/code-block";
 import { FaEdit } from "@react-icons/all-files/fa/FaEdit";
 import { FaHeart } from "@react-icons/all-files/fa/FaHeart";
 import { FaTrash } from "@react-icons/all-files/fa/FaTrash";
