@@ -20,7 +20,7 @@ import {
   TextField,
   useTheme,
   SistentThemeProvider
-} from  "@sistent/sistent";
+} from "@sistent/sistent";
 import { Calculate, CheckCircle, Cloud, Group } from "@mui/icons-material";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 import { getAddOns } from "./pricingData";
@@ -207,7 +207,6 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
     }
 
     let targetSubAddon = null;
-    let targetSubAddonName = "";
 
     if (selectedSubAddOns["academy-practical"]) {
       targetSubAddon = selectedAddon.subAddOns?.find((sub) => sub.id === "academy-practical");
@@ -215,6 +214,9 @@ export const PricingAddons = ({ isYearly = false, setIsYearly ,currency,enterpri
     } else {
       targetSubAddon = selectedAddon.subAddOns?.find((sub) => sub.id === "academy-theory");
       targetSubAddonName = "";
+      targetSubAddon = selectedAddon.subAddOns?.find(sub => sub.id === "academy-practical");
+    } else {
+      targetSubAddon = selectedAddon.subAddOns?.find(sub => sub.id === "academy-theory");
     }
 
     if (!targetSubAddon?.planLink || !targetSubAddon.pricing?.[quantityIndex]) {
@@ -340,9 +342,9 @@ user${enterpriseUsers > 1 ? "s" : ""}` : "";
                                   {addon.id === "academy"
                                     ? addon.description
                                     : (() => {
-                                        const period = isYearly ? "/year" : "/month";
-                                        return `${formatPrice(isYearly ? addon.yearlyPrice : addon.monthlyPrice)} per ${addon.unitLabel.slice(0, -1)}${period}`;
-                                      })()
+                                      const period = isYearly ? "/year" : "/month";
+                                      return `${formatPrice(isYearly ? addon.yearlyPrice : addon.monthlyPrice)} per ${addon.unitLabel.slice(0, -1)}${period}`;
+                                    })()
                                   }
                                 </Typography>
                               </Box>
@@ -491,7 +493,6 @@ user${enterpriseUsers > 1 ? "s" : ""}` : "";
                             } else {
                               targetSubAddon = selectedAddon?.subAddOns?.find((sub) => sub.id === "academy-theory");
                             }
-
                             return (
                               targetSubAddon?.pricing?.map((option, index) => ({
                                 value: index,
@@ -502,6 +503,14 @@ user${enterpriseUsers > 1 ? "s" : ""}` : "";
                                       sx={{
                                         color: "text.secondary",
                                         mb: 1.5,
+                            return targetSubAddon?.pricing?.map((option, index) => ({
+                              value: index,
+                              label: (
+                                <Box sx={{ textAlign: "center", fontSize: "1.25rem", fontWeight: "bold" }}>
+                                  <Box>{option.learners === "2500+" ? "2,500+" : option.learners}</Box>
+                                  {isYearly && (
+                                    <Box
+                                      sx={{
                                         fontSize: {
                                           xs: "0.75rem",
                                           sm: "0.9rem",
@@ -509,6 +518,21 @@ user${enterpriseUsers > 1 ? "s" : ""}` : "";
                                       }}>
                                       {formatPrice(isYearly ? option.yearlyPerUser : option.monthlyPerUser)}<br />{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
                                     </Box>
+                                      }}
+                                    >
+                                      {formatSliderPrice((option.yearlyPerUser / 12) * (selectedSubAddOns["academy-practical"] ? 2 : 1), currency)}<br />{targetSubAddon.unitLabelSingular}/month
+                                    </Box>
+                                  )}
+                                  <Box
+                                    sx={{
+                                      color: "text.secondary",
+                                      mb: 1.5,
+                                      fontSize: {
+                                        xs: "0.75rem",
+                                        sm: "0.9rem",
+                                      }
+                                    }}>
+                                    {formatSliderPrice((isYearly ? option.yearlyPerUser : option.monthlyPerUser) * (selectedSubAddOns["academy-practical"] ? 2 : 1), currency)}<br />{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
                                   </Box>
                                 ),
                               })) || []
@@ -568,6 +592,7 @@ user${enterpriseUsers > 1 ? "s" : ""}` : "";
                                 <Box>{option.units}</Box>
                                 <Box sx={boxStyles.sliderPriceText}>
                                   {formatPrice(isYearly ? option.yearlyPerUnit * option.units : option.monthlyPerUnit * option.units)}
+                                  {formatSliderPrice(isYearly ? option.yearlyPerUnit * option.units : option.monthlyPerUnit * option.units, currency)}
                                 </Box>
                               </Box>
                             ),
@@ -654,8 +679,12 @@ user${enterpriseUsers > 1 ? "s" : ""}` : "";
                       <TextField
                         type="number"
                         value={enterpriseUsers}
-                        onChange={(e) => setEnterpriseUsers(parseInt(e.target.value, 10))}
-                        inputProps={{ min: 1, style: { textAlign: "center" } }}
+                        onChange={(e) => {
+                          const val = parseInt(e.target.value, 10);
+                          if (isNaN(val) || (val >= 1 && val <= 2500)) {
+                            setEnterpriseUsers(val);
+                          }
+                        }}
                         sx={boxStyles.enterpriseUserInput}
                       />
                     </Box>

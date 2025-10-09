@@ -176,8 +176,9 @@ export const boxStyles = {
     mt: 0.5
   },
   sliderPriceText: {
-    color: "primary.main",
-    fontWeight: "bold",
+    color: "text.secondary",
+    fontWeight: "normal",
+    fontSize: "1.2rem",
     mt: 0.5
   },
   academySliderMarks: {
@@ -222,7 +223,7 @@ export const boxStyles = {
     alignItems: "center"
   },
   enterpriseUserInput: {
-    width: "50px",
+    width: "65px",
     ml: 1,
     "& .MuiInputBase-input": {
       py: (theme) => theme.spacing(0.5),
