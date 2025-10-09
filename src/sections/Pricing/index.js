@@ -83,6 +83,23 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
             <Typography variant="body2">{Currencies[value]?.name}</Typography>
           </Box>
         )}
+        MenuProps={{
+          disablePortal: true, // Render menu inside parent so it scrolls naturally
+          PaperProps: {
+            sx: {
+              backgroundColor: "#1E1E1E",
+              color: "white",
+              maxHeight: 300,
+              overflowY: "auto",
+              position: "absolute",
+            },
+          },
+          anchorOrigin: { vertical: "bottom", horizontal: "left" },
+          transformOrigin: { vertical: "top", horizontal: "left" },
+          marginThreshold: 0,
+          disableScrollLock: true,
+        }}
+
       >
         {Object.entries(Currencies).map(([code, { symbol, name }]) => (
           <MenuItem key={code} value={code}>
