@@ -114,4 +114,8 @@ export const content = [
   { id: 80, link: "/projects/sistent/components/tooltip", text: "Tooltip" },
   { id: 81, link: "/projects/sistent/components/tooltip/guidance", text: "Tooltip" },
   { id: 82, link: "/projects/sistent/components/tooltip/code", text: "Tooltip" },
+
+  { id: 83, link: "/projects/sistent/components/collapse", text: "Collapse" },
+  { id: 84, link: "/projects/sistent/components/collapse/guidance", text: "Collapse" },
+  { id: 85, link: "/projects/sistent/components/collapse/code", text: "Collapse" },
 ];
