@@ -442,7 +442,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                               <Box sx={boxStyles.sliderMarks}>
                                 <Box>{option.units}</Box>
                                 <Box sx={boxStyles.sliderPriceText}>
-                                  {formatSliderPrice(isYearly ? option.yearlyPerUnit : option.monthlyPerUnit, currency)}
+                                  {formatSliderPrice(isYearly ? option.yearlyPerUnit * option.units : option.monthlyPerUnit * option.units, currency)}
                                 </Box>
                               </Box>
                             ),
