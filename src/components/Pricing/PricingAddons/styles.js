@@ -243,7 +243,7 @@ export const boxStyles = {
     margin: 0
   },
   priceComponent: {
-    fontSize: ".8rem",
+    fontSize: "1rem",
     fontFamily: QANELAS_FONT
   },
   buttonSection: {
@@ -375,7 +375,8 @@ export const featureDetailsStyles = {
   base: {
     display: "flex",
     flexDirection: "row",
-    flexWrap: "wrap"
+    flexWrap: "wrap",
+    fontFamily: QANELAS_FONT
   }
 };
 
