@@ -157,7 +157,7 @@ A symbolic link (symlink) is a pointer to another file. You can create symlinks 
 
 Open your terminal in the project root and run these commands for the tools you use:
 
-<pre><code class="language-shell">
+<pre><code class="language-markdown">
 # For Claude Code  
 ln -s AGENTS.md CLAUDE.md
 
@@ -176,13 +176,13 @@ Your tools continue to work as expected, but now they all draw their context fro
 
 Some agents support importing one markdown file into another. For example, in Claude Code's CLAUDE.md file, you can simply add a line to import your universal file:
 
-<pre><code>
-\# In ./CLAUDE.md
+```markdown
+# In ./CLAUDE.md
 
 @AGENTS.md
 
 # You can add Claude-specific instructions below if needed
-</code></pre>
+```
 
 This approach keeps your setup clean and ensures AGENTS.md remains the primary source of truth.
 
@@ -207,11 +207,11 @@ Purpose: Automate common, repeatable development tasks. A `.prompt.md`:
 
 ### What's Next: The Future of AI Collaboration
 
-AGENTS.md is more than just a configuration file; it's a step toward a future where AI and human developers collaborate seamlessly.
+`AGENTS.md` is more than just a configuration file; it's a step toward a future where AI and human developers collaborate seamlessly.
 
 Imagine a world where any AI agent can clone a repository and instantly understand its context, conventions, and goals. Onboarding a new AI assistant becomes as simple as pointing it to a URL. Open-source projects can accept high-quality contributions from autonomous agents because the rules of engagement are clearly defined.
 
-This is the future that a common standard like AGENTS.md enables. For now, we can use simple bridges like symlinks to make it work. But as the ecosystem evolves, expect more and more tools to adopt AGENTS.md as the default.
+This is the future that a common standard like `AGENTS.md` enables. For now, we can use simple bridges like symlinks to make it work. But as the ecosystem evolves, expect more and more tools to adopt AGENTS.md as the default.
 
 One file to guide them all. One file to align them. One file to bring them all and in the codebase bind them.
 
