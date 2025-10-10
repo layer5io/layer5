@@ -56,19 +56,19 @@ const BtnContainer = styled.div`
     }
 `;
 
-const KanvasFeatures = ({style}) => {
+const KanvasFeatures = ({ style }) => {
   return (
     <KanvasSectionWrapper>
       <div className="heading-section">
         <h2>Discover Kanvas Capabilities</h2>
-        </div>
-              <Container className="description-section">
+      </div>
+      <Container className="description-section">
         <p className="caption">
           Design and manage your infrastructure with Kanvas’s intuitive
           drag-and-drop interface. Watch
           the video to explore freestyle composition and powerful cluster management and learn more about Kanvas.
         </p>
-       <BtnContainer className="btn" style={style} >
+        <BtnContainer className="btn" style={style} >
           <Button
             $primary
             $external={true}
@@ -77,7 +77,7 @@ const KanvasFeatures = ({style}) => {
             $url="https://docs.layer5.io/videos/"
           />
         </BtnContainer>
-    </Container>
+      </Container>
     </KanvasSectionWrapper>
   );
 };
