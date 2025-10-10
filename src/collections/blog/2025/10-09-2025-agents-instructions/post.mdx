@@ -157,7 +157,7 @@ A symbolic link (symlink) is a pointer to another file. You can create symlinks 
 
 Open your terminal in the project root and run these commands for the tools you use:
 
-```shell
+<pre><code class="language-shell">
 # For Claude Code  
 ln -s AGENTS.md CLAUDE.md
 
@@ -168,7 +168,7 @@ ln -s ../../AGENTS.md .cursor/rules/rules.mdc
 # For GitHub Copilot  
 mkdir -p .github  
 ln -s ../AGENTS.md .github/copilot-instructions.md
-```
+</code></pre>
 
 Your tools continue to work as expected, but now they all draw their context from a single source.
 
@@ -176,13 +176,13 @@ Your tools continue to work as expected, but now they all draw their context fro
 
 Some agents support importing one markdown file into another. For example, in Claude Code's CLAUDE.md file, you can simply add a line to import your universal file:
 
-```shell
+<pre><code>
 \# In ./CLAUDE.md
 
 @AGENTS.md
 
 # You can add Claude-specific instructions below if needed
-```
+</code></pre>
 
 This approach keeps your setup clean and ensures AGENTS.md remains the primary source of truth.
 
