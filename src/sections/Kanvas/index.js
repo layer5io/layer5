@@ -14,6 +14,7 @@ import VisualizerFeatures from "./FeaturesSection/Visualize/VisualizerFeatures";
 import KanvasBtn from "./kanvas-buttons.js";
 import Reviews from "../Pricing/review-slider";
 import InlineQuotes from "../../components/Inline-quotes";
+import KanvasFeatures from "./kanvas-feature.js";
 import { ReactComponent as RoleBind1 } from "./FeaturesSection/Design/images/role-binding-1-colorMode.svg";
 import { ReactComponent as RoleBind2 } from "./FeaturesSection/Design/images/role-binding-2-colorMode.svg";
 import { ReactComponent as RoleBind3 } from "./FeaturesSection/Design/images/role-binding-3-colorMode.svg";
@@ -277,6 +278,7 @@ const Kanvas = (props) => {
             person="Phillip Ulberg"
             title="Solutions Architect at Raymond James Financial, Inc."
             image={Phillip} />
+          <KanvasFeatures style={{ marginBottom: "2rem" }} />
           <Catalog />
           <InlineQuotes
             quote="Do we like Kanvas? ABSOLUTELY!"
