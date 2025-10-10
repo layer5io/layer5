@@ -60,7 +60,7 @@ export const content = [
   { id: 40, link: "/projects/sistent/components/iconbutton", text: "IconButton" },
   { id: 41, link: "/projects/sistent/components/iconbutton/guidance", text: "IconButton" },
   { id: 42, link: "/projects/sistent/components/iconbutton/code", text: "IconButton" },
-  
+
   { id: 43, link: "/projects/sistent/components/icons", text: "Icons" },
 
   { id: 44, link: "/projects/sistent/components/link", text: "Link" },
