@@ -15,7 +15,7 @@ const TOC = () => {
   const [expandGettingStarted, setExpandGettingStarted] = useState(
     location.pathname.includes("/getting-started")
   );
-  const [expandIdenity, setExpandIdentity] = useState(
+  const [expandIdentity, setExpandIdentity] = useState(
     location.pathname.includes("/identity")
   );
   const [expandComponent, setExpandComponent] = useState(
