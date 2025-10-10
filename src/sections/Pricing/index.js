@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import PricingWrapper from "./pricing.style";
 import Comparison from "./comparison";
 import FAQ from "../General/Faq";
@@ -42,8 +42,72 @@ const getCustomToggleButtonStyle = (isActive, baseStyle) => ({
 });
 
 export const CurrencySelect = ({ currency, setCurrency }) => {
+  const [open, setOpen] = useState(false);
+
+  const containerRef = useRef(null);
+  const toggleRef = useRef(null);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const el = toggleRef.current ?? containerRef.current;
+    if (!el) return;
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              setOpen(false);
+            }
+          });
+        },
+        { root: null, threshold: 0.1 }
+      );
+
+      observer.observe(el);
+      return () => observer.disconnect();
+    }
+
+    let ticking = false;
+    const checkRect = () => {
+      const currentEl = toggleRef.current ?? containerRef.current;
+      if (!currentEl) return;
+
+      const rect = currentEl.getBoundingClientRect();
+      const isOutOfView =
+        rect.bottom < 0 ||
+        rect.top > window.innerHeight ||
+        rect.right < 0 ||
+        rect.left > window.innerWidth;
+
+      if (isOutOfView) {
+        setOpen(false);
+      }
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(() => {
+          checkRect();
+          ticking = false;
+        });
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true, capture: true });
+    window.addEventListener("resize", checkRect, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll, { capture: true });
+      window.removeEventListener("resize", checkRect);
+    };
+  }, [open]);
+
   return (
     <FormControl
+      ref={containerRef}
       variant="outlined"
       size="small"
       sx={{
@@ -70,12 +134,15 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
       }}
     >
       <InputLabel id="currency-selector-label">Currency</InputLabel>
+
       <Select
+        ref={toggleRef}
         labelId="currency-selector-label"
         value={currency}
-        onChange={(e) => {
-          setCurrency(e.target.value);
-        }}
+        open={open}
+        onOpen={() => setOpen(true)}
+        onClose={() => setOpen(false)}
+        onChange={(e) => setCurrency(e.target.value)}
         label="Currency"
         renderValue={(value) => (
           <Box sx={{ display: "flex", alignItems: "center", gap: 1, color: "#fff" }}>
@@ -84,7 +151,8 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
           </Box>
         )}
         MenuProps={{
-          disablePortal: true, // Render menu inside parent so it scrolls perfectly
+          disablePortal: true,
+          disableScrollLock: true,
           PaperProps: {
             sx: {
               backgroundColor: "#1E1E1E",
@@ -97,9 +165,7 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
           anchorOrigin: { vertical: "bottom", horizontal: "left" },
           transformOrigin: { vertical: "top", horizontal: "left" },
           marginThreshold: 0,
-          disableScrollLock: true,
         }}
-
       >
         {Object.entries(Currencies).map(([code, { symbol, name }]) => (
           <MenuItem key={code} value={code}>
@@ -113,6 +179,7 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
     </FormControl>
   );
 };
+
 
 const Pricing = () => {
   // const [monthly, setMonthly] = useState(false);
