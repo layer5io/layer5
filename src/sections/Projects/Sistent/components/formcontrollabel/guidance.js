@@ -78,7 +78,7 @@ const FormControlLabelGuidance = () => {
           <ul>
             <li>Supports <code>control</code> prop for checkboxes, radios, switches, etc.</li>
             <li>Automatically positions the label to the right of the control by default.</li>
-            <li>Can be customized with positioning via <code>labelPlacement</code> prop.</li>
+            <li >Can be customized with positioning via <code>labelPlacement</code> prop.</li>
           </ul>
 
           <a id="Checkbox Usage">
@@ -97,6 +97,19 @@ const FormControlLabelGuidance = () => {
               />
             </SistentThemeProvider>
           </Row>
+          
+          <a id="Disabled Checkbox">
+            <h3>With Disabled Checkbox</h3>
+          </a>
+          <Row $Hcenter className="image-container">
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <FormControlLabel
+                control={<Checkbox disabled />}
+                label="I agree to receive marketing emails"
+                disabled
+              />
+            </SistentThemeProvider>
+          </Row>
 
           <a id="Radio Usage">
             <h3>With Radio Button</h3>
@@ -104,6 +117,18 @@ const FormControlLabelGuidance = () => {
           <Row $Hcenter className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
               <FormControlLabel control={<Radio />} label="Option A" />
+            </SistentThemeProvider>
+          </Row>
+          <a id="Radio Label Start">
+            <h3>With Radio Button (Label on Left)</h3>
+          </a>
+          <Row $Hcenter className="image-container">
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <FormControlLabel
+                control={<Radio />}
+                label="Choose Plan"
+                labelPlacement="start"
+              />
             </SistentThemeProvider>
           </Row>
 

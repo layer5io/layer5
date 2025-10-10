@@ -1,8 +1,13 @@
 import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
-
-import { SistentThemeProvider, Checkbox, FormControlLabel } from "@sistent/sistent";
+import {
+  SistentThemeProvider,
+  Checkbox,
+  Radio,
+  Switch,
+  FormControlLabel
+} from "@sistent/sistent";
 import TabButton from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
 import { Row } from "../../../../../reusecore/Layout";
@@ -54,45 +59,42 @@ const SistentFormControlLabel = () => {
         </div>
 
         <div className="main-content">
-          <a id="Usage">
-            <h2>Usage</h2>
-          </a>
-          <p>
-            This component is typically used in forms or settings panels, where the label
-            text describes the meaning of the control.
-          </p>
+  <a id="Usage">
+    <h2>Usage</h2>
+  </a>
+  <p>
+    The <code>FormControlLabel</code> component is commonly used to attach readable text labels to controls like checkboxes, radio buttons, or switches. 
+    It helps ensure the control is understandable, accessible, and easy to interact with.
+  </p>
 
-          <Row $Hcenter className="image-container">
-            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <FormControlLabel
-                control={<Checkbox />}
-                label="Enable notifications"
-              />
-            </SistentThemeProvider>
-          </Row>
+  <a id="Examples">
+    <h2>Examples</h2>
+  </a>
+  <Row $Hcenter className="image-container">
+    <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+        <FormControlLabel control={<Checkbox />} label="Subscribe to newsletter" />
+        <FormControlLabel control={<Radio />} label="Option A" />
+        <FormControlLabel control={<Switch />} label="Enable Dark Mode" />
+      </div>
+    </SistentThemeProvider>
+  </Row>
 
-          <a id="Accessibility">
-            <h2>Accessibility</h2>
-          </a>
-          <p>
-            Clicking on the label will toggle the state of the control automatically.
-            This makes it easier for users, especially those using assistive technologies, to interact with the form.
-          </p>
+  <a id="Accessibility">
+    <h2>Accessibility</h2>
+  </a>
+  <p>
+    Labels are automatically associated with their controls, making it easier for assistive technologies to provide context. 
+    Clicking on the label will also toggle the control.
+  </p>
 
-          <a id="Code">
-            <h2>Code</h2>
-          </a>
-          <pre>
-            <code>{`
-import { FormControlLabel, Checkbox } from "@sistent/sistent";
-
-<FormControlLabel
-  control={<Checkbox />}
-  label="Enable notifications"
-/>
-            `}</code>
-          </pre>
-        </div>
+  <a id="Further">
+    <h2>Learn More</h2>
+  </a>
+  <p>
+    Visit the <strong>Guidance</strong> tab for best practices and the <strong>Code</strong> tab for implementation details.
+  </p>
+</div>
       </div>
     </SistentLayout>
   );
