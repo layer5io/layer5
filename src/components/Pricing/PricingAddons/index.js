@@ -58,8 +58,8 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
   }, []);
 
   const formatLearners = (learners) => {
-  if (typeof learners === "string") return learners; 
-  return learners.toLocaleString("en-US"); 
+  if (typeof learners === "string") return learners;
+  return learners.toLocaleString("en-US");
 };
 
   // Helper function to render icons based on type
