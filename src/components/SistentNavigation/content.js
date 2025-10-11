@@ -114,4 +114,8 @@ export const content = [
   { id: 80, link: "/projects/sistent/components/tooltip", text: "Tooltip" },
   { id: 81, link: "/projects/sistent/components/tooltip/guidance", text: "Tooltip" },
   { id: 82, link: "/projects/sistent/components/tooltip/code", text: "Tooltip" },
+
+  { id: 83, link: "/projects/sistent/components/formcontrollabel", text: "FormControlLabel" },
+  { id: 84, link: "/projects/sistent/components/formcontrollabel/guidance", text: "FormControlLabel" },
+  { id: 85, link: "/projects/sistent/components/formcontrollabel/code", text: "FormControlLabel" },
 ];

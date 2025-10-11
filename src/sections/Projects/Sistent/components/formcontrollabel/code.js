@@ -27,8 +27,14 @@ const codes = [
   `<FormControlLabel
   control={<Switch />}
   label="Enable Notifications"
+/>`,
+  `<FormControlLabel
+  control={<Checkbox disabled />}
+  label="Disabled Option"
+  disabled
 />`
 ];
+
 
 const FormControlLabelCode = () => {
   const location = useLocation();
@@ -93,6 +99,20 @@ const FormControlLabelCode = () => {
               </SistentThemeProvider>
             </div>
             <CodeBlock name="formcontrollabel-checkbox" code={codes[0]} />
+          </div>
+
+          <h3>Disabled Example</h3>
+          <div className="showcase">
+            <div className="items">
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                <FormControlLabel
+                  control={<Checkbox disabled />}
+                  label="Disabled Option"
+                  disabled
+                />
+              </SistentThemeProvider>
+            </div>
+            <CodeBlock name="formcontrollabel-disabled" code={codes[3]} />
           </div>
 
           <h3>With Radio Button</h3>
