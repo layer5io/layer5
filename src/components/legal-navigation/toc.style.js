@@ -7,7 +7,7 @@ const TOCWrapper = styled.div`
   left: 0rem;
   margin-left: 3rem;
   margin-top: 3rem;
-  margin-bottom : 3rem;
+  margin-bottom : 2rem;
   width:15rem;
   word-break: break-word;
   overflow-wrap: break-word;
@@ -108,6 +108,8 @@ const TOCWrapper = styled.div`
   @media only screen and (max-width: 1300px){
    position: initial;
    margin-right: 3rem;
+   margin-bottom : 0rem;
+   padding-bottom: 1rem;
    width: auto;
    .toc-toggle-btn{
     display:inline-block;
