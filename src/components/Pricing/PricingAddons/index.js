@@ -57,6 +57,11 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
     return getAddOns();
   }, []);
 
+  const formatLearners = (learners) => {
+  if (typeof learners === "string") return learners;
+  return learners.toLocaleString("en-US");
+};
+
   // Helper function to render icons based on type
   const renderIcon = (iconType) => {
     switch (iconType) {
@@ -361,47 +366,36 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                           step={null}
                           sx={getSliderStyle(sliderStyles.base, "1rem")}
                           marks={(() => {
-                            // Determine which sub-addon to show pricing for based on selection
-                            let targetSubAddon = null;
-                            if (selectedSubAddOns["academy-practical"]) {
-                              targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-practical");
-                            } else {
-                              targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory");
-                            }
-
-                            return targetSubAddon?.pricing?.map((option, index) => ({
-                              value: index,
-                              label: (
-                                <Box sx={{ textAlign: "center", fontSize: "1.25rem", fontWeight: "bold" }}>
-                                  <Box>{option.learners === "2500+" ? "2,500+" : option.learners}</Box>
-                                  {isYearly && (
-                                    <Box
-                                      sx={{
-                                        fontSize: {
-                                          xs: "0.75rem",
-                                          sm: "0.9rem",
-                                        }
-                                      }}
-                                    >
-                                      {formatSliderPrice((option.yearlyPerUser / 12) * (selectedSubAddOns["academy-practical"] ? 2 : 1), currency)}<br />{targetSubAddon.unitLabelSingular}/month
-                                    </Box>
-                                  )}
-                                  <Box
-                                    sx={{
-                                      color: "text.secondary",
-                                      mb: 1.5,
-                                      fontSize: {
-                                        xs: "0.75rem",
-                                        sm: "0.9rem",
-                                      }
-                                    }}>
-                                    {formatSliderPrice((isYearly ? option.yearlyPerUser : option.monthlyPerUser) * (selectedSubAddOns["academy-practical"] ? 2 : 1), currency)}<br />{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
-                                  </Box>
-                                </Box>
-                              ),
-                            })) || [];
-                          })()}
-                        />
+                                          let targetSubAddon = null;
+                                          if (selectedSubAddOns["academy-practical"]) {
+                                            targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-practical");
+                                          } else {
+                                            targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory");
+                                          }
+                                          return targetSubAddon?.pricing?.map((option, index) => ({
+                                            value: index,
+                                            label: (
+                                              <Box sx={{ textAlign: "center", fontSize: "1.25rem", fontWeight: "bold" }}>
+                                                <Box>{formatLearners(option.learners)}</Box> {/* Changed from ternary */}
+                                                <Box
+                                                  sx={{
+                                                    color: "text.secondary",
+                                                    mb: 1.5,
+                                                    fontSize: { xs: "0.75rem", sm: "0.9rem" },
+                                                  }}
+                                                >
+                                                  {formatSliderPrice(
+                                                    (isYearly ? option.yearlyPerUser : option.monthlyPerUser) * (selectedSubAddOns["academy-practical"] ? 2 : 1),
+                                                    currency
+                                                  )}
+                                                  <br />
+                                                  {targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
+                                                </Box>
+                                              </Box>
+                                            ),
+                                          })) || [];
+                                        })()}
+                                  />
                         <Box sx={boxStyles.disclaimerSection}>
                           <Typography variant="body2" sx={typographyStyles.italic}>
                             Looking for a plan larger than 2,500 learners? Great! <a href="/company/contact">Let us know</a>.
