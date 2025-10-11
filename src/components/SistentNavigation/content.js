@@ -53,6 +53,10 @@ export const content = [
   { id: 35, link: "/projects/sistent/components/dialog/guidance", text: "Dialog" },
   { id: 36, link: "/projects/sistent/components/dialog/code", text: "Dialog" },
 
+  { id: 83, link: "/projects/sistent/components/formcontrollabel", text: "FormControlLabel" },
+  { id: 84, link: "/projects/sistent/components/formcontrollabel/guidance", text: "FormControlLabel" },
+  { id: 85, link: "/projects/sistent/components/formcontrollabel/code", text: "FormControlLabel" },
+
   { id: 37, link: "/projects/sistent/components/grid", text: "Grid" },
   { id: 38, link: "/projects/sistent/components/grid/guidance", text: "Grid" },
   { id: 39, link: "/projects/sistent/components/grid/code", text: "Grid" },
@@ -115,10 +119,11 @@ export const content = [
   { id: 81, link: "/projects/sistent/components/toolbar/guidance", text: "Toolbar" },
   { id: 82, link: "/projects/sistent/components/toolbar/code", text: "Toolbar" },
 
-  { id: 83, link: "/projects/sistent/components/tooltip", text: "Tooltip" },
-  { id: 84, link: "/projects/sistent/components/tooltip/guidance", text: "Tooltip" },
-  { id: 85, link: "/projects/sistent/components/tooltip/code", text: "Tooltip" },
+  { id: 80, link: "/projects/sistent/components/tooltip", text: "Tooltip" },
+  { id: 81, link: "/projects/sistent/components/tooltip/guidance", text: "Tooltip" },
+  { id: 82, link: "/projects/sistent/components/tooltip/code", text: "Tooltip" },
 
-
-
+  { id: 83, link: "/projects/sistent/components/formcontrollabel", text: "FormControlLabel" },
+  { id: 84, link: "/projects/sistent/components/formcontrollabel/guidance", text: "FormControlLabel" },
+  { id: 85, link: "/projects/sistent/components/formcontrollabel/code", text: "FormControlLabel" },
 ];
