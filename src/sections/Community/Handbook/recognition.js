@@ -50,8 +50,8 @@ const contents = [
 ];
 
 const badgeStyle = {
-  height: "25px",
-  width: "25px",
+  height: "50px",
+  width: "50px",
   verticalAlign: "middle",
   marginRight: "1rem",
 };
@@ -109,134 +109,295 @@ const RecognitionPage = () => {
             <p>
               Badges are awarded to community members who have been consistently engaged and impactful within a given area of the community or on a specific project. Every community member, whether contributing with code or not, has the opportunity to obtain any number of badges of recognition of their efforts. Community members are encouraged to collect the whole set!
             </p>
-            <ul style={badgeListStyle}>
-              <p><b>Activity badges:</b></p>
-              <li>
-                <img src={DesignPioneerLogo} style={badgeStyle} />
-                <b>Design Pioneer</b> - awarded to the Layer5 cloud users when they create their first design.
-              </li>
-              <li>
-                <img src={ApplicationPioneerLogo} style={badgeStyle} />
-                <b>Application Pioneer</b> - awarded to the Layer5 cloud users when they create their first application.
-              </li>
-              <li>
-                <img src={SharingIsCaringLogo} style={badgeStyle} />
-                <b>Sharing is Caring</b> - This badge is awarded upon first-time sharing one of your designs.
-              </li>
-              <li>
-                <img src={ShippedLogo} style={badgeStyle} />
-                <b>Shipped</b> - This badge is awarded upon the success of your first design deployment.
-              </li>
-              <li>
-                <img src={NeedForSpeedLogo} style={badgeStyle} />
-                <b>Need for Speed</b> - This badge is awarded upon successful execution of your first performance test.
-              </li>
-              <li>
-                <img src={HipHackerLogo} style={badgeStyle} />
-                <b>Hip Hacker</b> - First Interactive Terminal Session - awarded the first time that you establish an interactive terminal session with a Kubernetes Pod.
-              </li>
-              <li>
-                <img src={StreamerLogo} style={badgeStyle} />
-                <b>Streamer</b> - First Log Streaming Session - awarded the first time that you stream logs from a Kubernetes Pod.
-              </li>
-              <li>
-                <img src={GitOPsWithFriendsLogo} style={badgeStyle} />
-                <b>GitOps with Friends</b> - First Collaborator - awarded the first time a collaborator saves changes to one of your designs.
-              </li>
-              <li>
-                <img src={BringABuddyLogo} style={badgeStyle} />
-                <b>Bring a Buddy</b> - awarded to the users who invite someone to Layer5 cloud.
-              </li>
-              <li>
-                <img src={CodeCleanupCrewLogo} style={badgeStyle} />
-                <b>Code Cleanup Crew</b> - awarded to contributors who help maintain code quality and cleanliness.
-              </li>
-              <li>
-                <img src={SecuritySentinelLogo} style={badgeStyle} />
-                <b>Security Sentinel</b> - awarded to individuals who contribute to identifying and fixing security vulnerabilities.
-              </li>
-              <li>
-                <img src={LogevityLegendLogo} style={badgeStyle} />
-                <b>Longevity Legend</b> - awarded for long-term, sustained contributions to the project over the years.
-              </li>
-              <li>
-                <img src={ReviewRockstarLogo} style={badgeStyle} />
-                <b>Review Rockstar</b> - awarded to individuals who provide thorough and valuable code reviews.
-              </li>
-              <li>
-                <img src={KanvasSnapshotLogo} style={badgeStyle} />
-                <b>Kanvas Snapshot</b> - awarded to users upon creation of their first infrastructure screenshot directly in their pull request.
-              </li>
-              <li>
-                <img src={ContinuousContributorLogo} style={badgeStyle} />
-                <b>Continuous Contributor</b> - awarded to the community members who make consistent and impactful contributions for a long period of time in Layer5 projects in recognition and appreciation of their efforts.
-              </li>
-              <li>
-                <img src={SistentContributorLogo} style={badgeStyle} />
-                <b>Sistent Contributor</b> - awarded to the community members who make consistent and impactful contributions to the Sistent project as a recognition and appreciation of their efforts.
-              </li>
-              <p><b>Projects:</b></p>
-              <li>
-                <img src={ImageHubLogo} style={badgeStyle} />
-                <b>Image Hub</b> - awarded to the community members who make consistent and impactful contributions to the Image Hub project in recognition and appreciation of their efforts.
-              </li>
-              <li>
-                <img src={kanvasLogo} style={badgeStyle} />
-                <b>Kanvas</b> - awarded to the community members who make consistent and impactful contributions to the <Link to="/cloud-native-management/kanvas">Kanvas</Link> project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer.
-              </li>
-              <li>
-                <img src={ServiceMeshPerformance} style={badgeStyle} />
-                <b>Cloud Native Performance</b> - awarded to the community members who make consistent and impactful contributions to the Cloud Native Performance project. Community members who earn this badge occasionally become a project maintainer.
-              </li>
-              <li>
-                <img src={AcademyLogo} style={badgeStyle} />
-                <b>Academy</b> - awarded to the community members who make consistent and impactful contributions to the <Link to="https://cloud.layer5.io/academy/overview">Layer5 Academy</Link> project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer.
-              </li>
-              <li>
-                <img src={CommunityLogo} style={badgeStyle} />
-                <b>Community</b> - awarded to the community members who repeatedly engage in welcoming, encouraging, and supporting other Layer5 community members. Community members who earn this badge occasionally graduate to undertaking the Community Manager role.
-              </li>
-              <li>
-                <img src={MesheryLogo} style={badgeStyle} />
-                <b>Meshery</b> - awarded to the community members who make consistent and impactful contributions to the Meshery project. Community members who earn this badge occasionally become a project maintainer.
-              </li>
-              <li>
-                <img src={MesheryOperator} style={badgeStyle} />
-                <b>Meshery Operator</b> - awarded to the community members who make consistent and impactful contributions to Meshery Operator of the Meshery project in recognition and appreciation of their efforts.
-              </li>
-              <li>
-                <img src={PatternsLogo} style={badgeStyle} />
-                <b>Patterns</b> - awarded to the community members who make consistent and impactful contributions to the <Link to="/learn/service-mesh-books/service-mesh-patterns">Cloud Native Patterns</Link> project in recognition and appreciation of their efforts.
-              </li>
-              <li>
-                <img src={LandscapeGreen} style={badgeStyle} />
-                <b>Landscape</b> - awarded to the community members who make consistent and impactful contributions to the layer5.io website.
-              </li>
-              <li>
-                <img src={writersLogo} style={badgeStyle} />
-                <b>Writer's Program</b> - awarded to the community members who make with two or more published writings whether in article, blog post, project documentation or other form in recognition and appreciation of their efforts.
-              </li>
-              <li>
-                <img src={NightHawkLogo} style={badgeStyle} />
-                <b>Nighthawk</b> - awarded to the community members who make consistent and impactful contributions to the NightHawk project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer.
-              </li>
-              <li>
-                <img src={uiuxrLogo} style={badgeStyle} />
-                <b>UI/UX</b> - awarded to the community members who create or improve designs for visual aspects or user flow for any of the websites, flyers, promotions, Meshery UI, and so on in recognition and appreciation of their efforts.
-              </li>
-              <li>
-                <img src={MesheryCatalogLogo} style={badgeStyle} />
-                <b>Meshery Catalog</b> - awarded to the community members who make consistent and impactful contributions to the <a href="https://meshery.io/catalog">Meshery Catalog</a> of Meshery project in recognition and appreciation of their efforts.
-              </li>
-              <li>
-                <img src={DockerExtension} style={badgeStyle} />
-                <b>Docker Extension</b> - awarded to the community members who make consistent and impactful contributions to the Docker Extension of meshery project in recognition and appreciation of their efforts.
-              </li>
-              <li>
-                <img src={DocsLogo} style={badgeStyle} />
-                <b>Docs</b> - awarded to the community members who make consistent and impactful contributions to the <a href="https://docs.meshery.io/">Meshery docs</a> in recognition and appreciation of their efforts.
-              </li>
-            </ul>
+            <div style={{ overflowX: "auto" }}>
+              <h4>Activity Badges</h4>
+              <table style={{ width: "100%", borderCollapse: "collapse", marginBottom: "2rem" }}>
+                <thead>
+                  <tr style={{ borderBottom: "2px solid var(--text-color, #ddd)", backgroundColor: "rgba(0, 0, 0, 0.05)" }}>
+                    <th style={{ textAlign: "left", padding: "12px", fontWeight: "600" }}>Badge</th>
+                    <th style={{ textAlign: "left", padding: "12px", fontWeight: "600" }}>Name</th>
+                    <th style={{ textAlign: "left", padding: "12px", fontWeight: "600" }}>Badge Key</th>
+                    <th style={{ textAlign: "left", padding: "12px", fontWeight: "600" }}>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={DesignPioneerLogo} style={badgeStyle} alt="Design Pioneer" /></td>
+                    <td style={{ padding: "12px" }}><b>Design Pioneer</b></td>
+                    <td style={{ padding: "12px" }}><code>first-design</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the Layer5 cloud users when they create their first design.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={ApplicationPioneerLogo} style={badgeStyle} alt="Application Pioneer" /></td>
+                    <td style={{ padding: "12px" }}><b>Application Pioneer</b></td>
+                    <td style={{ padding: "12px" }}><code>first-application</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the Layer5 cloud users when they create their first application.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={SharingIsCaringLogo} style={badgeStyle} alt="Sharing is Caring" /></td>
+                    <td style={{ padding: "12px" }}><b>Sharing is Caring</b></td>
+                    <td style={{ padding: "12px" }}><code>first-share</code></td>
+                    <td style={{ padding: "12px" }}>This badge is awarded upon first-time sharing one of your designs.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={ShippedLogo} style={badgeStyle} alt="Shipped" /></td>
+                    <td style={{ padding: "12px" }}><b>Shipped</b></td>
+                    <td style={{ padding: "12px" }}><code>first-deployment</code></td>
+                    <td style={{ padding: "12px" }}>This badge is awarded upon the success of your first design deployment.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={NeedForSpeedLogo} style={badgeStyle} alt="Need for Speed" /></td>
+                    <td style={{ padding: "12px" }}><b>Need for Speed</b></td>
+                    <td style={{ padding: "12px" }}><code>need-for-speed</code></td>
+                    <td style={{ padding: "12px" }}>This badge is awarded upon successful execution of your first performance test.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={HipHackerLogo} style={badgeStyle} alt="Hip Hacker" /></td>
+                    <td style={{ padding: "12px" }}><b>Hip Hacker</b></td>
+                    <td style={{ padding: "12px" }}><code>first-interactive-terminal-session</code></td>
+                    <td style={{ padding: "12px" }}>First Interactive Terminal Session - awarded the first time that you establish an interactive terminal session with a Kubernetes Pod.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={StreamerLogo} style={badgeStyle} alt="Streamer" /></td>
+                    <td style={{ padding: "12px" }}><b>Streamer</b></td>
+                    <td style={{ padding: "12px" }}><code>first-log-streaming-session</code></td>
+                    <td style={{ padding: "12px" }}>First Log Streaming Session - awarded the first time that you stream logs from a Kubernetes Pod.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={GitOPsWithFriendsLogo} style={badgeStyle} alt="GitOps with Friends" /></td>
+                    <td style={{ padding: "12px" }}><b>GitOps with Friends</b></td>
+                    <td style={{ padding: "12px" }}><code>first-collaborator</code></td>
+                    <td style={{ padding: "12px" }}>First Collaborator - awarded the first time a collaborator saves changes to one of your designs.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={BringABuddyLogo} style={badgeStyle} alt="Bring a Buddy" /></td>
+                    <td style={{ padding: "12px" }}><b>Bring a Buddy</b></td>
+                    <td style={{ padding: "12px" }}><code>bring-a-buddy</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the users who invite someone to Layer5 cloud.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={CodeCleanupCrewLogo} style={badgeStyle} alt="Code Cleanup Crew" /></td>
+                    <td style={{ padding: "12px" }}><b>Code Cleanup Crew</b></td>
+                    <td style={{ padding: "12px" }}><code>code-cleanup-crew</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to contributors who help maintain code quality and cleanliness.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={SecuritySentinelLogo} style={badgeStyle} alt="Security Sentinel" /></td>
+                    <td style={{ padding: "12px" }}><b>Security Sentinel</b></td>
+                    <td style={{ padding: "12px" }}><code>security-sentinel</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to individuals who contribute to identifying and fixing security vulnerabilities.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={LogevityLegendLogo} style={badgeStyle} alt="Longevity Legend" /></td>
+                    <td style={{ padding: "12px" }}><b>Longevity Legend</b></td>
+                    <td style={{ padding: "12px" }}><code>longevity-legend</code></td>
+                    <td style={{ padding: "12px" }}>Awarded for long-term, sustained contributions to the project over the years.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={ReviewRockstarLogo} style={badgeStyle} alt="Review Rockstar" /></td>
+                    <td style={{ padding: "12px" }}><b>Review Rockstar</b></td>
+                    <td style={{ padding: "12px" }}><code>review-rockstar</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to individuals who provide thorough and valuable code reviews.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={KanvasSnapshotLogo} style={badgeStyle} alt="Kanvas Snapshot" /></td>
+                    <td style={{ padding: "12px" }}><b>Kanvas Snapshot</b></td>
+                    <td style={{ padding: "12px" }}><code>meshmap-snapshot</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to users upon creation of their first infrastructure screenshot directly in their pull request.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={ContinuousContributorLogo} style={badgeStyle} alt="Continuous Contributor" /></td>
+                    <td style={{ padding: "12px" }}><b>Continuous Contributor</b></td>
+                    <td style={{ padding: "12px" }}><code>continuous-contributor</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the community members who make consistent and impactful contributions for a long period of time in Layer5 projects in recognition and appreciation of their efforts.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={SistentContributorLogo} style={badgeStyle} alt="Sistent Contributor" /></td>
+                    <td style={{ padding: "12px" }}><b>Sistent Contributor</b></td>
+                    <td style={{ padding: "12px" }}><code>sistent-contributor</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the community members who make consistent and impactful contributions to the Sistent project as a recognition and appreciation of their efforts.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src="https://badges.layer5.io/assets/badges/gitops-connected/gitops-connected.png" style={badgeStyle} alt="GitOps Connected" /></td>
+                    <td style={{ padding: "12px" }}><b>GitOps Connected</b></td>
+                    <td style={{ padding: "12px" }}><code>gitops-connected</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to users upon establishment of a connection with Meshery GitHub App.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src="https://badges.layer5.io/assets/badges/meshmate/meshmate.png" style={badgeStyle} alt="Meshmate" /></td>
+                    <td style={{ padding: "12px" }}><b>Meshmate</b></td>
+                    <td style={{ padding: "12px" }}><code>meshmate</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to community members who actively support and guide others, embodying the spirit of collaboration and knowledge sharing in the Layer5 community.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src="https://badges.layer5.io/assets/badges/hacktoberfest-contributor/hacktoberfest-contributor.png" style={badgeStyle} alt="Hacktoberfest Contributor" /></td>
+                    <td style={{ padding: "12px" }}><b>Hacktoberfest Contributor</b></td>
+                    <td style={{ padding: "12px" }}><code>hacktoberfest-contributor</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the contributors who contribute to any Layer5 project during Hacktoberfest.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src="https://badges.layer5.io/assets/badges/hacktoberfest-contributor-2024/layer5-hacktoberfest-badge-2024.png" style={badgeStyle} alt="Hacktoberfest '24 Contributor" /></td>
+                    <td style={{ padding: "12px" }}><b>Hacktoberfest '24 Contributor</b></td>
+                    <td style={{ padding: "12px" }}><code>hacktoberfest-24-contributor</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the contributors who contribute to any Layer5 project during Hacktoberfest 2024.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src="https://badges.layer5.io/assets/badges/hacktoberfest-contributor-2025/hacktoberfest2025-badge.png" style={badgeStyle} alt="Hacktoberfest 2025 Contributor" /></td>
+                    <td style={{ padding: "12px" }}><b>Hacktoberfest 2025 Contributor</b></td>
+                    <td style={{ padding: "12px" }}><code>hacktoberfest25</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to community members who participate in Hacktoberfest 2025 by making meaningful contributions to Layer5 projects during the month of October 2025.</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h4>Project Badges</h4>
+              <table style={{ width: "100%", borderCollapse: "collapse", marginBottom: "2rem" }}>
+                <thead>
+                  <tr style={{ borderBottom: "2px solid var(--text-color, #ddd)", backgroundColor: "rgba(0, 0, 0, 0.05)" }}>
+                    <th style={{ textAlign: "left", padding: "12px" }}>Badge</th>
+                    <th style={{ textAlign: "left", padding: "12px" }}>Name</th>
+                    <th style={{ textAlign: "left", padding: "12px" }}>Badge Key</th>
+                    <th style={{ textAlign: "left", padding: "12px" }}>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={ImageHubLogo} style={badgeStyle} alt="Image Hub" /></td>
+                    <td style={{ padding: "12px" }}><b>Image Hub</b></td>
+                    <td style={{ padding: "12px" }}><code>image-hub</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the community members who make consistent and impactful contributions to the Image Hub project in recognition and appreciation of their efforts.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={kanvasLogo} style={badgeStyle} alt="Kanvas" /></td>
+                    <td style={{ padding: "12px" }}><b>Kanvas</b></td>
+                    <td style={{ padding: "12px" }}><code>kanvas</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the community members who make consistent and impactful contributions to the <Link to="/cloud-native-management/kanvas">Kanvas</Link> project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={ServiceMeshPerformance} style={badgeStyle} alt="Cloud Native Performance" /></td>
+                    <td style={{ padding: "12px" }}><b>Cloud Native Performance</b></td>
+                    <td style={{ padding: "12px" }}><code>cloud-native-performance</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the community members who make consistent and impactful contributions to the Cloud Native Performance project. Community members who earn this badge occasionally become a project maintainer.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={AcademyLogo} style={badgeStyle} alt="Academy" /></td>
+                    <td style={{ padding: "12px" }}><b>Academy</b></td>
+                    <td style={{ padding: "12px" }}><code>academy</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the community members who make consistent and impactful contributions to the <Link to="https://cloud.layer5.io/academy/overview">Layer5 Academy</Link> project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src="https://badges.layer5.io/assets/badges/meshmap/meshmap.svg" style={badgeStyle} alt="MeshMap" /></td>
+                    <td style={{ padding: "12px" }}><b>MeshMap</b></td>
+                    <td style={{ padding: "12px" }}><code>meshmap</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the community members who make consistent and impactful contributions to the MeshMap project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src="https://badges.layer5.io/assets/badges/meshsync/meshsync.png" style={badgeStyle} alt="MeshSync" /></td>
+                    <td style={{ padding: "12px" }}><b>MeshSync</b></td>
+                    <td style={{ padding: "12px" }}><code>meshsync</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the community members who make consistent and impactful contributions to MeshSync in recognition and appreciation of their efforts.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={CommunityLogo} style={badgeStyle} alt="Community" /></td>
+                    <td style={{ padding: "12px" }}><b>Community</b></td>
+                    <td style={{ padding: "12px" }}><code>community</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the community members who repeatedly engage in welcoming, encouraging, and supporting other Layer5 community members. Community members who earn this badge occasionally graduate to undertaking the Community Manager role.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={MesheryLogo} style={badgeStyle} alt="Meshery" /></td>
+                    <td style={{ padding: "12px" }}><b>Meshery</b></td>
+                    <td style={{ padding: "12px" }}><code>meshery</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the community members who make consistent and impactful contributions to the Meshery project. Community members who earn this badge occasionally become a project maintainer.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={MesheryOperator} style={badgeStyle} alt="Meshery Operator" /></td>
+                    <td style={{ padding: "12px" }}><b>Meshery Operator</b></td>
+                    <td style={{ padding: "12px" }}><code>meshery-operator</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the community members who make consistent and impactful contributions to Meshery Operator of the Meshery project in recognition and appreciation of their efforts.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={PatternsLogo} style={badgeStyle} alt="Patterns" /></td>
+                    <td style={{ padding: "12px" }}><b>Patterns</b></td>
+                    <td style={{ padding: "12px" }}><code>patterns</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the community members who make consistent and impactful contributions to the <Link to="/learn/service-mesh-books/service-mesh-patterns">Cloud Native Patterns</Link> project in recognition and appreciation of their efforts.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={LandscapeGreen} style={badgeStyle} alt="Landscape" /></td>
+                    <td style={{ padding: "12px" }}><b>Landscape</b></td>
+                    <td style={{ padding: "12px" }}><code>landscape</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the community members who make consistent and impactful contributions to the layer5.io website.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={writersLogo} style={badgeStyle} alt="Writer's Program" /></td>
+                    <td style={{ padding: "12px" }}><b>Writer's Program</b></td>
+                    <td style={{ padding: "12px" }}><code>writers-program</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the community members who make with two or more published writings whether in article, blog post, project documentation or other form in recognition and appreciation of their efforts.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={NightHawkLogo} style={badgeStyle} alt="Nighthawk" /></td>
+                    <td style={{ padding: "12px" }}><b>Nighthawk</b></td>
+                    <td style={{ padding: "12px" }}><code>nighthawk</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the community members who make consistent and impactful contributions to the NightHawk project in recognition and appreciation of their efforts. Community members who earn this badge occasionally become a project maintainer.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={uiuxrLogo} style={badgeStyle} alt="UI/UX" /></td>
+                    <td style={{ padding: "12px" }}><b>UI/UX</b></td>
+                    <td style={{ padding: "12px" }}><code>ui-ux</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the community members who create or improve designs for visual aspects or user flow for any of the websites, flyers, promotions, Meshery UI, and so on in recognition and appreciation of their efforts.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={MesheryCatalogLogo} style={badgeStyle} alt="Meshery Catalog" /></td>
+                    <td style={{ padding: "12px" }}><b>Meshery Catalog</b></td>
+                    <td style={{ padding: "12px" }}><code>meshery-catalog</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the community members who make consistent and impactful contributions to the <a href="https://meshery.io/catalog">Meshery Catalog</a> of Meshery project in recognition and appreciation of their efforts.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={DockerExtension} style={badgeStyle} alt="Docker Extension" /></td>
+                    <td style={{ padding: "12px" }}><b>Docker Extension</b></td>
+                    <td style={{ padding: "12px" }}><code>docker-extension</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the community members who make consistent and impactful contributions to the Docker Extension of meshery project in recognition and appreciation of their efforts.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src={DocsLogo} style={badgeStyle} alt="Docs" /></td>
+                    <td style={{ padding: "12px" }}><b>Docs</b></td>
+                    <td style={{ padding: "12px" }}><code>docs</code></td>
+                    <td style={{ padding: "12px" }}>Awarded to the community members who make consistent and impactful contributions to the <a href="https://docs.meshery.io/">Meshery docs</a> in recognition and appreciation of their efforts.</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h4>Special Recognition Badges</h4>
+              <table style={{ width: "100%", borderCollapse: "collapse", marginBottom: "2rem" }}>
+                <thead>
+                  <tr style={{ borderBottom: "2px solid var(--text-color, #ddd)", backgroundColor: "rgba(0, 0, 0, 0.05)" }}>
+                    <th style={{ textAlign: "left", padding: "12px", fontWeight: "600" }}>Badge</th>
+                    <th style={{ textAlign: "left", padding: "12px", fontWeight: "600" }}>Name</th>
+                    <th style={{ textAlign: "left", padding: "12px", fontWeight: "600" }}>Badge Key</th>
+                    <th style={{ textAlign: "left", padding: "12px", fontWeight: "600" }}>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src="https://badges.layer5.io/static/certification-program-6ea140e34c1dd08074ec896d0b98c0f8.png" style={badgeStyle} alt="Certified Meshery Contributor" /></td>
+                    <td style={{ padding: "12px" }}><b>Certified Meshery Contributor</b></td>
+                    <td style={{ padding: "12px" }}><code>certified-meshery-contributor</code></td>
+                    <td style={{ padding: "12px" }}>Recognition of contributor expertise.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src="https://badges.layer5.io/assets/badges/cncf-ambassador/cncf-ambassador.png" style={badgeStyle} alt="CNCF Ambassador" /></td>
+                    <td style={{ padding: "12px" }}><b>CNCF Ambassador</b></td>
+                    <td style={{ padding: "12px" }}><code>cncf-ambassador</code></td>
+                    <td style={{ padding: "12px" }}>This is a special edition badge awarded to CNCF Ambassadors.</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "12px" }}><img src="https://badges.layer5.io/assets/badges/docker-captain/docker-captain.png" style={badgeStyle} alt="Docker Captain" /></td>
+                    <td style={{ padding: "12px" }}><b>Docker Captain</b></td>
+                    <td style={{ padding: "12px" }}><code>docker-captain</code></td>
+                    <td style={{ padding: "12px" }}>This is a special edition badge awarded to Docker Captains.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             <a id="how-to-earn-badges">
               <h3>How can I Earn Badges?</h3>
             </a>
