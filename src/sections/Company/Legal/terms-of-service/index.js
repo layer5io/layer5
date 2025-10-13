@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Col } from "../../../../reusecore/Layout";
-import PageHeader from "../../../../reusecore/PageHeader";
 import TermsWrapper from "../terms.style";
 import TOC from "../../../../components/legal-navigation/index";
 import TocPagination from "../../../../components/legal-navigation/TocPagination";
