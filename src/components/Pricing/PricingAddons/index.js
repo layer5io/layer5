@@ -350,7 +350,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                               const totalPrice = pricePerUser * option.learners * multiplier;
                               const period = isYearly ? "/year" : "/month";
                               return `per learner price - ${formatSliderPrice(
-                                                    (isYearly ? option.yearlyPerUser / 12  : option.monthlyPerUser) * (selectedSubAddOns["academy-practical"] ? 2 : 1), currency)}${isYearly ? "/month" : "/month"}`;
+                                                    (isYearly ? option.yearlyPerUser  : option.monthlyPerUser) * (selectedSubAddOns["academy-practical"] ? 2 : 1), currency)}${isYearly ? "/yearly" : "/month"}`;
                             }
                             return "";
                           }}
