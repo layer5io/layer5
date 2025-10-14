@@ -224,7 +224,7 @@ const componentsData = [
     src: "/iconbutton",
   },
   {
-    "id": 29,
+    "id": 30,
     "name": "FormControlLabel",
     "description": "A control + label pair used for checkboxes or radio buttons.",
     "url": "/projects/sistent/components/formcontrollabel",
