@@ -238,8 +238,7 @@ const PartnerWrapper = styled.section`
     .moreInfo-div{
         height:0;
         overflow: hidden;
-        transition: all 0.5s ease-in-out;
-        
+        transition: all 0.5s ease-in-out; 
     }
     .moreInfo-div-active{
         height: 34rem;
