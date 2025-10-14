@@ -16,9 +16,13 @@ import Jwt_transformer from "../../assets/images/kanvas/catalog-card-images/jwt.
 import Multicluster from "../../assets/images/kanvas/catalog-card-images/multicluster.svg";
 import Http_metrics from "../../assets/images/kanvas/catalog-card-images/http.svg";
 
-import Wasm from "../../assets/images/webassembly/webssembly_icon.svg";
+import Design from "../../assets/images/design-pioneer/design-pioneer.svg";
+
+
 import Patterns from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
-import Ebpf from "../../assets/images/kanvas/ebpf.svg";
+
+import Models from "../../assets/images/meshery/meshery-catalog.svg";
+
 import Opa from "../../assets/images/kanvas/opa.svg";
 import { Container } from "../../reusecore/Layout";
 
@@ -447,12 +451,12 @@ const Catalog = () => {
               <p>Cloud Native Patterns</p>
             </div>
             <div>
-              <img src={Ebpf} alt="eBPF programs" />
-              <p className="ebpf-text">eBPF Programs</p>
+              <img src={Design} alt="Design logo" />
+              <p>Design</p>
             </div>
             <div>
-              <img src={Wasm} alt="WebAssembly filters" />
-              <p>WASM Filters</p>
+              <img src={Models} alt="Models logo" />
+              <p>Models</p>
             </div>
             <div>
               <img src={Opa} alt="OPA policies"/>
