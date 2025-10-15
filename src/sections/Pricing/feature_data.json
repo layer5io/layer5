@@ -189,7 +189,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.meshery.io/guides/infrastructure-management/registering-a-connection#infrastructure-discovery"
   },
   {
     "theme": "",
@@ -221,7 +221,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/spaces/environments/"
   },
   {
     "theme": "",
@@ -253,7 +253,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": "https://docs.layer5.io/kanvas/operator/operator-views/"
+    "docs": "https://docs.layer5.io/cloud/catalog/metrics/"
   },
   {
     "theme": "",
@@ -269,7 +269,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/kanvas/operator/views/#managing-views"
   },
   {
     "theme": "",
@@ -285,7 +285,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": "https://docs.layer5.io/kanvas/operator/operator-views/#5-export-a-view"
+    "docs": "https://docs.layer5.io/kanvas/operator/views/#5-export-a-view"
   },
   {
     "theme": "",
@@ -301,7 +301,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": "https://docs.layer5.io/kanvas/operator/operator-views/#3-share-a-view"
+    "docs": "https://docs.layer5.io/kanvas/operator/views/#3-share-a-view"
   },
   {
     "theme": "",
@@ -317,7 +317,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/kanvas/operator/#understanding-log-streamer"
   },
   {
     "theme": "",
@@ -333,7 +333,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.meshery.io/installation/kubernetes"
   },
   {
     "theme": "",
@@ -349,7 +349,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.meshery.io/concepts/architecture/meshsync#meshsync-1"
   },
   {
     "theme": "",
@@ -765,7 +765,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/spaces/workspaces/"
   },
   {
     "theme": "",
@@ -797,7 +797,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/spaces/managing-workspaces/"
   },
   {
     "theme": "",
@@ -813,7 +813,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/tutorials/sharing-a-workspace/"
   },
   {
     "theme": "",
@@ -829,7 +829,7 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/github-actions/"
   },
   {
     "theme": "",
@@ -925,7 +925,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/catalog/exploring-the-catalog/"
   },
   {
     "theme": "",
