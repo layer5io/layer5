@@ -669,7 +669,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/identity/users/#account-linking"
   },
   {
     "theme": "",
@@ -717,7 +717,7 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/self-hosted/planning/identity-services/"
   },
   {
     "theme": "",
