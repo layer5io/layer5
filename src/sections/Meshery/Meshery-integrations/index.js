@@ -17,7 +17,7 @@ const Integrations = () => {
               <>
                 <IntegrationsGrid  count={"All"} />
                 <Card />
-                <FAQ category={["Meshery Integrations"]} />
+                <FAQ category={["Meshery"]} subcategory={["Integrations"]} />
               </>
             );
           } else {

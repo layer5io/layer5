@@ -107,10 +107,10 @@ const Banner2SectionWrapper = styled.section`
         } 
      }
      @media only screen and (max-width: 760px) {
-        padding: 2rem 0;
-        background-position: bottom 100px right 10px, bottom right;
-        background-size: 25%;
- 
+        min-height: 320px;
+        padding: 1.2rem 0 1.5rem 0;
+        background-position: bottom 60px right 5px, bottom right;
+        background-size: 2.88rem, 2.4rem;
         .section-title { 
             h1 { margin: 0rem; }
         }
@@ -127,10 +127,10 @@ const Banner2SectionWrapper = styled.section`
         
      }
      @media only screen and (max-width: 480px) {
-        padding: 2rem 0;
-        background-position: bottom 230px right 20px, bottom 180px right;
-        background-size: 20%;
-
+        min-height: 180px;
+        padding: 0.7rem 0 1rem 0;
+        background-position: bottom 30px right 2px, bottom 10px right;
+        background-size: 2.08rem, 1.6rem;
         .section-title{
             h1 {
                 font-size: 35px;
@@ -143,7 +143,7 @@ const Banner2SectionWrapper = styled.section`
                  content: none;
              }
          }
-		 }
+         }
 		 @media screen and (max-width: 402px) {
 			.banner-btn.one, .banner-btn.two 
 			{

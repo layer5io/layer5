@@ -165,8 +165,8 @@ export const repo_data = [
         image: five,
         site: "https://docs.layer5.io/",
         language: "Hugo",
-        maintainers_name: ["Zihan Kuang"],
-        link: ["https://layer5.io/community/members/zihan-kuang"],
+        maintainers_name: ["Vacant"],
+        link: ["#"],
         repository: "https://github.com/layer5io/docs",
       },
       {
@@ -174,9 +174,9 @@ export const repo_data = [
         image: five,
         site: "https://github.com/layer5io/academy-theme",
         language: "Hugo",
-        maintainers_name: ["Zihan Kuang", "Aabid Sofi"],
+        maintainers_name: ["Aabid Sofi"],
         link: [
-          "https://layer5.io/community/members/zihan-kuang",
+          "#",
           "https://layer5.io/community/members/aabid-sofi"
         ],
         repository: "https://github.com/layer5io/academy-theme",
@@ -195,8 +195,8 @@ export const repo_data = [
         image: five,
         site: "https://github.com/layer5io/academy-example",
         language: "Hugo",
-        maintainers_name: ["Zihan Kuang"],
-        link: ["https://layer5.io/community/members/zihan-kuang"],
+        maintainers_name: ["Vacant"],
+        link: ["#"],
         repository: "https://github.com/layer5io/academy-example",
       },
       {
