@@ -27,11 +27,23 @@ const validatePictureUrl = (value) => {
     } else {
       try {
         new URL(value);
+
+        const isGoogleDrive = value.includes('drive.google.com');
+        if (isGoogleDrive) {
+          const isFileLink = value.includes('/file/d/');
+          const isViewLink = value.includes('/view');
+          const isDownloadLink = value.includes('/uc?');
+          
+          if (!isFileLink || (!isViewLink && !isDownloadLink)) {
+            error = "Please provide a direct Google Drive file link.";
+          } 
+        } else {
         const allowedImageExtensions = ["jpg", "jpeg", "png", "webp", "svg", "gif"];
         const extension = value.split(".").pop().toLowerCase();
         if (!allowedImageExtensions.includes(extension)) {
           error = "URL must point to an image file (jpg, jpeg, png, svg, webp or gif).";
         }
+       }
       } catch (_) {
         error = "Please enter a URL to an image file.";
       }
@@ -184,7 +196,7 @@ const WebBasedForm = () => {
               <label htmlFor="picture" className="form-name">Picture</label>
               <Field type="url" className="text-field" id="picture" name="picture"  validate={validatePictureUrl}/>
               {errors.picture && touched.picture && <div style={{ margin: "0px", color: "red", fontSize: "16px" }}>{errors.picture}</div>}
-              <p className="para label">Please provide a link to your profile photo. Profile photos are used for <Link to="/community/members">community member profiles</Link> of longstanding community members.</p>
+              <p className="para label">Please provide a link to your profile photo. Profile photos are used for <Link to="/community/members">community member profiles</Link> of longstanding community members. For Google Drive links, please ensure you're using direct image links that end with .jpg, .png, etc.</p>
               <Button secondary type="submit" className="btn" title="Next Step" /> <br /><br /><br /><br />
             </Form>
           )}
