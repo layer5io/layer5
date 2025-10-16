@@ -28,22 +28,22 @@ const validatePictureUrl = (value) => {
       try {
         new URL(value);
 
-        const isGoogleDrive = value.includes('drive.google.com');
+        const isGoogleDrive = value.includes("drive.google.com");
         if (isGoogleDrive) {
-          const isFileLink = value.includes('/file/d/');
-          const isViewLink = value.includes('/view');
-          const isDownloadLink = value.includes('/uc?');
-          
+          const isFileLink = value.includes("/file/d/");
+          const isViewLink = value.includes("/view");
+          const isDownloadLink = value.includes("/uc?");
+
           if (!isFileLink || (!isViewLink && !isDownloadLink)) {
             error = "Please provide a direct Google Drive file link.";
-          } 
+          }
         } else {
-        const allowedImageExtensions = ["jpg", "jpeg", "png", "webp", "svg", "gif"];
-        const extension = value.split(".").pop().toLowerCase();
-        if (!allowedImageExtensions.includes(extension)) {
-          error = "URL must point to an image file (jpg, jpeg, png, svg, webp or gif).";
+          const allowedImageExtensions = ["jpg", "jpeg", "png", "webp", "svg", "gif"];
+          const extension = value.split(".").pop().toLowerCase();
+          if (!allowedImageExtensions.includes(extension)) {
+            error = "URL must point to an image file (jpg, jpeg, png, svg, webp or gif).";
+          }
         }
-       }
       } catch (_) {
         error = "Please enter a URL to an image file.";
       }
