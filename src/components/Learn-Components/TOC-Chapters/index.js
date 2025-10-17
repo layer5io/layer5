@@ -1,5 +1,5 @@
 import React,{ useState, useEffect } from "react";
-import { HiOutlineChevronLeft } from "@react-icons/all-files/hi/HiOutlineChevronLeft";
+import { HiChevronLeft } from "@react-icons/all-files/hi/HiChevronLeft";
 import { Link } from "gatsby";
 import { getActiveServiceMesh } from "../../../utils/getActiveServiceMesh";
 import { getCurrentPage } from "../../../utils/getCurrentPage";
@@ -36,7 +36,7 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
     <TOCWrapper>
       <div className="chapter-back">
         <Link to={`/${courseData.fields.slug}`}>
-          <HiOutlineChevronLeft />
+          <HiChevronLeft />
           <h4>{courseData.frontmatter.courseTitle}</h4>
         </Link>
         <div className="toc-toggle-btn">

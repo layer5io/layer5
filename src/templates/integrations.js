@@ -9,46 +9,44 @@ import IndividualIntegrations from "../sections/Meshery/Meshery-integrations/Ind
 
 export const query = graphql`
   query IntegrationsBySlug($slug: String!, $name: String!) {
-    mdx(fields:{slug:{eq: $slug}}) {
-      body
-      frontmatter {
-        title
-        subtitle
-        howItWorks
-        howItWorksDetails
-        integrationIcon {
-          extension
-          publicURL
-          childImageSharp {
-            gatsbyImageData(width: 500, layout: CONSTRAINED)
-          }
-        }
-        docURL
-        category
-        components {
-          name
-          colorIcon {
-            extension
-            publicURL
+    allMdx(filter: { fields: { slug: { eq: $slug } } }) {
+      nodes {
+        body
+        frontmatter {
+          title
+          subtitle
+          howItWorks
+          howItWorksDetails
+          integrationIcon {
             childImageSharp {
               gatsbyImageData(width: 500, layout: CONSTRAINED)
             }
           }
-          whiteIcon {
-            extension
-            publicURL
-            childImageSharp {
-              gatsbyImageData(width: 500, layout: CONSTRAINED)
+          docURL
+          category
+          components {
+            name
+            colorIcon {
+              childImageSharp {
+                gatsbyImageData(width: 500, layout: CONSTRAINED)
+              }
+              extension
+              publicURL
             }
+            whiteIcon {
+              childImageSharp {
+                gatsbyImageData(width: 500, layout: CONSTRAINED)
+              }
+              extension
+              publicURL
+            }
+            description
           }
-          description
-        }
-        featureList
-        workingSlides {
-          extension
-          publicURL
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+          featureList
+          workingSlides {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
           }
         }
       }

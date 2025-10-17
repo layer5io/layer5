@@ -4,8 +4,8 @@ import slugify from "../../../utils/slugify";
 import { StaticImage } from "gatsby-plugin-image";
 
 import BlogSideBarWrapper from "./blogSidebar.style";
-import { HiOutlineChevronUp } from "@react-icons/all-files/hi/HiOutlineChevronUp";
-import { HiOutlineChevronDown } from "@react-icons/all-files/hi/HiOutlineChevronDown";
+import { HiChevronUp } from "@react-icons/all-files/hi/HiChevronUp";
+import { HiChevronDown } from "@react-icons/all-files/hi/HiChevronDown";
 // import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
 
 const Discuss = "../../../assets/images/discuss/layer5-discuss-white.webp";
@@ -74,9 +74,9 @@ const Sidebar = ({ pageContext }) => {
         >
           <h3>Categories</h3>
           {!showCategory ? (
-            <HiOutlineChevronDown className="menu-icon" />
+            <HiChevronDown className="menu-icon" />
           ) : (
-            <HiOutlineChevronUp className="menu-icon" />
+            <HiChevronUp className="menu-icon" />
           )}
         </div>
         <ul className={`${!showCategory ? "ul-close" : "scroll"}`}>
@@ -101,9 +101,9 @@ const Sidebar = ({ pageContext }) => {
         >
           <h3>Tags</h3>
           {!showTag ? (
-            <HiOutlineChevronDown className="menu-icon" />
+            <HiChevronDown className="menu-icon" />
           ) : (
-            <HiOutlineChevronUp className="menu-icon" />
+            <HiChevronUp className="menu-icon" />
           )}
         </div>
         <ul className={`${!showTag ? "ul-close" : "scroll"}`}>

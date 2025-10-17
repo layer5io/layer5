@@ -12,7 +12,7 @@ import CTA_Bottom from "../../../components/Call-To-Actions/CTA_Bottom";
 
 
 const ResourceSingle = ({ data }) => {
-  const { frontmatter, body, fields } = data.mdx;
+  const { frontmatter, body, fields } = data.allMdx.nodes[0];
   const resourceData = useStaticQuery(
     graphql`query relatedResources {
   allMdx(
@@ -40,9 +40,6 @@ const ResourceSingle = ({ data }) => {
           extension
           publicURL
         }
-      }
-      fields {
-        slug
       }
     }
   }

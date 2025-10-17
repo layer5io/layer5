@@ -5,7 +5,7 @@ import Button from "../../../reusecore/Button";
 import svgBackground from "../../../assets/images/homePage-images/background.svg";
 import playIcon from "../../../assets/images/homePage-images/play-button.webp";
 
-import ReactPlayer from "react-player/youtube";
+import ReactPlayer from "react-player";
 
 import BannerSectionWrapper from "./statement.style";
 

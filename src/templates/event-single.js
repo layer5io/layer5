@@ -10,26 +10,28 @@ import Subscribe from "../sections/subscribe/subscribe";
 import SEO from "../components/seo";
 
 export const query = graphql`query EventsBySlug($slug: String!) {
-  mdx(fields: {slug: {eq: $slug}}) {
-    body
-    frontmatter {
-      attribute {
-        name
-        url
-      }
-      eurl
-      title
-      description
-      type
-      speakers
-      register
-      date
-      thumbnail {
-        publicURL
-        relativePath
-        extension
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
+  allMdx(filter: { fields: { slug: { eq: $slug } } }) {
+    nodes {
+      body
+      frontmatter {
+        attribute {
+          name
+          url
+        }
+        eurl
+        title
+        description
+        type
+        speakers
+        register
+        date
+        thumbnail {
+          publicURL
+          relativePath
+          extension
+          childImageSharp {
+            gatsbyImageData(layout: CONSTRAINED)
+          }
         }
       }
     }

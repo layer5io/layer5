@@ -10,8 +10,8 @@ import { Link } from "gatsby";
 import BookSinglePageWrapper from "./BookSingle.style.js";
 
 const BookSingle = ({ data }) => {
+  const { frontmatter, body } = data.allMdx.nodes[0];
 
-  const { frontmatter, body } = data.mdx;
   return (
     <BookSinglePageWrapper>
       <div className="backBtn">

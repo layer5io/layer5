@@ -58,7 +58,7 @@ const Card = ({ frontmatter, fields }) => {
                 see more <IoIosArrowRoundForward />
               </Link>
             )}
-            {!fields && !fields.slug && frontmatter.eurl && (
+            {(!fields || !fields.slug) && frontmatter.eurl && (
               <a className="external-link-btn" href={frontmatter.eurl} target="_blank" rel="noreferrer">
                 <BiLinkExternal />
               </a>

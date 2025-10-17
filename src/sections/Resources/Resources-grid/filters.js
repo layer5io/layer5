@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { HiOutlineChevronUp } from "@react-icons/all-files/hi/HiOutlineChevronUp";
-import { HiOutlineChevronDown } from "@react-icons/all-files/hi/HiOutlineChevronDown";
+import { HiChevronUp } from "@react-icons/all-files/hi/HiChevronUp";
+import { HiChevronDown } from "@react-icons/all-files/hi/HiChevronDown";
 import { IoClose } from "@react-icons/all-files/io5/IoClose";
 import { FiFilter } from "@react-icons/all-files/fi/FiFilter";
 import { options } from "./options";
@@ -102,11 +102,11 @@ const Navigation = (props) => {
           }}>
             <p><strong>Type</strong></p>
             {expandType ? (
-              <HiOutlineChevronUp
+              <HiChevronUp
                 className="menu-icon"
               />
             ) : (
-              <HiOutlineChevronDown
+              <HiChevronDown
                 className="menu-icon"
               />
             )}
@@ -136,11 +136,11 @@ const Navigation = (props) => {
           }}>
             <p><strong>Product</strong></p>
             {expandProduct ? (
-              <HiOutlineChevronUp
+              <HiChevronUp
                 className="menu-icon"
               />
             ) : (
-              <HiOutlineChevronDown
+              <HiChevronDown
                 className="menu-icon"
               />
             )}
@@ -170,11 +170,11 @@ const Navigation = (props) => {
           }}>
             <p><strong>Technology</strong></p>
             {expandTech ? (
-              <HiOutlineChevronUp
+              <HiChevronUp
                 className="menu-icon"
               />
             ) : (
-              <HiOutlineChevronDown
+              <HiChevronDown
                 className="menu-icon"
               />
             )}
@@ -205,11 +205,11 @@ const Navigation = (props) => {
           }}>
             <p><strong>Service Mesh</strong></p>
             {expandMesh ? (
-              <HiOutlineChevronUp
+              <HiChevronUp
                 className="menu-icon"
               />
             ) : (
-              <HiOutlineChevronDown
+              <HiChevronDown
                 className="menu-icon"
               />
             )}

@@ -9,7 +9,8 @@ import LabSinglePage from "../sections/Learn/Lab-single/index";
 
 export const query = graphql`
     query LabBySlug($slug: String!) {
-        mdx(fields: { slug: { eq: $slug } } ) {
+        allMdx(filter: { fields: { slug: { eq: $slug } } }) {
+        nodes {
             body
             frontmatter {
                 title
@@ -17,6 +18,7 @@ export const query = graphql`
             fields {
                 slug
             }
+          }
         }
     }
 `;

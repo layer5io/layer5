@@ -51,7 +51,7 @@ const checkSpeaker = (speaker) => {
 const EventSingle = ({ data }) => {
 
   //const frontmatter = ({speakers = []});
-  const { frontmatter, body } = data.mdx;
+  const { frontmatter, body } = data.allMdx.nodes[0];
   const isEventPassed = () => {
     const eventDate = new Date(frontmatter.date);
     const currentDate = new Date();

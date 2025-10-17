@@ -241,6 +241,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const singleWorkshop = res.data.singleWorkshop.nodes;
   const labs = res.data.labs.nodes;
 
+  // Re-enable events pagination - SSR issues will need separate investigation
   paginate({
     createPage: envCreatePage,
     items: events,
@@ -705,15 +706,52 @@ const createSectionPage = ({ envCreatePage, node }) => {
 };
 
 exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      fallback: {
-        path: require.resolve("path-browserify"),
-        process: require.resolve("process/browser"),
-        url: require.resolve("url/"),
+  // Handle SSR externals and global polyfills
+  if (stage === "build-html" || stage === "develop-html") {
+    actions.setWebpackConfig({
+      externals: [
+        "@layer5/meshery-design-embed",
+        "lodash.debounce",
+        "react-select",
+        "cytoscape",
+        "hoist-non-react-statics",
+        "custom-media-element",
+        "@babel/runtime",
+        "@babel/runtime/helpers/**",
+        "cose-base",
+        "gsap",
+        "gsap/dist/ScrollTrigger",
+        "@mui/material/**",
+        "@mui/icons-material/**",
+        "mui-datatables",
+        "swiper/**",
+      ],
+      resolve: {
+        fallback: {
+          path: require.resolve("path-browserify"),
+          process: require.resolve("process/browser"),
+          url: require.resolve("url/"),
+        },
       },
-    },
-  });
+
+      plugins: [
+        new (require("webpack")).ProvidePlugin({
+          React: "react",
+        }),
+      ],
+    });
+  } else {
+    // For client-side builds
+    actions.setWebpackConfig({
+      resolve: {
+        fallback: {
+          path: require.resolve("path-browserify"),
+          process: require.resolve("process/browser"),
+          url: require.resolve("url/"),
+        },
+      },
+    });
+  }
 
   if (stage === "build-javascript") {
     const config = getConfig();
@@ -732,27 +770,50 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
-     type Mdx implements Node {
-       frontmatter: Frontmatter
+     type MdxFields {
+       collection: String
+       slug: String
+       learnpath: String
+       course: String
+       section: String
+       chapter: String
+       pageType: String
      }
-     type Frontmatter {
-       subtitle: String,
-       abstract: String,
-       eurl: String,
-       twitter: String,
-       github: String,
-       layer5: String,
-       meshmate: String,
-       maintainer:String,
-       emeritus: String,
-       link: String,
-       labs: String,
-       slides: String,
-       slack: String,
-       video: String,
-       community_manager: String,
-       docURL: String,
-       permalink: String,
+     
+     type MeshYouLearn {
+       imagepath: File @fileByRelativePath
+       name: String
+     }
+     
+     type MdxFrontmatter {
+       title: String
+       name: String
+       published: Boolean
+       program: String
+       programSlug: String
+       tags: [String]
+       category: String
+       executive_bio: Boolean
+       subtitle: String
+       abstract: String
+       eurl: String
+       twitter: String
+       github: String
+       layer5: String
+       meshmate: String
+       maintainer: String
+       emeritus: String
+       link: String
+       labs: String
+       slides: String
+       slack: String
+       video: String
+       community_manager: String
+       docURL: String
+       permalink: String
+       slug: String
+       cardImage: File @fileByRelativePath
+       meshesYouLearn: [MeshYouLearn]
      }
    `;
   createTypes(typeDefs);
@@ -789,3 +850,6 @@ exports.onPostBuild = async ({ graphql, reporter }) => {
   const outputPath = path.resolve(__dirname, "public", "query-result.json");
   fs.writeFileSync(outputPath, JSON.stringify(result, null, 2));
 };
+
+
+

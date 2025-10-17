@@ -12,7 +12,7 @@ import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const NewsSingle = ({ data }) => {
   const { isDark } = useStyledDarkMode();
-  const { frontmatter, body, fields } = data.mdx;
+  const { frontmatter, body, fields } = data.allMdx.nodes[0];
   const newsData = useStaticQuery(
     graphql`query relatedNewsPosts {
   allMdx(
