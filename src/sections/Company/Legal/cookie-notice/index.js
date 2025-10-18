@@ -11,6 +11,7 @@ import {
   TableHead,
   TableBody,
   SistentThemeProvider,
+  createTheme,
 } from "@sistent/sistent";
 import TOC from "../../../../components/legal-navigation/index";
 import TocPagination from "../../../../components/legal-navigation/TocPagination";
@@ -41,11 +42,13 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   padding: "0.75rem",
   borderBottom: `1px solid ${theme.palette.divider}`,
   borderRadius: "0px",
+  fontFamily: '"Qanelas Soft", "Open Sans", sans-serif',
 }));
 
 const StyledHeaderCell = styled(StyledTableCell)(() => ({
   fontWeight: 600,
   backgroundColor: "transparent",
+  fontFamily: '"Qanelas Soft", "Open Sans", sans-serif',
 }));
 
 const cookieData = [
@@ -82,6 +85,13 @@ const cookieData = [
 
 const CookieNotice = () => {
   const { isDark } = useStyledDarkMode();
+
+  // Create custom theme with Qanelas Soft font family
+  const customTheme = createTheme({
+    typography: {
+      fontFamily: '"Qanelas Soft", "Open Sans", sans-serif',
+    },
+  });
 
   return (
     <TermsWrapper>
@@ -143,7 +153,7 @@ const CookieNotice = () => {
               <p>
               Third-party cookies are set by domains other than Layer5’s to support analytics, advertising, or other functionalities. These cookies may collect data across multiple websites to tailor ads based on your interests. Below is a list of third-party providers we use, along with their purposes and opt-out options:
               </p>
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"} theme={customTheme}>
                 <Row className="table-container" $Hcenter>
                   <Col md={12} sx={{ px: 0 }}>
                     <StyledTableContainer>

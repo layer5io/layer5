@@ -4,6 +4,11 @@ const TermsWrapper = styled.section`
   position: relative;
   z-index: 1;
 
+  /* Ensure all text elements use Qanelas Soft */
+  * {
+    font-family: "Qanelas Soft", "Open Sans", sans-serif !important;
+  }
+
   .terms-content {
     width: 100%;
     max-width: 900px;

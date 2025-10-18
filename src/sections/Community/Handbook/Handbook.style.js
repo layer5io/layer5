@@ -3,6 +3,11 @@ export const HandbookWrapper = styled.div`
     display: flex;
     flex-direction: column;
 
+    /* Ensure all text elements use Qanelas Soft */
+    * {
+      font-family: "Qanelas Soft", "Open Sans", sans-serif !important;
+    }
+
     .content > a:first-of-type > h2:first-of-type {
       padding-top: 1rem;
     }
