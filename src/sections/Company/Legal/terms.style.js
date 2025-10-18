@@ -6,7 +6,7 @@ const TermsWrapper = styled.section`
 
   /* Ensure all text elements use Qanelas Soft */
   * {
-    font-family: "Qanelas Soft", "Open Sans", sans-serif !important;
+    font-family: "Qanelas Soft", "Open Sans", sans-serif;
   }
 
   .terms-content {

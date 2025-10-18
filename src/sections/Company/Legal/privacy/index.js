@@ -40,13 +40,13 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   padding: "0.75rem",
   borderBottom: `1px solid ${theme.palette.divider}`,
   borderRadius: 0,
-  fontFamily: '"Qanelas Soft", "Open Sans", sans-serif',
+  fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
 }));
 
 const StyledHeaderCell = styled(StyledTableCell)(() => ({
   fontWeight: 600,
   backgroundColor: "transparent",
-  fontFamily: '"Qanelas Soft", "Open Sans", sans-serif',
+  fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
 }));
 
 const privacyData = [
@@ -137,7 +137,7 @@ const Privacy = () => {
   // Create custom theme with Qanelas Soft font family
   const customTheme = createTheme({
     typography: {
-      fontFamily: '"Qanelas Soft", "Open Sans", sans-serif',
+      fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
     },
   });
 

@@ -5,7 +5,7 @@ export const HandbookWrapper = styled.div`
 
     /* Ensure all text elements use Qanelas Soft */
     * {
-      font-family: "Qanelas Soft", "Open Sans", sans-serif !important;
+      font-family: "Qanelas Soft", "Open Sans", sans-serif;
     }
 
     .content > a:first-of-type > h2:first-of-type {
