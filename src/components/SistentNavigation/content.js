@@ -60,7 +60,7 @@ export const content = [
   { id: 43, link: "/projects/sistent/components/grid", text: "Grid" },
   { id: 44, link: "/projects/sistent/components/grid/guidance", text: "Grid" },
   { id: 45, link: "/projects/sistent/components/grid/code", text: "Grid" },
-  
+
   { id: 46, link: "/projects/sistent/components/iconbutton", text: "IconButton" },
   { id: 47, link: "/projects/sistent/components/iconbutton/guidance", text: "IconButton" },
   { id: 48, link: "/projects/sistent/components/iconbutton/code", text: "IconButton" },
