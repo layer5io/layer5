@@ -223,6 +223,13 @@ const componentsData = [
     "url": "/projects/sistent/components/collapse",
     "src": "/collapse",
   },
+  {
+    id: 30,
+    name: "IconButton",
+    description: "IconButton provides an interactive button component that displays only an icon, ideal for compact UIs where space is limited and actions are easily recognizable through iconography.",
+    url: "/projects/sistent/components/iconbutton",
+    src: "/iconbutton",
+  },
 ];
 
 module.exports = { componentsData };
