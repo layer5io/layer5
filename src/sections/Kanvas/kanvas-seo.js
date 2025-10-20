@@ -23,7 +23,7 @@ const KanvasSEO = () => (
 
       {/* --- Speed Optimization --- */}
       <link rel="preconnect" href="https://layer5.io" />
-      <meta http-equiv="Cache-Control" content="max-age=3600, must-revalidate" />
+      <meta httpEquiv="Cache-Control" content="max-age=3600, must-revalidate" />
 
       {/* --- Structured Data (invisible) --- */}
       <script type="application/ld+json">

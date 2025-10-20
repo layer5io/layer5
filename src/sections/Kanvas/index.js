@@ -54,7 +54,7 @@ const Kanvas = (props) => {
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <meta name="googlebot" content="index, follow" />
         <link rel="canonical" href="https://layer5.io/cloud-native-management/kanvas" />
-        <meta http-equiv="Cache-Control" content="max-age=3600, must-revalidate" />
+        <meta httpEquiv="Cache-Control" content="max-age=3600, must-revalidate" />
       </Helmet>
 
       <div style={{ display: "none" }}>
