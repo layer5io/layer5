@@ -56,9 +56,6 @@ const badgeStyle = {
   marginRight: "1rem",
 };
 
-const badgeListStyle = {
-  listStyleType: "none",
-};
 
 const recognitionsstyle = {
   marginBottom: "0.5rem",
