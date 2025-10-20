@@ -65,15 +65,6 @@ const data = {
       ]
     },
     {
-      question: "Is Meshery open source?",
-      category: "Meshery",
-      subcategory: "General",
-      answer: [
-        "Yes, Meshery is a Cloud Native Computing Foundation (CNCF) project and is licensed under Apache v2.",
-        "As the cloud native management plane, Meshery is an extensible platform, offering multiple extension points within which users and partners can customize and extend Meshery's functionality.",
-      ],
-    },
-    {
       question: "Can I deploy Meshery on-premises?",
       category: "Meshery",
       answer: [
@@ -98,18 +89,6 @@ const data = {
       linktext: "See Layer5 Trust Center"
     },
     {
-      question: "Is it possible to migrate from managed Layer5 Cloud to self-hosted Layer5 Cloud on-premises?",
-      category: "Layer5 Cloud",
-      subcategory: "Deployment",
-      answer: [
-        "Yes, Layer5 Cloud and Kanvas can be deployed on-premises in minutes using Helm charts.",
-        "A one-time export of your data can be requested as you transition from managed Layer5 Cloud to self-hosted Layer5 Cloud.",
-        "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
-      ],
-      link: "https://docs.layer5.io/cloud/self-hosted/",
-      "linktext": "Self-hosting documentation",
-    },
-    {
       question: "What data is collection about me, how is it used and how long is it retained?",
       category: "Layer5 Cloud",
       subcategory: "Privacy",
@@ -124,10 +103,13 @@ const data = {
       category: "Layer5 Cloud",
       subcategory: "Deployment",
       answer: [
-        "Yes, Layer5 Cloud can be deployed on-premises in minutes using Helm charts.",
+        "Yes, Layer5 Cloud and Kanvas can be deployed on-premises in minutes using Helm charts.",
         "A one-time export of your data can be requested as you transition from managed Layer5 Cloud to self-hosted Layer5 Cloud.",
+        "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
       ],
-    },    
+      link: "https://docs.layer5.io/cloud/self-hosted/",
+      "linktext": "Self-hosting documentation",
+    },   
 
     // LAYER% COMMUNITY
     {
