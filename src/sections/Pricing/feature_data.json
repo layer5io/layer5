@@ -1139,9 +1139,9 @@
     "theme": "",
     "categoryOrder": "add-on",
     "category": "Academy",
-    "functionOrder": "1101",
-    "function": "Academy",
-    "feature": "A comprehensive learning management system for creators and instructors on how to build, manage, and extend educational content like learning paths, challenges, and certifications with an inclusive, collaborative, hands-on learning environment for students.",
+    "functionOrder": "1102",
+    "function": "Academy Theoretical Learning",
+    "feature": "A comprehensive learning management system for creators and instructors on how to build, manage, and extend educational content like learning paths, challenges, and certifications.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
@@ -1149,7 +1149,23 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/academy/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "add-on",
+    "category": "Academy",
+    "functionOrder": "1103",
+    "function": "Academy Practical Learning",
+    "feature": "An inclusive, collaborative, hands-on learning environment for students.",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "docs": "https://docs.layer5.io/cloud/academy/"
   },
   {
     "theme": "",
