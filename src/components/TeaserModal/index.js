@@ -43,7 +43,7 @@ const TeaserModal = (props) => {
         <div>
           <StyledEmbdedVideo>
             <ReactPlayer
-              url="https://www.youtube.com/embed/034nVaQUyME?si=BhO8IGawxc5YSRuw?vq=large"
+              url="https://www.youtube-nocookie.com/embed/034nVaQUyME?si=BhO8IGawxc5YSRuw?vq=large"
               playing
               controls
               playIcon={

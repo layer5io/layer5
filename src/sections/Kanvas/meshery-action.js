@@ -105,11 +105,11 @@ const MesheryAction = () => {
       <div className="blocks">
         <div className="block block--right">
           <h1>ServiceMeshCon 22</h1>
-          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/yvqn6ckO7BI" loading="lazy" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen ></iframe>
+          <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/yvqn6ckO7BI" loading="lazy" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen ></iframe>
         </div>
         <div className="block block--left">
           <h1>DockerCon 22</h1>
-          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/3DPZafR8VWM" loading="lazy" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen ></iframe>
+          <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/3DPZafR8VWM" loading="lazy" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen ></iframe>
         </div>
       </div>
     </MesheryWrapper >
