@@ -80,8 +80,8 @@ const IconsCode = () => {
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <DesignIcon 
-                  width={40} 
+                <DesignIcon
+                  width={40}
                   height={40}
                 />
               </SistentThemeProvider>
