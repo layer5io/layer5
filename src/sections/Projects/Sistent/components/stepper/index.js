@@ -12,7 +12,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 const StepOneDemo = () => (
-  <Box sx={{ p: 2, textAlign: 'center' }}>
+  <Box sx={{ p: 2, textAlign: "center" }}>
     <Typography variant="h6">User Information</Typography>
     <Typography variant="body2" color="textSecondary">
       Collect basic user details
@@ -21,7 +21,7 @@ const StepOneDemo = () => (
 );
 
 const StepTwoDemo = () => (
-  <Box sx={{ p: 2, textAlign: 'center' }}>
+  <Box sx={{ p: 2, textAlign: "center" }}>
     <Typography variant="h6">Account Settings</Typography>
     <Typography variant="body2" color="textSecondary">
       Configure preferences
@@ -30,7 +30,7 @@ const StepTwoDemo = () => (
 );
 
 const StepThreeDemo = () => (
-  <Box sx={{ p: 2, textAlign: 'center' }}>
+  <Box sx={{ p: 2, textAlign: "center" }}>
     <Typography variant="h6">Complete Setup</Typography>
     <Typography variant="body2" color="textSecondary">
       Review and finish
@@ -51,9 +51,9 @@ const SistentStepper = () => {
     activeStepComponent: ActiveStepComponent
   } = useStepper({
     steps: [
-      { label: 'User Info', component: StepOneDemo, icon: PersonIcon },
-      { label: 'Settings', component: StepTwoDemo, icon: SettingsIcon },
-      { label: 'Complete', component: StepThreeDemo, icon: CheckCircleIcon }
+      { label: "User Info", component: StepOneDemo, icon: PersonIcon },
+      { label: "Settings", component: StepTwoDemo, icon: SettingsIcon },
+      { label: "Complete", component: StepThreeDemo, icon: CheckCircleIcon }
     ]
   });
 
@@ -105,7 +105,7 @@ const SistentStepper = () => {
             They provide clear visual feedback about progress and help users understand
             what's required at each stage of a process.
           </p>
-          
+
           <a id="Demo">
             <h2>Interactive Demo</h2>
           </a>
@@ -122,24 +122,24 @@ const SistentStepper = () => {
                 >
                   <ActiveStepComponent />
                 </CustomizedStepper>
-                
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 3 }}>
+
+                <Box sx={{ display: "flex", justifyContent: "space-between", mt: 3 }}>
                   <TabButton
                     onClick={goBack}
                     disabled={activeStep === 0}
                     title="Previous"
-                    style={{ 
+                    style={{
                       opacity: activeStep === 0 ? 0.5 : 1,
-                      cursor: activeStep === 0 ? 'not-allowed' : 'pointer'
+                      cursor: activeStep === 0 ? "not-allowed" : "pointer"
                     }}
                   />
                   <TabButton
                     onClick={handleNext}
                     disabled={activeStep === stepLabels.length - 1}
-                    title={activeStep === stepLabels.length - 1 ? 'Finish' : 'Next'}
-                    style={{ 
+                    title={activeStep === stepLabels.length - 1 ? "Finish" : "Next"}
+                    style={{
                       opacity: activeStep === stepLabels.length - 1 ? 0.5 : 1,
-                      cursor: activeStep === stepLabels.length - 1 ? 'not-allowed' : 'pointer'
+                      cursor: activeStep === stepLabels.length - 1 ? "not-allowed" : "pointer"
                     }}
                   />
                 </Box>
@@ -153,25 +153,25 @@ const SistentStepper = () => {
           <p>
             The Sistent Stepper component provides several powerful features:
           </p>
-          
+
           <h3>Linear Progress</h3>
           <p>
             Users complete steps in sequence, ensuring all required information
             is collected before proceeding to the next step.
           </p>
-          
+
           <h3>Visual Progress Indication</h3>
           <p>
             Clear visual feedback shows completed steps, current step, and remaining
             steps, helping users understand their progress.
           </p>
-          
+
           <h3>Customizable Icons</h3>
           <p>
             Each step can have a custom icon that represents its content or purpose,
             making the interface more intuitive and visually appealing.
           </p>
-          
+
           <h3>Responsive Design</h3>
           <p>
             The stepper adapts to different screen sizes, maintaining usability
