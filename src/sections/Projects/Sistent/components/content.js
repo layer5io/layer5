@@ -223,6 +223,13 @@ const componentsData = [
     url: "/projects/sistent/components/iconbutton",
     src: "/iconbutton",
   },
+  {
+    id: 30,
+    name: "Table",
+    description: "Table components provide a flexible and feature-rich way to display tabular data with sorting, filtering, pagination, and responsive design capabilities.",
+    url: "/projects/sistent/components/table",
+    src: "/table",
+  },
 ];
 
 module.exports = { componentsData };
