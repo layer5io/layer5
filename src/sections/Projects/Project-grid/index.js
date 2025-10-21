@@ -44,8 +44,7 @@ const ProjectPage = () => {
                 <h5>Sistent</h5>
               </div>
             </Link>
-            {/*TODD - The URL needs to be changed */}
-            <Link to="https://layer5.io/learn/academy" className="project__card academy">
+            <Link to="/learn/academy" className="project__card academy">
               <div className="project__card-container project__card-container_one">
                 <img src={academy} alt="Academy" />
                 <h5>Academy</h5>
