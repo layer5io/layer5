@@ -98,11 +98,11 @@ export const content = [
   { id: 68, link: "/projects/sistent/components/stepper", text: "Stepper" },
   { id: 69, link: "/projects/sistent/components/stepper/guidance", text: "Stepper" },
   { id: 70, link: "/projects/sistent/components/stepper/code", text: "Stepper" },
-  
+
   { id: 71, link: "/projects/sistent/components/switch", text: "Switch" },
   { id: 72, link: "/projects/sistent/components/switch/guidance", text: "Switch" },
   { id: 73, link: "/projects/sistent/components/switch/code", text: "Switch" },
-  
+
   { id: 74, link: "/projects/sistent/components/table", text: "Table" },
   { id: 75, link: "/projects/sistent/components/table/guidance", text: "Table" },
   { id: 76, link: "/projects/sistent/components/table/code", text: "Table" },
