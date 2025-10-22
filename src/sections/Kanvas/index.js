@@ -45,54 +45,54 @@ const Kanvas = (props) => {
   useEffect(() => {
     // Set page title
     document.title = "Kanvas - Cloud Native Visual Designer | Kubernetes Management Platform";
-    
+
     // Helper function to set or update meta tags
     const updateMetaTag = (name, content, isProperty = false) => {
-      const attribute = isProperty ? 'property' : 'name';
+      const attribute = isProperty ? "property" : "name";
       let metaTag = document.querySelector(`meta[${attribute}="${name}"]`);
-      
+
       if (!metaTag) {
-        metaTag = document.createElement('meta');
+        metaTag = document.createElement("meta");
         metaTag.setAttribute(attribute, name);
         document.head.appendChild(metaTag);
       }
-      metaTag.setAttribute('content', content);
+      metaTag.setAttribute("content", content);
     };
 
     // Basic meta tags
-    updateMetaTag('description', 'Kanvas is a cloud native visual designer for Kubernetes. Drag-and-drop infrastructure management, real-time collaboration, and GitOps integration for DevOps teams.');
-    updateMetaTag('keywords', 'Kanvas, Kubernetes designer, cloud native, visual designer, Kubernetes management, DevOps platform, GitOps, infrastructure as code');
-    updateMetaTag('robots', 'index, follow');
-    
+    updateMetaTag("description", "Kanvas is a cloud native visual designer for Kubernetes. Drag-and-drop infrastructure management, real-time collaboration, and GitOps integration for DevOps teams.");
+    updateMetaTag("keywords", "Kanvas, Kubernetes designer, cloud native, visual designer, Kubernetes management, DevOps platform, GitOps, infrastructure as code");
+    updateMetaTag("robots", "index, follow");
+
     // Open Graph tags
-    updateMetaTag('og:title', 'Kanvas - Cloud Native Visual Designer | Kubernetes Management Platform', true);
-    updateMetaTag('og:description', 'Drag-and-drop Kubernetes infrastructure management with real-time collaboration. Design, deploy, and manage cloud native applications visually.', true);
-    updateMetaTag('og:type', 'website', true);
-    updateMetaTag('og:url', window.location.href, true);
-    
+    updateMetaTag("og:title", "Kanvas - Cloud Native Visual Designer | Kubernetes Management Platform", true);
+    updateMetaTag("og:description", "Drag-and-drop Kubernetes infrastructure management with real-time collaboration. Design, deploy, and manage cloud native applications visually.", true);
+    updateMetaTag("og:type", "website", true);
+    updateMetaTag("og:url", window.location.href, true);
+
     // Twitter Card tags
-    updateMetaTag('twitter:card', 'summary_large_image');
-    updateMetaTag('twitter:title', 'Kanvas - Cloud Native Visual Designer');
-    updateMetaTag('twitter:description', 'Visual Kubernetes infrastructure management platform for DevOps teams.');
+    updateMetaTag("twitter:card", "summary_large_image");
+    updateMetaTag("twitter:title", "Kanvas - Cloud Native Visual Designer");
+    updateMetaTag("twitter:description", "Visual Kubernetes infrastructure management platform for DevOps teams.");
 
     // Canonical link
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    let canonicalLink = document.querySelector("link[rel=\"canonical\"]");
     if (!canonicalLink) {
-      canonicalLink = document.createElement('link');
-      canonicalLink.setAttribute('rel', 'canonical');
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
       document.head.appendChild(canonicalLink);
     }
-    canonicalLink.setAttribute('href', window.location.origin + window.location.pathname);
+    canonicalLink.setAttribute("href", window.location.origin + window.location.pathname);
 
   }, []);
 
   return (
     <KanvasWrapper>
       {/* SEO Enhancement: Hidden H1 for search engines - not visible to users */}
-      <h1 style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}>
+      <h1 style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", overflow: "hidden" }}>
         Kanvas – Cloud Native Visual Designer for Kubernetes
       </h1>
-      
+
       <div >
         <Container>
           <KanvasBanner />
