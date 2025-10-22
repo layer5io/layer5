@@ -230,6 +230,13 @@ const componentsData = [
     url: "/projects/sistent/components/table",
     src: "/table",
   },
+  {
+    id: 31,
+    name: "Stepper",
+    description: "Stepper provides a way to display progress through a sequence of logical steps.",
+    url: "/projects/sistent/components/stepper",
+    src: "/stepper",
+  },
 ];
 
 module.exports = { componentsData };
