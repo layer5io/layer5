@@ -90,7 +90,7 @@ const Feature = ({ children, title, active, onClick, learnMoreLink, id, Element 
           {title}
         </button>
       ) : (
-        <span className="heading">{title}</span>
+<span className="heading mt-6">{title}</span>
       )}
       <div className="body" id={`feature-${id}`} >
         <p>{children}</p>
