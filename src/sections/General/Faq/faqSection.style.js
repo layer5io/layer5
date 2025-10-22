@@ -18,6 +18,109 @@ const FaqSectionWrapper = styled.section`
     text-transform: capitalize;
     opacity: 0.8;
   }
+  
+  .filter-controls {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    
+    button {
+      margin-right: 1rem;
+    }
+  }
+  
+  .filter-container {
+    background-color: ${props => props.theme.secondaryLightColor};
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border: 1px solid ${props => props.theme.shadowLightColor};
+  }
+  
+  .filter-title {
+    color: ${props => props.theme.primaryColor};
+    font-weight: 500;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid ${props => props.theme.shadowLightColor};
+    padding-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .filter-group {
+    margin-bottom: 1.5rem;
+    
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: ${props => props.theme.primaryColor};
+    }
+    
+    p {
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+      font-style: italic;
+      color: ${props => props.theme.textColor};
+    }
+  }
+  .filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .filter-option {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    
+    input[type="checkbox"] {
+      margin-right: 0.5rem;
+      cursor: pointer;
+      accent-color: ${props => props.theme.primaryColor};
+    }
+    
+    label {
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+  }
+  
+  .active-filters {
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 1rem;
+    background-color: ${props => props.theme.secondaryLightColor};
+    border-radius: 4px;
+    border-left: 4px solid ${props => props.theme.primaryColor};
+    
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      
+      strong {
+        color: ${props => props.theme.primaryColor};
+      }
+    }
+  }
+  
+  .no-results {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: ${props => props.theme.secondaryLightColor};
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    
+    h3 {
+      margin-bottom: 1rem;
+      color: ${props => props.theme.textColor};
+    }
+    
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+
   .accordion__item + .accordion__item {
     border-color: transparent;
   }
@@ -96,6 +199,20 @@ const FaqSectionWrapper = styled.section`
   }
 
   @media only screen and (max-width: 568px) {
+    .filter-controls {
+      flex-direction: column;
+      align-items: flex-start;
+      
+      button {
+        margin-bottom: 0.75rem;
+        width: 100%;
+      }
+    }
+    
+    .filter-option {
+      width: 100%;
+    }
+    
     .section-title {
       text-align: center;
     }
