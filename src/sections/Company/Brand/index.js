@@ -52,7 +52,7 @@ const scrollTo = (element, sectionId, duration = 2000) => {
   if (sectionId) {
     window.history.pushState(null, null, `#${sectionId}`);
   }
-  
+
   let e = document.documentElement;
   if (e.scrollTop === 0) {
     let t = e.scrollTop;
