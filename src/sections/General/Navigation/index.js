@@ -168,6 +168,9 @@ const Navigation = () => {
   const [userData, setUserData] = useState(null);
   const dropDownRef = useRef();
   const navWrapRef = useRef();
+  const accountRef = useRef();
+  const [isMobile, setIsMobile] = useState(false);
+  const hoverTimeoutRef = useRef(null);
   function getCookieValue(cookieName) {
     const cookies = document.cookie.split(";");
 
@@ -217,6 +220,18 @@ const Navigation = () => {
     fetchData();
   }, []);
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
+  useEffect(() => {
     const outsideClickHandler = (e) => {
       if (
         expand &&
@@ -254,6 +269,39 @@ const Navigation = () => {
     closeDropDown();
   };
 
+  useEffect(() => {
+    if (isMobile) {
+      const handleClickOutside = (e) => {
+        if (
+          dropDown &&
+          accountRef.current &&
+          !accountRef.current.contains(e.target)
+        ) {
+          setDropDown(false);
+        }
+      };
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }
+  }, [dropDown, isMobile]);
+  const handleMouseEnter = () => {
+    if (!isMobile) {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+      setDropDown(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isMobile) {
+      hoverTimeoutRef.current = setTimeout(() => {
+        setDropDown(false);
+      }, 200);
+    }
+  };
   return (
     <NavigationWrap
       className={`nav-block ${scroll ? "scrolled" : ""}`}
@@ -412,14 +460,19 @@ const Navigation = () => {
         </div>
         <div className="meshery-cta">
           {userData ? (
-            <div className="dropDown">
+            <div
+              className="dropDown"
+              ref={accountRef}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
               <button
                 className="avatar-container"
                 style={{
                   backgroundImage: `url(${userData.avatar_url})`,
                   backgroundSize: "cover",
                 }}
-                onClick={() => setDropDown((prev) => !prev)}
+                onClick={() => isMobile && setDropDown((prev) => !prev)}
               >
                 {!userData.avatar_url && (
                   <DefaultAvatar className="default_avatar" />
