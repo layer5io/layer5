@@ -5,7 +5,7 @@ import Button from "../../../reusecore/Button";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import Meshery_Logo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import OReillyLogo from "./OReilly_logo_rgb.svg";
-import { data } from "../Service-Mesh-Labs/courseData";
+import { data } from "../Kanvas-Labs/courseData";
 import styled from "styled-components";
 
 const LearnSectionWrapper = styled.div`
