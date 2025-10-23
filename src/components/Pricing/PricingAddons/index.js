@@ -467,7 +467,8 @@ user${enterpriseUsers > 1 ? "s" : ""}` : "";
                               const pricePerUser = isYearly ? option.yearlyPerUser : option.monthlyPerUser;
                               const totalPrice = pricePerUser * option.learners;
                               const period = isYearly ? "/year" : "/month";
-                              return `${option.learners} learners - ${formatPrice(totalPrice)}${period}`;}
+                              return `${option.learners} learners - ${formatPrice(totalPrice)}${period}`;
+}
                             return "";
                           }}
                           max={(() => {

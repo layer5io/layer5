@@ -541,8 +541,8 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/collections/service-mesh-labs`,
-        name: "service-mesh-labs",
+        path: `${__dirname}/src/collections/kanvas-labs`,
+        name: "kanvas-labs",
       },
     },
     {
