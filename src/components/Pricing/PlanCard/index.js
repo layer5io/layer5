@@ -57,7 +57,7 @@ const PlanCard = ({ planData, isYearly, currency }) => {
                         : formatPrice(x.monthlyprice)}
                     </span>
                     <span className="currency">{Currencies[currency]?.name ?? "USD"}</span>
-                    <span className="price-per">per user/year</span>
+                    <span className="price-per">per user /{isYearly ? "year" : "month"}</span>
                   </div>
 
                 </div>
