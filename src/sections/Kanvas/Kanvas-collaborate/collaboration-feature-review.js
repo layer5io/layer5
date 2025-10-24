@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import CollaborateSvg from "../Kanvas-collaborate/images/collaborate.svg"
+import CollaborateSvg from "../Kanvas-collaborate/images/collaborate.svg";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 import Button from "../../../reusecore/Button";
@@ -82,31 +82,31 @@ const CollaborationFeatureWrapper = styled.div`
 `;
 
 const CollaborationFeatureReview = () => {
-    const [locatorRef, inView] = useInView({ threshold: 0.5 });
-    const [imageInView, setImageInView] = useState(false);
-    if (inView && !imageInView) {
-        setImageInView(true);
-    } else if (imageInView && !inView) {
-        setImageInView(false);
-    }
-    return (
-        <CollaborationFeatureWrapper>
-            <div className="hero-div">
-                <div className="hero-image">
-                    <img className={imageInView ? "visible" : ""} src={CollaborateSvg} alt="" ref={locatorRef} />
-                </div>
-                <div className="hero-text">
-                    <h2>
+  const [locatorRef, inView] = useInView({ threshold: 0.5 });
+  const [imageInView, setImageInView] = useState(false);
+  if (inView && !imageInView) {
+    setImageInView(true);
+  } else if (imageInView && !inView) {
+    setImageInView(false);
+  }
+  return (
+    <CollaborationFeatureWrapper>
+      <div className="hero-div">
+        <div className="hero-image">
+          <img className={imageInView ? "visible" : ""} src={CollaborateSvg} alt="" ref={locatorRef} />
+        </div>
+        <div className="hero-text">
+          <h2>
                         Review <span>Designs</span> at a glance
-                    </h2>
-                    <p>
+          </h2>
+          <p>
                         Streamline your design review process with Kanvas, allowing you to quickly assess and provide feedback on designs, ensuring efficient collaboration and project progression.
-                    </p>
-                    <Button $primary className="button" title="Learn More" $url="https://docs.layer5.io/kanvas/designer/comments/" $external={true}/>
-                </div>
-            </div>
-        </CollaborationFeatureWrapper>
-    );
+          </p>
+          <Button $primary className="button" title="Learn More" $url="https://docs.layer5.io/kanvas/designer/comments/" $external={true}/>
+        </div>
+      </div>
+    </CollaborationFeatureWrapper>
+  );
 };
 
 export default CollaborationFeatureReview;

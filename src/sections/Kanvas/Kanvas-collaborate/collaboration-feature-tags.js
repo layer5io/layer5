@@ -85,32 +85,32 @@ const CollaborationFeatureWrapper = styled.div`
 
 const CollaborationFeatureTag = () => {
   const [locatorRef, inView] = useInView({ threshold: 0.5 });
-   // const [sectionRef, sectionView] = useInView({ threshold: 1.0 });
-   const [imageInView, setimageInView] = useState(false);
-   // const [sectionInView, setSectionInView] = useState(false);
-   if (inView && !imageInView)
-     setimageInView(true);
-   else if (imageInView && !inView)
-     setimageInView(false);
-   // if (sectionView && !sectionInView)
-   //   setSectionInView(true);
-   // if (sectionInView && !sectionView)
-   //   setSectionInView(false);
+  // const [sectionRef, sectionView] = useInView({ threshold: 1.0 });
+  const [imageInView, setimageInView] = useState(false);
+  // const [sectionInView, setSectionInView] = useState(false);
+  if (inView && !imageInView)
+    setimageInView(true);
+  else if (imageInView && !inView)
+    setimageInView(false);
+  // if (sectionView && !sectionInView)
+  //   setSectionInView(true);
+  // if (sectionInView && !sectionView)
+  //   setSectionInView(false);
 
   return (
     <CollaborationFeatureWrapper>
       <div className="hero-div">
-      <div className="hero-image">
+        <div className="hero-image">
           <img className={imageInView ? "visible" : ""} src={GroupComponents} alt="" ref={locatorRef} />
         </div>
         <div className="hero-text">
           <h2>
             <span>Group</span> your components with Tags
-            </h2>
+          </h2>
           <p>
             Use tags to organize and categorize components, with Labels for visible identification and Annotations for additional details and quick search.
           </p>
-        <Button $primary className="button" title="Learn More" $url="https://docs.layer5.io/kanvas/designer/comments/" $external={true}/>
+          <Button $primary className="button" title="Learn More" $url="https://docs.layer5.io/kanvas/designer/comments/" $external={true}/>
         </div>
       </div>
     </CollaborationFeatureWrapper>

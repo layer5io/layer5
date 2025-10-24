@@ -119,12 +119,12 @@ const CollaborationFeatureShare = () => {
           <p>
           Effortlessly share your projects and collaborate with team members in real-time, enhancing productivity and teamwork.
           </p>
-            <Button $primary className="button" title="Learn More" $url="https://docs.layer5.io/kanvas/designer/sharing/" $external={true}/>   
+          <Button $primary className="button" title="Learn More" $url="https://docs.layer5.io/kanvas/designer/sharing/" $external={true}/>
         </div>
       </div>
     </CollaborationFeatureWrapper>
   );
-}
+};
 
 export default CollaborationFeatureShare;
 
