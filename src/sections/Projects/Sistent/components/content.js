@@ -223,6 +223,13 @@ const componentsData = [
     url: "/projects/sistent/components/iconbutton",
     src: "/iconbutton",
   },
+  {
+    id: 30,
+    name: "Stepper",
+    description: "Stepper provides a way to display progress through a sequence of logical steps.",
+    url: "/projects/sistent/components/stepper",
+    src: "/stepper",
+  },
 ];
 
 module.exports = { componentsData };
