@@ -1,29 +1,22 @@
-import React from "react";
 import styled from "styled-components";
-import { ReactComponent as CollaborationImg } from "./../FeaturesSection/Collaborate/images/collab4-colorMode.svg";
+import React from "react";
 import { useInView } from "react-intersection-observer";
+import GroupComponents from "../Kanvas-collaborate/images/group-components.png";
 import { useState } from "react";
+import Button from "../../../reusecore/Button";
 
 const CollaborationFeatureWrapper = styled.div`
-
     display: flex;
     flex-direction: row;
-    /* background-color: ${props => props.theme.grey121212ToWhite};;
-    max-width: 90%; */
     justify-content: center;
-    /* align-items: center; */
-     padding: 5% 3% 1%;
-    /* @media only screen and (max-width: 767px) {
-      text-align: center;
-      flex-direction: column-reverse;
-    } */
+    padding: 5% 5% 8%;
 
     .hero-div {
       position: relative;
       transition: 0.5s;
       display: flex;
-      flex-direction: row;
-      background-color: ${props => props.theme.grey121212ToWhite};;
+      flex-direction: row-reverse; /* Changed to row to place image on left, text on right */
+      background-color: ${props => props.theme.grey121212ToWhite};
       max-width: 90%;
       height: fit-content;
       justify-content: space-between;
@@ -32,7 +25,7 @@ const CollaborationFeatureWrapper = styled.div`
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       @media only screen and (max-width: 767px) {
         text-align: center;
-        flex-direction: column-reverse;
+        flex-direction: column; /* Stack image above text on mobile */
       }
     }
 
@@ -53,8 +46,8 @@ const CollaborationFeatureWrapper = styled.div`
     }
 
     .hero-image {
-      flex: 0 0 50%;
-      max-width: 50%;
+      flex: 0 0 30%;
+      max-width: 30%;
     }
 
     img {
@@ -65,20 +58,19 @@ const CollaborationFeatureWrapper = styled.div`
     svg {
       opacity: 0;
       transition: opacity ease-out 0.5s;
-      .collab4-colorMode_svg__colorMode1
-       {
+      .collab4-colorMode_svg__colorMode1 {
         fill: ${props => props.theme.whiteToBlack};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-       }
-      .collab4-colorMode_svg__colorMode2{
+      }
+      .collab4-colorMode_svg__colorMode2 {
         fill: ${props => props.theme.greyB4B4B4ToGrey505050};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-       }
-       .collab4-colorMode_svg__colorMode3{
+      }
+      .collab4-colorMode_svg__colorMode3 {
         fill: ${props => props.theme.blackToWhite};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-       }
-       @media only screen and (max-width: 767px) {
+      }
+      @media only screen and (max-width: 767px) {
         width: 100%;
       }
     }
@@ -87,36 +79,42 @@ const CollaborationFeatureWrapper = styled.div`
       opacity: 1;
       transition: opacity ease-in 0.5s;
     }
-
+    .button {
+      width: fit-content;}
 `;
 
-const CollaborationFeatureTeam = () => {
+const CollaborationFeatureTag = () => {
   const [locatorRef, inView] = useInView({ threshold: 0.5 });
-  // const [sectionRef, sectionView] = useInView({ threshold: 1.0 });
-  const [imageInView, setimageInView] = useState(false);
-  // const [sectionInView, setSectionInView] = useState(false);
-  if (inView && !imageInView)
-    setimageInView(true);
-  else if (imageInView && !inView)
-    setimageInView(false);
-  // if (sectionView && !sectionInView)
-  //   setSectionInView(true);
-  // if (sectionInView && !sectionView)
-  //   setSectionInView(false);
+   // const [sectionRef, sectionView] = useInView({ threshold: 1.0 });
+   const [imageInView, setimageInView] = useState(false);
+   // const [sectionInView, setSectionInView] = useState(false);
+   if (inView && !imageInView)
+     setimageInView(true);
+   else if (imageInView && !inView)
+     setimageInView(false);
+   // if (sectionView && !sectionInView)
+   //   setSectionInView(true);
+   // if (sectionInView && !sectionView)
+   //   setSectionInView(false);
 
   return (
     <CollaborationFeatureWrapper>
       <div className="hero-div">
-        <div className="hero-image" ref={locatorRef}>
-          <CollaborationImg className={imageInView ? "visible" : ""}  alt=""/>
+      <div className="hero-image">
+          <img className={imageInView ? "visible" : ""} src={GroupComponents} alt="" ref={locatorRef} />
         </div>
         <div className="hero-text">
-          <h2><span>Collaborate with your Team</span></h2>
-          <p>Build an iterative design flow with live collaboration that keeps you in the loop whether you are working in the office or remotely.</p>
+          <h2>
+            <span>Group</span> your components with Tags
+            </h2>
+          <p>
+            Use tags to organize and categorize components, with Labels for visible identification and Annotations for additional details and quick search.
+          </p>
+        <Button $primary className="button" title="Learn More" $url="https://docs.layer5.io/kanvas/designer/comments/" $external={true}/>
         </div>
       </div>
     </CollaborationFeatureWrapper>
   );
 };
 
-export default CollaborationFeatureTeam;
+export default CollaborationFeatureTag;

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { ReactComponent as CollaborationImg } from "./../FeaturesSection/Collaborate/images/collab4-colorMode.svg";
 import { useInView } from "react-intersection-observer";
-import { useState } from "react";
+// ...existing imports...
+import sharegraphic from "../Kanvas-collaborate/images/model-where.gif";
+import Button from "../../../reusecore/Button";
 
 const CollaborationFeatureWrapper = styled.div`
 
@@ -12,7 +13,7 @@ const CollaborationFeatureWrapper = styled.div`
     max-width: 90%; */
     justify-content: center;
     /* align-items: center; */
-     padding: 5% 3% 1%;
+     padding: 5% 5% 8%;
     /* @media only screen and (max-width: 767px) {
       text-align: center;
       flex-direction: column-reverse;
@@ -22,7 +23,7 @@ const CollaborationFeatureWrapper = styled.div`
       position: relative;
       transition: 0.5s;
       display: flex;
-      flex-direction: row;
+      flex-direction: row-reverse;
       background-color: ${props => props.theme.grey121212ToWhite};;
       max-width: 90%;
       height: fit-content;
@@ -57,9 +58,12 @@ const CollaborationFeatureWrapper = styled.div`
       max-width: 50%;
     }
 
-    img {
+    .hero-image img {
       opacity: 0;
       transition: opacity ease-out 0.5s;
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
     svg {
@@ -83,40 +87,44 @@ const CollaborationFeatureWrapper = styled.div`
       }
     }
 
-    .visible {
+    .hero-image.visible img {
       opacity: 1;
       transition: opacity ease-in 0.5s;
     }
 
 `;
+const CollaborationFeatureShare = () => {
+  const [ref, inView] = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+  const [hasBeenInView, setHasBeenInView] = useState(false);
 
-const CollaborationFeatureTeam = () => {
-  const [locatorRef, inView] = useInView({ threshold: 0.5 });
-  // const [sectionRef, sectionView] = useInView({ threshold: 1.0 });
-  const [imageInView, setimageInView] = useState(false);
-  // const [sectionInView, setSectionInView] = useState(false);
-  if (inView && !imageInView)
-    setimageInView(true);
-  else if (imageInView && !inView)
-    setimageInView(false);
-  // if (sectionView && !sectionInView)
-  //   setSectionInView(true);
-  // if (sectionInView && !sectionView)
-  //   setSectionInView(false);
+  useEffect(() => {
+    if (inView && !hasBeenInView) {
+      setHasBeenInView(true);
+    }
+  }, [inView, hasBeenInView]);
 
   return (
-    <CollaborationFeatureWrapper>
+    <CollaborationFeatureWrapper ref={ref}>
       <div className="hero-div">
-        <div className="hero-image" ref={locatorRef}>
-          <CollaborationImg className={imageInView ? "visible" : ""}  alt=""/>
+        <div className={`hero-image ${hasBeenInView ? "visible" : ""}`}>
+          <img src={sharegraphic} alt="Share and Collaborate Seamlessly" />
         </div>
         <div className="hero-text">
-          <h2><span>Collaborate with your Team</span></h2>
-          <p>Build an iterative design flow with live collaboration that keeps you in the loop whether you are working in the office or remotely.</p>
+          <h2>
+            <span>Share</span> Your Designs Seamlessly
+          </h2>
+          <p>
+          Effortlessly share your projects and collaborate with team members in real-time, enhancing productivity and teamwork.
+          </p>
+            <Button $primary className="button" title="Learn More" $url="https://docs.layer5.io/kanvas/designer/sharing/" $external={true}/>   
         </div>
       </div>
     </CollaborationFeatureWrapper>
   );
-};
+}
 
-export default CollaborationFeatureTeam;
+export default CollaborationFeatureShare;
+
