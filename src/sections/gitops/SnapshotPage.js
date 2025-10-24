@@ -2,7 +2,7 @@ import React from "react";
 import { PageWrapper,ContentContainerWrapper,HeroContentContainerWrapper, Heading, Description } from "./snapshot.style";
 import { ReactComponent as KanvasStack } from "../../assets/images/kanvas/stacked/kanvas-stacked-white.svg";
 import Cone from "../../assets/images/gitops/conelight.svg";
-import GithubActionComment from "../../assets/images/gitops/GithubActionComment.png";
+import GithubActionComment from "../../assets/images/gitops/GithubActionComment.webp";
 import Button from "../../reusecore/Button";
 import SquarePoint from "./SquarePoint";
 import Reviews from "../Pricing/review-slider";
