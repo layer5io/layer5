@@ -31,8 +31,8 @@ export const repo_data = [
         image: five,
         site: "https://layer5.io/",
         language: "Gatsby",
-        maintainers_name: ["Vacant"],
-        link: ["#"],
+        maintainers_name: ["Rajesh Nagarajan"],
+        link: ["https://layer5.io/community/members/rajesh-nagarajan"],
         repository: "https://github.com/layer5io/layer5",
       },
       {

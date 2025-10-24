@@ -165,7 +165,7 @@ margin-top: 1rem;
       top: 5rem;
     }
     &:hover{
-      background: #00d3a9;
+      background: #EBC017;
     }
 }
 

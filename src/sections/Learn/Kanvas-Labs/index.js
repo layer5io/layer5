@@ -8,7 +8,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { data } from "./courseData";
 
 
-const ServiceMeshLabs = ({ selectedIndex, setSelectedIndex }) => {
+const KanvasLabs = ({ selectedIndex, setSelectedIndex }) => {
 
   const [content, setContent] = useState(false);
   const [open, setOpen] = useState(false);
@@ -90,4 +90,4 @@ const ServiceMeshLabs = ({ selectedIndex, setSelectedIndex }) => {
   );
 };
 
-export default ServiceMeshLabs;
+export default KanvasLabs;
