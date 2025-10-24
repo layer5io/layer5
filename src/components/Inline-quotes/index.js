@@ -17,8 +17,8 @@ const QuotesWrapper = styled.div`
     padding: 2rem;
     border: 2px solid transparent;
     border-image: ${props => props.theme.DarkTheme
-      ? "linear-gradient(to right bottom, #00b39f, #121212 80%)"
-      : "linear-gradient(to right bottom, #00b39f, #fff 80%)"};
+  ? "linear-gradient(to right bottom, #00b39f, #121212 80%)"
+  : "linear-gradient(to right bottom, #00b39f, #fff 80%)"};
     border-image-slice: 1;
     gap: 1.5rem;
     width: 100%;
@@ -92,7 +92,7 @@ const QuotesWrapper = styled.div`
     height: 48px;
     width: 1px;
     border: none;
-    background: ${props => props.theme.primaryColor || "#00b39f"};
+    background: ${props => props.theme.primaryColor};
     margin: 0;
 
     @media (max-width: 768px) {
