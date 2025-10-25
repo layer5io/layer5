@@ -150,6 +150,17 @@ const VisualizerFeaturesWrapper = styled.section`
     }
   }
 
+  .root {
+    &:hover {
+      .fixed {
+        background: #EBC017;
+      }
+      #add-border {
+        border-color: #EBC017;
+      }
+    }
+  }
+
   .fixed {
     top: 6rem;
     font-weight: 300;
@@ -162,16 +173,13 @@ const VisualizerFeaturesWrapper = styled.section`
     @media (max-width: 912px) {
       top: 5rem;
     }
-    &:hover{
-      background: #EBC017;
-    }
   }
   #add-border {
     border-color: #00b39f;
     border-style: solid;
     border-width: 0px 2px 2px 2px;
     box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
-    transition: ease-in-out;
+    transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   }
   .hideInMobile{
     @media (max-width: 799px) {
