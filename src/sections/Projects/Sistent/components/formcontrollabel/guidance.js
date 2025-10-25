@@ -111,19 +111,6 @@ const FormControlLabelGuidance = () => {
             </SistentThemeProvider>
           </Row>
 
-          <a id="Disabled Checkbox">
-            <h3>With Disabled Checkbox</h3>
-          </a>
-          <Row $Hcenter className="image-container">
-            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <FormControlLabel
-                control={<Checkbox disabled />}
-                label="I agree to receive marketing emails"
-                disabled
-              />
-            </SistentThemeProvider>
-          </Row>
-
           <a id="Radio Usage">
             <h3>With Radio Button</h3>
           </a>
