@@ -5,7 +5,7 @@ import { useLocation } from "@reach/router";
 import { SistentThemeProvider, Grid2, Box } from "@sistent/sistent";
 import TabButton from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
-import { Col, Row } from "../../../../../reusecore/Layout";
+import { Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 // Demo Item component for examples
