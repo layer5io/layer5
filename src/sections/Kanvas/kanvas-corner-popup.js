@@ -15,7 +15,7 @@ const TransitionWrapper = styled.div`
 
     .popup-text {
         display: flex;
-        gap: 2rem;
+        gap: 0;
         flex-direction: column;
         text-align: center;
         z-index: 1;
@@ -40,6 +40,23 @@ const TransitionWrapper = styled.div`
             max-width: 100%;
         }
     }
+
+    .try-it-text {
+        z-index: 1;
+        padding: 1rem 2rem 2rem;
+        text-align: center;
+        font-size: 1.1rem;
+
+        span {
+            color: ${props => props.theme.greyA0AAAAToGrey666666};
+        }
+
+        strong {
+            color: #FFFFFF;
+            font-weight: 600;
+            font-size: 1.5rem
+        }
+    }
 `;
 
 const KanvasCornerPopup = () => {
@@ -48,14 +65,18 @@ const KanvasCornerPopup = () => {
       <TransitionWrapper>
         <div className="popup-container">
           <div className="popup-text">
-            <h1>
-              Collaborate with the team
-            </h1>
             <h4>
               Build solutions together
             </h4>
+            <h1>
+              Collaborate with the team
+            </h1>
           </div>
           <KanvasArchitecturalTransition/>
+          <div className="try-it-text">
+            <span>Try it now at </span>
+            <strong>kanvas.new</strong>
+          </div>
         </div>
       </TransitionWrapper>
     } link="https://kanvas.new/" text="Access Kanvas"/>
