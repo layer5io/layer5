@@ -9,7 +9,7 @@ import StreamerLogo from "../../../assets/images/streamer/streamer.svg";
 import GitOPsWithFriendsLogo from "../../../assets/images/gitops-with-friends/gitops-with-friends.svg";
 import BringABuddyLogo from "../../../assets/images/bring-a-buddy/bring-a-buddy.svg";
 import CodeCleanupCrewLogo from "../../../assets/images/code-cleanup-crew/code-cleanup-crew.svg";
-import SecuritySentinelLogo from "../../../assets/images/security-sentinel/security-sentinel.png";
+import SecuritySentinelLogo from "../../../assets/images/security-sentinel/security-sentinel.webp";
 import LogevityLegendLogo from "../../../assets/images/longevity-legend/longevity-legend.svg";
 import ReviewRockstarLogo from "../../../assets/images/review-rockstar/review-rockstar.svg";
 import KanvasSnapshotLogo from "../../../assets/images/kanvas-snapshot/kanvas-snapshot.svg";
