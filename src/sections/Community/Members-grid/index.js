@@ -13,7 +13,7 @@ import { MembersGridWrapper } from "./membersGrid.style";
 import communityImg from "../../../assets/images/community/community-green.svg";
 import { FaBook } from "@react-icons/all-files/fa/FaBook";
 import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
-import  badgeImage from "../../../assets/images/recognition-program/recognition-program.png";
+import  badgeImage from "../../../assets/images/recognition-program/recognition-program.webp";
 import { FaCertificate } from "@react-icons/all-files/fa/FaCertificate";
 
 const MembersGrid = (props) => {
