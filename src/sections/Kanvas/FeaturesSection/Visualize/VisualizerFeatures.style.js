@@ -150,7 +150,7 @@ const VisualizerFeaturesWrapper = styled.section`
     }
   }
 
-  .root {
+  .visualizer-trigger-container {
     &:hover {
       .fixed {
         background: #EBC017;

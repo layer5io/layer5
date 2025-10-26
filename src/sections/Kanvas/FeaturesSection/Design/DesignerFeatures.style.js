@@ -152,7 +152,7 @@ margin-top: 1rem;
     }
   }
 
-  .root {
+  .design-trigger-container {
     &:hover {
       .fixed {
         background: #EBC017;

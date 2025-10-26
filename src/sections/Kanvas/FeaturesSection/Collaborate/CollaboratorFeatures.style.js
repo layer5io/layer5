@@ -149,7 +149,7 @@ const CollaboratorFeaturesWrapper = styled.section`
     }
   }
 
-  .root {
+  .collaborator-trigger-container {
     &:hover {
       .fixed {
         background: #EBC017;
