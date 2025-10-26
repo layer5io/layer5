@@ -30,19 +30,10 @@ const FaqSectionWrapper = styled.section`
     }
   }
   
-  .filter-container {
-    background-color: ${props => props.theme.secondaryLightColor};
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    border: 1px solid ${props => props.theme.shadowLightColor};
-  }
-  
   .filter-title {
     color: ${props => props.theme.primaryColor};
     font-weight: 500;
     margin-bottom: 1rem;
-    border-bottom: 1px solid ${props => props.theme.shadowLightColor};
     padding-bottom: 0.5rem;
     text-align: center;
   }
@@ -55,13 +46,13 @@ const FaqSectionWrapper = styled.section`
       margin-bottom: 1rem;
       color: ${props => props.theme.primaryColor};
     }
-    
-    p {
-      margin: 0.5rem 0;
-      font-size: 0.9rem;
-      font-style: italic;
-      color: ${props => props.theme.textColor};
-    }
+  }
+  
+  .filter-message {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    font-style: italic;
+    opacity: 0.8;
   }
   .filter-options {
     display: flex;
@@ -85,6 +76,11 @@ const FaqSectionWrapper = styled.section`
       cursor: pointer;
       font-size: 0.9rem;
     }
+  }
+
+  .filter-message {
+    padding: 0.5rem;
+    border-radius: 4px;
   }
   
   .active-filters {

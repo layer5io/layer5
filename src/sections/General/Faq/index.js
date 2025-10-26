@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-import { Container, Row, Col } from "../../../reusecore/Layout";
+import { Container } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
-import { SistentThemeProvider, Collapse } from "@sistent/sistent";
+import { SistentThemeProvider, Collapse, Box } from "@sistent/sistent";
 import Button from "../../../reusecore/Button";
 import {
   Accordion,
@@ -19,139 +19,104 @@ import { IoIosArrowDown } from "@react-icons/all-files/io/IoIosArrowDown";
 import { IoIosArrowUp } from "@react-icons/all-files/io/IoIosArrowUp";
 
 import data from "../../../assets/data/faq";
-
 import FaqSectionWrapper from "./faqSection.style";
 
-const Faq = (props) => {
-  const propCategory = props.category;
-  const propSubcategory = props.subcategory;
+const Faq = () => {
   const { isDark } = useStyledDarkMode();
 
+  // Extract all available categories
   const allCategories = [...new Set(data.faqs.map(faq => faq.category))].sort();
 
-  const allSubcategoriesRaw = [...new Set(data.faqs.map(faq => faq.subcategory || "General"))].sort();
-  const allSubcategories = allSubcategoriesRaw.filter(subcat => !allCategories.includes(subcat));
-
-  const normalizeToArray = (val) => {
-    if (!val && val !== 0) return [];
-    return Array.isArray(val) ? val : [val];
-  };
-
-  const [selectedCategories, setSelectedCategories] = useState(normalizeToArray(propCategory));
-  const [selectedSubcategories, setSelectedSubcategories] = useState(normalizeToArray(propSubcategory));
-  const [showFilters, setShowFilters] = useState(false);
-
-  const [availableSubcategories, setAvailableSubcategories] = useState(allSubcategories);
-
-  useEffect(() => {
-    if (propCategory !== undefined) setSelectedCategories(normalizeToArray(propCategory));
-    if (propSubcategory !== undefined) setSelectedSubcategories(normalizeToArray(propSubcategory));
-  }, [propCategory, propSubcategory]);
-
+  // Function to get subcategories for selected categories
   const getSubcategoriesForCategories = (categories) => {
-    if (!categories || categories.length === 0) {
-      return allSubcategories;
-    }
-
+    if (!categories || categories.length === 0) return [];
     const subCategories = new Set();
     data.faqs.forEach(faq => {
       if (categories.includes(faq.category)) {
         subCategories.add(faq.subcategory || "General");
       }
     });
-
     return [...subCategories].sort();
   };
 
-  useEffect(() => {
-    setAvailableSubcategories(getSubcategoriesForCategories(selectedCategories));
-  }, [selectedCategories]);
+  // State for filters
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedSubcategories, setSelectedSubcategories] = useState([]);
+  const [showFilters, setShowFilters] = useState(false);
 
+  // Handle category filter change
   const handleCategoryChange = (category) => {
     let newCategories;
-
     if (selectedCategories.includes(category)) {
+      // Remove category and its subcategories
       newCategories = selectedCategories.filter(c => c !== category);
+      const remainingValidSubcategories = getSubcategoriesForCategories(newCategories);
+      setSelectedSubcategories(prev =>
+        prev.filter(sub => remainingValidSubcategories.includes(sub))
+      );
     } else {
+      // Add category
       newCategories = [...selectedCategories, category];
     }
-
     setSelectedCategories(newCategories);
-
-    const newAvailableSubcategories = getSubcategoriesForCategories(newCategories);
-    setAvailableSubcategories(newAvailableSubcategories);
-
-    const validSubcategories = selectedSubcategories.filter(
-      subcat => newAvailableSubcategories.includes(subcat)
-    );
-
-    if (validSubcategories.length !== selectedSubcategories.length) {
-      setSelectedSubcategories(validSubcategories);
-    }
   };
 
+  // Handle subcategory filter change
   const handleSubcategoryChange = (subcategory) => {
-    if (selectedSubcategories.includes(subcategory)) {
-      const newSubcategories = selectedSubcategories.filter(s => s !== subcategory);
-      setSelectedSubcategories(newSubcategories);
-    } else {
-      const newSubcategories = [...selectedSubcategories, subcategory];
-      setSelectedSubcategories(newSubcategories);
-    }
+    setSelectedSubcategories(prev =>
+      prev.includes(subcategory)
+        ? prev.filter(s => s !== subcategory)
+        : [...prev, subcategory]
+    );
   };
 
+  // Reset filters
   const resetFilters = () => {
     setSelectedCategories([]);
     setSelectedSubcategories([]);
-    setAvailableSubcategories(allSubcategories);
   };
 
-  let faq_keys = [];
-  let faqs_data = [];
+  // Get available subcategories based on selected categories
+  const availableSubcategories = getSubcategoriesForCategories(selectedCategories);
 
-  if (selectedCategories.length === 0 && selectedSubcategories.length === 0) {
-    faqs_data = data.faqs;
-  } else {
-    faqs_data = data.faqs.filter(faq => {
-      const matchesCategory = selectedCategories.length === 0 ||
-        selectedCategories.includes("all") ||
-        selectedCategories.includes(faq.category.toString());
+  // Filter FAQs based on selected categories and subcategories
+  const faqs_data = data.faqs.filter(faq => {
+    // If no categories selected, show all FAQs
+    if (selectedCategories.length === 0) return true;
 
-      const subcatValue = faq.subcategory || "General";
-      const matchesSubcategory = selectedSubcategories.length === 0 ||
-        selectedSubcategories.includes("all") ||
-        selectedSubcategories.includes(subcatValue);
+    // Check if FAQ's category is selected
+    const categoryMatches = selectedCategories.includes(faq.category);
+    if (!categoryMatches) return false;
 
-      return matchesCategory && matchesSubcategory;
-    });
-  }
+    // If category matches but no subcategories selected, show all FAQs in that category
+    if (selectedSubcategories.length === 0) return true;
 
-  let faqs = faqs_data.reduce((faq, ind) => {
-    const category = ind.category;
-    const subcategory = ind.subcategory || "General";
+    // Check if FAQ's subcategory matches
+    const faqSubcategory = faq.subcategory || "General";
+    return selectedSubcategories.includes(faqSubcategory);
+  });
 
-    if (!faq[category]) {
-      faq[category] = {};
+  // Group FAQs by category and subcategory
+  const faqs = faqs_data.reduce((acc, faq) => {
+    const category = faq.category;
+    const subcategory = faq.subcategory || "General";
+
+    if (!acc[category]) {
+      acc[category] = {};
     }
-
-    if (!faq[category][subcategory]) {
-      faq[category][subcategory] = [];
+    if (!acc[category][subcategory]) {
+      acc[category][subcategory] = [];
     }
-
-    faq[category][subcategory].push(ind);
-    return faq;
+    acc[category][subcategory].push(faq);
+    return acc;
   }, {});
 
-  faq_keys = Object.keys(faqs);
+  const faq_keys = Object.keys(faqs);
 
   return (
     <FaqSectionWrapper id="faq">
       <Container>
-        <SectionTitle
-          className="section-title"
-          $leftAlign={true}
-          $UniWidth="100%"
-        >
+        <SectionTitle className="section-title" $leftAlign={true} $UniWidth="100%">
           <h1>
             <span>Frequently Asked Questions</span>
           </h1>
@@ -162,9 +127,9 @@ const Faq = (props) => {
               onClick={() => setShowFilters(!showFilters)}
               title={showFilters ? "Hide Filters" : "Show Filters"}
             />
-
             {(selectedCategories.length > 0 || selectedSubcategories.length > 0) && (
               <Button
+                $secondary={true}
                 onClick={resetFilters}
                 title="Reset Filters"
               />
@@ -172,94 +137,73 @@ const Faq = (props) => {
           </div>
 
           <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-            <Collapse in={showFilters} timeout="auto">
-              <div className="filter-container">
-                <Row>
-                  <Col md={6} sm={12}>
-                    <div className="filter-group">
-                      <h3 className="filter-title">Filter by Category</h3>
-                      <div className="filter-options">
-                        {allCategories.map((cat, index) => (
+            <Collapse in={showFilters}>
+              <Box
+                sx={{
+                  padding: 3,
+                  borderRadius: 2,
+                  marginBottom: 3,
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+                  gap: 3,
+                  bgcolor: "background.default",
+                  border: "1px solid",
+                  borderColor: "divider"
+                }}
+              >
+                <Box>
+                  <h3 className="filter-title">Filter by Category</h3>
+                  <div className="filter-options">
+                    {allCategories.map((cat, index) => (
+                      <div key={index} className="filter-option">
+                        <input
+                          type="checkbox"
+                          id={`category-${cat}`}
+                          checked={selectedCategories.includes(cat)}
+                          onChange={() => handleCategoryChange(cat)}
+                        />
+                        <label htmlFor={`category-${cat}`}>{cat}</label>
+                      </div>
+                    ))}
+                  </div>
+                </Box>
+                <Box>
+                  <h3 className="filter-title">Filter by Subcategory</h3>
+                  {selectedCategories.length > 0 ? (
+                    <div className="filter-options">
+                      {availableSubcategories.length > 0 ? (
+                        availableSubcategories.map((subcat, index) => (
                           <div key={index} className="filter-option">
                             <input
                               type="checkbox"
-                              id={`category-${cat}`}
-                              checked={selectedCategories.includes(cat)}
-                              onChange={() => handleCategoryChange(cat)}
+                              id={`subcategory-${subcat}`}
+                              checked={selectedSubcategories.includes(subcat)}
+                              onChange={() => handleSubcategoryChange(subcat)}
                             />
-                            <label htmlFor={`category-${cat}`}>
-                              {cat}
-                            </label>
+                            <label htmlFor={`subcategory-${subcat}`}>{subcat}</label>
                           </div>
-                        ))}
-                      </div>
-                    </div>
-                  </Col>
-                  <Col md={6} sm={12}>
-                    <div className="filter-group">
-                      <h3 className="filter-title">Filter by Subcategory</h3>
-                      {selectedCategories.length > 0 ? (
-                        <div className="filter-options">
-                          {availableSubcategories.length > 0 ? (
-                            availableSubcategories.map((subcat, index) => (
-                              <div key={index} className="filter-option">
-                                <input
-                                  type="checkbox"
-                                  id={`subcategory-${subcat}`}
-                                  checked={selectedSubcategories.includes(subcat)}
-                                  onChange={() => handleSubcategoryChange(subcat)}
-                                />
-                                <label htmlFor={`subcategory-${subcat}`}>
-                                  {subcat}
-                                </label>
-                              </div>
-                            ))
-                          ) : (
-                            <p>No subcategories available for the selected categories.</p>
-                          )}
-                        </div>
+                        ))
                       ) : (
-                        <div>
-                          <p>Please select a category first to see relevant subcategories.</p>
-                          <div className="filter-options">
-                            {allSubcategories.map((subcat, index) => (
-                              <div key={index} className="filter-option">
-                                <input
-                                  type="checkbox"
-                                  id={`subcategory-${subcat}`}
-                                  checked={selectedSubcategories.includes(subcat)}
-                                  onChange={() => handleSubcategoryChange(subcat)}
-                                />
-                                <label htmlFor={`subcategory-${subcat}`}>
-                                  {subcat}
-                                </label>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
+                        <p className="filter-message">No subcategories available for the selected categories.</p>
                       )}
                     </div>
-                  </Col>
-                </Row>
-              </div>
+                  ) : (
+                    <p className="filter-message">Please select a category first to see relevant subcategories.</p>
+                  )}
+                </Box>
+              </Box>
             </Collapse>
           </SistentThemeProvider>
 
-          {(selectedCategories.length > 0 || selectedSubcategories.length > 0 || faqs_data.length > 0) && (
+          {faqs_data.length > 0 && (
             <div className="active-filters">
               <p>
-                {selectedCategories.length > 0 || selectedSubcategories.length > 0 ? (
-                  <>
-                    Showing {faqs_data.length} {faqs_data.length === 1 ? "FAQ" : "FAQs"}
-                    {selectedCategories.length > 0 && (
-                      <> in categories: <strong>{selectedCategories.join(", ")}</strong></>
-                    )}
-                    {selectedSubcategories.length > 0 && (
-                      <> under subcategories: <strong>{selectedSubcategories.join(", ")}</strong></>
-                    )}
-                  </>
-                ) : (
-                  <>Showing all {faqs_data.length} FAQs</>
+                Showing {faqs_data.length} {faqs_data.length === 1 ? "FAQ" : "FAQs"}
+                {selectedCategories.length > 0 && (
+                  <> in categories: <strong>{selectedCategories.join(", ")}</strong></>
+                )}
+                {selectedSubcategories.length > 0 && (
+                  <> under subcategories: <strong>{selectedSubcategories.join(", ")}</strong></>
                 )}
               </p>
             </div>
@@ -291,17 +235,26 @@ const Faq = (props) => {
                         </AccordionTitle>
                         <AccordionBody>
                           <div className="inner">
-                            {
-                              faq.answer.length >= 1 ? <ul>{faq.answer.map((ans, id) => (<li key={id}><p key={id}>{ans}</p></li>))}</ul> : <br />
-                            }
-                            {faq.link &&
+                            {faq.answer.length >= 1 ? (
+                              <ul>
+                                {faq.answer.map((ans, id) => (
+                                  <li key={id}><p>{ans}</p></li>
+                                ))}
+                              </ul>
+                            ) : (
+                              <br />
+                            )}
+                            {faq.link && (
                               <div className="faqbutton">
-                                {faq.link.startsWith("/")
-                                  ? <Button $primary className="faqbutton" $url={faq.link} title={faq.linktext} $external={false} />
-                                  : <Button $primary className="faqbutton" $url={faq.link} title={faq.linktext} $external={true} />
-                                }
+                                <Button
+                                  $primary
+                                  className="faqbutton"
+                                  $url={faq.link}
+                                  title={faq.linktext}
+                                  $external={!faq.link.startsWith("/")}
+                                />
                               </div>
-                            }
+                            )}
                           </div>
                         </AccordionBody>
                       </AccordionItem>
