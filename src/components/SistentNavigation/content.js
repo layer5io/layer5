@@ -45,17 +45,17 @@ export const content = [
   { id: 32, link: "/projects/sistent/components/circularprogress/guidance", text: "Circular Progress" },
   { id: 33, link: "/projects/sistent/components/circularprogress/code", text: "Circular Progress" },
 
-  { id: 34, link: "/projects/sistent/components/collapse", text: "Collapse" },
-  { id: 35, link: "/projects/sistent/components/collapse/guidance", text: "Collapse" },
-  { id: 36, link: "/projects/sistent/components/collapse/code", text: "Collapse" },
+  { id: 34, link: "/projects/sistent/components/container", text: "Container" },
+  { id: 35, link: "/projects/sistent/components/container/guidance", text: "Container" },
+  { id: 36, link: "/projects/sistent/components/container/code", text: "Container" },
 
-  { id: 37, link: "/projects/sistent/components/container", text: "Container" },
-  { id: 38, link: "/projects/sistent/components/container/guidance", text: "Container" },
-  { id: 39, link: "/projects/sistent/components/container/code", text: "Container" },
+  { id: 37, link: "/projects/sistent/components/dialog", text: "Dialog" },
+  { id: 38, link: "/projects/sistent/components/dialog/guidance", text: "Dialog" },
+  { id: 39, link: "/projects/sistent/components/dialog/code", text: "Dialog" },
 
-  { id: 40, link: "/projects/sistent/components/dialog", text: "Dialog" },
-  { id: 41, link: "/projects/sistent/components/dialog/guidance", text: "Dialog" },
-  { id: 42, link: "/projects/sistent/components/dialog/code", text: "Dialog" },
+  { id: 40, link: "/projects/sistent/components/formcontrollabel", text: "FormControlLabel" },
+  { id: 41, link: "/projects/sistent/components/formcontrollabel/guidance", text: "FormControlLabel" },
+  { id: 42, link: "/projects/sistent/components/formcontrollabel/code", text: "FormControlLabel" },
 
   { id: 43, link: "/projects/sistent/components/grid", text: "Grid" },
   { id: 44, link: "/projects/sistent/components/grid/guidance", text: "Grid" },
