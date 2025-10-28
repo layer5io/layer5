@@ -168,9 +168,8 @@ const Navigation = () => {
   const [userData, setUserData] = useState(null);
   const dropDownRef = useRef();
   const navWrapRef = useRef();
-  const accountRef = useRef();
-  const [isMobile, setIsMobile] = useState(false);
-  const hoverTimeoutRef = useRef(null);
+  const accountDropdownRef = useRef();
+
   function getCookieValue(cookieName) {
     const cookies = document.cookie.split(";");
 
@@ -220,18 +219,6 @@ const Navigation = () => {
     fetchData();
   }, []);
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-
-    return () => {
-      window.removeEventListener("resize", checkMobile);
-    };
-  }, []);
-  useEffect(() => {
     const outsideClickHandler = (e) => {
       if (
         expand &&
@@ -270,38 +257,17 @@ const Navigation = () => {
   };
 
   useEffect(() => {
-    if (isMobile) {
-      const handleClickOutside = (e) => {
-        if (
-          dropDown &&
-          accountRef.current &&
-          !accountRef.current.contains(e.target)
-        ) {
-          setDropDown(false);
-        }
-      };
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
-      };
-    }
-  }, [dropDown, isMobile]);
-  const handleMouseEnter = () => {
-    if (!isMobile) {
-      if (hoverTimeoutRef.current) {
-        clearTimeout(hoverTimeoutRef.current);
-      }
-      setDropDown(true);
-    }
-  };
+    if (!dropDown) return;
 
-  const handleMouseLeave = () => {
-    if (!isMobile) {
-      hoverTimeoutRef.current = setTimeout(() => {
+    const handleClickOutside = (e) => {
+      if (!accountDropdownRef.current?.contains(e.target)) {
         setDropDown(false);
-      }, 200);
-    }
-  };
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [dropDown]);
   return (
     <NavigationWrap
       className={`nav-block ${scroll ? "scrolled" : ""}`}
@@ -375,7 +341,11 @@ const Navigation = () => {
                                       changeDropdownState();
                                       closeDropDown();
                                     }}
-                                    className={subItems.sepLine ? "mobile-sub-menu-item" : "mobile-nested-menu"}
+                                    className={
+                                      subItems.sepLine
+                                        ? "mobile-sub-menu-item"
+                                        : "mobile-nested-menu"
+                                    }
                                     activeClassName="nav-link-active"
                                   >
                                     {subItems.name}
@@ -385,8 +355,8 @@ const Navigation = () => {
                             );
                           })}
                         {menu.actionItems !== undefined &&
-                          menu.actionItems.map((actionItem, index) => (
-                            (actionItem.actionName === "Join the discussion" ?
+                          menu.actionItems.map((actionItem, index) =>
+                            actionItem.actionName === "Join the discussion" ? (
                               <a
                                 key={index}
                                 href={actionItem.actionLink}
@@ -399,10 +369,12 @@ const Navigation = () => {
                                 }}
                               >
                                 <span className="readmore-btn">
-                                  {actionItem.actionName} <IoIosArrowRoundForward />
+                                  {actionItem.actionName}{" "}
+                                  <IoIosArrowRoundForward />
                                 </span>
                               </a>
-                              : <Link
+                            ) : (
+                              <Link
                                 key={index}
                                 to={actionItem.actionLink}
                                 partiallyActive={true}
@@ -413,12 +385,12 @@ const Navigation = () => {
                                 }}
                               >
                                 <span className="readmore-btn">
-                                  {actionItem.actionName} <IoIosArrowRoundForward />
+                                  {actionItem.actionName}{" "}
+                                  <IoIosArrowRoundForward />
                                 </span>
                               </Link>
                             )
-                          ))
-                        }
+                          )}
                       </ul>
                     </li>
                   ))}
@@ -460,19 +432,14 @@ const Navigation = () => {
         </div>
         <div className="meshery-cta">
           {userData ? (
-            <div
-              className="dropDown"
-              ref={accountRef}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
+            <div className="dropDown" ref={accountDropdownRef}>
               <button
                 className="avatar-container"
                 style={{
                   backgroundImage: `url(${userData.avatar_url})`,
                   backgroundSize: "cover",
                 }}
-                onClick={() => isMobile && setDropDown((prev) => !prev)}
+                onClick={() => setDropDown((prev) => !prev)}
               >
                 {!userData.avatar_url && (
                   <DefaultAvatar className="default_avatar" />
