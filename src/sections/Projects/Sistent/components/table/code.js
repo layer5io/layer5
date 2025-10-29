@@ -43,17 +43,6 @@ const codes = [
       columnVisibility={columnVisibility}
     />
   </SistentThemeProvider>`,
-  `  <SistentThemeProvider>
-    <ResponsiveDataTable
-      data={basicData}
-      columns={columns}
-      options={responsiveOptions}
-      colViews={colViews}
-      tableCols={tableCols}
-      updateCols={updateCols}
-      columnVisibility={columnVisibility}
-    />
-  </SistentThemeProvider>`,
 ];
 
 const TableCode = () => {
@@ -224,14 +213,6 @@ const TableCode = () => {
     rowsPerPageOptions: [3, 5, 10],
   };
 
-  const responsiveOptions = {
-    ...commonOptions,
-    search: false,
-    filter: false,
-    responsive: "standard",
-    selectableRows: "none",
-  };
-
   return (
     <SistentLayout title="Table">
       <div className="content">
@@ -350,30 +331,6 @@ const TableCode = () => {
               </SistentThemeProvider>
             </div>
             <CodeBlock name="pagination-search" code={codes[2]} />
-          </div>
-
-          <a id="Responsive Behavior" href="#Responsive Behavior">
-            <h2>Responsive Behavior</h2>
-          </a>
-          <p>
-            Tables automatically adapt to different screen sizes, providing
-            optimal viewing experience across devices.
-          </p>
-          <div className="showcase">
-            <div className="items">
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <ResponsiveDataTable
-                  data={basicData}
-                  columns={basicColumns}
-                  options={responsiveOptions}
-                  colViews={basicColViews}
-                  tableCols={tableCols}
-                  updateCols={updateCols}
-                  columnVisibility={columnVisibility}
-                />
-              </SistentThemeProvider>
-            </div>
-            <CodeBlock name="responsive-table" code={codes[3]} />
           </div>
         </div>
       </div>
