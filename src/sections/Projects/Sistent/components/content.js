@@ -237,6 +237,13 @@ const componentsData = [
     url: "/projects/sistent/components/stepper",
     src: "/stepper",
   },
+  {
+    id: 32,
+    name: "Menu",
+    description: "Menu provides a way to display a list of options to the user.",
+    url: "/projects/sistent/components/menu",
+    src: "/menu",
+  },
 ];
 
 module.exports = { componentsData };
