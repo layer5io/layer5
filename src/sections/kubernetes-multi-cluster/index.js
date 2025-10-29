@@ -1,8 +1,8 @@
 import React from "react";
 import SolutionHero from "../SolutionHero";
-import cluster_img from "./images/cluster.png";
-import deploy_img from "./images/deploy.png";
-import config_img from "./images/config.png";
+import cluster_img from "./images/cluster.webp";
+import deploy_img from "./images/deploy.webp";
+import config_img from "./images/config.webp";
 import { Container } from "../../reusecore/Layout";
 import FeatureUseCard from "../../components/FeatureUseCard";
 import MultiClusterWrapper from "./kube.style";

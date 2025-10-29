@@ -184,7 +184,7 @@ const componentsData = [
     id: 24,
     name: "Toolbar",
     description:
-    "The toolbar is a horizontal container for grouping interactive elements like buttons, filters, or navigation controls, typically placed at the top of a UI section.",
+      "The toolbar is a horizontal container for grouping interactive elements like buttons, filters, or navigation controls, typically placed at the top of a UI section.",
     url: "/projects/sistent/components/toolbar",
     src: "/toolbar",
   },
@@ -236,6 +236,13 @@ const componentsData = [
     description: "Stepper provides a way to display progress through a sequence of logical steps.",
     url: "/projects/sistent/components/stepper",
     src: "/stepper",
+  },
+  {
+    "id": 32,
+    "name": "FormControlLabel",
+    "description": "A control + label pair used for checkboxes or radio buttons.",
+    "url": "/projects/sistent/components/formcontrollabel",
+    "src": "/formcontrollabel",
   },
 ];
 
