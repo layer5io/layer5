@@ -149,17 +149,6 @@ const CollaboratorFeaturesWrapper = styled.section`
     }
   }
 
-  .collaborator-trigger-container {
-    &:hover {
-      .fixed {
-        background: #EBC017;
-      }
-      #add-border {
-        border-color: #EBC017;
-      }
-    }
-  }
-
   .fixed {
     top: 6rem;
     font-weight: 300;
@@ -172,6 +161,9 @@ const CollaboratorFeaturesWrapper = styled.section`
     @media (max-width: 912px) {
       top: 5rem;
     }
+    &:hover{
+      background: #00d3a9;
+    }
   }
 
   #add-border {
@@ -179,7 +171,7 @@ const CollaboratorFeaturesWrapper = styled.section`
     border-style: solid;
     border-width: 0px 2px 2px 2px;
     box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
-    transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    transition: ease-in-out;
   }
 
   .hideInMobile{
