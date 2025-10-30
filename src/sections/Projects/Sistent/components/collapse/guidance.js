@@ -10,7 +10,9 @@ const Guidance = () => {
   return (
     <SistentLayout title="Collapse">
       <div className="content" style={{ padding: "2rem 0" }}>
-        <h2 style={{ marginBottom: "1.5rem" }}>Collapse</h2>
+        <a id="Identity" style={{ display: "block", marginBottom: "1.5rem" }}>
+          <h2 style={{ marginBottom: "1.5rem" }}>Collapse</h2>
+        </a>
         <p style={{ fontSize: "1.1rem", lineHeight: "1.7", marginBottom: "2.5rem" }}>
           The Collapse component provides a smooth, animated transition for showing and hiding content.
           It's an essential UI pattern for managing content density and progressive disclosure of information.
@@ -48,7 +50,9 @@ const Guidance = () => {
 
         <div className="main-content" style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
           <section>
-            <h3 style={{ fontSize: "1.5rem", marginBottom: "1.5rem", paddingBottom: "0.75rem", borderBottom: "1px solid #e0e0e0" }}>Best Practices</h3>
+            <a id="Best Practices" style={{ display: "block" }}>
+              <h2 style={{ fontSize: "1.5rem", marginBottom: "1.5rem", paddingBottom: "0.75rem", borderBottom: "1px solid #e0e0e0" }}>Best Practices</h2>
+            </a>
             <ul style={{ marginTop: "1rem", marginBottom: "0.5rem", paddingLeft: "1.5rem" }}>
               <li style={{ marginBottom: "0.75rem" }}>
                 <strong>Clear Triggers:</strong> Always use clear, descriptive labels for collapse triggers that indicate the action and content.
@@ -70,7 +74,9 @@ const Guidance = () => {
           </section>
 
           <section>
-            <h3 style={{ fontSize: "1.5rem", marginBottom: "1.5rem", paddingBottom: "0.75rem", borderBottom: "1px solid #e0e0e0" }}>Accessibility Considerations</h3>
+            <a id="Accessibility Considerations" style={{ display: "block" }}>
+              <h2 style={{ fontSize: "1.5rem", marginBottom: "1.5rem", paddingBottom: "0.75rem", borderBottom: "1px solid #e0e0e0" }}>Accessibility Considerations</h2>
+            </a>
             <ul style={{ marginTop: "1rem", marginBottom: "0.5rem", paddingLeft: "1.5rem" }}>
               <li style={{ marginBottom: "0.75rem" }}>
                 <strong>Keyboard Navigation:</strong> Ensure the collapse trigger is keyboard accessible and can be activated with both Enter and Space keys.
@@ -89,7 +95,9 @@ const Guidance = () => {
           </section>
 
           <section>
-            <h3 style={{ fontSize: "1.5rem", marginBottom: "1.5rem", paddingBottom: "0.75rem", borderBottom: "1px solid #e0e0e0" }}>When to Use</h3>
+            <a id="When to Use" style={{ display: "block" }}>
+              <h2 style={{ fontSize: "1.5rem", marginBottom: "1.5rem", paddingBottom: "0.75rem", borderBottom: "1px solid #e0e0e0" }}>When to Use</h2>
+            </a>
             <ul style={{ marginTop: "1rem", marginBottom: "0.5rem", paddingLeft: "1.5rem" }}>
               <li style={{ marginBottom: "0.75rem" }}>FAQs and help sections</li>
               <li style={{ marginBottom: "0.75rem" }}>Forms with optional or advanced fields</li>
@@ -101,7 +109,9 @@ const Guidance = () => {
           </section>
 
           <section>
-            <h3 style={{ fontSize: "1.5rem", marginBottom: "1.5rem", paddingBottom: "0.75rem", borderBottom: "1px solid #e0e0e0" }}>When to Consider Something Else</h3>
+            <a id="When to Consider Something Else" style={{ display: "block" }}>
+              <h2 style={{ fontSize: "1.5rem", marginBottom: "1.5rem", paddingBottom: "0.75rem", borderBottom: "1px solid #e0e0e0" }}>When to Consider Something Else</h2>
+            </a>
             <ul style={{ marginTop: "1rem", marginBottom: "0.5rem", paddingLeft: "1.5rem" }}>
               <li style={{ marginBottom: "0.75rem" }}>For simple show/hide without animation, consider conditional rendering</li>
               <li style={{ marginBottom: "0.75rem" }}>For modal dialogs or overlays, use the Dialog component instead</li>
@@ -111,7 +121,9 @@ const Guidance = () => {
           </section>
 
           <section>
-            <h3 style={{ fontSize: "1.5rem", marginBottom: "1.5rem", paddingBottom: "0.75rem", borderBottom: "1px solid #e0e0e0" }}>Performance Optimization</h3>
+            <a id="Performance Optimization" style={{ display: "block" }}>
+              <h2 style={{ fontSize: "1.5rem", marginBottom: "1.5rem", paddingBottom: "0.75rem", borderBottom: "1px solid #e0e0e0" }}>Performance Optimization</h2>
+            </a>
             <ul style={{ marginTop: "1rem", marginBottom: "0.5rem", paddingLeft: "1.5rem" }}>
               <li style={{ marginBottom: "0.75rem" }}>Use <code>unmountOnExit</code> for better performance with large content</li>
               <li style={{ marginBottom: "0.75rem" }}>Consider code-splitting for complex content within collapsible sections</li>
@@ -121,7 +133,9 @@ const Guidance = () => {
           </section>
 
           <section>
-            <h3 style={{ fontSize: "1.5rem", marginBottom: "1.5rem", paddingBottom: "0.75rem", borderBottom: "1px solid #e0e0e0" }}>Common Patterns</h3>
+            <a id="Common Patterns" style={{ display: "block" }}>
+              <h2 style={{ fontSize: "1.5rem", marginBottom: "1.5rem", paddingBottom: "0.75rem", borderBottom: "1px solid #e0e0e0" }}>Common Patterns</h2>
+            </a>
             <ul style={{ marginTop: "1rem", marginBottom: "0.5rem", paddingLeft: "1.5rem" }}>
               <li style={{ marginBottom: "0.75rem" }}><strong>Accordion:</strong> Multiple collapsible sections where only one can be open at a time</li>
               <li style={{ marginBottom: "0.75rem" }}><strong>Expandable Cards:</strong> Cards with a summary that can be expanded for more details</li>

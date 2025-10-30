@@ -221,7 +221,7 @@ const CollapseComponent = () => {
   return (
     <SistentLayout title="Collapse">
       <section className="content" style={{ padding: "2rem 0" }}>
-        <a id="Layout" style={{ display: "block", marginBottom: "1.5rem" }}>
+        <a id="Identity" style={{ display: "block", marginBottom: "1.5rem" }}>
           <h2 style={{ marginBottom: "0.5rem" }}>Collapse</h2>
         </a>
         <p style={{ fontSize: "1.1rem", lineHeight: "1.7", marginBottom: "2.5rem" }}>
@@ -249,13 +249,15 @@ const CollapseComponent = () => {
               borderRadius: "8px",
               boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
             }}>
-              <h3 style={{
-                fontSize: "1.5rem",
-                marginBottom: "1rem",
-                color: isDark ? "#fff" : "#333"
-              }}>
-                {example.title}
-              </h3>
+              <a id={example.id} style={{ display: "block" }}>
+                <h2 style={{
+                  fontSize: "1.5rem",
+                  marginBottom: "1rem",
+                  color: isDark ? "#fff" : "#333"
+                }}>
+                  {example.title}
+                </h2>
+              </a>
               <p style={{
                 fontSize: "1.05rem",
                 lineHeight: "1.6",

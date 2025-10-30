@@ -33,7 +33,7 @@ const SistentCollapse = () => {
   return (
     <SistentLayout title="Collapse">
       <div className="content" style={{ padding: "2rem 0" }}>
-        <a id="Layout" style={{ display: "block", marginBottom: "2rem" }}>
+        <a id="Identity" style={{ display: "block", marginBottom: "2rem" }}>
           <h2 style={{ marginBottom: "1rem" }}>Collapse</h2>
         </a>
         <p style={{ marginBottom: "1rem", fontSize: "1.1rem", lineHeight: "1.6" }}>
@@ -64,12 +64,14 @@ const SistentCollapse = () => {
           </p>
 
           <div style={{ marginBottom: "1rem" }}>
-            <h3 style={{ marginBottom: "1.3rem", fontSize: "1.5rem" }}>Basic Collapse</h3>
-            <p>
-            A simple collapsible section that can be toggled with a button click.
-            </p>
-            <Row $Vcenter $Hcenter style={{ flexDirection: "column", gap: "1rem" }}>
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+          <a id="Basic Collapse" style={{ display: "block" }}>
+            <h2 style={{ marginBottom: "1.3rem", fontSize: "1.5rem" }}>Basic Collapse</h2>
+          </a>
+          <p>
+          A simple collapsible section that can be toggled with a button click.
+          </p>
+          <Row $Vcenter $Hcenter style={{ flexDirection: "column", gap: "1rem" }}>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <Button
                   variant="contained"
                   onClick={() => setExpanded(!expanded)}
@@ -94,12 +96,14 @@ const SistentCollapse = () => {
           </div>
 
           <div style={{ marginBottom: "1rem" }}>
-            <h3 style={{ marginBottom: "1.3rem", fontSize: "1.5rem" }}>Default Expanded</h3>
-            <p>
-            A collapsible section that starts expanded by default.
-            </p>
-            <Row $Vcenter $Hcenter style={{ flexDirection: "column", gap: "1rem" }}>
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+          <a id="Default Expanded" style={{ display: "block" }}>
+            <h2 style={{ marginBottom: "1.3rem", fontSize: "1.5rem" }}>Default Expanded</h2>
+          </a>
+          <p>
+          A collapsible section that starts expanded by default.
+          </p>
+          <Row $Vcenter $Hcenter style={{ flexDirection: "column", gap: "1rem" }}>
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <Button
                   variant="outlined"
                   onClick={() => setExpanded2(!expanded2)}
