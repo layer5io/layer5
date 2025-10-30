@@ -4,6 +4,12 @@ import { HandbookWrapper } from "./adventures.style";
 import TOC from "../../../components/handbook-navigation/index";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import { Link } from "gatsby";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTitle,
+  AccordionBody,
+} from "../../../reusecore/Accordion";
 
 
 const Faq = () => {
@@ -17,58 +23,108 @@ const Faq = () => {
         <Container>
           <div className="content">
             <h2>General FAQs:</h2><br />
-            <h4>Q: Are Layer5’s solutions open source?</h4>
-            <p>A: Yes, all Layer5 projects are licensed under Apache V2. Layer5 also offers extensions to the Meshery project in which Enterprise-centric functionality is commercially offered and supported.</p>
+            <Accordion allowZeroExpanded>
+              <AccordionItem>
+                <AccordionTitle>Is Layer5's software open source?</AccordionTitle>
+                <AccordionBody>
+                  Yes, all Layer5 projects are licensed under Apache V2. Additionally, Layer5 offers enterprise-grade extensions to the Meshery project with commercial support.
+                </AccordionBody>
+              </AccordionItem>
 
-            <h4>Q: I am new to Open Source, where do I begin?</h4>
-            <p>A: You can start by going through the <a href="https://layer5.io/community/newcomers">Newcomers’ Welcome Guide.</a></p>
+              <AccordionItem>
+                <AccordionTitle>How can I start contributing to open source?</AccordionTitle>
+                <AccordionBody>
+                  The best way to begin is by reading our <a href="https://layer5.io/community/newcomers">Newcomers' Welcome Guide</a>, which provides a structured path for new contributors.
+                </AccordionBody>
+              </AccordionItem>
 
-            <h4>Q: What exactly is a MeshMate?</h4>
-            <p>A:Layer5<Link to="/community/meshmates"> MeshMates </Link>are individuals committed to helping community members be successful contributors. Meshmates are there to guide and support the community members, helping them identify projects they can contribute to depending on their areas of interest, directing them on groups to join and helping them grow in their open-source and cloud native knowledge.</p>
+              <AccordionItem>
+                <AccordionTitle>What is a MeshMate?</AccordionTitle>
+                <AccordionBody>
+                  <Link to="/community/meshmates">MeshMates</Link> are experienced Layer5 community members who mentor and guide new contributors. They help identify suitable projects based on your interests, connect you with relevant groups, and support your growth in open-source and cloud native technologies.
+                </AccordionBody>
+              </AccordionItem>
 
-            <h4>Q: How do I join the mailing list?</h4>
-            <p>A: You can subscribe to the Layer5 mailing <a href="https://layer5.io/subscribe">here.</a></p>
+              <AccordionItem>
+                <AccordionTitle>How can I subscribe to the Layer5 mailing list?</AccordionTitle>
+                <AccordionBody>
+                  You can subscribe to our mailing list by visiting our <a href="https://layer5.io/subscribe">subscription page</a>.
+                </AccordionBody>
+              </AccordionItem>
 
-            <h4>Q: How do I get an internship in Layer5?</h4>
-            <p>A: To best position your candidacy for an internship with Layer5, engage in the community and its projects. Start contributing and keep contributing. Community members who consistently contribute are the first individuals to be awarded internships when new internship opportunities open up - particularly members who are making significantly impactful contributions.</p>
+              <AccordionItem>
+                <AccordionTitle>How can I secure an internship at Layer5?</AccordionTitle>
+                <AccordionBody>
+                  The best path to an internship at Layer5 is through active community participation and consistent contributions. We prioritize offering internships to community members who demonstrate dedication and make meaningful contributions to our projects.
+                </AccordionBody>
+              </AccordionItem>
 
-            <h4>Q: How do I follow up on the meetings?</h4>
-            <p>A: To follow up on the community meetings, you can view and add the <a href="https://bit.ly/2SbrRhe">community calendar</a> to your calendar list.</p>
+              <AccordionItem>
+                <AccordionTitle>How can I stay updated with community meetings?</AccordionTitle>
+                <AccordionBody>
+                  You can stay informed about our community meetings by adding the <a href="https://bit.ly/2SbrRhe">Layer5 community calendar</a> to your personal calendar.
+                </AccordionBody>
+              </AccordionItem>
 
-            <h4>Q: I see works of other contributors being highlighted, will my contributions be highlighted too?</h4>
-            <p>A: We might not get to everyone, but we try to elevate the works of all of our contributors. All of our community members are proud of their work and so are we! We want their work and names to be recognized across our collective technology industry. Be sure to follow and engage with the <a href="https://twitter.com/layer5">Twitter,</a><a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1"> Youtube,</a> and <a href="https://www.linkedin.com/company/layer5/">Linkedin</a> accounts.</p>
+              <AccordionItem>
+                <AccordionTitle>Will my contributions be recognized by the community?</AccordionTitle>
+                <AccordionBody>
+                  We actively celebrate our contributors' achievements and work to highlight their contributions across the technology industry. While we may not feature every contribution, we regularly showcase community work through our <a href="https://twitter.com/layer5">Twitter</a>, <a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1">YouTube</a>, and <a href="https://www.linkedin.com/company/layer5/">LinkedIn</a> channels.
+                </AccordionBody>
+              </AccordionItem>
 
-            <h4>Q: I am not a coder, can I contribute too?</h4>
-            <p>A: Some community members join to contribute to open source projects, others jump in to put those projects to use, some are here to help cultivate and steward our community, while others are here just to hangout and absorb. All members are most welcome. Be sure to introduce yourself in the Layer5<a href="https://slack.layer5.io"> slack </a>and let other community members get acquainted with you and vice-versa.</p>
+              <AccordionItem>
+                <AccordionTitle>Can I contribute without coding experience?</AccordionTitle>
+                <AccordionBody>
+                  Absolutely! Our community welcomes diverse contributions. Whether you're interested in documentation, community management, design, or just learning, there's a place for you. Join us on <a href="https://slack.layer5.io">Slack</a> to connect with fellow community members and find your niche.
+                </AccordionBody>
+              </AccordionItem>
 
-            <h4>Q: How should I approach assigning and working on issues within the community?</h4>
-            <p>A: To ensure efficiency and positive collaboration, please follow these guidelines:</p>
-            <ul>
-              <li>Assignment Confirmation: Verify issue validity to avoid wasted effort and address only relevant problems.</li>
-              <li>Avoiding Conflict: Treat fellow contributors kindly, respecting their contributions to foster a harmonious environment and maintain project momentum.</li>
-              <li>Minimize Maintainer Burden: Adhere to guidelines to reduce maintainers' time spent on clarifications and resolving conflicts, enabling them to focus on essential tasks.</li>
-            </ul>
-            <h4>Q: What should I consider when assigning issues to contributors?</h4>
-            <p>A: When assigning issues, follow these principles:</p>
-            <ul>
-              <li>Valid Issue: Assign issues that require attention.</li>
-              <li>Fix the Issue: Prioritize resolving them promptly.</li>
-              <li>Assignment Order: Generally chronological, with exceptions:</li>
-              <ul>
-                <li>Unqualified to perform this task currently.</li>
-                <li>Unavailable and/or incapable of performing the task promptly.</li>
-                <li>Lack of context when another contributor has it.</li>
-                <li>Requesting contributor has existing open assignments.</li>
-              </ul>
-            </ul>
-            <p>These guidelines aim to create a supportive and efficient community where everyone can contribute effectively.</p>
+              <AccordionItem>
+                <AccordionTitle>What is the best approach to working on community issues?</AccordionTitle>
+                <AccordionBody>
+                  <p>For effective collaboration, please follow these guidelines:</p>
+                  <ul>
+                    <li>Verify Issue Relevance: Ensure the issue is valid and currently needed before investing time.</li>
+                    <li>Foster Positive Collaboration: Maintain respectful communication and support project momentum through constructive interactions.</li>
+                    <li>Follow Established Processes: Help maintainers focus on core tasks by adhering to community guidelines and documentation.</li>
+                  </ul>
+                </AccordionBody>
+              </AccordionItem>
 
+              <AccordionItem>
+                <AccordionTitle>What are the key considerations when assigning issues?</AccordionTitle>
+                <AccordionBody>
+                  <p>Follow these principles when assigning issues:</p>
+                  <ul>
+                    <li>Issue Validity: Ensure the issue requires immediate attention.</li>
+                    <li>Resolution Priority: Focus on timely completion of assignments.</li>
+                    <li>Assignment Considerations:</li>
+                    <ul>
+                      <li>Current skill level matches the task requirements</li>
+                      <li>Availability to complete the task in a timely manner</li>
+                      <li>Familiarity with the context and background</li>
+                      <li>Current workload and existing assignments</li>
+                    </ul>
+                  </ul>
+                  <p>These guidelines help maintain an efficient and collaborative community environment.</p>
+                </AccordionBody>
+              </AccordionItem>
 
-            <h4>Q: What if I can’t find an open issue to work on?</h4>
-            <p>A: Check if any assigned issues are stale. ( Assigned some time back, but no discussions have happened or is not updated for a long time ). If you find such issues, comment to ask if you can help. Alternatively, Look to find the <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+">help-wanted</a> issues.</p>
+              <AccordionItem>
+                <AccordionTitle>How can I find issues to work on?</AccordionTitle>
+                <AccordionBody>
+                  First, check for stale issues (those without recent activity or updates) and ask if you can help. You can also browse our <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+">help-wanted</a> issues for opportunities to contribute.
+                </AccordionBody>
+              </AccordionItem>
 
-            <h4>Q: In addition to the routinely scheduled project meetings, do project contributors ever meet separately to deep-dive on special topics?</h4>
-            <p>A: Yes, outside of the regularly scheduled meetings on the community calendar (meet.layer5.io), there are any number of other meetings that occur to facilitate deeper levels or more concentrated attention to particular bodies of work (e.g. a design spec review). On occasion, these one-off meetings are scheduled in advance and put onto the community calendar, while other other times they are simply self-organized by interested contributors. Often contributors will use Slack huddles or Zoom meetings to facilitate the discussion. If you need a new meeting placed onto the community calendar, please reach out to a <Link to="/community/community-managers">Community Manager</Link></p>
+              <AccordionItem>
+                <AccordionTitle>Do contributors hold special topic discussions outside regular meetings?</AccordionTitle>
+                <AccordionBody>
+                  Yes, in addition to our regular community meetings on the calendar (meet.layer5.io), contributors often organize focused discussions for specific topics or deep-dive sessions. These may be scheduled on the community calendar or arranged impromptu through Slack huddles or Zoom. To schedule a new meeting on the community calendar, contact a <Link to="/community/community-managers">Community Manager</Link>.
+                </AccordionBody>
+              </AccordionItem>
+            </Accordion>
 
 
             {/* <p>Q: Why does the community use slack?</p>
