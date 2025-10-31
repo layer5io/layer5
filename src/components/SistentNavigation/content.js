@@ -99,28 +99,32 @@ export const content = [
   { id: 72, link: "/projects/sistent/components/select/guidance", text: "Select" },
   { id: 73, link: "/projects/sistent/components/select/code", text: "Select" },
 
-  { id: 74, link: "/projects/sistent/components/switch", text: "Switch" },
-  { id: 75, link: "/projects/sistent/components/switch/guidance", text: "Switch" },
-  { id: 76, link: "/projects/sistent/components/switch/code", text: "Switch" },
+  { id: 74, link: "/projects/sistent/components/stepper", text: "Stepper" },
+  { id: 75, link: "/projects/sistent/components/stepper/guidance", text: "Stepper" },
+  { id: 76, link: "/projects/sistent/components/stepper/code", text: "Stepper" },
 
-  { id: 77, link: "/projects/sistent/components/tabs", text: "Tabs" },
-  { id: 78, link: "/projects/sistent/components/tabs/guidance", text: "Tabs" },
-  { id: 79, link: "/projects/sistent/components/tabs/code", text: "Tabs" },
+  { id: 77, link: "/projects/sistent/components/switch", text: "Switch" },
+  { id: 78, link: "/projects/sistent/components/switch/guidance", text: "Switch" },
+  { id: 79, link: "/projects/sistent/components/switch/code", text: "Switch" },
 
-  { id: 80, link: "/projects/sistent/components/text-field", text: "Text Field" },
-  { id: 81, link: "/projects/sistent/components/text-field/guidance", text: "Text Field" },
-  { id: 82, link: "/projects/sistent/components/text-field/code", text: "Text Field" },
+  { id: 80, link: "/projects/sistent/components/tabs", text: "Tabs" },
+  { id: 81, link: "/projects/sistent/components/tabs/guidance", text: "Tabs" },
+  { id: 82, link: "/projects/sistent/components/tabs/code", text: "Tabs" },
 
-  { id: 83, link: "/projects/sistent/components/text-input", text: "Text Input" },
-  { id: 84, link: "/projects/sistent/components/text-input/guidance", text: "Text Input" },
-  { id: 85, link: "/projects/sistent/components/text-input/code", text: "Text Input" },
+  { id: 83, link: "/projects/sistent/components/text-field", text: "Text Field" },
+  { id: 84, link: "/projects/sistent/components/text-field/guidance", text: "Text Field" },
+  { id: 85, link: "/projects/sistent/components/text-field/code", text: "Text Field" },
 
-  { id: 86, link: "/projects/sistent/components/toolbar", text: "Toolbar" },
-  { id: 87, link: "/projects/sistent/components/toolbar/guidance", text: "Toolbar" },
-  { id: 88, link: "/projects/sistent/components/toolbar/code", text: "Toolbar" },
+  { id: 86, link: "/projects/sistent/components/text-input", text: "Text Input" },
+  { id: 87, link: "/projects/sistent/components/text-input/guidance", text: "Text Input" },
+  { id: 88, link: "/projects/sistent/components/text-input/code", text: "Text Input" },
 
-  { id: 89, link: "/projects/sistent/components/tooltip", text: "Tooltip" },
-  { id: 90, link: "/projects/sistent/components/tooltip/guidance", text: "Tooltip" },
-  { id: 91, link: "/projects/sistent/components/tooltip/code", text: "Tooltip" },
+  { id: 89, link: "/projects/sistent/components/toolbar", text: "Toolbar" },
+  { id: 90, link: "/projects/sistent/components/toolbar/guidance", text: "Toolbar" },
+  { id: 91, link: "/projects/sistent/components/toolbar/code", text: "Toolbar" },
+
+  { id: 92, link: "/projects/sistent/components/tooltip", text: "Tooltip" },
+  { id: 93, link: "/projects/sistent/components/tooltip/guidance", text: "Tooltip" },
+  { id: 94, link: "/projects/sistent/components/tooltip/code", text: "Tooltip" },
 
 ];
