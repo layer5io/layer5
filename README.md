@@ -134,6 +134,17 @@ alt="Meshery Catalog" align="left" />
 <br /><br /><br />
 </p>
 
+<!-- Layer 5 academy -->
+<p style="clear:both;">
+<h2><a href="https://cloud.layer5.io/academy">Layer5 Academy</a></h2>
+<a href="https://cloud.layer5.io/academy">
+ <img src=".github/assets/images/Layer5Academy/academy.svg" style="margin:10px;" width="125px" alt="Layer5 Academy" align="left" />
+</a>
+<a href="https://cloud.layer5.io/academy">Layer5 Academy</a> Layer5 Academy is a learning platform built into Layer5 Cloud. It offers structured learning paths, interactive challenges, and professional certifications. Content spans beginner to advanced levels, helping both developers and organizations skill up in cloud native technologies.
+<br /><br /><br/>
+</p>
+<br />
+
 <p style="clear:both;">
 <h1><a name="contributing"></a><a name="community"></a> <a href="https://layer5.io/community">Community</a> and <a href="https://layer5.io/community/handbook">Contributions</a></h1>
 <p> We warmly welcome all contributors! Our projects are community-built and each welcomes open collaboration. As you get started, please review this project's <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">contributing guidelines</a>. Whether you are a user or code contributor and whether you're opening an <a href="/../../issues">issue</a> or a <a href="/../../pulls">pull request</a>, know that any form of your engagement is considered contribution and is appreciated. Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
