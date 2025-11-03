@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
@@ -48,6 +48,12 @@ const codes = [
 const TableCode = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Prevent SSR issues with MUI components
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Sample data
   const basicData = [
@@ -270,17 +276,19 @@ const TableCode = () => {
           </p>
           <div className="showcase">
             <div className="items">
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <ResponsiveDataTable
-                  data={basicData}
-                  columns={basicColumns}
-                  options={basicOptions}
-                  colViews={basicColViews}
-                  tableCols={tableCols}
-                  updateCols={updateCols}
-                  columnVisibility={columnVisibility}
-                />
-              </SistentThemeProvider>
+              {isMounted && (
+                <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                  <ResponsiveDataTable
+                    data={basicData}
+                    columns={basicColumns}
+                    options={basicOptions}
+                    colViews={basicColViews}
+                    tableCols={tableCols}
+                    updateCols={updateCols}
+                    columnVisibility={columnVisibility}
+                  />
+                </SistentThemeProvider>
+              )}
             </div>
             <CodeBlock name="basic-table" code={codes[0]} />
           </div>
@@ -294,17 +302,19 @@ const TableCode = () => {
           </p>
           <div className="showcase">
             <div className="items">
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <ResponsiveDataTable
-                  data={employeeData}
-                  columns={employeeColumns}
-                  options={featuredOptions}
-                  colViews={employeeColViews}
-                  tableCols={tableCols}
-                  updateCols={updateCols}
-                  columnVisibility={columnVisibility}
-                />
-              </SistentThemeProvider>
+              {isMounted && (
+                <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                  <ResponsiveDataTable
+                    data={employeeData}
+                    columns={employeeColumns}
+                    options={featuredOptions}
+                    colViews={employeeColViews}
+                    tableCols={tableCols}
+                    updateCols={updateCols}
+                    columnVisibility={columnVisibility}
+                  />
+                </SistentThemeProvider>
+              )}
             </div>
             <CodeBlock name="advanced-table" code={codes[1]} />
           </div>
@@ -318,17 +328,19 @@ const TableCode = () => {
           </p>
           <div className="showcase">
             <div className="items">
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <ResponsiveDataTable
-                  data={employeeData}
-                  columns={employeeColumns}
-                  options={paginatedOptions}
-                  colViews={employeeColViews}
-                  tableCols={tableCols}
-                  updateCols={updateCols}
-                  columnVisibility={columnVisibility}
-                />
-              </SistentThemeProvider>
+              {isMounted && (
+                <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                  <ResponsiveDataTable
+                    data={employeeData}
+                    columns={employeeColumns}
+                    options={paginatedOptions}
+                    colViews={employeeColViews}
+                    tableCols={tableCols}
+                    updateCols={updateCols}
+                    columnVisibility={columnVisibility}
+                  />
+                </SistentThemeProvider>
+              )}
             </div>
             <CodeBlock name="pagination-search" code={codes[2]} />
           </div>
