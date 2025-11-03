@@ -107,7 +107,7 @@ const Pricing = () => {
       <div className="headers">
         <h1 className="header-heading">Plans For Every Team Size</h1>
 
-        <div style={{ display: "flex", "gap": "1rem", alignItems: "center", "justifyContent": "flex-end", width: "85%" }} >
+        <div className="header-controls" style={{ display: "flex", "gap": "1rem", alignItems: "center", "justifyContent": "flex-end", width: "85%" }} >
           <CurrencySelect currency={currency} setCurrency={setCurrency} />
 
           <Box sx={customToggleButtonStyles.container}>
