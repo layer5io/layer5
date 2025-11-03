@@ -216,7 +216,7 @@ const TableCode = () => {
   return (
     <SistentLayout title="Table">
       <div className="content">
-        <a id="Identity" href="#Identity">
+        <a id="Identity">
           <h2>Table</h2>
         </a>
         <p>
@@ -261,7 +261,7 @@ const TableCode = () => {
             with tabular data, offering built-in features for enhanced user
             experience.
           </p>
-          <a id="Basic Table" href="#Basic Table">
+          <a id="Basic Table">
             <h2>Basic Table</h2>
           </a>
           <p>
@@ -285,7 +285,7 @@ const TableCode = () => {
             <CodeBlock name="basic-table" code={codes[0]} />
           </div>
 
-          <a id="Table with Features" href="#Table with Features">
+          <a id="Table with Features">
             <h2>Table with Features</h2>
           </a>
           <p>
@@ -309,7 +309,7 @@ const TableCode = () => {
             <CodeBlock name="advanced-table" code={codes[1]} />
           </div>
 
-          <a id="Pagination and Search" href="#Pagination and Search">
+          <a id="Pagination and Search">
             <h2>Pagination and Search</h2>
           </a>
           <p>
