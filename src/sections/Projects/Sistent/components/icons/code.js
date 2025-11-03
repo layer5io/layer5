@@ -8,16 +8,6 @@ import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import { CodeBlock } from "../button/code-block";
 
 const codes = [
-  `  import {
-    SistentThemeProvider,
-    KubernetesIcon,
-    DesignIcon,
-  } from "@sistent/sistent";
-  
-  <SistentThemeProvider>
-    <KubernetesIcon fill="#fff" />
-    <DesignIcon fill="#fff" />
-  </SistentThemeProvider>`,
   `  <SistentThemeProvider>
        <KubernetesIcon />
   </SistentThemeProvider>`,
@@ -72,19 +62,6 @@ const IconsCode = () => {
           />
         </div>
         <div className="main-content">
-          <a id="Import and Usage">
-            <h2>Import and Usage</h2>
-          </a>
-          <div className="showcase">
-            <div className="items">
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <KubernetesIcon fill={isDark ? "#fff" : "#000"} />
-                <DesignIcon fill={isDark ? "#fff" : "#000"} />
-              </SistentThemeProvider>
-            </div>
-            <CodeBlock name="import-usage-icons" code={codes[0]} />
-          </div>
-
           <a id="Default Icon">
             <h2>Default Icon</h2>
           </a>
@@ -94,7 +71,7 @@ const IconsCode = () => {
                 <KubernetesIcon />
               </SistentThemeProvider>
             </div>
-            <CodeBlock name="basic-icon" code={codes[1]} />
+            <CodeBlock name="basic-icon" code={codes[0]} />
           </div>
 
           <a id="Custom Size">
@@ -109,7 +86,7 @@ const IconsCode = () => {
                 />
               </SistentThemeProvider>
             </div>
-            <CodeBlock name="sized-icon" code={codes[2]} />
+            <CodeBlock name="sized-icon" code={codes[1]} />
           </div>
         </div>
       </div>
