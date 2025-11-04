@@ -25,11 +25,9 @@ The answer depends entirely on **how your application consumes the ConfigMap**. 
 
 To tell what "kind" you have, you need to look at your Pod or Deployment's YAML definition.
 
------
+## How to Check Your Pod's ConfigMap Consumption
 
-## 🧐 How to Check Your Pod's ConfigMap Consumption
-
-You can find out how a Pod is using a ConfigMap by inspecting its YAML definition. Run this command to get the running YAML for a specific pod:
+You can find out how a Pod is using a ConfigMap by inspecting its YAML definition. 🧐  Run this command to get the running YAML for a specific pod:
 
 ```bash
 kubectl get pod <your-pod-name> -o yaml
@@ -41,8 +39,6 @@ Now, look for two key sections in the `spec.containers` list:
 2.  **Mounted Volumes:** Look for `volumeMounts` and the corresponding `volumes` section at the Pod spec level.
 
 Let's break down what each one means for reloading.
-
------
 
 ## 1. Consumed as Environment Variables
 
@@ -86,7 +82,6 @@ kubectl rollout restart deployment <your-deployment-name>
 
 When the new Pods are created, they will read the *updated* ConfigMap data and set the new environment variables.
 
------
 
 ## 2. Consumed as a Mounted Volume
 
@@ -131,9 +126,8 @@ This method **does support hot-reloading**, but with two important caveats:
 
 If your application only reads its config files on startup, it will behave just like the environment variable method: **it will not see the changes until it is restarted.**
 
------
 
-## Summary: ConfigMap Reload Behavior
+## ConfigMap Reload Behavior Summary
 
 Here’s a simple table to remember the differences:
 
@@ -146,15 +140,17 @@ Here’s a simple table to remember the differences:
 
 If you are using the volume mount method but your application doesn't support live reloading, you can use a "reloader" tool. A popular open-source controller like [**Stakater's Reloader**](https://github.com/stakater/Reloader) can watch for ConfigMap changes and automatically trigger a rolling restart of any Deployment that uses it. This gives you the best of both worlds: configuration in files and automatic updates for apps that can't reload on their own.
 
------
+<br />
+<hr />
+<br />
+
+## Skip the CLI. Power up with Kanvas
 
 Alternatively, you can skip the YAML editing and make these changes visually. That is, if you're managing your Kubernetes cluster using Kanvas. Let's break down how to use it to manage your resources, like a `ConfigMap`. 
 
 ## 🤔 What is Kanvas Designer?
 
 [Layer5's Kanvas](https://layer5.io/kanvas) is a powerful tool for designing, deploying, and managing your Kubernetes and Cloud infrastructure and workloads from a visual interface. Instead of writing hundreds of lines of YAML by hand, you build a **Design**. This design is a visual representation of your components (`Deployment`, `Service`, `ConfigMap`, etc.) and their relationships.
-
------
 
 ## 🎨 How to Update a ConfigMap in Kanvas Designer
 
