@@ -5,7 +5,7 @@ import { useLocation } from "@reach/router";
 import { SistentLayout } from "../../sistent-layout";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
-import { SistentThemeProvider, Menu, MenuItem, Button } from "@sistent/sistent";
+import { SistentThemeProvider, Menu, MenuItem, MenuList, Button } from "@sistent/sistent";
 import { CodeBlock } from "../button/code-block";
 
 const codes = [
@@ -60,6 +60,21 @@ const codes = [
          ))}
        </Menu>
   </SistentThemeProvider>`,
+  // Standalone MenuList
+  `  <SistentThemeProvider>
+       <MenuList autoFocusItem>
+         <MenuItem selected>Selected</MenuItem>
+         <MenuItem>Regular</MenuItem>
+         <MenuItem disabled>Disabled</MenuItem>
+       </MenuList>
+  </SistentThemeProvider>`,
+  // MenuItem as link
+  `  <SistentThemeProvider>
+       <MenuList>
+         <MenuItem component="a" href="#profile">Profile</MenuItem>
+         <MenuItem component="a" href="#account">My account</MenuItem>
+       </MenuList>
+  </SistentThemeProvider>`,
 ];
 
 const MenuCode = () => {
@@ -97,7 +112,9 @@ const MenuCode = () => {
           <h2>Menu</h2>
         </a>
         <p>
-          The Menu component displays a list of choices on a temporary surface anchored to a trigger.
+          <code>Menu</code> is the anchored container that manages positioning, anchoring, focus, and
+          open/close behavior. It typically wraps a <code>MenuList</code>, which renders the list of
+          <code> MenuItem</code> options and handles keyboard navigation.
         </p>
 
         <div className="filterBtns">
@@ -214,6 +231,41 @@ const MenuCode = () => {
               </SistentThemeProvider>
             </div>
             <CodeBlock name="long-menu" code={codes[3]} />
+          </div>
+
+          {/* Standalone MenuList */}
+          <a id="Standalone MenuList">
+            <h3>Standalone MenuList</h3>
+          </a>
+          <p>Use <code>MenuList</code> directly to manage keyboard focus and selection among items without an anchored surface.</p>
+          <div className="showcase">
+            <div className="items">
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                <MenuList autoFocusItem>
+                  <MenuItem selected>Selected</MenuItem>
+                  <MenuItem>Regular</MenuItem>
+                  <MenuItem disabled>Disabled</MenuItem>
+                </MenuList>
+              </SistentThemeProvider>
+            </div>
+            <CodeBlock name="standalone-menulist" code={codes[4]} />
+          </div>
+
+          {/* MenuItem as link */}
+          <a id="MenuItem as Link">
+            <h3>MenuItem as Link</h3>
+          </a>
+          <p>Render <code>MenuItem</code> as an anchor by setting <code>component="a"</code> and <code>href</code>.</p>
+          <div className="showcase">
+            <div className="items">
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+                <MenuList>
+                  <MenuItem component="a" href="#profile">Profile</MenuItem>
+                  <MenuItem component="a" href="#account">My account</MenuItem>
+                </MenuList>
+              </SistentThemeProvider>
+            </div>
+            <CodeBlock name="menuitem-link" code={codes[5]} />
           </div>
         </div>
       </div>
