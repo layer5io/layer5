@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Button from "../../reusecore/Button";
 import { ReactComponent as CloseIcon } from "./closeIcon.svg";
-import popupImageSmall from "./power-of-meshery-small.png";
+import popupImageSmall from "./power-of-meshery-small.webp";
 import CornerPopupWrapper from "./popup.style";
 
 const CornerPopup = () => {

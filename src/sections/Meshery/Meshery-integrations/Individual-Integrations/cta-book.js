@@ -63,7 +63,7 @@ const CTA_Book = () => {
         <Col $xs={12} $sm={6} className="book_col text">
           <p className="cover">Services-first Network</p>
           <h1>
-            Learn about<br></br>cloud-native architecture.
+            Learn about<br></br>cloud native architecture
           </h1>
           <p>
             Service meshes provide intent-based networking for microservices

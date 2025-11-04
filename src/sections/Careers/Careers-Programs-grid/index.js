@@ -7,7 +7,7 @@ import Image from "../../../components/image";
 import { ProgramsPageWrapper } from "./ProgramGrid.style";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
-const Five_image = "../img/open-source.png";
+const Five_image = "../img/open-source.webp";
 
 const ProgramsGrid = ({ hide_path, sub_section }) => {
   const data = useStaticQuery(
