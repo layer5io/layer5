@@ -85,8 +85,8 @@ const data = {
       answer: [
         "Layer5 Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at privacy@layer5.io",
       ],
-      link: "https://layer5.io/company/legal",
-      linktext: "See Layer5 Trust Center"
+      link: "https://layer5.io/company/legal/sub-processors",
+      linktext: "Sub-Processors policy"
     },
     {
       question: "What data is collection about me, how is it used and how long is it retained?",
@@ -95,8 +95,8 @@ const data = {
       answer: [
         "Layer5 Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at hello@layer5.io",
       ],
-      link: "https://layer5.io/company/legal/sub-processors",
-      linktext: "Open Sub-processors policy in Trust Center"
+      link: "https://layer5.io/company/legal/privacy",
+      linktext: "Privacy Policy"
     },
     {
       question: "Is it possible to migrate from managed Layer5 Cloud to self-hosted Layer5 Cloud on-premises?",
