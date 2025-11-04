@@ -1,0 +1,154 @@
+---
+title: "How can you tell what kind of Kubernetes Configmap you have?"
+subtitle: "Understanding when changes are reloaded"
+date: 2025-11-03 10:30:05 -0530
+author: Lee Calcote
+thumbnail: ./image.webp
+darkthumbnail: ./image.webp
+category: "Kubernetes"
+tags:
+  - devops
+  - kubernetes
+type: Blog
+resource: true
+published: true
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import { Link } from "gatsby";
+import image from "./image.webp";
+
+<BlogWrapper>
+
+A common point of confusion when working with Kubernetes is understanding how `ConfigMap` updates are handled. You’ve pushed a change to your ConfigMap, but your application isn't seeing the new values. What's going on?
+
+The answer depends entirely on **how your application consumes the ConfigMap**. There isn't a "type" of ConfigMap object itself, but rather two distinct *methods of consumption* by a Pod, and each has drastically different behavior regarding updates.
+
+To tell what "kind" you have, you need to look at your Pod or Deployment's YAML definition.
+
+-----
+
+## 🧐 How to Check Your Pod's ConfigMap Consumption
+
+You can find out how a Pod is using a ConfigMap by inspecting its YAML definition. Run this command to get the running YAML for a specific pod:
+
+```bash
+kubectl get pod <your-pod-name> -o yaml
+```
+
+Now, look for two key sections in the `spec.containers` list:
+
+1.  **Environment Variables:** Look for `env` or `envFrom`.
+2.  **Mounted Volumes:** Look for `volumeMounts` and the corresponding `volumes` section at the Pod spec level.
+
+Let's break down what each one means for reloading.
+
+-----
+
+## 1\. Consumed as Environment Variables
+
+This is when your Pod's YAML injects ConfigMap data directly as environment variables for the container.
+
+### How to Identify It
+
+In your Pod spec, you'll see blocks like this:
+
+```yaml
+# ...
+spec:
+  containers:
+  - name: my-app-container
+    image: my-app
+    env: # <-- Look here
+      - name: MY_CONFIG_KEY
+        valueFrom: # <-- Or here
+          configMapKeyRef:
+            name: my-special-config
+            key: some.config.key
+    envFrom: # <-- Or here
+      - configMapRef:
+          name: my-special-config
+# ...
+```
+
+If you see `env` or `envFrom` pointing to a `configMapKeyRef` or `configMapRef`, your application is consuming the ConfigMap as environment variables.
+
+### Reload Behavior: 🛑 No Hot-Reload
+
+This is the most critical difference: **Changes to a ConfigMap are NOT reflected in running Pods that use them as environment variables.**
+
+Environment variables are set by the container runtime *only when the container is created*. They are immutable for the life of that running process.
+
+**How to Apply Changes:** To make the application see the new ConfigMap values, you **must restart the Pod**. The simplest way to do this for a `Deployment` is with a rolling restart:
+
+```bash
+kubectl rollout restart deployment <your-deployment-name>
+```
+
+When the new Pods are created, they will read the *updated* ConfigMap data and set the new environment variables.
+
+-----
+
+## 2. Consumed as a Mounted Volume
+
+This method mounts your ConfigMap as one or more files inside your Pod's filesystem. Your application is programmed to read its configuration from these files (e.g., `/app/config/settings.properties`).
+
+### How to Identify It
+
+You'll see two corresponding sections in your Pod spec:
+
+1.  `spec.containers.volumeMounts`: This tells the container where to mount the volume.
+2.  `spec.volumes`: This defines the volume itself and links it to the ConfigMap.
+
+
+```yaml
+# ...
+spec:
+  containers:
+  - name: my-app-container
+    image: my-app
+    volumeMounts: # <-- Look here
+    - name: config-volume
+      mountPath: /etc/config
+  volumes: # <-- And here
+  - name: config-volume
+    configMap:
+      name: my-special-config
+# ...
+```
+
+If you see this `volumes` and `volumeMounts` pairing, your application is consuming the ConfigMap as files.
+
+### Reload Behavior: ✅ Automatic... With a Catch
+
+This method **does support hot-reloading**, but with two important caveats:
+
+1.  **There is a delay.** When you update the ConfigMap object, the `kubelet` on the node is responsible for updating the mounted files. This is not instantaneous. It relies on a periodic sync cycle, and the total delay can be **60 to 90 seconds (or even longer)** before the files at `mountPath` are actually updated.
+
+2.  **Your application must support it.** Kubernetes *only* updates the files on disk. It does **not** send a signal (like `SIGHUP`) to the process or restart the container. Your application must be built to:
+
+      * Watch the configuration files for changes (using a library like `fsnotify`).
+      * Periodically re-read the configuration files on its own timer.
+
+If your application only reads its config files on startup, it will behave just like the environment variable method: **it will not see the changes until it is restarted.**
+
+-----
+
+## Summary: ConfigMap Reload Behavior
+
+Here’s a simple table to remember the differences:
+
+| Consumption Method | How to Identify in Pod YAML | Are Changes Updated in Running Pod? | How Are Changes Seen? |
+| :--- | :--- | :--- | :--- |
+| **Environment Variables** | `spec.containers.env` <br> `spec.containers.envFrom` | **No** ❌ | Pod must be **restarted**. |
+| **Mounted Volume** | `spec.containers.volumeMounts` <br> `spec.volumes` | **Yes** ✅ (with delay) | Kubelet updates files. **Application must be coded** to reload the updated file. |
+
+### What If I Need Automatic Restarts?
+
+If you are using the volume mount method but your application doesn't support live reloading, you can use a "reloader" tool. A popular open-source controller like [**Stakater's Reloader**](https://github.com/stakater/Reloader) can watch for ConfigMap changes and automatically trigger a rolling restart of any Deployment that uses it. This gives you the best of both worlds: configuration in files and automatic updates for apps that can't reload on their own.
+
+-----
+
+This [Kubernetes ConfigMap Tutorial video](https://www.youtube.com/watch?v=P7mHN_PUz_w) provides a great visual walkthrough of how to create and use ConfigMaps, including injecting them as both volumes and environment variables.
+
+</BlogWrapper>
