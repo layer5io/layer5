@@ -217,7 +217,14 @@ const componentsData = [
     "src": "/chip",
   },
   {
-    id: 29,
+    "id": 29,
+    "name": "Collapse",
+    "description": "The Collapse component is used to create expandable/collapsible content sections. It smoothly animates the height of its children from zero to full height when expanded.",
+    "url": "/projects/sistent/components/collapse",
+    "src": "/collapse",
+  },
+  {
+    id: 30,
     name: "IconButton",
     description: "IconButton provides an interactive button component that displays only an icon, ideal for compact UIs where space is limited and actions are easily recognizable through iconography.",
     url: "/projects/sistent/components/iconbutton",
