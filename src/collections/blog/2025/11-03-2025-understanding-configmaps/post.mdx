@@ -140,8 +140,8 @@ Here’s a simple table to remember the differences:
 
 | Consumption Method | How to Identify in Pod YAML | Are Changes Updated in Running Pod? | How Are Changes Seen? |
 | :--- | :--- | :--- | :--- |
-| **Environment Variables** | `spec.containers.env` <br> `spec.containers.envFrom` | **No** ❌ | Pod must be **restarted**. |
-| **Mounted Volume** | `spec.containers.volumeMounts` <br> `spec.volumes` | **Yes** ✅ (with delay) | Kubelet updates files. **Application must be coded** to reload the updated file. |
+| **Environment Variables** | `spec.containers.env` `spec.containers.envFrom` | **No** ❌ | Pod must be **restarted**. |
+| **Mounted Volume** | `spec.containers.volumeMounts` `spec.volumes` | **Yes** ✅ (with delay) | Kubelet updates files. **Application must be coded** to reload the updated file. |
 
 ### What If I Need Automatic Restarts?
 
@@ -149,6 +149,43 @@ If you are using the volume mount method but your application doesn't support li
 
 -----
 
-This [Kubernetes ConfigMap Tutorial video](https://www.youtube.com/watch?v=P7mHN_PUz_w) provides a great visual walkthrough of how to create and use ConfigMaps, including injecting them as both volumes and environment variables.
+Alternatively, you can skip the YAML editing and make these changes visually. That is, if you're managing your Kubernetes cluster using Kanvas. Let's break down how to use it to manage your resources, like a `ConfigMap`. 
+
+## 🤔 What is Kanvas Designer?
+
+[Layer5's Kanvas](https://layer5.io/kanvas) is a powerful tool for designing, deploying, and managing your Kubernetes and Cloud infrastructure and workloads from a visual interface. Instead of writing hundreds of lines of YAML by hand, you build a **Design**. This design is a visual representation of your components (`Deployment`, `Service`, `ConfigMap`, etc.) and their relationships.
+
+-----
+
+## 🎨 How to Update a ConfigMap in Kanvas Designer
+
+Updating a `ConfigMap` through the Designer follows this "design-first" workflow. You don't just "edit" the live resource in the cluster; you **update your design** and then **(re-)deploy it**.
+
+Here is the step-by-step process:
+
+1.  **Open Kanvas Designer:** Log in to your Kanvas UI and navigate to Designer mode (the default mode).
+
+2.  **Load Your Design:** Open the design file that contains the `ConfigMap` you want to edit. If you don't have a design yet, you can import your existing `ConfigMap` from your cluster directly onto the canvas.
+
+3.  **Find the ConfigMap Component:** On the visual canvas, find the block representing your `ConfigMap`. It will have the Kubernetes icon and the "ConfigMap" kind.
+
+4.  **Edit the Configuration:** Click on the component. A configuration panel will slide out, often with a 'Configure' tab or an editor icon. This will show you the key/value pairs for that *specific* `ConfigMap` resource.
+
+5.  **Deploy the Design:** Changes are automatically saved in your design as you make them. Use the **Deploy** button to send your entire design to your target Kubernetes or Cloud environment. Kanvas will calculate the difference (a "diff") and apply the updated `ConfigMap` manifest to your cluster. This action is the equivalent of running `kubectl` server-side apply using your design.
+
+-----
+
+## 🛑 The Most Important Part: Reload Behavior
+
+This is critical: **Using Kanvas Designer to update a ConfigMap does NOT change how your application reloads it.**
+
+Deploying from Kanvas is just a friendly, visual way to run `kubectl apply`. The rules we discussed in our previous post about ConfigMap behavior still apply completely:
+
+  * **If your Pod consumes the ConfigMap as Environment Variables:** Your running Pods **will not** see the change. You must still restart them (e.g., `kubectl rollout restart deployment ...`).
+  * **If your Pod consumes the ConfigMap as a Mounted Volume:** The files inside the Pod **will** be updated (after the kubelet sync delay), but your application *still* needs to be smart enough to re-read that file from disk.
+
+Kanvas Designer simplifies the *applying* of the change and helps you visually manage your application's state, but it doesn't change the fundamental Kubernetes behavior of *how* that change is consumed by your workloads.
+
+</BlogWrapper>
 
 </BlogWrapper>
