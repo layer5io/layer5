@@ -184,7 +184,7 @@ const componentsData = [
     id: 24,
     name: "Toolbar",
     description:
-    "The toolbar is a horizontal container for grouping interactive elements like buttons, filters, or navigation controls, typically placed at the top of a UI section.",
+      "The toolbar is a horizontal container for grouping interactive elements like buttons, filters, or navigation controls, typically placed at the top of a UI section.",
     url: "/projects/sistent/components/toolbar",
     src: "/toolbar",
   },
@@ -217,11 +217,32 @@ const componentsData = [
     "src": "/chip",
   },
   {
-    id: 29,
+    "id": 29,
+    "name": "Collapse",
+    "description": "The Collapse component is used to create expandable/collapsible content sections. It smoothly animates the height of its children from zero to full height when expanded.",
+    "url": "/projects/sistent/components/collapse",
+    "src": "/collapse",
+  },
+  {
+    id: 30,
     name: "IconButton",
     description: "IconButton provides an interactive button component that displays only an icon, ideal for compact UIs where space is limited and actions are easily recognizable through iconography.",
     url: "/projects/sistent/components/iconbutton",
     src: "/iconbutton",
+  },
+  {
+    "id": 30,
+    "name": "FormControlLabel",
+    "description": "A control + label pair used for checkboxes or radio buttons.",
+    "url": "/projects/sistent/components/formcontrollabel",
+    "src": "/formcontrollabel",
+  },
+  {
+    id: 31,
+    name: "Stepper",
+    description: "Stepper provides a way to display progress through a sequence of logical steps.",
+    url: "/projects/sistent/components/stepper",
+    src: "/stepper",
   },
 ];
 
