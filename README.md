@@ -43,7 +43,7 @@
 <a href="https://layer5.io/kanvas">
   <img src="src/assets/images/kanvas/icon-only/kanvas-icon-color.svg" alt="Kanvas logo" width="125px" style="margin:10px;" align="left" />
 </a>
-<a href="https://layer5.io/kanvas">Kanvas</a> is an end-to-end management platform, here to help teams understand problems, deploy designs, apply patterns, manage and operate your deployments and services in real-time.
+<a href="https://kanvas.new">Kanvas</a> is an end-to-end management platform, here to help teams understand problems, deploy designs, apply patterns, manage and operate your deployments and services in real-time.
 <br /><br /><br/>
 </p>
 <br />
@@ -173,9 +173,9 @@ alt="Meshery Catalog" align="left" />
 </div>
 <br />
 <ul>
-  <li>Find us on Twitter: <a href="https://twitter.com/layer5">@layer5</a>, <a href="https://twitter.com/mesheryio">@mesheryio</a>, and <a href="https://twitter.com/smp_spec">@smp_spec</a>.</li>
-  <li>Visit us on LinkedIn: <a href="https://www.linkedin.com/company/layer5">Layer5</a>, <a href="https://www.linkedin.com/showcase/meshery/">Meshery</a>, and <a href="https://www.linkedin.com/showcase/service-mesh-performance">Cloud Native Performance</a>.</li>
-  <li>Subscribe on <a href="http://youtube.com/Layer5io?sub_confirmation=1">Youtube</a>.</li>
+  <li>Find us on Twitter: <a href="https://x.com/layer5">@layer5</a>, <a href="https://x.com/mesheryio">@mesheryio</a>, and <a href="https://x.com/kanvas-new">@kanvas-new</a>.</li>
+  <li>Visit us on LinkedIn: <a href="https://www.linkedin.com/company/layer5">Layer5</a>, <a href="https://www.linkedin.com/showcase/meshery/">Meshery</a>, and <a href="https://www.linkedin.com/showcase/kanvas-new">Kanvas</a>.</li>
+  <li>Subscribe on <a href="https://www.youtube.com/Layer5io?sub_confirmation=1">Layer5 Youtube</a>, <a href="https://www.youtube.com/@mesheryio?sub_confirmation=1">Meshery Youtube</a></li>
 </ul>
 
 ### License
