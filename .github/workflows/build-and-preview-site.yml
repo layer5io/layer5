@@ -8,32 +8,46 @@ jobs:
   site-preview:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@master
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
           fetch-depth: 1
 
-      - name: Install and Build 🔧
+      - name: Install and Build
         run: |
           npm install --legacy-peer-deps
           node -v
           npm run version
           npm run noIndex
 
-      - name: Broken Link Check 🔗
+      - name: Broken Link Check
         uses: technote-space/broken-link-checker-action@v2
         with:
-          target: ./public/**/*.html  
+          target: ./public/**/*.html
 
       - name: Zip Site
         run: bash ./script.sh
 
+      - name: Verify public zip
+        run: |
+          echo "Workspace files:"
+          ls -la
+          echo "Check public-dir.zip exists:"
+          if [ -f ./public-dir.zip ]; then
+            echo "Found public-dir.zip"
+          else
+            echo "ERROR: public-dir.zip not found"
+            ls -la public*
+            exit 1
+          fi
+
       - name: Upload files
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@v3
         with:
           name: public-dir
           path: ./public-dir.zip
           retention-days: 1
+
       - name: Trigger Inner workflow
         run: echo "triggering inner workflow"
