@@ -83,6 +83,8 @@ alt="Meshery Catalog" align="left" />
 
 
 <hr />
+<br />
+<hr />
 
 <p style="clear:both;">
 <h2><a href="https://github.com/service-mesh-patterns">Cloud Native Patterns</a></h2>
