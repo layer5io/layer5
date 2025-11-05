@@ -243,10 +243,10 @@ const Connect = () => {
               <p className="channels-para">
                 <TwitterIcon className="twitter" />
                 &nbsp;&nbsp;
-                <a href="https://twitter.com/layer5">@layer5</a>,&nbsp;
-                <a href="https://twitter.com/mesheryio">@mesheryio</a>
+                <a href="https://x.com/layer5">@layer5</a>,&nbsp;
+                <a href="https://x.com/mesheryio">@mesheryio</a>
                 &nbsp;and&nbsp;
-                <a href="https://twitter.com/smp_spec">@smp_spec</a>
+                <a href="https://x.com/kanvas-new">@kanvas-new</a>
               </p>
               <p className="channels-para">
                 <img className="channels-img" src={mail_icon} alt="mail" />
@@ -263,8 +263,12 @@ const Connect = () => {
                   alt="youtube"
                 />
                 &nbsp;&nbsp;
-                <a href="https://www.youtube.com/c/Layer5io?sub_confirmation=1">
-                  Subscribe on Youtube
+                <a href="https://www.youtube.com/Layer5io?sub_confirmation=1">
+                  Subscribe to Layer5 Youtube
+                </a>,
+                &nbsp;
+                <a href="https://www.youtube.com/@mesheryio?sub_confirmation=1">
+                  Subscribe to Meshery Youtube
                 </a>
               </p>
               <p className="channels-para">
