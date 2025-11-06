@@ -10,6 +10,7 @@ import InlineQuotes from "../../components/Inline-quotes";
 import YashSharmaIMg from "../../collections/members/yash-sharma/yash-sharma.webp";
 import NicJacksonImg from "../../collections/members/nicholas-jackson/nic-jackson.webp";
 import RutkIkegahImg from "../../collections/members/ruth-ikegah/ruth-ikegah.jpg";
+import DhruvSharmaImg from "./images/Dhruv-Sharma.png"
 
 
 const DevrelContentWrapper = styled.div`
@@ -293,6 +294,13 @@ const DevrelContent = () => {
             <Col $md={6} className="devrel-image">
               <PictureSlider />
             </Col>
+          </Row>
+          <Row>
+            <InlineQuotes
+              person="Dhruv Sharma"
+              title="Principal Platform Product Manager at GuideWire"
+              quote="This wonderful product is a vendor-neutral self-service engineering platform that scales intent—not toil—by turning architecture into a consistent design-to-operate pipeline."
+              image={DhruvSharmaImg}/>
           </Row>
           <Row className="devrel">
             <Col $md={6} className="devrel-image">
