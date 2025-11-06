@@ -10,7 +10,7 @@ import InlineQuotes from "../../components/Inline-quotes";
 import YashSharmaIMg from "../../collections/members/yash-sharma/yash-sharma.webp";
 import NicJacksonImg from "../../collections/members/nicholas-jackson/nic-jackson.webp";
 import RutkIkegahImg from "../../collections/members/ruth-ikegah/ruth-ikegah.jpg";
-import DhruvSharmaImg from "./images/Dhruv-Sharma.png"
+import DhruvSharmaImg from "./images/Dhruv-Sharma.png";
 
 
 const DevrelContentWrapper = styled.div`
