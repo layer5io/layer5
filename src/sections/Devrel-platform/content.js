@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import IntegrationDesigner from "./images/layer5-kanvas-designer.webp";
-import ProfileImg from "./images/build-your-profile.png";
+import ProfileImg from "./images/build-your-profile.webp";
 import PictureSlider from "./picture-slider";
 // import Button from "../../../reusecore/Button";
 import JourneySection from "./JourneySection";
