@@ -447,7 +447,7 @@ const ServiceMesh = () => {
       <Row className="book_cover">
         <Col $xs={12} $sm={6} className="book_col text">
           <p className="cover">Services-first Network</p>
-          <h1>What is A <br></br> Service Mesh?</h1>
+          <h1>Learn about <br></br>cloud-native architecture.</h1>
           <p>
             Service meshes provide intent-based networking for microservices describing desired behavior of the network in the face of constantly changing conditions and network topology.
           </p>

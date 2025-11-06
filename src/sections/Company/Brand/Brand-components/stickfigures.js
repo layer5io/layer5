@@ -5,7 +5,7 @@ import { Col, Row } from "../../../../reusecore/Layout";
 import SFL from "../../../../assets/images/five/SVG/stick-figures.svg";
 import teamOfFives from "../../../../assets/images/five/SVG/team-of-fives.svg";
 import resourcesSign from "../../../../assets/images/five/SVG/resources-sign.svg";
-import mesheryWorship from "../../../../assets/images/five/meshery-worship.png";
+import mesheryWorship from "../../../../assets/images/five/meshery-worship.webp";
 // import f1 from "../../../../assets/images/five/SVG/1.svg";
 // import f2 from "../../../../assets/images/five/SVG/2.svg";
 // import f3 from "../../../../assets/images/five/SVG/3.svg";

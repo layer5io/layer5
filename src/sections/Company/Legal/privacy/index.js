@@ -11,6 +11,7 @@ import {
   TableHead,
   TableBody,
   SistentThemeProvider,
+  createTheme,
 } from "@sistent/sistent";
 import TOC from "../../../../components/legal-navigation/index";
 import TocPagination from "../../../../components/legal-navigation/TocPagination";
@@ -39,12 +40,13 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   padding: "0.75rem",
   borderBottom: `1px solid ${theme.palette.divider}`,
   borderRadius: 0,
-
+  fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
 }));
 
 const StyledHeaderCell = styled(StyledTableCell)(() => ({
   fontWeight: 600,
   backgroundColor: "transparent",
+  fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
 }));
 
 const privacyData = [
@@ -132,6 +134,13 @@ const privacyData = [
 const Privacy = () => {
   const { isDark } = useStyledDarkMode();
 
+  // Create custom theme with Qanelas Soft font family
+  const customTheme = createTheme({
+    typography: {
+      fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
+    },
+  });
+
   return (
     <TermsWrapper>
       <div className="page-header-section">
@@ -178,7 +187,7 @@ const Privacy = () => {
               <p>
               We process your personal data for a variety of purposes depending on how you interact with us. The table below details what we collect, why we collect it, and the legal justification (lawful basis) under the GDPR for doing so.
               </p>
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"} theme={customTheme}>
                 <Row className="table-container" $Hcenter>
                   <Col md={12} sx={{ px: 0 }}>
                     <StyledTableContainer>
