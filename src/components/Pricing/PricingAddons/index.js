@@ -20,7 +20,7 @@ import {
   TextField,
   useTheme,
   SistentThemeProvider
-} from  "@sistent/sistent";
+} from "@sistent/sistent";
 import { Calculate, CheckCircle, Cloud, Group } from "@mui/icons-material";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 import { getAddOns } from "./pricingData";
@@ -56,6 +56,11 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
   const addOns = React.useMemo(() => {
     return getAddOns();
   }, []);
+
+  const formatLearners = (learners) => {
+  if (typeof learners === "string") return learners;
+  return learners.toLocaleString("en-US");
+};
 
   // Helper function to render icons based on type
   const renderIcon = (iconType) => {
@@ -149,14 +154,11 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
     }
 
     let targetSubAddon = null;
-    let targetSubAddonName = "";
 
     if (selectedSubAddOns["academy-practical"]) {
       targetSubAddon = selectedAddon.subAddOns?.find(sub => sub.id === "academy-practical");
-      targetSubAddonName = "with Practical Learning";
     } else {
       targetSubAddon = selectedAddon.subAddOns?.find(sub => sub.id === "academy-theory");
-      targetSubAddonName = "";
     }
 
     if (!targetSubAddon?.planLink || !targetSubAddon.pricing?.[quantityIndex]) {
@@ -171,7 +173,6 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
     );
 
     if (matchingPlanLink) {
-      const enterpriseUserSeats = enterpriseUsers > 0 ? ` and ${enterpriseUsers} enterprise user${enterpriseUsers > 1 ? "s" : ""}` : "";
       return {
         link: matchingPlanLink.link,
         name: "Subscribe"
@@ -253,9 +254,9 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                                   {addon.id === "academy"
                                     ? addon.description
                                     : (() => {
-                                        const period = isYearly ? "/year" : "/month";
-                                        return `${formatPrice(isYearly ? addon.yearlyPrice : addon.monthlyPrice)} per ${addon.unitLabel.slice(0, -1)}${period}`;
-                                      })()
+                                      const period = isYearly ? "/year" : "/month";
+                                      return `${formatPrice(isYearly ? addon.yearlyPrice : addon.monthlyPrice)} per ${addon.unitLabel.slice(0, -1)}${period}`;
+                                    })()
                                   }
                                 </Typography>
                               </Box>
@@ -349,7 +350,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                               const totalPrice = pricePerUser * option.learners * multiplier;
                               const period = isYearly ? "/year" : "/month";
                               return `${option.learners} learners - ${formatPrice(totalPrice)}${period}`;
-                            }
+}
                             return "";
                           }}
                           max={(() => {
@@ -365,47 +366,36 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                           step={null}
                           sx={getSliderStyle(sliderStyles.base, "1rem")}
                           marks={(() => {
-                            // Determine which sub-addon to show pricing for based on selection
-                            let targetSubAddon = null;
-                            if (selectedSubAddOns["academy-practical"]) {
-                              targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-practical");
-                            } else {
-                              targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory");
-                            }
-
-                            return targetSubAddon?.pricing?.map((option, index) => ({
-                              value: index,
-                              label: (
-                                <Box sx={{ textAlign: "center", fontSize: "1.25rem", fontWeight: "bold" }}>
-                                  <Box>{option.learners === "2500+" ? "2,500+" : option.learners}</Box>
-                                  {isYearly && (
-                                      <Box
-                                        sx={{
-                                          fontSize: {
-                                            xs: "0.75rem",
-                                            sm: "0.9rem",
+                                          let targetSubAddon = null;
+                                          if (selectedSubAddOns["academy-practical"]) {
+                                            targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-practical");
+                                          } else {
+                                            targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-theory");
                                           }
-                                        }}
-                                      >
-                                        {formatSliderPrice((option.yearlyPerUser / 12) * (selectedSubAddOns["academy-practical"] ? 2 : 1), currency)}<br/>{targetSubAddon.unitLabelSingular}/month
-                                      </Box>
-                                    )}
-                                  <Box
-                                    sx={{
-                                      color: "text.secondary",
-                                      mb: 1.5,
-                                      fontSize: {
-                                        xs: "0.75rem",
-                                        sm: "0.9rem",
-                                      }
-                                    }}>
-                                    {formatSliderPrice((isYearly ? option.yearlyPerUser : option.monthlyPerUser) * (selectedSubAddOns["academy-practical"] ? 2 : 1), currency)}<br/>{targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
-                                  </Box>
-                                </Box>
-                              ),
-                            })) || [];
-                          })()}
-                        />
+                                          return targetSubAddon?.pricing?.map((option, index) => ({
+                                            value: index,
+                                            label: (
+                                              <Box sx={{ textAlign: "center", fontSize: "1.25rem", fontWeight: "bold" }}>
+                                                <Box>{formatLearners(option.learners)}</Box> {/* Changed from ternary */}
+                                                <Box
+                                                  sx={{
+                                                    color: "text.secondary",
+                                                    mb: 1.5,
+                                                    fontSize: { xs: "0.75rem", sm: "0.9rem" },
+                                                  }}
+                                                >
+                                                  {formatSliderPrice(
+                                                    (isYearly ? option.yearlyPerUser : option.monthlyPerUser) * (selectedSubAddOns["academy-practical"] ? 2 : 1),
+                                                    currency
+                                                  )}
+                                                  <br />
+                                                  {targetSubAddon.unitLabelSingular}/{isYearly ? "year" : "month"}
+                                                </Box>
+                                              </Box>
+                                            ),
+                                          })) || [];
+                                        })()}
+                                  />
                         <Box sx={boxStyles.disclaimerSection}>
                           <Typography variant="body2" sx={typographyStyles.italic}>
                             Looking for a plan larger than 2,500 learners? Great! <a href="/company/contact">Let us know</a>.
