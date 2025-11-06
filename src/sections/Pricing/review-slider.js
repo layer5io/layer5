@@ -75,6 +75,11 @@ max-width: 100%;
       margin: 0 1rem;
     }
 }
+.slick-initialized .slick-slide {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
 
 `;
 
