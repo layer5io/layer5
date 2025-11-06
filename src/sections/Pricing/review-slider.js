@@ -21,44 +21,44 @@ import Louie from "./reviews/louie-corbo.jpeg";
 import Abdechakour from "./reviews/abdechakour-h.jpeg";
 
 const settings = {
-    dots: false,
-    infinite: true,
-    speed: 400,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
+  dots: false,
+  infinite: true,
+  speed: 400,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
 
-    responsive: [
-      {
-        breakpoint: 1300,
-        settings: {
-          slidesToShow: 2.5,
-        }
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        }
-      },
-      {
-        breakpoint: 800,
-        settings: {
-          slidesToShow: 1.5,
-          slidesToScroll: 0.5,
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          autoplaySpeed: 2000,
-        }
+  responsive: [
+    {
+      breakpoint: 1300,
+      settings: {
+        slidesToShow: 2.5,
       }
-    ]
-  };
+    },
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+    {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 1.5,
+        slidesToScroll: 0.5,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplaySpeed: 2000,
+      }
+    }
+  ]
+};
 
 const ReviewsWrapper = styled.div`
 max-width: 100%;
