@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5 News]]></title><description><![CDATA[Expect more from your infrastructure. Cloud native, open source software for your cloud native infrastructure and applications. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidently run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 06 Nov 2025 02:03:43 GMT</lastBuildDate><item><title><![CDATA[Meshery Ranks 6th Highest-Velocity Project in CNCF, Announces Major Governance Shift]]></title><description><![CDATA[var _excluded = ["components"];
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5 News]]></title><description><![CDATA[Expect more from your infrastructure. Cloud native, open source software for your cloud native infrastructure and applications. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidently run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 06 Nov 2025 02:48:45 GMT</lastBuildDate><item><title><![CDATA[Meshery Ranks 6th Highest-Velocity Project in CNCF, Announces Major Governance Shift]]></title><description><![CDATA[var _excluded = ["components"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutProperties(e, t) { if (null == e) return {}; var o, r, i = _objectWithoutPropertiesLoose(e, t); if (Object.getOwnPropertySymbols) { var n = Object.getOwnPropertySymbols(e); for (r = 0; r < n.length; r++) o = n[r], -1 === t.indexOf(o) && {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]); } return i; }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
@@ -61,9 +61,13 @@ return function MDXContent(_ref) {
     className: "block-display align-center"
   })), mdx("br", null), "This restructuring comes as Meshery celebrates a milestone of unprecedented growth."), mdx("p", null, "The new structure divides the ecosystem into:"), mdx("ol", null, mdx("li", {
     parentName: "ol"
-  }, "github.com/meshery: Dedicated to the core platform and foundational projects, including critical components like Meshery Operator and MeshSync. The core Meshery maintainers govern this organization, ensuring stability and alignment with CNCF standards."), mdx("li", {
+  }, mdx("a", {
+    href: "https://github.com/meshery"
+  }, "github.com/meshery"), ": Dedicated to the core platform and foundational projects, including critical components like Meshery Operator and MeshSync. The core Meshery maintainers govern this organization, ensuring stability and alignment with CNCF standards."), mdx("li", {
     parentName: "ol"
-  }, "github.com/meshery-extensions: A dedicated, community-centric space for extensions, integrations, and tooling. This organization fosters community ownership, allows for rapid iteration on independent release cycles, and acts as an incubator for new ideas and less common cloud service providers.")), mdx(Blockquote, {
+  }, mdx("a", {
+    href: "https://github.com/meshery-extensions"
+  }, "github.com/meshery-extensions"), ": A dedicated, community-centric space for extensions, integrations, and tooling. This organization fosters community ownership, allows for rapid iteration on independent release cycles, and acts as an incubator for new ideas and less common cloud service providers.")), mdx(Blockquote, {
     quote: "This new structure isn't just a response to our success; it's our strategy for scaling it.",
     person: "Lee Calcote",
     title: "Meshery Maintainer",
