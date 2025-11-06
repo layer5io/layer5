@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5 News]]></title><description><![CDATA[Expect more from your infrastructure. Cloud native, open source software for your cloud native infrastructure and applications. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidently run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 06 Nov 2025 02:01:17 GMT</lastBuildDate><item><title><![CDATA[Meshery Ranks 6th Highest-Velocity Project in CNCF, Announces Major Governance Shift]]></title><description><![CDATA[var _excluded = ["components"];
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5 News]]></title><description><![CDATA[Expect more from your infrastructure. Cloud native, open source software for your cloud native infrastructure and applications. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidently run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 06 Nov 2025 02:03:43 GMT</lastBuildDate><item><title><![CDATA[Meshery Ranks 6th Highest-Velocity Project in CNCF, Announces Major Governance Shift]]></title><description><![CDATA[var _excluded = ["components"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutProperties(e, t) { if (null == e) return {}; var o, r, i = _objectWithoutPropertiesLoose(e, t); if (Object.getOwnPropertySymbols) { var n = Object.getOwnPropertySymbols(e); for (r = 0; r < n.length; r++) o = n[r], -1 === t.indexOf(o) && {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]); } return i; }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
@@ -7,7 +7,7 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 
 var _frontmatter = {
   "title": "Meshery Ranks 6th Highest-Velocity Project in CNCF, Announces Major Governance Shift",
-  "subtitle": "Enabling teams to collaboratively design, deploy, and manage cloud native infrastructure without finger-pointing",
+  "subtitle": "Implements a critical revision to its governance and organizational structure",
   "date": "2025-11-05 08:00:00 -0530",
   "author": "The Newsroom",
   "thumbnail": "./sixth-highest-velocity-project-out-of-237-CNCF-projects.png",
@@ -39,9 +39,20 @@ return function MDXContent(_ref) {
     person: "Sangram Rath",
     title: "Meshery Maintainer",
     mdxType: "BlockquoteAlt"
-  }), mdx("p", null, "These achievements underscore the dedication of our global community and Meshery's growing impact in the cloud native ecosystem."), mdx("p", null, "This momentum is sustained by Meshery\u2019s expanding global community, which now boasts more than 10,000 members. Over the past year, the project has seen a 350% increase in code commits, contributions from over 3,000 open source contributors, and has surpassed 10,000 GitHub stars."), mdx("p", null, "Meshery empowers DevOps, Platform, SRE, and Application teams by providing collaborative GitOps, distributed performance management, and a visual designer for deployments, simplifying cloud native infrastructure management and accelerating learning and experimentation across CNCF projects."), mdx("h2", null, "The Meshery Umbrella Expands: Strategic Partitioning for Scale"), mdx("p", null, "Driven by this high project velocity and growing complexity, Meshery maintainers have implemented a ", mdx("a", {
+  }), mdx("p", null, "These achievements underscore the dedication of our global community and Meshery's growing impact in the cloud native ecosystem."), mdx("p", null, "This momentum is sustained by Meshery\u2019s expanding global community, which now boasts more than 10,000 members. Over the past year, the project has seen a 350% increase in code commits, contributions from over 3,000 open source contributors, and has surpassed 10,000 GitHub stars."), mdx("p", {
+    align: "center"
+  }, mdx("a", {
+    href: sixthHighest
+  }, mdx("img", {
+    src: sixthHighest,
+    alt: "Meshery achieved the status of the sixth highest-velocity project within the Cloud Native Computing Foundation (CNCF).",
+    width: "100%",
+    className: "block-display align-center"
+  }))), mdx("p", null, "Meshery empowers DevOps, Platform, SRE, and Application teams by providing collaborative GitOps, distributed performance management, and a visual designer for deployments, simplifying cloud native infrastructure management and accelerating learning and experimentation across CNCF projects."), mdx("h2", null, "The Meshery Umbrella Expands: Strategic Partitioning for Scale"), mdx("p", null, "Driven by this high project velocity and growing complexity, Meshery maintainers have implemented a ", mdx("a", {
     href: "https://meshery.io/blog/2025/meshery-ecosystem-expansion"
-  }, "critical revision to its governance and organizational structure"), ": the partitioning of its repositories into two distinct GitHub organizations. This strategic move aims to enhance modularity, scalability, and community engagement."), mdx("p", null, mdx("a", {
+  }, "critical revision to its governance and organizational structure"), ": the partitioning of its repositories into two distinct GitHub organizations. This strategic move aims to enhance modularity, scalability, and community engagement."), mdx("p", {
+    align: "center"
+  }, mdx("a", {
     href: MesheryExtensionsLight
   }, mdx("img", {
     src: MesheryExtensionsLight,
