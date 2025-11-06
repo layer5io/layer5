@@ -9,7 +9,7 @@ const WhatServiceMesh = ({ gradient }) => {
     gradient = true;
   return (
     <ServiceMeshWrapper gradient={gradient}>
-      <h1>What Is A Service Mesh?</h1>
+      <h1>Learn about cloud-native architecture</h1>
       <br/>
       <span className="description">A dedicated layer for managing service-to-service communication.</span>
       <br/>

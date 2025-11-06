@@ -47,7 +47,12 @@ const getDimensions = (ele) => {
 
 // Functions to make scroll with speed control
 // Element to move, element or px from, element or px to, time in ms to animate
-const scrollTo = (element, duration = 2000) => {
+const scrollTo = (element, sectionId, duration = 2000) => {
+  // Update URL hash
+  if (sectionId) {
+    window.history.pushState(null, null, `#${sectionId}`);
+  }
+
   let e = document.documentElement;
   if (e.scrollTop === 0) {
     let t = e.scrollTop;
@@ -127,6 +132,36 @@ const Brand = () => {
     { section: "SocialBackgrounds", ref: SocialBackgroundsRef }
   ];
 
+  const sectionIdMap = {
+    "layer5": layer5Ref,
+    "social-backgrounds": SocialBackgroundsRef,
+    "meshery": mesheryRef,
+    "meshsync": meshsyncRef,
+    "meshery-operator": mesheryOperatorRef,
+    "image-hub": imageHubRef,
+    "smp": smpRef,
+    "meshmark": meshmarkRef,
+    "service-mesh-patterns": servicemeshpatternsRef,
+    "nighthawk": nightHawkRef,
+    "meshmate": meshmateRef,
+    "meshmaster": meshMasterRef,
+    "kanvas": kanvasRef,
+    "catalog": CatalogRef,
+    "five": stickfiguresRef
+  };
+
+  // Handle initial hash navigation on page load
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash.substring(1);
+      if (hash && sectionIdMap[hash]) {
+        setTimeout(() => {
+          scrollTo(sectionIdMap[hash].current, hash);
+        }, 100);
+      }
+    }
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       const { height: headerHeight } = getDimensions(headerRef.current);
@@ -173,52 +208,52 @@ const Brand = () => {
       </div>
       <Row className="brand-row">
         <Col $xs={12} $md={9} className="brand-col">
-          <div className="section">
+          <div className="section" id="brand-guide">
             <BrandGuide />
           </div>
-          <div className="section" ref={layer5Ref}>
+          <div className="section" id="layer5" ref={layer5Ref}>
             <Layer5Brand />
           </div>
-          <div className="section" ref={SocialBackgroundsRef}>
+          <div className="section" id="social-backgrounds" ref={SocialBackgroundsRef}>
             <SocialBackgrounds />
           </div>
-          <div className="section" ref={mesheryRef}>
+          <div className="section" id="meshery" ref={mesheryRef}>
             <MesheryBrand />
           </div>
-          <div className="section" ref={meshsyncRef}>
+          <div className="section" id="meshsync" ref={meshsyncRef}>
             <MeshSyncBrand />
           </div>
-          <div className="section" ref={mesheryOperatorRef}>
+          <div className="section" id="meshery-operator" ref={mesheryOperatorRef}>
             <MesheryOperatorBrand />
           </div>
-          <div className="section" ref={imageHubRef}>
+          <div className="section" id="image-hub" ref={imageHubRef}>
             <ImageHubBrand />
           </div>
-          <div className="section" ref={smpRef}>
+          <div className="section" id="smp" ref={smpRef}>
             <SMPBrand />
           </div>
-          <div className="section" ref={meshmarkRef}>
+          <div className="section" id="meshmark" ref={meshmarkRef}>
             <MeshMarkBrand />
           </div>
-          <div className="section" ref={servicemeshpatternsRef}>
+          <div className="section" id="service-mesh-patterns" ref={servicemeshpatternsRef}>
             <ServiceMeshPatterns />
           </div>
-          <div className="section" ref={nightHawkRef}>
+          <div className="section" id="nighthawk" ref={nightHawkRef}>
             <NightHawk />
           </div>
-          <div className="section" ref={meshmateRef}>
+          <div className="section" id="meshmate" ref={meshmateRef}>
             <CommunityBrand />
           </div>
-          <div className="section" ref={meshMasterRef}>
+          <div className="section" id="meshmaster" ref={meshMasterRef}>
             <MeshMasterBrand />
           </div>
-          <div className="section" ref={kanvasRef}>
+          <div className="section" id="kanvas" ref={kanvasRef}>
             <KanvasBrand />
           </div>
-          <div className="section" ref={CatalogRef}>
+          <div className="section" id="catalog" ref={CatalogRef}>
             <Catalog />
           </div>
-          <div className="section" ref={stickfiguresRef}>
+          <div className="section" id="five" ref={stickfiguresRef}>
             <StickFigures />
           </div>
         </Col>
@@ -229,7 +264,7 @@ const Brand = () => {
                 visibleSection === "Layer5" ? "selected" : ""
               }`}
               onClick={() => {
-                scrollTo(layer5Ref.current);
+                scrollTo(layer5Ref.current, "layer5");
               }}
             >
               <span>Layer5</span>
@@ -239,7 +274,7 @@ const Brand = () => {
                 visibleSection === "SocialBackgrounds" ? "selected" : ""
               }`}
               onClick={() => {
-                scrollTo(SocialBackgroundsRef.current);
+                scrollTo(SocialBackgroundsRef.current, "social-backgrounds");
               }}
             >
               <span> Layer5 Social Backgrounds </span>
@@ -249,7 +284,7 @@ const Brand = () => {
                 visibleSection === "Meshery" ? "selected" : ""
               }`}
               onClick={() => {
-                scrollTo(mesheryRef.current);
+                scrollTo(mesheryRef.current, "meshery");
               }}
             >
               <span>Meshery</span>
@@ -259,7 +294,7 @@ const Brand = () => {
                 visibleSection === "MeshSync" ? "selected" : ""
               }`}
               onClick={() => {
-                scrollTo(meshsyncRef.current);
+                scrollTo(meshsyncRef.current, "meshsync");
               }}
             >
               <span>MeshSync</span>
@@ -269,7 +304,7 @@ const Brand = () => {
                 visibleSection === "MesheryOperator" ? "selected" : ""
               }`}
               onClick={() => {
-                scrollTo(mesheryOperatorRef.current);
+                scrollTo(mesheryOperatorRef.current, "meshery-operator");
               }}
             >
               <span>Meshery Operator</span>
@@ -279,7 +314,7 @@ const Brand = () => {
                 visibleSection === "ImageHub" ? "selected" : ""
               }`}
               onClick={() => {
-                scrollTo(imageHubRef.current);
+                scrollTo(imageHubRef.current, "image-hub");
               }}
             >
               <span>Image Hub</span>
@@ -289,7 +324,7 @@ const Brand = () => {
                 visibleSection === "SMP" ? "selected" : ""
               }`}
               onClick={() => {
-                scrollTo(smpRef.current);
+                scrollTo(smpRef.current, "smp");
               }}
             >
               <span>Cloud Native Performance</span>
@@ -299,7 +334,7 @@ const Brand = () => {
                 visibleSection === "MeshMark" ? "selected" : ""
               }`}
               onClick={() => {
-                scrollTo(meshmarkRef.current);
+                scrollTo(meshmarkRef.current, "meshmark");
               }}
             >
               <span>MeshMark</span>
@@ -309,7 +344,7 @@ const Brand = () => {
                 visibleSection === "ServiceMeshPatterns" ? "selected" : ""
               }`}
               onClick={() => {
-                scrollTo(servicemeshpatternsRef.current);
+                scrollTo(servicemeshpatternsRef.current, "service-mesh-patterns");
               }}
             >
               <span>Cloud Native Patterns</span>
@@ -319,7 +354,7 @@ const Brand = () => {
                 visibleSection === "NightHawk" ? "selected" : ""
               }`}
               onClick={() => {
-                scrollTo(nightHawkRef.current);
+                scrollTo(nightHawkRef.current, "nighthawk");
               }}
             >
               <span> NightHawk </span>
@@ -329,7 +364,7 @@ const Brand = () => {
                 visibleSection === "MeshMate" ? "selected" : ""
               }`}
               onClick={() => {
-                scrollTo(meshmateRef.current);
+                scrollTo(meshmateRef.current, "meshmate");
               }}
             >
               <span>MeshMate</span>
@@ -339,7 +374,7 @@ const Brand = () => {
                 visibleSection === "MeshMaster" ? "selected" : ""
               }`}
               onClick={() => {
-                scrollTo(meshMasterRef.current);
+                scrollTo(meshMasterRef.current, "meshmaster");
               }}
             >
               <span> MeshMaster </span>
@@ -349,7 +384,7 @@ const Brand = () => {
                 visibleSection === "Kanvas" ? "selected" : ""
               }`}
               onClick={() => {
-                scrollTo(kanvasRef.current);
+                scrollTo(kanvasRef.current, "kanvas");
               }}
             >
               <span> Kanvas </span>
@@ -359,7 +394,7 @@ const Brand = () => {
                 visibleSection === "Catalog" ? "selected" : ""
               }`}
               onClick={() => {
-                scrollTo(CatalogRef.current);
+                scrollTo(CatalogRef.current, "catalog");
               }}
             >
               <span> Catalog </span>
@@ -369,7 +404,7 @@ const Brand = () => {
                 visibleSection === "Five" ? "selected" : ""
               }`}
               onClick={() => {
-                scrollTo(stickfiguresRef.current);
+                scrollTo(stickfiguresRef.current, "five");
               }}
             >
               <span> Five, our mascot </span>
