@@ -5,7 +5,8 @@ import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import AcademyIcon from "../../../../assets/images/academy/academy.svg";
+import AcademyIcon from "../../../../assets/images/academy/academy-layer5.svg";
+import AcademyLight from "../../../../assets/images/academy/academy-layer5-light.svg";
 
 const AcademyWrapper = styled.section`
   @media (max-width: 575px) {
@@ -58,6 +59,9 @@ const AcademyBrand = () => {
               <Col $xs={12} $sm={4}>
                 <img src={AcademyIcon} style={{ minWidth: "200px" }} alt="Academy Logo" />
               </Col>
+              <Col $xs={12} $sm={4}>
+                <img src={AcademyLight} style={{ minWidth: "200px" }} alt="AcademyLight Logo" />
+              </Col>
             </Row>
           </SRLWrapper>
         </Row>
@@ -81,7 +85,9 @@ const AcademyBrand = () => {
           }} className="color-code-wrapper">
             <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
             <ColorBox name="Caribbean Green" R="0" G="211" B="169" colorCode="#00D3A9" />
-            <ColorBox name="Charcoal" R="60" G="73" B="79" colorCode="#3C494F" />
+            <div className="white-color-box">
+              <ColorBox name="White" R="255" G="255" B="255" dark colorCode="#FFFFFF" />
+            </div>
           </Row>
         </Row>
       </div>
