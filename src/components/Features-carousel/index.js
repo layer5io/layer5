@@ -95,23 +95,23 @@ const Feature = ({ children, title, active, onClick, learnMoreLink, id, Element 
       <div className="body" id={`feature-${id}`} >
         <p>{children}</p>
         {learnMoreLink
-  ? learnMoreLink.startsWith("/")
-    ? (
-        <Link className="learn-more-link" to={learnMoreLink}>
+          ? learnMoreLink.startsWith("/")
+            ? (
+              <Link className="learn-more-link" to={learnMoreLink}>
           Explore <IoIosArrowRoundForward />
-        </Link>
-      )
-    : (
-        <a
-          href={learnMoreLink}
-          className="learn-more-link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+              </Link>
+            )
+            : (
+              <a
+                href={learnMoreLink}
+                className="learn-more-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
           Explore <IoIosArrowRoundForward />
-        </a>
-      )
-  : null} // No link rendered if learnMoreLink is empty
+              </a>
+            )
+          : null}    {/* No link rendered if learnMoreLink is empty */}
       </div>
     </Element>
   );

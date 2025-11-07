@@ -15,8 +15,8 @@ const KanvasPage = ({ location }) => {
 export default KanvasPage;
 export const Head = () => {
   return  <SEO
-  title="Kanvas | Kubernetes Visualization and Cloud Management"
-  description="Collaboratively design and manage your Kubernetes workloads, infrastructure, and cloud services using Layer5 Kanvas."
-  keywords={["Kanvas", "Kubernetes visualization", "service mesh dashboard", "Layer5"]}
-/>;
+    title="Kanvas | Kubernetes Visualization and Cloud Management"
+    description="Collaboratively design and manage your Kubernetes workloads, infrastructure, and cloud services using Layer5 Kanvas."
+    keywords={["Kanvas", "Kubernetes visualization", "service mesh dashboard", "Layer5"]}
+  />;
 };
