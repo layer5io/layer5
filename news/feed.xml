@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5 News]]></title><description><![CDATA[Expect more from your infrastructure. Cloud native, open source software for your cloud native infrastructure and applications. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidently run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 07 Nov 2025 19:09:44 GMT</lastBuildDate><item><title><![CDATA[Meshery Ranks 6th Highest-Velocity Project in CNCF, Announces Major Governance Shift]]></title><description><![CDATA[var _excluded = ["components"];
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5 News]]></title><description><![CDATA[Expect more from your infrastructure. Cloud native, open source software for your cloud native infrastructure and applications. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidently run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 07 Nov 2025 19:11:20 GMT</lastBuildDate><item><title><![CDATA[Meshery Ranks 6th Highest-Velocity Project in CNCF, Announces Major Governance Shift]]></title><description><![CDATA[var _excluded = ["components"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutProperties(e, t) { if (null == e) return {}; var o, r, i = _objectWithoutPropertiesLoose(e, t); if (Object.getOwnPropertySymbols) { var n = Object.getOwnPropertySymbols(e); for (r = 0; r < n.length; r++) o = n[r], -1 === t.indexOf(o) && {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]); } return i; }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
@@ -35,7 +35,7 @@ return function MDXContent(_ref) {
   }, mdx("p", null, "[Austin, TX][KubeCon + CloudNativeCon]", " - November 5th, 2025 \u2013- ", mdx("a", {
     href: "/meshery"
   }, "Meshery"), ", the extensible cloud native management platform, today announced that it has achieved the status of the sixth highest-velocity project within the Cloud Native Computing Foundation (CNCF), a significant acceleration considering its Sandbox maturity level and position among 237 CNCF projects", mdx("sup", null, mdx("a", {
-    href: "#1"
+    href: "#references"
   }, "1")), ". This news precedes Meshery\u2019s robust presence at KubeCon + CloudNativeCon North America 2025 in Atlanta."), mdx("h2", null, "The Rocket Ship: Surging Velocity and Community Growth"), mdx("p", null, "Meshery\u2019s climb to the 6th highest-velocity project marks a rapid progression, jumping three ranks since its 9th-place announcement in April 2025. This trajectory reflects consistent growth, improving steadily from 33rd highest velocity in 2020-2021 to 6th by July 2025."), mdx(BlockquoteAlt, {
     quote: "These achievements underscore the dedication of our global community and Meshery's growing impact in the cloud native ecosystem.",
     person: "Sangram Rath",
@@ -112,7 +112,9 @@ return function MDXContent(_ref) {
   }, "Layer5 empowers organizations to confidently embrace the power of cloud native technologies through its open source and commercial products. The company\u2019s mission is to simplify the adoption and operation of cloud native infrastructure, enabling organizations to innovate faster and engineers to collaborate more effectively. Layer5\u2019s award-winning open source community includes more than 10,000 members. For more information, visit ", mdx(Link, {
     to: "/",
     mdxType: "Link"
-  }, "https://layer5.io")), mdx("h4", null, "References"), mdx("ol", null, mdx("li", {
+  }, "https://layer5.io")), mdx("a", {
+    id: "references"
+  }), mdx("h4", null, "References"), mdx("ol", null, mdx("li", {
     parentName: "ol"
   }, mdx("a", {
     href: "https://docs.google.com/spreadsheets/d/116ZU_ltVkJip7G073ocULHxKhy4F1OgWjNjtZ1IPBWk/edit?gid=0#gid=0"
