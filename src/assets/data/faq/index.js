@@ -24,12 +24,9 @@ const data = {
       link: "/careers",
       linktext: "See open roles"
     },
-
-    
     //
     // MESHERY
     //
-
     {
       id: "community-working-issues",
       question: "What is the best approach to working on community issues?",
