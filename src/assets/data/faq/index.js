@@ -1,6 +1,115 @@
 
 const data = {
   faqs: [
+    //
+    // LAYER5
+    //
+    {
+      question: "Are Layer5's solutions open source?",
+      category: "Layer5",
+      subcategory: "General",
+      answer: [
+        "Yes, all of Layer5's projects are licensed under Apache v2.",
+        "Layer5 also offers extensions to the Meshery project in which Enterprise-grade functionality is commercially offered and supported.",
+      ],
+    },
+    {
+      question: "Is Layer5 hiring?",
+      category: "Layer5",
+      subcategory: "General",
+      answer: [
+        "Nearly perpetually, yes.",
+        "In support of individuals making an impact in our open source projects, we hire individuals directly from our community."
+      ],
+      link: "/careers",
+      linktext: "See open roles"
+    },
+
+    //
+    // MESHERY
+    //
+
+    {
+      id: "community-working-issues",
+      question: "What is the best approach to working on community issues?",
+      category: "Layer5 Community",
+      subcategory: "Community",
+      answer: [
+        "For effective collaboration, please follow these guidelines:",
+        "1. Verify Issue Relevance: Ensure the issue is valid and currently needed before investing time.",
+        "2. Foster Positive Collaboration: Maintain respectful communication and support project momentum through constructive interactions.",
+        "3. Follow Established Processes: Help maintainers focus on core tasks by adhering to community guidelines and documentation."
+      ]
+    },
+    {
+      id: "community-issue-assignment",
+      question: "What are the key considerations when assigning issues?",
+      category: "Layer5 Community",
+      subcategory: "Community",
+      answer: [
+        "Follow these principles when assigning issues:",
+        "1. Issue Validity: Ensure the issue requires immediate attention.",
+        "2. Resolution Priority: Focus on timely completion of assignments.",
+        "3. Assignment Considerations: Consider current skill level, availability, familiarity with context, and current workload.",
+        "These guidelines help maintain an efficient and collaborative community environment."
+      ]
+    },
+    {
+      id: "community-find-issues",
+      question: "How can I find issues to work on?",
+      category: "Layer5 Community",
+      subcategory: "Community",
+      answer: [
+        "First, check for stale issues (those without recent activity or updates) and ask if you can help. You can also browse our help-wanted issues for opportunities to contribute."
+      ],
+      link: "https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+",
+      linktext: "Browse help-wanted issues"
+    },
+    {
+      id: "community-special-discussions",
+      question: "Do contributors hold special topic discussions outside regular meetings?",
+      category: "Layer5 Community",
+      subcategory: "Community",
+      answer: [
+        "Yes, in addition to our regular community meetings on the calendar (meet.layer5.io), contributors often organize focused discussions for specific topics or deep-dive sessions. These may be scheduled on the community calendar or arranged impromptu through Slack huddles or Zoom.",
+        "To schedule a new meeting on the community calendar, contact a Community Manager."
+      ],
+      link: "/community/community-managers",
+      linktext: "Contact Community Managers"
+    },
+    {
+      id: "community-calendar",
+      question: "How can I stay updated with community meetings?",
+      category: "Layer5 Community",
+      subcategory: "Community",
+      answer: [
+        "You can stay informed about our community meetings by adding the Layer5 community calendar to your personal calendar."
+      ],
+      link: "https://bit.ly/2SbrRhe",
+      linktext: "Add Layer5 Community Calendar"
+    },
+    {
+      id: "community-start-contributing",
+      question: "How can I start contributing to open source?",
+      category: "Layer5 Community",
+      subcategory: "Community",
+      answer: [
+        "The best way to begin is by reading our Newcomers' Welcome Guide, which provides a structured path for new contributors."
+      ],
+      link: "https://layer5.io/community/newcomers",
+      linktext: "Newcomers' Welcome Guide"
+    },
+    {
+      id: "community-mailing-list",
+      question: "How can I subscribe to the Layer5 mailing list?",
+      category: "Layer5 Community",
+      subcategory: "Community",
+      answer: [
+        "You can subscribe to our mailing list by visiting our subscription page."
+      ],
+      link: "https://layer5.io/subscribe",
+      linktext: "Subscribe to Layer5 Updates"
+    },
 
     //
     // MESHERY
@@ -129,7 +238,7 @@ const data = {
       ],
     },    
 
-    // LAYER% COMMUNITY
+    // LAYER5 COMMUNITY
     {
       question: "Are Layer5's solutions open source?",
       category: "Layer5",
