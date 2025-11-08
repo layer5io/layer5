@@ -176,15 +176,6 @@ const data = {
       ]
     },
     {
-      question: "Is Meshery open source?",
-      category: "Meshery",
-      subcategory: "General",
-      answer: [
-        "Yes, Meshery is a Cloud Native Computing Foundation (CNCF) project and is licensed under Apache v2.",
-        "As the cloud native management plane, Meshery is an extensible platform, offering multiple extension points within which users and partners can customize and extend Meshery's functionality.",
-      ],
-    },
-    {
       question: "Can I deploy Meshery on-premises?",
       category: "Meshery",
       answer: [
@@ -205,8 +196,18 @@ const data = {
       answer: [
         "Layer5 Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at privacy@layer5.io",
       ],
-      link: "https://layer5.io/company/legal",
-      linktext: "See Layer5 Trust Center"
+      link: "https://layer5.io/company/legal/sub-processors",
+      linktext: "Sub-Processors policy"
+    },
+    {
+      question: "What data is collection about me, how is it used and how long is it retained?",
+      category: "Layer5 Cloud",
+      subcategory: "Privacy",
+      answer: [
+        "Layer5 Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at hello@layer5.io",
+      ],
+      link: "https://layer5.io/company/legal/privacy",
+      linktext: "Privacy Policy"
     },
     {
       question: "Is it possible to migrate from managed Layer5 Cloud to self-hosted Layer5 Cloud on-premises?",
@@ -219,26 +220,7 @@ const data = {
       ],
       link: "https://docs.layer5.io/cloud/self-hosted/",
       "linktext": "Self-hosting documentation",
-    },
-    {
-      question: "What data is collection about me, how is it used and how long is it retained?",
-      category: "Layer5 Cloud",
-      subcategory: "Privacy",
-      answer: [
-        "Layer5 Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at hello@layer5.io",
-      ],
-      link: "https://layer5.io/company/legal/sub-processors",
-      linktext: "Open Sub-processors policy in Trust Center"
-    },
-    {
-      question: "Is it possible to migrate from managed Layer5 Cloud to self-hosted Layer5 Cloud on-premises?",
-      category: "Layer5 Cloud",
-      subcategory: "Deployment",
-      answer: [
-        "Yes, Layer5 Cloud can be deployed on-premises in minutes using Helm charts.",
-        "A one-time export of your data can be requested as you transition from managed Layer5 Cloud to self-hosted Layer5 Cloud.",
-      ],
-    },    
+    },   
 
     // LAYER5 COMMUNITY
     {
