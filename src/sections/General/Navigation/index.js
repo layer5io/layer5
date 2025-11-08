@@ -10,7 +10,6 @@ import axios from "axios";
 // import smp_dark_text from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
 // import smp_light_text from "../../../assets/images/service-mesh-performance/stacked/smp-light-text.svg";
 import kanvas_color from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
-import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
 import { ReactComponent as Logo } from "../../../assets/images/app/layer5-colorMode.svg";
@@ -21,6 +20,9 @@ import CloudIcon from "./utility/CloudIcon.js";
 import LogoutIcon from "./utility/LogoutIcon.js";
 // import LogoutIcon from "./utility/LogoutIcon.js";
 import KanvasIcon from "./utility/KanvasIcon.js";
+import Layer5CloudDarkIcon from "./utility/Layer5CloudDarkIcon.svg";
+import Layer5CloudLightIcon from "./utility/Layer5CloudLightIcon.svg";
+import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward.js";
 
 const Navigation = () => {
   let data = useStaticQuery(
@@ -128,6 +130,7 @@ const Navigation = () => {
   }
 }`
   );
+  const { isDark, toggleDark } = useStyledDarkMode();
   data["Products"] = {
     nodes: [
       {
@@ -144,12 +147,12 @@ const Navigation = () => {
       {
         frontmatter: {
           thumbnail: {
-            img: meshery,
+            img: isDark ? Layer5CloudLightIcon : Layer5CloudDarkIcon,
           },
-          title: "Meshery, the Cloud Native Manager",
+          title: "Layer5 Cloud & Catalog",
         },
         fields: {
-          slug: "/cloud-native-management/meshery",
+          slug: "/cloud-native-management/catalog",
         },
       },
     ],
@@ -161,11 +164,12 @@ const Navigation = () => {
   const [expand, setExpand] = useState(false);
   const [scroll, setScroll] = useState(false);
   const [dropDown, setDropDown] = useState(false);
-  const { isDark, toggleDark } = useStyledDarkMode();
   const themeToggler = () => toggleDark();
   const [userData, setUserData] = useState(null);
   const dropDownRef = useRef();
   const navWrapRef = useRef();
+  const accountDropdownRef = useRef();
+
   function getCookieValue(cookieName) {
     const cookies = document.cookie.split(";");
 
@@ -252,6 +256,18 @@ const Navigation = () => {
     closeDropDown();
   };
 
+  useEffect(() => {
+    if (!dropDown) return;
+
+    const handleClickOutside = (e) => {
+      if (!accountDropdownRef.current?.contains(e.target)) {
+        setDropDown(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [dropDown]);
   return (
     <NavigationWrap
       className={`nav-block ${scroll ? "scrolled" : ""}`}
@@ -325,7 +341,11 @@ const Navigation = () => {
                                       changeDropdownState();
                                       closeDropDown();
                                     }}
-                                    className="mobile-sub-menu-item"
+                                    className={
+                                      subItems.sepLine
+                                        ? "mobile-sub-menu-item"
+                                        : "mobile-nested-menu"
+                                    }
                                     activeClassName="nav-link-active"
                                   >
                                     {subItems.name}
@@ -334,6 +354,43 @@ const Navigation = () => {
                               </li>
                             );
                           })}
+                        {menu.actionItems !== undefined &&
+                          menu.actionItems.map((actionItem, index) =>
+                            actionItem.actionName === "Join the discussion" ? (
+                              <a
+                                key={index}
+                                href={actionItem.actionLink}
+                                target="_blank"
+                                className="mobile-sub-action-item"
+                                rel="noreferrer"
+                                onClick={() => {
+                                  changeDropdownState();
+                                  closeDropDown();
+                                }}
+                              >
+                                <span className="readmore-btn">
+                                  {actionItem.actionName}{" "}
+                                  <IoIosArrowRoundForward />
+                                </span>
+                              </a>
+                            ) : (
+                              <Link
+                                key={index}
+                                to={actionItem.actionLink}
+                                partiallyActive={true}
+                                className="mobile-sub-action-item"
+                                onClick={() => {
+                                  changeDropdownState();
+                                  closeDropDown();
+                                }}
+                              >
+                                <span className="readmore-btn">
+                                  {actionItem.actionName}{" "}
+                                  <IoIosArrowRoundForward />
+                                </span>
+                              </Link>
+                            )
+                          )}
                       </ul>
                     </li>
                   ))}
@@ -375,7 +432,7 @@ const Navigation = () => {
         </div>
         <div className="meshery-cta">
           {userData ? (
-            <div className="dropDown">
+            <div className="dropDown" ref={accountDropdownRef}>
               <button
                 className="avatar-container"
                 style={{

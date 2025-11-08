@@ -17,8 +17,8 @@ function generatePlans(data) {
     "TeamDesigner": {
       tier: "Team Designer",
       featured: true,
-      monthlyprice: 8,
-      yearlyprice: 68,
+      monthlyprice: 16,
+      yearlyprice: 164,
       byline: "Advanced collaboration for declarative DevOps",
       byline2: "← Everything included in Free, plus...",
       button: ["Start Free Trial", "https://cloud.layer5.io"],
@@ -26,8 +26,8 @@ function generatePlans(data) {
     "TeamOperator": {
       tier: "Team Operator",
       featured: false,
-      monthlyprice: 8,
-      yearlyprice: 68,
+      monthlyprice: 16,
+      yearlyprice: 164,
       // pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Advanced collaboration for imperative DevOps",
       byline2: "← Everything included in Free, plus...",
@@ -36,8 +36,8 @@ function generatePlans(data) {
     "Enterprise": {
       tier: "Enterprise",
       featured: false,
-      monthlyprice: 22,
-      yearlyprice: 248,
+      monthlyprice: 44,
+      yearlyprice: 449,
       pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Flexible deployment, and MSP multi-tenancy.",
       byline2: "← Everything included in Team, plus...",
@@ -72,7 +72,17 @@ function generatePlans(data) {
 
         return mappedItem;
       })
-      .sort((a, b) => a.categoryOrder - b.categoryOrder || a.functionOrder - b.functionOrder);
+      .sort((a, b) => {
+        // Handle "add-on" category order - should come last
+        if (a.categoryOrder === "add-on" && b.categoryOrder !== "add-on") return 1;
+        if (a.categoryOrder !== "add-on" && b.categoryOrder === "add-on") return -1;
+        if (a.categoryOrder === "add-on" && b.categoryOrder === "add-on") {
+          return a.functionOrder - b.functionOrder;
+        }
+
+        // Normal numeric sorting for non add-on categories
+        return a.categoryOrder - b.categoryOrder || a.functionOrder - b.functionOrder;
+      });
     return {
       ...tierInfo,
       summary: summary.length > 0 ? summary : [],

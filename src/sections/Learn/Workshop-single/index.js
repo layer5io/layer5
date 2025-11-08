@@ -18,7 +18,7 @@ const WorkshopSinglePage = ({ frontmatter, body }) => {
   return (
     <WorkshopSinglePageWrapper>
       <div className="backBtn">
-        <Link to="/learn/service-mesh-workshops">
+        <Link to="/learn/workshops">
           <IoIosArrowDropleftCircle />
           <h4>All Workshops</h4>
         </Link>
@@ -27,6 +27,7 @@ const WorkshopSinglePage = ({ frontmatter, body }) => {
         title={frontmatter.title}
         subtitle={frontmatter.abstract}
         thumbnail={frontmatter.thumbnail}
+        noAspectRatio={true}
       />
       <Container>
         <div className="cardContent">

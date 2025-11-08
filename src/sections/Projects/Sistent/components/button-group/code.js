@@ -7,7 +7,7 @@ import {
   Button,
   ButtonGroup,
   Box,
-} from "@layer5/sistent";
+} from "@sistent/sistent";
 import TabButton from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";

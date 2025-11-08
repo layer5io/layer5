@@ -2,7 +2,7 @@ import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { Row } from "../../../../../reusecore/Layout";
-import { Button, SistentThemeProvider } from "@layer5/sistent";
+import { Button, SistentThemeProvider } from "@sistent/sistent";
 import { SistentLayout } from "../../sistent-layout";
 
 import TabButton from "../../../../../reusecore/Button";

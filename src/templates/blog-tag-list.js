@@ -19,18 +19,18 @@ export const query = graphql`query BlogsByTags($tag: String!) {
         date(formatString: "MMMM Do, YYYY")
         author
         thumbnail {
+          extension
+          publicURL
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
-          extension
-          publicURL
         }
         darkthumbnail {
+          extension
+          publicURL
           childImageSharp {
             gatsbyImageData(width: 500, layout: CONSTRAINED)
           }
-          extension
-          publicURL
         }
       }
       fields {

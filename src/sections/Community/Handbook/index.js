@@ -2,7 +2,7 @@ import React from "react";
 import { HandbookWrapper } from "./Handbook.style";
 import HandbookCard from "../../../components/HandbookCard/index";
 import AdventuresVol from "../../../components/AdventuresVol/index";
-import vol1Img from "../Adventures-of-Five/vol1/meet-five.png";
+import vol1Img from "../Adventures-of-Five/vol1/meet-five.webp";
 
 const handbookHome = () => {
   return (
@@ -74,7 +74,7 @@ const handbookHome = () => {
 
         <HandbookCard
           title="Projects"
-          description="Layer5 Projects: Layer5, Meshery, Service Mesh Performance, NightHawk"
+          description="Layer5 Projects: Layer5, Meshery, Kanvas, NightHawk"
           to="/community/handbook/projects"
         />
 
