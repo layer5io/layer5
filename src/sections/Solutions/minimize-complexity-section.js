@@ -5,6 +5,7 @@ import { ReactComponent as MesheryLogo } from "./images/meshery-logo.svg";
 import { ReactComponent as MeshsyncLogo } from "./images/meshsync.svg";
 import { ReactComponent as ServiceMeshLogo } from "./images/service-mesh.svg";
 import { ReactComponent as KanvasLogo } from "./images/kanvas-icon.svg";
+import { ReactComponent as CNPLogo } from "./images/smp.svg";
 
 const MinimizeComplexitySectionWrapper = styled.section`
   width: 100vw;
@@ -217,10 +218,22 @@ const MinimizeComplexitySection = () => {
               </ProductsHeading>
 
               <ProductIcons>
-                <MesheryLogo />
-                <KanvasLogo />
-                <MeshsyncLogo />
-                <ServiceMeshLogo />
+                <a href="https://meshery.io" target="_blank" rel="noopener noreferrer">
+                  <MesheryLogo />
+                </a>
+                <a href="https://layer5.io/cloud-native-management/kanvas" target="_blank" rel="noopener noreferrer">
+                  <KanvasLogo />
+                </a>
+                <a href="https://docs.meshery.io/v0.6/concepts/architecture/meshsync" target="_blank" rel="noopener noreferrer">
+                  <MeshsyncLogo />
+                </a>
+                <a href="https://service-mesh-patterns.github.io/service-mesh-patterns/" target="_blank" rel="noopener noreferrer">
+                  <ServiceMeshLogo />
+                </a>
+                <a href="https://smp-spec.io/" target="_blank" rel="noopener noreferrer">
+                  <CNPLogo style={{ width: "65px", height: "70px" }}/>
+                </a>
+
               </ProductIcons>
             </LeftColumn>
 
