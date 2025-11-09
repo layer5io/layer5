@@ -6,6 +6,7 @@ import { ReactComponent as MeshsyncLogo } from "./images/meshsync.svg";
 import { ReactComponent as ServiceMeshLogo } from "./images/service-mesh.svg";
 import { ReactComponent as KanvasLogo } from "./images/kanvas-icon.svg";
 import { ReactComponent as CNPLogo } from "./images/smp.svg";
+import { ReactComponent as NighthawkLogo } from "./images/nighthawk-logo.svg";
 
 const MinimizeComplexitySectionWrapper = styled.section`
   width: 100vw;
@@ -124,6 +125,16 @@ const ProductIcons = styled.div`
     height: 48px;
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
+
+  @media (max-width: 430px) {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
 `;
 
 const RightHeading = styled.h3`
@@ -233,7 +244,9 @@ const MinimizeComplexitySection = () => {
                 <a href="https://smp-spec.io/" target="_blank" rel="noopener noreferrer">
                   <CNPLogo style={{ width: "65px", height: "70px" }}/>
                 </a>
-
+                <a href="https://getnighthawk.dev/" target="_blank" rel="noopener noreferrer">
+                  <NighthawkLogo />
+                </a>
               </ProductIcons>
             </LeftColumn>
 
