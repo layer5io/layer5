@@ -230,7 +230,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description:
-          "A variety of interactive labs spanning different cloud native infrastructure. See https://layer5.io/learn/service-mesh-labs.",
+          "A variety of interactive labs spanning different cloud native infrastructure. See https://layer5.io/learn/kanvas-labs.",
         repository: "https://github.com/layer5io/service-mesh-labs",
       },
       {

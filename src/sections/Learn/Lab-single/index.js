@@ -23,7 +23,7 @@ const LabSinglePage = ({ frontmatter, body }) => {
   return (
     <LabSinglePageWrapper>
       <div className="backBtn">
-        <Link to="/learn/service-mesh-labs">
+        <Link to="/learn/kanvas-labs">
           <IoIosArrowDropleftCircle />
           <h4> All Labs</h4>
         </Link>
