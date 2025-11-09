@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import orchestration_svg from "./images/orchestration.svg";
-import whiteboard from "./images/whiteboard-1e9f33293030bc98a01945af9740863f.png";
+import whiteboard from "./images/whiteboard-1e9f33293030bc98a01945af9740863f.webp";
 import { Container, Row, Col } from "../../reusecore/Layout";
 
 const FeatureWrapper = styled.div`

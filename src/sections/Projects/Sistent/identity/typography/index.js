@@ -6,10 +6,10 @@ import Button from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
 import { Row, Col } from "../../../../../reusecore/Layout";
 
-import TypeScale1 from "../../../../../assets/images/app/projects/sistent/type-scale-1-light.png";
-import TypeScale1Dark from "../../../../../assets/images/app/projects/sistent/type-scale-1-dark.png";
-import FontPair from "../../../../../assets/images/app/projects/sistent/font-pair-light.png";
-import FontPairDark from "../../../../../assets/images/app/projects/sistent/font-pair-dark.png";
+import TypeScale1 from "../../../../../assets/images/app/projects/sistent/type-scale-1-light.webp";
+import TypeScale1Dark from "../../../../../assets/images/app/projects/sistent/type-scale-1-dark.webp";
+import FontPair from "../../../../../assets/images/app/projects/sistent/font-pair-light.webp";
+import FontPairDark from "../../../../../assets/images/app/projects/sistent/font-pair-dark.webp";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const SistentTypography = () => {

@@ -18,7 +18,7 @@ import smiLogo from "../../../assets/images/service-mesh-icons/service-mesh-inte
 import appmeshLogo from "../../../assets/images/service-mesh-icons/aws-app-mesh.svg";
 import ciliumLogo from "../../../assets/images/service-mesh-icons/cilium.svg";
 import wasm from "../../../assets/images/webassembly/webssembly_icon.svg";
-import recognitionLogo from "../../../assets/images/recognition-program/recognition-program.png";
+import recognitionLogo from "../../../assets/images/recognition-program/recognition-program.webp";
 import kanvasLogo from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 import sistent from "../../../assets/images/sistent/icon-only/sistent-icon-color.svg";
 
@@ -230,7 +230,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         description:
-          "A variety of interactive labs spanning different cloud native infrastructure. See https://layer5.io/learn/service-mesh-labs.",
+          "A variety of interactive labs spanning different cloud native infrastructure. See https://layer5.io/learn/kanvas-labs.",
         repository: "https://github.com/layer5io/service-mesh-labs",
       },
       {
