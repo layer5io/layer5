@@ -71,7 +71,7 @@ const Features = () => {
         return response.json();
       })
       .then((resultcount) => {
-        if (resultcount && typeof resultcount.total_runs === 'number') {
+        if (resultcount && typeof resultcount.total_runs === "number") {
           setPerformanceCount(resultcount.total_runs);
         }
       })
