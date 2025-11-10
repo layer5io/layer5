@@ -49,7 +49,7 @@ function getFeatureBlock(feature, index, performanceCount) {
             end={
               feature.count.value !== 0 ? feature.count.value : performanceCount
             }
-            suffix= {(feature.count.description == "components" || feature.count.description == "cloud native integrations") ? "+" : " "}
+            suffix={(feature.count.description == "components" || feature.count.description == "cloud native integrations") ? "+" : " "}
           />
         </h1>
         <p className="count-desc">{feature.count.description}</p>
@@ -64,8 +64,21 @@ const Features = () => {
 
   useEffect(() => {
     fetch(performanceCountEndpoint)
-      .then((response) => response.json())
-      .then((resultcount) => setPerformanceCount(resultcount.total_runs));
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((resultcount) => {
+        if (resultcount && typeof resultcount.total_runs === 'number') {
+          setPerformanceCount(resultcount.total_runs);
+        }
+      })
+      .catch((error) => {
+        console.log("Failed to fetch performance count:", error.message);
+        // Keep default value of 0 if fetch fails
+      });
   }, []);
 
   const data = LifecycleFeature().features;
