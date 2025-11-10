@@ -225,7 +225,7 @@ const MinimizeComplexitySection = () => {
               </DescriptionText>
 
               <ProductsHeading>
-                                Layers Products and Tools Deployed
+                                Layer5 Products and Tools Deployed
               </ProductsHeading>
 
               <ProductIcons>
