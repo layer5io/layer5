@@ -65,7 +65,7 @@ const CardTitle = styled.h2`
   font-weight: 600;
   font-size: 32px;
   line-height: 40px;
-  color: ${({ theme }) => theme.whiteToBlack || "#ffffff"};
+  color: ${({ theme }) => theme.whiteToBlack};
   margin: 0;
 `;
 
@@ -82,7 +82,7 @@ const CardText = styled.li`
   font-weight: 400;
   font-size: 16px;
   line-height: 28px;
-  color: ${({ theme }) => theme.whiteToBlack || "#ffffff"};
+  color: ${({ theme }) => theme.whiteToBlack };
   margin: 0;
   list-style: disc;
 `;
@@ -136,7 +136,7 @@ const SmallCardText = styled.p`
   font-weight: 400;
   font-size: 16px;
   line-height: 28px;
-  color: ${({ theme }) => theme.whiteToBlack || "#ffffff"};
+  color: ${({ theme }) => theme.whiteToBlack};
   margin: 0;
 `;
 

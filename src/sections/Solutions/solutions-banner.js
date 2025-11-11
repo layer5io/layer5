@@ -16,7 +16,7 @@ const BannerSectionWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: ${(props) => props.theme.blackToWhite || "transparent"};
+  background: ${(props) => props.theme.blackToWhite };
   padding: 3rem 2rem;
   min-height: 30rem;
   overflow: hidden;
@@ -127,7 +127,7 @@ const MainHeading = styled.h1`
   font-weight: 600;
   font-size: 64px;
   line-height: 1.1;
-  color: ${({ theme }) => theme.whiteToBlack || "#ffffff"};
+  color: ${({ theme }) => theme.whiteToBlack };
   margin: 0;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
@@ -145,7 +145,7 @@ const SubHeading = styled.h2`
   line-height: 36px;       
   letter-spacing: 0;       
   vertical-align: middle;   
-  color: ${({ theme }) => theme.whiteToBlack || "#ffffff"};
+  color: ${({ theme }) => theme.whiteToBlack };
   margin: 0;
   max-width: 500px;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);

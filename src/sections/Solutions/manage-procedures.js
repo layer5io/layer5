@@ -12,7 +12,7 @@ const ManageProceduresWrapper = styled.section`
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  background: ${(props) => props.theme.blackToWhite || "transparent"};
+  background: ${(props) => props.theme.blackToWhite };
   padding: 3rem 0;
   overflow: hidden;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -41,7 +41,7 @@ const Heading = styled.h2`
   font-size: 56px;
   line-height: 64px;
   letter-spacing: 0;
-  color: ${({ theme }) => theme.whiteToBlack || "#ffffff"};
+  color: ${({ theme }) => theme.whiteToBlack};
   margin: 0;
   text-align: center;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);

@@ -12,7 +12,7 @@ const IssuesSectionWrapper = styled.section`
 
   display: flex;
   justify-content: center;
-  background: ${(props) => props.theme.blackToWhite || "transparent"};
+  background: ${(props) => props.theme.blackToWhite };
   padding: 6rem 2rem;
   overflow: hidden;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -42,7 +42,7 @@ const IssuesHeading = styled.h2`
   font-size: 56px;
   line-height: 64px;
   letter-spacing: 0;
-  color: ${({ theme }) => theme.whiteToBlack || "#ffffff"};
+  color: ${({ theme }) => theme.whiteToBlack};
   margin: 0;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
@@ -81,7 +81,7 @@ const IssuesText = styled.p`
   line-height: 28px;
   letter-spacing: 0;
   vertical-align: middle;
-  color: ${({ theme }) => theme.whiteToBlack || "#ffffff"};
+  color: ${({ theme }) => theme.whiteToBlack};
   margin: 0;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
