@@ -3,8 +3,8 @@ title: "Layer5 Unveils Kanvas: The Enterprise Platform for "Infrastructure as De
 subtitle: "Empowering Platform and Operations Teams with Intuitive Tools to Design, Deploy, and Operate Kubernetes and Multi-Cloud Infrastructure"
 date: 2025-11-05 08:00:00 -0530
 author: The Newsroom
-thumbnail: ./Layer5 Kanvas Designer.png
-darkthumbnail: ./Layer5 Kanvas Designer.png
+thumbnail: ./Layer5-Kanvas-Designer.png
+darkthumbnail: ./Layer5-Kanvas-Designer.png
 category: "Press Release"
 description: ""
 tags:
@@ -16,8 +16,15 @@ resource: false
 published: true
 ---
 
-import { NewsWrapper } from "../../News.style.js";
 
+import { Link } from "gatsby";
+import { NewsWrapper } from "../../News.style.js";
+import Blockquote from "../../../../reusecore/Blockquote";
+import BlockquoteAlt from "../../../../reusecore/Blockquote/Blockquote-alt-style";
+
+import KanvasDesignerImage from "./Layer5-Kanvas-Designer.png";
+import KanvasCatalogImage from "./Kanvas-Catalog.png";
+import KanvasSampleDesignImage from "./Kanvas-Sample-Design-AWS-orchestration.png";
 
 <NewsWrapper>
 
@@ -25,70 +32,98 @@ import { NewsWrapper } from "../../News.style.js";
 
 Kanvas directly addresses the persistent challenges that platform engineers, SREs, and architects face: the unmanageable cognitive load of highly distributed systems, critical security gaps arising from mismanaged secrets and insecure network configurations, and fragmented workflows that silo teams and slow innovation.
 
-"The rise of AI is about to amplify that complexity tenfold as it brings an onslaught of suggested infrastructure changes from non-deterministic LLMs, whose inherent risk of hallucination only exacerbates the cognitive overload of engineers”, says Lee Calcote, CEO of Layer5.
+<BlockquoteAlt
+  quote="The rise of AI is about to amplify that complexity tenfold as it brings an onslaught of suggested infrastructure changes from non-deterministic LLMs, whose inherent risk of hallucination only exacerbates the cognitive overload of engineers."
+  person="Lee Calcote"
+  title="CEO of Layer5"
+/>
 
 Kanvas functions as a "Google Workspace for engineers," providing a unified, multi-modal collaboration suite built atop one of the Cloud Native Computing Foundation’s (CNCF) most dynamic open source projects, Meshery. Kanvas also tackles the high cost of turnover by facilitating the retention of tribal knowledge and significantly reducing the time to productivity for new engineers by streamlining the onboarding process for shipping code and managing infrastructure.
 
-“Teams simply cannot be expected to approve a black box of LLM-generated changes. The way to safely harness the power of AI is to combat cognitive load ‘head-on’, says Calcote. “This means visually representing *all* changes—whether from a human or an AI—in a way the mind can readily digest. A picture is worth a thousand words, as they say. In Kanvas, we call this 'infrastructure as design.'”
+<Blockquote
+  quote="Teams simply cannot be expected to approve a black box of LLM-generated changes. The way to safely harness the power of AI is to combat cognitive load ‘head-on’. This means visually representing *all* changes—whether from a human or an AI—in a way the mind can readily digest. A picture is worth a thousand words, as they say. In Kanvas, we call this 'infrastructure as design.'"
+  person="Lee Calcote"
+  title="CEO of Layer5"
+/>
 
 Kanvas allows engineers to see, collaborate on, and approve suggestions on a visual canvas, and even perform 'dry runs' of their designs through GitOps-infused visual diffs *before* a single change is committed to production. [Peer reviews in Kanvas restore human oversight](https://docs.layer5.io/videos/getting-started/comments/design-reviews-full/) and collaboration to an increasingly complex, AI-driven world.
 
-Kanvas has two powerful, integrated modes:
+---
 
-* **Kanvas Designer** (GA): Offers an intuitive, declarative, drag-and-drop interface for designing and visualizing complex infrastructure and application architectures.
+## Kanvas has two powerful, integrated modes:
+
+* **Kanvas Designer** (GA): Offers an intuitive, declarative, drag-and-drop interface for designing and visualizing complex infrastructure and application architectures.  
 * **Kanvas Operator** (beta): Provides an imperative, hands-on mode for managing and operating live infrastructure in real-time.
 
 This dual-mode approach allows platform engineers to curate a catalog of design patterns, solution architects to design multi-cloud infrastructure, and SREs to collaborate on incident resolution, all within a single platform.
 
-**Driven by Community, Ready for the Enterprise**
+<p align="center">
+  <a href={KanvasDesignerImage}><img src={KanvasDesignerImage} alt="Layer5 Kanvas Designer" width="100%" className="block-display align-center" /></a>
+</p>
+
+---
+
+## **Driven by Community, Ready for the Enterprise**
 
 The power of Kanvas stems from its foundation in Meshery, which was recently recognized as the [sixth highest-velocity project out of more than 240 projects](https://meshery.io/blog/sixth-highest-velocity-cncf-project) in the CNCF. This incredible momentum, driven by over 3,000 global contributors, underscores the platform's stability, rich feature set, and the vibrant community driving its innovation.
 
-"Kanvas has me rethinking how I approach interactions with team members," said Venil Noronha, Tech Lead at Stripe. "The ability to visually design, import existing Helm charts, and collaborate on changes in a single GitOps workflow might just eliminate my cross-team friction. Workspaces in Kanvas are my new Google Drive for infrastructure work”.
+<BlockquoteAlt
+  quote="Kanvas has me rethinking how I approach interactions with team members. The ability to visually design, import existing Helm charts, and collaborate on changes in a single GitOps workflow might just eliminate my cross-team friction. Workspaces in Kanvas are my new Google Drive for infrastructure work."
+  person="Venil Noronha"
+  title="Tech Lead at Stripe"
+/>
 
 This enterprise readiness is further validated by the project's recent maturity, including [a strategic governance shift to scale its growing ecosystem of extensions](https://meshery.io/blog/2025/meshery-ecosystem-expansion) and the [launch of the new Certified Meshery Contributor (CMC) program](https://www.cncf.io/blog/2025/10/27/announcing-the-certified-meshery-contributor-cmc/).
 
 Kanvas caters to a wide range of users, including:
 
-* **Engineering teams and managers** for brainstorming, diagramming, wireframing, and interviewing.
-* **Platform engineers** for underpinning self-service and developer empowerment.
-* **Site reliability engineers** for curating a catalog of design patterns as a center of excellence,
-* operators
-* **Solution architects** designing infrastructure across multiple cloud providers from a single canvas.
-* **Developer advocates and educators** for facilitating real-time exploration and asynchronous study of any cloud native technology.
-* **Developers and product engineers** for ease of understanding and of design of their application infrastructure.
+* **Engineering teams and managers** for brainstorming, diagramming, wireframing, and interviewing.  
+* **Platform engineers** for underpinning self-service and developer empowerment.  
+* **Site reliability engineers** for curating a catalog of design patterns as a center of excellence, operators.  
+* **Solution architects** designing infrastructure across multiple cloud providers from a single canvas.  
+* **Developer advocates and educators** for facilitating real-time exploration and asynchronous study of any cloud native technology.  
+* **Developers and product engineers** for ease of understanding and of design of their application infrastructure.  
 * **System integrators and consultants** for a service provider-grade organization hierarchy, multi-tenant, white-labelable, highly extensible delivery platform.
 
-“Particularly as AI has entered our field, the trend of platform engineers leveraging Kubernetes Operators to automate application and infrastructure lifecycle management has grown stronger”, says Matthieu Evrin, Senior Platform Engineer and CNCF Ambassador.
+<Blockquote
+  quote="Particularly as AI has entered our field, the trend of platform engineers leveraging Kubernetes Operators to automate application and infrastructure lifecycle management has grown stronger. What's exciting about Kanvas is how it builds on this evolution by introducing 'infrastructure as design'. This is an innovative abstraction that finally simplifies the underlying complexities we deal with daily—like Kubernetes CRDs and Terraform modules. This approach is transformative; it empowers us to visually design, deploy, and manage our infrastructure with unprecedented ease and clarity."
+  person="Dhruv Sharma"
+  title="Principal Platform Product Manager at GuideWire"
+/>
 
-. “What's exciting about Kanvas is how it builds on this evolution by introducing 'infrastructure as design'. This is an innovative abstraction that finally simplifies the underlying complexities we deal with daily—like Kubernetes CRDs and Terraform modules, says Dhruv Sharma, Principal Platform Product Manager at GuideWire. “ This approach is transformative; it empowers us to visually design, deploy, and manage our infrastructure with unprecedented ease and clarity."
+---
 
-**Key Features Now Generally Available:**
+## **Key Features Now Generally Available:**
 
-* **Unified Visual Design & Operation**: Toggle between the declarative designer for visual architecture and the imperative Operator for live cluster management, including interactive terminals and live resource views.
-* **GitOps-Infused Workflows**: Go beyond basic integration with [Kanvas Snapshots](https://docs.layer5.io/cloud/tutorials/gitops-snapshots/), providing visual infrastructure diffs directly in GitHub pull requests.
-* Enterprise Identity & Governance: Manage access with a robust hierarchy of Organizations, Teams, and Users governed by role-based access control (RBAC).
-* **Comprehensive Import Engine**: Visualize brownfield environments by importing existing Kubernetes manifests, Helm charts, Kustomize, and Docker Compose files into editable and deployable designs.
-* **Collaborative Workspaces**: Utilize Workspaces (like a Google Drive for infrastructure) to organize designs, environments, and team access in one place.
-* **Rich, Real-time Collaboration**: Work with teammates simultaneously, using visual whiteboarding tools and inline commenting to review designs.
-* **Extensive Design Catalog**: Accelerate projects by leveraging a rich catalog of hundreds of pre-built, best-practice design patterns and modern reference architectures. This enables teams to adopt vetted configurations with one click, ensuring consistency and best practices from the start.
+* **Unified Visual Design & Operation**: Toggle between the declarative designer for visual architecture and the imperative Operator for live cluster management, including interactive terminals and live resource views.  
+* **GitOps-Infused Workflows**: Go beyond basic integration with [Kanvas Snapshots](https://docs.layer5.io/cloud/tutorials/gitops-snapshots/), providing visual infrastructure diffs directly in GitHub pull requests.  
+* **Enterprise Identity & Governance**: Manage access with a robust hierarchy of Organizations, Teams, and Users governed by role-based access control (RBAC).  
+* **Comprehensive Import Engine**: Visualize brownfield environments by importing existing Kubernetes manifests, Helm charts, Kustomize, and Docker Compose files into editable and deployable designs.  
+* **Collaborative Workspaces**: Utilize Workspaces (like a Google Drive for infrastructure) to organize designs, environments, and team access in one place.  
+* **Rich, Real-time Collaboration**: Work with teammates simultaneously, using visual whiteboarding tools and inline commenting to review designs.  
+* **Extensive Design Catalog**: Accelerate projects by leveraging a rich catalog of hundreds of pre-built, best-practice design patterns and modern reference architectures. This enables teams to adopt vetted configurations with one click, ensuring consistency and best practices from the start.  
 * **Flexible Deployment**: Available as a fully managed service or as a self-hosted solution with support for white-labeling and custom domains.
 
-**Availability**
+<p align="center">
+  <a href={KanvasCatalogImage}><img src={KanvasCatalogImage} alt="Kanvas Catalog" width="100%" className="block-display align-center" /></a>
+</p>
+
+---
+
+## **Availability**
 
 Layer5 Kanvas is available today as both a self-hosted solution and a managed service. Get started by visiting [https://kanvas.new](https://kanvas.new).
 
-**About Layer5**
+---
+
+## **About Layer5**
 
 Layer5's mission is to simplify the adoption and operation of cloud native infrastructure, enabling organizations to innovate faster and engineers to do so collaboratively. Layer5’s award-winning open source community has over 10,000 members. Visit [https://layer5.io](https://layer5.io).
 
-**About Kanvas**
+---
+
+## **About Kanvas**
 
 Kanvas is a web-based, enterprise-grade collaboration platform that allows platform, operations, and development teams to create, review, and operate highly-detailed architecture diagrams of their cloud and cloud native infrastructure. Kanvas is the definitive tool for productive, collaborative infrastructure management. Learn more about Kanvas at [https://layer5.io/kanvas](https://layer5.io/kanvas).
-
-**Media Contact**
-Kate Suttons
-Layer5, Inc.
-press@layer5.io
 
 </NewsWrapper>
