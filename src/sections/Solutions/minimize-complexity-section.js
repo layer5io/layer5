@@ -8,6 +8,7 @@ import { ReactComponent as KanvasLogo } from "./images/kanvas-icon.svg";
 import { ReactComponent as CNPLogo } from "./images/smp.svg";
 import { ReactComponent as NighthawkLogo } from "./images/nighthawk-logo.svg";
 
+
 const MinimizeComplexitySectionWrapper = styled.section`
   width: 100vw;
   position: relative;
@@ -18,17 +19,17 @@ const MinimizeComplexitySectionWrapper = styled.section`
 
   display: flex;
   justify-content: center;
-  background: ${(props) => props.theme.blackToWhite || "transparent"};
-  padding: 6rem 2rem;
+  background: ${(props) => props.theme.blackToWhite};
+  padding: 3rem 2rem;
   overflow: hidden;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
   @media (max-width: 992px) {
-    padding: 4rem 2rem;
+    padding: 3rem 2rem;
   }
 
   @media (max-width: 600px) {
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
   }
 `;
 
@@ -44,24 +45,24 @@ const MainHeading = styled.h2`
   font-size: 56px;
   line-height: 64px;
   letter-spacing: 0;
-  color: ${({ theme }) => theme.whiteToBlack || "#ffffff"};
-  margin: 0 0 3rem 0;
+  color: ${({ theme }) => theme.whiteToBlack};
+  margin: 0 0 2rem 0;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
   @media (max-width: 600px) {
     font-size: 48px;
     line-height: 56px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
-  gap: 4rem;
+  gap: 3rem;
 
   @media (max-width: 992px) {
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
   }
 `;
 
@@ -69,7 +70,7 @@ const LeftColumn = styled.div`
   flex: 1 1 45%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 
   @media (max-width: 992px) {
     max-width: 100%;
@@ -93,7 +94,7 @@ const DescriptionText = styled.p`
   font-size: 16px;
   line-height: 28px;
   letter-spacing: 0;
-  color: ${({ theme }) => theme.whiteToBlack || "#ffffff"};
+  color: ${({ theme }) => theme.whiteToBlack };
   margin: 0;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
@@ -110,8 +111,8 @@ const ProductsHeading = styled.h3`
   line-height: 20px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: ${({ theme }) => theme.whiteToBlack || "#ffffff"};
-  margin: 2rem 0 1rem 0;
+  color: ${({ theme }) => theme.whiteToBlack};
+  margin: 1.5rem 0 0.75rem 0;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 `;
 
@@ -142,8 +143,8 @@ const RightHeading = styled.h3`
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
-  color: ${({ theme }) => theme.whiteToBlack || "#ffffff"};
-  margin: 0 0 2rem 0;
+  color: ${({ theme }) => theme.whiteToBlack };
+  margin: 0 0 1.5rem 0;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 `;
 
@@ -151,7 +152,7 @@ const ChecklistItem = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 `;
 
 const CheckIcon = styled.div`
@@ -177,7 +178,7 @@ const ChecklistText = styled.p`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: ${({ theme }) => theme.whiteToBlack || "#ffffff"};
+  color: ${({ theme }) => theme.whiteToBlack};
   margin: 0;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
