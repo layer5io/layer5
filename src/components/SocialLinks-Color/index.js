@@ -73,7 +73,7 @@ const SocialLinksColor = () => {
           </a>
           <a
             className="youtube_icon"
-            href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1"
+            href="https://youtube.com/Layer5io?sub_confirmation=1"
             target="_blank"
             rel="noreferrer"
           >

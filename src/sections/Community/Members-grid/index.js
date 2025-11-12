@@ -90,12 +90,12 @@ const MembersGrid = (props) => {
                 Nighthawk
                 </Link>
                 , and{" "}
-                <Link to="https://www.linkedin.com/showcase/service-mesh-performance">
+                <Link to="https://www.linkedin.com/showcase/kanvas-new">
                   Service Mesh Performance
                 </Link>{" "}
                 LinkedIn pages, too. We openly and publicly share our community
                 meetings on{" "}
-                <Link to="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1">
+                <Link to="https://www.youtube.com/Layer5io?sub_confirmation=1">
                   YouTube
                 </Link>
                 .
