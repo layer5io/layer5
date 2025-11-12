@@ -75,6 +75,11 @@ max-width: 100%;
       margin: 0 1rem;
     }
 }
+.slick-initialized .slick-slide {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
 
 `;
 
@@ -171,12 +176,12 @@ const Reviews = () => {
             image={Maxi}
           />
           {/* <Customers
-            type="3"
-            quote="A sophisticated, but simply communicated value-performance index, MeshMark, redefines efficiency utilization, bringing business, application, and infrastructure KPIs under a single unit of measure."
-            person="Lee Calcote"
-            title="Founder and CEO of Layer5, and Co-Chair of the CNCF TAG Network"
-            image={Lee}
-          /> */}
+              type="3"
+              quote="A sophisticated, but simply communicated value-performance index, MeshMark, redefines efficiency utilization, bringing business, application, and infrastructure KPIs under a single unit of measure."
+              person="Lee Calcote"
+              title="Founder and CEO of Layer5, and Co-Chair of the CNCF TAG Network"
+              image={Lee}
+            /> */}
           <Customers
             type="3"
             quote="The Meshery Docker Extension offers an easy button to go from Docker Compose to Kubernetes to any service mesh."

@@ -189,12 +189,12 @@ const LearnSection = () => {
             flexWrap: "wrap"
           }} $Hcenter className="learn-buttons-section labs">
             <Col $xs={12} $lg={6}>
-              <Link to="/learn/service-mesh-labs" state={{ selectedIndex: 0 }}>
+              <Link to="/learn/kanvas-labs" state={{ selectedIndex: 0 }}>
                 <Button $secondary title="Getting started with any service mesh"/>
               </Link>
             </Col>
             <Col $xs={12} $lg={6}>
-              <Link to="/learn/service-mesh-labs" state={{ selectedIndex: 1 }}>
+              <Link to="/learn/kanvas-labs" state={{ selectedIndex: 1 }}>
                 <Button $secondary title="Managing the performance of your microservices"/>
               </Link>
             </Col>
@@ -224,7 +224,7 @@ const LearnSection = () => {
         </div>
       </div>
       <div className="learn-buttons-section">
-        <Button $primary title="Checkout all the labs" $url="/learn/service-mesh-labs" />
+        <Button $primary title="Checkout all the labs" $url="/learn/kanvas-labs" />
       </div>
     </LearnSectionWrapper>
   );
