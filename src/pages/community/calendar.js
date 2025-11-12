@@ -2,7 +2,7 @@ import React from "react";
 import SEO from "../../components/seo";
 
 
-import Loadable from "react-loadable";
+import Loadable from "@loadable/component";
 import Loader from "./Loader.style";
 import LoadingIcon from "../../assets/images/LoadingIcon";
 import FullCalendar from "@fullcalendar/react";
