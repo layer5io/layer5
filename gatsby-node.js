@@ -173,7 +173,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
       labs: allMdx(
-        filter: { fields: { collection: { eq: "service-mesh-labs" } } }
+        filter: { fields: { collection: { eq: "kanvas-labs" } } }
       ) {
         nodes {
           fields {
@@ -576,7 +576,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
           break;
         case "service-mesh-books":
         case "workshops":
-        case "service-mesh-labs":
+        case "kanvas-labs":
           slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
           break;
         case "resources":

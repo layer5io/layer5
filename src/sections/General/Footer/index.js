@@ -161,7 +161,7 @@ const Footer = ({ location }) => {
                   {/* <li>
                     <Link
                       className="category-link"
-                      to="/learn/service-mesh-labs"
+                      to="/learn/kanvas-labs"
                     >
                       Cloud Native Interactive Labs
                     </Link>
@@ -215,7 +215,7 @@ const Footer = ({ location }) => {
               </div>
               <div className="footer-sections odd-col">
                 <h3 className="section-title">
-                  <Link className="title-link" to="/kanvas">
+                  <Link className="title-link" to="/cloud-native-management/solutions">
                     SOLUTIONS
                   </Link>
                 </h3>

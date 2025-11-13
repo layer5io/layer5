@@ -5,7 +5,7 @@ const Data = {
   menuItems: [
     {
       name: "Solutions",
-      path: "/cloud-native-management/kanvas",
+      path: "/cloud-native-management/solutions",
       subItems: [
         {
           name: "Developer-defined Infrastructure",
@@ -150,7 +150,7 @@ const Data = {
     //     },
     //     {
     //       name: "Interactive Labs",
-    //       path: "/learn/service-mesh-labs",
+    //       path: "/learn/kanvas-labs",
     //       sepLine: true
     //     },
     //   ],
@@ -297,7 +297,7 @@ const Data = {
         },
         {
           name: "Interactive Labs",
-          path: "/learn/service-mesh-labs",
+          path: "/learn/kanvas-labs",
         },
       ],
       actionItems: [
