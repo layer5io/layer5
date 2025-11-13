@@ -2,14 +2,14 @@ import React from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 
-import ChallangePNG from "./images/challange_mac.png";
-import DesignPNG from "./images/design_mac.png";
-import TutorialPNG from "./images/tutorial_mac.png";
+import ChallangePNG from "./images/challange_mac.webp";
+import DesignPNG from "./images/design_mac.webp";
+import TutorialPNG from "./images/tutorial_mac.webp";
 
-import Academy1PNG from "./images/academy-1.png";
-import Academy2PNG from "./images/academy-2.png";
-import Academy3PNG from "./images/academy-3.png";
-import Academy4PNG from "./images/academy-4.png";
+import Academy1PNG from "./images/academy-1.webp";
+import Academy2PNG from "./images/academy-2.webp";
+import Academy3PNG from "./images/academy-3.webp";
+import Academy4PNG from "./images/academy-4.webp";
 
 
 
