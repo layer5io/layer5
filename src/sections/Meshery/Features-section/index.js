@@ -5,12 +5,12 @@ import Button from "../../../reusecore/Button";
 import Slider from "react-slick";
 import Slide1 from "../../../assets/images/kanvas/gifs/start-from-scratch.gif";
 import Slide2 from "../../../assets/images/kanvas/gifs/catalog.gif";
-import Slide3 from "../../../assets/images/kanvas/gifs/rendered-design.png";
+import Slide3 from "../../../assets/images/kanvas/gifs/rendered-design.webp";
 import FeaturesSectionWrapper from "./features-section.style";
 import { StaticImage } from "gatsby-plugin-image";
 
 const slide2Path = "../../../assets/images/kanvas/gifs/catalog.gif";
-const slide3Path = "../../../assets/images/kanvas/gifs/rendered-design.png";
+const slide3Path = "../../../assets/images/kanvas/gifs/rendered-design.webp";
 
 const slides_list = [Slide1, Slide2, Slide3];
 

@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Col } from "../../../../reusecore/Layout";
-import PageHeader from "../../../../reusecore/PageHeader";
 import TermsWrapper from "../terms.style";
 import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
 import {
@@ -12,6 +11,7 @@ import {
   TableHead,
   TableBody,
   SistentThemeProvider,
+  createTheme,
 } from "@sistent/sistent";
 import TOC from "../../../../components/legal-navigation/index";
 import TocPagination from "../../../../components/legal-navigation/TocPagination";
@@ -43,11 +43,13 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   padding: "0.75rem",
   borderBottom: `1px solid ${theme.palette.divider}`,
   borderRadius: "0px",
+  fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
 }));
 
 const StyledHeaderCell = styled(StyledTableCell)(() => ({
   fontWeight: 600,
   backgroundColor: "transparent",
+  fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
 }));
 
 // Data structure for sub-processors and service providers
@@ -184,6 +186,13 @@ const subProcessorData = [
 const SubProcessors = () => {
   const { isDark } = useStyledDarkMode();
 
+  // Create custom theme with Qanelas Soft font family
+  const customTheme = createTheme({
+    typography: {
+      fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
+    },
+  });
+
   return (
     <TermsWrapper>
       <div className="page-header-section">
@@ -223,7 +232,7 @@ const SubProcessors = () => {
               <p>
               Since data is physically stored in a predetermined location, once an account begins storing data it cannot be moved. If you want to switch to a different region, contact your local partner or Enterprise account manager to create a new account hosted in the region of your choice going forward.
               </p>
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <SistentThemeProvider initialMode={isDark ? "dark" : "light"} theme={customTheme}>
                 <Row className="table-container" $Hcenter>
                   <Col md={12} sx={{ px: 0 }}>
                     {subProcessorData.map((section, index) => (
