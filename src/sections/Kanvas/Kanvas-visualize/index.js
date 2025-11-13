@@ -5,6 +5,8 @@ import KanvasVisualizerFeatures from "./kanvas-visualize-features";
 import KanvasVisualizerViews from "./kanvas-visualize-views";
 import BackgroundImage from "./images/oval-blur-shape.svg";
 import Reviews from "../../Pricing/review-slider";
+import KanvasHeroSection from "../../Kanvas/Kanvas-design/kanvas-design-hero";
+import DesignDefault from "../../Home/MeshmapDesignHighlight/index.js";
 
 const KanvasVisualize = () => {
   return (
@@ -15,8 +17,8 @@ const KanvasVisualize = () => {
       <KanvasVisualizeBanner />
       <KanvasVisualizerFeatures />
       <KanvasVisualizerViews />
-      {/* <KanvasHeroSection /> */}
-      {/* <DesignDefault /> */}
+      <KanvasHeroSection />
+      <DesignDefault />
       <Reviews />
     </KanvasVisualizeWrapper>
   );
