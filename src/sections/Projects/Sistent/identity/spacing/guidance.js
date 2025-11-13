@@ -2,11 +2,11 @@ import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
-import SpaceTokenTable2 from "../../../../../assets/images/app/projects/sistent/space-token-table-2-light.png";
-import SpaceTokenTable2Dark from "../../../../../assets/images/app/projects/sistent/space-token-table-2-dark.png";
+import SpaceTokenTable2 from "../../../../../assets/images/app/projects/sistent/space-token-table-2-light.webp";
+import SpaceTokenTable2Dark from "../../../../../assets/images/app/projects/sistent/space-token-table-2-dark.webp";
 
-import SpaceTokenTable3 from "../../../../../assets/images/app/projects/sistent/space-token-table-3-light.png";
-import SpaceTokenTable3Dark from "../../../../../assets/images/app/projects/sistent/space-token-table-3-dark.png";
+import SpaceTokenTable3 from "../../../../../assets/images/app/projects/sistent/space-token-table-3-light.webp";
+import SpaceTokenTable3Dark from "../../../../../assets/images/app/projects/sistent/space-token-table-3-dark.webp";
 import { Col, Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import { SistentLayout } from "../../sistent-layout";

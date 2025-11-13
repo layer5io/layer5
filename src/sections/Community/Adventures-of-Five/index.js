@@ -4,8 +4,8 @@ const SubscribeSection = loadable(() => import("../../../sections/subscribe/subs
 
 import { AdventuresWrapper } from "./adventures.style.js";
 import AdventuresVol from "../../../components/AdventuresVol/index";
-import vol1Img from "./vol1/meet-five.png";
-import vol2Img from "./vol2/the-adventures-of-five-cover-vol2.png";
+import vol1Img from "./vol1/meet-five.webp";
+import vol2Img from "./vol2/the-adventures-of-five-cover-vol2.webp";
 
 const AdventuresHome = () => {
   return (
