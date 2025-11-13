@@ -20,6 +20,7 @@ const KanvasBrand = loadable(() => import("./Brand-components/kanvas"));
 const BrandGuide = loadable(() => import("./Brand-components/brand-guide"));
 const StickFigures = loadable(() => import("./Brand-components/stickfigures"));
 const Catalog = loadable(() => import("./Brand-components/catalog"));
+const Academy = loadable(() => import("./Brand-components/academy"));
 const SocialBackgrounds = loadable(() => import("./Brand-components/social-backgrounds"));
 
 const getDimensions = (ele) => {
@@ -112,6 +113,7 @@ const Brand = () => {
   const kanvasRef = useRef(null);
   const stickfiguresRef = useRef(null);
   const CatalogRef = useRef(null);
+  const AcademyRef = useRef(null);
   const SocialBackgroundsRef = useRef(null);
 
   const sectionRefs = [
@@ -129,7 +131,8 @@ const Brand = () => {
     { section: "Kanvas", ref: kanvasRef },
     { section: "Five", ref: stickfiguresRef },
     { section: "Catalog", ref: CatalogRef },
-    { section: "SocialBackgrounds", ref: SocialBackgroundsRef }
+    { section: "Academy", ref: AcademyRef },
+    { section: "SocialBackgrounds", ref: SocialBackgroundsRef },
   ];
 
   const sectionIdMap = {
@@ -147,6 +150,7 @@ const Brand = () => {
     "meshmaster": meshMasterRef,
     "kanvas": kanvasRef,
     "catalog": CatalogRef,
+    "academy": AcademyRef,
     "five": stickfiguresRef
   };
 
@@ -252,6 +256,9 @@ const Brand = () => {
           </div>
           <div className="section" id="catalog" ref={CatalogRef}>
             <Catalog />
+          </div>
+          <div className="section" id="academy" ref={AcademyRef}>
+            <Academy />
           </div>
           <div className="section" id="five" ref={stickfiguresRef}>
             <StickFigures />
@@ -398,6 +405,16 @@ const Brand = () => {
               }}
             >
               <span> Catalog </span>
+            </p>
+            <p
+              className={`header_link ${
+                visibleSection === "Academy" ? "selected" : ""
+              }`}
+              onClick={() => {
+                scrollTo(AcademyRef.current, "academy");
+              }}
+            >
+              <span> Academy </span>
             </p>
             <p
               className={`header_link ${
