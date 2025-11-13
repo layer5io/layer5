@@ -189,7 +189,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.meshery.io/guides/infrastructure-management/registering-a-connection#infrastructure-discovery"
   },
   {
     "theme": "",
@@ -221,7 +221,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/spaces/environments/"
   },
   {
     "theme": "",
@@ -253,7 +253,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": "https://docs.layer5.io/kanvas/operator/operator-views/"
+    "docs": "https://docs.layer5.io/cloud/catalog/metrics/"
   },
   {
     "theme": "",
@@ -269,7 +269,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/kanvas/operator/views/#managing-views"
   },
   {
     "theme": "",
@@ -285,7 +285,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": "https://docs.layer5.io/kanvas/operator/operator-views/#5-export-a-view"
+    "docs": "https://docs.layer5.io/kanvas/operator/views/#5-export-a-view"
   },
   {
     "theme": "",
@@ -301,7 +301,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": "https://docs.layer5.io/kanvas/operator/operator-views/#3-share-a-view"
+    "docs": "https://docs.layer5.io/kanvas/operator/views/#3-share-a-view"
   },
   {
     "theme": "",
@@ -317,7 +317,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/kanvas/operator/#understanding-log-streamer"
   },
   {
     "theme": "",
@@ -333,7 +333,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.meshery.io/installation/kubernetes"
   },
   {
     "theme": "",
@@ -349,7 +349,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.meshery.io/concepts/architecture/meshsync#meshsync-1"
   },
   {
     "theme": "",
@@ -573,7 +573,7 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/kanvas/designer/sharing/"
   },
   {
     "theme": "",
@@ -589,7 +589,7 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/kanvas/designer/sharing/#sharing-your-design-with-a-link"
   },
   {
     "theme": "",
@@ -605,7 +605,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/kanvas/operator/views/"
   },
   {
     "theme": "",
@@ -622,22 +622,6 @@
       "enterprise": "x"
     },
     "docs": "https://docs.layer5.io/kanvas/operator/operator-views/"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
-    "category": "",
-    "functionOrder": "",
-    "function": "",
-    "feature": "",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "docs": ""
   },
   {
     "theme": "",
@@ -685,7 +669,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/identity/users/#account-linking"
   },
   {
     "theme": "",
@@ -733,7 +717,7 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/self-hosted/planning/identity-services/"
   },
   {
     "theme": "",
@@ -781,7 +765,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/spaces/workspaces/"
   },
   {
     "theme": "",
@@ -813,7 +797,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/spaces/managing-workspaces/"
   },
   {
     "theme": "",
@@ -829,7 +813,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/tutorials/sharing-a-workspace/"
   },
   {
     "theme": "",
@@ -845,7 +829,7 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/github-actions/"
   },
   {
     "theme": "",
@@ -941,7 +925,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/catalog/exploring-the-catalog/"
   },
   {
     "theme": "",
@@ -1053,7 +1037,7 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/identity/users/#user-accounts"
   },
   {
     "theme": "",
@@ -1069,7 +1053,7 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/tutorials/assigning-user-badges/"
   },
   {
     "theme": "",
@@ -1153,43 +1137,11 @@
   },
   {
     "theme": "",
-    "categoryOrder": "",
-    "category": "",
-    "functionOrder": "",
-    "function": "",
-    "feature": "",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
-    "category": "",
-    "functionOrder": "",
-    "function": "",
-    "feature": "",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
+    "categoryOrder": "add-on",
     "category": "Academy",
-    "functionOrder": "",
-    "function": "Academy",
-    "feature": "A comprehensive learning management system for creators and instructors on how to build, manage, and extend educational content like learning paths, challenges, and certifications with an inclusive, collaborative, hands-on learning environment for students.",
+    "functionOrder": "1102",
+    "function": "Academy Theoretical Learning",
+    "feature": "A comprehensive learning management system for creators and instructors on how to build, manage, and extend educational content like learning paths, challenges, and certifications.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
@@ -1201,98 +1153,50 @@
   },
   {
     "theme": "",
-    "categoryOrder": "",
+    "categoryOrder": "add-on",
     "category": "Academy",
-    "functionOrder": "",
-    "function": "Content Creator Guide",
-    "feature": "Learn how to create, manage, and publish learning paths, challenges, and certifications on the Layer5 Academy platform.",
+    "functionOrder": "1103",
+    "function": "Academy Practical Learning",
+    "feature": "An inclusive, collaborative, hands-on learning environment for students.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
       "teamOperator": "",
-      "enterprise": ""
+      "enterprise": "x"
     },
-    "docs": "https://docs.layer5.io/cloud/academy/creating-content/"
+    "docs": "https://docs.layer5.io/cloud/academy/"
   },
   {
     "theme": "",
-    "categoryOrder": "",
-    "category": "Academy",
-    "functionOrder": "",
-    "function": "Extending the Academy",
-    "feature": "A high-level guide to understanding the architecture, features, and workflow for creating custom content on the Layer5 Academy platform.",
+    "categoryOrder": "add-on",
+    "category": "Kanvas",
+    "functionOrder": "1104",
+    "function": "Dedicated WebRTC",
+    "feature": "This premium offering delivers a secure, high-performance WebRTC solution, purpose-built for real-time, multiplayer collaboration across distributed teams. Powered by Conflict-Free Replicated Data Types (CRDT), this feature ensures seamless, low-latency synchronization of cloud native designs, configurations, and operational workflows, even in complex multi-cluster Kubernetes and public Cloud environments.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
       "teamOperator": "",
-      "enterprise": ""
+      "enterprise": "x"
     },
-    "docs": "https://docs.layer5.io/cloud/academy/creating-content/extending-the-academy/"
+    "docs": ""
   },
   {
     "theme": "",
-    "categoryOrder": "",
-    "category": "Academy",
-    "functionOrder": "",
-    "function": "Creating Your First Learning Path",
-    "feature": "A hands-on tutorial that walks you through creating, structuring, and testing a custom learning path for the Layer5 Academy.",
+    "categoryOrder": "add-on",
+    "category": "Meshery",
+    "functionOrder": "1105",
+    "function": "Managed Meshery Servers",
+    "feature": "Managed cloud instances for comprehensive infrastructure configuration and lifecycle management.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
       "teamOperator": "",
-      "enterprise": ""
+      "enterprise": "x"
     },
-    "docs": "https://docs.layer5.io/cloud/academy/creating-content/creating-your-learning-path/"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
-    "category": "Academy",
-    "functionOrder": "",
-    "function": "Integrating Assessments in the Academy",
-    "feature": "Learn how to spice up the Academy with interactive assessments that keep learners engaged.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "docs": "https://docs.layer5.io/cloud/academy/creating-content/integrating-assessments-in-the-academy/"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
-    "category": "Academy",
-    "functionOrder": "",
-    "function": "Building Certifications",
-    "feature": "A step-by-step guide to building a professional certification in the Academy.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "docs": "https://docs.layer5.io/cloud/academy/creating-content/building-certifications/"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
-    "category": "",
-    "functionOrder": "",
-    "function": "Academy Instructor Console Guide",
-    "feature": "A comprehensive guide to using the Instructor Console. Learn how to track learner progress, analyze test performance, and manage your academy’s content and metrics.",
-    "subscription_tier": "Enterprise",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "docs": "https://docs.layer5.io/cloud/academy/creating-content/instructor-console-guide/"
+    "docs": ""
   }
 ]

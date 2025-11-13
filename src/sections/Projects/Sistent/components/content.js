@@ -19,7 +19,7 @@ const componentsData = [
     id: 3,
     name: "Modal",
     description:
-      "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface.",
+      "A modal is a conatiner that appears in front of the main content on a page when clicked on button or text. It provides information or an actionable piece of content for users to execute.",
     url: "/projects/sistent/components/modal",
     src: "/modal",
   },
@@ -122,14 +122,16 @@ const componentsData = [
   {
     id: 16,
     name: "Icons",
-    description: "Sistent provides a comprehensive collection of icons that can be used across your projects. These icons are designed to be consistent with the overall design language of the Sistent design system, ensuring a cohesive user experience.",
+    description:
+      "Sistent provides a comprehensive collection of icons that can be used across your projects. These icons are designed to be consistent with the overall design language of the Sistent design system, ensuring a cohesive user experience.",
     url: "/projects/sistent/components/icons",
-    src: "/icons"
+    src: "/icons",
   },
   {
     id: 17,
     name: "Dialog",
-    description: "Dialogs display important prompts or confirmation requests that interrupt user interaction flow.",
+    description:
+      "Dialogs display important prompts or confirmation requests that interrupt user interaction flow.",
     url: "/projects/sistent/components/dialog",
     src: "/dialog",
   },
@@ -148,7 +150,100 @@ const componentsData = [
     url: "/projects/sistent/components/switch",
     src: "/switch"
   },
-
+  {
+    id: 20,
+    name: "Tabs",
+    description: "Tabs organize and allow navigation between groups of content that are related and at the same level of hierarchy.",
+    url: "/projects/sistent/components/tabs",
+    src: "/tabs",
+  },
+  {
+    id: 21,
+    name: "Avatar",
+    description:
+      "An Avatar component is used to visually represent a user, profile, or entity, typically through an image, initials, or icon.",
+    url: "/projects/sistent/components/avatar",
+    src: "/avatar",
+  },
+  {
+    id: 22,
+    name: "AvatarGroup",
+    description:
+      "An AvatarGroup component is used to display a collection of Avatars together, typically representing a group of users, collaborators, or participants.",
+    url: "/projects/sistent/components/avatar-group",
+    src: "/avatar-group",
+  },
+  {
+    id: 23,
+    name: "Badge",
+    description: "A badge is a small component that displays a number or status indicator, often used to show notifications or messages.",
+    url: "/projects/sistent/components/badge",
+    src: "/badge",
+  },
+  {
+    id: 24,
+    name: "Toolbar",
+    description:
+      "The toolbar is a horizontal container for grouping interactive elements like buttons, filters, or navigation controls, typically placed at the top of a UI section.",
+    url: "/projects/sistent/components/toolbar",
+    src: "/toolbar",
+  },
+  {
+    "id": 25,
+    "name": "RadioGroup",
+    "description": "Sistent offers a well-structured RadioGroup component that allows users to select one option from a set.",
+    "url": "/projects/sistent/components/radiogroup",
+    "src": "/radiogroup"
+  },
+  {
+    "id": 26,
+    "name": "Grid",
+    "description": "The Grid component in Sistent provides a flexible and responsive layout system for arranging content in rows and columns.",
+    "url": "/projects/sistent/components/grid",
+    "src": "/grid"
+  },
+  {
+    "id": 27,
+    "name": "List",
+    "description": "Lists are essential UI elements that allow items to be organized sequentially in a structured and readable way. They help users view, select, and interact with multiple items conveniently.",
+    "url": "/projects/sistent/components/list",
+    "src": "/list",
+  },
+  {
+    "id": 28,
+    "name": "Chip",
+    "description": "Chips are compact elements that represent an input, attribute, or action. They are often used for tags, contacts, or filters.",
+    "url": "/projects/sistent/components/chip",
+    "src": "/chip",
+  },
+  {
+    "id": 29,
+    "name": "Collapse",
+    "description": "The Collapse component is used to create expandable/collapsible content sections. It smoothly animates the height of its children from zero to full height when expanded.",
+    "url": "/projects/sistent/components/collapse",
+    "src": "/collapse",
+  },
+  {
+    id: 30,
+    name: "IconButton",
+    description: "IconButton provides an interactive button component that displays only an icon, ideal for compact UIs where space is limited and actions are easily recognizable through iconography.",
+    url: "/projects/sistent/components/iconbutton",
+    src: "/iconbutton",
+  },
+  {
+    "id": 30,
+    "name": "FormControlLabel",
+    "description": "A control + label pair used for checkboxes or radio buttons.",
+    "url": "/projects/sistent/components/formcontrollabel",
+    "src": "/formcontrollabel",
+  },
+  {
+    id: 31,
+    name: "Stepper",
+    description: "Stepper provides a way to display progress through a sequence of logical steps.",
+    url: "/projects/sistent/components/stepper",
+    src: "/stepper",
+  },
 ];
 
 module.exports = { componentsData };
