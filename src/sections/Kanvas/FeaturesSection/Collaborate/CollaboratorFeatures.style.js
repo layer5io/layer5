@@ -162,7 +162,7 @@ const CollaboratorFeaturesWrapper = styled.section`
       top: 5rem;
     }
     &:hover{
-      background: #EBC017;
+      background: #00d3a9;
     }
   }
 
