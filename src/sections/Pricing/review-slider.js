@@ -16,8 +16,9 @@ import Ala from "./reviews/ala-eddine-benhassir.jpeg";
 import Alex from "./reviews/alex-hokanson.jpeg";
 import Patrick from "./reviews/patrick-steinig.jpeg";
 import Hein from "./reviews/hein.webp";
-import Anusha from "./reviews/anusha.png";
+import Anusha from "./reviews/anusha.webp";
 import Louie from "./reviews/louie-corbo.jpeg";
+import Abdechakour from "./reviews/abdechakour-h.jpeg";
 
 const settings = {
   dots: false,
@@ -74,6 +75,11 @@ max-width: 100%;
       margin: 0 1rem;
     }
 }
+.slick-initialized .slick-slide {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
 
 `;
 
@@ -170,12 +176,12 @@ const Reviews = () => {
             image={Maxi}
           />
           {/* <Customers
-            type="3"
-            quote="A sophisticated, but simply communicated value-performance index, MeshMark, redefines efficiency utilization, bringing business, application, and infrastructure KPIs under a single unit of measure."
-            person="Lee Calcote"
-            title="Founder and CEO of Layer5, and Co-Chair of the CNCF TAG Network"
-            image={Lee}
-          /> */}
+              type="3"
+              quote="A sophisticated, but simply communicated value-performance index, MeshMark, redefines efficiency utilization, bringing business, application, and infrastructure KPIs under a single unit of measure."
+              person="Lee Calcote"
+              title="Founder and CEO of Layer5, and Co-Chair of the CNCF TAG Network"
+              image={Lee}
+            /> */}
           <Customers
             type="3"
             quote="The Meshery Docker Extension offers an easy button to go from Docker Compose to Kubernetes to any service mesh."
@@ -209,6 +215,13 @@ const Reviews = () => {
             person="Anusha Sridharan"
             title="Lead Software Engineer at Fidelity Investments"
             image={Anusha}
+          />
+          <Customers
+            type="2"
+            quote="Wow, just tried Kanvas and it's exactly what I needed! Dragging that Helm chart was so smooth, and the smart features really caught my attention. Definitely sharing this with my dev team before everyone else discovers it!"
+            person="Abdechakour Hrouchan"
+            title="Software Engineer at Atlas Cloud Services"
+            image={Abdechakour}
           />
         </Slider>
       </div>

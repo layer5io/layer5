@@ -8,7 +8,7 @@ const CareerPrograms = () => {
   return (
     <>
       <ProgramsGrid  />
-      <FAQ category={["internships"]} />
+      <FAQ category={["careers"]} />
 
     </>
   );

@@ -5,7 +5,7 @@ const Data = {
   menuItems: [
     {
       name: "Solutions",
-      path: "/cloud-native-management/kanvas",
+      path: "/cloud-native-management/solutions",
       subItems: [
         {
           name: "Developer-defined Infrastructure",
@@ -37,6 +37,11 @@ const Data = {
           path: "/solutions/devrel-platform-for-kubernetes-and-cloud-native-content",
           sepLine: true,
         },
+        {
+          name: "Platform Engineering",
+          path: "/solutions/platform-engineering",
+          sepLine: true,
+        },
       ],
       actionItems: [
         {
@@ -44,45 +49,6 @@ const Data = {
           actionLink: "/pricing",
         },
       ],
-
-      // subItems: [
-      //     {
-      //         name: "Current Home",
-      //         path: "/",
-      //         sepLine: true
-      //     },
-      //     {
-      //         name: "Temp Example: Classic",
-      //         path: "/classic",
-      //         sepLine: true
-      //     },
-      //     {
-      //         name: "Temp Example: Modern",
-      //         path: "/modern",
-      //         sepLine: true
-      //     },
-      //     {
-      //         name: "Temp Example: Hosting",
-      //         path: "/hosting",
-      //         sepLine: true
-      //     }
-      // ],
-      // actionItems: [
-      //   {
-      //     actionName: "All projects",
-      //     actionLink: "/projects",
-      //   },
-      // ],
-      // actionName: "Home",
-      // actionLink: "/",
-      // div1: {
-      //     src: img1,
-      //     descr: "How I schooled my seniors"
-      // },
-      // div2: {
-      //     src: img2,
-      //     descr: "Service Mesh Istio patterns for multitenancy"
-      // }
     },
     {
       name: "Products",
@@ -102,9 +68,19 @@ const Data = {
           path: "/cloud-native-management/kanvas/operate",
         },
         {
-          name: "Cloud + Catalog",
+          name: "Cloud",
+          path: "/cloud-native-management/catalog",
+          sepLine: true,
+        },
+        {
+          name: "Academy",
+          path: "/learn/academy",
+        },
+        {
+          name: "Catalog",
           path: "/cloud-native-management/catalog",
         },
+
         {
           name: "Open source projects",
           path: "/projects",
@@ -164,7 +140,7 @@ const Data = {
     //     },
     //     {
     //       name: "Workshops",
-    //       path: "/learn/service-mesh-workshops",
+    //       path: "/learn/workshops",
     //       sepLine: true
     //     },
     //     {
@@ -174,7 +150,7 @@ const Data = {
     //     },
     //     {
     //       name: "Interactive Labs",
-    //       path: "/learn/service-mesh-labs",
+    //       path: "/learn/kanvas-labs",
     //       sepLine: true
     //     },
     //   ],
@@ -248,6 +224,7 @@ const Data = {
         {
           actionName: "Discussion forum",
           actionLink: "https://discuss.layer5.io",
+          external: true,
         },
         {
           actionName: "Open source internships",
@@ -280,6 +257,12 @@ const Data = {
           sepLine: true,
           externalLink: true,
         },
+        {
+          name: "Videos",
+          path: "https://docs.layer5.io/videos",
+          sepLine: true,
+          externalLink: true,
+        },
         // {
         //   name: "News",
         //   path: "/news",
@@ -289,6 +272,10 @@ const Data = {
           name: "Learn",
           path: "/learn",
           sepLine: true,
+        },
+        {
+          name: "Academy",
+          path: "/learn/academy",
         },
         {
           name: "Books",
@@ -302,7 +289,7 @@ const Data = {
         // },
         {
           name: "Workshops",
-          path: "/learn/service-mesh-workshops",
+          path: "/learn/workshops",
         },
         {
           name: "Learning Paths",
@@ -310,7 +297,7 @@ const Data = {
         },
         {
           name: "Interactive Labs",
-          path: "/learn/service-mesh-labs",
+          path: "/learn/kanvas-labs",
         },
       ],
       actionItems: [

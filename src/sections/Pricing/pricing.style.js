@@ -20,9 +20,11 @@ const PricingWrapper = styled.section`
   @media (min-width: 2048px) {
     height: 30rem;
   }
+
   h1{
     margin-top: -2rem;
   }
+
 
  .header-svg {
     position: absolute;
@@ -35,7 +37,21 @@ const PricingWrapper = styled.section`
     color: white;
     text-align: center;
   }
-}
+
+  @media (max-width: 383px){
+  height:27rem;
+
+  .header-controls{
+  flex-direction: column;
+  gap: 0rem;
+  } 
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+ }
+
+} 
 
 .toggle-container {
   display: flex;
@@ -44,12 +60,17 @@ const PricingWrapper = styled.section`
   margin: 2rem 0;
   font-size: .9rem;
   gap: 10px;
-  width: 85%;
+  width: auto;
+
+  @media (max-width: 383px){
+  margin-top: 0rem;
+  }
+
 }
 
 .toggle {
   border: 2px solid ${props => props.theme.shadowLightColor};
-  padding: .4rem;
+  padding: .6rem;
  border-radius: .5rem;
 }
 

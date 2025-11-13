@@ -5,6 +5,9 @@ const Banner1SectionWrapper = styled.section`
     padding: 7rem 0;
     background-color: ${props => props.theme.body};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    min-height: 600px; /* Add explicit min-height */
+    position: relative; /* Add position for better layout control */
+    width: 100%; /* Add explicit width */
 
     .background-svg {
         overflow: visible;
@@ -13,6 +16,7 @@ const Banner1SectionWrapper = styled.section`
         top: -10%;
         width: 25%;
         min-height: 150%;
+        height: auto; /* Ensure proper scaling */
     }
     p {
         font-size: 21px;
@@ -138,7 +142,15 @@ const Banner1SectionWrapper = styled.section`
         } 
      }
      @media only screen and (max-width: 760px) {
-        padding: 2rem 0;
+        min-height: 320px;
+        padding: 1.2rem 0 1.5rem 0;
+        .background-svg {
+            width: 7.2rem;
+            min-height: 9.6rem;
+            top: 10px;
+            right: -1.6rem;
+            opacity: 0.7;
+        }
         .section-title-wrapper {
             min-width: 100%;
         }
@@ -163,7 +175,15 @@ const Banner1SectionWrapper = styled.section`
         }
     }
     @media only screen and (max-width: 480px) {
-        padding: 2rem 0;
+        min-height: 220px;
+        padding: 0.7rem 0 1rem 0;
+        .background-svg {
+            width: 9.6rem;
+            min-height: 6.4rem;
+            top: 30px;
+            right: -2.88rem;
+            opacity: 0.5;
+        }
         .vintage-box{
             &:before{
                 content: none;

@@ -3,10 +3,13 @@ import SEO from "../components/seo";
 
 
 import ContactUnSubscribeSection from "../components/ContactCard-unsubscribe";
+import KanvasCTA from "../sections/Kanvas/kanvas-cta";
+
 const UnSubscribeSection = () => {
   return (
     <>
       <ContactUnSubscribeSection />
+      <KanvasCTA />
 
     </>
   );

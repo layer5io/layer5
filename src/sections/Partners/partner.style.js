@@ -238,8 +238,7 @@ const PartnerWrapper = styled.section`
     .moreInfo-div{
         height:0;
         overflow: hidden;
-        transition: all 0.5s ease-in-out;
-        
+        transition: all 0.5s ease-in-out; 
     }
     .moreInfo-div-active{
         height: 34rem;
@@ -343,6 +342,13 @@ const PartnerWrapper = styled.section`
             flex-direction:column;
             width:90%;
         } 
+        .anchor h2 {
+            text-align: left;
+            letter-spacing: normal;
+            word-spacing: normal;
+            font-size: 2rem;
+            line-height: 1.3;
+        }
         .partner-container{
             .partner-container-body{
                 width:100%;
@@ -443,6 +449,13 @@ const PartnerWrapper = styled.section`
             flex-direction: column;
             width: 100%;
         } 
+        .anchor h2{
+            text-align: left;
+            letter-spacing: normal;
+            word-spacing: normal;
+            font-size: 2rem;
+            line-height: 1.3;
+        }
         .mobview{
             width: 100%;
         }
@@ -482,6 +495,13 @@ const PartnerWrapper = styled.section`
         }   
         .mobview{
             width: 100%;
+        }
+        .anchor h2{
+            text-align: left;
+            letter-spacing: normal;
+            word-spacing: normal;
+            font-size: 2rem;
+            line-height: 1.3;
         }
         .acc-cont{
             display: flex;
@@ -531,6 +551,13 @@ const PartnerWrapper = styled.section`
             flex: unset;
             max-width: unset;
             width: 100%;
+        }
+        .anchor h2 {
+            text-align: left;
+            letter-spacing: normal;
+            word-spacing: normal;
+            font-size: 2rem;
+            line-height: 1.3;
         }
         .moreInfo-div-active{
             height: 70rem;

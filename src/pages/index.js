@@ -2,7 +2,6 @@ import React from "react";
 
 import SEO from "../components/seo";
 import Partners from "../sections/Home/Partners-home";
-import Integrations from "../sections/Home/Playground-home";
 import Banner from "../sections/Home/Banner";
 import loadable from "@loadable/component";
 import CornerPopup from "../components/Corner-popup";
@@ -24,7 +23,6 @@ const IndexPage = () => {
     <>
       <Banner />
       <FeaturesContainer />
-      <Integrations />
       <Partners />
       <CornerPopup/>
       {/* <ServiceMeshManagement /> */}

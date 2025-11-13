@@ -72,7 +72,7 @@
     "feature": "Define new components, relationships, and policies as needed. Import/export your custom models as OCI images.",
     "subscription_tier": "Free",
     "comparison_tiers": {
-      "free": "x",
+      "free": "",
       "teamDesigner": "x",
       "teamOperator": "x",
       "enterprise": "x"
@@ -189,7 +189,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.meshery.io/guides/infrastructure-management/registering-a-connection#infrastructure-discovery"
   },
   {
     "theme": "",
@@ -221,7 +221,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/spaces/environments/"
   },
   {
     "theme": "",
@@ -253,7 +253,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": "https://docs.layer5.io/kanvas/operator/operator-views/"
+    "docs": "https://docs.layer5.io/cloud/catalog/metrics/"
   },
   {
     "theme": "",
@@ -269,7 +269,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/kanvas/operator/views/#managing-views"
   },
   {
     "theme": "",
@@ -285,7 +285,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": "https://docs.layer5.io/kanvas/operator/operator-views/#5-export-a-view"
+    "docs": "https://docs.layer5.io/kanvas/operator/views/#5-export-a-view"
   },
   {
     "theme": "",
@@ -301,7 +301,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": "https://docs.layer5.io/kanvas/operator/operator-views/#3-share-a-view"
+    "docs": "https://docs.layer5.io/kanvas/operator/views/#3-share-a-view"
   },
   {
     "theme": "",
@@ -317,7 +317,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/kanvas/operator/#understanding-log-streamer"
   },
   {
     "theme": "",
@@ -333,7 +333,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.meshery.io/installation/kubernetes"
   },
   {
     "theme": "",
@@ -349,7 +349,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.meshery.io/concepts/architecture/meshsync#meshsync-1"
   },
   {
     "theme": "",
@@ -573,7 +573,7 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/kanvas/designer/sharing/"
   },
   {
     "theme": "",
@@ -589,7 +589,7 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/kanvas/designer/sharing/#sharing-your-design-with-a-link"
   },
   {
     "theme": "",
@@ -605,7 +605,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/kanvas/operator/views/"
   },
   {
     "theme": "",
@@ -622,22 +622,6 @@
       "enterprise": "x"
     },
     "docs": "https://docs.layer5.io/kanvas/operator/operator-views/"
-  },
-  {
-    "theme": "",
-    "categoryOrder": "",
-    "category": "",
-    "functionOrder": "",
-    "function": "",
-    "feature": "",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "",
-      "teamOperator": "",
-      "enterprise": ""
-    },
-    "docs": ""
   },
   {
     "theme": "",
@@ -685,7 +669,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/identity/users/#account-linking"
   },
   {
     "theme": "",
@@ -733,7 +717,7 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/self-hosted/planning/identity-services/"
   },
   {
     "theme": "",
@@ -781,39 +765,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "6",
-    "category": "Workspaces",
-    "functionOrder": "605",
-    "function": "Manage Workspace Team and Environment Access",
-    "feature": "Assign designs, views, users, and environments to shared workspaces.",
-    "subscription_tier": "",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "docs": ""
-  },
-  {
-    "theme": "",
-    "categoryOrder": "6",
-    "category": "Workspaces",
-    "functionOrder": "602",
-    "function": "Shared Workspaces",
-    "feature": "Shared Workspaces are collaborative spaces that you can use to store and collaborate on files within and between teams. Easily share files with customizable permissions (edit, comment, view). Create up to 10 shared workspaces per organization.",
-    "subscription_tier": "TeamDesigner|TeamOperator",
-    "comparison_tiers": {
-      "free": "",
-      "teamDesigner": "x",
-      "teamOperator": "x",
-      "enterprise": "x"
-    },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/spaces/workspaces/"
   },
   {
     "theme": "",
@@ -835,6 +787,38 @@
     "theme": "",
     "categoryOrder": "6",
     "category": "Workspaces",
+    "functionOrder": "605",
+    "function": "Manage Workspace Team and Environment Access",
+    "feature": "Assign designs, views, users, and environments to shared workspaces.",
+    "subscription_tier": "",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "docs": "https://docs.layer5.io/cloud/spaces/managing-workspaces/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "6",
+    "category": "Workspaces",
+    "functionOrder": "602",
+    "function": "Shared Workspaces",
+    "feature": "Shared Workspaces are collaborative spaces that you can use to store and collaborate on files within and between teams. Easily share files with customizable permissions (edit, comment, view). Create up to 10 shared workspaces per organization.",
+    "subscription_tier": "TeamDesigner|TeamOperator",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "x",
+      "teamOperator": "x",
+      "enterprise": "x"
+    },
+    "docs": "https://docs.layer5.io/cloud/tutorials/sharing-a-workspace/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "6",
+    "category": "Workspaces",
     "functionOrder": "604",
     "function": "GitOps Integrations",
     "feature": "Initiate deployment with creation of pull request, ArgoEvents, Flux sync, or webhook.",
@@ -845,7 +829,7 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/github-actions/"
   },
   {
     "theme": "",
@@ -941,7 +925,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/catalog/exploring-the-catalog/"
   },
   {
     "theme": "",
@@ -1053,7 +1037,7 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/identity/users/#user-accounts"
   },
   {
     "theme": "",
@@ -1069,7 +1053,7 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/tutorials/assigning-user-badges/"
   },
   {
     "theme": "",
@@ -1153,33 +1137,65 @@
   },
   {
     "theme": "",
-    "categoryOrder": "",
-    "category": "",
-    "functionOrder": "",
-    "function": "",
-    "feature": "",
-    "subscription_tier": "",
+    "categoryOrder": "add-on",
+    "category": "Academy",
+    "functionOrder": "1102",
+    "function": "Academy Theoretical Learning",
+    "feature": "A comprehensive learning management system for creators and instructors on how to build, manage, and extend educational content like learning paths, challenges, and certifications.",
+    "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
       "teamOperator": "",
-      "enterprise": ""
+      "enterprise": "x"
+    },
+    "docs": "https://docs.layer5.io/cloud/academy/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "add-on",
+    "category": "Academy",
+    "functionOrder": "1103",
+    "function": "Academy Practical Learning",
+    "feature": "An inclusive, collaborative, hands-on learning environment for students.",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
+    },
+    "docs": "https://docs.layer5.io/cloud/academy/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "add-on",
+    "category": "Kanvas",
+    "functionOrder": "1104",
+    "function": "Dedicated WebRTC",
+    "feature": "This premium offering delivers a secure, high-performance WebRTC solution, purpose-built for real-time, multiplayer collaboration across distributed teams. Powered by Conflict-Free Replicated Data Types (CRDT), this feature ensures seamless, low-latency synchronization of cloud native designs, configurations, and operational workflows, even in complex multi-cluster Kubernetes and public Cloud environments.",
+    "subscription_tier": "Enterprise",
+    "comparison_tiers": {
+      "free": "",
+      "teamDesigner": "",
+      "teamOperator": "",
+      "enterprise": "x"
     },
     "docs": ""
   },
   {
     "theme": "",
-    "categoryOrder": "",
-    "category": "",
-    "functionOrder": "",
-    "function": "",
-    "feature": "",
-    "subscription_tier": "",
+    "categoryOrder": "add-on",
+    "category": "Meshery",
+    "functionOrder": "1105",
+    "function": "Managed Meshery Servers",
+    "feature": "Managed cloud instances for comprehensive infrastructure configuration and lifecycle management.",
+    "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
       "teamDesigner": "",
       "teamOperator": "",
-      "enterprise": ""
+      "enterprise": "x"
     },
     "docs": ""
   }
