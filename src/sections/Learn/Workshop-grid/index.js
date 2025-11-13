@@ -124,21 +124,9 @@ const WorkshopsPage = () => {
                       </div>
                       <div className={content && ID === id ? "linkAndReadBtns-open" : "linkAndReadBtns"}>
                         <div className="expand">
-                          {content && ID === id ? (
-                            <button
-                              onClick={() => toggleActive(id)}
-                              className="readmeBtn"
-                            >
-                              Read Less <BsArrowUp className="icon" size={30} />
-                            </button>
-                          ) : (
-                            <button
-                              onClick={() => toggleActive(id)}
-                              className="readmeBtn readmreBtn"
-                            >
-                              Read More <BsArrowDown className="icon" size={30} />
-                            </button>
-                          )}
+                            {content && ID === id ?
+                            <button onClick={() => toggleActive(id)} className="readmeBtn"> Read Less <BsArrowUp className="icon" size={30} /></button> :
+                             <button onClick={() => toggleActive(id)} className="readmeBtn readmreBtn"> Read More <BsArrowDown className="icon" size={30} /></button> }
                         </div>
 
                         <div className="externalLink">
