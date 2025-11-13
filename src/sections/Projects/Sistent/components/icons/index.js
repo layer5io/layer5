@@ -1,8 +1,11 @@
 import React, { useState, useCallback, useMemo } from "react";
 import PropTypes from "prop-types";
+import { navigate } from "gatsby";
+import { useLocation } from "@reach/router";
 import { SistentThemeProvider, KubernetesIcon, DesignIcon, CustomTooltip } from "@sistent/sistent";
 import { SistentLayout } from "../../sistent-layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
+import TabButton from "../../../../../reusecore/Button";
 import debounce from "lodash.debounce";
 import * as Icons from "@sistent/sistent";
 import Code from "../../../../../components/CodeBlock";
@@ -110,6 +113,7 @@ IconCard.propTypes = {
 
 // Main SistentIcons component
 const SistentIcons = () => {
+  const location = useLocation();
   const { isDark } = useStyledDarkMode();
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -140,6 +144,38 @@ const SistentIcons = () => {
         <p>
           The icons are available as React components and can be easily imported and used in your application. They are also customizable in terms of size, color, and other properties.
         </p>
+        <div className="filterBtns">
+          <TabButton
+            className={
+              location.pathname === "/projects/sistent/components/icons"
+                ? "active"
+                : ""
+            }
+            onClick={() => navigate("/projects/sistent/components/icons")}
+            title="Overview"
+          />
+          <TabButton
+            className={
+              location.pathname ===
+              "/projects/sistent/components/icons/guidance"
+                ? "active"
+                : ""
+            }
+            onClick={() =>
+              navigate("/projects/sistent/components/icons/guidance")
+            }
+            title="Guidance"
+          />
+          <TabButton
+            className={
+              location.pathname === "/projects/sistent/components/icons/code"
+                ? "active"
+                : ""
+            }
+            onClick={() => navigate("/projects/sistent/components/icons/code")}
+            title="Code"
+          />
+        </div>
       </div>
 
       <div className="showcase">

@@ -52,12 +52,14 @@ const FeaturesContainer = () => {
         {
           text: "Amazon Web Services",
           image: isDark ? AWSLogoDark : AWSLogoLight,
+          alt: "Amazon Web Services Logo",
           redirect:
             "/cloud-native-management/generate-aws-architecture-diagram",
         },
         {
           text: "Google Cloud Platform",
           image: GCPLogo,
+          alt: "Logo Google Cloud Platform",
           redirect:
             "/cloud-native-management/generate-gcp-architecture-diagram",
         },

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import IntegrationDesigner from "./images/layer5-kanvas-designer.webp";
-import ProfileImg from "./images/build-your-profile.png";
+import ProfileImg from "./images/build-your-profile.webp";
 import PictureSlider from "./picture-slider";
 // import Button from "../../../reusecore/Button";
 import JourneySection from "./JourneySection";
@@ -10,6 +10,7 @@ import InlineQuotes from "../../components/Inline-quotes";
 import YashSharmaIMg from "../../collections/members/yash-sharma/yash-sharma.webp";
 import NicJacksonImg from "../../collections/members/nicholas-jackson/nic-jackson.webp";
 import RutkIkegahImg from "../../collections/members/ruth-ikegah/ruth-ikegah.jpg";
+import DhruvSharmaImg from "./images/Dhruv-Sharma.png";
 
 
 const DevrelContentWrapper = styled.div`
@@ -294,6 +295,13 @@ const DevrelContent = () => {
               <PictureSlider />
             </Col>
           </Row>
+          <Row>
+            <InlineQuotes
+              person="Dhruv Sharma"
+              title="Principal Platform Product Manager at GuideWire"
+              quote="This wonderful product is a vendor-neutral self-service engineering platform that scales intent—not toil—by turning architecture into a consistent design-to-operate pipeline."
+              image={DhruvSharmaImg}/>
+          </Row>
           <Row className="devrel">
             <Col $md={6} className="devrel-image">
               <div className="image-wrapper">
@@ -318,17 +326,22 @@ const DevrelContent = () => {
               image={RutkIkegahImg}/>
           </Row>
           <Row className="devrel">
-            <Col $md={6} className="devrel-detail recognition-section">
+            <Col $md={6} className="devrel-detail">
               <h2 className="heading">
-              Recognition Program
+                Turn Knowledge into Credentials
               </h2>
               <ul className="caption">
-                <li><b>Achievement <a href="https://badges.layer5.io">Badges</a>:</b> Earn badges for key milestones, like streaming logs from a Kubernetes Pod for the first time.</li>
-                <li><b>Leaderboard Visibility:</b> Participate in challenges, compete on leaderboards, and stand out in the community.</li>
-                <li><b>Featured Mentions:</b> Get recognized when your content becomes popular, with shoutouts from the project.</li>
+                <li><b>Guided Learning Journeys:</b> Advance your cloud native skills through <a href="https://cloud.layer5.io/academy" target="_blank" rel="noopener noreferrer">Layer5 Academy</a>, offering structured paths that combine theory with hands-on labs.</li>
+                <li><b>Interactive Challenges:</b> Strengthen your understanding in real-world scenarios with Academy challenges, powered by <a href="https://meshery.layer5.io/extension/meshmap" target="_blank" rel="noopener noreferrer">Meshery</a>.</li>
+                <li><b>Earn Recognition:</b> Achieve Layer5 Academy certifications and badges, and showcase them directly on your DevRel profile and leaderboards.</li>
+                <li><b>Community Contribution:</b> Contribute new tutorials, challenges, and courses to Academy, growing your professional influence in the cloud-native ecosystem.</li>
               </ul>
             </Col>
-
+            <Col $md={6} className="devrel-image">
+              <PictureSlider images="academy" />
+            </Col>
+          </Row>
+          <Row className="devrel">
             <div className="recognition-content">
               <div className="badges-section">
                 <div className="badge-stack">
@@ -354,6 +367,16 @@ const DevrelContent = () => {
                 </div>
               </div>
             </div>
+            <Col $md={6} className="devrel-detail recognition-section">
+              <h2 className="heading">
+              Recognition Program
+              </h2>
+              <ul className="caption">
+                <li><b>Achievement <a href="https://badges.layer5.io">Badges</a>:</b> Earn badges for key milestones, like streaming logs from a Kubernetes Pod for the first time.</li>
+                <li><b>Leaderboard Visibility:</b> Participate in challenges, compete on leaderboards, and stand out in the community.</li>
+                <li><b>Featured Mentions:</b> Get recognized when your content becomes popular, with shoutouts from the project.</li>
+              </ul>
+            </Col>
           </Row>
           <Row className="devrel">
             <InlineQuotes

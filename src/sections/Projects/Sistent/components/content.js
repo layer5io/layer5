@@ -19,7 +19,7 @@ const componentsData = [
     id: 3,
     name: "Modal",
     description:
-      "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface.",
+      "A modal is a conatiner that appears in front of the main content on a page when clicked on button or text. It provides information or an actionable piece of content for users to execute.",
     url: "/projects/sistent/components/modal",
     src: "/modal",
   },
@@ -184,9 +184,65 @@ const componentsData = [
     id: 24,
     name: "Toolbar",
     description:
-    "The toolbar is a horizontal container for grouping interactive elements like buttons, filters, or navigation controls, typically placed at the top of a UI section.",
+      "The toolbar is a horizontal container for grouping interactive elements like buttons, filters, or navigation controls, typically placed at the top of a UI section.",
     url: "/projects/sistent/components/toolbar",
     src: "/toolbar",
+  },
+  {
+    "id": 25,
+    "name": "RadioGroup",
+    "description": "Sistent offers a well-structured RadioGroup component that allows users to select one option from a set.",
+    "url": "/projects/sistent/components/radiogroup",
+    "src": "/radiogroup"
+  },
+  {
+    "id": 26,
+    "name": "Grid",
+    "description": "The Grid component in Sistent provides a flexible and responsive layout system for arranging content in rows and columns.",
+    "url": "/projects/sistent/components/grid",
+    "src": "/grid"
+  },
+  {
+    "id": 27,
+    "name": "List",
+    "description": "Lists are essential UI elements that allow items to be organized sequentially in a structured and readable way. They help users view, select, and interact with multiple items conveniently.",
+    "url": "/projects/sistent/components/list",
+    "src": "/list",
+  },
+  {
+    "id": 28,
+    "name": "Chip",
+    "description": "Chips are compact elements that represent an input, attribute, or action. They are often used for tags, contacts, or filters.",
+    "url": "/projects/sistent/components/chip",
+    "src": "/chip",
+  },
+  {
+    "id": 29,
+    "name": "Collapse",
+    "description": "The Collapse component is used to create expandable/collapsible content sections. It smoothly animates the height of its children from zero to full height when expanded.",
+    "url": "/projects/sistent/components/collapse",
+    "src": "/collapse",
+  },
+  {
+    id: 30,
+    name: "IconButton",
+    description: "IconButton provides an interactive button component that displays only an icon, ideal for compact UIs where space is limited and actions are easily recognizable through iconography.",
+    url: "/projects/sistent/components/iconbutton",
+    src: "/iconbutton",
+  },
+  {
+    "id": 30,
+    "name": "FormControlLabel",
+    "description": "A control + label pair used for checkboxes or radio buttons.",
+    "url": "/projects/sistent/components/formcontrollabel",
+    "src": "/formcontrollabel",
+  },
+  {
+    id: 31,
+    name: "Stepper",
+    description: "Stepper provides a way to display progress through a sequence of logical steps.",
+    url: "/projects/sistent/components/stepper",
+    src: "/stepper",
   },
 ];
 
