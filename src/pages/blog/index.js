@@ -4,6 +4,7 @@ import SEO from "../../components/seo";
 import BlogGrid from "../../sections/Blog/Blog-grid";
 import { graphql } from "gatsby";
 import loadable from "@loadable/component";
+
 const BlogList = loadable(() => import ("../../sections/Blog/Blog-list"));
 
 export const query = graphql`query allBlogs {
@@ -86,7 +87,6 @@ const Blog = (props) => {
         currentPage={currentPage}
         queryResults={queryResults}
       />
-
     </>
   );
 };
