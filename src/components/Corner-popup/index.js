@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from "react";
 import Button from "../../reusecore/Button";
 import { ReactComponent as CloseIcon } from "./closeIcon.svg";
-import popupImageSmall from "./power-of-meshery-small.webp";
 import CornerPopupWrapper from "./popup.style";
 
-const CornerPopup = () => {
+const CornerPopup = ({ storageKey = "showPopup", link, text, content }) => {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    if (!localStorage.getItem("showPopup")) {
+    if (!localStorage.getItem(storageKey)) {
       setTimeout(() => {
         setShowPopup(true);
+        localStorage.setItem(storageKey, true);
       }, 8000);
-      localStorage.setItem("showPopup", true);
-    } else setShowPopup(false);
-  },[]);
+    } else {
+      setShowPopup(false);
+    }
+  }, [storageKey]);
 
   return (
     showPopup &&
@@ -25,10 +26,10 @@ const CornerPopup = () => {
             <div className="close-btn" onClick={() => setShowPopup(false)}>
               <CloseIcon />
             </div>
-            <a href="https://play.meshery.io/">
-              <img className="popup-image" src={popupImageSmall} />
+            <a href={link}>
+              {content}
             </a>
-            <Button $primary className="explore-playground-button" title="Access Playground" $url="https://play.meshery.io/" $external={true}/>
+            <Button $primary className="explore-playground-button" title={text} $url={link} $external={true}/>
           </div>
         </div>
       </div>

@@ -34,7 +34,7 @@ const CornerPopupWrapper = styled.div`
     align-items: center;
     padding: 1rem;
     border: 1px solid #00d3a9;
-    border-radius: 5%;
+    border-radius: 12px;
     box-shadow: 0 0 30px rgba(0,211,169, 0.6);
     @media only screen and (max-width: 640px) {
         padding: 0.5rem;
@@ -47,16 +47,6 @@ const CornerPopupWrapper = styled.div`
     right: 0rem;
     cursor: pointer;
 }
-.popup-image{
-    border: 1px solid ${props => props.theme.whiteToBlack};
-    border-radius: 3%;
-}
-/* .popup-image-small{
-    box-shadow: 0 0 30px rgba(0,211,169, 0.6);
-    @media only screen and (min-width: 767px) {
-        display: none;
-    }
-} */
 
 .explore-playground-button {
     min-width: 140px;

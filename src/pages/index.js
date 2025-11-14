@@ -5,6 +5,7 @@ import Partners from "../sections/Home/Partners-home";
 import Banner from "../sections/Home/Banner";
 import loadable from "@loadable/component";
 import CornerPopup from "../components/Corner-popup";
+
 const CloudNativeManagement = loadable(() => import("../sections/Home/CloudNativeManagement"));
 const SubscribeSection = loadable(() => import("../sections/subscribe/subscribe"));
 // const ServiceMeshFocussed = loadable(() => import("../sections/Home/Service-mesh-focussed"));
@@ -14,6 +15,7 @@ import CaseStudyBanner from "../components/Case-study-banner";
 // const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
 const MesheryIntegration = loadable(() => import("../sections/Meshery/Meshery-integrations"));
 const FeaturesContainer = loadable(() => import("../sections/Home/FeaturesContainer"));
+import popupImageSmall from "../sections/Home/CornerPopup/power-of-meshery-small.png";
 
 // import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 
@@ -21,13 +23,17 @@ const FeaturesContainer = loadable(() => import("../sections/Home/FeaturesContai
 const IndexPage = () => {
   return (
     <>
-      <Banner />
-      <FeaturesContainer />
-      <Partners />
-      <CornerPopup/>
+      <Banner/>
+      <FeaturesContainer/>
+      <Partners/>
+      <CornerPopup storageKey="homepageShowPopup" image={popupImageSmall} link="https://play.meshery.io/"
+        content={
+          <img alt="popup image" className="popup-image" src={popupImageSmall}/>
+        }
+        text="Access Playground"/>
       {/* <ServiceMeshManagement /> */}
-      <CloudNativeManagement />
-      <MesheryIntegration  />
+      <CloudNativeManagement/>
+      <MesheryIntegration/>
       {/* <Statement /> */}
       {/* <AppScreens /> */}
       {/* <Pricing /> */}
@@ -41,7 +47,7 @@ const IndexPage = () => {
       <CaseStudyBanner/>
       {/* <ServiceMeshFocussed bookName={"enterprise-path"} /> */}
       {/* <EngineerEnabler /> */}
-      <SubscribeSection />
+      <SubscribeSection/>
 
     </>
   );
@@ -61,8 +67,9 @@ export const Head = () => {
     ]
   };
   return (
-    <SEO title="Layer5" description="An empowerer of engineers, Layer5 helps you extract more value from your infrastructure. Creator and maintainer of cloud native standards. Maker of Meshery, the cloud native manager."
-      schemaMarkup={schema} />
+    <SEO title="Layer5"
+      description="An empowerer of engineers, Layer5 helps you extract more value from your infrastructure. Creator and maintainer of cloud native standards. Maker of Meshery, the cloud native manager."
+      schemaMarkup={schema}/>
   );
 };
 export default IndexPage;
