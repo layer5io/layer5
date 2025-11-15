@@ -231,11 +231,11 @@ const componentsData = [
     src: "/iconbutton",
   },
   {
-    "id": 30,
-    "name": "FormControlLabel",
-    "description": "A control + label pair used for checkboxes or radio buttons.",
-    "url": "/projects/sistent/components/formcontrollabel",
-    "src": "/formcontrollabel",
+    id: 30,
+    name: "Table",
+    description: "Table components provide a flexible and feature-rich way to display tabular data with sorting, filtering, pagination, and responsive design capabilities.",
+    url: "/projects/sistent/components/table",
+    src: "/table",
   },
   {
     id: 31,
@@ -243,6 +243,13 @@ const componentsData = [
     description: "Stepper provides a way to display progress through a sequence of logical steps.",
     url: "/projects/sistent/components/stepper",
     src: "/stepper",
+  },
+  {
+    "id": 32,
+    "name": "FormControlLabel",
+    "description": "A control + label pair used for checkboxes or radio buttons.",
+    "url": "/projects/sistent/components/formcontrollabel",
+    "src": "/formcontrollabel",
   },
 ];
 
