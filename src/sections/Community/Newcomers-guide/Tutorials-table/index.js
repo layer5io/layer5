@@ -37,7 +37,7 @@ const TutorialsTable = () => {
               {value}
               {isNew && (
                 <img
-                  src="/images/new-badge.webp"
+                  src="/images/new-badge.png"
                   alt="New"
                 />
               )}
