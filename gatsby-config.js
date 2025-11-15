@@ -21,13 +21,56 @@ module.exports = {
       resolve: "gatsby-plugin-netlify",
       options: {
         headers: {
-          "/*": [
-            "X-Frame-Options: SAMEORIGIN",
-            "Content-Security-Policy: frame-ancestors 'self'",
+          // Cache static assets with content hashes for 1 year
+          "/static/*": [
+            "Cache-Control: public, max-age=31536000, immutable",
+          ],
+          "/*.js": [
+            "Cache-Control: public, max-age=31536000, immutable",
+          ],
+          "/*.css": [
+            "Cache-Control: public, max-age=31536000, immutable",
+          ],
+          "/page-data/*": [
+            "Cache-Control: public, max-age=0, must-revalidate",
+          ],
+          // Fonts should be cached for 1 year
+          "/*.woff": [
+            "Cache-Control: public, max-age=31536000, immutable",
+          ],
+          "/*.woff2": [
+            "Cache-Control: public, max-age=31536000, immutable",
+          ],
+          "/*.ttf": [
+            "Cache-Control: public, max-age=31536000, immutable",
+          ],
+          // Images with hashes can be cached long-term
+          "/*.png": [
+            "Cache-Control: public, max-age=31536000, immutable",
+          ],
+          "/*.jpg": [
+            "Cache-Control: public, max-age=31536000, immutable",
+          ],
+          "/*.webp": [
+            "Cache-Control: public, max-age=31536000, immutable",
+          ],
+          "/*.svg": [
+            "Cache-Control: public, max-age=31536000, immutable",
+          ],
+          // HTML files should not be cached
+          "/*.html": [
+            "Cache-Control: public, max-age=0, must-revalidate",
+          ],
+          "/": [
+            "Cache-Control: public, max-age=0, must-revalidate",
           ],
         },
+        allPageHeaders: [
+          "X-Frame-Options: SAMEORIGIN",
+          "Content-Security-Policy: frame-ancestors 'self'",
+        ],
         mergeSecurityHeaders: true,
-        mergeCachingHeaders: true,
+        mergeCachingHeaders: false, // Disable default caching headers to use custom ones
       },
     },
     {
