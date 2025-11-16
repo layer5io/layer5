@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 
@@ -16,10 +16,8 @@ import {
   TableHead,
   TableBody,
   SistentThemeProvider,
-  CustomTooltip,
-  Box,
 } from "@sistent/sistent";
-import { copyToClipboard } from "../../../../../components/CodeBlock/copy-to-clipboard.js";
+import CopyValue from "../../../../../components/CopyValue";
 
 // Table data
 const primitiveTokens = [
@@ -270,43 +268,6 @@ const semanticTokens = [
   },
 ];
 
-const CopyCell = ({ value }) => {
-  const [copyText, setCopyText] = useState("Copy");
-
-  const handleCopy = async () => {
-    await copyToClipboard(value);
-    setCopyText("Copied");
-    setTimeout(() => setCopyText("Copy"), 1000);
-  };
-  return (
-    <CustomTooltip
-      title={copyText === "Copied" ? "Copied" : "Copy"}
-      enterDelay={800}
-      leaveDelay={10}
-      placement="right"
-    >
-      <Box
-        sx={{
-          position: "relative",
-          display: "inline-flex",
-          alignItems: "center",
-          cursor: "pointer",
-          padding: "2px 4px",
-          borderRadius: "3px",
-          transition: "background-color 0.2s ease",
-          "&:hover": {
-            backgroundColor: (theme) =>
-              theme.palette.action?.hover || "rgba(0, 0, 0, 0.04)",
-          },
-        }}
-        onClick={handleCopy}
-      >
-        <span>{value}</span>
-      </Box>
-    </CustomTooltip>
-  );
-};
-
 const TypographyPreviewBox = styled("div")(
   ({ theme, size, lineHeight, weight, caseStyle, typeface }) => ({
     fontSize: size,
@@ -454,7 +415,7 @@ const TypographyCode = () => {
                       {primitiveTokens.map((t) => (
                         <StyledTableRow key={t.token}>
                           <StyledTableCell>
-                            <CopyCell value={t.token} />
+                            <CopyValue copyValue={t.token} />
                           </StyledTableCell>
                           <StyledTableCell>{t.size}</StyledTableCell>
                           <StyledTableCell>{t.lineHeight}</StyledTableCell>
@@ -504,7 +465,7 @@ const TypographyCode = () => {
                       {semanticTokens.map((t) => (
                         <StyledTableRow key={t.token}>
                           <StyledTableCell>
-                            <CopyCell value={t.token} />
+                            <CopyValue copyValue={t.token} />
                           </StyledTableCell>
                           <StyledTableCell>
                             <strong>Typeface:</strong> {t.desktop.typeface}

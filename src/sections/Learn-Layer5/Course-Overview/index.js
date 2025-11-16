@@ -88,7 +88,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
           </div>
           <Button
             title={hasBookmark ? "Start Again" : "Get Started"}
-            $url={`istio/${course.frontmatter.toc[0]}`}
+            $url={`${extractedSection}/${course.frontmatter.toc[0]}`}
           />
           {hasBookmark && (
             <Button

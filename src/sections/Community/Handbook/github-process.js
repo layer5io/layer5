@@ -35,92 +35,94 @@ const SecurityVulnerabilitiesPage = () => {
             <h3>Organization Secrets</h3>
             <p>Layer5 has the following org-wide secrets available:</p>
 
-            <table>
-              <thead>
-                <tr>
-                  <th><b>Secret Name</b></th>
-                  <th><b>Description</b></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>CYPRESS_RECORD_KEY</td>
-                  <td>Needed for recording the Cypress run in the Cypress Dashboard</td>
-                </tr>
-                <tr>
-                  <td>DOCKER_PASSWORD</td>
-                  <td>Belongs to user "mesheryci"</td>
-                </tr>
-                <tr>
-                  <td>DOCKER_USERNAME</td>
-                  <td>"mesheryci"</td>
-                </tr>
-                <tr>
-                  <td>NETLIFY_AUTH_TOKEN</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>NETLIFY_SITE_ID</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>RELEASEDRAFTER_PAT</td>
-                  <td>Belongs to user "l5io"</td>
-                </tr>
-                <tr>
-                  <td>RELEASE_NOTES_PAT</td>
-                  <td>Belongs to user "l5io"</td>
-                </tr>
-                <tr>
-                  <td>SLACK_BOT_TOKEN</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>GITHUB_TOKEN</td>
-                  <td>For the community scope repo that can be use commit and release</td>
-                </tr>
-                <tr>
-                  <td>NODE_VERSION</td>
-                  <td>"v18" as of Nov 15, 2022.</td>
-                </tr>
-                <tr>
-                  <td>GO_VERSION</td>
-                  <td>1.19</td>
-                </tr>
-                <tr>
-                  <td>PROVIDER_TOKEN</td>
-                  <td>Infinite Meshery Cloud token</td>
-                </tr>
-                <tr>
-                  <td>NPM_TOKEN</td>
-                  <td>l5io user's token for publishing packages</td>
-                </tr>
-                <tr>
-                  <td>INTEGRATION_SPREADSHEET_CRED</td>
-                  <td>Base64 encoded cred for accessing integration spreadsheet on behalf of user  <a href="mailto: no-reply@layer5.io">no-reply@layer5.io</a></td>
-                </tr>
-                <tr>
-                  <td>PLAYGROUND_CONFIG</td>
-                  <td>Base64 encoded kubeconfig of Playground</td>
-                </tr>
-                <tr>
-                  <td>METAL_SSH_KEY</td>
-                  <td>SMP Project-wide SSH private key</td>
-                </tr>
-                <tr>
-                  <td>METAL_AUTH_TOKEN</td>
-                  <td>Metal cli auth token</td>
-                </tr>
-                <tr>
-                  <td>METAL_SERVER1</td>
-                  <td>ID of 1st metal server running playground</td>
-                </tr>
-                <tr>
-                  <td>METAL_SERVER2</td>
-                  <td>ID of 2nd metal server running playground</td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th><b>Secret Name</b></th>
+                    <th><b>Description</b></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>CYPRESS_RECORD_KEY</td>
+                    <td>Needed for recording the Cypress run in the Cypress Dashboard</td>
+                  </tr>
+                  <tr>
+                    <td>DOCKER_PASSWORD</td>
+                    <td>Belongs to user "mesheryci"</td>
+                  </tr>
+                  <tr>
+                    <td>DOCKER_USERNAME</td>
+                    <td>"mesheryci"</td>
+                  </tr>
+                  <tr>
+                    <td>NETLIFY_AUTH_TOKEN</td>
+                    <td>Netlify authentication token used for deployment.</td>
+                  </tr>
+                  <tr>
+                    <td>NETLIFY_SITE_ID</td>
+                    <td>Unique ID of the Netlify site to deploy to.</td>
+                  </tr>
+                  <tr>
+                    <td>RELEASEDRAFTER_PAT</td>
+                    <td>Belongs to user "l5io"</td>
+                  </tr>
+                  <tr>
+                    <td>RELEASE_NOTES_PAT</td>
+                    <td>Belongs to user "l5io"</td>
+                  </tr>
+                  <tr>
+                    <td>SLACK_BOT_TOKEN</td>
+                    <td>Authentication token for the Slack bot integration.</td>
+                  </tr>
+                  <tr>
+                    <td>GITHUB_TOKEN</td>
+                    <td>For the community scope repo that can be use commit and release</td>
+                  </tr>
+                  <tr>
+                    <td>NODE_VERSION</td>
+                    <td>"v18" as of Nov 15, 2022.</td>
+                  </tr>
+                  <tr>
+                    <td>GO_VERSION</td>
+                    <td>1.19</td>
+                  </tr>
+                  <tr>
+                    <td>PROVIDER_TOKEN</td>
+                    <td>Infinite Meshery Cloud token</td>
+                  </tr>
+                  <tr>
+                    <td>NPM_TOKEN</td>
+                    <td>l5io user's token for publishing packages</td>
+                  </tr>
+                  <tr>
+                    <td>INTEGRATION_SPREADSHEET_CRED</td>
+                    <td>Base64 encoded cred for accessing integration spreadsheet on behalf of user  <a href="mailto: no-reply@layer5.io">no-reply@layer5.io</a></td>
+                  </tr>
+                  <tr>
+                    <td>PLAYGROUND_CONFIG</td>
+                    <td>Base64 encoded kubeconfig of Playground</td>
+                  </tr>
+                  <tr>
+                    <td>METAL_SSH_KEY</td>
+                    <td>SMP Project-wide SSH private key</td>
+                  </tr>
+                  <tr>
+                    <td>METAL_AUTH_TOKEN</td>
+                    <td>Metal cli auth token</td>
+                  </tr>
+                  <tr>
+                    <td>METAL_SERVER1</td>
+                    <td>ID of 1st metal server running playground</td>
+                  </tr>
+                  <tr>
+                    <td>METAL_SERVER2</td>
+                    <td>ID of 2nd metal server running playground</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
             <h2>Layer5 Issue Labels Guide</h2>
             <p>
@@ -131,199 +133,217 @@ const SecurityVulnerabilitiesPage = () => {
             <p>
               Area labels specify which part of the project an issue or PR relates to—such as documentation, user interface, or continuous integration. Using area labels helps contributors with specific interests or expertise find and filter issues that are relevant to them, and helps project maintainers prioritize or assign tasks more efficiently. Assign an area label any time you create or triage an issue/PR that falls within a specific domain (docs, UI, CI, performance, etc.).
             </p>
-            <table>
-              <thead>
-                <tr>
-                  <th>Label</th>
-                  <th>Description</th>
-                  <th>Color</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>area/ci</td><td>Continuous integration, build &amp; release</td><td>#5319e1</td></tr>
-                <tr><td>area/docs</td><td>Improvements/additions to documentation</td><td>#5319e2</td></tr>
-                <tr><td>area/lifecycle</td><td>Lifecycle management (install, uninstall, configure)</td><td>#5319e3</td></tr>
-                <tr><td>area/performance</td><td>Performance management</td><td>#5319e4</td></tr>
-                <tr><td>area/tests</td><td>Testing / quality assurance</td><td>#5319e5</td></tr>
-                <tr><td>area/ui</td><td>User interface</td><td>#5319e6</td></tr>
-                <tr><td>area/workloads</td><td>Applications / services</td><td>#5319e7</td></tr>
-                <tr><td>area/helm</td><td>Helm charts issues</td><td>#5319e8</td></tr>
-              </tbody>
-            </table>
+            <div className="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Label</th>
+                    <th>Description</th>
+                    <th>Color</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>area/ci</td><td>Continuous integration, build &amp; release</td><td>#5319e1</td></tr>
+                  <tr><td>area/docs</td><td>Improvements/additions to documentation</td><td>#5319e2</td></tr>
+                  <tr><td>area/lifecycle</td><td>Lifecycle management (install, uninstall, configure)</td><td>#5319e3</td></tr>
+                  <tr><td>area/performance</td><td>Performance management</td><td>#5319e4</td></tr>
+                  <tr><td>area/tests</td><td>Testing / quality assurance</td><td>#5319e5</td></tr>
+                  <tr><td>area/ui</td><td>User interface</td><td>#5319e6</td></tr>
+                  <tr><td>area/workloads</td><td>Applications / services</td><td>#5319e7</td></tr>
+                  <tr><td>area/helm</td><td>Helm charts issues</td><td>#5319e8</td></tr>
+                </tbody>
+              </table>
+            </div>
 
             <h3>Component Labels</h3>
             <p>
               Component labels indicate which software module or subsystem is affected by an issue. This ensures issues are routed to the right maintainers and allows more detailed filtering beyond the broader area labels. Attach a component label when your issue/PR impacts a specific module (e.g., a CLI tool, API, or pattern engine).
             </p>
-            <table>
-              <thead>
-                <tr>
-                  <th>Label</th>
-                  <th>Description</th>
-                  <th>Color</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>component/api</td><td>API related</td><td>#3a0485</td></tr>
-                <tr><td>component/mesheryctl</td><td>Meshery CLI related</td><td>#3a0486</td></tr>
-                <tr><td>component/ui</td><td>UI component related</td><td>#3a0486</td></tr>
-                <tr><td>component/filters</td><td>Filters related</td><td>#3a0486</td></tr>
-                <tr><td>component/patterns</td><td>Patterns related</td><td>#3a0486</td></tr>
-                <tr><td>component/meshsync</td><td>MeshSync component related</td><td>#3a0487</td></tr>
-                <tr><td>component/meshery-perf</td><td>Meshery-perf related</td><td>#3a0488</td></tr>
-              </tbody>
-            </table>
+            <div className="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Label</th>
+                    <th>Description</th>
+                    <th>Color</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>component/api</td><td>API related</td><td>#3a0485</td></tr>
+                  <tr><td>component/mesheryctl</td><td>Meshery CLI related</td><td>#3a0486</td></tr>
+                  <tr><td>component/ui</td><td>UI component related</td><td>#3a0486</td></tr>
+                  <tr><td>component/filters</td><td>Filters related</td><td>#3a0486</td></tr>
+                  <tr><td>component/patterns</td><td>Patterns related</td><td>#3a0486</td></tr>
+                  <tr><td>component/meshsync</td><td>MeshSync component related</td><td>#3a0487</td></tr>
+                  <tr><td>component/meshery-perf</td><td>Meshery-perf related</td><td>#3a0488</td></tr>
+                </tbody>
+              </table>
+            </div>
 
             <h3>Programming Language Labels</h3>
             <p>
               Programming language labels highlight the primary language used in the issue or PR. This helps contributors looking for language-specific work, and aids in code review or help requests. Use a programming language label if the change, bug, or feature is specific to a particular language (e.g., a Go backend bug, a JavaScript UI enhancement).
             </p>
-            <table>
-              <thead>
-                <tr>
-                  <th>Label</th>
-                  <th>Description</th>
-                  <th>Color</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>language/go</td><td>Golang related</td><td>#16e2e2</td></tr>
-                <tr><td>language/javascript</td><td>Javascript</td><td>#16e2e3</td></tr>
-                <tr><td>language/ruby</td><td>Ruby</td><td>#16e2e4</td></tr>
-              </tbody>
-            </table>
+            <div className="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Label</th>
+                    <th>Description</th>
+                    <th>Color</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>language/go</td><td>Golang related</td><td>#16e2e2</td></tr>
+                  <tr><td>language/javascript</td><td>Javascript</td><td>#16e2e3</td></tr>
+                  <tr><td>language/ruby</td><td>Ruby</td><td>#16e2e4</td></tr>
+                </tbody>
+              </table>
+            </div>
 
             <h3>PR (Pull Request) Labels</h3>
             <p>
               PR labels manage the state or special requirements of a pull request, like indicating it's a draft, dependent on others, or not yet ready for merging. Apply a PR label if your pull request isn't ready, should not be merged, updates dependencies, or is on hold.
             </p>
-            <table>
-              <thead>
-                <tr>
-                  <th>Label</th>
-                  <th>Description</th>
-                  <th>Color</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>pr/dependencies</td><td>Updates addressed dependencies</td><td>#0366d5</td></tr>
-                <tr><td>pr/do-not-merge</td><td>Not ready for merging</td><td>#0366d6</td></tr>
-                <tr><td>pr/draft</td><td>Work in progress/draft PR</td><td>#0366d7</td></tr>
-                <tr><td>pr/on hold</td><td>PR/Issue on hold</td><td>#0366d8</td></tr>
-              </tbody>
-            </table>
+            <div className="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Label</th>
+                    <th>Description</th>
+                    <th>Color</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>pr/dependencies</td><td>Updates addressed dependencies</td><td>#0366d5</td></tr>
+                  <tr><td>pr/do-not-merge</td><td>Not ready for merging</td><td>#0366d6</td></tr>
+                  <tr><td>pr/draft</td><td>Work in progress/draft PR</td><td>#0366d7</td></tr>
+                  <tr><td>pr/on hold</td><td>PR/Issue on hold</td><td>#0366d8</td></tr>
+                </tbody>
+              </table>
+            </div>
 
             <h3>Issue Process &amp; Status Labels</h3>
             <p>
               These labels show the current status of an issue—such as blocked, duplicate, in need of a design, or if an action (like an invitation) should be triggered. Some are used by bots to automate reminders or mark stale issues. Apply these when the situation applies (e.g. "blocked" if work can't proceed, "design required" if more planning is needed).
             </p>
-            <table>
-              <thead>
-                <tr>
-                  <th>Label</th>
-                  <th>Description</th>
-                  <th>Color</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>issue/invite</td><td>Invitation for author to join GH org</td><td>#eeeeee</td></tr>
-                <tr><td>issue/blocked</td><td>Issue is blocked</td><td>#eeeeee</td></tr>
-                <tr><td>issue/design required</td><td>Requires a design prior to proceeding</td><td>#eeeeee</td></tr>
-                <tr><td>issue/duplicate</td><td>Issue or PR already exists</td><td>#eeeeee</td></tr>
-                <tr><td>issue/invalid</td><td>This doesn't seem right</td><td>#eeeeee</td></tr>
-                <tr><td>issue/stale</td><td>No activity for an extended period (often applied automatically)</td><td>#eeeeee</td></tr>
-                <tr><td>issue/tweet</td><td>Posts (for social or outreach)</td><td>#eeeeee</td></tr>
-                <tr><td>issue/remind</td><td>Reminder comment to assignee</td><td>#eeeeee</td></tr>
-                <tr><td>issue/willfix</td><td>Issue will be worked on ("stale" bot skips)</td><td>#eeeeee</td></tr>
-              </tbody>
-            </table>
+            <div className="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Label</th>
+                    <th>Description</th>
+                    <th>Color</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>issue/invite</td><td>Invitation for author to join GH org</td><td>#eeeeee</td></tr>
+                  <tr><td>issue/blocked</td><td>Issue is blocked</td><td>#eeeeee</td></tr>
+                  <tr><td>issue/design required</td><td>Requires a design prior to proceeding</td><td>#eeeeee</td></tr>
+                  <tr><td>issue/duplicate</td><td>Issue or PR already exists</td><td>#eeeeee</td></tr>
+                  <tr><td>issue/invalid</td><td>This doesn't seem right</td><td>#eeeeee</td></tr>
+                  <tr><td>issue/stale</td><td>No activity for an extended period (often applied automatically)</td><td>#eeeeee</td></tr>
+                  <tr><td>issue/tweet</td><td>Posts (for social or outreach)</td><td>#eeeeee</td></tr>
+                  <tr><td>issue/remind</td><td>Reminder comment to assignee</td><td>#eeeeee</td></tr>
+                  <tr><td>issue/willfix</td><td>Issue will be worked on ("stale" bot skips)</td><td>#eeeeee</td></tr>
+                </tbody>
+              </table>
+            </div>
 
             <h3>Kind Labels</h3>
             <p>
               Kind labels classify the general type of change or discussion: bug, feature, chore, enhancement, epic, question, or proposal. This improves searchability and helps teams organize their workflows. Use the kind label that best describes your issue or PR.
             </p>
-            <table>
-              <thead>
-                <tr>
-                  <th>Label</th>
-                  <th>Description</th>
-                  <th>Color</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>kind/bug</td><td>Something isn't working</td><td>#088073</td></tr>
-                <tr><td>kind/child</td><td>Child of a larger Epic</td><td>#088074</td></tr>
-                <tr><td>kind/chore</td><td>Maintenance or other necessary task</td><td>#088075</td></tr>
-                <tr><td>kind/enhancement</td><td>Improvement to an existing feature</td><td>#088076</td></tr>
-                <tr><td>kind/epic</td><td>An umbrella issue, covers many issues</td><td>#088077</td></tr>
-                <tr><td>kind/feature</td><td>New major feature or request</td><td>#088078</td></tr>
-                <tr><td>kind/proposal</td><td>Suggestion or proposal for change</td><td>#088079</td></tr>
-                <tr><td>kind/question</td><td>Explanation or further info requested</td><td>#088080</td></tr>
-              </tbody>
-            </table>
+            <div className="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Label</th>
+                    <th>Description</th>
+                    <th>Color</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>kind/bug</td><td>Something isn't working</td><td>#088073</td></tr>
+                  <tr><td>kind/child</td><td>Child of a larger Epic</td><td>#088074</td></tr>
+                  <tr><td>kind/chore</td><td>Maintenance or other necessary task</td><td>#088075</td></tr>
+                  <tr><td>kind/enhancement</td><td>Improvement to an existing feature</td><td>#088076</td></tr>
+                  <tr><td>kind/epic</td><td>An umbrella issue, covers many issues</td><td>#088077</td></tr>
+                  <tr><td>kind/feature</td><td>New major feature or request</td><td>#088078</td></tr>
+                  <tr><td>kind/proposal</td><td>Suggestion or proposal for change</td><td>#088079</td></tr>
+                  <tr><td>kind/question</td><td>Explanation or further info requested</td><td>#088080</td></tr>
+                </tbody>
+              </table>
+            </div>
 
             <h3>Priority Labels</h3>
             <p>
               Priority labels help teams triage and allocate attention, making it clear which issues are urgent and which can wait. Always apply a priority label, adjusting as priorities shift or as issues are escalated or downgraded.
             </p>
-            <table>
-              <thead>
-                <tr>
-                  <th>Label</th>
-                  <th>Description</th>
-                  <th>Color</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>priority/urgent</td><td>Needs immediate attention</td><td>#f60205</td></tr>
-                <tr><td>priority/high</td><td>High priority issue</td><td>#d60205</td></tr>
-                <tr><td>priority/low</td><td>Lower priority, can wait</td><td>#a60205</td></tr>
-              </tbody>
-            </table>
+            <div className="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Label</th>
+                    <th>Description</th>
+                    <th>Color</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>priority/urgent</td><td>Needs immediate attention</td><td>#f60205</td></tr>
+                  <tr><td>priority/high</td><td>High priority issue</td><td>#d60205</td></tr>
+                  <tr><td>priority/low</td><td>Lower priority, can wait</td><td>#a60205</td></tr>
+                </tbody>
+              </table>
+            </div>
 
             <h3>Service Mesh Labels</h3>
             <p>
               Service mesh labels point out which mesh technology or ecosystem the issue pertains to. This is vital for projects supporting multiple meshes, enabling modular attention and expertise. Use these when your change or report is specific to one mesh (like Istio or Linkerd).
             </p>
-            <table>
-              <thead>
-                <tr>
-                  <th>Label</th>
-                  <th>Description</th>
-                  <th>Color</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>service-mesh/app-mesh</td><td>App Mesh</td><td>#57b6cc</td></tr>
-                <tr><td>service-mesh/consul</td><td>Consul</td><td>#57b6cc</td></tr>
-                <tr><td>service-mesh/cpx</td><td>CPX</td><td>#57b6cc</td></tr>
-                <tr><td>service-mesh/istio</td><td>Istio</td><td>#57b6cc</td></tr>
-                <tr><td>service-mesh/kuma</td><td>Kuma</td><td>#57b6cc</td></tr>
-                <tr><td>service-mesh/linkerd</td><td>Linkerd</td><td>#57b6cc</td></tr>
-                <tr><td>service-mesh/maesh</td><td>Maesh</td><td>#57b6cc</td></tr>
-                <tr><td>service-mesh/nginx</td><td>NGINX SM</td><td>#57b6cc</td></tr>
-                <tr><td>service-mesh/nsm</td><td>NSM</td><td>#57b6cc</td></tr>
-                <tr><td>service-mesh/tanzu</td><td>Tanzu</td><td>#57b6cc</td></tr>
-              </tbody>
-            </table>
+            <div className="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Label</th>
+                    <th>Description</th>
+                    <th>Color</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>service-mesh/app-mesh</td><td>App Mesh</td><td>#57b6cc</td></tr>
+                  <tr><td>service-mesh/consul</td><td>Consul</td><td>#57b6cc</td></tr>
+                  <tr><td>service-mesh/cpx</td><td>CPX</td><td>#57b6cc</td></tr>
+                  <tr><td>service-mesh/istio</td><td>Istio</td><td>#57b6cc</td></tr>
+                  <tr><td>service-mesh/kuma</td><td>Kuma</td><td>#57b6cc</td></tr>
+                  <tr><td>service-mesh/linkerd</td><td>Linkerd</td><td>#57b6cc</td></tr>
+                  <tr><td>service-mesh/maesh</td><td>Maesh</td><td>#57b6cc</td></tr>
+                  <tr><td>service-mesh/nginx</td><td>NGINX SM</td><td>#57b6cc</td></tr>
+                  <tr><td>service-mesh/nsm</td><td>NSM</td><td>#57b6cc</td></tr>
+                  <tr><td>service-mesh/tanzu</td><td>Tanzu</td><td>#57b6cc</td></tr>
+                </tbody>
+              </table>
+            </div>
 
             <h3>Help &amp; Onboarding Labels</h3>
             <p>
               Help labels signal issues where some support is needed, or which are especially suitable for newcomers. These labels foster open source engagement and make onboarding easier for new contributors. Apply these to issues where you'd appreciate community help (<code>help wanted</code>) or for issues that are clearly documented, small in scope, and ideal for first-timers (<code>good first issue</code>).
             </p>
-            <table>
-              <thead>
-                <tr>
-                  <th>Label</th>
-                  <th>Description</th>
-                  <th>Color</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>help wanted</td><td>Maintainers need help here</td><td>#35f48e</td></tr>
-                <tr><td>good first issue</td><td>Good for new contributors</td><td>#7057ff</td></tr>
-              </tbody>
-            </table>
+            <div className="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Label</th>
+                    <th>Description</th>
+                    <th>Color</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>help wanted</td><td>Maintainers need help here</td><td>#35f48e</td></tr>
+                  <tr><td>good first issue</td><td>Good for new contributors</td><td>#7057ff</td></tr>
+                </tbody>
+              </table>
+            </div>
 
             <h3>Best Practices &amp; Example</h3>
             <ul>
