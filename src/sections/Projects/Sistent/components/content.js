@@ -217,7 +217,14 @@ const componentsData = [
     "src": "/chip",
   },
   {
-    id: 29,
+    "id": 29,
+    "name": "Collapse",
+    "description": "The Collapse component is used to create expandable/collapsible content sections. It smoothly animates the height of its children from zero to full height when expanded.",
+    "url": "/projects/sistent/components/collapse",
+    "src": "/collapse",
+  },
+  {
+    id: 30,
     name: "IconButton",
     description: "IconButton provides an interactive button component that displays only an icon, ideal for compact UIs where space is limited and actions are easily recognizable through iconography.",
     url: "/projects/sistent/components/iconbutton",
@@ -236,6 +243,13 @@ const componentsData = [
     description: "Stepper provides a way to display progress through a sequence of logical steps.",
     url: "/projects/sistent/components/stepper",
     src: "/stepper",
+  },
+  {
+    id: 32,
+    name: "Stack",
+    description: "Stack is a layout component that arranges elements in a one-dimensional flow with customizable spacing and direction.",
+    url: "/projects/sistent/components/stack",
+    src: "/stack",
   },
 ];
 
