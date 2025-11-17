@@ -1,4 +1,116 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5 News]]></title><description><![CDATA[Expect more from your infrastructure. Cloud native, open source software for your cloud native infrastructure and applications. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidently run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 17 Nov 2025 02:02:36 GMT</lastBuildDate><item><title><![CDATA[Layer5 Debuts Enterprise Edition of Meshery for Configuring Kubernetes]]></title><description><![CDATA[var _excluded = ["components"];
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5 News]]></title><description><![CDATA[Expect more from your infrastructure. Cloud native, open source software for your cloud native infrastructure and applications. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidently run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 17 Nov 2025 14:17:48 GMT</lastBuildDate><item><title><![CDATA[CNCF Honors Innovators and Defenders with 2025 Community Awards at KubeCon + CloudNativeCon North America]]></title><description><![CDATA[var _excluded = ["components"];
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _objectWithoutProperties(e, t) { if (null == e) return {}; var o, r, i = _objectWithoutPropertiesLoose(e, t); if (Object.getOwnPropertySymbols) { var n = Object.getOwnPropertySymbols(e); for (r = 0; r < n.length; r++) o = n[r], -1 === t.indexOf(o) && {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]); } return i; }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
+/* @jsxRuntime classic */
+/* @jsx mdx */
+
+var _frontmatter = {
+  "title": "CNCF Honors Innovators and Defenders with 2025 Community Awards at KubeCon + CloudNativeCon North America",
+  "subtitle": "CNCF recognizes community leaders across the cloud native ecosystem, including Layer5 founder Lee Calcote with the inaugural Outstanding Mentor Award.",
+  "date": "2025-11-16 08:00:00 -0530",
+  "author": "The Newsroom",
+  "thumbnail": "./kubecon-2025.png",
+  "darkthumbnail": "./kubecon-2025.png",
+  "category": "Community Recognition",
+  "description": "CNCF’s 2025 Community Awards at KubeCon + CloudNativeCon North America spotlights contributors, end users, mentors, and community heroes, with Layer5 founder Lee Calcote honored for his mentorship leadership.",
+  "tags": ["Announcements", "CNCF", "Community Awards", "Layer5", "Mentorship"],
+  "type": "News",
+  "presskit": "",
+  "resource": false,
+  "published": true
+};
+var layoutProps = {
+  _frontmatter: _frontmatter
+};
+var MDXLayout = "wrapper";
+return function MDXContent(_ref) {
+  var components = _ref.components,
+    props = _objectWithoutProperties(_ref, _excluded);
+  return mdx(MDXLayout, _extends({}, layoutProps, props, {
+    components: components,
+    mdxType: "MDXLayout"
+  }), mdx(NewsWrapper, {
+    mdxType: "NewsWrapper"
+  }, mdx("p", null, "[Atlanta, GA][KubeCon + CloudNativeCon North America]", " \u2013 November 12, 2025 \u2014\nThe Cloud Native Computing Foundation (CNCF) has announced the winners of its 2025 Community Awards, celebrating contributors, mentors, end users, and long-time ecosystem champions. Among this year\u2019s honorees is ", mdx("strong", {
+    parentName: "p"
+  }, "Layer5 founder Lee Calcote"), ", recipient of the ", mdx("strong", {
+    parentName: "p"
+  }, "inaugural Outstanding Mentor Award"), " for his deep and consistent commitment to growing community talent across CNCF and Linux Foundation programs."), mdx("a", {
+    href: "https://www.cncf.io/announcements/2025/11/12/cncf-honors-innovators-and-defenders-with-2025-community-awards-at-kubecon-cloudnativecon-north-america/"
+  }, "Read the official CNCF announcement"), mdx("h2", null, mdx("strong", {
+    parentName: "h2"
+  }, "Recognizing Leaders Shaping the Cloud Native Ecosystem")), mdx("p", null, "The CNCF Community Awards spotlight individuals whose work strengthens the global cloud native community. This year\u2019s recognitions included:"), mdx("ul", null, mdx("li", {
+    parentName: "ul"
+  }, mdx("strong", {
+    parentName: "li"
+  }, "Lifetime Achievement Award"), "  "), mdx("li", {
+    parentName: "ul"
+  }, mdx("strong", {
+    parentName: "li"
+  }, "Top End User Award")), mdx("li", {
+    parentName: "ul"
+  }, mdx("strong", {
+    parentName: "li"
+  }, "Top Committer Award")), mdx("li", {
+    parentName: "ul"
+  }, mdx("strong", {
+    parentName: "li"
+  }, "Chop Wood, Carry Water Award")), mdx("li", {
+    parentName: "ul"
+  }, mdx("strong", {
+    parentName: "li"
+  }, "Outstanding Mentor Award"), " (first-ever)"), mdx("li", {
+    parentName: "ul"
+  }, mdx("strong", {
+    parentName: "li"
+  }, "Cloud Native Hero Award")), mdx("li", {
+    parentName: "ul"
+  }, mdx("strong", {
+    parentName: "li"
+  }, "TAGGIE Award")), mdx("li", {
+    parentName: "ul"
+  }, mdx("strong", {
+    parentName: "li"
+  }, "End User Case Study Contest")), mdx("li", {
+    parentName: "ul"
+  }, mdx("strong", {
+    parentName: "li"
+  }, "Lorem Ipsum (Top Documentarian) Award"))), mdx("p", null, "These awards highlight the diverse technical, organizational, and community-driven efforts that contribute to the sustained health of the CNCF ecosystem."), mdx("h2", null, mdx("strong", {
+    parentName: "h2"
+  }, "Lee Calcote Receives the Outstanding Mentor Award")), mdx("p", null, "CNCF honored ", mdx("strong", {
+    parentName: "p"
+  }, "Lee Calcote"), " for mentoring more than ", mdx("strong", {
+    parentName: "p"
+  }, "60 times"), " over the past five years, across programs including:"), mdx("ul", null, mdx("li", {
+    parentName: "ul"
+  }, "The Linux Foundation\u2019s LFX Mentorship Program  "), mdx("li", {
+    parentName: "ul"
+  }, "Google Summer of Code (GSoC)  "), mdx("li", {
+    parentName: "ul"
+  }, "CNCF TAG initiatives  "), mdx("li", {
+    parentName: "ul"
+  }, "Meshery and Layer5 community programs  ")), mdx("p", null, "Many of his mentees have gone on to become active contributors and maintainers within CNCF projects, reflecting the long-term impact of his mentorship."), mdx(Blockquote, {
+    quote: "This year\u2019s award recipients reflect what it really takes to sustain the cloud native community.",
+    person: "Chris Aniszczyk",
+    title: "CTO, CNCF",
+    mdxType: "Blockquote"
+  }), mdx("h2", null, mdx("strong", {
+    parentName: "h2"
+  }, "Strengthening the Global Open Source Community")), mdx("p", null, "With over ", mdx("strong", {
+    parentName: "p"
+  }, "270,000 contributors"), " and ", mdx("strong", {
+    parentName: "p"
+  }, "728 member organizations"), ", the CNCF ecosystem thrives on collaboration, documentation, mentorship, and sustained contributions. This year\u2019s awardees exemplify the dedication required to keep cloud native innovation moving forward."), mdx("p", null, "Layer5 congratulates all recipients and celebrates the community-driven spirit that continues to move open source infrastructure forward."), mdx("h2", null, mdx("strong", {
+    parentName: "h2"
+  }, "About Layer5")), mdx("p", null, "Layer5 is the cloud native management company behind ", mdx("a", {
+    href: "/meshery"
+  }, "Meshery"), ", the extensible cloud native manager enabling teams to build and operate modern distributed systems with confidence. With a global open source community of more than 10,000 members, Layer5 empowers engineers to collaborate across multi-cluster and multi-cloud environments."), mdx("p", null, "Learn more at ", mdx("a", {
+    href: "https://layer5.io"
+  }, "layer5.io"), ".")));
+}
+;
+MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/company/news/cncf-honors-innovators-and-defenders-with-2025-community-awards-at-kubecon-cloudnativecon-north-america</link><guid isPermaLink="false">https://layer5.io/company/news/cncf-honors-innovators-and-defenders-with-2025-community-awards-at-kubecon-cloudnativecon-north-america</guid><dc:creator><![CDATA[The Newsroom]]></dc:creator><pubDate>Sun, 16 Nov 2025 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/5c1bd25e7d1d30f18eb73288f35442e8/kubecon-2025.png" length="0" type="image/png"/><content:encoded></content:encoded></item><item><title><![CDATA[Layer5 Debuts Enterprise Edition of Meshery for Configuring Kubernetes]]></title><description><![CDATA[var _excluded = ["components"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutProperties(e, t) { if (null == e) return {}; var o, r, i = _objectWithoutPropertiesLoose(e, t); if (Object.getOwnPropertySymbols) { var n = Object.getOwnPropertySymbols(e); for (r = 0; r < n.length; r++) o = n[r], -1 === t.indexOf(o) && {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]); } return i; }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
@@ -1391,42 +1503,4 @@ return function MDXContent(_ref) {
   }), mdx("h4", null, "CNCF Adopts the Service Mesh Performance project"), mdx("p", null, "With multiple academic institutions and many vendors involved in the project, the CNCF provides a neutral place for publication of this research and encourages participation from each service mesh vendor under the promise of unbiased analysis, which will help all involved to collectively improve their service mesh implementations and end users to improve operations of their deployments."), mdx("p", null, "\"As communication networks evolve toward cloud native 5G and Edge computing, service mesh forms the basis of underlying infrastructure and application networking\", said Sunku Raganath, SMP Maintainer and Solutions Architect at Intel. \"Studying service mesh performance across the multitude of deployment scenarios enables us to understand its impact on latency and throughput, in turn, enabling application developers and infrastructure providers to customize and control service mesh behavior within these latency constrained environments\". Service Mesh Performance is squarely focused on critical scenarios of performance management across 5G and Edge computing environments. \"An efficient service mesh performance for the given combination of resources for a particular KPI will determine whether the current hardware and software scheduling environment is optimal or needs a change\", said Mrittika Ganguli, Director and PE, cloud native solutions, NEXG, Intel.")));
 }
 ;
-MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/company/news/cncf-adopts-service-mesh-performance-standard-established-by-layer5</link><guid isPermaLink="false">https://layer5.io/company/news/cncf-adopts-service-mesh-performance-standard-established-by-layer5</guid><dc:creator><![CDATA[VMBlog]]></dc:creator><pubDate>Tue, 12 Oct 2021 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/d23418eba659685e2cc61bde868ee87b/smp-in-meshery.png" length="0" type="image/png"/><content:encoded></content:encoded></item><item><title><![CDATA[CNCF Projects Bring Service Mesh Interoperability, Benchmarks]]></title><description><![CDATA[var _excluded = ["components"];
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-function _objectWithoutProperties(e, t) { if (null == e) return {}; var o, r, i = _objectWithoutPropertiesLoose(e, t); if (Object.getOwnPropertySymbols) { var n = Object.getOwnPropertySymbols(e); for (r = 0; r < n.length; r++) o = n[r], -1 === t.indexOf(o) && {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]); } return i; }
-function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
-/* @jsxRuntime classic */
-/* @jsx mdx */
-
-var _frontmatter = {
-  "title": "CNCF Projects Bring Service Mesh Interoperability, Benchmarks",
-  "subtitle": "",
-  "date": "2021-07-24 04:00:05 +0000",
-  "author": "The New Stack",
-  "category": "Coverage",
-  "thumbnail": "./The-New-Stack-Logo.svg",
-  "darkthumbnail": "./The-New-Stack-Logo.svg",
-  "description": "CNCF projects Meshery, SMP, and SMI offer distinct approaches to service mesh technology. Meshery emphasizes individual service mesh strengths, SMP provides in-depth performance insights, and SMI defines broad characteristics",
-  "eurl": "https://thenewstack.io/cncf-projects-bring-service-mesh-interoperability-benchmarks/",
-  "published": true,
-  "type": "News",
-  "product": "Meshery",
-  "resource": true,
-  "redirect_from": ["/news/cncf-projects-bring-service-mesh-interoperability-benchmarks"]
-};
-var layoutProps = {
-  _frontmatter: _frontmatter
-};
-var MDXLayout = "wrapper";
-return function MDXContent(_ref) {
-  var components = _ref.components,
-    props = _objectWithoutProperties(_ref, _excluded);
-  return mdx(MDXLayout, _extends({}, layoutProps, props, {
-    components: components,
-    mdxType: "MDXLayout"
-  }), mdx(NewsWrapper, {
-    mdxType: "NewsWrapper"
-  }, "Both the Meshery and Service Mesh Performance (SMP) projects joined the Cloud Native Computing Foundation (CNCF) earlier this month at the Sandbox level.", mdx("p", null, "Meshery is a multiservice mesh management plane offering lifecycle, configuration, and performance management of service meshes and their workloads, while SMP is a standard for capturing and characterizing the details of infrastructure capacity, service mesh configuration, and workload metadata."), mdx("p", null, "When the projects first applied in April for inclusion, the Technical Oversight Committee (TOC) had one clarifying question for them: should they be combined with or aligned in some manner with the Service Mesh Interface (SMI) project?"), mdx("p", null, "Lee Calcote, founder of Layer5, the company partly behind both of the projects, explained that it was an alluring prospect for the CNCF, but that, for the time being at least, the projects would continue on their own separate paths."), mdx("p", null, "Calcote, who also serves as the chair of the Network special interest group (SIG) at the CNCF, said he then presented to the CNCF the following diagram, which shows the relation between the three projects. For the time being, he said, both SMI and SMP are \u201Crelatively younger projects, both of which still are figuring out what they want to be when they grow up,\u201D and may be considered for consolidation later on down the line, while Meshery has a larger focus than the two projects and will definitely be kept on its own."), mdx("p", null, "While the SMI works to define the broadest characteristics that could apply to something defined as a service mesh, looking for the lowest common denominator, Meshery works in the opposite direction, trying to accentuate the differences and strengths of the individual services meshes. SMP, meanwhile, is more of a specification and works to provide a common format for capturing and describing data around the performance of the service mesh itself."), mdx("p", null, "In comparison to SMI, Calcote said that \u201CSMP essentially just goes a lot deeper. Part of what is trying to address is this long-standing question \u2014 and it\u2019s a question that faces the people who are adopting a service mesh today, people who are adopting service mesh tomorrow, people who have already adopted a service mesh \u2014 What should I be measuring to consider how efficiently I\u2019m running my service mesh?\u201D"), mdx("p", null, "Between the three projects, then, users have not just a way to interface with any SMI-compatible service mesh via a common API, but also a way to measure the performance of different service meshes, and finally, a method with which to interface with and operate those service meshes while taking advantage of their specific advantages."), mdx("p", null, "\u201CPart of the belief is that service meshes are an inevitable new layer in your cloud native infrastructure that over time will be a ubiquitous component,\u201D said Calcote. \u201CThere\u2019s a lot that can be done in the network, a lot of intelligence, and so Meshery, as a management plane, picks off some of those features.\u201D")));
-}
-;
-MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/company/news/cncf-projects-bring-service-mesh-interoperability-benchmarks</link><guid isPermaLink="false">https://layer5.io/company/news/cncf-projects-bring-service-mesh-interoperability-benchmarks</guid><dc:creator><![CDATA[The New Stack]]></dc:creator><pubDate>Sat, 24 Jul 2021 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/1b1b219f5ff2ed23523b02bd172f4c07/The-New-Stack-Logo.svg" length="0" type="image/svg+xml"/><content:encoded></content:encoded></item></channel></rss>
+MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/company/news/cncf-adopts-service-mesh-performance-standard-established-by-layer5</link><guid isPermaLink="false">https://layer5.io/company/news/cncf-adopts-service-mesh-performance-standard-established-by-layer5</guid><dc:creator><![CDATA[VMBlog]]></dc:creator><pubDate>Tue, 12 Oct 2021 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/d23418eba659685e2cc61bde868ee87b/smp-in-meshery.png" length="0" type="image/png"/><content:encoded></content:encoded></item></channel></rss>
