@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5 News]]></title><description><![CDATA[Expect more from your infrastructure. Cloud native, open source software for your cloud native infrastructure and applications. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidently run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 17 Nov 2025 16:00:54 GMT</lastBuildDate><item><title><![CDATA[CNCF Honors Innovators and Defenders with 2025 Community Awards at KubeCon + CloudNativeCon North America]]></title><description><![CDATA[var _excluded = ["components"];
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5 News]]></title><description><![CDATA[Expect more from your infrastructure. Cloud native, open source software for your cloud native infrastructure and applications. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidently run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 17 Nov 2025 18:08:07 GMT</lastBuildDate><item><title><![CDATA[CNCF Honors Innovators and Defenders with 2025 Community Awards at KubeCon + CloudNativeCon North America]]></title><description><![CDATA[var _excluded = ["components"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutProperties(e, t) { if (null == e) return {}; var o, r, i = _objectWithoutPropertiesLoose(e, t); if (Object.getOwnPropertySymbols) { var n = Object.getOwnPropertySymbols(e); for (r = 0; r < n.length; r++) o = n[r], -1 === t.indexOf(o) && {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]); } return i; }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
@@ -121,7 +121,7 @@ var _frontmatter = {
   "title": "Layer5 Debuts Enterprise Edition of Meshery for Configuring Kubernetes",
   "subtitle": "Enterprise-grade distribution of Meshery enables IT teams to visualize, design, and manage Kubernetes and cloud native environments",
   "date": "2025-11-12 19:00:00 +0530",
-  "author": "The Newsroom",
+  "author": "Cloud Native Now",
   "thumbnail": "./Layer5-Kanvas-Designer-img.png",
   "darkthumbnail": "./Layer5-Kanvas-Designer-img.png",
   "category": "Press Release",
@@ -142,97 +142,17 @@ return function MDXContent(_ref) {
   return mdx(MDXLayout, _extends({}, layoutProps, props, {
     components: components,
     mdxType: "MDXLayout"
-  }), mdx("hr", null), mdx(NewsWrapper, {
+  }), mdx(NewsWrapper, {
     mdxType: "NewsWrapper"
-  }, mdx("p", null, mdx("strong", {
+  }, mdx("p", null, "Layer5 today revealed it has made available Kanvas, an enterprise grade distribution of the open source Meshery framework for declaratively managing Kubernetes environments."), mdx("p", null, "Announced at the KubeCon + CloudNativeCon North America 2025 conference, Kanvas adds additional graphical tools to visualize and edit, along with functionality such as the ability to store snapshots in GitHub repositories to a core Meshery platform that provides workspaces that enable IT teams to collaborate more easily. It also provides access to a catalog of hundreds of pre-built, best-practice design patterns and reference architectures that IT teams can extend."), mdx("p", null, "Additionally, Kanvas also makes available role-based access controls (RBAC) and an ability to import existing Kubernetes manifests, Helm charts, Kustomize configuration and Docker Compose files."), mdx("p", null, "Available to be deployed by an internal IT team or access as a managed service, Kanvas today provides a drag-and-drop interface for designing and visualizing complex infrastructure and application architectures using Meshery."), mdx("p", null, "Layer5 is also making available in beta a Kanvas Operator for managing live infrastructure in real-time using a Meshery framework that is currently being advanced under the auspices of the Cloud Native Computing Foundation (CNCF)."), mdx("p", null, "Layer5 CEO Lee Calcote said at its core Meshery provides a platform that fosters collaboration in a way that makes it simpler for IT teams to retain tribal knowledge. It allows engineers to see, collaborate on, and approve suggestions on a visual canvas, and even conduct a dry run to validate changes."), mdx("p", null, "In addition to making it simpler to manage Kubernetes clusters at scale, Kanvas also makes it simpler to onboard additional engineers to a team, noted Calcote."), mdx("p", null, "It\u2019s not clear how many Kubernetes clusters are deployed in production environments, but as the number increases, the need for finding ways to manage one of the most complex IT platforms ever created is becoming more acute. There simply are not enough engineers to manage those clusters, so platforms such as Kanvas that make it simpler for small teams to consistently manage the configuration of Kubernetes clusters is crucial, said Calcote."), mdx("p", null, "Hopefully, as various tools make Kubernetes more accessible, organizations will be able to rely more on IT administrators rather than DevOps engineers to manage them. The need for DevOps engineers isn\u2019t likely to be eliminated any time soon, but it should become easier for IT teams to reuse configurations that have already been validated by a DevOps team. In effect, Meshery and Kanvas are making it simpler for IT teams to embrace infrastructure by design principles, noted Calcote."), mdx("p", null, "In the meantime, IT organizations should expect the total number of workloads running on Kubernetes clusters to continue to steadily increase, especially as more artificial intelligence (AI) applications are built and deployed. The challenge, as always, is finding a way to manage large numbers of Kubernetes clusters at higher levels of scale. In fact, arguably there would many more Kubernetes clusters already deployed in the platform if the platform was easier to manage."), mdx("p", null, "Hopefully, there will come a day soon when the inherent complexity of Kubernetes is no longer an issue, but until then, the next best thing is to adopt tools that enable IT teams to manage clusters at a much higher level of abstraction."), mdx("p", null, mdx("strong", {
     parentName: "p"
-  }, "ATLANTA, GA"), " \u2014 November 12, 2025 \u2014 ", mdx("a", {
-    parentName: "p",
-    "href": "https://layer5.io"
-  }, "Layer5"), " today announced the general availability of ", mdx("strong", {
-    parentName: "p"
-  }, "Kanvas"), ", an ", mdx("strong", {
-    parentName: "p"
-  }, "enterprise-grade distribution of the open source ", mdx("a", {
+  }, "Read the original article on ", mdx("a", {
     parentName: "strong",
-    "href": "https://meshery.io"
-  }, "Meshery")), " framework for declaratively managing Kubernetes environments."), mdx("p", null, "Announced at ", mdx("strong", {
-    parentName: "p"
-  }, "KubeCon + CloudNativeCon North America 2025"), ", Kanvas extends Meshery with additional graphical tools to visualize and edit infrastructure, including the ability to store ", mdx("strong", {
-    parentName: "p"
-  }, "design snapshots in GitHub repositories"), ". Built on top of Meshery, Kanvas introduces ", mdx("strong", {
-    parentName: "p"
-  }, "collaborative workspaces"), " that enable IT teams to design, share, and manage Kubernetes environments more efficiently. It also provides access to a ", mdx("strong", {
-    parentName: "p"
-  }, "catalog of hundreds of pre-built design patterns and reference architectures"), " that can be customized and extended."), mdx("hr", null), mdx("h2", null, mdx("strong", {
-    parentName: "h2"
-  }, "Enterprise Features and Extensibility")), mdx("p", null, "Kanvas adds ", mdx("strong", {
-    parentName: "p"
-  }, "role-based access controls (RBAC)"), " and supports the import of existing Kubernetes manifests, Helm charts, Kustomize configurations, and Docker Compose files."), mdx("p", null, "Available for deployment by internal IT teams or as a ", mdx("strong", {
-    parentName: "p"
-  }, "managed service"), ", Kanvas provides a ", mdx("strong", {
-    parentName: "p"
-  }, "drag-and-drop interface"), " for designing and visualizing complex infrastructure and application architectures using Meshery."), mdx(BlockquoteAlt, {
-    quote: "Meshery provides a platform that fosters collaboration in a way that makes it simpler for IT teams to retain institutional knowledge. It allows engineers to see, collaborate on, and approve suggestions on a visual canvas, and even conduct a dry run to validate changes.",
-    person: "Lee Calcote",
-    title: "CEO, Layer5",
-    mdxType: "BlockquoteAlt"
-  }), mdx("hr", null), mdx("h2", null, mdx("strong", {
-    parentName: "h2"
-  }, "Introducing Kanvas Operator (Beta)")), mdx("p", null, "Layer5 is also making available, in beta, a ", mdx("strong", {
-    parentName: "p"
-  }, "Kanvas Operator"), " for managing live infrastructure in real time. The Operator extends the Meshery framework, which continues to be advanced under the auspices of the ", mdx("strong", {
-    parentName: "p"
-  }, "Cloud Native Computing Foundation (CNCF)"), ". This beta release expands Meshery\u2019s capabilities to operational control of live Kubernetes environments."), mdx("hr", null), mdx("h2", null, mdx("strong", {
-    parentName: "h2"
-  }, "Improving Scalability and Knowledge Retention")), mdx("p", null, "Kanvas simplifies management of Kubernetes clusters at scale and makes it easier to onboard additional engineers. By combining visual design, collaboration, and dry-run validation, Kanvas helps reduce configuration errors and preserve institutional knowledge."), mdx("blockquote", null, mdx("p", {
-    parentName: "blockquote"
-  }, "\u201CAs the number of Kubernetes clusters in production continues to increase, the need for tools that simplify configuration and management is becoming more urgent,\u201D Calcote said. \u201CThere simply are not enough engineers to manage these clusters, so platforms like Kanvas help smaller teams manage complex environments more consistently.\u201D")), mdx("p", null, "Calcote added that while Kubernetes remains one of the most powerful and complex IT platforms, Kanvas and Meshery are designed to make it more accessible to a broader range of IT professionals."), mdx("hr", null), mdx("h2", null, mdx("strong", {
-    parentName: "h2"
-  }, "Toward Broader Accessibility of Kubernetes")), mdx("p", null, "As Kubernetes adoption grows, many organizations are seeking ways to enable ", mdx("strong", {
-    parentName: "p"
-  }, "IT administrators"), " to handle day-to-day management tasks traditionally performed by ", mdx("strong", {
-    parentName: "p"
-  }, "DevOps engineers"), ". According to Calcote, the goal is not to eliminate DevOps roles, but to ", mdx("strong", {
-    parentName: "p"
-  }, "make validated configurations reusable"), " so IT teams can safely manage environments at scale."), mdx("blockquote", null, mdx("p", {
-    parentName: "blockquote"
-  }, "\u201CIn effect, Meshery and Kanvas are making it simpler for IT teams to embrace ", mdx("em", {
-    parentName: "p"
-  }, "infrastructure by design"), " principles,\u201D Calcote said.")), mdx("p", null, "With workloads\u2014especially ", mdx("strong", {
-    parentName: "p"
-  }, "AI applications"), "\u2014continuing to grow, tools like Kanvas that operate at higher levels of abstraction will help organizations better manage Kubernetes environments and focus on application delivery rather than infrastructure complexity."), mdx("hr", null), mdx("h2", null, mdx("strong", {
-    parentName: "h2"
-  }, "Availability")), mdx("p", null, mdx("strong", {
-    parentName: "p"
-  }, "Layer5 Kanvas"), " is available now for ", mdx("strong", {
-    parentName: "p"
-  }, "self-hosted deployment"), " or as a ", mdx("strong", {
-    parentName: "p"
-  }, "managed service"), ".", mdx("br", {
-    parentName: "p"
-  }), "\n", "Learn more at ", mdx("a", {
-    parentName: "p",
-    "href": "https://layer5.io/kanvas"
-  }, "https://layer5.io/kanvas"), "."), mdx("hr", null), mdx("h2", null, mdx("strong", {
-    parentName: "h2"
-  }, "About Meshery")), mdx("p", null, "Meshery is the open source, cloud native management plane that enables declarative configuration and collaborative operation of multi-cluster, multi-cloud Kubernetes environments. Hosted by the ", mdx("a", {
-    parentName: "p",
-    "href": "https://www.cncf.io/"
-  }, "Cloud Native Computing Foundation (CNCF)"), ", Meshery provides extensible, visual tooling for managing modern infrastructure. Learn more at ", mdx("a", {
-    parentName: "p",
-    "href": "https://meshery.io"
-  }, "https://meshery.io"), "."), mdx("hr", null), mdx("h2", null, mdx("strong", {
-    parentName: "h2"
-  }, "About Layer5")), mdx("p", null, "Layer5 helps organizations simplify the design, operation, and management of cloud native infrastructure. Home to the Meshery and Kanvas projects, Layer5\u2019s mission is to make managing Kubernetes environments more visual, collaborative, and efficient.", mdx("br", {
-    parentName: "p"
-  }), "\n", "Visit ", mdx("a", {
-    parentName: "p",
-    "href": "https://layer5.io"
-  }, "https://layer5.io"), " for more information.")));
+    "href": "https://cloudnativenow.com/features/layer5-debuts-enterprise-edition-of-meshery-for-configuring-kubernetes/"
+  }, "https://cloudnativenow.com/features/layer5-debuts-enterprise-edition-of-meshery-for-configuring-kubernetes/")))));
 }
 ;
-MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/company/news/layer5-debuts-enterprise-edition-of-meshery-for-configuring-kubernetes</link><guid isPermaLink="false">https://layer5.io/company/news/layer5-debuts-enterprise-edition-of-meshery-for-configuring-kubernetes</guid><dc:creator><![CDATA[The Newsroom]]></dc:creator><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/d51507c39d2e8e8618e5fe51a8c368fc/Layer5-Kanvas-Designer-img.png" length="0" type="image/png"/><content:encoded></content:encoded></item><item><title><![CDATA[Layer5 Unveils Kanvas]]></title><description><![CDATA[var _excluded = ["components"];
+MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/company/news/layer5-debuts-enterprise-edition-of-meshery-for-configuring-kubernetes</link><guid isPermaLink="false">https://layer5.io/company/news/layer5-debuts-enterprise-edition-of-meshery-for-configuring-kubernetes</guid><dc:creator><![CDATA[Cloud Native Now]]></dc:creator><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/d51507c39d2e8e8618e5fe51a8c368fc/Layer5-Kanvas-Designer-img.png" length="0" type="image/png"/><content:encoded></content:encoded></item><item><title><![CDATA[Layer5 Unveils Kanvas]]></title><description><![CDATA[var _excluded = ["components"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutProperties(e, t) { if (null == e) return {}; var o, r, i = _objectWithoutPropertiesLoose(e, t); if (Object.getOwnPropertySymbols) { var n = Object.getOwnPropertySymbols(e); for (r = 0; r < n.length; r++) o = n[r], -1 === t.indexOf(o) && {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]); } return i; }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
