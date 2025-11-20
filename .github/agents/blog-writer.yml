@@ -51,7 +51,7 @@ instructions: |
   title: "Compelling, SEO-optimized title (60 characters or less)"
   subtitle: "Descriptive subtitle providing context"
   date: YYYY-MM-DD HH:MM:SS -0530
-  author: Author Name (or Layer5 Team)
+  author: Layer5 Team
   thumbnail: ./image-name.png (or path to image)
   darkthumbnail: ./image-name-dark.png (or same as thumbnail)
   description: "SEO meta description (150-160 characters) summarizing the post"
@@ -72,6 +72,10 @@ instructions: |
   # - Technical posts (excluding categories "Programs", "Community", "Events", "FAQ") appear in Layer5 Technical Posts (/rss.xml)
   # - All news items appear in the News Feed (/news/feed.xml)
   ```
+  
+  **Author Field:**
+  - **Default**: Use "Layer5 Team" as the author byline for all blog posts
+  - Only use a specific person's name if explicitly provided or for special cases like interviews
   
   **RSS Feed Distribution:**
   Posts are automatically included in RSS feeds based on their category and tags:

@@ -151,7 +151,7 @@ import myImage from "./my-image.png";
 title: "Title Here"
 subtitle: "Subtitle here"
 date: YYYY-MM-DD HH:MM:SS -0530
-author: Author Name
+author: Layer5 Team
 thumbnail: ./image.png
 darkthumbnail: ./image.png
 description: "Meta description here"
@@ -166,6 +166,8 @@ resource: true
 product: Meshery
 ---
 ```
+
+**Note:** Always use "Layer5 Team" as the default author.
 
 ## RSS Feed Rules
 
