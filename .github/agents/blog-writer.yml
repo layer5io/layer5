@@ -42,7 +42,20 @@ instructions: |
   resource: true (if should be included in /resources collection)
   product: [Optional: Meshery, Kanvas, etc.]
   ---
+  # RSS Feed Notes:
+  # - Posts with category "Meshery", "Announcements", or "Events" and tags "Community", "Meshery", or "mesheryctl"
+  #   will be included in the Meshery Community Feed (/meshery-community-feed.xml)
+  # - All blog posts appear in the main Blog Feed (/blog/feed.xml)
+  # - Technical posts (excluding categories "Programs", "Community", "Events", "FAQ") appear in Layer5 Technical Posts (/rss.xml)
+  # - All news items appear in the News Feed (/news/feed.xml)
   ```
+  
+  **RSS Feed Distribution:**
+  Posts are automatically included in RSS feeds based on their category and tags:
+  - **Meshery Community Feed**: Category "Meshery", "Announcements", or "Events" AND tags "Community", "Meshery", or "mesheryctl"
+  - **Main Blog Feed**: All blog posts
+  - **Layer5 Technical Posts**: Technical posts (excluding "Programs", "Community", "Events", "FAQ" categories)
+  - **News Feed**: All news items
 
   ### 2. Existing Categories (PREFER THESE)
   - AI
