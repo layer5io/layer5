@@ -63,7 +63,7 @@ Load balancing plays a pivotal role in optimizing the performance of internet ap
  <figure class="imgWithCaption fig-right">
     <img src={Layer5} />
     <figcaption>
-    <p>Layer5</p>
+    Layer5
     </figcaption>
  </figure>
 

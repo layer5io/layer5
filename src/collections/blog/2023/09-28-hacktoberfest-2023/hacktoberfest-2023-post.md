@@ -77,9 +77,7 @@ Don't confine yourself to a GitHub profile. Engage in meaningful discussions, pa
 
 ### 6. Compassion Over Code: Recognizing Maintainer Burnout
 
-<p><Link to="/community/handbook/repository-overview">Maintainers</Link> are the unsung heroes of the open-source world, often overwhelmed by the Hacktoberfest influx. Your seemingly "simple" pull request may be the tipping point. Recognize their efforts and respect their capacity. Some projects may not actively seek new contributions, and that's perfectly valid. Begin by identifying projects explicitly welcoming newcomers, tagged with <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Alayer5labs+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+">"good first issue"</a> or <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+">"help wanted"</a>.</p>
-
-
+<Link to="/community/handbook/repository-overview">Maintainers</Link> are the unsung heroes of the open-source world, often overwhelmed by the Hacktoberfest influx. Your seemingly "simple" pull request may be the tipping point. Recognize their efforts and respect their capacity. Some projects may not actively seek new contributions, and that's perfectly valid. Begin by identifying projects explicitly welcoming newcomers, tagged with <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Alayer5labs+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+">"good first issue"</a> or <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+">"help wanted"</a>.
 ### 7. The Virtue of Patience: Embracing the Long Game
 
 Open source is a marathon, not a sprint. Feedback may take time, and collaboration may be challenging. Patience is the glue that holds this ecosystem together. Cultivate it as a fundamental habit in your contributor journey. The Layer5 <Link to="/community/members">community members</Link> invest time, patience, understanding and offer endless hours of support to our contributors. Stick around and benefit. In turn, offer to help others. There's little better way to learn, than through teaching.
@@ -91,7 +89,7 @@ Remember, a meaningful contribution is its own reward. Swag and a profile boost 
 
 ### 9. Earn a Badge
     
-<p>Earn a Hacktoberfest Contributor badge by contributing to Layer5 projects during this Hacktoberfest.</p>
+Earn a Hacktoberfest Contributor badge by contributing to Layer5 projects during this Hacktoberfest.
 <img src={hacktoberfestBadge} style="width: 250px"/>
 
 # Join Layer5's Hacktoberfest Event
