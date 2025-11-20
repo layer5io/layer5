@@ -1,5 +1,9 @@
 # GitHub Copilot Custom Coding Agent Instructions
 
+## AI Model Selection
+
+**IMPORTANT**: When using GitHub Copilot, always select the most powerful AI model available (e.g., GPT-4, Claude 3.5 Sonnet, or the latest advanced model) for code generation, review, and assistance tasks. More powerful models provide better code quality, deeper understanding of context, and more accurate suggestions aligned with project standards.
+
 ## Project Overview
 
 The Layer5 website is a Gatsby.js-based static site that serves as the primary interface for the Layer5 community, hosted at https://github.com/layer5io/layer5 and live at https://layer5.io. It showcases projects like Meshery, Kanvas, and Cloud Native Patterns, and provides resources for contributors, users, and cloud native enthusiasts. The site emphasizes clean design, fast performance, and accessibility, serving the cloud native infrastructure management ecosystem.
@@ -29,6 +33,8 @@ The Layer5 website is a Gatsby.js-based static site that serves as the primary i
 - Ensure all code passes `npm run lint` without errors
 - Maintain accessibility standards (WCAG 2.1)
 - Write clean, readable, self-documenting code with minimal comments unless necessary for complex logic
+- **Performance-first**: Every code change must consider Core Web Vitals impact
+- **SEO-aware**: Ensure proper semantic HTML, meta tags, and structured data
 
 ### 3. Testing and Validation
 - Always validate changes work before considering them complete
@@ -36,6 +42,8 @@ The Layer5 website is a Gatsby.js-based static site that serves as the primary i
 - The website takes significant time to build - be patient and don't interrupt builds
 - Run linting frequently: `npm run lint`
 - Test changes incrementally and iteratively
+- **Lighthouse CI**: Monitor Core Web Vitals scores (check GitHub Actions workflows)
+- **Performance testing**: Test on throttled connections (Fast 3G) to ensure good performance for all users
 
 ## Project Structure
 
@@ -127,10 +135,24 @@ description: "Short description for SEO (150-160 chars)"
 ```
 
 ### SEO Optimization
-- Include meta descriptions in frontmatter
-- Use relevant keywords: "cloud native", "Meshery", "service mesh", "Kanvas", "Layer5"
-- Maintain proper heading hierarchy (H1 → H2 → H3)
-- Use descriptive, semantic HTML elements
+
+**Critical Requirements**:
+- **Meta descriptions**: Include in frontmatter (150-160 characters, compelling and keyword-rich)
+- **Title tags**: Clear, descriptive, under 60 characters
+- **Keywords**: Naturally incorporate "cloud native", "Meshery", "service mesh", "Kanvas", "Layer5", "Kubernetes", "microservices"
+- **Heading hierarchy**: Maintain proper structure (single H1, logical H2 → H3 → H4 progression)
+- **Semantic HTML**: Use appropriate HTML5 elements (`<article>`, `<section>`, `<nav>`, `<header>`, `<footer>`)
+- **URL structure**: Use clean, descriptive, keyword-rich URLs (slug: kebab-case)
+- **Image optimization**: 
+  - Always include descriptive alt text for accessibility and SEO
+  - Use gatsby-plugin-image for automatic optimization
+  - Implement proper image dimensions and compression
+- **Internal linking**: Create relevant internal links to improve site structure and navigation
+- **Schema markup**: Add structured data where appropriate (articles, events, FAQs)
+- **Open Graph tags**: Include OG tags for social media sharing
+- **Canonical URLs**: Ensure canonical tags are properly set to avoid duplicate content
+- **Mobile optimization**: Ensure responsive design for mobile-first indexing
+- **Page speed**: Optimize for fast loading times (target < 3 seconds)
 
 ### Content Restrictions
 - **No external images**: Use local assets in `src/assets` or `static` directories only
@@ -305,27 +327,119 @@ Use descriptive, kebab-case names:
 
 ## Performance Considerations
 
+### Core Web Vitals Optimization
+
+**CRITICAL**: All changes must maintain or improve Core Web Vitals scores. Monitor and optimize for:
+
+#### 1. Largest Contentful Paint (LCP) - Target: < 2.5s
+- **Images**: Use `gatsby-plugin-image` for automatic optimization, lazy loading, and responsive images
+- **Preload critical resources**: Preload above-the-fold images, fonts, and critical CSS
+- **Reduce server response time**: Optimize GraphQL queries, minimize API calls
+- **Remove render-blocking resources**: Defer non-critical JavaScript and CSS
+- **Font optimization**: Use `font-display: swap` or `optional`, preload critical fonts from `fonts.css`
+
+#### 2. First Input Delay (FID) / Interaction to Next Paint (INP) - Target: < 100ms / < 200ms
+- **Minimize JavaScript execution**: 
+  - Use code splitting and lazy loading via `@loadable/component`
+  - Avoid large third-party scripts
+  - Break up long tasks into smaller chunks
+- **Optimize event handlers**: Debounce/throttle scroll, resize, and input events
+- **Web Workers**: Offload heavy computations to Web Workers when possible
+- **Reduce main thread work**: Minimize DOM manipulation, avoid forced reflows
+
+#### 3. Cumulative Layout Shift (CLS) - Target: < 0.1
+- **Reserve space**: Set explicit width and height for images, videos, and embeds
+- **Avoid dynamic content**: Don't insert content above existing content without user interaction
+- **Font loading**: Use `font-display: optional` to prevent layout shifts from font swaps
+- **Avoid animations**: Don't animate properties that trigger layout (width, height, top, left)
+- **Skeleton screens**: Use placeholders for dynamic content loading
+
 ### Gatsby Build Optimization
-- **Images**: Use `gatsby-plugin-image` for optimized images
-- **Code splitting**: Leverage Gatsby's automatic code splitting
-- **Lazy loading**: Use `@loadable/component` for heavy components
-- **Bundle size**: Monitor with webpack bundle analyzer
-- **Font loading**: Preload critical fonts defined in `fonts.css`
+- **Images**: Use `gatsby-plugin-image` for optimized images with automatic format conversion (WebP, AVIF)
+- **Code splitting**: Leverage Gatsby's automatic code splitting per route
+- **Lazy loading**: Use `@loadable/component` for heavy components below the fold
+- **Bundle size**: Monitor with webpack bundle analyzer, keep bundles < 200KB
+- **Font loading**: Preload critical fonts defined in `fonts.css`, use subset fonts
+- **Static generation**: Prefer static generation over client-side rendering when possible
+- **Caching**: Leverage Gatsby's aggressive caching strategy
 
 ### Best Practices
+
+#### Image Optimization (Critical for LCP)
 ```jsx
-// ✓ Use gatsby-plugin-image
+// ✓ Use gatsby-plugin-image with proper sizing and alt text
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const MyComponent = ({ imageData }) => {
   const image = getImage(imageData);
-  return <GatsbyImage image={image} alt="Description" />;
+  return (
+    <GatsbyImage 
+      image={image} 
+      alt="Descriptive alt text for accessibility and SEO"
+      loading="eager" // For above-the-fold images
+      // loading="lazy" // For below-the-fold images (default)
+    />
+  );
 };
 
-// ✓ Use lazy loading for heavy components
+// ✓ Set explicit dimensions to prevent CLS
+const StyledImage = styled(GatsbyImage)`
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9; // Prevents layout shift
+`;
+```
+
+#### Code Splitting & Lazy Loading (Critical for FID/INP)
+```jsx
+// ✓ Use lazy loading for heavy components below the fold
 import loadable from '@loadable/component';
 
-const HeavyComponent = loadable(() => import('./HeavyComponent'));
+const HeavyComponent = loadable(() => import('./HeavyComponent'), {
+  fallback: <div>Loading...</div>, // Prevents CLS
+});
+
+// ✓ Use React.lazy for route-based code splitting
+const DynamicPage = React.lazy(() => import('./pages/DynamicPage'));
+
+// Wrap with Suspense
+<Suspense fallback={<LoadingSpinner />}>
+  <DynamicPage />
+</Suspense>
+```
+
+#### Font Loading (Critical for CLS and LCP)
+```jsx
+// ✓ In gatsby-browser.js or component
+const fontStyles = `
+  @font-face {
+    font-family: 'CustomFont';
+    src: url('/fonts/customfont.woff2') format('woff2');
+    font-display: optional; /* Prevents CLS from font swaps */
+    font-weight: 400;
+    font-style: normal;
+  }
+`;
+```
+
+#### Event Handler Optimization (Critical for FID/INP)
+```jsx
+// ✓ Debounce expensive operations
+import { debounce } from 'lodash';
+
+const handleSearch = debounce((query) => {
+  // Expensive search operation
+}, 300);
+
+// ✓ Use passive event listeners for scroll/touch
+useEffect(() => {
+  const handleScroll = () => {
+    // Scroll handling
+  };
+  
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
 ```
 
 ## Common Tasks
@@ -444,21 +558,49 @@ Report violations via:
 
 Before submitting a PR, verify:
 
+### Code Quality
 - [ ] Code follows ESLint rules (`npm run lint` passes)
 - [ ] All new components are functional, not class-based
 - [ ] Styling uses styled-components or existing patterns
+- [ ] Commit messages follow Conventional Commits format
+- [ ] Changes are minimal and surgical
+- [ ] No placeholder content or sensitive data
+- [ ] No console errors or warnings introduced
+
+### Accessibility & Semantics
 - [ ] Accessibility requirements are met (WCAG 2.1 AA)
-- [ ] Images have descriptive alt text
+- [ ] Images have descriptive alt text for both accessibility and SEO
+- [ ] Proper semantic HTML elements used (`<article>`, `<nav>`, etc.)
+- [ ] Keyboard navigation works correctly
+- [ ] Color contrast ratios meet WCAG standards (4.5:1 for text)
+
+### SEO Requirements
+- [ ] Meta descriptions included in frontmatter (150-160 characters)
+- [ ] Title tags are descriptive and under 60 characters
+- [ ] Proper heading hierarchy (single H1, logical H2-H6)
+- [ ] URLs are clean and keyword-rich (kebab-case slugs)
+- [ ] Relevant keywords naturally incorporated
+- [ ] Open Graph tags included for social sharing
+- [ ] Images optimized with gatsby-plugin-image
+- [ ] Internal linking implemented where appropriate
+
+### Core Web Vitals Performance
+- [ ] **LCP < 2.5s**: Images optimized, critical resources preloaded
+- [ ] **FID/INP < 100ms/200ms**: JavaScript minimized, code splitting used
+- [ ] **CLS < 0.1**: Explicit dimensions set for media, no layout shifts
+- [ ] Lazy loading implemented for below-the-fold content
+- [ ] Font loading optimized (font-display: optional)
+- [ ] Bundle size kept under 200KB per route
+- [ ] Lighthouse CI checks pass (if applicable)
+
+### Testing & Validation
+- [ ] Build completes successfully (`make build`)
+- [ ] Changes work correctly in development (`make site`)
+- [ ] Responsive design is maintained across devices
+- [ ] Tested on throttled connection (Fast 3G)
 - [ ] No external dependencies on images or resources
 - [ ] Content uses American English
 - [ ] Terminology is correct (Meshery, Kanvas, etc.)
-- [ ] Commit messages follow Conventional Commits format
-- [ ] Build completes successfully (`make build`)
-- [ ] Changes are minimal and surgical
-- [ ] No placeholder content or sensitive data
-- [ ] Changes work correctly in development (`make site`)
-- [ ] Responsive design is maintained across devices
-- [ ] No console errors or warnings introduced
 
 ## Example Contribution
 
@@ -466,30 +608,38 @@ Before submitting a PR, verify:
 
 ```markdown
 ---
-title: "Exploring Meshery's New Features in 2025"
+title: "Exploring Meshery's New Features in 2025 | Layer5"
 path: "/blog/meshery-new-features-2025"
 date: "2025-09-23"
 author: "Layer5 Team"
-description: "Discover the latest updates to Meshery, the cloud native management platform that simplifies infrastructure operations."
+description: "Discover the latest Meshery features for cloud native management: enhanced pattern management, Kanvas integration, and Kubernetes optimization tools for service mesh operations."
 thumbnail: "/images/blog/meshery-2025-features.png"
 tags:
   - Meshery
   - Cloud Native
   - Features
+  - Kubernetes
+  - Service Mesh
 category: "Product Updates"
+# SEO and Open Graph metadata
+keywords: ["meshery", "cloud native", "kubernetes", "service mesh", "kanvas", "microservices"]
+ogTitle: "Exploring Meshery's New Features in 2025"
+ogDescription: "Latest Meshery updates for cloud native infrastructure management"
+ogImage: "/images/blog/meshery-2025-features-og.png"
+twitterCard: "summary_large_image"
 ---
 
 # Exploring Meshery's New Features in 2025
 
-Meshery continues to evolve as the leading platform for cloud native infrastructure management. In this post, we'll explore the exciting new features released in 2025.
+Meshery continues to evolve as the leading platform for cloud native infrastructure management. In this post, we'll explore the exciting new features released in 2025 that enhance Kubernetes operations, service mesh management, and cloud native application deployment.
 
 ## Enhanced Pattern Management
 
-The new pattern management system allows you to...
+The new pattern management system allows you to define, share, and deploy cloud native infrastructure patterns with improved validation, versioning, and collaboration features. Learn how to streamline your Kubernetes deployments...
 
 ## Improved Kanvas Integration
 
-Kanvas now integrates seamlessly with Meshery to provide...
+Kanvas now integrates seamlessly with Meshery to provide visual topology mapping, real-time infrastructure visualization, and drag-and-drop service mesh configuration. This integration enables DevOps teams to...
 
 ## Getting Started
 
