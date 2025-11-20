@@ -6,6 +6,8 @@ This document provides practical examples of how to use Layer5's custom GitHub C
 
 The `blog-writer` agent is an expert in creating high-quality blog posts for the Layer5 website.
 
+**Note:** This agent automatically uses the most powerful AI model available and creates content specifically tailored for platform engineers, DevOps engineers, SREs, IT administrators, Kubernetes operators, cloud native developers, open source contributors, solution architects, enterprise architects, and developers.
+
 ### Basic Usage
 
 To use the blog-writer agent, mention it in your GitHub Copilot chat:

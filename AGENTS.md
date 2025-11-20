@@ -145,7 +145,11 @@ Layer5 has custom agents available for specialized tasks. These agents provide d
 
 **Purpose**: Expert in creating high-quality blog posts for the Layer5 website.
 
-**When to use**: Creating blog posts about Layer5 projects, cloud native topics, tutorials, community content, or technical articles.
+**Configuration**: Automatically uses the most powerful AI model available.
+
+**Target Audience**: Content is specifically tailored for platform engineers, DevOps engineers, site reliability engineers (SREs), IT administrators, Kubernetes operators, cloud native developers, open source contributors, solution architects, enterprise architects, and developers.
+
+**When to use**: Creating blog posts about Layer5 projects, cloud native topics, tutorials, community content, or technical articles for engineering practitioners.
 
 **Documentation**:
 - Configuration: `.github/agents/blog-writer.yml`
@@ -161,6 +165,7 @@ Layer5 has custom agents available for specialized tasks. These agents provide d
 - Optimizes for SEO (URL, title, description, keywords)
 - Considers posts for `/resources` collection inclusion
 - Follows Layer5's writing style and community values
+- Addresses real-world challenges faced by platform teams and operators
 
 **Basic usage**:
 ```

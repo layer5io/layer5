@@ -2,6 +2,10 @@
 
 A quick reference card for using the blog-writer custom agent.
 
+**Agent Configuration:**
+- Uses most powerful AI model available
+- Content tailored for platform engineers, DevOps engineers, SREs, IT administrators, Kubernetes operators, cloud native developers, solution architects, enterprise architects, and developers
+
 ## Basic Syntax
 
 ```

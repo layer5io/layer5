@@ -8,11 +8,16 @@ This directory contains custom agent configurations for GitHub Copilot. These ag
 
 **Purpose:** Create high-quality blog posts for the Layer5 website
 
+**Configuration:** Always uses the most powerful AI model available
+
+**Target Audience:** Content tailored for platform engineers, DevOps engineers, SREs, IT administrators, Kubernetes operators, cloud native developers, open source contributors, solution architects, enterprise architects, and developers
+
 **Specializes in:**
 - Cloud native topics (Kubernetes, service mesh, platform engineering)
 - Meshery and Kanvas features
 - Community content and announcements
 - Open source best practices
+- Technical content for engineering practitioners
 
 **Key Capabilities:**
 - Uses the official blog template structure
@@ -24,6 +29,7 @@ This directory contains custom agent configurations for GitHub Copilot. These ag
 - Optimizes for SEO (URL, title, description, keywords)
 - Considers posts for `/resources` collection inclusion
 - Follows Layer5 writing style and tone
+- Addresses real-world challenges faced by platform teams
 
 **When to Use:**
 - Creating new blog posts about Layer5 projects
@@ -31,6 +37,7 @@ This directory contains custom agent configurations for GitHub Copilot. These ag
 - Crafting community announcements
 - Developing content for Meet the Maintainer series
 - Publishing event coverage or recaps
+- Creating content for technical practitioners and architects
 
 **Example Usage with GitHub Copilot:**
 ```
