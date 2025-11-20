@@ -468,10 +468,6 @@ module.exports = {
       options: {
         extensions: [".mdx", ".md"],
         gatsbyRemarkPlugins: [],
-        mdxOptions: {
-          remarkPlugins: [],
-          rehypePlugins: [],
-        },
       },
     },
     "gatsby-plugin-sharp",
