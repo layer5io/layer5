@@ -28,7 +28,7 @@ import Code from "../../../../components/CodeBlock";
     Trying to figure out what's happening with your request traffic? Not sure why your Envoy configuration isn't working? If you're using Istio as your gateway and need to troubleshoot your ingress traffic requests, here are a few tips for debugging Envoy proxy.
 <h2>Enable Envoy Debug Logging</h2>
   By default Envoy system logs are sent to <code>/dev/stderr</code>. This location be overridden using <code>--log-path</code>. Logging to <code>/dev/stderr</code>  for system logs and to <code>/dev/stdout</code> for access logs can be useful when running Envoy inside a container. In this way, these two individual logstreams can be separated, and using this approach, logging requires no additional files or directories to be mounted.
-<div class="intro">
+<div className="intro">
   We recommend setting the Envoy proxy’s log level to debug in a pre-production environment. Debug logs can help you identify issues before you graduate the associated configuration to your production environment.
 </div>
 <h3>Using envoy CLI</h3>

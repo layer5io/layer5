@@ -60,7 +60,7 @@ Load balancing is a critical technique that enhances the responsiveness, reliabi
 Load balancing plays a pivotal role in optimizing the performance of internet applications by efficiently managing network traffic. Imagine a grocery store with multiple checkout lines—one open and the others closed. Load balancing is akin to opening all checkout lines,thereby reducing wait times, and improving overall efficiency.
 <br/>
 
- <figure class="imgWithCaption fig-right">
+ <figure className="imgWithCaption fig-right">
     <img src={Layer5} />
     <figcaption>
     Layer5

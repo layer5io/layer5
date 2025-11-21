@@ -94,7 +94,7 @@ Earn a Hacktoberfest Contributor badge by contributing to Layer5 projects during
 
 # Join Layer5's Hacktoberfest Event
 
-<figure class="imgWithCaption" style="width: 80%;">
+<figure className="imgWithCaption" style="width: 80%;">
   <Link to="/community/events/hacktoberfest-prep-2023-easing-into-cncf-open-source-projects"><img src={cloudNativeHacktoberfest} /></Link>
   <figcaption style="display:flex;gap:2rem;">
   <div>
