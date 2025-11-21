@@ -121,7 +121,7 @@ c. Ingress Gateway in the Worskpace 2 namespace for traffic entry point to the w
   profile: empty
   components:
   ingressGateways:
-  — name: wk1-ingressgw
+  - name: wk1-ingressgw
   namespace: workspace-1
   enabled: true
   label:
@@ -141,7 +141,7 @@ c. Ingress Gateway in the Worskpace 2 namespace for traffic entry point to the w
   profile: empty
   components:
   ingressGateways:
-  — name: wk2-ingressgw
+  - name: wk2-ingressgw
   namespace: workspace-2
   enabled: true
   label:
@@ -218,12 +218,12 @@ istiooperator.install.istio.io/wk2-gwconfig configured
   selector:
   istio: ingressgateway-1 # use istio gateway-1 controller in workspace-1
   servers:
-  — port:
+  - port:
   number: 80
   name: http
   protocol: HTTP
   hosts:
-  — “*”
+  - “*”
   $ cat istio/bookinfo-gateway-2.yaml
   apiVersion: networking.istio.io/v1alpha3
   kind: Gateway
@@ -233,12 +233,12 @@ istiooperator.install.istio.io/wk2-gwconfig configured
   selector:
   istio: ingressgateway-2 # use istio gateway-2 controller in workspace-1
   servers:
-  — port:
+  - port:
   number: 80
   name: http
   protocol: HTTP
   hosts:
-  — “*”
+  - “*”
   ```
 
 Deploy the applications in workspace-1 and workspace-2 and deploy the Gateway,VirtualService and DestinationRules.
