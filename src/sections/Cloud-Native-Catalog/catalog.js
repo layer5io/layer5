@@ -137,20 +137,20 @@ const Catalog = () => {
         <Row className="catalog">
           <Col $md={6} className="catalog-image">
             <div className="image-wrapper">
-              <img src={isDark ? CatalogsDark : CatalogsLight} className="calalog-image" />
+              <img src={isDark ? CatalogsDark : CatalogsLight} className="calalog-image" alt="Kubernetes Patterns Catalog" />
             </div>
           </Col>
           <Col $md={6} className="catalog-detail">
             <h2 className="heading">Harness Well-Architected Kubernetes Patterns</h2>
             <p className="caption">
-                Discover and use top-quality patterns and conventions as templates for your cloud native infrastructure with Meshery Catalog. Publish your own best practices and share with team members and the world.
+              Discover and use top-quality patterns and conventions as templates for your cloud native infrastructure with Meshery Catalog. Publish your own best practices and share with team members and the world.
             </p>
           </Col>
         </Row>
         <Row className="catalog">
           <Col $md={6} className="catalog-detail">
             <h2 className="heading">
-            Center of Excellence: Mutli-tentant Platform Engineering Patterns
+              Center of Excellence: Mutli-tentant Platform Engineering Patterns
             </h2>
             <p className="caption">
               Disseminate your organizational best practices by encapsulating them into your own Meshery design patterns. Expose configurable templates for your developer teams for reuse and environment reconfiguration, while retaining the imbued operational practices within your shared designs.
@@ -158,14 +158,14 @@ const Catalog = () => {
           </Col>
           <Col $md={6} className="catalog-image">
             <div className="image-wrapper">
-              <img src={Patterns} className="calalog-image" />
+              <img src={Patterns} className="calalog-image" alt="Service Mesh Patterns" />
             </div>
           </Col>
         </Row>
         <Row className="catalog">
           <Col $md={6} className="catalog-image">
             <div className="image-wrapper">
-              <img src={Wasm} className="calalog-image" />
+              <img src={Wasm} className="calalog-image" alt="WebAssembly Icon" />
             </div>
           </Col>
           <Col md={6} className="catalog-detail">
@@ -202,7 +202,7 @@ const Catalog = () => {
           </Col>
           <Col $md={6} className="catalog-image">
             <div className="image-wrapper">
-              <img src={Opa} className="calalog-image" />
+              <img src={Opa} className="calalog-image" alt="Open Policy Agent (OPA) Icon" />
             </div>
           </Col>
         </Row>
