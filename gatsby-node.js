@@ -708,15 +708,17 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
   actions.setWebpackConfig({
     resolve: {
       fallback: {
-        path: require.resolve("path-browserify"),
-        process: require.resolve("process/browser"),
-        url: require.resolve("url/"),
+        path: false,
+        process: false,
+        url: false,
       },
     },
   });
 
-  if (stage === "build-javascript") {
+  // Reduce memory pressure by disabling sourcemaps in dev and build
+  if (stage === "develop" || stage === "develop-html" || stage === "build-javascript" || stage === "build-html") {
     const config = getConfig();
+    config.devtool = false;
     const miniCssExtractPlugin = config.plugins.find(
       (plugin) => plugin.constructor.name === "MiniCssExtractPlugin"
     );
