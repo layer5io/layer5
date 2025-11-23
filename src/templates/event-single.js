@@ -32,6 +32,10 @@ export const query = graphql`query EventsBySlug($slug: String!) {
           gatsbyImageData(layout: CONSTRAINED)
         }
       }
+      thumbnail_svg {
+        publicURL
+        extension
+      }
     }
   }
 }
@@ -60,5 +64,5 @@ export default EventSinglePage;
 
 
 export const Head = ({ data }) => {
-  return <SEO title={data.mdx.frontmatter.title} description={data.mdx.frontmatter.description} image={data.mdx.frontmatter.thumbnail.publicURL} />;
+  return <SEO title={data.mdx.frontmatter.title} description={data.mdx.frontmatter.description} image={data.mdx.frontmatter.thumbnail?.publicURL || data.mdx.frontmatter.thumbnail_svg?.publicURL} />;
 };

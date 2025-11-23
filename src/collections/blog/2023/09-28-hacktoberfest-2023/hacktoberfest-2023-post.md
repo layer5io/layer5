@@ -90,7 +90,7 @@ Remember, a meaningful contribution is its own reward. Swag and a profile boost 
 ### 9. Earn a Badge
     
 Earn a Hacktoberfest Contributor badge by contributing to Layer5 projects during this Hacktoberfest.
-<img src={hacktoberfestBadge} style="width: 250px"/>
+<img src={hacktoberfestBadge} style="width: 250px" />
 
 # Join Layer5's Hacktoberfest Event
 
@@ -98,6 +98,7 @@ Earn a Hacktoberfest Contributor badge by contributing to Layer5 projects during
   <Link to="/community/events/hacktoberfest-prep-2023-easing-into-cncf-open-source-projects"><img src={cloudNativeHacktoberfest} /></Link>
   <figcaption style="display:flex;gap:2rem;">
   <div>
+
     <strong><Link to="/community/events/hacktoberfest-prep-2023-easing-into-cncf-open-source-projects">Hacktoberfest Prep 2023: Easing into CNCF Open Source Projects</Link></strong>
     <ul>
     <li>DATE: September 29, 2023</li>
@@ -106,6 +107,7 @@ Earn a Hacktoberfest Contributor badge by contributing to Layer5 projects during
     </ul>
   </div>
   <div>
+
     <strong> Open GitHub Issues by Label:</strong>
     <ul>
       <li><a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22hacktoberfest%22+">"hacktoberfest" issues</a>

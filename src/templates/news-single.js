@@ -24,12 +24,20 @@ export const query = graphql`
             gatsbyImageData(width: 500, layout: CONSTRAINED)
           }
         }
+        thumbnail_svg {
+          extension
+          publicURL
+        }
         darkthumbnail {
           extension
           publicURL
           childImageSharp {
             gatsbyImageData(width: 500, layout: CONSTRAINED)
           }
+        }
+        darkthumbnail_svg {
+          extension
+          publicURL
         }
       }
       fields {
@@ -55,7 +63,7 @@ export const Head = ({ data }) => {
   return (
     <SEO
       title={data.mdx.frontmatter.title}
-      image={data.mdx.frontmatter.thumbnail.publicURL}
+      image={data.mdx.frontmatter.thumbnail?.publicURL || data.mdx.frontmatter.thumbnail_svg?.publicURL}
       description={data.mdx.frontmatter.description}
     />
   );

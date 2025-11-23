@@ -41,6 +41,10 @@ clean:
 lint:
 	npm run lint
 
+## Kill process running the site
+kill:
+	lsof -ti:8000 | xargs kill -9 2>/dev/null || true
+
 ## Prepare a list of features for the pricing page.
 features: 
 	curl -L https://docs.google.com/spreadsheets/d/e/2PACX-1vQwzrUSKfuSRcpkp7sJTw1cSB63s4HCjYLJeGPWECsvqn222hjaaONQlN4X8auKvlaB0es3BqV5rQyz/pub\?gid\=1153419764\&single\=true\&output\=csv -o .github/build/spreadsheet.csv

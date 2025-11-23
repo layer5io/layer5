@@ -22,20 +22,21 @@ import Stars from "./stars-forks.webp";
 import Slack from "./meshery-star-notifications.webp";
 
 <BlogWrapper>
-  <Link to="/cloud-native-management/meshery">Meshery</Link> took its first steps into the cloud native world in July of 2019 with the goal to ease the adoption and operation of cloud native infrastructure with a focus on Kubernetes as ubiquitous a layer within modern infrastructure deployments. Since then, Meshery as a project and Layer5 as an open source community have <img src={Slack} alt="Slack notification of GitHub stars applied to Meshery" style="width:60%;float:right;" /> grown by leaps and bounds. Now, we are bursting with pride in announcing that Meshery has reached yet another milestone: 1,000 stars on the Meshery repository on GitHub.
+  <Link to="/cloud-native-management/meshery">Meshery</Link> took its first steps into the cloud native world in July of 2019 with the goal to ease the adoption and operation of cloud native infrastructure with a focus on Kubernetes as ubiquitous a layer within modern infrastructure deployments. Since then, Meshery as a project and Layer5 as an open source community have <img src={Slack} alt="Slack notification of GitHub stars applied to Meshery" style={{width: "60%", float: "right"}} /> grown by leaps and bounds. Now, we are bursting with pride in announcing that Meshery has reached yet another milestone: 1,000 stars on the Meshery repository on GitHub.
   As a project, Meshery is comprised of about 30 repositories, and so, in total,
   the project has many more than a thousand stars. The rate by which Meshery is
   accumulating stars only continues to accelerate and is a small moment of pride
   recognized in the community Slack each time a star is added. As we hit the
   1,000+ stars milestone, let's pause to reflect on the project's incredible
   journey since its inception.
-<h3>Why was Meshery created?</h3>
+
+### Why was Meshery created?
 
   Meshery is an open source, vendor-neutral, extensible management plane that
   enables your organization to overcome the challenges of complex virtual
   infrastructure,{" "}
   <Blockquote
-    style="float:left;width:60%;"
+    style={{float: "left", width: "60%"}}
     quote="Meshery is the perfect tool for ensuring that your applications are optimally configured and performing well; it also gives you a fantastic visual insight into what can be a large amount of textual configuration."
     person="Nic Jackson, Principal Developer Advocate at HashiCorp"
   />{" "}
@@ -45,19 +46,24 @@ import Slack from "./meshery-star-notifications.webp";
   the only openly-governed infrastructure manager. Given its ability to deeply
   manage Kubernetes, its workloads, and any Cloud infrastructure, and the highly
   configurable way in which users can load a variety of plugins, the project has
-  certainly earned its title as the <i>extensible</i> infrastructure manager.
-<div className="intro" style="text-align:center;">
+  certainly earned its title as the *extensible* infrastructure manager.
+
+<div className="intro" style={{textAlign: "center"}}>
+
       Within just a year of its creation,{" "}
     <Link to="/company/news/meshery-accepted-into-the-cncf-landscape">
       Meshery lands in the CNCF Landscape
     </Link>
     .
+
 </div>
+
 <Blockquote
-  style="width:40%;float:right;"
+  style={{width: "40%", float: "right"}}
   quote="Open source contributions are a must-do for becoming a true cloud native hero. Cloud native is all about the community and one can't be a part of a community by only taking and never giving back. So, if you were looking for a promising and welcoming project to join - look no further!"
   person="Anton Weiss, Founder and CEO, Otomato"
 />
+
   Not long after, Meshery was{" "}
   <Link to="/company/news/cncf-adopts-service-mesh-performance-standard-established-by-layer5">
     adopted by the CNCF
@@ -66,67 +72,47 @@ import Slack from "./meshery-star-notifications.webp";
   Foundation, the contributor community and Meshery's functionality maintains
   steadfast in their rate of growth and use. With continuous improvements in the
   architecture, user experience and in other features regulated by inclusive
-  monitoring, the project is gaining traction <i>very quickly</i>.
-<h3>Engagement in the community is on the rise!</h3>
+  monitoring, the project is gaining traction *very quickly*.
+
+### Engagement in the community is on the rise!
+
   It isn't just the number of stars that has grown. We've seen a surge of new
   contributors, maintainers, new features, commits, PRs, releases, and so much
   more! How do we assess the impact of Meshery? Here are some statistics on how
   we track our engagement:
-<ul>
-  <li>
-    Stargazers: <b>105.4795%</b> annual growth from 584 to 1200
-  </li>
-  <li>
-    Forks: <b>103.2491%</b> annual growth from 277 to 563
-  </li>
-  <li>
-    Code Commits: <b>250%</b> annual growth from 3.25k to 11.375k
-  </li>
-  <li>In the last 12 months, we had 341 contributors with 291 new.</li>
-  <li>
-    Number of PR's merged in the last 12 months is 2108. Our count of PR’s
-    merged is more than that of 106 CNCF hosted projects.
-  </li>
-</ul>
+
+- Stargazers: **105.4795%** annual growth from 584 to 1200
+- Forks: **103.2491%** annual growth from 277 to 563
+- Code Commits: **250%** annual growth from 3.25k to 11.375k
+- In the last 12 months, we had 341 contributors with 291 new.
+- Number of PR's merged in the last 12 months is 2108. Our count of PR's merged is more than that of 106 CNCF hosted projects.
 
 <img
   src={Stars}
-  style="width:75%; display: block; margin: auto;"
+  style={{width: "75%", display: "block", margin: "auto"}}
   alt="Meshery Stars and Forks Graph"
 />
-<p style="font-size: 15px; text-align: center">
+
   Note: These metrics and reports were obtained from DevStats, a CNCF-created
   tool for analyzing and graphing developer contributions.
+
 <Blockquote
-  style="float:right;width:50%;font-size:.5rem;"
+  style={{float: "right", width: "50%", fontSize: ".5rem"}}
   quote="Layer5 has been instrumental in helping us understand the patterns, best practices, and strategies in our approach to the cloud native ecosystem. Meshery has simplified the process of configuring and operating meshes. Meshery's technology neutrality, open source governance, and defining of industry standards like SMP, SMI, and now cloud native patterns will ensure that Meshery helps any organization adopt meshes with utmost clarity curated to their needs."
   person="Yogi Porla, Customer Success Manager at HPE"
 />
 
-<h3>Latest Meshery Features</h3>
+### Latest Meshery Features
+
   Meshery v0.6.0 will release soon, jam-packed full of major new features. Final
   release candidate, Meshery v0.6.0-rc-4, available today, so you can take
   advantage of Meshery's new functionality now:
-<ul>
-  <li>Manage Kubernetes Workloads (Applications)</li>
-  <li>Manage WASM filters</li>
-  <li>
-    Manage{" "}
-    <Link to="/learn/service-mesh-books/service-mesh-patterns">
-      Service Mesh Patterns
-    </Link>
-  </li>
-  <li>
-    <Link to="/cloud-native-management/kanvas">Kanvas</Link>: Visualize
-    infrastructure deployments
-  </li>
-  <li>
-    Enhanced infrastructure discovery in{" "}
-    <Link to="/cloud-native-management/meshery/meshery-operator">
-      Meshery Operator and Meshsync
-    </Link>
-  </li>
-</ul>
+
+- Manage Kubernetes Workloads (Applications)
+- Manage WASM filters
+- Manage <Link to="/learn/service-mesh-books/service-mesh-patterns">Service Mesh Patterns</Link>
+- <Link to="/cloud-native-management/kanvas">Kanvas</Link>: Visualize infrastructure deployments
+- Enhanced infrastructure discovery in <Link to="/cloud-native-management/meshery/meshery-operator">Meshery Operator and Meshsync</Link>
 
   Last, but not least is the announcement of Kanvas's beta release! The waiting
   list is filling up fast, so I recommend{" "}

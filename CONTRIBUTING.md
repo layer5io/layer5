@@ -401,9 +401,20 @@ Change image according to isDark value:
     />
 ```
 
-> Note:
->
 > - A condition `frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL` is added so that the image only changes if there is a difference between the thumbnail publicURLs.
+
+### Using SVG as Thumbnail
+
+If you are using an SVG file as a thumbnail, you should use the `thumbnail_svg` and `darkthumbnail_svg` fields in the frontmatter instead of `thumbnail` and `darkthumbnail`. This prevents Gatsby's `childImageSharp` from attempting to process the SVG, which can cause build warnings and errors.
+
+Example frontmatter:
+
+```yaml
+thumbnail_svg: ./my-icon.svg
+darkthumbnail_svg: ./my-icon-dark.svg
+```
+
+The components are set up to automatically check for these fields if the standard `thumbnail` fields are missing or if they need to fallback to the SVG version.
 
 ## Adding Images and Icons
 

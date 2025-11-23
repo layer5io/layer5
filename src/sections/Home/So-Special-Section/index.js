@@ -29,10 +29,18 @@ const SoSpecial = () => {
           extension
           publicURL
         }
+        thumbnail_svg {
+          extension
+          publicURL
+        }
         darkthumbnail {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
+          extension
+          publicURL
+        }
+        darkthumbnail_svg {
           extension
           publicURL
         }
@@ -114,7 +122,7 @@ const SoSpecial = () => {
                     {/* {console.log("Dark Thumbnail:", frontmatter.darkthumbnail)}
                     {console.log("Thumbnail:", frontmatter.thumbnail)} */}
                     <Image
-                      {...(frontmatter.thumbnail)}
+                      {...(frontmatter.thumbnail || frontmatter.thumbnail_svg)}
                       imgStyle={{ objectFit: "contain" }}
                       alt={frontmatter.title}
                     />

@@ -63,7 +63,7 @@ const IndividualIntegrations = ({ data, children }) => {
   return (
     <IntegrationPageWrapper>
       <section className="herosection">
-        <Image {...frontmatter.integrationIcon} alt={frontmatter.title} imgStyle={{ objectFit: "contain" }} />
+        <Image {...(frontmatter.integrationIcon || frontmatter.integrationIcon_svg)} alt={frontmatter.title} imgStyle={{ objectFit: "contain" }} />
         <h2>
           {frontmatter.title} with <span className="hero-header">Kanvas</span>
         </h2>

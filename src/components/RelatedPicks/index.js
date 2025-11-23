@@ -34,16 +34,10 @@ const RelatedPicks = ({ heading }) => {
             title
             redirectLink
             darkimgsrc {
-              childImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH)
-              }
               extension
               publicURL
             }
             lightimgsrc {
-              childImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH)
-              }
               extension
               publicURL
             }

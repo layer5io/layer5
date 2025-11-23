@@ -27,6 +27,10 @@ export const query = graphql`query ResourcesBySlug($slug: String!) {
           gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
       }
+      thumbnail_svg {
+        extension
+        publicURL
+      }
     }
     fields {
       slug
@@ -57,5 +61,5 @@ const ResourceSinglePage = ({ data, children }) => {
 export default ResourceSinglePage;
 
 export const Head = ({ data }) => {
-  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} description={data.mdx.frontmatter.description}/>;
+  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail?.publicURL || data.mdx.frontmatter.thumbnail_svg?.publicURL} description={data.mdx.frontmatter.description}/>;
 };

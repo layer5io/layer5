@@ -63,7 +63,7 @@ const EventSingle = ({ data, children }) => {
     <EventPageWrapper>
       <PageHeader
         title={ frontmatter.title }
-        thumbnail={ frontmatter.thumbnail }
+        thumbnail={ frontmatter.thumbnail || frontmatter.thumbnail_svg }
       />
       <div className="single-event-wrapper">
         <Container>

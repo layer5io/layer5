@@ -33,10 +33,18 @@ const ResourceSingle = ({ data, children }) => {
           extension
           publicURL
         }
+        thumbnail_svg {
+          extension
+          publicURL
+        }
         darkthumbnail {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
+          extension
+          publicURL
+        }
+        darkthumbnail_svg {
           extension
           publicURL
         }
@@ -63,7 +71,7 @@ const ResourceSingle = ({ data, children }) => {
         title={frontmatter.title}
         subtitle={frontmatter.subtitle}
 
-        thumbnail={frontmatter.thumbnail}
+        thumbnail={frontmatter.thumbnail || frontmatter.thumbnail_svg}
       />
       <div className="single-resource-wrapper">
         <Container>

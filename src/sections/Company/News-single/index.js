@@ -36,6 +36,10 @@ const NewsSingle = ({ data, children }) => {
           extension
           publicURL
         }
+        thumbnail_svg {
+          extension
+          publicURL
+        }
       }
       fields {
         slug
@@ -56,8 +60,8 @@ const NewsSingle = ({ data, children }) => {
         subtitle={frontmatter.subtitle}
         category={frontmatter.category}
         author={{ name: frontmatter.author }}
-        thumbnail={ isDark && frontmatter.darkthumbnail && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL
-          ? frontmatter.darkthumbnail : frontmatter.thumbnail}
+        thumbnail={ isDark && (frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg) && (frontmatter.darkthumbnail?.publicURL || frontmatter.darkthumbnail_svg?.publicURL) !== (frontmatter.thumbnail?.publicURL || frontmatter.thumbnail_svg?.publicURL)
+          ? (frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg) : (frontmatter.thumbnail || frontmatter.thumbnail_svg)}
         date={frontmatter.date}
       />
       <div className="single-post-wrapper">

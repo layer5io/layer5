@@ -34,12 +34,14 @@ import { Link } from "gatsby";
 <BlogWrapper>
 
 <div className="intro ">
+
       Meshery is the open-source, collaborative cloud native manager that can
     configure 230+ Kubernetes infrastructure, onboard your applications, manage WebAssembly filters, apply cloud native patterns, validate against best practices, and benchmarks the performance of your cloud native deployments. Let’s learn how to manage cloud native infrastructure with confidence with Meshery.{" "}
+
 </div>
 
 <h3>Network Planes</h3>
-<img src={Planes} className="slides-right" align="right" alt="network-planes" />
+<img src={Planes} className="slides-right" align="right" alt="network-planes"/>
   As we unfold what a management plane is, it would serve us well to talk about
   network planes in this regard. Architecturally, a service mesh consists of two
   planes. One of those is the data plane, while the other one is the control
@@ -63,8 +65,7 @@ import { Link } from "gatsby";
     alt="meshery-logo"
     height="35rem"
     width="35rem"
-    style="padding-bottom:5px;padding-top:auto;"
-  />{" "}
+    style="padding-bottom:5px;padding-top:auto;"/>{" "}
   Meshery
 </h3>
 
@@ -72,8 +73,7 @@ import { Link } from "gatsby";
   src={MeshManager}
   className="slides-left"
   align="right"
-  alt="mesh-manager"
-/>
+  alt="mesh-manager"/>
   <Link to="/cloud-native-management/meshery">Meshery</Link> manages the
   lifecycle of infrastructure. Meshery does workload management, helps you
   onboard or offboard your applications onto the mesh. It also lets you do
@@ -95,9 +95,7 @@ import { Link } from "gatsby";
   has its own set of features). Consequently, in order to leverage the maximum
   functionality of each infrastructure, Meshery has separate, dedicated adapter
   for each of the{" "}
-  <a href="https://docs.meshery.io/getting-started/overview">
-    supported models.
-  </a>
+<a href="https://docs.meshery.io/getting-started/overview"> supported models. </a>
   :{" "}
 <table className="table-1" align="center">
   <thead>
@@ -109,89 +107,67 @@ import { Link } from "gatsby";
   <tbody>
     <tr>
       <td>
-        <a href="https://docs.meshery.io/service-meshes/adapters/consul">
-          Meshery Adapter for Consul
-        </a>
+<a href="https://docs.meshery.io/service-meshes/adapters/consul"> Meshery Adapter for Consul </a>
       </td>
       <td className="status">stable</td>
     </tr>
     <tr>
       <td>
-        <a href="https://docs.meshery.io/service-meshes/adapters/istio">
-          Meshery Adapter for Istio
-        </a>
+<a href="https://docs.meshery.io/service-meshes/adapters/istio"> Meshery Adapter for Istio </a>
       </td>
       <td className="status">stable</td>
     </tr>
     <tr>
       <td>
-        <a href="https://docs.meshery.io/service-meshes/adapters/kuma">
-          Meshery Adapter for Kuma
-        </a>
+<a href="https://docs.meshery.io/service-meshes/adapters/kuma"> Meshery Adapter for Kuma </a>
       </td>
       <td className="status">stable</td>
     </tr>
     <tr>
       <td>
-        <a href="https://docs.meshery.io/service-meshes/adapters/linkerd">
-          Meshery Adapter for Linkerd
-        </a>{" "}
+<a href="https://docs.meshery.io/service-meshes/adapters/linkerd"> Meshery Adapter for Linkerd </a>{" "}
       </td>
       <td className="status">stable</td>
     </tr>
     <tr>
       <td>
-        <a href="https://docs.meshery.io/service-meshes/adapters/nsm">
-          Meshery Adapter for Network Service Mesh
-        </a>
+<a href="https://docs.meshery.io/service-meshes/adapters/nsm"> Meshery Adapter for Network Service Mesh </a>
       </td>
       <td className="status">stable</td>
     </tr>
     <tr>
       <td>
-        <a href="https://docs.meshery.io/service-meshes/adapters/osm">
-          Meshery Adapter for Open Service Mesh
-        </a>
+<a href="https://docs.meshery.io/service-meshes/adapters/osm"> Meshery Adapter for Open Service Mesh </a>
       </td>
       <td className="status">stable</td>
     </tr>
     <tr>
       <td>
-        <a href="https://docs.meshery.io/service-meshes/adapters/traefik-mesh">
-          Meshery Adapter for Traefik Mesh
-        </a>
+<a href="https://docs.meshery.io/service-meshes/adapters/traefik-mesh"> Meshery Adapter for Traefik Mesh </a>
       </td>
       <td className="status">stable</td>
     </tr>
     <tr>
       <td>
-        <a href="https://docs.meshery.io/service-meshes/adapters/cpx">
-          Meshery Adapter for Citrix Service Mesh
-        </a>
+<a href="https://docs.meshery.io/service-meshes/adapters/cpx"> Meshery Adapter for Citrix Service Mesh </a>
       </td>
       <td className="status">beta</td>
     </tr>
     <tr>
       <td>
-        <a href="https://docs.meshery.io/service-meshes/adapters/nginx-sm">
-          Meshery Adapter for NGINX Service Mesh
-        </a>
+<a href="https://docs.meshery.io/service-meshes/adapters/nginx-sm"> Meshery Adapter for NGINX Service Mesh </a>
       </td>
       <td className="status">beta</td>
     </tr>
     <tr>
       <td>
-        <a href="https://docs.meshery.io/service-meshes/adapters/app-mesh">
-          Meshery Adapter for App Mesh
-        </a>
+<a href="https://docs.meshery.io/service-meshes/adapters/app-mesh"> Meshery Adapter for App Mesh </a>
       </td>
       <td className="status">alpha</td>
     </tr>
     <tr>
       <td>
-        <a href="https://docs.meshery.io/service-meshes/adapters/tanzu-sm">
-          Meshery Adapter for Tanzu Service Mesh
-        </a>
+<a href="https://docs.meshery.io/service-meshes/adapters/tanzu-sm"> Meshery Adapter for Tanzu Service Mesh </a>
       </td>
       <td className="status">alpha</td>
     </tr>
@@ -208,8 +184,7 @@ import { Link } from "gatsby";
   src={MesheryDeployments}
   className="slides-right"
   align="right"
-  alt="meshery-deployment"
-/>
+  alt="meshery-deployment"/>
   If you want a more finer configuration, you can configure your environment
   through settings and you can configure infrastructure, and you can configure
   the metrics, you can define your performance tests to be reused.
@@ -226,16 +201,14 @@ import { Link } from "gatsby";
     alt="meshery-operator-logo"
     height="32rem"
     width="32rem"
-    style="padding-bottom:5px;padding-top:auto;"
-  />{" "}
+    style="padding-bottom:5px;padding-top:auto;"/>{" "}
   Meshery Operator
 </h3>
 <img
   src={Mesheryfeatures}
   className="slides-left"
   align="right"
-  alt="Meshery-features"
-/>
+  alt="Meshery-features"/>
   <Link to="/cloud-native-management/meshery/meshery-operator">
     Meshery operator
   </Link>{" "}
@@ -262,7 +235,7 @@ import { Link } from "gatsby";
   generates a visual representation. It provides users the ability to design
   infrastructure, infrastructure configuration, and the applications that run on
   it.
-<img src={Patterns} className="slides-left" align="right" alt="Patterns" />
+<img src={Patterns} className="slides-left" align="right" alt="Patterns"/>
 <h3>
   <img
     src={PatternsLogo}
@@ -270,8 +243,7 @@ import { Link } from "gatsby";
     alt="patterns-logo"
     height="35rem"
     width="32rem"
-    style="padding-bottom:5px;padding-top:auto;"
-  />{" "}
+    style="padding-bottom:5px;padding-top:auto;"/>{" "}
   Patterns
 </h3>
   {" "}
@@ -283,8 +255,7 @@ import { Link } from "gatsby";
   src={ServiceMeshPatterns}
   className="slides-right"
   align="right"
-  alt="Service-Mesh-Patterns"
-/>
+  alt="Service-Mesh-Patterns"/>
   Meshery will take action based on what you've described in the pattern, things
   like generating or running a performance test, generating load, and then doing
   statistical analysis on that set of results. In the future, if you want to
@@ -302,8 +273,7 @@ import { Link } from "gatsby";
     alt="nighthawk-logo"
     height="35rem"
     width="35rem"
-    style="padding-bottom:5px;padding-top:auto;"
-  />{" "}
+    style="padding-bottom:5px;padding-top:auto;"/>{" "}
   Nighthawk
 </h3>
   There’s a project called <Link to="/projects/nighthawk">Nighthawk</Link> that
@@ -314,7 +284,7 @@ import { Link } from "gatsby";
   adaptive load controllers, add a couple of those in and expose them through
   Meshery to let people recursively evaluate what is ultimately an optimal
   configuration in your environment and the infrastructure.
-<img src={Nighthawk} className="slides-right" align="right" alt="Nighthawk" />
+<img src={Nighthawk} className="slides-right" align="right" alt="Nighthawk"/>
 
   If you consider that you've got a certain SLO or a certain minimum latency
   requirement that you need to stick to that but you also want to at the same
@@ -339,6 +309,7 @@ import { Link } from "gatsby";
   Manager to learn more!
 </h3>
 <div className="iframe-container">
+
   <iframe
     width="460"
     height="215"
@@ -349,6 +320,7 @@ import { Link } from "gatsby";
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen
   ></iframe>
+
 </div>
 
 </BlogWrapper>

@@ -28,22 +28,34 @@ Okay before we start, I&#39;ll like to tell you about <a href="https://github.co
 <ol>
 <li>The very first step is to review the PR, suggest changes if you think of any, ask queries, help the author to improve the code quality/readability/reusability, ask questions because asking helps you learn asking more better questions next time.
 </li>
+</li>
+</li>
 <li>PR authors either attach a video showcasing expected behavior or add written instructions about their fix under <strong>User Acceptance Behavior</strong>
 </li>
+</li>
+</li>
 <li>Now it&#39;s the time to checkout PR in your local system, we can check out any PR like this
+</li>
+</li>
 <pre><code className="language-bash">gh pr checkout https://github.com/meshery/meshery/pull/4823
 </code></pre>
 </li>
 <li>You can check if you&#39;re into the same branch as the PR author with
+</li>
+</li>
 <pre><code className="language-bash">git branch
 </code></pre>
 </li>
 <li>Well, if we&#39;re testing a PR related to mesheryctl, we need to build the binary from the same branch. change your directory to <code>mesheryctl</code> folder and run
+</li>
+</li>
 <pre><code className="language-bash">make
 </code></pre>
 This will create a mesheryctl binary according to your OS in the same directory
 </li>
 <li>Now it&#39;s time to test out this newly built binary according to what&#39;s been tackled in the PR and related issues. For e.g. <code>system start</code> has some new functionality, make sure you followed the pull-request/linked-issue instruction for env setup, as sometimes fix/features are tackling an issue with a specific type of environment.
+</li>
+</li>
 </li>
 </ol>
 <pre><code className="language-bash">./mesheryctl system start 

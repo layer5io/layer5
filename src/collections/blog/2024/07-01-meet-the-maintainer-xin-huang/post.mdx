@@ -1,7 +1,7 @@
 ---
 title: "Meet the Maintainer: Xin Huang"
 subtitle: "An interview series with open source maintainers"
-date: 2024-07-01 08:00:00 -0530
+date: 2024-07-01T08:00:00-05:30
 author: Layer5 Team
 thumbnail: ./xin-huang-layer5-maintainer.png
 darkthumbnail: ./xin-huang-layer5-maintainer.png
@@ -18,112 +18,113 @@ interviewer: Layer5 Team
 interviewee: Xin Huang
 ---
 
-import { BlogWrapper } from "../../Blog.style.js";
-import img from "./xin-huang-layer5-maintainer.png";
-import { MeetTheMaintainer } from "../../MeetTheMaintainer.style.js"
+import { BlogWrapper } from "../../Blog.style";
+import { MeetTheMaintainer } from "../../MeetTheMaintainer.style";
 import { Link } from "gatsby";
 import ForkLift from "../../../../assets/images/app/hero/forklift.svg";
 
 <BlogWrapper>
-<MeetTheMaintainer>
+  <MeetTheMaintainer>
 
-<div className="intro">
-Continuing in our Meet the Maintainer series, we have <Link to="/community/members/xin-huang">Xin Huang</Link>. Xin is a maintainer of the <Link to="/projects/service-mesh-performance">Cloud Native Performance</Link> project. In this interview, we get to know Xin a little better and learn about his journey as an open source project maintainer and with Layer5 community.
-</div>
+    <div className="intro">
+      Continuing in our Meet the Maintainer series, we have <Link to="/community/members/xin-huang">Xin Huang</Link>. Xin is a maintainer of the <Link to="/projects/service-mesh-performance">Cloud Native Performance</Link> project. In this interview, we get to know Xin a little better and learn about his journey as an open source project maintainer and with Layer5 community.
+    </div>
 
-<div className="interviewer">
-<span>Layer5 Team:</span>
-      Xin, thank you for joining me today. Many people inside and outside of the Layer5 Community have seen the effects of your contributions, but may not know the backstory as to who Xin  is and how you arrived at your maintainer role. Indulge us. How did you discover the Layer5 community? What made you stay?
-</div>
+    <div className="interviewer">
+      <span>Layer5 Team:</span>
+      Xin, thank you for joining me today. Many people inside and outside of the Layer5 Community have seen the effects of your contributions, but may not know the backstory as to who Xin is and how you arrived at your maintainer role. Indulge us. How did you discover the Layer5 community? What made you stay?
+    </div>
 
-<div className="interviewee">
-<span>Xin:</span>
-      I’m working around Service Mesh Acceleration in Intel, and noticed the Service Mesh Performance project. So I attended the community meeting, the community is very active and welcoming and they hope for feedback and contribution from me. It’s the main reason that made me stay here and contribute continuously.
-</div>
+    <div className="interviewee">
+      <span>Xin:</span>
+      I’m working around Service Mesh Acceleration in Intel, and noticed the Service Mesh Performance project. So I attended the community meeting — the community is very active and welcoming and they hope for feedback and contribution from me. It’s the main reason that made me stay here and contribute continuously.
+    </div>
 
-<div className="interviewer">
-<span>Layer5 Team:</span>
-       Have you worked with any other open source project? How does <Link to="/community">Layer5 community</Link> compare?
-</div>
+    <div className="interviewer">
+      <span>Layer5 Team:</span>
+      Have you worked with any other open source project? How does <Link to="/community">Layer5 community</Link> compare?
+    </div>
 
-<div className="interviewee">
-<span>Xin:</span>
-  Yes, I’ve worked with some open source projects. Layer5 community knows how to cultivate and  fulfill the sprint of open source. If you are a newcomer to open source, you can get a big leg up from the Layer5 community.
-</div>
+    <div className="interviewee">
+      <span>Xin:</span>
+      Yes, I’ve worked with some open source projects. Layer5 community knows how to cultivate and fulfill the spirit of open source. If you are a newcomer to open source, you can get a big leg up from the Layer5 community.
+    </div>
 
-<div className="interviewer">
-<span>Layer5 Team:</span>
+    <div className="interviewer">
+      <span>Layer5 Team:</span>
       What is so fascinating about service meshes? Why are you focused on this technology specifically?
-</div>
+    </div>
 
-<div className="interviewee">
-<span>Xin:</span>
-      First, I’m working on Service Mesh Acceleration at Intel. Second, service mesh is a hot area this year, more and more people or enterprises are trying service mesh in their production.
-  Service Mesh is the bridge between developers and infrastructure, how fascinating it is to build such a thing that benefits everyone.
-</div>
+    <div className="interviewee">
+      <span>Xin:</span>
+      First, I’m working on Service Mesh Acceleration at Intel. Second, service mesh is a hot area — more and more people and enterprises are trying service mesh in production. Service Mesh is the bridge between developers and infrastructure; how fascinating it is to build something that benefits everyone.
+    </div>
 
-<div className="interviewer">
-<span>Layer5 Team:</span>
-    <Link to="/projects">Layer5 projects</Link> has a number of active, open source projects. You’ve been consistently contributing to a few of them. Which one(s) are you currently focusing on?
-</div>
+    <div className="interviewer">
+      <span>Layer5 Team:</span>
+      <Link to="/projects">Layer5 projects</Link> has a number of active, open source projects. You’ve been consistently contributing to a few of them. Which one(s) are you currently focusing on?
+    </div>
 
-<div className="interviewee">
-<span>Xin:</span>
-      I’m focusing on the SMP project, because it’s related to my working scope. I also use Meshery to manage our service mesh environment and show our effort on Service Mesh acceleration. Every project has its specific goal, I can’t tell which one is the best.
-</div>
+    <div className="interviewee">
+      <span>Xin:</span>
+      I’m focusing on the SMP (Service Mesh Performance) project because it’s closely related to my day job. I also use Meshery to manage our service mesh environment and demonstrate our acceleration efforts. Every project has its own specific goal — I can’t say which one is the “best”.
+    </div>
 
-<div className="interviewer">
-<span>Layer5 Team:</span>
+    <div className="interviewer">
+      <span>Layer5 Team:</span>
       What is your favorite Meshery CLI command?
-</div>
+    </div>
 
-<div className="interviewee">
-<span>Xin:</span>
-      Having worked on and been a user of Meshery's performance characterization features, I'm biased. I like the `mesheryctl perf` command the most.
-</div>
+    <div className="interviewee">
+      <span>Xin:</span>
+      Having worked on and used Meshery’s performance characterization features, I’m biased — I like `mesheryctl perf` the most.
+    </div>
 
-<div className="interviewer">
-<span>Layer5 Team:</span>
+    <div className="interviewer">
+      <span>Layer5 Team:</span>
       Where do you see Cloud Native Performance, Nighthawk, and Meshery heading?
-</div>
+    </div>
 
-<div className="interviewee">
-<span>Xin:</span>
-      Meshery has a great dream to manage all cloud and cloud native technologies. It's a great idea for infrastructure and platform engineers who are confused with so many different projects to try and understand their differences.
-</div>
+    <div className="interviewee">
+      <span>Xin:</span>
+      Meshery has a great vision: to manage **all** cloud and cloud-native technologies. It’s a fantastic idea for infrastructure and platform engineers who are overwhelmed by the explosion of projects.
+    </div>
 
-<div className="interviewer">
-<span>Layer5 Team:</span>
-      What is your hot tip for working with Service Mesh Performance, Nighthawk, or Meshery that others may not know?
-</div>
+    <div className="interviewer">
+      <span>Layer5 Team:</span>
+      Do you have any hot tip for working with Service Mesh Performance, Nighthawk, or Meshery that others may not know?
+    </div>
 
-<div className="interviewee">
-<span>Xin:</span>
-      We have a distributed performance characterization feature upcoming in Meshery in which <Link to="/project/nighthawk">Nighthawk</Link> will be externalized. Meshery manages the lifecycle of Nighthawk, using Nighthawk as one of its load generators to run performance benchmarks. As Nighthawk supports an adaptive load control as a feature, Meshery can leverage this to build a custom load controller to run performance benchmarks.
-By default, the adaptive load controller in Nighthawk runs benchmarks with different RPS values and based on the latency, it adjusts the RPS value. But, with its custom plugin ability, we can bring in our own inputs as well as metrics to measure.
-With the metrics from these tests, Meshery should also adjust the resiliency characteristics of the mesh automatically so as to improve these metrics and in turn improve performance. Meshery allows users to generate traffic load tests using Nighthawk. The tests are controlled and provisioned using meshery-nighthawk, a Meshery component supporting multiple load generators. This is a very powerful feature that is coming up in Meshery.
-</div>
+    <div className="interviewee">
+      <span>Xin:</span>
+      A very powerful feature is coming: Meshery will externalize <Link to="/projects/nighthawk">Nighthawk</Link> as a first-class load generator with full lifecycle management. Nighthawk already supports adaptive load control, and with its plugin system we can feed custom metrics back into Meshery. In the future Meshery will even be able to auto-tune resiliency policies based on performance results. This amount of closed-loop intelligence is extremely exciting.
+    </div>
 
-<div className="interviewer">
-<span>Layer5 Team:</span> Do you have any advice for individuals hopeful to become Layer5 contributors or potentially maintainers?
-</div>
+    <div className="interviewer">
+      <span>Layer5 Team:</span>
+      Do you have any advice for individuals hoping to become Layer5 contributors or even maintainers one day?
+    </div>
 
-<div className="interviewee">
-<span>Xin:</span>
-  Yes! I think that being a maintainer requires a combination of technical expertise, community engagement, and leadership skills. Start by being a consistent contributor yourself. Demonstrate your commitment by making regular and valuable contributions to the projects. You'll need to build a strong understanding of the technologies and the codebase. In order to demonstrate your technical leadership, you'll need to show initiative, take ownership of tasks, and often do the menial work that other contributors may not want to do.
-  One aspect of being a maintainer is actively participating in the Layer5 community, helping newcomers, and engaging in helping advance project discussions. Guiding and supporting other contributors is an expecation of a maintainer, so it's important to have a good understanding of the project and the technologies involved.
-  Finally, I wholeheartedly suggest that you are not afraid to ask questions. The Layer5 community is welcoming and supportive. The existing maintainers are individuals who have given their time and demonstrated their dedication to the betterment of the projects. They are a valuable resource for you to learn from, too, so when you engage with them, be respectful of their time - be sure to have done your homework before asking questions.
-</div>
+    <div className="interviewee">
+      <span>Xin:</span>
+      Be consistent, take ownership (even of boring tasks), help newcomers, and don’t be afraid to ask questions. The current maintainers have all earned their role through dedication — learn from them and respect their time. High-quality contributions, no matter the size, are what matter most.
+    </div>
 
-<div className="interviewer">
-<span>Layer5 Team:</span>In other words, whether your contribution is big or small, it sounds like aiming for high-quality contributions that add value to the projects is key.</div>
+    <div className="interviewer">
+      <span>Layer5 Team:</span>
+      In other words, aim for quality over quantity and enjoy the ride!
+    </div>
 
-<div className="interviewee">
-<span>Xin:</span>
-Yes, that's right. It's important to remember that the Layer5 community is a diverse group of individuals with different backgrounds, experiences, and perspectives. Remember to have fun and enjoy the process of learning, contributing, and collaborating with the community.
-</div>
+    <div className="interviewee">
+      <span>Xin:</span>
+      Exactly. And never forget to have fun while learning and collaborating with this incredibly diverse community.
+    </div>
 
-<div className="note"><img src={ForkLift} height="100px" />The Meshery project moves at an impressive pace thanks to maintainers like Xin. Be like Xin. Join the <a href="https://slack.layer5.io">Layer5 Slack</a> and say “hi".</div>
+    <div className="note">
+      <ForkLift style={{ height: "100px", marginBottom: "1rem" }} />
+      The Meshery project moves at an impressive pace thanks to maintainers like Xin.  
+      **Be like Xin.** Join the <a href="https://slack.layer5.io">Layer5 Slack</a> and say “hi”!
+    </div>
 
-</MeetTheMaintainer>
+  </MeetTheMaintainer>
 </BlogWrapper>

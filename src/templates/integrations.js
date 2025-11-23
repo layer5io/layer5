@@ -19,9 +19,6 @@ export const query = graphql`
         integrationIcon {
           extension
           publicURL
-          childImageSharp {
-            gatsbyImageData(width: 500, layout: CONSTRAINED)
-          }
         }
         docURL
         category
@@ -30,16 +27,10 @@ export const query = graphql`
           colorIcon {
             extension
             publicURL
-            childImageSharp {
-              gatsbyImageData(width: 500, layout: CONSTRAINED)
-            }
           }
           whiteIcon {
             extension
             publicURL
-            childImageSharp {
-              gatsbyImageData(width: 500, layout: CONSTRAINED)
-            }
           }
           description
         }
@@ -53,8 +44,8 @@ export const query = graphql`
         }
       }
     }
-    allFile(
-      filter: {relativeDirectory: {eq: $name}, sourceInstanceName: {eq: "integrations"}}
+    screenshots_raster: allFile(
+      filter: {relativeDirectory: {eq: $name}, sourceInstanceName: {eq: "integrations"}, extension: {ne: "svg"}}
     ) {
       nodes {
         extension
@@ -62,6 +53,14 @@ export const query = graphql`
         childImageSharp {
           gatsbyImageData(layout: FULL_WIDTH)
         }
+      }
+    }
+    screenshots_svg: allFile(
+      filter: {relativeDirectory: {eq: $name}, sourceInstanceName: {eq: "integrations"}, extension: {eq: "svg"}}
+    ) {
+      nodes {
+        extension
+        publicURL
       }
     }
   }
