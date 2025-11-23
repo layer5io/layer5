@@ -15,7 +15,8 @@ const UpcomingEvents = ({ data }) => {
       <div className="blog-slider swiper">
         <div style={{
           display: "block"
-        }} className="blog-slider__wrp swiper-wrapper">
+        }} className="blog-slider__wrp swiper-wrapper"
+        >
 
           <Swiper
             spaceBetween={50}

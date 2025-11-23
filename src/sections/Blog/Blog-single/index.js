@@ -163,7 +163,8 @@ const BlogSingle = ({ data, children }) => {
                   <div>
                     {frontmatter.tags && frontmatter.tags.map(tag => (
                       <Link key={`${frontmatter.title}-${tag}`}
-                        to={`/blog/tag/${slugify(tag)}`}>{tag}
+                        to={`/blog/tag/${slugify(tag)}`}
+                      >{tag}
                       </Link>
                     ))}
                   </div>

@@ -11,7 +11,8 @@ const Nighthawk = () => {
     <div className="post-content">
       <Row style={{
         flexWrap: "wrap"
-      }} className="brand-section">
+      }} className="brand-section"
+      >
         <Col $xs={12} $sm={6}>
           <h1 className="layerH3">
             <strong> Nighthawk </strong>
@@ -37,7 +38,8 @@ const Nighthawk = () => {
 
       <Row style={{
         flexWrap: "wrap"
-      }}>
+      }}
+      >
         <Col>
           <h2 className="layerH3 in"> Logos </h2>
         </Col>
