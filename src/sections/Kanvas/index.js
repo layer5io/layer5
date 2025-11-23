@@ -1,28 +1,24 @@
-import React from "react";
+
+
+
+import React, { useEffect, useState } from "react";
 import KanvasWrapper from "./kanvas.style";
 import { Container } from "../../reusecore/Layout";
 import Features from "../../components/Features-carousel";
 import KanvasModes from "./kanvas-modes";
-import Catalog from "./kanvas-catalog";
-import Platform from "./kanvas-platform";
 import KanvasBanner from "./kanvas_banner";
 import designerImage from "../../assets/images/kanvas/KanvasDesigner.webp";
 import visualizerImage from "../../assets/images/kanvas/KanvasVisualizer.webp";
 import DesignerFeatures from "./FeaturesSection/Design/DesignerFeatures";
 import CollaboratorFeatures from "./FeaturesSection/Collaborate/CollaboratorFeatures";
 import VisualizerFeatures from "./FeaturesSection/Visualize/VisualizerFeatures";
-import KanvasBtn from "./kanvas-buttons.js";
-import Reviews from "../Pricing/review-slider";
 import InlineQuotes from "../../components/Inline-quotes";
-import KanvasFeatures from "./kanvas-feature.js";
 import { ReactComponent as RoleBind1 } from "./FeaturesSection/Design/images/role-binding-1-colorMode.svg";
 import { ReactComponent as RoleBind2 } from "./FeaturesSection/Design/images/role-binding-2-colorMode.svg";
 import { ReactComponent as RoleBind3 } from "./FeaturesSection/Design/images/role-binding-3-colorMode.svg";
 import { ReactComponent as RoleBind4 } from "./FeaturesSection/Design/images/role-binding-4-colorMode.svg";
-
 import { ReactComponent as Visualize1 } from "./FeaturesSection/Visualize/images/visualize-1-colorMode.svg";
 import { ReactComponent as Visualize2 } from "./FeaturesSection/Visualize/images/visualize-2-colorMode.svg";
-
 import { ReactComponent as Collab1 } from "./FeaturesSection/Collaborate/images/collab1-colorMode.svg";
 import { ReactComponent as Collab2 } from "./FeaturesSection/Collaborate/images/collab2-colorMode.svg";
 import { ReactComponent as Collab3 } from "./FeaturesSection/Collaborate/images/collab3-colorMode.svg";
@@ -35,12 +31,52 @@ import Kaur from "../../sections/Pricing/reviews/kaur-kallas.webp";
 import Ala from "../../sections/Pricing/reviews/ala-eddine-benhassir.jpeg";
 import Phillip from "../../sections/Pricing/reviews/phillip-ulberg.jpeg";
 import Alex from "../../sections/Pricing/reviews/alex-hokanson.jpeg";
-import TeaserModal from "../../components/TeaserModal";
+// import TeaserModal from "../../components/TeaserModal";
 import GuyM from "./images/guym.jpg";
 import Abdechakour from "../../sections/Pricing/reviews/abdechakour-h.jpeg";
 
 
 const Kanvas = (props) => {
+
+  const [ReviewsComponent, setReviewsComponent] = useState(null);
+  const [TeaserModalComponent, setTeaserModalComponent] = useState(null);
+  const [KanvasFeaturesComponent, setKanvasFeaturesComponent] = useState(null);
+  const [CatalogComponent, setCatalogComponent] = useState(null);
+  const [KanvasBtnComponent, setKanvasBtnComponent] = useState(null);
+  const [PlatformComponent, setPlatformComponent] = useState(null);
+
+
+
+  useEffect(() => {
+    // lazy load لـ Reviews
+    import("../Pricing/review-slider").then((mod) => {
+      setReviewsComponent(() => mod.default);
+    });
+
+    // lazy load لـ TeaserModal
+    import("../../components/TeaserModal").then((mod) => {
+      setTeaserModalComponent(() => mod.default);
+    });
+       // lazy load KanvasFeatures
+       import("./kanvas-feature.js").then((mod) => {
+        setKanvasFeaturesComponent(() => mod.default);
+      });
+  
+      // lazy load Catalog
+      import("./kanvas-catalog").then((mod) => {
+        setCatalogComponent(() => mod.default);
+      });
+  
+      // lazy load KanvasBtn
+      import("./kanvas-buttons.js").then((mod) => {
+        setKanvasBtnComponent(() => mod.default);
+      });
+  
+      // lazy load Platform
+      import("./kanvas-platform").then((mod) => {
+        setPlatformComponent(() => mod.default);
+      });
+  }, []);
 
   return (
     <KanvasWrapper>
@@ -167,6 +203,7 @@ const Kanvas = (props) => {
                         width="48"
                         height="48"
                         style={{ objectFit: "cover" }}
+               
                       />
                       <Collab1 id="collaborate-image1" alt="collaborate-image1" />
                     </>
@@ -189,6 +226,7 @@ const Kanvas = (props) => {
                         width="48"
                         height="48"
                         style={{ objectFit: "cover" }}
+                      
                       />
                       <Collab2 id="collaborate-image2" alt="collaborate-image2" />
                     </>
@@ -206,6 +244,7 @@ const Kanvas = (props) => {
                         width="48"
                         height="48"
                         style={{ objectFit: "cover" }}
+                 
                       />
                       <Collab3 id="collaborate-image3" alt="collaborate-image3" />
                     </>
@@ -277,30 +316,49 @@ const Kanvas = (props) => {
             quote="Kanvas is unreal. Support for air-gapped deployments is all the better, too."
             person="Phillip Ulberg"
             title="Solutions Architect at Raymond James Financial, Inc."
-            image={Phillip} />
-          <KanvasFeatures style={{ marginBottom: "2rem" }} />
-          <Catalog />
+            image={Phillip}
+          />
+
+          {KanvasFeaturesComponent && (
+            <KanvasFeaturesComponent style={{ marginBottom: "2rem" }} />
+          )}
+
+          {CatalogComponent && <CatalogComponent />}
+
           <InlineQuotes
             quote="Do we like Kanvas? ABSOLUTELY!"
             person="Alex"
             title="Infrastructure Engineering at Docker, Inc."
-            image={Alex} />
+            image={Alex}
+          />
+
           {/* <MesheryAction /> */}
-          <KanvasBtn style={{ marginBottom: "2rem" }} />
-          <Platform />
+
+          {KanvasBtnComponent && (
+            <KanvasBtnComponent style={{ marginBottom: "2rem" }} />
+          )}
+
+          {PlatformComponent && <PlatformComponent />}
+
           <InlineQuotes
             quote="Guys, I love Kanvas! This tool is crazy!"
             person="Ala Eddine BENHASSIR"
             title="Networks & Systems Engineer at AYRADE"
-            image={Ala}/>
+            image={Ala}
+          />
         </Container>
       </div>
+
       <>
-        <Reviews />
-        <TeaserModal title="Kanvas Teaser" open={props?.teaser} />
+        {ReviewsComponent && <ReviewsComponent />}
+        {TeaserModalComponent && (
+          <TeaserModalComponent title="Kanvas Teaser" open={props?.teaser} />
+        )}
       </>
     </KanvasWrapper>
   );
 };
 
 export default Kanvas;
+
+
