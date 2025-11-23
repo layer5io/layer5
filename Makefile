@@ -27,11 +27,11 @@ site:
 	
 ## Run layer5.io on your local machine. Alternate method.
 site-fast:
-	gatsby develop
+	NODE_OPTIONS=--max-old-space-size=12288 gatsby develop
 
 ## Build layer5.io on your local machine.
 build:
-	gatsby build && gatsby serve
+	npm run build && npm run serve
 
 ## Empty build cache and run layer5.io on your local machine.
 clean: 
