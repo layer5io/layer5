@@ -34,6 +34,14 @@ export const query = graphql`query BlogsBySlug($slug: String!) {
           gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
       }
+      thumbnail_svg {
+        extension
+        publicURL
+      }
+      darkthumbnail_svg {
+        extension
+        publicURL
+      }
     }
     fields {
       slug
@@ -65,5 +73,11 @@ export default BlogSinglePage;
 
 
 export const Head = ({ data }) => {
-  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} description={data.mdx.frontmatter.description} />;
+  const { frontmatter } = data.mdx;
+  const image = frontmatter.thumbnail?.publicURL
+    || frontmatter.thumbnail_svg?.publicURL
+    || frontmatter.darkthumbnail?.publicURL
+    || frontmatter.darkthumbnail_svg?.publicURL;
+
+  return <SEO title={frontmatter.title} image={image} description={frontmatter.description} />;
 };

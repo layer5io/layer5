@@ -93,6 +93,16 @@ const BlogSingle = ({ data, children }) => {
   const [copied, setCopied] = useState(false);
   const { isDark } = useStyledDarkMode();
 
+  const primaryThumbnail = frontmatter.thumbnail || frontmatter.thumbnail_svg;
+  const secondaryThumbnail = frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg;
+  const heroThumbnail = (() => {
+    if (isDark && secondaryThumbnail && (secondaryThumbnail?.publicURL !== primaryThumbnail?.publicURL || !primaryThumbnail)) {
+      return secondaryThumbnail;
+    }
+
+    return primaryThumbnail || secondaryThumbnail;
+  })();
+
   useEffect(() => {
     if (copied) {
       setTimeout(() => {
@@ -115,8 +125,8 @@ const BlogSingle = ({ data, children }) => {
             subtitle={frontmatter.subtitle}
             category={frontmatter.category}
             author={{ name: frontmatter.author }}
-            thumbnail={((isDark && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL) ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
-            darkthumbnail={frontmatter.thumbnail}
+            thumbnail={heroThumbnail}
+            darkthumbnail={secondaryThumbnail || primaryThumbnail}
             date={frontmatter.date}
           />
           <div className="single-post-wrapper">
