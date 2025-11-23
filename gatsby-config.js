@@ -24,7 +24,7 @@ module.exports = {
         headers: {
           // Cache static assets with content hashes for 1 year
           "/static/*": [
-            "Cache-Control: public, max-age=31536000, immutable",
+            "Cache-Control: public, max-age=0, must-revalidate",
           ],
           "/*.js": [
             "Cache-Control: public, max-age=2592000, immutable",
