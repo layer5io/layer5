@@ -49,7 +49,7 @@ Example: <br/> <code className="language-bash">mesheryctl system context create 
 <h3>Switching between Meshery release channels using mesheryctl.</h3>
 mesheryctl is a command-line tool for managing Meshery. You can use it to switch between different release channels. Here's how:
 <ul>
-  <li>Run the following command to see the current configuration for Meshery: <pre><code className="language-bash">mesheryctl system context view</code></pre><img src={MesheryVersion} className="image-center" style="width:50%;" />This will show you the current release channel (<b>stable</b> or <b>edge</b>), along with the version number and other information.</li>
+  <li>Run the following command to see the current configuration for Meshery: <pre><code className="language-bash">mesheryctl system context view</code></pre><img src={MesheryVersion} className="image-center" style={{ width: "50%" }} />This will show you the current release channel (<b>stable</b> or <b>edge</b>), along with the version number and other information.</li>
   <li>Run the following command to switch to a different release channel:<pre><code className="language-bash">mesheryctl system channel switch</code></pre>This command will update your meshconfig file to switch release channel and version of context in focus. To switch the channel to a specific version, replace <b>Version</b> with the desired version number.</li>
   <li>To confirm that the channel has been changed, run the following command again: <pre><code className="language-bash">mesheryctl system channel view</code></pre></li>
 </ul>
