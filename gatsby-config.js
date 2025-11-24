@@ -95,7 +95,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-feed",
       options: {
-        // 1. GLOBAL QUERY: Runs once. Fetches enough items (1000) to cover all categories.
+        // 1. GLOBAL QUERY: Runs ONCE. Fetches all heavy data (allMdx).
         query: `
           {
             site {
@@ -112,7 +112,6 @@ module.exports = {
               filter: { frontmatter: { published: { eq: true } } }
             ) {
               nodes {
-                # We fetch HTML instead of body to save memory (assuming your serializer uses html)
                 html 
                 frontmatter {
                   title
@@ -143,13 +142,17 @@ module.exports = {
           {
             output: "/rss.xml",
             title: "Layer5 Technical Posts",
+            // REQUIRED: We add this lightweight query to satisfy the plugin validator.
+            // The 'allMdx' data from the global query above is merged into this, 
+            // so 'serialize' can still access it.
+            query: "{ site { siteMetadata { title } } }", 
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.nodes
                 .filter((node) => 
                   ["blog", "resources", "news"].includes(node.fields.collection) && 
                   !["Programs", "Community", "Events", "FAQ"].includes(node.frontmatter.category)
                 )
-                .slice(0, 20) // Limit to 20 for the feed
+                .slice(0, 20)
                 .map((node) => {
                   return Object.assign({}, node.frontmatter, {
                     title: node.frontmatter.title,
@@ -170,6 +173,7 @@ module.exports = {
           {
             output: "/news/feed.xml",
             title: "Layer5 News",
+            query: "{ site { siteMetadata { title } } }", // Lightweight query
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.nodes
                 .filter((node) => node.fields.collection === "news")
@@ -178,7 +182,7 @@ module.exports = {
                   return Object.assign({}, node.frontmatter, {
                     title: node.frontmatter.title,
                     author: node.frontmatter.author,
-                    description: node.frontmatter.description, // Replaced body with description to save memory, or use node.html
+                    description: node.frontmatter.description,
                     date: node.frontmatter.date,
                     url: site.siteMetadata.siteUrl + node.fields.slug,
                     guid: site.siteMetadata.siteUrl + node.fields.slug,
@@ -194,6 +198,7 @@ module.exports = {
           {
             output: "/resources/feed.xml",
             title: "Layer5 Resources",
+            query: "{ site { siteMetadata { title } } }", // Lightweight query
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.nodes
                 .filter((node) => node.fields.collection === "resources")
@@ -218,6 +223,7 @@ module.exports = {
           {
             output: "/rss-contributors.xml",
             title: "Layer5 Contributor Feed",
+            query: "{ site { siteMetadata { title } } }", // Lightweight query
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.nodes
                 .filter((node) => ["blog", "news"].includes(node.fields.collection))
@@ -242,6 +248,7 @@ module.exports = {
           {
             output: "/meshery-community-feed.xml",
             title: "Meshery RSSFeed",
+            query: "{ site { siteMetadata { title } } }", // Lightweight query
             serialize: ({ query: { site, allMdx } }) => {
               const targetCategories = ["Meshery", "Announcements", "Events"];
               const targetTags = ["Community", "Meshery", "mesheryctl"];
@@ -279,6 +286,7 @@ module.exports = {
           {
             output: "/blog/feed.xml",
             title: "Layer5 Blog",
+            query: "{ site { siteMetadata { title } } }", // Lightweight query
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.nodes
                 .filter((node) => node.fields.collection === "blog")
@@ -303,6 +311,7 @@ module.exports = {
           {
             output: "/events/feed.xml",
             title: "Layer5 Events",
+            query: "{ site { siteMetadata { title } } }", // Lightweight query
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.nodes
                 .filter((node) => node.fields.collection === "events")
