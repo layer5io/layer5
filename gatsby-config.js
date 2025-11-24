@@ -454,7 +454,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-styled-components",
       options: {
-        minify: false,
+        minify: true,
       },
     },
     {
