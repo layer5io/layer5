@@ -552,7 +552,17 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 
   const { createNodeField } = actions;
-  const collection = getNode(node.parent).sourceInstanceName;
+  const parent = getNode(node.parent);
+  let collection = parent.sourceInstanceName;
+
+  // --- CHANGED: Consolidated Source Logic ---
+  // If the source is "collections", we determine the actual collection
+  // from the parent directory name (e.g., "blog", "news", etc.)
+  if (collection === "collections") {
+    collection = parent.relativeDirectory.split("/")[0];
+  }
+  // ------------------------------------------
+
   createNodeField({
     name: "collection",
     node,
