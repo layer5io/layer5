@@ -350,7 +350,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                               const totalPrice = pricePerUser * option.learners * multiplier;
                               const period = isYearly ? "/year" : "/month";
                               return `${option.learners} learners - ${formatPrice(totalPrice)}${period}`;
-                            }
+}
                             return "";
                           }}
                           max={(() => {

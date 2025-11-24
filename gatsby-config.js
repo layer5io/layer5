@@ -1,6 +1,7 @@
 /* eslint-env node */
 
 module.exports = {
+  pathPrefix: "/layer5",
   siteMetadata: {
     title: "Layer5 - Expect more from your infrastructure",
     description:
@@ -541,8 +542,8 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/collections/service-mesh-labs`,
-        name: "service-mesh-labs",
+        path: `${__dirname}/src/collections/kanvas-labs`,
+        name: "kanvas-labs",
       },
     },
     {
