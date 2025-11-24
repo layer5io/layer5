@@ -10,7 +10,7 @@ import Review from "./review";
 import QASection from "./qa-section";
 import WhatsNext from "./whats-next";
 
-const Solutions = (props) => {
+const Solutions = () => {
   return (
     <SolutionsWrapper>
       <Container>
