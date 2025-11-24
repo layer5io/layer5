@@ -95,6 +95,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-feed",
       options: {
+        // 1. GLOBAL QUERY: Runs once. Fetches enough items (1000) to cover all categories.
         query: `
           {
             site {
@@ -105,348 +106,222 @@ module.exports = {
                 site_url: siteUrl
               }
             }
+            allMdx(
+              sort: {frontmatter: {date: DESC}}
+              limit: 1000
+              filter: { frontmatter: { published: { eq: true } } }
+            ) {
+              nodes {
+                # We fetch HTML instead of body to save memory (assuming your serializer uses html)
+                html 
+                frontmatter {
+                  title
+                  author
+                  description
+                  subtitle
+                  date
+                  type
+                  category
+                  tags
+                  thumbnail {
+                    publicURL
+                  }
+                  darkthumbnail {
+                    publicURL
+                  }
+                }
+                fields {
+                  slug
+                  collection
+                }
+              }
+            }
           }
         `,
         feeds: [
+          // FEED 1: Technical Posts
           {
-            serialize: ({ query: { site, allPosts } }) => {
-              return allPosts.nodes.map((node) => {
-                return Object.assign({}, node.frontmatter, {
-                  title: node.frontmatter.title,
-                  author: node.frontmatter.author,
-                  description: node.frontmatter.description,
-                  date: node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  enclosure: node.frontmatter.thumbnail && {
-                    url:
-                      site.siteMetadata.siteUrl +
-                      node.frontmatter.thumbnail.publicURL,
-                  },
-                  custom_elements: [{ "content:encoded": node.html }],
-                });
-              });
-            },
-            query: `{
-  allPosts: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {in: ["blog", "resources", "news"]}}, frontmatter: {published: {eq: true}, category: {nin: ["Programs", "Community", "Events", "FAQ"]}}}
-    limit: 20
-  ) {
-    nodes {
-      body
-      frontmatter {
-        title
-        author
-        description
-        date(formatString: "MMM DD YYYY")
-        thumbnail {
-          publicURL
-        }
-      }
-      fields {
-        collection
-        slug
-      }
-    }
-  }
-}`,
             output: "/rss.xml",
             title: "Layer5 Technical Posts",
-          },
-          {
-            serialize: ({ query: { site, allPosts } }) => {
-              return allPosts.nodes.map((node) => {
-                return Object.assign({}, node.frontmatter, {
-                  title: node.frontmatter.title,
-                  author: node.frontmatter.author,
-                  description: node.body,
-                  date: node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  enclosure: node.frontmatter.thumbnail && {
-                    url:
-                      site.siteMetadata.siteUrl +
-                      node.frontmatter.thumbnail.publicURL,
-                  },
-                  custom_elements: [{ "content:encoded": node.html }],
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.nodes
+                .filter((node) => 
+                  ["blog", "resources", "news"].includes(node.fields.collection) && 
+                  !["Programs", "Community", "Events", "FAQ"].includes(node.frontmatter.category)
+                )
+                .slice(0, 20) // Limit to 20 for the feed
+                .map((node) => {
+                  return Object.assign({}, node.frontmatter, {
+                    title: node.frontmatter.title,
+                    author: node.frontmatter.author,
+                    description: node.frontmatter.description,
+                    date: node.frontmatter.date,
+                    url: site.siteMetadata.siteUrl + node.fields.slug,
+                    guid: site.siteMetadata.siteUrl + node.fields.slug,
+                    enclosure: node.frontmatter.thumbnail && {
+                      url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
+                    },
+                    custom_elements: [{ "content:encoded": node.html }],
+                  });
                 });
-              });
             },
-            query: `{
-  allPosts: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {in: ["news"]}}, frontmatter: {published: {eq: true}}}
-    limit: 20
-  ) {
-    nodes {
-      body
-      frontmatter {
-        title
-        author
-        date(formatString: "MMM DD YYYY")
-        thumbnail {
-          publicURL
-        }
-      }
-      fields {
-        collection
-        slug
-      }
-    }
-  }
-}`,
+          },
+          // FEED 2: News
+          {
             output: "/news/feed.xml",
             title: "Layer5 News",
-          },
-          {
-            serialize: ({ query: { site, allPosts } }) => {
-              return allPosts.nodes.map((node) => {
-                return Object.assign({}, node.frontmatter, {
-                  title: node.frontmatter.title,
-                  author: node.frontmatter.author,
-                  description: node.body,
-                  date: node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  enclosure: node.frontmatter.thumbnail && {
-                    url:
-                      site.siteMetadata.siteUrl +
-                      node.frontmatter.thumbnail.publicURL,
-                  },
-                  custom_elements: [{ "content:encoded": node.html }],
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.nodes
+                .filter((node) => node.fields.collection === "news")
+                .slice(0, 20)
+                .map((node) => {
+                  return Object.assign({}, node.frontmatter, {
+                    title: node.frontmatter.title,
+                    author: node.frontmatter.author,
+                    description: node.frontmatter.description, // Replaced body with description to save memory, or use node.html
+                    date: node.frontmatter.date,
+                    url: site.siteMetadata.siteUrl + node.fields.slug,
+                    guid: site.siteMetadata.siteUrl + node.fields.slug,
+                    enclosure: node.frontmatter.thumbnail && {
+                      url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
+                    },
+                    custom_elements: [{ "content:encoded": node.html }],
+                  });
                 });
-              });
             },
-            query: `{
-  allPosts: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {in: ["resources"]}}, frontmatter: {published: {eq: true}}}
-    limit: 20
-  ) {
-    nodes {
-      body
-      frontmatter {
-        title
-        author
-        date(formatString: "MMM DD YYYY")
-        thumbnail {
-          publicURL
-        }
-        darkthumbnail {
-          publicURL
-        }
-      }
-      fields {
-        collection
-        slug
-      }
-    }
-  }
-}`,
+          },
+          // FEED 3: Resources
+          {
             output: "/resources/feed.xml",
             title: "Layer5 Resources",
-          },
-          {
-            serialize: ({ query: { site, allPosts } }) => {
-              return allPosts.nodes.map((node) => {
-                return Object.assign({}, node.frontmatter, {
-                  title: node.frontmatter.title,
-                  author: node.frontmatter.author,
-                  description: node.frontmatter.description,
-                  date: node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  enclosure: node.frontmatter.thumbnail && {
-                    url:
-                      site.siteMetadata.siteUrl +
-                      node.frontmatter.thumbnail.publicURL,
-                  },
-                  custom_elements: [{ "content:encoded": node.html }],
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.nodes
+                .filter((node) => node.fields.collection === "resources")
+                .slice(0, 20)
+                .map((node) => {
+                  return Object.assign({}, node.frontmatter, {
+                    title: node.frontmatter.title,
+                    author: node.frontmatter.author,
+                    description: node.frontmatter.description, 
+                    date: node.frontmatter.date,
+                    url: site.siteMetadata.siteUrl + node.fields.slug,
+                    guid: site.siteMetadata.siteUrl + node.fields.slug,
+                    enclosure: node.frontmatter.thumbnail && {
+                      url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
+                    },
+                    custom_elements: [{ "content:encoded": node.html }],
+                  });
                 });
-              });
             },
-            query: `{
-  allPosts: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {in: ["blog", "news"]}}, frontmatter: {published: {eq: true}}}
-    limit: 20
-  ) {
-    nodes {
-      body
-      frontmatter {
-        title
-        author
-        description
-        date(formatString: "MMM DD YYYY")
-        thumbnail {
-          publicURL
-        }
-      }
-      fields {
-        collection
-        slug
-      }
-    }
-  }
-}`,
+          },
+          // FEED 4: Contributors
+          {
             output: "/rss-contributors.xml",
             title: "Layer5 Contributor Feed",
-          },
-          {
-            serialize: ({ query: { site, allPosts } }) => {
-              return allPosts.nodes.map((node) => {
-                return Object.assign({}, node.frontmatter, {
-                  title: node.frontmatter.title,
-                  author: node.frontmatter.author,
-                  description:
-                    node.frontmatter.description || node.frontmatter.subtitle,
-                  date: node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  enclosure: node.frontmatter.thumbnail && {
-                    url:
-                      site.siteMetadata.siteUrl +
-                      node.frontmatter.thumbnail.publicURL,
-                  },
-                  custom_elements: [
-                    { "content:encoded": node.html },
-                    { "content:type": node.frontmatter.type },
-                    { "content:category": node.frontmatter.category },
-                    { "content:tags": node.frontmatter.tags?.join(", ") || "" },
-                  ],
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.nodes
+                .filter((node) => ["blog", "news"].includes(node.fields.collection))
+                .slice(0, 20)
+                .map((node) => {
+                  return Object.assign({}, node.frontmatter, {
+                    title: node.frontmatter.title,
+                    author: node.frontmatter.author,
+                    description: node.frontmatter.description,
+                    date: node.frontmatter.date,
+                    url: site.siteMetadata.siteUrl + node.fields.slug,
+                    guid: site.siteMetadata.siteUrl + node.fields.slug,
+                    enclosure: node.frontmatter.thumbnail && {
+                      url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
+                    },
+                    custom_elements: [{ "content:encoded": node.html }],
+                  });
                 });
-              });
             },
-            query: `{
-  allPosts: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {
-      fields: {collection: {in: ["blog", "resources", "news", "events"]}}, 
-      frontmatter: {
-      published: { eq: true }
-      category: { in: ["Meshery", "Announcements", "Events"] }
-      tags: { in: ["Community", "Meshery", "mesheryctl"] }
-    }
-    }
-    limit: 30
-  ) {
-    nodes {
-      body
-      frontmatter {
-        title
-        author
-        description
-        subtitle
-        date(formatString: "MMM DD YYYY")
-        type
-        category
-        thumbnail {
-          publicURL
-        }
-        tags
-      }
-      fields {
-        collection
-        slug
-      }
-    }
-  }
-}`,
+          },
+          // FEED 5: Meshery Community
+          {
             output: "/meshery-community-feed.xml",
             title: "Meshery RSSFeed",
-          },
-          {
-            serialize: ({ query: { site, allPosts } }) => {
-              return allPosts.nodes.map((node) => {
-                return Object.assign({}, node.frontmatter, {
-                  title: node.frontmatter.title,
-                  author: node.frontmatter.author,
-                  description: node.frontmatter.description,
-                  date: node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  enclosure: node.frontmatter.thumbnail && {
-                    url:
-                      site.siteMetadata.siteUrl +
-                      node.frontmatter.thumbnail.publicURL,
-                  },
-                  custom_elements: [{ "content:encoded": node.html }],
+            serialize: ({ query: { site, allMdx } }) => {
+              const targetCategories = ["Meshery", "Announcements", "Events"];
+              const targetTags = ["Community", "Meshery", "mesheryctl"];
+              
+              return allMdx.nodes
+                .filter((node) => {
+                  const inCollection = ["blog", "resources", "news", "events"].includes(node.fields.collection);
+                  const hasCategory = targetCategories.includes(node.frontmatter.category);
+                  const hasTag = node.frontmatter.tags && node.frontmatter.tags.some(t => targetTags.includes(t));
+                  return inCollection && hasCategory && hasTag;
+                })
+                .slice(0, 30)
+                .map((node) => {
+                  return Object.assign({}, node.frontmatter, {
+                    title: node.frontmatter.title,
+                    author: node.frontmatter.author,
+                    description: node.frontmatter.description || node.frontmatter.subtitle,
+                    date: node.frontmatter.date,
+                    url: site.siteMetadata.siteUrl + node.fields.slug,
+                    guid: site.siteMetadata.siteUrl + node.fields.slug,
+                    enclosure: node.frontmatter.thumbnail && {
+                      url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
+                    },
+                    custom_elements: [
+                      { "content:encoded": node.html },
+                      { "content:type": node.frontmatter.type },
+                      { "content:category": node.frontmatter.category },
+                      { "content:tags": node.frontmatter.tags?.join(", ") || "" },
+                    ],
+                  });
                 });
-              });
             },
-            query: `{
-  allPosts: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {in: ["blog"]}}, frontmatter: {published: {eq: true}}}
-    limit: 20
-  ) {
-    nodes {
-      body
-      frontmatter {
-        title
-        author
-        description
-        date(formatString: "MMM DD YYYY")
-        thumbnail {
-          publicURL
-        }
-      }
-      fields {
-        collection
-        slug
-      }
-    }
-  }
-}`,
+          },
+          // FEED 6: Blog
+          {
             output: "/blog/feed.xml",
             title: "Layer5 Blog",
-          },
-          {
-            serialize: ({ query: { site, allPosts } }) => {
-              return allPosts.nodes.map((node) => {
-                return Object.assign({}, node.frontmatter, {
-                  title: node.frontmatter.title,
-                  author: node.frontmatter.author,
-                  description: node.frontmatter.description,
-                  date: node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  enclosure: node.frontmatter.thumbnail && {
-                    url:
-                      site.siteMetadata.siteUrl +
-                      node.frontmatter.thumbnail.publicURL,
-                  },
-                  custom_elements: [{ "content:encoded": node.html }],
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.nodes
+                .filter((node) => node.fields.collection === "blog")
+                .slice(0, 20)
+                .map((node) => {
+                  return Object.assign({}, node.frontmatter, {
+                    title: node.frontmatter.title,
+                    author: node.frontmatter.author,
+                    description: node.frontmatter.description,
+                    date: node.frontmatter.date,
+                    url: site.siteMetadata.siteUrl + node.fields.slug,
+                    guid: site.siteMetadata.siteUrl + node.fields.slug,
+                    enclosure: node.frontmatter.thumbnail && {
+                      url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
+                    },
+                    custom_elements: [{ "content:encoded": node.html }],
+                  });
                 });
-              });
             },
-            query: `{
-  allPosts: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {in: ["events"]}}, frontmatter: {published: {eq: true}}}
-    limit: 20
-  ) {
-    nodes {
-      body
-      frontmatter {
-        title
-        author
-        description
-        date(formatString: "MMM DD YYYY")
-        thumbnail {
-          publicURL
-        }
-      }
-      fields {
-        collection
-        slug
-      }
-    }
-  }
-}`,
+          },
+          // FEED 7: Events
+          {
             output: "/events/feed.xml",
             title: "Layer5 Events",
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.nodes
+                .filter((node) => node.fields.collection === "events")
+                .slice(0, 20)
+                .map((node) => {
+                  return Object.assign({}, node.frontmatter, {
+                    title: node.frontmatter.title,
+                    author: node.frontmatter.author,
+                    description: node.frontmatter.description,
+                    date: node.frontmatter.date,
+                    url: site.siteMetadata.siteUrl + node.fields.slug,
+                    guid: site.siteMetadata.siteUrl + node.fields.slug,
+                    enclosure: node.frontmatter.thumbnail && {
+                      url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
+                    },
+                    custom_elements: [{ "content:encoded": node.html }],
+                  });
+                });
+            },
           },
         ],
       },
