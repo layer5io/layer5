@@ -108,8 +108,8 @@ module.exports = {
             }
             allMdx(
               sort: {frontmatter: {date: DESC}}
-              limit: 1000
-              filter: { frontmatter: { published: { eq: true } } }
+              limit: ${process.env.NODE_ENV === "development" ? 25 : 1000}
+              filter: { frontmatter: { published: { eq: true }${process.env.NODE_ENV === "development" ? ", date: { gte: \"2024-01-01\" }" : ""} } }
             ) {
               nodes {
                 html 
