@@ -130,7 +130,6 @@
     "cross-env": "^10.0.0",
     "env-cmd": "^10.1.0",
     "eslint": "^9.39.1",
-    "eslint-config-react-app": "^7.0.1",
     "eslint-mdx": "^3.6.2",
     "eslint-plugin-mdx": "^3.6.2",
     "eslint-plugin-react": "^7.37.5",
