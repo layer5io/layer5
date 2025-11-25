@@ -1,7 +1,7 @@
 import React from "react";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import Button from "../../../../reusecore/Button";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+
 import CTA_Book from "./cta-book";
 import PerformanceCTA from "./cta-performance";
 import Image from "../../../../components/image";
@@ -13,8 +13,8 @@ import ModelComponents from "./ComponentsGrid";
 import CatalogGrid from "./CatalogGrid";
 import { ReactComponent as MesheryLogoBullet } from "../../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 
-const IndividualIntegrations = ({ data }) => {
-  const { frontmatter, body } = data.mdx;
+const IndividualIntegrations = ({ data, children }) => {
+  const { frontmatter } = data.mdx;
   const screenshotNodes = data.allFile.nodes;
   const finalScreenshots =
     screenshotNodes.length === 0 ? frontmatter.workingSlides : screenshotNodes;
@@ -63,7 +63,7 @@ const IndividualIntegrations = ({ data }) => {
   return (
     <IntegrationPageWrapper>
       <section className="herosection">
-        <Image {...frontmatter.integrationIcon} alt={frontmatter.title} imgStyle={{ objectFit: "contain" }} />
+        <Image {...(frontmatter.integrationIcon || frontmatter.integrationIcon_svg)} alt={frontmatter.title} imgStyle={{ objectFit: "contain" }} />
         <h2>
           {frontmatter.title} with <span className="hero-header">Kanvas</span>
         </h2>
@@ -90,7 +90,7 @@ const IndividualIntegrations = ({ data }) => {
         </div>
         <div className="content">
           <h2>Overview</h2>
-          <MDXRenderer>{body}</MDXRenderer>
+          {children}
           <section className="external-btns">
             <Button
               $primary

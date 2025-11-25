@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+
 import { SRLWrapper } from "simple-react-lightbox";
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
@@ -11,8 +11,8 @@ import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDr
 import CTA_Bottom from "../../../components/Call-To-Actions/CTA_Bottom";
 
 
-const ResourceSingle = ({ data }) => {
-  const { frontmatter, body, fields } = data.mdx;
+const ResourceSingle = ({ data, children }) => {
+  const { frontmatter, fields } = data.mdx;
   const resourceData = useStaticQuery(
     graphql`query relatedResources {
   allMdx(
@@ -33,10 +33,18 @@ const ResourceSingle = ({ data }) => {
           extension
           publicURL
         }
+        thumbnail_svg {
+          extension
+          publicURL
+        }
         darkthumbnail {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
+          extension
+          publicURL
+        }
+        darkthumbnail_svg {
           extension
           publicURL
         }
@@ -63,12 +71,12 @@ const ResourceSingle = ({ data }) => {
         title={frontmatter.title}
         subtitle={frontmatter.subtitle}
 
-        thumbnail={frontmatter.thumbnail}
+        thumbnail={frontmatter.thumbnail || frontmatter.thumbnail_svg}
       />
       <div className="single-resource-wrapper">
         <Container>
           <SRLWrapper>
-            <MDXRenderer>{body}</MDXRenderer>
+            {children}
           </SRLWrapper>
 
           <CTA_Bottom
