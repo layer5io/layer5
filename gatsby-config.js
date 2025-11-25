@@ -15,6 +15,7 @@ module.exports = {
   flags: {
     FAST_DEV: true,
     PARALLEL_SOURCING: false, // Disable parallel sourcing to reduce memory pressure
+    DEV_SSR: false,
   },
   trailingSlash: "never",
   plugins: [
@@ -361,6 +362,8 @@ module.exports = {
         name: "collections",
       },
     },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {

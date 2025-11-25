@@ -10,7 +10,8 @@ const RotationalBanner = () => {
   let initialValue;
   try {
     initialValue = sessionStorage.getItem("banner") || 1;
-  } catch (e) {
+  } catch (error) {
+    console.error("Error in sessionStorage.getItem('banner'):", error);
     initialValue = 1;
   }
 
