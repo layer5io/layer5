@@ -41,7 +41,7 @@ const Customers = (props) => {
                   </div>
                 </div>
 
-                <div className="type-two-quote-userpic"><img src={props.image}></img></div>
+                <div className="type-two-quote-userpic"><img  src={props.image} alt=""></img></div>
 
                 <div className="type-two-quote-base">
                   <blockquote className="type-two-quote-text">

@@ -552,7 +552,17 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 
   const { createNodeField } = actions;
-  const collection = getNode(node.parent).sourceInstanceName;
+  const parent = getNode(node.parent);
+  let collection = parent.sourceInstanceName;
+
+  // --- CHANGED: Consolidated Source Logic ---
+  // If the source is "collections", we determine the actual collection
+  // from the parent directory name (e.g., "blog", "news", etc.)
+  if (collection === "collections") {
+    collection = parent.relativeDirectory.split("/")[0];
+  }
+  // ------------------------------------------
+
   createNodeField({
     name: "collection",
     node,
@@ -708,15 +718,17 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
   actions.setWebpackConfig({
     resolve: {
       fallback: {
-        path: require.resolve("path-browserify"),
-        process: require.resolve("process/browser"),
-        url: require.resolve("url/"),
+        path: false,
+        process: false,
+        url: false,
       },
     },
   });
 
-  if (stage === "build-javascript") {
+  // Reduce memory pressure by disabling sourcemaps in dev and build
+  if (stage === "develop" || stage === "develop-html" || stage === "build-javascript" || stage === "build-html") {
     const config = getConfig();
+    config.devtool = false;
     const miniCssExtractPlugin = config.plugins.find(
       (plugin) => plugin.constructor.name === "MiniCssExtractPlugin"
     );
