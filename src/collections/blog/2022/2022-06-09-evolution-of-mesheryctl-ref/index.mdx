@@ -43,8 +43,10 @@ The initial design of <code>mesheryctl</code> command reference page is all made
 To tackle the shortcomings of the previous design, I was tasked to redesign the <code>mesheryctl</code> command reference page entirely. This was a big task at first glance to me, as I was a new contributor back then. Eventually after manipulating the reference section with help of great folks, I was able to pull off the task and the design was updated.
     <a href="https://docs.meshery.io" alt="Meshery Documentation">
 <img src={newDesign} className="image-center-shadow" alt="Meshery CLI command reference" /></a>
+
 The redesign work was done with help of HTML in markdown and with optimization in YAML code. A sample is given below.
-```
+
+```shell
     <!-- Copy this template to create individual doc pages for each mesheryctl commands -->
 
     <!-- Name of the command -->
@@ -66,7 +68,9 @@ The redesign work was done with help of HTML in markdown and with optimization i
 ```
 
 <h3>Adding auto generation feature in reference</h3>
+
 As time passed, we realized that the command reference missed something for a while, though the design has been changed. Then, we thought the idea of automating the generation of docs such that developers don't need to change the code in docs section while working towards <code>mesheryctl</code>. That's where we got to know that Cobra library (the library for CLI apps made using golang) has a feature to make doc pages automatically. So we decided to incorporate that feature into <code>mesheryctl</code> docs page as well! After making several changes and a PR, I was finally able to introduce the feature in the docs site!
+
 ```
 var startCmd = &cobra.Command {
 	Use:   "start",
