@@ -23,7 +23,7 @@ const PerformanceManagementPage = () => {
           <TextColumn>
             <Heading>Performance regressions begone</Heading>
             <Description>
-              Test your Kubernetes cluster and service mesh implementation for conformance with the SMI specification
+              Test your Kubernetes cluster and infrastructure implementation for conformance with the SMI specification
             </Description>
             <Button primary className="learn-more-btn" title="Go to Documentation" url="https://cloud.layer5.io/connect/github/new" />
           </TextColumn>
