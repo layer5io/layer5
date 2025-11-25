@@ -454,7 +454,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-styled-components",
       options: {
-        minify: false,
+        minify: true,
       },
     },
     {
@@ -474,8 +474,20 @@ module.exports = {
         },
       },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/collections`,
+        name: "collections",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/sections/Meshery/Meshery-platforms/supported-icons`,
+        name: "integration-images",
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -486,106 +498,8 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/collections/blog`,
-        name: "blog",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/collections/news`,
-        name: "news",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/collections/projects`,
-        name: "projects",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/collections/service-mesh-books`,
-        name: "service-mesh-books",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/collections/programs`,
-        name: "programs",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/collections/careers`,
-        name: "careers",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/collections/members`,
-        name: "members",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/collections/workshops`,
-        name: "workshops",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/collections/kanvas-labs`,
-        name: "kanvas-labs",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/collections/resources`,
-        name: "resources",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/collections/events`,
-        name: "events",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         path: `${__dirname}/content-learn`,
         name: "content-learn",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/collections/integrations`,
-        name: "integrations",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/collections/use-cases`,
-        name: "use-cases",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "integration-images",
-        path: `${__dirname}/src/sections/Meshery/Meshery-platforms/supported-icons`,
       },
     },
     "gatsby-plugin-image",
