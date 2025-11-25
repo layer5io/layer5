@@ -18,10 +18,10 @@ import daprVisualizer from "../../../../src/assets/images/learning-path/dapr/dap
 
 The [Dapr control plane](https://docs.dapr.io/concepts/dapr-services/) is a set of services responsible for managing and orchestrating the runtime and configuration of Dapr. The control plane ensures the smooth operation, deployment, and management of Dapr sidecars and their interactions within a microservices architecture. 
 
-<h2 class="chapter-sub-heading">Steps</h2>
+<h2 className="chapter-sub-heading">Steps</h2>
 
 
-<h3 class="chapter-sub-heading">Import Dapr Helm Chart</h3>
+<h3 className="chapter-sub-heading">Import Dapr Helm Chart</h3>
 
 1. In the left sidebar, click the upward arrow symbol(import icon) to import the file into Meshery.
 
@@ -46,7 +46,7 @@ The [Dapr control plane](https://docs.dapr.io/concepts/dapr-services/) is a set 
   embedScriptSrc="/embed-test/embedded-design-dapr.js"
 />
 
-<h3 class="chapter-sub-heading">Design Interpretation</h3>
+<h3 className="chapter-sub-heading">Design Interpretation</h3>
 
 From the design above, several key components that constitute the **Dapr control plane** can be observed, including:
 
@@ -124,7 +124,7 @@ When a new application pod is deployed, the **dapr-sidecar-injector deployment**
 
 The grouping of these components illustrates their interconnections, enhancing our ability to visualize and understand how various parts function together within the cluster.
 
-<h3 class="chapter-sub-heading">Deploy Dapr</h3>
+<h3 className="chapter-sub-heading">Deploy Dapr</h3>
 1. The Dapr control plane has to deployed in the **dapr-system** namespace. Click on the namespaced components(deployments, services etc) to open up the configuration tab. Then change the namespace from **default** to **dapr-system**.
 
 1. To deploy, click **Actions** in the top right corner and click on Deploy (double tick). To learn about deploying Designs in Meshery, See Chapter [Deploying Meshery Designs](https://meshery.layer5.io/academy/learning-paths/mastering-meshery/introduction-to-meshery).

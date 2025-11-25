@@ -24,11 +24,11 @@ export const query = graphql`query ProgramByName($program: String!) {
 }`;
 
 const ProgramsPage = ({ data, children }) => {
-  const [activeOption, setActiveOption] = useState(0);
+  const [activeOption] = useState(0);
   const programs = data.allMdx.nodes;
   const { navigate } = require("gatsby");
 
-  const options = programs.map((program, index) => {
+  const options = programs.map((program) => {
     let optionItem = new Object();
     optionItem.label = program.frontmatter.title;
     optionItem.value = program.fields.slug;
