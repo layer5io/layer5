@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import WorkshopCard from "../../../components/Workshop-Card";
@@ -45,14 +46,16 @@ const WorkshopsPage = () => {
       fields {
         slug
       }
+      body
     }
   }
 }`
   );
 
-  const [scrollPosition, setScrollPosition] = useState(0);
   const scrollRefMap = useRef({});
-
+  const [open, setOpen] = useState(false);
+  const [content, setContent] = useState(false);
+  const [ID, setID] = useState("");
 
   const toggleActive = (id) => {
     const targetElement = scrollRefMap.current[id];
@@ -79,7 +82,10 @@ const WorkshopsPage = () => {
       if (targetElement) {
         const rect = targetElement.getBoundingClientRect();
         const y = rect.top + window.scrollY - 20;
-        setScrollPosition(y);
+        window.scrollTo({
+          top: y,
+          behavior: "smooth",
+        });
       }
       setID(id);
       setContent(true);
@@ -102,7 +108,7 @@ const WorkshopsPage = () => {
                 <Col {...content && ID === id ? { $xs: 12, $sm: 12, $lg: 12 } : { $xs: 12, $sm: 6, $lg: 4 } } key={id} className="workshop-grid-col">
                   <div className="workshop-grid-card" ref={(el) => {
                     if (el) scrollRefMap.current[id] = el;
-                  }}>
+                  }} onClick={() => toggleActive(id)}>
                     <WorkshopCard frontmatter={frontmatter} content={content} ID={ID} id={id} />
                     <div className={content && ID === id ? "active" : "text-contents"}>
                       <div className="content">
