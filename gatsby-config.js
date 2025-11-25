@@ -143,13 +143,13 @@ module.exports = {
             output: "/rss.xml",
             title: "Layer5 Technical Posts",
             // REQUIRED: We add this lightweight query to satisfy the plugin validator.
-            // The 'allMdx' data from the global query above is merged into this, 
+            // The 'allMdx' data from the global query above is merged into this,
             // so 'serialize' can still access it.
-            query: "{ site { siteMetadata { title } } }", 
+            query: "{ site { siteMetadata { title } } }",
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.nodes
-                .filter((node) => 
-                  ["blog", "resources", "news"].includes(node.fields.collection) && 
+                .filter((node) =>
+                  ["blog", "resources", "news"].includes(node.fields.collection) &&
                   !["Programs", "Community", "Events", "FAQ"].includes(node.frontmatter.category)
                 )
                 .slice(0, 20)
@@ -207,7 +207,7 @@ module.exports = {
                   return Object.assign({}, node.frontmatter, {
                     title: node.frontmatter.title,
                     author: node.frontmatter.author,
-                    description: node.frontmatter.description, 
+                    description: node.frontmatter.description,
                     date: node.frontmatter.date,
                     url: site.siteMetadata.siteUrl + node.fields.slug,
                     guid: site.siteMetadata.siteUrl + node.fields.slug,
@@ -252,7 +252,7 @@ module.exports = {
             serialize: ({ query: { site, allMdx } }) => {
               const targetCategories = ["Meshery", "Announcements", "Events"];
               const targetTags = ["Community", "Meshery", "mesheryctl"];
-              
+
               return allMdx.nodes
                 .filter((node) => {
                   const inCollection = ["blog", "resources", "news", "events"].includes(node.fields.collection);
