@@ -241,8 +241,7 @@ const CommonForm = ({ form, title, submit_title, submit_body, submit_button_titl
             Path to Commercialization <span className="required-sign">*</span>
             </label>
             <div role="group" className="formRight" aria-labelledby="select">
-              <Field as="select" id="commercialization" name="commercialization" aria-describedby="commercialization-description"
-              >
+              <Field as="select" id="commercialization" name="commercialization" aria-describedby="commercialization-description">
                 <option defaultValue hidden className="custom-arrow">Select an option</option>
                 <option className="options" value="Yes">Yes</option>
                 <option className="options" value="No">No</option>

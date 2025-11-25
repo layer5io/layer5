@@ -23,7 +23,7 @@ Now that we have a Kubernetes cluster and Meshery, we are ready to download and 
 1. [Verify install](#2)
 1. [Confirm add-ons](#3)
 
-<h3 class="chapter-sub-heading">
+<h3 className="chapter-sub-heading">
   <a name="1">Install Linkerd</a>
 </h3>
 
@@ -81,7 +81,7 @@ Deploy Linkerd custom resources:
 linkerd install | kubectl apply -f -
 ```
 
-<h3 class="chapter-sub-heading">
+<h3 className="chapter-sub-heading">
   <a name="2">Verify install</a>
 </h3>
 
@@ -91,13 +91,13 @@ Linkerd is deployed in the `linkerd` Kubernetes namespace. Verify that Linkerd a
 linkerd check
 ```
 
-<h3 class="chapter-sub-heading">
+<h3 className="chapter-sub-heading">
   <a>Enforce mTLS strict mode</a>
 </h3>
 
 By establishing mutually-authenticated connections between Linkerd proxies , Linkerd automatically enables mutual Transport Layer Security (mTLS) by default for most HTTP-based communication between services.
 
-<h3 class="chapter-sub-heading">
+<h3 className="chapter-sub-heading">
   <a name="3">Confirming Add-ons</a>
 </h3>
 

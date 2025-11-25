@@ -48,7 +48,7 @@ Before proceeding with this tutorial, let's examine some terms and definitions i
 
 - **Node**: refers to an instance of the Docker engine in the Swarm cluster.
 - **Manager nodes**: they are tasked with handling orchestration and cluster management functions, and dispatching incoming tasks to worker nodes. They can also act as worker nodes unless placed in Drain mode (recommended).
-- **Leader**: this is a specific manager node that is elected to perform orchestration tasks and management/maintenance operations by all the manager nodes in the cluster using the <a rel="" target="_blank" className="whitespace-nowrap" href="https://raft.github.io/">Raft Consensus Algorithm</a>.
+- **Leader**: this is a specific manager node that is elected to perform orchestration tasks and management/maintenance operations by all the manager nodes in the cluster using the <a rel="noreferrer" target="_blank" className="whitespace-nowrap" href="https://raft.github.io/">Raft Consensus Algorithm</a>.
 - **Worker nodes**: are Docker instances whose sole purpose is to receive and execute Swarm tasks from manager nodes.
 - **Swarm task**: refers to a Docker container and the commands that run inside the container. Once a task is assigned to a node, it can run or fail but it cannot be transferred to a different node.
 - **Swarm service**: this is the mechanism for defining tasks that should be executed on a node. It involves specifying the container image and commands that should run inside the container.

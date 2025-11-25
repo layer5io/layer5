@@ -2,6 +2,8 @@ const globals = require("globals");
 const babelParser = require("@babel/eslint-parser");
 const react = require("eslint-plugin-react");
 const js = require("@eslint/js");
+const mdxParser = require("eslint-mdx");
+const mdxPlugin = require("eslint-plugin-mdx");
 
 const {
   FlatCompat,
@@ -16,6 +18,14 @@ const compat = new FlatCompat({
 module.exports = [
   ...compat.extends("eslint:recommended", "plugin:react/recommended"),
   {
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
+  },
+  {
+    files: ["**/*.{js,jsx,ts,tsx}", "gatsby-*.js", "*.config.js"],
     languageOptions: {
       globals: {
         ...globals.browser,
@@ -74,6 +84,12 @@ module.exports = [
       "react/prop-types": 0,
       "react/no-unescaped-entities": [0],
       "react/jsx-no-duplicate-props": [0],
+      "react/style-prop-object": "error",
+      "react/jsx-closing-tag-location": ["error", "line-aligned"],
+      "react/jsx-closing-bracket-location": ["error", {
+        "nonEmpty": "line-aligned",
+        "selfClosing": "line-aligned",
+      }],
 
       "indent": ["error", 2, {
         "FunctionExpression": {
@@ -112,6 +128,29 @@ module.exports = [
     },
   },
   {
+    files: ["content-learn/**/*.mdx", "src/pages/**/*.mdx"],
+    languageOptions: {
+      parser: mdxParser,
+      parserOptions: {
+        ecmaVersion: 2018,
+        sourceType: "module",
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+    plugins: {
+      mdx: mdxPlugin,
+    },
+    processor: mdxPlugin.createRemarkProcessor(),
+    rules: {
+      "react/react-in-jsx-scope": "off",
+      "react/no-unescaped-entities": "off",
+      "react/display-name": "off",
+      "react/prop-types": "off",
+    },
+  },
+  {
     ignores: [
       "**/node_modules/",
       "**/*.test.js",
@@ -132,6 +171,7 @@ module.exports = [
       "**/package.json",
       "**/package-lock.json",
       "**/static/",
+      "content-learn/**/index.mdx",
     ]
   }
 ];
