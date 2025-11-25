@@ -27,7 +27,7 @@ site:
 	
 ## Run layer5.io on your local machine. Alternate method.
 site-fast:
-	NODE_OPTIONS=--max-old-space-size=12288 gatsby develop
+	NODE_OPTIONS=--max-old-space-size=8192 gatsby develop
 
 ## Build layer5.io on your local machine.
 build:
