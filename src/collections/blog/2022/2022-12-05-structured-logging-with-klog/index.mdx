@@ -21,8 +21,7 @@ import Button from "../../../../reusecore/Button";
 
 
 <BlogWrapper>
-<p>As a platform for developers and system administrators to easily deploy and manage applications in a distributed environment, Kubernetes clusters generate logs and lots of them. One of the key components of Kubernetes is its logging and instrumentation capabilities. The upcoming Kubernetes 1.26 release has a handful of noteworthy changes to its system component logger, <code>klog</code>.</p>
-
+As a platform for developers and system administrators to easily deploy and manage applications in a distributed environment, Kubernetes clusters generate logs and lots of them. One of the key components of Kubernetes is its logging and instrumentation capabilities. The upcoming Kubernetes 1.26 release has a handful of noteworthy changes to its system component logger, <code>klog</code>.
 ## Kubernetes System Log
 
 System component logs record events happening in K8s clusters. More than metrics or traces, logs are the telemetric signal often found to be most useful for debugging. You can configure K8s log verbosity to see more or less detail. Logs can be as coarse-grained as showing errors within a component, or as fine-grained as showing step-by-step traces of events (like HTTP access logs, pod state changes, controller actions, or scheduler decisions).
@@ -57,8 +56,7 @@ Proof of concept implementation of new logging formats were completed to assess 
 Interestingly, Klog isn't the fastest logger in the West, but Uber's open source project [zap ](https://github.com/uber-go/zap) appears to hold that title instead. The following performance test benchmark is an examle of one of a number of scenarios in which loggers can be performance analyzed.
 
 
-<p>Log a message and 10 fields:</p>
-
+Log a message and 10 fields:
 | Package             |    Time     | Time % to zap | Objects Allocated |
 | :------------------ | :---------: | :-----------: | :---------------: |
 | zap                 | 2900 ns/op  |      +0%      |    5 allocs/op    |

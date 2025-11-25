@@ -1,12 +1,12 @@
 import React, { useState, useRef } from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import WorkshopCard from "../../../components/Workshop-Card";
 import PageHeader from "../../../reusecore/PageHeader";
 import { WorkshopPageWrapper } from "./WorkshopsGrid.style";
-import { BsArrowDown } from "@react-icons/all-files/bs/BsArrowDown";
-import { BsArrowUp } from "@react-icons/all-files/bs/BsArrowUp";
+
+import { BsArrowRight } from "@react-icons/all-files/bs/BsArrowRight";
 import Slack from "../../../assets/images/socialIcons/slack-light.svg";
 import Button from "../../../reusecore/Button";
 import WorkshopImage from "../../../assets/images/workshops/workshops.svg";
@@ -14,10 +14,6 @@ import { FaRegWindowMaximize } from "@react-icons/all-files/fa/FaRegWindowMaximi
 
 
 const WorkshopsPage = () => {
-
-  const [content, setContent] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [ID, setID] = useState("");
 
   const data = useStaticQuery(
     graphql`query allWorkshops {
@@ -28,7 +24,6 @@ const WorkshopsPage = () => {
     nodes {
       id
       
-      body
       frontmatter {
         title
         date(formatString: "MMMM Do, YYYY")
@@ -116,17 +111,15 @@ const WorkshopsPage = () => {
                     </div>
                     <div className={content && ID === id ? "btn-and-status-open" : "btn-and-status"}>
                       <div className="social-icons">
-                        {frontmatter.slack && frontmatter.status === "delivered" && content && ID === id ?
+                        {frontmatter.slack && frontmatter.status === "delivered" ?
                           <a href={frontmatter.slack} target = "_blank" rel="noreferrer" className="links">
                             <img src={Slack} alt="Slack"/>
                                                         Slack
                           </a> : ""}
                       </div>
-                      <div className={content && ID === id ? "linkAndReadBtns-open" : "linkAndReadBtns"}>
+                      <div className="linkAndReadBtns">
                         <div className="expand">
-                          {content && ID === id ?
-                            <button onClick={() => toggleActive(id)} className="readmeBtn"> Read Less <BsArrowUp className="icon" size={30} /></button> :
-                            <button onClick={() => toggleActive(id)} className="readmeBtn readmreBtn"> Read More <BsArrowDown className="icon" size={30} /></button> }
+                          <Link to={fields.slug} className="readmeBtn readmreBtn"> Read More <BsArrowRight className="icon" size={30} /></Link>
                         </div>
 
                         <div className="externalLink">

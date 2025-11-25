@@ -13,11 +13,11 @@ import InstallLinkerd from "../../../../src/assets/images/learn-layer5/linkerd/i
 
 <ChapterStyle>
 
-<h2 class="chapter-sub-heading">Setup Linkerd</h2>
+<h2 className="chapter-sub-heading">Setup Linkerd</h2>
 
 Now that we have a Kubernetes cluster and Meshery, we are ready to download and deploy Linkerd resources.
 
-<h2 class="chapter-sub-heading">Steps</h2>
+<h2 className="chapter-sub-heading">Steps</h2>
 
 1. [Install Linkerd](#1)
 1. [Verify install](#2)
@@ -29,24 +29,20 @@ Now that we have a Kubernetes cluster and Meshery, we are ready to download and 
 
 Using Meshery, select `Linkerd` from the `Management` menu.
 
-<a href={LinkerdAdapter}>
-  <img src={LinkerdAdapter} />
-</a>
+<a href={LinkerdAdapter}><img src={LinkerdAdapter} /></a>
 
 In the Linkerd management page:
 
 1. Type `linkerd` into the namespace field.
 1. Click the (+) icon on the `Install` card and select `Latest Linkerd` to install the latest version of Linkerd.
 
-   <a href={InstallLinkerd}>
-     <img src={InstallLinkerd} align="center" />
-   </a>{" "}
+   <a href={InstallLinkerd}><img src={InstallLinkerd} align="center" /></a>{" "}
 
 <h3>Alternative: Manual Installation</h3>
 
 Perform the below steps if the above steps doesn't work for you.
 
-<h4 class="chapter-alt-heading">Download `linkerd` CLI</h4>
+<h4 className="chapter-alt-heading">Download `linkerd` CLI</h4>
 
 On a \*nix system, you can setup linkerd by doing the following:
 
@@ -77,7 +73,7 @@ We can use a new feature in linkerd to check if the cluster is ready for install
 linkerd check --pre
 ```
 
-<h4 class="chapter-alt-heading">Install Linkerd:</h4>
+<h4 className="chapter-alt-heading">Install Linkerd:</h4>
 
 Deploy Linkerd custom resources:
 
