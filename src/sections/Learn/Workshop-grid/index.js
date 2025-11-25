@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
@@ -50,6 +50,44 @@ const WorkshopsPage = () => {
 }`
   );
 
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const scrollRefMap = useRef({});
+
+
+  const toggleActive = (id) => {
+    const targetElement = scrollRefMap.current[id];
+
+    if (open && ID === id) {
+      setOpen(false);
+      setContent(false);
+      setID("");
+
+      if (targetElement) {
+        // Wait for DOM to collapse, then scroll
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            const rect = targetElement.getBoundingClientRect();
+            const y = rect.top + window.scrollY; // adjust for header
+            window.scrollTo({
+              top: y,
+              behavior: "smooth",
+            });
+          });
+        });
+      }
+    } else {
+      if (targetElement) {
+        const rect = targetElement.getBoundingClientRect();
+        const y = rect.top + window.scrollY - 20;
+        setScrollPosition(y);
+      }
+      setID(id);
+      setContent(true);
+      setOpen(true);
+    }
+  };
+
+
   return (
     <WorkshopPageWrapper>
       <PageHeader title="Cloud Native Workshops"/>
@@ -60,11 +98,18 @@ const WorkshopsPage = () => {
             <Row style={{
               flexWrap: "wrap"
             }}>
-              {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
-                <Col $xs={12} $sm={6} $lg={4} key={id} className="workshop-grid-col">
-                  <div className="workshop-grid-card">
-                    <WorkshopCard frontmatter={frontmatter} />
-                    <div className="btn-and-status">
+              {data.allMdx.nodes.map(({ id, frontmatter, fields, body }) => (
+                <Col {...content && ID === id ? { $xs: 12, $sm: 12, $lg: 12 } : { $xs: 12, $sm: 6, $lg: 4 } } key={id} className="workshop-grid-col">
+                  <div className="workshop-grid-card" ref={(el) => {
+                    if (el) scrollRefMap.current[id] = el;
+                  }}>
+                    <WorkshopCard frontmatter={frontmatter} content={content} ID={ID} id={id} />
+                    <div className={content && ID === id ? "active" : "text-contents"}>
+                      <div className="content">
+                        <MDXRenderer>{body}</MDXRenderer>
+                      </div>
+                    </div>
+                    <div className={content && ID === id ? "btn-and-status-open" : "btn-and-status"}>
                       <div className="social-icons">
                         {frontmatter.slack && frontmatter.status === "delivered" ?
                           <a href={frontmatter.slack} target = "_blank" rel="noreferrer" className="links">
@@ -76,6 +121,7 @@ const WorkshopsPage = () => {
                         <div className="expand">
                           <Link to={fields.slug} className="readmeBtn readmreBtn"> Read More <BsArrowRight className="icon" size={30} /></Link>
                         </div>
+
                         <div className="externalLink">
                           <Link to={fields.slug} className="siteLink"><FaRegWindowMaximize style={{ height: "25px", width: "auto" }} /></Link>
                         </div>
