@@ -1,7 +1,7 @@
 ---
 title: "MLH Fellowship Program 2020"
-thumbnail: ./mlh.svg
-darkthumbnail: ./mlh-dark.svg
+thumbnail_svg: ./mlh.svg
+darkthumbnail_svg: ./mlh-dark.svg
 permalink: "mlh/2020"
 program: "MLH Fellowship Program"
 programSlug: "mlh"
@@ -10,10 +10,10 @@ published: true
 
 import { ProgramsWrapper } from "../Programs.style.js";
 import Button from "../../../reusecore/Button";
-import {ReactComponent as MlhLogo} from "./mlh.svg";
+import MlhLogo from "./mlh.svg";
 
 <ProgramsWrapper>
-<MlhLogo alt="mlh_logo" class="mlh_logo"/>
+<MlhLogo alt="mlh_logo" className="mlh_logo"/>
 <h2><b>MLH Fellowship Program</b></h2>
 <div>
 The Major League Hacking’s <a href="https://fellowship.mlh.io/">MLH Fellowship</a> is an internship alternative for software engineers. Instead of working on a project for just one company, you’ll contribute to Open Source projects that are used by companies around the world. You’ll collaborate with a group of 10 students under the guidance of a professional mentor whose only job is to help you successfully contribute.<br/>
@@ -60,45 +60,24 @@ Layer5’s <a href="https://meshery.io/">Meshery Project</a> is participating in
         loading="lazy"
         frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen />
+        allowFullScreen
+    />
 </div>
-<p>
     <b>Layer5</b>
-</p>
-<p>
 At Layer5, we champion developer-defined infrastructure, giving engineers the power to reshape application delivery. We empower operators in reimagining how they manage modern infrastructure: collaboratively.
-</p>
-<p>
     <b>Open Source</b>
-</p>
-<p>
-Layer5 projects are open source software. Anyone can download, use, work
-on, and share it with others. It's built on principles like collaboration,
-globalism, and innovation. Layer5 projects are distributed under the terms
-of Apache v2.
-</p>
-<p>
+Layer5 projects are open source software. Anyone can download, use, work on, and share it with others. It's built on principles like collaboration, globalism, and innovation. Layer5 projects are distributed under the terms of Apache v2.
     <b>Google Summer of Code Participation?</b>
-</p>
-<p>
-The key component of these projects is our Community. This community,
-which you will join as a participant in Google Summer of Code, is
-improving the world of diverse cloud native systems. Your contributions
-will affect people you've never met. The Layer5 community includes
-software engineers, researchers, students, artists, system administrators,
-operators and web designers -- all of whom will be happy to help you get
-started.
-</p>
-<p>
-We believe that all contributors should expect and be part of a safe and
-friendly environment for constructive contribution. We can more
-effectively and successfully compare and challenge different ideas to find
-the best solutions for advancement, while building the size, diversity,
-and strength of our community.
-</p>
+The key component of these projects is our Community. This community, which you will join as a participant in Google Summer of Code, is improving the world of diverse cloud native systems. Your contributions will affect people you've never met. The Layer5 community includes software engineers, researchers, students, artists, system administrators, operators and web designers -- all of whom will be happy to help you get started.
+We believe that all contributors should expect and be part of a safe and friendly environment for constructive contribution. We can more effectively and successfully compare and challenge different ideas to find the best solutions for advancement, while building the size, diversity, and strength of our community.
 <div id="gsoc-2020" className="apply-button">
     <h3>
-        <Button $primary title="Participate" $url="http://slack.layer5.io" $external={ true } />
+        <Button
+            $primary
+            title="Participate"
+            $url="http://slack.layer5.io"
+            $external={ true }
+        />
     </h3>
 </div>
 

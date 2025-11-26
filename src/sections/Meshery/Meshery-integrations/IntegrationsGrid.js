@@ -23,16 +23,10 @@ const IntegrationsGrid = ({ category, count }) => {
             status
             category
             integrationIcon {
-              childImageSharp {
-                gatsbyImageData(width: 500, layout: CONSTRAINED)
-              }
               extension
               publicURL
             }
             darkModeIntegrationIcon {
-              childImageSharp {
-                gatsbyImageData(width: 500, layout: CONSTRAINED)
-              }
               extension
               publicURL
             }

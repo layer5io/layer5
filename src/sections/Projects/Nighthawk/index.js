@@ -70,7 +70,8 @@ const Projects = () => {
         <div className="explain-1">
           <h1>What is Nighthawk?</h1>
           <p>Nighthawk is a versatile HTTP load testing tool built out of a need to drill HTTP services with a constant request rate or with an adaptive request rate. Layer5 offers a custom distribution of Nighthawk with intelligent adaptive load controllers to automatically identify optimal configurations for your service mesh deployment.
-          As a Layer 7 performance characterization tool supporting HTTP/HTTPS/HTTP2, Nighthawk is Meshery's (and Envoy's) load generator and is written in C++.</p>
+          As a Layer 7 performance characterization tool supporting HTTP/HTTPS/HTTP2, Nighthawk is Meshery's (and Envoy's) load generator and is written in C++.
+          </p>
           <StaticImage src={explain1} alt="explanation"/>
         </div>
 
@@ -212,7 +213,8 @@ const Projects = () => {
       <div className="callout">
         <img src={cncf} alt="cncf logo" />
         <p> Participate in the state of the art. <br />
-          Join us in the Cloud Native Computing Foundation's Service Mesh Working Group.</p>
+          Join us in the Cloud Native Computing Foundation's Service Mesh Working Group.
+        </p>
         <Button $primary title="Join Us" $url="/community/calendar#meetings" />
       </div>
     </Gnhwrapper>
