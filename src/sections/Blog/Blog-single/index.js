@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+
 import { SRLWrapper } from "simple-react-lightbox";
 import slugify from "../../../utils/slugify";
 import { Container } from "../../../reusecore/Layout";
@@ -21,9 +21,9 @@ import CTA_Bottom from "../../../components/Call-To-Actions/CTA_Bottom";
 import AboutTheAuthor from "./author";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
-const BlogSingle = ({ data }) => {
+const BlogSingle = ({ data, children }) => {
   const location = useLocation();
-  const { frontmatter, body, fields } = data.mdx;
+  const { frontmatter, fields } = data.mdx;
   const { relatedPosts: blogData, authors } = useStaticQuery(
     graphql`query relatedPosts {
   relatedPosts: allMdx(
@@ -93,6 +93,16 @@ const BlogSingle = ({ data }) => {
   const [copied, setCopied] = useState(false);
   const { isDark } = useStyledDarkMode();
 
+  const primaryThumbnail = frontmatter.thumbnail || frontmatter.thumbnail_svg;
+  const secondaryThumbnail = frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg;
+  const heroThumbnail = (() => {
+    if (isDark && secondaryThumbnail && (secondaryThumbnail?.publicURL !== primaryThumbnail?.publicURL || !primaryThumbnail)) {
+      return secondaryThumbnail;
+    }
+
+    return primaryThumbnail || secondaryThumbnail;
+  })();
+
   useEffect(() => {
     if (copied) {
       setTimeout(() => {
@@ -115,13 +125,13 @@ const BlogSingle = ({ data }) => {
             subtitle={frontmatter.subtitle}
             category={frontmatter.category}
             author={{ name: frontmatter.author }}
-            thumbnail={((isDark && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL) ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
-            darkthumbnail={frontmatter.thumbnail}
+            thumbnail={heroThumbnail}
+            darkthumbnail={secondaryThumbnail || primaryThumbnail}
             date={frontmatter.date}
           />
           <div className="single-post-wrapper">
             <SRLWrapper>
-              <MDXRenderer>{body}</MDXRenderer>
+              {children}
             </SRLWrapper>
             <BlogPostSignOff
               author={{ name: frontmatter.author }}

@@ -1,4 +1,4 @@
----
+f---
 title: "Navigating Hacktoberfest"
 subtitle: "A Guide to Meaningful Contributions and Maintainer Appreciation"
 date: 2023-09-28 10:30:05 -0530
@@ -25,7 +25,6 @@ import Blockquote from "../../../../reusecore/Blockquote";
 import BlockquoteAlt from "../../../../reusecore/Blockquote/Blockquote-alt-style";
 import { Link } from "gatsby" ;
 
-
 <BlogWrapper>
 
 As the leaves begin to turn and the air grows crisp, it can only mean one thing: [Hacktoberfest](https://hacktoberfest.com) is here! This annual celebration of open source, hosted by Digital Ocean, invites contributors from all over the world to participate in a month-long extravaganza of code contributions. While the allure of limited-edition swag may be enticing, it's essential to approach Hacktoberfest with a mindset focused on quality, respect for maintainers, and a commitment to long-term community engagement.
@@ -34,7 +33,7 @@ Layer5 has a long history of participating in Hacktoberfest. 2023 is no differen
 
 ### 1. Purposeful Participation: Beyond Swag Chasing and Profile Building
 
-Before you embark on your Hacktoberfest journey, take a moment to reflect on your motivation. Are you here solely for the swag, just for the green boxes in your GitHub profile, or do you genuinely want to make a meaningful contribution to a project, learn, grow, and make new friends in the process? Embrace the opportunity to forge lasting connections and dive deeper into topics that resonate with you. 
+Before you embark on your Hacktoberfest journey, take a moment to reflect on your motivation. Are you here solely for the swag, just for the green boxes in your GitHub profile, or do you genuinely want to make a meaningful contribution to a project, learn, grow, and make new friends in the process? Embrace the opportunity to forge lasting connections and dive deeper into topics that resonate with you.
 
 ### 2. Quality Over Quantity: Making a Lasting Impact
 
@@ -48,24 +47,20 @@ While a flurry of pull requests may be impressive, maintainers value contributio
 
 That CONTRIBUTING.md file? It's not there for decoration. Treat it as your playbook, providing guidance for equitable collaboration. Ignoring these guidelines is akin to rearranging someone's furniture without permission. Established protocols are crucial, especially in projects with numerous contributors. They help navigate the intricacies of collaborative development. As an example, there is a full set of contributig docs written for Meshery - one for each component:
 
-<ul>
-  <li><a href="https://docs.meshery.io/project/contributing/contributing-gitflow">Contributing to Meshery using git</a></li>
-  <li><a href="https://docs.meshery.io/project/contributing/meshery-windows">Setting up Meshery Development Environment on Windows</a></li>
-  <li><a href="https://docs.meshery.io/project/contributing/build-and-release">Contributing to Meshery Build and Release (CI)</a></li>
-  <ul><li><a href="https://docs.meshery.io/project/contributing/contributing-cypress">Contributing to Meshery's End-to-End Tests using Cypress</a></li></ul>
-  <li><a href="https://docs.meshery.io/project/contributing/contributing-adapters">Contributing to Meshery Adapters</a></li>
-  <li><a href="https://docs.meshery.io/project/contributing/contributing-docker-extension">Contributing to Meshery Docker Extension</a></li>
-  <li><a href="https://docs.meshery.io/project/contributing/contributing-server">Contributing to Meshery Server</a></li>
-    <ul>
-      <li><a href="https://docs.meshery.io/project/contributing/contributing-models">Contributing to Meshery Models</a></li>
-      <li><a href="https://docs.meshery.io/project/contributing/contributing-error">How to write MeshKit compatible errors</a></li>
-    </ul>
-  <li><a href="https://docs.meshery.io/project/contributing/contributing-ui">Contributing to Meshery UI</a></li>
-    <ul><li><a href="https://docs.meshery.io/project/contributing/contributing-ui-notification-center">Contributing to Meshery UI - Notification Center</a></li></ul>
-  <li><a href="https://docs.meshery.io/project/contributing/contributing-docs">Contributing to Meshery Docs</a></li>
-  <li><a href="https://docs.meshery.io/project/contributing/contributing-cli">Contributing to Meshery CLI</a></li>
-    <ul><li><a href="https://docs.meshery.io/project/contributing/contributing-cli-guide">Meshery CLI Contributing Guidelines</a></li></ul>
-</ul>
+- <a href="https://docs.meshery.io/project/contributing/contributing-gitflow">Contributing to Meshery using git</a>
+- <a href="https://docs.meshery.io/project/contributing/meshery-windows">Setting up Meshery Development Environment on Windows</a>
+- <a href="https://docs.meshery.io/project/contributing/build-and-release">Contributing to Meshery Build and Release (CI)</a>
+    - <a href="https://docs.meshery.io/project/contributing/contributing-cypress">Contributing to Meshery's End-to-End Tests using Cypress</a>
+- <a href="https://docs.meshery.io/project/contributing/contributing-adapters">Contributing to Meshery Adapters</a>
+- <a href="https://docs.meshery.io/project/contributing/contributing-docker-extension">Contributing to Meshery Docker Extension</a>
+- <a href="https://docs.meshery.io/project/contributing/contributing-server">Contributing to Meshery Server</a>
+    - <a href="https://docs.meshery.io/project/contributing/contributing-models">Contributing to Meshery Models</a>
+    - <a href="https://docs.meshery.io/project/contributing/contributing-error">How to write MeshKit compatible errors</a>
+- <a href="https://docs.meshery.io/project/contributing/contributing-ui">Contributing to Meshery UI</a>
+    - <a href="https://docs.meshery.io/project/contributing/contributing-ui-notification-center">Contributing to Meshery UI - Notification Center</a>
+- <a href="https://docs.meshery.io/project/contributing/contributing-docs">Contributing to Meshery Docs</a>
+- <a href="https://docs.meshery.io/project/contributing/contributing-cli">Contributing to Meshery CLI</a>
+    - <a href="https://docs.meshery.io/project/contributing/contributing-cli-guide">Meshery CLI Contributing Guidelines</a>
 
 ### 4. Upholding a Safe Environment: The Code of Conduct
 
@@ -77,30 +72,27 @@ Don't confine yourself to a GitHub profile. Engage in meaningful discussions, pa
 
 ### 6. Compassion Over Code: Recognizing Maintainer Burnout
 
-<p><Link to="/community/handbook/repository-overview">Maintainers</Link> are the unsung heroes of the open-source world, often overwhelmed by the Hacktoberfest influx. Your seemingly "simple" pull request may be the tipping point. Recognize their efforts and respect their capacity. Some projects may not actively seek new contributions, and that's perfectly valid. Begin by identifying projects explicitly welcoming newcomers, tagged with <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Alayer5labs+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+">"good first issue"</a> or <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+">"help wanted"</a>.</p>
-
-
+<Link to="/community/handbook/repository-overview">Maintainers</Link> are the unsung heroes of the open-source world, often overwhelmed by the Hacktoberfest influx. Your seemingly "simple" pull request may be the tipping point. Recognize their efforts and respect their capacity. Some projects may not actively seek new contributions, and that's perfectly valid. Begin by identifying projects explicitly welcoming newcomers, tagged with <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Alayer5labs+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+">"good first issue"</a> or <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+">"help wanted"</a>.
 ### 7. The Virtue of Patience: Embracing the Long Game
 
 Open source is a marathon, not a sprint. Feedback may take time, and collaboration may be challenging. Patience is the glue that holds this ecosystem together. Cultivate it as a fundamental habit in your contributor journey. The Layer5 <Link to="/community/members">community members</Link> invest time, patience, understanding and offer endless hours of support to our contributors. Stick around and benefit. In turn, offer to help others. There's little better way to learn, than through teaching.
-
 
 ### 8. Humility and Gratitude: The Essence of Meaningful Contributions
 
 Remember, a meaningful contribution is its own reward. Swag and a profile boost is a delightful bonus, not the end goal. Celebrate your progress, no matter how small, and learn from your experiences. As you recognize that you are part of a much larger movement, we <Link to="/blog/community/layer5-recognition-program">recognize our contributors and users milestones</Link> each step of the way. Earn any number of <a href="https://badges.layer5.io">Layer5 badges</a> as you grow with the community.
 
 ### 9. Earn a Badge
-    
-<p>Earn a Hacktoberfest Contributor badge by contributing to Layer5 projects during this Hacktoberfest.</p>
-<img src={hacktoberfestBadge} style="width: 250px"/>
+
+Earn a Hacktoberfest Contributor badge by contributing to Layer5 projects during this Hacktoberfest.
+<img src={hacktoberfestBadge} style={{width: "250px"}} />
 
 # Join Layer5's Hacktoberfest Event
 
-<figure class="imgWithCaption" style="width: 80%;">
-  <Link to="/community/events/hacktoberfest-prep-2023-easing-into-cncf-open-source-projects"><img src={cloudNativeHacktoberfest} /></Link>
-  <figcaption style="display:flex;gap:2rem;">
+<figure className="imgWithCaption" style={{width: "80%"}}>
+  <img src={cloudNativeHacktoberfest} />
+  <figcaption style={{display:"flex", gap:"2rem"}}>
   <div>
-    <strong><Link to="/community/events/hacktoberfest-prep-2023-easing-into-cncf-open-source-projects">Hacktoberfest Prep 2023: Easing into CNCF Open Source Projects</Link></strong>
+    <strong><a href="/community/events/hacktoberfest-prep-2023-easing-into-cncf-open-source-projects">Hacktoberfest Prep 2023: Easing into CNCF Open Source Projects</a></strong>
     <ul>
     <li>DATE: September 29, 2023</li>
     <li>TIME: 3PM UTC | 10AM Central | 8:30PM IST</li>

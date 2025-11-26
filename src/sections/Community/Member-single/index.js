@@ -26,7 +26,7 @@ import KanvasLogo from "../../../assets/images/kanvas/icon-only/kanvas-icon-colo
 import Button from "../../../reusecore/Button";
 import { ReactComponent as TwitterIcon } from "../../../assets/images/socialIcons/twitter.svg";
 
-const MemberSingle = ({ frontmatter }) => {
+const MemberSingle = ({ frontmatter, children }) => {
   const {
     name,
     position,
@@ -302,6 +302,7 @@ const MemberSingle = ({ frontmatter }) => {
                   </div>
                 )}
                 {bio && <div className="text bio">{bio}</div>}
+                {children}
               </div>
               <div className="social-bg">
                 <ul className="profile-social-links">
