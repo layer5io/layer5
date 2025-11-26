@@ -28,7 +28,7 @@ import img4 from "./image4.webp";
 
 <BlogWrapper>
 
-<img src={listioLayer5} className="image-left" alt="Layer5 and Istio" />
+<img src={listioLayer5} className="image-left" alt="Layer5 and Istio"/>
 
 Recently, I started learning on Service Mesh and it was a very interesting journey as I explored the Service Mesh
 landscape starting with [Layer5 tutorials](https://github.com/layer5io/istio-service-mesh-workshop) and by exploring
@@ -95,12 +95,13 @@ a. Ingress Gateway in Control Plane for traffic entry point to the Control plane
 b. Ingress Gateway in the Worskpace 1 namespace for traffic entry point to the workspace 1 microservices.
 c. Ingress Gateway in the Worskpace 2 namespace for traffic entry point to the workspace 2 microservices.
 
-<img src={img1} alt="kubernetes-cluster" />
-<p align="center">
+<img src={img1} alt="kubernetes-cluster"/>
+<div style={{ textAlign: "center" }}>
+
   Single Control Plane with Multiple Data Plane each with separate Ingress
   Gateway
-</p>
 
+</div>
 - Creation of Control Plane CR and Data Plane CR
   A sample CR for creation of the Control plane and Data Plane CR can be referred below :
   ```sh
@@ -122,7 +123,7 @@ c. Ingress Gateway in the Worskpace 2 namespace for traffic entry point to the w
   profile: empty
   components:
   ingressGateways:
-  — name: wk1-ingressgw
+  - name: wk1-ingressgw
   namespace: workspace-1
   enabled: true
   label:
@@ -142,7 +143,7 @@ c. Ingress Gateway in the Worskpace 2 namespace for traffic entry point to the w
   profile: empty
   components:
   ingressGateways:
-  — name: wk2-ingressgw
+  - name: wk2-ingressgw
   namespace: workspace-2
   enabled: true
   label:
@@ -178,7 +179,7 @@ istiooperator.install.istio.io/wk2-gwconfig configured
   $(kubectl get pods -n istio-operator -lname=istio-operator -o jsonpath=’{.items[0].metadata.name}’)
   ```
 
-<img src={img2} alt="image" />
+<img src={img2} alt="image"/>
 
 - Observe the created objects in istio-system and the workspace namespaces for all pods to be in running state.
 
@@ -219,12 +220,12 @@ istiooperator.install.istio.io/wk2-gwconfig configured
   selector:
   istio: ingressgateway-1 # use istio gateway-1 controller in workspace-1
   servers:
-  — port:
+  - port:
   number: 80
   name: http
   protocol: HTTP
   hosts:
-  — “*”
+  - “*”
   $ cat istio/bookinfo-gateway-2.yaml
   apiVersion: networking.istio.io/v1alpha3
   kind: Gateway
@@ -234,15 +235,18 @@ istiooperator.install.istio.io/wk2-gwconfig configured
   selector:
   istio: ingressgateway-2 # use istio gateway-2 controller in workspace-1
   servers:
-  — port:
+  - port:
   number: 80
   name: http
   protocol: HTTP
   hosts:
-  — “*”
+  - “*”
   ```
 
-Deploy the applications in workspace-1 and workspace-2 and deploy the Gateway,VirtualService and DestinationRules.
+
+Deploy the applications in workspace-1 and workspace-2 and deploy the Gateway, VirtualService and DestinationRules.
+
+{/* */}
 
 ```sh
 $kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml -n workspace-1
@@ -258,23 +262,19 @@ Once this is done the traffic will start flowing the intended gateway and it cou
 Please note that in this scenario the Kiali is also accessed via the default control plane ingress-gateway running in the istio-system control plane namespace.
 
 <img src={img3} alt="image" />
-<p align="center">Kiali view for Workspace-1</p>
-
+<div style={{ textAlign: "center" }}>Kiali view for Workspace-1</div>
 <img src={img4} alt="image" />
-<p align="center">Kiali view for Workspace-2</p>
-
+<div style={{ textAlign: "center" }}>Kiali view for Workspace-2</div>
 Shortly, we will go over the 3rd scenario which is to run multiple Istio Control Planes (Multiple Service Meshes) within the same Kubernetes Cluster. For that, we will need to build an open-shift setup and deploy the Maistra Istio Operator.
 Special thanks to the [Istio Community](https://istio.slack.com/) for helping me understand the concepts and also answering my queries and of course to [Lee Calcote](https://calcotestudios.com/talks/), who helped me embark on my Istio journey.
 
 <div>
+
   <b>
     Connect with Sudeep Batra on
-    <a href="https://www.linkedin.com/in/sudeep-batra"> LinkedIn</a>,<a href="https://github.com/sb1975">
-      {" "}
-      GitHub
-    </a>, or
-    <a href="https://twitter.com/sudeepbatra"> Twitter</a>.
+    <a href="https://www.linkedin.com/in/sudeep-batra"> LinkedIn</a>, <a href="https://github.com/sb1975">GitHub</a>, or <a href="https://twitter.com/sudeepbatra"> Twitter</a>.
   </b>
+
 </div>
 
 </BlogWrapper>
