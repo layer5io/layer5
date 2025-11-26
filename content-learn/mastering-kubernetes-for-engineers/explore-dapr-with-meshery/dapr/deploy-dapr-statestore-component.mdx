@@ -7,7 +7,6 @@ videos: 0
 lectures: 4
 order: 4
 ---
-import * as React from "react";
 import MesheryDesignEmbed from "@layer5/meshery-design-embed";
 import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
 import dragComponentImage from "../../../../src/assets/images/learning-path/dapr/drag-component.png";
@@ -16,13 +15,13 @@ import metadataImage from "../../../../src/assets/images/learning-path/dapr/meta
 
 
 <ChapterStyle>
-<h3 class="chapter-sub-heading">Create, Configure and Deploy Dapr Redis State Store Component</h3>
+<h3 className="chapter-sub-heading">Create, Configure and Deploy Dapr Redis State Store Component</h3>
 
 Following the deployment of the Redis state store, we will use Meshery to create and configure the Dapr state store component. This involves specifying essential details, including the redisHost and redisPassword fields in the Dapr component configuration, which tell Dapr where to find the Redis server and how to authenticate.
 
 This setup ensures that Dapr connects to the correct Redis instance, allowing it to handle state management seamlessly without direct involvement from your application.
 
-<h4 class="chapter-sub-heading">Search for Component</h4>
+<h4 className="chapter-sub-heading">Search for Component</h4>
 
 1. On the Dock at the bottom of the design canvas, click on **Components**.
 1. Search for "dapr".
@@ -33,7 +32,7 @@ This setup ensures that Dapr connects to the correct Redis instance, allowing it
 </a>
 
 
-<h4 class="chapter-sub-heading" style="margin-top: 1.4rem">Configure State Store and Deploy</h4>
+<h4 className="chapter-sub-heading" style="margin-top: 1.4rem">Configure State Store and Deploy</h4>
 
 Now you can start configuring the Dapr state-store.
 
