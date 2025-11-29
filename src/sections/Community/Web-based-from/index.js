@@ -205,22 +205,26 @@ const WebBasedForm = () => {
         <div className="center">
           <div className={role === "Contributor" ? "option active" : "option"} onClick={() => {
             setRole("Contributor");
-          }}>
+          }}
+          >
             I'm here as a Contributor
           </div>
           <div className={role === "Developer" ? "option active" : "option"} onClick={() => {
             setRole("Developer");
-          }}>
+          }}
+          >
             I'm here as a User
           </div>
           <div className={role === "User" ? "option active" : "option"} onClick={() => {
             setRole("User");
-          }}>
+          }}
+          >
             I'm here as a User and Contibutor
           </div>
           <div className={role === "Bystander" ? "option active" : "option"} onClick={() => {
             setRole("Bystander");
-          }}>
+          }}
+          >
             I'm here as a Bystander <br /><small>(here to learn and absorb passively)</small>
           </div>
           <br /><br />
