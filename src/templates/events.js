@@ -151,7 +151,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
   ) {
     nodes {
       id
-      body
+
       frontmatter {
         title
         type

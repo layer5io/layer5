@@ -125,10 +125,7 @@ If you'd like to contribute a post to layer5.io/blog, please open an Issue and s
 
 ## Adding News
 
-1. In order to add/update news items, fork this repository, clone it, create a new branch, and navigate to the `src/collections/news` directory.
-2. Create a copy of the [news template](https://github.com/layer5io/layer5/tree/master/src/collections/news/news-template/0000-00-00-news-title).
-3. Follow the instructions included in the news template and name the new file after the title of the news article.
-4. Entries will be listed in chronological order automatically.
+1. In order to add/update news items, see the detailed instructions in the [news issue template](https://github.com/layer5io/layer5/issues/new?template=news.md).
 
 # Contributing to Layer5's Sistent
 
@@ -401,9 +398,20 @@ Change image according to isDark value:
     />
 ```
 
-> Note:
->
 > - A condition `frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL` is added so that the image only changes if there is a difference between the thumbnail publicURLs.
+
+### Using SVG as Thumbnail
+
+If you are using an SVG file as a thumbnail, you should use the `thumbnail_svg` and `darkthumbnail_svg` fields in the frontmatter instead of `thumbnail` and `darkthumbnail`. This prevents Gatsby's `childImageSharp` from attempting to process the SVG, which can cause build warnings and errors.
+
+Example frontmatter:
+
+```yaml
+thumbnail_svg: ./my-icon.svg
+darkthumbnail_svg: ./my-icon-dark.svg
+```
+
+The components are set up to automatically check for these fields if the standard `thumbnail` fields are missing or if they need to fallback to the SVG version.
 
 ## Adding Images and Icons
 

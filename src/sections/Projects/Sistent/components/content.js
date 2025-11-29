@@ -244,6 +244,13 @@ const componentsData = [
     url: "/projects/sistent/components/stepper",
     src: "/stepper",
   },
+  {
+    id: 32,
+    name: "Stack",
+    description: "Stack is a layout component that arranges elements in a one-dimensional flow with customizable spacing and direction.",
+    url: "/projects/sistent/components/stack",
+    src: "/stack",
+  },
 ];
 
 module.exports = { componentsData };

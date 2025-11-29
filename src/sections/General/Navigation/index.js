@@ -41,6 +41,10 @@ const Navigation = () => {
             gatsbyImageData(width: 1050, height: 1360, layout: CONSTRAINED)
           }
         }
+        thumbnail_svg {
+          extension
+          publicURL
+        }
       }
       fields {
         slug
@@ -67,6 +71,14 @@ const Navigation = () => {
           }
           publicURL
           extension
+        }
+        thumbnail_svg {
+          extension
+          publicURL
+        }
+        thumbnail_svg {
+          extension
+          publicURL
         }
       }
       fields {
@@ -95,6 +107,14 @@ const Navigation = () => {
           publicURL
           extension
         }
+        thumbnail_svg {
+          extension
+          publicURL
+        }
+        thumbnail_svg {
+          extension
+          publicURL
+        }
       }
       fields {
         slug
@@ -119,6 +139,10 @@ const Navigation = () => {
               layout: FIXED
             )
           }
+          extension
+          publicURL
+        }
+        thumbnail_svg {
           extension
           publicURL
         }

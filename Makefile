@@ -27,11 +27,11 @@ site:
 	
 ## Run layer5.io on your local machine. Alternate method.
 site-fast:
-	gatsby develop
+	NODE_OPTIONS=--max-old-space-size=8192 gatsby develop
 
 ## Build layer5.io on your local machine.
 build:
-	gatsby build && gatsby serve
+	npm run build && npm run serve
 
 ## Empty build cache and run layer5.io on your local machine.
 clean: 
@@ -40,6 +40,10 @@ clean:
 ## Run Eslint on your local machine.
 lint:
 	npm run lint
+
+## Kill process running the site
+kill:
+	lsof -ti:8000 | xargs kill -9 2>/dev/null || true
 
 ## Prepare a list of features for the pricing page.
 features: 

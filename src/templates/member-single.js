@@ -32,7 +32,7 @@ export const query = graphql`query MemberBySlug($slug: String!) {
 }
 `;
 
-const MemberSinglePage = ({ data }) => {
+const MemberSinglePage = ({ data, children }) => {
 
 
   return (
@@ -42,7 +42,9 @@ const MemberSinglePage = ({ data }) => {
 
       <MemberSingle
         frontmatter={data.mdx.frontmatter}
-      />
+      >
+        {children}
+      </MemberSingle>
 
     </>
 
