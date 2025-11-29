@@ -32,9 +32,9 @@ const validatePictureUrl = (value) => {
         if (!allowedImageExtensions.includes(extension)) {
           error = "URL must point to an image file (jpg, jpeg, png, svg, webp or gif).";
         }
-      } catch (error) {
-        console.error("Error in validatePictureUrl:", error);
-        error = "Please enter a URL to an image file.";
+      } catch (err) {
+        console.error("Error in validatePictureUrl:", err);
+        return "Please enter a URL to an image file.";
       }
     }
   }
@@ -661,4 +661,3 @@ const WebBasedForm = () => {
 
 
 export default WebBasedForm;
-

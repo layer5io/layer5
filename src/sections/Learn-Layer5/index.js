@@ -120,7 +120,8 @@ const LearnPathsPage = () => {
           image={Book_Giveaway}
           header={"Don't Learn Alone"}
           text={"Check Out the Layer5 community, join us on Slack and learn with the community"}
-          btn_primary={true} />
+          btn_primary={true}
+        />
       </Container>
     </LearnLayer5GridWrapper >
   );

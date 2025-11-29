@@ -279,7 +279,8 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                             control={<Switch disabled
                               checked={selectedSubAddOns["academy-theory"] || false}
                               onChange={(e) => handleSubAddOnToggle("academy-theory", e.target.checked)}
-                              color="primary" />}
+                              color="primary"
+                            />}
                             sx={formControlStyles.base}
                           />
                           <FeatureDetails
@@ -306,7 +307,8 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                             control={<Switch sx={formControlStyles.switch}
                               checked={selectedSubAddOns["academy-practical"] || false}
                               onChange={(e) => handleSubAddOnToggle("academy-practical", e.target.checked)}
-                              color="primary" />}
+                              color="primary"
+                            />}
                             sx={formControlStyles.base}
                           />
                           <FeatureDetails
@@ -395,7 +397,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                                             ),
                                           })) || [];
                                         })()}
-                                  />
+                        />
                         <Box sx={boxStyles.disclaimerSection}>
                           <Typography variant="body2" sx={typographyStyles.italic}>
                             Looking for a plan larger than 2,500 learners? Great! <a href="/company/contact">Let us know</a>.

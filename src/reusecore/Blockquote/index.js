@@ -15,7 +15,8 @@ const Blockquote = ({
     <React.Fragment>
       {
         <BlockquoteStyle
-          className={AllClasses.join(" ")} {...props}>
+          className={AllClasses.join(" ")} {...props}
+        >
           <div className="blockquote-wrapper">
             <div className="blockquote">
               <h4>
