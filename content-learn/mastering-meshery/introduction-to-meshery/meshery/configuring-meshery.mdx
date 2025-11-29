@@ -29,7 +29,7 @@ import confirmAssociatedWorkspaceImage from "../../../../src/assets/images/learn
 
 <ChapterStyle>
 
-<h2 class="chapter-sub-heading">Introduction</h2>
+<h2 className="chapter-sub-heading">Introduction</h2>
 
 Configuring Meshery is foundational to effectively managing and deploying your infrastructure. By understanding what `Teams`, `Workspaces`,`Connections` and `Environments` are and how to set them up, you can effectively manage and monitor your cloud-native infrastructure, as well as collaborate with your team by sharing and organizing your resources.
 
@@ -46,7 +46,7 @@ To start configuring Meshery:
       <img src={lifecycleImage} width="100%" align="center" />
     </a>
 
-<h2 class="chapter-sub-heading">Creating Teams</h2>
+<h2 className="chapter-sub-heading">Creating Teams</h2>
 
 Creating a [Team](https://docs.layer5.io/cloud/identity/teams/) is the first step in configuring Meshery. In Meshery, a team is a user group that manages and shares access to resources such as Workspaces, Designs, and Environments. Teams enable efficient collaboration and permission management, facilitating organized operations within an organization. Teams offer control access to workspaces and to workspace resources such as Environments and Connections.
 
@@ -59,7 +59,7 @@ Follow the steps below to create a team:
       <img src={createTeamImage} width="100%" align="center" />
     </a>
 
-<h2 class="chapter-sub-heading">Creating Workspaces</h2>
+<h2 className="chapter-sub-heading">Creating Workspaces</h2>
 
 Creating a [Workspace](https://docs.layer5.io/cloud/spaces/workspaces/) is an important step in configuring Meshery. A workspace in Meshery is a logical grouping of resources that helps organize and manage your infrastructure more effectively. It is used to separate different projects or environments within your team, enabling better collaboration and resource management. Every user is assigned a default workspace, which can be customized as needed.
 
@@ -83,11 +83,11 @@ To create a workspace:
 
 In the subsequent sections, we will discuss `Environments` and `Designs` shown in the image above.
 
-<h2 class="chapter-sub-heading">Creating Environments and Associating Connections</h2>
+<h2 className="chapter-sub-heading">Creating Environments and Associating Connections</h2>
 
 [Environments](https://docs.layer5.io/cloud/spaces/environments/) and [Connections](https://docs.meshery.io/concepts/logical/connections) are essential for efficient resource management in Workspaces. Environments logically group related Connections and Credentials, simplifying management and sharing. Connections within Environments become immediately available for use in any assigned Workspaces.
 
-<h3 class="chapter-sub-heading">Creating an Environment</h3>
+<h3 className="chapter-sub-heading">Creating an Environment</h3>
 
 To create an environment:  
 
@@ -109,7 +109,7 @@ To create an environment:
 
 Next We’ll learn how to assign Connections to Environments.
 
-<h3 class="chapter-sub-heading">Associating Connections with an Environment</h3>
+<h3 className="chapter-sub-heading">Associating Connections with an Environment</h3>
 
 Examples of connections managed by Meshery include GitHub integrations, Prometheus connections, Kubernetes clusters, and more. It's essential to assign these connections to an environment and link that environment to your selected workspace.
 
@@ -143,13 +143,13 @@ To add a connection to an environment:
       <img src={mesheryEnvImage} width="100%" align="center" />
     </a>
 
-<h3 class="chapter-sub-heading">Navigating the Connections Page</h3>
+<h3 className="chapter-sub-heading">Navigating the Connections Page</h3>
 
 The `Connections` page serves as a central hub for managing the clusters you are connected to. This page provides valuable information and functionality to help you understand and interact with all your connections.
 
 To access the Connections page, click on **Connections** under the **Lifecycle** dropdown.
 
-<h4 class="chapter-sub-heading">Adding Cluster Connection</h4>
+<h4 className="chapter-sub-heading">Adding Cluster Connection</h4>
 
 On the Connections page, you can easily add a Kubernetes cluster connection. To do this:
 
@@ -173,7 +173,7 @@ On the Connections page, you can easily add a Kubernetes cluster connection. To 
       <img src={invalidKubeconfigImage} width="100%" align="center" />
     </a>
 
-<h4 class="chapter-sub-heading">Viewing Cluster Connection Details</h4>
+<h4 className="chapter-sub-heading">Viewing Cluster Connection Details</h4>
 
 Each connection has key details associated with it such as:
 
@@ -186,13 +186,13 @@ This ensures that MeshSync’s data is refreshed and accurately reflects the cur
       <img src={connectionListImage} width="100%" align="center" />
     </a>
 
-<h2 class="chapter-sub-heading">Integrating Workspaces with Environments and Designs</h2>
+<h2 className="chapter-sub-heading">Integrating Workspaces with Environments and Designs</h2>
 
 You can assign your created Environments to Workspaces, enabling effective collaboration and resource utilization across your team. This feature allows you to organize your Environments based on specific projects, teams, or use cases, making it easier to manage and share resources within your organization.
 
 Integrating designs with Workspaces enables effective collaboration and sharing of infrastructure configurations across your team. When you assign an Environment containing your designs to a Workspace, team members with access to that Workspace can view, manage, and build upon the shared designs and share feedback.
 
-<h3 class="chapter-sub-heading">Assigning Environments and Designs to Workspaces</h3>
+<h3 className="chapter-sub-heading">Assigning Environments and Designs to Workspaces</h3>
 
 1. Navigate to **Workspaces** under **Lifecycle**.
 
@@ -208,7 +208,7 @@ Integrating designs with Workspaces enables effective collaboration and sharing 
       <img src={associateWithWorkspaceImage} width="100%" align="center" />
     </a>
 
-<h4 class="chapter-sub-heading">Confirm Workspace Association</h4>
+<h4 className="chapter-sub-heading">Confirm Workspace Association</h4>
 
 Now, the environment and design are associated with the workspace. You get standardized resource deployment and cross-team collaboration. This enables efficient resource management and tracking, and makes team members more productive.
 
@@ -216,7 +216,7 @@ Now, the environment and design are associated with the workspace. You get stand
       <img src={confirmAssociatedWorkspaceImage} width="100%" align="center" />
     </a>
 
-<h2 class>Conclusion</h2>
+<h2 className>Conclusion</h2>
 
 In this chapter, you learned how to effectively configure Meshery, laying the groundwork for managing your infrastructure and optimizing workload within Kubernetes environments. Starting with the creation of workspaces, you established collaborative environments where teams can organize and deploy resources efficiently.
 
