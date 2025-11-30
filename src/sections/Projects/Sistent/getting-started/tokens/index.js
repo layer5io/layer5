@@ -193,7 +193,8 @@ const SistentTokens = () => {
                       textAlign: "center",
                       fontSize: "12px",
                       fontWeight: "bold"
-                    }}>
+                    }}
+                    >
                       Primary
                     </Box>
                     <Box sx={{
@@ -203,7 +204,8 @@ const SistentTokens = () => {
                       textAlign: "center",
                       fontSize: "12px",
                       fontWeight: "bold"
-                    }}>
+                    }}
+                    >
                       Secondary
                     </Box>
                     <Box sx={{
@@ -213,7 +215,8 @@ const SistentTokens = () => {
                       textAlign: "center",
                       fontSize: "12px",
                       fontWeight: "bold"
-                    }}>
+                    }}
+                    >
                       Error
                     </Box>
                     <Box sx={{
@@ -223,7 +226,8 @@ const SistentTokens = () => {
                       textAlign: "center",
                       fontSize: "12px",
                       fontWeight: "bold"
-                    }}>
+                    }}
+                    >
                       Success
                     </Box>
                   </Box>
@@ -311,7 +315,8 @@ const SistentTokens = () => {
                       transform: "translateY(-2px)",
                       transition: "all 0.2s ease-in-out"
                     }
-                  }}>
+                  }}
+                  >
                     <Typography variant="h5" color="text.primary" gutterBottom fontWeight="medium">
                       Product Card
                     </Typography>

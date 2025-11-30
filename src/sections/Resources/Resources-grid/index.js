@@ -42,7 +42,8 @@ const ResourceGrid = (props) => {
         </div>
         <Row style={{
           flexWrap: "wrap"
-        }}>
+        }}
+        >
           {props.data.length < 1 && <EmptyResources errorMessage={"No matching resources"} errorSubtitle={"Try removing one or more filters to broaden your results."} />}
 
           {searchedResource.map(({ id, frontmatter, fields }) => (

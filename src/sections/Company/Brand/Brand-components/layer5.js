@@ -25,7 +25,8 @@ const Layer5Brand = () => {
       <div className="post-content">
         <Row style={{
           flexWrap: "wrap"
-        }} className="brand-section">
+        }} className="brand-section"
+        >
           <Col $xs={12} $sm={6}>
             <h1 className="layerH3">
               Layer5
@@ -51,7 +52,8 @@ const Layer5Brand = () => {
         </Row>
         <Row style={{
           flexWrap: "wrap"
-        }}>
+        }}
+        >
           <Col $xs={12}>
             <h2 className="layerH3 in">
               Logos
@@ -72,7 +74,8 @@ const Layer5Brand = () => {
         </Row>
         <Row style={{
           flexWrap: "wrap"
-        }}>
+        }}
+        >
           <Col $xs={12}>
             <h2 className="layerH3 in">
               Colors
@@ -87,7 +90,8 @@ const Layer5Brand = () => {
           </Col>
           <Row style={{
             flexWrap: "wrap"
-          }} className="color-code-wrapper">
+          }} className="color-code-wrapper"
+          >
             <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
             <ColorBox name="Caribbean Green" R="0" G="211" B="169" colorCode="#00D3A9" />
             <div className="saffron-color-box">
@@ -107,7 +111,8 @@ const Layer5Brand = () => {
         </Row>
         <Row style={{
           flexWrap: "wrap"
-        }}>
+        }}
+        >
           <Col $xs={12}>
             <h2 className="layerH3 in">
               Bookmarks

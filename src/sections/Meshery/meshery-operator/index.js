@@ -90,8 +90,7 @@ const MesheryOperatorPage = () => {
                   <div className="text">
                     <h2>When is Meshery Operator deployed and when is it deleted?</h2>
                     <br />
-                    <p
-                    >As a Kubernetes custom controller, Meshery Operator is provisioned and deprovisioned when Meshery Server is connected to or disconnected from Kubernetes cluster. Meshery Server connections to Kubernetes clusters are controlled using Meshery Server clients: mesheryctl or Meshery UI. This behavior described below is consistent whether your Meshery deployment is using Docker or Kubernetes as the platform to host the Meshery deployment.
+                    <p >As a Kubernetes custom controller, Meshery Operator is provisioned and deprovisioned when Meshery Server is connected to or disconnected from Kubernetes cluster. Meshery Server connections to Kubernetes clusters are controlled using Meshery Server clients: mesheryctl or Meshery UI. This behavior described below is consistent whether your Meshery deployment is using Docker or Kubernetes as the platform to host the Meshery deployment.
                     </p>
                   </div>
                 </Col>

@@ -71,7 +71,8 @@ const Navigation = (props) => {
         <div className="heading">
           <div onClick={() => {
             setExpandFilter(!expandFilter);
-          }} className="filter-menu-icon">
+          }} className="filter-menu-icon"
+          >
             {expandFilter ? (
               <button className="filter-btn">
                 <IoClose className="filter-icon filter-close" />
@@ -99,7 +100,8 @@ const Navigation = (props) => {
         <div className="filters-boxes" id={expandFilter ? "filters-boxes" : ""}>
           <div className="toggle-btn"  onClick={function () {
             setExpandType(!expandType);
-          }}>
+          }}
+          >
             <p><strong>Type</strong></p>
             {expandType ? (
               <HiOutlineChevronUp
@@ -133,7 +135,8 @@ const Navigation = (props) => {
 
           <div className="toggle-btn" onClick={function () {
             setExpandProduct(!expandProduct);
-          }}>
+          }}
+          >
             <p><strong>Product</strong></p>
             {expandProduct ? (
               <HiOutlineChevronUp
@@ -167,7 +170,8 @@ const Navigation = (props) => {
 
           <div className="toggle-btn" onClick={function () {
             setExpandTech(!expandTech);
-          }}>
+          }}
+          >
             <p><strong>Technology</strong></p>
             {expandTech ? (
               <HiOutlineChevronUp
@@ -202,7 +206,8 @@ const Navigation = (props) => {
 
           <div className="toggle-btn" onClick={function () {
             setExpandMesh(!expandMesh);
-          }}>
+          }}
+          >
             <p><strong>Service Mesh</strong></p>
             {expandMesh ? (
               <HiOutlineChevronUp

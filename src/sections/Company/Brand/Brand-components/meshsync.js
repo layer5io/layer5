@@ -20,7 +20,8 @@ const MeshSyncBrand = () => {
       <div className="post-content">
         <Row style={{
           flexWrap: "wrap"
-        }} className="sub-project brand-section">
+        }} className="sub-project brand-section"
+        >
           <Col $xs={12} $sm={6}>
             <h2 className="layerH3">
               MeshSync
@@ -46,7 +47,8 @@ const MeshSyncBrand = () => {
         </Row>
         <Row style={{
           flexWrap: "wrap"
-        }}>
+        }}
+        >
           <Col>
             <h2 className="layerH3 in">
               Logos
@@ -65,7 +67,8 @@ const MeshSyncBrand = () => {
         </Row>
         <Row style={{
           flexWrap: "wrap"
-        }}>
+        }}
+        >
           <Col>
             <h2 className="layerH3 in">
               Colors
@@ -80,7 +83,8 @@ const MeshSyncBrand = () => {
           </Col>
           <Row style={{
             flexWrap: "wrap"
-          }} className="color-code-wrapper">
+          }} className="color-code-wrapper"
+          >
             <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
             <ColorBox name="Caribbean Green" R="0" G="211" B="169" colorCode="#00D3A9" />
             <ColorBox name="Casper" R="177" G="182" B="184" colorCode="#B1B6B8" />

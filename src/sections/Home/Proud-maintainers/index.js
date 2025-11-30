@@ -75,7 +75,8 @@ const ProudMaintainers = () => {
         </Col>
         <Col $xs={3} $sm={3} $md={3} $lg={2} className="proj_row_2_col">
           <div className="proj_icon_1">
-            <SMP alt="SMP" /></div>
+            <SMP alt="SMP" />
+          </div>
         </Col>
         <Col $xs={3} $sm={3} $md={3} $lg={2} className="proj_row_2_col">
           <div className="proj_icon_2">

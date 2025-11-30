@@ -160,7 +160,8 @@ const Kubernetes = () => {
           <Col md={4} className="diagram-detail">
             <h2 className="heading">No Code Kubernetes Deployments</h2>
             <p className="caption">
-              Kanvas for Kubernetes empowers anyone to deploy production-ready infrastructure effortlessly. No coding experience? No problem! Kanvas offers all the tools you need to deploy and configure your software on Kubernetes, the top container orchestrator, without writing a single line of code. Perfect for beginners learning the ropes or seasoned professionals seeking streamlined workflows, Kanvas ensures success in deploying and managing your applications on Kubernetes.</p>
+              Kanvas for Kubernetes empowers anyone to deploy production-ready infrastructure effortlessly. No coding experience? No problem! Kanvas offers all the tools you need to deploy and configure your software on Kubernetes, the top container orchestrator, without writing a single line of code. Perfect for beginners learning the ropes or seasoned professionals seeking streamlined workflows, Kanvas ensures success in deploying and managing your applications on Kubernetes.
+            </p>
           </Col>
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
