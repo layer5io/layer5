@@ -15,7 +15,10 @@ import { ReactComponent as MesheryLogoBullet } from "../../../../assets/images/m
 
 const IndividualIntegrations = ({ data, children }) => {
   const { frontmatter } = data.mdx;
-  const screenshotNodes = data.allFile.nodes;
+  // Combine raster and svg screenshots, with fallback to empty arrays
+  const rasterNodes = data.screenshots_raster?.nodes || [];
+  const svgNodes = data.screenshots_svg?.nodes || [];
+  const screenshotNodes = [...rasterNodes, ...svgNodes];
   const finalScreenshots =
     screenshotNodes.length === 0 ? frontmatter.workingSlides : screenshotNodes;
   const awsIntegrations = [
