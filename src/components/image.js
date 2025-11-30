@@ -1,6 +1,30 @@
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 
+/**
+ * Helper to safely extract publicURL from thumbnail objects
+ * Handles _svg fields that MDX might interpret as components
+ */
+export const getSafePublicURL = (thumbnail) => {
+  if (!thumbnail) return null;
+  if (typeof thumbnail === "string") return thumbnail;
+  if (thumbnail.publicURL) return String(thumbnail.publicURL);
+  return null;
+};
+
+/**
+ * Helper to safely prepare thumbnail props for Image component
+ * Use this when passing thumbnail_svg or darkthumbnail_svg to Image
+ */
+export const getSafeThumbnailProps = (thumbnail) => {
+  if (!thumbnail) return null;
+  return {
+    childImageSharp: thumbnail.childImageSharp || null,
+    extension: thumbnail.extension || (getSafePublicURL(thumbnail)?.endsWith(".svg") ? "svg" : null),
+    publicURL: getSafePublicURL(thumbnail),
+  };
+};
+
 const Image = ({ childImageSharp, extension, publicURL, alt, imgStyle, ...rest }) => {
   // Handle null/undefined cases
   if (!publicURL && !childImageSharp) {
@@ -18,7 +42,7 @@ const Image = ({ childImageSharp, extension, publicURL, alt, imgStyle, ...rest }
     return (
       <div className="old-gatsby-image-wrapper" style={{ width: "100%", height: "auto" }}>
         <img
-          src={String(imageUrl)}
+          src={imageUrl}
           alt={alt || "Blog image"}
           width="100%"
           height="auto"

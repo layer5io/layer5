@@ -121,11 +121,19 @@ const SoSpecial = () => {
                   <div id="special-cont_img">
                     {/* {console.log("Dark Thumbnail:", frontmatter.darkthumbnail)}
                     {console.log("Thumbnail:", frontmatter.thumbnail)} */}
-                    <Image
-                      {...(frontmatter.thumbnail || frontmatter.thumbnail_svg)}
-                      imgStyle={{ objectFit: "contain" }}
-                      alt={frontmatter.title}
-                    />
+                    {(() => {
+                      const thumb = frontmatter.thumbnail || frontmatter.thumbnail_svg;
+                      if (!thumb) return null;
+                      return (
+                        <Image
+                          childImageSharp={thumb.childImageSharp}
+                          extension={thumb.extension}
+                          publicURL={thumb.publicURL ? String(thumb.publicURL) : null}
+                          imgStyle={{ objectFit: "contain" }}
+                          alt={frontmatter.title}
+                        />
+                      );
+                    })()}
                     {/* <Image
                       {...((isDark && frontmatter.darkthumbnail && frontmatter.darkthumbnail.publicURL) || frontmatter.thumbnail)}
                       imgStyle={{ objectFit: "contain" }}
