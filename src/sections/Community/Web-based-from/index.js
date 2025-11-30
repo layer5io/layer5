@@ -35,7 +35,7 @@ const validatePictureUrl = (value) => {
         }
       } catch (err) {
         console.error("Error in validatePictureUrl:", err);
-        return "Please enter a URL to an image file.";
+        error = "Please enter a URL to an image file.";
       }
     }
   }
