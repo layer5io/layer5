@@ -61,5 +61,7 @@ const ResourceSinglePage = ({ data, children }) => {
 export default ResourceSinglePage;
 
 export const Head = ({ data }) => {
-  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail?.publicURL || data.mdx.frontmatter.thumbnail_svg?.publicURL} description={data.mdx.frontmatter.description}/>;
+  const image = data.mdx.frontmatter.thumbnail?.publicURL
+    || (data.mdx.frontmatter.thumbnail_svg?.publicURL ? String(data.mdx.frontmatter.thumbnail_svg.publicURL) : null);
+  return <SEO title={data.mdx.frontmatter.title} image={image} description={data.mdx.frontmatter.description} />;
 };

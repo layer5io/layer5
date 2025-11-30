@@ -115,7 +115,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
                             <Image
                               childImageSharp={selectedThumb.childImageSharp}
                               extension={selectedThumb.extension}
-                              publicURL={selectedThumb.publicURL}
+                              publicURL={String(selectedThumb.publicURL)}
                               imgStyle={{ objectFit: "contain" }}
                               alt={frontmatter.title}
                             />

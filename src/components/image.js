@@ -8,7 +8,8 @@ const Image = ({ childImageSharp, extension, publicURL, alt, imgStyle, ...rest }
   }
 
   // Ensure publicURL is a string (not a component or object)
-  const imageUrl = typeof publicURL === "string" ? publicURL : null;
+  // Wrap in String() to prevent MDX from interpreting _svg fields as components
+  const imageUrl = publicURL ? String(publicURL) : null;
 
   // Handle SVG files - check extension or if publicURL ends with .svg
   const isSvg = extension === "svg" || (imageUrl && imageUrl.endsWith(".svg"));
@@ -17,7 +18,7 @@ const Image = ({ childImageSharp, extension, publicURL, alt, imgStyle, ...rest }
     return (
       <div className="old-gatsby-image-wrapper" style={{ width: "100%", height: "auto" }}>
         <img
-          src={imageUrl}
+          src={String(imageUrl)}
           alt={alt || "Blog image"}
           width="100%"
           height="auto"

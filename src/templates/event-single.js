@@ -64,5 +64,7 @@ export default EventSinglePage;
 
 
 export const Head = ({ data }) => {
-  return <SEO title={data.mdx.frontmatter.title} description={data.mdx.frontmatter.description} image={data.mdx.frontmatter.thumbnail?.publicURL || data.mdx.frontmatter.thumbnail_svg?.publicURL} />;
+  const image = data.mdx.frontmatter.thumbnail?.publicURL
+    || (data.mdx.frontmatter.thumbnail_svg?.publicURL ? String(data.mdx.frontmatter.thumbnail_svg.publicURL) : null);
+  return <SEO title={data.mdx.frontmatter.title} description={data.mdx.frontmatter.description} image={image} />;
 };
