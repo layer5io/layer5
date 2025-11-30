@@ -104,16 +104,22 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
                           const darkThumb = frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg;
                           const lightThumb = frontmatter.thumbnail || frontmatter.thumbnail_svg;
                           const useDark = darkThumb && isDark &&
-                            (darkThumb?.publicURL || darkThumb?.publicURL) !== (lightThumb?.publicURL || lightThumb?.publicURL);
+                            darkThumb?.publicURL !== lightThumb?.publicURL;
                           const selectedThumb = useDark ? darkThumb : lightThumb;
 
-                          return selectedThumb ? (
+                          if (!selectedThumb || !selectedThumb.publicURL) {
+                            return null;
+                          }
+
+                          return (
                             <Image
-                              {...selectedThumb}
+                              childImageSharp={selectedThumb.childImageSharp}
+                              extension={selectedThumb.extension}
+                              publicURL={selectedThumb.publicURL}
                               imgStyle={{ objectFit: "contain" }}
                               alt={frontmatter.title}
                             />
-                          ) : null;
+                          );
                         })()}
                       </div>
                       <h5>{frontmatter.program}</h5>

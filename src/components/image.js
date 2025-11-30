@@ -7,14 +7,17 @@ const Image = ({ childImageSharp, extension, publicURL, alt, imgStyle, ...rest }
     return null;
   }
 
-  // Handle SVG files - check extension or if publicURL ends with .svg
-  const isSvg = extension === "svg" || (publicURL && publicURL.endsWith(".svg"));
+  // Ensure publicURL is a string (not a component or object)
+  const imageUrl = typeof publicURL === "string" ? publicURL : null;
 
-  if (!childImageSharp && isSvg && publicURL) {
+  // Handle SVG files - check extension or if publicURL ends with .svg
+  const isSvg = extension === "svg" || (imageUrl && imageUrl.endsWith(".svg"));
+
+  if (!childImageSharp && isSvg && imageUrl) {
     return (
       <div className="old-gatsby-image-wrapper" style={{ width: "100%", height: "auto" }}>
         <img
-          src={publicURL}
+          src={imageUrl}
           alt={alt || "Blog image"}
           width="100%"
           height="auto"
@@ -33,7 +36,7 @@ const Image = ({ childImageSharp, extension, publicURL, alt, imgStyle, ...rest }
   }
 
   return <GatsbyImage
-    key={publicURL}
+    key={imageUrl || "gatsby-image"}
     image={childImageSharp?.gatsbyImageData}
     alt={alt || "Blog image"}
     style={{
