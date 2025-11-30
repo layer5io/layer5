@@ -34,9 +34,6 @@ export const query = graphql`
             imagepath {
               extension
               publicURL
-              childImageSharp {
-                gatsbyImageData(width: 50, layout: CONSTRAINED)
-              }
             }
             name
           }
@@ -62,15 +59,7 @@ export const query = graphql`
         }
     }
 
-  serviceMeshesList: allMdx(
-    filter: {fields: {course: {eq: $course}, pageType: {eq: "chapter"}}}
-  ){
-      nodes {
-        fields {
-          section
-        }
-      }
-    }
+
 }
 `;
 
@@ -89,7 +78,7 @@ const SingleChapter = ({ data, location, children }) => {
 
 
       <SimpleReactLightbox>
-        <Chapters chapterData={data.chapter} TOCData={sortedTOCData} courseData={data.course.nodes[0]} location={location} serviceMeshesList={data.serviceMeshesList.nodes} >
+        <Chapters chapterData={data.chapter} TOCData={sortedTOCData} courseData={data.course.nodes[0]} location={location} serviceMeshesList={data.TOC.nodes} >
           {children}
         </Chapters>
       </SimpleReactLightbox>
