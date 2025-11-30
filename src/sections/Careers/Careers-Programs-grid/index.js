@@ -100,11 +100,27 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
                   >
                     <div className={`program ${sub_section ? "sub-section_program" : ""}`}>
                       <div className={`icon ${sub_section ? "sub-section_icon" : ""}`}>
-                        <Image
-                          {...((frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg) && (isDark && (frontmatter.darkthumbnail?.publicURL || frontmatter.darkthumbnail_svg?.publicURL) !== (frontmatter.thumbnail?.publicURL || frontmatter.thumbnail_svg?.publicURL)) ? (frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg) : (frontmatter.thumbnail || frontmatter.thumbnail_svg))}
-                          imgStyle={{ objectFit: "contain" }}
-                          alt={frontmatter.title}
-                        />
+                        {(() => {
+                          const darkThumb = frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg;
+                          const lightThumb = frontmatter.thumbnail || frontmatter.thumbnail_svg;
+                          const useDark = darkThumb && isDark &&
+                            darkThumb?.publicURL !== lightThumb?.publicURL;
+                          const selectedThumb = useDark ? darkThumb : lightThumb;
+
+                          if (!selectedThumb || !selectedThumb.publicURL) {
+                            return null;
+                          }
+
+                          return (
+                            <Image
+                              childImageSharp={selectedThumb.childImageSharp}
+                              extension={selectedThumb.extension}
+                              publicURL={String(selectedThumb.publicURL)}
+                              imgStyle={{ objectFit: "contain" }}
+                              alt={frontmatter.title}
+                            />
+                          );
+                        })()}
                       </div>
                       <h5>{frontmatter.program}</h5>
                     </div>
@@ -114,7 +130,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
             </Row>
           </div>
           <p>
-          Layer5 is driven by its people, who are the stewards of our culture and principles. Join us on the journey to enabling the world's most innovative companies make the transition to cloud native and multi-cloud through engineering-empowered automation.
+            Layer5 is driven by its people, who are the stewards of our culture and principles. Join us on the journey to enabling the world's most innovative companies make the transition to cloud native and multi-cloud through engineering-empowered automation.
           </p>
 
         </Container>

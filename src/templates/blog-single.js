@@ -59,7 +59,7 @@ const BlogSinglePage = ({ data, children }) => {
 
 
       <SimpleReactLightbox>
-        <BlogSingle  data={data} >
+        <BlogSingle data={data} >
           {children}
         </BlogSingle>
       </SimpleReactLightbox>
@@ -75,9 +75,9 @@ export default BlogSinglePage;
 export const Head = ({ data }) => {
   const { frontmatter } = data.mdx;
   const image = frontmatter.thumbnail?.publicURL
-    || frontmatter.thumbnail_svg?.publicURL
+    || (frontmatter.thumbnail_svg?.publicURL ? String(frontmatter.thumbnail_svg.publicURL) : null)
     || frontmatter.darkthumbnail?.publicURL
-    || frontmatter.darkthumbnail_svg?.publicURL;
+    || (frontmatter.darkthumbnail_svg?.publicURL ? String(frontmatter.darkthumbnail_svg.publicURL) : null);
 
   return <SEO title={frontmatter.title} image={image} description={frontmatter.description} />;
 };

@@ -29,11 +29,19 @@ const Card = ({ frontmatter, fields }) => {
       <Link className="anchor" to={fields.slug}>
         <div className="post-block">
           <div className="post-thumb-block">
-            <Image
-              {...(frontmatter.thumbnail || frontmatter.thumbnail_svg)}
-              imgStyle={{ objectFit: "cover" }}
-              alt={frontmatter.title}
-            />
+            {(() => {
+              const thumb = frontmatter.thumbnail || frontmatter.thumbnail_svg;
+              if (!thumb) return null;
+              return (
+                <Image
+                  childImageSharp={thumb.childImageSharp}
+                  extension={thumb.extension}
+                  publicURL={thumb.publicURL ? String(thumb.publicURL) : null}
+                  imgStyle={{ objectFit: "cover" }}
+                  alt={frontmatter.title}
+                />
+              );
+            })()}
           </div>
           <div className="post-content-block">
             <h2 className="post-title">
