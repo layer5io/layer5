@@ -15,6 +15,7 @@ module.exports = {
   flags: {
     FAST_DEV: true,
     PARALLEL_SOURCING: false, // Disable parallel sourcing to reduce memory pressure
+    DEV_SSR: false,
   },
   trailingSlash: "never",
   plugins: [
@@ -78,6 +79,7 @@ module.exports = {
         svgoConfig: {
           plugins: [
             "prefixIds",
+            "removeDimensions",
             {
               name: "preset-default",
               params: {
@@ -85,6 +87,7 @@ module.exports = {
                   // or disable plugins
                   inlineStyles: false,
                   cleanupIds: false,
+                  removeViewBox: false,
                 },
               },
             },
@@ -108,8 +111,8 @@ module.exports = {
             }
             allMdx(
               sort: {frontmatter: {date: DESC}}
-              limit: 1000
-              filter: { frontmatter: { published: { eq: true } } }
+              limit: ${process.env.NODE_ENV === "development" ? 25 : 1000}
+              filter: { frontmatter: { published: { eq: true }${process.env.NODE_ENV === "development" ? ", date: { gte: \"2024-01-01\" }" : ""} } }
             ) {
               nodes {
                 html 
@@ -352,10 +355,6 @@ module.exports = {
       options: {
         extensions: [".mdx", ".md"],
         gatsbyRemarkPlugins: [],
-        mdxOptions: {
-          remarkPlugins: [],
-          rehypePlugins: [],
-        },
       },
     },
     {
@@ -365,6 +364,8 @@ module.exports = {
         name: "collections",
       },
     },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {

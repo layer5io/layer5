@@ -14,7 +14,7 @@ import daprStream from "../../../../src/assets/images/learning-path/dapr/stream.
 <ChapterStyle>
 In this chapter, we will explore how Dapr utilizes its [API constructs](https://docs.dapr.io/concepts/building-blocks-concept/) to facilitate communication and manage the state of application data within this architecture by observing the container logs.
 
-<h3 class="chapter-sub-heading">Python Application Logs</h3>
+<h3 className="chapter-sub-heading">Python Application Logs</h3>
 
 The Python application code above generates messages that contain data with an **orderId** that increments once per second.
 
@@ -59,7 +59,7 @@ The Python app does not need to know the exact address or port of the Node.js se
 The logs show the daprd container logs with a POST request made to **/neworder** endpoint.
 
 
-<h3 class="chapter-sub-heading">Node.js Application Logs</h3>
+<h3 className="chapter-sub-heading">Node.js Application Logs</h3>
 
 Follow the same steps above to get the logs for the Node.js application. The logs show API calls made to the state store for persisting order data.
 

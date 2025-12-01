@@ -21,5 +21,6 @@ export default MesheryMainPage;
 export const Head = () => {
   return <SEO title="Meshery Getting Started"
     description="How to get started with cloud native management. Adopting and operating your cloud native infrastructure."
-    image="/images/meshery-logo-dark-text.webp" />;
+    image="/images/meshery-logo-dark-text.webp"
+  />;
 };

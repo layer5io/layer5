@@ -470,7 +470,8 @@ const Writers = () => {
                 <p>
                   For those comfortable with local website development,
                   contribute directly to the community website. <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">Set up your
-                  local environment</a>, create a blog post adhering to specified
+                  local environment
+                  </a>, create a blog post adhering to specified
                   guidelines, and submit it via a Pull Request on <a href="https://github.com/layer5io/layer5/">GitHub</a>.
                   Reviewers will provide feedback, and you'll refine your post
                   collaboratively. Upon completion, maintainers will

@@ -10,7 +10,7 @@ import IndividualIntegrations from "../sections/Meshery/Meshery-integrations/Ind
 export const query = graphql`
   query IntegrationsBySlug($slug: String!, $name: String!) {
     mdx(fields:{slug:{eq: $slug}}) {
-      body
+
       frontmatter {
         title
         subtitle
@@ -19,9 +19,6 @@ export const query = graphql`
         integrationIcon {
           extension
           publicURL
-          childImageSharp {
-            gatsbyImageData(width: 500, layout: CONSTRAINED)
-          }
         }
         docURL
         category
@@ -30,16 +27,10 @@ export const query = graphql`
           colorIcon {
             extension
             publicURL
-            childImageSharp {
-              gatsbyImageData(width: 500, layout: CONSTRAINED)
-            }
           }
           whiteIcon {
             extension
             publicURL
-            childImageSharp {
-              gatsbyImageData(width: 500, layout: CONSTRAINED)
-            }
           }
           description
         }
@@ -53,8 +44,8 @@ export const query = graphql`
         }
       }
     }
-    allFile(
-      filter: {relativeDirectory: {eq: $name}, sourceInstanceName: {eq: "integrations"}}
+    screenshots_raster: allFile(
+      filter: {relativeDirectory: {eq: $name}, sourceInstanceName: {eq: "integrations"}, extension: {ne: "svg"}}
     ) {
       nodes {
         extension
@@ -64,9 +55,17 @@ export const query = graphql`
         }
       }
     }
+    screenshots_svg: allFile(
+      filter: {relativeDirectory: {eq: $name}, sourceInstanceName: {eq: "integrations"}, extension: {eq: "svg"}}
+    ) {
+      nodes {
+        extension
+        publicURL
+      }
+    }
   }
 `;
-const Integrations = ({ data }) => {
+const Integrations = ({ data, children }) => {
 
 
   return (
@@ -74,7 +73,9 @@ const Integrations = ({ data }) => {
     <>
 
 
-      <IndividualIntegrations  data={data} />
+      <IndividualIntegrations  data={data} >
+        {children}
+      </IndividualIntegrations>
 
     </>
 

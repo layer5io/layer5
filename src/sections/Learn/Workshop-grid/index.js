@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import WorkshopCard from "../../../components/Workshop-Card";
 import PageHeader from "../../../reusecore/PageHeader";
 import { WorkshopPageWrapper } from "./WorkshopsGrid.style";
-import { BsArrowDown } from "@react-icons/all-files/bs/BsArrowDown";
-import { BsArrowUp } from "@react-icons/all-files/bs/BsArrowUp";
+
+import { BsArrowRight } from "@react-icons/all-files/bs/BsArrowRight";
 import Slack from "../../../assets/images/socialIcons/slack-light.svg";
 import Button from "../../../reusecore/Button";
 import WorkshopImage from "../../../assets/images/workshops/workshops.svg";
@@ -14,10 +14,6 @@ import { FaRegWindowMaximize } from "@react-icons/all-files/fa/FaRegWindowMaximi
 
 
 const WorkshopsPage = () => {
-
-  const [content, setContent] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [ID, setID] = useState("");
 
   const data = useStaticQuery(
     graphql`query allWorkshops {
@@ -28,7 +24,6 @@ const WorkshopsPage = () => {
     nodes {
       id
       
-      body
       frontmatter {
         title
         date(formatString: "MMMM Do, YYYY")
@@ -55,25 +50,47 @@ const WorkshopsPage = () => {
 }`
   );
 
+  const scrollRefMap = useRef({});
+  const [open, setOpen] = useState(false);
+  const [content, setContent] = useState(false);
+  const [ID, setID] = useState("");
+
   const toggleActive = (id) => {
-    if (open){
-      if (ID === id){
-        setOpen(false);
-        setContent(false);
-        setID("");
-      } else {
-        setOpen(false);
-        setContent(false);
-        setID(id);
-        setContent(true);
-        setOpen(true);
+    const targetElement = scrollRefMap.current[id];
+
+    if (open && ID === id) {
+      setOpen(false);
+      setContent(false);
+      setID("");
+
+      if (targetElement) {
+        // Wait for DOM to collapse, then scroll
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            const rect = targetElement.getBoundingClientRect();
+            const y = rect.top + window.scrollY; // adjust for header
+            window.scrollTo({
+              top: y,
+              behavior: "smooth",
+            });
+          });
+        });
       }
     } else {
+      if (targetElement) {
+        const rect = targetElement.getBoundingClientRect();
+        const y = rect.top + window.scrollY - 20;
+        window.scrollTo({
+          top: y,
+          behavior: "smooth",
+        });
+      }
       setID(id);
       setContent(true);
       setOpen(true);
     }
   };
+
 
   return (
     <WorkshopPageWrapper>
@@ -85,29 +102,31 @@ const WorkshopsPage = () => {
             <Row style={{
               flexWrap: "wrap"
             }}>
-              {data.allMdx.nodes.map(({ id, frontmatter, fields, body }) => (
+              {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
                 <Col {...content && ID === id ? { $xs: 12, $sm: 12, $lg: 12 } : { $xs: 12, $sm: 6, $lg: 4 } } key={id} className="workshop-grid-col">
-                  <div className="workshop-grid-card">
+                  <div className="workshop-grid-card" ref={(el) => {
+                    if (el) scrollRefMap.current[id] = el;
+                  }} onClick={() => toggleActive(id)}
+                  >
                     <WorkshopCard frontmatter={frontmatter} content={content} ID={ID} id={id} />
                     <div className={content && ID === id ? "active" : "text-contents"}>
                       <div className="content">
-                        <MDXRenderer>{body}</MDXRenderer>
+                        <p>{frontmatter.abstract}</p>
                       </div>
                     </div>
                     <div className={content && ID === id ? "btn-and-status-open" : "btn-and-status"}>
                       <div className="social-icons">
-                        {frontmatter.slack && frontmatter.status === "delivered" && content && ID === id ?
+                        {frontmatter.slack && frontmatter.status === "delivered" ?
                           <a href={frontmatter.slack} target = "_blank" rel="noreferrer" className="links">
                             <img src={Slack} alt="Slack"/>
                                                         Slack
                           </a> : ""}
                       </div>
-                      <div className={content && ID === id ? "linkAndReadBtns-open" : "linkAndReadBtns"}>
+                      <div className="linkAndReadBtns">
                         <div className="expand">
-                          {content && ID === id ?
-                            <button onClick={() => toggleActive(id)} className="readmeBtn"> Read Less <BsArrowUp className="icon" size={30} /></button> :
-                            <button onClick={() => toggleActive(id)} className="readmeBtn readmreBtn"> Read More <BsArrowDown className="icon" size={30} /></button> }
+                          <Link to={fields.slug} className="readmeBtn readmreBtn"> Read More <BsArrowRight className="icon" size={30} /></Link>
                         </div>
+
                         <div className="externalLink">
                           <Link to={fields.slug} className="siteLink"><FaRegWindowMaximize style={{ height: "25px", width: "auto" }} /></Link>
                         </div>
@@ -119,7 +138,8 @@ const WorkshopsPage = () => {
             </Row>
             <Row style={{
               flexDirection: "column"
-            }} className="rqst-workshop">
+            }} className="rqst-workshop"
+            >
               <img src={WorkshopImage} alt="WorkshopImage" className="bottom-image" />
               <Button $primary $url="mailto:support@layer5.io" $external={true}>
                                 Request A Workshop
