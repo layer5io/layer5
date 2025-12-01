@@ -79,6 +79,7 @@ module.exports = {
         svgoConfig: {
           plugins: [
             "prefixIds",
+            "removeDimensions",
             {
               name: "preset-default",
               params: {
@@ -86,6 +87,7 @@ module.exports = {
                   // or disable plugins
                   inlineStyles: false,
                   cleanupIds: false,
+                  removeViewBox: false,
                 },
               },
             },
