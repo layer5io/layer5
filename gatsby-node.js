@@ -771,6 +771,8 @@ exports.createSchemaCustomization = ({ actions }) => {
        community_manager: String,
        docURL: String,
        permalink: String,
+       slug: String,
+       redirect_from: [String]
      }
    `;
   createTypes(typeDefs);
