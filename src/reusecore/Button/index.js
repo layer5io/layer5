@@ -16,7 +16,8 @@ const Button = ({
   const initalButton =
     <BtnStyle
       className={addClasses.join(" ")} {...props}
-      onClick={props.onClick}>
+      onClick={props.onClick}
+    >
       {children}
       {props.icon ? <img src={props.icon} alt={props.title} /> : <> </>}
       {props.title}

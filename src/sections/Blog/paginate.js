@@ -74,7 +74,8 @@ const Paginate = ({ pageContext,isListView }) => {
                 number === currentPage
                   ? "btn active-btn"
                   : "btn page-btn"
-              }>
+              }
+            >
               {number}
             </button>
 

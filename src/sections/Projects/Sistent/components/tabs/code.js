@@ -414,7 +414,8 @@ const SistentTabsCode = () => {
                   border: 1,
                   borderColor: "divider",
                   borderRadius: 1
-                }}>
+                }}
+                >
                   <Tabs
                     orientation="vertical"
                     variant="scrollable"
