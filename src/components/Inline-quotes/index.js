@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 
 const QuotesWrapper = styled.div`

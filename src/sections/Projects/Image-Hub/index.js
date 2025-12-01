@@ -37,7 +37,8 @@ const ImageHubPage = () => {
                 Learn how to use Docker Desktop and Kubernetes as your development platforms of choice in combination with Meshery, the cloud native management plane, to easily deploy a service mesh. Using Consul and Envoy's latest capabilities, see how WASM can be used to move user authentication and authorization from your application to the infrastructure.
               </p>
               <iframe className="iframe-div" width="800px" height="400px" src="https://www.youtube.com/embed/5BrbbKZOctw" loading="lazy"
-                frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
+                frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen
+              >
               </iframe>
             </div>
           </Container>
@@ -67,7 +68,8 @@ const ImageHubPage = () => {
           <div className="contributors">
             <h1>Contributors</h1>
             <p>This demo application has been enabled by experimental works of Nic Jackson of HashiCorp, and Kanishkar J, Lee Calcote, and other contributors of Layer5.
-              Learn more about the Layer5 and HashiCorp Partnership.</p>
+              Learn more about the Layer5 and HashiCorp Partnership.
+            </p>
             <VintageBox $right={true} $vintageOne={true}>
               <Button className="margin4" $primary title="Layer5 and HashiCorp" $url="/partners"></Button>
               &nbsp;
