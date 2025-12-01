@@ -16,7 +16,7 @@ export const query = graphql`
       }
     ) {
       nodes {
-        body
+
         frontmatter {
           courseTitle
           description
@@ -24,19 +24,19 @@ export const query = graphql`
           toc
 
           cardImage {
+            extension
+            publicURL
             childImageSharp {
               gatsbyImageData(width: 200, layout: CONSTRAINED)
             }
-            extension
-            publicURL
           }
           meshesYouLearn {
             imagepath {
+              extension
+              publicURL
               childImageSharp {
                 gatsbyImageData(width: 50, layout: CONSTRAINED)
               }
-              extension
-              publicURL
             }
             name
           }
@@ -83,7 +83,7 @@ export const query = graphql`
       }
   }
 `;
-const CourseOverviewTemplate = ({ data }) => {
+const CourseOverviewTemplate = ({ data, children }) => {
 
 
   return (
@@ -97,7 +97,9 @@ const CourseOverviewTemplate = ({ data }) => {
           chapters={data.courseChapters.nodes}
           serviceMeshesList={data.serviceMeshesList.nodes}
           canonical="https://layer5.io/learn/learning-paths"
-        />
+        >
+          {children}
+        </CourseOverview>
       </SimpleReactLightbox>
 
     </>

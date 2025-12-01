@@ -8,7 +8,7 @@ import NewsSingle from "../sections/Company/News-single";
 export const query = graphql`
   query NewsBySlug($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
-      body
+
       frontmatter {
         title
         subtitle
@@ -18,16 +18,24 @@ export const query = graphql`
         description
         presskit
         thumbnail {
+          extension
+          publicURL
           childImageSharp {
             gatsbyImageData(width: 500, layout: CONSTRAINED)
           }
+        }
+        thumbnail_svg {
           extension
           publicURL
         }
         darkthumbnail {
+          extension
+          publicURL
           childImageSharp {
             gatsbyImageData(width: 500, layout: CONSTRAINED)
           }
+        }
+        darkthumbnail_svg {
           extension
           publicURL
         }
@@ -39,10 +47,12 @@ export const query = graphql`
   }
 `;
 
-const NewsSinglePage = ({ data }) => {
+const NewsSinglePage = ({ data, children }) => {
   return (
     <>
-      <NewsSingle data={data} />
+      <NewsSingle data={data} >
+        {children}
+      </NewsSingle>
     </>
   );
 };
@@ -53,7 +63,7 @@ export const Head = ({ data }) => {
   return (
     <SEO
       title={data.mdx.frontmatter.title}
-      image={data.mdx.frontmatter.thumbnail.publicURL}
+      image={data.mdx.frontmatter.thumbnail?.publicURL || data.mdx.frontmatter.thumbnail_svg?.publicURL}
       description={data.mdx.frontmatter.description}
     />
   );

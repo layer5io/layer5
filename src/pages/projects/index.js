@@ -13,11 +13,11 @@ export const query = graphql`query allProjects {
       frontmatter {
         title
         thumbnail {
+          extension
+          publicURL
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
-          extension
-          publicURL
         }
       }
       fields {
@@ -35,6 +35,7 @@ const ProjectGridPage = ({ data }) => {
 export default ProjectGridPage;
 export const Head = () => {
   return <SEO title="Innovative Cloud Native Projects"
-    description="Layer5, empowerer of engineers. Layer5 is the maker of Meshery, Service Mesh Performance, Service Mesh Interface, and Nighthawk. At Layer5, we believe collaboration enables innovation, and infrastructure enables collaboration."
-    image="/images/Layer5-overview.svg" />;
+    description="Layer5, empowerer of engineers. Layer5 is the maker of Meshery, Kanvas, and Nighthawk. At Layer5, we believe collaboration enables innovation, and infrastructure enables collaboration."
+    image="/images/Layer5-overview.svg"
+  />;
 };

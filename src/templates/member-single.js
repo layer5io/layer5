@@ -21,18 +21,18 @@ export const query = graphql`query MemberBySlug($slug: String!) {
       bio
       executive_bio
       image_path {
+        extension
+        publicURL
         childImageSharp {
           gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
-        extension
-        publicURL
       }
     }
   }
 }
 `;
 
-const MemberSinglePage = ({ data }) => {
+const MemberSinglePage = ({ data, children }) => {
 
 
   return (
@@ -42,7 +42,9 @@ const MemberSinglePage = ({ data }) => {
 
       <MemberSingle
         frontmatter={data.mdx.frontmatter}
-      />
+      >
+        {children}
+      </MemberSingle>
 
     </>
 

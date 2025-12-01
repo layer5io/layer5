@@ -6,7 +6,7 @@ import argocd from "../../../collections/integrations/argo-cd/icons/color/argo-c
 import certmanager from "../../../collections/integrations/cert-manager/icons/color/cert-manager-color.svg";
 import cilium from "../../../collections/integrations/cilium/icons/color/cilium-color.svg";
 import prometheus from "../../../collections/integrations/prometheus/icons/color/prometheus-color.svg";
-import kubernetes from "../../../collections/integrations/kubernetes/icons/color/kubernetes-color.svg";
+import kubernetes from "../../../assets/images/kubernetes/kubernetes-color.svg";
 import keda from "../../../collections/integrations/keda/icons/color/keda-color.svg";
 import linkerd from "../../../collections/integrations/linkerd/icons/color/linkerd-color.svg";
 import istio from "../../../collections/integrations/istio-base/icons/color/istio-base-color.svg";
@@ -23,7 +23,7 @@ import flux from "../../../collections/integrations/flux/icons/color/flux-color.
 import harbor from "../../../collections/integrations/harbor-operator/icons/color/harbor-operator-color.svg";
 import helm from "../../../collections/integrations/helm-controller/icons/color/helm-controller-color.svg";
 import kubeedge from "../../../collections/integrations/kubegems-edge/icons/color/kubegems-edge-color.svg";
-import opa from "../../../collections/integrations/open-policy-agent-(opa)/icons/color/open-policy-agent-(opa)-color.svg";
+import opa from "../../../assets/images/kanvas/opa.svg";
 import rook from "../../../collections/integrations/rook/icons/color/rook-color.svg";
 import spiffe from "../../../collections/integrations/spiffe/icons/color/spiffe-color.svg";
 import spire from "../../../collections/integrations/spire/icons/color/spire-color.svg";
@@ -106,7 +106,7 @@ const ViewsSectionWrapper = styled.div`
       /* max-width: 90%; */
       padding-bottom: 2%;
     }
-  }
+  
 
   h4 {
       max-width: 90%;
@@ -215,7 +215,8 @@ const ViewsSectionWrapper = styled.div`
       height:150px;
       padding: 2rem;
       box-sizing: border-box;
-      background-color: ${(props) => props.theme.backgroundColor}; 
+      background-color: ${(props) => props.theme.backgroundColor};
+      color: ${(props) => props.theme.whiteEightToBlack}; 
       margin-bottom: 1rem; 
       border-radius: 1rem;
       //box-shadow: ${(props) => props.theme.boxShadowGreen00D3A9ToBlackTwoFive};
@@ -233,6 +234,7 @@ const ViewsSectionWrapper = styled.div`
     .box .boxText {
       margin-top: 1rem;
       text-align: center;
+      color: ${(props) => props.theme.whiteEightToBlack};
     }
 
     @media only screen and (max-width: 700px) {

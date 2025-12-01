@@ -20,18 +20,18 @@ export const query = graphql`query allNews {
         category
         eurl
         thumbnail {
+          extension
+          publicURL
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
-          extension
-          publicURL
         }
         darkthumbnail {
+          extension
+          publicURL
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
-          extension
-          publicURL
         }
       }
       fields {
@@ -53,5 +53,6 @@ const NewsGridPage = ({ data }) => {
 export default NewsGridPage;
 export const Head = () => {
   return <SEO title="News" description="News and press about Layer5, the cloud native management company.
-    Layer5 the company behind industry-leading, open source software." />;
+    Layer5 the company behind industry-leading, open source software."
+  />;
 };

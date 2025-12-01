@@ -9,7 +9,7 @@ import Slider from "react-slick";
 
 const settings = {
   initialSlide: 1,
-  lazyLoad: true,
+  lazyLoad: false,
   arrows: false,
   dots: false,
   infinite: true,

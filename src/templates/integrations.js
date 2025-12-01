@@ -10,16 +10,13 @@ import IndividualIntegrations from "../sections/Meshery/Meshery-integrations/Ind
 export const query = graphql`
   query IntegrationsBySlug($slug: String!, $name: String!) {
     mdx(fields:{slug:{eq: $slug}}) {
-      body
+
       frontmatter {
         title
         subtitle
         howItWorks
         howItWorksDetails
         integrationIcon {
-          childImageSharp {
-            gatsbyImageData(width: 500, layout: CONSTRAINED)
-          }
           extension
           publicURL
         }
@@ -28,16 +25,10 @@ export const query = graphql`
         components {
           name
           colorIcon {
-            childImageSharp {
-              gatsbyImageData(width: 500, layout: CONSTRAINED)
-            }
             extension
             publicURL
           }
           whiteIcon {
-            childImageSharp {
-              gatsbyImageData(width: 500, layout: CONSTRAINED)
-            }
             extension
             publicURL
           }
@@ -45,28 +36,36 @@ export const query = graphql`
         }
         featureList
         workingSlides {
+          extension
+          publicURL
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
-          extension
-          publicURL
         }
       }
     }
-    allFile(
-      filter: {relativeDirectory: {eq: $name}, sourceInstanceName: {eq: "integrations"}}
+    screenshots_raster: allFile(
+      filter: {relativeDirectory: {eq: $name}, sourceInstanceName: {eq: "integrations"}, extension: {ne: "svg"}}
     ) {
       nodes {
+        extension
+        publicURL
         childImageSharp {
           gatsbyImageData(layout: FULL_WIDTH)
         }
+      }
+    }
+    screenshots_svg: allFile(
+      filter: {relativeDirectory: {eq: $name}, sourceInstanceName: {eq: "integrations"}, extension: {eq: "svg"}}
+    ) {
+      nodes {
         extension
         publicURL
       }
     }
   }
 `;
-const Integrations = ({ data }) => {
+const Integrations = ({ data, children }) => {
 
 
   return (
@@ -74,7 +73,9 @@ const Integrations = ({ data }) => {
     <>
 
 
-      <IndividualIntegrations  data={data} />
+      <IndividualIntegrations  data={data} >
+        {children}
+      </IndividualIntegrations>
 
     </>
 

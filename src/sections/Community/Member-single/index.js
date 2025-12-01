@@ -26,7 +26,7 @@ import KanvasLogo from "../../../assets/images/kanvas/icon-only/kanvas-icon-colo
 import Button from "../../../reusecore/Button";
 import { ReactComponent as TwitterIcon } from "../../../assets/images/socialIcons/twitter.svg";
 
-const MemberSingle = ({ frontmatter }) => {
+const MemberSingle = ({ frontmatter, children }) => {
   const {
     name,
     position,
@@ -46,7 +46,7 @@ const MemberSingle = ({ frontmatter }) => {
     <MemberSingleWrapper>
       <Container>
         <div>
-          <Row>
+          <Row className="profile-header" >
             <Col xs={12} sm={12} lg={6}>
               <div className="backBtn">
                 <Link to="/community/members">
@@ -59,8 +59,8 @@ const MemberSingle = ({ frontmatter }) => {
               <h1 className="page-heading">Layer5 Community Member</h1>
             </Col>
           </Row>
-          <Row>
-            <Col $xs={12} $sm={12} $lg={6}>
+          <Row className="member-details">
+            <Col $xs={12} $sm={12} $lg={6} className="profile-image-col">
               <Image
                 className={
                   status.includes("Inactive")
@@ -77,7 +77,7 @@ const MemberSingle = ({ frontmatter }) => {
                 <div className="name">{name}</div>
                 {position && <div className="position">{position}</div>}
               </div>
-              <div className="body">
+              <div className="info-body">
                 {location && (
                   <div className="text location">
                     <span className="bold">{location}</span>
@@ -302,6 +302,7 @@ const MemberSingle = ({ frontmatter }) => {
                   </div>
                 )}
                 {bio && <div className="text bio">{bio}</div>}
+                {children}
               </div>
               <div className="social-bg">
                 <ul className="profile-social-links">

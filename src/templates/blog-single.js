@@ -11,7 +11,7 @@ import BlogSingle from "../sections/Blog/Blog-single";
 import SimpleReactLightbox from "simple-react-lightbox";
 export const query = graphql`query BlogsBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
-    body
+
     frontmatter {
       title
       subtitle
@@ -21,16 +21,24 @@ export const query = graphql`query BlogsBySlug($slug: String!) {
       category
       tags
       thumbnail {
+        extension
+        publicURL
         childImageSharp {
           gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
+      }
+      darkthumbnail {
+        extension
+        publicURL
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED)
+        }
+      }
+      thumbnail_svg {
         extension
         publicURL
       }
-      darkthumbnail {
-        childImageSharp {
-          gatsbyImageData(width: 500, layout: CONSTRAINED)
-        }
+      darkthumbnail_svg {
         extension
         publicURL
       }
@@ -42,7 +50,7 @@ export const query = graphql`query BlogsBySlug($slug: String!) {
 }
 `;
 
-const BlogSinglePage = ({ data }) => {
+const BlogSinglePage = ({ data, children }) => {
 
 
   return (
@@ -51,7 +59,9 @@ const BlogSinglePage = ({ data }) => {
 
 
       <SimpleReactLightbox>
-        <BlogSingle  data={data} />
+        <BlogSingle  data={data} >
+          {children}
+        </BlogSingle>
       </SimpleReactLightbox>
 
     </>
@@ -63,5 +73,11 @@ export default BlogSinglePage;
 
 
 export const Head = ({ data }) => {
-  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} description={data.mdx.frontmatter.description} />;
+  const { frontmatter } = data.mdx;
+  const image = frontmatter.thumbnail?.publicURL
+    || frontmatter.thumbnail_svg?.publicURL
+    || frontmatter.darkthumbnail?.publicURL
+    || frontmatter.darkthumbnail_svg?.publicURL;
+
+  return <SEO title={frontmatter.title} image={image} description={frontmatter.description} />;
 };

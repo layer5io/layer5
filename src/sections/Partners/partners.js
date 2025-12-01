@@ -1,7 +1,6 @@
 import React from "react";
 import partner1 from "../../assets/images/partners/University_of_Texas_at_Austin_seal.webp";
 import partner2 from "../../assets/images/partners/gsoc.svg";
-import partner3 from "../../assets/images/partners/UEM_Logo.webp";
 import { ReactComponent as Partner4 } from "../../assets/images/partners/citrix-colorMode.svg";
 import { ReactComponent as Partner5 } from "../../assets/images/partners/cncf-stacked-colorMode.svg";
 import { ReactComponent as Partner6 } from "../../assets/images/partners/hashicorp_vertical-colorMode.svg";
@@ -15,6 +14,7 @@ import { ReactComponent as Partner12 } from "../../assets/images/partners/vmware
 
 import { ReactComponent as Partner14 } from "../../assets/images/partners/metabit-trading-logo-colorMode.svg";
 import { ReactComponent as Partner15 } from "../../assets/images/partners/docker.svg";
+import { ReactComponent as Partner16 } from "../../assets/images/partners/digitalocean.svg";
 
 export const partners = [
   {
@@ -35,15 +35,6 @@ export const partners = [
     imageLink: partner2,
     imageRoute: "https://layer5.io/programs/gsoc",
     moreInfo: "Google Summer of Code is a global program focused on bringing more student developers into open source software development. Students work with an open source organization on a 3 month programming project during their break from school. Learn more about our mentoring",
-  }, {
-    name: "University of Engineering & Management Jaipur",
-    desc: "We have officially partnered with the University of Engineering & Management (UEM), Jaipur. We thank the faculty of UEM Jaipur for partnering with us. As part of the partnership program we have a wide variety of interns from the university participating in our open source projects. The interns have the opportunity to work on a variety of cloud native technologies.Based on the area of their individual interest they can choose the technologies they want to learn or sharpen their skills. Learn more about Layer5's internships",
-    //link: "/careers/internships",
-    type: "academic",
-    imageLink: partner3,
-    partnerId: "uem",
-    //imageRoute: "https://uem.edu.in/blog/what-is-open-source/",
-    moreInfo: "We have officially partnered with the University of Engineering & Management (UEM), Jaipur. We thank the faculty of UEM Jaipur for partnering with us. As part of the partnership program we have a wide variety of interns from the university participating in our open source projects. The interns have the opportunity to work on a variety of cloud native technologies.Based on the area of their individual interest they can choose the technologies they want to learn or sharpen their skills. Learn more about Layer5's internships",
   }, {
     name: "Citrix",
     desc: "Citrix ADC is an application delivery and load balancing solution that provides a high-quality user experience for your web, traditional, and cloud-native applications regardless of where they are hosted. It comes in a wide variety of form factors and deployment options without locking you into a single cloud. Pooled capacity licensing enables the movement of capacity among cloud deployments.",
@@ -140,5 +131,15 @@ export const partners = [
     partnerId: "docker",
     desc: "Layer5 and Docker have partnered together to bring Kubernetes and cloud native management capabilities to the Docker platform through Meshery. As part of the partnership, Layer5 has joined the Docker Extension Program, enabling users to easily deploy and manage cloud native infrastructure within their Docker environments. With this collaboration, developers can leverage the power of both Docker and Layer5's expertise in service mesh technologies to enhance their containerized applications' performance, security, and observability. By integrating Meshery with Docker, users gain seamless access to advanced features for managing complex microservices architectures effectively.",
     moreInfo: "Layer5 and Docker have partnered together to bring Kubernetes and cloud native management capabilities to the Docker platform through Meshery. As part of the partnership, Layer5 has joined the Docker Extension Program, enabling users to easily deploy and manage cloud native infrastructure within their Docker environments. With this collaboration, developers can leverage the power of both Docker and Layer5's expertise in cloud native technologies to enhance their containerized applications' performance, security, and observability. By integrating Meshery with Docker, users gain seamless access to advanced features for managing complex microservices architectures effectively."
+  },{
+    name: "DigitalOcean",
+    desc: "DigitalOcean is a cloud infrastructure provider that simplifies cloud computing for developers by offering scalable and easy-to-use cloud services.",
+    //link: null,
+    type: "technology",
+    imageLink: <Partner16 alt="DigitalOcean" />,
+    partnerId: "digitalocean",
+    //imageRoute: "https://www.digitalocean.com/",
+    moreInfo:
+    "DigitalOcean provides cloud computing solutions designed for developers, startups, and businesses. Their platform includes virtual machines, databases, scalable storage, and networking features with a focus on simplicity, performance, and predictable pricing.",
   }
 ];

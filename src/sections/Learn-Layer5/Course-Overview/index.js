@@ -8,13 +8,13 @@ import { IoDocumentTextOutline, } from "@react-icons/all-files/io5/IoDocumentTex
 import { IoChevronBackOutline } from "@react-icons/all-files/io5/IoChevronBackOutline";
 import Button from "../../../reusecore/Button";
 import ChapterCard from "../../../components/Learn-Components/Chapter-Card";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+
 import { SRLWrapper } from "simple-react-lightbox";
 import DiscussCallout from "../../Discuss-Callout";
 import SubscribeLearnPath from "../../subscribe/SubscribeLearnPath";
 import BookmarkNotification from "../../../components/Learn-Components/BookmarkNotification";
 
-const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
+const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
 
   const extractedSection = (chapters.length > 0 ? chapters[0].fields.section : "");
   const [hasBookmark, setHasBookmark] = useState(false);
@@ -88,7 +88,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
           </div>
           <Button
             title={hasBookmark ? "Start Again" : "Get Started"}
-            $url={`istio/${course.frontmatter.toc[0]}`}
+            $url={`${extractedSection}/${course.frontmatter.toc[0]}`}
           />
           {hasBookmark && (
             <Button
@@ -110,7 +110,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
           <Col $md={12} $lg={8} $xl={7}>
             <h2 className="overview">Overview</h2>
             <SRLWrapper>
-              <MDXRenderer>{course.body}</MDXRenderer>
+              {children}
             </SRLWrapper>
             <h2 className="course-toc">Table Of Contents</h2>
             {course.frontmatter.toc.map((item, index) => (

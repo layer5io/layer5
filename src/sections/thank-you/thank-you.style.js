@@ -11,7 +11,7 @@ const SubscribeWrapper = styled.div`
         width: 100%;
         text-align: center;
     }
-    h2 span{
+    .parentcard h2 span{
         color:${props => props.theme.secondaryColor};
     }
     

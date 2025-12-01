@@ -11,7 +11,7 @@ import ResourceSingle from "../sections/Resources/Resource-single";
 import SimpleReactLightbox from "simple-react-lightbox";
 export const query = graphql`query ResourcesBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
-    body
+
     frontmatter {
       title
       subtitle
@@ -21,9 +21,13 @@ export const query = graphql`query ResourcesBySlug($slug: String!) {
       tags
       description
       thumbnail {
+        extension
+        publicURL
         childImageSharp {
           gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
+      }
+      thumbnail_svg {
         extension
         publicURL
       }
@@ -35,7 +39,7 @@ export const query = graphql`query ResourcesBySlug($slug: String!) {
 }
 `;
 
-const ResourceSinglePage = ({ data }) => {
+const ResourceSinglePage = ({ data, children }) => {
 
 
   return (
@@ -44,7 +48,9 @@ const ResourceSinglePage = ({ data }) => {
 
 
       <SimpleReactLightbox>
-        <ResourceSingle data={data} />
+        <ResourceSingle data={data} >
+          {children}
+        </ResourceSingle>
       </SimpleReactLightbox>
 
     </>
@@ -55,5 +61,5 @@ const ResourceSinglePage = ({ data }) => {
 export default ResourceSinglePage;
 
 export const Head = ({ data }) => {
-  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} description={data.mdx.frontmatter.description}/>;
+  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail?.publicURL || data.mdx.frontmatter.thumbnail_svg?.publicURL} description={data.mdx.frontmatter.description}/>;
 };

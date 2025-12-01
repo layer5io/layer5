@@ -6,18 +6,20 @@ import Image from "../image";
 import { CardWrapper } from "./Card.style";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
-const Card = ({ frontmatter, fields }) => {
+const Card = ({ frontmatter, fields, loading = "lazy", fetchpriority = "auto" }) => {
 
   const { isDark } = useStyledDarkMode();
 
   return (
     <CardWrapper fixed={!!frontmatter.abstract}>
       <div className="post-block">
-        <div className="post-thumb-block" style={{ aspectRatio: "16/9", minHeight: "200px" }}>
+        <div className="post-thumb-block">
           <Image
             {...((isDark && frontmatter.darkthumbnail && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL)
               ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
-            imgStyle={{ objectFit: "cover" }}
+            imgStyle={{ objectFit: "contain" }}
+            loading={loading}
+            fetchpriority={fetchpriority}
             alt={frontmatter.title}
           />
         </div>

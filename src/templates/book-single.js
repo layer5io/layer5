@@ -12,23 +12,23 @@ import DockerExtensionCTA from "../sections/Docker-Meshery/docker-extension-CTA"
 import SEO from "../components/seo";
 export const query = graphql`query BookBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
-    body
+
     frontmatter {
       title
       abstract
       thumbnail {
+        extension
+        publicURL
         childImageSharp {
           gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
-        extension
-        publicURL
       }
     }
   }
 }
 `;
 
-const BookSinglePage = ({ data }) => {
+const BookSinglePage = ({ data, children }) => {
 
 
   return (
@@ -36,7 +36,9 @@ const BookSinglePage = ({ data }) => {
     <>
 
 
-      <BookSingle data={data} />
+      <BookSingle data={data} >
+        {children}
+      </BookSingle>
       <DockerExtensionCTA />
 
     </>

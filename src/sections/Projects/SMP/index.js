@@ -108,7 +108,8 @@ const SMPPage = () => {
                 <div>
                   <h1> Native WASM at Capacity </h1>
                   <p> When every request goes via the rate-limit check and then the actual program logic, we see that the latency incurred for the WASM code is higher than the Native client. This is expected since the native client has processing for rate-limiting locally in a process whereas the rust module is invoked as an additional thread to do the processing and the communication involved with the module incurs an overhead. This is prominent in the minimum response time case which represents latency just due to rate-limiting logic where every other part of the request is already "warm". <br />
-                    As we move towards average latency, the overhead gets slightly amortized but is still above the native rate-limiting case. Our max latency is slightly lower than native, but we attribute it to various other system effects like TLS handshake and network latencies that usually contribute to the maximum tail latency. </p>
+                    As we move towards average latency, the overhead gets slightly amortized but is still above the native rate-limiting case. Our max latency is slightly lower than native, but we attribute it to various other system effects like TLS handshake and network latencies that usually contribute to the maximum tail latency.
+                  </p>
                 </div>
               </Col>
             </Row>
@@ -145,13 +146,16 @@ const SMPPage = () => {
           </Container>
           <div className="iframes">
             <iframe className="iframe" src="https://www.youtube.com/embed/rgnb0-ntPko" loading="lazy"
-              frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
+              frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen
+            >
             </iframe>
             <iframe className="iframe" src="https://www.youtube.com/embed/LxP-yHrKL4M" loading="lazy"
-              frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
+              frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen
+            >
             </iframe>
             <iframe className="iframe" src="https://docs.google.com/presentation/d/e/2PACX-1vSWhREOZIfJqTG8jHtitgb5e-OAHC7E8EMmoVCaTRmC8b_itHkeFUNKcBVn9oaTpX5ozYvlhscvBXiK/embed?start=false&loop=false&delayms=3000" loading="lazy"
-              frameBorder="0" allowFullScreen>
+              frameBorder="0" allowFullScreen
+            >
             </iframe>
           </div>
         </div>

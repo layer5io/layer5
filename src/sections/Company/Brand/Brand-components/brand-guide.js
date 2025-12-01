@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../../../reusecore/Button";
-import BrandGuideImg from "../../../../assets/images/Brand-Guide/brand-guide.png";
+import BrandGuideImg from "../../../../assets/images/Brand-Guide/brand-guide.webp";
 import BrandGuidePDF from "../../../../assets/brand/brand-guide.pdf";
 
 import { Row, Col } from "../../../../reusecore/Layout";
@@ -23,7 +23,8 @@ const BrandGuide = () => {
         <div className="post-content">
           <Row style={{
             flexWrap: "wrap"
-          }} className="brand-section">
+          }} className="brand-section"
+          >
             <Col $xs={12} $sm={6}>
               <h1 className="layerH3">
                 Brand Guide

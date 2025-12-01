@@ -1,7 +1,7 @@
 ---
 title: "Linux Foundation 2023"
-thumbnail: ./Linux_Foundation_logo.svg
-darkthumbnail: ./lfx-white.svg
+thumbnail_svg: ./Linux_Foundation_logo.svg
+darkthumbnail_svg: ./lfx-white.svg
 permalink: "lfx/2023"
 program: "Linux Foundation"
 programSlug: "lfx"
@@ -10,12 +10,12 @@ published: true
 
 import { ProgramsWrapper } from "../Programs.style.js";
 import Button from "../../../reusecore/Button";
-import {ReactComponent as LfxLogo} from "./lfx-white.svg";
+import LfxLogo from "./lfx-white.svg";
 import { Link } from "gatsby";
 
 <ProgramsWrapper>
 
-<LfxLogo alt="lfx_logo" class="lfx_logo"/>
+<img src={LfxLogo} alt="lfx_logo" className="lfx_logo"/>
 <h3>Linux Foundation 2023 Program Timeline</h3>
 
 <div>
@@ -55,7 +55,7 @@ Part-time terms will start on the same schedule and last six versus three months
 
 <h3>About Meshery</h3>
 
-<p>Meshery is the open source, service mesh management plane for enabling the adoption, operation, and management of any service mesh and their workloads. There are many service meshes available. Software-defined networking is difficult to understand. Meshery’s aim is to make the power of the network available to the rest of us.</p>
+<p>As a self-service engineering platform, Meshery enables collaborative design and operation of cloud and cloud native infrastructure.</p>
 
 <h3>About our Community</h3>
  

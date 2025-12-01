@@ -8,7 +8,7 @@ import JoinCommunity from "../Community/Join-community";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
 import CommunitySectionWrapper from "./community.style";
-import Five from "./Community-pictures/community.png";
+import Five from "./Community-pictures/community.webp";
 import NewcomersMap from "./Newcomers-guide/newcomers-map.js";
 import DiscussCallout from "../../sections/Discuss-Callout";
 import { ReactComponent as MeshmateIcon } from "../../assets/images/meshmate/meshmate-stack-colorMode.svg";
@@ -59,7 +59,8 @@ const CommunityPage = () => {
         <Container>
           <Row style={{
             flexWrap: "wrap"
-          }} className="service-mesh-projects">
+          }} className="service-mesh-projects"
+          >
             <Col $sm={12} $lg={6}>
               <h2>Warm, welcoming, and encouraging. Embrace developer-defined infrastructure and help empower every engineer with us.</h2>
               <p>
@@ -73,7 +74,8 @@ const CommunityPage = () => {
           </Row>
           <Row style={{
             flexWrap: "wrap"
-          }} className="open-source-projects">
+          }} className="open-source-projects"
+          >
             <h2>Open Source and Cloud Native</h2>
             <p>
               Layer5 projects are open source software. Anyone can download,
@@ -124,8 +126,8 @@ const CommunityPage = () => {
                   </div>
                   <div className="badge-item">
                     <img
-                      src="https://badges.layer5.io/assets/badges/meshery/meshery.png"
-                      alt="Meshery Badge"
+                      src="https://badges.layer5.io/assets/badges/meshmate/meshmate.png"
+                      alt="Meshmate Badge"
                     />
                   </div>
                 </div>

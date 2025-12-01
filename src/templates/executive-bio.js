@@ -14,7 +14,7 @@ export const query = graphql`query MemberBioBySlug($member: String!) {
   ) {
     nodes {
         id
-        body
+
     frontmatter {
       name
       position
@@ -31,11 +31,11 @@ export const query = graphql`query MemberBioBySlug($member: String!) {
       executive_position
       company
       executive_image {
+        extension
+        publicURL
         childImageSharp {
           gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
-        extension
-        publicURL
       }
     }
 }
@@ -43,7 +43,7 @@ export const query = graphql`query MemberBioBySlug($member: String!) {
 }
 `;
 
-const MemberBioSinglePage = ({ data }) => {
+const MemberBioSinglePage = ({ data, children }) => {
 
 
   return (
@@ -53,8 +53,9 @@ const MemberBioSinglePage = ({ data }) => {
 
       <MemberBio
         frontmatter={data.allMdx.nodes[0].frontmatter}
-        body={data.allMdx.nodes[0].body}
-      />
+      >
+        {children}
+      </MemberBio>
 
     </>
 

@@ -1,15 +1,15 @@
 import React from "react";
-import { PageWrapper,ContentContainerWrapper,HeroContentContainerWrapper, Heading, Description } from "./snapshot.style";
+import { PageWrapper, ContentContainerWrapper, HeroContentContainerWrapper, Heading, Description } from "./snapshot.style";
 import Cone from "../../assets/images/gitops/conelight.svg";
-import SMPconfig from "../../assets/images/gitops/SMPconfig.png";
-import SMPTestconfig from "../../assets/images/gitops/SMPTestConfig.png";
+import SMPconfig from "../../assets/images/gitops/SMPconfig.webp";
+import SMPTestconfig from "../../assets/images/gitops/SMPTestConfig.webp";
 
 import Button from "../../reusecore/Button";
 import SquarePoint from "./SquarePoint";
 import Reviews from "../Pricing/review-slider";
 import { ColumnContainer, ContentRow, TextColumn } from "./common";
-import { ReactComponent as SmpLogo }  from "../../assets/images/service-mesh-performance/stacked/smp-light-text.svg";
-import { ReactComponent as GithubLogo } from "../../collections/integrations/github/icons/color/github-color.svg";
+import { ReactComponent as SmpLogo } from "../../assets/images/service-mesh-performance/stacked/smp-light-text.svg";
+import { ReactComponent as GithubLogo } from "../../assets/images/socialIcons/github.svg";
 
 const PerformanceManagementPage = () => {
   return (
@@ -23,9 +23,9 @@ const PerformanceManagementPage = () => {
           <TextColumn>
             <Heading>Performance regressions begone</Heading>
             <Description>
-               Test your Kubernetes cluster and service mesh implementation for conformance with the SMI specification
+              Test your Kubernetes cluster and infrastructure implementation for conformance with the SMI specification
             </Description>
-            <Button primary className="learn-more-btn" title="Go to Documentation" url="https://cloud.layer5.io/connect/github/new"/>
+            <Button primary className="learn-more-btn" title="Go to Documentation" url="https://cloud.layer5.io/connect/github/new" />
           </TextColumn>
           <ColumnContainer>
             <SmpLogo className="stack-logo" />
@@ -64,7 +64,7 @@ const PerformanceManagementPage = () => {
       <ContentContainerWrapper>
         <ContentRow>
           <TextColumn>
-            <Heading>A sample configuration <br/> of the action</Heading>
+            <Heading>A sample configuration <br /> of the action</Heading>
           </TextColumn>
           <ColumnContainer >
             <img src={SMPconfig} className="code-screenshot" alt="SMPconfig" width={605} height={740} />

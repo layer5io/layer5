@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+
 import { SRLWrapper } from "simple-react-lightbox";
 import slugify from "../../../utils/slugify";
 import { Container } from "../../../reusecore/Layout";
@@ -21,9 +21,9 @@ import CTA_Bottom from "../../../components/Call-To-Actions/CTA_Bottom";
 import AboutTheAuthor from "./author";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
-const BlogSingle = ({ data }) => {
+const BlogSingle = ({ data, children }) => {
   const location = useLocation();
-  const { frontmatter, body, fields } = data.mdx;
+  const { frontmatter, fields } = data.mdx;
   const { relatedPosts: blogData, authors } = useStaticQuery(
     graphql`query relatedPosts {
   relatedPosts: allMdx(
@@ -93,6 +93,16 @@ const BlogSingle = ({ data }) => {
   const [copied, setCopied] = useState(false);
   const { isDark } = useStyledDarkMode();
 
+  const primaryThumbnail = frontmatter.thumbnail || frontmatter.thumbnail_svg;
+  const secondaryThumbnail = frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg;
+  const heroThumbnail = (() => {
+    if (isDark && secondaryThumbnail && (secondaryThumbnail?.publicURL !== primaryThumbnail?.publicURL || !primaryThumbnail)) {
+      return secondaryThumbnail;
+    }
+
+    return primaryThumbnail || secondaryThumbnail;
+  })();
+
   useEffect(() => {
     if (copied) {
       setTimeout(() => {
@@ -115,13 +125,13 @@ const BlogSingle = ({ data }) => {
             subtitle={frontmatter.subtitle}
             category={frontmatter.category}
             author={{ name: frontmatter.author }}
-            thumbnail={((isDark && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL) ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
-            darkthumbnail={frontmatter.thumbnail}
+            thumbnail={heroThumbnail}
+            darkthumbnail={secondaryThumbnail || primaryThumbnail}
             date={frontmatter.date}
           />
           <div className="single-post-wrapper">
             <SRLWrapper>
-              <MDXRenderer>{body}</MDXRenderer>
+              {children}
             </SRLWrapper>
             <BlogPostSignOff
               author={{ name: frontmatter.author }}
@@ -130,13 +140,13 @@ const BlogSingle = ({ data }) => {
               <div className="post-share-mobile">
                 <div className="share-icons-container">
                   <h4>Share Post:</h4>
-                  <TwitterShareButton $url={location.href} title={shareQuote}>
+                  <TwitterShareButton url={location.href} title={shareQuote}>
                     <AiOutlineTwitter />
                   </TwitterShareButton>
-                  <FacebookShareButton $url={location.href} quote={shareQuote}>
+                  <FacebookShareButton url={location.href} quote={shareQuote}>
                     <FaFacebookF />
                   </FacebookShareButton>
-                  <LinkedinShareButton $url={location.href}>
+                  <LinkedinShareButton url={location.href} title={shareQuote}>
                     <FaLinkedin />
                   </LinkedinShareButton>
                   <CopyToClipboard text={location.href} title="Copy link" onCopy={() => setCopied(true)}>
@@ -153,7 +163,8 @@ const BlogSingle = ({ data }) => {
                   <div>
                     {frontmatter.tags && frontmatter.tags.map(tag => (
                       <Link key={`${frontmatter.title}-${tag}`}
-                        to={`/blog/tag/${slugify(tag)}`}>{tag}
+                        to={`/blog/tag/${slugify(tag)}`}
+                      >{tag}
                       </Link>
                     ))}
                   </div>

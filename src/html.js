@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-
 export default function HTML(props) {
   return (
     <html lang="en" {...props.htmlAttributes}>
@@ -12,32 +11,59 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        {/* eslint-disable-next-line react/no-unknown-property*/}
+        { }
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="anonymous" />
         <link
           rel="preload"
           as="style"
-          href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,500,600,700,800&display=swap" />
+          href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,500,600,700,800&display=swap"
+        />
         <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,500,600,700,800&display=swap"
-          media="print" onLoad="this.media='all'" />
+          media="print" onLoad="this.media='all'"
+        />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
-        <script dangerouslySetInnerHTML={{
-          __html:
-            `(function() {
-							try {
-                var banner = sessionStorage.getItem('banner');
-                if (banner === null)
-                  document.body.classList.add('banner1');
-                else
-                  document.body.classList.add('banner' + banner);
-							} catch (e) {
-								return;
-							}
-					})();`,
-        }}
+        {/* Script for theme initialization - needs to run before React renders to prevent flicker */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  // Theme initialization
+                  const darkThemeKey = 'theme';
+                  let initialTheme = 'system';
+                  try {
+                    initialTheme = localStorage.getItem(darkThemeKey) || 'system';
+                  } catch (e) {}
+                  
+                  // Determine initial dark mode
+                  let isDarkMode = false;
+                  if (initialTheme === 'dark') {
+                    isDarkMode = true;
+                  } else if (initialTheme === 'system') {
+                    isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  }
+                  
+                  // Set initial color mode
+                  document.documentElement.style.setProperty(
+                    '--initial-color-mode',
+                    isDarkMode ? 'dark' : 'light'
+                  );
+                  
+                  // Banner initialization
+                  var banner = sessionStorage.getItem('banner');
+                  if (banner === null)
+                    document.body.classList.add('banner1');
+                  else
+                    document.body.classList.add('banner' + banner);
+                } catch (e) {
+                  console.error('Error in theme initialization:', e);
+                }
+              })();
+            `,
+          }}
         />
         {props.preBodyComponents}
         <div

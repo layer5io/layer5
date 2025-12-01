@@ -141,11 +141,9 @@ const supported_platforms = [
     steps: (
       <>
         <h3>Install Using Kubernetes</h3>
-        <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=kubernetes bash -`}
-        />
+        <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=kubernetes bash -`}/>
         <h3 style={{ marginTop: "20px" }}>Install Using Docker</h3>
-        <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=docker bash -` }
-        />
+        <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=docker bash -` }/>
       </>
     )
   },
@@ -182,9 +180,9 @@ const supported_platforms = [
       <>
         <h2>Windows User</h2>
         <p>
-          Download and unzip mesheryctl from the <a href="https://github.com/layer5io/meshery/releases/">Meshery releases page</a>. Add mesheryctl to your PATH for ease of use. Then, execute:</p>
-        <Code codeString={dedent`mesheryctl system start`}
-        />
+          Download and unzip mesheryctl from the <a href="https://github.com/layer5io/meshery/releases/">Meshery releases page</a>. Add mesheryctl to your PATH for ease of use. Then, execute:
+        </p>
+        <Code codeString={dedent`mesheryctl system start`}/>
       </>
     )
   }
@@ -218,7 +216,7 @@ const MesheryPlatforms = () => {
     <MesheryPlatformsWrapper>
       <div className="content">
         <Row $Hcenter className="step-1">
-          <p>1 step install to managing service meshes</p>
+          <p>Start managing cloud native infrastructure easily with a single command. </p>
           <h2><span>Step 1:</span> Choose your platform</h2>
         </Row>
         <Row className="supported-platforms">
@@ -227,7 +225,8 @@ const MesheryPlatforms = () => {
               <Button
                 className={currentPlatform.name && currentPlatform.name === supported_platforms[index].name
                   ? "single-platform single-platform-selected " : "single-platform "}
-                onClick={() => changeCurrentPlatform(index)}>
+                onClick={() => changeCurrentPlatform(index)}
+              >
                 <img src={platform.icon} alt={platform.name} />
               </Button>
             </Col>
@@ -240,7 +239,8 @@ const MesheryPlatforms = () => {
         </Container>
         <Row $Hcenter className="step-2">
           <Col>
-            <h2><span>Step 2:</span> Manage your mesh</h2>
+            <h2><span>Step 2:</span> Manage your Cloud Native Infra</h2>
+            <p>There is no step 2. Login and manage cloud native infrastructure! For more detailed instructions, visit <a href="https://docs.meshery.io">Meshery Docs</a></p>
             <img src={MesheryLogo} alt="Meshery" className="meshery-logo" />
           </Col>
         </Row>

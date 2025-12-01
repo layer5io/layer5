@@ -11,7 +11,7 @@ const Footer = ({ location }) => {
   var currentYear = new Date().getFullYear();
 
   const getUrl = (pathname) => {
-    //remove ".html" that results in live production build
+    // remove ".html" that results in live production build
     if (pathname.endsWith(".html")) {
       pathname = pathname.replace(".html", "");
     }
@@ -28,6 +28,7 @@ const Footer = ({ location }) => {
       "/resources",
       "/learn",
     ];
+
     const test = {
       mdx: function (path) {
         let returnPath = "";
@@ -43,29 +44,43 @@ const Footer = ({ location }) => {
             "/programs",
             "/projects/",
             "/resources/",
-            "/service-mesh-workshops/",
+            "/workshops/",
           ].some((check) => {
             returnPath = check;
             return path.startsWith(check);
           }) && `src/collections${returnPath}`
         );
       },
+
       learningPath: function (path) {
         return (
           path.startsWith("/learn/learning-paths/") &&
           `content-learn${pathname.replace("learn/learning-paths/", "")}`
         );
       },
+
+      communityMember: function (path) {
+        if (path.startsWith("/community/members/")) {
+          const memberId = path.replace("/community/members/", "");
+          return `src/collections/members/${memberId}/index.mdx`;
+        }
+        return null;
+      },
     };
+
+    if (pathname.startsWith("/community/handbook/")) {
+      const page = pathname.replace("/community/handbook/", "");
+      return `https://github.com/layer5io/layer5/blob/master/src/pages/community/handbook/${page}.js`;
+    }
 
     return test.mdx(pathname)
       ? `https://github.com/layer5io/layer5/tree/master/${test.mdx(pathname)}`
       : test.learningPath(pathname)
-        ? `https://github.com/layer5io/layer5/tree/master/${test.learningPath(
-          pathname
-        )}`
-        : `https://github.com/layer5io/layer5/blob/master/src/pages${pathname == "/" ? "" : pathname
-        }${indexUrl.some((str) => pathname.endsWith(str)) ? "/index" : ""}.js`;
+        ? `https://github.com/layer5io/layer5/tree/master/${test.learningPath(pathname)}`
+        : test.communityMember(pathname)
+          ? `https://github.com/layer5io/layer5/blob/master/${test.communityMember(pathname)}`
+          : `https://github.com/layer5io/layer5/blob/master/src/pages${pathname == "/" ? "" : pathname
+          }${indexUrl.some((str) => pathname.endsWith(str)) ? "/index" : ""}.js`;
   };
 
   return (
@@ -88,7 +103,8 @@ const Footer = ({ location }) => {
         </Row>
         <Row style={{
           flexWrap: "wrap"
-        }}>
+        }}
+        >
           <Col $xs={12} $lg={3}>
             <p className="desc-info">
               An empowerer of engineers, Layer5 helps you extract more value
@@ -111,9 +127,9 @@ const Footer = ({ location }) => {
                     </a>
                   </li>
                   <li>
-                    <a className="category-link" href="https://cloud.layer5.io/academy/overview">
+                    <Link className="category-link" to="/learn/academy">
                       Academy
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <Link className="category-link" to="/blog">
@@ -138,7 +154,7 @@ const Footer = ({ location }) => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/learn/service-mesh-workshops"
+                      to="/learn/workshops"
                     >
                       Cloud Native Workshops
                     </Link>
@@ -146,7 +162,7 @@ const Footer = ({ location }) => {
                   {/* <li>
                     <Link
                       className="category-link"
-                      to="/learn/service-mesh-labs"
+                      to="/learn/kanvas-labs"
                     >
                       Cloud Native Interactive Labs
                     </Link>
@@ -200,7 +216,7 @@ const Footer = ({ location }) => {
               </div>
               <div className="footer-sections odd-col">
                 <h3 className="section-title">
-                  <Link className="title-link" to="/kanvas">
+                  <Link className="title-link" to="/cloud-native-management/solutions">
                     SOLUTIONS
                   </Link>
                 </h3>
@@ -243,14 +259,6 @@ const Footer = ({ location }) => {
                       GitOps with Cloud Native Insights
                     </Link>
                   </li>
-                  {/* <li>
-                    <Link
-                      className="category-link"
-                      to="/projects/service-mesh-interface-conformance"
-                    >
-                      Service Mesh Interface
-                    </Link>
-                  </li> */}
                   <li>
                     <Link
                       className="category-link"

@@ -14,6 +14,7 @@ import VisualizerFeatures from "./FeaturesSection/Visualize/VisualizerFeatures";
 import KanvasBtn from "./kanvas-buttons.js";
 import Reviews from "../Pricing/review-slider";
 import InlineQuotes from "../../components/Inline-quotes";
+import KanvasFeatures from "./kanvas-feature.js";
 import { ReactComponent as RoleBind1 } from "./FeaturesSection/Design/images/role-binding-1-colorMode.svg";
 import { ReactComponent as RoleBind2 } from "./FeaturesSection/Design/images/role-binding-2-colorMode.svg";
 import { ReactComponent as RoleBind3 } from "./FeaturesSection/Design/images/role-binding-3-colorMode.svg";
@@ -36,6 +37,7 @@ import Phillip from "../../sections/Pricing/reviews/phillip-ulberg.jpeg";
 import Alex from "../../sections/Pricing/reviews/alex-hokanson.jpeg";
 import TeaserModal from "../../components/TeaserModal";
 import GuyM from "./images/guym.jpg";
+import Abdechakour from "../../sections/Pricing/reviews/abdechakour-h.jpeg";
 
 
 const Kanvas = (props) => {
@@ -87,7 +89,8 @@ const Kanvas = (props) => {
             person="Guy Menahem"
             title="Software Engineer at AWS"
             quote="I love visuals for creating IaC. I think it can be amazingly impactful for self-serve platforms for developers."
-            image={GuyM}/>
+            image={GuyM}
+          />
           <DesignerFeatures
             features={
               [
@@ -119,13 +122,15 @@ const Kanvas = (props) => {
                     <RoleBind4 id="design-image4" style={{ transform: "translateX(-2rem)" }} alt="design-image4" />
                   )
                 },
-              ]}/>
+              ]}
+          />
 
           <InlineQuotes
             person="Kaur Kallas"
             title="Software Architect at Entigo"
             quote="The fact that Kanvas automatically renders our Kubernetes configuration is a game-changer for our team."
-            image={Kaur}/>
+            image={Kaur}
+          />
           <VisualizerFeatures
             features={
               [
@@ -143,12 +148,14 @@ const Kanvas = (props) => {
                     <Visualize2 id="visualize-image2" alt="visualize-image2" />
                   )
                 },
-              ]} />
+              ]}
+          />
           <InlineQuotes
-            quote="Guys, I love Kanvas! This tool is crazy!"
-            person="Ala Eddine BENHASSIR"
-            title="Networks & Systems Engineer at AYRADE"
-            image={Ala}/>
+            quote="Wow, just tried Kanvas and it's exactly what I needed! Dragging that Helm chart was so smooth, and the smart features really caught my attention. Definitely sharing this with my dev team before everyone else discovers it!"
+            person="Abdechakour Hrouchan"
+            title="Software Engineer at Atlas Cloud Services"
+            image={Abdechakour}
+          />
 
           <CollaboratorFeatures
             features={
@@ -230,7 +237,8 @@ const Kanvas = (props) => {
                     </>
                   )
                 }
-              ]} />
+              ]}
+          />
           {/* <CollaboratorFeatures
             features={
               [
@@ -275,16 +283,25 @@ const Kanvas = (props) => {
             quote="Kanvas is unreal. Support for air-gapped deployments is all the better, too."
             person="Phillip Ulberg"
             title="Solutions Architect at Raymond James Financial, Inc."
-            image={Phillip} />
+            image={Phillip}
+          />
+          <KanvasFeatures style={{ marginBottom: "2rem" }} />
           <Catalog />
           <InlineQuotes
             quote="Do we like Kanvas? ABSOLUTELY!"
             person="Alex"
             title="Infrastructure Engineering at Docker, Inc."
-            image={Alex} />
+            image={Alex}
+          />
           {/* <MesheryAction /> */}
           <KanvasBtn style={{ marginBottom: "2rem" }} />
           <Platform />
+          <InlineQuotes
+            quote="Guys, I love Kanvas! This tool is crazy!"
+            person="Ala Eddine BENHASSIR"
+            title="Networks & Systems Engineer at AYRADE"
+            image={Ala}
+          />
         </Container>
       </div>
       <>

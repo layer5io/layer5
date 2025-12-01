@@ -14,6 +14,7 @@ import servicemeshpattern from "../../../assets/images/service-mesh-patterns/ser
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
 import Kanvas from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
+import layer5AcademyIcon from "../../../assets/images/academy/academy.svg";
 
 import { Link } from "gatsby";
 
@@ -46,12 +47,12 @@ const Repository = () => {
               <h2>GitHub Organizations and Repositories</h2>
             </a>
             <p>
-              A brief introduction to all of the Github repositories of Layer5 organization is offered below. This overview serves as a resource to newcomers seeking a perspective of the collective community efforts (from a code-centric perspective). See <a href="https://docs.google.com/document/u/0/d/1FzX-C_xy9hZ3Eu9dcCE0unhFV5LRUrb5YLn_MGYuG6Y/edit">Layer5 GitHub Process</a> for more related information.
+              A brief introduction to all of the Github repositories of Layer5 organization is offered below. This overview serves as a resource to newcomers seeking a perspective of the collective community efforts (from a code-centric perspective). See <a href="https://docs.google.com/document/d/1brtiJhdzal_O6NBZU_JQXiBff2InNtmgL_G1JgAiZtk/edit?tab=t.0#heading=h.504assxl7gpf">Layer5 GitHub Process</a> for more related information.
             </p>
 
             <p>
-              Note that the Layer5 community spans <strong>five</strong> GitHub
-              organizations:
+              Note that the Layer5 community spans <strong>six</strong> GitHub
+              organizations and <strong>one</strong> multi-repository collection:
             </p>
 
             <ul className="project-org-list">
@@ -131,6 +132,16 @@ const Repository = () => {
                   &nbsp; Meshery Extensions
                 </a>
                   - a collection of extensions and plugins that enhance Meshery's functionality.
+              </li>
+              <li>
+                <a href="https://github.com/orgs/layer5io/repositories?q=academy">
+                  <img
+                    src={layer5AcademyIcon}
+                    alt="Layer5 Academy logo"
+                  />
+                  &nbsp; Layer5 Academy
+                </a>
+                  - a multi-repository learning platform with structured learning paths, practical challenges, badges and optional certificates, built with modular theme, content, and build repositories.
               </li>
             </ul>
 
@@ -236,7 +247,8 @@ const Repository = () => {
                         <tbody key={project}>
                           <tr className={accessRequired === "*archived" ? "archived-project" : ""}>
                             <td>
-                              <img className={siteIconClasses} src={image} alt="project" />&nbsp;{project} </td>
+                              <img className={siteIconClasses} src={image} alt="project" />&nbsp;{project}
+                            </td>
                             <td>{language}</td>
                             <td>{description}</td>
                             <td>

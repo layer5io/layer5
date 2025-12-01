@@ -38,8 +38,8 @@ const Writers = () => {
               give back to the community, and help us produce great content. We
               collaborate with authors and technologists from around the world
               to produce high quality articles, blog posts, tutorials and other
-              cloud native resources on Meshery, Kubernetes, service meshes,
-              Docker and related technologies.
+              cloud native resources on Meshery, Kubernetes, CNCF, Docker and
+              related technologies.
             </p>
             <h2>Why should you participate?</h2>
             <div className="list">
@@ -237,7 +237,7 @@ const Writers = () => {
                 <Col $sm={12} $md={6} $lg={4}>
                   <Link
                     className="project-card"
-                    to="/learn/service-mesh-workshops"
+                    to="/learn/workshops"
                   >
                     <div className="content_type">
                       <img src={workshop} alt="Workshop" />
@@ -470,7 +470,8 @@ const Writers = () => {
                 <p>
                   For those comfortable with local website development,
                   contribute directly to the community website. <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">Set up your
-                  local environment</a>, create a blog post adhering to specified
+                  local environment
+                  </a>, create a blog post adhering to specified
                   guidelines, and submit it via a Pull Request on <a href="https://github.com/layer5io/layer5/">GitHub</a>.
                   Reviewers will provide feedback, and you'll refine your post
                   collaboratively. Upon completion, maintainers will
