@@ -15,7 +15,10 @@ import { ReactComponent as MesheryLogoBullet } from "../../../../assets/images/m
 
 const IndividualIntegrations = ({ data, children }) => {
   const { frontmatter } = data.mdx;
-  const screenshotNodes = data.allFile.nodes;
+  const screenshotNodes = [
+    ...(data.screenshots_raster?.nodes || []),
+    ...(data.screenshots_svg?.nodes || []),
+  ];
   const finalScreenshots =
     screenshotNodes.length === 0 ? frontmatter.workingSlides : screenshotNodes;
   const awsIntegrations = [

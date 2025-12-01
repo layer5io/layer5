@@ -13,7 +13,8 @@ const MeshMasterBrand = () => {
     <div className="post-content">
       <Row style={{
         flexWrap: "wrap"
-      }} className="brand-section">
+      }} className="brand-section"
+      >
         <Col $xs={12} $sm={6}>
           <h1 className="layerH3">
             MeshMaster
@@ -39,7 +40,8 @@ const MeshMasterBrand = () => {
       </Row>
       <Row style={{
         flexWrap: "wrap"
-      }}>
+      }}
+      >
         <Col>
           <h2 className="layerH3 in">
             Logos
@@ -64,7 +66,8 @@ const MeshMasterBrand = () => {
       </Row>
       <Row style={{
         flexWrap: "wrap"
-      }}>
+      }}
+      >
         <Col $xs={12}>
           <h2 className="layerH3 in">
             Colors
