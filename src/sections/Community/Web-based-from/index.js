@@ -34,7 +34,7 @@ const validatePictureUrl = (value) => {
         }
       } catch (err) {
         console.error("Error in validatePictureUrl:", err);
-        error = "Please enter a URL to an image file.";
+        return "Please enter a URL to an image file.";
       }
     }
   }
@@ -661,4 +661,3 @@ const WebBasedForm = () => {
 
 
 export default WebBasedForm;
-
