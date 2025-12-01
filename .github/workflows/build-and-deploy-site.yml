@@ -17,6 +17,17 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: Cache Gatsby .cache and public folders
+        uses: actions/cache@v4
+        id: gatsby-cache
+        with:
+          path: |
+            public
+            .cache
+          key: ${{ runner.os }}-gatsby-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-gatsby-
+
       - name: Install and Build 🔧
         run: |
           npm install --legacy-peer-deps
