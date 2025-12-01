@@ -81,7 +81,8 @@ const DataCard = () => {
                   duration={3}
                   separator=","
                   end={10000}
-                  suffix="+" />
+                  suffix="+"
+                />
               </h3>
               <p>Users</p>
             </li>
@@ -90,7 +91,8 @@ const DataCard = () => {
                 <Counter
                   duration={3}
                   separator=","
-                  end={performanceCount} />
+                  end={performanceCount}
+                />
               </h3>
               <p>Performance tests run</p>
             </li>

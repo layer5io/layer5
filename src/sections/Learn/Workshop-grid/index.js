@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import WorkshopCard from "../../../components/Workshop-Card";
@@ -46,7 +45,6 @@ const WorkshopsPage = () => {
       fields {
         slug
       }
-      body
     }
   }
 }`
@@ -104,15 +102,16 @@ const WorkshopsPage = () => {
             <Row style={{
               flexWrap: "wrap"
             }}>
-              {data.allMdx.nodes.map(({ id, frontmatter, fields, body }) => (
+              {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
                 <Col {...content && ID === id ? { $xs: 12, $sm: 12, $lg: 12 } : { $xs: 12, $sm: 6, $lg: 4 } } key={id} className="workshop-grid-col">
                   <div className="workshop-grid-card" ref={(el) => {
                     if (el) scrollRefMap.current[id] = el;
-                  }} onClick={() => toggleActive(id)}>
+                  }} onClick={() => toggleActive(id)}
+                  >
                     <WorkshopCard frontmatter={frontmatter} content={content} ID={ID} id={id} />
                     <div className={content && ID === id ? "active" : "text-contents"}>
                       <div className="content">
-                        <MDXRenderer>{body}</MDXRenderer>
+                        <p>{frontmatter.abstract}</p>
                       </div>
                     </div>
                     <div className={content && ID === id ? "btn-and-status-open" : "btn-and-status"}>
@@ -139,7 +138,8 @@ const WorkshopsPage = () => {
             </Row>
             <Row style={{
               flexDirection: "column"
-            }} className="rqst-workshop">
+            }} className="rqst-workshop"
+            >
               <img src={WorkshopImage} alt="WorkshopImage" className="bottom-image" />
               <Button $primary $url="mailto:support@layer5.io" $external={true}>
                                 Request A Workshop

@@ -23,11 +23,14 @@ const CareersPage = () => {
             <div className="introText">
               <h2>Layer5 Culture</h2>
               <p>All team members <strong>are expected to... </strong>
-                take initiative, execute briskly, debate in the discussion, then execute post-haste on the decision, irrespective of the specific decision.</p>
+                take initiative, execute briskly, debate in the discussion, then execute post-haste on the decision, irrespective of the specific decision.
+              </p>
               <p>All team members <strong>should expect to... </strong>
-                be challenged, to work hard, to play hard, to be recognized, to grow and help others grow.</p>
+                be challenged, to work hard, to play hard, to be recognized, to grow and help others grow.
+              </p>
               <p><strong>You should... </strong>
-                pay attention to detail and take pride in your work. Know when to prioritize and have the discipline to adhere to those priorities. Focus on the customer. Pay it forward and enable others. Bring solutions with the problems. Take out the trash (do grunt work) as needed.</p>
+                pay attention to detail and take pride in your work. Know when to prioritize and have the discipline to adhere to those priorities. Focus on the customer. Pay it forward and enable others. Bring solutions with the problems. Take out the trash (do grunt work) as needed.
+              </p>
             </div>
             <div className="introImage">
               <StaticImage src={Layer5_culture} alt="Five holding Layer5 banner" />

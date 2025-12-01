@@ -214,12 +214,15 @@ const ToolbarOverview = () => {
                     padding: "0 8px",
                     flex: 1,
                     maxWidth: "300px"
-                  }}>
+                  }}
+                  >
                     <SearchIcon style={{ marginRight: "8px" }} />
                     <div style={{
                       height: "32px",
                       lineHeight: "32px",
-                    }}>Search...</div>
+                    }}
+                    >Search...
+                    </div>
                   </div>
                   <div style={{ marginLeft: "auto" }}>
                     <Button><SettingsIcon /></Button>

@@ -111,7 +111,8 @@ const Platform = () => {
           quote="The fact that Kanvas automatically renders our Kubernetes configuration is a game-changer for our team"
           person="Maximiliano Churichi"
           title="Software Engineer at HPE"
-          image={Maxi} />
+          image={Maxi}
+        />
         <Integrations />
         <RelatedPosts
           postType="blogs"

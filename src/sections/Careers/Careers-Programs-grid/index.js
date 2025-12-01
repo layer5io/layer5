@@ -88,7 +88,8 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
           <div className="program-grid-wrapper">
             <Row style={{
               flexWrap: "wrap"
-            }} $Hcenter>
+            }} $Hcenter
+            >
               {programs.reverse().map(({ id, frontmatter, fields }) => (
                 <Col key={id} className="programs-col">
                   <Link

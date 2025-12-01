@@ -54,7 +54,8 @@ const BlogGrid = ({
               <div className="blog-grid-wrapper">
                 <Row style={{
                   flexWrap: "wrap"
-                }}>
+                }}
+                >
                   {queryResults.length < 1 && (
                     <Col $xs={12} $sm={6}>
                       No blog post that matches the title "{searchQuery}" found.
