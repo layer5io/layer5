@@ -101,7 +101,8 @@ const WorkshopsPage = () => {
           <div className="workshop-grid-wrapper">
             <Row style={{
               flexWrap: "wrap"
-            }}>
+            }}
+            >
               {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
                 <Col {...content && ID === id ? { $xs: 12, $sm: 12, $lg: 12 } : { $xs: 12, $sm: 6, $lg: 4 } } key={id} className="workshop-grid-col">
                   <div className="workshop-grid-card" ref={(el) => {
