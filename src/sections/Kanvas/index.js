@@ -89,7 +89,8 @@ const Kanvas = (props) => {
             person="Guy Menahem"
             title="Software Engineer at AWS"
             quote="I love visuals for creating IaC. I think it can be amazingly impactful for self-serve platforms for developers."
-            image={GuyM}/>
+            image={GuyM}
+          />
           <DesignerFeatures
             features={
               [
@@ -121,13 +122,15 @@ const Kanvas = (props) => {
                     <RoleBind4 id="design-image4" style={{ transform: "translateX(-2rem)" }} alt="design-image4" />
                   )
                 },
-              ]}/>
+              ]}
+          />
 
           <InlineQuotes
             person="Kaur Kallas"
             title="Software Architect at Entigo"
             quote="The fact that Kanvas automatically renders our Kubernetes configuration is a game-changer for our team."
-            image={Kaur}/>
+            image={Kaur}
+          />
           <VisualizerFeatures
             features={
               [
@@ -145,12 +148,14 @@ const Kanvas = (props) => {
                     <Visualize2 id="visualize-image2" alt="visualize-image2" />
                   )
                 },
-              ]} />
+              ]}
+          />
           <InlineQuotes
             quote="Wow, just tried Kanvas and it's exactly what I needed! Dragging that Helm chart was so smooth, and the smart features really caught my attention. Definitely sharing this with my dev team before everyone else discovers it!"
             person="Abdechakour Hrouchan"
             title="Software Engineer at Atlas Cloud Services"
-            image={Abdechakour} />
+            image={Abdechakour}
+          />
 
           <CollaboratorFeatures
             features={
@@ -232,7 +237,8 @@ const Kanvas = (props) => {
                     </>
                   )
                 }
-              ]} />
+              ]}
+          />
           {/* <CollaboratorFeatures
             features={
               [
@@ -277,14 +283,16 @@ const Kanvas = (props) => {
             quote="Kanvas is unreal. Support for air-gapped deployments is all the better, too."
             person="Phillip Ulberg"
             title="Solutions Architect at Raymond James Financial, Inc."
-            image={Phillip} />
+            image={Phillip}
+          />
           <KanvasFeatures style={{ marginBottom: "2rem" }} />
           <Catalog />
           <InlineQuotes
             quote="Do we like Kanvas? ABSOLUTELY!"
             person="Alex"
             title="Infrastructure Engineering at Docker, Inc."
-            image={Alex} />
+            image={Alex}
+          />
           {/* <MesheryAction /> */}
           <KanvasBtn style={{ marginBottom: "2rem" }} />
           <Platform />
@@ -292,7 +300,8 @@ const Kanvas = (props) => {
             quote="Guys, I love Kanvas! This tool is crazy!"
             person="Ala Eddine BENHASSIR"
             title="Networks & Systems Engineer at AYRADE"
-            image={Ala}/>
+            image={Ala}
+          />
         </Container>
       </div>
       <>

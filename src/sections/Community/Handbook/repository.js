@@ -247,7 +247,8 @@ const Repository = () => {
                         <tbody key={project}>
                           <tr className={accessRequired === "*archived" ? "archived-project" : ""}>
                             <td>
-                              <img className={siteIconClasses} src={image} alt="project" />&nbsp;{project} </td>
+                              <img className={siteIconClasses} src={image} alt="project" />&nbsp;{project}
+                            </td>
                             <td>{language}</td>
                             <td>{description}</td>
                             <td>

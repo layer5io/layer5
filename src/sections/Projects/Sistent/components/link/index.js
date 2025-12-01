@@ -159,11 +159,14 @@ const SistentLink = () => {
           </p>
           <ul>
             <li><strong>Prevent Access:</strong> <code>rel="noopener"</code> prevents the new page from accessing the
-              <code>window.opener</code> property, securing your original page from potential malicious redirects.</li>
+              <code>window.opener</code> property, securing your original page from potential malicious redirects.
+            </li>
             <li><strong>Avoid Referer Leakage:</strong> <code>rel="noreferrer"</code> not only blocks the new page's
-              access to your original page but also stops the Referer header from being sent, protecting user privacy.</li>
+              access to your original page but also stops the Referer header from being sent, protecting user privacy.
+            </li>
             <li><strong>Security Risk Mitigation:</strong> Using these attributes reduces the risk of phishing attacks
-              and ensures that your site maintains control over its navigation and data.</li>
+              and ensures that your site maintains control over its navigation and data.
+            </li>
           </ul>
           <p>
               By following these practices, you can enhance the security of your web application and protect your users.

@@ -27,7 +27,8 @@ const Catalog = () => {
       <div className="post-content">
         <Row style={{
           flexWrap: "wrap"
-        }} className="brand-section">
+        }} className="brand-section"
+        >
           <Col $xs={12} $sm={6}>
             <h1 className="layerH3">Catalog</h1>
           </Col>
@@ -51,7 +52,8 @@ const Catalog = () => {
         </Row>
         <Row style={{
           flexWrap: "wrap"
-        }}>
+        }}
+        >
           <Col $xs={12}>
             <h2 className="layerH3 in">Logos</h2>
           </Col>
@@ -59,7 +61,8 @@ const Catalog = () => {
         <ProjectItemWrapper id="projects">
           <Row style={{
             flexWrap: "wrap"
-          }}>
+          }}
+          >
             <div className="project__block__wrap">
               <Col $sm={12} $md={6} $lg={4}>
                 <div className="project__block__inner">
@@ -112,7 +115,8 @@ const Catalog = () => {
 
         <Row style={{
           flexWrap: "wrap"
-        }}>
+        }}
+        >
           <Col $xs={12}>
             <h2 className="layerH3 in">Colors</h2>
           </Col>
@@ -125,7 +129,8 @@ const Catalog = () => {
           </Col>
           <Row style={{
             flexWrap: "wrap"
-          }} className="color-code-wrapper">
+          }} className="color-code-wrapper"
+          >
             <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
             <ColorBox
               name="Caribbean Green"

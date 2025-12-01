@@ -23,7 +23,8 @@ const BrandGuide = () => {
         <div className="post-content">
           <Row style={{
             flexWrap: "wrap"
-          }} className="brand-section">
+          }} className="brand-section"
+          >
             <Col $xs={12} $sm={6}>
               <h1 className="layerH3">
                 Brand Guide

@@ -34,7 +34,8 @@ const Table = () => {
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column, index) => (
                 <th key={index} {...column.getHeaderProps()}
-                  className={(column.Header == "Service Mesh Pattern" || column.Header == "Category") ? "table-header" : ""}>
+                  className={(column.Header == "Service Mesh Pattern" || column.Header == "Category") ? "table-header" : ""}
+                >
                   <div  >
                     {column.render("Header")}
                     {(column.Header == "Service Mesh Pattern") ?

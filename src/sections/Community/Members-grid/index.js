@@ -44,7 +44,8 @@ const MembersGrid = (props) => {
           <div className="members-profile-cards">
             <Row style={{
               flexWrap: "wrap"
-            }}>
+            }}
+            >
               {props?.data?.map(({ id, frontmatter, fields }) => (
                 <Col $xs={12} $sm={6} $md={6} $lg={4} $xl={3} key={id}>
                   <ProfileCard
@@ -137,7 +138,8 @@ const MembersGrid = (props) => {
                 width: "22rem",
                 height: "auto",
                 marginLeft: marginLeft,
-              }}/>
+              }}
+              />
             </div>
             <div className="detailsCommunity">
               <p>
