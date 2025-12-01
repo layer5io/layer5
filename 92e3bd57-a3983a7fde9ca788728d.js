@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkLayer5=self.webpackChunkLayer5||[]).push([[7244],{26002:function(a,e,s){s(96540);e.A=s.p+"static/catalog-dark.30702d37.svg"}}]);
