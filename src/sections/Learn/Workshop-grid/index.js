@@ -36,7 +36,7 @@ const WorkshopsPage = () => {
         eurl
         thumbnail {
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(layout: CONSTRAINED, width: 600)
           }
           extension
           publicURL
