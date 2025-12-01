@@ -187,7 +187,8 @@ const LearnSection = () => {
         <Container>
           <Row style={{
             flexWrap: "wrap"
-          }} $Hcenter className="learn-buttons-section labs">
+          }} $Hcenter className="learn-buttons-section labs"
+          >
             <Col $xs={12} $lg={6}>
               <Link to="/learn/kanvas-labs" state={{ selectedIndex: 0 }}>
                 <Button $secondary title="Getting started with any service mesh"/>

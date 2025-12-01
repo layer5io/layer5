@@ -27,7 +27,8 @@ const MeshMarkBrand = () => {
       <div className="post-content">
         <Row style={{
           flexWrap: "wrap"
-        }} className="brand-section">
+        }} className="brand-section"
+        >
           <Col $xs={12} $sm={6}>
             <h1 className="layerH3">
               <strong>MeshMark</strong>
@@ -53,7 +54,8 @@ const MeshMarkBrand = () => {
         </Row>
         <Row style={{
           flexWrap: "wrap"
-        }}>
+        }}
+        >
           <Col>
             <h2 className="layerH3 in">
               Logos
@@ -105,7 +107,8 @@ const MeshMarkBrand = () => {
         </Row>
         <Row style={{
           flexWrap: "wrap"
-        }}>
+        }}
+        >
           <Col>
             <h2 className="layerH3 in">
               Colors
@@ -120,7 +123,8 @@ const MeshMarkBrand = () => {
           </Col>
           <Row style={{
             flexWrap: "wrap"
-          }} className="color-code-wrapper">
+          }} className="color-code-wrapper"
+          >
             <ColorBox name="Charcoal" R="60" G="73" B="79" colorCode="#3C494F" />
             <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
             <ColorBox name="Caribbean Green" R="0" G="211" B="169" colorCode="#00D3A9" />

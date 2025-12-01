@@ -11,7 +11,7 @@ import SEO from "../components/seo";
 
 export const query = graphql`query EventsBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
-    body
+
     frontmatter {
       attribute {
         name
@@ -32,12 +32,16 @@ export const query = graphql`query EventsBySlug($slug: String!) {
           gatsbyImageData(layout: CONSTRAINED)
         }
       }
+      thumbnail_svg {
+        publicURL
+        extension
+      }
     }
   }
 }
 `;
 
-const EventSinglePage = ({ data }) => {
+const EventSinglePage = ({ data, children }) => {
 
 
   return (
@@ -45,7 +49,9 @@ const EventSinglePage = ({ data }) => {
     <>
 
 
-      <EventSingle data={data} />
+      <EventSingle data={data} >
+        {children}
+      </EventSingle>
       <LearnServiceMeshCTA />
       <Subscribe />
 
@@ -58,5 +64,5 @@ export default EventSinglePage;
 
 
 export const Head = ({ data }) => {
-  return <SEO title={data.mdx.frontmatter.title} description={data.mdx.frontmatter.description} image={data.mdx.frontmatter.thumbnail.publicURL} />;
+  return <SEO title={data.mdx.frontmatter.title} description={data.mdx.frontmatter.description} image={data.mdx.frontmatter.thumbnail?.publicURL || data.mdx.frontmatter.thumbnail_svg?.publicURL} />;
 };

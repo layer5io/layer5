@@ -15,5 +15,6 @@ export default MesheryOperator;
 export const Head = () => {
   return <SEO title="Meshery Operator"
     description="Meshery Operator is the multi-cluster Kubernetes operator that manages MeshSync and it’s messaging broker."
-    image="/images/meshery-operator.webp" />;
+    image="/images/meshery-operator.webp"
+  />;
 };
