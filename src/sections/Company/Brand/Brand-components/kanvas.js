@@ -21,7 +21,8 @@ const KanvasBrand = () => {
       <div className="post-content">
         <Row style={{
           flexWrap: "wrap"
-        }} className="sub-project brand-section">
+        }} className="sub-project brand-section"
+        >
           <Col $xs={12} $sm={6}>
             <h2 className="layerH3">
               Kanvas
@@ -47,7 +48,8 @@ const KanvasBrand = () => {
         </Row>
         <Row style={{
           flexWrap: "wrap"
-        }}>
+        }}
+        >
           <Col>
             <h2 className="layerH3 in">
               Logos
@@ -72,7 +74,8 @@ const KanvasBrand = () => {
         </Row>
         <Row style={{
           flexWrap: "wrap"
-        }}>
+        }}
+        >
           <Col>
             <h2 className="layerH3 in">
               Colors

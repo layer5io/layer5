@@ -9,17 +9,17 @@ export const SubscriptionToggle = ({ isYearly = false, setIsYearly }) => {
         <span
           className={!isYearly ? "active" : ""}
           onClick={() => setIsYearly(false)}
-      >
+        >
         Monthly
-      </span>
+        </span>
       <span
         className={isYearly ? "active" : ""}
         onClick={() => setIsYearly(true)}
       >
         Yearly
       </span>
+      </div>
     </div>
-  </div>
 );
 };
 export default SubscriptionToggle;

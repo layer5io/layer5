@@ -47,7 +47,8 @@ const Pagination = ({ TOCData, chapterData, location }) => {
             <Button $secondary title="Next Chapter"
               className="next-chapter-btn"
               $url={`/learn/learning-paths/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${nextChapter}/`}
-              $external={false} />
+              $external={false}
+            />
           </div>
         </div>
       </PaginationWrapper>)

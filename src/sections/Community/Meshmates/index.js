@@ -84,7 +84,8 @@ const Meshmates = () => {
           <p> MeshMate is a distinction that Layer5 awards select members of the community that who innately align with the Layer5 culture of helping others, paying it forward, and have a commitment to sharing their knowledge of Layer5 projects with the community. MeshMates are Layer5 ambassadors (not employees) and their commitment to helping others and sharing their expertise has a huge impact on the Layer5 community – don't hesitate to reach out to them! </p>
           <Row style={{
             flexWrap: "wrap"
-          }}>
+          }}
+          >
             {activeMeshMates.map(({ id, frontmatter, fields }) => (
               <Col $xs={12} $sm={6} $lg={4} key={id}>
                 <ProfileCard frontmatter={frontmatter} cardlink={fields.slug} />
@@ -99,7 +100,8 @@ const Meshmates = () => {
             <p> These MeshMates are currently on hiatus from active participation in the program but remain valued members of our community. </p>
             <Row style={{
               flexWrap: "wrap"
-            }}>
+            }}
+            >
               {inactiveMeshMates.map(({ id, frontmatter, fields }) => (
                 <Col $xs={12} $sm={6} $lg={4} key={id}>
                   <ProfileCard frontmatter={frontmatter} cardlink={fields.slug} />
@@ -115,7 +117,8 @@ const Meshmates = () => {
             <p> These MeshMates have previously served the Layer5 community with distinction. While they are no longer active in the MeshMate program, their contributions and impact continue to influence our community. </p>
             <Row style={{
               flexWrap: "wrap"
-            }}>
+            }}
+            >
               {emeritusMeshMates.map(({ id, frontmatter, fields }) => (
                 <Col $xs={12} $sm={6} $lg={4} key={id}>
                   <ProfileCard frontmatter={frontmatter} cardlink={fields.slug} />
@@ -186,7 +189,8 @@ const Meshmates = () => {
         <div className="conduct">
           <h2> Code of Conduct </h2>
           <p> The comfort and safety of Layer5 community members is our priority. You must agree to the Code of Conduct to participate in the Layer5 community, and any violations of the Code of Conduct will be taken seriously. <br />
-            To report any violations please fill out this incident form. </p>
+            To report any violations please fill out this incident form.
+          </p>
           <Button $primary title="Report Incident" $url="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform" $external={true} />
         </div>
       </Container>

@@ -220,7 +220,8 @@ const Comparison = () => {
                   <tr key={x.id} >
                     <td className="categories" colSpan="5">
                       <img src={x.icon} height={32} className="category-icon" alt={x.category} />
-                      <h3 className="category">{x.category}</h3></td>
+                      <h3 className="category">{x.category}</h3>
+                    </td>
                   </tr>
                   {x.features.map((f) => (
                     <tr key={f.feature}>

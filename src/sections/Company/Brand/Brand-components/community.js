@@ -12,7 +12,8 @@ const CommunityBrand = () => {
     <div className="post-content">
       <Row style={{
         flexWrap: "wrap"
-      }} className="brand-section">
+      }} className="brand-section"
+      >
         <Col $xs={12} $sm={6}>
           <h1 className="layerH3">
             Community
@@ -21,7 +22,8 @@ const CommunityBrand = () => {
       </Row>
       <Row style={{
         flexWrap: "wrap"
-      }}>
+      }}
+      >
         <Col $xs={12} $sm={6}>
           <h2 className="layerH3">
             MeshMate
@@ -47,7 +49,8 @@ const CommunityBrand = () => {
       </Row>
       <Row style={{
         flexWrap: "wrap"
-      }}>
+      }}
+      >
         <Col>
           <h2 className="layerH3 in">
             Logos
@@ -55,7 +58,8 @@ const CommunityBrand = () => {
         </Col>
         <Row style={{
           flexWrap: "wrap"
-        }} className="ImgDiv">
+        }} className="ImgDiv"
+        >
           <Col $xs={12} $sm={3}>
             <img src={MeshMateLogo} alt="MeshMate Logo" />
           </Col>
@@ -66,7 +70,8 @@ const CommunityBrand = () => {
       </Row>
       <Row style={{
         flexWrap: "wrap"
-      }}>
+      }}
+      >
         <Col>
           <h2 className="layerH3 in">
             Colors
@@ -81,7 +86,8 @@ const CommunityBrand = () => {
         </Col>
         <Row style={{
           flexWrap: "wrap"
-        }} className="color-code-wrapper">
+        }} className="color-code-wrapper"
+        >
           <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
           <ColorBox name="Caribbean Green" R="0" G="211" B="169" colorCode="#00D3A9" />
           <ColorBox name="Casper" R="177" G="182" B="184" colorCode="#B1B6B8" />
