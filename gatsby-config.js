@@ -1,7 +1,6 @@
 /* eslint-env node */
 
 module.exports = {
-  pathPrefix: "/layer5",
   siteMetadata: {
     title: "Layer5 - Expect more from your infrastructure",
     description:
@@ -79,6 +78,7 @@ module.exports = {
         svgoConfig: {
           plugins: [
             "prefixIds",
+            "removeDimensions",
             {
               name: "preset-default",
               params: {
@@ -86,6 +86,7 @@ module.exports = {
                   // or disable plugins
                   inlineStyles: false,
                   cleanupIds: false,
+                  removeViewBox: false,
                 },
               },
             },
@@ -113,7 +114,8 @@ module.exports = {
               filter: { frontmatter: { published: { eq: true }${process.env.NODE_ENV === "development" ? ", date: { gte: \"2024-01-01\" }" : ""} } }
             ) {
               nodes {
-                html 
+                # Using excerpt instead of html because gatsby-plugin-mdx v5+ removed the html field
+                excerpt
                 frontmatter {
                   title
                   author
@@ -165,7 +167,7 @@ module.exports = {
                     enclosure: node.frontmatter.thumbnail && {
                       url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                     },
-                    custom_elements: [{ "content:encoded": node.html }],
+                    custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
             },
@@ -190,7 +192,7 @@ module.exports = {
                     enclosure: node.frontmatter.thumbnail && {
                       url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                     },
-                    custom_elements: [{ "content:encoded": node.html }],
+                    custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
             },
@@ -215,7 +217,7 @@ module.exports = {
                     enclosure: node.frontmatter.thumbnail && {
                       url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                     },
-                    custom_elements: [{ "content:encoded": node.html }],
+                    custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
             },
@@ -240,7 +242,7 @@ module.exports = {
                     enclosure: node.frontmatter.thumbnail && {
                       url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                     },
-                    custom_elements: [{ "content:encoded": node.html }],
+                    custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
             },
@@ -274,7 +276,7 @@ module.exports = {
                       url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                     },
                     custom_elements: [
-                      { "content:encoded": node.html },
+                      { "content:encoded": node.excerpt },
                       { "content:type": node.frontmatter.type },
                       { "content:category": node.frontmatter.category },
                       { "content:tags": node.frontmatter.tags?.join(", ") || "" },
@@ -303,7 +305,7 @@ module.exports = {
                     enclosure: node.frontmatter.thumbnail && {
                       url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                     },
-                    custom_elements: [{ "content:encoded": node.html }],
+                    custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
             },
@@ -328,7 +330,7 @@ module.exports = {
                     enclosure: node.frontmatter.thumbnail && {
                       url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                     },
-                    custom_elements: [{ "content:encoded": node.html }],
+                    custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
             },

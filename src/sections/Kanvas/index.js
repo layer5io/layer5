@@ -115,52 +115,37 @@ const Kanvas = (props) => {
             image={GuyM}
           />
           <DesignerFeatures
-            features={[
-              {
-                title: "Design your deployments the way you want",
-                description:
-                  "Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components and Cloud services. Say goodbye to YAML configurations.",
-                imgContent: (
-                  <RoleBind1
-                    id="design-image1"
-                    style={{ transform: "translateX(-2rem)" }}
-                    alt="design-image1"
-                  />
-                ),
-              },
-              {
-                title: "Manage your applications visually and intuitively",
-                description:
-                  "Play with powerful features including context-aware designs and namespace configurations to easily manage all services.",
-                imgContent: (
-                  <RoleBind2 id="design-image2" alt="design-image2" />
-                ),
-              },
-              {
-                title: "Build the bridge",
-                description:
-                  "Go from developer handoffs to ongoing conversations with a shared language between design and development.",
-                imgContent: (
-                  <RoleBind3
-                    id="design-image3"
-                    style={{ transform: "translateX(-2rem)" }}
-                    alt="design-image3"
-                  />
-                ),
-              },
-              {
-                title: "Stop finger-pointing",
-                description:
-                  "Make infrastructure and application management less about finger-pointing and more about collaborating.",
-                imgContent: (
-                  <RoleBind4
-                    id="design-image4"
-                    style={{ transform: "translateX(-2rem)" }}
-                    alt="design-image4"
-                  />
-                ),
-              },
-            ]}
+            features={
+              [
+                {
+                  title: "Design your deployments the way you want",
+                  description: "Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components and Cloud services. Say goodbye to YAML configurations.",
+                  imgContent: (
+                    <RoleBind1 id="design-image1" style={{ transform: "translateX(-2rem)" }} alt="design-image1" />
+                  )
+                },
+                {
+                  title: "Manage your applications visually and intuitively",
+                  description: "Play with powerful features including context-aware designs and namespace configurations to easily manage all services.",
+                  imgContent: (
+                    <RoleBind2 id="design-image2" alt="design-image2" />
+                  )
+                },
+                {
+                  title: "Build the bridge",
+                  description: "Go from developer handoffs to ongoing conversations with a shared language between design and development.",
+                  imgContent: (
+                    <RoleBind3 id="design-image3" style={{ transform: "translateX(-2rem)" }} alt="design-image3" />
+                  )
+                },
+                {
+                  title: "Stop finger-pointing",
+                  description: "Make infrastructure and application management less about finger-pointing and more about collaborating.",
+                  imgContent: (
+                    <RoleBind4 id="design-image4" style={{ transform: "translateX(-2rem)" }} alt="design-image4" />
+                  )
+                },
+              ]}
           />
 
           <InlineQuotes
@@ -170,32 +155,23 @@ const Kanvas = (props) => {
             image={Kaur}
           />
           <VisualizerFeatures
-            features={[
-              {
-                title:
-                  "All your Kubernetes and Cloud infrastructure under a common management",
-                description:
-                  "Deploy designs, apply patterns, manage and operate your deployments and services in real-time.",
-                imgContent: (
-                  <Visualize1
-                    id="visualize-image1"
-                    alt="visualize-image1"
-                  />
-                ),
-              },
-              {
-                title:
-                  "Continuous visibility across all of your clusters and workloads.",
-                description:
-                  "Import your existing Kubernetes, Kustomize, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers.",
-                imgContent: (
-                  <Visualize2
-                    id="visualize-image2"
-                    alt="visualize-image2"
-                  />
-                ),
-              },
-            ]}
+            features={
+              [
+                {
+                  title: "All your Kubernetes and Cloud infrastructure under a common management",
+                  description: "Deploy designs, apply patterns, manage and operate your deployments and services in real-time.",
+                  imgContent: (
+                    <Visualize1 id="visualize-image1" alt="visualize-image1" />
+                  )
+                },
+                {
+                  title: "Continuous visibility across all of your clusters and workloads.",
+                  description: "Import your existing Kubernetes, Kustomize, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers.",
+                  imgContent: (
+                    <Visualize2 id="visualize-image2" alt="visualize-image2" />
+                  )
+                },
+              ]}
           />
           <InlineQuotes
             quote="Wow, just tried Kanvas and it's exactly what I needed! Dragging that Helm chart was so smooth, and the smart features really caught my attention. Definitely sharing this with my dev team before everyone else discovers it!"
@@ -205,120 +181,144 @@ const Kanvas = (props) => {
           />
 
           <CollaboratorFeatures
-            features={[
-              {
-                title: "Bring those ideas to life",
-                description:
-                  "Designer and Operator live side-by-side, so all design work, from ideation to operation, can be found in one place.",
-                imgContent: (
-                  <>
-                    <img
-                      id="avatar-1"
-                      src={Avatar1}
-                      alt=""
-                      width="48"
-                      height="48"
-                      style={{ objectFit: "cover" }}
-                    />
-                    <Collab1
-                      id="collaborate-image1"
-                      alt="collaborate-image1"
-                    />
-                  </>
-                ),
-              },
-              {
-                title: "Create. Iterate. Repeat.",
-                description:
-                  "Build an iterative design flow with live collaboration that keeps you in the loop whether you're working in the office or remotely.",
-                imgContent: (
-                  <>
-                    <img
-                      id="avatar-2"
-                      src={Avatar2}
-                      alt="avatar-2"
-                      width="48"
-                      height="48"
-                      style={{ objectFit: "cover" }}
-                    />
-                    <Collab2
-                      id="collaborate-image2"
-                      alt="collaborate-image2"
-                    />
-                  </>
-                ),
-              },
-              {
-                title: "Where your teams share the same language",
-                description:
-                  "Build an iterative design flow with live collaboration that keeps you in the loop whether you're working in the office or remotely.",
-                imgContent: (
-                  <>
-                    <img
-                      id="avatar-3"
-                      src={Avatar3}
-                      alt="avatar-3"
-                      width="48"
-                      height="48"
-                      style={{ objectFit: "cover" }}
-                    />
-                    <Collab3
-                      id="collaborate-image3"
-                      alt="collaborate-image3"
-                    />
-                  </>
-                ),
-              },
-              {
-                title: "Inclusive collaboration from start to finish",
-                description:
-                  "Kanvas is an end-to-end management platform, here to help teams understand problems, explore options, and build solutions—together.",
-                imgContent: (
-                  <>
-                    <img
-                      id="avatar-3"
-                      src={Avatar3}
-                      alt="avatar-3"
-                      width="48"
-                      height="48"
-                      style={{ objectFit: "cover" }}
-                    />
-                    <Collab4
-                      id="collaborate-image4"
-                      alt="collaborate-image4"
-                    />
-                  </>
-                ),
-              },
-            ]}
+            features={
+              [
+                {
+                  title: "Bring those ideas to life",
+                  description: "Designer and Operator live side-by-side, so all design work, from ideation to operation, can be found in one place.",
+                  imgContent: (
+                    <>
+                      <img
+                        id="avatar-1"
+                        src={Avatar1}
+                        alt=""
+                        width="48"
+                        height="48"
+                        style={{ objectFit: "cover" }}
+                      />
+                      <Collab1 id="collaborate-image1" alt="collaborate-image1" />
+                    </>
+                  )
+                  // Invite any Layer5 Cloud user, or all Meshery users, to work with you on a public design, including making changes and releasing new versions."
+                },
+                // {
+                //   title: "Nothing great is made alone.",
+                //   description: "Kanvas connects everyone in the DevOps process so teams can deliver better products, faster."
+                // },
+                {
+                  title: "Create. Iterate. Repeat.",
+                  description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you're working in the office or remotely.",
+                  imgContent: (
+                    <>
+                      <img
+                        id="avatar-2"
+                        src={Avatar2}
+                        alt="avatar-2"
+                        width="48"
+                        height="48"
+                        style={{ objectFit: "cover" }}
+                      />
+                      <Collab2 id="collaborate-image2" alt="collaborate-image2" />
+                    </>
+                  )
+                },
+                {
+                  title: "Where your teams share the same language",
+                  description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you're working in the office or remotely.",
+                  imgContent: (
+                    <>
+                      <img
+                        id="avatar-3"
+                        src={Avatar3}
+                        alt="avatar-3"
+                        width="48"
+                        height="48"
+                        style={{ objectFit: "cover" }}
+                      />
+                      <Collab3 id="collaborate-image3" alt="collaborate-image3" />
+                    </>
+                  )
+                },
+                // {
+                //   title: "Where your teams share the same language",
+                //   description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you're working in the office or remotely."
+                // },
+                {
+                  title: "Inclusive collaboration from start to finish",
+                  description: "Kanvas is an end-to-end management platform, here to help teams understand problems, explore options, and build solutions—together.",
+                  imgContent: (
+                    <>
+                      <img
+                        id="avatar-3"
+                        src={Avatar3}
+                        alt="avatar-3"
+                        width="48"
+                        height="48"
+                        style={{ objectFit: "cover" }}
+                      />
+                      <Collab4 id="collaborate-image4" alt="collaborate-image4" />
+                    </>
+                  )
+                }
+              ]}
           />
-
+          {/* <CollaboratorFeatures
+            features={
+              [
+                {
+                  title: "Stop finger-pointing",
+                  description: "Make infrastructure and application management less about finger-pointing and more about collaborating."
+                },
+                {
+                  title: "Self-service empowerment for all of your teams",
+                  description: "As a self-service engineering platform, Layer5 helps DevOps teams make infrastructure and application management less about finger-pointing and more about collaborating."
+                },
+                {
+                  title: "Empower developers to change how they write applications",
+                  description: "We , support operators in rethinking how they run modern infra, supercharge security engineers with code-level insight, enable service owners to regain control over their products."
+                },
+                {
+                  title: "",
+                  description: ""
+                },
+                {
+                  title: "",
+                  description: ""
+                },
+                {
+                  title: "",
+                  description: ""
+                },
+                {
+                  title: "",
+                  description: ""
+                },
+                {
+                  title: "",
+                  description: ""
+                },
+                {
+                  title: "",
+                  description: ""
+                },
+              ]} />*/}
           <InlineQuotes
             quote="Kanvas is unreal. Support for air-gapped deployments is all the better, too."
             person="Phillip Ulberg"
             title="Solutions Architect at Raymond James Financial, Inc."
             image={Phillip}
           />
-
-          {KanvasFeaturesComponent && (
-            <KanvasFeaturesComponent style={{ marginBottom: "2rem" }} />
-          )}
-
-          {CatalogComponent && <CatalogComponent />}
-
+          <KanvasFeatures style={{ marginBottom: "2rem" }} />
+          <Catalog />
           <InlineQuotes
             quote="Do we like Kanvas? ABSOLUTELY!"
             person="Alex"
             title="Infrastructure Engineering at Docker, Inc."
             image={Alex}
           />
-
-          {KanvasBtnComponent && (
-            <KanvasBtnComponent style={{ marginBottom: "2rem" }} />
-          )}
-
-          {PlatformComponent && <PlatformComponent />}
-
+          {/* <MesheryAction /> */}
+          <KanvasBtn style={{ marginBottom: "2rem" }} />
+          <Platform />
           <InlineQuotes
             quote="Guys, I love Kanvas! This tool is crazy!"
             person="Ala Eddine BENHASSIR"
