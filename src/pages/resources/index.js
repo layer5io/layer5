@@ -34,7 +34,8 @@ const MembersPage = () => {
       <Container>
         <Row style={{
           flexWrap: "wrap"
-        }}>
+        }}
+        >
           <Col $xs={12} $lg={3}>
             <ResourcesNavigation handleChange={handleChange} clear={clear} resources={filter} />
           </Col>

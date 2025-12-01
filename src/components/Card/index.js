@@ -6,7 +6,7 @@ import Image from "../image";
 import { CardWrapper } from "./Card.style";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
-const Card = ({ frontmatter, fields }) => {
+const Card = ({ frontmatter, fields, loading = "lazy", fetchpriority = "auto" }) => {
 
   const { isDark } = useStyledDarkMode();
 
@@ -18,6 +18,8 @@ const Card = ({ frontmatter, fields }) => {
             {...((isDark && frontmatter.darkthumbnail && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL)
               ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
             imgStyle={{ objectFit: "contain" }}
+            loading={loading}
+            fetchpriority={fetchpriority}
             alt={frontmatter.title}
           />
         </div>
