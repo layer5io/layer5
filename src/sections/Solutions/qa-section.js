@@ -205,7 +205,8 @@ const QASection = () => {
                   <>
                     <ul style={{
                       color: "white"
-                    }}>
+                    }}
+                    >
                       {item.answer.map((point, pIndex) => (
                         <li key={pIndex} style={{ marginBottom: "0.5rem" }}>
                           {point}
