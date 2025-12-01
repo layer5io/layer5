@@ -1,7 +1,6 @@
 /* eslint-env node */
 
 module.exports = {
-  pathPrefix: "/layer5",
   siteMetadata: {
     title: "Layer5 - Expect more from your infrastructure",
     description:
