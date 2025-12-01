@@ -19,7 +19,7 @@ if (process.env.CI === "true") {
   // All process.env.CI conditionals in this file are in place for GitHub Pages, if webhost changes in the future, code may need to be modified or removed.
   //Replacing '/' would result in empty string which is invalid
   const replacePath = (url) =>
-    url === "/" || url.includes("/404") ? url : `${url}.html`;
+    url === "/" || url.includes("/404") || url.endsWith(".html") ? url : `${url}.html`;
 
   exports.onCreatePage = ({ page, actions }) => {
     const { createPage, deletePage, createRedirect } = actions;
@@ -771,6 +771,8 @@ exports.createSchemaCustomization = ({ actions }) => {
        community_manager: String,
        docURL: String,
        permalink: String,
+       slug: String,
+       redirect_from: [String]
      }
    `;
   createTypes(typeDefs);

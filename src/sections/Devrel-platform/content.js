@@ -277,7 +277,8 @@ const DevrelContent = () => {
               person="Nic Jackson"
               title="Principal Developer Advocate at HashiCorp"
               quote="As someone who often presents complex cloud native architectures, Meshery's collaborative environment has become my go-to platform for interactive demonstrations and workshops."
-              image={NicJacksonImg}/>
+              image={NicJacksonImg}
+            />
           </Row>
           <Row className="devrel">
             <Col $md={6} className="devrel-detail">
@@ -300,7 +301,8 @@ const DevrelContent = () => {
               person="Dhruv Sharma"
               title="Principal Platform Product Manager at GuideWire"
               quote="This wonderful product is a vendor-neutral self-service engineering platform that scales intent—not toil—by turning architecture into a consistent design-to-operate pipeline."
-              image={DhruvSharmaImg}/>
+              image={DhruvSharmaImg}
+            />
           </Row>
           <Row className="devrel">
             <Col $md={6} className="devrel-image">
@@ -323,7 +325,8 @@ const DevrelContent = () => {
               person="Ruth Ikegah"
               title="Open Source Program Manager and GitHub Star"
               quote="Layer5's platform helps me create engaging content for developers while building my professional brand. The analytics guide my content strategy and the public profile showcases my expertise to the cloud native community."
-              image={RutkIkegahImg}/>
+              image={RutkIkegahImg}
+            />
           </Row>
           <Row className="devrel">
             <Col $md={6} className="devrel-detail">
@@ -383,7 +386,8 @@ const DevrelContent = () => {
               person="Yash Sharma"
               title="Layer5 MeshMate & Developer Advocate at DigitalOcean"
               quote="The platform helped me gain recognition in Developer Relations by showcasing my popular designs to the community."
-              image={YashSharmaIMg}/>
+              image={YashSharmaIMg}
+            />
           </Row>
         </Container>
       </DevrelContentWrapper>
