@@ -115,6 +115,7 @@ module.exports = {
               filter: { frontmatter: { published: { eq: true }${process.env.NODE_ENV === "development" ? ", date: { gte: \"2024-01-01\" }" : ""} } }
             ) {
               nodes {
+                # Using excerpt instead of html because gatsby-plugin-mdx v5+ removed the html field
                 excerpt
                 frontmatter {
                   title
