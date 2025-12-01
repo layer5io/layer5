@@ -115,7 +115,7 @@ module.exports = {
               filter: { frontmatter: { published: { eq: true }${process.env.NODE_ENV === "development" ? ", date: { gte: \"2024-01-01\" }" : ""} } }
             ) {
               nodes {
-                html 
+                excerpt
                 frontmatter {
                   title
                   author
@@ -167,7 +167,7 @@ module.exports = {
                     enclosure: node.frontmatter.thumbnail && {
                       url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                     },
-                    custom_elements: [{ "content:encoded": node.html }],
+                    custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
             },
@@ -192,7 +192,7 @@ module.exports = {
                     enclosure: node.frontmatter.thumbnail && {
                       url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                     },
-                    custom_elements: [{ "content:encoded": node.html }],
+                    custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
             },
@@ -217,7 +217,7 @@ module.exports = {
                     enclosure: node.frontmatter.thumbnail && {
                       url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                     },
-                    custom_elements: [{ "content:encoded": node.html }],
+                    custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
             },
@@ -242,7 +242,7 @@ module.exports = {
                     enclosure: node.frontmatter.thumbnail && {
                       url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                     },
-                    custom_elements: [{ "content:encoded": node.html }],
+                    custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
             },
@@ -276,7 +276,7 @@ module.exports = {
                       url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                     },
                     custom_elements: [
-                      { "content:encoded": node.html },
+                      { "content:encoded": node.excerpt },
                       { "content:type": node.frontmatter.type },
                       { "content:category": node.frontmatter.category },
                       { "content:tags": node.frontmatter.tags?.join(", ") || "" },
@@ -305,7 +305,7 @@ module.exports = {
                     enclosure: node.frontmatter.thumbnail && {
                       url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                     },
-                    custom_elements: [{ "content:encoded": node.html }],
+                    custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
             },
@@ -330,7 +330,7 @@ module.exports = {
                     enclosure: node.frontmatter.thumbnail && {
                       url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                     },
-                    custom_elements: [{ "content:encoded": node.html }],
+                    custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
             },
