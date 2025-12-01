@@ -59,7 +59,8 @@ const CommunityPage = () => {
         <Container>
           <Row style={{
             flexWrap: "wrap"
-          }} className="service-mesh-projects">
+          }} className="service-mesh-projects"
+          >
             <Col $sm={12} $lg={6}>
               <h2>Warm, welcoming, and encouraging. Embrace developer-defined infrastructure and help empower every engineer with us.</h2>
               <p>
@@ -73,7 +74,8 @@ const CommunityPage = () => {
           </Row>
           <Row style={{
             flexWrap: "wrap"
-          }} className="open-source-projects">
+          }} className="open-source-projects"
+          >
             <h2>Open Source and Cloud Native</h2>
             <p>
               Layer5 projects are open source software. Anyone can download,

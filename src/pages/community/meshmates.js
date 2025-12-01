@@ -17,5 +17,6 @@ export const Head = () => {
   return  <SEO title="Meshmates"
     description="MeshMates - the Layer5 contributor onboarding program.
           MeshMates is a collection of cloud native mentors."
-    image={seoImage} />;
+    image={seoImage}
+  />;
 };

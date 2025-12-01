@@ -103,7 +103,8 @@ const Footer = ({ location }) => {
         </Row>
         <Row style={{
           flexWrap: "wrap"
-        }}>
+        }}
+        >
           <Col $xs={12} $lg={3}>
             <p className="desc-info">
               An empowerer of engineers, Layer5 helps you extract more value
@@ -215,7 +216,7 @@ const Footer = ({ location }) => {
               </div>
               <div className="footer-sections odd-col">
                 <h3 className="section-title">
-                  <Link className="title-link" to="/kanvas">
+                  <Link className="title-link" to="/cloud-native-management/solutions">
                     SOLUTIONS
                   </Link>
                 </h3>

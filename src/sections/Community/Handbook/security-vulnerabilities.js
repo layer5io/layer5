@@ -88,7 +88,8 @@ const SecurityVulnerabilitiesPage = () => {
                   />
                   &nbsp; Layer5 Labs
                 </a>
-                  - emerging projects and Meshery extensions, like                 <img
+                  - emerging projects and Meshery extensions, like
+                <img
                   src={Kanvas}
                   alt="Kanvas logo"
                   style={{ marginLeft: ".3rem" }}

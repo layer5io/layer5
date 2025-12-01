@@ -15,5 +15,6 @@ export default LearnGridPage;
 export const Head = () => {
   return  <SEO title="Learn DevOps and Cloud Native"
     description="Learn DevOps and Cloud Native: Kubernetes and all the CNCF projects."
-    image="/images/workshops.webp" />;
+    image="/images/workshops.webp"
+  />;
 };

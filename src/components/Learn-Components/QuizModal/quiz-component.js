@@ -33,7 +33,8 @@ const ResultBox = ({ score, resetQuiz,correct, incorrect,total  }) => (
       <div onClick={resetQuiz}>
         <Button $secondary title="Go to Learning Paths"
           $url={"/learn/learning-paths"}
-          $external={false} />
+          $external={false}
+        />
       </div>
     </div>
   </div>
@@ -118,7 +119,8 @@ const QuestionBox = (props) => {
             <div className="quizbox__progress--score quizbox__progress--control" onClick={() => {
               props.prevQuestion();
               setSelectedAnswer(null);
-            }}>
+            }}
+            >
               <BsArrowLeft className="quizbox__progress-control__icon"/>
               <label>Previous</label>
             </div>
@@ -127,7 +129,8 @@ const QuestionBox = (props) => {
             <div className="quizbox__progress--score quizbox__progress--control" onClick={() => {
               props.nextQuestion();
               setSelectedAnswer(null);
-            }}>
+            }}
+            >
               <label>{props.answers.length === props.questionIndex ? "Finish" : "Next"} </label>
               <BsArrowRight className="quizbox__progress-control__icon"/>
             </div>
