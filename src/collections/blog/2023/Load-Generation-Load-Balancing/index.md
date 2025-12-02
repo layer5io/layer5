@@ -3,8 +3,8 @@ title: "Load Generation and Load Balancing"
 subtitle: "Fueling Performance Testing and Ensuring Fair Distribution of Workload"
 date: 2024-03-29 10:30:05 -0530
 author: Chandravijay Rai
-thumbnail: "./MeshMap.svg"
-darkthumbnail: "./MeshMap.svg"
+thumbnail_svg: "./MeshMap.svg"
+darkthumbnail_svg: "./MeshMap.svg"
 category: "Kubernetes"
 description: "Load Generation simulates demand on software, identifying capacity and bottlenecks and Load Balancing distributes workloads across resources, preventing overload and enhancing performance."
 tags:
@@ -60,10 +60,10 @@ Load balancing is a critical technique that enhances the responsiveness, reliabi
 Load balancing plays a pivotal role in optimizing the performance of internet applications by efficiently managing network traffic. Imagine a grocery store with multiple checkout lines—one open and the others closed. Load balancing is akin to opening all checkout lines,thereby reducing wait times, and improving overall efficiency.
 <br/>
 
- <figure class="imgWithCaption fig-right">
+ <figure className="imgWithCaption fig-right">
     <img src={Layer5} />
     <figcaption>
-    <p>Layer5</p>
+    Layer5
     </figcaption>
  </figure>
 

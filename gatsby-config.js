@@ -1,7 +1,6 @@
 /* eslint-env node */
 
 module.exports = {
-  pathPrefix: "/layer5",
   siteMetadata: {
     title: "Layer5 - Expect more from your infrastructure",
     description:
@@ -15,6 +14,7 @@ module.exports = {
   flags: {
     FAST_DEV: true,
     PARALLEL_SOURCING: false, // Disable parallel sourcing to reduce memory pressure
+    DEV_SSR: false,
   },
   trailingSlash: "never",
   plugins: [
@@ -78,6 +78,7 @@ module.exports = {
         svgoConfig: {
           plugins: [
             "prefixIds",
+            "removeDimensions",
             {
               name: "preset-default",
               params: {
@@ -85,6 +86,7 @@ module.exports = {
                   // or disable plugins
                   inlineStyles: false,
                   cleanupIds: false,
+                  removeViewBox: false,
                 },
               },
             },
@@ -108,11 +110,12 @@ module.exports = {
             }
             allMdx(
               sort: {frontmatter: {date: DESC}}
-              limit: 1000
-              filter: { frontmatter: { published: { eq: true } } }
+              limit: ${process.env.NODE_ENV === "development" ? 25 : 1000}
+              filter: { frontmatter: { published: { eq: true }${process.env.NODE_ENV === "development" ? ", date: { gte: \"2024-01-01\" }" : ""} } }
             ) {
               nodes {
-                html 
+                # Using excerpt instead of html because gatsby-plugin-mdx v5+ removed the html field
+                excerpt
                 frontmatter {
                   title
                   author
@@ -143,13 +146,13 @@ module.exports = {
             output: "/rss.xml",
             title: "Layer5 Technical Posts",
             // REQUIRED: We add this lightweight query to satisfy the plugin validator.
-            // The 'allMdx' data from the global query above is merged into this, 
+            // The 'allMdx' data from the global query above is merged into this,
             // so 'serialize' can still access it.
-            query: "{ site { siteMetadata { title } } }", 
+            query: "{ site { siteMetadata { title } } }",
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.nodes
-                .filter((node) => 
-                  ["blog", "resources", "news"].includes(node.fields.collection) && 
+                .filter((node) =>
+                  ["blog", "resources", "news"].includes(node.fields.collection) &&
                   !["Programs", "Community", "Events", "FAQ"].includes(node.frontmatter.category)
                 )
                 .slice(0, 20)
@@ -164,7 +167,7 @@ module.exports = {
                     enclosure: node.frontmatter.thumbnail && {
                       url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                     },
-                    custom_elements: [{ "content:encoded": node.html }],
+                    custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
             },
@@ -189,7 +192,7 @@ module.exports = {
                     enclosure: node.frontmatter.thumbnail && {
                       url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                     },
-                    custom_elements: [{ "content:encoded": node.html }],
+                    custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
             },
@@ -207,14 +210,14 @@ module.exports = {
                   return Object.assign({}, node.frontmatter, {
                     title: node.frontmatter.title,
                     author: node.frontmatter.author,
-                    description: node.frontmatter.description, 
+                    description: node.frontmatter.description,
                     date: node.frontmatter.date,
                     url: site.siteMetadata.siteUrl + node.fields.slug,
                     guid: site.siteMetadata.siteUrl + node.fields.slug,
                     enclosure: node.frontmatter.thumbnail && {
                       url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                     },
-                    custom_elements: [{ "content:encoded": node.html }],
+                    custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
             },
@@ -239,7 +242,7 @@ module.exports = {
                     enclosure: node.frontmatter.thumbnail && {
                       url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                     },
-                    custom_elements: [{ "content:encoded": node.html }],
+                    custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
             },
@@ -252,7 +255,7 @@ module.exports = {
             serialize: ({ query: { site, allMdx } }) => {
               const targetCategories = ["Meshery", "Announcements", "Events"];
               const targetTags = ["Community", "Meshery", "mesheryctl"];
-              
+
               return allMdx.nodes
                 .filter((node) => {
                   const inCollection = ["blog", "resources", "news", "events"].includes(node.fields.collection);
@@ -273,7 +276,7 @@ module.exports = {
                       url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                     },
                     custom_elements: [
-                      { "content:encoded": node.html },
+                      { "content:encoded": node.excerpt },
                       { "content:type": node.frontmatter.type },
                       { "content:category": node.frontmatter.category },
                       { "content:tags": node.frontmatter.tags?.join(", ") || "" },
@@ -302,7 +305,7 @@ module.exports = {
                     enclosure: node.frontmatter.thumbnail && {
                       url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                     },
-                    custom_elements: [{ "content:encoded": node.html }],
+                    custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
             },
@@ -327,7 +330,7 @@ module.exports = {
                     enclosure: node.frontmatter.thumbnail && {
                       url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                     },
-                    custom_elements: [{ "content:encoded": node.html }],
+                    custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
             },
@@ -352,10 +355,6 @@ module.exports = {
       options: {
         extensions: [".mdx", ".md"],
         gatsbyRemarkPlugins: [],
-        mdxOptions: {
-          remarkPlugins: [],
-          rehypePlugins: [],
-        },
       },
     },
     {
@@ -365,6 +364,8 @@ module.exports = {
         name: "collections",
       },
     },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {

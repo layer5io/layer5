@@ -103,7 +103,8 @@ const Footer = ({ location }) => {
         </Row>
         <Row style={{
           flexWrap: "wrap"
-        }}>
+        }}
+        >
           <Col $xs={12} $lg={3}>
             <p className="desc-info">
               An empowerer of engineers, Layer5 helps you extract more value

@@ -15,5 +15,6 @@ export default PlatformEngineeringSolutions;
 export const Head = () => {
   return <SEO title="Platform Engineering"
     description="Empower Your Teams with Platform Engineering. Streamline development, enhance collaboration, and accelerate innovation in cloud-native environments."
-    image="/images/solutions-devrel.webp" />;
+    image="/images/solutions-devrel.webp"
+  />;
 };

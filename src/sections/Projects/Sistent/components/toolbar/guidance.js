@@ -124,12 +124,15 @@ const ToolbarGuidance = () => {
                   padding: "0 8px",
                   flex: 1,
                   maxWidth: "300px"
-                }}>
+                }}
+                >
                   <SearchIcon style={{ marginRight: "8px" }} />
                   <div style={{
                     height: "32px",
                     lineHeight: "32px",
-                  }}>Search...</div>
+                  }}
+                  >Search...
+                  </div>
                 </div>
                 <div style={{ marginLeft: "auto" }}>
                   <Button><SettingsIcon /></Button>
@@ -178,7 +181,8 @@ const ToolbarGuidance = () => {
                   borderRight: "1px solid",
                   marginRight: "8px",
                   paddingRight: "8px"
-                }}>
+                }}
+                >
                   <Button
                     onClick={() => setSelectionType("text")}
                   >
@@ -230,7 +234,8 @@ const ToolbarGuidance = () => {
                   width: "100%",
                   maxWidth: "500px",
                   margin: "0 auto"
-                }}>
+                }}
+                >
                   <Toolbar style={{ borderBottom: "1px solid" }}>
                     <Button><HomeIcon /></Button>
                     <Button><SearchIcon /></Button>
@@ -259,7 +264,8 @@ const ToolbarGuidance = () => {
                   width: "100%",
                   maxWidth: "500px",
                   margin: "0 auto"
-                }}>
+                }}
+                >
                   <div style={{ padding: "20px", textAlign: "center" }}>
                     Content Area
                   </div>

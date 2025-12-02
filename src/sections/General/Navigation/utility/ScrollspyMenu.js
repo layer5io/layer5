@@ -15,14 +15,14 @@ import { useInView } from "react-intersection-observer";
 import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
 
 const ScrollspyMenu = ({ menuItems, ...props }) => {
-  const { blogData,className } = props;
+  const { blogData, className } = props;
+  const { isDark } = useStyledDarkMode();
 
   const addAllClasses = className ? [className] : [""];
-  const [activeState,setActiveState] = useState(null);
+  const [activeState, setActiveState] = useState(null);
 
-  const [isWrapVisible,setIsWrapperVisible] = useState(false);
+  const [isWrapVisible, setIsWrapperVisible] = useState(false);
   const [imageInView, setimageInView] = useState(false);
-  const { isDark } = useStyledDarkMode();
 
   const handleMouseOver = (index) => {
     setActiveState(menuItems[index]);
@@ -45,17 +45,16 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
   const [transitionRef, inView] = useInView({ threshold: 0.7 });
 
   useEffect(() => {
-    if (inView && !imageInView){
+    if (inView && !imageInView) {
       setimageInView(true);
-    } else if (imageInView && !inView){
+    } else if (imageInView && !inView) {
       setimageInView(false);
     }
-  },[inView,imageInView]);
+  }, [inView, imageInView]);
 
   return (
     <ul className={addAllClasses.join(" ")} onMouseEnter={wrapDisplay} onMouseLeave={wrapNone}>
       {menuItems.map((menu, index) => (
-
         <li
           key={index}
           className={
@@ -159,7 +158,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                       <div className="transition-container" ref={transitionRef}>
                         <img className="canvas" src={isDark ? EmptyDark : EmptyLight} alt="" />
                         <ServiceIntefaceImage className="service-interface" alt="ServiceIntefaceImage" />
-                        <IngressGatewayImage alt="IngressGatewayImage" className={imageInView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"}/>
+                        <IngressGatewayImage alt="IngressGatewayImage" className={imageInView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"} />
                         {isDark ? <KubernetesImage className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" /> : <KubernetesImage1 className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" />}
                         <PodImage className={imageInView ? "pod-transition pod" : "pod"} alt="PodImage" />
                         <PrometheusImage className={imageInView ? "prometheus-transition prometheus" : "prometheus"} alt="PrometheusImage" />

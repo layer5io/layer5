@@ -96,7 +96,8 @@ const NewsGrid = ({ data }) => {
 
             <Row style={{
               flexWrap: "wrap"
-            }}>
+            }}
+            >
               {news.length < 1 && (
                 <Col $xs={12} $sm={6}>
                       No News post that matches the title "{searchQuery}" found.
