@@ -88,7 +88,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
           </div>
           <Button
             title={hasBookmark ? "Start Again" : "Get Started"}
-            $url={`${extractedSection}/${course.frontmatter.toc[0]}`}
+            $url={getChapterTitle(course.frontmatter.toc[0], chapters) ? `/${getChapterTitle(course.frontmatter.toc[0], chapters).fields.slug}` : `#`}
           />
           {hasBookmark && (
             <Button
@@ -152,7 +152,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
             <SubscribeLearnPath />
           </Col>
         </Row>
-      </div>
+      </div>f
       <BookmarkNotification showNotification={showNotification} closeNotification={() => setShowNotification(false)} />
     </CourseOverviewWrapper>
   );
