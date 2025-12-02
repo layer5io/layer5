@@ -780,7 +780,7 @@ exports.createSchemaCustomization = ({ actions }) => {
        howItWorks: String,
        howItWorksDetails: String,
        docURL: String,
-       featureList: String,
+       featureList: [String],
        workingSlides: [File] @fileByRelativePath,
        components: [IntegrationComponent]
      }
