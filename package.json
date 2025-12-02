@@ -46,7 +46,7 @@
     "@svgr/webpack": "^8.0.1",
     "@types/mui-datatables": "^4.3.12",
     "ajv": "^8.17.1",
-    "axios": "^1.7.3",
+    "axios": "^1.13.2",
     "babel-plugin-styled-components": "^2.1.4",
     "babel-preset-gatsby": "^3.11.0",
     "cytoscape": "^3.23.0",
