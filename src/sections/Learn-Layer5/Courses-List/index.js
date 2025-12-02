@@ -33,7 +33,7 @@ const CoursesList = ({ coursesData, learnPath }) => {
               {coursesData.map((tutorial, index) => {
                 return (
                   <Col $sm={12} key={tutorial.id} name={tutorial.frontmatter.courseTitle}>
-                    <Link to={tutorial.fields.course}>
+                    <Link to={tutorial.fields.slug}>
                       <ContentCard chapterNum={index + 1} chapter={tutorial} />
                     </Link>
                   </Col>

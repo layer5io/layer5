@@ -55,7 +55,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
 
   useEffect(() => {
     let bookmarkPath = localStorage.getItem("bookmarkpath-" + course.fields.slug.split("/")[3]);
-    if (bookmarkPath){
+    if (bookmarkPath) {
       setHasBookmark(true);
       setBookmarkUrl(bookmarkPath);
     }
@@ -93,7 +93,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
           {hasBookmark && (
             <Button
               className="start-again-button"
-              $primary              title="Resume"
+              $primary title="Resume"
               $url={bookmarkUrl}
             />
           )}
@@ -113,20 +113,27 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
               {children}
             </SRLWrapper>
             <h2 className="course-toc">Table Of Contents</h2>
-            {course.frontmatter.toc.map((item, index) => (
-              <Link key={index} to={`${extractedSection}/${item}`} className="chapter-link">
-                <ChapterCard
-                  chapterNum={index + 1}
-                  chapter={getChapterTitle(item, chapters)}
-                />
-              </Link>
-            ))}
+            {course.frontmatter.toc.map((item, index) => {
+              const chapterNode = getChapterTitle(item, chapters);
+              return (
+                <Link
+                  key={index}
+                  to={chapterNode ? `/${chapterNode.fields.slug}` : "#"}
+                  className="chapter-link"
+                >
+                  <ChapterCard
+                    chapterNum={index + 1}
+                    chapter={chapterNode}
+                  />
+                </Link>
+              );
+            })}
           </Col>
           <Col $md={12} $lg={4} $xl={5}>
             <div className="service-meshes-you-can-learn">
-              {console.log("lenght of the service mesh array: ", availableServiceMeshes.length)   }
-              {              console.log("array: ",availableServiceMeshes)}
-              { serviceMeshImages.length !== 0 && availableServiceMeshes.length != 0 && (
+              {console.log("lenght of the service mesh array: ", availableServiceMeshes.length)}
+              {console.log("array: ", availableServiceMeshes)}
+              {serviceMeshImages.length !== 0 && availableServiceMeshes.length != 0 && (
                 <>
                   <h2>Technologies You Can Learn</h2>
                   <ServiceMeshesAvailable serviceMeshes={availableServiceMeshes} />
