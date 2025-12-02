@@ -16,12 +16,12 @@ import Jwt_transformer from "../../assets/images/kanvas/catalog-card-images/jwt.
 import Multicluster from "../../assets/images/kanvas/catalog-card-images/multicluster.svg";
 import Http_metrics from "../../assets/images/kanvas/catalog-card-images/http.svg";
 
-import Design from "../../assets/images/design-pioneer/design-pioneer.svg";
+import Design from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 
 
 import Patterns from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 
-import Models from "../../assets/images/meshery/meshery-catalog.svg";
+import Models from "../../assets/images/meshery/meshery-logo.svg";
 
 import Opa from "../../assets/images/kanvas/opa.svg";
 import { Container } from "../../reusecore/Layout";
