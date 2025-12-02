@@ -141,11 +141,9 @@ const supported_platforms = [
     steps: (
       <>
         <h3>Install Using Kubernetes</h3>
-        <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=kubernetes bash -`}
-        />
+        <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=kubernetes bash -`}/>
         <h3 style={{ marginTop: "20px" }}>Install Using Docker</h3>
-        <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=docker bash -` }
-        />
+        <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=docker bash -` }/>
       </>
     )
   },
@@ -182,9 +180,9 @@ const supported_platforms = [
       <>
         <h2>Windows User</h2>
         <p>
-          Download and unzip mesheryctl from the <a href="https://github.com/layer5io/meshery/releases/">Meshery releases page</a>. Add mesheryctl to your PATH for ease of use. Then, execute:</p>
-        <Code codeString={dedent`mesheryctl system start`}
-        />
+          Download and unzip mesheryctl from the <a href="https://github.com/layer5io/meshery/releases/">Meshery releases page</a>. Add mesheryctl to your PATH for ease of use. Then, execute:
+        </p>
+        <Code codeString={dedent`mesheryctl system start`}/>
       </>
     )
   }
@@ -227,7 +225,8 @@ const MesheryPlatforms = () => {
               <Button
                 className={currentPlatform.name && currentPlatform.name === supported_platforms[index].name
                   ? "single-platform single-platform-selected " : "single-platform "}
-                onClick={() => changeCurrentPlatform(index)}>
+                onClick={() => changeCurrentPlatform(index)}
+              >
                 <img src={platform.icon} alt={platform.name} />
               </Button>
             </Col>

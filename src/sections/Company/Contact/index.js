@@ -24,7 +24,8 @@ const ContactPage = () => {
         />
         <Row style={{
           flexWrap: "wrap"
-        }} className="cards-container">
+        }} className="cards-container"
+        >
           <CardOutline
             link="/careers"
             img={Jobs_Icon}
@@ -49,7 +50,8 @@ const ContactPage = () => {
         </Row>
         <Row style={{
           flexWrap: "wrap"
-        }} className="contact-form-row">
+        }} className="contact-form-row"
+        >
           <Row
             onClick={function () {
               toggleForm();

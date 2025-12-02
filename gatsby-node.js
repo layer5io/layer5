@@ -19,7 +19,7 @@ if (process.env.CI === "true") {
   // All process.env.CI conditionals in this file are in place for GitHub Pages, if webhost changes in the future, code may need to be modified or removed.
   //Replacing '/' would result in empty string which is invalid
   const replacePath = (url) =>
-    url === "/" || url.includes("/404") ? url : `${url}.html`;
+    url === "/" || url.includes("/404") || url.endsWith(".html") ? url : `${url}.html`;
 
   exports.onCreatePage = ({ page, actions }) => {
     const { createPage, deletePage, createRedirect } = actions;
@@ -117,6 +117,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             collection
             slug
           }
+          internal {
+            contentFilePath
+          }
         }
       }
       blogTags: allMdx(
@@ -160,6 +163,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             slug
             collection
           }
+          internal {
+            contentFilePath
+          }
         }
       }
       singleWorkshop: allMdx(
@@ -170,6 +176,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             slug
             collection
           }
+          internal {
+            contentFilePath
+          }
         }
       }
       labs: allMdx(
@@ -179,6 +188,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           fields {
             slug
             collection
+          }
+          internal {
+            contentFilePath
           }
         }
       }
@@ -194,6 +206,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             chapter
             pageType
             collection
+          }
+          internal {
+            contentFilePath
           }
         }
       }
@@ -252,7 +267,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   blogs.forEach((blog) => {
     envCreatePage({
       path: blog.fields.slug,
-      component: blogPostTemplate,
+      component: `${blogPostTemplate}?__contentFilePath=${blog.internal.contentFilePath}`,
       context: {
         slug: blog.fields.slug,
       },
@@ -284,7 +299,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   resources.forEach((resource) => {
     envCreatePage({
       path: resource.fields.slug,
-      component: resourcePostTemplate,
+      component: `${resourcePostTemplate}?__contentFilePath=${resource.internal.contentFilePath}`,
       context: {
         slug: resource.fields.slug,
       },
@@ -294,7 +309,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   news.forEach((singleNews) => {
     envCreatePage({
       path: singleNews.fields.slug,
-      component: NewsPostTemplate,
+      component: `${NewsPostTemplate}?__contentFilePath=${singleNews.internal.contentFilePath}`,
       context: {
         slug: singleNews.fields.slug,
       },
@@ -304,7 +319,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   books.forEach((book) => {
     envCreatePage({
       path: book.fields.slug,
-      component: BookPostTemplate,
+      component: `${BookPostTemplate}?__contentFilePath=${book.internal.contentFilePath}`,
       context: {
         slug: book.fields.slug,
       },
@@ -314,7 +329,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   events.forEach((event) => {
     envCreatePage({
       path: event.fields.slug,
-      component: EventTemplate,
+      component: `${EventTemplate}?__contentFilePath=${event.internal.contentFilePath}`,
       context: {
         slug: event.fields.slug,
       },
@@ -324,7 +339,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   programs.forEach((program) => {
     envCreatePage({
       path: program.fields.slug,
-      component: ProgramPostTemplate,
+      component: `${ProgramPostTemplate}?__contentFilePath=${program.internal.contentFilePath}`,
       context: {
         slug: program.fields.slug,
       },
@@ -334,7 +349,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   careers.forEach((career) => {
     envCreatePage({
       path: career.fields.slug,
-      component: CareerPostTemplate,
+      component: `${CareerPostTemplate}?__contentFilePath=${career.internal.contentFilePath}`,
       context: {
         slug: career.fields.slug,
       },
@@ -344,7 +359,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   members.forEach((member) => {
     envCreatePage({
       path: member.fields.slug,
-      component: MemberTemplate,
+      component: `${MemberTemplate}?__contentFilePath=${member.internal.contentFilePath}`,
       context: {
         slug: member.fields.slug,
       },
@@ -355,7 +370,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   MemberBio.forEach((memberbio) => {
     envCreatePage({
       path: `${memberbio.fields.slug}/bio`,
-      component: MemberBioTemplate,
+      component: `${MemberBioTemplate}?__contentFilePath=${memberbio.internal.contentFilePath}`,
       context: {
         member: memberbio.frontmatter.name,
       },
@@ -365,7 +380,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   singleWorkshop.forEach((workshop) => {
     envCreatePage({
       path: workshop.fields.slug,
-      component: WorkshopTemplate,
+      component: `${WorkshopTemplate}?__contentFilePath=${workshop.internal.contentFilePath}`,
       context: {
         slug: workshop.fields.slug,
       },
@@ -375,7 +390,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   labs.forEach((lab) => {
     envCreatePage({
       path: lab.fields.slug,
-      component: LabTemplate,
+      component: `${LabTemplate}?__contentFilePath=${lab.internal.contentFilePath}`,
       context: {
         slug: lab.fields.slug,
       },
@@ -385,7 +400,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   integrations.forEach((integration) => {
     envCreatePage({
       path: `/cloud-native-management/meshery${integration.fields.slug}`,
-      component: integrationTemplate,
+      component: `${integrationTemplate}?__contentFilePath=${integration.internal.contentFilePath}`,
       context: {
         slug: integration.fields.slug,
         name: "_images/" + integration.fields.slug.split("/")[2],
@@ -393,23 +408,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  let programsArray = [];
   programs.forEach((program) => {
-    if (
-      programsArray.indexOf(program.frontmatter.program) >= 0 &&
-      program.frontmatter.program === "Layer5"
-    ) {
-      return false;
-    } else {
-      programsArray.push(program.frontmatter.program);
-      envCreatePage({
-        path: `/programs/${program.frontmatter.programSlug}`,
-        component: MultiProgramPostTemplate,
-        context: {
-          program: program.frontmatter.program,
-        },
-      });
-    }
+    envCreatePage({
+      path: `/programs/${program.frontmatter.programSlug}`,
+      component: `${MultiProgramPostTemplate}?__contentFilePath=${program.internal.contentFilePath}`,
+      context: {
+        program: program.frontmatter.program,
+      },
+    });
   });
 
   const learnNodes = res.data.learncontent.nodes;
@@ -552,7 +558,17 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 
   const { createNodeField } = actions;
-  const collection = getNode(node.parent).sourceInstanceName;
+  const parent = getNode(node.parent);
+  let collection = parent.sourceInstanceName;
+
+  // --- CHANGED: Consolidated Source Logic ---
+  // If the source is "collections", we determine the actual collection
+  // from the parent directory name (e.g., "blog", "news", etc.)
+  if (collection === "collections") {
+    collection = parent.relativeDirectory.split("/")[0];
+  }
+  // ------------------------------------------
+
   createNodeField({
     name: "collection",
     node,
@@ -640,7 +656,7 @@ const createCoursesListPage = ({ envCreatePage, node }) => {
 
   envCreatePage({
     path: `${slug}`,
-    component: path.resolve("src/templates/courses-list.js"),
+    component: `${path.resolve("src/templates/courses-list.js")}?__contentFilePath=${node.internal.contentFilePath}`,
     context: {
       // Data passed to context is available in page queries as GraphQL variables.
       learnpath,
@@ -656,7 +672,7 @@ const createCourseOverviewPage = ({ envCreatePage, node }) => {
 
   envCreatePage({
     path: `${slug}`,
-    component: path.resolve("src/templates/course-overview.js"),
+    component: `${path.resolve("src/templates/course-overview.js")}?__contentFilePath=${node.internal.contentFilePath}`,
     context: {
       learnpath,
       section,
@@ -674,7 +690,7 @@ const createChapterPage = ({ envCreatePage, node }) => {
 
   envCreatePage({
     path: `${slug}`,
-    component: path.resolve("src/templates/learn-chapter.js"),
+    component: `${path.resolve("src/templates/learn-chapter.js")}?__contentFilePath=${node.internal.contentFilePath}`,
     context: {
       learnpath,
       slug,
@@ -692,7 +708,7 @@ const createSectionPage = ({ envCreatePage, node }) => {
 
   envCreatePage({
     path: `${slug}`,
-    component: path.resolve("src/sections/Learn-Layer5/Section/index.js"),
+    component: `${path.resolve("src/sections/Learn-Layer5/Section/index.js")}?__contentFilePath=${node.internal.contentFilePath}`,
     context: {
       learnpath,
       slug,
@@ -708,15 +724,17 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
   actions.setWebpackConfig({
     resolve: {
       fallback: {
-        path: require.resolve("path-browserify"),
-        process: require.resolve("process/browser"),
-        url: require.resolve("url/"),
+        path: false,
+        process: false,
+        url: false,
       },
     },
   });
 
-  if (stage === "build-javascript") {
+  // Reduce memory pressure by disabling sourcemaps in dev and build
+  if (stage === "develop" || stage === "develop-html" || stage === "build-javascript" || stage === "build-html") {
     const config = getConfig();
+    config.devtool = false;
     const miniCssExtractPlugin = config.plugins.find(
       (plugin) => plugin.constructor.name === "MiniCssExtractPlugin"
     );
@@ -753,6 +771,8 @@ exports.createSchemaCustomization = ({ actions }) => {
        community_manager: String,
        docURL: String,
        permalink: String,
+       slug: String,
+       redirect_from: [String]
      }
    `;
   createTypes(typeDefs);
