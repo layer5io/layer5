@@ -668,7 +668,7 @@ const createCoursesListPage = ({ envCreatePage, node }) => {
 };
 
 const createCourseOverviewPage = ({ envCreatePage, node }) => {
-  const { learnpath, slug, course, pageType, permalink,section } = node.fields;
+  const { learnpath, slug, course, pageType, permalink, section } = node.fields;
 
   envCreatePage({
     path: `${slug}`,
@@ -772,7 +772,23 @@ exports.createSchemaCustomization = ({ actions }) => {
        docURL: String,
        permalink: String,
        slug: String,
-       redirect_from: [String]
+       redirect_from: [String],
+       status: String,
+       category: String,
+       integrationIcon: File @fileByRelativePath,
+       darkModeIntegrationIcon: File @fileByRelativePath,
+       howItWorks: String,
+       howItWorksDetails: String,
+       docURL: String,
+       featureList: String,
+       workingSlides: [File] @fileByRelativePath,
+       components: [IntegrationComponent]
+     }
+     type IntegrationComponent {
+       name: String
+       colorIcon: File @fileByRelativePath
+       whiteIcon: File @fileByRelativePath
+       description: String
      }
    `;
   createTypes(typeDefs);

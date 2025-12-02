@@ -362,6 +362,7 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections`,
         name: "collections",
+        ignore: process.env.NODE_ENV === "development" ? [`**/src/collections/integrations/**`] : [],
       },
     },
     "gatsby-plugin-sharp",
