@@ -39,7 +39,7 @@
     "@mdx-js/mdx": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
     "@mediacurrent/gatsby-plugin-silence-css-order-warning": "^1.0.0",
-    "@mui/icons-material": "^6.4.6",
+    "@mui/icons-material": "^7.3.5",
     "@mui/material": "^7.3.4",
     "@react-icons/all-files": "^4.1.0",
     "@sistent/sistent": "^0.15.12",
