@@ -8,7 +8,7 @@ import VisualTopology from "../../../sections/Meshery/How-meshery-works/images/v
 import MesheryOperatorLogo from "../../../sections/Meshery/How-meshery-works/images/meshery-operator-dark.svg";
 import Smi from "../../../assets/images/app/projects/smi.svg";
 import WebA from "../../../sections/Meshery/How-meshery-works/images/webassembly_logo.svg";
-import SMP from "../../../sections/Meshery/How-meshery-works/images/smp-dark-text.webp";
+import SMP from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.webp";
 import { ReactComponent as GithubLogo } from "../../../assets/images/socialIcons/github_colorMode.svg";
 import loadable from "@loadable/component";
 const HowMesheryWorks = loadable(() =>

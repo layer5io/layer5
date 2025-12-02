@@ -15,7 +15,7 @@ import TraefikMesh from "../../assets/images/service-mesh-icons/traefik.svg";
 import AppMesh from "../../assets/images/service-mesh-icons/aws-app-mesh.svg";
 import Kuma from "../../assets/images/service-mesh-icons/kuma.svg";
 import KumaDark from "../../assets/images/service-mesh-icons/kuma-white.svg";
-import Citrix from "../../assets/images/service-mesh-icons/citrix.svg";
+import Citrix from "../../assets/images/partners/citrix.svg";
 import Osm from "../../assets/images/service-mesh-icons/osm.svg";
 import Nginx from "../../assets/images/service-mesh-icons/nginx-service-mesh.svg";
 import Asm from "../../assets/images/service-mesh-icons/alibaba-cloud-asm.svg";

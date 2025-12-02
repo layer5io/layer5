@@ -5,7 +5,7 @@ import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import SmpDark from "../../../../assets/images/service-mesh-performance/icon/smp-dark.webp";
+import SmpDark from "../../../../assets/images/app/projects/smp.webp";
 import SmpLight from "../../../../assets/images/service-mesh-performance/icon/smp-light.webp";
 import SmpWhite from "../../../../assets/images/service-mesh-performance/icon/smp-white.webp";
 import SmPLightTextSide from "../../../../assets/images/service-mesh-performance/horizontal/smp-light-text-side.webp";

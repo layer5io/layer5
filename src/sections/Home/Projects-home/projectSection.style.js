@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import background from "./images/background.svg";
+import background from "./../../../assets/images/homePage-images/background.svg";
 
 const ProjectItemWrapper = styled.section`
     padding: 0 0 2rem 0;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import SelfHosted from "./images/datacenter-crash.svg";
-import CloudHosted from "./images/meshery-cloud.svg";
+import CloudHosted from "./images/MesheryCloud.svg";
 import Features from "../../components/Features-carousel";
 
 const PlatformWrapper = styled.div`

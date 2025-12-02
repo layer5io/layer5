@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import c_icon from "./checkmark-box_green.svg";
+// import c_icon from "./../meshery-operator/icon.svg";
 import LifecycleFeature from "./data";
 import Counter from "../../../reusecore/Counter";
 import {

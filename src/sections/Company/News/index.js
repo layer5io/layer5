@@ -9,7 +9,7 @@ import { TiHeartOutline } from "@react-icons/all-files/ti/TiHeartOutline";
 
 import imgNews1 from "../../../assets/images/app/news/news-thumb-1.webp";
 import imgNews2 from "../../../assets/images/app/news/news-thumb-2.webp";
-import imgNews3 from "../../../assets/images/app/news/news-thumb-3.webp";
+import imgNews3 from "../../../assets/images/app/news/news-thumb-2.webp";
 import particle1 from "../../../assets/images/app/particle/16.webp";
 import particle2 from "../../../assets/images/app/particle/09.webp";
 

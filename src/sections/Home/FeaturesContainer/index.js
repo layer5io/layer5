@@ -8,7 +8,7 @@ import CommentingImageDark from "./images/commenting.svg";
 import CommentingImageLight from "./images/commenting-white.svg";
 import TwoColLayout from "../../../components/Features/TwoColLayout.js";
 import AWSImage from "./images/aws.svg";
-import AWSImageLight from "./images/aws-light.svg";
+import AWSImageLight from "./../../../assets/images/AWS-Diagram/aws-light.svg";
 import AWSLogoDark from "./images/aws-logo-dark.svg";
 import AWSLogoLight from "./images/aws-logo-light.svg";
 import GCPLogo from "./images/gcp-logo.svg";

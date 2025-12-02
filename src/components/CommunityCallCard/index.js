@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
-import hero from "./hero.webp";
+import hero from "./../../assets/images/callout/callout.webp";
 
 const CommunityCallCardWrapper = styled.div`
     box-shadow: 0 1px 30px 0 ${props => props.theme.shadowLightColor};
