@@ -105,6 +105,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const resourcePostTemplate = path.resolve("src/templates/resource-single.js");
   const integrationTemplate = path.resolve("src/templates/integrations.js");
 
+  const HandbookTemplate = path.resolve("src/templates/handbook-template.js");
+
+
   const res = await graphql(`
     {
       allPosts: allMdx(filter: { frontmatter: { published: { eq: true } } }) {
@@ -116,6 +119,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           fields {
             collection
             slug
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+      handbookPages: allMdx(
+        filter: { fields: { collection: { eq: "handbook" } } }
+      ) {
+        nodes {
+          fields {
+            slug
+            collection
           }
           internal {
             contentFilePath
@@ -252,6 +268,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const integrations = allNodes.filter(
     (nodes) => nodes.fields.collection === "integrations"
   );
+
+  const handbook = res.data.handbookPages.nodes;
+
 
   const singleWorkshop = res.data.singleWorkshop.nodes;
   const labs = res.data.labs.nodes;
@@ -407,6 +426,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
+
+  handbook.forEach((page) => {
+    envCreatePage({
+      path: page.fields.slug,
+      component: `${HandbookTemplate}?__contentFilePath=${page.internal.contentFilePath}`,
+      context: {
+        slug: page.fields.slug,
+      },
+    });
+  });
+
 
   programs.forEach((program) => {
     envCreatePage({
@@ -604,6 +634,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         case "members":
           if (node.frontmatter.published)
             slug = `/community/members/${node.frontmatter.permalink ?? slugify(node.frontmatter.name)}`;
+          break;
+        case "handbook":
+          slug = `/community/handbook/${slugify(node.frontmatter.title)}`;
           break;
         case "events":
           if (node.frontmatter.title)
