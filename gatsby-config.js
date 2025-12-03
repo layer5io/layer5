@@ -141,38 +141,7 @@ module.exports = {
           }
         `,
         feeds: [
-          // FEED 1: Technical Posts
-          {
-            output: "/rss.xml",
-            title: "Layer5 Technical Posts",
-            // REQUIRED: We add this lightweight query to satisfy the plugin validator.
-            // The 'allMdx' data from the global query above is merged into this,
-            // so 'serialize' can still access it.
-            query: "{ site { siteMetadata { title } } }",
-            serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.nodes
-                .filter((node) =>
-                  ["blog", "resources", "news"].includes(node.fields.collection) &&
-                  !["Programs", "Community", "Events", "FAQ"].includes(node.frontmatter.category)
-                )
-                .slice(0, 20)
-                .map((node) => {
-                  return Object.assign({}, node.frontmatter, {
-                    title: node.frontmatter.title,
-                    author: node.frontmatter.author,
-                    description: node.frontmatter.description,
-                    date: node.frontmatter.date,
-                    url: site.siteMetadata.siteUrl + node.fields.slug,
-                    guid: site.siteMetadata.siteUrl + node.fields.slug,
-                    enclosure: node.frontmatter.thumbnail && {
-                      url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
-                    },
-                    custom_elements: [{ "content:encoded": node.excerpt }],
-                  });
-                });
-            },
-          },
-          // FEED 2: News
+          // FEED 1: News
           {
             output: "/news/feed.xml",
             title: "Layer5 News",
@@ -197,7 +166,7 @@ module.exports = {
                 });
             },
           },
-          // FEED 3: Resources
+          // FEED 2: Resources
           {
             output: "/resources/feed.xml",
             title: "Layer5 Resources",
@@ -222,32 +191,7 @@ module.exports = {
                 });
             },
           },
-          // FEED 4: Contributors
-          {
-            output: "/rss-contributors.xml",
-            title: "Layer5 Contributor Feed",
-            query: "{ site { siteMetadata { title } } }", // Lightweight query
-            serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.nodes
-                .filter((node) => ["blog", "news"].includes(node.fields.collection))
-                .slice(0, 20)
-                .map((node) => {
-                  return Object.assign({}, node.frontmatter, {
-                    title: node.frontmatter.title,
-                    author: node.frontmatter.author,
-                    description: node.frontmatter.description,
-                    date: node.frontmatter.date,
-                    url: site.siteMetadata.siteUrl + node.fields.slug,
-                    guid: site.siteMetadata.siteUrl + node.fields.slug,
-                    enclosure: node.frontmatter.thumbnail && {
-                      url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
-                    },
-                    custom_elements: [{ "content:encoded": node.excerpt }],
-                  });
-                });
-            },
-          },
-          // FEED 5: Meshery Community
+          // FEED 3: Meshery Community
           {
             output: "/meshery-community-feed.xml",
             title: "Meshery RSSFeed",
@@ -285,7 +229,7 @@ module.exports = {
                 });
             },
           },
-          // FEED 6: Blog
+          // FEED 4: Blog
           {
             output: "/blog/feed.xml",
             title: "Layer5 Blog",
@@ -310,7 +254,7 @@ module.exports = {
                 });
             },
           },
-          // FEED 7: Events
+          // FEED 5: Events
           {
             output: "/events/feed.xml",
             title: "Layer5 Events",
