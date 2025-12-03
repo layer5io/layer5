@@ -318,10 +318,17 @@ module.exports = {
           // /^.*\/_unused\/.*$/,     // regex for folders starting with _
           /\.(pdf|ai|svg)$/i,          // files ending with .psd or .ai
         ],
-        defaults: {}
+        defaults: {
+          placeholder: "blurred",
+        },
       },
     },
-    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-transformer-sharp",
+      options: {
+        checkSupportedExtensions: false, // suppress warning about childImageSharp being null
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -344,20 +351,7 @@ module.exports = {
       },
     },
     "gatsby-plugin-image",
-    {
-      resolve: "gatsby-plugin-sharp",
-      options: {
-        defaults: {
-          placeholder: "blurred",
-        },
-      },
-    },
-    {
-      resolve: "gatsby-transformer-sharp",
-      options: {
-        checkSupportedExtensions: false, // suppress warning about childImageSharp being null
-      },
-    },
+
     {
       resolve: "gatsby-plugin-manifest",
       options: {
