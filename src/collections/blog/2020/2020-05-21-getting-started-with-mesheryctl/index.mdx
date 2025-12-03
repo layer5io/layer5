@@ -153,7 +153,7 @@ We believe we have not missed any of the popular platforms for what it’s worth
 
 If you are thinking about the requirements you would have to run `mesheryctl`, so to your surprise, to successfully run `mesheryctl` you will only need :
 
-<table align="center" className="table-box"><tbody><tr><td className="text-centre">a running Docker daemon</td></tr></tbody></table>
+<table style={{ textAlign: "center" }} className="table-box"><tbody><tr><td className="text-centre">a running Docker daemon</td></tr></tbody></table>
 
 ### Into the MesheryCTL
 
@@ -182,7 +182,7 @@ Use "mesheryctl [command] --help" for more information about a command.
 
 Once you do `mesheryctl system start`, Meshery will pull its adapters and latest docker images. Meshery will also detect your Kubernetes configuration and will let you know if Kubernetes is running. Meshery will run it’s web-based user interface on localhost port `9081` and will let you select your choice of <a href="https://docs.meshery.io/extensibility#providers">Provider</a> before you can start managing your infrastructure with this powerful utility.
 
-<table align="center" className="table-box"><tbody><tr><td className="text-centre">One of the most interesting sub-commands of <code>mesheryctl</code> is <strong><code>perf</code></strong>.</td></tr></tbody></table>
+<table style={{ textAlign: "center" }} className="table-box"><tbody><tr><td className="text-centre">One of the most interesting sub-commands of <code>mesheryctl</code> is <strong><code>perf</code></strong>.</td></tr></tbody></table>
 
 The `perf` subcommand enables you to being managing the performance of your cloud native deployment and your workloads running atop of them. It lets you benchmark your infrastructure without using the Meshery UI from the command line interface itself. Once you type `mesheryctl perf`, it will present you with all the powerful flags you can control with CLI, including providing it with a `--file` flag that points to any of a number of performance test profiles that you may have saved.
 

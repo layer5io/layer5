@@ -16,7 +16,7 @@ export const query = graphql`
       }
     ) {
       nodes {
-        body
+
         frontmatter {
           courseTitle
           description
@@ -83,7 +83,7 @@ export const query = graphql`
       }
   }
 `;
-const CourseOverviewTemplate = ({ data }) => {
+const CourseOverviewTemplate = ({ data, children }) => {
 
 
   return (
@@ -97,7 +97,9 @@ const CourseOverviewTemplate = ({ data }) => {
           chapters={data.courseChapters.nodes}
           serviceMeshesList={data.serviceMeshesList.nodes}
           canonical="https://layer5.io/learn/learning-paths"
-        />
+        >
+          {children}
+        </CourseOverview>
       </SimpleReactLightbox>
 
     </>

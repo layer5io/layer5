@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { HiOutlineChevronLeft } from "@react-icons/all-files/hi/HiOutlineChevronLeft";
 import { Link } from "gatsby";
 import { getActiveServiceMesh } from "../../../utils/getActiveServiceMesh";
@@ -8,7 +8,7 @@ import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import { IoIosArrowDropdownCircle } from "@react-icons/all-files/io/IoIosArrowDropdownCircle";
 
 
-const TOC = ({ TOCData,courseData, chapterData, location }) => {
+const TOC = ({ TOCData, courseData, chapterData, location }) => {
   const [path, setPath] = useState("");
   const [expand, setExpand] = useState(false);
 
@@ -24,7 +24,7 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
 
   useEffect(() => {
     const path = location.pathname.split("/");
-    if (path[2] === "learning-paths"){
+    if (path[2] === "learning-paths") {
       setPath(getCurrentPage(location));
     } else
       return;
@@ -35,7 +35,7 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
   return (
     <TOCWrapper>
       <div className="chapter-back">
-        <Link to={`/${courseData.fields.slug}`}>
+        <Link to={courseData.fields.slug.startsWith("/") ? courseData.fields.slug : `/${courseData.fields.slug}`}>
           <HiOutlineChevronLeft />
           <h4>{courseData.frontmatter.courseTitle}</h4>
         </Link>
@@ -58,7 +58,7 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
         </div>
       </div>
       <div className="toc-list">
-        <ul  className={`toc-ul ${expand ? "toc-ul-open" : ""}`}>
+        <ul className={`toc-ul ${expand ? "toc-ul-open" : ""}`}>
           {availableChapters.map((item) => (
             <li key={item} className={item === path ? "active-link" : ""}>
               <p className="toc-item" key={item}>

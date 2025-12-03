@@ -149,7 +149,9 @@ const index = () => {
             <h1 className="header-heading">
               Don’t Just Take Our Word For It, <span style={{
                 fontWeight: "bolder",
-              }}>Experience </span> It!
+              }}
+              >Experience
+              </span> It!
             </h1>
             <div className="paras">
               <p>See how our products can transform your cloud experience today.</p>

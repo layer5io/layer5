@@ -56,7 +56,8 @@ const Table = ({ columns, data, spec }) => {
               <React.Fragment key={`row${i}`}>
                 <tr key={`row${i}`} id={`row${i}`} className="primaryRow" {...row.getRowProps()} onClick={() => {
                   let e = isCollapsed; e[i] = !isCollapsed[i]; setCollapse([...e]);
-                }}>
+                }}
+                >
                   <td>
                     {
                       (non_functional.find(ele => ele.name.includes(row.original.mesh_name))) ?

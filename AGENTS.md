@@ -137,5 +137,42 @@ Explore Meshery Docs for advanced configurations.
 - **Content Issues**: Validate MDX syntax using `npm run develop`.
 - **Community Support**: Reach out via the [Layer5 Slack](https://slack.layer5.io) for assistance.
 
+## Custom GitHub Copilot Agents
+
+Layer5 has custom agents available for specialized tasks. These agents provide deep expertise in specific areas:
+
+### blog-writer Agent
+
+**Purpose**: Expert in creating high-quality blog posts for the Layer5 website.
+
+**Configuration**: Automatically uses the most powerful AI model available.
+
+**Target Audience**: Content is specifically tailored for platform engineers, DevOps engineers, site reliability engineers (SREs), IT administrators, Kubernetes operators, cloud native developers, open source contributors, solution architects, enterprise architects, and developers.
+
+**When to use**: Creating blog posts about Layer5 projects, cloud native topics, tutorials, community content, or technical articles for engineering practitioners.
+
+**Documentation**:
+- Configuration: `.github/agents/blog-writer.yml`
+- Full guide: `.github/agents/README.md`
+- Usage examples: `.github/agents/USAGE_EXAMPLES.md`
+- Quick reference: `.github/agents/QUICK_REFERENCE.md`
+
+**Key features**:
+- Uses blog template structure with proper frontmatter
+- Prefers existing tags and categories (weighted by usage)
+- Includes required graphics, CTAs, and BlockQuote components
+- Adds extensive cross-page hyperlinks to existing content
+- Optimizes for SEO (URL, title, description, keywords)
+- Considers posts for `/resources` collection inclusion
+- Follows Layer5's writing style and community values
+- Addresses real-world challenges faced by platform teams and operators
+
+**Basic usage**:
+```
+@blog-writer Create a blog post about [topic]
+```
+
+For detailed examples and advanced usage, see `.github/agents/USAGE_EXAMPLES.md`.
+
 By following these guidelines, LLMs can contribute high-quality content and code to the Layer5 website, enhancing its role as a hub for the cloud native community.
 ```
