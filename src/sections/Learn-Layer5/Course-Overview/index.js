@@ -55,7 +55,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
 
   useEffect(() => {
     let bookmarkPath = localStorage.getItem("bookmarkpath-" + course.fields.slug.split("/")[3]);
-    if (bookmarkPath){
+    if (bookmarkPath) {
       setHasBookmark(true);
       setBookmarkUrl(bookmarkPath);
     }
@@ -64,7 +64,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
   return (
     <CourseOverviewWrapper>
       <div className="course-back-btn">
-        <Link to={`/learn/learning-paths/${course.fields.learnpath}`}>
+        <Link to={"/learn/learning-paths/${course.fields.learnpath}"}>
           <IoChevronBackOutline /> <h4>Learning Paths/Courses</h4>
         </Link>
       </div>
@@ -88,12 +88,12 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
           </div>
           <Button
             title={hasBookmark ? "Start Again" : "Get Started"}
-            $url={`${extractedSection}/${course.frontmatter.toc[0]}`}
+            $url={getChapterTitle(course.frontmatter.toc[0], chapters) ? "/${getChapterTitle(course.frontmatter.toc[0], chapters).fields.slug}" : "#"}
           />
           {hasBookmark && (
             <Button
               className="start-again-button"
-              $primary              title="Resume"
+              $primary title="Resume"
               $url={bookmarkUrl}
             />
           )}
@@ -113,20 +113,27 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
               {children}
             </SRLWrapper>
             <h2 className="course-toc">Table Of Contents</h2>
-            {course.frontmatter.toc.map((item, index) => (
-              <Link key={index} to={`${extractedSection}/${item}`} className="chapter-link">
-                <ChapterCard
-                  chapterNum={index + 1}
-                  chapter={getChapterTitle(item, chapters)}
-                />
-              </Link>
-            ))}
+            {course.frontmatter.toc.map((item, index) => {
+              const chapterNode = getChapterTitle(item, chapters);
+              return (
+                <Link
+                  key={index}
+                  to={chapterNode ? `/${chapterNode.fields.slug}` : "#"}
+                  className="chapter-link"
+                >
+                  <ChapterCard
+                    chapterNum={index + 1}
+                    chapter={chapterNode}
+                  />
+                </Link>
+              );
+            })}
           </Col>
           <Col $md={12} $lg={4} $xl={5}>
             <div className="service-meshes-you-can-learn">
-              {console.log("lenght of the service mesh array: ", availableServiceMeshes.length)   }
-              {              console.log("array: ",availableServiceMeshes)}
-              { serviceMeshImages.length !== 0 && availableServiceMeshes.length != 0 && (
+              {console.log("lenght of the service mesh array: ", availableServiceMeshes.length)}
+              {console.log("array: ", availableServiceMeshes)}
+              {serviceMeshImages.length !== 0 && availableServiceMeshes.length != 0 && (
                 <>
                   <h2>Technologies You Can Learn</h2>
                   <ServiceMeshesAvailable serviceMeshes={availableServiceMeshes} />
@@ -145,7 +152,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
             <SubscribeLearnPath />
           </Col>
         </Row>
-      </div>
+      </div>f
       <BookmarkNotification showNotification={showNotification} closeNotification={() => setShowNotification(false)} />
     </CourseOverviewWrapper>
   );

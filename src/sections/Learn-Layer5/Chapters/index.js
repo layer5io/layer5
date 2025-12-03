@@ -18,7 +18,7 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
   const serviceMeshImages = courseData.frontmatter.meshesYouLearn || [];
   const tableOfContents = TOCData
     .filter(node => !!node.fields.section)
-    .map( toc => ({ section: toc.fields.section, chapter: toc.fields.chapter }) );
+    .map(toc => ({ section: toc.fields.section, chapter: toc.fields.chapter }));
 
 
   const replaceSlugPart = (index) => (oldSlug) => (replacement) => {
@@ -30,7 +30,12 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
   const replaceChapterInSlug = (slugWithReplacedMesh) => replaceSlugPart(5)(slugWithReplacedMesh);
 
   useEffect(() => {
-    localStorage.setItem(`bookmarkpath-${location.pathname.split("/")[4]}`, location.pathname);
+
+    let bookmarkPath = location.pathname;
+    if (bookmarkPath.endsWith(".html")) {
+      bookmarkPath = bookmarkPath.replace(".html", "");
+    }
+    localStorage.setItem(`bookmarkpath-${location.pathname.split("/")[4]}`, bookmarkPath);
   }, []);
 
   const isMeshActive = (sm) => chapterData.fields.slug.split("/")[4] === sm;
@@ -38,15 +43,17 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
   const mapMeshWithFormattedSlug = (sm, serviceMeshes) => {
     let chapterFound = false;
     tableOfContents.forEach(toc => {
-      if (toc.section === sm.fields.section){
+      if (toc.section === sm.fields.section) {
         if (toc.chapter === chapterData.fields.slug.split("/")[5]) chapterFound = true;
       }
     });
 
     if (!serviceMeshes.map(sm => sm.section).includes(sm.fields.section))
-      serviceMeshes.push({ section: sm.fields.section, slug: chapterFound ?
-        replaceServiceMeshInSlug( sm.fields.section)
-        : replaceChapterInSlug(replaceServiceMeshInSlug(sm.fields.section))(tableOfContents[0].chapter) });
+      serviceMeshes.push({
+        section: sm.fields.section, slug: chapterFound ?
+          replaceServiceMeshInSlug(sm.fields.section)
+          : replaceChapterInSlug(replaceServiceMeshInSlug(sm.fields.section))(tableOfContents[0].chapter)
+      });
 
   };
 
@@ -86,7 +93,7 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
       </>);
   });
 
-  if (showQuizModal){
+  if (showQuizModal) {
     return <QuizModal />;
   }
 
@@ -99,7 +106,7 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
             <div className="toc-switcher-parent-div">
               <TOC courseData={courseData} TOCData={TOCData} chapterData={chapterData} location={location} />
               <div>
-                { serviceMeshImages.length !== 0 && availableServiceMeshesArray.length != 0 && (
+                {serviceMeshImages.length !== 0 && availableServiceMeshesArray.length != 0 && (
                   <>
                     <h4>Technologies Available</h4>
                     <div className="service-mesh-switcher">
