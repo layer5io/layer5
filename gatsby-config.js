@@ -308,7 +308,19 @@ module.exports = {
         name: "collections",
       },
     },
-    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        ignorePathRegex: [
+          // /originals\//,           // any path containing /originals/
+          /src\/collections\/integrations\//,
+          // /legacy/,                // containing "legacy"
+          // /^.*\/_unused\/.*$/,     // regex for folders starting with _
+          /\.(pdf|ai|svg)$/i,          // files ending with .psd or .ai
+        ],
+        defaults: {}
+      },
+    },
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
