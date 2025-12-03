@@ -54,26 +54,26 @@ const IntraPageWrapper = styled.div`
 `;
 
 const HandbookIntraPage = ({ contents }) => {
-    if (!contents || contents.length === 0) return null;
+  if (!contents || contents.length === 0) return null;
 
-    return (
-        <IntraPageWrapper>
-            <div className="intra-page">
-                <ul>
-                    {contents.map((item, index) => (
-                        <li key={index} className="list">
-                            <Link
-                                to={item.url}
-                                activeClassName="active"
-                            >
-                                {item.title}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </IntraPageWrapper>
-    );
+  return (
+    <IntraPageWrapper>
+      <div className="intra-page">
+        <ul>
+          {contents.map((item, index) => (
+            <li key={index} className="list">
+              <Link
+                to={item.url}
+                activeClassName="active"
+              >
+                {item.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </IntraPageWrapper>
+  );
 };
 
 export default HandbookIntraPage;
