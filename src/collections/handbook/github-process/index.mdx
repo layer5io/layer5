@@ -1,0 +1,229 @@
+---
+title: "GitHub Process"
+description: "The Layer5 GitHub Process emphasizes consistent pull requests and issue labels to streamline continuous integration and reduce overhead across the growing repository collection."
+slug: "/community/handbook/github-process"
+published: true
+---
+
+## Issue and PR Labels and Templates, Bots
+
+### **Overview**
+
+The Layer5 GitHub Process emphasizes consistent pull requests and issue labels to streamline continuous integration and reduce overhead across the growing repository collection.
+
+The number of repositories under the "Layer5io" organization is growing. In order to ensure consistency across the repositories and to decrease the time it takes for a continuous integration (GitHub Actions) to execute, consistent use of pull request and issue labels will aid in the reduction of overhead.
+
+### Issue and Pull Request Templates
+
+Layer5 uses issue and pull request templates. See the `.github` folder in any repo for examples.
+
+### Template Repositories
+
+Layer5 uses the following repository templates:
+
+- layer5-repo-template
+- meshery-adapter-template
+
+### Branch Protection
+
+Layer5 protects the **master** branch by requiring reviews from at least one approver.
+
+### Organization Secrets
+
+Layer5 has the following org-wide secrets available:
+
+| **Secret Name** | **Description** |
+|---|---|
+| CYPRESS_RECORD_KEY | Needed for recording the Cypress run in the Cypress Dashboard |
+| DOCKER_PASSWORD | Belongs to user "mesheryci" |
+| DOCKER_USERNAME | "mesheryci" |
+| NETLIFY_AUTH_TOKEN | Netlify authentication token used for deployment. |
+| NETLIFY_SITE_ID | Unique ID of the Netlify site to deploy to. |
+| RELEASEDRAFTER_PAT | Belongs to user "l5io" |
+| RELEASE_NOTES_PAT | Belongs to user "l5io" |
+| SLACK_BOT_TOKEN | Authentication token for the Slack bot integration. |
+| GITHUB_TOKEN | For the community scope repo that can be use commit and release |
+| NODE_VERSION | "v18" as of Nov 15, 2022. |
+| GO_VERSION | 1.19 |
+| PROVIDER_TOKEN | Infinite Meshery Cloud token |
+| NPM_TOKEN | l5io user's token for publishing packages |
+| INTEGRATION_SPREADSHEET_CRED | Base64 encoded cred for accessing integration spreadsheet on behalf of user <a href="mailto: no-reply@layer5.io">no-reply@layer5.io</a> |
+| PLAYGROUND_CONFIG | Base64 encoded kubeconfig of Playground |
+| METAL_SSH_KEY | SMP Project-wide SSH private key |
+| METAL_AUTH_TOKEN | Metal cli auth token |
+| METAL_SERVER1 | ID of 1st metal server running playground |
+| METAL_SERVER2 | ID of 2nd metal server running playground |
+
+## Layer5 Issue Labels Guide
+
+Well-chosen issue labels keep our repositories organized, make contributing easier, and help everyone—from maintainers to first-time contributors—find relevant tasks quickly. Below, we explain each major label category and when to use them.
+
+### Area Labels
+
+Area labels specify which part of the project an issue or PR relates to—such as documentation, user interface, or continuous integration. Using area labels helps contributors with specific interests or expertise find and filter issues that are relevant to them, and helps project maintainers prioritize or assign tasks more efficiently. Assign an area label any time you create or triage an issue/PR that falls within a specific domain (docs, UI, CI, performance, etc.).
+
+| Label | Description | Color |
+|---|---|---|
+| area/ci | Continuous integration, build & release | #5319e1 |
+| area/docs | Improvements/additions to documentation | #5319e2 |
+| area/lifecycle | Lifecycle management (install, uninstall, configure) | #5319e3 |
+| area/performance | Performance management | #5319e4 |
+| area/tests | Testing / quality assurance | #5319e5 |
+| area/ui | User interface | #5319e6 |
+| area/workloads | Applications / services | #5319e7 |
+| area/helm | Helm charts issues | #5319e8 |
+
+### Component Labels
+
+Component labels indicate which software module or subsystem is affected by an issue. This ensures issues are routed to the right maintainers and allows more detailed filtering beyond the broader area labels. Attach a component label when your issue/PR impacts a specific module (e.g., a CLI tool, API, or pattern engine).
+
+| Label | Description | Color |
+|---|---|---|
+| component/api | API related | #3a0485 |
+| component/mesheryctl | Meshery CLI related | #3a0486 |
+| component/ui | UI component related | #3a0486 |
+| component/filters | Filters related | #3a0486 |
+| component/patterns | Patterns related | #3a0486 |
+| component/meshsync | MeshSync component related | #3a0487 |
+| component/meshery-perf | Meshery-perf related | #3a0488 |
+
+### Programming Language Labels
+
+Programming language labels highlight the primary language used in the issue or PR. This helps contributors looking for language-specific work, and aids in code review or help requests. Use a programming language label if the change, bug, or feature is specific to a particular language (e.g., a Go backend bug, a JavaScript UI enhancement).
+
+| Label | Description | Color |
+|---|---|---|
+| language/go | Golang related | #16e2e2 |
+| language/javascript | Javascript | #16e2e3 |
+| language/ruby | Ruby | #16e2e4 |
+
+### PR (Pull Request) Labels
+
+PR labels manage the state or special requirements of a pull request, like indicating it's a draft, dependent on others, or not yet ready for merging. Apply a PR label if your pull request isn't ready, should not be merged, updates dependencies, or is on hold.
+
+| Label | Description | Color |
+|---|---|---|
+| pr/dependencies | Updates addressed dependencies | #0366d5 |
+| pr/do-not-merge | Not ready for merging | #0366d6 |
+| pr/draft | Work in progress/draft PR | #0366d7 |
+| pr/on hold | PR/Issue on hold | #0366d8 |
+
+### Issue Process & Status Labels
+
+These labels show the current status of an issue—such as blocked, duplicate, in need of a design, or if an action (like an invitation) should be triggered. Some are used by bots to automate reminders or mark stale issues. Apply these when the situation applies (e.g. "blocked" if work can't proceed, "design required" if more planning is needed).
+
+| Label | Description | Color |
+|---|---|---|
+| issue/invite | Invitation for author to join GH org | #eeeeee |
+| issue/blocked | Issue is blocked | #eeeeee |
+| issue/design required | Requires a design prior to proceeding | #eeeeee |
+| issue/duplicate | Issue or PR already exists | #eeeeee |
+| issue/invalid | This doesn't seem right | #eeeeee |
+| issue/stale | No activity for an extended period (often applied automatically) | #eeeeee |
+| issue/tweet | Posts (for social or outreach) | #eeeeee |
+| issue/remind | Reminder comment to assignee | #eeeeee |
+| issue/willfix | Issue will be worked on ("stale" bot skips) | #eeeeee |
+
+### Kind Labels
+
+Kind labels classify the general type of change or discussion: bug, feature, chore, enhancement, epic, question, or proposal. This improves searchability and helps teams organize their workflows. Use the kind label that best describes your issue or PR.
+
+| Label | Description | Color |
+|---|---|---|
+| kind/bug | Something isn't working | #088073 |
+| kind/child | Child of a larger Epic | #088074 |
+| kind/chore | Maintenance or other necessary task | #088075 |
+| kind/enhancement | Improvement to an existing feature | #088076 |
+| kind/epic | An umbrella issue, covers many issues | #088077 |
+| kind/feature | New major feature or request | #088078 |
+| kind/proposal | Suggestion or proposal for change | #088079 |
+| kind/question | Explanation or further info requested | #088080 |
+
+### Priority Labels
+
+Priority labels help teams triage and allocate attention, making it clear which issues are urgent and which can wait. Always apply a priority label, adjusting as priorities shift or as issues are escalated or downgraded.
+
+| Label | Description | Color |
+|---|---|---|
+| priority/urgent | Needs immediate attention | #f60205 |
+| priority/high | High priority issue | #d60205 |
+| priority/low | Lower priority, can wait | #a60205 |
+
+### Service Mesh Labels
+
+Service mesh labels point out which mesh technology or ecosystem the issue pertains to. This is vital for projects supporting multiple meshes, enabling modular attention and expertise. Use these when your change or report is specific to one mesh (like Istio or Linkerd).
+
+| Label | Description | Color |
+|---|---|---|
+| service-mesh/app-mesh | App Mesh | #57b6cc |
+| service-mesh/consul | Consul | #57b6cc |
+| service-mesh/cpx | CPX | #57b6cc |
+| service-mesh/istio | Istio | #57b6cc |
+| service-mesh/kuma | Kuma | #57b6cc |
+| service-mesh/linkerd | Linkerd | #57b6cc |
+| service-mesh/maesh | Maesh | #57b6cc |
+| service-mesh/nginx | NGINX SM | #57b6cc |
+| service-mesh/nsm | NSM | #57b6cc |
+| service-mesh/tanzu | Tanzu | #57b6cc |
+
+### Help & Onboarding Labels
+
+Help labels signal issues where some support is needed, or which are especially suitable for newcomers. These labels foster open source engagement and make onboarding easier for new contributors. Apply these to issues where you'd appreciate community help (`help wanted`) or for issues that are clearly documented, small in scope, and ideal for first-timers (`good first issue`).
+
+| Label | Description | Color |
+|---|---|---|
+| help wanted | Maintainers need help here | #35f48e |
+| good first issue | Good for new contributors | #7057ff |
+
+### Best Practices & Example
+
+- **Apply all relevant labels**: an issue may belong to an area, a component, a kind, have a priority, AND be language-specific.
+- **Update labels as issues evolve**: don't hesitate to add or remove as information changes.
+- **When in doubt, ask!**: The <a href="https://layer5.io/community">Layer5 community Slack</a> is a welcoming place.
+
+**Example:**
+
+If you find a documentation error regarding Meshery's CLI, that's an easy fix, you might use these labels:
+`area/docs, component/mesheryctl, kind/bug, priority/low, good first issue`
+
+### Questions or Suggestions?
+
+Labels missing? Unclear usage? Open a discussion or tag a maintainer in your issue, or bring it up in <a href="https://layer5.io/community">community Slack</a>.
+
+### List for Pull Requests
+
+The following list of pull request labels will be used to both indicate purpose or status of the PR to maintainers, and significantly, they will be used in conditional logic during workflow execution to determine the PR's appropriate path through the CI flow.
+
+- **Refactor** - Chore related pull request
+- **Fix** - Bug fixes PRs
+- **On-hold** - PR needs review before merging or it needs to behold until a specific issue is fixed.
+- **Dependabot** - All dependabot related automated PRs
+- **release** - identifies that a release is / will be made
+- **Draft** - PR is in draft state, GitHub provides a way for the draft state but having a label will help us in triage purposes.
+- **Approved** - Indicates a PR has been approved by approver form all required OWNERS files. #51ed31
+- **help wanted** - Extra attention is needed #008672
+- **needs-ok-to-test** -  #d60c6a
+- **awaiting review** - The PR is ready for the reviewer to review. #fbca04
+
+Improving the build times through conditional logic that will skip sections of the ci.yml, unless these labels are present:
+
+- **docs** -  build the Jekyll site for Meshery documentation
+- **component/mesheryctl** - build the Meshery CLI
+- **area/ui** -  build the Meshery UI
+- **component/meshery-server** - Assumed that Meshery Server should always be build, but this is not the case.
+
+### Bots
+
+Layer5 uses the following bots:
+
+- Triage bot
+- Stale bot
+- Welcome bot
+- DCO bot
+
+### Actions
+
+- Labeler.yml
+- label-commenter.yml
+
+Good resource - <a href="https://github.com/sdras/awesome-actions#pull-requests">https://github.com/sdras/awesome-actions#pull-requests</a>

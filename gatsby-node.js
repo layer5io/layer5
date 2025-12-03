@@ -104,6 +104,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const resourcePostTemplate = path.resolve("src/templates/resource-single.js");
   const integrationTemplate = path.resolve("src/templates/integrations.js");
+  const HandbookTemplate = path.resolve("src/templates/handbook-single.js");
+
 
   const res = await graphql(`
     {
@@ -251,6 +253,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const integrations = allNodes.filter(
     (nodes) => nodes.fields.collection === "integrations"
+  );
+
+  const handbook = allNodes.filter(
+    (node) => node.fields.collection === "handbook"
   );
 
   const singleWorkshop = res.data.singleWorkshop.nodes;
@@ -407,6 +413,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
+
+  handbook.forEach((page) => {
+    envCreatePage({
+      path: page.fields.slug,
+      component: `${HandbookTemplate}?__contentFilePath=${page.internal.contentFilePath}`,
+      context: {
+        slug: page.fields.slug,
+      },
+    });
+  });
+
 
   programs.forEach((program) => {
     envCreatePage({
@@ -609,6 +626,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
           if (node.frontmatter.title)
             slug = `/community/events/${slugify(node.frontmatter.title)}`;
           break;
+        case "handbook":
+          slug = node.frontmatter.slug || `/community/handbook/${slugify(node.frontmatter.title)}`;
+          break;
         default:
           slug = `/${collection}/${slugify(node.frontmatter.title)}`;
       }
@@ -668,7 +688,7 @@ const createCoursesListPage = ({ envCreatePage, node }) => {
 };
 
 const createCourseOverviewPage = ({ envCreatePage, node }) => {
-  const { learnpath, slug, course, pageType, permalink,section } = node.fields;
+  const { learnpath, slug, course, pageType, permalink, section } = node.fields;
 
   envCreatePage({
     path: `${slug}`,

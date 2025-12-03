@@ -1,0 +1,186 @@
+---
+title: "Repository Overview"
+description: "A brief introduction to all of the Github repositories of Layer5 organization. This overview serves as a resource to newcomers seeking a perspective of the collective community efforts."
+slug: "/community/handbook/repository-overview"
+published: true
+---
+
+import React from "react";
+import { Link } from "gatsby";
+import { repo_data } from "./repo-data";
+import github from "./github.svg";
+import layer5icon from "./5-light-bg.svg";
+import mesheryExtensionsIcon from "./meshery-extensions-color.svg";
+import MesheryOperator from "./meshery-operator-dark.svg";
+import MeshSync from "./meshsync.svg";
+import servicemeshperformance from "./smp-dark.svg";
+import meshery from "./meshery-logo-light.svg";
+import servicemeshpattern from "./service-mesh-pattern.svg";
+import Kanvas from "./kanvas-icon-color.svg";
+import layer5AcademyIcon from "./academy.svg";
+
+## GitHub Organizations and Repositories
+
+A brief introduction to all of the Github repositories of Layer5 organization is offered below. This overview serves as a resource to newcomers seeking a perspective of the collective community efforts (from a code-centric perspective). See <a href="https://docs.google.com/document/d/1brtiJhdzal_O6NBZU_JQXiBff2InNtmgL_G1JgAiZtk/edit?tab=t.0#heading=h.504assxl7gpf">Layer5 GitHub Process</a> for more related information.
+
+Note that the Layer5 community spans **six** GitHub organizations and **one** multi-repository collection:
+
+- <a href="https://github.com/layer5io"><img src={layer5icon} alt="layer5 icon" />&nbsp; Layer5</a> - established projects like GetNighthawk, community with  MeshMates, a catch-all org.
+
+- <a href="https://github.com/meshery"><img src={meshery} alt="meshery icon" />&nbsp; Meshery</a> -  Meshery and its components <img src={MesheryOperator} alt="Meshery Operator logo" style={{ marginLeft: ".25rem",height: "1.5rem" }} /> Meshery Operator <img src={MeshSync} alt="mesh sync icon" style={{ marginLeft: ".25rem",height: "1.5rem" }} /> and MeshSync.
+
+- <a href="https://github.com/service-mesh-performance"><img src={servicemeshperformance} alt="cloud native performance logo" />&nbsp; Cloud Native Performance</a> - Cloud Native Performance specification and site.
+
+- <a href="https://github.com/service-mesh-patterns"><img src={servicemeshpattern} alt="cloud native patterns logo" />&nbsp; Cloud Native Patterns</a> - a collection of curated patterns of cloud native use cases compatible with Meshery.
+
+- <a href="https://github.com/layer5labs"><img src={layer5icon} alt="Layer5 logo" />&nbsp; Layer5 Labs</a> - emerging projects and Meshery extensions, like <img src={Kanvas} alt="Kanvas logo" style={{ height: "1.5rem" }} /> Kanvas.
+
+- <a href="https://github.com/meshery-extensions"><img src={mesheryExtensionsIcon} alt="meshery extension icon" />&nbsp; Meshery Extensions</a> - a collection of extensions and plugins that enhance Meshery's functionality.
+
+- <a href="https://github.com/orgs/layer5io/repositories?q=academy"><img src={layer5AcademyIcon} alt="Layer5 Academy logo" />&nbsp; Layer5 Academy</a> - a multi-repository learning platform with structured learning paths, practical challenges, badges and optional certificates, built with modular theme, content, and build repositories.
+
+<details className="invite-only">
+  <summary><span>A note on *program participation / *invite-only projects</span></summary>
+  <p>Some of our projects, particularly those dealing with sensitive user data or playing a key role in our managed services, require a slightly more structured approach to development. This means that we invite trusted contributors, core team members and maintainers to participate directly in these projects. This ensures the highest standards of security and reliability. We're always on the lookout for talented individuals who can contribute to these efforts, so if you're interested in getting involved, keep an eye out for announcements and opportunities to showcase your skills!</p>
+  <p>Contributors are frequently invited to participation in the development of these projects extensions that contain either sensitive information (e.g. Meshery Remote Provider user accounts), contain privileged access to community environments (e.g. the hosted Meshery Playground) or grant administrative rights and control (e.g. assignment of recognition badges). Participation in these projects is by invitation only and requires a high level of trust and commitment to the Layer5 community.</p>
+  <p>Hundreds of  contributors have participated in these projects, and many have gone on to become maintainers and core team members. We want you to be one of them! If you are interested in participating in these projects, please reach out to the project maintainers or the Layer5 community team.</p>
+  <p>Projects listed with *program participation required:</p>
+  <ul>
+    <li>Kanvas</li>
+    <li>Layer5 Cloud</li>
+  </ul>
+</details>
+
+## Frontend Projects
+
+export const RepositoryTables = () => {
+  const data = React.useMemo(() => repo_data);
+  let frontendProjects = data.filter((data) => data.category === "Frontend");
+  let backendProjects = data.filter((data) => data.category !== "Frontend");
+
+  return (
+    <>
+      {frontendProjects.map((frontendProject, index) => {
+        const { category } = frontendProject;
+        return (
+          <div className="table-container" key={index}>
+            <table className="frontendTable" key={category}>
+              <thead>
+                <tr>
+                  <th className="linkscol">Site</th>
+                  <th>Project</th>
+                  <th>Framework</th>
+                  <th>Maintainers</th>
+                  <th className="linkscol">Repo</th>
+                </tr>
+              </thead>
+              {frontendProject.subdata.map((subdata) => {
+                const {
+                  project,
+                  language,
+                  repository,
+                  maintainers_name,
+                  site,
+                  image,
+                  link,
+                  accessRequired,
+                } = subdata;
+                return (
+                  <tbody key={project}>
+                    <tr>
+                      <td>
+                        <a href={site} target="_blank" rel="noreferrer">
+                          <img className="site-icon" src={image} alt="site-icon" />
+                        </a>
+                      </td>
+                      <td>{project}</td>
+                      <td>{language}</td>
+                      <td>
+                        {maintainers_name.map((mname, index) => {
+                          return (
+                            <Link to={link[index]} key={index}>
+                              <span>{index > 0 ? ", " : ""}</span>{mname}
+                            </Link>
+                          );
+                        })}
+                      </td>
+                      <td>
+                        <a
+                          href={repository}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <img className="github-icon" src={github} alt="github-icon" />
+                        </a>
+                        <div className="accessRequired"> { accessRequired != "" ? accessRequired : ""}</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                );
+              })}
+            </table>
+          </div>
+        );
+      })}
+
+      <h2>Backend Projects</h2>
+
+      {backendProjects.map((backendProject, index) => {
+        const { category } = backendProject;
+        return (
+          <div className="table-container" key={index}>
+            <table key={category}>
+              <thead>
+                <tr>
+                  <th>{category}</th>
+                  <th>Language</th>
+                  <th>Description</th>
+                  <th>Maintainers</th>
+                  <th className="linkscol">Repo</th>
+                </tr>
+              </thead>
+              {backendProject.subdata.map((subdata) => {
+                const { project,image,language,description,repository,link,maintainers_name,accessRequired } = subdata;
+                const smpClass = project === "SMP Action";
+                const siteIconClasses = smpClass ? "site-icon inline smp-action" : "site-icon inline";
+                return (
+                  <tbody key={project}>
+                    <tr className={accessRequired === "*archived" ? "archived-project" : ""}>
+                      <td>
+                        <img className={siteIconClasses} src={image} alt="project" />&nbsp;{project}
+                      </td>
+                      <td>{language}</td>
+                      <td>{description}</td>
+                      <td>
+                        {maintainers_name?.map((mname, index) => {
+                          return (
+                            <Link to={link[index]} key={index}>
+                              <span>{index > 0 ? ", " : ""}</span>
+                              {mname}
+                            </Link>
+                          );
+                        })}
+                      </td>
+                      <td>
+                        <a
+                          href={repository}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <img className="github-icon" src={github} alt="github-icon" />
+                        </a>
+                        <div className="accessRequired"> { accessRequired != "" ? accessRequired : ""}</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                );
+              })}
+            </table>
+          </div>
+        );
+      })}
+    </>
+  );
+};
+
+<RepositoryTables />
