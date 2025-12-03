@@ -118,7 +118,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
               return (
                 <Link
                   key={index}
-                  to={chapterNode ? "/${chapterNode.fields.slug}" : "#"}
+                  to={chapterNode ? `/${chapterNode.fields.slug}` : "#"}
                   className="chapter-link"
                 >
                   <ChapterCard
