@@ -805,6 +805,7 @@ exports.createSchemaCustomization = ({ actions }) => {
        meshmate: String
        maintainer: String
        emeritus: String
+       published: Boolean
        link: String
        labs: String
        slides: String
@@ -831,10 +832,10 @@ exports.createSchemaCustomization = ({ actions }) => {
         profile: String
        linkedin: String
        location: String
-       badges: [String]
-       status: String
-       bio: String
-       executive_bio: String
+        badges: [String]
+        status: String
+        bio: String
+        executive_bio: Boolean
         executive_position: String
         company: String
         executive_image: File @fileByRelativePath
