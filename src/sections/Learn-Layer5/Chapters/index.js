@@ -59,7 +59,6 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
 
   const getAvailableServiceMeshes = () => {
     let serviceMeshes = [];
-    console.log("serviceMeshList", serviceMeshesList);
     serviceMeshesList.forEach(sm => {
       mapMeshWithFormattedSlug(sm, serviceMeshes);
     });
