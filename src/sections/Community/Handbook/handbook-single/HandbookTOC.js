@@ -1,27 +1,33 @@
 import React from "react";
 import { Link } from "gatsby";
-import { TocWrapper } from "../../../components/handbook-navigation/toc.style";
+import TOCWrapper from "../../../components/handbook-navigation/toc.style";
 import { HiOutlineChevronLeft } from "@react-icons/all-files/hi/HiOutlineChevronLeft";
 
 const HandbookTOC = ({ pages, currentSlug }) => {
   return (
-    <TocWrapper>
-      <div className="toc-list go-top">
-        <h3>
+    <TOCWrapper>
+      <div className="go-back">
+        <Link to="/community/handbook">
           <HiOutlineChevronLeft />
-          Table Of Contents
-        </h3>
-        <ul>
+          <h4>Table of Contents</h4>
+        </Link>
+      </div>
+      <div className="toc-list">
+        <ul className="toc-ul">
           {pages.map((page, index) => (
-            <li key={index} className={currentSlug === page.fields.slug ? "active" : ""}>
-              <Link to={page.fields.slug}>
+            <li key={index}>
+              <Link
+                to={page.fields.slug}
+                className="toc-sub-heading toc-sub-inline"
+                activeClassName="active"
+              >
                 {page.frontmatter.title}
               </Link>
             </li>
           ))}
         </ul>
       </div>
-    </TocWrapper>
+    </TOCWrapper>
   );
 };
 
