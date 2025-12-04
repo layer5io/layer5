@@ -28,12 +28,18 @@ export const useSiteMetadata = () => {
 const SEO = ({ canonical, description,image, schemaMarkup, title,children }) => {
   const { pathname } = useLocation();
   const { title: defaultTitle, description: defaultDescription, image: siteMetadataImage, siteUrl, twitterUsername } = useSiteMetadata();
+  const cleanSiteUrl = siteUrl ? siteUrl.replace(/\/+$/, "") : "";
+  const cleanPath = pathname ? pathname.replace(/\.html$/, "") : "";
+  const normalizedPath = cleanPath.startsWith("/") ? cleanPath : `/${cleanPath}`;
+  const imagePath = image || siteMetadataImage || "";
+  const normalizedImage = imagePath.startsWith("/") ? imagePath : `/${imagePath}`;
+
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: `${siteUrl}${image || siteMetadataImage}`,
-    url: `${siteUrl}${pathname.replace(".html", "")  || ""}`.replace(/\/$/, ""),
-    twitterUsername
+    image: `${cleanSiteUrl}${normalizedImage}`,
+    url: `${cleanSiteUrl}${normalizedPath}`.replace(/\/$/, ""),
+    twitterUsername,
   };
   if (!canonical) {
     canonical = seo.url;
