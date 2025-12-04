@@ -14,13 +14,9 @@
 
 include .github/build/Makefile.show-help.mk
 
-setup-libs: 
-	## "DEPRECATED: This target is deprecated. Use `make setup`.
-
 ## Install layer5.io dependencies your local machine.
 setup:
 	npm install --legacy-peer-deps
-
 
 # "make site" - The default lightweight build keeps the dev server fast by skipping heavy collections.
 ## Run a partial build of layer5.io on your local machine.
@@ -40,7 +36,7 @@ site-fast:
 
 ## Build layer5.io on your local machine.
 build:
-	npm run build && npm run serve
+	npm run build
 
 ## Empty build cache and run layer5.io on your local machine.
 clean: 
