@@ -1,13 +1,15 @@
 ---
 title: "Contribution"
-description: "Learn how to contribute to Layer5 projects using GitHub flow"
+description: "Pull requests (PRs) are the best ways to propose changes to a project repository. At Layer5 org, we use the Github Flow."
 type: Handbook
 ---
 
 import { Container } from "../../../reusecore/Layout";
 import Code from "../../../components/CodeBlock";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
-import { StaticImage } from "gatsby-plugin-image";
+import signoffImg from "./git-signoff-vscode.webp";
+import compareImg from "./compare-and-pr.webp";
+import createPrImg from "./create-pr.webp";
 
 export const contents = [
   { id: 0, link: "#Clone your fork", text: "Clone your fork" },
@@ -17,10 +19,7 @@ export const contents = [
   { id: 4, link: "#Push changes to Github", text: "Push changes to Github" },
   { id: 5, link: "#Create a pull request", text: "Create a pull request" },
 ];
-
-export const Signoff = "./git-signoff-vscode.webp";
-export const compareAndPR = "./compare-and-pr.webp";
-export const createPR = "./create-pr.webp";
+ 
 
 <h2 className="heading-top">General contribution flow</h2>
 
@@ -105,7 +104,8 @@ To ensure all your commits are signed, you may choose to add this alias to your 
 
 Or you may configure your IDE, for example, Visual Studio Code to automatically sign-off commits for you:
 
-<StaticImage src={Signoff} id="sign-off" alt="Signoff" />
+<img src={signoffImg} alt="Git signoff configuration in VS Code" />
+
 
 <a id="Push changes to Github"><h3>Push changes to Github</h3></a>
 
@@ -121,13 +121,13 @@ Or you may configure your IDE, for example, Visual Studio Code to automatically 
   Note: Please ensure that the right branch is selected for the PR.
   <div>
     <br />
-    <StaticImage src={compareAndPR} alt="Compare and pull request" />
+    <img src={compareImg} alt="Compare and pull request button on GitHub" />
   </div>
 
 - Once you click on the button, you'll be taken to the Pull Request page. Here, you can add a title and description to your pull request that explains your contribution. Once you're done, click on the Create pull request button.
   <div>
     <br />
-    <StaticImage src={createPR} alt="create pr" />
+    <img src={createPrImg} alt="Create pull request page on GitHub" />
     <br />
   </div>
 
