@@ -34,7 +34,7 @@ jobs:
           make build
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.7.4
+        uses: JamesIves/github-pages-deploy-action@v4.7.4
         with:
           branch: site # The branch the action should deploy to.
           folder: public # The folder the action should deploy.
