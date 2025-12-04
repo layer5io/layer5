@@ -1,0 +1,56 @@
+name: Build site and capture integrations screenshot
+
+on:
+  push:
+    branches: [ "fix/seo-normalize-double-slash-7202" ]
+  workflow_dispatch:
+
+jobs:
+  build-and-screenshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Serve public folder
+        run: |
+          npx http-server public -p 8080 -c-1 &
+          # wait for server
+          for i in {1..30}; do
+            if curl -sSf http://127.0.0.1:8080/ > /dev/null; then
+              echo 'server is up' && break
+            fi
+            sleep 1
+          done
+
+      - name: Install Chromium
+        run: sudo apt-get update && sudo apt-get install -y chromium-browser
+
+      - name: Capture integrations screenshot
+        run: |
+          URL="http://127.0.0.1:8080/cloud-native-management/meshery/integrations"
+          chromium-browser --headless --no-sandbox --disable-gpu --virtual-time-budget=10000 --screenshot=/github/workspace/integrations.png "$URL"
+          # Save canonical tag text for verification
+          curl -sS "$URL" | grep -i "rel=\"canonical\"" -m1 || true > canonical.html
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: integrations-screenshot-and-site
+          path: |
+            integrations.png
+            canonical.html
+            public
