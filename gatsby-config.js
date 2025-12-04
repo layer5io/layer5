@@ -1,6 +1,11 @@
 /* eslint-env node */
 
 const isProduction = process.env.NODE_ENV === "production";
+const isFullSiteBuild = process.env.BUILD_FULL_SITE !== "false";
+const HEAVY_COLLECTIONS = ["members", "integrations"];
+const collectionIgnoreGlobs = isFullSiteBuild
+  ? []
+  : HEAVY_COLLECTIONS.map((name) => `**/${name}/**`);
 // const isDevelopment = process.env.NODE_ENV === "development";
 
 module.exports = {
@@ -449,10 +454,7 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections`,
         name: "collections",
-        ignore: [
-          // eslint-disable-next-line quotes
-          `src/collections/integrations/**`,
-        ],
+        ignore: collectionIgnoreGlobs,
       },
     },
     {
