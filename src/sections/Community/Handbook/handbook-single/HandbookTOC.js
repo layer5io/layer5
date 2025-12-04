@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "gatsby";
-import TOCWrapper from "../../../../components/handbook-navigation/toc.style";
+import { TocWrapper } from "../../../components/handbook-navigation/toc.style";
+import { HiOutlineChevronLeft } from "@react-icons/all-files/hi/HiOutlineChevronLeft";
 
 const HandbookTOC = ({ pages, currentSlug }) => {
   return (
-    <TOCWrapper>
+    <TocWrapper>
       <div className="toc-list go-top">
-        <h3>Community Handbook</h3>
+        <h3>
+          <HiOutlineChevronLeft />
+          Table Of Contents
+        </h3>
         <ul>
           {pages.map((page, index) => (
             <li key={index} className={currentSlug === page.fields.slug ? "active" : ""}>
@@ -17,7 +21,7 @@ const HandbookTOC = ({ pages, currentSlug }) => {
           ))}
         </ul>
       </div>
-    </TOCWrapper>
+    </TocWrapper>
   );
 };
 
