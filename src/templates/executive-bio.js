@@ -91,8 +91,8 @@ export const Head = ({ data }) => {
   if (!frontmatter) {
     return (
       <SEO
-        title="Executive bios disabled in lite mode"
-        description="Run make site-full or BUILD_FULL_SITE=true to source executive profiles."
+        title="Member profiles disabled in lite mode"
+        description="Run make site-full or BUILD_FULL_SITE=true to source member profiles."
       />
     );
   }

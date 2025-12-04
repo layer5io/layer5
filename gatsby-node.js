@@ -435,16 +435,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         },
       },
       {
-        path: "/community/members/__lite__/bio",
-        matchPath: "/community/members/*/bio",
-        context: {
-          entity: "executive bio",
-          heading: "Executive bios disabled in lite mode",
-          description:
-            "Executive bios rely on the members collection, which is skipped while BUILD_FULL_SITE=false.",
-        },
-      },
-      {
         path: "/cloud-native-management/meshery/__lite__",
         matchPath: "/cloud-native-management/meshery/*",
         context: {
