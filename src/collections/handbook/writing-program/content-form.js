@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Button from "../../../../reusecore/Button";
+import Button from "../../../reusecore/Button";
 import axios from "axios";
 import { Field, Form, Formik } from "formik";
 import ContentFormWrapper from "./content-form.style";
-import layer5_img from "../../../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
+import layer5_img from "../../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 
 const ContentForm = () => {
   const [memberFormOne, setMemberFormOne] = useState({});

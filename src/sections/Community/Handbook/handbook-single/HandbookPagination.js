@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { PaginationWrapper } from "../../handbook-navigation/TocPagination.style";
+import { PaginationWrapper } from "../../../../components/handbook-navigation/TocPagination.style";
 
 const HandbookPagination = ({ pages, currentSlug }) => {
   const currentIndex = pages.findIndex(page => page.fields.slug === currentSlug);
@@ -11,7 +11,7 @@ const HandbookPagination = ({ pages, currentSlug }) => {
     <PaginationWrapper>
       {prevPage && (
         <Link to={prevPage.fields.slug} className="prev">
-                    ← {prevPage.frontmatter.title}
+          ← {prevPage.frontmatter.title}
         </Link>
       )}
       {nextPage && (

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { TocWrapper } from "../../handbook-navigation/toc.style";
+import { TocWrapper } from "../../../../components/handbook-navigation/toc.style";
 
 const HandbookTOC = ({ pages, currentSlug }) => {
   return (
