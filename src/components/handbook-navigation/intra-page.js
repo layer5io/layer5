@@ -3,20 +3,16 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 
 const JoinCommunityWrapper = styled.div`
-  position: fixed;
-  right: 2rem;
-  top: 15rem;
-  width: 15rem;
-  z-index: 10;
-
-  @media screen and (max-width: 1279px) {
+  @media screen and (min-width: 300px) and (max-width: 1279px) {
     display: none;
   }
-
   .intra-page {
     position: sticky;
     top: 10rem;
+    right: 0rem;
+    margin-right: 1rem;
     padding-bottom: 5rem;
+    padding-right: 2rem;
     align-items: left;
     justify-content: space-around;
     display: flex;
@@ -24,12 +20,11 @@ const JoinCommunityWrapper = styled.div`
     overflow: hidden;
 
     .list {
-      color: ${(props) => props.theme.text || "#000000"};
-      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      color: #000000;
     }
     .active {
-      font-weight: 500;
-      color: ${(props) => props.theme.secondaryColor || "#00b39f"};
+      font-weight: 5000;
+      color: #000000;
     }
 
     ul {
@@ -44,7 +39,7 @@ const JoinCommunityWrapper = styled.div`
       padding-right: 0rem;
       margin-right: 0rem;
     }
-    @media only screen and (max-width: 1279px) {
+    @media only screen and (max-width: 950px) {
       width: 0;
       opacity: 0;
       height: 0;
