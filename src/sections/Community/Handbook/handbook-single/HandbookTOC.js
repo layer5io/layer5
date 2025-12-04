@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "gatsby";
-import { TocWrapper } from "../../../../components/handbook-navigation/toc.style";
+import TOCWrapper from "../../../../components/handbook-navigation/toc.style";
 
 const HandbookTOC = ({ pages, currentSlug }) => {
   return (
-    <TocWrapper>
+    <TOCWrapper>
       <div className="toc-list go-top">
         <h3>Community Handbook</h3>
         <ul>
@@ -17,7 +17,7 @@ const HandbookTOC = ({ pages, currentSlug }) => {
           ))}
         </ul>
       </div>
-    </TocWrapper>
+    </TOCWrapper>
   );
 };
 
