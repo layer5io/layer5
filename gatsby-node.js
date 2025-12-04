@@ -58,7 +58,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const envCreatePage = (props) => {
     if (process.env.CI === "true") {
-      const { path, ...rest } = props;
+      const { path, matchPath, ...rest } = props;
 
       createRedirect({
         fromPath: `/${path}/`,
@@ -69,7 +69,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
       return createPage({
         path: `${path}.html`,
-        matchPath: path,
+        matchPath: matchPath || path,
         ...rest,
       });
     }
@@ -108,6 +108,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const resourcePostTemplate = path.resolve("src/templates/resource-single.js");
   const integrationTemplate = path.resolve("src/templates/integrations.js");
+  const LitePlaceholderTemplate = path.resolve("src/templates/lite-placeholder.js");
 
   const memberBioQuery = isFullSiteBuild
     ? `
@@ -422,7 +423,47 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   if (!isFullSiteBuild) {
-    const placeholderPages = [
+    const litePlaceholderPages = [
+      {
+        path: "/community/members/__lite__",
+        matchPath: "/community/members/*",
+        context: {
+          entity: "member profile",
+          heading: "Member profiles disabled in lite mode",
+          description:
+            "The members collection is intentionally skipped when BUILD_FULL_SITE=false to keep local builds fast.",
+        },
+      },
+      {
+        path: "/community/members/__lite__/bio",
+        matchPath: "/community/members/*/bio",
+        context: {
+          entity: "executive bio",
+          heading: "Executive bios disabled in lite mode",
+          description:
+            "Executive bios rely on the members collection, which is skipped while BUILD_FULL_SITE=false.",
+        },
+      },
+      {
+        path: "/cloud-native-management/meshery/__lite__",
+        matchPath: "/cloud-native-management/meshery/*",
+        context: {
+          entity: "integration",
+          heading: "Integrations disabled in lite mode",
+          description:
+            "Integrations are heavy to source, so this route shows a placeholder during lightweight builds.",
+        },
+      },
+    ];
+
+    litePlaceholderPages.forEach((page) =>
+      envCreatePage({
+        ...page,
+        component: LitePlaceholderTemplate,
+      })
+    );
+
+    const graphqlPlaceholderPages = [
       {
         path: "/__placeholders/integration",
         component: integrationTemplate,
@@ -447,7 +488,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     ];
 
-    placeholderPages.forEach((page) => envCreatePage(page));
+    graphqlPlaceholderPages.forEach((page) => envCreatePage(page));
   }
 
   const learnNodes = res.data.learncontent.nodes;
