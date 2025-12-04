@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkLayer5=self.webpackChunkLayer5||[]).push([[97811],{48450:function(e,s,t){t(96540);s.A=t.p+"static/sistent-contributor.6ef58876.svg"}}]);
