@@ -41,13 +41,13 @@ export const HandbookWrapper = styled.div`
       flex-direction: row;    
       align-items: flex-start;
       @media (min-width: 751px){
-        margin-top: -54rem;
+        margin-top: -58rem;
         position: relative;
         margin-left: 20rem;
         padding: 2rem 3rem;
       }
       @media (max-width: 750px) {
-        margin-top: -4rem;
+        margin-top: -5rem;
         margin-left: 2rem;
       }
     }
