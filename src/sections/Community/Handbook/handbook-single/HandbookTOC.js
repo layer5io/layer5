@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import TOCWrapper from "../../../components/handbook-navigation/toc.style";
+import TOCWrapper from "../../../../components/handbook-navigation/toc.style";
 import { HiOutlineChevronLeft } from "@react-icons/all-files/hi/HiOutlineChevronLeft";
 
 const HandbookTOC = ({ pages, currentSlug }) => {
