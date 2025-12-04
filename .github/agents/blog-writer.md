@@ -180,7 +180,6 @@ If a custom agent isn't working as expected:
   # - Posts with category "Meshery", "Announcements", or "Events" and tags "Community", "Meshery", or "mesheryctl"
   #   will be included in the Meshery Community Feed (/meshery-community-feed.xml)
   # - All blog posts appear in the main Blog Feed (/blog/feed.xml)
-  # - Technical posts (excluding categories "Programs", "Community", "Events", "FAQ") appear in Layer5 Technical Posts (/rss.xml)
   # - All news items appear in the News Feed (/news/feed.xml)
   ```
   
