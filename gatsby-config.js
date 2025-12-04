@@ -439,13 +439,6 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sharp",
       options: {
-        ignorePathRegex: [
-          // /originals\//,           // any path containing /originals/
-          /src\/collections\/integrations\//,
-          // /legacy/,                // containing "legacy"
-          // /^.*\/_unused\/.*$/,     // regex for folders starting with _
-          /\.(pdf|ai|svg)$/i,          // files ending with .psd or .ai
-        ],
         defaults: {
           placeholder: "blurred",
         },
@@ -455,13 +448,6 @@ module.exports = {
       resolve: "gatsby-transformer-sharp",
       options: {
         checkSupportedExtensions: false, // suppress warning about childImageSharp being null
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/sections/Meshery/Meshery-platforms/supported-icons`,
-        name: "integration-images",
       },
     },
     {
