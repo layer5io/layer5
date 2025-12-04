@@ -743,6 +743,39 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
       miniCssExtractPlugin.options.ignoreOrder = true;
     }
 
+    if (stage === "build-javascript") {
+      const existingSplitChunks = config.optimization?.splitChunks || {};
+      const existingCacheGroups = existingSplitChunks.cacheGroups || {};
+
+      config.optimization = {
+        ...config.optimization,
+        runtimeChunk: { name: "runtime" },
+        splitChunks: {
+          chunks: "all",
+          maxInitialRequests: existingSplitChunks.maxInitialRequests ?? 25,
+          minSize: existingSplitChunks.minSize ?? 20000,
+          ...existingSplitChunks,
+          cacheGroups: {
+            ...existingCacheGroups,
+            vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name: "vendor",
+              chunks: "all",
+              enforce: true,
+              priority: 10,
+            },
+            framework: {
+              test: /[\\/](react|react-dom|gatsby|@emotion|styled-components)[\\/]/,
+              name: "framework",
+              chunks: "all",
+              enforce: true,
+              priority: 20,
+            },
+          },
+        },
+      };
+    }
+
     actions.replaceWebpackConfig(config);
   }
 };
