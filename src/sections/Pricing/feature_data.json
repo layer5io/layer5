@@ -477,7 +477,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": "https://docs.meshery.io/guides/performance-management/performance-management"
+    "docs": "https://docs.meshery.io/guides/performance-management/managing-performance#load-generators"
   },
   {
     "theme": "",
@@ -493,7 +493,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.meshery.io/guides/performance-management/managing-performance#performance-profiles"
   },
   {
     "theme": "",
@@ -509,7 +509,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.meshery.io/guides/performance-management/interpreting-performance-test-results"
   },
   {
     "theme": "",
@@ -525,7 +525,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.meshery.io/guides/performance-management/managing-performance"
   },
   {
     "theme": "",
