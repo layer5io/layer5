@@ -1,46 +1,61 @@
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-const formatDebugInfo = ({ alt, publicURL }) => {
-  const debugInfo = [];
+const loggedWarnings = new Set();
+
+const warnMissingImageData = ({ alt, publicURL }) => {
+  const key = `${publicURL || "no-url"}-${alt || "no-alt"}`;
+  if (loggedWarnings.has(key)) {
+    return;
+  }
+  loggedWarnings.add(key);
+
+  const details = [];
   if (alt) {
-    debugInfo.push(`alt="${alt}"`);
+    details.push(`alt="${alt}"`);
   }
   if (publicURL) {
-    debugInfo.push(`publicURL="${publicURL}"`);
+    details.push(`publicURL="${publicURL}"`);
   }
-  return debugInfo.length ? ` (${debugInfo.join(", ")})` : "";
+  const suffix = details.length ? ` (${details.join(", ")})` : "";
+  console.warn(`[Image] Missing gatsbyImageData${suffix}. Falling back to <img>.`);
 };
 
-const ensureGatsbyImageData = (imageData, context) => {
-  if (imageData) {
-    return imageData;
+const renderBasicImage = ({ publicURL, alt, imgStyle, ...rest }) => {
+  if (!publicURL) {
+    return null;
   }
 
-  const errorMessage = `[Image] Missing gatsbyImageData${formatDebugInfo(context)}. Ensure the GraphQL query returns childImageSharp.gatsbyImageData.`;
-  throw new Error(errorMessage);
+  return (
+    <div className="old-gatsby-image-wrapper" style={{ width: "100%", height: "auto" }}>
+      <img
+        src={publicURL}
+        alt={alt || "Blog image"}
+        width="100%"
+        height="auto"
+        style={{
+          objectFit: imgStyle?.objectFit || "cover",
+          ...imgStyle,
+        }}
+        loading="lazy"
+        {...rest}
+      />
+    </div>
+  );
 };
 
 const Image = ({ childImageSharp, extension, publicURL, alt, imgStyle, ...rest }) => {
 
   if (!childImageSharp && extension === "svg") {
-    return (
-      <div className="old-gatsby-image-wrapper" style={{ width: "100%", height: "auto" }}>
-        <img
-          src={publicURL}
-          alt={alt || "Blog image"}
-          width="100%"
-          height="auto"
-          style={{
-            objectFit: imgStyle?.objectFit || "cover",
-            ...imgStyle
-          }}
-        />
-      </div>
-    );
+    return renderBasicImage({ publicURL, alt, imgStyle, ...rest });
   }
 
-  const gatsbyImageData = ensureGatsbyImageData(childImageSharp?.gatsbyImageData, { alt, publicURL });
+  if (!childImageSharp?.gatsbyImageData) {
+    warnMissingImageData({ alt, publicURL });
+    return renderBasicImage({ publicURL, alt, imgStyle, ...rest });
+  }
+
+  const gatsbyImageData = childImageSharp.gatsbyImageData;
 
   return <GatsbyImage
     key={publicURL}
