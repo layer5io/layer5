@@ -132,7 +132,7 @@ const Meshmates = () => {
           <h5> What to Expect </h5>
           <h2> Engaging with a MeshMate</h2>
           <div className="bookcomponent">
-            <HandbookCard 
+            <HandbookCard
               title="Community Handbook"
               description="Explore the Layer5 Community Handbook to learn more about our community, contribution guidelines, and resources."
               to="/community/handbook"
