@@ -30,6 +30,7 @@ const HandbookSingle = ({ data, children }) => {
         <h1>{mdx.frontmatter.title}</h1>
       </div>
       <HandbookTOC pages={allHandbookPages.nodes} currentSlug={currentSlug} />
+      {intraPageComponent}
       <div className="page-section">
         <Container>
           <div className="content">
@@ -40,7 +41,6 @@ const HandbookSingle = ({ data, children }) => {
             currentSlug={currentSlug}
           />
         </Container>
-        {intraPageComponent}
       </div>
     </HandbookWrapper>
   );
