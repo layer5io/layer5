@@ -269,7 +269,7 @@ module.exports = {
             `,
             serialize: ({ query: { site, allMdx } }) => {
               const targetTags = ["Community", "Meshery", "mesheryctl"];
-              
+
               return allMdx.nodes
                 .filter((node) => {
                   const hasTag = node.frontmatter.tags && node.frontmatter.tags.some(t => targetTags.includes(t));
