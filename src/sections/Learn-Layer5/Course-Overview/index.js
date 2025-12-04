@@ -16,7 +16,6 @@ import BookmarkNotification from "../../../components/Learn-Components/BookmarkN
 
 const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
 
-  const extractedSection = (chapters.length > 0 ? chapters[0].fields.section : "");
   const [hasBookmark, setHasBookmark] = useState(false);
   const [bookmarkUrl, setBookmarkUrl] = useState("");
   const [showNotification, setShowNotification] = useState(true);
@@ -118,7 +117,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
               return (
                 <Link
                   key={index}
-                  to={chapterNode ? "/${chapterNode.fields.slug}" : "#"}
+                  to={chapterNode ? `/${chapterNode.fields.slug}` : "#"}
                   className="chapter-link"
                 >
                   <ChapterCard
