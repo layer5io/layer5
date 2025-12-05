@@ -2,18 +2,24 @@
 title: "Learning"
 description: "As a community, we have put together good learning materials and resources to guide you through learning about cloud native infrastucture."
 type: Handbook
+contents:
+  - id: 0
+    link: "#Learning"
+    text: "Learning"
+  - id: 1
+    link: "#Academy"
+    text: "Academy"
+  - id: 2
+    link: "#Eventing"
+    text: "Eventing"
+  - id: 3
+    link: "#Blogging"
+    text: "Blogging"
 ---
 
 import { Container } from "../../../reusecore/Layout";
 import { Link } from "gatsby";
-import IntraPage from "../../../components/handbook-navigation/intra-page";
 
-export const contents = [
-  { id: 0, link: "#Learning", text: "Learning" },
-  { id: 1, link: "#Academy", text: "Academy" },
-  { id: 2, link: "#Eventing", text: "Eventing" },
-  { id: 3, link: "#Blogging", text: "Blogging" },
-];
 
 <a id="Learning"><h2>Learning together</h2></a>
 
@@ -45,4 +51,3 @@ A member of the Layer5 community has presented at every KubeCon since its incept
 
 Write down what you've learned, what you've built, and what experiences that you have had in the community. All community members are welcome to contribute to the <Link to="/blog">Layer5 blog</Link>.
 
-<IntraPage contents={contents} />

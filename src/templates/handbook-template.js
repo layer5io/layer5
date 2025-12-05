@@ -10,6 +10,11 @@ export const query = graphql`
       frontmatter {
         title
         description
+        contents {
+          id
+          link
+          text
+        }
       }
       fields {
         slug

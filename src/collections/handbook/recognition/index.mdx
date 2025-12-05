@@ -2,21 +2,29 @@
 title: "Recognition"
 description: "Layer5 readily recognizes and publicly appreciates its community members."
 type: Handbook
+contents:
+  - id: 0
+    link: "#Profile Bages"
+    text: "Profile Bages"
+  - id: 1
+    link: "#Membership"
+    text: "Membership to GitHub"
+  - id: 2
+    link: "#Community_member_profile"
+    text: "Community Member Profile"
+  - id: 3
+    link: "#Badges"
+    text: "Community Member Profile Badges"
+  - id: 4
+    link: "#SocialMedia"
+    text: "Recognition on Social Media Platforms"
 ---
 
 import { Container } from "../../../reusecore/Layout";
 import { Link } from "gatsby";
-import IntraPage from "../../../components/handbook-navigation/intra-page";
 import BadgeRow from "./BadgeRow";
 import { activityBadges, projectBadges, specialBadges } from "./badges-data";
 
-export const contents = [
-  { id: 0, link: "#Profile Bages", text: "Profile Bages" },
-  { id: 1, link: "#Membership", text: "Membership to GitHub" },
-  { id: 2, link: "#Community_member_profile", text: "Community Member Profile" },
-  { id: 3, link: "#Badges", text: "Community Member Profile Badges" },
-  { id: 4, link: "#SocialMedia", text: "Recognition on Social Media Platforms" },
-];
 
 export const tableWrap = { overflowX: "auto" };
 export const table = { width: "100%", borderCollapse: "collapse", marginBottom: "2rem" };
@@ -161,4 +169,3 @@ To display badge on your GitHub profile, follow below steps:
 
 We highly encourage you to share your engagement and contributions to the Layer5 community on social media like LinkedIn and Twitter. We support every contribution by liking your posts and retweeting them. Your contributions and engagement in different ways are what make us a successful and collaborative open-source community. We love celebrating your every accomplishment with Layer5 publicly and encourage you in every way we can.
 
-<IntraPage contents={contents} />

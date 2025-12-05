@@ -2,6 +2,16 @@
 title: "Repository Overview"
 description: "This overview serves as resources to newcomers seeking a perspective of the collective community efforts (from the limited vantage point of a code-centric perspective)."
 type: Handbook
+contents:
+  - id: 0
+    link: "#top"
+    text: "GitHub Organizations and Repositories"
+  - id: 1
+    link: "#Frontend Projects"
+    text: "Frontend Projects"
+  - id: 2
+    link: "#Backend Projects"
+    text: "Backend Projects"
 ---
 
 import { Container } from "../../../reusecore/Layout";
@@ -14,16 +24,10 @@ import MeshSync from "../../../assets/images/meshsync/meshsync.svg";
 import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import servicemeshpattern from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
-import IntraPage from "../../../components/handbook-navigation/intra-page";
 import Kanvas from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 import layer5AcademyIcon from "../../../assets/images/academy/academy.svg";
 import { Link } from "gatsby";
 
-export const contents = [
-  { id: 0, link: "#top", text: "GitHub Organizations and Repositories" },
-  { id: 1, link: "#Frontend Projects", text: "Frontend Projects" },
-  { id: 2, link: "#Backend Projects", text: "Backend Projects" },
-];
 
 export const data = repo_data;
 export const frontendProjects = data.filter((d) => d.category === "Frontend");
@@ -215,4 +219,3 @@ Note that the Layer5 community spans **six** GitHub organizations and **one** mu
   );
 })}
 
-<IntraPage contents={contents} />

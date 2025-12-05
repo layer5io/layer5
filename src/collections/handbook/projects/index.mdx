@@ -2,11 +2,23 @@
 title: "Projects"
 description: "Layer5 Projects: Layer5, Meshery, Kanvas, NightHawk"
 type: Handbook
+contents:
+  - id: 0
+    link: "#Layer5"
+    text: "Layer5"
+  - id: 1
+    link: "#Meshery"
+    text: "Meshery"
+  - id: 2
+    link: "#Cloud Native Performance"
+    text: "Cloud Native Performance"
+  - id: 3
+    link: "#Cloud Native Patterns"
+    text: " Cloud Native Patterns"
 ---
 
 import { Container } from "../../../reusecore/Layout";
 import {Link} from "gatsby";
-import IntraPage from "../../../components/handbook-navigation/intra-page";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import layer5icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
 import hawkIcon from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
@@ -16,12 +28,6 @@ import servicemeshperformance from "../../../assets/images/service-mesh-performa
 import mesheryoperatoricon from "../../../assets/images/meshery-operator/meshery-operator.svg";
 import mesherysyncicon from "../../../assets/images/meshsync/meshsync.svg";
 
-export const contents = [
-  { id: 0, link: "#Layer5", text: "Layer5" },
-  { id: 1, link: "#Meshery", text: "Meshery" },
-  { id: 2, link: "#Cloud Native Performance", text: "Cloud Native Performance" },
-  { id: 3, link: "#Cloud Native Patterns", text: " Cloud Native Patterns" },
-];
 
 <a id="Layer5">
   <h3 className="heading-top">
@@ -94,4 +100,3 @@ Meshery and its components Meshery Operator <img className="project-description-
 
 A collection of curated patterns of cloud native use cases compatible with Meshery.
 
-<IntraPage contents={contents} />

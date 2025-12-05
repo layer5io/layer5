@@ -3,10 +3,12 @@ import { HandbookWrapper } from "../Handbook.style";
 import { Container } from "../../../../reusecore/Layout";
 import HandbookTOC from "./HandbookTOC";
 import HandbookPagination from "./HandbookPagination";
+import IntraPage from "../../../../components/handbook-navigation/intra-page";
 
 const HandbookSingle = ({ data, children }) => {
   const { mdx, allHandbookPages } = data;
   const currentSlug = mdx.fields.slug;
+  const contents = mdx.frontmatter.contents || [];
 
   return (
     <HandbookWrapper>
@@ -24,6 +26,7 @@ const HandbookSingle = ({ data, children }) => {
             currentSlug={currentSlug}
           />
         </Container>
+        {contents.length > 0 && <IntraPage contents={contents} />}
       </div>
     </HandbookWrapper>
   );

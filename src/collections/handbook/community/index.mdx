@@ -2,16 +2,18 @@
 title: "Community"
 description: "A MeshMate is an experienced Layer5 community member, who will be available to guide you as you explore the various projects and find your areas of interest."
 type: Handbook
+contents:
+  - id: 0
+    link: "#Community Guidelines"
+    text: "Guidelines"
+  - id: 1
+    link: "#Resources"
+    text: "Resources"
 ---
 
 import { Link } from "gatsby";
 import Point from "./bullet.svg";
-import IntraPage from "../../../components/handbook-navigation/intra-page";
 
-export const contents = [
-  { id: 0, link: "#Community Guidelines", text: "Guidelines" },
-  { id: 1, link: "#Resources", text: "Resources" },
-];
 
 <a id="Community Guidelines">
   <h2 id="communityGuidelines">Community Guidelines</h2>
@@ -72,4 +74,3 @@ Welcome to the Layer5 community! We're happy to have you here and handhold you f
 
 Please refer to the <Link to="/community/handbook/code-of-conduct">Code of Conduct</Link> for more details.
 
-<IntraPage contents={contents} />

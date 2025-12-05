@@ -2,23 +2,33 @@
 title: "Contribution"
 description: "Pull requests (PRs) are the best ways to propose changes to a project repository. At Layer5 org, we use the Github Flow."
 type: Handbook
+contents:
+  - id: 0
+    link: "#Clone your fork"
+    text: "Clone your fork"
+  - id: 1
+    link: "#Checkout a new branch"
+    text: "Checkout a new branch"
+  - id: 2
+    link: "#Commit your changes"
+    text: "Commit your changes"
+  - id: 3
+    link: "#Sign-off commits"
+    text: "Sign-off commits"
+  - id: 4
+    link: "#Push changes to Github"
+    text: "Push changes to Github"
+  - id: 5
+    link: "#Create a pull request"
+    text: "Create a pull request"
 ---
 
 import { Container } from "../../../reusecore/Layout";
 import Code from "../../../components/CodeBlock";
-import IntraPage from "../../../components/handbook-navigation/intra-page";
 import signoffImg from "./git-signoff-vscode.webp";
 import compareImg from "./compare-and-pr.webp";
 import createPrImg from "./create-pr.webp";
 
-export const contents = [
-  { id: 0, link: "#Clone your fork", text: "Clone your fork" },
-  { id: 1, link: "#Checkout a new branch", text: "Checkout a new branch" },
-  { id: 2, link: "#Commit your changes", text: "Commit your changes" },
-  { id: 3, link: "#Sign-off commits", text: "Sign-off commits" },
-  { id: 4, link: "#Push changes to Github", text: "Push changes to Github" },
-  { id: 5, link: "#Create a pull request", text: "Create a pull request" },
-];
  
 
 <h2 className="heading-top">General contribution flow</h2>
@@ -157,4 +167,3 @@ At [Layer5](https://layer5.io/), we usually suggest to contributors that they as
    - **Requesting Reassignment:** If you are interested in working on an issue that is already assigned to someone else, it's important to respect their efforts and contributions. First, politely reach out to the assignee and express your interest in collaborating on the issue. Discuss the possibility of working together or sharing the workload. If the assignee agrees or is open to collaboration, you can proceed. If the assignee is not responsive or there has been no progress on the issue for a long time and the issue aligns with your skills and interests, kindly request reassignment from the maintainers, providing a clear and courteous explanation for the request.
      <br/>**Example:** [[chore] update Go to 1.21, and update relevant pkgs #169](https://github.com/meshery/meshery-nsm/issues/169)
 
-<IntraPage contents={contents} />
