@@ -6,6 +6,25 @@ import SEO from "../components/seo";
 
 import IndividualIntegrations from "../sections/Meshery/Meshery-integrations/Individual-Integrations";
 
+const LiteModeNotice = ({ entity }) => (
+  <section
+    style={{
+      padding: "4rem 1.5rem",
+      textAlign: "center",
+      maxWidth: "560px",
+      margin: "0 auto",
+    }}
+  >
+    <p style={{ fontWeight: 600 }}>Lite mode placeholder</p>
+    <p style={{ marginTop: "1rem" }}>
+      {`This ${entity} page is skipped when BUILD_FULL_SITE=false to keep local builds fast.`}
+    </p>
+    <p style={{ marginTop: "0.75rem" }}>
+      Run <code>make site-full</code> (or set <code>BUILD_FULL_SITE=true</code>) to render the full content.
+    </p>
+  </section>
+);
+
 
 export const query = graphql`
   query IntegrationsBySlug($slug: String!, $name: String!) {
@@ -66,6 +85,10 @@ export const query = graphql`
   }
 `;
 const Integrations = ({ data, children }) => {
+  const hasFrontmatter = Boolean(data?.mdx?.frontmatter);
+  if (!hasFrontmatter) {
+    return <LiteModeNotice entity="integration" />;
+  }
 
 
   return (
@@ -73,7 +96,7 @@ const Integrations = ({ data, children }) => {
     <>
 
 
-      <IndividualIntegrations  data={data} >
+      <IndividualIntegrations data={data}>
         {children}
       </IndividualIntegrations>
 
@@ -84,5 +107,15 @@ const Integrations = ({ data, children }) => {
 export default Integrations;
 
 export const Head = ({ data }) => {
-  return <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.integrationIcon.publicURL} description={data.mdx.frontmatter.subtitle}/>;
+  const frontmatter = data?.mdx?.frontmatter;
+  if (!frontmatter) {
+    return (
+      <SEO
+        title="Integrations disabled in lite mode"
+        description="Run make site-full or BUILD_FULL_SITE=true to source integration content."
+      />
+    );
+  }
+
+  return <SEO title={frontmatter.title} image={frontmatter.integrationIcon?.publicURL} description={frontmatter.subtitle}/>;
 };
