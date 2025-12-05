@@ -415,7 +415,7 @@ export const HandbookWrapper = styled.div`
       &:hover{
         box-shadow: 0px 0px 5px ${props => props.theme.primaryColor};
       }
-      padding: 12% 6% 12% 6%;
+      padding: 8% 6% 8% 6%;
       height: 220px;
       border-radius: 4%;
       margin-bottom: 30px;
@@ -477,4 +477,106 @@ export const HandbookWrapper = styled.div`
         display: inline;
       }
     }
+
+    /* mentorship programs styling */
+    .explain-2{
+      padding: 25px 0px;
+      .text{
+          padding: 1.25rem 1.25rem 0px 1.25rem;
+          h2{
+              font-weight: 700;
+              font-size: 40px;
+              padding: 1.25rem 0px;
+          }
+          p{
+              color: ${props => props.theme.tertiaryColor};
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+          }
+      }
+      img, svg {
+          height: auto;
+          width: 23rem;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+      }
+
+      path {
+        stroke: none;
+      }
+
+      .communitybridge_logo_svg__cls-1{
+        fill: ${props => props.theme.whiteToBlue003764};
+        transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .hacktoberfest_svg__cls-1 {
+        transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        fill: ${props => props.theme.whiteToRed662839};
+      }
+
+      .lfx-white_svg__b{
+        fill: ${props => props.theme.whiteToBlue003764};
+        transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .lfx-white_svg__c{
+        fill: ${props => props.theme.whiteToBlue0096d6};
+        transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .layer5-colorMode_svg__colorMode1 {
+        fill: ${props => props.theme.whiteToGreen3C494F};
+        transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .mlh_svg__cls-1 {
+        fill: ${props => props.theme.whiteToBlack};
+        transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .sca_svg__fil0, .sca_svg__fil6 {
+        fill: ${props => props.theme.whiteToBlack};
+        transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      
+      Button{
+          margin: 1.25rem 0px;
+          color: white;
+      }
+
+      #col2 {
+        align-self: center
+      }
+  }
+
+  @media only screen and (max-width: 750px){
+      .explain-2 div {
+        flex-direction: column-reverse;
+      }
+  }
+
+  @media only screen and (max-width: 475px){
+      .explain-2 img, .explain-2 svg{
+        width: 15rem;
+      }
+      .explain-2 .text h2{
+        font-size: 30px;
+      }
+  }
+
+  @media only screen and (min-width: 765px){
+    .first {
+      .list{
+        display:flex;
+        flex-wrap:wrap
+      }
+      #col1 {
+        order: 2;
+      }
+      #col2 {
+        order: 1;
+      }
+    }
+  }
   `;
