@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunklayer5=self.webpackChunklayer5||[]).push([[39741],{32825:function(a,e,c){c(96540);e.A=c.p+"static/gcp-catalog-dark.ea41d8da.svg"}}]);

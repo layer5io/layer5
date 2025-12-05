@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunklayer5=self.webpackChunklayer5||[]).push([[94508],{96577:function(e,s,a){a(96540);s.A=a.p+"static/whiteboard.264b8247.svg"}}]);

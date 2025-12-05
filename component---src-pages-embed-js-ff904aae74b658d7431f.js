@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkLayer5=self.webpackChunkLayer5||[]).push([[34852],{36002:function(e,d,b){b.r(d);var t=b(96540),r=b(91220);d.default=()=>t.createElement("main",null,t.createElement(r.A,{style:{border:"1px solid #eee"},embedId:"embedded-design-6f2255ba-54bf-4cb8-9033-262b8464d5d2",embedScriptSrc:"embed-test/embedded-design-embed1.js"}))}}]);

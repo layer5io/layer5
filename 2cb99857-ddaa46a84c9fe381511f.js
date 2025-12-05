@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkLayer5=self.webpackChunkLayer5||[]).push([[106],{96025:function(e,a,s){s(96540);a.A=s.p+"static/kubernetes-catalog-dark.fa3b4e4a.svg"}}]);

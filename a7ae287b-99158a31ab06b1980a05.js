@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkLayer5=self.webpackChunkLayer5||[]).push([[48492],{22524:function(e,s,c){c(96540);s.A=c.p+"static/comment.b77548b0.svg"}}]);

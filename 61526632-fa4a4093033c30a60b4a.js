@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunklayer5=self.webpackChunklayer5||[]).push([[10334],{77882:function(e,s,c){c(96540);s.A=c.p+"static/config.161226b1.svg"}}]);
