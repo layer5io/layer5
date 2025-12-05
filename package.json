@@ -1,5 +1,5 @@
 {
-  "name": "Layer5",
+  "name": "layer5",
   "description": "Our cloud native application and infrastructure management software enables organizations to expect more from their infrastructure. At Layer5, we believe collaboration enables innovation, and infrastructure enables collaboration",
   "version": "1.0.0",
   "private": true,
@@ -13,6 +13,7 @@
     "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 gatsby build",
     "clean": "gatsby clean && rimraf node_modules",
     "develop": "cross-env NODE_OPTIONS=--max-old-space-size=8192 env-cmd -f .env.development gatsby develop",
+    "develop:lite": "cross-env BUILD_FULL_SITE=false NODE_OPTIONS=--max-old-space-size=8192 env-cmd -f .env.development gatsby develop",
     "dev": "npm run develop",
     "start": "npm run develop",
     "serve": "gatsby serve",

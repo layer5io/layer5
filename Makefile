@@ -14,24 +14,29 @@
 
 include .github/build/Makefile.show-help.mk
 
-setup-libs: 
-	## "DEPRECATED: This target is deprecated. Use `make setup`.
-
 ## Install layer5.io dependencies your local machine.
 setup:
 	npm install --legacy-peer-deps
 
-## Run layer5.io on your local machine.
+# "make site" - The default lightweight build keeps the dev server fast by skipping heavy collections.
+## Run a partial build of layer5.io on your local machine.
 site:
-	npm start
-	
+	@echo "🏗️  Building lightweight site version (excluding Members and Integrations collections)..."
+	@npm run develop:lite
+
+# "make site-full" forces the dev server to include every collection.
+## Run a full build of layer5.io on your local machine.
+site-full:
+	@echo "🏗️  Building full site version (including Members and Integrations collections)..."
+	@npm run develop
+
 ## Run layer5.io on your local machine. Alternate method.
 site-fast:
 	NODE_OPTIONS=--max-old-space-size=8192 gatsby develop
 
 ## Build layer5.io on your local machine.
 build:
-	npm run build && npm run serve
+	npm run build
 
 ## Empty build cache and run layer5.io on your local machine.
 clean: 
