@@ -506,17 +506,11 @@ Layer5 uses a `Makefile` that defines a set of rules and instructions (called **
 
 > **Note:** While using the make command on Windows, there sometimes arises an error in identifying the command even after it is installed (unrecognized command), this is because the PATH for the binary might not be set correctly.
 
-| Command | Description |
-|------|-------------|
-| `make setup` | Installs all project dependencies. Run this first after cloning the repo. |
-| `make site` | Runs a **lightweight local development server** with live reload. This skips heavy collections (Members and Integrations) to keep performance fast. |
-| `make site-full` | Runs a **full local development server**, including Members and Integrations collections. This will take longer to start. |
-| `make site-fast` | Alternate lightweight method to run the site with increased Node memory limit. Useful if you run into memory issues. |
-| `make build` | Builds the production-ready version of the site. |
-| `make clean` | Clears the cache and runs a fresh lightweight build (`gatsby clean` + `make site`). |
-| `make lint` | Runs ESLint to check for code style and formatting issues. |
-| `make kill` | Kills any process currently running on port 8000 (the default dev server port). |
-| `make features` | Downloads the pricing features spreadsheet and converts it to a JSON file used by the site. |
+To see the complete and current list of available make targets along with a short description of what each one does, simply run the following command from the root of the project:
+
+```bash
+make
+```
 
 ### Environment Variables
 
@@ -525,7 +519,7 @@ Environment variables are named values used to configure how an application beha
 | Variable | Possible Values | Description |
 |---------|----------------|------------|
 | `BUILD_FULL_SITE` | `true`, `false` | When set to `true`, enables a full site build including all collections. If not explicitly set to `true`, the project defaults to a lightweight build. |
-| `NODE_ENV` | `development`, `production` | Determines whether Gatsby runs in development or production mode. This is automatically set by Gatsby: when you run `gatsby develop` (or `npm run develop`) it uses `development`; when you run `gatsby build` (or `npm run build`) it uses `production`. |
+| `NODE_ENV` | `development`, `production` | Determines the build and rendering mode used by Gatsby. This is automatically set by Gatsby. <br><br>• `development` - Uses **Deferred Static Generation (DSG)** i.e pages built on demand for faster startup.  <br>• `production` - Uses **Server-Side Rendering (SSR)** i.e pages rendered on each request for fresh content. |
 | `CI` | `true`, `false` | Indicates that the build is running in a **Continuous Integration (CI)** environment (e.g., GitHub Actions). When set to `true`, special logic is applied to page paths and redirects for GitHub Pages compatibility. This is typically set automatically by the CI system and does not need to be configured manually. |
 
 ---
