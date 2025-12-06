@@ -7,7 +7,7 @@ import { GiClockwork } from "@react-icons/all-files/gi/GiClockwork";
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import FeaturesTable from "./Features-Col";
 
-import mesheryDemo from "../../assets/video/meshery/dashboard.webm";
+import mesheryDemo from "../../../static/video/meshery/dashboard.webm";
 import DockerExtensionCTA from "../Docker-Meshery/docker-extension-CTA";
 
 import MesheryWrapper from "./meshery.style";
