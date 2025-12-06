@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "gatsby";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import logo from "../../../assets/images/layer5/layer5-only/svg/layer5-light-bg.svg";
@@ -7,23 +7,17 @@ import Button from "../../../reusecore/Button";
 import FooterWrapper from "./footer.style";
 import bubblesElement from "./images/bubbles-element.svg";
 
-const useSafeLocation = () => {
-  const isBrowser = typeof window !== "undefined";
-  const [pathname, setPathname] = useState("/");
-
-  useEffect(() => {
-    if (isBrowser && window.location) {
-      setPathname(window.location.pathname);
-    }
-  }, [isBrowser]);
-
-  return { pathname };
+const getSafePathname = () => {
+  if (typeof window !== "undefined" && window.location) {
+    return window.location.pathname;
+  }
+  return "/";
 };
 
 const Footer = ({ location: locationProp }) => {
   var currentYear = new Date().getFullYear();
-  const routerLocation = useSafeLocation();
-  const pathname = locationProp?.pathname || routerLocation?.pathname || "/";
+  
+  const pathname = locationProp?.pathname || getSafePathname();
 
   const getUrl = (pathname) => {
     // remove ".html" that results in live production build
