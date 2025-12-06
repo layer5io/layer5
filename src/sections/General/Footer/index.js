@@ -22,7 +22,8 @@ const useSafeLocation = () => {
 
 const Footer = ({ location: locationProp }) => {
   var currentYear = new Date().getFullYear();
-  const pathname = locationProp?.pathname || (typeof window !== "undefined" ? window.location.pathname : "/");
+  const routerLocation = useSafeLocation();
+  const pathname = locationProp?.pathname || routerLocation?.pathname || "/";
 
   const getUrl = (pathname) => {
     // remove ".html" that results in live production build
