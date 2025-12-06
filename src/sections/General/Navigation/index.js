@@ -24,6 +24,8 @@ import Layer5CloudDarkIcon from "./utility/Layer5CloudDarkIcon.svg";
 import Layer5CloudLightIcon from "./utility/Layer5CloudLightIcon.svg";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward.js";
 
+const isBrowser = typeof window !== "undefined";
+
 const Navigation = () => {
   let data = useStaticQuery(
     graphql`{
@@ -188,18 +190,20 @@ const Navigation = () => {
   const [expand, setExpand] = useState(false);
   const [scroll, setScroll] = useState(false);
   const [dropDown, setDropDown] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const themeToggler = () => toggleDark();
   const [userData, setUserData] = useState(null);
   const dropDownRef = useRef();
   const navWrapRef = useRef();
   const accountDropdownRef = useRef();
 
-  function getCookieValue(cookieName) {
-    if (typeof document === "undefined") {
-      return null;
-    }
-    const cookies = document.cookie.split(";");
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
+  function getCookieValue(cookieName) {
+    if (!isBrowser) return null;
+    const cookies = document.cookie.split(";");
     for (let i = 0; i < cookies.length; i++) {
       let cookie = cookies[i].trim(); // Remove whitespace
       if (cookie.indexOf(cookieName + "=") === 0) {
@@ -208,22 +212,20 @@ const Navigation = () => {
     }
     return null;
   }
+
   function removeCookie(cookieName) {
-    if (typeof document === "undefined") {
-      return;
-    }
-    document.cookie =
-      cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    if (!isBrowser) return;
+    document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   }
   useEffect(() => {
-    const CLOUD_USER_API =
-      "https://cloud.layer5.io/api/identity/users/profile";
+    if (!isMounted) return;
+
+    const CLOUD_USER_API = "https://cloud.layer5.io/api/identity/users/profile";
     const fetchData = async () => {
       try {
         const token = getCookieValue("provider_token");
-        if (!token) { // no token: don't proceed
-          return;
-        }
+        if (!token) return;
+
         const response = await axios.get(CLOUD_USER_API, {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -234,58 +236,49 @@ const Navigation = () => {
           throw new Error("Network response was not ok");
         }
 
-        const data = response.data;
-        setUserData(data);
+        setUserData(response.data);
       } catch (error) {
-        if (error?.response?.status === 401) {
-          // unauthorized token
-        } else {
-          // only for debugging purposes, no need to log
-          //  console.error("There was a problem with your fetch operation:", error);
+        if (error?.response?.status !== 401) {
+          // Only log non-401 errors for debugging
         }
       }
     };
 
     fetchData();
-  }, []);
+  }, [isMounted]);
   useEffect(() => {
-    if (typeof document === "undefined") {
-      return;
-    }
+    if (!isMounted || !expand) return;
 
     const outsideClickHandler = (e) => {
-      if (
-        expand &&
-        navWrapRef.current &&
-        !navWrapRef.current.contains(e.target)
-      ) {
+      if (navWrapRef.current && !navWrapRef.current.contains(e.target)) {
         setExpand(false);
         closeDropDown();
       }
     };
 
-    expand && setTimeout(() => document.addEventListener("click", outsideClickHandler));
+    const timeoutId = setTimeout(() => {
+      document.addEventListener("click", outsideClickHandler);
+    });
 
     return () => {
+      clearTimeout(timeoutId);
       document.removeEventListener("click", outsideClickHandler);
     };
-  }, [expand]);
+  }, [expand, isMounted]);
 
   useEffect(() => {
-    if (typeof window === "undefined") {
-      return;
-    }
+    if (!isMounted) return;
 
     const handleScroll = () => {
       setScroll(window.scrollY > 50);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // Set initial scroll state
+    handleScroll();
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isMounted]);
 
   const openDropDown = () => {
     if (dropDownRef.current) {
@@ -305,9 +298,7 @@ const Navigation = () => {
   };
 
   useEffect(() => {
-    if (typeof document === "undefined" || !dropDown) {
-      return;
-    }
+    if (!isMounted || !dropDown) return;
 
     const handleClickOutside = (e) => {
       if (!accountDropdownRef.current?.contains(e.target)) {
@@ -317,7 +308,7 @@ const Navigation = () => {
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [dropDown]);
+  }, [dropDown, isMounted]);
   return (
     <NavigationWrap
       className={`nav-block ${scroll ? "scrolled" : ""}`}
@@ -535,7 +526,7 @@ const Navigation = () => {
                 <a
                   onClick={() => {
                     removeCookie("provider_token");
-                    if (typeof window !== "undefined") {
+                    if (isBrowser) {
                       window.open("https://cloud.layer5.io/logout", "_blank");
                       window.location.reload();
                     }
