@@ -71,12 +71,21 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
   const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
   const ServiceMeshesAvailable = ({ serviceMeshes }) => serviceMeshes.map((sm, index) => {
+    const meshImage = findServiceMeshImage(serviceMeshImages, sm.section);
+
+    if (!meshImage?.imagepath) {
+      if (process.env.NODE_ENV === "development") {
+        console.warn(`[Chapters] Missing meshesYouLearn image data for: ${sm.section} (chapter: ${chapterData.fields.slug})`);
+      }
+      return null;
+    }
+
     return (
-      <>
-        <div className={`service-mesh-image ${isMeshActive(sm.section) ? "service-mesh-image-active" : ""}`} key={index}>
+      <React.Fragment key={sm.section || index}>
+        <div className={`service-mesh-image ${isMeshActive(sm.section) ? "service-mesh-image-active" : ""}`}>
           <Link to={`/${sm.slug}`} data-tooltip-id="mesh-name" data-tooltip-content={capitalize(sm.section)} className="course" key={index}>
             <Image
-              {...findServiceMeshImage(serviceMeshImages, sm.section).imagepath}
+              {...meshImage.imagepath}
               className="docker"
               alt={sm.section}
             />
@@ -89,7 +98,7 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
           style={{ backgroundColor: "rgb(60,73,79)" }}
           className="mesh-tooltip"
         />
-      </>);
+      </React.Fragment>);
   });
 
   if (showQuizModal) {
