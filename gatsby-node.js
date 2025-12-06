@@ -11,6 +11,8 @@ const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
 const config = require("./gatsby-config");
+const isDevelopment = process.env.NODE_ENV === "development";
+const isProduction = process.env.NODE_ENV === "production";
 const {
   componentsData,
 } = require("./src/sections/Projects/Sistent/components/content");
@@ -57,8 +59,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
   const envCreatePage = (props) => {
+    const pageConfig = { ...props };
+
+    if (isDevelopment) {
+      pageConfig.defer = true;
+    } else if (isProduction) {
+      pageConfig.mode = "SSR";
+    }
+
     if (process.env.CI === "true") {
-      const { path, matchPath, ...rest } = props;
+      const { path, matchPath, ...rest } = pageConfig;
 
       createRedirect({
         fromPath: `/${path}/`,
@@ -73,7 +83,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         ...rest,
       });
     }
-    return createPage(props);
+    return createPage(pageConfig);
   };
 
   const blogPostTemplate = path.resolve("src/templates/blog-single.js");
@@ -537,7 +547,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   };
 
-  createComponentPages(createPage, components);
+  createComponentPages(envCreatePage, components);
 };
 
 // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
