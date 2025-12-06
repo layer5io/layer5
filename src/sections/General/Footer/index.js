@@ -1,14 +1,17 @@
 import React from "react";
 import { Link } from "gatsby";
 import { Container, Row, Col } from "../../../reusecore/Layout";
+import { useLocation } from "@reach/router";
 import logo from "../../../assets/images/layer5/layer5-only/svg/layer5-light-bg.svg";
 import SocialLinksColor from "../../../components/SocialLinks-Color";
 import Button from "../../../reusecore/Button";
 import FooterWrapper from "./footer.style";
 import bubblesElement from "./images/bubbles-element.svg";
 
-const Footer = ({ location }) => {
+const Footer = ({ location: locationProp }) => {
   var currentYear = new Date().getFullYear();
+  const routerLocation = useLocation();
+  const pathname = locationProp?.pathname || routerLocation?.pathname || "/";
 
   const getUrl = (pathname) => {
     // remove ".html" that results in live production build
@@ -349,7 +352,7 @@ const Footer = ({ location }) => {
             <ul className="misc-links">
               <li className="edit-page">
                 <a
-                  href={getUrl(location.pathname)}
+                  href={getUrl(pathname)}
                   target="_blank"
                   rel="noreferrer"
                 >

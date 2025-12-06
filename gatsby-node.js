@@ -50,11 +50,36 @@ if (process.env.CI === "true") {
 const { loadRedirects } = require("./src/utils/redirects.js");
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  const { createRedirect } = actions;
+  const { createRedirect, createSlice } = actions;
   const redirects = loadRedirects();
   redirects.forEach(redirect => createRedirect(redirect)); // Handles all hardcoded ones dynamically
   // Create Pages
   const { createPage } = actions;
+
+  createSlice({
+    id: "site-header",
+    component: path.resolve("./src/slices/site-header.js"),
+  });
+
+  createSlice({
+    id: "site-footer",
+    component: path.resolve("./src/slices/site-footer.js"),
+  });
+
+  createSlice({
+    id: "cta-bottom",
+    component: path.resolve("./src/slices/cta-bottom.js"),
+  });
+
+  createSlice({
+    id: "cta-fullwidth",
+    component: path.resolve("./src/slices/cta-fullwidth.js"),
+  });
+
+  createSlice({
+    id: "cta-imageonly",
+    component: path.resolve("./src/slices/cta-imageonly.js"),
+  });
 
   const envCreatePage = (props) => {
     if (process.env.CI === "true") {
