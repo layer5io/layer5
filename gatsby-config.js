@@ -9,7 +9,7 @@ const collectionIgnoreGlobs = isFullSiteBuild
   : HEAVY_COLLECTIONS.map((name) => `**/${name}/**`);
 const devFlags = isDevelopment
   ? {
-    PARALLEL_SOURCING: true,
+    PARALLEL_SOURCING: false,
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
     PRESERVE_WEBPACK_CACHE: true,
   }
