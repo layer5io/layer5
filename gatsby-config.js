@@ -1,10 +1,18 @@
 /* eslint-env node */
 
+const isProduction = process.env.NODE_ENV === "production";
+const isFullSiteBuild = process.env.BUILD_FULL_SITE === "true";
+const HEAVY_COLLECTIONS = ["members", "integrations"];
+const collectionIgnoreGlobs = isFullSiteBuild
+  ? []
+  : HEAVY_COLLECTIONS.map((name) => `**/${name}/**`);
+// const isDevelopment = process.env.NODE_ENV === "development";
+
 module.exports = {
   siteMetadata: {
     title: "Layer5 - Expect more from your infrastructure",
     description:
-      "Expect more from your infrastructure. Cloud native, open source software for your cloud native infrastructure and applications. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidently run modern infrastructure.",
+      "Expect more from your infrastructure. Cloud native, open source software for your internal development platforms, your DevOps, platform engineering and site reliability engineering teams. Less finger-pointing and more collaborating. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidently run modern infrastructure.",
     author: "Layer5 Authors",
     permalink: "https://layer5.io",
     siteUrl: "https://layer5.io",
@@ -99,11 +107,14 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: "gatsby-plugin-feed",
-      options: {
-        // 1. GLOBAL QUERY: Runs ONCE. Fetches all heavy data (allMdx).
-        query: `
+    // Start of Production-only Plugins
+    ...(isProduction
+      ? [
+        {
+          resolve: "gatsby-plugin-feed",
+          options: {
+            // Lightweight global query - only site metadata
+            query: `
           {
             site {
               siteMetadata {
@@ -113,33 +124,44 @@ module.exports = {
                 site_url: siteUrl
               }
             }
-            allMdx(
-              sort: {frontmatter: {date: DESC}}
-              limit: ${process.env.NODE_ENV === "development" ? 25 : 1000}
-              filter: { frontmatter: { published: { eq: true }${process.env.NODE_ENV === "development" ? ", date: { gte: \"2024-01-01\" }" : ""} } }
-            ) {
-              nodes {
-                # Using excerpt instead of html because gatsby-plugin-mdx v5+ removed the html field
-                excerpt
-                frontmatter {
-                  title
-                  author
-                  description
-                  subtitle
-                  date
-                  type
-                  category
-                  tags
-                  thumbnail {
-                    publicURL
-                  }
-                  darkthumbnail {
-                    publicURL
+          }
+        `,
+            feeds: [
+              // FEED 1: News - individual query per feed
+              {
+                output: "/news/feed.xml",
+                title: "Layer5 News",
+                query: `
+              {
+                site {
+                  siteMetadata {
+                    title
+                    siteUrl
                   }
                 }
-                fields {
-                  slug
-                  collection
+                allMdx(
+                  sort: {frontmatter: {date: DESC}}
+                  limit: 20
+                  filter: {
+                    frontmatter: { published: { eq: true } }
+                    fields: { collection: { eq: "news" } }
+                  }
+                ) {
+                  nodes {
+                    excerpt
+                    frontmatter {
+                      title
+                      author
+                      description
+                      date
+                      thumbnail {
+                        publicURL
+                      }
+                    }
+                    fields {
+                      slug
+                    }
+                  }
                 }
               }
             }
@@ -385,12 +407,20 @@ module.exports = {
                       },
                     custom_elements: [{ "content:encoded": node.excerpt }],
                   });
-                });
-            },
+                },
+              },
+            ],
           },
-        ],
-      },
-    },
+        },
+        {
+          resolve: "gatsby-plugin-purgecss",
+          options: {
+            printRejected: true,
+          }
+        },
+      ]
+      : []),
+    // End of Production-only Plugins
     {
       resolve: "gatsby-plugin-styled-components",
       options: {
@@ -415,32 +445,9 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections`,
         name: "collections",
+        ignore: collectionIgnoreGlobs,
       },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/sections/Meshery/Meshery-platforms/supported-icons`,
-        name: "integration-images",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: `${__dirname}/src/assets/images`,
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/content-learn`,
-        name: "content-learn",
-      },
-    },
-    "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-sharp",
       options: {
@@ -455,6 +462,24 @@ module.exports = {
         checkSupportedExtensions: false, // suppress warning about childImageSharp being null
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/src/assets/images`,
+        // eslint-disable-next-line no-useless-escape, quotes
+        ignore: [`**/\.svg`],
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/content-learn`,
+        name: "content-learn",
+      },
+    },
+    "gatsby-plugin-image",
+
     {
       resolve: "gatsby-plugin-manifest",
       options: {
