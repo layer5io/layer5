@@ -501,6 +501,12 @@ export const HandbookWrapper = styled.div`
           margin-right: auto;
       }
 
+      /* Make GSOD image grayscale for archived program */
+      img[src*="gsod"] {
+          filter: grayscale(100%);
+          opacity: 0.7;
+      }
+
       path {
         stroke: none;
       }
