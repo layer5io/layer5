@@ -34,6 +34,7 @@ if (process.env.CI === "true") {
     if (page.path !== oldPage.path) {
       // Replace new page with old page
       deletePage(oldPage);
+      page.slices = { ...DEFAULT_SLICES, ...(page.slices || {}) };
       createPage(page);
 
       createRedirect({
@@ -48,6 +49,14 @@ if (process.env.CI === "true") {
 
 
 const { loadRedirects } = require("./src/utils/redirects.js");
+
+const DEFAULT_SLICES = {
+  "site-header": "site-header",
+  "site-footer": "site-footer",
+  "cta-bottom": "cta-bottom",
+  "cta-fullwidth": "cta-fullwidth",
+  "cta-imageonly": "cta-imageonly",
+};
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createRedirect, createSlice } = actions;
@@ -82,8 +91,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   const envCreatePage = (props) => {
+    const pageConfig = { ...props };
+    pageConfig.slices = { ...DEFAULT_SLICES, ...(pageConfig.slices || {}) };
+
     if (process.env.CI === "true") {
-      const { path, matchPath, ...rest } = props;
+      const { path, matchPath, ...rest } = pageConfig;
 
       createRedirect({
         fromPath: `/${path}/`,
@@ -98,7 +110,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         ...rest,
       });
     }
-    return createPage(props);
+    return createPage(pageConfig);
   };
 
   const blogPostTemplate = path.resolve("src/templates/blog-single.js");
@@ -535,7 +547,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   const components = componentsData.map((component) => component.src.replace("/", ""));
-  const createComponentPages = (createPage, components) => {
+  const createComponentPages = (envCreatePage, components) => {
     const pageTypes = [
       { suffix: "", file: "index.js" },
       { suffix: "/guidance", file: "guidance.js" },
@@ -548,7 +560,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
         if (fs.existsSync(path.resolve(componentPath))) {
           try {
-            createPage({
+            envCreatePage({
               path: pagePath,
               component: require.resolve(componentPath),
             });
@@ -562,7 +574,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   };
 
-  createComponentPages(createPage, components);
+  createComponentPages(envCreatePage, components);
 };
 
 // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
