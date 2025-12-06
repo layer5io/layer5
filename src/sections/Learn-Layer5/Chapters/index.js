@@ -67,6 +67,8 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
   };
   const availableServiceMeshesArray = getAvailableServiceMeshes();
 
+  const findServiceMeshImage = (images, serviceMesh) => images.find(image => image.name.toLowerCase() == serviceMesh);
+
   const missingServiceMeshImages = availableServiceMeshesArray
     .filter(({ section }) => {
       const meshImage = findServiceMeshImage(serviceMeshImages, section);
@@ -78,8 +80,6 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
     const context = chapterData?.fields?.slug || "unknown-chapter";
     throw new Error(`[Chapters] Missing meshesYouLearn image data for: ${missingServiceMeshImages.join(", ")} (chapter: ${context}).`);
   }
-
-  const findServiceMeshImage = (images, serviceMesh) => images.find(image => image.name.toLowerCase() == serviceMesh);
   const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
   const ServiceMeshesAvailable = ({ serviceMeshes }) => serviceMeshes.map((sm, index) => {
