@@ -18,8 +18,7 @@ const HandbookTOC = ({ pages, currentSlug }) => {
             <li key={index}>
               <Link
                 to={page.fields.slug}
-                className="toc-sub-heading toc-sub-inline"
-                activeClassName="active"
+                className={`toc-sub-heading toc-sub-inline${page.fields.slug === currentSlug ? " active" : ""}`}
               >
                 {page.frontmatter.title}
               </Link>
