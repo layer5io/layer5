@@ -7,27 +7,25 @@ import Banner1 from "../Banner-1";
 const BannersCount = 4;
 
 const RotationalBanner = () => {
-  let initialValue;
-  try {
-    initialValue = sessionStorage.getItem("banner") || 1;
-  } catch (error) {
-    console.error("Error in sessionStorage.getItem('banner'):", error);
-    initialValue = 1;
-  }
+  const isBrowser = typeof window !== "undefined";
+  const initialValue = isBrowser ? sessionStorage.getItem("banner") || 1 : 1;
 
   useEffect(() => {
-    let val = sessionStorage.getItem("banner");
-    let currentClass = `banner${val}`;
-    let replaceClass = `banner${val - 1 == 0 ? 4 : val - 1}`;
+    if (!isBrowser) return;
+
+    const val = Number(sessionStorage.getItem("banner")) || 1;
+    const currentClass = `banner${val}`;
+    const replaceClass = `banner${val - 1 === 0 ? 4 : val - 1}`;
+
     if (!document.body.classList.contains(currentClass)) {
       document.body.classList.replace(replaceClass, currentClass);
     }
-    if (sessionStorage.getItem("banner")) {
-      sessionStorage.setItem("banner", (Number(initialValue) % BannersCount) + 1);
-    } else {
-      sessionStorage.setItem("banner", 2);
-    }
-  }, []);
+
+    const nextVal = sessionStorage.getItem("banner")
+      ? (Number(initialValue) % BannersCount) + 1
+      : 2;
+    sessionStorage.setItem("banner", nextVal);
+  }, [initialValue, isBrowser]);
 
   /*
   NOTE:
