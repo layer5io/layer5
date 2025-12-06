@@ -24,6 +24,10 @@ const CookieConsent = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
+    // Guard against SSG - localStorage is not available during build
+    if (typeof window === "undefined" || typeof localStorage === "undefined") {
+      return;
+    }
     const consent = localStorage.getItem("cookie_consent");
     if (!consent) {
       setOpen(true);
@@ -31,7 +35,10 @@ const CookieConsent = () => {
   }, []);
 
   const handleResponse = (response) => {
-    localStorage.setItem("cookie_consent", response);
+    // Guard against SSG - localStorage is not available during build
+    if (typeof window !== "undefined" && typeof localStorage !== "undefined") {
+      localStorage.setItem("cookie_consent", response);
+    }
     setOpen(false);
   };
 

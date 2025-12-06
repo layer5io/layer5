@@ -195,6 +195,9 @@ const Navigation = () => {
   const accountDropdownRef = useRef();
 
   function getCookieValue(cookieName) {
+    if (typeof document === "undefined") {
+      return null;
+    }
     const cookies = document.cookie.split(";");
 
     for (let i = 0; i < cookies.length; i++) {
@@ -206,6 +209,9 @@ const Navigation = () => {
     return null;
   }
   function removeCookie(cookieName) {
+    if (typeof document === "undefined") {
+      return;
+    }
     document.cookie =
       cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   }
@@ -243,6 +249,10 @@ const Navigation = () => {
     fetchData();
   }, []);
   useEffect(() => {
+    if (typeof document === "undefined") {
+      return;
+    }
+
     const outsideClickHandler = (e) => {
       if (
         expand &&
@@ -262,17 +272,31 @@ const Navigation = () => {
   }, [expand]);
 
   useEffect(() => {
-    window.addEventListener("scroll", () =>
-      window.scrollY > 50 ? setScroll(true) : setScroll(false)
-    );
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const handleScroll = () => {
+      setScroll(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const openDropDown = () => {
-    dropDownRef.current.classList.add("expand");
+    if (dropDownRef.current) {
+      dropDownRef.current.classList.add("expand");
+    }
   };
 
   const closeDropDown = () => {
-    dropDownRef.current.classList.remove("expand");
+    if (dropDownRef.current) {
+      dropDownRef.current.classList.remove("expand");
+    }
   };
 
   const changeDropdownState = () => {
@@ -281,7 +305,9 @@ const Navigation = () => {
   };
 
   useEffect(() => {
-    if (!dropDown) return;
+    if (typeof document === "undefined" || !dropDown) {
+      return;
+    }
 
     const handleClickOutside = (e) => {
       if (!accountDropdownRef.current?.contains(e.target)) {
@@ -509,11 +535,10 @@ const Navigation = () => {
                 <a
                   onClick={() => {
                     removeCookie("provider_token");
-                    // Open logout API link in a new tab
-                    window.open("https://cloud.layer5.io/logout", "_blank");
-
-                    // Refresh the current page
-                    window.location.reload();
+                    if (typeof window !== "undefined") {
+                      window.open("https://cloud.layer5.io/logout", "_blank");
+                      window.location.reload();
+                    }
                   }}
                   rel="noreferrer"
                   className="drop-item"
