@@ -500,6 +500,36 @@ Make sure you have the following prerequisites installed on your operating syste
 
 ## Set up your Local Development Environment
 
+### Make Targets
+
+Layer5 uses a `Makefile` that defines a set of rules and instructions (called **targets**) for creating, updating, and running parts of the project. Each target abstracts the underlying commands and logic, allowing  to execute complex workflows using a simple `make <target>` command.
+
+> **Note:** While using the make command on Windows, there sometimes arises an error in identifying the command even after it is installed (unrecognized command), this is because the PATH for the binary might not be set correctly.
+
+| Command | Description |
+|------|-------------|
+| `make setup` | Installs all project dependencies. Run this first after cloning the repo. |
+| `make site` | Runs a **lightweight local development server** with live reload. This skips heavy collections (Members and Integrations) to keep performance fast. |
+| `make site-full` | Runs a **full local development server**, including Members and Integrations collections. This will take longer to start. |
+| `make site-fast` | Alternate lightweight method to run the site with increased Node memory limit. Useful if you run into memory issues. |
+| `make build` | Builds the production-ready version of the site. |
+| `make clean` | Clears the cache and runs a fresh lightweight build (`gatsby clean` + `make site`). |
+| `make lint` | Runs ESLint to check for code style and formatting issues. |
+| `make kill` | Kills any process currently running on port 8000 (the default dev server port). |
+| `make features` | Downloads the pricing features spreadsheet and converts it to a JSON file used by the site. |
+
+### Environment Variables
+
+Environment variables are named values used to configure how an application behaves in different environments without modifying the code.
+
+| Variable | Possible Values | Description |
+|---------|----------------|------------|
+| `BUILD_FULL_SITE` | `true`, `false` | When set to `true`, enables a full site build including all collections. If not explicitly set to `true`, the project defaults to a lightweight build. |
+| `NODE_ENV` | `development`, `production` | Determines whether Gatsby runs in development or production mode. This is automatically set by Gatsby: when you run `gatsby develop` (or `npm run develop`) it uses `development`; when you run `gatsby build` (or `npm run build`) it uses `production`. |
+| `CI` | `true`, `false` | Indicates that the build is running in a **Continuous Integration (CI)** environment (e.g., GitHub Actions). When set to `true`, special logic is applied to page paths and redirects for GitHub Pages compatibility. This is typically set automatically by the CI system and does not need to be configured manually. |
+
+---
+
 Follow the following instructions to start contributing.
 
 **1.** Fork [this](https://github.com/layer5io/layer5) repository.
@@ -554,7 +584,7 @@ make setup
 make site
 ```
 
-This will run a local webserver with "live reload" conveniently enabled. ( **NOTE**: while using the make command on Windows, there sometimes arises an error in identifying the command even after it is installed (unrecognized command), this is because the PATH for the binary might not be set correctly ).
+This will run a local webserver with "live reload" conveniently enabled.
 
 **11.** Track your changes.
 
