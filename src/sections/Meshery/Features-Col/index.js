@@ -64,8 +64,21 @@ const Features = () => {
 
   useEffect(() => {
     fetch(performanceCountEndpoint)
-      .then((response) => response.json())
-      .then((resultcount) => setPerformanceCount(resultcount.total_runs));
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((resultcount) => {
+      if (resultcount && typeof resultcount.total_runs === "number") {
+        setPerformanceCount(resultcount.total_runs);
+      }
+    })
+    .catch((error) => {
+      console.log("Failed to fetch performance count:", error.message);
+      // Keep default value of 0 if fetch fails
+    });
   }, []);
 
   const data = LifecycleFeature().features;
