@@ -36,6 +36,7 @@ if (process.env.CI === "true") {
     if (page.path !== oldPage.path) {
       // Replace new page with old page
       deletePage(oldPage);
+      page.slices = { ...DEFAULT_SLICES, ...(page.slices || {}) };
       createPage(page);
 
       createRedirect({
@@ -51,12 +52,45 @@ if (process.env.CI === "true") {
 
 const { loadRedirects } = require("./src/utils/redirects.js");
 
+const DEFAULT_SLICES = {
+  "site-header": "site-header",
+  "site-footer": "site-footer",
+  "cta-bottom": "cta-bottom",
+  "cta-fullwidth": "cta-fullwidth",
+  "cta-imageonly": "cta-imageonly",
+};
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  const { createRedirect } = actions;
+  const { createRedirect, createSlice } = actions;
   const redirects = loadRedirects();
   redirects.forEach(redirect => createRedirect(redirect)); // Handles all hardcoded ones dynamically
   // Create Pages
   const { createPage } = actions;
+
+  createSlice({
+    id: "site-header",
+    component: path.resolve("./src/slices/site-header.js"),
+  });
+
+  createSlice({
+    id: "site-footer",
+    component: path.resolve("./src/slices/site-footer.js"),
+  });
+
+  createSlice({
+    id: "cta-bottom",
+    component: path.resolve("./src/slices/cta-bottom.js"),
+  });
+
+  createSlice({
+    id: "cta-fullwidth",
+    component: path.resolve("./src/slices/cta-fullwidth.js"),
+  });
+
+  createSlice({
+    id: "cta-imageonly",
+    component: path.resolve("./src/slices/cta-imageonly.js"),
+  });
 
   const envCreatePage = (props) => {
     const pageConfig = { ...props };
@@ -66,6 +100,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     } else if (isProduction) {
       pageConfig.mode = "SSR";
     }
+    pageConfig.slices = { ...DEFAULT_SLICES, ...(pageConfig.slices || {}) };
 
     if (process.env.CI === "true") {
       const { path, matchPath, ...rest } = pageConfig;
@@ -520,7 +555,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   const components = componentsData.map((component) => component.src.replace("/", ""));
-  const createComponentPages = (createPage, components) => {
+  const createComponentPages = (envCreatePage, components) => {
     const pageTypes = [
       { suffix: "", file: "index.js" },
       { suffix: "/guidance", file: "guidance.js" },
@@ -533,7 +568,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
         if (fs.existsSync(path.resolve(componentPath))) {
           try {
-            createPage({
+            envCreatePage({
               path: pagePath,
               component: require.resolve(componentPath),
             });
