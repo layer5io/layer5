@@ -15,6 +15,10 @@ const {
   componentsData,
 } = require("./src/sections/Projects/Sistent/components/content");
 
+const HEAVY_COLLECTIONS = new Set(["members", "integrations"]);
+const isFullSiteBuild = process.env.BUILD_FULL_SITE !== "false";
+const shouldIncludeCollection = (collection) => isFullSiteBuild || !HEAVY_COLLECTIONS.has(collection);
+
 if (process.env.CI === "true") {
   // All process.env.CI conditionals in this file are in place for GitHub Pages, if webhost changes in the future, code may need to be modified or removed.
   //Replacing '/' would result in empty string which is invalid
@@ -30,6 +34,7 @@ if (process.env.CI === "true") {
     if (page.path !== oldPage.path) {
       // Replace new page with old page
       deletePage(oldPage);
+      page.slices = { ...DEFAULT_SLICES, ...(page.slices || {}) };
       createPage(page);
 
       createRedirect({
@@ -45,16 +50,52 @@ if (process.env.CI === "true") {
 
 const { loadRedirects } = require("./src/utils/redirects.js");
 
+const DEFAULT_SLICES = {
+  "site-header": "site-header",
+  "site-footer": "site-footer",
+  "cta-bottom": "cta-bottom",
+  "cta-fullwidth": "cta-fullwidth",
+  "cta-imageonly": "cta-imageonly",
+};
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  const { createRedirect } = actions;
+  const { createRedirect, createSlice } = actions;
   const redirects = loadRedirects();
   redirects.forEach(redirect => createRedirect(redirect)); // Handles all hardcoded ones dynamically
   // Create Pages
   const { createPage } = actions;
 
+  createSlice({
+    id: "site-header",
+    component: path.resolve("./src/slices/site-header.js"),
+  });
+
+  createSlice({
+    id: "site-footer",
+    component: path.resolve("./src/slices/site-footer.js"),
+  });
+
+  createSlice({
+    id: "cta-bottom",
+    component: path.resolve("./src/slices/cta-bottom.js"),
+  });
+
+  createSlice({
+    id: "cta-fullwidth",
+    component: path.resolve("./src/slices/cta-fullwidth.js"),
+  });
+
+  createSlice({
+    id: "cta-imageonly",
+    component: path.resolve("./src/slices/cta-imageonly.js"),
+  });
+
   const envCreatePage = (props) => {
+    const pageConfig = { ...props };
+    pageConfig.slices = { ...DEFAULT_SLICES, ...(pageConfig.slices || {}) };
+
     if (process.env.CI === "true") {
-      const { path, ...rest } = props;
+      const { path, matchPath, ...rest } = pageConfig;
 
       createRedirect({
         fromPath: `/${path}/`,
@@ -65,11 +106,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
       return createPage({
         path: `${path}.html`,
-        matchPath: path,
+        matchPath: matchPath || path,
         ...rest,
       });
     }
-    return createPage(props);
+    return createPage(pageConfig);
   };
 
   const blogPostTemplate = path.resolve("src/templates/blog-single.js");
@@ -104,6 +145,32 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const resourcePostTemplate = path.resolve("src/templates/resource-single.js");
   const integrationTemplate = path.resolve("src/templates/integrations.js");
+  const LitePlaceholderTemplate = path.resolve("src/templates/lite-placeholder.js");
+
+  const memberBioQuery = isFullSiteBuild
+    ? `
+      memberBio: allMdx(
+        filter: {
+          fields: { collection: { eq: "members" } }
+          frontmatter: { published: { eq: true }, executive_bio: { eq: true } }
+        }
+      ) {
+        nodes {
+          frontmatter {
+            name
+            permalink
+          }
+          fields {
+            slug
+            collection
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+    `
+    : "";
 
   const res = await graphql(`
     {
@@ -148,26 +215,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           fieldValue
         }
       }
-      memberBio: allMdx(
-        filter: {
-          fields: { collection: { eq: "members" } }
-          frontmatter: { published: { eq: true }, executive_bio: { eq: true } }
-        }
-      ) {
-        nodes {
-          frontmatter {
-            name
-            permalink
-          }
-          fields {
-            slug
-            collection
-          }
-          internal {
-            contentFilePath
-          }
-        }
-      }
+      ${memberBioQuery}
       singleWorkshop: allMdx(
         filter: { fields: { collection: { eq: "workshops" } } }
       ) {
@@ -223,35 +271,22 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const allNodes = res.data.allPosts.nodes;
 
-  const blogs = allNodes.filter((node) => node.fields.collection === "blog");
+  const filterByCollection = (collection) => {
+    if (!shouldIncludeCollection(collection)) {
+      return [];
+    }
+    return allNodes.filter((node) => node.fields.collection === collection);
+  };
 
-  const resources = allNodes.filter(
-    (node) => node.fields.collection === "resources"
-  );
-
-  const news = allNodes.filter((node) => node.fields.collection === "news");
-
-  const books = allNodes.filter(
-    (node) => node.fields.collection === "service-mesh-books"
-  );
-
-  const events = allNodes.filter((node) => node.fields.collection === "events");
-
-  const programs = allNodes.filter(
-    (node) => node.fields.collection === "programs"
-  );
-
-  const careers = allNodes.filter(
-    (node) => node.fields.collection === "careers"
-  );
-
-  const members = allNodes.filter(
-    (node) => node.fields.collection === "members"
-  );
-
-  const integrations = allNodes.filter(
-    (nodes) => nodes.fields.collection === "integrations"
-  );
+  const blogs = filterByCollection("blog");
+  const resources = filterByCollection("resources");
+  const news = filterByCollection("news");
+  const books = filterByCollection("service-mesh-books");
+  const events = filterByCollection("events");
+  const programs = filterByCollection("programs");
+  const careers = filterByCollection("careers");
+  const members = filterByCollection("members");
+  const integrations = filterByCollection("integrations");
 
   const singleWorkshop = res.data.singleWorkshop.nodes;
   const labs = res.data.labs.nodes;
@@ -356,26 +391,30 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  members.forEach((member) => {
-    envCreatePage({
-      path: member.fields.slug,
-      component: `${MemberTemplate}?__contentFilePath=${member.internal.contentFilePath}`,
-      context: {
-        slug: member.fields.slug,
-      },
+  if (isFullSiteBuild) {
+    members.forEach((member) => {
+      envCreatePage({
+        path: member.fields.slug,
+        component: `${MemberTemplate}?__contentFilePath=${member.internal.contentFilePath}`,
+        context: {
+          slug: member.fields.slug,
+        },
+      });
     });
-  });
+  }
 
-  const MemberBio = res.data.memberBio.nodes;
-  MemberBio.forEach((memberbio) => {
-    envCreatePage({
-      path: `${memberbio.fields.slug}/bio`,
-      component: `${MemberBioTemplate}?__contentFilePath=${memberbio.internal.contentFilePath}`,
-      context: {
-        member: memberbio.frontmatter.name,
-      },
+  const MemberBio = res.data.memberBio?.nodes || [];
+  if (isFullSiteBuild) {
+    MemberBio.forEach((memberbio) => {
+      envCreatePage({
+        path: `${memberbio.fields.slug}/bio`,
+        component: `${MemberBioTemplate}?__contentFilePath=${memberbio.internal.contentFilePath}`,
+        context: {
+          member: memberbio.frontmatter.name,
+        },
+      });
     });
-  });
+  }
 
   singleWorkshop.forEach((workshop) => {
     envCreatePage({
@@ -397,16 +436,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  integrations.forEach((integration) => {
-    envCreatePage({
-      path: `/cloud-native-management/meshery${integration.fields.slug}`,
-      component: `${integrationTemplate}?__contentFilePath=${integration.internal.contentFilePath}`,
-      context: {
-        slug: integration.fields.slug,
-        name: "_images/" + integration.fields.slug.split("/")[2],
-      },
+  if (isFullSiteBuild) {
+    integrations.forEach((integration) => {
+      envCreatePage({
+        path: `/cloud-native-management/meshery${integration.fields.slug}`,
+        component: `${integrationTemplate}?__contentFilePath=${integration.internal.contentFilePath}`,
+        context: {
+          slug: integration.fields.slug,
+          name: "_images/" + integration.fields.slug.split("/")[2],
+        },
+      });
     });
-  });
+  }
 
   programs.forEach((program) => {
     envCreatePage({
@@ -417,6 +458,65 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
+
+  if (!isFullSiteBuild) {
+    const litePlaceholderPages = [
+      {
+        path: "/community/members/__lite__",
+        matchPath: "/community/members/*",
+        context: {
+          entity: "member profile",
+          heading: "Member profiles disabled in lite mode",
+          description:
+            "The members collection is intentionally skipped when BUILD_FULL_SITE=false to keep local builds fast.",
+        },
+      },
+      {
+        path: "/cloud-native-management/meshery/__lite__",
+        matchPath: "/cloud-native-management/meshery/*",
+        context: {
+          entity: "integration",
+          heading: "Integrations disabled in lite mode",
+          description:
+            "Integrations are heavy to source, so this route shows a placeholder during lightweight builds.",
+        },
+      },
+    ];
+
+    litePlaceholderPages.forEach((page) =>
+      envCreatePage({
+        ...page,
+        component: LitePlaceholderTemplate,
+      })
+    );
+
+    const graphqlPlaceholderPages = [
+      {
+        path: "/__placeholders/integration",
+        component: integrationTemplate,
+        context: {
+          slug: "/integrations/__placeholder__",
+          name: "__placeholder__",
+        },
+      },
+      {
+        path: "/__placeholders/member",
+        component: MemberTemplate,
+        context: {
+          slug: "/members/__placeholder__",
+        },
+      },
+      {
+        path: "/__placeholders/executive-bio",
+        component: MemberBioTemplate,
+        context: {
+          member: "__placeholder__",
+        },
+      },
+    ];
+
+    graphqlPlaceholderPages.forEach((page) => envCreatePage(page));
+  }
 
   const learnNodes = res.data.learncontent.nodes;
 
@@ -447,7 +547,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   const components = componentsData.map((component) => component.src.replace("/", ""));
-  const createComponentPages = (createPage, components) => {
+  const createComponentPages = (envCreatePage, components) => {
     const pageTypes = [
       { suffix: "", file: "index.js" },
       { suffix: "/guidance", file: "guidance.js" },
@@ -460,7 +560,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
         if (fs.existsSync(path.resolve(componentPath))) {
           try {
-            createPage({
+            envCreatePage({
               path: pagePath,
               component: require.resolve(componentPath),
             });
@@ -474,7 +574,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   };
 
-  createComponentPages(createPage, components);
+  createComponentPages(envCreatePage, components);
 };
 
 // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
@@ -753,26 +853,61 @@ exports.createSchemaCustomization = ({ actions }) => {
      type Mdx implements Node {
        frontmatter: Frontmatter
      }
+
+     type FrontmatterComponent {
+       name: String
+       description: String
+       colorIcon: File @fileByRelativePath
+       whiteIcon: File @fileByRelativePath
+     }
+
      type Frontmatter {
-       subtitle: String,
-       abstract: String,
-       eurl: String,
-       twitter: String,
-       github: String,
-       layer5: String,
-       meshmate: String,
-       maintainer:String,
-       emeritus: String,
-       link: String,
-       labs: String,
-       slides: String,
-       slack: String,
-       video: String,
-       community_manager: String,
-       docURL: String,
-       permalink: String,
-       slug: String,
+       title: String
+       subtitle: String
+       abstract: String
+       description: String
+       eurl: String
+       twitter: String
+       github: String
+       layer5: String
+       meshmate: String
+       maintainer: String
+       emeritus: String
+       published: Boolean
+       link: String
+       labs: String
+       slides: String
+       slack: String
+       video: String
+       community_manager: String
+       docURL: String
+       permalink: String
+       slug: String
        redirect_from: [String]
+       category: String
+       subcategory: String
+       registrant: String
+       featureList: [String]
+       howItWorks: String
+       howItWorksDetails: String
+       components: [FrontmatterComponent]
+       integrationIcon: File @fileByRelativePath
+       darkModeIntegrationIcon: File @fileByRelativePath
+       workingSlides: [File] @fileByRelativePath
+       name: String
+       position: String
+        email: String
+        profile: String
+       linkedin: String
+       location: String
+        badges: [String]
+        status: String
+        bio: String
+        executive_bio: Boolean
+        executive_position: String
+        company: String
+        executive_image: File @fileByRelativePath
+       image_path: File @fileByRelativePath
      }
    `;
   createTypes(typeDefs);
