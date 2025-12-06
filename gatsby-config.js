@@ -63,10 +63,15 @@ module.exports = {
         serialize: ({ path, matchPath }) => {
           let url = matchPath ? matchPath : path;
           url = url.startsWith("/") ? url : `/${url}`;
+
+          // Default values; can be customized per critical page later.
+          let changefreq = "daily";
+          let priority = 0.7;
+
           return {
-            url: url,
-            changefreq: "daily",
-            priority: 0.7,
+            url,
+            changefreq,
+            priority,
           };
         },
       },
@@ -145,15 +150,20 @@ module.exports = {
           {
             output: "/rss.xml",
             title: "Layer5 Technical Posts",
-            // REQUIRED: We add this lightweight query to satisfy the plugin validator.
-            // The 'allMdx' data from the global query above is merged into this,
-            // so 'serialize' can still access it.
             query: "{ site { siteMetadata { title } } }",
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.nodes
-                .filter((node) =>
-                  ["blog", "resources", "news"].includes(node.fields.collection) &&
-                  !["Programs", "Community", "Events", "FAQ"].includes(node.frontmatter.category)
+                .filter(
+                  (node) =>
+                    ["blog", "resources", "news"].includes(
+                      node.fields.collection
+                    ) &&
+                    ![
+                      "Programs",
+                      "Community",
+                      "Events",
+                      "FAQ",
+                    ].includes(node.frontmatter.category)
                 )
                 .slice(0, 20)
                 .map((node) => {
@@ -164,9 +174,12 @@ module.exports = {
                     date: node.frontmatter.date,
                     url: site.siteMetadata.siteUrl + node.fields.slug,
                     guid: site.siteMetadata.siteUrl + node.fields.slug,
-                    enclosure: node.frontmatter.thumbnail && {
-                      url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
-                    },
+                    enclosure:
+                      node.frontmatter.thumbnail && {
+                        url:
+                          site.siteMetadata.siteUrl +
+                          node.frontmatter.thumbnail.publicURL,
+                      },
                     custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
@@ -176,7 +189,7 @@ module.exports = {
           {
             output: "/news/feed.xml",
             title: "Layer5 News",
-            query: "{ site { siteMetadata { title } } }", // Lightweight query
+            query: "{ site { siteMetadata { title } } }",
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.nodes
                 .filter((node) => node.fields.collection === "news")
@@ -189,9 +202,12 @@ module.exports = {
                     date: node.frontmatter.date,
                     url: site.siteMetadata.siteUrl + node.fields.slug,
                     guid: site.siteMetadata.siteUrl + node.fields.slug,
-                    enclosure: node.frontmatter.thumbnail && {
-                      url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
-                    },
+                    enclosure:
+                      node.frontmatter.thumbnail && {
+                        url:
+                          site.siteMetadata.siteUrl +
+                          node.frontmatter.thumbnail.publicURL,
+                      },
                     custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
@@ -201,7 +217,7 @@ module.exports = {
           {
             output: "/resources/feed.xml",
             title: "Layer5 Resources",
-            query: "{ site { siteMetadata { title } } }", // Lightweight query
+            query: "{ site { siteMetadata { title } } }",
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.nodes
                 .filter((node) => node.fields.collection === "resources")
@@ -214,9 +230,12 @@ module.exports = {
                     date: node.frontmatter.date,
                     url: site.siteMetadata.siteUrl + node.fields.slug,
                     guid: site.siteMetadata.siteUrl + node.fields.slug,
-                    enclosure: node.frontmatter.thumbnail && {
-                      url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
-                    },
+                    enclosure:
+                      node.frontmatter.thumbnail && {
+                        url:
+                          site.siteMetadata.siteUrl +
+                          node.frontmatter.thumbnail.publicURL,
+                      },
                     custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
@@ -226,10 +245,12 @@ module.exports = {
           {
             output: "/rss-contributors.xml",
             title: "Layer5 Contributor Feed",
-            query: "{ site { siteMetadata { title } } }", // Lightweight query
+            query: "{ site { siteMetadata { title } } }",
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.nodes
-                .filter((node) => ["blog", "news"].includes(node.fields.collection))
+                .filter((node) =>
+                  ["blog", "news"].includes(node.fields.collection)
+                )
                 .slice(0, 20)
                 .map((node) => {
                   return Object.assign({}, node.frontmatter, {
@@ -239,9 +260,12 @@ module.exports = {
                     date: node.frontmatter.date,
                     url: site.siteMetadata.siteUrl + node.fields.slug,
                     guid: site.siteMetadata.siteUrl + node.fields.slug,
-                    enclosure: node.frontmatter.thumbnail && {
-                      url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
-                    },
+                    enclosure:
+                      node.frontmatter.thumbnail && {
+                        url:
+                          site.siteMetadata.siteUrl +
+                          node.frontmatter.thumbnail.publicURL,
+                      },
                     custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
@@ -251,16 +275,31 @@ module.exports = {
           {
             output: "/meshery-community-feed.xml",
             title: "Meshery RSSFeed",
-            query: "{ site { siteMetadata { title } } }", // Lightweight query
+            query: "{ site { siteMetadata { title } } }",
             serialize: ({ query: { site, allMdx } }) => {
-              const targetCategories = ["Meshery", "Announcements", "Events"];
+              const targetCategories = [
+                "Meshery",
+                "Announcements",
+                "Events",
+              ];
               const targetTags = ["Community", "Meshery", "mesheryctl"];
 
               return allMdx.nodes
                 .filter((node) => {
-                  const inCollection = ["blog", "resources", "news", "events"].includes(node.fields.collection);
-                  const hasCategory = targetCategories.includes(node.frontmatter.category);
-                  const hasTag = node.frontmatter.tags && node.frontmatter.tags.some(t => targetTags.includes(t));
+                  const inCollection = [
+                    "blog",
+                    "resources",
+                    "news",
+                    "events",
+                  ].includes(node.fields.collection);
+                  const hasCategory = targetCategories.includes(
+                    node.frontmatter.category
+                  );
+                  const hasTag =
+                    node.frontmatter.tags &&
+                    node.frontmatter.tags.some((t) =>
+                      targetTags.includes(t)
+                    );
                   return inCollection && hasCategory && hasTag;
                 })
                 .slice(0, 30)
@@ -268,18 +307,26 @@ module.exports = {
                   return Object.assign({}, node.frontmatter, {
                     title: node.frontmatter.title,
                     author: node.frontmatter.author,
-                    description: node.frontmatter.description || node.frontmatter.subtitle,
+                    description:
+                      node.frontmatter.description ||
+                      node.frontmatter.subtitle,
                     date: node.frontmatter.date,
                     url: site.siteMetadata.siteUrl + node.fields.slug,
                     guid: site.siteMetadata.siteUrl + node.fields.slug,
-                    enclosure: node.frontmatter.thumbnail && {
-                      url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
-                    },
+                    enclosure:
+                      node.frontmatter.thumbnail && {
+                        url:
+                          site.siteMetadata.siteUrl +
+                          node.frontmatter.thumbnail.publicURL,
+                      },
                     custom_elements: [
                       { "content:encoded": node.excerpt },
                       { "content:type": node.frontmatter.type },
                       { "content:category": node.frontmatter.category },
-                      { "content:tags": node.frontmatter.tags?.join(", ") || "" },
+                      {
+                        "content:tags":
+                          node.frontmatter.tags?.join(", ") || "",
+                      },
                     ],
                   });
                 });
@@ -289,7 +336,7 @@ module.exports = {
           {
             output: "/blog/feed.xml",
             title: "Layer5 Blog",
-            query: "{ site { siteMetadata { title } } }", // Lightweight query
+            query: "{ site { siteMetadata { title } } }",
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.nodes
                 .filter((node) => node.fields.collection === "blog")
@@ -302,9 +349,12 @@ module.exports = {
                     date: node.frontmatter.date,
                     url: site.siteMetadata.siteUrl + node.fields.slug,
                     guid: site.siteMetadata.siteUrl + node.fields.slug,
-                    enclosure: node.frontmatter.thumbnail && {
-                      url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
-                    },
+                    enclosure:
+                      node.frontmatter.thumbnail && {
+                        url:
+                          site.siteMetadata.siteUrl +
+                          node.frontmatter.thumbnail.publicURL,
+                      },
                     custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
@@ -314,7 +364,7 @@ module.exports = {
           {
             output: "/events/feed.xml",
             title: "Layer5 Events",
-            query: "{ site { siteMetadata { title } } }", // Lightweight query
+            query: "{ site { siteMetadata { title } } }",
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.nodes
                 .filter((node) => node.fields.collection === "events")
@@ -327,9 +377,12 @@ module.exports = {
                     date: node.frontmatter.date,
                     url: site.siteMetadata.siteUrl + node.fields.slug,
                     guid: site.siteMetadata.siteUrl + node.fields.slug,
-                    enclosure: node.frontmatter.thumbnail && {
-                      url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
-                    },
+                    enclosure:
+                      node.frontmatter.thumbnail && {
+                        url:
+                          site.siteMetadata.siteUrl +
+                          node.frontmatter.thumbnail.publicURL,
+                      },
                     custom_elements: [{ "content:encoded": node.excerpt }],
                   });
                 });
@@ -405,13 +458,13 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "gatsby-starter-default",
-        short_name: "starter",
+        name: "Layer5 – Cloud Native Management",
+        short_name: "Layer5",
         start_url: "/",
         background_color: "#3c494f",
         theme_color: "#00b39f",
         display: "minimal-ui",
-        icon: "src/assets/images/favicon.webp", // This path is relative to the root of the site.
+        icon: "src/assets/images/favicon.webp",
       },
     },
     {
@@ -425,16 +478,13 @@ module.exports = {
       options: {
         host: "https://layer5.io",
         sitemap: "https://layer5.io/sitemap-index.xml",
-        policy: [{ userAgent: "*", allow: "/" }],
+        policy: [
+          {
+            userAgent: "*",
+            allow: "/",
+          },
+        ],
       },
     },
-    {
-      resolve: "gatsby-plugin-purgecss",
-      options: {
-        printRejected: true,
-      }
-    },
-    "gatsby-plugin-meta-redirect",
-    // make sure this is always the last one
   ],
 };
