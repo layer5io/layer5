@@ -815,9 +815,9 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
         runtimeChunk: { name: "runtime" },
         splitChunks: {
           chunks: "all",
+          ...existingSplitChunks,
           maxInitialRequests: existingSplitChunks.maxInitialRequests ?? 25,
           minSize: existingSplitChunks.minSize ?? 20000,
-          ...existingSplitChunks,
           cacheGroups: {
             ...existingCacheGroups,
             vendor: {
