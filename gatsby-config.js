@@ -1,7 +1,7 @@
 /* eslint-env node */
 
 const isProduction = process.env.NODE_ENV === "production";
-const isFullSiteBuild = process.env.BUILD_FULL_SITE !== "false";
+const isFullSiteBuild = process.env.BUILD_FULL_SITE === "true";
 const HEAVY_COLLECTIONS = ["members", "integrations"];
 const collectionIgnoreGlobs = isFullSiteBuild
   ? []
