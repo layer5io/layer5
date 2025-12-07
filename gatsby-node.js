@@ -93,10 +93,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const envCreatePage = (props) => {
     const pageConfig = { ...props };
     pageConfig.slices = { ...DEFAULT_SLICES, ...(pageConfig.slices || {}) };
-
+    
     if (process.env.CI === "true") {
       const { path, matchPath, ...rest } = pageConfig;
-
+      const isHandbookPage = path.startsWith("/community/handbook/");
       createRedirect({
         fromPath: `/${path}/`,
         toPath: `/${path}`,
@@ -105,7 +105,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       });
 
       return createPage({
-        path: `${path}.html`,
+        path: isHandbookPage ? path : `${path}.html`,
         matchPath: matchPath || path,
         ...rest,
       });
@@ -469,30 +469,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   handbook.forEach((page) => {
-    let finalSlug = page.fields.slug;
-    // Strip `.html` for production builds so client-side router matches clean paths
-    if (process.env.NODE_ENV === "production") {
-      finalSlug = finalSlug.replace(/\.html$/, "");
-    }
-
     envCreatePage({
-      path: finalSlug,
+      path: page.fields.slug,
       component: `${HandbookTemplate}?__contentFilePath=${page.internal.contentFilePath}`,
       context: {
-        slug: finalSlug,
+        slug: page.fields.slug,
       },
     });
-
-    // If the source slug contained .html, create a redirect so .html URLs still resolve
-    if (finalSlug !== page.fields.slug) {
-      createRedirect({
-        fromPath: page.fields.slug,
-        toPath: finalSlug,
-        isPermanent: true,
-        redirectInBrowser: true,
-        force: true,
-      });
-    }
   });
 
 
