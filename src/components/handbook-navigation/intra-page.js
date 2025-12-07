@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "gatsby";
 import styled from "styled-components";
 
 const JoinCommunityWrapper = styled.div`
@@ -54,11 +53,15 @@ const JoinCommunityWrapper = styled.div`
 `;
 
 function IntraPage({ contents }) {
-  const [intapath, setIntapath] = useState(null);
-  useEffect(() => {
-    const path = window.location.pathname;
-    setIntapath(path);
-  }, []);
+  const handleClick = (e, link) => {
+    e.preventDefault();
+    const id = link.startsWith('#') ? link.substring(1) : link;
+    const element = document.getElementById(id);
+
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <JoinCommunityWrapper>
@@ -66,13 +69,12 @@ function IntraPage({ contents }) {
         <ul>
           {contents.map((x) => (
             <li key={x.id} className="list">
-              <Link
-                to={`${intapath}${x.link}`}
-                key={x.id}
-                activeClassName="active"
+              <a
+                href={x.link}
+                onClick={(e) => handleClick(e, x.link)}
               >
                 {x.text}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
