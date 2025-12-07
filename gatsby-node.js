@@ -469,11 +469,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   handbook.forEach((page) => {
+    let finalSlug = page.fields.slug;
+    if (process.env.NODE_ENV === "production") {
+      finalSlug = finalSlug.replace(/\.html$/, "");
+    }
+
     envCreatePage({
-      path: page.fields.slug,
+      path: finalSlug,
       component: `${HandbookTemplate}?__contentFilePath=${page.internal.contentFilePath}`,
       context: {
-        slug: page.fields.slug,
+        slug: finalSlug,
       },
     });
   });
