@@ -1,12 +1,19 @@
 /* eslint-env node */
 
+const isDevelopment = process.env.NODE_ENV === "development";
 const isProduction = process.env.NODE_ENV === "production";
 const isFullSiteBuild = process.env.BUILD_FULL_SITE === "true";
 const HEAVY_COLLECTIONS = ["members", "integrations"];
 const collectionIgnoreGlobs = isFullSiteBuild
   ? []
   : HEAVY_COLLECTIONS.map((name) => `**/${name}/**`);
-// const isDevelopment = process.env.NODE_ENV === "development";
+const devFlags = isDevelopment
+  ? {
+    PARALLEL_SOURCING: false,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PRESERVE_WEBPACK_CACHE: true,
+  }
+  : {};
 
 module.exports = {
   siteMetadata: {
@@ -21,8 +28,8 @@ module.exports = {
   },
   flags: {
     FAST_DEV: true,
-    PARALLEL_SOURCING: false, // Disable parallel sourcing to reduce memory pressure
     DEV_SSR: false,
+    ...devFlags,
   },
   trailingSlash: "never",
   plugins: [
