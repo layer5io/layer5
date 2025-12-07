@@ -55,7 +55,7 @@ const JoinCommunityWrapper = styled.div`
 function IntraPage({ contents }) {
   const handleClick = (e, link) => {
     e.preventDefault();
-    const id = link.startsWith('#') ? link.substring(1) : link;
+    const id = link.startsWith("#") ? link.substring(1) : link;
     const element = document.getElementById(id);
 
     if (element) {
