@@ -17,15 +17,6 @@ const JoinCommunityWrapper = styled.div`
     display: flex;
     flex-direction: column;
     overflow: hidden;
-
-    .list {
-      color: #000000;
-    }
-    .active {
-      font-weight: 5000;
-      color: #000000;
-    }
-
     ul {
       list-style: none;
       top: 3rem;
@@ -45,10 +36,6 @@ const JoinCommunityWrapper = styled.div`
       transition: none;
       visibility: hidden;
     }
-  }
-
-  .learn {
-    width: 10rem;
   }
 `;
 
