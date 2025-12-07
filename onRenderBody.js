@@ -15,7 +15,7 @@ const MagicScriptTag = (props) => {
           let colorMode;
           switch (themeFromLocalStorage) {
               case '${ThemeSetting.SYSTEM}':
-                colorMode = isDarkModeActive() ? '${ThemeSetting.DARK}' : '{ThemeSetting.LIGHT}'
+                colorMode = isDarkModeActive() ? '${ThemeSetting.DARK}' : '${ThemeSetting.LIGHT}'
                 break
               case '${ThemeSetting.DARK}':
               case '${ThemeSetting.LIGHT}':
