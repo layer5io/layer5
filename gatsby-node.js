@@ -93,7 +93,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const envCreatePage = (props) => {
     const pageConfig = { ...props };
     pageConfig.slices = { ...DEFAULT_SLICES, ...(pageConfig.slices || {}) };
-    
+
     if (process.env.CI === "true") {
       const { path, matchPath, ...rest } = pageConfig;
       const isHandbookPage = path.startsWith("/community/handbook/");
