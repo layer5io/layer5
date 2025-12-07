@@ -35,16 +35,19 @@ const HandbookTOC = ({ pages, currentSlug }) => {
       </div>
       <div className="toc-list">
         <ul className={`toc-ul ${expand ? "toc-ul-open" : ""}`}>
-          {pages.map((page, index) => (
-            <li key={index}>
-              <Link
-                to={page.fields.slug}
-                className={`toc-sub-heading toc-sub-inline${page.fields.slug === currentSlug ? " active" : ""}`}
-              >
-                {page.frontmatter.title}
-              </Link>
-            </li>
-          ))}
+          {pages.map((page, index) => {
+            const slug = `${page.fields.slug}.html`;
+            return (
+              <li key={index}>
+                <Link
+                  to={slug}
+                  className={`toc-sub-heading toc-sub-inline${page.fields.slug === currentSlug ? " active" : ""}`}
+                >
+                  {page.frontmatter.title}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </TOCWrapper>
