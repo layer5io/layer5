@@ -6,7 +6,6 @@ import Features from "../../../components/Features-carousel";
 import img3 from "./feature-images/meshery-performance.gif";
 import img5 from "./feature-images/meshery-snapshot.webp";
 import img6 from "./feature-images/edge_mount_relationship_pod_persistent_volume.svg";
-import { StaticImage } from "gatsby-plugin-image";
 import img2 from "./feature-images/workspace.gif";
 import multiClusterGif from "./feature-images/multi-cluster-management.gif";
 import img1 from "./feature-images/KanvasDesigner.webp";
