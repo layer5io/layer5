@@ -469,13 +469,30 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   handbook.forEach((page) => {
+    let finalSlug = page.fields.slug;
+    // Strip `.html` for production builds so client-side router matches clean paths
+    if (process.env.NODE_ENV === "production") {
+      finalSlug = finalSlug.replace(/\.html$/, "");
+    }
+
     envCreatePage({
-      path: page.fields.slug,
+      path: finalSlug,
       component: `${HandbookTemplate}?__contentFilePath=${page.internal.contentFilePath}`,
       context: {
-        slug: page.fields.slug,
+        slug: finalSlug,
       },
     });
+
+    // If the source slug contained .html, create a redirect so .html URLs still resolve
+    if (finalSlug !== page.fields.slug) {
+      createRedirect({
+        fromPath: page.fields.slug,
+        toPath: finalSlug,
+        isPermanent: true,
+        redirectInBrowser: true,
+        force: true,
+      });
+    }
   });
 
 
