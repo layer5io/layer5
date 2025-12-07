@@ -8,11 +8,6 @@ import { IoIosArrowDropdownCircle } from "@react-icons/all-files/io/IoIosArrowDr
 const HandbookTOC = ({ pages, currentSlug }) => {
   const [expand, setExpand] = useState(false);
 
-  // Helper function to ensure clean URLs without .html extension
-  const getCleanSlug = (slug) => {
-    return slug?.replace(/\.html$/, "") || slug;
-  };
-
   return (
     <TOCWrapper>
       <div className="go-back">
@@ -43,7 +38,7 @@ const HandbookTOC = ({ pages, currentSlug }) => {
           {pages.map((page, index) => (
             <li key={index}>
               <Link
-                to={getCleanSlug(page.fields.slug)}
+                to={page.fields.slug}
                 className={`toc-sub-heading toc-sub-inline${page.fields.slug === currentSlug ? " active" : ""}`}
               >
                 {page.frontmatter.title}
