@@ -46,6 +46,10 @@ clean:
 lint:
 	npm run lint
 
+## Verify Gatsby image usage has required data.
+check-images:
+	npm run check:images
+
 ## Kill process running the site
 kill:
 	lsof -ti:8000 | xargs kill -9 2>/dev/null || true
@@ -56,4 +60,4 @@ features:
 	node .github/build/features-to-json.js .github/build/spreadsheet.csv src/sections/Pricing/feature_data.json
 	rm .github/build/spreadsheet.csv
 
-.PHONY: setup build site site-full clean site-fast lint features
+.PHONY: setup build site clean site-fast lint check-images features

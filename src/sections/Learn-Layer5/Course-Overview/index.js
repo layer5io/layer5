@@ -41,16 +41,31 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
 
   const ServiceMeshesAvailable = ({ serviceMeshes }) =>
     serviceMeshes.map((sm, index) => {
+      const meshImage = findServiceMeshImage(serviceMeshImages, sm);
+      if (!meshImage || !meshImage.imagepath) {
+        return null;
+      }
+
       return (
         <div className="service-mesh-courses" key={index}>
           <Image
-            {...findServiceMeshImage(serviceMeshImages, sm)?.imagepath}
+            {...meshImage.imagepath}
             className="docker"
             alt={sm}
           />
         </div>
       );
     });
+
+  const missingServiceMeshImages = availableServiceMeshes.filter((mesh) => {
+    const meshImage = findServiceMeshImage(serviceMeshImages, mesh);
+    return !(meshImage && meshImage.imagepath?.childImageSharp?.gatsbyImageData);
+  });
+
+  if (missingServiceMeshImages.length > 0) {
+    const context = course?.fields?.slug || course?.frontmatter?.courseTitle || "unknown-course";
+    throw new Error(`[CourseOverview] Missing meshesYouLearn image data for: ${missingServiceMeshImages.join(", ")} (course: ${context}).`);
+  }
 
   useEffect(() => {
     let bookmarkPath = localStorage.getItem("bookmarkpath-" + course.fields.slug.split("/")[3]);
@@ -130,8 +145,6 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
           </Col>
           <Col $md={12} $lg={4} $xl={5}>
             <div className="service-meshes-you-can-learn">
-              {console.log("lenght of the service mesh array: ", availableServiceMeshes.length)}
-              {console.log("array: ", availableServiceMeshes)}
               {serviceMeshImages.length !== 0 && availableServiceMeshes.length != 0 && (
                 <>
                   <h2>Technologies You Can Learn</h2>
