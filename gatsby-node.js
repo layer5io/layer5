@@ -60,7 +60,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const envCreatePage = (props) => {
     if (process.env.CI === "true") {
-      const { path, matchPath, ...rest } = pageConfig;
+      const { path, matchPath, ...rest } = props;
       const isHandbookPage = path.startsWith("/community/handbook/");
       createRedirect({
         fromPath: `/${path}/`,
