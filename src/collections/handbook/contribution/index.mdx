@@ -1,0 +1,169 @@
+---
+title: "Contribution"
+description: "Pull requests (PRs) are the best ways to propose changes to a project repository. At Layer5 org, we use the Github Flow."
+type: Handbook
+contents:
+  - id: 0
+    link: "#Clone your fork"
+    text: "Clone your fork"
+  - id: 1
+    link: "#Checkout a new branch"
+    text: "Checkout a new branch"
+  - id: 2
+    link: "#Commit your changes"
+    text: "Commit your changes"
+  - id: 3
+    link: "#Sign-off commits"
+    text: "Sign-off commits"
+  - id: 4
+    link: "#Push changes to Github"
+    text: "Push changes to Github"
+  - id: 5
+    link: "#Create a pull request"
+    text: "Create a pull request"
+---
+
+import { Container } from "../../../reusecore/Layout";
+import Code from "../../../components/CodeBlock";
+import signoffImg from "./git-signoff-vscode.webp";
+import compareImg from "./compare-and-pr.webp";
+import createPrImg from "./create-pr.webp";
+
+ 
+
+<h2 className="heading-top">General contribution flow</h2>
+
+Pull requests (PRs) are the best ways to propose changes to a project repository. At Layer5 org, we use the Github Flow:
+
+<a id="Clone your fork"><h3>Clone your fork to your local machine</h3></a>
+
+- Fork the repository you are working on.
+- Go to your GitHub account, open the forked repository, click on the code button and then click the "copy to clipboard" icon if you intend to use a command-line tool.
+- Open the terminal and run the following git command:
+  <div className="codes">
+    <Code codeString='git clone "URL you copied from the clipboard."' />
+  </div>
+
+### Add 'upstream' repo to list of remotes
+
+- Keeping your fork up to date while this isn't a necessary step. If you plan on doing anything more than a tiny quick fix, you'll want to make sure you keep your fork up to date by tracking the original "upstream" repo that you forked earlier.
+- To do this, you'll need to add a remote. An example of the command is given below:
+  <div className="codes">
+    <Code codeString="git remote add upstream https://github.com/layer5io/layer5.git " />
+  </div>
+  Here "layer5" is used as the example repo. Be sure to reference the actual repo you are contributing to.
+
+<a id="Checkout a new branch"><h3>Create and checkout a new branch</h3></a>
+
+- Whenever you begin to work on a new feature or bugfix, it's important that you create a new branch. Not only is it a proper git workflow, but it also keeps your changes organized and separated from the master branch so that you can easily submit and manage multiple pull requests for every task completed.
+- Perform the flow:
+  <div className="codes">
+    <Code codeString=" git checkout -b your-new-branch-name" />
+  </div>
+  For example,
+  <div className="codes">
+    <Code codeString="git checkout -b feature" />
+  </div>
+  (feature being a branch name)
+
+### Make the necessary changes to your file.
+
+- To add the changes you have made to your branch, use:
+  <div className="codes">
+    <Code codeString="git add <file> " />
+  </div>
+- If you add multiple file changes to the branch, you simply use:
+  <div className="codes">
+    <Code codeString=" git add ." />
+  </div>
+
+<a id="Commit your changes"><h3>Commit the changes made</h3></a>
+
+- Now commit those changes using the git commit command:
+  <div className="codes">
+    <Code codeString='git commit -s -m "This is my commit message"' />
+  </div>
+
+<a id="Sign-off commits"><h3>Make sure to <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits">Sign-off</a> on your Commits (Developer Certificate of Origin)</h3></a>
+
+To contribute to this project, you must agree to the Developer Certificate of Origin (DCO) for each commit you make. The DCO is a simple statement that you, as a contributor, have the legal right to contribute.
+
+To signify that you agree to the DCO for contributions, you simply add a line to each of your git commit messages:
+
+<div className="codes">
+  <Code codeString="Signed-off-by: Jane Smith <jane.smith@example.com>" />
+</div>
+
+In most cases, you can add this signoff to your commit automatically with the -s or --signoff flag to git commit. You must use your real name and a reachable email address (sorry, no pseudonyms or anonymous contributions). An example of signing off on a commit:
+
+<div className="codes">
+  <Code codeString='$ commit -s -m "my commit message w/signoff"' />
+</div>
+
+To ensure all your commits are signed, you may choose to add this alias to your global .gitconfig:
+
+<div className="codes">
+  <Code
+    codeString={`[alias]
+  amend = commit -s --amend
+  cm = commit -s -m
+  commit = commit -s
+`}
+  />
+</div>
+
+Or you may configure your IDE, for example, Visual Studio Code to automatically sign-off commits for you:
+
+<img src={signoffImg} alt="Git signoff configuration in VS Code" />
+
+
+<a id="Push changes to Github"><h3>Push changes to Github</h3></a>
+
+- To push your changes, run the git command:
+  <div className="codes">
+    <Code codeString="git push origin your_branch_name" />
+  </div>
+
+<a id="Create a pull request"><h3>Create a pull request (PR)</h3></a>
+
+- Head over to your forked repository on GitHub and you'll see a Compare & pull request button. Click on that button.
+  <br/>
+  Note: Please ensure that the right branch is selected for the PR.
+  <div>
+    <br />
+    <img src={compareImg} alt="Compare and pull request button on GitHub" />
+  </div>
+
+- Once you click on the button, you'll be taken to the Pull Request page. Here, you can add a title and description to your pull request that explains your contribution. Once you're done, click on the Create pull request button.
+  <div>
+    <br />
+    <img src={createPrImg} alt="Create pull request page on GitHub" />
+    <br />
+  </div>
+
+## Handling PRs Made Without Being Assigned
+
+At [Layer5](https://layer5.io/), we usually suggest to contributors that they ask maintainers to assign them to the issue they want to work on. But sometimes, pull requests that aren't assigned to anyone can be found. In such cases, it's important to be flexible and ready to adapt. Here are some simple guidelines for dealing with these unassigned contributions:
+
+1. **We value getting things done:**
+   - **Evaluate the PR:** First, assess the quality and significance of the PR. Is it a valuable contribution to the project? Does it fix a bug or add a meaningful feature? If the PR aligns with the project's goals and standards, it's worth considering.
+   - **Review the code:** Ensure that the code in the PR meets the project's coding guidelines and standards. If the code quality is high and the changes are beneficial, it's a positive sign.
+
+2. **We value our contributors' feelings:**
+   - **Communication:** Reach out to the contributor who made the unassigned PR in a friendly and respectful manner. Express gratitude for their contribution and explain the importance of assigning PRs to maintain transparency and collaboration within the community.
+   - **Offer assistance:** If the contributor is willing, help them understand the process of assigning PRs and offer guidance on how to do it correctly in the future.
+   - **Encourage participation:** Emphasize that their contribution is valuable and that the project welcomes their involvement. Encourage them to continue contributing.
+
+3. **Attempt to uphold the spirit of #2 while ensuring that #1 happens:**
+   - **Balance:** Strive to strike a balance between maintaining a welcoming and inclusive community (#2) and ensuring that the project continues to make progress (#1).
+   - **Collaboration:** If the contributor is receptive and willing to work together, consider helping them assign the PR correctly, and possibly collaborate on improving the PR if necessary.
+   - **If necessary, reassign:** If the contributor is unresponsive or unable to assign the PR correctly, you may consider reassigning the PR to an appropriate contributor or assigning it to yourself to ensure it doesn't go unnoticed.
+
+4. **Contributor Guidance:**
+   - **How you should:** As a contributor, it's important to follow the project's guidelines. Start by identifying a suitable issue or create one if necessary. Afterward, kindly request assignment or express your interest in working on the issue by commenting on it. This ensures that maintainers are aware of your intentions and can provide guidance or assign the issue appropriately. Once assigned, proceed with your work and submit a pull request.
+     <br/>**Example:** [Hover animation on different integration category #3889](https://github.com/layer5io/layer5/issues/3889)
+   - **How you should not:** Avoid starting work on an issue and creating a pull request without prior communication or assignment. Jumping directly into the code can lead to misunderstandings and duplicate efforts. Instead, take a moment to engage with the maintainers and community by discussing your interest in the issue and seeking assignment before submitting a pull request. This promotes transparency and effective collaboration within the project.
+     <br/>**Example:** [[MeshModel] [UX]: Icon for Kubernetes Component - Endpoints #8757](https://github.com/meshery/meshery/issues/8757)
+   - **Requesting Reassignment:** If you are interested in working on an issue that is already assigned to someone else, it's important to respect their efforts and contributions. First, politely reach out to the assignee and express your interest in collaborating on the issue. Discuss the possibility of working together or sharing the workload. If the assignee agrees or is open to collaboration, you can proceed. If the assignee is not responsive or there has been no progress on the issue for a long time and the issue aligns with your skills and interests, kindly request reassignment from the maintainers, providing a clear and courteous explanation for the request.
+     <br/>**Example:** [[chore] update Go to 1.21, and update relevant pkgs #169](https://github.com/meshery/meshery-nsm/issues/169)
+
