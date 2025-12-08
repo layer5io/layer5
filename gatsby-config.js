@@ -13,7 +13,11 @@ const devFlags = isDevelopment
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
   }
   : {};
-
+console.info(`Build Environment: "${process.env.NODE_ENV}"`);
+collectionIgnoreGlobs == [] ?
+  console.info(`Build Scope exludes: "${process.env.BUILD_FULL_SITE}"`)
+  :
+  console.info("Build Scope includes all collections");
 module.exports = {
   siteMetadata: {
     title: "Layer5 - Expect more from your infrastructure",
@@ -26,7 +30,7 @@ module.exports = {
     twitterUsername: "@layer5",
   },
   flags: {
-    FAST_DEV: true,
+    FAST_DEV: false,
     DEV_SSR: false,
     ...devFlags,
   },
