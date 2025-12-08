@@ -15,6 +15,10 @@ const PartnerItemWrapper = styled.section`
         margin-left:1.5rem;
         margin-right:1.5rem;
     }
+    .partner-image-placeholder{
+        margin-left:1.5rem;
+        margin-right:1.5rem;
+    }
     .partner-slider{
         display: flex;
         justify-content: center;
