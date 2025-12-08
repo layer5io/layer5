@@ -3,6 +3,7 @@ import SEO from "../components/seo";
 
 const LitePlaceholder = ({ pageContext, location }) => {
   const {
+    entity = "page",
     heading = "Content disabled in lite mode",
     description = "This route is intentionally skipped when BUILD_FULL_SITE=false.",
   } = pageContext;
