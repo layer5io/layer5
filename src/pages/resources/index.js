@@ -30,7 +30,9 @@ const MembersPage = () => {
   };
   return (
     <>
-      <PageHeader title="Cloud Native Resources" path="Resources" subtitle="Learn how to provision, secure, connect, and manage your applications on Kubernetes" img={RssFeedIcon} feedlink="/resources/feed.xml" />
+      <PageHeader title="Cloud Native Resources" path="Resources" subtitle="Learn how to provision, secure, connect, and manage your applications on Kubernetes" img={RssFeedIcon} />
+      {/* RSS feed disabled */}
+      {/* feedlink="/resources/feed.xml" */}
       <Container>
         <Row style={{
           flexWrap: "wrap"
