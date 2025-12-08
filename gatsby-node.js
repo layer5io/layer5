@@ -11,6 +11,8 @@ const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
 const config = require("./gatsby-config");
+const isDevelopment = process.env.NODE_ENV === "development";
+const isProduction = process.env.NODE_ENV === "production";
 const {
   componentsData,
 } = require("./src/sections/Projects/Sistent/components/content");
@@ -34,6 +36,7 @@ if (process.env.CI === "true") {
     if (page.path !== oldPage.path) {
       // Replace new page with old page
       deletePage(oldPage);
+      page.slices = { ...DEFAULT_SLICES, ...(page.slices || {}) };
       createPage(page);
 
       createRedirect({
@@ -49,16 +52,58 @@ if (process.env.CI === "true") {
 
 const { loadRedirects } = require("./src/utils/redirects.js");
 
+const DEFAULT_SLICES = {
+  "site-header": "site-header",
+  "site-footer": "site-footer",
+  "cta-bottom": "cta-bottom",
+  "cta-fullwidth": "cta-fullwidth",
+  "cta-imageonly": "cta-imageonly",
+};
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  const { createRedirect } = actions;
+  const { createRedirect, createSlice } = actions;
   const redirects = loadRedirects();
   redirects.forEach(redirect => createRedirect(redirect)); // Handles all hardcoded ones dynamically
   // Create Pages
   const { createPage } = actions;
 
+  createSlice({
+    id: "site-header",
+    component: path.resolve("./src/slices/site-header.js"),
+  });
+
+  createSlice({
+    id: "site-footer",
+    component: path.resolve("./src/slices/site-footer.js"),
+  });
+
+  createSlice({
+    id: "cta-bottom",
+    component: path.resolve("./src/slices/cta-bottom.js"),
+  });
+
+  createSlice({
+    id: "cta-fullwidth",
+    component: path.resolve("./src/slices/cta-fullwidth.js"),
+  });
+
+  createSlice({
+    id: "cta-imageonly",
+    component: path.resolve("./src/slices/cta-imageonly.js"),
+  });
+
   const envCreatePage = (props) => {
+    const pageConfig = { ...props };
+
+    if (isDevelopment) {
+      pageConfig.defer = true;
+    } else if (isProduction) {
+      pageConfig.mode = "SSR";
+    }
+    pageConfig.slices = { ...DEFAULT_SLICES, ...(pageConfig.slices || {}) };
+
     if (process.env.CI === "true") {
-      const { path, matchPath, ...rest } = props;
+      const { path, matchPath, ...rest } = pageConfig;
 
       createRedirect({
         fromPath: `/${path}/`,
@@ -73,7 +118,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         ...rest,
       });
     }
-    return createPage(props);
+    return createPage(pageConfig);
   };
 
   const blogPostTemplate = path.resolve("src/templates/blog-single.js");
@@ -510,7 +555,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   const components = componentsData.map((component) => component.src.replace("/", ""));
-  const createComponentPages = (createPage, components) => {
+  const createComponentPages = (envCreatePage, components) => {
     const pageTypes = [
       { suffix: "", file: "index.js" },
       { suffix: "/guidance", file: "guidance.js" },
@@ -523,7 +568,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
         if (fs.existsSync(path.resolve(componentPath))) {
           try {
-            createPage({
+            envCreatePage({
               path: pagePath,
               component: require.resolve(componentPath),
             });
@@ -537,7 +582,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   };
 
-  createComponentPages(createPage, components);
+  createComponentPages(envCreatePage, components);
 };
 
 // slug starts and ends with '/' so parts[0] and parts[-1] will be empty

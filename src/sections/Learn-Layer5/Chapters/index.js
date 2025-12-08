@@ -68,7 +68,23 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
   const availableServiceMeshesArray = getAvailableServiceMeshes();
 
   const findServiceMeshImage = (images, serviceMesh) => images.find(image => image.name.toLowerCase() == serviceMesh);
+  const hasMeshImageData = (meshImage) => {
+    const imagePath = meshImage?.imagepath;
+    return Boolean(imagePath?.childImageSharp?.gatsbyImageData || imagePath?.publicURL);
+  };
   const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+
+  const missingServiceMeshImages = availableServiceMeshesArray
+    .filter(({ section }) => {
+      const meshImage = findServiceMeshImage(serviceMeshImages, section);
+      return !hasMeshImageData(meshImage);
+    })
+    .map(({ section }) => section);
+
+  if (missingServiceMeshImages.length > 0) {
+    const context = chapterData?.fields?.slug || "unknown-chapter";
+    throw new Error(`[Chapters] Missing meshesYouLearn image data for: ${missingServiceMeshImages.join(", ")} (chapter: ${context}).`);
+  }
 
   const ServiceMeshesAvailable = ({ serviceMeshes }) => serviceMeshes.map((sm, index) => {
     const meshImage = findServiceMeshImage(serviceMeshImages, sm.section);
