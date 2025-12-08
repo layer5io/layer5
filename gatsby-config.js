@@ -1,13 +1,23 @@
 /* eslint-env node */
 
+const isDevelopment = process.env.NODE_ENV === "development";
 const isProduction = process.env.NODE_ENV === "production";
 const isFullSiteBuild = process.env.BUILD_FULL_SITE === "true";
 const HEAVY_COLLECTIONS = ["members", "integrations"];
 const collectionIgnoreGlobs = isFullSiteBuild
   ? []
   : HEAVY_COLLECTIONS.map((name) => `**/${name}/**`);
-// const isDevelopment = process.env.NODE_ENV === "development";
-
+const devFlags = isDevelopment
+  ? {
+    PARALLEL_SOURCING: false,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+  }
+  : {};
+console.info(`Build Environment: "${process.env.NODE_ENV}"`);
+collectionIgnoreGlobs == [] ?
+  console.info(`Build Scope exludes: "${process.env.BUILD_FULL_SITE}"`)
+  :
+  console.info("Build Scope includes all collections");
 module.exports = {
   siteMetadata: {
     title: "Layer5 - Expect more from your infrastructure",
@@ -20,9 +30,9 @@ module.exports = {
     twitterUsername: "@layer5",
   },
   flags: {
-    FAST_DEV: true,
-    PARALLEL_SOURCING: false, // Disable parallel sourcing to reduce memory pressure
+    FAST_DEV: false,
     DEV_SSR: false,
+    ...devFlags,
   },
   trailingSlash: "never",
   plugins: [

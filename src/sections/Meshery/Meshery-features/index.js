@@ -6,12 +6,11 @@ import Features from "../../../components/Features-carousel";
 import img3 from "./feature-images/meshery-performance.gif";
 import img5 from "./feature-images/meshery-snapshot.webp";
 import img6 from "./feature-images/edge_mount_relationship_pod_persistent_volume.svg";
-import { StaticImage } from "gatsby-plugin-image";
 import img2 from "./feature-images/workspace.gif";
 import multiClusterGif from "./feature-images/multi-cluster-management.gif";
-const img1 = "../../../assets/images/kanvas/KanvasDesigner.webp";
-const img4 = "./feature-images/meshery-catalog.webp";
-const img7 = "./feature-images/extensions.webp";
+import img1 from "./feature-images/KanvasDesigner.webp";
+import img4 from "./feature-images/meshery-catalog.webp";
+import img7 from "./feature-images/extensions.webp";
 
 const MesheryFeaturesWrapper = styled.div`
     margin: auto;
@@ -50,7 +49,7 @@ const MesheryFeatures = () => {
               description:
                 "Visually and collaboratively design your cloud native infrastructure using Meshery's drag-and-drop designer. Leverage 300+ integrations and context-aware relationships between components.",
               learnMoreLink: "/kanvas",
-              content: <StaticImage src={img1} alt="Infrastructure as Design with Kanvas" loading="lazy" />,
+              content: <img src={img1} alt="Infrastructure as Design with Kanvas" loading="lazy" />,
             },
             {
               id: "second",
@@ -79,7 +78,7 @@ const MesheryFeatures = () => {
                 "Build your internal developer platform with Meshery's extensive extensibility. Includes REST/GraphQL APIs, gRPC adapters, hot-loadable ReactJS components, and Golang plugins.",
               content: (
                 <div className="feature-expose-full">
-                  <StaticImage src={img7} alt="Platform Engineering Extension Points" loading="lazy" />
+                  <img src={img7} alt="Platform Engineering Extension Points" loading="lazy" />
                   <p>
                     Meshery's numerous extension points make it ideal as the foundation of your internal developer platform.
                     Create custom models, import/export as OCI images, and extend functionality through multiple integration patterns.
@@ -114,7 +113,7 @@ const MesheryFeatures = () => {
               description:
                 "Access 400+ curated design patterns and templates. Share, clone, and customize designs with built -in best practices for common deployment scenarios.", content: (
                 <div className="feature-expose-full">
-                  <StaticImage
+                  <img
                     src={img4}
                     alt="Cloud Native Catalog and Patterns"
                     loading="lazy"
