@@ -12,6 +12,13 @@ const MesheryWrapper = styled.section`
         align-items: center;
         width: 100%;
         overflow-x: hidden;
+        position: relative;
+        
+        > div {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
     }
 
     .info {

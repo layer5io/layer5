@@ -57,7 +57,9 @@ const MesheryPage = () => {
           </div>
           <FeaturesTable />
         </Container>
-        <FeaturesSection />
+        <div style={{ overflow: 'hidden', width: '100%', position: 'relative' }}>
+          <FeaturesSection />
+        </div>
         <Container>
           <InlineQuotes
             quote="Meshery is the perfect tool for ensuring that your applications are optimally configured and performing well; it also gives you a fantastic visual insight into what can be a large amount of textual configuration"

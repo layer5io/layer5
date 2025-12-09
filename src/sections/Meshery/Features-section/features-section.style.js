@@ -10,7 +10,8 @@ const FeaturesSectionWrapper = styled.section`
 	position: relative;
 	width: 100%;
 	max-width: 100%;
-	min-height: 0;
+	contain: layout style paint;
+	transform-origin: center;
 	.skw{
 		display: grid;
 		position: relative;
