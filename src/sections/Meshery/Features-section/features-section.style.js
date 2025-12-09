@@ -8,13 +8,7 @@ const FeaturesSectionWrapper = styled.section`
 	margin-bottom: 8rem;
 	overflow: hidden;
 	position: relative;
-	width: 100%;
-	max-width: 100%;
-	contain: layout style paint;
 	transform-origin: center;
-	z-index: 1;
-	height: auto;
-	isolate: isolate;
 	.skw{
 		display: grid;
 		position: relative;
@@ -57,8 +51,6 @@ const FeaturesSectionWrapper = styled.section`
 		transform: skew(0deg, 6deg);
 		padding: 0 1rem 3rem;
 		text-align: center;
-		position: relative;
-		z-index: 1;
 		h1, h2, p {
 			color: white;
 		}
@@ -110,10 +102,8 @@ const FeaturesSectionWrapper = styled.section`
 
 		.smp-section-caraousel {
 			.slick-slider {
-				max-height: 520px;
 				.slick-list {
 					max-width: 50rem;
-					max-height: 520px;
 
 					.slick-slide {
 						img {

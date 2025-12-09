@@ -8,21 +8,6 @@ const MesheryWrapper = styled.section`
     flex-direction: column;
     width: 100%;
 
-    > div:first-child {
-        align-items: center;
-        width: 100%;
-        overflow-x: hidden;
-        position: relative;
-        
-        > div {
-            overflow: hidden;
-            width: 100%;
-            position: relative;
-            height: auto;
-            max-height: none;
-        }
-    }
-
     .info {
         position: relative;
         overflow: hidden;
