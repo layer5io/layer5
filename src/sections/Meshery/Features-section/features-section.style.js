@@ -10,7 +10,6 @@ const FeaturesSectionWrapper = styled.section`
 	position: relative;
 	width: 100%;
 	max-width: 100%;
-	max-height: 1400px;
 	contain: layout style paint;
 	transform-origin: center;
 	z-index: 1;
