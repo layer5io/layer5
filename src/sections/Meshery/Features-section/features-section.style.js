@@ -8,6 +8,9 @@ const FeaturesSectionWrapper = styled.section`
 	margin-bottom: 8rem;
 	overflow: hidden;
 	position: relative;
+	width: 100%;
+	max-width: 100%;
+	min-height: 0;
 	.skw{
 		display: grid;
 		position: relative;
