@@ -87,6 +87,15 @@ const NewsSingle = ({ data, children }) => {
               </div>
             )
           }
+          {
+            frontmatter.source_url && (
+              <div style={{ display: "flex" }}>
+                <h5>
+                  Originally published at <a href={frontmatter.source_url} target="_blank" rel="noopener noreferrer">{frontmatter.source_url}</a>
+                </h5>
+              </div>
+            )
+          }
           <RelatedPosts
             postType="news"
             relatedPosts={relatedPosts}

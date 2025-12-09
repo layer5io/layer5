@@ -125,7 +125,7 @@ If you'd like to contribute a post to layer5.io/blog, please open an Issue and s
 
 ## Adding News
 
-1. In order to add/update news items, see the detailed instructions in the [news issue template](https://github.com/layer5io/layer5/issues/new?template=news.md).
+1. In order to add/update news items, see the detailed instructions in the [news issue template](https://github.com/layer5io/layer5/issues/new?template=news.md). When adding a reprint, use the optional `source_url` field in the frontmatter to link back to the original article for attribution.
 
 # Contributing to Layer5's Sistent
 
