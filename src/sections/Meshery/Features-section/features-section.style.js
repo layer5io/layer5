@@ -3,9 +3,9 @@ import styled from "styled-components";
 const FeaturesSectionWrapper = styled.section`
 
 	background-color: black;
-	transform: skew(0deg, -6deg);
-	padding-bottom:5rem;
-	margin-bottom: 8rem;
+	transform: none;
+	padding-bottom: 5rem;
+	margin-bottom: 4rem;
 	overflow: hidden;
 	position: relative;
 	width: 100%;
@@ -54,7 +54,7 @@ const FeaturesSectionWrapper = styled.section`
 	}
 
 	.section-data {
-		transform: skew(0deg, 6deg);
+		transform: none;
 		padding: 0 1rem 3rem;
 		text-align: center;
 		position: relative;
