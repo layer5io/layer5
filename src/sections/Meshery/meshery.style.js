@@ -4,6 +4,8 @@ const MesheryWrapper = styled.section`
     position: relative;
     z-index: 1;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
     .info {
         position: relative;
         overflow: hidden;
