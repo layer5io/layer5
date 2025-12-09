@@ -110,8 +110,10 @@ const FeaturesSectionWrapper = styled.section`
 
 		.smp-section-caraousel {
 			.slick-slider {
+			    max-height: 520px;
 				.slick-list {
 					max-width: 50rem;
+					max-height: 520px;
 
 					.slick-slide {
 						img {
