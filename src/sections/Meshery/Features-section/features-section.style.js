@@ -12,6 +12,9 @@ const FeaturesSectionWrapper = styled.section`
 	max-width: 100%;
 	contain: layout style paint;
 	transform-origin: center;
+	z-index: 1;
+	height: auto;
+	isolate: isolate;
 	.skw{
 		display: grid;
 		position: relative;
@@ -54,6 +57,8 @@ const FeaturesSectionWrapper = styled.section`
 		transform: skew(0deg, 6deg);
 		padding: 0 1rem 3rem;
 		text-align: center;
+		position: relative;
+		z-index: 1;
 		h1, h2, p {
 			color: white;
 		}

@@ -57,10 +57,10 @@ const MesheryPage = () => {
           </div>
           <FeaturesTable />
         </Container>
-        <div style={{ overflow: 'hidden', width: '100%', position: 'relative' }}>
+        <div style={{ overflow: 'hidden', width: '100%', position: 'relative', zIndex: 1 }}>
           <FeaturesSection />
         </div>
-        <Container>
+        <Container style={{ position: 'relative', zIndex: 2 }}>
           <InlineQuotes
             quote="Meshery is the perfect tool for ensuring that your applications are optimally configured and performing well; it also gives you a fantastic visual insight into what can be a large amount of textual configuration"
             person="Nic Jackson"
@@ -72,7 +72,7 @@ const MesheryPage = () => {
           </div>
         </Container>
         <Features />
-        <Container>
+        <Container style={{ position: 'relative', zIndex: 2 }}>
           <DockerExtensionCTA />
           <InlineQuotes
             quote="The Meshery Extension transforms Docker Desktop into a powerful load generation utility, conveniently enabling me to deploy and configure any cloud native infrastructure with a click of the button and invoke and control load-based performance tests from my desktop."

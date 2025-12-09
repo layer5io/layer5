@@ -18,6 +18,8 @@ const MesheryWrapper = styled.section`
             overflow: hidden;
             width: 100%;
             position: relative;
+            height: auto;
+            max-height: none;
         }
     }
 
