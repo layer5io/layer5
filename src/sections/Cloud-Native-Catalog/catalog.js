@@ -17,16 +17,13 @@ const CatalogWrapper = styled.div`
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   padding-top: 100px;
   padding-bottom: 100px;
-
   @media (max-width: 468px) {
     margin: 3rem 0;
   }
-
   @media (max-width: 767px) {
     padding-top: 0;
     padding-bottom: 0;
   }
-
   .catalog-container .catalog:nth-child(odd) {
     .catalog-image {
       .image-wrapper {
@@ -44,7 +41,6 @@ const CatalogWrapper = styled.div`
         order: 0;
       }
     }
-
     .catalog-detail {
       @media (max-width: 767px) {
         order: 1;
@@ -61,12 +57,10 @@ const CatalogWrapper = styled.div`
     @media (max-width: 468px) {
       flex-direction: column;
     }
-
     .catalog-detail {
       display: flex;
       flex-direction: column;
       justify-content: center;
-
       .heading {
         font-size: 3.125rem;
         line-height: 3.813rem;
@@ -90,7 +84,6 @@ const CatalogWrapper = styled.div`
           padding-right: 25px;
         }
       }
-
       .caption {
         font-weight: 400;
         font-size: 1.563rem;
@@ -111,12 +104,10 @@ const CatalogWrapper = styled.div`
         }
       }
     }
-
     .catalog-image {
       display: flex;
       flex-direction: column;
       justify-content: center;
-
       .image-wrapper {
         display: flex;
         justify-content: center;
@@ -124,7 +115,6 @@ const CatalogWrapper = styled.div`
         @media (max-width: 767px) {
           justify-content: center;
         }
-
         .calalog-image {
           max-width: 300px;
           @media (max-width: 767px) {
@@ -138,20 +128,16 @@ const CatalogWrapper = styled.div`
 `;
 
 const Catalog = () => {
+
   const { isDark } = useStyledDarkMode();
 
   return (
     <CatalogWrapper>
       <Container className="catalog-container">
-        {/* Kubernetes Patterns Catalog */}
         <Row className="catalog">
           <Col $md={6} className="catalog-image">
             <div className="image-wrapper">
-              <img
-                src={isDark ? CatalogsDark : CatalogsLight}
-                className="calalog-image"
-                alt="Kubernetes Patterns Catalog"
-              />
+              <img src={isDark ? CatalogsDark : CatalogsLight} className="calalog-image" alt="Kubernetes Patterns Catalog" />
             </div>
           </Col>
           <Col $md={6} className="catalog-detail">
@@ -161,8 +147,6 @@ const Catalog = () => {
             </p>
           </Col>
         </Row>
-
-        {/* Service Mesh Patterns */}
         <Row className="catalog">
           <Col $md={6} className="catalog-detail">
             <h2 className="heading">
@@ -174,24 +158,14 @@ const Catalog = () => {
           </Col>
           <Col $md={6} className="catalog-image">
             <div className="image-wrapper">
-              <img
-                src={Patterns}
-                className="calalog-image"
-                alt="Service Mesh Patterns"
-              />
+              <img src={Patterns} className="calalog-image" alt="Service Mesh Patterns" />
             </div>
           </Col>
         </Row>
-
-        {/* WebAssembly Filters */}
         <Row className="catalog">
           <Col $md={6} className="catalog-image">
             <div className="image-wrapper">
-              <img
-                src={Wasm}
-                className="calalog-image"
-                alt="WebAssembly Icon"
-              />
+              <img src={Wasm} className="calalog-image" alt="WebAssembly Icon" />
             </div>
           </Col>
           <Col md={6} className="catalog-detail">
@@ -201,8 +175,22 @@ const Catalog = () => {
             </p>
           </Col>
         </Row>
-
-        {/* Open Policy Agent (OPA) */}
+        {/* <Row className="catalog">
+          <Col md={6} className="catalog-image">
+            <div className="image-wrapper">
+              <img src={isDark ? EbpfDark : Ebpf} className="calalog-image" />
+            </div>
+          </Col>
+          <Col $md={6} className="catalog-detail">
+            <h2 className="heading">
+              Maximize Your Performance with eBPF Programs
+            </h2>
+            <p className="caption">
+              Embedded within the data plane, eBPF programs enable
+              high-performance, granular control over service requests.
+            </p>
+          </Col>
+        </Row> */}
         <Row className="catalog">
           <Col $md={6} className="catalog-detail">
             <h2 className="heading">
@@ -214,11 +202,7 @@ const Catalog = () => {
           </Col>
           <Col $md={6} className="catalog-image">
             <div className="image-wrapper">
-              <img
-                src={Opa}
-                className="calalog-image"
-                alt="Open Policy Agent (OPA) Icon"
-              />
+              <img src={Opa} className="calalog-image" alt="Open Policy Agent (OPA) Icon" />
             </div>
           </Col>
         </Row>
