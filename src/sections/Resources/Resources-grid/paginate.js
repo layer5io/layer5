@@ -8,18 +8,18 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   return (
     <ResourcePageWrapper>
       <div className="btn-container">
-        <Button 
-          $secondary 
-          onClick={() => paginate(currentPage - 1)} 
+        <Button
+          $secondary
+          onClick={() => paginate(currentPage - 1)}
           className="nav-btn"
           disabled={currentPage === 1}
         >
           &larr; Previous
         </Button>
 
-        <Button 
-          $primary 
-          onClick={() => paginate(currentPage + 1)} 
+        <Button
+          $primary
+          onClick={() => paginate(currentPage + 1)}
           className="nav-btn"
           disabled={currentPage === totalPages}
         >
