@@ -38,7 +38,7 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           comment: "We are sending you an invitation to join the Layer5 GitHub Organization. :partying_face: <b>Welcome to the community! 🎉</b><br /><br />&nbsp;&nbsp;&nbsp;Be sure to :star: [star the projects](../stargazers), if you haven't already.<br />"
         env:
-          INVITE_TOKEN: ${{ secrets.RELEASEDRAFTER_PAT }}
+          INVITE_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
       - name: View context attributes
         uses: actions/github-script@master
         id: set-url
