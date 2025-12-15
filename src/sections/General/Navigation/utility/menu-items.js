@@ -1,5 +1,5 @@
 import meshmateLogo from "../../../../assets/images/community/meshmate-stack.svg";
-import communityGreen from "../../../../assets/images/community/community-green.svg";
+const communityGreen = "https://badges.layer5.io/assets/badges/community/community.svg";
 
 const Data = {
   menuItems: [

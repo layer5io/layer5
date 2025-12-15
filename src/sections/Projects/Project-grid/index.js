@@ -7,20 +7,20 @@ import { ThemeManagerContext } from "../../../theme/app/ThemeManager";
 import { ProjectWrapper } from "./projectGrid.style";
 import KanvasCTA from "../../Kanvas/kanvas-cta";
 
-import extension from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
+const extension = "https://badges.layer5.io/assets/badges/docker-extension/docker-extension.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-import landscape from "../../../assets/images/landscape/layer5_landscape_green.svg";
-import imagehub from "../../../assets/images/image-hub/layer5-image-hub.svg";
+const landscape = "https://badges.layer5.io/assets/badges/landscape/landscape.svg";
+const imagehub = "https://badges.layer5.io/assets/badges/image-hub/image-hub.svg";
 import smp_dark from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import smp_light from "../../../assets/images/service-mesh-performance/icon/smp-light.svg";
-import patterns from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
+const patterns = "https://badges.layer5.io/assets/badges/patterns/patterns.svg";
 import L5gray from "../../../assets/images/layer5/5 icon/svg/gray/5-gray-60.svg";
 import nighthawk from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 import kanvas from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 import catalog from "../../../assets/images/catalog-icon/catalog.svg";
 import sistent from "../../../assets/images/sistent/sistent-logo.svg";
 import SoSpecial from "../../Home/So-Special-Section";
-import academy from "../../../assets/images/academy/academy.svg";
+const academy = "https://badges.layer5.io/assets/badges/academy/academy.svg";
 
 const ProjectPage = () => {
   const { isDark } = useContext(ThemeManagerContext);

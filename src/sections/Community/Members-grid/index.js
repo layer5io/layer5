@@ -10,7 +10,7 @@ import VintageBox from "../../../reusecore/VintageBox";
 
 // Assets
 import { MembersGridWrapper } from "./membersGrid.style";
-import communityImg from "../../../assets/images/community/community-green.svg";
+const communityImg = "https://badges.layer5.io/assets/badges/community/community.svg";
 import { FaBook } from "@react-icons/all-files/fa/FaBook";
 import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
 import  badgeImage from "../../../assets/images/recognition-program/recognition-program.webp";

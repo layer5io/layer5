@@ -6,7 +6,7 @@ import Subscribe from "../../sections/subscribe/subscribe";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import ServiceMeshTimeline from "./ServiceMeshTimeline";
-import landscape from "../../assets/images/landscape/layer5_landscape_green.svg";
+const landscape = "https://badges.layer5.io/assets/badges/landscape/landscape.svg";
 import Consul_Img from "../../assets/images/service-mesh-icons/consul-white.svg";
 import Nginx_Img from "../../assets/images/service-mesh-icons/nginx-white.svg";
 import Linkerd_Img from "../../assets/images/service-mesh-icons/linkerd-white.svg";

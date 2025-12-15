@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Wasm from "../../assets/images/webassembly/webssembly_icon.svg";
-import Patterns from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
+const Patterns = "https://badges.layer5.io/assets/badges/patterns/patterns.svg";
 // import Ebpf from "../../assets/images/kanvas/ebpf.svg";
 // import EbpfDark from "../../assets/images/kanvas/ebpf-dark.webp";
 import Opa from "../../assets/images/kanvas/opa.svg";

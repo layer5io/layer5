@@ -2,10 +2,10 @@ import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light
 import five from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
 import gnh from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 import smp from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
-import imagehub from "../../../assets/images/image-hub/layer5-image-hub.svg";
+const imagehub = "https://badges.layer5.io/assets/badges/image-hub/image-hub.svg";
 import MesheryOperator from "../../../assets/images/meshery-operator/meshery-operator.svg";
 import MeshSync from "../../../assets/images/meshsync/meshsync.svg";
-import patterns from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
+const patterns = "https://badges.layer5.io/assets/badges/patterns/patterns.svg";
 import github from "../../../assets/images/socialIcons/github.svg";
 import istioLogo from "../../../assets/images/service-mesh-icons/istio.svg";
 import linkerdLogo from "../../../assets/images/service-mesh-icons/linkerd.svg";

@@ -4,7 +4,7 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 import ProjectItemWrapper from "./proudMaintainers.style";
 import Traefik from "../../../assets/images/service-mesh-icons/traefik.svg";
 import Istio from "../../../assets/images/service-mesh-icons/istio.svg";
-import ImageHub from "../../../assets/images/image-hub/layer5-image-hub.svg";
+const ImageHub = "https://badges.layer5.io/assets/badges/image-hub/image-hub.svg";
 
 import { ReactComponent as CNCF } from "../../../assets/images/partners/cncf/horizontal/color/cncf-colorMode.svg";
 import { ReactComponent as OAM } from "../../../assets/images/partners/oam-colorMode.svg";

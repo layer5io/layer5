@@ -14,7 +14,7 @@ import WSL2 from "../Meshery-platforms/supported-icons/wsl2.svg";
 import GKE from "../Meshery-platforms/supported-icons/gke.svg";
 import Docker from "../Meshery-platforms/supported-icons/docker.svg";
 import OAM from "../../../assets/images/partners/oam.svg";
-import ImageHub from "../../../assets/images/image-hub/layer5-image-hub.svg";
+const ImageHub = "https://badges.layer5.io/assets/badges/image-hub/image-hub.svg";
 import SMP from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 const MesheryTerminal = () => {
   return (

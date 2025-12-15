@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 const docker_ext = "../../assets/images/docker-extension/docker-extension-meshery.webp";
-import meshery_operator from "../../assets/images/meshery-operator/meshery-operator-dark.svg";
+const meshery_operator = "https://badges.layer5.io/assets/badges/meshery-operator/meshery-operator.svg";
 import meshsync from "./images/meshsync.svg";
 import { Container, Row, Col } from "../../reusecore/Layout";
 

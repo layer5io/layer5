@@ -9,25 +9,27 @@ import Dropdown from "../../sections/Community/Members-grid/Dropdown";
 import { DropdownWrapper } from "../../components/dropdownLayouts/labels.style";
 // Assets + Icons
 import lighttheme from "../../theme/app/themeStyles";
-import writerIcon from "../../assets/images/writer-program/writer-program-badge.svg";
-import communityIcon from "../../assets/images/community/community-green.svg";
-import hubIcon from "../../assets/images/image-hub/layer5-image-hub.svg";
+
+const writerIcon = "https://badges.layer5.io/assets/badges/writer-program/writer-program.svg";
+const communityIcon = "https://badges.layer5.io/assets/badges/community/community.svg";
+const hubIcon = "https://badges.layer5.io/assets/badges/image-hub/image-hub.svg";
+const landscapeIcon = "https://badges.layer5.io/assets/badges/landscape/landscape.svg";
+const mesheryOpIcon = "https://badges.layer5.io/assets/badges/meshery-operator/meshery-operator.svg";
+const patternsIcon = "https://badges.layer5.io/assets/badges/patterns/patterns.svg";
+const uiuxrIcon = "https://badges.layer5.io/assets/badges/ui-ux/ui-ux.svg";
+const docsIcon = "https://badges.layer5.io/assets/badges/meshery-docs/meshery-docs.svg";
+const dockerExtensionIcon = "https://badges.layer5.io/assets/badges/docker-extension/docker-extension.svg";
+const mesheryCatalogIcon = "https://badges.layer5.io/assets/badges/meshery-catalog/meshery-catalog.svg";
+const sistentIcon = "https://badges.layer5.io/assets/badges/sistent-contributor/sistent-contributor.png";
+
 import icon5 from "../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
 import meshmateIcon from "../../assets/images/meshmate/meshmate-icon.svg";
 import hawkIcon from "../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
-import landscapeIcon from "../../assets/images/landscape/layer5_landscape_green.svg";
 import mesheryIcon from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-import mesheryOpIcon from "../../assets/images/meshery-operator/meshery-operator-dark.svg";
 import smpIcon from "../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import inactiveIcon from "../../assets/images/status/inactive.webp";
 import activeIcon from "../../assets/images/status/active.webp";
-import patternsIcon from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
-import uiuxrIcon from "../../assets/images/uiuxr/uiuxr.svg";
-import docsIcon from "../../assets/images/docs/docs.svg";
-import dockerExtensionIcon from "../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
-import mesheryCatalogIcon from "../../assets/images/meshery/meshery-catalog.svg";
 import kanvasIcon from "../../assets/images/kanvas/badges/kanvas.svg";
-import sistentIcon from "../../assets/images/sistent/badges/sistent-contributor.svg";
 /**
  * Array containing a list of categories to be shown in the dropdown.
  * The map function in the end wraps the label property with a component.

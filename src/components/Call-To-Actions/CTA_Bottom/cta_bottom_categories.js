@@ -1,6 +1,6 @@
 import img_source from "../../../assets/images/callout/callout.webp";
 import kanvas_icon from "../../../assets/images/kanvas/kanvas-collaborate.webp";
-import docker from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
+const docker = "https://badges.layer5.io/assets/badges/docker-extension/docker-extension.svg";
 
 export const Categories = {
   "Community": {

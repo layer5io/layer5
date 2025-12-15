@@ -17,7 +17,7 @@ import Multicluster from "../../assets/images/kanvas/catalog-card-images/multicl
 import Http_metrics from "../../assets/images/kanvas/catalog-card-images/http.svg";
 
 import Wasm from "../../assets/images/webassembly/webssembly_icon.svg";
-import Patterns from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
+const Patterns = "https://badges.layer5.io/assets/badges/patterns/patterns.svg";
 import Ebpf from "../../assets/images/kanvas/ebpf.svg";
 import Opa from "../../assets/images/kanvas/opa.svg";
 import { Container } from "../../reusecore/Layout";

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const cell = { padding: "12px", verticalAlign: "middle" };
-const badgeImg = { height: "50px", width: "50px", verticalAlign: "middle" };
+const badgeImg = { height: "auto", width: "200px", verticalAlign: "middle" };
 
 const BadgeRow = ({ image, name, title, badgeKey, keycode, keyProp, description }) => {
   const displayName = name || title || "—";
