@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import PopOutCard from "../../PopOutCardCarousel";
 
-import Levels from "./academy-catalog.gif";
 import Challenges from "./challenges.webp";
 import Badges from "./badges.webp";
 import Track from "./track.webp";
@@ -10,7 +9,7 @@ import Track from "./track.webp";
 const CONTENT = [
   {
     title: "CNCF Structured Learning Paths",
-    img: Levels,
+    img: "/static/images/academy-catalog.gif",
     description:
       "Comprehensive CNCF-aligned learning paths designed for different skill levels — from beginner to advanced. Master Kubernetes and cloud native technologies through hands-on experience.",
   },
