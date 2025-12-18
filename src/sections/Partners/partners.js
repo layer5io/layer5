@@ -1,20 +1,22 @@
 import React from "react";
-import partner1 from "../../assets/images/partners/University_of_Texas_at_Austin_seal.webp";
-import partner2 from "../../assets/images/partners/gsoc.svg";
-import { ReactComponent as Partner4 } from "../../assets/images/partners/citrix-colorMode.svg";
-import { ReactComponent as Partner5 } from "../../assets/images/partners/cncf-stacked-colorMode.svg";
-import { ReactComponent as Partner6 } from "../../assets/images/partners/hashicorp_vertical-colorMode.svg";
-import { ReactComponent as Partner7 } from "../../assets/images/partners/hpe_side-colorMode.svg";
-import { ReactComponent as Partner8 } from "../../assets/images/partners/microsoft-colorMode.svg";
-import { ReactComponent as Partner9 } from "../../assets/images/partners/redhat-colorMode.svg";
-// import { ReactComponent as Partner10 } from "../../assets/images/partners/smi-colorMode.svg";
-import { ReactComponent as Partner11 } from "../../assets/images/partners/intel-colorMode.svg";
-import { ReactComponent as PartnerIstio } from "../../assets/images/partners/istio-colorMode.svg";
-import { ReactComponent as Partner12 } from "../../assets/images/partners/vmware-colorMode.svg";
 
-import { ReactComponent as Partner14 } from "../../assets/images/partners/metabit-trading-logo-colorMode.svg";
-import { ReactComponent as Partner15 } from "../../assets/images/partners/docker.svg";
-import { ReactComponent as Partner16 } from "../../assets/images/partners/digitalocean.svg";
+
+const partner1 = "/partners/University_of_Texas_at_Austin_seal.webp";
+const partner2 = "/partners/gsoc.svg";
+const Partner4 = "/partners/citrix-colorMode.svg";
+const Partner5 = "/partners/cncf-stacked-colorMode.svg";
+const Partner6 = "/partners/hashicorp_vertical-colorMode.svg";
+const Partner7 = "/partners/hpe_side-colorMode.svg";
+const Partner8 = "/partners/microsoft-colorMode.svg";
+const Partner9 = "/partners/redhat-colorMode.svg";
+// import { ReactComponent as Partner10 } from "../../assets/images/partners/smi-colorMode.svg";
+const Partner11 = "/partners/intel-colorMode.svg";
+const PartnerIstio = "/partners/istio-colorMode.svg";
+const Partner12 = "/partners/vmware-colorMode.svg";
+
+const Partner14 =   "/partners/metabit-trading-logo-colorMode.svg";
+const Partner15 =   "/partners/docker.svg";
+const Partner16 =   "/partners/digitalocean.svg";
 
 export const partners = [
   {
@@ -40,7 +42,7 @@ export const partners = [
     desc: "Citrix ADC is an application delivery and load balancing solution that provides a high-quality user experience for your web, traditional, and cloud-native applications regardless of where they are hosted. It comes in a wide variety of form factors and deployment options without locking you into a single cloud. Pooled capacity licensing enables the movement of capacity among cloud deployments.",
     //link: null,
     type: "technology",
-    imageLink: <Partner4 alt="Citrix" />,
+    imageLink: <img src={Partner4} alt="Citrix" />,
     partnerId: "Citrix",
     //imageRoute: "https://www.citrix.com/products/citrix-adc/",
     moreInfo: "Citrix ADC is an application delivery and load balancing solution that provides a high-quality user experience for your web, traditional, and cloud-native applications regardless of where they are hosted. It comes in a wide variety of form factors and deployment options without locking you into a single cloud. Pooled capacity licensing enables the movement of capacity among cloud deployments.",
@@ -49,7 +51,7 @@ export const partners = [
     desc: "The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure. CNCF brings together the world’s top developers, end users, and vendors and runs the largest open source developer conferences. CNCF is part of the nonprofit Linux Foundation.",
     //link: null,
     type: "technology",
-    imageLink: <Partner5 alt="CNCF" />,
+    imageLink: <img src={Partner5} alt="CNCF" />,
     imageRoute: "https://landscape.cncf.io/?item=provisioning--automation-configuration--meshery",
     moreInfo: "The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure. CNCF brings together the world’s top developers, end users, and vendors and runs the largest open source developer conferences. CNCF is part of the nonprofit Linux Foundation.",
   }, {
@@ -57,7 +59,7 @@ export const partners = [
     desc: "HashiCorp is the leader in cloud infrastructure automation software. Our software stack enables the provisioning, securing, connecting, and running of apps and the infrastructure to support them. HashiCorp unlocks the cloud operating model for every business and enable their digital transformation strategies to succeed.",
     //link: null,
     type: "technology",
-    imageLink: <Partner6 alt="HashiCorp" />,
+    imageLink: <img src={Partner6} alt="HashiCorp" />,
     partnerId: "HashiCorp",
     imageRoute: "https://www.hashicorp.com/partners/tech/layer5",
     moreInfo: "HashiCorp is the leader in cloud infrastructure automation software. Our software stack enables the provisioning, securing, connecting, and running of apps and the infrastructure to support them. HashiCorp unlocks the cloud operating model for every business and enable their digital transformation strategies to succeed.",
@@ -66,7 +68,7 @@ export const partners = [
     desc: "HPE GreenLake is an IT-as-a-service offering that brings the cloud experience to your on-premises infrastructure and unifies your edges, clouds, and data centers.",
     //link: null,
     type: "technology",
-    imageLink: <Partner7 alt="HPE" />,
+    imageLink: <img src={Partner7} alt="HPE" />,
     partnerId: "hpe",
     //imageRoute: "https://www.hpe.com/",
     moreInfo: "HPE GreenLake is an IT-as-a-service offering that brings the cloud experience to your on-premises infrastructure and unifies your edges, clouds, and data centers.",
@@ -75,7 +77,7 @@ export const partners = [
     desc: "Istio is an open source independent service mesh that provides the fundamentals you need to successfully run a distributed microservice architecture. Istio reduces complexity of managing microservice deployments by providing a uniform way to secure, connect, and monitor microservices.",
     //link: null,
     type: "technology",
-    imageLink: <PartnerIstio alt="Istio" />,
+    imageLink: <img src={PartnerIstio} alt="Istio" />,
     imageRoute: "https://istio.io/about/community/partners/",
     moreInfo: "Istio is an open source independent service mesh that provides the fundamentals you need to successfully run a distributed microservice architecture. Istio reduces complexity of managing microservice deployments by providing a uniform way to secure, connect, and monitor microservices.",
   }, {
@@ -83,7 +85,7 @@ export const partners = [
     desc: "Microsoft Azure is an ever-expanding set of cloud services to help your organization meet your business challenges. It’s the freedom to build, manage, and deploy applications on a massive, global network using your favorite tools and frameworks.",
     //link: null,
     type: "technology",
-    imageLink: <Partner8 alt="Microsoft" />,
+    imageLink: <img src={Partner8} alt="Microsoft" />,
     //imageRoute: "https://www.microsoft.com/",
     moreInfo: "Microsoft Azure is an ever-expanding set of cloud services to help your organization meet your business challenges. It’s the freedom to build, manage, and deploy applications on a massive, global network using your favorite tools and frameworks.",
   }, {
@@ -91,7 +93,7 @@ export const partners = [
     desc: "The world’s leading provider of enterprise open source solutions, using a community-powered approach to deliver high-performing Linux, cloud, container, and Kubernetes technologies.",
     //link: null,
     type: "technology",
-    imageLink: <Partner9 alt="Red Hat" />,
+    imageLink: <img src={Partner9} alt="Red Hat" />,
     partnerId: "redhat",
     //imageRoute: "https://www.redhat.com/",
     moreInfo: "The world’s leading provider of enterprise open source solutions, using a community-powered approach to deliver high-performing Linux, cloud, container, and Kubernetes technologies.",
@@ -100,7 +102,7 @@ export const partners = [
     desc: "Intel and Layer5 have partnered to deliver Service Mesh Performance as a new standard of measure for service mesh performance characterization. Collective works have been published by the IEEE and demonstrated at KubeCon.",
     //link: null,
     type: "technology",
-    imageLink: <Partner11 alt="Intel" />,
+    imageLink: <img src={Partner11} alt="Intel" />,
     partnerId: "intel",
     //imageRoute: "https://www.intel.in/content/www/in/en/homepage.html",
     moreInfo: "Intel and Layer5 have partnered to deliver Service Mesh Performance as a new standard of measure for service mesh performance characterization. Collective works have been published by the IEEE and demonstrated at KubeCon.",
@@ -109,7 +111,7 @@ export const partners = [
     desc: "Layer5 enhances the Tanzu Service Mesh experience with Meshery as an application and infrastructure management platform that accelerates the adoption of open-source and cloud-native technologies by eliminating complexity with its intuitive, efficient, and flexible solution. Using Layer5's solutions along with Tanzu, engineers can self-service while enterprise IT teams offer Kubernetes as a Service to their application service teams.",
     //link: null,
     type: "technology",
-    imageLink: < Partner12 alt="VMWare" />,
+    imageLink: <img src={Partner12} alt="VMWare" />,
     partnerId: "VMware",
     //imageRoute: "https://www.vmware.com/",
     moreInfo:
@@ -119,14 +121,14 @@ export const partners = [
     desc: "Metabit Trading is a technology-driven quantitative investment firm harnessing the power of artificial intelligence and machine learning.",
     //link: null,
     type: "technology",
-    imageLink: <Partner14 alt="Metabit Trading" />,
+    imageLink: <img src={Partner14} alt="Metabit Trading" />,
     partnerId: "metabittrading",
     //imageRoute: "https://www.metabit-trading.com/home",
     moreInfo:
       "Metabit Trading is a technology-driven quantitative investment firm harnessing the power of artificial intelligence and machine learning.",
   }, {
     name: "Docker",
-    imageLink: <Partner15 alt="Docker" />,
+    imageLink: <img src={Partner15} alt="Docker" />,
     type: "technology",
     partnerId: "docker",
     desc: "Layer5 and Docker have partnered together to bring Kubernetes and cloud native management capabilities to the Docker platform through Meshery. As part of the partnership, Layer5 has joined the Docker Extension Program, enabling users to easily deploy and manage cloud native infrastructure within their Docker environments. With this collaboration, developers can leverage the power of both Docker and Layer5's expertise in service mesh technologies to enhance their containerized applications' performance, security, and observability. By integrating Meshery with Docker, users gain seamless access to advanced features for managing complex microservices architectures effectively.",
@@ -136,7 +138,7 @@ export const partners = [
     desc: "DigitalOcean is a cloud infrastructure provider that simplifies cloud computing for developers by offering scalable and easy-to-use cloud services.",
     //link: null,
     type: "technology",
-    imageLink: <Partner16 alt="DigitalOcean" />,
+    imageLink: <img src={Partner16} alt="DigitalOcean" />,
     partnerId: "digitalocean",
     //imageRoute: "https://www.digitalocean.com/",
     moreInfo:

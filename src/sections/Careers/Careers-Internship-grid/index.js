@@ -8,8 +8,8 @@ import ProgramsGrid from "../Careers-Programs-grid/index";
 import FAQ from "../../General/Faq";
 
 
-const UEM_Img = "../../../assets/images/partners/uem_partner.webp";
-const Univ_Texas_Img = "../../../assets/images/partners/texas_partner.webp";
+const UEM_Img = "/partners/uem_partner.webp";
+const Univ_Texas_Img = "/partners/texas_partner.webp";
 const Peek_Img = "../../../assets/images/layer5/layer5-peek-card-edited.svg";
 
 const InternshipPage = ({ hide_heading }) => {
@@ -138,8 +138,9 @@ const InternshipPage = ({ hide_heading }) => {
                 <Col className="partner-col">
                   <div className="partners-card">
                     <div className="partner-image">
-                      <StaticImage src={Univ_Texas_Img}
+                      <img src={Univ_Texas_Img}
                         alt="University of Texas, Austin"
+                        loading="lazy"
                       />
                     </div>
                     <h5>UT Austin Coding Boot Camp</h5>
@@ -148,7 +149,7 @@ const InternshipPage = ({ hide_heading }) => {
                 <Col className="partner-col">
                   <div className="partners-card">
                     <div className="partner-image">
-                      <StaticImage src={UEM_Img} alt="UEM Jaipur" />
+                      <img src={UEM_Img} alt="UEM Jaipur" loading="lazy"/>
                     </div>
                     <h5>UEM Jaipur</h5>
                   </div>

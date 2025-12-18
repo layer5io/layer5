@@ -6,14 +6,16 @@ import Traefik from "../../../assets/images/service-mesh-icons/traefik.svg";
 import Istio from "../../../assets/images/service-mesh-icons/istio.svg";
 import ImageHub from "../../../assets/images/image-hub/layer5-image-hub.svg";
 
-import { ReactComponent as CNCF } from "../../../assets/images/partners/cncf/horizontal/color/cncf-colorMode.svg";
-import { ReactComponent as OAM } from "../../../assets/images/partners/oam-colorMode.svg";
 import { ReactComponent as Linkerd } from "../../../assets/images/service-mesh-icons/linkerd/horizontal/color/linkerd-horizontal-colorMode.svg";
 import { ReactComponent as Meshery } from "../../../assets/images/meshery/meshery-logo-colorMode.svg";
 import { ReactComponent as Envoy } from "../../../assets/images/service-mesh-icons/envoy/horizontal/color/envoy-horizontal-colorMode.svg";
 import { ReactComponent as OSM } from "../../../assets/images/service-mesh-icons/open-service-mesh/stacked/color/openservicemesh-stacked-colorMode.svg";
 import { ReactComponent as SMP } from "../../../assets/images/service-mesh-performance/horizontal/smp-colorMode.svg";
 import { ReactComponent as SMI } from "../../../assets/images/service-mesh-icons/service-mesh-interface/horizontal-stackedtext/color/servicemeshinterface-horizontal-stackedtext-colorMode.svg";
+
+
+const CNCF = "/partners/cncf/horizontal/color/cncf-colorMode.svg";
+const OAM = "/partners/oam-colorMode.svg";
 
 const ProudMaintainers = () => {
   return (
