@@ -22,11 +22,14 @@ const RelatedPosts = props => {
         hasMounted &&
                 <Slider
                   dots= { window.innerWidth < 992 }
-                  arrows={ window.innerWidth >= 992 }
+                  arrows={ true }
                   infinite= {false}
                   speed= "500"
                   slidesToShow= {window.innerWidth <= 720 ? 1 : window.innerWidth <= 991 ? 2 : 3}
                   slidesToScroll= {1}
+                  swipe={true}
+                  swipeToSlide={true}
+                  touchThreshold={10}
                 >
                   {
                     postType === "blogs" ? relatedPosts.map((item) => {
