@@ -194,15 +194,23 @@ const RelatedPostsWrapper = styled.div`
         .slick-dots li button:before {
             font-size: 0.8rem;
         }
-    }
 
-    @media screen and (max-width: 720px) and (min-width: 385px){
         .post-content-block{
             height: 8rem;
         }
 
         .allBlogs{
             height: 19.5rem;
+        }
+    }
+
+    @media screen and (max-width: 384px){
+        .post-content-block{
+            height: 10rem;
+        }
+
+        .allBlogs{
+            height: 22rem;
         }
     }
 `;
