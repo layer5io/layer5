@@ -27,9 +27,11 @@ export const CourseOverviewWrapper = styled.div`
   }
   .course-overview-hero {
     display: flex;
+  justify-content: center;   /* center horizontally */
+  align-items: center;
   }
   .course-info-content {
-    width: 55%;
+    width: 50%;
     padding: 5rem 6rem;
     button {
       background-color: white;
@@ -54,17 +56,26 @@ export const CourseOverviewWrapper = styled.div`
     }
   }
   .course-hero-head-image {
-    width: 15%;
+  margin-top: 50px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  div {
+    width: 100%;
     display: flex;
-    justify-content: center;
-    div {
-      width: 100%;
-    }
-    img {
-      margin: auto;
-      height: 100%;
-    }
+    justify-content: center;   
   }
+
+  img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;    
+    object-fit: contain;   
+  }
+}
+
   .course-hero-head {
     h2 {
       margin: 1rem 0;
@@ -164,3 +175,4 @@ export const CourseOverviewWrapper = styled.div`
     }
   }
 `;
+
