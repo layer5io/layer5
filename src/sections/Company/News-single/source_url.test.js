@@ -57,4 +57,23 @@ describe('NewsSingle', () => {
     const wrapper = shallow(<NewsSingle data={data} />);
     expect(wrapper.text()).not.toContain('Originally published at');
   });
+
+  it('does not render "Read the full article on" (eurl) when source_url is present', () => {
+    const data = {
+      mdx: {
+        frontmatter: {
+          title: 'Test',
+          source_url: 'https://original.com',
+          eurl: 'https://eurl.com',
+          author: 'Me',
+          date: '2023-01-01'
+        },
+        fields: { slug: '/test' }
+      }
+    };
+
+    const wrapper = shallow(<NewsSingle data={data} />);
+    expect(wrapper.text()).toContain('Originally published at');
+    expect(wrapper.text()).not.toContain('Read the full article on');
+  });
 });
