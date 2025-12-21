@@ -8,17 +8,10 @@ import { SistentLayout } from "../../sistent-layout";
 import { Col, Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
-import { alpha, useTheme } from "@mui/material/styles"; // ✅ FIXED IMPORT
-
 const SistentTable = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
 
-  // ✔️ properly get theme
-  const theme = useTheme();
-  theme.alpha = (color, opacity) => alpha(color, opacity);
-
-  // Sample data for demonstration
   const sampleData = [
     { id: 1, name: "John Doe", role: "Software Engineer", location: "New York", startDate: "2023-01-15" },
     { id: 2, name: "Jane Smith", role: "Product Manager", location: "San Francisco", startDate: "2022-08-22" },
@@ -27,11 +20,11 @@ const SistentTable = () => {
   ];
 
   const sampleColumns = [
-    { name: "id", label: "ID", options: { filter: false, sort: true, searchable: false } },
-    { name: "name", label: "Name", options: { filter: true, sort: true, searchable: true } },
-    { name: "role", label: "Role", options: { filter: true, sort: true, searchable: true } },
-    { name: "location", label: "Location", options: { filter: true, sort: true, searchable: true } },
-    { name: "startDate", label: "Start Date", options: { filter: false, sort: true, searchable: false } },
+    { name: "id", label: "ID", options: { filter: false, sort: true } },
+    { name: "name", label: "Name", options: { filter: true, sort: true } },
+    { name: "role", label: "Role", options: { filter: true, sort: true } },
+    { name: "location", label: "Location", options: { filter: true, sort: true } },
+    { name: "startDate", label: "Start Date", options: { sort: true } },
   ];
 
   const sampleColViews = [
@@ -67,6 +60,7 @@ const SistentTable = () => {
         <a id="Identity">
           <h2>Table</h2>
         </a>
+
         <p>
           Table components provide a flexible way to display tabular data with
           features like sorting, filtering, pagination, and responsive design.
@@ -94,6 +88,7 @@ const SistentTable = () => {
 
         <div className="main-content">
           <h3>Basic Table</h3>
+
           <Row $Hcenter className="image-container">
             <Col sm={12}>
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
