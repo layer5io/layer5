@@ -4,6 +4,9 @@ import { useLocation } from "@reach/router";
 import { SistentLayout } from "../../sistent-layout";
 
 import TabButton from "../../../../../reusecore/Button";
+import { alpha } from '@mui/material/styles';
+
+theme.alpha = (color, opacity) => alpha(color, opacity);
 
 const TableGuidance = () => {
   const location = useLocation();
