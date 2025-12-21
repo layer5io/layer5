@@ -185,7 +185,7 @@ const TableCode = () => {
                     columns={employeeColumns}
                     options={featuredOptions}
                     colViews={employeeColViews}
-                    tableCols={updateCols}
+                    tableCols={tableCols}
                     updateCols={updateCols}
                     columnVisibility={columnVisibility}
                   />
