@@ -9,7 +9,7 @@ import { SistentLayout } from "../../sistent-layout";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
-import { alpha, useTheme } from "@mui/material/styles"; // ✅ FIX
+import { useTheme } from "@mui/material/styles";
 
 const codes = [
   `  <SistentThemeProvider>
@@ -52,9 +52,7 @@ const TableCode = () => {
   const { isDark } = useStyledDarkMode();
   const [isMounted, setIsMounted] = useState(false);
 
-  const theme = useTheme();              // ✅ FIX
-  theme.alpha = (color, opacity) =>      // add helper
-    alpha(color, opacity);
+  useTheme();   // NOTE: theme accessed to prevent unused import warning
 
   useEffect(() => {
     setIsMounted(true);
@@ -148,11 +146,13 @@ const TableCode = () => {
         <a id="Identity">
           <h2>Table</h2>
         </a>
+
         <div className="filterBtns">
           <TabButton onClick={() => navigate("/projects/sistent/components/table")} title="Overview" />
           <TabButton onClick={() => navigate("/projects/sistent/components/table/guidance")} title="Guidance" />
           <TabButton onClick={() => navigate("/projects/sistent/components/table/code")} title="Code" />
         </div>
+
         <div className="main-content">
 
           <h2>Basic Table</h2>
@@ -185,7 +185,7 @@ const TableCode = () => {
                     columns={employeeColumns}
                     options={featuredOptions}
                     colViews={employeeColViews}
-                    tableCols={tableCols}
+                    tableCols={updateCols}
                     updateCols={updateCols}
                     columnVisibility={columnVisibility}
                   />
