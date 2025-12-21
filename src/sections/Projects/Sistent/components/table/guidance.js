@@ -5,15 +5,8 @@ import { SistentLayout } from "../../sistent-layout";
 
 import TabButton from "../../../../../reusecore/Button";
 
-// FIXED 👇
-import { alpha, useTheme } from "@mui/material/styles";
-
 const TableGuidance = () => {
   const location = useLocation();
-
-  // FIXED 👇 properly access MUI theme
-  const theme = useTheme();
-  theme.alpha = (color, opacity) => alpha(color, opacity);
 
   return (
     <SistentLayout title="Table">
@@ -25,6 +18,7 @@ const TableGuidance = () => {
           Table components provide a flexible way to display tabular data with
           features like sorting, filtering, pagination, and responsive design.
         </p>
+
         <div className="filterBtns">
           <TabButton
             className={
@@ -64,22 +58,22 @@ const TableGuidance = () => {
             <h2>Usage Guidelines</h2>
           </a>
           <p>
-            Tables should be used when you need to display structured data in
-            rows and columns, making it easy to compare and analyze information.
+            Tables should be used when structured data must be displayed in rows
+            and columns, making comparison and scanning easy.
           </p>
 
           <h3>When to Use Tables</h3>
           <ul>
-            <li><strong>Structured data:</strong> Clear row-column format</li>
-            <li><strong>Comparison:</strong> Compare column values easily</li>
-            <li><strong>Large datasets:</strong> Display lots of entries</li>
+            <li>To display structured data</li>
+            <li>For comparing values across rows/columns</li>
+            <li>When handling large datasets</li>
           </ul>
 
           <h3>When to Avoid Tables</h3>
           <ul>
-            <li><strong>Simple lists:</strong> Use lists instead</li>
-            <li><strong>Page layout:</strong> Do NOT use tables</li>
-            <li><strong>Nested data:</strong> Consider tree view</li>
+            <li>For simple list-style content</li>
+            <li>As a layout tool</li>
+            <li>For deeply nested hierarchical data</li>
           </ul>
 
           <a id="Design Guidelines">
@@ -88,40 +82,22 @@ const TableGuidance = () => {
 
           <h3>Data Organization</h3>
           <ul>
-            <li>Order columns logically</li>
-            <li>Use consistent data types</li>
-            <li>Label headers clearly</li>
+            <li>Logical column ordering</li>
+            <li>Consistent data types per column</li>
+            <li>Clear, concise headers</li>
           </ul>
 
-          <h3>Visual Design</h3>
+          <h3>Accessibility Best Practices</h3>
           <ul>
-            <li>Adequate spacing/padding</li>
-            <li>Row separation for readability</li>
-            <li>Correct alignment for text/numbers</li>
+            <li>Provide table headers</li>
+            <li>Include captions for complex tables</li>
+            <li>Support keyboard navigation</li>
           </ul>
-
-          <a id="Accessibility Best Practices">
-            <h2>Accessibility Best Practices</h2>
-          </a>
-          <ul>
-            <li>Provide table headers always</li>
-            <li>Use captions for complex tables</li>
-            <li>Ensure keyboard navigation</li>
-          </ul>
-
-          <a id="Performance Considerations">
-            <h2>Performance Considerations</h2>
-          </a>
-          <p>
-            Use pagination and lazy loading for large datasets.
-          </p>
 
           <a id="Props">
             <h2>Props</h2>
           </a>
-          <p>
-            ResponsiveDataTable accepts props for customization:
-          </p>
+          <p>The ResponsiveDataTable accepts props for customization:</p>
 
           <div className="table-container">
             <table className="props-table">
@@ -138,31 +114,31 @@ const TableGuidance = () => {
                   <td>data</td>
                   <td>object[] | string[][]</td>
                   <td>-</td>
-                  <td>Data source</td>
+                  <td>Table source data</td>
                 </tr>
                 <tr>
                   <td>columns</td>
                   <td>MUIDataTableColumn[]</td>
                   <td>-</td>
-                  <td>Column definitions</td>
+                  <td>Column configuration</td>
                 </tr>
                 <tr>
                   <td>options</td>
                   <td>MUIDataTableOptions</td>
                   <td>{}</td>
-                  <td>Config settings</td>
+                  <td>Behavior configuration</td>
                 </tr>
                 <tr>
                   <td>rowsPerPageOptions</td>
                   <td>number[]</td>
                   <td>[10,25,50,100]</td>
-                  <td>Pagination options</td>
+                  <td>Pagination settings</td>
                 </tr>
                 <tr>
                   <td>colViews</td>
                   <td>ColView[]</td>
                   <td>-</td>
-                  <td>Responsive column visibility</td>
+                  <td>Responsive visibility settings</td>
                 </tr>
               </tbody>
             </table>
