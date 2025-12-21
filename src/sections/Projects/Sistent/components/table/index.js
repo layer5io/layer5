@@ -7,6 +7,9 @@ import TabButton from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
 import { Col, Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
+import { alpha } from '@mui/material/styles';
+
+theme.alpha = (color, opacity) => alpha(color, opacity);
 
 const SistentTable = () => {
   const location = useLocation();
