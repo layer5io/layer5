@@ -7,10 +7,7 @@ import {
   CardContent,
   Typography,
   Box,
-  Select,
   MenuItem,
-  FormControl,
-  InputLabel,
   Slider,
   Paper,
   Switch,
@@ -19,6 +16,8 @@ import {
   CssBaseline,
   TextField,
   useTheme,
+  Popper,
+  ClickAwayListener,
   SistentThemeProvider
 } from "@sistent/sistent";
 import { Calculate, CheckCircle, Cloud, Group } from "@mui/icons-material";
@@ -49,6 +48,8 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
   const [totalPrice, setTotalPrice] = useState(0);
   const [quantityIndex, setQuantityIndex] = useState(0);
   const [enterpriseUsers, setEnterpriseUsers] = useState(1);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const { isDark } = useStyledDarkMode();
   const theme = useTheme();
@@ -230,41 +231,115 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
               <CardContent sx={boxStyles.cardContent}>
                 <Box sx={boxStyles.cardContentInner}>
                   <Box>
-                    <FormControl fullWidth>
-                      <InputLabel sx={typographyStyles.qanelasFont}>Optionally, choose one or more add-ons</InputLabel>
-                      <Select
-                        fullWidth
-                        value={selectedAddon?.id || ""}
-                        onChange={(e) => handleAddonChange(e.target.value)}
-                        label="Optionally, choose one or more add-ons"
-                        MenuProps={{
-                          disableScrollLock: true,
-                          disablePortal: true,
+                    <Box
+                      role="button"
+                      tabIndex={0}
+                      aria-haspopup="listbox"
+                      aria-expanded={isDropdownOpen}
+                      aria-label="Optionally, choose one or more add-ons"
+                      onClick={(event) => {
+                        setAnchorEl(event.currentTarget);
+                        setIsDropdownOpen((prev) => !prev);
+                      }}
+                      onKeyDown={(event) => {
+                        if (event.key === "Enter" || event.key === " ") {
+                          event.preventDefault();
+                          setAnchorEl(event.currentTarget);
+                          setIsDropdownOpen((prev) => !prev);
+                        }
+                        if (event.key === "Escape") {
+                          setIsDropdownOpen(false);
+                        }
+                      }}
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        width: "100%",
+                        border: "1px solid",
+                        borderColor: "divider",
+                        borderRadius: 1,
+                        padding: "12px 14px",
+                        cursor: "pointer",
+                        backgroundColor: "background.paper",
+                        "&:focus-visible": {
+                          outline: "2px solid",
+                          outlineColor: "primary.main"
+                        }
+                      }}
+                    >
+                      <Box sx={{ minWidth: 0, flex: 1 }}>
+                        <Typography variant="caption" color="text.secondary" sx={{ display: "block" }}>
+                          Optionally, choose one or more add-ons
+                        </Typography>
+                        <Typography
+                          noWrap
+                          variant="body1"
+                          fontWeight="500"
+                          sx={typographyStyles.ellipsisText}
+                        >
+                          {selectedAddon?.name || "Select an add-on"}
+                        </Typography>
+                      </Box>
+                    </Box>
+                    <Popper
+                      open={isDropdownOpen}
+                      anchorEl={anchorEl}
+                      placement="bottom-start"
+                      strategy="fixed"
+                      modifiers={[{ name: "flip", enabled: false }]}
+                      sx={{
+                        zIndex: 1300,
+                        width: anchorEl ? anchorEl.clientWidth : undefined,
+                        mt: 1
+                      }}
+                    >
+                      <ClickAwayListener
+                        onClickAway={(event) => {
+                          if (anchorEl && anchorEl.contains(event.target)) return;
+                          setIsDropdownOpen(false);
                         }}
                       >
-                        {addOns.map((addon) => (
-                          <MenuItem key={addon.id} value={addon.id}>
-                            <Box sx={boxStyles.menuItem}>
-                              {renderIcon(addon.iconType)}
-                              <Box sx={{ minWidth: 0, flex: 1 }}>
-                                <Typography noWrap variant="body1" fontWeight="500" sx={typographyStyles.ellipsisText}>
-                                  {addon.name}
-                                </Typography>
-                                <Typography nowrap variant="body2" color="text.secondary" sx={typographyStyles.ellipsisText}>
-                                  {addon.id === "academy"
-                                    ? addon.description
-                                    : (() => {
-                                      const period = isYearly ? "/year" : "/month";
-                                      return `${formatPrice(isYearly ? addon.yearlyPrice : addon.monthlyPrice)} per ${addon.unitLabel.slice(0, -1)}${period}`;
-                                    })()
-                                  }
-                                </Typography>
+                        <Paper
+                          role="listbox"
+                          onKeyDown={(event) => {
+                            if (event.key === "Escape") {
+                              setIsDropdownOpen(false);
+                            }
+                          }}
+                        >
+                          {addOns.map((addon) => (
+                            <MenuItem
+                              key={addon.id}
+                              value={addon.id}
+                              selected={selectedAddon?.id === addon.id}
+                              onClick={() => {
+                                handleAddonChange(addon.id);
+                                setIsDropdownOpen(false);
+                              }}
+                            >
+                              <Box sx={boxStyles.menuItem}>
+                                {renderIcon(addon.iconType)}
+                                <Box sx={{ minWidth: 0, flex: 1 }}>
+                                  <Typography noWrap variant="body1" fontWeight="500" sx={typographyStyles.ellipsisText}>
+                                    {addon.name}
+                                  </Typography>
+                                  <Typography nowrap variant="body2" color="text.secondary" sx={typographyStyles.ellipsisText}>
+                                    {addon.id === "academy"
+                                      ? addon.description
+                                      : (() => {
+                                        const period = isYearly ? "/year" : "/month";
+                                        return `${formatPrice(isYearly ? addon.yearlyPrice : addon.monthlyPrice)} per ${addon.unitLabel.slice(0, -1)}${period}`;
+                                      })()
+                                    }
+                                  </Typography>
+                                </Box>
                               </Box>
-                            </Box>
-                          </MenuItem>
-                        ))}
-                      </Select>
-                    </FormControl>
+                            </MenuItem>
+                          ))}
+                        </Paper>
+                      </ClickAwayListener>
+                    </Popper>
                   </Box>
 
                   {selectedAddon?.id === "academy" && (
