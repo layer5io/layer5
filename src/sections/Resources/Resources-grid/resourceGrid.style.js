@@ -36,31 +36,33 @@ export const ResourcePageWrapper = styled.div`
     .btn-container {
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
-        margin: 0 auto 2rem;
-      }
-      .btn {
-        width: 2rem;
-        height: 2rem;
-        border-radius: 5px;
-        cursor: pointer;
-        margin: 0.5rem;
-        transition: all 0.3s linear;
-        :hover {
-            box-shadow: 0px 1px 5px 1px rgba(0, 179, 159, 0.5);
+        align-items: center;
+        gap: 1rem;
+        margin: 3rem auto 4rem;
+
+        @media screen and (max-width: 768px) {
+          flex-direction: column;
+          gap: 1rem;
+          margin: 2rem auto 3rem;
         }
       }
-      .page-btn {
-        background: ${props => props.theme.grey212121ToWhite};
-        border: solid 2px;
-        border-color: ${props => props.theme.secondaryColor};
-        color: ${props => props.theme.whiteEightToBlack};
+
+      .nav-btn {
+        min-width: 130px;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+
+        @media screen and (max-width: 768px) {
+          min-width: 160px;
+          padding: 0.75rem 1.75rem;
+        }
       }
-      .active-btn {
-        background: ${props => props.theme.secondaryColor};
-        border-color: transparent;
-        color: #fff;
-      }  
 
     @media only screen and (max-width: 575px) {
         .resource-grid-wrapper{
