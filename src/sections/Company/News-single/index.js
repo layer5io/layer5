@@ -82,7 +82,7 @@ const NewsSingle = ({ data, children }) => {
             frontmatter.source_url ? (
               <div style={{ display: "flex" }}>
                 <h5>
-                  Originally published at <a href={frontmatter.source_url} target="_blank" rel="noopener noreferrer">{frontmatter.source_url}</a>
+                  Originally published at <a href={frontmatter.source_url} target="_blank" rel="noopener noreferrer">{frontmatter.author}</a>
                 </h5>
               </div>
             ) : frontmatter.eurl && (
