@@ -13,7 +13,7 @@ const FeaturesSectionWrapper = styled.section`
 	contain: layout style paint;
 	transform-origin: center;
 	z-index: 1;
-	height: auto;
+	min-height: 0;
 	isolate: isolate;
 	.skw{
 		display: grid;
@@ -179,6 +179,7 @@ const FeaturesSectionWrapper = styled.section`
 	@media screen and (max-width: 1200px) {
 		padding-bottom: 2rem;
 		margin-bottom: 6rem;
+		min-height: 0;
 
 		.smp-section {
 			.smp-section-row {
@@ -207,22 +208,37 @@ const FeaturesSectionWrapper = styled.section`
 	@media screen and (max-width: 960px) {
 		padding-bottom: 0rem;
 		margin-bottom: 4rem;
-		.smp-section .smp-section-caraousel .slick-slider .slick-list {
-			.slick-slide {
-				img {
-					max-height: 16rem;
+		min-height: 0;
+		height: fit-content;
+		
+		.smp-section .smp-section-caraousel .slick-slider {
+			max-height: 400px;
+			
+			.slick-list {
+				max-height: 400px;
+				
+				.slick-slide {
+					img {
+						max-height: 16rem;
+					}
 				}
 			}
 		}
 	}
 
 	@media screen and (max-width: 700px) {
+		min-height: 0;
+		height: fit-content;
+		
 		.smp-section {
 			max-width: 95%;
 
 			.smp-section-caraousel .slick-slider {
+				max-height: 320px;
+				
 				.slick-list {
 					max-width: 85%;
+					max-height: 320px;
 					margin: 2rem 0;
 				}
 				.slick-dots {
@@ -238,12 +254,19 @@ const FeaturesSectionWrapper = styled.section`
 	}
 
 	@media screen and (max-width: 500px) {
+		min-height: 0;
+		height: fit-content;
+		
 		.smp-section {
 			max-width: 95%;
 
 			.smp-section-caraousel .slick-slider {
+				max-height: 240px;
+				
 				.slick-list {
 					max-width: 80%;
+					max-height: 240px;
+					
 					.slick-slide {
 						img {
 							max-height: 10rem;
