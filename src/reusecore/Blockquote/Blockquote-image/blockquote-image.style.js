@@ -116,6 +116,10 @@ section.bq-section {
 
 @media screen and (max-width: 768px) {
 
+    .type-one-wrapper {
+        width: 100%;
+    }
+
     .type-one-quote .type-one-quote-pattern {
         flex-basis: 20px;
     }
@@ -144,6 +148,7 @@ section.bq-section {
     box-shadow: 2px 2px 25px ${props => props.theme.whiteOneToGreyCECECE};
     border-radius: 10px;
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    width: 100%;
 }
 
 .type-two-quote .type-two-quote-pattern {
