@@ -180,6 +180,7 @@ const FeaturesSectionWrapper = styled.section`
 		padding-bottom: 2rem;
 		margin-bottom: 6rem;
 		min-height: 0;
+		height: fit-content;
 
 		.smp-section {
 			.smp-section-row {
@@ -210,6 +211,8 @@ const FeaturesSectionWrapper = styled.section`
 		margin-bottom: 4rem;
 		min-height: 0;
 		height: fit-content;
+		contain: none;
+		overflow-y: visible;
 		
 		.smp-section .smp-section-caraousel .slick-slider {
 			max-height: 400px;
@@ -229,6 +232,8 @@ const FeaturesSectionWrapper = styled.section`
 	@media screen and (max-width: 700px) {
 		min-height: 0;
 		height: fit-content;
+		contain: none;
+		overflow-y: visible;
 		
 		.smp-section {
 			max-width: 95%;
@@ -256,6 +261,8 @@ const FeaturesSectionWrapper = styled.section`
 	@media screen and (max-width: 500px) {
 		min-height: 0;
 		height: fit-content;
+		contain: none;
+		overflow-y: visible;
 		
 		.smp-section {
 			max-width: 95%;
