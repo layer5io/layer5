@@ -4,6 +4,7 @@ const MesheryWrapper = styled.section`
     position: relative;
     z-index: 1;
     overflow-x: hidden;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -100,7 +101,7 @@ const MesheryWrapper = styled.section`
     }
     @media only screen and (max-width: 992px) {
         min-height: 0;
-		height: auto;
+        max-height: none;
        
         .info{
             .description {
@@ -130,7 +131,7 @@ const MesheryWrapper = styled.section`
 
     @media only screen and (max-width: 768px) {
         min-height: 0;
-		height: auto;
+        max-height: none;
         
         .callout{
             text-align:center;
@@ -159,7 +160,7 @@ const MesheryWrapper = styled.section`
 
     @media only screen and (max-width: 575px) {
         min-height: 0;
-		height: auto;
+        max-height: none;
         
         .info{
             
