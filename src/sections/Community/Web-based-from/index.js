@@ -20,39 +20,21 @@ const validateEmail = (value) => {
 
 
 const validatePictureUrl = (value) => {
-  let error;
-  if (!value) return error;
+  if (!value) return;
 
-  // Block base64 / data URIs
   if (value.startsWith("data:")) {
-    return "Data URIs are not allowed. Please provide an image URL or Google Drive link.";
+    return "Please provide a hyperlink.";
   }
 
-  const isGoogleDrive =
-    value.includes("drive.google.com/file/d/") ||
-    value.includes("drive.google.com/open?id=") ||
-    value.includes("drive.google.com/uc?id=");
-
-  if (isGoogleDrive) {
-    return error; 
-  }
   try {
-    new URL(value);
-
-    const allowedExtensions = ["jpg", "jpeg", "png", "webp", "avif", "svg", "gif"];
-
-    const extension = value.split(".").pop().toLowerCase();
-
-    if (!allowedImageExtensions.includes(extension)) {
-      error =
-        "URL must be an image (jpg, jpeg, png, svg, webp, gif) or a Google Drive image link.";
-    }
-  } catch (err) {
-    return "Please enter a valid image URL or Google Drive link.";
+    new URL(value); // accepts Google Drive + all other URLs
+  } catch {
+    return "Please enter a valid URL.";
   }
 
-  return error;
+  return;
 };
+
 
 
 const WebBasedForm = () => {
