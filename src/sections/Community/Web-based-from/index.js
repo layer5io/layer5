@@ -29,13 +29,11 @@ const validatePictureUrl = (value) => {
         new URL(value);
 
         const isGoogleDrive = value.includes("drive.google.com");
-        if (isGoogleDrive) {
-          const isFileLink = value.includes("/file/d/");
-          const isViewLink = value.includes("/view");
-          const isDownloadLink = value.includes("/uc?");
+        const validGoogleDrivePattern = /drive\.google\.com\/file\/d\/.+\/(view|uc\?)/;
 
-          if (!isFileLink || (!isViewLink && !isDownloadLink)) {
-            error = "Please provide a direct Google Drive file link.";
+        if (isGoogleDrive) {
+          if (!validGoogleDrivePattern.test(value)) {
+            error = "Please provide a direct Google Drive file link. Right-click the file in Google Drive and select 'Get link' to get a shareable link that includes '/file/d/' in the URL.";
           }
         } else {
           const allowedImageExtensions = ["jpg", "jpeg", "png", "webp", "svg", "gif"];
@@ -231,7 +229,7 @@ const WebBasedForm = () => {
             setRole("User");
           }}
           >
-            I'm here as a User and Contibutor
+            I'm here as a User and Contributor
           </div>
           <div className={role === "Bystander" ? "option active" : "option"} onClick={() => {
             setRole("Bystander");
@@ -242,7 +240,7 @@ const WebBasedForm = () => {
           <br /><br />
           <div className="btn-wrapper">
             <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous Step</button>
-            <Button onClick={() => setStepNumber(2)}$secondary type="submit" className="btn-next" title="Next Step" />
+            <Button onClick={() => setStepNumber(2)} $secondary type="submit" className="btn-next" title="Next Step" />
           </div>
         </div>
 
