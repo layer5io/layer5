@@ -18,28 +18,49 @@ const validateEmail = (value) => {
   return error;
 };
 
+
 const validatePictureUrl = (value) => {
   let error;
-  if (value) {
+  if (!value) return error;
 
-    if (value.startsWith("data:")) {
-      error = "Data URIs are not allowed. Please provide a URL, starting with http:// or https:// to an image file.";
-    } else {
-      try {
-        new URL(value);
-        const allowedImageExtensions = ["jpg", "jpeg", "png", "webp", "svg", "gif"];
-        const extension = value.split(".").pop().toLowerCase();
-        if (!allowedImageExtensions.includes(extension)) {
-          error = "URL must point to an image file (jpg, jpeg, png, svg, webp or gif).";
-        }
-      } catch (err) {
-        console.error("Error in validatePictureUrl:", err);
-        return "Please enter a URL to an image file.";
-      }
-    }
+  // Block base64 / data URIs
+  if (value.startsWith("data:")) {
+    return "Data URIs are not allowed. Please provide an image URL or Google Drive link.";
   }
+
+  const isGoogleDrive =
+    value.includes("drive.google.com/file/d/") ||
+    value.includes("drive.google.com/open?id=") ||
+    value.includes("drive.google.com/uc?id=");
+
+  if (isGoogleDrive) {
+    return error; 
+  }
+  try {
+    new URL(value);
+
+    const allowedImageExtensions = [
+      "jpg",
+      "jpeg",
+      "png",
+      "webp",
+      "svg",
+      "gif"
+    ];
+
+    const extension = value.split(".").pop().toLowerCase();
+
+    if (!allowedImageExtensions.includes(extension)) {
+      error =
+        "URL must be an image (jpg, jpeg, png, svg, webp, gif) or a Google Drive image link.";
+    }
+  } catch (err) {
+    return "Please enter a valid image URL or Google Drive link.";
+  }
+
   return error;
 };
+
 
 const WebBasedForm = () => {
 
