@@ -39,14 +39,7 @@ const validatePictureUrl = (value) => {
   try {
     new URL(value);
 
-    const allowedImageExtensions = [
-      "jpg",
-      "jpeg",
-      "png",
-      "webp",
-      "svg",
-      "gif"
-    ];
+    const allowedExtensions = ["jpg", "jpeg", "png", "webp", "avif", "svg", "gif"];
 
     const extension = value.split(".").pop().toLowerCase();
 
