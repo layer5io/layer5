@@ -69,8 +69,9 @@ const Data = {
         },
         {
           name: "Cloud",
-          path: "/cloud-native-management/catalog",
+          path: "https://cloud.layer5.io/",
           sepLine: true,
+          externalLink: true,
         },
         {
           name: "Academy",
