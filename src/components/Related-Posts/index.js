@@ -22,7 +22,7 @@ const RelatedPosts = props => {
         hasMounted &&
                 <Slider
                   dots= { window.innerWidth < 992 }
-                  arrows={ true }
+                  arrows={ window.innerWidth >= 992 }
                   infinite= {false}
                   speed= "500"
                   slidesToShow= {window.innerWidth <= 720 ? 1 : window.innerWidth <= 991 ? 2 : 3}
