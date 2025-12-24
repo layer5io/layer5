@@ -168,18 +168,18 @@ const RelatedPostsWrapper = styled.div`
         }
 
         .slick-arrow{
-            width: 3rem;	
+            width: 3rem;
             height: 4rem;
         }
-        .slick-arrow:before{	
+        .slick-arrow:before{
             font-size: 4rem;
         }
 
-        .slick-prev:before{	
+        .slick-prev:before{
             margin-left: -1.5rem;
         }
 
-        .slick-next:before{	
+        .slick-next:before{
             margin-left: 1rem;
         }
 
