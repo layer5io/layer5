@@ -116,22 +116,19 @@ const WorkshopsPage = () => {
                       </div>
                     </div>
                     <div className={content && ID === id ? "btn-and-status-open" : "btn-and-status"}>
-                      <div className="social-icons">
+                      <div className="left-icons">
                         {frontmatter.slack && frontmatter.status === "delivered" ?
-                          <a href={frontmatter.slack} target = "_blank" rel="noreferrer" className="links">
+                          <a href={frontmatter.slack} target="_blank" rel="noreferrer" className="links">
                             <img src={Slack} alt="Slack"/>
-                                                        Slack
+                            Slack
                           </a> : ""}
+                        <Link to={fields.slug} className="siteLink">
+                          <FaRegWindowMaximize style={{ height: "25px", width: "auto" }} />
+                        </Link>
                       </div>
-                      <div className="linkAndReadBtns">
-                        <div className="expand">
-                          <Link to={fields.slug} className="readmeBtn readmreBtn"> Read More <BsArrowRight className="icon" size={30} /></Link>
-                        </div>
-
-                        <div className="externalLink">
-                          <Link to={fields.slug} className="siteLink"><FaRegWindowMaximize style={{ height: "25px", width: "auto" }} /></Link>
-                        </div>
-                      </div>
+                      <Link to={fields.slug} className="readmeBtn">
+                        Read More <BsArrowRight className="icon" size={30} />
+                      </Link>
                     </div>
                   </div>
                 </Col>
