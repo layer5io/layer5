@@ -4,7 +4,7 @@ import SEO from "../../../components/seo";
 import HowMesheryWorksHero from "../../../sections/Meshery/How-meshery-works/hero";
 
 import MesheryLogo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-import VisualTopology from "../../../sections/Meshery/How-meshery-works/images/visual-topology.svg";
+import VisualTopology from "../../../assets/images/visual-topology/visual-topology.svg";
 import MesheryOperatorLogo from "../../../sections/Meshery/How-meshery-works/images/meshery-operator-dark.svg";
 import Smi from "../../../assets/images/app/projects/smi.svg";
 import WebA from "../../../sections/Meshery/How-meshery-works/images/webassembly_logo.svg";

@@ -11,7 +11,7 @@ import DiagrammingImageLight from "../../assets/images/AWS-Diagram/aws-light.svg
 import AWSLogoDark from "../../sections/Home/FeaturesContainer/images/aws-logo-dark.svg";
 import AWSLogoLight from "../../sections/Home/FeaturesContainer/images/aws-logo-light.svg";
 import GCPLogo from "../../sections/Home/FeaturesContainer/images/gcp-logo.svg";
-import KubernetesLogo from "../../sections/Kubernetes-Diagram/images/kubernetes-icon.svg";
+import KubernetesLogo from "../../assets/images/learning-path/kubernetes-icon.svg";
 import OrchestrationLight from "./images/orchestration-light.svg";
 import OrchestrationDark from "./images/orchestration.svg";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode.js";
