@@ -57,7 +57,7 @@ const FeaturesCarousel = ({ features, heading }) => {
           arrows={false}
           dots={true}
           infinite= {true}
-          speed="500"
+          speed={500}
           slidesToShow={1}
           slidesToScroll={1}
         >

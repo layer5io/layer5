@@ -5,6 +5,10 @@ export const FeaturesWrapper = styled.div`
       @media (min-width: 768px) {
        display:none;
       }
+      display: block; 
+      min-height: 400px;
+      padding-bottom: 2rem;
+
       img{
         object-fit:contain;
         margin-left:auto;
@@ -13,6 +17,7 @@ export const FeaturesWrapper = styled.div`
      
       .main-heading{
         margin-bottom: 2rem;
+        text-align: center;
       }
 
       .feature {
