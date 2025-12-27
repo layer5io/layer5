@@ -3,14 +3,16 @@ import styled from "styled-components";
 export const FeaturesWrapper = styled.div`
     .features-carousel {
       width: 100%;
-      display: block;
+      display: block !important;
       min-height: 400px;
+      height: auto;
       padding-bottom: 2rem;
-      visibility: visible;
-      opacity: 1;
+      visibility: visible !important;
+      opacity: 1 !important;
+      overflow: visible;
       
-      @media (min-width: 768px) {
-        display: none;
+      @media (min-width: 769px) {
+        display: none !important;
       }
 
       /* Force visibility of slider content */
@@ -76,7 +78,7 @@ export const FeaturesWrapper = styled.div`
     .features {
       display: none;
 
-      @media (min-width: 768px) {
+      @media (min-width: 769px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 40px;
