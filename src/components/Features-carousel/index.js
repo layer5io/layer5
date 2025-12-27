@@ -4,6 +4,8 @@ import { Link } from "gatsby";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 import { FeaturesWrapper } from "./FeaturesCarousel.style";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 const Features = ({ features, heading }) => (
@@ -56,7 +58,7 @@ const FeaturesCarousel = ({ features, heading }) => {
           autoplaySpeed={3500}
           arrows={false}
           dots={true}
-          infinite= {true}
+          infinite={true}
           speed="500"
           slidesToShow={1}
           slidesToScroll={1}
@@ -98,7 +100,7 @@ const Feature = ({ children, title, active, onClick, learnMoreLink, id, Element 
           ? learnMoreLink.startsWith("/")
             ? (
               <Link className="learn-more-link" to={learnMoreLink}>
-          Explore <IoIosArrowRoundForward />
+                Explore <IoIosArrowRoundForward />
               </Link>
             )
             : (
@@ -108,7 +110,7 @@ const Feature = ({ children, title, active, onClick, learnMoreLink, id, Element 
                 target="_blank"
                 rel="noopener noreferrer"
               >
-          Explore <IoIosArrowRoundForward />
+                Explore <IoIosArrowRoundForward />
               </a>
             )
           : null}    {/* No link rendered if learnMoreLink is empty */}
