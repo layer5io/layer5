@@ -41,20 +41,6 @@ export const FeaturesWrapper = styled.div`
       }
 
       .slick-slider{
-        .slick-list {
-          overflow: visible;
-        }
-        
-        .slick-track {
-          display: flex;
-        }
-        
-        .slick-slide {
-          height: auto;
-          > div {
-            height: 100%;
-          }
-        }
         .slick-dots li button:before {
           font-size: 0.6rem;
           color: ${props => props.theme.secondaryColor};
