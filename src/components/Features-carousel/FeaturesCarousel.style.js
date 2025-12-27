@@ -2,9 +2,18 @@ import styled from "styled-components";
 
 export const FeaturesWrapper = styled.div`
     .features-carousel {
+      width: 100%;
+      display:block;
+      min-height: 400px;
+      height: auto;
+      visibility: visible;
+      opacity: 1;
+      overflow: visible;
+
       @media (min-width: 768px) {
        display:none;
       }
+
       img{
         object-fit:contain;
         margin-left:auto;
@@ -82,6 +91,7 @@ export const FeaturesWrapper = styled.div`
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       border-color: ${props => props.theme.grey212121ToBlack};
       padding-top: 0;
+      width: 100%;
       @media (min-width: 768px){
         border-color: ${props => props.theme.grey212121ToBlack};
         background-color: ${props => props.theme.grey212121ToBlack};
@@ -92,7 +102,9 @@ export const FeaturesWrapper = styled.div`
       & .body {
         opacity: 1;
         font-size: 1rem;
-        max-height: 200px;
+        max-height: unset;
+        overflow: visible;
+        color: ${props => props.theme.text};
 
         @media (min-width: 768px){
             color: ${props => props.theme.white};
@@ -101,6 +113,7 @@ export const FeaturesWrapper = styled.div`
 
       & .heading {
         pointer-events: none;
+        color: ${props => props.theme.text};
         @media (min-width: 768px){
             color: ${props => props.theme.white};
         }
@@ -139,6 +152,7 @@ export const FeaturesWrapper = styled.div`
     }
 
     .terminal-wrapper {
+      width: 100%;
       & > div {
         max-width: 100%;
         @media (max-width: 768px) {
