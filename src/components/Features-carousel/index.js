@@ -8,7 +8,7 @@ import Slider from "react-slick";
 
 const Features = ({ features, heading }) => (
   <>
-      {/* carousel rendered at smaller breakpoints */}
+    {/* carousel rendered at smaller breakpoints */}
     <FeaturesCarousel features={features} heading={heading} />
     <FeaturesList features={features} />
   </>
