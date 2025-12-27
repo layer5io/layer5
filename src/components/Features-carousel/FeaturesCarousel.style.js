@@ -37,6 +37,7 @@ export const FeaturesWrapper = styled.div`
       & .body {
         opacity: 1;
         max-height: unset;
+        overflow: visible;
       }
 
       /* nuka-carousel overrides */
