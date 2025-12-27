@@ -2,9 +2,32 @@ import styled from "styled-components";
 
 export const FeaturesWrapper = styled.div`
     .features-carousel {
-      @media (min-width: 768px) {
-       display:none;
+      width: 100%;
+      display: block !important;
+      min-height: 400px;
+      height: auto;
+      padding-bottom: 2rem;
+      visibility: visible !important;
+      opacity: 1 !important;
+      overflow: visible;
+      
+      @media (min-width: 769px) {
+        display: none !important;
       }
+
+      /* Force visibility of slider content */
+      .slick-slider, .slick-list, .slick-track, .slick-slide {
+        display: block !important;
+        min-height: 200px;
+        height: auto;
+        visibility: visible;
+      }
+      .slick-slide > div {
+          height: 100%; /* Ensure inner div takes height */
+          min-height: 200px;
+      }
+
+
       img{
         object-fit:contain;
         margin-left:auto;
@@ -13,6 +36,7 @@ export const FeaturesWrapper = styled.div`
      
       .main-heading{
         margin-bottom: 2rem;
+        text-align: center;
       }
 
       .feature {
@@ -54,7 +78,7 @@ export const FeaturesWrapper = styled.div`
     .features {
       display: none;
 
-      @media (min-width: 768px) {
+      @media (min-width: 769px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 40px;
@@ -82,6 +106,8 @@ export const FeaturesWrapper = styled.div`
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       border-color: ${props => props.theme.grey212121ToBlack};
       padding-top: 0;
+      width: 100%; /* Ensure full width */
+
       @media (min-width: 768px){
         border-color: ${props => props.theme.grey212121ToBlack};
         background-color: ${props => props.theme.grey212121ToBlack};
@@ -92,15 +118,20 @@ export const FeaturesWrapper = styled.div`
       & .body {
         opacity: 1;
         font-size: 1rem;
-        max-height: 200px;
-
+        /* Mobile Specific overrides */
+        max-height: unset !important;
+        overflow: visible !important; 
+        color: ${props => props.theme.text}; /* Ensure text is visible */
+        
         @media (min-width: 768px){
             color: ${props => props.theme.white};
+            max-height: 200px;
         }
       }
 
       & .heading {
         pointer-events: none;
+        color: ${props => props.theme.text}; /* Ensure heading is visible */
         @media (min-width: 768px){
             color: ${props => props.theme.white};
         }
@@ -139,10 +170,14 @@ export const FeaturesWrapper = styled.div`
     }
 
     .terminal-wrapper {
+      width: 100%;  /* Full width on mobile */
+      margin-top: 1rem;
+      
       & > div {
         max-width: 100%;
+        display: block !important; /* Force display */
         @media (max-width: 768px) {
-            maxHeight: 380px;
+            max-height: 380px;
             height: 380px;
             overflow-y:scroll;
         }

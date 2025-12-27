@@ -15,8 +15,18 @@ import img7 from "./feature-images/extensions.webp";
 const MesheryFeaturesWrapper = styled.div`
     margin: auto;
     margin-top: 4rem;
+    width: 100%;
+    display: block;
+    visibility: visible;
+    
     @media (max-width: 32rem){
         margin-top: 4rem;
+    }
+    
+    @media (max-width: 768px){
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
     .feature-expose {
@@ -112,19 +122,19 @@ const MesheryFeatures = () => {
               title: "Cloud Native Catalog and Patterns",
               description:
                 "Access 400+ curated design patterns and templates. Share, clone, and customize designs with built -in best practices for common deployment scenarios.", content: (
-                <div className="feature-expose-full">
-                  <img
-                    src={img4}
-                    alt="Cloud Native Catalog and Patterns"
-                    loading="lazy"
-                  />
-                  <p>
-                    Design configurator with templates from the catalog, version control for
-                    infrastructure configurations, and export to multiple formats including
-                    Kubernetes Manifest, Helm Chart, and Docker Compose.
-                  </p>
-                </div>
-              ),
+                  <div className="feature-expose-full">
+                    <img
+                      src={img4}
+                      alt="Cloud Native Catalog and Patterns"
+                      loading="lazy"
+                    />
+                    <p>
+                      Design configurator with templates from the catalog, version control for
+                      infrastructure configurations, and export to multiple formats including
+                      Kubernetes Manifest, Helm Chart, and Docker Compose.
+                    </p>
+                  </div>
+                ),
               learnMoreLink: "/catalog",
             },
             {
@@ -132,22 +142,22 @@ const MesheryFeatures = () => {
               title: "Environments and GitOps Integration",
               description:
                 "Manage resources as groups with Environments. Get infrastructure snapshots in pull requests and preview deployments before merging changes.", content: (
-                <div className="feature-expose">
-                  <img
-                    src={img5}
-                    alt="Environments and GitOps Integration"
-                    loading="lazy"
-                  />
-                  <p>
-                    Environments make it easier to manage, share, and work with collections
-                    of resources as a group, instead of dealing with connections and credentials individually.
-                  </p>
-                  <p>
-                    Visual insights in GitHub pull requests help verify workload designs
-                    and Kubernetes configurations before accepting and merging changes.
-                  </p>
-                </div>
-              ),
+                  <div className="feature-expose">
+                    <img
+                      src={img5}
+                      alt="Environments and GitOps Integration"
+                      loading="lazy"
+                    />
+                    <p>
+                      Environments make it easier to manage, share, and work with collections
+                      of resources as a group, instead of dealing with connections and credentials individually.
+                    </p>
+                    <p>
+                      Visual insights in GitHub pull requests help verify workload designs
+                      and Kubernetes configurations before accepting and merging changes.
+                    </p>
+                  </div>
+                ),
               learnMoreLink: "/concepts/logical/environments",
             },
             {
@@ -155,18 +165,18 @@ const MesheryFeatures = () => {
               title: "Advanced Policy Management with OPA",
               description:
                 "Context-aware policies for applications using Open Policy Agent integration. Enforce configuration best practices without writing Rego query language.", content: (
-                <div className="feature-expose-full">
-                  <img
-                    src={img6}
-                    alt="Policy Management with OPA"
-                    loading="lazy"
-                  />
-                  <p>
-                    Meshery uses context-aware relationships to define how and when components interrelate with one another.
-                    Meshery supports a variety of relationships between components. These relationships are categorized into two types: semantic and non-semantic.
-                  </p>
-                </div>
-              ),
+                  <div className="feature-expose-full">
+                    <img
+                      src={img6}
+                      alt="Policy Management with OPA"
+                      loading="lazy"
+                    />
+                    <p>
+                      Meshery uses context-aware relationships to define how and when components interrelate with one another.
+                      Meshery supports a variety of relationships between components. These relationships are categorized into two types: semantic and non-semantic.
+                    </p>
+                  </div>
+                ),
               learnMoreLink: "https://docs.meshery.io/concepts/logical/relationships#types-of-relationships",
             },
           ]}

@@ -56,8 +56,8 @@ const FeaturesCarousel = ({ features, heading }) => {
           autoplaySpeed={3500}
           arrows={false}
           dots={true}
-          infinite= {true}
-          speed="500"
+          infinite={true}
+          speed={500}
           slidesToShow={1}
           slidesToScroll={1}
         >
@@ -98,7 +98,7 @@ const Feature = ({ children, title, active, onClick, learnMoreLink, id, Element 
           ? learnMoreLink.startsWith("/")
             ? (
               <Link className="learn-more-link" to={learnMoreLink}>
-          Explore <IoIosArrowRoundForward />
+                Explore <IoIosArrowRoundForward />
               </Link>
             )
             : (
@@ -108,7 +108,7 @@ const Feature = ({ children, title, active, onClick, learnMoreLink, id, Element 
                 target="_blank"
                 rel="noopener noreferrer"
               >
-          Explore <IoIosArrowRoundForward />
+                Explore <IoIosArrowRoundForward />
               </a>
             )
           : null}    {/* No link rendered if learnMoreLink is empty */}
