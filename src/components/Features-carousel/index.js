@@ -7,18 +7,16 @@ import Slider from "react-slick";
 
 
 const Features = ({ features, heading }) => (
-  <>
-    {/* carousel rendered at smaller breakpoints */}
+  <FeaturesWrapper>
     <FeaturesCarousel features={features} heading={heading} />
     <FeaturesList features={features} />
-  </>
+  </FeaturesWrapper>
 );
 
 
 const FeaturesList = ({ features }) => {
   const [activeFeature, setActiveFeature] = useState(0);
   return (
-    <FeaturesWrapper>
       <div className="features">
         <ul className="options">
           {features.map((feature, stableIdx) => (
@@ -42,13 +40,11 @@ const FeaturesList = ({ features }) => {
           </SimpleReactLightbox>
         </div>
       </div>
-    </FeaturesWrapper>
   );
 };
 
 const FeaturesCarousel = ({ features, heading }) => {
   return (
-    <FeaturesWrapper>
       <div className="features-carousel">
         <h2 className="main-heading">{heading ? heading : "Features"}</h2>
         <Slider
@@ -73,7 +69,6 @@ const FeaturesCarousel = ({ features, heading }) => {
           ))}
         </Slider>
       </div>
-    </FeaturesWrapper>
   );
 };
 
