@@ -26,10 +26,11 @@ export const FeaturesWrapper = styled.div`
         }
       }
 
-      .active-feature .body {
+      .feature .body {
         opacity: 1;
         max-height: unset;
         overflow: visible;
+        transition: none;
       }
 
       /* nuka-carousel overrides */
@@ -141,12 +142,13 @@ export const FeaturesWrapper = styled.div`
     }
 
     .terminal-wrapper {
+      width: 100%;
       & > div {
         max-width: 100%;
         @media (max-width: 768px) {
-            max-height: 380px;
-            height: 380px;
-            overflow-y:scroll;
+            max-height: none;
+            height: auto;
+            min-height: 300px;
         }
       }
 
