@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const FeaturesWrapper = styled.div`
     .features-carousel {
+      display: block;
       @media (min-width: 768px) {
        display:none;
       }
