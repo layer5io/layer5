@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const FeaturesWrapper = styled.div`
+    overflow: visible;
+    height: auto;
+    
     .features-carousel {
       width: 100%;
       display:block;
@@ -157,9 +160,9 @@ export const FeaturesWrapper = styled.div`
       & > div {
         max-width: 100%;
         @media (max-width: 768px) {
-            maxHeight: 380px;
-            height: 380px;
-            overflow-y:scroll;
+            max-height: none;
+            height: auto;
+            overflow: visible;
         }
       }
 
