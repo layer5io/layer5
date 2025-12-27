@@ -143,7 +143,7 @@ export const FeaturesWrapper = styled.div`
       & > div {
         max-width: 100%;
         @media (max-width: 768px) {
-            maxHeight: 380px;
+            max-height: 380px;
             height: 380px;
             overflow-y:scroll;
         }
