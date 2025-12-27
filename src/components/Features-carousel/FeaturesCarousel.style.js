@@ -17,6 +17,17 @@ export const FeaturesWrapper = styled.div`
        display:none;
       }
 
+      .slick-slider, .slick-list, .slick-track, .slick-slide {
+        display: block !important;
+        min-height: 200px;
+        height: auto;
+        visibility: visible;
+      }
+      .slick-slide > div {
+          height: 100%; /* Ensure inner div takes height */
+          min-height: 200px;
+      }
+
       img{
         object-fit:contain;
         margin-left:auto;
@@ -106,12 +117,13 @@ export const FeaturesWrapper = styled.div`
       & .body {
         opacity: 1;
         font-size: 1rem;
-        max-height: unset;
+        max-height: auto;
         overflow: visible;
         color: ${props => props.theme.text};
 
         @media (min-width: 768px){
             color: ${props => props.theme.white};
+            max-height: 200px;
         }
       }
 
