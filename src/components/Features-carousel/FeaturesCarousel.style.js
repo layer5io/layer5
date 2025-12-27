@@ -3,21 +3,26 @@ import styled from "styled-components";
 export const FeaturesWrapper = styled.div`
     .features-carousel {
       width: 100%;
-      @media (min-width: 768px) {
-       display:none;
-      }
-      display: block; 
+      display: block;
       min-height: 400px;
       padding-bottom: 2rem;
+      visibility: visible;
+      opacity: 1;
+      
+      @media (min-width: 768px) {
+        display: none;
+      }
 
       /* Force visibility of slider content */
       .slick-slider, .slick-list, .slick-track, .slick-slide {
-        display: block;
+        display: block !important;
         min-height: 200px;
         height: auto;
+        visibility: visible;
       }
       .slick-slide > div {
           height: 100%; /* Ensure inner div takes height */
+          min-height: 200px;
       }
 
 
