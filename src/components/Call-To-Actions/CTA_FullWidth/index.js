@@ -85,7 +85,7 @@ const CTA_FullWidthWrapper = styled.div`
             position: static;
             opacity: 1;
             border-radius: 0.25rem;
-            padding: 2rem;
+            padding: 1rem;
         }
 
         .cta-content {
