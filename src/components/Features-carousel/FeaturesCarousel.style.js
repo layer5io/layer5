@@ -17,7 +17,14 @@ export const FeaturesWrapper = styled.div`
        display:none;
       }
 
-      .slick-slider, .slick-list, .slick-track, .slick-slide {
+      .slick-slider, .slick-list {
+        display: block;
+        position: relative;
+        max-height: 400px;
+        visibility: visible;
+      }
+
+      .slick-track, .slick-slide {
         display: block !important;
         min-height: auto;
         height: auto;
@@ -25,7 +32,7 @@ export const FeaturesWrapper = styled.div`
       }
       .slick-slide > div {
           height: 100%; /* Ensure inner div takes height */
-          min-height: auto;
+          min-height: 400px;
       }
 
       img{
