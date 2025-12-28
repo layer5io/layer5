@@ -1,9 +1,5 @@
 
 import React, { useRef, useState, useLayoutEffect } from "react";
-// NOTE: useLayoutEffect is used intentionally here (instead of useEffect) so
-// that we can compute the correct `slidesToShow` value before the browser
-// paints the component. This avoids a visual flash where the slider briefly
-// renders with the desktop slide count and then corrects itself on mount.
 import styled from "styled-components";
 import Customers from "../../reusecore/Blockquote/Blockquote-image";
 import Slider from "react-slick";
