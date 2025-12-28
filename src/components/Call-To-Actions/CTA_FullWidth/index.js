@@ -6,9 +6,9 @@ import { Categories } from "./cta_fullwidth_categories";
 
 const CTA_FullWidthWrapper = styled.div`
     display: flex;
-    flex: 0 0 100%;
+    flex-wrap: wrap;
     width: 98%;
-    height: 16rem;
+    min-height: 16rem;
     margin: 1.5rem auto;
     box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem;
@@ -24,36 +24,42 @@ const CTA_FullWidthWrapper = styled.div`
         object-fit: cover;
         pointer-events: none;
         border-radius: 0.5rem 0 0 0.5rem;
-        padding: 2rem;
+        padding: 1.5rem;
     }
 
     .cta-content {
-        padding: 0.5rem;
+        padding: 2rem;
         display: flex;
-        flex: auto;
+        flex: 1;
         text-align: center;
         align-items: center;
+        justify-content: space-around;
+        gap: 2rem;
         height: 100%;
 
         div {
-          flex: 0 0 75%;
+          flex: 0 1 70%;
         }
 
         p {
             margin-top: 0.5rem;
         }
         a {
-            flex: 0 0 25%;
+            flex: 0 0 auto;
         }
     }
 
     @media screen and (max-width: 1200px) {
       .cta-content {
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
         div {
-            flex: 0 0 65%;
+            flex: 0 0 auto;
+            width: 100%;
         }
         a {
-            flex: 0 0 35%;
+            flex: 0 0 auto;
         }
       }
     }
@@ -65,30 +71,34 @@ const CTA_FullWidthWrapper = styled.div`
     }
 
     @media screen and (max-width: 699px) {
-        display: block;
-        width: 18rem;
-        height: 18rem;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
         margin: 1.5rem auto;
         border-radius: 0.25rem;
 
         img {
-            width: 18rem;
-            height: 18rem;
-            position: absolute;
-            opacity: 0.35;
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            position: static;
+            opacity: 1;
             border-radius: 0.25rem;
+            padding: 2rem;
         }
 
         .cta-content {
-            position: absolute;
-            height: 18rem;
-            display: block;
-            width: 18rem;
+            position: static;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
             background: none;
-            padding: 4rem 1rem;
+            padding: 1.5rem 2rem 3rem 2rem;
 
             p {
-                color: white;
+                color: inherit;
             }
         }
     }
