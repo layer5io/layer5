@@ -18,7 +18,7 @@ export const FeaturesWrapper = styled.div`
       }
 
       .slick-slider, .slick-list {
-        display: block;
+        display: block !important;
         position: relative;
         max-height: 400px;
         visibility: visible;
@@ -122,7 +122,7 @@ export const FeaturesWrapper = styled.div`
       }
 
       & .body {
-        opacity: 1;
+        opacity: 1 !important;
         font-size: 1rem;
         max-height: 100vh;
         overflow: visible;
