@@ -1,5 +1,9 @@
 
-import React from "react";
+import React, { useRef, useState, useLayoutEffect } from "react";
+// NOTE: useLayoutEffect is used intentionally here (instead of useEffect) so
+// that we can compute the correct `slidesToShow` value before the browser
+// paints the component. This avoids a visual flash where the slider briefly
+// renders with the desktop slide count and then corrects itself on mount.
 import styled from "styled-components";
 import Customers from "../../reusecore/Blockquote/Blockquote-image";
 import Slider from "react-slick";
@@ -33,28 +37,22 @@ const settings = {
     {
       breakpoint: 1300,
       settings: {
-        slidesToShow: 2.5,
+        slidesToShow: 2,
+        slidesToScroll: 1,
       }
     },
     {
       breakpoint: 1024,
       settings: {
         slidesToShow: 2,
+        slidesToScroll: 1,
       }
     },
     {
       breakpoint: 800,
       settings: {
-        slidesToShow: 1.5,
-        slidesToScroll: 0.5,
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplaySpeed: 2000,
       }
     }
   ]
@@ -81,15 +79,101 @@ max-width: 100%;
     opacity: 1;
   }
 
+  /* Prevent extreme shrinking on mobile */
+  .slick-slide > div { min-width: 0; }
+  .slider .type-one-wrapper { width: 100%; max-width: none; margin: 0 0.5rem; }
+
+  @media (max-width: 768px) {
+    .type-one-wrapper.type-one-wrapper-boxed { max-width: none; padding: 0; }
+    .type-one-quote .type-one-quote-base,
+    .type-two-quote .type-two-quote-base { padding-left: 30px; padding-right: 30px; }
+  }
+
 `;
 
 
 const Reviews = () => {
+  const [isClient, setIsClient] = useState(false);
+  const [slidesToShowState, setSlidesToShowState] = useState(null);
+  const sliderRef = useRef(null);
+
+  /* Merge runtime slidesToShow into settings and disable internal responsive handling.
+     We disable the internal `responsive` array here because we compute the
+     desired `slidesToShow` at runtime (based on window width) and pass it
+     directly to the slider to avoid conflicting calculations and race
+     conditions that can occur during initial mount. */
+  const mergedSettings = {
+    ...settings,
+    slidesToShow: slidesToShowState || 1,
+    slidesToScroll: 1,
+    responsive: []
+  };
+
+  /* computeSlides: determine the appropriate slidesToShow based on the
+     current window width. This centralises the breakpoint logic so we can
+     compute the initial value synchronously and reuse it in resize handlers. */
+  const computeSlides = () => {
+    const w = typeof window !== "undefined" ? (window.innerWidth || document.documentElement.clientWidth) : 1200;
+    if (w <= 800) return 1;
+    if (w <= 1024) return 2;
+    return 3;
+  };
+
+  useLayoutEffect(() => {
+    /* Initialise slider state synchronously before paint to avoid a flash of
+       incorrect layout. We set slidesToShowState here so the Slider mounts with
+       the right number of slides on initial render.
+
+       onResizeDebounced: debounced handler that recomputes slides and asks
+       the react-slick instance to remeasure (via onWindowResized). Debounce
+       helps avoid rapid repeated calls during a resize gesture.
+
+       onLoad: we also listen for the window "load" event and each slide image
+       "load" event because images can change the layout width; when an image
+       finishes loading we rerun the debounced handler to ensure the slider
+       recalculates correctly.
+    */
+    setIsClient(true);
+    setSlidesToShowState(computeSlides());
+
+    let resizeTimeout = null;
+    const onResizeDebounced = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        const slides = computeSlides();
+        setSlidesToShowState((prev) => {
+          if (prev !== slides) return slides;
+          return prev;
+        });
+        if (sliderRef.current && sliderRef.current.innerSlider && typeof sliderRef.current.innerSlider.onWindowResized === "function") {
+          sliderRef.current.innerSlider.onWindowResized();
+        }
+      }, 100);
+    };
+
+    const onLoad = () => onResizeDebounced();
+
+    window.addEventListener("resize", onResizeDebounced);
+    window.addEventListener("load", onLoad);
+    const imgs = document.querySelectorAll(".slider img");
+    imgs.forEach((img) => img.addEventListener("load", onLoad));
+
+    return () => {
+      window.removeEventListener("resize", onResizeDebounced);
+      window.removeEventListener("load", onLoad);
+      imgs.forEach((img) => img.removeEventListener("load", onLoad));
+      clearTimeout(resizeTimeout);
+    };
+  }, []);
+
+  if (!isClient || slidesToShowState === null) return null;
+
   return (
     <ReviewsWrapper>
       <div className="slider">
         <h2>Hear what other users have to say...</h2>
-        <Slider {...settings}>
+        {/* key property will force React to remount the Slider when slidesToShowState changes. */}
+        <Slider key={`review-slider-${slidesToShowState}`} ref={sliderRef} {...mergedSettings}>
           {/* <Customers
             type="1"
             quote="The Meshery Extension transforms Docker Desktop into a powerful load generation utility, conveniently enabling me to deploy and configure any service mesh with a click of the button and invoke and control load-based performance tests from my desktop."
