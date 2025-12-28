@@ -24,6 +24,7 @@ const CTA_FullWidthWrapper = styled.div`
         object-fit: cover;
         pointer-events: none;
         border-radius: 0.5rem 0 0 0.5rem;
+        padding: 2rem;
     }
 
     .cta-content {
