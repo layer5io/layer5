@@ -93,11 +93,6 @@ const Reviews = () => {
   const [slidesToShowState, setSlidesToShowState] = useState(null);
   const sliderRef = useRef(null);
 
-  /* Merge runtime slidesToShow into settings and disable internal responsive handling.
-     We disable the internal `responsive` array here because we compute the
-     desired `slidesToShow` at runtime (based on window width) and pass it
-     directly to the slider to avoid conflicting calculations and race
-     conditions that can occur during initial mount. */
   const mergedSettings = {
     ...settings,
     slidesToShow: slidesToShowState || 1,
@@ -105,9 +100,6 @@ const Reviews = () => {
     responsive: []
   };
 
-  /* computeSlides: determine the appropriate slidesToShow based on the
-     current window width. This centralises the breakpoint logic so we can
-     compute the initial value synchronously and reuse it in resize handlers. */
   const computeSlides = () => {
     const w = typeof window !== "undefined" ? (window.innerWidth || document.documentElement.clientWidth) : 1200;
     if (w <= 800) return 1;
@@ -116,19 +108,7 @@ const Reviews = () => {
   };
 
   useLayoutEffect(() => {
-    /* Initialise slider state synchronously before paint to avoid a flash of
-       incorrect layout. We set slidesToShowState here so the Slider mounts with
-       the right number of slides on initial render.
 
-       onResizeDebounced: debounced handler that recomputes slides and asks
-       the react-slick instance to remeasure (via onWindowResized). Debounce
-       helps avoid rapid repeated calls during a resize gesture.
-
-       onLoad: we also listen for the window "load" event and each slide image
-       "load" event because images can change the layout width; when an image
-       finishes loading we rerun the debounced handler to ensure the slider
-       recalculates correctly.
-    */
     setIsClient(true);
     setSlidesToShowState(computeSlides());
 
@@ -168,7 +148,6 @@ const Reviews = () => {
     <ReviewsWrapper>
       <div className="slider">
         <h2>Hear what other users have to say...</h2>
-        {/* key property will force React to remount the Slider when slidesToShowState changes. */}
         <Slider key={`review-slider-${slidesToShowState}`} ref={sliderRef} {...mergedSettings}>
           {/* <Customers
             type="1"
