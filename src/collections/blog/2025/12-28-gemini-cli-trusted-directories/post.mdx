@@ -5,7 +5,7 @@ date: 2025-12-28 10:30:05 -0530
 author: Layer5 Team
 thumbnail: ./gemini-cli-hero.png
 darkthumbnail: ./gemini-cli-hero.png
-description: "Learn how to configure Gemini CLI trusted directories through interactive prompts, commands, or manual configuration to eliminate repetitive approval prompts and accelerate your AI-powered development workflow."
+description: "Configure Gemini CLI trusted directories via interactive prompts, commands, or manual editing to eliminate approval prompts and accelerate your workflow."
 type: Blog
 category: AI
 tags:
@@ -214,7 +214,7 @@ cp ~/.gemini/trustedFolders.json ~/.gemini/trustedFolders.json.backup
 nano ~/.gemini/trustedFolders.json
 
 # Verify JSON syntax (optional but recommended)
-python3 -c "import json; json.load(open('$HOME/.gemini/trustedFolders.json'))"
+python3 -m json.tool "$HOME/.gemini/trustedFolders.json" > /dev/null
 ```
 
 <Blockquote
