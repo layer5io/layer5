@@ -19,13 +19,13 @@ export const FeaturesWrapper = styled.div`
 
       .slick-slider, .slick-list, .slick-track, .slick-slide {
         display: block !important;
-        min-height: 200px;
+        min-height: auto;
         height: auto;
         visibility: visible;
       }
       .slick-slide > div {
           height: 100%; /* Ensure inner div takes height */
-          min-height: 200px;
+          min-height: auto;
       }
 
       img{
