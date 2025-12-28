@@ -17,58 +17,63 @@ const Features = ({ features, heading }) => (
 const FeaturesList = ({ features }) => {
   const [activeFeature, setActiveFeature] = useState(0);
   return (
-      <div className="features">
-        <ul className="options">
-          {features.map((feature, stableIdx) => (
-            <Feature
-              id={stableIdx}
-              key={stableIdx}
-              title={feature.title}
-              active={stableIdx === activeFeature}
-              onClick={setActiveFeature}
-              learnMoreLink={feature.learnMoreLink}
-            >
-              {feature.description}
-            </Feature>
-          ))}
-        </ul>
-        <div className="terminal-wrapper">
-          <SimpleReactLightbox>
-            <SRLWrapper>
-              {features[activeFeature].content}
-            </SRLWrapper>
-          </SimpleReactLightbox>
-        </div>
+    <div className="features">
+      <ul className="options">
+        {features.map((feature, stableIdx) => (
+          <Feature
+            id={stableIdx}
+            key={stableIdx}
+            title={feature.title}
+            active={stableIdx === activeFeature}
+            onClick={setActiveFeature}
+            learnMoreLink={feature.learnMoreLink}
+          >
+            {feature.description}
+          </Feature>
+        ))}
+      </ul>
+      <div className="terminal-wrapper">
+        <SimpleReactLightbox>
+          <SRLWrapper>
+            {features[activeFeature].content}
+          </SRLWrapper>
+        </SimpleReactLightbox>
       </div>
+    </div>
   );
 };
 
 const FeaturesCarousel = ({ features, heading }) => {
   return (
-      <div className="features-carousel">
-        <h2 className="main-heading">{heading ? heading : "Features"}</h2>
-        <Slider
-          autoplay={true}
-          autoplaySpeed={3500}
-          arrows={false}
-          dots={true}
-          infinite= {true}
-          speed="500"
-          slidesToShow={1}
-          slidesToScroll={1}
-        >
-          {features.map((feature, stableIdx) => (
-            <div key={stableIdx}>
-              <Feature Element="div" id={feature.id} title={feature.title} active>
-                {feature.description}
-              </Feature>
-              <div className="terminal-wrapper">
-                {features[stableIdx].content}
-              </div>
+    <div className="features-carousel">
+      <h2 className="main-heading">{heading ? heading : "Features"}</h2>
+      <Slider
+        autoplay={true}
+        autoplaySpeed={3500}
+        arrows={false}
+        dots={true}
+        infinite={true}
+        speed={500}
+        slidesToShow={1}
+        slidesToScroll={1}
+        swipe={true}
+        lazyLoad="ondemand"
+        waitForAnimate={false}
+        useCSS={true}
+        useTransform={false}
+      >
+        {features.map((feature, stableIdx) => (
+          <div key={stableIdx}>
+            <Feature Element="div" id={feature.id} title={feature.title} active>
+              {feature.description}
+            </Feature>
+            <div className="terminal-wrapper">
+              {features[stableIdx].content}
             </div>
-          ))}
-        </Slider>
-      </div>
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 };
 
@@ -93,7 +98,7 @@ const Feature = ({ children, title, active, onClick, learnMoreLink, id, Element 
           ? learnMoreLink.startsWith("/")
             ? (
               <Link className="learn-more-link" to={learnMoreLink}>
-          Explore <IoIosArrowRoundForward />
+                Explore <IoIosArrowRoundForward />
               </Link>
             )
             : (
@@ -103,7 +108,7 @@ const Feature = ({ children, title, active, onClick, learnMoreLink, id, Element 
                 target="_blank"
                 rel="noopener noreferrer"
               >
-          Explore <IoIosArrowRoundForward />
+                Explore <IoIosArrowRoundForward />
               </a>
             )
           : null}    {/* No link rendered if learnMoreLink is empty */}
