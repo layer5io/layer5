@@ -59,7 +59,7 @@ const FeaturesCarousel = ({ features, heading }) => {
         swipe={true}
         lazyLoad="ondemand"
         waitForAnimate={false}
-        fade={true}
+
       >
         {features.map((feature, stableIdx) => (
           <div key={stableIdx}>

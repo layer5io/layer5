@@ -18,14 +18,14 @@ export const FeaturesWrapper = styled.div`
       }
 
       .slick-slider, .slick-list {
-        display: block !important;
+        display: block;
         position: relative;
         max-height: 400px;
         visibility: visible;
       }
 
       .slick-track, .slick-slide {
-        display: block !important;
+        display: block;
         min-height: auto;
         height: auto;
         visibility: visible;
