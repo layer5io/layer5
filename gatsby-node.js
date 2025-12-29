@@ -11,6 +11,8 @@ const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
 const config = require("./gatsby-config");
+const isDevelopment = process.env.NODE_ENV === "development";
+const isProduction = process.env.NODE_ENV === "production";
 const {
   componentsData,
 } = require("./src/sections/Projects/Sistent/components/content");
@@ -59,7 +61,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const envCreatePage = (props) => {
     if (process.env.CI === "true") {
       const { path, matchPath, ...rest } = props;
-
+      const isHandbookPage = path.startsWith("/community/handbook/");
       createRedirect({
         fromPath: `/${path}/`,
         toPath: `/${path}`,
@@ -68,7 +70,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       });
 
       return createPage({
-        path: `${path}.html`,
+        path: isHandbookPage ? path : `${path}.html`,
         matchPath: matchPath || path,
         ...rest,
       });
@@ -135,6 +137,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     `
     : "";
 
+  const HandbookTemplate = path.resolve("src/templates/handbook-template.js");
+
+
   const res = await graphql(`
     {
       allPosts: allMdx(filter: { frontmatter: { published: { eq: true } } }) {
@@ -146,6 +151,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           fields {
             collection
             slug
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+      handbookPages: allMdx(
+        filter: { fields: { collection: { eq: "handbook" } } }
+      ) {
+        nodes {
+          fields {
+            slug
+            collection
           }
           internal {
             contentFilePath
@@ -250,6 +268,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const careers = filterByCollection("careers");
   const members = filterByCollection("members");
   const integrations = filterByCollection("integrations");
+
+  const handbook = res.data.handbookPages.nodes;
+
 
   const singleWorkshop = res.data.singleWorkshop.nodes;
   const labs = res.data.labs.nodes;
@@ -411,6 +432,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       });
     });
   }
+
+  handbook.forEach((page) => {
+    envCreatePage({
+      path: page.fields.slug,
+      component: `${HandbookTemplate}?__contentFilePath=${page.internal.contentFilePath}`,
+      context: {
+        slug: page.fields.slug,
+      },
+    });
+  });
+
 
   programs.forEach((program) => {
     envCreatePage({
@@ -667,6 +699,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         case "members":
           if (node.frontmatter.published)
             slug = `/community/members/${node.frontmatter.permalink ?? slugify(node.frontmatter.name)}`;
+          break;
+        case "handbook":
+          slug = `/community/handbook/${slugify(node.frontmatter.title)}`;
           break;
         case "events":
           if (node.frontmatter.title)
