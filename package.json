@@ -10,9 +10,10 @@
     "url": "https://layer5.io"
   },
   "scripts": {
-    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 gatsby build",
+    "build": "cross-env BUILD_FULL_SITE=true NODE_OPTIONS=--max-old-space-size=8192 gatsby build",
     "clean": "gatsby clean && rimraf node_modules",
-    "develop": "cross-env NODE_OPTIONS=--max-old-space-size=8192 env-cmd -f .env.development gatsby develop",
+    "develop": "cross-env BUILD_FULL_SITE=true NODE_OPTIONS=--max-old-space-size=8192 env-cmd -f .env.development gatsby develop",
+    "develop:lite": "cross-env BUILD_FULL_SITE=false NODE_OPTIONS=--max-old-space-size=8192 env-cmd -f .env.development gatsby develop",
     "dev": "npm run develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -39,14 +40,14 @@
     "@mdx-js/mdx": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
     "@mediacurrent/gatsby-plugin-silence-css-order-warning": "^1.0.0",
-    "@mui/icons-material": "^6.4.6",
+    "@mui/icons-material": "^7.3.5",
     "@mui/material": "^7.3.4",
     "@react-icons/all-files": "^4.1.0",
     "@sistent/sistent": "^0.15.12",
     "@svgr/webpack": "^8.0.1",
-    "@types/mui-datatables": "^4.3.12",
+    "@types/mui-datatables": "^4.3.13",
     "ajv": "^8.17.1",
-    "axios": "^1.7.3",
+    "axios": "^1.13.2",
     "babel-plugin-styled-components": "^2.1.4",
     "babel-preset-gatsby": "^3.11.0",
     "cytoscape": "^3.23.0",
@@ -103,7 +104,7 @@
     "react-scroll": "^1.9.0",
     "react-select": "^5.10.0",
     "react-share": "^4.4.1",
-    "react-slick": "^0.30.3",
+    "react-slick": "^0.31.0",
     "react-table": "^7.8.0",
     "react-tabs": "^6.0.2",
     "react-tooltip": "^5.30.0",
@@ -141,7 +142,7 @@
     "gh-pages": "^6.0.0",
     "globals": "^16.5.0",
     "husky": "^8.0.3",
-    "rimraf": "^5.0.1",
+    "rimraf": "^6.1.2",
     "webpack-cli": "^6.0.1"
   }
 }

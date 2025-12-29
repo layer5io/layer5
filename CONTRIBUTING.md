@@ -500,6 +500,30 @@ Make sure you have the following prerequisites installed on your operating syste
 
 ## Set up your Local Development Environment
 
+### Make Targets
+
+Layer5 uses a `Makefile` that defines a set of rules and instructions (called **targets**) for creating, updating, and running parts of the project. Each target abstracts the underlying commands and logic, allowing  to execute complex workflows using a simple `make <target>` command.
+
+> **Note:** While using the make command on Windows, there sometimes arises an error in identifying the command even after it is installed (unrecognized command), this is because the PATH for the binary might not be set correctly.
+
+To see the complete and current list of available make targets along with a short description of what each one does, simply run the following command from the root of the project:
+
+```bash
+make
+```
+
+### Environment Variables
+
+Environment variables are named values used to configure how an application behaves in different environments without modifying the code.
+
+| Variable | Possible Values | Description |
+|---------|----------------|------------|
+| `BUILD_FULL_SITE` | `true`, `false` | When set to `true`, enables a full site build including all collections. If not explicitly set to `true`, the project defaults to a lightweight build. |
+| `NODE_ENV` | `development`, `production` | Determines the build and rendering mode used by Gatsby. This is automatically set by Gatsby. <br><br>• `development` - Uses **Deferred Static Generation (DSG)** i.e pages built on demand for faster startup.  <br>• `production` - Uses **Server-Side Rendering (SSR)** i.e pages rendered on each request for fresh content. |
+| `CI` | `true`, `false` | Indicates that the build is running in a **Continuous Integration (CI)** environment (e.g., GitHub Actions). When set to `true`, special logic is applied to page paths and redirects for GitHub Pages compatibility. This is typically set automatically by the CI system and does not need to be configured manually. |
+
+---
+
 Follow the following instructions to start contributing.
 
 **1.** Fork [this](https://github.com/layer5io/layer5) repository.
@@ -554,7 +578,7 @@ make setup
 make site
 ```
 
-This will run a local webserver with "live reload" conveniently enabled. ( **NOTE**: while using the make command on Windows, there sometimes arises an error in identifying the command even after it is installed (unrecognized command), this is because the PATH for the binary might not be set correctly ).
+This will run a local webserver with "live reload" conveniently enabled.
 
 **11.** Track your changes.
 

@@ -4,8 +4,17 @@ const FeaturesSectionWrapper = styled.section`
 
 	background-color: black;
 	transform: skew(0deg, -6deg);
-	padding-bottom:5rem;
-	margin-bottom: 10%;
+	padding-bottom: 5rem;
+	margin-bottom: 8rem;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	max-width: 100%;
+	contain: layout style paint;
+	transform-origin: center;
+	z-index: 1;
+	height: auto;
+	isolate: isolate;
 	.skw{
 		display: grid;
 		position: relative;
@@ -48,6 +57,8 @@ const FeaturesSectionWrapper = styled.section`
 		transform: skew(0deg, 6deg);
 		padding: 0 1rem 3rem;
 		text-align: center;
+		position: relative;
+		z-index: 1;
 		h1, h2, p {
 			color: white;
 		}
@@ -78,6 +89,7 @@ const FeaturesSectionWrapper = styled.section`
 	.smp-section {
 		margin: 3rem auto;
 		max-width: 85%;
+		overflow: hidden;
 
 		.smp-section-row {
 			margin: 4rem 0;
@@ -98,8 +110,10 @@ const FeaturesSectionWrapper = styled.section`
 
 		.smp-section-caraousel {
 			.slick-slider {
+			    max-height: 520px;
 				.slick-list {
 					max-width: 50rem;
+					max-height: 520px;
 
 					.slick-slide {
 						img {
@@ -164,6 +178,7 @@ const FeaturesSectionWrapper = styled.section`
 
 	@media screen and (max-width: 1200px) {
 		padding-bottom: 2rem;
+		margin-bottom: 6rem;
 
 		.smp-section {
 			.smp-section-row {
@@ -191,6 +206,7 @@ const FeaturesSectionWrapper = styled.section`
 
 	@media screen and (max-width: 960px) {
 		padding-bottom: 0rem;
+		margin-bottom: 4rem;
 		.smp-section .smp-section-caraousel .slick-slider .slick-list {
 			.slick-slide {
 				img {

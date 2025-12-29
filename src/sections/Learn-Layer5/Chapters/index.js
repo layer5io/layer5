@@ -18,7 +18,7 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
   const serviceMeshImages = courseData.frontmatter.meshesYouLearn || [];
   const tableOfContents = TOCData
     .filter(node => !!node.fields.section)
-    .map( toc => ({ section: toc.fields.section, chapter: toc.fields.chapter }) );
+    .map(toc => ({ section: toc.fields.section, chapter: toc.fields.chapter }));
 
 
   const replaceSlugPart = (index) => (oldSlug) => (replacement) => {
@@ -30,7 +30,12 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
   const replaceChapterInSlug = (slugWithReplacedMesh) => replaceSlugPart(5)(slugWithReplacedMesh);
 
   useEffect(() => {
-    localStorage.setItem(`bookmarkpath-${location.pathname.split("/")[4]}`, location.pathname);
+
+    let bookmarkPath = location.pathname;
+    if (bookmarkPath.endsWith(".html")) {
+      bookmarkPath = bookmarkPath.replace(".html", "");
+    }
+    localStorage.setItem(`bookmarkpath-${location.pathname.split("/")[4]}`, bookmarkPath);
   }, []);
 
   const isMeshActive = (sm) => chapterData.fields.slug.split("/")[4] === sm;
@@ -38,21 +43,22 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
   const mapMeshWithFormattedSlug = (sm, serviceMeshes) => {
     let chapterFound = false;
     tableOfContents.forEach(toc => {
-      if (toc.section === sm.fields.section){
+      if (toc.section === sm.fields.section) {
         if (toc.chapter === chapterData.fields.slug.split("/")[5]) chapterFound = true;
       }
     });
 
     if (!serviceMeshes.map(sm => sm.section).includes(sm.fields.section))
-      serviceMeshes.push({ section: sm.fields.section, slug: chapterFound ?
-        replaceServiceMeshInSlug( sm.fields.section)
-        : replaceChapterInSlug(replaceServiceMeshInSlug(sm.fields.section))(tableOfContents[0].chapter) });
+      serviceMeshes.push({
+        section: sm.fields.section, slug: chapterFound ?
+          replaceServiceMeshInSlug(sm.fields.section)
+          : replaceChapterInSlug(replaceServiceMeshInSlug(sm.fields.section))(tableOfContents[0].chapter)
+      });
 
   };
 
   const getAvailableServiceMeshes = () => {
     let serviceMeshes = [];
-    console.log("serviceMeshList", serviceMeshesList);
     serviceMeshesList.forEach(sm => {
       mapMeshWithFormattedSlug(sm, serviceMeshes);
     });
@@ -62,15 +68,40 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
   const availableServiceMeshesArray = getAvailableServiceMeshes();
 
   const findServiceMeshImage = (images, serviceMesh) => images.find(image => image.name.toLowerCase() == serviceMesh);
+  const hasMeshImageData = (meshImage) => {
+    const imagePath = meshImage?.imagepath;
+    return Boolean(imagePath?.childImageSharp?.gatsbyImageData || imagePath?.publicURL);
+  };
   const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
+  const missingServiceMeshImages = availableServiceMeshesArray
+    .filter(({ section }) => {
+      const meshImage = findServiceMeshImage(serviceMeshImages, section);
+      return !hasMeshImageData(meshImage);
+    })
+    .map(({ section }) => section);
+
+  if (missingServiceMeshImages.length > 0) {
+    const context = chapterData?.fields?.slug || "unknown-chapter";
+    throw new Error(`[Chapters] Missing meshesYouLearn image data for: ${missingServiceMeshImages.join(", ")} (chapter: ${context}).`);
+  }
+
   const ServiceMeshesAvailable = ({ serviceMeshes }) => serviceMeshes.map((sm, index) => {
+    const meshImage = findServiceMeshImage(serviceMeshImages, sm.section);
+
+    if (!meshImage?.imagepath) {
+      if (process.env.NODE_ENV === "development") {
+        console.warn(`[Chapters] Missing meshesYouLearn image data for: ${sm.section} (chapter: ${chapterData.fields.slug})`);
+      }
+      return null;
+    }
+
     return (
-      <>
-        <div className={`service-mesh-image ${isMeshActive(sm.section) ? "service-mesh-image-active" : ""}`} key={index}>
+      <React.Fragment key={sm.section || index}>
+        <div className={`service-mesh-image ${isMeshActive(sm.section) ? "service-mesh-image-active" : ""}`}>
           <Link to={`/${sm.slug}`} data-tooltip-id="mesh-name" data-tooltip-content={capitalize(sm.section)} className="course" key={index}>
             <Image
-              {...findServiceMeshImage(serviceMeshImages, sm.section).imagepath}
+              {...meshImage.imagepath}
               className="docker"
               alt={sm.section}
             />
@@ -83,10 +114,10 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
           style={{ backgroundColor: "rgb(60,73,79)" }}
           className="mesh-tooltip"
         />
-      </>);
+      </React.Fragment>);
   });
 
-  if (showQuizModal){
+  if (showQuizModal) {
     return <QuizModal />;
   }
 
@@ -99,7 +130,7 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
             <div className="toc-switcher-parent-div">
               <TOC courseData={courseData} TOCData={TOCData} chapterData={chapterData} location={location} />
               <div>
-                { serviceMeshImages.length !== 0 && availableServiceMeshesArray.length != 0 && (
+                {serviceMeshImages.length !== 0 && availableServiceMeshesArray.length != 0 && (
                   <>
                     <h4>Technologies Available</h4>
                     <div className="service-mesh-switcher">
