@@ -6,7 +6,6 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards, Pagination, Navigation, Autoplay } from "swiper/modules";
 import dragDrop from "../images/drag-drop-components.gif";
-import mergeDesign from "../images/merge-design.gif";
 import connectComponents from "../images/connect-components.gif";
 import shareDesign from "../images/share-design.gif";
 
@@ -21,7 +20,7 @@ const CONTENT = [
   },
   {
     title: "Understand your infrastructure with visualization and automation",
-    img: mergeDesign,
+    img: "/static/images/merge-design.gif",
     description:
       "Kanvaselps your team automate infrastructure understanding from the architecture to a single PR so your team can ship, refactor and onboard to legacy or existing applications faster.",
     gradient: "two",

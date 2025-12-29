@@ -7,7 +7,6 @@ import RelatedPicks from "../../components/RelatedPicks";
 import ConfigGIF from "./images/config.gif";
 import DeployGIF from "./images/deploy.gif";
 import DragDropGIF from "./images/drag-drop.gif";
-import IconLibraryGIF from "./images/icon-library.gif";
 import { Link } from "gatsby";
 
 const DiagramWrapper = styled.div`
@@ -192,7 +191,7 @@ const Aws = () => {
           </Col>
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={IconLibraryGIF} alt="AWS Diagrams for anything" className="AWS-image" />
+              <img src="/static/images/icon-library.gif" alt="AWS Diagrams for anything" className="AWS-image" />
             </div>
           </Col>
         </Row>

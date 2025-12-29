@@ -6,7 +6,6 @@ import GCPCatalogDark from "./images/gcp-catalog-dark.svg";
 import RelatedPicks from "../../components/RelatedPicks";
 // import DeployGIF from "./images/gcp-deploy.gif";
 import DragNDropGIF from "./images/gcp-drag-drop.gif";
-import IconsLibraryGIF from "./images/gcp-icon-library.gif";
 import { Link } from "gatsby";
 
 const DiagramWrapper = styled.div`
@@ -183,7 +182,7 @@ const Gcp = () => {
           </Col>
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={IconsLibraryGIF} alt="GCP Diagrams for anything" className="GCP-image" />
+              <img src="/static/images/gcp-icon-library.gif" alt="GCP Diagrams for anything" className="GCP-image" />
             </div>
           </Col>
         </Row>
