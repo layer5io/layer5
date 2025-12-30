@@ -13,7 +13,7 @@ const CTA_FullWidthWrapper = styled.div`
     border-radius: 0.5rem;
     background: rgba(201, 252, 246, 0.3);
 
-    ${props => props.$isLayer5Icon ? `
+    ${props => props.$imageType === "logo" ? `
         flex-wrap: wrap;
         min-height: 16rem;
         height: auto;
@@ -32,7 +32,7 @@ const CTA_FullWidthWrapper = styled.div`
         pointer-events: none;
         border-radius: 0.5rem 0 0 0.5rem;
 
-        ${props => props.$isLayer5Icon && `
+        ${props => props.$imageType === "logo" && `
             padding: 1.5rem;
             object-fit: contain;
         `}
@@ -44,7 +44,7 @@ const CTA_FullWidthWrapper = styled.div`
         align-items: center;
         height: 100%;
         
-        ${props => props.$isLayer5Icon ? `
+        ${props => props.$imageType === "logo" ? `
             padding: 2rem;
             flex: 1;
             justify-content: space-around;
@@ -55,7 +55,7 @@ const CTA_FullWidthWrapper = styled.div`
         `}
 
         div {
-        ${props => props.$isLayer5Icon ? `
+        ${props => props.$imageType === "logo" ? `
           flex: 0 1 70%;
             ` : `
           flex: 0 0 75%;
@@ -67,7 +67,7 @@ const CTA_FullWidthWrapper = styled.div`
         }
 
         a {
-          ${props => props.$isLayer5Icon ? `
+          ${props => props.$imageType === "logo" ? `
                   flex: 0 0 auto;
               ` : `
                   flex: 0 0 25%;
@@ -77,7 +77,7 @@ const CTA_FullWidthWrapper = styled.div`
 
     @media screen and (max-width: 1200px) {
       .cta-content {
-        ${props => props.$isLayer5Icon ? `
+        ${props => props.$imageType === "logo" ? `
             flex-direction: column;
             justify-content: center;
             gap: 1.5rem;
@@ -111,7 +111,7 @@ const CTA_FullWidthWrapper = styled.div`
         border-radius: 0.25rem;
         margin: 1.5rem auto;
 
-        ${props => props.$isLayer5Icon ? `
+        ${props => props.$imageType === "logo" ? `
             display: flex;
             flex-direction: column;
             width: 100%;
@@ -175,17 +175,10 @@ const defaultHeading = "Layer5 Community";
 const defaultContent = "Join the Layer5 community and explore the world of cloud native!";
 const defaultURL = "https://slack.layer5.io";
 
-const CTA_FullWidth = ({ alt, button_text, category, content, external_link, image, url, heading, ...props }) => {
-
-  const isLayer5Icon = image && (
-    image.includes('/5 icon/') || 
-    image.includes('5-light') || 
-    image.includes('5-dark') ||
-    image.includes('layer5/5')
-  );
+const CTA_FullWidth = ({ alt, button_text, category, content, external_link, image, url, heading, image_type, ...props }) => {
 
   return (
-    <CTA_FullWidthWrapper $isLayer5Icon={isLayer5Icon} {...props}>
+    <CTA_FullWidthWrapper $imageType={image_type} {...props}>
       { category ? (
         <>
           <img src={Categories[category]["Image"]} alt={Categories[category]["Image_Alt"]} />
