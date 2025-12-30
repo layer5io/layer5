@@ -8,11 +8,18 @@ const CTA_FullWidthWrapper = styled.div`
     display: flex;
     flex: 0 0 100%;
     width: 98%;
-    height: 16rem;
     margin: 1.5rem auto;
     box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem;
     background: rgba(201, 252, 246, 0.3);
+
+    ${props => props.$isLayer5Icon ? `
+        flex-wrap: wrap;
+        min-height: 16rem;
+        height: auto;
+    ` : `
+        height: 16rem;
+    `}
 
     a {
         display: block;
@@ -24,38 +31,75 @@ const CTA_FullWidthWrapper = styled.div`
         object-fit: cover;
         pointer-events: none;
         border-radius: 0.5rem 0 0 0.5rem;
+
+        ${props => props.$isLayer5Icon && `
+            padding: 1.5rem;
+            object-fit: contain;
+        `}
     }
 
     .cta-content {
-        padding: 0.5rem;
         display: flex;
-        flex: auto;
         text-align: center;
         align-items: center;
         height: 100%;
+        
+        ${props => props.$isLayer5Icon ? `
+            padding: 2rem;
+            flex: 1;
+            justify-content: space-around;
+            gap: 2rem;
+        ` : `
+            padding: 0.5rem;
+            flex: auto;
+        `}
 
         div {
+        ${props => props.$isLayer5Icon ? `
+          flex: 0 1 70%;
+            ` : `
           flex: 0 0 75%;
-        }
-
+        `}
+      }
+        
         p {
             margin-top: 0.5rem;
         }
+
         a {
-            flex: 0 0 25%;
+          ${props => props.$isLayer5Icon ? `
+                  flex: 0 0 auto;
+              ` : `
+                  flex: 0 0 25%;
+            `}
         }
     }
 
     @media screen and (max-width: 1200px) {
       .cta-content {
-        div {
-            flex: 0 0 65%;
-        }
-        a {
-            flex: 0 0 35%;
+        ${props => props.$isLayer5Icon ? `
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+
+            div {
+                flex: 0 0 auto;
+                width: 100%;
+            }
+            a {
+                flex: 0 0 auto;
+            }
+        ` : `
+            div {
+                flex: 0 0 65%;
+            }
+            a {
+                flex: 0 0 35%;
+            }
+          `}
         }
       }
-    }
 
     @media screen and (max-width: 992px) and (min-width: 699px) {
         button {
@@ -64,11 +108,44 @@ const CTA_FullWidthWrapper = styled.div`
     }
 
     @media screen and (max-width: 699px) {
+        border-radius: 0.25rem;
+        margin: 1.5rem auto;
+
+        ${props => props.$isLayer5Icon ? `
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: auto;
+
+            img {
+                width: 100%;
+                height: auto;
+                min-height: 200px;
+                max-height: 200px;
+                position: static;
+                opacity: 1;
+                border-radius: 0.25rem 0.25rem 0 0;
+                padding: 2rem;
+                object-fit: contain;
+            }
+
+            .cta-content {
+                position: static;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                background: none;
+                padding: 1.5rem 2rem 2rem 2rem;
+
+                p {
+                    color: inherit; 
+                }
+            }
+        ` : `
         display: block;
         width: 18rem;
         height: 18rem;
-        margin: 1.5rem auto;
-        border-radius: 0.25rem;
 
         img {
             width: 18rem;
@@ -90,7 +167,8 @@ const CTA_FullWidthWrapper = styled.div`
                 color: white;
             }
         }
-    }
+    `}
+  }
 `;
 
 const defaultHeading = "Layer5 Community";
@@ -98,8 +176,16 @@ const defaultContent = "Join the Layer5 community and explore the world of cloud
 const defaultURL = "https://slack.layer5.io";
 
 const CTA_FullWidth = ({ alt, button_text, category, content, external_link, image, url, heading, ...props }) => {
+
+  const isLayer5Icon = image && (
+    image.includes('/5 icon/') || 
+    image.includes('5-light') || 
+    image.includes('5-dark') ||
+    image.includes('layer5/5')
+  );
+
   return (
-    <CTA_FullWidthWrapper {...props}>
+    <CTA_FullWidthWrapper $isLayer5Icon={isLayer5Icon} {...props}>
       { category ? (
         <>
           <img src={Categories[category]["Image"]} alt={Categories[category]["Image_Alt"]} />
