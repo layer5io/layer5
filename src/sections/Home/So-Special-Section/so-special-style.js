@@ -82,7 +82,7 @@ const SoSpecialWrapper = styled.div`
         opacity: 1;
         color: ${props => props.theme.secondaryColor};
     }
-    }
+    
     .so-special-head{
         padding:2rem;
         text-align:center; 
@@ -161,12 +161,12 @@ const SoSpecialWrapper = styled.div`
     }
     @media screen and (max-width: 1400px){
         .special_carousel{
-            width:75% !important;
+            width:75%;
         }
     }
     @media screen and (max-width: 1024px){
         .special_carousel{
-            width:80% !important;
+            width:80%;
         }
         .special-cont_img{
             width: 100%;
@@ -179,7 +179,7 @@ const SoSpecialWrapper = styled.div`
 
     @media screen and (max-width: 850px){
         .special_carousel{
-            width:100% !important;
+            width:100%;
         }
         .so-special-head{
             padding:1rem;
