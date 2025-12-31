@@ -7,9 +7,8 @@ import Button from "../../../reusecore/Button";
 import FooterWrapper from "./footer.style";
 import bubblesElement from "./images/bubbles-element.svg";
 
-const Footer = ({ location: locationProp }) => {
+const Footer = ({ location }) => {
   var currentYear = new Date().getFullYear();
-  const pathname = locationProp?.pathname || (typeof window !== "undefined" ? window.location.pathname : "/");
 
   const getUrl = (pathname) => {
     // remove ".html" that results in live production build
@@ -350,7 +349,7 @@ const Footer = ({ location: locationProp }) => {
             <ul className="misc-links">
               <li className="edit-page">
                 <a
-                  href={getUrl(pathname)}
+                  href={getUrl(location.pathname)}
                   target="_blank"
                   rel="noreferrer"
                 >
