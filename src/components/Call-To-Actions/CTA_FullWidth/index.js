@@ -65,26 +65,27 @@ const CTA_FullWidthWrapper = styled.div`
 
     @media screen and (max-width: 699px) {
         display: block;
-        width: 18rem;
+        width: 100%;
         height: 18rem;
         margin: 1.5rem auto;
         border-radius: 0.25rem;
 
         img {
-            width: 18rem;
-            height: 18rem;
+            width: 100%;
+            height: 100%;
             position: absolute;
             opacity: 0.35;
             border-radius: 0.25rem;
+            object-fit: cover;
         }
 
         .cta-content {
             position: absolute;
-            height: 18rem;
+            height: 100%;
             display: block;
-            width: 18rem;
+            width: 100%;
             background: none;
-            padding: 4rem 1rem;
+            padding: 2rem 1rem;
 
             p {
                 color: white;
