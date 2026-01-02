@@ -76,7 +76,8 @@ const CTA_FullWidthWrapper = styled.div`
             position: absolute;
             opacity: 0.35;
             border-radius: 0.25rem;
-            object-fit: cover;
+            object-fit: scale-down;
+            object-position: center;
         }
 
         .cta-content {
