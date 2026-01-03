@@ -24,7 +24,7 @@
     "deploy": "gatsby build && gh-pages -d public -b master",
     "noIndex": "gatsby build && echo 'User-agent: *\nDisallow: /' > public/robots.txt",
     "version": "gatsby --version",
-    "prepare": "husky"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.4.0",
