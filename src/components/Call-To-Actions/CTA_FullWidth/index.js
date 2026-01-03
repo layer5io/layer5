@@ -65,7 +65,8 @@ const CTA_FullWidthWrapper = styled.div`
 
     @media screen and (max-width: 699px) {
         display: block;
-        width: 18rem;
+        width: 90%;
+        max-width: 22rem;
         height: auto;
         min-height: 18rem;
         margin: 1.5rem auto;
@@ -81,7 +82,7 @@ const CTA_FullWidthWrapper = styled.div`
             left: 0;
             opacity: 0.35;
             border-radius: 0.25rem;
-            object-fit: cover;
+            object-fit: contain;
         }
 
         .cta-content {
