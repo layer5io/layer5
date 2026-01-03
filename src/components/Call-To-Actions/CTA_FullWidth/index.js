@@ -66,28 +66,49 @@ const CTA_FullWidthWrapper = styled.div`
     @media screen and (max-width: 699px) {
         display: block;
         width: 18rem;
-        height: 18rem;
+        height: auto;
+        min-height: 18rem;
         margin: 1.5rem auto;
         border-radius: 0.25rem;
+        position: relative;
+        overflow: hidden;
 
         img {
-            width: 18rem;
-            height: 18rem;
+            width: 100%;
+            height: 100%;
             position: absolute;
+            top: 0;
+            left: 0;
             opacity: 0.35;
             border-radius: 0.25rem;
+            object-fit: cover;
         }
 
         .cta-content {
-            position: absolute;
-            height: 18rem;
-            display: block;
-            width: 18rem;
+            position: relative;
+            height: auto;
+            min-height: 18rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
             background: none;
-            padding: 4rem 1rem;
+            padding: 2rem 1rem;
+            box-sizing: border-box;
+
+            div {
+                flex: none;
+                width: 100%;
+            }
 
             p {
                 color: white;
+            }
+
+            a {
+                flex: none;
+                margin-top: 1rem;
             }
         }
     }
