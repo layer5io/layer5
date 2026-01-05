@@ -15,7 +15,7 @@ export const GitOpsWrapper = styled.section`
     .gradient-wrapper {
         background: linear-gradient(245.08deg, rgba(0, 0, 0, 0.06) 49.26%, rgba(0, 211, 169, 0.5) 100%);
         width: 100%;
-        height: 40rem;
+        height: 35rem;
         position: absolute;
 
         @media only screen and (min-width: 768px) {

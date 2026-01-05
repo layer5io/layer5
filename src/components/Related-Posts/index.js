@@ -27,6 +27,9 @@ const RelatedPosts = props => {
                   speed= "500"
                   slidesToShow= {window.innerWidth <= 720 ? 1 : window.innerWidth <= 991 ? 2 : 3}
                   slidesToScroll= {1}
+                  swipe={true}
+                  swipeToSlide={true}
+                  touchThreshold={10}
                 >
                   {
                     postType === "blogs" ? relatedPosts.map((item) => {
