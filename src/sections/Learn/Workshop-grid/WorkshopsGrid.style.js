@@ -6,9 +6,14 @@ export const WorkshopPageWrapper = styled.div`
 	}
 	.btn-and-status {
 		display: flex;
-		width: 97%;
+		width: 100%;
 		position: absolute;
-		top: 92%;
+		bottom: 0;
+		left: 0;
+		padding: 0.75rem 1rem;
+		align-items: center;
+		box-sizing: border-box;
+		gap: 0.5rem;
 
 		p {
 			color: ${props => props.theme.primaryLightColor};
@@ -54,13 +59,17 @@ export const WorkshopPageWrapper = styled.div`
 		outline: none;
 	}
 
-	.linkAndReadBtns {
+	.left-icons {
 		display: flex;
-		width: 95%;
-		flex-direction: row-reverse;
-		justify-content: space-between;
-		position: absolute;
-		bottom: 0rem;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	a.readmeBtn {
+		display: flex;
+		align-items: center;
+		gap: 0.25rem;
+		margin-left: auto;
 	}
 
 	.linkAndReadBtns-open {
@@ -106,12 +115,6 @@ export const WorkshopPageWrapper = styled.div`
 		}
 	}
 
-	.externalLink {
-		position: relative;
-		left: 1rem;
-		margin-top: 0.25rem;
-	}
-
 	.text-contents {
 		display: none;
 		width: 100%;
@@ -124,10 +127,6 @@ export const WorkshopPageWrapper = styled.div`
 		width: 100%;
 		height: 100%;
 		padding: 1.5rem;
-	}
-
-	.social-icons {
-		display: flex;
 	}
 
 	.links {
@@ -170,6 +169,7 @@ export const WorkshopPageWrapper = styled.div`
 		width: 100%;
 		display: block;
 		height: auto;
+		position: relative;
 		border-radius: 0.3125rem;
 		margin-bottom: 1.25rem;
 		box-shadow: 0rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.2);
