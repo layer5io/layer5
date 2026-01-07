@@ -72,8 +72,8 @@ const CTA_FullWidthWrapper = styled.div`
         border-radius: 0.25rem;
 
         img {
-            width: 18rem;
-            height: 18rem;
+            width: 100%;
+            height: auto;
             object-fit: cover;
             border-radius: 0.25rem 0.25rem 0 0;
         }
