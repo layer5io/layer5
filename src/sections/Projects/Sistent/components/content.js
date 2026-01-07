@@ -246,6 +246,13 @@ const componentsData = [
   },
   {
     id: 32,
+    name: "Menu",
+    description: "Menu provides a way to display a list of options to the user.",
+    url: "/projects/sistent/components/menu",
+    src: "/menu",
+  },
+  {
+    id: 33,
     name: "Stack",
     description: "Stack is a layout component that arranges elements in a one-dimensional flow with customizable spacing and direction.",
     url: "/projects/sistent/components/stack",
