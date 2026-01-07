@@ -89,11 +89,11 @@ const CTA_FullWidthWrapper = styled.div`
             min-height: 18rem;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             width: 100%;
             background: none;
-            padding: 2rem 1rem;
+            padding: 1rem 1rem 2rem 1rem;
             box-sizing: border-box;
 
             div {
@@ -120,7 +120,7 @@ const defaultURL = "https://slack.layer5.io";
 const CTA_FullWidth = ({ alt, button_text, category, content, external_link, image, url, heading, ...props }) => {
   return (
     <CTA_FullWidthWrapper {...props}>
-      { category ? (
+      {category ? (
         <>
           <img src={Categories[category]["Image"]} alt={Categories[category]["Image_Alt"]} />
           <div className="cta-content">
