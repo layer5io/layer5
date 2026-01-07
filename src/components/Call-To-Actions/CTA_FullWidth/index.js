@@ -65,18 +65,16 @@ const CTA_FullWidthWrapper = styled.div`
 
     @media screen and (max-width: 699px) {
         display: block;
-        width: 90%;
-        max-width: 22rem;
-        height: auto;
-        min-height: 18rem;
+        width: 18rem;
+        height: 18rem;
         margin: 1.5rem auto;
         border-radius: 0.25rem;
         position: relative;
         overflow: hidden;
 
         img {
-            width: 100%;
-            height: 100%;
+            width: 18rem;
+            height: 18rem;
             position: absolute;
             top: 0;
             left: 0;
