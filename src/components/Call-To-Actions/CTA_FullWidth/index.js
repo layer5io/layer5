@@ -64,36 +64,27 @@ const CTA_FullWidthWrapper = styled.div`
     }
 
     @media screen and (max-width: 699px) {
-        display: block;
+        display: flex;
+        flex-direction: column;
         width: 18rem;
-        height: 18rem;
+        height: auto;
         margin: 1.5rem auto;
         border-radius: 0.25rem;
-        position: relative;
-        overflow: hidden;
 
         img {
             width: 18rem;
             height: 18rem;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0.35;
-            border-radius: 0.25rem;
-            object-fit: contain;
+            object-fit: cover;
+            border-radius: 0.25rem 0.25rem 0 0;
         }
 
         .cta-content {
-            position: relative;
-            height: auto;
-            min-height: 18rem;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
             width: 100%;
-            background: none;
-            padding: 1rem 1rem 2rem 1rem;
+            padding: 1.5rem 1rem;
             box-sizing: border-box;
 
             div {
