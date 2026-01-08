@@ -36,7 +36,6 @@ if (process.env.CI === "true") {
     if (page.path !== oldPage.path) {
       // Replace new page with old page
       deletePage(oldPage);
-      page.slices = { ...DEFAULT_SLICES, ...(page.slices || {}) };
       createPage(page);
 
       createRedirect({
@@ -52,59 +51,17 @@ if (process.env.CI === "true") {
 
 const { loadRedirects } = require("./src/utils/redirects.js");
 
-const DEFAULT_SLICES = {
-  "site-header": "site-header",
-  "site-footer": "site-footer",
-  "cta-bottom": "cta-bottom",
-  "cta-fullwidth": "cta-fullwidth",
-  "cta-imageonly": "cta-imageonly",
-};
-
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  const { createRedirect, createSlice } = actions;
+  const { createRedirect } = actions;
   const redirects = loadRedirects();
   redirects.forEach(redirect => createRedirect(redirect)); // Handles all hardcoded ones dynamically
   // Create Pages
   const { createPage } = actions;
 
-  createSlice({
-    id: "site-header",
-    component: path.resolve("./src/slices/site-header.js"),
-  });
-
-  createSlice({
-    id: "site-footer",
-    component: path.resolve("./src/slices/site-footer.js"),
-  });
-
-  createSlice({
-    id: "cta-bottom",
-    component: path.resolve("./src/slices/cta-bottom.js"),
-  });
-
-  createSlice({
-    id: "cta-fullwidth",
-    component: path.resolve("./src/slices/cta-fullwidth.js"),
-  });
-
-  createSlice({
-    id: "cta-imageonly",
-    component: path.resolve("./src/slices/cta-imageonly.js"),
-  });
-
   const envCreatePage = (props) => {
-    const pageConfig = { ...props };
-
-    if (isDevelopment) {
-      pageConfig.defer = true;
-    } else if (isProduction) {
-      pageConfig.mode = "SSR";
-    }
-    pageConfig.slices = { ...DEFAULT_SLICES, ...(pageConfig.slices || {}) };
-
     if (process.env.CI === "true") {
-      const { path, matchPath, ...rest } = pageConfig;
-
+      const { path, matchPath, ...rest } = props;
+      const isHandbookPage = path.startsWith("/community/handbook/");
       createRedirect({
         fromPath: `/${path}/`,
         toPath: `/${path}`,
@@ -113,12 +70,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       });
 
       return createPage({
-        path: `${path}.html`,
+        path: isHandbookPage ? path : `${path}.html`,
         matchPath: matchPath || path,
         ...rest,
       });
     }
-    return createPage(pageConfig);
+    return createPage(props);
   };
 
   const blogPostTemplate = path.resolve("src/templates/blog-single.js");
@@ -180,6 +137,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     `
     : "";
 
+  const HandbookTemplate = path.resolve("src/templates/handbook-template.js");
+
+
   const res = await graphql(`
     {
       allPosts: allMdx(filter: { frontmatter: { published: { eq: true } } }) {
@@ -191,6 +151,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           fields {
             collection
             slug
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+      handbookPages: allMdx(
+        filter: { fields: { collection: { eq: "handbook" } } }
+      ) {
+        nodes {
+          fields {
+            slug
+            collection
           }
           internal {
             contentFilePath
@@ -295,6 +268,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const careers = filterByCollection("careers");
   const members = filterByCollection("members");
   const integrations = filterByCollection("integrations");
+
+  const handbook = res.data.handbookPages.nodes;
+
 
   const singleWorkshop = res.data.singleWorkshop.nodes;
   const labs = res.data.labs.nodes;
@@ -457,6 +433,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   }
 
+  handbook.forEach((page) => {
+    envCreatePage({
+      path: page.fields.slug,
+      component: `${HandbookTemplate}?__contentFilePath=${page.internal.contentFilePath}`,
+      context: {
+        slug: page.fields.slug,
+      },
+    });
+  });
+
+
   programs.forEach((program) => {
     envCreatePage({
       path: `/programs/${program.frontmatter.programSlug}`,
@@ -555,7 +542,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   const components = componentsData.map((component) => component.src.replace("/", ""));
-  const createComponentPages = (envCreatePage, components) => {
+  const createComponentPages = (createPage, components) => {
     const pageTypes = [
       { suffix: "", file: "index.js" },
       { suffix: "/guidance", file: "guidance.js" },
@@ -568,7 +555,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
         if (fs.existsSync(path.resolve(componentPath))) {
           try {
-            envCreatePage({
+            createPage({
               path: pagePath,
               component: require.resolve(componentPath),
             });
@@ -582,7 +569,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   };
 
-  createComponentPages(envCreatePage, components);
+  createComponentPages(createPage, components);
 };
 
 // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
@@ -712,6 +699,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         case "members":
           if (node.frontmatter.published)
             slug = `/community/members/${node.frontmatter.permalink ?? slugify(node.frontmatter.name)}`;
+          break;
+        case "handbook":
+          slug = `/community/handbook/${slugify(node.frontmatter.title)}`;
           break;
         case "events":
           if (node.frontmatter.title)

@@ -9,10 +9,12 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { Slice } from "gatsby";
 import ScrollToTopBtn from "./Scrolltotop-button";
+import Navigation from "../sections/General/Navigation";
+import Footer from "../sections/General/Footer";
 // import TopPromotionalBanner from "./TopPromotionalBanner";
 import { GlobalStyle } from "../sections/app.style";
+import CookieConsent from "./CookieConsent";
 
 const Layout = ({ children }) => {
 
@@ -20,10 +22,11 @@ const Layout = ({ children }) => {
     <>
       <GlobalStyle />
       {/* <TopPromotionalBanner /> */}
-      <Slice alias="site-header" />
+      <Navigation/>
+      <CookieConsent />
       {children}
       <ScrollToTopBtn />
-      <Slice alias="site-footer" />
+      <Footer location={children.props.location} />
     </>
   );
 };

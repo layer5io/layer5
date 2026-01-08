@@ -91,7 +91,6 @@ const IntegrationsSectionWrapper = styled.div`
   }
 `;
 
-
 const KanvasIntegrationsSection = () => {
   const [diagramRef, inView] = useInView({
     threshold: 0.8,

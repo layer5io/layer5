@@ -8,6 +8,7 @@ import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
+
 const HeroSectionWrapper = styled.div`
 
     display: flex;
@@ -73,6 +74,8 @@ const HeroSectionWrapper = styled.div`
 
     }
 `;
+
+
 
 
 const KanvasHeroSection = () => {
