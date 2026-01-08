@@ -9,72 +9,71 @@ import { useState } from "react";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const HeroSectionWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  background-color: ${(props) => props.theme.grey121212ToWhite};
-  width: 100%;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 3% 5% 8%;
-  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
-  @media only screen and (max-width: 767px) {
-    text-align: center;
-    flex-direction: column-reverse;
-  }
-
-  .hero-text {
     display: flex;
-    flex-direction: column;
-    flex: 0 0 35%;
-    margin-top: 5%;
+    flex-direction: row;
+    background-color: ${props => props.theme.grey121212ToWhite};;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 3% 5% 8%;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
     @media only screen and (max-width: 767px) {
-      max-width: 100%;
-      margin-top: 15%;
-    }
-  }
-
-  h2 {
-    padding-bottom: 2%;
-  }
-
-  .hero-image {
-    display: grid;
-    grid-template-rows: 5rem 5rem;
-    place-items: center;
-    margin: 5% 0;
-    flex: 0 0 50%;
-    max-width: 60%;
-
-    @media only screen and (max-width: 767px) {
-      max-width: 100%;
+      text-align: center;
+      flex-direction: column-reverse;
     }
 
-    .locator {
-      /* transform: translateY(-5rem); */
-      transition: 1s;
-      z-index: 1;
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 35%;
+        margin-top: 5%;
+        @media only screen and (max-width: 767px) {
+          max-width: 100%;
+          margin-top: 15%;
+        }
     }
 
-    .locator-moving {
-      transform: translateY(5rem);
-      transition: 1s;
-      z-index: 1;
+    h2 {
+      padding-bottom: 2%;
     }
 
-    .map {
-      opacity: 0;
-      transition: opacity ease 0.5s;
-      z-index: 0;
-    }
+    .hero-image {
+        display: grid;
+        grid-template-rows: 5rem 5rem;
+        place-items: center;
+        margin: 5% 0;
+        flex: 0 0 50%;
+        max-width: 60%;
+        @media only screen and (max-width: 767px) {
+          max-width: 100%;
+        }
 
-    .map-visible {
-      opacity: 1;
-      transition: opacity 1s ease 0.5s;
+        .locator {
+            /* transform: translateY(-5rem); */
+            transition: 1s;
+            z-index: 1;
+        }
+        .locator-moving {
+            transform: translateY(5rem);
+            transition: 1s;
+            z-index: 1;
+        }
+
+        .map {
+            opacity: 0;
+            transition: opacity ease 0.5s;
+            z-index: 0;
+        }
+        .map-visible {
+            opacity: 1;
+            transition: opacity 1s ease 0.5s;
+        }
+
     }
-  }
 `;
+
 
 const KanvasHeroSection = () => {
   const [locatorRef, inView] = useInView({

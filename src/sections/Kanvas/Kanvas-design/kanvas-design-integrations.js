@@ -29,19 +29,18 @@ const IntegrationsSectionWrapper = styled.div`
     flex-direction: column;
     flex: 0 0 40%;
     position: relative;
-
     @media only screen and (max-width: 767px) {
       max-width: 100%;
       margin-top: 15%;
     }
   }
 
-  h2 {
+  h1 {
     font-weight: 100;
     color: white;
   }
 
-  h3 {
+  h4 {
     color: white;
   }
 
@@ -52,7 +51,6 @@ const IntegrationsSectionWrapper = styled.div`
     margin: 5% 0;
     flex: 0 0 25%;
     /* max-width: 25%; */
-
     @media only screen and (max-width: 767px) {
       max-width: 50%;
       margin-top: 10%;
@@ -60,9 +58,39 @@ const IntegrationsSectionWrapper = styled.div`
 
     .diagram-hidden {
       opacity: 0;
+      transition: 0.5s ease-out;
+    }
+    .diagram-visible {
+      opacity: 1;
+      transition: 0.5s ease-in;
+    }
+  }
+
+  .underline-img {
+    width: 20%;
+    top: 40%;
+    left: -6%;
+
+    @media only screen and (max-width: 1498px) {
+      top: 27%;
+    }
+    @media only screen and (max-width: 838px) {
+      top: 24%;
+    }
+    @media only screen and (max-width: 767px) {
+      left: 10%;
+      top: 40%;
+    }
+    @media only screen and (max-width: 500px) {
+      left: 0;
+    }
+    @media only screen and (max-width: 407px) {
+      left: 20%;
+      top: 25%;
     }
   }
 `;
+
 
 const KanvasIntegrationsSection = () => {
   const [diagramRef, inView] = useInView({
