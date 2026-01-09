@@ -12,7 +12,7 @@ const SoSpecialWrapper = styled.div`
     .slick-list .slick-track{
         width:5000px;
     }
-    @media only screen and (max-width:450px){
+    @media only screen and (max-width:600px){
         padding:1rem;
     }
     .special_carousel{
@@ -82,7 +82,7 @@ const SoSpecialWrapper = styled.div`
         opacity: 1;
         color: ${props => props.theme.secondaryColor};
     }
-    }
+    
     .so-special-head{
         padding:2rem;
         text-align:center; 
@@ -104,17 +104,19 @@ const SoSpecialWrapper = styled.div`
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     #special-cont_img{
-        height:70%;
+        height:17rem;
         width:100%;
         overflow:hidden;
           .gatsby-image-wrapper, .old-gatsby-image-wrapper{
               height:100%;
           }
           img{
-            height: inherit;
+            height: 17rem;
             display: block;
             text-align: center;
             margin: auto;
+            object-fit: fill !important;
+            image-rendering: auto;
           }
     }
     .slick-dots{
@@ -162,21 +164,8 @@ const SoSpecialWrapper = styled.div`
             width:75%;
         }
     }
-    @media screen and (min-width: 1199px){
-        .special-cont_img{
-            height:20rem;
-            width:100%;
-        }
-    }
-    @media screen and (max-width: 1199px){
-        .special-cont_img{
-            height:20rem;
-            width:100%;
-        }
-    }
     @media screen and (max-width: 1024px){
         .special_carousel{
-            margin-bottom: 3rem;
             width:80%;
         }
         .special-cont_img{
@@ -190,12 +179,7 @@ const SoSpecialWrapper = styled.div`
 
     @media screen and (max-width: 850px){
         .special_carousel{
-            margin-bottom: 3rem;
             width:100%;
-        }
-        .special-cont_img{
-            width: 22rem;
-            max-height: 17rem;
         }
         .so-special-head{
             padding:1rem;
@@ -207,19 +191,11 @@ const SoSpecialWrapper = styled.div`
         }
     }
     @media screen and (max-width: 671px){
-        .special-cont_img{
-            width: 100%;
-            max-height: 20rem;
-        }
         .special-cont_content{
             padding:0rem;
         }
     }
     @media screen and (max-width: 500px){
-        #special-cont_img{
-            width: 100%;
-            height: 65%;
-        }
         .so-special-head{
             padding: 0.5rem 0;
         }   
@@ -228,9 +204,6 @@ const SoSpecialWrapper = styled.div`
         .slick-slide{
             height:25rem;
             margin:0;
-        }
-        #special-cont_img{
-            height: 60%;
         }
         #special-cont_content{
             .special-cont_para
