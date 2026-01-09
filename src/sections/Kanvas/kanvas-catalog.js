@@ -16,7 +16,8 @@ import Jwt_transformer from "../../assets/images/kanvas/catalog-card-images/jwt.
 import Multicluster from "../../assets/images/kanvas/catalog-card-images/multicluster.svg";
 import Http_metrics from "../../assets/images/kanvas/catalog-card-images/http.svg";
 
-import Design from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
+import Design from "../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
+
 
 
 import Patterns from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
@@ -458,14 +459,6 @@ const Catalog = () => {
             <div>
               <img src={Models} alt="Models logo" />
               <p>Models</p>
-
-              <img alt="eBPF program visualization in Kanvas for Kubernetes observability" src={Ebpf} />
-              <p className="ebpf-text">eBPF Programs</p>
-            </div>
-            <div>
-              <img alt="WASM filters integration visualization in Kanvas dashboard" src={Wasm} />
-              <p>WASM Filters</p>
-
             </div>
             <div>
               <img alt="OPA policies management illustration in Kanvas service mesh" src={Opa} />
