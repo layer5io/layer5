@@ -11,6 +11,9 @@ margin: 6rem auto;
 @media (min-width: 2048px) {
   margin: 15rem auto;
 }
+@media (max-width: 768px) {
+  margin: 3rem auto;
+}
 
 h2, h5{
   text-align: center;
@@ -20,14 +23,25 @@ h2, h5{
     box-shadow: 0 0 24px ${props => props.theme.whiteOneFiveToBlackOneFive};
     margin: 2rem auto;
     display: block;
-    overflow-x: scroll;
-    overflow-y:hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
     transition: 0.6s cubic-bezier(0.5, 1);
+    -webkit-overflow-scrolling: touch;
+    
+    @media (max-width: 768px) {
+      margin: 1rem auto;
+      box-shadow: 0 0 16px ${props => props.theme.whiteOneFiveToBlackOneFive};
+    }
 }
 .price-table {
     width: 100%;
+    min-width: 800px;
     border-collapse: collapse;
     border: 0 none;
+    
+    @media (max-width: 768px) {
+      min-width: 700px;
+    }
 }
 .price-table tr:not(:last-child) {
     border-bottom: 1px solid ${props => props.theme.whiteZeroThreeToBlackZeroThree};
@@ -46,15 +60,29 @@ h2, h5{
       padding-top: 1rem;
       font-size: 1.2rem;
     }
+    
+    @media (max-width: 768px) {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
 }
 .price-table tr td:first-child {
     border-left: 0 none;
     width: 100%;
     justify-content: flex-start;
     text-align: left;
+    position: sticky;
+    left: 0;
+    background: ${props => props.theme.body};
+    z-index: 1;
+    
+    @media (max-width: 768px) {
+      min-width: 200px;
+    }
 }
 .price-table tr td:not(:first-child) {
     text-align: center;
+    white-space: nowrap;
 }
 .price-table tr:nth-child(even) {
 }
@@ -62,6 +90,9 @@ h2, h5{
 .price-table tr:hover {
     background-color: ${props => props.theme.secondaryLightColor};
     transition: 0.6s cubic-bezier(0.5, 1);
+}
+.price-table tr:hover td:first-child {
+    background-color: ${props => props.theme.secondaryLightColor};
 }
 .price-table .fa-check {
     color: #5336ca;
@@ -75,6 +106,10 @@ h2, h5{
 .price-table tr td:nth-child(3) {
     background: rgba(0,179,159,0.1);
     padding: 8px 48px;
+    
+    @media (max-width: 768px) {
+      padding: 8px 24px;
+    }
 }
 
 .price-table tr.price-table-head td {
@@ -83,6 +118,18 @@ h2, h5{
     font-weight: 600;
     padding: .5rem;
     text-transform: uppercase;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+      line-height: 1.2rem;
+      padding: 0.5rem 0.25rem;
+    }
+}
+.price-table tr.price-table-head td:first-child {
+    z-index: 3;
 }
 .price-table tr.price-table-head {
     background-color:${props => props.theme.secondaryColor};
@@ -92,6 +139,11 @@ h2, h5{
     padding: 16px 24px;
     font-size: 20px;
     font-weight: 600;
+    
+    @media (max-width: 768px) {
+      padding: 12px 16px;
+      font-size: 16px;
+    }
 }
 .price-table td.price .button {
     padding: 1rem 1.5rem;
@@ -101,6 +153,11 @@ h2, h5{
     text-transform: uppercase;
     display: inline-block;
     border-radius: 64px;
+    
+    @media (max-width: 768px) {
+      padding: 0.75rem 1rem;
+      font-size: 10px;
+    }
 }
 .price-table th.price-table-popular {
     border-top: 3px solid #00b39f;
@@ -110,16 +167,35 @@ h2, h5{
     font-size: 12px;
     padding: 12px 48px;
     font-weight: 700;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    
+    @media (max-width: 768px) {
+      padding: 8px 24px;
+      font-size: 10px;
+    }
 }
 .price-table .price-blank {
     background-color: ${props => props.theme.secondaryDarkColor};
     border: 0 none;
     transition: 0.6s cubic-bezier(0.5, 1);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.price-table .price-blank:first-child {
+    z-index: 3;
 }
 
 .category {
   display: inline-block;
   margin: 0 1rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+    margin: 0 0.5rem;
+  }
 }
 
 .icon {
@@ -127,16 +203,28 @@ h2, h5{
     width: auto;
     fill: #00b39f;
     display: inline-block;
+    
+    @media (max-width: 768px) {
+      height: 2.5rem;
+    }
 }
 .no-icon {
   height: 1.5rem;
   width: auto;
   fill: red;
+  
+  @media (max-width: 768px) {
+    height: 1.2rem;
+  }
 }
 .yes-icon {
   height: 1.5rem;
   width: auto;
   fill: #00b39f;
+  
+  @media (max-width: 768px) {
+    height: 1.2rem;
+  }
 }
 .toggle-btn {
   margin-top: 1rem;
@@ -145,6 +233,11 @@ h2, h5{
   p {
     color: #7A848E;
     margin-left: 1.1rem;
+    
+    @media (max-width: 768px) {
+      font-size: 0.85rem;
+      margin-left: 0.5rem;
+    }
   }
 }
 .category-icon {
@@ -156,6 +249,14 @@ h2, h5{
   text-align: left;
   align-items: center;
   margin: 1rem auto;
+  position: sticky;
+  left: 0;
+  background: ${props => props.theme.body};
+  z-index: 1;
+  
+  @media (max-width: 768px) {
+    margin: 0.5rem auto;
+  }
 }
 .docs {
   width:1rem;
@@ -180,6 +281,10 @@ td.feature {
   color: #00b39f;
   text-decoration: none;
   font-size: 0.9rem;
+  
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 }
 .feature-link > svg {
     &:hover { 
