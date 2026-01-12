@@ -525,6 +525,13 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
+    {
+      resolve: "gatsby-plugin-purgecss",
+      options: {
+        printRejected: true,
+      }
+    },
+    "gatsby-plugin-preact",
     "gatsby-plugin-meta-redirect",
     // make sure this is always the last one
   ],
