@@ -1,4 +1,4 @@
-import React, {useLayoutEffect, useState, useRef}  from "react";
+import React, { useLayoutEffect, useState, useRef }  from "react";
 import { Link } from "gatsby";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 import Card from "../Card";
