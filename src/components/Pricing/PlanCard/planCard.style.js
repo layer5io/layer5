@@ -262,11 +262,8 @@ const PlanCardWrapper = styled.section`
     }
   }
   .plan-card-col{
-    @media (max-width: 1304px) {
+    @media (min-width: 768px) and (max-width: 1304px) {
       width: 50%;
-    }
-    @media (max-width: 700px) {
-      width: 100%;
     }
   }
 `;
