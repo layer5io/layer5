@@ -258,6 +258,14 @@ const componentsData = [
     url: "/projects/sistent/components/accordion",
     src: "/accordion",
   },
+  {
+    id: 34,
+    name: "Divider",
+    description:
+      "The Divider component visually separates content with a thin line, helping to organize sections and improve scannability in lists and layouts.",
+    url: "/projects/sistent/components/divider",
+    src: "/divider",
+  },
 ];
 
 module.exports = { componentsData };
