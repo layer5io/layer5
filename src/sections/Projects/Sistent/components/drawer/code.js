@@ -182,7 +182,7 @@ const DrawerCode = () => {
         <p>
           Code examples demonstrating different drawer variants and use cases.
         </p>
-        
+
         <div className="filterBtns">
           <TabButton
             className={
@@ -222,10 +222,10 @@ const DrawerCode = () => {
             <p>Opens on top of content, closes when clicking outside or selecting an item.</p>
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <Button 
-                  onClick={() => setTempOpen(true)} 
-                  variant="contained" 
-                  label="Open drawer" 
+                <Button
+                  onClick={() => setTempOpen(true)}
+                  variant="contained"
+                  label="Open drawer"
                 />
                 <Drawer open={tempOpen} onClose={() => setTempOpen(false)}>
                   <Box sx={{ width: 250 }} role="presentation" onClick={() => setTempOpen(false)}>
