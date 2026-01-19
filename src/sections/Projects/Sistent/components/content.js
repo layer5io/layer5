@@ -137,6 +137,14 @@ const componentsData = [
   },
   {
     id: 18,
+    name: "Drawer",
+    description:
+      "The drawer provides a sliding panel that appears from an edge to present navigation, options, or contextual content.",
+    url: "/projects/sistent/components/drawer",
+    src: "/drawer",
+  },
+  {
+    id: 19,
     name: "Circular Progress",
     description:
       "The Circular Progress component displays a circular loading indicator that represents the progress in your application",
@@ -144,21 +152,21 @@ const componentsData = [
     src: "/circularprogress",
   },
   {
-    id: 19,
+    id: 20,
     name: "Switch",
     description: "The Switch component allows users to toggle the state of a single setting on or off.",
     url: "/projects/sistent/components/switch",
     src: "/switch"
   },
   {
-    id: 20,
+    id: 21,
     name: "Tabs",
     description: "Tabs organize and allow navigation between groups of content that are related and at the same level of hierarchy.",
     url: "/projects/sistent/components/tabs",
     src: "/tabs",
   },
   {
-    id: 21,
+    id: 22,
     name: "Avatar",
     description:
       "An Avatar component is used to visually represent a user, profile, or entity, typically through an image, initials, or icon.",
@@ -166,7 +174,7 @@ const componentsData = [
     src: "/avatar",
   },
   {
-    id: 22,
+    id: 23,
     name: "AvatarGroup",
     description:
       "An AvatarGroup component is used to display a collection of Avatars together, typically representing a group of users, collaborators, or participants.",
@@ -174,14 +182,14 @@ const componentsData = [
     src: "/avatar-group",
   },
   {
-    id: 23,
+    id: 24,
     name: "Badge",
     description: "A badge is a small component that displays a number or status indicator, often used to show notifications or messages.",
     url: "/projects/sistent/components/badge",
     src: "/badge",
   },
   {
-    id: 24,
+    id: 25,
     name: "Toolbar",
     description:
       "The toolbar is a horizontal container for grouping interactive elements like buttons, filters, or navigation controls, typically placed at the top of a UI section.",
@@ -189,63 +197,63 @@ const componentsData = [
     src: "/toolbar",
   },
   {
-    "id": 25,
+    "id": 26,
     "name": "RadioGroup",
     "description": "Sistent offers a well-structured RadioGroup component that allows users to select one option from a set.",
     "url": "/projects/sistent/components/radiogroup",
     "src": "/radiogroup"
   },
   {
-    "id": 26,
+    "id": 27,
     "name": "Grid",
     "description": "The Grid component in Sistent provides a flexible and responsive layout system for arranging content in rows and columns.",
     "url": "/projects/sistent/components/grid",
     "src": "/grid"
   },
   {
-    "id": 27,
+    "id": 28,
     "name": "List",
     "description": "Lists are essential UI elements that allow items to be organized sequentially in a structured and readable way. They help users view, select, and interact with multiple items conveniently.",
     "url": "/projects/sistent/components/list",
     "src": "/list",
   },
   {
-    "id": 28,
+    "id": 29,
     "name": "Chip",
     "description": "Chips are compact elements that represent an input, attribute, or action. They are often used for tags, contacts, or filters.",
     "url": "/projects/sistent/components/chip",
     "src": "/chip",
   },
   {
-    "id": 29,
+    "id": 30,
     "name": "Collapse",
     "description": "The Collapse component is used to create expandable/collapsible content sections. It smoothly animates the height of its children from zero to full height when expanded.",
     "url": "/projects/sistent/components/collapse",
     "src": "/collapse",
   },
   {
-    id: 30,
+    id: 31,
     name: "IconButton",
     description: "IconButton provides an interactive button component that displays only an icon, ideal for compact UIs where space is limited and actions are easily recognizable through iconography.",
     url: "/projects/sistent/components/iconbutton",
     src: "/iconbutton",
   },
   {
-    "id": 30,
+    "id": 32,
     "name": "FormControlLabel",
     "description": "A control + label pair used for checkboxes or radio buttons.",
     "url": "/projects/sistent/components/formcontrollabel",
     "src": "/formcontrollabel",
   },
   {
-    id: 31,
+    id: 33,
     name: "Stepper",
     description: "Stepper provides a way to display progress through a sequence of logical steps.",
     url: "/projects/sistent/components/stepper",
     src: "/stepper",
   },
   {
-    id: 32,
+    id: 34,
     name: "Stack",
     description: "Stack is a layout component that arranges elements in a one-dimensional flow with customizable spacing and direction.",
     url: "/projects/sistent/components/stack",
