@@ -195,7 +195,7 @@ const DrawerGuidance = () => {
               <li>Best for large screens (&gt; 1280px) and complex applications</li>
               <li>Ideal for enterprise dashboards and multi-section interfaces</li>
             </ul>
-<a id="anchor-positions">
+            <a id="anchor-positions">
               <h2>Where to Position Drawers</h2>
             </a>
 
