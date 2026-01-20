@@ -63,7 +63,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
   return (
     <CourseOverviewWrapper>
       <div className="course-back-btn">
-        <Link to={"/learn/learning-paths/${course.fields.learnpath}"}>
+        <Link to={`/learn/learning-paths/${course.fields.learnpath}`}>
           <IoChevronBackOutline /> <h4>Learning Paths/Courses</h4>
         </Link>
       </div>
@@ -87,7 +87,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
           </div>
           <Button
             title={hasBookmark ? "Start Again" : "Get Started"}
-            $url={getChapterTitle(course.frontmatter.toc[0], chapters) ? "/${getChapterTitle(course.frontmatter.toc[0], chapters).fields.slug}" : "#"}
+            $url={getChapterTitle(course.frontmatter.toc[0], chapters) ? `/${getChapterTitle(course.frontmatter.toc[0], chapters).fields.slug}` : "#"}
           />
           {hasBookmark && (
             <Button

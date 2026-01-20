@@ -35,7 +35,7 @@ const BannerDefault = () => {
                   {/* <img className="Layer5Logo" src={Layer5Logo} /> */}
                   <h3 className="statement">
                     {/* Enablers of Engineers. Enablers of Speed. Enablers of Business. */}
-                    Layer5 is an empowerer of the developer, the operator, and the service owner
+                    Layer5 empowers developers, operators, and service owners alike
                   </h3>
                   <div className="join-community">
                     <Button $primary className="join-community-button" title="our projects" $url="/projects" />
