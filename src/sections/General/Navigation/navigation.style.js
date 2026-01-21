@@ -192,11 +192,13 @@ const NavigationWrap = styled.header`
       padding: 3em;
       border-radius: 50px 0 0 50px;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      font-family: "Qanelas Soft", "Open Sans", sans-serif;
       .sub-item {
         padding: 0;
       }
       .section {
         color: ${(props) => props.theme.text};
+        font-family: "Qanelas Soft", "Open Sans", sans-serif;
         font-size: 20px;
         font-weight: 600;
         margin-left: 0px;
@@ -214,6 +216,7 @@ const NavigationWrap = styled.header`
           display: block;
           .readmore-btn {
             color: ${(props) => props.theme.text};
+            font-family: "Qanelas Soft", "Open Sans", sans-serif;
             transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
           }
           &:before {
@@ -398,6 +401,7 @@ const NavigationWrap = styled.header`
     .dropdown {
       li {
         padding-top: 5px;
+        font-family: "Qanelas Soft", "Open Sans", sans-serif;
         a {
           display: block;
           &:hover {
@@ -416,6 +420,7 @@ const NavigationWrap = styled.header`
       display: flex;
       line-height: 1.5rem;
       font-size: 15px;
+      font-family: "Qanelas Soft", "Open Sans", sans-serif;
       transition: 450ms all;
       padding: 0px 20px 0px 20px;
       cursor: pointer;
@@ -629,6 +634,7 @@ const NavigationWrap = styled.header`
         background: ${(props) => props.theme.greyC1C1C1ToGreyB3B3B3};
       }
       .menu-item {
+        font-family: "Qanelas Soft", "Open Sans", sans-serif;
         font-size: 16px;
         font-weight: 600;
         line-height: 2rem;
