@@ -5,7 +5,7 @@ import { useLocation } from "@reach/router";
 import { SistentThemeProvider, Drawer, Button, List, ListItem, Box, Typography } from "@sistent/sistent";
 import TabButton from "../../../../../reusecore/Button";
 import { SistentLayout } from "../../sistent-layout";
-import { Col, Row } from "../../../../../reusecore/Layout";
+import { Row } from "../../../../../reusecore/Layout";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import MenuIcon from "@mui/icons-material/Menu";
 
@@ -61,20 +61,18 @@ const DrawerOverview = () => {
 
         <div className="main-content">
           <p>
-            Drawers are modal panels that slide in from the edge of the screen,
-            providing supplementary content without navigating away from the current page.
-            They're ideal for navigation menus, filters, settings, and contextual information.
+            Drawers are modal panels that slide in from the edge of the screen, providing supplementary content without navigating away from the current page. They're ideal for navigation menus, filters, settings, and contextual information.
           </p>
 
-          <a id="Demo">
-            <h2>Interactive Demo</h2>
+          <a id="Basic Drawer">
+            <h2>Basic Drawer</h2>
           </a>
           <p>
-            Experience how the drawer component works with this interactive example:
+            A basic temporary drawer that slides in from the left side of the screen.
           </p>
-          <Row $Hcenter className="image-container">
-            <Col sm={12}>
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+          <Row className="image-container">
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <div style={{ width: "100%" }}>
                 <Button
                   onClick={() => setDemoOpen(true)}
                   variant="contained"
@@ -92,8 +90,8 @@ const DrawerOverview = () => {
                     </List>
                   </Box>
                 </Drawer>
-              </SistentThemeProvider>
-            </Col>
+              </div>
+            </SistentThemeProvider>
           </Row>
 
           <a id="Key Features">
