@@ -260,14 +260,14 @@ const componentsData = [
     src: "/stack",
   },
   {
-    id: 33,
+    id: 35,
     name: "Accordion",
     description: "An accordion is a vertically stacked list of headers that can be clicked to reveal or hide associated content, allowing users to toggle between hiding and showing large amounts of content in a compact space.",
     url: "/projects/sistent/components/accordion",
     src: "/accordion",
   },
   {
-    id: 34,
+    id: 36,
     name: "Divider",
     description:
       "The Divider component visually separates content with a thin line, helping to organize sections and improve scannability in lists and layouts.",
