@@ -304,16 +304,31 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
+  const POSTS_PER_PAGE = 10;
   const BlogTags = res.data.blogTags.group;
+
   BlogTags.forEach((tag) => {
-    envCreatePage({
-      path: `/blog/tag/${slugify(tag.fieldValue)}`,
-      component: blogTagListTemplate,
-      context: {
-        tag: tag.fieldValue,
-      },
+    const totalPosts = tag.nodes.length;
+    const numPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
+
+    Array.from({ length: numPages }).forEach((_, i) => {
+      envCreatePage({
+        path:
+          i === 0
+            ? `/blog/tag/${slugify(tag.fieldValue)}`
+            : `/blog/tag/${slugify(tag.fieldValue)}/${i + 1}`,
+        component: blogTagListTemplate,
+        context: {
+          tag: tag.fieldValue,
+          limit: POSTS_PER_PAGE,
+          skip: i * POSTS_PER_PAGE,
+          currentPage: i + 1,
+          numPages,
+        },
+      });
     });
   });
+
 
   resources.forEach((resource) => {
     envCreatePage({
@@ -445,14 +460,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
 
   programs.forEach((program) => {
+    const programName = program.frontmatter?.program || "default-program";
+
     envCreatePage({
-      path: `/programs/${program.frontmatter.programSlug}`,
+      path: `/programs/${program.frontmatter?.programSlug || "unknown"}`,
       component: `${MultiProgramPostTemplate}?__contentFilePath=${program.internal.contentFilePath}`,
       context: {
-        program: program.frontmatter.program,
+        program: programName,
       },
     });
   });
+
 
   if (!isFullSiteBuild) {
     const litePlaceholderPages = [
