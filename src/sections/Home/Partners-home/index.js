@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Container, Row } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import PartnerItemWrapper from "./partnerSection.style";
@@ -27,22 +27,13 @@ const settings = {
 };
 
 const LazyPartnerImage = ({ partner }) => {
-  const [imageSrc, setImageSrc] = useState("");
-
-  useEffect(() => {
-    partner.imageLink().then(module => {
-      setImageSrc(module.default);
-    });
-  }, [partner.imageLink]);
-
-  if (!imageSrc) return null;
 
   return (
     <img
       className="partner-image"
       id={partner.name}
       loading="lazy"
-      src={imageSrc}
+      src={partner.imageLink}
       alt={partner.name}
       width={partner.imageWidth}
       height={partner.imageHeight}
