@@ -15,7 +15,7 @@ import { ReactComponent as Partner12 } from "../../assets/images/partners/vmware
 import { ReactComponent as Partner14 } from "../../assets/images/partners/metabit-trading-logo-colorMode.svg";
 import { ReactComponent as Partner15 } from "../../assets/images/partners/docker.svg";
 import { ReactComponent as Partner16 } from "../../assets/images/partners/digitalocean.svg";
-
+import { ReactComponent as PartnerExo } from "../../assets/images/partners/exoscale_color.svg";
 export const partners = [
   {
     name: "The University of Texas at Austin",
@@ -86,7 +86,15 @@ export const partners = [
     imageLink: <Partner8 alt="Microsoft" />,
     //imageRoute: "https://www.microsoft.com/",
     moreInfo: "Microsoft Azure is an ever-expanding set of cloud services to help your organization meet your business challenges. It’s the freedom to build, manage, and deploy applications on a massive, global network using your favorite tools and frameworks.",
-  }, {
+  },
+  {
+    name: "Exoscale",
+    desc: "Exoscale is a leading European cloud service provider that offers scalable and secure cloud infrastructure solutions tailored for businesses of all sizes. With a focus on simplicity, reliability, and performance, Exoscale provides a range of services including virtual machines, managed Kubernetes, object storage, and more. Their data centers are strategically located across Europe to ensure low latency and compliance with regional data protection regulations. Exoscale's user-friendly platform and robust API empower developers and IT professionals to easily deploy, manage, and scale their applications in the cloud.",
+    type: "technology",
+    imageLink: <PartnerExo alt="Exoscale" />,
+    moreInfo: "Exoscale is a leading European cloud service provider that offers scalable and secure cloud infrastructure solutions tailored for businesses of all sizes. With a focus on simplicity, reliability, and performance, Exoscale provides a range of services including virtual machines, managed Kubernetes, object storage, and more. Their data centers are strategically located across Europe to ensure low latency and compliance with regional data protection regulations. Exoscale's user-friendly platform and robust API empower developers and IT professionals to easily deploy, manage, and scale their applications in the cloud.",
+  },
+  {
     name: "Red Hat",
     desc: "The world’s leading provider of enterprise open source solutions, using a community-powered approach to deliver high-performing Linux, cloud, container, and Kubernetes technologies.",
     //link: null,
