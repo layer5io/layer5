@@ -116,7 +116,7 @@ const Review = () => {
       <ReviewCard>
         <Avatar src={reviewerImage} alt="Reviewer" />
         <Quote>
-      This wonderful product is a vendor-neutral self-service engineering platform that scales intent—not toil—by turning architecture into a consistent design-to-operate pipeline. 
+      This wonderful product is a vendor-neutral self-service engineering platform that scales intent—not toil—by turning architecture into a consistent design-to-operate pipeline.
         </Quote>
         <ReviewerName>Dhruv Sharma</ReviewerName>
         <ReviewerTitle> Principal Platform Product Manager at GuideWire</ReviewerTitle>
