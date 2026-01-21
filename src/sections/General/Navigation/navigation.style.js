@@ -198,7 +198,6 @@ const NavigationWrap = styled.header`
       }
       .section {
         color: ${(props) => props.theme.text};
-        font-family: "Qanelas Soft", "Open Sans", sans-serif;
         font-size: 20px;
         font-weight: 600;
         margin-left: 0px;
@@ -216,7 +215,6 @@ const NavigationWrap = styled.header`
           display: block;
           .readmore-btn {
             color: ${(props) => props.theme.text};
-            font-family: "Qanelas Soft", "Open Sans", sans-serif;
             transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
           }
           &:before {
@@ -374,6 +372,7 @@ const NavigationWrap = styled.header`
     visibility: visible;
   }
   nav {
+    font-family: "Qanelas Soft", "Open Sans", sans-serif;
     ul {
       margin: 0;
       padding: 0;
@@ -399,9 +398,9 @@ const NavigationWrap = styled.header`
       }
     }
     .dropdown {
+      font-family: "Qanelas Soft", "Open Sans", sans-serif;
       li {
         padding-top: 5px;
-        font-family: "Qanelas Soft", "Open Sans", sans-serif;
         a {
           display: block;
           &:hover {
@@ -420,7 +419,6 @@ const NavigationWrap = styled.header`
       display: flex;
       line-height: 1.5rem;
       font-size: 15px;
-      font-family: "Qanelas Soft", "Open Sans", sans-serif;
       transition: 450ms all;
       padding: 0px 20px 0px 20px;
       cursor: pointer;
