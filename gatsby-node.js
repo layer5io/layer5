@@ -235,7 +235,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     items: blogs,
     itemsPerPage: 10,
     pathPrefix: "/blog",
-    component: path.resolve("src/templates/blog-list.js"),
+    component: path.resolve(
+      "src/sections/Blog/Blog-list/index.js"
+    ),
   });
   
   const resources = filterByCollection("resources");
