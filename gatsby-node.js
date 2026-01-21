@@ -21,33 +21,6 @@ const HEAVY_COLLECTIONS = new Set(["members", "integrations"]);
 const isFullSiteBuild = process.env.BUILD_FULL_SITE !== "false";
 const shouldIncludeCollection = (collection) => isFullSiteBuild || !HEAVY_COLLECTIONS.has(collection);
 
-if (process.env.CI === "true") {
-  // All process.env.CI conditionals in this file are in place for GitHub Pages, if webhost changes in the future, code may need to be modified or removed.
-  //Replacing '/' would result in empty string which is invalid
-  const replacePath = (url) =>
-    url === "/" || url.includes("/404") || url.endsWith(".html") ? url : `${url}.html`;
-
-  exports.onCreatePage = ({ page, actions }) => {
-    const { createPage, deletePage, createRedirect } = actions;
-    const oldPage = Object.assign({}, page);
-    page.matchPath = page.path;
-    page.path = replacePath(page.path);
-
-    if (page.path !== oldPage.path) {
-      // Replace new page with old page
-      deletePage(oldPage);
-      createPage(page);
-
-      createRedirect({
-        fromPath: `/${page.matchPath}/`,
-        toPath: `/${page.matchPath}`,
-        redirectInBrowser: true,
-        isPermanent: true,
-      });
-    }
-  };
-}
-
 
 const { loadRedirects } = require("./src/utils/redirects.js");
 
@@ -59,25 +32,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
   const envCreatePage = (props) => {
-    if (process.env.CI === "true") {
-      const { path, matchPath, ...rest } = props;
-      const isHandbookPage = path.startsWith("/community/handbook/");
-      createRedirect({
-        fromPath: `/${path}/`,
-        toPath: `/${path}`,
-        redirectInBrowser: true,
-        isPermanent: true,
-      });
-
-      return createPage({
-        path: isHandbookPage ? path : `${path}.html`,
-        matchPath: matchPath || path,
-        ...rest,
-      });
-    }
-    return createPage(props);
+    return createPage({
+      ...props,
+      matchPath: props.matchPath || props.path,
+    });
   };
-
+  
   const blogPostTemplate = path.resolve("src/templates/blog-single.js");
   const blogCategoryListTemplate = path.resolve(
     "src/templates/blog-category-list.js"
@@ -147,6 +107,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           frontmatter {
             program
             programSlug
+            date
           }
           fields {
             collection
@@ -260,6 +221,23 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   };
 
   const blogs = filterByCollection("blog");
+  blogs.sort((a, b) => {
+    const da =
+      new Date(a.frontmatter?.date || a.internal.contentFilePath).getTime();
+    const db =
+      new Date(b.frontmatter?.date || b.internal.contentFilePath).getTime();
+    return db - da;
+  });
+  
+  
+  paginate({
+    createPage: envCreatePage,
+    items: blogs,
+    itemsPerPage: 10,
+    pathPrefix: "/blog",
+    component: path.resolve("src/templates/blog-list.js"),
+  });
+  
   const resources = filterByCollection("resources");
   const news = filterByCollection("news");
   const books = filterByCollection("service-mesh-books");
@@ -676,12 +654,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       slug = `/${collection}/${node.frontmatter.permalink}`;
     } else {
       switch (collection) {
-        case "blog":
-          if (node.frontmatter.published)
-            slug = `/${collection}/${slugify(
-              node.frontmatter.category
-            )}/${slugify(node.frontmatter.title)}`;
+        case "blog": {
+          const category = node.frontmatter.category || "general";
+          const title = node.frontmatter.title || node.id;
+        
+          slug = `/${collection}/${slugify(category)}/${slugify(title)}`;
           break;
+        }        
         case "news":
           slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
           break;
@@ -690,12 +669,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         case "kanvas-labs":
           slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
           break;
-        case "resources":
-          if (node.frontmatter.published)
-            slug = `/${collection}/${slugify(
-              node.frontmatter.category
-            )}/${slugify(node.frontmatter.title)}`;
-          break;
+          case "resources": {
+            const category = node.frontmatter.category || "general";
+            const title = node.frontmatter.title || node.id;
+            slug = `/${collection}/${slugify(category)}/${slugify(title)}`;
+            break;
+          }
         case "members":
           if (node.frontmatter.published)
             slug = `/community/members/${node.frontmatter.permalink ?? slugify(node.frontmatter.name)}`;
