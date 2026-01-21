@@ -10,6 +10,14 @@ export const partners = [
     imageWidth: 382,
   },
   {
+    name: "Exoscale",
+    imageLink: () => import("../../../assets/images/partners/exoscale_black.svg"),
+    imageRoute: "/partners#exoscale",
+    innerDivStyle: "partner__block__inner",
+    imageHeight: 130,
+    imageWidth: 120,
+  },
+  {
     name: "Intel",
     imageLink: () => import("../../../assets/images/partners/intel-grey.svg"),
     imageRoute: "/partners#intel",
