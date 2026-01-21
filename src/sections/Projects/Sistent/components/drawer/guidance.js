@@ -3,100 +3,20 @@ import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { Box, Button, Drawer, List, ListItem, SistentThemeProvider, Typography } from "@sistent/sistent";
 import { SistentLayout } from "../../sistent-layout";
+import { Row } from "../../../../../reusecore/Layout";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import MenuIcon from "@mui/icons-material/Menu";
 import SettingsIcon from "@mui/icons-material/Settings";
 import FilterListIcon from "@mui/icons-material/FilterList";
 
-// Navigation drawer example component
-const DrawerNavigationExample = ({ isDark }) => {
-  const [open, setOpen] = React.useState(false);
-  return (
-    <Box sx={{ maxWidth: 500, margin: "0 auto" }}>
-      <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-        <Button
-          onClick={() => setOpen(true)}
-          variant="contained"
-          startIcon={<MenuIcon />}
-          label="Open Navigation"
-        />
-        <Drawer open={open} onClose={() => setOpen(false)}>
-          <Box sx={{ width: 250, p: 2 }}>
-            <Typography variant="h6" sx={{ mb: 2 }}>Main Menu</Typography>
-            <List>
-              <ListItem><Typography>Home</Typography></ListItem>
-              <ListItem><Typography>Products</Typography></ListItem>
-              <ListItem><Typography>Services</Typography></ListItem>
-              <ListItem><Typography>About</Typography></ListItem>
-              <ListItem><Typography>Contact</Typography></ListItem>
-            </List>
-          </Box>
-        </Drawer>
-      </SistentThemeProvider>
-    </Box>
-  );
-};
-
-// Settings drawer example component
-const DrawerSettingsExample = ({ isDark }) => {
-  const [open, setOpen] = React.useState(false);
-  return (
-    <Box sx={{ maxWidth: 500, margin: "0 auto" }}>
-      <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-        <Button
-          onClick={() => setOpen(true)}
-          variant="outlined"
-          startIcon={<SettingsIcon />}
-          label="Settings"
-        />
-        <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
-          <Box sx={{ width: 280, p: 2 }}>
-            <Typography variant="h6" sx={{ mb: 2 }}>Settings</Typography>
-            <List>
-              <ListItem><Typography>Account</Typography></ListItem>
-              <ListItem><Typography>Preferences</Typography></ListItem>
-              <ListItem><Typography>Notifications</Typography></ListItem>
-              <ListItem><Typography>Privacy</Typography></ListItem>
-            </List>
-          </Box>
-        </Drawer>
-      </SistentThemeProvider>
-    </Box>
-  );
-};
-
-// Filter drawer example component
-const DrawerFilterExample = ({ isDark }) => {
-  const [open, setOpen] = React.useState(false);
-  return (
-    <Box sx={{ maxWidth: 500, margin: "0 auto" }}>
-      <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-        <Button
-          onClick={() => setOpen(true)}
-          variant="outlined"
-          startIcon={<FilterListIcon />}
-          label="Filters"
-        />
-        <Drawer open={open} onClose={() => setOpen(false)}>
-          <Box sx={{ width: 260, p: 2 }}>
-            <Typography variant="h6" sx={{ mb: 2 }}>Filter Options</Typography>
-            <List>
-              <ListItem><Typography>Category</Typography></ListItem>
-              <ListItem><Typography>Price Range</Typography></ListItem>
-              <ListItem><Typography>Brand</Typography></ListItem>
-              <ListItem><Typography>Rating</Typography></ListItem>
-            </List>
-          </Box>
-        </Drawer>
-      </SistentThemeProvider>
-    </Box>
-  );
-};
-
 const DrawerGuidance = () => {
   const location = useLocation();
   const { isDark } = useStyledDarkMode();
+  
+  const [navOpen, setNavOpen] = React.useState(false);
+  const [settingsOpen, setSettingsOpen] = React.useState(false);
+  const [filterOpen, setFilterOpen] = React.useState(false);
 
   return (
     <SistentLayout title="Drawer">
@@ -143,124 +63,156 @@ const DrawerGuidance = () => {
         </div>
 
         <div className="main-content">
-          <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+          <a id="Usage">
+            <h2>Usage</h2>
+          </a>
+          <p>
+            Drawers provide access to destinations and app functionality without navigating away from the current page. They help organize secondary content and actions, making your interface cleaner and more focused.
+          </p>
+          <ul>
+            <li>Use drawers for navigation menus in mobile and responsive applications</li>
+            <li>Organize filters and sorting options that need to be accessible but not always visible</li>
+            <li>Present settings panels that complement the main interface</li>
+            <li>Display contextual information without disrupting the user's workflow</li>
+          </ul>
 
-            <a id="when-to-use">
-              <h2>When to Use Drawers</h2>
-            </a>
-            <p>
-              Drawers are best suited for:
-            </p>
-            <ul>
-              <li>Primary navigation menus in mobile and responsive applications</li>
-              <li>Filtering and sorting options that need to be easily accessible but not always visible</li>
-              <li>Settings panels that complement the main interface</li>
-              <li>Secondary navigation or contextual information</li>
-              <li>Multi-level navigation hierarchies</li>
-            </ul>
+          <a id="Basic Example">
+            <h3>Basic Example</h3>
+          </a>
+          <p>
+            A simple navigation drawer that slides in from the left side of the screen.
+          </p>
+          <Row className="image-container">
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <div style={{ width: "100%" }}>
+                <Button
+                  onClick={() => setNavOpen(true)}
+                  variant="contained"
+                  startIcon={<MenuIcon />}
+                  label="Open Navigation"
+                />
+                <Drawer open={navOpen} onClose={() => setNavOpen(false)}>
+                  <Box sx={{ width: 250, p: 2 }}>
+                    <Typography variant="h6" sx={{ mb: 2 }}>Main Menu</Typography>
+                    <List>
+                      <ListItem><Typography>Home</Typography></ListItem>
+                      <ListItem><Typography>Products</Typography></ListItem>
+                      <ListItem><Typography>Services</Typography></ListItem>
+                      <ListItem><Typography>About</Typography></ListItem>
+                      <ListItem><Typography>Contact</Typography></ListItem>
+                    </List>
+                  </Box>
+                </Drawer>
+              </div>
+            </SistentThemeProvider>
+          </Row>
 
-            <a id="variant-selection">
-              <h2>Choosing the Right Variant</h2>
-            </a>
+          <a id="When to Use">
+            <h2>When to Use</h2>
+          </a>
+          <p>
+            Drawers are best suited for specific use cases where content needs to be accessible but not always visible. Here are common scenarios:
+          </p>
 
-            <h3>Temporary Drawer</h3>
-            <p>
-              <strong>When to use:</strong> Mobile apps, responsive layouts, or when screen space is limited
-            </p>
-            <ul>
-              <li>Overlays content with a backdrop</li>
-              <li>Dismissed by clicking outside or pressing Escape</li>
-              <li>Best for occasional access to navigation or settings</li>
-              <li>Use temporary drawers for mobile and small tablet devices (&lt; 960px)</li>
-            </ul>
+          <h3>Navigation Menus</h3>
+          <p>
+            Drawers are ideal for primary navigation in mobile and responsive applications, providing access to main sections without cluttering the interface.
+          </p>
 
-            <h3>Persistent Drawer</h3>
-            <p>
-              <strong>When to use:</strong> Desktop apps where users frequently toggle navigation visibility
-            </p>
-            <ul>
-              <li>Sits alongside content, pushing it to the side</li>
-              <li>Remains open until explicitly closed</li>
-              <li>State is remembered across sessions</li>
-              <li>Best for desktop applications with screen widths &gt; 960px</li>
-            </ul>
+          <h3>Settings and Configuration</h3>
+          <p>
+            Use right-anchored drawers for settings panels that allow users to configure preferences without leaving their current context.
+          </p>
+          <Row className="image-container">
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <div style={{ width: "100%" }}>
+                <Button
+                  onClick={() => setSettingsOpen(true)}
+                  variant="outlined"
+                  startIcon={<SettingsIcon />}
+                  label="Settings"
+                />
+                <Drawer anchor="right" open={settingsOpen} onClose={() => setSettingsOpen(false)}>
+                  <Box sx={{ width: 280, p: 2 }}>
+                    <Typography variant="h6" sx={{ mb: 2 }}>Settings</Typography>
+                    <List>
+                      <ListItem><Typography>Account</Typography></ListItem>
+                      <ListItem><Typography>Preferences</Typography></ListItem>
+                      <ListItem><Typography>Notifications</Typography></ListItem>
+                      <ListItem><Typography>Privacy</Typography></ListItem>
+                    </List>
+                  </Box>
+                </Drawer>
+              </div>
+            </SistentThemeProvider>
+          </Row>
 
-            <h3>Permanent Drawer</h3>
-            <p>
-              <strong>When to use:</strong> Desktop-first apps where navigation is always needed
-            </p>
-            <ul>
-              <li>Always visible, cannot be closed</li>
-              <li>Fixed at the edge of the viewport</li>
-              <li>Best for large screens (&gt; 1280px) and complex applications</li>
-              <li>Ideal for enterprise dashboards and multi-section interfaces</li>
-            </ul>
-            <a id="anchor-positions">
-              <h2>Where to Position Drawers</h2>
-            </a>
+          <h3>Filters and Sorting</h3>
+          <p>
+            Drawers work well for filter panels in e-commerce or data-heavy applications, allowing users to refine content without losing their place.
+          </p>
+          <Row className="image-container">
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+              <div style={{ width: "100%" }}>
+                <Button
+                  onClick={() => setFilterOpen(true)}
+                  variant="outlined"
+                  startIcon={<FilterListIcon />}
+                  label="Filters"
+                />
+                <Drawer open={filterOpen} onClose={() => setFilterOpen(false)}>
+                  <Box sx={{ width: 260, p: 2 }}>
+                    <Typography variant="h6" sx={{ mb: 2 }}>Filter Options</Typography>
+                    <List>
+                      <ListItem><Typography>Category</Typography></ListItem>
+                      <ListItem><Typography>Price Range</Typography></ListItem>
+                      <ListItem><Typography>Brand</Typography></ListItem>
+                      <ListItem><Typography>Rating</Typography></ListItem>
+                    </List>
+                  </Box>
+                </Drawer>
+              </div>
+            </SistentThemeProvider>
+          </Row>
 
-            <h3>Left Anchor</h3>
-            <p>
-              <strong>Best for:</strong> Primary navigation, main menus, hierarchical navigation
-            </p>
-            <ul>
-              <li>Most common position for navigation drawers</li>
-              <li>Natural reading flow in LTR (left-to-right) interfaces</li>
-              <li>Consistent with user expectations for menu placement</li>
-            </ul>
-
-            <h3>Right Anchor</h3>
-            <p>
-              <strong>Best for:</strong> Settings, filters, shopping carts, detail panels
-            </p>
-            <ul>
-              <li>Secondary or supplementary information</li>
-              <li>Configuration and preferences</li>
-              <li>Doesn't conflict with primary navigation on the left</li>
-            </ul>
-
-            <h3>Top and Bottom Anchors</h3>
-            <p>
-              <strong>Top:</strong> Notifications, alerts, expandable headers<br/>
-              <strong>Bottom:</strong> Mobile action sheets, quick actions, mobile-optimized panels
-            </p>
-
-            <a id="best-practices">
-              <h2>Best Practices</h2>
-            </a>
-            <br/>
-            <h3>Content Organization</h3>
-            <ul>
-              <li>Keep drawer content focused on a single purpose</li>
-              <li>Prioritize frequently used items at the top</li>
-              <li>Group related items with visual separators</li>
-              <li>Limit nesting to 2-3 levels maximum</li>
-            </ul>
-
-            <h3>Accessibility</h3>
-            <ul>
-              <li>Ensure keyboard navigation works (Tab, Escape keys)</li>
-              <li>Trap focus within the drawer when open</li>
-              <li>Provide clear ARIA labels for screen readers</li>
-              <li>Return focus to trigger element when closing</li>
-            </ul>
-
-            <h3>Responsive Behavior</h3>
-            <ul>
-              <li>Use temporary drawers on mobile (&lt; 960px)</li>
-              <li>Consider persistent or permanent on desktop (&gt; 960px)</li>
-              <li>Adjust drawer width based on screen size</li>
-              <li>Test on actual devices, not just browser resize</li>
-            </ul>
-
-            <h3>User Experience</h3>
-            <ul>
-              <li>Make drawer triggers easily discoverable</li>
-              <li>Provide smooth open/close animations</li>
-              <li>Include a visible close button or clear dismiss method</li>
-              <li>Maintain consistent behavior across your application</li>
-            </ul>
-          </SistentThemeProvider>
+          <a id="Best Practices">
+            <h2>Best Practices</h2>
+          </a>
+          <p>
+            Follow these guidelines to ensure drawers are effective and user-friendly:
+          </p>
+          <ul>
+            <li>
+              <strong>Clear Purpose:</strong> Use drawers for navigation, filters, or supplementary content. Avoid using them for critical actions or primary content.
+            </li>
+            <li>
+              <strong>Appropriate Width:</strong> Keep drawer width between 240-360px on desktop. On mobile, drawers can be up to 80% of screen width.
+            </li>
+            <li>
+              <strong>Positioning:</strong> Use left anchors for primary navigation, right anchors for settings/filters, and top/bottom for mobile-specific patterns.
+            </li>
+            <li>
+              <strong>Responsive Behavior:</strong> Use temporary drawers on mobile (&lt; 960px) and consider persistent or permanent drawers on desktop (&gt; 960px).
+            </li>
+            <li>
+              <strong>Keyboard Support:</strong> Ensure drawers can be opened/closed with keyboard (Escape key) and focus is managed properly.
+            </li>
+            <li>
+              <strong>Clear Dismissal:</strong> Provide multiple ways to close temporary drawers: backdrop click, close button, or Escape key.
+            </li>
+            <li>
+              <strong>Content Organization:</strong> Keep drawer content focused and well-organized. Use lists, dividers, and headers to structure information.
+            </li>
+            <li>
+              <strong>Performance:</strong> Lazy load drawer content when possible to improve initial page load performance.
+            </li>
+            <li>
+              <strong>Accessibility:</strong> Use proper ARIA labels, manage focus trap within the drawer, and ensure screen reader compatibility.
+            </li>
+            <li>
+              <strong>Animation:</strong> Use smooth slide-in/out transitions. Avoid overly long animations that slow down user interactions.
+            </li>
+          </ul>
         </div>
       </div>
     </SistentLayout>
