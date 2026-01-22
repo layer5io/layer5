@@ -15,7 +15,6 @@ import { ReactComponent as Partner12 } from "../../assets/images/partners/vmware
 import { ReactComponent as Partner14 } from "../../assets/images/partners/metabit-trading-logo-colorMode.svg";
 import { ReactComponent as Partner15 } from "../../assets/images/partners/docker.svg";
 import { ReactComponent as Partner16 } from "../../assets/images/partners/digitalocean.svg";
-import { ReactComponent as PartnerExo } from "../../assets/images/partners/exoscale_color.svg";
 export const partners = [
   {
     name: "The University of Texas at Austin",
@@ -86,7 +85,7 @@ export const partners = [
     imageLink: <Partner8 alt="Microsoft" />,
     //imageRoute: "https://www.microsoft.com/",
     moreInfo: "Microsoft Azure is an ever-expanding set of cloud services to help your organization meet your business challenges. It’s the freedom to build, manage, and deploy applications on a massive, global network using your favorite tools and frameworks.",
-  },{
+  }, {
     name: "Red Hat",
     desc: "The world’s leading provider of enterprise open source solutions, using a community-powered approach to deliver high-performing Linux, cloud, container, and Kubernetes technologies.",
     //link: null,
