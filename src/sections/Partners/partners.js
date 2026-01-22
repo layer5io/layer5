@@ -15,6 +15,7 @@ import { ReactComponent as Partner12 } from "../../assets/images/partners/vmware
 import { ReactComponent as Partner14 } from "../../assets/images/partners/metabit-trading-logo-colorMode.svg";
 import { ReactComponent as Partner15 } from "../../assets/images/partners/docker.svg";
 import { ReactComponent as Partner16 } from "../../assets/images/partners/digitalocean.svg";
+
 export const partners = [
   {
     name: "The University of Texas at Austin",
