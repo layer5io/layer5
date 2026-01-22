@@ -12,7 +12,7 @@ const OpenSourceBanner = () => {
             We 💚 open source and are proud to sponsor your free use of our tools.
           </p>
         </div>
-        <Button $primary title="Open Source Pricing" $url="/pricing/open-source-program"><BsArrowUpRight size={21} className="icon-left" /></Button>
+        <Button $primary title="Open Source Pricing" $url="/community/open-source-program"><BsArrowUpRight size={21} className="icon-left" /></Button>
       </div>
     </OpenSourceBannerWrapper>
   );
