@@ -86,8 +86,7 @@ export const partners = [
     imageLink: <Partner8 alt="Microsoft" />,
     //imageRoute: "https://www.microsoft.com/",
     moreInfo: "Microsoft Azure is an ever-expanding set of cloud services to help your organization meet your business challenges. It’s the freedom to build, manage, and deploy applications on a massive, global network using your favorite tools and frameworks.",
-  },
-  {
+  },{
     name: "Red Hat",
     desc: "The world’s leading provider of enterprise open source solutions, using a community-powered approach to deliver high-performing Linux, cloud, container, and Kubernetes technologies.",
     //link: null,
