@@ -217,9 +217,9 @@ const DrawerCode = () => {
         </div>
 
         <div className="main-content">
+          <h3>Temporary Drawer</h3>
+          <p>Opens on top of content, closes when clicking outside or selecting an item.</p>
           <div className="showcase">
-            <h3>Temporary Drawer</h3>
-            <p>Opens on top of content, closes when clicking outside or selecting an item.</p>
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <Button
@@ -241,9 +241,9 @@ const DrawerCode = () => {
             <CodeBlock name="drawer-temporary" code={codes[0]} />
           </div>
 
+          <h3>Anchor Positions</h3>
+          <p>Drawers can slide in from any edge: left, right, top, or bottom.</p>
           <div className="showcase">
-            <h3>Anchor Positions</h3>
-            <p>Drawers can slide in from any edge: left, right, top, or bottom.</p>
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
@@ -269,9 +269,9 @@ const DrawerCode = () => {
             <CodeBlock name="drawer-anchors" code={codes[1]} />
           </div>
 
+          <h3>Persistent Drawer</h3>
+          <p>Sits alongside content, can be toggled open/closed, and maintains state.</p>
           <div className="showcase">
-            <h3>Persistent Drawer</h3>
-            <p>Sits alongside content, can be toggled open/closed, and maintains state.</p>
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <Box sx={{ display: "flex" }}>
@@ -298,9 +298,9 @@ const DrawerCode = () => {
             <CodeBlock name="drawer-persistent" code={codes[2]} />
           </div>
 
+          <h3>Permanent Drawer</h3>
+          <p>Always visible drawer pinned to the side. Ideal for desktop applications with consistent navigation.</p>
           <div className="showcase">
-            <h3>Permanent Drawer</h3>
-            <p>Always visible drawer pinned to the side. Ideal for desktop applications with consistent navigation.</p>
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <Box sx={{ display: "flex", height: 300, border: "1px solid #ddd" }}>
