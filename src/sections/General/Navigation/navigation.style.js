@@ -9,6 +9,7 @@ const NavigationWrap = styled.header`
   transition-property: color, background-color;
   transition-duration: 0.8s;
   transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  font-family: "Qanelas Soft", "Open Sans", sans-serif;
 
   .nav-container {
     display: flex;
@@ -192,7 +193,6 @@ const NavigationWrap = styled.header`
       padding: 3em;
       border-radius: 50px 0 0 50px;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-      font-family: "Qanelas Soft", "Open Sans", sans-serif;
       .sub-item {
         padding: 0;
       }
@@ -372,7 +372,6 @@ const NavigationWrap = styled.header`
     visibility: visible;
   }
   nav {
-    font-family: "Qanelas Soft", "Open Sans", sans-serif;
     ul {
       margin: 0;
       padding: 0;
@@ -398,7 +397,6 @@ const NavigationWrap = styled.header`
       }
     }
     .dropdown {
-      font-family: "Qanelas Soft", "Open Sans", sans-serif;
       li {
         padding-top: 5px;
         a {
@@ -632,7 +630,6 @@ const NavigationWrap = styled.header`
         background: ${(props) => props.theme.greyC1C1C1ToGreyB3B3B3};
       }
       .menu-item {
-        font-family: "Qanelas Soft", "Open Sans", sans-serif;
         font-size: 16px;
         font-weight: 600;
         line-height: 2rem;
