@@ -192,7 +192,7 @@ const DrawerGuidance = () => {
               <strong>Positioning:</strong> Use left anchors for primary navigation, right anchors for settings/filters, and top/bottom for mobile-specific patterns.
             </li>
             <li>
-              <strong>Responsive Behavior:</strong> Use temporary drawers on mobile (&lt; 960px) and consider persistent or permanent drawers on desktop (&gt; 960px).
+              <strong>Responsive Behavior:</strong> Use temporary drawers on mobile {"(<"} 960px) and consider persistent or permanent drawers on desktop {"(>"} 960px).
             </li>
             <li>
               <strong>Keyboard Support:</strong> Ensure drawers can be opened/closed with keyboard (Escape key) and focus is managed properly.
