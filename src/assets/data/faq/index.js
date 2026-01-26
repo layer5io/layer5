@@ -478,7 +478,7 @@ const data = {
     {
       question: "How often does Layer5 offer internships?",
       category: "Careers",
-      category: "Internships",
+      subcategory: "Internships",
       answer: [
         "Continuously. Layer5 has internships starting and stopping frequently. Some internships rigidly start and stop on particular dates, while other internships offered start as a batch of candidates show collective readiness. We work with individuals to align the timings of the internship with other activities in their life.",
       ],
@@ -488,7 +488,7 @@ const data = {
     {
       question: "What are characteristics of successful interns?",
       category: "Careers",
-      category: "Internships",
+      subcategory: "Internships",
       answer: [
         "Interns that thrive at Layer5 are those that espouse the Layer5 culture of paying it forward. These interns freely help other contributors, understanding that 1) they learn as they teach and assist others, 2) their projects are furthered with more contributors engage, and 3) any contributors path to maintainership is one of enabling others.",
         "Successful interns steward projects naturally as they become a resource to other contributors. These interns frequently become component and/or core maintainers.",
@@ -500,7 +500,7 @@ const data = {
     {
       question: "What are accomplishments of successful interns?",
       category: "Careers",
-      category: "Internships",
+      subcategory: "Internships",
       answer: [
         "Many Layer5 interns speak at large, public technology conferences like KubeCon, DockerCon, and so on. They write blog posts and share about their experience and learnings on social media. They engage with their whole self.",
         "Many interns become open source maintainers, and have ongoing responsibility to steward Layer5 and CNCF projects.",
@@ -509,7 +509,7 @@ const data = {
     {
       question: "Are internships offered based on previous experiences or projects?",
       category: "Careers",
-      category: "Internships",
+      subcategory: "Internships",
       answer: [
         "Internships are offered based on our commitment to supporting individuals who make a meaningful impact in the community and on our projects. While experience in other projects is wonderful and can be helpful as individuals strive to contribute meaningfully here, it is not a determining factor in whether or not an internship is appropriate to award. The metric we use is whether the individual demonstrates a sustained and positive impact on the projects we steward. We extend support to anyone who achieves this, often in the form of an internship if it proves beneficial to the individual.",
       ],
@@ -517,7 +517,7 @@ const data = {
     {
       question: "Is Layer5 hiring?",
       category: "Careers",
-      category: "Full-time",
+      subcategory: "Full-time",
       answer: [
         "Nearly perpetually, yes.",
         "In support of individuals making an impact in our open source projects, we hire individuals directly from our community."
