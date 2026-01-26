@@ -34,6 +34,7 @@ const PricingWrapper = styled.section`
   }
   .header-heading {
     margin-top: 2rem;
+    margin-bottom: 1rem;
     color: white;
     text-align: center;
   }
