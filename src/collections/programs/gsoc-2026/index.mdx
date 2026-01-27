@@ -1,0 +1,172 @@
+---
+title: "Google Summer of Code 2026"
+thumbnail_svg: ./gsoc.svg
+permalink: "gsoc/2026"
+published: true
+program: "Google Summer of Code"
+programSlug: "gsoc"
+redirect_from:
+  - /gsoc/2026/
+---
+import { ProgramsWrapper } from "../Programs.style.js";
+import Button from "../../../reusecore/Button";
+import gsoc_logo from "./gsoc.svg";
+import {Link} from "gatsby";
+import playground from "./meshery-playground-alt-4.webp";
+
+<ProgramsWrapper>
+
+<img src={gsoc_logo} alt="gsoc_logo" />
+<b>GSoC 2026 Program Timeline</b>
+<div>
+  <ul>
+    <li>January 19 - Organization applications open</li>
+    <li>February 19 - Accepted GSoC Organizations announced</li>
+    <li>March 16 - Students submit their proposals</li>
+    <li>April 30 - Accepted students are announced</li>
+    <li>May 25 - Contributor coding officially begins</li>
+    <li>November 9 - Successful student projects are announced</li>
+  </ul>
+</div>
+<b>Statistics</b>
+<div>
+  <ul>
+    <li>
+      Since year 2005, 16,000+ students and 13000 mentors from over 118
+      countries has came together to participate in GSoC
+    </li>
+    <li>Approximately 38+ million lines of code have been produced</li>
+  </ul>
+</div>
+
+## GSoC 2026 Project Ideas
+<br />
+
+#### Migration of docs.meshery.io from Jekyll to Hugo
+
+- **Description:** The Meshery documentation [docs.meshery.io](https://docs.meshery.io) is a critical resource for users and contributors. Currently built using Jekyll, the site faces limitations in build speed, scalability, and long-term maintainability. Hugo, a modern static site generator, offers significantly faster build times, better content organization, and an improved developer experience. This internship focuses on migrating the entire [docs.meshery.io](https://docs.meshery.io) site from Jekyll to the Hugo framework, using docs.layer5.io (already implemented in Hugo) as a reference architecture. The migration will involve porting all documentation content, assets, layouts, and configuration while preserving URLs, SEO, contributor workflows, and existing auto-generated documentation files.
+- **Expected outcome:** 
+  - Revamp of documentation set information architecture. Alignment with Diataxis framework.
+      - Updated contributor docs.
+      - All self-documenting aspects accounted for:
+          - Compatibility tests of Meshery Adapters.
+          - End-to-end tests of Meshery UI.
+          - Integration of Meshery Catalog and all designs.
+          - Publication of community discussion forum activity per category.
+          - Integration of Meshery Models (Integrations)
+- **Recommended Skills:** Static site generators (Jekyll and Hugo), Markdown, HTML/CSS, Git/GitHub workflows, documentation engineering, basic Go templating (Hugo), CI/CD familiarity.
+- **Mentor(s):** <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to ="mailto:kate.suttons2337@gmail.com">Kate Suttons</Link>
+- **Expected project size:** 175 hours
+- **Difficulty:** Medium
+- **Upstream Issue (URL):** [https://github.com/meshery/meshery/issues/17095](https://github.com/meshery/meshery/issues/17095)
+
+#### Relationships for AWS services
+
+- **Description:** Meshery Models are declarative representations of infrastructure and applications. Within these models, Relationships define how different Components (e.g., Kubernetes resources, Cloud services) interact and depend on each other. These relationships are crucial for visualizing, understanding, and managing complex cloud native systems. This internship focuses on significantly expanding the breadth and depth of Meshery Relationships across a wide array of technologies supported by Meshery. As Meshery continues to integrate with more cloud-native technologies (Kubernetes, public clouds, and all CNCF projects), there's a growing need to accurately model the intricate relationships between their components - vital for providing users with comprehensive insights and control over their deployments.
+- **Expected outcome:** 
+  - A multitude of new relationships defined both intra and inter AWS services.
+  - Policy Contribution: For advanced interns, there may be opportunities to contribute to the Rego policies that evaluate and enforce these relationships.
+- **Recommended Skills:** DevOps, systems administration, solutions architecture. Experience with Kubernetes, AWS and its services.
+- **Mentor(s):** <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="/community/members/sangram-rath">Sangram Rath</Link>
+- **Expected project size:** 175 hours
+- **Difficulty:** Medium
+- **Upstream Issue (URL):** [https://github.com/meshery/meshery/issues/17096](https://github.com/meshery/meshery/issues/17096)
+
+#### Adapter for AI and LLMs
+
+- **Description:** Meshery is the open-source cloud native manager that empowers platform engineers to design and operate infrastructure. As infrastructure complexity grows, the need for intelligent assistance becomes critical. This project focuses on developing and enhancing a dedicated AI Adapter and AI Connections for Meshery. This adapter serves as the bridge between Meshery’s core orchestration engine and various Large Language Models (LLMs). The goal is to enable "Natural Language to Infrastructure" capabilities, allowing users to describe their architectural intent (e.g., "Deploy a highly available Kubernetes cluster on AWS with Prometheus monitoring") and have Meshery auto-generate the visual topology and configuration manifests. The intern will work on decoupling the AI logic from the core platform, allowing users to "Bring Your Own Model" (BYOM)—supporting both cloud-based providers (OpenAI, Anthropic) and local inference runners (Ollama, LocalAI).
+- **Expected outcome:** 
+  - A fully functional AI Adapter (or Connection) integrated into the Meshery ecosystem.
+  - Demonstrable capability for users to swap between at least two different LLM providers (e.g., OpenAI vs. a local Llama 3 model).
+  - Implementation of a feature where natural language queries result in a rendered design.
+  - Merged pull requests (PRs) including code, tests, and documentation.
+- **Recommended Skills:** 
+- Proficiency in Golang (Go) is essential, as Meshery’s backend is written in Go.
+  - Familiarity with MCP Servers, REST APIs, LLM APIs (OpenAI, Vertex AI), local inference servers (Ollama).
+  - Basic understanding of Kubernetes, Docker, and Infrastructure-as-Code (IaC) concepts.
+  - Experience with REST, GraphQL, and gRPC.
+  - Nice to have: Experience with React (for frontend integration in Meshery UI).
+- **Mentor(s):** <Link to="/community/members/lee-calcote">Lee Calcote</Link>,<Link to = "mailto:rian.cteulp@gmail.com">Rian Cteulp</Link>
+- **Expected project size:** 175 hours
+- **Difficulty:** Medium
+- **Upstream Issue (URL):** [https://github.com/meshery/meshery/issues/17097](https://github.com/meshery/meshery/issues/17097)
+
+#### Graph Database Integration
+
+- **Description:**   Meshery's *MeshSync* component acts as the real-time discovery engine, maintaining an up-to-date snapshot of all managed infrastructure. Currently, mapping the complex relationships between these resources (e.g., a Service selecting Pods which are mounted to PVCs) relies on relational or in-memory lookups that can become inefficient at scale. This project involves integrating a dedicated graph database (or an embedded graph processing library) into Meshery's architecture. The goal is to ingest discovered Kubernetes resources as "nodes" and their associations (OwnerReferences, Label Selectors, Annotations) as "edges." This shift will enable highly efficient traversal and querying of infrastructure data, powering more advanced capabilities like topology visualization, impact analysis, and dependency mapping.
+- **Expected outcome:** 
+  - Fully-functional datastores of discovered cluster data into a graph structure.
+    - Benchmarks demonstrating improved performance for complex relationship queries compared to the existing relational implementation.
+    - Successful rendering of the infrastructure topology in Meshery UI using data fetched from the new graph backend.
+    - Comprehensive documentation covering the new graph schema and query patterns.
+- **Recommended Skills:** 
+  - Strong proficiency in Golang as both MeshSync and Meshery's Kubernetes operator are written in Go.
+  - Understanding of openCypher, graph theory and Graph Databases (e.g., NebulaGraph, or embedded Go graph libraries like `gonum` or `cayley`).
+  - Strong familiarity with Kubernetes Controllers, Informers, and the Object Model (GVK/GVR).
+  - Experience and competency with GraphQL
+- **Mentor(s):** <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="mailto:james.horton2337@gmail.com">James Horton</Link>
+- **Expected project size:** 175 hours
+- **Difficulty:** Medium
+- **Upstream Issue (URL):** [https://github.com/meshery/meshery/issues/17098](https://github.com/meshery/meshery/issues/17098)
+
+#### Workflow Engine in Meshery
+
+- **Description:** Integrate a new architectural component into Meshery: a workflow engine, using Temporal. This project involves shifting Meshery off of sqlite over to postgres using gorm (golang). Interns will familiarize with concepts of orchestration engines, including chaining workflows, and content lifecycle management.
+- **Recommended Skills:** Golang, Temporal, ReactJS
+- **Mentor(s):** <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="mailto:marcus.ringblom@gmail.com">Marcus Ringblom</Link>
+- **Expected project size:** 175 hours
+- **Difficulty:** Medium
+- **Upstream Issue (URL):** [https://github.com/meshery/meshery/issues/17099](https://github.com/meshery/meshery/issues/17099)
+
+### Cloud Native Playground
+
+<a href="https://play.meshery.io">
+<img src={playground} alt="the cncf playground mockup" style={{ width: "40%" }} />
+</a>
+
+<br />
+<hr />
+<br />
+<h2>Additional Information</h2>
+<div className="flex-div">&nbsp;</div>
+<div id="layer5-intro" className="iframe-container">
+  <iframe
+    width="392"
+    height="220.5"
+    src="https://www.youtube.com/embed/0yN5T5LB9ps"
+    loading="lazy"
+    frameBorder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  />
+</div>
+Layer5 projects are open source software. Anyone can download, use, work on, and share it with others. It's built on principles like collaboration, globalism, and innovation. Layer5 projects are distributed under the terms of Apache v2.
+
+<h3>About Layer5</h3>
+
+<p>We want to participate to help first-time open source contributors get started and what will hopefully be a lifelong journey of open source participation. We want to have them have a great first experience, understand what it means to be embraced by empathy and, in turn, to have empathy for others. We are all learning and growing each day. Our organization and community culture has a pay-it-forward mentality. We spend a lot of time with both students and adults alike, tutoring them, supporting them, and watching them grow. We believe that the world has too few truly diverse and perpetually encouraging open source communities. We take our internships very seriously and grow and support interns to dramatically increase their career velocity. We love helping others learn and grow.</p>
+
+<p>Mentoring and seeing others learn and grow is what Layer5 is all about - they grow, we grow. Layer5 is a platform for mentees to hoist themselves up on and leapfrog from. We’re a platform for shared success. Direct participation in GSoC will be most meaningful to the community.</p>
+
+<p>We interact daily over Slack, and have an open source project <Link to="/community/calendar">meeting everyday</Link>, which are posted to the community <a href="https://www.youtube.com/c/Layer5io?sub_confirmation=1" rel="nofollow">YouTube channel</a>.</p>
+
+<p>Layer5 projects are open source software. Anyone can download, use, work on and share it with others. It's built on principles like collaboration, globalism, and innovation. Layer5 projects are distributed under the terms of   Apache v2.</p>
+
+<h3>Google Summer of Code Participation</h3>
+
+<p>The key component of these projects is our Community. This community, which you will join as a participant in Google Summer of Code, is improving the world of diverse cloud native systems. Your contributions will affect people you've never met. The Layer5 community includes software engineers, researchers, students, artists, system administrators, operators and web designers -- all of whom will be happy to help you get started.</p>
+
+<p>We believe that all contributors should expect and be part of a safe and friendly environment for constructive contribution. We can more effectively and successfully compare and challenge different ideas to find the best solutions for advancement, while building the size, diversity, and strength of our community.</p>
+
+<div className="apply-button">
+  <h3>
+    <Button
+      $primary
+      title="Participate"
+      $url="https://discuss.layer5.io"
+      $external={ true }
+    />
+  </h3>
+</div>
+
+</ProgramsWrapper>
