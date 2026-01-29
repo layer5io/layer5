@@ -64,31 +64,42 @@ const CTA_FullWidthWrapper = styled.div`
     }
 
     @media screen and (max-width: 699px) {
-        display: block;
+        display: flex;
+        flex-direction: column;
         width: 18rem;
-        height: 18rem;
+        height: auto;
         margin: 1.5rem auto;
         border-radius: 0.25rem;
 
         img {
-            width: 18rem;
-            height: 18rem;
-            position: absolute;
-            opacity: 0.35;
-            border-radius: 0.25rem;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.25rem 0.25rem 0 0;
         }
 
         .cta-content {
-            position: absolute;
-            height: 18rem;
-            display: block;
-            width: 18rem;
-            background: none;
-            padding: 4rem 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 1.5rem 1rem;
+            box-sizing: border-box;
+
+            div {
+                flex: none;
+                width: 100%;
+            }
 
             p {
                 color: white;
             }
+            
+            a {
+                flex: none;
+                margin-top: 1rem;
+            }  
         }
     }
 `;
@@ -100,7 +111,7 @@ const defaultURL = "https://slack.layer5.io";
 const CTA_FullWidth = ({ alt, button_text, category, content, external_link, image, url, heading, ...props }) => {
   return (
     <CTA_FullWidthWrapper {...props}>
-      { category ? (
+      {category ? (
         <>
           <img src={Categories[category]["Image"]} alt={Categories[category]["Image_Alt"]} />
           <div className="cta-content">
