@@ -27,10 +27,18 @@ const DataWrapper = (WrappedComponent) => {
           extension
           publicURL
         }
+        thumbnail_svg {
+          extension
+          publicURL
+        }
         darkthumbnail {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
+          extension
+          publicURL
+        }
+        darkthumbnail_svg {
           extension
           publicURL
         }
