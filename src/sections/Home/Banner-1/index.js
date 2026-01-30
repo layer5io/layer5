@@ -15,7 +15,7 @@ const Banner1 = (props) => {
   return (
     <Banner1SectionWrapper {...props} >
       <Container >
-        <img loading="eager" alt="hero-image" src={Backgroundsvg} className="background-svg" />
+        <img loading="eager" fetchpriority="high" alt="hero-image" src={Backgroundsvg} className="background-svg" />
         <Row>
           <Col $sm={8} $lg={8} className="section-title-wrapper">
 
@@ -26,11 +26,11 @@ const Banner1 = (props) => {
             >
               <h1>Cloud Native Management</h1>
               <h2>
-              of <span>developer</span>-defined infrastructure
+                of <span>developer</span>-defined infrastructure
               </h2>
             </SectionTitle>
             <p>
-            an open source-first community of cloud native engineers
+              an open source-first community of cloud native engineers
             </p>
             <span className="vintage-box-container">
               <VintageBox $right={true} $vintageOne={true}>

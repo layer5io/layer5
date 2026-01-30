@@ -2,6 +2,7 @@ import styled from "styled-components";
 const PartnerItemWrapper = styled.section`
     padding: 2rem 0;
     margin: 0rem 0rem 5rem 0rem;
+    min-height: 200px; /* Prevent layout shift (CLS) by reserving space for partner logos */
     overflow: hidden;
     .section-title{
         h4{
