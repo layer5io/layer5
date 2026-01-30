@@ -15,8 +15,8 @@ const Card = ({ frontmatter, fields, loading = "lazy", fetchpriority = "auto" })
       <div className="post-block">
         <div className="post-thumb-block">
           <Image
-            {...((isDark && (frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg) && (frontmatter.darkthumbnail?.publicURL || frontmatter.darkthumbnail_svg?.publicURL) !== (frontmatter.thumbnail?.publicURL || frontmatter.thumbnail_svg?.publicURL))
-              ? (frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg) : (frontmatter.thumbnail || frontmatter.thumbnail_svg))}
+            {...((isDark && frontmatter.darkthumbnail && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL)
+              ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
             imgStyle={{ objectFit: "contain" }}
             loading={loading}
             fetchpriority={fetchpriority}

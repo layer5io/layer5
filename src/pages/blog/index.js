@@ -25,20 +25,12 @@ export const query = graphql`query allBlogs {
             gatsbyImageData(layout: FULL_WIDTH)
           }
         }
-        thumbnail_svg {
-          extension
-          publicURL
-        }
         darkthumbnail {
           extension
           publicURL
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
-        }
-        darkthumbnail_svg {
-          extension
-          publicURL
         }
       }
       fields {
