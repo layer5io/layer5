@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
+import cursor from "../Features/images/cursor.svg";
+
 export const CardWrapper = styled.div`
     .post-block{
+        cursor: url(${cursor}), auto;
         margin-bottom: 2rem;
         border-radius: 0.5rem;
         background-Color:${props => props.theme.grey212121ToWhite};
@@ -24,6 +27,19 @@ export const CardWrapper = styled.div`
             }
         } 
     }
+        
+    .readmore-btn,
+    .external-link-btn,
+    .post-title,
+    .post-meta-block,
+    .post-content-block,
+    .post-thumb-block,
+    img,
+    h2,
+    p {
+        cursor: inherit !important;
+    }
+
     .readmore-btn{
         color: ${props => props.theme.secondaryColor};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
