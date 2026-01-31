@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../../../reusecore/Button";
-import BrandGuideImg from "../../../../assets/images/Brand-Guide/brand-guide.png";
-import BrandGuidePDF from "../../../../assets/brand/brand-guide.pdf";
+import BrandGuideImg from "../../../../assets/images/Brand-Guide/brand-guide.webp";
 
 import { Row, Col } from "../../../../reusecore/Layout";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
@@ -23,7 +22,8 @@ const BrandGuide = () => {
         <div className="post-content">
           <Row style={{
             flexWrap: "wrap"
-          }} className="brand-section">
+          }} className="brand-section"
+          >
             <Col $xs={12} $sm={6}>
               <h1 className="layerH3">
                 Brand Guide
@@ -45,7 +45,7 @@ const BrandGuide = () => {
           <Row>
             <Col $xs={12}>
               <Row className="bookmarks">
-                <Link to={BrandGuidePDF}>
+                <Link to="/brand/brand-guide.pdf">
                   <img className="bookmarks" src={BrandGuideImg} alt="Layer5 Brand Guide" />
                 </Link>
               </Row>

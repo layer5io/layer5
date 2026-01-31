@@ -41,6 +41,10 @@ const Navigation = () => {
             gatsbyImageData(width: 1050, height: 1360, layout: CONSTRAINED)
           }
         }
+        thumbnail_svg {
+          extension
+          publicURL
+        }
       }
       fields {
         slug
@@ -67,6 +71,14 @@ const Navigation = () => {
           }
           publicURL
           extension
+        }
+        thumbnail_svg {
+          extension
+          publicURL
+        }
+        thumbnail_svg {
+          extension
+          publicURL
         }
       }
       fields {
@@ -95,6 +107,14 @@ const Navigation = () => {
           publicURL
           extension
         }
+        thumbnail_svg {
+          extension
+          publicURL
+        }
+        thumbnail_svg {
+          extension
+          publicURL
+        }
       }
       fields {
         slug
@@ -119,6 +139,10 @@ const Navigation = () => {
               layout: FIXED
             )
           }
+          extension
+          publicURL
+        }
+        thumbnail_svg {
           extension
           publicURL
         }
@@ -168,6 +192,8 @@ const Navigation = () => {
   const [userData, setUserData] = useState(null);
   const dropDownRef = useRef();
   const navWrapRef = useRef();
+  const accountDropdownRef = useRef();
+
   function getCookieValue(cookieName) {
     const cookies = document.cookie.split(";");
 
@@ -254,6 +280,18 @@ const Navigation = () => {
     closeDropDown();
   };
 
+  useEffect(() => {
+    if (!dropDown) return;
+
+    const handleClickOutside = (e) => {
+      if (!accountDropdownRef.current?.contains(e.target)) {
+        setDropDown(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [dropDown]);
   return (
     <NavigationWrap
       className={`nav-block ${scroll ? "scrolled" : ""}`}
@@ -327,7 +365,11 @@ const Navigation = () => {
                                       changeDropdownState();
                                       closeDropDown();
                                     }}
-                                    className={subItems.sepLine ? "mobile-sub-menu-item" : "mobile-nested-menu"}
+                                    className={
+                                      subItems.sepLine
+                                        ? "mobile-sub-menu-item"
+                                        : "mobile-nested-menu"
+                                    }
                                     activeClassName="nav-link-active"
                                   >
                                     {subItems.name}
@@ -337,8 +379,8 @@ const Navigation = () => {
                             );
                           })}
                         {menu.actionItems !== undefined &&
-                          menu.actionItems.map((actionItem, index) => (
-                            (actionItem.actionName === "Join the discussion" ?
+                          menu.actionItems.map((actionItem, index) =>
+                            actionItem.actionName === "Join the discussion" ? (
                               <a
                                 key={index}
                                 href={actionItem.actionLink}
@@ -351,10 +393,12 @@ const Navigation = () => {
                                 }}
                               >
                                 <span className="readmore-btn">
-                                  {actionItem.actionName} <IoIosArrowRoundForward />
+                                  {actionItem.actionName}{" "}
+                                  <IoIosArrowRoundForward />
                                 </span>
                               </a>
-                              : <Link
+                            ) : (
+                              <Link
                                 key={index}
                                 to={actionItem.actionLink}
                                 partiallyActive={true}
@@ -365,12 +409,12 @@ const Navigation = () => {
                                 }}
                               >
                                 <span className="readmore-btn">
-                                  {actionItem.actionName} <IoIosArrowRoundForward />
+                                  {actionItem.actionName}{" "}
+                                  <IoIosArrowRoundForward />
                                 </span>
                               </Link>
                             )
-                          ))
-                        }
+                          )}
                       </ul>
                     </li>
                   ))}
@@ -412,7 +456,7 @@ const Navigation = () => {
         </div>
         <div className="meshery-cta">
           {userData ? (
-            <div className="dropDown">
+            <div className="dropDown" ref={accountDropdownRef}>
               <button
                 className="avatar-container"
                 style={{

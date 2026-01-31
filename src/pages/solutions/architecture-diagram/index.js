@@ -15,5 +15,6 @@ export default ArchitectureDiagramPage;
 export const Head = () => {
   return <SEO title="Design Architecture Diagram | Layer5"
     description="Create architecture diagram for AWS, GCP or Kubernetes"
-    image="/images/solutions-collaborate.png" />;
+    image="/images/solutions-collaborate.webp"
+  />;
 };

@@ -5,7 +5,7 @@ import { Col, Row } from "../../../../reusecore/Layout";
 import SFL from "../../../../assets/images/five/SVG/stick-figures.svg";
 import teamOfFives from "../../../../assets/images/five/SVG/team-of-fives.svg";
 import resourcesSign from "../../../../assets/images/five/SVG/resources-sign.svg";
-import mesheryWorship from "../../../../assets/images/five/meshery-worship.png";
+import mesheryWorship from "../../../../assets/images/five/meshery-worship.webp";
 // import f1 from "../../../../assets/images/five/SVG/1.svg";
 // import f2 from "../../../../assets/images/five/SVG/2.svg";
 // import f3 from "../../../../assets/images/five/SVG/3.svg";
@@ -31,7 +31,8 @@ const StickFigures = () => {
     <div className="post-content">
       <Row style={{
         flexWrap: "wrap"
-      }} className="brand-section">
+      }} className="brand-section"
+      >
         <Col $xs={12} $sm={6}>
           <h1 className="layerH3">
             <strong> Five, our mascot </strong>
@@ -56,7 +57,8 @@ const StickFigures = () => {
 
       <Row style={{
         flexWrap: "wrap"
-      }}>
+      }}
+      >
         <Col>
           <h2 className="layerH3 in">Images</h2>
         </Col>

@@ -1,5 +1,5 @@
 import React from "react";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+
 import LabSinglePageWrapper from "./LabSinglePageWrapper.style";
 import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
 import { Link } from "gatsby";
@@ -7,7 +7,7 @@ import PageHeader from "../../../reusecore/PageHeader";
 import Button from "../../../reusecore/Button";
 
 
-const LabSinglePage = ({ frontmatter, body }) => {
+const LabSinglePage = ({ frontmatter, children }) => {
 
   // React.useEffect(() => {
   //   if (typeof window !== undefined) {
@@ -23,7 +23,7 @@ const LabSinglePage = ({ frontmatter, body }) => {
   return (
     <LabSinglePageWrapper>
       <div className="backBtn">
-        <Link to="/learn/service-mesh-labs">
+        <Link to="/learn/kanvas-labs">
           <IoIosArrowDropleftCircle />
           <h4> All Labs</h4>
         </Link>
@@ -32,7 +32,7 @@ const LabSinglePage = ({ frontmatter, body }) => {
         title={frontmatter.title}
       />
       <div className="cardContent">
-        <MDXRenderer>{body}</MDXRenderer>
+        {children}
       </div>
       <div className="join-community">
         <div className="join-community_text-and_button">

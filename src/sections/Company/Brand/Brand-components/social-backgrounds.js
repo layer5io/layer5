@@ -2,14 +2,15 @@ import React from "react";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import Button from "../../../../reusecore/Button";
 import { Col, Row } from "../../../../reusecore/Layout";
-import SocialBackgroundImg from "../../../../assets/images/social-backgrounds/layer5-charcoal-background.png";
+import SocialBackgroundImg from "../../../../assets/images/social-backgrounds/layer5-charcoal-background.webp";
 
 const SocialBackgrounds = () => {
   return (
     <div className="post-content">
       <Row style={{
         flexWrap: "wrap"
-      }} className="brand-section">
+      }} className="brand-section"
+      >
         <Col xs={12} sm={6}>
           <h1 className="layerH3">
             <strong> Layer5 Social Backgrounds </strong>
@@ -17,7 +18,7 @@ const SocialBackgrounds = () => {
         </Col>
         <Col xs={12} sm={6} className="download-button">
           <a href="/brand/layer5-social-backgrounds.zip">
-            <Button primary title="Download Social Backgrounds">
+            <Button $primary title="Download Social Backgrounds">
               <FiDownloadCloud size={21} className="icon-left" />
             </Button>
           </a>

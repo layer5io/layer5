@@ -11,7 +11,7 @@ const Footer = ({ location }) => {
   var currentYear = new Date().getFullYear();
 
   const getUrl = (pathname) => {
-    //remove ".html" that results in live production build
+    // remove ".html" that results in live production build
     if (pathname.endsWith(".html")) {
       pathname = pathname.replace(".html", "");
     }
@@ -28,6 +28,7 @@ const Footer = ({ location }) => {
       "/resources",
       "/learn",
     ];
+
     const test = {
       mdx: function (path) {
         let returnPath = "";
@@ -50,22 +51,36 @@ const Footer = ({ location }) => {
           }) && `src/collections${returnPath}`
         );
       },
+
       learningPath: function (path) {
         return (
           path.startsWith("/learn/learning-paths/") &&
           `content-learn${pathname.replace("learn/learning-paths/", "")}`
         );
       },
+
+      communityMember: function (path) {
+        if (path.startsWith("/community/members/")) {
+          const memberId = path.replace("/community/members/", "");
+          return `src/collections/members/${memberId}/index.mdx`;
+        }
+        return null;
+      },
     };
+
+    if (pathname.startsWith("/community/handbook/")) {
+      const page = pathname.replace("/community/handbook/", "");
+      return `https://github.com/layer5io/layer5/blob/master/src/pages/community/handbook/${page}.js`;
+    }
 
     return test.mdx(pathname)
       ? `https://github.com/layer5io/layer5/tree/master/${test.mdx(pathname)}`
       : test.learningPath(pathname)
-        ? `https://github.com/layer5io/layer5/tree/master/${test.learningPath(
-          pathname
-        )}`
-        : `https://github.com/layer5io/layer5/blob/master/src/pages${pathname == "/" ? "" : pathname
-        }${indexUrl.some((str) => pathname.endsWith(str)) ? "/index" : ""}.js`;
+        ? `https://github.com/layer5io/layer5/tree/master/${test.learningPath(pathname)}`
+        : test.communityMember(pathname)
+          ? `https://github.com/layer5io/layer5/blob/master/${test.communityMember(pathname)}`
+          : `https://github.com/layer5io/layer5/blob/master/src/pages${pathname == "/" ? "" : pathname
+          }${indexUrl.some((str) => pathname.endsWith(str)) ? "/index" : ""}.js`;
   };
 
   return (
@@ -88,12 +103,11 @@ const Footer = ({ location }) => {
         </Row>
         <Row style={{
           flexWrap: "wrap"
-        }}>
+        }}
+        >
           <Col $xs={12} $lg={3}>
             <p className="desc-info">
-              An empowerer of engineers, Layer5 helps you extract more value
-              from your infrastructure. Creator and maintainer of cloud native
-              standards. Maker of Meshery, the cloud native manager.
+              Layer5 is the steward of Meshery and creator of Kanvas, the collaborative canvas for cloud-native infrastructure. We bridge the gap between design and operation, allowing engineers to create, configure, and deploy orchestratable diagrams in real time. Whether managing Kubernetes or multi-cloud environments, Layer5 provides the tooling needed to oversee modern infrastructure with confidence.
             </p>
           </Col>
           <Col className="sections_col" $xs={12} $lg={9}>
@@ -146,7 +160,7 @@ const Footer = ({ location }) => {
                   {/* <li>
                     <Link
                       className="category-link"
-                      to="/learn/service-mesh-labs"
+                      to="/learn/kanvas-labs"
                     >
                       Cloud Native Interactive Labs
                     </Link>
@@ -200,7 +214,7 @@ const Footer = ({ location }) => {
               </div>
               <div className="footer-sections odd-col">
                 <h3 className="section-title">
-                  <Link className="title-link" to="/kanvas">
+                  <Link className="title-link" to="/cloud-native-management/solutions">
                     SOLUTIONS
                   </Link>
                 </h3>

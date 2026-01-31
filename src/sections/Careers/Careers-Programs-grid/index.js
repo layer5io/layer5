@@ -7,7 +7,7 @@ import Image from "../../../components/image";
 import { ProgramsPageWrapper } from "./ProgramGrid.style";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
-const Five_image = "../img/open-source.png";
+const Five_image = "../img/open-source.webp";
 
 const ProgramsGrid = ({ hide_path, sub_section }) => {
   const data = useStaticQuery(
@@ -29,10 +29,18 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
           extension
           publicURL
         }
+        thumbnail_svg {
+          extension
+          publicURL
+        }
         darkthumbnail {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
+          extension
+          publicURL
+        }
+        darkthumbnail_svg {
           extension
           publicURL
         }
@@ -80,7 +88,8 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
           <div className="program-grid-wrapper">
             <Row style={{
               flexWrap: "wrap"
-            }} $Hcenter>
+            }} $Hcenter
+            >
               {programs.reverse().map(({ id, frontmatter, fields }) => (
                 <Col key={id} className="programs-col">
                   <Link
@@ -93,7 +102,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
                     <div className={`program ${sub_section ? "sub-section_program" : ""}`}>
                       <div className={`icon ${sub_section ? "sub-section_icon" : ""}`}>
                         <Image
-                          {...(frontmatter.darkthumbnail !== null && (isDark && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL) ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
+                          {...((frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg) && (isDark && (frontmatter.darkthumbnail?.publicURL || frontmatter.darkthumbnail_svg?.publicURL) !== (frontmatter.thumbnail?.publicURL || frontmatter.thumbnail_svg?.publicURL)) ? (frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg) : (frontmatter.thumbnail || frontmatter.thumbnail_svg))}
                           imgStyle={{ objectFit: "contain" }}
                           alt={frontmatter.title}
                         />

@@ -1,5 +1,4 @@
-
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import PartnerItemWrapper from "./partnerSection.style";
@@ -9,7 +8,7 @@ import Slider from "react-slick";
 
 const settings = {
   initialSlide: 1,
-  lazyLoad: true,
+  lazyLoad: false,
   arrows: false,
   dots: false,
   infinite: true,
@@ -25,6 +24,30 @@ const settings = {
       settings: "unslick"
     }
   ]
+};
+
+const LazyPartnerImage = ({ partner }) => {
+  const [imageSrc, setImageSrc] = useState("");
+
+  useEffect(() => {
+    partner.imageLink().then(module => {
+      setImageSrc(module.default);
+    });
+  }, [partner.imageLink]);
+
+  if (!imageSrc) return null;
+
+  return (
+    <img
+      className="partner-image"
+      id={partner.name}
+      loading="lazy"
+      src={imageSrc}
+      alt={partner.name}
+      width={partner.imageWidth}
+      height={partner.imageHeight}
+    />
+  );
 };
 
 const Projects = () => {
@@ -45,7 +68,7 @@ const Projects = () => {
         {partners.map((partner, index) => (
           <Link className="partner-card" to={partner.imageRoute} key={index}>
             <div className={partner.innerDivStyle}>
-              <img className="partner-image" id={partner.name} loading="lazy" src={partner.imageLink} alt={partner.name} width={partner.imageWidth} height={partner.imageHeight} />
+              <LazyPartnerImage partner={partner} />
             </div>
           </Link>
         ))}

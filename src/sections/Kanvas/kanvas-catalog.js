@@ -16,9 +16,14 @@ import Jwt_transformer from "../../assets/images/kanvas/catalog-card-images/jwt.
 import Multicluster from "../../assets/images/kanvas/catalog-card-images/multicluster.svg";
 import Http_metrics from "../../assets/images/kanvas/catalog-card-images/http.svg";
 
-import Wasm from "../../assets/images/webassembly/webssembly_icon.svg";
+import Design from "../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
+
+
+
 import Patterns from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
-import Ebpf from "../../assets/images/kanvas/ebpf.svg";
+
+import Models from "../../assets/images/meshery/meshery-logo.svg";
+
 import Opa from "../../assets/images/kanvas/opa.svg";
 import { Container } from "../../reusecore/Layout";
 
@@ -443,19 +448,20 @@ const Catalog = () => {
           {/* Right Section */}
           <section className="services svg-cont">
             <div>
-              <img src={Patterns} alt="Cloud Native Patterns"/>
+              <img alt="Kanvas dashboard showing service retries in Kubernetes visualization" src={Patterns} />
               <p>Cloud Native Patterns</p>
             </div>
             <div>
-              <img src={Ebpf} alt="eBPF programs" />
-              <p className="ebpf-text">eBPF Programs</p>
+
+              <img src={Design} alt="Design logo" />
+              <p>Design</p>
             </div>
             <div>
-              <img src={Wasm} alt="WebAssembly filters" />
-              <p>WASM Filters</p>
+              <img src={Models} alt="Models logo" />
+              <p>Models</p>
             </div>
             <div>
-              <img src={Opa} alt="OPA policies"/>
+              <img alt="OPA policies management illustration in Kanvas service mesh" src={Opa} />
               <p>OPA Policies</p>
             </div>
           </section>
@@ -467,49 +473,49 @@ const Catalog = () => {
             <div className="container">
               <div id="carousel">
                 <div className="slide one">
-                  <img src={Mutual_tls} alt="Mutual TLS" />
+                  <img src={Mutual_tls} alt="Kanvas Mutual TLS security feature for Kubernetes workloads" />
                 </div>
                 <div className="slide two">
-                  <img src={Retries} alt="Retries" />
+                  <img src={Retries} alt="Kanvas dashboard showing service retries in Kubernetes visualization" />
                 </div>
                 <div className="slide three">
-                  <img src={Traces} alt="Distributed Traces" />
+                  <img src={Traces}  alt="Kanvas tracing visualization for distributed Kubernetes services" />
                 </div>
                 <div className="slide four">
-                  <img src={Denial} alt="Denial" />
+                  <img src={Denial} alt="Access denial control feature in Kanvas service mesh" />
                 </div>
                 <div className="slide five">
-                  <img src={Correlate_event} alt="Correlate Event" />
+                  <img src={Correlate_event} alt="Event correlation view in Kanvas dashboard" />
                 </div>
                 <div className="slide six">
-                  <img src={Only_wagent} alt="Only with Agent" />
+                  <img src={Only_wagent} alt="Kanvas only agent monitoring feature for clusters" />
                 </div>
                 <div className="slide seven">
-                  <img src={Node_agent} alt="Node Agent" />
+                  <img src={Node_agent} alt="Kanvas node agent metrics visualization for Kubernetes" />
                 </div>
                 <div className="slide eight">
-                  <img src={Single_tenant} alt="Single Tenant" />
+                  <img src={Single_tenant} alt="Single tenant Kubernetes deployment dashboard in Kanvas" />
                 </div>
                 <div className="slide nine">
-                  <img src={Pre_provison} alt="Pre-provision" />
+                  <img src={Pre_provison} alt="Kanvas pre-provisioning configuration for Kubernetes clusters" />
                 </div>
                 <div className="slide ten">
-                  <img src={Circuit_breaker} alt="Circuit Breaker" />
+                  <img src={Circuit_breaker}  alt="Circuit breaker monitoring in Kanvas service mesh"/>
                 </div>
                 <div className="slide eleven">
-                  <img src={Retry_deadline} alt="Retry with Deadline" />
+                  <img src={Retry_deadline}  alt="Retry deadline feature in Kanvas observability dashboard" />
                 </div>
                 <div className="slide twelve">
-                  <img src={Singleton} alt="Singleton Pattern" />
+                  <img src={Singleton} alt="Singleton service pattern visualization in Kanvas" />
                 </div>
                 <div className="slide thirteen">
-                  <img src={Jwt_transformer} alt="JWT Transformer" />
+                  <img src={Jwt_transformer} alt="JWT transformer process view in Kanvas Kubernetes dashboard" />
                 </div>
                 <div className="slide fourteen">
-                  <img src={Multicluster} alt="Multicluster" />
+                  <img src={Multicluster} alt="Multi-cluster management view in Kanvas" />
                 </div>
                 <div className="slide fifteen">
-                  <img src={Http_metrics} alt="HTTP Metrics" />
+                  <img src={Http_metrics} alt="HTTP metrics monitoring dashboard in Kanvas for Kubernetes" />
                 </div>
               </div>
             </div>

@@ -11,7 +11,7 @@ export const Head = () => {
     <SEO
       title="Cloud Native Deployments by Diagram"
       description="Design and Deploy your Kubernetes-based, cloud native deployments"
-      image="/images/solutions-diagram.png"
+      image="/images/solutions-diagram.webp"
     />
   );
 };

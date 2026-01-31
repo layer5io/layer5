@@ -124,7 +124,8 @@ const NewsSidebar = (props) => {
               <Button $primary title="Try Now!"
                 className="btn"
                 $url="/kanvas"
-                $external={false} />
+                $external={false}
+              />
             </div>
           </div>
         </div>

@@ -65,11 +65,14 @@ const PaperGuidance = () => {
           </a>
           <ul>
             <li> Use lower elevations (0-3) for subtle surfaces such as cards and
-            small sections.</li>
+            small sections.
+            </li>
             <li>Higher elevations (8-24) are best for modals or
-            key areas that need emphasis.</li>
+            key areas that need emphasis.
+            </li>
             <li>Be mindful of the dark mode
-            behavior, where higher elevations result in a lighter background.</li>
+            behavior, where higher elevations result in a lighter background.
+            </li>
           </ul>
 
           <a id="Variant Guidelines">

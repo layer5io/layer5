@@ -1,7 +1,7 @@
 ---
 title: "Linux Foundation 2025"
-thumbnail: ./Linux_Foundation_logo.svg
-darkthumbnail: ./lfx-white.svg
+thumbnail_svg: ./Linux_Foundation_logo.svg
+darkthumbnail_svg: ./lfx-white.svg
 permalink: "lfx/2025"
 program: "Linux Foundation"
 programSlug: "lfx"
@@ -10,12 +10,12 @@ published: true
 
 import { ProgramsWrapper } from "../Programs.style.js";
 import Button from "../../../reusecore/Button";
-import {ReactComponent as LfxLogo} from "./lfx-white.svg";
+import LfxLogo from "./lfx-white.svg";
 import { Link } from "gatsby";
 
 <ProgramsWrapper>
 
-<LfxLogo alt="lfx_logo" class="lfx_logo"/>
+<img src={LfxLogo} alt="lfx_logo" className="lfx_logo"/>
 <h3>Linux Foundation 2025 Program Timeline</h3>
 
 <div>

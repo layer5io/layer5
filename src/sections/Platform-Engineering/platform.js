@@ -6,9 +6,9 @@ import { StaticImage } from "gatsby-plugin-image";
 import BestPracticesBanner from "./banner";
 import RelatedPosts from "../../components/Related-Posts";
 import { graphql, useStaticQuery } from "gatsby";
-import Workspace from "./images/workspace.png";
-import DeliveryCylesImg from "./images/delivery-cycles.png";
-import ScaleDevopsImg from "./images/scale-devops-practices.png";
+import Workspace from "./images/workspace.webp";
+import DeliveryCylesImg from "./images/delivery-cycles.webp";
+import ScaleDevopsImg from "./images/scale-devops-practices.webp";
 import CatalogImg from "./images/catalog-light.svg";
 import ComponentLibrary from "./images/components.gif";
 import Integrations from "../../sections/Home/Playground-home";
@@ -111,7 +111,8 @@ const Platform = () => {
           quote="The fact that Kanvas automatically renders our Kubernetes configuration is a game-changer for our team"
           person="Maximiliano Churichi"
           title="Software Engineer at HPE"
-          image={Maxi} />
+          image={Maxi}
+        />
         <Integrations />
         <RelatedPosts
           postType="blogs"

@@ -37,35 +37,33 @@ export default function DesignerFeatures({ features }) {
                 <img src={cursorOverArrow ? LinkArrow : LinkArrowDark} alt="Learn more" style={{ maxWidth: "15%" }} className={cursorOverArrow ? "arrow-enter" : "arrow"} />
               </div>
             </div>
-          </Link>
-          <div className="g-grid-container contentContainer" id="add-border" >
-            <Link to="/cloud-native-management/kanvas/design">
+            <div className="g-grid-container contentContainer" id="add-border" >
               <div className="diagram scroll hideInMobile">
                 <DesignerFeaturesDiagram activeExampleIndex={activeExampleIndex} />
               </div>
-            </Link>
-            <ul className="features design-features">
-              {features.map((feature, index) => (
-                <li className="design-feature-slide" key={index}>
-                  <Feature
-                    {...feature}
-                    onInViewStatusChanged={(state) => {
-                      const newStatusArray = [...viewportStatus];
-                      newStatusArray[index] = state;
-                      setViewportStatus(newStatusArray);
-                      // Calculate the first element in focus, set that as
-                      // our new activeExampleIndex. If it's been updated
-                      // notify the subscriber.
-                      const newExampleIndex = newStatusArray.lastIndexOf(true);
-                      if (activeExampleIndex !== newExampleIndex && newExampleIndex !== -1) {
-                        setActiveExampleIndex(newExampleIndex);
-                      }
-                    }}
-                  />
-                </li>
-              ))}
-            </ul>
-          </div>
+              <ul className="features design-features">
+                {features.map((feature, index) => (
+                  <li className="design-feature-slide" key={index}>
+                    <Feature
+                      {...feature}
+                      onInViewStatusChanged={(state) => {
+                        const newStatusArray = [...viewportStatus];
+                        newStatusArray[index] = state;
+                        setViewportStatus(newStatusArray);
+                        // Calculate the first element in focus, set that as
+                        // our new activeExampleIndex. If it's been updated
+                        // notify the subscriber.
+                        const newExampleIndex = newStatusArray.lastIndexOf(true);
+                        if (activeExampleIndex !== newExampleIndex && newExampleIndex !== -1) {
+                          setActiveExampleIndex(newExampleIndex);
+                        }
+                      }}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Link>
         </div>
       </Container>
     </DesignerFeaturesWrapper>

@@ -30,7 +30,8 @@ const HowMesheryWorksDiagram = ({ activeExampleIndex }) => {
                   x2="330.52"
                   y2="157.99"
                   stroke="#3c494f"
-                ></line>
+                >
+                </line>
               </g>
               {/*  Line to linkerd */}
               <g className={activeExampleIndex >= 3 ? "show " : "render "}>
@@ -90,7 +91,8 @@ const HowMesheryWorksDiagram = ({ activeExampleIndex }) => {
                   x2="356.50"
                   y2="375.90"
                   stroke="#3c494f"
-                ></line>
+                >
+                </line>
               </g>
               {/* line to osm*/}
               <g className={activeExampleIndex >= 6 ? "show " : "render "}>
@@ -120,7 +122,8 @@ const HowMesheryWorksDiagram = ({ activeExampleIndex }) => {
                   x2="214.52"
                   y2="90.83"
                   stroke="#3c494f"
-                ></line>
+                >
+                </line>
               </g>
               {/*  Line to Cilium */}
               <g className={activeExampleIndex >= 8 ? "show " : "render "}>
@@ -130,7 +133,8 @@ const HowMesheryWorksDiagram = ({ activeExampleIndex }) => {
                   x2="290"
                   y2="440"
                   stroke="#3c494f"
-                ></line>
+                >
+                </line>
               </g>
               ;{/* Hosts & Services */}
               <g>

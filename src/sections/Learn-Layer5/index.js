@@ -104,7 +104,7 @@ const LearnPathsPage = () => {
         <Row className="learning-path-cards">
           {data.learnPaths.nodes.map((tutorial) => (
             <Col $sm={6} key={tutorial.id} style={{ marginTop: "2rem" }}>
-              <CardComponent tutorial={tutorial} path={tutorial.fields.learnpath} courseCount={getCoursesOfaLearningPath(tutorial.fields.learnpath).length} />
+              <CardComponent tutorial={tutorial} path={`/${tutorial.fields.slug}`} courseCount={getCoursesOfaLearningPath(tutorial.fields.learnpath).length} />
             </Col>
           ))}
         </Row>
@@ -120,7 +120,8 @@ const LearnPathsPage = () => {
           image={Book_Giveaway}
           header={"Don't Learn Alone"}
           text={"Check Out the Layer5 community, join us on Slack and learn with the community"}
-          btn_primary={true} />
+          btn_primary={true}
+        />
       </Container>
     </LearnLayer5GridWrapper >
   );

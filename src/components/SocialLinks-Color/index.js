@@ -31,7 +31,7 @@ const SocialLinksColor = () => {
             <img className="slack" height="30px" src={slack_icon} alt="slack" />
           </a>
           <a
-            href="https://twitter.com/layer5"
+            href="https://x.com/layer5"
             target="_blank"
             rel="noreferrer"
             className="footer_twitter"
@@ -73,7 +73,7 @@ const SocialLinksColor = () => {
           </a>
           <a
             className="youtube_icon"
-            href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1"
+            href="https://youtube.com/Layer5io?sub_confirmation=1"
             target="_blank"
             rel="noreferrer"
           >

@@ -1,0 +1,177 @@
+---
+title: "Linux Foundation 2026"
+thumbnail_svg: ./Linux_Foundation_logo.svg
+darkthumbnail_svg: ./lfx-white.svg
+permalink: "lfx/2026"
+program: "Linux Foundation"
+programSlug: "lfx"
+published: true
+redirect_from:
+  - /programs/lfx
+---
+
+import { ProgramsWrapper } from "../Programs.style.js";
+import Button from "../../../reusecore/Button";
+import LfxLogo from "./lfx-white.svg";
+import { Link } from "gatsby";
+
+<ProgramsWrapper>
+
+<img src={LfxLogo} alt="lfx_logo" className="lfx_logo"/>
+<h3>Linux Foundation 2026 Program Timeline</h3>
+
+<div>
+  <h4><strong>Full-Time Terms:</strong></h4>
+<ul>
+    <li className="lfx-timeline_terms"><strong>Spring Term: March 3rd - May 30th</strong></li>
+  <ul>
+    <li>mentorships available on LFX Mentorship: Feb 5th, 2026</li>
+    <li>applications open: Feb 5th - Feb 18th (2 weeks)</li>
+    <li>application review/admission decisions/HR paperwork: Feb 19th - Feb 25th</li>
+  </ul>
+</ul>
+<ul>
+  <li className="lfx-timeline_terms"><strong>Summer Term: June 9th - August 29th</strong></li>
+  <ul>
+    <li>mentorships available on LFX Mentorship: April 16th, 2026</li>
+    <li>applications open: May 14th - May 27th (2 weeks)</li>
+    <li>application review/admission decisions/HR paperwork: May 28th - June 3rd</li>
+  </ul>
+</ul>
+<ul>
+  <li className="lfx-timeline_terms"><strong>Fall Term: September 8th - Nov 28th</strong></li>
+  <ul>
+    <li>mentorships available on LFX Mentorship: July 2nd, 2026</li>
+    <li>applications open: July 30th - August 12th (2 weeks)</li>
+    <li>application review/admission decisions/HR paperwork: August 13th - August 26th</li>
+  </ul>
+</ul>
+Part-time terms will start on the same schedule and last six versus three months.
+</div>
+
+<h3>About Layer5 and its projects</h3>
+
+<p>The Layer5 community embraces developer-defined infrastructure. We empower developers to change how they write applications, support operators in rethinking how they run modern infrastructure, and enable product owners to regain full-control over their product portfolio. Our cloud native application and infrastructure management software enables organizations to expect more from their infrastructure.</p>
+
+<p>Our inclusive and diverse community stewards projects to provide learning environments, create and implement cloud native industry standards, deployment and operational best practices, benchmarks and abstractions, and more. Our pay-it-forward mentality with every contributor (mentee or not) is a shared commitment by all maintainers (and MeshMates - contributor onboarding buddies) to the open source spirit that pushes Layer5 projects like Meshery forward. New members are always welcome.</p>
+
+<h3>About Meshery</h3>
+
+<p>Meshery is the open source, service mesh management plane for enabling the adoption, operation, and management of any service mesh and their workloads. There are many service meshes available. Software-defined networking is difficult to understand. Meshery’s aim is to make the power of the network available to the rest of us.</p>
+
+<h3>About our Community</h3>
+ 
+Layer5 is all about <Link to="/community">its community</Link> of contributors. We have designed an onboarding program customized to <Link to="/community/newcomers">meet newcomers</Link> where they’re at and developed an onboarding buddy program, <Link to="/community/meshmates">MeshMates</Link> with individuals dedicated to assisting contributors. The Layer5 community and its open source projects are thriving.
+
+Technical writers and other contributors are what comprise Layer5 - an open organization, built by the community for the community. Our vibrant community has seen many talented student contributors go on to secure exciting job opportunities with renowned technology companies such as Red Hat, Microsoft, and VMware, just to name a few. At Layer5, we have high expectations from our interns, and in return, we provide them with incredible opportunities to showcase their work on prestigious stages like DockerCon and KubeCon. We actively promote and uplift our interns, and many of them have gone on to become project maintainers. There are <a href="https://www.linkedin.com/company/layer5" rel="nofollow">many</a>, <Link to="https://layer5.io/blog/category/community">many examples</Link> of this on the layer5.io websites.
+
+## LFX Mentorship 2026 Spring Projects
+<br />
+
+### Meshery
+<br />
+
+#### Migration of docs.meshery.io from Jekyll to Hugo
+
+**Description**: The Meshery documentation [docs.meshery.io](https://docs.meshery.io) is a critical resource for users and contributors. Currently built using Jekyll, the site faces limitations in build speed, scalability, and long-term maintainability. Hugo, a modern static site generator, offers significantly faster build times, better content organization, and an improved developer experience. This internship focuses on migrating the entire [docs.meshery.io](https://docs.meshery.io) site from Jekyll to the Hugo framework, using docs.layer5.io (already implemented in Hugo) as a reference architecture. The migration will involve porting all documentation content, assets, layouts, and configuration while preserving URLs, SEO, contributor workflows, and existing auto-generated documentation files.
+- Expected Outcome: 
+  - Revamp of documentation set information architecture. Alignment with Diataxis framework.
+      - Updated contributor docs.
+      - All self-documenting aspects accounted for:
+          - Compatibility tests of Meshery Adapters.
+          - End-to-end tests of Meshery UI.
+          - Integration of Meshery Catalog and all designs.
+          - Publication of community discussion forum activity per category.
+          - Integration of Meshery Models (Integrations)
+- Recommended Skills: Static site generators (Jekyll and Hugo), Markdown, HTML/CSS, Git/GitHub workflows, documentation engineering, basic Go templating (Hugo), CI/CD familiarity.
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to ="mailto:kate.suttons2337@gmail.com">Kate Suttons</Link>
+- Upstream Issue: [https://github.com/meshery/meshery/issues/17095](https://github.com/meshery/meshery/issues/17095)
+
+#### Relationships for AWS services
+
+**Description**: Meshery Models are declarative representations of infrastructure and applications. Within these models, Relationships define how different Components (e.g., Kubernetes resources, Cloud services) interact and depend on each other. These relationships are crucial for visualizing, understanding, and managing complex cloud native systems. This internship focuses on significantly expanding the breadth and depth of Meshery Relationships across a wide array of technologies supported by Meshery. As Meshery continues to integrate with more cloud-native technologies (Kubernetes, public clouds, and all CNCF projects), there's a growing need to accurately model the intricate relationships between their components - vital for providing users with comprehensive insights and control over their deployments.
+- Recommended Skills: DevOps, systems administration, solutions architecture. Experience with Kubernetes, AWS and its services.
+- Responsibilities:
+  - Research and Analyze Technologies: Dive deep into various cloud-native technologies (e.g., different compute services, databases, messaging systems, network services, etc.) to understand their components and how they interconnect.
+  - Develop Relationship Definitions: Create and contribute relationship definitions, typically in JSON or YAML format, to the Meshery models. 
+  - Model Inter-Technology Interactions: Focus particularly on defining relationships between components from different technologies (e.g., how a Kubernetes deployment relates to an AWS RDS instance, or how a Linkerd service interacts with a Prometheus monitoring component).
+  - Document New Relationships: Clearly document the newly defined relationships, their purpose, and how they are represented within Meshery designs, contributing to the official Meshery documentation.
+- Expected Outcome: 
+ - A multitude of new relationships defined both intra and inter AWS services.
+ - Policy Contribution: For advanced interns, there may be opportunities to contribute to the Rego policies that evaluate and enforce these relationships.
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="/community/members/sangram-rath">Sangram Rath</Link>
+- Upstream Issue: [https://github.com/meshery/meshery/issues/17096](https://github.com/meshery/meshery/issues/17096)
+
+#### Adapter for AI and LLMs
+
+**Description**:  Meshery is the open-source cloud native manager that empowers platform engineers to design and operate infrastructure. As infrastructure complexity grows, the need for intelligent assistance becomes critical. This project focuses on developing and enhancing a dedicated AI Adapter and AI Connections for Meshery. This adapter serves as the bridge between Meshery’s core orchestration engine and various Large Language Models (LLMs). The goal is to enable "Natural Language to Infrastructure" capabilities, allowing users to describe their architectural intent (e.g., "Deploy a highly available Kubernetes cluster on AWS with Prometheus monitoring") and have Meshery auto-generate the visual topology and configuration manifests. The intern will work on decoupling the AI logic from the core platform, allowing users to "Bring Your Own Model" (BYOM)—supporting both cloud-based providers (OpenAI, Anthropic) and local inference runners (Ollama, LocalAI).
+- Recommended Skills:  
+  - Proficiency in Golang (Go) is essential, as Meshery’s backend is written in Go.
+    - Familiarity with MCP Servers, REST APIs, LLM APIs (OpenAI, Vertex AI), local inference servers (Ollama).
+    - Basic understanding of Kubernetes, Docker, and Infrastructure-as-Code (IaC) concepts.
+    - Experience with REST, GraphQL, and gRPC.
+    - Nice to have: Experience with React (for frontend integration in Meshery UI).
+- Responsibilities:
+  - Co-design and implement the interface for the AI Adapter in Go to communicate with the Meshery Server.
+  - Implement support for connecting to local LLMs (via Ollama) to ensure data privacy for users who cannot send infrastructure data to the public cloud.
+  - Improve the "System Prompt" and context-window management to feed the LLM relevant data regarding Meshery Models (schema definitions) so the AI generates valid infrastructure configurations.
+  - Write unit and integration tests to ensure the reliability of the adapter.
+  - Create user guides on how to configure the adapter with different AI providers.
+- Expected Outcome: 
+  - A fully functional AI Adapter (or Connection) integrated into the Meshery ecosystem.
+    - Demonstrable capability for users to swap between at least two different LLM providers (e.g., OpenAI vs. a local Llama 3 model).
+    - Implementation of a feature where natural language queries result in a rendered design.
+    - Merged pull requests (PRs) including code, tests, and documentation.
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>,<Link to = "mailto:rian.cteulp@gmail.com">Rian Cteulp</Link>
+- Upstream Issue: [https://github.com/meshery/meshery/issues/17097](https://github.com/meshery/meshery/issues/17097)
+
+#### Graph Database Integration
+
+**Description:** Meshery's *MeshSync* component acts as the real-time discovery engine, maintaining an up-to-date snapshot of all managed infrastructure. Currently, mapping the complex relationships between these resources (e.g., a Service selecting Pods which are mounted to PVCs) relies on relational or in-memory lookups that can become inefficient at scale. This project involves integrating a dedicated graph database (or an embedded graph processing library) into Meshery's architecture. The goal is to ingest discovered Kubernetes resources as "nodes" and their associations (OwnerReferences, Label Selectors, Annotations) as "edges." This shift will enable highly efficient traversal and querying of infrastructure data, powering more advanced capabilities like topology visualization, impact analysis, and dependency mapping.
+- Recommended Skills:
+  - Strong proficiency in Golang as both MeshSync and Meshery's Kubernetes operator are written in Go.
+    - Understanding of openCypher, graph theory and Graph Databases (e.g., NebulaGraph, or embedded Go graph libraries like `gonum` or `cayley`).
+    - Strong familiarity with Kubernetes Controllers, Informers, and the Object Model (GVK/GVR).
+    - Experience and competency with GraphQL
+- Responsibilities:
+  - Refactor the MeshSync ingestion layer to map incoming Kubernetes objects to graph nodes and generate edges based on semantic relationships (e.g., `Service` -> `Pod`).
+  - Integrate Meshery Relationships as first-class citizens in the graph schema to represent higher-level associations.
+  - Implement the storage interface in the Meshery Operator to persist these graph structures efficiently.
+  - Develop new GraphQL resolvers in the Meshery Server that utilize graph traversal queries to fetch topology data.
+- Expected Outcome:
+  - Fully-functional datastores of discovered cluster data into a graph structure.
+  - Benchmarks demonstrating improved performance for complex relationship queries compared to the existing relational implementation.
+  - Successful rendering of the infrastructure topology in Meshery UI using data fetched from the new graph backend.
+  - Comprehensive documentation covering the new graph schema and query patterns.
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="mailto:james.horton2337@gmail.com">James Horton</Link>
+- Issue: [https://github.com/meshery/meshery/issues/17098](https://github.com/meshery/meshery/issues/17098)
+
+#### Workflow Engine in Meshery
+
+- Description:
+ Integrate a new architectural component into Meshery: a workflow engine, using Temporal. This project involves shifting Meshery off of sqlite over to postgres using gorm (golang). Interns will familiarize with concepts of orchestration engines, including chaining workflows, and content lifecycle management.
+- Recommended Skills: Golang, Temporal, ReactJS
+- Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="mailto:marcus.ringblom@gmail.com">Marcus Ringblom</Link>
+- Issue: [https://github.com/meshery/meshery/issues/17099](https://github.com/meshery/meshery/issues/17099)
+
+## Additional information
+<br />
+
+### Previous experience with technical writers or documentation
+
+<p>Our mentors have managed teams of technical writers working on documenting enterprise-grade software at large technology companies (Cisco, Seagate, SolarWinds). During the span of time, they have worked with technical writers in DITA and post-DITA environments (from Word to FrameMaker, structured writing, online help, various CMSes, git). Our mentors have worked with technical writers on documentation strategy, creating document sets, covering the full spectrum of reader personas.</p>
+
+We interact daily over Slack, and have an open source project [meeting everyday](https://layer5.io/community/calendar), which are posted to the community [YouTube channel](https://www.youtube.com/c/Layer5io?sub_confirmation=1).
+
+<div className="apply-button">
+  <h3>
+    <Button
+      $primary
+      title="Participate"
+      $url="https://slack.layer5.io"
+      $external={ true }
+    />
+  </h3>
+</div>
+
+</ProgramsWrapper>

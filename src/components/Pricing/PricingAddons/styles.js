@@ -176,8 +176,9 @@ export const boxStyles = {
     mt: 0.5
   },
   sliderPriceText: {
-    color: "primary.main",
-    fontWeight: "bold",
+    color: "text.secondary",
+    fontWeight: "normal",
+    fontSize: "1.2rem",
     mt: 0.5
   },
   academySliderMarks: {
@@ -222,7 +223,7 @@ export const boxStyles = {
     alignItems: "center"
   },
   enterpriseUserInput: {
-    width: "50px",
+    width: "65px",
     ml: 1,
     "& .MuiInputBase-input": {
       py: (theme) => theme.spacing(0.5),
@@ -242,7 +243,7 @@ export const boxStyles = {
     margin: 0
   },
   priceComponent: {
-    fontSize: ".8rem",
+    fontSize: "1rem",
     fontFamily: QANELAS_FONT
   },
   buttonSection: {
@@ -374,7 +375,8 @@ export const featureDetailsStyles = {
   base: {
     display: "flex",
     flexDirection: "row",
-    flexWrap: "wrap"
+    flexWrap: "wrap",
+    fontFamily: QANELAS_FONT
   }
 };
 
