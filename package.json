@@ -43,7 +43,7 @@
     "@mui/icons-material": "^7.3.5",
     "@mui/material": "^7.3.4",
     "@react-icons/all-files": "^4.1.0",
-    "@sistent/sistent": "^0.15.23",
+    "@sistent/sistent": "^0.16.6",
     "@svgr/webpack": "^8.0.1",
     "@types/mui-datatables": "^4.3.13",
     "ajv": "^8.17.1",
