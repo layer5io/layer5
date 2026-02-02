@@ -37,7 +37,7 @@ export const CardWrapper = styled.div`
     img,
     h2,
     p {
-        cursor: inherit !important;
+        cursor: inherit;
     }
 
     .readmore-btn{
