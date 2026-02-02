@@ -95,10 +95,13 @@ Note that the Layer5 community spans **six** GitHub organizations and **one** mu
                 <td>{language}</td>
                 <td>
                   {maintainers_name.map((mname, index) => {
-                    return (
+                    const maintainerLink = link[index];
+                    return maintainerLink && maintainerLink.trim() !== "" ? (
                       <Link to={link[index]} key={index}>
                         <span>{index > 0 ? ", " : ""}</span>{mname}
                       </Link>
+                    ) : (
+                      <span key={index}>{index > 0 ? ", " : ""}{mname}</span>
                     );
                   })}
                 </td>
@@ -149,11 +152,14 @@ Note that the Layer5 community spans **six** GitHub organizations and **one** mu
                 <td>{description}</td>
                 <td>
                   {maintainers_name?.map((mname, index) => {
-                    return (
+                    const maintainerLink = link[index];
+                    return maintainerLink && maintainerLink.trim() !== "" ? (
                       <Link to={link[index]} key={index}>
                         <span>{index > 0 ? ", " : ""}</span>
                         {mname}
                       </Link>
+                    ) : (
+                      <span key={index}>{index > 0 ? ", " : ""}{mname}</span>
                     );
                   })}
                 </td>
