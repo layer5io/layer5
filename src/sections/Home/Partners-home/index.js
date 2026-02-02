@@ -35,7 +35,19 @@ const LazyPartnerImage = ({ partner }) => {
     });
   }, [partner.imageLink]);
 
-  if (!imageSrc) return null;
+  // Reserve space to prevent CLS by rendering a placeholder with exact dimensions
+  if (!imageSrc) {
+    return (
+      <div
+        className="partner-image-placeholder"
+        style={{
+          width: `${partner.imageWidth}px`,
+          height: `${partner.imageHeight}px`,
+          display: "inline-block"
+        }}
+      />
+    );
+  }
 
   return (
     <img
