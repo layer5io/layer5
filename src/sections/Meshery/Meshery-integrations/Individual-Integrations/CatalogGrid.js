@@ -61,7 +61,6 @@ const CatalogGrid = ({ frontmatter }) => {
                 }}
                 cardHeight="20rem"
                 cardWidth="16rem"
-                cardStyles={{}}
                 pattern={item}
                 type="Catalog"
                 patternType={item?.catalog_data?.type}
