@@ -64,7 +64,6 @@ const CatalogGrid = ({ frontmatter }) => {
                 pattern={item}
                 type="Catalog"
                 patternType={item?.catalog_data?.type}
-                onCardClick={() => window.open(`https://cloud.layer5.io/catalog/content/catalog/${item?.id}`, "_blank")}
               />
             );
           })}
