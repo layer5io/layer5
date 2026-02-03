@@ -13,8 +13,9 @@ const CatalogGrid = ({ frontmatter }) => {
   const { isDark } = useStyledDarkMode();
 
   useEffect(() => {
-    const CLOUD_FETCH_DESIGN = `https://cloud.layer5.io/api/catalog/content/pattern?technology=${technology[technology.length - 1]
-      }&page=0&pagesize=${designSize}&search=&order=&metrics=true`;
+    const CLOUD_FETCH_DESIGN = `https://cloud.layer5.io/api/catalog/content/pattern?technology=${
+      technology[technology.length - 1]
+    }&page=0&pagesize=${designSize}&search=&order=&metrics=true`;
     const fetchData = async () => {
       try {
         // const token = getCookieValue("provider_token");

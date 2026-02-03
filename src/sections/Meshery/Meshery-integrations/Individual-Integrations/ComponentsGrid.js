@@ -9,8 +9,9 @@ const ComponentsGrid = ({ frontmatter }) => {
   });
   const [validComponents, setValidComponents] = useState([]);
 
-  // Extract model name from integration title for Kanvas URL
-  const modelName = frontmatter.title.toLowerCase().replace(/\s+/g, "-");
+  // Extract model name from docURL (same approach as CatalogGrid)
+  const technology = frontmatter.docURL.split("/");
+  const modelName = technology[technology.length - 1];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -58,7 +59,6 @@ const ComponentsGrid = ({ frontmatter }) => {
             href={getCloudUrl(item.name)}
             target="_blank"
             rel="noopener noreferrer"
-            className="componentlink"
           >
             <div className="maincontainer">
               <div className="componentimg">
