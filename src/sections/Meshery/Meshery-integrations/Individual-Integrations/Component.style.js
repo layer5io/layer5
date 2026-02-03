@@ -29,6 +29,25 @@ export const ComponentsWrapper = styled.div`
     padding: 3rem 2rem 5rem 2rem;
     justify-content: center;
   }
+
+  .componentlink {
+    text-decoration: none;
+    flex: 30%;
+    max-width: 350px;
+    width: 100%;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: 0.85rem;
+
+    &:hover {
+      transform: translateY(-3px);
+      
+      .maincontainer {
+        box-shadow: 0 4px 15px rgba(0, 211, 169, 0.2);
+        border: 1px solid ${(props) => props.theme.primaryColor};
+      }
+    }
+  }
+
   .maincontainer {
     display: flex;
     align-items: center;
@@ -37,8 +56,8 @@ export const ComponentsWrapper = styled.div`
     padding: 0.5rem 1rem;
     border-radius: 0.85rem;
     width: 100%;
-    flex: 30%;
-    max-width: 350px;
+    border: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
   }
 
   .items {
