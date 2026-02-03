@@ -13,9 +13,8 @@ const CatalogGrid = ({ frontmatter }) => {
   const { isDark } = useStyledDarkMode();
 
   useEffect(() => {
-    const CLOUD_FETCH_DESIGN = `https://cloud.layer5.io/api/catalog/content/pattern?technology=${
-      technology[technology.length - 1]
-    }&page=0&pagesize=${designSize}&search=&order=&metrics=true`;
+    const CLOUD_FETCH_DESIGN = `https://cloud.layer5.io/api/catalog/content/pattern?technology=${technology[technology.length - 1]
+      }&page=0&pagesize=${designSize}&search=&order=&metrics=true`;
     const fetchData = async () => {
       try {
         // const token = getCookieValue("provider_token");
@@ -50,15 +49,20 @@ const CatalogGrid = ({ frontmatter }) => {
         <SistentThemeProviderWithoutBaseLine initialMode={isDark ? "dark" : "light"}>
           {designs?.patterns?.map((item, index) => {
             return (
-              <CatalogCard
+              <a
                 key={index}
-                cardLink={`https://cloud.layer5.io/catalog/content/catalog/${item?.id}`}
-                cardHeight="20rem"
-                cardWidth="16rem"
-                pattern={item}
-                type="Catalog"
-                patternType={item?.catalog_data?.type}
-              />
+                href={`https://cloud.layer5.io/catalog/content/catalog/${item?.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <CatalogCard
+                  cardHeight="20rem"
+                  cardWidth="16rem"
+                  pattern={item}
+                  type="Catalog"
+                  patternType={item?.catalog_data?.type}
+                />
+              </a>
             );
           })}
         </SistentThemeProviderWithoutBaseLine>
