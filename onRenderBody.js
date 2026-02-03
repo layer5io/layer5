@@ -5,6 +5,7 @@ import lighttheme, { darktheme } from "./src/theme/app/themeStyles";
 const themes = { light: lighttheme, dark: darktheme };
 
 const MagicScriptTag = (props) => {
+  const themeJson = JSON.stringify(props.theme).replace(/'/g, "\\'");
   const codeToRunOnClient = `
       (function() {
           // 1. Keeps SYSTEM as the priority preference
@@ -43,7 +44,7 @@ const MagicScriptTag = (props) => {
               }
             })
           }
-          const parsedTheme = JSON.parse('${JSON.stringify(props.theme)}')
+          const parsedTheme = JSON.parse('${themeJson}')
           const theme = parsedTheme[colorMode]
           iterate(theme)
           root.style.setProperty('--initial-color-mode', colorMode);  
