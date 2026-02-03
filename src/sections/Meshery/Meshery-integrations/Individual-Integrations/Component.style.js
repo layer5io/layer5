@@ -29,7 +29,6 @@ export const ComponentsWrapper = styled.div`
     padding: 3rem 2rem 5rem 2rem;
     justify-content: center;
   }
-
   .maincontainer {
     display: flex;
     align-items: center;
