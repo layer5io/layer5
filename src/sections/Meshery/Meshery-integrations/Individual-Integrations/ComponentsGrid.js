@@ -8,6 +8,11 @@ const ComponentsGrid = ({ frontmatter }) => {
     return { name, colorIcon };
   });
   const [validComponents, setValidComponents] = useState([]);
+
+  // Extract model name from docURL (same approach as CatalogGrid)
+  const technology = frontmatter.docURL.split("/");
+  const modelName = technology[technology.length - 1];
+
   useEffect(() => {
     const fetchData = async () => {
       const promises = components.map(async (item) => {
@@ -34,6 +39,11 @@ const ComponentsGrid = ({ frontmatter }) => {
     fetchData();
   }, []);
 
+  // Generate Cloud URL for component - opens cloud.layer5.io with model context
+  const getCloudUrl = (componentName) => {
+    return `https://cloud.layer5.io/catalog?model=${encodeURIComponent(modelName)}&component=${encodeURIComponent(componentName)}`;
+  };
+
   return (
     <ComponentsWrapper>
       <section className="heading">
@@ -44,14 +54,19 @@ const ComponentsGrid = ({ frontmatter }) => {
 
       <section className="componentsSection">
         {validComponents.map((item) => (
-          <div key={item.id} className="maincontainer">
-            <div className="componentimg">
-              <img src={item.colorIcon.publicURL} alt={item.name} />
+          <a
+            key={item.name}
+            href={getCloudUrl(item.name)}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="maincontainer">
+              <div className="componentimg">
+                <img src={item.colorIcon.publicURL} alt={item.name} />
+              </div>
+              <p className="items">{item.name.replaceAll("-", " ")}</p>
             </div>
-            <p className="items">{item.name.replaceAll("-", " ")}</p>
-            {/* <div className="textcontent">
-            </div> */}
-          </div>
+          </a>
         ))}
       </section>
     </ComponentsWrapper>
