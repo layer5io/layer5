@@ -7,10 +7,10 @@ import FramedTerminal from "../Animated-terminal/Framed-terminal";
 import { AnimatedStepsListWrapper } from "./AnimatedStepsList.style";
 
 // The breakpoints where the next step of each animation triggers
-const breakpoints = [0, 300, 800, 1300, 1700];
+const breakpoints = [0, 350, 1400, 2450, 2680];
 
 // The number of pixels before the next breakpoint that the animation should complete
-const animationBottomPadding = [0, 180, 180, 50];
+const animationBottomPadding = [0, 620, 575, -50];
 
 const calculateCurrentFrame = (terminalSteps, currentIndex, scrollPosition) => {
   const percentage = Math.min(
@@ -49,7 +49,7 @@ const AnimatedStepsList = ({ terminalHeroState, steps }) => {
 
   const relativeScroll = Math.max(0, scrollPosition - sectionTop);
   const activeTerminalStateIndex =
-    relativeScroll <= 300 ? 0 : indicatorIndex + 1;
+    relativeScroll <= 350 ? 0 : indicatorIndex + 1;
   const terminalSteps = [terminalHeroState].concat(
     steps.map((step) => step.terminal)
   );
