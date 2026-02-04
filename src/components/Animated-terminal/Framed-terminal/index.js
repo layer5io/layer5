@@ -111,7 +111,7 @@ const FramedTerminal = ({ frame, lines }) => {
     })
     .filter((el) => el != null);
 
-  return <Terminal lines={terminalLines} autoScroll />;
+  return <Terminal lines={terminalLines} noScroll />;
 };
 
 export default FramedTerminal;

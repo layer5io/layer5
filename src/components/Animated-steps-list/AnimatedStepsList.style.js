@@ -35,6 +35,7 @@ export const AnimatedStepsListWrapper = styled.div`
                 position: sticky;
                 top: 140px;
                 box-shadow: rgb(0 0 0 / 0.35) 7px 10px 25px;
+                margin-top: -800px;
                 
                 @media (min-width: 850px) {
                     max-width: 450px;

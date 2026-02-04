@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import useScrollPosition from "./scroll-position";
 import StepsList from "./Steps-list";
 import StepsIndicator from "./Steps-indicator";
+import AnimatedTerminal from "../Animated-terminal";
 import FramedTerminal from "../Animated-terminal/Framed-terminal";
 import { AnimatedStepsListWrapper } from "./AnimatedStepsList.style";
 
@@ -33,33 +34,21 @@ const calculateCurrentFrame = (terminalSteps, currentIndex, scrollPosition) => {
 };
 
 const AnimatedStepsList = ({ terminalHeroState, steps }) => {
-  const wrapperRef = useRef(null);
   const scrollPosition = useScrollPosition();
-  const [sectionTop, setSectionTop] = useState(0);
   const [indicatorIndex, setIndicatorIndex] = useState(0);
-
-  useEffect(() => {
-    if (wrapperRef.current) {
-      const offset =
-        wrapperRef.current.getBoundingClientRect().top + window.scrollY;
-      setSectionTop(offset);
-    }
-  }, []);
-
-  const relativeScroll = Math.max(0, scrollPosition - sectionTop);
   const activeTerminalStateIndex =
-    relativeScroll <= 300 ? 0 : indicatorIndex + 1;
+    scrollPosition <= 300 ? 0 : indicatorIndex + 1;
   const terminalSteps = [terminalHeroState].concat(
     steps.map((step) => step.terminal)
   );
   const currentFrame = calculateCurrentFrame(
     terminalSteps,
     activeTerminalStateIndex,
-    relativeScroll
+    scrollPosition
   );
 
   return (
-    <AnimatedStepsListWrapper ref={wrapperRef}>
+    <AnimatedStepsListWrapper>
       <div className="animated-steps-list">
         <div className="indicator-wrapper">
           <StepsIndicator steps={steps} activeIndex={indicatorIndex} />
@@ -74,10 +63,18 @@ const AnimatedStepsList = ({ terminalHeroState, steps }) => {
         />
 
         <div className="terminal-wrapper">
-          <FramedTerminal
-            frame={currentFrame}
-            lines={terminalSteps[activeTerminalStateIndex].lines}
-          />
+          {activeTerminalStateIndex === 0 ? (
+            <AnimatedTerminal
+              frameLength={terminalSteps[activeTerminalStateIndex].frameLength}
+              loop={terminalSteps[activeTerminalStateIndex].loop}
+              lines={terminalSteps[activeTerminalStateIndex].lines}
+            />
+          ) : (
+            <FramedTerminal
+              frame={currentFrame}
+              lines={terminalSteps[activeTerminalStateIndex].lines}
+            />
+          )}
         </div>
       </div>
     </AnimatedStepsListWrapper>
