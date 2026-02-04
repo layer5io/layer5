@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useRef } from "react";
 import { TerminalWrapper } from "./Terminal.style";
 
 /**
@@ -38,7 +38,16 @@ import { TerminalWrapper } from "./Terminal.style";
  *    ]}
  *  />
  */
-const Terminal = ({ lines, title, noScroll }) => {
+const Terminal = ({ lines, title, noScroll, autoScroll }) => {
+  const overflowRef = useRef(null);
+
+  useEffect(() => {
+    if (!noScroll && autoScroll && overflowRef.current) {
+      // Keep the newest content in view as lines change
+      overflowRef.current.scrollTop = overflowRef.current.scrollHeight;
+    }
+  }, [lines, noScroll, autoScroll]);
+
   return (
     <TerminalWrapper>
       <div className="title-bar">
@@ -50,9 +59,13 @@ const Terminal = ({ lines, title, noScroll }) => {
         {title && <div className="title">{title}</div>}
       </div>
       <div className="content">
-        <div className={
-          noScroll ? "no-scroll-overflow-wrapper overflow-wrapper" : "overflow-wrapper"
-        }
+        <div
+          className={
+            noScroll
+              ? "no-scroll-overflow-wrapper overflow-wrapper"
+              : "overflow-wrapper"
+          }
+          ref={overflowRef}
         >
           <div className="code-wrapper">
             {lines && lines.map((line, index) => (
