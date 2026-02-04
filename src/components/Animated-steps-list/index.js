@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import useScrollPosition from "./scroll-position";
 import StepsList from "./Steps-list";
 import StepsIndicator from "./Steps-indicator";
@@ -34,21 +34,33 @@ const calculateCurrentFrame = (terminalSteps, currentIndex, scrollPosition) => {
 };
 
 const AnimatedStepsList = ({ terminalHeroState, steps }) => {
+  const wrapperRef = useRef(null);
   const scrollPosition = useScrollPosition();
+  const [sectionTop, setSectionTop] = useState(0);
   const [indicatorIndex, setIndicatorIndex] = useState(0);
+
+  useEffect(() => {
+    if (wrapperRef.current) {
+      const offset =
+        wrapperRef.current.getBoundingClientRect().top + window.scrollY;
+      setSectionTop(offset);
+    }
+  }, []);
+
+  const relativeScroll = Math.max(0, scrollPosition - sectionTop);
   const activeTerminalStateIndex =
-    scrollPosition <= 300 ? 0 : indicatorIndex + 1;
+    relativeScroll <= 300 ? 0 : indicatorIndex + 1;
   const terminalSteps = [terminalHeroState].concat(
     steps.map((step) => step.terminal)
   );
   const currentFrame = calculateCurrentFrame(
     terminalSteps,
     activeTerminalStateIndex,
-    scrollPosition
+    relativeScroll
   );
 
   return (
-    <AnimatedStepsListWrapper>
+    <AnimatedStepsListWrapper ref={wrapperRef}>
       <div className="animated-steps-list">
         <div className="indicator-wrapper">
           <StepsIndicator steps={steps} activeIndex={indicatorIndex} />
