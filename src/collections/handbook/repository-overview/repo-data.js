@@ -143,7 +143,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: [""],
         repository:
-          "https://github.com/layer5labs/meshery-extensions-packages/",
+          "https://github.com/layer5io/recognition",
       },
       {
         project: "Sistent Design System",

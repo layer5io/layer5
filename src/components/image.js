@@ -24,8 +24,9 @@ const Image = ({ childImageSharp, extension, publicURL, alt, imgStyle, ...rest }
     key={publicURL}
     image={childImageSharp?.gatsbyImageData}
     alt={alt || "Blog image"}
-    style={{
+    imgStyle={{
       objectFit: imgStyle?.objectFit || "cover",
+      ...imgStyle
     }}
     {...rest}
   />;
