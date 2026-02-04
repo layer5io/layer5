@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import useScrollPosition from "./scroll-position";
 import StepsList from "./Steps-list";
 import StepsIndicator from "./Steps-indicator";
-import AnimatedTerminal from "../Animated-terminal";
 import FramedTerminal from "../Animated-terminal/Framed-terminal";
 import { AnimatedStepsListWrapper } from "./AnimatedStepsList.style";
 
@@ -53,7 +52,11 @@ const AnimatedStepsList = ({ terminalHeroState, steps }) => {
   const terminalSteps = [terminalHeroState].concat(
     steps.map((step) => step.terminal)
   );
-  const currentFrame = calculateCurrentFrame(terminalSteps, activeTerminalStateIndex, relativeScroll);
+  const currentFrame = calculateCurrentFrame(
+    terminalSteps,
+    activeTerminalStateIndex,
+    relativeScroll
+  );
 
   return (
     <AnimatedStepsListWrapper ref={wrapperRef}>
@@ -71,18 +74,10 @@ const AnimatedStepsList = ({ terminalHeroState, steps }) => {
         />
 
         <div className="terminal-wrapper">
-          {activeTerminalStateIndex === 0 ? (
-            <AnimatedTerminal
-              frameLength={terminalSteps[activeTerminalStateIndex].frameLength}
-              loop={terminalSteps[activeTerminalStateIndex].loop}
-              lines={terminalSteps[activeTerminalStateIndex].lines}
-            />
-          ) : (
-            <FramedTerminal
-              frame={currentFrame}
-              lines={terminalSteps[activeTerminalStateIndex].lines}
-            />
-          )}
+          <FramedTerminal
+            frame={currentFrame}
+            lines={terminalSteps[activeTerminalStateIndex].lines}
+          />
         </div>
       </div>
     </AnimatedStepsListWrapper>
