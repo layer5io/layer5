@@ -52,8 +52,15 @@ module.exports = {
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
-        disable: true,
-      },
+        devMode: true,
+        disable: process.env.NODE_ENV !== "production",
+        analyzerMode: "server",
+        reportFilename: "./report.html",
+        openAnalyzer: true,
+        analyzerPort: "8888",
+        analyzerHost: "http://localhost",
+        defaultSizes: "gzip"
+      }
     },
     {
       resolve: "gatsby-plugin-sitemap",
