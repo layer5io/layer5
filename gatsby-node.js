@@ -13,9 +13,7 @@ const { createFilePath } = require("gatsby-source-filesystem");
 const config = require("./gatsby-config");
 const isDevelopment = process.env.NODE_ENV === "development";
 const isProduction = process.env.NODE_ENV === "production";
-const {
-  componentsData,
-} = require("./src/sections/Projects/Sistent/components/content");
+
 
 const HEAVY_COLLECTIONS = new Set(["members", "integrations"]);
 const isFullSiteBuild = process.env.BUILD_FULL_SITE !== "false";
@@ -234,6 +232,29 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             section
             chapter
             pageType
+            collection
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+      sistentComponents: allMdx(
+        filter: { 
+          fields: { collection: { eq: "sistent" } }
+          frontmatter: { published: { eq: true } }
+        }
+      ) {
+        nodes {
+          frontmatter {
+            name
+            title
+            description
+            component
+            pages
+          }
+          fields {
+            slug
             collection
           }
           internal {
@@ -541,35 +562,46 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   });
 
-  const components = componentsData.map((component) => component.src.replace("/", ""));
-  const createComponentPages = (createPage, components) => {
+  // Create Sistent component pages dynamically from MDX
+  const sistentComponents = res.data.sistentComponents.nodes;
+
+  sistentComponents.forEach((node) => {
+    const componentName = node.frontmatter.component;
+    const pages = node.frontmatter.pages || ["overview"];
+
     const pageTypes = [
-      { suffix: "", file: "index.js" },
-      { suffix: "/guidance", file: "guidance.js" },
-      { suffix: "/code", file: "code.js" },
+      { suffix: "", file: "index.js", pageType: "overview" },
+      { suffix: "/guidance", file: "guidance.js", pageType: "guidance" },
+      { suffix: "/code", file: "code.js", pageType: "code" },
     ];
 
-    components.forEach((name) => {
-      pageTypes.forEach(({ suffix, file }) => {
-        const pagePath = `/projects/sistent/components/${name}${suffix}`;
-        const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
+    pageTypes.forEach(({ suffix, file, pageType }) => {
+      // Only create pages that exist in frontmatter
+      if (pages.includes(pageType)) {
+        const pagePath = `/projects/sistent/components/${componentName}${suffix}`;
+        const componentPath = `./src/sections/Projects/Sistent/components/${componentName}/${file}`;
+
         if (fs.existsSync(path.resolve(componentPath))) {
           try {
             createPage({
               path: pagePath,
               component: require.resolve(componentPath),
+              context: {
+                slug: `/sistent/components/${componentName}`,
+                componentName: componentName,
+              },
             });
           } catch (error) {
             console.error(`Error creating page for "${pagePath}":`, error);
           }
         } else {
-          console.info(`Skipping creating page "${pagePath}" - file not found: "${componentPath}"`);
+          console.info(
+            `Skipping creating page "${pagePath}" - file not found: "${componentPath}"`
+          );
         }
-      });
+      }
     });
-  };
-
-  createComponentPages(createPage, components);
+  });
 };
 
 // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
@@ -707,6 +739,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
           if (node.frontmatter.title)
             slug = `/community/events/${slugify(node.frontmatter.title)}`;
           break;
+        case "sistent": {
+          // For sistent components, create slug from directory structure
+          const componentSlug = parent.relativeDirectory.split("/").pop();
+          slug = `/sistent/components/${componentSlug}`;
+          break;
+        }
         default:
           slug = `/${collection}/${slugify(node.frontmatter.title)}`;
       }
