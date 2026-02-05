@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { HiOutlineChevronLeft } from "@react-icons/all-files/hi/HiOutlineChevronLeft";
-import { Link } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
-import { componentsData } from "../../sections/Projects/Sistent/components/content";
 
 import TOCWrapper from "./toc.style";
 import { IoIosArrowDown } from "@react-icons/all-files/io/IoIosArrowDown";
@@ -13,25 +12,45 @@ const TOC = () => {
   const [expand, setExpand] = useState(false);
   const location = useLocation();
   const [expandGettingStarted, setExpandGettingStarted] = useState(
-    location.pathname.includes("/getting-started")
+    location.pathname.includes("/getting-started"),
   );
   const [expandIdentity, setExpandIdentity] = useState(
-    location.pathname.includes("/identity")
+    location.pathname.includes("/identity"),
   );
   const [expandComponent, setExpandComponent] = useState(
-    location.pathname.includes("/components")
+    location.pathname.includes("/components"),
   );
 
-  // Sorting the array of components by name
-  const sortedComponentArray = [...componentsData].sort((a, b) =>
-    a.name.localeCompare(b.name)
-  );
+  // Fetch component data dynamically from GraphQL
+  const data = useStaticQuery(graphql`
+    query SistentComponentsNav {
+      allMdx(
+        filter: {
+          fields: { collection: { eq: "sistent" } }
+          frontmatter: { published: { eq: true } }
+        }
+        sort: { frontmatter: { name: ASC } }
+      ) {
+        nodes {
+          frontmatter {
+            name
+            component
+          }
+        }
+      }
+    }
+  `);
+
+  const componentsData = data.allMdx.nodes.map((node) => ({
+    name: node.frontmatter.name,
+    url: `/projects/sistent/components/${node.frontmatter.component}`,
+  }));
 
   return (
     <TOCWrapper>
       <div className="go-back">
         <Link to="/projects/sistent">
-          <HiOutlineChevronLeft/>
+          <HiOutlineChevronLeft />
           <h4>Table of Contents</h4>
         </Link>
         <div className="toc-toggle-btn">
@@ -61,10 +80,11 @@ const TOC = () => {
                 onClick={() => setExpandGettingStarted((prev) => !prev)}
               >
                 Getting Started
-                {expandGettingStarted ?
-                  <IoIosArrowDown style={{ zIndex: 2 }} /> :
+                {expandGettingStarted ? (
+                  <IoIosArrowDown style={{ zIndex: 2 }} />
+                ) : (
                   <IoIosArrowForward style={{ zIndex: 2 }} />
-                }
+                )}
               </li>
               {expandGettingStarted && (
                 <div className="getting-started-sublinks">
@@ -72,7 +92,9 @@ const TOC = () => {
                     <Link
                       to="/projects/sistent/getting-started/about"
                       className={`toc-sub-heading toc-sub-inline getting-started-item ${
-                        location.pathname.includes("/projects/sistent/getting-started/about")
+                        location.pathname.includes(
+                          "/projects/sistent/getting-started/about",
+                        )
                           ? "active"
                           : ""
                       }`}
@@ -85,7 +107,9 @@ const TOC = () => {
                     <Link
                       to="/projects/sistent/getting-started/installation"
                       className={`toc-sub-heading toc-sub-inline getting-started-item ${
-                        location.pathname.includes("/projects/sistent/getting-started/installation")
+                        location.pathname.includes(
+                          "/projects/sistent/getting-started/installation",
+                        )
                           ? "active"
                           : ""
                       }`}
@@ -98,7 +122,9 @@ const TOC = () => {
                     <Link
                       to="/projects/sistent/getting-started/usage"
                       className={`toc-sub-heading toc-sub-inline getting-started-item ${
-                        location.pathname.includes("/projects/sistent/getting-started/usage")
+                        location.pathname.includes(
+                          "/projects/sistent/getting-started/usage",
+                        )
                           ? "active"
                           : ""
                       }`}
@@ -111,7 +137,9 @@ const TOC = () => {
                     <Link
                       to="/projects/sistent/getting-started/tokens"
                       className={`toc-sub-heading toc-sub-inline getting-started-item ${
-                        location.pathname.includes("/projects/sistent/getting-started/tokens")
+                        location.pathname.includes(
+                          "/projects/sistent/getting-started/tokens",
+                        )
                           ? "active"
                           : ""
                       }`}
@@ -132,10 +160,11 @@ const TOC = () => {
                 onClick={() => setExpandIdentity((prev) => !prev)}
               >
                 Identity
-                {expandIdentity ?
-                  <IoIosArrowDown style={{ zIndex: 2 }}/> :
-                  <IoIosArrowForward style={{ zIndex: 2 }}/>
-                }
+                {expandIdentity ? (
+                  <IoIosArrowDown style={{ zIndex: 2 }} />
+                ) : (
+                  <IoIosArrowForward style={{ zIndex: 2 }} />
+                )}
               </div>
               {expandIdentity && (
                 <ul className="identity-sublinks">
@@ -144,7 +173,7 @@ const TOC = () => {
                       to="/projects/sistent/identity/color"
                       className={`toc-sub-heading toc-sub-inline identity-item ${
                         location.pathname.includes(
-                          "/projects/sistent/identity/color"
+                          "/projects/sistent/identity/color",
                         )
                           ? "active"
                           : ""
@@ -159,7 +188,7 @@ const TOC = () => {
                       to="/projects/sistent/identity/spacing"
                       className={`toc-sub-heading toc-sub-inline identity-item ${
                         location.pathname.includes(
-                          "/projects/sistent/identity/spacing"
+                          "/projects/sistent/identity/spacing",
                         )
                           ? "active"
                           : ""
@@ -174,7 +203,7 @@ const TOC = () => {
                       to="/projects/sistent/identity/typography"
                       className={`toc-sub-heading toc-sub-inline identity-item ${
                         location.pathname.includes(
-                          "/projects/sistent/identity/typography"
+                          "/projects/sistent/identity/typography",
                         )
                           ? "active"
                           : ""
@@ -195,19 +224,21 @@ const TOC = () => {
                 onClick={() => setExpandComponent((prev) => !prev)}
               >
                 Components
-                {expandComponent ?
-                  <IoIosArrowDown style={{ zIndex: 2 }}/> :
-                  <IoIosArrowForward style={{ zIndex: 2 }}/>
-                }
+                {expandComponent ? (
+                  <IoIosArrowDown style={{ zIndex: 2 }} />
+                ) : (
+                  <IoIosArrowForward style={{ zIndex: 2 }} />
+                )}
               </div>
               {expandComponent && (
                 <ul className="components-sublinks">
-                  {sortedComponentArray.map((component) => (
-                    <li key={component.id}>
+                  {componentsData.map((component, index) => (
+                    <li key={index}>
                       <Link
                         to={component.url}
                         className={`toc-sub-heading toc-sub-inline components-item ${
-                          location.pathname.split("/")[4] === component.url.split("/")[4]
+                          location.pathname.split("/")[4] ===
+                          component.url.split("/")[4]
                             ? "active"
                             : ""
                         }`}

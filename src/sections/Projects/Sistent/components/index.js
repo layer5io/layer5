@@ -6,20 +6,28 @@ import SearchBox from "../../../../reusecore/Search";
 import useDataList from "../../../../utils/usedataList";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import { Link } from "gatsby";
-import { componentsData } from "./content";
 
-const SistentComponents = () => {
+const SistentComponents = ({ data }) => {
   const [searchQuery, setSearchQuery] = useState("");
+
+  // Transform GraphQL data
+  const componentsData = data.allMdx.nodes.map((node) => ({
+    id: node.id,
+    name: node.frontmatter.name,
+    description: node.frontmatter.description,
+    url: `/projects/sistent/components/${node.frontmatter.component}`,
+  }));
+
   const { queryResults, searchData } = useDataList(
     componentsData,
     setSearchQuery,
     searchQuery,
     ["name"],
-    "id"
+    "id",
   );
 
   const compArray = [...queryResults].sort((a, b) =>
-    a.name.localeCompare(b.name)
+    a.name.localeCompare(b.name),
   );
 
   return (

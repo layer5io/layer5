@@ -11,21 +11,19 @@ const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
 const config = require("./gatsby-config");
-const isDevelopment = process.env.NODE_ENV === "development";
-const isProduction = process.env.NODE_ENV === "production";
-const {
-  componentsData,
-} = require("./src/sections/Projects/Sistent/components/content");
 
 const HEAVY_COLLECTIONS = new Set(["members", "integrations"]);
 const isFullSiteBuild = process.env.BUILD_FULL_SITE !== "false";
-const shouldIncludeCollection = (collection) => isFullSiteBuild || !HEAVY_COLLECTIONS.has(collection);
+const shouldIncludeCollection = (collection) =>
+  isFullSiteBuild || !HEAVY_COLLECTIONS.has(collection);
 
 if (process.env.CI === "true") {
   // All process.env.CI conditionals in this file are in place for GitHub Pages, if webhost changes in the future, code may need to be modified or removed.
   //Replacing '/' would result in empty string which is invalid
   const replacePath = (url) =>
-    url === "/" || url.includes("/404") || url.endsWith(".html") ? url : `${url}.html`;
+    url === "/" || url.includes("/404") || url.endsWith(".html")
+      ? url
+      : `${url}.html`;
 
   exports.onCreatePage = ({ page, actions }) => {
     const { createPage, deletePage, createRedirect } = actions;
@@ -48,13 +46,12 @@ if (process.env.CI === "true") {
   };
 }
 
-
 const { loadRedirects } = require("./src/utils/redirects.js");
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createRedirect } = actions;
   const redirects = loadRedirects();
-  redirects.forEach(redirect => createRedirect(redirect)); // Handles all hardcoded ones dynamically
+  redirects.forEach((redirect) => createRedirect(redirect)); // Handles all hardcoded ones dynamically
   // Create Pages
   const { createPage } = actions;
 
@@ -80,7 +77,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const blogPostTemplate = path.resolve("src/templates/blog-single.js");
   const blogCategoryListTemplate = path.resolve(
-    "src/templates/blog-category-list.js"
+    "src/templates/blog-category-list.js",
   );
   const blogTagListTemplate = path.resolve("src/templates/blog-tag-list.js");
 
@@ -95,7 +92,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const ProgramPostTemplate = path.resolve("src/templates/program-single.js");
 
   const MultiProgramPostTemplate = path.resolve(
-    "src/templates/program-multiple.js"
+    "src/templates/program-multiple.js",
   );
 
   const CareerPostTemplate = path.resolve("src/templates/career-single.js");
@@ -110,7 +107,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const resourcePostTemplate = path.resolve("src/templates/resource-single.js");
   const integrationTemplate = path.resolve("src/templates/integrations.js");
-  const LitePlaceholderTemplate = path.resolve("src/templates/lite-placeholder.js");
+  const LitePlaceholderTemplate = path.resolve(
+    "src/templates/lite-placeholder.js",
+  );
 
   const memberBioQuery = isFullSiteBuild
     ? `
@@ -138,7 +137,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     : "";
 
   const HandbookTemplate = path.resolve("src/templates/handbook-template.js");
-
 
   const res = await graphql(`
     {
@@ -241,6 +239,29 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
+      sistentComponents: allMdx(
+        filter: { 
+          fields: { collection: { eq: "sistent" } }
+          frontmatter: { published: { eq: true } }
+        }
+      ) {
+        nodes {
+          frontmatter {
+            name
+            title
+            description
+            component
+            pages
+          }
+          fields {
+            slug
+            collection
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
     }
   `);
 
@@ -270,7 +291,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const integrations = filterByCollection("integrations");
 
   const handbook = res.data.handbookPages.nodes;
-
 
   const singleWorkshop = res.data.singleWorkshop.nodes;
   const labs = res.data.labs.nodes;
@@ -443,7 +463,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-
   programs.forEach((program) => {
     envCreatePage({
       path: `/programs/${program.frontmatter.programSlug}`,
@@ -482,7 +501,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       envCreatePage({
         ...page,
         component: LitePlaceholderTemplate,
-      })
+      }),
     );
 
     const graphqlPlaceholderPages = [
@@ -541,35 +560,46 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   });
 
-  const components = componentsData.map((component) => component.src.replace("/", ""));
-  const createComponentPages = (createPage, components) => {
+  // Create Sistent component pages dynamically from MDX
+  const sistentComponents = res.data.sistentComponents.nodes;
+
+  sistentComponents.forEach((node) => {
+    const componentName = node.frontmatter.component;
+    const pages = node.frontmatter.pages || ["overview"];
+
     const pageTypes = [
-      { suffix: "", file: "index.js" },
-      { suffix: "/guidance", file: "guidance.js" },
-      { suffix: "/code", file: "code.js" },
+      { suffix: "", file: "index.js", pageType: "overview" },
+      { suffix: "/guidance", file: "guidance.js", pageType: "guidance" },
+      { suffix: "/code", file: "code.js", pageType: "code" },
     ];
 
-    components.forEach((name) => {
-      pageTypes.forEach(({ suffix, file }) => {
-        const pagePath = `/projects/sistent/components/${name}${suffix}`;
-        const componentPath = `./src/sections/Projects/Sistent/components/${name}/${file}`;
+    pageTypes.forEach(({ suffix, file, pageType }) => {
+      // Only create pages that exist in frontmatter
+      if (pages.includes(pageType)) {
+        const pagePath = `/projects/sistent/components/${componentName}${suffix}`;
+        const componentPath = `./src/sections/Projects/Sistent/components/${componentName}/${file}`;
+
         if (fs.existsSync(path.resolve(componentPath))) {
           try {
-            createPage({
+            envCreatePage({
               path: pagePath,
               component: require.resolve(componentPath),
+              context: {
+                slug: `/sistent/components/${componentName}`,
+                componentName: componentName,
+              },
             });
           } catch (error) {
             console.error(`Error creating page for "${pagePath}":`, error);
           }
         } else {
-          console.info(`Skipping creating page "${pagePath}" - file not found: "${componentPath}"`);
+          console.info(
+            `Skipping creating page "${pagePath}" - file not found: "${componentPath}"`,
+          );
         }
-      });
+      }
     });
-  };
-
-  createComponentPages(createPage, components);
+  });
 };
 
 // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
@@ -679,7 +709,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         case "blog":
           if (node.frontmatter.published)
             slug = `/${collection}/${slugify(
-              node.frontmatter.category
+              node.frontmatter.category,
             )}/${slugify(node.frontmatter.title)}`;
           break;
         case "news":
@@ -693,7 +723,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         case "resources":
           if (node.frontmatter.published)
             slug = `/${collection}/${slugify(
-              node.frontmatter.category
+              node.frontmatter.category,
             )}/${slugify(node.frontmatter.title)}`;
           break;
         case "members":
@@ -707,6 +737,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
           if (node.frontmatter.title)
             slug = `/community/events/${slugify(node.frontmatter.title)}`;
           break;
+        case "sistent": {
+          // For sistent components, create slug from directory structure
+          const componentSlug = parent.relativeDirectory.split("/").pop();
+          slug = `/sistent/components/${componentSlug}`;
+          break;
+        }
         default:
           slug = `/${collection}/${slugify(node.frontmatter.title)}`;
       }
@@ -766,7 +802,7 @@ const createCoursesListPage = ({ envCreatePage, node }) => {
 };
 
 const createCourseOverviewPage = ({ envCreatePage, node }) => {
-  const { learnpath, slug, course, pageType, permalink,section } = node.fields;
+  const { learnpath, slug, course, pageType, permalink, section } = node.fields;
 
   envCreatePage({
     path: `${slug}`,
@@ -830,11 +866,16 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
   });
 
   // Reduce memory pressure by disabling sourcemaps in dev and build
-  if (stage === "develop" || stage === "develop-html" || stage === "build-javascript" || stage === "build-html") {
+  if (
+    stage === "develop" ||
+    stage === "develop-html" ||
+    stage === "build-javascript" ||
+    stage === "build-html"
+  ) {
     const config = getConfig();
     config.devtool = false;
     const miniCssExtractPlugin = config.plugins.find(
-      (plugin) => plugin.constructor.name === "MiniCssExtractPlugin"
+      (plugin) => plugin.constructor.name === "MiniCssExtractPlugin",
     );
 
     if (miniCssExtractPlugin) {
@@ -910,8 +951,6 @@ exports.createSchemaCustomization = ({ actions }) => {
    `;
   createTypes(typeDefs);
 };
-
-
 
 exports.onPostBuild = async ({ graphql, reporter }) => {
   const result = await graphql(`
