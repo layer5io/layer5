@@ -1,0 +1,90 @@
+---
+title: Form Control Label Guidance
+component: formcontrollabel
+description: FormControlLabel is a wrapper component that pairs a label with a control such as a checkbox or a radio button. It enhances accessibility by allowing users to click the label to toggle the control.
+---
+
+import { FormControlLabel, Checkbox, Radio, Switch } from "@sistent/sistent";
+import FormControlLabelDemo from "./FormControlLabelDemo";
+
+The `FormControlLabel` component combines a form control (such as a checkbox, radio button, or switch) with a label. It improves accessibility and consistency by ensuring that the form control and its label are semantically and visually connected.
+
+<a id="Usage">
+  <h2>Usage</h2>
+</a>
+
+Use `FormControlLabel` when you need to pair a form control with a descriptive label. This improves usability and ensures better alignment and interaction.
+
+*   Supports `control` prop for checkboxes, radios, switches, etc.
+*   Automatically positions the label to the right of the control by default.
+*   Can be customized with positioning via `labelPlacement` prop.
+
+<h3>With Checkbox</h3>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <FormControlLabelDemo type="checkbox" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>With Disabled Checkbox</h3>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <FormControlLabelDemo type="disabled" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>With Radio Button</h3>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <FormControlLabelDemo type="radio" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>With Radio Button (Label on Left)</h3>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <FormControlLabelDemo type="placement-start" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>With Switch</h3>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <FormControlLabelDemo type="switch" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Best Practices">
+  <h2>Best Practices</h2>
+</a>
+
+<h3>Accessibility</h3>
+
+Always use a visible and meaningful label. This ensures assistive technologies can identify the purpose of the control.
+
+<h3>Label Positioning</h3>
+
+Use the `labelPlacement` prop to customize where the label appears (top, bottom, start, end). Default is `end`.
+
+<h3>Consistency</h3>
+
+Use consistent label styles across forms to build visual trust and maintain usability. Do not use different positions for labels unless absolutely necessary.
+
+<h3>Clear Language</h3>
+
+Keep labels short, clear, and actionable. They should describe exactly what the control does.

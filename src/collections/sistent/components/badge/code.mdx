@@ -1,0 +1,177 @@
+---
+title: Badge Code
+component: badge
+description: A badge is a small piece of information that is used to convey a specific message or status. It is often used to provide additional context or information about an item, such as a notification count, status indicator, or label.
+---
+
+import { Badge, Avatar } from "@sistent/sistent";
+import MailIcon from "@mui/icons-material/Mail";
+
+A badge is a small piece of information that is used to convey a specific message or status. It is often used to provide additional context or information about an item, such as a notification count, status indicator, or label.
+
+Badges display counts, small information indicators, or status markers that are attached to other interface elements.
+
+<a id="Basic Badge">
+  <h2>Basic Badge</h2>
+</a>
+
+Examples of badges containing text, primarily using the badgeContent prop.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Badge badgeContent={4} color="primary">
+        <MailIcon />
+      </Badge>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-badge" code={`<Badge badgeContent={4} color="primary">
+  <MailIcon />
+</Badge>`} />
+</div>
+
+<h3>Dot Badge</h3>
+The dot badge shows a small dot indicator without any content.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Badge variant="dot" color="secondary">
+        <MailIcon />
+      </Badge>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="dot-badge" code={`<Badge variant="dot" color="secondary">
+  <MailIcon />
+</Badge>`} />
+</div>
+
+<h3>Badge Colors</h3>
+Use the color prop to apply theme palette colors to badges.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', gap: '20px' }}>
+        <Badge badgeContent={4} color="primary">
+        <MailIcon />
+        </Badge>
+        <Badge badgeContent={4} color="secondary">
+        <MailIcon />
+        </Badge>
+        <Badge badgeContent={4} color="error">
+        <MailIcon />
+        </Badge>
+        <Badge badgeContent={4} color="warning">
+        <MailIcon />
+        </Badge>
+        <Badge badgeContent={4} color="success">
+        <MailIcon />
+        </Badge>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="badge-colors" code={`<Badge badgeContent={4} color="primary" />
+<Badge badgeContent={4} color="secondary" />
+<Badge badgeContent={4} color="error" />
+<Badge badgeContent={4} color="warning" />
+<Badge badgeContent={4} color="success" />`} />
+</div>
+
+<a id="Badge Position">
+  <h2>Badge Position</h2>
+</a>
+
+Use the anchorOrigin prop to change the position of the badge.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', gap: '20px' }}>
+        <Badge
+          badgeContent={4}
+          color="primary"
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+        >
+          <MailIcon />
+        </Badge>
+        <Badge
+          badgeContent={4}
+          color="primary"
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "left",
+          }}
+        >
+          <MailIcon />
+        </Badge>
+        <Badge
+          badgeContent={4}
+          color="primary"
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "right",
+          }}
+        >
+          <MailIcon />
+        </Badge>
+        <Badge
+          badgeContent={4}
+          color="primary"
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "left",
+          }}
+        >
+          <MailIcon />
+        </Badge>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="badge-position" code={`<Badge 
+  badgeContent={4} 
+  color="primary"
+  anchorOrigin={{
+    vertical: 'top',
+    horizontal: 'right',
+  }}
+>
+  <MailIcon />
+</Badge>`} />
+</div>
+
+<a id="Badge with Avatar">
+  <h2>Badge with Avatar</h2>
+</a>
+
+Badges can be used with avatars to show user status.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Avatar>
+        <Badge
+          overlap="circular"
+          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+          variant="dot"
+          color="success"
+        >
+          U
+        </Badge>
+      </Avatar>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="badge-avatar" code={`<Avatar>
+  <Badge
+    overlap="circular"
+    anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+    variant="dot"
+    color="success"
+  >
+    U
+  </Badge>
+</Avatar>`} />
+</div>

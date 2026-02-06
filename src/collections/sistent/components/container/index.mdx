@@ -1,11 +1,49 @@
 ---
 name: "Container"
-title: "Container"
-description: "Containers align and center content, providing responsive layout options for different screen sizes."
-component: "container"
+title: Container
 published: true
-pages:
-  - overview
-  - guidance
-  - code
+component: container
+description: Containers are fundamental layout elements, used to center and structure content horizontally. They can be fluid or fixed, helping maintain alignment across different screen sizes and improving readability.
 ---
+
+import { Container, Box } from "@sistent/sistent";
+
+The Container component is an essential building block for creating layouts. Its ability to center content, provide fluid and fixed widths, and adapt responsively to different screen sizes makes it an invaluable tool for developers. By using the Container effectively, you can ensure that your application maintains a clean and organized appearance while enhancing the user experience.
+
+<a id="Types of Containers">
+  <h2>Types of Container</h2>
+</a>
+
+Sistent has two main types of containers that cater to different layout requirements: Fluid Containers and Fixed Containers. Each type serves specific use cases in building responsive web applications.
+
+<h3>1. Fluid Container</h3>
+
+A Fluid Container automatically adjusts its width to fill the available space based on the viewport size. It allows for a responsive layout that adapts to different screen sizes.
+
+<h4>Usage</h4>
+
+Ideal for layouts where you want the content to take full advantage of the available width. The fluid nature of the container ensures that it scales seamlessly across devices, from mobile to desktop.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Container maxWidth="sm">
+      <Box sx={{ bgcolor: "#cfe8fc", height: "50vh" }} />
+    </Container>
+  </ThemeWrapper>
+</Row>
+
+<h3>2. Fixed Container</h3>
+
+A Fixed Container has a predefined width that matches the minimum width of the current breakpoint. This allows for a consistent and controlled layout across different screen sizes.
+
+<h4>Usage</h4>
+
+Suitable for designs that require specific width constraints, ensuring that your content does not stretch too wide on larger screens. This is particularly useful for fixed-width layouts where the visual structure is maintained.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Container fixed>
+      <Box sx={{ bgcolor: "#cfe8fc", height: "50vh" }} />
+    </Container>
+  </ThemeWrapper>
+</Row>

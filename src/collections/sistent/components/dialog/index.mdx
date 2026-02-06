@@ -1,11 +1,35 @@
 ---
 name: "Dialog"
-title: "Dialog"
-description: "Dialogs display important prompts or confirmation requests that interrupt user interaction flow."
-component: "dialog"
+title: Dialog
 published: true
-pages:
-  - overview
-  - guidance
-  - code
+component: dialog
+description: The Dialog component is a modal window that appears on top of the main content to focus user attention on specific tasks or information. It provides a controlled way to present confirmations, forms, alerts, and detailed content without navigating away from the current context.
 ---
+
+import DialogDemo from "./DialogDemo";
+
+Dialog components provide modal windows that focus user attention on specific tasks or information. They overlay the main content and require user interaction before returning to the underlying interface.
+
+<a id="Basic Example">
+  <h3>Basic Example</h3>
+</a>
+
+Below is a simple example of how to use the Dialog component.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <DialogDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Usage">
+  <h2>Usage</h2>
+</a>
+
+The component can be used in several main variants:
+
+- **Standard:** Basic modal dialog for confirmations and simple interactions
+- **Form:** Dialog containing input fields for data collection
+- **Full-screen:** Expanded dialog for complex forms or mobile interfaces

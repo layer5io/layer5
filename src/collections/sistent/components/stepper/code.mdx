@@ -1,0 +1,62 @@
+---
+title: Stepper Code
+component: stepper
+description: Steppers guide users through multi-step processes by breaking complex tasks into manageable, sequential steps with clear progress indication.
+---
+
+import { CustomizedStepper, useStepper, Box, Typography, Button } from "@sistent/sistent";
+import StepperDemo from "./StepperDemo";
+
+The Stepper component uses the `useStepper` hook for state management and the `CustomizedStepper` component for rendering.
+
+<a id="stepper-with-navigation">
+  <h2>Stepper with Navigation</h2>
+</a>
+
+Enhanced stepper with navigation controls for user interaction.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <StepperDemo type="basic" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="stepper-navigation" code={`import { CustomizedStepper, useStepper, Button, Box } from '@sistent/sistent';
+import PersonIcon from "@mui/icons-material/Person";
+import SettingsIcon from "@mui/icons-material/Settings";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+
+const StepOne = () => <Box>User Info Content</Box>;
+const StepTwo = () => <Box>Settings Content</Box>;
+const StepThree = () => <Box>Complete Content</Box>;
+
+const MyStepper = () => {
+    const { 
+      activeStep, 
+      handleNext, 
+      goBack, 
+      stepLabels, 
+      icons, 
+      activeStepComponent: ActiveStepComponent 
+    } = useStepper({ steps: [
+      { label: 'User Info', component: StepOne, icon: PersonIcon },
+      { label: 'Settings', component: StepTwo, icon: SettingsIcon },
+      { label: 'Complete', component: StepThree, icon: CheckCircleIcon }
+    ] });
+
+    return (
+      <div>
+        <CustomizedStepper stepLabels={stepLabels} activeStep={activeStep} icons={icons}>
+          <ActiveStepComponent />
+        </CustomizedStepper>
+        
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
+          <Button onClick={goBack} disabled={activeStep === 0}>Back</Button>
+          <Button onClick={handleNext}>
+            {activeStep === stepLabels.length - 1 ? 'Finish' : 'Next'}
+          </Button>
+        </Box>
+      </div>
+    );
+}`} />
+</div>

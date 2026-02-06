@@ -1,11 +1,104 @@
 ---
 name: "Select"
-title: "Select"
-description: "Select component is a dropdown menu for selecting an option from a list."
-component: "select"
+title: Select
 published: true
-pages:
-  - overview
-  - guidance
-  - code
+component: select
+description: The Select component is a versatile and customizable element commonly used in forms and user interfaces. It is designed to present a list of options for users to choose from, either as a single selection or multiple selections. This component plays a vital role in collecting user-provided information efficiently and intuitively.
 ---
+
+import { FormControl, InputLabel, MenuItem, Select, OutlinedInput } from "@mui/material";
+import SelectDemo from "./SelectDemo";
+
+To accommodate various design styles and use cases, the select component offers numerous customizable properties. Developers can customize how the component display the labels or selected option to improve user experience.
+
+<a id="Types">
+  <h2>Types</h2>
+</a>
+
+<h3>Outlined</h3>
+The default style is "outlined," featuring a thin line around the selection area. The label appears above the selection, and the dropdown menu is displayed below it.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SelectDemo type="basic" variant="outlined" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Filled</h3>
+Filled select feature a background color fill. Depending on the theme or intended action, the color fill can range from a primary brand color to any other applicable color in a brand's color palette.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SelectDemo type="basic" variant="filled" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Standard</h3>
+The standard style features a simple underline below the selection area.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SelectDemo type="basic" variant="standard" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Sizes">
+  <h2>Sizes</h2>
+</a>
+
+The select component can be adjusted in size to accommodate various use cases.
+
+<h3>Auto width</h3>
+The width of the component can scale automatically to fit the content it contains.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SelectDemo type="basic" autoWidth />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Small</h3>
+The small size select component is designed to fit into more compact spaces.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SelectDemo type="basic" size="small" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Full width</h3>
+Full width select are more efficient in mobile designs.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+       <div style={{ width: '100%' }}>
+          <SelectDemo type="basic" fullWidth />
+       </div>
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Multiple select">
+  <h2>Multiple select</h2>
+</a>
+
+Multiple select component allows users to select more than one option.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SelectDemo type="multiple" />
+    </ThemeWrapper>
+  </div>
+</div>

@@ -1,0 +1,105 @@
+---
+title: Tooltip Guidance
+component: tooltip
+description: The Tooltip component displays informative text when users hover over, focus on, or tap an element. Tooltips are designed to enhance accessibility and user understanding of interface elements.
+---
+
+import TooltipDemo from "./TooltipDemo";
+
+The Tooltip component displays informative text when users hover over, focus on, or tap an element. Tooltips are designed to enhance accessibility and user understanding of interface elements.
+
+The Tooltip component displays informative text when users hover over, focus on, or tap an element. Tooltips are designed to enhance accessibility and user understanding of interface elements.
+
+<a id="Positioning">
+  <h2>Positioning</h2>
+</a>
+
+The positioning of the Tooltip is critical for usability. Use the `placement` prop to control where the Tooltip appears relative to its anchor element. Options include:
+
+*   top
+*   bottom
+*   left
+*   right
+*   top-start
+*   top-end
+*   bottom-start
+*   bottom-end
+*   left-start
+*   left-end
+*   right-start
+*   right-end
+
+Choosing the right position helps to prevent overlap with other interface elements and improves readability.
+
+<a id="Styling">
+  <h2>Styling</h2>
+</a>
+
+The Tooltip component inherits styles from the Sistent theme. You can customize the appearance by applying styles to the content inside the Tooltip. For instance:
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TooltipDemo type="styled" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>HTML Support</h3>
+
+The Tooltip component supports HTML content, allowing you to include rich text, links, and other elements inside the tooltip. By passing HTML content as the title prop, you can create more engaging and informative tooltips.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TooltipDemo type="html" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Markdown Support</h3>
+
+The Tooltip component supports Markdown content, allowing you to include rich text, links, and other elements inside the tooltip. By passing Markdown content as the title prop, you can create more engaging and informative tooltips.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TooltipDemo type="markdown" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h2>Triggers</h2>
+
+The Tooltip component can be triggered by various user actions, including hover, focus, and click. By default, the Tooltip appears when the user hovers over the anchor element. You can customize the trigger behavior using the following props:
+
+*   `disableHoverListener`: Disables the hover trigger.
+*   `disableFocusListener`: Disables the focus trigger.
+*   `disableTouchListener`: Disables the touch trigger.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TooltipDemo type="triggers" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Accessibility">
+  <h2>Accessibility</h2>
+</a>
+
+It’s important to ensure that the Tooltip component is accessible to all users. Here are some key considerations:
+
+*   By default, tooltips are designed to label their child element rather than describe it. This differs from the `title` attribute, which can either label or describe the child element based on whether it already has an accessible label.
+*   Using `describeChild` : When you want the tooltip to act as an accessible description (adding additional context), you can enable the describeChild prop. Use describeChild only if the tooltip provides supplementary information and the child element already has an accessible label.
+*   Avoiding Accessibility Violations: Do not use describeChild if the tooltip is the only visible label for the child element, as this would prevent the child from having an accessible name.
+
+<a id="Performance">
+  <h2>Performance Tips</h2>
+</a>
+
+When using the Tooltip component, consider the following to optimize performance:
+
+*   Use the `placement` prop to control the position of the Tooltip and prevent overlap with other interface elements.
+*   Ensure that the Tooltip is keyboard navigable, allowing users to open/close it using keyboard shortcuts.

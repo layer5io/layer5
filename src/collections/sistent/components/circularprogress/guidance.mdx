@@ -1,0 +1,69 @@
+---
+title: Circular Progress Guidance
+component: circularprogress
+description: The Circular Progress component displays a circular loading indicator that represents either determinate or indeterminate progress in your application. It's commonly used to show loading states, progress of operations, or completion percentages.
+---
+
+import { CircularProgress, Button } from "@sistent/sistent";
+
+The Circular Progress component displays a circular loading indicator that represents either determinate or indeterminate progress in your application. It's commonly used to show loading states, progress of operations, or completion percentages.
+
+Proper usage of the Circular Progress component can enhance user experience by visually indicating progress status. Below are some guidelines to ensure effective implementation.
+
+<a id="Usage">
+  <h2>Usage</h2>
+</a>
+
+To use the Circular Progress component, include it in your layout with the desired `variant` prop to specify whether it should be determinate or indeterminate. For example:
+
+- `variant="indeterminate"` for continuous loading.
+- `variant="determinate"` for specific progress indication.
+
+The `value` prop is required for determinate progress to indicate how far along the task is, ranging from 0 to 100.
+
+<a id="Sizing">
+  <h3>Sizing</h3>
+</a>
+
+Adjust the size of the Circular Progress component using the `size` prop. For example, set `size={60}` to increase the diameter of the circular loader.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <CircularProgress size={40} />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Thickness">
+  <h3>Thickness</h3>
+</a>
+
+Control the thickness of the circular progress arc using the `thickness` prop. This allows for customization of the loader's appearance.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <CircularProgress thickness={4} />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Colors">
+  <h3>Colors</h3>
+</a>
+
+Customize the color of the Circular Progress component using the `color` prop. Available colors include primary, secondary, success, error, warning, and info to match your design system.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+        <CircularProgress color="primary" />
+        <CircularProgress color="secondary" />
+        <CircularProgress color="success" />
+        <CircularProgress color="error" />
+        <CircularProgress color="warning" />
+        <CircularProgress color="info" />
+    </div>
+  </ThemeWrapper>
+</Row>

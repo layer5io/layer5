@@ -1,11 +1,38 @@
 ---
 name: "Icons"
-title: "Icons"
-description: "Sistent provides a comprehensive collection of icons that can be used across your projects. These icons are designed to be consistent with the overall design language of the Sistent design system, ensuring a cohesive user experience."
-component: "icons"
+title: Icons
 published: true
-pages:
-  - overview
-  - guidance
-  - code
+component: icons
+description: Sistent provides a comprehensive collection of icons that can be used across your projects. These icons are designed to be consistent with the overall design language of the Sistent design system, ensuring a cohesive user experience.
 ---
+
+import IconsDemo from "./IconsDemo";
+
+The icons are available as React components and can be easily imported and used in your application. They are also customizable in terms of size, color, and other properties.
+
+<a id="Sample">
+    <h2>Sample</h2>
+</a>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', gap: '2rem' }}>
+        <IconsDemo type="basic" />
+        <IconsDemo type="size" />
+      </div>
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Sistent-Icons">
+  <h2>Search Icons</h2>
+</a>
+
+Browse through the icons below to find the one you need. The search field supports synonyms—for example, try searching for "Kubernetes" or "Design".
+
+<div className="showcase">
+    <ThemeWrapper>
+        <IconsDemo type="all" />
+    </ThemeWrapper>
+</div>

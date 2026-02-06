@@ -1,11 +1,74 @@
 ---
 name: "RadioGroup"
-title: "RadioGroup"
-description: "Sistent offers a well-structured RadioGroup component that allows users to select one option from a set."
-component: "radiogroup"
+title: RadioGroup
 published: true
-pages:
-  - overview
-  - guidance
-  - code
+component: radiogroup
+description: The RadioGroup component allows users to select one option from a set of mutually exclusive choices. It ensures accessibility and consistency within the Sistent design system.
 ---
+
+import { RadioGroup, Radio, FormControlLabel } from "@sistent/sistent";
+import RadioGroupDemo from "./RadioGroupDemo";
+
+The RadioGroup component in React is used to present a set of mutually exclusive options, where only one option can be selected at a time. It is commonly used in forms and settings.
+
+<a id="Usage">
+  <h2>How to use</h2>
+</a>
+
+The examples below demonstrate different ways to use the RadioGroup component.
+
+<a id="Basic RadioGroup">
+  <h3>Basic RadioGroup</h3>
+</a>
+
+Select one option from a simple vertical list.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <RadioGroupDemo type="basic" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Disabled Options">
+  <h3>Disabled Options</h3>
+</a>
+
+One of the options is disabled and cannot be selected.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <RadioGroupDemo type="disabled" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Row Layout">
+  <h3>Row Layout</h3>
+</a>
+
+Options are displayed in a horizontal row.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <RadioGroupDemo type="row" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Label Placement">
+  <h3>Label Placement</h3>
+</a>
+
+You can change the placement of the label with the `labelPlacement` prop.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <RadioGroupDemo type="labelPlacement" />
+    </ThemeWrapper>
+  </div>
+</div>

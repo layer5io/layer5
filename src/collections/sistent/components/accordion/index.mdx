@@ -1,11 +1,66 @@
 ---
 name: "Accordion"
 title: "Accordion"
-description: "An accordion is a vertically stacked list of headers that can be clicked to reveal or hide associated content, allowing users to toggle between hiding and showing large amounts of content in a compact space."
-component: "accordion"
 published: true
-pages:
-  - overview
-  - guidance
-  - code
+component: accordion
+description: An accordion is a vertically stacked list of headers that can be clicked to reveal or hide associated content. It allows users to toggle between hiding and showing large amounts of content in a compact space.
 ---
+
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Accordion, AccordionSummary, AccordionDetails, Typography } from "@sistent/sistent";
+import ControlledAccordion from "./ControlledAccordion";
+
+Accordions are useful when you want to toggle between hiding and showing large amounts of content. They help reduce vertical space and improve the user experience by organizing content in a hierarchical, easy-to-scan way.
+
+<a id="Basic Accordion">
+  <h2>Basic Accordion</h2>
+</a>
+
+A basic accordion with multiple panels that can be expanded and collapsed independently.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ width: "100%" }}>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1-content"
+          id="panel1-header"
+        >
+          <Typography>Accordion 1</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            This is the content for the first accordion panel. You can add any content here, including text, images, or other components.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2-content"
+          id="panel2-header"
+        >
+          <Typography>Accordion 2</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            This is the content for the second accordion panel. Accordions can contain rich content and media.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Controlled Accordion">
+  <h2>Controlled Accordion</h2>
+</a>
+
+A controlled accordion where only one panel can be expanded at a time, providing a more focused user experience.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <ControlledAccordion />
+  </ThemeWrapper>
+</Row>

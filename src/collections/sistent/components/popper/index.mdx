@@ -1,11 +1,44 @@
 ---
 name: "Popper"
-title: "Popper"
-description: "A popper is a tooltip that appears when a user interacts with an element."
-component: "popper"
+title: Popper
 published: true
-pages:
-  - overview
-  - guidance
-  - code
+component: popper
+description: The Popper component provides a mechanism for positioning content dynamically relative to a reference element. It is commonly used for tooltips, dropdowns, and modals, enhancing the user experience by presenting contextual information without overcrowding the interface.
 ---
+
+import { Popper, Button, Box } from "@sistent/sistent";
+import PopperDemo from "./PopperDemo";
+
+Poppers are critical for displaying information dynamically and can be used in various scenarios like tooltips, dropdowns, and menus. By anchoring the content to a reference element, Poppers provide users with relevant information as they interact with the interface.
+
+<a id="Basic Example">
+  <h2>Basic Example</h2>
+</a>
+
+Below is a simple example of how to use the Popper component to display content relative to a button.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PopperDemo type="basic" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+The `anchorEl` prop specifies the element to which the Popper will be anchored. The `open` prop controls its visibility.
+
+<a id="Styling and Positioning">
+  <h2>Styling and Positioning</h2>
+</a>
+
+You can customize the positioning of the Popper using the `placement` prop to define where the Popper appears relative to the anchor element.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PopperDemo type="positioned" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+The above example demonstrates a Popper positioned relative to the reference button, providing flexibility in its placement.

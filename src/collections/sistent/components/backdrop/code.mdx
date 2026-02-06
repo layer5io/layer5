@@ -1,0 +1,42 @@
+---
+title: Backdrop Code
+component: backdrop
+description: The Backdrop component overlays a dimmed background across the screen to direct focus to specific content in the foreground, like loading indicators, modals, or dialogs. It visually signals that the background content is temporarily inaccessible. The Backdrop can be closed when clicked, depending on the close action set in its props.
+---
+
+import BackdropDemo from "./BackdropDemo";
+
+The Backdrop component overlays a dimmed background across the screen to direct focus to specific content in the foreground, like loading indicators, modals, or dialogs. It visually signals that the background content is temporarily inaccessible. The Backdrop can be closed when clicked, depending on the close action set in its props.
+
+<a id="Backdrop">
+  <h2>Backdrop Example</h2>
+</a>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <BackdropDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="backdrop-code" code={`import { Backdrop, Button, CircularProgress } from "@sistent/sistent";
+
+// declare states and functions to handle open and close operation
+/*
+const [open, setOpen] = React.useState(false);
+const handleClose = () => setOpen(false);
+const handleOpen = () => setOpen(true);
+*/
+<div>
+  <Button onClick={handleOpen}>Show backdrop</Button>
+  <Backdrop
+    sx={(theme) => ({
+      color: "#fff",
+      zIndex: theme.zIndex.drawer + 1,
+    })}
+    open={open}
+    onClick={handleClose}
+  >
+    <CircularProgress color="inherit" />
+  </Backdrop>
+</div>`} />
+</div>

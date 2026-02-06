@@ -1,0 +1,83 @@
+---
+title: Text Input Guidance
+component: text-input
+description: The Input component is a versatile form control that enables users to enter and edit text data. It supports various input types, validation states, and customization options to create accessible and user-friendly data collection experiences.
+---
+
+import { Input } from "@sistent/sistent";
+import TextInputDemo from "./TextInputDemo";
+
+The Input component is a versatile form control that enables users to enter and edit text data. It supports various input types, validation states, and customization options to create accessible and user-friendly data collection experiences.
+
+Proper usage of the Input component can enhance user experience by providing clear, accessible, and visually consistent form controls. Below are guidelines and interactive examples to help you implement inputs effectively.
+
+<a id="Usage">
+  <h2>Usage</h2>
+</a>
+
+To use the Input component, include it in your form with the desired props. The component supports various input types and styling options:
+
+*   `type` for input behavior (text, email, password, etc.)
+*   `color` for theme colors
+*   `multiline` for text areas
+*   `disabled`, `error`, `required` for different states
+
+<a id="Colors">
+  <h3>Colors</h3>
+</a>
+
+Customize the color theme of the input component. Colors can convey different meanings or states within your interface:
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TextInputDemo type="colors" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Input Types">
+  <h3>Input Types</h3>
+</a>
+
+Different input types provide specialized behavior and validation for different data formats. The placeholder text automatically updates to match the selected type:
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TextInputDemo type="types" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="States">
+  <h3>Input States</h3>
+</a>
+
+Input components support various states to provide feedback and control user interaction. These examples demonstrate different state combinations:
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TextInputDemo type="error" />
+      <br />
+      <TextInputDemo type="disabled" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Best Practices">
+  <h2>Best Practices</h2>
+</a>
+
+<h3>Accessibility</h3>
+
+Always provide clear labels for screen readers and ensure sufficient color contrast. Use helper text to provide additional context and validation feedback.
+
+<h3>Validation</h3>
+
+Implement real-time validation when appropriate, but avoid being overly aggressive. Provide clear error messages that help users understand how to fix issues.
+
+<h3>Placeholder Text</h3>
+
+Use placeholder text to show examples of expected input format, but don't rely on it as the primary way to communicate requirements. Always include proper labels.

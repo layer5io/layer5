@@ -1,11 +1,25 @@
 ---
 name: "Backdrop"
-title: "Backdrop"
-description: "Backdrop component overlays a dimmed screen to focus attention on foreground content."
-component: "backdrop"
+title: Backdrop
 published: true
-pages:
-  - overview
-  - guidance
-  - code
+component: backdrop
+description: The Backdrop component overlays a dimmed background across the screen to direct focus to specific content in the foreground, like loading indicators, modals, or dialogs. It visually signals that the background content is temporarily inaccessible. The Backdrop can be closed when clicked, depending on the close action set in its props.
 ---
+
+import BackdropDemo from "./BackdropDemo";
+
+The Backdrop component in React is used to overlay a dimmed background across the entire screen, guiding the user's focus to a specific element or content in the foreground. This component is often utilized for scenarios that require a change in the application’s state, such as showing loading indicators, modals, dialogs, or other focused content.
+
+In its simplest use, a Backdrop dims the background, enhancing the visibility of what’s in the foreground while signaling that the underlying content is temporarily inaccessible. When Backdrop is open, users can click on it to close it, depending on how the close action is handled in the component’s props.
+
+<a id="Usage">
+  <h2>How to use</h2>
+</a>
+
+The demo below shows a basic Backdrop with a Circular Progress component in the foreground to indicate a loading state. After clicking Show Backdrop, you can click anywhere on the page to close it.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <BackdropDemo />
+  </ThemeWrapper>
+</Row>

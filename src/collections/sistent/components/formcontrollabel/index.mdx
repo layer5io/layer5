@@ -1,11 +1,30 @@
 ---
-name: "FormControlLabel"
-title: "FormControlLabel"
-description: "A control + label pair used for checkboxes or radio buttons."
-component: "formcontrollabel"
+name: "Form Control Label"
+title: Form Control Label
 published: true
-pages:
-  - overview
-  - guidance
-  - code
+component: formcontrollabel
+description: FormControlLabel is a wrapper component that pairs a label with a control such as a checkbox or a radio button. It enhances accessibility by allowing users to click the label to toggle the control.
 ---
+
+import { FormControlLabel, Checkbox, Radio, Switch } from "@sistent/sistent";
+import FormControlLabelDemo from "./FormControlLabelDemo";
+
+The `FormControlLabel` component is commonly used to attach readable text labels to controls like checkboxes, radio buttons, or switches. It helps ensure the control is understandable, accessible, and easy to interact with.
+
+<a id="Examples">
+  <h2>Examples</h2>
+</a>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <FormControlLabelDemo type="mixed" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Accessibility">
+  <h2>Accessibility</h2>
+</a>
+
+Labels are automatically associated with their controls, making it easier for assistive technologies to provide context. Clicking on the label will also toggle the control.

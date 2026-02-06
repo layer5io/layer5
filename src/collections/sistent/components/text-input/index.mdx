@@ -1,11 +1,67 @@
 ---
 name: "Text Input"
-title: "Text Input"
-description: "A text input is made up of multiple elements that combine to form a component that helps users to read, write, and edit text in an interface."
-component: "text-input"
+title: Text Input
 published: true
-pages:
-  - overview
-  - guidance
-  - code
+component: text-input
+description: The Input component is a versatile form control that enables users to enter and edit text data. It supports various input types, validation states, and customization options to create accessible and user-friendly data collection experiences.
 ---
+
+import { Input } from "@sistent/sistent";
+import TextInputDemo from "./TextInputDemo";
+
+Input components are fundamental building blocks for forms and data collection interfaces. They provide immediate feedback to users and help maintain data quality through validation and formatting features. The component adapts to different content types while maintaining consistency with your design system.
+
+<a id="Usage">
+  <h2>Usage</h2>
+</a>
+
+The component can be used in several main variants:
+
+*   **Standard:** Single-line text input for basic data collection
+*   **Multiline:** Multi-line text area for longer content
+
+<a id="Basic Example">
+  <h3>Basic Example</h3>
+</a>
+
+Below is a simple example of how to use the Input component.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TextInputDemo type="basic" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Key Features">
+  <h2>Key Features</h2>
+</a>
+
+You can customize the appearance and behavior of the Input component using various props to define how the component renders and interacts with users.
+
+<h3>Input Types</h3>
+
+*   **Text:** Standard text input for general text data
+*   **Email:** Email input with built-in validation
+*   **Password:** Password input with hidden text
+*   **Number:** Numeric input with increment/decrement controls
+*   **Tel:** Telephone number input
+*   **URL:** URL input with validation
+*   **Search:** Search input with optimized styling
+
+<h3>Visual Features</h3>
+
+*   **Standard:** Clean, minimalist input styling
+*   **Multiline:** Expandable text area for longer content
+
+<h3>Component Props</h3>
+
+*   **Color:** Primary, secondary, success, error, warning color themes
+*   **Label:** Descriptive labels for accessibility
+*   **Helper Text:** Additional guidance or validation messages
+*   **Placeholder:** Hint text showing expected input format
+*   **Disabled State:** Non-interactive state for read-only contexts
+*   **Required:** Indicates mandatory fields
+*   **Error State:** Visual feedback for validation errors
+*   **Start/End Adornments:** Icons or text before/after input content

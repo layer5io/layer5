@@ -1,0 +1,267 @@
+---
+title: Tabs Code
+component: tabs
+description: Tabs organize content across different screens, data sets, and other interactions. They allow users to navigate between different views within the same context, making it easy to explore and switch between related content sections.
+---
+
+import { Tabs, Tab, Box, Typography, Button } from "@sistent/sistent";
+import TabsDemo from "./TabsDemo";
+
+Here are code examples for all different variations and props of the Tabs component. Each example shows the implementation with a live preview and copyable code.
+
+<a id="Basic Tabs">
+  <h3>Basic Tabs</h3>
+</a>
+
+Standard horizontal tabs with controlled state and content panels.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TabsDemo type="basic" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-tabs" code={`import { Tabs, Tab, Box, Typography } from "@sistent/sistent";
+
+function BasicTabs() {
+  const [value, setValue] = useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <Box sx={{ width: '100%' }}>
+      <Tabs value={value} onChange={handleChange}>
+        <Tab label="Dashboard" />
+        <Tab label="Analytics" />
+        <Tab label="Settings" />
+      </Tabs>
+      <TabPanel value={value} index={0}>
+        Dashboard Content
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        Analytics Content
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        Settings Content
+      </TabPanel>
+    </Box>
+  );
+}`} />
+</div>
+
+<a id="Scrollable Tabs">
+  <h3>Scrollable Tabs</h3>
+</a>
+
+Tabs that can scroll horizontally when content overflows the container width.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TabsDemo type="scrollable" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="scrollable-tabs" code={`<Tabs 
+  value={value} 
+  onChange={(e, newValue) => setValue(newValue)}
+  variant="scrollable"
+  scrollButtons="auto"
+>
+  <Tab label="Overview" />
+  <Tab label="Performance" />
+  <Tab label="Security" />
+  <Tab label="Integrations" />
+  <Tab label="Billing" />
+  <Tab label="Team" />
+</Tabs>`} />
+</div>
+
+<a id="Full Width Tabs">
+  <h3>Full Width Tabs</h3>
+</a>
+
+Tabs that expand to fill the entire width of their container.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TabsDemo type="fullWidth" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="fullwidth-tabs" code={`<Tabs 
+  value={value} 
+  onChange={(e, newValue) => setValue(newValue)}
+  variant="fullWidth"
+>
+  <Tab label="Profile" />
+  <Tab label="Account" />
+  <Tab label="Preferences" />
+</Tabs>`} />
+</div>
+
+<a id="Vertical Tabs">
+  <h3>Vertical Tabs</h3>
+</a>
+
+Tabs arranged vertically, perfect for sidebar navigation.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TabsDemo type="vertical" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="vertical-tabs" code={`<Tabs
+  orientation="vertical"
+  variant="scrollable"
+  value={value}
+  onChange={(e, newValue) => setValue(newValue)}
+  sx={{ borderRight: 1, borderColor: 'divider' }}
+>
+  <Tab label="General" />
+  <Tab label="Privacy" />
+  <Tab label="Security" />
+  <Tab label="Notifications" />
+</Tabs>`} />
+</div>
+
+<a id="Icon Tabs">
+  <h3>Icon Tabs</h3>
+</a>
+
+Tabs enhanced with icons for better visual context and usability.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TabsDemo type="icon" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="icon-tabs" code={`<Tabs value={value} onChange={(e, newValue) => setValue(newValue)}>
+  <Tab icon={<HomeIcon />} label="Home" />
+  <Tab icon={<SearchIcon />} label="Search" />
+  <Tab icon={<FavoriteIcon />} label="Favorites" />
+  <Tab icon={<PersonIcon />} label="Profile" />
+</Tabs>`} />
+</div>
+
+<a id="Disabled Tabs">
+  <h3>Disabled Tabs</h3>
+</a>
+
+Individual tabs can be disabled to indicate unavailable functionality.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TabsDemo type="disabled" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="disabled-tabs" code={`<Tabs value={value} onChange={(e, newValue) => setValue(newValue)}>
+  <Tab label="Basic Plan" />
+  <Tab label="Pro Features" disabled />
+  <Tab label="Enterprise" disabled />
+  <Tab label="Support" />
+</Tabs>`} />
+</div>
+
+<a id="Colored Tabs">
+  <h3>Colored Tabs</h3>
+</a>
+
+Customize the indicator and text colors to match your design system.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TabsDemo type="colored" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="colored-tabs" code={`<Tabs 
+  value={value} 
+  onChange={(e, newValue) => setValue(newValue)}
+  indicatorColor="secondary"
+  textColor="secondary"
+  sx={{
+    '& .MuiTab-root': {
+      color: '#1976d2',
+    },
+    '& .Mui-selected': {
+      color: '#d81b60',
+    },
+    '& .MuiTabs-indicator': {
+      backgroundColor: '#d81b60',
+    }
+  }}
+>
+  <Tab label="Home" />
+  <Tab label="Profile" />
+  <Tab label="Settings" />
+</Tabs>`} />
+</div>
+
+<a id="Controlled Tabs">
+  <h3>Controlled Tabs</h3>
+</a>
+
+Programmatically control which tab is active using external buttons or logic.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TabsDemo type="controlled" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="controlled-tabs" code={`function ControlledTabs() {
+  const [value, setValue] = useState(0);
+
+  const handleNext = () => {
+    setValue((prev) => (prev + 1) % 3);
+  };
+
+  return (
+    <Box>
+      <Tabs value={value} onChange={(e, newValue) => setValue(newValue)}>
+        <Tab label="Step 1" />
+        <Tab label="Step 2" />
+        <Tab label="Step 3" />
+      </Tabs>
+      <Box sx={{ mt: 2 }}>
+        <Button onClick={handleNext}>Next Step</Button>
+      </Box>
+    </Box>
+  );
+}`} />
+</div>
+
+<a id="Wrapped Labels Tabs">
+  <h3>Wrapped Labels Tabs</h3>
+</a>
+
+Tabs with longer labels that can wrap to multiple lines when needed.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TabsDemo type="wrapped" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="wrapped-tabs" code={`<Tabs 
+  value={value} 
+  onChange={(e, newValue) => setValue(newValue)}
+  sx={{
+    '& .MuiTab-root': {
+      minHeight: 72,
+      alignItems: 'center',
+      whiteSpace: 'normal',
+      textAlign: 'center'
+    }
+  }}
+>
+  <Tab label="User Management and Permissions" />
+  <Tab label="Data Analytics and Reporting" />
+  <Tab label="System Configuration" />
+</Tabs>`} />
+</div>

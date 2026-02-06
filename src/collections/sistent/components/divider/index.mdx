@@ -1,11 +1,90 @@
 ---
 name: "Divider"
-title: "Divider"
-description: "The Divider component visually separates content with a thin line, helping to organize sections and improve scannability in lists and layouts."
-component: "divider"
+title: Divider
 published: true
-pages:
-  - overview
-  - guidance
-  - code
+component: divider
+description: The Divider component renders a thin line that separates content within lists, layouts, and sections, providing a subtle way to reinforce visual hierarchy and improve scannability.
 ---
+
+import { Divider, Box, Chip } from "@sistent/sistent";
+
+Dividers help organize content and improve scannability by separating groups of related elements. Use them sparingly to maintain visual clarity without creating unnecessary noise.
+
+<a id="Variants">
+  <h2>Variants</h2>
+</a>
+
+The Divider component supports three variants: `fullWidth` (default), `inset`, and `middle`.
+
+<h3>Full Width</h3>
+
+The default variant spans the full width of its container.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Box sx={{ width: "100%", maxWidth: 360 }}>
+      <Divider />
+    </Box>
+  </ThemeWrapper>
+</Row>
+
+<h3>Inset</h3>
+
+The `inset` variant adds left padding, useful when aligning with indented list items.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Box sx={{ width: "100%", maxWidth: 360 }}>
+      <Divider variant="inset" />
+    </Box>
+  </ThemeWrapper>
+</Row>
+
+<h3>Middle</h3>
+
+The `middle` variant shortens the divider on both sides.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Box sx={{ width: "100%", maxWidth: 360 }}>
+      <Divider variant="middle" />
+    </Box>
+  </ThemeWrapper>
+</Row>
+
+<a id="Orientation">
+  <h2>Orientation</h2>
+</a>
+
+Use the `orientation` prop to render vertical dividers. Vertical dividers are useful for separating items in toolbars or button groups.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+      <span>Left</span>
+      <Divider orientation="vertical" flexItem />
+      <span>Center</span>
+      <Divider orientation="vertical" flexItem />
+      <span>Right</span>
+    </Box>
+  </ThemeWrapper>
+</Row>
+
+<a id="With-Text">
+  <h2>Divider with Text</h2>
+</a>
+
+You can center an element between divider lines using children. Use the `textAlign` prop to align the content.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Box sx={{ width: "100%", maxWidth: 360 }}>
+      <Divider>CENTER</Divider>
+      <Divider textAlign="left">LEFT</Divider>
+      <Divider textAlign="right">RIGHT</Divider>
+      <Divider>
+        <Chip label="Chip" size="small" />
+      </Divider>
+    </Box>
+  </ThemeWrapper>
+</Row>

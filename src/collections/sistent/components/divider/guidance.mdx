@@ -1,0 +1,112 @@
+---
+title: Divider Guidance
+component: divider
+description: The Divider component renders a thin line that separates content within lists, layouts, and sections, providing a subtle way to reinforce visual hierarchy and improve scannability.
+---
+
+import { Divider, Box, Stack } from "@sistent/sistent";
+
+The `Divider` component renders a thin line that separates content within lists, layouts, and sections, providing a subtle way to reinforce visual hierarchy and improve scannability.
+
+<a id="Best-Practices">
+  <h2>Best Practices</h2>
+</a>
+
+<h3>When to Use</h3>
+
+Dividers work best when separating distinct groups of content in lists, menus, or sections. They help users scan and understand the structure of complex interfaces.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Stack spacing={2} sx={{ width: "100%", maxWidth: 360 }}>
+      <Box sx={{ p: 2, bgcolor: "background.paper" }}>Section 1</Box>
+      <Divider />
+      <Box sx={{ p: 2, bgcolor: "background.paper" }}>Section 2</Box>
+      <Divider />
+      <Box sx={{ p: 2, bgcolor: "background.paper" }}>Section 3</Box>
+    </Stack>
+  </ThemeWrapper>
+</Row>
+
+<h3>Use Sparingly</h3>
+
+Avoid overusing dividers. Too many lines can create visual clutter. Consider using whitespace, different background colors, or typography to create separation instead.
+
+<h3>Vertical Dividers for Toolbars</h3>
+
+Use vertical dividers to separate groups of actions in toolbars or icon groups. The `flexItem` prop ensures proper height alignment.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+      <Box sx={{ p: 1 }}>Action A</Box>
+      <Box sx={{ p: 1 }}>Action B</Box>
+      <Divider orientation="vertical" flexItem />
+      <Box sx={{ p: 1 }}>Action C</Box>
+      <Box sx={{ p: 1 }}>Action D</Box>
+    </Box>
+  </ThemeWrapper>
+</Row>
+
+<a id="Accessibility">
+  <h2>Accessibility</h2>
+</a>
+
+By default, Divider renders as an `<hr>` element with an implicit ARIA role of `separator`. Screen readers will announce it as "Horizontal Splitter" (or vertical when using `orientation="vertical"`).
+
+<h3>Decorative Dividers</h3>
+
+If the divider is purely decorative, add `aria-hidden="true"` to prevent screen readers from announcing it.
+
+<h3>Dividers with Content</h3>
+
+When wrapping content like text or chips, set `component="div"` and `role="presentation"` to maintain proper semantics.
+
+<a id="Common-Patterns">
+  <h2>Common Patterns</h2>
+</a>
+
+<h3>List Separators</h3>
+
+When using dividers in lists, set `component="li"` to ensure valid HTML structure.
+
+<h3>Section Headers</h3>
+
+Use dividers with text to create subtle section headers:
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Box sx={{ width: "100%", maxWidth: 360 }}>
+      <Divider textAlign="left">Personal Information</Divider>
+      <Box sx={{ p: 2 }}>Content here...</Box>
+      <Divider textAlign="left">Contact Details</Divider>
+      <Box sx={{ p: 2 }}>Content here...</Box>
+    </Box>
+  </ThemeWrapper>
+</Row>
+
+<h3>Responsive Behavior</h3>
+
+Consider how dividers appear on different screen sizes. Vertical dividers in horizontal layouts may need to switch to horizontal dividers on smaller screens.
+
+<a id="Dos-and-Donts">
+  <h2>Do's and Don'ts</h2>
+</a>
+
+<h3>Do's</h3>
+
+<ul>
+  <li>Use dividers to separate distinct groups of related content</li>
+  <li>Combine with appropriate spacing for better visual rhythm</li>
+  <li>Use `variant="middle"` or `variant="inset"` to reduce visual weight</li>
+  <li>Set proper ARIA attributes for accessibility</li>
+</ul>
+
+<h3>Don'ts</h3>
+
+<ul>
+  <li>Use dividers as the only method of creating separation</li>
+  <li>Overuse dividers—they can create visual noise</li>
+  <li>Rely on dividers to convey interactive functionality</li>
+  <li>Use dividers for decorative purposes without hiding them from screen readers</li>
+</ul>

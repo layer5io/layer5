@@ -1,11 +1,102 @@
 ---
 name: "AvatarGroup"
-title: "AvatarGroup"
-description: "An AvatarGroup component is used to display a collection of Avatars together, typically representing a group of users, collaborators, or participants."
-component: "avatar-group"
+title: AvatarGroup
 published: true
-pages:
-  - overview
-  - guidance
-  - code
+component: avatar-group
+description: The AvatarGroup component is used to visually represent a collection of users or entities in a compact and organized layout. It's ideal for showcasing team members, collaborators, or participants, and is often used in dashboards, cards, and collaborative tools. AvatarGroup handles overlapping, spacing, and overflow logic to ensure clarity even with limited space.
 ---
+
+import { Avatar, AvatarGroup } from "@sistent/sistent";
+import user1 from "../../../../assets/images/sistent/placeholder/user.webp";
+import user2 from "../../../../assets/images/sistent/placeholder/user.webp";
+import user3 from "../../../../assets/images/sistent/placeholder/user.webp";
+import user4 from "../../../../assets/images/sistent/placeholder/user.webp";
+
+<strong>AvatarGroup</strong> is used to display a collection of user avatars together, typically for showing team members or participants in collaborative features.
+
+<h3>Basic Avatar Group</h3>
+
+The simplest use case: showing multiple avatars grouped horizontally.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <AvatarGroup>
+        <Avatar alt="User 1" src={user1} />
+        <Avatar alt="User 2" src={user2} />
+        <Avatar alt="User 3" src={user3} />
+      </AvatarGroup>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<h3>Limiting Displayed Avatars</h3>
+
+You can limit the number of avatars shown using the `max` prop. Additional avatars are collapsed into a counter (e.g. +2).
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <AvatarGroup max={3}>
+        <Avatar alt="User 1" src={user1} />
+        <Avatar alt="User 2" src={user2} />
+        <Avatar alt="User 3" src={user3} />
+        <Avatar alt="User 4" src={user4} />
+      </AvatarGroup>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<h3>Custom Spacing</h3>
+
+Customize the gap between avatars using the `spacing` prop.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <AvatarGroup spacing="medium">
+        <Avatar alt="User 1" src={user1} />
+        <Avatar alt="User 2" src={user2} />
+        <Avatar alt="User 3" src={user3} />
+      </AvatarGroup>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<h3>Avatar Variants in Group</h3>
+
+You can combine avatar shape variants like `rounded` and `square` inside the group.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <AvatarGroup>
+        <Avatar variant="rounded" src={user1} alt="Rounded" />
+        <Avatar variant="square" src={user2} alt="Square" />
+        <Avatar src={user3} alt="Default" />
+      </AvatarGroup>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<h3>Custom Surplus Renderer</h3>
+
+Customize the overflow display using the `renderSurplus` prop for more control over surplus appearance.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <AvatarGroup
+        max={3}
+        renderSurplus={(surplus) => (
+          <span>+{surplus.toString()[0]}k</span>
+        )}
+        total={4251}
+      >
+        <Avatar src={user1} />
+        <Avatar src={user2} />
+        <Avatar src={user3} />
+      </AvatarGroup>
+    </div>
+  </ThemeWrapper>
+</Row>

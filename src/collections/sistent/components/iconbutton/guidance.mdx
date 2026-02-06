@@ -1,0 +1,95 @@
+---
+title: Icon Button Guidance
+component: iconbutton
+description: IconButton provides an interactive button component that displays only an icon, ideal for compact UIs where space is limited and actions are easily recognizable through iconography.
+---
+
+import { IconButton } from "@sistent/sistent";
+import IconButtonDemo from "./IconButtonDemo";
+
+IconButton provides an interactive button component that displays only an icon, ideal for compact UIs where space is limited and actions are easily recognizable through iconography.
+
+<a id="Usage Guidelines">
+  <h2>Usage Guidelines</h2>
+</a>
+
+IconButtons should be used when the action can be clearly communicated through iconography alone. They're perfect for common actions that users can easily recognize without accompanying text.
+
+<h3>When to Use IconButtons</h3>
+
+*   **Space-constrained interfaces:** Toolbars and compact layouts
+*   **Secondary actions:** Edit, delete, share, or favorite actions
+*   **Universal actions:** Widely recognized actions like play, pause, or close
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <IconButtonDemo type="colors" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>When to Avoid IconButtons</h3>
+
+*   **Primary actions:** Use regular buttons with text for main CTAs
+*   **Complex actions:** Actions that require explanation or context
+*   **Ambiguous icons:** When the icon meaning isn't universally clear
+
+<a id="Accessibility Best Practices">
+  <h2>Accessibility Best Practices</h2>
+</a>
+
+<h3>Essential Requirements</h3>
+
+*   **aria-label:** Always provide descriptive labels
+*   **Minimum size:** Ensure at least 44px touch targets for mobile
+*   **Visual feedback:** Clear hover and focus states
+
+<a id="Design Guidelines">
+  <h2>Design Guidelines</h2>
+</a>
+
+<h3>Icon Selection</h3>
+
+*   **Recognizable icons:** Use widely understood icons from established libraries
+*   **Consistent style:** Maintain visual consistency across all icons
+*   **Scalable icons:** Use vector icons that scale clearly at different sizes
+
+<a id="Layout and Spacing">
+  <h2>Layout and Spacing</h2>
+</a>
+
+Maintain minimum 8px spacing between IconButtons and group related actions together with logical order.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <IconButtonDemo type="spacing" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Props">
+  <h2>Props</h2>
+</a>
+
+The IconButton component accepts all standard button props plus additional customization options:
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| children | node | - | The icon element to display inside the button |
+| size | 'small' \| 'medium' \| 'large' | 'medium' | The size of the IconButton |
+| color | 'inherit' \| 'primary' \| 'secondary' \| 'error' \| 'info' \| 'success' \| 'warning' | 'inherit' | The color of the IconButton |
+| disabled | bool | false | If true, the IconButton is disabled |
+| onClick | func | - | Callback fired when the IconButton is clicked |
+| aria-label | string | - | Accessibility label for screen readers (required) |
+| sx | object | - | System prop for custom styling |
+
+<a id="Best Practices">
+  <h2>Best Practices</h2>
+</a>
+
+*   **Always include aria-label:** Essential for accessibility and screen readers
+*   **Use recognizable icons:** Choose icons that clearly represent the action
+*   **Maintain adequate spacing:** Ensure sufficient space between IconButtons
+*   **Consider touch targets:** Use appropriate sizes for mobile interfaces

@@ -1,11 +1,82 @@
 ---
-name: "Text Field"
-title: "Text Field"
-description: "The TextField component is a versatile input field used to capture user input in forms and user interfaces."
-component: "text-field"
+name: "TextField"
+title: TextField
 published: true
-pages:
-  - overview
-  - guidance
-  - code
+component: text-field
+description: The TextField component is a versatile input field used to capture user input in forms and user interfaces. It can handle a variety of input types, such as text, numbers, emails, and passwords, and offers built-in styling and validation features.
 ---
+
+import { TextField, Box } from "@sistent/sistent";
+import TextFieldDemo from "./TextFieldDemo";
+
+A Text fileds allow user to enter and edit any text. It mostly present in Forms or dialogue box in UI. TextField are crucial and integral elements in an interface. It allows to get data from enetered user.
+
+<a id="Form Props">
+  <h2>Form Props</h2>
+</a>
+
+Standard form attributes are supported, for example required, disabled, type, etc. HelperText attributes is used to give context about a field's input, such as how the input will be used.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TextFieldDemo type="form-props" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Validation">
+  <h2>Validation</h2>
+</a>
+
+The error property toggles the error state. The helperText prop can then be used to provide feedback to the user about the error. As shown below it can be used with variant such as outlined (default), filled, and standard.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TextFieldDemo type="validation" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Multiline">
+  <h2>Multiline</h2>
+</a>
+
+The multiline prop transforms the text field into a TextareaAutosize element. Unless the rows prop is set, the height of the text field dynamically matches its content (using TextareaAutosize). You can use the minRows and maxRows props to bound it.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TextFieldDemo type="multiline" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Sizes">
+  <h2>Sizes</h2>
+</a>
+
+TextField can have small or normal field sizes. According the requirement it can be adjusted.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TextFieldDemo type="sizes" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Full Width">
+  <h2>Full Width</h2>
+</a>
+
+FullWidth attribute can be used to make the input take up the full width of its container.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TextFieldDemo type="fullWidth" />
+    </ThemeWrapper>
+  </div>
+</div>

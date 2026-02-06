@@ -1,0 +1,58 @@
+---
+title: Popper Code
+component: popper
+description: The Popper component provides a mechanism for positioning content dynamically relative to a reference element. It is commonly used for tooltips, dropdowns, and modals, enhancing the user experience by presenting contextual information without overcrowding the interface.
+---
+
+import { Popper, Button, Box } from "@sistent/sistent";
+import PopperDemo from "./PopperDemo";
+
+The Popper component provides a mechanism for positioning content dynamically relative to a reference element. It is commonly used for tooltips, dropdowns, and modals, enhancing the user experience by presenting contextual information without overcrowding the interface.
+
+<a id="Basic Popper">
+  <h3>Basic Popper</h3>
+</a>
+
+Here’s a simple example of how to use the Popper component. In this example, clicking the button toggles the visibility of the popper:
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PopperDemo type="basic" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-popper" code={`<Button
+  variant="contained"
+  label="Toggle Popper"
+  size="medium"
+  onClick={handleClick()}
+/>
+<Popper open={open} anchorEl={anchorEl}>
+  <Box sx={{ border: 1, p: 2, bgcolor: "background.paper" }}>
+    The content of the Popper.
+  </Box>
+</Popper>`} />
+</div>
+
+<a id="Positioned Example">
+  <h3>Positioned Example</h3>
+</a>
+
+You can specify the position of the Popper using the `placement` prop. Here's an example of a Popper positioned relative to its anchor:
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PopperDemo type="positioned" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="positioned-example" code={`<Popper open={open} anchorEl={anchorEl} placement={placement}>
+  <Box sx={{ border: 1, p: 2, bgcolor: "background.paper" }}>
+    The content of the Popper.
+  </Box>
+</Popper>
+<Box sx={{ width: 500 }}>
+  {/* Grid of buttons to control placement */}
+  {/* ... (Implementation of buttons setting placement state) ... */}
+</Box>`} />
+</div>

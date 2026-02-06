@@ -1,0 +1,275 @@
+---
+title: Grid Guidance
+component: grid
+description: The responsive layout grid adapts to screen size and orientation, ensuring consistency across layouts. It uses CSS Flexbox for high flexibility and provides a 12-column system with customizable breakpoints.
+---
+
+import { Grid2, Box, Avatar } from "@sistent/sistent";
+import GridItem from "./GridItem";
+
+The responsive layout grid adapts to screen size and orientation, ensuring consistency across layouts. It uses CSS Flexbox for high flexibility and provides a 12-column system with customizable breakpoints.
+
+For effective use of the Grid system, it's important to understand responsive design principles and how to structure layouts that adapt gracefully across different screen sizes.
+
+<a id="Layout Patterns">
+  <h2>Layout Patterns</h2>
+</a>
+
+The Grid component supports various layout patterns that are commonly used in responsive web design.
+
+<h3>Container and Items</h3>
+
+Every grid layout consists of a container (parent) and items (children). The container establishes the grid context and handles spacing, while items define how much space they occupy within that context.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Grid2 container spacing={2} sx={{ width: "100%", maxWidth: 600, border: "2px dashed", borderColor: "grey.400", p: 1 }}>
+      <Grid2 size={4}>
+        <GridItem>Item 1</GridItem>
+      </Grid2>
+      <Grid2 size={4}>
+        <GridItem>Item 2</GridItem>
+      </Grid2>
+      <Grid2 size={4}>
+        <GridItem>Item 3</GridItem>
+      </Grid2>
+    </Grid2>
+  </ThemeWrapper>
+</Row>
+
+<h3>Responsive Design</h3>
+
+Design layouts that work across all screen sizes by using responsive breakpoints. Start with mobile-first design and progressively enhance for larger screens.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Grid2 container spacing={2} sx={{ width: "100%", maxWidth: 600 }}>
+      <Grid2 size={{ xs: 12, sm: 6, md: 4 }}>
+        <GridItem>Responsive</GridItem>
+      </Grid2>
+      <Grid2 size={{ xs: 12, sm: 6, md: 4 }}>
+        <GridItem>Grid</GridItem>
+      </Grid2>
+      <Grid2 size={{ xs: 12, sm: 12, md: 4 }}>
+        <GridItem>Items</GridItem>
+      </Grid2>
+    </Grid2>
+  </ThemeWrapper>
+</Row>
+
+<a id="Spacing Guidelines">
+  <h2>Spacing Guidelines</h2>
+</a>
+
+Consistent spacing creates visual harmony and improves readability. Use the spacing system to maintain consistent gaps between grid items.
+
+<h3>Uniform Spacing</h3>
+
+Use consistent spacing values throughout your layout. The spacing prop accepts values that correspond to your theme's spacing scale.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Box sx={{ width: "100%", maxWidth: 600 }}>
+      <Box sx={{ mb: 2 }}>
+        <Grid2 container spacing={1}>
+          <Grid2 size={6}><GridItem>Spacing: 1</GridItem></Grid2>
+          <Grid2 size={6}><GridItem>Spacing: 1</GridItem></Grid2>
+        </Grid2>
+      </Box>
+      <Box sx={{ mb: 2 }}>
+        <Grid2 container spacing={2}>
+          <Grid2 size={6}><GridItem>Spacing: 2</GridItem></Grid2>
+          <Grid2 size={6}><GridItem>Spacing: 2</GridItem></Grid2>
+        </Grid2>
+      </Box>
+      <Grid2 container spacing={3}>
+        <Grid2 size={6}><GridItem>Spacing: 3</GridItem></Grid2>
+        <Grid2 size={6}><GridItem>Spacing: 3</GridItem></Grid2>
+      </Grid2>
+    </Box>
+  </ThemeWrapper>
+</Row>
+
+<h3>Row and Column Spacing</h3>
+
+For more control, use rowSpacing and columnSpacing to set different spacing values for rows and columns independently.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Grid2 container rowSpacing={1} columnSpacing={3} sx={{ width: "100%", maxWidth: 600 }}>
+      <Grid2 size={6}>
+        <GridItem>Item 1</GridItem>
+      </Grid2>
+      <Grid2 size={6}>
+        <GridItem>Item 2</GridItem>
+      </Grid2>
+      <Grid2 size={6}>
+        <GridItem>Item 3</GridItem>
+      </Grid2>
+      <Grid2 size={6}>
+        <GridItem>Item 4</GridItem>
+      </Grid2>
+    </Grid2>
+  </ThemeWrapper>
+</Row>
+
+<a id="Content Alignment">
+  <h2>Content Alignment</h2>
+</a>
+
+Proper alignment ensures content is visually balanced and easy to scan. Use alignment properties to center content within grid items.
+
+<h3>Centered Content</h3>
+
+To center content within grid items, specify `display="flex"` on the item and use `justifyContent` and `alignItems` to control positioning.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Grid2 container spacing={2} sx={{ width: "100%", maxWidth: 600 }} minHeight={120}>
+      <Grid2
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        size="grow"
+        sx={{ border: "1px dashed", borderColor: "grey.400" }}
+      >
+        <Avatar sx={{ bgcolor: "primary.main" }}>A</Avatar>
+      </Grid2>
+      <Grid2
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        size="grow"
+        sx={{ border: "1px dashed", borderColor: "grey.400" }}
+      >
+        <Avatar sx={{ bgcolor: "secondary.main" }}>B</Avatar>
+      </Grid2>
+      <Grid2
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        size="grow"
+        sx={{ border: "1px dashed", borderColor: "grey.400" }}
+      >
+        <Avatar sx={{ bgcolor: "error.main" }}>C</Avatar>
+      </Grid2>
+    </Grid2>
+  </ThemeWrapper>
+</Row>
+
+<a id="Direction Control">
+  <h2>Direction Control</h2>
+</a>
+
+The direction prop controls the flex-direction of the grid container, determining how grid items are arranged. Understanding direction is crucial for creating flexible layouts that adapt to different content needs.
+
+<h3>Row Direction (Default)</h3>
+
+The default direction is 'row', which arranges items horizontally from left to right. This is ideal for most standard grid layouts.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Grid2 container spacing={2} direction="row" sx={{ width: "100%", maxWidth: 600 }}>
+      <Grid2 size={3}>
+        <GridItem>1</GridItem>
+      </Grid2>
+      <Grid2 size={3}>
+        <GridItem>2</GridItem>
+      </Grid2>
+      <Grid2 size={3}>
+        <GridItem>3</GridItem>
+      </Grid2>
+      <Grid2 size={3}>
+        <GridItem>4</GridItem>
+      </Grid2>
+    </Grid2>
+  </ThemeWrapper>
+</Row>
+
+<h3>Column Direction</h3>
+
+Use `direction="column"` to arrange items vertically. This is useful for sidebar layouts, vertical navigation, or when you want items to stack regardless of screen size.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Grid2 container spacing={2} direction="column" sx={{ width: "100%", maxWidth: 200, height: 300 }}>
+      <Grid2 size="grow">
+        <GridItem>1</GridItem>
+      </Grid2>
+      <Grid2 size="grow">
+        <GridItem>2</GridItem>
+      </Grid2>
+      <Grid2 size="grow">
+        <GridItem>3</GridItem>
+      </Grid2>
+      <Grid2 size="grow">
+        <GridItem>4</GridItem>
+      </Grid2>
+    </Grid2>
+  </ThemeWrapper>
+</Row>
+
+<a id="Wrap Behavior">
+  <h2>Wrap Behavior</h2>
+</a>
+
+The wrap prop controls how grid items behave when they exceed the container width. Understanding wrap behavior helps you create layouts that handle varying amounts of content gracefully.
+
+<h3>Wrap (Default)</h3>
+
+The default `wrap="wrap"` behavior allows items to wrap to new lines when the container width is exceeded. This ensures responsive behavior and prevents horizontal overflow.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Grid2 container spacing={2} wrap="wrap" sx={{ width: "100%", maxWidth: 300 }}>
+      <Grid2 size={4}>
+        <GridItem>Item 1</GridItem>
+      </Grid2>
+      <Grid2 size={4}>
+        <GridItem>Item 2</GridItem>
+      </Grid2>
+      <Grid2 size={4}>
+        <GridItem>Item 3</GridItem>
+      </Grid2>
+      <Grid2 size={4}>
+        <GridItem>Item 4</GridItem>
+      </Grid2>
+    </Grid2>
+  </ThemeWrapper>
+</Row>
+
+<h3>No Wrap</h3>
+
+Use `wrap="nowrap"` to prevent items from wrapping. This keeps all items on a single line but may cause horizontal overflow. Use with caution and consider adding overflow handling.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Grid2 container spacing={2} wrap="nowrap" sx={{ width: "100%", maxWidth: 300, overflow: "auto" }}>
+      <Grid2 size={4}>
+        <GridItem>Item 1</GridItem>
+      </Grid2>
+      <Grid2 size={4}>
+        <GridItem>Item 2</GridItem>
+      </Grid2>
+      <Grid2 size={4}>
+        <GridItem>Item 3</GridItem>
+      </Grid2>
+      <Grid2 size={4}>
+        <GridItem>Item 4</GridItem>
+      </Grid2>
+    </Grid2>
+  </ThemeWrapper>
+</Row>
+
+<a id="Best Practices">
+  <h2>Best Practices</h2>
+</a>
+
+Follow these guidelines to create effective and maintainable grid layouts:
+
+- **Use Semantic Structure:** Organize grid items in a logical order that makes sense when viewed linearly on smaller screens.
+- **Avoid Deep Nesting:** Keep grid structures as flat as possible for better performance and maintainability.
+- **Plan for Content Growth:** Design layouts that can accommodate varying amounts of content without breaking.
+- **Test Across Breakpoints:** Always test your layouts at different screen sizes to ensure they work as expected.
+- **Use Consistent Spacing:** Maintain consistent spacing patterns throughout your application for visual harmony.
+- **Optimize for Performance:** Be mindful of layout shifts and ensure good Core Web Vitals scores.

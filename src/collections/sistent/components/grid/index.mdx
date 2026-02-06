@@ -1,11 +1,134 @@
 ---
 name: "Grid"
-title: "Grid"
-description: "The Grid component in Sistent provides a flexible and responsive layout system for arranging content in rows and columns."
-component: "grid"
+title: Grid
 published: true
-pages:
-  - overview
-  - guidance
-  - code
+component: grid
+description: The responsive layout grid adapts to screen size and orientation, ensuring consistency across layouts. It uses CSS Flexbox for high flexibility and provides a 12-column system with customizable breakpoints.
 ---
+
+import { Grid2 } from "@sistent/sistent";
+import GridItem from "./GridItem";
+
+The Grid component works well for layouts with a known number of columns. The columns can be configured with multiple breakpoints to specify the column span of each child. It uses CSS Flexbox rather than CSS Grid for high flexibility and is always a flex item.
+
+<a id="Basic Grid">
+  <h2>Basic Grid</h2>
+</a>
+
+To create a grid layout, you need a container. Use the container prop to create a grid container that wraps the grid items. Column widths are integer values between 1 and 12.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Grid2 container spacing={2} sx={{ width: "100%", maxWidth: 600 }}>
+      <Grid2 size={8}>
+        <GridItem>size=8</GridItem>
+      </Grid2>
+      <Grid2 size={4}>
+        <GridItem>size=4</GridItem>
+      </Grid2>
+      <Grid2 size={4}>
+        <GridItem>size=4</GridItem>
+      </Grid2>
+      <Grid2 size={8}>
+        <GridItem>size=8</GridItem>
+      </Grid2>
+    </Grid2>
+  </ThemeWrapper>
+</Row>
+
+<a id="Responsive Breakpoints">
+  <h2>Responsive Breakpoints</h2>
+</a>
+
+Items may have multiple widths defined, causing the layout to change at defined breakpoints. Width values apply to all wider breakpoints, and larger breakpoints override those given to smaller breakpoints.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Grid2 container spacing={2} sx={{ width: "100%", maxWidth: 600 }}>
+      <Grid2 size={{ xs: 6, md: 8 }}>
+        <GridItem>xs=6 md=8</GridItem>
+      </Grid2>
+      <Grid2 size={{ xs: 6, md: 4 }}>
+        <GridItem>xs=6 md=4</GridItem>
+      </Grid2>
+      <Grid2 size={{ xs: 6, md: 4 }}>
+        <GridItem>xs=6 md=4</GridItem>
+      </Grid2>
+      <Grid2 size={{ xs: 6, md: 8 }}>
+        <GridItem>xs=6 md=8</GridItem>
+      </Grid2>
+    </Grid2>
+  </ThemeWrapper>
+</Row>
+
+<a id="Spacing">
+  <h2>Spacing</h2>
+</a>
+
+Use the spacing prop to control the space between children. The spacing value can be any positive number or string, converted using the theme spacing helper.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Grid2 container spacing={3} sx={{ width: "100%", maxWidth: 600 }}>
+      <Grid2 size={6}>
+        <GridItem>Item 1</GridItem>
+      </Grid2>
+      <Grid2 size={6}>
+        <GridItem>Item 2</GridItem>
+      </Grid2>
+      <Grid2 size={6}>
+        <GridItem>Item 3</GridItem>
+      </Grid2>
+      <Grid2 size={6}>
+        <GridItem>Item 4</GridItem>
+      </Grid2>
+    </Grid2>
+  </ThemeWrapper>
+</Row>
+
+<a id="Auto Layout">
+  <h2>Auto Layout</h2>
+</a>
+
+The auto-layout feature gives equal space to all items. When you set the width of one item, others automatically resize. Use "grow" for flexible sizing and "auto" for content-based sizing.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Grid2 container spacing={3} sx={{ width: "100%", maxWidth: 600 }}>
+      <Grid2 size="grow">
+        <GridItem>size=grow</GridItem>
+      </Grid2>
+      <Grid2 size={{ xs: 12, sm: 6 }}>
+        <GridItem>size=6</GridItem>
+      </Grid2>
+      <Grid2 size="auto">
+        <GridItem>size=auto</GridItem>
+      </Grid2>
+    </Grid2>
+  </ThemeWrapper>
+</Row>
+
+<a id="Offset">
+  <h2>Offset</h2>
+</a>
+
+The offset prop pushes an item to the right side of the grid. It accepts numbers for specific column offsets or "auto" to push items to the far right.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Grid2 container spacing={3} sx={{ width: "100%", maxWidth: 600 }}>
+      <Grid2 size={{ xs: 6, md: 2 }} offset={{ xs: 3, md: 0 }}>
+        <GridItem>1</GridItem>
+      </Grid2>
+      <Grid2 size={{ xs: 4, md: 2 }} offset={{ md: "auto" }}>
+        <GridItem>2</GridItem>
+      </Grid2>
+      <Grid2 size={{ xs: 4, md: 2 }} offset={{ xs: 4, md: 0 }}>
+        <GridItem>3</GridItem>
+      </Grid2>
+      <Grid2 size={{ xs: "grow", md: 6 }} offset={{ md: 2 }}>
+        <GridItem>4</GridItem>
+      </Grid2>
+    </Grid2>
+  </ThemeWrapper>
+</Row>

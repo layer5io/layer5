@@ -1,0 +1,37 @@
+---
+title: Pagination Guidance
+component: pagination
+description: The Pagination component helps users navigate through multiple pages of content. It provides a clear interface for moving between pages and understanding the current position within a larger dataset.
+---
+
+import { Pagination } from "@sistent/sistent";
+
+The Pagination component helps users navigate through multiple pages of content. It provides a clear interface for moving between pages and understanding the current position within a larger dataset.
+
+<a id="Usage Guidelines">
+  <h2>Usage Guidelines</h2>
+</a>
+
+<h3>When to Use</h3>
+
+Pagination should be used when displaying large datasets that need to be broken into manageable chunks. It helps users navigate through multiple pages of content and is beneficial when content needs to be loaded incrementally to improve performance.
+
+<h3>Best Practices</h3>
+
+To ensure a smooth user experience, it’s important to keep page sizes consistent throughout the interface. The current page number and total pages should be displayed clearly. Adequate spacing between page numbers should be ensured to improve readability. It’s also crucial to provide clear visual feedback for the current page. For large page ranges, consider using ellipsis (...) to represent skipped pages.
+
+<h3>Accessibility</h3>
+
+To make pagination more accessible, ensure that ARIA labels are used to identify the pagination controls. Keyboard navigation should be properly supported to allow users to navigate through the pages easily. It’s important to provide clear visual indicators for focus states and maintain adequate color contrast for all states to ensure readability.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Pagination
+        count={10}
+        defaultPage={1}
+        aria-label="Pagination navigation"
+      />
+    </ThemeWrapper>
+  </div>
+</div>

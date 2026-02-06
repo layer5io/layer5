@@ -5,7 +5,7 @@ import TOC from "../../../../../components/SistentNavigation";
 import IntraPage from "../../../../../components/handbook-navigation/intra-page";
 import SistentPagination from "../../../../../components/SistentNavigation/pagination";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
-import { CodeBlock } from "../../components/button/code-block";
+import CodeBlock from "../../../../../components/CodeBlock";
 import { SistentThemeProvider } from "@sistent/sistent";
 import { Box, Typography, Card, Alert } from "@sistent/sistent";
 
@@ -171,7 +171,7 @@ const SistentTokens = () => {
             </p>
 
             <div className="showcase">
-              <CodeBlock name="basic-access" code={codeExamples.basicAccess} />
+              <CodeBlock codeString={codeExamples.basicAccess} />
             </div>
 
             <a id="color-system">
@@ -233,7 +233,7 @@ const SistentTokens = () => {
                   </Box>
                 </SistentThemeProvider>
               </div>
-              <CodeBlock name="colors" code={codeExamples.colors} />
+              <CodeBlock codeString={codeExamples.colors} />
             </div>
 
             <a id="typography">
@@ -255,7 +255,7 @@ const SistentTokens = () => {
                   </Box>
                 </SistentThemeProvider>
               </div>
-              <CodeBlock name="Typography" code={codeExamples.typography} />
+              <CodeBlock codeString={codeExamples.typography} />
             </div>
 
             <a id="spacing">
@@ -292,7 +292,7 @@ const SistentTokens = () => {
                   </Box>
                 </SistentThemeProvider>
               </div>
-              <CodeBlock name="Spacing" code={codeExamples.spacing} />
+              <CodeBlock codeString={codeExamples.spacing} />
             </div>
 
             <a id="examples">
@@ -329,7 +329,7 @@ const SistentTokens = () => {
                   </Card>
                 </SistentThemeProvider>
               </div>
-              <CodeBlock name="practical-example" code={codeExamples.practicalExample} />
+              <CodeBlock codeString={codeExamples.practicalExample} />
             </div>
 
             <h3>Implementation Guidelines</h3>

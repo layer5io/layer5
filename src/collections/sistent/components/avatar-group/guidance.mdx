@@ -1,0 +1,39 @@
+---
+title: AvatarGroup Guidance
+component: avatar-group
+description: The AvatarGroup component is used to visually represent a collection of users or entities in a compact and organized layout. It's ideal for showcasing team members, collaborators, or participants, and is often used in dashboards, cards, and collaborative tools. AvatarGroup handles overlapping, spacing, and overflow logic to ensure clarity even with limited space.
+---
+
+<h2>Avatar Group</h2>
+
+The <strong>AvatarGroup</strong> component displays a compact collection of avatar elements that represent a group of users or entities. It’s useful in collaborative spaces, team-based features, or user listings.
+
+<h3>Design Guidelines and Best Practices</h3>
+
+When implementing `AvatarGroup`, it's important to consider how it enhances collaboration and identity clarity without overwhelming the interface. Here are key best practices:
+
+<ul>
+  <li>
+    <strong>Use to represent teams or shared ownership:</strong> Ideal for showing members of a project, contributors, or shared access groups in apps like dashboards or chat.
+  </li>
+  <li>
+    <strong>Don’t overuse in dense interfaces:</strong> Too many avatars in a group can clutter the view. Use the `max` prop to collapse overflow into a `+N` indicator.
+  </li>
+  <li>
+    <strong>Use consistent sizing and spacing:</strong> Align all avatars to the same size to maintain visual harmony. Use `spacing` options (or `sx`) for controlled overlap.
+  </li>
+  <li>
+    <strong>Provide accessible <code>alt</code> text:</strong> Each avatar should have meaningful alternative text for screen readers. Avoid empty or redundant `alt` values.
+  </li>
+  <li>
+    <strong>Avoid interactive behavior within AvatarGroup:</strong> The component is for display only. If avatars must be clickable, wrap each `&lt;Avatar&gt;` individually in buttons or links outside the group context.
+  </li>
+  <li>
+    <strong>Keep it compact:</strong> AvatarGroup is not meant for long lists. For large user sets, link to a full view or show summary avatars only.
+  </li>
+  <li>
+    <strong>Fallbacks matter:</strong> Always account for broken images by using initials or icons as fallback content within each `Avatar`.
+  </li>
+</ul>
+
+This ensures that `AvatarGroup` remains a helpful, visually tidy, and accessible interface element wherever user identity grouping is necessary.

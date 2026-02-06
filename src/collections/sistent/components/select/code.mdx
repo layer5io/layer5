@@ -1,0 +1,186 @@
+---
+title: Select Code
+component: select
+description: The Select component is a versatile and customizable element commonly used in forms and user interfaces. It is designed to present a list of options for users to choose from, either as a single selection or multiple selections. This component plays a vital role in collecting user-provided information efficiently and intuitively.
+---
+
+import { FormControl, Select, MenuItem, InputLabel, FormHelperText, OutlinedInput, ListSubheader } from "@mui/material";
+import SelectDemo from "./SelectDemo";
+
+The Select component comes in various types and supports different features like grouping, multiple selection, and custom variants.
+
+<a id="Select variants">
+  <h3>Select variants</h3>
+</a>
+
+The select comes in three types: Outlined, Filled, and Standard. To specify the variant, pass a value to the variant prop.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SelectDemo type="basic" variant="outlined" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="outlined-selection" code={`<Select>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`} />
+</div>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SelectDemo type="basic" variant="filled" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="filled-selection" code={`<Select variant="filled">
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`} />
+</div>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SelectDemo type="basic" variant="standard" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="standard-selection" code={`<Select variant="standard">
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`} />
+</div>
+
+<a id="Sizes">
+  <h3>Sizes</h3>
+</a>
+
+There are 3 size option for the select component: autowidth, small, and fullWidth.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SelectDemo type="basic" autoWidth />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="size-auto" code={`<Select autoWidth>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`} />
+</div>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SelectDemo type="basic" size="small" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="size-small" code={`<Select size="small">
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`} />
+</div>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ width: '100%' }}>
+         <SelectDemo type="basic" fullWidth />
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="size-fullwidth" code={`<Select fullWidth>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`} />
+</div>
+
+<a id="Customization">
+  <h3>Customization</h3>
+</a>
+
+You can customize labels, helper text, and placeholders.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SelectDemo type="helper" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="customize-helper-text" code={`<FormControl sx={{ width: "200px" }}>
+  <Select>
+    <MenuItem value={10}>Ten</MenuItem>
+    <MenuItem value={20}>Twenty</MenuItem>
+    <MenuItem value={30}>Thirty</MenuItem>
+  </Select>
+  <FormHelperText>This is a helper text</FormHelperText>
+</FormControl>`} />
+</div>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SelectDemo type="placeholder" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="customize-placeholder" code={`<Select
+  onChange={(e) => setSelectedAge(e.target.value)}
+  renderValue={() => {
+    if (selectedAge == "") return <em>Select an age</em>;
+    return selectedAge;
+  }}
+  value={selectedAge}
+  displayEmpty
+>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`} />
+</div>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SelectDemo type="grouping" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="customize-grouping" code={`<Select>
+  <ListSubheader muiSkipListHighlight>Group 1</ListSubheader>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <ListSubheader muiSkipListHighlight>Group 2</ListSubheader>
+  <MenuItem value={30}>Thirty</MenuItem>
+  <MenuItem value={40}>Fourty</MenuItem>
+  <ListSubheader muiSkipListHighlight>Group 3</ListSubheader>
+  <MenuItem value={50}>Fifty</MenuItem>
+  <MenuItem value={60}>Sixty</MenuItem>
+</Select>`} />
+</div>
+
+<a id="Multi-select">
+  <h3>Multi-select</h3>
+</a>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SelectDemo type="multiple" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="multiselect" code={`<Select
+  multiple
+  input={<OutlinedInput label="Name" />}
+  value={multipleAges}
+  onChange={handleMultiplSelect}
+>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`} />
+</div>

@@ -1,0 +1,110 @@
+---
+title: Button Code
+component: button
+description: Buttons are crucial and integral elements in an interface. They are mostly used to trigger actions and in so doing, take users to where they need to be in any step of a flow. Buttons can be used in tandem with other elements to piece designs together and convey digital experiences.
+---
+
+Buttons communicate actions to users and they can be placed at several places throughout the user interface.
+
+<a id="Basic Button">
+  <h2>Basic Button</h2>
+</a>
+
+The button comes in three types: Filled, Outlined, and Text.
+
+<h3>Filled Button</h3>
+
+Mostly used for high-emphasis actions and are primarily distinguished by their fill. They are used to represent actions that are primary to the solution.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Button variant="contained">Filled</Button>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="filled-button" code={`  <SistentThemeProvider>
+       <Button variant="contained">Filled</Button>
+  </SistentThemeProvider>`} />
+</div>
+
+<h3>Outlined Button</h3>
+
+Can be used for both medium and sometimes high-emphasis actions.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Button variant="outlined">Outlined</Button>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="outlined-button" code={`  <SistentThemeProvider>
+       <Button variant="outlined">Outlined</Button>
+  </SistentThemeProvider>`} />
+</div>
+
+<h3>Text Button</h3>
+
+Mostly used for less pronounced and very low emphasis actions. Can also be used for text links as well.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Button variant="text">Text</Button>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="text-button" code={`  <SistentThemeProvider>
+       <Button variant="text">Text</Button>
+  </SistentThemeProvider>`} />
+</div>
+
+<a id="Sizes">
+  <h2>Sizes</h2>
+</a>
+
+For now, two different sizes of buttons exist: 56px height and 48px height.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Button variant="contained" size="medium">
+        48px Height
+      </Button>
+      <Button variant="contained" size="large">
+        56px Height
+      </Button>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="button-sizes" code={`  <SistentThemeProvider>
+       <Button variant="contained">48px Height</Button>
+       <Button variant="contained">56px Height</Button>
+  </SistentThemeProvider>`} />
+</div>
+
+<a id="Adding Icons">
+  <h2>Adding Icons</h2>
+</a>
+
+Icons are mostly added to filled and outlined buttons and they are used to better describe the information being passed across by the button’s label.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Button
+        variant="contained"
+        size="medium"
+        endIcon={<FaArrowRight size={12} />}
+      >
+        Next
+      </Button>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="adding-icons" code={`  <SistentThemeProvider>
+      <Button
+        variant="contained"
+        size="medium"
+        endIcon={<FaArrowRight size={12} />}
+      >
+        Next
+      </Button>
+  </SistentThemeProvider>`} />
+</div>

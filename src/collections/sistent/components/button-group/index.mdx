@@ -1,11 +1,163 @@
 ---
-name: "ButtonGroup"
-title: "ButtonGroup"
-description: "ButtonGroup is a component that groups multiple buttons together."
-component: "button-group"
+name: "Button Group"
+title: Button Group
 published: true
-pages:
-  - overview
-  - guidance
-  - code
+component: button-group
+description: The ButtonGroup component can be used to group related buttons together. It is a container for multiple buttons that can be used to group buttons together and apply styles to them. This component is useful when you have a group of buttons that need to be styled in a similar way.
 ---
+
+import { ButtonGroup, Button, Box } from "@sistent/sistent";
+
+export const buttons = [
+  <Button key="one">One</Button>,
+  <Button key="two">Two</Button>,
+  <Button key="three">Three</Button>,
+];
+
+The ButtonGroup component is a container for multiple buttons that can be used to group buttons together and apply styles to them. This component is useful when you have a group of buttons that need to be styled in a similar way. The ButtonGroup component can be used to group related buttons together.
+
+<a id="Basic Usage">
+  <h2>Basic Usage</h2>
+</a>
+
+The buttons can be grouped by wrapping them with the ButtonGroup component. They need to be immediate children.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <ButtonGroup variant="contained" aria-label="Basic button group">
+        {buttons}
+      </ButtonGroup>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Button variants">
+  <h2>Button variants</h2>
+</a>
+
+The ButtonGroup component supports the following variants: contained (default), outlined, and text.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+      <ButtonGroup variant="contained" aria-label="Basic button group">
+        {buttons}
+      </ButtonGroup>
+      <ButtonGroup variant="outlined" aria-label="Basic button group">
+        {buttons}
+      </ButtonGroup>
+      <ButtonGroup variant="text" aria-label="Basic button group">
+        {buttons}
+      </ButtonGroup>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Vertical Group">
+  <h2>Vertical Group</h2>
+</a>
+
+The ButtonGroup component can be used to create a vertical group of buttons by setting the vertical prop to true.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', gap: '8px' }}>
+      <ButtonGroup
+        orientation="vertical"
+        variant="contained"
+        aria-label="Basic button group"
+      >
+        {buttons}
+      </ButtonGroup>
+      <ButtonGroup
+        orientation="vertical"
+        variant="outlined"
+        aria-label="Basic button group"
+      >
+        {buttons}
+      </ButtonGroup>
+      <ButtonGroup
+        orientation="vertical"
+        variant="text"
+        aria-label="Basic button group"
+      >
+        {buttons}
+      </ButtonGroup>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Disabled elevation">
+  <h2>Disabled elevation</h2>
+</a>
+
+You can remove the elevation with the `disableElevation` prop.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <ButtonGroup
+        disableElevation
+        variant="contained"
+        aria-label="Basic button group"
+      >
+        {buttons}
+      </ButtonGroup>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Sizes">
+  <h2>Sizes</h2>
+</a>
+
+The ButtonGroup component supports the following sizes: small, medium (default), and large.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+      <ButtonGroup
+        size="small"
+        variant="contained"
+        aria-label="Basic button group"
+      >
+        {buttons}
+      </ButtonGroup>
+      <ButtonGroup
+        size="medium"
+        variant="contained"
+        aria-label="Basic button group"
+      >
+        {buttons}
+      </ButtonGroup>
+      <ButtonGroup
+        size="large"
+        variant="contained"
+        aria-label="Basic button group"
+      >
+        {buttons}
+      </ButtonGroup>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Full width">
+  <h2>Full width</h2>
+</a>
+
+You can make the ButtonGroup full width with the `fullWidth` prop.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+      <ButtonGroup
+        fullWidth
+        variant="contained"
+        aria-label="Basic button group"
+      >
+        {buttons}
+      </ButtonGroup>
+    </div>
+  </ThemeWrapper>
+</Row>

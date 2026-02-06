@@ -1,0 +1,123 @@
+---
+title: Toolbar Guidance
+component: toolbar
+description: The Toolbar is a horizontal layout container used to organize and group actions or interactive elements. It helps streamline workflows and keeps related actions in one place, providing users with easy access to frequently used commands.
+---
+
+import { Toolbar, Button } from "@sistent/sistent";
+import ToolbarDemo from "./ToolbarDemo";
+
+A toolbar is a container for a set of controls or actions related to the current context or page. It helps users quickly access common functions or navigate within an application.
+
+For effective implementation, toolbars should be used consistently throughout the interface to provide users with predictable access to important actions.
+
+<a id="Function">
+  <h2>Function</h2>
+</a>
+
+The function of toolbars determines how they should be used in different scenarios to provide users with quick access to actions and tools.
+
+<h3>Navigation Toolbar</h3>
+
+Navigation toolbars provide controls for moving between pages or sections of an application. They typically include back, forward, and home buttons.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ToolbarDemo type="navigation" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Action Toolbar</h3>
+
+Action toolbars contain buttons for performing operations on selected content or the current view. They often include functions like create, edit, delete, or share.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ToolbarDemo type="action" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Search Toolbar</h3>
+
+Search toolbars provide interfaces for finding content within an application. They typically include search fields and filtering options.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ToolbarDemo type="search" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Types">
+  <h2>Types of Toolbars</h2>
+</a>
+
+<h3>Fixed Toolbar</h3>
+
+Fixed toolbars remain visible at the top or side of the screen while scrolling, providing persistent access to common actions.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ToolbarDemo type="fixed" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Contextual Toolbar</h3>
+
+Contextual toolbars appear based on user selection or context, showing actions specific to the current content or state.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ToolbarDemo type="contextual" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Positioning">
+  <h2>Positioning</h2>
+</a>
+
+The positioning of toolbars affects usability and accessibility. Different positions work better for different types of applications and user behaviors.
+
+<h3>Top Toolbar</h3>
+
+Top toolbars are the most common placement and are easily discovered by users. They're ideal for primary navigation and actions.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ToolbarDemo type="top" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Bottom Toolbar</h3>
+
+Bottom toolbars are more accessible for mobile users as they're easier to reach with thumbs. They're good for common actions in mobile interfaces.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ToolbarDemo type="bottom" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Best Practices">
+  <h2>Best Practices</h2>
+</a>
+
+When implementing toolbars in your interface, consider these guidelines to ensure they're effective and user-friendly:
+
+*   **Prioritize Actions:** Include only the most important and frequently used actions in your toolbar to avoid overwhelming users.
+*   **Group Related Actions:** Organize buttons logically, keeping related actions together to improve discoverability.
+*   **Use Icons With Labels:** When space permits, include both icons and text labels to improve clarity and accessibility.
+*   **Maintain Consistency:** Use consistent positioning and styling for toolbars across your application to build user familiarity.

@@ -1,0 +1,131 @@
+---
+title: Modal Guidance
+component: modal
+description: A modal is a container that appears in front of the main content on a page, providing important information or an actionable piece of content for users to execute. Modals focus user attention and prevent interaction with the underlying page until dismissed.
+---
+
+import ModalDemo from "./ModalDemo";
+
+This guide provides comprehensive information on when and how to use different types of modals effectively in your applications.
+
+<a id="basic-modal">
+  <h2>Basic Modal</h2>
+</a>
+
+Use for simple information display or read-only content. Keep content concise and provide clear dismiss options.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ModalDemo type="basic" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="confirmation-modal">
+  <h2>Confirmation Modal</h2>
+</a>
+
+Essential for destructive actions. Always use warning icons, specific button labels, and clearly explain consequences.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ModalDemo type="confirmation" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="action-modal">
+  <h2>Action Modal</h2>
+</a>
+
+Perfect for task completion with forms. Use contextual icons and provide clear primary/secondary actions.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ModalDemo type="action" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="informational-modal">
+  <h2>Informational Modal</h2>
+</a>
+
+Use for help content and contextual information. Structure content clearly and keep it scannable.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ModalDemo type="informational" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="warning-modal">
+  <h2>Warning Modal</h2>
+</a>
+
+Alert users to potential issues before proceeding. Use warning colors and provide helpful context.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ModalDemo type="warning" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="success-modal">
+  <h2>Success Modal</h2>
+</a>
+
+Celebrate user achievements and provide positive feedback. Include relevant metrics when helpful.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ModalDemo type="success" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="error-modal">
+  <h2>Error Modal</h2>
+</a>
+
+Communicate failures clearly with friendly language. Provide specific solutions and avoid technical jargon.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ModalDemo type="error" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="nested-modal">
+  <h2>Nested Modal</h2>
+</a>
+
+Use sparingly for multi-step workflows. Maintain clear navigation and ensure users understand the hierarchy.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ModalDemo type="nested" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Usage Guidelines">
+  <h2>When to Use Modals</h2>
+</a>
+
+- Requiring immediate user attention for critical information or decisions.
+- Collecting user input without navigating away from the current context.
+- Confirming destructive or irreversible actions before execution.
+- Displaying detailed information that doesn't warrant a separate page.
+- Presenting workflows that need to maintain the underlying page state.

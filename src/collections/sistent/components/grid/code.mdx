@@ -1,0 +1,379 @@
+---
+title: Grid Code
+component: grid
+description: The responsive layout grid adapts to screen size and orientation, ensuring consistency across layouts. It uses CSS Flexbox for high flexibility and provides a 12-column system with customizable breakpoints.
+---
+
+import { Grid2, Box, Avatar } from "@sistent/sistent";
+import GridItem from "./GridItem";
+
+The responsive layout grid adapts to screen size and orientation, ensuring consistency across layouts. It uses CSS Flexbox for high flexibility and provides a 12-column system with customizable breakpoints.
+
+The Grid component provides a flexible foundation for creating responsive layouts. Here are practical code examples showing different usage patterns.
+
+<a id="Basic Grid">
+  <h2>Basic Grid</h2>
+</a>
+
+Create a basic grid layout with container and size props. The size prop accepts values from 1-12 representing column spans.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Grid2 container spacing={2} sx={{ width: "100%", maxWidth: 600 }}>
+        <Grid2 size={5.5}>
+          <GridItem>size=5</GridItem>
+        </Grid2>
+        <Grid2 size={5.5}>
+          <GridItem>size=5</GridItem>
+        </Grid2>
+        <Grid2 size={6}>
+          <GridItem>size=6</GridItem>
+        </Grid2>
+        <Grid2 size={6}>
+          <GridItem>size=6</GridItem>
+        </Grid2>
+      </Grid2>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-grid" code={`<Grid2 container spacing={2}>
+ <Grid2 size={5}>
+  <Item>size=5</Item>
+ </Grid2>
+ <Grid2 size={5}>
+   <Item>size=5</Item>
+ </Grid2>
+ <Grid2 size={6}>
+   <Item>size=6</Item>
+  </Grid2>
+  <Grid2 size={6}>
+    <Item>size=6</Item>
+  </Grid2>        
+</Grid2>`} />
+</div>
+
+<a id="Responsive Grid">
+  <h2>Responsive Grid</h2>
+</a>
+
+Use breakpoint objects to define different layouts for different screen sizes. Each breakpoint applies to that size and larger unless overridden.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Grid2 container spacing={2} sx={{ width: "100%", maxWidth: 600 }}>
+        <Grid2 size={{ xs: 6, md: 8 }}>
+          <GridItem>xs=6 md=8</GridItem>
+        </Grid2>
+        <Grid2 size={{ xs: 6, md: 4 }}>
+          <GridItem>xs=6 md=4</GridItem>
+        </Grid2>
+        <Grid2 size={{ xs: 6, md: 4 }}>
+          <GridItem>xs=6 md=4</GridItem>
+        </Grid2>
+        <Grid2 size={{ xs: 6, md: 8 }}>
+          <GridItem>xs=6 md=8</GridItem>
+        </Grid2>
+      </Grid2>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="responsive-grid" code={`<Grid2 container spacing={2}>
+  <Grid2 size={{ xs: 6, md: 8 }}>
+    <Item>xs=6 md=8</Item>
+  </Grid2>
+  <Grid2 size={{ xs: 6, md: 4 }}>
+    <Item>xs=6 md=4</Item>
+  </Grid2>
+  <Grid2 size={{ xs: 6, md: 4 }}>
+    <Item>xs=6 md=4</Item>
+  </Grid2>
+  <Grid2 size={{ xs: 6, md: 8 }}>
+    <Item>xs=6 md=8</Item>
+  </Grid2>
+</Grid2>`} />
+</div>
+
+<a id="Grid Spacing">
+  <h2>Grid Spacing</h2>
+</a>
+
+Control the space between grid items using the spacing prop. The value corresponds to theme spacing units.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Grid2 container spacing={3} sx={{ width: "100%", maxWidth: 600 }}>
+        <Grid2 size={6}>
+          <GridItem>Item 1</GridItem>
+        </Grid2>
+        <Grid2 size={6}>
+          <GridItem>Item 2</GridItem>
+        </Grid2>
+        <Grid2 size={6}>
+          <GridItem>Item 3</GridItem>
+        </Grid2>
+        <Grid2 size={6}>
+          <GridItem>Item 4</GridItem>
+        </Grid2>
+      </Grid2>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="grid-spacing" code={`<Grid2 container spacing={3}>
+  <Grid2 size={6}>
+    <Item>Item 1</Item>
+  </Grid2>
+  <Grid2 size={6}>
+    <Item>Item 2</Item>
+  </Grid2>
+  <Grid2 size={6}>
+    <Item>Item 3</Item>
+  </Grid2>
+  <Grid2 size={6}>
+    <Item>Item 4</Item>
+  </Grid2>
+</Grid2>`} />
+</div>
+
+<h3>Row and Column Spacing</h3>
+
+Use rowSpacing and columnSpacing for independent control over row and column gaps.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Grid2 container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{ width: "100%", maxWidth: 600 }}>
+        <Grid2 size={6}>
+          <GridItem>1</GridItem>
+        </Grid2>
+        <Grid2 size={6}>
+          <GridItem>2</GridItem>
+        </Grid2>
+        <Grid2 size={6}>
+          <GridItem>3</GridItem>
+        </Grid2>
+        <Grid2 size={6}>
+          <GridItem>4</GridItem>
+        </Grid2>
+      </Grid2>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="row-column-spacing" code={`<Grid2 container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+  <Grid2 size={6}>
+    <Item>1</Item>
+  </Grid2>
+  <Grid2 size={6}>
+    <Item>2</Item>
+  </Grid2>
+  <Grid2 size={6}>
+    <Item>3</Item>
+  </Grid2>
+  <Grid2 size={6}>
+    <Item>4</Item>
+  </Grid2>
+</Grid2>`} />
+</div>
+
+<a id="Auto Layout">
+  <h2>Auto Layout</h2>
+</a>
+
+Use flexible sizing options for dynamic layouts that adapt to content.
+
+<h3>Growing Columns</h3>
+
+Use `size="grow"` to make columns take up available space equally.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Grid2 container spacing={3} sx={{ width: "100%", maxWidth: 600 }}>
+        <Grid2 size="grow">
+          <GridItem sx={{ whiteSpace: "normal", overflow: "hidden", textOverflow: "ellipsis" }}>size=grow</GridItem>
+        </Grid2>
+        <Grid2 size={6}>
+          <GridItem>size=6</GridItem>
+        </Grid2>
+      </Grid2>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="growing-columns" code={`<Grid2 container spacing={3}>
+  <Grid2 size="grow">
+    <Item>size=grow</Item>
+  </Grid2>
+  <Grid2 size={6}>
+    <Item>size=6</Item>
+  </Grid2>
+</Grid2>`} />
+</div>
+
+<h3>Variable Width Content</h3>
+
+Use `size="auto"` to size columns based on their content width.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Grid2 container spacing={3} sx={{ width: "100%", maxWidth: 600 }}>
+        <Grid2 size="auto">
+          <GridItem>size=auto</GridItem>
+        </Grid2>
+        <Grid2 size={6}>
+          <GridItem>size=6</GridItem>
+        </Grid2>
+      </Grid2>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="variable-width" code={`<Grid2 container spacing={3}>
+  <Grid2 size="auto">
+    <Item>size=auto</Item>
+  </Grid2>
+  <Grid2 size={6}>
+    <Item>size=6</Item>
+  </Grid2>
+</Grid2>`} />
+</div>
+
+<a id="Grid Offset">
+  <h2>Grid Offset</h2>
+</a>
+
+Use the offset prop to push grid items to the right, creating gaps or asymmetrical layouts.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Grid2 container spacing={3} sx={{ width: "100%", maxWidth: 600 }}>
+        <Grid2 size={{ xs: 6, md: 2 }} offset={{ xs: 3, md: 0 }}>
+          <GridItem>1</GridItem>
+        </Grid2>
+        <Grid2 size={{ xs: 4, md: 2 }} offset={{ md: 'auto' }}>
+          <GridItem>2</GridItem>
+        </Grid2>
+        <Grid2 size={{ xs: 4, md: 2 }} offset={{ xs: 4, md: 0 }}>
+          <GridItem>3</GridItem>
+        </Grid2>
+        <Grid2 size={{ xs: "grow", md: 6 }} offset={{ md: 2 }}>
+          <GridItem>4</GridItem>
+        </Grid2>
+      </Grid2>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="grid-offset" code={`<Grid2 container spacing={3}>
+  <Grid2 size={{ xs: 6, md: 2 }} offset={{ xs: 3, md: 0 }}>
+    <Item>1</Item>
+  </Grid2>
+  <Grid2 size={{ xs: 4, md: 2 }} offset={{ md: 'auto' }}>
+    <Item>2</Item>
+  </Grid2>
+  <Grid2 size={{ xs: 4, md: 2 }} offset={{ xs: 4, md: 0 }}>
+    <Item>3</Item>
+  </Grid2>
+  <Grid2 size={{ xs: 'grow', md: 6 }} offset={{ md: 2 }}>
+    <Item>4</Item>
+  </Grid2>
+</Grid2>`} />
+</div>
+
+<a id="Centered Content">
+  <h2>Centered Content</h2>
+</a>
+
+Center content within grid items using flexbox properties directly on the Grid component.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Grid2 container spacing={2} sx={{ width: "100%", maxWidth: 600 }} minHeight={160}>
+        <Grid2 
+          display="flex" 
+          justifyContent="center" 
+          alignItems="center" 
+          size="grow"
+        >
+          <Avatar sx={{ bgcolor: 'primary.main' }}>A</Avatar>
+        </Grid2>
+        <Grid2 
+          display="flex" 
+          justifyContent="center" 
+          alignItems="center"
+        >
+          <Avatar sx={{ bgcolor: 'secondary.main' }}>B</Avatar>
+        </Grid2>
+        <Grid2 
+          display="flex" 
+          justifyContent="center" 
+          alignItems="center" 
+          size="grow"
+        >
+          <Avatar sx={{ bgcolor: 'error.main' }}>C</Avatar>
+        </Grid2>
+      </Grid2>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="centered-content" code={`<Grid2 container spacing={2} minHeight={160}>
+  <Grid2 
+    display="flex" 
+    justifyContent="center" 
+    alignItems="center" 
+    size="grow"
+  >
+    <Avatar sx={{ bgcolor: 'primary.main' }}>A</Avatar>
+  </Grid2>
+  <Grid2 
+    display="flex" 
+    justifyContent="center" 
+    alignItems="center"
+  >
+    <Avatar sx={{ bgcolor: 'secondary.main' }}>B</Avatar>
+  </Grid2>
+  <Grid2 
+    display="flex" 
+    justifyContent="center" 
+    alignItems="center" 
+    size="grow"
+  >
+    <Avatar sx={{ bgcolor: 'error.main' }}>C</Avatar>
+  </Grid2>
+</Grid2>`} />
+</div>
+
+<a id="Column Direction">
+  <h2>Column Direction</h2>
+</a>
+
+Use the `direction="column"` prop to stack grid items vertically instead of horizontally.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Grid2 container spacing={2} direction="column" sx={{ height: 300, width: "100%", maxWidth: 200 }}>
+        <Grid2>
+          <GridItem>Item 1</GridItem>
+        </Grid2>
+        <Grid2>
+          <GridItem>Item 2</GridItem>
+        </Grid2>
+        <Grid2>
+          <GridItem>Item 3</GridItem>
+        </Grid2>
+        <Grid2>
+          <GridItem>Item 4</GridItem>
+        </Grid2>
+      </Grid2>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="column-direction" code={`<Grid2 container spacing={2} direction="column" sx={{ height: 300 }}>
+  <Grid2>
+    <Item>Item 1</Item>
+  </Grid2>
+  <Grid2>
+    <Item>Item 2</Item>
+  </Grid2>
+  <Grid2>
+    <Item>Item 3</Item>
+  </Grid2>
+  <Grid2>
+    <Item>Item 4</Item>
+  </Grid2>
+</Grid2>`} />
+</div>

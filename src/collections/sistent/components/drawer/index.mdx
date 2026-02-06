@@ -1,11 +1,52 @@
 ---
 name: "Drawer"
-title: "Drawer"
-description: "The drawer provides a sliding panel that appears from an edge to present navigation, options, or contextual content."
-component: "drawer"
+title: Drawer
 published: true
-pages:
-  - overview
-  - guidance
-  - code
+component: drawer
+description: Navigation drawers provide access to destinations and app functionality, such as switching accounts. They can be permanently on-screen or controlled by a menu icon.
 ---
+
+import { Drawer, Button, List, ListItem, Box, Typography } from "@sistent/sistent";
+import DrawerDemo from "./DrawerDemo";
+
+Drawers are modal panels that slide in from the edge of the screen, providing supplementary content without navigating away from the current page. They're ideal for navigation menus, filters, settings, and contextual information.
+
+<a id="Basic Drawer">
+  <h2>Basic Drawer</h2>
+</a>
+
+A basic temporary drawer that slides in from the left side of the screen.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+      <DrawerDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Key Features">
+  <h2>Key Features</h2>
+</a>
+
+The Sistent Drawer component provides several powerful features:
+
+<h3>Multiple Variants</h3>
+
+Choose from temporary, persistent, or permanent drawer types to match your application's navigation needs and layout requirements.
+
+<h3>Flexible Positioning</h3>
+
+Anchor drawers to any edge of the screen (left, right, top, or bottom) to create the most intuitive user experience for your content.
+
+<h3>Modal Overlay</h3>
+
+Temporary drawers include an automatic backdrop overlay that focuses user attention and can be clicked to close the drawer.
+
+<h3>Keyboard Support</h3>
+
+Built-in accessibility features including keyboard navigation and Escape key support for closing drawers, ensuring a fully accessible interface.
+
+<h3>Responsive Design</h3>
+
+Drawers adapt seamlessly to different screen sizes, making them ideal for both mobile and desktop applications with consistent behavior.

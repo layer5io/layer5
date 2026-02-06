@@ -1,0 +1,76 @@
+---
+title: Toggle Button Guidance
+component: toggle-button
+description: The ToggleButton and ToggleButtonGroup are versatile components that can be used for a wide range of applications. Their intuitive design ensures users can make selections easily and confidently. Whether it's enabling a setting, selecting a mode, or choosing multiple options, these components are built to enhance user experience across different scenarios.
+---
+
+import { ToggleButton, ToggleButtonGroup } from "@sistent/sistent";
+import ToggleButtonDemo from "./ToggleButtonDemo";
+
+The `ToggleButton` and `ToggleButtonGroup` are versatile components that can be used for a wide range of applications. Their intuitive design ensures users can make selections easily and confidently. Whether it's enabling a setting, selecting a mode, or choosing multiple options, these components are built to enhance user experience across different scenarios.
+
+<a id="Functionality">
+  <h2>Functionality</h2>
+</a>
+
+The `ToggleButton` and `ToggleButtonGroup` components provide an efficient way to handle user interactions for toggling states or selecting one or multiple options. Below are some common use cases.
+
+<h3>Exclusive Selection</h3>
+
+Use an exclusive `ToggleButtonGroup` when only one selection is allowed at a time. This is useful for scenarios like aligning text to the left, center, or right.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ToggleButtonDemo type="exclusive" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Multiple Selection</h3>
+
+Enable multiple selections within a `ToggleButtonGroup` for cases where users need to toggle multiple options, such as enabling bold, italic, and underline text styling simultaneously.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ToggleButtonDemo type="basic" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Sizes</h3>
+
+Adjust the size of the `ToggleButton` using the `size` prop. This property supports `small`, `medium`, and `large` values to suit various design requirements.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ToggleButtonDemo type="sizes" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Colors</h3>
+
+Use the `color` prop to style the `ToggleButtonGroup` with pre-defined theme colors, such as `primary` or `secondary`. This ensures consistency across the application.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ToggleButtonDemo type="colors" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Vertical Orientation</h3>
+
+The `orientation` prop allows you to arrange toggle buttons vertically instead of horizontally. This is ideal for menus or options requiring more vertical space.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ToggleButtonDemo type="vertical" />
+    </ThemeWrapper>
+  </div>
+</div>

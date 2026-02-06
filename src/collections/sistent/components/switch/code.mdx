@@ -1,0 +1,84 @@
+---
+title: Switch Code
+component: switch
+description: A switch is an toggle component which allows users to toggle a setting on or off and is typically used for system preferences or real-time configuration options.
+---
+
+import { Switch, FormControlLabel } from "@sistent/sistent";
+import SwitchDemo from "./SwitchDemo";
+
+The Switch component allows users to toggle a setting between two states—on or off.
+
+<a id="Basic Switch">
+  <h3>Basic Switch</h3>
+</a>
+
+This is the default switch style used to represent changes between two states.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SwitchDemo type="basic" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-switch" code={`<Switch checked={checked} onChange={handleChange} />`} />
+</div>
+
+<a id="Disabled Switch">
+  <h3>Disabled Switch</h3>
+</a>
+
+Disabled switches show the state but are not interactive.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SwitchDemo type="disabled" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="disabled-switch" code={`<Switch checked={false} disabled />`} />
+</div>
+
+<a id="Labeled Switch">
+  <h3>Labeled Switch</h3>
+</a>
+
+Labels describe the action being toggled and improve accessibility.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SwitchDemo type="labeled" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="labeled-switch" code={`<FormControlLabel
+  control={
+    <Switch
+      checked={checked}
+      onChange={handleChange}
+      name="demoSwitch"
+    />
+  }
+  label="Enable Notifications"
+/>`} />
+</div>
+
+<a id="Small Switch">
+  <h3>Small Switch</h3>
+</a>
+
+Use the `size="small"` prop for a more compact version.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SwitchDemo type="small" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="small-switch" code={`<Switch
+  size="small"
+  checked={checked}
+  onChange={handleChange}
+  inputProps={{ "aria-label": "toggle something" }}
+/>`} />
+</div>

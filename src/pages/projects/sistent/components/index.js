@@ -10,7 +10,10 @@ export const query = graphql`
   query SistentComponentsList {
     allMdx(
       filter: { 
-        fields: { collection: { eq: "sistent" } }
+        fields: { 
+          collection: { eq: "sistent" }
+          pageType: { eq: "overview" }
+        }
         frontmatter: { published: { eq: true } }
       }
       sort: { frontmatter: { name: ASC } }

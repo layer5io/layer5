@@ -1,0 +1,80 @@
+---
+title: Dialog Guidance
+component: dialog
+description: The Dialog component is a modal window that appears on top of the main content to focus user attention on specific tasks or information. It provides a controlled way to present confirmations, forms, alerts, and detailed content without navigating away from the current context.
+---
+
+import DialogDemo from "./DialogDemo";
+
+The Dialog component is a modal window that appears on top of the main content to focus user attention on specific tasks or information. It provides a controlled way to present confirmations, forms, alerts, and detailed content without navigating away from the current context.
+
+Proper usage of the Dialog component can enhance user experience by providing clear, focused interactions that guide users through important decisions and tasks. Below are guidelines and interactive examples to help you implement dialogs effectively.
+
+<a id="Usage">
+  <h2>Usage</h2>
+</a>
+
+To use the Dialog component, include it with the required props and structure. The component supports various configurations and styling options:
+
+- `open` to control visibility state
+- `onClose` for handling dialog closure
+- `fullScreen` for expanded display
+- `maxWidth` for size constraints
+
+<a id="Basic Dialog">
+  <h3>Basic Dialog</h3>
+</a>
+
+A simple confirmation dialog with title, content, and action buttons. This pattern is ideal for user confirmations and simple decision-making scenarios:
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <DialogDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Form Dialog">
+  <h3>Dialog with Form</h3>
+</a>
+
+Dialogs can contain forms for collecting user input without requiring navigation to a separate page. This pattern works well for quick data collection:
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <DialogDemo type="form" />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Full Screen Dialog">
+  <h3>Full-Screen Dialog</h3>
+</a>
+
+Full-screen dialogs provide maximum space for complex content or forms. They're particularly useful on mobile devices or when extensive user input is required:
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <DialogDemo type="fullscreen" />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Best Practices">
+  <h2>Best Practices</h2>
+</a>
+
+<h3>When to Use Dialogs</h3>
+
+Use dialogs for critical user decisions, confirmations, and tasks that require immediate attention. Avoid overusing dialogs as they can interrupt workflow and frustrate users if used inappropriately.
+
+<h3>Content Guidelines</h3>
+
+Keep dialog content focused and concise. Use clear, action-oriented language for buttons and provide sufficient context without overwhelming the user.
+
+<h3>Accessibility</h3>
+
+Ensure proper focus management, keyboard navigation, and screen reader support. Always provide clear titles and meaningful action button labels.

@@ -1,0 +1,210 @@
+---
+title: Divider Code
+component: divider
+description: The Divider component renders a thin line that separates content within lists, layouts, and sections, providing a subtle way to reinforce visual hierarchy and improve scannability.
+---
+
+import { Divider, Box, List, ListItem, ListItemText, Chip, Stack } from "@sistent/sistent";
+
+The `Divider` component renders a thin line that separates content within lists, layouts, and sections, providing a subtle way to reinforce visual hierarchy.
+
+The Divider component is a thin, subtle line for separating content in your interface.
+
+<a id="Basic-Divider">
+  <h2>Basic Divider</h2>
+</a>
+
+By default, the Divider renders as a full-width horizontal line.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Box sx={{ width: "100%", maxWidth: 360 }}>
+        <Divider />
+      </Box>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-divider" code={`<Box sx={{ width: "100%", maxWidth: 360 }}>
+  <Divider />
+</Box>`} />
+</div>
+
+<a id="Variants">
+  <h2>Variants</h2>
+</a>
+
+The Divider supports three variants: `fullWidth` (default), `inset`, and `middle`.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Box sx={{ width: "100%", maxWidth: 360 }}>
+        <Box sx={{ mb: 2 }}>Full Width:</Box>
+        <Divider variant="fullWidth" />
+        <Box sx={{ my: 2 }}>Inset:</Box>
+        <Divider variant="inset" />
+        <Box sx={{ my: 2 }}>Middle:</Box>
+        <Divider variant="middle" />
+      </Box>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="divider-variants" code={`<Box sx={{ width: "100%", maxWidth: 360 }}>
+  <Divider variant="fullWidth" />
+  <Divider variant="inset" />
+  <Divider variant="middle" />
+</Box>`} />
+</div>
+
+<a id="Vertical-Divider">
+  <h2>Vertical Divider</h2>
+</a>
+
+Use `orientation="vertical"` to render a vertical divider. The `flexItem` prop ensures proper height in flex containers.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+        <span>Left</span>
+        <Divider orientation="vertical" flexItem />
+        <span>Center</span>
+        <Divider orientation="vertical" flexItem />
+        <span>Right</span>
+      </Box>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="vertical-divider" code={`<Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+  <span>Left</span>
+  <Divider orientation="vertical" flexItem />
+  <span>Center</span>
+  <Divider orientation="vertical" flexItem />
+  <span>Right</span>
+</Box>`} />
+</div>
+
+<a id="Divider-with-Text">
+  <h2>Divider with Text</h2>
+</a>
+
+You can render text or other elements within the divider using children. Use `textAlign` to control alignment.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Box sx={{ width: "100%", maxWidth: 360 }}>
+        <Divider>CENTER</Divider>
+        <Box sx={{ my: 2 }} />
+        <Divider textAlign="left">LEFT</Divider>
+        <Box sx={{ my: 2 }} />
+        <Divider textAlign="right">RIGHT</Divider>
+        <Box sx={{ my: 2 }} />
+        <Divider>
+          <Chip label="Chip" size="small" />
+        </Divider>
+      </Box>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="divider-with-text" code={`<Box sx={{ width: "100%", maxWidth: 360 }}>
+  <Divider>CENTER</Divider>
+  <Divider textAlign="left">LEFT</Divider>
+  <Divider textAlign="right">RIGHT</Divider>
+  <Divider>
+    <Chip label="Chip" size="small" />
+  </Divider>
+</Box>`} />
+</div>
+
+<a id="List-Divider">
+  <h2>List Divider</h2>
+</a>
+
+When using dividers in lists, set `component="li"` to ensure valid HTML structure.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
+        <ListItem>
+          <ListItemText primary="Inbox" />
+        </ListItem>
+        <Divider component="li" />
+        <ListItem>
+          <ListItemText primary="Drafts" />
+        </ListItem>
+        <Divider component="li" />
+        <ListItem>
+          <ListItemText primary="Trash" />
+        </ListItem>
+      </List>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="list-divider" code={`<List sx={{ width: "100%", maxWidth: 360 }}>
+  <ListItem>
+    <ListItemText primary="Inbox" />
+  </ListItem>
+  <Divider component="li" />
+  <ListItem>
+    <ListItemText primary="Drafts" />
+  </ListItem>
+  <Divider component="li" />
+  <ListItem>
+    <ListItemText primary="Trash" />
+  </ListItem>
+</List>`} />
+</div>
+
+<a id="Section-Separators">
+  <h2>Section Separators</h2>
+</a>
+
+Use dividers to separate distinct sections in a layout, combined with proper spacing.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Stack spacing={2} sx={{ width: "100%", maxWidth: 360 }}>
+        <Box sx={{ p: 2, bgcolor: "background.paper" }}>Section 1</Box>
+        <Divider />
+        <Box sx={{ p: 2, bgcolor: "background.paper" }}>Section 2</Box>
+        <Divider />
+        <Box sx={{ p: 2, bgcolor: "background.paper" }}>Section 3</Box>
+      </Stack>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="section-dividers" code={`<Stack spacing={2} sx={{ width: "100%", maxWidth: 360 }}>
+  <Box sx={{ p: 2 }}>Section 1</Box>
+  <Divider />
+  <Box sx={{ p: 2 }}>Section 2</Box>
+  <Divider />
+  <Box sx={{ p: 2 }}>Section 3</Box>
+</Stack>`} />
+</div>
+
+<a id="Icon-Grouping">
+  <h2>Icon Grouping</h2>
+</a>
+
+Use vertical dividers with the `middle` variant to group related actions in toolbars.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+        <Box sx={{ p: 1 }}>Bold</Box>
+        <Box sx={{ p: 1 }}>Italic</Box>
+        <Divider orientation="vertical" variant="middle" flexItem />
+        <Box sx={{ p: 1 }}>Left</Box>
+        <Box sx={{ p: 1 }}>Center</Box>
+        <Box sx={{ p: 1 }}>Right</Box>
+      </Box>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="icon-grouping" code={`<Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+  <Box sx={{ p: 1 }}>Bold</Box>
+  <Box sx={{ p: 1 }}>Italic</Box>
+  <Divider orientation="vertical" variant="middle" flexItem />
+  <Box sx={{ p: 1 }}>Left</Box>
+  <Box sx={{ p: 1 }}>Center</Box>
+  <Box sx={{ p: 1 }}>Right</Box>
+</Box>`} />
+</div>

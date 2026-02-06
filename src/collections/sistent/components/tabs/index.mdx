@@ -1,11 +1,58 @@
 ---
 name: "Tabs"
-title: "Tabs"
-description: "Tabs organize and allow navigation between groups of content that are related and at the same level of hierarchy."
-component: "tabs"
+title: Tabs
 published: true
-pages:
-  - overview
-  - guidance
-  - code
+component: tabs
+description: Tabs organize content across different screens, data sets, and other interactions. They allow users to navigate between different views within the same context, making it easy to explore and switch between related content sections.
 ---
+
+import { Tabs, Tab, Box, Typography } from "@sistent/sistent";
+import TabsDemo from "./TabsDemo";
+
+The `Tabs` component provides an intuitive way to organize and navigate between related content sections. It supports various configurations and is essential for creating organized user interfaces.
+
+<a id="Simple Example">
+  <h2>Simple Example</h2>
+</a>
+
+Here's a basic example showing how tabs work with content panels:
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TabsDemo type="basic" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Variations">
+  <h2>Variations</h2>
+</a>
+
+You can customize the Tabs as per your requirements by passing various props to the component.
+
+<h3>By Variant</h3>
+- **Standard:** Default horizontal tabs with fixed positioning
+- **Scrollable:** Tabs that can scroll horizontally when overflowing
+- **Full Width:** Tabs that expand to fill the entire container width
+
+<h3>By Orientation</h3>
+- **Horizontal:** Standard left-to-right tab layout
+- **Vertical:** Top-to-bottom tab layout, perfect for sidebars
+
+<h3>By Content</h3>
+- **Text Only:** Tabs with only text labels
+- **Icon Only:** Tabs with only icons
+- **Icon + Text:** Tabs with both icons and text labels
+- **With Badges:** Tabs that can display notification badges
+
+<h3>By State</h3>
+- **Enabled:** Interactive tabs that users can click
+- **Disabled:** Non-interactive tabs that are grayed out
+- **Active:** The currently selected tab
+- **Inactive:** Non-selected tabs available for interaction
+
+<h3>By Customization</h3>
+- **Colored Tabs:** Custom indicator and text colors to match design system
+- **Controlled Tabs:** Programmatically controlled tab selection
+- **Wrapped Labels:** Tabs with longer labels that can wrap to multiple lines

@@ -242,23 +242,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       sistentComponents: allMdx(
         filter: { 
           fields: { collection: { eq: "sistent" } }
-          frontmatter: { published: { eq: true } }
         }
       ) {
-        nodes {
-          frontmatter {
-            name
-            title
-            description
-            component
-            pages
-          }
-          fields {
-            slug
-            collection
-          }
-          internal {
-            contentFilePath
+        group(field: { fields: { componentName: SELECT } }) {
+          fieldValue
+          nodes {
+            fields {
+              slug
+              componentName
+              pageType
+            }
+            internal {
+              contentFilePath
+            }
           }
         }
       }
@@ -563,43 +559,26 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   // Create Sistent component pages dynamically from MDX
-  const sistentComponents = res.data.sistentComponents.nodes;
+  // Use grouping to identify which sub-pages (Tabs) exist for each component
+  const sistentGroups = res.data.sistentComponents.group;
+  const sistentTemplate = path.resolve("src/templates/sistent-component.js");
 
-  sistentComponents.forEach((node) => {
-    const componentName = node.frontmatter.component;
-    const pages = node.frontmatter.pages || ["overview"];
+  sistentGroups.forEach((group) => {
+    const componentName = group.fieldValue;
+    // content-learn uses different fields, sistent uses componentName.
+    
+    const availablePages = group.nodes.map(node => node.fields.pageType);
 
-    const pageTypes = [
-      { suffix: "", file: "index.js", pageType: "overview" },
-      { suffix: "/guidance", file: "guidance.js", pageType: "guidance" },
-      { suffix: "/code", file: "code.js", pageType: "code" },
-    ];
-
-    pageTypes.forEach(({ suffix, file, pageType }) => {
-      // Only create pages that exist in frontmatter
-      if (pages.includes(pageType)) {
-        const pagePath = `/projects/sistent/components/${componentName}${suffix}`;
-        const componentPath = `./src/sections/Projects/Sistent/components/${componentName}/${file}`;
-
-        if (fs.existsSync(path.resolve(componentPath))) {
-          try {
-            createPage({
-              path: pagePath,
-              component: require.resolve(componentPath),
-              context: {
-                slug: `/sistent/components/${componentName}`,
-                componentName: componentName,
-              },
-            });
-          } catch (error) {
-            console.error(`Error creating page for "${pagePath}":`, error);
-          }
-        } else {
-          console.info(
-            `Skipping creating page "${pagePath}" - file not found: "${componentPath}"`
-          );
-        }
-      }
+    group.nodes.forEach((node) => {
+       createPage({
+         path: node.fields.slug,
+         component: `${sistentTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+         context: {
+           slug: node.fields.slug,
+           componentName: componentName,
+           availablePages: availablePages
+         }
+       });
     });
   });
 };
@@ -688,13 +667,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const parent = getNode(node.parent);
   let collection = parent.sourceInstanceName;
 
-  // --- CHANGED: Consolidated Source Logic ---
   // If the source is "collections", we determine the actual collection
   // from the parent directory name (e.g., "blog", "news", etc.)
   if (collection === "collections") {
     collection = parent.relativeDirectory.split("/")[0];
   }
-  // ------------------------------------------
 
   createNodeField({
     name: "collection",
@@ -742,7 +719,24 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         case "sistent": {
           // For sistent components, create slug from directory structure
           const componentSlug = parent.relativeDirectory.split("/").pop();
-          slug = `/sistent/components/${componentSlug}`;
+          const fileName = parent.name;
+          const suffix = fileName === "index" ? "" : `/${fileName}`;
+          
+          slug = `/projects/sistent/components/${componentSlug}${suffix}`;
+          
+          createNodeField({
+            name: "componentName",
+            node,
+            value: componentSlug,
+          });
+
+          // "index" -> "overview", others match filename
+          const pageType = fileName === "index" ? "overview" : fileName;
+          createNodeField({
+            name: "pageType",
+            node,
+            value: pageType,
+          });
           break;
         }
         default:

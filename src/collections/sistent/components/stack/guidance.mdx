@@ -1,0 +1,191 @@
+---
+title: Stack Guidance
+component: stack
+description: The Stack component is a layout utility that manages one-dimensional layouts with flexible spacing and alignment. Built on Flexbox, it provides an efficient way to arrange elements vertically or horizontally with consistent spacing.
+---
+
+import { Stack, Box, Button } from "@sistent/sistent";
+
+The `Stack` component is a layout utility that manages one-dimensional layouts with flexible spacing and alignment. Built on Flexbox, it provides an efficient way to arrange elements vertically or horizontally with consistent spacing.
+
+Stack is built on Flexbox and optimized for one-dimensional layouts. It excels at organizing elements in a single direction while maintaining consistent spacing.
+
+<a id="Best Practices">
+  <h2>Best Practices</h2>
+</a>
+
+<h3>Use Cases</h3>
+
+Stack is ideal for:
+- Form layouts with consistent vertical spacing
+- Button groups arranged horizontally or vertically
+- Navigation menus with proper spacing
+- Card content stacking
+- Lists with dividers
+
+<h3>Stack vs Grid</h3>
+
+Choose the right component:
+- **Stack:** One-dimensional layout (single direction)
+- **Grid:** Two-dimensional layout (rows and columns)
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Box sx={{ width: "100%", maxWidth: 600 }}>
+        <Box sx={{ mb: 3 }}>
+          <p style={{ fontWeight: "bold", marginBottom: "8px" }}>
+            Stack Example (One Direction):
+          </p>
+          <Stack direction="row" spacing={2}>
+            <Box sx={{ p: 2, bgcolor: "primary.main", color: "white", flex: 1 }}>
+              1
+            </Box>
+            <Box sx={{ p: 2, bgcolor: "primary.main", color: "white", flex: 1 }}>
+              2
+            </Box>
+            <Box sx={{ p: 2, bgcolor: "primary.main", color: "white", flex: 1 }}>
+              3
+            </Box>
+          </Stack>
+        </Box>
+      </Box>
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Spacing">
+  <h2>Spacing</h2>
+</a>
+
+<h3>Best Practices</h3>
+
+Use consistent spacing values throughout your application:
+- `spacing=1` (8px) for closely related elements
+- `spacing=2` (16px) for standard spacing
+- `spacing=3` (24px) for distinct sections
+- `spacing=4` (32px) for major separations
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Stack spacing={2}>
+        <Box>
+          <p style={{ fontWeight: "bold", marginBottom: "8px" }}>
+            Spacing = 1
+          </p>
+          <Stack spacing={1}>
+            <Box sx={{ p: 1, bgcolor: "primary.main", color: "white" }}>Label</Box>
+            <Box sx={{ p: 1, bgcolor: "primary.main", color: "white" }}>Input</Box>
+          </Stack>
+        </Box>
+        <Box>
+          <p style={{ fontWeight: "bold", marginBottom: "8px" }}>
+            Spacing = 3
+          </p>
+          <Stack spacing={3}>
+            <Box sx={{ p: 1, bgcolor: "primary.main", color: "white" }}>Title</Box>
+            <Box sx={{ p: 1, bgcolor: "primary.main", color: "white" }}>Body</Box>
+          </Stack>
+        </Box>
+      </Stack>
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Direction</h3>
+
+- `direction="column"` (default) for vertical stacking
+- `direction="row"` for horizontal arrangements
+- Use responsive values: `direction={{ xs: "column", md: "row" }}`
+
+<h3>Dividers</h3>
+
+- Use to separate distinct sections
+- Use sparingly for best effect
+- Match divider style with your design system
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Stack
+        spacing={2}
+        sx={{ width: "100%", maxWidth: 400 }}
+        divider={
+          <Box sx={{ borderBottom: "1px solid", borderColor: "divider" }} />
+        }
+      >
+        <Box sx={{ p: 2 }}>Profile Settings</Box>
+        <Box sx={{ p: 2 }}>Notification Preferences</Box>
+        <Box sx={{ p: 2 }}>Privacy Controls</Box>
+      </Stack>
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Examples">
+  <h2>Examples</h2>
+</a>
+
+<h3>Form Layout</h3>
+
+Organize form fields vertically with consistent spacing:
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Stack spacing={3} sx={{ width: "100%", maxWidth: 400 }}>
+        <Box>
+          <Box component="label" sx={{ display: "block", mb: 1, fontWeight: 500 }}>
+            Name
+          </Box>
+          <Box
+            sx={{
+              p: 1.5,
+              border: "1px solid",
+              borderColor: "divider",
+              borderRadius: 1,
+            }}
+          >
+            Input field
+          </Box>
+        </Box>
+        <Box>
+          <Box component="label" sx={{ display: "block", mb: 1, fontWeight: 500 }}>
+            Email
+          </Box>
+          <Box
+            sx={{
+              p: 1.5,
+              border: "1px solid",
+              borderColor: "divider",
+              borderRadius: 1,
+            }}
+          >
+            Input field
+          </Box>
+        </Box>
+        <Stack direction="row" spacing={2} justifyContent="flex-end">
+          <Button variant="outlined">Cancel</Button>
+          <Button variant="contained">Submit</Button>
+        </Stack>
+      </Stack>
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Button Groups</h3>
+
+Use horizontal Stack for grouping related action buttons:
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Stack direction="row" spacing={2}>
+        <Button variant="contained">Save</Button>
+        <Button variant="outlined">Cancel</Button>
+        <Button variant="text">Reset</Button>
+      </Stack>
+    </ThemeWrapper>
+  </div>
+</div>

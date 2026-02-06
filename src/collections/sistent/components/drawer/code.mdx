@@ -1,0 +1,149 @@
+---
+title: Drawer Code
+component: drawer
+description: Navigation drawers provide access to destinations and app functionality, such as switching accounts. They can be permanently on-screen or controlled by a menu icon.
+---
+
+import DrawerDemo from "./DrawerDemo";
+
+Code examples demonstrating different drawer variants and use cases.
+
+<a id="Temporary Drawer">
+  <h2>Temporary Drawer</h2>
+</a>
+
+Opens on top of content, closes when clicking outside or selecting an item. This is the default variant.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <DrawerDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="drawer-temporary" code={`<Button onClick={() => setOpen(true)} variant="contained" label="Open drawer" />
+<Drawer open={open} onClose={() => setOpen(false)}>
+  <Box sx={{ width: 250 }} role="presentation" onClick={() => setOpen(false)}>
+    <List>
+      {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text) => (
+        <ListItem key={text}>
+          <Typography>{text}</Typography>
+        </ListItem>
+      ))}
+    </List>
+    <Divider />
+    <List>
+      {['All mail', 'Trash', 'Spam'].map((text) => (
+        <ListItem key={text}>
+          <Typography>{text}</Typography>
+        </ListItem>
+      ))}
+    </List>
+  </Box>
+</Drawer>`} />
+</div>
+
+<a id="Anchor Positions">
+  <h2>Anchor Positions</h2>
+</a>
+
+Drawers can slide in from any edge: left, right, top, or bottom.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <DrawerDemo type="anchors" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="drawer-anchors" code={`<Box sx={{ display: 'flex', gap: 1 }}>
+  {['left', 'right', 'top', 'bottom'].map((anchor) => (
+    <React.Fragment key={anchor}>
+      <Button 
+        onClick={() => setState({ ...state, [anchor]: true })} 
+        variant="contained" 
+        label={anchor} 
+      />
+      <Drawer
+        anchor={anchor}
+        open={state[anchor]}
+        onClose={() => setState({ ...state, [anchor]: false })}
+      >
+        <Box
+          sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+          role="presentation"
+          onClick={() => setState({ ...state, [anchor]: false })}
+        >
+          {/* Drawer Content */}
+        </Box>
+      </Drawer>
+    </React.Fragment>
+  ))}
+</Box>`} />
+</div>
+
+<a id="Persistent Drawer">
+  <h2>Persistent Drawer</h2>
+</a>
+
+Sits alongside content, can be toggled open/closed, and maintains state.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <DrawerDemo type="persistent" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="drawer-persistent" code={`<Box sx={{ display: 'flex' }}>
+  <Button
+    onClick={() => setOpen(!open)}
+    variant="contained"
+    label={open ? 'Close' : 'Open'}
+  />
+  <Drawer
+    variant="persistent"
+    anchor="left"
+    open={open}
+  >
+    <Box sx={{ width: 240, p: 2 }}>
+      {/* Drawer content */}
+    </Box>
+  </Drawer>
+  <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+    <Typography>Main Content</Typography>
+  </Box>
+</Box>`} />
+</div>
+
+<a id="Permanent Drawer">
+  <h2>Permanent Drawer</h2>
+</a>
+
+Always visible drawer pinned to the side. Ideal for desktop applications with consistent navigation.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <DrawerDemo type="permanent" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="drawer-permanent" code={`<Box sx={{ display: 'flex' }}>
+  <Drawer
+    variant="permanent"
+    anchor="left"
+    sx={{
+      width: 240,
+      flexShrink: 0,
+      '& .MuiDrawer-paper': {
+        width: 240,
+        boxSizing: 'border-box',
+      },
+    }}
+  >
+    <Box sx={{ overflow: 'auto', p: 2 }}>
+      {/* Drawer Content */}
+    </Box>
+  </Drawer>
+  <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+    <Typography>Page content goes here</Typography>
+  </Box>
+</Box>`} />
+</div>
