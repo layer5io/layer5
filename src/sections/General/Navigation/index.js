@@ -262,9 +262,15 @@ const Navigation = () => {
   }, [expand]);
 
   useEffect(() => {
-    window.addEventListener("scroll", () =>
-      window.scrollY > 50 ? setScroll(true) : setScroll(false)
-    );
+    const handleScroll = () => {
+      setScroll(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const openDropDown = () => {
