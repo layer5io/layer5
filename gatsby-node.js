@@ -21,27 +21,6 @@ const HEAVY_COLLECTIONS = new Set(["members", "integrations"]);
 const isFullSiteBuild = process.env.BUILD_FULL_SITE !== "false";
 const shouldIncludeCollection = (collection) => isFullSiteBuild || !HEAVY_COLLECTIONS.has(collection);
 
-if (process.env.CI === "true") {
-  // All process.env.CI conditionals in this file are in place for GitHub Pages, if webhost changes in the future, code may need to be modified or removed.
-  exports.onCreatePage = ({ page, actions }) => {
-    const { createPage, deletePage, createRedirect } = actions;
-    const oldPage = Object.assign({}, page);
-    page.matchPath = page.path;
-
-    if (page.path !== oldPage.path) {
-      deletePage(oldPage);
-      createPage(page);
-
-      createRedirect({
-        fromPath: `/${page.matchPath}/`,
-        toPath: `/${page.matchPath}`,
-        redirectInBrowser: true,
-        isPermanent: true,
-      });
-    }
-  };
-}
-
 const { loadRedirects } = require("./src/utils/redirects.js");
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
