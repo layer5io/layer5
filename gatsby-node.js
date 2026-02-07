@@ -21,33 +21,6 @@ const HEAVY_COLLECTIONS = new Set(["members", "integrations"]);
 const isFullSiteBuild = process.env.BUILD_FULL_SITE !== "false";
 const shouldIncludeCollection = (collection) => isFullSiteBuild || !HEAVY_COLLECTIONS.has(collection);
 
-if (process.env.CI === "true") {
-  // All process.env.CI conditionals in this file are in place for GitHub Pages, if webhost changes in the future, code may need to be modified or removed.
-  //Replacing '/' would result in empty string which is invalid
-  const replacePath = (url) =>
-    url === "/" || url.includes("/404") || url.endsWith(".html") ? url : `${url}.html`;
-
-  exports.onCreatePage = ({ page, actions }) => {
-    const { createPage, deletePage, createRedirect } = actions;
-    const oldPage = Object.assign({}, page);
-    page.matchPath = page.path;
-    page.path = replacePath(page.path);
-
-    if (page.path !== oldPage.path) {
-      // Replace new page with old page
-      deletePage(oldPage);
-      createPage(page);
-
-      createRedirect({
-        fromPath: `/${page.matchPath}/`,
-        toPath: `/${page.matchPath}`,
-        redirectInBrowser: true,
-        isPermanent: true,
-      });
-    }
-  };
-}
-
 
 const { loadRedirects } = require("./src/utils/redirects.js");
 
