@@ -4,10 +4,10 @@ on:
     branches: [master]
     paths-ignore:
       - .github/*
-
+      
   workflow_dispatch:
   workflow_call:
-
+    
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
