@@ -39,8 +39,8 @@ if (process.env.CI === "true") {
       createPage(page);
 
       createRedirect({
-        fromPath: `/${page.matchPath}/`,
-        toPath: `/${page.matchPath}`,
+        fromPath: `${page.matchPath}/`,
+        toPath: page.matchPath,
         redirectInBrowser: true,
         isPermanent: true,
       });
@@ -63,8 +63,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       const { path, matchPath, ...rest } = props;
       const isHandbookPage = path.startsWith("/community/handbook/");
       createRedirect({
-        fromPath: `/${path}/`,
-        toPath: `/${path}`,
+        fromPath: `${path}/`,
+        toPath: path,
         redirectInBrowser: true,
         isPermanent: true,
       });
