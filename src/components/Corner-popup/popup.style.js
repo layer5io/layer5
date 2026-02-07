@@ -37,7 +37,7 @@ const CornerPopupWrapper = styled.div`
     border-radius: 5%;
     box-shadow: 0 0 30px rgba(0, 211, 169, 0.6);
     @media only screen and (max-width: 640px) {
-      padding: 0.5rem;
+      padding: 0.8rem;
       gap: 0.375rem;
     }
   }
@@ -53,6 +53,10 @@ const CornerPopupWrapper = styled.div`
       width: 100%;
       height: 100%;
       display: block;
+    }
+    @media only screen and (max-width: 640px) {
+      width: 20px;
+      height: 20px;
     }
   }
   .popup-image {
