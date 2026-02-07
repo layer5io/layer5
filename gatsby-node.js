@@ -21,6 +21,26 @@ const HEAVY_COLLECTIONS = new Set(["members", "integrations"]);
 const isFullSiteBuild = process.env.BUILD_FULL_SITE !== "false";
 const shouldIncludeCollection = (collection) => isFullSiteBuild || !HEAVY_COLLECTIONS.has(collection);
 
+if (process.env.CI === "true") {
+  // All process.env.CI conditionals in this file are in place for GitHub Pages, if webhost changes in the future, code may need to be modified or removed.
+  exports.onCreatePage = ({ page, actions }) => {
+    const { createPage, deletePage, createRedirect } = actions;
+    const oldPage = Object.assign({}, page);
+    page.matchPath = page.path;
+
+    if (page.path !== oldPage.path) {
+      deletePage(oldPage);
+      createPage(page);
+
+      createRedirect({
+        fromPath: `/${page.matchPath}/`,
+        toPath: `/${page.matchPath}`,
+        redirectInBrowser: true,
+        isPermanent: true,
+      });
+    }
+  };
+}
 
 const { loadRedirects } = require("./src/utils/redirects.js");
 
@@ -34,7 +54,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const envCreatePage = (props) => {
     if (process.env.CI === "true") {
       const { path, matchPath, ...rest } = props;
-      const isHandbookPage = path.startsWith("/community/handbook/");
       createRedirect({
         fromPath: `/${path}/`,
         toPath: `/${path}`,
@@ -43,7 +62,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       });
 
       return createPage({
-        path: isHandbookPage ? path : `${path}.html`,
+        path: path,
         matchPath: matchPath || path,
         ...rest,
       });
@@ -739,7 +758,7 @@ const createCoursesListPage = ({ envCreatePage, node }) => {
 };
 
 const createCourseOverviewPage = ({ envCreatePage, node }) => {
-  const { learnpath, slug, course, pageType, permalink,section } = node.fields;
+  const { learnpath, slug, course, pageType, permalink, section } = node.fields;
 
   envCreatePage({
     path: `${slug}`,
