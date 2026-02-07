@@ -12,11 +12,20 @@ jobs:
         uses: actions/checkout@master
         with:
           persist-credentials: false
-          fetch-depth: 1
+          fetch-depth: 0  # Full history needed for Gatsby to detect changes properly
 
-      - name: Install and Build 🔧
+      - name: Install dependencies 📦
         run: |
           make setup
+
+      - name: Clean Gatsby cache 🧹
+        run: |
+          # Always clean cache in CI to ensure fresh builds and prevent stale content issues
+          # This ensures all pages (blog, news, resources, etc.) are rebuilt when content changes
+          npx gatsby clean || true
+
+      - name: Build 🔧
+        run: |
           make build
 
       - name: Broken Link Check 🔗
