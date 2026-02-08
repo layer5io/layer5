@@ -1,0 +1,79 @@
+---
+name: "Toolbar"
+title: Toolbar
+published: true
+component: toolbar
+description: The Toolbar is a horizontal layout container used to organize and group actions or interactive elements. It helps streamline workflows and keeps related actions in one place, providing users with easy access to frequently used commands.
+---
+
+import { Toolbar, Button } from "@sistent/sistent";
+import ToolbarDemo from "./ToolbarDemo";
+
+Toolbars are essential UI components that provide convenient access to actions and tools. They can be placed at various locations within your interface and configured to suit different needs.
+
+<a id="Usage">
+  <h2>Usage</h2>
+</a>
+
+Toolbars are commonly used in applications to provide quick access to frequently used functions. They can be customized with various controls including buttons, dropdowns, search fields, and more.
+
+<h3>Standard Toolbar</h3>
+
+A standard toolbar with basic action buttons:
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ToolbarDemo type="standard" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Navigation Toolbar</h3>
+
+A toolbar for navigation controls:
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ToolbarDemo type="navigation" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Toolbar with Dropdown</h3>
+
+A toolbar with actions and a dropdown menu:
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ToolbarDemo type="dropdown" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Search Toolbar</h3>
+
+A toolbar with a search field and settings button:
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ToolbarDemo type="search" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Customization">
+  <h2>Customization</h2>
+</a>
+
+Toolbars can be customized in various ways to fit your application's needs:
+
+*   **Fixed Position:** Add the `fixed` prop to create a toolbar that stays in place during scrolling.
+*   **Density:** Use `variant="dense"` for a more compact toolbar with less vertical padding.
+*   **Custom Content:** Combine buttons, text fields, dropdowns, and other controls to create custom toolbar layouts.
+*   **Styling:** Apply custom styles to match your application's design system.
+
+When designing toolbars, consider the user's workflow and prioritize the most frequently used actions to improve efficiency and usability.

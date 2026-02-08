@@ -1,0 +1,54 @@
+---
+name: "Switch"
+title: Switch
+published: true
+component: switch
+description: A switch is an toggle component which allows users to toggle a setting on or off and is typically used for system preferences or real-time configuration options.
+---
+
+import { Switch, FormControlLabel } from "@sistent/sistent";
+import SwitchDemo from "./SwitchDemo";
+
+Switches are ideal when a setting is either enabled or disabled, and the user should be able to change it instantly without additional confirmation. They are used to toggle between two states.
+
+<a id="States">
+  <h2>States</h2>
+</a>
+
+The Switch supports different states including **active**, **inactive**, and **disabled**. Visual feedback is immediate, allowing users to quickly understand the current status of a toggle.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SwitchDemo type="basic" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Labeling">
+  <h2>Labeling</h2>
+</a>
+
+Labels should be concise and descriptive to provide clarity about what each switch does.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SwitchDemo type="labeled" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Sizing">
+  <h2>Sizing</h2>
+</a>
+
+Switches come in two sizes: **medium** and **small**. The small size is particularly useful for dense layouts and compact UI patterns.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SwitchDemo type="small" />
+    </ThemeWrapper>
+  </div>
+</div>

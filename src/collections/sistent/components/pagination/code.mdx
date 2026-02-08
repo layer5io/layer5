@@ -1,0 +1,77 @@
+---
+title: Pagination Code
+component: pagination
+description: The Pagination component helps users navigate through multiple pages of content. It provides a clear interface for moving between pages and understanding the current position within a larger dataset.
+---
+
+import { Pagination } from "@sistent/sistent";
+import PaginationDemo from "./PaginationDemo";
+
+The Pagination component helps users navigate through multiple pages of content. It provides a clear interface for moving between pages and understanding the current position within a larger dataset.
+
+<a id="Basic Pagination">
+  <h3>Basic Pagination</h3>
+</a>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PaginationDemo type="basic" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-pagination" code={`<Pagination 
+  count={10} 
+  page={page} 
+  onChange={handleChange} 
+/>`} />
+</div>
+
+<a id="Sizes">
+  <h3>Pagination Sizes</h3>
+</a>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PaginationDemo type="sizes" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="pagination-sizes" code={`<Pagination size="small" count={10} />
+<Pagination size="medium" count={10} />
+<Pagination size="large" count={10} />`} />
+</div>
+
+<a id="Styling">
+  <h3>Custom Styling</h3>
+</a>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PaginationDemo type="styling" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="styled-pagination" code={`<Pagination
+  count={10}
+  color="primary"
+  variant="outlined"
+  shape="rounded"
+/>`} />
+</div>
+
+<a id="Outline">
+  <h3>Pagination with Outline</h3>
+</a>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PaginationDemo type="outline" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="pagination-outline" code={`<Pagination
+  count={10}
+  variant="outlined"
+  color="secondary"
+/>`} />
+</div>

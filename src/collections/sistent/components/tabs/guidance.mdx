@@ -1,0 +1,169 @@
+---
+title: Tabs Guidance
+component: tabs
+description: Tabs organize content across different screens, data sets, and other interactions. They allow users to navigate between different views within the same context, making it easy to explore and switch between related content sections.
+---
+
+import { Tabs, Tab, Box } from "@sistent/sistent";
+import TabsDemo from "./TabsDemo";
+
+This guide shows you how to use different variations of the Tabs component effectively in your applications. Each variation serves specific use cases and design requirements.
+
+<a id="Standard Tabs">
+  <h2>Standard Tabs</h2>
+</a>
+
+The default tab layout with horizontal arrangement. Best for general navigation between related content sections when you have 3-7 tabs that fit comfortably in the available width.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TabsDemo type="basic" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Scrollable Tabs">
+  <h2>Scrollable Tabs</h2>
+</a>
+
+When you have many tabs that don't fit in the available width, scrollable tabs provide navigation arrows. This prevents text truncation and maintains readability. Best for dashboards with multiple sections or detailed navigation.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TabsDemo type="scrollable" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Full Width Tabs">
+  <h2>Full Width Tabs</h2>
+</a>
+
+Tabs expand to fill the entire width of their container, distributing space evenly. Perfect for layouts where you want tabs to span the full width, typically with 2-4 tabs for optimal appearance.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TabsDemo type="fullWidth" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Vertical Tabs">
+  <h2>Vertical Tabs</h2>
+</a>
+
+Vertical orientation is ideal for sidebar navigation or when horizontal space is limited. Common in admin panels, settings pages, and detailed configuration interfaces where you need more vertical space for content.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TabsDemo type="vertical" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Icon Tabs">
+  <h2>Icon Tabs</h2>
+</a>
+
+Enhance usability with icons that provide visual context. Icons can be used alone for compact layouts or combined with labels for better accessibility. Perfect for mobile interfaces or when space is at a premium.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TabsDemo type="icon" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Disabled Tabs">
+  <h2>Disabled Tabs</h2>
+</a>
+
+Some tabs can be disabled to indicate unavailable functionality or content that requires certain conditions to be met. Useful for progressive disclosure or when features depend on user permissions or subscription levels.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TabsDemo type="disabled" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Colored Tabs">
+  <h2>Colored Tabs</h2>
+</a>
+
+Customize the indicator and text colors to match your design system. Use different color combinations to create visual hierarchy or match your brand colors.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TabsDemo type="colored" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Controlled Tabs">
+  <h2>Controlled Tabs</h2>
+</a>
+
+Programmatically control which tab is active using external buttons or logic. Useful for wizards, multi-step forms, or when you need to control navigation flow based on user actions or validation.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TabsDemo type="controlled" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Wrapped Labels Tabs">
+  <h2>Wrapped Labels Tabs</h2>
+</a>
+
+Tabs with longer labels that can wrap to multiple lines when needed. Useful when you have descriptive tab names that don't fit in a single line, while maintaining readability and accessibility.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TabsDemo type="wrapped" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Best Practices">
+  <h2>Best Practices</h2>
+</a>
+
+<h3>When to Use Each Variation</h3>
+- **Standard Tabs:** Use for 3-7 tabs in desktop layouts with sufficient horizontal space
+- **Scrollable Tabs:** Use when you have 5+ tabs or limited horizontal space
+- **Full Width Tabs:** Use for 2-4 important tabs in wide containers
+- **Vertical Tabs:** Use for sidebar navigation, admin panels, or settings pages
+- **Icon Tabs:** Use for mobile interfaces or when space is limited
+- **Disabled Tabs:** Use to show unavailable features or progressive disclosure
+- **Colored Tabs:** Use to match brand colors or create visual hierarchy
+- **Controlled Tabs:** Use for wizards, multi-step forms, or programmatic navigation
+- **Wrapped Labels Tabs:** Use when tab labels are longer and need multiple lines
+
+<h3>Content Organization</h3>
+- Keep tab labels concise and descriptive (1-2 words when possible)
+- Use consistent naming conventions across tabs
+- Organize tabs in logical order of importance or user workflow
+- Group related functionality within the same tab
+
+<h3>Accessibility Guidelines</h3>
+- Ensure sufficient color contrast between active and inactive tabs
+- Use descriptive labels that work well with screen readers
+- Support keyboard navigation with arrow keys and tab key
+- Provide clear focus indicators for keyboard users
+
+<h3>Design Considerations</h3>
+- Maintain visual hierarchy with clear active/inactive states
+- Use consistent spacing and alignment across all tabs
+- Consider mobile responsiveness when choosing tab variants
+- Test with real content to ensure tabs work with varying label lengths

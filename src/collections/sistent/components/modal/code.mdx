@@ -1,0 +1,273 @@
+---
+title: Modal Code
+component: modal
+description: A modal is a container that appears in front of the main content on a page, providing important information or an actionable piece of content for users to execute. Modals focus user attention and prevent interaction with the underlying page until dismissed.
+---
+
+import ModalDemo from "./ModalDemo";
+
+Here are code examples for different variations and use cases of the Modal component. Each example shows the implementation with a live preview and copyable code.
+
+<a id="basic-modal">
+  <h2>Basic Modal</h2>
+</a>
+
+A simple modal with basic content and standard dismiss functionality.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ModalDemo type="basic" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="modal-basic" code={`<Button variant="contained" onClick={() => setOpen(true)}>
+  Open Basic Modal
+</Button>
+<Modal open={open} closeModal={() => setOpen(false)} title="Basic Modal">
+  <ModalBody>
+    <Typography>
+      This is a basic modal with simple content for displaying information.
+    </Typography>
+  </ModalBody>
+  <ModalFooter variant="filled">
+    <ModalButtonSecondary onClick={() => setOpen(false)}>
+      Close
+    </ModalButtonSecondary>
+  </ModalFooter>
+</Modal>`} />
+</div>
+
+<a id="confirmation-modal">
+  <h2>Confirmation Modal</h2>
+</a>
+
+Confirmation modals for destructive or important actions requiring user consent.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ModalDemo type="confirmation" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="modal-confirmation" code={`<Button variant="contained" color="error" onClick={() => setOpen(true)}>
+  Delete Item
+</Button>
+<Modal open={open} closeModal={() => setOpen(false)} title="Confirm Deletion">
+  <ModalBody>
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+      <WarningIcon color="warning" />
+      <Typography>
+        This action is irreversible! Are you sure?
+      </Typography>
+    </Box>
+  </ModalBody>
+  <ModalFooter variant="filled">
+    <ModalButtonSecondary onClick={() => setOpen(false)}>
+      Cancel
+    </ModalButtonSecondary>
+    <ModalButtonDanger onClick={() => setOpen(false)}>
+      Delete
+    </ModalButtonDanger>
+  </ModalFooter>
+</Modal>`} />
+</div>
+
+<a id="action-modal">
+  <h2>Action Modal</h2>
+</a>
+
+Action modals for task completion with forms and interactive elements.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ModalDemo type="action" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="modal-action" code={`<Button variant="contained" onClick={() => setOpen(true)}>
+  Add New User
+</Button>
+<Modal open={open} closeModal={() => setOpen(false)} title="Add New User">
+  <ModalBody>
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
+      <PersonAddIcon color="primary" />
+      <Typography>Create a new user account:</Typography>
+    </Box>
+    <TextField label="Full Name" fullWidth margin="normal" />
+    <TextField label="Email" fullWidth margin="normal" />
+    <TextField label="Role" fullWidth margin="normal" />
+  </ModalBody>
+  <ModalFooter variant="filled">
+    <ModalButtonSecondary onClick={() => setOpen(false)}>
+      Cancel
+    </ModalButtonSecondary>
+    <ModalButtonPrimary onClick={() => setOpen(false)}>
+      Create User
+    </ModalButtonPrimary>
+  </ModalFooter>
+</Modal>`} />
+</div>
+
+<a id="informational-modal">
+  <h2>Informational Modal</h2>
+</a>
+
+Informational modals for displaying help content and contextual information.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ModalDemo type="informational" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="modal-informational" code={`<Button variant="outlined" onClick={() => setOpen(true)}>
+  View Information
+</Button>
+<Modal open={open} closeModal={() => setOpen(false)} title="System Information">
+  <ModalBody>
+    <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
+      <InfoIcon color="info" />
+      <Box>
+        <Typography variant="h6" gutterBottom>
+          About This Feature
+        </Typography>
+        <Typography variant="body1" paragraph>
+          This feature helps you manage workflow efficiently.
+        </Typography>
+        <Typography variant="body2">
+          Last updated: January 2025 • Version 2.1.0
+        </Typography>
+      </Box>
+    </Box>
+  </ModalBody>
+  <ModalFooter variant="filled">
+    <ModalButtonSecondary onClick={() => setOpen(false)}>
+      Got it
+    </ModalButtonSecondary>
+  </ModalFooter>
+</Modal>`} />
+</div>
+
+<a id="warning-modal">
+  <h2>Warning Modal</h2>
+</a>
+
+Warning modals to alert users about potential issues before proceeding.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ModalDemo type="warning" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="modal-warning" code={`<Button
+  variant="contained"
+  sx={{ backgroundColor: "warning.main", color: "white" }}
+  onClick={() => setOpen(true)}
+>
+  Proceed with Caution
+</Button>
+<Modal open={open} closeModal={() => setOpen(false)} title="Warning">
+  <ModalBody>
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+      <WarningIcon sx={{ color: "warning.main", fontSize: 32 }} />
+      <Box>
+        <Typography variant="body1" paragraph>
+          This action may affect system performance.
+        </Typography>
+        <Typography variant="body2" color="textSecondary">
+          Consider performing this during off-peak hours.
+        </Typography>
+      </Box>
+    </Box>
+  </ModalBody>
+  <ModalFooter variant="filled">
+    <ModalButtonSecondary onClick={() => setOpen(false)}>
+      Cancel
+    </ModalButtonSecondary>
+    <ModalButtonPrimary onClick={() => setOpen(false)}>
+      Continue Anyway
+    </ModalButtonPrimary>
+  </ModalFooter>
+</Modal>`} />
+</div>
+
+<a id="success-modal">
+  <h2>Success Modal</h2>
+</a>
+
+Success modals to provide positive feedback and confirm task completion.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ModalDemo type="success" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="modal-success" code={`<Button variant="contained" color="success" onClick={() => setOpen(true)}>
+  Complete Action
+</Button>
+<Modal open={open} closeModal={() => setOpen(false)} title="Success!">
+  <ModalBody>
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+      <CheckCircleIcon color="success" sx={{ fontSize: 48 }} />
+      <Box>
+        <Typography variant="h6" gutterBottom>
+          Operation Completed Successfully
+        </Typography>
+        <Typography variant="body1">
+          Your changes have been saved and are now active.
+        </Typography>
+      </Box>
+    </Box>
+  </ModalBody>
+  <ModalFooter variant="filled">
+    <ModalButtonPrimary onClick={() => setOpen(false)}>
+      Continue
+    </ModalButtonPrimary>
+  </ModalFooter>
+</Modal>`} />
+</div>
+
+<a id="error-modal">
+  <h2>Error Modal</h2>
+</a>
+
+Communicate failures clearly with friendly language.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ModalDemo type="error" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="modal-error" code={`<Button variant="contained" color="error" onClick={() => setOpen(true)}>
+  Trigger Error
+</Button>
+<Modal open={open} closeModal={() => setOpen(false)} title="Upload Failed">
+  <ModalBody>
+    <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
+      <ErrorIcon color="error" sx={{ fontSize: 32 }} />
+      <Box>
+        <Typography variant="h6" gutterBottom>
+          File Upload Failed
+        </Typography>
+        <Typography variant="body1" paragraph>
+          The file could not be uploaded due to network issue.
+        </Typography>
+        <Typography variant="body2" color="textSecondary">
+          <strong>What you can do:</strong> Check connection and try again.
+        </Typography>
+      </Box>
+    </Box>
+  </ModalBody>
+  <ModalFooter variant="filled">
+    <ModalButtonSecondary onClick={() => setOpen(false)}>
+      Cancel
+    </ModalButtonSecondary>
+    <ModalButtonPrimary onClick={() => setOpen(false)}>
+      Try Again
+    </ModalButtonPrimary>
+  </ModalFooter>
+</Modal>`} />
+</div>

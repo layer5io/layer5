@@ -1,0 +1,70 @@
+---
+title: Toolbar Code
+component: toolbar
+description: The Toolbar is a horizontal layout container used to organize and group actions or interactive elements. It helps streamline workflows and keeps related actions in one place, providing users with easy access to frequently used commands.
+---
+
+import { Toolbar, Button } from "@sistent/sistent";
+import ToolbarDemo from "./ToolbarDemo";
+
+Toolbars provide quick access to commonly used actions grouped logically in a horizontal or vertical container.
+
+The following examples demonstrate how to implement various toolbar configurations in your application.
+
+<a id="Basic Toolbar">
+  <h2>Basic Toolbar</h2>
+</a>
+
+The basic toolbar contains a set of buttons that represent key actions. Each button can perform a specific task when clicked.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ToolbarDemo type="basic" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-toolbar" code={`<Toolbar>
+  <Button>Home</Button>
+  <Button>Profile</Button>
+  <Button>Settings</Button>
+</Toolbar>`} />
+</div>
+
+<a id="Fixed Toolbar">
+  <h2>Fixed Toolbar</h2>
+</a>
+
+Fixed toolbars remain visible when scrolling and provide persistent access to navigation. Use the `fixed` prop to create a toolbar that stays in place during scrolling.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ToolbarDemo type="fixed" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="fixed-toolbar" code={`<Toolbar fixed>
+  <Button><ArrowBackIcon /></Button>
+  <Button><ArrowForwardIcon /></Button>
+  <Button><RefreshIcon /></Button>
+</Toolbar>
+/* Further content goes here. */`} />
+</div>
+
+<a id="Dense Toolbar">
+  <h2>Dense Toolbar</h2>
+</a>
+
+Dense toolbars are more compact, saving vertical space. Use the `variant="dense"` prop to create a more compact toolbar.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ToolbarDemo type="dense" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="dense-toolbar" code={`<Toolbar variant="dense">
+  <Button><HomeIcon /></Button>
+  <Button><SearchIcon /></Button>
+  <Button><SettingsIcon /></Button>
+</Toolbar>`} />
+</div>

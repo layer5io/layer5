@@ -1,0 +1,102 @@
+---
+title: Avatar Code
+component: avatar
+description: The Avatar component offers a flexible visual representation of users or entities, supporting profile images, initials, icons, and customizable styles.
+---
+
+import { Avatar } from "@sistent/sistent";
+import { FaUser } from "@react-icons/all-files/fa/FaUser";
+import user from "../../../../assets/images/sistent/placeholder/user.webp";
+
+The Avatar component offers a flexible visual representation of users or entities, supporting profile images, initials, icons, and customizable styles.
+
+<h3>Avatar Implementation Variants</h3>
+
+<h4>Image Avatar</h4>
+Display user profile images.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Avatar src={user} alt="User Name" />
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="image-avatar" code={`<Avatar src="/path/to/user-image.jpg" alt="User Name" />`} />
+</div>
+
+<h4>Initials Avatar</h4>
+Use initials when an image is unavailable.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Avatar>JD</Avatar>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="initials-avatar" code={`<Avatar>JD</Avatar>`} />
+</div>
+
+<h4>Icon Avatar</h4>
+Use icons for generic representation.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Avatar>
+          <FaUser />
+        </Avatar>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="icon-avatar" code={`<Avatar><UserIcon /></Avatar>`} />
+</div>
+
+<h4>Sized Avatars</h4>
+Adjust avatar sizes to fit various contexts.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', gap: '8px', alignItems: 'center', justifyContent: 'center' }}>
+         <Avatar size="small" />
+         <Avatar size="medium" />
+         <Avatar size="large" />
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="sized-avatar" code={`<>
+  <Avatar size="small" />
+  <Avatar size="medium" />
+  <Avatar size="large" />
+</>`} />
+</div>
+
+<h4>Custom Styling</h4>
+Apply custom styles using the sx prop.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Avatar
+          alt="Styled Avatar"
+          sx={{
+            border: "1px solid",
+            boxShadow: 2,
+          }}
+        >S</Avatar>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="custom-avatar" code={`<Avatar
+  sx={{
+    border: '1px solid',
+    boxShadow: 2,
+  }}
+>S</Avatar>`} />
+</div>

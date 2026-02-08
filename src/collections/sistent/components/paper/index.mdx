@@ -1,0 +1,59 @@
+---
+name: "Paper"
+title: Paper
+published: true
+component: paper
+description: The Paper component provides an elevated surface for displaying content. It mimics the behavior of real-world surfaces with shadow effects, supporting Material Design's elevation system.
+---
+
+import { Paper } from "@sistent/sistent";
+
+The Paper component is useful for designs that require elevated surfaces, such as cards or modals, and offers multiple configuration options like elevation, variants, and corner styles.
+
+<a id="Elevation">
+  <h2>Elevation</h2>
+</a>
+
+Paper can be configured with different `elevation` levels to establish a visual hierarchy. The elevation prop determines the shadow depth, with values ranging from 0 (no shadow) to 24 (maximum shadow).
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Paper elevation={3} sx={{ padding: "16px", margin: "auto", width: "50%", textAlign: "center" }}>
+        Paper with Elevation 3
+      </Paper>
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Outlined">
+  <h2>Outlined</h2>
+</a>
+
+For designs requiring minimal shadows, the `outlined` variant can be used instead of the default elevated one.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Paper variant="outlined" sx={{ padding: "16px", margin: "auto", width: "50%", textAlign: "center" }}>
+        Outlined Paper Variant
+      </Paper>
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Corners">
+  <h2>Corners</h2>
+</a>
+
+The Paper component has rounded corners by default, but you can use the `square` prop to remove rounding.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Paper square sx={{ padding: "16px", margin: "auto", width: "50%", textAlign: "center" }}>
+        Square Corners
+      </Paper>
+    </ThemeWrapper>
+  </div>
+</div>

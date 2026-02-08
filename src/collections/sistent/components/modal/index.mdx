@@ -1,0 +1,41 @@
+---
+name: "Modal"
+title: Modal
+published: true
+component: modal
+description: A modal is a container that appears in front of the main content on a page, providing important information or an actionable piece of content for users to execute. Modals focus user attention and prevent interaction with the underlying page until dismissed.
+---
+
+import { Button } from "@sistent/sistent";
+import ModalDemo from "./ModalDemo";
+
+The Modal component is essential for communicating important information and collecting user input without losing context. It provides immediate focus and ensures users complete required actions before proceeding.
+
+<a id="Basic Example">
+  <h2>Basic Modal</h2>
+</a>
+
+A simple modal with basic content and standard dismiss functionality. This is the default behavior for displaying information to users.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+       <ModalDemo type="basic" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Modal Types">
+  <h2>Modal Variations</h2>
+</a>
+
+The Modal component supports various types and configurations to handle different use cases and user interactions.
+
+- **Basic Modal:** Simple content display with minimal interaction.
+- **Confirmation Modal:** Require user confirmation for important or destructive actions.
+- **Action Modal:** Facilitate task completion with forms and interactive controls.
+- **Informational Modal:** Provide detailed information, help content, or contextual guidance.
+- **Warning Modal:** Alert users to potential issues or important considerations.
+- **Success Modal:** Confirm successful completion of actions with positive feedback.
+- **Error Modal:** Communicate failures or issues requiring user attention.
+- **Nested Modal:** Secondary modals that open from within existing modals.

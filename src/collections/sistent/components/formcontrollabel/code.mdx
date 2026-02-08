@@ -1,0 +1,75 @@
+---
+title: Form Control Label Code
+component: formcontrollabel
+description: FormControlLabel is a wrapper component that pairs a label with a control such as a checkbox or a radio button. It enhances accessibility by allowing users to click the label to toggle the control.
+---
+
+import { FormControlLabel, Checkbox, Radio, Switch } from "@sistent/sistent";
+import FormControlLabelDemo from "./FormControlLabelDemo";
+
+The `FormControlLabel` component wraps controls like checkboxes, radios, and switches, adding a label to the right side by default. It improves accessibility and user experience by combining form elements with clear labeling.
+
+<a id="Checkbox Usage">
+  <h3>With Checkbox</h3>
+</a>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <FormControlLabelDemo type="checkbox" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="formcontrollabel-checkbox" code={`<FormControlLabel
+  control={<Checkbox />}
+  label="Accept Terms"
+/>`} />
+</div>
+
+<a id="Disabled Example">
+  <h3>Disabled Example</h3>
+</a>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <FormControlLabelDemo type="disabled" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="formcontrollabel-disabled" code={`<FormControlLabel
+  control={<Checkbox disabled />}
+  label="Disabled Option"
+  disabled
+/>`} />
+</div>
+
+<a id="Radio Usage">
+  <h3>With Radio Button</h3>
+</a>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <FormControlLabelDemo type="radio" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="formcontrollabel-radio" code={`<FormControlLabel
+  control={<Radio />}
+  label="Option A"
+/>`} />
+</div>
+
+<a id="Switch Usage">
+  <h3>With Switch</h3>
+</a>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <FormControlLabelDemo type="switch" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="formcontrollabel-switch" code={`<FormControlLabel
+  control={<Switch />}
+  label="Enable Notifications"
+/>`} />
+</div>

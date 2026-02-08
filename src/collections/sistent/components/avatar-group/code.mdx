@@ -1,0 +1,150 @@
+---
+title: AvatarGroup Code
+component: avatar-group
+description: The AvatarGroup component is used to visually represent a collection of users or entities in a compact and organized layout. It's ideal for showcasing team members, collaborators, or participants, and is often used in dashboards, cards, and collaborative tools. AvatarGroup handles overlapping, spacing, and overflow logic to ensure clarity even with limited space.
+---
+
+import { Avatar, AvatarGroup } from "@sistent/sistent";
+import user1 from "../../../../assets/images/sistent/placeholder/user.webp";
+import user2 from "../../../../assets/images/sistent/placeholder/user.webp";
+import user3 from "../../../../assets/images/sistent/placeholder/user.webp";
+import user4 from "../../../../assets/images/sistent/placeholder/user.webp";
+
+The AvatarGroup component helps visually group multiple avatars in a compact and meaningful layout, often representing users in a shared context.
+
+<h3>AvatarGroup Implementation Variants</h3>
+
+<h4>Basic AvatarGroup</h4>
+Display a horizontal group of avatars with default overlap.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <AvatarGroup>
+        <Avatar src={user1} alt="User 1" />
+        <Avatar src={user2} alt="User 2" />
+        <Avatar src={user3} alt="User 3" />
+      </AvatarGroup>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-group" code={`<AvatarGroup>
+  <Avatar src="/user1.jpg" alt="User 1" />
+  <Avatar src="/user2.jpg" alt="User 2" />
+  <Avatar src="/user3.jpg" alt="User 3" />
+</AvatarGroup>`} />
+</div>
+
+<h4>Max Avatars</h4>
+Limit the number of visible avatars using the `max` prop.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <AvatarGroup max={3}>
+        <Avatar src={user1} alt="User 1" />
+        <Avatar src={user2} alt="User 2" />
+        <Avatar src={user3} alt="User 3" />
+        <Avatar src={user4} alt="User 4" />
+      </AvatarGroup>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="max-group" code={`<AvatarGroup max={3}>
+  <Avatar src="/user1.jpg" />
+  <Avatar src="/user2.jpg" />
+  <Avatar src="/user3.jpg" />
+  <Avatar src="/user4.jpg" />
+</AvatarGroup>`} />
+</div>
+
+<h4>Custom Spacing</h4>
+Control the spacing between avatars.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <AvatarGroup spacing="medium">
+        <Avatar src={user1} />
+        <Avatar src={user2} />
+        <Avatar src={user3} />
+      </AvatarGroup>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="spacing-group" code={`<AvatarGroup spacing="medium">
+  <Avatar src="/user1.jpg" />
+  <Avatar src="/user2.jpg" />
+  <Avatar src="/user3.jpg" />
+</AvatarGroup>`} />
+</div>
+
+<h4>Shape Variants</h4>
+Mix avatar shape variants like square and rounded.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <AvatarGroup>
+        <Avatar variant="rounded" src={user1} />
+        <Avatar variant="square" src={user2} />
+        <Avatar src={user3} />
+      </AvatarGroup>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="variant-group" code={`<AvatarGroup>
+  <Avatar variant="rounded" src="/user1.jpg" />
+  <Avatar variant="square" src="/user2.jpg" />
+  <Avatar src="/user3.jpg" />
+</AvatarGroup>`} />
+</div>
+
+<h4>Total Avatars</h4>
+You can indicate the total number of avatars using the `total` prop, even if not all are rendered.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <AvatarGroup total={7}>
+        <Avatar src={user1} />
+        <Avatar src={user2} />
+        <Avatar src={user3} />
+      </AvatarGroup>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="total-avatars" code={`<AvatarGroup total={7}>
+  <Avatar src="/user1.jpg" />
+  <Avatar src="/user2.jpg" />
+  <Avatar src="/user3.jpg" />
+</AvatarGroup>`} />
+</div>
+
+<h4>Custom Surplus Renderer</h4>
+Customize the overflow display using the `renderSurplus` prop for more control over surplus appearance.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <AvatarGroup
+        max={2}
+        renderSurplus={(surplus) => (
+          <span>+{surplus.toString()[0]}k</span>
+        )}
+        total={4251}
+      >
+        <Avatar src={user1} />
+        <Avatar src={user2} />
+        <Avatar src={user3} />
+        <Avatar src={user4} />
+      </AvatarGroup>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="custom-surplus" code={`<AvatarGroup
+  max={2}
+  renderSurplus={(surplus) => (
+    <Avatar sx={{ bgcolor: 'secondary.main' }}>{\`+\${surplus} more\`}</Avatar>
+  )}
+>
+  <Avatar src="/user1.jpg" />
+  <Avatar src="/user2.jpg" />
+  <Avatar src="/user3.jpg" />
+  <Avatar src="/user4.jpg" />
+</AvatarGroup>`} />
+</div>

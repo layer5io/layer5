@@ -1,0 +1,52 @@
+---
+name: "Circular Progress"
+title: Circular Progress
+published: true
+component: circularprogress
+description: The Circular Progress component displays a circular loading indicator that represents either determinate or indeterminate progress in your application. It's commonly used to show loading states, progress of operations, or completion percentages.
+---
+
+import { CircularProgress } from "@sistent/sistent";
+
+Circular Progress indicators inform users about the status of ongoing processes, such as loading an application, submitting a form, or updating data. They help maintain user engagement by providing visual feedback about the progress of operations.
+
+<a id="Usage">
+  <h2>Usage</h2>
+</a>
+
+The component can be used in two main variants:
+
+- **Determinate:** Shows definite progress with a specific percentage value
+- **Indeterminate:** Shows an animation indicating an unspecified wait time
+
+<a id="Basic Example">
+  <h3>Basic Example</h3>
+</a>
+
+Below is a simple example of how to use the CircularProgress component.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <CircularProgress />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Key Features">
+  <h2>Key Features</h2>
+</a>
+
+You can customize the appearance of the Circular Progress using various props to define how the component renders relative to its container element.
+
+<h3>Variants</h3>
+
+- **Determinate:** Displays specific progress percentage
+- **Indeterminate:** Shows continuous animation for unknown duration processes
+
+<h3>Customization Options</h3>
+
+- **Size:** Adjustable diameter of the progress circle
+- **Thickness:** Controllable width of the progress arc
+- **Color:** Customizable colors for both track and progress
+- **Value:** Percentage complete (0-100) for determinate variant

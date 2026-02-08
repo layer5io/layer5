@@ -1,0 +1,29 @@
+---
+title: RadioGroup Guidance
+component: radiogroup
+description: The RadioGroup component allows users to select one option from a set of mutually exclusive choices. It ensures accessibility and consistency within the Sistent design system.
+---
+
+import { RadioGroup, Radio, FormControlLabel } from "@sistent/sistent";
+
+The RadioGroup component allows the user to select one option from a set.
+
+<a id="Function">
+  <h2>Function</h2>
+</a>
+
+The RadioGroup component helps achieve the following functions:
+
+- **Single Selection:** Ensures that only one option can be selected at a time, making it ideal for mutually exclusive choices.
+- **Form Inputs:** Commonly used in forms where users need to select from predefined options, such as survey questions or settings.
+- **Custom UI Controls:** Can be styled and customized to fit different design requirements and themes.
+
+<a id="BestPractices">
+  <h2>Best Practices</h2>
+</a>
+
+- **Single-choice only:** Use RadioGroup when users must select just one option from a set. For multiple selections, use checkboxes instead.
+- **Clear labeling:** Provide short, descriptive labels for each radio option to help users understand their choices quickly.
+- **Logical grouping:** Visually and semantically group related radio options together to improve clarity and accessibility.
+- **Default selection:** Set a sensible default value to guide users and streamline their decision-making process.
+- **Horizontal layout:** Use the `row` prop for horizontal alignment when space is limited or when options are closely related.

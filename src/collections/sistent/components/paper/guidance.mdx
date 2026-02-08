@@ -1,0 +1,44 @@
+---
+title: Paper Guidance
+component: paper
+description: The Paper component provides an elevated surface for displaying content. It mimics the behavior of real-world surfaces with shadow effects, supporting Material Design's elevation system.
+---
+
+import { Paper } from "@sistent/sistent";
+
+The Paper component provides an elevated surface for displaying content. It mimics the behavior of real-world surfaces with shadow effects, supporting Material Design's elevation system.
+
+<a id="Usage Guidelines">
+  <h2>Usage Guidelines</h2>
+</a>
+
+When using the Paper component, follow these guidelines to ensure consistency and usability across your designs.
+
+<a id="Elevation Guidelines">
+  <h3>Elevation Guidelines</h3>
+</a>
+
+- Use lower elevations (0-3) for subtle surfaces such as cards and small sections.
+- Higher elevations (8-24) are best for modals or key areas that need emphasis.
+- Be mindful of the dark mode behavior, where higher elevations result in a lighter background.
+
+<a id="Variant Guidelines">
+  <h3>Variant Guidelines</h3>
+</a>
+
+- Use the `outlined` variant for areas where shadows might feel visually overwhelming.
+- Stick to the default elevation variant for core components requiring shadow depth.
+
+<a id="Corners Guidelines">
+  <h3>Corners Guidelines</h3>
+</a>
+
+- Rounded corners are more user-friendly and should be preferred unless a strict design requires square corners.
+- Use square corners sparingly, mostly for components meant to indicate precision or alignment with grid systems.
+
+<a id="Accessibility">
+  <h2>Accessibility</h2>
+</a>
+
+- Make sure elevated surfaces have sufficient contrast with the background.
+- Use clear and concise labels or headings for content within Paper components to enhance accessibility.

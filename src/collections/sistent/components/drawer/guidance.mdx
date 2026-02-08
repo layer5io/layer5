@@ -1,0 +1,79 @@
+---
+title: Drawer Guidance
+component: drawer
+description: Navigation drawers provide access to destinations and app functionality, such as switching accounts. They can be permanently on-screen or controlled by a menu icon.
+---
+
+import DrawerDemo from "./DrawerDemo";
+
+Navigation drawers provide access to destinations and app functionality, such as switching accounts. They can be permanently on-screen or controlled by a menu icon.
+
+This guide provides comprehensive information on when and how to use drawers effectively in your applications.
+
+<a id="Usage">
+  <h2>Usage</h2>
+</a>
+
+Drawers provide access to destinations and app functionality without navigating away from the current page. They help organize secondary content and actions, making your interface cleaner and more focused.
+
+- Use drawers for navigation menus in mobile and responsive applications
+- Organize filters and sorting options that need to be accessible but not always visible
+- Present settings panels that complement the main interface
+- Display contextual information without disrupting the user's workflow
+
+<a id="Basic Example">
+  <h3>Basic Example</h3>
+</a>
+
+A simple navigation drawer that slides in from the left side of the screen.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+      <DrawerDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="When to Use">
+  <h2>When to Use</h2>
+</a>
+
+Drawers are best suited for specific use cases where content needs to be accessible but not always visible. Here are common scenarios:
+
+<h3>Navigation Menus</h3>
+
+Drawers are ideal for primary navigation in mobile and responsive applications, providing access to main sections without cluttering the interface.
+
+<h3>Settings and Configuration</h3>
+
+Use right-anchored drawers for settings panels that allow users to configure preferences without leaving their current context.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+      <DrawerDemo anchor="right" />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<h3>Filters and Sorting</h3>
+
+Drawers work well for filter panels in e-commerce or data-heavy applications, allowing users to refine content without losing their place.
+
+<a id="Best Practices">
+  <h2>Best Practices</h2>
+</a>
+
+Follow these guidelines to ensure drawers are effective and user-friendly:
+
+- **Clear Purpose:** Use drawers for navigation, filters, or supplementary content. Avoid using them for critical actions or primary content.
+- **Appropriate Width:** Keep drawer width between 240-360px on desktop. On mobile, drawers can be up to 80% of screen width.
+- **Positioning:** Use left anchors for primary navigation, right anchors for settings/filters, and top/bottom for mobile-specific patterns.
+- **Responsive Behavior:** Use temporary drawers on mobile (< 960px) and consider persistent or permanent drawers on desktop (> 960px).
+- **Keyboard Support:** Ensure drawers can be opened/closed with keyboard (Escape key) and focus is managed properly.
+- **Clear Dismissal:** Provide multiple ways to close temporary drawers: backdrop click, close button, or Escape key.
+- **Content Organization:** Keep drawer content focused and well-organized. Use lists, dividers, and headers to structure information.
+- **Performance:** Lazy load drawer content when possible to improve initial page load performance.
+- **Accessibility:** Use proper ARIA labels, manage focus trap within the drawer, and ensure screen reader compatibility.
+- **Animation:** Use smooth slide-in/out transitions. Avoid overly long animations that slow down user interactions.

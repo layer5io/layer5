@@ -1,0 +1,105 @@
+---
+name: "Tooltip"
+title: Tooltip
+published: true
+component: tooltip
+description: The Tooltip component displays informative text when users hover over, focus on, or tap an element. Tooltips are designed to enhance accessibility and user understanding of interface elements.
+---
+
+import TooltipDemo from "./TooltipDemo";
+
+The Tooltip component displays informative text when users hover over, focus on, or tap an element. Tooltips are designed to enhance accessibility and user understanding of interface elements.
+
+<a id="Basic Tooltip">
+  <h2>Basic Tooltip</h2>
+</a>
+
+A simple tooltip that displays helpful information when hovering over an icon button.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TooltipDemo type="basic" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Custom Position</h3>
+
+Tooltips support different placements, allowing flexibility depending on your layout requirements.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TooltipDemo type="custom-position" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Disabled Elements</h3>
+
+By default disabled elements like button do not trigger user interactions so a `Tooltip` will not activate on normal events like hover. To accommodate disabled elements, add a simple wrapper element, such as a `span`.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TooltipDemo type="disabled" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Distance from anchor">
+  <h2>Distance from anchor</h2>
+</a>
+
+To adjust the distance between the tooltip and its anchor, you can use the slotProps prop to modify the offset of the popper.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TooltipDemo type="offset" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Variable width">
+  <h2>Variable width</h2>
+</a>
+
+The variant prop in Tooltip allows you to control the tooltips size with predefined styles (standard or small). This makes it easier to adjust the tooltip to fit various UI requirements quickly and consistently.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TooltipDemo type="variable-width" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Follow cursor">
+  <h2>Follow Cursor</h2>
+</a>
+
+Tooltips can be configured to follow the cursor, making it easier to read the content.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TooltipDemo type="follow-cursor" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Showing and hiding">
+  <h2>Showing and Hiding</h2>
+</a>
+
+The Tooltip is normally shown immediately when the user's mouse hovers over the element, and hides immediately when the user's mouse leaves. A delay in showing or hiding the tooltip can be added through the `enterDelay` and `leaveDelay` props.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TooltipDemo type="show-hide" />
+    </ThemeWrapper>
+  </div>
+</div>

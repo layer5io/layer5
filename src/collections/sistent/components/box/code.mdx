@@ -1,0 +1,137 @@
+---
+title: Box Code
+component: box
+description: The Box component is a versatile, theme-aware container in Sistent, ideal for styling and layout customization. It supports the sx prop for easy, responsive styling and can render as any HTML element.
+---
+
+import { Box } from "@sistent/sistent";
+
+The `Box` component is a flexible and foundational container in Sistent, designed to structure and style content. It provides quick access to the theme and CSS utilities, allowing for easy customization and responsive design. Using the sx prop, developers can apply CSS styles directly with theme-aware properties, making Box ideal for layouts, spacing, and other UI adjustments. It can render as any HTML element using the component prop, offering high versatility in both structure and styling.
+
+<a id="Basic Box">
+  <h2>Basic Box Example</h2>
+</a>
+
+A simple Box component can be used to contain and structure other elements. Here, the Box serves as a basic container without any styling applied.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Box>
+        <p>This is a basic Box component.</p>
+      </Box>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="box-basic" code={`<Box sx={{ bgcolor: "#ffeb3b", padding: 4, height: "50vh" }}>
+    <p>
+      This is a Box component with custom background and padding.
+    </p>
+</Box>`} />
+</div>
+
+<a id="Styled Box">
+  <h2>Styled Box Example</h2>
+</a>
+
+You can add custom styles to a Box component by applying `sx` properties. In this example, the Box has a background color, padding, and a defined height.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Box sx={{ bgcolor: "#ffeb3b", padding: 4, height: "50vh" }}>
+        <p style={{ color: "black" }}>
+          This is a Box component with custom background and padding.
+        </p>
+      </Box>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="box-styled" code={`<Box
+    sx={{
+      bgcolor: { xs: "#cfe8fc", md: "#ffeb3b" },
+      padding: { xs: 2, md: 4 },
+      height: "50vh",
+    }}
+  >
+    <p style={{ color: "black" }}>
+      This Box is responsive, changing style based on screen size.
+    </p>
+</Box>`} />
+</div>
+
+<a id="Responsive Box">
+  <h2>Responsive Box Example</h2>
+</a>
+
+The Box component also supports responsive styling using the `sx` prop. In this example, the Box adjusts its padding and background color based on screen size.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Box
+        sx={{
+          bgcolor: { xs: "#cfe8fc", md: "#ffeb3b" },
+          padding: { xs: 2, md: 4 },
+          height: "50vh",
+        }}
+      >
+        <p style={{ color: "black" }}>
+          This Box is responsive, changing style based on screen size.
+        </p>
+      </Box>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="box-responsive" code={`<Box
+    sx={{
+      bgcolor: { xs: "#cfe8fc", md: "#ffeb3b" },
+      padding: { xs: 2, md: 4 },
+      height: "50vh",
+    }}
+    >
+    <p style={{ color: "black" }}>
+      This Box is responsive, changing style based on screen size.
+    </p>
+</Box>`} />
+</div>
+
+<a id="Interactive Box">
+  <h2>Interactive Box Example</h2>
+</a>
+
+Here’s an example where the Box component includes hover effects to create a more interactive experience. This is useful for buttons, cards, and other clickable elements.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Box
+        sx={{
+          bgcolor: "#cfe8fc",
+          height: "50vh",
+          padding: 4,
+          transition: "0.3s",
+          "&:hover": {
+            bgcolor: "#ffeb3b",
+            cursor: "pointer",
+          },
+        }}
+      >
+        <p style={{ color: "black" }}>
+          Hover over this Box to see the interactive effect.
+        </p>
+      </Box>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="box-interactive" code={`<Box
+    sx={{
+      bgcolor: "#cfe8fc",
+      height: "50vh",
+      padding: 4,
+      transition: "0.3s",
+      "&:hover": {
+        bgcolor: "#ffeb3b",
+        cursor: "pointer",
+      },
+    }}
+    >
+      <p style={{ color: "black" }}>Hover over this Box to see the interactive effect.</p>
+</Box>`} />
+</div>

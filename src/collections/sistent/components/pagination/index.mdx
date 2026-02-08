@@ -1,0 +1,82 @@
+---
+name: "Pagination"
+title: Pagination
+published: true
+component: pagination
+description: The Pagination component helps users navigate through multiple pages of content. It provides a clear interface for moving between pages and understanding the current position within a larger dataset.
+---
+
+import { Pagination, Box } from "@sistent/sistent";
+import PaginationDemo from "./PaginationDemo";
+
+Pagination is an essential element for navigating large datasets or multiple pages of information. It enables users to move between pages in a user-friendly and intuitive manner. Pagination helps to split large content into smaller sections to improve the overall user experience.
+
+<a id="Basic Usage">
+  <h2>Basic Usage</h2>
+</a>
+
+Basic pagination allows users to navigate through numbered pages. The current page is highlighted, and users can click on page numbers or arrows to move between pages.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PaginationDemo type="basic" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Variants">
+  <h2>Variants</h2>
+</a>
+
+The Pagination component supports multiple variants to match your design needs, including outlined, text, and contained styles. These variants provide flexibility in integrating the component into your layout while maintaining a consistent visual appearance.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PaginationDemo type="variants" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Sizes">
+  <h2>Sizes</h2>
+</a>
+
+The Pagination component can also be customized in terms of size to suit different use cases. For smaller screens, compact pagination may be preferred, while larger pagination can be used for better visibility on larger screens.
+
+<h3>Large</h3>
+
+A larger pagination component that enhances visibility and interaction on larger displays.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Pagination count={10} size="large" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Medium</h3>
+
+A medium-sized pagination component that balances compactness and visibility.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Pagination count={10} size="medium" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>Small</h3>
+
+A smaller pagination component suitable for compact designs or when screen real estate is limited.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Pagination count={10} size="small" />
+    </ThemeWrapper>
+  </div>
+</div>

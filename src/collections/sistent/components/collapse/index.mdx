@@ -1,0 +1,40 @@
+---
+name: "Collapse"
+title: Collapse
+published: true
+component: collapse
+description: The Collapse component allows you to create collapsible content areas that can be toggled to show or hide content. It's commonly used for FAQs, accordions, and other UI elements where space needs to be managed efficiently.
+---
+
+import { Collapse, Button } from "@sistent/sistent";
+import CollapseDemo from "./CollapseDemo";
+
+The Collapse component provides a smooth, animated way to show and hide content. It's particularly useful for creating space-efficient interfaces and progressive disclosure of information.
+
+<a id="Basic Collapse">
+  <h2>Basic Collapse</h2>
+</a>
+
+A simple collapsible section that can be toggled with a button click.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <CollapseDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Default Expanded">
+  <h2>Default Expanded</h2>
+</a>
+
+A collapsible section that starts expanded by default.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <CollapseDemo defaultExpanded={true} />
+    </div>
+  </ThemeWrapper>
+</Row>

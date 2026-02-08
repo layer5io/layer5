@@ -7,7 +7,7 @@ import SistentPagination from "../../../../../components/SistentNavigation/pagin
 
 import { Link } from "gatsby";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
-import { CodeBlock } from "../../components/button/code-block";
+// CodeBlock replaced by Code from components/CodeBlock
 import Code from "../../../../../components/CodeBlock";
 import { SistentThemeProvider, Button } from "@sistent/sistent";
 
@@ -87,7 +87,7 @@ const SistentAbout = () => {
             </a>
             <p>To install the Sistent NPM package, run:</p>
             <div className="showcase">
-              <CodeBlock name="installation" code={codes[0]} />
+              <Code codeString={codes[0]} />
             </div>
             <p>
               After installation, you can import Sistent theme and any Sistent
@@ -103,7 +103,7 @@ const SistentAbout = () => {
                   <Button variant="text">Text</Button>
                 </SistentThemeProvider>
               </div>
-              <CodeBlock name="checkbox" code={codes[1]} />
+              <Code codeString={codes[1]} />
             </div>
 
             <a id="Using local Sistent">

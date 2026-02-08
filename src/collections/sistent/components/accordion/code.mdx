@@ -1,0 +1,231 @@
+---
+title: Accordion Code
+component: accordion
+description: An accordion is a vertically stacked list of headers that can be clicked to reveal or hide associated content. It allows users to toggle between hiding and showing large amounts of content in a compact space.
+---
+
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Accordion, AccordionSummary, AccordionDetails, Typography } from "@sistent/sistent";
+import ControlledAccordion from "./ControlledAccordion";
+
+
+
+<a id="Basic Accordion">
+  <h2>Basic Accordion</h2>
+</a>
+
+A simple accordion with multiple independent panels. Each panel can be expanded and collapsed without affecting others.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ width: "100%" }}>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1-content"
+            id="panel1-header"
+          >
+            <Typography>Accordion 1</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              This is the content for the first accordion panel. You can add any content here, including text, images, or other components.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel2-content"
+            id="panel2-header"
+          >
+            <Typography>Accordion 2</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              This is the content for the second accordion panel. Accordions can contain rich content and media.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-accordion" code={`<SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  <Accordion>
+    <AccordionSummary
+      expandIcon={<ExpandMoreIcon />}
+      aria-controls="panel1-content"
+      id="panel1-header"
+    >
+      <Typography>Accordion 1</Typography>
+    </AccordionSummary>
+    <AccordionDetails>
+      <Typography>
+        This is the content for the first accordion panel.
+      </Typography>
+    </AccordionDetails>
+  </Accordion>
+  <Accordion>
+    <AccordionSummary
+      expandIcon={<ExpandMoreIcon />}
+      aria-controls="panel2-content"
+      id="panel2-header"
+    >
+      <Typography>Accordion 2</Typography>
+    </AccordionSummary>
+    <AccordionDetails>
+      <Typography>
+        This is the content for the second accordion panel.
+      </Typography>
+    </AccordionDetails>
+  </Accordion>
+</SistentThemeProvider>`} />
+</div>
+
+<a id="Controlled Accordion">
+  <h2>Controlled Accordion</h2>
+</a>
+
+A controlled accordion where the expanded state is managed by React state. This allows only one panel to be expanded at a time, providing a more focused user experience.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ControlledAccordion />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="controlled-accordion" code={`const [expanded, setExpanded] = useState(false);
+
+const handleChange = (panel) => (event, isExpanded) => {
+  setExpanded(isExpanded ? panel : false);
+};
+
+<SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  <Accordion 
+    expanded={expanded === 'panel1'} 
+    onChange={handleChange('panel1')}
+  >
+    <AccordionSummary
+      expandIcon={<ExpandMoreIcon />}
+      aria-controls="panel1bh-content"
+      id="panel1bh-header"
+    >
+      <Typography>General settings</Typography>
+    </AccordionSummary>
+    <AccordionDetails>
+      <Typography>
+        This accordion is controlled. Only one panel can be open at a time.
+      </Typography>
+    </AccordionDetails>
+  </Accordion>
+  <Accordion 
+    expanded={expanded === 'panel2'} 
+    onChange={handleChange('panel2')}
+  >
+    <AccordionSummary
+      expandIcon={<ExpandMoreIcon />}
+      aria-controls="panel2bh-content"
+      id="panel2bh-header"
+    >
+      <Typography>Users</Typography>
+    </AccordionSummary>
+    <AccordionDetails>
+      <Typography>
+        Content for the second panel.
+      </Typography>
+    </AccordionDetails>
+  </Accordion>
+</SistentThemeProvider>`} />
+</div>
+
+<a id="Default Expanded">
+  <h2>Default Expanded</h2>
+</a>
+
+Use the <code>defaultExpanded</code> prop to have an accordion panel expanded by default when the component mounts.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ width: "100%" }}>
+        <Accordion defaultExpanded>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1-content"
+            id="panel1-header"
+          >
+            <Typography>Expanded by Default</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              This accordion panel is expanded by default using the defaultExpanded prop. Users can still collapse it.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="default-expanded" code={`<SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  <Accordion defaultExpanded>
+    <AccordionSummary
+      expandIcon={<ExpandMoreIcon />}
+      aria-controls="panel1-content"
+      id="panel1-header"
+    >
+      <Typography>Expanded by Default</Typography>
+    </AccordionSummary>
+    <AccordionDetails>
+      <Typography>
+        This accordion panel is expanded by default using the 
+        defaultExpanded prop.
+      </Typography>
+    </AccordionDetails>
+  </Accordion>
+</SistentThemeProvider>`} />
+</div>
+
+<a id="Disabled Accordion">
+  <h2>Disabled Accordion</h2>
+</a>
+
+Use the <code>disabled</code> prop to prevent users from interacting with an accordion panel.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ width: "100%" }}>
+        <Accordion disabled>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1-content"
+            id="panel1-header"
+          >
+            <Typography>Disabled Accordion</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              This content cannot be accessed as the accordion is disabled.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="disabled-accordion" code={`<SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  <Accordion disabled>
+    <AccordionSummary
+      expandIcon={<ExpandMoreIcon />}
+      aria-controls="panel1-content"
+      id="panel1-header"
+    >
+      <Typography>Disabled Accordion</Typography>
+    </AccordionSummary>
+    <AccordionDetails>
+      <Typography>
+        This content cannot be accessed as the accordion is disabled.
+      </Typography>
+    </AccordionDetails>
+  </Accordion>
+</SistentThemeProvider>`} />
+</div>

@@ -1,0 +1,164 @@
+---
+name: "Badge"
+title: Badge
+published: true
+component: badge
+description: A badge is a small piece of information that is used to convey a specific message or status. It is often used to provide additional context or information about an item, such as a notification count, status indicator, or label.
+---
+
+import { Badge, Avatar } from "@sistent/sistent";
+import MailIcon from "@mui/icons-material/Mail";
+
+Badges are small, often circular or rectangular elements that can display a number, status, or label. They are typically used to draw attention to specific information or to indicate the status of an item. Badges can be used in various contexts, such as notifications, labels, or status indicators.
+
+<a id="Types">
+  <h2>Types</h2>
+</a>
+
+Different types of badges serve different purposes in user interfaces. The visual distinction helps users quickly understand the context and importance of the information being presented.
+
+<h3>Standard Badge</h3>
+
+Standard badges display a small circular notification indicator. They are commonly used to show counts or statuses on icons, buttons, or other UI elements.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <Badge badgeContent={4} color="primary">
+        <MailIcon />
+      </Badge>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<h3>Dot Badge</h3>
+
+Dot badges are minimalist indicators that show a small dot rather than a number. They're useful when you just need to indicate the presence of notifications without specifying the count.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <Badge variant="dot" color="secondary">
+        <MailIcon />
+      </Badge>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<h3>Status Badge</h3>
+
+Status badges can be used to indicate the state of an item or component. They typically use different colors to represent different statuses such as online/offline, active/inactive, or success/error.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <Avatar>
+        <Badge
+          overlap="circular"
+          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+          variant="dot"
+          color="success"
+        >
+          U
+        </Badge>
+      </Avatar>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Colors">
+  <h2>Colors</h2>
+</a>
+
+Badges come in different colors to help convey specific meanings. The color choice should be consistent across your application to maintain a clear visual language for users.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
+      <Badge badgeContent={4} color="primary">
+        <MailIcon />
+      </Badge>
+      <Badge badgeContent={4} color="secondary">
+        <MailIcon />
+      </Badge>
+      <Badge badgeContent={4} color="error">
+        <MailIcon />
+      </Badge>
+      <Badge badgeContent={4} color="warning">
+        <MailIcon />
+      </Badge>
+      <Badge badgeContent={4} color="success">
+        <MailIcon />
+      </Badge>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Positioning">
+  <h2>Positioning</h2>
+</a>
+
+Badges can be positioned in different locations around their parent element. The default position is top-right, but they can be adjusted to appear at various anchor points based on design requirements.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
+      <Badge
+        badgeContent={4}
+        color="primary"
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+      >
+        <MailIcon />
+      </Badge>
+      <Badge
+        badgeContent={4}
+        color="primary"
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "left",
+        }}
+      >
+        <MailIcon />
+      </Badge>
+      <Badge
+        badgeContent={4}
+        color="primary"
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "right",
+        }}
+      >
+        <MailIcon />
+      </Badge>
+      <Badge
+        badgeContent={4}
+        color="primary"
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "left",
+        }}
+      >
+        <MailIcon />
+      </Badge>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Visibility">
+  <h2>Visibility</h2>
+</a>
+
+Badges can be shown or hidden based on their content or specific conditions. For example, a badge might only appear when there are unread notifications and disappear when all notifications have been viewed.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <Badge badgeContent={0} color="primary" showZero>
+        <MailIcon />
+      </Badge>
+    </div>
+  </ThemeWrapper>
+</Row>

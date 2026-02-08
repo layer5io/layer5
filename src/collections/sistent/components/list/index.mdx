@@ -1,0 +1,148 @@
+---
+name: "List"
+title: List
+published: true
+component: list
+description: Lists are essential UI elements that allow items to be organized sequentially in a structured and readable way. They help users view, select, and interact with multiple items conveniently.
+---
+
+import { List, ListItem, ListItemText, ListItemIcon, ListItemAvatar, ListItemButton, ListSubheader, Divider } from "@sistent/sistent";
+import StarIcon from "@mui/icons-material/Star";
+import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import PersonIcon from "@mui/icons-material/Person";
+import EngineeringIcon from "@mui/icons-material/Engineering";
+import ListDemo from "./ListDemo";
+
+The List component is a flexible and structured container for organizing content in vertical layouts. It supports various child components, such as List Items, Icons, Avatars, Buttons, and Subheaders, making it ideal for creating navigational menus, data displays, or interactive content groups.
+
+<a id="Types of List component">
+  <h2>Types of List component</h2>
+</a>
+
+<a id="List">
+  <h3>1. List</h3>
+</a>
+
+The base container for organizing related content in vertical layouts.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+      <ListItem>
+        <ListItemText primary="Layer5 Sistent Item 1" />
+      </ListItem>
+      <ListItem>
+        <ListItemText primary="Layer5 Sistent Item 2" />
+      </ListItem>
+      <ListItem>
+        <ListItemText primary="Layer5 Sistent Item 3" />
+      </ListItem>
+    </List>
+  </ThemeWrapper>
+</Row>
+
+<a id="List Item">
+  <h3>2. List Item</h3>
+</a>
+
+Represents an individual entry in a list. Includes primary and optional secondary text.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+      <ListItem>
+        <ListItemText primary="Layer5 Sistent Primary Item" secondary="Layer5 Sistent Supporting text" />
+      </ListItem>
+      <ListItem>
+        <ListItemText primary="Layer5 Sistent Another Item" />
+      </ListItem>
+    </List>
+  </ThemeWrapper>
+</Row>
+
+<a id="List Item Button">
+  <h3>3. List Item Button</h3>
+</a>
+
+Adds interactivity to list items, making them actionable.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+      <ListItemButton onClick={() => {}}>
+        <ListItemText primary="Layer5 Sistent Action Item 1" />
+      </ListItemButton>
+      <ListItemButton onClick={() => {}}>
+        <ListItemText primary="Layer5 Sistent Action Item 2" />
+      </ListItemButton>
+    </List>
+  </ThemeWrapper>
+</Row>
+
+<a id="List with Icons">
+  <h3>4. List with Icons</h3>
+</a>
+
+Icons can be added to list items to enhance visual interest and provide additional meaning for each item.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+      <ListItem>
+        <ListItemIcon><StarIcon /></ListItemIcon>
+        <ListItemText primary="Layer5 Sistent Starred" />
+      </ListItem>
+      <ListItem>
+        <ListItemIcon><CalendarTodayIcon /></ListItemIcon>
+        <ListItemText primary="Layer5 Sistent Calendar" />
+      </ListItem>
+    </List>
+  </ThemeWrapper>
+</Row>
+
+<a id="List with Avatars">
+  <h3>5. List with Avatars</h3>
+</a>
+
+Avatars can be added to list items, which is particularly useful for representing people or items visually.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+      <ListItem>
+        <ListItemAvatar><PersonIcon /></ListItemAvatar>
+        <ListItemText primary="Layer5 Sistent User 1" />
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar><EngineeringIcon /></ListItemAvatar>
+        <ListItemText primary="Layer5 Sistent User 2" />
+      </ListItem>
+    </List>
+  </ThemeWrapper>
+</Row>
+
+<a id="List Subheader">
+  <h3>6. List Subheader</h3>
+</a>
+
+Subheaders provide a way to label groups within a list, adding clarity and helping users navigate content.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+      <ListSubheader>Section 1</ListSubheader>
+      <ListItem>
+        <ListItemText primary="Layer5 Sistent Item A" />
+      </ListItem>
+      <ListItem>
+        <ListItemText primary="Layer5 Sistent Item B" />
+      </ListItem>
+      <Divider />
+      <ListSubheader>Section 2</ListSubheader>
+      <ListItem>
+        <ListItemText primary="Layer5 Sistent Item C" />
+      </ListItem>
+    </List>
+  </ThemeWrapper>
+</Row>

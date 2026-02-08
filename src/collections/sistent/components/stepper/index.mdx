@@ -1,0 +1,44 @@
+---
+name: "Stepper"
+title: Stepper
+published: true
+component: stepper
+description: Steppers guide users through multi-step processes by breaking complex tasks into manageable, sequential steps with clear progress indication.
+---
+
+import { CustomizedStepper, useStepper, Box, Typography } from "@sistent/sistent";
+import StepperDemo from "./StepperDemo";
+
+Steppers are essential for breaking down complex workflows into digestible pieces. They provide clear visual feedback about progress and help users understand what's required at each stage of a process.
+
+<a id="Demo">
+  <h2>Interactive Demo</h2>
+</a>
+
+Experience how the stepper component works with this interactive example:
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <StepperDemo type="basic" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Key Features">
+  <h2>Key Features</h2>
+</a>
+
+The Sistent Stepper component provides several powerful features:
+
+<h3>Linear Progress</h3>
+Users complete steps in sequence, ensuring all required information is collected before proceeding to the next step.
+
+<h3>Visual Progress Indication</h3>
+Clear visual feedback shows completed steps, current step, and remaining steps, helping users understand their progress.
+
+<h3>Customizable Icons</h3>
+Each step can have a custom icon that represents its content or purpose, making the interface more intuitive and visually appealing.
+
+<h3>Responsive Design</h3>
+The stepper adapts to different screen sizes, maintaining usability across desktop and mobile devices.

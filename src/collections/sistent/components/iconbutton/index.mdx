@@ -1,0 +1,93 @@
+---
+name: "Icon Button"
+title: Icon Button
+published: true
+component: iconbutton
+description: IconButton provides an interactive button component that displays only an icon, ideal for compact UIs where space is limited and actions are easily recognizable through iconography.
+---
+
+import { IconButton } from "@sistent/sistent";
+import IconButtonDemo from "./IconButtonDemo";
+
+IconButtons are compact components that combine button functionality with icon clarity, perfect for space-efficient interfaces and universally recognized actions.
+
+<a id="Types">
+  <h2>Types</h2>
+</a>
+
+IconButtons come in different visual styles to establish hierarchy and meet various interface needs.
+
+<h3>Standard</h3>
+
+Standard IconButtons provide a subtle interactive area around the icon with hover and focus states. They're ideal for secondary actions that don't need strong visual emphasis.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <IconButtonDemo type="basic" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<h3>With Background Color</h3>
+
+IconButtons can be styled with background colors to create more prominent interactive elements while maintaining the compact icon-only interface.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <IconButtonDemo type="background" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Sizes">
+  <h2>Sizes</h2>
+</a>
+
+IconButtons support multiple sizes to accommodate different contexts and touch target requirements.
+
+*   **Small:** (32px) ideal for dense interfaces and secondary actions.
+*   **Medium:** (40px) standard size, balancing compactness and accessibility.
+*   **Large:** (48px) ideal for primary actions and mobile interfaces.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <IconButtonDemo type="sizes" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Icon Integration">
+  <h2>Icon Integration</h2>
+</a>
+
+IconButtons work seamlessly with various icon libraries and custom icons. They support React Icons, Material-UI icons, and custom SVG icons.
+
+<h3>Using Sistent Icons</h3>
+
+IconButtons work perfectly with Sistent's built-in icon library, maintaining design consistency across your application.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <IconButtonDemo type="sistent-icons" />
+    </ThemeWrapper>
+  </div>
+</div>
+
+<a id="Accessibility">
+  <h2>Accessibility</h2>
+</a>
+
+IconButtons include built-in accessibility features but require proper implementation to ensure they're usable by all users.
+
+<h3>Essential Properties</h3>
+
+*   **aria-label:** Always provide descriptive labels for screen readers
+*   **Keyboard navigation:** IconButtons are fully keyboard accessible by default
+*   **Focus indicators:** Clear visual focus states for keyboard users
+*   **Touch targets:** Minimum 44px touch targets for mobile accessibility
+
+**Best Practice:** When using IconButtons, always include meaningful aria-labels or aria-labelledby attributes to describe the action to assistive technologies.

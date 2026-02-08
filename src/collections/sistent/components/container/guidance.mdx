@@ -1,0 +1,81 @@
+---
+title: Container Guidance
+component: container
+description: Containers are fundamental layout elements, used to center and structure content horizontally. They can be fluid or fixed, helping maintain alignment across different screen sizes and improving readability.
+---
+
+import { Container, Box } from "@sistent/sistent";
+
+Containers are fundamental layout elements, used to center and structure content horizontally. They can be fluid or fixed, helping maintain alignment across different screen sizes and improving readability.
+
+The Container component is an essential building block for creating layouts. Its ability to center content, provide fluid and fixed widths, and adapt responsively to different screen sizes makes it an invaluable tool for developers. By using the Container effectively, you can ensure that your application maintains a clean and organized appearance while enhancing the user experience.
+
+<a id="Function">
+  <h2>Function</h2>
+</a>
+
+The Container serves various functions:
+
+<h3>Fluid Container</h3>
+
+A fluid container adapts to the width of its parent element and can have a maximum width set by the `maxWidth` prop. This is useful for creating responsive layouts that adjust based on screen size.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Container maxWidth="md">
+      <Box sx={{ bgcolor: "#cfe8fc", height: "50vh" }}>
+        <p style={{ color: "black", padding: "1rem" }}>
+          This is a fluid container that adjusts its width based on the screen size.
+        </p>
+      </Box>
+    </Container>
+  </ThemeWrapper>
+</Row>
+
+<h3>Fixed Container</h3>
+
+A fixed container uses predefined maximum widths based on breakpoints, providing a consistent layout across different screen sizes. This helps maintain a structured design that is visually appealing.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Container fixed>
+      <Box sx={{ bgcolor: "#cfe8fc", height: "50vh" }}>
+         <p style={{ color: "black", padding: "1rem" }}>
+          This is a fixed container with a max width defined by the current breakpoint
+        </p>
+      </Box>
+    </Container>
+  </ThemeWrapper>
+</Row>
+
+<h3>Nested Containers</h3>
+
+While nesting containers is possible, it is generally recommended to avoid it unless necessary. Proper use of containers can enhance layout structure without complicating the design.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Container>
+      <Container maxWidth="sm">
+        <Box sx={{ bgcolor: "#cfe8fc", height: "50vh" }}>
+           <p style={{ color: "black", padding: "1rem" }}>
+            This is a nested container example.
+          </p>
+        </Box>
+      </Container>
+    </Container>
+  </ThemeWrapper>
+</Row>
+
+<a id="Labeling">
+  <h2>Labeling</h2>
+</a>
+
+Container labeling is essential for understanding the layout structure. Use clear and descriptive headings to indicate the purpose of each container.
+
+<h3>Use Cases</h3>
+
+Different use cases for containers include wrapping content sections, creating responsive grids, and maintaining consistent padding and margins across various components.
+
+<h3>Responsive Design</h3>
+
+Leveraging the container's fluid and fixed properties contributes to a responsive design that provides a seamless user experience across devices of all sizes.

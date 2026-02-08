@@ -1,0 +1,264 @@
+---
+title: Button Group Code
+component: button-group
+description: The ButtonGroup component can be used to group related buttons together. It is a container for multiple buttons that can be used to group buttons together and apply styles to them. This component is useful when you have a group of buttons that need to be styled in a similar way.
+---
+
+import { ButtonGroup, Button, Box } from "@sistent/sistent";
+
+export const buttons = [
+  <Button key="one">One</Button>,
+  <Button key="two">Two</Button>,
+  <Button key="three">Three</Button>,
+];
+
+The ButtonGroup component can be used to group related buttons together. It is a container for multiple buttons that can be used to group buttons together and apply styles to them. This component is useful when you have a group of buttons that need to be styled in a similar way.
+
+The ButtonGroup component can be used to group related buttons together. It is a container for multiple buttons that can be used to group buttons together and apply styles to them. This component is useful when you have a group of buttons that need to be styled in a similar way.
+
+<a id="Basic Usage">
+  <h2>Basic Usage</h2>
+</a>
+
+The buttons can be grouped by wrapping them with the ButtonGroup component. They need to be immediate children.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ButtonGroup variant="contained" aria-label="Basic button group">
+        {buttons}
+      </ButtonGroup>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-usage" code={`<ButtonGroup variant="contained" aria-label="Basic bgroup">
+  <Button>One</Button>
+  <Button>Two</Button>
+  <Button>Three</Button>
+</ButtonGroup>`} />
+</div>
+
+<a id="Button Variant">
+  <h2>Button Variant</h2>
+</a>
+
+The ButtonGroup component supports three variants: Filled, Outlined, and Text.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+        <ButtonGroup variant="contained" aria-label="Basic button group">
+            {buttons}
+        </ButtonGroup>
+        <ButtonGroup variant="outlined" aria-label="Basic button group">
+            {buttons}
+        </ButtonGroup>
+        <ButtonGroup variant="text" aria-label="Basic button group">
+            {buttons}
+        </ButtonGroup>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="button-variant" code={`<ButtonGroup
+    variant="contained"
+    aria-label="Basic button group"
+  >
+    <Button>One</Button>
+    <Button>Two</Button>
+    <Button>Three</Button>
+  </ButtonGroup>
+  <ButtonGroup variant="outlined" aria-label="Basic bugroup">
+    <Button>One</Button>
+    <Button>Two</Button>
+    <Button>Three</Button>
+  </ButtonGroup>
+  <ButtonGroup variant="text" aria-label="Basic button group">
+    <Button>One</Button>
+    <Button>Two</Button>
+    <Button>Three</Button>
+</ButtonGroup>`} />
+</div>
+
+<a id="Vertical Group">
+  <h2>Vertical Group</h2>
+</a>
+
+The ButtonGroup component can be used to create a vertical group of buttons by setting the vertical prop to true.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '8px' }}>
+          <ButtonGroup
+            orientation="vertical"
+            variant="contained"
+            aria-label="Basic button group"
+          >
+            {buttons}
+          </ButtonGroup>
+          <ButtonGroup
+            orientation="vertical"
+            variant="outlined"
+            aria-label="Basic button group"
+          >
+            {buttons}
+          </ButtonGroup>
+          <ButtonGroup
+            orientation="vertical"
+            variant="text"
+            aria-label="Basic button group"
+          >
+            {buttons}
+          </ButtonGroup>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="vertical-group" code={`<ButtonGroup
+    orientation="vertical"
+    variant="contained"
+    aria-label="Basic button group"
+  >
+    <Button>One</Button>
+    <Button>Two</Button>
+    <Button>Three</Button>
+  </ButtonGroup>
+  <ButtonGroup
+    orientation="vertical"
+    variant="outlined"
+    aria-label="Basic button group"
+  >
+    <Button>One</Button>
+    <Button>Two</Button>
+    <Button>Three</Button>
+  </ButtonGroup>
+  <ButtonGroup
+    orientation="vertical"
+    variant="text"
+    aria-label="Basic button group"
+  >
+    <Button>One</Button>
+    <Button>Two</Button>
+    <Button>Three</Button>
+</ButtonGroup>`} />
+</div>
+
+<a id="Disable elevation">
+  <h2>Disable elevation</h2>
+</a>
+
+The ButtonGroup component can be used to create a group of buttons with no elevation by setting the disableElevation prop to true.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ButtonGroup
+        disableElevation
+        variant="contained"
+        aria-label="Basic button group"
+      >
+        {buttons}
+      </ButtonGroup>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="disable-elevation" code={`<ButtonGroup
+  disableElevation
+  variant="contained"
+  aria-label="Basic button group"
+>
+  <Button>One</Button>
+  <Button>Two</Button>
+  <Button>Three</Button>
+</ButtonGroup>`} />
+</div>
+
+<a id="Sizes">
+  <h2>Sizes</h2>
+</a>
+
+For now, two different sizes of buttons exist: 56px height and 48px height.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <ButtonGroup
+            size="small"
+            variant="contained"
+            aria-label="Basic button group"
+          >
+            {buttons}
+          </ButtonGroup>
+          <ButtonGroup
+            size="medium"
+            variant="contained"
+            aria-label="Basic button group"
+          >
+            {buttons}
+          </ButtonGroup>
+          <ButtonGroup
+            size="large"
+            variant="contained"
+            aria-label="Basic button group"
+          >
+            {buttons}
+          </ButtonGroup>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="sizes" code={`<ButtonGroup
+    size="small"
+    variant="contained"
+    aria-label="Basic button group"
+  >
+    <Button>One</Button>
+    <Button>Two</Button>
+    <Button>Three</Button>
+  </ButtonGroup>
+  <ButtonGroup
+    size="medium"
+    variant="contained"
+    aria-label="Basic button group"
+  >
+    <Button>One</Button>
+    <Button>Two</Button>
+    <Button>Three</Button>
+  </ButtonGroup>
+  <ButtonGroup
+    size="large"
+    variant="contained"
+    aria-label="Basic button group"
+  >
+    <Button>One</Button>
+    <Button>Two</Button>
+    <Button>Three</Button>
+</ButtonGroup>`} />
+</div>
+
+<a id="Full Width">
+  <h2>Full Width</h2>
+</a>
+
+The ButtonGroup component can be used to create a group of buttons that take up the full width of the container by setting the fullWidth prop to true.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ButtonGroup
+        fullWidth
+        variant="contained"
+        aria-label="Basic button group"
+      >
+        {buttons}
+      </ButtonGroup>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="full-width" code={`<ButtonGroup
+  fullWidth
+  variant="contained"
+  aria-label="Basic button group"
+>
+  <Button>One</Button>
+  <Button>Two</Button>
+  <Button>Three</Button>
+</ButtonGroup>`} />
+</div>

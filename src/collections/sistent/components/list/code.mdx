@@ -1,0 +1,225 @@
+---
+title: List Code
+component: list
+description: Lists are essential UI elements that allow items to be organized sequentially in a structured and readable way. They help users view, select, and interact with multiple items conveniently.
+---
+
+import { List, ListItem, ListItemText, ListItemIcon, ListItemAvatar, ListItemButton, ListSubheader, Divider, Checkbox } from "@sistent/sistent";
+import StarIcon from "@mui/icons-material/Star";
+import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import PersonIcon from "@mui/icons-material/Person";
+import EngineeringIcon from "@mui/icons-material/Engineering";
+import ListDemo from "./ListDemo";
+
+The List component displays a list of items in a structured and accessible manner. Variants include simple lists, lists with icons, lists with avatars, and lists with action buttons.
+
+<a id="Simple List">
+  <h3>Simple List</h3>
+</a>
+
+This is a basic list with plain text items.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+        <ListItem><ListItemText primary="Layer5 Sistent Item 1" /></ListItem>
+        <ListItem><ListItemText primary="Layer5 Sistent Item 2" /></ListItem>
+        <ListItem><ListItemText primary="Layer5 Sistent Item 3" /></ListItem>
+      </List>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="simple-list" code={`<List>
+  <ListItem><ListItemText primary="Layer5 Sistent 1" /></ListItem> 
+  <ListItem><ListItemText primary="Layer5 Sistent 2" /></ListItem> 
+  <ListItem><ListItemText primary="Layer5 Sistent 3" /></ListItem> 
+</List>`} />
+</div>
+
+<a id="List With Icons">
+  <h3>List with Icons</h3>
+</a>
+
+List items can be paired with icons to add visual cues.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+        <ListItem>
+          <ListItemIcon><StarIcon /></ListItemIcon>
+          <ListItemText primary="Layer5 Sistent Starred" />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon><CalendarTodayIcon /></ListItemIcon>
+          <ListItemText primary="Layer5 Sistent Calendar" />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon><NotificationsIcon /></ListItemIcon>
+          <ListItemText primary="Layer5 Sistent Notification" />
+        </ListItem>
+      </List>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="icon-list" code={`<List>
+  <ListItem><ListItemIcon><StarIcon /></ListItemIcon><ListItemText primary="Layer5 Sistent Starred" /></ListItem>
+  <ListItem><ListItemIcon><CalendarTodayIcon /></ListItemIcon><ListItemText primary="Layer5 Sistent Calender" /></ListItem>
+  <ListItem><ListItemIcon><NotificationsIcon /></ListItemIcon><ListItemText primary="Layer5 Sistent Notification" /></ListItem>
+</List>`} />
+</div>
+
+<a id="List With Avatars">
+  <h3>List with Avatars</h3>
+</a>
+
+Use avatars for list items representing people or entities.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+        <ListItem><ListItemAvatar><PersonIcon /></ListItemAvatar><ListItemText primary="Layer5 Sistent User 1" /></ListItem>
+        <ListItem><ListItemAvatar><EngineeringIcon /></ListItemAvatar><ListItemText primary="Layer5 Sistent User 2" /></ListItem>
+      </List>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="avatar-list" code={`<List>
+  <ListItem><ListItemAvatar><PersonIcon /></ListItemAvatar><ListItemText primary="Layer5 Sistent User 1" /></ListItem>
+  <ListItem><ListItemAvatar><EngineeringIcon /></ListItemAvatar><ListItemText primary="Layer5 Sistent User 2" /></ListItem>
+  <ListItem><ListItemAvatar><PersonIcon /></ListItemAvatar><ListItemText primary="Layer5 Sistent User 3" /></ListItem>
+</List>`} />
+</div>
+
+<a id="List With Subheader">
+  <h3>List with Subheader</h3>
+</a>
+
+Organize list items under different subheaders for better grouping.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+        <ListSubheader>Section 1</ListSubheader>
+        <ListItem>
+          <ListItemText primary="Layer5 Sistent Item A" />
+        </ListItem>
+        <ListItem>
+          <ListItemText primary="Layer5 Sistent Item B" />
+        </ListItem>
+        <Divider />
+        <ListSubheader>Section 2</ListSubheader>
+        <ListItem>
+          <ListItemText primary="Layer5 Sistent Item C" />
+        </ListItem>
+      </List>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="subheader-list" code={`<List>
+  <ListSubheader>Section 1</ListSubheader>
+  <ListItem><ListItemText primary="Layer5 Sistent A" /></ListItem>
+  <ListItem><ListItemText primary="Layer5 Sistent B" /></ListItem>      
+  <ListSubheader>Section 2</ListSubheader>
+  <ListItem><ListItemText primary="Layer5 Sistent C" /></ListItem>
+  <ListItem><ListItemText primary="Layer5 Sistent D" /></ListItem>
+</List>`} />
+</div>
+
+<a id="List With ActionButtons">
+  <h3>List with Action Buttons</h3>
+</a>
+
+Lists can also have action buttons for added interactivity.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+        <ListItemButton onClick={() => {}}>
+          <ListItemText primary="Layer5 Sistent Action Item 1" />
+        </ListItemButton>
+        <ListItemButton onClick={() => {}}>
+          <ListItemText primary="Layer5 Sistent Action Item 2" />
+        </ListItemButton>
+      </List>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="button-list" code={`<List>
+  <ListItemButton onClick={() => {}}> Layer5 Sistent Action 1</ListItemButton>
+  <ListItemButton onClick={() => {}}>Layer5 Sistent Action 2</ListItemButton>
+</List>`} />
+</div>
+
+<a id="Nested List">
+  <h3>List with Nested Items</h3>
+</a>
+
+Lists can also be nested to represent hierarchical structures.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ListDemo type="nested" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="nested-list" code={`<List sx={{ width: "100%", maxWidth: 360, padding: 2, bgcolor: "background.paper",}} component="nav" >
+  <ListSubheader component="div" id="nested-list-subheader"> Layer5 Main Section </ListSubheader>
+  <ListItemButton onClick={toggleOpen1}> 
+      <ListItemText primary="Layer5 Main Item 1" />
+      {open1 ? <ExpandLess /> : <ExpandMore />} 
+  </ListItemButton>
+  <Collapse in={open1} timeout="auto" unmountOnExit>
+    <List component="div" disablePadding sx={{ pl: 4 }}>
+      <ListItem> <ListItemText primary="Layer5 Sub Item 1.1" /></ListItem>
+      <ListItem> <ListItemText primary="Layer5 Sub Item 1.2" /></ListItem>
+    </List>
+  </Collapse>
+
+  <ListItemButton onClick={toggleOpen2}> 
+    <ListItemText primary="Layer5 Main Item 2" />
+    {open2 ? <ExpandLess /> : <ExpandMore />}  
+  </ListItemButton>
+  <Collapse in={open2} timeout="auto" unmountOnExit>
+    <List component="div" disablePadding sx={{ pl: 4 }}>
+      <ListItem><ListItemText primary="Layer5 Sub Item 2.1" /></ListItem>
+      <ListItem><ListItemText primary="Layer5 Sub Item 2.2" /></ListItem>
+    </List>
+  </Collapse>
+</List>`} />
+</div>
+
+<a id="List Control With Checkboxes">
+  <h3>List Control with Checkboxes</h3>
+</a>
+
+Add checkboxes to list items for selection. A checkbox can either be a primary action or a secondary action.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ListDemo type="checkbox" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="checkbox-list" code={`<List sx={{ width: "100%", maxWidth: 360 }}>
+  {[0, 1, 2, 3].map((value) => {
+    const labelId = "checkbox-list-label-'$'{value}";
+    return (
+      <ListItem key={value} disablePadding>
+        <ListItemButton onClick={() => handleToggle(value)} dense>
+          <ListItemIcon>
+            <Checkbox
+              edge="start"
+              checked={checked.includes(value)}
+              tabIndex={-1}
+              disableRipple
+              inputProps={{ "aria-labelledby": labelId }}
+            />
+          </ListItemIcon>
+          <ListItemText id={labelId} primary={"Layer5 Sistent Item '$'{value + 1}"} />
+        </ListItemButton>
+      </ListItem>
+    );
+  })}
+</List>`} />
+</div>

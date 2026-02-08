@@ -1,0 +1,227 @@
+---
+title: Stack Code
+component: stack
+description: The Stack component is a layout utility that manages one-dimensional layouts with flexible spacing and alignment. Built on Flexbox, it provides an efficient way to arrange elements vertically or horizontally with consistent spacing.
+---
+
+import { Stack, Box, Button } from "@sistent/sistent";
+
+The `Stack` component is a layout utility that manages one-dimensional layouts with flexible spacing and alignment. Built on Flexbox, it provides an efficient way to arrange elements vertically or horizontally with consistent spacing.
+
+The `Stack` component arranges children in one-dimensional flow, either vertically or horizontally, with consistent spacing and no manual margin adjustments.
+
+<a id="Vertical Stack">
+  <h3>Vertical Stack</h3>
+</a>
+
+The default Stack orientation is vertical. Use the `spacing` prop to control the gap between children.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Stack spacing={2}>
+        <Box sx={{ p: 2, bgcolor: "primary.main", color: "white" }}>
+          Header
+        </Box>
+        <Box sx={{ p: 2, bgcolor: "primary.main", color: "white" }}>
+          Content
+        </Box>
+        <Box sx={{ p: 2, bgcolor: "primary.main", color: "white" }}>
+          Footer
+        </Box>
+      </Stack>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="stack-vertical" code={`<Stack spacing={2}>
+  <Box sx={{ p: 2, bgcolor: "primary.main", color: "white" }}>
+    Header
+  </Box>
+  <Box sx={{ p: 2, bgcolor: "primary.main", color: "white" }}>
+    Content
+  </Box>
+  <Box sx={{ p: 2, bgcolor: "primary.main", color: "white" }}>
+    Footer
+  </Box>
+</Stack>`} />
+</div>
+
+<a id="Horizontal Stack">
+  <h3>Horizontal Stack</h3>
+</a>
+
+Set `direction="row"` to arrange children horizontally. Useful for button groups and navigation items.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Stack direction="row" spacing={2}>
+        <Box sx={{ p: 2, bgcolor: "primary.main", color: "white" }}>
+          Home
+        </Box>
+        <Box sx={{ p: 2, bgcolor: "primary.main", color: "white" }}>
+          About
+        </Box>
+        <Box sx={{ p: 2, bgcolor: "primary.main", color: "white" }}>
+          Contact
+        </Box>
+      </Stack>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="stack-horizontal" code={`<Stack direction="row" spacing={2}>
+  <Box sx={{ p: 2, bgcolor: "primary.main", color: "white" }}>
+    Home
+  </Box>
+  <Box sx={{ p: 2, bgcolor: "primary.main", color: "white" }}>
+    About
+  </Box>
+  <Box sx={{ p: 2, bgcolor: "primary.main", color: "white" }}>
+    Contact
+  </Box>
+</Stack>`} />
+</div>
+
+<a id="Responsive Stack">
+  <h3>Responsive Stack</h3>
+</a>
+
+Use responsive values for the `direction` prop to create adaptive layouts that stack vertically on mobile and horizontally on larger screens.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        spacing={2}
+        sx={{ width: "100%" }}
+      >
+        <Box
+          sx={{
+            p: 2,
+            bgcolor: "primary.main",
+            color: "white",
+            flex: 1,
+          }}
+        >
+          Card One
+        </Box>
+        <Box
+          sx={{
+            p: 2,
+            bgcolor: "primary.main",
+            color: "white",
+            flex: 1,
+          }}
+        >
+          Card Two
+        </Box>
+      </Stack>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="stack-responsive" code={`<Stack
+  direction={{ xs: "column", sm: "row" }}
+  spacing={2}
+  sx={{ width: "100%" }}
+>
+  <Box sx={{ p: 2, bgcolor: "primary.main", color: "white", flex: 1 }}>
+    Card One
+  </Box>
+  <Box sx={{ p: 2, bgcolor: "primary.main", color: "white", flex: 1 }}>
+    Card Two
+  </Box>
+</Stack>`} />
+</div>
+
+<a id="Divider">
+  <h3>Divider</h3>
+</a>
+
+Add visual separation between children using the `divider` prop.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Stack
+        spacing={2}
+        divider={
+          <Box
+            sx={{
+              borderBottom: "1px solid",
+              borderColor: "divider",
+            }}
+          />
+        }
+      >
+        <Box sx={{ p: 1 }}>Profile</Box>
+        <Box sx={{ p: 1 }}>Settings</Box>
+        <Box sx={{ p: 1 }}>Logout</Box>
+      </Stack>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="stack-divider" code={`<Stack
+  spacing={2}
+  divider={
+    <Box
+      sx={{
+        borderBottom: "1px solid",
+        borderColor: "divider",
+      }}
+    />
+  }
+>
+  <Box sx={{ p: 1 }}>Profile</Box>
+  <Box sx={{ p: 1 }}>Settings</Box>
+  <Box sx={{ p: 1 }}>Logout</Box>
+</Stack>`} />
+</div>
+
+<a id="Spacing">
+  <h3>Spacing</h3>
+</a>
+
+Use larger spacing values to create wider gaps. Common values range from 1 (8px) to 4 (32px).
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Stack spacing={4}>
+        <Box sx={{ p: 2, bgcolor: "primary.main", color: "white" }}>
+          Title
+        </Box>
+        <Box sx={{ p: 2, bgcolor: "primary.main", color: "white" }}>
+          Description
+        </Box>
+      </Stack>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="stack-spacing" code={`<Stack spacing={4}>
+  <Box sx={{ p: 2, bgcolor: "primary.main", color: "white" }}>
+    Title
+  </Box>
+  <Box sx={{ p: 2, bgcolor: "primary.main", color: "white" }}>
+    Description
+  </Box>
+</Stack>`} />
+</div>
+
+<a id="Button Group">
+  <h3>Button Group</h3>
+</a>
+
+Use `direction="row"` to stack horizontal button groups with consistent spacing.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Stack direction="row" spacing={2}>
+        <Button variant="contained">Save</Button>
+        <Button variant="outlined">Cancel</Button>
+        <Button variant="text">Reset</Button>
+      </Stack>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="stack-buttons" code={`<Stack direction="row" spacing={2}>
+  <Button variant="contained">Save</Button>
+  <Button variant="outlined">Cancel</Button>
+  <Button variant="text">Reset</Button>
+</Stack>`} />
+</div>

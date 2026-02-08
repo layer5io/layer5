@@ -1,0 +1,237 @@
+---
+title: Tooltip Code
+component: tooltip
+description: The Tooltip component displays informative text when users hover over, focus on, or tap an element. Tooltips are designed to enhance accessibility and user understanding of interface elements.
+---
+
+import TooltipDemo from "./TooltipDemo";
+
+The Tooltip component displays informative text when users hover over, focus on, or tap an element. Tooltips are designed to enhance accessibility and user understanding of interface elements.
+
+The Tooltip component displays informative text when users hover over, focus on, or tap an element. Tooltips are designed to enhance accessibility and user understanding of interface elements.
+
+<a id="Basic Tooltip">
+  <h3>Basic Tooltip</h3>
+</a>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TooltipDemo type="basic" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-Tooltip" code={`<CustomTooltip title="Submit">
+  <span>
+    <Button variant="contained" label="Submit" size="medium" />
+  </span>
+</CustomTooltip>`} />
+</div>
+
+<a id="Positioned Example">
+  <h3>Positioned Example</h3>
+</a>
+
+You can specify the position of the Popper using the `placement` prop. Here's an example of a Tooltip positioned above its anchor:
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TooltipDemo type="positioned" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="positioned-example" code={`<Box sx={{ width: 500 }}>
+  <Grid container sx={{ justifyContent: "center" }}>
+    <Grid item>
+      <CustomTooltip title="Add" placement="top-start">
+        <span>
+          <Button>top-start</Button>
+        </span>
+      </CustomTooltip>
+      <CustomTooltip title="Add" placement="top">
+        <span>
+          <Button>top</Button>
+        </span>
+      </CustomTooltip>
+      <CustomTooltip title="Add" placement="top-end">
+        <span>
+          <Button>top-end</Button>
+        </span>
+      </CustomTooltip>
+    </Grid>
+  </Grid>
+  <Grid container sx={{ justifyContent: "center" }}>
+    <Grid item xs={6}>
+      <CustomTooltip title="Add" placement="left-start">
+        <span>
+          <Button>left-start</Button>
+        </span>
+      </CustomTooltip>
+      <br />
+      <CustomTooltip title="Add" placement="left">
+        <span>
+          <Button>left</Button>
+        </span>
+      </CustomTooltip>
+      <br />
+      <CustomTooltip title="Add" placement="left-end">
+        <span>
+          <Button>left-end</Button>
+        </span>
+      </CustomTooltip>
+    </Grid>
+    <Grid
+      item
+      container
+      xs={6}
+      direction="column"
+      sx={{ alignItems: "flex-end" }}
+    >
+      <Grid item>
+        <CustomTooltip title="Add" placement="right-start">
+          <span>
+            <Button>right-start</Button>
+          </span>
+        </CustomTooltip>
+      </Grid>
+      <Grid item>
+        <CustomTooltip title="Add" placement="right">
+          <span>
+            <Button>right</Button>
+          </span>
+        </CustomTooltip>
+      </Grid>
+      <Grid item>
+        <CustomTooltip title="Add" placement="right-end">
+          <span>
+            <Button>right-end</Button>
+          </span>
+        </CustomTooltip>
+      </Grid>
+    </Grid>
+  </Grid>
+  <Grid container sx={{ justifyContent: "center" }}>
+    <Grid item>
+      <CustomTooltip title="Add" placement="bottom-start">
+        <span>
+          <Button>bottom-start</Button>
+        </span>
+      </CustomTooltip>
+      <CustomTooltip title="Add" placement="bottom">
+        <span>
+          <Button>bottom</Button>
+        </span>
+      </CustomTooltip>
+      <CustomTooltip title="Add" placement="bottom-end">
+        <span>
+          <Button>bottom-end</Button>
+        </span>
+      </CustomTooltip>
+    </Grid>
+  </Grid>
+</Box>`} />
+</div>
+
+<a id="Distance from anchor">
+  <h3>Distance from anchor</h3>
+</a>
+
+To adjust the distance between the tooltip and its anchor, you can use the slotProps prop to modify the offset of the popper.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TooltipDemo type="offset" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="distance-anchor" code={`<CustomTooltip
+  title="Add"
+  slotProps={{
+    popper: {
+      modifiers: [
+        {
+          name: "offset",
+          options: {
+            offset: [0, -14],
+          },
+        },
+      ],
+    },
+  }}
+>
+  <span>
+    <Button variant="contained" size="medium">
+      Offset
+    </Button>
+  </span>
+</CustomTooltip>`} />
+</div>
+
+<a id="Variable width">
+  <h3>Variable width</h3>
+</a>
+
+The variant prop in Tooltip allows you to control the tooltips size with predefined styles (standard or small). This makes it easier to adjust the tooltip to fit various UI requirements quickly and consistently.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TooltipDemo type="variable-width" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="variable-width" code={`<CustomTooltip title="Add" variant="standard">
+  <span>
+    <Button variant="contained" size="medium">
+      standard
+    </Button>
+  </span>
+</CustomTooltip>
+<CustomTooltip title="Add" variant="small">
+  <span>
+    <Button variant="contained" size="medium">
+      small
+    </Button>
+  </span>
+</CustomTooltip>`} />
+</div>
+
+<a id="Follow cursor">
+  <h3>Follow Cursor</h3>
+</a>
+
+Tooltips can be configured to follow the cursor, making it easier to read the content.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TooltipDemo type="follow-cursor" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="follow-cursor" code={`<CustomTooltip title="Follow Cursor" followCursor>
+  <span>
+    <Button variant="contained" size="medium">
+      Button
+    </Button>
+  </span>
+</CustomTooltip>`} />
+</div>
+
+<a id="Showing and hiding">
+  <h3>Showing and Hiding</h3>
+</a>
+
+A delay in showing or hiding the tooltip can be added through the `enterDelay` and `leaveDelay` props.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TooltipDemo type="show-hide" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="show-hide" code={`<CustomTooltip title="Add" enterDelay={500} leaveDelay={200}>
+  <span>
+    <Button variant="text" size="medium">
+      [500MS, 200MS]
+    </Button>
+  </span>
+</CustomTooltip>`} />
+</div>
