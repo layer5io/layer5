@@ -23,7 +23,7 @@ const Banner3SectionWrapper = styled.section`
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     h4 {
-        color: ${props => props.theme.grey737373ToGreyB3B3B3};
+        color: ${props => props.theme.greyA0AAAAToGrey666666};
         text-transform: uppercase;
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
