@@ -3,11 +3,10 @@ import styled, { css } from "styled-components";
 
 const RowWrapper = styled.div`
   display: flex;
-  margin-left: -15px;
-  margin-right: -15px;
-  @media (max-width: 760px) {
-    flex-wrap: wrap;
-  }
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-left: 0;
+  margin-right: 0;
   ${(props) =>
   props.$Vcenter &&
     css({
