@@ -1,6 +1,6 @@
 import React from "react";
 import SolutionHero from "../SolutionHero";
-import cluster_img from "./images/cluster.webp";
+import cluster_img from "../Developer-Infrastructure/images/cluster.webp";
 import deploy_img from "./images/deploy.webp";
 import config_img from "./images/config.webp";
 import { Container } from "../../reusecore/Layout";

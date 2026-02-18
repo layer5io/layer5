@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import LifeCycleIcon from "../images/lifecycle-icon.svg";
-import PerformanceIcon from "../images/performance-icon.svg";
-import ConfigurationIcon from "../images/configuration-icon.svg";
+import LifeCycleIcon from "../../../../components/specs/images/lifecycle-icon.svg";
+import PerformanceIcon from "../../../../components/specs/images/performance-icon.svg";
+import ConfigurationIcon from "../../../../components/specs/images/configuration-icon.svg";
 import { Col, Row } from "../../../../reusecore/Layout";
 import Counter from "../../../../reusecore/Counter";
 import { URL } from "../../../Counters/index";

@@ -11,7 +11,7 @@ import EKS from "./supported-icons/eks_white.svg";
 import GKE from "./supported-icons/gke.svg";
 import Helm from "./supported-icons/helm-icon-white.svg";
 import HomeBrew from "./supported-icons/homebrew.svg";
-import Kubernetes from "./supported-icons/kubernetes_white.svg";
+import Kubernetes from "../../../assets/images/kanvas/kubernetes_white.svg";
 import Linux from "./supported-icons/linux.svg";
 import Minikube from "./supported-icons/minikube.svg";
 import AKS from "./supported-icons/aks_white.svg";
