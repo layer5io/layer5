@@ -11,8 +11,6 @@ const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
 const config = require("./gatsby-config");
-const isDevelopment = process.env.NODE_ENV === "development";
-const isProduction = process.env.NODE_ENV === "production";
 const {
   componentsData,
 } = require("./src/sections/Projects/Sistent/components/content");
@@ -20,34 +18,6 @@ const {
 const HEAVY_COLLECTIONS = new Set(["members", "integrations"]);
 const isFullSiteBuild = process.env.BUILD_FULL_SITE !== "false";
 const shouldIncludeCollection = (collection) => isFullSiteBuild || !HEAVY_COLLECTIONS.has(collection);
-
-if (process.env.CI === "true") {
-  // All process.env.CI conditionals in this file are in place for GitHub Pages, if webhost changes in the future, code may need to be modified or removed.
-  //Replacing '/' would result in empty string which is invalid
-  const replacePath = (url) =>
-    url === "/" || url.includes("/404") || url.endsWith(".html") ? url : `${url}.html`;
-
-  exports.onCreatePage = ({ page, actions }) => {
-    const { createPage, deletePage, createRedirect } = actions;
-    const oldPage = Object.assign({}, page);
-    page.matchPath = page.path;
-    page.path = replacePath(page.path);
-
-    if (page.path !== oldPage.path) {
-      // Replace new page with old page
-      deletePage(oldPage);
-      createPage(page);
-
-      createRedirect({
-        fromPath: `/${page.matchPath}/`,
-        toPath: `/${page.matchPath}`,
-        redirectInBrowser: true,
-        isPermanent: true,
-      });
-    }
-  };
-}
-
 
 const { loadRedirects } = require("./src/utils/redirects.js");
 
@@ -59,23 +29,22 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
   const envCreatePage = (props) => {
+    const pageProps = {
+      ...props,
+      matchPath: props.matchPath || props.path,
+    };
+
     if (process.env.CI === "true") {
-      const { path, matchPath, ...rest } = props;
-      const isHandbookPage = path.startsWith("/community/handbook/");
+      const { path } = pageProps;
       createRedirect({
         fromPath: `/${path}/`,
         toPath: `/${path}`,
         redirectInBrowser: true,
         isPermanent: true,
       });
-
-      return createPage({
-        path: isHandbookPage ? path : `${path}.html`,
-        matchPath: matchPath || path,
-        ...rest,
-      });
     }
-    return createPage(props);
+
+    return createPage(pageProps);
   };
 
   const blogPostTemplate = path.resolve("src/templates/blog-single.js");
@@ -260,6 +229,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   };
 
   const blogs = filterByCollection("blog");
+
   const resources = filterByCollection("resources");
   const news = filterByCollection("news");
   const books = filterByCollection("service-mesh-books");
@@ -690,11 +660,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         case "kanvas-labs":
           slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
           break;
-        case "resources":
-          if (node.frontmatter.published)
-            slug = `/${collection}/${slugify(
-              node.frontmatter.category
-            )}/${slugify(node.frontmatter.title)}`;
+          case "resources":
+            if (node.frontmatter.published)
+              slug = `/${collection}/${slugify(
+                node.frontmatter.category
+              )}/${slugify(node.frontmatter.title)}`;
           break;
         case "members":
           if (node.frontmatter.published)
@@ -766,7 +736,7 @@ const createCoursesListPage = ({ envCreatePage, node }) => {
 };
 
 const createCourseOverviewPage = ({ envCreatePage, node }) => {
-  const { learnpath, slug, course, pageType, permalink,section } = node.fields;
+  const { learnpath, slug, course, pageType, permalink, section } = node.fields;
 
   envCreatePage({
     path: `${slug}`,
