@@ -3,12 +3,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 document.addEventListener("DOMContentLoaded", () => {
-  /** init gtm after 3500 seconds - this could be adjusted */
-  setTimeout(initGTM, 3500);
+  /** init gtm after 100ms to avoid blocking main thread during paint */
+  setTimeout(initGTM, 100);
 });
-document.addEventListener("scroll", initGTMOnEvent);
-document.addEventListener("mousemove", initGTMOnEvent);
-document.addEventListener("touchstart", initGTMOnEvent);
+/** Use passive: true to prevent event handler from blocking scrolling performance */
+document.addEventListener("scroll", initGTMOnEvent, { passive: true });
+document.addEventListener("mousemove", initGTMOnEvent, { passive: true });
+document.addEventListener("touchstart", initGTMOnEvent, { passive: true });
 function initGTMOnEvent(event) {
   initGTM();
   event.currentTarget.removeEventListener(event.type, initGTMOnEvent); // remove the event listener that got triggered
