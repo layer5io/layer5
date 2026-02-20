@@ -1,5 +1,5 @@
 /* eslint-disable indent */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import {
   Container,
   Card,
@@ -41,7 +41,7 @@ import {
 } from "./styles";
 import { formatAndConvertPrice, formatSliderPrice } from "../../../utils/currencies";
 
-export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterprisePlan }) => {
+export const PricingAddons = React.memo(({ isYearly = false, setIsYearly, currency, enterprisePlan }) => {
   const [selectedAddon, setSelectedAddon] = useState(null);
   // const [quantity, setQuantity] = useState(1);
   const quantity = 1;
@@ -128,7 +128,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
     }
   }, [selectedAddon, quantity, quantityIndex, selectedSubAddOns, isYearly, enterpriseUsers, enterprisePlan]);
 
-  const handleAddonChange = (addonId) => {
+  const handleAddonChange = useCallback((addonId) => {
     const addon = addOns.find((a) => a.id === addonId);
     setSelectedAddon(addon || null);
     setQuantityIndex(0);
@@ -139,16 +139,16 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
     } else {
       setSelectedSubAddOns({});
     }
-  };
+  }, [addOns]);
 
-  const handleSubAddOnToggle = (subAddOnId, isChecked) => {
+  const handleSubAddOnToggle = useCallback((subAddOnId, isChecked) => {
     setSelectedSubAddOns(prev => ({
       ...prev,
       [subAddOnId]: isChecked
     }));
-  };
+  }, []);
 
-  const getPlanLinkForAcademy = () => {
+  const getPlanLinkForAcademy = useCallback(() => {
     if (!selectedAddon || selectedAddon.id !== "academy") {
       return { link: "#", name: "Subscribe" };
     }
@@ -180,9 +180,9 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
     }
 
     return { link: "#", name: "Subscribe" };
-  };
+  }, [selectedAddon, quantityIndex, isYearly]);
 
-  const getPlanLinkForOtherAddons = () => {
+  const getPlanLinkForOtherAddons = useCallback(() => {
     if (!selectedAddon || selectedAddon.id === "academy") {
       return { link: "#", name: "Subscribe" };
     }
@@ -191,7 +191,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
       link: "#",
       name: "Subscribe"
     };
-  };
+  }, [selectedAddon]);
 
   return (
     <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
@@ -576,4 +576,4 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
       </CssBaseline>
     </SistentThemeProvider>
   );
-};
+});

@@ -115,4 +115,4 @@ const PlanCard = ({ planData, isYearly, currency }) => {
   );
 };
 
-export default PlanCard;
+export default React.memo(PlanCard);

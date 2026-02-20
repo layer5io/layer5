@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Suspense, lazy } from "react";
 import PricingWrapper from "./pricing.style";
 import Comparison from "./comparison";
 import FAQ from "../General/Faq";
@@ -13,6 +13,12 @@ import {
   toggleButtonStyles,
   getToggleButtonStyle,
 } from "../../components/Pricing/PricingAddons/styles.js";
+
+// Lazy load components below the fold for better performance
+const LazyComparison = lazy(() => import("./comparison"));
+const LazyReviews = lazy(() => import("./review-slider"));
+const LazyOpenSourceBanner = lazy(() => import("./openSource"));
+const LazyFAQ = lazy(() => import("../General/Faq"));
 
 const customToggleButtonStyles = {
   container: {
@@ -134,10 +140,20 @@ const Pricing = () => {
       <div style={{ marginTop: "7rem", marginBottom: "3rem" }}>
         <PricingAddons isYearly={isYearly} setIsYearly={setIsYearly} currency={currency} enterprisePlan={options.filter(opt => opt.tier == "Enterprise")[0]} />
       </div>
-      <Comparison />
-      <Reviews />
-      <OpenSourceBanner />
-      <FAQ category={["Pricing", "Billing"]} />
+      
+      {/* Lazy load below-fold components */}
+      <Suspense fallback={<div style={{ height: "300px" }} />}>
+        <LazyComparison />
+      </Suspense>
+      <Suspense fallback={<div style={{ height: "400px" }} />}>
+        <LazyReviews />
+      </Suspense>
+      <Suspense fallback={<div style={{ height: "150px" }} />}>
+        <LazyOpenSourceBanner />
+      </Suspense>
+      <Suspense fallback={<div style={{ height: "300px" }} />}>
+        <LazyFAQ category={["Pricing", "Billing"]} />
+      </Suspense>
     </PricingWrapper>
   );
 
