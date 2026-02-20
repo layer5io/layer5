@@ -1,12 +1,10 @@
-import React, { useState, Suspense, lazy } from "react";
+import React, { useState, Suspense, lazy, useCallback, useMemo } from "react";
 import PricingWrapper from "./pricing.style";
-import Comparison from "./comparison";
 import FAQ from "../General/Faq";
 import Reviews from "./review-slider";
 import options from "./generatePlans";
 import PlanCard from "../../components/Pricing/PlanCard";
 import OpenSourceBanner from "./openSource";
-import { PricingAddons } from "../../components/Pricing/PricingAddons";
 import { Box, FormControl, InputLabel, MenuItem, Select, Typography } from "@sistent/sistent";
 import { Currencies } from "../../utils/currencies";
 import {
@@ -19,6 +17,7 @@ const LazyComparison = lazy(() => import("./comparison"));
 const LazyReviews = lazy(() => import("./review-slider"));
 const LazyOpenSourceBanner = lazy(() => import("./openSource"));
 const LazyFAQ = lazy(() => import("../General/Faq"));
+const LazyPricingAddons = lazy(() => import("../../components/Pricing/PricingAddons").then(module => ({ default: module.PricingAddons })));
 
 const customToggleButtonStyles = {
   container: {
@@ -47,41 +46,47 @@ const getCustomToggleButtonStyle = (isActive, baseStyle) => ({
   },
 });
 
-export const CurrencySelect = ({ currency, setCurrency }) => {
+export const CurrencySelect = React.memo(({ currency, setCurrency }) => {
+  const handleCurrencyChange = useCallback((e) => {
+    setCurrency(e.target.value);
+  }, [setCurrency]);
+
+  const formControlSx = useMemo(() => ({
+    minWidth: 150,
+    "& .MuiInputLabel-root": {
+      color: "white",
+      "&.Mui-focused": { color: "#00B39F" },
+    },
+    "& .MuiOutlinedInput-root": {
+      color: "white",
+      "& .MuiSelect-icon": { color: "white" },
+      "& .MuiOutlinedInput-notchedOutline": { borderColor: "white" },
+      "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+        borderColor: "#00B39F",
+      },
+    },
+    "&:hover": {
+      "& .MuiInputLabel-root": { color: "#00B39F" },
+      "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
+        borderColor: "#00B39F",
+        borderWidth: "2px",
+      },
+    },
+  }), []);
+
+  const currencyEntries = useMemo(() => Object.entries(Currencies), []);
+
   return (
     <FormControl
       variant="outlined"
       size="small"
-      sx={{
-        minWidth: 150,
-        "& .MuiInputLabel-root": {
-          color: "white",
-          "&.Mui-focused": { color: "#00B39F" },
-        },
-        "& .MuiOutlinedInput-root": {
-          color: "white",
-          "& .MuiSelect-icon": { color: "white" },
-          "& .MuiOutlinedInput-notchedOutline": { borderColor: "white" },
-          "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#00B39F",
-          },
-        },
-        "&:hover": {
-          "& .MuiInputLabel-root": { color: "#00B39F" },
-          "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#00B39F",
-            borderWidth: "2px",
-          },
-        },
-      }}
+      sx={formControlSx}
     >
       <InputLabel id="currency-selector-label">Currency</InputLabel>
       <Select
         labelId="currency-selector-label"
         value={currency}
-        onChange={(e) => {
-          setCurrency(e.target.value);
-        }}
+        onChange={handleCurrencyChange}
         label="Currency"
         renderValue={(value) => (
           <Box sx={{ display: "flex", alignItems: "center", gap: 1, color: "#fff" }}>
@@ -90,7 +95,7 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
           </Box>
         )}
       >
-        {Object.entries(Currencies).map(([code, { symbol, name }]) => (
+        {currencyEntries.map(([code, { symbol, name }]) => (
           <MenuItem key={code} value={code}>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
               <Typography variant="body1">{symbol}</Typography>
@@ -101,12 +106,21 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
       </Select>
     </FormControl>
   );
-};
+});
 
 const Pricing = () => {
-  // const [monthly, setMonthly] = useState(false);
   const [isYearly, setIsYearly] = useState(false);
   const [currency, setCurrency] = useState("USD");
+
+  const handleYearlyToggle = useCallback((yearly) => {
+    setIsYearly(yearly);
+  }, []);
+
+  const handleCurrencyChange = useCallback((newCurrency) => {
+    setCurrency(newCurrency);
+  }, []);
+
+  const enterprisePlan = useMemo(() => options.filter(opt => opt.tier == "Enterprise")[0], []);
 
   return (
     <PricingWrapper>
@@ -114,17 +128,17 @@ const Pricing = () => {
         <h1 className="header-heading">Plans For Every Team Size</h1>
 
         <div className="header-controls" style={{ display: "flex", "gap": "1rem", alignItems: "center", "justifyContent": "flex-end", width: "85%" }} >
-          <CurrencySelect currency={currency} setCurrency={setCurrency} />
+          <CurrencySelect currency={currency} setCurrency={handleCurrencyChange} />
 
           <Box sx={customToggleButtonStyles.container}>
             <Box
-              onClick={() => setIsYearly(false)}
+              onClick={() => handleYearlyToggle(false)}
               sx={getCustomToggleButtonStyle(!isYearly, customToggleButtonStyles.base)}
             >
               Monthly
             </Box>
             <Box
-              onClick={() => setIsYearly(true)}
+              onClick={() => handleYearlyToggle(true)}
               sx={getCustomToggleButtonStyle(isYearly, customToggleButtonStyles.base)}
             >
               Yearly
@@ -137,9 +151,13 @@ const Pricing = () => {
       <div className="wrapper">
         <PlanCard planData={options} isYearly={isYearly} currency={currency} />
       </div>
-      <div style={{ marginTop: "7rem", marginBottom: "3rem" }}>
-        <PricingAddons isYearly={isYearly} setIsYearly={setIsYearly} currency={currency} enterprisePlan={options.filter(opt => opt.tier == "Enterprise")[0]} />
-      </div>
+      
+      {/* Lazy load PricingAddons to reduce TBT */}
+      <Suspense fallback={<div style={{ height: "500px", marginTop: "7rem", marginBottom: "3rem" }} />}>
+        <div style={{ marginTop: "7rem", marginBottom: "3rem" }}>
+          <LazyPricingAddons isYearly={isYearly} setIsYearly={handleYearlyToggle} currency={currency} enterprisePlan={enterprisePlan} />
+        </div>
+      </Suspense>
       
       {/* Lazy load below-fold components */}
       <Suspense fallback={<div style={{ height: "300px" }} />}>
