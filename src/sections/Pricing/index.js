@@ -1,4 +1,4 @@
-import React, { useState, Suspense, lazy, useCallback, useMemo } from "react";
+import React, { useState, Suspense, lazy, useCallback, useMemo, useEffect } from "react";
 import PricingWrapper from "./pricing.style";
 import FAQ from "../General/Faq";
 import Reviews from "./review-slider";
@@ -111,6 +111,7 @@ export const CurrencySelect = React.memo(({ currency, setCurrency }) => {
 const Pricing = () => {
   const [isYearly, setIsYearly] = useState(false);
   const [currency, setCurrency] = useState("USD");
+  const [renderHeavyComponents, setRenderHeavyComponents] = useState(false);
 
   const handleYearlyToggle = useCallback((yearly) => {
     setIsYearly(yearly);
@@ -121,6 +122,14 @@ const Pricing = () => {
   }, []);
 
   const enterprisePlan = useMemo(() => options.filter(opt => opt.tier == "Enterprise")[0], []);
+
+  // Defer rendering of heavy components until after paint
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setRenderHeavyComponents(true);
+    }, 100);
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <PricingWrapper>
@@ -152,30 +161,34 @@ const Pricing = () => {
         <PlanCard planData={options} isYearly={isYearly} currency={currency} />
       </div>
       
-      {/* Lazy load PricingAddons to reduce TBT */}
-      <Suspense fallback={<div style={{ height: "500px", marginTop: "7rem", marginBottom: "3rem" }} />}>
-        <div style={{ marginTop: "7rem", marginBottom: "3rem" }}>
-          <LazyPricingAddons isYearly={isYearly} setIsYearly={handleYearlyToggle} currency={currency} enterprisePlan={enterprisePlan} />
-        </div>
-      </Suspense>
+      {/* Lazy load PricingAddons to reduce TBT - defer until after paint */}
+      {renderHeavyComponents && (
+        <Suspense fallback={<div style={{ height: "500px", marginTop: "7rem", marginBottom: "3rem" }} />}>
+          <div style={{ marginTop: "7rem", marginBottom: "3rem" }}>
+            <LazyPricingAddons isYearly={isYearly} setIsYearly={handleYearlyToggle} currency={currency} enterprisePlan={enterprisePlan} />
+          </div>
+        </Suspense>
+      )}
       
-      {/* Lazy load below-fold components */}
-      <Suspense fallback={<div style={{ height: "300px" }} />}>
-        <LazyComparison />
-      </Suspense>
-      <Suspense fallback={<div style={{ height: "400px" }} />}>
-        <LazyReviews />
-      </Suspense>
-      <Suspense fallback={<div style={{ height: "150px" }} />}>
-        <LazyOpenSourceBanner />
-      </Suspense>
-      <Suspense fallback={<div style={{ height: "300px" }} />}>
-        <LazyFAQ category={["Pricing", "Billing"]} />
-      </Suspense>
+      {/* Lazy load below-fold components - defer until after paint */}
+      {renderHeavyComponents && (
+        <>
+          <Suspense fallback={<div style={{ height: "300px" }} />}>
+            <LazyComparison />
+          </Suspense>
+          <Suspense fallback={<div style={{ height: "400px" }} />}>
+            <LazyReviews />
+          </Suspense>
+          <Suspense fallback={<div style={{ height: "150px" }} />}>
+            <LazyOpenSourceBanner />
+          </Suspense>
+          <Suspense fallback={<div style={{ height: "300px" }} />}>
+            <LazyFAQ category={["Pricing", "Billing"]} />
+          </Suspense>
+        </>
+      )}
     </PricingWrapper>
   );
-
 };
-
 
 export default Pricing;
