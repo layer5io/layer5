@@ -227,3 +227,7 @@ redirects:
     toPath: "/cloud-native-management/kanvas/collaborate/peer-reviews"
     redirectInBrowser: true
     isPermanent: true
+  - fromPath: "/programs/gsoc"
+    toPath: "/programs/gsoc/2026"
+    redirectInBrowser: true
+    isPermanent: false

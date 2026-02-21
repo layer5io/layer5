@@ -416,10 +416,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   programs.forEach((program) => {
     envCreatePage({
-      path: `/programs/${program.frontmatter.programSlug}`,
+      path: program.fields.slug,
       component: `${MultiProgramPostTemplate}?__contentFilePath=${program.internal.contentFilePath}`,
       context: {
         program: program.frontmatter.program,
+        slug: program.fields.slug,
       },
     });
   });

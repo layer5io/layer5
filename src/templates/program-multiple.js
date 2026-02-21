@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { graphql } from "gatsby";
 
 import SEO from "../components/seo";
@@ -23,8 +23,7 @@ export const query = graphql`query ProgramByName($program: String!) {
   }
 }`;
 
-const ProgramsPage = ({ data, children }) => {
-  const [activeOption] = useState(0);
+const ProgramsPage = ({ data, children, pageContext }) => {
   const programs = data.allMdx.nodes;
   const { navigate } = require("gatsby");
 
@@ -34,6 +33,13 @@ const ProgramsPage = ({ data, children }) => {
     optionItem.value = program.fields.slug;
     return optionItem;
   });
+
+  const currentSlug = pageContext && pageContext.slug;
+  const activeOption = Math.max(
+    options.findIndex((opt) => opt.value === currentSlug),
+    0
+  );
+
   return (
 
     <>
