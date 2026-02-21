@@ -28,7 +28,7 @@ const settings = {
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 2000,
-  lazyLoad: "progressive", // Load images progressively
+  lazyLoad: "progressive", 
   responsive: [
     {
       breakpoint: 1300,
@@ -108,7 +108,6 @@ const Reviews = () => {
     responsive: []
   }), [slidesToShowState]);
 
-  // Debounced resize handler - avoid repeated reflow queries
   const onResizeDebounced = useCallback(() => {
     if (resizeTimeoutRef.current) {
       clearTimeout(resizeTimeoutRef.current);
@@ -119,7 +118,6 @@ const Reviews = () => {
         if (prev !== slides) return slides;
         return prev;
       });
-      // Use requestIdleCallback to defer slider update until idle
       if (sliderRef.current && sliderRef.current.innerSlider && typeof sliderRef.current.innerSlider.onWindowResized === "function") {
         if (typeof requestIdleCallback !== "undefined") {
           requestIdleCallback(() => {
@@ -131,7 +129,7 @@ const Reviews = () => {
           sliderRef.current.innerSlider.onWindowResized();
         }
       }
-    }, 200); // Increased debounce to 200ms to avoid excessive reflows
+    }, 200);
   }, [computeSlides]);
 
   useLayoutEffect(() => {

@@ -12,7 +12,6 @@ import {
   getToggleButtonStyle,
 } from "../../components/Pricing/PricingAddons/styles.js";
 
-// Lazy load components below the fold for better performance
 const LazyComparison = lazy(() => import("./comparison"));
 const LazyReviews = lazy(() => import("./review-slider"));
 const LazyOpenSourceBanner = lazy(() => import("./openSource"));
@@ -123,7 +122,6 @@ const Pricing = () => {
 
   const enterprisePlan = useMemo(() => options.filter(opt => opt.tier == "Enterprise")[0], []);
 
-  // Defer rendering of heavy components until after paint
   useEffect(() => {
     const timeout = setTimeout(() => {
       setRenderHeavyComponents(true);

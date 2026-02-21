@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import {
   Container,
@@ -43,7 +42,6 @@ import { formatAndConvertPrice, formatSliderPrice } from "../../../utils/currenc
 
 export const PricingAddons = React.memo(({ isYearly = false, setIsYearly, currency, enterprisePlan }) => {
   const [selectedAddon, setSelectedAddon] = useState(null);
-  // const [quantity, setQuantity] = useState(1);
   const quantity = 1;
   const [selectedSubAddOns, setSelectedSubAddOns] = useState({});
   const [totalPrice, setTotalPrice] = useState(0);
@@ -62,7 +60,6 @@ export const PricingAddons = React.memo(({ isYearly = false, setIsYearly, curren
   return learners.toLocaleString("en-US");
 };
 
-  // Helper function to render icons based on type
   const renderIcon = (iconType) => {
     switch (iconType) {
       case "academy":
@@ -133,7 +130,6 @@ export const PricingAddons = React.memo(({ isYearly = false, setIsYearly, curren
     setSelectedAddon(addon || null);
     setQuantityIndex(0);
 
-    // Always select "academy-theory" if academy is chosen
     if (addon?.id === "academy") {
       setSelectedSubAddOns({ "academy-theory": true });
     } else {
@@ -337,7 +333,6 @@ export const PricingAddons = React.memo(({ isYearly = false, setIsYearly, curren
                           min={0}
                           valueLabelDisplay="auto"
                           valueLabelFormat={(value) => {
-                            // Determine which sub-addon to show pricing for
                             let targetSubAddon = null;
                             if (selectedSubAddOns["academy-practical"]) {
                               targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-practical");
@@ -356,7 +351,6 @@ export const PricingAddons = React.memo(({ isYearly = false, setIsYearly, curren
                             return "";
                           }}
                           max={(() => {
-                            // Determine which sub-addon to use for max value
                             let targetSubAddon = null;
                             if (selectedSubAddOns["academy-practical"]) {
                               targetSubAddon = selectedAddon?.subAddOns?.find(sub => sub.id === "academy-practical");
