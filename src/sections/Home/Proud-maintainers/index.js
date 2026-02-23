@@ -6,8 +6,8 @@ import Traefik from "../../../assets/images/service-mesh-icons/traefik.svg";
 import Istio from "../../../assets/images/service-mesh-icons/istio.svg";
 import ImageHub from "../../../assets/images/image-hub/layer5-image-hub.svg";
 
-import { ReactComponent as CNCF } from "../../../assets/images/partners/cncf/horizontal/color/cncf-colorMode.svg";
-import { ReactComponent as OAM } from "../../../assets/images/partners/oam-colorMode.svg";
+const CNCF = "/partners/cncf/horizontal/color/cncf-colorMode.svg";
+const OAM = "/partners/oam-colorMode.svg";
 import { ReactComponent as Linkerd } from "../../../assets/images/service-mesh-icons/linkerd/horizontal/color/linkerd-horizontal-colorMode.svg";
 import { ReactComponent as Meshery } from "../../../assets/images/meshery/meshery-logo-colorMode.svg";
 import { ReactComponent as Envoy } from "../../../assets/images/service-mesh-icons/envoy/horizontal/color/envoy-horizontal-colorMode.svg";
@@ -18,9 +18,8 @@ import { ReactComponent as SMI } from "../../../assets/images/service-mesh-icons
 const ProudMaintainers = () => {
   return (
     <ProjectItemWrapper>
-      <Container >
+      <Container>
         <Row className="project-title">
-
           <SectionTitle $UniWidth="100%">
             <h4>Proudly maintaining and contributing</h4>
             <h2>
@@ -29,15 +28,17 @@ const ProudMaintainers = () => {
           </SectionTitle>
 
           <p className="project-text">
-            At Layer5, we champion developer-defined infrastructure, giving engineers the power to reshape application delivery. We empower operators in reimagining how they manage modern infrastructure: collaboratively.
+            At Layer5, we champion developer-defined infrastructure, giving
+            engineers the power to reshape application delivery. We empower
+            operators in reimagining how they manage modern infrastructure:
+            collaboratively.
           </p>
-
         </Row>
       </Container>
       <Row className="row">
         <Col $xs={3} $sm={3} $md={3} $lg={3} className="proj_row_1_col">
           <div className="proj_icon_1">
-            <CNCF alt="CNCF" />
+            <img src={CNCF} alt="CNCF" />
           </div>
         </Col>
         <Col $xs={3} $sm={3} $md={3} $lg={3} className="proj_row_1_col">
@@ -57,7 +58,7 @@ const ProudMaintainers = () => {
         </Col>
         <Col $xs={3} $sm={3} $md={3} $lg={3} className="proj_row_1_col">
           <div className="proj_icon_1">
-            <OAM alt="OAM" />
+            <img src={OAM} alt="OAM" />
           </div>
         </Col>
       </Row>
