@@ -30,7 +30,7 @@ const ProgramsSingle = ({ data, children, options, setActiveOption, activeOption
                 styles={selectStyles}
                 options={options}
                 value={options[activeOption]}
-                onChange={(e) => setActiveOption(() => e.value)}
+                onChange={(e) => setActiveOption(e.value)}
                 theme={dropdownTheme}
               />}
             </div>
