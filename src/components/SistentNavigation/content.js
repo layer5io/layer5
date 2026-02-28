@@ -149,11 +149,15 @@ export const content = [
   { id: 110, link: "/projects/sistent/components/text-input/guidance", text: "Text Input" },
   { id: 111, link: "/projects/sistent/components/text-input/code", text: "Text Input" },
 
-  { id: 112, link: "/projects/sistent/components/toolbar", text: "Toolbar" },
-  { id: 113, link: "/projects/sistent/components/toolbar/guidance", text: "Toolbar" },
-  { id: 114, link: "/projects/sistent/components/toolbar/code", text: "Toolbar" },
+  { id: 112, link: "/projects/sistent/components/toggle-button", text: "Toggle Button" },
+  { id: 113, link: "/projects/sistent/components/toggle-button/guidance", text: "Toggle Button" },
+  { id: 114, link: "/projects/sistent/components/toggle-button/code", text: "Toggle Button" },
 
-  { id: 115, link: "/projects/sistent/components/tooltip", text: "Tooltip" },
-  { id: 116, link: "/projects/sistent/components/tooltip/guidance", text: "Tooltip" },
-  { id: 117, link: "/projects/sistent/components/tooltip/code", text: "Tooltip" },
+  { id: 115, link: "/projects/sistent/components/toolbar", text: "Toolbar" },
+  { id: 116, link: "/projects/sistent/components/toolbar/guidance", text: "Toolbar" },
+  { id: 117, link: "/projects/sistent/components/toolbar/code", text: "Toolbar" },
+
+  { id: 118, link: "/projects/sistent/components/tooltip", text: "Tooltip" },
+  { id: 119, link: "/projects/sistent/components/tooltip/guidance", text: "Tooltip" },
+  { id: 120, link: "/projects/sistent/components/tooltip/code", text: "Tooltip" },
 ];
