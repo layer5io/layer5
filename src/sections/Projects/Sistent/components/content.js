@@ -154,14 +154,16 @@ const componentsData = [
   {
     id: 20,
     name: "Switch",
-    description: "The Switch component allows users to toggle the state of a single setting on or off.",
+    description:
+      "The Switch component allows users to toggle the state of a single setting on or off.",
     url: "/projects/sistent/components/switch",
-    src: "/switch"
+    src: "/switch",
   },
   {
     id: 21,
     name: "Tabs",
-    description: "Tabs organize and allow navigation between groups of content that are related and at the same level of hierarchy.",
+    description:
+      "Tabs organize and allow navigation between groups of content that are related and at the same level of hierarchy.",
     url: "/projects/sistent/components/tabs",
     src: "/tabs",
   },
@@ -184,7 +186,8 @@ const componentsData = [
   {
     id: 24,
     name: "Badge",
-    description: "A badge is a small component that displays a number or status indicator, often used to show notifications or messages.",
+    description:
+      "A badge is a small component that displays a number or status indicator, often used to show notifications or messages.",
     url: "/projects/sistent/components/badge",
     src: "/badge",
   },
@@ -197,72 +200,81 @@ const componentsData = [
     src: "/toolbar",
   },
   {
-    "id": 26,
-    "name": "RadioGroup",
-    "description": "Sistent offers a well-structured RadioGroup component that allows users to select one option from a set.",
-    "url": "/projects/sistent/components/radiogroup",
-    "src": "/radiogroup"
+    id: 26,
+    name: "RadioGroup",
+    description:
+      "Sistent offers a well-structured RadioGroup component that allows users to select one option from a set.",
+    url: "/projects/sistent/components/radiogroup",
+    src: "/radiogroup",
   },
   {
-    "id": 27,
-    "name": "Grid",
-    "description": "The Grid component in Sistent provides a flexible and responsive layout system for arranging content in rows and columns.",
-    "url": "/projects/sistent/components/grid",
-    "src": "/grid"
+    id: 27,
+    name: "Grid",
+    description:
+      "The Grid component in Sistent provides a flexible and responsive layout system for arranging content in rows and columns.",
+    url: "/projects/sistent/components/grid",
+    src: "/grid",
   },
   {
-    "id": 28,
-    "name": "List",
-    "description": "Lists are essential UI elements that allow items to be organized sequentially in a structured and readable way. They help users view, select, and interact with multiple items conveniently.",
-    "url": "/projects/sistent/components/list",
-    "src": "/list",
+    id: 28,
+    name: "List",
+    description:
+      "Lists are essential UI elements that allow items to be organized sequentially in a structured and readable way. They help users view, select, and interact with multiple items conveniently.",
+    url: "/projects/sistent/components/list",
+    src: "/list",
   },
   {
-    "id": 29,
-    "name": "Chip",
-    "description": "Chips are compact elements that represent an input, attribute, or action. They are often used for tags, contacts, or filters.",
-    "url": "/projects/sistent/components/chip",
-    "src": "/chip",
+    id: 29,
+    name: "Chip",
+    description:
+      "Chips are compact elements that represent an input, attribute, or action. They are often used for tags, contacts, or filters.",
+    url: "/projects/sistent/components/chip",
+    src: "/chip",
   },
   {
-    "id": 30,
-    "name": "Collapse",
-    "description": "The Collapse component is used to create expandable/collapsible content sections. It smoothly animates the height of its children from zero to full height when expanded.",
-    "url": "/projects/sistent/components/collapse",
-    "src": "/collapse",
+    id: 30,
+    name: "Collapse",
+    description:
+      "The Collapse component is used to create expandable/collapsible content sections. It smoothly animates the height of its children from zero to full height when expanded.",
+    url: "/projects/sistent/components/collapse",
+    src: "/collapse",
   },
   {
-    "id": 31,
-    "name": "FormControlLabel",
-    "description": "A control + label pair used for checkboxes or radio buttons.",
-    "url": "/projects/sistent/components/formcontrollabel",
-    "src": "/formcontrollabel",
+    id: 31,
+    name: "FormControlLabel",
+    description: "A control + label pair used for checkboxes or radio buttons.",
+    url: "/projects/sistent/components/formcontrollabel",
+    src: "/formcontrollabel",
   },
   {
     id: 32,
     name: "IconButton",
-    description: "IconButton provides an interactive button component that displays only an icon, ideal for compact UIs where space is limited and actions are easily recognizable through iconography.",
+    description:
+      "IconButton provides an interactive button component that displays only an icon, ideal for compact UIs where space is limited and actions are easily recognizable through iconography.",
     url: "/projects/sistent/components/iconbutton",
     src: "/iconbutton",
   },
   {
     id: 33,
     name: "Stepper",
-    description: "Stepper provides a way to display progress through a sequence of logical steps.",
+    description:
+      "Stepper provides a way to display progress through a sequence of logical steps.",
     url: "/projects/sistent/components/stepper",
     src: "/stepper",
   },
   {
     id: 34,
     name: "Stack",
-    description: "Stack is a layout component that arranges elements in a one-dimensional flow with customizable spacing and direction.",
+    description:
+      "Stack is a layout component that arranges elements in a one-dimensional flow with customizable spacing and direction.",
     url: "/projects/sistent/components/stack",
     src: "/stack",
   },
   {
     id: 35,
     name: "Accordion",
-    description: "An accordion is a vertically stacked list of headers that can be clicked to reveal or hide associated content, allowing users to toggle between hiding and showing large amounts of content in a compact space.",
+    description:
+      "An accordion is a vertically stacked list of headers that can be clicked to reveal or hide associated content, allowing users to toggle between hiding and showing large amounts of content in a compact space.",
     url: "/projects/sistent/components/accordion",
     src: "/accordion",
   },
@@ -273,6 +285,14 @@ const componentsData = [
       "The Divider component visually separates content with a thin line, helping to organize sections and improve scannability in lists and layouts.",
     url: "/projects/sistent/components/divider",
     src: "/divider",
+  },
+  {
+    id: 37,
+    name: "FormControl",
+    description:
+      "FormControl provides context and grouping for form elements, managing shared state like error, disabled, and required across labels, inputs, and helper text.",
+    url: "/projects/sistent/components/formcontrol",
+    src: "/formcontrol",
   },
 ];
 
