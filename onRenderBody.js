@@ -76,6 +76,6 @@ const MagicScriptTag = (props) => {
 
 export const onRenderBody = ({ setPreBodyComponents, setHtmlAttributes }) => {
   // FIX 4: Set dark background at HTML level during SSR — before any JS runs
-  setHtmlAttributes({ style: "background-color: #000;" });
+  setHtmlAttributes({ style: { backgroundColor: "#000" } });
   setPreBodyComponents(<MagicScriptTag key="theme-injection" theme={themes} />);
 };
