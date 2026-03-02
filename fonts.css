@@ -1,3 +1,11 @@
+html {
+  background-color: #000;
+}
+
+body {
+  background-color: var(--background, #000);
+}
+
 @font-face {
     font-family: "Qanelas Soft Black";
     src: url('./static/fonts/qanelas-soft/QanelasSoftBlack.otf') format('opentype');
