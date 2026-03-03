@@ -13,7 +13,7 @@ export const ThemeSetting = {
 export const DarkThemeKey = "theme";
 
 const defaultState = {
-  isDark: true,  // solve here
+  isDark: false,
   didLoad: false,
   themeSetting: ThemeSetting.SYSTEM,
   toggleDark: () => undefined,
