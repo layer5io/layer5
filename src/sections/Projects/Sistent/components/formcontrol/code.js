@@ -8,24 +8,36 @@ import {
   Checkbox,
   FormControlLabel,
   Radio,
-} from "@sistent/sistent";
-import {
   FormControl,
-  InputLabel,
-  FormHelperText,
   FormGroup,
   RadioGroup,
-} from "@mui/material";
+  InputLabel,
+} from "@sistent/sistent";
+import { FormHelperText } from "@mui/material";
 import { CodeBlock } from "../button/code-block";
 import { SistentLayout } from "../../sistent-layout";
 import TabButton from "../../../../../reusecore/Button";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 
 const codes = [
-  `<SistentThemeProvider>
+  `import {
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+} from "@sistent/sistent";
+import { FormHelperText } from "@mui/material";
+
+<SistentThemeProvider>
   <FormControl sx={{ width: "200px" }}>
-    <InputLabel shrink={!!age}>Age</InputLabel>
-    <Select label="Age" value={age} onChange={(e) => setAge(e.target.value)}>
+    <InputLabel id="age-select-label">Age</InputLabel>
+    <Select
+      labelId="age-select-label"
+      id="age-select"
+      value={age}
+      label="Age"
+      onChange={(e) => setAge(e.target.value)}
+    >
       <MenuItem value={10}>Ten</MenuItem>
       <MenuItem value={20}>Twenty</MenuItem>
       <MenuItem value={30}>Thirty</MenuItem>
@@ -33,37 +45,86 @@ const codes = [
     <FormHelperText>Select your age range</FormHelperText>
   </FormControl>
 </SistentThemeProvider>`,
-  `<SistentThemeProvider>
+  `import {
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+} from "@sistent/sistent";
+import { FormHelperText } from "@mui/material";
+
+<SistentThemeProvider>
   <FormControl sx={{ width: "200px" }} required>
-    <InputLabel shrink={!!category}>Category</InputLabel>
-    <Select label="Category" value={category} onChange={(e) => setCategory(e.target.value)}>
+    <InputLabel id="category-select-label">Category</InputLabel>
+    <Select
+      labelId="category-select-label"
+      id="category-select"
+      value={category}
+      label="Category"
+      onChange={(e) => setCategory(e.target.value)}
+    >
       <MenuItem value="frontend">Frontend</MenuItem>
       <MenuItem value="backend">Backend</MenuItem>
     </Select>
     <FormHelperText>This field is required</FormHelperText>
   </FormControl>
 </SistentThemeProvider>`,
-  `<SistentThemeProvider>
+  `import {
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+} from "@sistent/sistent";
+import { FormHelperText } from "@mui/material";
+
+<SistentThemeProvider>
   <FormControl sx={{ width: "200px" }} error>
-    <InputLabel shrink={!!priority}>Priority</InputLabel>
-    <Select label="Priority" value={priority} onChange={(e) => setPriority(e.target.value)}>
+    <InputLabel id="priority-select-label">Priority</InputLabel>
+    <Select
+      labelId="priority-select-label"
+      id="priority-select"
+      value={priority}
+      label="Priority"
+      onChange={(e) => setPriority(e.target.value)}
+    >
       <MenuItem value="low">Low</MenuItem>
       <MenuItem value="high">High</MenuItem>
     </Select>
     <FormHelperText>Please select a priority</FormHelperText>
   </FormControl>
 </SistentThemeProvider>`,
-  `<SistentThemeProvider>
+  `import {
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+} from "@sistent/sistent";
+import { FormHelperText } from "@mui/material";
+
+<SistentThemeProvider>
   <FormControl sx={{ width: "200px" }} disabled>
-    <InputLabel>Region</InputLabel>
-    <Select label="Region" value="">
+    <InputLabel id="region-select-label">Region</InputLabel>
+    <Select
+      labelId="region-select-label"
+      id="region-select"
+      defaultValue="us"
+      label="Region"
+    >
       <MenuItem value="us">US</MenuItem>
       <MenuItem value="eu">EU</MenuItem>
     </Select>
     <FormHelperText>Region is disabled</FormHelperText>
   </FormControl>
 </SistentThemeProvider>`,
-  `<SistentThemeProvider>
+  `import {
+  FormControl,
+  FormGroup,
+  FormControlLabel,
+  Checkbox,
+} from "@sistent/sistent";
+import { FormHelperText } from "@mui/material";
+
+<SistentThemeProvider>
   <FormControl component="fieldset">
     <FormGroup>
       <FormControlLabel
@@ -76,7 +137,15 @@ const codes = [
     <FormHelperText>Choose notifications</FormHelperText>
   </FormControl>
 </SistentThemeProvider>`,
-  `<SistentThemeProvider>
+  `import {
+  FormControl,
+  RadioGroup,
+  FormControlLabel,
+  Radio,
+} from "@sistent/sistent";
+import { FormHelperText } from "@mui/material";
+
+<SistentThemeProvider>
   <FormControl component="fieldset">
     <RadioGroup value={theme} onChange={(e) => setTheme(e.target.value)}>
       <FormControlLabel value="light" control={<Radio />} label="Light" />
@@ -162,10 +231,12 @@ const FormControlCode = () => {
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <FormControl sx={{ width: "200px" }}>
-                  <InputLabel shrink={!!age}>Age</InputLabel>
+                  <InputLabel id="demo-age-select-label">Age</InputLabel>
                   <Select
-                    label="Age"
+                    labelId="demo-age-select-label"
+                    id="demo-age-select"
                     value={age}
+                    label="Age"
                     onChange={(e) => setAge(e.target.value)}
                   >
                     <MenuItem value={10}>Ten</MenuItem>
@@ -190,10 +261,14 @@ const FormControlCode = () => {
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <FormControl sx={{ width: "200px" }} required>
-                  <InputLabel shrink={!!category}>Category</InputLabel>
+                  <InputLabel id="demo-category-select-label">
+                    Category
+                  </InputLabel>
                   <Select
-                    label="Category"
+                    labelId="demo-category-select-label"
+                    id="demo-category-select"
                     value={category}
+                    label="Category"
                     onChange={(e) => setCategory(e.target.value)}
                   >
                     <MenuItem value="frontend">Frontend</MenuItem>
@@ -217,10 +292,14 @@ const FormControlCode = () => {
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <FormControl sx={{ width: "200px" }} error>
-                  <InputLabel shrink={!!priority}>Priority</InputLabel>
+                  <InputLabel id="demo-priority-select-label">
+                    Priority
+                  </InputLabel>
                   <Select
-                    label="Priority"
+                    labelId="demo-priority-select-label"
+                    id="demo-priority-select"
                     value={priority}
+                    label="Priority"
                     onChange={(e) => setPriority(e.target.value)}
                   >
                     <MenuItem value="low">Low</MenuItem>
@@ -244,8 +323,13 @@ const FormControlCode = () => {
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <FormControl sx={{ width: "200px" }} disabled>
-                  <InputLabel>Region</InputLabel>
-                  <Select label="Region" value="">
+                  <InputLabel id="demo-region-select-label">Region</InputLabel>
+                  <Select
+                    labelId="demo-region-select-label"
+                    id="demo-region-select"
+                    defaultValue="us"
+                    label="Region"
+                  >
                     <MenuItem value="us">US</MenuItem>
                     <MenuItem value="eu">EU</MenuItem>
                   </Select>
