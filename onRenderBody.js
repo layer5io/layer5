@@ -7,62 +7,43 @@ const themes = {
   [ThemeSetting.DARK]: darktheme,
 };
 
-const MagicScriptTag = (props) => {
-  const codeToRunOnClient = `
+export const onRenderBody = ({ setHeadComponents }) => {
+  const scriptContent = `
     (function() {
       try {
-        const themeFromLocalStorage = localStorage.getItem('${DarkThemeKey}') || '${ThemeSetting.SYSTEM}';
-        const isLightModeActive = () => window.matchMedia ? window.matchMedia('(prefers-color-scheme: light)').matches : false;
+        var mode = localStorage.getItem('${DarkThemeKey}') || '${ThemeSetting.SYSTEM}';
+        var isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         
-        let colorMode;
-        if (themeFromLocalStorage === '${ThemeSetting.SYSTEM}') {
-          colorMode = isLightModeActive() ? '${ThemeSetting.LIGHT}' : '${ThemeSetting.DARK}';
-        } else {
-          colorMode = themeFromLocalStorage;
-        }
-
-        const root = document.documentElement;
+        var colorMode = mode === '${ThemeSetting.SYSTEM}' 
+          ? (isSystemDark ? '${ThemeSetting.DARK}' : '${ThemeSetting.LIGHT}')
+          : mode;
 
         if (colorMode === '${ThemeSetting.DARK}') {
-          root.classList.add('dark-theme-init');
-          root.style.backgroundColor = '#121212';
-        } else {
-          root.classList.remove('dark-theme-init');
-          root.style.backgroundColor = '#ffffff';
+          document.documentElement.style.backgroundColor = '#121212';
+          document.documentElement.classList.add('dark-theme-init');
         }
-
-        const iterate = (obj) => {
-          if (!obj) return;
-          Object.keys(obj).forEach((key) => {
-            if (typeof obj[key] === 'object') iterate(obj[key]);
-            else root.style.setProperty('--' + key, obj[key]);
-          });
-        };
-
-        const parsedTheme = ${JSON.stringify(props.theme)};
-        const theme = parsedTheme[colorMode];
-        if (theme) iterate(theme);
-
-        root.style.setProperty('--initial-color-mode', colorMode);
+        var themes = ${JSON.stringify(themes)};
+        var theme = themes[colorMode];
+        if (theme) {
+          for (var key in theme) {
+            if (typeof theme[key] === 'object') {
+              for (var subKey in theme[key]) {
+                document.documentElement.style.setProperty('--' + subKey, theme[key][subKey]);
+              }
+            } else {
+              document.documentElement.style.setProperty('--' + key, theme[key]);
+            }
+          }
+        }
+        document.documentElement.style.setProperty('--initial-color-mode', colorMode);
       } catch (e) {}
-    })()
+    })();
   `;
-  return <script key="theme-injection" dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />;
-};
 
-export const onRenderBody = ({ setPreBodyComponents, setHeadComponents }) => {
   setHeadComponents([
-    <style key="ssr-background-fix" dangerouslySetInnerHTML={{
-      __html: `
-        html.dark-theme-init, 
-        html.dark-theme-init body { 
-          background-color: #121212 !important; 
-        }
-      `
-    }} />
-  ]);
-
-  setPreBodyComponents([
-    <MagicScriptTag key="theme-injection" theme={themes} />
+    <style key="critical-theme-css" dangerouslySetInnerHTML={{
+      __html: "html.dark-theme-init, html.dark-theme-init body { background-color: #121212 !important; }"
+    }} />,
+    <script key="critical-theme-script" dangerouslySetInnerHTML={{ __html: scriptContent }} />
   ]);
 };
