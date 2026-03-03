@@ -74,8 +74,18 @@ const MagicScriptTag = (props) => {
   return <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />;
 };
 
-export const onRenderBody = ({ setPreBodyComponents, setHtmlAttributes }) => {
-  // FIX 4: Set dark background at HTML level during SSR — before any JS runs
-  setHtmlAttributes({ style: { backgroundColor: "#000" } });
+export const onRenderBody = ({ setPreBodyComponents, setHtmlAttributes, setHeadComponents }) => {
+  // FIX 4: Set correct dark theme background color at HTML level during SSR
+  setHtmlAttributes({ style: { backgroundColor: "#121212" } });
+
+  // FIX 5: Inject inline style in head to prevent white flash before styled-components loads
+  setHeadComponents([
+    <style key="dark-flash-prevention">{`
+      html, body {
+        background-color: #121212 !important;
+      }
+    `}</style>
+  ]);
+
   setPreBodyComponents(<MagicScriptTag key="theme-injection" theme={themes} />);
 };
