@@ -204,223 +204,223 @@ export const content = [
     text: "FormControlLabel",
   },
 
-  {
-    id: 61,
-    link: "/projects/sistent/components/formcontrol",
-    text: "FormControl",
-  },
-  {
-    id: 62,
-    link: "/projects/sistent/components/formcontrol/guidance",
-    text: "FormControl",
-  },
-  {
-    id: 63,
-    link: "/projects/sistent/components/formcontrol/code",
-    text: "FormControl",
-  },
-
-  { id: 64, link: "/projects/sistent/components/grid", text: "Grid" },
-  { id: 65, link: "/projects/sistent/components/grid/guidance", text: "Grid" },
-  { id: 66, link: "/projects/sistent/components/grid/code", text: "Grid" },
+  { id: 61, link: "/projects/sistent/components/grid", text: "Grid" },
+  { id: 62, link: "/projects/sistent/components/grid/guidance", text: "Grid" },
+  { id: 63, link: "/projects/sistent/components/grid/code", text: "Grid" },
 
   {
-    id: 67,
+    id: 64,
     link: "/projects/sistent/components/iconbutton",
     text: "IconButton",
   },
   {
-    id: 68,
+    id: 65,
     link: "/projects/sistent/components/iconbutton/guidance",
     text: "IconButton",
   },
   {
-    id: 69,
+    id: 66,
     link: "/projects/sistent/components/iconbutton/code",
     text: "IconButton",
   },
 
-  { id: 70, link: "/projects/sistent/components/icons", text: "Icons" },
+  { id: 67, link: "/projects/sistent/components/icons", text: "Icons" },
   {
-    id: 71,
+    id: 68,
     link: "/projects/sistent/components/icons/guidance",
     text: "Icons",
   },
-  { id: 72, link: "/projects/sistent/components/icons/code", text: "Icons" },
+  { id: 69, link: "/projects/sistent/components/icons/code", text: "Icons" },
 
-  { id: 73, link: "/projects/sistent/components/link", text: "Link" },
-  { id: 74, link: "/projects/sistent/components/link/guidance", text: "Link" },
-  { id: 75, link: "/projects/sistent/components/link/code", text: "Link" },
+  { id: 70, link: "/projects/sistent/components/link", text: "Link" },
+  { id: 71, link: "/projects/sistent/components/link/guidance", text: "Link" },
+  { id: 72, link: "/projects/sistent/components/link/code", text: "Link" },
 
-  { id: 76, link: "/projects/sistent/components/list", text: "List" },
-  { id: 77, link: "/projects/sistent/components/list/guidance", text: "List" },
-  { id: 78, link: "/projects/sistent/components/list/code", text: "List" },
+  { id: 73, link: "/projects/sistent/components/list", text: "List" },
+  { id: 74, link: "/projects/sistent/components/list/guidance", text: "List" },
+  { id: 75, link: "/projects/sistent/components/list/code", text: "List" },
 
-  { id: 79, link: "/projects/sistent/components/modal", text: "Modal" },
+  { id: 76, link: "/projects/sistent/components/modal", text: "Modal" },
   {
-    id: 80,
+    id: 77,
     link: "/projects/sistent/components/modal/guidance",
     text: "Modal",
   },
-  { id: 81, link: "/projects/sistent/components/modal/code", text: "Modal" },
+  { id: 78, link: "/projects/sistent/components/modal/code", text: "Modal" },
 
   {
-    id: 82,
+    id: 79,
     link: "/projects/sistent/components/pagination",
     text: "Pagination",
   },
   {
-    id: 83,
+    id: 80,
     link: "/projects/sistent/components/pagination/guidance",
     text: "Pagination",
   },
   {
-    id: 84,
+    id: 81,
     link: "/projects/sistent/components/pagination/code",
     text: "Pagination",
   },
 
-  { id: 85, link: "/projects/sistent/components/paper", text: "Paper" },
+  { id: 82, link: "/projects/sistent/components/paper", text: "Paper" },
   {
-    id: 86,
+    id: 83,
     link: "/projects/sistent/components/paper/guidance",
     text: "Paper",
   },
-  { id: 87, link: "/projects/sistent/components/paper/code", text: "Paper" },
+  { id: 84, link: "/projects/sistent/components/paper/code", text: "Paper" },
 
-  { id: 88, link: "/projects/sistent/components/popper", text: "Popper" },
+  { id: 85, link: "/projects/sistent/components/popper", text: "Popper" },
   {
-    id: 89,
+    id: 86,
     link: "/projects/sistent/components/popper/guidance",
     text: "Popper",
   },
-  { id: 90, link: "/projects/sistent/components/popper/code", text: "Popper" },
+  { id: 87, link: "/projects/sistent/components/popper/code", text: "Popper" },
 
   {
-    id: 91,
+    id: 88,
     link: "/projects/sistent/components/radiogroup",
     text: "RadioGroup",
   },
   {
-    id: 92,
+    id: 89,
     link: "/projects/sistent/components/radiogroup/guidance",
     text: "RadioGroup",
   },
   {
-    id: 93,
+    id: 90,
     link: "/projects/sistent/components/radiogroup/code",
     text: "RadioGroup",
   },
 
-  { id: 94, link: "/projects/sistent/components/select", text: "Select" },
+  { id: 91, link: "/projects/sistent/components/select", text: "Select" },
   {
-    id: 95,
+    id: 92,
     link: "/projects/sistent/components/select/guidance",
     text: "Select",
   },
-  { id: 96, link: "/projects/sistent/components/select/code", text: "Select" },
+  { id: 93, link: "/projects/sistent/components/select/code", text: "Select" },
 
-  { id: 97, link: "/projects/sistent/components/stack", text: "Stack" },
+  { id: 94, link: "/projects/sistent/components/stack", text: "Stack" },
   {
-    id: 98,
+    id: 95,
     link: "/projects/sistent/components/stack/guidance",
     text: "Stack",
   },
-  { id: 99, link: "/projects/sistent/components/stack/code", text: "Stack" },
+  { id: 96, link: "/projects/sistent/components/stack/code", text: "Stack" },
 
-  { id: 100, link: "/projects/sistent/components/stepper", text: "Stepper" },
+  { id: 97, link: "/projects/sistent/components/stepper", text: "Stepper" },
   {
-    id: 101,
+    id: 98,
     link: "/projects/sistent/components/stepper/guidance",
     text: "Stepper",
   },
   {
-    id: 102,
+    id: 99,
     link: "/projects/sistent/components/stepper/code",
     text: "Stepper",
   },
 
-  { id: 103, link: "/projects/sistent/components/switch", text: "Switch" },
+  { id: 100, link: "/projects/sistent/components/switch", text: "Switch" },
   {
-    id: 104,
+    id: 101,
     link: "/projects/sistent/components/switch/guidance",
     text: "Switch",
   },
-  { id: 105, link: "/projects/sistent/components/switch/code", text: "Switch" },
+  { id: 102, link: "/projects/sistent/components/switch/code", text: "Switch" },
 
-  { id: 106, link: "/projects/sistent/components/tabs", text: "Tabs" },
-  { id: 107, link: "/projects/sistent/components/tabs/guidance", text: "Tabs" },
-  { id: 108, link: "/projects/sistent/components/tabs/code", text: "Tabs" },
+  { id: 103, link: "/projects/sistent/components/tabs", text: "Tabs" },
+  { id: 104, link: "/projects/sistent/components/tabs/guidance", text: "Tabs" },
+  { id: 105, link: "/projects/sistent/components/tabs/code", text: "Tabs" },
 
   {
-    id: 109,
+    id: 106,
     link: "/projects/sistent/components/text-field",
     text: "Text Field",
   },
   {
-    id: 110,
+    id: 107,
     link: "/projects/sistent/components/text-field/guidance",
     text: "Text Field",
   },
   {
-    id: 111,
+    id: 108,
     link: "/projects/sistent/components/text-field/code",
     text: "Text Field",
   },
 
   {
-    id: 112,
+    id: 109,
     link: "/projects/sistent/components/text-input",
     text: "Text Input",
   },
   {
-    id: 113,
+    id: 110,
     link: "/projects/sistent/components/text-input/guidance",
     text: "Text Input",
   },
   {
-    id: 114,
+    id: 111,
     link: "/projects/sistent/components/text-input/code",
     text: "Text Input",
   },
 
   {
-    id: 115,
+    id: 112,
     link: "/projects/sistent/components/toggle-button",
     text: "Toggle Button",
   },
   {
-    id: 116,
+    id: 113,
     link: "/projects/sistent/components/toggle-button/guidance",
     text: "Toggle Button",
   },
   {
-    id: 117,
+    id: 114,
     link: "/projects/sistent/components/toggle-button/code",
     text: "Toggle Button",
   },
 
-  { id: 118, link: "/projects/sistent/components/toolbar", text: "Toolbar" },
+  { id: 115, link: "/projects/sistent/components/toolbar", text: "Toolbar" },
   {
-    id: 119,
+    id: 116,
     link: "/projects/sistent/components/toolbar/guidance",
     text: "Toolbar",
   },
   {
-    id: 120,
+    id: 117,
     link: "/projects/sistent/components/toolbar/code",
     text: "Toolbar",
   },
 
-  { id: 121, link: "/projects/sistent/components/tooltip", text: "Tooltip" },
+  { id: 118, link: "/projects/sistent/components/tooltip", text: "Tooltip" },
   {
-    id: 122,
+    id: 119,
     link: "/projects/sistent/components/tooltip/guidance",
     text: "Tooltip",
   },
   {
-    id: 123,
+    id: 120,
     link: "/projects/sistent/components/tooltip/code",
     text: "Tooltip",
+  },
+
+  {
+    id: 121,
+    link: "/projects/sistent/components/formcontrol",
+    text: "FormControl",
+  },
+  {
+    id: 122,
+    link: "/projects/sistent/components/formcontrol/guidance",
+    text: "FormControl",
+  },
+  {
+    id: 123,
+    link: "/projects/sistent/components/formcontrol/code",
+    text: "FormControl",
   },
 ];
