@@ -75,7 +75,6 @@ const CardGuidance = () => {
           <a id="Best Practices">
             <h2>Best Practices</h2>
           </a>
-
           <h3>When to Use Cards</h3>
           <p>Cards are best suited for:</p>
           <ul>
@@ -85,7 +84,13 @@ const CardGuidance = () => {
             <li>Profile previews, product tiles, or news articles</li>
           </ul>
 
-          <h3>Sub-components</h3>
+          <a id="Sub-components">
+            <h2>Sub-components</h2>
+          </a>
+          <p>
+            The Card component is composed of the following sub-components that
+            can be combined to build flexible layouts:
+          </p>
           <ul>
             <li>
               <strong>CardHeader</strong>: Renders a title, optional subheader,
@@ -105,14 +110,16 @@ const CardGuidance = () => {
             </li>
           </ul>
 
-          <h3>CardHeader</h3>
+          <a id="CardHeader">
+            <h3>CardHeader</h3>
+          </a>
           <p>
             Use <code>CardHeader</code> when the card needs a clearly labeled
             title and optional metadata such as a date or author name.
           </p>
-          <Row $Hcenter className="image-container">
+          <Row className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Card sx={{ maxWidth: 345 }}>
+              <Card sx={{ minWidth: 275, maxWidth: 345 }}>
                 <CardHeader
                   title="Component Guide"
                   subheader="Last updated: March 2026"
@@ -127,14 +134,16 @@ const CardGuidance = () => {
             </SistentThemeProvider>
           </Row>
 
-          <h3>CardContent</h3>
+          <a id="CardContent">
+            <h3>CardContent</h3>
+          </a>
           <p>
             <code>CardContent</code> is the main body of the card. It accepts
             any child elements and provides consistent padding.
           </p>
-          <Row $Hcenter className="image-container">
+          <Row className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Card sx={{ maxWidth: 345 }}>
+              <Card sx={{ minWidth: 275, maxWidth: 345 }}>
                 <CardContent>
                   <Typography variant="h6" gutterBottom>
                     CardContent Example
@@ -148,15 +157,17 @@ const CardGuidance = () => {
             </SistentThemeProvider>
           </Row>
 
-          <h3>CardActions</h3>
+          <a id="CardActions">
+            <h3>CardActions</h3>
+          </a>
           <p>
             <code>CardActions</code> anchors interactive elements like buttons
             to the bottom of the card. Use <code>disableSpacing</code> for
             manual spacing control.
           </p>
-          <Row $Hcenter className="image-container">
+          <Row className="image-container">
             <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-              <Card sx={{ maxWidth: 345 }}>
+              <Card sx={{ minWidth: 275, maxWidth: 345 }}>
                 <CardContent>
                   <Typography variant="body2" color="text.secondary">
                     A card with action buttons at the bottom.
