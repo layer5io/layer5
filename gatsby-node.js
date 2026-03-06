@@ -528,7 +528,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           try {
             createPage({
               path: pagePath,
-              component: path.resolve(componentPath),
+              component: require.resolve(componentPath),
             });
           } catch (error) {
             console.error(`Error creating page for "${pagePath}":`, error);
@@ -661,11 +661,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         case "kanvas-labs":
           slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
           break;
-        case "resources":
-          if (node.frontmatter.published)
-            slug = `/${collection}/${slugify(
-              node.frontmatter.category
-            )}/${slugify(node.frontmatter.title)}`;
+          case "resources":
+            if (node.frontmatter.published)
+              slug = `/${collection}/${slugify(
+                node.frontmatter.category
+              )}/${slugify(node.frontmatter.title)}`;
           break;
         case "members":
           if (node.frontmatter.published)
