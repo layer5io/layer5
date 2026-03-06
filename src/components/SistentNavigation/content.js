@@ -116,6 +116,10 @@ export const content = [
     text: "Button Group",
   },
 
+  { id: 121, link: "/projects/sistent/components/card", text: "Card" },
+  { id: 122, link: "/projects/sistent/components/card/guidance", text: "Card" },
+  { id: 123, link: "/projects/sistent/components/card/code", text: "Card" },
+
   { id: 37, link: "/projects/sistent/components/chip", text: "Chip" },
   { id: 38, link: "/projects/sistent/components/chip/guidance", text: "Chip" },
   { id: 39, link: "/projects/sistent/components/chip/code", text: "Chip" },
@@ -407,8 +411,4 @@ export const content = [
     link: "/projects/sistent/components/tooltip/code",
     text: "Tooltip",
   },
-
-  { id: 121, link: "/projects/sistent/components/card", text: "Card" },
-  { id: 122, link: "/projects/sistent/components/card/guidance", text: "Card" },
-  { id: 123, link: "/projects/sistent/components/card/code", text: "Card" },
 ];
