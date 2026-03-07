@@ -1,9 +1,15 @@
+/* FOUC fix - background set before JS loads */
 html {
-  background-color: #000;
+  background-color: #121212;
+}
+
+html[data-theme="light"],
+html[data-theme="light"] body {
+  background-color: #FFFFFF;
 }
 
 body {
-  background-color: var(--background, #000);
+  background-color: var(--background, #121212);
 }
 
 @font-face {
@@ -154,6 +160,7 @@ body {
     font-style: italic;
     font-display: swap;
 }
+
 @font-face {
   font-family: "Open Sans";
   font-style: normal;
