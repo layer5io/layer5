@@ -5,22 +5,26 @@ export const onRenderBody = ({ setHeadComponents, setPreBodyComponents }) => {
     (function() {
       try {
         var mode = localStorage.getItem('theme');
-        var isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
+        // If the user has already set a theme, use that.
+       // Otherwise, default to dark (it will always open in dark mode)
         var isDark;
-        if (!mode || mode === 'system') {
-          isDark = isSystemDark;
+        if (mode === 'light') {
+          isDark = false;
         } else {
-          isDark = mode === 'dark';
+          isDark = true; // dark ya system dono mein dark hi dikhao
         }
 
         var bg = isDark ? '#121212' : '#FFFFFF';
         document.documentElement.style.backgroundColor = bg;
         document.documentElement.style.setProperty('--initial-color-mode', isDark ? 'dark' : 'light');
         document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-      } catch(e) {}
+      } catch(e) {
+        // Even if an error occurs, show dark mode
+        document.documentElement.style.backgroundColor = '#121212';
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
 
-      // Remove visibility block — theme is now set
       document.documentElement.style.visibility = 'visible';
     })();
   `;
