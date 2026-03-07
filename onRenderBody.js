@@ -6,14 +6,12 @@ export const onRenderBody = ({ setHeadComponents, setPreBodyComponents }) => {
       try {
         var mode = localStorage.getItem('theme');
         
-        // Show light only if the user has manually set light; otherwise always use dark.
         var isDark = mode !== 'light';
 
         document.documentElement.style.backgroundColor = isDark ? '#121212' : '#FFFFFF';
         document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
         document.documentElement.style.setProperty('--initial-color-mode', isDark ? 'dark' : 'light');
         
-        // If nothing was set before, also save dark in localStorage.
         if (!mode) {
           localStorage.setItem('theme', 'dark');
         }
