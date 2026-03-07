@@ -1,7 +1,3 @@
-//majority of code from https://www.joshwcomeau.com/react/dark-mode/ and https://github.com/gperl27/gatsby-styled-components-dark-mode
-
-//context provider for app to make accessible theme setting, toggle function, etc.
-
 import React, { createContext, useState, useEffect, useCallback } from "react";
 
 export const ThemeSetting = {
@@ -13,20 +9,20 @@ export const ThemeSetting = {
 export const DarkThemeKey = "theme";
 
 const defaultState = {
-  isDark: false,
+  isDark: true,        //  default dark
   didLoad: false,
-  themeSetting: ThemeSetting.SYSTEM,
+  themeSetting: ThemeSetting.DARK,  //  default dark
   toggleDark: () => undefined,
   changeThemeSetting: () => undefined,
 };
 
 export const ThemeManagerContext = createContext(defaultState);
 
-// Safe check for browser environment
 const isBrowser = typeof window !== "undefined";
 
 const systemDarkModeSetting = () =>
   isBrowser && window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+
 const isDarkModeActive = () => {
   return !!systemDarkModeSetting()?.matches;
 };
@@ -39,39 +35,38 @@ const applyThemeToDOM = (theme) => {
 };
 
 export const ThemeManagerProvider = (props) => {
-  const [themeSetting, setThemeSetting] = useState(ThemeSetting.SYSTEM);
+  const [themeSetting, setThemeSetting] = useState(ThemeSetting.DARK); // default dark
   const [didLoad, setDidLoad] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true); //  default dark
 
   useEffect(() => {
     if (!isBrowser) return;
 
-    const root = window.document.documentElement;
-    const initialColorValue = root.style.getPropertyValue("--initial-color-mode");
-
-    // Get stored theme from localStorage
     const storedTheme = localStorage.getItem(DarkThemeKey);
 
-    if (storedTheme && storedTheme !== ThemeSetting.SYSTEM) {
-      const isDarkTheme = storedTheme === ThemeSetting.DARK;
-      setIsDark(isDarkTheme);
-      setThemeSetting(storedTheme);
-      applyThemeToDOM(storedTheme);
-    } else if (initialColorValue) {
-      setIsDark(initialColorValue === ThemeSetting.DARK);
-      setThemeSetting(ThemeSetting.SYSTEM);
-    } else {
-      // Fallback to system preference
+    if (storedTheme === ThemeSetting.LIGHT) {
+      // The user had explicitly chosen light
+      setIsDark(false);
+      setThemeSetting(ThemeSetting.LIGHT);
+      applyThemeToDOM(ThemeSetting.LIGHT);
+    } else if (storedTheme === ThemeSetting.DARK || !storedTheme) {
+      setIsDark(true);
+      setThemeSetting(ThemeSetting.DARK);
+      applyThemeToDOM(ThemeSetting.DARK);
+      if (!storedTheme) {
+        localStorage.setItem(DarkThemeKey, ThemeSetting.DARK);
+      }
+    } else if (storedTheme === ThemeSetting.SYSTEM) {
+      
       const systemIsDark = isDarkModeActive();
       setIsDark(systemIsDark);
-      const theme = systemIsDark ? ThemeSetting.DARK : ThemeSetting.LIGHT;
-      applyThemeToDOM(theme);
+      setThemeSetting(ThemeSetting.SYSTEM);
+      applyThemeToDOM(systemIsDark ? ThemeSetting.DARK : ThemeSetting.LIGHT);
     }
 
     setDidLoad(true);
   }, []);
 
-  // Listen to system color scheme changes only when on SYSTEM mode
   useEffect(() => {
     if (!isBrowser || themeSetting !== ThemeSetting.SYSTEM) return;
 
@@ -93,14 +88,9 @@ export const ThemeManagerProvider = (props) => {
     const newIsDark = !isDark;
     const newTheme = newIsDark ? ThemeSetting.DARK : ThemeSetting.LIGHT;
 
-    // Update state
     setIsDark(newIsDark);
     setThemeSetting(newTheme);
-
-    // Apply to DOM immediately
     applyThemeToDOM(newTheme);
-
-    // Persist to localStorage
     localStorage.setItem(DarkThemeKey, newTheme);
   }, [isDark]);
 
@@ -129,14 +119,9 @@ export const ThemeManagerProvider = (props) => {
           return;
       }
 
-      // Update state
       setIsDark(newIsDark);
       setThemeSetting(setting);
-
-      // Apply to DOM immediately
       applyThemeToDOM(themeToApply);
-
-      // Persist to localStorage
       localStorage.setItem(DarkThemeKey, setting);
     },
     [isDark]
