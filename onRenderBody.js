@@ -5,22 +5,19 @@ export const onRenderBody = ({ setHeadComponents, setPreBodyComponents }) => {
     (function() {
       try {
         var mode = localStorage.getItem('theme');
+        
+        // Show light only if the user has manually set light; otherwise always use dark.
+        var isDark = mode !== 'light';
 
-        // If the user has already set a theme, use that.
-       // Otherwise, default to dark (it will always open in dark mode)
-        var isDark;
-        if (mode === 'light') {
-          isDark = false;
-        } else {
-          isDark = true; // dark ya system dono mein dark hi dikhao
-        }
-
-        var bg = isDark ? '#121212' : '#FFFFFF';
-        document.documentElement.style.backgroundColor = bg;
-        document.documentElement.style.setProperty('--initial-color-mode', isDark ? 'dark' : 'light');
+        document.documentElement.style.backgroundColor = isDark ? '#121212' : '#FFFFFF';
         document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+        document.documentElement.style.setProperty('--initial-color-mode', isDark ? 'dark' : 'light');
+        
+        // If nothing was set before, also save dark in localStorage.
+        if (!mode) {
+          localStorage.setItem('theme', 'dark');
+        }
       } catch(e) {
-        // Even if an error occurs, show dark mode
         document.documentElement.style.backgroundColor = '#121212';
         document.documentElement.setAttribute('data-theme', 'dark');
       }
