@@ -9,9 +9,9 @@ export const ThemeSetting = {
 export const DarkThemeKey = "theme";
 
 const defaultState = {
-  isDark: true,        //  default dark
+  isDark: false,
   didLoad: false,
-  themeSetting: ThemeSetting.DARK,  //  default dark
+  themeSetting: ThemeSetting.SYSTEM,
   toggleDark: () => undefined,
   changeThemeSetting: () => undefined,
 };
@@ -35,9 +35,9 @@ const applyThemeToDOM = (theme) => {
 };
 
 export const ThemeManagerProvider = (props) => {
-  const [themeSetting, setThemeSetting] = useState(ThemeSetting.DARK); // default dark
+  const [themeSetting, setThemeSetting] = useState(ThemeSetting.DARK);
   const [didLoad, setDidLoad] = useState(false);
-  const [isDark, setIsDark] = useState(true); //  default dark
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
     if (!isBrowser) return;
@@ -45,7 +45,6 @@ export const ThemeManagerProvider = (props) => {
     const storedTheme = localStorage.getItem(DarkThemeKey);
 
     if (storedTheme === ThemeSetting.LIGHT) {
-      // The user had explicitly chosen light
       setIsDark(false);
       setThemeSetting(ThemeSetting.LIGHT);
       applyThemeToDOM(ThemeSetting.LIGHT);
@@ -57,7 +56,6 @@ export const ThemeManagerProvider = (props) => {
         localStorage.setItem(DarkThemeKey, ThemeSetting.DARK);
       }
     } else if (storedTheme === ThemeSetting.SYSTEM) {
-      
       const systemIsDark = isDarkModeActive();
       setIsDark(systemIsDark);
       setThemeSetting(ThemeSetting.SYSTEM);
