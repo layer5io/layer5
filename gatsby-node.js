@@ -17,14 +17,15 @@ const {
 
 const HEAVY_COLLECTIONS = new Set(["members", "integrations"]);
 const isFullSiteBuild = process.env.BUILD_FULL_SITE !== "false";
-const shouldIncludeCollection = (collection) => isFullSiteBuild || !HEAVY_COLLECTIONS.has(collection);
+const shouldIncludeCollection = (collection) =>
+  isFullSiteBuild || !HEAVY_COLLECTIONS.has(collection);
 
 const { loadRedirects } = require("./src/utils/redirects.js");
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createRedirect } = actions;
   const redirects = loadRedirects();
-  redirects.forEach(redirect => createRedirect(redirect)); // Handles all hardcoded ones dynamically
+  redirects.forEach((redirect) => createRedirect(redirect)); // Handles all hardcoded ones dynamically
   // Create Pages
   const { createPage } = actions;
 
@@ -49,7 +50,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const blogPostTemplate = path.resolve("src/templates/blog-single.js");
   const blogCategoryListTemplate = path.resolve(
-    "src/templates/blog-category-list.js"
+    "src/templates/blog-category-list.js",
   );
   const blogTagListTemplate = path.resolve("src/templates/blog-tag-list.js");
 
@@ -61,10 +62,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const BookPostTemplate = path.resolve("src/templates/book-single.js");
 
-  const ProgramPostTemplate = path.resolve("src/templates/program-single.js");
-
   const MultiProgramPostTemplate = path.resolve(
-    "src/templates/program-multiple.js"
+    "src/templates/program-multiple.js",
   );
 
   const CareerPostTemplate = path.resolve("src/templates/career-single.js");
@@ -79,7 +78,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const resourcePostTemplate = path.resolve("src/templates/resource-single.js");
   const integrationTemplate = path.resolve("src/templates/integrations.js");
-  const LitePlaceholderTemplate = path.resolve("src/templates/lite-placeholder.js");
+  const LitePlaceholderTemplate = path.resolve(
+    "src/templates/lite-placeholder.js",
+  );
 
   const memberBioQuery = isFullSiteBuild
     ? `
@@ -107,7 +108,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     : "";
 
   const HandbookTemplate = path.resolve("src/templates/handbook-template.js");
-
 
   const res = await graphql(`
     {
@@ -240,7 +240,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const integrations = filterByCollection("integrations");
 
   const handbook = res.data.handbookPages.nodes;
-
 
   const singleWorkshop = res.data.singleWorkshop.nodes;
   const labs = res.data.labs.nodes;
@@ -414,7 +413,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-
   programs.forEach((program) => {
     envCreatePage({
       path: `/programs/${program.frontmatter.programSlug}`,
@@ -453,7 +451,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       envCreatePage({
         ...page,
         component: LitePlaceholderTemplate,
-      })
+      }),
     );
 
     const graphqlPlaceholderPages = [
@@ -512,7 +510,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   });
 
-  const components = componentsData.map((component) => component.src.replace("/", ""));
+  const components = componentsData.map((component) =>
+    component.src.replace("/", ""),
+  );
   const createComponentPages = (createPage, components) => {
     const pageTypes = [
       { suffix: "", file: "index.js" },
@@ -534,7 +534,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             console.error(`Error creating page for "${pagePath}":`, error);
           }
         } else {
-          console.info(`Skipping creating page "${pagePath}" - file not found: "${componentPath}"`);
+          console.info(
+            `Skipping creating page "${pagePath}" - file not found: "${componentPath}"`,
+          );
         }
       });
     });
@@ -650,7 +652,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         case "blog":
           if (node.frontmatter.published)
             slug = `/${collection}/${slugify(
-              node.frontmatter.category
+              node.frontmatter.category,
             )}/${slugify(node.frontmatter.title)}`;
           break;
         case "news":
@@ -661,11 +663,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         case "kanvas-labs":
           slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
           break;
-          case "resources":
-            if (node.frontmatter.published)
-              slug = `/${collection}/${slugify(
-                node.frontmatter.category
-              )}/${slugify(node.frontmatter.title)}`;
+        case "resources":
+          if (node.frontmatter.published)
+            slug = `/${collection}/${slugify(
+              node.frontmatter.category,
+            )}/${slugify(node.frontmatter.title)}`;
           break;
         case "members":
           if (node.frontmatter.published)
@@ -801,11 +803,16 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
   });
 
   // Reduce memory pressure by disabling sourcemaps in dev and build
-  if (stage === "develop" || stage === "develop-html" || stage === "build-javascript" || stage === "build-html") {
+  if (
+    stage === "develop" ||
+    stage === "develop-html" ||
+    stage === "build-javascript" ||
+    stage === "build-html"
+  ) {
     const config = getConfig();
     config.devtool = false;
     const miniCssExtractPlugin = config.plugins.find(
-      (plugin) => plugin.constructor.name === "MiniCssExtractPlugin"
+      (plugin) => plugin.constructor.name === "MiniCssExtractPlugin",
     );
 
     if (miniCssExtractPlugin) {
@@ -881,8 +888,6 @@ exports.createSchemaCustomization = ({ actions }) => {
    `;
   createTypes(typeDefs);
 };
-
-
 
 exports.onPostBuild = async ({ graphql, reporter }) => {
   const result = await graphql(`

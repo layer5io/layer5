@@ -3,7 +3,6 @@ import SEO from "../components/seo";
 
 const LitePlaceholder = ({ pageContext, location }) => {
   const {
-    entity = "page",
     heading = "Content disabled in lite mode",
     description = "This route is intentionally skipped when BUILD_FULL_SITE=false.",
   } = pageContext;
@@ -22,9 +21,13 @@ const LitePlaceholder = ({ pageContext, location }) => {
           margin: "0 auto",
         }}
       >
-        <p style={{ fontWeight: 600, textTransform: "capitalize" }}>{heading}</p>
+        <p style={{ fontWeight: 600, textTransform: "capitalize" }}>
+          {heading}
+        </p>
         <p style={{ marginTop: "1rem", lineHeight: 1.5 }}>{description}</p>
-        <p style={{ marginTop: "0.75rem", fontStyle: "italic" }}>{instructions}</p>
+        <p style={{ marginTop: "0.75rem", fontStyle: "italic" }}>
+          {instructions}
+        </p>
         {location?.pathname && (
           <p style={{ marginTop: "1.5rem", color: "#555" }}>
             Requested path: <code>{location.pathname}</code>
@@ -38,11 +41,15 @@ const LitePlaceholder = ({ pageContext, location }) => {
 export default LitePlaceholder;
 
 export const Head = ({ pageContext }) => {
-  const { heading = "Content disabled in lite mode", description = "" } = pageContext;
+  const { heading = "Content disabled in lite mode", description = "" } =
+    pageContext;
   const instructions =
     "Run make site-full or set BUILD_FULL_SITE=true to include heavy collections in development.";
 
   return (
-    <SEO title={heading} description={`${description} ${instructions}`.trim()} />
+    <SEO
+      title={heading}
+      description={`${description} ${instructions}`.trim()}
+    />
   );
 };
