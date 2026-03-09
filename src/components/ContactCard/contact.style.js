@@ -5,8 +5,8 @@ const ContactWrapper = styled.section`
     overflow: hidden;
     align-items: center;
     .parentcard{
-        max-width: 90%;
-        width: 600px;
+        max-width: 1170px;
+        width: 100%;
         margin: auto;
     }
     .contact-icon {
