@@ -10,7 +10,7 @@ import {
   MenuItem,
   Select,
   OutlinedInput,
-} from "@mui/material";
+} from "@sistent/sistent";
 import SectionNav from "./section-nav";
 import Header from "./header";
 
@@ -223,6 +223,5 @@ const SistentSelect = () => {
     </SistentLayout>
   );
 };
-
 
 export default SistentSelect;

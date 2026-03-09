@@ -451,7 +451,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       envCreatePage({
         ...page,
         component: LitePlaceholderTemplate,
-      })
+      }),
     );
 
     const graphqlPlaceholderPages = [
