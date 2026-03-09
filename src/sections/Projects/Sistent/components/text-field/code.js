@@ -361,7 +361,9 @@ const TextFieldCode = () => {
                 ? "active"
                 : ""
             }
-            onClick={() => navigate("/projects/sistent/identity/color/code")}
+            onClick={() =>
+              navigate("/projects/sistent/components/text-field/code")
+            }
             title="Code"
           />
         </div>
@@ -583,7 +585,7 @@ const TextFieldCode = () => {
                 </Box>
               </SistentThemeProvider>
             </div>
-            <CodeBlock name="validation" code={codes[0]} />
+            <CodeBlock name="validation" code={codes[1]} />
           </div>
           <a id="Multiline">
             <h2>Multiline</h2>

@@ -78,7 +78,7 @@ const ButtonCode = () => {
                 ? "active"
                 : ""
             }
-            onClick={() => navigate("/projects/sistent/identity/color/code")}
+            onClick={() => navigate("/projects/sistent/components/button/code")}
             title="Code"
           />
         </div>
