@@ -1,54 +1,72 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import useDataList from "../../utils/usedataList";
 import SEO from "../../components/seo";
 import BlogGrid from "../../sections/Blog/Blog-grid";
 import { graphql } from "gatsby";
 import loadable from "@loadable/component";
-const BlogList = loadable(() => import ("../../sections/Blog/Blog-list"));
+const BlogList = loadable(() => import("../../sections/Blog/Blog-list"));
 
-export const query = graphql`query allBlogs {
-  allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
-  ) {
-    nodes {
-      id
-      body
-      frontmatter {
-        title
-        date(formatString: "MMM Do, YYYY")
-        author
-        thumbnail {
-          extension
-          publicURL
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
-          }
-        }
-        darkthumbnail {
-          extension
-          publicURL
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
-          }
-        }
+export const query = graphql`
+  query allBlogs {
+    allMdx(
+      sort: { frontmatter: { date: DESC } }
+      filter: {
+        fields: { collection: { eq: "blog" } }
+        frontmatter: { published: { eq: true } }
       }
-      fields {
-        slug
+    ) {
+      nodes {
+        id
+        body
+        frontmatter {
+          title
+          date(formatString: "MMM Do, YYYY")
+          author
+          thumbnail {
+            extension
+            publicURL
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+          }
+          darkthumbnail {
+            extension
+            publicURL
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+          }
+        }
+        fields {
+          slug
+        }
       }
     }
   }
-}`;
+`;
 
 const Blog = (props) => {
   const [isListView, setIsListView] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+
+  const allNodes = useMemo(() => {
+    return [...props.data.allMdx.nodes].sort((a, b) => {
+      const da = a.frontmatter?.date
+        ? new Date(a.frontmatter.date).getTime()
+        : 0;
+      const db = b.frontmatter?.date
+        ? new Date(b.frontmatter.date).getTime()
+        : 0;
+      return db - da;
+    });
+  }, [props.data.allMdx.nodes]);
+
   const { queryResults, searchData } = useDataList(
-    props.data.allMdx.nodes,
+    allNodes,
     setSearchQuery,
     searchQuery,
     ["frontmatter", "title"],
-    "id"
+    "id",
   );
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
@@ -86,11 +104,15 @@ const Blog = (props) => {
         currentPage={currentPage}
         queryResults={queryResults}
       />
-
     </>
   );
 };
 export default Blog;
 export const Head = () => {
-  return <SEO title="Blog" description="The latest news and announcements about Layer5, our products, and our ecosystem, as well as voices from across our community." />;
+  return (
+    <SEO
+      title="Blog"
+      description="The latest news and announcements about Layer5, our products, and our ecosystem, as well as voices from across our community."
+    />
+  );
 };
