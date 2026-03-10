@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkLayer5=self.webpackChunkLayer5||[]).push([[88845],{9841:function(e,a,c){c(96540);a.A=c.p+"static/Docker_animated.d3f14ac8.svg"}}]);
