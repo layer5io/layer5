@@ -328,9 +328,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   programs.forEach((program) => {
     envCreatePage({
       path: program.fields.slug,
-      component: `${ProgramPostTemplate}?__contentFilePath=${program.internal.contentFilePath}`,
+      component: `${MultiProgramPostTemplate}?__contentFilePath=${program.internal.contentFilePath}`,
       context: {
         slug: program.fields.slug,
+        program: program.frontmatter.program,
       },
     });
   });
