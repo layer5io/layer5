@@ -6,8 +6,12 @@ import Image from "../image";
 import { CardWrapper } from "./Card.style";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
-const Card = ({ frontmatter, fields, loading = "lazy", fetchpriority = "auto" }) => {
-
+const Card = ({
+  frontmatter,
+  fields,
+  loading = "lazy",
+  fetchpriority = "auto",
+}) => {
   const { isDark } = useStyledDarkMode();
 
   return (
@@ -15,18 +19,20 @@ const Card = ({ frontmatter, fields, loading = "lazy", fetchpriority = "auto" })
       <div className="post-block">
         <div className="post-thumb-block">
           <Image
-            {...((isDark && frontmatter.darkthumbnail && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL)
-              ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
-            imgStyle={{ objectFit: "contain" }}
+            {...(isDark &&
+            frontmatter.darkthumbnail &&
+            frontmatter.darkthumbnail.publicURL !==
+              frontmatter.thumbnail.publicURL
+              ? frontmatter.darkthumbnail
+              : frontmatter.thumbnail)}
+            imgStyle={{ objectFit: "cover" }}
             loading={loading}
             fetchpriority={fetchpriority}
             alt={frontmatter.title}
           />
         </div>
         <div className="post-content-block">
-          <h2 className="post-title">
-            {frontmatter.title}
-          </h2>
+          <h2 className="post-title">{frontmatter.title}</h2>
           <div className="post-meta-block">
             {frontmatter.date && frontmatter.author && (
               <>
@@ -50,7 +56,12 @@ const Card = ({ frontmatter, fields, loading = "lazy", fetchpriority = "auto" })
                 <Link className="readmore-btn" to={fields.slug}>
                   see more <IoIosArrowRoundForward />
                 </Link>
-                <a className="external-link-btn" href={frontmatter.eurl} target="_blank" rel="noreferrer">
+                <a
+                  className="external-link-btn"
+                  href={frontmatter.eurl}
+                  target="_blank"
+                  rel="noreferrer oopener"
+                >
                   <BiLinkExternal />
                 </a>
               </>
@@ -60,8 +71,13 @@ const Card = ({ frontmatter, fields, loading = "lazy", fetchpriority = "auto" })
                 see more <IoIosArrowRoundForward />
               </Link>
             )}
-            {!fields && !fields.slug && frontmatter.eurl && (
-              <a className="external-link-btn" href={frontmatter.eurl} target="_blank" rel="noreferrer">
+            {(!fields || !fields.slug) && frontmatter.eurl && (
+              <a
+                className="external-link-btn"
+                href={frontmatter.eurl}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <BiLinkExternal />
               </a>
             )}
