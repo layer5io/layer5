@@ -6,8 +6,8 @@ import Traefik from "../../../assets/images/service-mesh-icons/traefik.svg";
 import Istio from "../../../assets/images/service-mesh-icons/istio.svg";
 import ImageHub from "../../../assets/images/image-hub/layer5-image-hub.svg";
 
-const CNCF = "/partners/cncf/horizontal/color/cncf-colorMode.svg";
-const OAM = "/partners/oam-colorMode.svg";
+import { ReactComponent as CNCF } from "../../../assets/images/partners/cncf/horizontal/color/cncf-colorMode.svg";
+import { ReactComponent as OAM } from "../../../assets/images/partners/oam-colorMode.svg";
 import { ReactComponent as Linkerd } from "../../../assets/images/service-mesh-icons/linkerd/horizontal/color/linkerd-horizontal-colorMode.svg";
 import { ReactComponent as Meshery } from "../../../assets/images/meshery/meshery-logo-colorMode.svg";
 import { ReactComponent as Envoy } from "../../../assets/images/service-mesh-icons/envoy/horizontal/color/envoy-horizontal-colorMode.svg";
@@ -38,7 +38,7 @@ const ProudMaintainers = () => {
       <Row className="row">
         <Col $xs={3} $sm={3} $md={3} $lg={3} className="proj_row_1_col">
           <div className="proj_icon_1">
-            <img src={CNCF} alt="CNCF" />
+            <CNCF alt="CNCF" />
           </div>
         </Col>
         <Col $xs={3} $sm={3} $md={3} $lg={3} className="proj_row_1_col">
@@ -58,7 +58,7 @@ const ProudMaintainers = () => {
         </Col>
         <Col $xs={3} $sm={3} $md={3} $lg={3} className="proj_row_1_col">
           <div className="proj_icon_1">
-            <img src={OAM} alt="OAM" />
+            <OAM alt="OAM" />
           </div>
         </Col>
       </Row>

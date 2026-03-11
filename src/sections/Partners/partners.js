@@ -1,3 +1,17 @@
+import React from "react";
+import { ReactComponent as Citrix } from "../../assets/images/partners/citrix-colorMode.svg";
+import { ReactComponent as CNCFStacked } from "../../assets/images/partners/cncf-stacked-colorMode.svg";
+import { ReactComponent as HashiCorp } from "../../assets/images/partners/hashicorp_vertical-colorMode.svg";
+import { ReactComponent as HPE } from "../../assets/images/partners/hpe_side-colorMode.svg";
+import { ReactComponent as Istio } from "../../assets/images/partners/istio-colorMode.svg";
+import { ReactComponent as Microsoft } from "../../assets/images/partners/microsoft-colorMode.svg";
+import { ReactComponent as RedHat } from "../../assets/images/partners/redhat-colorMode.svg";
+import { ReactComponent as Intel } from "../../assets/images/partners/intel-colorMode.svg";
+import { ReactComponent as VMware } from "../../assets/images/partners/vmware-colorMode.svg";
+import { ReactComponent as Metabit } from "../../assets/images/partners/metabit-trading-logo-colorMode.svg";
+import { ReactComponent as Docker } from "../../assets/images/partners/docker.svg";
+import { ReactComponent as DigitalOcean } from "../../assets/images/partners/digitalocean.svg";
+
 export const partners = [
   {
     name: "The University of Texas at Austin",
@@ -25,7 +39,7 @@ export const partners = [
     desc: "Citrix ADC is an application delivery and load balancing solution that provides a high-quality user experience for your web, traditional, and cloud-native applications regardless of where they are hosted. It comes in a wide variety of form factors and deployment options without locking you into a single cloud. Pooled capacity licensing enables the movement of capacity among cloud deployments.",
     //link: null,
     type: "technology",
-    imageLink: "/partners/citrix-colorMode.svg",
+    imageLink: <Citrix alt="Citrix" />,
     partnerId: "Citrix",
     //imageRoute: "https://www.citrix.com/products/citrix-adc/",
     moreInfo:
@@ -36,7 +50,7 @@ export const partners = [
     desc: "The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure. CNCF brings together the world’s top developers, end users, and vendors and runs the largest open source developer conferences. CNCF is part of the nonprofit Linux Foundation.",
     //link: null,
     type: "technology",
-    imageLink: "/partners/cncf-stacked-colorMode.svg",
+    imageLink: <CNCFStacked alt="Cloud Native Computing Foundation (CNCF)" />,
     imageRoute:
       "https://landscape.cncf.io/?item=provisioning--automation-configuration--meshery",
     moreInfo:
@@ -47,7 +61,7 @@ export const partners = [
     desc: "HashiCorp is the leader in cloud infrastructure automation software. Our software stack enables the provisioning, securing, connecting, and running of apps and the infrastructure to support them. HashiCorp unlocks the cloud operating model for every business and enable their digital transformation strategies to succeed.",
     //link: null,
     type: "technology",
-    imageLink: "/partners/hashicorp_vertical-colorMode.svg",
+    imageLink: <HashiCorp alt="HashiCorp" />,
     partnerId: "HashiCorp",
     imageRoute: "https://www.hashicorp.com/partners/tech/layer5",
     moreInfo:
@@ -58,7 +72,7 @@ export const partners = [
     desc: "HPE GreenLake is an IT-as-a-service offering that brings the cloud experience to your on-premises infrastructure and unifies your edges, clouds, and data centers.",
     //link: null,
     type: "technology",
-    imageLink: "/partners/hpe_side-colorMode.svg",
+    imageLink: <HPE alt="HPE" />,
     partnerId: "hpe",
     //imageRoute: "https://www.hpe.com/",
     moreInfo:
@@ -69,7 +83,7 @@ export const partners = [
     desc: "Istio is an open source independent service mesh that provides the fundamentals you need to successfully run a distributed microservice architecture. Istio reduces complexity of managing microservice deployments by providing a uniform way to secure, connect, and monitor microservices.",
     //link: null,
     type: "technology",
-    imageLink: "/partners/istio-colorMode.svg",
+    imageLink: <Istio alt="Istio" />,
     imageRoute: "https://istio.io/about/community/partners/",
     moreInfo:
       "Istio is an open source independent service mesh that provides the fundamentals you need to successfully run a distributed microservice architecture. Istio reduces complexity of managing microservice deployments by providing a uniform way to secure, connect, and monitor microservices.",
@@ -79,7 +93,7 @@ export const partners = [
     desc: "Microsoft Azure is an ever-expanding set of cloud services to help your organization meet your business challenges. It’s the freedom to build, manage, and deploy applications on a massive, global network using your favorite tools and frameworks.",
     //link: null,
     type: "technology",
-    imageLink: "/partners/microsoft-colorMode.svg",
+    imageLink: <Microsoft alt="Microsoft" />,
     //imageRoute: "https://www.microsoft.com/",
     moreInfo:
       "Microsoft Azure is an ever-expanding set of cloud services to help your organization meet your business challenges. It’s the freedom to build, manage, and deploy applications on a massive, global network using your favorite tools and frameworks.",
@@ -89,7 +103,7 @@ export const partners = [
     desc: "The world’s leading provider of enterprise open source solutions, using a community-powered approach to deliver high-performing Linux, cloud, container, and Kubernetes technologies.",
     //link: null,
     type: "technology",
-    imageLink: "/partners/redhat-colorMode.svg",
+    imageLink: <RedHat alt="Red Hat" />,
     partnerId: "redhat",
     //imageRoute: "https://www.redhat.com/",
     moreInfo:
@@ -100,7 +114,7 @@ export const partners = [
     desc: "Intel and Layer5 have partnered to deliver Service Mesh Performance as a new standard of measure for service mesh performance characterization. Collective works have been published by the IEEE and demonstrated at KubeCon.",
     //link: null,
     type: "technology",
-    imageLink: "/partners/intel-colorMode.svg",
+    imageLink: <Intel alt="Intel" />,
     partnerId: "intel",
     //imageRoute: "https://www.intel.in/content/www/in/en/homepage.html",
     moreInfo:
@@ -111,7 +125,7 @@ export const partners = [
     desc: "Layer5 enhances the Tanzu Service Mesh experience with Meshery as an application and infrastructure management platform that accelerates the adoption of open-source and cloud-native technologies by eliminating complexity with its intuitive, efficient, and flexible solution. Using Layer5's solutions along with Tanzu, engineers can self-service while enterprise IT teams offer Kubernetes as a Service to their application service teams.",
     //link: null,
     type: "technology",
-    imageLink: "/partners/vmware-colorMode.svg",
+    imageLink: <VMware alt="VMware" />,
     partnerId: "VMware",
     //imageRoute: "https://www.vmware.com/",
     moreInfo:
@@ -122,7 +136,7 @@ export const partners = [
     desc: "Metabit Trading is a technology-driven quantitative investment firm harnessing the power of artificial intelligence and machine learning.",
     //link: null,
     type: "technology",
-    imageLink: "/partners/metabit-trading-logo-colorMode.svg",
+    imageLink: <Metabit alt="Metabit Trading" />,
     partnerId: "metabittrading",
     //imageRoute: "https://www.metabit-trading.com/home",
     moreInfo:
@@ -130,7 +144,7 @@ export const partners = [
   },
   {
     name: "Docker",
-    imageLink: "/partners/docker.svg",
+    imageLink: <Docker alt="Docker" />,
     type: "technology",
     partnerId: "docker",
     desc: "Layer5 and Docker have partnered together to bring Kubernetes and cloud native management capabilities to the Docker platform through Meshery. As part of the partnership, Layer5 has joined the Docker Extension Program, enabling users to easily deploy and manage cloud native infrastructure within their Docker environments. With this collaboration, developers can leverage the power of both Docker and Layer5's expertise in service mesh technologies to enhance their containerized applications' performance, security, and observability. By integrating Meshery with Docker, users gain seamless access to advanced features for managing complex microservices architectures effectively.",
@@ -142,7 +156,7 @@ export const partners = [
     desc: "DigitalOcean is a cloud infrastructure provider that simplifies cloud computing for developers by offering scalable and easy-to-use cloud services.",
     //link: null,
     type: "technology",
-    imageLink: "/partners/digitalocean.svg",
+    imageLink: <DigitalOcean alt="DigitalOcean" />,
     partnerId: "digitalocean",
     //imageRoute: "https://www.digitalocean.com/",
     moreInfo:
