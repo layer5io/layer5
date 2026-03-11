@@ -9,7 +9,8 @@ const CloudNativeManagement = loadable(() => import("../sections/Home/CloudNativ
 const SubscribeSection = loadable(() => import("../sections/subscribe/subscribe"));
 // const ServiceMeshFocussed = loadable(() => import("../sections/Home/Service-mesh-focussed"));
 import CaseStudyBanner from "../components/Case-study-banner";
-
+import workshopsImg from "../assets/images/workshops/workshops.webp";
+import layer5GradientLogo from "../assets/images/layer5/layer5-only/layer5-white-no-trim.png";
 // const EngineerEnabler = loadable(() => import("../sections/Home/Engineer-enabler"));
 // const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
 const MesheryIntegration = loadable(() => import("../sections/Meshery/Meshery-integrations"));
@@ -52,7 +53,7 @@ export const Head = () => {
     "@type": "Corporation",
     "name": "Layer5",
     "url": "https://layer5.io/",
-    "logo": "https://layer5.io/images/layer5-gradient.webp",
+    "logo": "https://layer5.io" + layer5GradientLogo,
     "sameAs": [
       "https://twitter.com/layer5",
       "https://www.linkedin.com/company/layer5/",
@@ -61,8 +62,11 @@ export const Head = () => {
     ]
   };
   return (
-    <SEO title="Layer5" description="Layer5 is the steward of the Meshery and creator of Kanvas, the collaborative canvas for cloud-native infrastructure. We bridge the gap between design and operation, allowing engineers to create, configure, and deploy orchestratable diagrams in real time. Whether managing Kubernetes or multi-cloud environments, Layer5 provides the tooling needed to oversee modern infrastructure with confidence."
+    <SEO 
+    title="Layer5" 
+    description="Layer5 is the steward of the Meshery and creator of Kanvas, the collaborative canvas for cloud-native infrastructure. We bridge the gap between design and operation, allowing engineers to create, configure, and deploy orchestratable diagrams in real time. Whether managing Kubernetes or multi-cloud environments, Layer5 provides the tooling needed to oversee modern infrastructure with confidence."
       schemaMarkup={schema}
+      image={workshopsImg}
     />
   );
 };
