@@ -10,7 +10,6 @@ const SubscribeSection = loadable(() => import("../sections/subscribe/subscribe"
 // const ServiceMeshFocussed = loadable(() => import("../sections/Home/Service-mesh-focussed"));
 import CaseStudyBanner from "../components/Case-study-banner";
 import workshopsImg from "../assets/images/workshops/workshops.webp";
-import layer5GradientLogo from "../assets/images/layer5/layer5-only/layer5-white-no-trim.png";
 // const EngineerEnabler = loadable(() => import("../sections/Home/Engineer-enabler"));
 // const SoSpecial = loadable(() => import("../sections/Home/So-Special-Section"));
 const MesheryIntegration = loadable(() => import("../sections/Meshery/Meshery-integrations"));
@@ -53,7 +52,7 @@ export const Head = () => {
     "@type": "Corporation",
     "name": "Layer5",
     "url": "https://layer5.io/",
-    "logo": "https://layer5.io" + layer5GradientLogo,
+    "logo": "https://layer5.io/images/layer5-gradient.webp",
     "sameAs": [
       "https://twitter.com/layer5",
       "https://www.linkedin.com/company/layer5/",
