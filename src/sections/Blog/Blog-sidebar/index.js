@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { graphql, Link, useStaticQuery } from "gatsby";
+import { graphql, Link, useStaticQuery, withPrefix } from "gatsby";
 import slugify from "../../../utils/slugify";
 
 import BlogSideBarWrapper from "./blogSidebar.style";
@@ -7,8 +7,8 @@ import { HiOutlineChevronUp } from "@react-icons/all-files/hi/HiOutlineChevronUp
 import { HiOutlineChevronDown } from "@react-icons/all-files/hi/HiOutlineChevronDown";
 // import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
 
-const Discuss = "/images/layer5-discuss-white.webp";
-const FiveandFriendsAdventures = "/images/five-and-friends.webp";
+const Discuss = withPrefix("/images/layer5-discuss-white.webp");
+const FiveandFriendsAdventures = withPrefix("/images/five-and-friends.webp");
 
 const Sidebar = ({ pageContext }) => {
   const data = useStaticQuery(graphql`

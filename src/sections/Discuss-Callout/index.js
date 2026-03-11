@@ -1,9 +1,10 @@
 import React from "react";
+import { withPrefix } from "gatsby";
 import { Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
 import DiscussWrapper from "./discuss.style";
 
-const Discuss = "../../assets/images/discuss/layer5-discuss-white.webp";
+const Discuss = withPrefix("/images/layer5-discuss-white.webp");
 
 const DiscussCallout = () => {
   return (
