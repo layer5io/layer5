@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import useDataList from "../../utils/usedataList";
 import SEO from "../../components/seo";
 import BlogGrid from "../../sections/Blog/Blog-grid";
@@ -56,8 +56,17 @@ const Blog = (props) => {
 
   const [isListView, setIsListView] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+
+  const allNodes = useMemo(() => {
+    return [...props.data.allMdx.nodes].sort((a, b) => {
+      const da = a.frontmatter?.date ? new Date(a.frontmatter.date).getTime() : 0;
+      const db = b.frontmatter?.date ? new Date(b.frontmatter.date).getTime() : 0;
+      return db - da;
+    });
+  }, [props.data.allMdx.nodes]);
+
   const { queryResults, searchData } = useDataList(
-    props.data.allMdx.nodes,
+    allNodes,
     setSearchQuery,
     searchQuery,
     ["frontmatter", "title"],
