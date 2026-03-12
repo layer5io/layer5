@@ -7,10 +7,11 @@ export const onRenderBody = ({ setHeadComponents, setPreBodyComponents }) => {
         var stored = localStorage.getItem('theme');
         var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         var isDark = stored === 'dark' || (stored === null && prefersDark);
-        document.documentElement.style.backgroundColor = isDark ? '#121212' : '#FFFFFF';
         document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+        document.documentElement.style.backgroundColor = isDark ? '#121212' : '#FFFFFF';
         document.documentElement.style.setProperty('--initial-color-mode', isDark ? 'dark' : 'light');
       } catch(e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
         document.documentElement.style.backgroundColor = '#121212';
       }
       document.documentElement.style.visibility = 'visible';
@@ -26,8 +27,13 @@ export const onRenderBody = ({ setHeadComponents, setPreBodyComponents }) => {
             visibility: hidden;
             background-color: #121212;
           }
-          body {
-            background-color: #121212;
+          html[data-theme="dark"],
+          html[data-theme="dark"] body {
+            background-color: #121212 !important;
+          }
+          html[data-theme="light"],
+          html[data-theme="light"] body {
+            background-color: #FFFFFF !important;
           }
         `,
       }}
