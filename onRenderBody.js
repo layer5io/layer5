@@ -8,12 +8,10 @@ export const onRenderBody = ({ setHeadComponents, setPreBodyComponents }) => {
         var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         var isDark = stored === 'dark' || (stored === null && prefersDark);
         document.documentElement.style.backgroundColor = isDark ? '#121212' : '#FFFFFF';
-        document.body.style.backgroundColor = isDark ? '#121212' : '#FFFFFF';
         document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
         document.documentElement.style.setProperty('--initial-color-mode', isDark ? 'dark' : 'light');
       } catch(e) {
         document.documentElement.style.backgroundColor = '#121212';
-        document.body.style.backgroundColor = '#121212';
       }
       document.documentElement.style.visibility = 'visible';
     })();
