@@ -60,12 +60,17 @@ module.exports = {
         mergeCachingHeaders: true,
       },
     },
-    {
-      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
-      options: {
-        disable: true,
-      },
-    },
+    ...(process.env.ANALYZE_BUNDLE
+      ? [
+          {
+            resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+            options: {
+              analyzerMode: "server",
+              openAnalyzer: true,
+            },
+          },
+        ]
+      : []),
     {
       resolve: "gatsby-plugin-sitemap",
       options: {

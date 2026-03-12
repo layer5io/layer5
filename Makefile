@@ -58,3 +58,8 @@ features:
 	rm .github/build/spreadsheet.csv
 
 .PHONY: setup build site site-full clean site-fast lint features
+
+## Analyze webpack bundle with FCP optimization
+site-analyze:
+	@echo "🏗️  Building site with webpack bundle analyzer..."
+	ANALYZE_BUNDLE=true npm run build
