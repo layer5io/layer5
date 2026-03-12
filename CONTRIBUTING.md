@@ -5,7 +5,7 @@ We are beyond excited to see that you want to contribute! We would love to accep
 - [Before You Get Started](#before-you-get-started)
 - [Contributing to Layer5 Projects](#contributing-to-layer5-projects)
 - [Contributing to Layer5's Blogs](#contributing-to-layer5s-blogs)
-- [Contributing to Layer5's Sistent](#contributing-to-layer5s-sistent)
+- [Contributing to Layer5 Sistent](#contributing-to-layer5-sistent)
 - [How to Contribute](#how-to-contribute)
   - [Prerequisites](#prerequisites)
   - [Set up your Local Development Environment](#set-up-your-local-development-environment)
@@ -127,9 +127,9 @@ If you'd like to contribute a post to layer5.io/blog, please open an Issue and s
 
 1. In order to add/update news items, see the detailed instructions in the [news issue template](https://github.com/layer5io/layer5/issues/new?template=news.md). When adding a reprint, use the optional `source_url` field in the frontmatter to link back to the original article for attribution.
 
-# Contributing to Layer5's Sistent
+# Contributing to Layer5 Sistent
 
-If you'd like to contribute to Sistent, start by selecting the project/sistent label in the [#GitHub issue tracker](https://github.com/layer5io/layer5/labels/project%2Fsistent).
+If you'd like to contribute to [Sistent](https://github.com/layer5io/sistent), a UI/UX design system, start by selecting the [project/sistent](https://github.com/layer5io/layer5/labels/project%2Fsistent)label in this repo at https://github.com/layer5io/layer5/labels/project%2Fsistent or by visiting the project repo at hhttps://github.com/layer5io/sistent.
 
 ### General Contribution Guidelines
 
@@ -519,6 +519,8 @@ Environment variables are named values used to configure how an application beha
 | Variable | Possible Values | Description |
 |---------|----------------|------------|
 | `BUILD_FULL_SITE` | `true`, `false` | When set to `true`, enables a full site build including all collections. If not explicitly set to `true`, the project defaults to a lightweight build. |
+| `LITE_BUILD_PROFILE` | `content`, `core` | Selects which collections are excluded when `BUILD_FULL_SITE=false`. `core` is the default for `make site`, `npm start`, and `npm run dev`, while `content` keeps blog, news, events, and resources enabled. |
+| `BUILD_COLLECTIONS_EXCLUDE` | comma-separated collection names | Adds extra collections to exclude from a lightweight build without editing project files. |
 | `NODE_ENV` | `development`, `production` | Determines the build and rendering mode used by Gatsby. This is automatically set by Gatsby. <br><br>• `development` - Uses **Deferred Static Generation (DSG)** i.e pages built on demand for faster startup.  <br>• `production` - Uses **Server-Side Rendering (SSR)** i.e pages rendered on each request for fresh content. |
 | `CI` | `true`, `false` | Indicates that the build is running in a **Continuous Integration (CI)** environment (e.g., GitHub Actions). When set to `true`, special logic is applied to page paths and redirects for GitHub Pages compatibility. This is typically set automatically by the CI system and does not need to be configured manually. |
 

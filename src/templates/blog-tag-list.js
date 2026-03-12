@@ -12,7 +12,6 @@ export const query = graphql`query BlogsByTags($tag: String!) {
   ) {
     nodes {
       id
-      body
       frontmatter {
         title
         subtitle
@@ -22,14 +21,14 @@ export const query = graphql`query BlogsByTags($tag: String!) {
           extension
           publicURL
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
         }
         darkthumbnail {
           extension
           publicURL
           childImageSharp {
-            gatsbyImageData(width: 500, layout: CONSTRAINED)
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
         }
       }

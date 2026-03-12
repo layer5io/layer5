@@ -28,7 +28,7 @@ jobs:
         run: bash ./script.sh
 
       - name: Upload files
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@v6
         with:
           name: public-dir
           path: ./public-dir.zip

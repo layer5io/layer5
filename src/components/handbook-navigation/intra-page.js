@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const JoinCommunityWrapper = styled.div`
@@ -56,10 +56,7 @@ function IntraPage({ contents }) {
         <ul>
           {contents.map((x) => (
             <li key={x.id} className="list">
-              <a
-                href={x.link}
-                onClick={(e) => handleClick(e, x.link)}
-              >
+              <a href={x.link} onClick={(e) => handleClick(e, x.link)}>
                 {x.text}
               </a>
             </li>

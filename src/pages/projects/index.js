@@ -1,35 +1,11 @@
 import React from "react";
-import { graphql } from "gatsby";
 
 import SEO from "../../components/seo";
 import ProjectPage from "../../sections/Projects/Project-grid";
 
-export const query = graphql`query allProjects {
-  allMdx(
-    filter: {fields: {collection: {eq: "projects"}}, frontmatter: {published: {eq: true}}}
-  ) {
-    nodes {
-      id
-      frontmatter {
-        title
-        thumbnail {
-          extension
-          publicURL
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
-          }
-        }
-      }
-      fields {
-        slug
-      }
-    }
-  }
-}
-`;
-const ProjectGridPage = ({ data }) => {
+const ProjectGridPage = () => {
   return (
-    <ProjectPage data={data}  />
+    <ProjectPage />
   );
 };
 export default ProjectGridPage;

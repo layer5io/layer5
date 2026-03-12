@@ -29,7 +29,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
           relativePath
           extension
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
         }
         darkthumbnail {
@@ -37,7 +37,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
           relativePath
           extension
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
         }
       }
@@ -45,7 +45,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
   }
   allMeetups: allMdx(
     sort: {frontmatter: {date: DESC}}
-    filter: {frontmatter: {type: {eq: "Meetups"}, published: {eq: true}}}
+    filter: {fields: {collection: {eq: "events"}}, frontmatter: {type: {eq: "Meetups"}, published: {eq: true}}}
   ) {
     totalCount
     nodes {
@@ -67,7 +67,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
           relativePath
           extension
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
         }
         darkthumbnail {
@@ -75,14 +75,14 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
           relativePath
           extension
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
         }
       }
     }
   }
   allWorkshops: allMdx(
-    filter: {frontmatter: {type: {eq: "Workshop"}, published: {eq: true}}}
+    filter: {fields: {collection: {eq: "events"}}, frontmatter: {type: {eq: "Workshop"}, published: {eq: true}}}
   ) {
     nodes {
       id
@@ -99,7 +99,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
           relativePath
           extension
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
         }
         darkthumbnail {
@@ -107,14 +107,14 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
           relativePath
           extension
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
         }
       }
     }
   }
   allEvents: allMdx(
-    filter: {frontmatter: {type: {eq: "Event"}, published: {eq: true}}}
+    filter: {fields: {collection: {eq: "events"}}, frontmatter: {type: {eq: "Event"}, published: {eq: true}}}
   ) {
     nodes {
       id
@@ -131,7 +131,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
           relativePath
           extension
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
         }
         darkthumbnail {
@@ -139,7 +139,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
           relativePath
           extension
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
         }
       }
@@ -163,7 +163,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
           relativePath
           extension
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
         }
         darkthumbnail {
@@ -171,7 +171,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
           relativePath
           extension
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
         }
       }

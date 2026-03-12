@@ -1,12 +1,21 @@
 /* eslint-env node */
 
+const {
+  DEFAULT_LITE_BUILD_PROFILE,
+  getExcludedCollections,
+  isFullSiteBuild,
+} = require("./src/utils/build-collections");
+
 const isDevelopment = process.env.NODE_ENV === "development";
 const isProduction = process.env.NODE_ENV === "production";
-const isFullSiteBuild = process.env.BUILD_FULL_SITE !== "false";
-const HEAVY_COLLECTIONS = ["members", "integrations"];
-const collectionIgnoreGlobs = isFullSiteBuild
-  ? []
-  : HEAVY_COLLECTIONS.map((name) => `**/${name}/**`);
+const shouldBuildFullSite = isFullSiteBuild();
+const isLiteDevBuild = isDevelopment && !shouldBuildFullSite;
+const excludedCollections = getExcludedCollections({
+  isFullSiteBuild: shouldBuildFullSite,
+});
+const collectionIgnoreGlobs = excludedCollections.map(
+  (name) => `**/${name}/**`,
+);
 const devFlags = isDevelopment
   ? {
     PARALLEL_SOURCING: false,
@@ -14,10 +23,11 @@ const devFlags = isDevelopment
   }
   : {};
 console.info(`Build Environment: "${process.env.NODE_ENV}"`);
-collectionIgnoreGlobs.length > 0 ?
-  console.info(`Build Scope excludes: "${process.env.BUILD_FULL_SITE}"`)
-  :
-  console.info("Build Scope includes all collections");
+collectionIgnoreGlobs.length > 0
+  ? console.info(
+      `Build Scope excludes (${process.env.LITE_BUILD_PROFILE || DEFAULT_LITE_BUILD_PROFILE}): ${excludedCollections.join(", ")}`,
+  )
+  : console.info("Build Scope includes all collections");
 module.exports = {
   siteMetadata: {
     title: "Layer5 - Expect more from your infrastructure",
@@ -32,6 +42,7 @@ module.exports = {
   flags: {
     FAST_DEV: false,
     DEV_SSR: false,
+    PARALLEL_SOURCING: false, // Disabled to avoid build instability and excessive resource usage in CI; re-evaluate after Gatsby/infra upgrades
     ...devFlags,
   },
   trailingSlash: "never",
@@ -180,7 +191,9 @@ module.exports = {
                       url: site.siteMetadata.siteUrl + node.fields.slug,
                       guid: site.siteMetadata.siteUrl + node.fields.slug,
                       enclosure: node.frontmatter.thumbnail && {
-                        url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
+                        url:
+                            site.siteMetadata.siteUrl +
+                            node.frontmatter.thumbnail.publicURL,
                       },
                       custom_elements: [{ "content:encoded": node.excerpt }],
                     });
@@ -293,7 +306,11 @@ module.exports = {
 
                   return allMdx.nodes
                     .filter((node) => {
-                      const hasTag = node.frontmatter.tags && node.frontmatter.tags.some(t => targetTags.includes(t));
+                      const hasTag =
+                          node.frontmatter.tags &&
+                          node.frontmatter.tags.some((t) =>
+                            targetTags.includes(t),
+                          );
                       return hasTag;
                     })
                     .slice(0, 30)
@@ -301,18 +318,25 @@ module.exports = {
                       return Object.assign({}, node.frontmatter, {
                         title: node.frontmatter.title,
                         author: node.frontmatter.author,
-                        description: node.frontmatter.description || node.frontmatter.subtitle,
+                        description:
+                            node.frontmatter.description ||
+                            node.frontmatter.subtitle,
                         date: node.frontmatter.date,
                         url: site.siteMetadata.siteUrl + node.fields.slug,
                         guid: site.siteMetadata.siteUrl + node.fields.slug,
                         enclosure: node.frontmatter.thumbnail && {
-                          url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
+                          url:
+                              site.siteMetadata.siteUrl +
+                              node.frontmatter.thumbnail.publicURL,
                         },
                         custom_elements: [
                           { "content:encoded": node.excerpt },
                           { "content:type": node.frontmatter.type },
                           { "content:category": node.frontmatter.category },
-                          { "content:tags": node.frontmatter.tags?.join(", ") || "" },
+                          {
+                            "content:tags":
+                                node.frontmatter.tags?.join(", ") || "",
+                          },
                         ],
                       });
                     });
@@ -366,7 +390,9 @@ module.exports = {
                       url: site.siteMetadata.siteUrl + node.fields.slug,
                       guid: site.siteMetadata.siteUrl + node.fields.slug,
                       enclosure: node.frontmatter.thumbnail && {
-                        url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
+                        url:
+                            site.siteMetadata.siteUrl +
+                            node.frontmatter.thumbnail.publicURL,
                       },
                       custom_elements: [{ "content:encoded": node.excerpt }],
                     });
@@ -421,7 +447,9 @@ module.exports = {
                       url: site.siteMetadata.siteUrl + node.fields.slug,
                       guid: site.siteMetadata.siteUrl + node.fields.slug,
                       enclosure: node.frontmatter.thumbnail && {
-                        url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
+                        url:
+                            site.siteMetadata.siteUrl +
+                            node.frontmatter.thumbnail.publicURL,
                       },
                       custom_elements: [{ "content:encoded": node.excerpt }],
                     });
@@ -435,7 +463,7 @@ module.exports = {
           resolve: "gatsby-plugin-purgecss",
           options: {
             printRejected: true,
-          }
+          },
         },
       ]
       : []),
@@ -471,7 +499,8 @@ module.exports = {
       resolve: "gatsby-plugin-sharp",
       options: {
         defaults: {
-          placeholder: "blurred",
+          ...(isLiteDevBuild ? { formats: ["auto"] } : {}),
+          placeholder: isLiteDevBuild ? "dominantColor" : "blurred",
         },
       },
     },
@@ -486,8 +515,17 @@ module.exports = {
       options: {
         name: "images",
         path: `${__dirname}/src/assets/images`,
-        // eslint-disable-next-line no-useless-escape, quotes
-        ignore: [`**/\.svg`],
+        ignore: [
+          "**/*.svg",
+          "**/learning-path/**",
+          "**/service-mesh-icons/**",
+          "**/app/**",
+          "**/learn-layer5/**",
+          "**/careers/**",
+          "**/callout/**",
+          "**/sistent/**",
+          "**/whiteboard/**",
+        ],
       },
     },
     {

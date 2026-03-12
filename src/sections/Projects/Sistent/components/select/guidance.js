@@ -3,7 +3,6 @@ import { Row } from "../../../../../reusecore/Layout";
 import { SistentThemeProvider } from "@sistent/sistent";
 import { SistentLayout } from "../../sistent-layout";
 import {
-  FormHelperText,
   FormControl,
   InputLabel,
   Select,
@@ -11,7 +10,8 @@ import {
   Grid,
   ListSubheader,
   OutlinedInput,
-} from "@mui/material";
+} from "@sistent/sistent";
+import { FormHelperText } from "@mui/material";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import SectionNav from "./section-nav";
 import Header from "./header";

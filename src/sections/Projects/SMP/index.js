@@ -1,8 +1,6 @@
 import React from "react";
+import { withPrefix } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import { graphql, useStaticQuery } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
-import { BgImage } from "gbimage-bridge";
 
 
 import SMPWrapper from "./smp.style";
@@ -12,8 +10,8 @@ import KanvasCTA from "../../Kanvas/kanvas-cta";
 
 import example from "../../../assets/images/smp-page/service-mesh-performance-specification-example.gif";
 import smp from "../../../assets/images/smp-page/smp-white.svg";
-import useHasMounted from "../../../utils/useHasMounted";
 
+const heroImageSrc = withPrefix("/images/lite/smp-hero.webp");
 
 const latency = "../../../assets/images/smp-page/latency-at-scale.webp";
 const wasm_capacity = "../../../assets/images/smp-page/native-and-wasm-at-capacity-100rps.webp";
@@ -21,32 +19,18 @@ const client_capacity = "../../../assets/images/smp-page/client-capacity.webp";
 
 const SMPPage = () => {
 
-  const { backgroundImage123 } = useStaticQuery(
-    graphql`
-      query {
-        backgroundImage123: file(
-          relativePath: { eq: "smp-page/smp-hero.webp" }
-        ) {
-          childImageSharp {
-            gatsbyImageData(
-              width: 2000
-              quality: 50
-              webpOptions: { quality: 80 }
-            )
-          }
-        }
-      }
-    `
-  );
-
-  const hasMounted = useHasMounted();
-
-  const pluginImage = hasMounted && getImage(backgroundImage123);
-
   return (
     <>
       <SMPWrapper>
-        <BgImage image={pluginImage} className="section">
+        <div
+          className="smp-hero-background"
+          style={{
+            backgroundImage: `url(${heroImageSrc})`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        >
           <div className="smp-hero">
             <Container>
               <div className="hero-text">
@@ -62,7 +46,7 @@ const SMPPage = () => {
               </div>
             </Container>
           </div>
-        </BgImage>
+        </div>
         <Container>
           <div className="smp-details">
             <h2> Standardizing Cloud Native Value Measurement</h2>

@@ -2,6 +2,9 @@ import "./fonts.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+export const disableCorePrefetching = () =>
+  process.env.NODE_ENV === "development";
+
 document.addEventListener("DOMContentLoaded", () => {
   /** init gtm after 3500 seconds - this could be adjusted */
   setTimeout(initGTM, 3500);

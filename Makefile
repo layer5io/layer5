@@ -21,7 +21,8 @@ setup:
 # "make site" - The default lightweight build keeps the dev server fast by skipping heavy collections.
 ## Run a partial build of layer5.io on your local machine.
 site:
-	@echo "🏗️  Building lightweight site version (excluding Members and Integrations collections)..."
+	@echo "🏗️  Building lightweight site version (core profile excludes Members, Integrations, Blog, News, Events, and Resources collections)..."
+	@echo "   Use LITE_BUILD_PROFILE=content make site to include content collections while still skipping the heaviest routes."
 	@npm run develop:lite
 
 # "make site-full" forces the dev server to include every collection.
@@ -32,7 +33,7 @@ site-full:
 
 ## Run layer5.io on your local machine. Alternate method.
 site-fast:
-	NODE_OPTIONS=--max-old-space-size=8192 gatsby develop
+	BUILD_FULL_SITE=false LITE_BUILD_PROFILE=core GATSBY_CPU_COUNT=4 SHARP_CONCURRENCY=4 UV_THREADPOOL_SIZE=4 NODE_OPTIONS=--max-old-space-size=8192 gatsby develop
 
 ## Build layer5.io on your local machine.
 build:

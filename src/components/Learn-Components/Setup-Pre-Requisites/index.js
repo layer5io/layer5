@@ -1,7 +1,6 @@
 import React from "react";
 import SetupPreReqWrapper from "./setup-pre-req.style";
 import { BsTerminalFill } from "@react-icons/all-files/bs/BsTerminalFill";
-import { StaticImage } from "gatsby-plugin-image";
 
 const meshery = "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 const mesheryOperator = "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
@@ -38,7 +37,7 @@ const SetupPreReq = () => (
         <div className="card">
           <div className="card-header">
             <h2>Acess to Meshery</h2>
-            <StaticImage src={meshery} alt="Meshery" className="setup-imgs" />
+            <img src={meshery} alt="Meshery" className="setup-imgs" loading="lazy" />
           </div>
           <b>Recommended:</b>
           <p>
@@ -60,7 +59,7 @@ const SetupPreReq = () => (
         <div className="card">
           <div className="card-header">
             <h2>Or Run Meshery</h2>
-            <StaticImage src={mesheryOperator} alt="Meshery Operator" className="setup-imgs" />
+            <img src={mesheryOperator} alt="Meshery Operator" className="setup-imgs" loading="lazy" />
           </div>
           <p>Optionally, install Meshery locally to see how easy it is to start managing cloud native infrastructure and complete the labs in this Learning Path. Optionally, Meshery can be deployed on-premises with a single command to download, install, and run your own instance of Meshery in your environment. See all supported platforms to deploy your own Meshery Server.</p>
         </div>

@@ -12,26 +12,53 @@ const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
 const config = require("./gatsby-config");
 const {
+  getExcludedCollections,
+  isFullSiteBuild,
+} = require("./src/utils/build-collections");
+const {
   componentsData,
 } = require("./src/sections/Projects/Sistent/components/content");
 
-const HEAVY_COLLECTIONS = new Set(["members", "integrations"]);
-const isFullSiteBuild = process.env.BUILD_FULL_SITE !== "false";
-const shouldIncludeCollection = (collection) => isFullSiteBuild || !HEAVY_COLLECTIONS.has(collection);
+const shouldBuildFullSite = isFullSiteBuild();
+const excludedCollections = new Set(
+  getExcludedCollections({ isFullSiteBuild: shouldBuildFullSite }),
+);
+const isCollectionEnabled = (collection) =>
+  !excludedCollections.has(collection);
 
 const { loadRedirects } = require("./src/utils/redirects.js");
+const dev404PageSource =
+  require.resolve("gatsby/dist/internal-plugins/dev-404-page/raw_dev-404-page.js");
+
+const ensureDev404PageCache = (siteRoot) => {
+  if (process.env.NODE_ENV !== "development") {
+    return;
+  }
+
+  const dev404PageDestination = path.join(
+    siteRoot,
+    ".cache",
+    "dev-404-page.js",
+  );
+
+  if (fs.existsSync(dev404PageDestination)) {
+    return;
+  }
+
+  fs.mkdirSync(path.dirname(dev404PageDestination), { recursive: true });
+  fs.copyFileSync(dev404PageSource, dev404PageDestination);
+};
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createRedirect } = actions;
   const redirects = loadRedirects();
-  redirects.forEach(redirect => createRedirect(redirect)); // Handles all hardcoded ones dynamically
+  redirects.forEach((redirect) => createRedirect(redirect)); // Handles all hardcoded ones dynamically
   // Create Pages
   const { createPage } = actions;
 
   const envCreatePage = (props) => {
     const pageProps = {
       ...props,
-      matchPath: props.matchPath || props.path,
     };
 
     if (process.env.CI === "true") {
@@ -49,7 +76,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const blogPostTemplate = path.resolve("src/templates/blog-single.js");
   const blogCategoryListTemplate = path.resolve(
-    "src/templates/blog-category-list.js"
+    "src/templates/blog-category-list.js",
   );
   const blogTagListTemplate = path.resolve("src/templates/blog-tag-list.js");
 
@@ -61,10 +88,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const BookPostTemplate = path.resolve("src/templates/book-single.js");
 
-  const ProgramPostTemplate = path.resolve("src/templates/program-single.js");
-
   const MultiProgramPostTemplate = path.resolve(
-    "src/templates/program-multiple.js"
+    "src/templates/program-multiple.js",
   );
 
   const CareerPostTemplate = path.resolve("src/templates/career-single.js");
@@ -79,46 +104,116 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const resourcePostTemplate = path.resolve("src/templates/resource-single.js");
   const integrationTemplate = path.resolve("src/templates/integrations.js");
-  const LitePlaceholderTemplate = path.resolve("src/templates/lite-placeholder.js");
+  const LitePlaceholderTemplate = path.resolve(
+    "src/templates/lite-placeholder.js",
+  );
 
-  const memberBioQuery = isFullSiteBuild
-    ? `
-      memberBio: allMdx(
+  const HandbookTemplate = path.resolve("src/templates/handbook-template.js");
+
+  const res = await graphql(`
+    {
+      blogPosts: allMdx(
         filter: {
-          fields: { collection: { eq: "members" } }
-          frontmatter: { published: { eq: true }, executive_bio: { eq: true } }
+          fields: { collection: { eq: "blog" } }
+          frontmatter: { published: { eq: true } }
         }
       ) {
         nodes {
-          frontmatter {
-            name
-            permalink
-          }
           fields {
             slug
-            collection
           }
           internal {
             contentFilePath
           }
         }
       }
-    `
-    : "";
-
-  const HandbookTemplate = path.resolve("src/templates/handbook-template.js");
-
-
-  const res = await graphql(`
-    {
-      allPosts: allMdx(filter: { frontmatter: { published: { eq: true } } }) {
+      resourcePosts: allMdx(
+        filter: {
+          fields: { collection: { eq: "resources" } }
+          frontmatter: { published: { eq: true } }
+        }
+      ) {
+        nodes {
+          fields {
+            slug
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+      newsPosts: allMdx(
+        filter: {
+          fields: { collection: { eq: "news" } }
+          frontmatter: { published: { eq: true } }
+        }
+      ) {
+        nodes {
+          fields {
+            slug
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+      bookPosts: allMdx(
+        filter: {
+          fields: { collection: { eq: "service-mesh-books" } }
+          frontmatter: { published: { eq: true } }
+        }
+      ) {
+        nodes {
+          fields {
+            slug
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+      eventPosts: allMdx(
+        filter: {
+          fields: { collection: { eq: "events" } }
+          frontmatter: { published: { eq: true } }
+        }
+      ) {
+        nodes {
+          fields {
+            slug
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+      programPosts: allMdx(
+        filter: {
+          fields: { collection: { eq: "programs" } }
+          frontmatter: { published: { eq: true } }
+        }
+      ) {
         nodes {
           frontmatter {
             program
             programSlug
           }
           fields {
-            collection
+            slug
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+      careerPosts: allMdx(
+        filter: {
+          fields: { collection: { eq: "careers" } }
+          frontmatter: { published: { eq: true } }
+        }
+      ) {
+        nodes {
+          fields {
             slug
           }
           internal {
@@ -165,7 +260,60 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           fieldValue
         }
       }
-      ${memberBioQuery}
+      ${
+        isFullSiteBuild
+          ? `memberPosts: allMdx(
+        filter: {
+          fields: { collection: { eq: "members" } }
+          frontmatter: { published: { eq: true } }
+        }
+      ) {
+        nodes {
+          fields {
+            slug
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+      integrationPosts: allMdx(
+        filter: {
+          fields: { collection: { eq: "integrations" } }
+          frontmatter: { published: { eq: true } }
+        }
+      ) {
+        nodes {
+          fields {
+            slug
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+      memberBio: allMdx(
+        filter: {
+          fields: { collection: { eq: "members" } }
+          frontmatter: { published: { eq: true }, executive_bio: { eq: true } }
+        }
+      ) {
+        nodes {
+          frontmatter {
+            name
+            permalink
+          }
+          fields {
+            slug
+            collection
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }`
+          : ""
+      }
       singleWorkshop: allMdx(
         filter: { fields: { collection: { eq: "workshops" } } }
       ) {
@@ -219,91 +367,92 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return;
   }
 
-  const allNodes = res.data.allPosts.nodes;
-
-  const filterByCollection = (collection) => {
-    if (!shouldIncludeCollection(collection)) {
-      return [];
-    }
-    return allNodes.filter((node) => node.fields.collection === collection);
-  };
-
-  const blogs = filterByCollection("blog");
-
-  const resources = filterByCollection("resources");
-  const news = filterByCollection("news");
-  const books = filterByCollection("service-mesh-books");
-  const events = filterByCollection("events");
-  const programs = filterByCollection("programs");
-  const careers = filterByCollection("careers");
-  const members = filterByCollection("members");
-  const integrations = filterByCollection("integrations");
+  const blogs = res.data.blogPosts.nodes;
+  const resources = res.data.resourcePosts.nodes;
+  const news = res.data.newsPosts.nodes;
+  const books = res.data.bookPosts.nodes;
+  const events = res.data.eventPosts.nodes;
+  const programs = res.data.programPosts.nodes;
+  const careers = res.data.careerPosts.nodes;
+  const members = res.data.memberPosts?.nodes || [];
+  const integrations = res.data.integrationPosts?.nodes || [];
 
   const handbook = res.data.handbookPages.nodes;
-
 
   const singleWorkshop = res.data.singleWorkshop.nodes;
   const labs = res.data.labs.nodes;
 
-  paginate({
-    createPage: envCreatePage,
-    items: events,
-    itemsPerPage: 9,
-    pathPrefix: "/community/events",
-    component: EventsTemplate,
-  });
-
-  blogs.forEach((blog) => {
-    envCreatePage({
-      path: blog.fields.slug,
-      component: `${blogPostTemplate}?__contentFilePath=${blog.internal.contentFilePath}`,
-      context: {
-        slug: blog.fields.slug,
-      },
+  if (isCollectionEnabled("events") && events.length > 0) {
+    paginate({
+      createPage: envCreatePage,
+      items: events,
+      itemsPerPage: 9,
+      pathPrefix: "/community/events",
+      component: EventsTemplate,
     });
-  });
+  }
+
+  if (isCollectionEnabled("blog")) {
+    blogs.forEach((blog) => {
+      envCreatePage({
+        path: blog.fields.slug,
+        component: `${blogPostTemplate}?__contentFilePath=${blog.internal.contentFilePath}`,
+        context: {
+          slug: blog.fields.slug,
+        },
+      });
+    });
+  }
 
   const blogCategory = res.data.blogCategory.group;
-  blogCategory.forEach((category) => {
-    envCreatePage({
-      path: `/blog/category/${slugify(category.fieldValue)}`,
-      component: blogCategoryListTemplate,
-      context: {
-        category: category.fieldValue,
-      },
+  if (isCollectionEnabled("blog")) {
+    blogCategory.forEach((category) => {
+      envCreatePage({
+        path: `/blog/category/${slugify(category.fieldValue)}`,
+        component: blogCategoryListTemplate,
+        context: {
+          category: category.fieldValue,
+        },
+      });
     });
-  });
+  }
 
   const BlogTags = res.data.blogTags.group;
-  BlogTags.forEach((tag) => {
-    envCreatePage({
-      path: `/blog/tag/${slugify(tag.fieldValue)}`,
-      component: blogTagListTemplate,
-      context: {
-        tag: tag.fieldValue,
-      },
+  if (isCollectionEnabled("blog")) {
+    BlogTags.forEach((tag) => {
+      envCreatePage({
+        path: `/blog/tag/${slugify(tag.fieldValue)}`,
+        component: blogTagListTemplate,
+        context: {
+          tag: tag.fieldValue,
+        },
+      });
     });
-  });
+  }
 
-  resources.forEach((resource) => {
-    envCreatePage({
-      path: resource.fields.slug,
-      component: `${resourcePostTemplate}?__contentFilePath=${resource.internal.contentFilePath}`,
-      context: {
-        slug: resource.fields.slug,
-      },
+  if (isCollectionEnabled("resources")) {
+    resources.forEach((resource) => {
+      envCreatePage({
+        path: resource.fields.slug,
+        component: `${resourcePostTemplate}?__contentFilePath=${resource.internal.contentFilePath}`,
+        context: {
+          slug: resource.fields.slug,
+        },
+      });
     });
-  });
+  }
 
-  news.forEach((singleNews) => {
-    envCreatePage({
-      path: singleNews.fields.slug,
-      component: `${NewsPostTemplate}?__contentFilePath=${singleNews.internal.contentFilePath}`,
-      context: {
-        slug: singleNews.fields.slug,
-      },
+  if (isCollectionEnabled("news")) {
+    news.forEach((singleNews) => {
+      envCreatePage({
+        path: singleNews.fields.slug,
+        component: `${NewsPostTemplate}?__contentFilePath=${singleNews.internal.contentFilePath}`,
+        context: {
+          slug: singleNews.fields.slug,
+        },
+      });
     });
-  });
+  }
 
   books.forEach((book) => {
     envCreatePage({
@@ -315,15 +464,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  events.forEach((event) => {
-    envCreatePage({
-      path: event.fields.slug,
-      component: `${EventTemplate}?__contentFilePath=${event.internal.contentFilePath}`,
-      context: {
-        slug: event.fields.slug,
-      },
+  if (isCollectionEnabled("events")) {
+    events.forEach((event) => {
+      envCreatePage({
+        path: event.fields.slug,
+        component: `${EventTemplate}?__contentFilePath=${event.internal.contentFilePath}`,
+        context: {
+          slug: event.fields.slug,
+        },
+      });
     });
-  });
+  }
 
   programs.forEach((program) => {
     envCreatePage({
@@ -414,7 +565,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-
   programs.forEach((program) => {
     envCreatePage({
       path: `/programs/${program.frontmatter.programSlug}`,
@@ -428,6 +578,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   if (!isFullSiteBuild) {
     const litePlaceholderPages = [
       {
+        collection: "members",
         path: "/community/members/__lite__",
         matchPath: "/community/members/*",
         context: {
@@ -438,6 +589,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         },
       },
       {
+        collection: "integrations",
         path: "/cloud-native-management/meshery/__lite__",
         matchPath: "/cloud-native-management/meshery/*",
         context: {
@@ -447,14 +599,62 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             "Integrations are heavy to source, so this route shows a placeholder during lightweight builds.",
         },
       },
+      {
+        collection: "blog",
+        path: "/blog/__lite__",
+        matchPath: "/blog/*",
+        context: {
+          entity: "blog post",
+          heading: "Blog posts disabled in lite mode",
+          description:
+            "The default lightweight build skips the blog collection to keep local builds responsive.",
+        },
+      },
+      {
+        collection: "news",
+        path: "/company/news/__lite__",
+        matchPath: "/company/news/*",
+        context: {
+          entity: "news article",
+          heading: "News posts disabled in lite mode",
+          description:
+            "The default lightweight build skips the news collection to reduce local memory consumption.",
+        },
+      },
+      {
+        collection: "resources",
+        path: "/resources/__lite__",
+        matchPath: "/resources/*",
+        context: {
+          entity: "resource",
+          heading: "Resources disabled in lite mode",
+          description:
+            "The default lightweight build skips the resources collection to reduce local memory consumption.",
+        },
+      },
+      {
+        collection: "events",
+        path: "/community/events",
+        matchPath: "/community/events/*",
+        context: {
+          entity: "event",
+          heading: "Events disabled in lite mode",
+          description:
+            "The default lightweight build skips the events collection to keep local builds responsive.",
+        },
+      },
     ];
 
-    litePlaceholderPages.forEach((page) =>
-      envCreatePage({
-        ...page,
-        component: LitePlaceholderTemplate,
-      })
-    );
+    litePlaceholderPages
+      .filter((page) => excludedCollections.has(page.collection))
+      .forEach((page) =>
+        envCreatePage({
+          path: page.path,
+          matchPath: page.matchPath,
+          context: page.context,
+          component: LitePlaceholderTemplate,
+        }),
+      );
 
     const graphqlPlaceholderPages = [
       {
@@ -512,7 +712,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   });
 
-  const components = componentsData.map((component) => component.src.replace("/", ""));
+  const components = componentsData.map((component) =>
+    component.src.replace("/", ""),
+  );
   const createComponentPages = (createPage, components) => {
     const pageTypes = [
       { suffix: "", file: "index.js" },
@@ -534,7 +736,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             console.error(`Error creating page for "${pagePath}":`, error);
           }
         } else {
-          console.info(`Skipping creating page "${pagePath}" - file not found: "${componentPath}"`);
+          console.info(
+            `Skipping creating page "${pagePath}" - file not found: "${componentPath}"`,
+          );
         }
       });
     });
@@ -650,7 +854,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         case "blog":
           if (node.frontmatter.published)
             slug = `/${collection}/${slugify(
-              node.frontmatter.category
+              node.frontmatter.category,
             )}/${slugify(node.frontmatter.title)}`;
           break;
         case "news":
@@ -661,11 +865,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         case "kanvas-labs":
           slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
           break;
-          case "resources":
-            if (node.frontmatter.published)
-              slug = `/${collection}/${slugify(
-                node.frontmatter.category
-              )}/${slugify(node.frontmatter.title)}`;
+        case "resources":
+          if (node.frontmatter.published)
+            slug = `/${collection}/${slugify(
+              node.frontmatter.category,
+            )}/${slugify(node.frontmatter.title)}`;
           break;
         case "members":
           if (node.frontmatter.published)
@@ -789,6 +993,11 @@ const createSectionPage = ({ envCreatePage, node }) => {
   });
 };
 
+exports.onPreExtractQueries = ({ store }) => {
+  // Restore Gatsby's generated dev 404 entry if an incremental rebuild drops it.
+  ensureDev404PageCache(store.getState().program.directory);
+};
+
 exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
   actions.setWebpackConfig({
     resolve: {
@@ -801,11 +1010,16 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
   });
 
   // Reduce memory pressure by disabling sourcemaps in dev and build
-  if (stage === "develop" || stage === "develop-html" || stage === "build-javascript" || stage === "build-html") {
+  if (
+    stage === "develop" ||
+    stage === "develop-html" ||
+    stage === "build-javascript" ||
+    stage === "build-html"
+  ) {
     const config = getConfig();
     config.devtool = false;
     const miniCssExtractPlugin = config.plugins.find(
-      (plugin) => plugin.constructor.name === "MiniCssExtractPlugin"
+      (plugin) => plugin.constructor.name === "MiniCssExtractPlugin",
     );
 
     if (miniCssExtractPlugin) {
@@ -830,11 +1044,24 @@ exports.createSchemaCustomization = ({ actions }) => {
        whiteIcon: File @fileByRelativePath
      }
 
+     type FrontmatterMeshesYouLearn {
+       name: String
+       imagepath: File @fileByRelativePath
+     }
+
+     type FrontmatterAttribute {
+       name: String
+       url: String
+     }
+
      type Frontmatter {
        title: String
        subtitle: String
        abstract: String
        description: String
+       author: String
+       date: Date @dateformat
+       cardImage: File @fileByRelativePath
        eurl: String
        twitter: String
        github: String
@@ -855,6 +1082,17 @@ exports.createSchemaCustomization = ({ actions }) => {
        redirect_from: [String]
        category: String
        subcategory: String
+      tags: [String]
+      type: String
+      product: String
+      technology: String
+      mesh: String
+      featured: Boolean
+      upcoming: Boolean
+      resource: Boolean
+      presskit: String
+      source_url: String
+      attribute: [FrontmatterAttribute]
        registrant: String
        featureList: [String]
        howItWorks: String
@@ -877,14 +1115,21 @@ exports.createSchemaCustomization = ({ actions }) => {
         company: String
         executive_image: File @fileByRelativePath
        image_path: File @fileByRelativePath
+       thumbnail: File @fileByRelativePath
+       darkthumbnail: File @fileByRelativePath
+       thumbnail_svg: File @fileByRelativePath
+       darkthumbnail_svg: File @fileByRelativePath
+       meshesYouLearn: [FrontmatterMeshesYouLearn]
      }
    `;
   createTypes(typeDefs);
 };
 
-
-
 exports.onPostBuild = async ({ graphql, reporter }) => {
+  if (process.env.GATSBY_LOG_POSTBUILD_PAGES !== "true") {
+    return;
+  }
+
   const result = await graphql(`
     {
       allSitePage {
@@ -906,10 +1151,7 @@ exports.onPostBuild = async ({ graphql, reporter }) => {
     return;
   }
 
-  // Log the result to the console
-  console.log("GraphQL query result:", JSON.stringify(result, null, 2));
-
-  // Optionally, write the result to a file for easier inspection
   const outputPath = path.resolve(__dirname, "public", "query-result.json");
   fs.writeFileSync(outputPath, JSON.stringify(result, null, 2));
+  reporter.info(`Wrote post-build page graph to ${outputPath}`);
 };

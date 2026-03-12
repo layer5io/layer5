@@ -25,6 +25,12 @@ const MemberBio = ({ frontmatter, children }) => {
     executive_position,
     company,
   } = frontmatter;
+  const hasExecutiveImage = Boolean(
+    executive_image?.publicURL &&
+    (executive_image?.childImageSharp?.gatsbyImageData ||
+      executive_image?.extension === "svg"),
+  );
+
   return (
     <MemberSingleWrapper>
       <Container>
@@ -33,27 +39,31 @@ const MemberBio = ({ frontmatter, children }) => {
             <Col $xs={12} $sm={12} $lg={9}>
               <div className="header">
                 <div className="name">{name}</div>
-                {executive_position && <div className="position">{executive_position}, {company}</div>}
+                {executive_position && (
+                  <div className="position">
+                    {executive_position}, {company}
+                  </div>
+                )}
               </div>
             </Col>
             <Col $xs={12} $sm={12} $lg={3}>
-              <div className="exec-bio-image">
-                <Link to={executive_image.publicURL}>
-                  <Image
-                    className="profile-image"
-                    {...executive_image}
-                    alt={name}
-                  />
-                </Link>
-              </div>
+              {hasExecutiveImage && (
+                <div className="exec-bio-image">
+                  <Link to={executive_image.publicURL}>
+                    <Image
+                      className="profile-image"
+                      {...executive_image}
+                      alt={name}
+                    />
+                  </Link>
+                </div>
+              )}
             </Col>
           </Row>
           <Row>
             <Col $xs={12} $sm={12} $lg={9}>
               <h3>Executive Bio</h3>
-              <SRLWrapper>
-                {children}
-              </SRLWrapper>
+              <SRLWrapper>{children}</SRLWrapper>
             </Col>
             <Col $xs={12} $sm={12} $lg={3}>
               <div className="exec-bio-image">

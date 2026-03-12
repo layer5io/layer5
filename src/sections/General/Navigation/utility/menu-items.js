@@ -209,18 +209,18 @@ const Data = {
           name: "Calendar",
           path: "/community/calendar",
         },
-        {
-          name: "Recognition Program",
-          path: "https://badges.layer5.io",
-          sepLine: true,
-          externalLink: true,
-        },
+
       ],
       actionItems: [
         // {
         //   actionName: "Newcomer's journey",
         //   actionLink: "/community/newcomers",
         // },
+        {
+          actionName: "Recognition Program",
+          actionLink: "https://badges.layer5.io",
+          external: true,
+        },
         {
           actionName: "Discussion forum",
           actionLink: "https://discuss.layer5.io",

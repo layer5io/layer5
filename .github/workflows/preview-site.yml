@@ -9,16 +9,18 @@ on:
 jobs:
   deploy-preview:
     runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
 
       - name: Download Site dir
-        uses: dawidd6/action-download-artifact@v11
+        uses: actions/download-artifact@v7
         with:
-          github_token: ${{ secrets.GH_ACCESS_TOKEN }}
-          workflow: build-and-preview-site.yml
-          run_id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+          run-id: ${{ github.event.workflow_run.id }}
           name: public-dir
 
       - name: Unzip Site
@@ -44,5 +46,3 @@ jobs:
         with:
           token: ${{ secrets.GH_ACCESS_TOKEN }}
           deploy_url: "${{ steps.netlify.outputs.deploy-url }}"
-
-
