@@ -91,9 +91,15 @@ const easeOutCuaic = (t) => {
 const Brand = () => {
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
-    window.addEventListener("scroll", () =>
-      window.scrollY > 510 ? setScroll(true) : setScroll(false)
-    );
+    const handleScroll = () => {
+      setScroll(window.scrollY > 510);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const [visibleSection, setVisibleSection] = useState();
