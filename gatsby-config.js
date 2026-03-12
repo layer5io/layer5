@@ -535,13 +535,6 @@ module.exports = {
         name: "content-learn",
       },
     },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "static-images",
-        path: `${__dirname}/static/images`,
-      },
-    },
     "gatsby-plugin-image",
 
     {
