@@ -25,135 +25,144 @@ import Layer5CloudLightIcon from "./utility/Layer5CloudLightIcon.svg";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward.js";
 
 const Navigation = () => {
-  let data = useStaticQuery(
-    graphql`{
-  Learn: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {eq: "service-mesh-books"}}}
-    limit: 2
-  ) {
-    nodes {
-      id
-      frontmatter {
-        title
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData(width: 1050, height: 1360, layout: CONSTRAINED)
+  let data = useStaticQuery(graphql`
+    {
+      Learn: allMdx(
+        sort: { frontmatter: { date: DESC } }
+        filter: { fields: { collection: { eq: "service-mesh-books" } } }
+        limit: 2
+      ) {
+        nodes {
+          id
+          frontmatter {
+            title
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(width: 1050, height: 1360, layout: CONSTRAINED)
+              }
+            }
+            thumbnail_svg {
+              extension
+              publicURL
+            }
+          }
+          fields {
+            slug
           }
         }
-        thumbnail_svg {
-          extension
-          publicURL
+      }
+      Community: allMdx(
+        sort: { frontmatter: { date: DESC } }
+        filter: {
+          fields: { collection: { eq: "events" } }
+          frontmatter: { published: { eq: true } }
         }
-      }
-      fields {
-        slug
-      }
-    }
-  }
-  Community: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {eq: "events"}}, frontmatter: {published: {eq: true}}}
-    limit: 2
-  ) {
-    nodes {
-      id
-      frontmatter {
-        title
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData(
-              width: 240
-              height: 160
-              transformOptions: {cropFocus: CENTER}
-              layout: FIXED
-            )
+        limit: 2
+      ) {
+        nodes {
+          id
+          frontmatter {
+            title
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 240
+                  height: 160
+                  transformOptions: { cropFocus: CENTER }
+                  layout: FIXED
+                )
+              }
+              publicURL
+              extension
+            }
+            thumbnail_svg {
+              extension
+              publicURL
+            }
+            thumbnail_svg {
+              extension
+              publicURL
+            }
           }
-          publicURL
-          extension
-        }
-        thumbnail_svg {
-          extension
-          publicURL
-        }
-        thumbnail_svg {
-          extension
-          publicURL
-        }
-      }
-      fields {
-        slug
-      }
-    }
-  }
-  Resources: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {featured: {eq: true}}}
-    limit: 2
-  ) {
-    nodes {
-      id
-      frontmatter {
-        title
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData(
-              width: 240
-              height: 160
-              transformOptions: {cropFocus: CENTER}
-              layout: FIXED
-            )
+          fields {
+            slug
           }
-          publicURL
-          extension
-        }
-        thumbnail_svg {
-          extension
-          publicURL
-        }
-        thumbnail_svg {
-          extension
-          publicURL
         }
       }
-      fields {
-        slug
-      }
-    }
-  }
-  Home: allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {eq: "projects"}}, frontmatter: {published: {eq: true}}}
-    limit: 2
-  ) {
-    nodes {
-      id
-      frontmatter {
-        title
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData(
-              width: 240
-              height: 160
-              transformOptions: {cropFocus: CENTER}
-              layout: FIXED
-            )
+      Resources: allMdx(
+        sort: { frontmatter: { date: DESC } }
+        filter: {
+          fields: { collection: { eq: "blog" } }
+          frontmatter: { featured: { eq: true } }
+        }
+        limit: 2
+      ) {
+        nodes {
+          id
+          frontmatter {
+            title
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 240
+                  height: 160
+                  transformOptions: { cropFocus: CENTER }
+                  layout: FIXED
+                )
+              }
+              publicURL
+              extension
+            }
+            thumbnail_svg {
+              extension
+              publicURL
+            }
+            thumbnail_svg {
+              extension
+              publicURL
+            }
           }
-          extension
-          publicURL
-        }
-        thumbnail_svg {
-          extension
-          publicURL
+          fields {
+            slug
+          }
         }
       }
-      fields {
-        slug
+      Home: allMdx(
+        sort: { frontmatter: { date: DESC } }
+        filter: {
+          fields: { collection: { eq: "projects" } }
+          frontmatter: { published: { eq: true } }
+        }
+        limit: 2
+      ) {
+        nodes {
+          id
+          frontmatter {
+            title
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 240
+                  height: 160
+                  transformOptions: { cropFocus: CENTER }
+                  layout: FIXED
+                )
+              }
+              extension
+              publicURL
+            }
+            thumbnail_svg {
+              extension
+              publicURL
+            }
+          }
+          fields {
+            slug
+          }
+        }
       }
     }
-  }
-}`
-  );
+  `);
   const { isDark, toggleDark } = useStyledDarkMode();
   data["Products"] = {
     nodes: [
@@ -210,12 +219,12 @@ const Navigation = () => {
       cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   }
   useEffect(() => {
-    const CLOUD_USER_API =
-      "https://cloud.layer5.io/api/identity/users/profile";
+    const CLOUD_USER_API = "https://cloud.layer5.io/api/identity/users/profile";
     const fetchData = async () => {
       try {
         const token = getCookieValue("provider_token");
-        if (!token) { // no token: don't proceed
+        if (!token) {
+          // no token: don't proceed
           return;
         }
         const response = await axios.get(CLOUD_USER_API, {
@@ -254,7 +263,8 @@ const Navigation = () => {
       }
     };
 
-    expand && setTimeout(() => document.addEventListener("click", outsideClickHandler));
+    expand &&
+      setTimeout(() => document.addEventListener("click", outsideClickHandler));
 
     return () => {
       document.removeEventListener("click", outsideClickHandler);
@@ -263,7 +273,7 @@ const Navigation = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", () =>
-      window.scrollY > 50 ? setScroll(true) : setScroll(false)
+      window.scrollY > 50 ? setScroll(true) : setScroll(false),
     );
   }, []);
 
@@ -381,39 +391,41 @@ const Navigation = () => {
                         {menu.actionItems !== undefined &&
                           menu.actionItems.map((actionItem, index) =>
                             actionItem.actionName === "Join the discussion" ? (
-                              <a
-                                key={index}
-                                href={actionItem.actionLink}
-                                target="_blank"
-                                className="mobile-sub-action-item"
-                                rel="noreferrer"
-                                onClick={() => {
-                                  changeDropdownState();
-                                  closeDropDown();
-                                }}
-                              >
-                                <span className="readmore-btn">
-                                  {actionItem.actionName}{" "}
-                                  <IoIosArrowRoundForward />
-                                </span>
-                              </a>
+                              <li key={index}>
+                                <a
+                                  href={actionItem.actionLink}
+                                  target="_blank"
+                                  className="mobile-sub-action-item"
+                                  rel="noreferrer"
+                                  onClick={() => {
+                                    changeDropdownState();
+                                    closeDropDown();
+                                  }}
+                                >
+                                  <span className="readmore-btn">
+                                    {actionItem.actionName}{" "}
+                                    <IoIosArrowRoundForward />
+                                  </span>
+                                </a>
+                              </li>
                             ) : (
-                              <Link
-                                key={index}
-                                to={actionItem.actionLink}
-                                partiallyActive={true}
-                                className="mobile-sub-action-item"
-                                onClick={() => {
-                                  changeDropdownState();
-                                  closeDropDown();
-                                }}
-                              >
-                                <span className="readmore-btn">
-                                  {actionItem.actionName}{" "}
-                                  <IoIosArrowRoundForward />
-                                </span>
-                              </Link>
-                            )
+                              <li key={index}>
+                                <Link
+                                  to={actionItem.actionLink}
+                                  partiallyActive={true}
+                                  className="mobile-sub-action-item"
+                                  onClick={() => {
+                                    changeDropdownState();
+                                    closeDropDown();
+                                  }}
+                                >
+                                  <span className="readmore-btn">
+                                    {actionItem.actionName}{" "}
+                                    <IoIosArrowRoundForward />
+                                  </span>
+                                </Link>
+                              </li>
+                            ),
                           )}
                       </ul>
                     </li>
