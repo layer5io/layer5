@@ -22,8 +22,11 @@ export const onRenderBody = ({ setHeadComponents, setPreBodyComponents }) => {
       key="critical-theme-css"
       dangerouslySetInnerHTML={{
         __html: `
-          html, body {
+          html {
             visibility: hidden;
+            background-color: #121212;
+          }
+          body {
             background-color: #121212;
           }
         `,
