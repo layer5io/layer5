@@ -35,27 +35,23 @@ const applyThemeToDOM = (theme) => {
 };
 
 export const ThemeManagerProvider = (props) => {
-  const [themeSetting, setThemeSetting] = useState(ThemeSetting.DARK);
+  const [themeSetting, setThemeSetting] = useState(ThemeSetting.SYSTEM); 
   const [didLoad, setDidLoad] = useState(false);
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false); 
 
   useEffect(() => {
     if (!isBrowser) return;
-
     const storedTheme = localStorage.getItem(DarkThemeKey);
 
     if (storedTheme === ThemeSetting.LIGHT) {
       setIsDark(false);
       setThemeSetting(ThemeSetting.LIGHT);
       applyThemeToDOM(ThemeSetting.LIGHT);
-    } else if (storedTheme === ThemeSetting.DARK || !storedTheme) {
+    } else if (storedTheme === ThemeSetting.DARK) {
       setIsDark(true);
       setThemeSetting(ThemeSetting.DARK);
       applyThemeToDOM(ThemeSetting.DARK);
-      if (!storedTheme) {
-        localStorage.setItem(DarkThemeKey, ThemeSetting.DARK);
-      }
-    } else if (storedTheme === ThemeSetting.SYSTEM) {
+    } else {
       const systemIsDark = isDarkModeActive();
       setIsDark(systemIsDark);
       setThemeSetting(ThemeSetting.SYSTEM);
@@ -67,25 +63,20 @@ export const ThemeManagerProvider = (props) => {
 
   useEffect(() => {
     if (!isBrowser || themeSetting !== ThemeSetting.SYSTEM) return;
-
     const darkModeMediaQuery = systemDarkModeSetting();
     if (!darkModeMediaQuery) return;
-
     const handleChange = (e) => {
       setIsDark(e.matches);
       applyThemeToDOM(e.matches ? ThemeSetting.DARK : ThemeSetting.LIGHT);
     };
-
     darkModeMediaQuery.addEventListener("change", handleChange);
     return () => darkModeMediaQuery.removeEventListener("change", handleChange);
   }, [themeSetting]);
 
   const toggleDark = useCallback(() => {
     if (!isBrowser) return;
-
     const newIsDark = !isDark;
     const newTheme = newIsDark ? ThemeSetting.DARK : ThemeSetting.LIGHT;
-
     setIsDark(newIsDark);
     setThemeSetting(newTheme);
     applyThemeToDOM(newTheme);
@@ -95,10 +86,8 @@ export const ThemeManagerProvider = (props) => {
   const changeThemeSetting = useCallback(
     (setting) => {
       if (!isBrowser) return;
-
       let newIsDark = isDark;
       let themeToApply = setting;
-
       switch (setting) {
         case ThemeSetting.SYSTEM: {
           newIsDark = isDarkModeActive();
@@ -116,7 +105,6 @@ export const ThemeManagerProvider = (props) => {
         default:
           return;
       }
-
       setIsDark(newIsDark);
       setThemeSetting(setting);
       applyThemeToDOM(themeToApply);
