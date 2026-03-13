@@ -11,7 +11,8 @@
   },
   "scripts": {
     "build": "cross-env BUILD_FULL_SITE=true NODE_OPTIONS=--max-old-space-size=8192 gatsby build",
-    "clean": "gatsby clean && rimraf node_modules",
+    "clean": "gatsby clean",
+    "clean:all": "gatsby clean && rimraf node_modules",
     "develop": "cross-env BUILD_FULL_SITE=true GATSBY_CPU_COUNT=4 SHARP_CONCURRENCY=4 UV_THREADPOOL_SIZE=4 NODE_OPTIONS=--max-old-space-size=8192 env-cmd -f .env.development gatsby develop",
     "develop:lite": "cross-env BUILD_FULL_SITE=false LITE_BUILD_PROFILE=core GATSBY_CPU_COUNT=4 SHARP_CONCURRENCY=4 UV_THREADPOOL_SIZE=4 NODE_OPTIONS=--max-old-space-size=8192 env-cmd -f .env.development gatsby develop",
     "dev": "npm run develop:lite",
