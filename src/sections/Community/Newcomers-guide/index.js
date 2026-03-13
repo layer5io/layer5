@@ -34,12 +34,8 @@ const NewcomersGuide = () => {
             <a href="https://slack.layer5.io/" target="_blank" rel="noreferrer">
               Slack workspace
             </a>{" "}
-            to collaborate with the community and the{" "}
-            <a href="https://discuss.layer5.io" target="">
-              discussion forum
-            </a>{" "}
-            for questions. Also, you can check the quick-links below for jumping
-            straight into things.
+            to collaborate with the community and the{" "}<a href="https://discuss.layer5.io" target=""> discussion forum </a>{" "} for questions. Also, you can check the
+            quick-links below for jumping straight into things.
           </p>
           <Row
             style={{
@@ -93,11 +89,7 @@ const NewcomersGuide = () => {
           >
             <Col $sm={12} $lg={6}>
               <h3>Fill in the Community Member Form</h3>
-              <p>
-                Help us get to know you, so that we can highlight projects and
-                initiatives that align with your interests. Fill-in a community
-                member form. Gain access to community resources.
-              </p>
+              <p>Help us get to know you, so that we can highlight projects and initiatives that align with your interests. Fill-in a community member form. Gain access to community resources.</p>
             </Col>
             <Col $sm={12} $lg={6} className="col-newcomers-form">
               <Button
@@ -115,14 +107,7 @@ const NewcomersGuide = () => {
             </Col>
             <Col $sm={12} $lg={6}>
               <h3>Finding an Issue to Work On</h3>
-              <p>
-                Note that the Layer5 community spans six GitHub organizations.
-                See all in the{" "}
-                <Link to="/community/handbook/repository-overview">
-                  repository overview
-                </Link>
-                .
-              </p>
+              <p>Note that the Layer5 community spans six GitHub organizations. See all in the <Link to="/community/handbook/repository-overview">repository overview</Link>.</p>
               <ol type="i">
                 <li>
                   Browse the list of{" "}
@@ -156,8 +141,7 @@ const NewcomersGuide = () => {
                   ” label.
                 </li>
                 <li>
-                  Find an area of interest by perusing the list of projects by
-                  repository and technology in the{" "}
+                Find an area of interest by perusing the list of projects by repository and technology in the{" "}
                   <Link to="/community/handbook/repository-overview/">
                     Layer5 Repository Overview
                   </Link>
@@ -222,8 +206,7 @@ const NewcomersGuide = () => {
                   >
                     #newcomers
                   </a>{" "}
-                  channel in our Slack workspace. Introduce yourself and ask
-                  questions.
+                  channel in our Slack workspace. Introduce yourself and ask questions.
                 </li>
               </ol>
             </Col>
@@ -263,8 +246,7 @@ const NewcomersGuide = () => {
                 Be patient. There are a large number of contributors and only a
                 small number of maintainers/reviewers. All contributors are
                 equally important to us, and we'll be sure to get to you as soon
-                as possible. In the meanwhile, you are welcome to engage in the
-                Layer5{" "}
+                as possible. In the meanwhile, you are welcome to engage in the Layer5{" "}
                 <a
                   href="https://discuss.layer5.io/"
                   target="_blank"
