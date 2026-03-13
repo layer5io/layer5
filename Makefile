@@ -33,7 +33,7 @@ site-full:
 
 ## Run layer5.io on your local machine. Alternate method.
 site-fast:
-	BUILD_FULL_SITE=false LITE_BUILD_PROFILE=core GATSBY_CPU_COUNT=4 SHARP_CONCURRENCY=4 UV_THREADPOOL_SIZE=4 NODE_OPTIONS=--max-old-space-size=8192 gatsby develop
+	BUILD_FULL_SITE=false LITE_BUILD_PROFILE=core GATSBY_CPU_COUNT=4 SHARP_CONCURRENCY=4 UV_THREADPOOL_SIZE=4 NODE_OPTIONS=--max-old-space-size=8192 npx gatsby develop
 
 ## Build layer5.io on your local machine.
 build:
@@ -41,7 +41,7 @@ build:
 
 ## Empty build cache and run layer5.io on your local machine.
 clean: 
-	gatsby clean && make site
+	npx gatsby clean && make site
 
 ## Run Eslint on your local machine.
 lint:
