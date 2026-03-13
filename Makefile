@@ -41,7 +41,7 @@ build:
 
 ## Empty build cache and run layer5.io on your local machine.
 clean: 
-	npx gatsby clean && make site
+	npx gatsby clean && make build
 
 ## Run Eslint on your local machine.
 lint:
