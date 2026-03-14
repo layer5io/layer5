@@ -29,6 +29,14 @@ const isDarkModeActive = () => {
   return !!systemDarkModeSetting()?.matches;
 };
 
+const getInitialTheme = () => {
+  if (typeof window === "undefined") return false;
+  const stored = localStorage.getItem("theme");
+  if (stored === "dark") return true;
+  if (stored === "light") return false;
+  return window.matchMedia("(prefers-color-scheme: dark)").matches;
+};
+
 const applyThemeToDOM = (theme) => {
   if (!isBrowser) return;
   const root = window.document.documentElement;
@@ -46,7 +54,7 @@ const applyThemeToDOM = (theme) => {
 export const ThemeManagerProvider = (props) => {
   const [themeSetting, setThemeSetting] = useState(ThemeSetting.SYSTEM);
   const [didLoad, setDidLoad] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(getInitialTheme);
 
   useEffect(() => {
     if (!isBrowser) return;
