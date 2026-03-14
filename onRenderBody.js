@@ -1,3 +1,4 @@
+import React from "react"; 
 export const onRenderBody = ({ setHeadComponents }) => {
   const scriptContent = `
     (function() {
