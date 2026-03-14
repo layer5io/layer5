@@ -68,7 +68,13 @@ const MagicScriptTag = ({ theme }) => {
   return <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />;
 };
 
-export const onRenderBody = ({ setHeadComponents }) => {
+export const onRenderBody = ({ setHeadComponents, setHtmlAttributes }) => {
+  setHtmlAttributes({
+    style: {
+      backgroundColor: "#121212",
+    },
+  });
+
   setHeadComponents([
     <MagicScriptTag key="theme-initializer" theme={themes} />,
   ]);
