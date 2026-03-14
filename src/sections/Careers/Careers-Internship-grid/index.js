@@ -7,8 +7,8 @@ import InternshipSectionWrapper from "./InternshipPage.style";
 import ProgramsGrid from "../Careers-Programs-grid/index";
 import FAQ from "../../General/Faq";
 
-const UEM_Img = "/partners/uem_partner.webp";
-const Univ_Texas_Img = "/partners/texas_partner.webp";
+const UEM_Img = "/images/partners/uem_partner.webp";
+const Univ_Texas_Img = "/images/partners/texas_partner.webp";
 const Peek_Img = "../../../assets/images/layer5/layer5-peek-card-edited.svg";
 
 const InternshipPage = ({ hide_heading }) => {

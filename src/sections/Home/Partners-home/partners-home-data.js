@@ -3,7 +3,7 @@
 export const partners = [
   {
     name: "Redhat",
-    imageLink: "/partners/redhat_black.svg",
+    imageLink: "/images/partners/redhat_black.svg",
     imageRoute: "/partners#redhat",
     innerDivStyle: "partner__block__inner horizontal",
     imageHeight: 90,
@@ -11,7 +11,7 @@ export const partners = [
   },
   {
     name: "Exoscale",
-    imageLink: "/partners/exoscale_black.svg",
+    imageLink: "/images/partners/exoscale_black.svg",
     imageRoute: "/partners#exoscale",
     innerDivStyle: "partner__block__inner",
     imageHeight: 130,
@@ -19,7 +19,7 @@ export const partners = [
   },
   {
     name: "Intel",
-    imageLink: "/partners/intel-grey.svg",
+    imageLink: "/images/partners/intel-grey.svg",
     imageRoute: "/partners#intel",
     innerDivStyle: "partner__block__inner",
     imageHeight: 533,
@@ -27,7 +27,7 @@ export const partners = [
   },
   {
     name: "University of Texas at Austin partnership with Layer5",
-    imageLink: "/partners/ut-austin_black.svg",
+    imageLink: "/images/partners/ut-austin_black.svg",
     imageRoute: "/partners#utaustin",
     innerDivStyle: "partner__block__inner horizontal",
     imageHeight: 78,
@@ -35,7 +35,7 @@ export const partners = [
   },
   {
     name: "Citrix",
-    imageLink: "/partners/citrix.svg",
+    imageLink: "/images/partners/citrix.svg",
     imageRoute: "/partners#Citrix",
     innerDivStyle: "partner__block__inner",
     imageHeight: 144,
@@ -43,7 +43,7 @@ export const partners = [
   },
   {
     name: "Hashicorp partnership with Layer5",
-    imageLink: "/partners/hashicorp_vertical_black.svg",
+    imageLink: "/images/partners/hashicorp_vertical_black.svg",
     imageRoute:
       "/company/news/layer5-and-hashicorp-launch-service-mesh-partnership",
     innerDivStyle: "partner__block__inner",
@@ -52,7 +52,7 @@ export const partners = [
   },
   {
     name: "Hewlett-Packard Enterprise",
-    imageLink: "/partners/hpe_side_black.svg",
+    imageLink: "/images/partners/hpe_side_black.svg",
     imageRoute: "/partners#hpe",
     innerDivStyle: "partner__block__inner",
     imageHeight: 69,
@@ -60,7 +60,7 @@ export const partners = [
   },
   {
     name: "National Institute of Technology Karnataka",
-    imageLink: "/partners/nitk_black.svg",
+    imageLink: "/images/partners/nitk_black.svg",
     imageRoute: "/partners#nitk",
     innerDivStyle: "partner__block__inner",
     imageHeight: 433,
@@ -68,7 +68,7 @@ export const partners = [
   },
   {
     name: "Rackspace Technology",
-    imageLink: "/partners/rackspace_black.svg",
+    imageLink: "/images/partners/rackspace_black.svg",
     imageRoute: "/partners#rackspace",
     innerDivStyle: "partner__block__inner",
     imageHeight: 124,
@@ -76,7 +76,7 @@ export const partners = [
   },
   {
     name: "UEM",
-    imageLink: "/partners/uem_black.svg",
+    imageLink: "/images/partners/uem_black.svg",
     imageRoute: "/partners#uem",
     innerDivStyle: "partner__block__inner",
     imageHeight: 164,
@@ -84,7 +84,7 @@ export const partners = [
   },
   {
     name: "VMware",
-    imageLink: "/partners/vmware.svg",
+    imageLink: "/images/partners/vmware.svg",
     imageRoute: "/partners#VMware",
     innerDivStyle: "partner__block__inner",
     imageHeight: 31,
@@ -92,7 +92,7 @@ export const partners = [
   },
   {
     name: "CNCF",
-    imageLink: "/partners/cncf/horizontal/black/cncf-black.svg",
+    imageLink: "/images/partners/cncf/horizontal/black/cncf-black.svg",
     imageRoute: "/partners#cncf",
     innerDivStyle: "partner__block__inner ",
     imageHeight: 130,
@@ -100,7 +100,7 @@ export const partners = [
   },
   {
     name: "Metabit Trading",
-    imageLink: "/partners/metabit-trading-logo-gray.svg",
+    imageLink: "/images/partners/metabit-trading-logo-gray.svg",
     imageRoute: "/partners#metabittrading",
     innerDivStyle: "partner__block__inner ",
     imageHeight: 130,
@@ -108,7 +108,7 @@ export const partners = [
   },
   {
     name: "DigitalOcean",
-    imageLink: "/partners/digitalocean-black.svg",
+    imageLink: "/images/partners/digitalocean-black.svg",
     imageRoute: "/partners#digitalocean",
     innerDivStyle: "partner__block__inner ",
     imageHeight: 533,
@@ -116,7 +116,7 @@ export const partners = [
   },
   {
     name: "Citibank",
-    imageLink: "/partners/citibank_black.svg",
+    imageLink: "/images/partners/citibank_black.svg",
     imageRoute: "/partners#citibank",
     innerDivStyle: "partner__block__inner ",
     imageHeight: 130,
@@ -124,7 +124,7 @@ export const partners = [
   },
   {
     name: "Aya Pay",
-    imageLink: "/partners/aya_pay_black.svg",
+    imageLink: "/images/partners/aya_pay_black.svg",
     imageRoute: "/partners",
     innerDivStyle: "partner__block__inner ",
     imageHeight: 130,
