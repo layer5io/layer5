@@ -11,6 +11,9 @@ const MagicScriptTag = ({ theme }) => {
   const codeToRunOnClient = `
 (function() {
   try {
+
+    document.documentElement.style.backgroundColor = "#121212";
+
     const themeFromLocalStorage =
       localStorage.getItem('${DarkThemeKey}') || '${ThemeSetting.SYSTEM}';
 
@@ -69,6 +72,7 @@ const MagicScriptTag = ({ theme }) => {
 };
 
 export const onRenderBody = ({ setHeadComponents, setHtmlAttributes }) => {
+
   setHtmlAttributes({
     style: {
       backgroundColor: "#121212",
