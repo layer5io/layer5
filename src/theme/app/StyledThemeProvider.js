@@ -2,17 +2,14 @@ import React, { useContext } from "react";
 import { ThemeProvider } from "styled-components";
 import { ThemeManagerContext } from "./ThemeManager";
 
-// Safe check for browser environment
-const isBrowser = typeof window !== "undefined";
-
 export const StyledThemeProvider = (props) => {
   const { children, darkTheme, lightTheme } = props;
   const { isDark, didLoad } = useContext(ThemeManagerContext);
 
+  if (!didLoad) return null;
+
   const currentTheme = isDark ? darkTheme : lightTheme;
-  const theme = {
-    ...(currentTheme),
-  };
+  const theme = { ...currentTheme };
 
   return (
     <ThemeProvider theme={theme}>
@@ -31,8 +28,5 @@ const transformTheme = (theme) => {
       newTheme[key] = `var(--${key})`;
     }
   });
-
   return newTheme;
 };
-
-
