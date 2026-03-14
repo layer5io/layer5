@@ -1,47 +1,44 @@
 import React from "react";
 
-export const onRenderBody = ({ setHeadComponents }) => {
-  const scriptContent = `
+const MagicScriptTag = () => {
+  const codeToRunOnClient = `
     (function() {
       try {
         var stored = localStorage.getItem('theme');
         var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         var isDark = stored === 'dark' || (stored === null && prefersDark);
+        var root = document.documentElement;
+        root.setAttribute('data-theme', isDark ? 'dark' : 'light');
         if (isDark) {
-          document.documentElement.classList.add('theme-dark');
-          document.documentElement.style.backgroundColor = '#121212';
+          root.classList.add('theme-dark');
+          root.classList.remove('theme-light');
         } else {
-          document.documentElement.classList.add('theme-light');
-          document.documentElement.style.backgroundColor = '#FFFFFF';
+          root.classList.add('theme-light');
+          root.classList.remove('theme-dark');
         }
-      } catch(e) {
-        document.documentElement.style.backgroundColor = '#121212';
-      }
-      document.documentElement.style.visibility = 'visible';
+      } catch(e) {}
     })();
   `;
+  return (
+    <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />
+  );
+};
 
+export const onRenderBody = ({ setPreBodyComponents, setHeadComponents }) => {
   setHeadComponents([
     <style
       key="critical-theme-css"
       dangerouslySetInnerHTML={{
         __html: `
-          html {
-            visibility: hidden;
+          html[data-theme="dark"] body {
             background-color: #121212;
           }
-          .theme-dark body {
-            background-color: #121212 !important;
-          }
-          .theme-light body {
-            background-color: #FFFFFF !important;
+          html[data-theme="light"] body {
+            background-color: #FFFFFF;
           }
         `,
       }}
     />,
-    <script
-      key="critical-theme-script"
-      dangerouslySetInnerHTML={{ __html: scriptContent }}
-    />,
   ]);
+  setPreBodyComponents(<MagicScriptTag key="magic-script" />);
 };
