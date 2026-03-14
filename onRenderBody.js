@@ -1,5 +1,3 @@
-import React from "react";
-
 export const onRenderBody = ({ setHeadComponents }) => {
   const scriptContent = `
     (function() {
@@ -7,14 +5,14 @@ export const onRenderBody = ({ setHeadComponents }) => {
         var stored = localStorage.getItem('theme');
         var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         var isDark = stored === 'dark' || (stored === null && prefersDark);
-        var bg = isDark ? '#121212' : '#FFFFFF';
-        document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-        document.documentElement.style.backgroundColor = bg;
-        document.documentElement.style.setProperty('--initial-color-mode', isDark ? 'dark' : 'light');
-      } catch(e) {
-        document.documentElement.style.backgroundColor = '#121212';
-      }
-      document.documentElement.style.visibility = 'visible';
+        if (isDark) {
+          document.documentElement.classList.add('theme-dark');
+          document.documentElement.style.backgroundColor = '#121212';
+        } else {
+          document.documentElement.classList.add('theme-light');
+          document.documentElement.style.backgroundColor = '#FFFFFF';
+        }
+      } catch(e) {}
     })();
   `;
 
@@ -23,14 +21,10 @@ export const onRenderBody = ({ setHeadComponents }) => {
       key="critical-theme-css"
       dangerouslySetInnerHTML={{
         __html: `
-          html {
-            visibility: hidden;
-            background-color: #121212;
-          }
-          html[data-theme="dark"] body {
+          .theme-dark body {
             background-color: #121212 !important;
           }
-          html[data-theme="light"] body {
+          .theme-light body {
             background-color: #FFFFFF !important;
           }
         `,
