@@ -39,9 +39,9 @@ site-fast:
 build:
 	npm run build
 
-## Empty build cache and run layer5.io on your local machine.
-clean: 
-	gatsby clean && make site
+## Empty build cache and rebuild layer5.io on your local machine (developer use only; CI uses `npm run build` directly).
+clean:
+	npm run clean && make build
 
 ## Run Eslint on your local machine.
 lint:
