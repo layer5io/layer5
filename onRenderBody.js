@@ -2,7 +2,7 @@ import React from "react";
 
 export const onRenderBody = ({ setPreBodyComponents, setHtmlAttributes }) => {
   setHtmlAttributes({
-    style: { backgroundColor: "#1e2129" }
+    style: { backgroundColor: "#121212" }
   });
 
   setPreBodyComponents([
@@ -11,37 +11,23 @@ export const onRenderBody = ({ setPreBodyComponents, setHtmlAttributes }) => {
       dangerouslySetInnerHTML={{
         __html: `
           (function() {
-            document.documentElement.style.visibility = 'hidden';
-
             try {
               var stored = localStorage.getItem('theme');
-              var parsed = stored ? JSON.parse(stored) : null;
-              var themeSetting = parsed && parsed.themeSetting 
-                ? parsed.themeSetting 
-                : null;
-
               var isDark;
-
-              if (themeSetting === 'dark') {
+              if (stored === 'dark') {
                 isDark = true;
-              } else if (themeSetting === 'light') {
+              } else if (stored === 'light') {
                 isDark = false;
               } else {
                 isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
               }
-
-              document.documentElement.style.backgroundColor = 
-                isDark ? '#1e2129' : '#ffffff';
-              document.documentElement.setAttribute(
-                'data-theme', isDark ? 'dark' : 'light'
-              );
-
+              var bg = isDark ? '#121212' : '#ffffff';
+              document.documentElement.style.backgroundColor = bg;
+              document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
             } catch(e) {
               var sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-              document.documentElement.style.backgroundColor = 
-                sysDark ? '#1e2129' : '#ffffff';
+              document.documentElement.style.backgroundColor = sysDark ? '#121212' : '#ffffff';
             }
-            document.documentElement.style.visibility = 'visible';
           })();
         `
       }}
