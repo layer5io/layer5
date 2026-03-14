@@ -1,6 +1,7 @@
 html {
-  background-color: #121212;
+  background: var(--background, #121212);
 }
+
 
 html[data-theme="light"],
 html[data-theme="light"] body {
