@@ -174,7 +174,7 @@ const SelectCode = () => {
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <Select defaultValue={10}>
+                <Select defaultValue={10} MenuProps={{ disableScrollLock: true, marginThreshold: null }}>
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
                   <MenuItem value={30}>Thirty</MenuItem>
@@ -190,7 +190,7 @@ const SelectCode = () => {
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <Select defaultValue={10} variant="filled">
+                <Select defaultValue={10} variant="filled" MenuProps={{ disableScrollLock: true, marginThreshold: null }}>
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
                   <MenuItem value={30}>Thirty</MenuItem>
@@ -203,7 +203,7 @@ const SelectCode = () => {
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <Select defaultValue={10} variant="standard">
+                <Select defaultValue={10} variant="standard" MenuProps={{ disableScrollLock: true, marginThreshold: null }}>
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
                   <MenuItem value={30}>Thirty</MenuItem>
@@ -231,7 +231,7 @@ const SelectCode = () => {
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <Select defaultValue={10} autoWidth>
+                <Select defaultValue={10} autoWidth MenuProps={{ disableScrollLock: true, marginThreshold: null }}>
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
                   <MenuItem value={30}>Thirty</MenuItem>
@@ -247,7 +247,7 @@ const SelectCode = () => {
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <Select defaultValue={10} size="small">
+                <Select defaultValue={10} size="small" MenuProps={{ disableScrollLock: true, marginThreshold: null }}>
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
                   <MenuItem value={30}>Thirty</MenuItem>
@@ -264,7 +264,7 @@ const SelectCode = () => {
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <Select defaultValue={10} fullWidth>
+                <Select defaultValue={10} fullWidth MenuProps={{ disableScrollLock: true, marginThreshold: null }}>
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
                   <MenuItem value={30}>Thirty</MenuItem>
@@ -292,6 +292,7 @@ const SelectCode = () => {
                     labelId="demo-select-label"
                     id="demo-select"
                     label="Age"
+                    MenuProps={{ disableScrollLock: true, marginThreshold: null }}
                   >
                     <MenuItem value={10}>Ten</MenuItem>
                     <MenuItem value={20}>Twenty</MenuItem>
@@ -307,7 +308,7 @@ const SelectCode = () => {
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                 <FormControl sx={{ width: "200px" }}>
-                  <Select defaultValue={10}>
+                  <Select defaultValue={10} MenuProps={{ disableScrollLock: true, marginThreshold: null }}>
                     <MenuItem value={10}>Ten</MenuItem>
                     <MenuItem value={20}>Twenty</MenuItem>
                     <MenuItem value={30}>Thirty</MenuItem>
@@ -338,6 +339,7 @@ const SelectCode = () => {
                   }}
                   value={selectedAge}
                   displayEmpty
+                  MenuProps={{ disableScrollLock: true, marginThreshold: null }}
                 >
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
@@ -357,7 +359,7 @@ const SelectCode = () => {
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <Select defaultValue={10}>
+                <Select defaultValue={10} MenuProps={{ disableScrollLock: true, marginThreshold: null }}>
                   <ListSubheader muiSkipListHighlight>Group 1</ListSubheader>
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
@@ -382,12 +384,12 @@ const SelectCode = () => {
           <div className="showcase">
             <div className="items">
               <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
-                <Select disabled defaultValue={10}>
+                <Select disabled defaultValue={10} MenuProps={{ disableScrollLock: true, marginThreshold: null }}>
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
                   <MenuItem value={30}>Thirty</MenuItem>
                 </Select>
-                <Select error defaultValue={10}>
+                <Select error defaultValue={10} MenuProps={{ disableScrollLock: true, marginThreshold: null }}>
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
                   <MenuItem value={30}>Thirty</MenuItem>
@@ -408,6 +410,7 @@ const SelectCode = () => {
                     labelId="demo-select-label-outlined"
                     id="demo-select-outlined"
                     label="Age"
+                    MenuProps={{ disableScrollLock: true, marginThreshold: null }}
                   >
                     <MenuItem value={10}>Ten</MenuItem>
                     <MenuItem value={20}>Twenty</MenuItem>
@@ -438,6 +441,7 @@ const SelectCode = () => {
                   input={<OutlinedInput label="Name" />}
                   value={multipleAges}
                   onChange={handleMultiplSelect}
+                  MenuProps={{ disableScrollLock: true, marginThreshold: null }}
                 >
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>

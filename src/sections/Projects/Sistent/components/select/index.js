@@ -59,6 +59,7 @@ const SistentSelect = () => {
                   labelId="demo-select-label-outlined"
                   id="demo-select-outlined"
                   label="Age"
+                  MenuProps={{ disableScrollLock: true, marginThreshold: null }}
                 >
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
@@ -83,6 +84,7 @@ const SistentSelect = () => {
                   id="demo-select-filled"
                   label="Age"
                   variant="filled"
+                  MenuProps={{ disableScrollLock: true, marginThreshold: null }}
                 >
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
@@ -105,6 +107,7 @@ const SistentSelect = () => {
                   id="demo-select-standard"
                   label="Age"
                   variant="standard"
+                  MenuProps={{ disableScrollLock: true, marginThreshold: null }}
                 >
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
@@ -139,6 +142,7 @@ const SistentSelect = () => {
                   id="demo-select-standard"
                   label="Age"
                   autoWidth
+                  MenuProps={{ disableScrollLock: true, marginThreshold: null }}
                 >
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
@@ -163,6 +167,7 @@ const SistentSelect = () => {
                   labelId="demo-select-label-standard"
                   id="demo-select-standard"
                   label="Age"
+                  MenuProps={{ disableScrollLock: true, marginThreshold: null }}
                 >
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
@@ -186,6 +191,7 @@ const SistentSelect = () => {
                   labelId="demo-select-label-standard"
                   id="demo-select-standard"
                   label="Age"
+                  MenuProps={{ disableScrollLock: true, marginThreshold: null }}
                 >
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
@@ -210,6 +216,7 @@ const SistentSelect = () => {
                   input={<OutlinedInput label="Name" />}
                   value={multipleAges}
                   onChange={handleMultiplSelect}
+                  MenuProps={{ disableScrollLock: true, marginThreshold: null }}
                 >
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>

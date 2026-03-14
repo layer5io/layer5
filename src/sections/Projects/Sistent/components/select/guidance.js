@@ -52,6 +52,7 @@ const SelectGuidance = () => {
                   labelId="demo-select-label-outlined"
                   id="demo-select-outlined"
                   label="Age"
+                  MenuProps={{ disableScrollLock: true, marginThreshold: null }}
                 >
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
@@ -74,6 +75,7 @@ const SelectGuidance = () => {
                   id="demo-select-outlined"
                   label="Age"
                   renderValue={(value) => `⚠️  - ${value}`}
+                  MenuProps={{ disableScrollLock: true, marginThreshold: null }}
                 >
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
@@ -96,6 +98,7 @@ const SelectGuidance = () => {
                   labelId="demo-select-label-outlined"
                   id="demo-select-outlined"
                   label="Age"
+                  MenuProps={{ disableScrollLock: true, marginThreshold: null }}
                 >
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
@@ -134,6 +137,7 @@ const SelectGuidance = () => {
                   labelId="demo-select-label"
                   id="demo-select"
                   label="Age"
+                  MenuProps={{ disableScrollLock: true, marginThreshold: null }}
                 >
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
@@ -142,7 +146,7 @@ const SelectGuidance = () => {
                 <FormHelperText>With label + Helper text</FormHelperText>
               </FormControl>
               <FormControl sx={{ width: "200px" }}>
-                <Select id="demo-select-without-label">
+                <Select id="demo-select-without-label" MenuProps={{ disableScrollLock: true, marginThreshold: null }}>
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
                   <MenuItem value={30}>Thirty</MenuItem>
@@ -171,6 +175,7 @@ const SelectGuidance = () => {
                   }}
                   value={selectedAge}
                   displayEmpty
+                  MenuProps={{ disableScrollLock: true, marginThreshold: null }}
                 >
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
@@ -193,6 +198,7 @@ const SelectGuidance = () => {
                   labelId="demo-select-label-outlined"
                   id="demo-select-outlined"
                   label="Age"
+                  MenuProps={{ disableScrollLock: true, marginThreshold: null }}
                 >
                   <ListSubheader muiSkipListHighlight>Group 1</ListSubheader>
                   <MenuItem value={10}>Ten</MenuItem>
@@ -228,6 +234,7 @@ const SelectGuidance = () => {
                   input={<OutlinedInput label="Name" />}
                   value={multipleAges}
                   onChange={handleMultiplSelect}
+                  MenuProps={{ disableScrollLock: true, marginThreshold: null }}
                 >
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
