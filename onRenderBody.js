@@ -1,4 +1,5 @@
-import React from "react"; 
+import React from "react";
+
 export const onRenderBody = ({ setHeadComponents }) => {
   const scriptContent = `
     (function() {
@@ -13,7 +14,10 @@ export const onRenderBody = ({ setHeadComponents }) => {
           document.documentElement.classList.add('theme-light');
           document.documentElement.style.backgroundColor = '#FFFFFF';
         }
-      } catch(e) {}
+      } catch(e) {
+        document.documentElement.style.backgroundColor = '#121212';
+      }
+      document.documentElement.style.visibility = 'visible';
     })();
   `;
 
@@ -22,6 +26,10 @@ export const onRenderBody = ({ setHeadComponents }) => {
       key="critical-theme-css"
       dangerouslySetInnerHTML={{
         __html: `
+          html {
+            visibility: hidden;
+            background-color: #121212;
+          }
           .theme-dark body {
             background-color: #121212 !important;
           }
