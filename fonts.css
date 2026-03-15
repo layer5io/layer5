@@ -1,21 +1,19 @@
-html, body {
-  background-color: var(--body) !important;
-  color: var(--text);
-  transition: background-color 0.3s ease, color 0.3s ease;
+html {
+  background: var(--background, #121212);
 }
 
 html[data-theme="light"],
 html[data-theme="light"] body {
-  background-color: var(--body) !important;
+  background-color: #FFFFFF !important;
 }
 
 html[data-theme="dark"],
 html[data-theme="dark"] body {
-  background-color: var(--body) !important;
+  background-color: #121212 !important;
 }
 
 body {
-  background-color: var(--body) !important;
+  background-color: var(--body, #121212) !important;
 }
 
 @font-face {
