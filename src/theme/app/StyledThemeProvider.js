@@ -10,7 +10,7 @@ export const StyledThemeProvider = (props) => {
 
   const currentTheme = isDark ? darkTheme : lightTheme;
   const theme = {
-    ...(didLoad || !isBrowser ? currentTheme : transformTheme(currentTheme)),
+    ...(didLoad ? currentTheme : transformTheme(currentTheme)),
   };
 
   return (
