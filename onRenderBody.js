@@ -58,7 +58,18 @@ const MagicScriptTag = ({ theme }) => {
     root.style.setProperty('--initial-color-mode', colorMode);
     root.setAttribute('data-theme', colorMode);
 
-  } catch (e) {}
+    var bg = selectedTheme.body || selectedTheme.background || '#121212';
+    var textColor = selectedTheme.text || '#ffffff';
+    var css = 'html, body, #___gatsby, #gatsby-focus-wrapper { background-color: ' + bg + ' !important; color: ' + textColor + ' !important; transition: none !important; }';
+    
+    var styleTag = document.createElement('style');
+    styleTag.id = 'fouc-killer-style';
+    styleTag.textContent = css;
+    document.head.appendChild(styleTag);
+
+  } catch (e) {
+    console.error("Theme injection failed", e);
+  }
 })();
 `;
 
