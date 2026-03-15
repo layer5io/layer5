@@ -22,6 +22,7 @@ const isBrowser = typeof window !== "undefined";
 
 const systemDarkModeSetting = () =>
   isBrowser && window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+
 const isDarkModeActive = () => {
   return !!systemDarkModeSetting()?.matches;
 };
@@ -31,18 +32,27 @@ const applyThemeToDOM = (theme) => {
   const root = window.document.documentElement;
   root.style.setProperty("--initial-color-mode", theme);
   root.setAttribute("data-theme", theme);
+  window.__theme = theme;
 };
 
 export const ThemeManagerProvider = (props) => {
   const [themeSetting, setThemeSetting] = useState(ThemeSetting.SYSTEM);
   const [didLoad, setDidLoad] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+  
+  const [isDark, setIsDark] = useState(() => {
+    if (isBrowser) {
+      if (window.__theme === ThemeSetting.DARK) return true;
+      if (window.__theme === ThemeSetting.LIGHT) return false;
+    }
+    return false;
+  });
 
   useEffect(() => {
     if (!isBrowser) return;
 
     const root = window.document.documentElement;
-    const initialColorValue = root.style.getPropertyValue("--initial-color-mode");
+    const initialColorValue = (root.style.getPropertyValue("--initial-color-mode") || "").trim();
+    const actualTheme = window.__theme || initialColorValue || ThemeSetting.LIGHT;
 
     const storedTheme = localStorage.getItem(DarkThemeKey);
 
@@ -51,8 +61,8 @@ export const ThemeManagerProvider = (props) => {
       setIsDark(isDarkTheme);
       setThemeSetting(storedTheme);
       applyThemeToDOM(storedTheme);
-    } else if (initialColorValue) {
-      setIsDark(initialColorValue === ThemeSetting.DARK);
+    } else if (actualTheme) {
+      setIsDark(actualTheme === ThemeSetting.DARK);
       setThemeSetting(ThemeSetting.SYSTEM);
     } else {
       const systemIsDark = isDarkModeActive();
