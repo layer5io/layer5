@@ -14,18 +14,15 @@ const MagicScriptTag = ({ theme }) => {
 (function() {
   try {
     var themeFromLocalStorage = localStorage.getItem('${DarkThemeKey}') || '${ThemeSetting.SYSTEM}';
-
     var systemLightModeSetting = function() {
       return window.matchMedia ? window.matchMedia('(prefers-color-scheme: light)') : null;
     };
-
     var isLightModeActive = function() {
       var mql = systemLightModeSetting();
       return mql ? mql.matches : false;
     };
 
     var colorMode;
-
     switch (themeFromLocalStorage) {
       case '${ThemeSetting.SYSTEM}':
         colorMode = isLightModeActive() ? '${ThemeSetting.LIGHT}' : '${ThemeSetting.DARK}';
@@ -54,17 +51,10 @@ const MagicScriptTag = ({ theme }) => {
     };
 
     iterate(selectedTheme);
-
     root.style.setProperty('--initial-color-mode', colorMode);
     root.setAttribute('data-theme', colorMode);
 
-    var bg = selectedTheme.body || selectedTheme.background || (colorMode === 'dark' ? '#121212' : '#ffffff');
-    var css = 'html, body { background-color: ' + bg + ' !important; }';
-    
-    var styleTag = document.createElement('style');
-    styleTag.id = 'fouc-killer-style';
-    styleTag.textContent = css;
-    document.head.appendChild(styleTag);
+    window.__theme = colorMode;
 
   } catch (e) {}
 })();
