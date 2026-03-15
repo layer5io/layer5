@@ -2,80 +2,60 @@ import React from "react";
 import { DarkThemeKey, ThemeSetting } from "./src/theme/app/ThemeManager";
 import lighttheme, { darktheme } from "./src/theme/app/themeStyles";
 
-const themes = {
+const themesJSON = JSON.stringify({
   light: lighttheme,
   dark: darktheme,
-};
+});
 
-const MagicScriptTag = ({ theme }) => {
-  const themeJSON = JSON.stringify(theme);
-
+export const onRenderBody = ({ setPreBodyComponents }) => {
   const codeToRunOnClient = `
-(function() {
-  try {
-    var themeFromLocalStorage = localStorage.getItem('${DarkThemeKey}') || '${ThemeSetting.SYSTEM}';
+    (function() {
+      try {
+        var themePreference = localStorage.getItem('${DarkThemeKey}');
+        var colorMode = '${ThemeSetting.LIGHT}'; // Default
 
-    var systemLightModeSetting = function() {
-      return window.matchMedia ? window.matchMedia('(prefers-color-scheme: light)') : null;
-    };
-
-    var isLightModeActive = function() {
-      var mql = systemLightModeSetting();
-      return mql ? mql.matches : false;
-    };
-
-    var colorMode;
-
-    switch (themeFromLocalStorage) {
-      case '${ThemeSetting.SYSTEM}':
-        colorMode = isLightModeActive() ? '${ThemeSetting.LIGHT}' : '${ThemeSetting.DARK}';
-        break;
-      case '${ThemeSetting.DARK}':
-      case '${ThemeSetting.LIGHT}':
-        colorMode = themeFromLocalStorage;
-        break;
-      default:
-        colorMode = '${ThemeSetting.DARK}';
-    }
-
-    var root = document.documentElement;
-
-    var parsedTheme = ${themeJSON};
-    var selectedTheme = parsedTheme[colorMode];
-
-    var iterate = function(obj, prefix) {
-      prefix = prefix || '';
-      if (!obj) return;
-
-      Object.keys(obj).forEach(function(key) {
-        if (typeof obj[key] === 'object' && obj[key] !== null) {
-          iterate(obj[key], prefix + key + '-');
+        if (themePreference === '${ThemeSetting.DARK}') {
+          colorMode = '${ThemeSetting.DARK}';
+        } else if (themePreference === '${ThemeSetting.LIGHT}') {
+          colorMode = '${ThemeSetting.LIGHT}';
         } else {
-          root.style.setProperty('--' + prefix + key, obj[key]);
+          var mql = window.matchMedia('(prefers-color-scheme: dark)');
+          if (mql.matches) {
+            colorMode = '${ThemeSetting.DARK}';
+          }
         }
-      });
-    };
 
-    iterate(selectedTheme);
+        var root = document.documentElement;
+        
+        var parsedThemes = ${themesJSON};
+        var activeTheme = parsedThemes[colorMode];
 
-    if (selectedTheme) {
-      root.style.backgroundColor = selectedTheme.body || selectedTheme.backgroundColor; 
-    }
+        function iterate(obj, prefix) {
+          prefix = prefix || '';
+          for (var key in obj) {
+            if (typeof obj[key] === 'object' && obj[key] !== null) {
+              iterate(obj[key], prefix + key + '-');
+            } else {
+              root.style.setProperty('--' + prefix + key, obj[key]);
+            }
+          }
+        }
 
-    root.style.setProperty('--initial-color-mode', colorMode);
-    root.setAttribute('data-theme', colorMode);
+        iterate(activeTheme);
 
-  } catch (e) {
-    console.error("Theme injection failed", e);
-  }
-})();
-`;
+        root.setAttribute('data-theme', colorMode);
+        root.style.setProperty('--initial-color-mode', colorMode);
 
-  return <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />;
-};
+      } catch (e) {
+        console.error('Magic Theme Script Failed', e);
+      }
+    })();
+  `;
 
-export const onRenderBody = ({ setHeadComponents }) => {
-  setHeadComponents([
-    <MagicScriptTag key="theme-initializer" theme={themes} />,
+  setPreBodyComponents([
+    <script
+      key="theme-injection-script"
+      dangerouslySetInnerHTML={{ __html: codeToRunOnClient }}
+    />,
   ]);
 };
