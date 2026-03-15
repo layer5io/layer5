@@ -8,77 +8,73 @@ const themes = {
 };
 
 const MagicScriptTag = ({ theme }) => {
+  const themeJSON = JSON.stringify(theme);
+
   const codeToRunOnClient = `
 (function() {
   try {
+    var themeFromLocalStorage = localStorage.getItem('${DarkThemeKey}') || '${ThemeSetting.SYSTEM}';
 
-    document.documentElement.style.backgroundColor = "#121212";
+    var systemLightModeSetting = function() {
+      return window.matchMedia ? window.matchMedia('(prefers-color-scheme: light)') : null;
+    };
 
-    const themeFromLocalStorage =
-      localStorage.getItem('${DarkThemeKey}') || '${ThemeSetting.SYSTEM}';
+    var isLightModeActive = function() {
+      var mql = systemLightModeSetting();
+      return mql ? mql.matches : false;
+    };
 
-    const systemLightModeSetting = () =>
-      window.matchMedia
-        ? window.matchMedia('(prefers-color-scheme: light)')
-        : null;
-
-    const isLightModeActive = () => !!systemLightModeSetting()?.matches;
-
-    let colorMode;
+    var colorMode;
 
     switch (themeFromLocalStorage) {
       case '${ThemeSetting.SYSTEM}':
-        colorMode = isLightModeActive()
-          ? '${ThemeSetting.LIGHT}'
-          : '${ThemeSetting.DARK}';
+        colorMode = isLightModeActive() ? '${ThemeSetting.LIGHT}' : '${ThemeSetting.DARK}';
         break;
-
       case '${ThemeSetting.DARK}':
       case '${ThemeSetting.LIGHT}':
         colorMode = themeFromLocalStorage;
         break;
-
       default:
         colorMode = '${ThemeSetting.DARK}';
     }
 
-    const root = document.documentElement;
+    var root = document.documentElement;
 
-    const iterate = (obj) => {
+    var parsedTheme = ${themeJSON};
+    var selectedTheme = parsedTheme[colorMode];
+
+    var iterate = function(obj, prefix) {
+      prefix = prefix || '';
       if (!obj) return;
 
-      Object.keys(obj).forEach((key) => {
-        if (typeof obj[key] === 'object') {
-          iterate(obj[key]);
+      Object.keys(obj).forEach(function(key) {
+        if (typeof obj[key] === 'object' && obj[key] !== null) {
+          iterate(obj[key], prefix + key + '-');
         } else {
-          root.style.setProperty('--' + key, obj[key]);
+          root.style.setProperty('--' + prefix + key, obj[key]);
         }
       });
     };
 
-    const parsedTheme = JSON.parse('${JSON.stringify(theme)}');
-    const selectedTheme = parsedTheme[colorMode];
-
     iterate(selectedTheme);
+
+    if (selectedTheme) {
+      root.style.backgroundColor = selectedTheme.body || selectedTheme.backgroundColor; 
+    }
 
     root.style.setProperty('--initial-color-mode', colorMode);
     root.setAttribute('data-theme', colorMode);
 
-  } catch (e) {}
+  } catch (e) {
+    console.error("Theme injection failed", e);
+  }
 })();
 `;
 
   return <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />;
 };
 
-export const onRenderBody = ({ setHeadComponents, setHtmlAttributes }) => {
-
-  setHtmlAttributes({
-    style: {
-      backgroundColor: "#121212",
-    },
-  });
-
+export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
     <MagicScriptTag key="theme-initializer" theme={themes} />,
   ]);
