@@ -261,7 +261,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
       ${
-        isFullSiteBuild
+        shouldBuildFullSite
           ? `memberPosts: allMdx(
         filter: {
           fields: { collection: { eq: "members" } }
@@ -497,7 +497,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  if (isFullSiteBuild) {
+  if (shouldBuildFullSite) {
     members.forEach((member) => {
       envCreatePage({
         path: member.fields.slug,
@@ -510,7 +510,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   const MemberBio = res.data.memberBio?.nodes || [];
-  if (isFullSiteBuild) {
+  if (shouldBuildFullSite) {
     MemberBio.forEach((memberbio) => {
       envCreatePage({
         path: `${memberbio.fields.slug}/bio`,
@@ -542,7 +542,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  if (isFullSiteBuild) {
+  if (shouldBuildFullSite) {
     integrations.forEach((integration) => {
       envCreatePage({
         path: `/cloud-native-management/meshery${integration.fields.slug}`,
@@ -575,7 +575,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  if (!isFullSiteBuild) {
+  if (!shouldBuildFullSite) {
     const litePlaceholderPages = [
       {
         collection: "members",
