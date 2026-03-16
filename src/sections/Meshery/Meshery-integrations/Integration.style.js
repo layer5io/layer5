@@ -169,7 +169,7 @@ export const HoneycombGrid = styled.div`
 
 export const IntegrationsWrapper = styled.div`
   max-width: 75rem;
-  margin: 5.1875rem auto;
+  margin: 5.1875rem auto 1rem;
   text-align: center;
   min-height: 300px; /* Add explicit min-height */
   position: relative; /* Add position for better layout control */

@@ -121,7 +121,7 @@ const FaqSectionWrapper = styled.section`
     border-color: transparent;
   }
   .reusecore__accordion {
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
   }
   .accordion__item {
     .accordion__header {
