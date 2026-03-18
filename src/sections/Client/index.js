@@ -2,6 +2,8 @@ import React from "react";
 
 import { SlickSlider, SliderItem } from "../../reusecore/SlickSlider";
 import { Container } from "../../reusecore/Layout";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import Client1 from "../../assets/images/app/clients/client-1.webp";
 import Client2 from "../../assets/images/app/clients/client-2.webp";
@@ -14,6 +16,7 @@ import ClientsSectionWrapper from "./clientSection.style";
 const Client = () => {
   const settings = {
     autoplay: true,
+    autoplaySpeed: 3000,
     infinite: true,
     dots: false,
     speed: 500,
@@ -23,22 +26,22 @@ const Client = () => {
       {
         breakpoint: 912,
         settings: {
-          slidesToShow: 3
-        }
+          slidesToShow: 3,
+        },
       },
       {
         breakpoint: 500,
         settings: {
-          slidesToShow: 2
-        }
+          slidesToShow: 2,
+        },
       },
       {
         breakpoint: 400,
         settings: {
-          slidesToShow: 1
-        }
-      }
-    ]
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
   return (
     <ClientsSectionWrapper>
