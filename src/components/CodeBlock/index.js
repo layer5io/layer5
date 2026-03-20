@@ -41,19 +41,81 @@ const CopyCode = styled.button`
   }
 `;
 
-const Code = ({ codeString, language = "jsx" }) => {
+const Code = ({
+  codeString,
+  code,
+  language = "jsx",
+  collapsible = false,
+  name,
+}) => {
   const [copyText, setCopyText] = useState("Copy");
+  const [isOpen, setIsOpen] = useState(false);
+
+  const finalCode = codeString || code || "";
+
   const handleClick = () => {
-    copyToClipboard(codeString);
+    copyToClipboard(finalCode);
     setCopyText("Copied!");
     setTimeout(() => setCopyText("Copy"), 1000);
   };
+
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
+  if (collapsible) {
+    return (
+      <div className="show-code">
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginBottom: "0.5rem",
+          }}
+        >
+          <input
+            type="checkbox"
+            id={`toggle-${name}`}
+            checked={isOpen}
+            onChange={handleToggle}
+            style={{ marginRight: "0.5rem" }}
+          />
+          <label
+            htmlFor={`toggle-${name}`}
+            style={{ cursor: "pointer", userSelect: "none" }}
+          >
+            Show Code
+          </label>
+        </div>
+        {isOpen && (
+          <Highlight
+            code={finalCode}
+            language={language}
+            theme={themes.nightOwl}
+          >
+            {({ className, style, tokens, getLineProps, getTokenProps }) => (
+              <Pre>
+                <CopyCode onClick={handleClick}>{copyText}</CopyCode>
+                <Pre className={className} style={style}>
+                  {tokens.map((line, i) => (
+                    <div {...getLineProps({ line, key: i })} key={i}>
+                      <LineNo>{i + 1}</LineNo>
+                      {line.map((token, key) => (
+                        <span {...getTokenProps({ token, key })} key={key} />
+                      ))}
+                    </div>
+                  ))}
+                </Pre>
+              </Pre>
+            )}
+          </Highlight>
+        )}
+      </div>
+    );
+  }
+
   return (
-    <Highlight
-      code={codeString}
-      language={language}
-      theme={themes.nightOwl}
-    >
+    <Highlight code={finalCode} language={language} theme={themes.nightOwl}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <Pre>
           <CopyCode onClick={handleClick}>{copyText}</CopyCode>

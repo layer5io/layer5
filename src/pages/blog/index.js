@@ -9,7 +9,7 @@ const BlogList = loadable(() => import ("../../sections/Blog/Blog-list"));
 
 export const query = graphql`query allBlogs {
   allMdx(
-    sort: {frontmatter: {date: DESC}}
+    sort: {fields: {dateForSort: DESC}}
     filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
   ) {
     nodes {
@@ -41,7 +41,8 @@ export const query = graphql`query allBlogs {
 }`;
 
 const Blog = (props) => {
-  if (props.data.allMdx.nodes.length === 0) {
+  const nodes = props.data?.allMdx?.nodes ?? [];
+  if (nodes.length === 0) {
     return (
       <LitePlaceholder
         pageContext={{
@@ -57,7 +58,7 @@ const Blog = (props) => {
   const [isListView, setIsListView] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const { queryResults, searchData } = useDataList(
-    props.data.allMdx.nodes,
+    nodes,
     setSearchQuery,
     searchQuery,
     ["frontmatter", "title"],

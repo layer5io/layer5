@@ -1,0 +1,97 @@
+---
+name: "Switch"
+title: Switch
+published: true
+component: switch
+description: A switch is an toggle component which allows users to toggle a setting on or off and is typically used for system preferences or real-time configuration options.
+---
+
+import { useState } from "react";
+import { Switch, FormControlLabel } from "@sistent/sistent";
+
+export const LabeledSwitchDemo = () => {
+  const [isChecked, setIsChecked] = useState(true);
+  const handleToggle = (e) => setIsChecked(e.target.checked);
+
+  return (
+    <FormControlLabel
+      control={
+        <Switch
+          checked={isChecked}
+          onChange={handleToggle}
+          name="darkMode"
+        />
+      }
+      label="Dark Mode"
+    />
+  );
+};
+
+<p>
+  Switches are ideal when a setting is either enabled or disabled, and the user should be able to change it instantly without additional confirmation. They are used to toggle between two states.
+</p>
+
+<a id="States">
+  <h2>States</h2>
+</a>
+
+<p>
+  The Switch supports different states including <strong>active</strong>, <strong>inactive</strong>, and <strong>disabled</strong>. Visual feedback is immediate, allowing users to quickly understand the current status of a toggle.
+</p>
+
+<Row $Hcenter className="image-container" style={{ display: "flex", alignItems: "center" }}>
+  <div style={{ fontSize: "1.5rem", marginRight: "48px", minWidth: "180px" }}>Checked</div>
+  <ThemeWrapper>
+    <Switch checked />
+  </ThemeWrapper>
+</Row>
+
+<Row $Hcenter className="image-container" style={{ display: "flex", alignItems: "center" }}>
+  <div style={{ fontSize: "1.5rem", marginRight: "48px", minWidth: "180px" }}>Unchecked</div>
+  <ThemeWrapper>
+    <Switch checked={false} />
+  </ThemeWrapper>
+</Row>
+
+<Row $Hcenter className="image-container" style={{ display: "flex", alignItems: "center" }}>
+  <div style={{ fontSize: "1.5rem", marginRight: "48px", minWidth: "180px" }}>Disabled</div>
+  <ThemeWrapper>
+    <Switch checked={false} disabled />
+  </ThemeWrapper>
+</Row>
+
+<a id="Labeling">
+  <h2>Labeling</h2>
+</a>
+
+<p>
+  Labels should be concise and descriptive to provide clarity about what each switch does.
+</p>
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <LabeledSwitchDemo />
+  </ThemeWrapper>
+</Row>
+
+<a id="Sizing">
+  <h2>Sizing</h2>
+</a>
+
+<p>
+  Switches come in two sizes: <strong>medium</strong> and <strong>small</strong>. The small size is particularly useful for dense layouts and compact UI patterns.
+</p>
+
+<Row $Hcenter className="image-container" style={{ display: "flex", alignItems: "center" }}>
+  <div style={{ fontSize: "1.5rem", marginRight: "48px", minWidth: "180px" }}>Medium (default)</div>
+  <ThemeWrapper>
+    <Switch checked />
+  </ThemeWrapper>
+</Row>
+
+<Row $Hcenter className="image-container" style={{ display: "flex", alignItems: "center" }}>
+  <div style={{ fontSize: "1.5rem", marginRight: "48px" }}>Small</div>
+  <ThemeWrapper>
+    <Switch size="small" checked />
+  </ThemeWrapper>
+</Row>

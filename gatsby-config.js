@@ -360,7 +360,7 @@ module.exports = {
                   }
                 }
                 allMdx(
-                  sort: {frontmatter: {date: DESC}}
+                  sort: {fields: {dateForSort: DESC}}
                   limit: 20
                   filter: {
                     frontmatter: { published: { eq: true } }
