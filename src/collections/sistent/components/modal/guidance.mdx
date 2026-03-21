@@ -1,0 +1,311 @@
+---
+title: Modal Guidance
+component: modal
+description: This guide provides comprehensive information on when and how to use different types of modals effectively in your applications
+---
+
+import { useState } from "react";
+import { Box, Button, Modal, ModalBody, ModalButtonDanger, ModalButtonPrimary, ModalButtonSecondary, ModalFooter, TextField, Typography } from "@sistent/sistent";
+import { ActionBox } from "../../../../sections/Projects/Sistent/sistent.style";
+import WarningIcon from "@mui/icons-material/Warning";
+import InfoIcon from "@mui/icons-material/Info";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import ErrorIcon from "@mui/icons-material/Error";
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
+
+export const BasicModalGuidance = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <ThemeWrapper>
+      <div className="showcase">
+        <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+          <Button variant="contained" onClick={() => setOpen(true)}>Open Basic Modal</Button>
+          <Modal open={open} closeModal={() => setOpen(false)} title="Basic Modal">
+            <ModalBody><Typography>This is a basic modal with simple content for displaying information.</Typography></ModalBody>
+            <ModalFooter variant="filled"><ActionBox><ModalButtonSecondary onClick={() => setOpen(false)}>Close</ModalButtonSecondary></ActionBox></ModalFooter>
+          </Modal>
+        </div>
+      </div>
+    </ThemeWrapper>
+  );
+};
+
+export const ConfirmationModalGuidance = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <ThemeWrapper>
+      <div className="showcase">
+        <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+          <Button variant="contained" color="error" onClick={() => setOpen(true)}>Delete Account</Button>
+          <Modal open={open} closeModal={() => setOpen(false)} title="Confirm Account Deletion">
+            <ModalBody>
+              <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+                <WarningIcon sx={{ color: "warning.main", fontSize: 32 }} />
+                <Box>
+                  <Typography variant="body1" paragraph>
+                    <strong>This action cannot be undone.</strong> Deleting your account will permanently remove all your data.
+                  </Typography>
+                </Box>
+              </Box>
+            </ModalBody>
+            <ModalFooter variant="filled">
+              <ActionBox>
+                <ModalButtonSecondary onClick={() => setOpen(false)}>Keep Account</ModalButtonSecondary>
+                <ModalButtonDanger onClick={() => setOpen(false)}>Delete Account</ModalButtonDanger>
+              </ActionBox>
+            </ModalFooter>
+          </Modal>
+        </div>
+      </div>
+    </ThemeWrapper>
+  );
+};
+
+export const ActionModalGuidance = () => {
+  const [open, setOpen] = useState(false);
+  const CustomInput = ({ inputLabel, placeholder }) => (
+    <Box sx={{ mb: 2 }}>
+      <Typography variant="subtitle1" gutterBottom>{inputLabel}</Typography>
+      <TextField label={placeholder} variant="outlined" fullWidth />
+    </Box>
+  );
+  return (
+    <ThemeWrapper>
+      <div className="showcase">
+        <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+          <Button variant="contained" onClick={() => setOpen(true)}>Add New User</Button>
+          <Modal open={open} closeModal={() => setOpen(false)} title="Add New User">
+            <ModalBody>
+              <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 3 }}>
+                <PersonAddIcon color="primary" />
+                <Typography variant="body1">Create a new user account:</Typography>
+              </Box>
+              <CustomInput inputLabel="Full Name" placeholder="Enter user's full name" />
+              <CustomInput inputLabel="Email Address" placeholder="Enter email address" />
+              <CustomInput inputLabel="Role" placeholder="Select user role" />
+            </ModalBody>
+            <ModalFooter variant="filled">
+              <ActionBox>
+                <ModalButtonSecondary onClick={() => setOpen(false)}>Cancel</ModalButtonSecondary>
+                <ModalButtonPrimary onClick={() => setOpen(false)}>Create User</ModalButtonPrimary>
+              </ActionBox>
+            </ModalFooter>
+          </Modal>
+        </div>
+      </div>
+    </ThemeWrapper>
+  );
+};
+
+export const InformationalModalGuidance = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <ThemeWrapper>
+      <div className="showcase">
+        <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+          <Button variant="contained" onClick={() => setOpen(true)}>View Information</Button>
+          <Modal open={open} closeModal={() => setOpen(false)} title="System Information">
+            <ModalBody>
+              <Box sx={{ display: "flex", alignItems: "flex-start", gap: 2 }}>
+                <InfoIcon color="info" />
+                <Box>
+                  <Typography variant="h6" gutterBottom>About This Feature</Typography>
+                  <Typography variant="body1" paragraph>This feature helps you manage your workflow efficiently with automated tools.</Typography>
+                  <Typography variant="body2">Last updated: January 2025 • Version 2.1.0</Typography>
+                </Box>
+              </Box>
+            </ModalBody>
+            <ModalFooter variant="filled"><ActionBox><ModalButtonSecondary onClick={() => setOpen(false)}>Got it</ModalButtonSecondary></ActionBox></ModalFooter>
+          </Modal>
+        </div>
+      </div>
+    </ThemeWrapper>
+  );
+};
+
+export const WarningModalGuidance = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <ThemeWrapper>
+      <div className="showcase">
+        <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+          <Button variant="contained" sx={{ backgroundColor: "warning.main", color: "white" }} onClick={() => setOpen(true)}>Proceed with Caution</Button>
+          <Modal open={open} closeModal={() => setOpen(false)} title="Warning">
+            <ModalBody>
+              <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+                <WarningIcon sx={{ color: "warning.main", fontSize: 32 }} />
+                <Box>
+                  <Typography variant="body1" paragraph>This action may affect system performance and could take several minutes.</Typography>
+                  <Typography variant="body2" color="textSecondary">Consider performing this during off-peak hours.</Typography>
+                </Box>
+              </Box>
+            </ModalBody>
+            <ModalFooter variant="filled">
+              <ActionBox>
+                <ModalButtonSecondary onClick={() => setOpen(false)}>Cancel</ModalButtonSecondary>
+                <ModalButtonPrimary onClick={() => setOpen(false)}>Continue Anyway</ModalButtonPrimary>
+              </ActionBox>
+            </ModalFooter>
+          </Modal>
+        </div>
+      </div>
+    </ThemeWrapper>
+  );
+};
+
+export const SuccessModalGuidance = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <ThemeWrapper>
+      <div className="showcase">
+        <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+          <Button variant="contained" color="success" onClick={() => setOpen(true)}>Complete Action</Button>
+          <Modal open={open} closeModal={() => setOpen(false)} title="Success!">
+            <ModalBody>
+              <Box sx={{ display: "flex", alignItems: "center", gap: 2, textAlign: "center" }}>
+                <CheckCircleIcon color="success" sx={{ fontSize: 48 }} />
+                <Box>
+                  <Typography variant="h6" gutterBottom>Operation Completed Successfully</Typography>
+                  <Typography variant="body1">Your changes have been saved and are now active.</Typography>
+                </Box>
+              </Box>
+            </ModalBody>
+            <ModalFooter variant="filled"><ActionBox><ModalButtonPrimary onClick={() => setOpen(false)}>Continue</ModalButtonPrimary></ActionBox></ModalFooter>
+          </Modal>
+        </div>
+      </div>
+    </ThemeWrapper>
+  );
+};
+
+export const ErrorModalGuidance = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <ThemeWrapper>
+      <div className="showcase">
+        <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+          <Button variant="contained" color="error" onClick={() => setOpen(true)}>Trigger Error</Button>
+          <Modal open={open} closeModal={() => setOpen(false)} title="Upload Failed">
+            <ModalBody>
+              <Box sx={{ display: "flex", alignItems: "flex-start", gap: 2 }}>
+                <ErrorIcon color="error" sx={{ fontSize: 32 }} />
+                <Box>
+                  <Typography variant="h6" gutterBottom>File Upload Failed</Typography>
+                  <Typography variant="body1" paragraph>The file could not be uploaded due to a network connectivity issue.</Typography>
+                  <Typography variant="body2" color="textSecondary"><strong>What you can do:</strong> Check your internet connection and try again.</Typography>
+                </Box>
+              </Box>
+            </ModalBody>
+            <ModalFooter variant="filled">
+              <ActionBox>
+                <ModalButtonSecondary onClick={() => setOpen(false)}>Cancel</ModalButtonSecondary>
+                <ModalButtonPrimary onClick={() => setOpen(false)}>Try Again</ModalButtonPrimary>
+              </ActionBox>
+            </ModalFooter>
+          </Modal>
+        </div>
+      </div>
+    </ThemeWrapper>
+  );
+};
+
+export const NestedModalGuidance = () => {
+  const [open, setOpen] = useState(false);
+  const [nestedOpen, setNestedOpen] = useState(false);
+  return (
+    <ThemeWrapper>
+      <div className="showcase">
+        <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+          <Button variant="contained" onClick={() => setOpen(true)}>Open Parent Modal</Button>
+          <Modal open={open} closeModal={() => setOpen(false)} title="Parent Modal">
+            <ModalBody>
+              <Typography paragraph>This is the parent modal. You can open a nested modal from here.</Typography>
+              <Button variant="outlined" onClick={() => setNestedOpen(true)}>Open Nested Modal</Button>
+            </ModalBody>
+            <ModalFooter variant="filled"><ActionBox><ModalButtonSecondary onClick={() => setOpen(false)}>Close</ModalButtonSecondary></ActionBox></ModalFooter>
+          </Modal>
+          <Modal open={nestedOpen} closeModal={() => setNestedOpen(false)} title="Nested Modal">
+            <ModalBody><Typography>This is a nested modal that appears on top of the parent modal.</Typography></ModalBody>
+            <ModalFooter variant="filled"><ActionBox><ModalButtonSecondary onClick={() => setNestedOpen(false)}>Close Nested</ModalButtonSecondary></ActionBox></ModalFooter>
+          </Modal>
+        </div>
+      </div>
+    </ThemeWrapper>
+  );
+};
+
+<a id="basic-modal">
+  <h2>Basic Modal</h2>
+</a>
+
+Use for simple information display or read-only content. Keep content concise and provide clear dismiss options.
+
+<BasicModalGuidance />
+
+<a id="confirmation-modal">
+  <h2>Confirmation Modal</h2>
+</a>
+
+Essential for destructive actions. Always use warning icons, specific button labels, and clearly explain consequences.
+
+<ConfirmationModalGuidance />
+
+<a id="action-modal">
+  <h2>Action Modal</h2>
+</a>
+
+Perfect for task completion with forms. Use contextual icons and provide clear primary/secondary actions.
+
+<ActionModalGuidance />
+
+<a id="informational-modal">
+  <h2>Informational Modal</h2>
+</a>
+
+Use for help content and contextual information. Structure content clearly and keep it scannable.
+
+<InformationalModalGuidance />
+
+<a id="warning-modal">
+  <h2>Warning Modal</h2>
+</a>
+
+Alert users to potential issues before proceeding. Use warning colors and provide helpful context.
+
+<WarningModalGuidance />
+
+<a id="success-modal">
+  <h2>Success Modal</h2>
+</a>
+
+Celebrate user achievements and provide positive feedback. Include relevant metrics when helpful.
+
+<SuccessModalGuidance />
+
+<a id="error-modal">
+  <h2>Error Modal</h2>
+</a>
+
+Communicate failures clearly with friendly language. Provide specific solutions and avoid technical jargon.
+
+<ErrorModalGuidance />
+
+<a id="nested-modal">
+  <h2>Nested Modal</h2>
+</a>
+
+Use sparingly for multi-step workflows. Maintain clear navigation and ensure users understand the hierarchy.
+
+<NestedModalGuidance />
+
+<a id="Usage Guidelines">
+  <h2>When to Use Modals</h2>
+</a>
+
+<ul>
+  <li><p>Requiring immediate user attention for critical information or decisions</p></li>
+  <li><p>Collecting user input without navigating away from the current context</p></li>
+  <li><p>Confirming destructive or irreversible actions before execution</p></li>
+  <li><p>Displaying detailed information that doesn't warrant a separate page</p></li>
+  <li><p>Presenting workflows that need to maintain the underlying page state</p></li>
+</ul>

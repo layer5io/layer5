@@ -1,0 +1,162 @@
+---
+title: Icon Button Guidance
+component: iconbutton
+description: IconButton provides an interactive button component that displays only an icon, ideal for compact UIs where space is limited and actions are easily recognizable through iconography.
+---
+
+import { IconButton } from "@sistent/sistent";
+import { FaHeart } from "@react-icons/all-files/fa/FaHeart";
+import { FaShare } from "@react-icons/all-files/fa/FaShare";
+import { FaCheck } from "@react-icons/all-files/fa/FaCheck";
+import { FaTimes } from "@react-icons/all-files/fa/FaTimes";
+
+
+<a id="Usage Guidelines">
+  <h2>Usage Guidelines</h2>
+</a>
+
+IconButtons should be used when the action can be clearly communicated through iconography alone. They're perfect for common actions that users can easily recognize without accompanying text.
+
+<h3>When to Use IconButtons</h3>
+
+*   **Space-constrained interfaces:** Toolbars and compact layouts
+*   **Secondary actions:** Edit, delete, share, or favorite actions
+*   **Universal actions:** Widely recognized actions like play, pause, or close
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', width: '100%' }}>
+      <IconButton aria-label="favorite" color="error">
+        <FaHeart />
+      </IconButton>
+      <IconButton aria-label="share" color="primary">
+        <FaShare />
+      </IconButton>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<h3>When to Avoid IconButtons</h3>
+
+*   **Primary actions:** Use regular buttons with text for main CTAs
+*   **Complex actions:** Actions that require explanation or context
+*   **Ambiguous icons:** When the icon meaning isn't universally clear
+
+<a id="Accessibility Best Practices">
+  <h2>Accessibility Best Practices</h2>
+</a>
+
+<h3>Essential Requirements</h3>
+
+*   **aria-label:** Always provide descriptive labels
+*   **Minimum size:** Ensure at least 44px touch targets for mobile
+*   **Visual feedback:** Clear hover and focus states
+
+<a id="Design Guidelines">
+  <h2>Design Guidelines</h2>
+</a>
+
+<h3>Icon Selection</h3>
+
+*   **Recognizable icons:** Use widely understood icons from established libraries
+*   **Consistent style:** Maintain visual consistency across all icons
+*   **Scalable icons:** Use vector icons that scale clearly at different sizes
+
+<a id="Layout and Spacing">
+  <h2>Layout and Spacing</h2>
+</a>
+
+Maintain minimum 8px spacing between IconButtons and group related actions together with logical order.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+      <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+        <IconButton aria-label="approve" color="success">
+          <FaCheck />
+        </IconButton>
+        <IconButton aria-label="reject" color="error">
+          <FaTimes />
+        </IconButton>
+      </div>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Common Patterns">
+  <h2>Common Patterns</h2>
+</a>
+
+**Toolbar Actions:** Edit, share, delete actions in toolbars. **List Item Actions:** Quick actions for items in lists or tables. **Media Controls:** Play, pause, skip controls. **Navigation:** Back, forward, close, menu toggles.
+
+<a id="Props">
+  <h2>Props</h2>
+</a>
+
+The IconButton component accepts all standard button props plus additional customization options:
+
+<div className="table-container">
+  <table className="props-table">
+    <thead>
+      <tr>
+        <th>Prop</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>children</td>
+        <td>node</td>
+        <td>-</td>
+        <td>The icon element to display inside the button</td>
+      </tr>
+      <tr>
+        <td>size</td>
+        <td>'small' | 'medium' | 'large'</td>
+        <td>'medium'</td>
+        <td>The size of the IconButton</td>
+      </tr>
+      <tr>
+        <td>color</td>
+        <td>'inherit' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning'</td>
+        <td>'inherit'</td>
+        <td>The color of the IconButton</td>
+      </tr>
+      <tr>
+        <td>disabled</td>
+        <td>bool</td>
+        <td>false</td>
+        <td>If true, the IconButton is disabled</td>
+      </tr>
+      <tr>
+        <td>onClick</td>
+        <td>func</td>
+        <td>-</td>
+        <td>Callback fired when the IconButton is clicked</td>
+      </tr>
+      <tr>
+        <td>aria-label</td>
+        <td>string</td>
+        <td>-</td>
+        <td>Accessibility label for screen readers (required)</td>
+      </tr>
+      <tr>
+        <td>sx</td>
+        <td>object</td>
+        <td>-</td>
+        <td>System prop for custom styling</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<a id="Best Practices">
+  <h2>Best Practices</h2>
+</a>
+
+*   **Always include aria-label:** Essential for accessibility and screen readers
+*   **Use recognizable icons:** Choose icons that clearly represent the action
+*   **Maintain adequate spacing:** Ensure sufficient space between IconButtons
+*   **Consider touch targets:** Use appropriate sizes for mobile interfaces

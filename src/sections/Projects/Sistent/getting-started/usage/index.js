@@ -5,7 +5,7 @@ import TOC from "../../../../../components/SistentNavigation";
 import IntraPage from "../../../../../components/handbook-navigation/intra-page";
 import SistentPagination from "../../../../../components/SistentNavigation/pagination";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
-import { CodeBlock } from "../../components/button/code-block";
+import CodeBlock from "../../../../../components/CodeBlock";
 import { SistentThemeProvider } from "@sistent/sistent";
 import { Button, TextField, Card, CardContent, Typography, Alert } from "@sistent/sistent";
 
@@ -375,7 +375,7 @@ const SistentUsage = () => {
                     </Button>
                   </SistentThemeProvider>
                 </div>
-                <CodeBlock name="basic-usage" code={codeExamples.basicUsage} />
+                <CodeBlock name="basic-usage" collapsible code={codeExamples.basicUsage} />
               </div>
             </section>
 
@@ -393,7 +393,7 @@ const SistentUsage = () => {
               </p>
 
               <div className="showcase">
-                <CodeBlock name="Theme-provider" code={codeExamples.themeProvider} />
+                <CodeBlock name="Theme-provider" collapsible code={codeExamples.themeProvider} />
               </div>
 
               <div className="parameter-table">
@@ -459,7 +459,7 @@ const SistentUsage = () => {
                     </div>
                   </SistentThemeProvider>
                 </div>
-                <CodeBlock name="button-variants" code={codeExamples.buttonVariants} />
+                <CodeBlock name="button-variants" collapsible code={codeExamples.buttonVariants} />
               </div>
 
               <h3>Interactive Form Example</h3>
@@ -513,7 +513,7 @@ const SistentUsage = () => {
                     </Card>
                   </SistentThemeProvider>
                 </div>
-                <CodeBlock name="form-example" code={codeExamples.formExample} />
+                <CodeBlock name="form-example" collapsible code={codeExamples.formExample} />
               </div>
             </section>
 
@@ -527,7 +527,7 @@ const SistentUsage = () => {
               </p>
 
               <div className="showcase">
-                <CodeBlock name="theme-customization" code={codeExamples.themeCustomization} />
+                <CodeBlock name="theme-customization" collapsible code={codeExamples.themeCustomization} />
               </div>
 
               <h3>Import Strategies</h3>
@@ -536,7 +536,7 @@ const SistentUsage = () => {
               </p>
 
               <div className="showcase">
-                <CodeBlock name="import-strategies" code={codeExamples.importStrategies} />
+                <CodeBlock name="import-strategies" collapsible code={codeExamples.importStrategies} />
               </div>
 
               <h3>Working with Icons</h3>
@@ -555,7 +555,7 @@ const SistentUsage = () => {
                     </div>
                   </SistentThemeProvider>
                 </div>
-                <CodeBlock name="icon-usage" code={codeExamples.iconUsage} />
+                <CodeBlock name="icon-usage" collapsible code={codeExamples.iconUsage} />
               </div>
 
               <h3>Responsive Design</h3>
@@ -611,7 +611,7 @@ const SistentUsage = () => {
                     </div>
                   </SistentThemeProvider>
                 </div>
-                <CodeBlock name="responsive-usage" code={codeExamples.responsiveUsage} />
+                <CodeBlock name="responsive-usage" collapsible code={codeExamples.responsiveUsage} />
               </div>
             </section>
             {/* Best Practices Section */}

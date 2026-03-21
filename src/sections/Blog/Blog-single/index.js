@@ -27,7 +27,7 @@ const BlogSingle = ({ data, children }) => {
   const { relatedPosts: blogData, authors } = useStaticQuery(
     graphql`query relatedPosts {
   relatedPosts: allMdx(
-    sort: {frontmatter: {date: DESC}}
+    sort: {fields: {dateForSort: DESC}}
     filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
   ) {
     nodes {

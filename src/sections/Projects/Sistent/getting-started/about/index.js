@@ -7,8 +7,7 @@ import SistentPagination from "../../../../../components/SistentNavigation/pagin
 
 import { Link } from "gatsby";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
-import { CodeBlock } from "../../components/button/code-block";
-import Code from "../../../../../components/CodeBlock";
+import CodeBlock from "../../../../../components/CodeBlock";
 import { SistentThemeProvider, Button } from "@sistent/sistent";
 
 const contents = [{ id: 0, link: "#About Sistent", text: "About Sistent" }];
@@ -87,7 +86,7 @@ const SistentAbout = () => {
             </a>
             <p>To install the Sistent NPM package, run:</p>
             <div className="showcase">
-              <CodeBlock name="installation" code={codes[0]} />
+              <CodeBlock name="installation" collapsible code={codes[0]} />
             </div>
             <p>
               After installation, you can import Sistent theme and any Sistent
@@ -103,7 +102,7 @@ const SistentAbout = () => {
                   <Button variant="text">Text</Button>
                 </SistentThemeProvider>
               </div>
-              <CodeBlock name="checkbox" code={codes[1]} />
+              <CodeBlock name="checkbox" collapsible code={codes[1]} />
             </div>
 
             <a id="Using local Sistent">
@@ -117,27 +116,27 @@ const SistentAbout = () => {
               <ol>
                 <li>
                   <b>Install your local Sistent package in the project</b>
-                  <Code codeString="npm install &lt;path-to-sistent-on-local-machine&gt;" />
+                  <CodeBlock codeString="npm install &lt;path-to-sistent-on-local-machine&gt;" />
                   <p>Example:</p>
-                  <Code
+                  <CodeBlock
                     codeString={"# relative path\n npm install ../../sistent\n\n# absolute path\n npm install /home/five/code/sistent"}
                   />
                   <p>This will update your Sistent dependency to:</p>
-                  <Code codeString={"\"@sistent/sistent\" : \"file:../../sistent\""} />
+                  <CodeBlock codeString={"\"@sistent/sistent\" : \"file:../../sistent\""} />
                 </li>
                 <li>
                   <b>Build your local Sistent fork</b>
                   <p>
                     After making changes to your fork, run this command in your local Sistent package.
                   </p>
-                  <Code codeString="make build" />
+                  <CodeBlock codeString="make build" />
                 </li>
                 <li>
                   <b>
                     Run the build command in the project where your local Sistent fork is installed
                   </b>
                   <p>Example for Meshery UI:</p>
-                  <Code codeString="make ui-build" />
+                  <CodeBlock codeString="make ui-build" />
                 </li>
               </ol>
               <p>
@@ -146,11 +145,11 @@ const SistentAbout = () => {
               <p>
                 If you want to remove the local Sistent fork from your project, run:
               </p>
-              <Code codeString="npm uninstall @sistent/sistent" />
+              <CodeBlock codeString="npm uninstall @sistent/sistent" />
               <p>
                 This will remove the local Sistent package from your project. You will have to install the standard package again after running this command:
               </p>
-              <Code codeString="npm install @sistent/sistent" />
+              <CodeBlock codeString="npm install @sistent/sistent" />
 
 
               <li>
@@ -162,43 +161,43 @@ const SistentAbout = () => {
                   <li>
                     <b>Link your local Sistent package globally</b>
                     <p>In your local Sistent repo, run the following command:</p>
-                    <Code codeString={"cd <path-to-sistent-on-local-machine>\n npm link"} />
+                    <CodeBlock codeString={"cd <path-to-sistent-on-local-machine>\n npm link"} />
                   </li>
                   <li>
                     <b>Link Sistent in your project</b>
                     <p>In the project where you want to use your local Sistent fork, run:</p>
-                    <Code codeString="npm link @sistent/sistent" />
+                    <CodeBlock codeString="npm link @sistent/sistent" />
                     <p>This will create a symlink in your project's node_modules, pointing to your local Sistent package.</p>
                   </li>
                   <li>
                     <b>Build your local Sistent fork</b>
                     <p>After making changes to your fork, run this command in your local Sistent package.</p>
-                    <Code codeString="make build" />
+                    <CodeBlock codeString="make build" />
                   </li>
                   <li>
                     <b>Run the build command in the project where your local Sistent fork is installed</b>
                     <p>Example for Meshery-UI:</p>
-                    <Code codeString="make ui-build" />
+                    <CodeBlock codeString="make ui-build" />
                   </li>
                   <li>
                     <p>
                       Verify that your local fork is correctly linked by running:
                     </p>
-                    <Code codeString={"npm ls -g\n\n# expected output:\n├── @sistent/sistent@0.14.11 -> ./../../../../<path-to-local-sistent-fork>"} />
+                    <CodeBlock codeString={"npm ls -g\n\n# expected output:\n├── @sistent/sistent@0.14.11 -> ./../../../../<path-to-local-sistent-fork>"} />
                     <p>
                       You can also try this command to verify that your fork is correctly linked:
                     </p>
-                    <Code codeString={"ls -l node_modules/@sistent/sistent\n\n# expected output:\nnode_modules/@sistent/sistent -> ../../../../../sistent"} />
+                    <CodeBlock codeString={"ls -l node_modules/@sistent/sistent\n\n# expected output:\nnode_modules/@sistent/sistent -> ../../../../../sistent"} />
                   </li>
                   <li>
                     <p>
                       To revert back to the official version of Sistent, run:
                     </p>
-                    <Code codeString="npm unlink @sistent/sistent" />
+                    <CodeBlock codeString="npm unlink @sistent/sistent" />
                     <p>
                       Then reinstall the official version, using this command:
                     </p>
-                    <Code codeString="npm install @sistent/sistent" />
+                    <CodeBlock codeString="npm install @sistent/sistent" />
                   </li>
                 </ol>
               </li>
