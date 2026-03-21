@@ -48,7 +48,7 @@ export const repo_data = [
         project: "Meshery Documentation",
         image: meshery,
         site: "http://docs.meshery.io",
-        language: "Jekyll",
+        language: "Hugo",
         maintainers_name: ["Vacant"],
         link: [""],
         repository: "https://github.com/meshery/meshery/tree/master/docs",
