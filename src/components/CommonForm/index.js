@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, forwardRef } from "react";
 import Button from "../../reusecore/Button";
-import axios from "axios";
+import { useWebhookSubmit } from "../../utils/hooks/useWebhookSubmit";
 import { Field, Form, Formik } from "formik";
 import CommonFormWrapper from "./commonForm.style";
 import { Container } from "../../reusecore/Layout";
@@ -12,6 +12,7 @@ const CommonForm = ({ form, title, submit_title, submit_body, submit_button_titl
   const [stepNumber, setStepNumber] = useState(0);
   const [memberFormOne, setMemberFormOne] = useState({});
   const [submit, setSubmit] = useState(false);
+  const { submitForm } = useWebhookSubmit();
 
   // Form values
   // const [validateAccounts, setValidateAccounts] = useState(false);
@@ -71,14 +72,6 @@ const CommonForm = ({ form, title, submit_title, submit_body, submit_button_titl
       return true;
     }
   };
-  useEffect(() => {
-    if (submit) {
-      axios.post("https://hook.us1.make.com/nficb3d7swqkclkl467st4hp4cg65u8o", {
-        memberFormOne,
-      });
-    }
-  }, [submit, errorEmail, validateEmail, validateRole]);
-
   return (
     <CommonFormWrapper>
       {
@@ -103,14 +96,19 @@ const CommonForm = ({ form, title, submit_title, submit_body, submit_button_titl
         role: role,
         form: form,
       }}
-      onSubmit={values => {
+      onSubmit={async (values) => {
         if (isValidRole(values.role) && isValidEmail(values.email)) {
-          setMemberFormOne(values);
-          setStepNumber(1);
-          setSubmit(true);
-          // window.scrollTo(0,window.scrollY - 800);
-          // confirmationMessageRef.current.scrollIntoView({ behavior: 'smooth' })
-          scrollElementIntoView(confirmationMessageRef.current, navBarOffset);
+          const { success } = await submitForm({ memberFormOne: values });
+          if (success) {
+            setMemberFormOne(values);
+            setStepNumber(1);
+            setSubmit(true);
+            // window.scrollTo(0,window.scrollY - 800);
+            // confirmationMessageRef.current.scrollIntoView({ behavior: 'smooth' })
+            scrollElementIntoView(confirmationMessageRef.current, navBarOffset);
+          } else {
+            alert("Submission failed. Please try again.");
+          }
         } else {
           // if (!(values.google || values.github || values.twitter || values.linkedin)) {
           //   setValidateAccounts(true);

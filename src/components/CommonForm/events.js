@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Button from "../../reusecore/Button";
-import axios from "axios";
+import { useWebhookSubmit } from "../../utils/hooks/useWebhookSubmit";
 import { Field, Form, Formik } from "formik";
 import CommonFormWrapper from "./commonForm.style";
 import { Container } from "../../reusecore/Layout";
@@ -12,6 +12,7 @@ const EventForm = ({ form, title, submit_title, submit_body }) => {
   const [stepNumber, setStepNumber] = useState(0);
   const [memberFormOne, setMemberFormOne] = useState({});
   const [submit, setSubmit] = useState(false);
+  const { submitForm } = useWebhookSubmit();
 
   // Form values
   const [email, setEmail] = useState("");
@@ -20,14 +21,6 @@ const EventForm = ({ form, title, submit_title, submit_body }) => {
   const [org, setOrg] = useState("");
   const [occupation, setOccupation] = useState("");
 
-
-  useEffect(() => {
-    if (submit) {
-      axios.post("https://hook.us1.make.com/nficb3d7swqkclkl467st4hp4cg65u8o", {
-        memberFormOne,
-      });
-    }
-  }, [submit]);
 
   return (
     <CommonFormWrapper>
@@ -44,16 +37,21 @@ const EventForm = ({ form, title, submit_title, submit_body }) => {
         org: org,
         form: form,
       }}
-      onSubmit={values => {
-        setMemberFormOne(values);
-        setStepNumber(1);
-        setSubmit(true);
-        window.scrollTo(0,window.scrollY - 800);
-        setFirstName(values.firstname);
-        setEmail(values.email);
-        setLastName(values.lastname);
-        setOccupation(values.occupation);
-        setOrg(values.org);
+      onSubmit={async (values) => {
+        const { success } = await submitForm({ memberFormOne: values });
+        if (success) {
+          setMemberFormOne(values);
+          setStepNumber(1);
+          setSubmit(true);
+          window.scrollTo(0,window.scrollY - 800);
+          setFirstName(values.firstname);
+          setEmail(values.email);
+          setLastName(values.lastname);
+          setOccupation(values.occupation);
+          setOrg(values.org);
+        } else {
+          alert("Submission failed. Please try again.");
+        }
       }}
     >
       <Form className="form" method="post">
