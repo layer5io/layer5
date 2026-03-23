@@ -14,7 +14,7 @@ export const StateSelectDemo = (props) => {
   return (
     <FormControl sx={{ width: "200px" }} {...props}>
       <InputLabel id="demo-simple-select-state-label">Age</InputLabel>
-      <Select
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
         labelId="demo-simple-select-state-label"
         id="demo-simple-select-state"
         value={age}
@@ -43,7 +43,7 @@ export const HelperSelectDemo = () => {
     >
       <FormControl sx={{ width: "200px" }}>
         <InputLabel id="demo-select-label">Age</InputLabel>
-        <Select
+        <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
           labelId="demo-select-label"
           id="demo-select"
           label="Age"
@@ -55,7 +55,7 @@ export const HelperSelectDemo = () => {
         <FormHelperText>With label + Helper text</FormHelperText>
       </FormControl>
       <FormControl sx={{ width: "200px" }}>
-        <Select id="demo-select-without-label">
+        <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }} id="demo-select-without-label">
           <MenuItem value={10}>Ten</MenuItem>
           <MenuItem value={20}>Twenty</MenuItem>
           <MenuItem value={30}>Thirty</MenuItem>
@@ -71,7 +71,7 @@ export const PlaceholderSelectDemo = () => {
   const handleChange = (event) => setAge(event.target.value);
   return (
     <FormControl sx={{ width: "200px" }}>
-      <Select
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
         id="demo-select-placeholder"
         value={age}
         onChange={handleChange}
@@ -95,7 +95,7 @@ export const GroupingSelectDemo = () => {
   return (
     <FormControl sx={{ width: "200px" }}>
       <InputLabel id="demo-select-label-grouped">Age</InputLabel>
-      <Select
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
         labelId="demo-select-label-grouped"
         id="demo-select-grouped"
         label="Age"
@@ -123,7 +123,7 @@ export const MultipleSelectDemo = () => {
   return (
     <FormControl sx={{ width: "200px" }}>
       <InputLabel id="demo-multiple-name-label">Age</InputLabel>
-      <Select
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
         multiple
         labelId="demo-multiple-name-label"
         id="demo-multiple-name"

@@ -11,7 +11,7 @@ import { FormControl, Select, MenuItem, InputLabel, OutlinedInput, ListSubheader
 export const BasicSelectCodeDemo = ({ variant, ...props }) => {
   return (
     <FormControl sx={{ width: "200px" }} variant={variant} {...props}>
-      <Select defaultValue={10} {...props}>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }} defaultValue={10} {...props}>
         <MenuItem value={10}>Ten</MenuItem>
         <MenuItem value={20}>Twenty</MenuItem>
         <MenuItem value={30}>Thirty</MenuItem>
@@ -23,7 +23,7 @@ export const BasicSelectCodeDemo = ({ variant, ...props }) => {
 export const AutoWidthSelectCodeDemo = () => {
   return (
     <FormControl sx={{ minWidth: "120px" }}>
-      <Select defaultValue={10} autoWidth>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }} defaultValue={10} autoWidth>
         <MenuItem value={10}>Ten</MenuItem>
         <MenuItem value={20}>Twenty</MenuItem>
         <MenuItem value={30}>Thirty</MenuItem>
@@ -35,7 +35,7 @@ export const AutoWidthSelectCodeDemo = () => {
 export const FullWidthSelectCodeDemo = () => {
   return (
     <FormControl fullWidth>
-      <Select defaultValue={10} fullWidth>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }} defaultValue={10} fullWidth>
         <MenuItem value={10}>Ten</MenuItem>
         <MenuItem value={20}>Twenty</MenuItem>
         <MenuItem value={30}>Thirty</MenuItem>
@@ -48,7 +48,7 @@ export const LabelSelectCodeDemo = () => {
   return (
     <FormControl sx={{ width: "200px" }}>
       <InputLabel id="demo-select-label">Age</InputLabel>
-      <Select
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
         labelId="demo-select-label"
         id="demo-select"
         label="Age"
@@ -64,7 +64,7 @@ export const LabelSelectCodeDemo = () => {
 export const HelperSelectCodeDemo = () => {
   return (
     <FormControl sx={{ width: "200px" }}>
-      <Select defaultValue={10}>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }} defaultValue={10}>
         <MenuItem value={10}>Ten</MenuItem>
         <MenuItem value={20}>Twenty</MenuItem>
         <MenuItem value={30}>Thirty</MenuItem>
@@ -78,7 +78,7 @@ export const PlaceholderSelectCodeDemo = () => {
   const [selectedAge, setSelectedAge] = useState("");
   return (
     <FormControl sx={{ width: "200px" }}>
-      <Select
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
         id="demo-select-placeholder"
         onChange={(e) => setSelectedAge(e.target.value)}
         renderValue={() => {
@@ -99,7 +99,7 @@ export const PlaceholderSelectCodeDemo = () => {
 export const GroupingSelectCodeDemo = () => {
   return (
     <FormControl sx={{ width: "200px" }}>
-      <Select defaultValue={10}>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }} defaultValue={10}>
         <ListSubheader muiSkipListHighlight>Group 1</ListSubheader>
         <MenuItem value={10}>Ten</MenuItem>
         <MenuItem value={20}>Twenty</MenuItem>
@@ -118,14 +118,14 @@ export const BehaviorSelectCodeDemo = () => {
   return (
     <Grid container spacing={2} sx={{ justifyContent: "center" }}>
       <FormControl sx={{ width: "200px" }} disabled>
-        <Select defaultValue={10}>
+        <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }} defaultValue={10}>
           <MenuItem value={10}>Ten</MenuItem>
           <MenuItem value={20}>Twenty</MenuItem>
           <MenuItem value={30}>Thirty</MenuItem>
         </Select>
       </FormControl>
       <FormControl sx={{ width: "200px" }} error>
-        <Select defaultValue={10}>
+        <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }} defaultValue={10}>
           <MenuItem value={10}>Ten</MenuItem>
           <MenuItem value={20}>Twenty</MenuItem>
           <MenuItem value={30}>Thirty</MenuItem>
@@ -139,7 +139,7 @@ export const RequiredSelectCodeDemo = () => {
   return (
     <FormControl sx={{ width: "200px" }} required>
       <InputLabel id="demo-select-label-required">Age</InputLabel>
-      <Select
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
         labelId="demo-select-label-required"
         id="demo-select-required"
         label="Age"
@@ -159,7 +159,7 @@ export const MultipleSelectCodeDemo = () => {
   };
   return (
     <FormControl sx={{ width: "200px" }}>
-      <Select
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
         multiple
         input={<OutlinedInput label="Name" />}
         value={multipleAges}
