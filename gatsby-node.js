@@ -581,12 +581,26 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
+  const latestProgramsBySlug = new Map();
   programs.forEach((program) => {
+    const slug = program.frontmatter.programSlug;
+    if (!latestProgramsBySlug.has(slug)) {
+      latestProgramsBySlug.set(slug, program);
+    } else {
+      const currentLatest = latestProgramsBySlug.get(slug);
+      if ((program.fields?.slug || "") > (currentLatest.fields?.slug || "")) {
+        latestProgramsBySlug.set(slug, program);
+      }
+    }
+  });
+
+  latestProgramsBySlug.forEach((program, slug) => {
     envCreatePage({
-      path: `/programs/${program.frontmatter.programSlug}`,
+      path: `/programs/${slug}`,
       component: `${MultiProgramPostTemplate}?__contentFilePath=${program.internal.contentFilePath}`,
       context: {
         program: program.frontmatter.program,
+        slug: program.fields?.slug,
       },
     });
   });
