@@ -15,16 +15,16 @@ export const HoneycombGrid = styled.div`
   }
 
   .search-box {
-        input {
-        border: 1px solid ${props => props.theme.headingColor} !important;
-        
-        &:focus {
-            border-color: #fff !important;
-            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
-        }
+    input {
+      border: 1px solid ${(props) => props.theme.headingColor} !important;
+
+      &:focus {
+        border-color: #fff !important;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
+      }
     }
   }
-  
+
   .category {
     display: flex;
     flex-wrap: wrap;
@@ -34,14 +34,14 @@ export const HoneycombGrid = styled.div`
   }
 
   .items {
-    background-color: #D2D8DA; //#E7EFF3;
+    background-color: #d2d8da; //#E7EFF3;
     padding: 0.625rem 1.5625rem;
     border-radius: 0.625rem;
     text-transform: uppercase;
     color: #1e2117;
     font-size: 0.875rem;
     cursor: pointer;
-    transition: all .1s ease-in-out;
+    transition: all 0.1s ease-in-out;
 
     &:hover {
       opacity: 0.8;
@@ -54,114 +54,90 @@ export const HoneycombGrid = styled.div`
     color: ${(props) => props.theme.white};
   }
 
-  ul {
-    margin: 2.5rem 0 0 0;
-    padding-left: 50px;
-    padding-right: 50px;
+  .integrations-grid {
+    margin: 2.5rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+
+    @media (max-width: 500px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      padding: 0 1rem;
+    }
   }
 
   .container-active,
   .container-inactive {
-    -webkit-transform: translateZ(0);
     display: flex;
+    flex-direction: column;
+    background: ${(props) => props.theme.grey212121ToWhite};
+    border-radius: 0.5rem;
+    border: 1px solid ${(props) => props.theme.primaryLightColor || "#e0e0e0"};
+    padding: 1.25rem;
+    transition:
+      box-shadow 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+      transform 0.3s;
     height: 100%;
-    background: ${(props) => props.theme.radialToBlue};
-    justify-content: center;
-    align-items: center;
-    padding: 0.625rem;
-    position: relative;
-    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    &:hover {
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    }
 
     .integration-container {
       display: flex;
       flex-direction: column;
       align-items: center;
       height: 100%;
-      overflow: hidden;
-      justify-content: center;
-      position: absolute;
-      img {
-        transition: all 1s cubic-bezier(1, 0.82, 0.165, 1);
-        opacity: 100%;
+
+      .logo-container {
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
       }
+
       .integration-icon {
-        flex-shrink: 0;
+        max-height: 70px;
+        max-width: 70px;
         object-fit: contain;
       }
+
+      hr {
+        width: 100%;
+        border: 0;
+        border-top: 1px solid
+          ${(props) => props.theme.primaryLightColor || "#e0e0e0"};
+        margin: 0 0 1rem 0;
+      }
+
       .integration-content {
-        opacity: 0;
         text-align: center;
-        align-items: center;
-        height: 0;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
+        align-items: center;
+        flex: 1;
 
-        transition: all 0.5s linear;
-        opacity: 1;
-        overflow: hidden;
         .title {
-          line-height: 1.375rem;
-          color: ${(props) => props.theme.whiteToBlack};
-          // margin-bottom: -2.7rem;
-          font-size: 1.2rem;
-          opacity: 0;
           font-weight: 600;
-          transition: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-          padding:10px;
+          font-size: 1.1rem;
+          color: ${(props) => props.theme.whiteToBlack};
+          margin-bottom: 0.5rem;
         }
-        .learnMoreBtn {
-          padding: 5px 10px;
-          color: white;
-          font-size: 0.875rem;
-          min-width: unset;
-          box-shadow: none;
+
+        .description {
+          font-size: 0.85rem;
+          color: ${(props) => props.theme.text};
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          line-height: 1.4;
         }
-      }
-    }
-    &:hover {
-      .integration-container {
-        img {
-          transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-          height: 0%;
-          opacity: 0%;
-        }
-        .integration-content {
-          transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-          opacity: 1;
-          height: 100%;
-          .title {
-            // margin-top: -50%;
-            font-size: 1.2rem;
-            opacity: 1;
-          }
-          .learnMoreBtn {
-            &:hover {
-              background-color: #009b8a;
-            }
-          }
-        }
-      }
-      background: #00d3a9;
-      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-      &:after {
-        content: "";
-        background: ${(props) => props.theme.grey212121ToWhite};
-        margin: 0px 0px 0 4px;
-        clip-path: polygon(
-          50% 0%,
-          100% 25%,
-          100% 75%,
-          50% 100%,
-          0% 75%,
-          0% 25%
-        );
-        height: 95%;
-        width: 95%;
-        position: absolute;
-        left: 0;
-        z-index: -1;
       }
     }
   }
@@ -174,7 +150,7 @@ export const IntegrationsWrapper = styled.div`
   min-height: 300px; /* Add explicit min-height */
   position: relative; /* Add position for better layout control */
   width: 100%; /* Add explicit width */
-  
+
   .seeAllBtn {
     &:hover {
       color: white;
@@ -220,9 +196,10 @@ export const IntegrationCard = styled.div`
 `;
 
 export const IntegrationSlider = styled(Slider)`
-  .slick-prev:hover, .slick-next:hover{
+  .slick-prev:hover,
+  .slick-next:hover {
     box-shadow: none;
-    outline:none;
+    outline: none;
   }
 
   .slick-arrow {
@@ -254,19 +231,19 @@ export const IntegrationSlider = styled(Slider)`
 
   .slick-slide {
     width: auto !important;
-    margin: 0 .5rem;
+    margin: 0 0.5rem;
   }
 
-  .slick-next{
+  .slick-next {
     right: -2.5rem;
   }
 
-  .slick-prev{
+  .slick-prev {
     left: -2.5rem;
   }
 
   .slick-prev:before {
-    content:"‹";
+    content: "‹";
     line-height: 0;
     opacity: 1;
   }
@@ -281,7 +258,8 @@ export const IntegrationSlider = styled(Slider)`
     opacity: 1;
   }
 
-  .slick-prev, .slick-next {
+  .slick-prev,
+  .slick-next {
     top: 1.5rem;
   }
-  `;
+`;
