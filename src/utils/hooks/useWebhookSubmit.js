@@ -12,12 +12,16 @@ export const useWebhookSubmit = () => {
       const response = await axios.post("https://hook.us1.make.com/nficb3d7swqkclkl467st4hp4cg65u8o", payload);
       return { success: true, data: response.data };
     } catch (err) {
-      setError(err.message || 'An error occurred during submission.');
-      return { success: false, error: err };
+      const errorMessage = (err && err.message) || 'An error occurred during submission.';
+      const errorObject = err instanceof Error ? err : new Error(errorMessage);
+      setError(errorObject);
+      return { success: false, error: errorObject, errorMessage };
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  return { submitForm, isSubmitting, error };
+  const errorMessage = error ? (error.message || 'An error occurred during submission.') : null;
+
+  return { submitForm, isSubmitting, error, errorMessage };
 };
