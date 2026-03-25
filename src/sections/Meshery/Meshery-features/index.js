@@ -15,8 +15,16 @@ import img7 from "./feature-images/extensions.webp";
 const MesheryFeaturesWrapper = styled.div`
     margin: auto;
     margin-top: 4rem;
+    width: 100%;
+    
     @media (max-width: 32rem){
         margin-top: 4rem;
+    }
+
+    @media (max-width: 767px){
+        display: block;
+        visibility: visible;
+        opacity: 1;
     }
 
     .feature-expose {

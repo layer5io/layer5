@@ -1,0 +1,195 @@
+---
+name: "Tooltip"
+title: Tooltip
+published: true
+component: tooltip
+description: The Tooltip component displays informative text when users hover over, focus on, or tap an element. Tooltips are designed to enhance accessibility and user understanding of interface elements.
+---
+
+
+import { Button, CustomTooltip, Box } from "@sistent/sistent";
+
+export const BasicTooltipDemo = () => (
+  <Row $Hcenter className="image-container">
+    <CustomTooltip title="Submit">
+      <span>
+        <Button variant="contained" label="Submit" size="medium" />
+      </span>
+    </CustomTooltip>
+  </Row>
+);
+
+export const CustomPositionDemo = () => (
+  <Row $Hcenter className="image-container">
+    <CustomTooltip title="Top Tooltip" placement="top">
+      <span>
+        <Button variant="contained" size="medium">
+          Delete
+        </Button>
+      </span>
+    </CustomTooltip>
+  </Row>
+);
+
+export const DisabledElementsDemo = () => (
+  <Row $Hcenter className="image-container">
+    <CustomTooltip title="Disabled Tooltip">
+      <span>
+        <Button variant="text" size="medium" disabled>
+          Disabled Button
+        </Button>
+      </span>
+    </CustomTooltip>
+  </Row>
+);
+
+export const DistanceFromAnchorDemo = () => (
+  <Row $Hcenter className="image-container">
+    <CustomTooltip
+      title="Add"
+      slotProps={{
+        popper: {
+          modifiers: [
+            {
+              name: "offset",
+              options: {
+                offset: [0, -14],
+              },
+            },
+          ],
+        },
+      }}
+    >
+      <span>
+        <Button variant="contained" size="medium">
+          Offset
+        </Button>
+      </span>
+    </CustomTooltip>
+  </Row>
+);
+
+export const VariableWidthDemo = () => (
+  <Row $Hcenter className="image-container">
+    <Box
+      sx={{
+        display: "flex",
+        "& > *": {
+          m: 1,
+        },
+      }}
+    >
+      <CustomTooltip title="Add" variant="standard">
+        <span>
+          <Button variant="contained" size="medium">
+            standard
+          </Button>
+        </span>
+      </CustomTooltip>
+      <CustomTooltip title="Add" variant="small">
+        <span>
+          <Button variant="contained" size="medium">
+            small
+          </Button>
+        </span>
+      </CustomTooltip>
+    </Box>
+  </Row>
+);
+
+export const FollowCursorDemo = () => (
+  <Row $Hcenter className="image-container">
+    <CustomTooltip title="Follow Cursor" followCursor>
+      <span>
+        <Button variant="contained" size="medium">
+          Button
+        </Button>
+      </span>
+    </CustomTooltip>
+  </Row>
+);
+
+export const ShowHideDemo = () => (
+  <Row $Hcenter className="image-container">
+    <CustomTooltip title="Add" enterDelay={500} leaveDelay={200}>
+      <span>
+        <Button variant="text" size="medium">
+          [500MS, 200MS]
+        </Button>
+      </span>
+    </CustomTooltip>
+  </Row>
+);
+
+<a id="Basic Tooltip">
+  <h2>Basic Tooltip</h2>
+</a>
+<p>
+  A simple tooltip that displays helpful information when hovering over an icon button.
+</p>
+
+<ThemeWrapper>
+  <BasicTooltipDemo />
+</ThemeWrapper>
+
+<h3>Custom Position</h3>
+<p>
+  Tooltips support different placements, allowing flexibility depending on your layout requirements.
+</p>
+
+<ThemeWrapper>
+  <CustomPositionDemo />
+</ThemeWrapper>
+
+<h3>Disabled Elements</h3>
+<p>
+  By default disabled elements like button do not trigger user interactions so a `Tooltip` will not activate on normal events like hover. To accommodate disabled elements, add a simple wrapper element, such as a `span`.
+</p>
+
+<ThemeWrapper>
+  <DisabledElementsDemo />
+</ThemeWrapper>
+
+<a id="Distance from anchor">
+  <h2>Distance from anchor</h2>
+</a>
+<p>
+  To adjust the distance between the tooltip and its anchor, you can use the slotProps prop to modify the offset of the popper.
+</p>
+
+<ThemeWrapper>
+  <DistanceFromAnchorDemo />
+</ThemeWrapper>
+
+<a id="Variable width">
+  <h2>Variable width</h2>
+</a>
+<p>
+  The variant prop in Tooltip allows you to control the tooltips size with predefined styles (standard or small). This makes it easier to adjust the tooltip to fit various UI requirements quickly and consistently.
+</p>
+
+<ThemeWrapper>
+  <VariableWidthDemo />
+</ThemeWrapper>
+
+<a id="Follow cursor">
+  <h2>Follow Cursor</h2>
+</a>
+<p>
+  Tooltips can be configured to follow the cursor, making it easier to read the content.
+</p>
+
+<ThemeWrapper>
+  <FollowCursorDemo />
+</ThemeWrapper>
+
+<a id="Showing and hiding">
+  <h2>Showing and Hiding</h2>
+</a>
+<p>
+  The Tooltip is normally shown immediately when the user's mouse hovers over the element, and hides immediately when the user's mouse leaves. A delay in showing or hiding the tooltip can be added through the `enterDelay` and `leaveDelay` props.
+</p>
+
+<ThemeWrapper>
+  <ShowHideDemo />
+</ThemeWrapper>

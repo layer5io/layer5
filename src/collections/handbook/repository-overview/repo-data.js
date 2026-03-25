@@ -48,7 +48,7 @@ export const repo_data = [
         project: "Meshery Documentation",
         image: meshery,
         site: "http://docs.meshery.io",
-        language: "Jekyll",
+        language: "Hugo",
         maintainers_name: ["Vacant"],
         link: [""],
         repository: "https://github.com/meshery/meshery/tree/master/docs",
@@ -143,7 +143,7 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: [""],
         repository:
-          "https://github.com/layer5labs/meshery-extensions-packages/",
+          "https://github.com/layer5io/recognition",
       },
       {
         project: "Sistent Design System",

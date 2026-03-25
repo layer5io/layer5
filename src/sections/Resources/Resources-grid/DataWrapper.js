@@ -2,6 +2,7 @@ import React from "react";
 
 // Libraries
 import { useStaticQuery, graphql } from "gatsby";
+import LitePlaceholder from "../../../templates/lite-placeholder";
 
 const DataWrapper = (WrappedComponent) => {
   return (props) => {
@@ -13,7 +14,6 @@ const DataWrapper = (WrappedComponent) => {
   ) {
     nodes {
       id
-      body
       frontmatter {
         title
         type
@@ -22,14 +22,14 @@ const DataWrapper = (WrappedComponent) => {
         mesh
         thumbnail {
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
           extension
           publicURL
         }
         darkthumbnail {
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
           extension
           publicURL
@@ -42,6 +42,19 @@ const DataWrapper = (WrappedComponent) => {
   }
 }`
     );
+
+    if (data.allMdx.nodes.length === 0) {
+      return (
+        <LitePlaceholder
+          pageContext={{
+            heading: "Resources disabled in lite mode",
+            description:
+              "The default lightweight build skips the resources collection to reduce local memory consumption.",
+          }}
+        />
+      );
+    }
+
     return <WrappedComponent allResources={data} {...props} />;
   };
 };

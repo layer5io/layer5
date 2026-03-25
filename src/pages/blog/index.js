@@ -4,16 +4,16 @@ import SEO from "../../components/seo";
 import BlogGrid from "../../sections/Blog/Blog-grid";
 import { graphql } from "gatsby";
 import loadable from "@loadable/component";
+import LitePlaceholder from "../../templates/lite-placeholder";
 const BlogList = loadable(() => import ("../../sections/Blog/Blog-list"));
 
 export const query = graphql`query allBlogs {
   allMdx(
-    sort: {frontmatter: {date: DESC}}
+    sort: {fields: {dateForSort: DESC}}
     filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
   ) {
     nodes {
       id
-      body
       frontmatter {
         title
         date(formatString: "MMM Do, YYYY")
@@ -22,14 +22,14 @@ export const query = graphql`query allBlogs {
           extension
           publicURL
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
         }
         darkthumbnail {
           extension
           publicURL
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
         }
       }
@@ -41,10 +41,24 @@ export const query = graphql`query allBlogs {
 }`;
 
 const Blog = (props) => {
+  const nodes = props.data?.allMdx?.nodes ?? [];
+  if (nodes.length === 0) {
+    return (
+      <LitePlaceholder
+        pageContext={{
+          heading: "Blog posts disabled in lite mode",
+          description:
+            "The default lightweight build skips the blog collection to keep local builds responsive.",
+        }}
+        location={props.location}
+      />
+    );
+  }
+
   const [isListView, setIsListView] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const { queryResults, searchData } = useDataList(
-    props.data.allMdx.nodes,
+    nodes,
     setSearchQuery,
     searchQuery,
     ["frontmatter", "title"],

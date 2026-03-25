@@ -1,0 +1,475 @@
+---
+title: Select Code
+component: select
+description: Select component is a dropdown menu for selecting an option from a list.
+---
+
+import { useState } from "react";
+import { FormHelperText, Grid } from "@mui/material";
+import { FormControl, Select, MenuItem, InputLabel, OutlinedInput, ListSubheader, Box } from "@sistent/sistent";
+
+export const BasicSelectCodeDemo = ({ variant, ...props }) => {
+  return (
+    <FormControl sx={{ width: "200px" }} variant={variant} {...props}>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }} defaultValue={10} {...props}>
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+export const AutoWidthSelectCodeDemo = () => {
+  return (
+    <FormControl sx={{ minWidth: "120px" }}>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }} defaultValue={10} autoWidth>
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+export const FullWidthSelectCodeDemo = () => {
+  return (
+    <FormControl fullWidth>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }} defaultValue={10} fullWidth>
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+export const LabelSelectCodeDemo = () => {
+  return (
+    <FormControl sx={{ width: "200px" }}>
+      <InputLabel id="demo-select-label">Age</InputLabel>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+        labelId="demo-select-label"
+        id="demo-select"
+        label="Age"
+      >
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+export const HelperSelectCodeDemo = () => {
+  return (
+    <FormControl sx={{ width: "200px" }}>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }} defaultValue={10}>
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Select>
+      <FormHelperText>This is a helper text</FormHelperText>
+    </FormControl>
+  );
+};
+
+export const PlaceholderSelectCodeDemo = () => {
+  const [selectedAge, setSelectedAge] = useState("");
+  return (
+    <FormControl sx={{ width: "200px" }}>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+        id="demo-select-placeholder"
+        onChange={(e) => setSelectedAge(e.target.value)}
+        renderValue={() => {
+          if (selectedAge == "") return <em>Select an age</em>;
+          return selectedAge;
+        }}
+        value={selectedAge}
+        displayEmpty
+      >
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+export const GroupingSelectCodeDemo = () => {
+  return (
+    <FormControl sx={{ width: "200px" }}>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }} defaultValue={10}>
+        <ListSubheader muiSkipListHighlight>Group 1</ListSubheader>
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <ListSubheader muiSkipListHighlight>Group 2</ListSubheader>
+        <MenuItem value={30}>Thirty</MenuItem>
+        <MenuItem value={40}>Fourty</MenuItem>
+        <ListSubheader muiSkipListHighlight>Group 3</ListSubheader>
+        <MenuItem value={50}>Fifty</MenuItem>
+        <MenuItem value={60}>Sixty</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+export const BehaviorSelectCodeDemo = () => {
+  return (
+    <Grid container spacing={2} sx={{ justifyContent: "center" }}>
+      <FormControl sx={{ width: "200px" }} disabled>
+        <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }} defaultValue={10}>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl sx={{ width: "200px" }} error>
+        <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }} defaultValue={10}>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+    </Grid>
+  );
+};
+
+export const RequiredSelectCodeDemo = () => {
+  return (
+    <FormControl sx={{ width: "200px" }} required>
+      <InputLabel id="demo-select-label-required">Age</InputLabel>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+        labelId="demo-select-label-required"
+        id="demo-select-required"
+        label="Age"
+      >
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+export const MultipleSelectCodeDemo = () => {
+  const [multipleAges, setMultipleAges] = useState([10]);
+  const handleMultiplSelect = (event) => {
+    setMultipleAges(event.target.value);
+  };
+  return (
+    <FormControl sx={{ width: "200px" }}>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+        multiple
+        input={<OutlinedInput label="Name" />}
+        value={multipleAges}
+        onChange={handleMultiplSelect}
+      >
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+
+<a id="Select variants">
+  <h2>Select variants</h2>
+</a>
+<p>
+  The select comes in three types: Outlined, Filled, and Standard. To
+  specify the variant, pass a value to the variant prop.
+</p>
+
+<h3>Outlined</h3>
+<p>
+  If not specified, the default variant of the select if outlined.
+</p>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <BasicSelectCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="outlined-selection" collapsible code={`<Select>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`} />
+</div>
+
+<h3>Filled</h3>
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <BasicSelectCodeDemo variant="filled" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="filled-selection" collapsible code={`<Select variant="filled">
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`} />
+</div>
+
+<h3>Standard</h3>
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <BasicSelectCodeDemo variant="standard" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="standard-selection" collapsible code={`<Select variant="standard">
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`} />
+</div>
+
+<a id="Sizes">
+  <h2>Sizes</h2>
+</a>
+
+<p>
+  There are 3 size option for the select component: autowidth, small,
+  and fullWidth. Depending on the size of the select, different prop
+  can be passed to the component.
+</p>
+
+<h3>Autowidth</h3>
+<p>
+  An autoWidth option is passed to the component to enable this
+  attribute
+</p>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <AutoWidthSelectCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="size-auto" collapsible code={`<Select autoWidth>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`} />
+</div>
+
+<h3>Small</h3>
+<p>
+  To generate small select, pass a size prop with a value of small
+</p>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <BasicSelectCodeDemo size="small" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="size-small" collapsible code={`<Select size="small">
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`} />
+</div>
+
+<h3>Full width</h3>
+<p>
+  The select will expand the full width of its parent when passed
+  fullWidth prop
+</p>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <FullWidthSelectCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="size-fullwidth" collapsible code={`<Select fullWidth>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`} />
+</div>
+
+<a id="Customization">
+  <h2>Customization</h2>
+</a>
+
+<h3>Label</h3>
+<p>
+  To add a label to the select component, wrap it inside a FormControl
+  component. Add an InputLabel component and link it to the select
+  component using the labelId prop. Ensure the label prop in the
+  Select component matches the InputLabel text.
+</p>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <LabelSelectCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="customize-label" collapsible code={`<FormControl sx={{ width: "200px" }}>
+  <InputLabel id="demo-select-label">Age</InputLabel>
+  <Select
+    labelId="demo-select-label"
+    label="Age"
+  >
+    <MenuItem value={10}>Ten</MenuItem>
+    <MenuItem value={20}>Twenty</MenuItem>
+    <MenuItem value={30}>Thirty</MenuItem>
+  </Select>
+</FormControl>`} />
+</div>
+
+<h3>Helper text</h3>
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <HelperSelectCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="customize-helper-text" collapsible code={`<FormControl sx={{ width: "200px" }}>
+  <Select>
+    <MenuItem value={10}>Ten</MenuItem>
+    <MenuItem value={20}>Twenty</MenuItem>
+    <MenuItem value={30}>Thirty</MenuItem>
+  </Select>
+  <FormHelperText>This is a helper text</FormHelperText>
+</FormControl>`} />
+</div>
+
+<h3>Placeholder</h3>
+<p>
+  To add a placeholder, use the renderValue prop to display a
+  placeholder text when no value is selected.
+</p>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PlaceholderSelectCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="customize-placeholder" collapsible code={`const [selectedAge, setSelectedAge] = React.useState("");
+
+<Select
+  onChange={(e) => setSelectedAge(e.target.value)}
+  renderValue={() => {
+    if (selectedAge == "") return <em>Select an age</em>;
+    return selectedAge;
+  }}
+  value={selectedAge}
+  displayEmpty
+>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`} />
+</div>
+
+<h3>Grouping</h3>
+To group selection options, use the ListSubheader component to create
+headers for each group within the dropdown menu. This helps users to
+easily navigate and find the options they need.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <GroupingSelectCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="customize-grouping" collapsible code={`<Select>
+  <ListSubheader muiSkipListHighlight>Group 1</ListSubheader>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <ListSubheader muiSkipListHighlight>Group 2</ListSubheader>
+  <MenuItem value={30}>Thirty</MenuItem>
+  <MenuItem value={40}>Fourty</MenuItem>
+  <ListSubheader muiSkipListHighlight>Group 3</ListSubheader>
+  <MenuItem value={50}>Fifty</MenuItem>
+  <MenuItem value={60}>Sixty</MenuItem>
+</Select>`} />
+</div>
+
+<p>
+  Additional props such as error, required, and disabled can be passed
+  to the select component to customize its behavior.
+</p>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <BehaviorSelectCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="behavior-error-disabled" collapsible code={`<Select disabled>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>
+<Select error>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`} />
+</div>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <RequiredSelectCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="behavior-required" collapsible code={`<FormControl required>
+  <InputLabel id="demo-select-label-outlined">Age</InputLabel>
+  <Select
+    labelId="demo-select-label-outlined"
+    label="Age"
+  >
+    <MenuItem value={10}>Ten</MenuItem>
+    <MenuItem value={20}>Twenty</MenuItem>
+    <MenuItem value={30}>Thirty</MenuItem>
+  </Select>
+</FormControl>`} />
+<p>
+  <strong>NOTE:</strong>
+</p>
+<p>
+  When the select component is marked as required, an asterisk is
+  added to the label to indicate this to the user. It is recommended
+  to use this feature in conjunction with the label for better
+  clarity.
+</p>
+</div>
+
+<a id="Multi-select">
+  <h2>Multi-select</h2>
+</a>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <MultipleSelectCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="multiselect" collapsible code={`const [multipleAges, setMultipleAges] = React.useState([]);
+const handleMultiplSelect = (event) => {
+  let agesList = event.target.value;
+  setMultipleAges(agesList);
+};
+
+<Select
+  multiple
+  input={<OutlinedInput label="Name" />}
+  value={multipleAges}
+  onChange={handleMultiplSelect}
+>
+  <MenuItem value={10}>Ten</MenuItem>
+  <MenuItem value={20}>Twenty</MenuItem>
+  <MenuItem value={30}>Thirty</MenuItem>
+</Select>`} />
+</div>

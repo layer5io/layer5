@@ -14,9 +14,10 @@ const JoinCommunityWrapper = styled.div`
   }
   .intra-page {
     position: sticky;
-    top: 10rem;
+    top: 17rem;
     right: 0rem;
     margin-right: 1rem;
+    margin-top: 17rem;
     padding-bottom: 5rem;
     padding-right: 2rem;
     align-items: left;

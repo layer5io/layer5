@@ -1,6 +1,5 @@
 
 import React from "react";
-import { StaticImage } from "gatsby-plugin-image";
 
 
 import MesheryOperatorWrapper from "./mesheryoperator.style";
@@ -22,7 +21,7 @@ const MesheryOperatorPage = () => {
             <div className="hero-section">
               <Row>
                 <Col $lg={6} $md={6} $sm={12}>
-                  <StaticImage src={OperatorLogo} className="logo" />
+                  <img src={OperatorLogo} alt="Meshery Operator" className="logo" loading="lazy" />
                 </Col>
                 <Col $lg={6} $md={6} $sm={12}>
                   <div className="hero-text">

@@ -48,23 +48,10 @@ const BlogSideBarWrapper = styled.div`
         .scroll{
             max-height: 40rem;
             overflow: auto;
-            padding-right: 10px;
-            scrollbar-width: thin;
+            scrollbar-width: none;
 
-            &::-webkit-scrollbar-thumb {
-                background: #a9a9a9;
-                border-radius: 1rem;
-            }
-            &::-webkit-scrollbar-track {
-                background: #f0f0f0;
-                border-radius: 1rem;
-            }
-            &::-webkit-scrollbar-button {
+            &::-webkit-scrollbar{
                 display: none;
-            }
-            &::-webkit-scrollbar {
-                width: 6px;
-                display: block;
             }
         }
         

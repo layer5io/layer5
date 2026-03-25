@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-import reviewerImage from "./images/reviewer.jpeg";
+import reviewerImage from "./images/Dhruv-Sharma.png";
 
 const ReviewWrapper = styled.section`
   width: 100vw;
@@ -116,10 +116,10 @@ const Review = () => {
       <ReviewCard>
         <Avatar src={reviewerImage} alt="Reviewer" />
         <Quote>
-          Kanvas eliminated our 'YAML hell' overnight! What used to require three engineers and two weeks now takes one person an afternoon. The intuitive design interface is so powerful that complex microservice deployments have become effortless and error-free.
+      This wonderful product is a vendor-neutral self-service engineering platform that scales intent—not toil—by turning architecture into a consistent design-to-operate pipeline.
         </Quote>
-        <ReviewerName>Rajesh Nagarajan</ReviewerName>
-        <ReviewerTitle>Maintainer at Layer5</ReviewerTitle>
+        <ReviewerName>Dhruv Sharma</ReviewerName>
+        <ReviewerTitle> Principal Platform Product Manager at GuideWire</ReviewerTitle>
       </ReviewCard>
     </ReviewWrapper>
   );

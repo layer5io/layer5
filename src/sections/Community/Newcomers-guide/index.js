@@ -110,19 +110,19 @@ const NewcomersGuide = () => {
                   </a>{" "}
                   issues bearing the “
                   <a
-                    href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Alayer5labs+org%3Aservice-mesh-patterns+label%3A%22good+first+issue%22"
+                    href="https://github.com/layer5io/layer5/issues?q=state%3Aopen%20label%3A%22good%20first%20issue%22"
                     target="_blank"
                     rel="noreferrer"
                   >
                     good first issue
                   </a>
                   ” label, “
-                  <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Alayer5labs+org%3Aservice-mesh-patterns+label%3A%22first-timers-only%22+">
+                  <a href="https://github.com/layer5io/layer5/issues?q=state%3Aopen%20label%3Afirst-timers-only">
                     first timers only
                   </a>
                   ” or the “
                   <a
-                    href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Alayer5labs+org%3Aservice-mesh-patterns++label%3A%22help+wanted%22+"
+                    href="https://github.com/layer5io/layer5/issues?q=state%3Aopen%20label%3A%22help%20wanted%22"
                     target="_blank"
                     rel="noreferrer"
                   >

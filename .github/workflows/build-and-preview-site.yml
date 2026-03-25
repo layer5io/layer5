@@ -14,10 +14,18 @@ jobs:
           persist-credentials: false
           fetch-depth: 1
 
-      - name: Install and Build 🔧
-        run: |
-          make setup
-          make build
+      - name: Install 🔧
+        run: make setup
+
+      - name: Build 🏗️
+        # Always run the full production build explicitly.
+        # Do NOT use `make clean` here — that target is a developer convenience
+        # command whose recipe has changed multiple times, causing blog posts and
+        # other collections to be silently excluded from the deployed site when
+        # it ran a lite/dev build instead of the full production build.
+        # `npm run build` is the canonical, stable production build command:
+        #   cross-env BUILD_FULL_SITE=true gatsby build
+        run: npm run build
 
       - name: Broken Link Check 🔗
         uses: technote-space/broken-link-checker-action@v2
@@ -28,7 +36,7 @@ jobs:
         run: bash ./script.sh
 
       - name: Upload files
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@v6
         with:
           name: public-dir
           path: ./public-dir.zip

@@ -15,6 +15,7 @@ export const query = graphql`
         date(formatString: "MMMM Do, YYYY")
         author
         eurl
+        source_url
         description
         presskit
         thumbnail {

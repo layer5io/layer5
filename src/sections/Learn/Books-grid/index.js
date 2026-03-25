@@ -20,9 +20,6 @@ const BooksPage = ({ hide_path }) => {
         author
         abstract
         cover {
-          childImageSharp {
-            gatsbyImageData(width: 480, height: 600, layout: CONSTRAINED)
-          }
           extension
           publicURL
         }

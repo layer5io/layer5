@@ -12,17 +12,17 @@ import Track from "./track.webp";
 
 const CONTENT = [
   {
-    title: "CNCF Structured Learning Paths",
+    title: "Structured Learning Paths",
     img: Levels,
     description:
-      "Comprehensive CNCF-aligned learning paths designed for different skill levels — from beginner to advanced. Master Kubernetes and cloud native technologies through hands-on experience.",
+      "Comprehensive DevOps learning paths designed for different skill levels — from beginner to advanced. Master Kubernetes, cloud and cloud native technologies with hands-on experience.",
     gradient: "one",
   },
   {
     title: "Labs and Real-world Challenges",
     img: Challenges,
     description:
-      "Hands-on labs and challenges on live Kubernetes clusters. Practice real-world scenarios, earn points, and climb the leaderboard as you sharpen your cloud native skills.",
+      "Hands-on labs and challenges on live Cloud connections and Kubernetes clusters. Practice real-world scenarios, earn points, and climb the leaderboard as you sharpen your cloud native skills.",
     gradient: "two",
   },
   {

@@ -7,7 +7,6 @@ import EmptyResources from "../../Resources/Resources-error/emptyStateTemplate";
 import { Honeycomb, Hexagon } from "./Honeycomb/Honeycomb";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
-
 const IntegrationsGrid = ({ category, count }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -56,7 +55,7 @@ const IntegrationsGrid = ({ category, count }) => {
           infinite: false,
           arrows: true,
           slidesToShow: 3,
-        }
+        },
       },
       {
         breakpoint: 500,
@@ -64,10 +63,10 @@ const IntegrationsGrid = ({ category, count }) => {
           initialSlide: 0,
           arrows: true,
           infinite: false,
-          slidesToShow: 1.5
-        }
-      }
-    ]
+          slidesToShow: 1.5,
+        },
+      },
+    ],
   };
 
   const [searchQuery, setSearchQuery] = useState("");
@@ -76,7 +75,7 @@ const IntegrationsGrid = ({ category, count }) => {
     setSearchQuery,
     searchQuery,
     ["frontmatter", "title"],
-    ["frontmatter", "title"]
+    ["frontmatter", "title"],
   );
   const [activeIntegrationList, setIntegrationList] = useState([]);
   const [hideFilter, setHideFilter] = useState(false);
@@ -91,7 +90,7 @@ const IntegrationsGrid = ({ category, count }) => {
       }
       return initCategory;
     },
-    []
+    [],
   );
 
   const categoryCount = (categoryName) => {
@@ -217,7 +216,7 @@ const IntegrationsGrid = ({ category, count }) => {
   };
 
   return (
-    <HoneycombGrid>
+    <HoneycombGrid isDark={isDark}>
       <section className="heading">
         <h1>
           {Math.ceil(data.allMdx.nodes.length / 10) * 10}+ Built-In Integrations
@@ -233,7 +232,7 @@ const IntegrationsGrid = ({ category, count }) => {
         focusSearch={false}
       />
 
-      <section style={{ "margin": "0 2.6rem" }}>
+      <section style={{ margin: "0 2.6rem" }}>
         <IntegrationSlider {...settings}>
           {!hideFilter &&
             categoryNameList.map((item) => {
@@ -266,13 +265,12 @@ const IntegrationsGrid = ({ category, count }) => {
             const status =
               item.frontmatter.status === "InProgress" ? true : false;
             const integrationIcon = item.frontmatter.integrationIcon.publicURL;
-            const darkModeIntegrationIcon =
-              item.frontmatter.integrationIcon;
+            const darkModeIntegrationIcon = item.frontmatter.integrationIcon;
             if (status) {
               return (
                 <Hexagon
                   className="container-inactive"
-                  style={{ background: "#A0AAAA" }}
+                  style={{ background: isDark ? "#A0AAAA" : "#EEEEEE" }}
                 >
                   <span className="integration-container">
                     <img

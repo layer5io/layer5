@@ -3,7 +3,6 @@ import { Link } from "gatsby";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import ProjectItemWrapper from "./projectSection.style";
-import { StaticImage } from "gatsby-plugin-image";
 import CatalogLogo from "../../../assets/images/catalog-icon/catalog";
 import { ThemeManagerContext, ThemeManagerProvider } from "../../../theme/app/ThemeManager";
 
@@ -40,7 +39,7 @@ const Projects = () => {
             <Col $sm={12} $md={6} $lg={3}>
               <Link className="project-card" to="/cloud-native-management/kanvas">
                 <div className="project__block__inner">
-                  <StaticImage loading="lazy" src={kanvasLogo} alt="Kanvas Logo" width={50} height={80} imgStyle={{ width: "24px", height: "39px" }} />
+                  <img loading="lazy" src={kanvasLogo} alt="Kanvas Logo" width="24" height="39" style={{ width: "24px", height: "39px" }} />
                   <p>Kanvas</p>
                   <h3>Collaborative GitOps</h3>
                   {/* <h3>Multiplayer Kubernetes by Design</h3> */}
@@ -50,7 +49,7 @@ const Projects = () => {
             <Col $sm={12} $md={6} $lg={3}>
               <Link className="project-card" to="/cloud-native-management/meshery">
                 <div className="project__block__inner">
-                  <StaticImage loading="lazy" src={projectImage3} alt="Meshery Logo" width={80} height={80} imgStyle={{ width: "40px", height: "40px" }} />
+                  <img loading="lazy" src={projectImage3} alt="Meshery Logo" width="40" height="40" style={{ width: "40px", height: "40px" }} />
                   <p>Meshery</p>
                   <h3>Cloud Native Management and Governance</h3>
                 </div>
@@ -61,9 +60,9 @@ const Projects = () => {
                 <div className="project__block__inner">
                   <ThemeManagerProvider>
                     {( isDark ) ? (
-                      <StaticImage loading="lazy" src={projectImage2_light} alt="Light Mode SMP Logo" width={294} height={120} imgStyle={{ width: "98px", height: "40px" }}/>
+                      <img loading="lazy" src={projectImage2_light} alt="Light Mode SMP Logo" width="98" height="40" style={{ width: "98px", height: "40px" }} />
                     ) : (
-                      <StaticImage loading="lazy" src={projectImage2_dark} alt="Dark Mode SMP Logo" width={294} height={120} imgStyle={{ width: "98px", height: "40px" }}/>
+                      <img loading="lazy" src={projectImage2_dark} alt="Dark Mode SMP Logo" width="98" height="40" style={{ width: "98px", height: "40px" }} />
                     )}
                   </ThemeManagerProvider>
                   <p>Cloud Native Performance</p>
@@ -74,7 +73,7 @@ const Projects = () => {
             <Col $sm={12} $md={6} $lg={3}>
               <Link className="project-card" to="/projects/nighthawk">
                 <div className="project__block__inner">
-                  <StaticImage loading="lazy" src={projectImage4} alt="Nighthawk Logo" width={100} height={80} imgStyle={{ width: "50px", height: "40px" }} />
+                  <img loading="lazy" src={projectImage4} alt="Nighthawk Logo" width="50" height="40" style={{ width: "50px", height: "40px" }} />
                   <p>Nighthawk</p>
                   <h3>Distributed Performance Management for Microservices</h3>
                 </div>

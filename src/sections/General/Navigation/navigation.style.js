@@ -9,6 +9,7 @@ const NavigationWrap = styled.header`
   transition-property: color, background-color;
   transition-duration: 0.8s;
   transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  font-family: "Qanelas Soft", "Open Sans", sans-serif;
 
   .nav-container {
     display: flex;
