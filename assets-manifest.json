@@ -127,8 +127,8 @@
   "aaa5778d.js": "aaa5778d-450454e22f89d11e9781.js",
   "ac581ebe.js": "ac581ebe-d8f297aa0b7917a0edd2.js",
   "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff.js": "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff-86f57fb4160db5583f93.js",
-  "app-894a2cb7fe673ac5ce42.js.LICENSE.txt": "app-894a2cb7fe673ac5ce42.js.LICENSE.txt",
-  "app.js": "app-894a2cb7fe673ac5ce42.js",
+  "app-ff3baa3f1a08447bd499.js.LICENSE.txt": "app-ff3baa3f1a08447bd499.js.LICENSE.txt",
+  "app.js": "app-ff3baa3f1a08447bd499.js",
   "b064d02f5051aaf5d6ca2c79fa7f936120498863.js": "b064d02f5051aaf5d6ca2c79fa7f936120498863-c0397139da81ba269404.js",
   "b5f6012b.js": "b5f6012b-0d788a08c9a6ff5be2b5.js",
   "b94c7d6e898e669bbfd99da21b2e9e67976b8f68.js": "b94c7d6e898e669bbfd99da21b2e9e67976b8f68-75885140975394459b92.js",
@@ -185,7 +185,7 @@
   "component---src-pages-company-legal-sub-processors-js-7cd51175e050f82f492c.js.LICENSE.txt": "component---src-pages-company-legal-sub-processors-js-7cd51175e050f82f492c.js.LICENSE.txt",
   "component---src-pages-company-legal-sub-processors-js.js": "component---src-pages-company-legal-sub-processors-js-7cd51175e050f82f492c.js",
   "component---src-pages-company-legal-terms-of-service-js.js": "component---src-pages-company-legal-terms-of-service-js-fc7229c86e0436472ef3.js",
-  "component---src-pages-company-news-js.js": "component---src-pages-company-news-js-fa4017684d1368dae644.js",
+  "component---src-pages-company-news-js.js": "component---src-pages-company-news-js-db23ac751cb0ef06a17e.js",
   "component---src-pages-deploy-service-mesh-js.js": "component---src-pages-deploy-service-mesh-js-39713c624ed37c2ad918.js",
   "component---src-pages-docker-extension-meshery-js.js": "component---src-pages-docker-extension-meshery-js-3423f82397c36f79baa6.js",
   "component---src-pages-embed-js.js": "component---src-pages-embed-js-ff904aae74b658d7431f.js",
@@ -1398,7 +1398,7 @@
   "framework-68cec114a4c8cc45b448.js.LICENSE.txt": "framework-68cec114a4c8cc45b448.js.LICENSE.txt",
   "framework.js": "framework-68cec114a4c8cc45b448.js",
   "icon-library.gif": "static/icon-library-7a9eca699194351110d483fc21317036.gif",
-  "integration-image-colorMode.svg": "static/integration-image-colorMode.90d3dccb.svg",
+  "integration-image-colorMode.svg": "static/integration-image-colorMode.154ef79b.svg",
   "kubernetes.svg": "static/kubernetes.1984069f.svg",
   "layer5-products-overview-dark.svg": "static/layer5-products-overview-dark.e3465d19.svg",
   "layer5-products-overview.svg": "static/layer5-products-overview.e3465d19.svg",
@@ -2098,5 +2098,5 @@
   "static/yash-sharma.webp": "static/yash-sharma-54aa26b6e5743f0557cfc76aa9797f2d.webp",
   "static/yogi.webp": "static/yogi-d00ca1cc48ab74938a23d4359ef3fb01.webp",
   "styles.css": "styles.3ee686c849015a948e38.css",
-  "webpack-runtime.js": "webpack-runtime-00654da359dea9d93b2f.js"
+  "webpack-runtime.js": "webpack-runtime-b7f0554b3350f27835dd.js"
 }
