@@ -18,16 +18,25 @@ function colorchange(id) {
   element.classList.toggle("mystyle");
 }
 const NewsGrid = ({ data }) => {
+  const { coverageCount, releasesCount } = data.allMdx.nodes.reduce(
+    (acc, { frontmatter: { category } }) => {
+      if (category.includes("Coverage")) acc.coverageCount++;
+      if (category.includes("Press Release")) acc.releasesCount++;
+      return acc;
+    },
+    { coverageCount: 0, releasesCount: 0 },
+  );
+
   const [searchQuery, setSearchQuery] = useState("");
   const { queryResults, searchData } = useDataList(
     data.allMdx.nodes,
     setSearchQuery,
     searchQuery,
     ["frontmatter", "title"],
-    "id"
+    "id",
   );
   const [news, setNews] = useState(queryResults);
-  useEffect( () => {
+  useEffect(() => {
     setNews(queryResults);
     if (coverageFiltered == true) {
       setNews(filteredCoverage);
@@ -35,9 +44,7 @@ const NewsGrid = ({ data }) => {
     if (pressReleaseFiltered == true) {
       setNews(filteredPressRelease);
     }
-  }, [queryResults]
-
-  );
+  }, [queryResults]);
   const filteredCoverage = queryResults.filter((obj) => {
     return obj.frontmatter.category.includes("Coverage");
   });
@@ -47,7 +54,7 @@ const NewsGrid = ({ data }) => {
 
   const filterCoverage = () => {
     colorchange("coverage");
-    if (coverageFiltered == false && pressReleaseFiltered == false){
+    if (coverageFiltered == false && pressReleaseFiltered == false) {
       setNews(filteredCoverage);
       coverageFiltered = true;
     } else if (coverageFiltered == false && pressReleaseFiltered == true) {
@@ -55,14 +62,14 @@ const NewsGrid = ({ data }) => {
       setNews(filteredCoverage);
       coverageFiltered = true;
       pressReleaseFiltered = false;
-    } else if (coverageFiltered == true && pressReleaseFiltered == false){
+    } else if (coverageFiltered == true && pressReleaseFiltered == false) {
       setNews(queryResults);
       coverageFiltered = false;
     }
   };
   const filterPressRelease = () => {
     colorchange("press-release");
-    if (pressReleaseFiltered == false && coverageFiltered == false){
+    if (pressReleaseFiltered == false && coverageFiltered == false) {
       setNews(filteredPressRelease);
       pressReleaseFiltered = true;
     } else if (pressReleaseFiltered == false && coverageFiltered == true) {
@@ -70,42 +77,64 @@ const NewsGrid = ({ data }) => {
       setNews(filteredPressRelease);
       pressReleaseFiltered = true;
       coverageFiltered = false;
-    } else if (pressReleaseFiltered == true && coverageFiltered == false){
+    } else if (pressReleaseFiltered == true && coverageFiltered == false) {
       setNews(queryResults);
       pressReleaseFiltered = false;
     }
   };
   return (
     <NewsPageWrapper>
-      <PageHeader title="Layer5 in the News" path="News" img={rss_feed_icon}  feedlink="/news/feed.xml" />
+      <PageHeader
+        title="Layer5 in the News"
+        path="News"
+        img={rss_feed_icon}
+        feedlink="/news/feed.xml"
+      />
 
       <div>
         <Container>
           <div className="news-grid-wrapper">
             <div className="filter-buttons">
               <div className="button-container">
-                <Button id="coverage" onClick={filterCoverage} className="coverage-button">Coverage</Button>
-                <Button id="press-release" onClick={filterPressRelease} className="press-release-button">Press-Release</Button>
+                <Button
+                  id="coverage"
+                  onClick={filterCoverage}
+                  className="coverage-button"
+                >
+                  Coverage ({coverageCount})
+                </Button>
+                <Button
+                  id="press-release"
+                  onClick={filterPressRelease}
+                  className="press-release-button"
+                >
+                  Releases ({releasesCount})
+                </Button>
               </div>
               <div className="search">
                 <div className="searchBox">
-                  <SearchBox searchQuery={searchQuery} searchData={searchData} focusSearch={true}/>
+                  <SearchBox
+                    searchQuery={searchQuery}
+                    searchData={searchData}
+                    focusSearch={true}
+                  />
                 </div>
               </div>
             </div>
 
-            <Row style={{
-              flexWrap: "wrap"
-            }}
+            <Row
+              style={{
+                flexWrap: "wrap",
+              }}
             >
               {news.length < 1 && (
                 <Col $xs={12} $sm={6}>
-                      No News post that matches the title "{searchQuery}" found.
+                  No news matches the title "{searchQuery}" found.
                 </Col>
               )}
               {news.map(({ id, frontmatter, fields }) => (
                 <Col $xs={12} $sm={6} $lg={4} key={id}>
-                  <Card  frontmatter={frontmatter} fields={fields}/>
+                  <Card frontmatter={frontmatter} fields={fields} />
                 </Col>
               ))}
             </Row>

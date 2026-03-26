@@ -23,10 +23,11 @@ published: true
 import { Link } from "gatsby";
 import { NewsWrapper } from "../../News.style.js";
 import Blockquote from "../../../../reusecore/Blockquote";
+import BlockquoteAlt from "../../../../reusecore/Blockquote/Blockquote-alt-style";
 
 <NewsWrapper>
 
-**AMSTERDAM, Netherlands – March 23, 2026** – At KubeCon + CloudNativeCon Europe 2026, the maintainers of Meshery today announced the general availability of **Meshery v1.0**, the extensible cloud native management platform now recognized as the governance layer the cloud native stack has long been missing. The release arrives at an inflection point: as AI-generated infrastructure configurations proliferate across Kubernetes clusters, multi-cloud environments, and GitOps pipelines, the cost of misconfiguration, configuration drift, and invisible change has never been higher.
+**AMSTERDAM, Netherlands – March 23, 2026** – At KubeCon + CloudNativeCon Europe 2026, the maintainers of Meshery today announced the general availability of [Meshery v1.0](https://meshery.io/blog/meshery-v1.0-general-availability/), the extensible cloud native management platform now recognized as the governance layer the cloud native stack has long been missing. The release arrives at an inflection point: as AI-generated infrastructure configurations proliferate across Kubernetes clusters, multi-cloud environments, and GitOps pipelines, the cost of misconfiguration, configuration drift, and invisible change has never been higher.
 
 Meshery v1.0 answers that moment. It introduces a governance-first architecture that makes infrastructure **visible, verifiable, and collaborative** - establishing what the project calls *Infrastructure as Design* as the new operational paradigm for engineering teams navigating the AI era.
 
@@ -48,11 +49,11 @@ Meshery v1.0 is that oversight layer. Its visual, collaborative design surfaces 
 
 At the core of Meshery v1.0 is the Infrastructure as Design model: a shift from managing infrastructure as disconnected text files to operating it as a shared, visual, living artifact - where teams can see the blast radius of a change, review AI-suggested configurations the way they review code, and collaborate in real time across organizational boundaries.
 
-This model is operationalized through two complementary surfaces:
+This model is operationalized through <a href="https://www.kanvas.new">Kanvas</a>, with two complementary surfaces:
 
-**Kanvas Designer (GA):** A declarative, drag-and-drop visual design interface - "diagram as code" - where infrastructure is designed, versioned, and diff'ed as a visual artifact rather than a wall of YAML.
+**<a href="https://docs.layer5.io/kanvas/designer/">Kanvas Designer</a> (GA):** A declarative, drag-and-drop visual design interface - "diagram as code" - where infrastructure is designed, versioned, and diff'ed as a visual artifact rather than a wall of YAML.
 
-**Kanvas Operator (Beta):** A real-time operations surface providing live resource views and cluster management, giving SRE and platform teams continuous situational awareness across multi-cluster, multi-cloud deployments.
+**<a href="https://docs.layer5.io/kanvas/operator/">Kanvas Operator</a> (Beta):** A real-time operations surface providing live resource views and cluster management, giving SRE and platform teams continuous situational awareness across multi-cluster, multi-cloud deployments.
 
 Together, they deliver what no configuration management tool or cluster visualizer alone provides: a single workspace where infrastructure is designed, understood, and operated as a team sport - with human oversight explicitly built into every step of the AI-assisted workflow.
 
@@ -96,22 +97,21 @@ Meshery is the extensible cloud native management platform that enables the coll
 
 **Media Contact**<br />
 The Meshery Authors<br />
-maintainers@meshery.io<br />
 <a href="https://meshery.io">https://meshery.io</a>
 
-<Blockquote
+<BlockquoteAlt
   quote="Kanvas has me rethinking how I approach interactions with team members. The ability to visually design, import existing Helm charts, and collaborate on changes in a single GitOps workflow might just eliminate my cross-team friction. Workspaces in Kanvas are my new Google Drive for infrastructure work."
   person="Venil Noronha"
   title="Tech Lead at Stripe"
 />
 
-<Blockquote
+<BlockquoteAlt
   quote="Meshery is simply incredible: just give it a try and it might fill the void you never knew you had. It provides the standardization and visibility and an easy path to scalable infrastructure."
   person="Mars Toktonaliev"
   title="CNCF Ambassador and Senior Systems Integrator at KGPCo."
 />
 
-<Blockquote
+<BlockquoteAlt
   quote="I started looking for a suitable open-source project to contribute to in late 2025. While exploring projects under CNCF, Meshery immediately caught my attention. Around the same time, I came across a CNCF blog post by Lee announcing the Certified Meshery Contributor certification, which really intrigued me. These days, I genuinely enjoy reviewing code, participating in discussions, and hosting study groups for aspiring Certified Meshery Contributors. Mentoring others and being helpful is something I truly value, and I find the whole experience incredibly rewarding."
   person="Kavitha Karunakaran"
   title="Meshery Community Manager"
