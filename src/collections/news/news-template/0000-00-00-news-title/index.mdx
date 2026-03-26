@@ -1,34 +1,27 @@
 ---
-title: "An example news headline here"
-subtitle: "A sample subtitle about growing together as a community and building a project that matters"
+type: News # Must be "News"
+title: "" # Mandatory. The title of the news item, which will appear in the listing and on the news item page. This should be a concise summary of the news content.
+subtitle: "" # Optional. A short description or tagline for the news item.
 date: 2020-06-01 12:15:05 +0000
-author: The Newsroom
-thumbnail_svg: ./sample.webp
-darkthumbnail_svg: ./sample.webp
-eurl: https://www.example.com/some/other/site
-source_url: https://original-source.com/article (Optional)
-published: false
+author: "" # "The Newsroom" for Layer5 releases, or the name of the publication for coverage items for "Coverage" category news; e.g. "TechCrunch", "The New Stack", etc.
+thumbnail: ./hero.webp # Mandatory. Path to the thumbnail image for light mode (relative to this file) and can be .wepb, .png, .jpg, or .svg.
+darkthumbnail: ./hero-dark.webp # Mandatory. Path to the thumbnail image for dark mode (relative to this file) and can be .wepb, .png, .jpg, or .svg.
+description: "" # Mandatory. A brief description of the news item that will appear in the listing and on the news item page. This should be a concise summary of the news content.
+category: Coverage # Must be either "Coverage" or "Release". This is used to determine which section of the news collection this item will be listed under. See the "Coverage" and "Release" sections of the news listing page for examples. If the category is not one of these two values, the news item will not be listed on the website.
+tags: [] # Mandatory. An array of tags for the news item, such as ["Meshery", "KubeCon", "CNCF"].  
+presskit: "" # Optional. A URL to a press kit or additional resources related to the news item.
+resource: false # Mandatory. A boolean indicating whether this news item is a resource that should be listed in the resources section of the website. If true, it will be included in the resources section; if false or omitted, it will not be included in the resources section but will still appear in the news listing.
+published: true # Mandatory A boolean indicating whether the news item is published. If true, it will be visible on the website; if false, it will be hidden until ready for publication.
+source_url: "" # Mandatory. URL to the original article for "Originally published at" attribution.
+
 ---
 
-{/* A template and instructions for creating news entries.
-
-subtitle:  If the "subtitle" variable is not defined, then put subtitle:""
-eurl:      If the "eurl" (external url) variable is not defined, then put eurl:""
-source_url: Optional. URL to the original article for "Originally published at" attribution.
-        for any content to be directly entered below the front matter.
-published: "true" when ready to be public
-
-Make a copy of this news template. Do not delete this template.
-Any styles to be defined can be defined in News.style.js and the class can be used here */}
+{/* A template and instructions for creating news entries. Any styles to be defined can be defined in News.style.js and the class can be used here */}
 
 import { NewsWrapper } from "../../News.style.js";
 
 <NewsWrapper>
 
-<div className="test">
-
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-</div>
 
 </NewsWrapper>
