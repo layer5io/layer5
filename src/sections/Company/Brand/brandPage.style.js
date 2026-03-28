@@ -152,7 +152,7 @@ const BrandPageWrapper = styled.section`
 	}
 
 	.download-button {
-		text-align: end;
+		text-align: center;
 		margin: 0 0 1rem 0;
 	}
 	.ImgDiv, .color-code-wrapper {
