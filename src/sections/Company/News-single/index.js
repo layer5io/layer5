@@ -86,7 +86,7 @@ const NewsSingle = ({ data, children }) => {
             </Row>
           </div>
           {frontmatter.source_url ? (
-            <div style={{ display: "flex", textDecoration: "italic" }}>
+            <div style={{ display: "flex", fontStyle: "italic" }}>
               <h5>
                 Originally published on{" "}
                 <a
@@ -100,7 +100,7 @@ const NewsSingle = ({ data, children }) => {
             </div>
           ) : (
             frontmatter.eurl && (
-              <div style={{ display: "flex", textDecoration: "italic" }}>
+              <div style={{ display: "flex", fontStyle: "italic" }}>
                 <h5>
                   Read the full article on{" "}
                   <a
