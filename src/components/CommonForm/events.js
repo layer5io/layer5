@@ -40,7 +40,6 @@ const EventForm = ({ form, title, submit_title, submit_body }) => {
       onSubmit={async (values) => {
         const { success } = await submitForm({ memberFormOne: values });
         if (success) {
-          setMemberFormOne(values);
           setStepNumber(1);
           setSubmit(true);
           window.scrollTo(0,window.scrollY - 800);
