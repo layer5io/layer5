@@ -146,6 +146,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       ) {
         nodes {
+          frontmatter {
+            category
+          }
           fields {
             slug
           }
@@ -386,6 +389,22 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const blogs = res.data.blogPosts.nodes;
   const resources = res.data.resourcePosts.nodes;
   const news = res.data.newsPosts.nodes;
+
+  const VALID_NEWS_CATEGORIES = new Set(["Coverage", "Press Release"]);
+  const invalidNewsItems = news.filter(
+    ({ frontmatter }) => !VALID_NEWS_CATEGORIES.has(frontmatter.category),
+  );
+  if (invalidNewsItems.length > 0) {
+    invalidNewsItems.forEach(({ frontmatter, internal }) => {
+      reporter.error(
+        `Invalid news category "${frontmatter.category}" in ${internal.contentFilePath}. Must be one of: ${[...VALID_NEWS_CATEGORIES].join(", ")}.`,
+      );
+    });
+    reporter.panicOnBuild(
+      "News category validation failed. Fix the categories listed above.",
+    );
+    return;
+  }
   const books = res.data.bookPosts.nodes;
   const events = res.data.eventPosts.nodes;
   const programs = res.data.programPosts.nodes;
@@ -581,12 +600,26 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
+  const latestProgramsBySlug = new Map();
   programs.forEach((program) => {
+    const slug = program.frontmatter.programSlug;
+    if (!latestProgramsBySlug.has(slug)) {
+      latestProgramsBySlug.set(slug, program);
+    } else {
+      const currentLatest = latestProgramsBySlug.get(slug);
+      if ((program.fields?.slug || "") > (currentLatest.fields?.slug || "")) {
+        latestProgramsBySlug.set(slug, program);
+      }
+    }
+  });
+
+  latestProgramsBySlug.forEach((program, slug) => {
     envCreatePage({
-      path: `/programs/${program.frontmatter.programSlug}`,
+      path: `/programs/${slug}`,
       component: `${MultiProgramPostTemplate}?__contentFilePath=${program.internal.contentFilePath}`,
       context: {
         program: program.frontmatter.program,
+        slug: program.fields?.slug,
       },
     });
   });
@@ -849,23 +882,20 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     value: collection,
   });
 
-  // Normalize blog date to ISO string for stable sort order across build environments (fixes production blog order)
-  if (collection === "blog") {
-    let dateForSort = "1970-01-01T00:00:00.000Z";
-    if (node.frontmatter?.date != null) {
-      try {
-        const parsed = new Date(node.frontmatter.date).toISOString();
-        if (!Number.isNaN(Date.parse(parsed))) dateForSort = parsed;
-      } catch {
-        // keep fallback
-      }
+  let dateForSort = "1970-01-01T00:00:00.000Z";
+  if (node.frontmatter?.date != null) {
+    try {
+      const parsed = new Date(node.frontmatter.date).toISOString();
+      if (!Number.isNaN(Date.parse(parsed))) dateForSort = parsed;
+    } catch {
+      // Keep fallback.
     }
-    createNodeField({
-      name: "dateForSort",
-      node,
-      value: dateForSort,
-    });
   }
+  createNodeField({
+    name: "dateForSort",
+    node,
+    value: dateForSort,
+  });
 
   if (collection !== "content-learn") {
     let slug = "";
