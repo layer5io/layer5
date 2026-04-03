@@ -1,0 +1,109 @@
+---
+title: "GitOps Best Practices for Platform Engineering Teams"
+subtitle: "How to visualize and manage GitOps workflows with Kanvas"
+date: 2026-04-01 08:00:00 -0600
+author: Layer5 Team
+thumbnail: ./gitops-kanvas-hero.svg
+darkthumbnail: ./gitops-kanvas-hero.svg
+category: "Platform Engineering"
+tags:
+  - GitOps
+  - Kanvas
+  - Platform Engineering
+  - Kubernetes
+  - DevOps
+  - Infrastructure
+type: Blog
+resource: true
+published: true
+product: Kanvas
+description: "GitOps is the gold standard for platform teams managing cloud-native infrastructure at scale. Learn how Kanvas closes the visibility gap between your Git repository and your live Kubernetes clusters."
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import { Link } from "gatsby";
+
+<BlogWrapper>
+
+GitOps promised to make infrastructure management as reliable as software delivery. Declare your desired state in Git, let an operator reconcile it against reality, and never SSH into a server again. For many platform engineering teams, that promise has delivered—but a visibility gap remains.
+
+Your Git repository holds the truth. Your cluster holds the current state. The space in between—the diff, the drift, the in-progress rollout—often lives nowhere but someone's terminal window.
+
+<Link to="/cloud-native-management/kanvas">Kanvas</Link> is built to close that gap. Here are the GitOps best practices that platform teams are using to get the most out of it.
+
+## 1. Treat Your Git Repository as the Single Source of Truth—and Visualize It
+
+The first principle of GitOps is well understood: everything goes through Git. Kubernetes manifests, Helm values, Kustomize overlays, and cluster configuration all live in version-controlled repositories. No manual `kubectl apply`. No cowboy changes to production.
+
+The practice that most teams miss is *making that source of truth legible to the whole team*. YAML is expressive, but it is not visual. A 400-line Helm values file does not communicate topology, dependencies, or blast radius in the way a canvas does.
+
+With Kanvas, you can import your existing Helm charts, Kustomize configurations, or raw Kubernetes manifests directly onto the canvas. Kanvas renders them as live, interactive infrastructure diagrams—showing deployments, services, config maps, ingress rules, and their relationships at a glance. Changes committed to Git can be reflected on the canvas, giving every engineer on the team—not just the one who wrote the YAML—a shared mental model of what is deployed and why.
+
+## 2. Make Infrastructure Review a Visual Process
+
+Code review for infrastructure changes is non-negotiable in GitOps. Pull requests are how you catch misconfigured resource limits, missing network policies, and accidental namespace collisions before they reach production.
+
+The problem is that reviewing YAML diffs in a pull request interface is error-prone. A three-line change to a `VirtualService` can have significant traffic routing implications that only become obvious when you see the before-and-after topology side by side.
+
+Kanvas supports **design-level review workflows**. Platform teams can use Kanvas Designer to render a proposed infrastructure change visually, share a link to the canvas in the pull request, and let reviewers inspect the topology rather than the raw manifest. This is especially valuable for:
+
+- Service mesh routing changes (Istio `VirtualService`, `DestinationRule`)
+- Multi-cluster deployment topology changes
+- Network policy additions or removals
+- New microservice introductions with service dependencies
+
+Pairing visual review with standard YAML diff review catches a class of mistakes that text-only review consistently misses.
+
+## 3. Connect Live Cluster State to Your Designs
+
+One of the hardest problems in GitOps is drift detection—knowing when the live state of your cluster has diverged from the desired state in Git. GitOps operators like Argo CD and Flux handle automatic reconciliation, but they do not always make it easy to understand *why* drift occurred or *what* the divergence looks like.
+
+Kanvas Operator mode connects directly to your running Kubernetes clusters. You can see the live state of every workload, service, and custom resource rendered on the same canvas you use to design infrastructure. When a deployment is degraded, when a pod is pending, when a replica count does not match the manifest—it shows up visually in the context of the full topology.
+
+This means your on-call SRE is not piecing together cluster state from `kubectl get` commands across five namespaces. They are looking at a live canvas that surfaces failures in their infrastructure context.
+
+## 4. Use the Kanvas Catalog to Standardize GitOps Patterns
+
+Platform teams are in the business of building paved roads for their internal customers. In a GitOps world, that means curating a library of approved, production-tested deployment patterns that application teams can adopt without reinventing the wheel.
+
+The <Link to="/cloud-native-management/catalog">Kanvas Catalog</Link> is purpose-built for this. Platform engineers can publish canonical designs—a standardized microservice pattern with sidecar injection, a database operator deployment with backup CronJobs, a multi-cluster ingress configuration—and make them available across the organization.
+
+Application teams clone the design, configure it for their service, and export it as Kubernetes manifests or a Helm chart ready for their GitOps pipeline. The pattern stays consistent. The configuration surface area is bounded. And the platform team retains visibility into what got deployed.
+
+This approach replaces the copy-paste YAML culture that leads to configuration drift and undocumented snowflakes with a **design-first, GitOps-delivered** workflow.
+
+## 5. Integrate Kanvas into Your CI/CD Pipeline
+
+GitOps automation works best when it starts early in the delivery process, not just at the point of cluster reconciliation. Platform teams who get the most out of <Link to="/cloud-native-management/meshery">Meshery</Link> and Kanvas integrate them as a pipeline stage.
+
+A practical pattern:
+
+1. **Design** the infrastructure change in Kanvas
+2. **Export** the resulting manifests to your GitOps repository
+3. **Review** the pull request using both YAML diff and a Kanvas canvas link
+4. **Merge** to trigger your GitOps operator (Argo CD, Flux, or similar)
+5. **Verify** the live cluster state in Kanvas Operator mode post-deployment
+
+This loop makes Kanvas a connective layer across the entire GitOps lifecycle—not just a diagramming tool that lives outside the pipeline.
+
+## 6. Enforce Policy as Part of the Visual Workflow
+
+Platform teams are responsible for guardrails, not just pipelines. In a GitOps model, policy enforcement typically happens at the admission controller layer (OPA Gatekeeper, Kyverno) or as a CI check on manifests before they are merged.
+
+Kanvas surfaces policy violations earlier—at design time. When you configure a workload on the canvas without resource limits, or add a service without a corresponding network policy, Kanvas can flag the issue before the manifest is ever written to Git. This shift-left approach reduces the feedback loop from "failed admission in staging" to "design-time warning on the canvas."
+
+For platform teams building internal developer platforms, this means you can encode your organization's Kubernetes standards into the design tool itself, not just the runtime enforcement layer.
+
+## The Bottom Line
+
+GitOps is a cultural and technical commitment to declarative, version-controlled infrastructure. The tooling has matured rapidly—but the visibility gap between what is in Git and what is running in production remains one of the leading sources of incident and confusion for platform teams.
+
+Kanvas gives platform engineers the visual layer that GitOps has always needed: import your existing configs, design new infrastructure visually, review changes as topology rather than text, and operate production clusters with full live-state visibility—all from a single canvas.
+
+If your team is managing Kubernetes at scale and you are ready to see your infrastructure rather than infer it, <Link to="/cloud-native-management/kanvas">get started with Kanvas</Link> or explore the <Link to="/cloud-native-management/catalog">Kanvas Catalog</Link> for production-ready GitOps patterns.
+
+---
+
+*Platform engineering questions? The <Link to="/community">Layer5 community</Link> is home to platform engineers, SREs, and cloud-native practitioners who are working through exactly these challenges. Join us on [Slack](https://slack.layer5.io).*
+
+</BlogWrapper>

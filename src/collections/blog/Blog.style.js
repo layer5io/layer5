@@ -23,6 +23,26 @@ export const BlogWrapper = styled.div`
     }
   }
 
+  div.outro {
+    display: flex;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    font-size: 0.9rem;
+    border-top: 3px solid ${(props) => props.theme.primaryLightColor};
+    border-bottom: 3px solid ${(props) => props.theme.primaryLightColor};
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    background-color: ${(props) => props.theme.secondaryLightColor};
+    justify-content: center;
+    text-align: center;
+    a {
+      color: ${(props) => props.theme.primaryLightColor};
+      font-weight: 600;
+    }
+  }
+
   div.tip {
     position: relative;
     float: right;
