@@ -37,9 +37,10 @@ const EventForm = ({ form, title, submit_title, submit_body }) => {
         org: org,
         form: form,
       }}
-      onSubmit={async (values) => {
+      onSubmit={async (values, { setStatus }) => {
         const { success } = await submitForm({ memberFormOne: values });
         if (success) {
+          setStatus(null);
           setStepNumber(1);
           setSubmit(true);
           window.scrollTo(0,window.scrollY - 800);
@@ -49,11 +50,15 @@ const EventForm = ({ form, title, submit_title, submit_body }) => {
           setOccupation(values.occupation);
           setOrg(values.org);
         } else {
-          alert("Submission failed. Please try again.");
+          setStatus({ submitError: "Submission failed. Please try again." });
         }
       }}
     >
-      <Form className="form" method="post">
+      {({ status }) => (
+        <Form className="form" method="post" aria-describedby="event-form-status">
+          <div id="event-form-status" className="form-error" role="alert" aria-live="assertive">
+            {status?.submitError || ""}
+          </div>
         <label htmlFor="firstname" className="form-name">First Name <span className="required-sign">*</span></label>
         <Field type="text" className="text-field" id="firstname" name="firstname" maxLength="32" pattern="[A-Za-z]{1,32}" required />
         <label htmlFor="lastname" className="form-name">Last Name <span className="required-sign">*</span></label>
@@ -66,7 +71,8 @@ const EventForm = ({ form, title, submit_title, submit_body }) => {
         <Field type="text" className="text-field" id="org" name="org" />
 
         <Button $secondary className="btn" title="Submit" />
-      </Form>
+        </Form>
+      )}
     </Formik>
   </div>
       }
