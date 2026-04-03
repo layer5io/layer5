@@ -25,9 +25,9 @@ export const BlogWrapper = styled.div`
 
   div.outro {
     display: flex;
-    padding-left: 3rem;
-    padding-right: 3rem;
-    font-size: 0.9rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1rem;
     border-top: 3px solid ${(props) => props.theme.primaryLightColor};
     border-bottom: 3px solid ${(props) => props.theme.primaryLightColor};
     margin-top: 2rem;
