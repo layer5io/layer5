@@ -83,7 +83,8 @@ yarn.lock
 
 #IDE Files
 .vscode
-.claude
+.claude/*
+!.claude/skills
 
 default.profraw
 
