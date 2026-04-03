@@ -1,0 +1,66 @@
+import React, { useMemo } from "react";
+import { graphql } from "gatsby";
+
+import SEO from "../components/seo";
+
+
+import ProgramsSingle from "../sections/Careers/Careers-Programs-single";
+
+export const query = graphql`query ProgramByName($program: String!) {
+  allMdx(
+    sort: {frontmatter: {title: DESC}}
+    filter: {frontmatter: {program: {eq: $program}}}
+  ) {
+    nodes {
+      frontmatter {
+        title
+        program
+      }
+      fields {
+        slug
+      }
+    }
+  }
+}`;
+
+const ProgramsPage = ({ data, children, pageContext }) => {
+  const programs = data.allMdx.nodes;
+  const { navigate } = require("gatsby");
+
+  const activeOption = useMemo(() => {
+    const initialIndex = programs.findIndex((program) => program.fields.slug === pageContext.slug);
+    return initialIndex !== -1 ? initialIndex : 0;
+  }, [programs, pageContext.slug]);
+
+  const options = useMemo(() => programs.map((program) => {
+    let optionItem = new Object();
+    optionItem.label = program.frontmatter.title;
+    optionItem.value = program.fields.slug;
+    return optionItem;
+  }), [programs]);
+  return (
+
+    <>
+
+
+      <ProgramsSingle
+        data={programs[activeOption]}
+        options={options}
+        setActiveOption={(slug) => navigate(slug)}
+        activeOption={activeOption}
+      >
+        {children}
+      </ProgramsSingle>
+
+    </>
+
+  );
+};
+
+export default ProgramsPage;
+
+
+export const Head = ({ data }) => {
+  const programs = data.allMdx.nodes;
+  return <SEO title={programs[0].frontmatter.program} />;
+};

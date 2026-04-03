@@ -1,0 +1,34 @@
+---
+title: Icons Code
+component: icons
+description: Icons are visual symbols used to represent ideas, objects, or actions.
+---
+
+import { KubernetesIcon, DesignIcon } from "@sistent/sistent";
+
+
+<a id="Default Icon">
+  <h2>Default Icon</h2>
+</a>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <KubernetesIcon />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-icon" collapsible code={`<KubernetesIcon />`} />
+</div>
+
+<a id="Custom Size">
+  <h2>Custom Size</h2>
+</a>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <DesignIcon width={40} height={40} />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="sized-icon" collapsible code={`<DesignIcon width={40} height={40} />`} />
+</div>

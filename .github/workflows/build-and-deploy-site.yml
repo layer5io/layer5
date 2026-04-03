@@ -1,0 +1,49 @@
+name: Build and Deploy Site
+on:
+  push:
+    branches: [master]
+    paths-ignore:
+      - .github/*
+      
+  workflow_dispatch:
+  workflow_call:
+    
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+
+      # - name: Cache Gatsby .cache and public folders
+      #   uses: actions/cache@v5
+      #   id: gatsby-cache
+      #   with:
+      #     path: |
+      #       public
+      #       .cache
+      #     key: ${{ runner.os }}-gatsby-${{ hashFiles('**/package-lock.json') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-gatsby-
+
+      - name: Install 🔧
+        run: make setup
+
+      - name: Build 🏗️
+        # Always run the full production build explicitly.
+        # Do NOT use `make clean` here — that target is a developer convenience
+        # command whose recipe has changed multiple times, causing blog posts and
+        # other collections to be silently excluded from the deployed site when
+        # it ran a lite/dev build instead of the full production build.
+        # `npm run build` is the canonical, stable production build command:
+        #   cross-env BUILD_FULL_SITE=true gatsby build
+        run: npm run build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: site # The branch the action should deploy to.
+          folder: public # The folder the action should deploy.
+          clean: true

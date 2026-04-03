@@ -1,0 +1,80 @@
+---
+name: "Avatar"
+title: Avatar
+published: true
+component: avatar
+description: An Avatar component is used to visually represent a user, profile, or entity, typically through an image, initials, or icon. It is commonly used in interfaces to indicate identity.
+---
+
+import { Avatar } from "@sistent/sistent";
+import { FaUser } from "@react-icons/all-files/fa/FaUser";
+import profilePicture from "../../../../assets/images/sistent/placeholder/user.webp";
+
+Avatars are versatile visual representations that provide instant visual identification for users, teams, or entities within digital interfaces. They serve as a quick and intuitive way to personalize and humanize digital experiences across various applications and platforms.
+
+<h3>Image Avatars</h3>
+
+Image avatars provide the most personalized representation by displaying actual profile pictures, organizational logos, or specific user imagery.
+
+<Row className="image-container" $Hcenter>
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Avatar alt="Profile picture" src={profilePicture} />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<h3>Initials Avatar</h3>
+
+When a profile image is unavailable, initials provide a professional and clean alternative for user identification.
+
+<Row className="image-container" $Hcenter>
+  <ThemeWrapper>
+     <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Avatar src="/broken.jpg">JS</Avatar>
+        <Avatar sx={{ ml: 2 }}>AB</Avatar>
+        <Avatar sx={{ ml: 2 }}>CD</Avatar>
+     </div>
+  </ThemeWrapper>
+</Row>
+
+<h3>Icon Avatar</h3>
+
+Icon avatars offer a universal visual representation when specific imagery isn't available or appropriate.
+
+<Row className="image-container" $Hcenter>
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Avatar>
+          <FaUser />
+        </Avatar>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<h3>Flexible Sizing</h3>
+
+Avatars can be dynamically sized to fit various design requirements and interface contexts.
+
+<Row className="image-container" $Hcenter>
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <Avatar alt="Small" sx={{ width: 32, height: 32, mr: 2 }} />
+        <Avatar alt="Medium" sx={{ width: 48, height: 48, mr: 2 }} />
+        <Avatar alt="Large" sx={{ width: 64, height: 64 }} />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<h3>Variants</h3>
+
+If you need square or rounded avatars, use the variant prop.
+
+<Row className="image-container" $Hcenter>
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Avatar alt="Square" variant="square" />
+        <Avatar alt="Rounded" variant="rounded" sx={{ ml: 2 }} />
+    </div>
+  </ThemeWrapper>
+</Row>

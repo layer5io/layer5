@@ -1,0 +1,69 @@
+---
+title: "The Enterprise Path to Service Mesh Architectures"
+date: 2018-06-11 21:15:05 +0000
+cover: ./The-Enterprise-Path-to-Service-Mesh-Architectures.webp
+thumbnail: ./The-Enterprise-Path-to-Service-Mesh-Architectures-small.webp
+author: "Lee Calcote"
+abstract: "Approaches to service mesh deployments and an explanation of service meshes in contrast to related technologies."
+published: true
+redirect_from:
+  - /books/the-enterprise-path-to-service-mesh-architectures/
+---
+
+import { BookWrapper } from "../Book.style";
+import service_mesh_ent_book from "./The-Enterprise-Path-to-Service-Mesh-Architectures.webp";
+import Button from "../../../reusecore/Button";
+import CommonForm from "../../../components/CommonForm";
+
+<BookWrapper>
+  <div className="book">
+    <a href={service_mesh_ent_book}>
+      <img
+        className="card"
+        width="300px"
+        src={service_mesh_ent_book}
+        alt="The Enterprise Path to Service Mesh Architectures"
+      />
+    </a>
+
+    <div className="two-buttons" style={{ marginTop: "2rem" }}>
+      <Button
+        primary
+        className="p-8 mr-2"
+        title="Get free ebook"
+        url="#epsma-book"
+      />
+    </div>
+  </div>
+
+  <p>
+    As someone interested in modern software design, you have heard of service mesh architectures...
+  </p>
+
+  <p>Three most important things readers will learn from this book:</p>
+
+  <ul className="book-bullets">
+    <li>What is a service mesh and why do I need one?</li>
+    <li>What are the different service meshes and how do they contrast?</li>
+    <li>Where do services meshes layer in with other technologies?</li>
+    <li>When and why should I adopt a service mesh?</li>
+    <li>What are popular deployment models and why?</li>
+    <li>What are practical steps to adopt a service mesh in my enterprise?</li>
+    <li>How do I fit a service mesh into my existing infrastructure?</li>
+  </ul>
+
+  <div id="epsma-book" style={{ marginBottom: "5rem" }} />
+
+  <CommonForm
+    title="Get the Free eBook"
+    form="epsma-book"
+    account_desc="Email the The Enterprise Path to Service Mesh Architectures 1st Edition"
+    submit_title="Your copy of the book will arrive in your mailbox shortly."
+    submit_body={
+      <>
+        While waiting for your copy to arrive, take a free{' '}
+        <a href="https://layer5.io/learn/learning-paths">learning path</a>.
+      </>
+    }
+  />
+</BookWrapper>

@@ -1,0 +1,88 @@
+---
+title: "Docker Compose: Orchestrating Multi-Service AI Applications Locally"
+subtitle: "Docker Model Runner - A Technical Primer for Engineers"
+date: 2025-04-24 10:30:05 -0530
+author: Lee Calcote
+thumbnail: ./hero-image.png
+darkthumbnail: ./hero-image.png
+category: "Docker"
+# description: "Git command line aliases and git shortcuts"
+tags:
+  - docker
+  - ai
+type: Blog
+resource: true
+published: true
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import { Link } from "gatsby";
+
+<BlogWrapper>
+
+So far in our [series on Docker Model Runner](/blog/category/docker), we've dissected its OCI-based model management, its performance-optimized execution architecture, and its OpenAI-compatible API. Now, we explore a feature that truly elevates its utility for engineers building complex systems: **deep integration with Docker Compose via a novel provider service type.**  
+
+For engineers, Docker Compose is the go-to tool for defining and running multi-container Docker applications. The introduction of the provider service type specifically for Model Runner bridges the gap between local AI model execution and the broader application stack, allowing you to define and manage AI models as integral components of your local development environment declaratively.
+
+## **Beyond CLI: Models as First-Class Services in Compose**
+
+While docker model run is handy for quick tests, real-world applications often involve multiple interacting services—a web frontend, a backend API, a database, and now, an AI model. Docker Model Runner's Compose integration allows you to define the AI model itself as a service within your `docker-compose.yml` file.  
+
+The key innovation here is the provider attribute within a service definition. Here's a conceptual example based on Docker's documentation:
+
+```yaml
+services:  
+  model\_provider\_service: \# You can name this service as you like  
+    provider:  
+      type: model        \# Specifies this is a model provider  
+      image: ai/llama3.2:1B-Q8\_0 \# The OCI image for the model  
+    \# No 'build' or 'image' directives here in the traditional sense for the provider
+
+  my\_app\_service:  
+    build: ./app  
+    ports:  
+      \- "8080:80"  
+    depends\_on:  
+      \- model\_provider\_service \# Ensures model is ready before the app starts  
+    environment:  
+      \# Environment variables will be injected here (see below)  
+      MODEL\_NAME: ${MODEL\_PROVIDER\_SERVICE\_MODEL}  
+      MODEL\_URL: ${MODEL\_PROVIDER\_SERVICE\_URL}
+```
+
+In this setup:
+
+* model\_provider\_service doesn't run a traditional container in the same way my\_app\_service does. Instead, it instructs Docker Compose to leverage Docker Model Runner.  
+* Docker Model Runner, when processing this provider service, will ensure the specified image (the AI model) is pulled and made available via its host-native inference engine.
+
+## **Automatic Model Provisioning and Service Discovery**
+
+This Compose integration brings significant benefits for engineers:
+
+1. **Declarative Model Dependencies:**  
+   * You declare your AI model dependency directly in your docker-compose.yml. Docker Model Runner handles the provisioning (pulling and preparing the model if needed) when you run docker compose up.  
+   * This is a stark improvement over manual docker model run commands or custom scripts to manage model lifecycle alongside your application stack.  
+2. **Automated Service Discovery via Environment Variables:**  
+   * This is a crucial feature for seamless integration. When my\_app\_service starts (after model\_provider\_service is ready), Docker Compose automatically injects environment variables into my\_app\_service.  
+   * These variables typically follow the pattern: PROVIDER\_SERVICE\_NAME\_MODEL and PROVIDER\_SERVICE\_NAME\_URL.  
+     * MODEL\_PROVIDER\_SERVICE\_MODEL: Contains the name/tag of the model being served (e.g., ai/llama3.2:1B-Q8\_0).  
+     * MODEL\_PROVIDER\_SERVICE\_URL: Provides the URL your application should use to access the Model Runner's API endpoint for this model. This would often point to the internal DNS http://model-runner.docker.internal or a host-accessible TCP port if configured.  
+   * Your application code can then dynamically use these environment variables to configure its AI client, making the connection to the local model effortless and portable.  
+3. **Simplified depends\_on for Startup Order:**  
+   * Using depends\_on ensures that your application services only start after Model Runner has signaled that the model provider is ready. This prevents your application from trying to connect to a model that isn't yet available.
+
+## **Engineering Benefits for Complex AI Applications**
+
+This declarative, integrated approach offers tangible advantages:
+
+* **Reproducible AI Development Environments:** Your entire local stack, including the specific AI model version, is defined in code (docker-compose.yml), making it easy to share, version control, and ensure consistency across development team members.  
+* **Simplified Onboarding:** New developers can get a complex AI-powered application stack running locally with a single docker compose up command.  
+* **Streamlined Local Testing of AI Features:** Test end-to-end flows involving your application logic and AI model interactions in a fully integrated local environment that mirrors how services would interact.  
+* **Foundation for Local MLOps Loops:** While focused on local development, this pattern lays a conceptual foundation for how AI models can be treated as manageable dependencies within larger application architectures, aligning with MLOps principles.
+
+By treating AI models as discoverable services managed by Compose, Docker Model Runner significantly lowers the barrier to building and iterating on sophisticated multi-service applications that leverage local AI capabilities. This moves beyond simply running a model in isolation to truly integrating AI into your development workflow.  
+Next up, we'll explore how Docker Model Runner specifically caters to Java developers through its integration with frameworks like Spring AI, further simplifying the adoption of local AI.  
+
+*This blog post is based on information about Docker Model Runner, a Beta feature. Features, commands, and APIs are subject to change.*
+
+</BlogWrapper>

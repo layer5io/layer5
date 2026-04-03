@@ -1,0 +1,177 @@
+---
+title: "MeshMark: Cloud Native Value Measurement"
+date: 2022-05-17 10:30:05 -0530
+author: Gaurav Chadha
+thumbnail: ./banner.webp
+darkthumbnail: ./banner.webp
+description: "An open index for measuring performance of cloud native infrastructure in context of the value provided to your business."
+category: "Service Mesh"
+tags:
+ - MeshMark
+ - ServiceMeshCon
+ - KubeCon
+ - Partners
+published: true
+featured: true
+resource: true
+type: Blog
+product: MeshMap
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import Blockquote from "../../../../reusecore/Blockquote";
+import { Link } from "gatsby";
+
+import meshmark from './meshmark-dark-text-side.svg';
+import performanceQuestion from './performance-question.webp';
+import smp from './smp.webp';
+import meshmarkSlide from './meshmark.webp';
+import example from './example.webp';
+import formula from './formula.webp';
+import MUE from './mue.webp';
+import MeshMapDemo from './meshmark-score.webp';
+
+<BlogWrapper>
+
+<div className="intro">
+  <Link to="/community/members/lee-calcote">Lee Calcote</Link> and{" "}
+  <Link to="#">Mrittika Ganguli</Link> presented <i>MeshMark: Service Mesh value measurement</i> at ServiceMeshCon Europe 2022.
+</div>
+
+<p>
+  <Link to="/community/members/lee-calcote">Lee Calcote</Link> is an innovative product and technology leader. As the founder and CEO of Layer5, he is at the forefront of the cloud native movement.
+</p>
+
+<p>
+  <Link to="#">Mrittika Ganguli</Link> is the Director of Cloud Native Data Plane, Principal Engineer, and Network Architect at Intel.
+</p>
+
+<img src={meshmark} alt="MeshMark Graphic" style={{ display: "block", margin: "0 auto 0.5rem", width: "40%" }} />
+
+---
+
+## What is MeshMark?
+
+MeshMark is a performance index that measures the value and overhead of your cloud native environment. It converts performance measurements into insights about the value of application networking functions, distilling overhead signals and KPIs into a simple index.
+
+<img src={performanceQuestion} alt="Performance characteristics question" style={{ width: "50%", float: "right" }} />
+
+### Talk started with a question to the audience
+
+<Blockquote
+  className="pull-left"
+  quote="We are missing some performance characteristics, as people have many metrics to track environments. It might take a while to articulate the performance characteristics of your environment."
+  person="Lee Calcote"
+/>
+
+---
+
+### Lee Calcote explains “Business Performance”
+
+<p>
+We're frequently overlooking business performance — the reason we run the infrastructure in the first place. Rather than only focusing on quantitative speeds and feeds, we should quantify the value the infrastructure provides.
+</p>
+
+<img src={smp} alt="Service Mesh Performance" style={{ width: "50%", float: "right" }} />
+
+---
+
+## Introduction to Service Mesh Performance (SMP)
+
+The Service Mesh Performance project (a CNCF project) provides a consistent specification for capturing infrastructure configuration, service mesh configuration, and workload characteristics. This enables:
+
+- Baselines  
+- Benchmark comparisons  
+- System-to-system exchange of performance data  
+
+---
+
+## Mrittika Ganguli introduces MeshMark with an example
+
+MeshMark measures whether the performance of your infrastructure aligns with the value your deployment is intended to provide.
+
+<Blockquote
+  className="pull-right"
+  quote="Are my resources utilized as best as possible? Why am I not getting the SLO met with 4 resources when I only needed 1 without the service mesh? Is the network a performance hog? MeshMark intends to help provide an index for many of these areas."
+  person="Mrittika Ganguli"
+/>
+
+<p>
+Often when loading a YouTube video, text appears before the video. The load latency of the video traffic determines the experience. MeshMark helps quantify the efficiency of infrastructure functions that impact this latency and ties it directly to resource usage and cost (TCO).
+</p>
+
+<img src={meshmarkSlide} className="slides" style={{ marginLeft: "30px" }} alt="MeshMark slides" />
+<img src={example} className="slides" style={{ marginLeft: "30px" }} alt="MeshMark example" />
+
+<img src={formula} alt="MeshMark formula" style={{ width: "50%", float: "right" }} />
+
+---
+
+# MeshMark: The Formula
+
+MeshMark scores from 0–100 and includes:
+
+- Value vs. overhead calculations  
+- Resource utilization efficiency  
+- Categorized consumption classes  
+
+---
+
+## Mrittika explains MUE (Mesh Utilization Efficiency)
+
+<p>
+MUE represents the ratio of measured platform resources to assigned resources.
+</p>
+
+<img src={MUE} alt="MeshMark MUE" style={{ width: "50%", float: "left", paddingRight: "1rem" }} />
+
+<p>
+CPU performance is an easy example:  
+MUE = 1 – (CPU Utilization / 100).  
+Higher latency lowers MUE, indicating reduced efficiency as QPS increases.
+</p>
+
+<p>
+Meshery, a cloud native management plane, helps visualize MUEs and evaluate efficiency of workloads across any service mesh.
+</p>
+
+<img src={MeshMapDemo} alt="MeshMap demo" style={{ width: "40%", float: "right" }} />
+
+---
+
+## Lee demonstrates MeshMap with an example Consul application
+
+<p>
+In the demo, a Consul workload is loaded into MeshMap's visual designer to inspect:
+</p>
+
+- Service splitting  
+- Service intentions  
+- Efficiency (MeshMark) calculations  
+
+---
+
+<div style={{ textAlign: "center" }}>
+  <iframe
+    width="70%"
+    height="450px"
+    style={{ marginRight: "1.5rem", marginLeft: "1.5rem" }}
+    src="https://www.youtube.com/embed/yvqn6ckO7BI"
+    title="MeshMark demo video"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  />
+  <p style={{ fontStyle: "italic", fontSize: "1rem", marginLeft: "1rem" }}>
+    MeshMark in Meshery (excerpt from ServiceMeshCon EU 2022 demo)
+  </p>
+</div>
+
+---
+
+<strong>
+  Lee Calcote and Mrittika Ganguli covered all the concepts of SMP and MeshMark.  
+  Learn more on the <Link to="https://meshery.io/service-mesh-interface">Service Mesh Performance</Link> website.
+</strong>
+
+</BlogWrapper>

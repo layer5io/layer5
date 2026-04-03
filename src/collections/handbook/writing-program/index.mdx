@@ -1,0 +1,242 @@
+---
+title: "Writing Program"
+description: "The Layer5 Writing Program is a way to demonstrate your expertise, give back to the community, and help us produce great content."
+type: Handbook
+---
+
+import { Container, Row, Col } from "../../../reusecore/Layout";
+import { Link } from "gatsby";
+import Button from "../../../reusecore/Button";
+import ContentForm from "./content-form";
+
+import blog from "./images/blogs.svg";
+import event from "./images/event.svg";
+import talks from "./images/talks.svg";
+import videos from "./images/videos.svg";
+import workshop from "./images/workshop.svg";
+import resources from "./images/resources.svg";
+
+<h2 className="heading-top">What is Layer5 Writing Program?</h2>
+
+The Layer5 Writing Program is a way to demonstrate your expertise, give back to the community, and help us produce great content. We collaborate with authors and technologists from around the world to produce high quality articles, blog posts, tutorials and other cloud native resources on Meshery, Kubernetes, CNCF, Docker and related technologies.
+
+## Why should you participate?
+
+<div className="list">
+  <Row>
+    <Col $lg={6} $md={6} $sm={12}>
+      <div className="listed">
+        <table className="table">
+          <tr>
+            <td className="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="27" height="40" fill="none" viewBox="0 0 40 40">
+                <rect width="40" height="40" fill="#C9FCF6" rx="5" />
+                <path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" />
+              </svg>
+            </td>
+            <td className="skill">
+              <h4>Improve your writing and <br /> communication skills</h4>
+              Publishing is a feedback-driven process that can help you understand your audience better, explain complex topics more clearly, and improve your overall communication skills.
+            </td>
+          </tr>
+          <tr>
+            <td className="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="27" height="40" fill="none" viewBox="0 0 40 40">
+                <rect width="40" height="40" fill="#C9FCF6" rx="5" />
+                <path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" />
+              </svg>
+            </td>
+            <td className="skill">
+              <h4>Demonstrate your expertise</h4>
+              Writing about a topic is one of the best ways to learn it deeply and demonstrate your knowledge to others.
+            </td>
+          </tr>
+          <tr>
+            <td className="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="27" height="40" fill="none" viewBox="0 0 40 40">
+                <rect width="40" height="40" fill="#C9FCF6" rx="5" />
+                <path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" />
+              </svg>
+            </td>
+            <td className="skill">
+              <h4>Grow your professional network</h4>
+              Connect with other writers, technologists, and community members who share your interests.
+            </td>
+          </tr>
+        </table>
+      </div>
+    </Col>
+    <Col $lg={6} $md={6} $sm={12}>
+      <div className="listed">
+        <table className="table">
+          <tr>
+            <td className="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="27" height="40" fill="none" viewBox="0 0 40 40">
+                <rect width="40" height="40" fill="#C9FCF6" rx="5" />
+                <path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" />
+              </svg>
+            </td>
+            <td className="skill">
+              <h4>Build your personal brand</h4>
+              Establish yourself as a thought leader in your field and build credibility.
+            </td>
+          </tr>
+          <tr>
+            <td className="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="27" height="40" fill="none" viewBox="0 0 40 40">
+                <rect width="40" height="40" fill="#C9FCF6" rx="5" />
+                <path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" />
+              </svg>
+            </td>
+            <td className="skill">
+              <h4>Contribute to open source</h4>
+              Help the open source community grow by sharing your knowledge and experience.
+            </td>
+          </tr>
+          <tr>
+            <td className="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="27" height="40" fill="none" viewBox="0 0 40 40">
+                <rect width="40" height="40" fill="#C9FCF6" rx="5" />
+                <path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" />
+              </svg>
+            </td>
+            <td className="skill">
+              <h4>Get recognized</h4>
+              Published authors receive recognition through social media, community highlights, and contributor profiles.
+            </td>
+          </tr>
+        </table>
+      </div>
+    </Col>
+  </Row>
+</div>
+
+## Where can you contribute?
+
+We welcome the contribution of any type that shares knowledge about our projects or related technologies.
+
+Do you want to document your recent effort in implementing a new feature? Do you want to share a solution for a problem you were struggling with? Do you want to share information about a recent technology you find intriguing? Want to host an event with Layer5? Want to deliver a talk, a workshop, or a tutorial? Just let us know.
+
+<Row>
+  <div className="content_list">
+    <Col $sm={12} $md={6} $lg={4}>
+      <Link className="project-card" to="/blog">
+        <div className="content_type">
+          <img src={blog} alt="Blog" />
+          <h5>Blog</h5>
+          <p>Share Your Experience</p>
+        </div>
+      </Link>
+    </Col>
+    <Col $sm={12} $md={6} $lg={4}>
+      <Link className="project-card" to="/resources">
+        <div className="content_type">
+          <img src={resources} alt="Resource" />
+          <h5>Resource</h5>
+          <p>Articles, Tutorials, Podcasts and More</p>
+        </div>
+      </Link>
+    </Col>
+    <Col $sm={12} $md={6} $lg={4}>
+      <Link className="project-card" to="/learn/workshops">
+        <div className="content_type">
+          <img src={workshop} alt="Workshop" />
+          <h5>Workshop</h5>
+          <p>Deliver a Hands-on Learning Experience</p>
+        </div>
+      </Link>
+    </Col>
+  </div>
+</Row>
+<Row>
+  <div className="content_list">
+    <Col $sm={12} $md={6} $lg={4}>
+      <Link className="project-card" to="/community/events">
+        <div className="content_type">
+          <img src={event} alt="Event" />
+          <h5>Event</h5>
+          <p>Organize an Event</p>
+        </div>
+      </Link>
+    </Col>
+    <Col $sm={12} $md={6} $lg={4}>
+      <Link className="project-card" to="/community/events">
+        <div className="content_type">
+          <img src={talks} alt="Talks" />
+          <h5>Talks</h5>
+          <p>Talk About Anything Cloud Native</p>
+        </div>
+      </Link>
+    </Col>
+    <Col $sm={12} $md={6} $lg={4}>
+      <Link className="project-card" to="/cloud-native-management/meshery">
+        <div className="content_type">
+          <img src={videos} alt="Videos" />
+          <h5>Recorded Videos</h5>
+          <p>Product Videos, Reviews or Demo</p>
+        </div>
+      </Link>
+    </Col>
+  </div>
+</Row>
+
+## What is the process?
+
+<div className="process">
+  <div className="item">
+    <p>If you're interested in the Layer5 Writing Program, please submit your content proposal to get started. <i>Don't know where to start? We have plenty of topic suggestions for you.</i></p>
+    <ContentForm />
+  </div>
+  <div className="item">
+    <p>Upon being accepted, you'll work with a coordinator on the content team to finalize your topic, develop an outline, and discuss submission details.</p>
+  </div>
+  <div className="item">
+    <p>After your content is published, we'll help promote it across our social media channels and community platforms.</p>
+  </div>
+</div>
+
+
+
+## What are some suggested topics?
+
+Here are some suggested topics to get you started. If you have an idea that isn't listed here or if you have any question, please let us know on our [Discuss Forum](https://discuss.layer5.io/) / [Slack Channel](https://layer5io.slack.com/).
+
+- **DevOps/Observability/Kubernetes:**
+  - Distributed Tracing in Context of Meshery's Architecture.
+  - One-stop Cloud Native Market Place - Meshery Catalog.
+  - Interpreting your Cloud Native Performance - SMP.
+  - Creating and Deploying your first application with Kanvas.
+  - Load generation and Load balancing.
+  - DevOps and Platform Engineering.
+  - Beginners guide to Meshmodel.
+  - Enhancing Microservices Observability with Meshery and Prometheus.
+
+- **Community:**
+  - Building Bridges, Not Walls: The Power of Open Source Collaboration.
+  - A Deep Dive into Meshery's Contribution to Cloud Native Ecosystem.
+  - Open Source Sustainability: Funding Models for Long-Term GitHub Projects.
+  - Importance to an open source community.
+  - Beyond Code: The Unsung Heroes of Open Source - Documenters, Testers, and Designers.
+  - Open Source Alchemy: Transforming Community Contributions into Gold.
+  - Collaborative Open Source Development: Inside the Community of Layer5.
+
+## How to Submit and Review Your Writing?
+
+The Writing Program offers writers two convenient ways to get their writings reviewed by Community. Whether you prefer working with Google Docs or contributing directly to the website, we've got you covered. This structured guide will walk you through both options, ensuring that your valuable content is reviewed effectively.
+
+1. **Google Docs Review:**
+
+   If you prefer a straightforward approach, start by crafting your blog article within [Google Docs](https://docs.google.com/), ensuring it's well-structured and error-free. Share the document with us by adding it to the [Community Drive](https://drive.google.com/drive/folders/1o6ZSqCq1QUJmLIjl_Y0VgT_azNbgg1W2), we will provide feedback directly within the Google Doc. Engage in discussions to refine your content collaboratively. Once thoroughly reviewed, prepare your submission according to community guidelines.
+
+2. **Website Contribution Review:**
+
+   For those comfortable with local website development, contribute directly to the community website. [Set up your local environment](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md), create a blog post adhering to specified guidelines, and submit it via a Pull Request on [GitHub](https://github.com/layer5io/layer5/). Reviewers will provide feedback, and you'll refine your post collaboratively. Upon completion, maintainers will merge your blog post into the website repository, celebrating your contribution.
+
+## Additional Resources
+
+- [Contributing to Layer5 Blogs](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#adding-a-blog-post)
+- [Contributing to Layer5 Resources](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#adding-a-resource)
+- [View open Writing Program issues](https://github.com/layer5io/layer5/labels/area%2Fblog)
+- Join the [Layer5 Discussion Forum](https://discuss.layer5.io/)
+- Explore our <Link to="/resources">Resource Library</Link>
+- <Link to="/learn">Learn Cloud Native</Link>

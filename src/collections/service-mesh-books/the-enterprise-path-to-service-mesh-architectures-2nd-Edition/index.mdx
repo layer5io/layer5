@@ -1,0 +1,69 @@
+---
+title: "The Enterprise Path to Service Mesh Architectures (2nd Edition)"
+date: 2020-10-23 21:15:05 +0000
+cover: ./The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition.webp
+thumbnail: ./The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition.webp
+author: "Lee Calcote"
+abstract: "Planning to build a microservice-driven cloud native application or looking to modernize existing application services?"
+published: true
+redirect_from:
+  - /books/the-enterprise-path-to-service-mesh-architectures-2nd-edition
+  - /books/the-enterprise-path-to-service-mesh-architectures-2nd-Edition
+---
+
+import { BookWrapper } from "../Book.style";
+import service_mesh_book_second_edition from "./The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition.webp";
+import Button from "../../../reusecore/Button";
+import CommonForm from "../../../components/CommonForm";
+
+<BookWrapper>
+
+<div className="book">
+  <a href={service_mesh_book_second_edition}>
+    <img
+      className="card"
+      width="300"
+      src={service_mesh_book_second_edition}
+      alt="The Enterprise Path to Service Mesh Architectures – 2nd Edition cover"
+    />
+  </a>
+
+  <div className="two-buttons" style={{ marginTop: "2rem" }}>
+    <Button
+      primary
+      className="p-8 mr-2"
+      title="Get free ebook"
+      url="#epsma-book"
+    />
+  </div>
+</div>
+
+Planning to build a microservice-driven cloud native application or looking to modernize existing application services? Consider using a service mesh. A service mesh approach can help you create robust and scalable applications, but it also introduces new challenges. This updated report answers common questions regarding service mesh architectures through the lens of a large enterprise.
+
+**Author Lee Calcote**, founder and CEO of Layer5, shows developers, operators, architects, and IT leaders how to evaluate your organization’s readiness for  using a service mesh—and provides a clear path to help you adopt one.
+
+You’ll explore:
+
+- Service mesh concepts, architecture, and components (control plane & data plane)
+- How a service mesh provides observability, resiliency, security, and traffic control
+- Differences among popular service meshes and their components
+- Comparison with related technologies (Kubernetes, API gateways, sidecar libraries, etc.)
+- Practical adoption steps, deployment models, customization, and integration
+- The power of modern cloud-native management and data planes
+
+<div id="epsma-book" style={{ marginBottom: "5rem" }} />
+
+<CommonForm
+  title="Get the Free eBook (2nd Edition)"
+  form="epsma-book"
+  account_desc="Email you the The Enterprise Path to Service Mesh Architectures 2nd Edition"
+  submit_title="Your copy of the book will arrive in your mailbox shortly."
+  submit_body={
+    <>
+      While waiting for your copy to arrive, take a free{" "}
+      <a href="https://layer5.io/learn/learning-paths">learning path</a>.
+    </>
+  }
+/>
+
+</BookWrapper>

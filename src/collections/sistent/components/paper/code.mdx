@@ -1,0 +1,125 @@
+---
+title: Paper Code
+component: paper
+description: The Paper component provides an elevated surface for displaying content. It mimics the behavior of real-world surfaces with shadow effects, supporting Material Design's elevation system.
+---
+
+import { Paper } from "@sistent/sistent";
+
+<a id="Basic Example">
+  <h3>Basic Example</h3>
+</a>
+
+Here's a simple example of a Paper component with default elevation. This creates a surface with a subtle shadow.
+
+<div className="showcase">
+  <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+    <ThemeWrapper>
+      <Paper elevation={1} style={{ padding: "16px" }}>
+        Default Paper with Elevation 1
+      </Paper>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-example" collapsible code={`<SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+      <Paper elevation={1} style={{ padding: "16px" }}>
+        Default Paper with Elevation 1
+      </Paper>
+  </SistentThemeProvider>`} />
+</div>
+
+<a id="Elevation Example">
+  <h3>Elevation Example</h3>
+</a>
+
+The `elevation` prop controls the shadow depth. Use values from 0 to 24 to create varying levels of elevation:
+
+<div className="showcase">
+  <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+    <ThemeWrapper>
+      <div style={{ display: "flex", gap: "16px", flexDirection: "column", width: "100%" }}>
+        <Paper elevation={0} style={{ padding: "16px" }}>Elevation 0 (No shadow)</Paper>
+        <Paper elevation={3} style={{ padding: "16px" }}>Elevation 3</Paper>
+        <Paper elevation={8} style={{ padding: "16px" }}>Elevation 8</Paper>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="elevation-example" collapsible code={`<SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+    <Paper
+      elevation={0}
+      style={{ padding: "16px" }}
+    >
+      Elevation 0 (No shadow)
+    </Paper>
+    <Paper
+      elevation={3}
+      style={{ padding: "16px" }}
+    >
+      Elevation 3
+    </Paper>
+    <Paper
+      elevation={8}
+      style={{ padding: "16px" }}
+    >
+      Elevation 8
+    </Paper>
+  </SistentThemeProvider>`} />
+</div>
+
+<a id="Variant Example">
+  <h3>Variant Example</h3>
+</a>
+
+The Paper component supports two variants: `elevation` (default) and `outlined`. The outlined variant removes shadows and adds a border instead:
+
+<div className="showcase">
+  <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+    <ThemeWrapper>
+      <div style={{ display: "flex", gap: "16px", flexDirection: "column", width: "100%" }}>
+        <Paper variant="elevation" style={{ padding: "16px" }}>Elevation Variant (Default)</Paper>
+        <Paper variant="outlined" style={{ padding: "16px", borderColor: "#ccc" }}>Outlined Variant (No shadow)</Paper>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="variant-example" collapsible code={`<SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+    <Paper
+      variant="elevation"
+      style={{ padding: "16px" }}
+    >
+      Elevation Variant (Default)
+    </Paper>
+    <Paper
+      variant="outlined"
+      style={{ padding: "16px", borderColor: "#ccc" }}
+    >
+      Outlined Variant (No shadow)
+    </Paper>
+  </SistentThemeProvider>`} />
+</div>
+
+<a id="Corners Example">
+  <h3>Square and Rounded Corners</h3>
+</a>
+
+By default, the Paper component has rounded corners. You can make it square by setting the `square` prop to `true`.
+
+<div className="showcase">
+  <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+    <ThemeWrapper>
+      <div style={{ display: "flex", gap: "16px", flexDirection: "column", width: "100%" }}>
+        <Paper square={false} style={{ padding: "16px" }}>Rounded Corners (Default)</Paper>
+        <Paper square style={{ padding: "16px" }}>Square Corners</Paper>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="corners-example" collapsible code={`<SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+      <Paper
+        square={false}
+        style={{ padding: "16px" }}
+        >
+        Rounded Corners (Default)
+        </Paper>
+      <Paper square style={{ padding: "16px" }}>
+        Square Corners
+      </Paper>
+    </SistentThemeProvider>`} />
+</div>

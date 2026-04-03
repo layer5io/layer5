@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="136.235 162.395 1213.733 848.456" width="1213.733" height="848.456" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>.cls-1,.cls-2{fill:#0f3290;stroke:#0f3290;stroke-miterlimit:10;}.cls-1{stroke-width:11.67px;}.cls-2{stroke-width:3.89px;}.cls-3{fill:#1e95d4;}.cls-3,.cls-4{fill-rule:evenodd;}.cls-4{fill:#0f3382;}.cls-5{fill:#eb5f33;}</style>
+  </defs>
+  <g id="编组-7" transform="matrix(1.632876, 0, 0, 1.600861, -138.251328, -453.936523)" style="">
+    <polygon id="路径-28" class="cls-3" points="271.52 817.1 778.6 785.73 782.14 831.96 272.71 856.83 271.52 817.1"/>
+    <polygon id="路径-28-2" data-name="路径-28" class="cls-3" points="770.9 792.2 271.52 604.46 286.99 513.82 823.85 481.95 827.38 528.92 318.61 554.2 315.04 575.12 790.5 745.05 770.9 792.2"/>
+    <polygon id="路径-28-3" data-name="路径-28" class="cls-4" points="168.1 903.73 288.95 385 387.14 385 504.21 903.73 455.11 915 349.37 422.58 326.71 422.58 220.97 915 168.1 903.73"/>
+    <circle id="椭圆形" class="cls-5" cx="850.01" cy="504.57" r="61.4"/>
+    <circle id="椭圆形-2" data-name="椭圆形" class="cls-5" cx="320" cy="821.28" r="61.4"/>
+    <polygon id="路径-28-4" data-name="路径-28" class="cls-4" points="510.67 903.73 631.52 385 729.71 385 846.77 903.73 797.68 915 691.94 422.58 669.28 422.58 563.54 915 510.67 903.73"/>
+    <circle id="椭圆形-3" data-name="椭圆形" class="cls-5" cx="585" cy="692.01" r="61.4"/>
+    <circle id="椭圆形-4" data-name="椭圆形" class="cls-5" cx="416.95" cy="640.3" r="61.4"/>
+    <polygon class="cls-3" points="355.55 509.75 442.79 504.57 471.77 546.59 351.28 552.58 355.55 509.75"/>
+    <polygon class="cls-3" points="687.93 490.02 768.94 485.21 782.14 531.17 687.93 535.85 687.93 490.02"/>
+    <polygon class="cls-3" points="510.67 802.31 609.16 796.21 591.18 841.28 504.21 845.53 510.67 802.31"/>
+  </g>
+</svg>

@@ -1,0 +1,129 @@
+---
+title: "KubeCon 2025: CNCF to Standardize AI Workloads"
+subtitle: ""
+date: 2025-11-23 06:00:00 +0530
+author: ITOps Times
+thumbnail: ./kubecon25.webp
+darkthumbnail: ./kubecon25.webp
+category: Coverage
+eurl: https://itopstimes.com/kubernetes/kubecon-2025-cncf-to-standardize-ai-workloads/
+source_url: https://itopstimes.com/kubernetes/kubecon-2025-cncf-to-standardize-ai-workloads/
+tags:
+ - Announcements
+ - CNCF
+ - Layer5
+ - Meshery
+type: News
+presskit: ""
+resource: false
+published: true
+---
+
+
+import { NewsWrapper } from "../../News.style.js";
+import BlockquoteAlt from "../../../../reusecore/Blockquote/Blockquote-alt-style";
+import kubeconImage from "./kubecon25.webp";
+
+<NewsWrapper>
+
+Ten years after standardizing Kubernetes, the Cloud Native Computing Foundation (CNCF) announced at KubeCon 2025 NA in Atlanta that they are working to standardize AI workloads on Kubernetes, with the goal of achieving broad industry adoption of the standard.
+
+Announced on November 11 the Certified Kubernetes AI Conformance Program creates  open, community-defined standards for running AI workloads on Kubernetes. Kubernetes providers in the program certify their products for various types of AI workloads.
+
+Chris Aniszczyk, CTO of CNCF, said it starts with a simple focus on the kind of things you really need to make AI workloads work well on Kubernetes, such as Dynamic Resource Allocation (DRA) across GPUs, TPUs, and all of the different types of AI hardware.
+
+CNCF membership is squarely in support, Anisczyck said. For example, “Google’s obviously interested in this because they offer their TPUs, and they saw the success of what happened with the original Kubernetes conformance program, which attracted a lot of people to the platform.”
+
+Red Hat booth staff confirmed their plans to implement the conformance program and map their version of Kubernetes, OpenShift, to leading AI hardware, including CPUs, TPUs, and IBM’s new Tellum II mainframe processor. 
+
+Missing from the list of conformance program supporters is NVIDIA. “They’re not on the list, but they don’t really have a product that would qualify,” Aniszczyk said. 
+
+Other hot topics at this year’s KubeCon North America among the approximately **9,000 attendees** and **300 exhibitors** included observability, security, platform engineering, and configuration management. 
+
+CNCF leadership celebrated the 10th anniversary of CNCF at the event, noting that they have nearly **300,000 contributors** worldwide contributing to more than **230 projects**, representing **190 countries**, making CNCF among the largest open source communities.
+
+CNCF announced during their conference keynote that 10 vendors are already AI conformant, including Google Cloud, Apprenda, Red Hat, Rancher, Canonical, IBM, Samsung, Heptio, Microsoft Azure, and Stackpoint Cloud.
+
+CNCF distinguishes among the various resource requirements for different types of AI workloads: model training, inference processing, and running agents. 
+
+---
+
+## **Approaches to Providing AI Infrastructure**
+
+Everyone is familiar with the offerings of the large hyperscalers for cloud computing as well as for AI workloads. But some vendors are taking a different approach.
+
+**Vultr** , for example, is competing with the major cloud provider by offering a wide array of hardware options for hosting AI workloads, including AMD and NVIDIA GPUs, virtual CPUs, bare metal, and Kubernetes.
+
+Kevin Cochrane, CMO of Vultr, said Vultr is an AI infrastructure specialist, that their core platform is a public cloud platform, and that they’re the functional equivalent of a hyperscaler—an alternative to AWS, GCP, or Azure, with the same global reach.
+
+“We are also one of the first to start specializing in AI infrastructure, the first one taking GPUs from NVIDIA. And most recently, the first to market with AMD GPUs. So currently, we’re the only global platform that offers a choice between NVIDIA and AMD,” Cochrane added. 
+
+**Mirantis**, on the other hand, offers a full software stack private cloud solution for smaller organizations running their own GPUs. Mirantis software builds and manages private GPU clouds for their customers, said Dom Wilde, General Manager, Core Products. 
+
+Their customers “are trying to figure out how to deliver monetized services around GPU technology. It started with GPU as a service, where we are helping companies rent some GPU capacity that is notoriously hard to get ahold of,” Wilde said.
+
+Dom Wilde, General Manager of Core Products at Mirantis, said private GPU deployments also support data and application sovereignty, which they recognize as an opportunity to be a little disruptive around the hyperscalers, and that they help companies reduce time to monetization for their GPUs and offer expertise that can be difficult to obtain.
+
+---
+
+## **AI Agents, Microservices and Service Meshes**
+
+Whether AI agents and microservices are the same thing was a common topic of discussion in the conference sessions as well as on the exhibit floor. The consensus appears to be that they have much in common.
+
+In their sponsored keynote, **Solo.io** compared AI agents to microservices, highlighting network communication with Model Context Protocol (MCP) servers and the agent-to-agent (A2A) communication protocol as needing a service mesh for security and reliability in coordinating and exchanging data in multi-agent solutions. 
+
+**Buoyant**, the company behind the LinkerD service mesh, agrees. They announced LinkerD for AI agents at the conference, saying their customers were asking for it. 
+
+William Morgan, CEO of Buoyant, said the service mesh provides security and reliability in a uniform way across the platform. They are starting with MCP because the first thing you want agents to do is access existing resources—for example, in an agentic workflow for automating a business process, you benefit from the service mesh providing zero trust so you execute the business process with confidence, with the same capabilities LinkerD gives you for microservices, though there is more to do.
+
+Buoyant also announced the availability of LinkerD for .NET applications on Windows.
+
+---
+
+## Improving Configuration Management
+
+Founding member of the Technical Oversight Committee (TOC) and GitOps creator Alexis Richardson returned to KubeCon to launch his new product, **ConfigHub**, which provides a “single source of truth” for Kubernetes as well as other infrastructure configuration data. 
+
+ConfigHub provides a new paradigm for provisioning, deploying, and operating cloud applications and infrastructure, including but not limited to Kubernetes.
+
+Alexis Richardson, founding member of the Technical Oversight Committee (TOC) and GitOps creator, said ConfigHub keeps the configuration clean and up to date and maps it into the running state to catch drift at the same time, and that there is a missing notion of a collective sense of truth for configuration that is what is relevant to operations—that is what they are bringing together.
+
+Similarly, Lee Calcote, CEO of Layer5, the company behind the CNCF Meshery project, announced their new product called Kanvas Designer, which provides an interactive, shared space for collaboration on configuration across an enterprise’s Kubernetes estate.
+
+<BlockquoteAlt
+  quote="Think of it like a Google Workspace for engineers. Kanvas is providing a collaborative environment for working on configuration, Kanvas is an enterprise distribution of Mashery,” he added. “Meshery is basically an internal developer platform that gets various developer teams out of their silos and helps deliver DevOps as it was intended."
+  person="Lee Calcote"
+  title="CEO of Layer5"
+/>
+
+---
+
+## **Next Level Observability for Kubernetes
+
+A lot of the current projects and vendor product focus appears to be on “next level” capabilities i.e. assuming Kubernetes is already widely used as the cloud deployment platform, and looking to solve next-level challenges.  
+
+Chris Aniszczyk, CTO of CNCF, described it as day two operations: people already have Kubernetes working well and are asking what to do next.
+
+“Maybe we need an IDP (Internal Developer Platform), or we need to improve how we do observability. People always care about improving observability, which is especially crucial in the age of AI,” he said. “I basically call this platform engineering, as a way to improve how you build and run platforms in your company, so we have projects such as Backstage, Argo, and Crossplane for example,” he added. “We’ve learned from past KubeCons that if we just purely focused on Kubernetes, we wouldn’t have such a wide ecosystem.”
+
+In this context Chronosphere, which builds observability solutions specifically for Kubernetes, announced their next-level observability product release with AI guided troubleshooting.
+
+Colleen White, Head of Product at Chronosphere, said their approach is to focus on where they can differentiate with respect to the developer experience, starting with guided troubleshooting: they study how the best developers in the organization troubleshoot from deep knowledge of the system and use AI to expose that same hypothesis-driven approach to those who do not have that deep knowledge.
+
+And Dash0, a new company that is focusing on simplifying observability data collection and analysis entirely based on OpenTelemetry, announced its new version as well. 
+
+MIrko Novakovic, CEO of Dash0, said they launched last year with a focus on being OpenTelemetry native—implementing the first tool around OpenTelemetry, the new standard for observability, not merely integrating it. Many observability companies treat OpenTelemetry as one input among many; Dash0 treats the data as OpenTelemetry throughout. The semantic convention of OpenTelemetry specifies naming so they can aggregate and create context—for example, to pull all logs, metrics, and traces for a part because they share the same tag name.
+
+---
+
+## **The Intellyx Take**
+
+Standardizing Kubernetes through the open source project sponsored by CNCF significantly transformed cloud native computing. Ten years ago multiple container orchestration platforms were competing for a share of the market that Kubernetes and its variations now dominate for hosting microservices and other cloud native workloads. 
+
+Generative AI workloads have different requirements, though. They use GPUs instead of CPUs, and significantly more computing power is needed for training and inference. Agentic AI presents new challenges for security, observability, and network communication support. 
+
+It will be interesting to see whether the CNCF approach will succeed in standardizing generative AI workloads on a new type of hardware infrastructure, especially without NVIDIA on board.     
+
+Meanwhile, the success of Kubernetes continues to open significant opportunities to the vendor community for “next level” capabilities to simplify, observe, manage, configure, control, and secure Kubernetes workloads. 
+
+</NewsWrapper>
