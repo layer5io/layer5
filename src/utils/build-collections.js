@@ -1,6 +1,7 @@
 const DEFAULT_LITE_BUILD_PROFILE = "core";
 
 const LITE_BUILD_PROFILES = Object.freeze({
+  none: [],
   content: ["members", "integrations"],
   core: ["members", "integrations", "blog", "news", "events", "resources"],
 });
@@ -16,7 +17,8 @@ const parseCsv = (value = "") =>
 
 const getExcludedCollections = ({
   isFullSiteBuild: shouldBuildFullSite = isFullSiteBuild(),
-  liteBuildProfile = process.env.LITE_BUILD_PROFILE || DEFAULT_LITE_BUILD_PROFILE,
+  liteBuildProfile = process.env.LITE_BUILD_PROFILE ||
+    DEFAULT_LITE_BUILD_PROFILE,
   buildCollectionsExclude = process.env.BUILD_COLLECTIONS_EXCLUDE,
 } = {}) => {
   if (shouldBuildFullSite) {
