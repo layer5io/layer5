@@ -10,8 +10,6 @@ import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-
 const EventForm = ({ form, title, submit_title, submit_body }) => {
 
   const [stepNumber, setStepNumber] = useState(0);
-  const [memberFormOne, setMemberFormOne] = useState({});
-  const [submit, setSubmit] = useState(false);
   const { submitForm } = useWebhookSubmit();
 
   // Form values
@@ -42,7 +40,6 @@ const EventForm = ({ form, title, submit_title, submit_body }) => {
         if (success) {
           setStatus(null);
           setStepNumber(1);
-          setSubmit(true);
           window.scrollTo(0,window.scrollY - 800);
           setFirstName(values.firstname);
           setEmail(values.email);
