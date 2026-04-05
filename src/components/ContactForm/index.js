@@ -36,18 +36,23 @@ const ContactForm = () => {
             scope: "",
             form: "contact",
           }}
-          onSubmit={async (values) => {
+          onSubmit={async (values, { setStatus }) => {
             const { success } = await submitForm({ memberFormOne: values });
             if (success) {
+              setStatus(null);
               setmemberFormOne(values);
               setSubmit(true);
               window.scrollTo(0, 700);
             } else {
-              alert("Submission failed. Please try again.");
+              setStatus({ submitError: "Submission failed. Please try again." });
             }
           }}
         >
-          <Form className="form" method="post">
+          {({ status }) => (
+            <Form className="form" method="post" aria-describedby="contact-form-status">
+              <div id="contact-form-status" className="form-error" role="alert" aria-live="assertive">
+                {status?.submitError || ""}
+              </div>
             <div className="title">
               <img className="layer5-logo" src={logo} alt="Layer5 Logo" />
             </div>
@@ -209,7 +214,8 @@ const ContactForm = () => {
                 />
               </div>
             </div>
-          </Form>
+            </Form>
+          )}
         </Formik>
       </div>
     </ContactFormWrapper>

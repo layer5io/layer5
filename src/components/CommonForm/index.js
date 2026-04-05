@@ -96,10 +96,11 @@ const CommonForm = ({ form, title, submit_title, submit_body, submit_button_titl
         role: role,
         form: form,
       }}
-      onSubmit={async (values) => {
+      onSubmit={async (values, { setStatus }) => {
         if (isValidRole(values.role) && isValidEmail(values.email)) {
           const { success } = await submitForm({ memberFormOne: values });
           if (success) {
+            setStatus(null);
             setMemberFormOne(values);
             setStepNumber(1);
             setSubmit(true);
@@ -107,7 +108,7 @@ const CommonForm = ({ form, title, submit_title, submit_body, submit_button_titl
             // confirmationMessageRef.current.scrollIntoView({ behavior: 'smooth' })
             scrollElementIntoView(confirmationMessageRef.current, navBarOffset);
           } else {
-            alert("Submission failed. Please try again.");
+            setStatus({ submitError: "Submission failed. Please try again." });
           }
         } else {
           // if (!(values.google || values.github || values.twitter || values.linkedin)) {
@@ -128,7 +129,11 @@ const CommonForm = ({ form, title, submit_title, submit_body, submit_button_titl
         }
       }}
     >
-      <Form className="form" method="post">
+      {({ status }) => (
+        <Form className="form" method="post" aria-describedby="common-form-status">
+          <div id="common-form-status" className="form-error" role="alert" aria-live="assertive">
+            {status?.submitError || ""}
+          </div>
         <label htmlFor="firstname" className="form-name">First Name <span className="required-sign">*</span></label>
         <Field type="text" className="text-field" id="firstname" name="firstname" maxLength="32" pattern="^[\p{L}]+('[\p{L}]*)?(?:-[\p{L}]+)*([\s][\p{L}]+('[\p{L}]*)?(?:-[\p{L}]+)*){0,31}$" required />
         <label htmlFor="lastname" className="form-name">Last Name <span className="required-sign">*</span></label>
@@ -288,6 +293,7 @@ const CommonForm = ({ form, title, submit_title, submit_body, submit_button_titl
 
         <Button $secondary className="btn" title={submit_button_title || "Submit"} />
       </Form>
+      )}
     </Formik>
   </div>
       }
