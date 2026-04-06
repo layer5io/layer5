@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 import SEO from "../components/seo";
 
 const ALL_COLLECTIONS = [
@@ -32,6 +32,8 @@ const RESTORE_COMMANDS = {
   full: [{ cmd: "make site-full", note: "includes all collections" }],
 };
 
+const CONTENT_EXCLUSIONS = new Set(["integrations", "members"]);
+
 // Derive the right command from the set of collections the user wants to include.
 function generateCommand(included) {
   const excluded = ALL_COLLECTIONS.filter((c) => !included.has(c)).sort();
@@ -40,9 +42,8 @@ function generateCommand(included) {
   if (excluded.length === ALL_COLLECTIONS.length) return "make site";
 
   const isContentProfile =
-    excluded.length === 2 &&
-    excluded[0] === "integrations" &&
-    excluded[1] === "members";
+    excluded.length === CONTENT_EXCLUSIONS.size &&
+    excluded.every((c) => CONTENT_EXCLUSIONS.has(c));
   if (isContentProfile) return "make site-content";
 
   return `BUILD_COLLECTIONS_EXCLUDE=${excluded.join(",")} make site-custom`;
@@ -52,35 +53,74 @@ function generateCommand(included) {
 
 function CopyButton({ text }) {
   const [copied, setCopied] = useState(false);
+  const timerRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
 
   const handleCopy = useCallback(() => {
-    if (typeof navigator === "undefined") return;
-    navigator.clipboard.writeText(text).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
-    });
+    if (
+      typeof navigator === "undefined" ||
+      typeof window === "undefined" ||
+      !window.isSecureContext ||
+      !navigator.clipboard?.writeText
+    ) {
+      return;
+    }
+
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        setCopied(true);
+        if (timerRef.current) clearTimeout(timerRef.current);
+        timerRef.current = setTimeout(() => setCopied(false), 1500);
+      })
+      .catch(() => {});
   }, [text]);
 
   return (
-    <button
-      onClick={handleCopy}
-      aria-label={copied ? "Copied!" : `Copy command: ${text}`}
-      style={{
-        flexShrink: 0,
-        padding: "0.2rem 0.6rem",
-        background: copied ? "#00b39f" : "transparent",
-        border: "1px solid #00b39f",
-        borderRadius: "4px",
-        color: copied ? "#fff" : "#00b39f",
-        cursor: "pointer",
-        fontSize: "0.75rem",
-        lineHeight: 1.4,
-        transition: "background 0.15s, color 0.15s",
-        whiteSpace: "nowrap",
-      }}
-    >
-      {copied ? "Copied!" : "Copy"}
-    </button>
+    <>
+      <button
+        type="button"
+        onClick={handleCopy}
+        aria-label={copied ? "Copied!" : `Copy command: ${text}`}
+        style={{
+          flexShrink: 0,
+          padding: "0.2rem 0.6rem",
+          background: copied ? "#00b39f" : "transparent",
+          border: "1px solid #00b39f",
+          borderRadius: "4px",
+          color: copied ? "#fff" : "#00b39f",
+          cursor: "pointer",
+          fontSize: "0.75rem",
+          lineHeight: 1.4,
+          transition: "background 0.15s, color 0.15s",
+          whiteSpace: "nowrap",
+        }}
+      >
+        {copied ? "Copied!" : "Copy"}
+      </button>
+      <span
+        aria-live="polite"
+        role="status"
+        style={{
+          position: "absolute",
+          width: "1px",
+          height: "1px",
+          padding: 0,
+          margin: "-1px",
+          overflow: "hidden",
+          clip: "rect(0, 0, 0, 0)",
+          whiteSpace: "nowrap",
+          border: 0,
+        }}
+      >
+        {copied ? "Copied!" : ""}
+      </span>
+    </>
   );
 }
 
@@ -154,148 +194,140 @@ const LitePlaceholder = ({ pageContext, location }) => {
   const customCommand = generateCommand(included);
 
   return (
-    <>
-      <SEO
-        title={heading}
-        description={`${description} ${restoreCommands[0].cmd}`}
-      />
-      <main
+    <main
+      style={{
+        padding: "4rem 1.5rem",
+        textAlign: "center",
+        maxWidth: "680px",
+        margin: "0 auto",
+      }}
+    >
+      <p
         style={{
-          padding: "4rem 1.5rem",
-          textAlign: "center",
-          maxWidth: "680px",
-          margin: "0 auto",
+          fontWeight: 600,
+          textTransform: "capitalize",
+          fontSize: "1.05rem",
         }}
       >
+        {heading}
+      </p>
+      <p style={{ marginTop: "0.75rem", lineHeight: 1.6, opacity: 0.8 }}>
+        {description}
+      </p>
+
+      {/* ── Quick restore ─────────────────────────────────────────────────── */}
+      <div style={{ marginTop: "1.75rem" }}>
         <p
           style={{
-            fontWeight: 600,
-            textTransform: "capitalize",
-            fontSize: "1.05rem",
+            fontStyle: "italic",
+            marginBottom: "0.8rem",
+            opacity: 0.7,
           }}
         >
-          {heading}
+          Restart your dev server with one of these commands to restore this
+          route:
         </p>
-        <p style={{ marginTop: "0.75rem", lineHeight: 1.6, opacity: 0.8 }}>
-          {description}
-        </p>
+        {restoreCommands.map(({ cmd, note }) => (
+          <CommandLine key={cmd} cmd={cmd} note={note} />
+        ))}
+      </div>
 
-        {/* ── Quick restore ─────────────────────────────────────────────────── */}
-        <div style={{ marginTop: "1.75rem" }}>
-          <p
-            style={{
-              fontStyle: "italic",
-              marginBottom: "0.8rem",
-              opacity: 0.7,
-            }}
-          >
-            Restart your dev server with one of these commands to restore this
-            route:
-          </p>
-          {restoreCommands.map(({ cmd, note }) => (
-            <CommandLine key={cmd} cmd={cmd} note={note} />
+      {/* ── À la carte picker ─────────────────────────────────────────────── */}
+      <div
+        style={{
+          marginTop: "2rem",
+          padding: "1.25rem 1.5rem",
+          border: "1px solid rgba(128,128,128,0.25)",
+          borderRadius: "8px",
+        }}
+      >
+        <p style={{ fontWeight: 600, marginBottom: "0.9rem" }}>
+          Build collections à la carte
+        </p>
+        <p style={{ fontSize: "0.8rem", opacity: 0.6, marginBottom: "1rem" }}>
+          Check the collections you want included, then copy the generated
+          command.
+        </p>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, auto)",
+            justifyContent: "center",
+            gap: "0.55rem 1.5rem",
+            textAlign: "left",
+          }}
+        >
+          {ALL_COLLECTIONS.map((name) => (
+            <label
+              key={name}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "0.4rem",
+                cursor: "pointer",
+                fontSize: "0.875rem",
+              }}
+            >
+              <input
+                type="checkbox"
+                checked={included.has(name)}
+                onChange={() => toggle(name)}
+                style={{ accentColor: "#00b39f", cursor: "pointer" }}
+              />
+              {name}
+              {COLLECTION_WEIGHT[name] === "full" && (
+                <span
+                  title="Skipped in both core and content profiles — only make site-full includes this"
+                  style={{
+                    fontSize: "0.65rem",
+                    opacity: 0.45,
+                    fontStyle: "italic",
+                  }}
+                >
+                  (heavy)
+                </span>
+              )}
+            </label>
           ))}
         </div>
 
-        {/* ── À la carte picker ─────────────────────────────────────────────── */}
-        <div
-          style={{
-            marginTop: "2rem",
-            padding: "1.25rem 1.5rem",
-            border: "1px solid rgba(128,128,128,0.25)",
-            borderRadius: "8px",
-          }}
-        >
-          <p style={{ fontWeight: 600, marginBottom: "0.9rem" }}>
-            Build collections à la carte
-          </p>
-          <p style={{ fontSize: "0.8rem", opacity: 0.6, marginBottom: "1rem" }}>
-            Check the collections you want included, then copy the generated
-            command.
-          </p>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, auto)",
-              justifyContent: "center",
-              gap: "0.55rem 1.5rem",
-              textAlign: "left",
-            }}
-          >
-            {ALL_COLLECTIONS.map((name) => (
-              <label
-                key={name}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.4rem",
-                  cursor: "pointer",
-                  fontSize: "0.875rem",
-                }}
-              >
-                <input
-                  type="checkbox"
-                  checked={included.has(name)}
-                  onChange={() => toggle(name)}
-                  style={{ accentColor: "#00b39f", cursor: "pointer" }}
-                />
-                {name}
-                {COLLECTION_WEIGHT[name] === "full" && (
-                  <span
-                    title="Skipped in both core and content profiles — only make site-full includes this"
-                    style={{
-                      fontSize: "0.65rem",
-                      opacity: 0.45,
-                      fontStyle: "italic",
-                    }}
-                  >
-                    (heavy)
-                  </span>
-                )}
-              </label>
-            ))}
-          </div>
-
-          <div style={{ marginTop: "1.25rem" }}>
-            <CommandLine cmd={customCommand} />
-            {customCommand.startsWith("BUILD_COLLECTIONS_EXCLUDE") && (
-              <p
-                style={{
-                  fontSize: "0.72rem",
-                  opacity: 0.5,
-                  marginTop: "0.25rem",
-                }}
-              >
-                Uses <code>make site-custom</code> which starts with no preset
-                exclusions, then applies only what you specify.
-              </p>
-            )}
-          </div>
+        <div style={{ marginTop: "1.25rem" }}>
+          <CommandLine cmd={customCommand} />
+          {customCommand.startsWith("BUILD_COLLECTIONS_EXCLUDE") && (
+            <p
+              style={{
+                fontSize: "0.72rem",
+                opacity: 0.5,
+                marginTop: "0.25rem",
+              }}
+            >
+              Uses <code>make site-custom</code> which starts with no preset
+              exclusions, then applies only what you specify.
+            </p>
+          )}
         </div>
+      </div>
 
-        {/* ── Contributing guide link ───────────────────────────────────────── */}
-        <p style={{ marginTop: "1.5rem", fontSize: "0.8rem", opacity: 0.5 }}>
-          All build profiles and environment variables are documented in the{" "}
-          <a
-            href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#environment-variables"
-            style={{ color: "#00b39f" }}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            contributing guide
-          </a>
-          .
+      {/* ── Contributing guide link ───────────────────────────────────────── */}
+      <p style={{ marginTop: "1.5rem", fontSize: "0.8rem", opacity: 0.5 }}>
+        All build profiles and environment variables are documented in the{" "}
+        <a
+          href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#environment-variables"
+          style={{ color: "#00b39f" }}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          contributing guide
+        </a>
+        .
+      </p>
+
+      {location?.pathname && (
+        <p style={{ marginTop: "1.25rem", fontSize: "0.85rem", opacity: 0.45 }}>
+          Requested path: <code>{location.pathname}</code>
         </p>
-
-        {location?.pathname && (
-          <p
-            style={{ marginTop: "1.25rem", fontSize: "0.85rem", opacity: 0.45 }}
-          >
-            Requested path: <code>{location.pathname}</code>
-          </p>
-        )}
-      </main>
-    </>
+      )}
+    </main>
   );
 };
 
