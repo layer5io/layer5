@@ -34,24 +34,53 @@ export const HoneycombGrid = styled.div`
   }
 
   .items {
-    background-color: #d2d8da; //#E7EFF3;
-    padding: 0.625rem 1.5625rem;
+    background-color: ${(props) => props.theme.darkJungleGreenColor};
+    border: 1px solid transparent;
+    color: ${(props) => props.theme.white};
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3.75rem;
+    padding: 0.75rem 1.5rem;
     border-radius: 0.625rem;
     text-transform: uppercase;
-    color: #1e2117;
     font-size: 0.875rem;
+    line-height: 1.2;
+    white-space: nowrap;
     cursor: pointer;
-    transition: all 0.1s ease-in-out;
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease,
+      color 0.2s ease,
+      box-shadow 0.2s ease,
+      border-color 0.2s ease;
 
     &:hover {
-      opacity: 0.8;
-      box-shadow: 0px 0px 6px -2px rgb(60, 73, 79);
+      background-color: ${(props) => props.theme.secondaryLightColorTwo};
+      border-color: ${(props) => props.theme.keppelColor};
+      color: ${(props) => props.theme.darkJungleGreenColor};
+      box-shadow: 0px 0px 0px 1px ${(props) => props.theme.keppelColor};
+      transform: translateY(-1px);
     }
   }
 
   .selected {
-    background-color: ${(props) => props.theme.darkJungleGreenColor};
-    color: ${(props) => props.theme.white};
+    background-color: ${(props) => props.theme.secondaryLightColor};
+    border-color: ${(props) => props.theme.keppelColor};
+    color: ${(props) => props.theme.darkJungleGreenColor};
+    box-shadow: 0px 0px 0px 1px ${(props) => props.theme.keppelColor};
+  }
+
+  @media (max-width: 900px) {
+    .category-slider {
+      margin: 0 1rem;
+    }
+
+    .items {
+      min-height: 3.25rem;
+      padding: 0.625rem 1.125rem;
+      font-size: 0.8125rem;
+    }
   }
 
   ul {

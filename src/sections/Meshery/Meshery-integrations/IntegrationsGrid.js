@@ -232,7 +232,7 @@ const IntegrationsGrid = ({ category, count }) => {
         focusSearch={false}
       />
 
-      <section style={{ margin: "0 2.6rem" }}>
+      <section className="category-slider" style={{ margin: "0 2.6rem" }}>
         <IntegrationSlider {...settings}>
           {!hideFilter &&
             categoryNameList.map((item) => {
