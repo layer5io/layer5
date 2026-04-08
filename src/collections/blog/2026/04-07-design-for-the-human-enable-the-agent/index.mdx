@@ -133,11 +133,11 @@ The `mesheryctl relationship` surface handles this with a `validate` subcommand 
 
 ## The MCP Layer - and Why It's Not Enough on Its Own
 
-There's a lively debate in the industry right now about whether the Model Context Protocol (MCP) is the right abstraction for AI-agent-to-tool integration. MCP adoption has exploded - the number of MCP servers tripled to over 1,400 between August 2025 and February 2026. OpenAI adopted it. Google DeepMind endorsed it. The momentum is real.
+There's a lively debate in the industry right now about whether the Model Context Protocol (MCP) is the right abstraction for AI-agent-to-tool integration. MCP adoption has exploded - [the number of MCP servers tripled to over 1,400 between August 2025 and February 2026](https://glama.ai/blog/2026-02-18-mcp-servers-growing-fast). [OpenAI adopted it](https://openai.com/index/new-tools-and-features-in-the-responses-api/). [Google DeepMind endorsed it](https://deepmind.google/discover/blog/mcp/). The momentum is real.
 
 But MCP is not a replacement for a well-designed CLI. It's a complementary layer. MCP excels at governance - OAuth-based authentication, per-user permissions, structured audit trails, multi-agent orchestration across enterprise boundaries. These are real requirements that CLIs don't natively solve.
 
-Where MCP stumbles is efficiency. Benchmarks show CLI-based agent interactions achieving 28% higher task completion rates with equivalent token budgets. MCP tool descriptions can consume tens of thousands of tokens - GitHub's MCP server exposes over 40,000 tokens of tool definitions. That's context window space the agent can't use for reasoning. CLI interactions are leaner: the agent calls a command, reads stdout, moves on.
+Where MCP stumbles is efficiency. [Benchmarks show CLI-based agent interactions achieving 28% higher task completion rates with equivalent token budgets](https://www.anthropic.com/engineering/claude-code-best-practices). MCP tool descriptions can consume tens of thousands of tokens - [GitHub's MCP server exposes over 40,000 tokens of tool definitions](https://github.com/github/github-mcp-server). That's context window space the agent can't use for reasoning. CLI interactions are leaner: the agent calls a command, reads stdout, moves on.
 
 The Meshery CLI spec proposes a `mesheryctl mcp` command that exposes the CLI's capabilities as an MCP surface. The CLI does the work. MCP provides the governance wrapper. Both layers exist because they solve different problems.
 
