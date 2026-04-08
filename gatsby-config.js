@@ -638,3 +638,48 @@ module.exports = {
     // make sure this is always the last one
   ],
 };
+
+// Blog-only build profile for fast dev cycles.
+// Usage: LITE_BUILD_PROFILE=blog npm start
+//        LITE_BUILD_PROFILE=blog BLOG_YEAR=2025 npm start
+if (process.env.LITE_BUILD_PROFILE === "blog") {
+  const blogYear = process.env.BLOG_YEAR;
+
+  // Only keep blog and images filesystem sources
+  const keepSources = new Set(["images", "blog"]);
+
+  // Skip heavy plugins not needed for blog dev
+  const skipPlugins = new Set([
+    "gatsby-plugin-feed",
+    "gatsby-plugin-sitemap",
+    "gatsby-redirect-from",
+    "gatsby-plugin-robots-txt",
+    "gatsby-plugin-meta-redirect",
+  ]);
+
+  module.exports.plugins = module.exports.plugins.filter((plugin) => {
+    const name = typeof plugin === "string" ? plugin : plugin.resolve;
+    if (skipPlugins.has(name)) return false;
+    if (name === "gatsby-source-filesystem") {
+      return keepSources.has(plugin.options?.name);
+    }
+    return true;
+  });
+
+  // Narrow blog source to a specific year directory
+  if (blogYear) {
+    const blogPlugin = module.exports.plugins.find(
+      (p) =>
+        typeof p !== "string" &&
+        p.resolve === "gatsby-source-filesystem" &&
+        p.options?.name === "blog"
+    );
+    if (blogPlugin) {
+      blogPlugin.options.path = `${__dirname}/src/collections/blog/${blogYear}`;
+    }
+  }
+
+  console.log(
+    `\n[LITE BUILD] Blog-only profile active${blogYear ? ` (year: ${blogYear})` : ""}\n`
+  );
+}

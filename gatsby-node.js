@@ -72,6 +72,84 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return createPage(props);
   };
 
+  // Blog-only build: skip all non-blog page creation
+  if (process.env.LITE_BUILD_PROFILE === "blog") {
+    const blogPostTemplate = path.resolve("src/templates/blog-single.js");
+    const blogCategoryListTemplate = path.resolve(
+      "src/templates/blog-category-list.js"
+    );
+    const blogTagListTemplate = path.resolve("src/templates/blog-tag-list.js");
+
+    const res = await graphql(`
+      {
+        blogs: allMdx(
+          filter: {
+            fields: { collection: { eq: "blog" } }
+            frontmatter: { published: { eq: true } }
+          }
+        ) {
+          nodes {
+            fields { slug }
+          }
+        }
+        blogTags: allMdx(
+          filter: {
+            fields: { collection: { eq: "blog" } }
+            frontmatter: { published: { eq: true } }
+          }
+        ) {
+          group(field: { frontmatter: { tags: SELECT } }) {
+            nodes { id }
+            fieldValue
+          }
+        }
+        blogCategory: allMdx(
+          filter: {
+            fields: { collection: { eq: "blog" } }
+            frontmatter: { published: { eq: true } }
+          }
+        ) {
+          group(field: { frontmatter: { category: SELECT } }) {
+            nodes { id }
+            fieldValue
+          }
+        }
+      }
+    `);
+
+    if (res.errors) {
+      reporter.panicOnBuild("Error while running GraphQL query.");
+      return;
+    }
+
+    res.data.blogs.nodes.forEach((blog) => {
+      envCreatePage({
+        path: blog.fields.slug,
+        component: blogPostTemplate,
+        context: { slug: blog.fields.slug },
+      });
+    });
+
+    res.data.blogCategory.group.forEach((category) => {
+      envCreatePage({
+        path: `/blog/category/${slugify(category.fieldValue)}`,
+        component: blogCategoryListTemplate,
+        context: { category: category.fieldValue },
+      });
+    });
+
+    res.data.blogTags.group.forEach((tag) => {
+      envCreatePage({
+        path: `/blog/tag/${slugify(tag.fieldValue)}`,
+        component: blogTagListTemplate,
+        context: { tag: tag.fieldValue },
+      });
+    });
+
+    reporter.info(`[LITE BUILD] Created ${res.data.blogs.nodes.length} blog pages (skipped all other collections)`);
+    return;
+  }
+
   const blogPostTemplate = path.resolve("src/templates/blog-single.js");
   const blogCategoryListTemplate = path.resolve(
     "src/templates/blog-category-list.js"

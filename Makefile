@@ -25,6 +25,10 @@ setup:
 site:
 	npm start
 	
+## Run blog-only dev server (2025 posts only, much faster builds).
+site-blog:
+	LITE_BUILD_PROFILE=blog BLOG_YEAR=2025 npm start
+
 ## Run layer5.io on your local machine. Alternate method.
 site-fast:
 	gatsby develop
@@ -47,4 +51,4 @@ features:
 	node .github/build/features-to-json.js .github/build/spreadsheet.csv src/sections/Pricing/feature_data.json
 	rm .github/build/spreadsheet.csv
 
-.PHONY: setup build site clean site-fast lint features
+.PHONY: setup build site site-blog clean site-fast lint features
