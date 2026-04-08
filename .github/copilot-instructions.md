@@ -22,12 +22,14 @@ The Layer5 website is a Gatsby.js-based static site that serves as the primary i
 ## Core Principles
 
 ### 1. Minimal, Surgical Changes
+
 - Make the **smallest possible changes** to accomplish the goal
 - Never delete or modify working code unless absolutely necessary
 - Focus on precise, targeted modifications rather than wholesale rewrites
 - Preserve existing patterns and conventions unless explicitly changing them
 
 ### 2. Code Quality Standards
+
 - Follow the existing code style and patterns in the repository
 - Use functional React components with modern JavaScript (ES6+)
 - Ensure all code passes `npm run lint` without errors
@@ -37,6 +39,7 @@ The Layer5 website is a Gatsby.js-based static site that serves as the primary i
 - **SEO-aware**: Ensure proper semantic HTML, meta tags, and structured data
 
 ### 3. Testing and Validation
+
 - Always validate changes work before considering them complete
 - Build the site and verify rendered content: wait for `npm start` to complete, then curl pages to verify
 - The website takes significant time to build - be patient and don't interrupt builds
@@ -70,6 +73,7 @@ layer5/
 ## Development Workflow
 
 ### Setup
+
 ```bash
 # Install dependencies (required for fresh clone)
 make setup
@@ -78,11 +82,15 @@ npm install --legacy-peer-deps
 ```
 
 ### Development
+
 ```bash
 # Start development server
 make site
 # or
 npm start
+
+# Blog-only dev server (fastest — current year's posts only)
+make site-blog
 
 # Alternative faster method
 make site-fast
@@ -91,6 +99,7 @@ gatsby develop
 ```
 
 ### Building
+
 ```bash
 # Build for production
 make build
@@ -102,6 +111,7 @@ make clean
 ```
 
 ### Linting
+
 ```bash
 # Run and auto-fix linting issues
 make lint
@@ -115,12 +125,14 @@ npm run checklint
 ## Content Guidelines
 
 ### Tone and Style
+
 - Use a **professional yet approachable** tone
 - Content should be clear, concise, and welcoming to both technical and non-technical audiences
 - Align with Layer5's mission of empowering engineers to "expect more from their infrastructure"
 - Use American English spelling and grammar
 
 ### Markdown and MDX
+
 - All content must be written in Markdown or MDX
 - Place content files in appropriate directories (`src/pages` or `content-learn`)
 - Include proper frontmatter with metadata:
@@ -137,13 +149,14 @@ description: "Short description for SEO (150-160 chars)"
 ### SEO Optimization
 
 **Critical Requirements**:
+
 - **Meta descriptions**: Include in frontmatter (150-160 characters, compelling and keyword-rich)
 - **Title tags**: Clear, descriptive, under 60 characters
 - **Keywords**: Naturally incorporate "cloud native", "Meshery", "service mesh", "Kanvas", "Layer5", "Kubernetes", "microservices"
 - **Heading hierarchy**: Maintain proper structure (single H1, logical H2 → H3 → H4 progression)
 - **Semantic HTML**: Use appropriate HTML5 elements (`<article>`, `<section>`, `<nav>`, `<header>`, `<footer>`)
 - **URL structure**: Use clean, descriptive, keyword-rich URLs (slug: kebab-case)
-- **Image optimization**: 
+- **Image optimization**:
   - Always include descriptive alt text for accessibility and SEO
   - Use gatsby-plugin-image for automatic optimization
   - Implement proper image dimensions and compression
@@ -155,6 +168,7 @@ description: "Short description for SEO (150-160 chars)"
 - **Page speed**: Optimize for fast loading times (target < 3 seconds)
 
 ### Content Restrictions
+
 - **No external images**: Use local assets in `src/assets` or `static` directories only
 - **No placeholder text**: Provide complete, production-ready content
 - **No sensitive data**: Never include API keys, credentials, or personal information
@@ -165,9 +179,10 @@ description: "Short description for SEO (150-160 chars)"
 ### React Components
 
 #### Component Structure
+
 ```jsx
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 // Use functional components with modern JavaScript
 const MyComponent = ({ title, description, className }) => {
@@ -184,11 +199,12 @@ export default MyComponent;
 // Styled-components at the bottom of file
 const ComponentWrapper = styled.div`
   padding: 2rem;
-  background-color: ${props => props.theme.colors.background};
+  background-color: ${(props) => props.theme.colors.background};
 `;
 ```
 
 #### Component Best Practices
+
 - Use functional components with hooks (no class components)
 - Destructure props in function parameters
 - Use PropTypes or TypeScript for type checking (when already present)
@@ -199,24 +215,26 @@ const ComponentWrapper = styled.div`
 ### Styling
 
 #### Approaches (in order of preference)
+
 1. **Styled-components**: Primary styling method in this project
 2. **CSS Modules**: For component-specific styles
 3. **Emotion**: For dynamic, theme-based styling
 4. **Inline styles**: Avoid unless necessary for dynamic values
 
 #### Style Guidelines
+
 ```jsx
 // Styled-components example
 const Button = styled.button`
   padding: 1rem 2rem;
-  background-color: ${props => props.theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.primary};
   color: white;
   border: none;
   border-radius: 0.25rem;
   cursor: pointer;
-  
+
   &:hover {
-    background-color: ${props => props.theme.colors.primaryDark};
+    background-color: ${(props) => props.theme.colors.primaryDark};
   }
 `;
 
@@ -237,20 +255,22 @@ const Button = styled.button`
 - **Semantic HTML**: Use appropriate HTML5 elements (`<nav>`, `<main>`, `<article>`, etc.)
 
 Example:
+
 ```jsx
 <button aria-label="Close modal" onClick={handleClose}>
   <CloseIcon aria-hidden="true" />
 </button>
 
-<img 
-  src="/images/meshery-logo.png" 
-  alt="Meshery logo - cloud native management platform" 
+<img
+  src="/images/meshery-logo.png"
+  alt="Meshery logo - cloud native management platform"
 />
 ```
 
 ### ESLint Configuration
 
 #### Key Rules
+
 - **Indentation**: 2 spaces
 - **Quotes**: Double quotes for strings, JSX attributes
 - **Semicolons**: Required
@@ -260,6 +280,7 @@ Example:
 - **Unused vars**: Warning (except React)
 
 #### Common Patterns
+
 ```javascript
 // ✓ Correct
 const myFunction = (param1, param2) => {
@@ -271,18 +292,19 @@ const myObject = { key: "value", another: "data" };
 const myArray = [1, 2, 3];
 
 // ✗ Incorrect
-const myFunction = ( param1,param2 )=>{
-  const result=param1+param2
-  return result
-}
+const myFunction = (param1, param2) => {
+  const result = param1 + param2;
+  return result;
+};
 
-const myObject = {key: 'value', another: 'data'}
-const myArray = [ 1,2,3 ]
+const myObject = { key: "value", another: "data" };
+const myArray = [1, 2, 3];
 ```
 
 ## Git Workflow
 
 ### Commit Messages
+
 Follow Conventional Commits format:
 
 ```
@@ -294,6 +316,7 @@ Follow Conventional Commits format:
 ```
 
 **Types**:
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation changes
@@ -303,6 +326,7 @@ Follow Conventional Commits format:
 - `chore`: Build process, tooling, dependencies
 
 **Examples**:
+
 ```
 feat(blog): add new post about Meshery patterns
 fix(navigation): resolve broken link in footer
@@ -313,6 +337,7 @@ chore(deps): update gatsby to version 5.14
 ```
 
 ### Pull Requests
+
 - Submit all changes as PRs to the `master` branch
 - Reference related issues in PR description
 - Ensure CI checks pass before requesting review
@@ -320,7 +345,9 @@ chore(deps): update gatsby to version 5.14
 - Sign-off commits with `git commit -s`
 
 ### Branch Naming
+
 Use descriptive, kebab-case names:
+
 - `feat/add-blog-post-meshery`
 - `fix/navigation-mobile-menu`
 - `docs/update-contributing-guide`
@@ -332,6 +359,7 @@ Use descriptive, kebab-case names:
 **CRITICAL**: All changes must maintain or improve Core Web Vitals scores. Monitor and optimize for:
 
 #### 1. Largest Contentful Paint (LCP) - Target: < 2.5s
+
 - **Images**: Use `gatsby-plugin-image` for automatic optimization, lazy loading, and responsive images
 - **Preload critical resources**: Preload above-the-fold images, fonts, and critical CSS
 - **Reduce server response time**: Optimize GraphQL queries, minimize API calls
@@ -339,7 +367,8 @@ Use descriptive, kebab-case names:
 - **Font optimization**: Use `font-display: swap` or `optional`, preload critical fonts from `fonts.css`
 
 #### 2. First Input Delay (FID) / Interaction to Next Paint (INP) - Target: < 100ms / < 200ms
-- **Minimize JavaScript execution**: 
+
+- **Minimize JavaScript execution**:
   - Use code splitting and lazy loading via `@loadable/component`
   - Avoid large third-party scripts
   - Break up long tasks into smaller chunks
@@ -348,6 +377,7 @@ Use descriptive, kebab-case names:
 - **Reduce main thread work**: Minimize DOM manipulation, avoid forced reflows
 
 #### 3. Cumulative Layout Shift (CLS) - Target: < 0.1
+
 - **Reserve space**: Set explicit width and height for images, videos, and embeds
 - **Avoid dynamic content**: Don't insert content above existing content without user interaction
 - **Font loading**: Use `font-display: optional` to prevent layout shifts from font swaps
@@ -355,6 +385,7 @@ Use descriptive, kebab-case names:
 - **Skeleton screens**: Use placeholders for dynamic content loading
 
 ### Gatsby Build Optimization
+
 - **Images**: Use `gatsby-plugin-image` for optimized images with automatic format conversion (WebP, AVIF)
 - **Code splitting**: Leverage Gatsby's automatic code splitting per route
 - **Lazy loading**: Use `@loadable/component` for heavy components below the fold
@@ -366,15 +397,16 @@ Use descriptive, kebab-case names:
 ### Best Practices
 
 #### Image Optimization (Critical for LCP)
+
 ```jsx
 // ✓ Use gatsby-plugin-image with proper sizing and alt text
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const MyComponent = ({ imageData }) => {
   const image = getImage(imageData);
   return (
-    <GatsbyImage 
-      image={image} 
+    <GatsbyImage
+      image={image}
       alt="Descriptive alt text for accessibility and SEO"
       loading="eager" // For above-the-fold images
       // loading="lazy" // For below-the-fold images (default)
@@ -391,24 +423,26 @@ const StyledImage = styled(GatsbyImage)`
 ```
 
 #### Code Splitting & Lazy Loading (Critical for FID/INP)
+
 ```jsx
 // ✓ Use lazy loading for heavy components below the fold
-import loadable from '@loadable/component';
+import loadable from "@loadable/component";
 
-const HeavyComponent = loadable(() => import('./HeavyComponent'), {
+const HeavyComponent = loadable(() => import("./HeavyComponent"), {
   fallback: <div>Loading...</div>, // Prevents CLS
 });
 
 // ✓ Use React.lazy for route-based code splitting
-const DynamicPage = React.lazy(() => import('./pages/DynamicPage'));
+const DynamicPage = React.lazy(() => import("./pages/DynamicPage"));
 
 // Wrap with Suspense
 <Suspense fallback={<LoadingSpinner />}>
   <DynamicPage />
-</Suspense>
+</Suspense>;
 ```
 
 #### Font Loading (Critical for CLS and LCP)
+
 ```jsx
 // ✓ In gatsby-browser.js or component
 const fontStyles = `
@@ -423,9 +457,10 @@ const fontStyles = `
 ```
 
 #### Event Handler Optimization (Critical for FID/INP)
+
 ```jsx
 // ✓ Debounce expensive operations
-import { debounce } from 'lodash';
+import { debounce } from "lodash";
 
 const handleSearch = debounce((query) => {
   // Expensive search operation
@@ -436,9 +471,9 @@ useEffect(() => {
   const handleScroll = () => {
     // Scroll handling
   };
-  
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  return () => window.removeEventListener('scroll', handleScroll);
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  return () => window.removeEventListener("scroll", handleScroll);
 }, []);
 ```
 
@@ -447,6 +482,7 @@ useEffect(() => {
 ### Creating a New Page
 
 1. Create MDX file in `src/pages/`:
+
 ```markdown
 ---
 title: "My New Page"
@@ -460,9 +496,10 @@ Content goes here...
 ```
 
 2. Or create a React component in `src/pages/`:
+
 ```jsx
-import React from 'react';
-import Layout from '../components/layout';
+import React from "react";
+import Layout from "../components/layout";
 
 const MyNewPage = () => {
   return (
@@ -496,6 +533,7 @@ export default MyNewPage;
 ### Modifying Gatsby Configuration
 
 **Files**:
+
 - `gatsby-config.js`: Site metadata, plugins
 - `gatsby-node.js`: Dynamic page generation, GraphQL schema
 - `gatsby-browser.js`: Browser APIs, global styles
@@ -506,22 +544,26 @@ export default MyNewPage;
 ## Troubleshooting
 
 ### Build Errors
+
 - Check `gatsby-config.js` for plugin misconfigurations
 - Clear cache: `gatsby clean`
 - Reinstall dependencies: `rm -rf node_modules && npm install --legacy-peer-deps`
 - Check for Node version mismatch (should match `.nvmrc`)
 
 ### Content Issues
+
 - Validate MDX syntax: Look for unclosed JSX tags, improper frontmatter
 - Check GraphQL queries in `gatsby-node.js`
 - Verify file paths are correct and case-sensitive
 
 ### Styling Issues
+
 - Check for conflicting styled-components
 - Verify theme values are correctly accessed
 - Clear `.cache` directory and rebuild
 
 ### Linting Errors
+
 - Run `npm run lint` to auto-fix many issues
 - Check `eslint.config.js` for rule details
 - Common fixes: indentation (2 spaces), double quotes, semicolons
@@ -538,19 +580,23 @@ export default MyNewPage;
 ## Community and Resources
 
 ### Documentation
+
 - Layer5 Community Handbook: https://layer5.io/community/handbook
 - Meshery Documentation: https://docs.meshery.io
 - Gatsby Documentation: https://www.gatsbyjs.com/docs/
 
 ### Getting Help
+
 - Layer5 Slack: https://slack.layer5.io
 - MeshMates Program: For guidance and mentorship
 - GitHub Discussions: For questions and community help
 
 ### Code of Conduct
+
 All contributions must adhere to the [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md).
 
 Report violations via:
+
 - Email: community@layer5.io
 - Incident Report Form: https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform
 
@@ -559,6 +605,7 @@ Report violations via:
 Before submitting a PR, verify:
 
 ### Code Quality
+
 - [ ] Code follows ESLint rules (`npm run lint` passes)
 - [ ] All new components are functional, not class-based
 - [ ] Styling uses styled-components or existing patterns
@@ -568,6 +615,7 @@ Before submitting a PR, verify:
 - [ ] No console errors or warnings introduced
 
 ### Accessibility & Semantics
+
 - [ ] Accessibility requirements are met (WCAG 2.1 AA)
 - [ ] Images have descriptive alt text for both accessibility and SEO
 - [ ] Proper semantic HTML elements used (`<article>`, `<nav>`, etc.)
@@ -575,6 +623,7 @@ Before submitting a PR, verify:
 - [ ] Color contrast ratios meet WCAG standards (4.5:1 for text)
 
 ### SEO Requirements
+
 - [ ] Meta descriptions included in frontmatter (150-160 characters)
 - [ ] Title tags are descriptive and under 60 characters
 - [ ] Proper heading hierarchy (single H1, logical H2-H6)
@@ -585,6 +634,7 @@ Before submitting a PR, verify:
 - [ ] Internal linking implemented where appropriate
 
 ### Core Web Vitals Performance
+
 - [ ] **LCP < 2.5s**: Images optimized, critical resources preloaded
 - [ ] **FID/INP < 100ms/200ms**: JavaScript minimized, code splitting used
 - [ ] **CLS < 0.1**: Explicit dimensions set for media, no layout shifts
@@ -594,6 +644,7 @@ Before submitting a PR, verify:
 - [ ] Lighthouse CI checks pass (if applicable)
 
 ### Testing & Validation
+
 - [ ] Build completes successfully (`make build`)
 - [ ] Changes work correctly in development (`make site`)
 - [ ] Responsive design is maintained across devices
@@ -606,7 +657,7 @@ Before submitting a PR, verify:
 
 ### Complete Blog Post Example
 
-```markdown
+````markdown
 ---
 title: "Exploring Meshery's New Features in 2025 | Layer5"
 path: "/blog/meshery-new-features-2025"
@@ -622,7 +673,15 @@ tags:
   - Service Mesh
 category: "Product Updates"
 # SEO and Open Graph metadata
-keywords: ["meshery", "cloud native", "kubernetes", "service mesh", "kanvas", "microservices"]
+keywords:
+  [
+    "meshery",
+    "cloud native",
+    "kubernetes",
+    "service mesh",
+    "kanvas",
+    "microservices",
+  ]
 ogTitle: "Exploring Meshery's New Features in 2025"
 ogDescription: "Latest Meshery updates for cloud native infrastructure management"
 ogImage: "/images/blog/meshery-2025-features-og.png"
@@ -649,8 +708,10 @@ To try these new features:
    ```bash
    curl -L https://meshery.io/install | bash -
    ```
+````
 
 2. Verify installation:
+
    ```bash
    mesheryctl system check
    ```
@@ -664,7 +725,8 @@ To try these new features:
 - Contribute to [Meshery on GitHub](https://github.com/meshery/meshery)
 
 We're excited to see what you build with these new capabilities!
-```
+
+````
 
 ### Complete Component Example
 
@@ -674,7 +736,7 @@ import styled from 'styled-components';
 
 /**
  * FeatureCard - Displays a feature with icon, title, and description
- * 
+ *
  * @param {string} title - Feature title
  * @param {string} description - Feature description
  * @param {ReactNode} icon - Icon component
@@ -742,7 +804,7 @@ const CardDescription = styled.p`
   color: ${props => props.theme.colors.textSecondary};
   line-height: 1.6;
 `;
-```
+````
 
 ## Additional Notes
 

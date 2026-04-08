@@ -518,7 +518,7 @@ Environment variables are named values used to configure how an application beha
 | Variable                    | Possible Values                  | Description                                                                                                                                                                                                                                                                                                                    |
 | --------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `BUILD_FULL_SITE`           | `true`, `false`                  | When set to `true`, enables a full site build including all collections. If not explicitly set to `true`, the project defaults to a lightweight build.                                                                                                                                                                         |
-| `LITE_BUILD_PROFILE`        | `content`, `core`                | Selects which collections are excluded when `BUILD_FULL_SITE=false`. `core` is the default for `make site`, `npm start`, and `npm run dev`, while `content` keeps blog, news, events, and resources enabled.                                                                                                                   |
+| `LITE_BUILD_PROFILE`        | `blog`, `content`, `core`        | Selects which collections are excluded when `BUILD_FULL_SITE=false`. `core` is the default for `make site`, `npm start`, and `npm run dev`; `content` keeps blog, news, events, and resources enabled; `blog` keeps only the blog collection (use `make site-blog` for the fastest dev cycle).                                 |
 | `BUILD_COLLECTIONS_EXCLUDE` | comma-separated collection names | Adds extra collections to exclude from a lightweight build without editing project files.                                                                                                                                                                                                                                      |
 | `NODE_ENV`                  | `development`, `production`      | Determines the build and rendering mode used by Gatsby. This is automatically set by Gatsby. <br><br>• `development` - Uses **Deferred Static Generation (DSG)** i.e pages built on demand for faster startup. <br>• `production` - Uses **Server-Side Rendering (SSR)** i.e pages rendered on each request for fresh content. |
 | `CI`                        | `true`, `false`                  | Indicates that the build is running in a **Continuous Integration (CI)** environment (e.g., GitHub Actions). When set to `true`, special logic is applied to page paths and redirects for GitHub Pages compatibility. This is typically set automatically by the CI system and does not need to be configured manually.        |
@@ -580,6 +580,14 @@ make site
 ```
 
 This will run a local webserver with "live reload" conveniently enabled.
+
+If you are only working on blog posts, use the faster blog-only build:
+
+```
+make site-blog
+```
+
+This sources only the current year's blog posts, significantly reducing startup time.
 
 **11.** Track your changes.
 

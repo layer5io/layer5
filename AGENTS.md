@@ -22,6 +22,7 @@ The Layer5 website (https://layer5.io) is a Gatsby.js-based static site that ser
   description: "Short description for SEO."
   ---
   ```
+
 - **SEO Optimization**: Ensure all generated content includes meta descriptions, relevant keywords (e.g., "cloud native," "Meshery," "service mesh"), and proper heading structures (H1, H2, etc.).
 - **Consistency**: Use American English spelling and grammar. Follow the Layer5 Writing Style Guide for terminology (e.g., "Meshery" not "meshery").
 
@@ -35,21 +36,23 @@ The Layer5 website (https://layer5.io) is a Gatsby.js-based static site that ser
 - **React Components**: When generating components, use functional components with modern JavaScript (ES6+). Example:
 
   ```jsx
-  import React from 'react';
-  
+  import React from "react";
+
   const MyComponent = ({ title }) => (
     <div className="my-component">
       <h2>{title}</h2>
     </div>
   );
-  
+
   export default MyComponent;
   ```
+
 - **Styling**: Use CSS modules or styled-components as per the project's conventions. Prefer Tailwind CSS classes if integrated. Example:
 
   ```jsx
   <div className="bg-blue-500 text-white p-4">Content</div>
   ```
+
 - **Accessibility**: Ensure all components meet WCAG 2.1 standards (e.g., alt text for images, ARIA labels where needed).
 
 ### 3. Contribution Workflow
@@ -62,7 +65,8 @@ The Layer5 website (https://layer5.io) is a Gatsby.js-based static site that ser
   fix: correct broken link in footer
   docs: update AGENTS.md with LLM instructions
   ```
-- **Testing**: Ensure generated code passes `make setup` and `make site` without errors. Test for responsiveness across devices.
+
+- **Testing**: Ensure generated code passes `make setup` and `make site` without errors. For blog-only changes, `make site-blog` is significantly faster. Test for responsiveness across devices.
 - Verifying your fix: The website takes a long time to build. Don't interrupt the build when checking terminal output. Don't hail victory on a fix before you have ACTUALLY verified the solution. Wait for the website to be running, for you to actually \`curl\` a page and verify rendered content.
 
 ### 4. Content Restrictions
@@ -83,10 +87,14 @@ The Layer5 website (https://layer5.io) is a Gatsby.js-based static site that ser
   date: "2025-09-23"
   description: "Discover the latest updates to Meshery, the cloud native management platform."
   ---
+
   # Exploring Meshery's New Features in 2025
+
   ## Introduction
+
   Meshery continues to evolve as the leading platform for...
   ```
+
 - **Component Generation**: Create reusable React components for UI elements like buttons, cards, or modals, ensuring they match the site's design system.
 
 ### 6. Validation and Testing
@@ -104,21 +112,25 @@ The Layer5 website (https://layer5.io) is a Gatsby.js-based static site that ser
 
 Below is an example of a new MDX page for the Layer5 website:
 
-```markdown
+````markdown
 ---
 title: "Getting Started with Meshery"
 path: "/learn/getting-started"
 date: "2025-09-23"
 description: "A beginner's guide to setting up Meshery for cloud native management."
 ---
+
 # Getting Started with Meshery
+
 Meshery is an open-source cloud native management platform that simplifies...
 
 ## Installation
+
 1. Install Meshery CLI using:
    ```bash
    curl -L https://meshery.io/install | bash -
-```
+   ```
+````
 
 2. Verify installation:
 
@@ -169,7 +181,9 @@ Layer5 has custom agents available for specialized tasks. These agents provide d
 
 **Basic usage**:
 ```
+
 @blog-writer Create a blog post about [topic]
+
 ```
 
 For detailed examples and advanced usage, see `.github/agents/USAGE_EXAMPLES.md`.
