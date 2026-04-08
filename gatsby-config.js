@@ -541,13 +541,6 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/collections/service-mesh-labs`,
-        name: "service-mesh-labs",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         path: `${__dirname}/src/collections/resources`,
         name: "resources",
       },
@@ -632,7 +625,7 @@ module.exports = {
       resolve: "gatsby-plugin-purgecss",
       options: {
         printRejected: true,
-      }
+      },
     },
     "gatsby-plugin-meta-redirect",
     // make sure this is always the last one
@@ -672,7 +665,7 @@ if (process.env.LITE_BUILD_PROFILE === "blog") {
       (p) =>
         typeof p !== "string" &&
         p.resolve === "gatsby-source-filesystem" &&
-        p.options?.name === "blog"
+        p.options?.name === "blog",
     );
     if (blogPlugin) {
       blogPlugin.options.path = `${__dirname}/src/collections/blog/${blogYear}`;
@@ -680,6 +673,6 @@ if (process.env.LITE_BUILD_PROFILE === "blog") {
   }
 
   console.log(
-    `\n[LITE BUILD] Blog-only profile active${blogYear ? ` (year: ${blogYear})` : ""}\n`
+    `\n[LITE BUILD] Blog-only profile active${blogYear ? ` (year: ${blogYear})` : ""}\n`,
   );
 }
