@@ -1,6 +1,8 @@
 import React, { useState, useCallback, useEffect, useRef } from "react";
 import SEO from "../components/seo";
 
+const BRAND_COLOR = "#00b39f";
+
 const ALL_COLLECTIONS = [
   "blog",
   "events",
@@ -90,10 +92,10 @@ function CopyButton({ text }) {
         style={{
           flexShrink: 0,
           padding: "0.2rem 0.6rem",
-          background: copied ? "#00b39f" : "transparent",
-          border: "1px solid #00b39f",
+          background: copied ? BRAND_COLOR : "transparent",
+          border: `1px solid ${BRAND_COLOR}`,
           borderRadius: "4px",
-          color: copied ? "#fff" : "#00b39f",
+          color: copied ? "#fff" : BRAND_COLOR,
           cursor: "pointer",
           fontSize: "0.75rem",
           lineHeight: 1.4,
@@ -251,7 +253,7 @@ const LitePlaceholder = ({ pageContext, location }) => {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(3, auto)",
+            gridTemplateColumns: "repeat(auto-fit, minmax(120px, auto))",
             justifyContent: "center",
             gap: "0.55rem 1.5rem",
             textAlign: "left",
@@ -272,7 +274,7 @@ const LitePlaceholder = ({ pageContext, location }) => {
                 type="checkbox"
                 checked={included.has(name)}
                 onChange={() => toggle(name)}
-                style={{ accentColor: "#00b39f", cursor: "pointer" }}
+                style={{ accentColor: BRAND_COLOR, cursor: "pointer" }}
               />
               {name}
               {COLLECTION_WEIGHT[name] === "full" && (
@@ -313,7 +315,7 @@ const LitePlaceholder = ({ pageContext, location }) => {
         All build profiles and environment variables are documented in the{" "}
         <a
           href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#environment-variables"
-          style={{ color: "#00b39f" }}
+          style={{ color: BRAND_COLOR }}
           target="_blank"
           rel="noopener noreferrer"
         >
