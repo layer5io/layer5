@@ -700,11 +700,11 @@ Where/When:
 
 Reason: [https://github.com/springload/react-accessible-accordion/issues/351](https://github.com/springload/react-accessible-accordion/issues/351)
 
-> This warning was common in earlier local setups when dependency trees were out-of-sync with React 18 support.
+> This warning was common in earlier local setups when dependency trees were out-of-sync with the repository's React support.
 
 Layer5 currently using:
 "react-accessible-accordion": "^5.0.0"
-"react": "^18.2.0"
+"react": "^19.2.1"
 "gatsby": "^5.16.1"
 
 To clear the warning:
