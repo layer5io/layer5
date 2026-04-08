@@ -635,6 +635,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           heading: "Member profiles disabled in lite mode",
           description:
             "The members collection is intentionally skipped when BUILD_FULL_SITE=false to keep local builds fast.",
+          enabledBy: "full",
         },
       },
       {
@@ -646,6 +647,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           heading: "Integrations disabled in lite mode",
           description:
             "Integrations are heavy to source, so this route shows a placeholder during lightweight builds.",
+          enabledBy: "full",
         },
       },
       {
@@ -657,6 +659,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           heading: "Blog posts disabled in lite mode",
           description:
             "The default lightweight build skips the blog collection to keep local builds responsive.",
+          enabledBy: "content",
         },
       },
       {
@@ -668,6 +671,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           heading: "News posts disabled in lite mode",
           description:
             "The default lightweight build skips the news collection to reduce local memory consumption.",
+          enabledBy: "content",
         },
       },
       {
@@ -679,6 +683,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           heading: "Resources disabled in lite mode",
           description:
             "The default lightweight build skips the resources collection to reduce local memory consumption.",
+          enabledBy: "content",
         },
       },
       {
@@ -690,6 +695,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           heading: "Events disabled in lite mode",
           description:
             "The default lightweight build skips the events collection to keep local builds responsive.",
+          enabledBy: "content",
         },
       },
     ];
@@ -700,7 +706,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         envCreatePage({
           path: page.path,
           matchPath: page.matchPath,
-          context: page.context,
+          context: { ...page.context, collection: page.collection },
           component: LitePlaceholderTemplate,
         }),
       );
