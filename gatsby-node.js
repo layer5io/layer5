@@ -183,6 +183,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const resourcePostTemplate = path.resolve("src/templates/resource-single.js");
   const integrationTemplate = path.resolve("src/templates/integrations.js");
+  const sistentComponentTemplate = path.resolve(
+    "src/templates/sistent-component.js",
+  );
 
   const res = await graphql(`
     {
@@ -258,6 +261,24 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           fields {
             slug
             collection
+          }
+        }
+      }
+      sistentComponents: allMdx(
+        filter: {
+          fields: { collection: { eq: "sistent" } }
+          frontmatter: { component: { ne: null } }
+        }
+      ) {
+        nodes {
+          fields {
+            slug
+          }
+          frontmatter {
+            component
+          }
+          internal {
+            contentFilePath
           }
         }
       }
@@ -473,6 +494,53 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
+  const sistentNodes = res.data.sistentComponents?.nodes || [];
+  const sistentPagesByComponent = new Map();
+  const componentPageEntries = [];
+
+  sistentNodes.forEach((node) => {
+    const componentName = node.frontmatter?.component;
+    if (!componentName) return;
+
+    const fileName = path.basename(node.internal?.contentFilePath || "");
+    let pageType;
+    let suffix;
+
+    if (fileName === "index.mdx") {
+      pageType = "overview";
+      suffix = "";
+    } else if (fileName === "guidance.mdx") {
+      pageType = "guidance";
+      suffix = "/guidance";
+    } else if (fileName === "code.mdx") {
+      pageType = "code";
+      suffix = "/code";
+    } else {
+      return;
+    }
+
+    if (!sistentPagesByComponent.has(componentName)) {
+      sistentPagesByComponent.set(componentName, new Set());
+    }
+    sistentPagesByComponent.get(componentName).add(pageType);
+
+    componentPageEntries.push({ node, componentName, suffix });
+  });
+
+  componentPageEntries.forEach(({ node, componentName, suffix }) => {
+    envCreatePage({
+      path: `/projects/sistent/components/${componentName}${suffix}`,
+      component: `${sistentComponentTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+      context: {
+        slug: node.fields.slug,
+        componentName,
+        availablePages: Array.from(
+          sistentPagesByComponent.get(componentName) || [],
+        ),
+      },
+    });
+  });
+
   let programsArray = [];
   programs.forEach((program) => {
     if (
@@ -653,8 +721,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value: slug,
     });
 
-    const dateForSort =
-      node.frontmatter?.date || node.frontmatter?.published_at || "1970-01-01";
+    let dateForSort = "1970-01-01T00:00:00.000Z";
+    if (node.frontmatter?.date != null) {
+      try {
+        const parsed = new Date(node.frontmatter.date).toISOString();
+        if (!Number.isNaN(Date.parse(parsed))) dateForSort = parsed;
+      } catch {
+        // Keep fallback.
+      }
+    }
     createNodeField({
       name: "dateForSort",
       node,
