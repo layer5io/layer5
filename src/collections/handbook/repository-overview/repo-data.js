@@ -62,7 +62,7 @@ export const repo_data = [
         link: [
           "https://layer5.io/community/members/antonette-caldwell",
           "https://layer5.io/community/members/aabid-sofi",
-          "https://layer5.io/community/members/ian-whitney"
+          "https://layer5.io/community/members/ian-whitney",
         ],
         repository: "https://github.com/meshery/meshery/tree/master/ui",
       },
@@ -142,18 +142,14 @@ export const repo_data = [
         language: "Gatsby",
         maintainers_name: ["Vacant"],
         link: [""],
-        repository:
-          "https://github.com/layer5io/recognition",
+        repository: "https://github.com/layer5io/recognition",
       },
       {
         project: "Sistent Design System",
         image: sistent,
         site: "https://github.com/layer5io/sistent",
         language: "React.js, Typescript",
-        maintainers_name: [
-          "Antonette Caldwell",
-          "Aabid Sofi",
-        ],
+        maintainers_name: ["Antonette Caldwell", "Aabid Sofi"],
         link: [
           "https://layer5.io/community/members/antonette-caldwell",
           "https://layer5.io/community/members/aabid-sofi",
@@ -175,10 +171,7 @@ export const repo_data = [
         site: "https://github.com/layer5io/academy-theme",
         language: "Hugo",
         maintainers_name: ["Aabid Sofi"],
-        link: [
-          "#",
-          "https://layer5.io/community/members/aabid-sofi"
-        ],
+        link: ["#", "https://layer5.io/community/members/aabid-sofi"],
         repository: "https://github.com/layer5io/academy-theme",
       },
       {
@@ -216,6 +209,15 @@ export const repo_data = [
         maintainers_name: ["Vacant"],
         link: ["#"],
         repository: "https://github.com/layer5io/layer5-academy",
+      },
+      {
+        project: "kanvas.new",
+        image: kanvasLogo,
+        site: "https://www.kanvas.new/",
+        language: "Hugo",
+        maintainers_name: ["Vacant"],
+        link: ["#"],
+        repository: "https://github.com/meshery-extensions/kanvas-site",
       },
     ],
   },
@@ -294,9 +296,7 @@ export const repo_data = [
         image: meshery,
         language: "Golang, gRPC",
         maintainers_name: ["Antonette Caldwell"],
-        link: [
-          "https://layer5.io/community/members/antonette-caldwell",
-        ],
+        link: ["https://layer5.io/community/members/antonette-caldwell"],
         description:
           "the cloud native management plane to provide governance and backend system integration. Golang, gRPC, NATS, CloudEvents",
         repository: "https://github.com/meshery/meshery",
@@ -386,7 +386,8 @@ export const repo_data = [
         language: "Golang",
         maintainers_name: ["Vacant"],
         link: [""],
-        description: "A Kubectl Kanvas Snapshot is a native kubectl plugin designed to conveniently create a visual snapshot of the combination of multiple Kubernetes manifest files.",
+        description:
+          "A Kubectl Kanvas Snapshot is a native kubectl plugin designed to conveniently create a visual snapshot of the combination of multiple Kubernetes manifest files.",
         repository: "https://github.com/meshery/kubectl-kanvas-snapshot",
       },
     ],
@@ -671,5 +672,3 @@ export const repo_data = [
     ],
   },
 ];
-
-

@@ -39,7 +39,6 @@ To help you get started on contributing to Layer5 projects, refer to the [Layer5
 
 Before **creating** an Issue i.e for `features`/`bugs`/`improvements` please follow these steps:
 
-
 1. Search existing Issues before creating a new Issue (look to see if the Issue has already been created).
 1. If it doesn't exist create a new Issue giving as much context as possible (please take note and select the correct Issue type, for example `bug`, `documentation` or `feature`.
 1. If you wish to work on the Issue once it has been triaged, please include this in your Issue description.
@@ -50,12 +49,12 @@ Before working on an existing Issue please follow these steps:
 
 1. Comment asking for the Issue to be assigned to you.
 1. To best position yourself for Issues assignment, we recommend that you:
-    1. Confirm that you have read the CONTRIBUTING.md.
-    1. Have a functional development environment (have built and are able to run the project).
-    1. Convey your intended approach to solving the issue.
-    1. Put each of these items in writing in one or more comments.
+   1. Confirm that you have read the CONTRIBUTING.md.
+   1. Have a functional development environment (have built and are able to run the project).
+   1. Convey your intended approach to solving the issue.
+   1. Put each of these items in writing in one or more comments.
 1. After the Issue is assigned to you, you can start working on it.
-1. In general, **only** start working on this Issue (and open a Pull Request) when it has been assigned to you. Doing so will prevent confusion, duplicate work (some of which may go unaccepted given its duplicity), incidental stepping on toes, and the headache involved for maintainers and contributors alike as Issue assignments collide and heads bump together. 
+1. In general, **only** start working on this Issue (and open a Pull Request) when it has been assigned to you. Doing so will prevent confusion, duplicate work (some of which may go unaccepted given its duplicity), incidental stepping on toes, and the headache involved for maintainers and contributors alike as Issue assignments collide and heads bump together.
 1. Reference the Issue in your Pull Request (for example `This PR fixes #123`). so that the corresponding Issue is automatically closed upon merge of your Pull Request.
 
 > Notes:
@@ -80,7 +79,6 @@ We welcome everyone to review Pull Requests. It is a great way to learn, network
 
 - Do not repeat feedback, this creates more noise than value (check the existing conversation), use GitHub reactions if you agree/disagree with a comment
 - Do not blindly approve Pull Requests to improve your GitHub contributors graph
-
 
 ## Style Guide
 
@@ -138,7 +136,7 @@ If you'd like to contribute to [Sistent](https://github.com/layer5io/sistent), a
    ```
    src/sections/Projects/Sistent
    ```
-    > Note: For other parts of the project, the file path may vary. Ensure you're working in the correct file associated with the area you're contributing to.
+   > Note: For other parts of the project, the file path may vary. Ensure you're working in the correct file associated with the area you're contributing to.
 1. Add or update content. The system dynamically generates pages and routes to maintain consistency.
 
 ### Adding Sistent Component
@@ -148,7 +146,7 @@ We've streamlined the process by introducing a dynamic page creation workflow, s
 1. Navigate to the relevant directory, such as:
    ```
    src/sections/Projects/Sistent
-   ``` 
+   ```
 1. To add a new page, simply update this `content.js` file with the necessary details. All content is managed in a centralized file:
    ```
    src/sections/Projects/Sistent/components/content.js
@@ -156,6 +154,7 @@ We've streamlined the process by introducing a dynamic page creation workflow, s
 1. The system will dynamically generate pages based on this content and handle routing automatically.
 
 ### Example
+
 Refer to the [**Button component**](https://layer5.io/projects/sistent/components/button) in the Sistent Library for an example of how to structure the content.
 
 # Common Types of Site Contributions
@@ -502,7 +501,7 @@ Make sure you have the following prerequisites installed on your operating syste
 
 ### Make Targets
 
-Layer5 uses a `Makefile` that defines a set of rules and instructions (called **targets**) for creating, updating, and running parts of the project. Each target abstracts the underlying commands and logic, allowing  to execute complex workflows using a simple `make <target>` command.
+Layer5 uses a `Makefile` that defines a set of rules and instructions (called **targets**) for creating, updating, and running parts of the project. Each target abstracts the underlying commands and logic, allowing to execute complex workflows using a simple `make <target>` command.
 
 > **Note:** While using the make command on Windows, there sometimes arises an error in identifying the command even after it is installed (unrecognized command), this is because the PATH for the binary might not be set correctly.
 
@@ -516,13 +515,13 @@ make
 
 Environment variables are named values used to configure how an application behaves in different environments without modifying the code.
 
-| Variable | Possible Values | Description |
-|---------|----------------|------------|
-| `BUILD_FULL_SITE` | `true`, `false` | When set to `true`, enables a full site build including all collections. If not explicitly set to `true`, the project defaults to a lightweight build. |
-| `LITE_BUILD_PROFILE` | `content`, `core` | Selects which collections are excluded when `BUILD_FULL_SITE=false`. `core` is the default for `make site`, `npm start`, and `npm run dev`, while `content` keeps blog, news, events, and resources enabled. |
-| `BUILD_COLLECTIONS_EXCLUDE` | comma-separated collection names | Adds extra collections to exclude from a lightweight build without editing project files. |
-| `NODE_ENV` | `development`, `production` | Determines the build and rendering mode used by Gatsby. This is automatically set by Gatsby. <br><br>• `development` - Uses **Deferred Static Generation (DSG)** i.e pages built on demand for faster startup.  <br>• `production` - Uses **Server-Side Rendering (SSR)** i.e pages rendered on each request for fresh content. |
-| `CI` | `true`, `false` | Indicates that the build is running in a **Continuous Integration (CI)** environment (e.g., GitHub Actions). When set to `true`, special logic is applied to page paths and redirects for GitHub Pages compatibility. This is typically set automatically by the CI system and does not need to be configured manually. |
+| Variable                    | Possible Values                  | Description                                                                                                                                                                                                                                                                                                                    |
+| --------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `BUILD_FULL_SITE`           | `true`, `false`                  | When set to `true`, enables a full site build including all collections. If not explicitly set to `true`, the project defaults to a lightweight build.                                                                                                                                                                         |
+| `LITE_BUILD_PROFILE`        | `content`, `core`                | Selects which collections are excluded when `BUILD_FULL_SITE=false`. `core` is the default for `make site`, `npm start`, and `npm run dev`, while `content` keeps blog, news, events, and resources enabled.                                                                                                                   |
+| `BUILD_COLLECTIONS_EXCLUDE` | comma-separated collection names | Adds extra collections to exclude from a lightweight build without editing project files.                                                                                                                                                                                                                                      |
+| `NODE_ENV`                  | `development`, `production`      | Determines the build and rendering mode used by Gatsby. This is automatically set by Gatsby. <br><br>• `development` - Uses **Deferred Static Generation (DSG)** i.e pages built on demand for faster startup. <br>• `production` - Uses **Server-Side Rendering (SSR)** i.e pages rendered on each request for fresh content. |
+| `CI`                        | `true`, `false`                  | Indicates that the build is running in a **Continuous Integration (CI)** environment (e.g., GitHub Actions). When set to `true`, special logic is applied to page paths and redirects for GitHub Pages compatibility. This is typically set automatically by the CI system and does not need to be configured manually.        |
 
 ---
 
@@ -626,15 +625,13 @@ git push -u origin <your_branch_name>
 
 ### Lint Rules
 
-Layer5 uses ESLint to maintain code quality and consistency in our UI code.  Use this command to trigger a lint check:
+Layer5 uses ESLint to maintain code quality and consistency in our UI code. Use this command to trigger a lint check:
 
 ```sh
 make lint
 ```
 
-> Note:
->     - Eslint in Gatsby requires generating config files from CLI. Run `gatsby build` or `gatsby develop` if you face this error during linting.
-
+> Note: - Eslint in Gatsby requires generating config files from CLI. Run `gatsby build` or `gatsby develop` if you face this error during linting.
 
 ## Signing-off on Commits
 
@@ -703,14 +700,15 @@ Where/When:
 
 Reason: [https://github.com/springload/react-accessible-accordion/issues/351](https://github.com/springload/react-accessible-accordion/issues/351)
 
-> V5 is a release we cut explicitly for React 18 support (Hence the major upgrade, this was a breaking change, the webpack fix would not work as we are using React 18 new APIs), we are sticking with V4 for React 17 and under compatibility, using V4 has no functional difference outside of React version compatibility.
+> This warning was common in earlier local setups when dependency trees were out-of-sync with React 18 support.
 
 Layer5 currently using:
 "react-accessible-accordion": "^5.0.0"
-react": "^17.0.2"
+"react": "^18.2.0"
+"gatsby": "^5.16.1"
 
 To clear the warning:
-Upgrade the `react`package to ^18. However upgrading may introduce too many breaking changes and complexity.
+Reinstall dependencies (`make setup`) and ensure your local dependency tree aligns with this repository's `package.json`.
 
 ---
 
@@ -722,7 +720,7 @@ Where/When:
 
 - In terminal: after `npm start` and loading page
 
-Reason: In this version of Gatsby (4.20), the file:
+Reason: In older Gatsby 4.x versions, the file:
 `node_modules/gatsby/cache-dir/head/head-export-handler-for-ssr.js` is missing code to assign `key` prop to each head tag included in the `SEO` component.
 
 To clear the warning:
