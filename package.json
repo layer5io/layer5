@@ -21,6 +21,7 @@
     "serve": "gatsby serve",
     "lint": "eslint --fix .",
     "checklint": "eslint .",
+    "check:contributing-versions": "node .github/scripts/check-contributing-versions.cjs",
     "pretest": "eslint --ignore-path .gitignore .",
     "preload-fonts": "gatsby-preload-fonts",
     "deploy": "gatsby build && gh-pages -d public -b master",
