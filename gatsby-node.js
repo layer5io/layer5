@@ -1235,10 +1235,10 @@ exports.createSchemaCustomization = ({ actions }) => {
        component: String
        chapterTitle: String
        courseTitle: String
-       lectures: Int
-       videos: Int
-       order: Int
-       toc: Boolean
+      lectures: Int
+      videos: Int
+      order: Int
+      toc: [String]
      }
    `;
   createTypes(typeDefs);
