@@ -198,7 +198,7 @@ const KanvasCollaborateBanner = () => {
           <Button $primary className="join-community-button" title="Start Collaborating" $url="https://kanvas.new/" $external={true} />
         </div>
         <div className="transition-container" ref={transitionRef}>
-          <img className="canvas" src={isDark ? EmptyDark : EmptyLight} alt="" />
+                    <img className="canvas" src={isDark ? EmptyDark : EmptyLight} alt="" aria-hidden="true" />
           <div>
             <ServiceIntefaceImage className="service-interface" alt="ServiceIntefaceImage" />
           </div>
@@ -214,7 +214,7 @@ const KanvasCollaborateBanner = () => {
           <div>
             <PrometheusImage alt="PrometheusImage" className={imageInView ? "prometheus-transition prometheus" : "prometheus"} />
           </div>
-          <img className={imageInView ? "supporting-arrows-transition supporting-arrows" : "supporting-arrows"} src={SupportingArrows} alt="" />
+                    <img className={imageInView ? "supporting-arrows-transition supporting-arrows" : "supporting-arrows"} src={SupportingArrows} alt="" aria-hidden="true" />
         </div>
       </div>
     </CollaborationBannerWrapper>

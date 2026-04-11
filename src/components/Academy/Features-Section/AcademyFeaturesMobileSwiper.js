@@ -73,7 +73,7 @@ const Card = ({ title, description, img }) => {
     <div className="card">
       <h2>{title}</h2>
       <p>{description}</p>
-      <img style={{ border: "1px solid #444444", borderRadius: "10px", height: "50%" }} src={img} alt="" />
+      <img style={{ border: "1px solid #444444", borderRadius: "10px", height: "50%" }} src={img} alt={`${title} illustration`} />
     </div>
   );
 };

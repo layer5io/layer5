@@ -111,20 +111,21 @@ const Features = (props) => {
               <img
                 src={wave}
                 alt=""
+                aria-hidden="true"
                 style={{ position: "absolute" }}
                 className="waveAnimation"
               />
             )}
-            <img src={getPerson(props.cursor * 2)} alt="" />
+            <img src={getPerson(props.cursor * 2)} alt="" aria-hidden="true" />
           </SvgRandomWrapper>
           <SvgRandomWrapper
             className="person2"
             style={{ display: props.cursor ? "none" : "" }}
           >
-            <img src={getPerson(props.cursor * 2 + 1)} alt="" />
+            <img src={getPerson(props.cursor * 2 + 1)} alt="" aria-hidden="true" />
           </SvgRandomWrapper>
           <Link to={props.redirectLink ? props.redirectLink : props.redirectLinkWithImage[0].redirect}>
-            <img src={props.imgLink} alt="image" />
+            <img src={props.imgLink} alt={`${props.title || "Feature"} illustration`} />
           </Link>
         </ImageWrapper>
       ) : (
@@ -137,20 +138,21 @@ const Features = (props) => {
               <img
                 src={wave}
                 alt=""
+                aria-hidden="true"
                 style={{ position: "absolute" }}
                 className="waveAnimation"
               />
             )}
-            <img src={getPerson(props.cursor * 2)} alt="" />
+            <img src={getPerson(props.cursor * 2)} alt="" aria-hidden="true" />
           </SvgRandomWrapper>
           <SvgRandomWrapper
             className="person2"
             style={{ display: props.cursor ? "none" : "" }}
           >
-            <img src={getPerson(props.cursor * 2 + 1)} alt="" />
+            <img src={getPerson(props.cursor * 2 + 1)} alt="" aria-hidden="true" />
           </SvgRandomWrapper>
           <Link to={props.redirectLink ? props.redirectLink : props.redirectLinkWithImage[0].redirect}>
-            <img src={props.imgLink} alt="image" />
+            <img src={props.imgLink} alt={`${props.title || "Feature"} illustration`} />
           </Link>
         </ImageWrapperTwo>
       )}
