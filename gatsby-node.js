@@ -1110,6 +1110,20 @@ exports.createSchemaCustomization = ({ actions }) => {
   const typeDefs = `
      type Mdx implements Node {
        frontmatter: Frontmatter
+       fields: MdxFields
+     }
+
+     type MdxFields {
+       collection: String
+       slug: String
+       dateForSort: Date @dateformat
+       learnpath: String
+       course: String
+       section: String
+       chapter: String
+       pageType: String
+       permalink: String
+       componentName: String
      }
 
      type FrontmatterComponent {
@@ -1127,6 +1141,12 @@ exports.createSchemaCustomization = ({ actions }) => {
      type FrontmatterAttribute {
        name: String
        url: String
+     }
+
+     type FrontmatterContents {
+       id: Int
+       link: String
+       text: String
      }
 
      type Frontmatter {
@@ -1195,6 +1215,30 @@ exports.createSchemaCustomization = ({ actions }) => {
        thumbnail_svg: File @fileByRelativePath
        darkthumbnail_svg: File @fileByRelativePath
        meshesYouLearn: [FrontmatterMeshesYouLearn]
+       program: String
+       programSlug: String
+       docType: String
+       apply_by: String
+       redirectLink: String
+       register: Boolean
+       salary: String
+       start_date: String
+       duration: String
+       courses: Int
+       speakers: [String]
+       darkimgsrc: File @fileByRelativePath
+       lightimgsrc: File @fileByRelativePath
+       cover: File @fileByRelativePath
+       themeColor: String
+       disabled: String
+       contents: [FrontmatterContents]
+       component: String
+       chapterTitle: String
+       courseTitle: String
+      lectures: Int
+      videos: Int
+      order: Int
+      toc: [String]
      }
    `;
   createTypes(typeDefs);
