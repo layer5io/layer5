@@ -12,6 +12,8 @@ import passingMark from "../../assets/images/landscape/passing.svg";
 import failingMark from "../../assets/images/landscape/failing.svg";
 import ServiceMeshIcon from "../../assets/images/service-mesh-icons/service-mesh.svg";
 
+const TOOLTIP_ID = "smi-table-tooltip";
+
 // const halfMark = "../../assets/images/landscape/half.svg";
 // const passingMark = "../../assets/images/landscape/passing.svg";
 // const failingMark = "../../assets/images/landscape/failing.svg";
@@ -33,43 +35,27 @@ const TableRow = React.memo(({ row, rowIndex, prepareRow }) => {
         <td>
           {
             (non_functional.find(ele => ele.name.includes(row.original.mesh_name))) ?
-              <>
-                <img data-tooltip-id="react-tooltip" data-tooltip-content={row.original.mesh_name} className="smiMark" src={non_functional.find(ele => ele.name.includes(row.original.mesh_name)).icon} alt="Mesh Icon" />
-                <Tooltip
-                  id="react-tooltip"
-                  place="bottom"
-                  style={{ backgroundColor: "rgb(60,73,79)" }}
-                  className="smi-tooltip"
-                />
-              </>
-              : <>
-                <img data-tooltip-id="react-tooltip" data-tooltip-content={"Service Mesh"} className="smiMark" src={ServiceMeshIcon} alt="Service Mesh" />
-                <Tooltip
-                  id="react-tooltip"
-                  place="bottom"
-                  style={{ backgroundColor: "rgb(60,73,79)" }}
-                  className="smi-tooltip"
-                />
-              </>
+              <img data-tooltip-id={TOOLTIP_ID} data-tooltip-content={row.original.mesh_name} className="smiMark" src={non_functional.find(ele => ele.name.includes(row.original.mesh_name)).icon} alt="Mesh Icon" />
+              : <img data-tooltip-id={TOOLTIP_ID} data-tooltip-content={"Service Mesh"} className="smiMark" src={ServiceMeshIcon} alt="Service Mesh" />
           }
         </td>
         <td>{row.original.mesh_version}</td>
         {row.original.more_details.map((spec, index) => {
           if (spec["capability"] === "FULL") {
             return <td key={`spec${index}`}>
-              <div className="tooltip-div" data-tooltip-id="react-tooltip" data-tooltip-content={`${spec["result"]}`}>
+              <div className="tooltip-div" data-tooltip-id={TOOLTIP_ID} data-tooltip-content={`${spec["result"]}`}>
                 <img className="smiMark" src={passingMark} alt="Pass Mark" />
               </div>
             </td>;
           } else if (spec["capability"] === "HALF") {
             return <td key={`spec${index}`}>
-              <div className="tooltip-div" data-tooltip-id="react-tooltip" data-tooltip-content={`${spec["reason"]}<br>${spec["result"]}`}>
+              <div className="tooltip-div" data-tooltip-id={TOOLTIP_ID} data-tooltip-content={`${spec["reason"]}<br>${spec["result"]}`}>
                 <img className="smiMark" src={halfMark} alt="Half Mark" />
               </div>
             </td>;
           } else if (spec["capability"] === "NONE") {
             return <td key={`spec${index}`}>
-              <div className="tooltip-div" data-tooltip-id="react-tooltip" data-tooltip-content={`${spec["reason"]}<br>${spec["result"]}`}>
+              <div className="tooltip-div" data-tooltip-id={TOOLTIP_ID} data-tooltip-content={`${spec["reason"]}<br>${spec["result"]}`}>
                 <img className="smiMark" src={failingMark} alt="Fail Mark" />
               </div>
             </td>;
@@ -158,6 +144,12 @@ const Table = ({ columns, data, spec }) => {
           })}
         </tbody>
       </table>
+      <Tooltip
+        id={TOOLTIP_ID}
+        place="bottom"
+        style={{ backgroundColor: "rgb(60,73,79)" }}
+        className="smi-tooltip"
+      />
     </TableWrapper>
   );
 };
