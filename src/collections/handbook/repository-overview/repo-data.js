@@ -71,8 +71,8 @@ export const repo_data = [
         image: smp,
         site: "https://smp-spec.io",
         language: "Jekyll",
-        maintainers_name: ["Aaditya Subedy"],
-        link: ["https://layer5.io/community/members/aaditya-narayan-subedy"],
+        maintainers_name: ["Vacant"],
+        link: [""],
         repository:
           "https://github.com/service-mesh-performance/service-mesh-performance",
       },
