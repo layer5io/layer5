@@ -31,7 +31,7 @@ jobs:
       - name: Build Gatsby site
         run: |
           npm run build
-          echo "layer5.io" > public/CNAME
+          echo "drawnew.xyz" > public/CNAME
           touch public/.nojekyll
 
       - name: Deploy to GitHub Pages
