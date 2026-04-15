@@ -52,9 +52,12 @@ const UpcomingEvents = ({ data }) => {
                       <Button
                         $secondary
                         className="blog-slider_button"
-                        $url={item.frontmatter.eurl}
+                        $url={
+                          item.frontmatter.eurl ||
+                          `/community/events/${slugify(item.frontmatter.title)}`
+                        }
                         title="Join Now"
-                        $external={true}
+                        $external={!!item.frontmatter.eurl}
                       />
                     </div>
                   </div>
