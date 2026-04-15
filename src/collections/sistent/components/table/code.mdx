@@ -1,0 +1,99 @@
+---
+title: Table Code
+component: table
+description: Tables are used to organize and display structured data in rows and columns.
+---
+
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow
+} from "@sistent/sistent"
+
+Tables help display structured data in an organized and readable format.
+
+<a id="Basic Table">
+  <h2>Basic Table</h2>
+</a>
+
+Basic tables are used to display simple structured data.
+
+<div className="showcase">
+  <div className="items">
+    <TableContainer>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell>Name</TableCell>
+            <TableCell>Role</TableCell>
+            <TableCell>Status</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <TableRow>
+            <TableCell>User 1</TableCell>
+            <TableCell>Contributor</TableCell>
+            <TableCell>Active</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </TableContainer>
+  </div>
+</div>
+
+<a id="Striped Table">
+  <h2>Striped Table</h2>
+</a>
+
+Striped tables improve readability by alternating row colors.
+
+<div className="showcase">
+  <div className="items">
+    <TableContainer>
+      <Table striped>
+        <TableHead>
+          <TableRow>
+            <TableCell>Name</TableCell>
+            <TableCell>Role</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <TableRow>
+            <TableCell>User 1</TableCell>
+            <TableCell>Contributor</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </TableContainer>
+  </div>
+</div>
+
+<a id="Compact Table">
+  <h2>Compact Table</h2>
+</a>
+
+Compact tables are useful when displaying dense data.
+
+<div className="showcase">
+  <div className="items">
+    <TableContainer>
+      <Table size="small">
+        <TableHead>
+          <TableRow>
+            <TableCell>Name</TableCell>
+            <TableCell>Role</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <TableRow>
+            <TableCell>User 1</TableCell>
+            <TableCell>Contributor</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </TableContainer>
+  </div>
+</div>

@@ -1,0 +1,164 @@
+---
+name: "Table"
+title: Table
+published: true
+component: table
+description: A table is used to organize and display structured data in rows and columns.
+---
+
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow
+} from "@sistent/sistent"
+
+Tables are used to present structured data in a clear and organized way. They help users scan information quickly, compare values, and understand relationships between data.
+
+## Overview
+
+Tables help organize data into rows and columns, making it easier to read and analyze information.
+
+---
+
+## Usage
+
+Tables should be used when:
+
+- Displaying structured data  
+- Comparing values  
+- Showing logs or metrics  
+- Listing users or resources  
+
+---
+
+## Examples
+
+### Basic Table
+
+Basic tables are used to display structured data in rows and columns.
+
+<TableContainer>
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Name</TableCell>
+        <TableCell>Role</TableCell>
+        <TableCell>Status</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      <TableRow>
+        <TableCell>User 1</TableCell>
+        <TableCell>Contributor</TableCell>
+        <TableCell>Active</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</TableContainer>
+
+---
+
+### Striped Table
+
+Striped tables improve readability by alternating row colors.
+
+<TableContainer>
+  <Table striped>
+    <TableHead>
+      <TableRow>
+        <TableCell>Name</TableCell>
+        <TableCell>Role</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      <TableRow>
+        <TableCell>User 1</TableCell>
+        <TableCell>Contributor</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</TableContainer>
+
+---
+
+## States
+
+### Sortable Table
+
+Tables can support sorting to help users organize data.
+
+<TableContainer>
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Name</TableCell>
+        <TableCell>Role</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      <TableRow>
+        <TableCell>User 1</TableCell>
+        <TableCell>Contributor</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</TableContainer>
+
+---
+
+### Selectable Rows
+
+Tables can allow row selection.
+
+<TableContainer>
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Name</TableCell>
+        <TableCell>Role</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      <TableRow>
+        <TableCell>User 1</TableCell>
+        <TableCell>Contributor</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</TableContainer>
+
+---
+
+### Paginated Table
+
+Tables can support pagination for large datasets.
+
+<TableContainer>
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Name</TableCell>
+        <TableCell>Role</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      <TableRow>
+        <TableCell>User 1</TableCell>
+        <TableCell>Contributor</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</TableContainer>
+
+---
+
+## Best Practices
+
+- Use headers for clarity  
+- Avoid too many columns  
+- Keep rows readable  
+- Use pagination for large datasets  
+- Maintain consistent spacing
