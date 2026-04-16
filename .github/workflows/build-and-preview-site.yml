@@ -1,45 +1,86 @@
-name: Build and Preview Site
+name: PR Preview Deployment (Gatsby + GitHub Pages)
+
 on:
-  pull_request:
+  pull_request_target:
     branches: [master]
-    types: [opened, synchronize, reopened]
+    types: [opened, synchronize, reopened, closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: preview-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
 
 jobs:
-  site-preview:
+  preview:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@master
+
+      - name: Checkout PR
+        if: github.event.action != 'closed'
+        uses: actions/checkout@v4
         with:
-          persist-credentials: false
-          fetch-depth: 1
+          ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Install 🔧
-        run: make setup
-
-      - name: Build 🏗️
-        # Always run the full production build explicitly.
-        # Do NOT use `make clean` here — that target is a developer convenience
-        # command whose recipe has changed multiple times, causing blog posts and
-        # other collections to be silently excluded from the deployed site when
-        # it ran a lite/dev build instead of the full production build.
-        # `npm run build` is the canonical, stable production build command:
-        #   cross-env BUILD_FULL_SITE=true gatsby build
-        run: npm run build
-
-      - name: Broken Link Check 🔗
-        uses: technote-space/broken-link-checker-action@v2
+      - name: Checkout gh-pages for cleanup
+        if: github.event.action == 'closed'
+        uses: actions/checkout@v4
         with:
-          target: ./public/**/*.html  
+          ref: gh-pages
 
-      - name: Zip Site
-        run: bash ./script.sh
-
-      - name: Upload files
-        uses: actions/upload-artifact@v6
+      - name: Setup Node
+        if: github.event.action != 'closed'
+        uses: actions/setup-node@v4
         with:
-          name: public-dir
-          path: ./public-dir.zip
-          retention-days: 1
-      - name: Trigger Inner workflow
-        run: echo "triggering inner workflow"
+          node-version: "20"
+
+      - name: Install dependencies
+        if: github.event.action != 'closed'
+        run: npm ci
+
+      - name: Set PATH_PREFIX for preview
+        if: github.event.action != 'closed'
+        run: |
+          echo "PATH_PREFIX=pr-preview/pr-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+
+      - name: Build PR preview
+        if: github.event.action != 'closed'
+        env:
+          GATSBY_PREVIEW: "true"
+          GATSBY_SITE_URL: https://${{ github.repository_owner }}.github.io
+        run: |
+          PATH_PREFIX=$PATH_PREFIX npm run build:preview
+
+          # Prevent indexing
+          echo -e "User-agent: *\nDisallow: /" > public/robots.txt
+
+      - name: Deploy PR preview
+        if: github.event.action != 'closed'
+        uses: rossjrw/pr-preview-action@v1.6.3
+        with:
+          source-dir: ./public
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: auto
+          comment: false
+
+      - name: Comment PR with Preview URL
+        if: github.event.action != 'closed'
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: pr-preview
+          message: |
+            🚀 **Preview for PR #${{ github.event.pull_request.number }}**
+
+            🌐 https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/pr-preview/pr-${{ github.event.pull_request.number }}/
+
+      - name: Cleanup PR preview
+        if: github.event.action == 'closed'
+        uses: rossjrw/pr-preview-action@v1.6.3
+        with:
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: remove

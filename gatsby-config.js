@@ -8,6 +8,16 @@ const {
 
 const isDevelopment = process.env.NODE_ENV === "development";
 const isProduction = process.env.NODE_ENV === "production";
+const isPreviewBuild = process.env.GATSBY_PREVIEW === "true";
+const siteOrigin = (process.env.GATSBY_SITE_URL || "https://layer5.io").replace(
+  /\/$/,
+  "",
+);
+const rawPathPrefix = process.env.PATH_PREFIX || "";
+const pathPrefix = rawPathPrefix
+  ? `/${rawPathPrefix.replace(/^\/+|\/+$/g, "")}`
+  : "";
+const siteRootUrl = `${siteOrigin}${pathPrefix}`.replace(/\/$/, "");
 const shouldBuildFullSite = isFullSiteBuild();
 const isLiteDevBuild = isDevelopment && !shouldBuildFullSite;
 const excludedCollections = getExcludedCollections({
@@ -34,11 +44,12 @@ module.exports = {
     description:
       "Expect more from your infrastructure. Cloud native, open source software for your internal development platforms, your DevOps, platform engineering and site reliability engineering teams. Less finger-pointing and more collaborating. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidently run modern infrastructure.",
     author: "Layer5 Authors",
-    permalink: "https://layer5.io",
-    siteUrl: "https://layer5.io",
+    permalink: siteRootUrl,
+    siteUrl: siteRootUrl,
     image: "/images/layer5-gradient.webp",
     twitterUsername: "@layer5",
   },
+  ...(pathPrefix ? { pathPrefix } : {}),
   flags: {
     FAST_DEV: false,
     DEV_SSR: false,
@@ -560,14 +571,18 @@ module.exports = {
         query: "allMdx",
       },
     },
-    {
-      resolve: "gatsby-plugin-robots-txt",
-      options: {
-        host: "https://layer5.io",
-        sitemap: "https://layer5.io/sitemap-index.xml",
-        policy: [{ userAgent: "*", allow: "/" }],
-      },
-    },
+    ...(!isPreviewBuild
+      ? [
+          {
+            resolve: "gatsby-plugin-robots-txt",
+            options: {
+              host: siteRootUrl,
+              sitemap: `${siteRootUrl}/sitemap-index.xml`,
+              policy: [{ userAgent: "*", allow: "/" }],
+            },
+          },
+        ]
+      : []),
     "gatsby-plugin-meta-redirect",
     // make sure this is always the last one
   ],
