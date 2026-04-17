@@ -38,8 +38,6 @@ Tables should be used when:
 
 ### Basic Table
 
-Basic tables are used to display structured data in rows and columns.
-
 <TableContainer>
   <Table>
     <TableHead>
@@ -59,11 +57,34 @@ Basic tables are used to display structured data in rows and columns.
   </Table>
 </TableContainer>
 
+<CodeBlock>
+
+```jsx
+<TableContainer>
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Name</TableCell>
+        <TableCell>Role</TableCell>
+        <TableCell>Status</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      <TableRow>
+        <TableCell>User 1</TableCell>
+        <TableCell>Contributor</TableCell>
+        <TableCell>Active</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</TableContainer>
+```
+
+</CodeBlock>
+
 ---
 
 ### Striped Table
-
-Striped tables improve readability by alternating row colors.
 
 <TableContainer>
   <Table striped>
@@ -82,14 +103,35 @@ Striped tables improve readability by alternating row colors.
   </Table>
 </TableContainer>
 
+<CodeBlock>
+
+```jsx
+<TableContainer>
+  <Table striped>
+    <TableHead>
+      <TableRow>
+        <TableCell>Name</TableCell>
+        <TableCell>Role</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      <TableRow>
+        <TableCell>User 1</TableCell>
+        <TableCell>Contributor</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</TableContainer>
+```
+
+</CodeBlock>
+
 ---
 
 ## States
 
 ### Sortable Table
 
-Tables can support sorting to help users organize data.
-
 <TableContainer>
   <Table>
     <TableHead>
@@ -106,13 +148,34 @@ Tables can support sorting to help users organize data.
     </TableBody>
   </Table>
 </TableContainer>
+
+<CodeBlock>
+
+```jsx
+<TableContainer>
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Name</TableCell>
+        <TableCell>Role</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      <TableRow>
+        <TableCell>User 1</TableCell>
+        <TableCell>Contributor</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</TableContainer>
+```
+
+</CodeBlock>
 
 ---
 
 ### Selectable Rows
 
-Tables can allow row selection.
-
 <TableContainer>
   <Table>
     <TableHead>
@@ -129,13 +192,34 @@ Tables can allow row selection.
     </TableBody>
   </Table>
 </TableContainer>
+
+<CodeBlock>
+
+```jsx
+<TableContainer>
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Name</TableCell>
+        <TableCell>Role</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      <TableRow>
+        <TableCell>User 1</TableCell>
+        <TableCell>Contributor</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</TableContainer>
+```
+
+</CodeBlock>
 
 ---
 
 ### Paginated Table
 
-Tables can support pagination for large datasets.
-
 <TableContainer>
   <Table>
     <TableHead>
@@ -152,6 +236,29 @@ Tables can support pagination for large datasets.
     </TableBody>
   </Table>
 </TableContainer>
+
+<CodeBlock>
+
+```jsx
+<TableContainer>
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Name</TableCell>
+        <TableCell>Role</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      <TableRow>
+        <TableCell>User 1</TableCell>
+        <TableCell>Contributor</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</TableContainer>
+```
+
+</CodeBlock>
 
 ---
 
