@@ -7,12 +7,11 @@ import { graphql } from "gatsby";
 
 export const query = graphql`query BlogsByCategory($category: String!) {
   allMdx(
-    sort: {frontmatter: {date: DESC}}
+    sort: {fields: {dateForSort: DESC}}
     filter: {fields: {collection: {eq: "blog"}}, frontmatter: {category: {eq: $category}, published: {eq: true}}}
   ) {
     nodes {
       id
-      body
       frontmatter {
         title
         subtitle
@@ -22,14 +21,14 @@ export const query = graphql`query BlogsByCategory($category: String!) {
           extension
           publicURL
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
         }
         darkthumbnail {
           extension
           publicURL
           childImageSharp {
-            gatsbyImageData(width: 500, layout: CONSTRAINED)
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
         }
       }

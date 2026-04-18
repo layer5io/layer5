@@ -107,9 +107,7 @@ const Footer = ({ location }) => {
         >
           <Col $xs={12} $lg={3}>
             <p className="desc-info">
-              An empowerer of engineers, Layer5 helps you extract more value
-              from your infrastructure. Creator and maintainer of cloud native
-              standards. Maker of Meshery, the cloud native manager.
+              Layer5 is the steward of Meshery and creator of Kanvas, the collaborative canvas for cloud-native infrastructure. We bridge the gap between design and operation, allowing engineers to create, configure, and deploy orchestratable diagrams in real time. Whether managing Kubernetes or multi-cloud environments, Layer5 provides the tooling needed to oversee modern infrastructure with confidence.
             </p>
           </Col>
           <Col className="sections_col" $xs={12} $lg={9}>

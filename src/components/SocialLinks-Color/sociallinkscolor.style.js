@@ -8,7 +8,7 @@ const SocialLinksWrapper = styled.div`
     }
     a {
       margin: 0 0.3rem;
-      width: 2.5rem;
+      width: 32px;
       filter: grayscale(1) invert(0.25);
 
       img {

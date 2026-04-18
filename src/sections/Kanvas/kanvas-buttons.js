@@ -26,7 +26,6 @@ const KanvasBtn = ({ title, style }) => {
         $primary
         $external={true}
         title={title ? title : "Explore Kanvas"}
-        alt="Explore Kanvas"
         $url="https://kanvas.new/"
       />
       <Button
@@ -34,7 +33,6 @@ const KanvasBtn = ({ title, style }) => {
         $secondary
         $external={true}
         title="Book a demo"
-        alt="Book a demo"
         $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true"
       />
     </BtnContainer>

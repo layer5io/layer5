@@ -64,7 +64,7 @@ const StickFigures = () => {
         </Col>
         <Row $Vcenter className="fiveDiv" style={{ minWidth: "200px" }}>
           <Col $xs={12}>
-            <img src={SFL} alt="Layer5 Mascot, Five" />
+            <img src={SFL} alt="Layer5 Mascot, Five" className="five-image" />
           </Col>
         </Row>
         <Row $Vcenter className="fiveDiv" style={{ minWidth: "200px" }}>
@@ -74,7 +74,7 @@ const StickFigures = () => {
         </Row>
         <Row $Vcenter className="fiveDiv">
           <Col $xs={12} $sm={6}>
-            <img src={teamOfFives} alt="Layer5 Mascot, Five" />
+            <img src={teamOfFives} alt="Layer5 Mascot, Five" className="five-image" />
             {/* <img src={f1} alt="Layer5 Mascot, Five" />
             <img src={f2} alt="Layer5 Mascot, Five" />
             <img src={f3} alt="Layer5 Mascot, Five" />
@@ -82,7 +82,7 @@ const StickFigures = () => {
             <img src={f5} alt="Layer5 Mascot, Five" /> */}
           </Col>
           <Col $xs={12} $sm={6}>
-            <img src={resourcesSign} alt="Layer5 Mascot, Five" />
+            <img src={resourcesSign} alt="Layer5 Mascot, Five" className="five-image" />
             {/* <img src={f13} alt="Layer5 Mascot, Five" />
             <img src={f14} alt="Layer5 Mascot, Five" />
             <img src={f15} alt="Layer5 Mascot, Five" />

@@ -21,7 +21,7 @@ const Platform = () => {
   const data = useStaticQuery(
     graphql`query relatedBlogPosts {
       relatedPosts: allMdx(
-        sort: { frontmatter: { date: DESC } }
+        sort: { fields: { dateForSort: DESC } }
         filter: {
           fields: { collection: { eq: "blog" } }
           frontmatter: {

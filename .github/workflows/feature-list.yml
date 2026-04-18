@@ -18,12 +18,12 @@ jobs:
 
     steps:
       - name: Checkout current repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 18
+          node-version: 20
 
       - name: Install dependencies
         run: |
@@ -40,7 +40,7 @@ jobs:
 
       - name: Commit changes
         id: commit-changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "Updated feature data from spreadsheet"
           file_pattern: ${{ env.FEATURES_FILE }}

@@ -239,7 +239,7 @@ export const PricingAddons = ({ isYearly = false, setIsYearly, currency, enterpr
                         label="Optionally, choose one or more add-ons"
                         MenuProps={{
                           disableScrollLock: true,
-                          disablePortal: true,
+                          marginThreshold: null,
                         }}
                       >
                         {addOns.map((addon) => (

@@ -5,14 +5,12 @@ const js = require("@eslint/js");
 const mdxParser = require("eslint-mdx");
 const mdxPlugin = require("eslint-plugin-mdx");
 
-const {
-  FlatCompat,
-} = require("@eslint/eslintrc");
+const { FlatCompat } = require("@eslint/eslintrc");
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
   recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all
+  allConfig: js.configs.all,
 });
 
 module.exports = [
@@ -34,19 +32,19 @@ module.exports = [
       },
 
       parser: babelParser,
-      "ecmaVersion": 2018,
-      "sourceType": "module",
+      ecmaVersion: 2018,
+      sourceType: "module",
 
       parserOptions: {
-        "ecmaFeatures": {
-          "jsx": true,
+        ecmaFeatures: {
+          jsx: true,
         },
       },
     },
 
-    "settings": {
-      "react": {
-        "version": "detect",
+    settings: {
+      react: {
+        version: "detect",
       },
     },
 
@@ -54,14 +52,17 @@ module.exports = [
       react,
     },
 
-    "rules": {
+    rules: {
       "array-bracket-spacing": ["error", "never"],
       "comma-style": ["error"],
 
-      "arrow-spacing": ["error", {
-        "after": true,
-        "before": true,
-      }],
+      "arrow-spacing": [
+        "error",
+        {
+          after: true,
+          before: true,
+        },
+      ],
 
       "block-scoped-var": "error",
       "block-spacing": "error",
@@ -69,14 +70,20 @@ module.exports = [
       "jsx-quotes": ["error", "prefer-double"],
       "keyword-spacing": "error",
 
-      "key-spacing": ["error", {
-        "beforeColon": false,
-        "afterColon": true,
-      }],
+      "key-spacing": [
+        "error",
+        {
+          beforeColon: false,
+          afterColon: true,
+        },
+      ],
 
-      "no-unused-vars": ["warn", {
-        "varsIgnorePattern": "React",
-      }],
+      "no-unused-vars": [
+        "warn",
+        {
+          varsIgnorePattern: "React",
+        },
+      ],
 
       "no-trailing-spaces": "error",
       "object-curly-spacing": ["error", "always"],
@@ -86,43 +93,53 @@ module.exports = [
       "react/jsx-no-duplicate-props": [0],
       "react/style-prop-object": "error",
       "react/jsx-closing-tag-location": ["error", "line-aligned"],
-      "react/jsx-closing-bracket-location": ["error", {
-        "nonEmpty": "line-aligned",
-        "selfClosing": "line-aligned",
-      }],
-
-      "indent": ["error", 2, {
-        "FunctionExpression": {
-          "parameters": "first",
+      "react/jsx-closing-bracket-location": [
+        "error",
+        {
+          nonEmpty: "line-aligned",
+          selfClosing: "line-aligned",
         },
+      ],
 
-        "FunctionDeclaration": {
-          "parameters": "first",
+      indent: [
+        "error",
+        2,
+        {
+          FunctionExpression: {
+            parameters: "first",
+          },
+
+          FunctionDeclaration: {
+            parameters: "first",
+          },
+
+          MemberExpression: 1,
+          SwitchCase: 1,
+          outerIIFEBody: 0,
+
+          VariableDeclarator: {
+            var: 2,
+            let: 2,
+            const: 3,
+          },
+
+          ignoredNodes: ["TemplateLiteral"],
         },
-
-        "MemberExpression": 1,
-        "SwitchCase": 1,
-        "outerIIFEBody": 0,
-
-        "VariableDeclarator": {
-          "var": 2,
-          "let": 2,
-          "const": 3,
-        },
-
-        ignoredNodes: ["TemplateLiteral"],
-      }],
+      ],
 
       "linebreak-style": ["error", "unix"],
-      "quotes": ["error", "double"],
-      "semi": ["error", "always"],
-      "strict": 0,
+      quotes: ["error", "double"],
+      semi: ["error", "always"],
+      strict: 0,
       "valid-typeof": 0,
 
-      "space-unary-ops": [1, {
-        "words": true,
-        "nonwords": false,
-      }],
+      "space-unary-ops": [
+        1,
+        {
+          words: true,
+          nonwords: false,
+        },
+      ],
 
       "space-infix-ops": ["error"],
     },
@@ -153,6 +170,7 @@ module.exports = [
   {
     ignores: [
       "**/node_modules/",
+      "**/.claude/",
       "**/*.test.js",
       "src/utils/",
       "**/.cache/",
@@ -172,6 +190,6 @@ module.exports = [
       "**/package-lock.json",
       "**/static/",
       "content-learn/**/index.mdx",
-    ]
-  }
+    ],
+  },
 ];
