@@ -48,7 +48,7 @@
     "@mui/icons-material": "^7.3.5",
     "@mui/material": "^7.3.4",
     "@react-icons/all-files": "^4.1.0",
-    "@sistent/sistent": "^0.18.3",
+    "@sistent/sistent": "^0.18.8",
     "@svgr/webpack": "^8.0.1",
     "axios": "^1.13.2",
     "babel-plugin-styled-components": "^2.1.4",
