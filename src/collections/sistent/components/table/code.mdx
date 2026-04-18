@@ -44,6 +44,33 @@ Basic tables are used to display simple structured data.
   </div>
 </div>
 
+<CodeBlock>
+
+```jsx
+<TableContainer>
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Name</TableCell>
+        <TableCell>Role</TableCell>
+        <TableCell>Status</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      <TableRow>
+        <TableCell>User 1</TableCell>
+        <TableCell>Contributor</TableCell>
+        <TableCell>Active</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</TableContainer>
+```
+
+</CodeBlock>
+
+---
+
 <a id="Striped Table">
   <h2>Striped Table</h2>
 </a>
@@ -71,6 +98,31 @@ Striped tables improve readability by alternating row colors.
   </div>
 </div>
 
+<CodeBlock>
+
+```jsx
+<TableContainer>
+  <Table striped>
+    <TableHead>
+      <TableRow>
+        <TableCell>Name</TableCell>
+        <TableCell>Role</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      <TableRow>
+        <TableCell>User 1</TableCell>
+        <TableCell>Contributor</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</TableContainer>
+```
+
+</CodeBlock>
+
+---
+
 <a id="Compact Table">
   <h2>Compact Table</h2>
 </a>
@@ -97,3 +149,26 @@ Compact tables are useful when displaying dense data.
     </TableContainer>
   </div>
 </div>
+
+<CodeBlock>
+
+```jsx
+<TableContainer>
+  <Table size="small">
+    <TableHead>
+      <TableRow>
+        <TableCell>Name</TableCell>
+        <TableCell>Role</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      <TableRow>
+        <TableCell>User 1</TableCell>
+        <TableCell>Contributor</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</TableContainer>
+```
+
+</CodeBlock>
