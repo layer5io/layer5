@@ -1,30 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Mutual_tls from "../../assets/images/kanvas/catalog-card-images/mutual-tls.svg";
-import Retries from "../../assets/images/kanvas/catalog-card-images/retries.svg";
-import Traces from "../../assets/images/kanvas/catalog-card-images/traces.svg";
-import Denial from "../../assets/images/kanvas/catalog-card-images/denial.svg";
-import Correlate_event from "../../assets/images/kanvas/catalog-card-images/correlate-event.svg";
-import Only_wagent from "../../assets/images/kanvas/catalog-card-images/only-wagent.svg";
-import Node_agent from "../../assets/images/kanvas/catalog-card-images/node-agent.svg";
-import Single_tenant from "../../assets/images/kanvas/catalog-card-images/single-tenant.svg";
-import Pre_provison from "../../assets/images/kanvas/catalog-card-images/pre-provision.svg";
-import Circuit_breaker from "../../assets/images/kanvas/catalog-card-images/circuit-breaker.svg";
-import Retry_deadline from "../../assets/images/kanvas/catalog-card-images/retry-deadline.svg";
-import Singleton from "../../assets/images/kanvas/catalog-card-images/singleton.svg";
-import Jwt_transformer from "../../assets/images/kanvas/catalog-card-images/jwt.svg";
-import Multicluster from "../../assets/images/kanvas/catalog-card-images/multicluster.svg";
-import Http_metrics from "../../assets/images/kanvas/catalog-card-images/http.svg";
-
-import Design from "../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
-
-
-
-import Patterns from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
-
-import Models from "../../assets/images/meshery/meshery-logo.svg";
-
-import Opa from "../../assets/images/kanvas/opa.svg";
+import { StaticImage } from "gatsby-plugin-image";
 import { Container } from "../../reusecore/Layout";
 
 const CatalogWrapper = styled.div`
@@ -121,7 +97,7 @@ box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1em;
   padding: 0.5em;
-  img{
+  .gatsby-image-wrapper{
     max-width:5.6rem;
     display:block;
     margin: 0 auto;
@@ -232,7 +208,7 @@ h3.containerCaption {
 }
 
 #carousel{
-  img{
+  .gatsby-image-wrapper{
     transition: all .5s ease;
   }
 }
@@ -344,7 +320,7 @@ h3.containerCaption {
   @media screen and (max-width: 680px) {
 
     .svg-cont{
-      img {
+      .gatsby-image-wrapper {
         width: 4rem;
       }
       p{
@@ -448,20 +424,20 @@ const Catalog = () => {
           {/* Right Section */}
           <section className="services svg-cont">
             <div>
-              <img alt="Kanvas dashboard showing service retries in Kubernetes visualization" src={Patterns} />
+              <StaticImage alt="Kanvas dashboard showing service retries in Kubernetes visualization" src="../../assets/images/service-mesh-patterns/service-mesh-pattern.svg" placeholder="none" />
               <p>Cloud Native Patterns</p>
             </div>
             <div>
 
-              <img src={Design} alt="Design logo" />
+              <StaticImage src="../../assets/images/kanvas/icon-only/kanvas-icon-color.svg" alt="Design logo" placeholder="none" />
               <p>Design</p>
             </div>
             <div>
-              <img src={Models} alt="Models logo" />
+              <StaticImage src="../../assets/images/meshery/meshery-logo.svg" alt="Models logo" placeholder="none" />
               <p>Models</p>
             </div>
             <div>
-              <img alt="OPA policies management illustration in Kanvas service mesh" src={Opa} />
+              <StaticImage alt="OPA policies management illustration in Kanvas service mesh" src="../../assets/images/kanvas/opa.svg" placeholder="none" />
               <p>OPA Policies</p>
             </div>
           </section>
@@ -473,49 +449,49 @@ const Catalog = () => {
             <div className="container">
               <div id="carousel">
                 <div className="slide one">
-                  <img src={Mutual_tls} alt="Kanvas Mutual TLS security feature for Kubernetes workloads" />
+                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/mutual-tls.svg" alt="Kanvas Mutual TLS security feature for Kubernetes workloads" placeholder="none" />
                 </div>
                 <div className="slide two">
-                  <img src={Retries} alt="Kanvas dashboard showing service retries in Kubernetes visualization" />
+                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/retries.svg" alt="Kanvas dashboard showing service retries in Kubernetes visualization" placeholder="none" />
                 </div>
                 <div className="slide three">
-                  <img src={Traces}  alt="Kanvas tracing visualization for distributed Kubernetes services" />
+                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/traces.svg"  alt="Kanvas tracing visualization for distributed Kubernetes services" placeholder="none" />
                 </div>
                 <div className="slide four">
-                  <img src={Denial} alt="Access denial control feature in Kanvas service mesh" />
+                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/denial.svg" alt="Access denial control feature in Kanvas service mesh" placeholder="none" />
                 </div>
                 <div className="slide five">
-                  <img src={Correlate_event} alt="Event correlation view in Kanvas dashboard" />
+                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/correlate-event.svg" alt="Event correlation view in Kanvas dashboard" placeholder="none" />
                 </div>
                 <div className="slide six">
-                  <img src={Only_wagent} alt="Kanvas only agent monitoring feature for clusters" />
+                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/only-wagent.svg" alt="Kanvas only agent monitoring feature for clusters" placeholder="none" />
                 </div>
                 <div className="slide seven">
-                  <img src={Node_agent} alt="Kanvas node agent metrics visualization for Kubernetes" />
+                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/node-agent.svg" alt="Kanvas node agent metrics visualization for Kubernetes" placeholder="none" />
                 </div>
                 <div className="slide eight">
-                  <img src={Single_tenant} alt="Single tenant Kubernetes deployment dashboard in Kanvas" />
+                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/single-tenant.svg" alt="Single tenant Kubernetes deployment dashboard in Kanvas" placeholder="none" />
                 </div>
                 <div className="slide nine">
-                  <img src={Pre_provison} alt="Kanvas pre-provisioning configuration for Kubernetes clusters" />
+                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/pre-provision.svg" alt="Kanvas pre-provisioning configuration for Kubernetes clusters" placeholder="none" />
                 </div>
                 <div className="slide ten">
-                  <img src={Circuit_breaker}  alt="Circuit breaker monitoring in Kanvas service mesh"/>
+                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/circuit-breaker.svg"  alt="Circuit breaker monitoring in Kanvas service mesh" placeholder="none" />
                 </div>
                 <div className="slide eleven">
-                  <img src={Retry_deadline}  alt="Retry deadline feature in Kanvas observability dashboard" />
+                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/retry-deadline.svg"  alt="Retry deadline feature in Kanvas observability dashboard" placeholder="none" />
                 </div>
                 <div className="slide twelve">
-                  <img src={Singleton} alt="Singleton service pattern visualization in Kanvas" />
+                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/singleton.svg" alt="Singleton service pattern visualization in Kanvas" placeholder="none" />
                 </div>
                 <div className="slide thirteen">
-                  <img src={Jwt_transformer} alt="JWT transformer process view in Kanvas Kubernetes dashboard" />
+                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/jwt.svg" alt="JWT transformer process view in Kanvas Kubernetes dashboard" placeholder="none" />
                 </div>
                 <div className="slide fourteen">
-                  <img src={Multicluster} alt="Multi-cluster management view in Kanvas" />
+                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/multicluster.svg" alt="Multi-cluster management view in Kanvas" placeholder="none" />
                 </div>
                 <div className="slide fifteen">
-                  <img src={Http_metrics} alt="HTTP metrics monitoring dashboard in Kanvas for Kubernetes" />
+                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/http.svg" alt="HTTP metrics monitoring dashboard in Kanvas for Kubernetes" placeholder="none" />
                 </div>
               </div>
             </div>
