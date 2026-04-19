@@ -13,10 +13,12 @@ const siteOrigin = (process.env.GATSBY_SITE_URL || "https://layer5.io").replace(
   /\/$/,
   "",
 );
-const rawPathPrefix = process.env.PATH_PREFIX || "";
-const pathPrefix = rawPathPrefix
-  ? `/${rawPathPrefix.replace(/^\/+|\/+$/g, "")}`
-  : "";
+const rawPrefix = process.env.PATH_PREFIX;
+const pathPrefix =
+  rawPrefix && String(rawPrefix).trim().length
+    ? `/${String(rawPrefix).replace(/^\/+|\/+$/g, "")}`
+    : undefined;
+
 const siteRootUrl = `${siteOrigin}${pathPrefix}`.replace(/\/$/, "");
 const shouldBuildFullSite = isFullSiteBuild();
 const isLiteDevBuild = isDevelopment && !shouldBuildFullSite;
@@ -39,6 +41,7 @@ collectionIgnoreGlobs.length > 0
   )
   : console.info("Build Scope includes all collections");
 module.exports = {
+  ...(pathPrefix != null ? { pathPrefix } : {}),
   siteMetadata: {
     title: "Layer5 - Expect more from your infrastructure",
     description:
@@ -49,7 +52,6 @@ module.exports = {
     image: "/images/layer5-gradient.webp",
     twitterUsername: "@layer5",
   },
-  ...(pathPrefix ? { pathPrefix } : {}),
   flags: {
     FAST_DEV: false,
     DEV_SSR: false,
