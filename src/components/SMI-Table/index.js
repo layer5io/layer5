@@ -21,6 +21,7 @@ const TOOLTIP_ID = "smi-table-tooltip";
 
 const TableRow = React.memo(({ row, rowIndex, prepareRow }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const meshMatch = non_functional.find((ele) => ele.name.includes(row.original.mesh_name));
 
   prepareRow(row);
 
@@ -34,8 +35,8 @@ const TableRow = React.memo(({ row, rowIndex, prepareRow }) => {
       >
         <td>
           {
-            (non_functional.find(ele => ele.name.includes(row.original.mesh_name))) ?
-              <img data-tooltip-id={TOOLTIP_ID} data-tooltip-content={row.original.mesh_name} className="smiMark" src={non_functional.find(ele => ele.name.includes(row.original.mesh_name)).icon} alt="Mesh Icon" />
+            meshMatch ?
+              <img data-tooltip-id={TOOLTIP_ID} data-tooltip-content={row.original.mesh_name} className="smiMark" src={meshMatch.icon} alt="Mesh Icon" />
               : <img data-tooltip-id={TOOLTIP_ID} data-tooltip-content={"Service Mesh"} className="smiMark" src={ServiceMeshIcon} alt="Service Mesh" />
           }
         </td>
