@@ -8,43 +8,60 @@ import "swiper/css/bundle";
 import Button from "../../reusecore/Button";
 import slugify from "../../utils/slugify";
 
-
 const UpcomingEvents = ({ data }) => {
   return (
     <UpcomingEventsWrapper>
       <div className="blog-slider swiper">
-        <div style={{
-          display: "block"
-        }} className="blog-slider__wrp swiper-wrapper"
+        <div
+          style={{ display: "block" }}
+          className="blog-slider__wrp swiper-wrapper"
         >
-
           <Swiper
             spaceBetween={50}
             slidesPerView={1}
             modules={[Mousewheel, Pagination]}
             pagination={{ clickable: true }}
           >
-            {data.nodes.map(item => {
+            {data.nodes.map((item) => {
               return (
                 <SwiperSlide key={item.id}>
                   <div className="blog-slider_item swiper-slide">
                     <div className="blog-slider_img">
-                      <Link to={`/community/events/${slugify(item.frontmatter.title)}`}>
-                        <Image {...item.frontmatter.thumbnail}  alt={item.frontmatter.title} />
+                      <Link
+                        to={`/community/events/${slugify(item.frontmatter.title)}`}
+                        aria-label={`View event: ${item.frontmatter.title}`}
+                      >
+                        <Image
+                          {...item.frontmatter.thumbnail}
+                          alt={item.frontmatter.title}
+                          width={480}
+                          height={270}
+                        />
                       </Link>
                     </div>
                     <div className="blog-slider_content">
-                      <h3 className="blog-slider_title">{item.frontmatter.title}</h3>
-                      <p className="blog-slider_date">{item.frontmatter.date}</p>
-                      <p className="blog-slider_description">{item.frontmatter.abstract}</p>
-                      <Button $secondary className="blog-slider_button" $url={item.frontmatter.eurl} title="Join Now" $external={true} />
+                      <h3 className="blog-slider_title">
+                        {item.frontmatter.title}
+                      </h3>
+                      <p className="blog-slider_date">
+                        {item.frontmatter.date}
+                      </p>
+                      <p className="blog-slider_description">
+                        {item.frontmatter.abstract}
+                      </p>
+                      <Button
+                        $secondary
+                        className="blog-slider_button"
+                        $url={item.frontmatter.eurl}
+                        title="Join Now"
+                        $external={true}
+                      />
                     </div>
                   </div>
                 </SwiperSlide>
               );
             })}
           </Swiper>
-
         </div>
       </div>
     </UpcomingEventsWrapper>

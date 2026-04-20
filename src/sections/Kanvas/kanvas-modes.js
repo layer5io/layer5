@@ -1,7 +1,6 @@
 import React, { useState } from "react";
+import { StaticImage } from "gatsby-plugin-image";
 import styled from "styled-components";
-import designerImage from "../../assets/images/kanvas/KanvasDesignerN.webp";
-import visualizerImage from "../../assets/images/kanvas/Kanvas-Operator.webp";
 
 const KanvasModesWrapper = styled.div`
   margin-top: 0.1rem;
@@ -188,7 +187,7 @@ const KanvasModesWrapper = styled.div`
       font-size: 1.44rem;
       font-weight: normal;
     }
-    img{
+    .gatsby-image-wrapper{
         width: 30rem;
         height: auto;
         cursor: pointer;
@@ -270,7 +269,7 @@ const KanvasModes = () => {
           </div>
           <div className="content">
             <h1>Discover and model your cloud native deployments</h1>
-            <img src={designerImage} alt="Kanvas Designer" onClick={() => setDesignerEnlarged(!designerEnlarged)} className={`designer-img ${designerEnlarged ? "big" : "small"}`} />
+            <StaticImage src="../../assets/images/kanvas/KanvasDesignerN.webp" alt="Kanvas Designer" onClick={() => setDesignerEnlarged(!designerEnlarged)} className={`designer-img ${designerEnlarged ? "big" : "small"}`} />
             <p>
               Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components. Using GitOps? Integrate advanced performance analysis into your pipeline.
             </p>
@@ -283,7 +282,7 @@ const KanvasModes = () => {
           </div>
           <div className="content">
             <h1>Apply patterns and manage many Kubernetes clusters</h1>
-            <img src={visualizerImage} alt="Kanvas Operator" onClick={() => setVizEnlarged(!vizEnlarged)} className={`visualizer-img ${vizEnlarged ? "big" : "small"}`} />
+            <StaticImage src="../../assets/images/kanvas/Kanvas-Operator.webp" alt="Kanvas Operator" onClick={() => setVizEnlarged(!vizEnlarged)} className={`visualizer-img ${vizEnlarged ? "big" : "small"}`} />
             <p>
               Deploy designs, apply patterns, manage and operate your deployments in real-time. Bring all your Kubernetes clusters under a common point of management. Interactively connect to terminal sessions or initiate and search log streams from your containers.
             </p>
