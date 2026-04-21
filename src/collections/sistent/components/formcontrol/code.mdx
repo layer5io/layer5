@@ -1,0 +1,282 @@
+---
+title: Form Control Code
+component: formcontrol
+description: FormControl provides context such as filled/focused/error/required for form inputs. It's a fundamental building block for creating consistent form layouts.
+---
+
+import { useState } from "react";
+import { FormControl, InputLabel, MenuItem, Select, TextField, Box } from "@sistent/sistent";
+
+export const BasicFormControlCodeDemo = () => {
+  return (
+    <FormControl sx={{ width: "200px" }}>
+      <InputLabel id="demo-form-control-label">Name</InputLabel>
+      <Select
+        labelId="demo-form-control-label"
+        id="demo-form-control"
+        label="Name"
+        MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+      >
+        <MenuItem value="john">John</MenuItem>
+        <MenuItem value="jane">Jane</MenuItem>
+        <MenuItem value="bob">Bob</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+export const FullWidthFormControlCodeDemo = () => {
+  return (
+    <FormControl fullWidth>
+      <TextField
+        label="Full Width Input"
+        variant="outlined"
+        placeholder="This input takes full width"
+      />
+    </FormControl>
+  );
+};
+
+export const RequiredFormControlCodeDemo = () => {
+  return (
+    <FormControl sx={{ width: "200px" }} required>
+      <InputLabel id="demo-required-label">Required Field</InputLabel>
+      <Select
+        labelId="demo-required-label"
+        id="demo-required"
+        label="Required Field"
+        MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+      >
+        <MenuItem value="option1">Option 1</MenuItem>
+        <MenuItem value="option2">Option 2</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+export const ErrorFormControlCodeDemo = () => {
+  return (
+    <FormControl sx={{ width: "200px" }} error>
+      <InputLabel id="demo-error-label">Email</InputLabel>
+      <Select
+        labelId="demo-error-label"
+        id="demo-error"
+        label="Email"
+        MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+      >
+        <MenuItem value="email1">email1@example.com</MenuItem>
+        <MenuItem value="email2">email2@example.com</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+export const DisabledFormControlCodeDemo = () => {
+  return (
+    <FormControl sx={{ width: "200px" }} disabled>
+      <InputLabel id="demo-disabled-label">Disabled Field</InputLabel>
+      <Select
+        labelId="demo-disabled-label"
+        id="demo-disabled"
+        label="Disabled Field"
+        MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+      >
+        <MenuItem value="option1">Option 1</MenuItem>
+        <MenuItem value="option2">Option 2</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+export const SizeFormControlCodeDemo = () => {
+  return (
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+      <FormControl sx={{ width: "200px" }} size="small">
+        <InputLabel id="demo-small-label">Small Size</InputLabel>
+        <Select
+          labelId="demo-small-label"
+          id="demo-small"
+          label="Small Size"
+          MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+        >
+          <MenuItem value="small">Small Option</MenuItem>
+        </Select>
+      </FormControl>
+
+      <FormControl sx={{ width: "200px" }} size="medium">
+        <InputLabel id="demo-medium-label">Medium Size</InputLabel>
+        <Select
+          labelId="demo-medium-label"
+          id="demo-medium"
+          label="Medium Size"
+          MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+        >
+          <MenuItem value="medium">Medium Option</MenuItem>
+        </Select>
+      </FormControl>
+    </Box>
+  );
+};
+
+<a id="Basic Usage">
+  <h2>Basic Usage</h2>
+</a>
+<p>
+  The most common use case for FormControl is wrapping form inputs with labels.
+</p>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <BasicFormControlCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-form-control" collapsible code={`<FormControl sx={{ width: "200px" }}>
+  <InputLabel id="demo-form-control-label">Name</InputLabel>
+  <Select
+    labelId="demo-form-control-label"
+    id="demo-form-control"
+    label="Name"
+  >
+    <MenuItem value="john">John</MenuItem>
+    <MenuItem value="jane">Jane</MenuItem>
+    <MenuItem value="bob">Bob</MenuItem>
+  </Select>
+</FormControl>`} />
+</div>
+
+<a id="Full Width">
+  <h2>Full Width</h2>
+</a>
+<p>
+  Use the <code>fullWidth</code> prop to make the FormControl take the full width of its container.
+</p>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <FullWidthFormControlCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="full-width-form-control" collapsible code={`<FormControl fullWidth>
+  <TextField
+    label="Full Width Input"
+    variant="outlined"
+    placeholder="This input takes full width"
+  />
+</FormControl>`} />
+</div>
+
+<a id="Required Fields">
+  <h2>Required Fields</h2>
+</a>
+<p>
+  Add the <code>required</code> prop to indicate that a field must be filled.
+</p>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <RequiredFormControlCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="required-form-control" collapsible code={`<FormControl sx={{ width: "200px" }} required>
+  <InputLabel id="demo-required-label">Required Field</InputLabel>
+  <Select
+    labelId="demo-required-label"
+    id="demo-required"
+    label="Required Field"
+  >
+    <MenuItem value="option1">Option 1</MenuItem>
+    <MenuItem value="option2">Option 2</MenuItem>
+  </Select>
+</FormControl>`} />
+</div>
+
+<a id="Error State">
+  <h2>Error State</h2>
+</a>
+<p>
+  Use the <code>error</code> prop to indicate validation errors.
+</p>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ErrorFormControlCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="error-form-control" collapsible code={`<FormControl sx={{ width: "200px" }} error>
+  <InputLabel id="demo-error-label">Email</InputLabel>
+  <Select
+    labelId="demo-error-label"
+    id="demo-error"
+    label="Email"
+  >
+    <MenuItem value="email1">email1@example.com</MenuItem>
+    <MenuItem value="email2">email2@example.com</MenuItem>
+  </Select>
+</FormControl>`} />
+</div>
+
+<a id="Disabled State">
+  <h2>Disabled State</h2>
+</a>
+<p>
+  The <code>disabled</code> prop prevents user interaction with the form control.
+</p>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <DisabledFormControlCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="disabled-form-control" collapsible code={`<FormControl sx={{ width: "200px" }} disabled>
+  <InputLabel id="demo-disabled-label">Disabled Field</InputLabel>
+  <Select
+    labelId="demo-disabled-label"
+    id="demo-disabled"
+    label="Disabled Field"
+  >
+    <MenuItem value="option1">Option 1</MenuItem>
+    <MenuItem value="option2">Option 2</MenuItem>
+  </Select>
+</FormControl>`} />
+</div>
+
+<a id="Size Variants">
+  <h2>Size Variants</h2>
+</a>
+<p>
+  FormControl supports <code>small</code> and <code>medium</code> sizes.
+</p>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SizeFormControlCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="size-form-control" collapsible code={`<FormControl sx={{ width: "200px" }} size="small">
+  <InputLabel id="demo-small-label">Small Size</InputLabel>
+  <Select
+    labelId="demo-small-label"
+    id="demo-small"
+    label="Small Size"
+  >
+    <MenuItem value="small">Small Option</MenuItem>
+  </Select>
+</FormControl>
+
+<FormControl sx={{ width: "200px" }} size="medium">
+  <InputLabel id="demo-medium-label">Medium Size</InputLabel>
+  <Select
+    labelId="demo-medium-label"
+    id="demo-medium"
+    label="Medium Size"
+  >
+    <MenuItem value="medium">Medium Option</MenuItem>
+  </Select>
+</FormControl>`} />
+</div>

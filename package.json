@@ -11,6 +11,8 @@
   },
   "scripts": {
     "build": "cross-env BUILD_FULL_SITE=true NODE_OPTIONS=--max-old-space-size=8192 gatsby build",
+    "build:gh-pages": "cross-env BUILD_FULL_SITE=true NODE_OPTIONS=--max-old-space-size=8192 gatsby build --prefix-paths",
+    "build:preview": "cross-env BUILD_FULL_SITE=true GATSBY_PREVIEW=true NODE_OPTIONS=--max-old-space-size=8192 gatsby build --prefix-paths",
     "clean": "gatsby clean",
     "clean:all": "gatsby clean && rimraf node_modules",
     "develop": "cross-env BUILD_FULL_SITE=true GATSBY_CPU_COUNT=4 SHARP_CONCURRENCY=4 UV_THREADPOOL_SIZE=4 NODE_OPTIONS=--max-old-space-size=8192 env-cmd -f .env.development gatsby develop",
@@ -46,7 +48,7 @@
     "@mui/icons-material": "^7.3.5",
     "@mui/material": "^7.3.4",
     "@react-icons/all-files": "^4.1.0",
-    "@sistent/sistent": "^0.18.3",
+    "@sistent/sistent": "^0.18.8",
     "@svgr/webpack": "^8.0.1",
     "axios": "^1.13.2",
     "babel-plugin-styled-components": "^2.1.4",
