@@ -117,8 +117,8 @@
   "aaa5778d.js": "aaa5778d-c138eeda1de7bda4cc65.js",
   "ac581ebe.js": "ac581ebe-36cccd14d56d90dda80d.js",
   "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff.js": "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff-7469107fc0c086e61cb8.js",
-  "app-9df062539e0ff07b7fd3.js.LICENSE.txt": "app-9df062539e0ff07b7fd3.js.LICENSE.txt",
-  "app.js": "app-9df062539e0ff07b7fd3.js",
+  "app-827e83c9ca525711650f.js.LICENSE.txt": "app-827e83c9ca525711650f.js.LICENSE.txt",
+  "app.js": "app-827e83c9ca525711650f.js",
   "b4444c71e7a5dcc909b077a0807960382c4f83e1-933d684087de7fd210bc.js.LICENSE.txt": "b4444c71e7a5dcc909b077a0807960382c4f83e1-933d684087de7fd210bc.js.LICENSE.txt",
   "b4444c71e7a5dcc909b077a0807960382c4f83e1.js": "b4444c71e7a5dcc909b077a0807960382c4f83e1-933d684087de7fd210bc.js",
   "b5f6012b.js": "b5f6012b-a7763041fda46eef5ffb.js",
@@ -423,7 +423,7 @@
   "component---src-templates-event-single-js-content-file-path-src-collections-events-2025-kubecon-eu-2025-index-mdx.js": "component---src-templates-event-single-js-content-file-path-src-collections-events-2025-kubecon-eu-2025-index-mdx-e7744983f40dfb6e4528.js",
   "component---src-templates-event-single-js-content-file-path-src-collections-events-2025-kubecon-na-2025-index-mdx.js": "component---src-templates-event-single-js-content-file-path-src-collections-events-2025-kubecon-na-2025-index-mdx-eccaa18faf5dc8ab3f20.js",
   "component---src-templates-event-single-js-content-file-path-src-collections-events-2026-kubecon-eu-2026-index-mdx.js": "component---src-templates-event-single-js-content-file-path-src-collections-events-2026-kubecon-eu-2026-index-mdx-f7fd499825ce337a7461.js",
-  "component---src-templates-events-js.js": "component---src-templates-events-js-837e347fb1ed416e65e3.js",
+  "component---src-templates-events-js.js": "component---src-templates-events-js-dff6a1912a3c5f5b4b20.js",
   "component---src-templates-executive-bio-js-content-file-path-src-collections-members-lee-calcote-index-mdx.js": "component---src-templates-executive-bio-js-content-file-path-src-collections-members-lee-calcote-index-mdx-690835db27789e6c9e3e.js",
   "component---src-templates-handbook-template-js-content-file-path-src-collections-handbook-about-index-mdx.js": "component---src-templates-handbook-template-js-content-file-path-src-collections-handbook-about-index-mdx-d2eb74d7a7897a83713e.js",
   "component---src-templates-handbook-template-js-content-file-path-src-collections-handbook-code-of-conduct-index-mdx.js": "component---src-templates-handbook-template-js-content-file-path-src-collections-handbook-code-of-conduct-index-mdx-1150b1bac04e82fc195e.js",
@@ -2097,5 +2097,5 @@
   "static/yash-sharma.webp": "static/yash-sharma-54aa26b6e5743f0557cfc76aa9797f2d.webp",
   "static/yogi.webp": "static/yogi-d00ca1cc48ab74938a23d4359ef3fb01.webp",
   "styles.css": "styles.3ee686c849015a948e38.css",
-  "webpack-runtime.js": "webpack-runtime-d59a8b37d9aeb6c9f79f.js"
+  "webpack-runtime.js": "webpack-runtime-a404d8dafd55b7e6950b.js"
 }
