@@ -87,36 +87,50 @@ export const CardWrapper = styled.div`
   }
 
   .post-content-block {
-    padding: 1rem 2rem;
-    height: 8rem;
+    padding: 1rem 2rem 1.5rem 2rem;
+    height: auto;
+    min-height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   @media screen and (max-width: 1200px) and (min-width: 992px) {
     .post-thumb-block {
-      height: 12rem;
+      height: auto;
+      min-height: 10rem;
     }
 
     .post-content-block {
-      height: 10rem;
+      height: auto;
+      min-height: 10rem;
     }
   }
 
   @media screen and (max-width: 670px) and (min-width: 560px) {
     .post-content-block {
-      height: 10rem;
+      height: auto;
+      min-height: 10rem;
     }
   }
 
   @media screen and (max-width: 350px) {
     .post-content-block {
-      height: 10rem;
+      height: auto;
+      min-height: 10rem;
     }
   }
 
   .post-title {
     font-size: 1.4rem;
     font-weight: 400;
-    white-space: nowrap;
+    margin: 0 0 0.5rem 0;
+    padding: 0;
+
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -125,9 +139,14 @@ export const CardWrapper = styled.div`
     height: auto;
     display: flex;
     margin-bottom: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     .author {
       text-align: end;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .author,
     p {
@@ -136,6 +155,9 @@ export const CardWrapper = styled.div`
       font-weight: 400;
       flex: auto;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .type {
       text-align: end;
