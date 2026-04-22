@@ -156,9 +156,11 @@ const NavigationWrap = styled.header`
     width: 120%;
     display: block;
     box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
-    animation: bobbleout ease 0.18s forwards;
+    animation: bobbleout ease 0.12s forwards;
     pointer-events: none;
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition:
+      opacity 0.12s ease-out,
+      transform 0.12s ease-out;
   }
   .wrap {
     display: block;
@@ -367,7 +369,7 @@ const NavigationWrap = styled.header`
     }
   }
   ul:hover > ul {
-    animation: bobble ease 0.3s forwards;
+    animation: bobble ease 0.18s forwards;
     pointer-events: auto;
     visibility: visible;
   }
@@ -655,8 +657,8 @@ const NavigationWrap = styled.header`
       padding-top: 0.4rem;
     }
     .mobile-nested-menu {
-       font-size: 1.1rem;
-       margin-left: 1rem;
+      font-size: 1.1rem;
+      margin-left: 1rem;
     }
   }
 
@@ -771,7 +773,7 @@ const NavigationWrap = styled.header`
   .dark-theme-toggle {
     /* margin-left: 2rem; */
     visibility: ${(props) =>
-  typeof props.theme.DarkTheme === "boolean" ? "visible" : "hidden"};
+      typeof props.theme.DarkTheme === "boolean" ? "visible" : "hidden"};
   }
 
   .toggle {
@@ -794,7 +796,8 @@ const NavigationWrap = styled.header`
     --offset-diagonal: calc(var(--size) * 0.45);
     transform: scale(0.75);
     color: #3c494f;
-    box-shadow: inset 0 0 0 var(--size),
+    box-shadow:
+      inset 0 0 0 var(--size),
       calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
       var(--offset-orthogonal) 0 0 var(--ray-size),
       0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
