@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useId, useState } from "react";
 import { useTable } from "react-table";
 import { IoMdHelpCircle } from "@react-icons/all-files/io/IoMdHelpCircle";
 import { IconContext } from "@react-icons/all-files";
@@ -12,8 +12,6 @@ import passingMark from "../../assets/images/landscape/passing.svg";
 import failingMark from "../../assets/images/landscape/failing.svg";
 import ServiceMeshIcon from "../../assets/images/service-mesh-icons/service-mesh.svg";
 
-const TOOLTIP_ID = "smi-table-tooltip";
-
 const getRowId = (row) => `${row.original.mesh_name}-${row.original.mesh_version}`;
 
 // const halfMark = "../../assets/images/landscape/half.svg";
@@ -21,7 +19,7 @@ const getRowId = (row) => `${row.original.mesh_name}-${row.original.mesh_version
 // const failingMark = "../../assets/images/landscape/failing.svg";
 // const ServiceMeshIcon = "../../assets/images/service-mesh-icons/service-mesh.svg";
 
-const TableRow = React.memo(({ row }) => {
+const TableRow = React.memo(({ row, tooltipId }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const meshMatch = non_functional.find((ele) => ele.name.includes(row.original.mesh_name));
   const rowId = getRowId(row);
@@ -37,27 +35,27 @@ const TableRow = React.memo(({ row }) => {
         <td>
           {
             meshMatch ?
-              <img data-tooltip-id={TOOLTIP_ID} data-tooltip-content={row.original.mesh_name} className="smiMark" src={meshMatch.icon} alt="Mesh Icon" />
-              : <img data-tooltip-id={TOOLTIP_ID} data-tooltip-content={"Service Mesh"} className="smiMark" src={ServiceMeshIcon} alt="Service Mesh" />
+              <img data-tooltip-id={tooltipId} data-tooltip-content={row.original.mesh_name} className="smiMark" src={meshMatch.icon} alt="Mesh Icon" />
+              : <img data-tooltip-id={tooltipId} data-tooltip-content={"Service Mesh"} className="smiMark" src={ServiceMeshIcon} alt="Service Mesh" />
           }
         </td>
         <td>{row.original.mesh_version}</td>
         {row.original.more_details.map((spec, index) => {
           if (spec["capability"] === "FULL") {
             return <td key={`spec${index}`}>
-              <div className="tooltip-div" data-tooltip-id={TOOLTIP_ID} data-tooltip-content={`${spec["result"]}`}>
+              <div className="tooltip-div" data-tooltip-id={tooltipId} data-tooltip-content={`${spec["result"]}`}>
                 <img className="smiMark" src={passingMark} alt="Pass Mark" />
               </div>
             </td>;
           } else if (spec["capability"] === "HALF") {
             return <td key={`spec${index}`}>
-              <div className="tooltip-div" data-tooltip-id={TOOLTIP_ID} data-tooltip-content={`${spec["reason"]}<br>${spec["result"]}`}>
+              <div className="tooltip-div" data-tooltip-id={tooltipId} data-tooltip-content={`${spec["reason"]}<br>${spec["result"]}`}>
                 <img className="smiMark" src={halfMark} alt="Half Mark" />
               </div>
             </td>;
           } else if (spec["capability"] === "NONE") {
             return <td key={`spec${index}`}>
-              <div className="tooltip-div" data-tooltip-id={TOOLTIP_ID} data-tooltip-content={`${spec["reason"]}<br>${spec["result"]}`}>
+              <div className="tooltip-div" data-tooltip-id={tooltipId} data-tooltip-content={`${spec["reason"]}<br>${spec["result"]}`}>
                 <img className="smiMark" src={failingMark} alt="Fail Mark" />
               </div>
             </td>;
@@ -110,6 +108,9 @@ const TableRow = React.memo(({ row }) => {
 });
 
 const Table = ({ columns, data, spec }) => {
+  const reactId = useId();
+  const tooltipId = `smi-table-tooltip-${reactId.replace(/:/g, "")}`;
+
   // Use the state and functions returned from useTable to build the UI
   const {
     getTableProps,
@@ -143,12 +144,12 @@ const Table = ({ columns, data, spec }) => {
         <tbody {...getTableBodyProps()}>
           {rows.map((row, i) => {
             prepareRow(row);
-            return <TableRow key={getRowId(row)} row={row} />;
+            return <TableRow key={getRowId(row)} row={row} tooltipId={tooltipId} />;
           })}
         </tbody>
       </table>
       <Tooltip
-        id={TOOLTIP_ID}
+        id={tooltipId}
         place="bottom"
         style={{ backgroundColor: "rgb(60,73,79)" }}
         className="smi-tooltip"
