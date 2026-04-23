@@ -17,7 +17,7 @@ const rawPrefix = process.env.PATH_PREFIX;
 const pathPrefix =
   rawPrefix && String(rawPrefix).trim().length
     ? `/${String(rawPrefix).replace(/^\/+|\/+$/g, "")}`
-    : undefined;
+    : "";
 
 const siteRootUrl = `${siteOrigin}${pathPrefix}`.replace(/\/$/, "");
 const shouldBuildFullSite = isFullSiteBuild();
