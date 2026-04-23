@@ -29,7 +29,7 @@ const SocialLinks = () => {
             <img className="slack" height="40 px" src={slack_icon} alt="slack" />
           </a>
           <a
-            href="https://twitter.com/layer5"
+            href="https://x.com/layer5"
             target="_blank"
             rel="noreferrer"
           >

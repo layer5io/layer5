@@ -29,7 +29,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/kanvas/#what-is-kanvas"
   },
   {
     "theme": "",
@@ -109,7 +109,7 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/kanvas/designer/comments/"
   },
   {
     "theme": "",
@@ -493,7 +493,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.meshery.io/guides/performance-management/managing-performance#performance-profiles"
   },
   {
     "theme": "",
@@ -509,7 +509,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.meshery.io/guides/performance-management/interpreting-performance-test-results"
   },
   {
     "theme": "",
@@ -525,7 +525,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.meshery.io/guides/performance-management/managing-performance#configuring-performance-testing-settings"
   },
   {
     "theme": "",
@@ -621,7 +621,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": "https://docs.layer5.io/kanvas/operator/operator-views/"
+    "docs": "https://docs.layer5.io/kanvas/operator/views/"
   },
   {
     "theme": "",
@@ -1085,7 +1085,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/getting-started/support/#contacting-support"
   },
   {
     "theme": "",
@@ -1101,7 +1101,7 @@
       "teamOperator": "x",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/getting-started/support/#contacting-support"
   },
   {
     "theme": "",
@@ -1117,7 +1117,7 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/self-hosted/white-labeling/"
   },
   {
     "theme": "",
@@ -1133,7 +1133,7 @@
       "teamOperator": "",
       "enterprise": "x"
     },
-    "docs": ""
+    "docs": "https://docs.layer5.io/cloud/getting-started/support/#contacting-support"
   },
   {
     "theme": "",

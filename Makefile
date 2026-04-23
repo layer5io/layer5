@@ -21,8 +21,14 @@ setup:
 # "make site" - The default lightweight build keeps the dev server fast by skipping heavy collections.
 ## Run a partial build of layer5.io on your local machine.
 site:
-	@echo "🏗️  Building lightweight site version (excluding Members and Integrations collections)..."
-	@npm run develop:lite
+	@echo "🏗️  Building lightweight site version ($(or $(LITE_BUILD_PROFILE),core) profile)..."
+	@echo "   Use LITE_BUILD_PROFILE=content make site to include content collections while still skipping the heaviest routes."
+	@npx cross-env BUILD_FULL_SITE=false LITE_BUILD_PROFILE=$(or $(LITE_BUILD_PROFILE),core) BLOG_YEAR=$(or $(BLOG_YEAR),) GATSBY_CPU_COUNT=4 SHARP_CONCURRENCY=4 UV_THREADPOOL_SIZE=4 NODE_OPTIONS=--max-old-space-size=8192 env-cmd -f .env.development gatsby develop
+
+## Run blog-only dev server (2026 posts only, much faster builds).
+site-blog:
+	@echo "🏗️  Building lightweight site version with blog collection only..."
+	LITE_BUILD_PROFILE=blog BLOG_YEAR=2026 $(MAKE) site
 
 # "make site-full" forces the dev server to include every collection.
 ## Run a full build of layer5.io on your local machine.
@@ -32,15 +38,15 @@ site-full:
 
 ## Run layer5.io on your local machine. Alternate method.
 site-fast:
-	NODE_OPTIONS=--max-old-space-size=8192 gatsby develop
+	BUILD_FULL_SITE=false LITE_BUILD_PROFILE=core GATSBY_CPU_COUNT=4 SHARP_CONCURRENCY=4 UV_THREADPOOL_SIZE=4 NODE_OPTIONS=--max-old-space-size=8192 gatsby develop
 
 ## Build layer5.io on your local machine.
 build:
 	npm run build
 
-## Empty build cache and run layer5.io on your local machine.
-clean: 
-	gatsby clean && make site
+## Empty build cache and rebuild layer5.io on your local machine (developer use only; CI uses `npm run build` directly).
+clean:
+	npm run clean && make build
 
 ## Run Eslint on your local machine.
 lint:
@@ -57,3 +63,8 @@ features:
 	rm .github/build/spreadsheet.csv
 
 .PHONY: setup build site site-full clean site-fast lint features
+
+## Analyze webpack bundle with FCP optimization
+site-analyze:
+	@echo "🏗️  Building site with webpack bundle analyzer..."
+	ANALYZE_BUNDLE=true npm run build

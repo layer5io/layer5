@@ -335,7 +335,7 @@ const DevrelContent = () => {
               </h2>
               <ul className="caption">
                 <li><b>Guided Learning Journeys:</b> Advance your cloud native skills through <a href="https://cloud.layer5.io/academy" target="_blank" rel="noopener noreferrer">Layer5 Academy</a>, offering structured paths that combine theory with hands-on labs.</li>
-                <li><b>Interactive Challenges:</b> Strengthen your understanding in real-world scenarios with Academy challenges, powered by <a href="https://meshery.layer5.io/extension/meshmap" target="_blank" rel="noopener noreferrer">Meshery</a>.</li>
+                <li><b>Interactive Challenges:</b> Strengthen your understanding in real-world scenarios with Academy challenges, powered by <a href="https://meshery.io/" target="_blank" rel="noopener noreferrer">Meshery</a>.</li>
                 <li><b>Earn Recognition:</b> Achieve Layer5 Academy certifications and badges, and showcase them directly on your DevRel profile and leaderboards.</li>
                 <li><b>Community Contribution:</b> Contribute new tutorials, challenges, and courses to Academy, growing your professional influence in the cloud-native ecosystem.</li>
               </ul>

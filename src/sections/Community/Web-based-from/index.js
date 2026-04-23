@@ -27,10 +27,19 @@ const validatePictureUrl = (value) => {
     } else {
       try {
         new URL(value);
-        const allowedImageExtensions = ["jpg", "jpeg", "png", "webp", "svg", "gif"];
-        const extension = value.split(".").pop().toLowerCase();
-        if (!allowedImageExtensions.includes(extension)) {
-          error = "URL must point to an image file (jpg, jpeg, png, svg, webp or gif).";
+        const isGoogleDrive = value.includes("drive.google.com");
+        const validGoogleDrivePattern = /drive\.google\.com\/file\/d\/.+\/(view|uc\?)/;
+
+        if (isGoogleDrive) {
+          if (!validGoogleDrivePattern.test(value)) {
+            error = "Please provide a direct Google Drive file link. Right-click the file in Google Drive and select 'Get link' to get a shareable link that includes '/file/d/' in the URL.";
+          }
+        } else {
+          const allowedImageExtensions = ["jpg", "jpeg", "png", "webp", "svg", "gif"];
+          const extension = value.split(".").pop().toLowerCase();
+          if (!allowedImageExtensions.includes(extension)) {
+            error = "URL must point to an image file (jpg, jpeg, png, svg, webp or gif).";
+          }
         }
       } catch (err) {
         console.error("Error in validatePictureUrl:", err);
@@ -67,7 +76,7 @@ const WebBasedForm = () => {
 
   useEffect(() => {
     if (submit) {
-      axios.post("https://hook.us1.make.com/nd4srs976am5a4h5i17g3qmd4gq8defu", {
+      axios.post("https://hook.us1.make.com/6qgnjy9euo538coowjgwaeuhayyb6a6e", {
         memberFormOne,
         MemberFormThirdValue,
         MemberFormFourValue,
@@ -219,7 +228,7 @@ const WebBasedForm = () => {
             setRole("User");
           }}
           >
-            I'm here as a User and Contibutor
+            I'm here as a User and Contributor
           </div>
           <div className={role === "Bystander" ? "option active" : "option"} onClick={() => {
             setRole("Bystander");
@@ -230,7 +239,7 @@ const WebBasedForm = () => {
           <br /><br />
           <div className="btn-wrapper">
             <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous Step</button>
-            <Button onClick={() => setStepNumber(2)}$secondary type="submit" className="btn-next" title="Next Step" />
+            <Button onClick={() => setStepNumber(2)} $secondary type="submit" className="btn-next" title="Next Step" />
           </div>
         </div>
 

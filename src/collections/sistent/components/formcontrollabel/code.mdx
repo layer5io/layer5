@@ -1,0 +1,77 @@
+---
+title: Form Control Label Code
+component: formcontrollabel
+description: The `FormControlLabel` component wraps controls like checkboxes, radios, and switches, adding a label to the right side by default. It improves accessibility and user experience by combining form elements with clear labeling.
+---
+
+import { useState } from "react";
+import { FormControlLabel, Checkbox, Radio, Switch } from "@sistent/sistent";
+
+export const CheckboxDemo = () => {
+  const [checked, setChecked] = useState(true);
+  return (
+    <FormControlLabel
+      control={<Checkbox checked={checked} onChange={() => setChecked(!checked)} />}
+      label="Accept Terms"
+    />
+  );
+};
+
+
+
+<h3>With Checkbox</h3>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <CheckboxDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="formcontrollabel-checkbox" collapsible code={`<FormControlLabel
+  control={<Checkbox />}
+  label="Accept Terms"
+/>`} />
+</div>
+
+<h3>Disabled Example</h3>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <FormControlLabel control={<Checkbox disabled />} label="Disabled Option" disabled />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="formcontrollabel-disabled" collapsible code={`<FormControlLabel
+  control={<Checkbox disabled />}
+  label="Disabled Option"
+  disabled
+/>`} />
+</div>
+
+<h3>With Radio Button</h3>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <FormControlLabel control={<Radio />} label="Option A" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="formcontrollabel-radio" collapsible code={`<FormControlLabel
+  control={<Radio />}
+  label="Option A"
+/>`} />
+</div>
+
+<h3>With Switch</h3>
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <FormControlLabel control={<Switch />} label="Enable Notifications" />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="formcontrollabel-switch" collapsible code={`<FormControlLabel
+  control={<Switch />}
+  label="Enable Notifications"
+/>`} />
+</div>

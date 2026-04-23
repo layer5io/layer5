@@ -23,6 +23,23 @@ export const FakeBGImg = styled(GatsbyImage)`
   } 
 `;
 
+export const FakeBGImgStatic = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 32rem;
+  z-index: 0;
+  border-radius: 10px;
+  opacity: 1;
+  object-fit: cover;
+
+  @media (min-width: 768px){
+    opacity: 0;
+    display: none !important;
+  }
+`;
+
 export const Content = styled.div`
   position: relative;
   width: 100%;

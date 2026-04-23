@@ -28,10 +28,10 @@ const PlanCard = ({ planData, isYearly, currency }) => {
   return (
     <PlanCardWrapper>
       <Container>
-        <Row $Hcenter>
+        <Row $Hcenter className="plan-card-row">
           {planData.map((x) => (
             // <Col $xl={4} $lg={2} $md={1} $sm={1} key={x.tier}>
-            <Col key={x.tier}>
+            <Col key={x.tier} className="plan-card-col">
               <div className={`${x.featured ? "featured" : ""} pricing-table`}>
 
                 {x.tier === "Personal" ? <div className="pricing-label">Free Forever</div> : null}

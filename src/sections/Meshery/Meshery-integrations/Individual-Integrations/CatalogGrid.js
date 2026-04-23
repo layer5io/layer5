@@ -52,7 +52,13 @@ const CatalogGrid = ({ frontmatter }) => {
             return (
               <CatalogCard
                 key={index}
-                cardLink={`https://cloud.layer5.io/catalog/content/catalog/${item?.id}`}
+                onCardClick={() => {
+                  window.open(
+                    `https://cloud.layer5.io/catalog/content/catalog/${item?.id}`,
+                    "_blank",
+                    "noopener,noreferrer"
+                  );
+                }}
                 cardHeight="20rem"
                 cardWidth="16rem"
                 pattern={item}

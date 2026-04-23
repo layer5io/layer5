@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useLayoutEffect, useState, useRef } from "react";
 import Slider from "react-slick";
 import SoSpecialWrapper from "./so-special-style";
 
@@ -9,6 +9,9 @@ import Image from "../../../components/image";
 // import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const SoSpecial = () => {
+  const [isClient, setIsClient] = useState(false);
+  const [slidesToShowState, setSlidesToShowState] = useState(null);
+  const sliderRef = useRef(null);
   const data = useStaticQuery(
     graphql`query newsList {
   allMdx(
@@ -53,56 +56,55 @@ const SoSpecial = () => {
 }`
   );
   const settings = {
-    dots: false,
+    dots: slidesToShowState <= 1,
     infinite: false,
     speed: 500,
-    slidesToShow: 2.5,
     swipeToSlide: true,
-
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 2.2,
-
-        }
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-
-        }
-      },
-      {
-        breakpoint: 800,
-        settings: {
-          slidesToShow: 1.5,
-          slidesToScroll: 1,
-          initialSlide: 1
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          dots: true,
-          arrows: false,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 1
-        }
-      },
-      {
-        breakpoint: 400,
-        settings: {
-          dots: true,
-          arrows: false,
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+    slidesToScroll: 1,
+    arrows: slidesToShowState !== 1,
+    slidesToShow: slidesToShowState ?? 2.5,
   };
+
+  const computeSlides = () => {
+    const w = typeof window !== "undefined" ? (window.innerWidth || document.documentElement.clientWidth) : 1200;
+    if (w <= 600) return 1;
+    if (w <= 800) return 1.5;
+    if (w <= 1024) return 2;
+    if (w <= 1200) return 2.2;
+    return 3;
+  };
+
+  useLayoutEffect(() => {
+
+    setIsClient(true);
+    setSlidesToShowState(computeSlides());
+
+    let resizeTimeout = null;
+    const onResizeDebounced = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        const slides = computeSlides();
+        setSlidesToShowState((prev) => {
+          if (prev !== slides) return slides;
+          return prev;
+        });
+        if (sliderRef.current && sliderRef.current.innerSlider && typeof sliderRef.current.innerSlider.onWindowResized === "function") {
+          sliderRef.current.innerSlider.onWindowResized();
+        }
+      }, 100);
+    };
+
+    window.addEventListener("resize", onResizeDebounced);
+    window.addEventListener("load", onResizeDebounced);
+
+    return () => {
+      window.removeEventListener("resize", onResizeDebounced);
+      window.removeEventListener("load", onResizeDebounced);
+      clearTimeout(resizeTimeout);
+    };
+  }, []);
+
+  if (!isClient || slidesToShowState === null) return null;
 
   // const { isDark } = useStyledDarkMode();
 
@@ -113,7 +115,7 @@ const SoSpecial = () => {
         <h1>We're making a splash</h1>
       </div>
       <div className="special_carousel">
-        <Slider {...settings}>
+        <Slider {...settings} key={`review-slider-${slidesToShowState}`} ref={sliderRef}>
           {
             data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
               <Button className="special-cont_btn" $url={fields.slug} key={id}>

@@ -1,0 +1,159 @@
+---
+title: Collapse Code
+component: collapse
+description: The Collapse component provides a smooth, animated way to show and hide content. Below are various examples demonstrating its capabilities and usage patterns.
+
+---
+
+import { Collapse, Button } from "@sistent/sistent";
+import { useState } from "react";
+
+export const BasicCollapseDemo = () => {
+  const [expanded, setExpanded] = useState(false);
+  return (
+    <>
+      <Button variant="contained" onClick={() => setExpanded(!expanded)}>
+        {expanded ? "Collapse" : "Expand"}
+      </Button>
+      <Collapse in={expanded}>
+        <div>Content to be collapsed/expanded</div>
+      </Collapse>
+    </>
+  );
+};
+
+export const DefaultExpandedCollapseDemo = () => {
+  const [expanded, setExpanded] = useState(true);
+  return (
+    <>
+      <Button variant="outlined" onClick={() => setExpanded(!expanded)}>
+        {expanded ? "Collapse" : "Expand"}
+      </Button>
+      <Collapse in={expanded}>
+        <div>Content that's expanded by default</div>
+      </Collapse>
+    </>
+  );
+};
+
+export const UnmountOnExitCollapseDemo = () => {
+  const [expanded, setExpanded] = useState(false);
+  return (
+    <>
+      <Button variant="text" onClick={() => setExpanded(!expanded)}>
+        {expanded ? "Collapse" : "Expand"}
+      </Button>
+      <Collapse in={expanded} unmountOnExit>
+        <div>Content that unmounts when collapsed</div>
+      </Collapse>
+    </>
+  );
+};
+
+export const CustomTransitionCollapseDemo = () => {
+  const [expanded, setExpanded] = useState(false);
+  return (
+    <>
+      <Button variant="contained" onClick={() => setExpanded(!expanded)}>
+        {expanded ? "Fast Collapse" : "Slow Expand"}
+      </Button>
+      <Collapse 
+        in={expanded} 
+        timeout={expanded ? 1000 : 300} 
+        easing={expanded ? 'cubic-bezier(0.4, 0, 0.2, 1)' : 'ease-out'}
+      >
+        <div>Custom transition content</div>
+      </Collapse>
+    </>
+  );
+};
+
+The Collapse component provides a smooth, animated way to show and hide content. Below are various examples demonstrating its capabilities and usage patterns.
+
+<a id="Basic Collapse">
+  <h2>Basic Collapse</h2>
+</a>
+
+A simple collapsible section that can be toggled with a button click.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <BasicCollapseDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="collapse-basic" collapsible code={`<SistentThemeProvider>
+  <Button onClick={() => setExpanded(!expanded)}>
+    {expanded ? 'Collapse' : 'Expand'}
+  </Button>
+  <Collapse in={expanded}>
+    <div>Content to be collapsed/expanded</div>
+  </Collapse>
+</SistentThemeProvider>`} />
+</div>
+
+<a id="Default Expanded">
+  <h2>Default Expanded</h2>
+</a>
+
+A collapsible section that starts expanded by default.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <DefaultExpandedCollapseDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="collapse-default-expanded" collapsible code={`<SistentThemeProvider>
+  <Button onClick={() => setExpanded(!expanded)}>
+    {expanded ? 'Collapse' : 'Expand'}
+  </Button>
+  <Collapse in={expanded}>
+    <div>Content that's expanded by default</div>
+  </Collapse>
+</SistentThemeProvider>`} />
+</div>
+
+<a id="Unmount on Exit">
+  <h2>Unmount on Exit</h2>
+</a>
+
+Unmounts the content when collapsed for better performance with large content.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <UnmountOnExitCollapseDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="collapse-unmount-on-exit" collapsible code={`<SistentThemeProvider>
+  <Button onClick={() => setExpanded(!expanded)}>
+    {expanded ? 'Collapse' : 'Expand'}
+  </Button>
+  <Collapse in={expanded} unmountOnExit>
+    <div>Content that unmounts when collapsed</div>
+  </Collapse>
+</SistentThemeProvider>`} />
+</div>
+
+<a id="Custom Transition">
+  <h2>Custom Transition</h2>
+</a>
+
+Customize the transition duration and easing function.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <CustomTransitionCollapseDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="collapse-custom-transition" collapsible code={`<SistentThemeProvider>
+  <Button onClick={() => setExpanded(!expanded)}>
+    {expanded ? 'Fast Collapse' : 'Slow Expand'}
+  </Button>
+  <Collapse in={expanded} timeout={expanded ? 1000 : 300} easing={expanded ? 'cubic-bezier(0.4, 0, 0.2, 1)' : 'ease-out'}>
+    <div>Custom transition content</div>
+  </Collapse>
+</SistentThemeProvider>`} />
+</div>

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { HiOutlineChevronLeft } from "@react-icons/all-files/hi/HiOutlineChevronLeft";
-import { Link } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
-import { componentsData } from "../../sections/Projects/Sistent/components/content";
 
 import TOCWrapper from "./toc.style";
 import { IoIosArrowDown } from "@react-icons/all-files/io/IoIosArrowDown";
@@ -22,10 +21,30 @@ const TOC = () => {
     location.pathname.includes("/components")
   );
 
-  // Sorting the array of components by name
-  const sortedComponentArray = [...componentsData].sort((a, b) =>
-    a.name.localeCompare(b.name)
-  );
+  // Fetch component data dynamically from GraphQL
+  const data = useStaticQuery(graphql`
+    query SistentComponentsNav {
+      allMdx(
+        filter: {
+          fields: { collection: { eq: "sistent" } }
+          frontmatter: { published: { eq: true } }
+        }
+        sort: { frontmatter: { name: ASC } }
+      ) {
+        nodes {
+          frontmatter {
+            name
+            component
+          }
+        }
+      }
+    }
+  `);
+
+  const sortedComponentArray = data.allMdx.nodes.map((node) => ({
+    name: node.frontmatter.name,
+    url: `/projects/sistent/components/${node.frontmatter.component}`,
+  }));
 
   return (
     <TOCWrapper>
@@ -203,7 +222,7 @@ const TOC = () => {
               {expandComponent && (
                 <ul className="components-sublinks">
                   {sortedComponentArray.map((component) => (
-                    <li key={component.id}>
+                    <li key={component.url}>
                       <Link
                         to={component.url}
                         className={`toc-sub-heading toc-sub-inline components-item ${

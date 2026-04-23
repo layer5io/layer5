@@ -6,7 +6,7 @@ import { FiMail } from "@react-icons/all-files/fi/FiMail";
 import { Link } from "gatsby";
 
 const NewsSidebarWrapper = styled.div`
-  
+  text-align: center;
 Button{
     margin: 0 0 1rem ;
     @media screen and (max-width: 768px) {

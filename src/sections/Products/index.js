@@ -73,8 +73,8 @@ const index = () => {
                 flexibility, elevating operations to new efficiencies.{" "}
               </p>
               <div className="btn">
-                <Button secondary className="banner-btn two" $external={true} title="Explore Now" alt="" $url="https://cloud.layer5.io/"/>
-                <Button id="book-a-demo" aria-label="Book a demo" primary className="banner-btn book-a-demo" $external={true} title="Book a demo" alt="Book a demo" $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
+                <Button secondary className="banner-btn two" $external={true} title="Explore Now" $url="https://cloud.layer5.io/"/>
+                <Button id="book-a-demo" aria-label="Book a demo" primary className="banner-btn book-a-demo" $external={true} title="Book a demo" $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
               </div>
             </div>
             <div className="product_hero_img">
@@ -109,7 +109,7 @@ const index = () => {
                       {/* </Link> */}
                       {/* TEMPORARY COMMENTED BUTTON  */}
                       {/* <div className="btns">
-                        <Button button secondary className="banner-btn two" title="Subscribe" alt=""/>
+                        <Button button secondary className="banner-btn two" title="Subscribe"/>
                       </div> */}
                     </div>
                   </div>
@@ -127,7 +127,7 @@ const index = () => {
               <p className="paraInfo">
                 Embrace the future of technology and embark on a transformative journey with our comprehensive range of products prepared to meet your needs. Elevate, Innovate, and conquer the cloud with us today!
               </p>
-              <Button button secondary className="banner-btn two" title="Open Playground" alt="Cloud Native Playground" $url="https://play.meshery.io" />
+              <Button button secondary className="banner-btn two" title="Open Playground" $url="https://play.meshery.io" />
             </div>
           </div>
           <div className="headers bot_gap">
@@ -142,7 +142,7 @@ const index = () => {
           <PlanCard planData={options}/>
 
           <Row $Vcenter $Hcenter className={"comparison-button"}>
-            <Button $primary title="Feature Comparison" alt="Feature Comparison" $url={"/pricing/#feature-comparison"}/>
+            <Button $primary title="Feature Comparison" $url={"/pricing/#feature-comparison"}/>
           </Row>
 
           <div className="headers gap">
@@ -159,7 +159,7 @@ const index = () => {
               Book to see it in action! Our experts are eager to guide you through the incredible possibilities that Layer5 offers. Take this opportunity to discover what more your infrastructure can do for you!
               </p>
             </div>
-            <Button $external={true} $primary title="Book a Demo" alt="Book a demo" $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
+            <Button $external={true} $primary title="Book a Demo" $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
           </div>
         </div>
       </ProductsWrapper>

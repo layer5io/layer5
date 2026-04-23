@@ -31,7 +31,7 @@ const SocialLinksColor = () => {
             <img className="slack" height="30px" src={slack_icon} alt="slack" />
           </a>
           <a
-            href="https://twitter.com/layer5"
+            href="https://x.com/layer5"
             target="_blank"
             rel="noreferrer"
             className="footer_twitter"

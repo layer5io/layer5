@@ -2,9 +2,30 @@ import styled from "styled-components";
 
 export const FeaturesWrapper = styled.div`
     .features-carousel {
+      width: 100%;
+      display: block;
+      min-height: 400px;
+      height: auto;
+      padding-bottom: 2rem;
+      visibility: visible;
+      opacity: 1;
+      overflow: visible;
+
       @media (min-width: 768px) {
        display:none;
       }
+
+      .slick-slider, .slick-list, .slick-track, .slick-slide {
+        display: block;
+        min-height: 200px;
+        height: auto;
+        visibility: visible;
+      }
+      .slick-slide > div {
+          height: 100%; /* Ensure inner div takes height */
+          min-height: 200px;
+      }
+
       img{
         object-fit:contain;
         margin-left:auto;
@@ -13,6 +34,7 @@ export const FeaturesWrapper = styled.div`
      
       .main-heading{
         margin-bottom: 2rem;
+        text-align: center;
       }
 
       .feature {

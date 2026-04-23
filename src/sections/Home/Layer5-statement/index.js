@@ -4,7 +4,6 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import svgBackground from "../../../assets/images/homePage-images/background.svg";
 import BannerSectionWrapper from "./statement.style";
-import { StaticImage } from "gatsby-plugin-image";
 
 const imgHero = "../../../assets/images/kanvas/KanvasDesigner.webp";
 // const imgHero = "../service-mesh-management/images/service-mesh.svg";
@@ -35,7 +34,7 @@ const BannerDefault = () => {
                   {/* <img className="Layer5Logo" src={Layer5Logo} /> */}
                   <h3 className="statement">
                     {/* Enablers of Engineers. Enablers of Speed. Enablers of Business. */}
-                    Layer5 is an empowerer of the developer, the operator, and the service owner
+                    Layer5 empowers developers, operators, and service owners alike
                   </h3>
                   <div className="join-community">
                     <Button $primary className="join-community-button" title="our projects" $url="/projects" />
@@ -45,7 +44,7 @@ const BannerDefault = () => {
             </div>
           </Col>
           <Col $sm={12} $md={6} $lg={6} className="right-col">
-            <StaticImage className="hero" src={imgHero} alt="Layer5 Kanvascreenshot" loading="lazy" />
+            <img className="hero" src={imgHero} alt="Layer5 Kanvascreenshot" loading="lazy" />
           </Col>
         </Row>
       </div>
