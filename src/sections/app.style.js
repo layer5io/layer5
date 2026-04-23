@@ -182,8 +182,8 @@ section{
   // styling for the searchbox
   .search-box {
         input {
-            background-color: ${props => props.theme.shadowDarkColor}!important;
-            color: ${props => props.theme.text};
+            background-color: ${(props) => props.theme.shadowDarkColor}!important;
+            color: ${(props) => props.theme.text};
             transition: all 450ms ease 0s;
 
             &:focus {
@@ -239,7 +239,7 @@ section{
     inset: 0px;
     background-color: rgba(0, 0, 0, 0.75);
     z-index: 9999;
-    overflowY: auto;
+    overflow-y: auto;
 }
 
 .contact-form {

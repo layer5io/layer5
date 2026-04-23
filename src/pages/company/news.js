@@ -3,6 +3,7 @@ import React from "react";
 import SEO from "../../components/seo";
 import { graphql } from "gatsby";
 import NewsPage from "../../sections/Company/News-grid";
+import LitePlaceholder from "../../templates/lite-placeholder";
 
 import SimpleReactLightbox from "simple-react-lightbox";
 export const query = graphql`query allNews {
@@ -12,7 +13,6 @@ export const query = graphql`query allNews {
   ) {
     nodes {
       id
-      body
       frontmatter {
         title
         date(formatString: "MMMM Do, YYYY")
@@ -23,14 +23,14 @@ export const query = graphql`query allNews {
           extension
           publicURL
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
         }
         darkthumbnail {
           extension
           publicURL
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
         }
       }
@@ -41,6 +41,18 @@ export const query = graphql`query allNews {
   }
 }`;
 const NewsGridPage = ({ data }) => {
+  if (data.allMdx.nodes.length === 0) {
+    return (
+      <LitePlaceholder
+        pageContext={{
+          heading: "News posts disabled in lite mode",
+          description:
+            "The default lightweight build skips the news collection to reduce local memory consumption.",
+        }}
+      />
+    );
+  }
+
   return (
     <>
       <SimpleReactLightbox>

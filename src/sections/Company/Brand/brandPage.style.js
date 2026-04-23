@@ -195,10 +195,8 @@ const BrandPageWrapper = styled.section`
 			justify-content: space-around;
 			gap: 1rem;
 		}
-		.fiveDiv > img {
-			max-width: 150px;
-			background-color: "#fff";
-			align-self: center;
+		.five-image {
+			filter: ${props => props.theme.DarkTheme ? "invert(1) hue-rotate(180deg)" : "none"};
 		}
 		img.Layer5Icon {
 			width: auto;

@@ -235,7 +235,7 @@ export const PricingAddons = React.memo(({ isYearly = false, setIsYearly, curren
                         label="Optionally, choose one or more add-ons"
                         MenuProps={{
                           disableScrollLock: true,
-                          disablePortal: true,
+                          marginThreshold: null,
                         }}
                       >
                         {addOns.map((addon) => (

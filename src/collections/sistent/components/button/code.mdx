@@ -1,0 +1,121 @@
+---
+title: Button Code
+component: button
+description: A button is an interactive element that triggers a specific action, takes users where they need to go, and points out what happens next in a given flow.
+
+---
+
+Buttons communicate actions to users and they can be placed at several places throughout the user interface.
+
+<a id="Basic Button">
+  <h2>Basic Button</h2>
+</a>
+
+The button comes in three types: Filled, Outlined, and Text.
+
+<h3>Filled Button</h3>
+
+Mostly used for high-emphasis actions and are primarily distinguished by their fill. They are used to represent actions that are primary to the solution.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Button variant="contained">Filled</Button>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="filled-button" collapsible code={`  <SistentThemeProvider>
+       <Button variant="contained">Filled</Button>
+  </SistentThemeProvider>`} />
+</div>
+
+<h3>Outlined Button</h3>
+
+Can be used for both medium and sometimes high-emphasis actions.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Button variant="outlined">Outlined</Button>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="outlined-button" collapsible code={`  <SistentThemeProvider>
+       <Button variant="outlined">Outlined</Button>
+  </SistentThemeProvider>`} />
+</div>
+
+<h3>Text Button</h3>
+
+Mostly used for less pronounced and very low emphasis actions. Can also be used for text links as well.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Button variant="text">Text</Button>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="text-button" collapsible code={`  <SistentThemeProvider>
+       <Button variant="text">Text</Button>
+  </SistentThemeProvider>`} />
+</div>
+
+<a id="Sizes">
+  <h2>Sizes</h2>
+</a>
+
+For now, two different sizes of buttons exist: 56px height and 48px height.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', alignItems: 'center' }}>
+        <Button variant="contained" size="medium">
+          48px Height
+        </Button>
+        <Button variant="contained" size="large">
+          56px Height
+        </Button>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="button-sizes" collapsible  code={`  <SistentThemeProvider>
+       <Button variant="contained">48px Height</Button>
+       <Button variant="contained">56px Height</Button>
+  </SistentThemeProvider>`} />
+</div>
+
+<a id="Adding Icons">
+  <h2>Adding Icons</h2>
+</a>
+
+Icons are mostly added to filled and outlined buttons and they are used to better describe the information being passed across by the button’s label.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Button
+          variant="contained"
+          size="medium"
+          endIcon={<FaArrowRight size={12} />}
+        >
+          Next
+        </Button>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="adding-icons" collapsible code={`  <SistentThemeProvider>
+      <Button
+        variant="contained"
+        size="medium"
+        endIcon={<FaArrowRight size={12} />}
+      >
+        Next
+      </Button>
+  </SistentThemeProvider>`} />
+</div>

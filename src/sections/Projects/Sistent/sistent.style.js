@@ -47,15 +47,15 @@ const SistentWrapper = styled.div`
 
   .page-section {
     h2 {
-      padding-top: 7rem;
-      margin-top: -7rem;
+      padding-top: 1rem;
+      margin-top: 1rem;
     }
     h3 {
-      padding-top: 7rem;
-      margin-top: -7rem;
+      padding-top: 1rem;
+      margin-top: 1rem;
     }
     padding-left: 20rem;
-    margin-top: 15rem;
+    margin-top: 4rem;
     display: flex;
   }
   .conduct-section {
@@ -582,6 +582,7 @@ const SistentWrapper = styled.div`
 
   .filterBtns {
     display: flex;
+    justify-content: center;
     margin-bottom: 1.25rem;
     border-bottom: 1px solid #bec2c5;
     margin-top: 5rem;

@@ -10,6 +10,7 @@ const CTA_FullWidthWrapper = styled.div`
     width: 98%;
     height: 16rem;
     margin: 1.5rem auto;
+    padding: 1rem; /* FIX: Added padding to improve CTA spacing */
     box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem;
     background: rgba(201, 252, 246, 0.3);

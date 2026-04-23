@@ -1,0 +1,192 @@
+---
+title: Form Control Guidance
+component: formcontrol
+description: FormControl provides context such as filled/focused/error/required for form inputs. It's a fundamental building block for creating consistent form layouts.
+---
+
+import { useState } from "react";
+import { FormControl, InputLabel, MenuItem, Select, TextField, OutlinedInput, Box } from "@sistent/sistent";
+
+export const FormControlStatesDemo = () => {
+  const [name, setName] = useState("");
+  const [nameError, setNameError] = useState(false);
+
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState(true);
+
+  const handleNameChange = (event) => {
+    const val = event.target.value;
+    setName(val);
+    setNameError(val === "");
+  };
+
+  const handleEmailChange = (event) => {
+    const val = event.target.value;
+    setEmail(val);
+    setEmailError(val.trim() === "");
+  };
+
+  return (
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 2, width: "300px" }}>
+      <FormControl fullWidth required error={nameError}>
+        <InputLabel id="name-select-label">Name</InputLabel>
+        <Select
+          labelId="name-select-label"
+          id="name-select"
+          value={name}
+          label="Name"
+          onChange={handleNameChange}
+          MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+        >
+          <MenuItem value="john">John</MenuItem>
+          <MenuItem value="jane">Jane</MenuItem>
+          <MenuItem value="bob">Bob</MenuItem>
+        </Select>
+      </FormControl>
+
+      <FormControl required fullWidth error={emailError}>
+        <InputLabel htmlFor="email-input">Email (Required)</InputLabel>
+        <OutlinedInput
+          id="email-input"
+          label="Email (Required)"
+          value={email}
+          placeholder="Enter your email"
+          onChange={handleEmailChange}
+        />
+      </FormControl>
+
+      <FormControl fullWidth disabled>
+        <InputLabel htmlFor="disabled-field">Disabled Field</InputLabel>
+        <OutlinedInput
+          id="disabled-field"
+          label="Disabled Field"
+          defaultValue="This field is disabled"
+        />
+      </FormControl>
+    </Box>
+  );
+};
+
+export const FormControlSizesDemo = () => {
+  return (
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 2, width: "300px" }}>
+      <FormControl fullWidth size="small">
+        <InputLabel>Small Size</InputLabel>
+        <Select
+          label="Small Size"
+          MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+        >
+          <MenuItem value="small">Small Option</MenuItem>
+          <MenuItem value="medium">Medium Option</MenuItem>
+        </Select>
+      </FormControl>
+
+      <FormControl fullWidth size="medium">
+        <InputLabel>Medium Size</InputLabel>
+        <Select
+          label="Medium Size"
+          MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+        >
+          <MenuItem value="small">Small Option</MenuItem>
+          <MenuItem value="medium">Medium Option</MenuItem>
+        </Select>
+      </FormControl>
+    </Box>
+  );
+};
+
+<a id="Functions">
+  <h2>Functions</h2>
+</a>
+
+<p>
+  The FormControl component provides essential context and styling for form inputs.
+  It manages states like filled, focused, error, and required, ensuring consistent
+  appearance and behavior across different form controls.
+</p>
+
+<h3>State Management</h3>
+<p>
+  FormControl automatically detects and communicates the state of its child components
+  to ensure proper styling and accessibility. It provides context for form validation
+  and user interaction states.
+</p>
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <FormControlStatesDemo />
+  </ThemeWrapper>
+</Row>
+
+<h3>Size Variants</h3>
+<p>
+  FormControl supports different sizes to accommodate various design requirements
+  and improve visual hierarchy in forms.
+</p>
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <FormControlSizesDemo />
+  </ThemeWrapper>
+</Row>
+
+<h3>Layout Control</h3>
+<p>
+  FormControl provides layout utilities like fullWidth to control the width
+  of form inputs and ensure consistent spacing and alignment.
+</p>
+
+<a id="Best-Practices">
+  <h2>Best Practices</h2>
+</a>
+
+<h3>When to Use FormControl</h3>
+<ul>
+  <li>Always wrap form inputs (Select, Input, etc.) with FormControl</li>
+  <li>Use when you need consistent form styling and behavior</li>
+  <li>Required for proper accessibility and form state management</li>
+  <li>Essential for form validation and error handling</li>
+</ul>
+
+<h3>Common Patterns</h3>
+<ul>
+  <li>Use <code>fullWidth</code> for inputs that should span the full container width</li>
+  <li>Combine with InputLabel for proper labeling</li>
+  <li>Use <code>required</code> prop to indicate mandatory fields</li>
+  <li>Apply <code>error</code> state for validation feedback</li>
+  <li>Use <code>disabled</code> state when inputs should not be interactive</li>
+</ul>
+
+<h3>Accessibility</h3>
+<ul>
+  <li>FormControl ensures proper ARIA attributes are applied</li>
+  <li>Provides context for screen readers about form states</li>
+  <li>Supports keyboard navigation and focus management</li>
+  <li>Automatically associates labels with form controls</li>
+</ul>
+
+<a id="Customization">
+  <h2>Customization</h2>
+</a>
+
+<p>
+  FormControl can be customized through various props and styling options
+  to match your design system requirements.
+</p>
+
+<h3>Props</h3>
+<ul>
+  <li><code>children</code>: The content of the component (e.g., InputLabel, Input, and FormHelperText)</li>
+  <li><code>classes</code>: Override or extend the styles applied to the component</li>
+  <li><code>color</code>: The color of the component ("primary" | "secondary" | "error" | "info" | "success" | "warning")</li>
+  <li><code>disabled</code>: If <code>true</code>, the label, input, and helper text are displayed in a disabled state</li>
+  <li><code>error</code>: If <code>true</code>, the label and input are displayed in an error state</li>
+  <li><code>focused</code>: If <code>true</code>, the component is displayed in a focused state</li>
+  <li><code>fullWidth</code>: Makes the form control take the full width of its container</li>
+  <li><code>hiddenLabel</code>: If <code>true</code>, the label is hidden (used to increase density for FilledInput)</li>
+  <li><code>margin</code>: Adjusts vertical spacing of this and contained components ("none" | "dense" | "normal")</li>
+  <li><code>required</code>: If <code>true</code>, the label will indicate that the input is required</li>
+  <li><code>size</code>: Controls the size of the form control ("small" | "medium")</li>
+  <li><code>sx</code>: Custom styling using the theme system</li>
+  <li><code>variant</code>: The variant to use ("outlined" | "filled" | "standard")</li>
+</ul>

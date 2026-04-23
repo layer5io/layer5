@@ -1,38 +1,42 @@
 import React, { useEffect, useState } from "react";
-import { graphql, Link, useStaticQuery } from "gatsby";
+import { graphql, Link, useStaticQuery, withPrefix } from "gatsby";
 import slugify from "../../../utils/slugify";
-import { StaticImage } from "gatsby-plugin-image";
 
 import BlogSideBarWrapper from "./blogSidebar.style";
 import { HiOutlineChevronUp } from "@react-icons/all-files/hi/HiOutlineChevronUp";
 import { HiOutlineChevronDown } from "@react-icons/all-files/hi/HiOutlineChevronDown";
 // import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
 
-const Discuss = "../../../assets/images/discuss/layer5-discuss-white.webp";
-const FiveandFriendsAdventures =
-  "../../../assets/images/blog/five-and-friends.webp";
+const Discuss = withPrefix("/images/layer5-discuss-white.webp");
+const FiveandFriendsAdventures = withPrefix("/images/five-and-friends.webp");
 
 const Sidebar = ({ pageContext }) => {
-  const data = useStaticQuery(
-    graphql`query allTagsAndCategories {
-  tags: allMdx(
-    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
-  ) {
-    group(field: {frontmatter: {tags: SELECT}}) {
-      fieldValue
-      totalCount
+  const data = useStaticQuery(graphql`
+    query allTagsAndCategories {
+      tags: allMdx(
+        filter: {
+          fields: { collection: { eq: "blog" } }
+          frontmatter: { published: { eq: true } }
+        }
+      ) {
+        group(field: { frontmatter: { tags: SELECT } }) {
+          fieldValue
+          totalCount
+        }
+      }
+      categories: allMdx(
+        filter: {
+          fields: { collection: { eq: "blog" } }
+          frontmatter: { published: { eq: true } }
+        }
+      ) {
+        group(field: { frontmatter: { category: SELECT } }) {
+          fieldValue
+          totalCount
+        }
+      }
     }
-  }
-  categories: allMdx(
-    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
-  ) {
-    group(field: {frontmatter: {category: SELECT}}) {
-      fieldValue
-      totalCount
-    }
-  }
-}`
-  );
+  `);
 
   const [showTag, setShowTag] = useState(true);
   const [showCategory, setShowCategory] = useState(true);
@@ -61,7 +65,12 @@ const Sidebar = ({ pageContext }) => {
             <div className="card">
               <h2>Join the Conversation</h2>
               <p>On our Discussion Forum</p>
-              <StaticImage imgClassName="logo" alt="Discuss" src={Discuss} />
+              <img
+                className="logo"
+                alt="Discuss"
+                src={Discuss}
+                loading="lazy"
+              />
             </div>
           </a>
         </div>
@@ -125,9 +134,10 @@ const Sidebar = ({ pageContext }) => {
           <Link to="/community/adventures-of-five-and-friends">
             <div className="card">
               <h2>See the Adventures of Five and Friends</h2>
-              <StaticImage
+              <img
                 alt="layer5 five and friends adventures"
                 src={FiveandFriendsAdventures}
+                loading="lazy"
               />
             </div>
           </Link>

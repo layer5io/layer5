@@ -4,7 +4,7 @@ import { Row, Col } from "../../../reusecore/Layout";
 import Image from "../../../components/image";
 import { Link } from "gatsby";
 
-import { IoDocumentTextOutline, } from "@react-icons/all-files/io5/IoDocumentTextOutline";
+import { IoDocumentTextOutline } from "@react-icons/all-files/io5/IoDocumentTextOutline";
 import { IoChevronBackOutline } from "@react-icons/all-files/io5/IoChevronBackOutline";
 import Button from "../../../reusecore/Button";
 import ChapterCard from "../../../components/Learn-Components/Chapter-Card";
@@ -15,7 +15,6 @@ import SubscribeLearnPath from "../../subscribe/SubscribeLearnPath";
 import BookmarkNotification from "../../../components/Learn-Components/BookmarkNotification";
 
 const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
-
   const [hasBookmark, setHasBookmark] = useState(false);
   const [bookmarkUrl, setBookmarkUrl] = useState("");
   const [showNotification, setShowNotification] = useState(true);
@@ -38,22 +37,55 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
   const findServiceMeshImage = (images, serviceMesh) => {
     return images.find((image) => image.name.toLowerCase() == serviceMesh);
   };
+  const hasMeshImageData = (meshImage) => {
+    const imagePath = meshImage?.imagepath;
+    return Boolean(
+      imagePath?.childImageSharp?.gatsbyImageData || imagePath?.publicURL,
+    );
+  };
+
+  const availableServiceMeshesWithImages = availableServiceMeshes.filter(
+    (serviceMesh) => {
+      const meshImage = findServiceMeshImage(serviceMeshImages, serviceMesh);
+      return hasMeshImageData(meshImage);
+    },
+  );
+
+  const missingServiceMeshImages = availableServiceMeshes.filter(
+    (serviceMesh) => {
+      const meshImage = findServiceMeshImage(serviceMeshImages, serviceMesh);
+      return !hasMeshImageData(meshImage);
+    },
+  );
+
+  if (
+    process.env.NODE_ENV === "development" &&
+    missingServiceMeshImages.length > 0
+  ) {
+    console.warn(
+      `[CourseOverview] Missing meshesYouLearn image data for: ${missingServiceMeshImages.join(", ")} (course: ${course.fields.slug}).`,
+    );
+  }
 
   const ServiceMeshesAvailable = ({ serviceMeshes }) =>
     serviceMeshes.map((sm, index) => {
+      const meshImage = findServiceMeshImage(serviceMeshImages, sm);
+
+      if (!hasMeshImageData(meshImage)) {
+        return null;
+      }
+
       return (
         <div className="service-mesh-courses" key={index}>
-          <Image
-            {...findServiceMeshImage(serviceMeshImages, sm)?.imagepath}
-            className="docker"
-            alt={sm}
-          />
+          <Image {...meshImage.imagepath} className="docker" alt={sm} />
         </div>
       );
     });
 
   useEffect(() => {
-    let bookmarkPath = localStorage.getItem("bookmarkpath-" + course.fields.slug.split("/")[3]);
+    let bookmarkPath = localStorage.getItem(
+      "bookmarkpath-" + course.fields.slug.split("/")[3],
+    );
     if (bookmarkPath) {
       setHasBookmark(true);
       setBookmarkUrl(bookmarkPath);
@@ -87,12 +119,17 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
           </div>
           <Button
             title={hasBookmark ? "Start Again" : "Get Started"}
-            $url={getChapterTitle(course.frontmatter.toc[0], chapters) ? `/${getChapterTitle(course.frontmatter.toc[0], chapters).fields.slug}` : "#"}
+            $url={
+              getChapterTitle(course.frontmatter.toc[0], chapters)
+                ? `/${getChapterTitle(course.frontmatter.toc[0], chapters).fields.slug}`
+                : "#"
+            }
           />
           {hasBookmark && (
             <Button
               className="start-again-button"
-              $primary title="Resume"
+              $primary
+              title="Resume"
               $url={bookmarkUrl}
             />
           )}
@@ -108,9 +145,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
         <Row className="content-section">
           <Col $md={12} $lg={8} $xl={7}>
             <h2 className="overview">Overview</h2>
-            <SRLWrapper>
-              {children}
-            </SRLWrapper>
+            <SRLWrapper>{children}</SRLWrapper>
             <h2 className="course-toc">Table Of Contents</h2>
             {course.frontmatter.toc.map((item, index) => {
               const chapterNode = getChapterTitle(item, chapters);
@@ -120,24 +155,27 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
                   to={chapterNode ? `/${chapterNode.fields.slug}` : "#"}
                   className="chapter-link"
                 >
-                  <ChapterCard
-                    chapterNum={index + 1}
-                    chapter={chapterNode}
-                  />
+                  <ChapterCard chapterNum={index + 1} chapter={chapterNode} />
                 </Link>
               );
             })}
           </Col>
           <Col $md={12} $lg={4} $xl={5}>
             <div className="service-meshes-you-can-learn">
-              {console.log("lenght of the service mesh array: ", availableServiceMeshes.length)}
-              {console.log("array: ", availableServiceMeshes)}
-              {serviceMeshImages.length !== 0 && availableServiceMeshes.length != 0 && (
-                <>
-                  <h2>Technologies You Can Learn</h2>
-                  <ServiceMeshesAvailable serviceMeshes={availableServiceMeshes} />
-                </>
+              {console.log(
+                "lenght of the service mesh array: ",
+                availableServiceMeshes.length,
               )}
+              {console.log("array: ", availableServiceMeshes)}
+              {serviceMeshImages.length !== 0 &&
+                availableServiceMeshesWithImages.length != 0 && (
+                  <>
+                    <h2>Technologies You Can Learn</h2>
+                    <ServiceMeshesAvailable
+                      serviceMeshes={availableServiceMeshesWithImages}
+                    />
+                  </>
+                )}
             </div>
             {/* <div className="join-community_text-and_button">
               <h2>Contribute to Layer5</h2>
@@ -151,8 +189,12 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
             <SubscribeLearnPath />
           </Col>
         </Row>
-      </div>f
-      <BookmarkNotification showNotification={showNotification} closeNotification={() => setShowNotification(false)} />
+      </div>
+      f
+      <BookmarkNotification
+        showNotification={showNotification}
+        closeNotification={() => setShowNotification(false)}
+      />
     </CourseOverviewWrapper>
   );
 };

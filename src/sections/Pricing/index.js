@@ -87,6 +87,10 @@ export const CurrencySelect = React.memo(({ currency, setCurrency }) => {
         value={currency}
         onChange={handleCurrencyChange}
         label="Currency"
+        MenuProps={{
+          disableScrollLock: true,
+          marginThreshold: null,
+        }}
         renderValue={(value) => (
           <Box sx={{ display: "flex", alignItems: "center", gap: 1, color: "#fff" }}>
             <Typography variant="body1">{Currencies[value]?.symbol}</Typography>
