@@ -17,7 +17,13 @@ const createKanvasLabPages = async ({ graphql, createPage, reporter, labTemplate
   `);
 
   if (result.errors) {
-    reporter.panicOnBuild("Error while running GraphQL query for Kanvas labs pages.");
+    const graphqlError = new Error(
+      result.errors.map((error) => error.message || String(error)).join("\n")
+    );
+    reporter.panicOnBuild(
+      "Error while running GraphQL query for Kanvas labs pages.",
+      graphqlError
+    );
     return;
   }
 
