@@ -14,21 +14,22 @@ import ServiceMeshIcon from "../../assets/images/service-mesh-icons/service-mesh
 
 const TOOLTIP_ID = "smi-table-tooltip";
 
+const getRowId = (row) => `${row.original.mesh_name}-${row.original.mesh_version}`;
+
 // const halfMark = "../../assets/images/landscape/half.svg";
 // const passingMark = "../../assets/images/landscape/passing.svg";
 // const failingMark = "../../assets/images/landscape/failing.svg";
 // const ServiceMeshIcon = "../../assets/images/service-mesh-icons/service-mesh.svg";
 
-const TableRow = React.memo(({ row, rowIndex, prepareRow }) => {
+const TableRow = React.memo(({ row }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const meshMatch = non_functional.find((ele) => ele.name.includes(row.original.mesh_name));
-
-  prepareRow(row);
+  const rowId = getRowId(row);
 
   return (
-    <React.Fragment key={`row-${rowIndex}`}>
+    <React.Fragment key={rowId}>
       <tr
-        id={`row${rowIndex}`}
+        id={`row-${rowId}`}
         className="primaryRow"
         {...row.getRowProps()}
         onClick={() => setIsCollapsed((prevState) => !prevState)}
@@ -75,7 +76,7 @@ const TableRow = React.memo(({ row, rowIndex, prepareRow }) => {
       {
         row.original.previous_versions && row.original.previous_versions.map((prevResult, index) => {
           return (
-            <tr key={`collapse-row-${rowIndex}-${index}`} className={isCollapsed ? "secondaryRow" : "secondaryRow-hidden"} >
+            <tr key={`collapse-row-${rowId}-${prevResult.mesh_version}-${index}`} className={isCollapsed ? "secondaryRow" : "secondaryRow-hidden"} >
               <td></td>
               <td>{prevResult.mesh_version}</td>
               {prevResult.more_details.map((spec, prevIndex) => {
@@ -141,7 +142,8 @@ const Table = ({ columns, data, spec }) => {
         </thead>
         <tbody {...getTableBodyProps()}>
           {rows.map((row, i) => {
-            return <TableRow key={`row${i}`} row={row} rowIndex={i} prepareRow={prepareRow} />;
+            prepareRow(row);
+            return <TableRow key={getRowId(row)} row={row} />;
           })}
         </tbody>
       </table>
