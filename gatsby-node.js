@@ -131,6 +131,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     graphql,
     createPage,
     reporter,
+    sistentTemplate: path.resolve("src/templates/sistent-component.js"),
   });
 
   const res = await graphql(`
@@ -663,7 +664,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }
     }
   });
-
 };
 
 // slug starts and ends with '/' so parts[0] and parts[-1] will be empty

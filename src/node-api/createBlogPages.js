@@ -9,6 +9,10 @@ const createBlogPages = async ({
   blogCategoryListTemplate,
   blogTagListTemplate,
 }) => {
+  if (!isCollectionEnabled("blog")) {
+    return;
+  }
+
   const result = await graphql(`
     {
       blogPosts: allMdx(
@@ -51,10 +55,6 @@ const createBlogPages = async ({
 
   if (result.errors) {
     reporter.panicOnBuild("Error while running GraphQL query for blog pages.");
-    return;
-  }
-
-  if (!isCollectionEnabled("blog")) {
     return;
   }
 

@@ -1,12 +1,13 @@
-const path = require("path");
-
-const createSistentComponentPages = async ({ graphql, createPage, reporter }) => {
+const createSistentComponentPages = async ({
+  graphql,
+  createPage,
+  reporter,
+  sistentTemplate,
+}) => {
   const result = await graphql(`
     {
       sistentComponents: allMdx(
-        filter: {
-          fields: { collection: { eq: "sistent" } }
-        }
+        filter: { fields: { collection: { eq: "sistent" } } }
       ) {
         group(field: { fields: { componentName: SELECT } }) {
           fieldValue
@@ -32,7 +33,6 @@ const createSistentComponentPages = async ({ graphql, createPage, reporter }) =>
     return;
   }
 
-  const sistentTemplate = path.resolve("src/templates/sistent-component.js");
   const sistentGroups = result.data.sistentComponents.group;
 
   sistentGroups.forEach((group) => {
