@@ -30,15 +30,15 @@ const collectionIgnoreGlobs = excludedCollections.map(
 );
 const devFlags = isDevelopment
   ? {
-    PARALLEL_SOURCING: false,
-    PRESERVE_FILE_DOWNLOAD_CACHE: true,
-  }
+      PARALLEL_SOURCING: false,
+      PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    }
   : {};
 console.info(`Build Environment: "${process.env.NODE_ENV}"`);
 collectionIgnoreGlobs.length > 0
   ? console.info(
       `Build Scope excludes (${process.env.LITE_BUILD_PROFILE || DEFAULT_LITE_BUILD_PROFILE}): ${excludedCollections.join(", ")}`,
-  )
+    )
   : console.info("Build Scope includes all collections");
 module.exports = {
   ...(pathPrefix != null ? { pathPrefix } : {}),
@@ -144,11 +144,11 @@ module.exports = {
     // Start of Production-only Plugins
     ...(isProduction
       ? [
-        {
-          resolve: "gatsby-plugin-feed",
-          options: {
-            // Lightweight global query - only site metadata
-            query: `
+          {
+            resolve: "gatsby-plugin-feed",
+            options: {
+              // Lightweight global query - only site metadata
+              query: `
           {
             site {
               siteMetadata {
@@ -160,12 +160,12 @@ module.exports = {
             }
           }
         `,
-            feeds: [
-              // FEED 1: News - individual query per feed
-              {
-                output: "/news/feed.xml",
-                title: "Layer5 News",
-                query: `
+              feeds: [
+                // FEED 1: News - individual query per feed
+                {
+                  output: "/news/feed.xml",
+                  title: "Layer5 News",
+                  query: `
               {
                 site {
                   siteMetadata {
@@ -199,85 +199,85 @@ module.exports = {
                 }
               }
             `,
-                serialize: ({ query: { site, allMdx } }) => {
-                  return allMdx.nodes.map((node) => {
-                    return Object.assign({}, node.frontmatter, {
-                      title: node.frontmatter.title,
-                      author: node.frontmatter.author,
-                      description: node.frontmatter.description,
-                      date: node.frontmatter.date,
-                      url: site.siteMetadata.siteUrl + node.fields.slug,
-                      guid: site.siteMetadata.siteUrl + node.fields.slug,
-                      enclosure: node.frontmatter.thumbnail && {
-                        url:
+                  serialize: ({ query: { site, allMdx } }) => {
+                    return allMdx.nodes.map((node) => {
+                      return Object.assign({}, node.frontmatter, {
+                        title: node.frontmatter.title,
+                        author: node.frontmatter.author,
+                        description: node.frontmatter.description,
+                        date: node.frontmatter.date,
+                        url: site.siteMetadata.siteUrl + node.fields.slug,
+                        guid: site.siteMetadata.siteUrl + node.fields.slug,
+                        enclosure: node.frontmatter.thumbnail && {
+                          url:
                             site.siteMetadata.siteUrl +
                             node.frontmatter.thumbnail.publicURL,
-                      },
-                      custom_elements: [{ "content:encoded": node.excerpt }],
+                        },
+                        custom_elements: [{ "content:encoded": node.excerpt }],
+                      });
                     });
-                  });
+                  },
                 },
-              },
-              // FEED 2: Resources - individual query
-              //   {
-              //     output: "/resources/feed.xml",
-              //     title: "Layer5 Resources",
-              //     query: `
-              //   {
-              //     site {
-              //       siteMetadata {
-              //         title
-              //         siteUrl
-              //       }
-              //     }
-              //     allMdx(
-              //       sort: {frontmatter: {date: DESC}}
-              //       limit: 20
-              //       filter: {
-              //         frontmatter: { published: { eq: true } }
-              //         fields: { collection: { eq: "resources" } }
-              //       }
-              //     ) {
-              //       nodes {
-              //         excerpt
-              //         frontmatter {
-              //           title
-              //           author
-              //           description
-              //           date
-              //           thumbnail {
-              //             publicURL
-              //           }
-              //         }
-              //         fields {
-              //           slug
-              //         }
-              //       }
-              //     }
-              //   }
-              // `,
-              //     serialize: ({ query: { site, allMdx } }) => {
-              //       return allMdx.nodes.map((node) => {
-              //         return Object.assign({}, node.frontmatter, {
-              //           title: node.frontmatter.title,
-              //           author: node.frontmatter.author,
-              //           description: node.frontmatter.description,
-              //           date: node.frontmatter.date,
-              //           url: site.siteMetadata.siteUrl + node.fields.slug,
-              //           guid: site.siteMetadata.siteUrl + node.fields.slug,
-              //           enclosure: node.frontmatter.thumbnail && {
-              //             url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
-              //           },
-              //           custom_elements: [{ "content:encoded": node.excerpt }],
-              //         });
-              //       });
-              //     },
-              //   },
-              // FEED 3: Meshery Community - targeted query with filters
-              {
-                output: "/meshery-community-feed.xml",
-                title: "Meshery RSSFeed",
-                query: `
+                // FEED 2: Resources - individual query
+                //   {
+                //     output: "/resources/feed.xml",
+                //     title: "Layer5 Resources",
+                //     query: `
+                //   {
+                //     site {
+                //       siteMetadata {
+                //         title
+                //         siteUrl
+                //       }
+                //     }
+                //     allMdx(
+                //       sort: {frontmatter: {date: DESC}}
+                //       limit: 20
+                //       filter: {
+                //         frontmatter: { published: { eq: true } }
+                //         fields: { collection: { eq: "resources" } }
+                //       }
+                //     ) {
+                //       nodes {
+                //         excerpt
+                //         frontmatter {
+                //           title
+                //           author
+                //           description
+                //           date
+                //           thumbnail {
+                //             publicURL
+                //           }
+                //         }
+                //         fields {
+                //           slug
+                //         }
+                //       }
+                //     }
+                //   }
+                // `,
+                //     serialize: ({ query: { site, allMdx } }) => {
+                //       return allMdx.nodes.map((node) => {
+                //         return Object.assign({}, node.frontmatter, {
+                //           title: node.frontmatter.title,
+                //           author: node.frontmatter.author,
+                //           description: node.frontmatter.description,
+                //           date: node.frontmatter.date,
+                //           url: site.siteMetadata.siteUrl + node.fields.slug,
+                //           guid: site.siteMetadata.siteUrl + node.fields.slug,
+                //           enclosure: node.frontmatter.thumbnail && {
+                //             url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
+                //           },
+                //           custom_elements: [{ "content:encoded": node.excerpt }],
+                //         });
+                //       });
+                //     },
+                //   },
+                // FEED 3: Meshery Community - targeted query with filters
+                {
+                  output: "/meshery-community-feed.xml",
+                  title: "Meshery RSSFeed",
+                  query: `
               {
                 site {
                   siteMetadata {
@@ -319,52 +319,52 @@ module.exports = {
                 }
               }
             `,
-                serialize: ({ query: { site, allMdx } }) => {
-                  const targetTags = ["Community", "Meshery", "mesheryctl"];
+                  serialize: ({ query: { site, allMdx } }) => {
+                    const targetTags = ["Community", "Meshery", "mesheryctl"];
 
-                  return allMdx.nodes
-                    .filter((node) => {
-                      const hasTag =
+                    return allMdx.nodes
+                      .filter((node) => {
+                        const hasTag =
                           node.frontmatter.tags &&
                           node.frontmatter.tags.some((t) =>
                             targetTags.includes(t),
                           );
-                      return hasTag;
-                    })
-                    .slice(0, 30)
-                    .map((node) => {
-                      return Object.assign({}, node.frontmatter, {
-                        title: node.frontmatter.title,
-                        author: node.frontmatter.author,
-                        description:
+                        return hasTag;
+                      })
+                      .slice(0, 30)
+                      .map((node) => {
+                        return Object.assign({}, node.frontmatter, {
+                          title: node.frontmatter.title,
+                          author: node.frontmatter.author,
+                          description:
                             node.frontmatter.description ||
                             node.frontmatter.subtitle,
-                        date: node.frontmatter.date,
-                        url: site.siteMetadata.siteUrl + node.fields.slug,
-                        guid: site.siteMetadata.siteUrl + node.fields.slug,
-                        enclosure: node.frontmatter.thumbnail && {
-                          url:
+                          date: node.frontmatter.date,
+                          url: site.siteMetadata.siteUrl + node.fields.slug,
+                          guid: site.siteMetadata.siteUrl + node.fields.slug,
+                          enclosure: node.frontmatter.thumbnail && {
+                            url:
                               site.siteMetadata.siteUrl +
                               node.frontmatter.thumbnail.publicURL,
-                        },
-                        custom_elements: [
-                          { "content:encoded": node.excerpt },
-                          { "content:type": node.frontmatter.type },
-                          { "content:category": node.frontmatter.category },
-                          {
-                            "content:tags":
-                                node.frontmatter.tags?.join(", ") || "",
                           },
-                        ],
+                          custom_elements: [
+                            { "content:encoded": node.excerpt },
+                            { "content:type": node.frontmatter.type },
+                            { "content:category": node.frontmatter.category },
+                            {
+                              "content:tags":
+                                node.frontmatter.tags?.join(", ") || "",
+                            },
+                          ],
+                        });
                       });
-                    });
+                  },
                 },
-              },
-              // FEED 4: Blog - individual query
-              {
-                output: "/blog/feed.xml",
-                title: "Layer5 Blog",
-                query: `
+                // FEED 4: Blog - individual query
+                {
+                  output: "/blog/feed.xml",
+                  title: "Layer5 Blog",
+                  query: `
               {
                 site {
                   siteMetadata {
@@ -398,30 +398,30 @@ module.exports = {
                 }
               }
             `,
-                serialize: ({ query: { site, allMdx } }) => {
-                  return allMdx.nodes.map((node) => {
-                    return Object.assign({}, node.frontmatter, {
-                      title: node.frontmatter.title,
-                      author: node.frontmatter.author,
-                      description: node.frontmatter.description,
-                      date: node.frontmatter.date,
-                      url: site.siteMetadata.siteUrl + node.fields.slug,
-                      guid: site.siteMetadata.siteUrl + node.fields.slug,
-                      enclosure: node.frontmatter.thumbnail && {
-                        url:
+                  serialize: ({ query: { site, allMdx } }) => {
+                    return allMdx.nodes.map((node) => {
+                      return Object.assign({}, node.frontmatter, {
+                        title: node.frontmatter.title,
+                        author: node.frontmatter.author,
+                        description: node.frontmatter.description,
+                        date: node.frontmatter.date,
+                        url: site.siteMetadata.siteUrl + node.fields.slug,
+                        guid: site.siteMetadata.siteUrl + node.fields.slug,
+                        enclosure: node.frontmatter.thumbnail && {
+                          url:
                             site.siteMetadata.siteUrl +
                             node.frontmatter.thumbnail.publicURL,
-                      },
-                      custom_elements: [{ "content:encoded": node.excerpt }],
+                        },
+                        custom_elements: [{ "content:encoded": node.excerpt }],
+                      });
                     });
-                  });
+                  },
                 },
-              },
-              // FEED 5: Events - individual query
-              {
-                output: "/events/feed.xml",
-                title: "Layer5 Events",
-                query: `
+                // FEED 5: Events - individual query
+                {
+                  output: "/events/feed.xml",
+                  title: "Layer5 Events",
+                  query: `
               {
                 site {
                   siteMetadata {
@@ -455,35 +455,35 @@ module.exports = {
                 }
               }
             `,
-                serialize: ({ query: { site, allMdx } }) => {
-                  return allMdx.nodes.map((node) => {
-                    return Object.assign({}, node.frontmatter, {
-                      title: node.frontmatter.title,
-                      author: node.frontmatter.author,
-                      description: node.frontmatter.description,
-                      date: node.frontmatter.date,
-                      url: site.siteMetadata.siteUrl + node.fields.slug,
-                      guid: site.siteMetadata.siteUrl + node.fields.slug,
-                      enclosure: node.frontmatter.thumbnail && {
-                        url:
+                  serialize: ({ query: { site, allMdx } }) => {
+                    return allMdx.nodes.map((node) => {
+                      return Object.assign({}, node.frontmatter, {
+                        title: node.frontmatter.title,
+                        author: node.frontmatter.author,
+                        description: node.frontmatter.description,
+                        date: node.frontmatter.date,
+                        url: site.siteMetadata.siteUrl + node.fields.slug,
+                        guid: site.siteMetadata.siteUrl + node.fields.slug,
+                        enclosure: node.frontmatter.thumbnail && {
+                          url:
                             site.siteMetadata.siteUrl +
                             node.frontmatter.thumbnail.publicURL,
-                      },
-                      custom_elements: [{ "content:encoded": node.excerpt }],
+                        },
+                        custom_elements: [{ "content:encoded": node.excerpt }],
+                      });
                     });
-                  });
+                  },
                 },
-              },
-            ],
+              ],
+            },
           },
-        },
-        {
-          resolve: "gatsby-plugin-purgecss",
-          options: {
-            printRejected: true,
+          {
+            resolve: "gatsby-plugin-purgecss",
+            options: {
+              printRejected: true,
+            },
           },
-        },
-      ]
+        ]
       : []),
     // End of Production-only Plugins
     {
