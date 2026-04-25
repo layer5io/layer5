@@ -13,7 +13,6 @@ const Card = ({
   fetchpriority = "auto",
 }) => {
   const { isDark } = useStyledDarkMode();
-
   return (
     <CardWrapper fixed={!!frontmatter.abstract}>
       <div className="post-block">
@@ -53,21 +52,30 @@ const Card = ({
           <div className="readmore-btn-wrapper">
             {fields && fields.slug && frontmatter.eurl && (
               <>
-                <Link className="readmore-btn" to={fields.slug}>
+                <Link
+                  className="readmore-btn"
+                  to={fields.slug}
+                  aria-label={`See more about ${frontmatter.title}`}
+                >
                   see more <IoIosArrowRoundForward />
                 </Link>
                 <a
                   className="external-link-btn"
                   href={frontmatter.eurl}
                   target="_blank"
-                  rel="noreferrer oopener"
+                  rel="noreferrer noopener"
+                  aria-label={`Visit external link for ${frontmatter.title}`}
                 >
                   <BiLinkExternal />
                 </a>
               </>
             )}
             {fields && fields.slug && !frontmatter.eurl && (
-              <Link className="readmore-btn" to={fields.slug}>
+              <Link
+                className="readmore-btn"
+                to={fields.slug}
+                aria-label={`See more about ${frontmatter.title}`}
+              >
                 see more <IoIosArrowRoundForward />
               </Link>
             )}
@@ -76,7 +84,8 @@ const Card = ({
                 className="external-link-btn"
                 href={frontmatter.eurl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noreferrer noopener"
+                aria-label={`Visit external link for ${frontmatter.title}`}
               >
                 <BiLinkExternal />
               </a>

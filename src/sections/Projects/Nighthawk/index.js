@@ -127,7 +127,7 @@ const Projects = () => {
                   <ul>
                     <li>Debian</li>
                     <li>CentOS</li>
-                    <li>Unbuntu</li>
+                    <li>Ubuntu</li>
                     <li>macOS</li>
                     <li>Docker</li>
                   </ul>

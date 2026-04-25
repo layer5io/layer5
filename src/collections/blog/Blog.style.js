@@ -23,6 +23,19 @@ export const BlogWrapper = styled.div`
     }
   }
 
+  div.outro {
+    display: flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1rem;
+    border-top: 1px solid ${(props) => props.theme.primaryLightColor};
+    border-bottom: 1px solid ${(props) => props.theme.primaryLightColor};
+    margin-top: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: ${(props) => props.theme.secondaryLightColorTwo};
+  }
+
   div.tip {
     position: relative;
     float: right;

@@ -1,0 +1,90 @@
+---
+title: Card Guidance
+component: card
+description: A card is a contained surface that groups related information and actions about a single subject, making content easy to scan and interact with.
+---
+
+import { Card } from "@sistent/sistent";
+
+Cards work best when they follow a consistent structure and are used intentionally. Here's how to get the most out of them.
+
+<a id="When to Use">
+  <h2>When to Use</h2>
+</a>
+
+Cards are a great fit when you're presenting a collection of items that are related but independent — things like search results, product listings, user profiles, or dashboard widgets. The contained surface makes it easy for users to scan many items at once without losing track of where one ends and another begins.
+
+<h3>Use cards when</h3>
+
+- You have multiple items of the same type to display side by side
+- Each item has its own set of actions (like "Edit", "Delete", or "View")
+- The content can be summarized — cards are not meant to show full detail
+- You want to let users quickly identify which item they want before drilling in
+
+<h3>Avoid cards when</h3>
+
+- You only have a single piece of content — a card adds unnecessary structure here
+- The content is tabular — a table will do a better job showing relationships between rows
+- The layout is purely linear — a list or a stack of sections is simpler and more readable
+
+<a id="Content Structure">
+  <h2>Content Structure</h2>
+</a>
+
+Cards work best with a predictable internal layout. When every card in a set follows the same structure, users can scan faster and actions are easier to find.
+
+<h3>Keep it focused</h3>
+
+A card should cover one subject. If you find yourself fitting two unrelated things into a single card, split them into two. A focused card is easier to scan and less likely to confuse.
+
+<h3>Prioritize the header</h3>
+
+The most important information — the title, name, or main identifier — should be at the top. Users scan in F-patterns; if the key info is buried, they'll miss it. Secondary details like descriptions or metadata can follow below.
+
+<h3>Limit the number of actions</h3>
+
+Cards shouldn't try to do too many things at once. One to two actions per card is a good rule of thumb. If you have more, consider whether some of those actions belong on a detail page instead.
+
+<a id="Hierarchy">
+  <h2>Hierarchy</h2>
+</a>
+
+When multiple card types appear in the same layout, their visual weight should reflect their importance. Use elevation and variant choices deliberately to guide the user's eye.
+
+<h3>Elevated cards for primary content</h3>
+
+If cards are the main content on a page, use the default elevated style. The shadow helps them stand out from the background and from each other.
+
+<h3>Outlined cards for secondary content</h3>
+
+Outlined cards are a better fit for supplementary content, sidebars, or contexts where the background is already elevated. They're visually lighter and won't compete with the primary content.
+
+<a id="Interactivity">
+  <h2>Interactivity</h2>
+</a>
+
+Whether or not a card is clickable should be clear from the visual treatment alone — don't make users guess.
+
+<h3>Clickable cards</h3>
+
+If the entire card is a navigation target, make sure there's a visible hover state. A subtle background color change or shadow shift is enough. The cursor should switch to a pointer on hover.
+
+<h3>Cards with actions</h3>
+
+If a card has specific action buttons (rather than a full-card click), those should be visually distinct and located in a consistent spot — usually the bottom of the card. Don't mix full-card clicks with inline buttons, as this creates conflicting affordances.
+
+<h3>Non-interactive cards</h3>
+
+Remove any hover effects from purely informational cards. No pointer cursor, no shadow change on hover. This keeps the visual language consistent and prevents users from clicking on things that don't go anywhere.
+
+<a id="Accessibility">
+  <h2>Accessibility</h2>
+</a>
+
+Cards should be accessible without requiring visual context to understand their purpose.
+
+- If a card is clickable, make sure it has a meaningful `aria-label` or that the visible text is descriptive enough to serve as the accessible name
+- Avoid using only color or icons to convey the card's purpose — pair them with a visible text label
+- Ensure sufficient color contrast between the card surface and its contents
+- Focus outlines should be visible on all interactive elements within a card
+- If cards reorder or update dynamically, use appropriate ARIA live regions so screen reader users are notified of changes

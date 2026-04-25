@@ -5,9 +5,6 @@ import React, { useContext } from "react";
 import { ThemeProvider } from "styled-components";
 import { ThemeManagerContext } from "./ThemeManager";
 
-// Safe check for browser environment
-const isBrowser = typeof window !== "undefined";
-
 export const StyledThemeProvider = (props) => {
   const { children, darkTheme, lightTheme } = props;
   const { isDark, didLoad } = useContext(ThemeManagerContext);
@@ -16,7 +13,7 @@ export const StyledThemeProvider = (props) => {
   // This ensures the server and client render the same thing initially
   const currentTheme = isDark ? darkTheme : lightTheme;
   const theme = {
-    ...(didLoad || !isBrowser ? currentTheme : transformTheme(currentTheme)),
+    ...(didLoad ? currentTheme : transformTheme(currentTheme)),
   };
 
   return (
@@ -39,5 +36,3 @@ const transformTheme = (theme) => {
 
   return newTheme;
 };
-
-
