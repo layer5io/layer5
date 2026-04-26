@@ -29,19 +29,19 @@ jobs:
 
       - name: Checkout PR
         if: github.event.action != 'closed'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Checkout gh-pages for cleanup
         if: github.event.action == 'closed'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: gh-pages
 
       - name: Setup Node
         if: github.event.action != 'closed'
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: "20"
 
@@ -77,10 +77,13 @@ jobs:
 
       - name: Checkout gh-pages for preview retention
         if: github.event.action != 'closed'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: gh-pages
           fetch-depth: 0
+          filter: blob:none
+          sparse-checkout: |
+            pr-preview
           path: gh-pages-maintenance
 
       - name: Prune old PR previews
@@ -131,7 +134,7 @@ jobs:
         with:
           header: pr-preview
           message: |
-            🚀 Preview deployment: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/pr-preview/pr-${{ github.event.pull_request.number }}/
+            🚀 Preview deployment: https://layer5.io/pr-preview/pr-${{ github.event.pull_request.number }}/
             > *Note: Preview may take a moment (GitHub Pages deployment in progress). Please wait and refresh. Track deployment [here](https://github.com/${{ github.repository }}/actions/workflows/pages/pages-build-deployment)*
 
       - name: Comment on pruned previews

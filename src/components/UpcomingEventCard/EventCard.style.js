@@ -21,9 +21,20 @@ const UpcomingEventsWrapper = styled.div`
 	.blog-slider_img{
 		max-height: 25rem; 
 		object-fit: cover;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
 		.gatsby-image-wrapper {
+		    width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			img {
 				 max-height: 25rem;
+				 object-fit: cover;
+				 width: 100%;
 			 }
 	   }
 	}
