@@ -1,45 +1,196 @@
-name: Build and Preview Site
+name: PR Preview Deployment (Gatsby + GitHub Pages)
+
 on:
-  pull_request:
+  pull_request_target:
     branches: [master]
-    types: [opened, synchronize, reopened]
+    types: [opened, synchronize, reopened, closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: preview-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
 
 jobs:
-  site-preview:
+  preview:
     runs-on: ubuntu-latest
+    outputs:
+      removed_prs_json: ${{ steps.prune-previews.outputs.removed_prs_json }}
+    env:
+      PREVIEW_RETENTION_LIMIT: 6
+
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@master
+
+      - name: Checkout PR
+        if: github.event.action != 'closed'
+        uses: actions/checkout@v6
         with:
-          persist-credentials: false
-          fetch-depth: 1
+          ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Install 🔧
-        run: make setup
-
-      - name: Build 🏗️
-        # Always run the full production build explicitly.
-        # Do NOT use `make clean` here — that target is a developer convenience
-        # command whose recipe has changed multiple times, causing blog posts and
-        # other collections to be silently excluded from the deployed site when
-        # it ran a lite/dev build instead of the full production build.
-        # `npm run build` is the canonical, stable production build command:
-        #   cross-env BUILD_FULL_SITE=true gatsby build
-        run: npm run build
-
-      - name: Broken Link Check 🔗
-        uses: technote-space/broken-link-checker-action@v2
+      - name: Checkout gh-pages for cleanup
+        if: github.event.action == 'closed'
+        uses: actions/checkout@v6
         with:
-          target: ./public/**/*.html  
+          ref: gh-pages
 
-      - name: Zip Site
-        run: bash ./script.sh
-
-      - name: Upload files
-        uses: actions/upload-artifact@v6
+      - name: Setup Node
+        if: github.event.action != 'closed'
+        uses: actions/setup-node@v6
         with:
-          name: public-dir
-          path: ./public-dir.zip
-          retention-days: 1
-      - name: Trigger Inner workflow
-        run: echo "triggering inner workflow"
+          node-version: "20"
+
+      - name: Install dependencies
+        if: github.event.action != 'closed'
+        run: npm ci
+
+      - name: Set PATH_PREFIX for preview
+        if: github.event.action != 'closed'
+        run: |
+          echo "PATH_PREFIX=pr-preview/pr-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+
+      - name: Build PR preview
+        if: github.event.action != 'closed'
+        env:
+          GATSBY_PREVIEW: "true"
+          GATSBY_SITE_URL: https://${{ github.repository_owner }}.github.io
+        run: |
+          PATH_PREFIX=$PATH_PREFIX npm run build:preview
+
+          # Prevent indexing
+          echo -e "User-agent: *\nDisallow: /" > public/robots.txt
+
+      - name: Deploy PR preview
+        if: github.event.action != 'closed'
+        uses: rossjrw/pr-preview-action@v1.6.3
+        with:
+          source-dir: ./public
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: auto
+          comment: false
+
+      - name: Checkout gh-pages for preview retention
+        if: github.event.action != 'closed'
+        uses: actions/checkout@v6
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout: |
+            pr-preview
+          path: gh-pages-maintenance
+
+      - name: Prune old PR previews
+        id: prune-previews
+        if: github.event.action != 'closed'
+        run: |
+          cd gh-pages-maintenance
+          mkdir -p pr-preview
+          removed_prs=()
+
+          mapfile -t previews < <(
+            while IFS= read -r preview; do
+              timestamp="$(git log -1 --format=%ct -- "pr-preview/$preview" 2>/dev/null || echo 0)"
+              printf '%s %s\n' "$timestamp" "$preview"
+            done < <(find pr-preview -mindepth 1 -maxdepth 1 -type d -name 'pr-*' -printf '%f\n') \
+              | sort -nr \
+              | awk '{print $2}'
+          )
+
+          if (( ${#previews[@]} <= PREVIEW_RETENTION_LIMIT )); then
+            echo "removed_prs_json=[]" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          for preview in "${previews[@]:PREVIEW_RETENTION_LIMIT}"; do
+            rm -rf "pr-preview/$preview"
+            removed_prs+=("${preview#pr-}")
+          done
+
+          if git diff --quiet -- pr-preview; then
+            echo "removed_prs=" >> "$GITHUB_OUTPUT"
+            echo "removed_prs_json=[]" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add pr-preview
+          git commit -m "Prune old PR previews"
+          git push
+
+          echo "removed_prs=$(IFS=,; echo "${removed_prs[*]}")" >> "$GITHUB_OUTPUT"
+          echo "removed_prs_json=$(printf '%s\n' "${removed_prs[@]}" | jq -R . | jq -sc .)" >> "$GITHUB_OUTPUT"
+
+      - name: Comment PR with Preview URL
+        if: github.event.action != 'closed'
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: pr-preview
+          message: |
+            🚀 Preview deployment: https://layer5.io/pr-preview/pr-${{ github.event.pull_request.number }}/
+            > *Note: Preview may take a moment (GitHub Pages deployment in progress). Please wait and refresh. Track deployment [here](https://github.com/${{ github.repository }}/actions/workflows/pages/pages-build-deployment)*
+
+      - name: Comment on pruned previews
+        if: github.event.action != 'closed' && steps.prune-previews.outputs.removed_prs_json != '[]'
+        uses: actions/github-script@v7
+        env:
+          REMOVED_PRS_JSON: ${{ steps.prune-previews.outputs.removed_prs_json }}
+          PREVIEW_RETENTION_LIMIT: ${{ env.PREVIEW_RETENTION_LIMIT }}
+        with:
+          script: |
+            const removedPrs = JSON.parse(process.env.REMOVED_PRS_JSON);
+            const retentionLimit = process.env.PREVIEW_RETENTION_LIMIT;
+            const header = "pr-preview";
+            const marker = `<!-- Sticky Pull Request Comment${header} -->`;
+
+            for (const prNumber of removedPrs) {
+              const body =
+                `Preview deployment for PR #${prNumber} removed.\n\n` +
+                `This PR preview was automatically pruned because we keep only the ${retentionLimit} most recently updated previews on GitHub Pages to stay within deployment size limits.\n\n` +
+                `If needed, push a new commit to this PR to generate a fresh preview.\n` +
+                `${marker}`;
+
+              const { data: comments } = await github.rest.issues.listComments({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: Number(prNumber),
+                per_page: 100,
+              });
+
+              const existingComment = [...comments].reverse().find((comment) =>
+                comment.user?.login === "github-actions[bot]" &&
+                comment.body?.includes(marker)
+              );
+
+              if (existingComment) {
+                await github.rest.issues.updateComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  comment_id: existingComment.id,
+                  body,
+                });
+                continue;
+              }
+
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: Number(prNumber),
+                body,
+              });
+            }
+
+      - name: Cleanup PR preview on close
+        if: github.event.action == 'closed'
+        uses: rossjrw/pr-preview-action@v1.6.3
+        with:
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: remove

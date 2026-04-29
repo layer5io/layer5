@@ -13,45 +13,46 @@ import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 const NewsSingle = ({ data, children }) => {
   const { isDark } = useStyledDarkMode();
   const { frontmatter, fields } = data.mdx;
-  const newsData = useStaticQuery(
-    graphql`query relatedNewsPosts {
-  allMdx(
-    sort: {frontmatter: {date: DESC}}
-    filter: {fields: {collection: {eq: "news"}}, frontmatter: {published: {eq: true}}}
-    limit: 6
-  ) {
-    nodes {
-      frontmatter {
-        title
-        date(formatString: "MMM Do YYYY")
-        author
-        category
-        tags
-        eurl
-        presskit
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData(width: 480, layout: CONSTRAINED)
+  const newsData = useStaticQuery(graphql`
+    query relatedNewsPosts {
+      allMdx(
+        sort: { frontmatter: { date: DESC } }
+        filter: {
+          fields: { collection: { eq: "news" } }
+          frontmatter: { published: { eq: true } }
+        }
+        limit: 6
+      ) {
+        nodes {
+          frontmatter {
+            title
+            date(formatString: "MMM Do YYYY")
+            author
+            category
+            tags
+            eurl
+            presskit
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(width: 480, layout: CONSTRAINED)
+              }
+              extension
+              publicURL
+            }
+            thumbnail_svg {
+              extension
+              publicURL
+            }
           }
-          extension
-          publicURL
+          fields {
+            slug
+          }
         }
-        thumbnail_svg {
-          extension
-          publicURL
-        }
-      }
-      fields {
-        slug
       }
     }
-  }
-}`
-  );
+  `);
   const posts = newsData.allMdx.nodes;
-  const relatedPosts = posts.filter(
-    (post) => post.fields.slug !== fields.slug
-  );
+  const relatedPosts = posts.filter((post) => post.fields.slug !== fields.slug);
 
   return (
     <NewsPageWrapper>
@@ -60,8 +61,16 @@ const NewsSingle = ({ data, children }) => {
         subtitle={frontmatter.subtitle}
         category={frontmatter.category}
         author={{ name: frontmatter.author }}
-        thumbnail={ isDark && (frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg) && (frontmatter.darkthumbnail?.publicURL || frontmatter.darkthumbnail_svg?.publicURL) !== (frontmatter.thumbnail?.publicURL || frontmatter.thumbnail_svg?.publicURL)
-          ? (frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg) : (frontmatter.thumbnail || frontmatter.thumbnail_svg)}
+        thumbnail={
+          isDark &&
+          (frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg) &&
+          (frontmatter.darkthumbnail?.publicURL ||
+            frontmatter.darkthumbnail_svg?.publicURL) !==
+            (frontmatter.thumbnail?.publicURL ||
+              frontmatter.thumbnail_svg?.publicURL)
+            ? frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg
+            : frontmatter.thumbnail || frontmatter.thumbnail_svg
+        }
         date={frontmatter.date}
       />
       <div className="single-post-wrapper">
@@ -69,30 +78,42 @@ const NewsSingle = ({ data, children }) => {
           <div className="single-post-block">
             <Row>
               <Col $lg={9} $md={8} $xs={12}>
-                <SRLWrapper>
-                  {children}
-                </SRLWrapper>
+                <SRLWrapper>{children}</SRLWrapper>
               </Col>
               <Col $lg={3} $md={4} $xs={12}>
                 <NewsSidebar kit={frontmatter.presskit} />
               </Col>
             </Row>
           </div>
-          {
-            frontmatter.source_url ? (
-              <div style={{ display: "flex" }}>
+          {frontmatter.source_url ? (
+            <div style={{ display: "flex", fontStyle: "italic" }}>
+              <h5>
+                Originally published on{" "}
+                <a
+                  href={frontmatter.source_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {frontmatter.author}
+                </a>
+              </h5>
+            </div>
+          ) : (
+            frontmatter.eurl && (
+              <div style={{ display: "flex", fontStyle: "italic" }}>
                 <h5>
-                  Originally published at <a href={frontmatter.source_url} target="_blank" rel="noopener noreferrer">{frontmatter.source_url}</a>
-                </h5>
-              </div>
-            ) : frontmatter.eurl && (
-              <div style={{ display: "flex" }}>
-                <h5>
-                  Read the full article on <a href={frontmatter.eurl} target="_blank" rel="noopener noreferrer">{frontmatter.author}</a>
+                  Read the full article on{" "}
+                  <a
+                    href={frontmatter.eurl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {frontmatter.author}
+                  </a>
                 </h5>
               </div>
             )
-          }
+          )}
           <RelatedPosts
             postType="news"
             relatedPosts={relatedPosts}

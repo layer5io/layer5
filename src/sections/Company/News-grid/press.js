@@ -94,9 +94,7 @@ const Press = () => {
                 <h5>Brand Kit</h5>
                 <p>Get our brand, logo assets and more.</p>
                 <img src={FiveIcon} alt="Five Logo" height={30} /> <br />
-                <Link to="/brand">
-                  <Button $secondary title="Layer5 brand kit" $external={true} />
-                </Link>
+                <Button $secondary title="Layer5 brand kit" $external={true} />
               </div>
             </Link>
           </Col>

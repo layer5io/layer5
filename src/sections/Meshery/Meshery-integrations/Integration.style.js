@@ -15,16 +15,16 @@ export const HoneycombGrid = styled.div`
   }
 
   .search-box {
-        input {
-        border: 1px solid ${props => props.theme.headingColor} !important;
-        
-        &:focus {
-            border-color: #fff !important;
-            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
-        }
+    input {
+      border: 1px solid ${(props) => props.theme.headingColor} !important;
+
+      &:focus {
+        border-color: #fff !important;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
+      }
     }
   }
-  
+
   .category {
     display: flex;
     flex-wrap: wrap;
@@ -34,14 +34,14 @@ export const HoneycombGrid = styled.div`
   }
 
   .items {
-    background-color: #D2D8DA; //#E7EFF3;
+    background-color: #d2d8da; //#E7EFF3;
     padding: 0.625rem 1.5625rem;
     border-radius: 0.625rem;
     text-transform: uppercase;
     color: #1e2117;
     font-size: 0.875rem;
     cursor: pointer;
-    transition: all .1s ease-in-out;
+    transition: all 0.1s ease-in-out;
 
     &:hover {
       opacity: 0.8;
@@ -65,7 +65,8 @@ export const HoneycombGrid = styled.div`
     -webkit-transform: translateZ(0);
     display: flex;
     height: 100%;
-    background: ${(props) => props.theme.radialToBlue};
+    background: ${(props) =>
+      props.isDark ? props.theme.radialToBlue : props.theme.grey212121ToWhite};
     justify-content: center;
     align-items: center;
     padding: 0.625rem;
@@ -109,7 +110,7 @@ export const HoneycombGrid = styled.div`
           opacity: 0;
           font-weight: 600;
           transition: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-          padding:10px;
+          padding: 10px;
         }
         .learnMoreBtn {
           padding: 5px 10px;
@@ -174,7 +175,7 @@ export const IntegrationsWrapper = styled.div`
   min-height: 300px; /* Add explicit min-height */
   position: relative; /* Add position for better layout control */
   width: 100%; /* Add explicit width */
-  
+
   .seeAllBtn {
     &:hover {
       color: white;
@@ -220,9 +221,10 @@ export const IntegrationCard = styled.div`
 `;
 
 export const IntegrationSlider = styled(Slider)`
-  .slick-prev:hover, .slick-next:hover{
+  .slick-prev:hover,
+  .slick-next:hover {
     box-shadow: none;
-    outline:none;
+    outline: none;
   }
 
   .slick-arrow {
@@ -254,19 +256,19 @@ export const IntegrationSlider = styled(Slider)`
 
   .slick-slide {
     width: auto !important;
-    margin: 0 .5rem;
+    margin: 0 0.5rem;
   }
 
-  .slick-next{
+  .slick-next {
     right: -2.5rem;
   }
 
-  .slick-prev{
+  .slick-prev {
     left: -2.5rem;
   }
 
   .slick-prev:before {
-    content:"‹";
+    content: "‹";
     line-height: 0;
     opacity: 1;
   }
@@ -281,7 +283,8 @@ export const IntegrationSlider = styled(Slider)`
     opacity: 1;
   }
 
-  .slick-prev, .slick-next {
+  .slick-prev,
+  .slick-next {
     top: 1.5rem;
   }
-  `;
+`;

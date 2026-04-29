@@ -16,7 +16,7 @@ export const BasicSelectDemo = ({ variant, ...props }) => {
   return (
     <FormControl sx={{ width: "200px" }} variant={variant} {...props}>
       <InputLabel id={labelId}>Age</InputLabel>
-      <Select
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
         labelId={labelId}
         id={`demo-select-${variant || 'outlined'}`}
         value={age}
@@ -37,7 +37,7 @@ export const AutoWidthSelectDemo = () => {
   return (
     <FormControl sx={{ minWidth: "120px", m: 1 }}>
       <InputLabel id="demo-simple-select-autowidth-label">Age</InputLabel>
-      <Select
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
         labelId="demo-simple-select-autowidth-label"
         id="demo-simple-select-autowidth"
         value={age}
@@ -59,7 +59,7 @@ export const SmallSelectDemo = () => {
   return (
     <FormControl sx={{ minWidth: "80px", m: 1 }} size="small">
       <InputLabel id="demo-simple-select-small-label">Age</InputLabel>
-      <Select
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
         labelId="demo-simple-select-small-label"
         id="demo-simple-select-small"
         value={age}
@@ -80,7 +80,7 @@ export const FullWidthSelectDemo = () => {
   return (
     <FormControl fullWidth sx={{ m: 1 }}>
       <InputLabel id="demo-simple-select-fullwidth-label">Age</InputLabel>
-      <Select
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
         labelId="demo-simple-select-fullwidth-label"
         id="demo-simple-select-fullwidth"
         value={age}
@@ -104,7 +104,7 @@ export const MultipleSelectDemo = () => {
   return (
     <FormControl sx={{ width: "200px" }}>
       <InputLabel id="demo-multiple-name-label">Age</InputLabel>
-      <Select
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
         labelId="demo-multiple-name-label"
         id="demo-multiple-name"
         multiple
