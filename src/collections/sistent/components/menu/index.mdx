@@ -1,0 +1,164 @@
+---
+name: "Menu"
+title: Menu
+published: true
+component: menu
+description: A menu displays a list of options or actions anchored to a reference element, providing users with contextual choices and navigation options.
+---
+
+import { useState } from "react";
+import { Menu, MenuItem, MenuList, Button, Box, Typography } from "@sistent/sistent";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+
+export const BasicMenuDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  return (
+    <>
+      <Button
+        variant="contained"
+        onClick={handleClick}
+        label="Open Menu"
+      />
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Logout</MenuItem>
+      </Menu>
+    </>
+  );
+};
+
+export const IconMenuDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  return (
+    <>
+      <Button
+        variant="contained"
+        onClick={handleClick}
+        startIcon={<MoreVertIcon />}
+      />
+      <Menu
+        id="icon-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={handleClose}>Edit</MenuItem>
+        <MenuItem onClick={handleClose}>Delete</MenuItem>
+        <MenuItem onClick={handleClose}>Archive</MenuItem>
+      </Menu>
+    </>
+  );
+};
+
+export const MenuListDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  return (
+    <>
+      <Button
+        variant="contained"
+        onClick={handleClick}
+        label="Actions"
+      />
+      <Menu
+        id="menulist-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
+        <MenuList>
+          <MenuItem onClick={handleClose}>Create</MenuItem>
+          <MenuItem onClick={handleClose}>Edit</MenuItem>
+          <MenuItem onClick={handleClose}>View</MenuItem>
+          <MenuItem onClick={handleClose}>Delete</MenuItem>
+        </MenuList>
+      </Menu>
+    </>
+  );
+};
+
+Menus are crucial elements in user interfaces that provide users with a list of contextual actions and options. They are typically triggered by a button, icon, or other interactive element and display a list of selectable items. Menus help organize and present related actions in a compact, organized manner without cluttering the interface.
+
+<a id="Types">
+  <h2>Types</h2>
+</a>
+
+Menus come in different configurations depending on their usage context and the nature of the options they present.
+
+<h3>Basic Menu</h3>
+
+A basic menu displays a simple list of menu items anchored to a button or element. It is the most straightforward implementation used for presenting simple action lists.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <BasicMenuDemo />
+  </ThemeWrapper>
+</Row>
+
+<h3>Icon-Triggered Menu</h3>
+
+Icon-triggered menus use an icon button (typically a three-dot or overflow icon) to trigger a menu. This is commonly used in toolbars and component headers for actions like edit, delete, or archive.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <IconMenuDemo />
+  </ThemeWrapper>
+</Row>
+
+<h3>MenuList Menu</h3>
+
+A MenuList menu provides a more structured approach by explicitly using the MenuList component to organize menu items. This is useful when you need fine-grained control over the list container.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <MenuListDemo />
+  </ThemeWrapper>
+</Row>
+
+<a id="Related Components">
+  <h2>Related Components</h2>
+</a>
+
+The Menu component works in conjunction with other components to create a complete interactive experience:
+
+<h3>Menu</h3>
+
+The main container component that positions and manages the display of menu content relative to an anchor element.
+
+<h3>MenuItem</h3>
+
+Individual selectable items within a menu. Each MenuItem represents an action or choice available to the user.
+
+<h3>MenuList</h3>
+
+A specialized list component designed specifically for organizing menu items. It provides semantic structure and enhanced keyboard navigation support.
+
+<p>
+  <strong>NOTE:</strong> Menus are typically composed of Menu as the container, MenuList for organization, and MenuItem for individual options. However, MenuItem components can be used directly within the Menu component without an explicit MenuList wrapper.
+</p>

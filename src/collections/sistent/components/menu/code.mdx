@@ -1,0 +1,513 @@
+---
+title: Menu Code
+component: menu
+description: A menu displays a list of options or actions anchored to a reference element, providing users with contextual choices and navigation options.
+---
+
+import { useState } from "react";
+import { Menu, MenuItem, MenuList, Button, Box, Typography, Divider, ListItemIcon, ListItemText } from "@sistent/sistent";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
+import ShareIcon from "@mui/icons-material/Share";
+import DownloadIcon from "@mui/icons-material/Download";
+import FileCopyIcon from "@mui/icons-material/FileCopy";
+import PrintIcon from "@mui/icons-material/Print";
+
+Menus provide contextual actions and options to users in a compact, organized manner. Below are various examples demonstrating different menu configurations and use cases.
+
+<a id="Basic Menu">
+  <h2>Basic Menu</h2>
+</a>
+
+A basic menu displays a simple list of menu items anchored to a button or element.
+
+<h3>Simple Menu</h3>
+
+The most straightforward implementation of a menu with a text button and simple menu items.
+
+export const SimpleMenuDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  return (
+    <>
+      <Button
+        variant="contained"
+        onClick={handleClick}
+        label="Open Menu"
+      />
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Logout</MenuItem>
+      </Menu>
+    </>
+  );
+};
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SimpleMenuDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="simple-menu" collapsible code={`import { useState } from "react";
+import { Menu, MenuItem, Button } from "@sistent/sistent";
+
+export const SimpleMenuDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  
+  return (
+    <>
+      <Button
+        variant="contained"
+        onClick={handleClick}
+        label="Open Menu"
+      />
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Logout</MenuItem>
+      </Menu>
+    </>
+  );
+};`} />
+</div>
+
+<a id="Icon Triggered Menu">
+  <h2>Icon Triggered Menu</h2>
+</a>
+
+Menus triggered by an icon button are commonly used in toolbars and headers for presenting actions related to a component or list item.
+
+<h3>Action Menu with Icon</h3>
+
+A menu triggered by a three-dot (overflow) icon button, commonly used for additional actions.
+
+export const IconMenuDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  return (
+    <>
+      <Button
+        variant="text"
+        onClick={handleClick}
+        startIcon={<MoreVertIcon />}
+      />
+      <Menu
+        id="icon-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={handleClose}>Edit</MenuItem>
+        <MenuItem onClick={handleClose}>Duplicate</MenuItem>
+        <MenuItem onClick={handleClose}>Delete</MenuItem>
+      </Menu>
+    </>
+  );
+};
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <IconMenuDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="icon-menu" collapsible code={`import { useState } from "react";
+import { Menu, MenuItem, Button } from "@sistent/sistent";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+
+export const IconMenuDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  
+  return (
+    <>
+      <Button
+        variant="text"
+        onClick={handleClick}
+        startIcon={<MoreVertIcon />}
+      />
+      <Menu
+        id="icon-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={handleClose}>Edit</MenuItem>
+        <MenuItem onClick={handleClose}>Duplicate</MenuItem>
+        <MenuItem onClick={handleClose}>Delete</MenuItem>
+      </Menu>
+    </>
+  );
+};`} />
+</div>
+
+<a id="Menu with Icons">
+  <h2>Menu with Icons</h2>
+</a>
+
+Menu items can include icons to provide visual context and improve scannability.
+
+<h3>Menu Items with Leading Icons</h3>
+
+Icons placed before menu item text help users quickly identify actions visually.
+
+export const MenuWithIconsDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  return (
+    <>
+      <Button
+        variant="contained"
+        onClick={handleClick}
+        label="Document Actions"
+      />
+      <Menu
+        id="icon-items-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={handleClose}>
+          <ListItemIcon>
+            <EditIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Edit</ListItemText>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <ListItemIcon>
+            <FileCopyIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Duplicate</ListItemText>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <ListItemIcon>
+            <ShareIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Share</ListItemText>
+        </MenuItem>
+      </Menu>
+    </>
+  );
+};
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <MenuWithIconsDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="menu-with-icons" collapsible code={`import { useState } from "react";
+import { Menu, MenuItem, Button, ListItemIcon, ListItemText } from "@sistent/sistent";
+import EditIcon from "@mui/icons-material/Edit";
+import FileCopyIcon from "@mui/icons-material/FileCopy";
+import ShareIcon from "@mui/icons-material/Share";
+
+export const MenuWithIconsDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  
+  return (
+    <>
+      <Button
+        variant="contained"
+        onClick={handleClick}
+        label="Document Actions"
+      />
+      <Menu
+        id="icon-items-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={handleClose}>
+          <ListItemIcon>
+            <EditIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Edit</ListItemText>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <ListItemIcon>
+            <FileCopyIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Duplicate</ListItemText>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <ListItemIcon>
+            <ShareIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Share</ListItemText>
+        </MenuItem>
+      </Menu>
+    </>
+  );
+};`} />
+</div>
+
+<a id="Menu with Dividers">
+  <h2>Menu with Dividers</h2>
+</a>
+
+Dividers help organize menu items into logical groups, making complex menus easier to navigate.
+
+<h3>Grouped Menu Items</h3>
+
+Menu items grouped with dividers to separate different categories of actions.
+
+export const DividedMenuDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  return (
+    <>
+      <Button
+        variant="contained"
+        onClick={handleClick}
+        label="File Menu"
+      />
+      <Menu
+        id="divided-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={handleClose}>
+          <ListItemIcon>
+            <DownloadIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Download</ListItemText>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <ListItemIcon>
+            <PrintIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Print</ListItemText>
+        </MenuItem>
+        <Divider />
+        <MenuItem onClick={handleClose}>
+          <ListItemIcon>
+            <DeleteIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Delete</ListItemText>
+        </MenuItem>
+      </Menu>
+    </>
+  );
+};
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <DividedMenuDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="divided-menu" collapsible code={`import { useState } from "react";
+import { Menu, MenuItem, Button, ListItemIcon, ListItemText, Divider } from "@sistent/sistent";
+import DownloadIcon from "@mui/icons-material/Download";
+import PrintIcon from "@mui/icons-material/Print";
+import DeleteIcon from "@mui/icons-material/Delete";
+
+export const DividedMenuDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  
+  return (
+    <>
+      <Button
+        variant="contained"
+        onClick={handleClick}
+        label="File Menu"
+      />
+      <Menu
+        id="divided-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={handleClose}>
+          <ListItemIcon>
+            <DownloadIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Download</ListItemText>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <ListItemIcon>
+            <PrintIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Print</ListItemText>
+        </MenuItem>
+        <Divider />
+        <MenuItem onClick={handleClose}>
+          <ListItemIcon>
+            <DeleteIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Delete</ListItemText>
+        </MenuItem>
+      </Menu>
+    </>
+  );
+};`} />
+</div>
+
+<a id="MenuList">
+  <h2>MenuList</h2>
+</a>
+
+The MenuList component provides a semantic container for menu items with enhanced keyboard navigation support.
+
+<h3>Menu with MenuList</h3>
+
+Using MenuList as an explicit container for better structure and control.
+
+export const MenuListDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  return (
+    <>
+      <Button
+        variant="contained"
+        onClick={handleClick}
+        label="Actions"
+      />
+      <Menu
+        id="menulist-demo"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
+        <MenuList>
+          <MenuItem onClick={handleClose}>Create New</MenuItem>
+          <MenuItem onClick={handleClose}>Edit Existing</MenuItem>
+          <MenuItem onClick={handleClose}>View All</MenuItem>
+          <Divider />
+          <MenuItem onClick={handleClose}>Settings</MenuItem>
+        </MenuList>
+      </Menu>
+    </>
+  );
+};
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <MenuListDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="menulist-demo" collapsible code={`import { useState } from "react";
+import { Menu, MenuItem, MenuList, Button, Divider } from "@sistent/sistent";
+
+export const MenuListDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  
+  return (
+    <>
+      <Button
+        variant="contained"
+        onClick={handleClick}
+        label="Actions"
+      />
+      <Menu
+        id="menulist-demo"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
+        <MenuList>
+          <MenuItem onClick={handleClose}>Create New</MenuItem>
+          <MenuItem onClick={handleClose}>Edit Existing</MenuItem>
+          <MenuItem onClick={handleClose}>View All</MenuItem>
+          <Divider />
+          <MenuItem onClick={handleClose}>Settings</MenuItem>
+        </MenuList>
+      </Menu>
+    </>
+  );
+};`} />
+</div>
+
+<p>
+  <strong>NOTE:</strong> Menu items support various props to customize their behavior, such as disabled, selected, and onClick. Additional styling can be applied using the sx prop to match your application's design language.
+</p>

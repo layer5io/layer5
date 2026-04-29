@@ -1,0 +1,164 @@
+---
+title: Menu Guidance
+component: menu
+description: A menu displays a list of options or actions anchored to a reference element, providing users with contextual choices and navigation options.
+---
+
+import { useState } from "react";
+import { Menu, MenuItem, MenuList, Button, Box, Typography, Divider } from "@sistent/sistent";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+import ShareIcon from "@mui/icons-material/Share";
+
+export const ProperMenuDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  return (
+    <>
+      <Button
+        variant="contained"
+        onClick={handleClick}
+        label="Options"
+      />
+      <Menu
+        id="proper-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={handleClose}>Edit Document</MenuItem>
+        <MenuItem onClick={handleClose}>View Details</MenuItem>
+        <Divider />
+        <MenuItem onClick={handleClose}>Download</MenuItem>
+      </Menu>
+    </>
+  );
+};
+
+export const MenuWithIconsDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  return (
+    <>
+      <Button
+        variant="contained"
+        onClick={handleClick}
+        startIcon={<MoreVertIcon />}
+      />
+      <Menu
+        id="icon-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={handleClose}>
+          <EditIcon sx={{ mr: 1 }} fontSize="small" />
+          Edit
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <ShareIcon sx={{ mr: 1 }} fontSize="small" />
+          Share
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <DeleteIcon sx={{ mr: 1 }} fontSize="small" />
+          Delete
+        </MenuItem>
+      </Menu>
+    </>
+  );
+};
+
+For proper application, menus should be used strategically to improve user experience and provide clear navigation or action options. These guidelines ensure consistent and effective menu usage across applications.
+
+<a id="Function">
+  <h2>Function</h2>
+</a>
+
+Menus serve several critical functions in user interfaces:
+
+<h3>Action Menus</h3>
+
+Used to present actions that can be performed on a specific element or component. These are commonly triggered by an actions button (three dots) or similar icon.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <MenuWithIconsDemo />
+  </ThemeWrapper>
+</Row>
+
+<h3>Navigation Menus</h3>
+
+Used to provide navigation options that allow users to move between different sections or views of the application.
+
+<h3>Context-Specific Menus</h3>
+
+Provide relevant options based on the current context or state of the application. For example, a document menu might show "Edit," "View," and "Share" options.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <ProperMenuDemo />
+  </ThemeWrapper>
+</Row>
+
+<a id="Labeling">
+  <h2>Labeling</h2>
+</a>
+
+Menu item labels should be clear, concise, and action-oriented to help users understand what happens when they select an option.
+
+<h3>Clarity and Brevity</h3>
+
+Menu item labels should use simple, familiar language that accurately describes the action or destination. Avoid jargon or overly technical terms.
+
+<h3>Case Style</h3>
+
+Maintain consistent capitalization throughout menu items. Title case is recommended for consistency with other UI elements.
+
+<h3>Icon Usage</h3>
+
+When icons accompany menu item text, they should reinforce the meaning of the label. Icons should be consistent in size, style, and placement across all menu items.
+
+<a id="Organization">
+  <h2>Organization</h2>
+</a>
+
+Well-organized menus improve usability and help users find actions quickly.
+
+<h3>Grouping Related Items</h3>
+
+Group related menu items together using visual separators like dividers. This helps users understand the relationships between different actions.
+
+<h3>Item Order</h3>
+
+Order menu items logically based on frequency of use or task flow. Commonly used items should typically appear near the top, while destructive actions like "Delete" should appear near the bottom.
+
+<h3>Dividers</h3>
+
+Use dividers (Divider component) to separate groups of related items, making the menu easier to scan and understand.
+
+<a id="Best Practices">
+  <h2>Best Practices</h2>
+</a>
+
+<ul>
+  <li><strong>Keep menus concise:</strong> Limit menu items to essential actions. Long menus with many items can be difficult to navigate.</li>
+  <li><strong>Close on selection:</strong> Menus should automatically close when a user selects an item, providing immediate feedback.</li>
+  <li><strong>Provide keyboard support:</strong> Ensure menus support keyboard navigation (up/down arrows, Enter to select).</li>
+  <li><strong>Consider mobile:</strong> Be mindful of touch interfaces where menus should have appropriately sized touch targets.</li>
+  <li><strong>Use consistent triggers:</strong> Use the same type of button or icon throughout the application to trigger menus.</li>
+  <li><strong>Avoid nested menus:</strong> Deep menu nesting can confuse users and reduce discoverability. Keep menu hierarchies shallow.</li>
+  <li><strong>Show visual feedback:</strong> Use hover and active states to indicate which menu item is selected or will be activated.</li>
+</ul>
