@@ -1,0 +1,90 @@
+---
+title: "Exploring Kubernetes Deployments with Meshery"
+thumbnail: ../../../assets/images/tutorials/intro-to-meshery.webp
+darkthumbnail: ../../../assets/images/tutorials/intro-to-meshery.webp
+date: 2025-02-27 10:30:05 -0530
+category: Cloud Native
+tags:
+  - Meshery
+  - Kubernetes
+  - Tutorial
+type: Tutorial
+product: Meshery
+technology: Kubernetes
+featured: false
+published: true
+resource: true
+---
+
+import { ResourcesWrapper } from "../Resources.style.js";
+
+<ResourcesWrapper>
+
+### Introduction
+
+In this tutorial, we'll explore Kubernetes Deployments using [Meshery Playground](https://play.meshery.io/). Deployments provide declarative updates for Pods and ReplicaSets, making it easy to roll out changes, scale applications, and roll back to previous versions.
+
+### Prerequisites
+
+- Basic understanding of Kubernetes Pods.
+- Access to the *Meshery Playground*. Sign up at [Meshery Playground](https://play.meshery.io/) if needed.
+
+> **NOTE:** Consider completing the [Exploring Kubernetes Pods with Meshery](/resources/tutorials/exploring-kubernetes-pods-with-meshery) tutorial first.
+
+### Lab Scenario
+
+Create and manage an NGINX Deployment in Meshery Playground, explore scaling, and observe rolling updates.
+
+### Objective
+
+Learn how to create, scale, and manage **Kubernetes Deployments** visually using Meshery's Kanvas.
+
+### Steps
+
+#### Access Meshery Playground
+
+1. Log in to [Meshery Playground](https://play.meshery.io) and click **Explore** to open *Kanvas*.
+2. Rename the design to something identifiable (e.g., `nginx-deployment`).
+
+#### Create a Deployment
+
+1. Click the **Components** tab and search for **Deployment**.
+2. Drag the **Deployment** component onto the canvas.
+3. Click the Deployment component to open its configuration modal.
+4. Set the **name** (e.g., `nginx-deployment`).
+5. Under **spec**, set `replicas` to `2`.
+6. Under **template > spec > containers**, click **+** to add a container:
+   - **name**: `nginx`
+   - **image**: `nginx:latest`
+7. Add a label (e.g., `app: nginx-deploy`) to help filter resources.
+8. Click outside to close the modal.
+
+#### Validate and Deploy
+
+9. Click **Validate** to check for errors.
+10. Click **Deploy** in the popup, then **Deploy** again to apply.
+
+#### Visualize the Deployment
+
+11. Click **Visualize** and apply a filter using the label set in step 7.
+12. You should see the Deployment and its two managed Pods.
+13. Click the Deployment in the **Details** tab to view replicas, conditions, and the rollout strategy.
+
+#### Scale the Deployment
+
+14. Go back to **Design** view and click the Deployment component.
+15. Change `replicas` to `4`.
+16. **Undeploy** and **Deploy** again to apply the change.
+17. Switch to **Visualize** — you should now see 4 pods managed by the Deployment.
+
+#### Clean Up
+
+18. Use **Undeploy** from the Design view to remove all resources.
+
+### Conclusion
+
+You've successfully created and managed a Kubernetes Deployment using Meshery Playground. You scaled the deployment visually and observed how Kubernetes manages replica sets. Continue to the next tutorial to explore Kubernetes Services.
+
+> This tutorial is sourced from the [Meshery documentation](https://docs.meshery.io/guides/tutorials/kubernetes/kubernetes-deployments).
+
+</ResourcesWrapper>

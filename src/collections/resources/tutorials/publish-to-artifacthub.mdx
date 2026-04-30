@@ -1,0 +1,88 @@
+---
+title: "Publishing Meshery Designs to ArtifactHub"
+thumbnail: ../../../assets/images/tutorials/intro-to-meshery.webp
+darkthumbnail: ../../../assets/images/tutorials/intro-to-meshery.webp
+date: 2024-07-30 10:30:05 -0530
+category: Cloud Native
+tags:
+  - Meshery
+  - ArtifactHub
+  - Tutorial
+type: Tutorial
+product: Meshery
+technology: Kubernetes
+featured: false
+published: true
+resource: true
+---
+
+import { ResourcesWrapper } from "../Resources.style.js";
+
+<ResourcesWrapper>
+
+### Introduction
+
+[ArtifactHub](https://artifacthub.io/) is a web-based platform that enables discovery, installation, and publishing of cloud native packages. In this tutorial, we'll learn how to publish **Meshery Designs** to ArtifactHub, making your infrastructure patterns discoverable by the broader cloud native community.
+
+### Prerequisites
+
+- A [Meshery account](https://meshery.io/) with at least one saved design.
+- An [ArtifactHub account](https://artifacthub.io/).
+- A GitHub repository to host your design files.
+
+### Lab Scenario
+
+Export a Meshery Design and publish it to ArtifactHub as a discoverable cloud native artifact.
+
+### Objective
+
+Learn how to **export a Meshery Design** and **publish it to ArtifactHub** so that others can discover and reuse your infrastructure patterns.
+
+### Steps
+
+#### 1. Prepare Your Meshery Design
+
+1. Log in to [Meshery Playground](https://play.meshery.io) or your Meshery instance.
+2. Open or create the design you want to publish.
+3. Click **Actions > Export** to export the design.
+4. Save the exported `.yaml` file to your local machine.
+
+#### 2. Create a GitHub Repository
+
+5. Create a new public GitHub repository (e.g., `my-meshery-designs`).
+6. Add your exported design `.yaml` file to the repository.
+7. Create an `artifacthub-repo.yml` file in the repository root with the following content:
+
+```yaml
+repositoryID: <your-artifacthub-repo-id>
+owners:
+  - name: Your Name
+    email: your@email.com
+```
+
+8. Commit and push both files to the repository.
+
+#### 3. Register Your Repository on ArtifactHub
+
+9. Log in to [ArtifactHub](https://artifacthub.io/).
+10. Click your profile icon and select **Control Panel**.
+11. Click **Add repository**.
+12. Fill in the details:
+    - **Kind**: select `Meshery designs`
+    - **Name**: a display name for your repository
+    - **URL**: the GitHub URL to the directory containing your designs
+13. Click **Add** to register the repository.
+
+#### 4. Verify Publication
+
+14. ArtifactHub will scan your repository and index the designs within a few minutes.
+15. Search for your design on [ArtifactHub](https://artifacthub.io/) to confirm it is listed.
+16. Click the listing to verify the description, links, and design metadata appear correctly.
+
+### Conclusion
+
+You've successfully published a Meshery Design to ArtifactHub. Your infrastructure patterns are now discoverable by the cloud native community. Consider adding a README and proper metadata to your designs to improve their visibility and usability.
+
+> This tutorial is sourced from the [Meshery documentation](https://docs.meshery.io/guides/tutorials/artifacthub/publish-to-artifacthub).
+
+</ResourcesWrapper>

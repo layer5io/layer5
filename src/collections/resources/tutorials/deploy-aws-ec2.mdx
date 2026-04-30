@@ -1,0 +1,86 @@
+---
+title: "Deploy AWS EC2 Instances with Meshery"
+thumbnail: ../../../assets/images/tutorials/intro-to-meshery.webp
+darkthumbnail: ../../../assets/images/tutorials/intro-to-meshery.webp
+date: 2025-04-24 10:30:05 -0530
+category: Cloud Native
+tags:
+  - Meshery
+  - AWS
+  - Tutorial
+type: Tutorial
+product: Meshery
+technology: AWS
+featured: false
+published: true
+resource: true
+---
+
+import { ResourcesWrapper } from "../Resources.style.js";
+
+<ResourcesWrapper>
+
+### Introduction
+
+Meshery is a powerful multi-cloud management platform that enables you to configure, deploy, and manage AWS resources such as EC2 instances. Meshery uses [AWS Controllers for Kubernetes (ACK)](https://aws.amazon.com/blogs/containers/aws-controllers-for-kubernetes-ack/) to bridge Kubernetes and AWS services. In this tutorial, we use the [Kanvas](https://docs.meshery.io/extensions/kanvas) extension to provide a visual experience for deploying an AWS EC2 instance.
+
+### Prerequisites
+
+1. A [self-hosted Meshery installation](https://docs.meshery.io/installation).
+2. An active AWS account.
+3. A running Kubernetes cluster (e.g., Minikube or EKS).
+
+### Overview of Deployment Steps
+
+1. **Connect your Kubernetes cluster to Meshery** — establishing the foundation for interacting with AWS resources via ACK.
+2. **Set up essential AWS resources** — deploy VPCs, subnets, and networking components for the EC2 instance.
+3. **Verify and monitor the deployment** — confirm EC2 instances via the AWS Console or Meshery's visualization mode.
+
+### Steps
+
+#### 1. Connect Your Kubernetes Cluster to Meshery
+
+1. For this guide, use the **in-cluster deployment** method. Follow the [Minikube setup guide](https://docs.meshery.io/installation/kubernetes/minikube) to deploy Meshery in-cluster.
+2. Open the Meshery UI at `localhost:9081` and verify that the cluster is listed.
+3. Click the cluster name to ping and confirm connectivity.
+
+#### 2. Configure and Deploy the EC2 Controller
+
+1. [Clone the EC2 controller design](https://cloud.layer5.io/catalog/content/catalog/ec2-controller-design-28a7fad9-c7ef-440a-a8f0-7614e072b866) from the Layer5 Catalog.
+2. Open the design in Kanvas. The design includes the EC2 Controller Pod, CRDs, Service Account, and an AWS Credentials Secret.
+
+**Configure the AWS Secret:**
+
+3. Double-click the **Secret** component.
+4. Under **Data**, add base64-encoded values:
+   - `AWS_ACCESS_KEY_ID`: your encoded key
+   - `AWS_SECRET_ACCESS_KEY`: your encoded secret
+5. Use a [base64 encoder](https://www.base64encode.org/) to encode your credentials.
+
+**Deploy the EC2 Controller:**
+
+6. Click **Actions > Deploy**.
+7. Once deployed, click **Open in Visualizer** to see the deployed resources in the `ack-system` namespace.
+
+#### 3. Deploy the VPC Workflow
+
+8. [Clone the VPC workflow design](https://cloud.layer5.io/catalog/content/catalog/vpc-workflow-design-50cac19e-209c-4acf-b91c-4784281db033) from the Catalog.
+9. Open the design and adjust CIDR blocks and region as needed (default: `us-east-1`).
+10. Click **Actions > Deploy**.
+11. Verify in your AWS Management Console that the VPC and networking resources are created.
+
+The VPC workflow includes: 1 VPC, 1 Internet Gateway, 1 NAT Gateway, 1 Elastic IP, 2 Route Tables, 2 Subnets, and 1 Security Group.
+
+#### 4. Deploy the EC2 Instance
+
+12. [Clone the EC2 instances design](https://cloud.layer5.io/catalog/content/catalog/ec2-instances-design-a344f109-2d92-41da-8644-3bc285c3ca9e) from the Catalog.
+13. Open the design in the Playground and click **Deploy**.
+14. Navigate to the AWS Management Console to confirm the instances are running.
+
+### Conclusion
+
+You've successfully deployed and managed AWS EC2 instances using Meshery. This guide demonstrated how to use pre-configured catalog designs, set up the ACK controller with AWS credentials, deploy VPC networking, and launch EC2 instances — all without CLI commands.
+
+> This tutorial is sourced from the [Meshery documentation](https://docs.meshery.io/guides/tutorials/aws/deploy-aws-ec2-instances-with-meshery).
+
+</ResourcesWrapper>

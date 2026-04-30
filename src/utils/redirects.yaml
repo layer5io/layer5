@@ -227,3 +227,7 @@ redirects:
     toPath: "/cloud-native-management/kanvas/collaborate/peer-reviews"
     redirectInBrowser: true
     isPermanent: true
+  - fromPath: "/learn/cloud-native-labs"
+    toPath: "/learn/kanvas-labs"
+    redirectInBrowser: true
+    isPermanent: true

@@ -1,0 +1,86 @@
+---
+title: "Exploring Kubernetes CronJobs with Meshery"
+thumbnail: ../../../assets/images/tutorials/intro-to-meshery.webp
+darkthumbnail: ../../../assets/images/tutorials/intro-to-meshery.webp
+date: 2024-05-10 10:30:05 -0530
+category: Cloud Native
+tags:
+  - Meshery
+  - Kubernetes
+  - Tutorial
+type: Tutorial
+product: Meshery
+technology: Kubernetes
+featured: false
+published: true
+resource: true
+---
+
+import { ResourcesWrapper } from "../Resources.style.js";
+
+<ResourcesWrapper>
+
+### Introduction
+
+In this tutorial, we explore **Kubernetes CronJobs** using Meshery Playground. CronJobs create Jobs on a repeating schedule, making them ideal for periodic tasks like backups, report generation, or cleanup operations.
+
+### Prerequisites
+
+- Basic understanding of Kubernetes Pods and Jobs.
+- Access to *Meshery Playground*. Sign up at [Meshery Playground](https://play.meshery.io/) if needed.
+
+### Lab Scenario
+
+Create a CronJob that runs a simple task on a schedule using Meshery's visual canvas.
+
+### Objective
+
+Learn how to create and manage **Kubernetes CronJobs** visually using Meshery Playground.
+
+### Steps
+
+#### Access Meshery Playground
+
+1. Log in to [Meshery Playground](https://play.meshery.io) and click **Explore** to open *Kanvas*.
+2. Name your design (e.g., `cronjob-lab`).
+
+#### Create a CronJob
+
+1. In the **Components** tab, search for **CronJob** and drag it onto the canvas.
+2. Click the CronJob component to open its configuration modal.
+3. Set the **name** (e.g., `hello-cronjob`).
+4. Set the **schedule** field to `"*/1 * * * *"` — this runs the job every minute.
+5. Under **jobTemplate > spec > template > spec > containers**, click **+** to add a container:
+   - **name**: `hello`
+   - **image**: `busybox:latest`
+   - **command**: `["/bin/sh", "-c", "echo Hello from CronJob"]`
+6. Set **restartPolicy** to `OnFailure`.
+7. Add a unique label (e.g., `app: hello-cronjob`) for filtering.
+8. Click outside to close the modal.
+
+#### Validate and Deploy
+
+9. Click **Validate** to check for errors.
+10. Click **Deploy** to apply the CronJob.
+
+#### Visualize the CronJob
+
+11. Switch to **Visualize** and filter by the label set in step 7.
+12. Wait a minute — you should see a **Job** and a **Pod** appear as the CronJob triggers.
+13. Click the Pod in the **Details** tab to see its status and logs.
+
+#### View Job History
+
+14. In the Visualize view, filter for **Kind: Job** to see the history of completed jobs created by the CronJob.
+
+#### Clean Up
+
+15. Go back to **Design** view and use **Undeploy** to remove the CronJob and all associated resources.
+
+### Conclusion
+
+You've successfully created and managed a Kubernetes CronJob using Meshery Playground. CronJobs are a powerful way to automate periodic tasks in Kubernetes without external schedulers.
+
+> This tutorial is sourced from the [Meshery documentation](https://docs.meshery.io/guides/tutorials/kubernetes/exploring-kubernetes-cronjobs).
+
+</ResourcesWrapper>

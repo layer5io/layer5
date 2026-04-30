@@ -1,0 +1,96 @@
+---
+title: "Exploring Kubernetes Services with Meshery"
+thumbnail: ../../../assets/images/tutorials/intro-to-meshery.webp
+darkthumbnail: ../../../assets/images/tutorials/intro-to-meshery.webp
+date: 2024-03-10 10:30:05 -0530
+category: Cloud Native
+tags:
+  - Meshery
+  - Kubernetes
+  - Tutorial
+type: Tutorial
+product: Meshery
+technology: Kubernetes
+featured: false
+published: true
+resource: true
+---
+
+import { ResourcesWrapper } from "../Resources.style.js";
+
+<ResourcesWrapper>
+
+### Introduction
+
+In this tutorial, we explore **Kubernetes Services** using Meshery Playground. Services provide stable network endpoints for a set of Pods, enabling reliable communication between components regardless of Pod restarts or rescheduling.
+
+### Prerequisites
+
+- Completion of the [Exploring Kubernetes Pods with Meshery](/resources/tutorials/exploring-kubernetes-pods-with-meshery) tutorial.
+- Access to *Meshery Playground*.
+
+### Lab Scenario
+
+Create a Deployment and expose it using different Service types — ClusterIP, NodePort — through Meshery's visual canvas.
+
+### Objective
+
+Understand the different **Kubernetes Service types** and learn how to create and connect them to workloads visually using Meshery.
+
+### Steps
+
+#### Access Meshery Playground
+
+1. Log in to [Meshery Playground](https://play.meshery.io) and click **Explore** to open *Kanvas*.
+2. Name your design (e.g., `kubernetes-services-lab`).
+
+#### Create a Deployment
+
+1. Search for **Deployment** in Components and drag it to the canvas.
+2. Configure it with:
+   - **name**: `web-deployment`
+   - **replicas**: `2`
+   - Container image: `nginx:latest`
+   - Label: `app: web`
+
+#### Create a ClusterIP Service
+
+3. Search for **Service** in Components and drag it to the canvas.
+4. Click the service component and configure:
+   - **name**: `web-clusterip`
+   - **type**: `ClusterIP` (default)
+   - Add a Port: **port** `80`, **targetPort** `80`
+   - Add a Selector: `app: web`
+5. Connect the Service to the Deployment on the canvas using the relationship arrow.
+
+#### Create a NodePort Service
+
+6. Drag another **Service** component to the canvas.
+7. Configure it:
+   - **name**: `web-nodeport`
+   - **type**: `NodePort`
+   - Add a Port: **port** `80`, **targetPort** `80`
+   - Add a Selector: `app: web`
+
+#### Validate and Deploy
+
+8. Click **Validate** to check for errors.
+9. Click **Deploy** to apply all resources.
+
+#### Visualize and Explore
+
+10. Switch to **Visualize** and filter by label `app: web`.
+11. You should see the Deployment, its Pods, and both Services.
+12. Click each Service in the **Details** tab to observe the ClusterIP assigned and the NodePort number.
+
+#### Clean Up
+
+13. Use **Undeploy** to remove all resources.
+
+### Conclusion
+
+You've successfully created and explored Kubernetes Services using Meshery Playground. You learned the difference between ClusterIP and NodePort service types and how to visually connect services to deployments.
+
+> This tutorial is sourced from the [Meshery documentation](https://docs.meshery.io/guides/tutorials/kubernetes/kubernetes-services).
+
+</ResourcesWrapper>
