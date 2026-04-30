@@ -1,0 +1,53 @@
+---
+title: AppBar Guidance
+component: appbar
+description: An app bar is a header component that displays information and actions relating to the current screen, providing navigation, branding, and key functionality.
+---
+
+import { AppBar, Toolbar, Typography, IconButton, Button, Menu, MenuItem, Box } from "@sistent/sistent";
+
+The App Bar is a critical element in your application's UX. It establishes hierarchy, provides essential navigation, and communicates your brand. Follow these guidelines to use app bars effectively.
+
+<a id="When to Use">
+  <h2>When to Use</h2>
+</a>
+
+<h3>Use an App Bar when</h3>
+
+- You need to display a page title or screen name
+- Your application requires persistent navigation
+- You want to establish consistent branding across pages
+- You need to provide quick access to key actions
+- Your application spans multiple sections or views that users navigate between
+- You need to display user information or account actions
+
+<h3>Avoid App Bars when</h3>
+
+- You're building a simple, single-purpose page with no navigation
+- Space is extremely limited (consider simplifying to essential elements only)
+- The app bar would duplicate navigation already provided elsewhere
+
+<a id="Accessibility">
+  <h2>Accessibility</h2>
+</a>
+
+- Ensure the app bar has sufficient color contrast (WCAG AA compliant)
+- Use semantic HTML and ARIA labels for navigation
+- Make interactive elements keyboard accessible
+- Ensure the app bar doesn't interfere with screen reader navigation
+- Use proper heading hierarchy within the app bar content
+- Provide visible focus indicators for all interactive elements
+
+<h2>Props</h2>
+
+<ul>
+  <li><code>children</code>: The content of the component</li>
+  <li><code>classes</code>: Override or extend the styles applied to the component</li>
+  <li><code>color</code>: The color of the component ("default" | "inherit" | "primary" | "secondary" | "transparent" | "error" | "info" | "success" | "warning")</li>
+  <li><code>component</code>: The component used for the root node. Either a string to use a HTML element or a component</li>
+  <li><code>elevation</code>: Shadow depth, corresponds to dp in the spec. It accepts values between 0 and 24 inclusive</li>
+  <li><code>enableColorOnDark</code>: If <code>true</code>, the color prop is applied in dark mode</li>
+  <li><code>position</code>: The positioning type ("absolute" | "fixed" | "relative" | "static" | "sticky")</li>
+  <li><code>square</code>: If <code>false</code>, rounded corners are enabled</li>
+  <li><code>sx</code>: The system prop that allows defining system overrides as well as additional CSS styles</li>
+</ul>
