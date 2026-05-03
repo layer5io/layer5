@@ -49,6 +49,7 @@ html{
     overflow-x: hidden;
     box-sizing: border-box;
     -ms-overflow-style: scrollbar;
+    scroll-padding-top: 5rem;
 }
 
 body,html {
