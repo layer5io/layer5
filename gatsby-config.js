@@ -64,9 +64,6 @@ module.exports = {
       resolve: "gatsby-plugin-netlify",
       options: {
         headers: {
-          "/static/*": ["Cache-Control: public, max-age=31536000, immutable"],
-          "/*.js": ["Cache-Control: public, max-age=31536000, immutable"],
-          "/*.css": ["Cache-Control: public, max-age=31536000, immutable"],
           "/*": [
             "X-Frame-Options: SAMEORIGIN",
             "Content-Security-Policy: frame-ancestors 'self'",
