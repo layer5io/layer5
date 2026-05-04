@@ -6,10 +6,7 @@ description: A menu displays a list of options or actions anchored to a referenc
 
 import { useState } from "react";
 import { Menu, MenuItem, MenuList, Button, Box, Typography, Divider } from "@sistent/sistent";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
-import ShareIcon from "@mui/icons-material/Share";
+import { MoreVert as MoreVertIcon, Delete as DeleteIcon, Edit as EditIcon, Share as ShareIcon } from "@mui/icons-material";
 
 export const ProperMenuDemo = () => {
   const [anchorEl, setAnchorEl] = useState(null);
