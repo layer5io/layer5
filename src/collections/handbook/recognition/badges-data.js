@@ -32,6 +32,7 @@ import uiuxrLogo from "../../../assets/images/uiuxr/uiuxr.svg";
 import MesheryCatalogLogo from "../../../assets/images/meshery/meshery-catalog.svg";
 import DockerExtension from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
 import DocsLogo from "../../../assets/images/docs/docs.svg";
+import Layer5Logo from "../../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
 
 export const activityBadges = [
   { name: "Design Pioneer", title: "Design Pioneer", badgeKey: "first-design", image: DesignPioneerLogo, description: "Awarded to the Layer5 cloud users when they create their first design." },
@@ -76,6 +77,7 @@ export const projectBadges = [
   { name: "Meshery Catalog", title: "Meshery Catalog", badgeKey: "meshery-catalog", image: MesheryCatalogLogo, description: <>Awarded to the community members who make consistent and impactful contributions to the <a href="https://meshery.io/catalog">Meshery Catalog</a> of Meshery project in recognition and appreciation of their efforts.</> },
   { name: "Docker Extension", title: "Docker Extension", badgeKey: "docker-extension", image: DockerExtension, description: "Awarded to the community members who make consistent and impactful contributions to the Docker Extension of meshery project in recognition and appreciation of their efforts." },
   { name: "Docs", title: "Docs", badgeKey: "docs", image: DocsLogo, description: <>Awarded to the community members who make consistent and impactful contributions to the <a href="https://docs.meshery.io/">Meshery docs</a> in recognition and appreciation of their efforts.</> },
+  { name: "Employee", title: "Employee", badgeKey: "employee", image: Layer5Logo, description: "Awarded to Layer5 employees in recognition of their contributions and role within the organization." },
 ];
 
 export const specialBadges = [
