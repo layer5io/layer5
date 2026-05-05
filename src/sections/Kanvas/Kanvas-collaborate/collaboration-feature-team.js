@@ -4,10 +4,10 @@ import { ReactComponent as CollaborationImg } from "./../FeaturesSection/Collabo
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 
-const ConversationImg = "/static/images/kanvas-collaborate/conversation.png";
-const ComponentsGif = "/static/images/kanvas-collaborate/components.gif";
-const ActivityLogsImg = "/static/images/kanvas-collaborate/activity-logs.png";
-const UndoRedoImg = "/static/images/kanvas-collaborate/undo-redo.png";
+import ConversationImg from "../../../../static/images/kanvas-collaborate/conversation.png";
+import ComponentsGif from "../../../../static/images/kanvas-collaborate/components.gif";
+import ActivityLogsImg from "../../../../static/images/kanvas-collaborate/activity-logs.png";
+import UndoRedoImg from "../../../../static/images/kanvas-collaborate/undo-redo.png";
 
 const CollaborationFeatureWrapper = styled.div`
     display: flex;
