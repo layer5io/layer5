@@ -13,22 +13,29 @@ const Card = ({
   fetchpriority = "auto",
 }) => {
   const { isDark } = useStyledDarkMode();
+  const primaryThumbnail = frontmatter.thumbnail || frontmatter.thumbnail_svg;
+  const secondaryThumbnail =
+    frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg;
+  const thumbnail =
+    isDark &&
+    secondaryThumbnail &&
+    secondaryThumbnail.publicURL !== primaryThumbnail?.publicURL
+      ? secondaryThumbnail
+      : primaryThumbnail || secondaryThumbnail;
+
   return (
     <CardWrapper fixed={!!frontmatter.abstract}>
       <div className="post-block">
         <div className="post-thumb-block">
-          <Image
-            {...(isDark &&
-            frontmatter.darkthumbnail &&
-            frontmatter.darkthumbnail.publicURL !==
-              frontmatter.thumbnail.publicURL
-              ? frontmatter.darkthumbnail
-              : frontmatter.thumbnail)}
-            imgStyle={{ objectFit: "cover" }}
-            loading={loading}
-            fetchpriority={fetchpriority}
-            alt={frontmatter.title}
-          />
+          {thumbnail && (
+            <Image
+              {...thumbnail}
+              imgStyle={{ objectFit: "cover" }}
+              loading={loading}
+              fetchpriority={fetchpriority}
+              alt={frontmatter.title}
+            />
+          )}
         </div>
         <div className="post-content-block">
           <h2 className="post-title">{frontmatter.title}</h2>
