@@ -21,16 +21,16 @@ const settings = {
   responsive: [
     {
       breakpoint: 1400,
-      settings: "unslick",
-    },
-  ],
+      settings: "unslick"
+    }
+  ]
 };
 
 const LazyPartnerImage = ({ partner }) => {
   const [imageSrc, setImageSrc] = useState("");
 
   useEffect(() => {
-    partner.imageLink().then((module) => {
+    partner.imageLink().then(module => {
       setImageSrc(module.default);
     });
   }, [partner.imageLink]);

@@ -13,17 +13,12 @@ import Banner1SectionWrapper from "./banner1.style";
 
 const Banner1 = (props) => {
   return (
-    <Banner1SectionWrapper {...props}>
-      <Container>
-        <img
-          loading="eager"
-          fetchPriority="high"
-          alt="hero-image"
-          src={Backgroundsvg}
-          className="background-svg"
-        />
+    <Banner1SectionWrapper {...props} >
+      <Container >
+        <img loading="eager" alt="hero-image" src={Backgroundsvg} className="background-svg" />
         <Row>
           <Col $sm={8} $lg={8} className="section-title-wrapper">
+
             <SectionTitle
               className="section-title"
               $leftAlign={true}
@@ -31,26 +26,18 @@ const Banner1 = (props) => {
             >
               <h1>Cloud Native Management</h1>
               <h2>
-                of <span>developer</span>-defined infrastructure
+              of <span>developer</span>-defined infrastructure
               </h2>
             </SectionTitle>
-            <p>an open source-first community of cloud native engineers</p>
+            <p>
+            an open source-first community of cloud native engineers
+            </p>
             <span className="vintage-box-container">
               <VintageBox $right={true} $vintageOne={true}>
-                <Button
-                  $primary
-                  className="banner-btn one"
-                  title="Join in"
-                  $url="/community"
-                >
+                <Button $primary className="banner-btn one" title="Join in" $url="/community">
                   <FaMapMarkedAlt size={21} className="icon-left" />
                 </Button>
-                <Button
-                  $primary
-                  className="banner-btn two"
-                  title="See Meshery"
-                  $url="/cloud-native-management/meshery"
-                >
+                <Button $primary className="banner-btn two" title="See Meshery" $url="/cloud-native-management/meshery">
                   <FiDownloadCloud size={21} className="icon-left" />
                 </Button>
               </VintageBox>
