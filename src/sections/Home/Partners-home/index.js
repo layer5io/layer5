@@ -21,41 +21,32 @@ const settings = {
   responsive: [
     {
       breakpoint: 1400,
-      settings: "unslick",
-    },
-  ],
+      settings: "unslick"
+    }
+  ]
 };
 
 const LazyPartnerImage = ({ partner }) => {
   const [imageSrc, setImageSrc] = useState("");
 
   useEffect(() => {
-    partner.imageLink().then((module) => {
+    partner.imageLink().then(module => {
       setImageSrc(module.default);
     });
   }, [partner.imageLink]);
 
+  if (!imageSrc) return null;
+
   return (
-    <div
-      style={{
-        width: partner.imageWidth,
-        height: partner.imageHeight,
-        display: "inline-block",
-        flexShrink: 0,
-      }}
-    >
-      {imageSrc && (
-        <img
-          className="partner-image"
-          id={partner.name}
-          loading="lazy"
-          src={imageSrc}
-          alt={partner.name}
-          width={partner.imageWidth}
-          height={partner.imageHeight}
-        />
-      )}
-    </div>
+    <img
+      className="partner-image"
+      id={partner.name}
+      loading="lazy"
+      src={imageSrc}
+      alt={partner.name}
+      width={partner.imageWidth}
+      height={partner.imageHeight}
+    />
   );
 };
 
