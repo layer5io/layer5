@@ -15,6 +15,7 @@ const TermsWrapper = styled.section`
     margin: 0 auto;
     padding-left: 2px;
     margin-top: -20rem;
+    color: ${props => props.theme.whiteToBlack};
     @media (max-width: 750px) {
       margin-top: 0;
     }

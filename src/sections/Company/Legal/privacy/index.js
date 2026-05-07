@@ -132,7 +132,7 @@ const privacyData = [
 ];
 
 const Privacy = () => {
-  const { isDark } = useStyledDarkMode();
+  const { isDark, didLoad } = useStyledDarkMode();
 
   // Create custom theme with Qanelas Soft font family
   const customTheme = createTheme({
@@ -187,7 +187,7 @@ const Privacy = () => {
               <p>
               We process your personal data for a variety of purposes depending on how you interact with us. The table below details what we collect, why we collect it, and the legal justification (lawful basis) under the GDPR for doing so.
               </p>
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"} theme={customTheme}>
+              {didLoad && <SistentThemeProvider key={isDark ? "dark" : "light"} initialMode={isDark ? "dark" : "light"} theme={customTheme}>
                 <Row className="table-container" $Hcenter>
                   <Col md={12} sx={{ px: 0 }}>
                     <StyledTableContainer>
@@ -230,7 +230,7 @@ const Privacy = () => {
                     </StyledTableContainer>
                   </Col>
                 </Row>
-              </SistentThemeProvider>
+              </SistentThemeProvider>}
               <h3>Cookies and Tracking Technologies</h3>
               <p>
               We use cookies and similar technologies on our website to help it function, to analyze performance, and to personalize your experience. A cookie is a small text file stored on your device.
