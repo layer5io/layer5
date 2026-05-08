@@ -134,25 +134,6 @@ export const ProgramsWrapper = styled.div`
       }
     }
   }
-
-  /* ── LFX In-page navigation ── */
-  .lfx-on-this-page {
-    background: ${(props) => props.theme.green3C494FToGreyF5F5F5};
-    border-left: 4px solid #00b39f;
-    border-radius: 6px;
-    padding: 1rem 1.5rem;
-    margin: 1.5rem 0 2rem 0;
-    display: inline-block;
-    min-width: 260px;
-
-    strong {
-      display: block;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.5rem;
-      color: #00b39f;
-    }
     ul {
       margin: 0;
       padding-left: 1.2rem;
@@ -170,20 +151,5 @@ export const ProgramsWrapper = styled.div`
       }
     }
   }
-
-  /* ── Back to top link ── */
-  .lfx-back-to-top {
-    display: inline-block;
-    margin: 1.5rem 0 0.5rem 0;
-    font-size: 0.85rem;
-    color: #00b39f;
-    text-decoration: none;
-    border: 1px solid #00b39f;
-    border-radius: 4px;
-    padding: 4px 10px;
-    &:hover {
-      background: #00b39f;
-      color: #fff;
-    }
   }
 `;
