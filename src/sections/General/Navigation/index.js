@@ -476,12 +476,12 @@ const Navigation = () => {
               <button
                 className="avatar-container"
                 style={{
-                  backgroundImage: `url(${userData.avatar_url})`,
+                  backgroundImage: `url(${userData.avatarUrl})`,
                   backgroundSize: "cover",
                 }}
                 onClick={() => setDropDown((prev) => !prev)}
               >
-                {!userData.avatar_url && (
+                {!userData.avatarUrl && (
                   <DefaultAvatar className="default_avatar" />
                 )}
               </button>
