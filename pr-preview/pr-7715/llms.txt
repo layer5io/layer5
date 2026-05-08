@@ -1,0 +1,31 @@
+# Layer5: The Cloud Native Management Ecosystem
+
+> Community-first maintainer of CNCF projects and visual management tools. Orchestrating open infrastructure through cloud native patterns and collaborative design.
+
+## Site 
+- [Layer5](https://layer5.io): The cloud native management company and steward of CNCF projects.
+- [Layer5 Projects](https://layer5.io/projects): Full list of open source projects maintained by Layer5.
+- [Layer5 Blog](https://layer5.io/blog): Cloud native engineering articles and announcements.
+
+## Core Projects & Tooling
+- [Meshery](https://layer5.io/cloud-native-management/meshery): CNCF management plane for lifecycle and performance of 300+ cloud native integrations.
+- [Kanvas](https://layer5.io/cloud-native-management/kanvas): Collaborative infrastructure designer for multi-player cloud engineering.
+- [Cloud Native Patterns](https://meshery.io/catalog): Curated library of best practices and patterns for cloud native infrastructure.
+- [Service Mesh Performance (SMP)](https://layer5.io/projects/cloud-native-performance): Vendor-neutral standard for measuring cloud native overhead.
+- [Image Hub](https://layer5.io/projects/image-hub): Cloud native application registry for curated sample deployments.
+- [Nighthawk](https://layer5.io/projects/nighthawk): Multi-purpose distributed performance benchmarking tool.
+- [Sistent](https://layer5.io/projects/sistent): Open source design system for cloud native applications.
+- [Meshery Docker Extension](https://layer5.io/docker-extension-meshery): Docker Desktop extension for cloud native management.
+- [Layer5 Academy](https://layer5.io/learn/academy): Learning platform for cloud native technologies.
+- [Service Mesh Landscape](https://layer5.io/service-mesh-landscape): Comprehensive landscape of service mesh technologies.
+
+## Technical Documentation
+- [Architecture Overview](https://docs.meshery.io/concepts): Core logic on models, relationships, and registry components.
+- [API Reference](https://docs.meshery.io/extensibility/api): REST and GraphQL interface specifications for Meshery Server.
+- [Contributor Guide](https://docs.meshery.io/project/contributing): Standards for Gatsby, React, and Golang contributions.
+
+## Collaboration & Governance
+- [Layer5 Community](https://slack.layer5.io): Primary real-time hub (10k+ members) for cloud native engineering.
+- [Discussion Forum](https://discuss.layer5.io): Async architectural decision-making and technical support.
+- [Community Handbook](https://layer5.io/community/handbook): Operational procedures and project governance.
+
