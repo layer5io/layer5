@@ -1,0 +1,74 @@
+---
+name: "ClickAwayListener"
+title: ClickAwayListener
+published: true
+component: click-away-listener
+description: ClickAwayListener detects clicks outside a wrapped element and helps close menus, popovers, and transient UI safely.
+---
+
+import { useState } from "react";
+import { ClickAwayListener, Button, Box } from "@sistent/sistent";
+
+export const ClickAwayListenerOverview = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <ThemeWrapper>
+      <ClickAwayListener onClickAway={() => setOpen(false)}>
+        <Box
+          sx={{
+            display: "inline-flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "1rem",
+            width: "100%",
+            maxWidth: "320px",
+            padding: "1rem",
+            borderRadius: "1rem",
+            bgcolor: "background.paper",
+            boxShadow: "0 16px 32px rgba(0, 0, 0, 0.12)",
+          }}
+        >
+          <Button variant="contained" onClick={() => setOpen((prev) => !prev)}>
+            {open ? "Close panel" : "Open panel"}
+          </Button>
+          {open && (
+            <Box
+              sx={{
+                width: "100%",
+                padding: "1rem",
+                border: "1px solid #e5e7eb",
+                borderRadius: "0.75rem",
+                bgcolor: "background.default",
+              }}
+            >
+              <p style={{ margin: 0 }}>
+                Clicking outside this area closes the panel automatically.
+              </p>
+            </Box>
+          )}
+        </Box>
+      </ClickAwayListener>
+    </ThemeWrapper>
+  );
+};
+
+ClickAwayListener provides an easy way to respond when users interact outside a target element. It is especially useful for closing dropdowns, menus, popovers, and other transient UI when the user's focus moves away.
+
+<a id="How it works">
+  <h2>How it works</h2>
+</a>
+
+The component wraps any child element and tracks pointer events outside that child. When an outside click or touch occurs, it calls the provided `onClickAway` handler so your application can update state and close the active UI.
+
+<a id="Usage">
+  <h2>Usage</h2>
+</a>
+
+This component is most effective when paired with stateful UI elements such as dropdowns, menu panels, or context menus. It ensures users can dismiss those elements by clicking anywhere outside the active area.
+
+<Row className="image-container">
+  <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+    <ClickAwayListenerOverview />
+  </div>
+</Row>
