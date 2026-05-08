@@ -4,7 +4,7 @@ export const meet_links_data = [
     meeting: "Layer5 Websites Meeting",
     slack_channel: "#websites",
     slack_link: "https://layer5io.slack.com/archives/C015QJKUMPU",
-    meeting_minutes: "https://bit.ly/2XK4eQV",
+    meeting_minutes: "https://meet.layer5.io/websites-minutes",
     meeting_link: "https://meet.layer5.io/websites",
     meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IO1ZuLj3cbOTdi-hlkF4Lqu",
   },

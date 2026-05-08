@@ -77,6 +77,10 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
           setCurrency(e.target.value);
         }}
         label="Currency"
+        MenuProps={{
+          disableScrollLock: true,
+          marginThreshold: null,
+        }}
         renderValue={(value) => (
           <Box sx={{ display: "flex", alignItems: "center", gap: 1, color: "#fff" }}>
             <Typography variant="body1">{Currencies[value]?.symbol}</Typography>

@@ -6,27 +6,32 @@ import Image from "../image";
 import { CardWrapper } from "./Card.style";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
-const Card = ({ frontmatter, fields, loading = "lazy", fetchpriority = "auto" }) => {
-
+const Card = ({
+  frontmatter,
+  fields,
+  loading = "lazy",
+  fetchpriority = "auto",
+}) => {
   const { isDark } = useStyledDarkMode();
-
   return (
     <CardWrapper fixed={!!frontmatter.abstract}>
       <div className="post-block">
         <div className="post-thumb-block">
           <Image
-            {...((isDark && frontmatter.darkthumbnail && frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL)
-              ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
-            imgStyle={{ objectFit: "contain" }}
+            {...(isDark &&
+            frontmatter.darkthumbnail &&
+            frontmatter.darkthumbnail.publicURL !==
+              frontmatter.thumbnail.publicURL
+              ? frontmatter.darkthumbnail
+              : frontmatter.thumbnail)}
+            imgStyle={{ objectFit: "cover" }}
             loading={loading}
             fetchpriority={fetchpriority}
             alt={frontmatter.title}
           />
         </div>
         <div className="post-content-block">
-          <h2 className="post-title">
-            {frontmatter.title}
-          </h2>
+          <h2 className="post-title">{frontmatter.title}</h2>
           <div className="post-meta-block">
             {frontmatter.date && frontmatter.author && (
               <>
@@ -47,21 +52,41 @@ const Card = ({ frontmatter, fields, loading = "lazy", fetchpriority = "auto" })
           <div className="readmore-btn-wrapper">
             {fields && fields.slug && frontmatter.eurl && (
               <>
-                <Link className="readmore-btn" to={fields.slug}>
+                <Link
+                  className="readmore-btn"
+                  to={fields.slug}
+                  aria-label={`See more about ${frontmatter.title}`}
+                >
                   see more <IoIosArrowRoundForward />
                 </Link>
-                <a className="external-link-btn" href={frontmatter.eurl} target="_blank" rel="noreferrer">
+                <a
+                  className="external-link-btn"
+                  href={frontmatter.eurl}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label={`Visit external link for ${frontmatter.title}`}
+                >
                   <BiLinkExternal />
                 </a>
               </>
             )}
             {fields && fields.slug && !frontmatter.eurl && (
-              <Link className="readmore-btn" to={fields.slug}>
+              <Link
+                className="readmore-btn"
+                to={fields.slug}
+                aria-label={`See more about ${frontmatter.title}`}
+              >
                 see more <IoIosArrowRoundForward />
               </Link>
             )}
-            {!fields && !fields.slug && frontmatter.eurl && (
-              <a className="external-link-btn" href={frontmatter.eurl} target="_blank" rel="noreferrer">
+            {(!fields || !fields.slug) && frontmatter.eurl && (
+              <a
+                className="external-link-btn"
+                href={frontmatter.eurl}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label={`Visit external link for ${frontmatter.title}`}
+              >
                 <BiLinkExternal />
               </a>
             )}

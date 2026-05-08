@@ -18,6 +18,9 @@ jobs:
       - name: NPM Install
         run: npm install --legacy-peer-deps
 
+      - name: Check CONTRIBUTING versions
+        run: npm run check:contributing-versions
+
       - name: Build
         run: npm run build
 

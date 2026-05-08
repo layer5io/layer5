@@ -42,23 +42,16 @@ import playground from "./meshery-playground-alt-4.webp";
 ## GSoC 2026 Project Ideas
 <br />
 
-#### Migration of docs.meshery.io from Jekyll to Hugo
+#### Support for Azure in Meshery
 
-- **Description:** The Meshery documentation [docs.meshery.io](https://docs.meshery.io) is a critical resource for users and contributors. Currently built using Jekyll, the site faces limitations in build speed, scalability, and long-term maintainability. Hugo, a modern static site generator, offers significantly faster build times, better content organization, and an improved developer experience. This internship focuses on migrating the entire [docs.meshery.io](https://docs.meshery.io) site from Jekyll to the Hugo framework, using docs.layer5.io (already implemented in Hugo) as a reference architecture. The migration will involve porting all documentation content, assets, layouts, and configuration while preserving URLs, SEO, contributor workflows, and existing auto-generated documentation files.
+- **Description:** Enhance Meshery's existing orchestration capabilities to include support for Azure. The <a href="https://azure.github.io/azure-service-operator">Azure Service Operator</a>(ASO) provides a wide variety of Azure Resources via Kubernetes custom resources as first-class <a href="https://docs.meshery.io/concepts/logical/models">Meshery Models</a>. This involves enabling Meshery to manage and orchestrate Azure services and their resources, similar to how it handles other Kubernetes resources. The project will also include generating support for Azure services and their resources in Meshery's Model generator.
 - **Expected outcome:** 
-  - Revamp of documentation set information architecture. Alignment with Diataxis framework.
-      - Updated contributor docs.
-      - All self-documenting aspects accounted for:
-          - Compatibility tests of Meshery Adapters.
-          - End-to-end tests of Meshery UI.
-          - Integration of Meshery Catalog and all designs.
-          - Publication of community discussion forum activity per category.
-          - Integration of Meshery Models (Integrations)
-- **Recommended Skills:** Static site generators (Jekyll and Hugo), Markdown, HTML/CSS, Git/GitHub workflows, documentation engineering, basic Go templating (Hugo), CI/CD familiarity.
-- **Mentor(s):** <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to ="mailto:kate.suttons2337@gmail.com">Kate Suttons</Link>
-- **Expected project size:** 175 hours
-- **Difficulty:** Medium
-- **Upstream Issue (URL):** [https://github.com/meshery/meshery/issues/17095](https://github.com/meshery/meshery/issues/17095)
+  - Meshery will be able to orchestrate and manage all Azure services supported by ASO. This includes the ability to discover, configure, deploy, and operate the lifecycle of Azure services through Meshery. The Meshery Model generator will be updated to automatically generate models for Azure services, simplifying their integration and management within Meshery. This will be an officially supported feature of Meshery.
+- **Recommended Skills:** Golang, Kubernetes, Azure, well-written and well-spoken English
+- **Mentor(s):** <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="mailto:mia.grenell2337@gmail.com">Mia Grenell</Link>
+- **Expected project size:** large (175 hours)
+- **Difficulty:** Hard
+- **Upstream Issue (URL):** [https://github.com/meshery/meshery/issues/11244](https://github.com/meshery/meshery/issues/11244)
 
 #### Relationships for AWS services
 
@@ -105,8 +98,8 @@ import playground from "./meshery-playground-alt-4.webp";
   - Strong familiarity with Kubernetes Controllers, Informers, and the Object Model (GVK/GVR).
   - Experience and competency with GraphQL
 - **Mentor(s):** <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="mailto:james.horton2337@gmail.com">James Horton</Link>
-- **Expected project size:** 175 hours
-- **Difficulty:** Medium
+- **Expected project size:** 350 hours
+- **Difficulty:** Large
 - **Upstream Issue (URL):** [https://github.com/meshery/meshery/issues/17098](https://github.com/meshery/meshery/issues/17098)
 
 #### Workflow Engine in Meshery

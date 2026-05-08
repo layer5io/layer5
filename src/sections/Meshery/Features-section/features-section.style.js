@@ -30,14 +30,14 @@ const FeaturesSectionWrapper = styled.section`
 		top: 0.5px;
 	}
 	.rect-2-left {
-		background: ${props => props.theme.secondaryColor};
+		background: ${(props) => props.theme.secondaryColor};
 		border-radius: 0 0 3.5rem 0;
 		grid-column: 1/2;
 		height: 5rem;
 		grid-row: 2;
 	}
 	.rect-3-right {
-		background: ${props => props.theme.secondaryColor};
+		background: ${(props) => props.theme.secondaryColor};
 		border-radius: 3.5rem 0 0 0;
 		grid-column: 10/11;
 		grid-row: 1;
@@ -74,7 +74,7 @@ const FeaturesSectionWrapper = styled.section`
 		h1 {
 			line-height: 3.125rem;
 			span {
-				color: ${props => props.theme.secondaryColor};
+				color: ${(props) => props.theme.secondaryColor};
 			}
 		}
 		h2 {
@@ -108,14 +108,20 @@ const FeaturesSectionWrapper = styled.section`
 			}
 		}
 
-		.smp-section-caraousel {
+		.smp-section-carousel {
 			.slick-slider {
 			    max-height: 520px;
 				.slick-list {
 					max-width: 50rem;
 					max-height: 520px;
+					height: auto;
+
+					.slick-track {
+						height: auto;
+					}
 
 					.slick-slide {
+						height: auto;
 						img {
 							max-height: 20rem;
 							margin: auto;
@@ -160,7 +166,7 @@ const FeaturesSectionWrapper = styled.section`
 	}
 
 	@media screen and (max-width: 1600px) {
-		.smp-section .smp-section-caraousel .slick-slider {
+		.smp-section .smp-section-carousel .slick-slider {
 			.slick-list {
 				max-width: 38rem;
 			}
@@ -191,7 +197,7 @@ const FeaturesSectionWrapper = styled.section`
 				}
 			}
 
-			.smp-section-caraousel .slick-slider {
+			.smp-section-carousel .slick-slider {
 				.slick-list {
 					max-width: 80%;
 					margin: 2rem auto;
@@ -207,7 +213,7 @@ const FeaturesSectionWrapper = styled.section`
 	@media screen and (max-width: 960px) {
 		padding-bottom: 0rem;
 		margin-bottom: 4rem;
-		.smp-section .smp-section-caraousel .slick-slider .slick-list {
+		.smp-section .smp-section-carousel .slick-slider .slick-list {
 			.slick-slide {
 				img {
 					max-height: 16rem;
@@ -220,7 +226,7 @@ const FeaturesSectionWrapper = styled.section`
 		.smp-section {
 			max-width: 95%;
 
-			.smp-section-caraousel .slick-slider {
+			.smp-section-carousel .slick-slider {
 				.slick-list {
 					max-width: 85%;
 					margin: 2rem 0;
@@ -241,7 +247,7 @@ const FeaturesSectionWrapper = styled.section`
 		.smp-section {
 			max-width: 95%;
 
-			.smp-section-caraousel .slick-slider {
+			.smp-section-carousel .slick-slider {
 				.slick-list {
 					max-width: 80%;
 					.slick-slide {

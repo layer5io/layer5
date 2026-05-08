@@ -1,4 +1,5 @@
 import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
 import KanvasWrapper from "./kanvas.style";
 import { Container } from "../../reusecore/Layout";
 import Features from "../../components/Features-carousel";
@@ -6,8 +7,6 @@ import KanvasModes from "./kanvas-modes";
 import Catalog from "./kanvas-catalog";
 import Platform from "./kanvas-platform";
 import KanvasBanner from "./kanvas_banner";
-import designerImage from "../../assets/images/kanvas/KanvasDesigner.webp";
-import visualizerImage from "../../assets/images/kanvas/KanvasVisualizer.webp";
 import DesignerFeatures from "./FeaturesSection/Design/DesignerFeatures";
 import CollaboratorFeatures from "./FeaturesSection/Collaborate/CollaboratorFeatures";
 import VisualizerFeatures from "./FeaturesSection/Visualize/VisualizerFeatures";
@@ -28,9 +27,6 @@ import { ReactComponent as Collab2 } from "./FeaturesSection/Collaborate/images/
 import { ReactComponent as Collab3 } from "./FeaturesSection/Collaborate/images/collab3-colorMode.svg";
 import { ReactComponent as Collab4 } from "./FeaturesSection/Collaborate/images/collab4-colorMode.svg";
 
-import Avatar1 from "./FeaturesSection/Collaborate/images/avatar1.webp";
-import Avatar2 from "./FeaturesSection/Collaborate/images/avatar2.webp";
-import Avatar3 from "./FeaturesSection/Collaborate/images/avatar3.webp";
 import Kaur from "../../sections/Pricing/reviews/kaur-kallas.webp";
 import Ala from "../../sections/Pricing/reviews/ala-eddine-benhassir.jpeg";
 import Phillip from "../../sections/Pricing/reviews/phillip-ulberg.jpeg";
@@ -56,12 +52,10 @@ const Kanvas = (props) => {
                   description:
                     "Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components and Cloud services. Collaborate wtih teammates using this self-service engineering platform. Using GitOps? Integrate advanced performance analysis into your pipeline.",
                   content: (
-                    <img
-                      src={designerImage}
+                    <StaticImage
+                      src="../../assets/images/kanvas/KanvasDesigner.webp"
                       alt="Designer Mode"
                       className="designer-img modes-image"
-                      width="100%"
-                      height="auto"
                       style={{ aspectRatio: "16/9" }}
                     />
                   ),
@@ -71,12 +65,10 @@ const Kanvas = (props) => {
                   description:
                     "Operator offers an interactive topology of your Kubernetes clusters with live terminal sessions, log streaming and performance testing of your applications. Designs created in Designer mode can be deployed and viewed as running in your environment using Operator.",
                   content: (
-                    <img
-                      src={visualizerImage}
+                    <StaticImage
+                      src="../../assets/images/kanvas/KanvasVisualizer.webp"
                       alt="Operator Mode"
                       className="modes-image"
-                      width="100%"
-                      height="auto"
                       style={{ aspectRatio: "16/9" }}
                     />
                   ),
@@ -165,13 +157,13 @@ const Kanvas = (props) => {
                   description: "Designer and Operator live side-by-side, so all design work, from ideation to operation, can be found in one place.",
                   imgContent: (
                     <>
-                      <img
+                      <StaticImage
                         id="avatar-1"
-                        src={Avatar1}
+                        src="./FeaturesSection/Collaborate/images/avatar1.webp"
                         alt=""
-                        width="48"
-                        height="48"
-                        style={{ objectFit: "cover" }}
+                        width={48}
+                        height={48}
+                        imgStyle={{ objectFit: "cover" }}
                       />
                       <Collab1 id="collaborate-image1" alt="collaborate-image1" />
                     </>
@@ -187,13 +179,13 @@ const Kanvas = (props) => {
                   description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you're working in the office or remotely.",
                   imgContent: (
                     <>
-                      <img
+                      <StaticImage
                         id="avatar-2"
-                        src={Avatar2}
+                        src="./FeaturesSection/Collaborate/images/avatar2.webp"
                         alt="avatar-2"
-                        width="48"
-                        height="48"
-                        style={{ objectFit: "cover" }}
+                        width={48}
+                        height={48}
+                        imgStyle={{ objectFit: "cover" }}
                       />
                       <Collab2 id="collaborate-image2" alt="collaborate-image2" />
                     </>
@@ -204,13 +196,13 @@ const Kanvas = (props) => {
                   description: "Build an iterative design flow with live collaboration that keeps you in the loop whether you're working in the office or remotely.",
                   imgContent: (
                     <>
-                      <img
+                      <StaticImage
                         id="avatar-3"
-                        src={Avatar3}
+                        src="./FeaturesSection/Collaborate/images/avatar3.webp"
                         alt="avatar-3"
-                        width="48"
-                        height="48"
-                        style={{ objectFit: "cover" }}
+                        width={48}
+                        height={48}
+                        imgStyle={{ objectFit: "cover" }}
                       />
                       <Collab3 id="collaborate-image3" alt="collaborate-image3" />
                     </>
@@ -225,13 +217,13 @@ const Kanvas = (props) => {
                   description: "Kanvas is an end-to-end management platform, here to help teams understand problems, explore options, and build solutions—together.",
                   imgContent: (
                     <>
-                      <img
+                      <StaticImage
                         id="avatar-3"
-                        src={Avatar3}
+                        src="./FeaturesSection/Collaborate/images/avatar3.webp"
                         alt="avatar-3"
-                        width="48"
-                        height="48"
-                        style={{ objectFit: "cover" }}
+                        width={48}
+                        height={48}
+                        imgStyle={{ objectFit: "cover" }}
                       />
                       <Collab4 id="collaborate-image4" alt="collaborate-image4" />
                     </>
