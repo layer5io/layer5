@@ -1,20 +1,22 @@
 import React, { useState } from "react";
-import { Link } from "gatsby";
+import { Link, withPrefix } from "gatsby";
 import Button from "../../../reusecore/Button";
 import { Col, Container, Row } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import { NewcomersGuideWrapper } from "./NewcomersPageWrapper.style";
-import CommunityImage4 from "../Community-pictures/community.webp";
 import TutorialsTable from "./Tutorials-table";
 import NewcomersMap from "./newcomers-map";
 import JoinCommunity from "../Join-community";
 import longArrow from "./long-arrow.svg";
-import { StaticImage } from "gatsby-plugin-image";
 
-const CommunityImage2 = "../Community-pictures/five-finding-issue.webp";
-const CommunityImage3 = "../../../assets/images/newcomers-page-images/community-collage.webp";
-const FiveWorking = "../Community-pictures/five-working.webp";
-const CommunityHandbook = "../Community-pictures/community-handbook.webp";
+const CommunityImage2 = withPrefix("/images/community/five-finding-issue.webp");
+const CommunityImage3 =
+  "../../../assets/images/newcomers-page-images/community-collage.webp";
+const FiveWorking = withPrefix("/images/community/five-working.webp");
+const CommunityHandbook = withPrefix(
+  "/images/community/community-handbook.webp",
+);
+const CommunityImage4 = withPrefix("/images/community/community.webp");
 
 const NewcomersGuide = () => {
   const [hover, setHover] = useState(false);
@@ -25,19 +27,21 @@ const NewcomersGuide = () => {
       <Container>
         <div className="newcomers-welcome">
           <p>
-            Whether you are a first time contributor or an open source
-            veteran, you are welcome to contribute to and actively engage in the
+            Whether you are a first time contributor or an open source veteran,
+            you are welcome to contribute to and actively engage in the
             development of projects at Layer5. Here are some instructions to get
             you started and if you haven’t joined yet, join the{" "}
             <a href="https://slack.layer5.io/" target="_blank" rel="noreferrer">
               Slack workspace
             </a>{" "}
-            to collaborate with the community and the <a href="https://discuss.layer5.io" target="">discussion forum</a> for questions. Also, you can check the
+            to collaborate with the community and the{" "}<a href="https://discuss.layer5.io" target=""> discussion forum </a>{" "} for questions. Also, you can check the
             quick-links below for jumping straight into things.
           </p>
-          <Row style={{
-            flexWrap: "wrap"
-          }} className="newcomers-journey"
+          <Row
+            style={{
+              flexWrap: "wrap",
+            }}
+            className="newcomers-journey"
           >
             <Col
               className="heading"
@@ -61,38 +65,44 @@ const NewcomersGuide = () => {
           </Row>
           <Row className="how-to-contribute">
             <p>
-              These steps outline the process by which you can
-              openly engage, learn, and participate in the broad set of open
-              source projects at Layer5. If at any time you get stuck, please
-              seek help in the{" "}
+              These steps outline the process by which you can openly engage,
+              learn, and participate in the broad set of open source projects at
+              Layer5. If at any time you get stuck, please seek help in the{" "}
               <a
                 href="https://discuss.layer5.io"
                 target="_blank"
                 rel="noreferrer"
               >
                 community forum
-              </a>{""}.
-              Our{" "}
-              <Link to="/community/meshmates">MeshMates</Link> and community
-              members are here to help!
+              </a>
+              {""}. Our <Link to="/community/meshmates">MeshMates</Link> and
+              community members are here to help!
             </p>
           </Row>
         </div>
         <div className="instructions">
-          <Row style={{
-            flexWrap: "wrap"
-          }} className="step"
+          <Row
+            style={{
+              flexWrap: "wrap",
+            }}
+            className="step"
           >
             <Col $sm={12} $lg={6}>
               <h3>Fill in the Community Member Form</h3>
               <p>Help us get to know you, so that we can highlight projects and initiatives that align with your interests. Fill-in a community member form. Gain access to community resources.</p>
             </Col>
             <Col $sm={12} $lg={6} className="col-newcomers-form">
-              <Button $primary className="newcomers-form" title="Submit a Member Form" $url="/newcomer" $external={false} />
+              <Button
+                $primary
+                className="newcomers-form"
+                title="Submit a Member Form"
+                $url="/newcomer"
+                $external={false}
+              />
             </Col>
             <Col $sm={12} $lg={6} className="col-finding-an-issue">
               <div className="finding-an-issue">
-                <StaticImage src={CommunityImage2} alt="Five Working Image" />
+                <img src={CommunityImage2} alt="Five Working Image" />
               </div>
             </Col>
             <Col $sm={12} $lg={6}>
@@ -131,10 +141,11 @@ const NewcomersGuide = () => {
                   ” label.
                 </li>
                 <li>
-                  Find an area of interest by perusing the list of projects by repository and technology in the{" "}
+                Find an area of interest by perusing the list of projects by repository and technology in the{" "}
                   <Link to="/community/handbook/repository-overview/">
                     Layer5 Repository Overview
-                  </Link>.
+                  </Link>
+                  .
                 </li>
                 <li>
                   After identifying the issue you wish to work on, check whether
@@ -145,9 +156,11 @@ const NewcomersGuide = () => {
               </ol>
             </Col>
           </Row>
-          <Row style={{
-            flexWrap: "wrap"
-          }} className="step"
+          <Row
+            style={{
+              flexWrap: "wrap",
+            }}
+            className="step"
           >
             <Col $sm={12} $lg={6}>
               <h3>Working on Your Issue</h3>
@@ -198,15 +211,18 @@ const NewcomersGuide = () => {
               </ol>
             </Col>
             <Col $sm={12} $lg={6} className="community-img">
-              <StaticImage src={FiveWorking} alt="Five Working Image" />
+              <img src={FiveWorking} alt="Five Working Image" />
             </Col>
           </Row>
           <Row style={{ flexWrap: "wrap" }} className="step">
             <Col $sm={12} $lg={6} className="community-collage">
-              <a className="book-container" href="https://layer5.io/community/handbook/">
+              <a
+                className="book-container"
+                href="https://layer5.io/community/handbook/"
+              >
                 <div className="book">
                   <div>
-                    <StaticImage src={CommunityHandbook} alt="Community Image" />
+                    <img src={CommunityHandbook} alt="Community Image" />
                   </div>
                 </div>
               </a>
@@ -214,10 +230,11 @@ const NewcomersGuide = () => {
             <Col $sm={12} $lg={6}>
               <h3>Explore the Meshery Community</h3>
               <p>
-              The community is growing at a tremendous rate. We value our connections
-              and that is what makes us unique. Whether it is your first meeting or
-              your tenth contribution, we want to make sure that you are supported and
-              equipped to take advantage of all of that the community has to offer.
+                The community is growing at a tremendous rate. We value our
+                connections and that is what makes us unique. Whether it is your
+                first meeting or your tenth contribution, we want to make sure
+                that you are supported and equipped to take advantage of all of
+                that the community has to offer.
               </p>
             </Col>
           </Row>
@@ -235,20 +252,21 @@ const NewcomersGuide = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-        discussion forum
-                </a>, join our{" "}
+                  discussion forum
+                </a>
+                , join our{" "}
                 <a
                   href="https://slack.layer5.io/"
                   target="_blank"
                   rel="noreferrer"
                 >
-        Slack workspace
+                  Slack workspace
                 </a>{" "}
-      and take a look at all our <Link to="/projects">projects</Link>.
+                and take a look at all our <Link to="/projects">projects</Link>.
               </p>
             </Col>
             <Col $sm={12} $lg={6} className="community-collage">
-              <StaticImage src={CommunityImage3} alt="Community Image" />
+              <img src={CommunityImage3} alt="Community Image" />
             </Col>
           </Row>
         </div>

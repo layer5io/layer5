@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, withPrefix } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
@@ -8,7 +7,6 @@ import JoinCommunity from "../Community/Join-community";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
 import CommunitySectionWrapper from "./community.style";
-import Five from "./Community-pictures/community.webp";
 import NewcomersMap from "./Newcomers-guide/newcomers-map.js";
 import DiscussCallout from "../../sections/Discuss-Callout";
 import { ReactComponent as MeshmateIcon } from "../../assets/images/meshmate/meshmate-stack-colorMode.svg";
@@ -16,10 +14,8 @@ import InlineQuotes from "../../components/Inline-quotes";
 import AdventuresCallout from "../Adventures-Callout";
 import PictureSlider from "./slider";
 
-const CommunityMember = "./Community-pictures/five.webp";
+const CommunityMember = withPrefix("/images/community/five.webp");
 const backgroundImageSrc = withPrefix("/images/lite/bookmarks.webp");
-// const Picture = "./Community-pictures/join-the-community.png";
-
 const CommunityPage = () => {
   return (
     <CommunitySectionWrapper>
@@ -59,11 +55,7 @@ const CommunityPage = () => {
               </p>
             </Col>
             <Col $sm={12} $lg={6}>
-              <StaticImage
-                src={CommunityMember}
-                alt="Community Member"
-                placeholder="blurred"
-              />
+              <img src={CommunityMember} alt="Community Member" />
             </Col>
           </Row>
           <Row
@@ -242,7 +234,10 @@ const CommunityPage = () => {
           />
         </Container>
       </div>
-      <JoinCommunity image={Five} className="newcomers-join" />
+      <JoinCommunity
+        image={withPrefix("/images/community/community.webp")}
+        className="newcomers-join"
+      />
       <Container className="Callout">
         <DiscussCallout />
         <AdventuresCallout />

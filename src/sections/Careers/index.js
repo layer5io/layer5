@@ -1,10 +1,10 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
+import { withPrefix } from "gatsby";
 import { Container } from "../../reusecore/Layout";
 import { Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import InternshipPage from "./Careers-Internship-grid";
-import Five from "../../sections/Community/Community-pictures/community.webp";
 import JoinCommunity from "../Community/Join-community";
 import CareersSectionWrapper from "./careers.style";
 
@@ -41,7 +41,7 @@ const CareersPage = () => {
           <InternshipPage hide_heading={true} />
         </div>
 
-        <JoinCommunity image={Five} />
+        <JoinCommunity image={withPrefix("/images/community/community.webp")} />
         <Container>
           <br />
           <p className="center">Open source contributors come in all shapes, sizes, colors and so on. All are welcome in the Layer5 projects and community!!</p>
