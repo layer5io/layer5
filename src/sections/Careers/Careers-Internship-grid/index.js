@@ -7,67 +7,76 @@ import InternshipSectionWrapper from "./InternshipPage.style";
 import ProgramsGrid from "../Careers-Programs-grid/index";
 import FAQ from "../../General/Faq";
 
-
-const UEM_Img = "../../../assets/images/partners/uem_partner.webp";
-const Univ_Texas_Img = "../../../assets/images/partners/texas_partner.webp";
+const UEM_Img = "/images/partners/uem_partner.webp";
+const Univ_Texas_Img = "/images/partners/texas_partner.webp";
 const Peek_Img = "../../../assets/images/layer5/layer5-peek-card-edited.svg";
 
 const InternshipPage = ({ hide_heading }) => {
-  const opportunities = useStaticQuery(
-    graphql`query allOppornuties {
-  internships: allMdx(
-    sort: {frontmatter: {title: ASC}}
-    filter: {fields: {collection: {eq: "careers"}}, frontmatter: {published: {eq: true}, type: {eq: "internship"}}}
-  ) {
-    nodes {
-      id
-      frontmatter {
-        title
-        abstract
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData(width: 500, layout: CONSTRAINED)
+  const opportunities = useStaticQuery(graphql`
+    query allOppornuties {
+      internships: allMdx(
+        sort: { frontmatter: { title: ASC } }
+        filter: {
+          fields: { collection: { eq: "careers" } }
+          frontmatter: { published: { eq: true }, type: { eq: "internship" } }
+        }
+      ) {
+        nodes {
+          id
+          frontmatter {
+            title
+            abstract
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(width: 500, layout: CONSTRAINED)
+              }
+              extension
+              publicURL
+            }
           }
-          extension
-          publicURL
+          fields {
+            slug
+          }
         }
       }
-      fields {
-        slug
-      }
-    }
-  }
-  jobs: allMdx(
-    sort: {frontmatter: {title: ASC}}
-    filter: {fields: {collection: {eq: "careers"}}, frontmatter: {published: {eq: true}, type: {eq: "job"}}}
-  ) {
-    nodes {
-      id
-      frontmatter {
-        title
-        abstract
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData(width: 500, layout: CONSTRAINED)
+      jobs: allMdx(
+        sort: { frontmatter: { title: ASC } }
+        filter: {
+          fields: { collection: { eq: "careers" } }
+          frontmatter: { published: { eq: true }, type: { eq: "job" } }
+        }
+      ) {
+        nodes {
+          id
+          frontmatter {
+            title
+            abstract
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(width: 500, layout: CONSTRAINED)
+              }
+              extension
+              publicURL
+            }
           }
-          extension
-          publicURL
+          fields {
+            slug
+          }
         }
       }
-      fields {
-        slug
-      }
     }
-  }
-}`
-  );
+  `);
 
   let OpportunityCard = ({ frontmatter, fields }) => (
     <Col className="opportunity-col">
       <Link to={fields.slug}>
         <div className="opportunity-card">
           <div className="peek-card">
-            <StaticImage style={{ width: "5rem", }} src={Peek_Img} alt="Peek card effect" />
+            <StaticImage
+              style={{ width: "5rem" }}
+              src={Peek_Img}
+              alt="Peek card effect"
+            />
           </div>
           <div className="text">
             <h3>{frontmatter.title}</h3>
@@ -138,8 +147,10 @@ const InternshipPage = ({ hide_heading }) => {
                 <Col className="partner-col">
                   <div className="partners-card">
                     <div className="partner-image">
-                      <StaticImage src={Univ_Texas_Img}
+                      <img
+                        src={Univ_Texas_Img}
                         alt="University of Texas, Austin"
+                        loading="lazy"
                       />
                     </div>
                     <h5>UT Austin Coding Boot Camp</h5>
@@ -148,7 +159,7 @@ const InternshipPage = ({ hide_heading }) => {
                 <Col className="partner-col">
                   <div className="partners-card">
                     <div className="partner-image">
-                      <StaticImage src={UEM_Img} alt="UEM Jaipur" />
+                      <img src={UEM_Img} alt="UEM Jaipur" loading="lazy" />
                     </div>
                     <h5>UEM Jaipur</h5>
                   </div>
