@@ -38,8 +38,8 @@ const DropdownMenu = styled.ul`
   list-style: none;
   margin: 6px 0 0 0;
   padding: 8px 0;
-  background: #1a1a1a;
-  border: 1px solid #333;
+  background: ${(props) => props.theme.white || "#ffffff"};
+  border: 1px solid ${(props) => props.theme.borderColor || "#e3e3e3"};
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   min-width: 220px;
@@ -48,7 +48,7 @@ const DropdownMenu = styled.ul`
     display: block;
     padding: 8px 24px 8px 32px;
     font-size: 0.875rem;
-    color: #ccc;
+    color: ${(props) => props.theme.text || "#333333"};
     text-decoration: none;
     &:hover {
       background: #00b39f22;
