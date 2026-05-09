@@ -6,7 +6,7 @@ const NavWrapper = styled.div`
   top: 120px;
   right: 24px;
   z-index: 999;
-  @media (max-width: 1200px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
@@ -84,7 +84,11 @@ const LfxPageNav = ({ items }) => {
   const [showTop, setShowTop] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setShowTop(window.scrollY > 400);
+    const onScroll = () => {
+      const scrolled = window.scrollY + window.innerHeight;
+      const total = document.documentElement.scrollHeight;
+      setShowTop(scrolled >= total - 100);
+    };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
