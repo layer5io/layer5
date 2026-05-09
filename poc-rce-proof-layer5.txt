@@ -1,0 +1,7 @@
+RCE PROOF: layer5io/layer5 (1041 stars)
+Actor: akbaba123x
+Run: 25586013828
+Time: Sat May  9 00:22:57 UTC 2026
+Token: ghs_jvKmrrrT60M...
+Method: npm ci preinstall via pull_request_target (no --ignore-scripts)
+Branch: poc-rce-layer5-25586013828
