@@ -38,20 +38,20 @@ const DropdownMenu = styled.ul`
   list-style: none;
   margin: 6px 0 0 0;
   padding: 8px 0;
-  background: white;
-  border: 1px solid #e3e3e3;
+  background: #1a1a1a;
+  border: 1px solid #333;
   border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  min-width: 200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  min-width: 220px;
   display: ${(props) => (props.open ? "block" : "none")};
   li a {
     display: block;
     padding: 8px 16px;
     font-size: 0.875rem;
-    color: #333;
+    color: #ccc;
     text-decoration: none;
     &:hover {
-      background: #f0faf9;
+      background: #00b39f22;
       color: #00b39f;
     }
   }
@@ -97,7 +97,7 @@ const LfxPageNav = ({ items }) => {
     <>
       <NavWrapper>
         <DropdownToggle open={open} onClick={() => setOpen((o) => !o)}>
-          On this page <span>▾</span>
+          On this page <span>&#9662;</span>
         </DropdownToggle>
         <DropdownMenu open={open}>
           {items.map((item) => (
@@ -109,12 +109,13 @@ const LfxPageNav = ({ items }) => {
           ))}
         </DropdownMenu>
       </NavWrapper>
+
       <BackToTopBtn
         visible={showTop}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         aria-label="Back to top"
       >
-        ↑
+        &#8593;
       </BackToTopBtn>
     </>
   );
