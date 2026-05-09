@@ -53,7 +53,7 @@ const DropdownMenu = styled.ul`
     display: block;
     padding: 8px 24px 8px 32px;
     font-size: 0.875rem;
-    color: ${(props) => props.theme.blackToWhite};
+    color: ${(props) => props.theme.whiteToBlack};
     text-decoration: none;
     &:hover {
       background: #00b39f22;
