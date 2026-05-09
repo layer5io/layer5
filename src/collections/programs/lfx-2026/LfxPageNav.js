@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 const NavWrapper = styled.div`
   position: fixed;
-  top: 120px;
-  right: 24px;
+  top: 160px;
+  right: 16px;
   z-index: 999;
-  @media (max-width: 768px) {
+  @media (max-width: 1500px) {
     display: none;
   }
 `;
@@ -38,17 +38,17 @@ const DropdownMenu = styled.ul`
   list-style: none;
   margin: 6px 0 0 0;
   padding: 8px 0;
-  background: ${(props) => props.theme.white || "#ffffff"};
-  border: 1px solid ${(props) => props.theme.borderColor || "#e3e3e3"};
+  background: ${(props) => props.theme.grey1D1D1DToGreyFAFAFA};
+  border: 1px solid ${(props) => props.theme.grey1D1817ToGreyE6E6E6};
   border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   min-width: 220px;
   display: ${(props) => (props.open ? "block" : "none")};
   li a {
     display: block;
     padding: 8px 24px 8px 32px;
     font-size: 0.875rem;
-    color: ${(props) => props.theme.text || "#333333"};
+    color: ${(props) => props.theme.blackToWhite};
     text-decoration: none;
     &:hover {
       background: #00b39f22;
