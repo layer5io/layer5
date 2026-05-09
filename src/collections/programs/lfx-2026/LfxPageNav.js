@@ -46,7 +46,7 @@ const DropdownMenu = styled.ul`
   display: ${(props) => (props.open ? "block" : "none")};
   li a {
     display: block;
-    padding: 8px 16px;
+    padding: 8px 24px 8px 32px;
     font-size: 0.875rem;
     color: #ccc;
     text-decoration: none;
