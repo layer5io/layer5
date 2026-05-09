@@ -11,8 +11,12 @@ published: true
 import { ProgramsWrapper } from "../Programs.style.js";
 import Button from "../../../reusecore/Button";
 import LfxLogo from "./lfx-white.svg";
+import LfxLogoLight from "./Linux_Foundation_logo.svg";
 import { Link } from "gatsby";
 import LfxPageNav from "./LfxPageNav";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
+
+export const LfxLogoImage = () => { const { isDark } = useStyledDarkMode(); return <img src={isDark ? LfxLogo : LfxLogoLight} alt="lfx_logo" className="lfx_logo"/>; };
 
 <ProgramsWrapper>
 
@@ -25,7 +29,7 @@ import LfxPageNav from "./LfxPageNav";
   { href: "#additional-info", label: "Additional Information" },
 ]} />
 
-<img src={LfxLogo} alt="lfx_logo" className="lfx_logo"/>
+<LfxLogoImage />
 <h3>Linux Foundation 2026 Program Timeline</h3>
 
 <div>

@@ -5,6 +5,9 @@ const NavWrapper = styled.div`
   position: fixed;
   top: 160px;
   right: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   z-index: 999;
   @media (max-width: 1500px) {
     display: none;
@@ -35,6 +38,8 @@ const DropdownToggle = styled.button`
 `;
 
 const DropdownMenu = styled.ul`
+  position: absolute;
+  right: 0;
   list-style: none;
   margin: 6px 0 0 0;
   padding: 8px 0;
