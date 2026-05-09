@@ -6,7 +6,6 @@ description: A menu displays a list of options or actions anchored to a referenc
 
 import { useState } from "react";
 import { Menu, MenuItem, MenuList, Button, Box, Typography, Divider } from "@sistent/sistent";
-import { MoreVert as MoreVertIcon, Delete as DeleteIcon, Edit as EditIcon, Share as ShareIcon } from "@mui/icons-material";
 
 export const ProperMenuDemo = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -53,7 +52,7 @@ export const MenuWithIconsDemo = () => {
       <Button
         variant="contained"
         onClick={handleClick}
-        startIcon={<MoreVertIcon />}
+        label="Options"
       />
       <Menu
         id="icon-menu"
@@ -61,18 +60,9 @@ export const MenuWithIconsDemo = () => {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>
-          <EditIcon sx={{ mr: 1 }} fontSize="small" />
-          Edit
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ShareIcon sx={{ mr: 1 }} fontSize="small" />
-          Share
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <DeleteIcon sx={{ mr: 1 }} fontSize="small" />
-          Delete
-        </MenuItem>
+        <MenuItem onClick={handleClose}>Edit</MenuItem>
+        <MenuItem onClick={handleClose}>Share</MenuItem>
+        <MenuItem onClick={handleClose}>Delete</MenuItem>
       </Menu>
     </>
   );

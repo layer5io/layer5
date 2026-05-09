@@ -6,7 +6,6 @@ description: A menu displays a list of options or actions anchored to a referenc
 
 import { useState } from "react";
 import { Menu, MenuItem, MenuList, Button, Box, Typography, Divider, ListItemIcon, ListItemText } from "@sistent/sistent";
-import { MoreVert as MoreVertIcon, Edit as EditIcon, Delete as DeleteIcon, Share as ShareIcon, Download as DownloadIcon, FileCopy as FileCopyIcon, Print as PrintIcon } from "@mui/icons-material";
 
 Menus provide contextual actions and options to users in a compact, organized manner. Below are various examples demonstrating different menu configurations and use cases.
 
@@ -117,7 +116,7 @@ export const IconMenuDemo = () => {
       <Button
         variant="text"
         onClick={handleClick}
-        startIcon={<MoreVertIcon />}
+        label="Actions"
       />
       <Menu
         id="icon-menu"
@@ -141,7 +140,6 @@ export const IconMenuDemo = () => {
   </div>
   <CodeBlock name="icon-menu" collapsible code={`import { useState } from "react";
 import { Menu, MenuItem, Button } from "@sistent/sistent";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 export const IconMenuDemo = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -160,7 +158,7 @@ export const IconMenuDemo = () => {
       <Button
         variant="text"
         onClick={handleClick}
-        startIcon={<MoreVertIcon />}
+        label="Actions"
       />
       <Menu
         id="icon-menu"
@@ -209,24 +207,9 @@ export const MenuWithIconsDemo = () => {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <EditIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText>Edit</ListItemText>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <FileCopyIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText>Duplicate</ListItemText>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <ShareIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText>Share</ListItemText>
-        </MenuItem>
+        <MenuItem onClick={handleClose}>Edit</MenuItem>
+        <MenuItem onClick={handleClose}>Duplicate</MenuItem>
+        <MenuItem onClick={handleClose}>Share</MenuItem>
       </Menu>
     </>
   );
@@ -239,10 +222,7 @@ export const MenuWithIconsDemo = () => {
     </ThemeWrapper>
   </div>
   <CodeBlock name="menu-with-icons" collapsible code={`import { useState } from "react";
-import { Menu, MenuItem, Button, ListItemIcon, ListItemText } from "@sistent/sistent";
-import EditIcon from "@mui/icons-material/Edit";
-import FileCopyIcon from "@mui/icons-material/FileCopy";
-import ShareIcon from "@mui/icons-material/Share";
+import { Menu, MenuItem, Button } from "@sistent/sistent";
 
 export const MenuWithIconsDemo = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -269,24 +249,9 @@ export const MenuWithIconsDemo = () => {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <EditIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText>Edit</ListItemText>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <FileCopyIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText>Duplicate</ListItemText>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <ShareIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText>Share</ListItemText>
-        </MenuItem>
+        <MenuItem onClick={handleClose}>Edit</MenuItem>
+        <MenuItem onClick={handleClose}>Duplicate</MenuItem>
+        <MenuItem onClick={handleClose}>Share</MenuItem>
       </Menu>
     </>
   );
@@ -325,25 +290,10 @@ export const DividedMenuDemo = () => {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <DownloadIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText>Download</ListItemText>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <PrintIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText>Print</ListItemText>
-        </MenuItem>
+        <MenuItem onClick={handleClose}>Download</MenuItem>
+        <MenuItem onClick={handleClose}>Print</MenuItem>
         <Divider />
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <DeleteIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText>Delete</ListItemText>
-        </MenuItem>
+        <MenuItem onClick={handleClose}>Delete</MenuItem>
       </Menu>
     </>
   );
@@ -356,10 +306,7 @@ export const DividedMenuDemo = () => {
     </ThemeWrapper>
   </div>
   <CodeBlock name="divided-menu" collapsible code={`import { useState } from "react";
-import { Menu, MenuItem, Button, ListItemIcon, ListItemText, Divider } from "@sistent/sistent";
-import DownloadIcon from "@mui/icons-material/Download";
-import PrintIcon from "@mui/icons-material/Print";
-import DeleteIcon from "@mui/icons-material/Delete";
+import { Menu, MenuItem, Button, Divider } from "@sistent/sistent";
 
 export const DividedMenuDemo = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -386,25 +333,10 @@ export const DividedMenuDemo = () => {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <DownloadIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText>Download</ListItemText>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <PrintIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText>Print</ListItemText>
-        </MenuItem>
+        <MenuItem onClick={handleClose}>Download</MenuItem>
+        <MenuItem onClick={handleClose}>Print</MenuItem>
         <Divider />
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <DeleteIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText>Delete</ListItemText>
-        </MenuItem>
+        <MenuItem onClick={handleClose}>Delete</MenuItem>
       </Menu>
     </>
   );
