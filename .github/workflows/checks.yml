@@ -26,3 +26,11 @@ jobs:
 
       - name: Run Eslint
         run: npm run checklint
+
+      - name: Broken Link Checker
+        uses: technote-space/broken-link-checker-action@v2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TARGET: "https://layer5.io"
+          RECURSIVE: true
+          EXCLUDE: "^mailto:,^tel:"
