@@ -1,5 +1,4 @@
 import React from "react";
-import { createGlobalStyle } from "styled-components";
 import { Container, Row, Col } from "../../../../reusecore/Layout";
 import TermsWrapper from "../terms.style";
 import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
@@ -16,15 +15,6 @@ import {
 } from "@sistent/sistent";
 import TOC from "../../../../components/legal-navigation/index";
 import TocPagination from "../../../../components/legal-navigation/TocPagination";
-
-const PrivacyStickyOverflowFix = createGlobalStyle`
-  @media (min-width: 1200px) {
-    html,
-    body {
-      overflow-x: visible !important;
-    }
-  }
-`;
 
 const StyledTableContainer = styled(TableContainer)(() => ({
   width: "100%",
@@ -182,7 +172,6 @@ const Privacy = () => {
 
   return (
     <TermsWrapper>
-      <PrivacyStickyOverflowFix />
       <div className="page-header-section">
         <h1>Privacy Policy</h1>
       </div>
