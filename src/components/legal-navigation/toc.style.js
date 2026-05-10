@@ -4,10 +4,10 @@ const TOCWrapper = styled.div`
   position: sticky;
   top: 10rem;
   left: 0rem;
-  margin-left: 3rem;
+  margin-left: 0;
   margin-top: 3rem;
   margin-bottom: 2rem;
-  width: 15rem;
+  width: 100%;
   word-break: break-word;
   overflow-wrap: break-word;
   white-space: normal;
@@ -104,7 +104,7 @@ const TOCWrapper = styled.div`
     color: ${(props) => props.theme.secondaryColor};
   }
 
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1199px) {
     position: initial;
     top: auto;
     left: auto;

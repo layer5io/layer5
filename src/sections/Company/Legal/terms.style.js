@@ -19,13 +19,26 @@ const TermsWrapper = styled.section`
       margin-top: 0;
     }
   }
+  .privacy-layout-row {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .privacy-terms-content {
+    margin-top: 0;
+  }
   .page-header-section {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: rgb(71,126,150);
-      background: linear-gradient(250deg, rgba(71,126,150,1) 0%, rgba(0,179,159,1) 35%, rgba(60,73,79,1) 100%);
+    background: rgb(71, 126, 150);
+    background: linear-gradient(
+      250deg,
+      rgba(71, 126, 150, 1) 0%,
+      rgba(0, 179, 159, 1) 35%,
+      rgba(60, 73, 79, 1) 100%
+    );
     padding: 3rem 0;
     h1 {
       color: white;

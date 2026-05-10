@@ -176,12 +176,12 @@ const Privacy = () => {
         <h1>Privacy Policy</h1>
       </div>
       <Container>
-        <Row>
-          <Col $xs={12} $md={12} $lg={3}>
+        <Row className="privacy-layout-row">
+          <Col $xs={12} $md={12} $lg={12} $xl={3}>
             <TOC />
           </Col>
-          <Col $xs={12} $md={12} $lg={9}>
-            <div className="terms-content">
+          <Col $xs={12} $md={12} $lg={12} $xl={9}>
+            <div className="terms-content privacy-terms-content">
               <p>
                 <small>
                   <i>Effective Date: July 11th, 2023</i>
