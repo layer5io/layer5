@@ -21,6 +21,7 @@ const TermsWrapper = styled.section`
   }
   .privacy-layout-row {
     flex-wrap: wrap;
+    align-items: stretch;
   }
 
   .privacy-terms-content {

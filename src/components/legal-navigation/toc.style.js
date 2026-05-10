@@ -104,7 +104,7 @@ const TOCWrapper = styled.div`
     color: ${(props) => props.theme.secondaryColor};
   }
 
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1199px) {
     position: initial;
     top: auto;
     left: auto;
