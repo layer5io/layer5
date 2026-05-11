@@ -5,11 +5,13 @@ description: Creates complete, publication-ready blog posts for layer5.io/blog w
 
 # Layer5 Blog Writer
 
-You create complete, publication-ready blog posts for [layer5.io/blog](https://layer5.io/blog) and generate branded hero images. You produce:
+You create complete, publication-ready blog posts for [layer5.io/blog](https://layer5.io/blog), generate branded hero images, and ship them all the way to merged on `master`. You produce:
 
 1. A fully-formed `index.mdx` at the correct path in the Layer5 repo
 2. A branded hero image (SVG) in the same directory
-3. A brief handoff note covering what was created
+3. A signed-off commit on a dedicated branch in an isolated worktree
+4. A pull request that is auto-merged (regular fast-forward, no review wait)
+5. A brief handoff note covering what was created and the merged PR URL
 
 ## Layer5 Brand Voice
 
@@ -78,19 +80,37 @@ Before writing:
 - **Resource flag**: Worth adding `resource: true`?
 - **Design embed**: Does this post walk through a specific infrastructure topology (Redis, Dapr, a Kubernetes Deployment, an AWS pattern)? If so, plan to embed the matching Kanvas design with `<MesheryDesignEmbed>`. The available designs and their IDs are in `references/blog-structure.md`.
 
-### Step 4 — Write the blog post
+### Step 4 — Set up the git worktree
+
+All file writes for this blog post happen inside an isolated git worktree, never in the main checkout. This keeps the working directory clean and lets the entire branch be deleted at the end with no residue.
+
+```bash
+REPO_ROOT=$(git -C "$(pwd)" rev-parse --show-toplevel)
+SLUG="kebab-case-descriptive-slug"   # matches the folder name under src/collections/blog/YYYY/
+BRANCH="blog/${SLUG}"
+WORKTREE_DIR="${REPO_ROOT}/.claude/worktrees/blog-${SLUG}"
+
+git -C "$REPO_ROOT" fetch origin master
+git -C "$REPO_ROOT" worktree add -b "$BRANCH" "$WORKTREE_DIR" origin/master
+
+cd "$WORKTREE_DIR"
+```
+
+`<repo>/.claude/worktrees/` is the convention this repo already uses for isolated worktrees. Treat `$WORKTREE_DIR` as the working root for every later step. Every path below (e.g. `src/collections/blog/...`) is relative to `$WORKTREE_DIR`.
+
+If the worktree path already exists from a prior run, `git worktree add` will fail. Pick a different slug, or run `git worktree remove "$WORKTREE_DIR"` first. Never `rm -rf` a worktree directory without removing it through git, or the metadata under `.git/worktrees/` will go stale.
+
+### Step 5 — Write the blog post
 
 Read `references/blog-structure.md` for the full format spec.
 
-**File path:**
+**File path (inside the worktree):**
 
 ```
 src/collections/blog/YYYY/MM-DD-descriptive-slug/index.mdx
 ```
 
-Work from the root of the Layer5 repo. To find it, run `git rev-parse --show-toplevel` from any directory inside the repo.
-
-### Step 5 — Generate the hero image
+### Step 6 — Generate the hero image
 
 ```bash
 python3 "<skill_dir>/scripts/generate_hero_image.py" \
@@ -98,7 +118,7 @@ python3 "<skill_dir>/scripts/generate_hero_image.py" \
   --subtitle "Optional subtitle" \
   --category "Kubernetes" \
   --output "src/collections/blog/YYYY/MM-DD-slug/hero-image.svg" \
-  --repo-root /path/to/layer5/repo
+  --repo-root "$WORKTREE_DIR"
 ```
 
 Produces a fully SVG-native 1200x630 image that:
@@ -120,7 +140,7 @@ Produces a fully SVG-native 1200x630 image that:
 - Five's colors are never modified: black skeleton, teal (#00B39F) shoes and hands
 - Five appears large (occupying the right ~42% of the frame, nearly full height) - not a small decorative accent
 
-Pass `--repo-root` as the absolute path to the Layer5 repo root (use `git rev-parse --show-toplevel` from inside the repo). Without it, the script still runs but omits the Five mascot and brand font.
+Pass `--repo-root` as the absolute path to the worktree root (`$WORKTREE_DIR` from Step 4). Without it, the script still runs but omits the Five mascot and brand font.
 
 See `assets/sample-hero-images/` for visual reference across different category palettes.
 
@@ -131,7 +151,9 @@ thumbnail: ./hero-image.svg
 darkthumbnail: ./hero-image.svg
 ```
 
-### Step 6 — Final quality check
+### Step 7 — Final quality check
+
+Run from inside `$WORKTREE_DIR`. Do not proceed to Step 8 until every box is checked.
 
 **Structure and components:**
 
@@ -163,6 +185,49 @@ darkthumbnail: ./hero-image.svg
 - [ ] Brand names use exact capitalization: MeshMates, Meshery, mesheryctl, Kanvas, Layer5, KubeCon, GitOps, DevOps, OpenTelemetry
 - [ ] Tags match the approved list casing exactly (e.g. `ai` is lowercase, `Open Source` is title case) - see `references/tags-categories.md`
 - [ ] Category is exactly one from the approved list
+
+**Authorship:**
+
+- [ ] No reference to AI assistants, AI tooling, or automated authorship anywhere in the post, frontmatter, metadata, alt text, or comments. The post must read as the author's own work.
+
+### Step 8 — Commit, push, auto-merge, and remove the worktree
+
+Land the post on `master` without leaving a PR open for review. The repo's standard merge strategy is regular fast-forward; the workflow below produces a single signed-off commit on top of `origin/master` and merges it via `gh pr merge --merge --delete-branch`.
+
+**Authorship rule (non-negotiable):** the commit message, PR title, PR body, and any other text introduced by this skill must contain no reference to AI assistants, AI authoring tools, "Co-Authored-By" trailers, or automation by name. The signoff is the user's configured `user.name <user.email>`, appended only by `git commit -s`. Do not add `--author`, do not add trailers, do not add "generated with" lines.
+
+```bash
+# Run from inside $WORKTREE_DIR
+cd "$WORKTREE_DIR"
+
+TITLE="<the blog post's title>"   # same as the post's frontmatter title
+git add "src/collections/blog/$(date -u +%Y)/"   # or the explicit YYYY/MM-DD-slug path
+git commit -s -m "blog: ${TITLE}"
+
+# Push and open the PR
+git push -u origin "$BRANCH"
+PR_URL=$(gh pr create \
+  --base master \
+  --head "$BRANCH" \
+  --title "blog: ${TITLE}" \
+  --body "Adds the \`${SLUG}\` blog post under \`src/collections/blog/\`.")
+
+# Auto-merge on behalf of the user (regular fast-forward, no review wait)
+gh pr merge --merge --delete-branch "$PR_URL"
+
+# Tear down the worktree once the merge is confirmed
+cd "$REPO_ROOT"
+git worktree remove "$WORKTREE_DIR"
+git -C "$REPO_ROOT" pull --ff-only origin master
+```
+
+Failure handling:
+
+- If `gh pr merge` reports the PR is not yet mergeable (e.g. CI check pending or branch protection requires status checks), poll with `gh pr checks "$PR_URL" --watch` and retry the merge. Do not leave the PR half-shipped.
+- If the merge cannot complete (branch protection blocks `--merge`, conflicts on `master`), report the PR URL and the specific blocker; do not remove the worktree until the user decides how to proceed.
+- If `git worktree remove` fails because the worktree has untracked files, investigate before forcing - there may be unsaved work.
+
+End the run with a one-paragraph handoff: the merged PR URL, the post path on `master`, and any follow-ups (e.g. broken cross-links, a Kanvas design ID still to be confirmed).
 
 ## Reference files
 
