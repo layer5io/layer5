@@ -1,0 +1,142 @@
+---
+title: Form Group Guidance
+component: formgroup
+description: FormGroup is a wrapper component used to group multiple form controls such as checkboxes or switches together, providing consistent spacing and layout.
+---
+
+import { FormGroup, FormControlLabel, FormControl, FormLabel, Checkbox, Switch, Box } from "@sistent/sistent";
+
+export const VerticalFormGroupDemo = () => {
+  return (
+    <Box sx={{ display: "flex", justifyContent: "center" }}>
+      <FormControl component="fieldset">
+        <FormLabel component="legend">Vertical Group</FormLabel>
+        <FormGroup>
+          <FormControlLabel control={<Checkbox defaultChecked />} label="Option A" />
+          <FormControlLabel control={<Checkbox />} label="Option B" />
+          <FormControlLabel control={<Checkbox />} label="Option C" />
+        </FormGroup>
+      </FormControl>
+    </Box>
+  );
+};
+
+export const HorizontalFormGroupDemo = () => {
+  return (
+    <Box sx={{ display: "flex", justifyContent: "center" }}>
+      <FormControl component="fieldset">
+        <FormLabel component="legend">Horizontal Group</FormLabel>
+        <FormGroup row>
+          <FormControlLabel control={<Checkbox defaultChecked />} label="Option A" />
+          <FormControlLabel control={<Checkbox />} label="Option B" />
+          <FormControlLabel control={<Checkbox />} label="Option C" />
+        </FormGroup>
+      </FormControl>
+    </Box>
+  );
+};
+
+export const SwitchFormGroupDemo = () => {
+  return (
+    <Box sx={{ display: "flex", justifyContent: "center" }}>
+      <FormControl component="fieldset">
+        <FormLabel component="legend">Notifications</FormLabel>
+        <FormGroup>
+          <FormControlLabel control={<Switch defaultChecked />} label="Email Notifications" />
+          <FormControlLabel control={<Switch />} label="Push Notifications" />
+          <FormControlLabel control={<Switch />} label="SMS Notifications" />
+        </FormGroup>
+      </FormControl>
+    </Box>
+  );
+};
+
+<a id="Functions">
+  <h2>Functions</h2>
+</a>
+
+<p>
+  The FormGroup component provides a structured way to group related form controls
+  together. It ensures consistent spacing, alignment, and layout for multiple
+  checkboxes or switches in a form.
+</p>
+
+<h3>Vertical Layout</h3>
+<p>
+  By default, FormGroup stacks its children vertically, which is ideal for longer
+  lists of options where each item needs its own line for clarity.
+</p>
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <VerticalFormGroupDemo />
+  </ThemeWrapper>
+</Row>
+
+<h3>Horizontal Layout</h3>
+<p>
+  Use the <code>row</code> prop to arrange form controls horizontally. This is
+  useful when options are short and can fit side by side without crowding.
+</p>
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <HorizontalFormGroupDemo />
+  </ThemeWrapper>
+</Row>
+
+<h3>With Switches</h3>
+<p>
+  FormGroup works equally well with Switch components, making it ideal for
+  settings panels and preference toggles.
+</p>
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <SwitchFormGroupDemo />
+  </ThemeWrapper>
+</Row>
+
+<a id="Best-Practices">
+  <h2>Best Practices</h2>
+</a>
+
+<h3>When to Use FormGroup</h3>
+<ul>
+  <li>Use when grouping two or more related checkboxes or switches</li>
+  <li>Wrap inside a <code>FormControl</code> with a <code>FormLabel</code> for proper accessibility</li>
+  <li>Use <code>row</code> prop for short option labels that fit horizontally</li>
+  <li>Prefer vertical layout for longer labels or more than four options</li>
+</ul>
+
+<h3>Common Patterns</h3>
+<ul>
+  <li>Always pair with <code>FormControlLabel</code> to provide descriptive labels</li>
+  <li>Use <code>FormLabel</code> as a group heading for screen reader support</li>
+  <li>Keep option labels concise and scannable</li>
+  <li>Use consistent control types within a single FormGroup (all checkboxes or all switches)</li>
+</ul>
+
+<h3>Accessibility</h3>
+<ul>
+  <li>Wrap FormGroup in a <code>FormControl</code> with <code>component="fieldset"</code></li>
+  <li>Always include a <code>FormLabel</code> with <code>component="legend"</code> for screen readers</li>
+  <li>Ensure each control has a descriptive label via <code>FormControlLabel</code></li>
+  <li>Supports full keyboard navigation out of the box</li>
+</ul>
+
+<a id="Customization">
+  <h2>Customization</h2>
+</a>
+
+<p>
+  FormGroup can be customized through props and styling to match your design requirements.
+</p>
+
+<h3>Props</h3>
+<ul>
+  <li><code>children</code>: The form controls to be grouped (e.g., FormControlLabel with Checkbox or Switch)</li>
+  <li><code>row</code>: If <code>true</code>, the group is displayed in a horizontal row instead of a column</li>
+  <li><code>sx</code>: Custom styling using the theme system</li>
+  <li><code>classes</code>: Override or extend the styles applied to the component</li>
+</ul>
