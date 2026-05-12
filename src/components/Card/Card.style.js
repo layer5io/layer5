@@ -10,6 +10,9 @@ export const CardWrapper = styled.div`
     background-color: ${(props) => props.theme.grey212121ToWhite};
     box-shadow: 0px 2px 6px 0px ${(props) => props.theme.green00D3A9ToBlackTwo};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    min-height: 23rem;
 
     &:hover {
       box-shadow: 0px 2px 15px 4px ${(props) => props.theme.whiteNineToBlackOne};
@@ -90,6 +93,7 @@ export const CardWrapper = styled.div`
     padding: 1rem 2rem 1.5rem 2rem;
     height: auto;
     min-height: 10rem;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
