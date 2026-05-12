@@ -1,3 +1,5 @@
 *.js    text eol=lf
 *.jsx   text eol=lf
 *.json  text eol=lf
+
+.github/workflows/*.lock.yml linguist-generated=true merge=ours
