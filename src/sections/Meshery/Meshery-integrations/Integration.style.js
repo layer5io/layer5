@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Slider from "react-slick";
 
 export const HoneycombGrid = styled.div`
   .heading {
@@ -33,26 +32,7 @@ export const HoneycombGrid = styled.div`
     justify-content: center;
   }
 
-  .items {
-    background-color: #d2d8da; //#E7EFF3;
-    padding: 0.625rem 1.5625rem;
-    border-radius: 0.625rem;
-    text-transform: uppercase;
-    color: #1e2117;
-    font-size: 0.875rem;
-    cursor: pointer;
-    transition: all 0.1s ease-in-out;
 
-    &:hover {
-      opacity: 0.8;
-      box-shadow: 0px 0px 6px -2px rgb(60, 73, 79);
-    }
-  }
-
-  .selected {
-    background-color: ${(props) => props.theme.darkJungleGreenColor};
-    color: ${(props) => props.theme.whiteToBlack};
-  }
 
   ul {
     margin: 2.5rem 0 0 0;
@@ -220,71 +200,162 @@ export const IntegrationCard = styled.div`
   // }
 `;
 
-export const IntegrationSlider = styled(Slider)`
-  .slick-prev:hover,
-  .slick-next:hover {
-    box-shadow: none;
-    outline: none;
-  }
+export const CategoryFilterBar = styled.div`
+  position: relative;
+  margin: 1.5rem 0 2rem;
+  padding: 0 0.5rem;
 
-  .slick-arrow {
-    width: 2rem;
-    height: 3rem;
-  }
-
-  .slick-list {
-    padding-top: 0.2rem;
-  }
-
-  .slick-disabled {
-    pointer-events: none;
-    opacity: 0.3;
-  }
-
-  .slick-arrow:before {
-    color: ${(props) => props.theme.whiteToBlack};
-    font-size: 4rem;
-    display: inline-block;
-    height: 1rem;
-    -webkit-text-size-adjust: none;
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  }
-
-  .slick-arrow:hover:before {
-    color: #00b39f;
-  }
-
-  .slick-slide {
-    width: auto !important;
-    margin: 0 0.5rem;
-  }
-
-  .slick-next {
-    right: -2.5rem;
-  }
-
-  .slick-prev {
-    left: -2.5rem;
-  }
-
-  .slick-prev:before {
-    content: "‹";
-    line-height: 0;
-    opacity: 1;
-  }
-
-  .slick-track {
+  .category-chips-wrapper {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0;
+
+    @media screen and (max-width: 768px) {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      justify-content: flex-start;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x proximity;
+      padding: 0.5rem 0.25rem;
+      margin: 0 -0.5rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+
+      /* Hide scrollbar but keep functionality */
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
   }
 
-  .slick-next:before {
-    content: "›";
-    line-height: 0;
-    opacity: 1;
+  /* Overflow fade indicators for mobile scroll */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 2.5rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    @media screen and (max-width: 768px) {
+      opacity: 1;
+      background: linear-gradient(
+        to right,
+        transparent,
+        ${(props) =>
+          props.theme.DarkTheme
+            ? "rgba(18,18,18,0.85)"
+            : "rgba(255,255,255,0.85)"}
+      );
+    }
   }
 
-  .slick-prev,
-  .slick-next {
-    top: 1.5rem;
+  .category-chip {
+    /* ── Inactive (default) = dark / filled ── */
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 1.125rem;
+    border-radius: 2rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    border: 1.5px solid transparent;
+    outline: none;
+    scroll-snap-align: start;
+
+    background: ${(props) =>
+      props.theme.DarkTheme
+        ? "rgba(255,255,255,0.08)"
+        : props.theme.darkJungleGreenColor};
+    color: ${(props) =>
+      props.theme.DarkTheme ? "rgba(255,255,255,0.7)" : "#ffffff"};
+
+    transition:
+      background 0.25s ease,
+      color 0.25s ease,
+      border-color 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.15s ease;
+
+    &:hover {
+      background: ${(props) =>
+        props.theme.DarkTheme ? "rgba(255,255,255,0.14)" : "#2d3328"};
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    &:focus-visible {
+      border-color: ${(props) => props.theme.keppelColor};
+      box-shadow: 0 0 0 3px
+        ${(props) =>
+          props.theme.DarkTheme
+            ? "rgba(0,211,169,0.35)"
+            : "rgba(0,179,159,0.3)"};
+    }
+
+    &:active {
+      transform: scale(0.97);
+    }
+
+    /* ── Active / Selected = light / outlined ── */
+    &.selected {
+      background: ${(props) =>
+        props.theme.DarkTheme ? "rgba(0,211,169,0.15)" : "#f0fdfb"};
+      color: ${(props) =>
+        props.theme.DarkTheme
+          ? props.theme.keppelColor
+          : props.theme.secondaryColor};
+      border-color: ${(props) =>
+        props.theme.DarkTheme
+          ? props.theme.keppelColor
+          : props.theme.secondaryColor};
+      font-weight: 700;
+
+      &:hover {
+        background: ${(props) =>
+          props.theme.DarkTheme ? "rgba(0,211,169,0.22)" : "#e0f9f5"};
+        box-shadow: 0 2px 12px
+          ${(props) =>
+            props.theme.DarkTheme
+              ? "rgba(0,211,169,0.2)"
+              : "rgba(0,179,159,0.18)"};
+      }
+    }
+
+    .chip-count {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      opacity: 0.7;
+      margin-left: 0.125rem;
+    }
+
+    /* Touch-friendly sizing on mobile */
+    @media screen and (max-width: 768px) {
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
+      min-height: 2.25rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .category-chip {
+      transition: none;
+    }
+    .category-chips-wrapper {
+      scroll-behavior: auto;
+    }
   }
 `;
