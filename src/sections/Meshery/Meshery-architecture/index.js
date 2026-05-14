@@ -29,8 +29,8 @@ const MesheryArchitecture = () => {
         <p>Interactive infrastructure design using Meshery Kanvas.</p>
         <div className="embed-container">
           <MesheryDesignEmbed
-            embedId="embedded-design-a3d3f26e-4366-44e6-b211-1ba4e1a3e644"
-            embedScriptSrc="embed-test/embedded-design-embed1.js"
+            embedId="embedded-design-e27d10c1-f9bd-43ce-8aff-07f55dbca142"
+            embedScriptSrc="embed-test/embedded-design-meshery.js"
           />
         </div>
       </Container>
