@@ -145,6 +145,7 @@
           });
 
           cy.style().update();
+          cy.fit(undefined, 50);
           CreateToolBar();
         }).catch(err => console.error("Kanvas embed failed:", err));
       };
