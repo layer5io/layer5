@@ -138,10 +138,10 @@ const Calendar = () => {
           <div className="archived-meetings-section">
             <h2>Archived Meetings</h2>
             <p>These meeting series have concluded and are no longer active.</p>
-            <Table columns={columns} data={archivedData} />
+            <Table columns={columns} data={archivedData} showHeader = {false}/>
           </div>
         )}
-        
+
       </div>
       <br />
       <Container>
