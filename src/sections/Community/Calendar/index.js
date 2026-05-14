@@ -89,7 +89,8 @@ const Calendar = () => {
     []
   );
 
-  const data = React.useMemo(() => meet_links_data);
+  const data = React.useMemo(() => meet_links_data.filter(m => !m.archived));
+  const archivedData = React.useMemo(() => meet_links_data.filter(m => m.archived));
 
   return (
     <CalendarStyleWrapper>
@@ -132,6 +133,15 @@ const Calendar = () => {
           </div>
         </Container>
         <Table columns={columns} data={data} />
+
+        {archivedData.length > 0 && (
+          <div className="archived-meetings-section">
+            <h2>Archived Meetings</h2>
+            <p>These meeting series have concluded and are no longer active.</p>
+            <Table columns={columns} data={archivedData} showHeader = {false}/>
+          </div>
+        )}
+
       </div>
       <br />
       <Container>
