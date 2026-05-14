@@ -15,7 +15,7 @@ const Banner1 = (props) => {
   return (
     <Banner1SectionWrapper {...props} >
       <Container >
-        <img loading="eager" alt="hero-image" src={Backgroundsvg} className="background-svg" />
+        <img loading="eager" fetchPriority="high" alt="hero-image" src={Backgroundsvg} className="background-svg" width="359" height="988" />
         <Row>
           <Col $sm={8} $lg={8} className="section-title-wrapper">
 
