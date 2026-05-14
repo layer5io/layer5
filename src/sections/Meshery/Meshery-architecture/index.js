@@ -30,7 +30,7 @@ const MesheryArchitecture = () => {
         <div className="embed-container">
           <MesheryDesignEmbed
             embedId="embedded-design-e27d10c1-f9bd-43ce-8aff-07f55dbca142"
-            embedScriptSrc="embed-test/embedded-design-meshery.js"
+            embedScriptSrc="/embed-test/embedded-design-meshery.js"
           />
         </div>
       </Container>
