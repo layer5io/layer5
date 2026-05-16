@@ -1,0 +1,380 @@
+---
+title: Table Code
+component: table
+description: A table displays structured data in rows and columns, enabling users to scan, compare, and interact with information efficiently.
+---
+
+import { useState, useEffect, useMemo } from "react";
+import { ResponsiveDataTable } from "@sistent/sistent";
+
+export const BasicTableDemo = () => {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const columns = [
+    { name: "name", label: "Name" },
+    { name: "env", label: "Environment" },
+    { name: "status", label: "Status" },
+  ];
+  const data = [
+    ["meshery", "production", "Running"],
+    ["nighthawk", "staging", "Stopped"],
+    ["kanvas", "development", "Running"],
+  ];
+  const [tableCols, updateCols] = useState(columns);
+  const [columnVisibility, setColumnVisibility] = useState({});
+  const options = {
+    filter: false, download: false, print: false, viewColumns: false,
+    selectableRows: "none", responsive: "standard", pagination: false,
+    search: false, elevation: 1,
+  };
+  if (!mounted) return null;
+  return (
+    <ResponsiveDataTable
+      columns={columns}
+      data={data}
+      options={options}
+      tableCols={tableCols}
+      updateCols={updateCols}
+      columnVisibility={columnVisibility}
+      colViews={columnVisibility}
+    />
+  );
+};
+
+export const SortableTableDemo = () => {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const columns = [
+    { name: "name", label: "Name" },
+    { name: "version", label: "Version" },
+  ];
+  const data = [
+    ["meshery", "v0.7.1"],
+    ["kanvas", "v0.5.0"],
+    ["nighthawk", "v0.9.3"],
+  ];
+  const [tableCols, updateCols] = useState(columns);
+  const [columnVisibility, setColumnVisibility] = useState({});
+  const options = {
+    filter: false, download: false, print: false, viewColumns: false,
+    selectableRows: "none", responsive: "standard", pagination: false,
+    search: false, sort: true, elevation: 1,
+  };
+  if (!mounted) return null;
+  return (
+    <ResponsiveDataTable
+      columns={columns}
+      data={data}
+      options={options}
+      tableCols={tableCols}
+      updateCols={updateCols}
+      columnVisibility={columnVisibility}
+      colViews={columnVisibility}
+    />
+  );
+};
+
+
+export const SelectableTableDemo = () => {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const columns = useMemo(() => [
+    { name: "name", label: "Name" },
+    { name: "env", label: "Environment" },
+  ], []);
+  const data = useMemo(() => [
+    ["Alice", "production"],
+    ["Bob", "staging"],
+    ["Charlie", "development"],
+  ], []);
+  const [tableCols, updateCols] = useState(columns);
+  const [columnVisibility, setColumnVisibility] = useState({ name: true, env: true });
+  const options = {
+    filter: false, download: false, print: false, viewColumns: false,
+    selectableRows: "multiple", responsive: "standard", pagination: false,
+    search: false, elevation: 1,
+  };
+  if (!mounted) return null;
+  return (
+    <ResponsiveDataTable
+      columns={tableCols}
+      data={data}
+      options={options}
+      tableCols={tableCols}
+      updateCols={updateCols}
+      columnVisibility={columnVisibility}
+      colViews={columnVisibility}
+    />
+  );
+};
+
+export const PaginatedTableDemo = () => {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const columns = [
+    { name: "name", label: "Name" },
+    { name: "owner", label: "Owner" },
+    { name: "age", label: "Age" },
+    { name: "status", label: "Status" },
+  ];
+  const data = Array.from({ length: 20 }, (_, i) => [
+    "service-" + (i + 1),
+    i % 3 === 0 ? "Alice" : i % 3 === 1 ? "Bob" : "Charlie",
+    (i + 1) + " months ago",
+    i % 2 === 0 ? "Running" : "Stopped",
+  ]);
+  const [tableCols, updateCols] = useState(columns);
+  const [columnVisibility, setColumnVisibility] = useState({});
+  const options = {
+    filter: false, download: false, print: false, viewColumns: false,
+    selectableRows: "none", responsive: "standard", pagination: true,
+    rowsPerPage: 5, rowsPerPageOptions: [5, 10, 20], elevation: 1,
+  };
+  if (!mounted) return null;
+  return (
+    <ResponsiveDataTable
+      columns={columns}
+      data={data}
+      options={options}
+      tableCols={tableCols}
+      updateCols={updateCols}
+      columnVisibility={columnVisibility}
+      colViews={columnVisibility}
+    />
+  );
+};
+
+Tables communicate actions and data to users and can be placed at several places throughout the user interface.
+
+<a id="Basic Table">
+  <h2>Basic Table</h2>
+</a>
+
+A minimal read-only table with a header row and data rows.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <BasicTableDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-table" collapsible code={`import { useState, useEffect, useMemo } from "react";
+import { ResponsiveDataTable } from "@sistent/sistent";
+
+const columns = [
+  { name: "name", label: "Name" },
+  { name: "env", label: "Environment" },
+  { name: "status", label: "Status" },
+];
+
+const data = [
+  ["meshery", "production", "Running"],
+  ["nighthawk", "staging", "Stopped"],
+  ["kanvas", "development", "Running"],
+];
+
+export default function BasicTable() {
+  const [tableCols, updateCols] = useState(columns);
+  const [columnVisibility, setColumnVisibility] = useState({});
+
+  const options = {
+    filter: false,
+    download: false,
+    print: false,
+    viewColumns: false,
+    selectableRows: "none",
+    responsive: "standard",
+    pagination: false,
+    search: false,
+    elevation: 1,
+  };
+
+  if (!mounted) return null;
+  return (
+    <ResponsiveDataTable
+      columns={columns}
+      data={data}
+      options={options}
+      tableCols={tableCols}
+      updateCols={updateCols}
+      columnVisibility={columnVisibility}
+      colViews={columnVisibility}
+    />
+  );
+}`} />
+</div>
+
+<a id="Sortable Table">
+  <h2>Sortable Table</h2>
+</a>
+
+Clicking a column header sorts rows ascending or descending by that column.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SortableTableDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="sortable-table" collapsible code={`import { useState, useEffect, useMemo } from "react";
+import { ResponsiveDataTable } from "@sistent/sistent";
+
+const columns = [
+  { name: "name", label: "Name" },
+  { name: "version", label: "Version" },
+];
+
+const data = [
+  ["meshery", "v0.7.1"],
+  ["kanvas", "v0.5.0"],
+  ["nighthawk", "v0.9.3"],
+];
+
+export default function SortableTable() {
+  const [tableCols, updateCols] = useState(columns);
+  const [columnVisibility, setColumnVisibility] = useState({});
+
+  const options = {
+    filter: false,
+    download: false,
+    print: false,
+    viewColumns: false,
+    selectableRows: "none",
+    responsive: "standard",
+    pagination: false,
+    search: false,
+    sort: true,
+    elevation: 1,
+  };
+
+  if (!mounted) return null;
+  return (
+    <ResponsiveDataTable
+      columns={columns}
+      data={data}
+      options={options}
+      tableCols={tableCols}
+      updateCols={updateCols}
+      columnVisibility={columnVisibility}
+      colViews={columnVisibility}
+    />
+  );
+}`} />
+</div>
+
+<a id="Selectable Rows Table">
+  <h2>Selectable Rows Table</h2>
+</a>
+
+Setting <code>selectableRows</code> to <code>"multiple"</code> enables checkbox selection on each row.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SelectableTableDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="selectable-table" collapsible code={`import { useState, useEffect, useMemo } from "react";
+import { ResponsiveDataTable } from "@sistent/sistent";
+
+const columns = [
+  { name: "name", label: "Name" },
+  { name: "env", label: "Environment" },
+];
+
+const data = [
+  ["Alice", "production"],
+  ["Bob", "staging"],
+  ["Charlie", "development"],
+];
+
+export default function SelectableTable() {
+  const [tableCols, updateCols] = useState(columns);
+  const [columnVisibility, setColumnVisibility] = useState({});
+  const options = {
+    filter: false,
+    download: false,
+    print: false,
+    viewColumns: false,
+    selectableRows: "multiple",
+    responsive: "standard",
+    pagination: false,
+    search: false,
+    elevation: 1,
+  };
+
+  if (!mounted) return null;
+  return (
+    <ResponsiveDataTable
+      columns={columns}
+      data={data}
+      options={options}
+      tableCols={tableCols}
+      updateCols={updateCols}
+      columnVisibility={columnVisibility}
+      colViews={columnVisibility}
+    />
+  );
+}`} />
+</div>
+
+<a id="Paginated Table">
+  <h2>Paginated Table</h2>
+</a>
+
+<code>ResponsiveDataTable</code> from <code>@sistent/sistent</code> provides built-in pagination, column visibility, and responsive layout controls.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PaginatedTableDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="paginated-table" collapsible code={`import { useState, useEffect, useMemo } from "react";
+import { ResponsiveDataTable } from "@sistent/sistent";
+
+const columns = [
+  { name: "name", label: "Name" },
+  { name: "owner", label: "Owner" },
+  { name: "age", label: "Age" },
+  { name: "status", label: "Status" },
+];
+
+const data = Array.from({ length: 20 }, (_, i) => [
+  "service-" + (i + 1),
+  i % 3 === 0 ? "Alice" : i % 3 === 1 ? "Bob" : "Charlie",
+  (i + 1) + " months ago",
+  i % 2 === 0 ? "Running" : "Stopped",
+]);
+
+export default function PaginatedTable() {
+  const [tableCols, updateCols] = useState(columns);
+  const [columnVisibility, setColumnVisibility] = useState({});
+
+  const options = {
+    filter: false,
+    download: false,
+    print: false,
+    viewColumns: false,
+    selectableRows: "none",
+    responsive: "standard",
+    pagination: true,
+    rowsPerPage: 5,
+    rowsPerPageOptions: [5, 10, 20],
+    elevation: 1,
+  };
+
+  if (!mounted) return null;
+  return (
+    <ResponsiveDataTable
+      columns={columns}
+      data={data}
+      options={options}
+      tableCols={tableCols}
+      updateCols={updateCols}
+      columnVisibility={columnVisibility}
+      colViews={columnVisibility}
+    />
+  );
+}`} />
+</div>
