@@ -89,10 +89,15 @@ export const SelectableTableDemo = () => {
   ], []);
   const [tableCols, updateCols] = useState(columns);
   const [columnVisibility, setColumnVisibility] = useState({ name: true, env: true });
+  const [selectedRows, setSelectedRows] = useState([]);
   const options = {
     filter: false, download: false, print: false, viewColumns: false,
     selectableRows: "multiple", responsive: "standard", pagination: false,
     search: false, elevation: 1,
+    rowsSelected: selectedRows,
+    onRowSelectionChange: (current, allSelected) => {
+      setSelectedRows(allSelected.map((r) => r.dataIndex));
+    },
   };
   if (!mounted) return null;
   return (
