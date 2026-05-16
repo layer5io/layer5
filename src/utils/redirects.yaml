@@ -28,7 +28,7 @@ redirects:
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/learn/service-mesh-labs"
-    toPath: "/learn/kanvas-labs"
+    toPath: "/learn/cloud-native-labs"
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/meshery"
