@@ -15,7 +15,16 @@ const TermsWrapper = styled.section`
     margin: 0 auto;
     padding-left: 2px;
     margin-top: -20rem;
-    color: ${props => props.theme.whiteToBlack};
+    color: ${(props) => props.theme.whiteToBlack};
+
+    @media (min-width: 751px) and (max-width: 1536px) {
+      width: calc(100% - 22rem);
+      max-width: 900px;
+      margin-left: 20rem;
+      margin-right: 2rem;
+      margin-top: -20rem;
+    }
+
     @media (max-width: 750px) {
       margin-top: 0;
     }
@@ -25,11 +34,25 @@ const TermsWrapper = styled.section`
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: rgb(71,126,150);
-      background: linear-gradient(250deg, rgba(71,126,150,1) 0%, rgba(0,179,159,1) 35%, rgba(60,73,79,1) 100%);
+    background: rgb(71, 126, 150);
+    background: linear-gradient(
+      250deg,
+      rgba(71, 126, 150, 1) 0%,
+      rgba(0, 179, 159, 1) 35%,
+      rgba(60, 73, 79, 1) 100%
+    );
     padding: 3rem 0;
     h1 {
       color: white;
+    }
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    li {
+      color: ${(props) => props.theme.whiteToBlack};
     }
     @media (max-width: 680px) {
       padding: 2rem 0;
