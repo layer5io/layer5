@@ -20,77 +20,86 @@ import { ResourcesWrapper } from "../Resources.style.js";
 
 <ResourcesWrapper>
 
-### Introduction
+<h3>Introduction</h3>
 
-In this tutorial, we explore **Kubernetes Services** using Meshery Playground. Services provide stable network endpoints for a set of Pods, enabling reliable communication between components regardless of Pod restarts or rescheduling.
+<p>In this tutorial, we explore <strong>Kubernetes Services</strong> using Meshery Playground. Services provide stable network endpoints for a set of Pods, enabling reliable communication between components regardless of Pod restarts or rescheduling.</p>
 
-### Prerequisites
+<h3>Prerequisites</h3>
 
-- Completion of the [Exploring Kubernetes Pods with Meshery](/resources/tutorials/exploring-kubernetes-pods-with-meshery) tutorial.
-- Access to *Meshery Playground*.
+<ul>
+    <li>Completion of the <a href="/resources/tutorials/exploring-kubernetes-pods-with-meshery">Exploring Kubernetes Pods with Meshery</a> tutorial.</li>
+    <li>Access to <em>Meshery Playground</em>.</li>
+</ul>
+<h3>Lab Scenario</h3>
 
-### Lab Scenario
+<p>Create a Deployment and expose it using different Service types — ClusterIP, NodePort — through Meshery's visual canvas.</p>
 
-Create a Deployment and expose it using different Service types — ClusterIP, NodePort — through Meshery's visual canvas.
+<h3>Objective</h3>
 
-### Objective
+<p>Understand the different <strong>Kubernetes Service types</strong> and learn how to create and connect them to workloads visually using Meshery.</p>
 
-Understand the different **Kubernetes Service types** and learn how to create and connect them to workloads visually using Meshery.
+<h3>Steps</h3>
 
-### Steps
+<h4>Access Meshery Playground</h4>
 
-#### Access Meshery Playground
+<ol>
+    <li>Log in to <a href="https://play.meshery.io">Meshery Playground</a> and click <strong>Explore</strong> to open <em>Kanvas</em>.</li>
+    <li>Name your design (e.g., <code>kubernetes-services-lab</code>).</li>
+</ol>
+<h4>Create a Deployment</h4>
 
-1. Log in to [Meshery Playground](https://play.meshery.io) and click **Explore** to open *Kanvas*.
-2. Name your design (e.g., `kubernetes-services-lab`).
+<ol>
+    <li>Search for <strong>Deployment</strong> in Components and drag it to the canvas.</li>
+    <li>Configure it with:</li>
+</ol>   - <strong>name</strong>: <code>web-deployment</code>
+<p>- <strong>replicas</strong>: <code>2</code></p>
+<p>- Container image: <code>nginx:latest</code></p>
+<p>- Label: <code>app: web</code></p>
 
-#### Create a Deployment
+<h4>Create a ClusterIP Service</h4>
 
-1. Search for **Deployment** in Components and drag it to the canvas.
-2. Configure it with:
-   - **name**: `web-deployment`
-   - **replicas**: `2`
-   - Container image: `nginx:latest`
-   - Label: `app: web`
+<ol>
+    <li>Search for <strong>Service</strong> in Components and drag it to the canvas.</li>
+    <li>Click the service component and configure:</li>
+</ol>   - <strong>name</strong>: <code>web-clusterip</code>
+<p>- <strong>type</strong>: <code>ClusterIP</code> (default)</p>
+<p>- Add a Port: <strong>port</strong> <code>80</code>, <strong>targetPort</strong> <code>80</code></p>
+<p>- Add a Selector: <code>app: web</code></p>
+<ol>
+    <li>Connect the Service to the Deployment on the canvas using the relationship arrow.</li>
+</ol>
+<h4>Create a NodePort Service</h4>
 
-#### Create a ClusterIP Service
+<ol>
+    <li>Drag another <strong>Service</strong> component to the canvas.</li>
+    <li>Configure it:</li>
+</ol>   - <strong>name</strong>: <code>web-nodeport</code>
+<p>- <strong>type</strong>: <code>NodePort</code></p>
+<p>- Add a Port: <strong>port</strong> <code>80</code>, <strong>targetPort</strong> <code>80</code></p>
+<p>- Add a Selector: <code>app: web</code></p>
 
-3. Search for **Service** in Components and drag it to the canvas.
-4. Click the service component and configure:
-   - **name**: `web-clusterip`
-   - **type**: `ClusterIP` (default)
-   - Add a Port: **port** `80`, **targetPort** `80`
-   - Add a Selector: `app: web`
-5. Connect the Service to the Deployment on the canvas using the relationship arrow.
+<h4>Validate and Deploy</h4>
 
-#### Create a NodePort Service
+<ol>
+    <li>Click <strong>Validate</strong> to check for errors.</li>
+    <li>Click <strong>Deploy</strong> to apply all resources.</li>
+</ol>
+<h4>Visualize and Explore</h4>
 
-6. Drag another **Service** component to the canvas.
-7. Configure it:
-   - **name**: `web-nodeport`
-   - **type**: `NodePort`
-   - Add a Port: **port** `80`, **targetPort** `80`
-   - Add a Selector: `app: web`
+<ol>
+    <li>Switch to <strong>Visualize</strong> and filter by label <code>app: web</code>.</li>
+    <li>You should see the Deployment, its Pods, and both Services.</li>
+    <li>Click each Service in the <strong>Details</strong> tab to observe the ClusterIP assigned and the NodePort number.</li>
+</ol>
+<h4>Clean Up</h4>
 
-#### Validate and Deploy
+<ol>
+    <li>Use <strong>Undeploy</strong> to remove all resources.</li>
+</ol>
+<h3>Conclusion</h3>
 
-8. Click **Validate** to check for errors.
-9. Click **Deploy** to apply all resources.
+<p>You've successfully created and explored Kubernetes Services using Meshery Playground. You learned the difference between ClusterIP and NodePort service types and how to visually connect services to deployments.</p>
 
-#### Visualize and Explore
-
-10. Switch to **Visualize** and filter by label `app: web`.
-11. You should see the Deployment, its Pods, and both Services.
-12. Click each Service in the **Details** tab to observe the ClusterIP assigned and the NodePort number.
-
-#### Clean Up
-
-13. Use **Undeploy** to remove all resources.
-
-### Conclusion
-
-You've successfully created and explored Kubernetes Services using Meshery Playground. You learned the difference between ClusterIP and NodePort service types and how to visually connect services to deployments.
-
-> This tutorial is sourced from the [Meshery documentation](https://docs.meshery.io/guides/tutorials/kubernetes/kubernetes-services).
+<p><em>This tutorial is sourced from the <a href="https://docs.meshery.io/guides/tutorials/kubernetes/kubernetes-services">Meshery documentation</a>.</em></p>
 
 </ResourcesWrapper>

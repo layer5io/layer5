@@ -20,69 +20,76 @@ import { ResourcesWrapper } from "../Resources.style.js";
 
 <ResourcesWrapper>
 
-### Introduction
+<h3>Introduction</h3>
 
-[ArtifactHub](https://artifacthub.io/) is a web-based platform that enables discovery, installation, and publishing of cloud native packages. In this tutorial, we'll learn how to publish **Meshery Designs** to ArtifactHub, making your infrastructure patterns discoverable by the broader cloud native community.
+<a href="https://artifacthub.io/">ArtifactHub</a> is a web-based platform that enables discovery, installation, and publishing of cloud native packages. In this tutorial, we'll learn how to publish <strong>Meshery Designs</strong> to ArtifactHub, making your infrastructure patterns discoverable by the broader cloud native community.
 
-### Prerequisites
+<h3>Prerequisites</h3>
 
-- A [Meshery account](https://meshery.io/) with at least one saved design.
-- An [ArtifactHub account](https://artifacthub.io/).
-- A GitHub repository to host your design files.
+<ul>
+    <li>A <a href="https://meshery.io/">Meshery account</a> with at least one saved design.</li>
+    <li>An <a href="https://artifacthub.io/">ArtifactHub account</a>.</li>
+    <li>A GitHub repository to host your design files.</li>
+</ul>
+<h3>Lab Scenario</h3>
 
-### Lab Scenario
+<p>Export a Meshery Design and publish it to ArtifactHub as a discoverable cloud native artifact.</p>
 
-Export a Meshery Design and publish it to ArtifactHub as a discoverable cloud native artifact.
+<h3>Objective</h3>
 
-### Objective
+<p>Learn how to <strong>export a Meshery Design</strong> and <strong>publish it to ArtifactHub</strong> so that others can discover and reuse your infrastructure patterns.</p>
 
-Learn how to **export a Meshery Design** and **publish it to ArtifactHub** so that others can discover and reuse your infrastructure patterns.
+<h3>Steps</h3>
 
-### Steps
+<h4>1. Prepare Your Meshery Design</h4>
 
-#### 1. Prepare Your Meshery Design
+<ol>
+    <li>Log in to <a href="https://play.meshery.io">Meshery Playground</a> or your Meshery instance.</li>
+    <li>Open or create the design you want to publish.</li>
+    <li>Click <strong>Actions > Export</strong> to export the design.</li>
+    <li>Save the exported <code>.yaml</code> file to your local machine.</li>
+</ol>
+<h4>2. Create a GitHub Repository</h4>
 
-1. Log in to [Meshery Playground](https://play.meshery.io) or your Meshery instance.
-2. Open or create the design you want to publish.
-3. Click **Actions > Export** to export the design.
-4. Save the exported `.yaml` file to your local machine.
+<ol>
+    <li>Create a new public GitHub repository (e.g., <code>my-meshery-designs</code>).</li>
+    <li>Add your exported design <code>.yaml</code> file to the repository.</li>
+    <li>Create an <code>artifacthub-repo.yml</code> file in the repository root with the following content:</li>
+</ol>
+<p>``<code>yaml</p>
+<p>repositoryID: <your-artifacthub-repo-id></p>
+<p>owners:</p>
+<p>- name: Your Name</p>
+<p>email: your@email.com</p>
+</code>`<code>
 
-#### 2. Create a GitHub Repository
+<ol>
+    <li>Commit and push both files to the repository.</li>
+</ol>
+<h4>3. Register Your Repository on ArtifactHub</h4>
 
-5. Create a new public GitHub repository (e.g., `my-meshery-designs`).
-6. Add your exported design `.yaml` file to the repository.
-7. Create an `artifacthub-repo.yml` file in the repository root with the following content:
+<ol>
+    <li>Log in to <a href="https://artifacthub.io/">ArtifactHub</a>.</li>
+    <li>Click your profile icon and select <strong>Control Panel</strong>.</li>
+    <li>Click <strong>Add repository</strong>.</li>
+    <li>Fill in the details:</li>
+</ol>    - <strong>Kind</strong>: select </code>Meshery designs`
+<p>- <strong>Name</strong>: a display name for your repository</p>
+<p>- <strong>URL</strong>: the GitHub URL to the directory containing your designs</p>
+<ol>
+    <li>Click <strong>Add</strong> to register the repository.</li>
+</ol>
+<h4>4. Verify Publication</h4>
 
-```yaml
-repositoryID: <your-artifacthub-repo-id>
-owners:
-  - name: Your Name
-    email: your@email.com
-```
+<ol>
+    <li>ArtifactHub will scan your repository and index the designs within a few minutes.</li>
+    <li>Search for your design on <a href="https://artifacthub.io/">ArtifactHub</a> to confirm it is listed.</li>
+    <li>Click the listing to verify the description, links, and design metadata appear correctly.</li>
+</ol>
+<h3>Conclusion</h3>
 
-8. Commit and push both files to the repository.
+<p>You've successfully published a Meshery Design to ArtifactHub. Your infrastructure patterns are now discoverable by the cloud native community. Consider adding a README and proper metadata to your designs to improve their visibility and usability.</p>
 
-#### 3. Register Your Repository on ArtifactHub
-
-9. Log in to [ArtifactHub](https://artifacthub.io/).
-10. Click your profile icon and select **Control Panel**.
-11. Click **Add repository**.
-12. Fill in the details:
-    - **Kind**: select `Meshery designs`
-    - **Name**: a display name for your repository
-    - **URL**: the GitHub URL to the directory containing your designs
-13. Click **Add** to register the repository.
-
-#### 4. Verify Publication
-
-14. ArtifactHub will scan your repository and index the designs within a few minutes.
-15. Search for your design on [ArtifactHub](https://artifacthub.io/) to confirm it is listed.
-16. Click the listing to verify the description, links, and design metadata appear correctly.
-
-### Conclusion
-
-You've successfully published a Meshery Design to ArtifactHub. Your infrastructure patterns are now discoverable by the cloud native community. Consider adding a README and proper metadata to your designs to improve their visibility and usability.
-
-> This tutorial is sourced from the [Meshery documentation](https://docs.meshery.io/guides/tutorials/artifacthub/publish-to-artifacthub).
+<p><em>This tutorial is sourced from the <a href="https://docs.meshery.io/guides/tutorials/artifacthub/publish-to-artifacthub">Meshery documentation</a>.</em></p>
 
 </ResourcesWrapper>
