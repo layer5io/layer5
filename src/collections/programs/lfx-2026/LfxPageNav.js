@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { ArrowUpwardIcon } from "@sistent/sistent";
 import styled from "styled-components";
 
 const NavWrapper = styled.div`
@@ -130,7 +131,7 @@ const LfxPageNav = ({ items }) => {
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         aria-label="Back to top"
       >
-        &#8593;
+        <ArrowUpwardIcon style={{ fontSize: "1rem", fill: "white" }} />
       </BackToTopBtn>
     </>
   );
