@@ -78,7 +78,7 @@ const BlogList = ({
                   {searchedPosts.length > 0 &&
                     searchedPosts?.map(({ id, frontmatter, fields }, index) => (
                       <Col $xs={12} key={id}>
-                        <Card frontmatter={frontmatter} fields={fields} loading={index === 0 ? "eager" : "lazy"} fetchpriority={index === 0 ? "high" : "auto"} />
+                        <Card frontmatter={frontmatter} fields={fields} loading={index === 0 ? "eager" : "lazy"} fetchpriority={index === 0 ? "high" : "auto"} listView={true} />
                       </Col>
                     ))}
                   <Col>
