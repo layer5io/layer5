@@ -1,17 +1,35 @@
-# Cache static resources for 10 months
+# Default: no cache for HTML files (allow fresh content)
+/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# Cache immutable assets (with content hash) for 1 year
+/framework-*.js
+/app-*.js
 /*.js
 /*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache images and fonts for 1 year
 /*.woff2
 /*.webp
 /*.jpeg
 /*.webp
 /*.gif
 /*.svg
-  Cache-Control: public, max-age=25920000
+/images/*
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
 
-# Cache HTML files for 10 months
-/*.html
-  Cache-Control: public, max-age=25920000
+# Cache static files
+/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Security headers
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
 
 
 

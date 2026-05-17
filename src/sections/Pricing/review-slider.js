@@ -1,5 +1,5 @@
 
-import React, { useRef, useState, useLayoutEffect } from "react";
+import React, { useRef, useState, useLayoutEffect, useMemo, useCallback } from "react";
 import styled from "styled-components";
 import Customers from "../../reusecore/Blockquote/Blockquote-image";
 import Slider from "react-slick";
@@ -28,7 +28,7 @@ const settings = {
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 2000,
-
+  lazyLoad: "progressive", 
   responsive: [
     {
       breakpoint: 1300,
@@ -92,55 +92,63 @@ const Reviews = () => {
   const [isClient, setIsClient] = useState(false);
   const [slidesToShowState, setSlidesToShowState] = useState(null);
   const sliderRef = useRef(null);
+  const resizeTimeoutRef = useRef(null);
 
-  const mergedSettings = {
-    ...settings,
-    slidesToShow: slidesToShowState || 1,
-    slidesToScroll: 1,
-    responsive: []
-  };
-
-  const computeSlides = () => {
+  const computeSlides = useCallback(() => {
     const w = typeof window !== "undefined" ? (window.innerWidth || document.documentElement.clientWidth) : 1200;
     if (w <= 800) return 1;
     if (w <= 1024) return 2;
     return 3;
-  };
+  }, []);
+
+  const mergedSettings = useMemo(() => ({
+    ...settings,
+    slidesToShow: slidesToShowState || 1,
+    slidesToScroll: 1,
+    responsive: []
+  }), [slidesToShowState]);
+
+  const onResizeDebounced = useCallback(() => {
+    if (resizeTimeoutRef.current) {
+      clearTimeout(resizeTimeoutRef.current);
+    }
+    resizeTimeoutRef.current = setTimeout(() => {
+      const slides = computeSlides();
+      setSlidesToShowState((prev) => {
+        if (prev !== slides) return slides;
+        return prev;
+      });
+      if (sliderRef.current && sliderRef.current.innerSlider && typeof sliderRef.current.innerSlider.onWindowResized === "function") {
+        if (typeof requestIdleCallback !== "undefined") {
+          requestIdleCallback(() => {
+            if (sliderRef.current?.innerSlider?.onWindowResized) {
+              sliderRef.current.innerSlider.onWindowResized();
+            }
+          });
+        } else {
+          sliderRef.current.innerSlider.onWindowResized();
+        }
+      }
+    }, 200);
+  }, [computeSlides]);
 
   useLayoutEffect(() => {
-
     setIsClient(true);
     setSlidesToShowState(computeSlides());
 
-    let resizeTimeout = null;
-    const onResizeDebounced = () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        const slides = computeSlides();
-        setSlidesToShowState((prev) => {
-          if (prev !== slides) return slides;
-          return prev;
-        });
-        if (sliderRef.current && sliderRef.current.innerSlider && typeof sliderRef.current.innerSlider.onWindowResized === "function") {
-          sliderRef.current.innerSlider.onWindowResized();
-        }
-      }, 100);
-    };
-
     const onLoad = () => onResizeDebounced();
 
-    window.addEventListener("resize", onResizeDebounced);
+    window.addEventListener("resize", onResizeDebounced, { passive: true });
     window.addEventListener("load", onLoad);
-    const imgs = document.querySelectorAll(".slider img");
-    imgs.forEach((img) => img.addEventListener("load", onLoad));
 
     return () => {
       window.removeEventListener("resize", onResizeDebounced);
       window.removeEventListener("load", onLoad);
-      imgs.forEach((img) => img.removeEventListener("load", onLoad));
-      clearTimeout(resizeTimeout);
+      if (resizeTimeoutRef.current) {
+        clearTimeout(resizeTimeoutRef.current);
+      }
     };
-  }, []);
+  }, [computeSlides, onResizeDebounced]);
 
   if (!isClient || slidesToShowState === null) return null;
 
@@ -288,4 +296,4 @@ const Reviews = () => {
   );
 };
 
-export default Reviews;
+export default React.memo(Reviews);

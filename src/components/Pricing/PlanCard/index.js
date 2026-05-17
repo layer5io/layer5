@@ -18,7 +18,6 @@ const PlanCard = ({ planData, isYearly, currency }) => {
 
   const formatPrice = (price) => {
     const formattedPrice = formatAndConvertPrice(price, currency);
-    // Remove the currency symbol by extracting only the numeric part
     return parseFloat(formattedPrice.replace(/[^0-9.]/g, ""));
   };
   const getCurrencySymbol = (currency) => {
@@ -30,7 +29,6 @@ const PlanCard = ({ planData, isYearly, currency }) => {
       <Container>
         <Row $Hcenter className="plan-card-row">
           {planData.map((x) => (
-            // <Col $xl={4} $lg={2} $md={1} $sm={1} key={x.tier}>
             <Col key={x.tier} className="plan-card-col">
               <div className={`${x.featured ? "featured" : ""} pricing-table`}>
 
@@ -64,7 +62,6 @@ const PlanCard = ({ planData, isYearly, currency }) => {
 
 
                 <Button
-                  // disabled={x.tier === "Team Operator"}
                   $primary
                   className={
                     x.button[0] === "Coming Soon"
@@ -81,7 +78,6 @@ const PlanCard = ({ planData, isYearly, currency }) => {
                 <div className="pricing-features">
                   {x.summary &&
                     x.summary.map((t, index) => {
-                      // Check if this is the first add-on feature
                       const isFirstAddOn = t.categoryOrder === "add-on" &&
                         (index === 0 || x.summary[index - 1].categoryOrder !== "add-on");
 
@@ -115,4 +111,4 @@ const PlanCard = ({ planData, isYearly, currency }) => {
   );
 };
 
-export default PlanCard;
+export default React.memo(PlanCard);

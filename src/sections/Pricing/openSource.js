@@ -48,4 +48,4 @@ const OpenSourceBannerWrapper = styled.div`
     }
   }
 `;
-export default OpenSourceBanner;
+export default React.memo(OpenSourceBanner);
