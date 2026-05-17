@@ -11,8 +11,8 @@ export const CardWrapper = styled.div`
     box-shadow: 0px 2px 6px 0px ${(props) => props.theme.green00D3A9ToBlackTwo};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     display: flex;
-    flex-direction: column;
-    min-height: 23rem;
+    flex-direction: ${(props) => (props.$listView ? "row" : "column")};
+    min-height: ${(props) => (props.$listView ? "auto" : "23rem")};
 
     &:hover {
       box-shadow: 0px 2px 15px 4px ${(props) => props.theme.whiteNineToBlackOne};
@@ -57,9 +57,12 @@ export const CardWrapper = styled.div`
 
   .post-thumb-block {
     overflow: hidden;
-    height: 11.5rem;
-    border-top-right-radius: 0.5rem;
+    height: ${(props) => (props.$listView ? "8rem" : "11.5rem")};
+    width: ${(props) => (props.$listView ? "25%" : "auto")};
+    border-top-right-radius: ${(props) => (props.$listView ? "0" : "0.5rem")};
     border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: ${(props) => (props.$listView ? "0.5rem" : "0")};
+    flex-shrink: 0;
 
     .gatsby-image-wrapper,
     .old-gatsby-image-wrapper {
@@ -79,51 +82,75 @@ export const CardWrapper = styled.div`
       width: auto;
       height: auto;
       display: block;
-      object-fit: contain;
+      object-fit: ${(props) => (props.$listView ? "cover" : "contain")};
       object-position: center;
       margin: 0 auto;
     }
 
     @media screen and (max-width: 768px) {
-      height: 9.5rem;
+      height: ${(props) => (props.$listView ? "8rem" : "9.5rem")};
     }
   }
 
   .post-content-block {
-    padding: 1rem 2rem 1.5rem 2rem;
+    padding: ${(props) => (props.$listView ? "0.5rem 1.5rem" : "1rem 2rem 1.5rem 2rem")};
     height: auto;
-    min-height: 10rem;
+    min-height: ${(props) => (props.$listView ? "auto" : "10rem")};
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: ${(props) => (props.$listView ? "center" : "space-between")};
   }
 
-  @media screen and (max-width: 1200px) and (min-width: 992px) {
-    .post-thumb-block {
-      height: auto;
-      min-height: 10rem;
+  ${(props) => !props.$listView && `
+    @media screen and (max-width: 1200px) and (min-width: 992px) {
+      .post-thumb-block {
+        height: auto;
+        min-height: 10rem;
+      }
+      .post-content-block {
+        height: auto;
+        min-height: 10rem;
+      }
     }
 
-    .post-content-block {
-      height: auto;
-      min-height: 10rem;
+    @media screen and (max-width: 670px) and (min-width: 560px) {
+      .post-content-block {
+        height: auto;
+        min-height: 10rem;
+      }
     }
-  }
 
-  @media screen and (max-width: 670px) and (min-width: 560px) {
-    .post-content-block {
-      height: auto;
-      min-height: 10rem;
+    @media screen and (max-width: 350px) {
+      .post-content-block {
+        height: auto;
+        min-height: 10rem;
+      }
     }
-  }
+  `}
 
-  @media screen and (max-width: 350px) {
-    .post-content-block {
-      height: auto;
-      min-height: 10rem;
+  ${(props) => props.$listView && `
+    @media screen and (max-width: 576px) {
+      .post-block {
+        flex-direction: column;
+      }
+      .post-thumb-block {
+        width: 100%;
+        height: 12rem;
+        border-top-right-radius: 0.5rem;
+        border-bottom-left-radius: 0;
+      }
+      .post-thumb-block img {
+        object-fit: cover;
+        padding: 0;
+        margin: 0;
+      }
+      .post-content-block {
+        width: 100%;
+        padding: 0.75rem 0.5rem;
+      }
     }
-  }
+  `}
 
   .post-title {
     font-size: 1.4rem;
@@ -142,13 +169,14 @@ export const CardWrapper = styled.div`
   .post-meta-block {
     height: auto;
     display: flex;
+    flex-direction: ${(props) => (props.$listView ? "row-reverse" : "row")};
     margin-bottom: 0.5rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 
     .author {
-      text-align: end;
+      text-align: ${(props) => (props.$listView ? "start" : "end")};
       overflow: hidden;
       text-overflow: ellipsis;
     }
