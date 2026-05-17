@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 
 const NavWrapper = styled.div`
@@ -71,9 +71,9 @@ const BackToTopBtn = styled.button`
   color: white;
   border: none;
   border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  font-size: 1.2rem;
+  width: 34px;
+  height: 34px;
+  font-size: 1rem;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   display: ${(props) => (props.visible ? "flex" : "none")};
@@ -87,6 +87,7 @@ const BackToTopBtn = styled.button`
 const LfxPageNav = ({ items }) => {
   const [open, setOpen] = useState(false);
   const [showTop, setShowTop] = useState(false);
+  const navRef = useRef(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -97,10 +98,19 @@ const LfxPageNav = ({ items }) => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <>
-      <NavWrapper>
+      <NavWrapper ref={navRef}>
         <DropdownToggle open={open} onClick={() => setOpen((o) => !o)}>
           On this page <span>&#9662;</span>
         </DropdownToggle>
