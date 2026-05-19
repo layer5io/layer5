@@ -52,7 +52,7 @@
     "@rjsf/mui": "^6.5.2",
     "@rjsf/utils": "^6.5.2",
     "@rjsf/validator-ajv8": "^6.5.2",
-    "@sistent/sistent": "^0.21.11",
+    "@sistent/sistent": "^0.21.12",
     "@svgr/webpack": "^8.0.1",
     "axios": "^1.13.2",
     "babel-plugin-styled-components": "^2.1.4",
