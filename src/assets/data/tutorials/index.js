@@ -202,6 +202,19 @@ const data = [
             },
         ],
     },
+    {
+        date: "2026-05-01",
+        topic: "Meshery Relationships",
+        resources: {
+            recording: "https://www.youtube.com/live/IJ0wtrQWxhw"
+        },
+        presenters: [
+            {
+                link: "/community/members/yash-vilas-mahakal",
+                name: "Yash Vilas Mahakal"
+            },
+        ],
+    },
 ];
 
 export default data;
