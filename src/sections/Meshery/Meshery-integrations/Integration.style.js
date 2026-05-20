@@ -32,8 +32,6 @@ export const HoneycombGrid = styled.div`
     justify-content: center;
   }
 
-
-
   ul {
     margin: 2.5rem 0 0 0;
     padding-left: 50px;
@@ -219,10 +217,9 @@ export const CategoryFilterBar = styled.div`
       scroll-behavior: smooth;
       -webkit-overflow-scrolling: touch;
       scroll-snap-type: x proximity;
-      padding: 0.5rem 0.25rem;
-      margin: 0 -0.5rem;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
+      gap: 0.625rem;
+      padding: 0.5rem 1.5rem;
+      margin: 0 -1.5rem;
 
       /* Hide scrollbar but keep functionality */
       scrollbar-width: none;
@@ -233,7 +230,33 @@ export const CategoryFilterBar = styled.div`
     }
   }
 
-  /* Overflow fade indicators for mobile scroll */
+  /* Left overflow fade indicator for mobile scroll */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 2.5rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+
+    @media screen and (max-width: 768px) {
+      opacity: 1;
+      background: linear-gradient(
+        to left,
+        transparent,
+        ${(props) =>
+          props.theme.DarkTheme
+            ? "rgba(18,18,18,0.85)"
+            : "rgba(255,255,255,0.85)"}
+      );
+    }
+  }
+
+  /* Right overflow fade indicator for mobile scroll */
   &::after {
     content: "";
     position: absolute;
@@ -244,6 +267,7 @@ export const CategoryFilterBar = styled.div`
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: 2;
 
     @media screen and (max-width: 768px) {
       opacity: 1;
