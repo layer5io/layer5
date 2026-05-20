@@ -81,9 +81,9 @@ export const SelectableTableDemo = () => {
     { name: "env", label: "Environment" },
   ], []);
   const data = useMemo(() => [
-    ["Alice", "production"],
-    ["Bob", "staging"],
-    ["Charlie", "development"],
+    { name: "Alice", env: "production" },
+    { name: "Bob", env: "staging" },
+    { name: "Charlie", env: "development" },
   ], []);
   const [tableCols, updateCols] = useState(columns);
   const [columnVisibility, setColumnVisibility] = useState({ name: true, env: true });
