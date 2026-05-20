@@ -74,33 +74,28 @@ export const SortableTableDemo = () => {
 
 
 export const SelectableTableDemo = () => {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-  const columns = useMemo(() => [
+  const columns = [
     { name: "name", label: "Name" },
     { name: "env", label: "Environment" },
-  ], []);
-  const data = useMemo(() => [
+  ];
+  const data = [
     { name: "Alice", env: "production" },
     { name: "Bob", env: "staging" },
     { name: "Charlie", env: "development" },
-  ], []);
-  const [tableCols, updateCols] = useState(columns);
-  const [columnVisibility, setColumnVisibility] = useState({ name: true, env: true });
+  ];
   const options = {
     filter: false, download: false, print: false, viewColumns: false,
     selectableRows: "multiple", responsive: "standard", pagination: false,
     search: false, elevation: 1,
   };
-  if (!mounted) return null;
   return (
     <ResponsiveDataTable
-      columns={tableCols}
+      columns={columns}
       data={data}
       options={options}
-      tableCols={tableCols}
-      updateCols={updateCols}
-      columnVisibility={columnVisibility}
+      tableCols={columns}
+      updateCols={() => {}}
+      columnVisibility={{ name: true, env: true }}
     />
   );
 };
