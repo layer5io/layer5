@@ -89,6 +89,7 @@ h2, h5{
     padding: 8px 48px;
 }
 
+.price-table-head th,
 .price-table-head td {
     position: sticky;
     top: 0;
