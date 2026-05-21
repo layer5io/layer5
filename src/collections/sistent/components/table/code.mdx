@@ -5,7 +5,7 @@ description: A table displays structured data in rows and columns, enabling user
 ---
 
 import { useState } from "react";
-import { ResponsiveDataTable, NoSsr } from "@sistent/sistent";
+import { ResponsiveDataTable, NoSsr, Table, TableHead, TableBody, TableRow, TableCell, Checkbox, TableContainer, Paper } from "@sistent/sistent";
 
 export const BasicTableDemo = () => {
   const columns = [
@@ -71,38 +71,63 @@ export const SortableTableDemo = () => {
 };
 
 export const SelectableTableDemo = () => {
-  const columns = [
-    { name: "name", label: "Name" },
-    { name: "env", label: "Environment" },
-  ];
   const data = [
-    ["Alice", "production"],
-    ["Bob", "staging"],
-    ["Charlie", "development"],
+    { name: "Alice", env: "production" },
+    { name: "Bob", env: "staging" },
+    { name: "Charlie", env: "development" },
   ];
-  const [tableCols, updateCols] = useState(columns);
-  const [columnVisibility, setColumnVisibility] = useState({});
-  const [rowsSelected, setRowsSelected] = useState([]);
-  const options = {
-    filter: false, download: false, print: false, viewColumns: false,
-    selectableRows: "multiple", responsive: "standard", pagination: false,
-    search: false, elevation: 1,
-    rowsSelected: rowsSelected,
-    onRowSelectionChange: (currentRowsSelected, allRowsSelected) => {
-      setRowsSelected(allRowsSelected.map((row) => row.dataIndex));
-    },
+  const [selected, setSelected] = useState([]);
+  const isSelected = (index) => selected.indexOf(index) !== -1;
+  const handleSelectAll = (event) => {
+    if (event.target.checked) {
+      setSelected(data.map((_, i) => i));
+    } else {
+      setSelected([]);
+    }
+  };
+  const handleSelect = (index) => {
+    const pos = selected.indexOf(index);
+    if (pos === -1) {
+      setSelected([...selected, index]);
+    } else {
+      setSelected(selected.filter((i) => i !== index));
+    }
   };
   return (
-    <NoSsr>
-      <ResponsiveDataTable
-        columns={columns}
-        data={data}
-        options={options}
-        tableCols={tableCols}
-        updateCols={updateCols}
-        columnVisibility={columnVisibility}
-      />
-    </NoSsr>
+    <TableContainer component={Paper} elevation={1}>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell padding="checkbox">
+              <Checkbox
+                indeterminate={selected.length > 0 && selected.length < data.length}
+                checked={data.length > 0 && selected.length === data.length}
+                onChange={handleSelectAll}
+              />
+            </TableCell>
+            <TableCell><strong>Name</strong></TableCell>
+            <TableCell><strong>Environment</strong></TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {data.map((row, index) => (
+            <TableRow
+              key={row.name}
+              hover
+              selected={isSelected(index)}
+              onClick={() => handleSelect(index)}
+              sx={{ cursor: "pointer" }}
+            >
+              <TableCell padding="checkbox">
+                <Checkbox checked={isSelected(index)} />
+              </TableCell>
+              <TableCell>{row.name}</TableCell>
+              <TableCell>{row.env}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 };
 
@@ -262,7 +287,7 @@ export default function SortableTable() {
   <h2>Selectable Rows Table</h2>
 </a>
 
-Setting <code>selectableRows</code> to <code>"multiple"</code> enables checkbox selection on each row.
+Place a <code>Checkbox</code> in the first cell of each row and in the header row for select-all behaviour.
 
 <div className="showcase">
   <div className="items">
@@ -271,50 +296,80 @@ Setting <code>selectableRows</code> to <code>"multiple"</code> enables checkbox 
     </ThemeWrapper>
   </div>
   <CodeBlock name="selectable-table" collapsible code={`import { useState } from "react";
-import { ResponsiveDataTable, NoSsr } from "@sistent/sistent";
-
-const columns = [
-  { name: "name", label: "Name" },
-  { name: "env", label: "Environment" },
-];
+import {
+  Table, TableHead, TableBody, TableRow, TableCell,
+  Checkbox, TableContainer, Paper,
+} from "@sistent/sistent";
 
 const data = [
-  ["Alice", "production"],
-  ["Bob", "staging"],
-  ["Charlie", "development"],
+  { name: "Alice", env: "production" },
+  { name: "Bob", env: "staging" },
+  { name: "Charlie", env: "development" },
 ];
 
 export default function SelectableTable() {
-  const [tableCols, updateCols] = useState(columns);
-  const [columnVisibility, setColumnVisibility] = useState({});
-  const [rowsSelected, setRowsSelected] = useState([]);
-  const options = {
-    filter: false,
-    download: false,
-    print: false,
-    viewColumns: false,
-    selectableRows: "multiple",
-    responsive: "standard",
-    pagination: false,
-    search: false,
-    elevation: 1,
-    rowsSelected: rowsSelected,
-    onRowSelectionChange: (currentRowsSelected, allRowsSelected) => {
-      setRowsSelected(allRowsSelected.map((row) => row.dataIndex));
-    },
+  const [selected, setSelected] = useState([]);
+
+  const isSelected = (index) => selected.indexOf(index) !== -1;
+
+  const handleSelectAll = (event) => {
+    if (event.target.checked) {
+      setSelected(data.map((_, i) => i));
+    } else {
+      setSelected([]);
+    }
+  };
+
+  const handleSelect = (index) => {
+    const pos = selected.indexOf(index);
+    if (pos === -1) {
+      setSelected([...selected, index]);
+    } else {
+      setSelected(selected.filter((i) => i !== index));
+    }
   };
 
   return (
-    <NoSsr>
-      <ResponsiveDataTable
-        columns={columns}
-        data={data}
-        options={options}
-        tableCols={tableCols}
-        updateCols={updateCols}
-        columnVisibility={columnVisibility}
-      />
-    </NoSsr>
+    <TableContainer component={Paper} elevation={1}>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell padding="checkbox">
+              <Checkbox
+                indeterminate={
+                  selected.length > 0 &&
+                  selected.length < data.length
+                }
+                checked={
+                  data.length > 0 &&
+                  selected.length === data.length
+                }
+                onChange={handleSelectAll}
+              />
+            </TableCell>
+            <TableCell>Name</TableCell>
+            <TableCell>Environment</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {data.map((row, index) => (
+            <TableRow
+              key={row.name}
+              hover
+              selected={isSelected(index)}
+              onClick={() => handleSelect(index)}
+              sx={{ cursor: "pointer" }}
+            >
+              <TableCell padding="checkbox">
+                <Checkbox checked={isSelected(index)} />
+              </TableCell>
+              <TableCell>{row.name}</TableCell>
+              <TableCell>{row.env}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 }`} />
 </div>
