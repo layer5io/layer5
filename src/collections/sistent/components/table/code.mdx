@@ -4,12 +4,10 @@ component: table
 description: A table displays structured data in rows and columns, enabling users to scan, compare, and interact with information efficiently.
 ---
 
-import { useState, useEffect, useMemo } from "react";
-import { ResponsiveDataTable } from "@sistent/sistent";
+import { useState } from "react";
+import { ResponsiveDataTable, NoSsr } from "@sistent/sistent";
 
 export const BasicTableDemo = () => {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
   const columns = [
     { name: "name", label: "Name" },
     { name: "env", label: "Environment" },
@@ -27,22 +25,21 @@ export const BasicTableDemo = () => {
     selectableRows: "none", responsive: "standard", pagination: false,
     search: false, elevation: 1,
   };
-  if (!mounted) return null;
   return (
-    <ResponsiveDataTable
-      columns={columns}
-      data={data}
-      options={options}
-      tableCols={tableCols}
-      updateCols={updateCols}
-      columnVisibility={columnVisibility}
-    />
+    <NoSsr>
+      <ResponsiveDataTable
+        columns={columns}
+        data={data}
+        options={options}
+        tableCols={tableCols}
+        updateCols={updateCols}
+        columnVisibility={columnVisibility}
+      />
+    </NoSsr>
   );
 };
 
 export const SortableTableDemo = () => {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
   const columns = [
     { name: "name", label: "Name" },
     { name: "version", label: "Version" },
@@ -59,23 +56,21 @@ export const SortableTableDemo = () => {
     selectableRows: "none", responsive: "standard", pagination: false,
     search: false, sort: true, elevation: 1,
   };
-  if (!mounted) return null;
   return (
-    <ResponsiveDataTable
-      columns={columns}
-      data={data}
-      options={options}
-      tableCols={tableCols}
-      updateCols={updateCols}
-      columnVisibility={columnVisibility}
-    />
+    <NoSsr>
+      <ResponsiveDataTable
+        columns={columns}
+        data={data}
+        options={options}
+        tableCols={tableCols}
+        updateCols={updateCols}
+        columnVisibility={columnVisibility}
+      />
+    </NoSsr>
   );
 };
 
-
 export const SelectableTableDemo = () => {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
   const columns = [
     { name: "name", label: "Name" },
     { name: "env", label: "Environment" },
@@ -97,22 +92,21 @@ export const SelectableTableDemo = () => {
       setRowsSelected(allRowsSelected.map((row) => row.dataIndex));
     },
   };
-  if (!mounted) return null;
   return (
-    <ResponsiveDataTable
-      columns={columns}
-      data={data}
-      options={options}
-      tableCols={tableCols}
-      updateCols={updateCols}
-      columnVisibility={columnVisibility}
-    />
+    <NoSsr>
+      <ResponsiveDataTable
+        columns={columns}
+        data={data}
+        options={options}
+        tableCols={tableCols}
+        updateCols={updateCols}
+        columnVisibility={columnVisibility}
+      />
+    </NoSsr>
   );
 };
 
 export const PaginatedTableDemo = () => {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
   const columns = [
     { name: "name", label: "Name" },
     { name: "owner", label: "Owner" },
@@ -132,16 +126,17 @@ export const PaginatedTableDemo = () => {
     selectableRows: "none", responsive: "standard", pagination: true,
     rowsPerPage: 5, rowsPerPageOptions: [5, 10, 20], elevation: 1,
   };
-  if (!mounted) return null;
   return (
-    <ResponsiveDataTable
-      columns={columns}
-      data={data}
-      options={options}
-      tableCols={tableCols}
-      updateCols={updateCols}
-      columnVisibility={columnVisibility}
-    />
+    <NoSsr>
+      <ResponsiveDataTable
+        columns={columns}
+        data={data}
+        options={options}
+        tableCols={tableCols}
+        updateCols={updateCols}
+        columnVisibility={columnVisibility}
+      />
+    </NoSsr>
   );
 };
 
@@ -159,8 +154,8 @@ A minimal read-only table with a header row and data rows.
       <BasicTableDemo />
     </ThemeWrapper>
   </div>
-  <CodeBlock name="basic-table" collapsible code={`import { useState, useEffect, useMemo } from "react";
-import { ResponsiveDataTable } from "@sistent/sistent";
+  <CodeBlock name="basic-table" collapsible code={`import { useState } from "react";
+import { ResponsiveDataTable, NoSsr } from "@sistent/sistent";
 
 const columns = [
   { name: "name", label: "Name" },
@@ -190,16 +185,17 @@ export default function BasicTable() {
     elevation: 1,
   };
 
-  if (!mounted) return null;
   return (
-    <ResponsiveDataTable
-      columns={columns}
-      data={data}
-      options={options}
-      tableCols={tableCols}
-      updateCols={updateCols}
-      columnVisibility={columnVisibility}
-    />
+    <NoSsr>
+      <ResponsiveDataTable
+        columns={columns}
+        data={data}
+        options={options}
+        tableCols={tableCols}
+        updateCols={updateCols}
+        columnVisibility={columnVisibility}
+      />
+    </NoSsr>
   );
 }`} />
 </div>
@@ -216,8 +212,8 @@ Clicking a column header sorts rows ascending or descending by that column.
       <SortableTableDemo />
     </ThemeWrapper>
   </div>
-  <CodeBlock name="sortable-table" collapsible code={`import { useState, useEffect, useMemo } from "react";
-import { ResponsiveDataTable } from "@sistent/sistent";
+  <CodeBlock name="sortable-table" collapsible code={`import { useState } from "react";
+import { ResponsiveDataTable, NoSsr } from "@sistent/sistent";
 
 const columns = [
   { name: "name", label: "Name" },
@@ -247,16 +243,17 @@ export default function SortableTable() {
     elevation: 1,
   };
 
-  if (!mounted) return null;
   return (
-    <ResponsiveDataTable
-      columns={columns}
-      data={data}
-      options={options}
-      tableCols={tableCols}
-      updateCols={updateCols}
-      columnVisibility={columnVisibility}
-    />
+    <NoSsr>
+      <ResponsiveDataTable
+        columns={columns}
+        data={data}
+        options={options}
+        tableCols={tableCols}
+        updateCols={updateCols}
+        columnVisibility={columnVisibility}
+      />
+    </NoSsr>
   );
 }`} />
 </div>
@@ -273,8 +270,8 @@ Setting <code>selectableRows</code> to <code>"multiple"</code> enables checkbox 
       <SelectableTableDemo />
     </ThemeWrapper>
   </div>
-  <CodeBlock name="selectable-table" collapsible code={`import { useState, useEffect, useMemo } from "react";
-import { ResponsiveDataTable } from "@sistent/sistent";
+  <CodeBlock name="selectable-table" collapsible code={`import { useState } from "react";
+import { ResponsiveDataTable, NoSsr } from "@sistent/sistent";
 
 const columns = [
   { name: "name", label: "Name" },
@@ -308,14 +305,16 @@ export default function SelectableTable() {
   };
 
   return (
-    <ResponsiveDataTable
-      columns={columns}
-      data={data}
-      options={options}
-      tableCols={tableCols}
-      updateCols={updateCols}
-      columnVisibility={columnVisibility}
-    />
+    <NoSsr>
+      <ResponsiveDataTable
+        columns={columns}
+        data={data}
+        options={options}
+        tableCols={tableCols}
+        updateCols={updateCols}
+        columnVisibility={columnVisibility}
+      />
+    </NoSsr>
   );
 }`} />
 </div>
@@ -332,8 +331,8 @@ export default function SelectableTable() {
       <PaginatedTableDemo />
     </ThemeWrapper>
   </div>
-  <CodeBlock name="paginated-table" collapsible code={`import { useState, useEffect, useMemo } from "react";
-import { ResponsiveDataTable } from "@sistent/sistent";
+  <CodeBlock name="paginated-table" collapsible code={`import { useState } from "react";
+import { ResponsiveDataTable, NoSsr } from "@sistent/sistent";
 
 const columns = [
   { name: "name", label: "Name" },
@@ -366,16 +365,17 @@ export default function PaginatedTable() {
     elevation: 1,
   };
 
-  if (!mounted) return null;
   return (
-    <ResponsiveDataTable
-      columns={columns}
-      data={data}
-      options={options}
-      tableCols={tableCols}
-      updateCols={updateCols}
-      columnVisibility={columnVisibility}
-    />
+    <NoSsr>
+      <ResponsiveDataTable
+        columns={columns}
+        data={data}
+        options={options}
+        tableCols={tableCols}
+        updateCols={updateCols}
+        columnVisibility={columnVisibility}
+      />
+    </NoSsr>
   );
 }`} />
 </div>
