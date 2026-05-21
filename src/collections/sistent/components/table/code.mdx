@@ -87,10 +87,15 @@ export const SelectableTableDemo = () => {
   ];
   const [tableCols, updateCols] = useState(columns);
   const [columnVisibility, setColumnVisibility] = useState({});
+  const [rowsSelected, setRowsSelected] = useState([]);
   const options = {
     filter: false, download: false, print: false, viewColumns: false,
     selectableRows: "multiple", responsive: "standard", pagination: false,
     search: false, elevation: 1,
+    rowsSelected: rowsSelected,
+    onRowSelectionChange: (currentRowsSelected, allRowsSelected) => {
+      setRowsSelected(allRowsSelected.map((row) => row.dataIndex));
+    },
   };
   if (!mounted) return null;
   return (
@@ -285,6 +290,7 @@ const data = [
 export default function SelectableTable() {
   const [tableCols, updateCols] = useState(columns);
   const [columnVisibility, setColumnVisibility] = useState({});
+  const [rowsSelected, setRowsSelected] = useState([]);
   const options = {
     filter: false,
     download: false,
@@ -295,9 +301,12 @@ export default function SelectableTable() {
     pagination: false,
     search: false,
     elevation: 1,
+    rowsSelected: rowsSelected,
+    onRowSelectionChange: (currentRowsSelected, allRowsSelected) => {
+      setRowsSelected(allRowsSelected.map((row) => row.dataIndex));
+    },
   };
 
-  if (!mounted) return null;
   return (
     <ResponsiveDataTable
       columns={columns}
