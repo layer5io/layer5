@@ -78,11 +78,11 @@ export const SelectableTableDemo = () => {
   ];
   const [selected, setSelected] = useState([]);
   const isSelected = (index) => selected.indexOf(index) !== -1;
-  const handleSelectAll = (event) => {
-    if (event.target.checked) {
-      setSelected(data.map((_, i) => i));
-    } else {
+  const handleSelectAll = () => {
+    if (selected.length === data.length) {
       setSelected([]);
+    } else {
+      setSelected(data.map((_, i) => i));
     }
   };
   const handleSelect = (index) => {
@@ -102,7 +102,7 @@ export const SelectableTableDemo = () => {
               <Checkbox
                 indeterminate={selected.length > 0 && selected.length < data.length}
                 checked={data.length > 0 && selected.length === data.length}
-                onChange={handleSelectAll}
+                onClick={handleSelectAll}
               />
             </TableCell>
             <TableCell><strong>Name</strong></TableCell>
@@ -312,11 +312,11 @@ export default function SelectableTable() {
 
   const isSelected = (index) => selected.indexOf(index) !== -1;
 
-  const handleSelectAll = (event) => {
-    if (event.target.checked) {
-      setSelected(data.map((_, i) => i));
-    } else {
+  const handleSelectAll = () => {
+    if (selected.length === data.length) {
       setSelected([]);
+    } else {
+      setSelected(data.map((_, i) => i));
     }
   };
 
@@ -344,7 +344,7 @@ export default function SelectableTable() {
                   data.length > 0 &&
                   selected.length === data.length
                 }
-                onChange={handleSelectAll}
+                onClick={handleSelectAll}
               />
             </TableCell>
             <TableCell>Name</TableCell>
