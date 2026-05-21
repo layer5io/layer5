@@ -272,9 +272,15 @@ const Navigation = () => {
   }, [expand]);
 
   useEffect(() => {
-    window.addEventListener("scroll", () =>
-      window.scrollY > 50 ? setScroll(true) : setScroll(false),
-    );
+    const handleScroll = () => {
+      window.scrollY > 50 ? setScroll(true) : setScroll(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const openDropDown = () => {
@@ -470,12 +476,12 @@ const Navigation = () => {
               <button
                 className="avatar-container"
                 style={{
-                  backgroundImage: `url(${userData.avatar_url})`,
+                  backgroundImage: `url(${userData.avatarUrl})`,
                   backgroundSize: "cover",
                 }}
                 onClick={() => setDropDown((prev) => !prev)}
               >
-                {!userData.avatar_url && (
+                {!userData.avatarUrl && (
                   <DefaultAvatar className="default_avatar" />
                 )}
               </button>

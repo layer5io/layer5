@@ -1,6 +1,7 @@
 const DEFAULT_LITE_BUILD_PROFILE = "core";
 
 const LITE_BUILD_PROFILES = Object.freeze({
+  blog: ["members", "integrations", "news", "events", "resources"],
   content: ["members", "integrations"],
   core: ["members", "integrations", "blog", "news", "events", "resources"],
 });
