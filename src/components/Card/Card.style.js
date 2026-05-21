@@ -74,14 +74,11 @@ export const CardWrapper = styled.div`
 
     .gatsby-image-wrapper img,
     .old-gatsby-image-wrapper img {
-      max-width: 100%;
-      max-height: 100%;
-      width: auto;
-      height: auto;
+      width: 100%;
+      height: 100%;
       display: block;
-      object-fit: contain;
+      object-fit: cover;
       object-position: center;
-      margin: 0 auto;
     }
 
     @media screen and (max-width: 768px) {
