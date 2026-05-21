@@ -102,7 +102,7 @@ export const SelectableTableDemo = () => {
               <Checkbox
                 indeterminate={selected.length > 0 && selected.length < data.length}
                 checked={data.length > 0 && selected.length === data.length}
-                onClick={handleSelectAll}
+                onChange={handleSelectAll}
               />
             </TableCell>
             <TableCell><strong>Name</strong></TableCell>
@@ -344,7 +344,7 @@ export default function SelectableTable() {
                   data.length > 0 &&
                   selected.length === data.length
                 }
-                onClick={handleSelectAll}
+                onChange={handleSelectAll}
               />
             </TableCell>
             <TableCell>Name</TableCell>
