@@ -70,7 +70,8 @@ export const CareerWrapper = styled.div`
   }
   color: ${(props) => props.theme.whiteEightToBlack};
   h2,
-  h3 {
-    color: ${(props) => props.theme.whiteEightToBlack};
+  h3,
+  h5 {
+    color: ${(props) => props.props.theme.text};
   }
 `;
