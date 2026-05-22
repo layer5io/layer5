@@ -4,13 +4,11 @@ import List_Icon from "../../assets/images/careers/list-icon.svg";
 export const CareerWrapper = styled.div`
   .body-sections {
     position: relative;
-    color: ${(props) => props.theme.whiteEightToBlack};
     p {
       margin-top: 0.25rem;
     }
     h3 {
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-      color: ${(props) => props.theme.text};
     }
   }
   .body-headers {
@@ -26,7 +24,6 @@ export const CareerWrapper = styled.div`
       height: 0.2rem;
       border-bottom: 0.25rem solid ${(props) => props.theme.secondaryColor};
       border-radius: 0.2rem;
-      color: ${(props) => props.theme.text};
     }
   }
   @media screen and (max-width: 992px) {
@@ -40,12 +37,8 @@ export const CareerWrapper = styled.div`
     margin-top: 5rem;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    color: ${(props) => props.theme.whiteEightToBlack};
     .qualification-col {
       padding: 0 0.75rem 0 0;
-    }
-    .body-headers {
-      color: ${(props) => props.theme.text};
     }
   }
   li {
@@ -57,7 +50,6 @@ export const CareerWrapper = styled.div`
       position: absolute;
       margin: 0rem 0rem 0rem -2.8rem;
     }
-    color: ${(props) => props.theme.whiteEightToBlack};
   }
   .job-details-footer {
     margin: 1rem 0;
@@ -70,11 +62,11 @@ export const CareerWrapper = styled.div`
       h5 {
         font-weight: 600;
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        color: ${(props) => props.theme.text};
       }
       p {
         margin: 0 0 0 0.35rem;
       }
     }
   }
+  color: ${(props) => props.theme.text};
 `;
