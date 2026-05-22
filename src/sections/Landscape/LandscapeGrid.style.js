@@ -521,7 +521,8 @@ export const LandscapePageWrapper = styled.div`
 		display: flex;
 		padding: .7rem;
 		text-align: left;
-		margin-left: auto;
+		margin: auto;
+		width: fit-content;
 		vertical-align: middle;
 		border: 1px ${props => props.theme.primaryColor};
 		background-color: ${props => props.theme.darkJungleGreenColor};
