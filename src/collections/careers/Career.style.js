@@ -72,6 +72,6 @@ export const CareerWrapper = styled.div`
   h2,
   h3,
   h5 {
-    color: ${(props) => props.props.theme.text};
+    color: ${(props) => props.theme.text};
   }
 `;
