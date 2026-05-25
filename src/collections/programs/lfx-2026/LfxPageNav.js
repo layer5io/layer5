@@ -107,12 +107,7 @@ const LfxPageNav = ({ items }) => {
         <NavList>
           {items.map((item) => (
             <li key={item.href}>
-              
-                href={item.href}
-                className={activeHref === item.href ? "active" : ""}
-              >
-                {item.label}
-              </a>
+              <a href={item.href} className={activeHref === item.href ? "active" : ""}>{item.label}</a>
             </li>
           ))}
         </NavList>
