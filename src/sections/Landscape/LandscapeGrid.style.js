@@ -521,6 +521,7 @@ export const LandscapePageWrapper = styled.div`
 		display: flex;
 		padding: .7rem;
 		text-align: left;
+		margin-top: 0.5rem;
 		margin: auto;
 		width: fit-content;
 		vertical-align: middle;
