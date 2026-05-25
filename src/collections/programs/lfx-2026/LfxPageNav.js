@@ -4,15 +4,15 @@ import styled from "styled-components";
 
 const NavCard = styled.nav`
   position: sticky;
-  top: 120px;
-  flex: 0 0 220px;
-  width: 220px;
+  top: 10rem;
+  flex: 0 0 250px;
+  width: 250px;
   height: fit-content;
   background: ${(props) => props.theme.grey1D1D1DToGreyFAFAFA};
   border: 1px solid ${(props) => props.theme.grey1D1817ToGreyE6E6E6};
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  padding: 16px 0 12px 0;
+  border-radius: 7px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+  padding: 1rem;
   z-index: 99;
   @media (max-width: 900px) {
     display: none;
@@ -20,58 +20,53 @@ const NavCard = styled.nav`
 `;
 
 const NavTitle = styled.div`
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: 1rem;
+  font-weight: 600;
   color: ${(props) => props.theme.whiteToBlack};
-  padding: 0 16px 10px 16px;
-  border-bottom: 1px solid ${(props) => props.theme.grey1D1817ToGreyE6E6E6};
-  margin-bottom: 6px;
+  margin-bottom: 0.5rem;
 `;
 
 const NavList = styled.ul`
-  list-style: none;
+  list-style: none !important;
   margin: 0;
-  padding: 0;
+  padding-left: 1rem;
+  li {
+    list-style: none !important;
+    margin-bottom: 0.5rem;
+  }
   li a {
     display: block;
-    padding: 6px 16px;
     font-size: 0.875rem;
     color: ${(props) => props.theme.whiteToBlack};
     text-decoration: none;
-    border-left: 2px solid transparent;
-    transition: all 0.15s ease;
     &:hover {
       color: #00b39f;
-      border-left: 2px solid #00b39f;
-      background: #00b39f11;
+      text-decoration: underline;
     }
   }
   li a.active {
     color: #00b39f;
-    border-left: 2px solid #00b39f;
     font-weight: 600;
   }
 `;
 
 const BackToTopBtn = styled.button`
   position: fixed;
-  bottom: 32px;
-  right: 24px;
+  bottom: ${(props) => (props.visible ? "20px" : "-80px")};
+  right: 30px;
   z-index: 999;
   background: #00b39f;
   color: white;
   border: none;
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  font-size: 1rem;
+  width: 55.5px;
+  height: 55.5px;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  display: ${(props) => (props.visible ? "flex" : "none")};
+  display: flex;
   align-items: center;
   justify-content: center;
+  transition: bottom 0.2s;
   &:hover {
     background: #00d3a9;
   }
@@ -117,7 +112,7 @@ const LfxPageNav = ({ items }) => {
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         aria-label="Back to top"
       >
-        <ArrowUpwardIcon style={{ fontSize: "1rem", fill: "white" }} />
+        <ArrowUpwardIcon style={{ fontSize: "1.2rem", fill: "white" }} />
       </BackToTopBtn>
     </>
   );
