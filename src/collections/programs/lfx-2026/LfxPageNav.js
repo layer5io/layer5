@@ -1,19 +1,20 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ArrowUpwardIcon } from "@sistent/sistent";
 import styled from "styled-components";
 
-const NavCard = styled.div`
-  position: fixed;
-  top: 160px;
-  right: 24px;
+const NavCard = styled.nav`
+  position: sticky;
+  top: 120px;
+  flex: 0 0 220px;
   width: 220px;
+  height: fit-content;
   background: ${(props) => props.theme.grey1D1D1DToGreyFAFAFA};
   border: 1px solid ${(props) => props.theme.grey1D1817ToGreyE6E6E6};
   border-radius: 8px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   padding: 16px 0 12px 0;
-  z-index: 999;
-  @media (max-width: 1500px) {
+  z-index: 99;
+  @media (max-width: 900px) {
     display: none;
   }
 `;
@@ -86,11 +87,10 @@ const LfxPageNav = ({ items }) => {
       const total = document.documentElement.scrollHeight;
       setShowTop(scrolled >= total - 100);
 
-      // Highlight active section
       let current = "";
       items.forEach((item) => {
         const el = document.querySelector(item.href);
-        if (el && window.scrollY >= el.offsetTop - 120) {
+        if (el && window.scrollY >= el.offsetTop - 140) {
           current = item.href;
         }
       });

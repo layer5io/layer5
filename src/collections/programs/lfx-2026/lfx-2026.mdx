@@ -22,14 +22,10 @@ export const LfxLogoImage = () => { const { isDark } = useStyledDarkMode(); retu
 
 <span id="top"></span>
 
-<LfxPageNav items={[
-  { href: "#spring-2026", label: "Spring 2026 Projects" },
-  { href: "#summer-2026", label: "Summer 2026 Projects" },
-  { href: "#fall-2026", label: "Fall 2026 Projects" },
-  { href: "#additional-info", label: "Additional Information" },
-]} />
+<div style={{display: "flex", gap: "2rem", alignItems: "flex-start"}}>
+<div style={{flex: "1 1 auto", minWidth: 0}}>
 
-<LfxLogoImage />
+<div style={{overflow: "hidden"}}><LfxLogoImage /></div>
 <h3>Linux Foundation 2026 Program Timeline</h3>
 
 <div>
@@ -301,5 +297,14 @@ We interact daily over Slack, and have an open source project [meeting everyday]
   </h3>
 </div>
 
+
+</div>
+<LfxPageNav items={[
+  { href: "#spring-2026", label: "Spring 2026 Projects" },
+  { href: "#summer-2026", label: "Summer 2026 Projects" },
+  { href: "#fall-2026", label: "Fall 2026 Projects" },
+  { href: "#additional-info", label: "Additional Information" },
+]} />
+</div>
 
 </ProgramsWrapper>
