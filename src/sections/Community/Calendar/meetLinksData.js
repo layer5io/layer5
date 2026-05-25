@@ -33,6 +33,7 @@ export const meet_links_data = [
     slack_link: "https://layer5io.slack.com/archives/CDM0ACDM5",
     meeting_minutes: "https://docs.google.com/document/d/1O0l7eHX5dTkxdTXfebzvkoURnDexKFuw3lw2beUCSYM/edit",
     meeting_link: "https://meet.meshery.io/cmc",
-    meeting_recordings: "https://www.youtube.com/@mesheryio?sub_confirmation=1",
+    meeting_recordings: "https://www.youtube.com/playlist?list=PLutOg_DiPjIYXmTPLWiirlEN_k1VSDgeo",
+    archived: true, //series concluded on May 8th
   }
 ];
