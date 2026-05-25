@@ -11,10 +11,11 @@ const Card = ({
   fields,
   loading = "lazy",
   fetchpriority = "auto",
+  listView = false,
 }) => {
   const { isDark } = useStyledDarkMode();
   return (
-    <CardWrapper fixed={!!frontmatter.abstract}>
+    <CardWrapper fixed={!!frontmatter.abstract} $listView={listView}>
       <div className="post-block">
         <div className="post-thumb-block">
           <Image
