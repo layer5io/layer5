@@ -202,6 +202,20 @@ const data = [
             },
         ],
     },
+    {
+        date: "2026-05-01",
+        topic: "Meshery Models",
+        resources: {
+            slides: "https://docs.google.com/presentation/d/1isBoZmsNi9AOrI7mUvpeBeF5QtEGK0ACV11Q9hoqG_I/edit?slide=id.g34a2b009d75_0_23#slide=id.g34a2b009d75_0_23",
+            recording: "https://www.youtube.com/live/IJ0wtrQWxhw?si=WhI7PcCgm75zB-b0"
+        },
+        presenters: [
+            {
+                link: "/community/members/yash-vilas-mahakal",
+                name: "Yash Vilas Mahakal"
+            },
+        ],
+    },
 ];
 
 export default data;
