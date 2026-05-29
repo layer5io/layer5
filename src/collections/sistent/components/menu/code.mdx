@@ -1,0 +1,210 @@
+---
+title: Menu Code
+component: menu
+description: A menu displays a list of contextual actions or choices anchored to a trigger.
+---
+
+import { useState } from "react";
+import { Box, Button, Divider, Menu, MenuItem, MenuList, Paper } from "@sistent/sistent";
+
+export const BasicMenuCodeDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => setAnchorEl(event.currentTarget);
+  const handleClose = () => setAnchorEl(null);
+
+  return (
+    <Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
+      <Button variant="contained" label="Open Menu" onClick={handleClick} />
+      <Menu
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        disableScrollLock
+        marginThreshold={null}
+      >
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>Account</MenuItem>
+        <MenuItem onClick={handleClose}>Sign out</MenuItem>
+      </Menu>
+    </Box>
+  );
+};
+
+export const PositionedMenuCodeDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => setAnchorEl(event.currentTarget);
+  const handleClose = () => setAnchorEl(null);
+
+  return (
+    <Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
+      <Button variant="outlined" label="Project Actions" onClick={handleClick} />
+      <Menu
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+        transformOrigin={{ vertical: "top", horizontal: "right" }}
+        disableScrollLock
+        marginThreshold={null}
+      >
+        <MenuItem onClick={handleClose}>Rename</MenuItem>
+        <MenuItem onClick={handleClose}>Duplicate</MenuItem>
+        <Divider />
+        <MenuItem onClick={handleClose}>Archive</MenuItem>
+      </Menu>
+    </Box>
+  );
+};
+
+export const MenuItemStatesCodeDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => setAnchorEl(event.currentTarget);
+  const handleClose = () => setAnchorEl(null);
+
+  return (
+    <Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
+      <Button variant="contained" label="Density" onClick={handleClick} />
+      <Menu
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        disableScrollLock
+        marginThreshold={null}
+      >
+        <MenuItem selected onClick={handleClose}>Compact</MenuItem>
+        <MenuItem onClick={handleClose}>Comfortable</MenuItem>
+        <MenuItem disabled>Custom</MenuItem>
+      </Menu>
+    </Box>
+  );
+};
+
+export const MenuListCodeDemo = () => (
+  <Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
+    <Paper elevation={1} sx={{ width: 220 }}>
+      <MenuList>
+        <MenuItem selected>Overview</MenuItem>
+        <MenuItem>Activity</MenuItem>
+        <MenuItem disabled>Settings</MenuItem>
+      </MenuList>
+    </Paper>
+  </Box>
+);
+
+<a id="Basic Menu">
+  <h2>Basic Menu</h2>
+</a>
+
+A basic menu requires an anchor element, an open state, and a close handler.
+
+<div className="showcase">
+  <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+    <ThemeWrapper>
+      <BasicMenuCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-menu" collapsible code={`import { useState } from "react";
+import { Button, Menu, MenuItem } from "@sistent/sistent";
+
+export const BasicMenuDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => setAnchorEl(event.currentTarget);
+  const handleClose = () => setAnchorEl(null);
+
+  return (
+    <>
+      <Button variant="contained" label="Open Menu" onClick={handleClick} />
+      <Menu
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        disableScrollLock
+        marginThreshold={null}
+      >
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>Account</MenuItem>
+        <MenuItem onClick={handleClose}>Sign out</MenuItem>
+      </Menu>
+    </>
+  );
+};`} />
+</div>
+
+<a id="Positioned Menu">
+  <h2>Positioned Menu</h2>
+</a>
+
+Use <code>anchorOrigin</code> and <code>transformOrigin</code> to control how the menu aligns with its trigger.
+
+<div className="showcase">
+  <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+    <ThemeWrapper>
+      <PositionedMenuCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="positioned-menu" collapsible code={`<Button variant="outlined" label="Project Actions" onClick={handleClick} />
+<Menu
+  anchorEl={anchorEl}
+  open={open}
+  onClose={handleClose}
+  anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+  transformOrigin={{ vertical: "top", horizontal: "right" }}
+  disableScrollLock
+  marginThreshold={null}
+>
+  <MenuItem onClick={handleClose}>Rename</MenuItem>
+  <MenuItem onClick={handleClose}>Duplicate</MenuItem>
+  <Divider />
+  <MenuItem onClick={handleClose}>Archive</MenuItem>
+</Menu>`} />
+</div>
+
+<a id="MenuItem States">
+  <h2>MenuItem States</h2>
+</a>
+
+MenuItem supports states like selected and disabled.
+
+<div className="showcase">
+  <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+    <ThemeWrapper>
+      <MenuItemStatesCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="menuitem-states" collapsible code={`<Menu
+  anchorEl={anchorEl}
+  open={open}
+  onClose={handleClose}
+  disableScrollLock
+  marginThreshold={null}
+>
+  <MenuItem selected onClick={handleClose}>Compact</MenuItem>
+  <MenuItem onClick={handleClose}>Comfortable</MenuItem>
+  <MenuItem disabled>Custom</MenuItem>
+</Menu>`} />
+</div>
+
+<a id="MenuList">
+  <h2>MenuList</h2>
+</a>
+
+MenuList can be used when the menu items are already visible inside another surface.
+
+<div className="showcase">
+  <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+    <ThemeWrapper>
+      <MenuListCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="menulist" collapsible code={`<Paper elevation={1} sx={{ width: 220 }}>
+  <MenuList>
+    <MenuItem selected>Overview</MenuItem>
+    <MenuItem>Activity</MenuItem>
+    <MenuItem disabled>Settings</MenuItem>
+  </MenuList>
+</Paper>`} />
+</div>
