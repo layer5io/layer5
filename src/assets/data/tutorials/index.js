@@ -207,7 +207,10 @@ const data = [
         topic: "Meshery Models",
         resources: {
             slides: "https://docs.google.com/presentation/d/1isBoZmsNi9AOrI7mUvpeBeF5QtEGK0ACV11Q9hoqG_I/edit?slide=id.g34a2b009d75_0_23#slide=id.g34a2b009d75_0_23",
-            recording: "https://www.youtube.com/live/IJ0wtrQWxhw?si=WhI7PcCgm75zB-b0"
+            recording: [
+                "https://www.youtube.com/live/IJ0wtrQWxhw?si=WhI7PcCgm75zB-b0",
+                "https://www.youtube.com/live/UmSjNNKaJo8?si=qrvkiVyFd8Uk0h96"
+            ],
         },
         presenters: [
             {
