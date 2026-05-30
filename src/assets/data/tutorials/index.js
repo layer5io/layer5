@@ -204,7 +204,7 @@ const data = [
     },
     {
         date: "2026-05-01",
-        topic: "Meshery Models",
+        topic: "Meshery Relationships",
         resources: {
             slides: "https://docs.google.com/presentation/d/1isBoZmsNi9AOrI7mUvpeBeF5QtEGK0ACV11Q9hoqG_I/edit?slide=id.g34a2b009d75_0_23#slide=id.g34a2b009d75_0_23",
             recording: [
