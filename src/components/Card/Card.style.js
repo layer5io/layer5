@@ -57,12 +57,20 @@ export const CardWrapper = styled.div`
 
   .post-thumb-block {
     overflow: hidden;
-    height: ${(props) => (props.$listView ? "8rem" : "11.5rem")};
+    height: ${(props) => (props.$listView ? "auto" : "11.5rem")};
     width: ${(props) => (props.$listView ? "25%" : "auto")};
     border-top-right-radius: ${(props) => (props.$listView ? "0" : "0.5rem")};
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: ${(props) => (props.$listView ? "0.5rem" : "0")};
     flex-shrink: 0;
+    ${(props) =>
+      props.$listView &&
+      `
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+    `}
 
     .gatsby-image-wrapper,
     .old-gatsby-image-wrapper {
@@ -73,14 +81,20 @@ export const CardWrapper = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+      ${(props) =>
+        props.$listView &&
+        `
+        border-radius: 0.25rem;
+        overflow: hidden;
+      `}
     }
 
     .gatsby-image-wrapper img,
     .old-gatsby-image-wrapper img {
       max-width: 100%;
       max-height: 100%;
-      width: auto;
-      height: auto;
+      width: ${(props) => (props.$listView ? "100%" : "auto")};
+      height: ${(props) => (props.$listView ? "100%" : "auto")};
       display: block;
       object-fit: ${(props) => (props.$listView ? "cover" : "contain")};
       object-position: center;
@@ -88,21 +102,25 @@ export const CardWrapper = styled.div`
     }
 
     @media screen and (max-width: 768px) {
-      height: ${(props) => (props.$listView ? "8rem" : "9.5rem")};
+      height: ${(props) => (props.$listView ? "auto" : "9.5rem")};
     }
   }
 
   .post-content-block {
-    padding: ${(props) => (props.$listView ? "0.5rem 1.5rem" : "1rem 2rem 1.5rem 2rem")};
+    padding: ${(props) =>
+      props.$listView ? "0.5rem 1.5rem" : "1rem 2rem 1.5rem 2rem"};
     height: auto;
     min-height: ${(props) => (props.$listView ? "auto" : "10rem")};
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: ${(props) => (props.$listView ? "center" : "space-between")};
+    justify-content: ${(props) =>
+      props.$listView ? "center" : "space-between"};
   }
 
-  ${(props) => !props.$listView && `
+  ${(props) =>
+    !props.$listView &&
+    `
     @media screen and (max-width: 1200px) and (min-width: 992px) {
       .post-thumb-block {
         height: auto;
@@ -129,7 +147,9 @@ export const CardWrapper = styled.div`
     }
   `}
 
-  ${(props) => props.$listView && `
+  ${(props) =>
+    props.$listView &&
+    `
     @media screen and (max-width: 576px) {
       .post-block {
         flex-direction: column;
