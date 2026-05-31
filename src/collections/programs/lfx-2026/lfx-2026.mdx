@@ -11,37 +11,47 @@ published: true
 import { ProgramsWrapper } from "../Programs.style.js";
 import Button from "../../../reusecore/Button";
 import LfxLogo from "./lfx-white.svg";
+import LfxLogoLight from "./Linux_Foundation_logo.svg";
 import { Link } from "gatsby";
+import LfxPageNav from "./LfxPageNav";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
+
+export const LfxLogoImage = () => { const { isDark } = useStyledDarkMode(); return <img src={isDark ? LfxLogo : LfxLogoLight} alt="lfx_logo" className="lfx_logo"/>; };
 
 <ProgramsWrapper>
 
-<img src={LfxLogo} alt="lfx_logo" className="lfx_logo"/>
+<span id="top"></span>
+
+<div style={{display: "flex", gap: "2rem", alignItems: "flex-start"}}>
+<div style={{flex: "1 1 auto", minWidth: 0}}>
+
+<div style={{overflow: "hidden"}}><LfxLogoImage /></div>
 <h3>Linux Foundation 2026 Program Timeline</h3>
 
 <div>
   <h4><strong>Full-Time Terms:</strong></h4>
 <ul>
-    <li className="lfx-timeline_terms"><strong>Spring Term: March 3rd - May 30th</strong></li>
+    <li className="lfx-timeline_terms"><strong>Spring Term: March 2nd - May 29th</strong></li>
   <ul>
     <li>mentorships available on LFX Mentorship: Jan 26th, 2026</li>
-    <li>applications open: Jan 26th - Feb 10th (2 weeks)</li>
-    <li>application review/admission decisions/HR paperwork: Feb 11th - Feb 24th</li>
+    <li>applications open: Jan 26th - Feb 10th, 2026 (2 weeks)</li>
+    <li>application review/admission decisions/HR paperwork: Feb 11th - Feb 24th, 2026</li>
   </ul>
 </ul>
 <ul>
-  <li className="lfx-timeline_terms"><strong>Summer Term: June 9th - August 29th</strong></li>
+  <li className="lfx-timeline_terms"><strong>Summer Term: June 8th - August 31st</strong></li>
   <ul>
-    <li>mentorships available on LFX Mentorship: April 16th, 2026</li>
-    <li>applications open: May 14th - May 27th (2 weeks)</li>
-    <li>application review/admission decisions/HR paperwork: May 28th - June 3rd</li>
+    <li>mentorships available on LFX Mentorship: May 5th, 2026</li>
+    <li>applications open: May 5th - May 19th, 2026 (2 weeks)</li>
+    <li>application review/admission decisions/HR paperwork: May 20th - June 2nd, 2026</li>
   </ul>
 </ul>
 <ul>
-  <li className="lfx-timeline_terms"><strong>Fall Term: September 8th - Nov 28th</strong></li>
+  <li className="lfx-timeline_terms"><strong>Fall Term: September 7th - Nov 27th</strong></li>
   <ul>
-    <li>mentorships available on LFX Mentorship: July 2nd, 2026</li>
-    <li>applications open: July 30th - August 12th (2 weeks)</li>
-    <li>application review/admission decisions/HR paperwork: August 13th - August 26th</li>
+    <li>mentorships available on LFX Mentorship: August 3rd, 2026</li>
+    <li>applications open: August 3rd - August 18th, 2026 (2 weeks)</li>
+    <li>application review/admission decisions/HR paperwork: August 19th - September 1st, 2026</li>
   </ul>
 </ul>
 Part-time terms will start on the same schedule and last six versus three months.
@@ -63,7 +73,7 @@ Layer5 is all about <Link to="/community">its community</Link> of contributors. 
 
 Technical writers and other contributors are what comprise Layer5 - an open organization, built by the community for the community. Our vibrant community has seen many talented student contributors go on to secure exciting job opportunities with renowned technology companies such as Red Hat, Microsoft, and VMware, just to name a few. At Layer5, we have high expectations from our interns, and in return, we provide them with incredible opportunities to showcase their work on prestigious stages like DockerCon and KubeCon. We actively promote and uplift our interns, and many of them have gone on to become project maintainers. There are <a href="https://www.linkedin.com/company/layer5" rel="nofollow">many</a>, <Link to="https://layer5.io/blog/category/community">many examples</Link> of this on the layer5.io websites.
 
-## LFX Mentorship 2026 Spring Projects
+<h2 id="spring-2026">LFX Mentorship 2026 Spring Projects</h2>
 <br />
 
 ### Meshery
@@ -152,7 +162,8 @@ Technical writers and other contributors are what comprise Layer5 - an open orga
 - Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="mailto:marcus.ringblom@gmail.com">Marcus Ringblom</Link>
 - Issue: [https://github.com/meshery/meshery/issues/17099](https://github.com/meshery/meshery/issues/17099)
 
-## LFX Mentorship 2026 Summer Projects
+
+<h2 id="summer-2026">LFX Mentorship 2026 Summer Projects</h2>
 <br />
 
 ### Meshery
@@ -163,7 +174,7 @@ Technical writers and other contributors are what comprise Layer5 - an open orga
 CNCF - Meshery: Relationships and Solutions Architecture of Cloud Native Deployments (2026 Term 2)
 
 - Description: Meshery Models are declarative representations of infrastructure and applications. Within these models, Relationships define how different Components (e.g., Kubernetes resources, Cloud services) interact and depend on each other. These relationships are crucial for visualizing, understanding, and managing complex cloud native systems. This project focuses on expanding Meshery Relationships across a wide range of technologies, including Kubernetes and major cloud providers, to better model their interactions and improve user insights. There is a growing need to accurately model these relationships to provide better insights and control over deployments.
-  The next phase focuses on Cloud Solution Architecture through workload design by creating and publishing Meshery designs that use the newly developed relationships to represent real-world deployments. These designs will be turned into structured tutorials with hands-on labs using Meshery Playground, offering step-by-step guidance and interactive learning. All content will be reviewed by maintainers and published in Meshery’s official documentation
+The next phase focuses on Cloud Solution Architecture through workload design by creating and publishing Meshery designs that use the newly developed relationships to represent real-world deployments. These designs will be turned into structured tutorials with hands-on labs using Meshery Playground, offering step-by-step guidance and interactive learning. All content will be reviewed by maintainers and published in Meshery’s official documentation
 - Responsibilities:
   - Research and Analyze Technologies: Dive deep into various cloud-native technologies (e.g., different compute services, databases, messaging systems, network services, etc.) to understand their components and how they interconnect.
   - Develop Relationship Definitions: Create and contribute relationship definitions, typically in JSON or YAML format, to the Meshery models.
@@ -256,7 +267,17 @@ CNCF - Meshery: Meshery Models Support for OCI Registries (2026 Term 2)
 - Upstream Issue: [https://github.com/meshery/meshery/issues/19093](https://github.com/meshery/meshery/issues/19093)
 - LFX URL:
 
-## Additional information
+
+<h2 id="fall-2026">LFX Mentorship 2026 Fall Projects</h2>
+<br />
+
+### Meshery
+<br />
+
+> Fall 2026 projects will be announce. Check back soon!
+
+
+<h2 id="additional-info">Additional information</h2>
 <br />
 
 ### Previous experience with technical writers or documentation
@@ -274,6 +295,16 @@ We interact daily over Slack, and have an open source project [meeting everyday]
       $external={ true }
     />
   </h3>
+</div>
+
+
+</div>
+<LfxPageNav items={[
+  { href: "#spring-2026", label: "Spring 2026 Projects" },
+  { href: "#summer-2026", label: "Summer 2026 Projects" },
+  { href: "#fall-2026", label: "Fall 2026 Projects" },
+  { href: "#additional-info", label: "Additional Information" },
+]} />
 </div>
 
 </ProgramsWrapper>
