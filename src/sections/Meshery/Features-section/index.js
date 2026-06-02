@@ -94,7 +94,7 @@ const FeaturesSection = () => {
                 $secondary
                 className="mgmt_button"
                 title="Install"
-                $url="/cloud-native-management/meshery/getting-started"
+                $url="/products/meshery/install-meshery"
               />
             </Col>
             <Col $xs={12} $sm={6} $md={4}>
@@ -102,7 +102,7 @@ const FeaturesSection = () => {
                 $secondary
                 className="mgmt_button"
                 title="Manage"
-                $url="/cloud-native-management/meshery/operating-cloud-native-infra"
+                $url="/products/meshery/how-meshery-works"
               />
             </Col>
             <Col $xs={12} $sm={6} $md={4}>

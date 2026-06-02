@@ -29,7 +29,7 @@ const FeaturesContainer = () => {
       title: "Build Systems Faster, Together",
       show_custom_cursor: true,
       animationOne: true,
-      redirectLink: "/cloud-native-management/kanvas/collaborate/peer-reviews",
+      redirectLink: "/products/meshmap/collaborate/peer-reviews",
       desc: "Real-time collaboration for cloud native and Kubernetes designs with live-editing, instant feedback, deploy dry runs, and secure access controls.",
       imgLink: isDark ? CommentingImageDark : CommentingImageLight,
       cursor: false,
@@ -54,14 +54,14 @@ const FeaturesContainer = () => {
           image: isDark ? AWSLogoDark : AWSLogoLight,
           alt: "Amazon Web Services Logo",
           redirect:
-            "/cloud-native-management/generate-aws-architecture-diagram",
+            "/products/meshmap/diagramming-cloud-architecture/aws",
         },
         {
           text: "Google Cloud Platform",
           image: GCPLogo,
           alt: "Logo Google Cloud Platform",
           redirect:
-            "/cloud-native-management/generate-gcp-architecture-diagram",
+            "/products/meshmap/diagramming-cloud-architecture/gcp",
         },
       ],
     },

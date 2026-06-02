@@ -153,7 +153,7 @@ const Feature = () => {
             <p className="caption">
             The Kubernetes operator for Meshery, supports discovery and eventing of greenfield and brownfield of your workloads, services, deployments, replicasets, pods, containers, services, persistent volumes and all of your Kubernetes-based infrastructure.
             </p>
-            <Link className="link" href="/cloud-native-management/meshery/meshery-operator">Learn more &rarr;</Link>
+            <Link className="link" href="/products/meshery/meshery-operator">Learn more &rarr;</Link>
           </Col>
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">

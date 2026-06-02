@@ -32,23 +32,23 @@ redirects:
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/meshery"
-    toPath: "/cloud-native-management/meshery"
+    toPath: "/products/meshery"
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/service-mesh-management/meshery"
-    toPath: "/cloud-native-management/meshery"
+    toPath: "/products/meshery"
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/service-mesh-management/meshery/operating-service-meshes"
-    toPath: "/cloud-native-management/meshery/operating-cloud-native-infra"
+    toPath: "/products/meshery/how-meshery-works"
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/cloud-native-management/meshery/operating-service-meshes"
-    toPath: "/cloud-native-management/meshery/operating-cloud-native-infra"
+    toPath: "/products/meshery/how-meshery-works"
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/service-mesh-management/meshery/getting-started"
-    toPath: "/cloud-native-management/meshery/getting-started"
+    toPath: "/products/meshery/install-meshery"
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/landscape"
@@ -160,31 +160,31 @@ redirects:
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/kanvas"
-    toPath: "/cloud-native-management/kanvas"
+    toPath: "/products/meshmap"
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/cloud-native-management/meshmap"
-    toPath: "/cloud-native-management/kanvas"
+    toPath: "/products/meshmap"
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/meshmap"
-    toPath: "/cloud-native-management/kanvas"
+    toPath: "/products/meshmap"
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/go/meshmap"
-    toPath: "/cloud-native-management/kanvas"
+    toPath: "/products/meshmap"
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/cloud-native-management/kanvas/visualize"
-    toPath: "/cloud-native-management/kanvas/operate"
+    toPath: "/products/meshmap/orchestration"
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/kanvas/visualize"
-    toPath: "/cloud-native-management/kanvas/operate"
+    toPath: "/products/meshmap/orchestration"
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/kanvas/operate"
-    toPath: "/cloud-native-management/kanvas/operate"
+    toPath: "/products/meshmap/orchestration"
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/resources/cloud-native/hpes-adoption-of-meshery-and-meshmap"
@@ -208,7 +208,7 @@ redirects:
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/cloud-native-management/meshmap/collaborate"
-    toPath: "/cloud-native-management/kanvas/collaborate"
+    toPath: "/products/meshmap/collaborate"
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/blog/tag/meshery-open-source"
@@ -220,10 +220,66 @@ redirects:
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/cloud-native-management/meshmap/design"
-    toPath: "/cloud-native-management/kanvas/design"
+    toPath: "/products/meshmap/designer"
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/cloud-native-management/meshmap/collaborate/peer-reviews"
-    toPath: "/cloud-native-management/kanvas/collaborate/peer-reviews"
+    toPath: "/products/meshmap/collaborate/peer-reviews"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/kanvas"
+    toPath: "/products/meshmap"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/kanvas/design"
+    toPath: "/products/meshmap/designer"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/kanvas/operate"
+    toPath: "/products/meshmap/orchestration"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/kanvas/visualize"
+    toPath: "/products/meshmap/orchestration"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/kanvas/collaborate"
+    toPath: "/products/meshmap/collaborate"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/kanvas/collaborate/peer-reviews"
+    toPath: "/products/meshmap/collaborate/peer-reviews"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/meshery"
+    toPath: "/products/meshery"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/meshery/getting-started"
+    toPath: "/products/meshery/install-meshery"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/meshery/operating-cloud-native-infra"
+    toPath: "/products/meshery/how-meshery-works"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/meshery/integrations"
+    toPath: "/products/meshery/integrations"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/meshery/meshery-operator"
+    toPath: "/products/meshery/meshery-operator"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/meshery/integrations/*"
+    toPath: "/products/meshery/integrations/:splat"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/generate-aws-architecture-diagram"
+    toPath: "/products/meshmap/diagramming-cloud-architecture/aws"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/cloud-native-management/generate-gcp-architecture-diagram"
+    toPath: "/products/meshmap/diagramming-cloud-architecture/gcp"
     redirectInBrowser: true
     isPermanent: true

@@ -50,7 +50,7 @@ const BannerDefault = () => {
                     <Button
                       $primary                      className="join-community-button"
                       title="Extend your control"
-                      $url="/cloud-native-management/meshery"
+                      $url="/products/meshery"
                     />
                   </div>
                 </SectionTitle>

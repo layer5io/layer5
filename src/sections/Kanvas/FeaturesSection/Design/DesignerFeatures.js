@@ -29,7 +29,7 @@ export default function DesignerFeatures({ features }) {
     <DesignerFeaturesWrapper>
       <Container className="designer-container">
         <div className="root design-trigger-container">
-          <Link to="/cloud-native-management/kanvas/design">
+          <Link to="/products/meshmap/designer">
             <div id="featureHeading" className="fixed" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
               <h1>Design</h1>
               <div className="learn-more">

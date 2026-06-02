@@ -77,7 +77,7 @@ const Banner1 = (props) => {
               </SectionTitle>
               <span className="vintage-box-container">
                 <VintageBox $right={true} $vintageOne={true}>
-                  <Button $primary className="banner-btn one" title="Learn about Kanvas" $url="/cloud-native-management/kanvas">
+                  <Button $primary className="banner-btn one" title="Learn about Kanvas" $url="/products/meshmap">
                     <FaMapMarkedAlt size={21} className="icon-left" />
                   </Button>
                   <Button $secondary className="banner-btn two" title="Open in Playground" $url="https://kanvas.new/" $external={true}>

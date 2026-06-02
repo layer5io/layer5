@@ -38,7 +38,7 @@ const MesheryManageMesh = () => {
           <Col $sm={12} $lg={6}>
             <h2>Manage your Infrastructure</h2>
             <p>Manage all aspects of running your infrastructure no matter what platform you're running</p>
-            <Button $primary className="banner-btn" title="How Meshery Works" $url="/cloud-native-management/meshery/operating-cloud-native-infra">
+            <Button $primary className="banner-btn" title="How Meshery Works" $url="/products/meshery/how-meshery-works">
               <GiClockwork size={21} className="button-icon" />
             </Button>
           </Col>

@@ -16,7 +16,7 @@ const SetupPreReq = () => (
       </p>
     </div>
     <div className="container-card" id="Set up">
-      <a href="/cloud-native-management/meshery" target="_blank">
+      <a href="/products/meshery" target="_blank">
         <div className="card">
           <div className="card-header">
             <h2>Prerequisites</h2>

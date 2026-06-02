@@ -36,7 +36,7 @@ const MesheryPage = () => {
                 <GiClockwork size={21} className="button-icon" />
               </Button>
               <Button $secondary className="banner-btn" title="Run Meshery"
-                $url="/cloud-native-management/meshery/getting-started"
+                $url="/products/meshery/install-meshery"
               >
                 <FiDownloadCloud size={21} className="button-icon" />
               </Button>

@@ -161,7 +161,7 @@ const Feature = () => {
             <p className="caption">
             Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components.
             </p>
-            <Link className="link" href="/cloud-native-management/kanvas/design">Learn more &rarr;</Link>
+            <Link className="link" href="/products/meshmap/designer">Learn more &rarr;</Link>
           </Col>
         </Row>
         <Row className="catalog">
@@ -172,7 +172,7 @@ const Feature = () => {
             <p className="caption">
             Deploy designs, apply patterns, manage and operate your deployments in real-time. Bring all your Kubernetes clusters under a common point of management.
             </p>
-            <Link className="link" href="/cloud-native-management/kanvas/visualize">Learn more &rarr;</Link>
+            <Link className="link" href="/products/meshmap/orchestration">Learn more &rarr;</Link>
           </Col>
           <Col md={6} className="diagram-image">
             <div className="image-wrapper">
