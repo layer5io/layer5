@@ -227,3 +227,7 @@ redirects:
     toPath: "/cloud-native-management/kanvas/collaborate/peer-reviews"
     redirectInBrowser: true
     isPermanent: true
+  - fromPath: "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/conclusion.html"
+    toPath: "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/conclusion"
+    redirectInBrowser: true
+    isPermanent: true
