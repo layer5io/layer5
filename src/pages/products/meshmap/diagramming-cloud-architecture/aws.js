@@ -1,7 +1,7 @@
 import React from "react";
 
-import SEO from "../../components/seo";
-import AwsDiagram from "../../sections/AWS-Diagram";
+import SEO from "../../../../components/seo";
+import AwsDiagram from "../../../../sections/AWS-Diagram";
 
 const Aws = () => {
   return (
