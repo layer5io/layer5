@@ -229,5 +229,7 @@ redirects:
     isPermanent: true
   - fromPath: "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/conclusion.html"
     toPath: "/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes/istio/conclusion"
+  - fromPath: "/cloud-native-management/playground.html"
+    toPath: "https://www.kanvas.new"
     redirectInBrowser: true
     isPermanent: true

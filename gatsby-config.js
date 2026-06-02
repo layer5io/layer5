@@ -582,7 +582,9 @@ module.exports = {
             options: {
               host: siteRootUrl,
               sitemap: `${siteRootUrl}/sitemap-index.xml`,
-              policy: [{ userAgent: "*", allow: "/" }],
+              policy: [
+                { userAgent: "*", allow: "/", disallow: ["/pr-preview/"] },
+              ],
             },
           },
         ]
