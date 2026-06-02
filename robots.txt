@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /pr-preview/
 Sitemap: https://layer5.io/sitemap-index.xml
 Host: https://layer5.io
