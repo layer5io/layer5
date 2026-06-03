@@ -229,5 +229,7 @@ redirects:
     isPermanent: true
   - fromPath: "/learn/cloud-native-labs"
     toPath: "/learn/kanvas-labs"
+  - fromPath: "/cloud-native-management/playground.html"
+    toPath: "https://www.kanvas.new"
     redirectInBrowser: true
     isPermanent: true
