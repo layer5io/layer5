@@ -30,7 +30,8 @@
     "noIndex": "gatsby build && echo 'User-agent: *\nDisallow: /' > public/robots.txt",
     "version": "gatsby --version",
     "postinstall": "patch-package",
-    "prepare": "husky || true"
+    "prepare": "husky || true",
+    "check:images": "node scripts/find-missing-gatsby-images.js"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.4.0",
