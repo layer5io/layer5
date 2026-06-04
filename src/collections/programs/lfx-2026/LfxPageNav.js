@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ArrowUpwardIcon } from "@sistent/sistent";
+// import { ArrowUpwardIcon } from "@sistent/sistent";
 import styled from "styled-components";
 
 const NavCard = styled.nav`
@@ -11,7 +11,7 @@ const NavCard = styled.nav`
   background: ${(props) => props.theme.grey1D1D1DToGreyFAFAFA};
   border: 1px solid ${(props) => props.theme.grey1D1817ToGreyE6E6E6};
   border-radius: 7px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   z-index: 99;
   @media (max-width: 900px) {
@@ -102,7 +102,12 @@ const LfxPageNav = ({ items }) => {
         <NavList>
           {items.map((item) => (
             <li key={item.href}>
-              <a href={item.href} className={activeHref === item.href ? "active" : ""}>{item.label}</a>
+              <a
+                href={item.href}
+                className={activeHref === item.href ? "active" : ""}
+              >
+                {item.label}
+              </a>
             </li>
           ))}
         </NavList>
@@ -112,7 +117,10 @@ const LfxPageNav = ({ items }) => {
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         aria-label="Back to top"
       >
-        <ArrowUpwardIcon style={{ fontSize: "1.2rem", fill: "white" }} />
+        {/* <ArrowUpwardIcon style={{ fontSize: "1.2rem", fill: "white" }} /> */}
+        <span aria-hidden="true" style={{ fontSize: "1.2rem", lineHeight: 1 }}>
+          ↑
+        </span>
       </BackToTopBtn>
     </>
   );
