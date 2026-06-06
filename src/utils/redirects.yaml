@@ -283,3 +283,7 @@ redirects:
     toPath: "/products/meshmap/diagramming-cloud-architecture/gcp"
     redirectInBrowser: true
     isPermanent: true
+  - fromPath: "/cloud-native-management/playground.html"
+    toPath: "https://www.kanvas.new"
+    redirectInBrowser: true
+    isPermanent: true
