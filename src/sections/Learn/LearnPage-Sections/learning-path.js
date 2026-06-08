@@ -1,85 +1,25 @@
 import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
-import { Row, Col, Container } from "../../../reusecore/Layout";
-import CardComponent from "../../../components/Learn-Components/Card-Component";
-import Button from "../../../reusecore/Button";
+import { Container } from "../../../reusecore/Layout";
 import styled from "styled-components";
+import CanvasIllustration from "../../../components/Learn-Components/Canvas-Illustration";
 
 const LearningPathsWrapper = styled.div`
-    Button:hover {
-  box-shadow: 0 2px 10px ${props => props.theme.whiteFourToBlackFour};
-    } 
-    margin: 3rem 0 4rem;
+  Button:hover {
+    box-shadow: 0 2px 10px ${(props) => props.theme.whiteFourToBlackFour};
+  }
+  margin: 3rem 0 4rem;
 
-    .learn-path-heading {
-        text-align: center;
-        margin: 2rem 0
-    }
-    .learn-subtitle {
-        text-align: center;
-    }
-    .learning-path-cards{
-        margin: auto;
-        justify-content: center;
-        padding: 6rem 0;
-
-        @media(max-width:500px){
-            padding: 6rem 2rem;
-        }
-    }
-    .see-more-button {
-      text-align: center;
-    }
+  .learn-path-heading {
+    text-align: center;
+    margin: 2rem 0;
+  }
+  .learn-subtitle {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
 `;
 
 const LearningPaths = () => {
-  const data = useStaticQuery(graphql`
-    query learningPaths {
-      learnPaths: allMdx(
-        filter: {
-          fields: { collection: { eq: "content-learn" }, pageType: { eq: "learnpath" } }
-        }
-      ) {
-        nodes {
-          id
-          frontmatter {
-            title
-            description
-            themeColor
-            courses
-            disabled
-            cardImage {
-              childImageSharp {
-                gatsbyImageData(width: 200, layout: CONSTRAINED)
-              }
-              extension
-              publicURL
-            }
-            status
-          }
-          fields {
-            slug
-            learnpath
-          }
-        }
-      }
-      allCourses: allMdx(
-        filter: {
-          fields: { collection: { eq: "content-learn" },pageType: { eq: "course" } }
-        }
-      ) {
-        nodes{
-          fields{
-            learnpath
-          }
-        }
-      }
-    }
-  `);
-
-
-  const getCoursesOfaLearningPath = (learnpath) => data.allCourses.nodes.filter(obj => obj.fields.learnpath === learnpath);
-
   return (
     <LearningPathsWrapper>
       <Container>
@@ -87,16 +27,8 @@ const LearningPaths = () => {
         <div className="learn-subtitle">
           <h3>Learn DevOps and platform engineering</h3>
         </div>
-        <Row className="learning-path-cards">
-          {data.learnPaths.nodes.map((tutorial) => (
-            <Col $sm={6} key={tutorial.id}>
-              <CardComponent tutorial={tutorial} path={`/learn/learning-paths/${tutorial.fields.learnpath}`} courseCount={getCoursesOfaLearningPath(tutorial.fields.learnpath).length} />
-            </Col>
-          ))}
-        </Row>
-        <div className="see-more-button">
-          <Button $primary title="Checkout all learning paths" $url="/learn/learning-paths" />
-        </div>
+
+        <CanvasIllustration />
       </Container>
     </LearningPathsWrapper>
   );
