@@ -27,6 +27,7 @@ const CanvasIllustrationWrapper = styled.div`
   border-radius: 0;
   overflow: hidden;
   background-color: transparent;
+  color: ${(props) => props.theme.whiteToBlack};
 
   @media (max-width: 900px) {
     flex-direction: column;
@@ -40,11 +41,17 @@ const CanvasIllustrationWrapper = styled.div`
     height: 450px;
     max-width: 760px;
     isolation: isolate;
-    background-image: radial-gradient(#888 1px, transparent 1px);
+    background-image: radial-gradient(
+      ${(props) => props.theme.grey505050ToGreyB4B4B4} 1px,
+      transparent 1px
+    );
     background-size: 20px 20px;
     mask-image: linear-gradient(to left, black 60%, transparent 100%);
     -webkit-mask-image: linear-gradient(to left, black 60%, transparent 100%);
     overflow: hidden;
+    transition:
+      background-color 0.6s ease,
+      color 0.6s ease;
 
     @media (max-width: 900px) {
       width: 100%;
@@ -75,6 +82,7 @@ const CanvasIllustrationWrapper = styled.div`
       font-weight: 700;
       margin-bottom: 1.2rem;
       line-height: 1.2;
+      color: ${(props) => props.theme.whiteToBlack};
     }
 
     p {
@@ -82,6 +90,7 @@ const CanvasIllustrationWrapper = styled.div`
       margin-bottom: 2.5rem;
       opacity: 0.8;
       line-height: 1.6;
+      color: ${(props) => props.theme.greyA0AAAAToGrey666666};
     }
   }
 
@@ -135,13 +144,18 @@ const CanvasIllustrationWrapper = styled.div`
     align-items: center;
     justify-content: center;
     padding: 12px 24px;
-    background: #1a1c1e;
-    border: 2px solid #555;
+    background: ${(props) => props.theme.grey212121ToWhite};
+    border: 2px solid ${(props) => props.theme.green00D3A9ToGreyE6E6E6};
     border-radius: 8px;
-    color: #e0e0e0;
+    color: ${(props) => props.theme.whiteToBlack};
     font-size: 1rem;
     font-weight: 500;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 12px ${(props) => props.theme.whiteOneToBlackOne};
+    transition:
+      background-color 0.6s ease,
+      border-color 0.6s ease,
+      box-shadow 0.6s ease,
+      color 0.6s ease;
 
     .node-icon {
       width: 32px;
@@ -155,7 +169,7 @@ const CanvasIllustrationWrapper = styled.div`
     padding: 9px 14px;
     min-width: 96px;
     font-size: 0.82rem;
-    background: rgba(26, 28, 30, 0.94);
+    background: ${(props) => props.theme.grey212121ToWhite};
 
     .node-icon {
       width: 24px;
@@ -171,7 +185,7 @@ const CanvasIllustrationWrapper = styled.div`
     border-radius: 50%;
     font-size: 1.15rem;
     font-weight: 800;
-    background: #111416;
+    background: ${(props) => props.theme.grey111111ToGreyFAFAFA};
 
     .node-icon {
       width: 22px;
@@ -189,8 +203,8 @@ const CanvasIllustrationWrapper = styled.div`
     background: transparent;
     box-shadow: none;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    background-color: #00b39f;
-    color: white;
+    background-color: ${(props) => props.theme.secondaryColor};
+    color: ${(props) => props.theme.white};
 
     &:before {
       content: "";
@@ -199,13 +213,14 @@ const CanvasIllustrationWrapper = styled.div`
       left: 3px;
       right: 3px;
       bottom: 3px;
-      background-color: #1a1c1e;
+      background-color: ${(props) => props.theme.grey212121ToWhite};
       clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
       z-index: -1;
+      transition: background-color 0.6s ease;
     }
 
     .node-icon {
-      color: #00b39f;
+      color: ${(props) => props.theme.secondaryColor};
     }
   }
 
@@ -285,12 +300,17 @@ const CanvasIllustrationWrapper = styled.div`
     gap: 10px;
     max-width: 240px;
     padding: 12px 14px;
-    background: rgba(255, 255, 255, 0.96);
-    border: 1px solid rgba(0, 179, 159, 0.28);
+    background: ${(props) => props.theme.grey212121ToWhite};
+    border: 1px solid ${(props) => props.theme.green00D3A9ToGreyE6E6E6};
     border-radius: 8px;
-    color: #1a1c1e;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+    color: ${(props) => props.theme.whiteToBlack};
+    box-shadow: 0 8px 22px ${(props) => props.theme.whiteOneToBlackOne};
     animation: ${float2} 7s ease-in-out infinite;
+    transition:
+      background-color 0.6s ease,
+      border-color 0.6s ease,
+      box-shadow 0.6s ease,
+      color 0.6s ease;
 
     .learning-card-icon {
       display: grid;
@@ -299,8 +319,11 @@ const CanvasIllustrationWrapper = styled.div`
       width: 36px;
       height: 36px;
       border-radius: 8px;
-      background: rgba(0, 179, 159, 0.12);
-      color: #00b39f;
+      background: ${(props) => props.theme.grey323232ToGreenF3FFFD};
+      color: ${(props) => props.theme.secondaryColor};
+      transition:
+        background-color 0.6s ease,
+        color 0.6s ease;
     }
 
     svg {
@@ -318,7 +341,7 @@ const CanvasIllustrationWrapper = styled.div`
       font-size: 0.72rem;
       line-height: 1.2;
       text-transform: uppercase;
-      color: #4b5563;
+      color: ${(props) => props.theme.greyA0AAAAToGrey666666};
       font-weight: 700;
     }
 
@@ -337,10 +360,14 @@ const CanvasIllustrationWrapper = styled.div`
     align-items: center;
     gap: 6px;
     padding: 7px 10px;
-    background: rgba(26, 28, 30, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: ${(props) => props.theme.grey212121ToWhite};
+    border: 1px solid ${(props) => props.theme.whiteOneToBlackOne};
     border-radius: 999px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 6px 18px ${(props) => props.theme.whiteOneToBlackOne};
+    transition:
+      background-color 0.6s ease,
+      border-color 0.6s ease,
+      box-shadow 0.6s ease;
   }
 
   .progress-step {
@@ -348,23 +375,27 @@ const CanvasIllustrationWrapper = styled.div`
     place-items: center;
     width: 22px;
     height: 22px;
-    border: 1px solid rgba(255, 255, 255, 0.32);
+    border: 1px solid ${(props) => props.theme.whiteOneFiveToBlackOneFive};
     border-radius: 50%;
-    color: #cfd8dc;
+    color: ${(props) => props.theme.greyC1C1C1ToGreyB3B3B3};
     font-size: 0.72rem;
     font-weight: 800;
+    transition:
+      background-color 0.6s ease,
+      border-color 0.6s ease,
+      color 0.6s ease;
 
     &.active {
-      background: #00b39f;
-      border-color: #00b39f;
-      color: #fff;
+      background: ${(props) => props.theme.secondaryColor};
+      border-color: ${(props) => props.theme.secondaryColor};
+      color: ${(props) => props.theme.white};
     }
   }
 
   .progress-line {
     width: 28px;
     height: 2px;
-    background: rgba(255, 255, 255, 0.32);
+    background: ${(props) => props.theme.whiteOneFiveToBlackOneFive};
   }
 
   /* Collaborative Cursors */
@@ -378,7 +409,9 @@ const CanvasIllustrationWrapper = styled.div`
     svg {
       width: 20px;
       height: 20px;
-      filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
+      filter: drop-shadow(
+        0px 2px 4px ${(props) => props.theme.whiteFourToBlackFour}
+      );
     }
 
     .cursor-label {
@@ -390,7 +423,7 @@ const CanvasIllustrationWrapper = styled.div`
       margin-left: -2px;
       margin-top: 12px;
       font-weight: 600;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 6px ${(props) => props.theme.whiteOneToBlackOne};
     }
   }
 
@@ -427,14 +460,17 @@ const CanvasIllustrationWrapper = styled.div`
     top: 25%;
     left: 55%;
     z-index: 5;
-    background: #ffd200;
-    color: #1a1c1e;
+    background: ${(props) => props.theme.saffronColor};
+    color: ${(props) => props.theme.black};
     padding: 10px 16px;
     border-radius: 8px;
     font-size: 0.9rem;
     font-weight: 600;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 16px ${(props) => props.theme.whiteOneToBlackOne};
     animation: ${float1} 6s ease-in-out infinite;
+    transition:
+      background-color 0.6s ease,
+      box-shadow 0.6s ease;
 
     &:after {
       content: "";
@@ -443,7 +479,9 @@ const CanvasIllustrationWrapper = styled.div`
       left: 20px;
       border-width: 8px 8px 0;
       border-style: solid;
-      border-color: #ffd200 transparent transparent transparent;
+      border-color: ${(props) => props.theme.saffronColor} transparent
+        transparent transparent;
+      transition: border-color 0.6s ease;
     }
   }
 
