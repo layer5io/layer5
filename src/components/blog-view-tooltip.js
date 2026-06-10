@@ -1,95 +1,208 @@
-import React, { useState, useEffect } from "react";
-import { Row } from "../reusecore/Layout";
-import { TiThList } from "@react-icons/all-files/ti/TiThList";
-import { BsGrid3X3GapFill } from "@react-icons/all-files/bs/BsGrid3X3GapFill";
-import { Tooltip } from "react-tooltip";
-import styled from "styled-components";
+import React from "react";
+import {
+  useTable,
+  useSortBy,
+  useFilters,
+  useGlobalFilter,
+  useAsyncDebounce,
+} from "react-table";
+import { CustomTooltip } from "@sistent/sistent";
+import { IoMdHelpCircle } from "@react-icons/all-files/io/IoMdHelpCircle";
+import { IconContext } from "@react-icons/all-files";
+import { TableWrapper } from "./LandscapeTable.style";
+import { AiOutlineCaretUp } from "@react-icons/all-files/ai/AiOutlineCaretUp";
+import { AiOutlineCaretDown } from "@react-icons/all-files/ai/AiOutlineCaretDown";
 
-export const ToolTipWrapper = styled.div`
-    @media screen and (max-width: 576px) {
-        display: none;
-    }
-    float:left;
-    margin: auto 1rem;
+import passingMark from "../../assets/images/landscape/passing.svg";
+import failingMark from "../../assets/images/landscape/failing.svg";
 
-    .border {
-        line-height: 18px;
-    }
-
-    a {
-        padding: 5px;
-        color: ${props => props.theme.keppletColor};
-        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        background-color: ${props => props.theme.grey212121ToWhite};
-        border: 1.5px solid ${props => props.theme.keppletColor};
-        &:hover{
-            background-color: ${props => props.theme.primaryColor};
-            color: ${props => props.theme.primaryLightColorTwo};
-            cursor: pointer;
-            border: 1.5px solid ${props => props.theme.primaryColor};
-        }             
-    }
-    .active {
-        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        background-color: ${props => props.theme.primaryColor};
-        color: ${props => props.theme.primaryLightColorTwo};
-        border: 1.5px solid ${props => props.theme.primaryColor};
-    }
-`;
-
-const BlogViewToolTip = ({ isListView, setListView, setGridView }) => {
-
-  const NoSsr = ({ children }) => {
-    const [isMounted, setMount] = useState(false);
-
-    useEffect(() => {
-      setMount(true);
-    }, []);
-
-    return <>{isMounted ? children : null}</>;
-  };
+function GlobalFilter({ globalFilter, setGlobalFilter, searchPlaceHolder }) {
+  const [value, setValue] = React.useState(globalFilter);
+  const onChange = useAsyncDebounce((value) => {
+    setGlobalFilter(value || undefined);
+  }, 200);
 
   return (
-    <ToolTipWrapper>
-      <Row className="border">
-        <a
-          data-tooltip-content="Grid View"
-          data-tooltip-id="grid-view"
-          onClick={setGridView}
-          className={`${!isListView && "active"}`}
-        >
-          <BsGrid3X3GapFill size={22} />
-        </a>
-        <NoSsr>
-          <Tooltip
-            id="grid-view"
-            border="solid"
-            className="grid-view"
-            place="top"
-            variant="dark"
-          />
-        </NoSsr>
-        <a
-          data-tooltip-content="List View"
-          data-tooltip-id="list-view"
-          onClick={setListView}
-          className={`${isListView && "active"}`}
-        >
-          <TiThList size={22} />
-        </a>
-        <NoSsr>
-          <Tooltip
-            id="list-view"
-            className="list-view"
-            border="solid"
-            place="top"
-            variant="dark"
-          />
-        </NoSsr>
-      </Row>
-    </ToolTipWrapper>
+    <span>
+      Search:{" "}
+      <input
+        value={value || ""}
+        onChange={(e) => {
+          setValue(e.target.value);
+          onChange(e.target.value);
+        }}
+        placeholder={searchPlaceHolder}
+        style={{
+          font: "400 1rem Qanelas Soft",
+          border: "1.5px solid white",
+          borderRadius: "4px",
+          width: "20rem",
+        }}
+      />
+    </span>
+  );
+}
 
+const Table = ({ columns, data, placeHolder }) => {
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+    state,
+    visibleColumns,
+    setGlobalFilter,
+  } = useTable(
+    {
+      columns,
+      data,
+    },
+    useFilters,
+    useGlobalFilter,
+    useSortBy,
+  );
+
+  return (
+    <TableWrapper>
+      <table {...getTableProps()}>
+        <thead>
+          {headerGroups.map((headerGroup) => (
+            <tr key={"table-header"} {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column) => (
+                <th
+                  key={column}
+                  {...column.getHeaderProps(column.getSortByToggleProps())}
+                >
+                  {column.render("Header")}
+                  <span>
+                    {column.isSorted ? (
+                      column.isSortedDesc ? (
+                        <AiOutlineCaretDown />
+                      ) : (
+                        <AiOutlineCaretUp />
+                      )
+                    ) : (
+                      ""
+                    )}
+                  </span>
+                </th>
+              ))}
+            </tr>
+          ))}
+          <tr>
+            <th
+              colSpan={visibleColumns.length}
+              style={{
+                textAlign: "left",
+                padding: "0.5rem 0.75rem",
+              }}
+            >
+              <GlobalFilter
+                globalFilter={state.globalFilter}
+                setGlobalFilter={setGlobalFilter}
+                searchPlaceHolder={placeHolder}
+              />
+            </th>
+          </tr>
+        </thead>
+        <tbody {...getTableBodyProps()}>
+          {rows.length == 0 && (
+            <tr>
+              <td colSpan={headerGroups[0].headers.length}>No results found</td>
+            </tr>
+          )}
+          {rows.map((row, i) => {
+            prepareRow(row);
+            return (
+              <tr key={`row${i}`} {...row.getRowProps()}>
+                {row.cells.map((cell, i) => {
+                  if (cell["column"]["id"] === "name") {
+                    return row["original"]["desc"] ? (
+                      <td key={`cell${i}`} {...cell.getCellProps()}>
+                        <CustomTooltip
+                          title={row["original"]["desc"]}
+                          placement="bottom"
+                        >
+                          <a href={row["original"]["link"]} rel="nofollow">
+                            {cell.render("Cell")}
+                          </a>
+                        </CustomTooltip>
+                      </td>
+                    ) : (
+                      <td key={`cell${i}`} {...cell.getCellProps()}>
+                        <a href={row["original"]["link"]} rel="nofollow">
+                          {cell.render("Cell")}
+                        </a>
+                      </td>
+                    );
+                  } else if (cell["column"]["id"] === "tool") {
+                    return (
+                      <td key={`cell${i}`} {...cell.getCellProps()}>
+                        <a href={row["original"]["link"]} rel="nofollow">
+                          {cell.render("Cell")}
+                        </a>
+                      </td>
+                    );
+                  } else if (cell["value"] === "Project shutdown") {
+                    return (
+                      <td key={`cell${i}`} {...cell.getCellProps()}>
+                        <a href={row["original"]["tmp_link"]} rel="nofollow">
+                          {cell.render("Cell")}
+                        </a>
+                      </td>
+                    );
+                  } else if (
+                    cell["value"] === "Yes" ||
+                    cell["value"] === "Full"
+                  ) {
+                    return (
+                      <td key={`cell${i}`} {...cell.getCellProps()}>
+                        <img
+                          className="Mark"
+                          src={passingMark}
+                          alt="Passing Mark"
+                        />
+                      </td>
+                    );
+                  } else if (
+                    cell["value"] === "No" ||
+                    cell["value"] === "None"
+                  ) {
+                    return (
+                      <td key={`cell${i}`} {...cell.getCellProps()}>
+                        <img
+                          className="Mark"
+                          src={failingMark}
+                          alt="Failing Mark"
+                        />
+                      </td>
+                    );
+                  } else if (cell["value"] === "?") {
+                    return (
+                      <td key={`cell${i}`} {...cell.getCellProps()}>
+                        <IconContext.Provider
+                          value={{ color: "gray", size: "70%" }}
+                        >
+                          <IoMdHelpCircle className="Mark" />
+                        </IconContext.Provider>
+                      </td>
+                    );
+                  } else {
+                    return (
+                      <td key={`cell${i}`} {...cell.getCellProps()}>
+                        {cell.render("Cell")}
+                      </td>
+                    );
+                  }
+                })}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </TableWrapper>
   );
 };
 
-export default BlogViewToolTip;
+export default Table;
