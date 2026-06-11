@@ -52,7 +52,7 @@
     "@rjsf/mui": "^6.5.2",
     "@rjsf/utils": "^6.5.2",
     "@rjsf/validator-ajv8": "^6.5.2",
-    "@sistent/sistent": "^0.21.11",
+    "@sistent/sistent": "^0.21.19",
     "@svgr/webpack": "^8.0.1",
     "axios": "^1.13.2",
     "babel-plugin-styled-components": "^2.1.4",
@@ -117,7 +117,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
-    "@babel/eslint-parser": "^7.28.5",
+    "@babel/eslint-parser": "^7.28.6",
     "@eslint/eslintrc": "^3.3.3",
     "@eslint/js": "^9.39.2",
     "cross-env": "^10.0.0",

@@ -8,7 +8,7 @@ const AdventuresWrapper = styled.div`
         font-weight: 500;
     }
     h2 span{
-        color:${props => props.theme.secondaryColor};
+        color:${(props) => props.theme.secondaryColor};
     }
     .logo{
         width: 100%;
@@ -18,11 +18,11 @@ const AdventuresWrapper = styled.div`
         text-align: center;
         p { 
             text-align: center;
-            color: ${props => props.theme.white};
+            color: ${(props) => props.theme.white};
             padding: 0px 3.125rem;
         }
         h2 {
-            color: ${props => props.theme.white}; 
+            color: ${(props) => props.theme.white}; 
             line-height: 1.2;
         }
         h1 {
@@ -41,6 +41,7 @@ const AdventuresWrapper = styled.div`
                 padding: 1.25rem;
                 background-color: #1E2117; 
                 border-radius: 25px;
+                overflow: hidden;
                 p {
                     text-align: center;
                     padding: 0px 0px 1px 0px;
@@ -70,8 +71,8 @@ const AdventuresWrapper = styled.div`
 
     button{
         color: #1E2117;
-        padding: 0.2em 1em;
-        border: 2px solid;
+        padding: 0;
+        border: 0;
         background: none;
         transition: color 0.25s,border-color 0.25s,transform 0.25s,box-shadow 0.25s;
         cursor: pointer;
