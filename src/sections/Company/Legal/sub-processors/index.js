@@ -185,6 +185,11 @@ const subProcessorData = [
 
 const SubProcessors = () => {
   const { isDark } = useStyledDarkMode();
+  const [didLoad, setDidLoad] = React.useState(false);
+
+  React.useEffect(() => {
+    setDidLoad(true);
+  }, []);
 
   // Create custom theme with Qanelas Soft font family
   const customTheme = createTheme({
@@ -232,7 +237,7 @@ const SubProcessors = () => {
               <p>
               Since data is physically stored in a predetermined location, once an account begins storing data it cannot be moved. If you want to switch to a different region, contact your local partner or Enterprise account manager to create a new account hosted in the region of your choice going forward.
               </p>
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"} theme={customTheme}>
+              {didLoad && (<SistentThemeProvider key={isDark ? "dark" : "light"} initialMode={isDark ? "dark" : "light"} theme={customTheme}>
                 <Row className="table-container" $Hcenter>
                   <Col md={12} sx={{ px: 0 }}>
                     {subProcessorData.map((section, index) => (
@@ -290,7 +295,7 @@ const SubProcessors = () => {
                     ))}
                   </Col>
                 </Row>
-              </SistentThemeProvider>
+              </SistentThemeProvider>)}
               <p>
                 <small>
                   <i>Last Updated: Sept 25th, 2025</i>

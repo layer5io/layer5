@@ -44,6 +44,9 @@ const TermsWrapper = styled.section`
     h1 {
       color: white;
     }
+    h2, h3, h4, h5, h6, p, li {
+      color: ${props => props.theme.whiteToBlack};
+    }
     @media (max-width: 680px) {
       padding: 2rem 0;
       h1 {

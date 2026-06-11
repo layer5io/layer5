@@ -85,6 +85,11 @@ const cookieData = [
 
 const CookieNotice = () => {
   const { isDark } = useStyledDarkMode();
+  const [didLoad, setDidLoad] = React.useState(false);
+
+  React.useEffect(() => {
+    setDidLoad(true);
+  }, []);
 
   // Create custom theme with Qanelas Soft font family
   const customTheme = createTheme({
@@ -153,7 +158,7 @@ const CookieNotice = () => {
               <p>
               Third-party cookies are set by domains other than Layer5’s to support analytics, advertising, or other functionalities. These cookies may collect data across multiple websites to tailor ads based on your interests. Below is a list of third-party providers we use, along with their purposes and opt-out options:
               </p>
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"} theme={customTheme}>
+              {didLoad && (<SistentThemeProvider key={isDark ? "dark" : "light"} initialMode={isDark ? "dark" : "light"} theme={customTheme}>
                 <Row className="table-container" $Hcenter>
                   <Col md={12} sx={{ px: 0 }}>
                     <StyledTableContainer>
@@ -190,7 +195,7 @@ const CookieNotice = () => {
                     </StyledTableContainer>
                   </Col>
                 </Row>
-              </SistentThemeProvider>
+              </SistentThemeProvider>)}
               <p>
               You can also opt out of certain third-party cookies via the <a href="https://optout.aboutads.info">Digital Advertising Alliance’s opt-out tool</a> or, for European visitors, <a href="https://www.youronlinechoices.eu">Your Online Choices</a>.
               </p>
