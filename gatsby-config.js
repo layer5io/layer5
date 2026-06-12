@@ -480,7 +480,9 @@ module.exports = {
           {
             resolve: "gatsby-plugin-purgecss",
             options: {
-              printRejected: true,
+              printRejected: false,
+              develop: false,
+              purgeOnly: ["src/"],
             },
           },
         ]
@@ -580,7 +582,9 @@ module.exports = {
             options: {
               host: siteRootUrl,
               sitemap: `${siteRootUrl}/sitemap-index.xml`,
-              policy: [{ userAgent: "*", allow: "/" }],
+              policy: [
+                { userAgent: "*", allow: "/", disallow: ["/pr-preview/"] },
+              ],
             },
           },
         ]

@@ -1,0 +1,125 @@
+---
+name: "Menu"
+title: Menu
+published: true
+component: menu
+description: A menu displays a list of contextual actions or choices anchored to a trigger.
+---
+
+import { useState } from "react";
+import { Box, Button, Divider, Menu, MenuItem, MenuList, Paper } from "@sistent/sistent";
+
+export const BasicMenuDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => setAnchorEl(event.currentTarget);
+  const handleClose = () => setAnchorEl(null);
+
+  return (
+    <Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
+      <Button variant="contained" label="Open Menu" onClick={handleClick} />
+      <Menu
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        disableScrollLock
+        marginThreshold={null}
+      >
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>Account</MenuItem>
+        <MenuItem onClick={handleClose}>Sign out</MenuItem>
+      </Menu>
+    </Box>
+  );
+};
+
+export const PositionedMenuDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => setAnchorEl(event.currentTarget);
+  const handleClose = () => setAnchorEl(null);
+
+  return (
+    <Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
+      <Button variant="outlined" label="Project Actions" onClick={handleClick} />
+      <Menu
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+        transformOrigin={{ vertical: "top", horizontal: "right" }}
+        disableScrollLock
+        marginThreshold={null}
+      >
+        <MenuItem onClick={handleClose}>Rename</MenuItem>
+        <MenuItem onClick={handleClose}>Duplicate</MenuItem>
+        <Divider />
+        <MenuItem onClick={handleClose}>Archive</MenuItem>
+      </Menu>
+    </Box>
+  );
+};
+
+export const MenuListDemo = () => (
+  <Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
+    <Paper elevation={1} sx={{ width: 220 }}>
+      <MenuList>
+        <MenuItem selected>Overview</MenuItem>
+        <MenuItem>Activity</MenuItem>
+        <MenuItem disabled>Settings</MenuItem>
+      </MenuList>
+    </Paper>
+  </Box>
+);
+
+The Menu component presents a short list of choices after a user activates a trigger. Menus are useful for contextual actions, account controls, navigation shortcuts, and overflow actions that should not occupy permanent space in the interface.
+
+<a id="Types">
+  <h2>Types</h2>
+</a>
+
+<h3>Basic Menu</h3>
+
+A basic menu is anchored to a trigger and closes when the user selects an item or clicks away.
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <BasicMenuDemo />
+  </ThemeWrapper>
+</Row>
+
+<h3>Positioned Menu</h3>
+
+Use origin props to align a menu with the trigger. This is useful for action menus in toolbars, tables, and compact panels.
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <PositionedMenuDemo />
+  </ThemeWrapper>
+</Row>
+
+<h3>MenuList</h3>
+
+MenuList provides the list structure and keyboard behavior for menu items. It can be used inside Menu or inside another surface when the list is already visible.
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <MenuListDemo />
+  </ThemeWrapper>
+</Row>
+
+<a id="Related Components">
+  <h2>Related Components</h2>
+</a>
+
+<h3>Menu</h3>
+
+Menu controls the popover surface, anchor, open state, and close behavior.
+
+<h3>MenuItem</h3>
+
+MenuItem represents a selectable action or destination. It supports states such as disabled and selected.
+
+<h3>MenuList</h3>
+
+MenuList groups MenuItem elements and provides accessible list semantics for keyboard navigation.
