@@ -52,7 +52,17 @@ const TutorialsTable = () => {
           return (
             <p>
               {data.resources.slides ? <span><a href={data.resources.slides} target="_blank" rel="noreferrer">Slides</a></span> : ""}
-              {data.resources.recording ? <span><a href={data.resources.recording} target="_blank" rel="noreferrer">Recording</a></span> : ""}
+              {data.resources.recording ? (
+                Array.isArray(data.resources.recording) ? (
+                  data.resources.recording.map((rec, i) => (
+                    <span key={i}>
+                      <a href={rec} target="_blank" rel="noreferrer">Recording {i + 1}</a>
+                    </span>
+                  ))
+                ) : (
+                  <span><a href={data.resources.recording} target="_blank" rel="noreferrer">Recording</a></span>
+                )
+              ) : ""}
             </p>
           );
         }
@@ -91,7 +101,7 @@ const TutorialsTable = () => {
       <table {...getTableProps()}>
         <thead>
 
-          {headerGroups.map((headerGroup,index) => (
+          {headerGroups.map((headerGroup, index) => (
             <tr key={index} {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column, index) => (
                 <th key={index} {...column.getHeaderProps()}>
@@ -102,7 +112,7 @@ const TutorialsTable = () => {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          { rows.map((row, i) => {
+          {rows.map((row, i) => {
             prepareRow(row);
             return (
               <tr key={i} {...row.getRowProps()}>

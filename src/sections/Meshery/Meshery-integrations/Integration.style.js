@@ -51,7 +51,7 @@ export const HoneycombGrid = styled.div`
 
   .selected {
     background-color: ${(props) => props.theme.darkJungleGreenColor};
-    color: ${(props) => props.theme.white};
+    color: ${(props) => props.theme.whiteToBlack};
   }
 
   ul {
