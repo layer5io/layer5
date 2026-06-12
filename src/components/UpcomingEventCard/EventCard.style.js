@@ -20,6 +20,7 @@ const UpcomingEventsWrapper = styled.div`
   }
   .blog-slider_img {
     height: 18rem;
+    max-height: min(20rem, 45vh);
     padding: 0.75rem;
     display: flex;
     align-items: center;
