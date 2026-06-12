@@ -21,6 +21,7 @@ const UpcomingEvents = ({ data }) => {
             slidesPerView={1}
             modules={[Mousewheel, Pagination]}
             pagination={{ clickable: true }}
+            autoHeight={true}
           >
             {data.nodes.map((item) => {
               return (

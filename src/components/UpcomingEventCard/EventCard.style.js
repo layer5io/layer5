@@ -10,13 +10,13 @@ const UpcomingEventsWrapper = styled.div`
 		box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
 		padding: 1rem;
 		border-radius: 0.5rem;
-		height: 39.5rem;
+		height: auto;
 		overflow: hidden;
 		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 
 	.swiper-wrapper{
-		height: 38rem
+		height: auto;
 	}
 	.blog-slider_img{
 		max-height: 25rem; 
@@ -99,10 +99,6 @@ const UpcomingEventsWrapper = styled.div`
 		.blog-slider_button {
 			margin-bottom: 2rem;
 		}
-
-		.blog-slider {
-			height: 38rem;
-		}
 	}
 
 	@media (max-width: 420px) {
@@ -112,10 +108,6 @@ const UpcomingEventsWrapper = styled.div`
 
 		.blog-slider_text > h2 {
 			font-size: 1.15rem;
-		}
-
-		.blog-slider {
-			height: 35rem;
 		}
 	}
 `;
