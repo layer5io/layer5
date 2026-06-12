@@ -45,12 +45,10 @@ const UpcomingEventsWrapper = styled.div`
   }
   .blog-slider_content {
     text-align: center;
-    overflow: hidden;
     padding-bottom: 2rem;
   }
 
   .blog-slider_item {
-    overflow: hidden;
   }
   .blog-slider_item.swiper-slide::-webkit-scrollbar {
     width: 0;
