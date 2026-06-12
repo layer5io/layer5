@@ -8,7 +8,7 @@ const UpcomingEventsWrapper = styled.div`
 		margin: auto;
 		background: ${props => props.theme.grey212121ToWhite};
 		box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
-		padding: 1rem;
+		padding: 1rem 1rem 3rem;
 		border-radius: 0.5rem;
 		height: auto;
 		overflow: hidden;
@@ -41,7 +41,7 @@ const UpcomingEventsWrapper = styled.div`
 	.blog-slider_content{
 		text-align: center;
 		overflow: hidden;
-		padding-bottom: 4rem;
+		padding-bottom: 2rem;
 	}
 
 	.blog-slider_item {
