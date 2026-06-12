@@ -11,7 +11,7 @@ const UpcomingEventsWrapper = styled.div`
 		padding: 1rem;
 		border-radius: 0.5rem;
 		height: 39.5rem;
-		overflow: auto;
+		overflow: hidden;
 		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 
@@ -45,9 +45,7 @@ const UpcomingEventsWrapper = styled.div`
 	}
 
 	.blog-slider_item {
-		overflow-x: hidden;
-		overflow-y: auto;
-
+		overflow: hidden;
 	}
 	.blog-slider_item.swiper-slide::-webkit-scrollbar {
 		width: 0;
