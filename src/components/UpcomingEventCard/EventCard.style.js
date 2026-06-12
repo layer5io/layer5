@@ -59,6 +59,10 @@ const UpcomingEventsWrapper = styled.div`
     margin: 1rem auto 0.2rem;
   }
 
+  .blog-slider_button {
+    margin-bottom: 2rem;
+  }
+
   .blog-slider_date {
     display: flex;
     color: ${(props) => props.theme.whiteSevenToBlackSeven};
