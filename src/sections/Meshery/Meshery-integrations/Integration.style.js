@@ -51,7 +51,7 @@ export const HoneycombGrid = styled.div`
 
   .selected {
     background-color: ${(props) => props.theme.darkJungleGreenColor};
-    color: ${(props) => props.theme.whiteToBlack};
+    color: ${(props) => props.theme.white};
   }
 
   ul {
@@ -104,7 +104,7 @@ export const HoneycombGrid = styled.div`
         overflow: hidden;
         .title {
           line-height: 1.375rem;
-          color: ${(props) => props.theme.whiteToBlack};
+          color: ${(props) => props.theme.white};
           // margin-bottom: -2.7rem;
           font-size: 1.2rem;
           opacity: 0;
