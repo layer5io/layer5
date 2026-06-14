@@ -5,6 +5,8 @@ import CTA_ImageOnly from "./src/components/Call-To-Actions/CTA_ImageOnly";
 import CTA_FullWidth from "./src/components/Call-To-Actions/CTA_FullWidth";
 import CTA_Bottom from "./src/components/Call-To-Actions/CTA_Bottom";
 import { ContextWrapper } from "./context-wrapper";
+import { IoIosCopy } from "@react-icons/all-files/io/IoIosCopy";
+import { IoIosCheckmark } from "@react-icons/all-files/io/IoIosCheckmark";
 
 // Custom image component for better CLS scores
 const OptimizedImage = (props) => {
@@ -30,9 +32,11 @@ const OptimizedImage = (props) => {
 const InlineCode = ({ children }) => {
   const [copied, setCopied] = React.useState(false);
   const [hovered, setHovered] = React.useState(false);
+  const codeRef = React.useRef(null);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(children);
+    const text = codeRef.current?.textContent || children;
+    navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -47,7 +51,7 @@ const InlineCode = ({ children }) => {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <code>{children}</code>
+      <code ref={codeRef}>{children}</code>
       <button
         onClick={handleCopy}
         title="Copy to clipboard"
@@ -57,7 +61,6 @@ const InlineCode = ({ children }) => {
           border: "none",
           cursor: "pointer",
           padding: "2px 4px",
-          fontSize: "12px",
           color: "inherit",
           opacity: hovered ? 1 : 0,
           transition: "opacity 0.2s ease",
@@ -65,7 +68,7 @@ const InlineCode = ({ children }) => {
         }}
         aria-label="Copy to clipboard"
       >
-        {copied ? "✅" : "📋"}
+        {copied ? <IoIosCheckmark size={16} /> : <IoIosCopy size={14} />}
       </button>
     </span>
   );
