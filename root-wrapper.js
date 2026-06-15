@@ -28,11 +28,20 @@ const OptimizedImage = (props) => {
   );
 };
 
+// Returns true only for commands like `npm install`, `npx skill install`
+// Returns false for paths like `~/.claude/skills/`, flags like `-sfn`
+const isCommand = (text) => {
+  const str = String(text).trim();
+  return !/^[~/.]/.test(str);
+};
+
 // Inline code component with copy-on-hover button
 const InlineCode = ({ children }) => {
   const [copied, setCopied] = React.useState(false);
   const [hovered, setHovered] = React.useState(false);
   const codeRef = React.useRef(null);
+
+  const showCopyButton = isCommand(children);
 
   const handleCopy = () => {
     const text = codeRef.current?.textContent || children;
@@ -52,24 +61,38 @@ const InlineCode = ({ children }) => {
       onMouseLeave={() => setHovered(false)}
     >
       <code ref={codeRef}>{children}</code>
-      <button
-        onClick={handleCopy}
-        title="Copy to clipboard"
-        style={{
-          marginLeft: "4px",
-          background: "transparent",
-          border: "none",
-          cursor: "pointer",
-          padding: "2px 4px",
-          color: "inherit",
-          opacity: hovered ? 1 : 0,
-          transition: "opacity 0.2s ease",
-          borderRadius: "3px",
-        }}
-        aria-label="Copy to clipboard"
-      >
-        {copied ? <IoIosCheckmark size={16} /> : <IoIosCopy size={14} />}
-      </button>
+      {showCopyButton && (
+        <span
+          style={{
+            display: "inline-block",
+            width: hovered ? "22px" : "0px",
+            marginLeft: hovered ? "4px" : "0px",
+            overflow: "hidden",
+            transition: "width 0.2s ease, margin 0.2s ease",
+            verticalAlign: "middle",
+          }}
+        >
+          <button
+            onClick={handleCopy}
+            title="Copy to clipboard"
+            style={{
+              background: "transparent",
+              border: "none",
+              cursor: "pointer",
+              padding: "2px 2px",
+              color: "inherit",
+              opacity: hovered ? 1 : 0,
+              transition: "opacity 0.2s ease",
+              borderRadius: "3px",
+              display: "flex",
+              alignItems: "center",
+            }}
+            aria-label="Copy to clipboard"
+          >
+            {copied ? <IoIosCheckmark size={16} /> : <IoIosCopy size={14} />}
+          </button>
+        </span>
+      )}
     </span>
   );
 };
