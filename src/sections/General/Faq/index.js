@@ -22,7 +22,7 @@ import data from "../../../assets/data/faq";
 import FaqSectionWrapper from "./faqSection.style";
 
 const Faq = () => {
-  const { isDark } = useStyledDarkMode();
+  const { isDark, didLoad } = useStyledDarkMode();
 
   // Extract all available categories
   const allCategories = [...new Set(data.faqs.map(faq => faq.category))].sort();
@@ -136,8 +136,9 @@ const Faq = () => {
             )}
           </div>
 
-          <SistentThemeProvider initialMode={isDark ? "dark" : "light"} key={isDark ? "dark" : "light"}>
-            <Collapse in={showFilters}>
+          {didLoad && (
+            <SistentThemeProvider initialMode={isDark ? "dark" : "light"} key={isDark ? "dark" : "light"}>
+              <Collapse in={showFilters}>
               <Box
                 sx={{
                   padding: 3,
@@ -192,8 +193,9 @@ const Faq = () => {
                   )}
                 </Box>
               </Box>
-            </Collapse>
-          </SistentThemeProvider>
+              </Collapse>
+            </SistentThemeProvider>
+          )}
 
           {faqs_data.length > 0 && (
             <div className="active-filters">
