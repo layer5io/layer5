@@ -48,6 +48,21 @@ const getCustomToggleButtonStyle = (isActive, baseStyle) => ({
   },
 });
 
+// Calculate max savings percentage dynamically from plan data
+const getMaxSavingsPercent = (plans) => {
+  const savings = plans
+    .filter((plan) => plan.monthlyprice > 0 && plan.yearlyprice > 0)
+    .map((plan) => {
+      const yearlyIfMonthly = plan.monthlyprice * 12;
+      return Math.round(
+        ((yearlyIfMonthly - plan.yearlyprice) / yearlyIfMonthly) * 100,
+      );
+    });
+  return Math.max(...savings);
+};
+
+const maxSavingsPercent = getMaxSavingsPercent(options);
+
 export const CurrencySelect = ({ currency, setCurrency }) => {
   return (
     <FormControl
@@ -116,7 +131,6 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
 };
 
 const Pricing = () => {
-  // const [monthly, setMonthly] = useState(false);
   const [isYearly, setIsYearly] = useState(false);
   const [currency, setCurrency] = useState("USD");
 
@@ -149,12 +163,37 @@ const Pricing = () => {
             </Box>
             <Box
               onClick={() => setIsYearly(true)}
-              sx={getCustomToggleButtonStyle(
-                isYearly,
-                customToggleButtonStyles.base,
-              )}
+              sx={{
+                ...getCustomToggleButtonStyle(
+                  isYearly,
+                  customToggleButtonStyles.base,
+                ),
+                position: "relative",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
             >
               Yearly
+              {isYearly && (
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: "-12px",
+                    right: "-8px",
+                    backgroundColor: "#00D3A9",
+                    color: "#fff",
+                    fontSize: "0.55rem",
+                    fontWeight: "bold",
+                    padding: "2px 5px",
+                    borderRadius: "10px",
+                    whiteSpace: "nowrap",
+                    lineHeight: 1.4,
+                  }}
+                >
+                  Save {maxSavingsPercent}%
+                </Box>
+              )}
             </Box>
           </Box>
         </div>
