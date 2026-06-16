@@ -9,9 +9,10 @@ import {
 import { CustomTooltip } from "@sistent/sistent";
 import { IoMdHelpCircle } from "@react-icons/all-files/io/IoMdHelpCircle";
 import { IconContext } from "@react-icons/all-files";
-import { TableWrapper } from "./LandscapeTable.style.js";
+import { TableWrapper } from "./LandscapeTable.style";
 import { AiOutlineCaretUp } from "@react-icons/all-files/ai/AiOutlineCaretUp";
 import { AiOutlineCaretDown } from "@react-icons/all-files/ai/AiOutlineCaretDown";
+// import { StaticImage } from "gatsby-plugin-image";
 
 import passingMark from "../../assets/images/landscape/passing.svg";
 import failingMark from "../../assets/images/landscape/failing.svg";
