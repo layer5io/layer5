@@ -136,7 +136,7 @@ const Faq = () => {
             )}
           </div>
 
-          <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+          <SistentThemeProvider initialMode={isDark ? "dark" : "light"} key={isDark ? "dark" : "light"}>
             <Collapse in={showFilters}>
               <Box
                 sx={{
