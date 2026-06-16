@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Button from "../../reusecore/Button";
-import axios from "axios";
+import { useWebhookSubmit } from "../../utils/hooks/useWebhookSubmit";
 import { Field, Form, Formik } from "formik";
 import CommonFormWrapper from "./commonForm.style";
 import { Container } from "../../reusecore/Layout";
@@ -10,8 +10,7 @@ import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-
 const EventForm = ({ form, title, submit_title, submit_body }) => {
 
   const [stepNumber, setStepNumber] = useState(0);
-  const [memberFormOne, setMemberFormOne] = useState({});
-  const [submit, setSubmit] = useState(false);
+  const { submitForm } = useWebhookSubmit();
 
   // Form values
   const [email, setEmail] = useState("");
@@ -20,14 +19,6 @@ const EventForm = ({ form, title, submit_title, submit_body }) => {
   const [org, setOrg] = useState("");
   const [occupation, setOccupation] = useState("");
 
-
-  useEffect(() => {
-    if (submit) {
-      axios.post("https://hook.us1.make.com/nficb3d7swqkclkl467st4hp4cg65u8o", {
-        memberFormOne,
-      });
-    }
-  }, [submit]);
 
   return (
     <CommonFormWrapper>
@@ -44,19 +35,27 @@ const EventForm = ({ form, title, submit_title, submit_body }) => {
         org: org,
         form: form,
       }}
-      onSubmit={values => {
-        setMemberFormOne(values);
-        setStepNumber(1);
-        setSubmit(true);
-        window.scrollTo(0,window.scrollY - 800);
-        setFirstName(values.firstname);
-        setEmail(values.email);
-        setLastName(values.lastname);
-        setOccupation(values.occupation);
-        setOrg(values.org);
+      onSubmit={async (values, { setStatus }) => {
+        const { success } = await submitForm({ memberFormOne: values });
+        if (success) {
+          setStatus(null);
+          setStepNumber(1);
+          window.scrollTo(0,window.scrollY - 800);
+          setFirstName(values.firstname);
+          setEmail(values.email);
+          setLastName(values.lastname);
+          setOccupation(values.occupation);
+          setOrg(values.org);
+        } else {
+          setStatus({ submitError: "Submission failed. Please try again." });
+        }
       }}
     >
-      <Form className="form" method="post">
+      {({ status }) => (
+        <Form className="form" method="post" aria-describedby="event-form-status">
+          <div id="event-form-status" className="form-error" role="alert" aria-live="assertive">
+            {status?.submitError || ""}
+          </div>
         <label htmlFor="firstname" className="form-name">First Name <span className="required-sign">*</span></label>
         <Field type="text" className="text-field" id="firstname" name="firstname" maxLength="32" pattern="[A-Za-z]{1,32}" required />
         <label htmlFor="lastname" className="form-name">Last Name <span className="required-sign">*</span></label>
@@ -69,7 +68,8 @@ const EventForm = ({ form, title, submit_title, submit_body }) => {
         <Field type="text" className="text-field" id="org" name="org" />
 
         <Button $secondary className="btn" title="Submit" />
-      </Form>
+        </Form>
+      )}
     </Formik>
   </div>
       }
