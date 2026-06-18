@@ -104,3 +104,4 @@ const TermsWrapper = styled.section`
 `;
 
 export default TermsWrapper;
+
