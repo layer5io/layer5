@@ -82,6 +82,10 @@ function getJsxElementName(node) {
 
 function hasImageProp(attributes) {
   return attributes.some((attribute) => {
+    if (attribute.type === "JSXSpreadAttribute") {
+      return true;
+    }
+
     return (
       attribute.type === "JSXAttribute" &&
       attribute.name &&
