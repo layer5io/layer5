@@ -16,7 +16,9 @@ const LearnPathsPage = () => {
           <h3>Learn how to build an application and </h3>
           <h3>manage it using cloud native infrastructure</h3>
         </div>
-        <CanvasIllustration />
+        <div className="learning-paths-illustration">
+          <CanvasIllustration />
+        </div>
       </Container>
       <Container>
         <WhatAwaitsSection />

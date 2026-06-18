@@ -1,11 +1,5 @@
 import styled, { keyframes } from "styled-components";
 
-const flowAnimation = keyframes`
-  to {
-    stroke-dashoffset: -20;
-  }
-`;
-
 const float1 = keyframes`
   0% { transform: translate(0, 0); }
   50% { transform: translate(10px, -15px); }
@@ -94,47 +88,6 @@ const CanvasIllustrationWrapper = styled.div`
     }
   }
 
-  /* SVG layer for connections */
-  .canvas-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-
-    path {
-      fill: none;
-      stroke: #00b39f;
-      stroke-width: 2.5;
-      stroke-dasharray: 6 6;
-      animation: ${flowAnimation} 1s linear infinite;
-    }
-
-    path.muted {
-      stroke-width: 1.8;
-      stroke-dasharray: 3 8;
-      opacity: 0.58;
-    }
-
-    path.blue-path {
-      stroke: #326ce5;
-    }
-
-    path.purple-path {
-      stroke: #7a4bb5;
-    }
-
-    path.teal-path {
-      stroke: #00b39f;
-    }
-
-    path.yellow-path {
-      stroke: #ebc017;
-    }
-  }
-
   /* Canvas nodes */
   .canvas-node {
     position: absolute;
@@ -148,7 +101,7 @@ const CanvasIllustrationWrapper = styled.div`
     border: 2px solid ${(props) => props.theme.green00D3A9ToGreyE6E6E6};
     border-radius: 8px;
     color: ${(props) => props.theme.whiteToBlack};
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 500;
     box-shadow: 0 4px 12px ${(props) => props.theme.whiteOneToBlackOne};
     transition:
@@ -158,8 +111,8 @@ const CanvasIllustrationWrapper = styled.div`
       color 0.6s ease;
 
     .node-icon {
-      width: 32px;
-      height: 32px;
+      width: 40px;
+      height: 40px;
       margin-bottom: 8px;
       fill: currentColor;
     }
@@ -168,43 +121,42 @@ const CanvasIllustrationWrapper = styled.div`
   .canvas-node.compact {
     padding: 9px 14px;
     min-width: 96px;
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     background: ${(props) => props.theme.grey212121ToWhite};
 
     .node-icon {
-      width: 24px;
-      height: 24px;
+      width: 30px;
+      height: 30px;
       margin-bottom: 5px;
     }
   }
 
   .canvas-node.mini {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     padding: 0;
     border-radius: 50%;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 800;
     background: ${(props) => props.theme.grey111111ToGreyFAFAFA};
 
     .node-icon {
-      width: 22px;
-      height: 22px;
+      width: 26px;
+      height: 26px;
       margin-bottom: 0;
     }
   }
 
   /* Hexagon shape for the center node */
   .canvas-node.hexagon {
-    width: 120px;
-    height: 120px;
+    width: 125px;
+    height: 125px;
     border-radius: 0;
     border: none;
     background: transparent;
     box-shadow: none;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     background-color: ${(props) => props.theme.secondaryColor};
-    color: ${(props) => props.theme.white};
 
     &:before {
       content: "";
@@ -220,14 +172,16 @@ const CanvasIllustrationWrapper = styled.div`
     }
 
     .node-icon {
+      width: 48px;
+      height: 48px;
       color: ${(props) => props.theme.secondaryColor};
     }
   }
 
   /* Node positioning */
   .node-k8s {
-    top: 20%;
-    left: 10%;
+    top: 12%;
+    left: 12%;
     border-color: #326ce5;
     .node-icon {
       color: #326ce5;
@@ -235,23 +189,44 @@ const CanvasIllustrationWrapper = styled.div`
   }
 
   .node-istio {
-    top: 70%;
-    left: 20%;
+    top: 75%;
+    left: 25%;
     border-color: #466bb0;
     .node-icon {
       color: #466bb0;
     }
   }
 
-  .node-meshery {
-    top: 40%;
-    left: 45%;
+  .node-academy.center-academy {
+    position: absolute;
+    top: 50.5%;
+    left: 45.33%;
     transform: translate(-50%, -50%);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .node-icon {
+      width: 134px;
+      height: 134px;
+      opacity: 0.95;
+    }
+  }
+
+  .node-meshery {
+    top: 56%;
+    left: 16%;
+    transform: translate(-50%, -50%);
+    .node-icon {
+      width: 56px;
+      height: 56px;
+    }
   }
 
   .node-gitops {
-    top: 30%;
-    left: 70%;
+    top: 35%;
+    left: 62%;
     border-color: #ebc017;
     .node-icon {
       color: #ebc017;
@@ -259,8 +234,8 @@ const CanvasIllustrationWrapper = styled.div`
   }
 
   .node-workshop {
-    top: 16%;
-    left: 62%;
+    top: 10%;
+    left: 70%;
     border-color: #00b39f;
     .node-icon {
       color: #00b39f;
@@ -268,8 +243,8 @@ const CanvasIllustrationWrapper = styled.div`
   }
 
   .node-certification {
-    top: 64%;
-    left: 68%;
+    top: 78%;
+    left: 58%;
     border-color: #7a4bb5;
     .node-icon {
       color: #7a4bb5;
@@ -277,23 +252,23 @@ const CanvasIllustrationWrapper = styled.div`
   }
 
   .node-quiz {
-    top: 49%;
-    left: 29%;
+    top: 18%;
+    left: 35%;
     color: #ffd200;
     border-color: #ffd200;
   }
 
   .node-check {
-    top: 53%;
-    left: 56%;
+    top: 82.5%;
+    left: 85%;
     color: #00b39f;
     border-color: #00b39f;
   }
 
   .learning-card {
     position: absolute;
-    top: 76%;
-    left: 38%;
+    top: 60%;
+    left: 65%;
     z-index: 4;
     display: flex;
     align-items: center;
@@ -353,8 +328,8 @@ const CanvasIllustrationWrapper = styled.div`
 
   .progress-strip {
     position: absolute;
-    top: 8%;
-    left: 32%;
+    top: 5%;
+    left: 40%;
     z-index: 4;
     display: flex;
     align-items: center;
@@ -406,6 +381,12 @@ const CanvasIllustrationWrapper = styled.div`
     align-items: flex-start;
     animation: ${float1} 4s ease-in-out infinite;
 
+    @media (prefers-reduced-motion: reduce) {
+      .cursor {
+        animation: none;
+      }
+    }
+
     svg {
       width: 20px;
       height: 20px;
@@ -428,8 +409,8 @@ const CanvasIllustrationWrapper = styled.div`
   }
 
   .cursor-1 {
-    top: 15%;
-    left: 40%;
+    top: 12%;
+    left: 55%;
     svg path {
       fill: #7a4bb5;
       stroke: white;
@@ -442,7 +423,7 @@ const CanvasIllustrationWrapper = styled.div`
 
   .cursor-2 {
     top: 65%;
-    left: 60%;
+    left: 25%;
     animation: ${float2} 5s ease-in-out infinite;
     svg path {
       fill: #e6522c;
@@ -454,11 +435,16 @@ const CanvasIllustrationWrapper = styled.div`
     }
   }
 
-  /* Comment block */
+  @media (prefers-reduced-motion: reduce) {
+    .cursor-2 {
+      animation: none;
+    }
+  }
+
   .comment-block {
     position: absolute;
-    top: 25%;
-    left: 55%;
+    top: 30%;
+    left: 74%;
     z-index: 5;
     background: ${(props) => props.theme.saffronColor};
     color: ${(props) => props.theme.black};
@@ -499,6 +485,10 @@ const CanvasIllustrationWrapper = styled.div`
       width: 90px;
       height: 90px;
     }
+    .node-academy.center-academy .node-icon {
+      width: 100px;
+      height: 100px;
+    }
     .canvas-node.compact {
       min-width: 82px;
       padding: 7px 10px;
@@ -522,25 +512,33 @@ const CanvasIllustrationWrapper = styled.div`
   }
 
   @media (max-width: 500px) {
-    .node-gitops {
-      top: 70%;
-      left: 70%;
-    }
     .node-k8s {
       top: 15%;
       left: 10%;
     }
+    .node-istio {
+      top: 75%;
+      left: 30%;
+    }
+    .node-meshery {
+      top: 58%;
+      left: 18%;
+    }
+    .node-gitops {
+      top: 40%;
+      left: 80%;
+    }
     .cursor-1 {
-      top: 10%;
+      top: 15%;
       left: 55%;
     }
     .node-workshop {
-      top: 14%;
-      left: 62%;
+      top: 15%;
+      left: 65%;
     }
     .node-certification {
-      top: 60%;
-      left: 58%;
+      top: 70%;
+      left: 73%;
     }
     .node-quiz,
     .node-check,

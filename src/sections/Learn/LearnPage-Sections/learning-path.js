@@ -4,9 +4,6 @@ import styled from "styled-components";
 import CanvasIllustration from "../../../components/Learn-Components/Canvas-Illustration";
 
 const LearningPathsWrapper = styled.div`
-  Button:hover {
-    box-shadow: 0 2px 10px ${(props) => props.theme.whiteFourToBlackFour};
-  }
   margin: 3rem 0 4rem;
 
   .learn-path-heading {
