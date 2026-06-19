@@ -17,9 +17,9 @@ const CollaboratorFeaturesDiagram = ({ activeExampleIndex }) => {
     <DiagramStyles>
       <div className="transitions">
         <div className="avatars">
-          <img id="avatar-1" ref={ref} className={inView && activeExampleIndex == 0 ? "show" : "render"} src={Avatar1} alt="" />
-          <img id="avatar-2" className={(activeExampleIndex == 1) ? "show" : "render"} src={Avatar2} alt="" />
-          <img id="avatar-3" className={(activeExampleIndex >= 2) ? "show" : "render"} src={Avatar3} alt=""  />
+          <img id="avatar-1" ref={ref} className={inView && activeExampleIndex == 0 ? "show" : "render"} src={Avatar1} alt="Collaborator avatar one" />
+          <img id="avatar-2" className={(activeExampleIndex == 1) ? "show" : "render"} src={Avatar2} alt="Collaborator avatar two" />
+          <img id="avatar-3" className={(activeExampleIndex >= 2) ? "show" : "render"} src={Avatar3} alt="Collaborator avatar three"  />
         </div>
         <div className="root" ref={ref2} style={{ minHeight: "25rem", minWidth: "41rem" }}>
           <Collab1 id="collaborate-image1" className={inView2 && activeExampleIndex == 0 ? "show" : "render"} alt="collaborate-image1"  />

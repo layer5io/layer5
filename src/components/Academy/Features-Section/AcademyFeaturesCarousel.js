@@ -122,7 +122,7 @@ export default function AcademyFeatureCarousel() {
             <div className="img">
               <img
                 src={content.img}
-                alt={content.title}
+                alt={`${content.title} illustration`}
               />
             </div>
           </PopOutCard>
