@@ -40,16 +40,12 @@ const BlogViewToolTip = ({ isListView, setListView, setGridView }) => {
     <ToolTipWrapper>
       <Row className="border">
         <CustomTooltip title="Grid View" placement="top">
-          <a>
-            onClick={setGridView}
-            className={`${!isListView && "active"}`}
+          <a onClick={setGridView} className={`${!isListView && "active"}`}>
             <BsGrid3X3GapFill size={22} />
           </a>
         </CustomTooltip>
         <CustomTooltip title="List View" placement="top">
-          <a>
-            onClick={setListView}
-            className={`${isListView && "active"}`}
+          <a onClick={setListView} className={`${isListView && "active"}`}>
             <TiThList size={22} />
           </a>
         </CustomTooltip>
