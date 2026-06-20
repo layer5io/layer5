@@ -287,11 +287,10 @@ module.exports = {
                 }
                 allMdx(
                   sort: {frontmatter: {date: DESC}}
-                  limit: 50
+                  limit: 100
                   filter: {
                     frontmatter: {
                       published: { eq: true }
-                      category: { in: ["Meshery", "Announcements", "Events"] }
                     }
                     fields: { collection: { in: ["blog", "resources", "news", "events"] } }
                   }
@@ -321,15 +320,27 @@ module.exports = {
             `,
                   serialize: ({ query: { site, allMdx } }) => {
                     const targetTags = ["Community", "Meshery", "mesheryctl"];
+                    const targetCategories = [
+                      "Meshery",
+                      "Announcements",
+                      "Events",
+                    ];
 
                     return allMdx.nodes
                       .filter((node) => {
+                        // Include every published event in the feed.
+                        if (node.fields.collection === "events") return true;
+                        // For blog/resources/news, keep the existing behavior:
+                        // a matching category AND one of the target tags.
+                        const hasCategory = targetCategories.includes(
+                          node.frontmatter.category,
+                        );
                         const hasTag =
                           node.frontmatter.tags &&
                           node.frontmatter.tags.some((t) =>
                             targetTags.includes(t),
                           );
-                        return hasTag;
+                        return hasCategory && hasTag;
                       })
                       .slice(0, 30)
                       .map((node) => {
@@ -349,8 +360,11 @@ module.exports = {
                           },
                           custom_elements: [
                             { "content:encoded": node.excerpt },
-                            { "content:type": node.frontmatter.type },
-                            { "content:category": node.frontmatter.category },
+                            { "content:type": node.frontmatter.type || "" },
+                            {
+                              "content:category":
+                                node.frontmatter.category || "",
+                            },
                             {
                               "content:tags":
                                 node.frontmatter.tags?.join(", ") || "",
