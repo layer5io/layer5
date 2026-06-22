@@ -89,7 +89,7 @@ const LearningPaths = () => {
         </div>
         <Row className="learning-path-cards">
           {data.learnPaths.nodes.map((tutorial) => (
-            <Col $sm={6} key={tutorial.id}>
+            <Col $sm={6} $md={4} $lg={4} $xl={4} key={tutorial.id}>
               <CardComponent tutorial={tutorial} path={`/learn/learning-paths/${tutorial.fields.learnpath}`} courseCount={getCoursesOfaLearningPath(tutorial.fields.learnpath).length} />
             </Col>
           ))}

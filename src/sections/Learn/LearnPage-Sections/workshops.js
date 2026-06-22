@@ -30,6 +30,8 @@ export const WorkshopsListWrapper = styled.div`
 
     img {
       height: 100%;
+      width: 100%;
+      object-fit: cover;
     }
   }
 
@@ -109,9 +111,10 @@ export const WorkshopsListWrapper = styled.div`
       padding: 8rem 4.5rem;
     }
     .workshops-card {
-      flex: 0 0 50%;
-      max-width: 50%;
-      margin: 1rem auto;
+      --workshop-columns: 3;
+      flex: 0 0 calc(100% / var(--workshop-columns));
+      max-width: calc(100% / var(--workshop-columns));
+      margin: 1rem 0;
     }
 
     .feedback-section {
@@ -253,6 +256,8 @@ const WorkshopsSection = () => {
                 <Col
                   $xs={12}
                   $sm={6}
+                  $md={4}
+                  $lg={4}
                   $xl={4}
                   className="workshops-card"
                   key={index}
