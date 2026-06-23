@@ -50,9 +50,3 @@ jobs:
           commit_user_email: ci@layer5.io
           commit_author: 'l5io <l5io@users.noreply.github.com>'
 
-  call-build-and-deploy--workflow:
-    needs:
-      - trigger-feature-list
-    name: Build and Deploy Site
-    uses: layer5io/layer5/.github/workflows/build-and-deploy-site.yml@master
-    secrets: inherit

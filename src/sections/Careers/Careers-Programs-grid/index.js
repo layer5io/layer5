@@ -10,48 +10,55 @@ import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 const Five_image = "../img/open-source.webp";
 
 const ProgramsGrid = ({ hide_path, sub_section }) => {
-  const data = useStaticQuery(
-    graphql`query allPrograms {
-  allMdx(
-    sort: {frontmatter: {title: DESC}}
-    filter: {fields: {collection: {eq: "programs"}}, frontmatter: {published: {eq: true}}}
-  ) {
-    nodes {
-      id
-      frontmatter {
-        title
-        program
-        programSlug
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+  const data = useStaticQuery(graphql`
+    query allPrograms {
+      allMdx(
+        sort: [
+          { frontmatter: { archived: ASC } }
+          { frontmatter: { title: DESC } }
+        ]
+        filter: {
+          fields: { collection: { eq: "programs" } }
+          frontmatter: { published: { eq: true } }
+        }
+      ) {
+        nodes {
+          id
+          frontmatter {
+            title
+            program
+            programSlug
+            archived
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH)
+              }
+              extension
+              publicURL
+            }
+            thumbnail_svg {
+              extension
+              publicURL
+            }
+            darkthumbnail {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH)
+              }
+              extension
+              publicURL
+            }
+            darkthumbnail_svg {
+              extension
+              publicURL
+            }
           }
-          extension
-          publicURL
-        }
-        thumbnail_svg {
-          extension
-          publicURL
-        }
-        darkthumbnail {
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+          fields {
+            slug
           }
-          extension
-          publicURL
         }
-        darkthumbnail_svg {
-          extension
-          publicURL
-        }
-      }
-      fields {
-        slug
       }
     }
-  }
-}`
-  );
+  `);
 
   let path = hide_path ? "" : "Programs";
   let programsArray = [];
@@ -72,52 +79,94 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
         <div className="opensource-section-text">
           <h1>Open Source is in our DNA</h1>
           <p>
-            Layer5 projects are open source software. Anyone can download, use, work on, and share it with others. It's built on principles like collaboration, globalism, and innovation. Layer5 projects are distributed under the terms of Apache v2.
+            Layer5 projects are open source software. Anyone can download, use,
+            work on, and share it with others. It's built on principles like
+            collaboration, globalism, and innovation. Layer5 projects are
+            distributed under the terms of Apache v2.
           </p>
           <p>
-            We believe that all contributors should expect and be part of a safe and friendly environment for constructive contribution. We can more effectively and successfully compare and challenge different ideas to find the best solutions for advancement, while building the size, diversity, and strength of our community.
+            We believe that all contributors should expect and be part of a safe
+            and friendly environment for constructive contribution. We can more
+            effectively and successfully compare and challenge different ideas
+            to find the best solutions for advancement, while building the size,
+            diversity, and strength of our community.
           </p>
         </div>
         <div className="opensource-section-img">
           <StaticImage src={Five_image} alt="Five" />
         </div>
       </div>
-      <PageHeader title="Open Source Internship Programs" subtitle="Build Your Career at Layer5" path={path} />
-      <div className={sub_section ? "sub-header_wrapper" : "programs-page-wrapper"}>
+      <PageHeader
+        title="Open Source Internship Programs"
+        subtitle="Build Your Career at Layer5"
+        path={path}
+      />
+      <div
+        className={sub_section ? "sub-header_wrapper" : "programs-page-wrapper"}
+      >
         <Container>
           <div className="program-grid-wrapper">
-            <Row style={{
-              flexWrap: "wrap"
-            }} $Hcenter
+            <Row
+              style={{
+                flexWrap: "wrap",
+              }}
+              $Hcenter
             >
-              {programs.reverse().map(({ id, frontmatter, fields }) => (
-                <Col key={id} className="programs-col">
-                  <Link
-                    to={
-                      frontmatter.program === "Layer5"
-                        ? fields.slug
-                        : `/programs/${frontmatter.programSlug}`
-                    }
-                  >
-                    <div className={`program ${sub_section ? "sub-section_program" : ""}`}>
-                      <div className={`icon ${sub_section ? "sub-section_icon" : ""}`}>
-                        <Image
-                          {...((frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg) && (isDark && (frontmatter.darkthumbnail?.publicURL || frontmatter.darkthumbnail_svg?.publicURL) !== (frontmatter.thumbnail?.publicURL || frontmatter.thumbnail_svg?.publicURL)) ? (frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg) : (frontmatter.thumbnail || frontmatter.thumbnail_svg))}
-                          imgStyle={{ objectFit: "contain" }}
-                          alt={frontmatter.title}
-                        />
+              {programs.reverse().map(({ id, frontmatter, fields }) => {
+                const isArchived =
+                  frontmatter.archived || frontmatter.programSlug === "gsod";
+                return (
+                  <Col key={id} className="programs-col">
+                    <Link
+                      to={
+                        frontmatter.program === "Layer5"
+                          ? fields.slug
+                          : `/programs/${frontmatter.programSlug}`
+                      }
+                    >
+                      <div
+                        className={`program ${sub_section ? "sub-section_program" : ""} ${isArchived ? "program-archived" : ""}`}
+                      >
+                        <div
+                          className={`icon ${sub_section ? "sub-section_icon" : ""}`}
+                        >
+                          <Image
+                            {...((frontmatter.darkthumbnail ||
+                              frontmatter.darkthumbnail_svg) &&
+                            isDark &&
+                            (frontmatter.darkthumbnail?.publicURL ||
+                              frontmatter.darkthumbnail_svg?.publicURL) !==
+                              (frontmatter.thumbnail?.publicURL ||
+                                frontmatter.thumbnail_svg?.publicURL)
+                              ? frontmatter.darkthumbnail ||
+                                frontmatter.darkthumbnail_svg
+                              : frontmatter.thumbnail ||
+                                frontmatter.thumbnail_svg)}
+                            imgStyle={{ objectFit: "contain" }}
+                            alt={frontmatter.title}
+                          />
+                        </div>
+                        <h5>
+                          {frontmatter.program}
+                          {isArchived && (
+                            <span className="program-archived-tag">
+                              (Archived)
+                            </span>
+                          )}
+                        </h5>
                       </div>
-                      <h5>{frontmatter.program}</h5>
-                    </div>
-                  </Link>
-                </Col>
-              ))}
+                    </Link>
+                  </Col>
+                );
+              })}
             </Row>
           </div>
           <p>
-          Layer5 is driven by its people, who are the stewards of our culture and principles. Join us on the journey to enabling the world's most innovative companies make the transition to cloud native and multi-cloud through engineering-empowered automation.
+            Layer5 is driven by its people, who are the stewards of our culture
+            and principles. Join us on the journey to enabling the world's most
+            innovative companies make the transition to cloud native and
+            multi-cloud through engineering-empowered automation.
           </p>
-
         </Container>
       </div>
     </ProgramsPageWrapper>
