@@ -20,20 +20,25 @@ const SocialLinks = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img height="40 px" src={mail_icon} alt="mail" />
+            <img height="40 px" src={mail_icon} alt="mail" loading="lazy" />
           </a>
-          <a
-            href="https://slack.layer5.io/"
-            target="_blank" rel="noreferrer"
-          >
-            <img className="slack" height="40 px" src={slack_icon} alt="slack" />
+          <a href="https://slack.layer5.io/" target="_blank" rel="noreferrer">
+            <img
+              className="slack"
+              height="40 px"
+              src={slack_icon}
+              alt="slack"
+              loading="lazy"
+            />
           </a>
-          <a
-            href="https://x.com/layer5"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img className="twitter" height="40 px" src={twitter_icon} alt="twitter" />
+          <a href="https://x.com/layer5" target="_blank" rel="noreferrer">
+            <img
+              className="twitter"
+              height="40 px"
+              src={twitter_icon}
+              alt="twitter"
+              loading="lazy"
+            />
           </a>
           <a
             className="bluesky_icon"
@@ -41,14 +46,26 @@ const SocialLinks = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img className="bluesky" height="40 px" src={bluesky_icon} alt="bluesky" />
+            <img
+              className="bluesky"
+              height="40 px"
+              src={bluesky_icon}
+              alt="bluesky"
+              loading="lazy"
+            />
           </a>
           <a
             href="https://github.com/layer5io"
             target="_blank"
             rel="noreferrer"
           >
-            <img className="github" height="40 px" src={github_icon} alt="github" />
+            <img
+              className="github"
+              height="40 px"
+              src={github_icon}
+              alt="github"
+              loading="lazy"
+            />
           </a>
           <a
             className="youtube_icon"
@@ -56,7 +73,13 @@ const SocialLinks = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img className="youtube" height="40 px" src={youtube_icon} alt="youtube" />
+            <img
+              className="youtube"
+              height="40 px"
+              src={youtube_icon}
+              alt="youtube"
+              loading="lazy"
+            />
           </a>
           <a
             className="docker_icon"
@@ -64,7 +87,13 @@ const SocialLinks = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img className="docker" height="40 px" src={docker_icon} alt="docker" />
+            <img
+              className="docker"
+              height="40 px"
+              src={docker_icon}
+              alt="docker"
+              loading="lazy"
+            />
           </a>
         </Row>
       </Col>
