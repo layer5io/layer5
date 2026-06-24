@@ -1,0 +1,404 @@
+---
+title: "Where to Place Coding Agent Skills in Your Repo"
+subtitle: "A practical guide to the Agent Skills specification and SKILL.md file placement"
+date: 2026-03-06 09:00:00 -0530
+author: Layer5 Team
+thumbnail: ./hero-image.webp
+darkthumbnail: ./hero-image.webp
+description: "Learn where to place SKILL.md files in your open-source repository—whether you're teaching agents to work on your codebase or publishing reusable skills for the community."
+type: Blog
+category: AI
+tags:
+  - ai
+  - Engineering
+  - Open Source
+featured: false
+published: true
+resource: true
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import { Link } from "gatsby";
+import Blockquote from "../../../../reusecore/Blockquote";
+import BlockquoteAlt from "../../../../reusecore/Blockquote/Blockquote-alt-style";
+import CTA_FullWidth from "../../../../components/Call-To-Actions/CTA_FullWidth";
+import CTAImg from "../../../../assets/images/layer5/5 icon/png/light/5-light-no-trim.webp";
+import HeroImage from "./hero-image.webp";
+
+<BlogWrapper>
+
+<div class="intro">
+  <p>
+    AI coding agents are rapidly becoming first-class contributors to open-source projects. You've likely already explored <Link to="/blog/ai/agentsmd-one-file-to-guide-them-all">AGENTS.md</Link>—the universal instruction file that tells any AI agent how to work within your specific codebase. But there's a complementary concept that's gaining just as much traction: <strong>Agent Skills</strong>.
+  </p>
+</div>
+
+While `AGENTS.md` answers the question _"how should an agent behave in my project?"_, a `SKILL.md` file answers a different question: _"what specific, reusable capability should this agent be able to execute?"_ Knowing where to place these files—and understanding the difference between the two use cases—is what separates a well-structured AI-native repository from a confusing mess of config files scattered at the root.
+
+<img src={HeroImage} className="image-center" alt="AI coding agent skills and AGENTS.md repository structure" />
+
+This guide covers the **Agent Skills specification**: what it is, the two distinct scenarios for using it, the standard directory structure every skill must follow, and the best practices that will make your repository a model for the community.
+
+## What Is the Agent Skills Specification?
+
+The Agent Skills specification is an open standard for defining discrete, reusable, and composable capabilities that AI coding agents can execute. Where `AGENTS.md` is a project-level configuration file—always a single document at your repository root—`SKILL.md` is the manifest for a single, focused capability: a unit of expertise that any compliant agent can discover, load, and invoke.
+
+The specification has been adopted by major AI development tools including **Claude Code**, **Cursor**, **GitHub Copilot**, and **Codex**. Each skill is a self-contained folder with a `SKILL.md` file at its core, plus optional subdirectories for scripts, reference documents, and assets.
+
+<Blockquote
+  quote="Think of AGENTS.md as your project's constitution—it defines the law of the land for any agent working in your repo. SKILL.md is more like a certified procedure: a documented, repeatable action that any agent can pick up and execute, regardless of which project it happens to be working in."
+  person="Layer5 Engineering Team"
+  title="AI-Native Development Practices"
+/>
+
+### A Critical Naming Note
+
+Before diving into placement, one important clarification: under the Agent Skills specification, the file is **strictly named `SKILL.md`** (all caps). It must also live inside its own **named folder** rather than existing as a bare, standalone file. This folder name becomes the skill's identifier—choose it carefully and descriptively.
+
+```text
+✅ Correct:  .agents/skills/deploy-app/SKILL.md
+❌ Incorrect: .agents/skills/SKILL.md
+❌ Incorrect: .agents/skills/deploy-app/skill.md
+```
+
+## Two Scenarios, Two Different Placements
+
+The placement of agent skills in an open-source repository depends entirely on what you're trying to accomplish. There are two fundamentally different use cases, and conflating them leads to the kind of configuration sprawl that frustrates both human contributors and AI agents alike.
+
+### Scenario 1 — Adding Skills to Help Agents Work on Your Project
+
+The first scenario is the most common: you want to teach coding agents how to navigate, build, test, or deploy your specific codebase. These are **project-specific skills**—they encode the tribal knowledge your team has accumulated about your infrastructure and workflows, making that expertise available to any AI agent (or new human contributor) working in the repository.
+
+In this scenario, skills belong in a **hidden directory at the root of your project**. The leading dot signals to both tools and contributors that these are configuration and tooling artifacts, not source code or documentation meant for end users.
+
+The emerging universal standard is the `.agents/` directory, but major tools also check their own vendor-specific locations. Here's where each tool looks by default:
+
+| Tool | Skill Discovery Path |
+|---|---|
+| **Open Standard (Codex, most agents)** | `.agents/skills/<skill-name>/` |
+| **VS Code / GitHub Copilot** | `.github/skills/<skill-name>/` |
+| **Cursor** | `.cursor/skills/<skill-name>/` |
+| **Claude Code** | `.claude/skills/<skill-name>/` |
+
+**Recommended approach:** Put your project skills in `.agents/skills/` as the primary location. Most modern agents—including Cursor and Codex—automatically discover skills there. You can then create **symbolic links** from the vendor-specific paths back to your `.agents/` directory, keeping a single source of truth while maintaining compatibility:
+
+```bash
+# Keep your canonical skill in the open standard location
+# .agents/skills/deploy-app/SKILL.md (already exists)
+
+# Create symlinks for tool-specific discovery
+mkdir -p .github/skills
+ln -s ../../.agents/skills/deploy-app .github/skills/deploy-app
+
+mkdir -p .cursor/skills
+ln -s ../../.agents/skills/deploy-app .cursor/skills/deploy-app
+
+mkdir -p .claude/skills
+ln -s ../../.agents/skills/deploy-app .claude/skills/deploy-app
+```
+
+This mirrors the exact same strategy recommended for `AGENTS.md` itself: one canonical file, multiple discovery paths via symlinks, zero duplication. Just as you might symlink `AGENTS.md` to `CLAUDE.md` or `.github/copilot-instructions.md`, you can symlink skill folders to each tool's expected location.
+
+<div class="note">
+  <a href="/blog/ai/agentsmd-one-file-to-guide-them-all">Learn more about the AGENTS.md standard →</a>
+</div>
+
+#### Example: A Real-World Project Skill Layout
+
+Here's what a cloud native project might look like after adding skills to help agents understand its deployment pipeline:
+
+```text
+my-platform-app/
+├── AGENTS.md                          # Universal agent instructions
+├── .agents/
+│   └── skills/
+│       ├── deploy-app/                # Teaches agents to deploy the application
+│       │   ├── SKILL.md
+│       │   └── scripts/
+│       │       └── deploy.sh
+│       ├── run-integration-tests/     # Teaches agents to run the full test suite
+│       │   ├── SKILL.md
+│       │   └── scripts/
+│       │       └── run-tests.sh
+│       └── generate-k8s-manifests/   # Teaches agents to produce K8s YAML
+│           ├── SKILL.md
+│           └── references/
+│               └── manifest-schema.json
+├── .github/
+│   └── skills -> ../.agents/skills   # Symlink for Copilot discovery
+├── src/
+└── README.md
+```
+
+The result: any compliant coding agent cloning this repository can instantly discover and execute `deploy-app`, `run-integration-tests`, or `generate-k8s-manifests` without any manual configuration. For <Link to="/cloud-native-management/meshery">platform engineering teams managing Kubernetes-based infrastructure</Link>, this kind of codified operational knowledge is transformative—it ensures every agent (and every new team member) follows the exact same deployment and testing procedures.
+
+### Scenario 2 — Publishing a Skill for the Community
+
+The second scenario is less common but increasingly important as the skills ecosystem matures: your open-source repository exists **solely to distribute a reusable skill** (or a collection of skills). This skill is designed to be installed into other projects via a skills CLI, a skills directory service, or direct copying.
+
+In this case, the skill content is the product—it belongs in **visible, top-level directories** rather than hidden configuration folders:
+
+**Single-Skill Repository:** Place the `SKILL.md` directly at the root of the repository inside a folder named for the skill itself:
+
+```text
+my-awesome-skill/             # The repository root IS the skill folder
+├── SKILL.md                  # Required: frontmatter + core instructions
+├── README.md                 # Human-friendly documentation
+├── scripts/
+│   └── execute.sh
+└── references/
+    └── api-docs.md
+```
+
+**Multi-Skill Monorepo:** Use a visible top-level `skills/` directory to organize all skills clearly:
+
+```text
+my-skills-collection/
+├── README.md
+└── skills/
+    ├── analyze-security/
+    │   ├── SKILL.md
+    │   └── references/
+    │       └── cve-patterns.md
+    ├── generate-docs/
+    │   ├── SKILL.md
+    │   └── scripts/
+    │       └── doc-gen.py
+    └── optimize-queries/
+        ├── SKILL.md
+        └── assets/
+            └── query-templates.json
+```
+
+The visibility is intentional. When your repository's purpose is to be a skill library, the contents should be immediately discoverable by human contributors browsing your project on GitHub, not buried in a hidden `.agents/` directory.
+
+<BlockquoteAlt
+  quote="Visibility signals intent. Hidden dot-directories tell agents and developers 'this is configuration.' A top-level skills/ directory tells them 'this is the product.' Where you put the file communicates what the file is for."
+  person="Agent Skills Specification"
+  title="Community Best Practices"
+/>
+
+## The Standard Skill Directory Structure
+
+Regardless of which scenario applies—and regardless of whether the root folder is `.agents/skills/my-skill/` or just `my-skill/` in a standalone repo—every skill must follow the same **progressive disclosure pattern** internally.
+
+The design philosophy here is deliberate: agent context windows are finite and expensive. Heavy reference materials, lengthy scripts, and large template files shouldn't be loaded into the agent's working memory unless explicitly needed. The `SKILL.md` file provides the lightweight core; deeper files are loaded on demand.
+
+```text
+deploy-app/                     # The skill's root folder (named descriptively)
+├── SKILL.md                    # REQUIRED: YAML frontmatter + core instructions
+├── scripts/                    # OPTIONAL: Executable code (Python, Bash, etc.)
+│   ├── deploy.sh
+│   └── rollback.sh
+├── references/                 # OPTIONAL: Dense docs or API schemas—loaded on demand
+│   ├── deployment-runbook.md
+│   └── kubernetes-api.yaml
+└── assets/                     # OPTIONAL: JSON templates, static configs, etc.
+    ├── deployment-template.json
+    └── service-account.yaml
+```
+
+### What Goes Inside SKILL.md?
+
+The `SKILL.md` file is a Markdown document with **YAML frontmatter** that provides structured metadata for agent discovery, followed by the core instructions that define the skill's behavior.
+
+A minimal but complete `SKILL.md` looks like this:
+
+```markdown
+---
+name: deploy-app
+version: 1.2.0
+description: Deploy the application to a target Kubernetes cluster
+author: platform-team
+tags:
+  - kubernetes
+  - deployment
+  - cloud-native
+requires:
+  - kubectl
+  - helm
+---
+
+# Deploy Application
+
+## Overview
+This skill deploys the application to a specified Kubernetes cluster using Helm.
+It handles environment-specific configuration, pre-deploy health checks, and
+post-deploy verification.
+
+## Prerequisites
+- Authenticated kubectl context pointing to the target cluster
+- `DEPLOY_ENV` environment variable set to `staging` or `production`
+- Helm 3.x installed and configured
+
+## Steps
+1. Validate the target environment and cluster connectivity
+2. Run pre-deployment smoke tests
+3. Execute the Helm upgrade (or install) with environment-specific values
+4. Verify pod rollout completes successfully
+5. Run post-deployment health checks
+
+## Usage
+Invoke this skill when you need to deploy a new version of the application.
+For detailed scripts, see `./scripts/deploy.sh`.
+For the complete runbook, see `./references/deployment-runbook.md`.
+```
+
+The frontmatter metadata enables skills directories and CLI tools to index, search, and filter skills. The Markdown body gives the agent its operating instructions—concise enough to fit in context, with pointers to heavier resources in the subdirectories when more detail is needed.
+
+## Connecting Skills to Your AGENTS.md
+
+Skills and `AGENTS.md` aren't competing standards—they're complementary layers in a well-structured AI-native repository. Think of it this way:
+
+- **`AGENTS.md`** → The standing instructions. Always loaded. Tells the agent about your project's architecture, conventions, and rules of engagement. Every interaction starts here.
+- **`SKILL.md`** → The procedure manual. Loaded on demand. Tells the agent _how to do something specific_ with enough precision that it can execute the task reliably and repeatably.
+
+A practical approach is to reference your available skills from your `AGENTS.md` file, so agents know to look for them:
+
+```markdown
+# In your AGENTS.md
+
+## Available Skills
+This project includes the following agent skills in `.agents/skills/`:
+- `deploy-app` — Deploy to Kubernetes (staging or production)
+- `run-integration-tests` — Execute the full integration test suite
+- `generate-k8s-manifests` — Generate Kubernetes YAML from application templates
+
+Before attempting deployment, testing, or manifest generation tasks, always
+check the corresponding skill for the authoritative procedure.
+```
+
+This lightweight pointer in `AGENTS.md` ensures agents discover and consult the right skills without you having to include the full procedural detail in your main instruction file—keeping `AGENTS.md` lean and focused on project context.
+
+<div class="tip">
+  <h3>💡 The One-File Problem</h3>
+  <p>A common mistake is trying to put everything into <code>AGENTS.md</code>. Detailed step-by-step deployment procedures, full API schemas, and runbook-style content bloat the file and pollute the agent's context on every interaction. Pull operational procedures into skills; keep <code>AGENTS.md</code> focused on architecture, conventions, and project-level context.</p>
+</div>
+
+## Quick-Reference Decision Tree
+
+Use this decision tree to determine the right placement for your `SKILL.md` files:
+
+```text
+Are you adding skills to help agents work ON YOUR SPECIFIC PROJECT?
+│
+├── YES → Use a hidden dot-directory at the project root
+│         Primary:  .agents/skills/<skill-name>/SKILL.md
+│         Copilot:  .github/skills/<skill-name>/SKILL.md
+│         Cursor:   .cursor/skills/<skill-name>/SKILL.md
+│         Claude:   .claude/skills/<skill-name>/SKILL.md
+│         💡 Tip: Canonical in .agents/, symlinks to the rest
+│
+└── NO → Is this repository a standalone skill distribution?
+          │
+          ├── SINGLE SKILL REPO
+          │   Place SKILL.md at the repository root folder level:
+          │   <repo-root>/SKILL.md
+          │
+          └── MULTI-SKILL MONOREPO
+              Use a visible top-level skills/ directory:
+              skills/<skill-name>/SKILL.md
+```
+
+## Best Practices for Platform Engineers and Open Source Maintainers
+
+After working with the Agent Skills specification across cloud native projects and <Link to="/community">open source communities</Link>, a few patterns consistently separate well-maintained skill repositories from chaotic ones.
+
+### Keep Skills Focused and Atomic
+
+A skill should do one thing well. `deploy-app` is a good skill name. `do-everything-in-production` is not. Atomic skills compose cleanly—an agent can chain `generate-k8s-manifests` → `deploy-app` → `run-integration-tests` in sequence far more reliably than it can interpret a monolithic skill that tries to handle every case.
+
+### Version Your Skills
+
+The `version` field in `SKILL.md` frontmatter isn't decoration. As your deployment procedures and infrastructure evolve, your skills should evolve with them. Version constraints in dependent projects can pin to a known-good skill version, protecting against breaking changes during infrastructure migrations.
+
+### Put Scripts in `scripts/`, Not in `SKILL.md`
+
+It's tempting to inline shell commands directly into `SKILL.md`. Resist this for anything longer than a few lines. Scripts in the `scripts/` subdirectory are:
+- Independently testable
+- Executable directly by human operators during incidents
+- Kept out of the agent's context window until explicitly referenced
+- Syntax-highlighted and version-controlled cleanly in PRs
+
+### Reference Documentation Belongs in `references/`
+
+API schemas, architecture decision records, and lengthy runbooks are invaluable—but they shouldn't live in `SKILL.md` where they consume context on every invocation. Put them in `references/` and point to them explicitly: `"For the full API schema, see ./references/k8s-api.yaml."` The agent will load them only when it needs to.
+
+### Treat Your `.agents/` Directory Like Source Code
+
+Add `.agents/skills/` to your code review process. A poorly written skill that causes an agent to deploy to the wrong environment, skip tests, or use deprecated APIs is a reliability risk. Review skills with the same rigor you'd apply to any infrastructure automation script.
+
+## Putting It All Together: A Cloud Native Example
+
+Here's a realistic example of a <Link to="/cloud-native-management/meshery">Meshery</Link>-based platform engineering repository that uses both `AGENTS.md` and Agent Skills effectively:
+
+```text
+platform-infra/
+├── AGENTS.md                              # Project instructions for all agents
+│                                          #   (architecture, conventions, rules)
+├── .agents/
+│   └── skills/
+│       ├── apply-meshery-design/          # Apply a Kanvas/Meshery design to cluster
+│       │   ├── SKILL.md
+│       │   ├── scripts/
+│       │   │   └── apply-design.sh
+│       │   └── references/
+│       │       └── meshery-api.yaml
+│       ├── deploy-service-mesh/           # Configure and deploy the service mesh
+│       │   ├── SKILL.md
+│       │   └── scripts/
+│       │       ├── deploy.sh
+│       │       └── verify.sh
+│       └── run-conformance-tests/         # Execute conformance test suite
+│           ├── SKILL.md
+│           └── assets/
+│               └── test-config.json
+├── .github/
+│   ├── copilot-instructions.md -> ../AGENTS.md
+│   └── skills -> ../.agents/skills       # Copilot discovers skills here
+├── .cursor/
+│   └── skills -> ../.agents/skills       # Cursor discovers skills here
+├── meshery/
+│   └── designs/
+├── kubernetes/
+│   └── manifests/
+└── terraform/
+```
+
+Any compliant coding agent cloning this repository will:
+1. Read `AGENTS.md` to understand the project's architecture and conventions
+2. Discover available skills in `.agents/skills/`
+3. Load only the relevant `SKILL.md` when asked to perform a specific task
+4. Reference scripts and documentation from subdirectories as needed
+
+For platform teams using <Link to="/cloud-native-management/meshery">Meshery</Link> to manage cloud native infrastructure, this structure means an AI agent can reliably apply Kanvas designs, configure service mesh policies, and run conformance tests—following the same procedures your human operators use, every single time.
+
+<CTA_FullWidth 
+  image={CTAImg}
+  heading="Build AI-Ready Cloud Native Infrastructure"
+  alt="Layer5 - Cloud Native Management Platform"
+  content="Explore Layer5's open source projects including Meshery for Kubernetes management and Kanvas for visual infrastructure design. Join a community of platform engineers building the next generation of AI-native infrastructure tooling."
+  button_text="Explore Layer5 Projects"
+  url="/projects"
+  external_link={false}
+/>
+
+## Conclusion
+
+The Agent Skills specification answers a question that `AGENTS.md` alone cannot: _how do we encode complex, reusable operational procedures in a way that any AI agent can discover and execute reliably?_ 
+
+The answer comes down to placement:
+
+- **Project skills** belong in hidden dot-directories (`.agents/skills/` as the canonical location, with symlinks to vendor-specific paths)
+- **Distributable skills** belong in visible top-level directories (`skills/` for monorepos, or the repository root for single-skill repos)
+- **Every skill**, regardless of placement, follows the same internal structure: a `SKILL.md` at its root with optional `scripts/`, `references/`, and `assets/` subdirectories for progressive disclosure
+
+Together, `AGENTS.md` and `SKILL.md` form a complete AI-native repository strategy: project-wide context in one file, reusable operational procedures in another, both discoverable and composable by any compliant coding agent.
+
+As the tools that power your development workflow—Copilot, Cursor, Claude Code, and others—continue to evolve, repositories that invest in these conventions now will be dramatically better positioned to leverage autonomous agents effectively. The best time to structure your repository for AI is before you need it.
+
+---
+
+*Interested in AI-native development practices and cloud native infrastructure? Join the <Link to="/community">Layer5 community</Link> on [Slack](https://slack.layer5.io) to connect with platform engineers, DevOps practitioners, and open source contributors building the future of infrastructure management.*
+
+</BlogWrapper>
