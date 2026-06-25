@@ -67,6 +67,9 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
             borderColor: "#00B39F",
           },
         },
+        "& .MuiOutlinedInput-notchedOutline legend": {
+          maxWidth: "100%",
+        },
         "&:hover": {
           "& .MuiInputLabel-root": { color: "#00B39F" },
           "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
