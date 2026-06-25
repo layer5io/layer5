@@ -80,6 +80,7 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
         Currency
       </InputLabel>
       <Select
+        notched
         labelId="currency-selector-label"
         value={currency}
         onChange={(e) => {
