@@ -76,7 +76,9 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
         },
       }}
     >
-      <InputLabel id="currency-selector-label">Currency</InputLabel>
+      <InputLabel id="currency-selector-label" shrink>
+        Currency
+      </InputLabel>
       <Select
         labelId="currency-selector-label"
         value={currency}
@@ -116,7 +118,6 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
 };
 
 const Pricing = () => {
-  // const [monthly, setMonthly] = useState(false);
   const [isYearly, setIsYearly] = useState(false);
   const [currency, setCurrency] = useState("USD");
 
