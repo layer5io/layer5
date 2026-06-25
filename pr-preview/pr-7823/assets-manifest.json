@@ -112,8 +112,8 @@
   "ac581ebe.js": "ac581ebe-36cccd14d56d90dda80d.js",
   "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff.js": "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff-babff49ff7faa754e317.js",
   "afc8cc2614d8655b8140f9da9c5b9896b3b56bc4.js": "afc8cc2614d8655b8140f9da9c5b9896b3b56bc4-2176c06e93d6bfca56ff.js",
-  "app-db2b931f1765c457dff2.js.LICENSE.txt": "app-db2b931f1765c457dff2.js.LICENSE.txt",
-  "app.js": "app-db2b931f1765c457dff2.js",
+  "app-a035ed652221b1d4ff6e.js.LICENSE.txt": "app-a035ed652221b1d4ff6e.js.LICENSE.txt",
+  "app.js": "app-a035ed652221b1d4ff6e.js",
   "b3a4868e3083275025dca472f7350001ee397eb9.js": "b3a4868e3083275025dca472f7350001ee397eb9-98732987a48f0bd99e3f.js",
   "b5f6012b.js": "b5f6012b-a7763041fda46eef5ffb.js",
   "b94c7d6e898e669bbfd99da21b2e9e67976b8f68.js": "b94c7d6e898e669bbfd99da21b2e9e67976b8f68-3b21013c6eaf2595832c.js",
@@ -182,7 +182,7 @@
   "component---src-pages-learn-workshops-js.js": "component---src-pages-learn-workshops-js-a66f364a1f762bc6657c.js",
   "component---src-pages-newcomers-js.js": "component---src-pages-newcomers-js-c1923e5b1d9c56fc7f62.js",
   "component---src-pages-partners-js.js": "component---src-pages-partners-js-d731a5c06813e9131df5.js",
-  "component---src-pages-pricing-index-js.js": "component---src-pages-pricing-index-js-20b4cd903d95322a8125.js",
+  "component---src-pages-pricing-index-js.js": "component---src-pages-pricing-index-js-4849c35405341443f466.js",
   "component---src-pages-pricing-open-source-program-js.js": "component---src-pages-pricing-open-source-program-js-3bc5a66168637c17098c.js",
   "component---src-pages-products-academy-index-js.js": "component---src-pages-products-academy-index-js-2adfba64a7da72c6ba35.js",
   "component---src-pages-products-index-js.js": "component---src-pages-products-index-js-d2723b4aa46f12b06a78.js",
@@ -1401,7 +1401,7 @@
   "f748d1297999714cb3d5ac0bb797524b514e1994.js": "f748d1297999714cb3d5ac0bb797524b514e1994-3b8cb4909af716679c07.js",
   "f79bb285.js": "f79bb285-7cea11185303e423534e.js",
   "fb60d2e75ba6150616697bdc0d45988f14e9977b.js": "fb60d2e75ba6150616697bdc0d45988f14e9977b-622086200bbcff6bcd89.js",
-  "figure1.webp": "static/figure1-895f01881900708549862c152f946c8d.webp",
+  "figure1.webp": "static/figure1-945a12ca03127e744034f1333e7a3a6e.webp",
   "figure2.webp": "static/figure2-ed0f303d08e482684a1c2a1a1f42b762.webp",
   "figure3.webp": "static/figure3-c4cfa5061ca99e65b266a86cf034df08.webp",
   "figure4.webp": "static/figure4-296f4783f79c9b52169eefabfbe6c482.webp",
@@ -2107,5 +2107,5 @@
   "static/yash-sharma.webp": "static/yash-sharma-54aa26b6e5743f0557cfc76aa9797f2d.webp",
   "static/yogi.webp": "static/yogi-d00ca1cc48ab74938a23d4359ef3fb01.webp",
   "styles.css": "styles.1494cc934bbae66dc566.css",
-  "webpack-runtime.js": "webpack-runtime-94d9e0ed30430021199c.js"
+  "webpack-runtime.js": "webpack-runtime-e254fe19f9a2cf022dd8.js"
 }
