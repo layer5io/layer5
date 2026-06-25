@@ -309,3 +309,7 @@ redirects:
     toPath: "/learn/workshops"
     redirectInBrowser: true
     isPermanent: true
+  - fromPath: "/carrer"
+    toPath: "/careers"
+    redirectInBrowser: true
+    isPermanent: true
