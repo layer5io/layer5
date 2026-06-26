@@ -131,6 +131,13 @@ const privacyData = [
   },
 ];
 
+// Create custom theme with Qanelas Soft font family
+const customTheme = createTheme({
+  typography: {
+    fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
+  },
+});
+
 const Privacy = () => {
   const { isDark } = useStyledDarkMode();
   const [didLoad, setDidLoad] = React.useState(false);
@@ -138,13 +145,6 @@ const Privacy = () => {
   React.useEffect(() => {
     setDidLoad(true);
   }, []);
-
-  // Create custom theme with Qanelas Soft font family
-  const customTheme = createTheme({
-    typography: {
-      fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
-    },
-  });
 
   return (
     <TermsWrapper>
