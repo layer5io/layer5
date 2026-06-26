@@ -63,40 +63,34 @@ export const CardWrapper = styled.div`
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: ${(props) => (props.$listView ? "0.5rem" : "0")};
     flex-shrink: 0;
-    ${(props) =>
-      props.$listView &&
-      `
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.5rem;
-    `}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: ${(props) =>
+      props.$listView ? "0.5rem" : "1rem 1rem 0.5rem 1rem"};
 
     .gatsby-image-wrapper,
     .old-gatsby-image-wrapper {
       width: 100%;
       height: 100%;
+      max-height: ${(props) => (props.$listView ? "100%" : "8.5rem")};
       margin-top: 0;
       transition: all 0.3s ease-in;
       display: flex;
       align-items: center;
       justify-content: center;
-      ${(props) =>
-        props.$listView &&
-        `
-        border-radius: 0.25rem;
-        overflow: hidden;
-      `}
+      border-radius: 0.25rem;
+      overflow: hidden;
     }
 
     .gatsby-image-wrapper img,
     .old-gatsby-image-wrapper img {
       max-width: 100%;
       max-height: 100%;
-      width: ${(props) => (props.$listView ? "100%" : "auto")};
-      height: ${(props) => (props.$listView ? "100%" : "auto")};
+      width: 100%;
+      height: 100%;
       display: block;
-      object-fit: ${(props) => (props.$listView ? "cover" : "contain")};
+      object-fit: contain;
       object-position: center;
       margin: 0 auto;
     }

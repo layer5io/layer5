@@ -14,18 +14,40 @@ const Card = ({
   listView = false,
 }) => {
   const { isDark } = useStyledDarkMode();
+  const thumbnail =
+    isDark &&
+    frontmatter.darkthumbnail &&
+    frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL
+      ? frontmatter.darkthumbnail
+      : frontmatter.thumbnail;
+
+  const isLogo =
+    thumbnail?.extension === "svg" ||
+    thumbnail?.publicURL?.endsWith(".svg") ||
+    thumbnail?.publicURL?.toLowerCase()?.includes("logo") ||
+    thumbnail?.publicURL?.toLowerCase()?.includes("icon") ||
+    thumbnail?.publicURL?.toLowerCase()?.includes("cncf-landscape") ||
+    thumbnail?.publicURL?.toLowerCase()?.includes("academy") ||
+    thumbnail?.publicURL?.toLowerCase()?.includes("docker-swarm") ||
+    thumbnail?.publicURL?.toLowerCase()?.includes("smp");
+
+  const isOReillyBanner =
+    frontmatter.title?.toLowerCase()?.includes("introduction to istio") ||
+    frontmatter.title?.toLowerCase()?.includes("advanced istio") ||
+    frontmatter.abstract?.toLowerCase()?.includes("introduction to istio") ||
+    frontmatter.title?.toLowerCase()?.includes("oscon") ||
+    frontmatter.title?.toLowerCase()?.includes("o'reilly");
+
   return (
     <CardWrapper fixed={!!frontmatter.abstract} $listView={listView}>
       <div className="post-block">
         <div className="post-thumb-block">
           <Image
-            {...(isDark &&
-            frontmatter.darkthumbnail &&
-            frontmatter.darkthumbnail.publicURL !==
-              frontmatter.thumbnail.publicURL
-              ? frontmatter.darkthumbnail
-              : frontmatter.thumbnail)}
-            imgStyle={{ objectFit: "cover" }}
+            {...thumbnail}
+            imgStyle={{
+              objectFit: isOReillyBanner ? "cover" : "contain",
+              transform: isLogo ? "scale(0.92)" : "none",
+            }}
             loading={loading}
             fetchpriority={fetchpriority}
             alt={frontmatter.title}
