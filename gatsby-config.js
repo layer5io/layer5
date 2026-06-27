@@ -544,9 +544,7 @@ module.exports = {
         name: "images",
         path: `${__dirname}/src/assets/images`,
         ignore: [
-          "**/*.svg",
           "**/learning-path/**",
-          "**/service-mesh-icons/**",
           "**/app/**",
           "**/learn-layer5/**",
           "**/careers/**",
