@@ -20,9 +20,12 @@ h2, h5{
     box-shadow: 0 0 24px ${props => props.theme.whiteOneFiveToBlackOneFive};
     margin: 2rem auto;
     display: block;
-    overflow-x: scroll;
-    overflow-y:hidden;
+    overflow-x: auto;
+    overflow-y: visible;
     transition: 0.6s cubic-bezier(0.5, 1);
+    @media (min-width: 992px) {
+        overflow: visible;
+    }
 }
 .price-table {
     width: 100%;
@@ -78,14 +81,17 @@ h2, h5{
 }
 
 .price-table tr.price-table-head td {
+    background-color: ${props => props.theme.secondaryColor};
     font-size: 1.15rem;
     line-height: 1.5rem;
     font-weight: 600;
     padding: .5rem;
     text-transform: uppercase;
 }
+.price-table tr.price-table-head td:nth-child(3) {
+    background-color: ${props => props.theme.secondaryColor};
+}
 .price-table tr.price-table-head {
-    background-color:${props => props.theme.secondaryColor};
     color: #FFFFFF;
 }
 .price-table td.price {
@@ -102,17 +108,23 @@ h2, h5{
     display: inline-block;
     border-radius: 64px;
 }
+.price-table thead {
+    position: sticky;
+    top: 80px;
+    z-index: 10;
+}
 .price-table th.price-table-popular {
     border-top: 3px solid #00b39f;
     color:${props => props.theme.saffronColor};
-    background-color:rgba(0,179,159,0.1);
+    background-image: linear-gradient(rgba(0, 179, 159, 0.1), rgba(0, 179, 159, 0.1));
+    background-color: ${props => props.theme.body};
     text-transform: uppercase;
     font-size: 12px;
     padding: 12px 48px;
     font-weight: 700;
 }
 .price-table .price-blank {
-    background-color: ${props => props.theme.secondaryDarkColor};
+    background-color: ${props => props.theme.body};
     border: 0 none;
     transition: 0.6s cubic-bezier(0.5, 1);
 }
@@ -199,7 +211,7 @@ const Comparison = () => {
       <Container>
         <div className="main">
           <table className="price-table">
-            <tbody>
+            <thead>
               <tr>
                 <th className="price-blank"></th>
                 <th className="price-blank"></th>
@@ -214,6 +226,8 @@ const Comparison = () => {
                 <td>Team Operator</td>
                 <td>Enterprise</td>
               </tr>
+            </thead>
+            <tbody>
 
               {details.map((x) => (
                 <>
