@@ -229,56 +229,8 @@ redirects:
     isPermanent: true
   - fromPath: "/cloud-native-management/playground.html"
     toPath: "https://www.kanvas.new"
-  - fromPath: "/serivce-mesh-landscape"
-    toPath: "/service-mesh-landscape"
-    redirectInBrowser: true
-    isPermanent: true
-  - fromPath: "/projects/catalog"
-    toPath: "/cloud-native-management/catalog"
-    redirectInBrowser: true
-    isPermanent: true
-  - fromPath: "/community/newcomer"
-    toPath: "/newcomers"
-    redirectInBrowser: true
-    isPermanent: true
-  - fromPath: "/learn/service-mesh-labs/working-with-meshery-and-consul"
-    toPath: "/learn/kanvas-labs/working-with-meshery-and-consul"
-    redirectInBrowser: true
-    isPermanent: true
-  - fromPath: "/learn/service-mesh-workshops/all-things-open-2019"
-    toPath: "/learn/workshops"
-    redirectInBrowser: true
-    isPermanent: true
-  - fromPath: "/learn/service-mesh-workshops/cloud-native-austin-2020"
-    toPath: "/learn/workshops"
-    redirectInBrowser: true
-    isPermanent: true
   - fromPath: "/blog/engineering"
-    toPath: "/blog"
-    redirectInBrowser: true
-    isPermanent: true
-  - fromPath: "/meshery/adapters"
-    toPath: "/cloud-native-management/meshery"
-    redirectInBrowser: true
-    isPermanent: true
-  - fromPath: "/cloud-native-management"
-    toPath: "/cloud-native-management/meshery"
-    redirectInBrowser: true
-    isPermanent: true
-  - fromPath: "/cloud-native-management/"
-    toPath: "/cloud-native-management/meshery"
-    redirectInBrowser: true
-    isPermanent: true
-  - fromPath: "/solutions/devrel-platform"
-    toPath: "/solutions/devrel-platform-for-kubernetes-and-cloud-native-content"
-    redirectInBrowser: true
-    isPermanent: true
-  - fromPath: "/2018/06/07/istio-up-and-running/"
-    toPath: "/learn/service-mesh-books/istio-up-and-running"
-    redirectInBrowser: true
-    isPermanent: true
-  - fromPath: "/community/handbook/faq"
-    toPath: "/community/handbook/faqs"
+    toPath: "/blog/category/engineering"
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/community/handbook/designer"
@@ -287,29 +239,5 @@ redirects:
     isPermanent: true
   - fromPath: "/community/handbook/community"
     toPath: "/community/handbook/community-guidelines"
-    redirectInBrowser: true
-    isPermanent: true
-  - fromPath: "/community/handbook/learn-layer5"
-    toPath: "/community/handbook/learning"
-    redirectInBrowser: true
-    isPermanent: true
-  - fromPath: "/community/handbook/instructions"
-    toPath: "/community/handbook"
-    redirectInBrowser: true
-    isPermanent: true
-  - fromPath: "/community/handbook/contributor-journey"
-    toPath: "/community/handbook"
-    redirectInBrowser: true
-    isPermanent: true
-  - fromPath: "/learn/service-mesh-labs/working-with-meshery-and-istio"
-    toPath: "/learn/kanvas-labs/working-with-meshery-and-istio"
-    redirectInBrowser: true
-    isPermanent: true
-  - fromPath: "/learn/service-mesh-workshops/service-mesh-fundamentals-with-linkerd"
-    toPath: "/learn/workshops"
-    redirectInBrowser: true
-    isPermanent: true
-  - fromPath: "/carrer"
-    toPath: "/careers"
     redirectInBrowser: true
     isPermanent: true
