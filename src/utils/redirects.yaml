@@ -227,3 +227,7 @@ redirects:
     toPath: "/cloud-native-management/kanvas/collaborate/peer-reviews"
     redirectInBrowser: true
     isPermanent: true
+  - fromPath: "/cloud-native-management/playground.html"
+    toPath: "https://www.kanvas.new"
+    redirectInBrowser: true
+    isPermanent: true

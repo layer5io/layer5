@@ -27,10 +27,19 @@ const validatePictureUrl = (value) => {
     } else {
       try {
         new URL(value);
-        const allowedImageExtensions = ["jpg", "jpeg", "png", "webp", "svg", "gif"];
-        const extension = value.split(".").pop().toLowerCase();
-        if (!allowedImageExtensions.includes(extension)) {
-          error = "URL must point to an image file (jpg, jpeg, png, svg, webp or gif).";
+        const isGoogleDrive = value.includes("drive.google.com");
+        const validGoogleDrivePattern = /drive\.google\.com\/file\/d\/.+\/(view|uc\?)/;
+
+        if (isGoogleDrive) {
+          if (!validGoogleDrivePattern.test(value)) {
+            error = "Please provide a direct Google Drive file link. Right-click the file in Google Drive and select 'Get link' to get a shareable link that includes '/file/d/' in the URL.";
+          }
+        } else {
+          const allowedImageExtensions = ["jpg", "jpeg", "png", "webp", "svg", "gif"];
+          const extension = value.split(".").pop().toLowerCase();
+          if (!allowedImageExtensions.includes(extension)) {
+            error = "URL must point to an image file (jpg, jpeg, png, svg, webp or gif).";
+          }
         }
       } catch (err) {
         console.error("Error in validatePictureUrl:", err);
@@ -219,7 +228,7 @@ const WebBasedForm = () => {
             setRole("User");
           }}
           >
-            I'm here as a User and Contibutor
+            I'm here as a User and Contributor
           </div>
           <div className={role === "Bystander" ? "option active" : "option"} onClick={() => {
             setRole("Bystander");
@@ -230,7 +239,7 @@ const WebBasedForm = () => {
           <br /><br />
           <div className="btn-wrapper">
             <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous Step</button>
-            <Button onClick={() => setStepNumber(2)}$secondary type="submit" className="btn-next" title="Next Step" />
+            <Button onClick={() => setStepNumber(2)} $secondary type="submit" className="btn-next" title="Next Step" />
           </div>
         </div>
 
@@ -580,7 +589,7 @@ const WebBasedForm = () => {
               <span>Ok</span>
             </label>
             <p className="form-name">Are community contributors paid? Are internships paid? What do I get in return?</p>
-            <p className="para label">With few exceptions, generally community contributors and interns are not paid. Those that participate through Google Summer of Code, LFX, or Google Season of Docs do receive a stipend at the culmination of their internship. The largest return on time invested in the community for any contributor is the knowledge, relationships, recognition, and experience gained throughout their engagement. Their participation affords them an opportunity to work with world-class engineers, gives focus and purpose to their learning efforts on technologies they otherwise may not understand, and exposes their work broadly to the Cloud Native community. Letters of recommendation, mentorship and coaching, introduction to engineers at globally-recognized technology companies, potential contract or full-time work at Layer5, public writing and speaking opportunities are all examples of benefits those that participate can receive for their time spent.</p>
+            <p className="para label">With few exceptions, generally community contributors and interns are not paid. Those that participate through Google Summer of Code or LFX do receive a stipend at the culmination of their internship. The largest return on time invested in the community for any contributor is the knowledge, relationships, recognition, and experience gained throughout their engagement. Their participation affords them an opportunity to work with world-class engineers, gives focus and purpose to their learning efforts on technologies they otherwise may not understand, and exposes their work broadly to the Cloud Native community. Letters of recommendation, mentorship and coaching, introduction to engineers at globally-recognized technology companies, potential contract or full-time work at Layer5, public writing and speaking opportunities are all examples of benefits those that participate can receive for their time spent.</p>
             <label>
               <Field type="checkbox"
                 name="paid"
