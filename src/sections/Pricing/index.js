@@ -76,7 +76,9 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
         },
       }}
     >
-      <InputLabel id="currency-selector-label">Currency</InputLabel>
+      <InputLabel id="currency-selector-label" shrink>
+        Currency
+      </InputLabel>
       <Select
         labelId="currency-selector-label"
         value={currency}
@@ -84,6 +86,7 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
           setCurrency(e.target.value);
         }}
         label="Currency"
+        notched
         MenuProps={{
           disableScrollLock: true,
           marginThreshold: null,
