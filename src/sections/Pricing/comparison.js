@@ -110,8 +110,19 @@ h2, h5{
 }
 .price-table thead {
     position: sticky;
-    top: 80px;
+    top: 92px;
     z-index: 10;
+}
+.price-table thead th,
+.price-table thead td {
+    position: relative;
+    z-index: 10;
+}
+.price-table thead tr:not(:last-child) {
+    border-bottom: 0 none;
+}
+.price-table th {
+    vertical-align: middle;
 }
 .price-table th.price-table-popular {
     border-top: 3px solid #00b39f;
