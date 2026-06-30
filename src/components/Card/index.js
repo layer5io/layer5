@@ -21,22 +21,20 @@ const Card = ({
       ? frontmatter.darkthumbnail
       : frontmatter.thumbnail;
 
+  const width = thumbnail?.childImageSharp?.gatsbyImageData?.width;
+  const height = thumbnail?.childImageSharp?.gatsbyImageData?.height;
+  const isSquareOrPortrait = width && height && width / height <= 1.25;
+
   const isLogo =
     thumbnail?.extension === "svg" ||
     thumbnail?.publicURL?.endsWith(".svg") ||
+    isSquareOrPortrait ||
     thumbnail?.publicURL?.toLowerCase()?.includes("logo") ||
     thumbnail?.publicURL?.toLowerCase()?.includes("icon") ||
     thumbnail?.publicURL?.toLowerCase()?.includes("cncf-landscape") ||
     thumbnail?.publicURL?.toLowerCase()?.includes("academy") ||
     thumbnail?.publicURL?.toLowerCase()?.includes("docker-swarm") ||
     thumbnail?.publicURL?.toLowerCase()?.includes("smp");
-
-  const isOReillyBanner =
-    frontmatter.title?.toLowerCase()?.includes("introduction to istio") ||
-    frontmatter.title?.toLowerCase()?.includes("advanced istio") ||
-    frontmatter.abstract?.toLowerCase()?.includes("introduction to istio") ||
-    frontmatter.title?.toLowerCase()?.includes("oscon") ||
-    frontmatter.title?.toLowerCase()?.includes("o'reilly");
 
   return (
     <CardWrapper fixed={!!frontmatter.abstract} $listView={listView}>
@@ -45,7 +43,8 @@ const Card = ({
           <Image
             {...thumbnail}
             imgStyle={{
-              objectFit: isOReillyBanner ? "cover" : "contain",
+              objectFit:
+                frontmatter.thumbnailFit || (isLogo ? "contain" : "cover"),
               transform: isLogo ? "scale(0.92)" : "none",
             }}
             loading={loading}
