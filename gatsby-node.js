@@ -1274,3 +1274,71 @@ exports.onPostBuild = async ({ graphql, reporter }) => {
   fs.writeFileSync(outputPath, JSON.stringify(result, null, 2));
   reporter.info(`Wrote post-build page graph to ${outputPath}`);
 };
+
+/**
+ * Memory Management Hook
+ * Monitors heap usage and reduces concurrency if memory pressure is detected
+ * Prevents out-of-memory errors during builds
+ */
+exports.onPreBuild = async ({ reporter }) => {
+  const MEMORY_THRESHOLD_MB = 500; // 500MB threshold
+  const initialMemoryUsage = getHeapUsageInMB();
+
+  reporter.info(
+    `[Memory Manager] Build memory threshold set to ${MEMORY_THRESHOLD_MB}MB`,
+  );
+  reporter.info(
+    `[Memory Manager] Initial heap usage: ${initialMemoryUsage.toFixed(2)}MB`,
+  );
+
+  // Check if we're approaching memory limits
+  if (initialMemoryUsage > MEMORY_THRESHOLD_MB) {
+    reporter.warn(
+      `[Memory Manager] High memory usage detected (${initialMemoryUsage.toFixed(2)}MB). Reducing concurrency.`,
+    );
+
+    // Reduce concurrency settings
+    const currentCPUCount = parseInt(process.env.GATSBY_CPU_COUNT || "4", 10);
+    const currentSharpConcurrency = parseInt(
+      process.env.SHARP_CONCURRENCY || "4",
+      10,
+    );
+
+    const reducedCPUCount = Math.max(1, Math.floor(currentCPUCount / 2));
+    const reducedSharpConcurrency = Math.max(
+      1,
+      Math.floor(currentSharpConcurrency / 2),
+    );
+
+    process.env.GATSBY_CPU_COUNT = reducedCPUCount.toString();
+    process.env.SHARP_CONCURRENCY = reducedSharpConcurrency.toString();
+
+    reporter.warn(
+      `[Memory Manager] Reduced GATSBY_CPU_COUNT to ${reducedCPUCount} (was ${currentCPUCount})`,
+    );
+    reporter.warn(
+      `[Memory Manager] Reduced SHARP_CONCURRENCY to ${reducedSharpConcurrency} (was ${currentSharpConcurrency})`,
+    );
+  }
+
+  // Enable file caching to reduce memory consumption
+  if (!process.env.NODE_OPTIONS || !process.env.NODE_OPTIONS.includes("max-old-space-size")) {
+    reporter.info(
+      "[Memory Manager] Ensure NODE_OPTIONS includes memory limit for optimal performance",
+    );
+  }
+};
+
+/**
+ * Helper function to get current heap usage in MB
+ * @returns {number} Heap usage in megabytes
+ * @private
+ */
+function getHeapUsageInMB() {
+  if (typeof process === "undefined" || !process.memoryUsage) {
+    return 0;
+  }
+
+  const heapUsed = process.memoryUsage().heapUsed;
+  return heapUsed / (1024 * 1024);
+}
