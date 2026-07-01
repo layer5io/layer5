@@ -73,10 +73,10 @@ const TwoColLayout = ({ containerRefs, contentRefs }) => {
           <h2>Simplify platform engineering</h2>
           <p className="text">Incorporate AWS, GCP and Kubernetes components into Kanvas designs for comprehensive and intuitive system mapping, documentation, and orchestration.</p>
           <div className="small-card-container">
-            <Link aria-label="aws" className="small-card" to="/cloud-native-management/generate-aws-architecture-diagram">
+            <Link aria-label="aws" className="small-card" to="/products/meshmap/diagramming-cloud-architecture/aws">
               <img alt="aws" src={isDark ? AWSLogoDark : AWSLogoLight} width={40} />
             </Link>
-            <Link aria-label="gcp" className="small-card" to="/cloud-native-management/generate-gcp-architecture-diagram">
+            <Link aria-label="gcp" className="small-card" to="/products/meshmap/diagramming-cloud-architecture/gcp">
               <img alt="gcp" src={GCPLogo} width={40} />
             </Link>
             <Link aria-label="kubernetes" className="small-card" to="/cloud-native-management/generate-kubernetes-architecture-diagram">

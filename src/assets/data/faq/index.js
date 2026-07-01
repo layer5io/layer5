@@ -14,7 +14,7 @@ const data = {
         "As a self-service engineering platform, Meshery enables collaborative design and operation of cloud and cloud native infrastructure.",
         "Meshery is an open source, highly extensible, vendor neutral project, created for the world of AI and remote knowledge workers.",
       ],
-      link: "/cloud-native-management/meshery/operating-cloud-native-infra",
+      link: "/products/meshery/how-meshery-works",
       linktext: "Operating cloud native infrastructure",
     },
     {
@@ -25,7 +25,7 @@ const data = {
       answer: [
         "Yes, as a management plane, Meshery provides value in a number of ways post-adoption Kubernetes. For example, Meshery analyzes your deployments in evaluation of cloud native best practices and patterns, highlighting where you might be deviating.","Meshery performs deep discovery of your environment and currently running applications and infrastructure.",
       ],
-      link: "/cloud-native-management/meshery",
+      link: "/products/meshery",
       linktext: "Meshery",
     },
     {
@@ -189,7 +189,7 @@ const data = {
       question: "How does Meshery infuse GitOps practices into cloud native managemement?",
       category: "Meshery",
       subcategory: "Integrations",
-      link: "https://layer5.io/cloud-native-management/meshery",
+      link: "https://layer5.io/products/meshery",
       linktext: "Run Meshery",
       answer: [
         "Multiple Meshery GitHub Actions help you integrate your Kubernetes operations and configuration management into a versioned, pipelined, declarative workflow. These GitHub Actions apply conformance to cloud native standards and performance management gates into your pipelines.",
@@ -205,7 +205,7 @@ const data = {
       question: "Is Kanvas cloud or a self-hosted solution?",
       category: "Kanvas",
       subcategory: "Deployment",
-      link: "https://layer5.io/cloud-native-management/kanvas",
+      link: "https://layer5.io/products/meshmap",
       linktext: "Learn More",
       answer: [
         "Yes, Kanvas is available both as a hosted solution and is also deployable on-premises as a self-hosted solution.",
@@ -217,7 +217,7 @@ const data = {
     //   question: "What is Kanvas early access program?",
     //   category: "Kanvas",
     //   subcategory: "Getting Started",
-    //   link: "https://layer5.io/cloud-native-management/kanvas",
+    //   link: "https://layer5.io/products/meshmap",
     //   linktext: "Kanvas Beta",
     //   answer: [
     //     "Kanvas is cloud native collaboration tool for managing your infrastructure and applications. Kanvas has two modes: Visualizer for operating your actively running Kubernetes clusters and Designer for configuring your Kubernetes clusters and creating your creating your application deployments.",

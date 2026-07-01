@@ -38,7 +38,7 @@ const FeatureHero = (props) => {
             $primary
             className="banner-btn two"
             title="See Meshery"
-            $url="/cloud-native-management/meshery"
+            $url="/products/meshery"
           >
             <FiDownloadCloud size={21} className="icon-left" />
           </Button>

@@ -88,7 +88,7 @@ export const repo_data = [
       {
         project: "Kanvas",
         image: kanvasLogo,
-        site: "/cloud-native-management/kanvas",
+        site: "/products/meshmap",
         language: "React.js, Cytoscape.js",
         maintainers_name: ["Aabid Sofi"],
         link: ["https://layer5.io/community/members/aabid-sofi"],

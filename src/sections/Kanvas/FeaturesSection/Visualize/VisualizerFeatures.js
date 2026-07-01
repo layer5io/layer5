@@ -30,7 +30,7 @@ export default function VisualizerFeatures({ features }) {
     <VisualizerFeaturesWrapper>
       <Container className="visualizer-trigger-container">
         <div className="root test-container2">
-          <Link to="/cloud-native-management/kanvas/operate">
+          <Link to="/products/meshmap/orchestration">
             <div id="featureHeading" className="fixed" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
               <h1>Operate</h1>
               <div className="learn-more">

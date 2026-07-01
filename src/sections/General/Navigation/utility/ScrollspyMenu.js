@@ -151,7 +151,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                 </div>) : (
                 <>
                   <Link
-                    to="/cloud-native-management/kanvas"
+                    to="/products/meshmap"
                     onClick={handleLinkClick}
                   >
                     <div className="single-card">

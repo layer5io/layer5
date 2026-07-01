@@ -174,7 +174,7 @@ const Navigation = () => {
           title: "Kanvas, collaborative infrastructure management",
         },
         fields: {
-          slug: "/cloud-native-management/kanvas",
+          slug: "/products/meshmap",
         },
       },
       {

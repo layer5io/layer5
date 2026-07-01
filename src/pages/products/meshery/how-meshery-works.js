@@ -73,7 +73,7 @@ const OperatingServiceMeshes = () => {
                 </p>
                 <p>
                   Learn more about{" "}
-                  <a href="https://layer5.io/cloud-native-management/kanvas">
+                  <a href="https://layer5.io/products/meshmap">
                     Kanvas
                   </a>
                 </p>

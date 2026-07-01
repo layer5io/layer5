@@ -1,7 +1,7 @@
 import React from "react";
 
-import SEO from "../../components/seo";
-import GcpDiagram from "../../sections/GCP-Diagram";
+import SEO from "../../../../components/seo";
+import GcpDiagram from "../../../../sections/GCP-Diagram";
 
 const Gcp = () => {
   return (

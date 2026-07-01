@@ -37,7 +37,7 @@ const Projects = () => {
         <Row>
           <div className="project__block__wrap">
             <Col $sm={12} $md={6} $lg={3}>
-              <Link className="project-card" to="/cloud-native-management/kanvas">
+              <Link className="project-card" to="/products/meshmap">
                 <div className="project__block__inner">
                   <img loading="lazy" src={kanvasLogo} alt="Kanvas Logo" width="24" height="39" style={{ width: "24px", height: "39px" }} />
                   <p>Kanvas</p>
@@ -47,7 +47,7 @@ const Projects = () => {
               </Link>
             </Col>
             <Col $sm={12} $md={6} $lg={3}>
-              <Link className="project-card" to="/cloud-native-management/meshery">
+              <Link className="project-card" to="/products/meshery">
                 <div className="project__block__inner">
                   <img loading="lazy" src={projectImage3} alt="Meshery Logo" width="40" height="40" style={{ width: "40px", height: "40px" }} />
                   <p>Meshery</p>

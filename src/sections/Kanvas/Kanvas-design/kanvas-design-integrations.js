@@ -155,7 +155,7 @@ const KanvasIntegrationsSection = () => {
             id="integrations"
             $secondary
             style={{ margin: "1.5rem 0 1.5rem 0" }}
-            $url="https://layer5.io/cloud-native-management/meshery/integrations"
+            $url="https://layer5.io/products/meshery/integrations"
             $external={true}
             rel="noopener noreferrer"
           >

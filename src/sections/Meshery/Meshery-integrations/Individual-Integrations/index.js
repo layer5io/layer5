@@ -123,13 +123,13 @@ const IndividualIntegrations = ({ data, children }) => {
           <HowMesheryWorksSpecs
             title="AWS Orchestration and Diagramming Software"
             desc="Orchestrate and Design Amazon Web Services architecture diagrams easily with predefined templates and symbols designed for professionals."
-            btnUrl="/cloud-native-management/generate-aws-architecture-diagram"
+            btnUrl="/products/meshmap/diagramming-cloud-architecture/aws"
           />
         ) : isGcpItem ? (
           <HowMesheryWorksSpecs
             title="GCP Orchestration and Diagramming Softwarel"
             desc="Orchestrate and design Google Cloud Platform architecture diagrams easily with predefined templates designed for professionals."
-            btnUrl="/cloud-native-management/generate-gcp-architecture-diagram"
+            btnUrl="/products/meshmap/diagramming-cloud-architecture/gcp"
           />
         ) : (
           <>

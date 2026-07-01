@@ -57,7 +57,7 @@ const ProjectPage = () => {
               </div>
             </Link>
             <Link
-              to="/cloud-native-management/meshery"
+              to="/products/meshery"
               className="project__card two"
             >
               <div className="project__card-container project__card-container_meshery">
@@ -72,7 +72,7 @@ const ProjectPage = () => {
               </div>
             </Link>
             <Link
-              to="/cloud-native-management/kanvas"
+              to="/products/meshmap"
               className="project__card four"
             >
               <div className="project__card-container">

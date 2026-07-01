@@ -144,7 +144,7 @@ const QASection = () => {
         "As a self-service engineering platform, Meshery enables collaborative design and operation of cloud and cloud native infrastructure.",
         "Meshery is an open source, highly extensible, vendor neutral project, created for the world of AI and remote knowledge workers.",
       ],
-      link: "/cloud-native-management/meshery/operating-cloud-native-infra",
+      link: "/products/meshery/how-meshery-works",
       linktext: "Operating cloud native infrastructure"
     },
     {

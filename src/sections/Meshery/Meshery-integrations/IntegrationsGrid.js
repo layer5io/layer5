@@ -297,7 +297,7 @@ const IntegrationsGrid = ({ category, count }) => {
             } else {
               return (
                 <Link
-                  to={`/cloud-native-management/meshery${item.fields.slug}`}
+                  to={`/products/meshery${item.fields.slug}`}
                 >
                   <Hexagon className="container-active">
                     <span className="integration-container">

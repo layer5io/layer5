@@ -5,7 +5,7 @@ const Data = {
   menuItems: [
     {
       name: "Solutions",
-      path: "/cloud-native-management/solutions",
+      path: "/solutions",
       subItems: [
         {
           name: "Developer-defined Infrastructure",
@@ -24,7 +24,7 @@ const Data = {
         },
         {
           name: "Collaborative GitOps",
-          path: "/cloud-native-management/kanvas/collaborate",
+          path: "/products/meshmap/collaborate",
           sepLine: true,
         },
         {
@@ -56,16 +56,16 @@ const Data = {
       subItems: [
         {
           name: "Kanvas",
-          path: "/cloud-native-management/kanvas",
+          path: "/products/meshmap",
           sepLine: true,
         },
         {
           name: "Designer",
-          path: "/cloud-native-management/kanvas/design",
+          path: "/products/meshmap/designer",
         },
         {
           name: "Operator",
-          path: "/cloud-native-management/kanvas/operate",
+          path: "/products/meshmap/orchestration",
         },
         {
           name: "Cloud",
@@ -88,7 +88,7 @@ const Data = {
         },
         {
           name: "Meshery",
-          path: "/cloud-native-management/meshery",
+          path: "/products/meshery",
         },
         {
           name: "NightHawk",
@@ -96,7 +96,7 @@ const Data = {
         },
         // {
         //   name: "---",
-        //   // path: "/cloud-native-management/kanvas",
+        //   // path: "/products/meshmap",
 
         // },
       ],
@@ -121,7 +121,7 @@ const Data = {
     },
     {
       name: "Integrations",
-      path: "/cloud-native-management/meshery/integrations",
+      path: "/products/meshery/integrations",
     },
     // {
     //   name: "Learn",

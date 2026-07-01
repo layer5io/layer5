@@ -52,7 +52,7 @@ const HowMesheryWorksSpecs = () => {
             <h3>Assess the Performance and Manage your cloud native infrastructure</h3>
             <p>Ensuring optimal functionality and seamless operations is crucial for all infrastructure.</p>
             <VintageBox left={true} vintageTwo={true} >
-              <Button $primary $url="/cloud-native-management/meshery/getting-started" title="Install Meshery" />
+              <Button $primary $url="/products/meshery/install-meshery" title="Install Meshery" />
             </VintageBox>
           </div>
         </div>

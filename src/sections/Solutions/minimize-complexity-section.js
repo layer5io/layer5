@@ -233,7 +233,7 @@ const MinimizeComplexitySection = () => {
                 <a href="https://meshery.io" target="_blank" rel="noopener noreferrer">
                   <MesheryLogo />
                 </a>
-                <a href="https://layer5.io/cloud-native-management/kanvas" target="_blank" rel="noopener noreferrer">
+                <a href="https://layer5.io/products/meshmap" target="_blank" rel="noopener noreferrer">
                   <KanvasLogo />
                 </a>
                 <a href="https://docs.meshery.io/v0.6/concepts/architecture/meshsync" target="_blank" rel="noopener noreferrer">
