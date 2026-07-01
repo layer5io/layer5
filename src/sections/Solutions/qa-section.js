@@ -10,7 +10,7 @@ const QAWrapper = styled.section`
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  background: #293B434D;
+  background: #293b434d;
   padding: 6rem 0;
   display: flex;
   flex-direction: column;
@@ -36,10 +36,10 @@ const Title = styled.h2`
   font-family: "Qanelas Soft", sans-serif;
   font-weight: 600;
   font-size: 2.5rem;
-  color: white;
+  color: ${(props) => props.theme.whiteToBlack};
   text-align: center;
   margin-bottom: 4rem;
-  
+
   @media (max-width: 768px) {
     font-size: 2rem;
   }
@@ -52,7 +52,7 @@ const QAList = styled.div`
 `;
 
 const QAItem = styled.div`
-  background: #3D4F57;
+  background: #3d4f57;
   border-radius: 12px;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -65,7 +65,7 @@ const QuestionHeader = styled.div`
   align-items: center;
   cursor: pointer;
   user-select: none;
-  
+
   &:hover {
     background: rgba(255, 255, 255, 0.05);
   }
@@ -83,10 +83,10 @@ const QuestionText = styled.h3`
   font-family: "Qanelas Soft", sans-serif;
   font-weight: 600;
   font-size: 1.2rem;
-  color: ${props => props.isOpen ? "#00B39F" : "white"};
+  color: ${(props) => (props.isOpen ? "#00B39F" : "white")};
   margin: 0;
   transition: color 0.3s ease;
-  
+
   @media (max-width: 768px) {
     font-size: 1rem;
   }
@@ -99,27 +99,27 @@ const ToggleIcon = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  color: ${props => props.isOpen ? "#00B39F" : "white"};
+  color: ${(props) => (props.isOpen ? "#00B39F" : "white")};
   transition: all 0.3s ease;
   font-weight: 300;
-  
+
   &::before {
-    content: '${props => props.isOpen ? "−" : "+"}';
+    content: "${(props) => (props.isOpen ? "−" : "+")}";
   }
 `;
 
 const AnswerContent = styled.div`
-  padding: ${props => props.isOpen ? "0 1.5rem 1rem 1.5rem" : "0 1.5rem"};
-  max-height: ${props => props.isOpen ? "500px" : "0"};
+  padding: ${(props) => (props.isOpen ? "0 1.5rem 1rem 1.5rem" : "0 1.5rem")};
+  max-height: ${(props) => (props.isOpen ? "500px" : "0")};
   overflow: hidden;
   transition: all 0.3s ease;
 
   @media (max-width: 768px) {
-    padding: ${props => props.isOpen ? "0 1rem 0.75rem 1rem" : "0 1rem"};
+    padding: ${(props) => (props.isOpen ? "0 1rem 0.75rem 1rem" : "0 1rem")};
   }
 
   @media (max-width: 480px) {
-    padding: ${props => props.isOpen ? "0 0.75rem 0.5rem 0.75rem" : "0 0.75rem"};
+    padding: ${(props) => (props.isOpen ? "0 0.75rem 0.5rem 0.75rem" : "0 0.75rem")};
   }
 `;
 
@@ -130,7 +130,7 @@ const AnswerText = styled.p`
   line-height: 1.6;
   color: white;
   margin: 0;
-  opacity: ${props => props.isOpen ? 1 : 0};
+  opacity: ${(props) => (props.isOpen ? 1 : 0)};
   transition: opacity 0.3s ease;
 `;
 
@@ -145,24 +145,24 @@ const QASection = () => {
         "Meshery is an open source, highly extensible, vendor neutral project, created for the world of AI and remote knowledge workers.",
       ],
       link: "/cloud-native-management/meshery/operating-cloud-native-infra",
-      linktext: "Operating cloud native infrastructure"
+      linktext: "Operating cloud native infrastructure",
     },
     {
-      question: "I am already operating Kubernetes clusters. Can I use Meshery?",
+      question:
+        "I am already operating Kubernetes clusters. Can I use Meshery?",
       answer: [
         "Yes, as a management plane, Meshery provides value in a number of ways post-adoption Kubernetes. For example, Meshery analyzes your deployments in evaluation of cloud native best practices and patterns, highlighting where you might be deviating.",
-        "Meshery performs deep discovery of your environment and currently running applications and infrastructure"
-      ]
+        "Meshery performs deep discovery of your environment and currently running applications and infrastructure",
+      ],
     },
     {
       question: "Is Kanvas cloud or a self-hosted solution?",
       answer: [
         "Yes, Kanvas is available both as a hosted solution and is also deployable on-premises as a self-hosted solution.",
         "Kanvas can be self-hosted to keep your designs and applications internal to your premises. You can also choose to have Kanvas hosted as SaaS solution offered by Layer5.",
-        "Whether self-hosted or hosted by Layer5, we are here to support you."
-
-      ]
-    } ,
+        "Whether self-hosted or hosted by Layer5, we are here to support you.",
+      ],
+    },
     {
       question: "How can I try out Kanvas?",
 
@@ -177,10 +177,9 @@ const QASection = () => {
       question: "Are Layer5's solutions open source?",
       answer: [
         "Yes, all of Layer5's projects are licensed under Apache v2.",
-        "Layer5 also offers extensions to the Meshery project in which Enterprise-grade functionality is commercially offered and supported."
-      ]
-    }
-
+        "Layer5 also offers extensions to the Meshery project in which Enterprise-grade functionality is commercially offered and supported.",
+      ],
+    },
   ];
 
   const toggleQuestion = (index) => {
@@ -203,9 +202,10 @@ const QASection = () => {
               <AnswerContent isOpen={openIndex === index}>
                 {Array.isArray(item.answer) ? (
                   <>
-                    <ul style={{
-                      color: "white"
-                    }}
+                    <ul
+                      style={{
+                        color: "white",
+                      }}
                     >
                       {item.answer.map((point, pIndex) => (
                         <li key={pIndex} style={{ marginBottom: "0.5rem" }}>
