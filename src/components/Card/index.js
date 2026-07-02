@@ -14,18 +14,39 @@ const Card = ({
   listView = false,
 }) => {
   const { isDark } = useStyledDarkMode();
+  const thumbnail =
+    isDark &&
+    frontmatter.darkthumbnail &&
+    frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail.publicURL
+      ? frontmatter.darkthumbnail
+      : frontmatter.thumbnail;
+
+  const width = thumbnail?.childImageSharp?.gatsbyImageData?.width;
+  const height = thumbnail?.childImageSharp?.gatsbyImageData?.height;
+  const isSquareOrPortrait = width && height && width / height <= 1.25;
+
+  const isLogo =
+    thumbnail?.extension === "svg" ||
+    thumbnail?.publicURL?.endsWith(".svg") ||
+    isSquareOrPortrait ||
+    thumbnail?.publicURL?.toLowerCase()?.includes("logo") ||
+    thumbnail?.publicURL?.toLowerCase()?.includes("icon") ||
+    thumbnail?.publicURL?.toLowerCase()?.includes("cncf-landscape") ||
+    thumbnail?.publicURL?.toLowerCase()?.includes("academy") ||
+    thumbnail?.publicURL?.toLowerCase()?.includes("docker-swarm") ||
+    thumbnail?.publicURL?.toLowerCase()?.includes("smp");
+
   return (
     <CardWrapper fixed={!!frontmatter.abstract} $listView={listView}>
       <div className="post-block">
         <div className="post-thumb-block">
           <Image
-            {...(isDark &&
-            frontmatter.darkthumbnail &&
-            frontmatter.darkthumbnail.publicURL !==
-              frontmatter.thumbnail.publicURL
-              ? frontmatter.darkthumbnail
-              : frontmatter.thumbnail)}
-            imgStyle={{ objectFit: "cover" }}
+            {...thumbnail}
+            imgStyle={{
+              objectFit:
+                frontmatter.thumbnailFit || (isLogo ? "contain" : "cover"),
+              transform: isLogo ? "scale(0.92)" : "none",
+            }}
             loading={loading}
             fetchpriority={fetchpriority}
             alt={frontmatter.title}
