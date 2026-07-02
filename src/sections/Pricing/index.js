@@ -28,7 +28,8 @@ const customToggleButtonStyles = {
     p: "6px",
     minHeight: "42px",
     minWidth: "50px",
-    borderColor: "primary.main",
+    border: "1px solid",
+    borderColor: "common.white",
   },
   base: {
     py: 0.5,
@@ -62,7 +63,7 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
         "& .MuiOutlinedInput-root": {
           color: "white",
           "& .MuiSelect-icon": { color: "white" },
-          "& .MuiOutlinedInput-notchedOutline": { borderColor: "white" },
+          "& .MuiOutlinedInput-notchedOutline": { borderColor: "common.white" },
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
             borderColor: "#00B39F",
           },
