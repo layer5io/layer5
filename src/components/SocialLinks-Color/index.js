@@ -20,25 +20,36 @@ const tooltipProps = {
 const SocialLinksColor = () => {
   return (
     <SocialLinksWrapper>
-      <Col $xs={12}>  
+      <Col $xs={12}>
         <Row className="social_icons">
           <CustomTooltip title="Layer5 Discussion Forum" {...tooltipProps}>
-            <a href="https://discuss.layer5.io" target="_blank" rel="noreferrer">
-              <img height="30px" src={forum_icon} alt="forum" />
+            <a
+              href="https://discuss.layer5.io"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img height="30px" src={forum_icon} alt="forum" loading="lazy" />
             </a>
           </CustomTooltip>
           <CustomTooltip title="Email Layer5 Community" {...tooltipProps}>
-            <a className="mail_icon"
+            <a
+              className="mail_icon"
               href="mailto:community@layer5.io"
               target="_blank"
               rel="noreferrer"
             >
-              <img height="30px" src={mail_icon} alt="mail" />
+              <img height="30px" src={mail_icon} alt="mail" loading="lazy" />
             </a>
           </CustomTooltip>
           <CustomTooltip title="Join Layer5 on Slack" {...tooltipProps}>
             <a href="https://slack.layer5.io/" target="_blank" rel="noreferrer">
-              <img className="slack" height="30px" src={slack_icon} alt="slack" />
+              <img
+                className="slack"
+                height="30px"
+                src={slack_icon}
+                alt="slack"
+                loading="lazy"
+              />
             </a>
           </CustomTooltip>
           <CustomTooltip title="Follow Layer5 on X (Twitter)" {...tooltipProps}>
@@ -63,6 +74,7 @@ const SocialLinksColor = () => {
                 height="30px"
                 src={bluesky_icon}
                 alt="bluesky"
+                loading="lazy"
               />
             </a>
           </CustomTooltip>
@@ -73,7 +85,12 @@ const SocialLinksColor = () => {
               rel="noreferrer"
               className="github"
             >
-              <img height="30px" src={github_icon} alt="github" />
+              <img
+                height="30px"
+                src={github_icon}
+                alt="github"
+                loading="lazy"
+              />
             </a>
           </CustomTooltip>
           <CustomTooltip title="Layer5 on LinkedIn" {...tooltipProps}>
@@ -87,6 +104,7 @@ const SocialLinksColor = () => {
                 height="30px"
                 src={linkedin_icon}
                 alt="linkedin"
+                loading="lazy"
               />
             </a>
           </CustomTooltip>
@@ -102,6 +120,7 @@ const SocialLinksColor = () => {
                 height="30px"
                 src={youtube_icon}
                 alt="youtube"
+                loading="lazy"
               />
             </a>
           </CustomTooltip>
@@ -117,6 +136,7 @@ const SocialLinksColor = () => {
                 height="30px"
                 src={docker_icon}
                 alt="docker"
+                loading="lazy"
               />
             </a>
           </CustomTooltip>

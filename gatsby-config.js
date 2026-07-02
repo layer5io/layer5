@@ -287,11 +287,10 @@ module.exports = {
                 }
                 allMdx(
                   sort: {frontmatter: {date: DESC}}
-                  limit: 50
+                  limit: 100
                   filter: {
                     frontmatter: {
                       published: { eq: true }
-                      category: { in: ["Meshery", "Announcements", "Events"] }
                     }
                     fields: { collection: { in: ["blog", "resources", "news", "events"] } }
                   }
@@ -321,15 +320,24 @@ module.exports = {
             `,
                   serialize: ({ query: { site, allMdx } }) => {
                     const targetTags = ["Community", "Meshery", "mesheryctl"];
+                    const targetCategories = [
+                      "Meshery",
+                      "Announcements",
+                      "Events",
+                    ];
 
                     return allMdx.nodes
                       .filter((node) => {
+                        const isEvent = node.fields.collection === "events";
+                        const hasCategory =
+                          node.frontmatter.category &&
+                          targetCategories.includes(node.frontmatter.category);
                         const hasTag =
                           node.frontmatter.tags &&
                           node.frontmatter.tags.some((t) =>
                             targetTags.includes(t),
                           );
-                        return hasTag;
+                        return isEvent || (hasCategory && hasTag);
                       })
                       .slice(0, 30)
                       .map((node) => {
@@ -536,9 +544,7 @@ module.exports = {
         name: "images",
         path: `${__dirname}/src/assets/images`,
         ignore: [
-          "**/*.svg",
           "**/learning-path/**",
-          "**/service-mesh-icons/**",
           "**/app/**",
           "**/learn-layer5/**",
           "**/careers/**",
