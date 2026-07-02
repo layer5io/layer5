@@ -30,7 +30,8 @@
     "noIndex": "gatsby build && echo 'User-agent: *\nDisallow: /' > public/robots.txt",
     "version": "gatsby --version",
     "postinstall": "patch-package",
-    "prepare": "husky || true"
+    "prepare": "husky || true",
+    "check:images": "node scripts/find-missing-gatsby-images.js"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.4.0",
@@ -118,6 +119,8 @@
   "devDependencies": {
     "@babel/core": "^7.29.0",
     "@babel/eslint-parser": "^7.28.6",
+    "@babel/parser": "^8.0.0",
+    "@babel/traverse": "^8.0.0",
     "@eslint/eslintrc": "^3.3.3",
     "@eslint/js": "^9.39.2",
     "cross-env": "^10.0.0",
