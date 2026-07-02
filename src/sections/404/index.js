@@ -76,6 +76,9 @@ const messages = [
 
 const L404 = () => {
   const [message, setMessage] = useState(null);
+  const [reportUrl, setReportUrl] = useState(
+    "https://github.com/layer5io/layer5/issues/new?template=bug_report.md",
+  );
 
   const getRandomMessage = () => {
     return messages[Math.floor(Math.random() * messages.length)];
@@ -83,6 +86,23 @@ const L404 = () => {
 
   useEffect(() => {
     setMessage(getRandomMessage());
+
+    if (typeof window !== "undefined") {
+      const brokenUrl = window.location.href;
+      const referrer = document.referrer || "Direct / Bookmark";
+      const userAgent = navigator.userAgent;
+      const issueTitle = encodeURIComponent("[404] Broken Link Found");
+      const issueBody = encodeURIComponent(
+        "### 404 Broken Link Report\n\n" +
+          `- **Broken URL:** ${brokenUrl}\n` +
+          `- **Referrer:** ${referrer}\n` +
+          `- **User Agent:** ${userAgent}\n\n` +
+          "*Reported automatically by the 404 Page.*",
+      );
+      setReportUrl(
+        `https://github.com/layer5io/layer5/issues/new?template=bug_report.md&title=${issueTitle}&body=${issueBody}`,
+      );
+    }
   }, []);
 
   const handleNewMessage = () => {
@@ -115,6 +135,16 @@ const L404 = () => {
             aria-label="show-another-funny-404-message"
           >
             Show another message
+          </Button>
+
+          <Button
+            id="report-broken-link"
+            aria-label="report-broken-link-button"
+            $secondary
+            $url={reportUrl}
+            $external={true}
+          >
+            Report Broken Link
           </Button>
         </div>
       </Container>
