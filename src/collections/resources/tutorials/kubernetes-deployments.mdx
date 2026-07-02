@@ -1,0 +1,67 @@
+---
+title: "Exploring Kubernetes Deployments with Meshery"
+thumbnail: ../../../assets/images/tutorials/github.webp
+darkthumbnail: ../../../assets/images/tutorials/github.webp
+date: 2024-02-22 10:30:05 -0530
+category: Cloud Native
+tags:
+  - Meshery
+  - Kubernetes
+  - Tutorial
+type: Tutorial
+product: Meshery
+technology: Kubernetes
+featured: false
+published: true
+resource: true
+---
+
+import { ResourcesWrapper } from "../Resources.style.js";
+
+<ResourcesWrapper>
+
+<h3>Introduction</h3>
+<p>In this tutorial, we explore Kubernetes Deployments using <a href="https://play.meshery.io/">Meshery Playground</a>. Deployments provide declarative updates for Pods and ReplicaSets.</p>
+
+<h3>Prerequisites</h3>
+<ul>
+  <li>Basic understanding of Kubernetes Pods.</li>
+  <li>Access to <a href="https://play.meshery.io/">Meshery Playground</a>.</li>
+</ul>
+
+<h3>Objective</h3>
+<p>Learn how to create, scale, and update <strong>Kubernetes Deployments</strong> using Meshery Playground.</p>
+
+<h3>Steps</h3>
+
+<h4>Access Meshery Playground</h4>
+<ol>
+  <li>Log in to <a href="https://play.meshery.io">Meshery Playground</a>.</li>
+  <li>Click <strong>Explore</strong> to navigate to Kanvas.</li>
+</ol>
+
+<h4>Create a Deployment</h4>
+<ol>
+  <li>Rename the design to a name of your choice.</li>
+  <li>Search for <strong>Deployment</strong> in Components and drag it onto the canvas.</li>
+  <li>Configure: name <code>nginx-deployment</code>, replicas <code>2</code>, image <code>nginx:latest</code>, label <code>app: nginx</code>.</li>
+  <li>Click outside to close the modal.</li>
+</ol>
+
+<h4>Deploy and Visualize</h4>
+<ol>
+  <li>Click <strong>Validate</strong>, then <strong>Deploy</strong>.</li>
+  <li>Click <strong>Visualize</strong> and filter by <code>app: nginx</code> to see your Deployment and Pods.</li>
+</ol>
+
+<h4>Scale the Deployment</h4>
+<ol>
+  <li>Go back to <strong>Design</strong> and change replicas to <code>4</code>.</li>
+  <li>Undeploy and Deploy again, then verify 4 Pods are running in Visualize.</li>
+</ol>
+
+<h3>Conclusion</h3>
+<p>You have successfully created and scaled a Kubernetes Deployment using Meshery Playground. Continue exploring at <a href="https://play.meshery.io/">Meshery Playground</a>.</p>
+<p><em>Sourced from the <a href="https://docs.meshery.io/guides/tutorials/kubernetes/kubernetes-deployments">Meshery documentation</a>.</em></p>
+
+</ResourcesWrapper>
