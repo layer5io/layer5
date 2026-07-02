@@ -28,7 +28,8 @@ const customToggleButtonStyles = {
     p: "6px",
     minHeight: "42px",
     minWidth: "50px",
-    borderColor: "primary.main",
+    border: "1px solid",
+    borderColor: "common.white",
   },
   base: {
     py: 0.5,
@@ -62,10 +63,13 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
         "& .MuiOutlinedInput-root": {
           color: "white",
           "& .MuiSelect-icon": { color: "white" },
-          "& .MuiOutlinedInput-notchedOutline": { borderColor: "white" },
+          "& .MuiOutlinedInput-notchedOutline": { borderColor: "common.white" },
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
             borderColor: "#00B39F",
           },
+        },
+        "& .MuiOutlinedInput-notchedOutline legend": {
+          maxWidth: "100%",
         },
         "&:hover": {
           "& .MuiInputLabel-root": { color: "#00B39F" },
@@ -76,8 +80,11 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
         },
       }}
     >
-      <InputLabel id="currency-selector-label">Currency</InputLabel>
+      <InputLabel id="currency-selector-label" shrink>
+        Currency
+      </InputLabel>
       <Select
+        notched
         labelId="currency-selector-label"
         value={currency}
         onChange={(e) => {
@@ -116,7 +123,6 @@ export const CurrencySelect = ({ currency, setCurrency }) => {
 };
 
 const Pricing = () => {
-  // const [monthly, setMonthly] = useState(false);
   const [isYearly, setIsYearly] = useState(false);
   const [currency, setCurrency] = useState("USD");
 
