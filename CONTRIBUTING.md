@@ -86,7 +86,7 @@ The Layer5 website is hosted in this repository and is built using Gatsbyjs. Bef
 
 ## Discussion Forum
 
-Join the [discussion forum](https://discuss.layer5.io/c/landscape/7) (the Landscape topic is appropriate for all layer5.io questions) to discuss suggested new features, possible bugs, enhancement in user experience, and any other aspects of the site. The discussion forum is our preferred method of communication, you can, however, also inquire in the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel in the Layer5 Slack workspace.
+Join the [discussion forum](https://discuss.meshery.io/c/landscape/7) (the Landscape topic is appropriate for all layer5.io questions) to discuss suggested new features, possible bugs, enhancement in user experience, and any other aspects of the site. The discussion forum is our preferred method of communication, you can, however, also inquire in the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel in the Layer5 Slack workspace.
 
 # Contributing to Layer5 Projects
 
@@ -95,7 +95,7 @@ Please follow these steps and note these guidelines to begin contributing:
 1. First step is to set up the local development environment.
 1. Bug fixes are always welcome. Start by reviewing the [list of bugs](https://github.com/layer5io/layer5/labels/kind%2Fbug).
 1. A good way to easily start contributing is to pick and work on a [good first issue](https://github.com/layer5io/layer5/labels/good%20first%20issue). We try to make these Issues as clear as possible and provide basic info on how the code should be changed, and if something is unclear feel free to ask for more information on the Issue.
-1. We regularly discuss new Issues to work on in our [discussion forum](https://discuss.layer5.io/c/landscape/7) and the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel. Feel free to join and discuss any Issue or any idea that you may have.
+1. We regularly discuss new Issues to work on in our [discussion forum](https://discuss.meshery.io/c/landscape/7) and the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel. Feel free to join and discuss any Issue or any idea that you may have.
 
 # Contributing to Layer5's Blogs Section
 
