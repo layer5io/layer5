@@ -100,11 +100,11 @@ export const repo_data = [
       {
         project: "Discussion Forum",
         image: five,
-        site: "https://discuss.layer5.io",
+        site: "https://discuss.meshery.io",
         language: "Discourse",
         maintainers_name: ["Vacant"],
         link: [""],
-        repository: " https://discuss.layer5.io",
+        repository: " https://discuss.meshery.io",
       },
       {
         project: "Cloud Native Patterns",
