@@ -6,7 +6,7 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import TOC from "../../../components/Learn-Components/TOC-Chapters";
 import Image from "../../../components/image";
 import { ChapterWrapper } from "./chapters.style";
-import { Tooltip } from "react-tooltip";
+import { CustomTooltip } from "@sistent/sistent";
 import Pagination from "../../../components/Learn-Components/Pagination";
 import QuizModal from "../../../components/Learn-Components/QuizModal";
 
@@ -125,26 +125,16 @@ const Chapters = ({
           <div
             className={`service-mesh-image ${isMeshActive(sm.section) ? "service-mesh-image-active" : ""}`}
           >
-            <Link
-              to={`/${sm.slug}`}
-              data-tooltip-id="mesh-name"
-              data-tooltip-content={capitalize(sm.section)}
-              className="course"
-              key={index}
-            >
-              <Image
-                {...meshImage.imagepath}
-                className="docker"
-                alt={sm.section}
-              />
-            </Link>
+            <CustomTooltip title={capitalize(sm.section)} placement="bottom">
+              <Link to={`/${sm.slug}`} className="course" key={index}>
+                <Image
+                  {...meshImage.imagepath}
+                  className="docker"
+                  alt={sm.section}
+                />
+              </Link>
+            </CustomTooltip>
           </div>
-          <Tooltip
-            id="mesh-name"
-            place="bottom"
-            style={{ backgroundColor: "rgb(60,73,79)" }}
-            className="mesh-tooltip"
-          />
         </React.Fragment>
       );
     });
