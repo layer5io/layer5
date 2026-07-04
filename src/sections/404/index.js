@@ -90,14 +90,28 @@ const L404 = () => {
     if (typeof window !== "undefined") {
       const brokenUrl = window.location.href;
       const referrer = document.referrer || "Direct / Bookmark";
+      const platform = navigator.platform || "Unknown OS";
       const userAgent = navigator.userAgent;
       const issueTitle = encodeURIComponent("[404] Broken Link Found");
       const issueBody = encodeURIComponent(
-        "### 404 Broken Link Report\n\n" +
-          `- **Broken URL:** ${brokenUrl}\n` +
-          `- **Referrer:** ${referrer}\n` +
-          `- **User Agent:** ${userAgent}\n\n` +
-          "*Reported automatically by the 404 Page.*",
+        "### Description\n\n" +
+          "Broken link encountered on the Layer5 website.\n\n" +
+          `- Broken URL: ${brokenUrl}\n` +
+          `- Referrer: ${referrer}\n\n` +
+          "### Expected Behavior\n\n" +
+          "The requested page should resolve successfully instead of returning a 404 page.\n\n" +
+          "### Screenshots\n\n" +
+          "N/A\n\n" +
+          "### Environment:\n" +
+          `- Host OS: ${platform}\n` +
+          `- Browser: ${userAgent}\n\n` +
+          "---\n\n" +
+          '<img src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/5-light-small.svg" width="24px" align="left" /><h2>Contributor Resources and <a href="https://layer5.io/community/handbook">Handbook</a></h2>\n\n' +
+          "The layer5.io website uses Gatsby, React, and GitHub Pages. Site content is found under the [`master` branch](https://github.com/layer5io/layer5/tree/master).\n" +
+          "- 📚 See [contributing instructions](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md).\n" +
+          "- 🎨 Wireframes and [designs for Layer5 site](https://www.figma.com/file/5ZwEkSJwUPitURD59YHMEN/Layer5-Designs) in Figma [(open invite)](https://www.figma.com/team_invite/redeem/GvB8SudhEOoq3JOvoLaoMs)\n" +
+          "- 🙋🏾🙋🏼 Questions: [Discussion Forum](https://discuss.meshery.io) and [Community Slack](https://slack.layer5.io).\n\n" +
+          '<img src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/buttons/community.webp" height="22px" align="left" />Join the Layer5 Community by submitting your [community member form](https://layer5.io/newcomer).',
       );
       setReportUrl(
         `https://github.com/layer5io/layer5/issues/new?template=bug_report.md&title=${issueTitle}&body=${issueBody}`,
