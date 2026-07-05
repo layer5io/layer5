@@ -22,6 +22,9 @@ const L404SectionWrapper = styled.section`
   .button-row {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-top: 2.5rem;
+    gap: 1.2rem;
 
     img {
       display: block;
@@ -33,8 +36,11 @@ const L404SectionWrapper = styled.section`
       }
     }
 
-    button {
-      margin-top: 2.5rem;
+    button,
+    a {
+      width: 100%;
+      max-width: 280px;
+      margin: 0;
       color: black;
     }
   }
