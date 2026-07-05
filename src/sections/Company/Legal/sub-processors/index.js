@@ -223,7 +223,7 @@ const SubProcessors = () => {
               <ul>
                 <li><strong>Layer5 Cloud Account Data (cloud.layer5.io):</strong> All user account data is hosted in the United States at an Equinix datacenter in Dallas, Texas.</li>
                 <li><strong>Kanvas (kanvas.new):</strong> Design data is hosted in the United States at an Equinix datacenter in Dallas, Texas.</li>
-                <li><strong>Layer5 Discussion Forum Data (discuss.layer5.io):</strong> All forum data is hosted in the United States within the Amazon Web Services (AWS) US East region.</li>
+                <li><strong>Layer5 Discussion Forum Data (discuss.meshery.io):</strong> All forum data is hosted in the United States within the Amazon Web Services (AWS) US East region.</li>
               </ul>
               <p>
               Please note that in some cases, certain third-party services (sub-processors) that we use to deliver our services may operate and process data in additional regions.

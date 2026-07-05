@@ -34,7 +34,7 @@ const NewcomersGuide = () => {
               Slack workspace
             </a>{" "}
             to collaborate with the community and the{" "}
-            <a href="https://discuss.layer5.io" target="">
+            <a href="https://discuss.meshery.io" target="">
               discussion forum
             </a>{" "}
             for questions. Also, you can check the quick-links below for jumping
@@ -72,7 +72,7 @@ const NewcomersGuide = () => {
               learn, and participate in the broad set of open source projects at
               Layer5. If at any time you get stuck, please seek help in the{" "}
               <a
-                href="https://discuss.layer5.io"
+                href="https://discuss.meshery.io"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -208,7 +208,7 @@ const NewcomersGuide = () => {
                 <li>
                   If you need some additional help, please join Layer5{" "}
                   <a
-                    href="https://discuss.layer5.io/"
+                    href="https://discuss.meshery.io/"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -269,7 +269,7 @@ const NewcomersGuide = () => {
                 as possible. In the meanwhile, you are welcome to engage in the
                 Layer5{" "}
                 <a
-                  href="https://discuss.layer5.io/"
+                  href="https://discuss.meshery.io/"
                   target="_blank"
                   rel="noreferrer"
                 >

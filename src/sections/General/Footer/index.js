@@ -182,7 +182,7 @@ const Footer = ({ location }) => {
                   <li>
                     <a
                       className="category-link"
-                      href="https://discuss.layer5.io"
+                      href="https://discuss.meshery.io"
                     >
                       Forum
                     </a>

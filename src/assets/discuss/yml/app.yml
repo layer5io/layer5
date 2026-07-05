@@ -35,7 +35,7 @@ env:
   UNICORN_WORKERS: 4
 
   ## TODO: The domain name this Discourse instance will respond to
-  DISCOURSE_HOSTNAME: discuss.layer5.io
+  DISCOURSE_HOSTNAME: discuss.meshery.io
 
   ## Uncomment if you want the container to be started with the same
   ## hostname (-h option) as specified above (default "$hostname-$config")
@@ -53,7 +53,7 @@ env:
   DISCOURSE_SMTP_USER_NAME: abishek.kumar@layer5.io
   DISCOURSE_SMTP_PASSWORD: "***************"
   #DISCOURSE_SMTP_ENABLE_START_TLS: true           # (optional, default true)
-  DISCOURSE_SMTP_DOMAIN: discuss.layer5.io
+  DISCOURSE_SMTP_DOMAIN: discuss.meshery.io
   DISCOURSE_NOTIFICATION_EMAIL: noreply@realnighthawk.io
 
   ## If you added the Lets Encrypt template, uncomment below to get a free SSL certificate
