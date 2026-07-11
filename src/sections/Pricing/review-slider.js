@@ -18,7 +18,7 @@ import Hein from "./reviews/hein.webp";
 import Anusha from "./reviews/anusha.webp";
 import Louie from "./reviews/louie-corbo.jpeg";
 import Abdechakour from "./reviews/abdechakour-h.jpeg";
-import Giorgia from "./reviews/giorgia-modanes.jpg";
+import Giorgia from "./reviews/giorgia-modanesi.webp";
 
 const settings = {
   dots: false,
