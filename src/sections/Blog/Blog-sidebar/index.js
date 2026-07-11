@@ -61,7 +61,7 @@ const Sidebar = ({ pageContext }) => {
     <BlogSideBarWrapper>
       <div className="explain-1">
         <div className="cards">
-          <a href="https://discuss.layer5.io/">
+          <a href="https://discuss.meshery.io/">
             <div className="card">
               <h2>Join the Conversation</h2>
               <p>On our Discussion Forum</p>
