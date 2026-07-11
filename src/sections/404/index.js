@@ -123,6 +123,24 @@ const L404 = () => {
     setMessage(getRandomMessage());
   };
 
+  const handleReportBrokenLink = (e) => {
+    if (e) {
+      e.preventDefault();
+    }
+    if (typeof window !== "undefined") {
+      const referrer = document.referrer;
+      if (!referrer) {
+        const confirmReport = window.confirm(
+          "It looks like you may have accessed this page directly. If you manually entered the URL, please double-check it before reporting a broken link.\n\nDo you still want to continue?",
+        );
+        if (!confirmReport) {
+          return;
+        }
+      }
+      window.open(reportUrl, "_blank", "noopener,noreferrer");
+    }
+  };
+
   if (!message) return null; // Prevents flash before random message loads
 
   return (
@@ -155,8 +173,7 @@ const L404 = () => {
             id="report-broken-link"
             aria-label="report-broken-link-button"
             $secondary
-            $url={reportUrl}
-            $external={true}
+            onClick={handleReportBrokenLink}
           >
             Report Broken Link
           </Button>
