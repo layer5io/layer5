@@ -50,11 +50,11 @@ const Meshmates = () => {
 
   // Separate MeshMates by status and emeritus flag
   const activeMeshMates = data.allMdx.nodes.filter(
-    ({ frontmatter }) => frontmatter.emeritus !== "yes" && frontmatter.status !== "Inactive"
+    ({ frontmatter }) => frontmatter.emeritus !== "yes" && (!frontmatter.status || frontmatter.status.toLowerCase() !== "inactive")
   );
 
   const inactiveMeshMates = data.allMdx.nodes.filter(
-    ({ frontmatter }) => frontmatter.emeritus !== "yes" && frontmatter.status === "Inactive"
+    ({ frontmatter }) => frontmatter.emeritus !== "yes" && frontmatter.status && frontmatter.status.toLowerCase() === "inactive"
   );
 
   const emeritusMeshMates = data.allMdx.nodes.filter(

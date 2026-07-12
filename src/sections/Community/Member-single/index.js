@@ -63,7 +63,7 @@ const MemberSingle = ({ frontmatter, children }) => {
             <Col $xs={12} $sm={12} $lg={6} className="profile-image-col">
               <Image
                 className={
-                  status.includes("Inactive")
+                  status && status.toLowerCase().includes("inactive")
                     ? "profile-image-inactive"
                     : "profile-image"
                 }
