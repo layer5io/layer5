@@ -107,7 +107,7 @@ const Press = () => {
               <a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1"><GrYoutube size={45} className="icon" /></a>
               <br />
               <a href="https://github.com/layer5io"><GrGithub size={45} className="icon" /></a>
-              <a href="https://discuss.layer5.io/"><FaDiscourse size={40} className="icon" /></a>
+              <a href="https://discuss.meshery.io/"><FaDiscourse size={40} className="icon" /></a>
               <a href="https://hub.docker.com/u/layer5/"><FaDocker size={45} className="icon" /></a>
             </div>
           </Col>

@@ -212,7 +212,7 @@ const SistentAbout = () => {
               <a href="https://github.com/layer5io/sistent?tab=readme-ov-file#installation">
                 Sistent set-up guide
               </a>, {" "}
-              <a href="https://discuss.layer5.io/t/hands-on-training-session-migrating-components-to-mui-v5-and-sistent/6589">Hands-on Training Session: Migrating Components to MUI v5 and Sistent</a>, {" "}
+              <a href="https://discuss.meshery.io/t/hands-on-training-session-migrating-components-to-mui-v5-and-sistent/6589">Hands-on Training Session: Migrating Components to MUI v5 and Sistent</a>, {" "}
               <a href="https://www.youtube.com/live/lsw9KA__iu4?si=o8gpZdSHcqO2OKxE">
                 Training: contributing to Sistent,
               </a>{" "}

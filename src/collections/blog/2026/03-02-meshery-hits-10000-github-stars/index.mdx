@@ -1,0 +1,132 @@
+---
+title: "Meshery Hits 10,000 GitHub Stars!"
+subtitle: "A Sandbox project outrunning the CNCF's biggest names - and what comes next"
+date: 2026-03-02 09:00:00 -0500
+author: Layer5 Team
+thumbnail: ./hero-image.png
+darkthumbnail: ./hero-image.png
+description: "Meshery's main GitHub repo crossed 10,000 stars in March 2026, capping a climb from CNCF Sandbox project to the foundation's 6th-highest-velocity project."
+type: Blog
+category: Community
+product: Meshery
+tags:
+  - Meshery
+  - Community
+  - Open Source
+  - Kubernetes
+featured: false
+published: true
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import { Link } from "gatsby";
+import Blockquote from "../../../../reusecore/Blockquote/index.js";
+import Callout from "../../../../reusecore/Callout/index.js";
+import CTA_FullWidth from "../../../../components/Call-To-Actions/CTA_FullWidth/index.js";
+import CTAImg from "../../../../assets/images/meshery/icon-only/meshery-logo-shadow.webp";
+import heroImage from "./hero-image.png";
+
+<BlogWrapper>
+
+<div className="intro">
+  <p>
+    GitHub stars are easy to dismiss. Anyone can click the button, and skeptical engineers have
+    learned to treat a rising star count as marketing gloss rather than signal. But on March 2nd,
+    2026, the main <a href="https://github.com/meshery/meshery" target="_blank" rel="noopener noreferrer">meshery/meshery</a> repository
+    crossed 10,000 stars, and the number is worth a second look - not because of the button, but
+    because of what sits behind it: 3,000+ contributors, 300+ integrations, and a ranking as the
+    sixth-highest-velocity project among the 237 projects the Cloud Native Computing Foundation
+    hosts. That's a remarkable amount of engineering output for a project still carrying CNCF's
+    earliest maturity label: Sandbox.
+  </p>
+</div>
+
+## From 1,000 to 10,000
+
+Meshery's star count didn't jump to five digits overnight. The project crossed 1,000 stars in its
+early days as a CNCF Sandbox entrant, passed 5,000 as it was proposed for Incubation, and has now
+doubled that again. Track Meshery's CNCF velocity ranking over the same stretch and the shape of
+the story gets sharper: 33rd in the 2020-2021 cycle, then 31st, 19th, 10th, and 9th in successive
+years, before landing at 6th by mid-2025 - a steady climb that carried straight through to this
+milestone.
+
+<img src={heroImage} className="image-center-shadow" alt="Meshery celebrates crossing 10,000 stars on its main GitHub repository" />
+
+### A Milestone With Good Timing
+
+Ten thousand stars landed in the same month Meshery reached a different kind of milestone: the
+general availability of Meshery v1.0, announced at KubeCon + CloudNativeCon Europe 2026 in
+Amsterdam. Six years after the project's first commit, v1.0 shipped alongside a restructured
+GitHub footprint - <a href="https://github.com/meshery" target="_blank" rel="noopener noreferrer">meshery</a> for
+the governed core platform, <a href="https://github.com/meshery-extensions" target="_blank" rel="noopener noreferrer">meshery-extensions</a> for
+the growing library of community-built integrations - plus the Certified Meshery Contributor
+program, the first contributor certification of its kind in the CNCF. Stars measure attention; a
+1.0 release measures readiness. Landing both in the same month isn't a coincidence, it's a project
+hitting its stride.
+
+## What 10,000 Stars Means in the CNCF
+
+Star counts only mean something in context, and Meshery's context is unusual. Most projects that
+clear 10,000 GitHub stars have already graduated out of CNCF's Sandbox tier - Kubernetes,
+Prometheus, and Envoy all did long before they reached this level of adoption signal. Meshery is
+still Sandbox. That's what makes ranking sixth-highest-velocity out of 237 CNCF projects notable:
+it's outpacing plenty of Incubating and Graduated projects with more institutional backing and a
+head start of several years.
+
+The velocity holds up because it's backed by scale, not a single viral moment. Meshery's ecosystem
+spans 300+ integrations across AWS, Azure, GCP, and the broader open source landscape, maintained
+by 3,000+ contributors working across two GitHub organizations - the core platform in one, the
+community-driven extensions in the other. That split exists because a project growing this fast
+needs a way to keep its core stable while its edges keep expanding, a structure borrowed
+deliberately from how Kubernetes organizes its own SIGs.
+
+## Built by the Community, For the Community
+
+Every one of those 10,000 stars represents someone who found Meshery, tried it, and decided it
+deserved the click. A meaningful share of them came from people who started as complete
+newcomers. Meshery is the most-applied-to project in the Linux Foundation's LFX Mentorship
+program, drawing more than 10,000 applicants and graduating over 100 mentees who've worked on
+everything from Azure support to end-to-end testing frameworks. It's also a flagship participant
+in Google Summer of Code, giving new contributors a structured path into distributed systems work
+that most projects never offer. Get a feel for what that looks like on the <Link to="/community">Layer5 Community</Link> page.
+
+<Blockquote quote="A star count is a lagging indicator. The leading indicator is how many of those people stuck around long enough to open a pull request." />
+
+That's the pattern Meshery has optimized for since its earliest Newcomer Onboarding calls: turn
+stargazers into contributors, not just spectators. MeshMates - experienced community members
+paired one-on-one with newcomers - exist specifically to shorten that path. It's slower than
+chasing stars directly, but it's the reason the contributor count kept pace with the star count
+instead of falling behind it.
+
+## Try It Yourself
+
+You don't need a Kubernetes cluster, a cloud account, or twenty minutes of YAML to see what the
+fuss is about.
+
+<Callout type="tip" title="No Cluster Required">
+  <p>
+    The <Link to="/cloud-native-management/meshery/meshery-playground">Meshery Playground</Link> runs
+    entirely in your browser. Import an existing Kubernetes cluster, drag components onto a design
+    canvas, or clone someone else's pattern from the Meshery Catalog - no installation required.
+  </p>
+</Callout>
+
+<CTA_FullWidth
+  image={CTAImg}
+  heading="Get Started with Meshery"
+  alt="Meshery - Cloud Native Manager"
+  content="Meshery is the open source, cloud native manager that enables the design and management of all Kubernetes-based infrastructure and applications."
+  button_text="Get Meshery"
+  url="/cloud-native-management/meshery"
+  external_link={false}
+/>
+
+<div className="outro">
+  <p>
+    Ten thousand stars is a number the Meshery community earned one contributor at a time. If you
+    haven't yet, <a href="https://github.com/meshery/meshery" target="_blank" rel="noopener noreferrer">star the repo</a>,
+    then come find your MeshMate on <a href="https://slack.layer5.io" target="_blank" rel="noopener noreferrer">Slack</a>.
+  </p>
+</div>
+
+</BlogWrapper>
