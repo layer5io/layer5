@@ -158,7 +158,7 @@ const ThankYou = () => {
     <div className="thank-you-box">
       <h2>Thank you for your interest in the Layer5 Writing Program!</h2>
       <p>You will soon receive detailed guidance from our content team. We'll get back to you as soon as we can.</p>
-      <p>In the meantime, please visit our <a href="https://discuss.layer5.io">community forum</a> or join us in our <a href="https://slack.layer5.io">community Slack</a>.</p>
+      <p>In the meantime, please visit our <a href="https://discuss.meshery.io">community forum</a> or join us in our <a href="https://slack.layer5.io">community Slack</a>.</p>
       <h3 className="white">- Team <img src={layer5_img} alt="Layer5" width="125" /></h3>
     </div>
   );
