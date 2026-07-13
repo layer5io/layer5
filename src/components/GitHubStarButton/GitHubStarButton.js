@@ -8,14 +8,13 @@ const StyledButton = styled.a`
 
   cursor: pointer;
   display: inline-flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
 
   min-width: 170px;
-  padding: 14px 16px;
 
   border: 0;
-  border-radius: 5px;
+  border-radius: 6px;
 
   font-family: inherit;
   font-size: 16px;
@@ -23,23 +22,76 @@ const StyledButton = styled.a`
   line-height: 1.2;
 
   text-decoration: none;
-  text-transform: capitalize;
-
-  color: ${({ theme }) => theme.white};
-  background: ${({ theme }) => theme.secondaryColor};
+  text-transform: none;
 
   position: relative;
-  transition: 450ms all;
+  transition: 250ms ease;
+
+  /* --- Core segment: GitHub-style outlined button, not a filled CTA --- */
+  .star-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 11px 16px;
+
+    background: ${({ theme }) => theme.githubButtonBg || "#ffffff"};
+    color: ${({ theme }) => theme.githubButtonText || "#24292f"};
+    border: 1px solid ${({ theme }) => theme.githubButtonBorder || "#24292f"};
+    border-right: none;
+
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+
+    svg:first-child {
+      flex-shrink: 0;
+      fill: currentColor;
+    }
+  }
+
+  /* --- Count segment: separated, badge-like, GitHub convention --- */
+  .star-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    padding: 11px 14px;
+    min-width: 48px;
+
+    background: ${({ theme }) => theme.githubCountBg || "#f6f8fa"};
+    color: ${({ theme }) => theme.githubButtonText || "#24292f"};
+    border: 1px solid ${({ theme }) => theme.githubButtonBorder || "#24292f"};
+
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+
+    svg {
+      flex-shrink: 0;
+      fill: currentColor;
+    }
+  }
 
   &:hover {
-    color: ${({ theme }) => theme.white};
-    background: ${({ theme }) => theme.activeColor};
-    box-shadow: 0 2px 10px ${({ theme }) => theme.whiteFourToBlackFour};
+    .star-action {
+      background: ${({ theme }) => theme.githubButtonHoverBg || "#f3f4f6"};
+    }
+    .star-count {
+      background: ${({ theme }) => theme.githubCountHoverBg || "#eaeef2"};
+    }
+    // box-shadow: 0 1px 4px rgba(27, 31, 36, 0.15);
+    transition:
+      background 0.25s ease,
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
   }
 
   &:active {
     transform: scale(0.98);
-    box-shadow: 0 2px 10px ${({ theme }) => theme.blackFourToWhiteFour};
   }
 
   &:focus {
@@ -52,38 +104,17 @@ const StyledButton = styled.a`
   }
 
   &:visited {
-    color: ${({ theme }) => theme.white};
-  }
-
-  svg:first-child {
-    margin-right: 8px;
-    flex-shrink: 0;
-  }
-
-  .star-count {
-    display: inline-flex;
-    align-items: center;
-
-    margin-left: 8px;
-    padding: 2px 6px;
-
-    border-radius: 3px;
-
-    background: rgba(255, 255, 255, 0.18);
-
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1;
-
-    svg {
-      margin-right: 4px;
-    }
+    color: ${({ theme }) => theme.githubButtonText || "#24292f"};
   }
 
   @media (max-width: 768px) {
     min-width: 150px;
-    padding: 12px 14px;
     font-size: 15px;
+
+    .star-action,
+    .star-count {
+      padding: 12px 12px;
+    }
   }
 `;
 
@@ -148,15 +179,14 @@ const GitHubStarButton = ({
       className={className}
       {...props}
     >
-      <FaGithub size={18} />
-      <span>Star</span>
-      {!loading && stars !== null && (
-        <span className="star-count">
-          <FaStar size={12} />
-          {formatCount(stars)}
-        </span>
-      )}
-      {loading && <span className="star-count">…</span>}
+      <span className="star-action">
+        <FaGithub size={18} />
+        <span>Star</span>
+      </span>
+      <span className="star-count">
+        <FaStar size={12} />
+        {loading ? "…" : stars !== null ? formatCount(stars) : "Star"}
+      </span>
     </StyledButton>
   );
 };
