@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout current repository
         uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
 
       - name: Install Node.js
         uses: actions/setup-node@v6
