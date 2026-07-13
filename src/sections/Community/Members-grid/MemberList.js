@@ -27,8 +27,8 @@ const MembersList = (props) => {
        */
       if (
         (badge === "active" || badge === "inactive") &&
-        member.frontmatter.status &&
-        member.frontmatter.status.toLowerCase() === badge.toLowerCase()
+        member.frontmatter.status ==
+          `${badge.charAt(0).toUpperCase() + badge.slice(1)}`
       )
         isApplicable++;
 

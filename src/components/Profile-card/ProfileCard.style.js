@@ -5,7 +5,7 @@ export const ProfileCardWrapper = styled.div`
        -ms-interpolation-mode: bicubic;
        vertical-align: middle;
        border: 0;
-       filter: ${props => props.status && props.status.toLowerCase() === "inactive" ? "grayscale(1)" : ""};
+       filter: ${props => props.status === "Inactive" ? "grayscale(1)" : ""};
     }
 
     .profile-card{
@@ -16,7 +16,7 @@ export const ProfileCardWrapper = styled.div`
         position: relative;
         margin: auto;
         margin-bottom: 2.5rem;
-        background: ${props => props.status && props.status.toLowerCase() === "active" ? props.theme.grey212121ToGreen3C494F : "gray"};       
+        background: ${props => props.status === "Active" ? props.theme.grey212121ToGreen3C494F : "gray"};       
         top: 50%;
         transition: 0.3s;
         height: 235px;
@@ -24,7 +24,7 @@ export const ProfileCardWrapper = styled.div`
        
         &::before{            
                    
-                display: ${props => props.status && props.status.toLowerCase() === "inactive" ? "flex" : "none"};
+                display: ${props => props.status === "Inactive" ? "flex" : "none"};
                 content: "Inactive";
                 position: absolute;
                 line-height: 32px;
@@ -41,7 +41,7 @@ export const ProfileCardWrapper = styled.div`
                 z-index: 10;
               }             
         &:hover{
-            background: ${props => props.status && props.status.toLowerCase() === "active" ? props.theme.secondaryColor : props.theme.primaryLightColor};
+            background: ${props => props.status === "Active" ? props.theme.secondaryColor : props.theme.primaryLightColor};
         }
 
         header {
