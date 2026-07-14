@@ -7,7 +7,7 @@ const themes = { light: lighttheme, dark: darktheme };
 const MagicScriptTag = (props) => {
   // FIX: Stringify the theme object outside the template literal to prevent syntax errors caused by unescaped quotes inside theme values.
   const themeJSON = JSON.stringify(props.theme);
-  
+
   // Injects CSS variables and theme state strictly before the first paint to prevent FOUC.
   const codeToRunOnClient = `
       (function() {
@@ -75,6 +75,6 @@ const MagicScriptTag = (props) => {
 
 // FIX: Using setHeadComponents instead of setPreBodyComponents ensures the script runs
 // strictly in the <head>, blocking the first paint until the theme is applied and completely eliminating FOUC.
-export const onRenderBody = ( { setHeadComponents }) => {
+export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([<MagicScriptTag key="theme-injection" theme={themes} />]);
 };
