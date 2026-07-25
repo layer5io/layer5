@@ -57,7 +57,8 @@ const SistentInstallation = () => {
               >
                 <code>package.json</code>
               </a>
-              .
+              . You will also need <strong>Node.js</strong>{" "}
+              <code>&gt;=16.x</code>.
             </p>
             <a id="installation">
               <h2>Installation</h2>
