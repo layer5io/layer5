@@ -26,7 +26,6 @@ const MesheryPage = () => {
             <Col className="desc-text" $lg={6} $md={6} $sm={10} $xs={8}>
               <h1 className="heading-1"> Wrangle your infrastructure</h1>
               <h1 className="heading-2">
-                {" "}
                 <span className="heading-2"> collaboratively</span>
               </h1>
               <p className="desc-p">
