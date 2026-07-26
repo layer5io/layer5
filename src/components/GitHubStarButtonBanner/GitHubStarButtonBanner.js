@@ -105,7 +105,13 @@ const GitHubStarButtonBanner = ({
 
   useEffect(() => {
     const cacheKey = `gh_stars_${repo.replace("/", "_")}`;
-    const cached = localStorage.getItem(cacheKey);
+    let cached = null;
+
+    try {
+      cached = localStorage.getItem(cacheKey);
+    } catch {
+      cached = null;
+    }
 
     if (cached) {
       try {
@@ -116,9 +122,14 @@ const GitHubStarButtonBanner = ({
           return;
         }
       } catch {
-        localStorage.removeItem(cacheKey);
+        try {
+          localStorage.removeItem(cacheKey);
+        } catch {
+          // Ignore storage errors
+        }
       }
     }
+    localStorage.setItem;
 
     fetch(`https://api.github.com/repos/${repo}`)
       .then((res) => {
@@ -128,10 +139,14 @@ const GitHubStarButtonBanner = ({
       .then((data) => {
         if (data.stargazers_count !== undefined) {
           const count = data.stargazers_count;
-          localStorage.setItem(
-            cacheKey,
-            JSON.stringify({ count, timestamp: Date.now() }),
-          );
+          try {
+            localStorage.setItem(
+              cacheKey,
+              JSON.stringify({ count, timestamp: Date.now() }),
+            );
+          } catch {
+            // Ignore storage errors
+          }
           setStars(count);
         }
       })
