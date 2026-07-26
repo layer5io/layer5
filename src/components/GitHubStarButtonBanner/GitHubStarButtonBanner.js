@@ -56,7 +56,8 @@ const BannerButton = styled.a`
   }
 
   &:focus-visible {
-    outline: 2px solid ${({ theme }) => theme.activeColor};
+  outline: 2px solid ${({ theme }) =>
+  theme.activeColor || theme.bannerAccent || "#2bb77c"};
     outline-offset: 3px;
   }
 
