@@ -11,9 +11,9 @@ const meshmateBadges = {
   meshmate2021: Meshmate2021,
 };
 
-const ProfileCard = (props) => {
-  const { name, status, image_path, meshmate, badges } = props.frontmatter;
-  const link = props.cardlink;
+const ProfileCard = ({ frontmatter, cardlink }) => {
+  const { name, status, image_path, meshmate, badges } = frontmatter;
+  const link = cardlink;
   return (
     <ProfileCardWrapper status={status}>
       <div className="profile-card">
@@ -24,30 +24,30 @@ const ProfileCard = (props) => {
               imgStyle={{ objectFit: "contain" }}
               alt={name}
             />
-            {meshmate === "yes" && (
-              <Link className="meshmate" to="/community/meshmates">
-                <img src={MeshMateIcon} alt="meshmate-color-icon" />
-              </Link>
-            )}
-            {badges &&
-              badges.map((badge) => {
-                const BadgeIcon = meshmateBadges[badge];
-                if (BadgeIcon) {
-                  return (
-                    <Link
-                      key={badge}
-                      className="meshmate"
-                      to="/community/meshmates"
-                    >
-                      <img src={BadgeIcon} alt="meshmate-color-icon" />
-                    </Link>
-                  );
-                }
-                return null;
-              })}
             <h4>{name}</h4>
           </header>
         </Link>
+        {meshmate === "yes" && (
+          <Link className="meshmate" to="/community/meshmates">
+            <img src={MeshMateIcon} alt="meshmate-color-icon" />
+          </Link>
+        )}
+        {badges &&
+          badges.map((badge) => {
+            const BadgeIcon = meshmateBadges[badge];
+            if (BadgeIcon) {
+              return (
+                <Link
+                  key={badge}
+                  className="meshmate"
+                  to="/community/meshmates"
+                >
+                  <img src={BadgeIcon} alt={`${badge} badge`} />
+                </Link>
+              );
+            }
+            return null;
+          })}
       </div>
     </ProfileCardWrapper>
   );
