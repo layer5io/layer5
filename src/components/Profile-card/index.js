@@ -6,31 +6,45 @@ import Meshmate2020 from "../../assets/images/meshmate-of-the-year/meshmate-of-t
 import Meshmate2021 from "../../assets/images/meshmate-of-the-year/meshmate-of-the-year-2021.svg";
 import Image from "../image";
 
+const meshmateBadges = {
+  meshmate2020: Meshmate2020,
+  meshmate2021: Meshmate2021,
+};
+
 const ProfileCard = (props) => {
-  const { name, status, image_path, meshmate } = props.frontmatter;
+  const { name, status, image_path, meshmate, badges } = props.frontmatter;
   const link = props.cardlink;
   return (
     <ProfileCardWrapper status={status}>
       <div className="profile-card">
         <Link to={link}>
           <header>
-            <Image {...image_path} imgStyle={{ objectFit: "contain" }} alt={name}/>
-            { meshmate === "yes" && (
+            <Image
+              {...image_path}
+              imgStyle={{ objectFit: "contain" }}
+              alt={name}
+            />
+            {meshmate === "yes" && (
               <Link className="meshmate" to="/community/meshmates">
                 <img src={MeshMateIcon} alt="meshmate-color-icon" />
               </Link>
             )}
-            {/* TODO: Code needs to be improved */}
-            { name === "Nikhil Ladha" && (
-              <Link className="meshmate" to="/community/meshmates">
-                <img src={Meshmate2020} alt="meshmate-color-icon" />
-              </Link>
-            )}
-            { name === "Aditya Chatterjee" && (
-              <Link className="meshmate" to="/community/meshmates">
-                <img src={Meshmate2021} alt="meshmate-color-icon" />
-              </Link>
-            )}
+            {badges &&
+              badges.map((badge) => {
+                const BadgeIcon = meshmateBadges[badge];
+                if (BadgeIcon) {
+                  return (
+                    <Link
+                      key={badge}
+                      className="meshmate"
+                      to="/community/meshmates"
+                    >
+                      <img src={BadgeIcon} alt="meshmate-color-icon" />
+                    </Link>
+                  );
+                }
+                return null;
+              })}
             <h4>{name}</h4>
           </header>
         </Link>
