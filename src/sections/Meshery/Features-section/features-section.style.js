@@ -1,306 +1,258 @@
 import styled from "styled-components";
 
 const FeaturesSectionWrapper = styled.section`
+  background-color: black;
+  padding: 4rem 0 5rem 0;
+  margin-bottom: 6rem;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  z-index: 1;
+  height: auto;
 
-	background-color: black;
-	transform: skew(0deg, -6deg);
-	padding-bottom: 5rem;
-	margin-bottom: 8rem;
-	overflow: hidden;
-	position: relative;
-	width: 100%;
-	max-width: 100%;
-	contain: layout style paint;
-	transform-origin: center;
-	z-index: 1;
-	height: auto;
-	isolate: isolate;
-	.skw{
-		display: grid;
-		position: relative;
-		top: -5rem;
-	}
-	.rect-1-left {
-		background: #C9FCF6;
-		border-radius: 0 2.125rem 0 0;
-		grid-column: 1/ span 2;
-		height: 5rem;
-		grid-row: 1;
-		position: relative;
-		top: 0.5px;
-	}
-	.rect-2-left {
-		background: ${(props) => props.theme.secondaryColor};
-		border-radius: 0 0 3.5rem 0;
-		grid-column: 1/2;
-		height: 5rem;
-		grid-row: 2;
-	}
-	.rect-3-right {
-		background: ${(props) => props.theme.secondaryColor};
-		border-radius: 3.5rem 0 0 0;
-		grid-column: 10/11;
-		grid-row: 1;
-		height: 5rem;
-	}
-	.rect-4-right {
-		background: #C9FCF6;
-		border-radius: 0 0 0 2.125rem;
-		grid-column: 9/11;
-		grid-row: 2;
-		height: 5rem;
-		position: relative;
-		top: -0.75px
-	}
+  .skw {
+    display: grid;
+    position: relative;
+    top: -4rem;
+  }
+  .rect-1-left {
+    background: #c9fcf6;
+    border-radius: 0 2.125rem 0 0;
+    grid-column: 1 / span 2;
+    height: 4rem;
+    grid-row: 1;
+  }
+  .rect-2-left {
+    background: ${(props) => props.theme.secondaryColor};
+    border-radius: 0 0 3.5rem 0;
+    grid-column: 1 / 2;
+    height: 4rem;
+    grid-row: 2;
+  }
+  .rect-3-right {
+    background: ${(props) => props.theme.secondaryColor};
+    border-radius: 3.5rem 0 0 0;
+    grid-column: 10 / 11;
+    grid-row: 1;
+    height: 4rem;
+  }
+  .rect-4-right {
+    background: #c9fcf6;
+    border-radius: 0 0 0 2.125rem;
+    grid-column: 9 / 11;
+    grid-row: 2;
+    height: 4rem;
+  }
 
-	.section-data {
-		transform: skew(0deg, 6deg);
-		padding: 0 1rem 3rem;
-		text-align: center;
-		position: relative;
-		z-index: 1;
-		h1, h2, p {
-			color: white;
-		}
-	}
+  .section-data {
+    padding: 0 2rem 3rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin: 0 auto;
 
-	.meshery-logo {
-		img {
-			max-height: 8rem;
-		}
-	}
-	.section-header {
-		margin-top: 3rem;
-		h1 {
-			line-height: 3.125rem;
-			span {
-				color: ${(props) => props.theme.secondaryColor};
-			}
-		}
-		h2 {
-			font-weight: 400;
-		}
-		p {
-			font-size: 1.25rem;
-			line-height: 1.25rem;
-			margin: 1rem 0 0;
-		}
-	}
-	.smp-section {
-		margin: 3rem auto;
-		max-width: 85%;
-		overflow: hidden;
+    h1,
+    h2,
+    p {
+      color: white;
+    }
+  }
 
-		.smp-section-row {
-			margin: 4rem 0;
-			align-items: center;
-		}
-		h2, h4 {
-				color: white;
-			}
-		.smp-section-data {
-			h1, h2, p {
-				text-align: start; color: white;
-			}
-			h2 {
-				font-size: 1.75rem;
-    			font-weight: 500;
-			}
-		}
+  .section-header {
+    margin-top: 1rem;
+    h1 {
+      line-height: 3.125rem;
+      span {
+        color: ${(props) => props.theme.secondaryColor};
+      }
+    }
+    h2 {
+      font-weight: 400;
+    }
+    p {
+      font-size: 1.25rem;
+      line-height: 1.6rem;
+      margin: 1rem auto 0;
+      max-width: 50rem;
+    }
+  }
 
-		.smp-section-carousel {
-			.slick-slider {
-			    max-height: 520px;
-				.slick-list {
-					max-width: 50rem;
-					max-height: 520px;
-					height: auto;
+  .smp-section {
+    margin: 3rem auto;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 1rem;
+    box-sizing: border-box;
 
-					.slick-track {
-						height: auto;
-					}
+    .smp-section-row {
+      margin: 4rem 0;
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+    }
 
-					.slick-slide {
-						height: auto;
-						img {
-							max-height: 20rem;
-							margin: auto;
-						}
-					}
-				}
+    h2,
+    h4 {
+      color: white;
+    }
 
-				.slick-arrow{
-					display: none !important;
-				}
+    .smp-section-data {
+      h1,
+      h2,
+      p {
+        text-align: start;
+        color: white;
+      }
+      h2 {
+        font-size: 1.75rem;
+        font-weight: 500;
+      }
+    }
 
-				.slick-dots {
-					bottom: 0;
-					top: 0rem;
-					left: 52rem;
-					width: 8rem;
+    .smp-section-carousel {
+      width: 100%;
 
-					li {
-						display: block;
-						width: 100%;
-						height: auto;
-						margin: 1rem auto;
-						opacity: 0.6;
+      .slick-slider {
+        position: relative;
+        display: block;
+        box-sizing: border-box;
 
-						p {
-							display: block;
+        .slick-list {
+          width: calc(100% - 6rem);
+          margin: 0;
 
-							img {
-								height: 5rem;
-								vertical-align: middle;
-							}
-						}
-					}
-				}
-				.slick-dots
-					li.slick-active {
-						opacity: 1;
-					}
-				}
-			}
-		}
-	}
+          .slick-slide {
+            img {
+              max-height: 22rem;
+              width: auto;
+              margin: auto;
+              border-radius: 0.5rem;
+            }
+          }
+        }
 
-	@media screen and (max-width: 1600px) {
-		.smp-section .smp-section-carousel .slick-slider {
-			.slick-list {
-				max-width: 38rem;
-			}
+        .slick-arrow {
+          display: none;
+        }
 
-			.slick-dots {
-				left: 40rem;
-				width: 6rem;
+        /* Fixed Vertical Navigation Dots without negative positioning */
+        .slick-dots {
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 5rem;
+          list-style: none;
+          margin: 0;
+          padding: 0;
 
-				li p img {
-					height: 4rem;
-				}
-			}
-		}
-	}
+          li {
+            display: block;
+            width: 100%;
+            margin: 0.75rem 0;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
 
-	@media screen and (max-width: 1200px) {
-		padding-bottom: 2rem;
-		margin-bottom: 6rem;
+            /* Added visible focus indicators for keyboard navigation (WCAG AA) */
+            &:focus-visible,
+            button:focus-visible {
+              outline: 2px solid ${(props) => props.theme.secondaryColor};
+              outline-offset: 2px;
+              border-radius: 4px;
+            }
 
-		.smp-section {
-			.smp-section-row {
-				margin: 2.5rem 0;
-			}
+            p img {
+              height: 3.5rem;
+              width: auto;
+              border-radius: 0.25rem;
+            }
+          }
 
-			.smp-section-data {
-				h3, p {
-					text-align: center;
-				}
-			}
+          li.slick-active {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
 
-			.smp-section-carousel .slick-slider {
-				.slick-list {
-					max-width: 80%;
-					margin: 2rem auto;
-				}
+  .mesh-mngmnt {
+    margin-top: 4rem;
+    h3 {
+      margin: 1rem 0;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1.5rem;
+    }
+    p {
+      margin: 0.5rem 0;
+      color: rgba(255, 255, 255, 0.7);
+    }
 
-				.slick-dots {
-					left: 92%;
-				}
-			}
-		}
-	}
+    .mesh-mngmnt-btn {
+      margin: 2rem auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      max-width: 100%;
 
-	@media screen and (max-width: 960px) {
-		padding-bottom: 0rem;
-		margin-bottom: 4rem;
-		.smp-section .smp-section-carousel .slick-slider .slick-list {
-			.slick-slide {
-				img {
-					max-height: 16rem;
-				}
-			}
-		}
-	}
+      .mgmt_button {
+        min-width: 12rem;
+        border-radius: 1rem;
+      }
+    }
+  }
 
-	@media screen and (max-width: 700px) {
-		.smp-section {
-			max-width: 95%;
+  /* Responsive Adjustments & Breakpoints */
+  @media screen and (max-width: 1200px) {
+    .smp-section {
+      .smp-section-carousel {
+        .slick-slider {
+          .slick-list {
+            width: 100%;
 
-			.smp-section-carousel .slick-slider {
-				.slick-list {
-					max-width: 85%;
-					margin: 2rem 0;
-				}
-				.slick-dots {
-					left: 90%;
-					width: 4rem;
+            .slick-slide img {
+              max-height: 18rem;
+            }
+          }
 
-					li p img {
-						height: 2.5rem;
-					}
-				}
-			}
-		}
-	}
+          /* Removed !important and handled positioning via specificity */
+          .slick-dots {
+            position: relative;
+            right: auto;
+            top: auto;
+            transform: none;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
 
-	@media screen and (max-width: 500px) {
-		.smp-section {
-			max-width: 95%;
+            li {
+              width: auto;
+              margin: 0;
 
-			.smp-section-carousel .slick-slider {
-				.slick-list {
-					max-width: 80%;
-					.slick-slide {
-						img {
-							max-height: 10rem;
-						}
-					}
-				}
-				.slick-dots {
-					left: 85%;
-					top: -1rem;
-				}
-			}
-		}
-	}
+              p img {
+                height: 2.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 
-	.mesh-mngmnt {
-		h3 {
-			margin: 1rem 0;
-			color: rgba(255, 255, 255, 0.6);
-			font-size: 1.5rem;
-		}
-		p {
-			margin: 0.5rem 0;
-			color: rgba(255, 255, 255, 0.6);
-		}
-
-		.mesh-mngmnt-btn {
-			margin: 2rem auto;
-			display: flex;
-			flex-wrap: wrap;
-			max-width: 75%;
-
-			.mgmt_button {
-				margin: 0.5rem 0;
-				min-width: 15rem;
-				border-radius: 1rem;
-			}
-		}
-	}
-
-	@media screen and (max-width: 992px) {
-		.mesh-mngmnt {
-			.mesh-mngmnt-btn {
-				justify-content: center;
-
-				.mgmt_button {
-					margin: 0.5rem auto;
-					min-width: 11rem;
-				}
-			}
-		}
-	}
+  @media screen and (max-width: 768px) {
+    .smp-section
+      .smp-section-carousel
+      .slick-slider
+      .slick-list
+      .slick-slide
+      img {
+      max-height: 14rem;
+    }
+  }
 `;
 
 export default FeaturesSectionWrapper;
