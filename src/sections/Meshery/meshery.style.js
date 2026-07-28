@@ -145,7 +145,8 @@ const MesheryWrapper = styled.section`
             margin-left: 1rem;
           }
           .banner-btn {
-            margin: 0 0.75rem 0 o.5rem;
+            margin: 0 ${({ theme }) => theme.spacing?.sm || "0.75rem"} 0
+              ${({ theme }) => theme.spacing?.xs || "0.5rem"};
           }
         }
       }
