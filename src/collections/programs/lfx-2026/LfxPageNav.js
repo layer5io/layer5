@@ -50,6 +50,21 @@ const NavList = styled.ul`
   }
 `;
 
+const SubNavList = styled.ul`
+  list-style: none !important;
+  margin: 0.35rem 0 0 0;
+  padding-left: 0.85rem;
+  border-left: 1px solid ${(props) => props.theme.grey1D1817ToGreyE6E6E6};
+  li {
+    list-style: none !important;
+    margin-bottom: 0.35rem;
+  }
+  li a {
+    font-size: 0.8rem;
+    opacity: 0.85;
+  }
+`;
+
 const BackToTopBtn = styled.button`
   position: fixed;
   bottom: ${(props) => (props.visible ? "20px" : "-80px")};
@@ -83,7 +98,8 @@ const LfxPageNav = ({ items }) => {
       setShowTop(scrolled >= total - 100);
 
       let current = "";
-      items.forEach((item) => {
+      const flatItems = items.flatMap((item) => [item, ...(item.children || [])]);
+      flatItems.forEach((item) => {
         const el = document.querySelector(item.href);
         if (el && window.scrollY >= el.offsetTop - 140) {
           current = item.href;
@@ -103,6 +119,15 @@ const LfxPageNav = ({ items }) => {
           {items.map((item) => (
             <li key={item.href}>
               <a href={item.href} className={activeHref === item.href ? "active" : ""}>{item.label}</a>
+              {item.children && (
+                <SubNavList>
+                  {item.children.map((child) => (
+                    <li key={child.href}>
+                      <a href={child.href} className={activeHref === child.href ? "active" : ""}>{child.label}</a>
+                    </li>
+                  ))}
+                </SubNavList>
+              )}
             </li>
           ))}
         </NavList>
