@@ -136,7 +136,7 @@ const FeaturesSectionWrapper = styled.section`
         }
 
         .slick-arrow {
-          display: none;
+          display: none !important;
         }
 
         /* Dots positioned inside the container bounds */

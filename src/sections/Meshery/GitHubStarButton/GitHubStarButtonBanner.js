@@ -139,8 +139,8 @@ const GitHubStarButtonBanner = ({
       if (cached) {
         try {
           const { count, timestamp } = JSON.parse(cached);
-          // Strict type checking and cache expiration check (1 hr)
-          if (typeof count === "number" && Date.now() - timestamp < 3600000) {
+          const age = Date.now() - timestamp;
+          if (typeof count === "number" && age >= 0 && age < 3600000) {
             if (isMounted) {
               setStars(count);
               setLoading(false);
