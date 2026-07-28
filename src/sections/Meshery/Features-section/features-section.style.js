@@ -119,13 +119,16 @@ const FeaturesSectionWrapper = styled.section`
         box-sizing: border-box;
 
         .slick-list {
+          /* Reserve 6rem space for dots inside the container to prevent overflow */
           width: calc(100% - 6rem);
           margin: 0;
 
           .slick-slide {
             img {
               max-height: 22rem;
-              width: auto;
+              width: 100%;
+              object-fit: contain;
+              aspect-ratio: 16 / 9; /* Reserves space to prevent reflow on load */
               margin: auto;
               border-radius: 0.5rem;
             }
@@ -136,7 +139,7 @@ const FeaturesSectionWrapper = styled.section`
           display: none;
         }
 
-        /* Fixed Vertical Navigation Dots without negative positioning */
+        /* Dots positioned inside the container bounds */
         .slick-dots {
           position: absolute;
           right: 0;
@@ -154,7 +157,7 @@ const FeaturesSectionWrapper = styled.section`
             opacity: 0.5;
             transition: opacity 0.3s ease;
 
-            /* Added visible focus indicators for keyboard navigation (WCAG AA) */
+            /* WCAG 2.1 AA Keyboard Focus State */
             &:focus-visible,
             button:focus-visible {
               outline: 2px solid ${(props) => props.theme.secondaryColor};
@@ -217,7 +220,6 @@ const FeaturesSectionWrapper = styled.section`
             }
           }
 
-          /* Removed !important and handled positioning via specificity */
           .slick-dots {
             position: relative;
             right: auto;
