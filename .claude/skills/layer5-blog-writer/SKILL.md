@@ -112,37 +112,79 @@ src/collections/blog/YYYY/MM-DD-descriptive-slug/index.mdx
 
 ### Step 6 — Generate the hero image
 
+First, **pick a Five pose deliberately.** Read `references/mascot-five-index.md` - it's the
+complete, human-maintained catalog of every pose in `assets/mascot-five/` (41 poses: description,
+topical tags, whether a Layer5/Meshery logo is already baked in, and whether the pose has genuine
+blank signage). Scan the tags for the post's actual theme and pick the best match yourself; don't
+default to the same pose across posts. If nothing fits well, fall back to the `climbing-stairs`
+pose (plain forward motion, no props that could clash with an unrelated topic) rather than forcing
+a thematic pick that doesn't hold up.
+
+If the chosen pose has blank signage (currently `blank-signpost` or `blank-book` - the index says
+so explicitly), you can put post-specific text on it with `--sign-text`, e.g. the post's title, a
+product name, or a short callout. Don't pass `--sign-text` for any other pose - it's silently
+ignored unless the pose has a calibrated zone.
+
 ```bash
 python3 "<skill_dir>/scripts/generate_hero_image.py" \
   --title "Your Blog Post Title" \
   --subtitle "Optional subtitle" \
   --category "Kubernetes" \
+  --five-pose "SVG/pondering-wondering-questioning-confused-thinking.svg" \
+  --date "Month DD, YYYY" \
+  --author "Layer5 Team" \
   --output "src/collections/blog/YYYY/MM-DD-slug/hero-image.svg" \
   --repo-root "$WORKTREE_DIR"
 ```
 
-Produces a fully SVG-native 1200x630 image that:
+Produces a 1200x630 SVG that:
 
-- Generates a **multi-stop gradient background** matching Layer5's official illustration technique (extracted from Artboard 1.svg and chs-2-intro.svg reference files). Uses overlapping full-canvas rectangles with 10-16 stop linear/radial gradients and `stop-opacity` for compositing - NOT blurred ellipses.
-- The signature Layer5 gradient ramp has 16 stops transitioning from Dark Jungle Green (#1E2117) through Charcoal (#3C494F), six intermediate blue-greens (#375154, #305D5D, #266E6A, #1A847B, #0B9E8F), Keppel (#00B39F), to Caribbean Green (#00D3A9). Equivalent ramps exist for Saffron and Steel Teal. These intermediate colors create the rich, deep transitions characteristic of Layer5 illustrations.
-- Full brand palette: Eerie Black (#1E2117), Charcoal (#3C494F), Steel Teal (#477E96), Keppel (#00B39F), Caribbean Green (#00D3A9), Saffron (#EBC017), Banana Mania (#FFF3C5)
-- White clearing uses the exact radial gradient from chs-2-intro.svg: white at center through #F7FCFC, #E2F6F4, #BFEBE7, #8FDDD4, #52CBBE, #12B8A6 to Keppel at edge
-- Selects a composition preset by `--category`:
-  - **Corner Warmth** (daytime): Saffron upper-left sun, Keppel/Caribbean Green at right edge and bottom, Dark Jungle Green base at lower-left, massive white clearing center-right. NO Steel Teal or Charcoal. Reference: "4000 members", "Recognition Program", "layer5-hero.webp"
-  - **Deep Space** (night): Steel Teal dominates upper sky, Charcoal at lower corners with extra diagonal darkness, Saffron warm star upper-right, tighter white clearing. Reference: "Meet Five", "Adventures of Five Vol 2" cover
-- Overlays a real Five mascot SVG at ~95% image height (large, prominent) from a curated set of 10 standalone poses
-- Embeds Qanelas Soft font (from `static/fonts/qanelas-soft/`) for brand-accurate typography
-- Adds an off-center white/off-white glow close behind Five so the black skeleton reads clearly - this is NOT a centered radial spotlight
+- Renders a **real interpolated mesh gradient** background: brand-color control points scattered
+  across the canvas, blended by inverse-distance weighting, rendered at low resolution and embedded
+  as a base64 PNG `<image>` that the browser upscales - the upscale is what produces the soft,
+  organic blend (the same trick behind tools like Figma's mesh-gradient plugin). This replaced an
+  earlier pure-SVG layered-gradient approximation that looked flat and washed-out; if a generated
+  image ever looks muddy or gray again, the bug is almost certainly in the interpolation math or an
+  underpowered `IDW_POWER`, not something to work around with more gradient layers.
+- **All colors live in `scripts/mesh_palette.py`**, not in the generator script itself. If a hero
+  image's colors need adjusting - a category feels too dark, an accent hue is off-brand - edit that
+  file's `CORNER_WARMTH` / `DEEP_SPACE` control-point lists or the brand hex constants at its top.
+  Nothing else needs to change.
+- Selects a composition by `--category`: **Corner Warmth** (daytime, warm - Saffron/Banana/Teal) for
+  lighter topics, **Deep Space** (night, cool - Steel Teal/Charcoal) for darker/technical topics. See
+  `CATEGORY_COMPOSITION` in `mesh_palette.py` for the exact category-to-composition mapping.
+- Places two white/off-white control points exactly where Five ends up standing (computed dynamically
+  from the chosen pose's own dimensions, not hardcoded), so the clearing behind the mascot always
+  lines up regardless of pose aspect ratio.
+- Composites the chosen Five pose, scaled to fit both the available height (~92%) and the available
+  width of the right-hand zone - portrait and landscape-framed poses (e.g. the wide launching-rocket
+  or team-sign poses) both fit without overlapping the text column.
+- Adds an off-center white/off-white glow close behind Five so the black line art reads clearly
+  against any background color - not a centered radial spotlight.
+- Embeds Qanelas Soft font (from `static/fonts/qanelas-soft/`) for brand-accurate typography.
+- Footer shows the **publish date on the left and the author on the right** (`--date` / `--author`)
+  - not a repeated tagline. Defaults to today's date and "Layer5 Team" if omitted.
 
 **Five mascot rules:**
 
-- Uses real SVG assets from `src/assets/images/five/SVG/` - curated standalone poses only (no scenes with vehicles, furniture, or complex props)
-- Five's colors are never modified: black skeleton, teal (#00B39F) shoes and hands
-- Five appears large (occupying the right ~42% of the frame, nearly full height) - not a small decorative accent
+- Uses real SVG assets from `assets/mascot-five/SVG/` (this skill's own bundled collection, not
+  `src/assets/images/five/` - that directory is a separate, thinner set used elsewhere on the site
+  and isn't wired into this generator).
+- Five's illustrated colors are never modified. They are **not** just black-and-teal - several poses
+  have incidental shading grays, near-blacks, and prop colors (a brown rake handle, a yellow spray
+  canister) baked into the artwork. Contrast against the background comes from the glow placed behind
+  Five, never from recoloring the SVG.
+- Five appears large (fit to the right-hand zone, up to ~92% of frame height) - not a small
+  decorative accent.
+- `SVG/Artboard 31.svg` (Five driving a car) is excluded from the index's normal rotation - Five is a
+  small passenger there, not a standalone figure, and looks wrong at this scale. Don't select it.
 
-Pass `--repo-root` as the absolute path to the worktree root (`$WORKTREE_DIR` from Step 4). Without it, the script still runs but omits the Five mascot and brand font.
+`--repo-root` is now only used to find the Qanelas Soft font (`static/fonts/qanelas-soft/`) - pass
+the worktree root (`$WORKTREE_DIR` from Step 4) as before. Without it, the script still runs and
+falls back to a system sans-serif; the mascot and mesh background are unaffected either way, since
+they no longer depend on repo-root at all.
 
-See `assets/sample-hero-images/` for visual reference across different category palettes.
+See `assets/sample-hero-images/` for visual reference across different category palettes and poses.
 
 Update frontmatter:
 
@@ -234,5 +276,8 @@ End the run with a one-paragraph handoff: the merged PR URL, the post path on `m
 - **`references/blog-structure.md`** — Complete MDX format, frontmatter fields, all component patterns including `<MesheryDesignEmbed>` with the full table of available designs. Read before writing.
 - **`references/tags-categories.md`** — Approved tags and categories.
 - **`references/docs-sources.md`** — Local doc repo paths, URL mappings, and grep patterns for fact-checking.
-- **`scripts/generate_hero_image.py`** — Fully SVG-native hero image generator using Layer5's freeform gradient background style and full brand palette.
-- **`assets/sample-hero-images/`** — Four canonical hero image examples showing the visual style, Five mascot treatment, freeform gradient composition, and full brand palette across different category palettes (Kubernetes, Observability, Platform Engineering, Community). Read these before generating an image to calibrate visual expectations.
+- **`references/mascot-five-index.md`** — Complete catalog of all 41 Five poses: description, topical tags, baked-in logo, and blank-signage flag. Read before Step 6 and pick a pose deliberately - this is the only place pose selection happens, there's no keyword-matching logic in the script.
+- **`scripts/generate_hero_image.py`** — Hero image generator: renders a real interpolated mesh-gradient background (stdlib-only PNG encoder, no Pillow/numpy dependency) and composites the chosen Five pose on top.
+- **`scripts/mesh_palette.py`** — All hero-image colors and composition control points. Edit this file, not the generator, when a color needs to change.
+- **`assets/mascot-five/`** — The full Five pose collection (`SVG/` + `PNG/`), indexed by `references/mascot-five-index.md`.
+- **`assets/sample-hero-images/`** — Canonical hero image examples showing the mesh-gradient background, Five mascot treatment, and footer layout across different category palettes and poses. Read these before generating an image to calibrate visual expectations.
