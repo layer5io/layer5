@@ -264,7 +264,6 @@ const FeaturesSectionWrapper = styled.section`
           margin: 2rem 0;
         }
         .slick-dots {
-          left: 90%;
           width: 4rem;
 
           li p img {
@@ -289,7 +288,6 @@ const FeaturesSectionWrapper = styled.section`
           }
         }
         .slick-dots {
-          left: 85%;
           top: -1rem;
         }
       }
