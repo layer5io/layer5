@@ -68,6 +68,12 @@ export const ProjectWrapper = styled.div`
       transition: 0.4s;
       transform: scale(1.05);
     }
+    &.seven:hover {
+      img {
+        filter: saturate(0) brightness(3) contrast(5)
+          url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='teal'%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 0.30196 0 0 0.698039 0 0 0.38039 0 0.619607 0 0 0 1 0'/%3E%3C/filter%3E%3C/svg%3E#teal");
+      }
+    }
   }
   .project__card-container {
     max-width: 100%;
@@ -199,7 +205,7 @@ export const ProjectWrapper = styled.div`
     h5 {
       align-self: center;
     }
-}
+  }
 
   // Service Mesh Performance
   .project__card.five {

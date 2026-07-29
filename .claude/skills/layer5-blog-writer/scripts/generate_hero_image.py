@@ -4,427 +4,214 @@ Layer5 Hero Image Generator
 
 Creates branded 1200x630 SVG hero images for Layer5 blog posts.
 
-The visual style follows Layer5's Illustration Background Style guide:
-  - Base: Eerie Black (#1E2117)
-  - 5-7 brand-color blobs with heavy Gaussian blur creating a freeform gradient
-    (simulates Adobe Illustrator's Freeform Gradient tool)
-  - White subject halo positioned where Five will be composed, with soft feathered
-    edges blending organically into surrounding color zones
-  - Dark tones at 1-3 edges/corners, never symmetrically around the perimeter
-  - Full brand palette: Keppel teal, Caribbean Green, Saffron gold, Steel Teal,
-    Charcoal, Banana Mania, White
+Background: a genuine interpolated mesh gradient (inverse-distance weighting
+over scattered brand-color control points), rendered as a small raster and
+embedded as a base64 PNG <image> inside the SVG. The browser's own image
+scaling upscales it to full canvas size, which is what gives the soft organic
+blend - the same trick behind tools like Figma's mesh-gradient plugin. All
+colors live in mesh_palette.py; nothing here is a hardcoded hex.
 
-Pillow (pip install Pillow) is used only for the font-loading fallback and the
-optional PNG-only output mode. The main SVG path works with or without Pillow.
+Mascot: a real Five SVG chosen by the caller (see references/mascot-five-index.md
+for the full pose catalog and how to pick one) via --five-pose, composited at
+large scale with a close-range light glow so the black line art reads clearly
+against any background color.
+
+No hard dependencies. The PNG encoder is hand-written against zlib/struct
+(both stdlib) so this script needs nothing beyond Python 3 itself. Pillow is
+only used, if present, as a font-loading nicety - the script runs identically
+without it.
 
 Usage:
     python3 generate_hero_image.py \\
         --title "Title" \\
         --subtitle "Optional subtitle" \\
         --category "Kubernetes" \\
-        --output src/collections/blog/2026/04-01-my-post/hero-image.svg \\
+        --five-pose "SVG/pondering-wondering-questioning-confused-thinking.svg" \\
+        --date "July 17, 2026" \\
+        --author "Layer5 Team" \\
+        --output src/collections/blog/2026/07-17-my-post/hero-image.svg \\
         --repo-root /path/to/layer5/repo
 
-    # --repo-root enables: Five mascot SVG, Qanelas Soft font, brand-accurate output
-    # Without --repo-root: minimal SVG with no mascot and system font fallback
+    # --repo-root enables the Qanelas Soft brand font; without it the SVG
+    # falls back to a system sans-serif. --five-pose defaults to the neutral
+    # "means business" pose if omitted - always pick one deliberately instead.
 """
 
 import argparse
 import base64
+import datetime
 import random
 import re
+import struct
 import sys
+import zlib
 from pathlib import Path
 
-# ── Layer5 Brand Palette ───────────────────────────────────────────────────
-# Source: Layer5 Illustration Background Style guide
-# Each color has a defined role in the background composition.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import mesh_palette as palette
 
-EERIE_BLACK  = "#1E2117"   # Base background fill; deep shadow anchor at periphery
-CHARCOAL     = "#3C494F"   # Edge/corner darkness; atmosphere depth
-STEEL_TEAL   = "#477E96"   # Cool blue-grey midtone anchor
-TEAL         = "#00B39F"   # Keppel — Layer5 primary; major color anchor
-TEAL_LIGHT   = "#00D3A9"   # Caribbean Green — secondary anchor adjacent to teal
-SAFFRON      = "#EBC017"   # Warm gold; typically upper regions; "sunrise" warmth
-BANANA       = "#FFF3C5"   # Banana Mania — pale yellow; warm transition near gold
-OFF_WHITE    = "#F8FFFC"   # Slight cool tint; more natural than pure white for halos
-WHITE        = "#FFFFFF"   # Subject contrast zone (critical for black stick figures)
+SKILL_ROOT   = Path(__file__).resolve().parent.parent
+MASCOT_DIR   = SKILL_ROOT / "assets" / "mascot-five"
+# Neutral fallback when no pose is deliberately chosen: plain forward motion,
+# no props/logos/iconography that could clash with an unrelated topic.
+DEFAULT_POSE = "SVG/climbing-stairs-progress-moving-forward-upward-success-working-hard-diligent.svg"
 
-# SVG text colors
-TEAL_HEX        = "#00B39F"
-WHITE_HEX       = "#FFFFFF"
-SUBTITLE_HEX    = "#C8DDD9"   # near-white with a slight teal tint — readable on dark scrim
-
-
-# ── Multi-Stop Gradient Background ────────────────────────────────────────
-#
-# Technique extracted from Layer5 reference SVGs (Artboard 1.svg):
-#   - Overlapping full-canvas rectangles with multi-stop linear gradients
-#   - 10-16 gradient stops per layer for rich, deep color transitions
-#   - stop-opacity controls where each layer is visible vs transparent,
-#     allowing underlying layers to show through
-#   - Radial gradient for the white subject clearing (from chs-2-intro.svg)
-#   - No blur filter needed — the many intermediate color stops create
-#     smooth transitions naturally
-#
-# The signature Layer5 gradient ramp (from Artboard 1.svg) has 16 stops
-# transitioning from Dark Jungle Green through Charcoal, six intermediate
-# blue-greens, Keppel, to Caribbean Green — then back to Charcoal.
-#
-# Each composition layer dict:
-#   type: "linear" or "radial"
-#   For linear: x1, y1, x2, y2 (fractions of canvas W,H)
-#   For radial: cx, cy (fractions), r (fraction of max(W,H))
-#   stops: [(offset, color, stop_opacity), ...] — stop_opacity optional (default 1.0)
-
-CORNER_WARMTH = [
-    # Daytime: Saffron upper-left (sun), Keppel/Caribbean Green at right + bottom,
-    # Dark Jungle Green base at lower-left, MASSIVE white clearing center-right.
-    # Reference: "4000 members", "Recognition Program", "layer5-hero.webp"
-
-    # Layer 1: Teal from the RIGHT — Keppel/Caribbean Green builds from right edge
-    {"type": "linear",
-     "x1": 0.0, "y1": 0.5, "x2": 1.0, "y2": 0.5,
-     "stops": [
-         (0.00, "#1E2117", 0.0),
-         (0.20, "#1E2117", 0.0),
-         (0.35, "#262C27", 0.15),
-         (0.45, "#323B3B", 0.35),
-         (0.52, "#3C494E", 0.50),
-         (0.58, "#375154", 0.60),
-         (0.63, "#305D5D", 0.70),
-         (0.68, "#266E6A", 0.80),
-         (0.73, "#1A847B", 0.88),
-         (0.78, "#0B9E8F", 0.92),
-         (0.82, "#00B39F", 0.96),
-         (0.86, "#00B59F", 0.98),
-         (0.89, "#00BDA2", 1.00),
-         (0.92, "#00CAA6", 1.00),
-         (0.95, "#00D3A9", 1.00),
-         (1.00, "#3C494E", 0.90),
-     ]},
-
-    # Layer 2: Teal from the BOTTOM — ground plane
-    {"type": "linear",
-     "x1": 0.5, "y1": 0.0, "x2": 0.5, "y2": 1.0,
-     "stops": [
-         (0.00, "#1E2117", 0.0),
-         (0.30, "#1E2117", 0.0),
-         (0.45, "#262C27", 0.10),
-         (0.55, "#323B3B", 0.25),
-         (0.62, "#3C494E", 0.40),
-         (0.68, "#375154", 0.55),
-         (0.73, "#305D5D", 0.65),
-         (0.78, "#266E6A", 0.75),
-         (0.82, "#1A847B", 0.85),
-         (0.86, "#0B9E8F", 0.90),
-         (0.90, "#00B39F", 0.95),
-         (0.93, "#00BDA2", 1.00),
-         (0.96, "#00D3A9", 1.00),
-         (1.00, "#3C494E", 0.85),
-     ]},
-
-    # Layer 3: Saffron from UPPER-LEFT — sun warmth
-    {"type": "linear",
-     "x1": -0.05, "y1": -0.05, "x2": 0.75, "y2": 0.75,
-     "stops": [
-         (0.00, "#FFF3C5", 0.92),
-         (0.05, "#FAE6A0", 0.95),
-         (0.10, "#F5D875", 0.95),
-         (0.16, "#F0CB45", 0.95),
-         (0.22, "#EBC017", 1.00),
-         (0.28, "#D4AD15", 0.95),
-         (0.34, "#BFA012", 0.88),
-         (0.40, "#A5870E", 0.78),
-         (0.46, "#886F0C", 0.65),
-         (0.52, "#6D5B0D", 0.50),
-         (0.58, "#56490E", 0.35),
-         (0.64, "#45390F", 0.22),
-         (0.70, "#352E11", 0.12),
-         (0.78, "#2A2613", 0.05),
-         (0.85, "#1E2117", 0.0),
-     ]},
-
-    # Layer 4: White clearing — radial, center-right where Five stands
-    # Exact ramp from chs-2-intro.svg radialGradient (white→keppel halo)
-    {"type": "radial", "cx": 0.58, "cy": 0.46, "r": 0.52,
-     "stops": [
-         (0.22, "#FFFFFF", 0.97),
-         (0.32, "#F7FCFC", 0.92),
-         (0.40, "#E2F6F4", 0.82),
-         (0.48, "#BFEBE7", 0.68),
-         (0.56, "#8FDDD4", 0.50),
-         (0.64, "#52CBBE", 0.32),
-         (0.74, "#12B8A6", 0.14),
-         (0.85, "#00B39F", 0.05),
-         (1.00, "#00B39F", 0.0),
-     ]},
-]
-
-DEEP_SPACE = [
-    # Night sky: darker overall. Steel Teal concentrated at upper edge,
-    # fades quickly. Charcoal dominates lower 60%. Saffron accent upper-RIGHT.
-    # White clearing is tighter — more dark space visible around it.
-    # Reference: "Meet Five", "Adventures of Five Vol 2" cover
-
-    # Layer 1: Steel Teal from the TOP — pulled back, fades by mid-canvas
-    {"type": "linear",
-     "x1": 0.5, "y1": -0.1, "x2": 0.5, "y2": 0.8,
-     "stops": [
-         (0.00, "#477E96", 1.00),
-         (0.05, "#477E96", 1.00),
-         (0.10, "#457A8E", 0.95),
-         (0.16, "#436F82", 0.88),
-         (0.22, "#406D7F", 0.78),
-         (0.28, "#3C5F6D", 0.65),
-         (0.35, "#375360", 0.50),
-         (0.42, "#324854", 0.36),
-         (0.50, "#2D3E49", 0.24),
-         (0.58, "#29353E", 0.14),
-         (0.68, "#252D33", 0.06),
-         (0.80, "#1E2117", 0.0),
-     ]},
-
-    # Layer 2: Steel Teal from LEFT edge — subtle, fades quickly
-    {"type": "linear",
-     "x1": -0.1, "y1": 0.4, "x2": 0.8, "y2": 0.4,
-     "stops": [
-         (0.00, "#477E96", 0.75),
-         (0.06, "#457A8E", 0.65),
-         (0.14, "#406D7F", 0.50),
-         (0.22, "#3C5F6D", 0.36),
-         (0.30, "#375360", 0.24),
-         (0.38, "#324854", 0.14),
-         (0.48, "#2D3E49", 0.06),
-         (0.60, "#1E2117", 0.0),
-     ]},
-
-    # Layer 3: Charcoal reinforcement — darker overall, starts earlier
-    {"type": "linear",
-     "x1": 0.5, "y1": 0.0, "x2": 0.5, "y2": 1.0,
-     "stops": [
-         (0.00, "#3C494F", 0.0),
-         (0.25, "#3C494F", 0.10),
-         (0.40, "#3C494F", 0.30),
-         (0.50, "#3C494F", 0.55),
-         (0.60, "#3C494F", 0.75),
-         (0.72, "#3C494F", 0.90),
-         (0.85, "#3C494F", 0.96),
-         (1.00, "#3C494F", 1.00),
-     ]},
-
-    # Layer 4: Extra darkness from lower-left corner diagonal
-    {"type": "linear",
-     "x1": 0.9, "y1": -0.1, "x2": -0.1, "y2": 1.1,
-     "stops": [
-         (0.00, "#1E2117", 0.0),
-         (0.35, "#1E2117", 0.0),
-         (0.50, "#1E2117", 0.25),
-         (0.65, "#1E2117", 0.55),
-         (0.80, "#1E2117", 0.80),
-         (1.00, "#1E2117", 0.95),
-     ]},
-
-    # Layer 5: Saffron star UPPER-RIGHT — warm accent
-    {"type": "linear",
-     "x1": 0.15, "y1": 0.80, "x2": 1.05, "y2": -0.10,
-     "stops": [
-         (0.00, "#1E2117", 0.0),
-         (0.40, "#1E2117", 0.0),
-         (0.50, "#45390F", 0.10),
-         (0.56, "#6D5B0D", 0.25),
-         (0.62, "#886F0C", 0.40),
-         (0.68, "#A5870E", 0.58),
-         (0.74, "#BFA012", 0.72),
-         (0.80, "#D4AD15", 0.84),
-         (0.85, "#EBC017", 0.94),
-         (0.90, "#F0CB45", 0.96),
-         (0.94, "#F5D875", 0.92),
-         (0.97, "#FFF3C5", 0.85),
-         (1.00, "#3C494E", 0.60),
-     ]},
-
-    # Layer 6: White clearing — tighter radius, less reach
-    {"type": "radial", "cx": 0.56, "cy": 0.46, "r": 0.46,
-     "stops": [
-         (0.18, "#FFFFFF", 0.96),
-         (0.28, "#F7FCFC", 0.88),
-         (0.36, "#E2F6F4", 0.74),
-         (0.44, "#BFEBE7", 0.56),
-         (0.52, "#8FDDD4", 0.38),
-         (0.62, "#52CBBE", 0.20),
-         (0.72, "#12B8A6", 0.08),
-         (0.84, "#00B39F", 0.02),
-         (1.00, "#00B39F", 0.0),
-     ]},
-]
-
-# Map category → composition. Corner Warmth is the warmer, more energetic look;
-# Deep Space suits darker / more technical topics.
-CATEGORY_COMPOSITION = {
-    "Kubernetes":           CORNER_WARMTH,
-    "Platform Engineering": CORNER_WARMTH,
-    "Engineering":          CORNER_WARMTH,
-    "Cloud Native":         CORNER_WARMTH,
-    "Docker":               CORNER_WARMTH,
-    "Open Source":          CORNER_WARMTH,
-    "Community":            CORNER_WARMTH,
-    "Events":               CORNER_WARMTH,
-    "Announcements":        CORNER_WARMTH,
-    "Partners":             CORNER_WARMTH,
-    "AWS":                  CORNER_WARMTH,
-    "GCP":                  CORNER_WARMTH,
-    "Azure":                CORNER_WARMTH,
-    "Performance":          CORNER_WARMTH,
-    "Meshery":              DEEP_SPACE,
-    "Kanvas":               DEEP_SPACE,
-    "Observability":        DEEP_SPACE,
-    "AI":                   DEEP_SPACE,
-    "WebAssembly":          DEEP_SPACE,
-    "Service Mesh":         DEEP_SPACE,
-    "Security":             DEEP_SPACE,
-    "Layer5 Cloud":         DEEP_SPACE,
+# Maps a pose's filename to its blank-signage zone key in
+# mesh_palette.SIGN_TEXT_ZONES. Only poses with genuinely empty signage belong
+# here - see references/mascot-five-index.md for the full pose catalog.
+POSE_FILENAME_TO_SIGN_ZONE = {
+    "Artboard 23.svg": "blank-signpost",
+    "Artboard 36.svg": "blank-book",
 }
 
 
-def bg_blobs_svg(category, W, H):
+# ── Minimal stdlib PNG encoder ──────────────────────────────────────────────
+
+def _png_chunk(tag, data):
+    return (struct.pack(">I", len(data)) + tag + data +
+            struct.pack(">I", zlib.crc32(tag + data) & 0xFFFFFFFF))
+
+
+def encode_png_rgb(width, height, rgb_bytes):
+    """rgb_bytes: flat bytes, length width*height*3, row-major top-to-bottom."""
+    sig = b"\x89PNG\r\n\x1a\n"
+    ihdr = struct.pack(">IIBBBBB", width, height, 8, 2, 0, 0, 0)
+    stride = width * 3
+    raw = bytearray()
+    for y in range(height):
+        raw.append(0)  # filter type: None
+        raw.extend(rgb_bytes[y * stride:(y + 1) * stride])
+    idat = zlib.compress(bytes(raw), 9)
+    return sig + _png_chunk(b"IHDR", ihdr) + _png_chunk(b"IDAT", idat) + _png_chunk(b"IEND", b"")
+
+
+def hex_to_rgb(h):
+    h = h.lstrip("#")
+    return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
+
+
+# ── Mesh gradient (inverse-distance weighting) ──────────────────────────────
+
+def jitter_composition(composition, seed, amount):
+    rnd = random.Random(seed)
+    return [
+        (x + rnd.uniform(-amount, amount), y + rnd.uniform(-amount, amount), color)
+        for (x, y, color) in composition
+    ]
+
+
+def render_mesh_raster(control_points, raster_w, raster_h, power, dither_amplitude, seed):
     """
-    Return (defs_block, background_svg) for the multi-stop gradient background.
+    control_points: list of (x_fraction, y_fraction, hex_color) across the
+    full canvas (fractions may extend slightly past 0-1).
 
-    Uses the same technique as Layer5's official illustrations (Artboard 1.svg):
-    overlapping layers with multi-stop gradients (10-16 stops per layer) and
-    stop-opacity for compositing. No blur filter needed — the many intermediate
-    color stops create smooth, rich transitions naturally.
-
-    defs_block     — gradient definitions, goes inside the top-level <defs>
-    background_svg — the base rect + gradient layers
+    Returns flat RGB bytes for a raster_w x raster_h image, later upscaled by
+    the browser when embedded into the full-size SVG canvas.
     """
-    composition = CATEGORY_COMPOSITION.get(category, CORNER_WARMTH)
+    points = [(x, y, hex_to_rgb(c)) for (x, y, c) in control_points]
+    rnd = random.Random(seed)
+    pixels = bytearray(raster_w * raster_h * 3)
+    idx = 0
+    for j in range(raster_h):
+        y = j / (raster_h - 1) if raster_h > 1 else 0.0
+        for i in range(raster_w):
+            x = i / (raster_w - 1) if raster_w > 1 else 0.0
+            wsum = 0.0
+            rsum = gsum = bsum = 0.0
+            exact = None
+            for (px, py, (pr, pg, pb)) in points:
+                dx, dy = x - px, y - py
+                d2 = dx * dx + dy * dy
+                if d2 < 1e-9:
+                    exact = (pr, pg, pb)
+                    break
+                w = 1.0 / (d2 ** power)
+                wsum += w
+                rsum += w * pr
+                gsum += w * pg
+                bsum += w * pb
+            if exact is not None:
+                r, g, b = exact
+            else:
+                r, g, b = rsum / wsum, gsum / wsum, bsum / wsum
+            if dither_amplitude:
+                d = rnd.uniform(-dither_amplitude, dither_amplitude)
+                r, g, b = r + d, g + d, b + d
+            pixels[idx] = max(0, min(255, int(r)))
+            pixels[idx + 1] = max(0, min(255, int(g)))
+            pixels[idx + 2] = max(0, min(255, int(b)))
+            idx += 3
+    return bytes(pixels)
 
-    gradient_defs = []
-    layer_rects = []
 
-    for i, layer in enumerate(composition):
-        grad_id = f"bgGrad{i}"
+def build_mesh_background(category, title, five_center_frac, W, H):
+    """Returns (svg_image_element,) - a base64 PNG <image> covering the canvas."""
+    composition = palette.CATEGORY_COMPOSITION.get(category, palette.DEFAULT_COMPOSITION)
+    seed = hash(("mesh", title))
+    jittered = jitter_composition(composition, seed, palette.JITTER_AMOUNT)
 
-        # Build stop elements
-        stop_lines = []
-        for s in layer["stops"]:
-            offset, color = s[0], s[1]
-            opacity_attr = ""
-            if len(s) > 2 and s[2] < 1.0:
-                opacity_attr = f' stop-opacity="{s[2]}"'
-            stop_lines.append(
-                f'      <stop offset="{offset}" stop-color="{color}"{opacity_attr}/>'
-            )
-        stops_xml = "\n".join(stop_lines)
+    cx, cy = five_center_frac
+    clearing = [
+        (cx, cy, palette.WHITE),
+        (cx - 0.02, cy - 0.03, palette.OFF_WHITE),
+    ]
 
-        if layer["type"] == "linear":
-            x1 = layer["x1"] * W
-            y1 = layer["y1"] * H
-            x2 = layer["x2"] * W
-            y2 = layer["y2"] * H
-            gradient_defs.append(
-                f'    <linearGradient id="{grad_id}" '
-                f'gradientUnits="userSpaceOnUse" '
-                f'x1="{x1:.0f}" y1="{y1:.0f}" x2="{x2:.0f}" y2="{y2:.0f}">\n'
-                f'{stops_xml}\n'
-                f'    </linearGradient>'
-            )
-        elif layer["type"] == "radial":
-            cx = layer["cx"] * W
-            cy = layer["cy"] * H
-            r = layer["r"] * max(W, H)
-            gradient_defs.append(
-                f'    <radialGradient id="{grad_id}" '
-                f'gradientUnits="userSpaceOnUse" '
-                f'cx="{cx:.0f}" cy="{cy:.0f}" r="{r:.0f}">\n'
-                f'{stops_xml}\n'
-                f'    </radialGradient>'
-            )
-
-        layer_rects.append(
-            f'    <rect width="{W}" height="{H}" fill="url(#{grad_id})"/>'
-        )
-
-    defs_block = "\n".join(gradient_defs)
-
-    background_svg = (
-        f'<!-- Base background -->\n'
-        f'  <rect width="{W}" height="{H}" fill="{EERIE_BLACK}"/>\n'
-        f'  <!-- Multi-stop gradient layers (Layer5 illustration technique) -->\n'
-        f'  <g clip-path="url(#canvas)">\n'
-        + '\n'.join(layer_rects)
-        + '\n  </g>'
+    raster_w, raster_h = palette.MESH_RASTER_WIDTH, palette.MESH_RASTER_HEIGHT
+    rgb = render_mesh_raster(
+        jittered + clearing, raster_w, raster_h,
+        palette.IDW_POWER, palette.DITHER_AMPLITUDE, seed,
     )
+    png_bytes = encode_png_rgb(raster_w, raster_h, rgb)
+    b64 = base64.b64encode(png_bytes).decode()
 
-    return defs_block, background_svg
+    image_el = (
+        f'<image x="0" y="0" width="{W}" height="{H}" '
+        f'preserveAspectRatio="none" '
+        f'xlink:href="data:image/png;base64,{b64}"/>'
+    )
+    return image_el
 
 
 # ── Close-range Five glow ─────────────────────────────────────────────────
-#
-# A second, tighter set of blobs sits between the background and Five.
-# These provide extra brightness immediately around the mascot so even
-# the finest black line art reads clearly. Same multi-blob technique,
-# smaller blur radius, centered on Five's body position.
-#
-# Colors stay light — white, off-white, very light teal — so they
-# brighten the zone without introducing hue contrast that would clash
-# with Five's black skeleton.
 
 FIVE_CLOSE_BLOBS = [
     # (rel_cx, rel_cy, rx_factor, ry_factor, color, opacity)
-    # Positions relative to Five's visual center; spread_x/y scale them.
-    ( 0.00,  0.00, 0.95, 0.90, OFF_WHITE,  0.92),  # bright near-white core
-    ( 0.00, -0.28, 0.55, 0.48, WHITE,      0.78),  # upper body brightness
-    ( 0.00,  0.33, 0.58, 0.50, OFF_WHITE,  0.72),  # lower body
-    (-0.26,  0.05, 0.44, 0.52, "#E8F6F4",  0.58),  # left — very light teal
-    ( 0.26, -0.16, 0.38, 0.40, "#B3E8E3",  0.44),  # right — light teal
-    ( 0.00,  0.00, 0.44, 0.54, WHITE,      0.48),  # secondary white core
+    (0.00, 0.00, 0.95, 0.90, palette.OFF_WHITE, 0.92),
+    (0.00, -0.28, 0.55, 0.48, palette.WHITE, 0.78),
+    (0.00, 0.33, 0.58, 0.50, palette.OFF_WHITE, 0.72),
+    (-0.26, 0.05, 0.44, 0.52, "#E8F6F4", 0.58),
+    (0.26, -0.16, 0.38, 0.40, "#B3E8E3", 0.44),
+    (0.00, 0.00, 0.44, 0.54, palette.WHITE, 0.48),
 ]
 
 
 def build_five_glow(filter_id, cx, cy, spread_x, spread_y):
-    """
-    Return (filter_def, glow_group) for the close-range light field behind Five.
-    """
     blur_std = max(spread_x, spread_y) * 0.085
-
     filter_def = (
         f'<filter id="{filter_id}" x="-80%" y="-80%" width="260%" height="260%">\n'
         f'      <feGaussianBlur stdDeviation="{blur_std:.1f}"/>\n'
         f'    </filter>'
     )
-
     ellipses = []
     for rx_f, ry_f, rx2_f, ry2_f, color, opacity in FIVE_CLOSE_BLOBS:
-        bx  = cx + rx_f  * spread_x
-        by  = cy + ry_f  * spread_y
-        brx = rx2_f * spread_x
-        bry = ry2_f * spread_y
+        bx, by = cx + rx_f * spread_x, cy + ry_f * spread_y
+        brx, bry = rx2_f * spread_x, ry2_f * spread_y
         ellipses.append(
-            f'    <ellipse cx="{bx:.1f}" cy="{by:.1f}" '
-            f'rx="{brx:.1f}" ry="{bry:.1f}" '
+            f'    <ellipse cx="{bx:.1f}" cy="{by:.1f}" rx="{brx:.1f}" ry="{bry:.1f}" '
             f'fill="{color}" opacity="{opacity}"/>'
         )
-
     glow_group = (
-        f'<!-- Close-range glow behind Five — extra contrast for black line art -->\n'
-        f'  <g filter="url(#{filter_id})">\n'
-        + '\n'.join(ellipses)
-        + '\n  </g>'
+        f'<!-- Close-range glow behind Five - extra contrast for black line art -->\n'
+        f'  <g filter="url(#{filter_id})">\n' + "\n".join(ellipses) + "\n  </g>"
     )
-
     return filter_def, glow_group
 
 
 # ── Font helpers ───────────────────────────────────────────────────────────
 
 def find_qanelas(repo_root, weight="Bold"):
-    """Find Qanelas Soft OTF in the Layer5 repo, with system fallbacks."""
     if repo_root:
-        font_dir = Path(repo_root).expanduser() / "static/fonts/qanelas-soft"
-        candidate = font_dir / f"QanelasSoft{weight}.otf"
+        candidate = Path(repo_root).expanduser() / "static/fonts/qanelas-soft" / f"QanelasSoft{weight}.otf"
         if candidate.exists():
             return str(candidate)
     fallbacks = {
@@ -440,7 +227,6 @@ def find_qanelas(repo_root, weight="Bold"):
 
 
 def b64_font(repo_root, weight="Bold"):
-    """Return base64-encoded font bytes, or None if not found."""
     path = find_qanelas(repo_root, weight)
     if path:
         return base64.b64encode(Path(path).read_bytes()).decode()
@@ -449,44 +235,36 @@ def b64_font(repo_root, weight="Bold"):
 
 # ── Five SVG helpers ───────────────────────────────────────────────────────
 
-def find_five_svg(repo_root, seed=None):
+def load_five_pose(five_pose_arg):
     """
-    Pick one of the curated standalone Five pose SVGs.
-
-    Only simple, standalone poses are included — no complex scenes with
-    vehicles, props, or group compositions that extend beyond the hero frame.
+    Resolve --five-pose (a path relative to assets/mascot-five/, e.g.
+    "SVG/pondering-wondering-questioning-confused-thinking.svg") to a Path.
+    Falls back to the neutral default pose if not given.
     """
-    if not repo_root:
-        return None
-    five_dir = Path(repo_root).expanduser() / "src/assets/images/five/SVG"
-
-    # Curated list: clean standalone poses only.
-    # Excluded: 1, 3, 4, 5 (car), 9, 10, 13, 15, 16 — complex scenes.
-    SIMPLE_POSES = ["2", "6", "7", "8", "11", "12", "14", "17", "18", "19"]
-    candidates = [five_dir / f"{n}.svg" for n in SIMPLE_POSES
-                  if (five_dir / f"{n}.svg").exists()]
-    if not candidates:
-        candidates = sorted(five_dir.glob("[0-9]*.svg"))
-    if not candidates:
-        return None
-    return random.Random(seed).choice(candidates)
+    rel = five_pose_arg or DEFAULT_POSE
+    path = MASCOT_DIR / rel
+    if not path.exists():
+        raise FileNotFoundError(
+            f"--five-pose '{rel}' not found under {MASCOT_DIR}. "
+            f"Pick a pose from references/mascot-five-index.md."
+        )
+    return path
 
 
 def extract_five_inner(svg_text):
     """
-    Strip the outer <svg> wrapper and return (viewBox, inner_xml).
-    Five's colors are never modified — black skeleton, teal (#00B39F) accents.
-    Contrast comes from the light zone placed behind Five, not color inversion.
+    Strip the outer <svg> wrapper and return (viewBox, inner_xml). Five's
+    illustrated colors (teal, near-black shading, incidental prop colors) are
+    never modified here - contrast comes from the glow placed behind Five,
+    not from recoloring the artwork.
     """
     vb_match = re.search(r'viewBox=["\']([^"\']+)["\']', svg_text)
-    viewbox  = vb_match.group(1) if vb_match else "0 0 612 792"
-    inner    = re.sub(r'<\?xml[^?]*\?>', '', svg_text)
-    inner    = re.sub(r'<svg[^>]*>',     '', inner, count=1)
-    inner    = re.sub(r'</svg\s*>',      '', inner)
+    viewbox = vb_match.group(1) if vb_match else "0 0 612 792"
+    inner = re.sub(r'<\?xml[^?]*\?>', '', svg_text)
+    inner = re.sub(r'<svg[^>]*>', '', inner, count=1)
+    inner = re.sub(r'</svg\s*>', '', inner)
     return viewbox, inner.strip()
 
-
-# ── SVG text helpers ───────────────────────────────────────────────────────
 
 def wrap_svg_text(text, max_chars=24):
     words, lines, line = text.split(), [], []
@@ -502,23 +280,55 @@ def wrap_svg_text(text, max_chars=24):
     return lines
 
 
+def build_sign_text_overlay(five_pose_path, sign_text):
+    """
+    Returns an SVG <text> block (in the pose's own viewBox coordinates, so it
+    inherits the same transform as the mascot) for a blank-signage pose, or ""
+    if this pose has no calibrated zone / no text was requested.
+    """
+    if not sign_text:
+        return ""
+    zone_key = POSE_FILENAME_TO_SIGN_ZONE.get(five_pose_path.name)
+    zone = palette.SIGN_TEXT_ZONES.get(zone_key) if zone_key else None
+    if not zone:
+        print(
+            f"Warning: --sign-text given but '{five_pose_path.name}' has no calibrated "
+            f"sign zone (see mesh_palette.SIGN_TEXT_ZONES); ignoring.",
+            file=sys.stderr,
+        )
+        return ""
+
+    max_chars = max(6, int(zone["max_width"] / (zone["font_size"] * 0.55)))
+    lines = wrap_svg_text(sign_text, max_chars)[:3]
+    line_height = zone["font_size"] * 1.15
+    start_y = zone["cy"] - (len(lines) - 1) * line_height / 2
+
+    rotation = zone.get("rotation", 0)
+    transform = f' transform="rotate({rotation} {zone["cx"]} {zone["cy"]})"' if rotation else ""
+
+    parts = [f'<g{transform}>']
+    for i, line in enumerate(lines):
+        y = start_y + i * line_height
+        parts.append(
+            f'<text x="{zone["cx"]}" y="{y:.1f}" text-anchor="middle" '
+            f'font-family="\'QanelasSoft\', \'Helvetica Neue\', Arial, sans-serif" '
+            f'font-size="{zone["font_size"]}" font-weight="bold" '
+            f'fill="{zone["color"]}">{line}</text>'
+        )
+    parts.append('</g>')
+    return "\n    ".join(parts)
+
+
 # ── Main SVG generator ────────────────────────────────────────────────────
 
-def generate_hero_svg(title, subtitle, category, output_path, repo_root,
-                      img_width=1200, img_height=630):
-    """
-    Generate a 1200x630 SVG hero image following Layer5's illustration style.
-
-    Background: full-canvas freeform gradient (heavy-blurred color blobs).
-    Mascot: real Five SVG from the repo, at 95% image height, with a
-            close-range white/off-white glow for black-line-art contrast.
-    Typography: Qanelas Soft (base64-embedded from the repo).
-    """
+def generate_hero_svg(title, subtitle, category, five_pose_arg, sign_text,
+                       date_str, author, output_path, repo_root,
+                       img_width=1200, img_height=630):
     W, H = img_width, img_height
 
     # ── Font embedding ────────────────────────────────────────────────────
     bold_b64 = b64_font(repo_root, "Bold") or b64_font(repo_root, "ExtraBold")
-    reg_b64  = b64_font(repo_root, "Regular") or b64_font(repo_root, "Medium")
+    reg_b64 = b64_font(repo_root, "Regular") or b64_font(repo_root, "Medium")
     font_face_bold = (
         f"@font-face {{ font-family: 'QanelasSoft'; font-weight: bold; "
         f"src: url('data:font/otf;base64,{bold_b64}') format('opentype'); }}"
@@ -529,76 +339,65 @@ def generate_hero_svg(title, subtitle, category, output_path, repo_root,
     ) if reg_b64 else ""
     font_stack = "'QanelasSoft', 'Helvetica Neue', Arial, sans-serif"
 
-    # ── Background (freeform gradient) ───────────────────────────────────
-    bg_filter_def, bg_svg = bg_blobs_svg(category, W, H)
+    # ── Five mascot: load + compute placement (fit by height AND width, so
+    #    both portrait and landscape-framed poses stay inside the right zone
+    #    without overlapping the text column) ──────────────────────────────
+    five_path = load_five_pose(five_pose_arg)
+    viewbox, five_inner = extract_five_inner(five_path.read_text())
+    vb_parts = [float(x) for x in viewbox.split()]
+    vb_w = vb_parts[2] if len(vb_parts) >= 3 else 612
+    vb_h = vb_parts[3] if len(vb_parts) >= 4 else 792
 
-    # ── Five mascot ───────────────────────────────────────────────────────
-    five_path      = find_five_svg(repo_root, seed=hash(title))
-    five_group_svg = ""
-    glow_filter_def = ""
-    glow_group_svg  = ""
+    right_zone_start = W * 0.55
+    right_zone_w = W - right_zone_start
+    scale = min((H * 0.92) / vb_h, right_zone_w / vb_w)
+    target_w, target_h = vb_w * scale, vb_h * scale
+    x_pos = right_zone_start + max(0, (right_zone_w - target_w) / 2)
+    y_pos = (H - target_h) / 2
 
-    if five_path:
-        try:
-            viewbox, five_inner = extract_five_inner(five_path.read_text())
-            vb_parts = [float(x) for x in viewbox.split()]
-            vb_w = vb_parts[2] if len(vb_parts) >= 3 else 612
-            vb_h = vb_parts[3] if len(vb_parts) >= 4 else 792
+    five_center_x = x_pos + vb_w * 0.50 * scale
+    five_center_y = y_pos + vb_h * 0.48 * scale
+    spread_x, spread_y = target_w * 0.62, target_h * 0.52
 
-            # Five at 95% image height — large and dominant.
-            target_h = H * 0.95
-            scale    = target_h / vb_h
-            target_w = vb_w * scale
+    glow_filter_def, glow_group_svg = build_five_glow(
+        "fiveGlowBlur", five_center_x, five_center_y, spread_x, spread_y
+    )
 
-            # Position: right 42% of the image, vertically centered.
-            right_zone_start = W * 0.57
-            right_zone_w     = W - right_zone_start
-            x_pos = right_zone_start + max(0, (right_zone_w - target_w) / 2)
-            y_pos = (H - target_h) / 2
+    sign_text_svg = build_sign_text_overlay(five_path, sign_text)
 
-            # Five's visual body center in canvas coords.
-            five_center_x = x_pos + (vb_w * 0.50) * scale
-            five_center_y = y_pos + (vb_h * 0.48) * scale
-            spread_x      = target_w * 0.62
-            spread_y      = target_h * 0.52
+    five_group_svg = (
+        f"<!-- Five mascot: {five_path.name} -->\n"
+        f'  <g transform="translate({x_pos:.1f},{y_pos:.1f}) scale({scale:.4f})">\n'
+        f"    {five_inner}\n"
+        f"    {sign_text_svg}\n"
+        f"  </g>"
+    )
 
-            glow_filter_def, glow_group_svg = build_five_glow(
-                "fiveGlowBlur", five_center_x, five_center_y, spread_x, spread_y
-            )
+    # ── Background: real mesh gradient, clearing centered on Five ─────────
+    mesh_image_svg = build_mesh_background(
+        category, title, (five_center_x / W, five_center_y / H), W, H
+    )
 
-            five_group_svg = (
-                f"<!-- Five mascot — black skeleton, teal accents, colors preserved -->\n"
-                f"  <!-- Pose: {five_path.name} -->\n"
-                f"  <g transform=\"translate({x_pos:.1f},{y_pos:.1f}) scale({scale:.4f})\">\n"
-                f"    {five_inner}\n"
-                f"  </g>"
-            )
-        except Exception as e:
-            five_group_svg = f"<!-- Five SVG error: {e} -->"
+    # ── Text layout ─────────────────────────────────────────────────────
+    cat_label = (category or "LAYER5").upper()
+    margin = 52
+    pill_y, pill_h, pill_pad_x = 44, 28, 14
+    pill_w = int(len(cat_label) * 9.5) + pill_pad_x * 2
 
-    # ── Text layout ───────────────────────────────────────────────────────
-    cat_label     = (category or "LAYER5").upper()
-    margin        = 52
-    pill_y        = 44
-    pill_h        = 28
-    pill_pad_x    = 14   # horizontal padding each side inside the pill
-    # Estimate rendered width: bold caps at font-size 12 ≈ 7.2px/char + 2px letter-spacing
-    pill_w        = int(len(cat_label) * 9.5) + pill_pad_x * 2
-
-    max_title_chars  = 22
-    title_lines      = wrap_svg_text(title, max_title_chars)[:3]
-    title_font_size  = 52 if len(title_lines) <= 2 else 42
-    line_height      = title_font_size + 14
-    title_block_h    = len(title_lines) * line_height
-    text_block_h     = title_block_h + (50 if subtitle else 0)
-    title_y_start    = max(130, (H - text_block_h) // 2 - 10)
+    max_title_chars = 22
+    title_lines = wrap_svg_text(title, max_title_chars)[:3]
+    title_font_size = 52 if len(title_lines) <= 2 else 42
+    line_height = title_font_size + 14
+    title_block_h = len(title_lines) * line_height
+    text_block_h = title_block_h + (50 if subtitle else 0)
+    title_y_start = max(130, (H - text_block_h) // 2 - 10)
 
     title_svg = ""
     for i, line in enumerate(title_lines):
         y = title_y_start + i * line_height + title_font_size
         title_svg += (
             f'\n  <text x="{margin}" y="{y}" font-family="{font_stack}" '
-            f'font-size="{title_font_size}" font-weight="bold" fill="{WHITE_HEX}">'
+            f'font-size="{title_font_size}" font-weight="bold" fill="{palette.TEXT_WHITE}">'
             f'{line}</text>'
         )
 
@@ -607,14 +406,14 @@ def generate_hero_svg(title, subtitle, category, output_path, repo_root,
         sub_y = title_y_start + title_block_h + 28
         for i, sl in enumerate(wrap_svg_text(subtitle, 38)[:2]):
             subtitle_svg += (
-                f'\n  <text x="{margin}" y="{sub_y + i*30}" font-family="{font_stack}" '
-                f'font-size="21" fill="{SUBTITLE_HEX}">{sl}</text>'
+                f'\n  <text x="{margin}" y="{sub_y + i * 30}" font-family="{font_stack}" '
+                f'font-size="21" fill="{palette.TEXT_SUBTITLE}">{sl}</text>'
             )
 
-    bar_top     = H - 50
-    footer_text = "layer5.io  -  Making Engineers Expect More from Their Infrastructure"
+    bar_top = H - 50
+    footer_date = date_str or datetime.date.today().strftime("%B %d, %Y")
+    footer_author = author or "Layer5 Team"
 
-    # ── Text-side scrim width (left 58% of canvas) ───────────────────────
     scrim_w = int(W * 0.52)
 
     # ── Compose SVG ───────────────────────────────────────────────────────
@@ -629,81 +428,97 @@ def generate_hero_svg(title, subtitle, category, output_path, repo_root,
     <clipPath id="canvas">
       <rect width="{W}" height="{H}"/>
     </clipPath>
-    <!-- Left-to-right dark scrim — text contrast without killing color vibrancy -->
     <linearGradient id="textScrim" x1="0" x2="1" y1="0" y2="0">
-      <stop offset="0%"   stop-color="{EERIE_BLACK}" stop-opacity="0.48"/>
-      <stop offset="55%"  stop-color="{EERIE_BLACK}" stop-opacity="0.22"/>
-      <stop offset="100%" stop-color="{EERIE_BLACK}" stop-opacity="0"/>
+      <stop offset="0%"   stop-color="{palette.EERIE_BLACK}" stop-opacity="0.48"/>
+      <stop offset="55%"  stop-color="{palette.EERIE_BLACK}" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="{palette.EERIE_BLACK}" stop-opacity="0"/>
     </linearGradient>
-    {bg_gradient_defs}
     {glow_filter_def}
-    <!-- Note: bg_gradient_defs contains background gradient definitions -->
   </defs>
 
-  {bg_svg}
+  <!-- Mesh-gradient background (see mesh_palette.py to change colors) -->
+  <g clip-path="url(#canvas)">
+    {mesh_image_svg}
+  </g>
 
   <!-- Orbital ring accent (upper right) -->
   <ellipse cx="{W - 70}" cy="-50" rx="310" ry="310"
-           fill="none" stroke="{TEAL_HEX}" stroke-opacity="0.07" stroke-width="1"/>
+           fill="none" stroke="{palette.TEAL}" stroke-opacity="0.07" stroke-width="1"/>
   <ellipse cx="{W - 70}" cy="-50" rx="380" ry="380"
-           fill="none" stroke="{TEAL_HEX}" stroke-opacity="0.04" stroke-width="1"/>
+           fill="none" stroke="{palette.TEAL}" stroke-opacity="0.04" stroke-width="1"/>
 
   {glow_group_svg}
 
   {five_group_svg}
 
-  <!-- Text-side scrim: dark left-to-right gradient so text is always legible -->
+  <!-- Text-side scrim -->
   <rect x="0" y="0" width="{scrim_w}" height="{H}" fill="url(#textScrim)"/>
 
   <!-- Left teal accent bar -->
-  <rect x="0" y="0" width="8" height="{H}" fill="{TEAL_HEX}" opacity="0.95"/>
+  <rect x="0" y="0" width="8" height="{H}" fill="{palette.TEAL}" opacity="0.95"/>
 
-  <!-- Category pill — solid teal background, white text for maximum contrast -->
+  <!-- Category pill -->
   <rect x="{margin}" y="{pill_y}" width="{pill_w}" height="{pill_h}" rx="4"
-        fill="{TEAL_HEX}" fill-opacity="1"/>
+        fill="{palette.TEAL}" fill-opacity="1"/>
   <text x="{margin + pill_pad_x}" y="{pill_y + pill_h // 2}"
         dominant-baseline="middle"
         font-family="{font_stack}" font-size="12" font-weight="bold"
-        letter-spacing="2" fill="{WHITE_HEX}">{cat_label}</text>
+        letter-spacing="2" fill="{palette.TEXT_WHITE}">{cat_label}</text>
 
-  <!-- Separator — teal to match the pill above, same width as the pill -->
   <rect x="{margin}" y="{pill_y + pill_h + 12}" width="{pill_w}" height="1"
-        fill="{TEAL_HEX}" opacity="0.55"/>
+        fill="{palette.TEAL}" opacity="0.55"/>
 
   {title_svg}
   {subtitle_svg}
 
-  <!-- Bottom bar -->
-  <rect x="0" y="{bar_top}" width="{W}" height="50" fill="{EERIE_BLACK}" opacity="0.88"/>
-  <rect x="0" y="{bar_top}" width="{W}" height="4" fill="{TEAL_HEX}" opacity="0.90"/>
+  <!-- Bottom bar: publish date (left), author (right) -->
+  <rect x="0" y="{bar_top}" width="{W}" height="50" fill="{palette.EERIE_BLACK}" opacity="0.88"/>
+  <rect x="0" y="{bar_top}" width="{W}" height="4" fill="{palette.TEAL}" opacity="0.90"/>
   <text x="{margin}" y="{H - 15}" font-family="{font_stack}" font-size="13"
-        fill="{SUBTITLE_HEX}" opacity="0.7">{footer_text}</text>
+        fill="{palette.TEXT_SUBTITLE}" opacity="0.8">{footer_date}</text>
+  <text x="{W - margin}" y="{H - 15}" text-anchor="end" font-family="{font_stack}" font-size="13"
+        fill="{palette.TEXT_SUBTITLE}" opacity="0.8">{footer_author}</text>
 
 </svg>"""
 
     out = Path(output_path)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(svg_content, encoding="utf-8")
-    print(f"Hero image saved: {out}  ({W}x{H} SVG)")
+    print(f"Hero image saved: {out}  ({W}x{H} SVG, pose={five_path.name})")
 
 
 # ── CLI ────────────────────────────────────────────────────────────────────
 
 def main():
     parser = argparse.ArgumentParser(description="Layer5 blog hero image generator")
-    parser.add_argument("--title",      required=True,  help="Post title")
-    parser.add_argument("--subtitle",   default="",     help="Optional subtitle")
-    parser.add_argument("--category",   default="",     help="Post category (used for color palette)")
-    parser.add_argument("--output",     required=True,  help="Output SVG path")
-    parser.add_argument("--repo-root",  default=None,   help="Layer5 repo root (for Five SVG + Qanelas font)")
+    parser.add_argument("--title", required=True, help="Post title")
+    parser.add_argument("--subtitle", default="", help="Optional subtitle")
+    parser.add_argument("--category", default="", help="Post category (used for gradient palette)")
+    parser.add_argument("--five-pose", default=None,
+                         help="Path relative to assets/mascot-five/, e.g. "
+                              "'SVG/pondering-wondering-questioning-confused-thinking.svg'. "
+                              "Pick one from references/mascot-five-index.md. "
+                              "Defaults to the neutral means-business pose.")
+    parser.add_argument("--sign-text", default=None,
+                         help="Text to place on a blank-signage pose "
+                              "(blank-signpost / blank-book only - see mascot-five-index.md).")
+    parser.add_argument("--date", default=None, help="Publish date shown in the footer (left)")
+    parser.add_argument("--author", default=None, help="Author name shown in the footer (right)")
+    parser.add_argument("--output", required=True, help="Output SVG path")
+    parser.add_argument("--repo-root", default=None,
+                         help="Layer5 repo root, used only to find the Qanelas Soft brand font")
     args = parser.parse_args()
 
     generate_hero_svg(
-        title       = args.title,
-        subtitle    = args.subtitle,
-        category    = args.category,
-        output_path = args.output,
-        repo_root   = args.repo_root,
+        title=args.title,
+        subtitle=args.subtitle,
+        category=args.category,
+        five_pose_arg=args.five_pose,
+        sign_text=args.sign_text,
+        date_str=args.date,
+        author=args.author,
+        output_path=args.output,
+        repo_root=args.repo_root,
     )
 
 
