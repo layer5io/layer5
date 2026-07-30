@@ -125,6 +125,7 @@ const LfxPageNav = ({ items }) => {
               <a
                 href={item.href}
                 className={activeHref === item.href ? "active" : ""}
+                aria-current={activeHref === item.href ? "location" : undefined}
               >
                 {item.label}
               </a>
@@ -135,6 +136,9 @@ const LfxPageNav = ({ items }) => {
                       <a
                         href={child.href}
                         className={activeHref === child.href ? "active" : ""}
+                        aria-current={
+                          activeHref === child.href ? "location" : undefined
+                        }
                       >
                         {child.label}
                       </a>
