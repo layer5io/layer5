@@ -1,0 +1,75 @@
+name: Manage PR Preview Deployment
+
+on:
+  workflow_run:
+    workflows: ["Build PR Preview"]
+    types: [completed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: preview-post-build-${{ github.event.workflow_run.head_branch }}
+  cancel-in-progress: true
+
+jobs:
+  manage-preview:
+    runs-on: ubuntu-24.04
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+        with:
+          egress-policy: audit
+
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          pattern: pr-preview-*
+          path: temp-artifact
+          merge-multiple: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+          
+            
+      # Extract PR action from metadata uploaded by the build workflow
+      - name: Read Metadata
+        id: meta
+        run: |
+          ACTION=$(cat temp-artifact/pr-meta/action 2>/dev/null || echo "opened")
+          PR_NUM=$(cat temp-artifact/pr-meta/number 2>/dev/null || echo "${{ github.event.workflow_run.pull_requests[0].number }}")
+          echo "action=$ACTION" >> "$GITHUB_OUTPUT"
+          echo "pr_number=$PR_NUM" >> "$GITHUB_OUTPUT"
+
+      # --- BRANCH 1: DEPLOY & PRUNE (If PR is active) ---
+      - name: Deploy & Prune PR previews
+        if: steps.meta.outputs.action != 'closed'
+        uses: rossjrw/pr-preview-action@ffa7509e91a3ec8dfc2e5536c4d5c1acdf7a6de9 # v1.8.1
+        with:
+          source-dir: ./temp-artifact
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: auto
+          max-previews: 6 # Automatically prunes previews over the limit!
+          comment: false
+
+      - name: Comment PR with Preview URL
+        if: steps.meta.outputs.action != 'closed'
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: pr-preview
+          number: ${{ steps.meta.outputs.pr_number }}
+          message: |
+            🚀 Preview deployment: https://layer5.io/pr-preview/pr-${{ steps.meta.outputs.pr_number }}/
+            > *Note: Preview may take a moment (GitHub Pages deployment in progress). Please wait and refresh.*
+
+      # --- BRANCH 2: CLEANUP ON CLOSE (If PR was closed) ---
+      - name: Cleanup PR preview on close
+        if: steps.meta.outputs.action == 'closed'
+        uses: rossjrw/pr-preview-action@ffa7509e91a3ec8dfc2e5536c4d5c1acdf7a6de9 # v1.8.1
+        with:
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: remove
