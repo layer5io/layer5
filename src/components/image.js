@@ -9,8 +9,6 @@ const Image = ({
   imgStyle,
   ...rest
 }) => {
-  console.log("IMAGE DEBUG TOP", { publicURL, extension, childImageSharp });
-
   if (!childImageSharp && extension === "svg") {
     return (
       <div
