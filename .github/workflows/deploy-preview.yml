@@ -51,7 +51,8 @@ jobs:
           source-dir: ./temp-artifact
           preview-branch: gh-pages
           umbrella-dir: pr-preview
-          action: auto
+          pr-number: ${{ steps.meta.outputs.pr_number }}
+          action: deploy
           max-previews: 6 # Automatically prunes previews over the limit!
           comment: false
 
@@ -72,4 +73,5 @@ jobs:
         with:
           preview-branch: gh-pages
           umbrella-dir: pr-preview
+          pr-number: ${{ steps.meta.outputs.pr_number }}
           action: remove
