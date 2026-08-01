@@ -725,7 +725,7 @@
     "category": "Identity & Access Management",
     "functionOrder": "509",
     "function": "Organizations",
-    "feature": "Particpate as a member of multiple organizations each with their own accounting and billing structure. Multiple organizations, multiple teams.",
+    "feature": "Participate as a member of multiple organizations each with their own accounting and billing structure. Multiple organizations, multiple teams.",
     "subscription_tier": "Enterprise",
     "comparison_tiers": {
       "free": "",
