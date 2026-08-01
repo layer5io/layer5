@@ -8,6 +8,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  actions: read
 
 concurrency:
   group: preview-post-build-${{ github.event.workflow_run.head_branch }}
@@ -38,17 +39,32 @@ jobs:
       - name: Read Metadata
         id: meta
         run: |
-          ACTION=$(cat temp-artifact/pr-meta/action 2>/dev/null || echo "opened")
-          PR_NUM=$(cat temp-artifact/pr-meta/number 2>/dev/null || echo "${{ github.event.workflow_run.pull_requests[0].number }}")
+          ACTION=$(head -n1 temp-artifact/pr-meta/action 2>/dev/null | tr -d '[:space:]')
+          case "$ACTION" in
+            opened|reopened|synchronize|closed) ;;
+            *) echo "::error::invalid or missing action: '$ACTION'"; exit 1 ;;
+          esac
+
+          PR_NUM=$(head -n1 temp-artifact/pr-meta/number 2>/dev/null | tr -d '[:space:]')
+          case "$PR_NUM" in
+            ''|*[!0-9]*) echo "::error::invalid or missing PR number: '$PR_NUM'"; exit 1 ;;
+          esac
+
+          SHA=$(head -n1 temp-artifact/pr-meta/sha 2>/dev/null | tr -d '[:space:]')
+          case "$SHA" in
+            ''|*[!a-f0-9]*) echo "::error::invalid or missing commit SHA: '$SHA'"; exit 1 ;;
+          esac
+
           echo "action=$ACTION" >> "$GITHUB_OUTPUT"
           echo "pr_number=$PR_NUM" >> "$GITHUB_OUTPUT"
+          echo "sha=$SHA" >> "$GITHUB_OUTPUT"
 
       # --- BRANCH 1: DEPLOY & PRUNE (If PR is active) ---
       - name: Deploy & Prune PR previews
         if: steps.meta.outputs.action != 'closed'
         uses: rossjrw/pr-preview-action@ffa7509e91a3ec8dfc2e5536c4d5c1acdf7a6de9 # v1.8.1
         with:
-          source-dir: ./temp-artifact
+          source-dir: ./temp-artifact/public
           preview-branch: gh-pages
           umbrella-dir: pr-preview
           pr-number: ${{ steps.meta.outputs.pr_number }}

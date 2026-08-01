@@ -30,7 +30,7 @@ jobs:
 
 
     - name: Checkout PR
-      uses: actions/checkout@v3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
       with:
         persist-credentials: false
         fetch-depth: 1
@@ -38,7 +38,7 @@ jobs:
     - name: Setup Node
       uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
       with:
-        node-version: "24"
+        node-version: "22"
         cache: 'npm'
     
     - name: Gatsby Cache
@@ -67,16 +67,19 @@ jobs:
 
     - name: Save Metadata
       run: |
-        mkdir -p public/pr-meta
-        echo "${{ github.event.action }}" > public/pr-meta/action
-        echo "${{ github.event.number }}" > public/pr-meta/number
+        mkdir -p pr-meta
+        echo "${{ github.event.action }}" > pr-meta/action
+        echo "${{ github.event.number }}" > pr-meta/number
+        echo "${{ github.event.pull_request.head.sha }}" > pr-meta/sha
 
     - name: Upload build artifact
       uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a #v7.0.1
       with:
         name: pr-preview-${{ github.event.pull_request.number }}
-        path: public/
-        retention-days: 1
+        path: |
+          public/
+          pr-meta/
+        retention-days: 7
 
   cleanup-metadata:
     runs-on: ubuntu-24.04
@@ -88,10 +91,11 @@ jobs:
         mkdir -p pr-meta
         echo "closed" > pr-meta/action
         echo "${{ github.event.number }}" > pr-meta/number
+        echo "${{ github.event.pull_request.head.sha }}" > pr-meta/sha
 
     - name: Upload Cleanup Artifact
       uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a #v7.0.1
       with:
         name: pr-preview-${{ github.event.pull_request.number }}
         path: pr-meta/
-        retention-days: 1
+        retention-days: 7
