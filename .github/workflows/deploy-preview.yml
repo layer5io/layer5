@@ -21,12 +21,12 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411  # v2.19.4
         with:
           egress-policy: audit
 
       - name: Download Artifact
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c  # v8.0.1
         with:
           name: pr-preview
           path: temp-artifact
@@ -62,7 +62,7 @@ jobs:
       # --- BRANCH 1: DEPLOY & PRUNE (If PR is active) ---
       - name: Deploy & Prune PR previews
         if: steps.meta.outputs.action != 'closed'
-        uses: rossjrw/pr-preview-action@ffa7509e91a3ec8dfc2e5536c4d5c1acdf7a6de9 # v1.8.1
+        uses: rossjrw/pr-preview-action@ffa7509e91a3ec8dfc2e5536c4d5c1acdf7a6de9  # v1.8.1
         with:
           source-dir: ./temp-artifact/public
           preview-branch: gh-pages
@@ -74,7 +74,7 @@ jobs:
 
       - name: Comment PR with Preview URL
         if: steps.meta.outputs.action != 'closed'
-        uses: marocchino/sticky-pull-request-comment@5770ad5eb8f42dd2c4f34da00c94c5381e49af88 # v3.0.5
+        uses: marocchino/sticky-pull-request-comment@5770ad5eb8f42dd2c4f34da00c94c5381e49af88  # v3.0.5
         with:
           header: pr-preview
           number: ${{ steps.meta.outputs.pr_number }}
@@ -85,7 +85,7 @@ jobs:
       # --- BRANCH 2: CLEANUP ON CLOSE (If PR was closed) ---
       - name: Cleanup PR preview on close
         if: steps.meta.outputs.action == 'closed'
-        uses: rossjrw/pr-preview-action@ffa7509e91a3ec8dfc2e5536c4d5c1acdf7a6de9 # v1.8.1
+        uses: rossjrw/pr-preview-action@ffa7509e91a3ec8dfc2e5536c4d5c1acdf7a6de9  # v1.8.1
         with:
           preview-branch: gh-pages
           umbrella-dir: pr-preview
