@@ -75,7 +75,7 @@ jobs:
     - name: Upload build artifact
       uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a #v7.0.1
       with:
-        name: pr-preview-${{ github.event.pull_request.number }}
+        name: pr-preview
         path: |
           public/
           pr-meta/
@@ -96,6 +96,8 @@ jobs:
     - name: Upload Cleanup Artifact
       uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a #v7.0.1
       with:
-        name: pr-preview-${{ github.event.pull_request.number }}
-        path: pr-meta/
+        name: pr-preview
+        path: |
+          public/
+          pr-meta/
         retention-days: 7
