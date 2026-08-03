@@ -34,10 +34,9 @@ const Image = ({
       key={publicURL}
       image={childImageSharp?.gatsbyImageData}
       alt={alt || "Blog image"}
-      imgStyle={{
-        objectFit: imgStyle?.objectFit || "cover",
-        ...imgStyle,
-      }}
+      objectFit={imgStyle?.objectFit || "cover"}
+      objectPosition={imgStyle?.objectPosition || "center"}
+      imgStyle={imgStyle}
       {...rest}
     />
   );
