@@ -121,6 +121,15 @@ export const CardWrapper = styled.div`
   ${(props) =>
     !props.$listView &&
     `
+    .post-thumb-block .old-gatsby-image-wrapper {
+      height: 100% !important;
+    }
+    .post-thumb-block .old-gatsby-image-wrapper img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+    }
+
     @media screen and (max-width: 1200px) and (min-width: 992px) {
       .post-thumb-block {
         height: auto;
