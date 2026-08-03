@@ -14,6 +14,51 @@ const Card = ({
   listView = false,
 }) => {
   const { isDark } = useStyledDarkMode();
+  const title = frontmatter.title || "";
+  let objectFit = "cover";
+  let padding = "0px";
+  let objectPosition = "center";
+
+  let width = undefined;
+  let height = undefined;
+
+  const logoCards = new Set([
+    "Management of Kubernetes",
+    "Getting Started with Kubernetes",
+    "Kubernetes Architecture 101",
+    "Managing Containers",
+    "Istio Virtual Service",
+    "Terraform with Meshery",
+    "Service Mesh: Istio",
+    "What is GitOps?",
+    "Service Mesh: Consul",
+    "Istio Authorization Policy",
+    "Envoy and WebAssembly",
+  ]);
+
+  const coverCards = new Set([
+    "O'Reilly OSCON 2020",
+    "O'Reilly Infrastructure & Ops",
+    "Introduction to Istio",
+    "Advanced Istio",
+  ]);
+
+  if (!listView) {
+    if (logoCards.has(title) || title.includes("CCOSS")) {
+      objectFit = "contain";
+      padding = "1.5rem";
+      width = "100%";
+      height = "100%";
+    } else if (coverCards.has(title)) {
+      objectFit = "cover";
+      width = "100%";
+      height = "100%";
+      if (title.includes("O'Reilly")) {
+        objectPosition = "left";
+      }
+    }
+  }
+
   return (
     <CardWrapper fixed={!!frontmatter.abstract} $listView={listView}>
       <div className="post-block">
@@ -25,7 +70,8 @@ const Card = ({
               frontmatter.thumbnail.publicURL
               ? frontmatter.darkthumbnail
               : frontmatter.thumbnail)}
-            imgStyle={{ objectFit: "cover" }}
+            style={{ height: "100%" }}
+            imgStyle={{ objectFit, objectPosition, padding, width, height }}
             loading={loading}
             fetchpriority={fetchpriority}
             alt={frontmatter.title}
