@@ -97,8 +97,9 @@ const LfxPageNav = ({ items }) => {
   }, [items]);
 
   const handleNavClick = (e, href) => {
-    // Let browser handle modifier-key clicks (Ctrl/Cmd = new tab, Shift = new window).
-    if (e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
+    // Let browser handle modifier-key clicks (Ctrl/Cmd = new tab, Alt = save, Shift = new window).
+    if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0)
+      return;
     e.preventDefault();
     const el = document.querySelector(href);
     if (el) {
