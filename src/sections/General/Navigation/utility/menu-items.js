@@ -134,7 +134,7 @@ const Data = {
     //     },
     //     {
     //       name: "Forum",
-    //       path: "https://discuss.layer5.io",
+    //       path: "https://discuss.meshery.io",
     //       sepLine: true,
     //       externalLink: true
     //     },
@@ -157,7 +157,7 @@ const Data = {
     //   actionItems: [
     // {
     //   actionName: "Join the discussion",
-    //   actionLink: "https://discuss.layer5.io",
+    //   actionLink: "https://discuss.meshery.io",
     // },
     //     // {
     //     //   actionName: "Free service mesh training",
@@ -223,7 +223,7 @@ const Data = {
         },
         {
           actionName: "Discussion forum",
-          actionLink: "https://discuss.layer5.io",
+          actionLink: "https://discuss.meshery.io",
           external: true,
         },
         {
@@ -283,7 +283,7 @@ const Data = {
         },
         // {
         //   name: "Forum",
-        //   path: "https://discuss.layer5.io",
+        //   path: "https://discuss.meshery.io",
         //   sepLine: true,
         //   externalLink: true
         // },

@@ -31,13 +31,6 @@ const codeExamples = {
   }
 
   export default App;`,
-
-  prerequisites: `{
-  "peerDependencies": {
-    "react": ">=17.0.0",
-    "react-dom": ">=17.0.0"
-  }
-}`,
 };
 
 const SistentInstallation = () => {
@@ -55,23 +48,18 @@ const SistentInstallation = () => {
             </a>
             <p>
               Sistent is a React-based design system from Layer5. To get
-              started, make sure your environment meets the following
-              requirements:
+              started, make sure your environment meets the requirements
+              specified in the project's canonical{" "}
+              <a
+                href="https://github.com/layer5io/sistent/blob/master/package.json"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <code>package.json</code>
+              </a>
+              . You will also need <strong>Node.js</strong>{" "}
+              <code>&gt;=16.x</code>.
             </p>
-            <ul>
-              <li>
-                <strong>React:</strong> <code>&gt;=17.0.0</code> and{" "}
-                <strong>React DOM:</strong> <code>&gt;=17.0.0</code>
-              </li>
-              <li>
-                <strong>Node.js:</strong> <code>&gt;=16.x</code> (verified in CI
-                on Node 16, Node 18, and Node 20)
-              </li>
-            </ul>
-            <CodeBlock
-              codeString={codeExamples.prerequisites}
-              language="javascript"
-            />
             <a id="installation">
               <h2>Installation</h2>
             </a>

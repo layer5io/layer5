@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useLayoutEffect } from "react";
 import styled from "styled-components";
 import Customers from "../../reusecore/Blockquote/Blockquote-image";
@@ -19,6 +18,7 @@ import Hein from "./reviews/hein.webp";
 import Anusha from "./reviews/anusha.webp";
 import Louie from "./reviews/louie-corbo.jpeg";
 import Abdechakour from "./reviews/abdechakour-h.jpeg";
+import Giorgia from "./reviews/giorgia-modanesi.webp";
 
 const settings = {
   dots: false,
@@ -35,58 +35,68 @@ const settings = {
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1,
-      }
+      },
     },
     {
       breakpoint: 1024,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1,
-      }
+      },
     },
     {
       breakpoint: 800,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-      }
-    }
-  ]
+      },
+    },
+  ],
 };
 
 const ReviewsWrapper = styled.div`
-max-width: 100%;
-.slider{
-  overflow: hidden;
-  padding: 2rem 0 0.5rem;
-  background: ${props => props.theme.secondaryLightColor};
-  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  h2{
-    text-align: center;
-    padding: 0 0 2rem;
-  }
-    .type-one-wrapper{
+  max-width: 100%;
+  .slider {
+    overflow: hidden;
+    padding: 2rem 0 0.5rem;
+    background: ${(props) => props.theme.secondaryLightColor};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    h2 {
+      text-align: center;
+      padding: 0 0 2rem;
+    }
+    .type-one-wrapper {
       margin: 0 1rem;
     }
-}
-.slick-initialized .slick-slide {
+  }
+  .slick-initialized .slick-slide {
     display: block;
     visibility: visible;
     opacity: 1;
   }
 
   /* Prevent extreme shrinking on mobile */
-  .slick-slide > div { min-width: 0; }
-  .slider .type-one-wrapper { width: 100%; max-width: none; margin: 0 0.5rem; }
-
-  @media (max-width: 768px) {
-    .type-one-wrapper.type-one-wrapper-boxed { max-width: none; padding: 0; }
-    .type-one-quote .type-one-quote-base,
-    .type-two-quote .type-two-quote-base { padding-left: 30px; padding-right: 30px; }
+  .slick-slide > div {
+    min-width: 0;
+  }
+  .slider .type-one-wrapper {
+    width: 100%;
+    max-width: none;
+    margin: 0 0.5rem;
   }
 
+  @media (max-width: 768px) {
+    .type-one-wrapper.type-one-wrapper-boxed {
+      max-width: none;
+      padding: 0;
+    }
+    .type-one-quote .type-one-quote-base,
+    .type-two-quote .type-two-quote-base {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
 `;
-
 
 const Reviews = () => {
   const [isClient, setIsClient] = useState(false);
@@ -97,18 +107,20 @@ const Reviews = () => {
     ...settings,
     slidesToShow: slidesToShowState || 1,
     slidesToScroll: 1,
-    responsive: []
+    responsive: [],
   };
 
   const computeSlides = () => {
-    const w = typeof window !== "undefined" ? (window.innerWidth || document.documentElement.clientWidth) : 1200;
+    const w =
+      typeof window !== "undefined"
+        ? window.innerWidth || document.documentElement.clientWidth
+        : 1200;
     if (w <= 800) return 1;
     if (w <= 1024) return 2;
     return 3;
   };
 
   useLayoutEffect(() => {
-
     setIsClient(true);
     setSlidesToShowState(computeSlides());
 
@@ -121,7 +133,11 @@ const Reviews = () => {
           if (prev !== slides) return slides;
           return prev;
         });
-        if (sliderRef.current && sliderRef.current.innerSlider && typeof sliderRef.current.innerSlider.onWindowResized === "function") {
+        if (
+          sliderRef.current &&
+          sliderRef.current.innerSlider &&
+          typeof sliderRef.current.innerSlider.onWindowResized === "function"
+        ) {
           sliderRef.current.innerSlider.onWindowResized();
         }
       }, 100);
@@ -148,7 +164,11 @@ const Reviews = () => {
     <ReviewsWrapper>
       <div className="slider">
         <h2>Hear what other users have to say...</h2>
-        <Slider key={`review-slider-${slidesToShowState}`} ref={sliderRef} {...mergedSettings}>
+        <Slider
+          key={`review-slider-${slidesToShowState}`}
+          ref={sliderRef}
+          {...mergedSettings}
+        >
           {/* <Customers
             type="1"
             quote="The Meshery Extension transforms Docker Desktop into a powerful load generation utility, conveniently enabling me to deploy and configure any service mesh with a click of the button and invoke and control load-based performance tests from my desktop."
@@ -156,6 +176,13 @@ const Reviews = () => {
             title="Software Engineer at HPE"
             image={Maxi}
           /> */}
+          <Customers
+            type="3"
+            quote="I don't want another Kubernetes dashboard. I want a platform that helps me design, validate, and operate cloud-native infrastructure consistently across every cluster."
+            person="Giorgia Modanesi"
+            title="Infra Managed Service Senior Analyst at Accenture"
+            image={Giorgia}
+          />
           <Customers
             type="2"
             quote="The precision by which performance measurements are generated and analyzed is a pinnacle focus of Nighthawk. Mesh performance characterization should be distilled from a set of value measurements, and that is where MeshMark compliments to create the ultimate comprehensive efficiency calculation."
