@@ -44,7 +44,6 @@ jobs:
           run-id: ${{ github.event.workflow_run.id }}
           
             
-      # Extract PR action from metadata uploaded by the build workflow
       - name: Read Metadata
         id: meta
         run: |
@@ -68,7 +67,6 @@ jobs:
           echo "pr_number=$PR_NUM" >> "$GITHUB_OUTPUT"
           echo "sha=$SHA" >> "$GITHUB_OUTPUT"
 
-      # --- BRANCH 1: DEPLOY & PRUNE (If PR is active) ---
       - name: Deploy PR preview
         id: preview
         if: steps.meta.outputs.action != 'closed'
@@ -95,7 +93,6 @@ jobs:
           message: |
             🚀 Preview deployment: https://layer5.io/pr-preview/pr-${{ steps.meta.outputs.pr_number }}/
 
-      # --- BRANCH 2: CLEANUP ON CLOSE (If PR was closed) ---
       - name: Cleanup PR preview on close
         if: steps.meta.outputs.action == 'closed'
         uses: rossjrw/pr-preview-action@ffa7509e91a3ec8dfc2e5536c4d5c1acdf7a6de9  # v1.8.1
