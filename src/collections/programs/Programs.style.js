@@ -9,7 +9,7 @@ export const ProgramsWrapper = styled.div`
   [id] {
     scroll-margin-top: calc(${LFX_SCROLL_OFFSET}px - 5rem);
   }
-  
+
   a {
     color: ${(props) => props.theme.keppelColor};
     overflow-wrap: break-word;

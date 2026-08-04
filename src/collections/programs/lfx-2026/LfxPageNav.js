@@ -97,11 +97,16 @@ const LfxPageNav = ({ items }) => {
   }, [items]);
 
   const handleNavClick = (e, href) => {
+    // Let browser handle modifier-key clicks (Ctrl/Cmd = new tab, Shift = new window).
+    if (e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
     e.preventDefault();
     const el = document.querySelector(href);
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
-      window.history.pushState(null, "", href);
+      // Avoid pushing a duplicate history entry when the hash is already current.
+      if (window.location.hash !== href) {
+        window.history.pushState(null, "", href);
+      }
     }
   };
 
