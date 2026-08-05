@@ -27,11 +27,11 @@ const NavTitle = styled.div`
 `;
 
 const NavList = styled.ul`
-  list-style: none !important;
+  list-style: none;
   margin: 0;
   padding-left: 1rem;
   li {
-    list-style: none !important;
+    list-style: none;
     margin-bottom: 0.5rem;
   }
   li a {
