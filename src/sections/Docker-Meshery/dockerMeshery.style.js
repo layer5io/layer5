@@ -46,8 +46,6 @@ export const DockerMesheryWrapper = styled.div`
             }
           }
         }
-    }
-
     p.uppercase { 
         text-align: center;
         text-transform: uppercase; 
@@ -88,7 +86,7 @@ export const DockerMesheryWrapper = styled.div`
       align-items: center;
     }
     .dockerMesherySection {
-      margin: auto;
+      margin: 4rem auto;
     }
     div.feature-title {
       background-color: ${(props) => props.theme.saffronLightColor};
@@ -96,7 +94,7 @@ export const DockerMesheryWrapper = styled.div`
       font-weight: 500;
       margin-bottom: .3rem;
       line-height: 1.25rem;
-      color: black;
+      color: ${(props) => props.theme.text};
       padding: 5%;
       border-radius: 1rem;
     }
