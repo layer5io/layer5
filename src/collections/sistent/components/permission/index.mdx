@@ -1,0 +1,52 @@
+---
+name: "Permission"
+title: "Permission"
+published: true
+component: permission
+description: The PermissionShield component gates and protects interactive actions, buttons, and navigation elements. It displays a visual lock icon overlay or inline badge when a user lacks the necessary permission keys or capabilities.
+---
+
+import { PermissionShield, Button } from "@sistent/sistent";
+
+The `PermissionShield` component provides a standard design pattern for feature-level permission gating across applications. Rather than silently hiding disabled elements, it keeps them visible (preserving layout continuity) and overlays a visual lock indicator to explain to users why the action is restricted.
+
+> **Important Security Note:** UI gating is a presentation-layer control only. Client-side checks must not decide access. The backend server and API routes must always enforce authorization on every request.
+
+<a id="inline-shield-overlay">
+  <h2>Inline Shield Overlay</h2>
+</a>
+
+The default variant wraps any standard action component (like a `Button` or `IconButton`) and places a lock icon badge at the bottom-left corner of the target element. When clicked or hovered, it shows a detailed explanation of the missing permission.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+      <PermissionShield
+        permissionKey={{ id: "delete_connection", name: "Delete Connection" }}
+      >
+        <Button variant="contained" color="error">
+          Delete Resource
+        </Button>
+      </PermissionShield>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="badge-variant">
+  <h2>Badge Variant</h2>
+</a>
+
+The badge variant renders the permission badge independently, which is useful for list items, settings tables, or static text where a direct wrapper overlay on a button is not suitable.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+      <PermissionShield
+        variant="badge"
+        permissionKey={{ id: "view_audit_logs", name: "View Audit Logs" }}
+      >
+        <span>Audit Logs</span>
+      </PermissionShield>
+    </div>
+  </ThemeWrapper>
+</Row>

@@ -1,0 +1,96 @@
+---
+title: Permission Code
+component: permission
+description: Integration details, code examples, and API references for the PermissionShield component.
+---
+
+import { PermissionShield, Button } from "@sistent/sistent";
+
+The `PermissionShield` component acts as a high-level wrapper to restrict and decorate interactive components.
+
+> **Important Security Note:** UI gating is a presentation-layer control only. Client-side checks must not decide access. The backend server and API routes must always enforce authorization on every request.
+
+<a id="installation">
+  <h2>Installation</h2>
+</a>
+
+```bash
+npm install @sistent/sistent
+```
+
+<a id="basic-usage">
+  <h2>Basic Usage</h2>
+</a>
+
+Wrap any standard component (e.g., a `Button`) inside the `PermissionShield` to automatically overlay the lock badge when permissions are restricted.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PermissionShield
+        permissionKey={{ id: "create_design", name: "Create Design" }}
+      >
+        <Button variant="contained" color="primary">
+          Create New Design
+        </Button>
+      </PermissionShield>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-permission-shield" collapsible code={`import { PermissionShield, Button } from "@sistent/sistent";
+
+export const CreateDesignButton = () => (
+  <PermissionShield
+    permissionKey={{ id: "create_design", name: "Create Design" }}
+  >
+    <Button variant="contained" color="primary">
+      Create New Design
+    </Button>
+  </PermissionShield>
+);`} />
+</div>
+
+<a id="custom-boundary-padding">
+  <h2>Custom Boundary Padding</h2>
+</a>
+
+Use the `boundaryPadding` prop to configure custom offsets if the tooltip overlaps fixed elements (like headers, sidebars, or navbar sections) during scrolling.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PermissionShield
+        permissionKey={{ id: "view_connections", name: "View Connections" }}
+        boundaryPadding={{ top: 85, left: 270 }}
+      >
+        <Button variant="outlined">
+          Connections
+        </Button>
+      </PermissionShield>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="custom-boundary-padding" collapsible code={`import { PermissionShield, Button } from "@sistent/sistent";
+
+export const GatedConnectionsButton = () => (
+  <PermissionShield
+    permissionKey={{ id: "view_connections", name: "View Connections" }}
+    boundaryPadding={{ top: 85, left: 270 }}
+  >
+    <Button variant="outlined">
+      Connections
+    </Button>
+  </PermissionShield>
+);`} />
+</div>
+
+<a id="api-reference">
+  <h2>API Reference</h2>
+</a>
+
+<h3>PermissionShield Props</h3>
+
+| Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `permissionKey` | `PermissionKeySpec` | - | The unique key specification that the gated action requires. |
+| `children` | `React.ReactNode` | - | The gated component (e.g., Button, IconButton) to be wrapped and overlayed. |
+| `variant` | `'inline' \| 'badge'` | `'inline'` | The display format of the lock badge. `'inline'` wraps/overlays children, `'badge'` displays independently. |
+| `boundaryPadding` | `object` | `{ top: 85, left: 270, right: 8, bottom: 8 }` | Optional offsets to prevent tooltips from overlapping headers/menus. |

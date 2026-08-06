@@ -1,0 +1,52 @@
+---
+title: Permission Guidance
+component: permission
+description: Guidance on using the Sistent Permission component and best practices for design system gating.
+---
+
+<a id="usage">
+  <h2>Usage</h2>
+</a>
+
+The `PermissionShield` component should be used to protect actions or affordances that require specific roles, permission keys, or capabilities.
+
+> **Important Security Note:** UI gating is a presentation-layer control only. Client-side checks must not decide access. The backend server and API routes must always enforce authorization on every request.
+
+<ul>
+  <li>Wrap gated interactive components (Buttons, IconButtons, Tabs) to provide visual feedback to users when they are restricted.</li>
+  <li>Ensure the locked state clearly informs the user which permissions are missing, reducing frustration and confusion.</li>
+  <li>Use responsive layouts or custom boundary paddings where the tooltips might get clipped by sidebars or sticky headers.</li>
+</ul>
+
+<a id="when-to-use">
+  <h2>When to Use</h2>
+</a>
+
+<h3>Disable versus Hide</h3>
+
+When deciding whether to restrict a feature, follow these design system guidelines:
+
+<ul>
+  <li>
+    <strong>Disable (Keep Visible with PermissionShield):</strong> Use this when the action is part of a standard page flow (like a "Delete Connection" button). Keeping it visible helps users understand that the feature exists, and the lock badge tells them exactly why they cannot click it and who to contact.
+  </li>
+  <li>
+    <strong>Hide (Remove from Layout):</strong> Use this when the user has absolutely no access to the entire page or section (e.g. an "Admin Console" menu link or a full tab panel that they do not have clearance to view).
+  </li>
+</ul>
+
+<a id="best-practices">
+  <h2>Best Practices</h2>
+</a>
+
+<ul>
+  <li>
+    <strong>Consistent Badge Placement:</strong> Place the lock badge at the bottom-left corner of the parent component to keep visual styles consistent across the app.
+  </li>
+  <li>
+    <strong>Accurate Tooltips:</strong> Ensure the `permissionKey` prop is fully populated with accurate names so the tooltip can display the exact missing keys.
+  </li>
+  <li>
+    <strong>Nested Disabled Controls:</strong> Do not rely solely on the wrapper to block interactions. Set the nested control (e.g. Button) to `disabled` (or `aria-disabled` for custom controls) and handle `preventDefault()` where needed so that default actions, keyboard accessibility, and screen readers behave correctly.
+  </li>
+</ul>
