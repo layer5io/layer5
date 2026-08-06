@@ -2,25 +2,23 @@ import styled from "styled-components";
 
 const FeaturesSectionWrapper = styled.section`
   background-color: black;
-  transform: skew(0deg, -6deg);
   padding-bottom: 5rem;
   margin-bottom: 8rem;
   overflow: hidden;
   position: relative;
   width: 100%;
   max-width: 100%;
-  contain: layout style paint;
   transform-origin: center;
   z-index: 1;
   height: auto;
-  isolate: isolate;
+  isolation: isolate;
   .skw {
     display: grid;
     position: relative;
     top: -5rem;
   }
   .rect-1-left {
-    background: #c9fcf6;
+    background: ${(props) => props.theme.secondaryLightColor || "#c9fcf6"};
     border-radius: 0 2.125rem 0 0;
     grid-column: 1 / span 2;
     height: 5rem;
@@ -43,7 +41,7 @@ const FeaturesSectionWrapper = styled.section`
     height: 5rem;
   }
   .rect-4-right {
-    background: #c9fcf6;
+    background: ${(props) => props.theme.secondaryLightColor || "#c9fcf6"};
     border-radius: 0 0 0 2.125rem;
     grid-column: 9/11;
     grid-row: 2;
@@ -53,7 +51,6 @@ const FeaturesSectionWrapper = styled.section`
   }
 
   .section-data {
-    transform: skew(0deg, 6deg);
     padding: 0 1rem 3rem;
     text-align: center;
     position: relative;
