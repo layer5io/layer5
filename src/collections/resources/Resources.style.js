@@ -10,6 +10,25 @@ export const ResourcesWrapper = styled.div`
     text-align: left;
     margin-top: 2rem;
   }
+
+  div.comparison table {
+    border-collapse: collapse;
+    margin: 1.5rem 0 2rem;
+    width: 100%;
+  }
+
+  div.comparison th,
+  div.comparison td {
+    border: 1px solid ${props => props.theme.borderColor || props.theme.primaryLightColor};
+    padding: 0.75rem;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  div.comparison th {
+    background-color: ${props => props.theme.secondaryLightColorTwo};
+    font-weight: 600;
+  }
   
   .sub-heading {
     color: gray;
