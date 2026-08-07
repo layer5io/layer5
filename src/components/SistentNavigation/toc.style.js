@@ -7,6 +7,7 @@ const TOCWrapper = styled.div`
   margin-left: 3rem;
   margin-top: 3rem;
   width: 15rem;
+  min-width: 15rem;
   padding-bottom: 2rem;
   @media screen and (min-width: 1280px) and (max-width: 1350px) {
     margin-left: 0.2rem;
@@ -135,7 +136,9 @@ const TOCWrapper = styled.div`
     background-color: transparent;
   }
 
-  .identity, .components, .getting-started {
+  .identity,
+  .components,
+  .getting-started {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -148,10 +151,12 @@ const TOCWrapper = styled.div`
     }
   }
 
-  .identity-sublinks, .components-sublinks {
+  .identity-sublinks,
+  .components-sublinks {
     padding-left: 0.56rem;
 
-    .identity-item, .components-item {
+    .identity-item,
+    .components-item {
       font-size: 1.05rem;
       margin-top: 0.45rem;
     }
