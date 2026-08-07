@@ -29,6 +29,21 @@ export const ResourcesWrapper = styled.div`
     background-color: ${props => props.theme.secondaryLightColorTwo};
     font-weight: 600;
   }
+
+  div.comparison td[data-status="yes"] {
+    color: ${props => props.theme.secondaryColor};
+    font-weight: 600;
+  }
+
+  div.comparison td[data-status="partial"] {
+    color: ${props => props.theme.highlightColor};
+    font-weight: 600;
+  }
+
+  div.comparison td[data-status="no"] {
+    color: ${props => props.theme.errorColor};
+    font-weight: 600;
+  }
   
   .sub-heading {
     color: gray;
