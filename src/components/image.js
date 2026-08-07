@@ -16,6 +16,7 @@ const Image = ({
         style={{ width: "100%", height: "auto", ...(rest.style || {}) }}
       >
         <img
+          key={publicURL}
           src={publicURL}
           alt={alt || "Blog image"}
           width="100%"
