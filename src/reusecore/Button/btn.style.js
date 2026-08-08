@@ -19,7 +19,7 @@ const ButtonStyle = styled.button`
     background-color: #00B39F;
     z-index: 999;
     &:hover,
-    &:focus {
+    &:focus-visible {
         color: white;
         background: ${props => props.theme.activeColor}; 
         box-shadow: 0 2px 10px ${props => props.theme.whiteFourToBlackFour};
