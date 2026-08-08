@@ -22,7 +22,13 @@ The default variant wraps any standard action component (like a `Button` or `Ico
   <ThemeWrapper>
     <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
       <PermissionShield
-        permissionKey={{ id: "delete_connection", name: "Delete Connection" }}
+        permissionKey={{
+          id: "delete_connection",
+          category: "Lifecycle Management",
+          subcategory: "Connections",
+          function: "Delete a connection",
+          description: "Delete a connection"
+        }}
       >
         <Button variant="contained" color="error">
           Delete Resource
@@ -43,7 +49,13 @@ The badge variant renders the permission badge independently, which is useful fo
     <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
       <PermissionShield
         variant="badge"
-        permissionKey={{ id: "view_audit_logs", name: "View Audit Logs" }}
+        permissionKey={{
+          id: "view_audit_logs",
+          category: "Events Management",
+          subcategory: "Audit",
+          function: "View Audit",
+          description: "View Audit Logs"
+        }}
       >
         <span>Audit Logs</span>
       </PermissionShield>

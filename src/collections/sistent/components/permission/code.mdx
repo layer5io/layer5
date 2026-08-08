@@ -28,7 +28,13 @@ Wrap any standard component (e.g., a `Button`) inside the `PermissionShield` to 
   <div className="items">
     <ThemeWrapper>
       <PermissionShield
-        permissionKey={{ id: "create_design", name: "Create Design" }}
+        permissionKey={{
+          id: "create_design",
+          category: "Catalog Management",
+          subcategory: "Designs",
+          function: "Create new design",
+          description: "Create new Meshery design"
+        }}
       >
         <Button variant="contained" color="primary">
           Create New Design
@@ -40,7 +46,13 @@ Wrap any standard component (e.g., a `Button`) inside the `PermissionShield` to 
 
 export const CreateDesignButton = () => (
   <PermissionShield
-    permissionKey={{ id: "create_design", name: "Create Design" }}
+    permissionKey={{
+      id: "create_design",
+      category: "Catalog Management",
+      subcategory: "Designs",
+      function: "Create new design",
+      description: "Create new Meshery design"
+    }}
   >
     <Button variant="contained" color="primary">
       Create New Design
@@ -59,7 +71,13 @@ Use the `boundaryPadding` prop to configure custom offsets if the tooltip overla
   <div className="items">
     <ThemeWrapper>
       <PermissionShield
-        permissionKey={{ id: "view_connections", name: "View Connections" }}
+        permissionKey={{
+          id: "view_connections",
+          category: "Workspace Management",
+          subcategory: "Connections",
+          function: "View Connections",
+          description: "View all connections within an environment"
+        }}
         boundaryPadding={{ top: 85, left: 270 }}
       >
         <Button variant="outlined">
@@ -72,7 +90,13 @@ Use the `boundaryPadding` prop to configure custom offsets if the tooltip overla
 
 export const GatedConnectionsButton = () => (
   <PermissionShield
-    permissionKey={{ id: "view_connections", name: "View Connections" }}
+    permissionKey={{
+      id: "view_connections",
+      category: "Workspace Management",
+      subcategory: "Connections",
+      function: "View Connections",
+      description: "View all connections within an environment"
+    }}
     boundaryPadding={{ top: 85, left: 270 }}
   >
     <Button variant="outlined">
