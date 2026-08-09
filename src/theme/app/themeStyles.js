@@ -300,7 +300,7 @@ export const darktheme = {
   saffronColor: "#EBC017",
 
   // error red
-  errorColor: "#D32F2F",
+  errorColor: "#FF6B6B",
 
   // flax (light yellow)
   highlightLightColor: "#EAD07D",

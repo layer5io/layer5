@@ -17,6 +17,11 @@ export const ResourcesWrapper = styled.div`
     width: 100%;
   }
 
+  div.comparison__table-wrapper {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
   div.comparison th,
   div.comparison td {
     border: 1px solid ${props => props.theme.borderColor || props.theme.primaryLightColor};
