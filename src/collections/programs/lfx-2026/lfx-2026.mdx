@@ -16,7 +16,7 @@ import { Link } from "gatsby";
 import LfxPageNav from "./LfxPageNav";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
-export const LfxLogoImage = () => { const { isDark } = useStyledDarkMode(); return <img src={isDark ? LfxLogo : LfxLogoLight} alt="lfx_logo" className="lfx_logo"/>; };
+export const LfxLogoImage = () => { const { isDark } = useStyledDarkMode(); return <img src={isDark ? LfxLogo : LfxLogoLight} alt="LFX logo" className="lfx_logo"/>; };
 
 <ProgramsWrapper>
 
@@ -274,7 +274,108 @@ CNCF - Meshery: Meshery Models Support for OCI Registries (2026 Term 2)
 ### Meshery
 <br />
 
-> Fall 2026 projects will be announced. Check back soon!
+#### Grounding AI in the Meshery Registry
+
+**Description:**
+
+The Meshery Registry holds thousands of components across hundreds of Models spanning Kubernetes, the CNCF landscape, and the major clouds, together with the Relationship definitions that describe how those components legitimately connect. That registry is precisely the knowledge a language model needs in order to generate a design Meshery will accept, and it is orders of magnitude too large to fit in a context window. Today there is no defined mechanism for selecting registry context for AI prompts, and even ordinary component search lacks a model filter. Generation therefore falls back on whatever the model happens to remember about Kubernetes (or any of the public Clouds that Meshery supports), which is how agents invent components that do not exist and propose relationships the policy engine will reject.
+
+This project builds the retrieval layer that grounds every other AI capability in Meshery. The mentee implements an embedding index over Models, components, and Relationships with a pluggable backend so that operators can choose a hosted embedding service or a fully local one, incremental re-indexing as models are registered or updated, and a ranked context assembly API that accepts an intent and returns a compact, token-budgeted slice of the registry for the AI Adapter and the Meshery MCP Server to consume. The same index pays off directly for humans: semantic search across the registry pages in Meshery UI, and search improvements in `mesheryctl` including the missing model filter for component search. Effectiveness is measured, not asserted, using the design validation and evaluation work running in parallel this term.
+
+- **Expected Outcomes:**
+  - An embedding index over Meshery Models, components, and Relationships, incrementally rebuilt on registry changes, with a pluggable hosted or local embedding backend.
+  - A context selection API that returns a ranked, token-budgeted registry slice for a given intent, consumed by both the AI Adapter and the Meshery MCP Server.
+  - Semantic search in the Meshery UI registry experience and in `mesheryctl`, including the currently missing `--model` filter on component search.
+  - Measured improvement in component resolution rate and generated design validity against a retrieval-free baseline, reported through the term's evaluation harness.
+  - Documentation of the retrieval architecture, index schema, backend configuration, and tuning guidance.
+
+- **Technologies and Required/Desirable Skills:** Golang, React, vector search, REST, SQL, Kubernetes CRDs
+
+- **Mentors:** 
+  - Mia Grenell | @miacycle | mia.grenell2337@gmail.com | mia.grenell
+  - Lee Calcote | @leecalcote | leecalcote@gmail.com | leecalcote
+
+- **Upstream Issue URL:** [https://github.com/meshery/meshery/issues/20995](https://github.com/meshery/meshery/issues/20995)
+
+- **LFX program URL:** [CNCF - Meshery: Grounding AI in the Meshery Registry (2026 Term 3)](https://mentorship.lfx.linuxfoundation.org/project/45b2ab48-4925-41eb-b91d-87f2e74be320)
+
+
+#### MCP Server
+
+**Description:**
+ 
+Meshery manages cloud and cloud native infrastructure through Designs, Models, Connections, and a live topology continuously discovered by MeshSync. All of it is reachable over Meshery's REST and GraphQL APIs. None of it is reachable by an AI assistant. An engineer working with Claude, Copilot, or Cursor today copies YAML back and forth by hand, because the agent has no way to list designs, inspect a cluster, resolve a component schema, or deploy a pattern. The `meshery-mcp-server` repository was created to close that gap and is currently scaffolding only: a Makefile, lint configuration, and governance files, with no Go module, no protocol implementation, and no tools.
+
+This project builds the server end to end. The mentee implements the Model Context Protocol foundation over both stdio and streamable HTTP transports, a Go client wrapping Meshery's REST and GraphQL APIs, and the tool, resource, and prompt surfaces that let an agent do real work: design lifecycle operations, Kubernetes cluster connection management, registry and model queries, environment and workspace management, and Nighthawk-backed performance testing. Read-only resources built on MeshSync-discovered topology ground the agent in what is actually running rather than only in what the schema permits, under hard constraints of no mutations and no secret exposure. Configuration supports multiple named Meshery instances with context switching, and the work ships as a real release: unit, integration, and end-to-end tests, CI, multi-platform binaries and a container image, and a quick start that takes a new user from zero to a working integration in under ten minutes.
+ 
+- **Expected Outcomes:**
+  - A released `meshery-mcp-server` binary and container image supporting stdio and streamable HTTP transports, verified against at least two MCP clients.
+  - Tool coverage across designs, clusters, registry and models, environments and workspaces, and performance tests, each with validated input schemas and structured error handling.
+  - Read-only MCP resources exposing MeshSync topology and Meshery Relationships, with enforced guarantees of no mutations and no secret exposure.
+  - MCP prompt templates for guided workflows: deploy an application, investigate cluster health, review a design against best practices, and configure a performance test.
+  - CI/CD with multi-platform release automation, at least 80% unit coverage on internal packages, and a published user guide, configuration reference, and AI client integration examples.
+
+- **Technologies and Required/Desirable Skills:** Golang, Model Context Protocol, REST, GitHub Actions, Kubernetes
+
+- **Mentors:** 
+  - Lee Calcote | @leecalcote | leecalcote@gmail.com | leecalcote
+  - Yi Nuo | @yi-nuo426 | yinuo084@gmail.com| yinuo
+
+- **Upstream Issue URL:** [https://github.com/meshery/meshery/issues/19446](https://github.com/meshery/meshery/issues/19446)
+
+- **LFX program:** [CNCF - Meshery: MCP Server (2026 Term 3)](https://mentorship.lfx.linuxfoundation.org/project/29b6958b-77df-4135-85b2-f4a3185c1155)
+
+
+#### BYOM: Adapter for AI and LLMs
+
+**Description:**
+ 
+Meshery's AI Adapter track aims at natural language to infrastructure: a user describes architectural intent and Meshery renders a valid Design in Kubernetes clusters and Meshery extensions like Kanvas. Early implementations configured providers through startup environment variables such as `MESHERY_AI_OPENAI_API_KEY`, which does not survive contact with real deployments. That approach is per-server rather than per-user, it cannot express more than one provider, and it puts secrets somewhere Meshery already has a better home for them. Meshery has first-class Connections and Credentials with schema-driven registration, and server-side CRUD for model-provider connections has already landed. What is missing is the complete path from a user supplying their own key to a generated, validated Design on the canvas.
+ 
+This project makes AI providers bring-your-own and user-owned. The mentee implements provider Connections and Credentials spanning cloud and local inference (OpenAI Codex, Anthropic Claude, GitHub Copilot, Azure OpenAI, AWS Bedrock, Vertex AI, Ollama, LocalAI), a Create New Connection experience in Meshery UI, provider health and readiness checks, and the generation path itself: prompt, to compact model and schema context, to provider call, to candidate Design, to validation, to a deployable workload in a Kubernetes cluster, and a reviewable result in Kanvas. Secrets live only in Credentials. They are never returned to clients, never written into prompt context or generated designs, and never appear in logs or events. Generation produces a candidate for human review and never deploys automatically, which keeps Meshery UI as the review surface and keeps the feature safe to enable by default.
+ 
+- **Expected Outcomes:**
+  - Connection and Credential support for at least four provider kinds spanning hosted and local inference, registered through Meshery Models and manageable from both Meshery UI and mesheryctl.
+  - A Create New Connection wizard plus provider health and readiness checks surfaced in UI and CLI, with defined status, error, and event semantics and operationId correlation.
+  - End-to-end natural language to Design generation using user-supplied credentials, returning a reviewable candidate Design or structured validation errors rather than an automatic deployment.
+  - A demonstrated provider swap between a hosted frontier model and a local model with no code changes, plus secret redaction across logs, events, and API responses verified by tests.
+  - Documentation covering provider setup, the credential contract, data handling and privacy posture, and an AI production checklist added to the system check guide.
+
+- **Technologies and Required/Desirable Skills:** Golang, Javascript, React, REST, Frontier model provider APIs / LLM provider APIs, Kubernetes
+
+- **Mentors:** 
+  - Lee Calcote | @leecalcote | leecalcote@gmail.com | leecalcote
+  - James Horton | @hortison | james.hortison2337@gmail.com | hortison
+
+- **Upstream Issue URL:** [https://github.com/meshery/meshery/issues/20994](https://github.com/meshery/meshery/issues/20994)
+
+- **LFX program:** [CNCF - Meshery: BYOM: Adapter for AI and LLMs (2026 Term 3)](https://mentorship.lfx.linuxfoundation.org/project/51d95093-086a-4931-9e9f-c71d022f7a74)
+
+
+#### AXI - Making mesheryctl Agent-Native
+
+**Description:**
+
+`mesheryctl` was designed for humans: bordered tables, ANSI color, interactive confirmation prompts, in-place line clearing. Increasingly it is driven by agents, and for an agent every one of those affordances is a defect. Tables cost tokens, escape codes pollute parsing, and an interactive prompt in a non-TTY context hangs a workflow with no diagnostic. The distinction that resolves this is between two different things `mesheryctl` formats: retrieved content, where a Design or an evaluation result is a schema-defined document whose real serializations are JSON and YAML, and command output, which is `mesheryctl` reporting its own rows, counts, statuses, and errors. The table is a presentation choice, not the identity of the data, and command output is the surface an agent actually pays tokens to read.
+
+This project makes `mesheryctl` compliant with the Agent Experience Interface conventions the surrounding ecosystem is converging on. The mentee introduces a shared render-mode layer so command output can be emitted for humans or for agents, adds TOON as a first-class global output format wherever JSON and YAML are already honored, makes the CLI automatically non-interactive and free of ANSI when stdout is not a TTY, and defines a tested exit code taxonomy and structured error format across the command surface, including the AI provider check and design generation workflows. The result is a CLI that an agent, an MCP server, or a CI job can drive deterministically, and that stays pleasant for the humans who use it every day.
+
+- **Expected Outcomes**: 
+  - A shared render-mode layer applied across `mesheryctl` so command output can be emitted as human tables or agent-oriented structured output, driven centrally rather than command by command.
+  - Global `-o toon` support wherever `-o json` and `-o yaml` are honored, serializing the same data model with equivalent content across formats.
+  - Automatic non-interactive behavior when stdout is not a TTY: no prompts, no ANSI, no line clearing, and deterministic, diffable output.
+  - A documented and tested exit code taxonomy plus structured error output spanning the command surface, including AI provider readiness checks and design generation.
+  - Golden tests covering render modes across commands, an agent usage section in the mesheryctl documentation, and a machine-readable command manifest consumable by the Meshery MCP Server.
+
+- **Technologies and Required/Desirable Skills:** Golang, Cobra, JSON/YAML/TOON, GitHub Actions, Kubernetes
+
+- **Mentors:**
+  - Lee Calcote | @leecalcote | leecalcote@gmail.com | leecalcote
+  - Yi Nuo | @yi-nuo426 | yinuo084@gmail.com| yinuo
+
+- **Upstream Issue URL:** [https://github.com/meshery/meshery/issues/20979](https://github.com/meshery/meshery/issues/20979)
+
+- **LFX program URL:** [CNCF - Meshery: AXI - Making mesheryctl Agent-Native (2026 Term 3)](https://mentorship.lfx.linuxfoundation.org/project/82c28ded-28c6-4089-8d6a-5e9dcf7f1c11)
 
 
 <h2 id="additional-info">Additional information</h2>
