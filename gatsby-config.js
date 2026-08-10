@@ -67,10 +67,18 @@ module.exports = {
                 proxyRes.pipe(res);
               },
             );
+            proxyReq.setTimeout(10000, () => {
+              proxyReq.destroy(new Error("Proxy request timed out"));
+            });
             proxyReq.on("error", (err) => {
-              res
-                .status(502)
-                .json({ error: "Proxy request failed", message: err.message });
+              if (!res.headersSent) {
+                res
+                  .status(502)
+                  .json({
+                    error: "Proxy request failed",
+                    message: err.message,
+                  });
+              }
             });
             proxyReq.end();
           });

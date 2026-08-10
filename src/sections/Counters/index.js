@@ -17,8 +17,18 @@ const Counters = () => {
 
   useEffect(() => {
     fetch(URL)
-      .then((response) => response.json())
-      .then((result) => setPerformanceCount(result.totalRuns))
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Request failed with status ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((result) => {
+        if (!Number.isFinite(result.totalRuns)) {
+          throw new Error("Invalid performance count received");
+        }
+        setPerformanceCount(result.totalRuns);
+      })
       .catch((error) => {
         console.log("Failed to fetch performance count:", error.message);
       });

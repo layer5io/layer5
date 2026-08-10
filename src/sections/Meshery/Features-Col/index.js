@@ -93,7 +93,6 @@ const Features = () => {
     fetch(performanceCountEndpoint)
       .then((response) => {
         if (!response.ok) {
-          setPerformanceCount(250000);
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         return response.json();
