@@ -54,7 +54,7 @@ module.exports = {
   ...(isDevelopment
     ? {
         developMiddleware: (app) => {
-          app.use("/api/*", (req, res) => {
+          app.get("/api/*", (req, res) => {
             const https = require("https");
             const proxyReq = https.request(
               `https://cloud.layer5.io${req.originalUrl}`,
