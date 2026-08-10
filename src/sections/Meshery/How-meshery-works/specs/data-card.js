@@ -55,7 +55,7 @@ const DataCard = () => {
         return response.json();
       })
       .then((result) => {
-        if (!Number.isFinite(result.totalRuns)) {
+        if (!Number.isInteger(result.totalRuns) || result.totalRuns < 0) {
           throw new Error("Invalid performance count received");
         }
         setPerformanceCount(result.totalRuns);
