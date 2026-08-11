@@ -41,7 +41,7 @@ When deciding whether to restrict a feature, follow these design system guidelin
 
 <ul>
   <li>
-    <strong>Consistent Badge Placement:</strong> Place the lock badge at the bottom-left corner of the parent component to keep visual styles consistent across the app.
+    <strong>Consistent Badge Placement:</strong> Use `'inline'` (default) to place the lock badge at the center-right of the component (common for text fields, buttons, and inline controls). Use the `'badge'` variant to overlay the badge at the bottom-left corner of the parent component when appropriate (e.g., custom cards, list items, or standalone elements).
   </li>
   <li>
     <strong>Accurate Tooltips:</strong> Ensure the `permissionKey` prop is fully populated with accurate names so the tooltip can display the exact missing keys.

@@ -16,7 +16,7 @@ The `PermissionShield` component provides a standard design pattern for feature-
   <h2>Inline Shield Overlay</h2>
 </a>
 
-The default variant wraps any standard action component (like a `Button` or `IconButton`) and places a lock icon badge at the bottom-left corner of the target element. When clicked or hovered, it shows a detailed explanation of the missing permission.
+The default variant (`'inline'`) wraps any standard action component (like a `Button` or `IconButton`) and places a lock icon badge at the center-right of the target element (serving as an end adornment). When clicked, it shows a detailed explanation of the missing permission.
 
 <Row className="image-container">
   <ThemeWrapper>
@@ -42,7 +42,7 @@ The default variant wraps any standard action component (like a `Button` or `Ico
   <h2>Badge Variant</h2>
 </a>
 
-The badge variant renders the permission badge independently, which is useful for list items, settings tables, or static text where a direct wrapper overlay on a button is not suitable.
+The badge variant (`'badge'`) renders the permission badge overlaying the bottom-left corner of the target element. This is useful for list items, settings tables, or static text where placing the shield as an end-adornment on the right is not suitable.
 
 <Row className="image-container">
   <ThemeWrapper>

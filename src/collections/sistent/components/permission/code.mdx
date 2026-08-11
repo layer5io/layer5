@@ -115,6 +115,6 @@ export const GatedConnectionsButton = () => (
 | Name | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
 | `permissionKey` | `PermissionKeySpec` | - | The unique key specification that the gated action requires. |
-| `children` | `React.ReactNode` | - | The gated component (e.g., Button, IconButton) to be wrapped and overlayed. |
-| `variant` | `'inline' \| 'badge'` | `'inline'` | The display format of the lock badge. `'inline'` wraps/overlays children, `'badge'` displays independently. |
-| `boundaryPadding` | `object` | `{ top: 85, left: 270, right: 8, bottom: 8 }` | Optional offsets to prevent tooltips from overlapping headers/menus. |
+| `children` | `React.ReactNode` | - | The gated component (e.g., Button, IconButton) to be wrapped. |
+| `variant` | `'inline' \| 'badge'` | `'inline'` | The display format of the lock badge. `'inline'` renders the lock icon at the center-right (end adornment), `'badge'` renders it overlaying the bottom-left corner. |
+| `boundaryPadding` | `object` | `{ top: 85, left: 16, right: 8, bottom: 8 }` | Optional offsets to prevent tooltips from overlapping headers/menus. The default is responsive: `{ top: 64, left: 8, right: 8, bottom: 8 }` on mobile and `{ top: 85, left: 16, right: 8, bottom: 8 }` on desktop. |
