@@ -6,7 +6,7 @@ component: permission
 description: The PermissionShield component gates and protects interactive actions, buttons, and navigation elements. It displays a visual lock icon overlay or inline badge when a user lacks the necessary permission keys or capabilities.
 ---
 
-import { PermissionShield, Button } from "@sistent/sistent";
+import { PermissionShield, Button, PermissionSessionContext } from "@sistent/sistent";
 
 The `PermissionShield` component provides a standard design pattern for feature-level permission gating across applications. Rather than silently hiding disabled elements, it keeps them visible (preserving layout continuity) and overlays a visual lock indicator to explain to users why the action is restricted.
 
@@ -62,3 +62,51 @@ The badge variant (`'badge'`) renders the permission badge overlaying the bottom
     </div>
   </ThemeWrapper>
 </Row>
+
+<a id="permission-session-context">
+  <h2>Permission Session Context</h2>
+</a>
+
+The `PermissionSessionContext` component renders the detailed authorization metadata (user identity, organization, assigned roles, and missing keys) that is displayed inside tooltips or cards. It supports two layout variants:
+
+- **Tooltip Variant (`'tooltip'`):** A compact layout designed to fit inside standard hover/click tooltips (used by default inside `PermissionShield`).
+- **Card Variant (`'card'`):** A theme-aware, scaled-up layout designed to be embedded directly into custom cards, sidebars, or full-page 403/Forbidden error screens.
+
+### Tooltip Layout
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ padding: "16px", background: "#1A1A1A", borderRadius: "8px", maxWidth: "360px", width: "100%" }}>
+      <PermissionSessionContext
+        variant="tooltip"
+        permissionKey={{
+          id: "delete_connection",
+          category: "Lifecycle Management",
+          subcategory: "Connections",
+          function: "Delete a connection",
+          description: "Delete a connection"
+        }}
+      />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+### Card Layout
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ width: "100%", maxWidth: "450px" }}>
+      <PermissionSessionContext
+        variant="card"
+        permissionKey={{
+          id: "delete_connection",
+          category: "Lifecycle Management",
+          subcategory: "Connections",
+          function: "Delete a connection",
+          description: "Delete a connection"
+        }}
+      />
+    </div>
+  </ThemeWrapper>
+</Row>
+

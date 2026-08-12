@@ -4,7 +4,7 @@ component: permission
 description: Integration details, code examples, and API references for the PermissionShield component.
 ---
 
-import { PermissionShield, Button } from "@sistent/sistent";
+import { PermissionShield, Button, PermissionSessionContext } from "@sistent/sistent";
 
 The `PermissionShield` component acts as a high-level wrapper to restrict and decorate interactive components.
 
@@ -106,6 +106,48 @@ export const GatedConnectionsButton = () => (
 );`} />
 </div>
 
+<a id="permission-session-context-usage">
+  <h2>Permission Session Context</h2>
+</a>
+
+Use `PermissionSessionContext` to embed permission details directly inside custom components or full-page 403 authorization layouts without utilizing tooltips.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ width: "100%", maxWidth: "450px" }}>
+        <PermissionSessionContext
+          variant="card"
+          permissionKey={{
+            id: "delete_connection",
+            category: "Lifecycle Management",
+            subcategory: "Connections",
+            function: "Delete a connection",
+            description: "Delete a connection"
+          }}
+        />
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="permission-session-context-card" collapsible code={`import { PermissionSessionContext } from "@sistent/sistent";
+
+export const ForbiddenPage = () => (
+  <div style={{ padding: "24px" }}>
+    <h2>Access Denied</h2>
+    <PermissionSessionContext
+      variant="card"
+      permissionKey={{
+        id: "delete_connection",
+        category: "Lifecycle Management",
+        subcategory: "Connections",
+        function: "Delete a connection",
+        description: "Delete a connection"
+      }}
+    />
+  </div>
+);`} />
+</div>
+
 <a id="api-reference">
   <h2>API Reference</h2>
 </a>
@@ -118,3 +160,14 @@ export const GatedConnectionsButton = () => (
 | `children` | `React.ReactNode` | - | The gated component (e.g., Button, IconButton) to be wrapped. |
 | `variant` | `'inline' \| 'badge'` | `'inline'` | The display format of the lock badge. `'inline'` renders the lock icon at the center-right (end adornment), `'badge'` renders it overlaying the bottom-left corner. |
 | `boundaryPadding` | `object` | `{ top: 85, left: 16, right: 8, bottom: 8 }` | Optional offsets to prevent tooltips from overlapping headers/menus. The default is responsive: `{ top: 64, left: 8, right: 8, bottom: 8 }` on mobile and `{ top: 85, left: 16, right: 8, bottom: 8 }` on desktop. |
+
+<h3>PermissionSessionContext Props</h3>
+
+| Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `variant` | `'tooltip' \| 'card'` | `'tooltip'` | The layout style for the session context. `'tooltip'` uses compact dark-themed styling, while `'card'` provides theme-aware, scaled-up styling for full-page or card display. |
+| `permissionKey` | `PermissionKeySpec` | - | Optional. When supplied, the component resolves the unmet keys, subcategories, and description automatically. |
+| `displayedKeys` | `Key[]` | - | Optional. Pre-resolved array of permission keys to display details for when manual key resolution is preferred. |
+| `subtitle` | `string` | - | Optional. Pre-resolved subtitle (e.g. "Needs any of: ...") to display below the title. |
+| `categories` | `string[]` | - | Optional. Pre-resolved category labels to display as chips. |
+| `subcategories` | `string[]` | - | Optional. Pre-resolved subcategory labels to display as chips. |

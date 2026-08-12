@@ -35,6 +35,19 @@ When deciding whether to restrict a feature, follow these design system guidelin
   </li>
 </ul>
 
+<h3>Tooltip versus Card Layouts</h3>
+
+When displaying permission details using `PermissionSessionContext`, choose the variant based on the integration context:
+
+<ul>
+  <li>
+    <strong>Tooltip Layout (default):</strong> Use this inside popovers, hover tooltips, and overlay badges (e.g., within `PermissionShield`) to display compact, dark-background metadata without displacing layout elements.
+  </li>
+  <li>
+    <strong>Card Layout:</strong> Use this when embedding permission details directly into the page layout, such as full-page 403 authorization error layouts, settings sidebars, or container panels.
+  </li>
+</ul>
+
 <a id="best-practices">
   <h2>Best Practices</h2>
 </a>
