@@ -97,3 +97,7 @@ default.profraw
 
 # Temporary files
 spreadsheet.csv
+
+# Python cache (Claude skill scripts)
+__pycache__/
+*.pyc
