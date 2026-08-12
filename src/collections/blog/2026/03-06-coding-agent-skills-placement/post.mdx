@@ -27,7 +27,7 @@ import HeroImage from "./hero-image.webp";
 
 <BlogWrapper>
 
-<div class="intro">
+<div className="intro">
   <p>
     AI coding agents are rapidly becoming first-class contributors to open-source projects. You've likely already explored <Link to="/blog/ai/agentsmd-one-file-to-guide-them-all">AGENTS.md</Link>—the universal instruction file that tells any AI agent how to work within your specific codebase. But there's a complementary concept that's gaining just as much traction: <strong>Agent Skills</strong>.
   </p>
@@ -99,7 +99,7 @@ ln -s ../../.agents/skills/deploy-app .claude/skills/deploy-app
 
 This mirrors the exact same strategy recommended for `AGENTS.md` itself: one canonical file, multiple discovery paths via symlinks, zero duplication. Just as you might symlink `AGENTS.md` to `CLAUDE.md` or `.github/copilot-instructions.md`, you can symlink skill folders to each tool's expected location.
 
-<div class="note">
+<div className="note">
   <a href="/blog/ai/agentsmd-one-file-to-guide-them-all">Learn more about the AGENTS.md standard →</a>
 </div>
 
@@ -270,7 +270,7 @@ check the corresponding skill for the authoritative procedure.
 
 This lightweight pointer in `AGENTS.md` ensures agents discover and consult the right skills without you having to include the full procedural detail in your main instruction file—keeping `AGENTS.md` lean and focused on project context.
 
-<div class="tip">
+<div className="tip">
   <h3>💡 The One-File Problem</h3>
   <p>A common mistake is trying to put everything into <code>AGENTS.md</code>. Detailed step-by-step deployment procedures, full API schemas, and runbook-style content bloat the file and pollute the agent's context on every interaction. Pull operational procedures into skills; keep <code>AGENTS.md</code> focused on architecture, conventions, and project-level context.</p>
 </div>
