@@ -1,7 +1,0 @@
-{
-  "name": "Layer5",
-  "hostRequirements": {
-    "cpus": 4,
-    "memory": "16gb"
-  }
-}
