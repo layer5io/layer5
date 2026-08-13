@@ -3,6 +3,25 @@ import { Container } from "../../reusecore/Layout";
 import L404SectionWrapper from "./404.style";
 import Button from "../../reusecore/Button";
 
+const sanitizeUrl = (url) => {
+  try {
+    const parsed = new URL(url);
+    return `${parsed.origin}${parsed.pathname}`;
+  } catch {
+    return "Unknown";
+  }
+};
+
+const getBrowserName = (userAgent) => {
+  if (!userAgent) return "Unknown Browser";
+  if (/Edg\//.test(userAgent)) return "Edge";
+  if (/OPR\//.test(userAgent)) return "Opera";
+  if (/Firefox\//.test(userAgent)) return "Firefox";
+  if (/Chrome\//.test(userAgent)) return "Chrome";
+  if (/Safari\//.test(userAgent)) return "Safari";
+  return "Unknown Browser";
+};
+
 const messages = [
   {
     headline: "404: Not Found in This Namespace",
@@ -76,6 +95,9 @@ const messages = [
 
 const L404 = () => {
   const [message, setMessage] = useState(null);
+  const [reportUrl, setReportUrl] = useState(
+    "https://github.com/layer5io/layer5/issues/new?template=bug_report.md",
+  );
 
   const getRandomMessage = () => {
     return messages[Math.floor(Math.random() * messages.length)];
@@ -83,10 +105,61 @@ const L404 = () => {
 
   useEffect(() => {
     setMessage(getRandomMessage());
+
+    if (typeof window !== "undefined") {
+      const brokenUrl = sanitizeUrl(window.location.href);
+      const referrer = document.referrer
+        ? sanitizeUrl(document.referrer)
+        : "Direct / Bookmark";
+      const platform = navigator.platform || "Unknown OS";
+      const browserName = getBrowserName(navigator.userAgent);
+      const issueTitle = encodeURIComponent("[404] Broken Link Found");
+      const issueBody = encodeURIComponent(
+        "### Description\n\n" +
+          "Broken link encountered on the Layer5 website.\n\n" +
+          `- Broken URL: ${brokenUrl}\n` +
+          `- Referrer: ${referrer}\n\n` +
+          "### Expected Behavior\n\n" +
+          "The requested page should resolve successfully instead of returning a 404 page.\n\n" +
+          "### Screenshots\n\n" +
+          "N/A\n\n" +
+          "### Environment:\n" +
+          `- Host OS: ${platform}\n` +
+          `- Browser: ${browserName}\n\n` +
+          "---\n\n" +
+          '<img src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/5-light-small.svg" width="24px" align="left" /><h2>Contributor Resources and <a href="https://layer5.io/community/handbook">Handbook</a></h2>\n\n' +
+          "The layer5.io website uses Gatsby, React, and GitHub Pages. Site content is found under the [`master` branch](https://github.com/layer5io/layer5/tree/master).\n" +
+          "- 📚 See [contributing instructions](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md).\n" +
+          "- 🎨 Wireframes and [designs for Layer5 site](https://www.figma.com/file/5ZwEkSJwUPitURD59YHMEN/Layer5-Designs) in Figma [(open invite)](https://www.figma.com/team_invite/redeem/GvB8SudhEOoq3JOvoLaoMs)\n" +
+          "- 🙋🏾🙋🏼 Questions: [Discussion Forum](https://discuss.meshery.io) and [Community Slack](https://slack.layer5.io).\n\n" +
+          '<img src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/buttons/community.webp" height="22px" align="left" />Join the Layer5 Community by submitting your [community member form](https://layer5.io/newcomer).',
+      );
+      setReportUrl(
+        `https://github.com/layer5io/layer5/issues/new?template=bug_report.md&title=${issueTitle}&body=${issueBody}`,
+      );
+    }
   }, []);
 
   const handleNewMessage = () => {
     setMessage(getRandomMessage());
+  };
+
+  const handleReportBrokenLink = (e) => {
+    if (e) {
+      e.preventDefault();
+    }
+    if (typeof window !== "undefined") {
+      const referrer = document.referrer;
+      if (!referrer) {
+        const confirmReport = window.confirm(
+          "It looks like you may have accessed this page directly. If you manually entered the URL, please double-check it before reporting a broken link.\n\nDo you still want to continue?",
+        );
+        if (!confirmReport) {
+          return;
+        }
+      }
+      window.open(reportUrl, "_blank", "noopener,noreferrer");
+    }
   };
 
   if (!message) return null; // Prevents flash before random message loads
@@ -115,6 +188,15 @@ const L404 = () => {
             aria-label="show-another-funny-404-message"
           >
             Show another message
+          </Button>
+
+          <Button
+            id="report-broken-link"
+            aria-label="report-broken-link-button"
+            $secondary
+            onClick={handleReportBrokenLink}
+          >
+            Report Broken Link
           </Button>
         </div>
       </Container>
