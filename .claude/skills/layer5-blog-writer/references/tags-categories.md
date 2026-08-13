@@ -2,6 +2,11 @@
 
 Always prefer existing values. Introduce a new one only if nothing fits.
 
+**This file is the source of truth.** `scripts/check_post.py` parses the tables and lists below to
+validate a post, and also cross-checks them against `CATEGORY_TONE` in `scripts/mesh_palette.py`.
+Adding a category here without adding it there (or the reverse) is a hard error, so the two cannot
+drift apart silently the way `Security`, `Internship Programs`, and `Programs` previously did.
+
 **Casing matters.** Tags and categories must match the exact casing shown below. Inconsistent casing (e.g. `AI` vs `ai`, `Opensource` vs `Open Source`) fragments the taxonomy and breaks tag-based filtering on the site. Copy the tag string exactly as listed.
 
 ## Categories (exactly one per post)
@@ -26,6 +31,7 @@ Always prefer existing values. Introduce a new one only if nothing fits.
 | Performance          | Benchmarking, load testing, optimization, Nighthawk          |
 | Platform Engineering | IDP, platform teams, developer experience, GitOps            |
 | Programs             | MeshMate, Ambassador, community programs                     |
+| Security             | Authn/authz, secrets, certificates, supply chain, policy     |
 | Service Mesh         | Istio, Linkerd, Consul, comparisons                          |
 | WebAssembly          | WASM, WASI                                                   |
 | AWS                  | AWS-specific content, EKS                                    |
