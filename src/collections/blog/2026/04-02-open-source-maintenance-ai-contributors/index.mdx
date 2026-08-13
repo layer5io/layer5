@@ -3,8 +3,8 @@ title: "Open Source Maintenance in the Age of AI Contributors"
 subtitle: "When every developer has an AI copilot, the signal-to-noise problem in your repo gets much harder. Here's how Layer5 handles it."
 date: 2026-04-02 10:00:00 -0500
 author: Layer5 Team
-thumbnail: ./hero-image.svg
-darkthumbnail: ./hero-image.svg
+thumbnail: ./hero-image.jpg
+darkthumbnail: ./hero-image.jpg
 description: "AI tools have flooded open source repos with well-formatted but shallow PRs. Here's how to raise the quality bar without closing the door."
 type: Blog
 category: Open Source
@@ -70,7 +70,7 @@ The instinct when PR volume spikes is to add friction: longer PR templates, stri
   <p>Evidence that the contributor ran the project locally. A screenshot, a log snippet, a failing test they observed before their fix. If they can show you the problem they solved, they almost certainly understood what they were changing.</p>
 </Callout>
 
-At Layer5, the <Link to="/community/meshmates">MeshMates program</Link> pairs new contributors with experienced ones before they submit their first PR. Meshmates show up in Slack, answer questions, and give newcomers the context they need to make a meaningful change. The result is that most contributors who go through that path ship something real on their first merged PR - not a typo fix, but an actual feature or a bug fix that required understanding the codebase.
+At Layer5, the <Link to="/community/meshmates">MeshMates program</Link> pairs new contributors with experienced ones before they submit their first PR. MeshMates show up in Slack, answer questions, and give newcomers the context they need to make a meaningful change. The result is that most contributors who go through that path ship something real on their first merged PR - not a typo fix, but an actual feature or a bug fix that required understanding the codebase.
 
 Good first issues matter here too. A "good first issue" that is actually solvable with a text search and a one-line change is not a good first issue - it's a magnet for low-effort contributions. A good first issue is scoped small but requires understanding: "the `mesheryctl design validate` command returns exit code 0 when validation fails - find where the exit code is set and fix it to return non-zero on failure." That requires running the CLI, understanding the flow, and knowing where to look. An AI tool that doesn't understand your codebase can't fake that.
 
