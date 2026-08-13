@@ -4,6 +4,8 @@
 	http://jedwatson.github.io/classnames
 */
 
+/*! js-yaml 5.2.3 https://github.com/nodeca/js-yaml @license MIT */
+
 /**
  * @license React
  * react-is.production.js
