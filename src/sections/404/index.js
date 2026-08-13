@@ -3,6 +3,25 @@ import { Container } from "../../reusecore/Layout";
 import L404SectionWrapper from "./404.style";
 import Button from "../../reusecore/Button";
 
+const sanitizeUrl = (url) => {
+  try {
+    const parsed = new URL(url);
+    return `${parsed.origin}${parsed.pathname}`;
+  } catch {
+    return "Unknown";
+  }
+};
+
+const getBrowserName = (userAgent) => {
+  if (!userAgent) return "Unknown Browser";
+  if (/Edg\//.test(userAgent)) return "Edge";
+  if (/OPR\//.test(userAgent)) return "Opera";
+  if (/Firefox\//.test(userAgent)) return "Firefox";
+  if (/Chrome\//.test(userAgent)) return "Chrome";
+  if (/Safari\//.test(userAgent)) return "Safari";
+  return "Unknown Browser";
+};
+
 const messages = [
   {
     headline: "404: Not Found in This Namespace",
@@ -88,10 +107,12 @@ const L404 = () => {
     setMessage(getRandomMessage());
 
     if (typeof window !== "undefined") {
-      const brokenUrl = window.location.href;
-      const referrer = document.referrer || "Direct / Bookmark";
+      const brokenUrl = sanitizeUrl(window.location.href);
+      const referrer = document.referrer
+        ? sanitizeUrl(document.referrer)
+        : "Direct / Bookmark";
       const platform = navigator.platform || "Unknown OS";
-      const userAgent = navigator.userAgent;
+      const browserName = getBrowserName(navigator.userAgent);
       const issueTitle = encodeURIComponent("[404] Broken Link Found");
       const issueBody = encodeURIComponent(
         "### Description\n\n" +
@@ -104,7 +125,7 @@ const L404 = () => {
           "N/A\n\n" +
           "### Environment:\n" +
           `- Host OS: ${platform}\n` +
-          `- Browser: ${userAgent}\n\n` +
+          `- Browser: ${browserName}\n\n` +
           "---\n\n" +
           '<img src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/5-light-small.svg" width="24px" align="left" /><h2>Contributor Resources and <a href="https://layer5.io/community/handbook">Handbook</a></h2>\n\n' +
           "The layer5.io website uses Gatsby, React, and GitHub Pages. Site content is found under the [`master` branch](https://github.com/layer5io/layer5/tree/master).\n" +

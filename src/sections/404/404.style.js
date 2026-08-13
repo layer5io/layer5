@@ -41,7 +41,7 @@ const L404SectionWrapper = styled.section`
       width: 100%;
       max-width: 280px;
       margin: 0;
-      color: black;
+      color: ${(props) => props.theme.black};
     }
   }
 `;
