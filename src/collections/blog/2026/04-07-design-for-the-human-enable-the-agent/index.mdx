@@ -3,9 +3,9 @@ title: "Design for the Human, Enable the Agent"
 subtitle: "CLIs are not APIs. That principle hasn't changed - it's just become urgent."
 date: "2026-04-07 10:00:00 -0500"
 author: Lee Calcote
-thumbnail: ./hero-image.svg
-darkthumbnail: ./hero-image.svg
-description: "CLIs are human interfaces - not APIs. But great CLI design has always enabled scriptability. Now that same principle enables agentic AI. Here's how Meshery CLI is being redesigned for both."
+thumbnail: ./hero-image.jpg
+darkthumbnail: ./hero-image.jpg
+description: "CLIs are human interfaces, not APIs - but scriptability has always mattered. Here's how mesheryctl is being redesigned to serve both humans and AI agents."
 type: Blog
 category: AI
 tags:
@@ -14,6 +14,7 @@ tags:
   - Meshery
   - Engineering
   - Platform Engineering
+featured: false
 resource: true
 published: true
 ---
@@ -133,11 +134,11 @@ The `mesheryctl relationship` surface handles this with a `validate` subcommand 
 
 ## The MCP Layer - and Why It's Not Enough on Its Own
 
-There's a lively debate in the industry right now about whether the Model Context Protocol (MCP) is the right abstraction for AI-agent-to-tool integration. MCP adoption has exploded - [the number of MCP servers tripled to over 1,400 between August 2025 and February 2026](https://glama.ai/blog/2026-02-18-mcp-servers-growing-fast). [OpenAI adopted it](https://openai.com/index/new-tools-and-features-in-the-responses-api/). [Google DeepMind endorsed it](https://deepmind.google/discover/blog/mcp/). The momentum is real.
+There's a lively debate in the industry right now about whether the Model Context Protocol (MCP) is the right abstraction for AI-agent-to-tool integration. MCP adoption has been rapid - [OpenAI shipped full MCP support in ChatGPT](https://www.infoq.com/news/2025/10/chat-gpt-mcp/), and [Google DeepMind committed to supporting it across Gemini](https://techcrunch.com/2025/04/09/google-says-itll-embrace-anthropics-standard-for-connecting-ai-models-to-data/). The momentum is real.
 
 But MCP is not a replacement for a well-designed CLI. It's a complementary layer. MCP excels at governance - OAuth-based authentication, per-user permissions, structured audit trails, multi-agent orchestration across enterprise boundaries. These are real requirements that CLIs don't natively solve.
 
-Where MCP stumbles is efficiency. [Benchmarks show CLI-based agent interactions achieving 28% higher task completion rates with equivalent token budgets](https://www.anthropic.com/engineering/claude-code-best-practices). MCP tool descriptions can consume tens of thousands of tokens - [GitHub's MCP server exposes over 40,000 tokens of tool definitions](https://github.com/github/github-mcp-server). That's context window space the agent can't use for reasoning. CLI interactions are leaner: the agent calls a command, reads stdout, moves on.
+Where MCP can stumble is efficiency. Independent benchmarks comparing CLI and MCP interfaces for equivalent agent tasks have found [MCP connections failing at meaningfully higher rates than their CLI counterparts](https://www.scalekit.com/blog/mcp-vs-cli-use), and verbose tool-definition schemas eating into the context budget an agent needs for reasoning. CLI interactions are leaner by construction: the agent calls a command, reads stdout, moves on.
 
 The Meshery CLI spec proposes a `mesheryctl mcp` command that exposes the CLI's capabilities as an MCP surface. The CLI does the work. MCP provides the governance wrapper. Both layers exist because they solve different problems.
 
