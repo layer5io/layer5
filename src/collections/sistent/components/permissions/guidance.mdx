@@ -115,7 +115,7 @@ When users encounter a 403 Access Denied page, the `useAccessibleOrgs` hook quer
 </a>
 
 * **Non-Obstructive Dimming:** Guarded children receive `opacity: 0.5` and `pointer-events: none` while remaining in the accessibility tree.
-* **Focusable Shield Trigger:** The shield icon trigger is keyboard-focusable with `tabIndex={0}` and triggers via <kbd>Enter</kbd> or <kbd>Space</kbd>.
+* **Focusable Shield Trigger:** The shield icon trigger is keyboard-focusable with `tabIndex="0"` and triggers via <kbd>Enter</kbd> or <kbd>Space</kbd>.
 * **Screen Reader Labels:** Copy triggers supply descriptive `aria-label` tags (e.g. `aria-label="Copy key ID for Create Workspace"`).
 * **Click-Away Dismissal:** Tooltips automatically close when the user clicks outside or focuses another element.
 
