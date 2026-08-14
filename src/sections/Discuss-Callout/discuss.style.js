@@ -58,7 +58,7 @@ const DiscussWrapper = styled.div`
                     margin-top: 1rem;
                 }
                 &:hover,
-                &:focus {
+                &:focus:not(:focus-visible) {
                    outline: none;
                 }
                 &:hover{

@@ -777,7 +777,6 @@ const NavigationWrap = styled.header`
   .toggle {
     --size: 1.5rem;
     appearance: none;
-    outline: none;
     cursor: pointer;
     width: var(--size);
     height: var(--size);
