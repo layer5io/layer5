@@ -114,8 +114,8 @@
   "ac581ebe.js": "ac581ebe-36cccd14d56d90dda80d.js",
   "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff.js": "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff-a9b16981f193d3ae4261.js",
   "afac10e60d9d564616d215c6185520a7c3359edc.js": "afac10e60d9d564616d215c6185520a7c3359edc-4c7f9b009a3d719d844c.js",
-  "app-709fbd8ca10e76781faa.js.LICENSE.txt": "app-709fbd8ca10e76781faa.js.LICENSE.txt",
-  "app.js": "app-709fbd8ca10e76781faa.js",
+  "app-c93ba3e200c28c744865.js.LICENSE.txt": "app-c93ba3e200c28c744865.js.LICENSE.txt",
+  "app.js": "app-c93ba3e200c28c744865.js",
   "b3a4868e3083275025dca472f7350001ee397eb9.js": "b3a4868e3083275025dca472f7350001ee397eb9-e3e6295c1618dd9e60a6.js",
   "b5f6012b.js": "b5f6012b-a7763041fda46eef5ffb.js",
   "b749cdf00a0f1965cce413ea29bc8d21827957cc.js": "b749cdf00a0f1965cce413ea29bc8d21827957cc-0461d3ac0233bba3e8b8.js",
@@ -1339,8 +1339,8 @@
   "component---src-templates-sistent-component-js-content-file-path-src-collections-sistent-components-paper-code-mdx.js": "component---src-templates-sistent-component-js-content-file-path-src-collections-sistent-components-paper-code-mdx-9d75ac58d0857dfe720d.js",
   "component---src-templates-sistent-component-js-content-file-path-src-collections-sistent-components-paper-guidance-mdx.js": "component---src-templates-sistent-component-js-content-file-path-src-collections-sistent-components-paper-guidance-mdx-5f7b426fc261e57831ee.js",
   "component---src-templates-sistent-component-js-content-file-path-src-collections-sistent-components-paper-index-mdx.js": "component---src-templates-sistent-component-js-content-file-path-src-collections-sistent-components-paper-index-mdx-5532e5571957c0480794.js",
-  "component---src-templates-sistent-component-js-content-file-path-src-collections-sistent-components-permissions-code-mdx.js": "component---src-templates-sistent-component-js-content-file-path-src-collections-sistent-components-permissions-code-mdx-7e8d2c34cbfeff9b67ff.js",
-  "component---src-templates-sistent-component-js-content-file-path-src-collections-sistent-components-permissions-guidance-mdx.js": "component---src-templates-sistent-component-js-content-file-path-src-collections-sistent-components-permissions-guidance-mdx-9994f591987c762ea6e8.js",
+  "component---src-templates-sistent-component-js-content-file-path-src-collections-sistent-components-permissions-code-mdx.js": "component---src-templates-sistent-component-js-content-file-path-src-collections-sistent-components-permissions-code-mdx-2752d17f87626f6c2e74.js",
+  "component---src-templates-sistent-component-js-content-file-path-src-collections-sistent-components-permissions-guidance-mdx.js": "component---src-templates-sistent-component-js-content-file-path-src-collections-sistent-components-permissions-guidance-mdx-bff0a9574cdb85fc7a5a.js",
   "component---src-templates-sistent-component-js-content-file-path-src-collections-sistent-components-permissions-index-mdx.js": "component---src-templates-sistent-component-js-content-file-path-src-collections-sistent-components-permissions-index-mdx-5a725ed9073072b3cd3e.js",
   "component---src-templates-sistent-component-js-content-file-path-src-collections-sistent-components-popper-code-mdx.js": "component---src-templates-sistent-component-js-content-file-path-src-collections-sistent-components-popper-code-mdx-41377e5551a0bb8e9e33.js",
   "component---src-templates-sistent-component-js-content-file-path-src-collections-sistent-components-popper-guidance-mdx.js": "component---src-templates-sistent-component-js-content-file-path-src-collections-sistent-components-popper-guidance-mdx-1bcdebb9d0717e1e0ee5.js",
@@ -2120,5 +2120,5 @@
   "static/yash-sharma.webp": "static/yash-sharma-54aa26b6e5743f0557cfc76aa9797f2d.webp",
   "static/yogi.webp": "static/yogi-d00ca1cc48ab74938a23d4359ef3fb01.webp",
   "styles.css": "styles.1eb12dd1c91dee179b74.css",
-  "webpack-runtime.js": "webpack-runtime-cfd8870ff14f0451fd10.js"
+  "webpack-runtime.js": "webpack-runtime-b39f189890057d4ece40.js"
 }
