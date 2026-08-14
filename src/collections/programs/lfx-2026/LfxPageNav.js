@@ -11,7 +11,7 @@ const NavCard = styled.nav`
   background: ${(props) => props.theme.grey1D1D1DToGreyFAFAFA};
   border: 1px solid ${(props) => props.theme.grey1D1817ToGreyE6E6E6};
   border-radius: 7px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   z-index: 99;
   @media (max-width: 900px) {
@@ -27,11 +27,11 @@ const NavTitle = styled.div`
 `;
 
 const NavList = styled.ul`
-  list-style: none !important;
+  list-style: none;
   margin: 0;
   padding-left: 1rem;
   li {
-    list-style: none !important;
+    list-style: none;
     margin-bottom: 0.5rem;
   }
   li a {
@@ -47,6 +47,21 @@ const NavList = styled.ul`
   li a.active {
     color: #00b39f;
     font-weight: 600;
+  }
+`;
+
+const SubNavList = styled.ul`
+  list-style: none !important;
+  margin: 0.35rem 0 0 0;
+  padding-left: 0.85rem;
+  border-left: 1px solid ${(props) => props.theme.grey1D1817ToGreyE6E6E6};
+  li {
+    list-style: none !important;
+    margin-bottom: 0.35rem;
+  }
+  li a {
+    font-size: 0.8rem;
+    opacity: 0.85;
   }
 `;
 
@@ -83,7 +98,11 @@ const LfxPageNav = ({ items }) => {
       setShowTop(scrolled >= total - 100);
 
       let current = "";
-      items.forEach((item) => {
+      const flatItems = items.flatMap((item) => [
+        item,
+        ...(item.children || []),
+      ]);
+      flatItems.forEach((item) => {
         const el = document.querySelector(item.href);
         if (el && window.scrollY >= el.offsetTop - 140) {
           current = item.href;
@@ -92,6 +111,7 @@ const LfxPageNav = ({ items }) => {
       setActiveHref(current);
     };
     window.addEventListener("scroll", onScroll);
+    onScroll();
     return () => window.removeEventListener("scroll", onScroll);
   }, [items]);
 
@@ -102,7 +122,30 @@ const LfxPageNav = ({ items }) => {
         <NavList>
           {items.map((item) => (
             <li key={item.href}>
-              <a href={item.href} className={activeHref === item.href ? "active" : ""}>{item.label}</a>
+              <a
+                href={item.href}
+                className={activeHref === item.href ? "active" : ""}
+                aria-current={activeHref === item.href ? "location" : undefined}
+              >
+                {item.label}
+              </a>
+              {item.children && (
+                <SubNavList>
+                  {item.children.map((child) => (
+                    <li key={child.href}>
+                      <a
+                        href={child.href}
+                        className={activeHref === child.href ? "active" : ""}
+                        aria-current={
+                          activeHref === child.href ? "location" : undefined
+                        }
+                      >
+                        {child.label}
+                      </a>
+                    </li>
+                  ))}
+                </SubNavList>
+              )}
             </li>
           ))}
         </NavList>

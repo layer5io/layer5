@@ -79,7 +79,7 @@ Technical writers and other contributors are what comprise Layer5 - an open orga
 ### Meshery
 <br />
 
-#### Migration of docs.meshery.io from Jekyll to Hugo
+<h4 id="spring-docs-migration-jekyll-to-hugo">Migration of docs.meshery.io from Jekyll to Hugo</h4>
 
 **Description**: The Meshery documentation [docs.meshery.io](https://docs.meshery.io) is a critical resource for users and contributors. Currently built using Jekyll, the site faces limitations in build speed, scalability, and long-term maintainability. Hugo, a modern static site generator, offers significantly faster build times, better content organization, and an improved developer experience. This internship focuses on migrating the entire [docs.meshery.io](https://docs.meshery.io) site from Jekyll to the Hugo framework, using docs.layer5.io (already implemented in Hugo) as a reference architecture. The migration will involve porting all documentation content, assets, layouts, and configuration while preserving URLs, SEO, contributor workflows, and existing auto-generated documentation files.
 - Expected Outcome: 
@@ -95,7 +95,7 @@ Technical writers and other contributors are what comprise Layer5 - an open orga
 - Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to ="mailto:kate.suttons2337@gmail.com">Kate Suttons</Link>
 - Upstream Issue: [https://github.com/meshery/meshery/issues/17095](https://github.com/meshery/meshery/issues/17095)
 
-#### Relationships for AWS services
+<h4 id="spring-relationships-aws-services">Relationships for AWS services</h4>
 
 **Description**: Meshery Models are declarative representations of infrastructure and applications. Within these models, Relationships define how different Components (e.g., Kubernetes resources, Cloud services) interact and depend on each other. These relationships are crucial for visualizing, understanding, and managing complex cloud native systems. This internship focuses on significantly expanding the breadth and depth of Meshery Relationships across a wide array of technologies supported by Meshery. As Meshery continues to integrate with more cloud-native technologies (Kubernetes, public clouds, and all CNCF projects), there's a growing need to accurately model the intricate relationships between their components - vital for providing users with comprehensive insights and control over their deployments.
 - Recommended Skills: DevOps, systems administration, solutions architecture. Experience with Kubernetes, AWS and its services.
@@ -110,7 +110,7 @@ Technical writers and other contributors are what comprise Layer5 - an open orga
 - Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="/community/members/sangram-rath">Sangram Rath</Link>
 - Upstream Issue: [https://github.com/meshery/meshery/issues/17096](https://github.com/meshery/meshery/issues/17096)
 
-#### Adapter for AI and LLMs
+<h4 id="spring-adapter-ai-llms">Adapter for AI and LLMs</h4>
 
 **Description**:  Meshery is the open-source cloud native manager that empowers platform engineers to design and operate infrastructure. As infrastructure complexity grows, the need for intelligent assistance becomes critical. This project focuses on developing and enhancing a dedicated AI Adapter and AI Connections for Meshery. This adapter serves as the bridge between Meshery’s core orchestration engine and various Large Language Models (LLMs). The goal is to enable "Natural Language to Infrastructure" capabilities, allowing users to describe their architectural intent (e.g., "Deploy a highly available Kubernetes cluster on AWS with Prometheus monitoring") and have Meshery auto-generate the visual topology and configuration manifests. The intern will work on decoupling the AI logic from the core platform, allowing users to "Bring Your Own Model" (BYOM)—supporting both cloud-based providers (OpenAI, Anthropic) and local inference runners (Ollama, LocalAI).
 - Recommended Skills:  
@@ -133,7 +133,7 @@ Technical writers and other contributors are what comprise Layer5 - an open orga
 - Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>,<Link to = "mailto:rian.cteulp@gmail.com">Rian Cteulp</Link>
 - Upstream Issue: [https://github.com/meshery/meshery/issues/17097](https://github.com/meshery/meshery/issues/17097)
 
-#### Graph Database Integration
+<h4 id="spring-graph-database-integration">Graph Database Integration</h4>
 
 **Description:** Meshery's *MeshSync* component acts as the real-time discovery engine, maintaining an up-to-date snapshot of all managed infrastructure. Currently, mapping the complex relationships between these resources (e.g., a Service selecting Pods which are mounted to PVCs) relies on relational or in-memory lookups that can become inefficient at scale. This project involves integrating a dedicated graph database (or an embedded graph processing library) into Meshery's architecture. The goal is to ingest discovered Kubernetes resources as "nodes" and their associations (OwnerReferences, Label Selectors, Annotations) as "edges." This shift will enable highly efficient traversal and querying of infrastructure data, powering more advanced capabilities like topology visualization, impact analysis, and dependency mapping.
 - Recommended Skills:
@@ -154,7 +154,7 @@ Technical writers and other contributors are what comprise Layer5 - an open orga
 - Mentor(s): <Link to="/community/members/lee-calcote">Lee Calcote</Link>, <Link to="mailto:james.horton2337@gmail.com">James Horton</Link>
 - Issue: [https://github.com/meshery/meshery/issues/17098](https://github.com/meshery/meshery/issues/17098)
 
-#### Workflow Engine in Meshery
+<h4 id="spring-workflow-engine">Workflow Engine in Meshery</h4>
 
 - Description:
  Integrate a new architectural component into Meshery: a workflow engine, using Temporal. This project involves shifting Meshery off of sqlite over to postgres using gorm (golang). Interns will familiarize with concepts of orchestration engines, including chaining workflows, and content lifecycle management.
@@ -169,7 +169,7 @@ Technical writers and other contributors are what comprise Layer5 - an open orga
 ### Meshery
 <br />
 
-#### Relationships and Solutions Architecture of Cloud Native Deployments
+<h4 id="summer-relationships-solutions-architecture">Relationships and Solutions Architecture of Cloud Native Deployments</h4>
 
 CNCF - Meshery: Relationships and Solutions Architecture of Cloud Native Deployments (2026 Term 2)
 
@@ -197,7 +197,7 @@ The next phase focuses on Cloud Solution Architecture through workload design by
   - [https://github.com/meshery/meshery/issues/14796](https://github.com/meshery/meshery/issues/14796)
 - LFX URL:
 
-#### Adapter for AI and LLMs
+<h4 id="summer-adapter-ai-llms">Adapter for AI and LLMs</h4>
 
 CNCF - Meshery: Adapter for AI and LLMs (2026 Term 2)
 
@@ -225,7 +225,7 @@ CNCF - Meshery: Adapter for AI and LLMs (2026 Term 2)
 - Upstream Issue: [https://github.com/meshery/meshery/issues/19092](https://github.com/meshery/meshery/issues/19092)
 - LFX URL:
 
-#### Agentic CI Pipelines: GitHub Action Workflow Overhaul
+<h4 id="summer-agentic-ci-pipelines">Agentic CI Pipelines: GitHub Action Workflow Overhaul</h4>
 
 CNCF - Meshery: Agentic CI Pipelines: GitHub Action Workflow Overhaul (2026 Term 2)
 
@@ -244,7 +244,7 @@ CNCF - Meshery: Agentic CI Pipelines: GitHub Action Workflow Overhaul (2026 Term
 - Issue: [https://github.com/meshery/meshery/issues/18795](https://github.com/meshery/meshery/issues/18795)
 - LFX URL:
 
-#### Meshery Models Support for OCI Registries
+<h4 id="summer-models-oci-registries">Meshery Models Support for OCI Registries</h4>
 
 CNCF - Meshery: Meshery Models Support for OCI Registries (2026 Term 2)
 
@@ -401,8 +401,25 @@ We interact daily over Slack, and have an open source project [meeting everyday]
 
 </div>
 <LfxPageNav items={[
-  { href: "#spring-2026", label: "Spring 2026 Projects" },
-  { href: "#summer-2026", label: "Summer 2026 Projects" },
+  {
+    href: "#spring-2026", label: "Spring 2026 Projects",
+    children: [
+      { href: "#spring-docs-migration-jekyll-to-hugo", label: "Migration of docs.meshery.io from Jekyll to Hugo" },
+      { href: "#spring-relationships-aws-services", label: "Relationships for AWS services" },
+      { href: "#spring-adapter-ai-llms", label: "Adapter for AI and LLMs" },
+      { href: "#spring-graph-database-integration", label: "Graph Database Integration" },
+      { href: "#spring-workflow-engine", label: "Workflow Engine in Meshery" },
+    ],
+  },
+  {
+    href: "#summer-2026", label: "Summer 2026 Projects",
+    children: [
+      { href: "#summer-relationships-solutions-architecture", label: "Relationships and Solutions Architecture of Cloud Native Deployments" },
+      { href: "#summer-adapter-ai-llms", label: "Adapter for AI and LLMs" },
+      { href: "#summer-agentic-ci-pipelines", label: "Agentic CI Pipelines: GitHub Action Workflow Overhaul" },
+      { href: "#summer-models-oci-registries", label: "Meshery Models Support for OCI Registries" },
+    ],
+  },
   { href: "#fall-2026", label: "Fall 2026 Projects" },
   { href: "#additional-info", label: "Additional Information" },
 ]} />
