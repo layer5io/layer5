@@ -1,12 +1,16 @@
 ---
-title: Permission Shield Code
-component: permission-shield
+title: Permissions Code
+component: permissions
 description: Implementation examples, props specifications, hooks, and integration code for PermissionShield, PermissionProvider, PermissionSessionContext, and useAccessibleOrgs.
 ---
 
 import {
   Box,
   Button,
+  IconButton,
+  MenuItem,
+  ListItem,
+  ListItemButton,
   PermissionProvider,
   PermissionSessionContext,
   PermissionShield
@@ -64,37 +68,85 @@ export const App = ({ children, activeUser, currentOrg }) => {
   );
 };`,
 
-  `// 2. Guard an in-page affordance with PermissionShield (Inline variant)
-import { PermissionShield, Button } from "@sistent/sistent";
-import { Keys } from "@meshery/schemas/permissions";
-
-export const CreateWorkspaceAction = () => {
-  return (
-    <PermissionShield permissionKey={Keys.WorkspaceManagementCreateWorkspace} variant="inline">
-      <Button variant="contained" color="primary">
-        Create Workspace
-      </Button>
-    </PermissionShield>
-  );
-};`,
-
-  `// 3. Compact Badge Variant for toolbars or icon buttons
-import { PermissionShield, IconButton } from "@sistent/sistent";
+  `// 2. Native Component Gating: Button and IconButton
+import { Button, IconButton } from "@sistent/sistent";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Keys } from "@meshery/schemas/permissions";
 
-export const DeleteAffordance = () => {
-  return (
-    <PermissionShield permissionKey={Keys.WorkspaceManagementDeleteWorkspace} variant="badge">
-      <IconButton color="error" aria-label="Delete Workspace">
-        <DeleteIcon />
-      </IconButton>
-    </PermissionShield>
-  );
-};`,
+export const ActionToolbar = () => (
+  <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+    {/* Button with showShield (inline shield on deny) */}
+    <Button
+      variant="contained"
+      color="primary"
+      permissionKey={Keys.WorkspaceManagementCreateWorkspace}
+      permissionAction="showShield"
+    >
+      Create Workspace
+    </Button>
 
-  `// 4. Composite Key Set (anyOf / allOf)
-import { PermissionShield, Button } from "@sistent/sistent";
+    {/* IconButton with showShield (badge shield on deny) */}
+    <IconButton
+      color="error"
+      aria-label="Delete Workspace"
+      permissionKey={Keys.WorkspaceManagementDeleteWorkspace}
+      permissionAction="showShield"
+    >
+      <DeleteIcon />
+    </IconButton>
+
+    {/* Button with hide (renders null on deny) */}
+    <Button
+      variant="outlined"
+      permissionKey={Keys.IdentityAccessManagementEditOrganization}
+      permissionAction="hide"
+    >
+      Org Settings
+    </Button>
+  </div>
+);`,
+
+  `// 3. Native Component Gating: MenuItem, ListItem, and ListItemButton
+import { MenuItem, ListItem, ListItemButton, ListItemText, Menu } from "@sistent/sistent";
+import { Keys } from "@meshery/schemas/permissions";
+
+export const UserActionsMenu = ({ anchorEl, open, onClose }) => (
+  <Menu anchorEl={anchorEl} open={open} onClose={onClose}>
+    {/* MenuItem automatically shows shield tooltip if unauthorized */}
+    <MenuItem
+      permissionKey={Keys.IdentityAccessManagementAssignUserRoles}
+      permissionAction="showShield"
+      onClick={() => handleAssignRoles()}
+    >
+      Assign Roles
+    </MenuItem>
+
+    {/* MenuItem hidden completely if unauthorized */}
+    <MenuItem
+      permissionKey={Keys.IdentityAccessManagementDeleteUser}
+      permissionAction="hide"
+      onClick={() => handleDeleteUser()}
+    >
+      Delete User
+    </MenuItem>
+  </Menu>
+);`,
+
+  `// 4. Wrapping Custom Elements with <PermissionShield>
+import { PermissionShield } from "@sistent/sistent";
+import { Keys } from "@meshery/schemas/permissions";
+
+export const CustomExportCard = () => (
+  <PermissionShield permissionKey={Keys.CatalogManagementPublishDesign} variant="inline">
+    <div className="custom-export-card">
+      <h4>Publish Design to Catalog</h4>
+      <p>Share this pattern with the community catalog.</p>
+    </div>
+  </PermissionShield>
+);`,
+
+  `// 5. Composite Key Set (anyOf / allOf)
+import { Button } from "@sistent/sistent";
 import { Keys } from "@meshery/schemas/permissions";
 
 // Permitted if user holds AT LEAST ONE key
@@ -114,30 +166,32 @@ const adminGate = {
 };
 
 export const OrgManagementAction = () => (
-  <PermissionShield permissionKey={viewOrgsGate}>
-    <Button variant="outlined">Manage Organizations</Button>
-  </PermissionShield>
+  <Button
+    variant="outlined"
+    permissionKey={viewOrgsGate}
+    permissionAction="showShield"
+  >
+    Manage Organizations
+  </Button>
 );`,
 
-  `// 5. Standalone PermissionSessionContext on 403 Error Pages
+  `// 6. Standalone PermissionSessionContext on 403 Error Pages
 import { PermissionSessionContext, Box, Typography } from "@sistent/sistent";
 import { Keys } from "@meshery/schemas/permissions";
 
-export const AccessDeniedPage = () => {
-  return (
-    <Box sx={{ p: 4, maxWidth: 600, mx: "auto" }}>
-      <Typography variant="h4" gutterBottom>
-        403 - Access Denied
-      </Typography>
-      <PermissionSessionContext
-        variant="card"
-        permissionKey={Keys.AccountManagementViewSubcription}
-      />
-    </Box>
-  );
-};`,
+export const AccessDeniedPage = () => (
+  <Box sx={{ p: 4, maxWidth: 600, mx: "auto" }}>
+    <Typography variant="h4" gutterBottom>
+      403 - Access Denied
+    </Typography>
+    <PermissionSessionContext
+      variant="card"
+      permissionKey={Keys.AccountManagementViewSubcription}
+    />
+  </Box>
+);`,
 
-  `// 6. Multi-Tenant Organization Switching with useAccessibleOrgs
+  `// 7. Multi-Tenant Organization Switching with useAccessibleOrgs
 import { useAccessibleOrgs } from "@sistent/sistent";
 import { useGetActiveOrgs, useLazyGetUserKeysQuery } from "@/api/identity";
 import { useSelector } from "react-redux";
@@ -168,7 +222,7 @@ export const OrgSwitcher = ({ permissionKey }) => {
 };`
 ];
 
-The **Permission System** in Sistent is designed to be completely framework-agnostic while providing deep integration with `@meshery/schemas/permissions` and host ability engines like CASL.
+The **Permissions** module in Sistent provides declarative authorization abstractions that integrate directly with `@meshery/schemas/permissions` and host ability evaluators.
 
 <a id="PermissionProvider-Setup">
   <h2>1. Mounting PermissionProvider</h2>
@@ -180,11 +234,55 @@ Mount `PermissionProvider` at the root of your application. Supply the authoriza
   <CodeBlock name="permission-provider-setup" collapsible code={codes[0]} />
 </div>
 
-<a id="Basic-PermissionShield">
-  <h2>2. Inline Permission Shield</h2>
+<a id="Native-Button-Gating">
+  <h2>2. Native Gating: Button & IconButton</h2>
 </a>
 
-Wrap any button, menu item, or interactive input with `PermissionShield`. If the user lacks the declared `permissionKey`, the child is dimmed and the shield trigger appears.
+Pass `permissionKey` and `permissionAction` directly to `Button` or `IconButton`.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PermissionProvider userHasPermission={() => false} userContext={mockUserContext}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
+          <Button
+            variant="contained"
+            color="primary"
+            permissionKey={sampleKey}
+            permissionAction="showShield"
+          >
+            Create Workspace
+          </Button>
+          <Button
+            variant="outlined"
+            color="secondary"
+            permissionKey={sampleKey}
+            permissionAction="hide"
+          >
+            Hidden Button (renders null)
+          </Button>
+        </div>
+      </PermissionProvider>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="native-button-gating" collapsible code={codes[1]} />
+</div>
+
+<a id="Native-Menu-List-Gating">
+  <h2>3. Native Gating: MenuItem & ListItem</h2>
+</a>
+
+`MenuItem`, `ListItem`, and `ListItemButton` natively evaluate permissions and attach inline shield tooltips or hide themselves cleanly.
+
+<div className="showcase">
+  <CodeBlock name="native-menu-list-gating" collapsible code={codes[2]} />
+</div>
+
+<a id="Custom-Element-Shield">
+  <h2>4. Wrapping Custom Elements with PermissionShield</h2>
+</a>
+
+For custom cards, containers, or non-base components, wrap the element with `<PermissionShield>`.
 
 <div className="showcase">
   <div className="items">
@@ -193,41 +291,18 @@ Wrap any button, menu item, or interactive input with `PermissionShield`. If the
         <div style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: 360 }}>
           <PermissionShield permissionKey={sampleKey} variant="inline">
             <Button variant="contained" color="primary" fullWidth>
-              Create Workspace
+              Custom Component Shield
             </Button>
           </PermissionShield>
         </div>
       </PermissionProvider>
     </ThemeWrapper>
   </div>
-  <CodeBlock name="basic-shield-example" collapsible code={codes[1]} />
-</div>
-
-<a id="Badge-Variant">
-  <h2>3. Badge Variant (Compact)</h2>
-</a>
-
-For icon buttons, toolbar items, or compact action pills, use `variant="badge"`.
-
-<div className="showcase">
-  <div className="items">
-    <ThemeWrapper>
-      <PermissionProvider userHasPermission={() => false} userContext={mockUserContext}>
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '16px' }}>
-          <PermissionShield permissionKey={sampleKey} variant="badge">
-            <Button variant="outlined" color="primary">
-              Badge Trigger
-            </Button>
-          </PermissionShield>
-        </div>
-      </PermissionProvider>
-    </ThemeWrapper>
-  </div>
-  <CodeBlock name="badge-shield-example" collapsible code={codes[2]} />
+  <CodeBlock name="custom-element-shield" collapsible code={codes[3]} />
 </div>
 
 <a id="Composite-Keys">
-  <h2>4. Composite Keys (anyOf / allOf)</h2>
+  <h2>5. Composite Keys (anyOf / allOf)</h2>
 </a>
 
 Affordances requiring either multiple alternative keys or all of several keys can pass a `PermissionKeySet`.
@@ -237,20 +312,23 @@ Affordances requiring either multiple alternative keys or all of several keys ca
     <ThemeWrapper>
       <PermissionProvider userHasPermission={() => false} userContext={mockUserContext}>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <PermissionShield permissionKey={sampleAnyOfKey} variant="inline">
-            <Button variant="contained" color="secondary">
-              Manage Organizations
-            </Button>
-          </PermissionShield>
+          <Button
+            variant="contained"
+            color="secondary"
+            permissionKey={sampleAnyOfKey}
+            permissionAction="showShield"
+          >
+            Manage Organizations
+          </Button>
         </div>
       </PermissionProvider>
     </ThemeWrapper>
   </div>
-  <CodeBlock name="composite-keys-example" collapsible code={codes[3]} />
+  <CodeBlock name="composite-keys-example" collapsible code={codes[4]} />
 </div>
 
 <a id="PermissionSessionContext">
-  <h2>5. PermissionSessionContext (403 Pages)</h2>
+  <h2>6. PermissionSessionContext (403 Pages)</h2>
 </a>
 
 Render `PermissionSessionContext` with `variant="card"` inside access-denied boundaries. It self-resolves the unmet keys and renders full user context.
@@ -265,22 +343,31 @@ Render `PermissionSessionContext` with `variant="card"` inside access-denied bou
       </PermissionProvider>
     </ThemeWrapper>
   </div>
-  <CodeBlock name="session-context-card" collapsible code={codes[4]} />
+  <CodeBlock name="session-context-card" collapsible code={codes[5]} />
 </div>
 
 <a id="useAccessibleOrgs">
-  <h2>6. Multi-Tenant Hook: useAccessibleOrgs</h2>
+  <h2>7. Multi-Tenant Hook: useAccessibleOrgs</h2>
 </a>
 
 Use `useAccessibleOrgs` to query the user's alternative organizations in parallel and populate an organization switcher on 403 error pages.
 
 <div className="showcase">
-  <CodeBlock name="use-accessible-orgs-hook" collapsible code={codes[5]} />
+  <CodeBlock name="use-accessible-orgs-hook" collapsible code={codes[6]} />
 </div>
 
 <a id="Props">
   <h2>Component API & Props</h2>
 </a>
+
+<h3>Base Component Permission Props</h3>
+
+Components including `Button`, `IconButton`, `MenuItem`, `ListItem`, and `ListItemButton` accept the following props:
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `permissionKey` | `PermissionKeySpec` | `undefined` | Key or key set. When omitted, the component renders normally. |
+| `permissionAction` | `'showShield' \| 'hide'` | `'showShield'` | When unauthorized, `'showShield'` attaches `PermissionShield` and `'hide'` renders `null`. |
 
 <h3>PermissionShieldProps</h3>
 

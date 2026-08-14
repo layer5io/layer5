@@ -1,9 +1,9 @@
 ---
-name: "Permission Shield"
-title: Permission Shield
+name: "Permissions"
+title: Permissions
 published: true
-component: permission-shield
-description: The Permission Shield component restricts access to unauthorized actions or views while providing informative feedback, actionable explanations, and contextual authorization metadata to users.
+component: permissions
+description: The Permissions component suite provides declarative authorization control, contextual permission shields, actionable feedback, and multi-tenant access management in Sistent.
 ---
 
 import { useState } from "react";
@@ -12,6 +12,10 @@ import {
   Button,
   Chip,
   Grid,
+  IconButton,
+  MenuItem,
+  ListItem,
+  ListItemButton,
   PermissionProvider,
   PermissionSessionContext,
   PermissionShield,
@@ -90,6 +94,34 @@ export const BadgeShieldDemo = () => {
   );
 };
 
+export const NativeComponentPropDemo = () => {
+  return (
+    <PermissionProvider
+      userHasPermission={() => false}
+      userContext={mockUserContext}
+    >
+      <Box sx={{ display: "flex", justifyContent: "center", gap: 2, width: "100%", p: 2, flexWrap: "wrap" }}>
+        <Button
+          variant="contained"
+          color="primary"
+          permissionKey={samplePermissionKey}
+          permissionAction="showShield"
+        >
+          Native Button Gating
+        </Button>
+        <Button
+          variant="outlined"
+          color="secondary"
+          permissionKey={samplePermissionKey}
+          permissionAction="hide"
+        >
+          Hidden Button (renders null)
+        </Button>
+      </Box>
+    </PermissionProvider>
+  );
+};
+
 export const SessionContextCardDemo = () => {
   return (
     <PermissionProvider
@@ -123,25 +155,25 @@ export const GrantedAffordanceDemo = () => {
   );
 };
 
-The **Permission Shield** component provides contextual authorization feedback in cloud-native user interfaces. Rather than silently disabling controls without explanation, `PermissionShield` presents an intuitive shield overlay that informs users of required permissions, missing permission keys, and active user/role context.
+The **Permissions** component suite provides a unified, declarative authorization architecture for cloud-native user interfaces. Rather than scattering manual permission checks throughout codebases, Sistent delivers a cohesive system of providers, visual shield wrappers, native component props, contextual 403 cards, and multi-tenant organization hooks.
 
-<a id="Overview">
-  <h2>Overview</h2>
+<a id="Architecture">
+  <h2>Architecture & Building Blocks</h2>
 </a>
 
-In modern multi-tenant enterprise applications, access control is dynamic and fine-grained. Users frequently encounter actions or views that require elevated roles or specific capability keys.
+The Sistent Permission System is built on core pillars:
 
-The Sistent Permission System consists of three synergistic building blocks:
-
-1. **`PermissionProvider`**: The root context provider supplying permission evaluators and user metadata to the entire component tree.
-2. **`PermissionShield`**: The declarative UI wrapper that overlays actionable tooltips onto unauthorized affordances.
-3. **`PermissionSessionContext`**: The standalone authorization context component displayed inside tooltips and on dedicated 403 error pages.
+1. **`PermissionProvider`**: The root context provider supplying authorization evaluators (`userHasPermission`) and active user context (`userContext`) to the entire component tree.
+2. **`PermissionShield`**: The declarative UI wrapper that overlays actionable tooltips onto unauthorized affordances without losing discoverability.
+3. **Native Component Props (`permissionKey` & `permissionAction`)**: Direct gating support built into Sistent base components (`Button`, `IconButton`, `MenuItem`, `ListItem`, `ListItemButton`).
+4. **`PermissionSessionContext`**: The standalone authorization context component displayed inside tooltips and on dedicated 403 error pages.
+5. **`useAccessibleOrgs`**: The multi-tenant organization switching hook for 403 error views.
 
 <a id="Variants">
-  <h2>Variants</h2>
+  <h2>Shield Variants</h2>
 </a>
 
-`PermissionShield` offers two distinct presentation variants depending on the density and layout requirements of the guarded element.
+`PermissionShield` offers two distinct presentation variants depending on the layout and density of the guarded element:
 
 <h3>Inline Variant (Default)</h3>
 
@@ -167,8 +199,29 @@ The **Badge** variant renders a compact shield badge anchored to the corner of t
   </ThemeWrapper>
 </Row>
 
+<a id="Native-Gating">
+  <h2>Native Component Gating</h2>
+</a>
+
+In addition to wrapping elements with `<PermissionShield>`, Sistent base components natively accept `permissionKey` and `permissionAction` props:
+
+* **`Button`**
+* **`IconButton`**
+* **`MenuItem`**
+* **`ListItem`** & **`ListItemButton`**
+
+When `permissionAction="showShield"` (the default), the component automatically wraps itself in `PermissionShield`. When `permissionAction="hide"`, the component automatically renders `null` if the user lacks the required permission.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+      <NativeComponentPropDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
 <a id="Permission-Context-Card">
-  <h2>Permission Session Context Card</h2>
+  <h2>Permission Session Context Card (403 Pages)</h2>
 </a>
 
 When users navigate directly to a restricted URL or access-denied route, `PermissionSessionContext` renders as a full-page **card** variant. It provides complete transparency into the missing keys, categorized tags, and assigned roles.
@@ -199,10 +252,9 @@ When the active user possesses the required permission key, `PermissionShield` s
   <h2>Key Features</h2>
 </a>
 
-<ul>
-  <li><p><b>Declarative Key Specs:</b> Accepts single permission keys or composite logical sets (<code>anyOf</code> / <code>allOf</code>).</p></li>
-  <li><p><b>Interactive Key Copying:</b> Users and administrators can copy the exact permission UUID to clipboard with one click.</p></li>
-  <li><p><b>Assigned Role Clarity:</b> Context cards show the user's actual assigned roles in the active organization, preventing confusion with the global role catalog.</p></li>
-  <li><p><b>Conflict-Free Tooltips:</b> Global event coordination guarantees only one shield tooltip is open across the entire interface at any time.</p></li>
-  <li><p><b>Multi-Tenant Org Switching:</b> Pairs with the <code>useAccessibleOrgs</code> hook to guide users to switch to an authorized organization.</p></li>
-</ul>
+* **Declarative Key Specs:** Accepts single permission keys or composite logical sets (`anyOf` / `allOf`).
+* **Native Component Integration:** Pass `permissionKey` and `permissionAction` directly to `Button`, `IconButton`, `MenuItem`, `ListItem`, and `ListItemButton`.
+* **Interactive Key Copying:** Users and administrators can copy the exact permission UUID to clipboard with one click.
+* **Assigned Role Clarity:** Context cards show the user's actual assigned roles in the active organization, preventing confusion with the global role catalog.
+* **Conflict-Free Tooltips:** Global event coordination guarantees only one shield tooltip is open across the entire interface at any time.
+* **Multi-Tenant Org Switching:** Pairs with the `useAccessibleOrgs` hook to guide users to switch to an authorized organization.
