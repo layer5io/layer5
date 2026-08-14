@@ -215,7 +215,6 @@ const BlogSideBarWrapper = styled.div`
                 .logo{
                  width: 100%;  
                  }
-                &:hover,
                 &:focus:not(:focus-visible) {
                    outline: none;
                 }
