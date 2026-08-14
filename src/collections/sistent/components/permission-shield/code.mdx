@@ -1,0 +1,310 @@
+---
+title: Permission Shield Code
+component: permission-shield
+description: Implementation examples, props specifications, hooks, and integration code for PermissionShield, PermissionProvider, PermissionSessionContext, and useAccessibleOrgs.
+---
+
+import {
+  Box,
+  Button,
+  PermissionProvider,
+  PermissionSessionContext,
+  PermissionShield
+} from "@sistent/sistent";
+
+export const sampleKey = {
+  id: "49a5b3a4-846c-4861-bf96-981cf26d70bc",
+  function: "Create Workspace",
+  description: "Create and configure collaborative workspaces within an organization.",
+  category: "Workspace Management",
+  subcategory: "Configuration"
+};
+
+export const sampleAnyOfKey = {
+  anyOf: [
+    {
+      id: "73f9821a-6df2-4211-9a74-21950e39c4d2",
+      function: "View All Organizations",
+      description: "Read organization profiles and configurations across all tenant spaces.",
+      category: "Identity & Access",
+      subcategory: "Organizations"
+    },
+    {
+      id: "84e2714c-1983-4a6c-9c71-081cb409ef12",
+      function: "View Org",
+      description: "Read details and membership of the current organization.",
+      category: "Identity & Access",
+      subcategory: "Organizations"
+    }
+  ]
+};
+
+export const mockUserContext = {
+  userName: "Ada Lovelace",
+  orgName: "Layer5 Cloud",
+  roleNames: ["Team Member"]
+};
+
+export const codes = [
+  `// 1. Mount PermissionProvider near the root of your application (_app.tsx or AppShell.tsx)
+import { PermissionProvider } from "@sistent/sistent";
+import { canKey } from "@/utils/can";
+
+export const App = ({ children, activeUser, currentOrg }) => {
+  const userContext = {
+    userName: \`\${activeUser.firstName} \${activeUser.lastName}\`,
+    orgName: currentOrg?.name,
+    roleNames: activeUser.assignedRoles // Assigned roles, not catalog
+  };
+
+  return (
+    <PermissionProvider userHasPermission={canKey} userContext={userContext}>
+      {children}
+    </PermissionProvider>
+  );
+};`,
+
+  `// 2. Guard an in-page affordance with PermissionShield (Inline variant)
+import { PermissionShield, Button } from "@sistent/sistent";
+import { Keys } from "@meshery/schemas/permissions";
+
+export const CreateWorkspaceAction = () => {
+  return (
+    <PermissionShield permissionKey={Keys.WorkspaceManagementCreateWorkspace} variant="inline">
+      <Button variant="contained" color="primary">
+        Create Workspace
+      </Button>
+    </PermissionShield>
+  );
+};`,
+
+  `// 3. Compact Badge Variant for toolbars or icon buttons
+import { PermissionShield, IconButton } from "@sistent/sistent";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { Keys } from "@meshery/schemas/permissions";
+
+export const DeleteAffordance = () => {
+  return (
+    <PermissionShield permissionKey={Keys.WorkspaceManagementDeleteWorkspace} variant="badge">
+      <IconButton color="error" aria-label="Delete Workspace">
+        <DeleteIcon />
+      </IconButton>
+    </PermissionShield>
+  );
+};`,
+
+  `// 4. Composite Key Set (anyOf / allOf)
+import { PermissionShield, Button } from "@sistent/sistent";
+import { Keys } from "@meshery/schemas/permissions";
+
+// Permitted if user holds AT LEAST ONE key
+const viewOrgsGate = {
+  anyOf: [
+    Keys.IdentityAccessManagementViewAllOrganizations,
+    Keys.IdentityAccessManagementViewOrg
+  ]
+};
+
+// Permitted if user holds ALL keys
+const adminGate = {
+  allOf: [
+    Keys.IdentityAccessManagementEditOrganization,
+    Keys.IdentityAccessManagementAssignUserRoles
+  ]
+};
+
+export const OrgManagementAction = () => (
+  <PermissionShield permissionKey={viewOrgsGate}>
+    <Button variant="outlined">Manage Organizations</Button>
+  </PermissionShield>
+);`,
+
+  `// 5. Standalone PermissionSessionContext on 403 Error Pages
+import { PermissionSessionContext, Box, Typography } from "@sistent/sistent";
+import { Keys } from "@meshery/schemas/permissions";
+
+export const AccessDeniedPage = () => {
+  return (
+    <Box sx={{ p: 4, maxWidth: 600, mx: "auto" }}>
+      <Typography variant="h4" gutterBottom>
+        403 - Access Denied
+      </Typography>
+      <PermissionSessionContext
+        variant="card"
+        permissionKey={Keys.AccountManagementViewSubcription}
+      />
+    </Box>
+  );
+};`,
+
+  `// 6. Multi-Tenant Organization Switching with useAccessibleOrgs
+import { useAccessibleOrgs } from "@sistent/sistent";
+import { useGetActiveOrgs, useLazyGetUserKeysQuery } from "@/api/identity";
+import { useSelector } from "react-redux";
+
+export const OrgSwitcher = ({ permissionKey }) => {
+  const { data: allOrgs, isSuccess: orgsLoaded } = useGetActiveOrgs();
+  const currentOrg = useSelector((state) => state.organization.currentOrg);
+  const [triggerGetKeys] = useLazyGetUserKeysQuery();
+
+  const { accessibleOrgs, isLoading, hasNoAccessibleOrgs } = useAccessibleOrgs({
+    allOrgs: allOrgs ?? [],
+    currentOrgId: currentOrg?.id,
+    orgsLoaded,
+    permissionKey,
+    triggerGetKeys
+  });
+
+  if (isLoading) return <div>Checking accessible organizations...</div>;
+  if (hasNoAccessibleOrgs) return <div>No other organization grants this permission.</div>;
+
+  return (
+    <select onChange={(e) => switchOrg(e.target.value)}>
+      {accessibleOrgs.map((org) => (
+        <option key={org.id} value={org.id}>{org.name}</option>
+      ))}
+    </select>
+  );
+};`
+];
+
+The **Permission System** in Sistent is designed to be completely framework-agnostic while providing deep integration with `@meshery/schemas/permissions` and host ability engines like CASL.
+
+<a id="PermissionProvider-Setup">
+  <h2>1. Mounting PermissionProvider</h2>
+</a>
+
+Mount `PermissionProvider` at the root of your application. Supply the authorization check function (`userHasPermission`) and the user's active session metadata (`userContext`).
+
+<div className="showcase">
+  <CodeBlock name="permission-provider-setup" collapsible code={codes[0]} />
+</div>
+
+<a id="Basic-PermissionShield">
+  <h2>2. Inline Permission Shield</h2>
+</a>
+
+Wrap any button, menu item, or interactive input with `PermissionShield`. If the user lacks the declared `permissionKey`, the child is dimmed and the shield trigger appears.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PermissionProvider userHasPermission={() => false} userContext={mockUserContext}>
+        <div style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: 360 }}>
+          <PermissionShield permissionKey={sampleKey} variant="inline">
+            <Button variant="contained" color="primary" fullWidth>
+              Create Workspace
+            </Button>
+          </PermissionShield>
+        </div>
+      </PermissionProvider>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-shield-example" collapsible code={codes[1]} />
+</div>
+
+<a id="Badge-Variant">
+  <h2>3. Badge Variant (Compact)</h2>
+</a>
+
+For icon buttons, toolbar items, or compact action pills, use `variant="badge"`.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PermissionProvider userHasPermission={() => false} userContext={mockUserContext}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '16px' }}>
+          <PermissionShield permissionKey={sampleKey} variant="badge">
+            <Button variant="outlined" color="primary">
+              Badge Trigger
+            </Button>
+          </PermissionShield>
+        </div>
+      </PermissionProvider>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="badge-shield-example" collapsible code={codes[2]} />
+</div>
+
+<a id="Composite-Keys">
+  <h2>4. Composite Keys (anyOf / allOf)</h2>
+</a>
+
+Affordances requiring either multiple alternative keys or all of several keys can pass a `PermissionKeySet`.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PermissionProvider userHasPermission={() => false} userContext={mockUserContext}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <PermissionShield permissionKey={sampleAnyOfKey} variant="inline">
+            <Button variant="contained" color="secondary">
+              Manage Organizations
+            </Button>
+          </PermissionShield>
+        </div>
+      </PermissionProvider>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="composite-keys-example" collapsible code={codes[3]} />
+</div>
+
+<a id="PermissionSessionContext">
+  <h2>5. PermissionSessionContext (403 Pages)</h2>
+</a>
+
+Render `PermissionSessionContext` with `variant="card"` inside access-denied boundaries. It self-resolves the unmet keys and renders full user context.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PermissionProvider userHasPermission={() => false} userContext={mockUserContext}>
+        <div style={{ width: '100%', maxWidth: 520 }}>
+          <PermissionSessionContext variant="card" permissionKey={sampleKey} />
+        </div>
+      </PermissionProvider>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="session-context-card" collapsible code={codes[4]} />
+</div>
+
+<a id="useAccessibleOrgs">
+  <h2>6. Multi-Tenant Hook: useAccessibleOrgs</h2>
+</a>
+
+Use `useAccessibleOrgs` to query the user's alternative organizations in parallel and populate an organization switcher on 403 error pages.
+
+<div className="showcase">
+  <CodeBlock name="use-accessible-orgs-hook" collapsible code={codes[5]} />
+</div>
+
+<a id="Props">
+  <h2>Component API & Props</h2>
+</a>
+
+<h3>PermissionShieldProps</h3>
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `permissionKey` | `PermissionKeySpec` | _required_ | Single `Key` or `{ anyOf: Key[] }` / `{ allOf: Key[] }` set. |
+| `children` | `React.ReactNode` | _required_ | The affordance to guard. |
+| `variant` | `'inline' \| 'badge'` | `'inline'` | Visual placement of the shield trigger icon. |
+
+<h3>PermissionSessionContextProps</h3>
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `variant` | `'tooltip' \| 'card'` | `'tooltip'` | Visual theme and sizing variant. |
+| `permissionKey` | `PermissionKeySpec` | `undefined` | Self-resolving key or key set. |
+| `displayedKeys` | `Key[]` | `undefined` | Pre-resolved array of keys to render. |
+| `subtitle` | `string` | `undefined` | Custom requirement subtitle. |
+| `categories` | `string[]` | `undefined` | Category chip labels. |
+| `subcategories` | `string[]` | `undefined` | Subcategory chip labels. |
+
+<h3>PermissionProviderProps</h3>
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `userHasPermission` | `(key: Key) => boolean` | _required_ | Authorization evaluator function. |
+| `userContext` | `PermissionUserContext` | `undefined` | Session metadata: `{ userName, orgName, roleNames }`. |
+| `children` | `React.ReactNode` | _required_ | Root application sub-tree. |

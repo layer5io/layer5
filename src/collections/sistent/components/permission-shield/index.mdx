@@ -1,0 +1,208 @@
+---
+name: "Permission Shield"
+title: Permission Shield
+published: true
+component: permission-shield
+description: The Permission Shield component restricts access to unauthorized actions or views while providing informative feedback, actionable explanations, and contextual authorization metadata to users.
+---
+
+import { useState } from "react";
+import {
+  Box,
+  Button,
+  Chip,
+  Grid,
+  PermissionProvider,
+  PermissionSessionContext,
+  PermissionShield,
+  Typography
+} from "@sistent/sistent";
+
+export const samplePermissionKey = {
+  id: "49a5b3a4-846c-4861-bf96-981cf26d70bc",
+  function: "Create Workspace",
+  description: "Create and configure collaborative workspaces within an organization.",
+  category: "Workspace Management",
+  subcategory: "Configuration"
+};
+
+export const sampleMultiKeys = {
+  anyOf: [
+    {
+      id: "73f9821a-6df2-4211-9a74-21950e39c4d2",
+      function: "View All Organizations",
+      description: "Read organization profiles and configurations across all tenant spaces.",
+      category: "Identity & Access",
+      subcategory: "Organizations"
+    },
+    {
+      id: "84e2714c-1983-4a6c-9c71-081cb409ef12",
+      function: "View Org",
+      description: "Read details and membership of the current organization.",
+      category: "Identity & Access",
+      subcategory: "Organizations"
+    }
+  ]
+};
+
+export const mockUserContext = {
+  userName: "Ada Lovelace",
+  orgName: "Layer5 Cloud",
+  roleNames: ["Team Member"]
+};
+
+export const InlineShieldDemo = () => {
+  return (
+    <PermissionProvider
+      userHasPermission={() => false}
+      userContext={mockUserContext}
+    >
+      <Box sx={{ display: "flex", justifyContent: "center", width: "100%", maxWidth: 360, p: 2 }}>
+        <PermissionShield permissionKey={samplePermissionKey} variant="inline">
+          <Button variant="contained" color="primary" fullWidth>
+            Create Workspace
+          </Button>
+        </PermissionShield>
+      </Box>
+    </PermissionProvider>
+  );
+};
+
+export const BadgeShieldDemo = () => {
+  return (
+    <PermissionProvider
+      userHasPermission={() => false}
+      userContext={mockUserContext}
+    >
+      <Box sx={{ display: "flex", justifyContent: "center", gap: 3, width: "100%", p: 2 }}>
+        <PermissionShield permissionKey={samplePermissionKey} variant="badge">
+          <Button variant="outlined" color="primary">
+            Export Design
+          </Button>
+        </PermissionShield>
+        <PermissionShield permissionKey={sampleMultiKeys} variant="badge">
+          <Button variant="contained" color="secondary">
+            Manage Roles
+          </Button>
+        </PermissionShield>
+      </Box>
+    </PermissionProvider>
+  );
+};
+
+export const SessionContextCardDemo = () => {
+  return (
+    <PermissionProvider
+      userHasPermission={() => false}
+      userContext={mockUserContext}
+    >
+      <Box sx={{ width: "100%", maxWidth: 520, p: 2 }}>
+        <PermissionSessionContext
+          variant="card"
+          permissionKey={samplePermissionKey}
+        />
+      </Box>
+    </PermissionProvider>
+  );
+};
+
+export const GrantedAffordanceDemo = () => {
+  return (
+    <PermissionProvider
+      userHasPermission={() => true}
+      userContext={mockUserContext}
+    >
+      <Box sx={{ display: "flex", justifyContent: "center", width: "100%", maxWidth: 360, p: 2 }}>
+        <PermissionShield permissionKey={samplePermissionKey} variant="inline">
+          <Button variant="contained" color="primary" fullWidth>
+            Authorized Action
+          </Button>
+        </PermissionShield>
+      </Box>
+    </PermissionProvider>
+  );
+};
+
+The **Permission Shield** component provides contextual authorization feedback in cloud-native user interfaces. Rather than silently disabling controls without explanation, `PermissionShield` presents an intuitive shield overlay that informs users of required permissions, missing permission keys, and active user/role context.
+
+<a id="Overview">
+  <h2>Overview</h2>
+</a>
+
+In modern multi-tenant enterprise applications, access control is dynamic and fine-grained. Users frequently encounter actions or views that require elevated roles or specific capability keys.
+
+The Sistent Permission System consists of three synergistic building blocks:
+
+1. **`PermissionProvider`**: The root context provider supplying permission evaluators and user metadata to the entire component tree.
+2. **`PermissionShield`**: The declarative UI wrapper that overlays actionable tooltips onto unauthorized affordances.
+3. **`PermissionSessionContext`**: The standalone authorization context component displayed inside tooltips and on dedicated 403 error pages.
+
+<a id="Variants">
+  <h2>Variants</h2>
+</a>
+
+`PermissionShield` offers two distinct presentation variants depending on the density and layout requirements of the guarded element.
+
+<h3>Inline Variant (Default)</h3>
+
+The **Inline** variant centers a security shield trigger on the right side of the guarded element. It is ideal for full-width buttons, form inputs, list items, and standard rectangular controls.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+      <InlineShieldDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<h3>Badge Variant</h3>
+
+The **Badge** variant renders a compact shield badge anchored to the corner of the guarded affordance. It is designed for icon buttons, compact toolbars, chips, and standalone action pills.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+      <BadgeShieldDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Permission-Context-Card">
+  <h2>Permission Session Context Card</h2>
+</a>
+
+When users navigate directly to a restricted URL or access-denied route, `PermissionSessionContext` renders as a full-page **card** variant. It provides complete transparency into the missing keys, categorized tags, and assigned roles.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+      <SessionContextCardDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Authorized-State">
+  <h2>Authorized State (Pass-Through)</h2>
+</a>
+
+When the active user possesses the required permission key, `PermissionShield` seamlessly passes through the child component without dimming, overlaying icons, or intercepting pointer events.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+      <GrantedAffordanceDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Key-Features">
+  <h2>Key Features</h2>
+</a>
+
+<ul>
+  <li><p><b>Declarative Key Specs:</b> Accepts single permission keys or composite logical sets (<code>anyOf</code> / <code>allOf</code>).</p></li>
+  <li><p><b>Interactive Key Copying:</b> Users and administrators can copy the exact permission UUID to clipboard with one click.</p></li>
+  <li><p><b>Assigned Role Clarity:</b> Context cards show the user's actual assigned roles in the active organization, preventing confusion with the global role catalog.</p></li>
+  <li><p><b>Conflict-Free Tooltips:</b> Global event coordination guarantees only one shield tooltip is open across the entire interface at any time.</p></li>
+  <li><p><b>Multi-Tenant Org Switching:</b> Pairs with the <code>useAccessibleOrgs</code> hook to guide users to switch to an authorized organization.</p></li>
+</ul>
