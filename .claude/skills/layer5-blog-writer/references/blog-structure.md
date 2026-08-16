@@ -7,7 +7,7 @@ src/collections/blog/
 └── YYYY/
     └── MM-DD-descriptive-slug/
         ├── index.mdx          ← main post file
-        ├── hero-image.png     ← generated thumbnail
+        ├── hero-image.jpg     ← generated thumbnail (raster, never SVG)
         └── [other images]     ← supporting images
 ```
 
@@ -19,8 +19,8 @@ title: "Post Title (50–60 chars, keywords near front)"
 subtitle: "Supporting subtitle that adds context"
 date: 2026-04-01 10:00:00 -0500
 author: Layer5 Team
-thumbnail: ./hero-image.png
-darkthumbnail: ./hero-image.png
+thumbnail: ./hero-image.jpg
+darkthumbnail: ./hero-image.jpg
 description: "150–160 char SEO description with natural keyword usage."
 type: Blog
 category: Engineering
@@ -41,7 +41,7 @@ published: true
 | `subtitle`      | optional | Shown below the title                                  |
 | `date`          | ✓        | `YYYY-MM-DD HH:MM:SS +/-HHMM`                          |
 | `author`        | ✓        | Default: `Layer5 Team`. Real name for interviews only. |
-| `thumbnail`     | ✓        | Relative path, e.g. `./hero-image.png`                 |
+| `thumbnail`     | ✓        | Relative path to a **raster**, e.g. `./hero-image.jpg` |
 | `darkthumbnail` | ✓        | Can match `thumbnail`                                  |
 | `description`   | ✓        | 150–160 chars for SEO                                  |
 | `type`          | ✓        | Always `Blog`                                          |
@@ -63,7 +63,7 @@ import Blockquote from "../../../../reusecore/Blockquote";
 import Callout from "../../../../reusecore/Callout";
 import CTA_FullWidth from "../../../../components/Call-To-Actions/CTA_FullWidth";
 import CTAImg from "../../../../assets/images/meshery/icon-only/meshery-logo-shadow.webp";
-import heroImage from "./hero-image.png";
+import heroImage from "./hero-image.jpg";
 ```
 
 For Kanvas posts, swap the CTA:
@@ -320,7 +320,11 @@ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/
 - **Short paragraphs.** 3-5 sentences max.
 - **Cut filler.** "It is worth noting that", "In conclusion", "Simply put" - delete them.
 - **American English.** color, analyze, recognize.
-- **Hyphens only.** Never use em dashes (`-`). Use a hyphen (`-`) everywhere.
+- **Hyphens only.** Never use an em dash (U+2014) or an en dash (U+2013). Use a plain hyphen (`-`)
+  everywhere. Both characters are named by code point here rather than shown, because an earlier
+  version of this line wrote the rule as ``Never use em dashes (`-`)`` with a hyphen in both
+  positions, which made it impossible to tell what was being forbidden. Verify with:
+  `grep -nP '[\x{2013}\x{2014}]' index.mdx` (no output means clean).
 - **End with momentum.** Community invite, next step, or related post link. Put this in `<div className="outro">`.
 
 ## Meet the Maintainer Format
