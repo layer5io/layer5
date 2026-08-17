@@ -1,16 +1,13 @@
 import styled from "styled-components";
 
 const TOCWrapper = styled.div`
-  position: absolute;
-  top: 10rem;
-  left: 0rem;
+  padding-top: 3rem;
   margin-left: 3rem;
-  margin-top: 3rem;
   width: 15rem;
   min-width: 15rem;
   padding-bottom: 2rem;
   @media screen and (min-width: 1280px) and (max-width: 1350px) {
-    margin-left: 0.2rem;
+    margin-left: 0;
   }
 
   .go-back {
