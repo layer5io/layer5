@@ -4,6 +4,7 @@ const TOCWrapper = styled.div`
   padding-top: 3rem;
   margin-left: 3rem;
   width: 15rem;
+  flex: 0 0 15rem;
   padding-bottom: 2rem;
 
   .go-back {
