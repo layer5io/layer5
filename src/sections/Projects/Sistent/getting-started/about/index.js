@@ -41,11 +41,11 @@ const SistentAbout = () => {
                 <h2>About Sistent</h2>
               </a>
               <p>
-                Sistent an open source design system that offers building blocks
-                to create consistent, accessible, and user-friendly interfaces.
-                It's aimed at developers who want to design applications aligned
-                with the same brand and ensure a uniform user experience across
-                different products.
+                Sistent is an open source design system that offers building
+                blocks to create consistent, accessible, and user-friendly
+                interfaces. It's aimed at developers who want to design
+                applications aligned with the same brand and ensure a uniform
+                user experience across different products.
               </p>
               <p>
                 Sistent leverages Material UI libraries and provides a custom

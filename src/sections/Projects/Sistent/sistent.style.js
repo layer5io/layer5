@@ -43,7 +43,7 @@ const SistentWrapper = styled.div`
     align-items: flex-start;
     justify-content: space-between;
     gap: 2rem;
-    @media screen and (max-width: 751px) {
+    @media screen and (max-width: 750px) {
       display: block;
     }
   }
@@ -66,7 +66,7 @@ const SistentWrapper = styled.div`
       padding-top: 1rem;
       margin-top: 1rem;
     }
-    @media screen and (max-width: 751px) {
+    @media screen and (max-width: 750px) {
       h1,
       h2,
       h3 {

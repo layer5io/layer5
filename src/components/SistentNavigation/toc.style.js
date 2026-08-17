@@ -4,11 +4,7 @@ const TOCWrapper = styled.div`
   padding-top: 3rem;
   margin-left: 3rem;
   width: 15rem;
-  min-width: 15rem;
   padding-bottom: 2rem;
-  @media screen and (min-width: 1280px) and (max-width: 1350px) {
-    margin-left: 0;
-  }
 
   .go-back {
     margin-left: 1rem;
