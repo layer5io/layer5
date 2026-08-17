@@ -66,13 +66,16 @@ const SistentWrapper = styled.div`
       padding-top: 1rem;
       margin-top: 1rem;
     }
-  }
-
-  .page-section .heading-top {
-    @media screen and (min-width: 751px) {
-      padding-top: 1rem;
+    @media screen and (max-width: 751px) {
+      h1,
+      h2,
+      h3 {
+        padding-top: 0;
+        margin-top: 0;
+      }
     }
   }
+
   .sidebar {
     margin: 0;
     padding: 0;
@@ -287,9 +290,6 @@ const SistentWrapper = styled.div`
   }
 
   @media only screen and (max-width: 750px) {
-    .content > a:first-of-type > h2:first-of-type {
-      padding-top: 7rem;
-    }
     .page-section {
       margin-top: -2rem;
       margin-left: 0;
