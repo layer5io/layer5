@@ -13,6 +13,8 @@ const DiscussWrapper = styled.div`
     }
     .logo{
         width: 200px;
+        max-width: 100%;
+        height: auto;
     }
     
     .explain {
@@ -35,6 +37,13 @@ const DiscussWrapper = styled.div`
             padding: 1.5rem 2rem 0rem 2rem;
             background-color: none;
             border-radius: 25px;
+            a {
+                display: block;
+                border-radius: 25px;
+                &:focus:not(:focus-visible) {
+                    outline: none;
+                }
+            }
             .card {
                 height:20rem;
                 -webkit-transition: 450ms all;
@@ -64,17 +73,16 @@ const DiscussWrapper = styled.div`
                     transform: translateY(0.03rem);
                     box-shadow: 0 2px 10px #00d3a9;
                 }
-                }
             }
         }
     }
 
     button{
-        color: #1E2117;
-        padding: 0.2em 1em;
-        border: 2px solid;
+        color: inherit;
+        padding: 0;
+        border: 0;
         background: none;
-        transition: color 0.25s,border-color 0.25s,transform 0.25s,box-shadow 0.25s;
+        transition: transform 0.25s, box-shadow 0.25s;
         cursor: pointer;
     }
     @media only screen and (min-width: 768px){
@@ -114,11 +122,10 @@ const DiscussWrapper = styled.div`
                             width:23rem;
                             height:20rem;
                         }
-                    }
                 }
             }
         }
-     
+
         @media only screen and (max-width: 992px){
             .card-align{
               padding:1.1rem 0;
