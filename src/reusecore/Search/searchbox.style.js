@@ -50,7 +50,6 @@ export const SearchWrapper = styled.div`
 
    input{
     border:none;
-    outline: none;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 9px 0px;
     
    }
