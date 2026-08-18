@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ArrowUpwardIcon } from "@sistent/sistent";
 import styled from "styled-components";
+import { LFX_SCROLL_OFFSET } from "../Programs.style.js";
 
 const NavCard = styled.nav`
   position: sticky;
@@ -11,7 +12,7 @@ const NavCard = styled.nav`
   background: ${(props) => props.theme.grey1D1D1DToGreyFAFAFA};
   border: 1px solid ${(props) => props.theme.grey1D1817ToGreyE6E6E6};
   border-radius: 7px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   z-index: 99;
   @media (max-width: 900px) {
@@ -85,7 +86,7 @@ const LfxPageNav = ({ items }) => {
       let current = "";
       items.forEach((item) => {
         const el = document.querySelector(item.href);
-        if (el && window.scrollY >= el.offsetTop - 140) {
+        if (el && window.scrollY >= el.offsetTop - LFX_SCROLL_OFFSET) {
           current = item.href;
         }
       });
@@ -95,6 +96,21 @@ const LfxPageNav = ({ items }) => {
     return () => window.removeEventListener("scroll", onScroll);
   }, [items]);
 
+  const handleNavClick = (e, href) => {
+    // Let browser handle modifier-key clicks (Ctrl/Cmd = new tab, Alt = save, Shift = new window).
+    if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0)
+      return;
+    e.preventDefault();
+    const el = document.querySelector(href);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Avoid pushing a duplicate history entry when the hash is already current.
+      if (window.location.hash !== href) {
+        window.history.pushState(null, "", href);
+      }
+    }
+  };
+
   return (
     <>
       <NavCard>
@@ -102,7 +118,13 @@ const LfxPageNav = ({ items }) => {
         <NavList>
           {items.map((item) => (
             <li key={item.href}>
-              <a href={item.href} className={activeHref === item.href ? "active" : ""}>{item.label}</a>
+              <a
+                href={item.href}
+                className={activeHref === item.href ? "active" : ""}
+                onClick={(e) => handleNavClick(e, item.href)}
+              >
+                {item.label}
+              </a>
             </li>
           ))}
         </NavList>

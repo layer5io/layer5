@@ -1,27 +1,29 @@
 import styled from "styled-components";
 
 export const HPEfacts = styled("table")(({ theme }) => ({
-  backgroundColor: "#212121",
+  backgroundColor: `${theme.elevationColor}`,
   borderRadius: "0.5rem",
   marginBottom: "1rem",
-  color: "#FFF !important",
+  color: `${theme.text}`,
+  border: `1px solid ${theme.primaryLightColor}`,
 
   " > tr:first-child": {
-    color: `${theme.body}`,
     padding: "0rem",
   },
 
   " > tr:first-child td": {
     h4: {
       color: `${theme.white}`,
+      margin: 0,
     },
-    backgroundColor: "#414141",
+    backgroundColor: `${theme.secondaryColor}`,
     padding: ".5rem",
     textAlign: "center",
   },
 
   " > tr > td": {
     padding: "1rem",
+    color: `${theme.text}`,
   },
   "> tr > td > img": {
     marginRight: ".5rem",
