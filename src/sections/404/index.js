@@ -1,34 +1,203 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "../../reusecore/Layout";
 import L404SectionWrapper from "./404.style";
-import serviceMesh from "../../assets/images/service-mesh-icons/service-mesh.svg";
 import Button from "../../reusecore/Button";
 
+const sanitizeUrl = (url) => {
+  try {
+    const parsed = new URL(url);
+    return `${parsed.origin}${parsed.pathname}`;
+  } catch {
+    return "Unknown";
+  }
+};
+
+const getBrowserName = (userAgent) => {
+  if (!userAgent) return "Unknown Browser";
+  if (/Edg\//.test(userAgent)) return "Edge";
+  if (/OPR\//.test(userAgent)) return "Opera";
+  if (/Firefox\//.test(userAgent)) return "Firefox";
+  if (/Chrome\//.test(userAgent)) return "Chrome";
+  if (/Safari\//.test(userAgent)) return "Safari";
+  return "Unknown Browser";
+};
+
 const messages = [
-  "Oh, no. Please pardon our meshy site.",
-  "Oops. Please excuse the mesh.",
-  "Looks like this page doesn't exists. Blame it on YAML.",
-  "Someone uses spaces instead of tabs.",
-  "Please pardon our mesh.",
-  "How did this mesh happen?",
-  "Well, isn't this a mesh?",
-  "Yikes. Things are a mesh here."
+  {
+    headline: "404: Not Found in This Namespace",
+    body: "We scanned every namespace. Twice. The page is now officially in the void.",
+  },
+  {
+    headline: "GitOps Says It's Deployed",
+    body: "Pipeline is green. The cluster is gaslighting us. Welcome to reality.",
+  },
+  {
+    headline: "The Demo Worked Perfectly",
+    body: "Then someone merged to main. This is the part where we all pretend we're surprised.",
+  },
+  {
+    headline: "This Page Is Currently in the Backlog",
+    body: "Right below 'actually improve the 404 page' and above 'fix the broken links'.",
+  },
+  {
+    headline: "Even Kanvas Couldn't Design This Page",
+    body: "We tried dragging it onto the canvas. It refused to exist. Rude.",
+  },
+  {
+    headline: "Page Evicted from the Cluster",
+    body: "Insufficient resources or it just didn't want to be here anymore. Can't blame it.",
+  },
+  {
+    headline: "404: Desired State vs. Actual State",
+    body: "Our GitOps repo insists this page exists. The universe strongly disagrees.",
+  },
+  {
+    headline: "This URL Has Been Rolled Back",
+    body: "For safety. Or because someone had a moment of panic during a deploy. We're not naming names.",
+  },
+  {
+    headline: "We Searched the Entire Repo",
+    body: "Including the weird branch no one touches and that one forgotten docs folder. Still nothing.",
+  },
+  {
+    headline: "404: Maintainer Not Found",
+    body: "Our contributors are excellent at shipping code. Updating links? Less so.",
+  },
+  {
+    headline: "404: This Page Achieved 'Deprecated' Status",
+    body: "It was here yesterday. Then we did a 'quick refactor' at 2 a.m.",
+  },
+  {
+    headline: "The Link You Followed Has Left the Repo",
+    body: "Probably living its best life on a feature branch that never got merged.",
+  },
+  {
+    headline: "Even With 10k+ GitHub Stars...",
+    body: "we still couldn't find this page. Meshery manages entire clusters better than we manage our own URLs.",
+  },
+  {
+    headline: "This Content Is Experiencing a Rolling Update",
+    body: "It'll be back any second now. Or never. We stopped checking after the third deploy.",
+  },
+  {
+    headline: "Congratulations, You Found a Rare 404",
+    body: "Most people just get the boring ones. You get the special edition.",
+  },
+  {
+    headline: "404: Your Request Was Dropped by the Load Balancer",
+    body: "It had better things to do. Like route traffic that actually exists.",
+  },
+  {
+    headline: "We Looked in the Docs, Slack, and Git History",
+    body: "Still nothing. Time to file an issue and assign it to someone else?",
+  },
 ];
 
 const L404 = () => {
-  const [message, setMessage] = useState(messages[0]);
-  useEffect( () => {
-    setMessage(messages[Math.floor(Math.random() * messages.length)]);
-  },[]);
+  const [message, setMessage] = useState(null);
+  const [reportUrl, setReportUrl] = useState(
+    "https://github.com/layer5io/layer5/issues/new?template=bug_report.md",
+  );
+
+  const getRandomMessage = () => {
+    return messages[Math.floor(Math.random() * messages.length)];
+  };
+
+  useEffect(() => {
+    setMessage(getRandomMessage());
+
+    if (typeof window !== "undefined") {
+      const brokenUrl = sanitizeUrl(window.location.href);
+      const referrer = document.referrer
+        ? sanitizeUrl(document.referrer)
+        : "Direct / Bookmark";
+      const platform = navigator.platform || "Unknown OS";
+      const browserName = getBrowserName(navigator.userAgent);
+      const issueTitle = encodeURIComponent("[404] Broken Link Found");
+      const issueBody = encodeURIComponent(
+        "### Description\n\n" +
+          "Broken link encountered on the Layer5 website.\n\n" +
+          `- Broken URL: ${brokenUrl}\n` +
+          `- Referrer: ${referrer}\n\n` +
+          "### Expected Behavior\n\n" +
+          "The requested page should resolve successfully instead of returning a 404 page.\n\n" +
+          "### Screenshots\n\n" +
+          "N/A\n\n" +
+          "### Environment:\n" +
+          `- Host OS: ${platform}\n` +
+          `- Browser: ${browserName}\n\n` +
+          "---\n\n" +
+          '<img src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/5-light-small.svg" width="24px" align="left" /><h2>Contributor Resources and <a href="https://layer5.io/community/handbook">Handbook</a></h2>\n\n' +
+          "The layer5.io website uses Gatsby, React, and GitHub Pages. Site content is found under the [`master` branch](https://github.com/layer5io/layer5/tree/master).\n" +
+          "- 📚 See [contributing instructions](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md).\n" +
+          "- 🎨 Wireframes and [designs for Layer5 site](https://www.figma.com/file/5ZwEkSJwUPitURD59YHMEN/Layer5-Designs) in Figma [(open invite)](https://www.figma.com/team_invite/redeem/GvB8SudhEOoq3JOvoLaoMs)\n" +
+          "- 🙋🏾🙋🏼 Questions: [Discussion Forum](https://discuss.meshery.io) and [Community Slack](https://slack.layer5.io).\n\n" +
+          '<img src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/buttons/community.webp" height="22px" align="left" />Join the Layer5 Community by submitting your [community member form](https://layer5.io/newcomer).',
+      );
+      setReportUrl(
+        `https://github.com/layer5io/layer5/issues/new?template=bug_report.md&title=${issueTitle}&body=${issueBody}`,
+      );
+    }
+  }, []);
+
+  const handleNewMessage = () => {
+    setMessage(getRandomMessage());
+  };
+
+  const handleReportBrokenLink = (e) => {
+    if (e) {
+      e.preventDefault();
+    }
+    if (typeof window !== "undefined") {
+      const referrer = document.referrer;
+      if (!referrer) {
+        const confirmReport = window.confirm(
+          "It looks like you may have accessed this page directly. If you manually entered the URL, please double-check it before reporting a broken link.\n\nDo you still want to continue?",
+        );
+        if (!confirmReport) {
+          return;
+        }
+      }
+      window.open(reportUrl, "_blank", "noopener,noreferrer");
+    }
+  };
+
+  if (!message) return null; // Prevents flash before random message loads
 
   return (
     <L404SectionWrapper>
       <Container>
-        <h1 className="message"> {message} </h1>
+        <h1 className="message">{message.headline}</h1>
+        <p className="funny-body">{message.body}</p>
+
         <h2 className="subtitle">Page does not exist.</h2>
+
         <div className="button-row">
-          <img src={serviceMesh} alt="Missing page" className="mesh" />
-          <Button id="return-layer5" aria-label="return-to-layer5-page" $secondary $url="/" $external={false} >Return to Layer5</Button>
+          <Button
+            id="return-layer5"
+            aria-label="return-to-layer5-page"
+            $secondary
+            $url="/"
+            $external={false}
+          >
+            Return to Layer5
+          </Button>
+
+          <Button
+            onClick={handleNewMessage}
+            aria-label="show-another-funny-404-message"
+          >
+            Show another message
+          </Button>
+
+          <Button
+            id="report-broken-link"
+            aria-label="report-broken-link-button"
+            $secondary
+            onClick={handleReportBrokenLink}
+          >
+            Report Broken Link
+          </Button>
         </div>
       </Container>
     </L404SectionWrapper>

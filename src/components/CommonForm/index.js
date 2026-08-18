@@ -307,7 +307,7 @@ const ThankYou = forwardRef(({ title, description }, ref) => {
       <div className="thank-you-box" ref={ref}>
         <h2>{title}</h2>
         <p>{description}</p>
-        <p>In the meantime, please visit our <a href="https://discuss.layer5.io">community forum</a> or join us in our <a href="https://slack.layer5.io">community Slack</a>.</p>
+        <p>In the meantime, please visit our <a href="https://discuss.meshery.io">community forum</a> or join us in our <a href="https://slack.layer5.io">community Slack</a>.</p>
         <h3 className="white">- Team <img src={layer5_img} alt="Layer5" width="125" /></h3>
       </div>
     </Container>
