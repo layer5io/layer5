@@ -272,7 +272,7 @@ const Faq = () => {
                                   <ul>
                                     {faq.answer.map((ans, id) => (
                                       <li key={id}>
-                                        <p>{ans}</p>
+                                        <p dangerouslySetInnerHTML={{ __html: ans }} />
                                       </li>
                                     ))}
                                   </ul>
