@@ -47,7 +47,7 @@ export const AccordionTitleWrapper = styled(AccordionItemHeading)`
     }
   }
 
-  &:focus {
+  &:focus:not(:focus-visible) {
     outline: none;
   }
   * {
