@@ -13,6 +13,7 @@ const DiscussWrapper = styled.div`
     }
     .logo{
         width: 200px;
+        background-color: #1E2117;
     }
     
     .explain {
@@ -36,13 +37,13 @@ const DiscussWrapper = styled.div`
             background-color: none;
             border-radius: 25px;
             .card {
-                height:20rem;
                 -webkit-transition: 450ms all;
                 transition: 450ms all;
                 margin: auto;
                 padding: 1.25rem;
                 background-color: #1E2117; 
                 border-radius: 25px;
+                overflow: hidden;
                 p {
                     text-align: center;
                     padding: 0px 0px 1px 0px;
@@ -72,8 +73,8 @@ const DiscussWrapper = styled.div`
 
     button{
         color: #1E2117;
-        padding: 0.2em 1em;
-        border: 2px solid;
+        padding: 0;
+        border: 0;
         background: none;
         transition: color 0.25s,border-color 0.25s,transform 0.25s,box-shadow 0.25s;
         cursor: pointer;
