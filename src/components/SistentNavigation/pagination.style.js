@@ -4,7 +4,7 @@ const TocPaginationWrapper = styled.div`
   display: flex;
   gap: 1rem;
   justify-content: center;
-  margin: 3rem 2rem 4rem 2rem;
+  margin: 3rem 2rem 2rem 2rem;
 
   @media screen and (max-width: 540px) {
     margin: 0 0 2rem 0;
