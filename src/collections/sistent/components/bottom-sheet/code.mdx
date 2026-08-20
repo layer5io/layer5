@@ -1,0 +1,306 @@
+---
+title: BottomSheet Code
+component: bottom-sheet
+description: Code examples covering the basic bottom sheet, headerless sheets, action lists, scrollable content, and custom header colors.
+---
+
+import { useState } from "react";
+import {
+  BottomSheet,
+  Button,
+  Box,
+  Typography,
+  List,
+  ListItemButton,
+  ListItemText,
+  Divider,
+} from "@sistent/sistent";
+
+export const BasicDemo = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <Box>
+      <Button
+        variant="contained"
+        label="Open Bottom Sheet"
+        onClick={() => setOpen(true)}
+      />
+      <BottomSheet
+        open={open}
+        onClose={() => setOpen(false)}
+        title="Bottom Sheet"
+      >
+        <Typography variant="body2">
+          The sheet slides up from the bottom edge and can be dismissed with the
+          close button, a backdrop click, or the Escape key.
+        </Typography>
+      </BottomSheet>
+    </Box>
+  );
+};
+
+export const HeaderlessDemo = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <Box>
+      <Button
+        variant="outlined"
+        label="Open Without Header"
+        onClick={() => setOpen(true)}
+      />
+      <BottomSheet open={open} onClose={() => setOpen(false)}>
+        <Typography variant="body2" sx={{ mb: 2 }}>
+          Omitting the title renders the body only, with no header row and no
+          close button.
+        </Typography>
+        <Button
+          variant="contained"
+          label="Done"
+          onClick={() => setOpen(false)}
+        />
+      </BottomSheet>
+    </Box>
+  );
+};
+
+export const ActionListDemo = () => {
+  const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState(null);
+  const actions = ["Share", "Duplicate", "Move to folder", "Delete"];
+  const handleSelect = (action) => {
+    setSelected(action);
+    setOpen(false);
+  };
+  return (
+    <Box>
+      <Button
+        variant="contained"
+        label="Open Action List"
+        onClick={() => setOpen(true)}
+      />
+      {selected && (
+        <Typography variant="body2" sx={{ mt: 1 }}>
+          Selected: {selected}
+        </Typography>
+      )}
+      <BottomSheet
+        open={open}
+        onClose={() => setOpen(false)}
+        title="Choose an Action"
+      >
+        <List disablePadding>
+          {actions.map((action) => (
+            <ListItemButton key={action} onClick={() => handleSelect(action)}>
+              <ListItemText primary={action} />
+            </ListItemButton>
+          ))}
+        </List>
+      </BottomSheet>
+    </Box>
+  );
+};
+
+export const ScrollableDemo = () => {
+  const [open, setOpen] = useState(false);
+  const rows = Array.from({ length: 20 }, (_, index) => `Resource ${index + 1}`);
+  return (
+    <Box>
+      <Button
+        variant="outlined"
+        label="Open Scrollable Sheet"
+        onClick={() => setOpen(true)}
+      />
+      <BottomSheet
+        open={open}
+        onClose={() => setOpen(false)}
+        title="All Resources"
+        maxHeight="50vh"
+      >
+        {rows.map((row, index) => (
+          <Box key={row}>
+            <Typography variant="body2" sx={{ py: 1 }}>
+              {row}
+            </Typography>
+            {index < rows.length - 1 && <Divider />}
+          </Box>
+        ))}
+      </BottomSheet>
+    </Box>
+  );
+};
+
+export const CustomHeaderDemo = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <Box>
+      <Button
+        variant="contained"
+        label="Open With Custom Header"
+        onClick={() => setOpen(true)}
+      />
+      <BottomSheet
+        open={open}
+        onClose={() => setOpen(false)}
+        title="Connection Removed"
+        headerBackgroundColor="#00B39F"
+        headerTextColor="#000000"
+        closeButtonAriaLabel="Close connection notice"
+      >
+        <Typography variant="body2">
+          The header background and text colors are overridden, and the close
+          button carries a specific accessible label.
+        </Typography>
+      </BottomSheet>
+    </Box>
+  );
+};
+
+Code examples covering the common bottom sheet configurations.
+
+<a id="Basic Bottom Sheet">
+  <h2>Basic Bottom Sheet</h2>
+</a>
+
+A titled sheet holding a short piece of content. The `open` prop is driven by state and `onClose` resets it.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <BasicDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="bottom-sheet-basic" collapsible code={`const [open, setOpen] = useState(false);
+
+<Button
+  variant="contained"
+  label="Open Bottom Sheet"
+  onClick={() => setOpen(true)}
+/>
+<BottomSheet
+  open={open}
+  onClose={() => setOpen(false)}
+  title="Bottom Sheet"
+>
+  <Typography variant="body2">
+    The sheet slides up from the bottom edge and can be dismissed with the
+    close button, a backdrop click, or the Escape key.
+  </Typography>
+</BottomSheet>`} />
+</div>
+
+<a id="Without a Header">
+  <h2>Without a Header</h2>
+</a>
+
+Omitting `title` drops the header row and its close button. Provide another way out of the sheet, such as an action in the body, alongside the backdrop and Escape key.
+
+`title` is the only prop wired to `aria-labelledby`, so a headerless sheet has no accessible name of its own. Reserve this variant for short, self-describing bodies like the one below, and supply a `title` whenever the sheet needs to be announced by name.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <HeaderlessDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="bottom-sheet-headerless" collapsible code={`<BottomSheet open={open} onClose={() => setOpen(false)}>
+  <Typography variant="body2" sx={{ mb: 2 }}>
+    Omitting the title renders the body only, with no header row and no
+    close button.
+  </Typography>
+  <Button
+    variant="contained"
+    label="Done"
+    onClick={() => setOpen(false)}
+  />
+</BottomSheet>`} />
+</div>
+
+<a id="Action List">
+  <h2>Action List</h2>
+</a>
+
+The most common bottom sheet pattern: a short list of actions that apply to the item the user just selected. Picking an action closes the sheet.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ActionListDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="bottom-sheet-action-list" collapsible code={`const actions = ['Share', 'Duplicate', 'Move to folder', 'Delete'];
+
+const handleSelect = (action) => {
+  setSelected(action);
+  setOpen(false);
+};
+
+<BottomSheet
+  open={open}
+  onClose={() => setOpen(false)}
+  title="Choose an Action"
+>
+  <List disablePadding>
+    {actions.map((action) => (
+      <ListItemButton key={action} onClick={() => handleSelect(action)}>
+        <ListItemText primary={action} />
+      </ListItemButton>
+    ))}
+  </List>
+</BottomSheet>`} />
+</div>
+
+<a id="Scrollable Content">
+  <h2>Scrollable Content</h2>
+</a>
+
+`maxHeight` caps how much of the viewport the sheet occupies, defaulting to `80vh`. Content taller than the cap scrolls within the body while the header stays fixed.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <ScrollableDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="bottom-sheet-scrollable" collapsible code={`<BottomSheet
+  open={open}
+  onClose={() => setOpen(false)}
+  title="All Resources"
+  maxHeight="50vh"
+>
+  {rows.map((row, index) => (
+    <Box key={row}>
+      <Typography variant="body2" sx={{ py: 1 }}>
+        {row}
+      </Typography>
+      {index < rows.length - 1 && <Divider />}
+    </Box>
+  ))}
+</BottomSheet>`} />
+</div>
+
+<a id="Custom Header">
+  <h2>Custom Header</h2>
+</a>
+
+`headerBackgroundColor` and `headerTextColor` override the theme defaults, and `closeButtonAriaLabel` names the close button for assistive technology. `headerTextColor` sets both the title and the close icon, so pick a pair that clears the WCAG AA 4.5:1 contrast ratio: `#000000` on `#00B39F` reaches 7.9:1, while white on the same background reaches only 2.6:1.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <CustomHeaderDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="bottom-sheet-custom-header" collapsible code={`<BottomSheet
+  open={open}
+  onClose={() => setOpen(false)}
+  title="Connection Removed"
+  headerBackgroundColor="#00B39F"
+  headerTextColor="#000000"
+  closeButtonAriaLabel="Close connection notice"
+>
+  <Typography variant="body2">
+    The header background and text colors are overridden, and the close
+    button carries a specific accessible label.
+  </Typography>
+</BottomSheet>`} />
+</div>

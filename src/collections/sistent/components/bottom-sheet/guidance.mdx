@@ -1,0 +1,279 @@
+---
+title: BottomSheet Guidance
+component: bottom-sheet
+description: This guide covers when to reach for a bottom sheet, how to size and structure its content, and the accessibility expectations the component sets.
+---
+
+import { useState } from "react";
+import {
+  BottomSheet,
+  Button,
+  Box,
+  Typography,
+  List,
+  ListItemButton,
+  ListItemText,
+  Divider,
+} from "@sistent/sistent";
+
+export const ActionsSheetDemo = () => {
+  const [open, setOpen] = useState(false);
+  const actions = ["Share design", "Duplicate design", "Export as PNG", "Delete design"];
+  return (
+    <Box>
+      <Button
+        variant="contained"
+        label="Show Actions"
+        onClick={() => setOpen(true)}
+      />
+      <BottomSheet
+        open={open}
+        onClose={() => setOpen(false)}
+        title="Design Actions"
+      >
+        <List disablePadding>
+          {actions.map((action) => (
+            <ListItemButton key={action} onClick={() => setOpen(false)}>
+              <ListItemText primary={action} />
+            </ListItemButton>
+          ))}
+        </List>
+      </BottomSheet>
+    </Box>
+  );
+};
+
+export const DetailsSheetDemo = () => {
+  const [open, setOpen] = useState(false);
+  const details = [
+    ["Cluster", "production-us-east"],
+    ["Namespace", "meshery"],
+    ["Status", "Running"],
+    ["Replicas", "3 of 3 available"],
+  ];
+  return (
+    <Box>
+      <Button
+        variant="outlined"
+        label="View Details"
+        onClick={() => setOpen(true)}
+      />
+      <BottomSheet
+        open={open}
+        onClose={() => setOpen(false)}
+        title="Workload Details"
+      >
+        {details.map(([label, value], index) => (
+          <Box key={label}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                gap: 2,
+                py: 1,
+              }}
+            >
+              <Typography variant="body2" sx={{ fontWeight: 600 }}>
+                {label}
+              </Typography>
+              <Typography variant="body2">{value}</Typography>
+            </Box>
+            {index < details.length - 1 && <Divider />}
+          </Box>
+        ))}
+      </BottomSheet>
+    </Box>
+  );
+};
+
+export const CompactSheetDemo = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <Box>
+      <Button
+        variant="outlined"
+        label="Confirm Removal"
+        onClick={() => setOpen(true)}
+      />
+      <BottomSheet
+        open={open}
+        onClose={() => setOpen(false)}
+        title="Remove Connection"
+        maxHeight="40vh"
+      >
+        <Typography variant="body2" sx={{ mb: 2 }}>
+          This connection will be removed from the workspace. Existing designs
+          that reference it will keep their configuration.
+        </Typography>
+        <Box sx={{ display: "flex", gap: 1, justifyContent: "flex-end" }}>
+          <Button
+            variant="outlined"
+            label="Cancel"
+            onClick={() => setOpen(false)}
+          />
+          <Button
+            variant="contained"
+            label="Remove"
+            onClick={() => setOpen(false)}
+          />
+        </Box>
+      </BottomSheet>
+    </Box>
+  );
+};
+
+<a id="Usage">
+  <h2>Usage</h2>
+</a>
+
+A bottom sheet interrupts the page only as much as it needs to. It keeps the user anchored in the view they were already looking at, which makes it the right container for content that supports the current task rather than replacing it.
+
+- Present contextual actions for an item the user has just selected
+- Reveal supplementary detail about a row, card, or canvas node
+- Offer filters, sorting, or compact navigation on small screens
+- Collect a short piece of input without navigating away from the page
+
+<a id="Basic Example">
+  <h3>Basic Example</h3>
+</a>
+
+A bottom sheet holding a list of contextual actions. Selecting an action closes the sheet and returns the user to the page.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ width: "100%" }}>
+      <ActionsSheetDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="When to Use">
+  <h2>When to Use</h2>
+</a>
+
+<h3>Contextual Actions</h3>
+
+When a user selects an item and several actions apply to it, a bottom sheet lists those actions in one reachable place without covering the surroundings of the item the way a centered dialog would.
+
+<h3>Supplementary Details</h3>
+
+Use a bottom sheet to expand on something already visible on the page. The underlying context stays behind the backdrop, so the user does not lose their position in a long list or a large canvas.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ width: "100%" }}>
+      <DetailsSheetDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<h3>Short Confirmations</h3>
+
+A small sheet with a tightened maximum height works well for a brief confirmation, where the message is one or two sentences and the choice is binary.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ width: "100%" }}>
+      <CompactSheetDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="When Not to Use">
+  <h2>When Not to Use</h2>
+</a>
+
+- **Long multi-step flows.** A sheet capped at a fraction of the viewport is a poor host for a wizard. Use a full page or a Modal instead.
+- **Persistent side navigation.** Primary navigation that should stay on screen belongs in a permanent or persistent Drawer.
+- **Blocking errors that must be acknowledged.** A bottom sheet is dismissed by a backdrop click, so it is the wrong container for a message the user must not miss. Use a Modal.
+- **Content the user needs while interacting with the page.** A sheet sits above the page behind a backdrop. If the user must keep working underneath it, use a Popper or an inline panel.
+
+<a id="Props">
+  <h2>Props</h2>
+</a>
+
+<div className="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>open</td>
+        <td>boolean</td>
+        <td>-</td>
+        <td>Controls whether the sheet is visible. The component is fully controlled, so this value must come from state.</td>
+      </tr>
+      <tr>
+        <td>onClose</td>
+        <td>function</td>
+        <td>-</td>
+        <td>Called when the user dismisses the sheet through the close button, a backdrop click, or the Escape key.</td>
+      </tr>
+      <tr>
+        <td>title</td>
+        <td>string</td>
+        <td>-</td>
+        <td>Heading shown in the sheet header, and the only prop that supplies the accessible name of the sheet through <code>aria-labelledby</code>. When omitted the header, including the close button, is not rendered and the sheet is announced without a name.</td>
+      </tr>
+      <tr>
+        <td>children</td>
+        <td>node</td>
+        <td>-</td>
+        <td>Content rendered in the scrollable body of the sheet.</td>
+      </tr>
+      <tr>
+        <td>maxHeight</td>
+        <td>string</td>
+        <td>80vh</td>
+        <td>Upper bound on the height of the sheet. Content beyond this height scrolls within the body.</td>
+      </tr>
+      <tr>
+        <td>closeButtonAriaLabel</td>
+        <td>string</td>
+        <td>Close</td>
+        <td>Accessible label applied to the header close button.</td>
+      </tr>
+      <tr>
+        <td>headerBackgroundColor</td>
+        <td>string</td>
+        <td>theme surface.tint</td>
+        <td>Overrides the header background color.</td>
+      </tr>
+      <tr>
+        <td>headerTextColor</td>
+        <td>string</td>
+        <td>theme text.primary</td>
+        <td>Overrides the header title and close icon color. Pair it with a <code>headerBackgroundColor</code> that clears the WCAG AA 4.5:1 contrast ratio.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<a id="Best Practices">
+  <h2>Best Practices</h2>
+</a>
+
+- **Keep content short.** A bottom sheet is a glance, not a page. If the body needs heavy scrolling, the content belongs in a Modal or a dedicated route.
+- **Always give a title when the content needs framing.** The title is the only source of the accessible name of the sheet, so omit it only for short action lists whose own content makes the purpose obvious.
+- **Size deliberately.** Leave the maximum height at its 80vh default for browsing content, and tighten it for short confirmations so the sheet does not claim more of the screen than it needs.
+- **Keep actions inside the body.** The header holds the title and close button only. Place confirm and cancel buttons at the end of the body, aligned to the trailing edge.
+- **Do not stack sheets.** Opening a second sheet from within a sheet buries the context the user came from. Replace the content of the current sheet instead.
+- **Close on completion.** Once the user picks an action or submits input, close the sheet so the result is visible on the page underneath.
+- **Preserve the backdrop.** The dimmed backdrop signals that the page is paused. Do not layer other interactive surfaces over it while the sheet is open.
+- **Use theme colors first.** Reach for the header color overrides only for a deliberate treatment, check the result in both light and dark mode, and confirm the pair clears the WCAG AA 4.5:1 contrast ratio. Brand backgrounds such as `#00B39F` need a dark foreground rather than white.
+
+<a id="Accessibility">
+  <h2>Accessibility</h2>
+</a>
+
+- The sheet renders as a modal surface, so focus is trapped inside it while it is open and returns to the trigger when it closes.
+- Supplying a title wires the heading to the sheet through `aria-labelledby`, giving it an accessible name. No other prop names the surface, so a headerless sheet has none: keep the body short and self-describing, and reach for a title as soon as the sheet carries anything a screen reader user would need announced up front.
+- The Escape key dismisses the sheet, matching the behavior users expect from every other modal surface in Sistent.
+- Set an explicit close button label, such as "Close design actions", when a page can open more than one sheet.
+- Keep interactive targets in the sheet at least 44 by 44 pixels so they remain comfortable to hit on touch devices.

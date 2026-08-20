@@ -1,0 +1,105 @@
+---
+name: "BottomSheet"
+title: BottomSheet
+published: true
+component: bottom-sheet
+description: A bottom sheet is a surface that slides up from the bottom edge of the screen to present supplementary content or actions without navigating away from the current view. It spans the full width, is capped to a maximum height, and can be dismissed with the close button, a backdrop click, or the Escape key.
+---
+
+import { useState } from "react";
+import { BottomSheet, Button, Typography, Box } from "@sistent/sistent";
+
+export const BasicBottomSheetDemo = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <Box>
+      <Button
+        variant="contained"
+        label="Open Bottom Sheet"
+        onClick={() => setOpen(true)}
+      />
+      <BottomSheet
+        open={open}
+        onClose={() => setOpen(false)}
+        title="Deployment Details"
+      >
+        <Typography variant="body2" sx={{ mb: 1 }}>
+          The bottom sheet is anchored to the bottom edge of the viewport and
+          slides up over the current page.
+        </Typography>
+        <Typography variant="body2">
+          Dismiss it with the close button in the header, by clicking the
+          backdrop, or by pressing the Escape key.
+        </Typography>
+      </BottomSheet>
+    </Box>
+  );
+};
+
+Bottom sheets are surfaces anchored to the bottom edge of the screen. They slide up over the current page to reveal supplementary content, contextual details, or a short list of actions, and then slide back down once the user is done, leaving the underlying page exactly where it was.
+
+Because they originate from the bottom of the screen, bottom sheets sit within comfortable thumb reach on mobile devices, which makes them a natural fit for touch-first interfaces. On larger screens they read as a full-width panel that keeps the user anchored in their current context.
+
+<a id="Basic Bottom Sheet">
+  <h2>Basic Bottom Sheet</h2>
+</a>
+
+A bottom sheet with a header title and body content. The sheet is controlled through the `open` prop and closed through the `onClose` callback.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+      <BasicBottomSheetDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Key Features">
+  <h2>Key Features</h2>
+</a>
+
+The Sistent BottomSheet component provides the following capabilities:
+
+<h3>Bottom Anchored Surface</h3>
+
+The sheet is pinned to the bottom edge of the viewport, spans the full width, and carries rounded top corners so it reads as a surface rising from the edge of the screen rather than a floating dialog.
+
+<h3>Optional Header</h3>
+
+Passing a `title` renders a header row containing the title and a close button. Omit `title` and the sheet renders content only, which suits compact action lists that need no heading. Because `title` is also what supplies the accessible name, a headerless sheet is announced without one, so keep that variant for bodies that describe themselves.
+
+<h3>Height Control</h3>
+
+The `maxHeight` prop caps how much of the screen the sheet may occupy, defaulting to `80vh`. Content taller than that cap scrolls inside the sheet while the header stays fixed in place.
+
+<h3>Themeable Header</h3>
+
+The header inherits `surface.tint` and `text.primary` from the active Sistent theme, and `headerBackgroundColor` and `headerTextColor` override those defaults when a specific treatment is needed.
+
+<h3>Accessible by Default</h3>
+
+When a `title` is supplied it is wired to the sheet through `aria-labelledby`, focus is trapped inside the surface while it is open, and the close button carries an accessible label that can be customized with `closeButtonAriaLabel`. `title` is the only prop that names the sheet itself, so supply one whenever screen reader users need the surface announced by name.
+
+<h3>Multiple Dismissal Paths</h3>
+
+The `onClose` callback fires from the header close button, a backdrop click, and the Escape key, so users always have a predictable way out of the sheet.
+
+<a id="Common Use Cases">
+  <h2>Common Use Cases</h2>
+</a>
+
+<h3>Contextual Actions</h3>
+
+Present a short list of actions that apply to an item the user has just selected, such as sharing, renaming, or deleting a resource.
+
+<h3>Supplementary Details</h3>
+
+Reveal secondary information about a row in a table or a node on a canvas without pushing the user to a separate page.
+
+<h3>Mobile Navigation and Filters</h3>
+
+Surface filters, sorting options, or a compact navigation menu on small screens, where a bottom anchored surface is easier to reach than a top or side panel.
+
+<h3>Short Focused Forms</h3>
+
+Collect a small amount of input, such as a name or a single selection, while the underlying context stays visible behind the backdrop.
