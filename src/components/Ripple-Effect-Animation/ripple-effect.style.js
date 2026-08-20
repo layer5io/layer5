@@ -45,7 +45,7 @@ button {
     animation: ripple 1.5s linear infinite;
     transform: scale(1.1);
   }
-  &:focus {
+  &:focus:not(:focus-visible) {
     outline: none;
   }
 
