@@ -4,21 +4,20 @@ const FeaturesSectionWrapper = styled.section`
   background-color: black;
   padding-bottom: 5rem;
   margin-bottom: 8rem;
-  overflow: hidden;
   position: relative;
   width: 100%;
   max-width: 100%;
   transform-origin: center;
   z-index: 1;
   height: auto;
-  isolation: isolate;
+
   .skw {
     display: grid;
     position: relative;
     top: -5rem;
   }
   .rect-1-left {
-    background: ${(props) => props.theme.secondaryLightColor || "#c9fcf6"};
+    background: #c9fcf6;
     border-radius: 0 2.125rem 0 0;
     grid-column: 1 / span 2;
     height: 5rem;
@@ -27,23 +26,23 @@ const FeaturesSectionWrapper = styled.section`
     top: 0.5px;
   }
   .rect-2-left {
-    background: ${(props) => props.theme.secondaryColor};
+    background: ${(props) => props.theme.secondaryColor || "#00B39F"};
     border-radius: 0 0 3.5rem 0;
-    grid-column: 1/2;
+    grid-column: 1 / 2;
     height: 5rem;
     grid-row: 2;
   }
   .rect-3-right {
-    background: ${(props) => props.theme.secondaryColor};
+    background: ${(props) => props.theme.secondaryColor || "#00B39F"};
     border-radius: 3.5rem 0 0 0;
-    grid-column: 10/11;
+    grid-column: 10 / 11;
     grid-row: 1;
     height: 5rem;
   }
   .rect-4-right {
-    background: ${(props) => props.theme.secondaryLightColor || "#c9fcf6"};
+    background: #c9fcf6;
     border-radius: 0 0 0 2.125rem;
-    grid-column: 9/11;
+    grid-column: 9 / 11;
     grid-row: 2;
     height: 5rem;
     position: relative;
@@ -51,7 +50,7 @@ const FeaturesSectionWrapper = styled.section`
   }
 
   .section-data {
-    padding: 0 1rem 3rem;
+    padding: 0 1.5rem 3rem;
     text-align: center;
     position: relative;
     z-index: 1;
@@ -67,12 +66,13 @@ const FeaturesSectionWrapper = styled.section`
       max-height: 8rem;
     }
   }
+
   .section-header {
-    margin-top: 3rem;
+    margin-top: 1rem;
     h1 {
       line-height: 3.125rem;
       span {
-        color: ${(props) => props.theme.secondaryColor};
+        color: ${(props) => props.theme.secondaryColor || "#00B39F"};
       }
     }
     h2 {
@@ -80,30 +80,37 @@ const FeaturesSectionWrapper = styled.section`
     }
     p {
       font-size: 1.25rem;
-      line-height: 1.25rem;
-      margin: 1rem 0 0;
+      line-height: 1.6rem;
+      margin: 1rem auto 0;
+      max-width: 50rem;
     }
   }
+
   .smp-section {
     margin: 3rem auto;
-    max-width: 85%;
-    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 2rem;
+    box-sizing: border-box;
 
     .smp-section-row {
       margin: 4rem 0;
       align-items: center;
-
-      @media screen and (max-width: 1200px) {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-      }
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2.5rem;
     }
+
     h2,
     h4 {
       color: white;
     }
+
     .smp-section-data {
+      flex: 1 1 360px;
+      min-width: 0;
+      padding: 0.5rem;
       h1,
       h2,
       p {
@@ -117,64 +124,90 @@ const FeaturesSectionWrapper = styled.section`
     }
 
     .smp-section-carousel {
+      flex: 1 1 480px;
+      min-width: 0;
       width: 100%;
+      position: relative;
+      padding: 0 2.5rem;
+      box-sizing: border-box;
 
       .slick-slider {
         position: relative;
-        max-height: 520px;
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
 
         .slick-list {
-          max-width: 50rem;
-          max-height: 520px;
-          height: auto;
-
-          .slick-track {
-            height: auto;
-          }
+          width: 100%;
+          margin: 0 auto;
+          overflow: hidden;
 
           .slick-slide {
-            height: auto;
-            img {
-              max-height: 20rem;
+            outline: none;
+            text-align: center;
+
+            img,
+            video {
+              display: inline-block;
+              max-height: 22rem;
               width: 100%;
+              max-width: 100%;
+              height: auto;
               object-fit: contain;
-              aspect-ratio: 16 / 9;
-              margin: auto;
+              margin: 0 auto;
+              border-radius: 0.5rem;
             }
           }
         }
 
         .slick-arrow {
-          display: none;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 2;
+          cursor: pointer;
+          width: 32px;
+          height: 32px;
+          display: block !important;
+        }
+
+        .slick-prev {
+          left: -1.75rem;
+        }
+
+        .slick-next {
+          right: -1.75rem;
         }
 
         .slick-dots {
-          bottom: 0;
-          top: 0rem;
-          left: 52rem;
-          width: 8rem;
+          position: absolute;
+          right: -4rem;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 5rem;
+          list-style: none;
+          margin: 0;
+          padding: 0;
 
           li {
             display: block;
             width: 100%;
-            height: auto;
-            margin: 1rem auto;
-            opacity: 0.6;
+            margin: 0.75rem 0;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
 
             &:focus-visible,
             button:focus-visible {
-              outline: 2px solid ${(props) => props.theme.secondaryColor};
+              outline: 2px solid
+                ${(props) => props.theme.secondaryColor || "#00B39F"};
               outline-offset: 2px;
               border-radius: 4px;
             }
 
-            p {
-              display: block;
-
-              img {
-                height: 5rem;
-                vertical-align: middle;
-              }
+            p img {
+              height: 3.5rem;
+              width: auto;
+              border-radius: 0.25rem;
             }
           }
 
@@ -186,68 +219,86 @@ const FeaturesSectionWrapper = styled.section`
     }
   }
 
-  @media screen and (max-width: 1600px) {
-    .smp-section .smp-section-carousel .slick-slider {
-      .slick-list {
-        max-width: 38rem;
-      }
-
-      .slick-dots {
-        left: 40rem;
-        width: 6rem;
-
-        li p img {
-          height: 4rem;
-        }
-      }
-    }
-  }
-
+  /* --- Tablet & Medium Screens (700px - 1200px) --- */
   @media screen and (max-width: 1200px) {
     padding-bottom: 2rem;
     margin-bottom: 6rem;
 
+    .skw {
+      top: -4rem;
+    }
+
+    .rect-1-left,
+    .rect-2-left,
+    .rect-3-right,
+    .rect-4-right {
+      height: 4rem;
+    }
+
+    .section-header {
+      margin-top: 1.5rem;
+    }
+
     .smp-section {
+      padding: 0 1.5rem;
+
       .smp-section-row {
+        flex-direction: column;
         margin: 2.5rem 0;
+        gap: 2rem;
       }
 
       .smp-section-data {
-        h3,
+        flex: 1 1 100%;
+        width: 100%;
+        text-align: center;
+        h1,
         h2,
+        h3,
         p {
           text-align: center;
         }
       }
 
-      .smp-section-carousel .slick-slider {
-        .slick-list {
-          max-width: 90%;
-          margin: 2rem auto;
+      .smp-section-carousel {
+        flex: 1 1 100%;
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 0 3rem;
 
-          .slick-slide img {
-            max-height: 18rem;
+        .slick-slider {
+          .slick-list {
+            .slick-slide img,
+            .slick-slide video {
+              max-height: 20rem;
+            }
           }
-        }
 
-        .slick-dots {
-          position: relative;
-          left: 0;
-          right: auto;
-          top: auto;
-          transform: none;
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          gap: 1rem;
-          margin-top: 1rem;
+          .slick-prev {
+            left: -1.25rem;
+          }
 
-          li {
-            width: auto;
-            margin: 0;
+          .slick-next {
+            right: -1.25rem;
+          }
 
-            p img {
-              height: 3.5rem;
+          .slick-dots {
+            position: static;
+            transform: none;
+            width: 100%;
+            display: flex !important;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+
+            li {
+              width: auto;
+              margin: 0;
+
+              p img {
+                height: 3.5rem;
+              }
             }
           }
         }
@@ -255,46 +306,45 @@ const FeaturesSectionWrapper = styled.section`
     }
   }
 
-  @media screen and (max-width: 960px) {
-    padding-bottom: 0rem;
-    margin-bottom: 4rem;
-    .smp-section .smp-section-carousel .slick-slider .slick-list {
-      .slick-slide {
-        img {
-          max-height: 16rem;
-        }
-      }
+  /* --- Mobile Screens (< 768px) --- */
+  @media screen and (max-width: 768px) {
+    .skw {
+      top: -3rem;
     }
-  }
 
-  @media screen and (max-width: 700px) {
+    .rect-1-left,
+    .rect-2-left,
+    .rect-3-right,
+    .rect-4-right {
+      height: 3rem;
+    }
+
     .smp-section {
-      max-width: 95%;
+      padding: 0 0.5rem;
 
-      .smp-section-carousel .slick-slider {
-        .slick-list {
-          max-width: 90%;
-          margin: 1.5rem auto;
-        }
-        .slick-dots {
-          li p img {
-            height: 2.5rem;
+      .smp-section-carousel {
+        padding: 0 2rem;
+
+        .slick-slider {
+          .slick-list .slick-slide img,
+          .slick-list .slick-slide video {
+            max-height: 15rem;
           }
-        }
-      }
-    }
-  }
 
-  @media screen and (max-width: 500px) {
-    .smp-section {
-      max-width: 95%;
+          .slick-prev {
+            left: -0.75rem;
+          }
 
-      .smp-section-carousel .slick-slider {
-        .slick-list {
-          max-width: 90%;
-          .slick-slide {
-            img {
-              max-height: 11rem;
+          .slick-next {
+            right: -0.75rem;
+          }
+
+          .slick-dots {
+            gap: 0.5rem;
+            margin-top: 1rem;
+
+            li p img {
+              height: 2.25rem;
             }
           }
         }
@@ -302,7 +352,8 @@ const FeaturesSectionWrapper = styled.section`
     }
   }
 
-  @media screen and (max-width: 400px) {
+  /* --- Small Mobile Screens (< 480px) --- */
+  @media screen and (max-width: 480px) {
     .section-header {
       h1 {
         font-size: 1.75rem;
@@ -315,57 +366,73 @@ const FeaturesSectionWrapper = styled.section`
     }
 
     .smp-section {
-      max-width: 100%;
+      padding: 0 0.25rem;
 
-      .smp-section-carousel .slick-slider {
-        .slick-list {
-          max-width: 95%;
-          .slick-slide img {
-            max-height: 9rem;
+      .smp-section-carousel {
+        padding: 0 1.75rem;
+
+        .slick-slider {
+          .slick-list .slick-slide img,
+          .slick-list .slick-slide video {
+            max-height: 12rem;
           }
-        }
-        .slick-dots li p img {
-          height: 2rem;
+
+          .slick-prev {
+            left: -0.6rem;
+            width: 24px;
+            height: 24px;
+          }
+
+          .slick-next {
+            right: -0.6rem;
+            width: 24px;
+            height: 24px;
+          }
+
+          .slick-dots {
+            gap: 0.35rem;
+
+            li p img {
+              height: 1.75rem;
+            }
+          }
         }
       }
     }
   }
 
   .mesh-mngmnt {
+    margin-top: 4rem;
     h3 {
       margin: 1rem 0;
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.7);
       font-size: 1.5rem;
     }
     p {
       margin: 0.5rem 0;
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.7);
     }
 
     .mesh-mngmnt-btn {
       margin: 2rem auto;
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
-      max-width: 75%;
+      gap: 1rem;
+      max-width: 100%;
 
       .mgmt_button {
-        margin: 0.5rem 0;
-        min-width: 15rem;
+        min-width: 12rem;
         border-radius: 1rem;
       }
     }
   }
 
   @media screen and (max-width: 992px) {
-    .mesh-mngmnt {
-      .mesh-mngmnt-btn {
-        justify-content: center;
-        max-width: 100%;
-
-        .mgmt_button {
-          margin: 0.5rem auto;
-          min-width: 11rem;
-        }
+    .mesh-mngmnt .mesh-mngmnt-btn {
+      .mgmt_button {
+        margin: 0.5rem auto;
+        min-width: 11rem;
       }
     }
   }
