@@ -13,6 +13,11 @@ const AdventuresWrapper = styled.div`
     .logo{
         width: 100%;
     }
+    .gatsby-image-wrapper{
+        background-color: transparent;
+        border-radius: 10px;
+        overflow: hidden;
+    }
     .explain {
         padding-top: 0rem;
         text-align: center;
@@ -74,6 +79,8 @@ const AdventuresWrapper = styled.div`
         padding: 0;
         border: 0;
         background: none;
+        appearance: none;
+        line-height: 0;
         transition: color 0.25s,border-color 0.25s,transform 0.25s,box-shadow 0.25s;
         cursor: pointer;
     }
