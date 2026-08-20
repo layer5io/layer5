@@ -13,7 +13,6 @@ const DiscussWrapper = styled.div`
     }
     .logo{
         width: 200px;
-        background-color: #1E2117;
         mix-blend-mode: screen;
     }
     

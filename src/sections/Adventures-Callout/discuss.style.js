@@ -14,7 +14,7 @@ const AdventuresWrapper = styled.div`
         width: 100%;
     }
     .gatsby-image-wrapper{
-        background-color: transparent;
+        background-color: transparent !important;
         border-radius: 10px;
         overflow: hidden;
     }
