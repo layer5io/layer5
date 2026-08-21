@@ -1,0 +1,134 @@
+---
+name: "BBChart"
+title: BBChart
+published: true
+component: bb-chart
+description: A BBChart component is used to visualize data through charts such as line, bar, area, gauge, and donut charts. It is commonly used for dashboards, telemetry, and data-driven interfaces.
+---
+
+import { BBChart } from "@sistent/sistent";
+
+BBChart is a chart component built with Billboard.js that provides a way to visualize data across dashboards, telemetry views, and other data-driven interfaces. It accepts Billboard.js chart options through the `options` prop and supports multiple chart types.
+
+<h3>Line Chart</h3>
+
+Line charts are useful for displaying changes and trends in data over a sequence of values, such as CPU or memory usage over time.
+
+<Row className="image-container" $Hcenter>
+  <ThemeWrapper>
+    <BBChart
+      options={{
+        data: {
+          columns: [
+            ["CPU", 30, 45, 42, 60, 55, 70],
+            ["Memory", 50, 52, 51, 58, 61, 65]
+          ],
+          type: "line"
+        },
+        axis: {
+          x: {
+            type: "category",
+            categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+          }
+        }
+      }}
+    />
+  </ThemeWrapper>
+</Row>
+
+<h3>Bar Chart</h3>
+
+Bar charts can be used to compare values across different categories, such as requests handled by different services.
+
+<Row className="image-container" $Hcenter>
+  <ThemeWrapper>
+    <BBChart
+      options={{
+        data: {
+          columns: [
+            ["Requests", 30, 45, 60, 40, 55]
+          ],
+          type: "bar"
+        },
+        axis: {
+          x: {
+            type: "category",
+            categories: ["API", "Web", "DB", "Auth", "Cache"]
+          }
+        }
+      }}
+    />
+  </ThemeWrapper>
+</Row>
+
+<h3>Area Chart</h3>
+
+Area charts are useful for showing changes over a sequence while emphasizing the magnitude of the values.
+
+<Row className="image-container" $Hcenter>
+  <ThemeWrapper>
+    <BBChart
+      options={{
+        data: {
+          columns: [
+            ["Traffic", 20, 35, 30, 50, 45, 65]
+          ],
+          type: "area"
+        },
+        axis: {
+          x: {
+            type: "category",
+            categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+          }
+        }
+      }}
+    />
+  </ThemeWrapper>
+</Row>
+
+<h3>Gauge Chart</h3>
+
+Gauge charts are useful for displaying a single value against a defined range, such as CPU utilization or system health.
+
+<Row className="image-container" $Hcenter>
+  <ThemeWrapper>
+    <BBChart
+      options={{
+        data: {
+          columns: [
+            ["CPU", 72]
+          ],
+          type: "gauge"
+        },
+        gauge: {
+          min: 0,
+          max: 100
+        }
+      }}
+    />
+  </ThemeWrapper>
+</Row>
+
+<h3>Donut Chart</h3>
+
+Donut charts can be used to show how different categories contribute to a whole.
+
+<Row className="image-container" $Hcenter>
+  <ThemeWrapper>
+    <BBChart
+      options={{
+        data: {
+          columns: [
+            ["Compute", 45],
+            ["Storage", 30],
+            ["Network", 25]
+          ],
+          type: "donut"
+        },
+        donut: {
+          title: "Resource Usage"
+        }
+      }}
+    />
+  </ThemeWrapper>
+</Row>
