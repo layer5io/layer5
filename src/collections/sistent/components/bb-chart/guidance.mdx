@@ -57,3 +57,73 @@ data: {
   ],
   type: "line"
 }
+```
+
+<h3>Light and Dark Themes</h3>
+
+BBChart can be used with both light and dark application themes. Keep chart configuration aligned with the surrounding UI so that labels, axes, legends, and tooltips remain readable.
+
+For theme-aware applications, use the theme provided by the surrounding Sistent components and configure Billboard.js styling as needed.
+
+```javascript
+const options = {
+  data: {
+    columns: [
+      ["CPU", 30, 45, 42, 60],
+      ["Memory", 50, 52, 51, 58]
+    ],
+    type: "line"
+  },
+  axis: {
+    x: {
+      type: "category",
+      categories: ["Mon", "Tue", "Wed", "Thu"]
+    }
+  },
+  tooltip: {
+    show: true
+  }
+};
+``` 
+
+<h3>Tooltips</h3>
+
+Use the `tooltip` option to control how values are displayed when users interact with chart data.
+
+```javascript
+const options = {
+  data: {
+    columns: [
+      ["CPU", 30, 45, 42, 60],
+      ["Memory", 50, 52, 51, 58]
+    ],
+    type: "line"
+  },
+  tooltip: {
+    show: true
+  }
+};
+```
+
+<h3>Time-Series Axes</h3>
+
+Use a time-series axis when the x-axis represents dates or timestamps.
+
+```javascript
+data: {
+  x: "x",
+  columns: [
+    ["x", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21"],
+    ["Requests", 30, 45, 42, 60]
+  ],
+  type: "line"
+},
+axis: {
+  x: {
+    type: "timeseries",
+    tick: {
+      format: "%Y-%m-%d"
+    }
+  }
+}
+```
