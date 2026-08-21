@@ -1,0 +1,155 @@
+---
+name: "NavigationNavbar"
+title: NavigationNavbar
+published: true
+component: navigation-navbar
+description: The NavigationNavbar component is a structured, responsive vertical menu system ideal for application sidebars, supporting a single level of nesting and integrated declarative permission gating.
+---
+
+import { CodeBlock } from "../../../../components/CodeBlock";
+
+<a id="basic-navigation-navbar">
+  <h2>Basic NavigationNavbar</h2>
+</a>
+
+A standard flat list of navigation items. `NavigationNavbar` relies entirely on external routing logic, so active state highlights must be provided manually.
+
+<div className="showcase">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '320px', margin: '0 auto' }}>
+    <BasicNavigationDemo />
+  </div>
+  <CodeBlock name="basic-navigation-navbar" collapsible code={`
+import { useState } from "react";
+import {
+  NavigationNavbar,
+  DashboardIcon,
+  PublicIcon
+} from "@sistent/sistent";
+
+function BasicNavigationNavbar() {
+  const items = [
+    {
+      id: "dashboard",
+      title: "Dashboard",
+      icon: <DashboardIcon />,
+      onClick: () => console.log("Dashboard clicked")
+    },
+    {
+      id: "public",
+      title: "Public Resources",
+      icon: <PublicIcon />,
+      onClick: () => console.log("Public clicked")
+    }
+  ];
+
+  return <NavigationNavbar navigationItems={items} />;
+}
+`} />
+</div>
+
+<a id="nested-navigation-navbar">
+  <h2>Nested NavigationNavbar</h2>
+</a>
+
+Group related navigation items into a collapsible accordion. The component only permits one section to remain open at a time. The active styling shown here is provided manually via a customized `title` `ReactNode`.
+
+<div className="showcase">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '320px', margin: '0 auto' }}>
+    <NestedNavigationDemo />
+  </div>
+  <CodeBlock name="nested-navigation-navbar" collapsible code={`
+import { useState } from "react";
+import {
+  NavigationNavbar,
+  FolderRoundedIcon,
+  FileIcon,
+  SettingsIcon
+} from "@sistent/sistent";
+
+function NestedNavigationNavbar() {
+  const items = [
+    {
+      id: "projects",
+      title: <span style={{ fontWeight: 600, color: "var(--color-primary)" }}>Active Projects</span>,
+      icon: <FolderRoundedIcon />,
+      onClick: () => console.log("Projects parent clicked"),
+      subItems: [
+        {
+          id: "project-alpha",
+          title: "Project Alpha",
+          icon: <FileIcon />,
+          onClick: () => console.log("Project Alpha clicked")
+        },
+        {
+          id: "project-beta",
+          title: "Project Beta",
+          icon: <FileIcon />,
+          onClick: () => console.log("Project Beta clicked")
+        }
+      ]
+    },
+    {
+      id: "settings",
+      title: "Settings",
+      icon: <SettingsIcon />,
+      onClick: () => console.log("Settings clicked")
+    }
+  ];
+
+  return <NavigationNavbar navigationItems={items} />;
+}
+`} />
+</div>
+
+<a id="permission-gated-navigation-navbar">
+  <h2>Permission-Gated NavigationNavbar</h2>
+</a>
+
+By providing a <code>permissionKey</code>, unauthorized navigation items are automatically rendered inert and will display an interactive shield tooltip using the context from the `PermissionProvider`.
+
+<div className="showcase">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '320px', margin: '0 auto' }}>
+    <PermissionNavigationDemo />
+  </div>
+  <CodeBlock name="permission-gated-navigation-navbar" collapsible code={`
+import { useState } from "react";
+import {
+  NavigationNavbar,
+  PermissionProvider,
+  GroupIcon
+} from "@sistent/sistent";
+
+function PermissionNavigationNavbar() {
+  const mockUserContext = {
+    userName: "Ada Lovelace",
+    orgName: "Layer5 Cloud",
+    roleNames: ["Team Member"]
+  };
+
+  const samplePermissionKey = {
+    id: "49a5b3a4-846c-4861-bf96-981cf26d70bc",
+    function: "Manage Users",
+    description: "Create and configure users.",
+    category: "Identity & Access",
+    subcategory: "Users"
+  };
+
+  const items = [
+    {
+      id: "users",
+      title: "Manage Users",
+      icon: <GroupIcon />,
+      permissionKey: samplePermissionKey,
+      permissionAction: "showShield",
+      onClick: () => console.log("Manage Users clicked")
+    }
+  ];
+
+  return (
+    <PermissionProvider userHasPermission={() => false} userContext={mockUserContext}>
+      <NavigationNavbar navigationItems={items} />
+    </PermissionProvider>
+  );
+}
+`} />
+</div>

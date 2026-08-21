@@ -1,0 +1,160 @@
+---
+name: "NavigationNavbar"
+title: NavigationNavbar
+published: true
+component: navigation-navbar
+description: The NavigationNavbar component is a structured, responsive vertical menu system ideal for application sidebars, supporting a single level of nesting and integrated declarative permission gating.
+---
+
+import { useState } from "react";
+
+import {
+  NavigationNavbar,
+  PermissionProvider,
+  DashboardIcon,
+  SettingsIcon,
+  GroupIcon,
+  PublicIcon,
+  FolderRoundedIcon,
+  FileIcon
+} from "@sistent/sistent";
+
+export const BasicNavigationDemo = () => {
+  const items = [
+    {
+      id: "dashboard",
+      title: "Dashboard",
+      icon: <DashboardIcon />,
+      onClick: () => console.log("Dashboard clicked")
+    },
+    {
+      id: "public",
+      title: "Public Resources",
+      icon: <PublicIcon />,
+      onClick: () => console.log("Public clicked")
+    }
+  ];
+
+  return <NavigationNavbar navigationItems={items} />;
+};
+
+export const NestedNavigationDemo = () => {
+  const items = [
+    {
+      id: "projects",
+      title: <span style={{ fontWeight: 600, color: "var(--color-primary)" }}>Active Projects</span>,
+      icon: <FolderRoundedIcon />,
+      onClick: () => console.log("Projects parent clicked"),
+      subItems: [
+        {
+          id: "project-alpha",
+          title: "Project Alpha",
+          icon: <FileIcon />,
+          onClick: () => console.log("Project Alpha clicked")
+        },
+        {
+          id: "project-beta",
+          title: "Project Beta",
+          icon: <FileIcon />,
+          onClick: () => console.log("Project Beta clicked")
+        }
+      ]
+    },
+    {
+      id: "settings",
+      title: "Settings",
+      icon: <SettingsIcon />,
+      onClick: () => console.log("Settings clicked")
+    }
+  ];
+
+  return <NavigationNavbar navigationItems={items} />;
+};
+
+export const PermissionNavigationDemo = () => {
+  const mockUserContext = {
+    userName: "Ada Lovelace",
+    orgName: "Layer5 Cloud",
+    roleNames: ["Team Member"]
+  };
+
+  const samplePermissionKey = {
+    id: "49a5b3a4-846c-4861-bf96-981cf26d70bc",
+    function: "Manage Users",
+    description: "Create and configure users.",
+    category: "Identity & Access",
+    subcategory: "Users"
+  };
+
+  const items = [
+    {
+      id: "users",
+      title: "Manage Users",
+      icon: <GroupIcon />,
+      permissionKey: samplePermissionKey,
+      permissionAction: "showShield",
+      onClick: () => console.log("Manage Users clicked")
+    }
+  ];
+
+  return (
+    <PermissionProvider userHasPermission={() => false} userContext={mockUserContext}>
+      <NavigationNavbar navigationItems={items} />
+    </PermissionProvider>
+  );
+};
+
+The **NavigationNavbar** component provides a structured, responsive vertical menu system ideal for application sidebars and settings panels. It supports a single level of collapsible nesting and integrates natively with Sistent's declarative authorization system to render unauthorized items as inert and display standard permission shields.
+
+<a id="Basic NavigationNavbar">
+  <h2>Basic NavigationNavbar</h2>
+</a>
+
+A basic flat navigation list. Each item receives an icon, a title, and an `onClick` callback. Because `NavigationNavbar` relies entirely on external routing logic, developers must handle route matching and custom active styles (e.g., via customized `title` nodes) directly.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '320px', margin: '0 auto' }}>
+      <BasicNavigationDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Usage">
+  <h2>Usage</h2>
+</a>
+
+The `NavigationNavbar` component is highly versatile and accommodates several structural patterns:
+
+- **Basic Navigation:** Flat menu lists for simple application routing.
+- **Nested Navigation:** Single-level accordion menus for grouping related views.
+- **Permission-Gated Navigation:** Items that automatically lock themselves and display a `PermissionShield` tooltip when users lack authorization.
+- **Mobile-Only Navigation:** Items that can be dynamically hidden on desktop layouts using the `showOnWeb` property.
+
+<a id="Nested NavigationNavbar">
+  <h2>Nested NavigationNavbar</h2>
+</a>
+
+Group related links under a collapsible parent item by providing a <code>subItems</code> array. The navbar natively manages accordion state to ensure only one nested section is open at a time. *Note: Nesting is strictly limited to one level deep.*
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '320px', margin: '0 auto' }}>
+      <NestedNavigationDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Permission-Gated NavigationNavbar">
+  <h2>Permission-Gated NavigationNavbar</h2>
+</a>
+
+`NavigationNavbar` deeply integrates with Sistent's `PermissionProvider`. By supplying a <code>permissionKey</code> to any item, the component automatically blocks unauthorized clicks and prevents unauthorized parent items from expanding, rendering them completely inert while displaying a standard shield tooltip.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '320px', margin: '0 auto' }}>
+      <PermissionNavigationDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
