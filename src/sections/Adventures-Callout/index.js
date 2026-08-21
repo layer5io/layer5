@@ -23,13 +23,11 @@ const AdventuresCallout = () => {
                     <h2>Adventures of Five & Friends</h2>
                     {/*<p>Meet Five, our intergalatic Cloud Native Hero</p>*/}
 
-                    <button>
-                      <StaticImage
-                        className="logo"
-                        alt="Adventures of Five & Friends"
-                        src={Adventure}
-                      />
-                    </button>
+                    <StaticImage
+                      className="logo"
+                      alt="Adventures of Five & Friends"
+                      src={Adventure}
+                    />
                   </SectionTitle>
                 </div>
               </div>

@@ -36,7 +36,6 @@ const DiscussWrapper = styled.div`
             background-color: none;
             border-radius: 25px;
             .card {
-                height:20rem;
                 -webkit-transition: 450ms all;
                 transition: 450ms all;
                 margin: auto;
