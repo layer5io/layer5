@@ -40,8 +40,9 @@ const DiscussWrapper = styled.div`
                 transition: 450ms all;
                 margin: auto;
                 padding: 1.25rem;
-                background-color: #1E2117; 
+                background-color: #1E2117;
                 border-radius: 25px;
+                overflow: hidden;
                 p {
                     text-align: center;
                     padding: 0px 0px 1px 0px;
@@ -69,14 +70,6 @@ const DiscussWrapper = styled.div`
         }
     }
 
-    button{
-        color: #1E2117;
-        padding: 0.2em 1em;
-        border: 2px solid;
-        background: none;
-        transition: color 0.25s,border-color 0.25s,transform 0.25s,box-shadow 0.25s;
-        cursor: pointer;
-    }
     @media only screen and (min-width: 768px){
         @media only screen and (min-width: 1211px){
             .card-align{

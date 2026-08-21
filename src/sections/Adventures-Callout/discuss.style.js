@@ -69,14 +69,6 @@ const AdventuresWrapper = styled.div`
         }
     }
 
-    button{
-        color: #1E2117;
-        padding: 0;
-        border: 0;
-        background: none;
-        transition: color 0.25s,border-color 0.25s,transform 0.25s,box-shadow 0.25s;
-        cursor: pointer;
-    }
     @media only screen and (min-width: 768px){
         @media only screen and (min-width: 1211px){
             .explain {
@@ -126,9 +118,6 @@ const AdventuresWrapper = styled.div`
                         width:18rem;
                         height:18rem;
                     }
-                }
-                button {
-                    padding: 0;
                 }
             }
         }
