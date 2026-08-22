@@ -80,6 +80,7 @@ const DiscussWrapper = styled.div`
                     padding: 0;
                     h2{
                         padding-bottom: 0.75rem;
+                        font-size: 24px;
                     }
                     .card {
                         max-width: 23.8rem;
@@ -91,19 +92,19 @@ const DiscussWrapper = styled.div`
         }
         @media only screen and (max-width: 1211px){
             .card-align{
-              padding: 1.25rem 0;
+              padding: 1rem 0;
             }
             .explain {
                 .cards {
                     padding: 0; 
                     h2 {
                         padding-bottom: 0.75rem;
-                        font-size: 24px;
-                        line-height: 33px;
+                        font-size: 20px;
+                        line-height: 28px;
                     }
                     p {
                         font-size: 14px;
-                        line-height: 22px;
+                        line-height: 20px;
                     }
                     .card{
                         max-width: 22.5rem;
@@ -116,25 +117,27 @@ const DiscussWrapper = styled.div`
      
         @media only screen and (max-width: 992px){
             .card-align{
-              padding: 0.75rem 0;
+              padding: 0.5rem 0;
             }
             .logo {
-                width: 170px;
-                margin-top: 1rem;
+                width: 160px;
+                margin-top: 0.75rem;
             }
             .explain {
                 .cards {
                     padding: 0;
                     .card {
+                        padding: 1rem 0.75rem;
                         h2 {
-                            font-size: 21px;
-                            line-height: 28px;
+                            font-size: 18px;
+                            line-height: 24px;
                             padding-bottom: 0.5rem;
+                            letter-spacing: -0.01em;
                         }
                         p {
-                            font-size: 13.5px;
-                            line-height: 20px;
-                            padding: 0 0.5rem;
+                            font-size: 13px;
+                            line-height: 18px;
+                            padding: 0 0.25rem;
                         }
                         max-width: 22rem;
                         min-height: 20rem;
@@ -156,12 +159,13 @@ const DiscussWrapper = styled.div`
             .cards {
                 padding: 1rem 1rem 1rem 1rem;
                 .card {
-                    padding: 0.5rem;
+                    padding: 0.75rem 0.5rem;
                     h2 {
-                        font-size: 22px;
+                        font-size: 18px;
+                        letter-spacing: -0.01em;
                     }
                     p{
-                        font-size: 14px;  
+                        font-size: 13px;  
                     }
                 }
             }
@@ -172,10 +176,11 @@ const DiscussWrapper = styled.div`
             .cards {
                 padding: 1rem .5rem 1rem .5rem;
                 h2 {
-                    font-size: 20px;
+                    font-size: 17px;
+                    letter-spacing: -0.01em;
                 }
                 p{
-                    font-size: 13px;  
+                    font-size: 12.5px;  
                 }
             }
         }
