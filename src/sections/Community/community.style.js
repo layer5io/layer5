@@ -252,11 +252,11 @@ const CommunitySectionWrapper = styled.div`
         flex-direction: column; 
         align-items: center;
 
-        @media screen and (min-width: 768px) {
-            flex-direction: row; 
-            justify-content: center; 
-            align-items: flex-start; 
-            gap: 2rem; 
+        @media screen and (min-width: 1211px) {
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 2rem;
         }
     }
     .recognition-program {
