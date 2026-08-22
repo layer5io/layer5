@@ -251,11 +251,15 @@ const CommunitySectionWrapper = styled.div`
         display: flex;
         flex-direction: column; 
         align-items: center;
+        gap: 1.5rem;
 
-        @media screen and (min-width: 1211px) {
+        @media screen and (min-width: 768px) {
             flex-direction: row;
             justify-content: center;
-            align-items: flex-start;
+            align-items: stretch;
+            gap: 1.5rem;
+        }
+        @media screen and (min-width: 1211px) {
             gap: 2rem;
         }
     }

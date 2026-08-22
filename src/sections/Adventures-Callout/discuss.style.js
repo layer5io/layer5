@@ -76,7 +76,8 @@ const AdventuresWrapper = styled.div`
                 .cards {
                     padding: 0;
                     .card {
-                        height:20rem;
+                        min-height: 20rem;
+                        height: 100%;
                         max-width: 23.8rem;
                     }  
                 }
@@ -86,38 +87,41 @@ const AdventuresWrapper = styled.div`
             .explain {
                 .cards {
                     padding: 0; 
-                        h2 {
-                            font-size: 25px;
-                            line-height: 35px;
-                        }
-                        p {
-                            font-size: 15px
-                        }
-                        .card{
-                            max-width:23rem;
-                            height:20rem;
-                        }
+                    h2 {
+                        font-size: 24px;
+                        line-height: 33px;
+                    }
+                    p {
+                        font-size: 14px;
+                    }
+                    .card{
+                        max-width: 22.5rem;
+                        min-height: 20rem;
+                        height: 100%;
                     }
                 }
             }
         }
        
         @media only screen and (max-width: 992px){
-          
             .explain {
                 .cards {
                     padding: 0;
                     .card {
                         h2 {
-                            font-size: 22px;
-                            line-height: 32px;
+                            font-size: 21px;
+                            line-height: 28px;
                         }
                         p {
-                            font-size: 13px;
-                            line-height: 23px;
+                            font-size: 13.5px;
+                            line-height: 20px;
                         }
-                        max-width:18rem;
-                        height:18rem;
+                        .logo {
+                            margin-top: 0.75rem;
+                        }
+                        max-width: 22rem;
+                        min-height: 20rem;
+                        height: 100%;
                     }
                 }
             }
@@ -130,10 +134,10 @@ const AdventuresWrapper = styled.div`
                 .card {
                     padding: 0.5rem;
                     h2 {
-                        font-size: 25px;
+                        font-size: 22px;
                     }
                     p{
-                        font-size: 15px;  
+                        font-size: 14px;  
                     }
                 }
             }
@@ -144,7 +148,7 @@ const AdventuresWrapper = styled.div`
             .cards {
                 padding: 1rem .5rem 1rem .5rem;
                 h2 {
-                    font-size: 22px;
+                    font-size: 20px;
                 }
                 p{
                     font-size: 13px;  

@@ -73,40 +73,42 @@ const DiscussWrapper = styled.div`
     @media only screen and (min-width: 768px){
         @media only screen and (min-width: 1211px){
             .card-align{
-              padding:2rem 0;
+              padding: 1.5rem 0;
             }
             .explain {
                 .cards {
                     padding: 0;
                     h2{
-                        padding-bottom:1rem;
+                        padding-bottom: 0.75rem;
                     }
                     .card {
                         max-width: 23.8rem;
-                        height:20rem;
+                        min-height: 20rem;
+                        height: 100%;
                     }  
                 }
             }
         }
         @media only screen and (max-width: 1211px){
             .card-align{
-              padding:2rem 0;
+              padding: 1.25rem 0;
             }
             .explain {
                 .cards {
                     padding: 0; 
-                        h2 {
-                            padding-bottom:1rem;
-                            font-size: 25px;
-                            line-height: 35px;
-                        }
-                        p {
-                            font-size: 15px
-                        }
-                        .card{
-                            max-width:23rem;
-                            height:20rem;
-                        }
+                    h2 {
+                        padding-bottom: 0.75rem;
+                        font-size: 24px;
+                        line-height: 33px;
+                    }
+                    p {
+                        font-size: 14px;
+                        line-height: 22px;
+                    }
+                    .card{
+                        max-width: 22.5rem;
+                        min-height: 20rem;
+                        height: 100%;
                     }
                 }
             }
@@ -114,23 +116,29 @@ const DiscussWrapper = styled.div`
      
         @media only screen and (max-width: 992px){
             .card-align{
-              padding:1.1rem 0;
+              padding: 0.75rem 0;
+            }
+            .logo {
+                width: 170px;
+                margin-top: 1rem;
             }
             .explain {
                 .cards {
                     padding: 0;
                     .card {
                         h2 {
-                            font-size: 22px;
-                            line-height: 32px;
-                            padding-bottom:1rem;
+                            font-size: 21px;
+                            line-height: 28px;
+                            padding-bottom: 0.5rem;
                         }
                         p {
-                            font-size: 13px;
-                            line-height: 23px;
+                            font-size: 13.5px;
+                            line-height: 20px;
+                            padding: 0 0.5rem;
                         }
-                        max-width:18rem;
-                        height:18rem;
+                        max-width: 22rem;
+                        min-height: 20rem;
+                        height: 100%;
                     }
                 }
                 button {
@@ -142,7 +150,7 @@ const DiscussWrapper = styled.div`
   
     @media only screen and (max-width: 450px){
         .card-align{
-              padding:2rem 0;
+              padding: 1rem 0;
         }
         .explain {
             .cards {
@@ -150,10 +158,10 @@ const DiscussWrapper = styled.div`
                 .card {
                     padding: 0.5rem;
                     h2 {
-                        font-size: 25px;
+                        font-size: 22px;
                     }
                     p{
-                        font-size: 15px;  
+                        font-size: 14px;  
                     }
                 }
             }
@@ -164,7 +172,7 @@ const DiscussWrapper = styled.div`
             .cards {
                 padding: 1rem .5rem 1rem .5rem;
                 h2 {
-                    font-size: 22px;
+                    font-size: 20px;
                 }
                 p{
                     font-size: 13px;  
