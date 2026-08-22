@@ -41,7 +41,7 @@ const DiscussWrapper = styled.div`
                 transition: 450ms all;
                 margin: auto;
                 padding: 1.25rem;
-                background-color: #1E2117;
+                background: ${(props) => props.theme.darkJungleGreenColor};
                 border-radius: 25px;
                 overflow: hidden;
                 p {
