@@ -12,6 +12,7 @@ const AdventuresWrapper = styled.div`
     }
     .logo{
         width: 100%;
+        margin-top: 2.5rem;
     }
     .explain {
         padding-top: 0rem;
