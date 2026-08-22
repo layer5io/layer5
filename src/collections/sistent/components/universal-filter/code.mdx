@@ -1,0 +1,471 @@
+---
+title: Universal Filter Code
+component: universal-filter
+description: Implementation examples and props specification for the UniversalFilter component, covering attribute filtering, search integration, and date-range selection.
+---
+
+import { useMemo, useState } from "react";
+import {
+  NoSsr,
+  ResponsiveDataTable,
+  Stack,
+  TextField,
+  Typography,
+  UniversalFilter
+} from "@sistent/sistent";
+
+export const filterSchema = {
+  type: {
+    name: "Type",
+    options: [
+      { label: "Deployment", value: "deployment" },
+      { label: "Service", value: "service" },
+      { label: "Config Map", value: "configmap" }
+    ]
+  },
+  visibility: {
+    name: "Visibility",
+    options: [
+      { label: "Public", value: "public" },
+      { label: "Private", value: "private" }
+    ]
+  }
+};
+
+export const catalogRows = [
+  { name: "Istio Bookinfo", type: "deployment", visibility: "public", owner: "Alice" },
+  { name: "Redis Cache", type: "service", visibility: "private", owner: "Bob" },
+  { name: "Nginx Ingress", type: "deployment", visibility: "private", owner: "Charlie" },
+  { name: "App Settings", type: "configmap", visibility: "public", owner: "Alice" },
+  { name: "Payments API", type: "service", visibility: "public", owner: "Bob" }
+];
+
+export const BasicFilterDemo = () => {
+  const [selectedFilters, setSelectedFilters] = useState({ type: "All", visibility: "All" });
+  const [applied, setApplied] = useState(null);
+  const handleApplyFilter = (filters) => setApplied(filters);
+  return (
+    <NoSsr>
+      <Stack direction="row" spacing={2} alignItems="center">
+        <UniversalFilter
+          id="basic-universal-filter"
+          filters={filterSchema}
+          selectedFilters={selectedFilters}
+          setSelectedFilters={setSelectedFilters}
+          handleApplyFilter={handleApplyFilter}
+          variant="outlined"
+        />
+        <Typography variant="body2">
+          {applied
+            ? "Applied: type = " + applied.type + ", visibility = " + applied.visibility
+            : "No filters applied yet. Open the filter and press Apply."}
+        </Typography>
+      </Stack>
+    </NoSsr>
+  );
+};
+
+export const TableFilterDemo = () => {
+  const [selectedFilters, setSelectedFilters] = useState({ type: "All", visibility: "All" });
+  const [appliedFilters, setAppliedFilters] = useState({ type: "All", visibility: "All" });
+  const [search, setSearch] = useState("");
+  const columns = [
+    { name: "name", label: "Name" },
+    { name: "type", label: "Type" },
+    { name: "visibility", label: "Visibility" },
+    { name: "owner", label: "Owner" }
+  ];
+  const [tableCols, updateCols] = useState(columns);
+  const [columnVisibility, setColumnVisibility] = useState({});
+  const data = useMemo(
+    () =>
+      catalogRows
+        .filter((row) => appliedFilters.type === "All" || row.type === appliedFilters.type)
+        .filter(
+          (row) =>
+            appliedFilters.visibility === "All" || row.visibility === appliedFilters.visibility
+        )
+        .filter((row) => row.name.toLowerCase().includes(search.trim().toLowerCase()))
+        .map((row) => [row.name, row.type, row.visibility, row.owner]),
+    [appliedFilters, search]
+  );
+  const options = {
+    filter: false,
+    download: false,
+    print: false,
+    viewColumns: false,
+    selectableRows: "none",
+    responsive: "standard",
+    pagination: false,
+    search: false,
+    elevation: 1
+  };
+  return (
+    <NoSsr>
+      <Stack direction="row" spacing={2} alignItems="center" style={{ marginBottom: "1rem" }}>
+        <TextField
+          size="small"
+          label="Search designs"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <UniversalFilter
+          id="table-universal-filter"
+          filters={filterSchema}
+          selectedFilters={selectedFilters}
+          setSelectedFilters={setSelectedFilters}
+          handleApplyFilter={(filters) => setAppliedFilters(filters)}
+          variant="outlined"
+        />
+      </Stack>
+      <ResponsiveDataTable
+        columns={columns}
+        data={data}
+        options={options}
+        tableCols={tableCols}
+        updateCols={updateCols}
+        columnVisibility={columnVisibility}
+      />
+    </NoSsr>
+  );
+};
+
+export const daysAgo = (days) => new Date(Date.now() - days * 24 * 60 * 60 * 1000);
+
+export const activityQuickRanges = [
+  { label: "Last 24 hours", getRange: () => ({ startDate: daysAgo(1), endDate: new Date() }) },
+  { label: "Last 7 days", getRange: () => ({ startDate: daysAgo(7), endDate: new Date() }) },
+  { label: "Last 30 days", getRange: () => ({ startDate: daysAgo(30), endDate: new Date() }) }
+];
+
+export const DateRangeFilterDemo = () => {
+  const [selectedFilters, setSelectedFilters] = useState({ type: "All" });
+  const [selectedDateRange, setSelectedDateRange] = useState({
+    startDate: daysAgo(7),
+    endDate: new Date()
+  });
+  return (
+    <NoSsr>
+      <Stack direction="row" spacing={2} alignItems="center">
+        <UniversalFilter
+          id="date-universal-filter"
+          filters={{ type: filterSchema.type }}
+          selectedFilters={selectedFilters}
+          setSelectedFilters={setSelectedFilters}
+          handleApplyFilter={() => {}}
+          variant="outlined"
+          datePicker
+          selectedDateRange={selectedDateRange}
+          setSelectedDateRange={setSelectedDateRange}
+          quickDateRanges={activityQuickRanges}
+        />
+        <Typography variant="body2">
+          {selectedDateRange.startDate.toLocaleDateString()} &rarr;{" "}
+          {selectedDateRange.endDate.toLocaleDateString()}
+        </Typography>
+      </Stack>
+    </NoSsr>
+  );
+};
+
+The UniversalFilter is controlled from the parent: the parent owns the selected values, while the component owns the panel and its draft state until the user presses <strong>Apply</strong>.
+
+<a id="Attribute Filtering">
+  <h2>Attribute Filtering</h2>
+</a>
+
+A schema of two attributes rendered as multi-attribute selects. Nothing is committed until <strong>Apply</strong> is pressed, at which point <code>handleApplyFilter</code> receives the applied values.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <BasicFilterDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-universal-filter" collapsible code={`import { useState } from "react";
+import { UniversalFilter } from "@sistent/sistent";
+
+const filterSchema = {
+  type: {
+    name: "Type",
+    options: [
+      { label: "Deployment", value: "deployment" },
+      { label: "Service", value: "service" },
+      { label: "Config Map", value: "configmap" },
+    ],
+  },
+  visibility: {
+    name: "Visibility",
+    options: [
+      { label: "Public", value: "public" },
+      { label: "Private", value: "private" },
+    ],
+  },
+};
+
+export default function BasicFilter() {
+  const [selectedFilters, setSelectedFilters] = useState({
+    type: "All",
+    visibility: "All",
+  });
+
+  const handleApplyFilter = (filters) => {
+    // filters holds the values the user just applied
+    fetchDesigns(filters);
+  };
+
+  return (
+    <UniversalFilter
+      id="basic-universal-filter"
+      filters={filterSchema}
+      selectedFilters={selectedFilters}
+      setSelectedFilters={setSelectedFilters}
+      handleApplyFilter={handleApplyFilter}
+      variant="outlined"
+    />
+  );
+}`} />
+</div>
+
+<a id="Filtering a Table">
+  <h2>Filtering a Table</h2>
+</a>
+
+The common pairing: a search input for free text and a UniversalFilter for structured attributes, both feeding the same data set. Search narrows results as the user types, while attribute filters are committed on <strong>Apply</strong>.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TableFilterDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="table-universal-filter" collapsible code={`import { useMemo, useState } from "react";
+import {
+  NoSsr,
+  ResponsiveDataTable,
+  Stack,
+  TextField,
+  UniversalFilter,
+} from "@sistent/sistent";
+
+const columns = [
+  { name: "name", label: "Name" },
+  { name: "type", label: "Type" },
+  { name: "visibility", label: "Visibility" },
+  { name: "owner", label: "Owner" },
+];
+
+export default function FilteredCatalog({ rows }) {
+  const [selectedFilters, setSelectedFilters] = useState({
+    type: "All",
+    visibility: "All",
+  });
+  const [appliedFilters, setAppliedFilters] = useState(selectedFilters);
+  const [search, setSearch] = useState("");
+  const [tableCols, updateCols] = useState(columns);
+  const [columnVisibility, setColumnVisibility] = useState({});
+
+  const data = useMemo(
+    () =>
+      rows
+        .filter(
+          (row) =>
+            appliedFilters.type === "All" ||
+            row.type === appliedFilters.type
+        )
+        .filter(
+          (row) =>
+            appliedFilters.visibility === "All" ||
+            row.visibility === appliedFilters.visibility
+        )
+        .filter((row) =>
+          row.name.toLowerCase().includes(search.trim().toLowerCase())
+        )
+        .map((row) => [row.name, row.type, row.visibility, row.owner]),
+    [rows, appliedFilters, search]
+  );
+
+  return (
+    <NoSsr>
+      <Stack direction="row" spacing={2} alignItems="center">
+        <TextField
+          size="small"
+          label="Search designs"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <UniversalFilter
+          id="table-universal-filter"
+          filters={filterSchema}
+          selectedFilters={selectedFilters}
+          setSelectedFilters={setSelectedFilters}
+          handleApplyFilter={setAppliedFilters}
+          variant="outlined"
+        />
+      </Stack>
+      <ResponsiveDataTable
+        columns={columns}
+        data={data}
+        options={{ filter: false, search: false, selectableRows: "none" }}
+        tableCols={tableCols}
+        updateCols={updateCols}
+        columnVisibility={columnVisibility}
+      />
+    </NoSsr>
+  );
+}`} />
+</div>
+
+<a id="Date Range Filtering">
+  <h2>Date Range Filtering</h2>
+</a>
+
+Enabling <code>datePicker</code> adds a quick-range select and start and end date-time pickers. Range changes apply immediately, without waiting for <strong>Apply</strong>, and the pickers keep the start on or before the end.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <DateRangeFilterDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="date-universal-filter" collapsible code={`import { useState } from "react";
+import { UniversalFilter } from "@sistent/sistent";
+
+const daysAgo = (days) =>
+  new Date(Date.now() - days * 24 * 60 * 60 * 1000);
+
+const quickDateRanges = [
+  {
+    label: "Last 24 hours",
+    getRange: () => ({ startDate: daysAgo(1), endDate: new Date() }),
+  },
+  {
+    label: "Last 7 days",
+    getRange: () => ({ startDate: daysAgo(7), endDate: new Date() }),
+  },
+  {
+    label: "Last 30 days",
+    getRange: () => ({ startDate: daysAgo(30), endDate: new Date() }),
+  },
+];
+
+export default function ActivityFilter() {
+  const [selectedFilters, setSelectedFilters] = useState({ type: "All" });
+  const [selectedDateRange, setSelectedDateRange] = useState({
+    startDate: daysAgo(7),
+    endDate: new Date(),
+  });
+
+  return (
+    <UniversalFilter
+      id="date-universal-filter"
+      filters={filterSchema}
+      selectedFilters={selectedFilters}
+      setSelectedFilters={setSelectedFilters}
+      handleApplyFilter={(filters) =>
+        fetchActivity(filters, selectedDateRange)
+      }
+      variant="outlined"
+      datePicker
+      selectedDateRange={selectedDateRange}
+      setSelectedDateRange={setSelectedDateRange}
+      quickDateRanges={quickDateRanges}
+    />
+  );
+}`} />
+</div>
+
+<p>
+  The date pickers load <code>@mui/x-date-pickers</code> and <code>date-fns</code> on demand. Both must be installed in the consuming project whenever <code>datePicker</code> is enabled.
+</p>
+
+<a id="Props">
+  <h2>Component API &amp; Props</h2>
+</a>
+
+<div className="table-container">
+  <table className="props-table">
+    <thead>
+      <tr>
+        <th>Prop</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>filters</code></td>
+        <td><code>Record&lt;string, FilterColumn&gt;</code></td>
+        <td><em>required</em></td>
+        <td>Schema of filterable attributes. Each entry supplies a <code>name</code> label and an <code>options</code> list.</td>
+      </tr>
+      <tr>
+        <td><code>selectedFilters</code></td>
+        <td><code>Record&lt;string, string&gt;</code></td>
+        <td><em>required</em></td>
+        <td>Currently applied value per attribute key. Use <code>&quot;All&quot;</code> for an unfiltered attribute.</td>
+      </tr>
+      <tr>
+        <td><code>setSelectedFilters</code></td>
+        <td><code>Dispatch&lt;SetStateAction&lt;Record&lt;string, string&gt;&gt;&gt;</code></td>
+        <td><em>required</em></td>
+        <td>State setter the component calls with the draft values when <strong>Apply</strong> is pressed.</td>
+      </tr>
+      <tr>
+        <td><code>handleApplyFilter</code></td>
+        <td><code>(filters?: Record&lt;string, string&gt;) =&gt; void</code></td>
+        <td><em>required</em></td>
+        <td>Invoked after the panel closes, receiving the applied values. Trigger the data fetch here.</td>
+      </tr>
+      <tr>
+        <td><code>variant</code></td>
+        <td><code>&#39;outlined&#39; | &#39;filled&#39; | &#39;standard&#39;</code></td>
+        <td><code>&#39;outlined&#39;</code></td>
+        <td>Input styling forwarded to every select in the panel.</td>
+      </tr>
+      <tr>
+        <td><code>showAllOption</code></td>
+        <td><code>boolean</code></td>
+        <td><code>true</code></td>
+        <td>Prepends an <code>All</code> option to each select so an individual attribute can be cleared.</td>
+      </tr>
+      <tr>
+        <td><code>id</code></td>
+        <td><code>string</code></td>
+        <td><em>required</em></td>
+        <td>DOM id of the filter root. Keep it unique per instance.</td>
+      </tr>
+      <tr>
+        <td><code>data-testid</code></td>
+        <td><code>string</code></td>
+        <td><code>&#39;universal-filter&#39;</code></td>
+        <td>Base test id. Inner elements derive from it, for example <code>-apply-btn</code> and <code>-select-</code> plus the attribute key.</td>
+      </tr>
+      <tr>
+        <td><code>datePicker</code></td>
+        <td><code>boolean</code></td>
+        <td><code>false</code></td>
+        <td>Renders the date-range section. Requires <code>selectedDateRange</code> and <code>setSelectedDateRange</code>.</td>
+      </tr>
+      <tr>
+        <td><code>selectedDateRange</code></td>
+        <td><code>&#123; startDate: Date; endDate: Date &#125;</code></td>
+        <td><code>undefined</code></td>
+        <td>Controlled date window shown by the start and end pickers.</td>
+      </tr>
+      <tr>
+        <td><code>setSelectedDateRange</code></td>
+        <td><code>(range: &#123; startDate: Date; endDate: Date &#125;) =&gt; void</code></td>
+        <td><code>undefined</code></td>
+        <td>Called immediately whenever the range changes, including quick-range selection.</td>
+      </tr>
+      <tr>
+        <td><code>quickDateRanges</code></td>
+        <td><code>&#123; label: string; getRange: () =&gt; DateRange &#125;[]</code></td>
+        <td>Last 7 days, 30 days, 3 months, 6 months, 1 year</td>
+        <td>Presets offered in the quick-range select. <code>getRange</code> is evaluated on selection.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
