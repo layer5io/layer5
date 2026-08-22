@@ -13,6 +13,7 @@ const DiscussWrapper = styled.div`
     }
     .logo{
         width: 200px;
+        margin-top: 1.5rem;
     }
     
     .explain {
