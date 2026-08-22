@@ -82,8 +82,8 @@ const DiscussWrapper = styled.div`
                         padding-bottom:1rem;
                     }
                     .card {
+                        max-width: 23.8rem;
                         height:20rem;
-                        width: 23.8rem;
                     }  
                 }
             }
@@ -104,7 +104,7 @@ const DiscussWrapper = styled.div`
                             font-size: 15px
                         }
                         .card{
-                            width:23rem;
+                            max-width:23rem;
                             height:20rem;
                         }
                     }
@@ -129,7 +129,7 @@ const DiscussWrapper = styled.div`
                             font-size: 13px;
                             line-height: 23px;
                         }
-                        width:18rem;
+                        max-width:18rem;
                         height:18rem;
                     }
                 }
