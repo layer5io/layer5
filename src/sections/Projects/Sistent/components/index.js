@@ -9,12 +9,13 @@ import { Link } from "gatsby";
 
 const SistentComponents = ({ data }) => {
   // Transform GraphQL data
-  const componentsData = data?.allMdx?.nodes.map(node => ({
-    id: node.id,
-    name: node.frontmatter.name,
-    description: node.frontmatter.description,
-    url: `/projects/sistent/components/${node.frontmatter.component}`
-  })) || [];
+  const componentsData =
+    data?.allMdx?.nodes.map((node) => ({
+      id: node.id,
+      name: node.frontmatter.name,
+      description: node.frontmatter.description,
+      url: `/projects/sistent/components/${node.frontmatter.component}`,
+    })) || [];
 
   const [searchQuery, setSearchQuery] = useState("");
   const { queryResults, searchData } = useDataList(
@@ -22,11 +23,11 @@ const SistentComponents = ({ data }) => {
     setSearchQuery,
     searchQuery,
     ["name"],
-    "id"
+    "id",
   );
 
   const compArray = [...queryResults].sort((a, b) =>
-    a.name.localeCompare(b.name)
+    a.name.localeCompare(b.name),
   );
 
   return (
@@ -34,53 +35,55 @@ const SistentComponents = ({ data }) => {
       <div className="page-header-section">
         <h1>Components</h1>
       </div>
-      <TOC />
-      <div className="page-section">
-        <Container className="components-container">
-          <div className="content">
-            <a id="Identity">
-              <h2>Components</h2>
-            </a>
-            <p>
-              Components are reusable elements that serve as the building blocks
-              of the design system. They are curated using the established
-              identity principles and can be combined to form various elements,
-              patterns, and templates that can be used to design user
-              interfaces.
-            </p>
-          </div>
-          <div className="main-content">
-            <div className="search-container">
-              <SearchBox searchQuery={searchQuery} searchData={searchData} />
+      <div className="page-container">
+        <TOC />
+        <div className="page-section">
+          <Container className="components-container">
+            <div className="content">
+              <a id="Identity">
+                <h2>Components</h2>
+              </a>
+              <p>
+                Components are reusable elements that serve as the building
+                blocks of the design system. They are curated using the
+                established identity principles and can be combined to form
+                various elements, patterns, and templates that can be used to
+                design user interfaces.
+              </p>
             </div>
-            <div className="product_cards">
-              <div className="cards">
-                {compArray.map((comp) => (
-                  <Link key={comp.id} to={comp.url}>
-                    <div className="card">
-                      <div className="card_head">
-                        <div className="title">{comp.name}</div>
-                        <div className="text">{comp.description}</div>
-                      </div>
-                      <div>
-                        <div className="card_bottom">
-                          <div className="learn" href={comp.url}>
-                            <div className="learn-more">
-                              <div>Learn more</div>
-                              <div className="icon">
-                                <FaArrowRight />
+            <div className="main-content">
+              <div className="search-container">
+                <SearchBox searchQuery={searchQuery} searchData={searchData} />
+              </div>
+              <div className="product_cards">
+                <div className="cards">
+                  {compArray.map((comp) => (
+                    <Link key={comp.id} to={comp.url}>
+                      <div className="card">
+                        <div className="card_head">
+                          <div className="title">{comp.name}</div>
+                          <div className="text">{comp.description}</div>
+                        </div>
+                        <div>
+                          <div className="card_bottom">
+                            <div className="learn" href={comp.url}>
+                              <div className="learn-more">
+                                <div>Learn more</div>
+                                <div className="icon">
+                                  <FaArrowRight />
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </Link>
-                ))}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        </Container>
+          </Container>
+        </div>
       </div>
     </SistentWrapper>
   );

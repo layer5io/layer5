@@ -56,7 +56,6 @@ export const WorkshopPageWrapper = styled.div`
 		border: none;
 		font-family: "Qanelas Soft", "Open Sans", sans-serif;
 		border-radius: 0.9375rem;
-		outline: none;
 	}
 
 	.left-icons {
