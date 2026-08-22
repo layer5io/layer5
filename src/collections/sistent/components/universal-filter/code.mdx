@@ -255,6 +255,24 @@ const columns = [
   { name: "owner", label: "Owner" },
 ];
 
+const filterSchema = {
+  type: {
+    name: "Type",
+    options: [
+      { label: "Deployment", value: "deployment" },
+      { label: "Service", value: "service" },
+      { label: "Config Map", value: "configmap" },
+    ],
+  },
+  visibility: {
+    name: "Visibility",
+    options: [
+      { label: "Public", value: "public" },
+      { label: "Private", value: "private" },
+    ],
+  },
+};
+
 export default function FilteredCatalog({ rows }) {
   const [selectedFilters, setSelectedFilters] = useState({
     type: "All",
@@ -334,6 +352,17 @@ import { UniversalFilter } from "@sistent/sistent";
 const daysAgo = (days) =>
   new Date(Date.now() - days * 24 * 60 * 60 * 1000);
 
+const filterSchema = {
+  type: {
+    name: "Type",
+    options: [
+      { label: "Deployment", value: "deployment" },
+      { label: "Service", value: "service" },
+      { label: "Config Map", value: "configmap" },
+    ],
+  },
+};
+
 const quickDateRanges = [
   {
     label: "Last 24 hours",
@@ -356,6 +385,13 @@ export default function ActivityFilter() {
     endDate: new Date(),
   });
 
+  // The range applies as soon as it changes, so refresh here instead
+  // of waiting for Apply.
+  const handleDateRangeChange = (range) => {
+    setSelectedDateRange(range);
+    fetchActivity(selectedFilters, range);
+  };
+
   return (
     <UniversalFilter
       id="date-universal-filter"
@@ -368,7 +404,7 @@ export default function ActivityFilter() {
       variant="outlined"
       datePicker
       selectedDateRange={selectedDateRange}
-      setSelectedDateRange={setSelectedDateRange}
+      setSelectedDateRange={handleDateRangeChange}
       quickDateRanges={quickDateRanges}
     />
   );
