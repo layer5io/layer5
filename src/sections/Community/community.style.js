@@ -271,6 +271,7 @@ const CommunitySectionWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
+    padding-top: 2rem;
 
     @media screen and (min-width: 768px) {
       flex-direction: row;
