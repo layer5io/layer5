@@ -22,6 +22,10 @@ const AdventuresCallout = () => {
                   <SectionTitle className="section-title" $UniWidth="100%">
                     <div className="card-content">
                       <h2>Adventures of Five & Friends</h2>
+                      <p>
+                        Meet Five, our intergalactic Cloud Native Hero &
+                        friends
+                      </p>
                       <StaticImage
                         className="logo"
                         alt="Adventures of Five & Friends"

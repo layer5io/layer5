@@ -24,7 +24,7 @@ const AdventuresWrapper = styled.div`
                 -webkit-transition: 450ms all;
                 transition: 450ms all;
                 padding: 1.5rem 1.25rem;
-                background-color: #1E2117;
+                background-color: ${(props) => props.theme.darkJungleGreenColor};
                 border-radius: 25px;
                 overflow: hidden;
                 height: 100%;
