@@ -75,18 +75,18 @@ const AdventuresWrapper = styled.div`
             .cards {
                 padding: 0;
                 h2 {
-                    font-size: 24px;
-                    line-height: 32px;
+                    font-size: 25px;
+                    line-height: 34px;
                 }
                 p {
-                    font-size: 14.5px;
+                    font-size: 15px;
                     line-height: 22px;
                 }
                 .logo {
-                    margin-top: 0.75rem;
+                    margin-top: 1rem;
                 }
                 .card {
-                    max-width: 23rem;
+                    max-width: 23.8rem;
                     min-height: 20rem;
                     height: 100%;
                     padding: 1.25rem 1rem;

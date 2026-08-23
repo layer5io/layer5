@@ -72,27 +72,27 @@ const DiscussWrapper = styled.div`
 
     @media only screen and (min-width: 768px){
         .card-align {
-            padding: 1.25rem 0;
+            padding: 1.5rem 0;
         }
         .logo {
-            width: 180px;
-            margin-top: 1rem;
+            width: 200px;
+            margin-top: 1.25rem;
         }
         .explain {
             .cards {
                 padding: 0;
                 h2 {
                     padding-bottom: 0.75rem;
-                    font-size: 24px;
-                    line-height: 32px;
+                    font-size: 25px;
+                    line-height: 34px;
                 }
                 p {
-                    font-size: 14.5px;
+                    font-size: 15px;
                     line-height: 22px;
                     padding: 0 0.5rem;
                 }
                 .card {
-                    max-width: 23rem;
+                    max-width: 23.8rem;
                     min-height: 20rem;
                     height: 100%;
                     padding: 1.25rem 1rem;
