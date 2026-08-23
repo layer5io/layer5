@@ -11,7 +11,7 @@ const AdventuresCallout = () => {
     <AdventuresWrapper>
       <div className="explain">
         <div className="cards">
-          <Col lg={12} md={12} sm={12}>
+          <Col $lg={12} $md={12} $sm={12}>
             <a
               target="_blank"
               href="/community/adventures-of-five-and-friends"
@@ -20,14 +20,14 @@ const AdventuresCallout = () => {
               <div className="card">
                 <div className="parentcard">
                   <SectionTitle className="section-title" $UniWidth="100%">
-                    <h2>Adventures of Five & Friends</h2>
-                    {/*<p>Meet Five, our intergalatic Cloud Native Hero</p>*/}
-
-                    <StaticImage
-                      className="logo"
-                      alt="Adventures of Five & Friends"
-                      src={Adventure}
-                    />
+                    <div className="card-content">
+                      <h2>Adventures of Five & Friends</h2>
+                      <StaticImage
+                        className="logo"
+                        alt="Adventures of Five & Friends"
+                        src={Adventure}
+                      />
+                    </div>
                   </SectionTitle>
                 </div>
               </div>

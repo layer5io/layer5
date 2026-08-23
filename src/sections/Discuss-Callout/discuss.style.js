@@ -1,138 +1,138 @@
 import styled from "styled-components";
 
 const DiscussWrapper = styled.div`
-    background-color:none;
-    padding: 1.5rem 1.25rem 1rem;
-    
-    overflow: hidden;
-    h2{
-        font-weight: 500;
-    }
-    h2 span{
-        color:${(props) => props.theme.secondaryColor};
-    }
-    .logo{
-        width: 200px;
-        margin-top: 1.5rem;
-    }
-    
+    background-color: none;
+    padding: 0;
+    width: 100%;
+    max-width: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+
     .explain {
-        padding-top: 0rem;
+        padding-top: 0;
         text-align: center;
-        p { 
-            text-align: center;
-            color: ${(props) => props.theme.white};
-            padding: 0px 3.125rem;
-        }
-        h2 {
-            color: ${(props) => props.theme.white};  
-        }
-        h1 {
-            padding: 1.25rem 0px;
-        }
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
         .cards {
-            margin: 0.15rem auto 0 ;
-            max-width: 50rem;
-            padding: 1.5rem 2rem 0rem 2rem;
-            background-color: none;
-            border-radius: 25px;
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+
+            a {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                width: 100%;
+                text-decoration: none;
+                flex: 1;
+            }
+
             .card {
                 -webkit-transition: 450ms all;
                 transition: 450ms all;
-                margin: auto;
-                padding: 1.25rem;
+                margin: 0 auto;
+                padding: 1.75rem 1.25rem;
                 background: ${(props) => props.theme.darkJungleGreenColor};
                 border-radius: 25px;
                 overflow: hidden;
-                p {
-                    text-align: center;
-                    padding: 0px 0px 1px 0px;
-                    letter-spacing: 0;
-                    font-size: 16px;
+                width: 100%;
+                max-width: 25rem;
+                min-height: 22rem;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                box-sizing: border-box;
+                flex: 1;
+
+                .parentcard, .section-title, .card-content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 100%;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
                 }
+
                 h2 {
                     text-align: center;
-                    font-size: 28px;
-                    text-transform:uppercase;
+                    font-size: 25px;
+                    line-height: 34px;
+                    font-weight: 500;
+                    text-transform: uppercase;
                     clear: both;
-                    margin-bottom: 0rem;
-                    margin-top: 1rem;
+                    margin: 0 0 0.75rem 0;
+                    padding: 0;
+                    color: ${(props) => props.theme.white};
                 }
+
+                p {
+                    text-align: center;
+                    color: ${(props) => props.theme.white};
+                    padding: 0 0.5rem;
+                    margin: 0 0 1.25rem 0;
+                    letter-spacing: 0;
+                    font-size: 15px;
+                    line-height: 22px;
+                }
+
+                .logo {
+                    width: 200px;
+                    max-width: 100%;
+                    height: auto;
+                    margin-top: auto;
+                }
+
                 &:focus:not(:focus-visible) {
                    outline: none;
                 }
-                &:hover{
-                    transform: translateY(0.03rem);
-                    box-shadow: 0 2px 10px #00d3a9;
-                }
+                &:hover {
+                    transform: translateY(-0.15rem);
+                    box-shadow: 0 4px 15px #00d3a9;
                 }
             }
         }
     }
 
-    @media only screen and (min-width: 768px){
-        .card-align {
-            padding: 1.5rem 0;
-        }
-        .logo {
-            width: 200px;
-            margin-top: 1.25rem;
-        }
-        .explain {
-            .cards {
-                padding: 0;
-                h2 {
-                    padding-bottom: 0.75rem;
-                    font-size: 25px;
-                    line-height: 34px;
-                }
-                p {
-                    font-size: 15px;
-                    line-height: 22px;
-                    padding: 0 0.5rem;
-                }
-                .card {
-                    max-width: 23.8rem;
-                    min-height: 20rem;
-                    height: 100%;
-                    padding: 1.25rem 1rem;
-                }
+    @media only screen and (max-width: 992px) {
+        .explain .cards .card {
+            h2 {
+                font-size: 22px;
+                line-height: 30px;
+            }
+            p {
+                font-size: 14px;
+                line-height: 20px;
+            }
+            .logo {
+                width: 180px;
             }
         }
     }
-  
-    @media only screen and (max-width: 450px){
-        .card-align{
-              padding: 1rem 0;
-        }
-        .explain {
-            .cards {
-                padding: 1rem 1rem 1rem 1rem;
-                .card {
-                    padding: 0.75rem 0.5rem;
-                    h2 {
-                        font-size: 20px;
-                    }
-                    p{
-                        font-size: 13.5px;  
-                    }
-                }
+
+    @media only screen and (max-width: 450px) {
+        .explain .cards .card {
+            padding: 1.25rem 0.75rem;
+            h2 {
+                font-size: 20px;
+                line-height: 28px;
+            }
+            p {
+                font-size: 13.5px;
+                line-height: 19px;
             }
         }
     }
-    @media only screen and (max-width: 375px){
-        .explain {
-            .cards {
-                padding: 1rem .5rem 1rem .5rem;
-                h2 {
-                    font-size: 18px;
-                }
-                p{
-                    font-size: 13px;  
-                }
-            }
-        }
-    } 
 `;
 
 export default DiscussWrapper;
