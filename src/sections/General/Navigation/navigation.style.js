@@ -555,6 +555,7 @@ const NavigationWrap = styled.header`
       max-height: 400px;
       overflow-y: scroll;
       scrollbar-width: thin;
+      scrollbar-color: ${(props) => props.theme.scrollbarColor} ${(props) => props.theme.body};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .mobile-dropdown::-webkit-scrollbar {
@@ -562,11 +563,11 @@ const NavigationWrap = styled.header`
       width: 6px;
     }
     .mobile-dropdown::-webkit-scrollbar-track {
-      background-color: #cbced1;
+      background-color: ${(props) => props.theme.body};
       border-radius: 3px;
     }
     .mobile-dropdown::-webkit-scrollbar-thumb {
-      background-color: #868e96;
+      background-color: ${(props) => props.theme.scrollbarColor};
       border-radius: 3px;
     }
     .expand {
@@ -777,7 +778,6 @@ const NavigationWrap = styled.header`
   .toggle {
     --size: 1.5rem;
     appearance: none;
-    outline: none;
     cursor: pointer;
     width: var(--size);
     height: var(--size);

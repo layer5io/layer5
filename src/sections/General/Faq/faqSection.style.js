@@ -134,7 +134,7 @@ const FaqSectionWrapper = styled.section`
         color: ${props => props.theme.white};
       }
       > div {
-        &:focus {
+        &:focus:not(:focus-visible) {
           outline: none;
         }
       }

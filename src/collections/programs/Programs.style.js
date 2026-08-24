@@ -1,6 +1,15 @@
 import styled from "styled-components";
 
+export const NAVBAR_HEIGHT = 80;
+export const PROGRAM_SECTION_GAP = 20;
+
+export const LFX_SCROLL_OFFSET = NAVBAR_HEIGHT + PROGRAM_SECTION_GAP;
+
 export const ProgramsWrapper = styled.div`
+  [id] {
+    scroll-margin-top: calc(${LFX_SCROLL_OFFSET}px - 5rem);
+  }
+
   a {
     color: ${(props) => props.theme.keppelColor};
     overflow-wrap: break-word;
@@ -30,6 +39,24 @@ export const ProgramsWrapper = styled.div`
 
   .flex-div {
     flex-grow: 0.25;
+  }
+
+  .lfx-layout {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    @media only screen and (max-width: 900px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .lfx-sidebar-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-end;
+    flex-shrink: 0;
+    align-self: stretch;
   }
 
   .iframe-container {

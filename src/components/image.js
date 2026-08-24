@@ -32,8 +32,12 @@ const Image = ({
 
   if (!childImageSharp && extension === "svg") {
     return (
-      <div className="old-gatsby-image-wrapper" style={computedWrapperStyle}>
+      <div
+        className="old-gatsby-image-wrapper"
+        style={computedWrapperStyle}
+      >
         <img
+          key={publicURL}
           src={publicURL}
           alt={alt || "Blog image"}
           width="100%"

@@ -11,12 +11,14 @@ export const SistentLayout = ({ title, children }) => {
       <div className="page-header-section">
         <h1>{title}</h1>
       </div>
-      <TOC />
-      <div className="page-section">
-        <Container>
-          {children} <SistentPagination />
-        </Container>
-        <IntraPage />
+      <div className="page-container">
+        <TOC />
+        <div className="page-section">
+          <Container>
+            {children} <SistentPagination />
+          </Container>
+          <IntraPage />
+        </div>
       </div>
     </SistentWrapper>
   );

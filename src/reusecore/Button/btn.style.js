@@ -18,11 +18,17 @@ const ButtonStyle = styled.button`
     color: ${props => props.theme.white };
     background-color: #00B39F;
     z-index: 999;
-    &:hover,
-    &:focus {
+    &:hover {
         color: white;
         background: ${props => props.theme.activeColor}; 
         box-shadow: 0 2px 10px ${props => props.theme.whiteFourToBlackFour};
+    }
+    &:focus-visible {
+        outline: 3px solid ${props => props.theme.secondaryColor};
+        outline-offset: 3px;
+    }
+    &:focus:not(:focus-visible) {
+        outline: none;
     }
     &:active{
         box-shadow: 0 2px 10px ${props => props.theme.blackFourToWhiteFour};
