@@ -84,7 +84,7 @@ const PageHeaderWrapper = styled.div`
     }
   }
   .gitops-feature-image {
-    min-height: 250px;
+    min-height: ${(props) => props.theme.gitopsFeatureImageHeight};
     overflow: visible;
 
     .old-gatsby-image-wrapper {
@@ -96,7 +96,7 @@ const PageHeaderWrapper = styled.div`
       width: auto;
       max-width: 100%;
       height: auto;
-      max-height: 220px;
+      max-height: ${(props) => props.theme.gitopsFeatureImageMaxHeight};
       object-fit: contain;
     }
   }
