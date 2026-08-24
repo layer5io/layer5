@@ -14,7 +14,7 @@ import { BasicNavigationDemo, NestedNavigationDemo, PermissionNavigationDemo } f
 A standard flat list of navigation items. `NavigationNavbar` relies entirely on external routing logic, so active state highlights must be provided manually.
 
 <div className="showcase">
-  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '320px', margin: '0 auto' }}>
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px', margin: '0 auto' }}>
     <BasicNavigationDemo />
   </div>
   <CodeBlock name="basic-navigation-navbar" collapsible code={`
@@ -53,7 +53,7 @@ function BasicNavigationNavbar() {
 Group related navigation items into a collapsible accordion. The component only permits one section to remain open at a time. The active styling shown here is provided manually via a customized `title` `ReactNode`.
 
 <div className="showcase">
-  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '320px', margin: '0 auto' }}>
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px', margin: '0 auto' }}>
     <NestedNavigationDemo />
   </div>
   <CodeBlock name="nested-navigation-navbar" collapsible code={`
@@ -107,7 +107,7 @@ function NestedNavigationNavbar() {
 By providing a <code>permissionKey</code>, unauthorized navigation items are automatically rendered inert and will display an interactive shield tooltip using the context from the `PermissionProvider`.
 
 <div className="showcase">
-  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '320px', margin: '0 auto' }}>
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px', margin: '0 auto' }}>
     <PermissionNavigationDemo />
   </div>
   <CodeBlock name="permission-gated-navigation-navbar" collapsible code={`
