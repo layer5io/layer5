@@ -42,6 +42,49 @@ collectionIgnoreGlobs.length > 0
   : console.info("Build Scope includes all collections");
 module.exports = {
   ...(pathPrefix != null ? { pathPrefix } : {}),
+  // cloud.layer5.io's CORS allowlist only permits https://layer5.io/https://www.layer5.io,
+  // so browser fetches from any local `gatsby develop` session are blocked cross-origin.
+  // This dev-only proxy (no effect on `gatsby build`) routes those requests through the
+  // same origin as the dev server so they succeed locally too.
+  //
+  // Gatsby's built-in `proxy` config uses `got`, whose `req.pipe(got.stream(...))` wiring
+  // has a bug that breaks TLS certificate verification for bodiless GET requests in this
+  // Gatsby/Node version combination (reproduced in isolation, confirmed deterministic).
+  // `developMiddleware` with Node's built-in `https` module sidesteps it entirely.
+  ...(isDevelopment
+    ? {
+        developMiddleware: (app) => {
+          app.get("/api/*", (req, res) => {
+            const https = require("https");
+            const proxyReq = https.request(
+              `https://cloud.layer5.io${req.originalUrl}`,
+              {
+                method: req.method,
+                headers: { accept: req.headers.accept || "*/*" },
+              },
+              (proxyRes) => {
+                res.writeHead(proxyRes.statusCode, proxyRes.headers);
+                proxyRes.pipe(res);
+              },
+            );
+            proxyReq.setTimeout(10000, () => {
+              proxyReq.destroy(new Error("Proxy request timed out"));
+            });
+            proxyReq.on("error", (err) => {
+              if (!res.headersSent) {
+                res
+                  .status(502)
+                  .json({
+                    error: "Proxy request failed",
+                    message: err.message,
+                  });
+              }
+            });
+            proxyReq.end();
+          });
+        },
+      }
+    : {}),
   siteMetadata: {
     title: "Layer5 - Expect more from your infrastructure",
     description:

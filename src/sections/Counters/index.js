@@ -5,15 +5,33 @@ import Counter from "../../reusecore/Counter";
 
 import CounterSectionWrapper from "./counterSection.style";
 
-export const URL = "https://cloud.layer5.io/api/performance/results/total";
+// cloud.layer5.io's CORS allowlist only permits https://layer5.io/https://www.layer5.io,
+// so local `gatsby develop` sessions use the dev-only proxy from gatsby-config.js instead.
+export const URL =
+  process.env.NODE_ENV === "development"
+    ? "/api/performance/results/total"
+    : "https://cloud.layer5.io/api/performance/results/total";
 
 const Counters = () => {
   const [performanceCount, setPerformanceCount] = useState(0);
 
   useEffect(() => {
     fetch(URL)
-      .then(response => response.json())
-      .then(result => setPerformanceCount(result.total_runs));
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Request failed with status ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((result) => {
+        if (!Number.isFinite(result.totalRuns)) {
+          throw new Error("Invalid performance count received");
+        }
+        setPerformanceCount(result.totalRuns);
+      })
+      .catch((error) => {
+        console.log("Failed to fetch performance count:", error.message);
+      });
   }, []);
 
   return (
