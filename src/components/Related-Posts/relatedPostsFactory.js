@@ -23,18 +23,13 @@ class RelatedPostsFactory {
   }
 
   setTags (tags) {
-    this.tags = tags;
+    this.tags = Array.isArray(tags) ? tags : [];
     return this;
   }
 
   getPosts () {
     const { category, tags, posts, maxPosts } = this;
     const identityMap = {};
-
-    if (!!tags === false || tags.length === 0) {
-      console.error("RelatedPostsFactory: Tags not provided, use setTags().");
-      return [];
-    }
 
     if (!!category === false) {
       console.error("RelatedPostsFactory: Category not provided, use setCategory().");
@@ -65,8 +60,9 @@ class RelatedPostsFactory {
     const addTagsPoints = (post, tags) => {
       const tagPoint = 1;
       const slug = getSlug(post);
+      const postTags = Array.isArray(post.frontmatter.tags) ? post.frontmatter.tags : [];
 
-      post.frontmatter.tags.forEach((tag) => {
+      postTags.forEach((tag) => {
         if (includes(tags, tag)) {
           identityMap[slug].points += tagPoint;
         }
