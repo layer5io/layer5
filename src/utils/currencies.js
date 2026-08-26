@@ -33,7 +33,7 @@ export const Currencies = {
                 currency: "INR",
                 minimumFractionDigits: roundForDisplay ? 0 : 2,
                 maximumFractionDigits: roundForDisplay ? 0 : 2,
-            }).format(price * 88),
+            }).format(price * 88.32),
     },
 };
 
