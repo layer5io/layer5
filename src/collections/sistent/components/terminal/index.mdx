@@ -1,0 +1,50 @@
+---
+name: "Terminal"
+title: Terminal
+published: true
+component: terminal
+description: Terminal is a styled console window component used to display command-line output, code snippets, and log-style text in a familiar terminal-like interface.
+---
+
+Terminal renders a stylized, macOS-style console window used to present command-line output, logs, or code snippets in a visually familiar way. It displays a title bar with window controls and a dark, monospaced content area, making it useful for illustrating CLI usage, showing command output, or presenting log excerpts within documentation and product interfaces.
+
+<a id="Structure">
+  <h2>Structure</h2>
+</a>
+
+The Terminal component consists of two main parts:
+
+<h3>Title Bar</h3>
+
+The title bar sits at the top of the terminal window and displays three window control dots (styled to evoke the familiar red, yellow, and green window controls) along with an optional title text, such as a filename or command context.
+
+<h3>Content Area</h3>
+
+Below the title bar, the content area renders a set of lines in a monospaced font against a dark background, similar to a real terminal or console output.
+
+<a id="Basic Usage">
+  <h2>Basic Usage</h2>
+</a>
+
+Terminal accepts an array of lines to render, where each line can be individually styled with color and indentation.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+      <Terminal
+        title="bash"
+        lines={[
+          { code: '$ npm install @sistent/sistent' },
+          { code: 'Installing dependencies...', color: '#66a2ff' },
+          { code: 'Done in 2.3s', color: '#4caf50' }
+        ]}
+      />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Scroll Behavior">
+  <h2>Scroll Behavior</h2>
+</a>
+
+By default, the content area is scrollable when the number of lines exceeds the visible height. Setting the `noScroll` prop disables this scrolling behavior, allowing the content to expand or be clipped without a scrollbar.

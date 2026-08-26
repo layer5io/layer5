@@ -8,18 +8,19 @@ import { SistentLayout } from "../sections/Projects/Sistent/sistent-layout";
 import TabButton from "../reusecore/Button";
 import { Col, Row } from "../reusecore/Layout";
 import CodeBlock from "../components/CodeBlock";
-import { SistentThemeProvider, Button } from "@sistent/sistent";
+import { SistentThemeProvider, Button, Terminal } from "@sistent/sistent";
 import { useStyledDarkMode } from "../theme/app/useStyledDarkMode";
 import ThemeWrapper from "../sections/Projects/Sistent/theme-wrapper";
 
-const shortcodes = { 
+const shortcodes = {
   SistentThemeProvider,
   ThemeWrapper,
-  Button, 
-  Col, 
-  Row, 
+  Button,
+  Terminal,
+  Col,
+  Row,
   CodeBlock,
-  FaArrowRight 
+  FaArrowRight
 };
 
 const SistentComponentTemplate = ({ data, children, pageContext }) => {
@@ -40,11 +41,11 @@ const SistentComponentTemplate = ({ data, children, pageContext }) => {
     <SistentLayout title={displayName}>
       <div className="content">
         <div style={{ marginBottom: "1rem" }}>
-           <h1>{displayName}</h1>
-           {frontmatter.description && <p>{frontmatter.description}</p>}
+          <h1>{displayName}</h1>
+          {frontmatter.description && <p>{frontmatter.description}</p>}
         </div>
         <MDXProvider components={shortcodes}>
-           <div className="filterBtns">
+          <div className="filterBtns">
             {availablePages.includes("overview") && (
               <TabButton
                 className={location.pathname === baseUrl ? "active" : ""}
@@ -67,7 +68,7 @@ const SistentComponentTemplate = ({ data, children, pageContext }) => {
               />
             )}
           </div>
-          
+
           <div className="main-content">
             {children}
           </div>
