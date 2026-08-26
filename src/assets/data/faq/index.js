@@ -237,7 +237,7 @@ const data = {
       question: "How can I try out Kanvas?",
       category: "Kanvas",
       subcategory: "Getting Started",
-      link: "https://kanvas.new",
+      link: "https://www.kanvas.new",
       linktext: "Open kanvas.new",
       answer: [
        "Kanvas is available in beta today. Visit https://kanvas.new to use it.",
