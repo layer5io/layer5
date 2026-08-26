@@ -41,6 +41,24 @@ export const ProgramsWrapper = styled.div`
     flex-grow: 0.25;
   }
 
+  .lfx-layout {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    @media only screen and (max-width: 900px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .lfx-sidebar-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-end;
+    flex-shrink: 0;
+    align-self: stretch;
+  }
+
   .iframe-container {
     position: relative;
     float: right;
