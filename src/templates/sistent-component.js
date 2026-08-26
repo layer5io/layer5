@@ -9,24 +9,22 @@ import TabButton from "../reusecore/Button";
 import { Col, Row } from "../reusecore/Layout";
 import CodeBlock from "../components/CodeBlock";
 import { SistentThemeProvider, Button } from "@sistent/sistent";
-import { useStyledDarkMode } from "../theme/app/useStyledDarkMode";
 import ThemeWrapper from "../sections/Projects/Sistent/theme-wrapper";
 
-const shortcodes = { 
+const shortcodes = {
   SistentThemeProvider,
   ThemeWrapper,
-  Button, 
-  Col, 
-  Row, 
+  Button,
+  Col,
+  Row,
   CodeBlock,
-  FaArrowRight 
+  FaArrowRight,
 };
 
 const SistentComponentTemplate = ({ data, children, pageContext }) => {
   const { frontmatter } = data.mdx;
   const location = useLocation();
   const { componentName, availablePages } = pageContext;
-  const { isDark } = useStyledDarkMode();
 
   const baseUrl = `/projects/sistent/components/${componentName}`;
 
@@ -40,11 +38,11 @@ const SistentComponentTemplate = ({ data, children, pageContext }) => {
     <SistentLayout title={displayName}>
       <div className="content">
         <div style={{ marginBottom: "1rem" }}>
-           <h1>{displayName}</h1>
-           {frontmatter.description && <p>{frontmatter.description}</p>}
+          <h1>{displayName}</h1>
+          {frontmatter.description && <p>{frontmatter.description}</p>}
         </div>
         <MDXProvider components={shortcodes}>
-           <div className="filterBtns">
+          <div className="filterBtns">
             {availablePages.includes("overview") && (
               <TabButton
                 className={location.pathname === baseUrl ? "active" : ""}
@@ -54,23 +52,25 @@ const SistentComponentTemplate = ({ data, children, pageContext }) => {
             )}
             {availablePages.includes("guidance") && (
               <TabButton
-                className={location.pathname === `${baseUrl}/guidance` ? "active" : ""}
+                className={
+                  location.pathname === `${baseUrl}/guidance` ? "active" : ""
+                }
                 onClick={() => navigate(`${baseUrl}/guidance`)}
                 title="Guidance"
               />
             )}
             {availablePages.includes("code") && (
               <TabButton
-                className={location.pathname === `${baseUrl}/code` ? "active" : ""}
+                className={
+                  location.pathname === `${baseUrl}/code` ? "active" : ""
+                }
                 onClick={() => navigate(`${baseUrl}/code`)}
                 title="Code"
               />
             )}
           </div>
-          
-          <div className="main-content">
-            {children}
-          </div>
+
+          <div className="main-content">{children}</div>
         </MDXProvider>
       </div>
     </SistentLayout>
@@ -78,7 +78,7 @@ const SistentComponentTemplate = ({ data, children, pageContext }) => {
 };
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       body
       frontmatter {

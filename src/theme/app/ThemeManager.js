@@ -26,7 +26,9 @@ export const ThemeManagerContext = createContext(defaultState);
 const isBrowser = typeof window !== "undefined";
 
 const systemDarkModeSetting = () =>
-  isBrowser && window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+  isBrowser && window.matchMedia
+    ? window.matchMedia("(prefers-color-scheme: dark)")
+    : null;
 
 const isDarkModeActive = () => {
   return !!systemDarkModeSetting()?.matches;
@@ -43,7 +45,7 @@ const applyThemeToDOM = (theme) => {
 export const ThemeManagerProvider = (props) => {
   const [themeSetting, setThemeSetting] = useState(ThemeSetting.SYSTEM);
   const [didLoad, setDidLoad] = useState(false);
-  
+
   const [isDark, setIsDark] = useState(() => {
     if (isBrowser) {
       if (window.__theme === ThemeSetting.DARK) return true;
@@ -56,9 +58,12 @@ export const ThemeManagerProvider = (props) => {
     if (!isBrowser) return;
 
     const root = window.document.documentElement;
-    const initialColorValue = (root.style.getPropertyValue("--initial-color-mode") || "").trim();
-    const actualTheme = window.__theme || initialColorValue || ThemeSetting.DARK;
-    
+    const initialColorValue = (
+      root.style.getPropertyValue("--initial-color-mode") || ""
+    ).trim();
+    const actualTheme =
+      window.__theme || initialColorValue || ThemeSetting.DARK;
+
     // Get stored theme from localStorage
     const storedTheme = localStorage.getItem(DarkThemeKey);
 
@@ -81,7 +86,7 @@ export const ThemeManagerProvider = (props) => {
     setDidLoad(true);
   }, []);
 
-   // Listen to system color scheme changes only when on SYSTEM mode
+  // Listen to system color scheme changes only when on SYSTEM mode
   useEffect(() => {
     if (!isBrowser || themeSetting !== ThemeSetting.SYSTEM) return;
 
@@ -103,11 +108,11 @@ export const ThemeManagerProvider = (props) => {
     const newIsDark = !isDark;
     const newTheme = newIsDark ? ThemeSetting.DARK : ThemeSetting.LIGHT;
 
-      // Update state
+    // Update state
     setIsDark(newIsDark);
     setThemeSetting(newTheme);
 
-     // Apply to DOM immediately
+    // Apply to DOM immediately
     applyThemeToDOM(newTheme);
 
     // Persist to localStorage
@@ -139,17 +144,17 @@ export const ThemeManagerProvider = (props) => {
           return;
       }
 
-        // Update state
+      // Update state
       setIsDark(newIsDark);
       setThemeSetting(setting);
 
       // Apply to DOM immediately
       applyThemeToDOM(themeToApply);
 
-       // Persist to localStorage
+      // Persist to localStorage
       localStorage.setItem(DarkThemeKey, setting);
     },
-    [isDark]
+    [isDark],
   );
 
   return (
