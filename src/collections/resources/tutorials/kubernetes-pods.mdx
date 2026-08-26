@@ -1,0 +1,103 @@
+---
+title: "Exploring Kubernetes Pods with Meshery"
+thumbnail: ../../../assets/images/tutorials/layer5-walkthrough.webp
+darkthumbnail: ../../../assets/images/tutorials/layer5-walkthrough.webp
+date: 2024-02-22 10:30:05 -0530
+category: Cloud Native
+tags:
+  - Meshery
+  - Kubernetes
+  - Tutorial
+type: Tutorial
+product: Meshery
+technology: Kubernetes
+featured: false
+published: true
+resource: true
+---
+
+import { ResourcesWrapper } from "../Resources.style.js";
+
+<ResourcesWrapper>
+
+<h3>Introduction</h3>
+
+<p>In this tutorial, we'll learn the fundamentals of Pods, the smallest deployable units in the Kubernetes ecosystem. Using <a href="https://play.meshery.io/">Meshery Playground</a>, an interactive live cluster environment, we'll perform hands-on labs to gain practical experience in deploying, managing, and understanding Pods.</p>
+
+<p><strong>NOTE:</strong> This tutorial demonstrates stand-alone pods, i.e. pods not managed through deployments.</p>
+
+<h3>Prerequisites</h3>
+
+<ul>
+    <li>Basic understanding of containerization and Kubernetes concepts.</li>
+    <li>Access to the <em>Meshery Playground</em>. If you don't have an account, sign up at <a href="https://play.meshery.io/">Meshery Playground</a>.</li>
+</ul>
+<h3>Lab Scenario</h3>
+
+<p>Deploy and explore an NGINX pod in a Kubernetes cluster. Additionally, expose the pod through a service.</p>
+
+<h3>Objective</h3>
+
+<p>Learn how to create, manage, and explore <strong>Kubernetes Pods and Services</strong> within the context of a microservices architecture.</p>
+
+<h3>Steps</h3>
+
+<h4>Access Meshery Playground</h4>
+
+<ol>
+    <li>Log in to the <a href="https://play.meshery.io">Meshery Playground</a> using your credentials.</li>
+    <li>Click <strong>Explore</strong> in the Cloud Native Playground tile to navigate to <em>Kanvas</em>.</li>
+</ol>
+<h4>Create a Simple Stand-alone Pod</h4>
+
+<ol>
+    <li>In the Kanvas screen, rename the design from <em>Untitled Design</em> to a name of your choice.</li>
+    <li>Click the <strong>Components</strong> tab and search for <strong>Pod</strong>.</li>
+    <li>Drag the <strong>Pod</strong> component from the search results to the design canvas.</li>
+    <li>Click the pod component to load the configuration modal and rename the pod if necessary.</li>
+</ol>
+<h4>Add a Container to the Pod</h4>
+
+<ol>
+    <li>Scroll down to the <strong>Containers</strong> section in the modal. Click <strong>+</strong> to add a container.</li>
+    <li>Expand <strong>Containers-0</strong> and enter the container image: <code>nginx:latest</code>.</li>
+    <li>Give the container a name and add a unique label (e.g., <code>app: my-pod</code>). This helps filter your resources in a shared playground environment.</li>
+    <li>Click outside to close the modal.</li>
+</ol>
+<h4>Validate and Deploy the Pod</h4>
+
+<ol>
+    <li>Click <strong>Validate</strong> on the top toolbar. Ensure there are no errors.</li>
+    <li>Click the <strong>Deploy</strong> tab in the popup modal, then click <strong>Deploy</strong> again.</li>
+</ol>
+<h4>Visualize the Pod</h4>
+
+<ol>
+    <li>Click <strong>Visualize</strong> to open the visualization view.</li>
+    <li>Click the filter icon and select the label you set in step 7 to filter your resources.</li>
+    <li>Select the <strong>Details</strong> tab and click the pod to see its state, namespace, image details, restarts, and uptime.</li>
+</ol>
+<h4>Connect to the Pod</h4>
+
+<ol>
+    <li>Select the pod, then click the <strong>Actions</strong> tab.</li>
+    <li>Click <strong>Open Interactive Terminal</strong> to connect to the container.</li>
+    <li>Click <strong>Stream Container Logs</strong> to view live logs alongside the terminal.</li>
+</ol>
+<h4>Expose the Pod with a Service</h4>
+
+<ol>
+    <li>Go back to the <strong>Design</strong> view. Search for <strong>service</strong> in Components and drag it to the canvas.</li>
+    <li>Click the service component, rename it, and set <strong>Type</strong> to <strong>NodePort</strong>.</li>
+    <li>Click <strong>+</strong> to add a Port. Set both <strong>Port</strong> and <strong>Target Port</strong> to <code>80</code>.</li>
+    <li>Add a Selector with the same key-value pair used as the pod label (e.g., <code>app: my-pod</code>).</li>
+    <li>Link the service to the pod by hovering over the service component's green dot, clicking the arrow, selecting <strong>Network</strong>, and connecting it to the pod.</li>
+    <li><strong>Undeploy</strong> and <strong>Deploy</strong> again to apply the updated design.</li>
+</ol>
+<h3>Conclusion</h3>
+
+<p>Congratulations! You've successfully explored Kubernetes Pods using Meshery Playground. You deployed a pod, connected to it via terminal, streamed its logs, and exposed it through a NodePort service. Continue exploring more cloud native scenarios at <a href="https://play.meshery.io/">Meshery Playground</a>.</p>
+
+<p><em>This tutorial is sourced from the <a href="https://docs.meshery.io/guides/tutorials/kubernetes/kubernetes-pods">Meshery documentation</a>.</em></p>
+
+</ResourcesWrapper>
