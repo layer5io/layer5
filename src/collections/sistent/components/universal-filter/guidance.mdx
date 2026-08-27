@@ -1,0 +1,263 @@
+---
+title: UniversalFilter Guidance
+published: true
+component: universal-filter
+description: Guidance for filter schemas, date-range picker integrations, quick date options, and active filter handling when using UniversalFilter across tables and catalogs.
+---
+
+import { useState } from "react";
+import { UniversalFilter, Box, Typography, Chip, Button } from "@sistent/sistent";
+import { subtractDays, subtractMonths, subtractYears } from "@sistent/sistent";
+
+export const SchemaDemo = () => {
+  const filters = {
+    status: {
+      name: "Status",
+      options: [
+        { label: "Running", value: "running" },
+        { label: "Stopped", value: "stopped" },
+        { label: "Error", value: "error" },
+      ],
+    },
+    environment: {
+      name: "Environment",
+      options: [
+        { label: "Production", value: "production" },
+        { label: "Staging", value: "staging" },
+        { label: "Development", value: "development" },
+      ],
+    },
+  };
+  const [selected, setSelected] = useState({ status: "All", environment: "All" });
+  return (
+    <UniversalFilter
+      id="guidance-schema"
+      filters={filters}
+      selectedFilters={selected}
+      setSelectedFilters={setSelected}
+      handleApplyFilter={(next) => console.log("Applied schema filters", next)}
+      variant="outlined"
+    />
+  );
+};
+
+export const DatePickerGuidanceDemo = () => {
+  const filters = {
+    type: {
+      name: "Type",
+      options: [
+        { label: "Design", value: "design" },
+        { label: "Filter", value: "filter" },
+      ],
+    },
+  };
+  const [selected, setSelected] = useState({ type: "All" });
+  const [range, setRange] = useState({
+    startDate: subtractDays(new Date(), 30),
+    endDate: new Date(),
+  });
+  return (
+    <UniversalFilter
+      id="guidance-date"
+      filters={filters}
+      selectedFilters={selected}
+      setSelectedFilters={setSelected}
+      handleApplyFilter={() => console.log("Applied with date range", range)}
+      variant="outlined"
+      datePicker
+      selectedDateRange={range}
+      setSelectedDateRange={setRange}
+    />
+  );
+};
+
+export const QuickRangesGuidanceDemo = () => {
+  const customQuickRanges = [
+    { label: "Last 7 days", getRange: () => ({ startDate: subtractDays(new Date(), 7), endDate: new Date() }) },
+    { label: "Last 30 days", getRange: () => ({ startDate: subtractDays(new Date(), 30), endDate: new Date() }) },
+    { label: "Last 90 days", getRange: () => ({ startDate: subtractDays(new Date(), 90), endDate: new Date() }) },
+  ];
+  const filters = {
+    owner: {
+      name: "Owner",
+      options: [
+        { label: "Alice", value: "alice" },
+        { label: "Bob", value: "bob" },
+      ],
+    },
+  };
+  const [selected, setSelected] = useState({ owner: "All" });
+  const [range, setRange] = useState({
+    startDate: subtractDays(new Date(), 7),
+    endDate: new Date(),
+  });
+  return (
+    <UniversalFilter
+      id="guidance-quick"
+      filters={filters}
+      selectedFilters={selected}
+      setSelectedFilters={setSelected}
+      handleApplyFilter={() => console.log("Applied quick range", range)}
+      variant="outlined"
+      datePicker
+      selectedDateRange={range}
+      setSelectedDateRange={setRange}
+      quickDateRanges={customQuickRanges}
+    />
+  );
+};
+
+export const ActiveFiltersGuidanceDemo = () => {
+  const filters = {
+    kind: {
+      name: "Kind",
+      options: [
+        { label: "Deployment", value: "deployment" },
+        { label: "Service", value: "service" },
+      ],
+    },
+    status: {
+      name: "Status",
+      options: [
+        { label: "Active", value: "active" },
+        { label: "Inactive", value: "inactive" },
+      ],
+    },
+  };
+  const [selected, setSelected] = useState({ kind: "deployment", status: "All" });
+  const active = Object.entries(selected).filter(([, v]) => v && v !== "All");
+  return (
+    <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
+      <UniversalFilter
+        id="guidance-active"
+        filters={filters}
+        selectedFilters={selected}
+        setSelectedFilters={setSelected}
+        handleApplyFilter={(next) => console.log("Applied", next)}
+        variant="outlined"
+      />
+      <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
+        {active.map(([k, v]) => (
+          <Chip key={k} label={`${k}: ${v}`} size="small" onDelete={() => setSelected((prev) => ({ ...prev, [k]: "All" }))} />
+        ))}
+        {active.length === 0 && <Typography variant="body2" color="text.secondary">No active filters — all records shown</Typography>}
+      </Box>
+    </Box>
+  );
+};
+
+<a id="Filter Schemas">
+  <h2>Filter Schemas</h2>
+</a>
+
+<p>
+  Each filter dimension is declared as a <code>FilterColumn</code>: <code>{`{ name: string, options: { label: string, value: string }[] }`}</code>. The <code>filters</code> prop is a record keyed by an internal field name (e.g., <code>status</code>, <code>kind</code>) whose value carries the display <code>name</code> and selectable <code>options</code>. Keep keys stable and lowercase slug-style so they match API query parameters and table column <code>name</code> fields.
+</p>
+
+<ul>
+  <li><strong>Shape:</strong> <code>Record&lt;string, FilterColumn&gt;</code> — e.g., <code>{`{ status: { name: "Status", options: [...] } }`}</code>.</li>
+  <li><strong>Label vs Value:</strong> <code>label</code> is user-facing; <code>value</code> is the wire value sent to <code>handleApplyFilter</code> and typically used in URL search params or API filters.</li>
+  <li><strong>Show All:</strong> When <code>showAllOption</code> is <code>true</code> (default), an <code>All</code> option is prepended. Selecting <code>All</code> signals no constraint for that dimension — consumers should omit that key when building queries.</li>
+  <li><strong>Staging vs Commit:</strong> Internally the component stages selections in local state and only commits them to <code>selectedFilters</code> and <code>handleApplyFilter</code> on <strong>Apply</strong>. Do not trigger data fetching on every select change; wait for the Apply event.</li>
+</ul>
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: "flex", justifyContent: "center", width: "100%", padding: "1rem" }}>
+      <SchemaDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Date-Range Picker Integration">
+  <h2>Date-Range Picker Integration</h2>
+</a>
+
+<p>
+  Set <code>datePicker</code> to enable calendar filtering. You must also provide <code>selectedDateRange</code> and <code>setSelectedDateRange</code>. The component then renders a Quick Ranges selector plus two lazily-loaded <code>DateTimePicker</code> fields (Start/End). The pickers clamp values so <code>startDate ≤ endDate</code>.
+</p>
+
+<ul>
+  <li><strong>Peer dependencies:</strong> <code>DateTimePicker</code> is code-split and requires optional peers <code>@mui/x-date-pickers</code> and <code>@mui/lab</code> / <code>date-fns</code> adapter. If those are not installed, rendering with <code>datePicker</code> will throw with installation guidance.</li>
+  <li><strong>Range type:</strong> <code>DateRange = {`{ startDate: Date, endDate: Date }`}</code>. Always construct new <code>Date</code> objects; avoid mutating the existing range in place.</li>
+  <li><strong>Placement:</strong> Keep the date section visually grouped below column filters. The built-in layout already enforces this order.</li>
+  <li><strong>Validation:</strong> When the user picks a Start after the current End, the component clamps End to Start (and vice versa). Re-validate on Apply if your API requires inclusive/exclusive bounds.</li>
+</ul>
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: "flex", justifyContent: "center", width: "100%", padding: "1rem" }}>
+      <DatePickerGuidanceDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Quick Date Options">
+  <h2>Quick Date Options</h2>
+</a>
+
+<p>
+  Quick ranges are declared as <code>QuickDateRangeOption[]</code> where each entry is <code>{`{ label: string, getRange: () => DateRange }`}</code>. The component ships with defaults for <code>Last 7 days</code>, <code>Last 30 days</code>, <code>Last 3 months</code>, <code>Last 6 months</code>, and <code>Last 1 year</code>, computed via <code>subtractDays</code>, <code>subtractMonths</code>, and <code>subtractYears</code> (end-of-month clamped, DST-safe). Override with <code>quickDateRanges</code> when domain presets differ.
+</p>
+
+<ul>
+  <li><strong>Defaults:</strong> Import <code>subtractDays</code>, <code>subtractMonths</code>, <code>subtractYears</code> from <code>@sistent/sistent</code> to build consistent ranges.</li>
+  <li><strong>Custom presets:</strong> Provide only the ranges relevant to the view (e.g., Last 24 hours for logs, Last 90 days for audits). Keep labels concise and sorted ascending by duration.</li>
+  <li><strong>Locale safety:</strong> Helpers use local-time day arithmetic and month-clamping so Feb 29 → Feb 28 and DST boundaries do not drift by an hour.</li>
+</ul>
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: "flex", justifyContent: "center", width: "100%", padding: "1rem" }}>
+      <QuickRangesGuidanceDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Active Filters Handling">
+  <h2>Active Filters Handling</h2>
+</a>
+
+<p>
+  Active filters are those where <code>selectedFilters[key] !== "All"</code> and the value is non-empty. The badge count is <code>Object.values(selectedFilters).filter(v =&gt; v &amp;&amp; v !== "All").length</code>. Treat this as the source of truth for both the badge and any external chip/toggle UI.
+</p>
+
+<ul>
+  <li><strong>Badge:</strong> The trigger badge automatically hides when count is zero (<code>invisible={count===0}</code>).</li>
+  <li><strong>External feedback:</strong> Mirror active selections as removable <code>Chip</code>s or summary text so users need not reopen the popover to confirm scope. Deleting a chip should set that key back to <code>All</code> and re-apply.</li>
+  <li><strong>URL sync:</strong> Persist active filters in URL search params so filtered views are shareable. On mount, hydrate <code>selectedFilters</code> from the URL; on Apply, write back. Exclude <code>All</code> entries.</li>
+  <li><strong>Empty state:</strong> When all dimensions are <code>All</code> and the date range is the default, show “No active filters” rather than an empty chip row.</li>
+  <li><strong>Clear action:</strong> Offer a “Clear all” control that resets every key to <code>All</code> (and the range to the default preset) and triggers <code>handleApplyFilter</code> with the cleared record.</li>
+</ul>
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: "flex", justifyContent: "center", width: "100%", padding: "1rem" }}>
+      <ActiveFiltersGuidanceDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Do">
+  <h2>Do</h2>
+</a>
+
+<ul>
+  <li>Use a single UniversalFilter per toolbar — consolidate dimensions rather than rendering multiple filter popovers.</li>
+  <li>Provide a stable, unique <code>id</code> per table instance to keep <code>data-testid</code> attributes deterministic for tests.</li>
+  <li>Keep option lists under ~15 items; for larger vocabularies, prefer a searchable multi-select or server-driven autocomplete.</li>
+  <li>Use <code>variant="outlined"</code> to match Meshery table density; switch to <code>filled</code> only inside compact toolbars with tinted surfaces.</li>
+  <li>Close the popover after Apply and move focus back to the trigger for keyboard continuity.</li>
+</ul>
+
+<a id="Dont">
+  <h2>Don't</h2>
+</a>
+
+<ul>
+  <li>Do not trigger data fetching on every select change — wait for the Apply action to avoid excessive requests.</li>
+  <li>Do not mutate <code>selectedDateRange</code> in place; always pass a new object via <code>setSelectedDateRange</code>.</li>
+  <li>Do not omit the <code>id</code> prop when multiple tables share a view — duplicated test IDs make e2e selectors ambiguous.</li>
+  <li>Do not hide the Active count and rely on color alone; pair badge feedback with textual chips or summaries.</li>
+  <li>Do not set <code>showAllOption={false}</code> without providing a clear default or allowing deselection — users need a path back to “no constraint”.</li>
+</ul>

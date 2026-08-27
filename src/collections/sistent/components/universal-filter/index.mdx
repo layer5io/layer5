@@ -1,0 +1,208 @@
+---
+title: UniversalFilter
+published: true
+component: universal-filter
+description: UniversalFilter is a multi-attribute popover filtering component for tables and catalogs, supporting column-based selects, date-range pickers, quick-range presets, and active-filter badge counts.
+---
+
+import { useState } from "react";
+import { UniversalFilter, Box, Typography, Chip } from "@sistent/sistent";
+import { subtractDays, subtractMonths, subtractYears } from "@sistent/sistent";
+
+export const BasicUniversalFilterDemo = () => {
+  const filters = {
+    status: {
+      name: "Status",
+      options: [
+        { label: "Deployed", value: "deployed" },
+        { label: "Pending", value: "pending" },
+        { label: "Failed", value: "failed" },
+      ],
+    },
+    kind: {
+      name: "Kind",
+      options: [
+        { label: "Deployment", value: "deployment" },
+        { label: "Service", value: "service" },
+        { label: "ConfigMap", value: "configmap" },
+      ],
+    },
+  };
+  const [selectedFilters, setSelectedFilters] = useState({
+    status: "All",
+    kind: "All",
+  });
+  const handleApplyFilter = (next) => {
+    console.log("Applied filters:", next ?? selectedFilters);
+  };
+  return (
+    <UniversalFilter
+      id="demo-basic"
+      filters={filters}
+      selectedFilters={selectedFilters}
+      setSelectedFilters={setSelectedFilters}
+      handleApplyFilter={handleApplyFilter}
+      variant="outlined"
+    />
+  );
+};
+
+export const DatePickerUniversalFilterDemo = () => {
+  const filters = {
+    category: {
+      name: "Category",
+      options: [
+        { label: "Design", value: "design" },
+        { label: "View", value: "view" },
+        { label: "Model", value: "model" },
+      ],
+    },
+  };
+  const [selectedFilters, setSelectedFilters] = useState({ category: "All" });
+  const [selectedDateRange, setSelectedDateRange] = useState({
+    startDate: subtractDays(new Date(), 7),
+    endDate: new Date(),
+  });
+  return (
+    <UniversalFilter
+      id="demo-date"
+      filters={filters}
+      selectedFilters={selectedFilters}
+      setSelectedFilters={setSelectedFilters}
+      handleApplyFilter={(next) => console.log("Applied:", next, selectedDateRange)}
+      variant="outlined"
+      datePicker
+      selectedDateRange={selectedDateRange}
+      setSelectedDateRange={setSelectedDateRange}
+    />
+  );
+};
+
+export const ActiveFiltersDemo = () => {
+  const filters = {
+    status: {
+      name: "Status",
+      options: [
+        { label: "Published", value: "published" },
+        { label: "Unpublished", value: "unpublished" },
+      ],
+    },
+    visibility: {
+      name: "Visibility",
+      options: [
+        { label: "Public", value: "public" },
+        { label: "Private", value: "private" },
+      ],
+    },
+  };
+  const [selectedFilters, setSelectedFilters] = useState({
+    status: "published",
+    visibility: "private",
+  });
+  const activeCount = Object.values(selectedFilters).filter((v) => v && v !== "All").length;
+  return (
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 2, alignItems: "center" }}>
+      <UniversalFilter
+        id="demo-active"
+        filters={filters}
+        selectedFilters={selectedFilters}
+        setSelectedFilters={setSelectedFilters}
+        handleApplyFilter={(next) => console.log("Applied:", next)}
+        variant="outlined"
+      />
+      <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", justifyContent: "center" }}>
+        {Object.entries(selectedFilters)
+          .filter(([, v]) => v && v !== "All")
+          .map(([k, v]) => (
+            <Chip key={k} label={`${k}: ${v}`} size="small" />
+          ))}
+        {activeCount === 0 && <Typography variant="body2" color="text.secondary">No active filters</Typography>}
+      </Box>
+    </Box>
+  );
+};
+
+UniversalFilter is a centralized, multi-attribute filtering control used across Meshery and Kanvas for tables, catalogs, and list views. It consolidates column-based select filters and an optional date-range picker into a single trigger with a badge-count indicator, keeping toolbars compact while supporting complex filter combinations.
+
+<a id="Overview">
+  <h2>Overview</h2>
+</a>
+
+The **UniversalFilter** component organizes multiple filter dimensions behind a single **Filter** icon button. On desktop the controls appear in a `Popper` anchored to the trigger; on mobile (`sm` breakpoint) they render in a `Dialog`/`Drawer` for accessible touch interaction. Each filter dimension maps to a `Select` with an optional **All** pass-through option, and an **Apply** button commits the staged selections via `handleApplyFilter`.
+
+Use UniversalFilter when filtering tables or catalogs by several attributes at once — such as status, kind, category, or visibility — and when a unified active-filter count and responsive presentation are required. It is typically placed in the right section of `DataTableToolbar` alongside `SearchBar`, `TableVisibilityControl`, and `ViewSwitch`.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: "flex", justifyContent: "center", width: "100%", padding: "1rem" }}>
+      <BasicUniversalFilterDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Anatomy">
+  <h2>Anatomy</h2>
+</a>
+
+<p>A Sistent UniversalFilter is composed of the following parts:</p>
+
+<ul>
+  <li><strong>Filter Trigger</strong> — An icon button (`FilterAlt` icon) wrapped in a `Badge` that shows the count of active (non-“All”) selections.</li>
+  <li><strong>Container</strong> — A `Popper` on desktop and a `Dialog` on mobile (`useMediaQuery(theme.breakpoints.down("sm"))`). Both are anchored to the trigger and close via `ClickAwayListener` / `onClose`.</li>
+  <li><strong>Header</strong> — A tinted header bar displaying “Filters:” when rendered in popper mode.</li>
+  <li><strong>Filter Groups</strong> — One group per key in `filters`. Each group renders an `InputLabel` (`FilterColumn.name`) and a `Select` populated from `FilterColumn.options` plus an optional **All** option.</li>
+  <li><strong>Date-Range Section</strong> (optional) — Rendered when `datePicker` is true and `selectedDateRange`/`setSelectedDateRange` are provided. Contains a **Quick Ranges** select and two `DateTimePicker` fields (Start/End).</li>
+  <li><strong>Apply Action</strong> — A contained `Button` labeled “Apply” that copies staged values to `selectedFilters` and invokes `handleApplyFilter`.</li>
+</ul>
+
+<a id="Variants">
+  <h2>Variants</h2>
+</a>
+
+<h3>Default (Outlined)</h3>
+
+Uses `variant="outlined"` on each inner `Select`. This is the standard density for Meshery tables and catalog toolbars.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: "flex", justifyContent: "center", width: "100%", padding: "1rem" }}>
+      <BasicUniversalFilterDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<h3>With Date-Range Picker</h3>
+
+Set `datePicker` and provide `selectedDateRange` and `setSelectedDateRange` to enable calendar filtering. Includes quick-range presets and paired `DateTimePicker` controls.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: "flex", justifyContent: "center", width: "100%", padding: "1rem" }}>
+      <DatePickerUniversalFilterDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<h3>Active Filter Feedback</h3>
+
+The badge count derives from `Object.values(selectedFilters).filter(v => v && v !== "All").length`. Mirror active selections outside the popover (e.g., as `Chip` lists) so users can confirm applied state without reopening the filter.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: "flex", justifyContent: "center", width: "100%", padding: "1rem" }}>
+      <ActiveFiltersDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Accessibility">
+  <h2>Accessibility</h2>
+</a>
+
+<ul>
+  <li>The trigger uses `CustomTooltip` with `title="Filter"` and an `aria-label` on the underlying `IconButton` for screen readers.</li>
+  <li>Each group is wrapped with `role="presentation"` and a `data-testid` of the form `{id}-filter-group-{key}`; labels and selects expose `{id}-label-{key}` and `{id}-select-{key}` for assistive and test targeting.</li>
+  <li>The date-range section exposes `{id}-date-range`, `{id}-quick-range-select`, `{id}-start-date`, and `{id}-end-date` data attributes.</li>
+  <li>Ensure every Filter trigger receives a unique `id` prop so `data-testid` values remain deterministic across multiple tables on the same page.</li>
+  <li>Keyboard users can open the filter, tab through selects, and activate **Apply** without losing focus context; the popper uses `ClickAwayListener` with `mouseEvent="onMouseDown"` and `touchEvent="onTouchStart"` to preserve expected dismissal semantics.</li>
+</ul>
