@@ -128,7 +128,7 @@ UniversalFilter is a centralized, multi-attribute filtering control used across 
   <h2>Overview</h2>
 </a>
 
-The **UniversalFilter** component organizes multiple filter dimensions behind a single **Filter** icon button. On desktop the controls appear in a `Popper` anchored to the trigger; on mobile (`sm` breakpoint) they render in a `Dialog`/`Drawer` for accessible touch interaction. Each filter dimension maps to a `Select` with an optional **All** pass-through option, and an **Apply** button commits the staged selections via `handleApplyFilter`.
+The **UniversalFilter** component organizes multiple filter dimensions behind a single **Filter** icon button. On desktop the controls appear in a `Popper` anchored to the trigger; on mobile (`sm` breakpoint) they render in a `BottomSheet` for accessible touch interaction. Each filter dimension maps to a `Select` with an optional **All** pass-through option. Column-filter selections are staged as `draftFilters` and committed on **Apply** via `handleApplyFilter`, while date-range changes propagate immediately through `setSelectedDateRange`.
 
 Use UniversalFilter when filtering tables or catalogs by several attributes at once — such as status, kind, category, or visibility — and when a unified active-filter count and responsive presentation are required. It is typically placed in the right section of `DataTableToolbar` alongside `SearchBar`, `TableVisibilityControl`, and `ViewSwitch`.
 
@@ -148,11 +148,11 @@ Use UniversalFilter when filtering tables or catalogs by several attributes at o
 
 <ul>
   <li><strong>Filter Trigger</strong> — An icon button (`FilterAlt` icon) wrapped in a `Badge` that shows the count of active (non-“All”) selections.</li>
-  <li><strong>Container</strong> — A `Popper` on desktop and a `Dialog` on mobile (`useMediaQuery(theme.breakpoints.down("sm"))`). Both are anchored to the trigger and close via `ClickAwayListener` / `onClose`.</li>
+  <li><strong>Container</strong> — A `Popper` on desktop and a `BottomSheet` on mobile (`useMediaQuery(theme.breakpoints.down("sm"))`). The desktop popper is anchored to the trigger and uses `ClickAwayListener`; the mobile sheet uses `BottomSheet` `onClose` handling.</li>
   <li><strong>Header</strong> — A tinted header bar displaying “Filters:” when rendered in popper mode.</li>
   <li><strong>Filter Groups</strong> — One group per key in `filters`. Each group renders an `InputLabel` (`FilterColumn.name`) and a `Select` populated from `FilterColumn.options` plus an optional **All** option.</li>
-  <li><strong>Date-Range Section</strong> (optional) — Rendered when `datePicker` is true and `selectedDateRange`/`setSelectedDateRange` are provided. Contains a **Quick Ranges** select and two `DateTimePicker` fields (Start/End).</li>
-  <li><strong>Apply Action</strong> — A contained `Button` labeled “Apply” that copies staged values to `selectedFilters` and invokes `handleApplyFilter`.</li>
+  <li><strong>Date-Range Section</strong> (optional) — Rendered when `datePicker` is true and `selectedDateRange`/`setSelectedDateRange` are provided. Contains a **Quick Ranges** select and two `DateTimePicker` fields (Start/End). Quick-range, Start and End changes call `setSelectedDateRange` immediately — they are not staged.</li>
+  <li><strong>Apply Action</strong> — A contained `Button` labeled “Apply” that commits staged column-filter selections (`draftFilters` → `selectedFilters`) and invokes `handleApplyFilter`. Date-range updates are already propagated via `setSelectedDateRange` before Apply.</li>
 </ul>
 
 <a id="Variants">
@@ -204,5 +204,5 @@ The badge count derives from `Object.values(selectedFilters).filter(v => v && v 
   <li>Each group is wrapped with `role="presentation"` and a `data-testid` of the form `{id}-filter-group-{key}`; labels and selects expose `{id}-label-{key}` and `{id}-select-{key}` for assistive and test targeting.</li>
   <li>The date-range section exposes `{id}-date-range`, `{id}-quick-range-select`, `{id}-start-date`, and `{id}-end-date` data attributes.</li>
   <li>Ensure every Filter trigger receives a unique `id` prop so `data-testid` values remain deterministic across multiple tables on the same page.</li>
-  <li>Keyboard users can open the filter, tab through selects, and activate **Apply** without losing focus context; the popper uses `ClickAwayListener` with `mouseEvent="onMouseDown"` and `touchEvent="onTouchStart"` to preserve expected dismissal semantics.</li>
+  <li>Keyboard users can open the filter, tab through selects, and activate **Apply**; the desktop popper uses `ClickAwayListener` with `mouseEvent="onMouseDown"` and `touchEvent="onTouchStart"` to preserve expected dismissal semantics. The component closes via `handleClose` on Apply but does not explicitly restore focus to the trigger — consumers should manage focus restoration if needed for their keyboard workflow.</li>
 </ul>

@@ -158,7 +158,7 @@ export const ActiveFiltersGuidanceDemo = () => {
   <li><strong>Shape:</strong> <code>Record&lt;string, FilterColumn&gt;</code> — e.g., <code>{`{ status: { name: "Status", options: [...] } }`}</code>.</li>
   <li><strong>Label vs Value:</strong> <code>label</code> is user-facing; <code>value</code> is the wire value sent to <code>handleApplyFilter</code> and typically used in URL search params or API filters.</li>
   <li><strong>Show All:</strong> When <code>showAllOption</code> is <code>true</code> (default), an <code>All</code> option is prepended. Selecting <code>All</code> signals no constraint for that dimension — consumers should omit that key when building queries.</li>
-  <li><strong>Staging vs Commit:</strong> Internally the component stages selections in local state and only commits them to <code>selectedFilters</code> and <code>handleApplyFilter</code> on <strong>Apply</strong>. Do not trigger data fetching on every select change; wait for the Apply event.</li>
+  <li><strong>Staging vs Commit:</strong> Internally column-filter selections are staged as <code>draftFilters</code> and only committed to <code>selectedFilters</code> via <code>handleApplyFilter</code> on <strong>Apply</strong>. Date-range changes are not staged — <code>handleQuickRangeChange</code>, <code>handleStartDateChange</code> and <code>handleEndDateChange</code> call <code>setSelectedDateRange</code> immediately. Do not trigger data fetching on every select change for column filters; wait for the Apply event, while date-range consumers should react to <code>selectedDateRange</code> updates directly.</li>
 </ul>
 
 <Row className="image-container">
@@ -174,11 +174,11 @@ export const ActiveFiltersGuidanceDemo = () => {
 </a>
 
 <p>
-  Set <code>datePicker</code> to enable calendar filtering. You must also provide <code>selectedDateRange</code> and <code>setSelectedDateRange</code>. The component then renders a Quick Ranges selector plus two lazily-loaded <code>DateTimePicker</code> fields (Start/End). The pickers clamp values so <code>startDate ≤ endDate</code>.
+  Set <code>datePicker</code> to enable calendar filtering. You must also provide <code>selectedDateRange</code> and <code>setSelectedDateRange</code>. The component then renders a Quick Ranges selector plus two lazily-loaded <code>DateTimePicker</code> fields (Start/End). The pickers clamp values so <code>startDate ≤ endDate</code>. Unlike column filters, quick-range and Start/End changes propagate immediately via <code>setSelectedDateRange</code> — they are not staged as <code>draftFilters</code> until Apply (Apply only commits column filters).
 </p>
 
 <ul>
-  <li><strong>Peer dependencies:</strong> <code>DateTimePicker</code> is code-split and requires optional peers <code>@mui/x-date-pickers</code> and <code>@mui/lab</code> / <code>date-fns</code> adapter. If those are not installed, rendering with <code>datePicker</code> will throw with installation guidance.</li>
+  <li><strong>Peer dependencies:</strong> <code>DateTimePicker</code> is code-split and requires optional peers <code>@mui/x-date-pickers</code> and <code>date-fns</code>. If those are not installed, rendering with <code>datePicker</code> will throw with installation guidance.</li>
   <li><strong>Range type:</strong> <code>DateRange = {`{ startDate: Date, endDate: Date }`}</code>. Always construct new <code>Date</code> objects; avoid mutating the existing range in place.</li>
   <li><strong>Placement:</strong> Keep the date section visually grouped below column filters. The built-in layout already enforces this order.</li>
   <li><strong>Validation:</strong> When the user picks a Start after the current End, the component clamps End to Start (and vice versa). Re-validate on Apply if your API requires inclusive/exclusive bounds.</li>
@@ -247,7 +247,7 @@ export const ActiveFiltersGuidanceDemo = () => {
   <li>Provide a stable, unique <code>id</code> per table instance to keep <code>data-testid</code> attributes deterministic for tests.</li>
   <li>Keep option lists under ~15 items; for larger vocabularies, prefer a searchable multi-select or server-driven autocomplete.</li>
   <li>Use <code>variant="outlined"</code> to match Meshery table density; switch to <code>filled</code> only inside compact toolbars with tinted surfaces.</li>
-  <li>Close the popover after Apply and move focus back to the trigger for keyboard continuity.</li>
+  <li>Close the popover/sheet after Apply via the built-in <code>handleClose</code>; if you need keyboard focus to return to the trigger, manage focus restoration in the consumer (the component does not explicitly restore focus after Apply).</li>
 </ul>
 
 <a id="Dont">
@@ -255,7 +255,7 @@ export const ActiveFiltersGuidanceDemo = () => {
 </a>
 
 <ul>
-  <li>Do not trigger data fetching on every select change — wait for the Apply action to avoid excessive requests.</li>
+  <li>Do not trigger data fetching on every column-filter select change — wait for the Apply action to avoid excessive requests. Date-range changes are immediate via <code>setSelectedDateRange</code>, so handle them separately if they should also be Apply-gated.</li>
   <li>Do not mutate <code>selectedDateRange</code> in place; always pass a new object via <code>setSelectedDateRange</code>.</li>
   <li>Do not omit the <code>id</code> prop when multiple tables share a view — duplicated test IDs make e2e selectors ambiguous.</li>
   <li>Do not hide the Active count and rely on color alone; pair badge feedback with textual chips or summaries.</li>

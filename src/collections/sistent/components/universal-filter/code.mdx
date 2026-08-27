@@ -251,10 +251,10 @@ export const ActiveFilterChipsDemo = () => {
   <h2>Basic UniversalFilter</h2>
 </a>
 
-Multi-attribute filtering with two column filters. Each dimension renders as a `Select` inside the popper; selections are staged locally and committed on **Apply**.
+Multi-attribute filtering with two column filters. Each dimension renders as a `Select` inside the `Popper` (desktop) / `BottomSheet` (mobile); column selections are staged as `draftFilters` and committed on **Apply**.
 
 <div className="showcase">
-  <div className="items">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px', margin: '0 auto' }}>
     <ThemeWrapper>
       <BasicUniversalFilterCodeDemo />
     </ThemeWrapper>
@@ -313,7 +313,7 @@ export default function BasicUniversalFilter() {
 Combine a free-text `TextField` search with `UniversalFilter` for mixed query patterns — search narrows by name or description while selects constrain by enumerated attributes. Both inputs should be committed together (e.g., on Apply or via a shared filter handler).
 
 <div className="showcase">
-  <div className="items">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px', margin: '0 auto' }}>
     <ThemeWrapper>
       <WithSearchUniversalFilterCodeDemo />
     </ThemeWrapper>
@@ -384,10 +384,10 @@ export default function SearchWithUniversalFilter() {
   <h2>With Date Picker</h2>
 </a>
 
-Enable the calendar section by passing `datePicker`, `selectedDateRange`, and `setSelectedDateRange`. The component renders a Quick Ranges selector plus Start/End `DateTimePicker` fields. `DateTimePicker` is lazily loaded and requires optional peers `@mui/x-date-pickers` and `date-fns`.
+Enable the calendar section by passing `datePicker`, `selectedDateRange`, and `setSelectedDateRange`. The component renders a Quick Ranges selector plus Start/End `DateTimePicker` fields. `DateTimePicker` is lazily loaded and requires optional peers `@mui/x-date-pickers` and `date-fns`. Unlike column filters, quick-range and Start/End changes call `setSelectedDateRange` immediately — they are not staged until Apply.
 
 <div className="showcase">
-  <div className="items">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px', margin: '0 auto' }}>
     <ThemeWrapper>
       <DatePickerUniversalFilterCodeDemo />
     </ThemeWrapper>
@@ -436,7 +436,7 @@ export default function DatePickerUniversalFilter() {
 Override `quickDateRanges` to provide domain-specific presets. Each entry is `{ label, getRange: () => ({ startDate, endDate }) }`. Use `subtractDays`, `subtractMonths`, and `subtractYears` from `@sistent/sistent` for DST-safe, end-of-month-clamped arithmetic.
 
 <div className="showcase">
-  <div className="items">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px', margin: '0 auto' }}>
     <ThemeWrapper>
       <QuickRangesUniversalFilterCodeDemo />
     </ThemeWrapper>
@@ -493,7 +493,7 @@ export default function QuickRangesFilter() {
 `UniversalFilter` forwards `variant` to each inner `Select` (`outlined` | `filled` | `standard`). Use `outlined` for tables, `filled` for compact tinted toolbars, and `standard` for dense inline filters.
 
 <div className="showcase">
-  <div className="items">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px', margin: '0 auto' }}>
     <ThemeWrapper>
       <VariantUniversalFilterCodeDemo />
     </ThemeWrapper>
@@ -544,7 +544,7 @@ export default function VariantsDemo() {
 The badge count reflects `Object.values(selectedFilters).filter(v => v && v !== "All").length`. Mirror active selections as removable `Chip`s so users can verify and clear filters without reopening the popover.
 
 <div className="showcase">
-  <div className="items">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px', margin: '0 auto' }}>
     <ThemeWrapper>
       <ActiveFilterChipsDemo />
     </ThemeWrapper>
