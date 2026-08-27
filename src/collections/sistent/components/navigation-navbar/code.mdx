@@ -1,0 +1,236 @@
+---
+title: NavigationNavbar Code
+published: true
+component: navigation-navbar
+description: The NavigationNavbar component is a structured, responsive vertical menu system ideal for application sidebars, supporting a single level of nesting and integrated declarative permission gating.
+---
+
+import { BasicNavigationDemo, NestedNavigationDemo, PermissionNavigationDemo } from "./index.mdx";
+
+<a id="basic-navigation-navbar">
+  <h2>Basic NavigationNavbar</h2>
+</a>
+
+A standard flat list of navigation items mirroring the top-level entries in Meshery Cloud's sidebar. `NavigationNavbar` relies entirely on external routing logic, so active state highlights must be provided manually. The `addDivider` property renders a visual separator between logical groups.
+
+<div className="showcase">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px', margin: '0 auto' }}>
+    <BasicNavigationDemo />
+  </div>
+  <CodeBlock name="basic-navigation-navbar" collapsible code={`
+import {
+  NavigationNavbar,
+  DashboardIcon,
+  CatalogIcon,
+  LogoutIcon
+} from "@sistent/sistent";
+import LayersIcon from "@mui/icons-material/Layers";
+
+function MesheryCloudBasicNav() {
+  const items = [
+    {
+      id: "dashboard",
+      title: "Dashboard",
+      icon: <DashboardIcon />,
+      onClick: () => router.push("/dashboard")
+    },
+    {
+      id: "spaces",
+      title: "Spaces",
+      icon: <LayersIcon fontSize="small" />,
+      onClick: () => router.push("/spaces/overview")
+    },
+    {
+      id: "catalog",
+      title: "Catalog",
+      icon: <CatalogIcon />,
+      onClick: () => router.push("/catalog"),
+      addDivider: true
+    },
+    {
+      id: "logout",
+      title: "Logout",
+      icon: <LogoutIcon />,
+      onClick: () => router.push("/logout")
+    }
+  ];
+
+  return <NavigationNavbar navigationItems={items} />;
+}
+`} />
+</div>
+
+<a id="nested-navigation-navbar">
+  <h2>Nested NavigationNavbar</h2>
+</a>
+
+Group related navigation items into a collapsible accordion. This example mirrors two real sections from Meshery Cloud's sidebar — **Spaces** (with Workspaces, Environments, and Integrations) and **Catalog** (with My Designs and My Views). The component only permits one section to remain open at a time.
+
+<div className="showcase">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px', margin: '0 auto' }}>
+    <NestedNavigationDemo />
+  </div>
+  <CodeBlock name="nested-navigation-navbar" collapsible code={`
+import {
+  NavigationNavbar,
+  CatalogIcon
+} from "@sistent/sistent";
+import LayersIcon from "@mui/icons-material/Layers";
+import WorkspacesIcon from "@mui/icons-material/Workspaces";
+import CloudIcon from "@mui/icons-material/Cloud";
+import IntegrationInstructionsIcon from "@mui/icons-material/IntegrationInstructions";
+import DesignServicesIcon from "@mui/icons-material/DesignServices";
+import ViewModuleIcon from "@mui/icons-material/ViewModule";
+
+function MesheryCloudNestedNav() {
+  const items = [
+    {
+      id: "spaces",
+      title: "Spaces",
+      icon: <LayersIcon fontSize="small" />,
+      onClick: () => router.push("/spaces/overview"),
+      subItems: [
+        {
+          id: "workspaces",
+          title: "Workspaces",
+          icon: <WorkspacesIcon fontSize="small" />,
+          onClick: () => router.push("/spaces/workspaces")
+        },
+        {
+          id: "environments",
+          title: "Environments",
+          icon: <CloudIcon fontSize="small" />,
+          onClick: () => router.push("/spaces/environments")
+        },
+        {
+          id: "integrations",
+          title: "Integrations",
+          icon: <IntegrationInstructionsIcon fontSize="small" />,
+          onClick: () => router.push("/spaces/integrations")
+        }
+      ]
+    },
+    {
+      id: "catalog",
+      title: "Catalog",
+      icon: <CatalogIcon />,
+      onClick: () => router.push("/catalog"),
+      subItems: [
+        {
+          id: "designs",
+          title: "My Designs",
+          icon: <DesignServicesIcon fontSize="small" />,
+          onClick: () => router.push("/catalog/content/my-designs")
+        },
+        {
+          id: "views",
+          title: "My Views",
+          icon: <ViewModuleIcon fontSize="small" />,
+          onClick: () => router.push("/catalog/content/my-views")
+        }
+      ]
+    }
+  ];
+
+  return <NavigationNavbar navigationItems={items} />;
+}
+`} />
+</div>
+
+<a id="permission-gated-navigation-navbar">
+  <h2>Permission-Gated NavigationNavbar</h2>
+</a>
+
+This example mirrors Meshery Cloud's **Identity** section. The parent item uses `permissionKey: { anyOf: [...] }` so it stays reachable when at least one child is permitted. Each child uses `permissionAction: "hide"` — exactly as Meshery Cloud does — so unauthorized items vanish entirely rather than showing a shield. When _all_ children are denied, the parent itself becomes inert and displays a `PermissionShield` tooltip listing every unmet key.
+
+<div className="showcase">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px', margin: '0 auto' }}>
+    <PermissionNavigationDemo />
+  </div>
+  <CodeBlock name="permission-gated-navigation-navbar" collapsible code={`
+import {
+  NavigationNavbar,
+  PermissionProvider,
+  TeamsIcon,
+  CredentialIcon
+} from "@sistent/sistent";
+import PersonIcon from "@mui/icons-material/Person";
+import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+
+function MesheryCloudPermissionNav() {
+  const mockUserContext = {
+    userName: "Demo User",
+    orgName: "Layer5 Cloud",
+    roleNames: ["Team Member"]
+  };
+
+  const viewUsersKey = {
+    id: "b3d7a1f0-4c2e-4a8b-9f6d-1e5c3a7b2d9e",
+    function: "View All Users",
+    description: "View all registered users across the organization.",
+    category: "Identity & Access",
+    subcategory: "Users"
+  };
+
+  const viewTeamsKey = {
+    id: "c4e8b2f1-5d3f-4b9c-a07e-2f6d4b8c3e0f",
+    function: "View All Teams",
+    description: "View all teams within the organization.",
+    category: "Identity & Access",
+    subcategory: "Teams"
+  };
+
+  const viewRolesKey = {
+    id: "d5f9c3f2-6e4f-4c0d-b18f-3f7e5c9d4f1f",
+    function: "View All Roles",
+    description: "View all roles and their assigned permissions.",
+    category: "Identity & Access",
+    subcategory: "Roles"
+  };
+
+  const items = [
+    {
+      id: "identity",
+      title: "Identity",
+      icon: <AdminPanelSettingsIcon fontSize="small" />,
+      permissionKey: { anyOf: [viewUsersKey, viewTeamsKey, viewRolesKey] },
+      permissionAction: "showShield",
+      onClick: () => router.push("/identity/overview"),
+      subItems: [
+        {
+          id: "users",
+          title: "Users",
+          icon: <PersonIcon fontSize="small" />,
+          permissionKey: viewUsersKey,
+          permissionAction: "hide",
+          onClick: () => router.push("/identity/users")
+        },
+        {
+          id: "teams",
+          title: "Teams",
+          icon: <TeamsIcon />,
+          permissionKey: viewTeamsKey,
+          permissionAction: "hide",
+          onClick: () => router.push("/identity/teams")
+        },
+        {
+          id: "roles",
+          title: "Roles",
+          icon: <CredentialIcon />,
+          permissionKey: viewRolesKey,
+          permissionAction: "hide",
+          onClick: () => router.push("/identity/roles")
+        }
+      ]
+    }
+  ];
+
+  return (
+    <PermissionProvider userHasPermission={() => false} userContext={mockUserContext}>
+      <NavigationNavbar navigationItems={items} />
+    </PermissionProvider>
+  );
+}
+`} />
+</div>
+
