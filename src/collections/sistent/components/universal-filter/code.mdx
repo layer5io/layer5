@@ -72,6 +72,8 @@ export const WithSearchUniversalFilterCodeDemo = () => {
     <Box sx={{ display: "flex", gap: 2, alignItems: "center", flexWrap: "wrap", justifyContent: "center" }}>
       <TextField
         placeholder="Search by name, kind, category"
+        aria-label="Search by name, kind, category"
+        inputProps={{ "aria-label": "Search by name, kind, category" }}
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         size="small"
@@ -240,7 +242,18 @@ export const ActiveFilterChipsDemo = () => {
       />
       <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
         {active.map(([k, v]) => (
-          <Chip key={k} label={`${k}: ${v}`} size="small" onDelete={() => setSelectedFilters((prev) => ({ ...prev, [k]: "All" }))} />
+          <Chip
+            key={k}
+            label={`${k}: ${v}`}
+            size="small"
+            onDelete={() =>
+              setSelectedFilters((prev) => {
+                const next = { ...prev, [k]: "All" };
+                console.log("Applied active", next);
+                return next;
+              })
+            }
+          />
         ))}
       </Box>
     </Box>
@@ -356,6 +369,8 @@ export default function SearchWithUniversalFilter() {
     <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
       <TextField
         placeholder="Search by name, kind, category"
+        aria-label="Search by name, kind, category"
+        inputProps={{ "aria-label": "Search by name, kind, category" }}
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         size="small"
@@ -592,7 +607,13 @@ export default function ActiveFilterChips() {
             key={k}
             label={k + ": " + v}
             size="small"
-            onDelete={() => setSelectedFilters((prev) => ({ ...prev, [k]: "All" }))}
+            onDelete={() =>
+              setSelectedFilters((prev) => {
+                const next = { ...prev, [k]: "All" };
+                console.log("Applied active", next);
+                return next;
+              })
+            }
           />
         ))}
       </Box>

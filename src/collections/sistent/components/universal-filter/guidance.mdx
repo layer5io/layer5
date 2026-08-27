@@ -138,7 +138,18 @@ export const ActiveFiltersGuidanceDemo = () => {
       />
       <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
         {active.map(([k, v]) => (
-          <Chip key={k} label={`${k}: ${v}`} size="small" onDelete={() => setSelected((prev) => ({ ...prev, [k]: "All" }))} />
+          <Chip
+            key={k}
+            label={`${k}: ${v}`}
+            size="small"
+            onDelete={() =>
+              setSelected((prev) => {
+                const next = { ...prev, [k]: "All" };
+                console.log("Applied", next);
+                return next;
+              })
+            }
+          />
         ))}
         {active.length === 0 && <Typography variant="body2" color="text.secondary">No active filters — all records shown</Typography>}
       </Box>
@@ -223,7 +234,7 @@ export const ActiveFiltersGuidanceDemo = () => {
 </p>
 
 <ul>
-  <li><strong>Badge:</strong> The trigger badge automatically hides when count is zero (<code>invisible={count===0}</code>).</li>
+  <li><strong>Badge:</strong> The trigger badge automatically hides when count is zero (<code>invisible=&#123;count===0&#125;</code>).</li>
   <li><strong>External feedback:</strong> Mirror active selections as removable <code>Chip</code>s or summary text so users need not reopen the popover to confirm scope. Deleting a chip should set that key back to <code>All</code> and re-apply.</li>
   <li><strong>URL sync:</strong> Persist active filters in URL search params so filtered views are shareable. On mount, hydrate <code>selectedFilters</code> from the URL; on Apply, write back. Exclude <code>All</code> entries.</li>
   <li><strong>Empty state:</strong> When all dimensions are <code>All</code> and the date range is the default, show “No active filters” rather than an empty chip row.</li>
@@ -259,5 +270,5 @@ export const ActiveFiltersGuidanceDemo = () => {
   <li>Do not mutate <code>selectedDateRange</code> in place; always pass a new object via <code>setSelectedDateRange</code>.</li>
   <li>Do not omit the <code>id</code> prop when multiple tables share a view — duplicated test IDs make e2e selectors ambiguous.</li>
   <li>Do not hide the Active count and rely on color alone; pair badge feedback with textual chips or summaries.</li>
-  <li>Do not set <code>showAllOption={false}</code> without providing a clear default or allowing deselection — users need a path back to “no constraint”.</li>
+  <li>Do not set <code>showAllOption=&#123;false&#125;</code> without providing a clear default or allowing deselection — users need a path back to “no constraint”.</li>
 </ul>
