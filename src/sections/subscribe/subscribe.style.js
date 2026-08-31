@@ -57,7 +57,6 @@ const SubscribeWrapper = styled.div`
         form{
             padding:0 1.875rem;
             h2{
-                font-size:1.75rem;
                 margin: 1.5625rem 0;
                 white-space: normal;
             }
