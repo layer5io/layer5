@@ -1,0 +1,623 @@
+---
+title: UniversalFilter Code
+published: true
+component: universal-filter
+description: Code examples for UniversalFilter demonstrating multi-attribute filtering, search integration, and date-range pickers with quick-range presets.
+---
+
+import { useState } from "react";
+import { UniversalFilter, Box, Typography, Chip, TextField, InputAdornment } from "@sistent/sistent";
+import SearchIcon from "@mui/icons-material/Search";
+import { subtractDays, subtractMonths, subtractYears } from "@sistent/sistent";
+
+export const BasicUniversalFilterCodeDemo = () => {
+  const filters = {
+    status: {
+      name: "Status",
+      options: [
+        { label: "Deployed", value: "deployed" },
+        { label: "Pending", value: "pending" },
+        { label: "Failed", value: "failed" },
+      ],
+    },
+    kind: {
+      name: "Kind",
+      options: [
+        { label: "Deployment", value: "deployment" },
+        { label: "Service", value: "service" },
+        { label: "ConfigMap", value: "configmap" },
+      ],
+    },
+  };
+  const [selectedFilters, setSelectedFilters] = useState({
+    status: "All",
+    kind: "All",
+  });
+  return (
+    <UniversalFilter
+      id="code-basic"
+      filters={filters}
+      selectedFilters={selectedFilters}
+      setSelectedFilters={setSelectedFilters}
+      handleApplyFilter={(next) => console.log("Applied:", next)}
+      variant="outlined"
+    />
+  );
+};
+
+export const WithSearchUniversalFilterCodeDemo = () => {
+  const filters = {
+    visibility: {
+      name: "Visibility",
+      options: [
+        { label: "Public", value: "public" },
+        { label: "Private", value: "private" },
+      ],
+    },
+    category: {
+      name: "Category",
+      options: [
+        { label: "Design", value: "design" },
+        { label: "View", value: "view" },
+        { label: "Model", value: "model" },
+      ],
+    },
+  };
+  const [search, setSearch] = useState("");
+  const [selectedFilters, setSelectedFilters] = useState({
+    visibility: "All",
+    category: "All",
+  });
+  return (
+    <Box sx={{ display: "flex", gap: 2, alignItems: "center", flexWrap: "wrap", justifyContent: "center" }}>
+      <TextField
+        placeholder="Search by name, kind, category"
+        aria-label="Search by name, kind, category"
+        inputProps={{ "aria-label": "Search by name, kind, category" }}
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        size="small"
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <SearchIcon fontSize="small" />
+            </InputAdornment>
+          ),
+        }}
+        sx={{ minWidth: 240 }}
+      />
+      <UniversalFilter
+        id="code-with-search"
+        filters={filters}
+        selectedFilters={selectedFilters}
+        setSelectedFilters={setSelectedFilters}
+        handleApplyFilter={(next) => console.log("Search:", search, "Filters:", next)}
+        variant="outlined"
+      />
+    </Box>
+  );
+};
+
+export const DatePickerUniversalFilterCodeDemo = () => {
+  const filters = {
+    status: {
+      name: "Status",
+      options: [
+        { label: "Active", value: "active" },
+        { label: "Inactive", value: "inactive" },
+      ],
+    },
+  };
+  const [selectedFilters, setSelectedFilters] = useState({ status: "All" });
+  const [selectedDateRange, setSelectedDateRange] = useState({
+    startDate: subtractDays(new Date(), 7),
+    endDate: new Date(),
+  });
+  return (
+    <UniversalFilter
+      id="code-date"
+      filters={filters}
+      selectedFilters={selectedFilters}
+      setSelectedFilters={setSelectedFilters}
+      handleApplyFilter={(next) => console.log("Filters:", next, "Range:", selectedDateRange)}
+      variant="outlined"
+      datePicker
+      selectedDateRange={selectedDateRange}
+      setSelectedDateRange={setSelectedDateRange}
+    />
+  );
+};
+
+export const QuickRangesUniversalFilterCodeDemo = () => {
+  const customQuickRanges = [
+    { label: "Last 7 days", getRange: () => ({ startDate: subtractDays(new Date(), 7), endDate: new Date() }) },
+    { label: "Last 30 days", getRange: () => ({ startDate: subtractDays(new Date(), 30), endDate: new Date() }) },
+    { label: "Last 3 months", getRange: () => ({ startDate: subtractMonths(new Date(), 3), endDate: new Date() }) },
+    { label: "Last 6 months", getRange: () => ({ startDate: subtractMonths(new Date(), 6), endDate: new Date() }) },
+    { label: "Last 1 year", getRange: () => ({ startDate: subtractYears(new Date(), 1), endDate: new Date() }) },
+  ];
+  const filters = {
+    kind: {
+      name: "Kind",
+      options: [
+        { label: "Deployment", value: "deployment" },
+        { label: "Service", value: "service" },
+      ],
+    },
+  };
+  const [selectedFilters, setSelectedFilters] = useState({ kind: "All" });
+  const [selectedDateRange, setSelectedDateRange] = useState({
+    startDate: subtractDays(new Date(), 7),
+    endDate: new Date(),
+  });
+  return (
+    <UniversalFilter
+      id="code-quick"
+      filters={filters}
+      selectedFilters={selectedFilters}
+      setSelectedFilters={setSelectedFilters}
+      handleApplyFilter={(next) => console.log("Quick range", selectedDateRange, next)}
+      variant="outlined"
+      datePicker
+      selectedDateRange={selectedDateRange}
+      setSelectedDateRange={setSelectedDateRange}
+      quickDateRanges={customQuickRanges}
+    />
+  );
+};
+
+export const VariantUniversalFilterCodeDemo = () => {
+  const filters = {
+    owner: {
+      name: "Owner",
+      options: [
+        { label: "Alice", value: "alice" },
+        { label: "Bob", value: "bob" },
+        { label: "Charlie", value: "charlie" },
+      ],
+    },
+  };
+  const [selected, setSelected] = useState({ owner: "All" });
+  return (
+    <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap", justifyContent: "center" }}>
+      <UniversalFilter
+        id="code-variant-outlined"
+        filters={filters}
+        selectedFilters={selected}
+        setSelectedFilters={setSelected}
+        handleApplyFilter={(next) => console.log("Outlined", next)}
+        variant="outlined"
+      />
+      <UniversalFilter
+        id="code-variant-filled"
+        filters={filters}
+        selectedFilters={selected}
+        setSelectedFilters={setSelected}
+        handleApplyFilter={(next) => console.log("Filled", next)}
+        variant="filled"
+      />
+      <UniversalFilter
+        id="code-variant-standard"
+        filters={filters}
+        selectedFilters={selected}
+        setSelectedFilters={setSelected}
+        handleApplyFilter={(next) => console.log("Standard", next)}
+        variant="standard"
+      />
+    </Box>
+  );
+};
+
+export const ActiveFilterChipsDemo = () => {
+  const filters = {
+    status: {
+      name: "Status",
+      options: [
+        { label: "Published", value: "published" },
+        { label: "Unpublished", value: "unpublished" },
+      ],
+    },
+    kind: {
+      name: "Kind",
+      options: [
+        { label: "Deployment", value: "deployment" },
+        { label: "Service", value: "service" },
+      ],
+    },
+  };
+  const [selectedFilters, setSelectedFilters] = useState({
+    status: "published",
+    kind: "deployment",
+  });
+  const active = Object.entries(selectedFilters).filter(([, v]) => v && v !== "All");
+  return (
+    <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
+      <UniversalFilter
+        id="code-active"
+        filters={filters}
+        selectedFilters={selectedFilters}
+        setSelectedFilters={setSelectedFilters}
+        handleApplyFilter={(next) => console.log("Applied active", next)}
+        variant="outlined"
+      />
+      <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
+        {active.map(([k, v]) => (
+          <Chip
+            key={k}
+            label={`${k}: ${v}`}
+            size="small"
+            onDelete={() =>
+              setSelectedFilters((prev) => {
+                const next = { ...prev, [k]: "All" };
+                console.log("Applied active", next);
+                return next;
+              })
+            }
+          />
+        ))}
+      </Box>
+    </Box>
+  );
+};
+
+<a id="Basic UniversalFilter">
+  <h2>Basic UniversalFilter</h2>
+</a>
+
+Multi-attribute filtering with two column filters. Each dimension renders as a `Select` inside the `Popper` (desktop) / `BottomSheet` (mobile); column selections are staged as `draftFilters` and committed on **Apply**.
+
+<div className="showcase">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px', margin: '0 auto' }}>
+    <ThemeWrapper>
+      <BasicUniversalFilterCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="universal-filter-basic" collapsible code={`import { useState } from "react";
+import { UniversalFilter } from "@sistent/sistent";
+
+const filters = {
+  status: {
+    name: "Status",
+    options: [
+      { label: "Deployed", value: "deployed" },
+      { label: "Pending", value: "pending" },
+      { label: "Failed", value: "failed" },
+    ],
+  },
+  kind: {
+    name: "Kind",
+    options: [
+      { label: "Deployment", value: "deployment" },
+      { label: "Service", value: "service" },
+      { label: "ConfigMap", value: "configmap" },
+    ],
+  },
+};
+
+export default function BasicUniversalFilter() {
+  const [selectedFilters, setSelectedFilters] = useState({
+    status: "All",
+    kind: "All",
+  });
+
+  const handleApplyFilter = (next) => {
+    // next is Record<string, string> with committed values
+    console.log("Applied:", next);
+    // e.g., build API query: omit keys where value === "All"
+  };
+
+  return (
+    <UniversalFilter
+      id="catalog-filter"
+      filters={filters}
+      selectedFilters={selectedFilters}
+      setSelectedFilters={setSelectedFilters}
+      handleApplyFilter={handleApplyFilter}
+      variant="outlined"
+    />
+  );
+}`} />
+</div>
+
+<a id="With Search Input">
+  <h2>With Search Input</h2>
+</a>
+
+Combine a free-text `TextField` search with `UniversalFilter` for mixed query patterns — search narrows by name or description while selects constrain by enumerated attributes. Both inputs should be committed together (e.g., on Apply or via a shared filter handler).
+
+<div className="showcase">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px', margin: '0 auto' }}>
+    <ThemeWrapper>
+      <WithSearchUniversalFilterCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="universal-filter-with-search" collapsible code={`import { useState } from "react";
+import { UniversalFilter, TextField, InputAdornment, Box } from "@sistent/sistent";
+import SearchIcon from "@mui/icons-material/Search";
+
+const filters = {
+  visibility: {
+    name: "Visibility",
+    options: [
+      { label: "Public", value: "public" },
+      { label: "Private", value: "private" },
+    ],
+  },
+  category: {
+    name: "Category",
+    options: [
+      { label: "Design", value: "design" },
+      { label: "View", value: "view" },
+      { label: "Model", value: "model" },
+    ],
+  },
+};
+
+export default function SearchWithUniversalFilter() {
+  const [search, setSearch] = useState("");
+  const [selectedFilters, setSelectedFilters] = useState({
+    visibility: "All",
+    category: "All",
+  });
+
+  const handleApplyFilter = (next) => {
+    console.log("Search:", search, "Filters:", next);
+    // Combine search + filters into a single query
+  };
+
+  return (
+    <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
+      <TextField
+        placeholder="Search by name, kind, category"
+        aria-label="Search by name, kind, category"
+        inputProps={{ "aria-label": "Search by name, kind, category" }}
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        size="small"
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <SearchIcon fontSize="small" />
+            </InputAdornment>
+          ),
+        }}
+      />
+      <UniversalFilter
+        id="filter-with-search"
+        filters={filters}
+        selectedFilters={selectedFilters}
+        setSelectedFilters={setSelectedFilters}
+        handleApplyFilter={handleApplyFilter}
+        variant="outlined"
+      />
+    </Box>
+  );
+}`} />
+</div>
+
+<a id="With Date Picker">
+  <h2>With Date Picker</h2>
+</a>
+
+Enable the calendar section by passing `datePicker`, `selectedDateRange`, and `setSelectedDateRange`. The component renders a Quick Ranges selector plus Start/End `DateTimePicker` fields. `DateTimePicker` is lazily loaded and requires optional peers `@mui/x-date-pickers` and `date-fns`. Unlike column filters, quick-range and Start/End changes call `setSelectedDateRange` immediately — they are not staged until Apply.
+
+<div className="showcase">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px', margin: '0 auto' }}>
+    <ThemeWrapper>
+      <DatePickerUniversalFilterCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="universal-filter-date-picker" collapsible code={`import { useState } from "react";
+import { UniversalFilter } from "@sistent/sistent";
+import { subtractDays } from "@sistent/sistent";
+
+const filters = {
+  status: {
+    name: "Status",
+    options: [
+      { label: "Active", value: "active" },
+      { label: "Inactive", value: "inactive" },
+    ],
+  },
+};
+
+export default function DatePickerUniversalFilter() {
+  const [selectedFilters, setSelectedFilters] = useState({ status: "All" });
+  const [selectedDateRange, setSelectedDateRange] = useState({
+    startDate: subtractDays(new Date(), 7),
+    endDate: new Date(),
+  });
+
+  return (
+    <UniversalFilter
+      id="filter-with-date"
+      filters={filters}
+      selectedFilters={selectedFilters}
+      setSelectedFilters={setSelectedFilters}
+      handleApplyFilter={(next) => console.log("Filters:", next, "Range:", selectedDateRange)}
+      variant="outlined"
+      datePicker
+      selectedDateRange={selectedDateRange}
+      setSelectedDateRange={setSelectedDateRange}
+    />
+  );
+}`} />
+</div>
+
+<a id="With Quick Ranges">
+  <h2>With Quick Ranges</h2>
+</a>
+
+Override `quickDateRanges` to provide domain-specific presets. Each entry is `{ label, getRange: () => ({ startDate, endDate }) }`. Use `subtractDays`, `subtractMonths`, and `subtractYears` from `@sistent/sistent` for DST-safe, end-of-month-clamped arithmetic.
+
+<div className="showcase">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px', margin: '0 auto' }}>
+    <ThemeWrapper>
+      <QuickRangesUniversalFilterCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="universal-filter-quick-ranges" collapsible code={`import { useState } from "react";
+import { UniversalFilter } from "@sistent/sistent";
+import { subtractDays, subtractMonths, subtractYears } from "@sistent/sistent";
+
+const customQuickRanges = [
+  { label: "Last 7 days", getRange: () => ({ startDate: subtractDays(new Date(), 7), endDate: new Date() }) },
+  { label: "Last 30 days", getRange: () => ({ startDate: subtractDays(new Date(), 30), endDate: new Date() }) },
+  { label: "Last 3 months", getRange: () => ({ startDate: subtractMonths(new Date(), 3), endDate: new Date() }) },
+  { label: "Last 6 months", getRange: () => ({ startDate: subtractMonths(new Date(), 6), endDate: new Date() }) },
+  { label: "Last 1 year", getRange: () => ({ startDate: subtractYears(new Date(), 1), endDate: new Date() }) },
+];
+
+export default function QuickRangesFilter() {
+  const filters = {
+    kind: {
+      name: "Kind",
+      options: [
+        { label: "Deployment", value: "deployment" },
+        { label: "Service", value: "service" },
+      ],
+    },
+  };
+  const [selectedFilters, setSelectedFilters] = useState({ kind: "All" });
+  const [selectedDateRange, setSelectedDateRange] = useState({
+    startDate: subtractDays(new Date(), 7),
+    endDate: new Date(),
+  });
+
+  return (
+    <UniversalFilter
+      id="filter-quick-ranges"
+      filters={filters}
+      selectedFilters={selectedFilters}
+      setSelectedFilters={setSelectedFilters}
+      handleApplyFilter={(next) => console.log("Quick range", selectedDateRange, next)}
+      variant="outlined"
+      datePicker
+      selectedDateRange={selectedDateRange}
+      setSelectedDateRange={setSelectedDateRange}
+      quickDateRanges={customQuickRanges}
+    />
+  );
+}`} />
+</div>
+
+<a id="Variants">
+  <h2>Variants</h2>
+</a>
+
+`UniversalFilter` forwards `variant` to each inner `Select` (`outlined` | `filled` | `standard`). Use `outlined` for tables, `filled` for compact tinted toolbars, and `standard` for dense inline filters.
+
+<div className="showcase">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px', margin: '0 auto' }}>
+    <ThemeWrapper>
+      <VariantUniversalFilterCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="universal-filter-variants" collapsible code={`import { useState } from "react";
+import { UniversalFilter, Box } from "@sistent/sistent";
+
+const filters = {
+  owner: {
+    name: "Owner",
+    options: [
+      { label: "Alice", value: "alice" },
+      { label: "Bob", value: "bob" },
+      { label: "Charlie", value: "charlie" },
+    ],
+  },
+};
+
+function VariantFilter({ variant }) {
+  const [selected, setSelected] = useState({ owner: "All" });
+  return (
+    <UniversalFilter
+      id={"filter-variant-" + variant}
+      filters={filters}
+      selectedFilters={selected}
+      setSelectedFilters={setSelected}
+      handleApplyFilter={(next) => console.log(variant, next)}
+      variant={variant}
+    />
+  );
+}
+
+export default function VariantsDemo() {
+  return (
+    <Box sx={{ display: "flex", gap: 2 }}>
+      <VariantFilter variant="outlined" />
+      <VariantFilter variant="filled" />
+      <VariantFilter variant="standard" />
+    </Box>
+  );
+}`} />
+</div>
+
+<a id="Active Filters Display">
+  <h2>Active Filters Display</h2>
+</a>
+
+The badge count reflects `Object.values(selectedFilters).filter(v => v && v !== "All").length`. Mirror active selections as removable `Chip`s so users can verify and clear filters without reopening the popover.
+
+<div className="showcase">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px', margin: '0 auto' }}>
+    <ThemeWrapper>
+      <ActiveFilterChipsDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="universal-filter-active-chips" collapsible code={`import { useState } from "react";
+import { UniversalFilter, Box, Chip } from "@sistent/sistent";
+
+const filters = {
+  status: {
+    name: "Status",
+    options: [
+      { label: "Published", value: "published" },
+      { label: "Unpublished", value: "unpublished" },
+    ],
+  },
+  kind: {
+    name: "Kind",
+    options: [
+      { label: "Deployment", value: "deployment" },
+      { label: "Service", value: "service" },
+    ],
+  },
+};
+
+export default function ActiveFilterChips() {
+  const [selectedFilters, setSelectedFilters] = useState({
+    status: "published",
+    kind: "deployment",
+  });
+  const active = Object.entries(selectedFilters).filter(([, v]) => v && v !== "All");
+
+  return (
+    <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
+      <UniversalFilter
+        id="filter-active-chips"
+        filters={filters}
+        selectedFilters={selectedFilters}
+        setSelectedFilters={setSelectedFilters}
+        handleApplyFilter={(next) => console.log("Applied active", next)}
+        variant="outlined"
+      />
+      <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
+        {active.map(([k, v]) => (
+          <Chip
+            key={k}
+            label={k + ": " + v}
+            size="small"
+            onDelete={() =>
+              setSelectedFilters((prev) => {
+                const next = { ...prev, [k]: "All" };
+                console.log("Applied active", next);
+                return next;
+              })
+            }
+          />
+        ))}
+      </Box>
+    </Box>
+  );
+}`} />
+</div>
