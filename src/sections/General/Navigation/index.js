@@ -397,39 +397,41 @@ const Navigation = () => {
                         {menu.actionItems !== undefined &&
                           menu.actionItems.map((actionItem, index) =>
                             actionItem.actionName === "Join the discussion" ? (
-                              <a
-                                key={index}
-                                href={actionItem.actionLink}
-                                target="_blank"
-                                className="mobile-sub-action-item"
-                                rel="noreferrer"
-                                onClick={() => {
-                                  changeDropdownState();
-                                  closeDropDown();
-                                }}
-                              >
-                                <span className="readmore-btn">
-                                  {actionItem.actionName}{" "}
-                                  <IoIosArrowRoundForward />
-                                </span>
-                              </a>
+                              <li key={index}>
+                                <a
+                                  href={actionItem.actionLink}
+                                  target="_blank"
+                                  className="mobile-sub-action-item"
+                                  rel="noreferrer"
+                                  onClick={() => {
+                                    changeDropdownState();
+                                    closeDropDown();
+                                  }}
+                                >
+                                  <span className="readmore-btn">
+                                    {actionItem.actionName}{" "}
+                                    <IoIosArrowRoundForward />
+                                  </span>
+                                </a>
+                              </li>
                             ) : (
-                              <Link
-                                key={index}
-                                to={actionItem.actionLink}
-                                partiallyActive={true}
-                                className="mobile-sub-action-item"
-                                onClick={() => {
-                                  changeDropdownState();
-                                  closeDropDown();
-                                }}
-                              >
-                                <span className="readmore-btn">
-                                  {actionItem.actionName}{" "}
-                                  <IoIosArrowRoundForward />
-                                </span>
-                              </Link>
-                            ),
+                              <li key={index}>
+                                <Link
+                                  to={actionItem.actionLink}
+                                  partiallyActive={true}
+                                  className="mobile-sub-action-item"
+                                  onClick={() => {
+                                    changeDropdownState();
+                                    closeDropDown();
+                                  }}
+                                >
+                                  <span className="readmore-btn">
+                                    {actionItem.actionName}{" "}
+                                    <IoIosArrowRoundForward />
+                                  </span>
+                                </Link>
+                              </li>
+                            )
                           )}
                       </ul>
                     </li>
