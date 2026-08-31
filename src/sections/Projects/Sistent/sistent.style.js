@@ -928,7 +928,6 @@ const SistentWrapper = styled.div`
     border-radius: 4px;
     border: 1px solid #ccc;
     font-size: 16px;
-    outline: none;
     transition: border-color 0.3s ease;
   }
 
