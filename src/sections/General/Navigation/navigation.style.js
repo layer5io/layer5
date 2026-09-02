@@ -467,7 +467,10 @@ const NavigationWrap = styled.header`
 
     svg {
       width: 155px;
-      .layer5-colorMode_svg__colorMode1 {
+      height: auto;
+      overflow: visible;
+      display: block;
+      & .layer5-colorMode_svg__colorMode1 {
         transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         fill: ${(props) => props.theme.whiteToGreen3C494F};
       }
@@ -527,6 +530,9 @@ const NavigationWrap = styled.header`
       margin-top: 7px;
       svg {
         width: 130px;
+        height: auto;
+        overflow: visible;
+        display: block;
       }
 
       img {
@@ -656,8 +662,8 @@ const NavigationWrap = styled.header`
       padding-top: 0.4rem;
     }
     .mobile-nested-menu {
-       font-size: 1.1rem;
-       margin-left: 1rem;
+      font-size: 1.1rem;
+      margin-left: 1rem;
     }
   }
 
@@ -772,7 +778,7 @@ const NavigationWrap = styled.header`
   .dark-theme-toggle {
     /* margin-left: 2rem; */
     visibility: ${(props) =>
-  typeof props.theme.DarkTheme === "boolean" ? "visible" : "hidden"};
+      typeof props.theme.DarkTheme === "boolean" ? "visible" : "hidden"};
   }
 
   .toggle {
@@ -794,7 +800,8 @@ const NavigationWrap = styled.header`
     --offset-diagonal: calc(var(--size) * 0.45);
     transform: scale(0.75);
     color: #3c494f;
-    box-shadow: inset 0 0 0 var(--size),
+    box-shadow:
+      inset 0 0 0 var(--size),
       calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
       var(--offset-orthogonal) 0 0 var(--ray-size),
       0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
