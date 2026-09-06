@@ -16,7 +16,8 @@ const Banner1 = (props) => {
     <Banner1SectionWrapper {...props}>
       <Container>
         <img
-          loading="lazy"
+          loading="eager"
+          fetchPriority="high"
           alt="hero-image"
           src={Backgroundsvg}
           className="background-svg"

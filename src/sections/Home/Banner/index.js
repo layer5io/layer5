@@ -25,7 +25,7 @@ const bannerMap = {
 };
 
 const RotationalBanner = () => {
-  const [activeBanner, setActiveBanner] = useState(1);
+  const [activeBanner, setActiveBanner] = useState(null);
 
   useEffect(() => {
     let initialValue = 1;
@@ -55,6 +55,8 @@ const RotationalBanner = () => {
       console.error("Error in sessionStorage.setItem('banner'):", error);
     }
   }, []);
+
+  if (!activeBanner) return null;
 
   const ActiveComponent = bannerMap[activeBanner]?.Component || Banner4;
   const activeClass = bannerMap[activeBanner]?.className || "banner1";
