@@ -21,6 +21,14 @@ const useDataList = (
 
   useEffect(() => {
     searchIndexRef.current = null;
+    // An active query's results were built from the old dataList - recompute
+    // them against the new one immediately instead of waiting for the next
+    // keystroke, otherwise queryResults keeps showing stale matches.
+    if (searchQuery) {
+      setSearchResults(getSearchIndex().search(searchQuery));
+    } else {
+      setSearchResults([]);
+    }
   }, [dataList]);
 
   const getSearchIndex = () => {
