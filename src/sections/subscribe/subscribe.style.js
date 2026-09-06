@@ -11,10 +11,11 @@ const SubscribeWrapper = styled.div`
 
     h2{
         font-weight: 600;
-        font-size:1.875rem;
+        font-size: clamp(1.25rem, 1.9vw, 1.875rem);
         margin:1.25rem 0;
         color:${props => props.theme.text};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        white-space: nowrap;
     }
     h2 span{
         color:${props => props.theme.primaryColor};
@@ -56,8 +57,8 @@ const SubscribeWrapper = styled.div`
         form{
             padding:0 1.875rem;
             h2{
-                font-size:1.75rem;
                 margin: 1.5625rem 0;
+                white-space: normal;
             }
             input{
                 width:90%;
