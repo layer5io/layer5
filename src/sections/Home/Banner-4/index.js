@@ -30,29 +30,42 @@ const HERO_VIDEO_POSTER_FALLBACK =
 
 const Banner1 = (props) => {
   const [videoReady, setVideoReady] = useState(false);
+  const [isDesktopViewport, setIsDesktopViewport] = useState(false);
   const thumbnailRef = useRef(null);
 
   const hasMounted = useHasMounted();
 
   // Set video as ready immediately after mount to avoid loading message
   useEffect(() => {
-    if (hasMounted) {
-      // Force the video to be marked as ready after a short delay
-      // This ensures that even if events don't fire, the loading message will disappear
-      const timer = setTimeout(() => {
-        setVideoReady(true);
-      }, 1000);
-
-      // Preload the thumbnail
-      const img = new Image();
-      img.src = videoThumbnail;
-      img.onload = () => {
-        // Mark video as ready when thumbnail loads
-        setVideoReady(true);
-      };
-
-      return () => clearTimeout(timer);
+    if (!hasMounted) {
+      return;
     }
+
+    // .video-col is CSS-hidden below 768px, so ReactPlayer (and the real
+    // thumbnail it preloads) should never be created on mobile - otherwise
+    // hydration would still fetch both, defeating the payload-avoidance the
+    // SSR poster fallback exists for.
+    const isDesktop = window.innerWidth >= 768;
+    setIsDesktopViewport(isDesktop);
+    if (!isDesktop) {
+      return;
+    }
+
+    // Force the video to be marked as ready after a short delay
+    // This ensures that even if events don't fire, the loading message will disappear
+    const timer = setTimeout(() => {
+      setVideoReady(true);
+    }, 1000);
+
+    // Preload the thumbnail
+    const img = new Image();
+    img.src = videoThumbnail;
+    img.onload = () => {
+      // Mark video as ready when thumbnail loads
+      setVideoReady(true);
+    };
+
+    return () => clearTimeout(timer);
   }, [hasMounted]);
 
   // Multiple handlers to ensure the video gets marked as ready
@@ -108,7 +121,7 @@ const Banner1 = (props) => {
               ref={thumbnailRef}
               onClick={handleThumbnailClick}
             >
-              {hasMounted ? (
+              {hasMounted && isDesktopViewport ? (
                 <ReactPlayer
                   url="https://youtu.be/034nVaQUyME?si=Yya8m6i7JUoSdZm4"
                   playing
@@ -163,15 +176,20 @@ const Banner1 = (props) => {
                       fetchPriority="high"
                     />
                   </picture>
-                  <img
-                    src={playIcon}
+                  <button
+                    type="button"
                     className="playBtn"
-                    loading="eager"
-                    alt="Play"
-                    role="button"
                     aria-label="Play"
-                    style={{ fontSize: "24px" }}
-                  />
+                    onClick={handleThumbnailClick}
+                    style={{ background: "none", border: "none", padding: 0 }}
+                  >
+                    <img
+                      src={playIcon}
+                      loading="eager"
+                      alt=""
+                      style={{ width: "100%", height: "100%" }}
+                    />
+                  </button>
                 </div>
               )}
             </div>
