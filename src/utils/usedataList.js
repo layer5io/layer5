@@ -46,9 +46,15 @@ const useDataList = (
   };
 
   const searchData = (e) => {
-    const queryResult = getSearchIndex().search(e.target.value);
-    setSearchQuery(e.target.value.trim());
-    setSearchResults(queryResult);
+    const trimmedQuery = e.target.value.trim();
+    setSearchQuery(trimmedQuery);
+    // A blank query has nothing to search - skip it so an empty keystroke
+    // (or clearing the field) never forces the lazy index to build.
+    if (!trimmedQuery) {
+      setSearchResults([]);
+      return;
+    }
+    setSearchResults(getSearchIndex().search(trimmedQuery));
   };
 
   return { queryResults, searchData, setDataList, dataList };
