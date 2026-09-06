@@ -20,7 +20,7 @@ export const AnimatedStepsListWrapper = styled.div`
         padding-bottom: 395px;
       }
 
-      margin-right: 4rem;
+      margin-right: 2rem;
       @media (max-width: 1119px) {
         display: none;
       }
@@ -32,7 +32,7 @@ export const AnimatedStepsListWrapper = styled.div`
     }
 
     & .terminal-wrapper {
-      margin-left: 5rem;
+      margin-left: 4rem;
       position: sticky;
       top: 148px;
       align-self: flex-start;
@@ -41,7 +41,7 @@ export const AnimatedStepsListWrapper = styled.div`
       min-width: 0;
 
       @media (max-width: 1119px) {
-        margin-left: 3rem;
+        margin-left: 2.5rem;
       }
 
       @media (max-width: 850px) {
