@@ -30,30 +30,57 @@ const HERO_VIDEO_POSTER_FALLBACK =
 
 const Banner1 = (props) => {
   const [videoReady, setVideoReady] = useState(false);
+  const [isDesktopViewport, setIsDesktopViewport] = useState(false);
   const thumbnailRef = useRef(null);
 
   const hasMounted = useHasMounted();
 
+  // .video-col is CSS-hidden below 768px, so ReactPlayer (and the real
+  // thumbnail it preloads) should never be created on mobile - otherwise
+  // hydration would still fetch both, defeating the payload-avoidance the
+  // SSR poster fallback exists for. Tracked with matchMedia (not a
+  // one-time window.innerWidth check) so resizing across the breakpoint
+  // - e.g. rotating a tablet, or a desktop window dragged narrower -
+  // switches the rendered mode instead of getting stuck at whatever it
+  // was on mount.
+  useEffect(() => {
+    if (!hasMounted) {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+    setIsDesktopViewport(mediaQuery.matches);
+
+    const handleChange = (event) => {
+      setIsDesktopViewport(event.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, [hasMounted]);
+
   // Set video as ready immediately after mount to avoid loading message
   useEffect(() => {
-    if (hasMounted) {
-      // Force the video to be marked as ready after a short delay
-      // This ensures that even if events don't fire, the loading message will disappear
-      const timer = setTimeout(() => {
-        setVideoReady(true);
-      }, 1000);
-
-      // Preload the thumbnail
-      const img = new Image();
-      img.src = videoThumbnail;
-      img.onload = () => {
-        // Mark video as ready when thumbnail loads
-        setVideoReady(true);
-      };
-
-      return () => clearTimeout(timer);
+    if (!hasMounted || !isDesktopViewport) {
+      return;
     }
-  }, [hasMounted]);
+
+    // Force the video to be marked as ready after a short delay
+    // This ensures that even if events don't fire, the loading message will disappear
+    const timer = setTimeout(() => {
+      setVideoReady(true);
+    }, 1000);
+
+    // Preload the thumbnail
+    const img = new Image();
+    img.src = videoThumbnail;
+    img.onload = () => {
+      // Mark video as ready when thumbnail loads
+      setVideoReady(true);
+    };
+
+    return () => clearTimeout(timer);
+  }, [hasMounted, isDesktopViewport]);
 
   // Multiple handlers to ensure the video gets marked as ready
   const handleVideoReady = () => {
@@ -108,7 +135,7 @@ const Banner1 = (props) => {
               ref={thumbnailRef}
               onClick={handleThumbnailClick}
             >
-              {hasMounted ? (
+              {hasMounted && isDesktopViewport ? (
                 <ReactPlayer
                   url="https://youtu.be/034nVaQUyME?si=Yya8m6i7JUoSdZm4"
                   playing
@@ -163,15 +190,20 @@ const Banner1 = (props) => {
                       fetchPriority="high"
                     />
                   </picture>
-                  <img
-                    src={playIcon}
+                  <button
+                    type="button"
                     className="playBtn"
-                    loading="eager"
-                    alt="Play"
-                    role="button"
                     aria-label="Play"
-                    style={{ fontSize: "24px" }}
-                  />
+                    onClick={handleThumbnailClick}
+                    style={{ background: "none", border: "none", padding: 0 }}
+                  >
+                    <img
+                      src={playIcon}
+                      loading="eager"
+                      alt=""
+                      style={{ width: "100%", height: "100%" }}
+                    />
+                  </button>
                 </div>
               )}
             </div>

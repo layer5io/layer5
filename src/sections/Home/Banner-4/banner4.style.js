@@ -168,6 +168,15 @@ const Banner1SectionWrapper = styled.section`
     }
   }
 
+  /* ReactPlayer positions its own light-mode preview icon internally, so
+     the shared rule above is left untouched for that case - this fallback
+     button isn't inside ReactPlayer's wrapper and needs its own centering. */
+  .hero-video-poster .playBtn {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   .playBtn {
     position: absolute;
     border-radius: 50%;
