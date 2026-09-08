@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 import Button from "../../../reusecore/Button";
@@ -31,19 +32,17 @@ import tuf from "../../../collections/integrations/tuf/icons/color/tuf-color.svg
 import tikvoperator from "../../../collections/integrations/tikv-operator/icons/color/tikv-operator-color.svg";
 import vitess from "../../../collections/integrations/vitess/icons/color/vitess-color.svg";
 
-
 const ViewsSectionWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  .small-card-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 1rem;
+  }
 
-    .small-card-container {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .views-section {
+  .views-section {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -67,250 +66,376 @@ const ViewsSectionWrapper = styled.div`
       height: 600px;
       padding: 0 2%;
     }
-      
-}
-    .hero-text {
-        display: flex;
-        flex-direction: column;
-        flex: 0 0 50%;
-        max-width: 50%;
-        padding-bottom: 3rem;
-        @media only screen and (max-width: 767px) {
-          max-width: 100%;
-          justify-content: center;
-          text-align: center;
-          margin-top: 4rem;
-        }
-        @media only screen and (min-width: 768px) and (max-width: 1100px) {
-          padding-left: 1rem;
-        }
-
-          
+  }
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-bottom: 3rem;
+    @media only screen and (max-width: 767px) {
+      max-width: 100%;
+      justify-content: center;
+      text-align: center;
+      margin-top: 4rem;
     }
-
-    .hero-image {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        flex: 0 0 50%;
-        max-width: 50%;
-        overflow: hidden;
-        height: 100%;
-
-        @media only screen and (max-width: 767px) {
-          max-width: 100%;
-        }
+    @media only screen and (min-width: 768px) and (max-width: 1100px) {
+      padding-left: 1rem;
     }
-
-    h2 {
-      /* max-width: 90%; */
-      padding-bottom: 2%;
-    }
-  
-
-  h4 {
-      max-width: 90%;
-      @media only screen and (max-width: 767px) {
-        max-width: 100%;
-        }
   }
 
-   .hero-image {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        flex: 0 0 50%;
-        max-width: 50%;
+  .hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex: 0 0 50%;
+    max-width: 50%;
+    overflow: hidden;
+    height: 100%;
 
-        
-
-        svg {
-          align-items: center;
-          justify-content: center;
-          width: 70%;
-          .visualizer-views-colorMode_svg__colorMode1 {
-            fill: ${(props) => props.theme.whiteToGrey737373};
-            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-          }
-        }
-
-      
-        .visible {
-                opacity: 1;
-                transition: all 0.2s ease-in;
-        }
-
-        .not-visible {
-                opacity: 0;
-                transition: all 0.5s ease;
-        }
-
-        @media only screen and (max-width: 767px) {
-          max-width: 100%;
-        }
-
-    }
-
-    .overlay {
-        width: 483px;
-        height: 680px;
-    }
-
-
-    .container {
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem; 
-        height: 100%; 
-      }
-
-    .line {
-        position: relative;
-        height: 100%;
-        overflow: hidden;
-        width: 200px;
-    }
-
-    .scroll-track {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .scroll-down .scroll-track {
-        animation: scrollDown 35s linear infinite;
-    }
-
-    .scroll-up .scroll-track {
-        animation: scrollUp 35s linear infinite;
-    }
-
-    @keyframes scrollDown {
-        0% {
-            transform: translateY(-50%);
-        }
-        100% {
-            transform: translateY(0%);
-        }
-    }
-
-    @keyframes scrollUp {
-        0% {
-            transform: translateY(0%);
-        }
-        100% {
-            transform: translateY(-50%);
-        }
-    }
-
-    .box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height:150px;
-      padding: 2rem;
-      box-sizing: border-box;
-      background-color: ${(props) => props.theme.backgroundColor};
-      color: ${(props) => props.theme.whiteEightToBlack}; 
-      margin-bottom: 1rem; 
-      border-radius: 1rem;
-      //box-shadow: ${(props) => props.theme.boxShadowGreen00D3A9ToBlackTwoFive};
-    }
-    // .box:hover {
-    //   box-shadow: ${(props) => props.theme.boxShadowBlue477E96};
-    // }
-
-    .box .boxImg {
-      width: auto;
-      height: 60px;
+    @media only screen and (max-width: 767px) {
       max-width: 100%;
     }
-    
-    .box .boxText {
-      margin-top: 1rem;
-      text-align: center;
-      color: ${(props) => props.theme.whiteEightToBlack};
+  }
+
+  h2 {
+    /* max-width: 90%; */
+    padding-bottom: 2%;
+  }
+
+  h4 {
+    max-width: 90%;
+    @media only screen and (max-width: 767px) {
+      max-width: 100%;
+    }
+  }
+
+  .hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex: 0 0 50%;
+    max-width: 50%;
+
+    svg {
+      align-items: center;
+      justify-content: center;
+      width: 70%;
+      .visualizer-views-colorMode_svg__colorMode1 {
+        fill: ${(props) => props.theme.whiteToGrey737373};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
     }
 
-    @media only screen and (max-width: 700px) {
-      .hero-image {
-        display: none; 
-      }
-      .views-section {
-        padding: 2rem 2rem 0 2rem;
-        height: auto;
-      }
-      .small-card-container {
-        display: flex;
-        justify-content: center;
-      }
+    .visible {
+      opacity: 1;
+      transition: all 0.2s ease-in;
     }
 
+    .not-visible {
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+
+    @media only screen and (max-width: 767px) {
+      max-width: 100%;
+    }
+  }
+
+  .overlay {
+    width: 483px;
+    height: 680px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    height: 100%;
+  }
+
+  .line {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    width: 200px;
+  }
+
+  .scroll-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .scroll-down .scroll-track {
+    animation: scrollDown 35s linear infinite;
+  }
+
+  .scroll-up .scroll-track {
+    animation: scrollUp 35s linear infinite;
+  }
+
+  @keyframes scrollDown {
+    0% {
+      transform: translateY(-50%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
+  @keyframes scrollUp {
+    0% {
+      transform: translateY(0%);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+    padding: 2rem;
+    box-sizing: border-box;
+    background-color: ${(props) => props.theme.backgroundColor};
+    color: ${(props) => props.theme.whiteEightToBlack};
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    //box-shadow: ${(props) => props.theme.boxShadowGreen00D3A9ToBlackTwoFive};
+  }
+  .box:hover {
+    box-shadow: ${(props) => props.theme.boxShadowBlue477E96};
+    transform: translateY(-5px);
+  }
+
+  .box .boxImg {
+    width: auto;
+    height: 60px;
+    max-width: 100%;
+  }
+
+  .box .boxText {
+    margin-top: 1rem;
+    text-align: center;
+    color: ${(props) => props.theme.whiteEightToBlack};
+  }
+
+  @media only screen and (max-width: 700px) {
+    .hero-image {
+      display: none;
+    }
+    .views-section {
+      padding: 2rem 2rem 0 2rem;
+      height: auto;
+    }
+    .small-card-container {
+      display: flex;
+      justify-content: center;
+    }
+  }
 `;
 
 const KanvasVisualizerViews = () => {
   const [imageRef] = useInView({ threshold: 0.3 });
 
   const leftColumnItems = [
-    { img: argocd, name: "Argo" },
-    { img: certmanager, name: "Cert Manager" },
-    { img: cilium, name: "Cilium" },
-    { img: cloudevents, name: "CloudEvents" },
-    { img: containerd, name: "containerd" },
-    { img: coredns, name: "CoreDNS" },
-    { img: crio, name: "cri-o" },
-    { img: envoy, name: "Envoy" },
-    { img: etcd, name: "etcd" },
-    { img: falco, name: "Falco" },
-    { img: fluentd, name: "Fluentd" },
-    { img: flux, name: "Flux" },
-    { img: harbor, name: "Harbor" },
-    { img: helm, name: "Helm" }
+    {
+      img: argocd,
+      name: "Argo",
+      link: "/cloud-native-management/meshery/integrations/argo-cd",
+    },
+    {
+      img: certmanager,
+      name: "Cert Manager",
+      link: "/cloud-native-management/meshery/integrations/cert-manager",
+    },
+    {
+      img: cilium,
+      name: "Cilium",
+      link: "/cloud-native-management/meshery/integrations/cilium",
+    },
+    {
+      img: cloudevents,
+      name: "CloudEvents",
+      link: "/cloud-native-management/meshery/integrations/cloudevents",
+    },
+    {
+      img: containerd,
+      name: "containerd",
+      link: "/cloud-native-management/meshery/integrations/containerd",
+    },
+    {
+      img: coredns,
+      name: "CoreDNS",
+      link: "/cloud-native-management/meshery/integrations/coredns",
+    },
+    {
+      img: crio,
+      name: "cri-o",
+      link: "/cloud-native-management/meshery/integrations/cri-o",
+    },
+    {
+      img: envoy,
+      name: "Envoy",
+      link: "/cloud-native-management/meshery/integrations/envoy",
+    },
+    {
+      img: etcd,
+      name: "etcd",
+      link: "/cloud-native-management/meshery/integrations/etcd-cluster-operator",
+    },
+    {
+      img: falco,
+      name: "Falco",
+      link: "/cloud-native-management/meshery/integrations/falco",
+    },
+    {
+      img: fluentd,
+      name: "Fluentd",
+      link: "/cloud-native-management/meshery/integrations/fluentd",
+    },
+    {
+      img: flux,
+      name: "Flux",
+      link: "/cloud-native-management/meshery/integrations/flux",
+    },
+    {
+      img: harbor,
+      name: "Harbor",
+      link: "/cloud-native-management/meshery/integrations/harbor-operator",
+    },
+    {
+      img: helm,
+      name: "Helm",
+      link: "/cloud-native-management/meshery/integrations/helm-controller",
+    },
   ];
 
   const rightColumnItems = [
-    { img: istio, name: "Istio" },
-    { img: jaeger, name: "Jaeger" },
-    { img: keda, name: "KEDA" },
-    { img: kubeedge, name: "KubeEdge" },
-    { img: kubernetes, name: "Kubernetes" },
-    { img: linkerd, name: "Linkerd" },
-    { img: opa, name: "Open Policy Agent" },
-    { img: prometheus, name: "Prometheus" },
-    { img: rook, name: "Rook" },
-    { img: spiffe, name: "SPIFFE" },
-    { img: spire, name: "SPIRE" },
-    { img: tuf, name: "TUF" },
-    { img: tikvoperator, name: "TiKV" },
-    { img: vitess, name: "Vitess" }
+    {
+      img: istio,
+      name: "Istio",
+      link: "/cloud-native-management/meshery/integrations/istio-base",
+    },
+    {
+      img: jaeger,
+      name: "Jaeger",
+      link: "/cloud-native-management/meshery/integrations/jaeger",
+    },
+    {
+      img: keda,
+      name: "KEDA",
+      link: "/cloud-native-management/meshery/integrations/keda",
+    },
+    {
+      img: kubeedge,
+      name: "KubeEdge",
+      link: "/cloud-native-management/meshery/integrations/kubegems-edge",
+    },
+    {
+      img: kubernetes,
+      name: "Kubernetes",
+      link: "/cloud-native-management/meshery/integrations/kubernetes-ingress",
+    },
+    {
+      img: linkerd,
+      name: "Linkerd",
+      link: "/cloud-native-management/meshery/integrations/linkerd",
+    },
+    {
+      img: opa,
+      name: "Open Policy Agent",
+      link: "https://www.openpolicyagent.org/",
+    },
+    {
+      img: prometheus,
+      name: "Prometheus",
+      link: "/cloud-native-management/meshery/integrations/prometheus",
+    },
+    {
+      img: rook,
+      name: "Rook",
+      link: "/cloud-native-management/meshery/integrations/rook",
+    },
+    {
+      img: spiffe,
+      name: "SPIFFE",
+      link: "/cloud-native-management/meshery/integrations/spiffe",
+    },
+    {
+      img: spire,
+      name: "SPIRE",
+      link: "/cloud-native-management/meshery/integrations/spire",
+    },
+    {
+      img: tuf,
+      name: "TUF",
+      link: "/cloud-native-management/meshery/integrations/tuf",
+    },
+    {
+      img: tikvoperator,
+      name: "TiKV",
+      link: "/cloud-native-management/meshery/integrations/tikv-operator",
+    },
+    {
+      img: vitess,
+      name: "Vitess",
+      link: "/cloud-native-management/meshery/integrations/vitess",
+    },
   ];
 
   const renderColumn = (items, direction) => (
     <div className={`line scroll-${direction}`}>
       <div className="scroll-track">
-        {items.map((item, index) => (
-          <div className="box" key={`set1-${index}`}>
-            <img className="boxImg" src={item.img} alt={item.name} />
-            <div className="boxText">{item.name}</div>
-          </div>
-        ))}
-        {items.map((item, index) => (
-          <div className="box" key={`set2-${index}`}>
-            <img className="boxImg" src={item.img} alt={item.name} />
-            <div className="boxText">{item.name}</div>
-          </div>
-        ))}
-        {items.map((item, index) => (
-          <div className="box" key={`set3-${index}`}>
-            <img className="boxImg" src={item.img} alt={item.name} />
-            <div className="boxText">{item.name}</div>
-          </div>
-        ))}
+        {items.map((item, index) => {
+          const isExternal = item.link && item.link.startsWith("http");
+          const Wrapper = isExternal ? "a" : Link;
+          const props = isExternal
+            ? { href: item.link, target: "_blank", rel: "noreferrer" }
+            : { to: item.link || "#" };
+          return (
+            <Wrapper {...props} className="box" key={`set1-${index}`}>
+              <img className="boxImg" src={item.img} alt={item.name} />
+              <div className="boxText">{item.name}</div>
+            </Wrapper>
+          );
+        })}
+        {items.map((item, index) => {
+          const isExternal = item.link && item.link.startsWith("http");
+          const Wrapper = isExternal ? "a" : Link;
+          const props = isExternal
+            ? { href: item.link, target: "_blank", rel: "noreferrer" }
+            : { to: item.link || "#" };
+          return (
+            <Wrapper {...props} className="box" key={`set2-${index}`}>
+              <img className="boxImg" src={item.img} alt={item.name} />
+              <div className="boxText">{item.name}</div>
+            </Wrapper>
+          );
+        })}
+        {items.map((item, index) => {
+          const isExternal = item.link && item.link.startsWith("http");
+          const Wrapper = isExternal ? "a" : Link;
+          const props = isExternal
+            ? { href: item.link, target: "_blank", rel: "noreferrer" }
+            : { to: item.link || "#" };
+          return (
+            <Wrapper {...props} className="box" key={`set3-${index}`}>
+              <img className="boxImg" src={item.img} alt={item.name} />
+              <div className="boxText">{item.name}</div>
+            </Wrapper>
+          );
+        })}
       </div>
     </div>
   );
@@ -325,7 +450,6 @@ const KanvasVisualizerViews = () => {
           </div>
         </div>
         <div className="hero-text">
-
           <h2>
             <span>Manage your Cloud Native mess</span>
           </h2>
