@@ -12,6 +12,10 @@ export const StepWrapper = styled.li`
   & h3 {
     margin-bottom: 12px;
     margin-top: 0;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   & .description {

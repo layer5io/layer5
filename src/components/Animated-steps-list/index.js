@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useScrollPosition from "./scroll-position";
 import StepsList from "./Steps-list";
 import StepsIndicator from "./Steps-indicator";
@@ -70,11 +70,60 @@ const AnimatedStepsList = ({ terminalHeroState, steps }) => {
         ) {
           window.history.pushState(null, "", `#${stepId}`);
         }
+        const heading = element.querySelector("h3");
+        if (heading) {
+          heading.focus({ preventScroll: true });
+        }
         return true;
       }
     }
     return false;
   };
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const handleHashNavigation = () => {
+      const hash = window.location.hash.replace(/^#/, "");
+      if (!hash) return;
+
+      const targetIndex = steps.findIndex(
+        (step) =>
+          (step.id || step.name.toLowerCase().replace(/\s+/g, "-")) === hash,
+      );
+
+      if (targetIndex !== -1) {
+        const stepId =
+          steps[targetIndex].id ||
+          steps[targetIndex].name.toLowerCase().replace(/\s+/g, "-");
+        const element = document.getElementById(stepId);
+        if (element) {
+          const prefersReducedMotion =
+            typeof window !== "undefined" &&
+            window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          element.scrollIntoView({
+            behavior: prefersReducedMotion ? "auto" : "smooth",
+            block: "start",
+          });
+          setIndicatorIndex(targetIndex);
+          const heading = element.querySelector("h3");
+          if (heading) {
+            heading.focus({ preventScroll: true });
+          }
+        }
+      }
+    };
+
+    const timer = setTimeout(handleHashNavigation, 100);
+    window.addEventListener("popstate", handleHashNavigation);
+    window.addEventListener("hashchange", handleHashNavigation);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("popstate", handleHashNavigation);
+      window.removeEventListener("hashchange", handleHashNavigation);
+    };
+  }, [steps]);
 
   return (
     <AnimatedStepsListWrapper>

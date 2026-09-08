@@ -16,7 +16,7 @@ const Step = ({ id, name, description, logos, onInViewStatusChanged }) => {
 
   return (
     <StepWrapper ref={ref} id={id}>
-      <h3>{name}</h3>
+      <h3 tabIndex="-1">{name}</h3>
       <div className="description">{description}</div>
       <LogoList className="logo-list" logos={logos} />
     </StepWrapper>
