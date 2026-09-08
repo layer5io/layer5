@@ -12,9 +12,17 @@ export const StepWrapper = styled.li`
   & h3 {
     margin-bottom: 12px;
     margin-top: 0;
+    scroll-margin-top: 9.5rem;
 
-    &:focus {
-      outline: none;
+    @media (max-width: 850px) {
+      scroll-margin-top: 6rem;
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline: 2px solid ${(props) => props.theme.secondaryColor || "#00b39f"};
+      outline-offset: 4px;
+      border-radius: 2px;
     }
   }
 

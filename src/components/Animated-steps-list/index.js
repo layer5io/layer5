@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import useScrollPosition from "./scroll-position";
 import StepsList from "./Steps-list";
 import StepsIndicator from "./Steps-indicator";
@@ -47,6 +47,19 @@ const AnimatedStepsList = ({ terminalHeroState, steps }) => {
     scrollPosition,
   );
 
+  if (typeof window !== "undefined") {
+    const hash = window.location.hash.replace(/^#/, "");
+    if (
+      !hash ||
+      steps.some(
+        (step) =>
+          (step.id || step.name.toLowerCase().replace(/\s+/g, "-")) === hash,
+      )
+    ) {
+      window.gatsby_scroll_hash = "none";
+    }
+  }
+
   const handleStepClick = (index) => {
     const step = steps[index];
     if (!step) return false;
@@ -68,6 +81,7 @@ const AnimatedStepsList = ({ terminalHeroState, steps }) => {
           window.history &&
           window.history.pushState
         ) {
+          window.gatsby_scroll_hash = "none";
           window.history.pushState(null, "", `#${stepId}`);
         }
         const heading = element.querySelector("h3");
@@ -80,22 +94,46 @@ const AnimatedStepsList = ({ terminalHeroState, steps }) => {
     return false;
   };
 
+  const stepsRef = useRef(steps);
+  stepsRef.current = steps;
+
+  const disarmGatsbyAnchorScroll = () => {
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash.replace(/^#/, "");
+      if (
+        !hash ||
+        stepsRef.current.some(
+          (step) =>
+            (step.id || step.name.toLowerCase().replace(/\s+/g, "-")) === hash,
+        )
+      ) {
+        window.gatsby_scroll_hash = "none";
+      }
+    }
+  };
+
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const handleHashNavigation = () => {
-      const hash = window.location.hash.replace(/^#/, "");
-      if (!hash) return;
+    disarmGatsbyAnchorScroll();
 
-      const targetIndex = steps.findIndex(
+    const handleHashNavigation = () => {
+      disarmGatsbyAnchorScroll();
+      const hash = window.location.hash.replace(/^#/, "");
+      if (!hash) {
+        setIndicatorIndex(0);
+        return;
+      }
+
+      const targetIndex = stepsRef.current.findIndex(
         (step) =>
           (step.id || step.name.toLowerCase().replace(/\s+/g, "-")) === hash,
       );
 
       if (targetIndex !== -1) {
         const stepId =
-          steps[targetIndex].id ||
-          steps[targetIndex].name.toLowerCase().replace(/\s+/g, "-");
+          stepsRef.current[targetIndex].id ||
+          stepsRef.current[targetIndex].name.toLowerCase().replace(/\s+/g, "-");
         const element = document.getElementById(stepId);
         if (element) {
           const prefersReducedMotion =
@@ -115,15 +153,13 @@ const AnimatedStepsList = ({ terminalHeroState, steps }) => {
     };
 
     const timer = setTimeout(handleHashNavigation, 100);
-    window.addEventListener("popstate", handleHashNavigation);
-    window.addEventListener("hashchange", handleHashNavigation);
+    window.addEventListener("popstate", handleHashNavigation, true);
 
     return () => {
       clearTimeout(timer);
-      window.removeEventListener("popstate", handleHashNavigation);
-      window.removeEventListener("hashchange", handleHashNavigation);
+      window.removeEventListener("popstate", handleHashNavigation, true);
     };
-  }, [steps]);
+  }, []);
 
   return (
     <AnimatedStepsListWrapper>
