@@ -124,7 +124,8 @@ const supported_platforms = [
         <Code
           codeString={dedent`export KUBECONFIG=$HOME/.kube/config
         kubectl create namespace meshery
-        helm install meshery --namespace meshery install/kubernetes/helm/meshery`}
+        helm repo add meshery https://meshery.io/charts
+        helm install meshery --namespace meshery meshery/meshery`}
         />
       </>
     ),
@@ -317,7 +318,8 @@ const MesheryPlatforms = () => {
             height:
               currentPlatform.name === "Docker" ||
               currentPlatform.name === "Helm" ||
-              currentPlatform.name === "Linux"
+              currentPlatform.name === "Linux" ||
+              currentPlatform.name === "KinD"
                 ? "30rem"
                 : installationStepsHeight,
             overflow: "hidden",

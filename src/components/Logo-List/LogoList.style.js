@@ -30,7 +30,7 @@ export const LogoListWrapper = styled.div`
 
         &:hover {
           transform: scale(1.15);
-          filter: drop-shadow(0 2px 8px rgba(0, 179, 159, 0.5));
+          filter: drop-shadow(0 2px 8px ${(props) => props.theme.primaryColor});
           opacity: 0.95;
         }
 
