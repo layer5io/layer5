@@ -15,10 +15,10 @@ const animationBottomPadding = [0, 180, 180, 50];
 const calculateCurrentFrame = (terminalSteps, currentIndex, scrollPosition) => {
   const percentage = Math.min(
     (scrollPosition - breakpoints[currentIndex]) /
-        (breakpoints[currentIndex + 1] -
-            breakpoints[currentIndex] -
-            animationBottomPadding[currentIndex]),
-    1
+      (breakpoints[currentIndex + 1] -
+        breakpoints[currentIndex] -
+        animationBottomPadding[currentIndex]),
+    1,
   );
   const currentLines = terminalSteps[currentIndex].lines;
   let totalFrames = 0;
@@ -37,21 +37,54 @@ const AnimatedStepsList = ({ terminalHeroState, steps }) => {
   const scrollPosition = useScrollPosition();
   const [indicatorIndex, setIndicatorIndex] = useState(0);
   const activeTerminalStateIndex =
-        scrollPosition <= 300 ? 0 : indicatorIndex + 1;
+    scrollPosition <= 300 ? 0 : indicatorIndex + 1;
   const terminalSteps = [terminalHeroState].concat(
-    steps.map((step) => step.terminal)
+    steps.map((step) => step.terminal),
   );
   const currentFrame = calculateCurrentFrame(
     terminalSteps,
     activeTerminalStateIndex,
-    scrollPosition
+    scrollPosition,
   );
+
+  const handleStepClick = (index) => {
+    const step = steps[index];
+    if (!step) return false;
+
+    const stepId = step.id || step.name.toLowerCase().replace(/\s+/g, "-");
+    if (typeof document !== "undefined") {
+      const element = document.getElementById(stepId);
+      if (element) {
+        const prefersReducedMotion =
+          typeof window !== "undefined" &&
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        element.scrollIntoView({
+          behavior: prefersReducedMotion ? "auto" : "smooth",
+          block: "start",
+        });
+        setIndicatorIndex(index);
+        if (
+          typeof window !== "undefined" &&
+          window.history &&
+          window.history.pushState
+        ) {
+          window.history.pushState(null, "", `#${stepId}`);
+        }
+        return true;
+      }
+    }
+    return false;
+  };
 
   return (
     <AnimatedStepsListWrapper>
       <div className="animated-steps-list">
         <div className="indicator-wrapper">
-          <StepsIndicator steps={steps} activeIndex={indicatorIndex} />
+          <StepsIndicator
+            steps={steps}
+            activeIndex={indicatorIndex}
+            onItemClick={handleStepClick}
+          />
         </div>
 
         <StepsList

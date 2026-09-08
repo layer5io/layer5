@@ -3,7 +3,7 @@ import { useInView } from "react-intersection-observer";
 import LogoList from "../../../Logo-List";
 import { StepWrapper } from "./Step.style";
 
-const Step = ({ name, description, logos, onInViewStatusChanged }) => {
+const Step = ({ id, name, description, logos, onInViewStatusChanged }) => {
   const [ref, inView] = useInView({ threshold: 0.4 });
   const [inViewStatus, setInViewStatus] = useState(false);
 
@@ -15,7 +15,7 @@ const Step = ({ name, description, logos, onInViewStatusChanged }) => {
   }, [inView, inViewStatus]);
 
   return (
-    <StepWrapper ref={ref}>
+    <StepWrapper ref={ref} id={id}>
       <h3>{name}</h3>
       <div className="description">{description}</div>
       <LogoList className="logo-list" logos={logos} />
