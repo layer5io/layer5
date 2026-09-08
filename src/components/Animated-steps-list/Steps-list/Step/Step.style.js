@@ -18,11 +18,8 @@ export const StepWrapper = styled.li`
       scroll-margin-top: 6rem;
     }
 
-    &:focus,
-    &:focus-visible {
-      outline: 2px solid ${(props) => props.theme.secondaryColor || "#00b39f"};
-      outline-offset: 4px;
-      border-radius: 2px;
+    &:focus {
+      outline: none;
     }
   }
 
