@@ -18,15 +18,45 @@ const LearningPathsWrapper = styled.div`
     .learn-subtitle {
         text-align: center;
     }
-    .learning-path-cards{
-        margin: auto;
-        justify-content: center;
-        padding: 6rem 0;
+    .custom-container {
+        max-width: 1440px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
 
-        @media(max-width:500px){
-            padding: 6rem 2rem;
+    .learning-path-cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2rem;
+        margin: auto;
+        padding: 4rem 0;
+
+        @media (max-width: 992px) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
         }
     }
+
+    .card-item-wrapper {
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        > div {
+            max-width: none;
+            width: 100%;
+            margin: 0;
+            height: 100%;
+        }
+
+        .card-parent {
+            height: 100%;
+        }
+    }
+
     .see-more-button {
       text-align: center;
     }
@@ -82,22 +112,22 @@ const LearningPaths = () => {
 
   return (
     <LearningPathsWrapper>
-      <Container>
+      <div className="custom-container">
         <h1 className="learn-path-heading">Learning Paths</h1>
         <div className="learn-subtitle">
           <h3>Learn DevOps and platform engineering</h3>
         </div>
-        <Row className="learning-path-cards">
+        <div className="learning-path-cards">
           {data.learnPaths.nodes.map((tutorial) => (
-            <Col $sm={6} key={tutorial.id}>
+            <div key={tutorial.id} className="card-item-wrapper">
               <CardComponent tutorial={tutorial} path={`/learn/learning-paths/${tutorial.fields.learnpath}`} courseCount={getCoursesOfaLearningPath(tutorial.fields.learnpath).length} />
-            </Col>
+            </div>
           ))}
-        </Row>
+        </div>
         <div className="see-more-button">
           <Button $primary title="Checkout all learning paths" $url="/learn/learning-paths" />
         </div>
-      </Container>
+      </div>
     </LearningPathsWrapper>
   );
 };
