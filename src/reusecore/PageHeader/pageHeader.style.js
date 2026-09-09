@@ -31,17 +31,17 @@ const PageHeaderWrapper = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 700px; 
-    margin: 0 auto; 
-    padding: 0 1rem; 
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1rem;
 
     img {
-      margin-top: 0rem; 
-      width: 100%; 
-      max-width: auto; 
-      max-height: auto; 
-      height: 100%; 
-      object-fit: fill; 
+      margin-top: 0rem;
+      width: 100%;
+      max-width: auto;
+      max-height: auto;
+      height: 100%;
+      object-fit: fill;
       display: block;
     }
   }
@@ -64,14 +64,13 @@ const PageHeaderWrapper = styled.div`
     }
   }
 
-
   @media (max-width: 768px) {
     .feature-image {
-      max-width: 90vw; 
+      max-width: 90vw;
       padding: 0 0.5rem;
 
       img {
-        max-width: 100%; 
+        max-width: 100%;
         max-height: 350px;
       }
     }
@@ -80,8 +79,25 @@ const PageHeaderWrapper = styled.div`
   @media (max-width: 480px) {
     .feature-image {
       img {
-        max-height: 250px; 
+        max-height: 250px;
       }
+    }
+  }
+  .gitops-feature-image {
+    min-height: ${(props) => props.theme.gitopsFeatureImageHeight};
+    overflow: visible;
+
+    .old-gatsby-image-wrapper {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: ${(props) => props.theme.gitopsFeatureImageMaxHeight};
+      object-fit: contain;
     }
   }
 `;
