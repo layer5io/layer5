@@ -17,11 +17,17 @@ import Linux from "./supported-icons/linux.svg";
 import Minikube from "./supported-icons/minikube.svg";
 import AKS from "./supported-icons/aks_white.svg";
 import WSL2 from "./supported-icons/wsl2.svg";
+import {
+  PLATFORM_NAMES,
+  PLATFORM_SECTION_ID,
+  SELECT_PLATFORM_EVENT,
+  TALL_PLATFORMS,
+} from "./platform-data";
 
 const supported_platforms = [
   {
     icon: Apple,
-    name: "Apple",
+    name: PLATFORM_NAMES.APPLE,
     steps: (
       <>
         <h2>MacOS User</h2>
@@ -35,7 +41,7 @@ const supported_platforms = [
   },
   {
     icon: Docker,
-    name: "Docker",
+    name: PLATFORM_NAMES.DOCKER,
     steps: (
       <>
         <h2>Docker User</h2>
@@ -56,7 +62,7 @@ const supported_platforms = [
   },
   {
     icon: EKS,
-    name: "EKS",
+    name: PLATFORM_NAMES.EKS,
     steps: (
       <>
         <h2>AWS Elastic Kubernetes Service User</h2>
@@ -69,7 +75,7 @@ const supported_platforms = [
   },
   {
     icon: GKE,
-    name: "GKE",
+    name: PLATFORM_NAMES.GKE,
     steps: (
       <>
         <h2>Google Kubernetes Engine User</h2>
@@ -83,7 +89,7 @@ const supported_platforms = [
   },
   {
     icon: Helm,
-    name: "Helm",
+    name: PLATFORM_NAMES.HELM,
     steps: (
       <>
         <h2>Helm Chart</h2>
@@ -103,7 +109,7 @@ const supported_platforms = [
   },
   {
     icon: HomeBrew,
-    name: "HomeBrew",
+    name: PLATFORM_NAMES.HOMEBREW,
     steps: (
       <>
         <h2>Brew User</h2>
@@ -117,7 +123,7 @@ const supported_platforms = [
   },
   {
     icon: Kind,
-    name: "KinD",
+    name: PLATFORM_NAMES.KIND,
     steps: (
       <>
         <h2>KinD User</h2>
@@ -132,7 +138,7 @@ const supported_platforms = [
   },
   {
     icon: Kubernetes,
-    name: "Kubernetes",
+    name: PLATFORM_NAMES.KUBERNETES,
     steps: (
       <>
         <h2>Kubernetes User</h2>
@@ -145,7 +151,7 @@ const supported_platforms = [
   },
   {
     icon: Linux,
-    name: "Linux",
+    name: PLATFORM_NAMES.LINUX,
     steps: (
       <>
         <h3>Install Using Kubernetes</h3>
@@ -161,7 +167,7 @@ const supported_platforms = [
   },
   {
     icon: Minikube,
-    name: "Minikube",
+    name: PLATFORM_NAMES.MINIKUBE,
     steps: (
       <>
         <h2>Minikube User</h2>
@@ -173,7 +179,7 @@ const supported_platforms = [
   },
   {
     icon: AKS,
-    name: "AKS",
+    name: PLATFORM_NAMES.AKS,
     steps: (
       <>
         <h2>Azure Kubernetes Service User</h2>
@@ -187,7 +193,7 @@ const supported_platforms = [
   },
   {
     icon: WSL2,
-    name: "WSL2",
+    name: PLATFORM_NAMES.WSL2,
     steps: (
       <>
         <h2>Windows User</h2>
@@ -261,22 +267,19 @@ const MesheryPlatforms = () => {
     }
 
     if (typeof window !== "undefined") {
-      window.addEventListener("select-meshery-platform", handlePlatformEvent);
+      window.addEventListener(SELECT_PLATFORM_EVENT, handlePlatformEvent);
       window.addEventListener("hashchange", handleHashChange);
     }
     return () => {
       if (typeof window !== "undefined") {
-        window.removeEventListener(
-          "select-meshery-platform",
-          handlePlatformEvent,
-        );
+        window.removeEventListener(SELECT_PLATFORM_EVENT, handlePlatformEvent);
         window.removeEventListener("hashchange", handleHashChange);
       }
     };
   }, []);
 
   return (
-    <MesheryPlatformsWrapper id="getting-started-platforms">
+    <MesheryPlatformsWrapper id={PLATFORM_SECTION_ID}>
       <div id="platforms" className="content">
         <Row $Hcenter className="step-1">
           <p>
@@ -315,13 +318,9 @@ const MesheryPlatforms = () => {
         <Container
           style={{
             transition: "height 0.5s ease-in-out",
-            height:
-              currentPlatform.name === "Docker" ||
-              currentPlatform.name === "Helm" ||
-              currentPlatform.name === "Linux" ||
-              currentPlatform.name === "KinD"
-                ? "30rem"
-                : installationStepsHeight,
+            height: TALL_PLATFORMS.includes(currentPlatform.name)
+              ? "30rem"
+              : installationStepsHeight,
             overflow: "hidden",
           }}
         >

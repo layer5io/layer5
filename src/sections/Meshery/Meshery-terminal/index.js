@@ -16,20 +16,45 @@ import Docker from "../Meshery-platforms/supported-icons/docker.svg";
 import OAM from "../../../assets/images/partners/oam.svg";
 import ImageHub from "../../../assets/images/image-hub/layer5-image-hub.svg";
 import SMP from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
+import {
+  PLATFORM_NAMES,
+  PLATFORM_DETAILS,
+  PLATFORM_SECTION_ID,
+  SELECT_PLATFORM_EVENT,
+} from "../Meshery-platforms/platform-data";
+
 const MesheryTerminal = () => {
   const handlePlatformClick = (platformName) => {
     if (typeof window !== "undefined") {
-      const el = document.getElementById("getting-started-platforms");
+      const el = document.getElementById(PLATFORM_SECTION_ID);
       if (el) {
         el.scrollIntoView({ behavior: "smooth" });
       }
       window.dispatchEvent(
-        new CustomEvent("select-meshery-platform", {
+        new CustomEvent(SELECT_PLATFORM_EVENT, {
           detail: { platform: platformName },
         }),
       );
     }
   };
+
+  const terminalInstallLogos = [
+    { key: PLATFORM_NAMES.HOMEBREW, url: Homebrew },
+    { key: PLATFORM_NAMES.KUBERNETES, url: Kubernetes },
+    { key: PLATFORM_NAMES.KIND, url: KinD },
+    { key: PLATFORM_NAMES.MINIKUBE, url: Minikube },
+    { key: PLATFORM_NAMES.EKS, url: EKS },
+    { key: PLATFORM_NAMES.HELM, url: Helm },
+    { key: PLATFORM_NAMES.WSL2, url: WSL2 },
+    { key: PLATFORM_NAMES.GKE, url: GKE },
+    { key: PLATFORM_NAMES.DOCKER, url: Docker },
+  ].map(({ key, url }) => ({
+    url,
+    alt: PLATFORM_DETAILS[key].alt,
+    title: PLATFORM_DETAILS[key].title,
+    link: `#${PLATFORM_SECTION_ID}`,
+    onClick: () => handlePlatformClick(key),
+  }));
 
   return (
     <MesheryWrapper>
@@ -83,71 +108,7 @@ const MesheryTerminal = () => {
                   </p>
                 </>
               ),
-              logos: [
-                {
-                  url: Homebrew,
-                  alt: "Homebrew",
-                  title: "Install on Homebrew",
-                  link: "#getting-started-platforms",
-                  onClick: () => handlePlatformClick("HomeBrew"),
-                },
-                {
-                  url: Kubernetes,
-                  alt: "Kubernetes",
-                  title: "Install on Kubernetes",
-                  link: "#getting-started-platforms",
-                  onClick: () => handlePlatformClick("Kubernetes"),
-                },
-                {
-                  url: KinD,
-                  alt: "KinD",
-                  title: "Install on KinD",
-                  link: "#getting-started-platforms",
-                  onClick: () => handlePlatformClick("KinD"),
-                },
-                {
-                  url: Minikube,
-                  alt: "Minikube",
-                  title: "Install on Minikube",
-                  link: "#getting-started-platforms",
-                  onClick: () => handlePlatformClick("Minikube"),
-                },
-                {
-                  url: EKS,
-                  alt: "AWS Elastic Kubernetes Service",
-                  title: "Install on AWS Elastic Kubernetes Service (EKS)",
-                  link: "#getting-started-platforms",
-                  onClick: () => handlePlatformClick("EKS"),
-                },
-                {
-                  url: Helm,
-                  alt: "Meshery Helm Chart",
-                  title: "Install via Meshery Helm Chart",
-                  link: "#getting-started-platforms",
-                  onClick: () => handlePlatformClick("Helm"),
-                },
-                {
-                  url: WSL2,
-                  alt: "WSL2",
-                  title: "Install on Windows (WSL2)",
-                  link: "#getting-started-platforms",
-                  onClick: () => handlePlatformClick("WSL2"),
-                },
-                {
-                  url: GKE,
-                  alt: "GKE",
-                  title: "Install on Google Kubernetes Engine (GKE)",
-                  link: "#getting-started-platforms",
-                  onClick: () => handlePlatformClick("GKE"),
-                },
-                {
-                  url: Docker,
-                  alt: "Docker",
-                  title: "Install on Docker",
-                  link: "#getting-started-platforms",
-                  onClick: () => handlePlatformClick("Docker"),
-                },
-              ],
+              logos: terminalInstallLogos,
               terminal: {
                 frameLength: 100,
                 loop: false,
