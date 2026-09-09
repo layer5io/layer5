@@ -4,20 +4,15 @@ import Button from "../../reusecore/Button";
 import { GrFormClose } from "@react-icons/all-files/gr/GrFormClose";
 import styled from "styled-components";
 import playIcon from "../../assets/images/homePage-images/play-button.webp";
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/youtube";
 import StyledEmbdedVideo from "./style";
 
-const TeaserModalWrapper = styled.div`
-
-`;
+const TeaserModalWrapper = styled.div``;
 
 const TeaserModal = (props) => {
-  const {
-    title,
-    open
-  } = props;
+  const { title, open } = props;
 
-  const [modalIsOpen,setIsOpen] = useState(open);
+  const [modalIsOpen, setIsOpen] = useState(open);
 
   const closeModal = () => setIsOpen(false);
 
@@ -34,12 +29,15 @@ const TeaserModal = (props) => {
         }}
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        className="Modal"								//Styles for this have been applied to global CSS, app.style.js file.
-        overlayClassName="Overlay"			// Same as above
+        className="Modal" //Styles for this have been applied to global CSS, app.style.js file.
+        overlayClassName="Overlay" // Same as above
         ariaHideApp={false}
         contentLabel={title}
       >
-        <Button secondary className="close-modal-btn" onClick={closeModal}> <GrFormClose /></Button>
+        <Button secondary className="close-modal-btn" onClick={closeModal}>
+          {" "}
+          <GrFormClose />
+        </Button>
         <div>
           <StyledEmbdedVideo>
             <ReactPlayer

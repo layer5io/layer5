@@ -79,8 +79,9 @@ const Footer = ({ location }) => {
         ? `https://github.com/layer5io/layer5/tree/master/${test.learningPath(pathname)}`
         : test.communityMember(pathname)
           ? `https://github.com/layer5io/layer5/blob/master/${test.communityMember(pathname)}`
-          : `https://github.com/layer5io/layer5/blob/master/src/pages${pathname == "/" ? "" : pathname
-          }${indexUrl.some((str) => pathname.endsWith(str)) ? "/index" : ""}.js`;
+          : `https://github.com/layer5io/layer5/blob/master/src/pages${
+              pathname == "/" ? "" : pathname
+            }${indexUrl.some((str) => pathname.endsWith(str)) ? "/index" : ""}.js`;
   };
 
   return (
@@ -88,26 +89,41 @@ const Footer = ({ location }) => {
       <img
         className="section__particle"
         src={bubblesElement}
-        alt="Layer5, the cloud native management company"
+        alt=""
+        width="674"
+        height="666"
       />
       <Container>
         <Row className="footer-head">
           <Col className="footer_logo-icons" $sm={3}>
             <Link to="/">
-              <img src={logo} className="footer-logo" alt="logo" />
+              <img
+                src={logo}
+                className="footer-logo"
+                alt="Layer5"
+                width="200"
+                height="54"
+              />
             </Link>
           </Col>
           <Col className="footer_logo-icons" $sm={9}>
             <SocialLinksColor />
           </Col>
         </Row>
-        <Row style={{
-          flexWrap: "wrap"
-        }}
+        <Row
+          style={{
+            flexWrap: "wrap",
+          }}
         >
           <Col $xs={12} $lg={3}>
             <p className="desc-info">
-              Layer5 is the steward of Meshery and creator of Kanvas, the collaborative canvas for cloud-native infrastructure. We bridge the gap between design and operation, allowing engineers to create, configure, and deploy orchestratable diagrams in real time. Whether managing Kubernetes or multi-cloud environments, Layer5 provides the tooling needed to oversee modern infrastructure with confidence.
+              Layer5 is the steward of Meshery and creator of Kanvas, the
+              collaborative canvas for cloud-native infrastructure. We bridge
+              the gap between design and operation, allowing engineers to
+              create, configure, and deploy orchestratable diagrams in real
+              time. Whether managing Kubernetes or multi-cloud environments,
+              Layer5 provides the tooling needed to oversee modern
+              infrastructure with confidence.
             </p>
           </Col>
           <Col className="sections_col" $xs={12} $lg={9}>
@@ -135,7 +151,10 @@ const Footer = ({ location }) => {
                     </Link>
                   </li>
                   <li>
-                    <a className="category-link" href="https://docs.layer5.io/videos">
+                    <a
+                      className="category-link"
+                      href="https://docs.layer5.io/videos"
+                    >
                       Videos
                     </a>
                   </li>
@@ -150,10 +169,7 @@ const Footer = ({ location }) => {
                     </Link>
                   </li> */}
                   <li>
-                    <Link
-                      className="category-link"
-                      to="/learn/workshops"
-                    >
+                    <Link className="category-link" to="/learn/workshops">
                       Cloud Native Workshops
                     </Link>
                   </li>
@@ -198,15 +214,15 @@ const Footer = ({ location }) => {
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      className="category-link"
-                      to="/community/handbook"
-                    >
+                    <Link className="category-link" to="/community/handbook">
                       Handbook
                     </Link>
                   </li>
                   <li>
-                    <a className="category-link" href="https://badges.layer5.io/">
+                    <a
+                      className="category-link"
+                      href="https://badges.layer5.io/"
+                    >
                       Recognition Program
                     </a>
                   </li>
@@ -214,7 +230,10 @@ const Footer = ({ location }) => {
               </div>
               <div className="footer-sections odd-col">
                 <h3 className="section-title">
-                  <Link className="title-link" to="/cloud-native-management/solutions">
+                  <Link
+                    className="title-link"
+                    to="/cloud-native-management/solutions"
+                  >
                     SOLUTIONS
                   </Link>
                 </h3>
@@ -225,7 +244,7 @@ const Footer = ({ location }) => {
                       to="/solutions/developer-defined-infrastructure"
                     >
                       Developer-defined Infrastructure
-                      { /* <span className="new-label">NEW</span> */}
+                      {/* <span className="new-label">NEW</span> */}
                     </Link>
                   </li>
                   <li>
@@ -245,15 +264,15 @@ const Footer = ({ location }) => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/cloud-native-management/kanvas/collaborate">
+                    <Link
+                      className="category-link"
+                      to="/cloud-native-management/kanvas/collaborate"
+                    >
                       Collaborative GitOps
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      className="category-link"
-                      to="/solutions/gitops"
-                    >
+                    <Link className="category-link" to="/solutions/gitops">
                       GitOps with Cloud Native Insights
                     </Link>
                   </li>
@@ -308,7 +327,6 @@ const Footer = ({ location }) => {
               </div>
             </Row>
             <Row className="subscribe">
-
               <form
                 name="contactform"
                 method="post"
@@ -329,7 +347,8 @@ const Footer = ({ location }) => {
                     required
                   />
                   <Button
-                    $secondary title="Subscribe"
+                    $secondary
+                    title="Subscribe"
                     aria-label="subscribe-us"
                     id="mc-embedded-subscribe-2"
                   />

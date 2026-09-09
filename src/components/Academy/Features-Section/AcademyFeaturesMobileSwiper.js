@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards, Pagination, Navigation, Autoplay } from "swiper/modules";
 import styled from "styled-components";
-import Levels from "../../../../static/images/academy-catalog.gif";
+import Levels from "../../../../static/images/academy-catalog.webp";
 import Challenges from "./challenges.webp";
 import Badges from "./badges.webp";
 import Track from "./track.webp";
@@ -37,12 +37,11 @@ const CONTENT = [
     img: Track,
     description:
       "Stay motivated with clear progress tracking as you move forward. Keep an eye on your completed labs, challenges, and milestones, and see how your cloud native skills steadily grow step by step.",
-    gradient: "four"
-  }
+    gradient: "four",
+  },
 ];
 
 const DivWrapper = styled.div`
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,7 +52,7 @@ const DivWrapper = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-}
+  }
 
   img {
     max-height: 50%;
@@ -64,16 +63,22 @@ const DivWrapper = styled.div`
     text-align: center;
     padding-inline: 1rem;
   }
-
 `;
-
 
 const Card = ({ title, description, img }) => {
   return (
     <div className="card">
       <h2>{title}</h2>
       <p>{description}</p>
-      <img style={{ border: "1px solid #444444", borderRadius: "10px", height: "50%" }} src={img} alt="" />
+      <img
+        style={{
+          border: "1px solid #444444",
+          borderRadius: "10px",
+          height: "50%",
+        }}
+        src={img}
+        alt=""
+      />
     </div>
   );
 };
@@ -82,7 +87,9 @@ const AcademyMobileSwiper = () => {
   return (
     <DivWrapper>
       <SwiperContainer style={{ marginBottom: "10%" }}>
-        <h2 style={{ marginBottom: "2rem" }}>Unlock Your Cloud Native Journey</h2>
+        <h2 style={{ marginBottom: "2rem" }}>
+          Unlock Your Cloud Native Journey
+        </h2>
         <Swiper
           autoplay={{
             delay: 2000,

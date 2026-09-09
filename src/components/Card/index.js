@@ -12,10 +12,15 @@ const Card = ({
   loading = "lazy",
   fetchpriority = "auto",
   listView = false,
+  fitContainer = false,
 }) => {
   const { isDark } = useStyledDarkMode();
   return (
-    <CardWrapper fixed={!!frontmatter.abstract} $listView={listView}>
+    <CardWrapper
+      fixed={!!frontmatter.abstract}
+      $listView={listView}
+      $fitContainer={fitContainer}
+    >
       <div className="post-block">
         <div className="post-thumb-block">
           <Image
@@ -25,7 +30,8 @@ const Card = ({
               frontmatter.thumbnail.publicURL
               ? frontmatter.darkthumbnail
               : frontmatter.thumbnail)}
-            imgStyle={{ objectFit: "cover" }}
+            fitContainer={fitContainer}
+            imgStyle={!fitContainer ? { objectFit: "cover" } : {}}
             loading={loading}
             fetchpriority={fetchpriority}
             alt={frontmatter.title}
