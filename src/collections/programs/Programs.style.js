@@ -118,7 +118,6 @@ export const ProgramsWrapper = styled.div`
       float: none;
       width: 35vw;
       margin: 0 auto 30px auto;
-      margin-left: auto;
     }
   }
   .lfx_logo {
