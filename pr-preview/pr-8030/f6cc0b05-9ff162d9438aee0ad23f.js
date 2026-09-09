@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkLayer5=self.webpackChunkLayer5||[]).push([[8430],{790146:function(e,s,t){t(296540);s.A=t.p+"static/kubernetes.1984069f.svg"}}]);
