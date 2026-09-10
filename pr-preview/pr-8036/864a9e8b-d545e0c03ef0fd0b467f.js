@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkLayer5=self.webpackChunkLayer5||[]).push([[51664],{878886:function(e,a,c){c(296540);a.A=c.p+"static/collaborate.20cef68e.svg"}}]);
