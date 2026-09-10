@@ -322,17 +322,39 @@ const Navigation = () => {
             {expand ? (
               <IoMdClose
                 className="mobile-menu-icon open"
+                role="button"
+                tabIndex={0}
+                aria-label="Close menu"
+                aria-expanded={true}
                 onClick={function () {
                   setExpand(false);
                   closeDropDown();
+                }}
+                onKeyDown={function (e) {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setExpand(false);
+                    closeDropDown();
+                  }
                 }}
               />
             ) : (
               <FaBars
                 className="mobile-menu-icon"
+                role="button"
+                tabIndex={0}
+                aria-label="Open menu"
+                aria-expanded={false}
                 onClick={function () {
                   setExpand(true);
                   openDropDown();
+                }}
+                onKeyDown={function (e) {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setExpand(true);
+                    openDropDown();
+                  }
                 }}
               />
             )}
