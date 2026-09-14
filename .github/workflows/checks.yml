@@ -21,6 +21,9 @@ jobs:
       - name: Check CONTRIBUTING versions
         run: npm run check:contributing-versions
 
+      - name: Check local SEO image references
+        run: npm run check:seo-images
+
       - name: Build
         run: npm run build
 
