@@ -20,21 +20,19 @@ const DiscussCallout = () => {
               <div className="card">
                 <div className="parentcard">
                   <SectionTitle className="section-title" $UniWidth="100%">
-                    <div className="card-align">
+                    <div className="card-content">
                       <h2>Join the Conversation</h2>
                       <p>
                         Ask questions, find answers and share knowledge on our
                         Discussion Forum
                       </p>
 
-                      <button>
-                        <img
-                          className="logo"
-                          alt="Discuss"
-                          src={Discuss}
-                          loading="lazy"
-                        />
-                      </button>
+                      <img
+                        className="logo"
+                        alt="Discuss"
+                        src={Discuss}
+                        loading="lazy"
+                      />
                     </div>
                   </SectionTitle>
                 </div>
