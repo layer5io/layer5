@@ -29,15 +29,17 @@ function escapeHtmlAttribute(value) {
 
 // String.prototype.replace would strip the first occurrence anywhere in the
 // path, so a target that merely contains pathPrefix mid-path would be mangled.
-// The match also has to land on a path segment boundary: a pathPrefix of
-// "/docs" must not be stripped from "/docs-old".
+// The match also has to land on a boundary - the end of the value, a path
+// separator, or the start of a query or fragment - so that a pathPrefix of
+// "/docs" is stripped from "/docs/page", "/docs?a=b" and "/docs#x", but not
+// from "/docs-old".
 function stripLeadingPathPrefix(value, pathPrefix) {
   if (!pathPrefix || !value.startsWith(pathPrefix)) {
     return value;
   }
 
   const rest = value.slice(pathPrefix.length);
-  if (rest === "" || rest.startsWith("/")) {
+  if (rest === "" || /^[/?#]/.test(rest)) {
     return rest;
   }
 
