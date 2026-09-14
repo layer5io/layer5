@@ -230,8 +230,12 @@ def check(path):
             rf'src=(?:\{{\s*(?:{"|".join(map(re.escape, names))})\s*\}}|["\']\./{target}["\'])'
             if names else rf'src=["\']\./{target}["\']'
         )
+        in_fence = False
         for i, line in enumerate(lines, 1):
-            if fm_end and i <= fm_end + 1:
+            if FENCE_RE.match(line):
+                in_fence = not in_fence
+                continue
+            if in_fence or (fm_end and i <= fm_end + 1):
                 continue
             if repeat.search(line):
                 flag(i, f"body image repeats the thumbnail ({thumb}), which the blog template "

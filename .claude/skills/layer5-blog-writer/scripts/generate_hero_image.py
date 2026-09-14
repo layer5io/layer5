@@ -441,8 +441,12 @@ def build_sign_text_overlay(five_pose_path, sign_text):
     inherits the same transform as the mascot) for a blank-signage pose, or ""
     if this pose has no calibrated zone / no text was requested.
     """
-    if not sign_text:
+    if sign_text is None:
         return ""
+    sign_text = " ".join(sign_text.split())
+    if not sign_text:
+        raise SystemExit("error: --sign-text is empty or whitespace; pass the words to put on "
+                         "the sign, or omit the flag.")
     zone_key = POSE_FILENAME_TO_SIGN_ZONE.get(five_pose_path.name)
     zone = palette.SIGN_TEXT_ZONES.get(zone_key) if zone_key else None
     if not zone:

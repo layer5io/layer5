@@ -157,10 +157,12 @@ JPEG at q88 measures ~70KB against ~310KB for the equivalent SVG, is visually in
 while crawlers still get a JPEG. Rasterizing also bakes the type, so no Qanelas Soft binary is
 committed - the old SVG heroes were 73% base64 OTF of a commercially licensed font, once per post.
 
-Rasterizing needs a Chrome/Chromium binary, and Pillow (`pip install pillow`) for JPEG/WebP
-encoding. If either is missing the generator exits with an error before writing anything into the
-post directory; output is deterministic per title, so rerun the same command once it is installed.
-Pass `--keep-svg` to inspect the intermediate - never commit it.
+Rasterizing needs a Chrome/Chromium binary for every format, and Pillow (`pip install pillow`) for
+JPEG/WebP; PNG does not need Pillow. If a requirement is missing the generator exits with an error
+and writes no raster; output is deterministic per title, so rerun the same command once it is
+installed. Without `--keep-svg` nothing is written into the post directory on failure. With
+`--keep-svg` the working SVG is written there before rasterizing, so it remains after a failure -
+never commit it.
 
 Produces a 1200x630 image that:
 

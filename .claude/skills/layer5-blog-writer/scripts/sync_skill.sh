@@ -44,6 +44,31 @@ if [[ -z "$repo_root" || ! -d "$repo_root/src/collections/blog" \
   exit 1
 fi
 
+# The layout alone does not prove this is layer5io/layer5, or that it is
+# current: a fork or a months-old checkout has the same directories, and
+# `rsync --delete` would roll every copy back to it. Require a remote that
+# points at layer5io/layer5, and require HEAD to contain its latest master
+# (a feature branch on top of master is fine; a stale one is not).
+canonical_remote="$(git -C "$repo_root" remote -v \
+  | awk '$2 ~ /github\.com[:\/]layer5io\/layer5(\.git)?$/ && $3 == "(fetch)" { print $1; exit }')"
+if [[ -z "$canonical_remote" ]]; then
+  echo "error: no git remote in $repo_root points at github.com/layer5io/layer5;" >&2
+  echo "       refusing to treat this checkout as the canonical copy" >&2
+  exit 1
+fi
+if [[ "${SKILL_SYNC_OFFLINE:-0}" == "1" ]]; then
+  echo "warning: SKILL_SYNC_OFFLINE=1, checking freshness against the last fetched $canonical_remote/master" >&2
+elif ! git -C "$repo_root" fetch --quiet "$canonical_remote" master; then
+  echo "error: could not fetch $canonical_remote master to check this copy is current." >&2
+  echo "       Retry online, or set SKILL_SYNC_OFFLINE=1 to use the last fetched state." >&2
+  exit 1
+fi
+if ! git -C "$repo_root" merge-base --is-ancestor "$canonical_remote/master" HEAD; then
+  echo "error: HEAD does not contain the latest $canonical_remote/master, so this copy may be" >&2
+  echo "       stale. Rebase or pull, then rerun." >&2
+  exit 1
+fi
+
 VERSION="$(sed -n 's/^version: *//p' "$SKILL_DIR/SKILL.md" | head -1)"
 if [[ -z "$VERSION" ]]; then
   echo "error: SKILL.md has no 'version:' field in its frontmatter" >&2
@@ -101,7 +126,7 @@ for target in "${TARGETS[@]}"; do
     fi
   else
     mkdir -p "$(dirname "$target")"
-    rsync -a --delete "${EXCLUDES[@]}" "$SKILL_DIR/" "$target/"
+    rsync -ac --delete "${EXCLUDES[@]}" "$SKILL_DIR/" "$target/"
     echo "synced   $target"
   fi
 done
