@@ -109,8 +109,15 @@ const FencedCode = ({ children, ...preProps }) => {
     return <pre {...preProps}>{children}</pre>;
   }
 
+  // Drop only the newline the MDX compiler appends; trim() would also strip
+  // meaningful indentation on the first line (e.g. a nested YAML snippet).
   const language = child.props.className?.replace(/^language-/, "");
-  return <Code codeString={code.trim()} language={language || undefined} />;
+  return (
+    <Code
+      codeString={code.replace(/\r?\n$/, "")}
+      language={language || undefined}
+    />
+  );
 };
 
 const components = {
