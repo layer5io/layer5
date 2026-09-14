@@ -77,7 +77,7 @@ function findLocalSeoImages(source) {
     if (!imageMatch) continue;
 
     const imagePath = imageMatch[1] || imageMatch[2] || imageMatch[3];
-    if (!imagePath.startsWith("/") || imagePath.startsWith("//")) continue;
+    if (/^(?:[a-z][a-z0-9+.-]*:)?\/\//i.test(imagePath)) continue;
 
     references.push({
       imagePath,
@@ -97,6 +97,13 @@ for (const sourceFile of walk(sourceRoot)) {
   const relativeSource = path.relative(repoRoot, sourceFile);
 
   for (const reference of findLocalSeoImages(source)) {
+    if (!reference.imagePath.startsWith("/")) {
+      failures.push(
+        `${relativeSource}:${reference.line} invalid local SEO image ${reference.imagePath} (use a root-relative path backed by static or public)`,
+      );
+      continue;
+    }
+
     const pathname = reference.imagePath.split(/[?#]/, 1)[0];
     const relativeAsset = path.posix
       .normalize(pathname)
