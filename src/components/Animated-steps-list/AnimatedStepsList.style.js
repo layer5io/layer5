@@ -4,7 +4,8 @@ export const AnimatedStepsListWrapper = styled.div`
   .animated-steps-list {
     display: flex;
     & .indicator-wrapper {
-      & > ul {
+      & > ul,
+      & > nav {
         position: sticky;
         top: 200px;
         padding-bottom: 395px;
