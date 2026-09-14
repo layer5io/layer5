@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Button from "../../reusecore/Button";
-import axios from "axios";
+import { useWebhookSubmit } from "../../utils/hooks/useWebhookSubmit";
 import { Field, Form, Formik } from "formik";
 import logo from "../../assets/images/app/layer5.svg";
 import ContactFormWrapper from "./contact-form.style";
@@ -8,16 +8,7 @@ import ContactFormWrapper from "./contact-form.style";
 const ContactForm = () => {
   const [memberFormOne, setmemberFormOne] = useState({});
   const [submit, setSubmit] = useState(false);
-
-  useEffect(() => {
-    if (submit) {
-      // Webhook to handle all event forms and all signup forms, except for the community member form.
-      axios.post("https://hook.us1.make.com/nficb3d7swqkclkl467st4hp4cg65u8o", {
-        memberFormOne,
-      });
-      window.scrollTo(0, 700);
-    }
-  }, [submit]);
+  const { submitForm } = useWebhookSubmit();
 
   if (submit) {
     document.querySelector(".showForm").style.height = "20rem";
@@ -45,12 +36,23 @@ const ContactForm = () => {
             scope: "",
             form: "contact",
           }}
-          onSubmit={(values) => {
-            setmemberFormOne(values);
-            setSubmit(true);
+          onSubmit={async (values, { setStatus }) => {
+            const { success } = await submitForm({ memberFormOne: values });
+            if (success) {
+              setStatus(null);
+              setmemberFormOne(values);
+              setSubmit(true);
+              window.scrollTo(0, 700);
+            } else {
+              setStatus({ submitError: "Submission failed. Please try again." });
+            }
           }}
         >
-          <Form className="form" method="post">
+          {({ status }) => (
+            <Form className="form" method="post" aria-describedby="contact-form-status">
+              <div id="contact-form-status" className="form-error" role="alert" aria-live="assertive">
+                {status?.submitError || ""}
+              </div>
             <div className="title">
               <img className="layer5-logo" src={logo} alt="Layer5 Logo" />
             </div>
@@ -212,7 +214,8 @@ const ContactForm = () => {
                 />
               </div>
             </div>
-          </Form>
+            </Form>
+          )}
         </Formik>
       </div>
     </ContactFormWrapper>
