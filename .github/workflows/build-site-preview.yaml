@@ -50,6 +50,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Unit tests
+        run: npm run test:unit
+
       - name: Build PR preview
         env:
           GATSBY_PREVIEW: "true"
