@@ -77,7 +77,7 @@ const Features = () => {
         }
       })
       .catch((error) => {
-        console.log("Failed to fetch performance count:", error.message);
+        console.error("Failed to fetch performance count:", error.message);
       // Keep default value of 0 if fetch fails
       });
   }, []);
