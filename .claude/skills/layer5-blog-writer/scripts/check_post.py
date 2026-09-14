@@ -220,6 +220,23 @@ def check(path):
     if "<CTA_FullWidth" not in body and "<KanvasCTA" not in body:
         flag(fm_end + 1, "missing a call to action (<CTA_FullWidth> or <KanvasCTA>)")
 
+    # The blog template renders `thumbnail` above the title, so a body image of
+    # the same file shows the hero twice in a row.
+    thumb = fields.get("thumbnail")
+    if thumb and thumb.startswith("./"):
+        target = re.escape(thumb[2:])
+        names = re.findall(rf'^import\s+(\w+)\s+from\s+["\']\./{target}["\']', text, re.M)
+        repeat = re.compile(
+            rf'src=(?:\{{\s*(?:{"|".join(map(re.escape, names))})\s*\}}|["\']\./{target}["\'])'
+            if names else rf'src=["\']\./{target}["\']'
+        )
+        for i, line in enumerate(lines, 1):
+            if fm_end and i <= fm_end + 1:
+                continue
+            if repeat.search(line):
+                flag(i, f"body image repeats the thumbnail ({thumb}), which the blog template "
+                        f"already renders above the title; remove it")
+
     in_fence = False
     for i, line in enumerate(lines, 1):
         if FENCE_RE.match(line):

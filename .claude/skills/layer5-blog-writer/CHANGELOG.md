@@ -46,6 +46,16 @@ run; it previously leaked on every invocation.
   not reliably: a session in this repo loaded the stale 1.x user-level copy and shipped an SVG hero
   in an open PR before the drift was caught.
 
+### The hero image no longer appears twice
+
+`references/blog-structure.md` imported `heroImage` and placed it in the body of its post template,
+and SKILL.md's checklist asked for "at least one in-body image". The blog template already renders
+`thumbnail` above the title, so every post that followed the template showed the same image twice
+in a row. The template no longer imports the hero, the checklist asks for alt text on genuine
+in-body images instead, and `check_post.py` flags any body `<img>` whose source is the thumbnail
+file. Its first run found two posts on `master` doing this (AGENTS.md: One File to Guide Them All,
+and Meshery Hits 10,000 GitHub Stars); both are fixed in the same change.
+
 ### Docs
 
 - SKILL.md no longer links `src/utils/build-collections.js` by a relative path that only resolves

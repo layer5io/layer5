@@ -228,7 +228,7 @@ python3 "<skill_dir>/scripts/check_post.py" "src/collections/blog/YYYY/MM-DD-slu
 Exit code 0 means clean. It asserts the mechanical half of this step: required frontmatter fields,
 the exact `YYYY-MM-DD HH:MM:SS +/-HHMM` date format, thumbnails that exist and are rasters rather
 than SVG, category and tags matching `references/tags-categories.md` (case-sensitively), presence
-of `intro`/`outro`/`<Blockquote>`/a CTA, `className` rather than `class`, en/em dashes, brand
+of `intro`/`outro`/`<Blockquote>`/a CTA, a body image repeating the thumbnail, `className` rather than `class`, en/em dashes, brand
 capitalization in prose, unpinned `:latest` versions, and AI-authorship trailers. It also
 cross-checks the taxonomy doc against `CATEGORY_TONE` in `mesh_palette.py` so the two cannot drift.
 
@@ -262,7 +262,7 @@ lost by scoping locally - it just happens on the runner instead of on your lapto
 - [ ] Namespace, service name, and label selectors are consistent across all commands
 - [ ] `kubectl port-forward`, `kubectl get`, and `kubectl logs` reference resources that preceding steps actually created
 - [ ] If the post references a Meshery or Kanvas feature, grep the docs repos to confirm the feature name and CLI flags are current
-- [ ] At least one in-body image, each with descriptive alt text (not checked by the linter)
+- [ ] Every in-body image (diagram, screenshot, chart) has descriptive alt text. Do not embed the hero: the blog template already renders `thumbnail` above the title, and the linter flags a repeat
 - [ ] Multiple `<Link>` components for internal navigation
 - [ ] Posts about specific infrastructure patterns embed `<MesheryDesignEmbed>` with a matching design from the table in `references/blog-structure.md`
 - [ ] Technical posts: consider `resource: true`
