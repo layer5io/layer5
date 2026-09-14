@@ -86,7 +86,7 @@ import MesheryDesignEmbed from "@layer5/meshery-design-embed";
 <div className="intro">
   <p>
     One-paragraph lede that opens with the problem. Platform engineers are busy
-    — give them a reason to keep reading in the first three sentences.
+    - give them a reason to keep reading in the first three sentences.
   </p>
 </div>
 
@@ -151,7 +151,7 @@ external_link={false}
 
 ```jsx
 <Blockquote
-  quote="Kubernetes is not just container orchestration — it's a platform for building platforms."
+  quote="Kubernetes is not just container orchestration - it's a platform for building platforms."
   person="Lee Calcote"
   title="Founder, Layer5"
 />
@@ -249,7 +249,7 @@ If you need a design that isn't in the table, leave a placeholder comment in the
 
 ```jsx
 {
-  /* TODO: embed design — export from Meshery Playground and add JS bundle to static/embed-test/ */
+  /* TODO: embed design - export from Meshery Playground and add JS bundle to static/embed-test/ */
 }
 ```
 

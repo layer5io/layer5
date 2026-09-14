@@ -5,7 +5,52 @@ the major number moves when a generated artifact or a CLI contract changes shape
 
 The canonical copy lives at `.claude/skills/layer5-blog-writer/` in the
 [layer5io/layer5](https://github.com/layer5io/layer5) repo. `scripts/sync_skill.sh` mirrors it to
-`~/.claude/skills/` and `~/.agents/skills/`.
+`~/.claude/skills/`, `~/.agents/skills/`, and any vendored copy passed to it (the koopverse/firstmate
+fleet pack, layer5io/meshery-cloud's `.agents/skills/`).
+
+## 2.0.1
+
+### Sign text is centered on the sign, and never silently truncated
+
+`--sign-text` rendered too high on both blank-signage poses: two-line text on `blank-signpost` ran
+through the top edge of the board. Two causes compounded. `build_sign_text_overlay` centered each
+line's SVG `y`, which is the alphabetic baseline, so every block sat half a cap height above its
+slot. And both zones in `mesh_palette.SIGN_TEXT_ZONES` had been eyeballed: each was wider than the
+surface it sits on and centered above it. The zones are now measured from a per-row dark-pixel
+profile of each pose rendered at viewBox size (signpost board x 198-405, y 266-346; book pages
+x 195-372, y 208-355), and carry a `max_height` and `min_font_size`.
+
+Text that did not fit used to be cut to its first three lines with no message. The generator now
+shrinks the font toward `min_font_size` until the block fits, and exits with an error naming the
+zone when it cannot.
+
+### A missing Pillow fails before anything lands in the post directory
+
+Without Pillow, a `.jpg` run wrote `hero-image.png`, exited 1 anyway, and wrote the working SVG to
+`hero-image.svg` beside it - the exact filename every 1.x post committed, so it was one `git add`
+away from shipping the broken format 2.0.0 removed. SKILL.md described the same case as "a PNG plus
+a warning". The Pillow check now runs before Chrome launches, nothing is written on failure, and
+the working SVG stays in its temp directory. The temp directory is also removed after a successful
+run; it previously leaked on every invocation.
+
+### sync_skill.sh checks content, refuses to run from a copy, and covers vendored copies
+
+- `--check` compared size and mtime, so an identical copy checked out by git read as drifted. It
+  now compares checksums.
+- The script is mirrored with everything else, and running a stale copy's sync would overwrite the
+  current copies. It now refuses to run anywhere but `<layer5 repo>/.claude/skills/`.
+- Symlinked targets are resolved and de-duplicated; `~/.claude/skills` is often a symlink to
+  `~/.agents/skills`, which was synced and reported twice.
+- Extra directories can be passed to sync or check vendored copies in other repos.
+- The header claimed the project copy shadows the user-level copy inside the layer5 repo. It does
+  not reliably: a session in this repo loaded the stale 1.x user-level copy and shipped an SVG hero
+  in an open PR before the drift was caught.
+
+### Docs
+
+- SKILL.md no longer links `src/utils/build-collections.js` by a relative path that only resolves
+  inside the layer5 repo, so vendored copies are byte-identical to this one.
+- Em dashes removed from SKILL.md and `references/`, which the skill's own voice rules forbid.
 
 ## 2.0.0
 
