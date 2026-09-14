@@ -2,6 +2,7 @@
 
 const {
   DEFAULT_LITE_BUILD_PROFILE,
+  getBlogYearFilter,
   getExcludedCollections,
   isFullSiteBuild,
 } = require("./src/utils/build-collections");
@@ -25,9 +26,14 @@ const isLiteDevBuild = isDevelopment && !shouldBuildFullSite;
 const excludedCollections = getExcludedCollections({
   isFullSiteBuild: shouldBuildFullSite,
 });
-const collectionIgnoreGlobs = excludedCollections.map(
-  (name) => `**/${name}/**`,
-);
+const blogYearFilter = getBlogYearFilter({
+  isFullSiteBuild: shouldBuildFullSite,
+  excludedCollections,
+});
+const collectionIgnoreGlobs = [
+  ...excludedCollections.map((name) => `**/${name}/**`),
+  ...blogYearFilter.ignoreGlobs,
+];
 const devFlags = isDevelopment
   ? {
       PARALLEL_SOURCING: false,
@@ -40,6 +46,15 @@ collectionIgnoreGlobs.length > 0
       `Build Scope excludes (${process.env.LITE_BUILD_PROFILE || DEFAULT_LITE_BUILD_PROFILE}): ${excludedCollections.join(", ")}`,
     )
   : console.info("Build Scope includes all collections");
+if (blogYearFilter.years.length > 0) {
+  console.info(
+    `Build Scope blog years (BLOG_YEAR): ${blogYearFilter.years.join(", ")}`,
+  );
+} else if (blogYearFilter.inactiveReason) {
+  console.warn(
+    `BLOG_YEAR=${process.env.BLOG_YEAR} ignored: ${blogYearFilter.inactiveReason}`,
+  );
+}
 module.exports = {
   ...(pathPrefix != null ? { pathPrefix } : {}),
   siteMetadata: {
