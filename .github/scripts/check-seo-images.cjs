@@ -24,14 +24,56 @@ function lineNumberAt(source, index) {
   return source.slice(0, index).split(/\r?\n/).length;
 }
 
+function findSeoOpeningTags(source) {
+  const tags = [];
+  const startPattern = /<SEO(?=[\s/>])/g;
+
+  for (const startMatch of source.matchAll(startPattern)) {
+    const start = startMatch.index || 0;
+    let quote = null;
+    let escaped = false;
+    let braceDepth = 0;
+
+    for (let index = start + startMatch[0].length; index < source.length; index++) {
+      const character = source[index];
+
+      if (quote) {
+        if (escaped) {
+          escaped = false;
+        } else if (character === "\\") {
+          escaped = true;
+        } else if (character === quote) {
+          quote = null;
+        }
+        continue;
+      }
+
+      if (character === '"' || character === "'" || character === "`") {
+        quote = character;
+      } else if (character === "{") {
+        braceDepth++;
+      } else if (character === "}" && braceDepth > 0) {
+        braceDepth--;
+      } else if (character === ">" && braceDepth === 0) {
+        tags.push({
+          index: start,
+          text: source.slice(start, index + 1),
+        });
+        break;
+      }
+    }
+  }
+
+  return tags;
+}
+
 function findLocalSeoImages(source) {
   const references = [];
-  const seoTagPattern = /<SEO\b[\s\S]*?>/g;
   const imagePropPattern =
     /\bimage\s*=\s*(?:"([^"]+)"|'([^']+)'|\{\s*["']([^"']+)["']\s*\})/;
 
-  for (const tagMatch of source.matchAll(seoTagPattern)) {
-    const imageMatch = tagMatch[0].match(imagePropPattern);
+  for (const tag of findSeoOpeningTags(source)) {
+    const imageMatch = tag.text.match(imagePropPattern);
     if (!imageMatch) continue;
 
     const imagePath = imageMatch[1] || imageMatch[2] || imageMatch[3];
@@ -39,7 +81,7 @@ function findLocalSeoImages(source) {
 
     references.push({
       imagePath,
-      line: lineNumberAt(source, tagMatch.index || 0),
+      line: lineNumberAt(source, tag.index),
     });
   }
 
