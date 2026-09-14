@@ -120,8 +120,8 @@
   "aaa5778d.js": "aaa5778d-8d6c86e29ff24b1e968a.js",
   "ac581ebe.js": "ac581ebe-36cccd14d56d90dda80d.js",
   "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff.js": "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff-a9b16981f193d3ae4261.js",
-  "app-938c1d616e9be4215416.js.LICENSE.txt": "app-938c1d616e9be4215416.js.LICENSE.txt",
-  "app.js": "app-938c1d616e9be4215416.js",
+  "app-42110e97d6f59d328388.js.LICENSE.txt": "app-42110e97d6f59d328388.js.LICENSE.txt",
+  "app.js": "app-42110e97d6f59d328388.js",
   "b3a4868e3083275025dca472f7350001ee397eb9.js": "b3a4868e3083275025dca472f7350001ee397eb9-e3e6295c1618dd9e60a6.js",
   "b5f6012b.js": "b5f6012b-a7763041fda46eef5ffb.js",
   "b94c7d6e898e669bbfd99da21b2e9e67976b8f68.js": "b94c7d6e898e669bbfd99da21b2e9e67976b8f68-7b25b51cbcfd059f643d.js",
@@ -221,7 +221,7 @@
   "component---src-pages-solutions-developer-defined-infrastructure-index-js.js": "component---src-pages-solutions-developer-defined-infrastructure-index-js-c4d12e93c5d362f4c1e1.js",
   "component---src-pages-solutions-devrel-platform-for-kubernetes-and-cloud-native-content-index-js.js": "component---src-pages-solutions-devrel-platform-for-kubernetes-and-cloud-native-content-index-js-75e0a538984e923b281f.js",
   "component---src-pages-solutions-gitops-index-js.js": "component---src-pages-solutions-gitops-index-js-de93633decc8452a616c.js",
-  "component---src-pages-solutions-gitops-performance-management-js.js": "component---src-pages-solutions-gitops-performance-management-js-26ee198cb37039798a97.js",
+  "component---src-pages-solutions-gitops-performance-management-js.js": "component---src-pages-solutions-gitops-performance-management-js-cc06e76ff46b1c8572e9.js",
   "component---src-pages-solutions-gitops-snapshot-js.js": "component---src-pages-solutions-gitops-snapshot-js-8121aeca8d4fad70b481.js",
   "component---src-pages-solutions-kubernetes-multi-cluster-operation-index-js.js": "component---src-pages-solutions-kubernetes-multi-cluster-operation-index-js-654b5f5a57ed7cc5869a.js",
   "component---src-pages-solutions-orchestration-management-index-js.js": "component---src-pages-solutions-orchestration-management-index-js-eb3cd93b6c7d392f1efd.js",
@@ -1432,7 +1432,7 @@
   "framework-597f03a21c8dce356db9.js.LICENSE.txt": "framework-597f03a21c8dce356db9.js.LICENSE.txt",
   "framework.js": "framework-597f03a21c8dce356db9.js",
   "icon-library.gif": "static/icon-library-7a9eca699194351110d483fc21317036.gif",
-  "integration-image-colorMode.svg": "static/integration-image-colorMode.154ef79b.svg",
+  "integration-image-colorMode.svg": "static/integration-image-colorMode.90d3dccb.svg",
   "kubernetes.svg": "static/kubernetes.1984069f.svg",
   "layer5-products-overview-dark.svg": "static/layer5-products-overview-dark.e3465d19.svg",
   "layer5-products-overview.svg": "static/layer5-products-overview.e3465d19.svg",
@@ -2122,5 +2122,5 @@
   "static/yash-sharma.webp": "static/yash-sharma-54aa26b6e5743f0557cfc76aa9797f2d.webp",
   "static/yogi.webp": "static/yogi-d00ca1cc48ab74938a23d4359ef3fb01.webp",
   "styles.css": "styles.8dfb9648f1b0df7ff037.css",
-  "webpack-runtime.js": "webpack-runtime-cb8d88234a9cb62a5fe5.js"
+  "webpack-runtime.js": "webpack-runtime-18b4c13c550dcc5e7a27.js"
 }
