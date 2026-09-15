@@ -74,15 +74,33 @@ const ReviewsWrapper = styled.div`
     visibility: visible;
     opacity: 1;
   }
-
-  /* Prevent extreme shrinking on mobile */
-  .slick-slide > div {
-    min-width: 0;
+  .slick-track {
+    display: flex !important;
+    align-items: stretch;
   }
-  .slider .type-one-wrapper {
+
+  .slick-slide {
+    height: auto !important;
+    display: flex !important;
+  }
+
+  .slick-slide > div {
     width: 100%;
-    max-width: none;
+    display: flex;
+    flex: 1;
+  }
+
+  .slick-slide .type-one-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     margin: 0 0.5rem;
+  }
+
+  .slick-slide .type-one-wrapper-boxed {
+    width: 100%;
+    height: 100%;
   }
 
   @media (max-width: 768px) {
