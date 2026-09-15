@@ -63,8 +63,11 @@ import Blockquote from "../../../../reusecore/Blockquote";
 import Callout from "../../../../reusecore/Callout";
 import CTA_FullWidth from "../../../../components/Call-To-Actions/CTA_FullWidth";
 import CTAImg from "../../../../assets/images/meshery/icon-only/meshery-logo-shadow.webp";
-import heroImage from "./hero-image.jpg";
 ```
+
+Do not import the hero image. The blog template already renders `thumbnail` above the title, so
+embedding it in the body shows the same image twice; `check_post.py` flags it. Import only images
+that appear nowhere else on the page, such as diagrams and screenshots.
 
 For Kanvas posts, swap the CTA:
 
@@ -85,8 +88,8 @@ import MesheryDesignEmbed from "@layer5/meshery-design-embed";
 
 <div className="intro">
   <p>
-    One-paragraph lede that opens with the problem. Platform engineers are busy
-    — give them a reason to keep reading in the first three sentences.
+    One-paragraph lede that opens with the problem. Platform engineers are busy -
+    give them a reason to keep reading in the first three sentences.
   </p>
 </div>
 
@@ -96,7 +99,7 @@ Paragraph with <Link to="/cloud-native-management/meshery">internal links</Link>
 and <a href="https://external.com" target="_blank" rel="noopener noreferrer">external links</a>.
 
 <img
-  src={heroImage}
+  src={diagramImg}
   className="image-center-shadow"
   alt="Descriptive alt text"
 />
@@ -151,7 +154,7 @@ external_link={false}
 
 ```jsx
 <Blockquote
-  quote="Kubernetes is not just container orchestration — it's a platform for building platforms."
+  quote="Kubernetes is not just container orchestration - it's a platform for building platforms."
   person="Lee Calcote"
   title="Founder, Layer5"
 />
@@ -249,14 +252,14 @@ If you need a design that isn't in the table, leave a placeholder comment in the
 
 ```jsx
 {
-  /* TODO: embed design — export from Meshery Playground and add JS bundle to static/embed-test/ */
+  /* TODO: embed design - export from Meshery Playground and add JS bundle to static/embed-test/ */
 }
 ```
 
 ### Images
 
 ```jsx
-<img src={heroImage} className="image-center-shadow" alt="Description" />
+<img src={screenshotImg} className="image-center-shadow" alt="Description" />
 
 <figure className="imgWithCaption fig-right">
   <img src={diagramImg} alt="Diagram showing..." />
