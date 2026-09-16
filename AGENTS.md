@@ -48,9 +48,9 @@ The Layer5 website (https://layer5.io) is a Gatsby.js-based static site that ser
 - **Styling**: Follow the repository's established styling conventions:
   - **styled-components**: Primary styling method across site components and templates. Use theme values and tokens instead of hardcoding colors.
   - **CSS Modules / Emotion**: Used for component-specific styles or dynamic styling where already established in the codebase.
-  - Do not use Tailwind CSS (not used or supported in this repository).
+  - Do not introduce Tailwind CSS; follow the repository's established styling patterns instead.
 - **UI and Sistent Guidance**:
-  - **Component Reuse**: Prefer importing existing UI primitives from `@sistent/sistent` (e.g., `Button`, `Box`, `Card`, `CustomTooltip`, `Typography`, `SistentThemeProvider`) for shared UI elements where the repository uses Sistent, rather than creating duplicate custom components or ad-hoc styles.
+  - **Component Reuse**: Prefer existing UI primitives from `@sistent/sistent` before creating custom components.
   - **Design Contract Reference**:
     - Do not create or maintain a separate `DESIGN.md` in this repository.
     - For Sistent-based UI, treat Sistent's design contract as the source of truth for applicable tokens and component conventions.
