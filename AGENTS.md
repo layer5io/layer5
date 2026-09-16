@@ -45,11 +45,18 @@ The Layer5 website (https://layer5.io) is a Gatsby.js-based static site that ser
   
   export default MyComponent;
   ```
-- **Styling**: Use CSS modules or styled-components as per the project's conventions. Prefer Tailwind CSS classes if integrated. Example:
-
-  ```jsx
-  <div className="bg-blue-500 text-white p-4">Content</div>
-  ```
+- **Styling**: Follow the repository's established styling conventions:
+  - **styled-components**: Primary styling method across site components and templates. Use theme values and tokens instead of hardcoding colors.
+  - **CSS Modules / Emotion**: Used for component-specific styles or dynamic styling where already established in the codebase.
+  - Do not use Tailwind CSS (not used or supported in this repository).
+- **UI and Sistent Guidance**:
+  - **Component Reuse**: Prefer importing existing UI primitives from `@sistent/sistent` (e.g., `Button`, `Box`, `Card`, `CustomTooltip`, `Typography`, `SistentThemeProvider`) for shared UI elements where the repository uses Sistent, rather than creating duplicate custom components or ad-hoc styles.
+  - **Design Contract Reference**:
+    - Do not create or maintain a separate `DESIGN.md` in this repository.
+    - For Sistent-based UI, treat Sistent's design contract as the source of truth for applicable tokens and component conventions.
+    - Prefer `node_modules/@sistent/sistent/DESIGN.md` when it is present in the installed package.
+    - If it is not present, reference the Sistent release matching the version resolved in `package-lock.json`, never `master`.
+    - Avoid hardcoded brand values when an existing Sistent token/theme value is available.
 - **Accessibility**: Ensure all components meet WCAG 2.1 standards (e.g., alt text for images, ARIA labels where needed).
 
 ### 3. Contribution Workflow
@@ -87,7 +94,7 @@ The Layer5 website (https://layer5.io) is a Gatsby.js-based static site that ser
   ## Introduction
   Meshery continues to evolve as the leading platform for...
   ```
-- **Component Generation**: Create reusable React components for UI elements like buttons, cards, or modals, ensuring they match the site's design system.
+- **Component Generation**: Before creating a new UI primitive (e.g., buttons, cards, modals), check whether an appropriate component already exists in `@sistent/sistent`. Ensure any repository-specific UI that cannot use Sistent still follows applicable existing project styling conventions (such as `styled-components` with theme tokens) and matches the site's design system.
 
 ### 6. Validation and Testing
 
@@ -175,4 +182,3 @@ Layer5 has custom agents available for specialized tasks. These agents provide d
 For detailed examples and advanced usage, see `.github/agents/USAGE_EXAMPLES.md`.
 
 By following these guidelines, LLMs can contribute high-quality content and code to the Layer5 website, enhancing its role as a hub for the cloud native community.
-```
