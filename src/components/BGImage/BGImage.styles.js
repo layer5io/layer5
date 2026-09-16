@@ -3,7 +3,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 
 
 export const BGWrapper = styled.div`
-position: relative; flex-center;
+position: relative; justify-content: center;
 `;
 
 export const FakeBGImg = styled(GatsbyImage)`
