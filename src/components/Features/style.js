@@ -92,9 +92,15 @@ export const ImageWrapper = styled.div`
     rotateY(-25deg) rotateZ(4deg);
   transition: transform 1s ease 0s;
 
-  & > img {
+  /* Matches the real aspect ratio of every image this component renders
+     (whiteboarding/commenting/aws, 877x476) so the box is reserved before
+     the image loads instead of shifting surrounding content (CLS). The
+     image sits inside a Link (renders as <a>), not directly under this
+     wrapper, so the selector has to reach through it. */
+  & > a > img {
     width: 100%;
     height: 100%;
+    aspect-ratio: 877 / 476;
     object-fit: contain;
   }
 
@@ -126,9 +132,15 @@ export const ImageWrapperTwo = styled.div`
   transform: translate(170px, 0px);
   transition: transform 1s ease 0s;
 
-  & > img {
+  /* Matches the real aspect ratio of every image this component renders
+     (whiteboarding/commenting/aws, 877x476) so the box is reserved before
+     the image loads instead of shifting surrounding content (CLS). The
+     image sits inside a Link (renders as <a>), not directly under this
+     wrapper, so the selector has to reach through it. */
+  & > a > img {
     width: 100%;
     height: 100%;
+    aspect-ratio: 877 / 476;
     object-fit: contain;
   }
 
