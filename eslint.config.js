@@ -145,6 +145,19 @@ module.exports = [
     },
   },
   {
+    // Local Gatsby plugins under plugins/ carry their own package.json, which
+    // is a package boundary Babel will not look past, so it never finds the
+    // root .babelrc. They are plain CommonJS with no JSX, so parsing them
+    // needs no Babel config at all. Every rule above still applies to them.
+    files: ["plugins/**/*.js"],
+    languageOptions: {
+      sourceType: "commonjs",
+      parserOptions: {
+        requireConfigFile: false,
+      },
+    },
+  },
+  {
     files: ["content-learn/**/*.mdx", "src/pages/**/*.mdx"],
     languageOptions: {
       parser: mdxParser,
