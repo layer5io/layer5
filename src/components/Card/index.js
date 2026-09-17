@@ -34,7 +34,7 @@ const Card = ({
           <Image
             {...thumbnail}
             fitContainer={fitContainer}
-            imgStyle={!fitContainer ? { objectFit: "cover" } : {}}
+            imgStyle={{ objectFit: listView ? "cover" : "contain" }}
             loading={loading}
             fetchpriority={fetchpriority}
             alt={frontmatter.title}

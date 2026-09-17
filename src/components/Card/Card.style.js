@@ -109,7 +109,7 @@ export const CardWrapper = styled.div`
       height: 100%;
       aspect-ratio: 16 / 9;
       display: block;
-      object-fit: ${(props) => (props.$fitContainer ? "contain" : "cover")};
+      object-fit: ${(props) => (props.$listView ? "cover" : "contain")};
       object-position: center;
       margin: 0 auto;
     }
