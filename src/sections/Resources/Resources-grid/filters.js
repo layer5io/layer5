@@ -146,23 +146,19 @@ const Navigation = (props) => {
               {typeOptions[0].subdata.map((x) => {
                 const type =
                   types && types.find((t) => t.fieldValue === x.value);
-                return (
+                return type ? (
                   <li key={x.id}>
                     <label>
-                      {type && (
-                        <>
-                          <input
-                            type="checkbox"
-                            value={x.value}
-                            onChange={props.handleChange}
-                          />
-                          <span> {x.label}</span>
-                          <span className="total">({type.totalCount})</span>
-                        </>
-                      )}
+                      <input
+                        type="checkbox"
+                        value={x.value}
+                        onChange={props.handleChange}
+                      />
+                      <span> {x.label}</span>
+                      <span className="total">({type.totalCount})</span>
                     </label>
                   </li>
-                );
+                ) : null;
               })}
             </ul>
           </div>
@@ -187,23 +183,19 @@ const Navigation = (props) => {
               {productOptions[0].subdata.map((x) => {
                 const product =
                   products && products.find((p) => p.fieldValue === x.value);
-                return (
+                return product ? (
                   <li key={x.id}>
                     <label>
-                      {product && (
-                        <>
-                          <input
-                            type="checkbox"
-                            value={x.value}
-                            onChange={props.handleChange}
-                          />
-                          <span> {x.label}</span>
-                          <span className="total">({product.totalCount})</span>
-                        </>
-                      )}
+                      <input
+                        type="checkbox"
+                        value={x.value}
+                        onChange={props.handleChange}
+                      />
+                      <span> {x.label}</span>
+                      <span className="total">({product.totalCount})</span>
                     </label>
                   </li>
-                );
+                ) : null;
               })}
             </ul>
           </div>
@@ -229,25 +221,19 @@ const Navigation = (props) => {
                 const technology =
                   technologies &&
                   technologies.find((t) => t.fieldValue === x.value);
-                return (
+                return technology ? (
                   <li key={x.id}>
                     <label>
-                      {technology && (
-                        <>
-                          <input
-                            type="checkbox"
-                            value={x.value}
-                            onChange={props.handleChange}
-                          />
-                          <span> {x.label}</span>
-                          <span className="total">
-                            ({technology.totalCount})
-                          </span>
-                        </>
-                      )}
+                      <input
+                        type="checkbox"
+                        value={x.value}
+                        onChange={props.handleChange}
+                      />
+                      <span> {x.label}</span>
+                      <span className="total">({technology.totalCount})</span>
                     </label>
                   </li>
-                );
+                ) : null;
               })}
             </ul>
           </div>
@@ -272,23 +258,19 @@ const Navigation = (props) => {
               {meshOptions[0].subdata.map((x) => {
                 const mesh =
                   meshes && meshes.find((m) => m.fieldValue === x.value);
-                return (
+                return mesh ? (
                   <li key={x.id}>
                     <label>
-                      {mesh && (
-                        <>
-                          <input
-                            type="checkbox"
-                            value={x.value}
-                            onChange={props.handleChange}
-                          />
-                          <span> {x.label}</span>
-                          <span className="total">({mesh.totalCount})</span>
-                        </>
-                      )}
+                      <input
+                        type="checkbox"
+                        value={x.value}
+                        onChange={props.handleChange}
+                      />
+                      <span> {x.label}</span>
+                      <span className="total">({mesh.totalCount})</span>
                     </label>
                   </li>
-                );
+                ) : null;
               })}
             </ul>
           </div>
