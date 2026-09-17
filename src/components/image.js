@@ -32,20 +32,13 @@ const Image = ({
 
   if (!childImageSharp && extension === "svg") {
     return (
-      <div
-        className="old-gatsby-image-wrapper"
-        style={{ width: "100%", height: "100%" }}
-      >
+      <div className="old-gatsby-image-wrapper" style={computedWrapperStyle}>
         <img
           key={publicURL}
           src={publicURL}
           alt={alt || "Blog image"}
           width="100%"
-          style={{
-            objectFit: imgStyle?.objectFit || "cover",
-            height: "100%",
-            ...imgStyle,
-          }}
+          style={computedImgStyle}
         />
       </div>
     );
