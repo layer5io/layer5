@@ -57,8 +57,9 @@ export const CardWrapper = styled.div`
 
   .post-thumb-block {
     overflow: hidden;
-    height: ${(props) => (props.$listView ? "auto" : "11.5rem")};
-    width: ${(props) => (props.$listView ? "25%" : "auto")};
+    width: ${(props) => (props.$listView ? "25%" : "100%")};
+    aspect-ratio: 16 / 9;
+    height: auto;
     border-top-right-radius: ${(props) => (props.$listView ? "0" : "0.5rem")};
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: ${(props) => (props.$listView ? "0.5rem" : "0")};
@@ -86,6 +87,7 @@ export const CardWrapper = styled.div`
     .old-gatsby-image-wrapper {
       width: 100%;
       height: 100%;
+      aspect-ratio: 16 / 9;
       margin-top: 0;
       transition: all 0.3s ease-in;
       display: flex;
@@ -103,16 +105,17 @@ export const CardWrapper = styled.div`
     .old-gatsby-image-wrapper img {
       max-width: 100%;
       max-height: 100%;
-      width: ${(props) => (props.$listView ? "100%" : "auto")};
-      height: ${(props) => (props.$listView ? "100%" : "auto")};
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 16 / 9;
       display: block;
-      object-fit: ${(props) => (props.$listView ? "cover" : "contain")};
+      object-fit: ${(props) => (props.$fitContainer ? "contain" : "cover")};
       object-position: center;
       margin: 0 auto;
     }
 
     @media screen and (max-width: 768px) {
-      height: ${(props) => (props.$listView ? "auto" : "9.5rem")};
+      height: auto;
     }
   }
 
@@ -133,8 +136,8 @@ export const CardWrapper = styled.div`
     `
     @media screen and (max-width: 1200px) and (min-width: 992px) {
       .post-thumb-block {
-        height: ${(props) => (props.$fitContainer ? "10rem" : "auto")};
-        min-height: 10rem;
+        height: auto;
+        aspect-ratio: 16 / 9;
       }
       .post-content-block {
         height: auto;
@@ -166,7 +169,8 @@ export const CardWrapper = styled.div`
       }
       .post-thumb-block {
         width: 100%;
-        height: 12rem;
+        height: auto;
+        aspect-ratio: 16 / 9;
         border-top-right-radius: 0.5rem;
         border-bottom-left-radius: 0;
       }

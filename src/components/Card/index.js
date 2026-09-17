@@ -15,26 +15,32 @@ const Card = ({
   fitContainer = false,
 }) => {
   const { isDark } = useStyledDarkMode();
+  const thumbnail =
+    isDark &&
+    frontmatter.darkthumbnail &&
+    frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail?.publicURL
+      ? frontmatter.darkthumbnail
+      : frontmatter.thumbnail;
+
+  const thumbnailWidth =
+    thumbnail?.childImageSharp?.gatsbyImageData?.width || 480;
+  const thumbnailHeight =
+    thumbnail?.childImageSharp?.gatsbyImageData?.height || 270;
+
   return (
-    <CardWrapper
-      fixed={!!frontmatter.abstract}
-      $listView={listView}
-      $fitContainer={fitContainer}
-    >
+    <CardWrapper $listView={listView} $fitContainer={fitContainer}>
       <div className="post-block">
         <div className="post-thumb-block">
           <Image
-            {...(isDark &&
-            frontmatter.darkthumbnail &&
-            frontmatter.darkthumbnail.publicURL !==
-              frontmatter.thumbnail.publicURL
-              ? frontmatter.darkthumbnail
-              : frontmatter.thumbnail)}
+            {...thumbnail}
             fitContainer={fitContainer}
             imgStyle={!fitContainer ? { objectFit: "cover" } : {}}
             loading={loading}
             fetchpriority={fetchpriority}
             alt={frontmatter.title}
+            width={thumbnailWidth}
+            height={thumbnailHeight}
+            aspectRatio={16 / 9}
           />
         </div>
         <div className="post-content-block">
