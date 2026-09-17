@@ -34,15 +34,18 @@ const Image = ({
     return (
       <div
         className="old-gatsby-image-wrapper"
-        style={computedWrapperStyle}
+        style={{ width: "100%", height: "100%" }}
       >
         <img
           key={publicURL}
           src={publicURL}
           alt={alt || "Blog image"}
           width="100%"
-          height={fitContainer ? "100%" : "auto"}
-          style={computedImgStyle}
+          style={{
+            objectFit: imgStyle?.objectFit || "cover",
+            height: "100%",
+            ...imgStyle,
+          }}
         />
       </div>
     );
