@@ -5,7 +5,7 @@ const {
   getExcludedCollections,
   isFullSiteBuild,
 } = require("./src/utils/build-collections");
-const rehypeFixParagraphNesting = require("./rehype-fix-paragraph-nesting");
+const rehypeFixDomNesting = require("./rehype-fix-dom-nesting");
 
 const isDevelopment = process.env.NODE_ENV === "development";
 const isProduction = process.env.NODE_ENV === "production";
@@ -517,7 +517,7 @@ module.exports = {
         mdxOptions: {
           // Keeps MDX from emitting block-level content inside <p>, which the
           // browser's parser re-shapes and React then fails to hydrate.
-          rehypePlugins: [rehypeFixParagraphNesting],
+          rehypePlugins: [rehypeFixDomNesting],
         },
       },
     },

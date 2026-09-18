@@ -1,28 +1,36 @@
 /* eslint-env node */
 
 /**
- * rehype plugin: keep block-level content out of <p> elements.
+ * rehype plugin: emit markup the HTML parser will not rearrange.
  *
- * MDX parses the body of a multi-line JSX element as Markdown, so authoring
+ * React hydration compares the tree it renders against the DOM the browser
+ * parsed from the server-rendered HTML. Where those disagree, hydration fails
+ * ("Minified React error #418") and, with no Suspense boundary to recover into,
+ * React discards the server markup and re-renders the whole root on the client
+ * ("Minified React error #423"). Markup the parser silently restructures is
+ * therefore a hydration bug, even when it renders the way the author intended.
  *
- *   <p>
- *     Some text.
- *   </p>
+ * Two shapes show up in MDX content:
  *
- * compiles to `<p><p>Some text.</p></p>`. The same happens whenever a heading,
- * list, table, <div> or code block is written inside a hand-written <p>.
+ * 1. Block-level content inside a <p>. MDX parses the body of a multi-line JSX
+ *    element as Markdown, so authoring
  *
- * That markup is invalid HTML. When the browser parses the server-rendered
- * page it silently closes the outer <p> before the block-level child, so the
- * parsed DOM no longer matches the tree React renders on the client. React then
- * fails hydration ("Minified React error #418") and, having no Suspense
- * boundary to recover into, discards the server markup and re-renders the whole
- * root on the client ("Minified React error #423").
+ *      <p>
+ *        Some text.
+ *      </p>
  *
- * This plugin rewrites the tree so the emitted HTML is valid: nested paragraphs
- * are collapsed into their parent, and any other block-level child is hoisted
- * out of the paragraph the way the HTML parser would place it. The parsed DOM
- * then matches React's tree and hydration succeeds.
+ *    compiles to `<p><p>Some text.</p></p>`, and the parser closes the outer <p>
+ *    before the nested one. The same happens for a heading, list, table, <div>
+ *    or code block written inside a hand-written <p>.
+ *
+ * 2. Table rows and cells written without their section. `<table><tr>` and
+ *    `<thead><th>` are how people write tables by hand, but the parser inserts
+ *    the implied <tbody> and <tr>, so every row lands one level deeper than
+ *    React put it.
+ *
+ * This plugin applies the parser's own rules at build time - hoisting block
+ * children out of paragraphs, and inserting the table sections and rows the
+ * parser would - so the emitted HTML survives a round trip through it.
  */
 
 // Elements whose start tag implicitly closes an open <p> (HTML Standard,
@@ -72,6 +80,12 @@ const BLOCK_LEVEL_TAGS = new Set([
 // element the component renders — invalid there for every variant it supports.
 const PARAGRAPH_COMPONENTS = new Set(["Typography"]);
 
+// Table structure the parser fills in when rows or cells are written bare.
+const TABLE_SECTION_TAGS = new Set(["thead", "tbody", "tfoot"]);
+const TABLE_CELL_TAGS = new Set(["td", "th"]);
+// Stray text in any of these is "foster parented" out of the table entirely.
+const TABLE_INTERNAL_TAGS = new Set(["table", "thead", "tbody", "tfoot", "tr"]);
+
 const tagNameOf = (node) => {
   if (!node || typeof node !== "object") return null;
   if (node.type === "element") return node.tagName;
@@ -80,6 +94,8 @@ const tagNameOf = (node) => {
   }
   return null;
 };
+
+const lowerTagNameOf = (node) => (tagNameOf(node) || "").toLowerCase();
 
 const isBlockLevel = (node) => {
   const tagName = tagNameOf(node);
@@ -198,6 +214,55 @@ const splitParagraph = (paragraph) => {
   return siblings;
 };
 
+// Group each run of children the parser would gather under an implied element.
+const wrapRunsOfChildren = (node, belongsInWrapper, wrapperTagName) => {
+  if (!node.children.some(belongsInWrapper)) return;
+
+  const children = [];
+  let run = [];
+  const flushRun = () => {
+    if (run.length) {
+      children.push({
+        type: "element",
+        tagName: wrapperTagName,
+        properties: {},
+        children: run,
+      });
+      run = [];
+    }
+  };
+
+  for (const child of node.children) {
+    if (belongsInWrapper(child)) run.push(child);
+    else {
+      flushRun();
+      children.push(child);
+    }
+  }
+  flushRun();
+  node.children = children;
+};
+
+// Insert the <tbody> and <tr> the parser would, and drop the whitespace it
+// would hoist out of the table, so the markup round-trips through the parser.
+const fixTableStructure = (node) => {
+  const tagName = lowerTagNameOf(node);
+  if (!TABLE_INTERNAL_TAGS.has(tagName)) return;
+
+  node.children = node.children.filter((child) => !isBlankText(child));
+
+  const isCell = (child) => TABLE_CELL_TAGS.has(lowerTagNameOf(child));
+  const isRow = (child) => lowerTagNameOf(child) === "tr";
+
+  if (TABLE_SECTION_TAGS.has(tagName)) {
+    wrapRunsOfChildren(node, isCell, "tr");
+  } else if (tagName === "table") {
+    // A bare cell implies a row as well as a section, so wrap cells first.
+    wrapRunsOfChildren(node, isCell, "tr");
+    wrapRunsOfChildren(node, isRow, "tbody");
+  }
+};
+
 // Depth-first, so a paragraph that only becomes invalid after its own children
 // are normalised is still handled by its parent on the way back up.
 const fixParagraphNesting = (node) => {
@@ -205,6 +270,7 @@ const fixParagraphNesting = (node) => {
 
   node.children.forEach(fixParagraphNesting);
   liftSoleParagraphFromComponent(node);
+  fixTableStructure(node);
 
   const children = [];
   for (const child of node.children) {
@@ -223,11 +289,11 @@ const fixParagraphNesting = (node) => {
   node.children = children;
 };
 
-const rehypeFixParagraphNesting = () => (tree) => {
+const rehypeFixDomNesting = () => (tree) => {
   fixParagraphNesting(tree);
   return tree;
 };
 
-module.exports = rehypeFixParagraphNesting;
+module.exports = rehypeFixDomNesting;
 module.exports.BLOCK_LEVEL_TAGS = BLOCK_LEVEL_TAGS;
 module.exports.PARAGRAPH_COMPONENTS = PARAGRAPH_COMPONENTS;
