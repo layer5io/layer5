@@ -143,20 +143,26 @@ const collapseSoleNestedParagraph = (paragraph) => {
 // a body deliberately written as several paragraphs is left as the author wrote
 // it, since the component would have to be given a block-level `component` prop
 // for that to be valid anyway.
-const liftSoleParagraphFromComponent = (node) => {
+const isParagraphComponent = (node) => {
   const name = tagNameOf(node);
-  if (!name || !PARAGRAPH_COMPONENTS.has(name)) return;
-  if (!Array.isArray(node.children)) return;
+  return !!name && PARAGRAPH_COMPONENTS.has(name);
+};
 
-  const content = node.children.filter((child) => !isBlankText(child));
-  if (
-    content.length !== 1 ||
-    !isParagraph(content[0]) ||
-    hasAttributes(content[0])
-  )
-    return;
+// `<Typography>` and friends render one text element, so a Markdown paragraph
+// in their body is always misplaced. Each paragraph becomes its own copy of the
+// component, which keeps the author's paragraph breaks and their styling: a
+// body written as two paragraphs renders as two, rather than running together.
+// A paragraph carrying its own markup is kept instead of the component wrapper,
+// since the more specific attributes are the ones worth preserving.
+const liftParagraphsFromComponent = (component) => {
+  const content = component.children.filter((child) => !isBlankText(child));
+  if (!content.length || !content.every(isParagraph)) return [component];
 
-  node.children = content[0].children;
+  return content.map((paragraph) =>
+    hasAttributes(paragraph)
+      ? paragraph
+      : withChildren(component, paragraph.children),
+  );
 };
 
 // A paragraph reached through inline wrappers is invalid too
@@ -179,37 +185,79 @@ const unwrapInlineParagraphs = (node) => {
   node.children = children;
 };
 
-// Turn one paragraph into the sequence of siblings a browser would produce:
-// inline runs stay in a paragraph, block-level children become siblings.
-const splitParagraph = (paragraph) => {
-  const siblings = [];
-  let inlineRun = [];
-  let isFirstSegment = true;
+const withChildren = (node, children) => {
+  const copy = { ...node, children };
+  delete copy.position;
+  return copy;
+};
 
+// A block reached through inline wrappers (`<p><em>a<div>B</div>c</em></p>`)
+// closes the paragraph just as a direct child would, so it has to be found at
+// any inline depth.
+const containsBlockLevel = (node) =>
+  Array.isArray(node.children) &&
+  node.children.some(
+    (child) => isBlockLevel(child) || containsBlockLevel(child),
+  );
+
+// Separate a run of children into the inline pieces and block-level pieces the
+// parser would end up with, splitting inline wrappers around any block they
+// contain: `<em>a<div>B</div>c</em>` becomes `<em>a</em>`, `<div>B</div>`,
+// `<em>c</em>`, which is what the parser builds when it reconstructs the
+// formatting element after the block.
+const partitionAroundBlocks = (children) => {
+  const pieces = [];
+  let inlineRun = [];
   const flushInlineRun = () => {
-    if (inlineRun.some((child) => !isBlankText(child))) {
-      if (isFirstSegment) {
-        paragraph.children = inlineRun;
-        siblings.push(paragraph);
-      } else {
-        const segment = { ...paragraph, children: inlineRun };
-        delete segment.position;
-        siblings.push(segment);
-      }
-      isFirstSegment = false;
+    if (inlineRun.length) {
+      pieces.push({ inline: inlineRun });
+      inlineRun = [];
     }
-    inlineRun = [];
   };
 
-  for (const child of paragraph.children) {
+  for (const child of children) {
     if (isBlockLevel(child)) {
       flushInlineRun();
-      siblings.push(child);
+      pieces.push({ block: child });
+    } else if (containsBlockLevel(child)) {
+      for (const piece of partitionAroundBlocks(child.children)) {
+        if (piece.block) {
+          flushInlineRun();
+          pieces.push(piece);
+        } else {
+          inlineRun.push(withChildren(child, piece.inline));
+        }
+      }
     } else {
       inlineRun.push(child);
     }
   }
   flushInlineRun();
+
+  return pieces;
+};
+
+// Turn one paragraph into the sequence of siblings a browser would produce:
+// inline runs stay in a paragraph, block-level content becomes a sibling.
+const splitParagraph = (paragraph) => {
+  const siblings = [];
+  let isFirstSegment = true;
+
+  for (const piece of partitionAroundBlocks(paragraph.children)) {
+    if (piece.block) {
+      siblings.push(piece.block);
+      continue;
+    }
+    if (piece.inline.every(isBlankText)) continue;
+
+    if (isFirstSegment) {
+      paragraph.children = piece.inline;
+      siblings.push(paragraph);
+      isFirstSegment = false;
+    } else {
+      siblings.push(withChildren(paragraph, piece.inline));
+    }
+  }
 
   return siblings;
 };
@@ -243,13 +291,10 @@ const wrapRunsOfChildren = (node, belongsInWrapper, wrapperTagName) => {
   node.children = children;
 };
 
-// Insert the <tbody> and <tr> the parser would, and drop the whitespace it
-// would hoist out of the table, so the markup round-trips through the parser.
+// Insert the <tbody> and <tr> the parser would, so the markup round-trips.
 const fixTableStructure = (node) => {
   const tagName = lowerTagNameOf(node);
   if (!TABLE_INTERNAL_TAGS.has(tagName)) return;
-
-  node.children = node.children.filter((child) => !isBlankText(child));
 
   const isCell = (child) => TABLE_CELL_TAGS.has(lowerTagNameOf(child));
   const isRow = (child) => lowerTagNameOf(child) === "tr";
@@ -263,18 +308,55 @@ const fixTableStructure = (node) => {
   }
 };
 
+// Text between a table's rows and cells belongs to no cell, so the parser
+// "foster parents" it: the text is moved out to just before the table. Doing
+// the same here keeps the emitted markup and the parsed DOM in step. Whitespace
+// is simply dropped, since it renders as nothing once outside the table.
+const fosterParentStrayText = (table) => {
+  const strayText = [];
+
+  const collect = (node) => {
+    if (!TABLE_INTERNAL_TAGS.has(lowerTagNameOf(node))) return;
+    node.children = node.children.filter((child) => {
+      if (child.type !== "text") {
+        collect(child);
+        return true;
+      }
+      if (!isBlankText(child)) strayText.push(child);
+      return false;
+    });
+  };
+  collect(table);
+
+  return strayText;
+};
+
 // Depth-first, so a paragraph that only becomes invalid after its own children
 // are normalised is still handled by its parent on the way back up.
 const fixParagraphNesting = (node) => {
   if (!node || !Array.isArray(node.children)) return;
 
   node.children.forEach(fixParagraphNesting);
-  liftSoleParagraphFromComponent(node);
   fixTableStructure(node);
 
   const children = [];
   for (const child of node.children) {
-    if (!isParagraph(child) || !Array.isArray(child.children)) {
+    if (!Array.isArray(child.children)) {
+      children.push(child);
+      continue;
+    }
+
+    if (lowerTagNameOf(child) === "table") {
+      children.push(...fosterParentStrayText(child), child);
+      continue;
+    }
+
+    if (isParagraphComponent(child)) {
+      children.push(...liftParagraphsFromComponent(child));
+      continue;
+    }
+
+    if (!isParagraph(child)) {
       children.push(child);
       continue;
     }
@@ -282,7 +364,7 @@ const fixParagraphNesting = (node) => {
     const paragraph = collapseSoleNestedParagraph(child);
     unwrapInlineParagraphs(paragraph);
 
-    if (paragraph.children.some(isBlockLevel))
+    if (containsBlockLevel(paragraph))
       children.push(...splitParagraph(paragraph));
     else children.push(paragraph);
   }
