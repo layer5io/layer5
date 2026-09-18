@@ -100,18 +100,31 @@ const InlineCode = ({ children }) => {
   );
 };
 
+// A fenced code block compiles to <pre><code className="language-x">text</code></pre>.
+// MDX v1 tagged that child with `mdxType: "code"`; MDX v2+ does not, so matching
+// on it rendered every fenced block as nothing. Detect the shape instead, and
+// fall back to a plain <pre> rather than returning undefined.
+const FencedCode = ({ children, ...preProps }) => {
+  const child = React.Children.toArray(children)[0];
+  const code = React.isValidElement(child) ? child.props.children : undefined;
+
+  if (typeof code !== "string") {
+    return <pre {...preProps}>{children}</pre>;
+  }
+
+  // Drop only the newline the MDX compiler appends; trim() would also strip
+  // meaningful indentation on the first line (e.g. a nested YAML snippet).
+  const language = child.props.className?.replace(/^language-/, "");
+  return (
+    <Code
+      codeString={code.replace(/\r?\n$/, "")}
+      language={language || undefined}
+    />
+  );
+};
+
 const components = {
-  pre: ({ children: { props } }) => {
-    if (props.mdxType === "code") {
-      return (
-        <Code
-          codeString={props.children.trim()}
-          language={props.className && props.className.replace("language-", "")}
-          {...props}
-        />
-      );
-    }
-  },
+  pre: FencedCode,
   img: OptimizedImage,
   code: InlineCode,
   CTA_ImageOnly,
