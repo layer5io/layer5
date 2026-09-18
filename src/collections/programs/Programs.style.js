@@ -117,7 +117,7 @@ export const ProgramsWrapper = styled.div`
       display: block;
       float: none;
       width: 35vw;
-      margin: 0 auto 30px auto;
+      margin: 0 auto 40px auto !important;
     }
   }
   .lfx_logo {
