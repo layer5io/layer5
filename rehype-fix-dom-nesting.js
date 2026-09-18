@@ -155,6 +155,8 @@ const isParagraphComponent = (node) => {
 // A paragraph carrying its own markup is kept instead of the component wrapper,
 // since the more specific attributes are the ones worth preserving.
 const liftParagraphsFromComponent = (component) => {
+  // Blank text is ignored when deciding what to do, but the children are walked
+  // as written: whitespace between two inline children is a word separator.
   const content = component.children.filter((child) => !isBlankText(child));
   const needsWork = content.some(
     (child) =>
@@ -165,13 +167,13 @@ const liftParagraphsFromComponent = (component) => {
   const siblings = [];
   let inlineRun = [];
   const flushInlineRun = () => {
-    if (inlineRun.length) {
+    if (inlineRun.some((child) => !isBlankText(child))) {
       siblings.push(withChildren(component, inlineRun));
-      inlineRun = [];
     }
+    inlineRun = [];
   };
 
-  for (const child of content) {
+  for (const child of component.children) {
     if (isParagraph(child)) {
       flushInlineRun();
       // A paragraph carrying its own markup is kept in place of the component
