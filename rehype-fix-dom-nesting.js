@@ -156,13 +156,45 @@ const isParagraphComponent = (node) => {
 // since the more specific attributes are the ones worth preserving.
 const liftParagraphsFromComponent = (component) => {
   const content = component.children.filter((child) => !isBlankText(child));
-  if (!content.length || !content.every(isParagraph)) return [component];
-
-  return content.map((paragraph) =>
-    hasAttributes(paragraph)
-      ? paragraph
-      : withChildren(component, paragraph.children),
+  const needsWork = content.some(
+    (child) =>
+      isParagraph(child) || isBlockLevel(child) || containsBlockLevel(child),
   );
+  if (!content.length || !needsWork) return [component];
+
+  const siblings = [];
+  let inlineRun = [];
+  const flushInlineRun = () => {
+    if (inlineRun.length) {
+      siblings.push(withChildren(component, inlineRun));
+      inlineRun = [];
+    }
+  };
+
+  for (const child of content) {
+    if (isParagraph(child)) {
+      flushInlineRun();
+      // A paragraph carrying its own markup is kept in place of the component
+      // wrapper, since the more specific attributes are worth preserving.
+      siblings.push(
+        hasAttributes(child) ? child : withChildren(component, child.children),
+      );
+      continue;
+    }
+    // Anything else block-level cannot live in a text element at all, so it
+    // moves out beside the component, exactly as the parser would place it.
+    for (const piece of partitionAroundBlocks([child])) {
+      if (piece.block) {
+        flushInlineRun();
+        siblings.push(piece.block);
+      } else {
+        inlineRun.push(...piece.inline);
+      }
+    }
+  }
+  flushInlineRun();
+
+  return siblings.length ? siblings : [component];
 };
 
 // A paragraph reached through inline wrappers is invalid too
