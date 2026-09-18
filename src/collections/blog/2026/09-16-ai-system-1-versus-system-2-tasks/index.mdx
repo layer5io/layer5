@@ -41,13 +41,38 @@ The labels come from cognitive science, but they are useful shorthand in AI engi
 
 **System 2 tasks** are deliberate, multi-step, and verification-heavy. They look like debugging an unfamiliar code path, comparing competing plans, reconciling conflicting requirements, solving math or logic problems, or deciding whether a command should actually be run in production. These jobs punish shallow confidence and reward models that reason carefully.
 
-| Task shape | System 1 fit | System 2 fit |
-| ---------- | ------------ | ------------ |
-| Email or ticket triage | Excellent | Usually unnecessary |
-| First-pass summarization | Excellent | Useful only for high-stakes summaries |
-| Multi-file refactors | Weak alone | Strong |
-| Root-cause analysis | Risky alone | Strong |
-| Tool orchestration with safety checks | Limited | Strong |
+<table>
+    <tr>
+        <td>Task shape</td>
+        <td>System 1 fit</td>
+        <td>System 2 fit</td>
+    </tr>
+    <tr>
+        <td>Email or ticket triage</td>
+        <td>Excellent</td>
+        <td>Usually unnecessary</td>
+    </tr>
+    <tr>
+        <td>First-pass summarization</td>
+        <td>Excellent</td>
+        <td>Useful only for high-stakes summaries</td>
+    </tr>
+    <tr>
+        <td>Multi-file refactors</td>
+        <td>Weak alone</td>
+        <td>Strong</td>
+    </tr>
+    <tr>
+        <td>Root-cause analysis</td>
+        <td>Risky alone</td>
+        <td>Strong</td>
+    </tr>
+    <tr>
+        <td>Tool orchestration with safety checks</td>
+        <td>Limited</td>
+        <td>Strong</td>
+    </tr>
+</table>
 
 <Callout type="note" title="A useful mental model, not a law of physics">
   <p>The same model can perform both categories. The distinction is about task shape, latency budget, and how much explicit reasoning and verification the workflow requires.</p>
