@@ -41,9 +41,9 @@ const FeaturesContainer = () => {
       redirectLink: "",
       desc: (
         <span>
-          Incorporate AWS <i>and</i>{" "} GCP components into Kanvas designs for
-          comprehensive <i>and</i>{" "} intuitive system mapping, documentation, <i>and</i>{" "}
-          orchestration.
+          Incorporate AWS <i>and</i> GCP components into Kanvas designs for
+          comprehensive <i>and</i> intuitive system mapping, documentation,{" "}
+          <i>and</i> orchestration.
         </span>
       ),
       imgLink: isDark ? AWSImage : AWSImageLight,
@@ -53,6 +53,9 @@ const FeaturesContainer = () => {
           text: "Amazon Web Services",
           image: isDark ? AWSLogoDark : AWSLogoLight,
           alt: "Amazon Web Services Logo",
+          // Real SVG is 2500x1465 - reserving this ratio at width=40 avoids a layout shift once it loads.
+          width: 40,
+          height: 23,
           redirect:
             "/cloud-native-management/generate-aws-architecture-diagram",
         },
@@ -60,6 +63,9 @@ const FeaturesContainer = () => {
           text: "Google Cloud Platform",
           image: GCPLogo,
           alt: "Logo Google Cloud Platform",
+          // Real SVG is 256x228.
+          width: 40,
+          height: 36,
           redirect:
             "/cloud-native-management/generate-gcp-architecture-diagram",
         },
@@ -73,7 +79,7 @@ const FeaturesContainer = () => {
       desc: "Crafting cloud-native symphonies: Our engineering diagramming tool is your conductor's baton, turning Kubernetes infrastructure into a canvas for freestyle orchestration.",
       imgLink: isDark ? WhiteboardingImage : WhiteboardingImageLight,
       cursor: true,
-    }
+    },
   ];
 
   useEffect(() => {
