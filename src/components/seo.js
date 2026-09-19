@@ -25,10 +25,10 @@ export const useSiteMetadata = () => {
 
 const SEO = ({
   canonical,
-  description,
-  image,
+  description = "",
+  image = null,
   schemaMarkup,
-  title,
+  title = null,
   children,
 }) => {
   const { pathname } = useLocation();
@@ -104,14 +104,6 @@ const SEO = ({
       {children}
     </>
   );
-};
-
-SEO.defaultProps = {
-  title: null,
-  lang: "en",
-  meta: [],
-  description: "",
-  image: null,
 };
 
 SEO.propTypes = {
