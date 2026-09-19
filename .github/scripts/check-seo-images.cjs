@@ -3,12 +3,6 @@
 const fs = require("fs");
 const path = require("path");
 
-const repoRoot = path.resolve(__dirname, "..", "..");
-const sourceRoot = path.join(repoRoot, "src");
-const assetRoots = [
-  path.join(repoRoot, "static"),
-  path.join(repoRoot, "public"),
-];
 const sourceExtensions = new Set([".js", ".jsx", ".ts", ".tsx", ".mdx"]);
 
 function walk(directory) {
@@ -88,49 +82,74 @@ function findLocalSeoImages(source) {
   return references;
 }
 
-const failures = [];
+function validateSeoImages({ repoRoot, sourceRoot, assetRoots }) {
+  const failures = [];
 
-for (const sourceFile of walk(sourceRoot)) {
-  if (!sourceExtensions.has(path.extname(sourceFile))) continue;
+  for (const sourceFile of walk(sourceRoot)) {
+    if (!sourceExtensions.has(path.extname(sourceFile))) continue;
 
-  const source = fs.readFileSync(sourceFile, "utf8");
-  const relativeSource = path.relative(repoRoot, sourceFile);
+    const source = fs.readFileSync(sourceFile, "utf8");
+    const relativeSource = path.relative(repoRoot, sourceFile);
 
-  for (const reference of findLocalSeoImages(source)) {
-    if (!reference.imagePath.startsWith("/")) {
-      failures.push(
-        `${relativeSource}:${reference.line} invalid local SEO image ${reference.imagePath} (use a root-relative path backed by static or public)`,
-      );
-      continue;
-    }
+    for (const reference of findLocalSeoImages(source)) {
+      if (!reference.imagePath.startsWith("/")) {
+        failures.push(
+          `${relativeSource}:${reference.line} invalid local SEO image ${reference.imagePath} (use a root-relative path backed by static or public)`,
+        );
+        continue;
+      }
 
-    const pathname = reference.imagePath.split(/[?#]/, 1)[0];
-    const relativeAsset = path.posix
-      .normalize(pathname)
-      .replace(/^\/+/, "");
+      const pathname = reference.imagePath.split(/[?#]/, 1)[0];
+      const relativeAsset = path.posix
+        .normalize(pathname)
+        .replace(/^\/+/, "");
 
-    if (relativeAsset.startsWith("../") || path.isAbsolute(relativeAsset)) {
-      failures.push(
-        `${relativeSource}:${reference.line} invalid local SEO image path ${reference.imagePath}`,
-      );
-      continue;
-    }
+      if (relativeAsset.startsWith("../") || path.isAbsolute(relativeAsset)) {
+        failures.push(
+          `${relativeSource}:${reference.line} invalid local SEO image path ${reference.imagePath}`,
+        );
+        continue;
+      }
 
-    const candidates = assetRoots.map((root) => path.join(root, relativeAsset));
-    if (!candidates.some((candidate) => fs.existsSync(candidate))) {
-      failures.push(
-        `${relativeSource}:${reference.line} missing local SEO image ${reference.imagePath} (expected ${path.relative(repoRoot, candidates[0])} or ${path.relative(repoRoot, candidates[1])})`,
-      );
+      const candidates = assetRoots.map((root) => path.join(root, relativeAsset));
+      if (!candidates.some((candidate) => fs.existsSync(candidate))) {
+        failures.push(
+          `${relativeSource}:${reference.line} missing local SEO image ${reference.imagePath} (expected ${path.relative(repoRoot, candidates[0])} or ${path.relative(repoRoot, candidates[1])})`,
+        );
+      }
     }
   }
+
+  return failures;
 }
 
-if (failures.length > 0) {
-  console.error("Local SEO image validation failed:");
-  for (const failure of failures) {
-    console.error(`- ${failure}`);
+function main() {
+  const repoRoot = path.resolve(__dirname, "..", "..");
+  const sourceRoot = path.join(repoRoot, "src");
+  const assetRoots = [
+    path.join(repoRoot, "static"),
+    path.join(repoRoot, "public"),
+  ];
+  const failures = validateSeoImages({ repoRoot, sourceRoot, assetRoots });
+
+  if (failures.length > 0) {
+    console.error("Local SEO image validation failed:");
+    for (const failure of failures) {
+      console.error(`- ${failure}`);
+    }
+    process.exitCode = 1;
+    return;
   }
-  process.exit(1);
+
+  console.log("All local SEO image references resolve.");
 }
 
-console.log("All local SEO image references resolve.");
+if (require.main === module) {
+  main();
+}
+
+module.exports = {
+  findLocalSeoImages,
+  findSeoOpeningTags,
+  validateSeoImages,
+};

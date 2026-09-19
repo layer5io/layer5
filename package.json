@@ -29,6 +29,7 @@
     "checklint": "eslint .",
     "check:contributing-versions": "node .github/scripts/check-contributing-versions.cjs",
     "check:seo-images": "node .github/scripts/check-seo-images.cjs",
+    "test:seo-images": "node --test .github/scripts/check-seo-images.test.cjs",
     "pretest": "eslint --ignore-path .gitignore .",
     "preload-fonts": "gatsby-preload-fonts",
     "deploy": "gatsby build && gh-pages -d public -b master",
