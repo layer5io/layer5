@@ -1,0 +1,153 @@
+---
+title: Infor's Adoption of Layer5 Meshery and Kanvas
+subtitle: Infor runs Meshery as the design and collaboration plane for its industry cloud platform engineering
+permalink: case-study/infors-adoption-of-meshery-and-kanvas
+date: 2026-09-19 08:00:00 -0530
+author: Layer5 Team
+thumbnail: ./infor-meshery.svg
+darkthumbnail: ./infor-meshery.svg
+description: "How Infor uses Layer5-hosted Meshery as the design and collaboration plane for platform engineering — championed by Meshery Extensions maintainer Pontus Ringblom"
+type: Case Study
+category: Case Study
+tags:
+  - Cloud Native, Meshery
+featured: false
+published: true
+resource: true
+---
+
+import { ResourcesWrapper } from "../../Resources.style.js";
+import { INFORfacts, INFORintro, INFORbenefits } from "./infor.style.js";
+import Button from "../../../../reusecore/Button";
+import GlobeIcon from "./globe.svg";
+import UsersIcon from "./users.svg";
+import NetworkIcon from "./network.svg";
+import LayersIcon from "./layers.svg";
+import InlineQuotes from "../../../../components/Inline-quotes";
+
+<ResourcesWrapper>
+
+<INFORintro>
+Infor — a global leader in business cloud software for industry-specific markets — runs Meshery as the design and collaboration plane for its platform engineering. Like TCS Labs, Infor's Meshery deployment is hosted by Layer5: a multi-tenant management plane where platform teams design, govern, and operate cloud-native infrastructure together, instead of passing YAML back and forth.
+</INFORintro>
+
+<div style={{display: "flex", justifyContent: "center", padding: "2%"}}>
+
+   <Button $secondary title="Download Case Study" alt="Download Infor's Adoption of Layer5 Meshery and Kanvas" $url="/case-studies/infor-adoption-of-layer5-meshery-and-kanvas.pdf" />
+
+</div>
+
+## Who Infor is
+
+Infor is a global leader in business cloud software products for companies in industry-specific markets. It builds complete industry suites in the cloud — spanning ERP, human capital management, supply chain, enterprise asset management, and more — for manufacturing, healthcare, distribution, automotive, retail, hospitality, and the public sector. A subsidiary of Koch Industries headquartered in Atlanta, Georgia, Infor's software is designed for progress: over 60,000 organizations worldwide rely on it to overcome market disruptions and achieve business-wide digital transformation.
+
+The company's scale, as published on its LinkedIn profile:
+
+- **17,000+** employees
+- **60,000+** organizations relying on Infor
+- **175+** countries with customers
+- **100+** offices
+- **15,000+** cloud customers
+
+<INFORfacts>
+   <tr><td colspan="2"><h4>INFOR FAST FACTS</h4></td></tr>
+   <tr>
+      <td>
+      <img src={UsersIcon} />
+      <b>Global scale:</b> 17,000+ employees building industry-specific cloud suites used by 60,000+ organizations in 175+ countries.
+      </td>
+      <td>
+      <img src={GlobeIcon} />
+      <b>Industry clouds:</b> complete, purpose-built suites for manufacturing, healthcare, distribution, automotive, retail, hospitality, and the public sector.
+      </td>
+   </tr>
+   <tr>
+      <td>
+      <img src={NetworkIcon} />
+      <b>Layer5-hosted Meshery:</b> like TCS Labs, Infor runs its Meshery deployment hosted by Layer5 — a multi-tenant design and collaboration plane for platform engineering.
+      </td>
+      <td>
+      <img src={LayersIcon} />
+      <b>A maintainer in-house:</b> Infor engineer Pontus Ringblom is a Meshery Extensions maintainer, shaping the project upstream while championing it internally.
+      </td>
+   </tr>
+</INFORfacts>
+
+## The problem they set out to solve
+
+Infor's business is industry-specific software delivered as cloud suites — which means its platform teams carry an unusual burden. They support product engineering organizations building for dozens of micro-verticals, each with its own compliance expectations, data residency requirements, and release cadence. Infrastructure that serves one industry well can be wrong for another, and tribal knowledge about "how our cloud actually fits together" calcifies in the heads of a few senior engineers.
+
+Three needs drove the search for a shared plane:
+
+1. **A shared design surface** — platform teams across product lines needed one place to see, discuss, and agree on infrastructure — visually, not as walls of YAML in chat threads.
+2. **Multi-tenancy by default** — isolation between product lines and customer environments is a business requirement, not a nice-to-have.
+3. **An open foundation** — Infor differentiates on industry software, not on internal plumbing. Whatever sits underneath the platform has to be inspectable, extensible, and free of vendor cul-de-sacs.
+
+## Where Meshery sits in the stack
+
+Meshery is Infor's **design and collaboration plane**: the surface where platform engineers model cloud-native infrastructure as visual designs, review changes together, and keep a shared system of record for how the platform fits together. Like the TCS Labs engagement, the deployment itself is hosted by Layer5 as a multi-tenant environment, so Infor's platform team spends its time building on Meshery — not operating the control plane underneath it.
+
+The engagement mirrors the TCS Labs model: Layer5 operates the hosted Meshery deployment while Infor's engineers extend it, contribute upstream, and fold it into their platform workflows.
+
+## Why Meshery won
+
+For a company whose product is industry-specific detail, generic tooling was never going to be enough. Several things drove the choice:
+
+- **Collaboration as a first-class concern** — infrastructure design happens the way product work happens: together, on a shared surface, with review built in.
+- **A visual abstraction over cloud-native complexity** — Kanvas lets engineers see components, relationships, and configuration as one connected diagram instead of disconnected text files.
+- **Model-driven breadth** — Meshery's models incorporate other abstraction layers, so adopting it never meant abandoning existing investments.
+- **No lock-in** — designs export in multiple formats, which made the choice defensible at every level of review.
+- **Open core and CNCF-native** — contributable, in Go and TypeScript, with a community Infor's engineers could join rather than just consume.
+
+## The champion: from Infor engineer to Meshery maintainer
+
+Every enterprise adoption has a human origin story. At Infor, it is Pontus Ringblom — a platform engineer in Infor's cloud organization who didn't just adopt Meshery, but joined the project building it. Pontus is a Meshery Extensions maintainer for **shape-builder**, the Meshery extension for creating custom polygon shapes for Kanvas components: the tool that lets anyone define the visual language their infrastructure speaks. When Infor needed something that didn't exist, its champion built it upstream — and now maintains it for the whole community.
+
+<InlineQuotes
+          quote="Meshery gave our platform teams a shared surface for infrastructure — designs that engineers across the company can look at together instead of passing YAML back and forth. And when we needed something that didn't exist, we didn't wait on a vendor roadmap. We built it upstream."
+          person="Pontus Ringblom"
+          title="User Champion, Infor — Meshery Extensions Maintainer" />
+
+<p>
+That contributor-to-maintainer path is the Meshery community working as designed: enterprise engineers don't just file tickets, they shape the roadmap. Pontus's path mirrors other enterprise champions in the ecosystem — engineers at TCS Labs, HPE, and Citrix hold maintainer seats across Meshery's extensions — and it gives Infor something no procurement process can buy: a voice in the future of the platform it depends on.
+</p>
+
+## The Layer5 engagement: hosted multi-tenant Meshery
+
+Infor's Meshery deployment is hosted by Layer5 — the same service model as the TCS Labs engagement. Tenant boundaries follow the organization's structure, isolation is the default, and because Layer5 operates the control plane, Infor's platform team focuses on extending Meshery and embedding it in their workflows rather than running it.
+
+<INFORbenefits>
+    <b>What Meshery changed for Infor:</b>
+    <br/>
+    ✔️ <b>A shared language for infrastructure</b> — visual designs replace YAML tennis between teams; reviews happen on the design, not in chat threads.
+    <br/>
+    ✔️ <b>Collaboration as the productivity unlock</b> — platform engineers across product lines work on the same living artifacts.
+    <br/>
+    ✔️ <b>Multi-tenancy by default</b> — isolation between product lines and environments comes from the tenant model, not from after-the-fact configuration.
+    <br/>
+    ✔️ <b>No lock-in, open foundation</b> — designs export in multiple formats; the platform underneath is inspectable and extensible.
+    <br/>
+    ✔️ <b>A voice in the roadmap</b> — with a maintainer in-house, Infor shapes Meshery's future instead of waiting on it.
+    <br/>
+    ✔️ <b>Operated, not babysat</b> — Layer5 hosts the control plane, so platform engineering time goes to the platform, not the plumbing.
+</INFORbenefits>
+<br/>
+
+## Open by default: contributing upstream
+
+Infor's edge in the engagement isn't secrecy — it's participation. Through Pontus's maintainership of shape-builder, Infor contributes to the Meshery extension ecosystem in the open: the polygon-shape tooling its engineers rely on is the same tooling the whole community uses. That is the open-core bargain working as intended — the enterprise gets influence and velocity, the project gets battle-tested contributions from production use.
+
+## The view from IT leadership
+
+For Infor's IT leadership, the decision reads as portfolio discipline: invest engineering talent where the company differentiates — industry-specific software — and build the platform layer on an open foundation with a trusted operator behind it.
+
+<InlineQuotes
+          quote="We don't differentiate on internal plumbing. We differentiate on industry software. Layer5 lets our platform team build on an open foundation we can inspect, extend, and trust — instead of reinventing it."
+          person="Magnus Lindqvist"
+          title="Director of IT, Infor" />
+
+<p>
+Overall, Meshery gives Infor a single, open plane for designing, governing, and collaborating on cloud-native infrastructure — operated by Layer5, shaped in the open by Infor's own engineers, and built for the way industry software is actually delivered: many verticals, one platform, zero YAML tennis.
+</p>
+
+</ResourcesWrapper>
