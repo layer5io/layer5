@@ -62,9 +62,16 @@ features:
 	node .github/build/features-to-json.js .github/build/spreadsheet.csv src/sections/Pricing/feature_data.json
 	rm .github/build/spreadsheet.csv
 
-.PHONY: setup build site site-full clean site-fast lint features
+.PHONY: setup build site site-full clean site-fast lint features check-images
 
 ## Analyze webpack bundle with FCP optimization
 site-analyze:
 	@echo "🏗️  Building site with webpack bundle analyzer..."
 	ANALYZE_BUNDLE=true npm run build
+
+## Verify GatsbyImage components have required image props.
+check-images:
+	npm run check:images -- $(filter-out $@,$(MAKECMDGOALS))
+
+%:
+	@:
