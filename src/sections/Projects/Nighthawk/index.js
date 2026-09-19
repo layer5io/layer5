@@ -25,7 +25,8 @@ const Projects = () => {
   useEffect(() => {
     fetch(URL)
       .then((response) => response.json())
-      .then((result) => setPerformanceCount(result.total_runs));
+      .then((result) => setPerformanceCount(result.totalRuns))
+      .catch((error) => console.error("Error fetching performance test count:", error));
   }, []);
 
   return (
