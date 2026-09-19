@@ -11,6 +11,11 @@ const ResourceGrid = (props) => {
   const [sortOption, setSortOption] = useState("latest");
 
   const sortResources = (nodes) => {
+    const getDate = (node) =>
+      node.frontmatter.date
+        ? new Date(node.frontmatter.date.replace(/(st|nd|rd|th),/g, ""))
+        : new Date(0);
+
     if (sortOption === "relevance" && !props.searchQuery) {
       const sorted = nodes.slice();
       sorted.sort((first, second) => {
@@ -23,10 +28,6 @@ const ResourceGrid = (props) => {
     if (sortOption === "relevance") {
       return nodes;
     }
-    const getDate = (node) =>
-      node.frontmatter.date
-        ? new Date(node.frontmatter.date.replace(/(st|nd|rd|th),/g, ""))
-        : new Date(0);
     const sorted = nodes.slice();
     sorted.sort((first, second) => {
       const d1 = getDate(first);
@@ -119,5 +120,4 @@ const ResourceGrid = (props) => {
     </ResourcePageWrapper>
   );
 };
-
 export default ResourceGrid;
