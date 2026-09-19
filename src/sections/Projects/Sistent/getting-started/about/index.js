@@ -10,7 +10,11 @@ import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import CodeBlock from "../../../../../components/CodeBlock";
 import { SistentThemeProvider, Button } from "@sistent/sistent";
 
-const contents = [{ id: 0, link: "#About Sistent", text: "About Sistent" }];
+const contents = [
+  { id: 0, link: "#About Sistent", text: "About Sistent" },
+  { id: 1, link: "#Installation", text: "Installation" },
+  { id: 2, link: "#Using local Sistent", text: "Using local Sistent" },
+];
 
 const codes = [
   "npm i @sistent/sistent",
