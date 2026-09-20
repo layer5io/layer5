@@ -24,6 +24,7 @@ import UsersIcon from "./users.svg";
 import NetworkIcon from "./network.svg";
 import LayersIcon from "./layers.svg";
 import InlineQuotes from "../../../../components/Inline-quotes";
+import Hamza from "./mohd-hamza-shaikh.jpg";
 
 <ResourcesWrapper>
 
@@ -54,21 +55,21 @@ The studio's numbers, as published on tata-consulting.co.uk:
    <tr><td colspan="2"><h4>TCS LABS FAST FACTS</h4></td></tr>
    <tr>
       <td>
-      <img src={UsersIcon} />
+      <img src={UsersIcon} alt="" />
       <b>22 teams in production:</b> Meshery has served as the platform's design and collaboration surface since January 2024. Nineteen customer-facing teams design directly with clients through a white-labeled Meshery; three internal teams publish custom models to a private OCI registry.
       </td>
       <td>
-      <img src={GlobeIcon} />
+      <img src={GlobeIcon} alt="" />
       <b>Multi-tenant, multi-identity-provider:</b> one Layer5-hosted Meshery deployment maps a deep enterprise hierarchy onto isolated tenants, each with its own identity provider, policies, and audit trail.
       </td>
    </tr>
    <tr>
       <td>
-      <img src={NetworkIcon} />
+      <img src={NetworkIcon} alt="" />
       <b>Design plane, not deploy path:</b> designs export to per-organization private GitLab repositories and deploy through Argo CD. Because Meshery sits outside the deployment and runtime path, updating it never touches running client systems.
       </td>
       <td>
-      <img src={LayersIcon} />
+      <img src={LayersIcon} alt="" />
       <b>Open by default:</b> active upstream contributors to Meshery core and Meshery Operator — and a Meshery Extensions maintainer grown through the project's contributor-to-maintainer pipeline.
       </td>
    </tr>
@@ -108,7 +109,8 @@ He is candid that it was not a frictionless sell internally — Meshery was unde
 <InlineQuotes
           quote="Meshery is the only tool I know that treats collaboration — bringing engineers and teams together inside an engineering platform — as central to productivity rather than an afterthought. For a platform whose whole point is shared, paved-road delivery, that was decisive."
           person="Mohd Hamza Shaikh"
-          title="Platform Engineer and Tech Lead, TCS Labs" />
+          title="Platform Engineer and Tech Lead, TCS Labs"
+          image={Hamza} />
 
 <p>
 Beneath Meshery, the platform layers:
