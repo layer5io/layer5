@@ -21,19 +21,24 @@ const Honeycomb = (props) => {
 
   const setHoneycombHeight = () => {
     const grid = gridRef.current;
-    // Total horizontal available space for hexagons
+    // Total horizontal available space for hexagons (offsetWidth includes
+    // the ul horizontal padding, so subtract it to get the usable width).
     const availableWidth = grid ? grid.offsetWidth : window.innerWidth;
+    let usableWidth = availableWidth;
+    if (grid && typeof window !== "undefined" && window.getComputedStyle) {
+      const computedStyle = window.getComputedStyle(grid);
+      const paddingLeft = parseFloat(computedStyle.paddingLeft) || 0;
+      const paddingRight = parseFloat(computedStyle.paddingRight) || 0;
+      usableWidth = availableWidth - paddingLeft - paddingRight;
+    }
 
     const W = hexSizeForWidth(availableWidth);
     // Horizontal pitch (hexagon width + left/right margins)
     const P = W + 6;
 
     // No. of hexagons that can be adjusted in first and second row
-    const firstRow = Math.max(
-      1,
-      Math.floor((availableWidth - (W / 2 + 25)) / P),
-    );
-    const secondRow = Math.max(1, Math.floor((availableWidth - (W + 28)) / P));
+    const firstRow = Math.max(1, Math.floor((usableWidth - (W / 2 + 25)) / P));
+    const secondRow = Math.max(1, Math.floor((usableWidth - (W + 28)) / P));
 
     // Vertical pitch per row: hexagon height + margin-top + margin-bottom
     const rowHeight = Math.round(W * 0.8662 + 6);
