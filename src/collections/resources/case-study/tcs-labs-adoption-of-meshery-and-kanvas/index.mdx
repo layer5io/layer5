@@ -1,0 +1,186 @@
+---
+title: TCS Labs' Adoption of Layer5 Meshery and Kanvas
+subtitle: TCS Labs runs Meshery as the design and collaboration plane of its Internal Developer Platform
+permalink: case-study/tcs-labs-adoption-of-meshery-and-kanvas
+date: 2026-09-19 08:00:00 -0530
+author: Layer5 Team
+thumbnail: ./tcs-labs-meshery.svg
+darkthumbnail: ./tcs-labs-meshery.svg
+description: "How TCS Labs runs Meshery as the design and collaboration plane of a multi-tenant, multi-identity-provider Internal Developer Platform"
+type: Case Study
+category: Case Study
+tags:
+  - Cloud Native, Meshery
+featured: false
+published: true
+resource: true
+---
+
+import { ResourcesWrapper } from "../../Resources.style.js";
+import { TCSfacts, TCSintro, TCSbenefits } from "./tcs.style.js";
+import Button from "../../../../reusecore/Button";
+import GlobeIcon from "./globe.svg";
+import UsersIcon from "./users.svg";
+import NetworkIcon from "./network.svg";
+import LayersIcon from "./layers.svg";
+import InlineQuotes from "../../../../components/Inline-quotes";
+import Hamza from "./mohd-hamza-shaikh.jpg";
+
+<ResourcesWrapper>
+
+<TCSintro>
+TCS Labs — the London Engineering Centre of Excellence behind the Tata Internal Developer Platform — runs Meshery as the collaboration and control plane at the heart of a service provider-grade Internal Developer Platform. Layer5 hosts TCS Labs' multi-tenant, multi-identity-provider Meshery deployment: one management plane that maps a deep, multi-tiered enterprise hierarchy onto isolated tenants, each with its own identity provider, policies, and audit trail.
+</TCSintro>
+
+<div style={{display: "flex", justifyContent: "center", padding: "2%"}}>
+
+   <Button $secondary title="Download Case Study" alt="Download TCS Labs' Adoption of Layer5 Meshery and Kanvas" $url="/case-studies/tcs-labs-adoption-of-layer5-meshery-and-kanvas.pdf" />
+
+</div>
+
+## Who TCS Labs is
+
+TCS Labs is a Center of Excellence within Tata Consulting Services (tata-consulting.co.uk — not to be confused with Tata Consultancy Services) that operates independently of core corporate IT governance. Formed around a small group of senior architects and backed by two TCS senior leaders as executive sponsors, it has room to work differently from the wider organization. Its London studio builds a next-generation internal developer platform: a CNCF-native stack used across the business and with clients.
+
+Its flagship product is the Tata Internal Developer Platform: a service provider-grade IDP built first for Tata's own engineers and the way Tata delivers projects, then productized — on the same architecture, with the same SLOs — for clients of its strategic engagements.
+
+The studio's numbers, as published on tata-consulting.co.uk:
+
+- **40+** consulting services engineers based in the UK
+- **14** FTSE 100 clients on UK platforms
+- **400+** microservices managed across UK estates
+- **99.97%** platform availability across 2025
+
+<TCSfacts>
+   <tr><th colSpan={2}><h4>TCS LABS FAST FACTS</h4></th></tr>
+   <tr>
+      <td>
+      <img src={UsersIcon} alt="" />
+      <b>22 teams in production:</b> Meshery has served as the platform's design and collaboration surface since January 2024. Nineteen customer-facing teams design directly with clients through a white-labeled Meshery; three internal teams publish custom models to a private OCI registry.
+      </td>
+      <td>
+      <img src={GlobeIcon} alt="" />
+      <b>Multi-tenant, multi-identity-provider:</b> one Layer5-hosted Meshery deployment maps a deep enterprise hierarchy onto isolated tenants, each with its own identity provider, policies, and audit trail.
+      </td>
+   </tr>
+   <tr>
+      <td>
+      <img src={NetworkIcon} alt="" />
+      <b>Design plane, not deploy path:</b> designs export to per-organization private GitLab repositories and deploy through Argo CD. Because Meshery sits outside the deployment and runtime path, updating it never touches running client systems.
+      </td>
+      <td>
+      <img src={LayersIcon} alt="" />
+      <b>Open by default:</b> active upstream contributors to Meshery core and Meshery Operator — and a Meshery Extensions maintainer grown through the project's contributor-to-maintainer pipeline.
+      </td>
+   </tr>
+</TCSfacts>
+
+## The problem they set out to solve
+
+Most internal developer platforms are built for a single product team and then stretched, painfully, to cover the rest of the business. TCS Labs started at the other end: an organization with hundreds of thousands of engineers, deep multi-tiered hierarchies (group, business unit, account, sub-account, project, team, environment), and a client portfolio that pays close attention to audit, residency, and isolation. That changes every architectural decision underneath.
+
+Three properties were non-negotiable:
+
+1. **Complex organizational hierarchies** — the platform's logical boundaries mirror the real shape of the business. Move a team between business units and its golden paths, quotas, and policies follow it.
+2. **Strict multi-tenancy** — compute, network, and data isolation between business units and client projects is the default, not a configuration option. Workload identity, namespace boundaries, network policy, and storage all derive from the same tenant model.
+3. **Policy-as-code RBAC** — fine-grained role and attribute-based access control, expressed as code and version-controlled with the rest of the platform. Every action that needs an auditor's signature comes with an audit trail an auditor will actually read.
+
+## Where Meshery sits in the stack
+
+At the top of the platform sits an AI-enabled collaboration suite with an infrastructure-as-design surface — **Meshery, extended in-house with custom operators, organization-aware tenancy, and policy enforcement**. It is the shared system of record for platform architecture and application topology, where architects, platform engineers, security teams, and developers model, govern, and continuously refine cloud and cloud-native components together.
+
+TCS Labs is precise about what Meshery is — and isn't — in their stack. It is the **design and collaboration surface**: of the 22 teams on the platform, three use Meshery designs strictly internally (publishing custom models to a private OCI registry), while 19 customer-facing teams use the full stack, including Meshery's white-label UI, to design and collaborate directly with clients. Meshery does not deploy: designs are exported to private GitLab repos on a per-organization basis and handed to Argo CD for deployment. It doesn't do load generation either — a separate team standardized on Grafana k6. Because Meshery sits outside the deployment and runtime path, updating it never touches running client systems.
+
+The team runs the Meshery v1.0 general-availability line on the stable channel, with production pinned to specific stable releases and security fixes fast-tracked.
+
+## Why Meshery won
+
+When platform engineer Mohd Hamza Shaikh was given ownership of a component in the platform layer, his history with Meshery — he entered the cloud-native world through a Meshery LFX mentorship in 2023 — made it his pick for the role. Several things drove the choice:
+
+- **Collaboration as a first-class concern** — the decisive factor for a platform whose whole point is shared, paved-road delivery.
+- **A highly customizable, white-label UI** — most of their teams are customer-facing, so presenting Meshery as their own branded design surface mattered; a platform that is hard to use does not get used.
+- **A higher-level abstraction over cloud-native YAML and JSON** — engineers and clients iterate on configurations without drowning in manifests.
+- **No lock-in** — designs export in multiple formats, which made the choice easy to defend internally.
+- **Model-driven breadth** — Meshery's models incorporate other abstraction layers (Crossplane already, KRO being incorporated), so choosing Meshery never meant giving those up.
+- **Open core and CNCF-native** — contributable, in Go and TypeScript, with no vendor cul-de-sac.
+
+He is candid that it was not a frictionless sell internally — Meshery was under-marketed and not widely known, so he had to make the case largely himself.
+
+<InlineQuotes
+          quote="Meshery is the only tool I know that treats collaboration — bringing engineers and teams together inside an engineering platform — as central to productivity rather than an afterthought. For a platform whose whole point is shared, paved-road delivery, that was decisive."
+          person="Mohd Hamza Shaikh"
+          title="Platform Engineer and Tech Lead, TCS Labs"
+          image={Hamza} />
+
+<p>
+Beneath Meshery, the platform layers:
+</p>
+
+- **Developer experience surface** (GitLab-integrated) — source control, CI/CD, GitOps workflows, artifact management, and self-service capabilities via portal, CLI, IDE plug-ins, and PR-driven workflows.
+- **Platform services** — the tenant model itself: org, business unit, account, and project boundaries, SPIFFE workload identity, OpenTelemetry observability, secrets management, and cost control.
+- **Runtime fabric** — hardened Kubernetes, service mesh (Istio, Linkerd), serverless (Knative), in-house Go controllers, network policy, and autoscaling.
+- **Infrastructure** — hybrid and multi-cloud across AWS, Azure, GCP, on-prem, sovereign EU regions, and client-dedicated landing zones.
+
+<p>
+The result, in their words: "one platform for hundreds of thousands of engineers. Open, cloud-native, AI-enabled."
+</p>
+
+## The Layer5 engagement: hosted multi-tenant, multi-IdP Meshery
+
+TCS Labs pays Layer5 to host its Meshery deployment — a multi-tenant environment where each tenant (a Tata business unit or a client account) authenticates through its own identity provider. Tenant boundaries follow the organizational hierarchy, and isolation of compute, network, and data is the default. Because the deployment is Layer5-hosted, TCS Labs' platform team spends its time extending Meshery — custom operators, organization-aware tenancy, policy enforcement — rather than operating the control plane itself.
+
+The hosted relationship is visible in the open: a stock Meshery install ships with a built-in remote provider entry for the deployment at `platform.tata-consulting.co.uk` (listed as "TATA Labs" since June 2026), so any Meshery user can point at TCS Labs' hosted platform directly. TCS Labs also maintains its own Meshery remote-provider implementation, exposing the multi-tenant data model — organizations, workspaces, environments — with production guidance to federate authentication to each tenant's upstream identity provider via OIDC.
+
+The platform's direction is AI-native throughout: engineers use LLMs and coding agents to design, deploy, operate, and govern infrastructure, with Meshery — Kanvas visual design, `mesheryctl`, the Meshery API, and Model Context Protocol integrations — as the mediating management plane.
+
+<TCSbenefits>
+    <b>What Meshery changed for TCS Labs:</b>
+    <br/>
+    ✔️ <b>Faster ramp into cloud-native</b> — the higher-level abstraction lets engineers and client teams understand and iterate on configurations quickly, without YAML overload.
+    <br/>
+    ✔️ <b>Collaboration as the productivity unlock</b> — teams and clients work together on the same designs, which is what the platform was chosen for.
+    <br/>
+    ✔️ <b>Client engagement through a branded surface</b> — customer-facing teams present Meshery as their own white-labeled design tool.
+    <br/>
+    ✔️ <b>Reuse across teams</b> — shareable designs and custom models in a private OCI registry get reused instead of reinvented.
+    <br/>
+    ✔️ <b>No lock-in, clean handoff to GitOps</b> — designs export in multiple formats and deploy through Argo CD, removing adoption risk.
+    <br/>
+    ✔️ <b>Multi-tenant, multi-identity-provider by design</b> — each tenant brings its own identity provider via OIDC federation; workload identity via SPIFFE/SPIRE and policy-as-code RBAC keep every action attributable and auditable.
+    <br/><br/>
+    <b>Measured impact, as published by TCS Labs:</b>
+    <br/>
+    📉 <b>14 days to under a day</b> — new-engagement environment readiness
+    <br/>
+    📉 <b>~40%</b> — reduction in run cost versus bespoke per-account stacks
+    <br/>
+    📉 <b>12 weeks</b> — median time to stand up a client tenant
+</TCSbenefits>
+<br/>
+
+## The people behind it
+
+The adoption has a human origin story. Hamza came into the cloud-native world through a Meshery LFX mentorship in 2023, brought Meshery into TCS Labs when the team formed, and remains an active contributor to Meshery core and the Meshery Operator in Go and TypeScript — work that has earned him GitHub's Pull Shark and Pair Extraordinaire badges. His Collaboration Layer Team contributes upstream as part of operating the platform, and one of his engineers, Arjun Mehta, is now a Meshery Extensions maintainer — an example, Hamza notes, of the project's genuine contributor-to-maintainer pipeline. "The warmth of the community," he says, "is exactly why I am still here."
+
+## Open by default: contributing upstream
+
+TCS Labs' competitive edge, in their own telling, "does not come from secrecy. It comes from being one of the most active enterprise contributors to the cloud-native projects underneath." The London team contributes to Meshery core and the Meshery Operator, to the lifecycle operators that run the collaboration suite across every cluster the IDP supervises, and to open tooling like **helm-kanvas-snapshot** — a Helm-aware utility for capturing and visualizing the state of a release, built in the open rather than as an internal-only tool.
+
+<InlineQuotes
+          quote="The job of a platform team is to make the right thing the easy thing. Everything else — the diagrams, the Helm charts, the bank-grade controls — is in service of that single test."
+          person="Eleanor Whitcombe"
+          title="Director, London Engineering Centre of Excellence" />
+
+## Honest gaps
+
+The case study is stronger for the candor. Two gaps top Hamza's list: Meshery's marketing and visibility — "an enormous feature set but only a drizzle of blog posts" — which made his internal sell harder, and the absence of first-class Terraform support, a real gap given how much TCS Labs and its clients rely on Terraform. Both are on his wish list, alongside deeper model coverage and a long-term-support channel for risk-averse adopters.
+
+## TCS Labs Academy: Meshery as the teaching plane
+
+The partnership extends to education. TCS Labs Academy — the official learning-content repository for TCS Labs on the Meshery Academy platform — hosts structured learning paths, challenges, certifications, and importable Meshery infrastructure designs. The curriculum spans six learning paths and 23 courses — the flagship being *AI-Assisted Infrastructure Design with Meshery & Kanvas* — plus five hands-on challenges, four importable designs, and a two-tier AI certification: CAINA (Certified AI-Native Infrastructure Associate: 50 questions, 75 minutes, 70% to pass, plus a hands-on lab) and CAINP (Certified AI-Native Infrastructure Professional: 65 questions, 90 minutes, 70% to pass, plus a mandatory capstone). It all runs on the shared Layer5 Academy platform.
+
+<p>
+Overall, Meshery gives TCS Labs a single, open control plane for designing, governing, and collaborating on cloud-native infrastructure across a multi-tenant, multi-identity-provider estate — inside Tata and across its client engagements. By hosting that plane with Layer5 and building on it in the open, TCS Labs turned an internal platform into a product: one paved road, hundreds of thousands of engineers, and clients who buy the story at the board level.
+</p>
+
+</ResourcesWrapper>
