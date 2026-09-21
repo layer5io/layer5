@@ -23,8 +23,10 @@ indistinguishable here (mean delta 1.1/255 against the PNG source). Shipping
 JPEG keeps every crawler happy; on-page visitors still get WebP/AVIF because
 gatsby-plugin-sharp reprocesses the raster.
 
-Chrome (or any Chromium) does the rendering. Pillow is only needed to re-encode
-the screenshot as JPEG/WebP; without it this degrades to a PNG and says so.
+Chrome (or any Chromium) does the rendering. Pillow re-encodes the screenshot
+as JPEG/WebP and is required for those formats: without it this fails before
+launching Chrome rather than quietly writing a PNG under a different name than
+the one the post's frontmatter points at.
 """
 
 import shutil
@@ -110,6 +112,14 @@ def rasterize(svg_path, out_path, width=1200, height=630, quality=88):
         raise RasterizeError(
             f"Unsupported hero image format '{suffix}'. Use .jpg (recommended), .png, or .webp."
         )
+    if suffix != ".png":
+        try:
+            from PIL import Image
+        except ImportError:
+            raise RasterizeError(
+                f"Pillow is required to encode {suffix} and is not installed for "
+                f"{sys.executable}. Install it (pip install pillow) and rerun."
+            ) from None
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
     with tempfile.TemporaryDirectory() as tmp:
@@ -122,18 +132,6 @@ def rasterize(svg_path, out_path, width=1200, height=630, quality=88):
         if suffix == ".png":
             shutil.move(str(shot), out_path)
             return f"{out_path.name} ({width}x{height} PNG, {out_path.stat().st_size / 1024:.0f}KB)"
-
-        try:
-            from PIL import Image
-        except ImportError:
-            fallback = out_path.with_suffix(".png")
-            shutil.move(str(shot), fallback)
-            raise RasterizeError(
-                f"Pillow is not installed, so {suffix} encoding is unavailable. "
-                f"Wrote {fallback.name} instead, which is roughly 6x larger than "
-                f"the intended JPEG. Install Pillow (pip install pillow) and rerun "
-                f"to ship the smaller file."
-            )
 
         image = Image.open(shot).convert("RGB")
         if image.size != (width, height):

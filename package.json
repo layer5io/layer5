@@ -5,6 +5,10 @@
   "private": true,
   "author": "Layer5 Authors",
   "license": "",
+  "engines": {
+    "node": ">=20",
+    "npm": ">=10"
+  },
   "repository": {
     "type": "git",
     "url": "https://layer5.io"
@@ -72,7 +76,6 @@
     "gatsby-plugin-image": "^3.16.0",
     "gatsby-plugin-manifest": "^5.16.0",
     "gatsby-plugin-mdx": "^5.16.0",
-    "gatsby-plugin-meta-redirect": "github:layer5labs/gatsby-plugin-meta-redirect",
     "gatsby-plugin-netlify": "^5.1.1",
     "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-sharp": "^5.16.0",
@@ -132,5 +135,8 @@
     "lint-staged": "^16.2.7",
     "patch-package": "^8.0.1",
     "rimraf": "^6.1.2"
+  },
+  "overrides": {
+    "sharp": "$sharp"
   }
 }
