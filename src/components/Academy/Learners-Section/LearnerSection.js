@@ -135,6 +135,14 @@ const LearnerSectionWrapper = styled.section`
       .audience-text h2 {
         font-size: 2rem;
       }
+
+      .audience-features {
+        text-align: left;
+        width: fit-content;
+        max-width: 100%;
+        margin: 0 auto 2rem;
+        display: block;
+      }
     }
   }
 `;
