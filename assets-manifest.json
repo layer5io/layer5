@@ -116,11 +116,11 @@
   "a3c53cb5fed6a190b7c556d122fd2d298daab422.js": "a3c53cb5fed6a190b7c556d122fd2d298daab422-92fcada1c1123054cca4.js",
   "a7ae287b.js": "a7ae287b-89727779f64e8aadc185.js",
   "a9d9eb9c97236a9970cd5ce5d5bf5bd883d9affa.js": "a9d9eb9c97236a9970cd5ce5d5bf5bd883d9affa-93876c8585de904b5777.js",
-  "aaa5778d.js": "aaa5778d-e9a2ed49b30191396137.js",
+  "aaa5778d.js": "aaa5778d-4fba9b0cbfafb366a6a3.js",
   "ac581ebe.js": "ac581ebe-36cccd14d56d90dda80d.js",
   "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff.js": "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff-5e50ba7a9e5f17d6d781.js",
-  "app-5164047573966f6320ed.js.LICENSE.txt": "app-5164047573966f6320ed.js.LICENSE.txt",
-  "app.js": "app-5164047573966f6320ed.js",
+  "app-c11c3ced40eb64d1d2a3.js.LICENSE.txt": "app-c11c3ced40eb64d1d2a3.js.LICENSE.txt",
+  "app.js": "app-c11c3ced40eb64d1d2a3.js",
   "b3a4868e3083275025dca472f7350001ee397eb9.js": "b3a4868e3083275025dca472f7350001ee397eb9-e3e6295c1618dd9e60a6.js",
   "b5f6012b.js": "b5f6012b-a7763041fda46eef5ffb.js",
   "b86f5c214c12e4ff0a2572240ee8191e9020f93a.js": "b86f5c214c12e4ff0a2572240ee8191e9020f93a-fe58c748aaae0ea1a59e.js",
@@ -214,7 +214,7 @@
   "component---src-pages-projects-sistent-identity-typography-code-js.js": "component---src-pages-projects-sistent-identity-typography-code-js-7f6c04594d071a310016.js",
   "component---src-pages-projects-sistent-identity-typography-guidance-js.js": "component---src-pages-projects-sistent-identity-typography-guidance-js-616b3fa2b819c241f241.js",
   "component---src-pages-projects-sistent-identity-typography-index-js.js": "component---src-pages-projects-sistent-identity-typography-index-js-83af10a9f50404322ceb.js",
-  "component---src-pages-projects-sistent-index-js.js": "component---src-pages-projects-sistent-index-js-2b0020aa2941b869794c.js",
+  "component---src-pages-projects-sistent-index-js.js": "component---src-pages-projects-sistent-index-js-273f46318face932d85a.js",
   "component---src-pages-resources-index-js.js": "component---src-pages-resources-index-js-59f64039b6b0a50a49fd.js",
   "component---src-pages-service-mesh-landscape-js.js": "component---src-pages-service-mesh-landscape-js-920c354cd8df3adf5dc8.js",
   "component---src-pages-solutions-architecture-diagram-index-js.js": "component---src-pages-solutions-architecture-diagram-index-js-b47dd5552c625cebe703.js",
@@ -1992,6 +1992,7 @@
   "static/single-tenant.svg": "static/single-tenant.62f51f7e.svg",
   "static/singleton.svg": "static/singleton.14a9a27f.svg",
   "static/sistent-contributor.svg": "static/sistent-contributor.6ef58876.svg",
+  "static/sistent-icon-color.png": "static/sistent-icon-color-9e82a5f978d2a6419c2946c25dc7047d.png",
   "static/sixth-highest-velocity-project-out-of-237-CNCF-projects.webp": "static/sixth-highest-velocity-project-out-of-237-CNCF-projects-8b1fa1d032c452911a93a7e4b002cf00.webp",
   "static/smi-conformance-result.webp": "static/smi-conformance-result-e606fa66f759ec96d0f93acb8c2567c5.webp",
   "static/smi-meshery.webp": "static/smi-meshery-ed50770609de7c1304ef4582a13c66a2.webp",
@@ -2122,5 +2123,5 @@
   "static/yash-sharma.webp": "static/yash-sharma-54aa26b6e5743f0557cfc76aa9797f2d.webp",
   "static/yogi.webp": "static/yogi-d00ca1cc48ab74938a23d4359ef3fb01.webp",
   "styles.css": "styles.36a061adc6a8dfab5924.css",
-  "webpack-runtime.js": "webpack-runtime-e06e18725c49fb0c1d7f.js"
+  "webpack-runtime.js": "webpack-runtime-9105c9d53c56510a9782.js"
 }
