@@ -7,11 +7,11 @@ export const INFORfacts = styled("table")(({ theme }) => ({
   color: `${theme.text}`,
   border: `1px solid ${theme.primaryLightColor}`,
 
-  " > tr:first-child": {
+  " > tbody > tr:first-child": {
     padding: "0rem",
   },
 
-  " > tr:first-child td": {
+  " > tbody > tr:first-child th": {
     h4: {
       color: `${theme.white}`,
       margin: 0,
@@ -21,11 +21,11 @@ export const INFORfacts = styled("table")(({ theme }) => ({
     textAlign: "center",
   },
 
-  " > tr > td": {
+  " > tbody > tr > td": {
     padding: "1rem",
     color: `${theme.text}`,
   },
-  "> tr > td > img": {
+  "> tbody > tr > td > img": {
     marginRight: ".5rem",
     marginBottom: "0rem",
     paddingBottom: "0rem",
