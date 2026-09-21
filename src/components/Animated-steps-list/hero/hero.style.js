@@ -89,9 +89,19 @@ export const HeroWrapper = styled.div`
           }
 
           @media screen and (max-width: 480px) {
-            height: 4rem;
+            height: auto;
+            min-height: 4rem;
             font-size: 0.8rem;
             padding: 0.5rem 3.5rem 0.5rem 0.75rem;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+
+            .token-line {
+              width: 100%;
+              height: auto;
+              white-space: pre-wrap;
+              overflow-wrap: anywhere;
+            }
           }
         }
       }
