@@ -13,6 +13,41 @@ const DiscussWrapper = styled.div`
   }
   .logo {
     width: 200px;
+    max-width: 100%;
+    display: block;
+  }
+
+  .logo-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 1.25rem;
+    border: 2px solid ${(props) => props.theme.secondaryColor};
+    border-radius: 6px;
+    background: transparent;
+    transition: all 0.25s ease;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    border-radius: 25px;
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+    &:focus-visible {
+      outline: 3px solid ${(props) => props.theme.secondaryColor};
+      outline-offset: 3px;
+    }
+
+    &:hover,
+    &:focus-visible {
+      .logo-wrapper {
+        border-color: ${(props) => props.theme.caribbeanGreenColor || props.theme.secondaryColor};
+        box-shadow: 0 0 10px ${(props) => props.theme.secondaryColor};
+      }
+    }
   }
 
   .explain {
