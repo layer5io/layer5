@@ -17,7 +17,7 @@ const CTA_BottomWrapper = styled.div`
     border-radius: 0.5rem;
     overflow: hidden; 
 
-    @media (max-width: 507px) {
+    @media (max-width: 768px) {
         flex-direction: column;
         height: auto;
     }
@@ -25,7 +25,7 @@ const CTA_BottomWrapper = styled.div`
     .cta-content {
         padding: 0.5rem 1.5rem;
         text-align: center;
-        max-width: calc(75% - 1rem); 
+        flex: 1; 
         margin-right: 1rem; 
 
         h3 {
@@ -36,31 +36,36 @@ const CTA_BottomWrapper = styled.div`
             margin-top: 0.5rem;
         }
 
-        @media (max-width: 507px) {
+        @media (max-width: 768px) {
             max-width: 100%;
             margin-right: 0;
+            margin-bottom: 1rem;
         }
     }
 
     img {
       object-fit: cover; 
-      width: auto; 
-      max-width: 35%; 
-      padding: 1rem;
-      max-height: 100%; 
-      border-radius: 0 0.5rem 0.5rem 0; 
+      width: 35%; 
+      padding: 0;
+      height: 100%;
+      min-height: 16rem; 
+      border-radius: 0.5rem 0 0 0.5rem; 
 
-      @media (max-width: 507px) {
+      @media (max-width: 768px) {
+          width: 100%;
           max-width: 100%;
-          padding: 0;
-          border-radius: 0;
+          height: 14rem;
+          min-height: 14rem;
+          object-fit: contain;
+          border-radius: 0.5rem 0.5rem 0 0;
+          padding: 1rem 0 0 0;
       }
     }
 
     button {
         width: fit-content; 
 
-        @media (max-width: 507px) {
+        @media (max-width: 768px) {
             margin-top: 1rem;
         }
     }

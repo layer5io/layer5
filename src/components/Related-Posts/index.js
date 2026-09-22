@@ -53,7 +53,7 @@ const RelatedPosts = props => {
 
   const settings = {
     dots: slidesToShowState < 2,
-    arrows: slidesToShowState >= 2,
+    arrows: true,
     infinite: false,
     speed: 500,
     slidesToShow: slidesToShowState,

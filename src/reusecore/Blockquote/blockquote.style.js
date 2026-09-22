@@ -3,10 +3,10 @@ const BlockquoteStyle = styled.div`
 
     /* center the blockquote in the page */
     .blockquote-wrapper {
-    display: flex;
-    /* height: 100vh; */
-    padding: 0 10px;
-    margin-bottom: 1rem;
+        display: flex;
+        /* height: 100vh; */
+        padding: 0 10px;
+        margin-bottom: 3rem;
     }
 
     /* Blockquote main style */
