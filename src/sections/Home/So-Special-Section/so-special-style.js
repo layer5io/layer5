@@ -138,7 +138,6 @@ const SoSpecialWrapper = styled.div`
         background-color:${(props) => props.theme.body};
         color:black;
         height: 30rem;
-        outline:none;
         border:none;
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
     }

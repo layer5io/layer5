@@ -55,7 +55,7 @@ export const FeaturesWrapper = styled.div`
       /* nuka-carousel overrides */
       & :global {
         & .slider-frame,
-        & .slider-slide:focus {
+        & .slider-slide:focus:not(:focus-visible) {
           outline: none !important;
         }
       }

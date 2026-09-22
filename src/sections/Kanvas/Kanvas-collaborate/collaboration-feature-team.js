@@ -5,81 +5,83 @@ import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 
 const ConversationImg = "/images/kanvas-collaborate/conversation.png";
-const ComponentsGif = "/images/kanvas-collaborate/components.gif";
+const ComponentsGif = "/images/kanvas-collaborate/components.webp";
 const ActivityLogsImg = "/images/kanvas-collaborate/activity-logs.png";
 const UndoRedoImg = "/images/kanvas-collaborate/undo-redo.png";
 
 const CollaborationFeatureWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 5% 5% 8%;
+
+  .hero-text {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    padding: 5% 5% 8%;
-
-    .hero-text {
-        display: flex;
-        flex-direction: column;
-        flex: 0 0 40%;
-        max-width: 40%;
-        @media only screen and (max-width: 767px) {
-          max-width: 100%;
-        }
+    flex: 0 0 40%;
+    max-width: 40%;
+    @media only screen and (max-width: 767px) {
+      max-width: 100%;
     }
+  }
 
-    h2 {
-      span {
-        color: ${props => props.theme.text};
-      }
+  h2 {
+    span {
+      color: ${(props) => props.theme.text};
     }
+  }
 
-    .hero-image {
-      flex: 0 0 50%;
-      max-width: 50%;
-    }
+  .hero-image {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
 
-    img {
-        width: 600px;
-        height: 300px;
-        object-fit: cover;
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
+  img {
+    width: 600px;
+    height: 300px;
+    object-fit: cover;
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
 
-        &.img-animate {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        @media only screen and (max-width: 767px) {
-          width: 100%;
-        }
-    }
-
-    svg {
-      opacity: 0;
-      transition: opacity ease-out 0.5s;
-      .collab4-colorMode_svg__colorMode1 {
-        fill: ${props => props.theme.whiteToBlack};
-        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-      }
-      .collab4-colorMode_svg__colorMode2 {
-        fill: ${props => props.theme.greyB4B4B4ToGrey505050};
-        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-      }
-      .collab4-colorMode_svg__colorMode3 {
-        fill: ${props => props.theme.blackToWhite};
-        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-      }
-      @media only screen and (max-width: 767px) {
-        width: 100%;
-      }
-    }
-
-    .visible {
+    &.img-animate {
       opacity: 1;
-      transition: opacity ease-in 0.5s;
+      transform: translateY(0);
     }
+
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
+
+  svg {
+    opacity: 0;
+    transition: opacity ease-out 0.5s;
+    .collab4-colorMode_svg__colorMode1 {
+      fill: ${(props) => props.theme.whiteToBlack};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .collab4-colorMode_svg__colorMode2 {
+      fill: ${(props) => props.theme.greyB4B4B4ToGrey505050};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .collab4-colorMode_svg__colorMode3 {
+      fill: ${(props) => props.theme.blackToWhite};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
+
+  .visible {
+    opacity: 1;
+    transition: opacity ease-in 0.5s;
+  }
 `;
 
 const StyledDiv = styled.div`
@@ -116,10 +118,8 @@ const CollaborationFeatureTeam = () => {
   const [locatorRef, inView] = useInView({ threshold: 0.5 });
   const [imageInView, setimageInView] = useState(false);
 
-  if (inView && !imageInView)
-    setimageInView(true);
-  else if (imageInView && !inView)
-    setimageInView(false);
+  if (inView && !imageInView) setimageInView(true);
+  else if (imageInView && !inView) setimageInView(false);
 
   return (
     <CollaborationFeatureWrapper>
@@ -128,26 +128,47 @@ const CollaborationFeatureTeam = () => {
           <CollaborationImg className={imageInView ? "visible" : ""} alt="" />
         </div>
         <div className="hero-text">
-          <h2><span>Collaborate with your Team</span></h2>
-          <p>Build an iterative design flow with live collaboration that keeps you in the loop whether you are working in the office or remotely.</p>
+          <h2>
+            <span>Collaborate with your Team</span>
+          </h2>
+          <p>
+            Build an iterative design flow with live collaboration that keeps
+            you in the loop whether you are working in the office or remotely.
+          </p>
         </div>
       </StyledDiv>
       <StyledDiv reverse={false}>
         <div className="hero-image">
-          <ImageWithAnimation src={ConversationImg} alt="Conversation feature illustration" />
+          <ImageWithAnimation
+            src={ConversationImg}
+            alt="Conversation feature illustration"
+          />
         </div>
         <div className="hero-text">
-          <h2><span>Integrated Comments</span></h2>
-          <p>Add comments directly to give feedback or ask questions. Great for discussing changes without leaving the canvas.</p>
+          <h2>
+            <span>Integrated Comments</span>
+          </h2>
+          <p>
+            Add comments directly to give feedback or ask questions. Great for
+            discussing changes without leaving the canvas.
+          </p>
         </div>
       </StyledDiv>
       <StyledDiv reverse={true}>
         <div className="hero-image">
-          <ImageWithAnimation src={ComponentsGif} alt="Shared Component Library" />
+          <ImageWithAnimation
+            src={ComponentsGif}
+            alt="Shared Component Library"
+          />
         </div>
         <div className="hero-text">
-          <h2><span>Shared Component Library</span></h2>
-          <p>Access to a library of reusable components and designs. Save time by using or modifying shared designs.</p>
+          <h2>
+            <span>Shared Component Library</span>
+          </h2>
+          <p>
+            Access to a library of reusable components and designs. Save time by
+            using or modifying shared designs.
+          </p>
         </div>
       </StyledDiv>
       <StyledDiv reverse={false}>
@@ -155,8 +176,13 @@ const CollaborationFeatureTeam = () => {
           <ImageWithAnimation src={ActivityLogsImg} alt="Live Activity Log" />
         </div>
         <div className="hero-text">
-          <h2><span>Live Activity Log</span></h2>
-          <p>See real-time updates of edits, comments, and actions by you and your team.</p>
+          <h2>
+            <span>Live Activity Log</span>
+          </h2>
+          <p>
+            See real-time updates of edits, comments, and actions by you and
+            your team.
+          </p>
         </div>
       </StyledDiv>
       <StyledDiv reverse={true}>
@@ -164,8 +190,13 @@ const CollaborationFeatureTeam = () => {
           <ImageWithAnimation src={UndoRedoImg} alt="Undo & Revert Changes" />
         </div>
         <div className="hero-text">
-          <h2><span>Undo & Revert Changes</span></h2>
-          <p>Made a mistake? No worries — you can easily undo recent actions. Go back to a previous state without losing your progress.</p>
+          <h2>
+            <span>Undo & Revert Changes</span>
+          </h2>
+          <p>
+            Made a mistake? No worries — you can easily undo recent actions. Go
+            back to a previous state without losing your progress.
+          </p>
         </div>
       </StyledDiv>
     </CollaborationFeatureWrapper>

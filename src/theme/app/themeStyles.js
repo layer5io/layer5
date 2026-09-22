@@ -62,6 +62,9 @@ const lighttheme = {
   highlightColor: "#EBC017",
   saffronColor: "#EBC017",
 
+  // error red
+  errorColor: "#D32F2F",
+
   // flax (light yellow)
   highlightLightColor: "#EAD07D",
   saffronLightColor: "#EAD07D",
@@ -295,6 +298,9 @@ export const darktheme = {
   // saffron (dark yellow)
   highlightColor: "#EBC017",
   saffronColor: "#EBC017",
+
+  // error red
+  errorColor: "#FF6B6B",
 
   // flax (light yellow)
   highlightLightColor: "#EAD07D",

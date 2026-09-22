@@ -23,7 +23,7 @@ setup:
 site:
 	@echo "🏗️  Building lightweight site version ($(or $(LITE_BUILD_PROFILE),core) profile)..."
 	@echo "   Use LITE_BUILD_PROFILE=content make site to include content collections while still skipping the heaviest routes."
-	@npx cross-env BUILD_FULL_SITE=false LITE_BUILD_PROFILE=$(or $(LITE_BUILD_PROFILE),core) BLOG_YEAR=$(or $(BLOG_YEAR),) GATSBY_CPU_COUNT=4 SHARP_CONCURRENCY=4 UV_THREADPOOL_SIZE=4 NODE_OPTIONS=--max-old-space-size=8192 env-cmd -f .env.development gatsby develop
+	@npx cross-env BUILD_FULL_SITE=false LITE_BUILD_PROFILE=$(or $(LITE_BUILD_PROFILE),core) BLOG_YEAR=$(or $(BLOG_YEAR),) env-cmd -f .env.development node scripts/run-gatsby.js develop
 
 ## Run blog-only dev server (2026 posts only, much faster builds).
 site-blog:
@@ -38,7 +38,7 @@ site-full:
 
 ## Run layer5.io on your local machine. Alternate method.
 site-fast:
-	BUILD_FULL_SITE=false LITE_BUILD_PROFILE=core GATSBY_CPU_COUNT=4 SHARP_CONCURRENCY=4 UV_THREADPOOL_SIZE=4 NODE_OPTIONS=--max-old-space-size=8192 gatsby develop
+	BUILD_FULL_SITE=false LITE_BUILD_PROFILE=core node scripts/run-gatsby.js develop
 
 ## Build layer5.io on your local machine.
 build:

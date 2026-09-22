@@ -74,6 +74,16 @@ export const CardWrapper = styled.div`
       justify-content: center;
       padding: 0.5rem;
     `}
+    ${(props) =>
+      props.$fitContainer &&
+      !props.$listView &&
+      `
+      padding: 2rem;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    `}
 
     .gatsby-image-wrapper,
     .old-gatsby-image-wrapper {

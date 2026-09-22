@@ -20,8 +20,13 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  *:focus {
+  *:focus:not(:focus-visible) {
     outline: none;
+  }
+
+  *:focus-visible {
+    outline: 3px solid ${(props) => props.theme.secondaryColor};
+    outline-offset: 3px;
   }
   ::-webkit-scrollbar {
     width: 0.5rem; 
@@ -207,13 +212,16 @@ section{
     border: 1px solid rgb(204, 204, 204);
     background: ${(props) => props.theme.body};
     border-radius: 0.5rem;
-    outline: none;
     padding: 20px;
     margin-right: -50%;
     transform: translate(-50%, -50%);
     max-width: 50rem;
     max-height: 40rem;
     overflow-y: hidden;
+
+    &:focus:not(:focus-visible) {
+        outline: none;
+    }
 
     .close-modal-btn {
         min-width: 2rem;

@@ -20,7 +20,10 @@ import {
   useTheme,
   SistentThemeProvider,
 } from "@sistent/sistent";
-import { Calculate, CheckCircle, Cloud, Group } from "@mui/icons-material";
+import Calculate from "@mui/icons-material/Calculate";
+import CheckCircle from "@mui/icons-material/CheckCircle";
+import Cloud from "@mui/icons-material/Cloud";
+import Group from "@mui/icons-material/Group";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 import { getAddOns } from "./pricingData";
 import FeatureDetails from "../PlanCard/collapsible-details";

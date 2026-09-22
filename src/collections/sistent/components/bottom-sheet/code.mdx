@@ -1,0 +1,252 @@
+---
+title: BottomSheet Code
+component: bottom-sheet
+description: Here are code examples for different variations and use cases of the BottomSheet component. Each example shows the implementation with a live preview and copyable code.
+---
+
+import { useState } from "react";
+import { Box, Button, BottomSheet, Typography } from "@sistent/sistent";
+
+export const BasicBottomSheetCode = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button variant="contained" onClick={() => setOpen(true)}>Open Basic BottomSheet</Button>
+      <BottomSheet open={open} onClose={() => setOpen(false)} title="Basic BottomSheet">
+        <Typography>This is a basic bottom sheet with simple content for displaying information.</Typography>
+      </BottomSheet>
+    </>
+  );
+};
+
+export const CustomHeightBottomSheetCode = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button variant="contained" color="secondary" onClick={() => setOpen(true)}>Open Custom Height BottomSheet</Button>
+      <BottomSheet open={open} onClose={() => setOpen(false)} title="Tall BottomSheet" maxHeight="95vh">
+        <Box sx={{ p: 2 }}>
+          <Typography variant="body1" paragraph>
+            This bottom sheet is configured with a <code>maxHeight</code> of <code>"95vh"</code>.
+          </Typography>
+          <Typography variant="body2" color="textSecondary">
+            Adjusting the maximum height is useful when you need to display larger amounts of content, complex forms, or scrolling lists.
+          </Typography>
+        </Box>
+      </BottomSheet>
+    </>
+  );
+};
+
+export const CustomHeaderBottomSheetCode = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button variant="contained" onClick={() => setOpen(true)}>Open Styled Header BottomSheet</Button>
+      <BottomSheet
+        open={open}
+        onClose={() => setOpen(false)}
+        title="Custom Header"
+        headerBackgroundColor="#1976d2"
+        headerTextColor="#ffffff"
+      >
+        <Box sx={{ p: 2 }}>
+          <Typography>
+            This bottom sheet uses custom background and text colors for its header.
+          </Typography>
+        </Box>
+      </BottomSheet>
+    </>
+  );
+};
+
+export const NoTitleBottomSheetCode = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button variant="contained" onClick={() => setOpen(true)}>Open Without Title</Button>
+      <BottomSheet open={open} onClose={() => setOpen(false)}>
+        <Box sx={{ textAlign: "center", p: 4 }}>
+          <Typography variant="h6" gutterBottom>Custom Layout</Typography>
+          <Typography paragraph>
+            Omitting the title prop removes the default header block entirely, allowing you to build completely custom layouts within the bottom sheet.
+          </Typography>
+          <Button variant="outlined" onClick={() => setOpen(false)}>Dismiss</Button>
+        </Box>
+      </BottomSheet>
+    </>
+  );
+};
+
+<a id="basic-bottom-sheet">
+  <h2>Basic BottomSheet</h2>
+</a>
+
+A simple bottom sheet with basic content and standard dismiss functionality.
+
+<div className="showcase">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+    <ThemeWrapper>
+      <BasicBottomSheetCode />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="bottomsheet-basic" collapsible code={`import { useState } from "react";
+import { Button, BottomSheet, Typography } from "@sistent/sistent";
+
+function BasicBottomSheet() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button
+        variant="contained"
+        onClick={() => setOpen(true)}
+      >
+        Open BottomSheet
+      </Button>
+      <BottomSheet
+        open={open}
+        onClose={() => setOpen(false)}
+        title="Basic BottomSheet"
+      >
+        <Typography>
+          This is a basic bottom sheet with simple content.
+        </Typography>
+      </BottomSheet>
+    </>
+  );
+}`} />
+</div>
+
+<a id="custom-height-bottom-sheet">
+  <h2>Custom Height BottomSheet</h2>
+</a>
+
+Configure the <code>maxHeight</code> property for bottom sheets that need to accommodate larger content. The default is <code>80vh</code>.
+
+<div className="showcase">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+    <ThemeWrapper>
+      <CustomHeightBottomSheetCode />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="bottomsheet-custom-height" collapsible code={`import { useState } from "react";
+import { Button, BottomSheet, Box, Typography } from "@sistent/sistent";
+
+function CustomHeightBottomSheet() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button
+        variant="contained"
+        color="secondary"
+        onClick={() => setOpen(true)}
+      >
+        Open Custom Height BottomSheet
+      </Button>
+      <BottomSheet
+        open={open}
+        onClose={() => setOpen(false)}
+        title="Tall BottomSheet"
+        maxHeight="95vh"
+      >
+        <Box sx={{ p: 2 }}>
+          <Typography variant="body1" paragraph>
+            This bottom sheet is configured with a maxHeight of "95vh".
+          </Typography>
+        </Box>
+      </BottomSheet>
+    </>
+  );
+}`} />
+</div>
+
+<a id="custom-header-bottom-sheet">
+  <h2>Custom Header BottomSheet</h2>
+</a>
+
+Customize the header appearance using <code>headerBackgroundColor</code> and <code>headerTextColor</code> props to match specific branding or thematic requirements.
+
+<div className="showcase">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+    <ThemeWrapper>
+      <CustomHeaderBottomSheetCode />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="bottomsheet-custom-header" collapsible code={`import { useState } from "react";
+import { Button, BottomSheet, Box, Typography } from "@sistent/sistent";
+
+function CustomHeaderBottomSheet() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button
+        variant="contained"
+        onClick={() => setOpen(true)}
+      >
+        Open Styled Header BottomSheet
+      </Button>
+      <BottomSheet
+        open={open}
+        onClose={() => setOpen(false)}
+        title="Custom Header"
+        headerBackgroundColor="#1976d2"
+        headerTextColor="#ffffff"
+      >
+        <Box sx={{ p: 2 }}>
+          <Typography>
+            This bottom sheet uses custom background and text colors.
+          </Typography>
+        </Box>
+      </BottomSheet>
+    </>
+  );
+}`} />
+</div>
+
+<a id="no-title-bottom-sheet">
+  <h2>No Title BottomSheet</h2>
+</a>
+
+Omitting the <code>title</code> prop removes the default header block entirely. This provides a blank canvas for custom layouts where you may want to render your own controls.
+
+<div className="showcase">
+  <div className="items" style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+    <ThemeWrapper>
+      <NoTitleBottomSheetCode />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="bottomsheet-no-title" collapsible code={`import { useState } from "react";
+import { Button, BottomSheet, Box, Typography } from "@sistent/sistent";
+
+function NoTitleBottomSheet() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button
+        variant="contained"
+        onClick={() => setOpen(true)}
+      >
+        Open Without Title
+      </Button>
+      <BottomSheet
+        open={open}
+        onClose={() => setOpen(false)}
+      >
+        <Box sx={{ textAlign: "center", p: 4 }}>
+          <Typography variant="h6" gutterBottom>Custom Layout</Typography>
+          <Typography paragraph>
+            Omitting the title prop removes the default header block entirely.
+          </Typography>
+          <Button variant="outlined" onClick={() => setOpen(false)}>
+            Dismiss
+          </Button>
+        </Box>
+      </BottomSheet>
+    </>
+  );
+}`} />
+</div>

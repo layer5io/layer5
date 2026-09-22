@@ -1,33 +1,31 @@
-import { includes, orderBy } from "lodash";
+import includes from "lodash/includes";
+import orderBy from "lodash/orderBy";
 
 class RelatedPostsFactory {
-
-  constructor (posts, currentPostSlug){
-    this.posts = posts.filter(
-      (post) => post.fields.slug !== currentPostSlug
-    );
+  constructor(posts, currentPostSlug) {
+    this.posts = posts.filter((post) => post.fields.slug !== currentPostSlug);
     this.currentPostSlug = currentPostSlug;
     this.maxPosts = 6;
     this.category = null;
     this.tags = [];
   }
 
-  setMaxPosts (m) {
+  setMaxPosts(m) {
     this.maxPosts = m;
     return this;
   }
 
-  setCategory (category) {
+  setCategory(category) {
     this.category = category;
     return this;
   }
 
-  setTags (tags) {
+  setTags(tags) {
     this.tags = tags;
     return this;
   }
 
-  getPosts () {
+  getPosts() {
     const { category, tags, posts, maxPosts } = this;
     const identityMap = {};
 
@@ -37,18 +35,20 @@ class RelatedPostsFactory {
     }
 
     if (!!category === false) {
-      console.error("RelatedPostsFactory: Category not provided, use setCategory().");
+      console.error(
+        "RelatedPostsFactory: Category not provided, use setCategory().",
+      );
       return [];
     }
 
-    const getSlug = post => post.fields.slug;
+    const getSlug = (post) => post.fields.slug;
 
-    const addToMap = post => {
+    const addToMap = (post) => {
       const slug = getSlug(post);
-      if (!Object.prototype.hasOwnProperty.call(identityMap, slug)){
+      if (!Object.prototype.hasOwnProperty.call(identityMap, slug)) {
         identityMap[slug] = {
           post: post,
-          points: 0
+          points: 0,
         };
       }
     };
@@ -57,7 +57,7 @@ class RelatedPostsFactory {
       const categoryPoints = 2;
       const slug = getSlug(post);
 
-      if (post.frontmatter.category === category){
+      if (post.frontmatter.category === category) {
         identityMap[slug].points += categoryPoints;
       }
     };
@@ -85,9 +85,7 @@ class RelatedPostsFactory {
 
     const arrayIdentityMap = getIdentityMapAsArray();
 
-    const relatesPosts = orderBy(
-      arrayIdentityMap, ["points"], ["desc"]
-    );
+    const relatesPosts = orderBy(arrayIdentityMap, ["points"], ["desc"]);
 
     return relatesPosts.splice(0, maxPosts);
   }

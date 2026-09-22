@@ -10,6 +10,45 @@ export const ResourcesWrapper = styled.div`
     text-align: left;
     margin-top: 2rem;
   }
+
+  div.comparison table {
+    border-collapse: collapse;
+    margin: 1.5rem 0 2rem;
+    width: 100%;
+  }
+
+  div.comparison__table-wrapper {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  div.comparison th,
+  div.comparison td {
+    border: 1px solid ${props => props.theme.borderColor || props.theme.primaryLightColor};
+    padding: 0.75rem;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  div.comparison th {
+    background-color: ${props => props.theme.secondaryLightColorTwo};
+    font-weight: 600;
+  }
+
+  div.comparison td[data-status="yes"] {
+    color: ${props => props.theme.secondaryColor};
+    font-weight: 600;
+  }
+
+  div.comparison td[data-status="partial"] {
+    color: ${props => props.theme.highlightColor};
+    font-weight: 600;
+  }
+
+  div.comparison td[data-status="no"] {
+    color: ${props => props.theme.errorColor};
+    font-weight: 600;
+  }
   
   .sub-heading {
     color: gray;

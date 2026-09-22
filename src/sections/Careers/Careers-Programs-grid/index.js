@@ -62,7 +62,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
 
   let path = hide_path ? "" : "Programs";
   let programsArray = [];
-  const { isDark } = useStyledDarkMode();
+  const { isDark, didLoad } = useStyledDarkMode();
 
   const programs = data.allMdx.nodes.filter((item) => {
     if (programsArray.indexOf(item.frontmatter.program) >= 0) {
@@ -134,6 +134,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
                             {...((frontmatter.darkthumbnail ||
                               frontmatter.darkthumbnail_svg) &&
                             isDark &&
+                            didLoad &&
                             (frontmatter.darkthumbnail?.publicURL ||
                               frontmatter.darkthumbnail_svg?.publicURL) !==
                               (frontmatter.thumbnail?.publicURL ||

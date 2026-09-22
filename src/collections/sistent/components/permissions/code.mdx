@@ -1,0 +1,628 @@
+---
+title: Permissions Code
+component: permissions
+description: Implementation examples, props specifications, hooks, and integration code for PermissionShield, PermissionProvider, PermissionSessionContext, and useAccessibleOrgs.
+---
+
+import { useState } from "react";
+import {
+  Box,
+  Button,
+  Chip,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  MenuItem,
+  Paper,
+  PermissionProvider,
+  PermissionSessionContext,
+  PermissionShield,
+  Typography
+} from "@sistent/sistent";
+import DeleteIcon from "@mui/icons-material/Delete";
+import SecurityIcon from "@mui/icons-material/Security";
+
+export const sampleKey = {
+  id: "49a5b3a4-846c-4861-bf96-981cf26d70bc",
+  function: "Create Workspace",
+  description: "Create and configure collaborative workspaces within an organization.",
+  category: "Workspace Management",
+  subcategory: "Configuration"
+};
+
+export const sampleDeleteKey = {
+  id: "67b9a12c-9821-4f33-a182-1209bc48da33",
+  function: "Delete Workspace",
+  description: "Permanently delete workspace environments and disassociate resources.",
+  category: "Workspace Management",
+  subcategory: "Configuration"
+};
+
+export const sampleAssignRoleKey = {
+  id: "19e83b40-3381-4209-bca1-9923df810cb9",
+  function: "Assign User Roles",
+  description: "Grant or revoke organizational roles and permissions for team members.",
+  category: "Identity & Access",
+  subcategory: "Users"
+};
+
+export const sampleAnyOfKey = {
+  anyOf: [
+    {
+      id: "73f9821a-6df2-4211-9a74-21950e39c4d2",
+      function: "View All Organizations",
+      description: "Read organization profiles and configurations across all tenant spaces.",
+      category: "Identity & Access",
+      subcategory: "Organizations"
+    },
+    {
+      id: "84e2714c-1983-4a6c-9c71-081cb409ef12",
+      function: "View Org",
+      description: "Read details and membership of the current organization.",
+      category: "Identity & Access",
+      subcategory: "Organizations"
+    }
+  ]
+};
+
+export const mockUserContext = {
+  userName: "Ada Lovelace",
+  orgName: "Layer5 Cloud",
+  roleNames: ["Team Member"]
+};
+
+export const ProviderStateDemo = () => (
+  <PermissionProvider userHasPermission={() => false} userContext={mockUserContext}>
+    <Box sx={{ p: 2, border: "1px solid rgba(255, 255, 255, 0.12)", borderRadius: "8px", width: "100%", maxWidth: 420 }}>
+      <Typography variant="subtitle2" sx={{ color: "#EBC024", fontWeight: 700, mb: 1 }}>
+        Active Permission Context
+      </Typography>
+      <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+        <Chip label="User: Ada Lovelace" size="small" variant="outlined" />
+        <Chip label="Org: Layer5 Cloud" size="small" variant="outlined" />
+        <Chip label="Role: Team Member" size="small" color="primary" />
+      </Box>
+    </Box>
+  </PermissionProvider>
+);
+
+export const NativeButtonsDemo = () => (
+  <PermissionProvider userHasPermission={() => false} userContext={mockUserContext}>
+    <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 2, flexWrap: "wrap", width: "100%", p: 1 }}>
+      <Button
+        variant="contained"
+        color="primary"
+        permissionKey={sampleKey}
+        permissionAction="showShield"
+      >
+        Create Workspace
+      </Button>
+      <IconButton
+        color="error"
+        aria-label="Delete Workspace"
+        permissionKey={sampleDeleteKey}
+        permissionAction="showShield"
+      >
+        <DeleteIcon />
+      </IconButton>
+      <Button
+        variant="outlined"
+        color="secondary"
+        permissionKey={sampleKey}
+        permissionAction="hide"
+      >
+        Hidden Button (renders null)
+      </Button>
+    </Box>
+  </PermissionProvider>
+);
+
+export const NativeListMenuDemo = () => (
+  <PermissionProvider userHasPermission={(key) => key?.function === "View Public Profile"} userContext={mockUserContext}>
+    <Paper sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper", borderRadius: "8px", overflow: "hidden" }}>
+      <List component="nav" aria-label="user actions menu">
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemText primary="View Public Profile" secondary="Granted to all members" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton
+            permissionKey={sampleAssignRoleKey}
+            permissionAction="showShield"
+          >
+            <ListItemText primary="Assign Team Roles" secondary="Requires Admin permission" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton
+            permissionKey={sampleDeleteKey}
+            permissionAction="hide"
+          >
+            <ListItemText primary="Delete Organization" secondary="Hidden for non-owners" />
+          </ListItemButton>
+        </ListItem>
+      </List>
+    </Paper>
+  </PermissionProvider>
+);
+
+export const CustomCardShieldDemo = () => (
+  <PermissionProvider userHasPermission={() => false} userContext={mockUserContext}>
+    <Box sx={{ display: "flex", justifyContent: "center", width: "100%", maxWidth: 380 }}>
+      <PermissionShield permissionKey={sampleKey} variant="inline">
+        <Paper sx={{ p: 2, width: "100%", border: "1px solid rgba(255,255,255,0.1)" }}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
+            Publish Design to Catalog
+          </Typography>
+          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+            Share architectural patterns with the community catalog.
+          </Typography>
+        </Paper>
+      </PermissionShield>
+    </Box>
+  </PermissionProvider>
+);
+
+export const CompositeKeysDemo = () => (
+  <PermissionProvider userHasPermission={() => false} userContext={mockUserContext}>
+    <Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
+      <Button
+        variant="contained"
+        color="secondary"
+        permissionKey={sampleAnyOfKey}
+        permissionAction="showShield"
+      >
+        Manage Organizations (Needs anyOf)
+      </Button>
+    </Box>
+  </PermissionProvider>
+);
+
+export const SessionContextCardDemo = () => (
+  <PermissionProvider userHasPermission={() => false} userContext={mockUserContext}>
+    <Box sx={{ width: "100%", maxWidth: 520 }}>
+      <PermissionSessionContext variant="card" permissionKey={sampleKey} />
+    </Box>
+  </PermissionProvider>
+);
+
+export const OrgSwitcherDemo = () => (
+  <Paper sx={{ p: 2, width: "100%", maxWidth: 420, display: "flex", flexDirection: "column", gap: 1.5 }}>
+    <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
+      Switch to an Accessible Organization
+    </Typography>
+    <Typography variant="body2" sx={{ color: "text.secondary" }}>
+      Select an organization where you have access to this resource:
+    </Typography>
+    <Box sx={{ p: 1, bgcolor: "action.hover", borderRadius: "6px", border: "1px solid rgba(255,255,255,0.08)" }}>
+      <Typography variant="body2" sx={{ fontWeight: 500 }}>
+        Layer5 Engineering (2 roles assigned)
+      </Typography>
+    </Box>
+  </Paper>
+);
+
+The **Permissions** module in Sistent provides declarative authorization abstractions that integrate directly with `@meshery/schemas/permissions` and host ability evaluators.
+
+<a id="PermissionProvider-Setup">
+  <h2>1. Mounting PermissionProvider</h2>
+</a>
+
+Mount `PermissionProvider` at the root of your application. Supply the authorization check function (`userHasPermission`) and the user's active session metadata (`userContext`).
+
+<div className="showcase">
+  <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+    <ThemeWrapper>
+      <ProviderStateDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="permission-provider-setup" collapsible code={`import { PermissionProvider } from "@sistent/sistent";
+import { canKey } from "@/utils/can";
+
+export const App = ({ children, activeUser, currentOrg }) => {
+  const userContext = {
+    userName: activeUser.firstName + " " + activeUser.lastName,
+    orgName: currentOrg?.name,
+    roleNames: activeUser.assignedRoles // Assigned roles, not catalog
+  };
+
+  return (
+    <PermissionProvider userHasPermission={canKey} userContext={userContext}>
+      {children}
+    </PermissionProvider>
+  );
+};`} />
+</div>
+
+<a id="Native-Button-Gating">
+  <h2>2. Native Gating: Button & IconButton</h2>
+</a>
+
+Pass `permissionKey` and `permissionAction` directly to `Button` or `IconButton`. When unauthorized, `permissionAction="showShield"` automatically wraps the button in `PermissionShield`, while `permissionAction="hide"` renders `null`.
+
+<div className="showcase">
+  <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+    <ThemeWrapper>
+      <NativeButtonsDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="native-button-gating" collapsible code={`import { Button, IconButton } from "@sistent/sistent";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { Keys } from "@meshery/schemas/permissions";
+
+export const ActionToolbar = () => (
+  <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+    {/* Button with showShield (inline shield on deny) */}
+    <Button
+      variant="contained"
+      color="primary"
+      permissionKey={Keys.WorkspaceManagementCreateWorkspace}
+      permissionAction="showShield"
+    >
+      Create Workspace
+    </Button>
+
+    {/* IconButton with showShield (badge shield on deny) */}
+    <IconButton
+      color="error"
+      aria-label="Delete Workspace"
+      permissionKey={Keys.WorkspaceManagementDeleteWorkspace}
+      permissionAction="showShield"
+    >
+      <DeleteIcon />
+    </IconButton>
+
+    {/* Button with hide (renders null on deny) */}
+    <Button
+      variant="outlined"
+      permissionKey={Keys.IdentityAccessManagementEditOrganization}
+      permissionAction="hide"
+    >
+      Org Settings
+    </Button>
+  </div>
+);`} />
+</div>
+
+<a id="Native-Menu-List-Gating">
+  <h2>3. Native Gating: MenuItem, ListItem, and ListItemButton</h2>
+</a>
+
+`MenuItem`, `ListItem`, and `ListItemButton` natively evaluate permissions and attach inline shield tooltips or hide themselves cleanly when unauthorized.
+
+<div className="showcase">
+  <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+    <ThemeWrapper>
+      <NativeListMenuDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="native-menu-list-gating" collapsible code={`import { MenuItem, ListItem, ListItemButton, ListItemText, Menu } from "@sistent/sistent";
+import { Keys } from "@meshery/schemas/permissions";
+
+export const UserActionsMenu = ({ anchorEl, open, onClose }) => (
+  <Menu anchorEl={anchorEl} open={open} onClose={onClose}>
+    {/* Allowed item */}
+    <MenuItem onClick={() => handleViewProfile()}>
+      View Public Profile
+    </MenuItem>
+
+    {/* MenuItem automatically shows shield tooltip if unauthorized */}
+    <MenuItem
+      permissionKey={Keys.IdentityAccessManagementAssignUserRoles}
+      permissionAction="showShield"
+      onClick={() => handleAssignRoles()}
+    >
+      Assign Roles
+    </MenuItem>
+
+    {/* MenuItem hidden completely if unauthorized */}
+    <MenuItem
+      permissionKey={Keys.IdentityAccessManagementDeleteUser}
+      permissionAction="hide"
+      onClick={() => handleDeleteUser()}
+    >
+      Delete User
+    </MenuItem>
+  </Menu>
+);`} />
+</div>
+
+<a id="Custom-Element-Shield">
+  <h2>4. Wrapping Custom Elements with PermissionShield</h2>
+</a>
+
+For custom cards, containers, or non-base components, wrap the element with `<PermissionShield>`.
+
+<div className="showcase">
+  <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+    <ThemeWrapper>
+      <CustomCardShieldDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="custom-element-shield" collapsible code={`import { PermissionShield } from "@sistent/sistent";
+import { Keys } from "@meshery/schemas/permissions";
+
+export const CustomExportCard = () => (
+  <PermissionShield permissionKey={Keys.CatalogManagementPublishDesign} variant="inline">
+    <div className="custom-export-card">
+      <h4>Publish Design to Catalog</h4>
+      <p>Share this pattern with the community catalog.</p>
+    </div>
+  </PermissionShield>
+);`} />
+</div>
+
+<a id="Composite-Keys">
+  <h2>5. Composite Keys (anyOf / allOf)</h2>
+</a>
+
+Affordances requiring either multiple alternative keys or all of several keys can pass a `PermissionKeySet`.
+
+<div className="showcase">
+  <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+    <ThemeWrapper>
+      <CompositeKeysDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="composite-keys-example" collapsible code={`import { Button } from "@sistent/sistent";
+import { Keys } from "@meshery/schemas/permissions";
+
+// Permitted if user holds AT LEAST ONE key
+const viewOrgsGate = {
+  anyOf: [
+    Keys.IdentityAccessManagementViewAllOrganizations,
+    Keys.IdentityAccessManagementViewOrg
+  ]
+};
+
+// Permitted if user holds ALL keys
+const adminGate = {
+  allOf: [
+    Keys.IdentityAccessManagementEditOrganization,
+    Keys.IdentityAccessManagementAssignUserRoles
+  ]
+};
+
+export const OrgManagementAction = () => (
+  <Button
+    variant="outlined"
+    permissionKey={viewOrgsGate}
+    permissionAction="showShield"
+  >
+    Manage Organizations
+  </Button>
+);`} />
+</div>
+
+<a id="PermissionSessionContext">
+  <h2>6. PermissionSessionContext (403 Pages)</h2>
+</a>
+
+Render `PermissionSessionContext` with `variant="card"` inside access-denied boundaries. It self-resolves the unmet keys and renders full user context.
+
+<div className="showcase">
+  <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+    <ThemeWrapper>
+      <SessionContextCardDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="session-context-card" collapsible code={`import { PermissionSessionContext, Box, Typography } from "@sistent/sistent";
+import { Keys } from "@meshery/schemas/permissions";
+
+export const AccessDeniedPage = () => (
+  <Box sx={{ p: 4, maxWidth: 600, mx: "auto" }}>
+    <Typography variant="h4" gutterBottom>
+      403 - Access Denied
+    </Typography>
+    <PermissionSessionContext
+      variant="card"
+      permissionKey={Keys.AccountManagementViewSubcription}
+    />
+  </Box>
+);`} />
+</div>
+
+<a id="useAccessibleOrgs">
+  <h2>7. Multi-Tenant Hook: useAccessibleOrgs</h2>
+</a>
+
+Use `useAccessibleOrgs` to query the user's alternative organizations in parallel and populate an organization switcher on 403 error pages.
+
+<div className="showcase">
+  <div className="items" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+    <ThemeWrapper>
+      <OrgSwitcherDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="use-accessible-orgs-hook" collapsible code={`import { useAccessibleOrgs } from "@sistent/sistent";
+import { useGetActiveOrgs, useLazyGetUserKeysQuery } from "@/api/identity";
+import { useSelector } from "react-redux";
+
+export const OrgSwitcher = ({ permissionKey }) => {
+  const { data: allOrgs, isSuccess: orgsLoaded } = useGetActiveOrgs();
+  const currentOrg = useSelector((state) => state.organization.currentOrg);
+  const [triggerGetKeys] = useLazyGetUserKeysQuery();
+
+  const { accessibleOrgs, isLoading, hasNoAccessibleOrgs } = useAccessibleOrgs({
+    allOrgs: allOrgs ?? [],
+    currentOrgId: currentOrg?.id,
+    orgsLoaded,
+    permissionKey,
+    triggerGetKeys
+  });
+
+  if (isLoading) return <div>Checking accessible organizations...</div>;
+  if (hasNoAccessibleOrgs) return <div>No other organization grants this permission.</div>;
+
+  return (
+    <select onChange={(e) => switchOrg(e.target.value)}>
+      {accessibleOrgs.map((org) => (
+        <option key={org.id} value={org.id}>{org.name}</option>
+      ))}
+    </select>
+  );
+};`} />
+</div>
+
+<a id="Props">
+  <h2>Component API & Props</h2>
+</a>
+
+<h3>Base Component Permission Props</h3>
+
+<p>
+  Components including <code>Button</code>, <code>IconButton</code>, <code>MenuItem</code>, <code>ListItem</code>, and <code>ListItemButton</code> accept the following props:
+</p>
+
+<div className="table-container">
+  <table className="props-table">
+    <thead>
+      <tr>
+        <th>Prop</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>permissionKey</code></td>
+        <td><code>PermissionKeySpec</code></td>
+        <td><code>undefined</code></td>
+        <td>Permission key or key set. When omitted, the component renders normally without gating.</td>
+      </tr>
+      <tr>
+        <td><code>permissionAction</code></td>
+        <td><code>'showShield' | 'hide'</code></td>
+        <td><code>'showShield'</code></td>
+        <td>When unauthorized, <code>'showShield'</code> attaches <code>PermissionShield</code> and <code>'hide'</code> renders <code>null</code>.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>PermissionShieldProps</h3>
+
+<div className="table-container">
+  <table className="props-table">
+    <thead>
+      <tr>
+        <th>Prop</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>permissionKey</code></td>
+        <td><code>PermissionKeySpec</code></td>
+        <td><em>required</em></td>
+        <td>Single <code>Key</code> or composite <code>anyOf</code> / <code>allOf</code> key set.</td>
+      </tr>
+      <tr>
+        <td><code>children</code></td>
+        <td><code>React.ReactNode</code></td>
+        <td><em>required</em></td>
+        <td>The affordance or child component to guard.</td>
+      </tr>
+      <tr>
+        <td><code>variant</code></td>
+        <td><code>'inline' | 'badge'</code></td>
+        <td><code>'inline'</code></td>
+        <td>Visual placement of the shield trigger icon overlay.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>PermissionSessionContextProps</h3>
+
+<div className="table-container">
+  <table className="props-table">
+    <thead>
+      <tr>
+        <th>Prop</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>variant</code></td>
+        <td><code>'tooltip' | 'card'</code></td>
+        <td><code>'tooltip'</code></td>
+        <td>Visual theme and sizing variant (compact tooltip vs. full-page 403 card).</td>
+      </tr>
+      <tr>
+        <td><code>permissionKey</code></td>
+        <td><code>PermissionKeySpec</code></td>
+        <td><code>undefined</code></td>
+        <td>Self-resolving key or key set. Resolves missing keys from nearest <code>PermissionProvider</code>.</td>
+      </tr>
+      <tr>
+        <td><code>displayedKeys</code></td>
+        <td><code>Key[]</code></td>
+        <td><code>undefined</code></td>
+        <td>Pre-resolved array of permission keys to display.</td>
+      </tr>
+      <tr>
+        <td><code>subtitle</code></td>
+        <td><code>string</code></td>
+        <td><code>undefined</code></td>
+        <td>Custom requirement subtitle (e.g. "Needs any of: ...").</td>
+      </tr>
+      <tr>
+        <td><code>categories</code></td>
+        <td><code>string[]</code></td>
+        <td><code>undefined</code></td>
+        <td>Category chip labels.</td>
+      </tr>
+      <tr>
+        <td><code>subcategories</code></td>
+        <td><code>string[]</code></td>
+        <td><code>undefined</code></td>
+        <td>Subcategory chip labels.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>PermissionProviderProps</h3>
+
+<div className="table-container">
+  <table className="props-table">
+    <thead>
+      <tr>
+        <th>Prop</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>userHasPermission</code></td>
+        <td><code>(key: Key) => boolean</code></td>
+        <td><em>required</em></td>
+        <td>Authorization evaluator function provided by the host application (e.g., CASL <code>canKey</code>).</td>
+      </tr>
+      <tr>
+        <td><code>userContext</code></td>
+        <td><code>PermissionUserContext</code></td>
+        <td><code>undefined</code></td>
+        <td>Active session metadata containing <code>userName</code>, <code>orgName</code>, and <code>roleNames</code>.</td>
+      </tr>
+      <tr>
+        <td><code>children</code></td>
+        <td><code>React.ReactNode</code></td>
+        <td><em>required</em></td>
+        <td>Root application sub-tree.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
