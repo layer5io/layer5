@@ -486,14 +486,6 @@ module.exports = {
               ],
             },
           },
-          {
-            resolve: "gatsby-plugin-purgecss",
-            options: {
-              printRejected: false,
-              develop: false,
-              purgeOnly: ["src/"],
-            },
-          },
         ]
       : []),
     // End of Production-only Plugins
