@@ -68,18 +68,6 @@ const AdventuresWrapper = styled.div`
     }
   }
 
-  button {
-    color: #1e2117;
-    padding: 0;
-    border: 0;
-    background: none;
-    transition:
-      color 0.25s,
-      border-color 0.25s,
-      transform 0.25s,
-      box-shadow 0.25s;
-    cursor: pointer;
-  }
   @media only screen and (min-width: 768px) {
     @media only screen and (min-width: 1211px) {
       .explain {
@@ -110,27 +98,23 @@ const AdventuresWrapper = styled.div`
         }
       }
     }
-  }
-
-  @media only screen and (max-width: 992px) {
-    .explain {
-      .cards {
-        padding: 0;
-        .card {
-          h2 {
-            font-size: 22px;
-            line-height: 32px;
+    @media only screen and (max-width: 992px) {
+      .explain {
+        .cards {
+          padding: 0;
+          .card {
+            h2 {
+              font-size: 22px;
+              line-height: 32px;
+            }
+            p {
+              font-size: 13px;
+              line-height: 23px;
+            }
+            width: 18rem;
+            height: 18rem;
           }
-          p {
-            font-size: 13px;
-            line-height: 23px;
-          }
-          width: 18rem;
-          height: 18rem;
         }
-      }
-      button {
-        padding: 0;
       }
     }
   }
