@@ -11,7 +11,7 @@ const AdventuresCallout = () => {
     <AdventuresWrapper>
       <div className="explain">
         <div className="cards">
-          <Col lg={12} md={12} sm={12}>
+          <Col $lg={12} $md={12} $sm={12}>
             <a
               target="_blank"
               href="/community/adventures-of-five-and-friends"
