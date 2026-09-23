@@ -51,13 +51,22 @@ export const HoneycombGrid = styled.div`
 
   .selected {
     background-color: ${(props) => props.theme.darkJungleGreenColor};
-    color: ${(props) => props.theme.whiteToBlack};
+    color: ${(props) => props.theme.white};
   }
 
   ul {
     margin: 2.5rem 0 0 0;
     padding-left: 50px;
     padding-right: 50px;
+  }
+
+  /* Give the hexagons more room on small screens so the honeycomb pattern
+     (staggered rows) keeps its shape. */
+  @media (max-width: 540px) {
+    ul {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
   }
 
   .container-active,
@@ -104,7 +113,7 @@ export const HoneycombGrid = styled.div`
         overflow: hidden;
         .title {
           line-height: 1.375rem;
-          color: ${(props) => props.theme.whiteToBlack};
+          color: ${(props) => props.theme.white};
           // margin-bottom: -2.7rem;
           font-size: 1.2rem;
           opacity: 0;

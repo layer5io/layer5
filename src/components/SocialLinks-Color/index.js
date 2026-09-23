@@ -58,6 +58,7 @@ const SocialLinksColor = () => {
               target="_blank"
               rel="noreferrer"
               className="footer_twitter"
+              aria-label="Follow Layer5 on X (Twitter)"
             >
               <TwitterIcon />
             </a>

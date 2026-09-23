@@ -10,7 +10,15 @@ import { Col, Row } from "../reusecore/Layout";
 import CodeBlock from "../components/CodeBlock";
 import { SistentThemeProvider, Button, Terminal } from "@sistent/sistent";
 import { useStyledDarkMode } from "../theme/app/useStyledDarkMode";
+import { SistentThemeProvider, Button } from "@sistent/sistent";
 import ThemeWrapper from "../sections/Projects/Sistent/theme-wrapper";
+import SEO from "../components/seo";
+
+const formatComponentName = (componentName) =>
+  componentName
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 
 const shortcodes = {
   SistentThemeProvider,
@@ -21,21 +29,21 @@ const shortcodes = {
   Row,
   CodeBlock,
   FaArrowRight
+  Col,
+  Row,
+  CodeBlock,
+  FaArrowRight,
 };
 
 const SistentComponentTemplate = ({ data, children, pageContext }) => {
   const { frontmatter } = data.mdx;
   const location = useLocation();
   const { componentName, availablePages } = pageContext;
-  const { isDark } = useStyledDarkMode();
 
   const baseUrl = `/projects/sistent/components/${componentName}`;
 
   // Format component name for display (e.g., "avatar-group" -> "Avatar Group")
-  const displayName = componentName
-    .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
+  const displayName = formatComponentName(componentName);
 
   return (
     <SistentLayout title={displayName}>
@@ -55,14 +63,18 @@ const SistentComponentTemplate = ({ data, children, pageContext }) => {
             )}
             {availablePages.includes("guidance") && (
               <TabButton
-                className={location.pathname === `${baseUrl}/guidance` ? "active" : ""}
+                className={
+                  location.pathname === `${baseUrl}/guidance` ? "active" : ""
+                }
                 onClick={() => navigate(`${baseUrl}/guidance`)}
                 title="Guidance"
               />
             )}
             {availablePages.includes("code") && (
               <TabButton
-                className={location.pathname === `${baseUrl}/code` ? "active" : ""}
+                className={
+                  location.pathname === `${baseUrl}/code` ? "active" : ""
+                }
                 onClick={() => navigate(`${baseUrl}/code`)}
                 title="Code"
               />
@@ -72,6 +84,7 @@ const SistentComponentTemplate = ({ data, children, pageContext }) => {
           <div className="main-content">
             {children}
           </div>
+          <div className="main-content">{children}</div>
         </MDXProvider>
       </div>
     </SistentLayout>
@@ -79,7 +92,7 @@ const SistentComponentTemplate = ({ data, children, pageContext }) => {
 };
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       body
       frontmatter {
@@ -89,5 +102,21 @@ export const query = graphql`
     }
   }
 `;
+
+export const Head = ({ data, pageContext }) => {
+  const { frontmatter } = data.mdx;
+  const { componentName } = pageContext;
+  const displayName = formatComponentName(componentName);
+
+  return (
+    <SEO
+      title={frontmatter.title || `${displayName} - Sistent Design System`}
+      description={
+        frontmatter.description ||
+        `${displayName} component guidance, usage, and code reference from Sistent, Layer5's open source design system for cloud native applications.`
+      }
+    />
+  );
+};
 
 export default SistentComponentTemplate;
