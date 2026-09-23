@@ -1,10 +1,10 @@
-import { includes, orderBy } from "lodash";
+import includes from "lodash/includes";
+import orderBy from "lodash/orderBy";
 
 class RelatedResourcesFactory {
-
-  constructor (resources, currentResourceSlug){
+  constructor(resources, currentResourceSlug) {
     this.resources = resources.filter(
-      (resource) => resource.fields.slug !== currentResourceSlug
+      (resource) => resource.fields.slug !== currentResourceSlug,
     );
     this.currentResourceSlug = currentResourceSlug;
     this.maxResources = 6;
@@ -12,43 +12,47 @@ class RelatedResourcesFactory {
     this.tags = [];
   }
 
-  setMaxResources (m) {
+  setMaxResources(m) {
     this.maxResources = m;
     return this;
   }
 
-  setCategory (category) {
+  setCategory(category) {
     this.category = category;
     return this;
   }
 
-  setTags (tags) {
+  setTags(tags) {
     this.tags = tags;
     return this;
   }
 
-  getResources () {
+  getResources() {
     const { category, tags, resources, maxResources } = this;
     const identityMap = {};
 
     if (!!tags === false || tags.length === 0) {
-      console.error("RelatedResourcesFactory: Tags not provided, use setTags().");
+      console.error(
+        "RelatedResourcesFactory: Tags not provided, use setTags().",
+      );
       return [];
     }
 
     if (!!category === false) {
-      console.error("RelatedResourcesFactory: Category not provided, use setCategory().");
+      console.error(
+        "RelatedResourcesFactory: Category not provided, use setCategory().",
+      );
       return [];
     }
 
-    const getSlug = resource => resource.fields.slug;
+    const getSlug = (resource) => resource.fields.slug;
 
-    const addToMap = resource => {
+    const addToMap = (resource) => {
       const slug = getSlug(resource);
-      if (!Object.prototype.hasOwnProperty.call(identityMap, slug)){
+      if (!Object.prototype.hasOwnProperty.call(identityMap, slug)) {
         identityMap[slug] = {
           resource: resource,
-          points: 0
+          points: 0,
         };
       }
     };
@@ -57,7 +61,7 @@ class RelatedResourcesFactory {
       const categoryPoints = 2;
       const slug = getSlug(resource);
 
-      if (resource.frontmatter.category === category){
+      if (resource.frontmatter.category === category) {
         identityMap[slug].points += categoryPoints;
       }
     };
@@ -85,9 +89,7 @@ class RelatedResourcesFactory {
 
     const arrayIdentityMap = getIdentityMapAsArray();
 
-    const relatesResources = orderBy(
-      arrayIdentityMap, ["points"], ["desc"]
-    );
+    const relatesResources = orderBy(arrayIdentityMap, ["points"], ["desc"]);
 
     return relatesResources.splice(0, maxResources);
   }

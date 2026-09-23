@@ -487,6 +487,15 @@ Make sure you have the following prerequisites installed on your operating syste
   npm -v
   ```
 
+  Node v20 (the version in [`.nvmrc`](.nvmrc)) and Node v22 are both supported;
+  CI builds the site on Node v22. Any npm from v10 onwards works, including
+  npm v12.
+
+  npm v12 changed two defaults that used to break a clean install of this
+  repository. Both are handled by the repository itself now, so no extra flags
+  are needed - see [Dependency install notes](#dependency-install-notes) if you
+  are curious about the warnings npm v12 prints.
+
 - [Gatsby.js](https://www.gatsbyjs.com/)
 
   To verify run:
@@ -495,7 +504,7 @@ Make sure you have the following prerequisites installed on your operating syste
   gatsby --version
   ```
 
-**Note:** If you're on a _Windows environment_ then it is highly recommended that you install [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install) both for performance and ease of use. Refer to the [documentation](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/gatsby-on-wsl) for the installation of _Gatsby.js on WSL_.
+**Note:** If you're on a _Windows environment_ then it is highly recommended that you install [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install) both for performance and ease of use. Refer to the [documentation](https://www.gatsbyjs.com/docs/how-to/local-development/gatsby-on-linux/#windows-subsystem-linux-wsl) for the installation of _Gatsby.js on WSL_.
 
 ## Set up your Local Development Environment
 
@@ -581,6 +590,42 @@ make site
 
 This will run a local webserver with "live reload" conveniently enabled.
 
+`make site` starts a **lightweight** dev server: it skips the heaviest content
+collections (members, integrations, blog, news, events, resources) so that the
+data layer stays small. Use `make site-full` only when you are changing one of
+those collections — it is several times more expensive.
+
+#### Running on a memory-constrained machine
+
+`make site` and `npm run build` go through `scripts/run-gatsby.js`, which reads
+the RAM and CPU count of the machine it is on and derives Gatsby's worker count,
+sharp concurrency, and V8 heap ceiling from them. There is nothing to tune by
+hand, and you should not need to set `NODE_OPTIONS` yourself. If you do set any
+of `GATSBY_CPU_COUNT`, `SHARP_CONCURRENCY`, or `NODE_OPTIONS`, your value wins.
+
+On Windows, two things matter beyond the repository itself:
+
+1. **Clone into the WSL filesystem, not `/mnt/c`.** Gatsby watches thousands of
+   files; across the `/mnt/c` 9p bridge every one of those stat calls crosses a
+   VM boundary, which makes builds far slower and keeps more of the watch state
+   resident. Use `~/layer5` inside your distribution.
+
+2. **Give WSL2 an explicit memory ceiling.** By default WSL2 claims up to half
+   of host RAM and returns freed pages to Windows only slowly, which is why
+   stopping Gatsby can appear not to give memory back. Create
+   `C:\Users\<you>\.wslconfig` and restart WSL with `wsl --shutdown`:
+
+   ```ini
+   # Suggested starting point for a host with 8 GB of RAM.
+   [wsl2]
+   memory=5GB
+   processors=4
+   swap=4GB
+   ```
+
+   `scripts/run-gatsby.js` sees the WSL VM's limit rather than the host's, so it
+   will size the build to whatever ceiling you set here.
+
 **11.** Track your changes.
 
 ```
@@ -622,6 +667,56 @@ git push -u origin <your_branch_name>
 ```
 
 **15.** Once you’ve committed and pushed all of your changes to GitHub, go to the page for your fork on GitHub, select your development branch, and click the pull request button. Please ensure that you compare your feature branch to the desired branch of the repo you are supposed to make a PR to. If you need to make any adjustments to your pull request, just push the updates to GitHub. Your pull request will automatically track the changes in your development branch and update it.
+
+### Dependency install notes
+
+`make setup` (and `npm ci`, which the deploy workflows use) is expected to work
+on a clean clone with no extra flags on every npm from v10 onwards. Two npm v12
+default changes are worth knowing about, because both used to stop the install
+dead and both are now handled inside the repository.
+
+**Git dependencies are no longer fetched.** npm v12 refuses to install
+dependencies that resolve to a git URL and fails with `EALLOWGIT`. This
+repository has no git dependencies. `gatsby-plugin-meta-redirect` used to be one
+of them and now lives in [`plugins/gatsby-plugin-meta-redirect`](plugins/gatsby-plugin-meta-redirect)
+as a local Gatsby plugin - Gatsby resolves plugins from `plugins/` before it
+looks in `node_modules`, so `gatsby-config.js` still refers to it by name. Do
+not re-add it, or any other package, as a `github:` or `git+ssh:` dependency.
+
+**Dependency install scripts are no longer run.** npm v12 skips install and
+postinstall scripts of dependencies unless they are explicitly approved, and
+prints a summary like:
+
+```
+npm warn install-scripts 12 packages had install scripts blocked because they are not covered by allowScripts:
+npm warn install-scripts   sharp@0.34.5 (install: node install/check.js || npm run build)
+npm warn install-scripts   lmdb@2.5.3 (install: node-gyp-build-optional-packages)
+...
+```
+
+These warnings are harmless and can be ignored. Every one of those packages
+ships its native code as prebuilt, platform-specific npm packages that plain
+dependency resolution already installs (`@img/sharp-*` for `sharp`, `@lmdb/*`
+for `lmdb`, and so on), so their install scripts only re-verify work that npm
+has already done. Nothing needs to be added to `allowScripts`, and running
+`npm install --dangerously-allow-all-scripts` is not necessary.
+
+The one package that genuinely needed to compile was an old `sharp` v0.32.6,
+which Gatsby's image plugins each pulled in as a nested copy. Without its
+install script that copy has no binary at all and the build dies with
+`Cannot find module '../build/Release/sharp-<platform>.node'`. The `overrides`
+block in `package.json` now points every one of those nested copies at the same
+`sharp` version the site depends on directly, so only one prebuilt `sharp` is
+installed and there is no native build step left to block:
+
+```json
+"overrides": {
+  "sharp": "$sharp"
+}
+```
+
+If you ever see the `sharp-<platform>.node` error again, check whether a newly
+added dependency reintroduced a nested `sharp` with `npm ls sharp`.
 
 ### Lint Rules
 

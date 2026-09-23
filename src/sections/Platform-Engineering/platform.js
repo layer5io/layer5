@@ -240,18 +240,18 @@ const StyledRow = styled(Row)`
       img {
         width: 600px;
         height: 300px;
-        object-fit: cover;
+        object-fit: contain;
 
         @media (max-width: 767px) {
           width: 300px;
           height: 200px;
-          object-fit: cover;
+          object-fit: contain;
         }
 
         @media (max-width: 467px) {
           width: 100%;
           height: 180px;
-          object-fit: cover;
+          object-fit: contain;
         }
       }
     }
