@@ -2,12 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import BrandPageWrapper from "./brandPage.style";
 import { Row, Col } from "../../../reusecore/Layout";
 import Layer5Brand from "./Brand-components/layer5";
-import MesheryBrand from "./Brand-components/meshery";
+// import MesheryBrand from "./Brand-components/meshery";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import loadable from "@loadable/component";
 
-const MeshSyncBrand = loadable(() => import("./Brand-components/meshsync"));
-const MesheryOperatorBrand = loadable(() => import("./Brand-components/meshery-operator"));
+// const MeshSyncBrand = loadable(() => import("./Brand-components/meshsync"));
+// const MesheryOperatorBrand = loadable(() => import("./Brand-components/meshery-operator"));
 const ImageHubBrand = loadable(() => import("./Brand-components/imagehub"));
 const SMPBrand = loadable(() => import("./Brand-components/smp"));
 const CommunityBrand = loadable(() => import("./Brand-components/community"));
@@ -227,15 +227,15 @@ const Brand = () => {
           <div className="section" id="social-backgrounds" ref={SocialBackgroundsRef}>
             <SocialBackgrounds />
           </div>
-          <div className="section" id="meshery" ref={mesheryRef}>
-            <MesheryBrand />
-          </div>
-          <div className="section" id="meshsync" ref={meshsyncRef}>
-            <MeshSyncBrand />
-          </div>
-          <div className="section" id="meshery-operator" ref={mesheryOperatorRef}>
-            <MesheryOperatorBrand />
-          </div>
+          // <div className="section" id="meshery" ref={mesheryRef}>
+          //   <MesheryBrand />
+          // </div>
+          // <div className="section" id="meshsync" ref={meshsyncRef}>
+          //   <MeshSyncBrand />
+          // </div>
+          // <div className="section" id="meshery-operator" ref={mesheryOperatorRef}>
+          //   <MesheryOperatorBrand />
+          // </div>
           <div className="section" id="image-hub" ref={imageHubRef}>
             <ImageHubBrand />
           </div>
