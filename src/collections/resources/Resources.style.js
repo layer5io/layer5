@@ -1,6 +1,23 @@
 import styled from "styled-components";
 export const ResourcesWrapper = styled.div`
   color: #000;
+  h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 0.5rem;
+  }
+  h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  ul,
+  ol {
+    margin-bottom: 1rem;
+  }
   
   div.comparison h2 {
     text-align: left;

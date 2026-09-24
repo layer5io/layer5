@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const TCSfacts = styled("table")(({ theme }) => ({
   backgroundColor: `${theme.elevationColor}`,
   borderRadius: "0.5rem",
-  marginBottom: "1rem",
+  marginTop: "2.5rem",
+  marginBottom: "2.5rem",
   color: `${theme.text}`,
   border: `1px solid ${theme.primaryLightColor}`,
 
