@@ -28,7 +28,9 @@ const Honeycomb = (props) => {
     const grid = gridRef.current;
     if (!grid) return;
 
-    const availableWidth = grid.offsetWidth || window.innerWidth;
+    // The ul width depends on the current hex size. Use the viewport width
+    // that the breakpoints are defined for.
+    const availableWidth = window.innerWidth;
     const W = hexSizeForWidth(availableWidth);
 
     if (!grid.children.length) {
