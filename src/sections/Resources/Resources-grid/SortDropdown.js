@@ -15,12 +15,24 @@ const SortDropdown = ({ sortOrder, onSortChange }) => {
   const selected = options.find((opt) => opt.value === sortOrder) || options[0];
 
   useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
     const close = (e) => {
       if (ref.current && !ref.current.contains(e.target)) setIsOpen(false);
     };
     document.addEventListener("mousedown", close);
-    return () => document.removeEventListener("mousedown", close);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", close);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
+
+  const handleSelect = (value) => {
+    onSortChange(value);
+    setIsOpen(false);
+  };
 
   return (
     <SortDropdownWrapper ref={ref}>
@@ -29,6 +41,8 @@ const SortDropdown = ({ sortOrder, onSortChange }) => {
         className={`sort-button ${isOpen ? "open" : ""}`}
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Sort Resources"
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
       >
         <span>{selected.label}</span>
         <FaCaretDown className={`caret-icon ${isOpen ? "rotate" : ""}`} />
@@ -37,15 +51,14 @@ const SortDropdown = ({ sortOrder, onSortChange }) => {
       {isOpen && (
         <ul className="sort-menu">
           {options.map(({ value, label }) => (
-            <li
-              key={value}
-              className={`sort-item ${sortOrder === value ? "selected" : ""}`}
-              onClick={() => {
-                onSortChange(value);
-                setIsOpen(false);
-              }}
-            >
-              {label}
+            <li key={value}>
+              <button
+                type="button"
+                className={`sort-item ${sortOrder === value ? "selected" : ""}`}
+                onClick={() => handleSelect(value)}
+              >
+                {label}
+              </button>
             </li>
           ))}
         </ul>

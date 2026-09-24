@@ -152,6 +152,11 @@ export const SortDropdownWrapper = styled.div`
     cursor: pointer;
     outline: none;
 
+    &:focus-visible {
+      outline: 2px solid ${(props) => props.theme.secondaryColor || "#00b39f"};
+      outline-offset: 2px;
+    }
+
     @media only screen and (max-width: 991px) {
       gap: 0.5rem;
     }
@@ -181,9 +186,9 @@ export const SortDropdownWrapper = styled.div`
     position: absolute;
     top: calc(100% + 4px);
     left: 0;
-    min-width: 180px;
+    min-width: 100%;
     width: max-content;
-    max-width: 250px;
+    max-width: min(250px, calc(100vw - 32px));
     margin: 0;
     padding: 4px 0;
     list-style: none;
@@ -195,12 +200,19 @@ export const SortDropdownWrapper = styled.div`
   }
 
   .sort-item {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
     padding: 10px 15px;
     font-size: 0.95rem;
+    font-family: inherit;
     color: ${(props) => props.theme.whiteToBlack};
     cursor: pointer;
+    outline: none;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       background-color: ${(props) =>
         props.theme.secondaryLightColorTwo || "rgba(0, 179, 159, 0.2)"};
       color: ${(props) => props.theme.secondaryColor || "#00b39f"};
