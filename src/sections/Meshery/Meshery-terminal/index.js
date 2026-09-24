@@ -52,7 +52,7 @@ const MesheryTerminal = () => {
     url,
     alt: PLATFORM_DETAILS[key].alt,
     title: PLATFORM_DETAILS[key].title,
-    link: `#${PLATFORM_SECTION_ID}`,
+    link: `#${key.toLowerCase()}`,
     onClick: () => handlePlatformClick(key),
   }));
 
