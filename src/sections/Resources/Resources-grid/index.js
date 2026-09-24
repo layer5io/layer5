@@ -5,6 +5,8 @@ import Pagination from "./paginate";
 import SearchBox from "../../../reusecore/Search";
 import EmptyResources from "../Resources-error/emptyStateTemplate";
 
+import SortDropdown from "./SortDropdown";
+
 import { ResourcePageWrapper } from "./resourceGrid.style";
 
 const ResourceGrid = (props) => {
@@ -23,13 +25,18 @@ const ResourceGrid = (props) => {
       left: 100,
       behavior: "smooth",
     });
-
   };
 
   return (
     <ResourcePageWrapper>
       <div className="resource-grid-wrapper">
-        <div className="search">
+        <div className="search-and-sort">
+          <div className="sortBox">
+            <SortDropdown
+              sortOrder={props.sortOrder}
+              onSortChange={props.handleSortChange}
+            />
+          </div>
           <div className="searchBox">
             <SearchBox
               searchQuery={props.searchQuery}
@@ -40,11 +47,19 @@ const ResourceGrid = (props) => {
             />
           </div>
         </div>
-        <Row style={{
-          flexWrap: "wrap"
-        }}
+        <Row
+          style={{
+            flexWrap: "wrap",
+          }}
         >
-          {props.data.length < 1 && <EmptyResources errorMessage={"No matching resources"} errorSubtitle={"Try removing one or more filters to broaden your results."} />}
+          {props.data.length < 1 && (
+            <EmptyResources
+              errorMessage={"No matching resources"}
+              errorSubtitle={
+                "Try removing one or more filters to broaden your results."
+              }
+            />
+          )}
 
           {searchedResource.map(({ id, frontmatter, fields }) => (
             <Col key={id} $xs={12} $sm={6} $xl={4}>
