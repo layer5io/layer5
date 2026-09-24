@@ -3,7 +3,10 @@ import styled from "styled-components";
 import cursor from "../Features/images/cursor.svg";
 
 export const CardWrapper = styled.div`
+  height: 100%;
+
   .post-block {
+    height: calc(100% - 2rem);
     cursor: url(${cursor}), auto;
     margin-bottom: 2rem;
     border-radius: 0.5rem;
@@ -132,10 +135,6 @@ export const CardWrapper = styled.div`
     !props.$listView &&
     `
     @media screen and (max-width: 1200px) and (min-width: 992px) {
-      .post-thumb-block {
-        height: ${(props) => (props.$fitContainer ? "10rem" : "auto")};
-        min-height: 10rem;
-      }
       .post-content-block {
         height: auto;
         min-height: 10rem;
