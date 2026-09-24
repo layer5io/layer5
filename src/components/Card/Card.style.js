@@ -71,16 +71,6 @@ export const CardWrapper = styled.div`
       justify-content: center;
       padding: 0.5rem;
     `}
-    ${(props) =>
-      props.$fitContainer &&
-      !props.$listView &&
-      `
-      padding: 2rem;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    `}
 
     .gatsby-image-wrapper,
     .old-gatsby-image-wrapper {
@@ -133,7 +123,7 @@ export const CardWrapper = styled.div`
     `
     @media screen and (max-width: 1200px) and (min-width: 992px) {
       .post-thumb-block {
-        height: ${(props) => (props.$fitContainer ? "10rem" : "auto")};
+        height: auto;
         min-height: 10rem;
       }
       .post-content-block {
