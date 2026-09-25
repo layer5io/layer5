@@ -65,7 +65,6 @@ function IntraPage() {
 
   useEffect(() => {
     const anchors = document.querySelectorAll(".main-content > a");
-    console.log(anchors);
     if (anchors) {
       setContents(
         Array.from(anchors).map((a) => ({
