@@ -1,0 +1,53 @@
+---
+title: Terminal Guidance
+component: terminal
+description: Terminal is a styled console window component used to display command-line output, code snippets, and log-style text in a familiar terminal-like interface.
+
+---
+
+Terminal is a presentational component for displaying static, pre-defined text content in a console-like visual format. It does not execute commands or accept live input — it is intended purely for showing CLI output, code, or log-style content within a page.
+
+<a id="When to Use">
+  <h2>When to Use</h2>
+</a>
+
+Use Terminal when you need to visually communicate:
+
+- Installation or setup commands and their expected output
+- Example CLI usage in documentation
+- Static log excerpts or console output snippets
+- Code or command sequences that benefit from a console-style presentation for clarity
+
+Avoid using Terminal to simulate an interactive shell, as it does not support user input, command execution, or live streaming of data. For those use cases, a dedicated interactive console component should be used instead.
+
+<a id="Content Formatting">
+  <h2>Content Formatting</h2>
+</a>
+
+<h3>Lines</h3>
+
+Content is passed as an array of line objects, where each line has a `code` string representing the text to display. Keep individual lines concise so they remain readable within the fixed-width terminal window, and break longer output into multiple lines rather than relying on wrapping.
+
+<h3>Color</h3>
+
+Each line can be assigned a custom `color` to differentiate between types of output — for example, using a distinct color for commands versus their results, or to highlight errors, warnings, and success messages. Maintain a consistent color convention across a project (e.g., always using the same color for errors) so users can quickly scan and interpret output.
+
+<h3>Indentation</h3>
+
+The `indent` property can be used to visually nest lines, which is useful for representing hierarchical output such as file trees, nested command results, or grouped log entries.
+
+<h3>Line Height</h3>
+
+Setting `short` on a line reduces its line height, which can help fit denser output (such as multi-line logs) into a more compact vertical space.
+
+<a id="Titling">
+  <h2>Titling</h2>
+</a>
+
+The optional `title` prop should be used to give context to the terminal window, such as the shell type (e.g. "bash", "zsh"), a filename, or the purpose of the shown output. Omitting the title is acceptable when the surrounding content already makes the context clear.
+
+<a id="Themes">
+  <h2>Themes</h2>
+</a>
+
+Terminal uses a fixed dark background for its content area regardless of the surrounding page theme, preserving the familiar look of a console window in both light and dark mode contexts. Text color within the terminal defaults to the theme's info color but can be overridden per line as needed.
