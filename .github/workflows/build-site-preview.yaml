@@ -43,11 +43,9 @@ jobs:
         with:
           path: |
             .cache
-          # Do not reuse a cache from an earlier commit. Gatsby's cache can
-          # retain transformed nodes and worker state that is not safe to mix
-          # with a different source tree, which can leave the preview build
-          # waiting indefinitely.
           key: ${{ runner.os }}-gatsby-${{ github.event.pull_request.number }}-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-gatsby-${{ github.event.pull_request.number }}-
 
       - name: Install dependencies
         run: npm ci
