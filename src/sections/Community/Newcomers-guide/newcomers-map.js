@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import { navigate } from "gatsby";
 import styled from "styled-components";
 
 const NewcomersMapWrapper = styled.div`
@@ -8,7 +8,9 @@ const NewcomersMapWrapper = styled.div`
   .poly-3 {
     fill: white;
   }
+  .map-link,
   a {
+    cursor: pointer;
     path {
       fill: #3c494e;
     }
@@ -17,19 +19,38 @@ const NewcomersMapWrapper = styled.div`
         fill: ${(props) => props.theme.secondaryColor};
       }
     }
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+    &:focus-visible {
+      outline: 2px dashed ${(props) => props.theme.secondaryColor};
+      outline-offset: 4px;
+      path {
+        fill: ${(props) => props.theme.secondaryColor};
+      }
+    }
   }
   #newcomers-guide {
+    cursor: pointer;
     path {
       fill: ${(props) =>
-  props.handleHover
-    ? (props) => props.theme.secondaryColor
-    : "#3c494e"};
+        props.handleHover ? (props) => props.theme.secondaryColor : "#3c494e"};
       transition: 0.5s;
     }
     &:hover {
       path {
         fill: ${(props) => props.theme.secondaryColor};
         transition: 0s;
+      }
+    }
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+    &:focus-visible {
+      outline: 2px dashed ${(props) => props.theme.secondaryColor};
+      outline-offset: 4px;
+      path {
+        fill: ${(props) => props.theme.secondaryColor};
       }
     }
   }
@@ -189,11 +210,28 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
           style={{ fill: "#62accd" }}
         />
         <path d="M260.94,201.87h0a6.74,6.74,0,0,1,4.85,1.93,7,7,0,0,1,1.94,5,10.75,10.75,0,0,1-8.62,10.11,9.35,9.35,0,0,1-1.48.13,6.76,6.76,0,0,1-4.86-1.93,7,7,0,0,1-1.94-5A10.76,10.76,0,0,1,259.47,202a8.19,8.19,0,0,1,1.47-.13m0-1a9.35,9.35,0,0,0-1.64.15,11.74,11.74,0,0,0-9.47,11.1,7.62,7.62,0,0,0,7.8,7.94,9.37,9.37,0,0,0,1.65-.15,11.76,11.76,0,0,0,9.45-11.09,7.61,7.61,0,0,0-7.79-7.95Z" />
-        <a
+        <g
           id="newcomers-guide"
-          href="https://layer5.io/community/handbook/about#Newcomer's%20Path"
-          target="_blank"
-          rel="noreferrer"
+          role="link"
+          tabIndex={0}
+          aria-label="Newcomer's Guide"
+          onClick={() =>
+            window.open(
+              "/community/handbook/about#Newcomer's%20Path",
+              "_blank",
+              "noopener,noreferrer",
+            )
+          }
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              window.open(
+                "/community/handbook/about#Newcomer's%20Path",
+                "_blank",
+                "noopener,noreferrer",
+              );
+            }
+          }}
         >
           <path d="M19.69,53.67A4.67,4.67,0,0,0,14,58.38V81.87a7.13,7.13,0,0,0,5.73,6.74l65.07,11.47,6,11.36,6-9.26,64.5,11.38a4.68,4.68,0,0,0,5.73-4.72V85.35a7.13,7.13,0,0,0-5.73-6.74Z" />
           <g style={{ mask: "url(#mask)" }}>
@@ -244,7 +282,7 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
               ’ Guide
             </tspan>
           </text>
-        </a>
+        </g>
         <g id="Layer_2" data-name="Layer 2">
           <g id="Layer_1-2" data-name="Layer 1-2">
             <path
@@ -279,7 +317,19 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
             <path d="M504.84,123.31a9.11,9.11,0,0,1,1.55.14h.05a11.2,11.2,0,0,1,9,10.59,7,7,0,0,1-7.13,7.27,9.3,9.3,0,0,1-1.55-.14,11.24,11.24,0,0,1-9-10.6,7,7,0,0,1,7.13-7.27m0-1a7.94,7.94,0,0,0-8.13,8.27,12.27,12.27,0,0,0,9.85,11.59,10.26,10.26,0,0,0,1.72.15,8,8,0,0,0,8.13-8.27,12.22,12.22,0,0,0-9.8-11.58h-.05a10.26,10.26,0,0,0-1.72-.15Z" />
           </g>
         </g>
-        <Link to="/community/meshmates" aria-label="find a meshmate">
+        <g
+          className="map-link"
+          role="link"
+          tabIndex={0}
+          aria-label="find a meshmate"
+          onClick={() => navigate("/community/meshmates")}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              navigate("/community/meshmates");
+            }
+          }}
+        >
           <path d="M219.59,100.29a4,4,0,0,1-4.13-4.21v-23a6.48,6.48,0,0,1,5.2-6.11L359.38,42.48a5.45,5.45,0,0,1,.89-.08,4,4,0,0,1,4.14,4.21v23a6.48,6.48,0,0,1-5.21,6.11L295.72,87l-5.55,10.59-5.55-8.64-64.14,11.31a4.53,4.53,0,0,1-.89.08Z" />
           <path d="M360.27,42.9a3.52,3.52,0,0,1,3.64,3.71v23a6,6,0,0,1-4.79,5.62L295.87,86.41l-.48.09-.23.43-5,9.62-4.9-7.64-.36-.56-.66.12L220.4,99.72a4.51,4.51,0,0,1-.81.07A3.51,3.51,0,0,1,216,96.08v-23a6,6,0,0,1,4.78-5.62L359.46,43a4.59,4.59,0,0,1,.81-.07m0-1a5.5,5.5,0,0,0-1,.09L220.57,66.45a7,7,0,0,0-5.61,6.6v23a4.52,4.52,0,0,0,4.63,4.71,6.58,6.58,0,0,0,1-.08l63.8-11.25,5.84,9.08,5.84-11.14,63.24-11.15a7,7,0,0,0,5.62-6.61v-23a4.54,4.54,0,0,0-4.64-4.71Z" />
           <g style={{ mask: "url(#mask-2)" }}>
@@ -355,8 +405,20 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
             points="337.04 60.92 339.38 60.51 339.38 68.21 337.04 68.62 337.04 60.92"
             style={{ fill: "#f2f2f2" }}
           />
-        </Link>
-        <Link to="/community/calendar" aria-label="community calender">
+        </g>
+        <g
+          className="map-link"
+          role="link"
+          tabIndex={0}
+          aria-label="community calendar"
+          onClick={() => navigate("/community/calendar")}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              navigate("/community/calendar");
+            }
+          }}
+        >
           <path d="M562.77,115.75a7,7,0,0,1-1-.08l-70.1-10.51-6.18,8.18-6.18-10-70.65-10.6c-3.18-.47-5.77-3-5.77-5.7V65.4c0-2.28,1.94-3.93,4.61-3.93a7,7,0,0,1,1,.08l153.11,23c3.18.47,5.77,3,5.77,5.7v21.61a3.57,3.57,0,0,1-1.29,2.81,5.08,5.08,0,0,1-3.32,1.12Z" />
           <path d="M407.49,62a6.07,6.07,0,0,1,.94.08L561.54,85c2.94.44,5.34,2.78,5.34,5.21v21.61c0,2-1.73,3.43-4.11,3.43a7.57,7.57,0,0,1-.94-.07L492,104.71l-.59-.09-.36.48-5.56,7.35-5.67-9.21-.24-.39-.46-.07L408.73,92.22c-3-.44-5.35-2.78-5.35-5.21V65.4c0-2,1.73-3.43,4.11-3.43m0-1c-2.9,0-5.11,1.83-5.11,4.43V87c0,2.91,2.77,5.69,6.2,6.2L479,103.77l6.44,10.45,6.44-8.52,69.8,10.47a8.23,8.23,0,0,0,1.09.08c2.9,0,5.11-1.83,5.11-4.43V90.21c0-2.91-2.77-5.68-6.2-6.2l-153.1-23a6.77,6.77,0,0,0-1.09-.09Z" />
           <g style={{ mask: "url(#mask-3)" }}>
@@ -429,11 +491,25 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
               ting
             </tspan>
           </text>
-        </Link>
-        <a
-          href="https://layer5.io/community/handbook"
-          target="_blank"
-          rel="noreferrer"
+        </g>
+        <g
+          className="map-link"
+          role="link"
+          tabIndex={0}
+          aria-label="Community Guide"
+          onClick={() =>
+            window.open("/community/handbook", "_blank", "noopener,noreferrer")
+          }
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              window.open(
+                "/community/handbook",
+                "_blank",
+                "noopener,noreferrer",
+              );
+            }
+          }}
         >
           <path d="M183.17,275.14a4.8,4.8,0,0,1-.91-.08l-64.83-11.43-5.67,8.82-5.67-10.82L40.77,250.12a6.62,6.62,0,0,1-5.31-6.25V220.38a4.13,4.13,0,0,1,4.23-4.3,4.73,4.73,0,0,1,.91.08l141.49,25a6.6,6.6,0,0,1,5.31,6.24v23.49a4.37,4.37,0,0,1-1.21,3.11,4.21,4.21,0,0,1-3,1.19Z" />
           <path d="M39.69,216.58a4.54,4.54,0,0,1,.82.07L182,241.6a6.11,6.11,0,0,1,4.9,5.75v23.49a3.6,3.6,0,0,1-3.73,3.8,4.62,4.62,0,0,1-.82-.07L117.84,263.2l-.65-.12-.36.56-5,7.82-5.15-9.84-.23-.44-.48-.08L40.86,249.62a6.09,6.09,0,0,1-4.9-5.75V220.38a3.6,3.6,0,0,1,3.73-3.8m0-1a4.62,4.62,0,0,0-4.73,4.8v23.49a7.13,7.13,0,0,0,5.73,6.74l65.07,11.47,6,11.36,6-9.26,64.5,11.38a5.77,5.77,0,0,0,1,.08,4.62,4.62,0,0,0,4.73-4.8V247.35a7.13,7.13,0,0,0-5.73-6.74L40.69,215.67a5.81,5.81,0,0,0-1-.09Z" />
@@ -460,14 +536,23 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
               ommunity Guide
             </tspan>
           </text>
-        </a>
+        </g>
         <path
           d="M25.24,137.83a4.62,4.62,0,0,0-5.64,4.64A6.93,6.93,0,0,0,25.24,149a4.56,4.56,0,0,0,5.66-4.55A7.09,7.09,0,0,0,25.24,137.83Z"
           style={{ fill: "#477e96" }}
         />
-        <a
-          href="https://layer5.io/community/handbook/repository-overview"
-          target="_self"
+        <g
+          className="map-link"
+          role="link"
+          tabIndex={0}
+          aria-label="Repository Overview"
+          onClick={() => navigate("/community/handbook/repository-overview")}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              navigate("/community/handbook/repository-overview");
+            }
+          }}
         >
           <path d="M541.17,286.14a4.8,4.8,0,0,1-.91-.08l-64.83-11.43-5.67,8.82-5.67-10.82-65.32-11.51a6.62,6.62,0,0,1-5.31-6.25V231.38a4.13,4.13,0,0,1,4.23-4.3,4.73,4.73,0,0,1,.91.08l141.49,25a6.6,6.6,0,0,1,5.31,6.24v23.49a4.37,4.37,0,0,1-1.21,3.11,4.21,4.21,0,0,1-3,1.19Z" />
           <path d="M397.69,227.58a4.54,4.54,0,0,1,.82.07L540,252.6a6.11,6.11,0,0,1,4.9,5.75v23.49a3.6,3.6,0,0,1-3.73,3.8,4.62,4.62,0,0,1-.82-.07L475.84,274.2l-.65-.12-.36.56-5,7.82-5.15-9.84-.23-.44-.48-.08-65.08-11.48a6.09,6.09,0,0,1-4.9-5.75V231.38a3.6,3.6,0,0,1,3.73-3.8m0-1a4.62,4.62,0,0,0-4.73,4.8v23.49a7.13,7.13,0,0,0,5.73,6.74l65.07,11.47,6,11.36,5.95-9.26,64.5,11.38a5.77,5.77,0,0,0,1,.08,4.62,4.62,0,0,0,4.73-4.8V258.35a7.13,7.13,0,0,0-5.73-6.74L398.69,226.67a5.81,5.81,0,0,0-1-.09Z" />
@@ -546,7 +631,7 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
               w
             </tspan>
           </text>
-        </a>
+        </g>
       </svg>
     </NewcomersMapWrapper>
   );
