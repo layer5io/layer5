@@ -19,8 +19,15 @@ const NewcomersMapWrapper = styled.div`
         fill: ${(props) => props.theme.secondaryColor};
       }
     }
-    &:focus {
+    &:focus:not(:focus-visible) {
       outline: none;
+    }
+    &:focus-visible {
+      outline: 2px dashed ${(props) => props.theme.secondaryColor};
+      outline-offset: 4px;
+      path {
+        fill: ${(props) => props.theme.secondaryColor};
+      }
     }
   }
   #newcomers-guide {
@@ -36,8 +43,15 @@ const NewcomersMapWrapper = styled.div`
         transition: 0s;
       }
     }
-    &:focus {
+    &:focus:not(:focus-visible) {
       outline: none;
+    }
+    &:focus-visible {
+      outline: 2px dashed ${(props) => props.theme.secondaryColor};
+      outline-offset: 4px;
+      path {
+        fill: ${(props) => props.theme.secondaryColor};
+      }
     }
   }
 `;

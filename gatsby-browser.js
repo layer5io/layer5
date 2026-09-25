@@ -2,16 +2,6 @@ import "./fonts.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Polyfill SVGAnimatedString.prototype.indexOf to prevent Cloudflare email-decode.min.js
-// from throwing "TypeError: o.href.indexOf is not a function" when querying <a> elements
-if (typeof window !== "undefined" && typeof SVGAnimatedString !== "undefined") {
-  if (!SVGAnimatedString.prototype.indexOf) {
-    SVGAnimatedString.prototype.indexOf = function (...args) {
-      return (this.baseVal || "").indexOf(...args);
-    };
-  }
-}
-
 export const disableCorePrefetching = () =>
   process.env.NODE_ENV === "development";
 
