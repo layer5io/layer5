@@ -14,14 +14,14 @@ const QuotesWrapper = styled.div`
     gap: 1.5rem;
     border: 2px solid transparent;
     border-image: linear-gradient(
-      to right bottom, 
-      #00b39f, 
-      ${props => props.theme.DarkTheme ? "#121212" : "#fff"} 80%
+      to right bottom,
+      #00b39f,
+      ${(props) => (props.theme.DarkTheme ? "#121212" : "#fff")} 80%
     );
     border-image-slice: 1 0 1 1;
     transition: border-image 0.6s ease-in-out;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1199px) {
       flex-direction: column;
       padding: 1.5rem 1rem;
       gap: 1rem;
@@ -34,24 +34,24 @@ const QuotesWrapper = styled.div`
 
   .border {
     border-image: linear-gradient(
-      to left top, 
-      #00b39f, 
-      ${props => props.theme.DarkTheme ? "#121212" : "#fff"} 80%
+      to left top,
+      #00b39f,
+      ${(props) => (props.theme.DarkTheme ? "#121212" : "#fff")} 80%
     );
     border-image-slice: 1 1 1 0;
   }
 
   h4 {
-    flex: ${props => props.$onlyQuoteIsPresent ? "0 0 100%" : "0 0 65%"};
+    flex: ${(props) => (props.$onlyQuoteIsPresent ? "0 0 100%" : "0 0 65%")};
     margin: 0;
-    color: ${props => props.theme.primaryColor};
+    color: ${(props) => props.theme.primaryColor};
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     font-weight: 100;
     font-style: italic;
     line-height: 1.6;
-    text-align: ${props => props.$onlyQuoteIsPresent ? "center" : "right"};
+    text-align: ${(props) => (props.$onlyQuoteIsPresent ? "center" : "right")};
 
-    @media (max-width: 768px) {
+    @media (max-width: 1199px) {
       flex: 0 0 100%;
       text-align: center;
       line-height: 1.5;
@@ -71,26 +71,30 @@ const QuotesWrapper = styled.div`
     flex: 2 1 0;
     flex-direction: column;
     justify-content: center;
+    min-width: 0;
     padding: 0 1rem;
     text-align: left;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1199px) {
+      width: 100%;
       padding: 0;
       text-align: center;
     }
-   
+
     h5 {
       margin: 0 0 0.5rem 0;
       padding: 0.1rem;
       font-size: clamp(0.875rem, 2vw, 1rem);
       font-weight: bold;
       text-transform: uppercase;
+      overflow-wrap: anywhere;
     }
 
     p {
       margin: 0;
       font-size: clamp(0.8rem, 1.8vw, 0.9rem);
       line-height: 1.4;
+      overflow-wrap: anywhere;
 
       @media (max-width: 500px) {
         line-height: 1.3;
@@ -103,14 +107,16 @@ const QuotesWrapper = styled.div`
     height: 5rem;
     margin: 0;
     border: none;
-    border-left: 1px solid ${props => props.theme.DarkTheme ? "#444" : "#ddd"};
+    border-left: 1px solid
+      ${(props) => (props.theme.DarkTheme ? "#444" : "#ddd")};
 
-    @media (max-width: 768px) {
+    @media (max-width: 1199px) {
       width: clamp(150px, 60%, 200px);
       height: 0;
       margin: 0.5rem auto;
       border-left: none;
-      border-top: 1px solid ${props => props.theme.DarkTheme ? "#444" : "#ddd"};
+      border-top: 1px solid
+        ${(props) => (props.theme.DarkTheme ? "#444" : "#ddd")};
     }
   }
 
@@ -119,7 +125,9 @@ const QuotesWrapper = styled.div`
     align-items: center;
     gap: 1rem;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1199px) {
+      width: 100%;
+      min-width: 0;
       flex-direction: column;
       gap: 0.75rem;
     }
@@ -138,7 +146,10 @@ const InlineQuotes = ({ person, title, quote, image }) => {
 
   return (
     <QuotesWrapper $onlyQuoteIsPresent={!showAuthorSection}>
-      <div className={quoteInView ? "quote-box border" : "quote-box"} ref={quoteRef}>
+      <div
+        className={quoteInView ? "quote-box border" : "quote-box"}
+        ref={quoteRef}
+      >
         <h4>❝ {quote} ❞</h4>
         {showAuthorSection && (
           <>
