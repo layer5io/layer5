@@ -87,7 +87,7 @@ export const ProgramsWrapper = styled.div`
     overflow-x: auto;
   }
 
-.mlh_logo--dark {
+.mlh_logo.mlh_logo--dark {
   display: none;
 }
 
