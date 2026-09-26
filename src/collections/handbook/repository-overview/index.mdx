@@ -96,7 +96,7 @@ Note that the Layer5 community spans **six** GitHub organizations and **one** mu
                 <td>
                   {maintainers_name.map((mname, index) => {
                     return mname === "Vacant" ? (
-                      <span key={index}><span>{index > 0 ? ", " : ""}</span>{mname}</span>
+                      <React.Fragment key={index}><span>{index > 0 ? ", " : ""}</span>{mname}</React.Fragment>
                     ) : (
                       <Link to={link[index]} key={index}>
                         <span>{index > 0 ? ", " : ""}</span>{mname}
@@ -152,10 +152,10 @@ Note that the Layer5 community spans **six** GitHub organizations and **one** mu
                 <td>
                   {maintainers_name?.map((mname, index) => {
                     return mname === "Vacant" ? (
-                      <span key={index}>
+                      <React.Fragment key={index}>
                         <span>{index > 0 ? ", " : ""}</span>
                         {mname}
-                      </span>
+                      </React.Fragment>
                     ) : (
                       <Link to={link[index]} key={index}>
                         <span>{index > 0 ? ", " : ""}</span>
