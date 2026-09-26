@@ -40,15 +40,6 @@ export const LogoListWrapper = styled.div`
         }
       }
 
-      .logo-btn {
-        background: none;
-        border: none;
-        padding: 0;
-        margin: 0;
-        font: inherit;
-        color: inherit;
-      }
-
       & img {
         height: 32px;
         width: auto;

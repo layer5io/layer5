@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import MesheryLogo from "../../../assets/images/meshery/meshery-logo-complete-white-side.svg";
 import { MesheryPlatformsWrapper } from "./MesheryPlatforms.style";
 import { Col, Container, Row } from "../../../reusecore/Layout";
@@ -17,17 +17,11 @@ import Linux from "./supported-icons/linux.svg";
 import Minikube from "./supported-icons/minikube.svg";
 import AKS from "./supported-icons/aks_white.svg";
 import WSL2 from "./supported-icons/wsl2.svg";
-import {
-  PLATFORM_NAMES,
-  PLATFORM_SECTION_ID,
-  SELECT_PLATFORM_EVENT,
-  TALL_PLATFORMS,
-} from "./platform-data";
 
 const supported_platforms = [
   {
     icon: Apple,
-    name: PLATFORM_NAMES.APPLE,
+    name: "Apple",
     steps: (
       <>
         <h2>MacOS User</h2>
@@ -41,7 +35,7 @@ const supported_platforms = [
   },
   {
     icon: Docker,
-    name: PLATFORM_NAMES.DOCKER,
+    name: "Docker",
     steps: (
       <>
         <h2>Docker User</h2>
@@ -62,7 +56,7 @@ const supported_platforms = [
   },
   {
     icon: EKS,
-    name: PLATFORM_NAMES.EKS,
+    name: "EKS",
     steps: (
       <>
         <h2>AWS Elastic Kubernetes Service User</h2>
@@ -75,7 +69,7 @@ const supported_platforms = [
   },
   {
     icon: GKE,
-    name: PLATFORM_NAMES.GKE,
+    name: "GKE",
     steps: (
       <>
         <h2>Google Kubernetes Engine User</h2>
@@ -89,7 +83,7 @@ const supported_platforms = [
   },
   {
     icon: Helm,
-    name: PLATFORM_NAMES.HELM,
+    name: "Helm",
     steps: (
       <>
         <h2>Helm Chart</h2>
@@ -109,7 +103,7 @@ const supported_platforms = [
   },
   {
     icon: HomeBrew,
-    name: PLATFORM_NAMES.HOMEBREW,
+    name: "HomeBrew",
     steps: (
       <>
         <h2>Brew User</h2>
@@ -123,7 +117,7 @@ const supported_platforms = [
   },
   {
     icon: Kind,
-    name: PLATFORM_NAMES.KIND,
+    name: "KinD",
     steps: (
       <>
         <h2>KinD User</h2>
@@ -138,7 +132,7 @@ const supported_platforms = [
   },
   {
     icon: Kubernetes,
-    name: PLATFORM_NAMES.KUBERNETES,
+    name: "Kubernetes",
     steps: (
       <>
         <h2>Kubernetes User</h2>
@@ -151,7 +145,7 @@ const supported_platforms = [
   },
   {
     icon: Linux,
-    name: PLATFORM_NAMES.LINUX,
+    name: "Linux",
     steps: (
       <>
         <h3>Install Using Kubernetes</h3>
@@ -167,7 +161,7 @@ const supported_platforms = [
   },
   {
     icon: Minikube,
-    name: PLATFORM_NAMES.MINIKUBE,
+    name: "Minikube",
     steps: (
       <>
         <h2>Minikube User</h2>
@@ -179,7 +173,7 @@ const supported_platforms = [
   },
   {
     icon: AKS,
-    name: PLATFORM_NAMES.AKS,
+    name: "AKS",
     steps: (
       <>
         <h2>Azure Kubernetes Service User</h2>
@@ -193,7 +187,7 @@ const supported_platforms = [
   },
   {
     icon: WSL2,
-    name: PLATFORM_NAMES.WSL2,
+    name: "WSL2",
     steps: (
       <>
         <h2>Windows User</h2>
@@ -236,50 +230,8 @@ const MesheryPlatforms = () => {
     setInstallationStepsHeight(currentPlatform.name ? 0 : "200px");
   };
 
-  const selectPlatformByName = (name) => {
-    if (!name) return;
-    const cleanName = name.replace(/^#/, "").toLowerCase();
-    const index = supported_platforms.findIndex(
-      (p) => p.name.toLowerCase() === cleanName,
-    );
-    if (index !== -1) {
-      setCurrentPlatform(supported_platforms[index]);
-      setInstallationStepsHeight("200px");
-    }
-  };
-
-  useEffect(() => {
-    const handlePlatformEvent = (event) => {
-      const platformName = event.detail?.platform;
-      if (platformName) {
-        selectPlatformByName(platformName);
-      }
-    };
-
-    const handleHashChange = () => {
-      if (typeof window !== "undefined" && window.location.hash) {
-        selectPlatformByName(window.location.hash);
-      }
-    };
-
-    if (typeof window !== "undefined" && window.location.hash) {
-      handleHashChange();
-    }
-
-    if (typeof window !== "undefined") {
-      window.addEventListener(SELECT_PLATFORM_EVENT, handlePlatformEvent);
-      window.addEventListener("hashchange", handleHashChange);
-    }
-    return () => {
-      if (typeof window !== "undefined") {
-        window.removeEventListener(SELECT_PLATFORM_EVENT, handlePlatformEvent);
-        window.removeEventListener("hashchange", handleHashChange);
-      }
-    };
-  }, []);
-
   return (
-    <MesheryPlatformsWrapper id={PLATFORM_SECTION_ID}>
+    <MesheryPlatformsWrapper id="getting-started-platforms">
       <div id="platforms" className="content">
         <Row $Hcenter className="step-1">
           <p>
@@ -298,7 +250,6 @@ const MesheryPlatforms = () => {
               $md={3}
               $lg={2}
               key={platform.name}
-              id={platform.name.toLowerCase()}
             >
               <Button
                 className={
@@ -318,9 +269,13 @@ const MesheryPlatforms = () => {
         <Container
           style={{
             transition: "height 0.5s ease-in-out",
-            height: TALL_PLATFORMS.includes(currentPlatform.name)
-              ? "30rem"
-              : installationStepsHeight,
+            height:
+              currentPlatform.name === "Docker" ||
+              currentPlatform.name === "Helm" ||
+              currentPlatform.name === "Linux" ||
+              currentPlatform.name === "KinD"
+                ? "30rem"
+                : installationStepsHeight,
             overflow: "hidden",
           }}
         >

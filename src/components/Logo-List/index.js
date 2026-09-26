@@ -19,7 +19,6 @@ const LogoList = ({ logos, className }) => {
             title={title}
             aria-label={logo.alt}
             className="logo-link"
-            onClick={logo.onClick}
           >
             {imgElement}
           </Link>
@@ -33,7 +32,6 @@ const LogoList = ({ logos, className }) => {
             title={title}
             aria-label={logo.alt}
             className="logo-link"
-            onClick={logo.onClick}
           >
             {imgElement}
           </a>
@@ -48,24 +46,9 @@ const LogoList = ({ logos, className }) => {
           title={title}
           aria-label={logo.alt}
           className="logo-link"
-          onClick={logo.onClick}
         >
           {imgElement}
         </a>
-      );
-    }
-
-    if (logo.onClick) {
-      return (
-        <button
-          type="button"
-          className="logo-link logo-btn"
-          onClick={logo.onClick}
-          title={title}
-          aria-label={logo.alt}
-        >
-          {imgElement}
-        </button>
       );
     }
 

@@ -13,9 +13,7 @@ const SMPBrand = loadable(() => import("./Brand-components/smp"));
 const CommunityBrand = loadable(() => import("./Brand-components/community"));
 const Button = loadable(() => import("../../../reusecore/Button"));
 const NightHawk = loadable(() => import("./Brand-components/nighthawk"));
-const ServiceMeshPatterns = loadable(
-  () => import("./Brand-components/servicemeshpatterns"),
-);
+const ServiceMeshPatterns = loadable(() => import("./Brand-components/servicemeshpatterns"));
 const MeshMasterBrand = loadable(() => import("./Brand-components/meshmaster"));
 const MeshMarkBrand = loadable(() => import("./Brand-components/meshmark"));
 const KanvasBrand = loadable(() => import("./Brand-components/kanvas"));
@@ -23,14 +21,12 @@ const BrandGuide = loadable(() => import("./Brand-components/brand-guide"));
 const StickFigures = loadable(() => import("./Brand-components/stickfigures"));
 const Catalog = loadable(() => import("./Brand-components/catalog"));
 const Academy = loadable(() => import("./Brand-components/academy"));
-const SocialBackgrounds = loadable(
-  () => import("./Brand-components/social-backgrounds"),
-);
+const SocialBackgrounds = loadable(() => import("./Brand-components/social-backgrounds"));
 
 const getDimensions = (ele) => {
   let dummyheight = 0,
-    dummyoffsetTop = 0,
-    dummyoffsetBottom = 0;
+      dummyoffsetTop = 0,
+      dummyoffsetBottom = 0;
   if (ele) {
     const { height } = ele.getBoundingClientRect();
     const offsetTop = ele.offsetTop;
@@ -146,22 +142,22 @@ const Brand = () => {
   ];
 
   const sectionIdMap = {
-    layer5: layer5Ref,
+    "layer5": layer5Ref,
     "social-backgrounds": SocialBackgroundsRef,
-    meshery: mesheryRef,
-    meshsync: meshsyncRef,
+    "meshery": mesheryRef,
+    "meshsync": meshsyncRef,
     "meshery-operator": mesheryOperatorRef,
     "image-hub": imageHubRef,
-    smp: smpRef,
-    meshmark: meshmarkRef,
+    "smp": smpRef,
+    "meshmark": meshmarkRef,
     "service-mesh-patterns": servicemeshpatternsRef,
-    nighthawk: nightHawkRef,
-    meshmate: meshmateRef,
-    meshmaster: meshMasterRef,
-    kanvas: kanvasRef,
-    catalog: CatalogRef,
-    academy: AcademyRef,
-    five: stickfiguresRef,
+    "nighthawk": nightHawkRef,
+    "meshmate": meshmateRef,
+    "meshmaster": meshMasterRef,
+    "kanvas": kanvasRef,
+    "catalog": CatalogRef,
+    "academy": AcademyRef,
+    "five": stickfiguresRef
   };
 
   // Handle initial hash navigation on page load
@@ -228,22 +224,18 @@ const Brand = () => {
           <div className="section" id="layer5" ref={layer5Ref}>
             <Layer5Brand />
           </div>
-          <div
-            className="section"
-            id="social-backgrounds"
-            ref={SocialBackgroundsRef}
-          >
+          <div className="section" id="social-backgrounds" ref={SocialBackgroundsRef}>
             <SocialBackgrounds />
           </div>
-          {/* <div className="section" id="meshery" ref={mesheryRef}>
-            <MesheryBrand />
-          </div>
-          <div className="section" id="meshsync" ref={meshsyncRef}>
-            <MeshSyncBrand />
-          </div>
-          <div className="section" id="meshery-operator" ref={mesheryOperatorRef}>
-            <MesheryOperatorBrand />
-          </div> */}
+          // <div className="section" id="meshery" ref={mesheryRef}>
+          //   <MesheryBrand />
+          // </div>
+          // <div className="section" id="meshsync" ref={meshsyncRef}>
+          //   <MeshSyncBrand />
+          // </div>
+          // <div className="section" id="meshery-operator" ref={mesheryOperatorRef}>
+          //   <MesheryOperatorBrand />
+          // </div>
           <div className="section" id="image-hub" ref={imageHubRef}>
             <ImageHubBrand />
           </div>
@@ -253,11 +245,7 @@ const Brand = () => {
           <div className="section" id="meshmark" ref={meshmarkRef}>
             <MeshMarkBrand />
           </div>
-          <div
-            className="section"
-            id="service-mesh-patterns"
-            ref={servicemeshpatternsRef}
-          >
+          <div className="section" id="service-mesh-patterns" ref={servicemeshpatternsRef}>
             <ServiceMeshPatterns />
           </div>
           <div className="section" id="nighthawk" ref={nightHawkRef}>
@@ -369,10 +357,7 @@ const Brand = () => {
                 visibleSection === "ServiceMeshPatterns" ? "selected" : ""
               }`}
               onClick={() => {
-                scrollTo(
-                  servicemeshpatternsRef.current,
-                  "service-mesh-patterns",
-                );
+                scrollTo(servicemeshpatternsRef.current, "service-mesh-patterns");
               }}
             >
               <span>Cloud Native Patterns</span>
