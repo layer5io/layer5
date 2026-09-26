@@ -7,9 +7,22 @@ const Image = ({
   publicURL,
   alt,
   imgStyle,
+  style,
   fitContainer,
+  width,
+  height,
+  aspectRatio,
   ...rest
 }) => {
+  const imageData = childImageSharp?.gatsbyImageData;
+  const explicitWidth = width || imageData?.width;
+  const explicitHeight = height || imageData?.height;
+  const resolvedAspectRatio =
+    aspectRatio ||
+    (explicitWidth && explicitHeight
+      ? `${explicitWidth} / ${explicitHeight}`
+      : undefined);
+
   /**
    * Rendering Mode: fitContainer
    * By default, GatsbyImage and SVGs scale to their intrinsic aspect ratios.
@@ -21,28 +34,41 @@ const Image = ({
    * arbitrary aspect ratios, as that limitation belongs to standard CSS constraints.
    */
   const computedWrapperStyle = fitContainer
-    ? { width: "100%", height: "100%" }
-    : { width: "100%", height: "auto" };
+    ? {
+        width: "100%",
+        height: "100%",
+        ...(resolvedAspectRatio ? { aspectRatio: resolvedAspectRatio } : {}),
+        ...style,
+      }
+    : {
+        width: "100%",
+        height: style?.height || "100%",
+        ...(resolvedAspectRatio ? { aspectRatio: resolvedAspectRatio } : {}),
+        ...style,
+      };
 
   const computedImgStyle = {
     objectFit: fitContainer ? "contain" : imgStyle?.objectFit || "cover",
     ...(fitContainer && { width: "100%", height: "100%" }),
+    ...(resolvedAspectRatio ? { aspectRatio: resolvedAspectRatio } : {}),
     ...imgStyle,
   };
 
   if (!childImageSharp && extension === "svg") {
     return (
-      <div
-        className="old-gatsby-image-wrapper"
-        style={computedWrapperStyle}
-      >
+      <div className="old-gatsby-image-wrapper" style={computedWrapperStyle}>
         <img
           key={publicURL}
           src={publicURL}
           alt={alt || "Blog image"}
-          width="100%"
-          height={fitContainer ? "100%" : "auto"}
-          style={computedImgStyle}
+          width={explicitWidth || undefined}
+          height={explicitHeight || undefined}
+          style={{
+            width: "100%",
+            height: fitContainer ? "100%" : "auto",
+            ...computedImgStyle,
+          }}
+          {...rest}
         />
       </div>
     );
@@ -51,9 +77,9 @@ const Image = ({
   return (
     <GatsbyImage
       key={publicURL}
-      image={childImageSharp?.gatsbyImageData}
+      image={imageData}
       alt={alt || "Blog image"}
-      style={fitContainer ? computedWrapperStyle : undefined}
+      style={computedWrapperStyle}
       imgStyle={computedImgStyle}
       {...rest}
     />

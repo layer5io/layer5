@@ -10,7 +10,7 @@ const TYPE_CONFIG = {
   important: { label: "Important", icon: "❗" },
 };
 
-const Callout = ({ type, title, children }) => {
+const Callout = ({ type = "note", title, children }) => {
   const config = TYPE_CONFIG[type] || TYPE_CONFIG.note;
   return (
     <CalloutStyle type={type}>
@@ -29,10 +29,6 @@ Callout.propTypes = {
   type: PropTypes.oneOf(["note", "tip", "warning", "caution", "important"]),
   title: PropTypes.string,
   children: PropTypes.node.isRequired,
-};
-
-Callout.defaultProps = {
-  type: "note",
 };
 
 export default Callout;
