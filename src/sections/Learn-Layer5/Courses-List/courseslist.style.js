@@ -43,7 +43,7 @@ export const CoursesListWrapper = styled.div`
         }
         &:hover {
             svg, h3 {
-                color: ${(props) => props.theme.secondaryColor};
+                color: ${(props) => props.theme.green00B39FToGreen3C494F};
             }
         }
     }
