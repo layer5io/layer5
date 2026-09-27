@@ -23,13 +23,24 @@ const FeatureWrapper = styled.section`
         margin-bottom: 10rem;
       }
 
+      @media (max-width: 991px) {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
       & > h2 {
         margin-bottom: 2rem;
         font-size: 1.75rem;
         font-weight: 500;
         @media (max-width: 991px) {
-          font-size: 1.25rem;
+          font-size: 1.35rem;
+          margin-bottom: 1rem;
         }
+      }
+
+      & > hr {
+        margin: 1.25rem auto;
+        width: 100%;
       }
 
       & > p {
@@ -39,9 +50,10 @@ const FeatureWrapper = styled.section`
         color: ${(props) => props.theme.greyDDDDDDToGrey333333};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
-        /* @media (max-width: 767px) {
-      font-size: 20px;
-    } */
+        @media (max-width: 991px) {
+          margin-top: 1rem;
+          line-height: 1.6;
+        }
       }
     }
   }
@@ -54,6 +66,9 @@ const FeatureWrapper = styled.section`
   #notInView {
     opacity: 0;
     transition: opacity 0.6s ease;
+    @media (max-width: 991px) {
+      opacity: 1;
+    }
   }
   .imageContent {
     @media (min-width: 992px) {

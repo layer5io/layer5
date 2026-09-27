@@ -8,6 +8,7 @@ const DesignerFeaturesWrapper = styled.section`
 
     @media (max-width: 991px) {
       margin-top: 6vw;
+      padding: 0 1rem;
     }
   }
 
@@ -28,6 +29,7 @@ const DesignerFeaturesWrapper = styled.section`
     @media (max-width: 991px) {
       flex-direction: column;
       align-items: center;
+      overflow: visible;
     }
     & > ul {
       position: relative;
@@ -37,6 +39,8 @@ const DesignerFeaturesWrapper = styled.section`
       @media (max-width: 991px) {
         padding-left: 0;
         text-align: center;
+        max-width: 600px;
+        width: 100%;
       }
 
       @media (max-width: 500px) {
@@ -81,6 +85,11 @@ const DesignerFeaturesWrapper = styled.section`
         font-size: 1.75rem;
       }
     }
+
+    @media (max-width: 991px) {
+      margin-bottom: 2rem;
+      border-radius: 4px;
+    }
   }
 
   .learn-more {
@@ -118,6 +127,25 @@ const DesignerFeaturesWrapper = styled.section`
     & > li {
       list-style: none;
 
+      @media (max-width: 991px) {
+        border: 2px solid #00b39f;
+        box-shadow: 0px 4px 10px 0px rgb(0 0 0 / 25%);
+        border-radius: 8px;
+        padding: 2.5rem 1.5rem;
+        margin-bottom: 2rem;
+        width: 100%;
+        box-sizing: border-box;
+        transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &:hover {
+          border-color: #ebc017;
+        }
+      }
+
       & > div {
         list-style: none;
         padding-bottom: 150px;
@@ -125,7 +153,7 @@ const DesignerFeaturesWrapper = styled.section`
         @media (max-width: 991px) {
           padding-top: 0;
           margin-bottom: 0;
-          padding-bottom: 50px;
+          padding-bottom: 0;
         }
       }
 
@@ -162,6 +190,9 @@ const DesignerFeaturesWrapper = styled.section`
       #add-border {
         border-color: #ebc017;
       }
+      .features > li {
+        border-color: #ebc017;
+      }
     }
   }
 
@@ -185,6 +216,11 @@ const DesignerFeaturesWrapper = styled.section`
     border-width: 0px 2px 2px 2px;
     box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
     transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+
+    @media (max-width: 991px) {
+      border: none;
+      box-shadow: none;
+    }
   }
   .hideInMobile {
     @media (max-width: 991px) {
