@@ -7,6 +7,7 @@ import CTA_Bottom from "./src/components/Call-To-Actions/CTA_Bottom";
 import { ContextWrapper } from "./context-wrapper";
 import { IoIosCopy } from "@react-icons/all-files/io/IoIosCopy";
 import { IoIosCheckmark } from "@react-icons/all-files/io/IoIosCheckmark";
+import SimpleReactLightbox from "simple-react-lightbox";
 
 // Custom image component for better CLS scores.
 // The wrapper is a <span> rather than a <div>: Markdown images render inside a
@@ -134,6 +135,8 @@ const components = {
 
 export const wrapRootElement = ({ element }) => (
   <ContextWrapper>
-    <MDXProvider components={components}>{element}</MDXProvider>
+    <SimpleReactLightbox>
+      <MDXProvider components={components}>{element}</MDXProvider>
+    </SimpleReactLightbox>
   </ContextWrapper>
 );
