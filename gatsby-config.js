@@ -33,6 +33,8 @@ const devFlags = isDevelopment
   ? {
       PARALLEL_SOURCING: false,
       PRESERVE_FILE_DOWNLOAD_CACHE: true,
+      PRESERVE_WEBPACK_CACHE: true,
+      FAST_DEV: true,
     }
   : {};
 console.info(`Build Environment: "${process.env.NODE_ENV}"`);
