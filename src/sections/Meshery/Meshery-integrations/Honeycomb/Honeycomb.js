@@ -18,6 +18,18 @@ const hexSizeForWidth = (width) => {
 const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
+// The resize event fires continuously while the user drags a window border
+// or resizes on mobile. layoutHoneycomb measures every child via
+// getBoundingClientRect, so running it on every tick is expensive. Debounce
+// to a trailing call so layout only recomputes once resizing settles.
+const debounce = (fn, delay) => {
+  let timer = null;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), delay);
+  };
+};
+
 const Honeycomb = (props) => {
   const { items, renderItem } = props;
   const [height, setHeight] = useState(0);
@@ -66,9 +78,10 @@ const Honeycomb = (props) => {
   }, [items]);
 
   useEffect(() => {
-    window.addEventListener("resize", layoutHoneycomb);
+    const debouncedLayout = debounce(layoutHoneycomb, 150);
+    window.addEventListener("resize", debouncedLayout);
     return () => {
-      window.removeEventListener("resize", layoutHoneycomb);
+      window.removeEventListener("resize", debouncedLayout);
     };
   }, [items]);
 
