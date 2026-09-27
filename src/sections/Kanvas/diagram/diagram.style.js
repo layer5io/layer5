@@ -35,7 +35,7 @@ const DiagramStyles = styled.section`
     @media (max-width: 1200px) {
       width: 50%;
     }
-    @media (max-width: 799px) {
+    @media (max-width: 991px) {
       width: 40%;
       padding-left: 0;
       max-height: 400px;
@@ -108,7 +108,7 @@ const DiagramStyles = styled.section`
     @media (max-width: 992px) {
       min-height: 14rem !important;
     }
-    @media (max-width: 799px) {
+    @media (max-width: 991px) {
       min-height: 25rem !important;
       padding-left: 0;
       max-height: 400px;

@@ -15,7 +15,7 @@ const useGsapTimeline = ({ trigger, featureContainerName, yPercent }) => {
   useIsomorphicLayoutEffect(() => {
     let mm = gsap.matchMedia();
 
-    mm.add("(min-width: 800px)", () => {
+    mm.add("(min-width: 992px)", () => {
       const context = gsap.context(() => {
         const _timeline = gsap.timeline({
           defaults: {

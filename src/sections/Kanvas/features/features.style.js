@@ -18,7 +18,7 @@ const FeatureWrapper = styled.section`
         padding-right: 1rem;
       }
 
-      @media (min-width: 800px) {
+      @media (min-width: 992px) {
         margin-top: 10rem;
         margin-bottom: 10rem;
       }
@@ -27,7 +27,7 @@ const FeatureWrapper = styled.section`
         margin-bottom: 2rem;
         font-size: 1.75rem;
         font-weight: 500;
-        @media (max-width: 799px) {
+        @media (max-width: 991px) {
           font-size: 1.25rem;
         }
       }
@@ -56,7 +56,7 @@ const FeatureWrapper = styled.section`
     transition: opacity 0.6s ease;
   }
   .imageContent {
-    @media (min-width: 800px) {
+    @media (min-width: 992px) {
       display: none;
     }
 
