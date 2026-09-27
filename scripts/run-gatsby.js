@@ -109,13 +109,17 @@ console.info(
     `workers=${env.GATSBY_CPU_COUNT} sharp=${env.SHARP_CONCURRENCY} heap=${heapMb}MB`,
 );
 
-const gatsbyBin = path.join(
-  __dirname,
-  "..",
-  "node_modules",
-  ".bin",
-  process.platform === "win32" ? "gatsby.cmd" : "gatsby",
-);
+const gatsbyBin = (() => {
+  const binDir = path.join(__dirname, "..", "node_modules", ".bin");
+  if (process.platform === "win32") {
+    // npm creates gatsby.cmd, but pnpm/bun may only create gatsby.exe or gatsby.bunx
+    for (const candidate of ["gatsby.cmd", "gatsby.exe", "gatsby.bunx"]) {
+      const full = path.join(binDir, candidate);
+      if (require("fs").existsSync(full)) return full;
+    }
+  }
+  return path.join(binDir, "gatsby");
+})();
 
 const child = spawn(gatsbyBin, args, {
   env,
