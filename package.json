@@ -14,13 +14,13 @@
     "url": "https://layer5.io"
   },
   "scripts": {
-    "build": "cross-env BUILD_FULL_SITE=true NODE_OPTIONS=--max-old-space-size=8192 gatsby build",
-    "build:gh-pages": "cross-env BUILD_FULL_SITE=true NODE_OPTIONS=--max-old-space-size=8192 gatsby build --prefix-paths",
-    "build:preview": "cross-env BUILD_FULL_SITE=true GATSBY_PREVIEW=true NODE_OPTIONS=--max-old-space-size=8192 gatsby build --prefix-paths",
+    "build": "cross-env BUILD_FULL_SITE=true node scripts/run-gatsby.js build",
+    "build:gh-pages": "cross-env BUILD_FULL_SITE=true node scripts/run-gatsby.js build --prefix-paths",
+    "build:preview": "cross-env BUILD_FULL_SITE=true GATSBY_PREVIEW=true node scripts/run-gatsby.js build --prefix-paths",
     "clean": "gatsby clean",
     "clean:all": "gatsby clean && rimraf node_modules",
-    "develop": "cross-env BUILD_FULL_SITE=true GATSBY_CPU_COUNT=4 SHARP_CONCURRENCY=4 UV_THREADPOOL_SIZE=4 NODE_OPTIONS=--max-old-space-size=8192 env-cmd -f .env.development gatsby develop",
-    "develop:lite": "cross-env BUILD_FULL_SITE=false LITE_BUILD_PROFILE=core GATSBY_CPU_COUNT=4 SHARP_CONCURRENCY=4 UV_THREADPOOL_SIZE=4 NODE_OPTIONS=--max-old-space-size=8192 env-cmd -f .env.development gatsby develop",
+    "develop": "cross-env BUILD_FULL_SITE=true env-cmd -f .env.development node scripts/run-gatsby.js develop",
+    "develop:lite": "cross-env BUILD_FULL_SITE=false LITE_BUILD_PROFILE=core env-cmd -f .env.development node scripts/run-gatsby.js develop",
     "dev": "npm run develop:lite",
     "start": "npm run develop:lite",
     "start:full": "npm run develop",
@@ -29,12 +29,12 @@
     "checklint": "eslint .",
     "check:contributing-versions": "node .github/scripts/check-contributing-versions.cjs",
     "pretest": "eslint --ignore-path .gitignore .",
-    "preload-fonts": "gatsby-preload-fonts",
     "deploy": "gatsby build && gh-pages -d public -b master",
     "noIndex": "gatsby build && echo 'User-agent: *\nDisallow: /' > public/robots.txt",
     "version": "gatsby --version",
     "postinstall": "patch-package",
-    "prepare": "husky || true"
+    "prepare": "husky || true",
+    "generate:mui-icon-shim": "node scripts/generate-mui-icon-shim.js"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.4.0",
@@ -77,8 +77,6 @@
     "gatsby-plugin-manifest": "^5.16.0",
     "gatsby-plugin-mdx": "^5.16.0",
     "gatsby-plugin-netlify": "^5.1.1",
-    "gatsby-plugin-preload-fonts": "^4.16.0",
-    "gatsby-plugin-purgecss": "^6.2.1",
     "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-sharp": "^5.16.0",
     "gatsby-plugin-sitemap": "^6.16.0",
