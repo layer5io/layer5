@@ -5,6 +5,11 @@ const CollaboratorFeaturesWrapper = styled.section`
 
   .collaborate-container {
     padding: 0;
+
+    @media (min-width: 800px) and (max-width: 991px) {
+      max-width: 100%;
+      padding: 0 1.5rem;
+    }
   }
 
   .scroll {
@@ -20,10 +25,10 @@ const CollaboratorFeaturesWrapper = styled.section`
     ::-webkit-scrollbar {
       display: none;
     }
-    @media (min-width: 799px) {
-        max-height: 600px;
-      }
-    @media (max-width: 767px) {
+    @media (min-width: 800px) {
+      max-height: 600px;
+    }
+    @media (max-width: 799px) {
       flex-direction: column;
       align-items: center;
     }
@@ -32,8 +37,14 @@ const CollaboratorFeaturesWrapper = styled.section`
       max-width: 470px;
       padding-left: 2rem;
 
-      @media (max-width: 767px) {
+      @media (min-width: 800px) and (max-width: 991px) {
+        max-width: 44%;
+        padding-left: 1rem;
+      }
+
+      @media (max-width: 799px) {
         padding-left: 0;
+        text-align: center;
       }
 
       @media (max-width: 500px) {
@@ -49,9 +60,9 @@ const CollaboratorFeaturesWrapper = styled.section`
     position: sticky;
     top: 0;
     z-index: -1;
-    margin-top:auto;
-    margin-bottom:auto;
-    height:100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
 
     @media (max-width: 1200px) {
       min-width: 38rem;
@@ -59,7 +70,11 @@ const CollaboratorFeaturesWrapper = styled.section`
     @media (max-width: 992px) {
       min-width: 27rem;
     }
-    @media (max-width: 767px) {
+    @media (min-width: 800px) and (max-width: 991px) {
+      min-width: 0;
+      width: 56%;
+    }
+    @media (max-width: 799px) {
       max-height: 550px;
       min-width: 25rem;
     }
@@ -73,8 +88,8 @@ const CollaboratorFeaturesWrapper = styled.section`
       font-weight: 600;
       padding-top: 1rem;
       padding-bottom: 1rem;
-      
-      @media (max-width: 767px) {
+
+      @media (max-width: 799px) {
         font-size: 1.75rem;
       }
     }
@@ -91,8 +106,8 @@ const CollaboratorFeaturesWrapper = styled.section`
     height: 90px;
 
     @media screen and (max-width: 992px) {
-        height: 73px;
-      }
+      height: 73px;
+    }
 
     a {
       display: flex;
@@ -120,7 +135,7 @@ const CollaboratorFeaturesWrapper = styled.section`
         list-style: none;
         padding-bottom: 150px;
 
-        @media (max-width: 767px) {
+        @media (max-width: 799px) {
           padding-top: 0;
           margin-bottom: 0;
           padding-bottom: 50px;
@@ -131,7 +146,7 @@ const CollaboratorFeaturesWrapper = styled.section`
         & > div {
           padding-bottom: 600px;
           margin-bottom: -200px;
-          @media (max-width: 767px) {
+          @media (max-width: 799px) {
             padding-bottom: 0;
             margin-bottom: 0;
           }
@@ -143,6 +158,9 @@ const CollaboratorFeaturesWrapper = styled.section`
           padding-top: 108px;
           @media (max-width: 1120px) {
             padding-top: 64px;
+          }
+          @media (max-width: 799px) {
+            padding-top: 0;
           }
         }
       }
@@ -161,7 +179,7 @@ const CollaboratorFeaturesWrapper = styled.section`
     @media (max-width: 912px) {
       top: 5rem;
     }
-    &:hover{
+    &:hover {
       background: #00d3a9;
     }
   }
@@ -174,11 +192,11 @@ const CollaboratorFeaturesWrapper = styled.section`
     transition: ease-in-out;
   }
 
-  .hideInMobile{
+  .hideInMobile {
     @media (max-width: 799px) {
-      display:none;
+      display: none;
     }
-}
+  }
   .arrow {
     transition: all 0.5s;
   }

@@ -4,10 +4,9 @@ import { useEffect, useLayoutEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const useGsapTimeline = ({ trigger, featureContainerName,yPercent }) => {
-
+const useGsapTimeline = ({ trigger, featureContainerName, yPercent }) => {
   const useIsomorphicLayoutEffect =
-  typeof window !== "undefined" ? useLayoutEffect : useEffect;
+    typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
   const GOLDEN_RATIO = (1 + Math.sqrt(3)) / 5;
   const RECIPROCAL_GR = 1 / GOLDEN_RATIO;
@@ -33,11 +32,11 @@ const useGsapTimeline = ({ trigger, featureContainerName,yPercent }) => {
             scrub: 2,
             pin: true,
             // Changed the toggle actions to play complete reverse reset so that it correctly follows the scroll position
-            toggleActions: "play complete reverse reset"
+            toggleActions: "play complete reverse reset",
           },
         });
 
-        _timeline.to(featureContainerName,{
+        _timeline.to(featureContainerName, {
           yPercent,
           ease: "power1.inOut",
         });
@@ -45,11 +44,10 @@ const useGsapTimeline = ({ trigger, featureContainerName,yPercent }) => {
       return () => {
         context.revert();
       };
-
     });
 
-  },[]);
-
+    return () => mm.revert();
+  }, [trigger, featureContainerName, yPercent]);
 };
 
 export default useGsapTimeline;

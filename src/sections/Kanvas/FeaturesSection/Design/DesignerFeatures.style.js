@@ -1,32 +1,36 @@
 import styled from "styled-components";
 
 const DesignerFeaturesWrapper = styled.section`
-margin-top: 1rem;
+  margin-top: 1rem;
 
-.designer-container {
-  padding: 0;
+  .designer-container {
+    padding: 0;
 
-  @media (max-width: 767px) {
-    margin-top: 6vw;
+    @media (max-width: 799px) {
+      margin-top: 6vw;
+    }
+
+    @media (min-width: 800px) and (max-width: 991px) {
+      max-width: 100%;
+      padding: 0 1.5rem;
+    }
   }
-  
-}
 
-.scroll{
+  .scroll {
     position: sticky;
     top: calc(50vh - 249px);
-}
+  }
 
   .contentContainer {
     display: flex;
     flex-direction: row-reverse;
     position: relative;
     overflow: hidden;
-    ::-webkit-scrollbar{
-    display: none;
-  }
+    ::-webkit-scrollbar {
+      display: none;
+    }
 
-    @media (max-width: 767px) {
+    @media (max-width: 799px) {
       flex-direction: column;
       align-items: center;
     }
@@ -35,8 +39,14 @@ margin-top: 1rem;
       max-width: 470px;
       padding-left: 2rem;
 
-      @media (max-width: 767px) {
+      @media (min-width: 800px) and (max-width: 991px) {
+        max-width: 44%;
+        padding-left: 1rem;
+      }
+
+      @media (max-width: 799px) {
         padding-left: 0;
+        text-align: center;
       }
 
       @media (max-width: 500px) {
@@ -45,7 +55,7 @@ margin-top: 1rem;
       }
     }
 
-    @media (min-width: 799px) {
+    @media (min-width: 800px) {
       max-height: 600px;
     }
   }
@@ -56,9 +66,9 @@ margin-top: 1rem;
     position: sticky;
     top: 0;
     z-index: 0;
-    margin-top:auto;
-    margin-bottom:auto;
-    height:100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
 
     @media (max-width: 1200px) {
       min-width: 32rem;
@@ -66,7 +76,10 @@ margin-top: 1rem;
     @media (max-width: 992px) {
       min-width: 24rem;
     }
-
+    @media (min-width: 800px) and (max-width: 991px) {
+      min-width: 0;
+      width: 56%;
+    }
   }
 
   #featureHeading {
@@ -77,8 +90,8 @@ margin-top: 1rem;
       font-weight: 600;
       padding-top: 1rem;
       padding-bottom: 1rem;
-  
-      @media (max-width: 767px) {
+
+      @media (max-width: 799px) {
         font-size: 1.75rem;
       }
     }
@@ -95,8 +108,8 @@ margin-top: 1rem;
     height: 90px;
 
     @media screen and (max-width: 992px) {
-        height: 73px;
-      }
+      height: 73px;
+    }
 
     a {
       display: flex;
@@ -123,7 +136,7 @@ margin-top: 1rem;
         list-style: none;
         padding-bottom: 150px;
 
-        @media (max-width: 767px) {
+        @media (max-width: 799px) {
           padding-top: 0;
           margin-bottom: 0;
           padding-bottom: 50px;
@@ -134,7 +147,7 @@ margin-top: 1rem;
         & > div {
           padding-bottom: 600px;
           margin-bottom: -200px;
-          @media (max-width: 767px) {
+          @media (max-width: 799px) {
             padding-bottom: 0;
             margin-bottom: 0;
           }
@@ -144,8 +157,11 @@ margin-top: 1rem;
       &:first-child {
         & > div {
           padding-top: 108px;
-          @media (max-width:  1120px) {
+          @media (max-width: 1120px) {
             padding-top: 64px;
+          }
+          @media (max-width: 799px) {
+            padding-top: 0;
           }
         }
       }
@@ -155,10 +171,10 @@ margin-top: 1rem;
   .design-trigger-container {
     &:hover {
       .fixed {
-        background: #EBC017;
+        background: #ebc017;
       }
       #add-border {
-        border-color: #EBC017;
+        border-color: #ebc017;
       }
     }
   }
@@ -175,29 +191,28 @@ margin-top: 1rem;
     @media (max-width: 912px) {
       top: 5rem;
     }
-}
+  }
 
-#add-border {
-  border-color: #00b39f;
-  border-style: solid;
-  border-width: 0px 2px 2px 2px;
-  box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
-  transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-}
-.hideInMobile{
+  #add-border {
+    border-color: #00b39f;
+    border-style: solid;
+    border-width: 0px 2px 2px 2px;
+    box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
+    transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  }
+  .hideInMobile {
     @media (max-width: 799px) {
-      display:none;
+      display: none;
     }
-}
+  }
 
-.arrow {
+  .arrow {
     transition: all 0.5s;
   }
   .arrow-enter {
     transform: translateX(0.4rem);
     transition: transform 0.5s ease-in-out;
   }
-
 `;
 
 export default DesignerFeaturesWrapper;

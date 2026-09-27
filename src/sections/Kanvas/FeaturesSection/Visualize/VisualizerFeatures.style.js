@@ -3,8 +3,17 @@ import styled from "styled-components";
 const VisualizerFeaturesWrapper = styled.section`
   margin-top: 1rem;
 
-  .visualizer-trigger-container{
+  .visualizer-trigger-container {
     padding: 0;
+
+    @media (max-width: 799px) {
+      margin-top: 6vw;
+    }
+
+    @media (min-width: 800px) and (max-width: 991px) {
+      max-width: 100%;
+      padding: 0 1.5rem;
+    }
   }
 
   .scroll {
@@ -20,10 +29,10 @@ const VisualizerFeaturesWrapper = styled.section`
       display: none;
     }
 
-    @media (min-width: 799px) {
+    @media (min-width: 800px) {
       max-height: 600px;
     }
-    @media (max-width: 767px) {
+    @media (max-width: 799px) {
       flex-direction: column;
       align-items: center;
     }
@@ -33,8 +42,14 @@ const VisualizerFeaturesWrapper = styled.section`
       padding-left: 0;
       padding-right: 2rem;
 
-      @media (max-width: 767px) {
+      @media (min-width: 800px) and (max-width: 991px) {
+        max-width: 44%;
+        padding-right: 1rem;
+      }
+
+      @media (max-width: 799px) {
         padding-right: 0;
+        text-align: center;
       }
 
       @media (max-width: 500px) {
@@ -50,9 +65,9 @@ const VisualizerFeaturesWrapper = styled.section`
     position: sticky;
     top: 0;
     z-index: -1;
-    margin-top:auto;
-    margin-bottom:auto;
-    height:100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
 
     @media (max-width: 1200px) {
       min-width: 32rem;
@@ -60,7 +75,11 @@ const VisualizerFeaturesWrapper = styled.section`
     @media (max-width: 992px) {
       min-width: 24rem;
     }
-    @media (max-width: 767px) {
+    @media (min-width: 800px) and (max-width: 991px) {
+      min-width: 0;
+      width: 56%;
+    }
+    @media (max-width: 799px) {
       max-height: 400px;
       padding-right: 0;
       min-width: 25rem;
@@ -75,8 +94,8 @@ const VisualizerFeaturesWrapper = styled.section`
       font-weight: 600;
       padding-top: 1rem;
       padding-bottom: 1rem;
-    
-      @media (max-width: 767px) {
+
+      @media (max-width: 799px) {
         font-size: 1.75rem;
       }
     }
@@ -93,8 +112,8 @@ const VisualizerFeaturesWrapper = styled.section`
     height: 90px;
 
     @media screen and (max-width: 992px) {
-        height: 73px;
-      }
+      height: 73px;
+    }
 
     a {
       display: flex;
@@ -121,7 +140,7 @@ const VisualizerFeaturesWrapper = styled.section`
         list-style: none;
         padding-bottom: 150px;
 
-        @media (max-width: 767px) {
+        @media (max-width: 799px) {
           padding-top: 0;
           margin-bottom: 0;
           padding-bottom: 50px;
@@ -132,7 +151,7 @@ const VisualizerFeaturesWrapper = styled.section`
         & > div {
           padding-bottom: 600px;
           margin-bottom: -200px;
-          @media (max-width: 767px) {
+          @media (max-width: 799px) {
             padding-bottom: 0;
             margin-bottom: 0;
           }
@@ -145,6 +164,9 @@ const VisualizerFeaturesWrapper = styled.section`
           @media (max-width: 1120px) {
             padding-top: 64px;
           }
+          @media (max-width: 799px) {
+            padding-top: 0;
+          }
         }
       }
     }
@@ -153,10 +175,10 @@ const VisualizerFeaturesWrapper = styled.section`
   .visualizer-trigger-container {
     &:hover {
       .fixed {
-        background: #EBC017;
+        background: #ebc017;
       }
       #add-border {
-        border-color: #EBC017;
+        border-color: #ebc017;
       }
     }
   }
@@ -181,11 +203,11 @@ const VisualizerFeaturesWrapper = styled.section`
     box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
     transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   }
-  .hideInMobile{
+  .hideInMobile {
     @media (max-width: 799px) {
-      display:none;
+      display: none;
     }
-}
+  }
 
   .arrow {
     transition: all 0.5s;
