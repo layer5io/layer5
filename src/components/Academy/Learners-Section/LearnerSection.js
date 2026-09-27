@@ -138,9 +138,7 @@ const LearnerSectionWrapper = styled.section`
 
       .audience-features {
         text-align: left;
-        width: fit-content;
-        max-width: 100%;
-        margin: 0 auto 2rem;
+        margin-bottom: 2rem;
         display: block;
       }
     }
