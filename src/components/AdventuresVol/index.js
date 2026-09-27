@@ -8,8 +8,10 @@ const AdventuresVol = ({ title, description, to, image }) => {
     to &&
     (to.startsWith("http://") ||
       to.startsWith("https://") ||
-      to.split("?")[0].split("#")[0].endsWith(".pdf") ||
+      to.split("?")[0].split("#")[0].toLowerCase().endsWith(".pdf") ||
       to.startsWith("mailto:"));
+
+  const isMailTo = to && to.startsWith("mailto:");
 
   const cardContent = (
     <div className="handbook__card">
@@ -35,8 +37,8 @@ const AdventuresVol = ({ title, description, to, image }) => {
         <a
           href={to}
           className="handbook__card--main"
-          target="_blank"
-          rel="noreferrer"
+          target={isMailTo ? undefined : "_blank"}
+          rel={isMailTo ? undefined : "noreferrer"}
         >
           {cardContent}
         </a>
