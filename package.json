@@ -134,9 +134,11 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "patch-package": "^8.0.1",
+    "punycode": "^2.3.1",
     "rimraf": "^6.1.2"
   },
   "overrides": {
-    "sharp": "$sharp"
+    "sharp": "$sharp",
+    "punycode": "^2.3.1"
   }
 }
