@@ -111,8 +111,8 @@
   "aaa5778d.js": "aaa5778d-167b949817f2518c1d86.js",
   "ac581ebe.js": "ac581ebe-d8f297aa0b7917a0edd2.js",
   "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff.js": "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff-8c479a762a4c4ff838f7.js",
-  "app-9120a1da7d8095224feb.js.LICENSE.txt": "app-9120a1da7d8095224feb.js.LICENSE.txt",
-  "app.js": "app-9120a1da7d8095224feb.js",
+  "app-c32650ee003490cd4f4a.js.LICENSE.txt": "app-c32650ee003490cd4f4a.js.LICENSE.txt",
+  "app.js": "app-c32650ee003490cd4f4a.js",
   "b3a4868e3083275025dca472f7350001ee397eb9.js": "b3a4868e3083275025dca472f7350001ee397eb9-50ba4a0c2fdc58b62801.js",
   "b5f6012b.js": "b5f6012b-0d788a08c9a6ff5be2b5.js",
   "b86f5c214c12e4ff0a2572240ee8191e9020f93a.js": "b86f5c214c12e4ff0a2572240ee8191e9020f93a-aab9a0b2cdb7ee4a4f71.js",
@@ -138,8 +138,8 @@
   "component---src-pages-cloud-native-management-kanvas-collaborate-index-js.js": "component---src-pages-cloud-native-management-kanvas-collaborate-index-js-1b3e5b3fc62beb40250c.js",
   "component---src-pages-cloud-native-management-kanvas-collaborate-peer-reviews-index-js.js": "component---src-pages-cloud-native-management-kanvas-collaborate-peer-reviews-index-js-6779031a41ad067eb8b3.js",
   "component---src-pages-cloud-native-management-kanvas-design-js.js": "component---src-pages-cloud-native-management-kanvas-design-js-93fed970947a036599aa.js",
-  "component---src-pages-cloud-native-management-kanvas-index-js-10ed96b4074a8d4cd03f.js.LICENSE.txt": "component---src-pages-cloud-native-management-kanvas-index-js-10ed96b4074a8d4cd03f.js.LICENSE.txt",
-  "component---src-pages-cloud-native-management-kanvas-index-js.js": "component---src-pages-cloud-native-management-kanvas-index-js-10ed96b4074a8d4cd03f.js",
+  "component---src-pages-cloud-native-management-kanvas-index-js-117feffa07712ca3c8d0.js.LICENSE.txt": "component---src-pages-cloud-native-management-kanvas-index-js-117feffa07712ca3c8d0.js.LICENSE.txt",
+  "component---src-pages-cloud-native-management-kanvas-index-js.js": "component---src-pages-cloud-native-management-kanvas-index-js-117feffa07712ca3c8d0.js",
   "component---src-pages-cloud-native-management-kanvas-operate-js.js": "component---src-pages-cloud-native-management-kanvas-operate-js-b31f2e6f6923aad16b60.js",
   "component---src-pages-cloud-native-management-meshery-getting-started-js.js": "component---src-pages-cloud-native-management-meshery-getting-started-js-8f0b84a0b42e0d4c761b.js",
   "component---src-pages-cloud-native-management-meshery-index-js.js": "component---src-pages-cloud-native-management-meshery-index-js-1f625568453db502c38f.js",
@@ -1422,7 +1422,7 @@
   "f6cc0b05.js": "f6cc0b05-8d85d68f428ff8f27626.js",
   "f79bb285.js": "f79bb285-de23948cc5c568691759.js",
   "fb60d2e75ba6150616697bdc0d45988f14e9977b.js": "fb60d2e75ba6150616697bdc0d45988f14e9977b-f72148c54a57609b9935.js",
-  "figure1.webp": "static/figure1-af740ed1ba314b3196bae4081ed294d3.webp",
+  "figure1.webp": "static/figure1-945a12ca03127e744034f1333e7a3a6e.webp",
   "figure2.webp": "static/figure2-357540a30490cd773fe343e618b20e51.webp",
   "figure3.webp": "static/figure3-7c0067fea03f8b378147cc3238bf5002.webp",
   "figure4.webp": "static/figure4-4461bc5b118cfc06cef4a38196ec52ec.webp",
@@ -2113,5 +2113,5 @@
   "static/yash-sharma.webp": "static/yash-sharma-54aa26b6e5743f0557cfc76aa9797f2d.webp",
   "static/yogi.webp": "static/yogi-d00ca1cc48ab74938a23d4359ef3fb01.webp",
   "styles.css": "styles.bf427543f058ad23fba8.css",
-  "webpack-runtime.js": "webpack-runtime-1f88bbd8f1bcaf125920.js"
+  "webpack-runtime.js": "webpack-runtime-fd0228dd92a78b05dae2.js"
 }
