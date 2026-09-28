@@ -79,11 +79,22 @@ const DiscussWrapper = styled.div`
         padding: 1.25rem;
         background-color: #1e2117;
         border-radius: 25px;
+        .parentcard,
+        .section-title,
+        .card-align {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-around;
+        }
         p {
           text-align: center;
           padding: 0px 0px 1px 0px;
           letter-spacing: 0;
           font-size: 16px;
+          max-width: 20rem;
+          margin: 0 auto;
         }
         h2 {
           text-align: center;
@@ -143,6 +154,7 @@ const DiscussWrapper = styled.div`
           }
         }
       }
+    }
     @media only screen and (max-width: 992px) {
       .card-align {
         padding: 1.1rem 0;

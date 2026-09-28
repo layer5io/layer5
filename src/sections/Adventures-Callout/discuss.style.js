@@ -35,6 +35,8 @@ const AdventuresWrapper = styled.div`
       background-color: none;
       border-radius: 25px;
       .card {
+        height: 20rem;
+        max-width: 100%;
         -webkit-transition: 450ms all;
         transition: 450ms all;
         margin: auto;
@@ -42,6 +44,9 @@ const AdventuresWrapper = styled.div`
         background-color: #1e2117;
         border-radius: 25px;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         p {
           text-align: center;
           padding: 0px 0px 1px 0px;
