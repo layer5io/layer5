@@ -22,7 +22,7 @@ const DiscussWrapper = styled.div`
     align-items: center;
     justify-content: center;
     padding: 0.35rem 1.25rem;
-    border: 2px solid ${(props) => props.theme.secondaryColor};
+    border: 2px solid ${(props) => props.theme.white};
     border-radius: 6px;
     background: transparent;
     transition: all 0.25s ease;
@@ -72,6 +72,7 @@ const DiscussWrapper = styled.div`
       border-radius: 25px;
       .card {
         height: 20rem;
+        max-width: 100%;
         -webkit-transition: 450ms all;
         transition: 450ms all;
         margin: auto;
@@ -143,26 +144,27 @@ const DiscussWrapper = styled.div`
         }
       }
     }
-    @media only screen and (max-width: 992px) {
-      .card-align {
-        padding: 1.1rem 0;
-      }
-      .explain {
-        .cards {
-          padding: 0;
-          .card {
-            h2 {
-              font-size: 22px;
-              line-height: 32px;
-              padding-bottom: 1rem;
-            }
-            p {
-              font-size: 13px;
-              line-height: 23px;
-            }
-            width: 18rem;
-            height: 18rem;
+  }
+
+  @media only screen and (max-width: 992px) {
+    .card-align {
+      padding: 1.1rem 0;
+    }
+    .explain {
+      .cards {
+        padding: 0;
+        .card {
+          h2 {
+            font-size: 22px;
+            line-height: 32px;
+            padding-bottom: 1rem;
           }
+          p {
+            font-size: 13px;
+            line-height: 23px;
+          }
+          width: 18rem;
+          height: 18rem;
         }
       }
     }
