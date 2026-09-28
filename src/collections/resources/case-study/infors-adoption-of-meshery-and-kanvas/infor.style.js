@@ -3,15 +3,16 @@ import styled from "styled-components";
 export const INFORfacts = styled("table")(({ theme }) => ({
   backgroundColor: `${theme.elevationColor}`,
   borderRadius: "0.5rem",
-  marginBottom: "1rem",
+  marginTop: "2.5rem",
+  marginBottom: "2.5rem",
   color: `${theme.text}`,
   border: `1px solid ${theme.primaryLightColor}`,
 
-  " > tbody > tr:first-child": {
+  " > tr:first-child": {
     padding: "0rem",
   },
 
-  " > tbody > tr:first-child th": {
+  " > tr:first-child th": {
     h4: {
       color: `${theme.white}`,
       margin: 0,
@@ -21,11 +22,11 @@ export const INFORfacts = styled("table")(({ theme }) => ({
     textAlign: "center",
   },
 
-  " > tbody > tr > td": {
-    padding: "1rem",
+  " > tr > td": {
+    padding: "2rem",
     color: `${theme.text}`,
   },
-  "> tbody > tr > td > img": {
+  "> tr > td > img": {
     marginRight: ".5rem",
     marginBottom: "0rem",
     paddingBottom: "0rem",
