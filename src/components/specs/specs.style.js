@@ -11,16 +11,18 @@ const SpecsWrapper = styled.div`
       ${(props) => props.theme.highlightColor} 50%
     );
     @media (max-width: 62rem) {
-      background: linear-gradient(
-        to bottom,
-        ${(props) => props.theme.secondaryColor} 50%,
-        ${(props) => props.theme.highlightColor} 50%
-      );
+      background: ${(props) => props.theme.highlightColor};
     }
 
     .management-plane-row {
       @media (max-width: 62rem) {
         flex-wrap: wrap;
+
+        > .text,
+        > .card {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
       }
     }
 
@@ -28,6 +30,12 @@ const SpecsWrapper = styled.div`
       position: relative;
       padding: 6rem;
       overflow: visible;
+
+      @media (max-width: 62rem) {
+        background: ${(props) => props.theme.secondaryColor};
+        box-shadow: 0 0 0 100vmax ${(props) => props.theme.secondaryColor};
+        clip-path: inset(0 -100vmax);
+      }
 
       @media (max-width: 36rem) {
         padding-left: 2rem;
