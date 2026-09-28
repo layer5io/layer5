@@ -145,7 +145,9 @@ const KanvasVisualizerFeatures = () => {
   useEffect(() => {
     if (typeof window === "undefined" || !("matchMedia" in window)) return;
 
-    const mediaQuery = window.matchMedia("(max-width: 992px), (hover: none)");
+    const mediaQuery = window.matchMedia(
+      "(max-width: 992px), (hover: none), (any-pointer: coarse)",
+    );
     const updateMatches = () => setIsSmallScreen(mediaQuery.matches);
 
     updateMatches();
