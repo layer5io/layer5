@@ -143,28 +143,26 @@ const DiscussWrapper = styled.div`
           }
         }
       }
-    }
-  }
-
-  @media only screen and (max-width: 992px) {
-    .card-align {
-      padding: 1.1rem 0;
-    }
-    .explain {
-      .cards {
-        padding: 0;
-        .card {
-          h2 {
-            font-size: 22px;
-            line-height: 32px;
-            padding-bottom: 1rem;
+    @media only screen and (max-width: 992px) {
+      .card-align {
+        padding: 1.1rem 0;
+      }
+      .explain {
+        .cards {
+          padding: 0;
+          .card {
+            h2 {
+              font-size: 22px;
+              line-height: 32px;
+              padding-bottom: 1rem;
+            }
+            p {
+              font-size: 13px;
+              line-height: 23px;
+            }
+            width: 18rem;
+            height: 18rem;
           }
-          p {
-            font-size: 13px;
-            line-height: 23px;
-          }
-          width: 18rem;
-          height: 18rem;
         }
       }
     }
