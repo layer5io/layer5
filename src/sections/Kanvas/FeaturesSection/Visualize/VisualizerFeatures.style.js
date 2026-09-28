@@ -185,6 +185,12 @@ const VisualizerFeaturesWrapper = styled.section`
     &:hover {
       .fixed {
         background: #ebc017;
+        & > h1 {
+          color: #000000;
+        }
+        .learn-more h5 {
+          color: #000000 !important;
+        }
       }
       #add-border {
         border-color: #ebc017;
