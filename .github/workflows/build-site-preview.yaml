@@ -19,8 +19,6 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-24.04
-    if: github.event.action != 'closed'
-
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
@@ -28,17 +26,20 @@ jobs:
           egress-policy: audit
 
       - name: Checkout PR
+        if: github.event.action != 'closed'
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
       - name: Setup Node
+        if: github.event.action != 'closed'
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: "22"
           cache: 'npm'
 
       - name: Gatsby Cache
+        if: github.event.action != 'closed'
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: |
@@ -48,12 +49,15 @@ jobs:
             ${{ runner.os }}-gatsby-${{ github.event.pull_request.number }}-
 
       - name: Install dependencies
+        if: github.event.action != 'closed'
         run: npm ci
 
       - name: Unit tests
+        if: github.event.action != 'closed'
         run: npm run test:unit
 
       - name: Build PR preview
+        if: github.event.action != 'closed'
         env:
           GATSBY_PREVIEW: "true"
           GATSBY_SITE_URL: https://${{ github.repository_owner }}.github.io
