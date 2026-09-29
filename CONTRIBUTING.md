@@ -127,7 +127,7 @@ If you'd like to contribute a post to layer5.io/blog, please open an Issue and s
 
 # Contributing to Layer5 Sistent
 
-If you'd like to contribute to [Sistent](https://github.com/layer5io/sistent), a UI/UX design system, start by selecting the [project/sistent](https://github.com/layer5io/layer5/labels/project%2Fsistent)label in this repo at https://github.com/layer5io/layer5/labels/project%2Fsistent or by visiting the project repo at hhttps://github.com/layer5io/sistent.
+If you'd like to contribute to [Sistent](https://github.com/layer5io/sistent), a UI/UX design system, start by selecting the [project/sistent](https://github.com/layer5io/layer5/labels/project%2Fsistent) label in this repo at https://github.com/layer5io/layer5/labels/project%2Fsistent or by visiting the project repo at https://github.com/layer5io/sistent.
 
 ### General Contribution Guidelines
 
