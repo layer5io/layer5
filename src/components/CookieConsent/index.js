@@ -1,14 +1,59 @@
 import React, { useEffect, useState } from "react";
-import { Snackbar, Typography, Box, Paper, Stack } from "@mui/material";
 
 import { Link } from "gatsby";
 import Button from "../../reusecore/Button";
 import styled from "styled-components";
 
-const StyledContainer = styled.div`
+// Rendered from `src/components/layout.js`, so this component is part of every
+// page's shared bundle. It is built on styled-components (the site's styling
+// system) rather than a component library to keep that bundle small.
+const ConsentBar = styled.div`
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1400;
+  width: max-content;
+  max-width: calc(100% - 3rem);
+
   .paper-container {
     background-color: ${(props) => props.theme.elevationColor};
     color: ${(props) => props.theme.text};
+    box-shadow:
+      0 3px 5px -1px rgba(0, 0, 0, 0.2),
+      0 6px 10px 0 rgba(0, 0, 0, 0.14),
+      0 1px 18px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    max-width: 32.5rem;
+  }
+
+  .consent-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .consent-text {
+    flex: 1;
+    margin-bottom: 0;
+    font-size: 0.875rem;
+    line-height: 1.43;
+  }
+
+  .consent-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  @media screen and (max-width: 37.5rem) {
+    .consent-row {
+      flex-direction: column;
+      align-items: stretch;
+    }
   }
 `;
 
@@ -40,76 +85,49 @@ const CookieConsent = () => {
     setOpen(false);
   };
 
-  return (
-    <Snackbar
-      open={open}
-      anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-    >
-      <StyledContainer>
-        <Paper
-          elevation={6}
-          sx={{
-            p: 1.5,
-            maxWidth: 520,
-            borderRadius: 2,
-          }}
-          className="paper-container"
-        >
-          <Stack
-            direction={{ xs: "column", sm: "row" }}
-            spacing={1.5}
-            alignItems={{ xs: "stretch", sm: "center" }}
-          >
-            <Typography variant="body2" sx={{ flex: 1, mb: 0 }}>
-              We use cookies to enhance your browsing experience. By clicking
-              "Accept", you consent to our use of cookies. Read more in our{" "}
-              <Link
-                to="/company/legal/privacy"
-                target="_self"
-                rel="noopener noreferrer"
-              >
-                Privacy Policy
-              </Link>{" "}
-              or visit our{" "}
-              <Link
-                to="/company/legal"
-                target="_self"
-                rel="noopener noreferrer"
-              >
-                Trust Center
-              </Link>
-              .
-            </Typography>
+  if (!open) return null;
 
-            <Box
-              display="flex"
-              justifyContent="flex-end"
-              gap={1}
-              flexShrink={0}
+  return (
+    <ConsentBar role="dialog" aria-live="polite" aria-label="Cookie consent">
+      <div className="paper-container">
+        <div className="consent-row">
+          <p className="consent-text">
+            We use cookies to enhance your browsing experience. By clicking
+            &quot;Accept&quot;, you consent to our use of cookies. Read more in
+            our{" "}
+            <Link
+              to="/company/legal/privacy"
+              target="_self"
+              rel="noopener noreferrer"
             >
-              <Button
-                variant="outlined"
-                size="small"
-                $outlined
-                onClick={() => handleResponse("declined")}
-                style={{ minWidth: 92, padding: "10px 14px", fontSize: 14 }}
-              >
-                Decline
-              </Button>
-              <Button
-                variant="contained"
-                size="small"
-                $secondary
-                onClick={() => handleResponse("accepted")}
-                style={{ minWidth: 92, padding: "10px 14px", fontSize: 14 }}
-              >
-                Accept
-              </Button>
-            </Box>
-          </Stack>
-        </Paper>
-      </StyledContainer>
-    </Snackbar>
+              Privacy Policy
+            </Link>{" "}
+            or visit our{" "}
+            <Link to="/company/legal" target="_self" rel="noopener noreferrer">
+              Trust Center
+            </Link>
+            .
+          </p>
+
+          <div className="consent-actions">
+            <Button
+              $outlined
+              onClick={() => handleResponse("declined")}
+              style={{ minWidth: 92, padding: "10px 14px", fontSize: 14 }}
+            >
+              Decline
+            </Button>
+            <Button
+              $secondary
+              onClick={() => handleResponse("accepted")}
+              style={{ minWidth: 92, padding: "10px 14px", fontSize: 14 }}
+            >
+              Accept
+            </Button>
+          </div>
+        </div>
+      </div>
+    </ConsentBar>
   );
 };
 

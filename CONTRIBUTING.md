@@ -590,6 +590,42 @@ make site
 
 This will run a local webserver with "live reload" conveniently enabled.
 
+`make site` starts a **lightweight** dev server: it skips the heaviest content
+collections (members, integrations, blog, news, events, resources) so that the
+data layer stays small. Use `make site-full` only when you are changing one of
+those collections — it is several times more expensive.
+
+#### Running on a memory-constrained machine
+
+`make site` and `npm run build` go through `scripts/run-gatsby.js`, which reads
+the RAM and CPU count of the machine it is on and derives Gatsby's worker count,
+sharp concurrency, and V8 heap ceiling from them. There is nothing to tune by
+hand, and you should not need to set `NODE_OPTIONS` yourself. If you do set any
+of `GATSBY_CPU_COUNT`, `SHARP_CONCURRENCY`, or `NODE_OPTIONS`, your value wins.
+
+On Windows, two things matter beyond the repository itself:
+
+1. **Clone into the WSL filesystem, not `/mnt/c`.** Gatsby watches thousands of
+   files; across the `/mnt/c` 9p bridge every one of those stat calls crosses a
+   VM boundary, which makes builds far slower and keeps more of the watch state
+   resident. Use `~/layer5` inside your distribution.
+
+2. **Give WSL2 an explicit memory ceiling.** By default WSL2 claims up to half
+   of host RAM and returns freed pages to Windows only slowly, which is why
+   stopping Gatsby can appear not to give memory back. Create
+   `C:\Users\<you>\.wslconfig` and restart WSL with `wsl --shutdown`:
+
+   ```ini
+   # Suggested starting point for a host with 8 GB of RAM.
+   [wsl2]
+   memory=5GB
+   processors=4
+   swap=4GB
+   ```
+
+   `scripts/run-gatsby.js` sees the WSL VM's limit rather than the host's, so it
+   will size the build to whatever ceiling you set here.
+
 **11.** Track your changes.
 
 ```

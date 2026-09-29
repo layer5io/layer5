@@ -1093,6 +1093,23 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
   ) {
     const config = getConfig();
     config.devtool = false;
+
+    config.resolve = config.resolve || {};
+    config.resolve.alias = {
+      ...(config.resolve.alias || {}),
+      // Pre-bundled dependencies (@sistent/sistent, @sistent/mui-datatables)
+      // import the whole `@mui/icons-material` barrel, which re-exports ~10,800
+      // icon modules. Webpack resolves and parses every one of them before tree
+      // shaking can drop them again, making it the single largest contributor to
+      // both the browser and the SSR module graph. The `$` restricts this to the
+      // exact specifier, so deep imports such as `@mui/icons-material/Add` still
+      // resolve to the real package.
+      "@mui/icons-material$": path.resolve(
+        __dirname,
+        "src/shims/mui-icons-material.js",
+      ),
+    };
+
     const miniCssExtractPlugin = config.plugins.find(
       (plugin) => plugin.constructor.name === "MiniCssExtractPlugin",
     );
