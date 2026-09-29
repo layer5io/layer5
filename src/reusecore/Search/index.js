@@ -12,8 +12,15 @@ const SearchBox = ({
   paginate,
   currentPage,
   classnames,
-  focusSearch
+  focusSearch,
+  ariaLabel,
+  "aria-label": aria_label,
+  id = "search",
+  name = "search",
+  autoComplete = "off",
 }) => {
+  const accessibleLabel = ariaLabel || aria_label || "Search";
+
   const handleChange = (e) => {
     if (hideFilter != undefined && setHideFilter != undefined) {
       if (e.target.value.length > 0) {
@@ -36,6 +43,8 @@ const SearchBox = ({
     <SearchWrapper>
       <div className={`search-box ${classnames ? classnames.join(" ") : ""}`}>
         <DebounceInput
+          id={id}
+          name={name}
           type="text"
           value={searchQuery}
           minLength={1}
@@ -43,8 +52,10 @@ const SearchBox = ({
           onChange={(e) => handleChange(e)}
           placeholder="Search..."
           autoFocus={focusSearch}
+          aria-label={accessibleLabel}
+          autoComplete={autoComplete}
         />
-        <Button aria-label="search icon">
+        <Button type="button" aria-label="Search">
           <FaSearch />
         </Button>
       </div>
