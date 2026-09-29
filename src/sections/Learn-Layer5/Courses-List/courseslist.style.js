@@ -31,7 +31,7 @@ export const CoursesListWrapper = styled.div`
         svg {
             align-self: center;
             font-size: 1.5rem;
-            color: rgb(177, 182, 184);
+            color: ${props => props.theme.whiteToBlack};
             width: 100%;
             max-width: 1.5rem;
         }
