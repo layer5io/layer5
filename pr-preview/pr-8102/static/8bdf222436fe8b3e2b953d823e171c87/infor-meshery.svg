@@ -1,0 +1,16 @@
+<svg width="831" height="459" viewBox="0 0 831 459" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="2" y="1" width="829" height="458" fill="#141414"/>
+<rect x="2" y="1" width="10" height="458" fill="#D42B2B"/>
+<g opacity="0.10">
+<path d="M140 459 L320 1 H400 L220 459 Z" fill="#D42B2B"/>
+<path d="M250 459 L430 1 H470 L290 459 Z" fill="#D42B2B"/>
+</g>
+<g transform="translate(100,150)">
+<path d="M0 60 L52 30 L52 90 L0 60 Z" fill="#00D3A9"/>
+<path d="M60 60 L112 30 L112 90 L60 60 Z" fill="#00D3A9" opacity="0.65"/>
+<path d="M120 60 L172 30 L172 90 L120 60 Z" fill="#00D3A9" opacity="0.35"/>
+</g>
+<text x="100" y="300" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="bold" fill="#FFFFFF" letter-spacing="6">INFOR</text>
+<text x="102" y="348" font-family="Arial, Helvetica, sans-serif" font-size="30" fill="#00D3A9">Adoption of Meshery &amp; Kanvas</text>
+<text x="102" y="392" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#9A9A9A">A Layer5 Case Study</text>
+</svg>
