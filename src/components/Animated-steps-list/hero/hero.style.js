@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { CopyButton, LineNo, Pre } from "../../CodeBlock";
 
 export const HeroWrapper = styled.div`
   padding: 4rem 0 3rem 0;
@@ -108,6 +109,13 @@ export const HeroWrapper = styled.div`
 
       .token-line > span:first-of-type {
         display: none;
+      }
+
+      /* A single command centered in a tall panel: center the button on
+         that line, as the default placement does for a first line. */
+      ${CopyButton} {
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
 
