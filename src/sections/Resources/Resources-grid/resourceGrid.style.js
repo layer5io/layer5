@@ -104,9 +104,6 @@ export const ResourcePageWrapper = styled.div`
       max-width: 100%;
       height: auto;
       object-fit: contain;
-      @media only screen and (max-width: 700px) {
-        max-width: 100%;
-      }
     }
 
     @media only screen and (max-width: 992px) {

@@ -9,11 +9,11 @@ const NoResources = ({ errorMessage, errorSubtitle }) => {
     <ResourcePageWrapper>
       <div className="no-resources-page">
         <Container>
-          <Row className="empty-state-row" style={{ flexWrap: "wrap" }}>
-            <Col $xs={12} $sm={12} $md={12} $lg={4}>
+          <Row className="empty-state-row">
+            <Col $xs={12} $lg={4}>
               <img src={serviceMesh} alt="service meshes" className="mesh" />
             </Col>
-            <Col $xs={12} $sm={12} $md={12} $lg={8}>
+            <Col $xs={12} $lg={8}>
               <div className="error-text">
                 <h1 className="errorMessage">{errorMessage}</h1>
                 <h3 className="errorSubtitle">{errorSubtitle}</h3>
