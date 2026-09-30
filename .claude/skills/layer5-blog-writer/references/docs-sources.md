@@ -4,7 +4,7 @@ Both documentation sites are cloned locally. When writing technical blog posts,
 search these first rather than guessing at feature names, CLI flags, or behavior.
 Docs are the authoritative source - blog posts extend and contextualize them.
 
-## Layer5 Docs — docs.layer5.io
+## Layer5 Docs - docs.layer5.io
 
 **Local path:** `~/code/docs` (clone from https://github.com/layer5io/docs if not present)
 **Content root:** `~/code/docs/content/en/`
@@ -20,7 +20,7 @@ Docs are the authoritative source - blog posts extend and contextualize them.
 | Catalog                                 | `content/en/cloud/catalog/`          | `https://docs.layer5.io/cloud/catalog/`          |
 | Identity / Security                     | `content/en/cloud/identity/`         | `https://docs.layer5.io/cloud/identity/`         |
 
-## Meshery Docs — docs.meshery.io
+## Meshery Docs - docs.meshery.io
 
 **Local path:** `~/code/meshery/docs` (clone from https://github.com/meshery/meshery if not present)
 **Content root:** `~/code/meshery/docs/content/en/`

@@ -1,6 +1,6 @@
 ---
 name: layer5-blog-writer
-version: 2.0.0
+version: 2.0.1
 description: Creates complete, publication-ready blog posts for layer5.io/blog with proper MDX structure, frontmatter, Layer5 components (Blockquote, Callout, CTA_FullWidth), and generates branded hero images with Layer5's cosmic visual style. Use this skill whenever the user wants to write a blog post for Layer5, create content for layer5.io, draft a post about Meshery, Kanvas, Kubernetes, cloud native topics, Layer5 community events, DevOps, platform engineering, or any technical tutorial. Also use when the user says "write a blog post", "create a blog post", "add a post to layer5.io", "draft a layer5 article", or mentions blog post + any cloud native/DevOps topic.
 ---
 
@@ -47,11 +47,11 @@ What they care about: reducing toil, shipping faster, keeping their cluster heal
 
 ## Workflow
 
-### Step 1 — Clarify intent (if needed)
+### Step 1 - Clarify intent (if needed)
 
 Ask one focused question if the topic is unclear. If you can infer enough, proceed. Typical defaults: author = "Layer5 Team", date = today.
 
-### Step 2 — Research from authoritative docs
+### Step 2 - Research from authoritative docs
 
 Both documentation sites are cloned locally. Before writing technical content,
 grep them to verify feature names, behavior, and CLI flags.
@@ -70,7 +70,7 @@ See `references/docs-sources.md` for the full path-to-URL mapping and search pat
 
 **Pin versions in install commands.** Never use `releases/latest`, `:latest` tags, or unversioned URLs in tutorials. Pin to a specific release (e.g. `v0.104.0`, `v1.23.0`). Unpinned commands break silently weeks later when upstream ships a breaking change, and the reader blames the blog post. If you don't know the current version, grep the docs or check the project's GitHub releases page and use the latest stable version explicitly.
 
-### Step 3 — Plan the post
+### Step 3 - Plan the post
 
 Before writing:
 
@@ -82,7 +82,7 @@ Before writing:
 - **Resource flag**: Worth adding `resource: true`?
 - **Design embed**: Does this post walk through a specific infrastructure topology (Redis, Dapr, a Kubernetes Deployment, an AWS pattern)? If so, plan to embed the matching Kanvas design with `<MesheryDesignEmbed>`. The available designs and their IDs are in `references/blog-structure.md`.
 
-### Step 4 — Set up the git worktree
+### Step 4 - Set up the git worktree
 
 All file writes for this blog post happen inside an isolated git worktree, never in the main checkout. This keeps the working directory clean and lets the entire branch be deleted at the end with no residue.
 
@@ -102,7 +102,7 @@ cd "$WORKTREE_DIR"
 
 If the worktree path already exists from a prior run, `git worktree add` will fail. Pick a different slug, or run `git worktree remove "$WORKTREE_DIR"` first. Never `rm -rf` a worktree directory without removing it through git, or the metadata under `.git/worktrees/` will go stale.
 
-### Step 5 — Write the blog post
+### Step 5 - Write the blog post
 
 Read `references/blog-structure.md` for the full format spec.
 
@@ -112,7 +112,7 @@ Read `references/blog-structure.md` for the full format spec.
 src/collections/blog/YYYY/MM-DD-descriptive-slug/index.mdx
 ```
 
-### Step 6 — Generate the hero image
+### Step 6 - Generate the hero image
 
 First, **pick a Five pose deliberately.** Read `references/mascot-five-index.md` - it's the
 complete, human-maintained catalog of all 41 poses in `assets/mascot-five/SVG/` (description,
@@ -123,8 +123,10 @@ pose (plain forward motion, no props that could clash with an unrelated topic) r
 a thematic pick that doesn't hold up.
 
 If the chosen pose has blank signage (currently `blank-signpost` or `blank-book` - the index says
-so explicitly), you can put post-specific text on it with `--sign-text`, e.g. the post's title, a
-product name, or a short callout. Don't pass `--sign-text` for any other pose - the generator warns
+so explicitly), you can put post-specific text on it with `--sign-text`: a product name or a short
+callout of one to three words, not the post's title. The generator wraps and shrinks the text to
+fit the measured surface and exits with an error rather than truncating when it cannot fit, so
+shorten the text if that happens. Don't pass `--sign-text` for any other pose - the generator warns
 and ignores it unless the pose has a calibrated zone.
 
 ```bash
@@ -155,9 +157,12 @@ JPEG at q88 measures ~70KB against ~310KB for the equivalent SVG, is visually in
 while crawlers still get a JPEG. Rasterizing also bakes the type, so no Qanelas Soft binary is
 committed - the old SVG heroes were 73% base64 OTF of a commercially licensed font, once per post.
 
-Rasterizing needs a Chrome/Chromium binary, and Pillow for JPEG/WebP encoding. Without Pillow you
-get a PNG plus a warning; without Chrome the generator fails loudly and leaves the working SVG so
-no effort is lost. Pass `--keep-svg` to inspect the intermediate - never commit it.
+Rasterizing needs a Chrome/Chromium binary for every format, and Pillow (`pip install pillow`) for
+JPEG/WebP; PNG does not need Pillow. If a requirement is missing the generator exits with an error
+and writes no raster; output is deterministic per title, so rerun the same command once it is
+installed. Without `--keep-svg` nothing is written into the post directory on failure. With
+`--keep-svg` the working SVG is written there before rasterizing, so it remains after a failure -
+never commit it.
 
 Produces a 1200x630 image that:
 
@@ -212,7 +217,7 @@ thumbnail: ./hero-image.jpg
 darkthumbnail: ./hero-image.jpg
 ```
 
-### Step 7 — Final quality check
+### Step 7 - Final quality check
 
 Run from inside `$WORKTREE_DIR`. Do not proceed to Step 8 until both gates pass.
 
@@ -225,7 +230,7 @@ python3 "<skill_dir>/scripts/check_post.py" "src/collections/blog/YYYY/MM-DD-slu
 Exit code 0 means clean. It asserts the mechanical half of this step: required frontmatter fields,
 the exact `YYYY-MM-DD HH:MM:SS +/-HHMM` date format, thumbnails that exist and are rasters rather
 than SVG, category and tags matching `references/tags-categories.md` (case-sensitively), presence
-of `intro`/`outro`/`<Blockquote>`/a CTA, `className` rather than `class`, en/em dashes, brand
+of `intro`/`outro`/`<Blockquote>`/a CTA, a body image repeating the thumbnail, `className` rather than `class`, en/em dashes, brand
 capitalization in prose, unpinned `:latest` versions, and AI-authorship trailers. It also
 cross-checks the taxonomy doc against `CATEGORY_TONE` in `mesh_palette.py` so the two cannot drift.
 
@@ -246,7 +251,7 @@ image import fails the build. That is what this step is for.
 **Build the blog collection, not the whole site.** `npm run build` sets `BUILD_FULL_SITE=true` and
 compiles members, integrations, news, events, and resources as well - none of which a blog post can
 break, and all of which cost many minutes. The `blog` profile in
-[`src/utils/build-collections.js`](../../../src/utils/build-collections.js) excludes exactly those.
+`src/utils/build-collections.js` in the layer5 site repo excludes exactly those.
 `npm run dev` (which is `develop:lite` on the `core` profile) is the wrong tool here too: `core`
 excludes `blog`, so it would skip the very thing you are trying to compile.
 
@@ -259,13 +264,13 @@ lost by scoping locally - it just happens on the runner instead of on your lapto
 - [ ] Namespace, service name, and label selectors are consistent across all commands
 - [ ] `kubectl port-forward`, `kubectl get`, and `kubectl logs` reference resources that preceding steps actually created
 - [ ] If the post references a Meshery or Kanvas feature, grep the docs repos to confirm the feature name and CLI flags are current
-- [ ] At least one in-body image, each with descriptive alt text (not checked by the linter)
+- [ ] Every in-body image (diagram, screenshot, chart) has descriptive alt text. Do not embed the hero: the blog template already renders `thumbnail` above the title, and the linter flags a repeat
 - [ ] Multiple `<Link>` components for internal navigation
 - [ ] Posts about specific infrastructure patterns embed `<MesheryDesignEmbed>` with a matching design from the table in `references/blog-structure.md`
 - [ ] Technical posts: consider `resource: true`
 - [ ] The post reads as the author's own work. Naming an AI product is fine when it is the subject matter; claiming AI authorship is not
 
-### Step 8 — Commit, push, auto-merge, and remove the worktree
+### Step 8 - Commit, push, auto-merge, and remove the worktree
 
 Land the post on `master` without leaving a PR open for review. The repo's standard merge strategy is regular fast-forward; the workflow below produces a single signed-off commit on top of `origin/master` and merges it via `gh pr merge --merge --delete-branch`.
 
@@ -316,17 +321,17 @@ End the run with a one-paragraph handoff: the merged PR URL, the post path on `m
 
 ## Reference files
 
-- **`references/blog-structure.md`** — Complete MDX format, frontmatter fields, all component patterns including `<MesheryDesignEmbed>` with the full table of available designs. Read before writing.
-- **`references/tags-categories.md`** — Approved tags and categories, and the source of truth `check_post.py` validates against.
-- **`references/docs-sources.md`** — Local doc repo paths, URL mappings, and grep patterns for fact-checking.
-- **`references/mascot-five-index.md`** — Catalog of all 41 Five poses: description, topical tags, baked-in logo, and blank-signage flag. Read before Step 6 and pick a pose deliberately - this is the only place pose selection happens, there's no keyword-matching logic in the script.
-- **`scripts/generate_hero_image.py`** — Hero image generator. Composes the mesh-gradient background and mascot in SVG, then rasterizes. Deterministic per title.
-- **`scripts/mesh_palette.py`** — All hero-image colors, compositions, layouts, and contrast devices. Edit this file, not the generator, when the look needs to change.
-- **`scripts/rasterize.py`** — SVG to JPEG/PNG/WebP via headless Chrome. Documents why heroes ship as rasters.
-- **`scripts/measure_pose_bounds.py`** — Regenerates `assets/mascot-five/pose-bounds.json`. Run after adding or replacing a pose.
-- **`scripts/check_post.py`** — Post linter used in Step 7a. Exit code 0 means clean.
-- **`scripts/sync_skill.sh`** — Copies this skill to `~/.claude/skills/` and `~/.agents/skills/`. Run after changing anything here.
-- **`assets/mascot-five/SVG/`** — The Five pose collection, indexed by `references/mascot-five-index.md`. Vector only.
-- **`assets/mascot-five/pose-bounds.json`** — Measured visible-ink box per pose. The generator sizes the mascot from this, not from the artboard.
-- **`assets/sample-hero-images/`** — Canonical hero examples across compositions, layouts, and poses. Look at these before generating to calibrate visual expectations.
-- **`CHANGELOG.md`** — What changed between skill versions and why.
+- **`references/blog-structure.md`** - Complete MDX format, frontmatter fields, all component patterns including `<MesheryDesignEmbed>` with the full table of available designs. Read before writing.
+- **`references/tags-categories.md`** - Approved tags and categories, and the source of truth `check_post.py` validates against.
+- **`references/docs-sources.md`** - Local doc repo paths, URL mappings, and grep patterns for fact-checking.
+- **`references/mascot-five-index.md`** - Catalog of all 41 Five poses: description, topical tags, baked-in logo, and blank-signage flag. Read before Step 6 and pick a pose deliberately - this is the only place pose selection happens, there's no keyword-matching logic in the script.
+- **`scripts/generate_hero_image.py`** - Hero image generator. Composes the mesh-gradient background and mascot in SVG, then rasterizes. Deterministic per title.
+- **`scripts/mesh_palette.py`** - All hero-image colors, compositions, layouts, and contrast devices. Edit this file, not the generator, when the look needs to change.
+- **`scripts/rasterize.py`** - SVG to JPEG/PNG/WebP via headless Chrome. Documents why heroes ship as rasters.
+- **`scripts/measure_pose_bounds.py`** - Regenerates `assets/mascot-five/pose-bounds.json`. Run after adding or replacing a pose.
+- **`scripts/check_post.py`** - Post linter used in Step 7a. Exit code 0 means clean.
+- **`scripts/sync_skill.sh`** - Mirrors this skill from its canonical copy in layer5io/layer5 to `~/.claude/skills/`, `~/.agents/skills/`, and any vendored copies passed as arguments; `--check` reports drift by content. Run after changing anything here.
+- **`assets/mascot-five/SVG/`** - The Five pose collection, indexed by `references/mascot-five-index.md`. Vector only.
+- **`assets/mascot-five/pose-bounds.json`** - Measured visible-ink box per pose. The generator sizes the mascot from this, not from the artboard.
+- **`assets/sample-hero-images/`** - Canonical hero examples across compositions, layouts, and poses. Look at these before generating to calibrate visual expectations.
+- **`CHANGELOG.md`** - What changed between skill versions and why.
