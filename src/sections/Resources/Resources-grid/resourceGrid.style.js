@@ -120,7 +120,8 @@ export const ResourcePageWrapper = styled.div`
 
         img {
             margin: 1rem auto 0;
-            max-width: 12rem;
+            width: 12rem;
+            max-width: 100%;
             height: auto;
         }
 
@@ -146,7 +147,8 @@ export const ResourcePageWrapper = styled.div`
         margin: 0.5rem;
 
         img {
-            max-width: 9rem;
+            width: 9rem;
+            max-width: 100%;
         }
 
         .errorMessage {
