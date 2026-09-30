@@ -54,7 +54,6 @@ jobs:
         env:
           GATSBY_PREVIEW: "true"
           GATSBY_SITE_URL: https://${{ github.repository_owner }}.github.io
-          NODE_OPTIONS: "--trace-deprecation"
         run: |
           export PATH_PREFIX=pr-preview/pr-${{ github.event.pull_request.number }}
           npm run build:preview
