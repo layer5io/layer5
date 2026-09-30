@@ -4,7 +4,7 @@ import serviceMesh from "../../../assets/images/service-mesh-icons/service-mesh.
 
 import { ResourcePageWrapper } from "../Resources-grid/resourceGrid.style";
 
-const NoResources = ({ errorMessage, errorSubtitle }) => {
+const NoResources = ({ errorMessage,errorSubtitle }) => {
   return (
     <ResourcePageWrapper>
       <div className="no-resources-page">
@@ -15,7 +15,7 @@ const NoResources = ({ errorMessage, errorSubtitle }) => {
             </Col>
             <Col $xs={12} $lg={8}>
               <div className="error-text">
-                <h1 className="errorMessage">{errorMessage}</h1>
+                <h1 className="errorMessage"> {errorMessage} </h1>
                 <h3 className="errorSubtitle">{errorSubtitle}</h3>
               </div>
             </Col>
