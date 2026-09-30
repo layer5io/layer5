@@ -103,38 +103,52 @@ if (!/--max-old-space-size/.test(env.NODE_OPTIONS || "")) {
   env.NODE_OPTIONS = `${env.NODE_OPTIONS || ""} ${heapFlag}`.trim();
 }
 
-const args = process.argv.slice(2);
-console.info(
-  `[run-gatsby] ${totalGb.toFixed(1)} GB RAM / ${cores} cores -> ` +
-    `workers=${env.GATSBY_CPU_COUNT} sharp=${env.SHARP_CONCURRENCY} heap=${heapMb}MB`,
-);
-
-const gatsbyBin = (() => {
-  const binDir = path.join(__dirname, "..", "node_modules", ".bin");
-  if (process.platform === "win32") {
-    // npm creates gatsby.cmd, but pnpm/bun may only create gatsby.exe or gatsby.bunx
+/**
+ * Resolve the Gatsby binary, preferring Windows shims in order.
+ *
+ * npm creates gatsby.cmd, but pnpm/bun may only create gatsby.exe or
+ * gatsby.bunx. Non-Windows behavior is unchanged (plain `gatsby`).
+ */
+const resolveGatsbyBin = ({
+  platform = process.platform,
+  existsSync = require("fs").existsSync,
+  binDir = path.join(__dirname, "..", "node_modules", ".bin"),
+} = {}) => {
+  if (platform === "win32") {
     for (const candidate of ["gatsby.cmd", "gatsby.exe", "gatsby.bunx"]) {
       const full = path.join(binDir, candidate);
-      if (require("fs").existsSync(full)) return full;
+      if (existsSync(full)) return full;
     }
   }
   return path.join(binDir, "gatsby");
-})();
+};
 
-const child = spawn(gatsbyBin, args, {
-  env,
-  stdio: "inherit",
-  shell: process.platform === "win32",
-});
+const gatsbyBin = resolveGatsbyBin();
 
-const forward = (signal) => () => child.kill(signal);
-process.on("SIGINT", forward("SIGINT"));
-process.on("SIGTERM", forward("SIGTERM"));
+if (require.main === module) {
+  const args = process.argv.slice(2);
+  console.info(
+    `[run-gatsby] ${totalGb.toFixed(1)} GB RAM / ${cores} cores -> ` +
+      `workers=${env.GATSBY_CPU_COUNT} sharp=${env.SHARP_CONCURRENCY} heap=${heapMb}MB`,
+  );
 
-child.on("exit", (code, signal) => {
-  if (signal) {
-    process.kill(process.pid, signal);
-    return;
-  }
-  process.exit(code ?? 0);
-});
+  const child = spawn(gatsbyBin, args, {
+    env,
+    stdio: "inherit",
+    shell: process.platform === "win32",
+  });
+
+  const forward = (signal) => () => child.kill(signal);
+  process.on("SIGINT", forward("SIGINT"));
+  process.on("SIGTERM", forward("SIGTERM"));
+
+  child.on("exit", (code, signal) => {
+    if (signal) {
+      process.kill(process.pid, signal);
+      return;
+    }
+    process.exit(code ?? 0);
+  });
+}
+
+module.exports = { resolveGatsbyBin };
