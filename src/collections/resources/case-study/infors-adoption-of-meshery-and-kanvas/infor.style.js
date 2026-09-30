@@ -25,14 +25,17 @@ export const INFORfacts = styled("table")(({ theme }) => ({
   " > tbody > tr > td": {
     padding: "2rem",
     color: `${theme.text}`,
-    "@media screen and (max-width: 768px)": {
-      padding: "1rem",
-    },
   },
   "> tbody > tr > td > img": {
     marginRight: ".5rem",
     marginBottom: "0rem",
     paddingBottom: "0rem",
+  },
+  "@media screen and (max-width: 768px)": {
+    " > tbody, > tbody > tr, > tbody > tr > th, > tbody > tr > td": {
+      display: "block",
+      width: "100%",
+    },
   },
 }));
 
