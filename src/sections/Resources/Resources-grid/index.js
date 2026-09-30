@@ -66,7 +66,10 @@ const ResourceGrid = (props) => {
               <Card
                 frontmatter={frontmatter}
                 fields={fields}
-                fitContainer={frontmatter.type === "Article"}
+                fitContainer={
+                  frontmatter.type === "Article" ||
+                  frontmatter.type === "Comparison"
+                }
               />
             </Col>
           ))}

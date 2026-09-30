@@ -127,7 +127,7 @@ If you'd like to contribute a post to layer5.io/blog, please open an Issue and s
 
 # Contributing to Layer5 Sistent
 
-If you'd like to contribute to [Sistent](https://github.com/layer5io/sistent), a UI/UX design system, start by selecting the [project/sistent](https://github.com/layer5io/layer5/labels/project%2Fsistent)label in this repo at https://github.com/layer5io/layer5/labels/project%2Fsistent or by visiting the project repo at hhttps://github.com/layer5io/sistent.
+If you'd like to contribute to [Sistent](https://github.com/layer5io/sistent), a UI/UX design system, start by selecting the [project/sistent](https://github.com/layer5io/layer5/labels/project%2Fsistent) label in this repo at https://github.com/layer5io/layer5/labels/project%2Fsistent or by visiting the project repo at https://github.com/layer5io/sistent.
 
 ### General Contribution Guidelines
 
@@ -527,8 +527,9 @@ Environment variables are named values used to configure how an application beha
 | Variable                    | Possible Values                  | Description                                                                                                                                                                                                                                                                                                                    |
 | --------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `BUILD_FULL_SITE`           | `true`, `false`                  | When set to `true`, enables a full site build including all collections. If not explicitly set to `true`, the project defaults to a lightweight build.                                                                                                                                                                         |
-| `LITE_BUILD_PROFILE`        | `content`, `core`                | Selects which collections are excluded when `BUILD_FULL_SITE=false`. `core` is the default for `make site`, `npm start`, and `npm run dev`, while `content` keeps blog, news, events, and resources enabled.                                                                                                                   |
+| `LITE_BUILD_PROFILE`        | `core`, `content`, `blog`        | Selects which collections are excluded when `BUILD_FULL_SITE=false`. `core` is the default for `make site`, `npm start`, and `npm run dev` and skips blog, news, events, and resources. `content` keeps blog, news, events, and resources enabled. `blog` keeps the blog and skips news, events, and resources; `make site-blog` uses it. |
 | `BUILD_COLLECTIONS_EXCLUDE` | comma-separated collection names | Adds extra collections to exclude from a lightweight build without editing project files.                                                                                                                                                                                                                                      |
+| `BLOG_YEAR`                 | comma-separated four-digit years | Limits a lightweight build that includes the blog (`content` or `blog` profile) to posts under `src/collections/blog/<year>`, e.g. `BLOG_YEAR=2026` or `BLOG_YEAR=2025,2026`. Posts from other years are not built and return 404. `make site-blog` defaults it to the latest year. A year with no directory, or a value that is not a year, fails the build. Ignored, with a warning, for full builds and for profiles that exclude the blog. |
 | `NODE_ENV`                  | `development`, `production`      | Determines the build and rendering mode used by Gatsby. This is automatically set by Gatsby. <br><br>• `development` - Uses **Deferred Static Generation (DSG)** i.e pages built on demand for faster startup. <br>• `production` - Uses **Server-Side Rendering (SSR)** i.e pages rendered on each request for fresh content. |
 | `CI`                        | `true`, `false`                  | Indicates that the build is running in a **Continuous Integration (CI)** environment (e.g., GitHub Actions). When set to `true`, special logic is applied to page paths and redirects for GitHub Pages compatibility. This is typically set automatically by the CI system and does not need to be configured manually.        |
 
@@ -588,7 +589,7 @@ make setup
 make site
 ```
 
-This will run a local webserver with "live reload" conveniently enabled.
+This will run a local webserver with "live reload" conveniently enabled. `make site` skips the blog, news, events, and resources collections to keep builds fast. To work on a blog post, run `make site-blog`, which builds only the latest year's blog posts; choose other years with `BLOG_YEAR=2025,2026 make site-blog`. Run `make` to list every target.
 
 `make site` starts a **lightweight** dev server: it skips the heaviest content
 collections (members, integrations, blog, news, events, resources) so that the
