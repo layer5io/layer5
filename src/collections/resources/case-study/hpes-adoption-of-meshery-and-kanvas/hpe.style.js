@@ -12,7 +12,7 @@ export const HPEfacts = styled("table")(({ theme }) => ({
     padding: "0rem",
   },
 
-  " > tbody > tr:first-child td": {
+  " > tbody > tr:first-child th": {
     h4: {
       color: `${theme.white}`,
       margin: 0,
