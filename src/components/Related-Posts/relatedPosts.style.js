@@ -36,6 +36,12 @@ const RelatedPostsWrapper = styled.div`
         > div {
             height: 100%;
         }
+        .post-block {
+            height: calc(100% - 2rem);
+        }
+        .post-thumb-block {
+            height: auto;
+        }
     }
 
     .slick-arrow{
@@ -173,51 +179,6 @@ const RelatedPostsWrapper = styled.div`
             margin: 0;
             padding: 2px 0;
             overflow: hidden;
-        }
-        .slick-track {
-            display: flex;
-            align-items: stretch;
-        }
-        .slick-slide {
-            height: auto;
-            > div {
-                height: 100%;
-            }
-        }
-
-        .slick-track {
-            display: flex;
-            align-items: stretch;
-        }
-        .slick-slide {
-            height: auto;
-            > div {
-                height: 100%;
-            }
-        }
-
-        .slick-arrow{
-            width: 3rem;
-            height: 4rem;
-            z-index: 2;
-        }
-        .slick-arrow:before{
-            font-size: 4rem;
-            text-shadow: 0px 0px 8px rgba(0,0,0,0.5);
-        }
-
-        .slick-prev {
-            left: 0;
-        }
-        .slick-prev:before{
-            margin-left: 0;
-        }
-
-        .slick-next {
-            right: 0;
-        }
-        .slick-next:before{
-            margin-left: 0;
         }
 
         .slick-dots {

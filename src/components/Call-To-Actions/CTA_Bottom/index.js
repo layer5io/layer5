@@ -10,7 +10,7 @@ const CTA_BottomWrapper = styled.div`
     justify-content: space-between; 
     align-items: center; 
     width: 98%;
-    height: 16rem;
+    min-height: 16rem;
     margin: 2rem auto 1.5rem;
     box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.1);
     background: rgba(201, 252, 246, 0.3);
