@@ -67,7 +67,6 @@ const DiscussWrapper = styled.div`
                 }
             }
         }
-    }
 
     button{
         color: #1E2117;
