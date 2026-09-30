@@ -1108,6 +1108,7 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
         __dirname,
         "src/shims/mui-icons-material.js",
       ),
+      punycode: require.resolve("punycode/"),
     };
 
     const miniCssExtractPlugin = config.plugins.find(
