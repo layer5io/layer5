@@ -25,7 +25,8 @@ const CTAWrapper = styled.section`
         padding: 2.5rem 1.5rem;
       }
       @media screen and (max-width: 768px) {
-        padding: 2rem 1.25rem;
+        padding: 2.5rem 1.5rem 1rem;
+        text-align: center;
       }
       @media screen and (max-width: 576px) {
         padding: 2rem 1rem 0.5rem;
@@ -39,7 +40,7 @@ const CTAWrapper = styled.section`
         padding: 10px;
         text-align: center;
         box-sizing: border-box;
-        @media screen and (max-width: 576px) {
+        @media screen and (max-width: 768px) {
           margin: 0 auto 1rem;
         }
       }
@@ -52,7 +53,7 @@ const CTAWrapper = styled.section`
           font-size: 2rem;
         }
         @media screen and (max-width: 768px) {
-          font-size: 1.5rem;
+          font-size: 1.75rem;
         }
       }
 
@@ -60,7 +61,7 @@ const CTAWrapper = styled.section`
         color: white;
         margin-bottom: 1.5rem;
         @media screen and (max-width: 768px) {
-          font-size: 0.95rem;
+          font-size: 1rem;
         }
       }
 
@@ -78,7 +79,7 @@ const CTAWrapper = styled.section`
       padding: 1.5rem;
     }
     @media screen and (max-width: 768px) {
-      padding: 1rem;
+      padding: 1rem 1.5rem 2.5rem;
     }
     @media screen and (max-width: 576px) {
       padding: 0.5rem 1rem 2rem;
@@ -96,11 +97,12 @@ const CTAWrapper = styled.section`
         max-height: 28rem;
       }
       @media screen and (max-width: 768px) {
-        max-height: 20rem;
+        max-height: 22rem;
+        margin: 0 auto;
       }
       @media screen and (max-width: 576px) {
         max-height: 18rem;
-        margin: 1rem auto 0;
+        margin: 0 auto;
       }
     }
   }
@@ -110,7 +112,7 @@ const CTA_Book = () => {
   return (
     <CTAWrapper>
       <Row className="book_cover" $Vcenter>
-        <Col $xs={12} $sm={6} className="book_col text">
+        <Col $xs={12} $sm={12} $md={6} className="book_col text">
           <p className="cover">Services-first Network</p>
           <h1>
             Learn about<br></br>cloud native architecture
@@ -127,7 +129,7 @@ const CTA_Book = () => {
             $url="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"
           />
         </Col>
-        <Col $xs={12} $sm={6} className="book_col book_img">
+        <Col $xs={12} $sm={12} $md={6} className="book_col book_img">
           <Link
             to={
               "/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"
