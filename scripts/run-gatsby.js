@@ -106,8 +106,9 @@ if (!/--max-old-space-size/.test(env.NODE_OPTIONS || "")) {
 /**
  * Resolve the Gatsby binary, preferring Windows shims in order.
  *
- * npm creates gatsby.cmd, but pnpm/bun may only create gatsby.exe or
- * gatsby.bunx. Non-Windows behavior is unchanged (plain `gatsby`).
+ * npm creates gatsby.cmd, while pnpm may create gatsby.exe. Bun's .bunx file
+ * is metadata, so use Gatsby's Node CLI entrypoint when that is the only shim.
+ * Non-Windows behavior is unchanged (plain `gatsby`).
  */
 const resolveGatsbyBin = ({
   platform = process.platform,
@@ -115,9 +116,12 @@ const resolveGatsbyBin = ({
   binDir = path.join(__dirname, "..", "node_modules", ".bin"),
 } = {}) => {
   if (platform === "win32") {
-    for (const candidate of ["gatsby.cmd", "gatsby.exe", "gatsby.bunx"]) {
+    for (const candidate of ["gatsby.cmd", "gatsby.exe"]) {
       const full = path.join(binDir, candidate);
       if (existsSync(full)) return full;
+    }
+    if (existsSync(path.join(binDir, "gatsby.bunx"))) {
+      return path.resolve(binDir, "..", "gatsby-cli", "cli.js");
     }
   }
   return path.join(binDir, "gatsby");
@@ -132,11 +136,16 @@ if (require.main === module) {
       `workers=${env.GATSBY_CPU_COUNT} sharp=${env.SHARP_CONCURRENCY} heap=${heapMb}MB`,
   );
 
-  const child = spawn(gatsbyBin, args, {
-    env,
-    stdio: "inherit",
-    shell: process.platform === "win32",
-  });
+  const isNodeEntrypoint = gatsbyBin.endsWith(".js");
+  const child = spawn(
+    isNodeEntrypoint ? process.execPath : gatsbyBin,
+    isNodeEntrypoint ? [gatsbyBin, ...args] : args,
+    {
+      env,
+      stdio: "inherit",
+      shell: process.platform === "win32" && !isNodeEntrypoint,
+    },
+  );
 
   const forward = (signal) => () => child.kill(signal);
   process.on("SIGINT", forward("SIGINT"));

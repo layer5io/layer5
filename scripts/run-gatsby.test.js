@@ -3,7 +3,8 @@
 
 /**
  * Covers the Windows Gatsby binary fallback: gatsby.cmd -> gatsby.exe ->
- * gatsby.bunx -> plain gatsby. Non-Windows behavior stays unchanged.
+ * Gatsby's Node CLI when only gatsby.bunx metadata exists -> plain gatsby.
+ * Non-Windows behavior stays unchanged.
  *
  * Run with: node --test scripts/run-gatsby.test.js
  */
@@ -39,13 +40,13 @@ describe("resolveGatsbyBin (win32)", () => {
     assert.equal(bin, path.join(binDir, "gatsby.exe"));
   });
 
-  it("falls back to gatsby.bunx when only bun modules are installed", () => {
+  it("uses Gatsby's Node CLI when only the Bun metadata file is installed", () => {
     const bin = resolveGatsbyBin({
       platform: "win32",
       binDir,
       existsSync: stubExists(["gatsby.bunx"]),
     });
-    assert.equal(bin, path.join(binDir, "gatsby.bunx"));
+    assert.equal(bin, path.resolve(binDir, "..", "gatsby-cli", "cli.js"));
   });
 
   it("falls back to plain gatsby when no Windows shim exists", () => {
