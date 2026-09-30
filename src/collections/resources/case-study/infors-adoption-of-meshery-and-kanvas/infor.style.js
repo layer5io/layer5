@@ -25,6 +25,9 @@ export const INFORfacts = styled("table")(({ theme }) => ({
   " > tbody > tr > td": {
     padding: "2rem",
     color: `${theme.text}`,
+    "@media screen and (max-width: 768px)": {
+      padding: "1rem",
+    },
   },
   "> tbody > tr > td > img": {
     marginRight: ".5rem",
