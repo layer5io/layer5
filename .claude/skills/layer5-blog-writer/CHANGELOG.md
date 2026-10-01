@@ -8,6 +8,59 @@ The canonical copy lives at `.claude/skills/layer5-blog-writer/` in the
 `~/.claude/skills/`, `~/.agents/skills/`, and any vendored copy passed to it (the koopverse/firstmate
 fleet pack, layer5io/meshery-cloud's `.agents/skills/`).
 
+## 2.1
+
+### Brand checks stop flagging repo slugs and start checking the visible copy
+
+`check_post.py` flagged `meshery/meshery` in link text on the 10,000-stars post:
+`mask_prose` blanked the `href` attribute but not the visible text repeating the
+same slug. Link text that matches the href's trailing path is now masked before
+brand rules run; prose link text is still checked.
+
+The same pass closed two gaps on the other side. Frontmatter `title`, `subtitle`,
+and `description` were skipped wholesale, and `ATTR_RE` blanked every JSX
+attribute value, so a lowercase brand in a title or a `<Blockquote quote="...">`
+passed silently. Both are now checked as prose. Route and file-path attributes
+(`to="/community/meshmates"`) stay exempt.
+
+### Hero titles and subtitles warn instead of truncating silently
+
+The renderer sliced titles to 3 lines and subtitles to 2 with `[:3]`/`[:2]`,
+the same silent truncation 2.0.1 removed from sign text. Wrapping now lives in
+`fit_title`/`fit_subtitle`, which return the dropped words: the generator warns
+on stderr naming them, and `check_post.py` fails on the same condition through
+the same helpers, so the two cannot disagree. Its first run found five
+over-long titles/subtitles already on `master`.
+
+### Structural checks ignore fenced code and tolerate extra attributes
+
+`intro`/`outro`/`<Blockquote>`/CTA matching read the whole body including
+fenced code blocks, so a post quoting those tags in a sample passed without any
+of them. The check now strips fences and JSX comments first, and the
+intro/outro match is a regex, so `<div className="intro" id="lede">` no longer
+reports "missing".
+
+### Failed runs leave nothing behind, and `.svg` is refused before mkdir
+
+2.0.1 cleaned the temp working directory on success but leaked one `/tmp` dir
+per failed run. The working SVG now lives in a `TemporaryDirectory`, which
+removes itself on both paths; the failure message points at `--keep-svg` for
+inspecting it instead of naming a deleted path. The `.svg` output refusal also
+moved ahead of directory creation, so a refused invocation creates nothing.
+
+### Step 8 no longer claims a fast-forward
+
+`gh pr merge --merge` creates a merge commit, which the repo history confirms;
+SKILL.md called it "regular fast-forward" in three places. It now says merge
+commit, and the `TITLE=` assignment carries a quoting note for titles
+containing `"`, `$`, backticks, or `\`.
+
+### Tests
+
+`scripts/test_check_post.py` and `scripts/test_generate_hero_image.py` (27
+tests, stdlib `unittest`, no Chrome or Pillow needed) cover every fix above.
+Run with `python3 -m unittest discover -s scripts` from the skill root.
+
 ## 2.0.1
 
 ### Sign text is centered on the sign, and never silently truncated

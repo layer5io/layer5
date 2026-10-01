@@ -413,6 +413,57 @@ SIGN_CHAR_WIDTH_EM = 0.55
 SIGN_CAP_HEIGHT_EM = 0.70
 SIGN_LINE_HEIGHT_EM = 1.15
 
+# Hero title/subtitle fitting. The text column holds 3 title lines (shrinking
+# from 52px to 42px past 2 lines) and 2 subtitle lines; beyond that a [:3]/[:2]
+# slice used to drop words silently - the same truncation 2.0.1 removed from
+# sign text. fit_title/fit_subtitle return (kept, dropped) so the generator
+# warns and check_post.py fails on one shared definition of "fits".
+TITLE_FONT_SIZE = 52
+TITLE_FONT_SIZE_SHRUNK = 42
+TITLE_MAX_LINES = 3
+TITLE_SHRINK_AFTER_LINES = 2
+TITLE_CHAR_WIDTH_EM = 0.50
+TITLE_MIN_CHARS = 12
+SUBTITLE_FONT_SIZE = 21
+SUBTITLE_MAX_LINES = 2
+SUBTITLE_CHAR_WIDTH_EM = 0.50
+SUBTITLE_MIN_CHARS = 16
+TEXT_MARGIN = 52
+TEXT_GUTTER = 24
+
+
+def text_column_width(layout, W=1200):
+    """Usable text width for a layout: canvas minus mascot zone and margins."""
+    return (W - W * layout["zone"]) - TEXT_MARGIN - TEXT_GUTTER
+
+
+def fit_title(title, text_col_w):
+    """
+    Wrap the hero title exactly as the renderer does.
+    Returns (kept_lines, font_size, dropped_lines).
+    """
+    max_chars = max(TITLE_MIN_CHARS,
+                    int(text_col_w / (TITLE_FONT_SIZE * TITLE_CHAR_WIDTH_EM)))
+    lines = wrap_svg_text(title, max_chars)
+    font_size = TITLE_FONT_SIZE
+    if len(lines) > TITLE_SHRINK_AFTER_LINES:
+        font_size = TITLE_FONT_SIZE_SHRUNK
+        max_chars = max(TITLE_MIN_CHARS,
+                        int(text_col_w / (font_size * TITLE_CHAR_WIDTH_EM)))
+        lines = wrap_svg_text(title, max_chars)
+    return lines[:TITLE_MAX_LINES], font_size, lines[TITLE_MAX_LINES:]
+
+
+def fit_subtitle(subtitle, text_col_w):
+    """
+    Wrap the hero subtitle exactly as the renderer does.
+    Returns (kept_lines, dropped_lines).
+    """
+    max_chars = max(SUBTITLE_MIN_CHARS,
+                    int(text_col_w / (SUBTITLE_FONT_SIZE * SUBTITLE_CHAR_WIDTH_EM)))
+    lines = wrap_svg_text(subtitle, max_chars)
+    return lines[:SUBTITLE_MAX_LINES], lines[SUBTITLE_MAX_LINES:]
+
 
 def fit_sign_text(sign_text, zone, zone_key):
     """
@@ -574,23 +625,23 @@ def compose_hero_svg(title, subtitle, category, five_pose_arg, sign_text,
     )
 
     # ── Text column, mirrored with the layout ────────────────────────────
-    margin = 52
+    margin = TEXT_MARGIN
     text_side = layout["text_side"]
     zone_w = W * layout["zone"]
     text_x = margin if text_side == "left" else zone_w + margin
-    text_col_w = (W - zone_w) - margin - 24
+    text_col_w = text_column_width(layout, W)
 
     cat_label = (category or "LAYER5").upper()
     pill_y, pill_h, pill_pad_x = 44, 28, 14
     pill_w = int(len(cat_label) * 9.5) + pill_pad_x * 2
 
-    title_font_size = 52
-    max_title_chars = max(12, int(text_col_w / (title_font_size * 0.50)))
-    title_lines = wrap_svg_text(title, max_title_chars)[:3]
-    if len(title_lines) > 2:
-        title_font_size = 42
-        max_title_chars = max(12, int(text_col_w / (title_font_size * 0.50)))
-        title_lines = wrap_svg_text(title, max_title_chars)[:3]
+    title_lines, title_font_size, dropped_title = fit_title(title, text_col_w)
+    if dropped_title:
+        print(
+            f"Warning: title is too long for the hero image; dropping "
+            f"{' '.join(dropped_title)!r}. Shorten the title to ~60 characters.",
+            file=sys.stderr,
+        )
 
     line_height = title_font_size + 14
     title_block_h = len(title_lines) * line_height
@@ -608,9 +659,15 @@ def compose_hero_svg(title, subtitle, category, five_pose_arg, sign_text,
 
     subtitle_svg = ""
     if subtitle:
+        sub_lines, dropped_sub = fit_subtitle(subtitle, text_col_w)
+        if dropped_sub:
+            print(
+                f"Warning: subtitle is too long for the hero image; dropping "
+                f"{' '.join(dropped_sub)!r}. Shorten the subtitle.",
+                file=sys.stderr,
+            )
         sub_y = title_y_start + title_block_h + 28
-        sub_chars = max(16, int(text_col_w / (21 * 0.50)))
-        for i, sl in enumerate(wrap_svg_text(subtitle, sub_chars)[:2]):
+        for i, sl in enumerate(sub_lines):
             subtitle_svg += (
                 f'\n  <text x="{text_x}" y="{sub_y + i * 30}" font-family="{font_stack}" '
                 f'font-size="21" fill="{palette.TEXT_SUBTITLE}">{xml_escape(sl)}</text>'
@@ -720,14 +777,7 @@ def compose_hero_svg(title, subtitle, category, five_pose_arg, sign_text,
 def generate_hero_image(title, subtitle, category, five_pose_arg, sign_text,
                         date_str, author, output_path, repo_root,
                         keep_svg=False, quality=88, img_width=1200, img_height=630):
-    svg_content, summary = compose_hero_svg(
-        title, subtitle, category, five_pose_arg, sign_text,
-        date_str, author, repo_root, img_width, img_height,
-    )
-
     out = Path(output_path)
-    out.parent.mkdir(parents=True, exist_ok=True)
-
     if out.suffix.lower() == ".svg":
         raise SystemExit(
             "error: --output must be a raster (.jpg recommended, .png or .webp accepted). "
@@ -736,21 +786,40 @@ def generate_hero_image(title, subtitle, category, five_pose_arg, sign_text,
             "if you want the working SVG alongside the raster."
         )
 
-    svg_dir = out.parent if keep_svg else Path(tempfile.mkdtemp())
-    svg_path = svg_dir / (out.stem + ".svg")
-    svg_path.write_text(svg_content, encoding="utf-8")
+    svg_content, summary = compose_hero_svg(
+        title, subtitle, category, five_pose_arg, sign_text,
+        date_str, author, repo_root, img_width, img_height,
+    )
+    out.parent.mkdir(parents=True, exist_ok=True)
 
-    try:
-        detail = rasterize(svg_path, out, img_width, img_height, quality)
-    except RasterizeError as exc:
-        # Never drop the working SVG next to the output on failure: in a post
-        # directory it is named hero-image.svg, which is exactly what a 1.x post
-        # committed, so it gets staged by mistake. Output is deterministic per
-        # title, so rerunning the same command after the fix loses nothing.
-        raise SystemExit(
-            f"error: could not rasterize the hero image.\n  {exc}\n"
-            f"  No hero image was written. The working SVG is at {svg_path}."
-        )
+    if keep_svg:
+        svg_path = out.parent / (out.stem + ".svg")
+        svg_path.write_text(svg_content, encoding="utf-8")
+        try:
+            detail = rasterize(svg_path, out, img_width, img_height, quality)
+        except RasterizeError as exc:
+            raise SystemExit(
+                f"error: could not rasterize the hero image.\n  {exc}\n"
+                f"  No hero image was written. The working SVG is at {svg_path}."
+            )
+    else:
+        # Never drop the working SVG next to the output: in a post directory
+        # it is named hero-image.svg, which is exactly what a 1.x post
+        # committed, so it gets staged by mistake. TemporaryDirectory removes
+        # itself on success AND failure - a manually managed mkdtemp leaked
+        # one /tmp dir per failed run. Output is deterministic per title, so
+        # rerun with --keep-svg to inspect the working SVG after a failure.
+        with tempfile.TemporaryDirectory(prefix="layer5-hero-") as tmp:
+            svg_path = Path(tmp) / (out.stem + ".svg")
+            svg_path.write_text(svg_content, encoding="utf-8")
+            try:
+                detail = rasterize(svg_path, out, img_width, img_height, quality)
+            except RasterizeError as exc:
+                raise SystemExit(
+                    f"error: could not rasterize the hero image.\n  {exc}\n"
+                    f"  No hero image was written. Rerun with --keep-svg to "
+                    f"inspect the working SVG."
+                )
 
     print(
         f"Hero image saved: {out}  ({detail})\n"
@@ -760,9 +829,6 @@ def generate_hero_image(title, subtitle, category, five_pose_arg, sign_text,
     )
     if keep_svg:
         print(f"  working SVG kept at {svg_path} - do not commit it")
-    else:
-        svg_path.unlink()
-        svg_dir.rmdir()
     return summary
 
 
