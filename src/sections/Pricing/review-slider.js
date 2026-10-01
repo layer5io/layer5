@@ -90,6 +90,11 @@ const ReviewsWrapper = styled.div`
     flex: 1;
   }
 
+  .slick-slide > div > * {
+    width: 100%;
+    height: 100%;
+  }
+
   .slick-slide .type-one-wrapper {
     width: 100%;
     height: 100%;
