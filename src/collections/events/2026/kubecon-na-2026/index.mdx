@@ -1,0 +1,59 @@
+---
+title: "KubeCon + CloudNativeCon, North America 2026"
+description: "Join Meshery at KubeCon + CloudNativeCon North America 2026 in Salt Lake City. Meet maintainers and learn about collaborative cloud native infrastructure management."
+date: 2026-11-09
+thumbnail: ./kubecon-na-2026.png
+darkthumbnail: ./kubecon-na-2026.png
+
+type: Event
+published: true
+upcoming: true
+feature: true
+speakers: ["Yash Sharma", "Lee Calcote", "Shivay Lamba", "Sangram Rath", "Hussaina Begum"]
+
+---
+import Button from "../../../../reusecore/Button";
+
+Join Layer5 at KubeCon + CloudNativeCon North America 2026 in Salt Lake City, Utah, from November 9–12.
+
+Meet the Meshery project and its maintainers, and explore two sessions on Kubernetes relationships and contributing to open source.
+
+## Sessions at a Glance
+
+| Session | Date | Time (local, MT) | Format |
+| --- | --- | --- | --- |
+| Meshery: Your Cluster as a Knowledge Graph, Not a Pile of YAML | Monday, November 9 | 12:20–12:25 PM | Lightning talk, Hyatt Regency |
+| Meshery Contribfest: Ship Your First PR to a CNCF Cloud Native Manager | Thursday, November 12 | 1:50–3:10 PM | Hands-on Contribfest with maintainers |
+
+### Meshery: Your Cluster as a Knowledge Graph, Not a Pile of YAML
+
+**Monday, November 9, 12:20–12:25 PM MT**  
+**Speaker:** Yash Sharma  
+**Format:** Lightning talk, Hyatt Regency  
+**Expected audience:** 600–800+, based on the event estimate
+
+Your cluster is not a pile of YAML files. It is a graph: workloads, custom resources, network policies, and RBAC all relate, and many failures live in those relationships rather than in any single file. Meshery models Kubernetes and CNCF resources as an ontology and renders that graph visually in Kanvas.
+
+AI agents are a new consumer of that graph. When asked to design and manage Kubernetes, they often operate without a model of how resources relate, generating files that are individually valid but collectively broken. Meshery maintainer Yash Sharma will show how Meshery exposes its relationship model to agents through MCP (Model Context Protocol), helping agents reason over a map of infrastructure and validate proposals against OPA policies before anything ships.
+
+The knowledge graph that makes clusters visual for humans can also help agents understand infrastructure instead of guessing at it.
+
+<div className="flex-row" style={{ marginBottom: "2rem" }}>
+  <Button $secondary title="See Session Details" $url="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/?id=1289972" $external={ true } />
+</div>
+
+### Meshery Contribfest: Ship Your First PR to a CNCF Cloud Native Manager
+
+**Thursday, November 12, 1:50–3:10 PM MT**  
+**Co-speakers:** Lee Calcote (Layer5), Shivay Lamba (Qualcomm), Sangram Rath (OD10 Ventures), and Hussaina Begum (Netskope)  
+**Expected audience:** 75–100+, based on the event estimate
+
+Meshery is a CNCF cloud native manager for designing, deploying, and operating infrastructure across CNCF projects. In this hands-on Contribfest, Meshery maintainers will help participants go from cloning the repository to submitting a pull request in one session.
+
+We have staged good-first issues across four parallel tracks, each with an embedded maintainer: Server (Go) for core API work, UI (React) to extend the Kanvas visual designer, plugin development to build a Meshery extension, and Docs and Designs to contribute cloud native architecture examples.
+
+Ahead of the session, we will publish a setup guide and a labeled issue board so participants can prepare their environment and find issues by difficulty. We will walk through the contribution workflow, then pair participants with a maintainer to land a change. No prior Meshery, Go, or React experience is needed. Bring your laptop and build with the maintainers.
+
+<div className="flex-row" style={{ marginBottom: "2rem" }}>
+  <Button $secondary title="See Session Details" $url="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/?id=1307005" $external={ true } />
+</div>
