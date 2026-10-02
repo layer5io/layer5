@@ -3,58 +3,64 @@ import { ComponentsWrapper } from "./Component.style";
 import { checkImageUrlValidity } from "../../../../utils/imageValidate";
 import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
 
-const getPreferredIcon = (component, isDarkActive) => {
-  const preferred = isDarkActive ? component.whiteIcon : component.colorIcon;
+const getFallbackIcon = (frontmatter) =>
+  frontmatter?.integrationIcon?.publicURL ||
+  frontmatter?.integrationIcon_svg?.publicURL ||
+  frontmatter?.darkModeIntegrationIcon?.publicURL ||
+  "";
+
+const getPreferredIcon = (component, isDarkActive, fallbackIcon) => {
+  const preferred = isDarkActive ? component?.whiteIcon : component?.colorIcon;
   return (
     preferred?.publicURL ||
-    component.colorIcon?.publicURL ||
-    component.whiteIcon?.publicURL ||
+    component?.colorIcon?.publicURL ||
+    component?.whiteIcon?.publicURL ||
+    fallbackIcon ||
     ""
   );
 };
 
 const ComponentsGrid = ({ frontmatter }) => {
   const { isDark } = useStyledDarkMode();
+  const darkModeActive = Boolean(isDark);
+  const fallbackIcon = getFallbackIcon(frontmatter);
 
-  const prefersDark =
-    typeof window !== "undefined" &&
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const candidateComponents = (frontmatter?.components || []).map(
+    (component) => ({
+      ...component,
+      preferredIcon: getPreferredIcon(component, darkModeActive, fallbackIcon),
+    }),
+  );
 
-  const darkModeActive =
-    typeof isDark === "boolean" ? isDark : Boolean(prefersDark);
-
-  const components = (frontmatter?.components || []).map((component) => ({
-    ...component,
-    preferredIcon: getPreferredIcon(component, darkModeActive),
-  }));
-
-  const [validComponents, setValidComponents] = useState([]);
+  const [validComponents, setValidComponents] = useState(candidateComponents);
 
   useEffect(() => {
     let mounted = true;
 
     const loadIcons = async () => {
       const validItems = await Promise.all(
-        components.map(async (item) => {
-          const iconUrl = item.preferredIcon || item.colorIcon?.publicURL;
+        candidateComponents.map(async (item) => {
+          const iconUrl = item.preferredIcon || fallbackIcon;
           if (!iconUrl) return null;
 
           const isValid = await checkImageUrlValidity(iconUrl);
           if (!isValid) {
-            const fallbackIcon =
-              (iconUrl !== item.colorIcon?.publicURL &&
-                item.colorIcon?.publicURL) ||
-              frontmatter?.integrationIcon?.publicURL ||
-              "";
-
-            return {
-              ...item,
-              preferredIcon: fallbackIcon,
-            };
+            if (iconUrl !== fallbackIcon && fallbackIcon) {
+              const isFallbackValid = await checkImageUrlValidity(fallbackIcon);
+              if (isFallbackValid) {
+                return {
+                  ...item,
+                  preferredIcon: fallbackIcon,
+                };
+              }
+            }
+            return null;
           }
 
-          return item;
+          return {
+            ...item,
+            preferredIcon: iconUrl,
+          };
         }),
       );
 
@@ -73,7 +79,7 @@ const ComponentsGrid = ({ frontmatter }) => {
     <ComponentsWrapper>
       <section className="heading">
         <h1>
-          {frontmatter?.title} Components ({components.length})
+          {frontmatter?.title} Components ({candidateComponents.length})
         </h1>
       </section>
 
@@ -81,7 +87,9 @@ const ComponentsGrid = ({ frontmatter }) => {
         {validComponents.map((item) => (
           <div key={item.name} className="maincontainer">
             <div className="componentimg">
-              <img src={item.preferredIcon} alt={item.name} />
+              {item.preferredIcon && (
+                <img src={item.preferredIcon} alt={item.name || ""} />
+              )}
             </div>
             <p className="items">{item.name?.replaceAll("-", " ") || ""}</p>
           </div>
