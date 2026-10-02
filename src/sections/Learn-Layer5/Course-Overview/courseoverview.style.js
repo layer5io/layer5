@@ -10,7 +10,7 @@ export const CourseOverviewWrapper = styled.div`
       display: flex;
       align-items: center;
       text-decoration: none;
-      color: black;
+      color: ${props => props.theme.whiteToBlack};
     }
     h4 {
       line-height: 1.75rem;
