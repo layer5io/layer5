@@ -3,11 +3,23 @@ import { ComponentsWrapper } from "./Component.style";
 import { checkImageUrlValidity } from "../../../../utils/imageValidate";
 import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
 
-const getFallbackIcon = (frontmatter) =>
-  frontmatter?.integrationIcon?.publicURL ||
-  frontmatter?.integrationIcon_svg?.publicURL ||
-  frontmatter?.darkModeIntegrationIcon?.publicURL ||
-  "";
+const getFallbackIcon = (frontmatter, isDarkActive) => {
+  if (isDarkActive) {
+    return (
+      frontmatter?.darkModeIntegrationIcon?.publicURL ||
+      frontmatter?.integrationIcon?.publicURL ||
+      frontmatter?.integrationIcon_svg?.publicURL ||
+      ""
+    );
+  }
+
+  return (
+    frontmatter?.integrationIcon?.publicURL ||
+    frontmatter?.integrationIcon_svg?.publicURL ||
+    frontmatter?.darkModeIntegrationIcon?.publicURL ||
+    ""
+  );
+};
 
 const getPreferredIcon = (component, isDarkActive, fallbackIcon) => {
   const preferred = isDarkActive ? component?.whiteIcon : component?.colorIcon;
@@ -23,7 +35,7 @@ const getPreferredIcon = (component, isDarkActive, fallbackIcon) => {
 const ComponentsGrid = ({ frontmatter }) => {
   const { isDark } = useStyledDarkMode();
   const darkModeActive = Boolean(isDark);
-  const fallbackIcon = getFallbackIcon(frontmatter);
+  const fallbackIcon = getFallbackIcon(frontmatter, darkModeActive);
 
   const candidateComponents = (frontmatter?.components || []).map(
     (component) => ({
@@ -73,7 +85,7 @@ const ComponentsGrid = ({ frontmatter }) => {
     return () => {
       mounted = false;
     };
-  }, [frontmatter, darkModeActive]);
+  }, [frontmatter, darkModeActive, fallbackIcon]);
 
   return (
     <ComponentsWrapper>
