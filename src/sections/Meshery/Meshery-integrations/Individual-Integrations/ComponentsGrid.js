@@ -22,14 +22,14 @@ const getFallbackIcon = (frontmatter, isDarkActive) => {
 };
 
 const getPreferredIcon = (component, isDarkActive, fallbackIcon) => {
-  const preferred = isDarkActive ? component?.whiteIcon : component?.colorIcon;
-  return (
-    preferred?.publicURL ||
-    component?.colorIcon?.publicURL ||
-    component?.whiteIcon?.publicURL ||
-    fallbackIcon ||
-    ""
-  );
+  const primary = isDarkActive
+    ? component?.whiteIcon?.publicURL
+    : component?.colorIcon?.publicURL;
+  const alternate = isDarkActive
+    ? component?.colorIcon?.publicURL
+    : component?.whiteIcon?.publicURL;
+
+  return primary || alternate || fallbackIcon || "";
 };
 
 const ComponentsGrid = ({ frontmatter }) => {
@@ -50,29 +50,55 @@ const ComponentsGrid = ({ frontmatter }) => {
     let mounted = true;
 
     const loadIcons = async () => {
+      let isFallbackValid = null;
+      const checkFallback = async () => {
+        if (!fallbackIcon) return false;
+        if (isFallbackValid === null) {
+          isFallbackValid = await checkImageUrlValidity(fallbackIcon);
+        }
+        return isFallbackValid;
+      };
+
       const validItems = await Promise.all(
         candidateComponents.map(async (item) => {
-          const iconUrl = item.preferredIcon || fallbackIcon;
-          if (!iconUrl) return null;
+          const primaryIcon = darkModeActive
+            ? item.whiteIcon?.publicURL
+            : item.colorIcon?.publicURL;
+          const alternateIcon = darkModeActive
+            ? item.colorIcon?.publicURL
+            : item.whiteIcon?.publicURL;
 
-          const isValid = await checkImageUrlValidity(iconUrl);
-          if (!isValid) {
-            if (iconUrl !== fallbackIcon && fallbackIcon) {
-              const isFallbackValid = await checkImageUrlValidity(fallbackIcon);
-              if (isFallbackValid) {
-                return {
-                  ...item,
-                  preferredIcon: fallbackIcon,
-                };
-              }
-            }
-            return null;
+          if (primaryIcon && (await checkImageUrlValidity(primaryIcon))) {
+            return {
+              ...item,
+              preferredIcon: primaryIcon,
+            };
           }
 
-          return {
-            ...item,
-            preferredIcon: iconUrl,
-          };
+          if (
+            alternateIcon &&
+            alternateIcon !== primaryIcon &&
+            (await checkImageUrlValidity(alternateIcon))
+          ) {
+            return {
+              ...item,
+              preferredIcon: alternateIcon,
+            };
+          }
+
+          if (
+            fallbackIcon &&
+            fallbackIcon !== primaryIcon &&
+            fallbackIcon !== alternateIcon &&
+            (await checkFallback())
+          ) {
+            return {
+              ...item,
+              preferredIcon: fallbackIcon,
+            };
+          }
+
+          return null;
         }),
       );
 
