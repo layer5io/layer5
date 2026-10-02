@@ -184,7 +184,7 @@ export const MembersGridWrapper = styled.div`
     display: flex;
     text-align: center;
     margin: auto auto 4rem;
-    align-items: center;
+    align-items: flex-start;
 
     .sectionTitle {
       width: 100%;

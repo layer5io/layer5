@@ -42,7 +42,7 @@ const data = {
       category: "Meshery",
       subcategory: "Playground",
       answer: [
-        "The Cloud Native Playground (aka Meshery Playground) is a managed instance of Meshery that offers a sandbox environment in which half of Kanvas<sup>BETA</sup>&nbsp;functionality is enabled (Designer mode) and the other half of Kanvas<sup>BETA</sup> functionality is disabled (Visualizer mode).",
+        "The Cloud Native Playground (aka Meshery Playground) is a managed instance of Meshery that offers a sandbox environment in which half of Kanvas functionality is enabled (Designer mode) and the other half of Kanvas functionality is disabled (Visualizer mode).",
         "The sandbox environment is not connected to an active Kuberentes cluster, and as such, specific actions within Kanvas Designer are also disabled. Meshery and Kanvas are feature-rich, sophisticated management applications for cloud native infrastructure. To access their full set of capabilities, simply deploy your own copy of Meshery into the environment of your choosing.",
       ],
     },    
