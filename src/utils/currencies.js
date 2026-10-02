@@ -21,7 +21,7 @@ export const Currencies = {
                 currency: "EUR",
                 minimumFractionDigits: roundForDisplay ? 0 : 2,
                 maximumFractionDigits: roundForDisplay ? 0 : 2,
-            }).format(price * 0.86),
+            }).format(price * Currencies.EUR.rate),
     },
     INR: {
         name: "INR",
@@ -33,7 +33,7 @@ export const Currencies = {
                 currency: "INR",
                 minimumFractionDigits: roundForDisplay ? 0 : 2,
                 maximumFractionDigits: roundForDisplay ? 0 : 2,
-            }).format(price * 88),
+            }).format(price * Currencies.INR.rate),
     },
 };
 
