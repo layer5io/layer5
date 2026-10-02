@@ -7,36 +7,33 @@ import EmptyResources from "../Resources-error/emptyStateTemplate";
 
 import { ResourcePageWrapper } from "./resourceGrid.style";
 
-const toTimestamp = (raw) => {
-  if (!raw) return 0;
-  const str = String(raw).trim();
-  const iso = str.replace(
-    /^(\d{4}-\d{2}-\d{2})[ T](\d{2}:\d{2}:\d{2})\s*([+-])(\d{2}):?(\d{2})$/,
-    "$1T$2$3$4:$5",
-  );
-  let t = new Date(iso).getTime();
-  if (Number.isNaN(t)) {
-    t = new Date(str.replace(/(\d)(st|nd|rd|th)\b/g, "$1")).getTime();
-  }
-  return Number.isNaN(t) ? 0 : t;
+const getTime = (node) => {
+  const t = new Date(node.fields?.dateForSort).getTime();
+  return Number.isNaN(t) || t <= 0 ? null : t;
 };
 
 const ResourceGrid = (props) => {
   const hasQuery = Boolean(props.searchQuery);
-  const [sortOption, setSortOption] = useState(null);
-  const effectiveSort = sortOption ?? (hasQuery ? "relevance" : "latest");
+  const [choice, setChoice] = useState(null);
+  const effectiveSort =
+    choice && choice.hasQuery === hasQuery
+      ? choice.value
+      : hasQuery
+        ? "relevance"
+        : "latest";
 
   const sortResources = (nodes) => {
-    if (effectiveSort === "relevance" && hasQuery) return nodes;
+    if (effectiveSort === "relevance") return nodes;
 
     const direction = effectiveSort === "oldest" ? 1 : -1;
-    return nodes
-      .slice()
-      .sort(
-        (a, b) =>
-          direction *
-          (toTimestamp(a.frontmatter.date) - toTimestamp(b.frontmatter.date)),
-      );
+    return nodes.slice().sort((a, b) => {
+      const ta = getTime(a);
+      const tb = getTime(b);
+      if (ta === null && tb === null) return 0;
+      if (ta === null) return 1;
+      if (tb === null) return -1;
+      return direction * (ta - tb);
+    });
   };
 
   // Get current posts
@@ -67,13 +64,15 @@ const ResourceGrid = (props) => {
               aria-label="Sort by"
               value={effectiveSort}
               onChange={(e) => {
-                setSortOption(e.target.value);
+                setChoice({ value: e.target.value, hasQuery });
                 props.setCurrentPage(1);
               }}
             >
               <option value="latest">Latest</option>
               <option value="oldest">Oldest</option>
-              <option value="relevance">Relevance</option>
+              <option value="relevance" disabled={!hasQuery}>
+                Relevance
+              </option>
             </select>
           </div>
           <div className="searchBox">
