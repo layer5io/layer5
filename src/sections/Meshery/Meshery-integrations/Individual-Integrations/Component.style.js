@@ -27,8 +27,9 @@ export const ComponentsWrapper = styled.div`
     min-width: 48px;
     display: grid;
     place-items: center;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.04);
+    border-radius: 50%;
+    background-color: ${(props) => props.theme.blackToWhite};
+    padding: 8px;
   }
 
   .componentimg img {
@@ -43,11 +44,11 @@ export const ComponentsWrapper = styled.div`
     align-items: center;
     gap: 1rem;
     background-color: ${(props) => props.theme.grey212121ToGreyEEEEEE};
-    padding: 0.75rem 1rem;
+    padding: 0.85rem 1.25rem;
     border-radius: 0.85rem;
     width: 100%;
-    flex: 30%;
-    max-width: 350px;
+    flex: 1 1 360px;
+    max-width: 400px;
     min-height: 72px;
   }
 
@@ -55,7 +56,8 @@ export const ComponentsWrapper = styled.div`
     margin: 0;
     color: ${(props) => props.theme.text};
     font-size: 0.875rem;
-    line-height: 1.2;
+    line-height: 1.25;
     text-transform: uppercase;
+    word-break: break-word;
   }
 `;
