@@ -44,7 +44,7 @@ const ComponentsGrid = ({ frontmatter }) => {
     }),
   );
 
-  const [validComponents, setValidComponents] = useState(candidateComponents);
+  const [validComponents, setValidComponents] = useState([]);
 
   useEffect(() => {
     let mounted = true;
