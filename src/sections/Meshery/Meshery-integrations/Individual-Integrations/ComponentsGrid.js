@@ -84,8 +84,8 @@ const ComponentsGrid = ({ frontmatter }) => {
       </section>
 
       <section className="componentsSection">
-        {validComponents.map((item) => (
-          <div key={item.name} className="maincontainer">
+        {validComponents.map((item, index) => (
+          <div key={`${item.name}-${index}`} className="maincontainer">
             <div className="componentimg">
               {item.preferredIcon && (
                 <img src={item.preferredIcon} alt={item.name || ""} />
