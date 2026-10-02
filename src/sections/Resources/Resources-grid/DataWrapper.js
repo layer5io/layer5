@@ -1,9 +1,7 @@
 import React from "react";
-
 // Libraries
 import { useStaticQuery, graphql } from "gatsby";
 import LitePlaceholder from "../../../templates/lite-placeholder";
-
 const DataWrapper = (WrappedComponent) => {
   return (props) => {
     const data = useStaticQuery(graphql`
@@ -49,8 +47,7 @@ const DataWrapper = (WrappedComponent) => {
         }
       }
     `);
-
-    if (data.allMdx.nodes.length === 0) {
+     if (data.allMdx.nodes.length === 0) {
       return (
         <LitePlaceholder
           pageContext={{
@@ -61,9 +58,7 @@ const DataWrapper = (WrappedComponent) => {
         />
       );
     }
-
     return <WrappedComponent allResources={data} {...props} />;
   };
 };
-
 export default DataWrapper;
