@@ -1,53 +1,51 @@
 import React from "react";
+
 // Libraries
 import { useStaticQuery, graphql } from "gatsby";
 import LitePlaceholder from "../../../templates/lite-placeholder";
+
 const DataWrapper = (WrappedComponent) => {
   return (props) => {
-    const data = useStaticQuery(graphql`
-      query allResourcesAndAllResources {
-        allMdx(
-          sort: { frontmatter: { date: DESC } }
-          filter: {
-            fields: {
-              collection: { in: ["blog", "resources", "news", "events"] }
-            }
-            frontmatter: { published: { eq: true }, resource: { eq: true } }
+    const data = useStaticQuery(
+      graphql`query allResourcesAndAllResources {
+  allMdx(
+    sort: {frontmatter: {date: DESC}}
+    filter: {fields: {collection: {in: ["blog", "resources", "news", "events"]}}, frontmatter: {published: {eq: true}, resource: {eq: true}}}
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        date
+        type
+        technology
+        product
+        mesh
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
-        ) {
-          nodes {
-            id
-            frontmatter {
-              title
-              date
-              type
-              technology
-              product
-              mesh
-              thumbnail {
-                childImageSharp {
-                  gatsbyImageData(width: 480, layout: CONSTRAINED)
-                }
-                extension
-                publicURL
-              }
-              darkthumbnail {
-                childImageSharp {
-                  gatsbyImageData(width: 480, layout: CONSTRAINED)
-                }
-                extension
-                publicURL
-              }
-            }
-            fields {
-              slug
-              dateForSort
-            }
+          extension
+          publicURL
+        }
+        darkthumbnail {
+          childImageSharp {
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
+          extension
+          publicURL
         }
       }
-    `);
-     if (data.allMdx.nodes.length === 0) {
+      fields {
+        slug
+        dateForSort
+      }
+    }
+  }
+}`
+    );
+
+    if (data.allMdx.nodes.length === 0) {
       return (
         <LitePlaceholder
           pageContext={{
@@ -58,7 +56,9 @@ const DataWrapper = (WrappedComponent) => {
         />
       );
     }
+
     return <WrappedComponent allResources={data} {...props} />;
   };
 };
+
 export default DataWrapper;
