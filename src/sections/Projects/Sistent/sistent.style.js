@@ -442,7 +442,7 @@ const SistentWrapper = styled.div`
     flex-direction: column;
     overflow: hidden;
     .active {
-      font-weight: 5000;
+      font-weight: 700;
       color: ${(props) => props.theme.secondaryColor};
     }
     ul {
