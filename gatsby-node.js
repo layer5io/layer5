@@ -15,6 +15,9 @@ const {
   getExcludedCollections,
   isFullSiteBuild,
 } = require("./src/utils/build-collections");
+const createBlogPages = require("./src/node-api/createBlogPages");
+const createKanvasLabPages = require("./src/node-api/createKanvasLabPages");
+const createSistentComponentPages = require("./src/node-api/createSistentComponentPages");
 
 const shouldBuildFullSite = isFullSiteBuild();
 const excludedCollections = new Set(
@@ -107,23 +110,32 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const HandbookTemplate = path.resolve("src/templates/handbook-template.js");
 
+  await createBlogPages({
+    graphql,
+    createPage: envCreatePage,
+    reporter,
+    isCollectionEnabled,
+    blogPostTemplate,
+    blogCategoryListTemplate,
+    blogTagListTemplate,
+  });
+
+  await createKanvasLabPages({
+    graphql,
+    createPage: envCreatePage,
+    reporter,
+    labTemplate: LabTemplate,
+  });
+
+  await createSistentComponentPages({
+    graphql,
+    createPage,
+    reporter,
+    sistentTemplate: path.resolve("src/templates/sistent-component.js"),
+  });
+
   const res = await graphql(`
     {
-      blogPosts: allMdx(
-        filter: {
-          fields: { collection: { eq: "blog" } }
-          frontmatter: { published: { eq: true } }
-        }
-      ) {
-        nodes {
-          fields {
-            slug
-          }
-          internal {
-            contentFilePath
-          }
-        }
-      }
       resourcePosts: allMdx(
         filter: {
           fields: { collection: { eq: "resources" } }
@@ -234,32 +246,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-      blogTags: allMdx(
-        filter: {
-          fields: { collection: { eq: "blog" } }
-          frontmatter: { published: { eq: true } }
-        }
-      ) {
-        group(field: { frontmatter: { tags: SELECT } }) {
-          nodes {
-            id
-          }
-          fieldValue
-        }
-      }
-      blogCategory: allMdx(
-        filter: {
-          fields: { collection: { eq: "blog" } }
-          frontmatter: { published: { eq: true } }
-        }
-      ) {
-        group(field: { frontmatter: { category: SELECT } }) {
-          nodes {
-            id
-          }
-          fieldValue
-        }
-      }
       ${
         shouldBuildFullSite
           ? `memberPosts: allMdx(
@@ -327,19 +313,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-      labs: allMdx(
-        filter: { fields: { collection: { eq: "kanvas-labs" } } }
-      ) {
-        nodes {
-          fields {
-            slug
-            collection
-          }
-          internal {
-            contentFilePath
-          }
-        }
-      }
       learncontent: allMdx(
         filter: { fields: { collection: { eq: "content-learn" } } }
       ) {
@@ -358,25 +331,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-      sistentComponents: allMdx(
-        filter: { 
-          fields: { collection: { eq: "sistent" } }
-        }
-      ) {
-        group(field: { fields: { componentName: SELECT } }) {
-          fieldValue
-          nodes {
-            fields {
-              slug
-              componentName
-              pageType
-            }
-            internal {
-              contentFilePath
-            }
-          }
-        }
-      }
     }
   `);
 
@@ -386,7 +340,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return;
   }
 
-  const blogs = res.data.blogPosts.nodes;
   const resources = res.data.resourcePosts.nodes;
   const news = res.data.newsPosts.nodes;
 
@@ -415,7 +368,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const handbook = res.data.handbookPages.nodes;
 
   const singleWorkshop = res.data.singleWorkshop.nodes;
-  const labs = res.data.labs.nodes;
 
   if (isCollectionEnabled("events") && events.length > 0) {
     paginate({
@@ -424,44 +376,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       itemsPerPage: 9,
       pathPrefix: "/community/events",
       component: EventsTemplate,
-    });
-  }
-
-  if (isCollectionEnabled("blog")) {
-    blogs.forEach((blog) => {
-      envCreatePage({
-        path: blog.fields.slug,
-        component: `${blogPostTemplate}?__contentFilePath=${blog.internal.contentFilePath}`,
-        context: {
-          slug: blog.fields.slug,
-        },
-      });
-    });
-  }
-
-  const blogCategory = res.data.blogCategory.group;
-  if (isCollectionEnabled("blog")) {
-    blogCategory.forEach((category) => {
-      envCreatePage({
-        path: `/blog/category/${slugify(category.fieldValue)}`,
-        component: blogCategoryListTemplate,
-        context: {
-          category: category.fieldValue,
-        },
-      });
-    });
-  }
-
-  const BlogTags = res.data.blogTags.group;
-  if (isCollectionEnabled("blog")) {
-    BlogTags.forEach((tag) => {
-      envCreatePage({
-        path: `/blog/tag/${slugify(tag.fieldValue)}`,
-        component: blogTagListTemplate,
-        context: {
-          tag: tag.fieldValue,
-        },
-      });
     });
   }
 
@@ -563,16 +477,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: `${WorkshopTemplate}?__contentFilePath=${workshop.internal.contentFilePath}`,
       context: {
         slug: workshop.fields.slug,
-      },
-    });
-  });
-
-  labs.forEach((lab) => {
-    envCreatePage({
-      path: lab.fields.slug,
-      component: `${LabTemplate}?__contentFilePath=${lab.internal.contentFilePath}`,
-      context: {
-        slug: lab.fields.slug,
       },
     });
   });
@@ -759,30 +663,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         return;
       }
     }
-  });
-
-  // Create Sistent component pages dynamically from MDX
-  // Use grouping to identify which sub-pages (Tabs) exist for each component
-  const sistentGroups = res.data.sistentComponents.group;
-  const sistentTemplate = path.resolve("src/templates/sistent-component.js");
-
-  sistentGroups.forEach((group) => {
-    const componentName = group.fieldValue;
-    // content-learn uses different fields, sistent uses componentName.
-
-    const availablePages = group.nodes.map((node) => node.fields.pageType);
-
-    group.nodes.forEach((node) => {
-      createPage({
-        path: node.fields.slug,
-        component: `${sistentTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
-        context: {
-          slug: node.fields.slug,
-          componentName: componentName,
-          availablePages: availablePages,
-        },
-      });
-    });
   });
 };
 
