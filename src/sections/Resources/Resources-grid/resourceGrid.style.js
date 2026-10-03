@@ -18,9 +18,11 @@ export const ResourcePageWrapper = styled.div`
       }
     }
     .sortBox {
+      display: flex;
       flex: 0 0 auto;
       margin-right: 1rem;
       .sortDropdown {
+        height: 100%;
         padding: 15px 40px 15px 15px;
         border-radius: 5px;
         border: 1px solid ${(props) => props.theme.headingColor};
