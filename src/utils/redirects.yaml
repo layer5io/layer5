@@ -229,5 +229,15 @@ redirects:
     isPermanent: true
   - fromPath: "/cloud-native-management/playground.html"
     toPath: "https://www.kanvas.new"
+  - fromPath: "/blog/engineering"
+    toPath: "/blog/category/engineering"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/community/handbook/designer"
+    toPath: "/community/handbook/design-with-layer5"
+    redirectInBrowser: true
+    isPermanent: true
+  - fromPath: "/community/handbook/community"
+    toPath: "/community/handbook/community-guidelines"
     redirectInBrowser: true
     isPermanent: true
