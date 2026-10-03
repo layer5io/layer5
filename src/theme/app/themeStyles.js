@@ -1,4 +1,3 @@
-
 const lighttheme = {
   black: "#000000",
   white: "#ffffff",
@@ -147,7 +146,8 @@ const lighttheme = {
   grey212121ToGreyF0F0F0: "#F0F0F0",
   grey212121ToGreyF3F3F3: "#F3F3F3",
   grey212121ToGreyF5F5F5: "#F5F5F5",
-  grey212121ToLinear: "linear-gradient(122.25deg, #eee -2.45%, #fff 52.7%, #eee 96.5%)",
+  grey212121ToLinear:
+    "linear-gradient(122.25deg, #eee -2.45%, #fff 52.7%, #eee 96.5%)",
   grey212121ToLinear2: "linear-gradient(123deg, white 60%, white 100%)",
   grey212121ToWhite: "#FFFFFF",
   grey222222ToGreen1E2117: "#1E2117",
@@ -180,13 +180,19 @@ const lighttheme = {
   greyDEE3DEToGrey363636: "#363636",
   greyEEEEEEToBlack: "#000000",
   greyFiveToBlueFive: "rgb(71 126 150 / 0.5)",
-  linearToLinear: "linear-gradient(90deg, rgba(0, 179, 159, 0.7) 0%, rgba(217, 217, 217, 0) 99.34%)",
-  linearToLinear2: "linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(255, 255, 255, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(255, 255, 255, 0.2) 37.23%), linear-gradient(360deg, #00B39F -108%, #FFFFFF 63.36%)",
-  linearToGreen: "linear-gradient(90.2deg,rgba(255, 255, 255, 0.38) 33.89%,rgba(0, 179, 159, 0.74) 99.81%)",
+  linearToLinear:
+    "linear-gradient(90deg, rgba(0, 179, 159, 0.7) 0%, rgba(217, 217, 217, 0) 99.34%)",
+  linearToLinear2:
+    "linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(255, 255, 255, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(255, 255, 255, 0.2) 37.23%), linear-gradient(360deg, #00B39F -108%, #FFFFFF 63.36%)",
+  linearToGreen:
+    "linear-gradient(90.2deg,rgba(255, 255, 255, 0.38) 33.89%,rgba(0, 179, 159, 0.74) 99.81%)",
   linearToWhite: "#FFFFFF",
-  radialToWhite: "radial-gradient( circle 100px at 50% 50%, rgba(215,205,220,0.15) 0%, rgba(203,210,218,0.25) 80%, rgba(167,173,180,.25) 100% )",
-  radialToBlue: "linear-gradient(135deg, rgba(45, 55, 70, 0.9) 0%, rgba(25, 30, 40, 0.9) 70%, rgba(15, 20, 30, 0.95) 100%), url('data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"%3E%3Cpath d=\"M0 0 L50 50 L0 100 L100 50 Z\" fill=\"none\" stroke=\"rgba(255, 255, 255, 0.1)\" stroke-width=\"1\"/%3E%3C/svg%3E') repeat center",
-  linearDarkToLinearLight: "linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(255, 255, 255, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(255, 255, 255, 0.2) 37.23%), linear-gradient(360deg, #00B39F -108%, #FFFFFF 63.36%)",
+  radialToWhite:
+    "radial-gradient( circle 100px at 50% 50%, rgba(215,205,220,0.15) 0%, rgba(203,210,218,0.25) 80%, rgba(167,173,180,.25) 100% )",
+  radialToBlue:
+    'linear-gradient(135deg, rgba(45, 55, 70, 0.9) 0%, rgba(25, 30, 40, 0.9) 70%, rgba(15, 20, 30, 0.95) 100%), url(\'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cpath d="M0 0 L50 50 L0 100 L100 50 Z" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1"/%3E%3C/svg%3E\') repeat center',
+  linearDarkToLinearLight:
+    "linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(255, 255, 255, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(255, 255, 255, 0.2) 37.23%), linear-gradient(360deg, #00B39F -108%, #FFFFFF 63.36%)",
   whiteEightToBlack: "#000000",
   whiteEightToBlackEight: "rgb(0 0 0 / 0.8)",
   whiteFiveToBlackFive: "rgb(0 0 0 / 0.5)",
@@ -220,18 +226,22 @@ const lighttheme = {
   whiteZeroThreeToBlackZeroOne: "rgb(0 0 0 / 0.01)",
   whiteZeroThreeToBlackZeroThree: "rgb(0 0 0 / 0.03)",
   yellowEBC0EBToGradient: "rgb(235, 192, 23)",
-  integrationsGraphicGradient: "linear-gradient(90deg, #000000 0%, #00D3A9 100%)",
+  integrationsGraphicGradient:
+    "linear-gradient(90deg, #000000 0%, #00D3A9 100%)",
   bannerGradientBackgroundToWhite: "#fff",
   bannerGradientBackground2ToWhite: "#fff",
-  bannerDescriptionGradient: "linear-gradient(122.25deg, #00B39F 26.92%, #195E4A 46.51%, #1F787D 74.85%)",
-  borderGradientTransitionBefore: "linear-gradient(to right bottom, #00b39f, #fff 110%)",
-  borderGradientTransitionAfter: "linear-gradient(to left top, #00b39f, #fff 120%)",
+  bannerDescriptionGradient:
+    "linear-gradient(122.25deg, #00B39F 26.92%, #195E4A 46.51%, #1F787D 74.85%)",
+  borderGradientTransitionBefore:
+    "linear-gradient(to right bottom, #00b39f, #fff 110%)",
+  borderGradientTransitionAfter:
+    "linear-gradient(to left top, #00b39f, #fff 120%)",
+  gitopsFeatureImageHeight: "250px",
+  gitopsFeatureImageMaxHeight: "220px",
 
   //DarkTheme
   DarkTheme: false,
-
 };
-
 
 export const darktheme = {
   black: "#000000",
@@ -326,7 +336,6 @@ export const darktheme = {
   //Active color (when a button is active)
   activeColor: "#3c494f",
 
-
   /* color transition pairings for dark/light theme switch. naming convention is 1. darktheme color first and lighttheme color second. 2. color then hexcode for color (except for white and black) 3. if there is an alpha channel setting, it is added in the number word (e.g. eight).
 
   example: if you want the color to go from white (alpha channel .05) in darktheme to green #00D3A9 in lighttheme, the property will be called "whiteFiveToGreen00D3A9", and would be in the stylesheet as "props.theme.whiteFiveToGreen00D3A9"
@@ -419,13 +428,19 @@ export const darktheme = {
   greyDEE3DEToGrey363636: "#DEE3DE",
   greyEEEEEEToBlack: "#EEEEEE",
   greyFiveToBlueFive: "rgb(122 132 142 / 0.5)",
-  linearToLinear: "linear-gradient(89.99deg, rgba(0, 179, 159, 0.54) 10%, rgba(71, 126, 150, 0.26) 65.12%, rgba(18, 18, 18, 0.16) 90%)",
-  linearToLinear2: "linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(18, 18, 18, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(18, 18, 18, 0.2) 37.23%), linear-gradient(360deg, #00B39F -11.84%, #121212 63.36%)",
-  linearToGreen: "linear-gradient(90.2deg, rgba(0, 0, 0, 0.2) 0.16%, rgba(0, 179, 159, 0.74) 99.81%)",
+  linearToLinear:
+    "linear-gradient(89.99deg, rgba(0, 179, 159, 0.54) 10%, rgba(71, 126, 150, 0.26) 65.12%, rgba(18, 18, 18, 0.16) 90%)",
+  linearToLinear2:
+    "linear-gradient(61.3deg, rgba(0, 179, 159, 0.2) -26.19%, rgba(18, 18, 18, 0.2) 40.19%), linear-gradient(303.45deg, rgba(0, 179, 159, 0.2) 0%, rgba(18, 18, 18, 0.2) 37.23%), linear-gradient(360deg, #00B39F -11.84%, #121212 63.36%)",
+  linearToGreen:
+    "linear-gradient(90.2deg, rgba(0, 0, 0, 0.2) 0.16%, rgba(0, 179, 159, 0.74) 99.81%)",
   linearToWhite: "linear-gradient(to right, #666666, #444444)",
-  radialToWhite: "radial-gradient( circle 100px at 50% 50%, rgba(167,173,180,0.78) 0%, rgba(103,110,118,0.79) 80%, rgba(103,110,118,1) 100% )",
-  radialToBlue: "linear-gradient(135deg, rgba(15, 20, 30, 0.9) 0%, rgba(25, 30, 40, 0.9) 70%, rgba(45, 55, 70, 0.9) 100%), url('data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"%3E%3Cpath d=\"M0 0 L50 50 L0 100 L100 50 Z\" fill=\"none\" stroke=\"rgba(255, 255, 255, 0.1)\" stroke-width=\"1 \"/%3E%3C/svg%3E') repeat center",
-  linearDarkToLinearLight: "linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 179, 159, 0.58) 46.87%, rgba(0, 179, 159, 0.034) 100%), linear-gradient(179.39deg, rgba(0, 179, 159, 0) 0.58%, #000000 99.54%)",
+  radialToWhite:
+    "radial-gradient( circle 100px at 50% 50%, rgba(167,173,180,0.78) 0%, rgba(103,110,118,0.79) 80%, rgba(103,110,118,1) 100% )",
+  radialToBlue:
+    'linear-gradient(135deg, rgba(15, 20, 30, 0.9) 0%, rgba(25, 30, 40, 0.9) 70%, rgba(45, 55, 70, 0.9) 100%), url(\'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cpath d="M0 0 L50 50 L0 100 L100 50 Z" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1 "/%3E%3C/svg%3E\') repeat center',
+  linearDarkToLinearLight:
+    "linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 179, 159, 0.58) 46.87%, rgba(0, 179, 159, 0.034) 100%), linear-gradient(179.39deg, rgba(0, 179, 159, 0) 0.58%, #000000 99.54%)",
   whiteEightToBlack: "rgb(255 255 255 / 0.8)",
   whiteEightToBlackEight: "rgb(255 255 255 / 0.8)",
   whiteFiveToBlackFive: "rgb(255 255 255 / 0.5)",
@@ -459,16 +474,21 @@ export const darktheme = {
   whiteZeroFiveToBlackZeroFive: "rgb(255 255 255 / 0.05)",
   whiteZeroThreeToBlackZeroOne: "rgb(255 255 255 / 0.03)",
   whiteZeroThreeToBlackZeroThree: "rgb(255 255 255 / 0.03)",
-  integrationsGraphicGradient: "linear-gradient(90.01deg, rgba(18, 18, 18, 0.16) 0.01%, rgba(71, 126, 150, 0.26) 51.1%, rgba(0, 179, 159, 0.54) 99.99%)",
-  bannerGradientBackgroundToWhite: "linear-gradient(90.01deg, rgba(0, 179, 159, 0.54) 0.53%, rgba(71, 126, 150, 0.26) 51.1%, rgba(18, 18, 18, 0.16) 99.99%)",
-  bannerGradientBackground2ToWhite: "linear-gradient(90.01deg, rgba(18, 18, 18, 0.16) 0.01%, rgba(71, 126, 150, 0.26) 49.9%, rgba(0, 179, 159, 0.54) 99.47%)",
+  integrationsGraphicGradient:
+    "linear-gradient(90.01deg, rgba(18, 18, 18, 0.16) 0.01%, rgba(71, 126, 150, 0.26) 51.1%, rgba(0, 179, 159, 0.54) 99.99%)",
+  bannerGradientBackgroundToWhite:
+    "linear-gradient(90.01deg, rgba(0, 179, 159, 0.54) 0.53%, rgba(71, 126, 150, 0.26) 51.1%, rgba(18, 18, 18, 0.16) 99.99%)",
+  bannerGradientBackground2ToWhite:
+    "linear-gradient(90.01deg, rgba(18, 18, 18, 0.16) 0.01%, rgba(71, 126, 150, 0.26) 49.9%, rgba(0, 179, 159, 0.54) 99.47%)",
   bannerDescriptionGradient: "#121212",
-  borderGradientTransitionBefore: "linear-gradient(to right top, #00b39f, #121212 80%)",
-  borderGradientTransitionAfter: "linear-gradient(to left top, #00b39f, #121212 100%)",
+  borderGradientTransitionBefore:
+    "linear-gradient(to right top, #00b39f, #121212 80%)",
+  borderGradientTransitionAfter:
+    "linear-gradient(to left top, #00b39f, #121212 100%)",
+  gitopsFeatureImageHeight: "250px",
+  gitopsFeatureImageMaxHeight: "220px",
   //DarkTheme
   DarkTheme: true,
-
-
 };
 
 export default lighttheme;
