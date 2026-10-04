@@ -8,6 +8,12 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import ResourceNavigationWrapper from "./filters.style";
 
+const createCountMap = (group) =>
+  (group || []).reduce((acc, { fieldValue, totalCount }) => {
+    acc[fieldValue] = totalCount;
+    return acc;
+  }, {});
+
 const Navigation = (props) => {
   const counting = useStaticQuery(graphql`
     query allFilters {
@@ -72,15 +78,28 @@ const Navigation = (props) => {
   const [expandTech, setExpandTech] = useState(true);
   const [expandMesh, setExpandMesh] = useState(true);
 
-  const data = React.useMemo(() => options);
+  const data = React.useMemo(() => options, []);
   let typeOptions = data.filter((data) => data.category === "Type");
   let productOptions = data.filter((data) => data.category === "Product");
   let techOptions = data.filter((data) => data.category === "Technology");
   let meshOptions = data.filter((data) => data.category === "Service Mesh");
-  const types = counting.type.group;
-  const products = counting.product.group;
-  const technologies = [...new Set(counting.technology.group)];
-  const meshes = counting.mesh.group;
+
+  const typeMap = React.useMemo(
+    () => createCountMap(counting.type?.group),
+    [counting],
+  );
+  const productMap = React.useMemo(
+    () => createCountMap(counting.product?.group),
+    [counting],
+  );
+  const techMap = React.useMemo(
+    () => createCountMap(counting.technology?.group),
+    [counting],
+  );
+  const meshMap = React.useMemo(
+    () => createCountMap(counting.mesh?.group),
+    [counting],
+  );
 
   return (
     <ResourceNavigationWrapper>
@@ -106,22 +125,22 @@ const Navigation = (props) => {
           </div>
           <p className="heading-name">
             <strong>Filters</strong>
-            <span
+            <button
+              type="button"
               className={`${props.resources.length === 0 ? "clear-disabled" : "clear-enabled"} desk-view`}
               onClick={props.clear}
             >
               Clear Filters
-            </span>
+            </button>
             {expandFilter ? (
-              <span
+              <button
+                type="button"
                 className={`${props.resources.length === 0 ? "clear-disabled" : "clear-enabled mob-view"}`}
                 onClick={props.clear}
               >
                 Clear Filters
-              </span>
-            ) : (
-              ""
-            )}
+              </button>
+            ) : null}
           </p>
         </div>
 
@@ -144,10 +163,9 @@ const Navigation = (props) => {
           <div className="list">
             <ul className={`ul ${expandType ? "ul-open" : ""}`}>
               {typeOptions[0].subdata.map((x) => {
-                const type =
-                  types && types.find((t) => t.fieldValue === x.value);
+                const totalCount = typeMap[x.value];
                 const filterId = `type-${x.id}`;
-                return type ? (
+                return totalCount !== undefined ? (
                   <li key={x.id}>
                     <label htmlFor={filterId}>
                       <input
@@ -157,7 +175,7 @@ const Navigation = (props) => {
                         onChange={props.handleChange}
                       />
                       <span> {x.label}</span>
-                      <span className="total">({type.totalCount})</span>
+                      <span className="total">({totalCount})</span>
                     </label>
                   </li>
                 ) : null;
@@ -183,10 +201,9 @@ const Navigation = (props) => {
           <div className="list">
             <ul className={`ul ${expandProduct ? "ul-open" : ""}`}>
               {productOptions[0].subdata.map((x) => {
-                const product =
-                  products && products.find((p) => p.fieldValue === x.value);
+                const totalCount = productMap[x.value];
                 const filterId = `product-${x.id}`;
-                return product ? (
+                return totalCount !== undefined ? (
                   <li key={x.id}>
                     <label htmlFor={filterId}>
                       <input
@@ -196,7 +213,7 @@ const Navigation = (props) => {
                         onChange={props.handleChange}
                       />
                       <span> {x.label}</span>
-                      <span className="total">({product.totalCount})</span>
+                      <span className="total">({totalCount})</span>
                     </label>
                   </li>
                 ) : null;
@@ -222,11 +239,9 @@ const Navigation = (props) => {
           <div className="list">
             <ul className={`ul ${expandTech ? "ul-open" : ""}`}>
               {techOptions[0].subdata.map((x) => {
-                const technology =
-                  technologies &&
-                  technologies.find((t) => t.fieldValue === x.value);
+                const totalCount = techMap[x.value];
                 const filterId = `technology-${x.id}`;
-                return technology ? (
+                return totalCount !== undefined ? (
                   <li key={x.id}>
                     <label htmlFor={filterId}>
                       <input
@@ -236,7 +251,7 @@ const Navigation = (props) => {
                         onChange={props.handleChange}
                       />
                       <span> {x.label}</span>
-                      <span className="total">({technology.totalCount})</span>
+                      <span className="total">({totalCount})</span>
                     </label>
                   </li>
                 ) : null;
@@ -262,10 +277,9 @@ const Navigation = (props) => {
           <div className="list">
             <ul className={`ul ${expandMesh ? "ul-open" : ""}`}>
               {meshOptions[0].subdata.map((x) => {
-                const mesh =
-                  meshes && meshes.find((m) => m.fieldValue === x.value);
+                const totalCount = meshMap[x.value];
                 const filterId = `mesh-${x.id}`;
-                return mesh ? (
+                return totalCount !== undefined ? (
                   <li key={x.id}>
                     <label htmlFor={filterId}>
                       <input
@@ -275,7 +289,7 @@ const Navigation = (props) => {
                         onChange={props.handleChange}
                       />
                       <span> {x.label}</span>
-                      <span className="total">({mesh.totalCount})</span>
+                      <span className="total">({totalCount})</span>
                     </label>
                   </li>
                 ) : null;
