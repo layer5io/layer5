@@ -179,19 +179,19 @@ jobs:
             core.info(`Head SHA: ${headSha || 'N/A'}, Head Ref: ${headRef || 'N/A'}`);
 
             try {
-              // List workflow runs that are pending approval
+              // List workflow runs that are pending approval across all pages
               // These are runs with status 'action_required' (waiting for approval)
-              const { data: runs } = await github.rest.actions.listWorkflowRunsForRepo({
+              const runs = await github.paginate(github.rest.actions.listWorkflowRunsForRepo, {
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 status: 'action_required',
                 per_page: 100
               });
 
-              core.info(`Found ${runs.total_count} workflow run(s) awaiting approval`);
+              core.info(`Found ${runs.length} workflow run(s) awaiting approval across all pages`);
 
               // Filter runs for this PR's branch/SHA
-              const pendingRuns = runs.workflow_runs.filter(run => {
+              const pendingRuns = runs.filter(run => {
                 const matchesSha = headSha && run.head_sha === headSha;
                 const matchesRef = headRef && run.head_branch === headRef;
                 return matchesSha || matchesRef;
