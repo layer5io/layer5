@@ -63,12 +63,12 @@ alt="Nighthawk" align="left" />
 
 <p style="clear:both;">
 <h2><a href="https://cloud.layer5.io/catalog">Cloud Native Catalog</a></h2>
-<a href="">
+<a href="https://cloud.layer5.io/catalog">
   <img src=".github/assets/images/catalog/catalog.svg"
 style="float:left;margin:10px;" width="125px"
 alt="Meshery Catalog" align="left" />
 </a>
-<a href="">Layer5 Catalog</a> As a central hub for sharing cloud native infrastructure designs, Meshery Catalog enables the exchange of the best practices, reusable templates, and Kubernetes-based operational patterns for multi-cluster Kubernetes clusters and distributed applications. Meshery Catalog serves as a marketplace full of curated cloud native infrastructure configurations and operational patterns perfect for DevOps engineers who seek to leverage and contribute to Meshery's large collection of design patterns. [Docs](https://docs.layer5.io/cloud/catalog)
+<a href="https://cloud.layer5.io/catalog">Layer5 Catalog</a> As a central hub for sharing cloud native infrastructure designs, Meshery Catalog enables the exchange of the best practices, reusable templates, and Kubernetes-based operational patterns for multi-cluster Kubernetes clusters and distributed applications. Meshery Catalog serves as a marketplace full of curated cloud native infrastructure configurations and operational patterns perfect for DevOps engineers who seek to leverage and contribute to Meshery's large collection of design patterns. [Docs](https://docs.layer5.io/cloud/catalog)
 <br /><br /><br />
 </p>
 
