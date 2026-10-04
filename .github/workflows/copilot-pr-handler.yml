@@ -152,11 +152,10 @@ jobs:
           script: |
             const prNumber = context.payload.pull_request?.number || parseInt('${{ inputs.pr_number }}') || null;
             let headSha = context.payload.pull_request?.head?.sha || null;
-            let headRef = context.payload.pull_request?.head?.ref || null;
 
             // In manual runs (workflow_dispatch), context.payload.pull_request is undefined.
             // Fetch PR metadata using prNumber if head info is missing.
-            if ((!headRef || !headSha) && prNumber) {
+            if (!headSha && prNumber) {
               try {
                 const { data: pr } = await github.rest.pulls.get({
                   owner: context.repo.owner,
@@ -164,19 +163,18 @@ jobs:
                   pull_number: prNumber
                 });
                 headSha = headSha || pr.head?.sha || null;
-                headRef = headRef || pr.head?.ref || null;
               } catch (prError) {
                 core.warning(`Failed to fetch PR details for #${prNumber}: ${prError.message}`);
               }
             }
 
-            if (!headRef && !headSha) {
-              core.info('No head ref or SHA available, skipping workflow approval step');
+            if (!headSha) {
+              core.info('No head SHA available, skipping workflow approval step');
               return;
             }
 
             core.info(`Looking for pending workflow runs for PR #${prNumber || 'N/A'}`);
-            core.info(`Head SHA: ${headSha || 'N/A'}, Head Ref: ${headRef || 'N/A'}`);
+            core.info(`Head SHA: ${headSha || 'N/A'}`);
 
             try {
               // List workflow runs that are pending approval across all pages
@@ -190,12 +188,8 @@ jobs:
 
               core.info(`Found ${runs.length} workflow run(s) awaiting approval across all pages`);
 
-              // Filter runs for this PR's branch/SHA
-              const pendingRuns = runs.filter(run => {
-                const matchesSha = headSha && run.head_sha === headSha;
-                const matchesRef = headRef && run.head_branch === headRef;
-                return matchesSha || matchesRef;
-              });
+              // Filter runs strictly for this PR's head SHA
+              const pendingRuns = runs.filter(run => run.head_sha === headSha);
 
               core.info(`Found ${pendingRuns.length} pending run(s) for this PR`);
               core.setOutput('pending_count', pendingRuns.length.toString());
