@@ -172,8 +172,6 @@ jobs:
 
             if (!headRef && !headSha) {
               core.info('No head ref or SHA available, skipping workflow approval step');
-              core.setOutput('approved_count', '0');
-              core.setOutput('pending_count', '0');
               return;
             }
 
@@ -227,8 +225,6 @@ jobs:
               }
             } catch (error) {
               core.warning(`Failed to approve workflow runs: ${error.message}`);
-              core.setOutput('approved_count', '0');
-              core.setOutput('pending_count', '0');
               // Don't fail the workflow
             }
 
@@ -253,21 +249,38 @@ jobs:
 
             // Only comment on success to avoid noise
             if (jobStatus === 'success') {
-              const markedReady = '${{ steps.mark_ready.outputs.marked_ready }}' === 'true';
-              const wasDraft = '${{ steps.mark_ready.outputs.was_draft }}' === 'true';
-              const approvedCount = parseInt('${{ steps.approve_runs.outputs.approved_count }}') || 0;
+              const markedReadyRaw = '${{ steps.mark_ready.outputs.marked_ready }}';
+              const wasDraftRaw = '${{ steps.mark_ready.outputs.was_draft }}';
+              const approvedCountRaw = '${{ steps.approve_runs.outputs.approved_count }}';
+              const pendingCountRaw = '${{ steps.approve_runs.outputs.pending_count }}';
 
               const actions = [];
-              if (markedReady) {
+
+              // Readiness check
+              if (markedReadyRaw === 'true') {
                 actions.push('- ✅ Marked as ready for review (converted from draft)');
-              } else if (wasDraft === false) {
+              } else if (wasDraftRaw === 'false') {
                 actions.push('- ℹ️ PR was already ready for review');
+              } else if (wasDraftRaw === '') {
+                actions.push('- ⚠️ PR draft/readiness status could not be determined');
               }
 
-              if (approvedCount > 0) {
-                actions.push(`- ✅ Approved ${approvedCount} pending workflow run(s)`);
+              // Workflow approval check
+              if (pendingCountRaw !== '' && approvedCountRaw !== '') {
+                const pendingCount = parseInt(pendingCountRaw, 10);
+                const approvedCount = parseInt(approvedCountRaw, 10);
+
+                if (pendingCount === 0) {
+                  actions.push('- ℹ️ No pending workflow runs required approval');
+                } else if (approvedCount === pendingCount) {
+                  actions.push(`- ✅ Approved ${approvedCount} pending workflow run(s)`);
+                } else if (approvedCount > 0) {
+                  actions.push(`- ⚠️ Approved ${approvedCount} of ${pendingCount} pending workflow run(s)`);
+                } else {
+                  actions.push(`- ⚠️ Failed to approve ${pendingCount} pending workflow run(s)`);
+                }
               } else {
-                actions.push('- ℹ️ No pending workflow runs required approval');
+                actions.push('- ⚠️ Pending workflow runs status could not be determined');
               }
 
               const body = `### ${statusEmoji} Copilot PR Handler
