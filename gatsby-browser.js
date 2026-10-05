@@ -5,6 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 export const disableCorePrefetching = () =>
   process.env.NODE_ENV === "development";
 
+const STORAGE_KEY = "cookie_consent";
+
 document.addEventListener("DOMContentLoaded", () => {
   /** init gtm after 3500 seconds - this could be adjusted */
   setTimeout(initGTM, 3500);
@@ -14,9 +16,20 @@ document.addEventListener("mousemove", initGTMOnEvent);
 document.addEventListener("touchstart", initGTMOnEvent);
 function initGTMOnEvent(event) {
   initGTM();
-  event.currentTarget.removeEventListener(event.type, initGTMOnEvent); // remove the event listener that got triggered
+
+  if (window.gtmDidInit) {
+    event.currentTarget.removeEventListener(event.type, initGTMOnEvent);
+  }
+}
+
+function hasGTMConsent() {
+  return localStorage.getItem(STORAGE_KEY) === "accepted";
 }
 function initGTM() {
+  if (!hasGTMConsent()) {
+    return false;
+  }
+
   if (window.gtmDidInit) {
     return false;
   }
@@ -27,11 +40,21 @@ function initGTM() {
   // ensure PageViews is always tracked (on script load)
   script.onload = () => {
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: "gtm.js", "gtm.start": new Date().getTime(), "gtm.uniqueEventId": 0 });
+    window.dataLayer.push({
+      event: "gtm.js",
+      "gtm.start": new Date().getTime(),
+      "gtm.uniqueEventId": 0,
+    });
   };
   script.src = "https://www.googletagmanager.com/gtm.js?id=GTM-PS26QB9";
   document.head.appendChild(script);
 }
+
+window.addEventListener("cookie-consent-changed", (event) => {
+  if (event.detail === "accepted") {
+    initGTM();
+  }
+});
 
 export { wrapRootElement } from "./root-wrapper";
 export { wrapPageElement } from "./page-wrapper";
