@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import Card from "../../../components/Card";
 import PageHeader from "../../../reusecore/PageHeader";
@@ -6,81 +6,52 @@ import { NewsPageWrapper } from "./NewsGrid.style";
 import rss_feed_icon from "../../../assets/images/socialIcons/rss-sign.svg";
 import Button from "../../../reusecore/Button";
 import SearchBox from "../../../reusecore/Search";
-import { useEffect } from "react";
 import useDataList from "../../../utils/usedataList";
 import Press from "./press";
 
-let coverageFiltered = false;
-let pressReleaseFiltered = false;
-
-function colorchange(id) {
-  let element = document.getElementById(id);
-  element.classList.toggle("mystyle");
-}
 const NewsGrid = ({ data }) => {
-  const { coverageCount, releasesCount } = data.allMdx.nodes.reduce(
-    (acc, { frontmatter: { category } }) => {
-      if (category.includes("Coverage")) acc.coverageCount++;
-      if (category.includes("Press Release")) acc.releasesCount++;
+  const nodes = data?.allMdx?.nodes || [];
+  const { coverageCount, releasesCount } = nodes.reduce(
+    (acc, { frontmatter: { category } = {} }) => {
+      if (category?.includes("Coverage")) acc.coverageCount++;
+      if (category?.includes("Press Release")) acc.releasesCount++;
       return acc;
     },
     { coverageCount: 0, releasesCount: 0 },
   );
 
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const { queryResults, searchData } = useDataList(
-    data.allMdx.nodes,
+    nodes,
     setSearchQuery,
     searchQuery,
     ["frontmatter", "title"],
     "id",
   );
-  const [news, setNews] = useState(queryResults);
-  useEffect(() => {
-    setNews(queryResults);
-    if (coverageFiltered == true) {
-      setNews(filteredCoverage);
+
+  const news = useMemo(() => {
+    if (selectedCategory === "Coverage") {
+      return queryResults.filter((obj) =>
+        obj.frontmatter?.category?.includes("Coverage"),
+      );
     }
-    if (pressReleaseFiltered == true) {
-      setNews(filteredPressRelease);
+    if (selectedCategory === "Press Release") {
+      return queryResults.filter((obj) =>
+        obj.frontmatter?.category?.includes("Press Release"),
+      );
     }
-  }, [queryResults]);
-  const filteredCoverage = queryResults.filter((obj) => {
-    return obj.frontmatter.category.includes("Coverage");
-  });
-  const filteredPressRelease = queryResults.filter((obj) => {
-    return obj.frontmatter.category.includes("Press Release");
-  });
+    return queryResults;
+  }, [queryResults, selectedCategory]);
 
   const filterCoverage = () => {
-    colorchange("coverage");
-    if (coverageFiltered == false && pressReleaseFiltered == false) {
-      setNews(filteredCoverage);
-      coverageFiltered = true;
-    } else if (coverageFiltered == false && pressReleaseFiltered == true) {
-      colorchange("press-release");
-      setNews(filteredCoverage);
-      coverageFiltered = true;
-      pressReleaseFiltered = false;
-    } else if (coverageFiltered == true && pressReleaseFiltered == false) {
-      setNews(queryResults);
-      coverageFiltered = false;
-    }
+    setSelectedCategory(selectedCategory === "Coverage" ? null : "Coverage");
   };
+
   const filterPressRelease = () => {
-    colorchange("press-release");
-    if (pressReleaseFiltered == false && coverageFiltered == false) {
-      setNews(filteredPressRelease);
-      pressReleaseFiltered = true;
-    } else if (pressReleaseFiltered == false && coverageFiltered == true) {
-      colorchange("coverage");
-      setNews(filteredPressRelease);
-      pressReleaseFiltered = true;
-      coverageFiltered = false;
-    } else if (pressReleaseFiltered == true && coverageFiltered == false) {
-      setNews(queryResults);
-      pressReleaseFiltered = false;
-    }
+    setSelectedCategory(
+      selectedCategory === "Press Release" ? null : "Press Release",
+    );
   };
   return (
     <NewsPageWrapper>
@@ -99,14 +70,22 @@ const NewsGrid = ({ data }) => {
                 <Button
                   id="coverage"
                   onClick={filterCoverage}
-                  className="coverage-button"
+                  className={
+                    selectedCategory === "Coverage"
+                      ? "coverage-button mystyle"
+                      : "coverage-button"
+                  }
                 >
                   Coverage ({coverageCount})
                 </Button>
                 <Button
                   id="press-release"
                   onClick={filterPressRelease}
-                  className="press-release-button"
+                  className={
+                    selectedCategory === "Press Release"
+                      ? "press-release-button mystyle"
+                      : "press-release-button"
+                  }
                 >
                   Releases ({releasesCount})
                 </Button>
