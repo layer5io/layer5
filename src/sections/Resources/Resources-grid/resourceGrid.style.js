@@ -75,12 +75,21 @@ export const ResourcePageWrapper = styled.div`
     margin: 1rem;
     
     box-shadow: 0px 3px 10px 1px rgba(0, 179, 159, 0.5);
+
+    .empty-state-row {
+        flex-wrap: wrap;
+    }
+
     .errorMessage {
         font-size: 2rem;
         line-height: 2rem;
+        overflow-wrap: break-word;
+        word-break: break-word;
     }
     .error-text{
         margin-top: 5rem;
+        overflow-wrap: break-word;
+        word-break: break-word;
     }
     .errorSubtitle {      
         font-weight: 400;       
@@ -88,15 +97,68 @@ export const ResourcePageWrapper = styled.div`
         color: gray;
         font-style: italic;
         margin-top: 2.5rem;
+        overflow-wrap: break-word;
+        word-break: break-word;
     }
         img{
             display: block;
             margin:auto;
             margin-top: 3.125rem;
             width: 14rem;
-            @media only screen and (max-width:700px){
-                max-width: 100%;
-            }
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
         }
+
+    @media only screen and (max-width: 992px) {
+        padding: 2rem 1.5rem 3rem;
+        text-align: center;
+
+        .empty-state-row {
+            justify-content: center;
+        }
+
+        img {
+            margin: 1rem auto 0;
+            width: 12rem;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .error-text {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .errorMessage {
+            font-size: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .errorSubtitle {
+            font-size: 1.15rem;
+            line-height: 1.4;
+            margin-top: 1rem;
+        }
+    }
+
+    @media only screen and (max-width: 575px) {
+        padding: 1.5rem 1rem 2.5rem;
+        margin: 0.5rem;
+
+        img {
+            width: 9rem;
+            max-width: 100%;
+        }
+
+        .errorMessage {
+            font-size: 1.25rem;
+        }
+
+        .errorSubtitle {
+            font-size: 1rem;
+            margin-top: 0.75rem;
+        }
+    }
     }
 `;
