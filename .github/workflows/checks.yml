@@ -22,7 +22,7 @@ jobs:
         run: npm run check:contributing-versions
 
       - name: Unit tests
-        run: npm run test:unit
+        run: npm test
 
       - name: Build
         run: npm run build
