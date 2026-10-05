@@ -3,6 +3,9 @@ import styled from "styled-components";
 const MeshMatesWrapper = styled.div`
     
     .hero{
+      @media (max-width: 991px) {
+        flex-wrap: wrap;
+      }
       p{
           margin: 1.875rem auto 1rem auto;
        }
