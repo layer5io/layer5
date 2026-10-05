@@ -88,6 +88,7 @@ jobs:
       # Step 2: Mark PR as ready for review if it's in draft state
       # -------------------------------------------------------------------------
       - name: 📝 Mark PR as Ready for Review
+        id: mark_ready
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GH_ACCESS_TOKEN }}
@@ -110,6 +111,7 @@ jobs:
               });
 
               core.info(`PR #${prNumber} draft status: ${pr.draft}`);
+              core.setOutput('was_draft', pr.draft ? 'true' : 'false');
 
               if (pr.draft) {
                 core.info(`Marking PR #${prNumber} as ready for review...`);
@@ -129,11 +131,14 @@ jobs:
                 });
 
                 core.info(`✅ PR #${prNumber} has been marked as ready for review`);
+                core.setOutput('marked_ready', 'true');
               } else {
                 core.info(`PR #${prNumber} is already marked as ready for review`);
+                core.setOutput('marked_ready', 'false');
               }
             } catch (error) {
               core.warning(`Failed to mark PR as ready for review: ${error.message}`);
+              core.setOutput('marked_ready', 'false');
               // Don't fail the workflow, continue to next step
             }
 
@@ -141,43 +146,55 @@ jobs:
       # Step 3: Approve pending workflow runs for this PR
       # -------------------------------------------------------------------------
       - name: ✅ Approve Pending Workflow Runs
+        id: approve_runs
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GH_ACCESS_TOKEN }}
           script: |
             const prNumber = context.payload.pull_request?.number || parseInt('${{ inputs.pr_number }}') || null;
-            const headSha = context.payload.pull_request?.head?.sha || null;
-            const headRef = context.payload.pull_request?.head?.ref || null;
+            let headSha = context.payload.pull_request?.head?.sha || null;
 
-            if (!headRef && !headSha) {
-              core.info('No head ref or SHA available, skipping workflow approval step');
+            // In manual runs (workflow_dispatch), context.payload.pull_request is undefined.
+            // Fetch PR metadata using prNumber if head info is missing.
+            if (!headSha && prNumber) {
+              try {
+                const { data: pr } = await github.rest.pulls.get({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: prNumber
+                });
+                headSha = headSha || pr.head?.sha || null;
+              } catch (prError) {
+                core.warning(`Failed to fetch PR details for #${prNumber}: ${prError.message}`);
+              }
+            }
+
+            if (!headSha) {
+              core.info('No head SHA available, skipping workflow approval step');
               return;
             }
 
             core.info(`Looking for pending workflow runs for PR #${prNumber || 'N/A'}`);
-            core.info(`Head SHA: ${headSha || 'N/A'}, Head Ref: ${headRef || 'N/A'}`);
+            core.info(`Head SHA: ${headSha || 'N/A'}`);
 
             try {
-              // List workflow runs that are pending approval
+              // List workflow runs that are pending approval across all pages
               // These are runs with status 'action_required' (waiting for approval)
-              const { data: runs } = await github.rest.actions.listWorkflowRunsForRepo({
+              const runs = await github.paginate(github.rest.actions.listWorkflowRunsForRepo, {
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 status: 'action_required',
                 per_page: 100
               });
 
-              core.info(`Found ${runs.total_count} workflow run(s) awaiting approval`);
+              core.info(`Found ${runs.length} workflow run(s) awaiting approval across all pages`);
 
-              // Filter runs for this PR's branch/SHA
-              const pendingRuns = runs.workflow_runs.filter(run => {
-                const matchesSha = headSha && run.head_sha === headSha;
-                const matchesRef = headRef && run.head_branch === headRef;
-                return matchesSha || matchesRef;
-              });
+              // Filter runs strictly for this PR's head SHA
+              const pendingRuns = runs.filter(run => run.head_sha === headSha);
 
               core.info(`Found ${pendingRuns.length} pending run(s) for this PR`);
 
+              let approvedCount = 0;
               // Approve each pending run
               for (const run of pendingRuns) {
                 core.info(`Approving workflow run: ${run.name} (ID: ${run.id})`);
@@ -189,10 +206,14 @@ jobs:
                     run_id: run.id
                   });
                   core.info(`✅ Approved workflow run: ${run.name} (ID: ${run.id})`);
+                  approvedCount++;
                 } catch (approvalError) {
                   core.warning(`Failed to approve run ${run.id}: ${approvalError.message}`);
                 }
               }
+
+              core.setOutput('pending_count', pendingRuns.length.toString());
+              core.setOutput('approved_count', approvedCount.toString());
 
               if (pendingRuns.length === 0) {
                 core.info('No pending workflow runs found for this PR');
@@ -223,11 +244,46 @@ jobs:
 
             // Only comment on success to avoid noise
             if (jobStatus === 'success') {
+              const markedReadyRaw = '${{ steps.mark_ready.outputs.marked_ready }}';
+              const wasDraftRaw = '${{ steps.mark_ready.outputs.was_draft }}';
+              const approvedCountRaw = '${{ steps.approve_runs.outputs.approved_count }}';
+              const pendingCountRaw = '${{ steps.approve_runs.outputs.pending_count }}';
+
+              const actions = [];
+
+              // Readiness check
+              if (markedReadyRaw === 'true') {
+                actions.push('- ✅ Marked as ready for review (converted from draft)');
+              } else if (wasDraftRaw === 'true' && markedReadyRaw !== 'true') {
+                actions.push('- ⚠️ Failed to mark PR as ready for review');
+              } else if (wasDraftRaw === 'false') {
+                actions.push('- ℹ️ PR was already ready for review');
+              } else {
+                actions.push('- ⚠️ PR draft/readiness status could not be determined');
+              }
+
+              // Workflow approval check
+              if (pendingCountRaw !== '' && approvedCountRaw !== '') {
+                const pendingCount = parseInt(pendingCountRaw, 10);
+                const approvedCount = parseInt(approvedCountRaw, 10);
+
+                if (pendingCount === 0) {
+                  actions.push('- ℹ️ No pending workflow runs required approval');
+                } else if (approvedCount === pendingCount) {
+                  actions.push(`- ✅ Approved ${approvedCount} pending workflow run(s)`);
+                } else if (approvedCount > 0) {
+                  actions.push(`- ⚠️ Approved ${approvedCount} of ${pendingCount} pending workflow run(s)`);
+                } else {
+                  actions.push(`- ⚠️ Failed to approve ${pendingCount} pending workflow run(s)`);
+                }
+              } else {
+                actions.push('- ⚠️ Pending workflow runs status could not be determined');
+              }
+
               const body = `### ${statusEmoji} Copilot PR Handler
 
             This pull request from GitHub Copilot has been automatically processed:
-            - ✅ Marked as ready for review (if it was a draft)
-            - ✅ Approved pending workflow runs
+            ${actions.join('\n')}
 
             The CI checks should now run automatically.`;
 
