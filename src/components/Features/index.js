@@ -91,15 +91,23 @@ const Features = (props) => {
       <ContentWrapper>
         <h2>{props.title}</h2>
         <p className="text">{props.desc}</p>
-        {props.redirectLink ? <Link to={props.redirectLink}>Learn more &rarr;</Link>
-          : (<div className="small-card-container">
+        {props.redirectLink ? (
+          <Link to={props.redirectLink}>Learn more &rarr;</Link>
+        ) : (
+          <div className="small-card-container">
             {props.redirectLinkWithImage.map((item) => (
               <Link key={item.text} className="small-card" to={item.redirect}>
-                <img src={item.image} width={40} alt={item.alt} />
+                <img
+                  src={item.image}
+                  width={item.width || 40}
+                  height={item.height}
+                  alt={item.alt}
+                />
                 <span>{item.text}</span>
               </Link>
             ))}
-          </div>)}
+          </div>
+        )}
       </ContentWrapper>
       {props.animationOne ? (
         <ImageWrapper ref={containerRef}>
@@ -123,7 +131,13 @@ const Features = (props) => {
           >
             <img src={getPerson(props.cursor * 2 + 1)} alt="" />
           </SvgRandomWrapper>
-          <Link to={props.redirectLink ? props.redirectLink : props.redirectLinkWithImage[0].redirect}>
+          <Link
+            to={
+              props.redirectLink
+                ? props.redirectLink
+                : props.redirectLinkWithImage[0].redirect
+            }
+          >
             <img src={props.imgLink} alt="image" />
           </Link>
         </ImageWrapper>
@@ -149,7 +163,13 @@ const Features = (props) => {
           >
             <img src={getPerson(props.cursor * 2 + 1)} alt="" />
           </SvgRandomWrapper>
-          <Link to={props.redirectLink ? props.redirectLink : props.redirectLinkWithImage[0].redirect}>
+          <Link
+            to={
+              props.redirectLink
+                ? props.redirectLink
+                : props.redirectLinkWithImage[0].redirect
+            }
+          >
             <img src={props.imgLink} alt="image" />
           </Link>
         </ImageWrapperTwo>
