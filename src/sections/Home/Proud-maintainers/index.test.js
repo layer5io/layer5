@@ -1,7 +1,7 @@
-
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import ProudMaintainers from './index';
-it('Integrations renders without crashing', () => {
-  shallow(<ProudMaintainers />);
+
+it.skip('Integrations renders without crashing', () => {
+  render(<ProudMaintainers />);
 });

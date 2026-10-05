@@ -1,18 +1,43 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import NewsSingle from './index';
 import * as Gatsby from 'gatsby';
 
-const useStaticQuery = jest.spyOn(Gatsby, 'useStaticQuery');
-const mockUseStyledDarkMode = jest.fn();
+jest.mock('gatsby', () => ({
+  Link: ({ to, children }) => <a href={to}>{children}</a>,
+  useStaticQuery: jest.fn(),
+  graphql: jest.fn(),
+}));
 
 jest.mock('../../../theme/app/useStyledDarkMode', () => ({
   useStyledDarkMode: () => ({ isDark: false }),
 }));
 
+jest.mock('../../../reusecore/PageHeader', () => ({
+  __esModule: true,
+  default: jest.fn(({ children }) => <div>{children}</div>),
+}), { virtual: true });
+
+jest.mock('../../../components/image', () => ({
+  __esModule: true,
+  default: jest.fn(() => <div>MockImage</div>),
+}), { virtual: true });
+
+jest.mock('simple-react-lightbox', () => ({
+  SRLWrapper: jest.fn(({ children }) => <div>{children}</div>),
+}), { virtual: true });
+
+jest.mock('../../../components/Related-Posts', () => {
+  return jest.fn(() => <div>RelatedPosts</div>);
+}, { virtual: true });
+
+jest.mock('./Sidebar', () => {
+  return jest.fn(() => <div>Sidebar</div>);
+}, { virtual: true });
+
 describe('NewsSingle', () => {
   beforeEach(() => {
-    useStaticQuery.mockImplementation(() => ({
+    Gatsby.useStaticQuery.mockImplementation(() => ({
       allMdx: {
         nodes: []
       }
@@ -23,7 +48,7 @@ describe('NewsSingle', () => {
     jest.clearAllMocks();
   });
 
-  it('renders "Originally published at" link when source_url is present', () => {
+  it('renders "Originally published on" link when source_url is present', () => {
     const data = {
       mdx: {
         frontmatter: {
@@ -36,13 +61,14 @@ describe('NewsSingle', () => {
       }
     };
 
-    const wrapper = shallow(<NewsSingle data={data} />);
-    const link = wrapper.find('a[href="https://original.com"]');
-    expect(link.exists()).toBe(true);
-    expect(wrapper.text()).toContain('Originally published at');
+    render(<NewsSingle data={data} />);
+    const link = screen.getByRole('link', { name: /Me/i });
+    expect(link).toBeInTheDocument();
+    expect(link).toHaveAttribute('href', 'https://original.com');
+    expect(screen.getByText(/Originally published on/i)).toBeInTheDocument();
   });
 
-  it('does not render "Originally published at" link when source_url is missing', () => {
+  it('does not render "Originally published on" link when source_url is missing', () => {
     const data = {
       mdx: {
         frontmatter: {
@@ -54,8 +80,8 @@ describe('NewsSingle', () => {
       }
     };
 
-    const wrapper = shallow(<NewsSingle data={data} />);
-    expect(wrapper.text()).not.toContain('Originally published at');
+    render(<NewsSingle data={data} />);
+    expect(screen.queryByText(/Originally published on/i)).not.toBeInTheDocument();
   });
 
   it('does not render "Read the full article on" (eurl) when source_url is present', () => {
@@ -72,8 +98,8 @@ describe('NewsSingle', () => {
       }
     };
 
-    const wrapper = shallow(<NewsSingle data={data} />);
-    expect(wrapper.text()).toContain('Originally published at');
-    expect(wrapper.text()).not.toContain('Read the full article on');
+    render(<NewsSingle data={data} />);
+    expect(screen.getByText(/Originally published on/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Read the full article on/i)).not.toBeInTheDocument();
   });
 });
