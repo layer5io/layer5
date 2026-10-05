@@ -406,14 +406,47 @@ def wrap_svg_text(text, max_chars):
     return lines
 
 
+# Conservative metrics for bold Qanelas Soft (and its Helvetica fallback).
+# Overestimating glyph width only costs a little font size; underestimating
+# lets text run past the edge of the sign.
+SIGN_CHAR_WIDTH_EM = 0.55
+SIGN_CAP_HEIGHT_EM = 0.70
+SIGN_LINE_HEIGHT_EM = 1.15
+
+
+def fit_sign_text(sign_text, zone, zone_key):
+    """
+    Wrap sign_text into the zone's box, shrinking from font_size toward
+    min_font_size until the block fits. Exits with an error instead of
+    truncating: 2.0.0 silently dropped every line after the third.
+    """
+    for font_size in range(zone["font_size"], zone["min_font_size"] - 1, -1):
+        char_width = font_size * SIGN_CHAR_WIDTH_EM
+        lines = wrap_svg_text(sign_text, max(1, int(zone["max_width"] / char_width)))
+        block_height = (len(lines) - 1) * font_size * SIGN_LINE_HEIGHT_EM \
+            + font_size * SIGN_CAP_HEIGHT_EM
+        widest = max(len(line) for line in lines) * char_width
+        if block_height <= zone["max_height"] and widest <= zone["max_width"]:
+            return lines, font_size
+    raise SystemExit(
+        f"error: --sign-text {sign_text!r} does not fit the '{zone_key}' sign, even at "
+        f"the minimum font size of {zone['min_font_size']}. Shorten it - a sign reads "
+        f"best at one to three short words."
+    )
+
+
 def build_sign_text_overlay(five_pose_path, sign_text):
     """
     Returns an SVG <text> block (in the pose's own viewBox coordinates, so it
     inherits the same transform as the mascot) for a blank-signage pose, or ""
     if this pose has no calibrated zone / no text was requested.
     """
-    if not sign_text:
+    if sign_text is None:
         return ""
+    sign_text = " ".join(sign_text.split())
+    if not sign_text:
+        raise SystemExit("error: --sign-text is empty or whitespace; pass the words to put on "
+                         "the sign, or omit the flag.")
     zone_key = POSE_FILENAME_TO_SIGN_ZONE.get(five_pose_path.name)
     zone = palette.SIGN_TEXT_ZONES.get(zone_key) if zone_key else None
     if not zone:
@@ -424,21 +457,24 @@ def build_sign_text_overlay(five_pose_path, sign_text):
         )
         return ""
 
-    max_chars = max(6, int(zone["max_width"] / (zone["font_size"] * 0.55)))
-    lines = wrap_svg_text(sign_text, max_chars)[:3]
-    line_height = zone["font_size"] * 1.15
-    start_y = zone["cy"] - (len(lines) - 1) * line_height / 2
+    lines, font_size = fit_sign_text(sign_text, zone, zone_key)
+    line_height = font_size * SIGN_LINE_HEIGHT_EM
 
     rotation = zone.get("rotation", 0)
     transform = f' transform="rotate({rotation} {zone["cx"]} {zone["cy"]})"' if rotation else ""
 
+    # SVG <text y> is the alphabetic baseline, not the glyph center. Center each
+    # line's cap height on its slot, or the block renders high by half a cap
+    # height (2.0.0 centered baselines, which pushed two-line text up through
+    # the top edge of the signpost).
+    first_center = zone["cy"] - (len(lines) - 1) * line_height / 2
     parts = [f'<g{transform}>']
     for i, line in enumerate(lines):
-        y = start_y + i * line_height
+        y = first_center + i * line_height + font_size * SIGN_CAP_HEIGHT_EM / 2
         parts.append(
             f'<text x="{zone["cx"]}" y="{y:.1f}" text-anchor="middle" '
             f'font-family="\'QanelasSoft\', \'Helvetica Neue\', Arial, sans-serif" '
-            f'font-size="{zone["font_size"]}" font-weight="bold" '
+            f'font-size="{font_size}" font-weight="bold" '
             f'fill="{zone["color"]}">{xml_escape(line)}</text>'
         )
     parts.append('</g>')
@@ -707,12 +743,13 @@ def generate_hero_image(title, subtitle, category, five_pose_arg, sign_text,
     try:
         detail = rasterize(svg_path, out, img_width, img_height, quality)
     except RasterizeError as exc:
-        kept = out.with_suffix(".svg")
-        if not keep_svg:
-            kept.write_text(svg_content, encoding="utf-8")
+        # Never drop the working SVG next to the output on failure: in a post
+        # directory it is named hero-image.svg, which is exactly what a 1.x post
+        # committed, so it gets staged by mistake. Output is deterministic per
+        # title, so rerunning the same command after the fix loses nothing.
         raise SystemExit(
             f"error: could not rasterize the hero image.\n  {exc}\n"
-            f"  The working SVG was left at {kept} so no work is lost."
+            f"  No hero image was written. The working SVG is at {svg_path}."
         )
 
     print(
@@ -723,6 +760,9 @@ def generate_hero_image(title, subtitle, category, five_pose_arg, sign_text,
     )
     if keep_svg:
         print(f"  working SVG kept at {svg_path} - do not commit it")
+    else:
+        svg_path.unlink()
+        svg_dir.rmdir()
     return summary
 
 

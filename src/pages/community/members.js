@@ -273,6 +273,6 @@ export default MembersPage;
 export const Head = () => {
   return <SEO
     title="Members"
-    description="An awarding-winning, open source community with a warm and welcoming collection of contributors."
+    description="An award-winning open source community with a warm and welcoming collection of contributors."
   />;
 };
