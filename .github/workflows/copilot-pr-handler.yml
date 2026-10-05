@@ -138,6 +138,7 @@ jobs:
               }
             } catch (error) {
               core.warning(`Failed to mark PR as ready for review: ${error.message}`);
+              core.setOutput('marked_ready', 'false');
               // Don't fail the workflow, continue to next step
             }
 
@@ -192,7 +193,6 @@ jobs:
               const pendingRuns = runs.filter(run => run.head_sha === headSha);
 
               core.info(`Found ${pendingRuns.length} pending run(s) for this PR`);
-              core.setOutput('pending_count', pendingRuns.length.toString());
 
               let approvedCount = 0;
               // Approve each pending run
@@ -212,6 +212,7 @@ jobs:
                 }
               }
 
+              core.setOutput('pending_count', pendingRuns.length.toString());
               core.setOutput('approved_count', approvedCount.toString());
 
               if (pendingRuns.length === 0) {
@@ -253,9 +254,11 @@ jobs:
               // Readiness check
               if (markedReadyRaw === 'true') {
                 actions.push('- ✅ Marked as ready for review (converted from draft)');
+              } else if (wasDraftRaw === 'true' && markedReadyRaw !== 'true') {
+                actions.push('- ⚠️ Failed to mark PR as ready for review');
               } else if (wasDraftRaw === 'false') {
                 actions.push('- ℹ️ PR was already ready for review');
-              } else if (wasDraftRaw === '') {
+              } else {
                 actions.push('- ⚠️ PR draft/readiness status could not be determined');
               }
 
