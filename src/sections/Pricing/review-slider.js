@@ -74,15 +74,38 @@ const ReviewsWrapper = styled.div`
     visibility: visible;
     opacity: 1;
   }
-
-  /* Prevent extreme shrinking on mobile */
-  .slick-slide > div {
-    min-width: 0;
+  .slick-track {
+    display: flex !important;
+    align-items: stretch;
   }
-  .slider .type-one-wrapper {
+
+  .slick-slide {
+    height: auto !important;
+    display: flex !important;
+  }
+
+  .slick-slide > div {
     width: 100%;
-    max-width: none;
+    display: flex;
+    flex: 1;
+  }
+
+  .slick-slide > div > * {
+    width: 100%;
+    height: 100%;
+  }
+
+  .slick-slide .type-one-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     margin: 0 0.5rem;
+  }
+
+  .slick-slide .type-one-wrapper-boxed {
+    width: 100%;
+    height: 100%;
   }
 
   @media (max-width: 768px) {
@@ -177,6 +200,7 @@ const Reviews = () => {
             image={Maxi}
           /> */}
           <Customers
+            pricing="true"
             type="3"
             quote="I don't want another Kubernetes dashboard. I want a platform that helps me design, validate, and operate cloud-native infrastructure consistently across every cluster."
             person="Giorgia Modanesi"
@@ -184,6 +208,7 @@ const Reviews = () => {
             image={Giorgia}
           />
           <Customers
+            pricing="true"
             type="2"
             quote="The precision by which performance measurements are generated and analyzed is a pinnacle focus of Nighthawk. Mesh performance characterization should be distilled from a set of value measurements, and that is where MeshMark compliments to create the ultimate comprehensive efficiency calculation."
             person="Otto Van Der Schaaf"
@@ -191,6 +216,7 @@ const Reviews = () => {
             image={Otto}
           />
           <Customers
+            pricing="true"
             type="3"
             quote="Guys, I love Kanvas! This tool is crazy!"
             person="Ala Eddine BENHASSIR"
@@ -198,6 +224,7 @@ const Reviews = () => {
             image={Ala}
           />
           <Customers
+            pricing="true"
             type="2"
             quote="Meshery is the perfect tool for ensuring that your applications are optimally configured and performing well; it also gives you a fantastic visual insight into what can be a large amount of textual configuration"
             person="Nic Jackson"
@@ -205,6 +232,7 @@ const Reviews = () => {
             image={Nic}
           />
           <Customers
+            pricing="true"
             type="3"
             quote="While speed is one of Linkerd's core competitive advantages, Linkerd provides much more than just an ultrafast data plane. We are pleased to support MeshMark's establishment of a higher order set of functional considerations that incorporate value into the performance equation."
             person="William Morgan"
@@ -212,6 +240,7 @@ const Reviews = () => {
             image={William}
           />
           <Customers
+            pricing="true"
             type="2"
             quote="Performance measurement data rarely provides a clear and simple picture of how well our applications are performing from a business point of view, which are so often the key efficiency indicators that we really need"
             person="Ken Owens"
@@ -219,14 +248,16 @@ const Reviews = () => {
             image={Ken}
           />
           <Customers
+            pricing="true"
             type="1"
             quote="Many cloud native adopters have been put off from using service mesh due to the extra resource consumption and complexity that it can involve. We welcome MeshMark as an objective measure of that overhead, to help drive efficiency and make it easier for users to compare service mesh options."
             person="Liz Rice"
-            title="Chief Open Source Officer, Isovalent and Emeritus Chair of the CNCF’s TOC"
+            title="Chief Open Source Officer, Isovalent and Emeritus Chair of the CNCFâ€™s TOC"
             image={Liz}
           />
 
           <Customers
+            pricing="true"
             type="3"
             quote="The fact that Kanvas automatically renders our Kubernetes configuration is a game-changer for our team."
             person="Kaur Kallas"
@@ -234,6 +265,7 @@ const Reviews = () => {
             image={Kaur}
           />
           <Customers
+            pricing="true"
             type="2"
             quote="Kanvas is what the next-generation Operations tooling will look like."
             person="Louie Corbo"
@@ -241,6 +273,7 @@ const Reviews = () => {
             image={Louie}
           />
           <Customers
+            pricing="true"
             type="1"
             quote="It was an intuitive experience to visually place and configure various components saving the time of going through 10 different YAML files."
             person="Deepak Dinesh"
@@ -248,6 +281,7 @@ const Reviews = () => {
             image={Deepak}
           />
           <Customers
+            pricing="true"
             type="1"
             quote="Are my resources utilized as best as possible? Why am I not getting the SLO met with 4 resources when I only needed 1 resource without the service mesh? How can I improve my 99.9% latencies or can I map my service policy to utilization? Is the network a performance hog, or storage, or cache? MeshMark will model and provide an index in answer to such questions."
             person="Mrittika Ganguli"
@@ -255,6 +289,7 @@ const Reviews = () => {
             image={Mrittika}
           />
           <Customers
+            pricing="true"
             type="2"
             quote="With a goal to bring workload identity and attestation to all service meshes, HPE Security Engineering uses the Meshery Docker Extension to deploy their service mesh of choice and test the performance of our SPIFFE and SPIRE-based identity solution."
             person="Maximiliano Churichi"
@@ -269,6 +304,7 @@ const Reviews = () => {
               image={Lee}
             /> */}
           <Customers
+            pricing="true"
             type="3"
             quote="The Meshery Docker Extension offers an easy button to go from Docker Compose to Kubernetes to any service mesh."
             person="Nic Jackson"
@@ -276,6 +312,7 @@ const Reviews = () => {
             image={Nic}
           />
           <Customers
+            pricing="true"
             type="2"
             quote="Do we like Kanvas? ABSOLUTELY!"
             person="Alex"
@@ -283,6 +320,7 @@ const Reviews = () => {
             image={Alex}
           />
           <Customers
+            pricing="true"
             type="3"
             quote="Visualization is a great idea for complex environments!"
             person="Patrick Steinig"
@@ -290,12 +328,14 @@ const Reviews = () => {
             image={Patrick}
           />
           <Customers
+            pricing="true"
             quote="Meshery is an innovative tool for managing our multi-cluster and multi-cloud workloads."
             person="Hein Htet Win"
             title="Kanvas User"
             image={Hein}
           />
           <Customers
+            pricing="true"
             type="1"
             quote="Meshery has so many really amazing features all of which make DevOps and SRE life easy."
             person="Anusha Sridharan"
@@ -303,6 +343,7 @@ const Reviews = () => {
             image={Anusha}
           />
           <Customers
+            pricing="true"
             type="2"
             quote="Wow, just tried Kanvas and it's exactly what I needed! Dragging that Helm chart was so smooth, and the smart features really caught my attention. Definitely sharing this with my dev team before everyone else discovers it!"
             person="Abdechakour Hrouchan"
