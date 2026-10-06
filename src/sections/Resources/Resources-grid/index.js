@@ -5,6 +5,8 @@ import Pagination from "./paginate";
 import SearchBox from "../../../reusecore/Search";
 import EmptyResources from "../Resources-error/emptyStateTemplate";
 
+import SortDropdown from "./SortDropdown";
+
 import { ResourcePageWrapper } from "./resourceGrid.style";
 
 const ResourceGrid = (props) => {
@@ -28,7 +30,13 @@ const ResourceGrid = (props) => {
   return (
     <ResourcePageWrapper>
       <div className="resource-grid-wrapper">
-        <div className="search">
+        <div className="search-and-sort">
+          <div className="sortBox">
+            <SortDropdown
+              sortOrder={props.sortOrder}
+              onSortChange={props.handleSortChange}
+            />
+          </div>
           <div className="searchBox">
             <SearchBox
               searchQuery={props.searchQuery}
