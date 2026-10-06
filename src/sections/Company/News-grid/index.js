@@ -117,6 +117,9 @@ const NewsGrid = ({ data }) => {
                     searchQuery={searchQuery}
                     searchData={searchData}
                     focusSearch={true}
+                    ariaLabel="Search news"
+                    id="news-search"
+                    name="news-search"
                   />
                 </div>
               </div>

@@ -230,6 +230,9 @@ const IntegrationsGrid = ({ category, count }) => {
         setHideFilter={setHideFilter}
         classnames={["integration-search"]}
         focusSearch={false}
+        ariaLabel="Search integrations"
+        id="integration-search"
+        name="integration-search"
       />
 
       <section style={{ margin: "0 2.6rem" }}>
