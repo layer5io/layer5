@@ -390,6 +390,16 @@ export const repo_data = [
           "A Kubectl Kanvas Snapshot is a native kubectl plugin designed to conveniently create a visual snapshot of the combination of multiple Kubernetes manifest files.",
         repository: "https://github.com/meshery/kubectl-kanvas-snapshot",
       },
+      {
+        project: "mesheryctl-axi",
+        image: meshery,
+        language: "TypeScript",
+        maintainers_name: ["Yi Nuo", "Shiekh Mohammad"],
+        link: ["", ""],
+        description:
+          "Agent-ergonomic AXI wrapper around mesheryctl with token-efficient TOON output.",
+        repository: "https://github.com/meshery-extensions/mesheryctl-axi",
+      },
     ],
   },
 
