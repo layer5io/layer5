@@ -1,6 +1,6 @@
 ---
 name: layer5-blog-writer
-version: 2.0.1
+version: 2.1
 description: Creates complete, publication-ready blog posts for layer5.io/blog with proper MDX structure, frontmatter, Layer5 components (Blockquote, Callout, CTA_FullWidth), and generates branded hero images with Layer5's cosmic visual style. Use this skill whenever the user wants to write a blog post for Layer5, create content for layer5.io, draft a post about Meshery, Kanvas, Kubernetes, cloud native topics, Layer5 community events, DevOps, platform engineering, or any technical tutorial. Also use when the user says "write a blog post", "create a blog post", "add a post to layer5.io", "draft a layer5 article", or mentions blog post + any cloud native/DevOps topic.
 ---
 
@@ -12,7 +12,7 @@ You create complete, publication-ready blog posts for [layer5.io/blog](https://l
 2. A branded hero image (raster, 1200x630) in the same directory
 3. A linted post and a green local build
 4. A signed-off commit on a dedicated branch in an isolated worktree
-5. A pull request merged after CI passes (regular fast-forward, no review wait)
+5. A pull request merged after CI passes (merge commit, no squash, no review wait)
 6. A brief handoff note covering what was created and the merged PR URL
 
 ## Layer5 Brand Voice
@@ -194,6 +194,9 @@ Produces a 1200x630 image that:
   the line art unreadable on dark ones.
 - Footer shows the **publish date on the left and the author on the right** (`--date` / `--author`).
   Defaults to today's date and "Layer5 Team" if omitted.
+- Fits the title on 3 lines and the subtitle on 2, **warning when words would not fit**
+  rather than dropping them silently. `check_post.py` fails on the same condition, using the
+  same fit helpers, so keep titles near the 50-60 char SEO guidance and both stay quiet.
 
 **Five mascot rules:**
 
@@ -230,8 +233,10 @@ python3 "<skill_dir>/scripts/check_post.py" "src/collections/blog/YYYY/MM-DD-slu
 Exit code 0 means clean. It asserts the mechanical half of this step: required frontmatter fields,
 the exact `YYYY-MM-DD HH:MM:SS +/-HHMM` date format, thumbnails that exist and are rasters rather
 than SVG, category and tags matching `references/tags-categories.md` (case-sensitively), presence
-of `intro`/`outro`/`<Blockquote>`/a CTA, a body image repeating the thumbnail, `className` rather than `class`, en/em dashes, brand
-capitalization in prose, unpinned `:latest` versions, and AI-authorship trailers. It also
+of real `intro`/`outro`/`<Blockquote>`/a CTA markup (samples inside fenced code do not count),
+a body image repeating the thumbnail, `className` rather than `class`, en/em dashes, brand
+capitalization in prose, frontmatter titles, and component text (repo slugs in link text excluded),
+hero title/subtitle fit, unpinned `:latest` versions, and AI-authorship trailers. It also
 cross-checks the taxonomy doc against `CATEGORY_TONE` in `mesh_palette.py` so the two cannot drift.
 
 This replaced a hand-ticked checklist. Every item above was previously a prose assertion an agent
@@ -272,7 +277,7 @@ lost by scoping locally - it just happens on the runner instead of on your lapto
 
 ### Step 8 - Commit, push, auto-merge, and remove the worktree
 
-Land the post on `master` without leaving a PR open for review. The repo's standard merge strategy is regular fast-forward; the workflow below produces a single signed-off commit on top of `origin/master` and merges it via `gh pr merge --merge --delete-branch`.
+Land the post on `master` without leaving a PR open for review. The repo's standard merge strategy is a merge commit (no squash, no rebase); the workflow below produces a single signed-off commit on top of `origin/master` and merges it via `gh pr merge --merge --delete-branch`.
 
 **Authorship rule (non-negotiable):** the commit message, PR title, PR body, and any other text introduced by this skill must contain no reference to AI assistants, AI authoring tools, "Co-Authored-By" trailers, or automation by name. The signoff is the user's configured `user.name <user.email>`, appended only by `git commit -s`. Do not add `--author`, do not add trailers, do not add "generated with" lines.
 
@@ -281,6 +286,9 @@ Land the post on `master` without leaving a PR open for review. The repo's stand
 cd "$WORKTREE_DIR"
 
 TITLE="<the blog post's title>"   # same as the post's frontmatter title
+# If the title contains `"`, `$`, backticks, or `\`, single-quote it instead
+# (escaping embedded single quotes: 'What'"'"'s New') or the shell will mangle
+# the commit message and PR title.
 POST_DIR="src/collections/blog/YYYY/MM-DD-${SLUG}"
 
 # Stage only this post's directory. Never `git add` the whole year folder -
@@ -301,7 +309,7 @@ PR_URL=$(gh pr create \
 # broken MDX post that lands on master breaks the production deploy.
 gh pr checks "$PR_URL" --watch
 
-# Merge only once checks are green (regular fast-forward, no review wait)
+# Merge only once checks are green (merge commit, no review wait)
 gh pr merge --merge --delete-branch "$PR_URL"
 
 # Tear down the worktree once the merge is confirmed
@@ -330,6 +338,9 @@ End the run with a one-paragraph handoff: the merged PR URL, the post path on `m
 - **`scripts/rasterize.py`** - SVG to JPEG/PNG/WebP via headless Chrome. Documents why heroes ship as rasters.
 - **`scripts/measure_pose_bounds.py`** - Regenerates `assets/mascot-five/pose-bounds.json`. Run after adding or replacing a pose.
 - **`scripts/check_post.py`** - Post linter used in Step 7a. Exit code 0 means clean.
+- **`scripts/test_*.py`** - Unit tests for the linter and the hero generator (stdlib `unittest`,
+  no Chrome or Pillow needed). Run with `python3 -m unittest discover -s scripts` from the
+  skill root after changing either script.
 - **`scripts/sync_skill.sh`** - Mirrors this skill from its canonical copy in layer5io/layer5 to `~/.claude/skills/`, `~/.agents/skills/`, and any vendored copies passed as arguments; `--check` reports drift by content. Run after changing anything here.
 - **`assets/mascot-five/SVG/`** - The Five pose collection, indexed by `references/mascot-five-index.md`. Vector only.
 - **`assets/mascot-five/pose-bounds.json`** - Measured visible-ink box per pose. The generator sizes the mascot from this, not from the artboard.
