@@ -1,6 +1,23 @@
 import styled from "styled-components";
 export const ResourcesWrapper = styled.div`
   color: #000;
+  h2:not(.filter-title):not(.category_name):not(.subcategory_name):not(.accordion__heading) {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  h4:not(.filter-title):not(.category_name):not(.subcategory_name):not(.accordion__heading),
+  h5:not(.filter-title):not(.category_name):not(.subcategory_name):not(.accordion__heading),
+  h6:not(.filter-title):not(.category_name):not(.subcategory_name):not(.accordion__heading) {
+    margin-bottom: 0.5rem;
+  }
+  h3:not(.filter-title):not(.category_name):not(.subcategory_name):not(.accordion__heading) {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  ul,
+  ol {
+    margin-bottom: 1rem;
+  }
   
   div.comparison h2 {
     text-align: left;
