@@ -54,21 +54,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
   const envCreatePage = (props) => {
-    const pageProps = {
-      ...props,
-    };
-
-    if (process.env.CI === "true") {
-      const { path } = pageProps;
-      createRedirect({
-        fromPath: `/${path}/`,
-        toPath: `/${path}`,
-        redirectInBrowser: true,
-        isPermanent: true,
-      });
-    }
-
-    return createPage(pageProps);
+    return createPage(props);
   };
 
   const blogPostTemplate = path.resolve("src/templates/blog-single.js");
