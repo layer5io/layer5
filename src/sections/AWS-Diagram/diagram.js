@@ -4,10 +4,15 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 import TemplateDark from "../../assets/images/AWS-Diagram/templates-dark.svg";
 import RelatedPicks from "../../components/RelatedPicks";
-import ConfigGIF from "./images/config.gif";
-import DeployGIF from "./images/deploy.gif";
-import DragDropGIF from "./images/drag-drop.gif";
-import IconLibraryGIF from "./images/icon-library.gif";
+import ConfigVideoMP4 from "./videos/config.mp4";
+import ConfigVideoWebM from "./videos/config.webm";
+import AutoVideo from "../../components/AutoVideo";
+import DeployVideoMP4 from "./videos/deploy.mp4";
+import DeployVideoWebM from "./videos/deploy.webm";
+import DragDropVideoMP4 from "./videos/drag-drop.mp4";
+import DragDropVideoWebM from "./videos/drag-drop.webm";
+import IconLibraryVideoMP4 from "./videos/icon-library.mp4";
+import IconLibraryVideoWebM from "./videos/icon-library.webm";
 import { Link } from "gatsby";
 
 const DiagramWrapper = styled.div`
@@ -126,18 +131,20 @@ const DiagramWrapper = styled.div`
           justify-content: center;
         }
         .aws-image {
+          max-width: 100%;
+          height: auto;
+
           @media (max-width: 767px) {
             max-width: 90%;
             margin-bottom: 2rem;
           }
-        } 
+        }
       }
     }
   }
 `;
 
 const Aws = () => {
-
   const { isDark } = useStyledDarkMode();
 
   return (
@@ -146,68 +153,120 @@ const Aws = () => {
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={ConfigGIF} alt="AWS Diagrams for anything" className="AWS-image" />
+              <AutoVideo
+                mp4={ConfigVideoMP4}
+                webm={ConfigVideoWebM}
+                width={1000}
+                height={472}
+                alt="AWS Diagrams for anything"
+                className="aws-image"
+              />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
             <h2 className="heading">Diagram + Config = Awesome!</h2>
             <p className="caption">
-              Stop wrestling with code templates! Our visual configuration interface gives you the precision of code with the ease of a diagram.
+              Stop wrestling with code templates! Our visual configuration
+              interface gives you the precision of code with the ease of a
+              diagram.
             </p>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={4} className="diagram-detail">
-            <h2 className="heading">Deploy  with No Code AWS</h2>
+            <h2 className="heading">Deploy with No Code AWS</h2>
             <p className="caption">
-              Our visual AWS interface enables anyone to deploy production-grade software with no code. Whether you're new to AWS and are looking for the best way to learn or a seasoned pro, Kanvas has all the features you need to be successful in deploying and configuring your software, all with no code.
+              Our visual AWS interface enables anyone to deploy production-grade
+              software with no code. Whether you're new to AWS and are looking
+              for the best way to learn or a seasoned pro, Kanvas has all the
+              features you need to be successful in deploying and configuring
+              your software, all with no code.
             </p>
           </Col>
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={DeployGIF} alt="AWS Diagrams for anything" className="AWS-image" />
+              <AutoVideo
+                mp4={DeployVideoMP4}
+                webm={DeployVideoWebM}
+                width={1258}
+                height={681}
+                alt="AWS Diagrams for anything"
+                className="aws-image"
+              />
             </div>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={DragDropGIF} alt="AWS Diagrams for anything" className="AWS-image" />
+              <AutoVideo
+                mp4={DragDropVideoMP4}
+                webm={DragDropVideoWebM}
+                width={1258}
+                height={681}
+                alt="AWS Diagrams for anything"
+                className="aws-image"
+              />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
             <h2 className="heading">Visual drag & drop</h2>
             <p className="caption">
-              Kanvas allow you to drag, drop and connect all your cloud components together simply and easily - no-code required!
+              Kanvas allow you to drag, drop and connect all your cloud
+              components together simply and easily - no-code required!
             </p>
-            <Link className="link" href="/cloud-native-management/kanvas/design">Learn more &rarr;</Link>
+            <Link
+              className="link"
+              href="/cloud-native-management/kanvas/design"
+            >
+              Learn more &rarr;
+            </Link>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={4} className="diagram-detail">
             <h2 className="heading">Extensive AWS Icon Library</h2>
             <p className="caption">
-              Utilize a vast and continually expanding collection of AWS icons designed for both diagramming and orchestration scenarios. Craft globally comprehensible diagrams that are not only authentic but also aligned with the latest industry standards.
+              Utilize a vast and continually expanding collection of AWS icons
+              designed for both diagramming and orchestration scenarios. Craft
+              globally comprehensible diagrams that are not only authentic but
+              also aligned with the latest industry standards.
             </p>
           </Col>
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={IconLibraryGIF} alt="AWS Diagrams for anything" className="AWS-image" />
+              <AutoVideo
+                mp4={IconLibraryVideoMP4}
+                webm={IconLibraryVideoWebM}
+                width={1258}
+                height={681}
+                alt="AWS Diagrams for anything"
+                className="aws-image"
+              />
             </div>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={isDark ? TemplateDark : TemplateDark} alt="Designing AWS Diagrams with Kanvas" className="AWS-image" />
+              <img
+                src={isDark ? TemplateDark : TemplateDark}
+                alt="Designing AWS Diagrams with Kanvas"
+                className="AWS-image"
+              />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
             <h2 className="heading">Kickstart with Ready-to-Use Templates</h2>
             <p className="caption">
-              Jumpstart your projects with our quick-start templates designed for both AWS diagramming and orchestration management. Access a range of professionally crafted templates that are fully customizable, ensuring you can tailor them to your specific needs.
+              Jumpstart your projects with our quick-start templates designed
+              for both AWS diagramming and orchestration management. Access a
+              range of professionally crafted templates that are fully
+              customizable, ensuring you can tailor them to your specific needs.
             </p>
-            <Link className="link" href="/cloud-native-management/catalog">Learn more &rarr;</Link>
+            <Link className="link" href="/cloud-native-management/catalog">
+              Learn more &rarr;
+            </Link>
           </Col>
         </Row>
         <RelatedPicks heading="aws" />
