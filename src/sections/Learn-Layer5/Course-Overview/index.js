@@ -190,7 +190,6 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
           </Col>
         </Row>
       </div>
-      f
       <BookmarkNotification
         showNotification={showNotification}
         closeNotification={() => setShowNotification(false)}

@@ -27,6 +27,9 @@ jobs:
       - name: Test local SEO image validation
         run: npm run test:seo-images
 
+      - name: Unit tests
+        run: npm run test:unit
+
       - name: Build
         run: npm run build
 

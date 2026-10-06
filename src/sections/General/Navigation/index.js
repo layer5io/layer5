@@ -571,7 +571,7 @@ const Navigation = () => {
               className="banner-btn two"
               $external={true}
               title="Get Started"
-              $url="https://cloud.layer5.io/registration"
+              $url="https://cloud.layer5.io/login"
             />
           )}
           {/* <Button id="book-a-demo" aria-label="Book a demo" secondary className="banner-btn book-a-demo" external={true} title="Book a demo" url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" /> */}
