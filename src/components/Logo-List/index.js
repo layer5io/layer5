@@ -7,21 +7,7 @@ const LogoList = ({ logos, className }) => {
       <ul>
         {logos.map((logo) => (
           <li key={logo.url}>
-            {logo.link ? (
-              <a
-                href={logo.link}
-                target={logo.link.startsWith("http") ? "_blank" : undefined}
-                rel={
-                  logo.link.startsWith("http")
-                    ? "noopener noreferrer"
-                    : undefined
-                }
-              >
-                <img src={logo.url} alt={logo.alt} />
-              </a>
-            ) : (
-              <img src={logo.url} alt={logo.alt} />
-            )}
+            <img src={logo.url} alt={logo.alt} />
           </li>
         ))}
       </ul>
