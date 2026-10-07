@@ -82,6 +82,9 @@ const CookieConsent = () => {
 
   const handleResponse = (response) => {
     localStorage.setItem(STORAGE_KEY, response);
+    if (response === "accepted" && typeof window.initGTM === "function") {
+      window.initGTM();
+    }
     setOpen(false);
   };
 
