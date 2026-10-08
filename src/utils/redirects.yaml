@@ -28,7 +28,7 @@ redirects:
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/learn/service-mesh-labs"
-    toPath: "/learn/kanvas-labs"
+    toPath: "/learn/cloud-native-labs"
     redirectInBrowser: true
     isPermanent: true
   - fromPath: "/meshery"
@@ -227,6 +227,8 @@ redirects:
     toPath: "/cloud-native-management/kanvas/collaborate/peer-reviews"
     redirectInBrowser: true
     isPermanent: true
+  - fromPath: "/learn/cloud-native-labs"
+    toPath: "/learn/kanvas-labs"
   - fromPath: "/cloud-native-management/playground.html"
     toPath: "https://www.kanvas.new"
     redirectInBrowser: true
