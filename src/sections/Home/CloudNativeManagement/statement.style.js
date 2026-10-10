@@ -29,6 +29,10 @@ const BannerSectionWrapper = styled.section`
         padding-right: 0px;
         flex: 0 0 49%;
         max-width: 49%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     h2.statement {
         color: ${props => props.theme.offWhiteColor};
@@ -83,18 +87,22 @@ const BannerSectionWrapper = styled.section`
         font-weight: 600;
     }
     .imgHero {
-        margin: auto;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
         object-fit: cover;
-        width: inherit;
         box-shadow: -0.25rem 0.25rem 1.25rem rgba(0, 0, 0, 0.25);
         border-top-left-radius: 0.5rem;
         border-bottom-left-radius: 0.5rem;
     }
     .vidHero {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 9;
         object-fit: cover;
         position: relative;
-        top: 50%;
-        transform: translate(0, -50%);
         box-shadow: -0.25rem 0.25rem 1.25rem rgba(0, 0, 0, 0.25);
     }
     .section-title {
@@ -175,10 +183,6 @@ const BannerSectionWrapper = styled.section`
         .right-col {
             flex: 0 0 100%;
             max-width: 100%;
-        }
-        .vidHero {
-            height: 25rem !important;
-            transform: translate(0, -52%);
         }
         .join-community {
             text-align: center;
