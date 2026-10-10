@@ -265,7 +265,7 @@ const IntegrationsGrid = ({ category, count }) => {
             const status =
               item.frontmatter.status === "InProgress" ? true : false;
             const integrationIcon = item.frontmatter.integrationIcon.publicURL;
-            const darkModeIntegrationIcon = item.frontmatter.integrationIcon;
+            const darkModeIntegrationIcon = item.frontmatter.darkModeIntegrationIcon;
             if (status) {
               return (
                 <Hexagon
