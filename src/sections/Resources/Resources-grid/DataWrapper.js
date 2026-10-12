@@ -16,6 +16,7 @@ const DataWrapper = (WrappedComponent) => {
       id
       frontmatter {
         title
+        date
         type
         technology
         product
@@ -37,6 +38,7 @@ const DataWrapper = (WrappedComponent) => {
       }
       fields {
         slug
+        dateForSort
       }
     }
   }

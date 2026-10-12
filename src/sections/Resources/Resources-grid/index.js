@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../../../components/Card";
 import { Row, Col } from "../../../reusecore/Layout";
 import Pagination from "./paginate";
@@ -7,14 +7,43 @@ import EmptyResources from "../Resources-error/emptyStateTemplate";
 
 import { ResourcePageWrapper } from "./resourceGrid.style";
 
+const getTime = (node) => {
+  const t = new Date(node.fields?.dateForSort).getTime();
+  return Number.isNaN(t) || t <= 0 ? null : t;
+};
+
 const ResourceGrid = (props) => {
+  const hasQuery = Boolean(props.searchQuery);
+  const [choice, setChoice] = useState(null);
+  const effectiveSort =
+    choice && choice.hasQuery === hasQuery
+      ? choice.value
+      : hasQuery
+        ? "relevance"
+        : "latest";
+
+  const sortResources = (nodes) => {
+    if (effectiveSort === "relevance") return nodes;
+
+    const direction = effectiveSort === "oldest" ? 1 : -1;
+    return nodes.slice().sort((a, b) => {
+      const ta = getTime(a);
+      const tb = getTime(b);
+      if (ta === null && tb === null) return 0;
+      if (ta === null) return 1;
+      if (tb === null) return -1;
+      return direction * (ta - tb);
+    });
+  };
+
   // Get current posts
   const indexOfLastPost = props.currentPage * props.postsPerPage;
   const indexOfFirstPost = indexOfLastPost - props.postsPerPage;
+  const sortedData = sortResources(props.data);
   const searchedResource =
     props.postsPerPage > 0
-      ? props.data.slice(indexOfFirstPost, indexOfLastPost)
-      : props.data;
+      ? sortedData.slice(indexOfFirstPost, indexOfLastPost)
+      : sortedData;
 
   const paginate = (pageNumber) => {
     props.setCurrentPage(pageNumber);
@@ -29,6 +58,23 @@ const ResourceGrid = (props) => {
     <ResourcePageWrapper>
       <div className="resource-grid-wrapper">
         <div className="search">
+          <div className="sortBox">
+            <select
+              className="sortDropdown"
+              aria-label="Sort by"
+              value={effectiveSort}
+              onChange={(e) => {
+                setChoice({ value: e.target.value, hasQuery });
+                props.setCurrentPage(1);
+              }}
+            >
+              <option value="latest">Latest</option>
+              <option value="oldest">Oldest</option>
+              <option value="relevance" disabled={!hasQuery}>
+                Relevance
+              </option>
+            </select>
+          </div>
           <div className="searchBox">
             <SearchBox
               searchQuery={props.searchQuery}
@@ -78,5 +124,4 @@ const ResourceGrid = (props) => {
     </ResourcePageWrapper>
   );
 };
-
 export default ResourceGrid;
