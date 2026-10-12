@@ -77,6 +77,10 @@ const CommunitySectionWrapper = styled.div`
             margin: auto 3rem;
             align-items: center;
 
+            @media (max-width: 991px) {
+                flex-wrap: wrap;
+            }
+
             @media (max-width: 650px) {
                 margin: auto 1.25rem;
             }
@@ -208,6 +212,9 @@ const CommunitySectionWrapper = styled.div`
     }
 
     .newcomers-section {
+        @media (max-width: 991px) {
+            flex-wrap: wrap;
+        }
         width:100%;
         margin: 5rem 0;
         padding: 2rem 0;
