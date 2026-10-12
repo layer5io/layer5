@@ -7,13 +7,14 @@ import { Categories } from "./cta_fullwidth_categories";
 const CTA_FullWidthWrapper = styled.div`
     display: flex;
     flex: 0 0 100%;
-    width: 98%;
-    height: 16rem;
+    width: 100%;
+    min-height: 16rem;
     margin: 1.5rem auto;
-    padding: 1rem; /* FIX: Added padding to improve CTA spacing */
-    box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.08);
     border-radius: 0.5rem;
     background: rgba(201, 252, 246, 0.3);
+    overflow: hidden;
+    box-sizing: border-box;
 
     a {
         display: block;
@@ -21,7 +22,9 @@ const CTA_FullWidthWrapper = styled.div`
 
     img {
         width: 16rem;
-        height: 16rem;
+        min-width: 16rem;
+        height: 100%;
+        min-height: 16rem;
         object-fit: cover;
         pointer-events: none;
         border-radius: 0.5rem 0 0 0.5rem;
@@ -61,19 +64,21 @@ const CTA_FullWidthWrapper = styled.div`
         }
     }
 
-    @media screen and (max-width: 699px) {
+    @media screen and (max-width: 768px) {
         display: flex;
         flex-direction: column;
-        width: 18rem;
+        width: 100%;
         height: auto;
         margin: 1.5rem auto;
         border-radius: 0.25rem;
 
         img {
             width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 0.25rem 0.25rem 0 0;
+            height: 14rem;
+            min-height: 14rem;
+            object-fit: contain;
+            border-radius: 0.5rem 0.5rem 0 0;
+            padding-top: 1rem;
         }
 
         .cta-content {
@@ -92,7 +97,7 @@ const CTA_FullWidthWrapper = styled.div`
             }
 
             p {
-                color: white;
+                margin-bottom: 1rem;
             }
             
             a {
