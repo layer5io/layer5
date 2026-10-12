@@ -82,6 +82,13 @@ const CookieConsent = () => {
 
   const handleResponse = (response) => {
     localStorage.setItem(STORAGE_KEY, response);
+
+    window.dispatchEvent(
+      new CustomEvent("cookie-consent-changed", {
+        detail: response,
+      }),
+    );
+
     setOpen(false);
   };
 
