@@ -14,7 +14,7 @@ Approved categories and tags are parsed from references/tags-categories.md so
 that file stays the single source of truth, and CATEGORY_TONE in
 mesh_palette.py is cross-checked against it.
 
-Scope: this gates posts *this skill writes*. Run across the existing 118-post
+Scope: this gates posts *this skill writes*. Run across the existing 119-post
 archive it flags 116 of them, overwhelmingly for structural conventions that
 postdate the posts (`intro`/`outro` wrappers, a required Blockquote and CTA)
 and for tags predating the approved list. That is expected and is not a backlog
@@ -32,6 +32,13 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import mesh_palette as palette
+from generate_hero_image import (
+    fit_subtitle,
+    fit_title,
+    pick,
+    post_seed,
+    text_column_width,
+)
 
 SKILL_ROOT = Path(__file__).resolve().parent.parent
 TAXONOMY = SKILL_ROOT / "references" / "tags-categories.md"
@@ -83,13 +90,64 @@ URL_RE = re.compile(r"https?://\S+|\b[\w.-]+\.(?:io|com|org|dev|sh|net)\b(?:/\S*
 # `assets/images/meshery/...`). Brand rules must never see them.
 ATTR_RE = re.compile(r"""[\w-]+=\{?["'][^"']*["']\}?""")
 IMPORT_RE = re.compile(r"^\s*import\s")
+# Visible text of a link that repeats the href's own slug
+# (`<a href="https://github.com/meshery/meshery">meshery/meshery</a>`) is a
+# repo or org name and correctly lowercase. Prose link text ("Meshery Designs")
+# is still brand-checked.
+ANCHOR_RE = re.compile(
+    r"""<a\s+[^>]*?href=["']([^"']+)["'][^>]*>(.*?)</a>""", re.I
+)
+# JSX attributes whose values are user-visible prose, not routes or file paths.
+# ATTR_RE blanks every attribute value; these are extracted first and checked
+# as prose instead, or brand errors in the most prominent copy on the page
+# (Blockquote quotes, CTA headings, image alt text) pass silently.
+TEXT_ATTR_RE = re.compile(
+    r"""\b(?:quote|heading|content|alt|title)=\{?["']([^"']*)["']\}?"""
+)
+FRONTMATTER_PROSE_RE = re.compile(r"^(title|subtitle|description)\s*:")
+INTRO_RE = re.compile(r'<div\s+className="intro"')
+OUTRO_RE = re.compile(r'<div\s+className="outro"')
+BLOCKQUOTE_RE = re.compile(r"<Blockquote(?=[\s>/])")
+CTA_RE = re.compile(r"<(?:CTA_FullWidth|KanvasCTA)(?=[\s>/])")
+JSX_COMMENT_RE = re.compile(r"\{/\*.*?\*/\}")
+
+
+def mask_repo_link_text(line):
+    """Blank slug link text (`>meshery/meshery</a>`) so brand rules skip it."""
+    def repl(match):
+        text = match.group(2)
+        if not text.strip():
+            return match.group(0)
+        path = re.sub(r"^https?://[^/]+", "", match.group(1).lower()).rstrip("/")
+        slugs = [s for s in path.split("/") if s]
+        lowered = text.strip().lower()
+        is_slug = "/" in text.strip() and lowered in match.group(1).lower()
+        is_slug = is_slug or (bool(slugs) and lowered == slugs[-1])
+        is_slug = is_slug or (len(slugs) >= 2 and lowered == "/".join(slugs[-2:]))
+        if not is_slug:
+            return match.group(0)
+        full = match.group(0)
+        start, end = match.span(2)
+        offset = match.start()
+        return full[:start - offset] + " " + full[end - offset:]
+    return ANCHOR_RE.sub(repl, line)
+
+
+def text_attr_values(line):
+    """User-visible prose carried in JSX attributes (quote, alt, ...)."""
+    values = []
+    for match in TEXT_ATTR_RE.finditer(line):
+        value = INLINE_CODE_RE.sub(" ", match.group(1))
+        values.append(URL_RE.sub(" ", value))
+    return values
 
 
 def mask_prose(line):
-    """Blank out code, URLs, and attribute values so brand rules see only prose."""
+    """Blank out code, URLs, slugs, and attribute values so brand rules see only prose."""
     if IMPORT_RE.match(line):
         return ""
     masked = INLINE_CODE_RE.sub(" ", line)
+    masked = mask_repo_link_text(masked)
     masked = ATTR_RE.sub(" ", masked)
     return URL_RE.sub(" ", masked)
 
@@ -209,15 +267,48 @@ def check(path):
             flag(order.get("tags", 1),
                  f"tag '{tag}' is not in references/tags-categories.md{hint}")
 
-    body = "\n".join(lines[fm_end + 1:]) if fm_end else text
-    for required, label in [
-        ('<div className="intro">', 'opening lede wrapped in <div className="intro">'),
-        ('<div className="outro">', 'closing next-steps wrapped in <div className="outro">'),
-        ("<Blockquote", "at least one <Blockquote>"),
+    title = fields.get("title")
+    if title:
+        # The hero bakes the title/subtitle into pixels with room for 3/2
+        # lines. The generator warns when it drops words; the linter fails,
+        # using the same fit helpers so the two cannot disagree.
+        seed = post_seed(str(title))
+        layout = pick(palette.LAYOUTS, seed, "layout")
+        column = text_column_width(layout)
+        _, _, dropped = fit_title(str(title), column)
+        if dropped:
+            flag(order.get("title", 1),
+                 f"title is too long for the hero image (dropped "
+                 f"'{' '.join(dropped)}'); shorten it to ~60 characters")
+        subtitle = fields.get("subtitle")
+        if subtitle:
+            _, sub_dropped = fit_subtitle(str(subtitle), column)
+            if sub_dropped:
+                flag(order.get("subtitle", 1),
+                     f"subtitle is too long for the hero image (dropped "
+                     f"'{' '.join(sub_dropped)}'); shorten it")
+
+    # Structural elements must be real markup, not samples inside a fenced code
+    # block or a JSX comment, and the intro/outro match tolerates extra
+    # attributes (`<div className="intro" id="lede">` is still a lede).
+    raw_body = lines[fm_end + 1:] if fm_end else lines
+    in_code = False
+    prose_lines = []
+    for body_line in raw_body:
+        if FENCE_RE.match(body_line):
+            in_code = not in_code
+            continue
+        if not in_code:
+            prose_lines.append(JSX_COMMENT_RE.sub(" ", body_line))
+    body = "\n".join(prose_lines)
+    for pattern, label in [
+        (INTRO_RE, 'opening lede wrapped in <div className="intro">'),
+        (OUTRO_RE, 'closing next-steps wrapped in <div className="outro">'),
+        (BLOCKQUOTE_RE, "at least one <Blockquote>"),
     ]:
-        if required not in body:
+        if not pattern.search(body):
             flag(fm_end + 1, f"missing {label}")
-    if "<CTA_FullWidth" not in body and "<KanvasCTA" not in body:
+    if not CTA_RE.search(body):
         flag(fm_end + 1, "missing a call to action (<CTA_FullWidth> or <KanvasCTA>)")
 
     # The blog template renders `thumbnail` above the title, so a body image of
@@ -260,12 +351,15 @@ def check(path):
         if re.search(r"<[A-Za-z][^>]*\sclass=", line):
             flag(i, "JSX uses class=; React requires className=")
 
-        # Frontmatter carries deliberately lowercase tags and paths.
+        # Frontmatter tags, paths, and identifiers are deliberately
+        # lowercase, but title/subtitle/description are prose and carry brands.
         if fm_end and i <= fm_end + 1:
-            continue
+            if not FRONTMATTER_PROSE_RE.match(line.strip()):
+                continue
         prose = mask_prose(line)
+        candidates = [prose] + text_attr_values(line)
         for wrong, right in BRAND_RE:
-            if wrong.search(prose):
+            if any(wrong.search(candidate) for candidate in candidates):
                 flag(i, f"brand capitalization: use '{right}'")
 
     return sorted(findings)
