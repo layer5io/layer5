@@ -14,11 +14,18 @@ export const ComponentsWrapper = styled.div`
   }
 
   .componentsSection {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
     gap: 1.5rem;
     padding: 3rem 2rem 5rem 2rem;
-    justify-content: center;
+
+    @media (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (width > 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   .componentimg {
@@ -47,8 +54,6 @@ export const ComponentsWrapper = styled.div`
     padding: 0.85rem 1.25rem;
     border-radius: 0.85rem;
     width: 100%;
-    flex: 1 1 360px;
-    max-width: 400px;
     min-height: 72px;
   }
 
@@ -59,5 +64,7 @@ export const ComponentsWrapper = styled.div`
     line-height: 1.25;
     text-transform: uppercase;
     word-break: break-word;
+    width: 100%;
+    transition: all 0.1s ease-in-out;
   }
 `;
