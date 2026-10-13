@@ -1,5 +1,5 @@
 import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
-import React from "react";
+import React, { useId, useRef } from "react";
 import { SearchWrapper } from "./searchbox.style";
 import Button from "../../reusecore/Button";
 import { DebounceInput } from "react-debounce-input";
@@ -15,11 +15,25 @@ const SearchBox = ({
   focusSearch,
   ariaLabel,
   "aria-label": aria_label,
-  id = "search",
-  name = "search",
-  autoComplete = "off",
+  id,
+  name,
+  autoComplete,
+  onSearchClick,
 }) => {
+  const generatedId = useId();
+  const inputId = id || generatedId;
+  const inputName = name || id || "search";
   const accessibleLabel = ariaLabel || aria_label || "Search";
+  const inputRef = useRef(null);
+
+  const handleSearchClick = (e) => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+    if (onSearchClick) {
+      onSearchClick(e);
+    }
+  };
 
   const handleChange = (e) => {
     if (hideFilter != undefined && setHideFilter != undefined) {
@@ -43,8 +57,8 @@ const SearchBox = ({
     <SearchWrapper>
       <div className={`search-box ${classnames ? classnames.join(" ") : ""}`}>
         <DebounceInput
-          id={id}
-          name={name}
+          id={inputId}
+          name={inputName}
           type="text"
           value={searchQuery}
           minLength={1}
@@ -54,9 +68,10 @@ const SearchBox = ({
           autoFocus={focusSearch}
           aria-label={accessibleLabel}
           autoComplete={autoComplete}
+          inputRef={inputRef}
         />
-        <Button type="button" aria-label="Search">
-          <FaSearch />
+        <Button type="button" aria-label="Search" onClick={handleSearchClick}>
+          <FaSearch aria-hidden="true" />
         </Button>
       </div>
     </SearchWrapper>
