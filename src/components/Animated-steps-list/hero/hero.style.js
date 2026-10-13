@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { CopyButton, LineNo, Pre } from "../../CodeBlock";
 
 export const HeroWrapper = styled.div`
   h1 {
@@ -48,28 +49,27 @@ export const HeroWrapper = styled.div`
       }
     }
 
-    .code{
-      pre{
-        width: inherit;
-        margin: auto;
+    .code {
+      ${Pre} {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 6rem;
 
-        button {
-          top: 1rem;
-        }
-
-        pre {
-          display: flex;
-          height: 6rem;
-          align-items: center;
-          padding: 1rem 0.5rem 0.5rem;
-
-          @media screen and (max-width: 850px) {
-            height: 4.5rem;
-          }
+        @media screen and (max-width: 850px) {
+          height: 4.5rem;
         }
       }
-      .token-line > span:first-of-type{
+
+      ${LineNo} {
         display: none;
+      }
+
+      /* A single command centered in a tall panel: center the button on
+         that line, as the default placement does for a first line. */
+      ${CopyButton} {
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
   }

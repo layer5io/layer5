@@ -1,30 +1,41 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { copyToClipboard } from "../CodeBlock/copy-to-clipboard";
 import { Box, CustomTooltip } from "@sistent/sistent";
 
+const COPY_FEEDBACK_MS = 2000;
+
 const CopyValue = ({ copyValue }) => {
-  const [copyState, setCopyState] = useState({
-    isCopied: false
-  });
+  // "idle" | "copied" | "failed"
+  const [copyState, setCopyState] = useState("idle");
+  const resetTimer = useRef(null);
+
+  useEffect(() => () => clearTimeout(resetTimer.current), []);
 
   const handleCopy = useCallback(async () => {
-    await copyToClipboard(copyValue);
+    let result = "copied";
+    try {
+      await copyToClipboard(copyValue);
+    } catch (error) {
+      console.error("CopyValue: failed to copy value to clipboard", error);
+      result = "failed";
+    }
 
-    setCopyState({
-      isCopied: true,
-    });
-
-    setTimeout(() => {
-      setCopyState({
-        isCopied: false,
-      });
-    }, 2000);
+    setCopyState(result);
+    clearTimeout(resetTimer.current);
+    resetTimer.current = setTimeout(
+      () => setCopyState("idle"),
+      COPY_FEEDBACK_MS,
+    );
   }, [copyValue]);
 
+  const isCopied = copyState === "copied";
 
   const getTooltipTitle = () => {
-    if (copyState.isCopied) {
+    if (copyState === "copied") {
       return "Copied";
+    }
+    if (copyState === "failed") {
+      return "Copy failed";
     }
     return "Click to copy to clipboard";
   };
@@ -66,7 +77,7 @@ const CopyValue = ({ copyValue }) => {
             borderColor: (theme) => theme.palette.primary.main,
             boxShadow: "none",
           },
-          ...(copyState.isCopied && {
+          ...(isCopied && {
             borderColor: (theme) => theme.palette.primary.main,
             backgroundColor: (theme) => theme.palette.action.hover,
           }),

@@ -7,7 +7,14 @@ import ContextVisuals1 from "../../../../../assets/images/app/projects/sistent/c
 import ContextVisuals2 from "../../../../../assets/images/app/projects/sistent/context-visuals-2.webp";
 import ContextVisuals3 from "../../../../../assets/images/app/projects/sistent/context-visuals-3.webp";
 import ContextVisuals4 from "../../../../../assets/images/app/projects/sistent/context-visuals-4.webp";
-import { useTheme, Tooltip, Snackbar, IconButton, styled, NoSsr } from "@sistent/sistent";
+import {
+  useTheme,
+  Tooltip,
+  Snackbar,
+  IconButton,
+  styled,
+  NoSsr,
+} from "@sistent/sistent";
 import { SistentLayout } from "../../sistent-layout";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
@@ -301,16 +308,18 @@ const SistentIdentityColor = () => {
           <p>
             There is an alternate relationship between the layer hierarchy in
             both light and dark themes:
-            <ul>
-              <li>
-                In the light theme, as layers are stacked towards the topmost
-                surface, they become progressively darker.
-              </li>
-              <li>
-                In the dark theme, as layers are stacked towards the topmost
-                surface, they become progressively lighter.
-              </li>
-            </ul>
+          </p>
+          <ul>
+            <li>
+              In the light theme, as layers are stacked towards the topmost
+              surface, they become progressively darker.
+            </li>
+            <li>
+              In the dark theme, as layers are stacked towards the topmost
+              surface, they become progressively lighter.
+            </li>
+          </ul>
+          <p>
             This means, in effect, that while there is a fine blend of surfaces
             on any given UI theme, there is also strict adherence to
             accessibility guidelines and recommendations.
