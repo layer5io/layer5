@@ -207,17 +207,18 @@ section{
 /* Modal styling needs to be applied to the global CSS */
 
 .Modal {
-    position: absolute;
-    inset: 50% auto -45% 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
     border: 1px solid rgb(204, 204, 204);
     background: ${(props) => props.theme.body};
     border-radius: 0.5rem;
-    padding: 20px;
-    margin-right: -50%;
+    padding: 1.25rem;
     transform: translate(-50%, -50%);
-    max-width: 50rem;
-    max-height: 40rem;
-    overflow-y: hidden;
+    width: min(50rem, calc(100vw - 2rem));
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 
     &:focus:not(:focus-visible) {
         outline: none;
@@ -251,8 +252,12 @@ section{
     overflow-y: auto;
 }
 
+.modal-open {
+    overflow: hidden !important;
+}
+
 .contact-form {
-    margin: auto -1rem;
+    width: 100%;
 }
 
 .teaser-modal {
@@ -260,10 +265,13 @@ section{
 }
 
 .form-frame {
-    height: 36rem;
-    width: 35rem;
+    display: block;
+    width: 100%;
+    max-width: 35rem;
+    height: min(36rem, 70vh);
+    min-height: 20rem;
+    margin: 0 auto;
     border: none;
-    overflow: hidden;
 }
 
 /* Modal CSS Ends */
@@ -293,14 +301,17 @@ section{
 }
 @media screen and (max-width: 765px) {
     .form-frame {
-        width: 25rem;
-        height: 30rem;
+        height: min(30rem, 70vh);
     }
 }
 @media screen and (max-width: 500px) {
+    .Modal {
+        width: calc(100vw - 1rem);
+        padding: 1rem;
+    }
+
     .form-frame {
-        width: 22rem;
-        height: 26rem;
+        height: min(26rem, 70vh);
     }
 }
 
