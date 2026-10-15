@@ -90,8 +90,7 @@ const ComponentsGrid = ({ frontmatter }) => {
     <ComponentsWrapper>
       <section className="heading">
         <h1>
-          {frontmatter?.title} Components (
-          {frontmatter?.components?.length || 0})
+          {frontmatter?.title} Components ({validComponents.length})
         </h1>
       </section>
 
