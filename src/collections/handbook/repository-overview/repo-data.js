@@ -12,8 +12,10 @@ import linkerdLogo from "../../../assets/images/service-mesh-icons/linkerd.svg";
 import consulLogo from "../../../assets/images/service-mesh-icons/consul.svg";
 import kumaLogo from "../../../assets/images/service-mesh-icons/kuma.svg";
 import nsmLogo from "../../../assets/images/service-mesh-icons/nsm.svg";
+import nginxLogo from "../../../assets/images/service-mesh-icons/nginx-service-mesh.svg";
 import traefikLogo from "../../../assets/images/service-mesh-icons/traefik.svg";
 import smiLogo from "../../../assets/images/service-mesh-icons/service-mesh-interface/icon/color/servicemeshinterface-icon-color.svg";
+import appmeshLogo from "../../../assets/images/service-mesh-icons/aws-app-mesh.svg";
 import ciliumLogo from "../../../assets/images/service-mesh-icons/cilium.svg";
 import wasm from "../../../assets/images/webassembly/webssembly_icon.svg";
 import recognitionLogo from "../../../assets/images/recognition-program/recognition-program.webp";
@@ -582,6 +584,47 @@ export const repo_data = [
         link: ["https://layer5.io/community/members/hussaina-begum"],
         description: "Meshery adapter for management of Consul",
         repository: "https://github.com/layer5io/meshery-consul",
+      },
+      {
+        project: "Meshery Adapter for CPX",
+        image: meshery,
+        language: "Golang, gRPC",
+        maintainers_name: ["Vacant"],
+        link: ["#"],
+        description: "Meshery adapter for management of Citrix CPX",
+        repository: "https://github.com/layer5io/meshery-cpx",
+        accessRequired: "*archived",
+      },
+      {
+        project: "Meshery Adapter for App Mesh",
+        image: appmeshLogo,
+        language: "Golang, gRPC",
+        maintainers_name: ["Antonette Caldwell"],
+        link: ["https://layer5.io/community/members/antonette-caldwell"],
+        description: "Meshery adapter for management of AWS App Mesh",
+        repository: "https://github.com/layer5io/meshery-app-mesh",
+        accessRequired: "*archived",
+      },
+      {
+        project: "Meshery Adapter for Tanzu Service Mesh",
+        image: meshery,
+        language: "Golang, gRPC",
+        maintainers_name: ["Hussaina Begum"],
+        link: ["https://layer5.io/community/members/hussaina-begum"],
+        description:
+          "Meshery adapter for management of VMware Tanzu Service Mesh",
+        repository: "https://github.com/layer5io/meshery-tanzu-sm",
+        accessRequired: "*archived",
+      },
+      {
+        project: "Meshery Adapter for NGINX Service Mesh",
+        image: nginxLogo,
+        language: "Golang, gRPC",
+        maintainers_name: ["Hussaina Begum"],
+        link: ["https://layer5.io/community/members/hussaina-begum"],
+        description: "Meshery adapter for management of NGINX Service Mesh",
+        repository: "https://github.com/layer5io/meshery-nginx-sm",
+        accessRequired: "*archived",
       },
       {
         project: "Meshery Adapter for Cilium Service Mesh",
