@@ -36,6 +36,10 @@ const ResourceGrid = (props) => {
               paginate={paginate}
               currentPage={props.currentPage}
               focusSearch={true}
+              ariaLabel="Search resources"
+              id="resource-search"
+              name="resource-search"
+              autoComplete="off"
             />
           </div>
         </div>
