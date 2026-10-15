@@ -115,11 +115,17 @@ const ComponentsGrid = ({ frontmatter }) => {
     };
   }, [frontmatter, darkModeActive, fallbackIcon]);
 
+  const handleImageError = (indexToRemove) => {
+    setValidComponents((prev) =>
+      prev.filter((_, idx) => idx !== indexToRemove),
+    );
+  };
+
   return (
     <ComponentsWrapper>
       <section className="heading">
         <h1>
-          {frontmatter?.title} Components ({candidateComponents.length})
+          {frontmatter?.title} Components ({validComponents.length})
         </h1>
       </section>
 
@@ -128,7 +134,14 @@ const ComponentsGrid = ({ frontmatter }) => {
           <div key={`${item.name}-${index}`} className="maincontainer">
             <div className="componentimg">
               {item.preferredIcon && (
-                <img src={item.preferredIcon} alt={item.name || ""} />
+                <img
+                  src={item.preferredIcon}
+                  alt={item.name || ""}
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    handleImageError(index);
+                  }}
+                />
               )}
             </div>
             <p className="items">{item.name?.replaceAll("-", " ") || ""}</p>
