@@ -75,7 +75,7 @@
   "80a9d3982dca3926a6107b8971bacf1a47d29dfc.js": "80a9d3982dca3926a6107b8971bacf1a47d29dfc-87d49ddd364285723b31.js",
   "80af7d76.js": "80af7d76-602b971a27846ebec73a.js",
   "80c559396c3b7def5a97b9a9476701c73e9f1c2e.js": "80c559396c3b7def5a97b9a9476701c73e9f1c2e-3489056519e8d1fac484.js",
-  "83231-c736e6cfdab33d7f91b7.js": "83231-c736e6cfdab33d7f91b7.js",
+  "83231-990857316e12a335deaf.js": "83231-990857316e12a335deaf.js",
   "83566-aaac44cfffe07aeb9fd9.js": "83566-aaac44cfffe07aeb9fd9.js",
   "83c499d522934ddaa1dd1d0fc07d5e41bc83d162.js": "83c499d522934ddaa1dd1d0fc07d5e41bc83d162-95e6bacd9a279163e35d.js",
   "84467-92f5535693b0476be108.js": "84467-92f5535693b0476be108.js",
@@ -110,8 +110,8 @@
   "ac581ebe.js": "ac581ebe-d8f297aa0b7917a0edd2.js",
   "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff.js": "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff-a49d57499f0546cd498e.js",
   "afc8cc2614d8655b8140f9da9c5b9896b3b56bc4.js": "afc8cc2614d8655b8140f9da9c5b9896b3b56bc4-05bd35234b3b7bf82881.js",
-  "app-002edf6c3d987812de7f.js.LICENSE.txt": "app-002edf6c3d987812de7f.js.LICENSE.txt",
-  "app.js": "app-002edf6c3d987812de7f.js",
+  "app-443a331cdf81c73399e1.js.LICENSE.txt": "app-443a331cdf81c73399e1.js.LICENSE.txt",
+  "app.js": "app-443a331cdf81c73399e1.js",
   "b3a4868e3083275025dca472f7350001ee397eb9.js": "b3a4868e3083275025dca472f7350001ee397eb9-50ba4a0c2fdc58b62801.js",
   "b5f6012b.js": "b5f6012b-0d788a08c9a6ff5be2b5.js",
   "b86f5c214c12e4ff0a2572240ee8191e9020f93a.js": "b86f5c214c12e4ff0a2572240ee8191e9020f93a-aab9a0b2cdb7ee4a4f71.js",
@@ -122,7 +122,7 @@
   "be8468a7f31feaa6d37ce23e9b25e80115261bb4.js": "be8468a7f31feaa6d37ce23e9b25e80115261bb4-1a56ea0b601630d5a9ce.js",
   "c2bcf2fcb9cc985e567e340450119f2a9cad74ae.js": "c2bcf2fcb9cc985e567e340450119f2a9cad74ae-51b972dfbeeb1c8a8849.js",
   "c50bacb0.js": "c50bacb0-00b6cd00424e14aa3d4f.js",
-  "c9337368e48764e692368073b1ce7ff9e6d25e63.js": "c9337368e48764e692368073b1ce7ff9e6d25e63-74f0f391c24f440f5ca0.js",
+  "c9337368e48764e692368073b1ce7ff9e6d25e63.js": "c9337368e48764e692368073b1ce7ff9e6d25e63-800d271f71f7ea2087dd.js",
   "catalog.png": "static/catalog-1a65561af4fcb4d8f51b2c10e4406216.png",
   "cb24a44fe9306554c9a53ab3776539c436724304.js": "cb24a44fe9306554c9a53ab3776539c436724304-76e6ab6bfc7220a8a59e.js",
   "cdfd8999.js": "cdfd8999-f3806a357cabced23c29.js",
@@ -2116,5 +2116,5 @@
   "static/yash-sharma.webp": "static/yash-sharma-54aa26b6e5743f0557cfc76aa9797f2d.webp",
   "static/yogi.webp": "static/yogi-d00ca1cc48ab74938a23d4359ef3fb01.webp",
   "styles.css": "styles.1c6ee23e715f3d2a0437.css",
-  "webpack-runtime.js": "webpack-runtime-d7f074d2c9ec243011b5.js"
+  "webpack-runtime.js": "webpack-runtime-ce9cb3e42650354dc8da.js"
 }
