@@ -1,56 +1,107 @@
 import React, { useEffect, useState } from "react";
 import { ComponentsWrapper } from "./Component.style";
 import { checkImageUrlValidity } from "../../../../utils/imageValidate";
+import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
+
+const getFallbackIcon = (frontmatter, isDark) => {
+  if (isDark) {
+    return (
+      frontmatter?.darkModeIntegrationIcon?.publicURL ||
+      frontmatter?.integrationIcon?.publicURL ||
+      frontmatter?.integrationIcon_svg?.publicURL ||
+      ""
+    );
+  }
+  return (
+    frontmatter?.integrationIcon?.publicURL ||
+    frontmatter?.integrationIcon_svg?.publicURL ||
+    frontmatter?.darkModeIntegrationIcon?.publicURL ||
+    ""
+  );
+};
 
 const ComponentsGrid = ({ frontmatter }) => {
-  const components = frontmatter.components.map((component) => {
-    const { name, colorIcon } = component; // currently we don't have description for components
-    return { name, colorIcon };
-  });
+  const { isDark } = useStyledDarkMode();
   const [validComponents, setValidComponents] = useState([]);
+
+  const fallbackIcon = getFallbackIcon(frontmatter, isDark);
+
   useEffect(() => {
-    const fetchData = async () => {
-      const promises = components.map(async (item) => {
-        const isSvgPathValid = await checkImageUrlValidity(
-          item.colorIcon.publicURL
-        );
-        if (isSvgPathValid) {
-          return item;
-        } else {
-          item.colorIcon.publicURL = frontmatter.integrationIcon.publicURL;
-          return item; // Return fallback image
+    let isMounted = true;
+
+    const loadComponents = async () => {
+      let isFallbackValid = null;
+      const checkFallback = async () => {
+        if (!fallbackIcon) return false;
+        if (isFallbackValid === null) {
+          isFallbackValid = await checkImageUrlValidity(fallbackIcon);
         }
+        return isFallbackValid;
+      };
+
+      const components = frontmatter?.components || [];
+
+      const promises = components.map(async (component) => {
+        const primaryIcon = isDark
+          ? component.whiteIcon?.publicURL
+          : component.colorIcon?.publicURL;
+        const alternateIcon = isDark
+          ? component.colorIcon?.publicURL
+          : component.whiteIcon?.publicURL;
+
+        if (primaryIcon && (await checkImageUrlValidity(primaryIcon))) {
+          return {
+            name: component.name,
+            icon: primaryIcon,
+          };
+        }
+
+        if (fallbackIcon && (await checkFallback())) {
+          return {
+            name: component.name,
+            icon: fallbackIcon,
+          };
+        }
+
+        if (alternateIcon && (await checkImageUrlValidity(alternateIcon))) {
+          return {
+            name: component.name,
+            icon: alternateIcon,
+          };
+        }
+
+        return null;
       });
 
-      const validItems = await Promise.all(promises);
-      // Filter out null values (items that are not valid)
-      const filteredValidComponents = validItems.filter(
-        (item) => item !== null
-      );
-
-      setValidComponents(filteredValidComponents);
+      const results = await Promise.all(promises);
+      if (isMounted) {
+        setValidComponents(results.filter(Boolean));
+      }
     };
 
-    fetchData();
-  }, []);
+    loadComponents();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [frontmatter, isDark, fallbackIcon]);
 
   return (
     <ComponentsWrapper>
       <section className="heading">
         <h1>
-          {frontmatter.title} Components ({components.length})
+          {frontmatter?.title} Components (
+          {frontmatter?.components?.length || 0})
         </h1>
       </section>
 
       <section className="componentsSection">
-        {validComponents.map((item) => (
-          <div key={item.id} className="maincontainer">
+        {validComponents.map((item, index) => (
+          <div key={`${item.name}-${index}`} className="maincontainer">
             <div className="componentimg">
-              <img src={item.colorIcon.publicURL} alt={item.name} />
+              <img src={item.icon} alt={item.name || ""} />
             </div>
-            <p className="items">{item.name.replaceAll("-", " ")}</p>
-            {/* <div className="textcontent">
-            </div> */}
+            <p className="items">{item.name?.replaceAll("-", " ") || ""}</p>
           </div>
         ))}
       </section>
