@@ -81,4 +81,3 @@ jobs:
             public/
             pr-meta/
           if-no-files-found: error
-          retention-days: 7
