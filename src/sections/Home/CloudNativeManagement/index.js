@@ -83,12 +83,11 @@ const BannerDefault = () => {
                   style={{ fontSize: "24px" }}
                 />
               }
-              width="auto"
+              width="100%"
               height="100%"
-              style={{ margin: "auto" }}
+              style={{ margin: "auto", maxWidth: "100%" }}
               className="vidHero"
-            >
-            </ReactPlayer>
+            />
           </Col>
         </Row>
       </div>
