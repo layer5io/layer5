@@ -99,6 +99,11 @@ const FeatureWrapper = styled.div`
           padding-right: 25px;
         }
       }
+      .link {
+        @media (max-width: 767px) {
+          text-align: center;
+        }
+      }
     }
     .catalog-image {
       display: flex;
@@ -136,14 +141,13 @@ const FeatureWrapper = styled.div`
             max-width: 90%;
             margin-bottom: 2rem;
           }
-        } 
+        }
       }
     }
   }
 `;
 
 const Feature = () => {
-
   const { isDark } = useStyledDarkMode();
 
   return (
@@ -159,20 +163,31 @@ const Feature = () => {
           <Col md={6} className="catalog-detail">
             <h2 className="heading">Kanvas Designer</h2>
             <p className="caption">
-            Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components.
+              Drag-and-drop your cloud native infrastructure using a palette of
+              thousands of versioned Kubernetes components.
             </p>
-            <Link className="link" href="/cloud-native-management/kanvas/design">Learn more &rarr;</Link>
+            <Link
+              className="link"
+              href="/cloud-native-management/kanvas/design"
+            >
+              Learn more &rarr;
+            </Link>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={6} className="catalog-detail">
-            <h2 className="heading">
-            Kanvas Operator
-            </h2>
+            <h2 className="heading">Kanvas Operator</h2>
             <p className="caption">
-            Deploy designs, apply patterns, manage and operate your deployments in real-time. Bring all your Kubernetes clusters under a common point of management.
+              Deploy designs, apply patterns, manage and operate your
+              deployments in real-time. Bring all your Kubernetes clusters under
+              a common point of management.
             </p>
-            <Link className="link" href="/cloud-native-management/kanvas/visualize">Learn more &rarr;</Link>
+            <Link
+              className="link"
+              href="/cloud-native-management/kanvas/visualize"
+            >
+              Learn more &rarr;
+            </Link>
           </Col>
           <Col md={6} className="diagram-image">
             <div className="image-wrapper">
@@ -183,15 +198,22 @@ const Feature = () => {
         <Row className="catalog">
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
-              <img src={isDark ? CatalogsDark : CatalogsLight} className="calalog-image" />
+              <img
+                src={isDark ? CatalogsDark : CatalogsLight}
+                className="calalog-image"
+              />
             </div>
           </Col>
           <Col md={6} className="catalog-detail">
             <h2 className="heading">Cloud Native Catalog</h2>
             <p className="caption">
-            Discover and use top-quality patterns and conventions as templates for your cloud native infrastructure and save time with design patterns.
+              Discover and use top-quality patterns and conventions as templates
+              for your cloud native infrastructure and save time with design
+              patterns.
             </p>
-            <Link className="link" href="/cloud-native-management/catalog">Learn more &rarr;</Link>
+            <Link className="link" href="/cloud-native-management/catalog">
+              Learn more &rarr;
+            </Link>
           </Col>
         </Row>
       </Container>
