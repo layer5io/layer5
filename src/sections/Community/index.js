@@ -202,7 +202,12 @@ const CommunityPage = () => {
           </Row>
         </Container>
         <Container>
-          <Row className="newcomers-section">
+          <Row
+            style={{
+              flexWrap: "wrap",
+            }}
+            className="newcomers-section"
+          >
             <Col $xs={12} $lg={6} className="map">
               <NewcomersMap />
             </Col>
