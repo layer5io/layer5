@@ -20,7 +20,36 @@ export const ResourcePageWrapper = styled.div`
                 
             }
         }
-        
+          .sortBox {
+      display: flex;
+      flex: 0 0 auto;
+      margin-right: 1rem;
+      .sortDropdown {
+        height: 100%;
+        padding: 15px 40px 15px 15px;
+        border-radius: 5px;
+        border: 1px solid ${(props) => props.theme.headingColor};
+        background-color: ${(props) => props.theme.shadowDarkColor};
+        color: ${(props) => props.theme.text};
+        font-size: 0.9rem;
+        cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 16px;
+
+        &:focus {
+          outline: 2px solid #00b39f;
+          outline-offset: 2px;
+        }
+      }
+      @media only screen and (max-width: 990px) {
+        display: none;
+      }
+    }  
     }
     .post-content-block{
         height: 7rem;
