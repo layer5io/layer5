@@ -26,6 +26,13 @@ export default function HTML(props) {
                     document.body.classList.add('banner1');
                   else
                     document.body.classList.add('banner' + banner);
+
+                  // Case study banner initialization
+                  var caseStudy = sessionStorage.getItem('caseStudy');
+                  if (caseStudy === null)
+                    document.body.classList.add('casestudy1');
+                  else
+                    document.body.classList.add('casestudy' + caseStudy);
                 } catch (e) {
                   console.error('Error in banner initialization:', e);
                 }

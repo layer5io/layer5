@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import MesheryLogo from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import SpireLogo from "../../collections/integrations/spire/icons/color/spire-color.svg";
+import KanvasLogo from "../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 import MesheryAndSpire from "../../collections/resources/case-study/hpes-adoption-of-meshery-and-kanvas/meshery-and-hpe.svg";
-
+import TcsLabsMeshery from "../../collections/resources/case-study/tcs-labs-adoption-of-meshery-and-kanvas/tcs-labs-meshery.svg";
+import InforMeshery from "../../collections/resources/case-study/infors-adoption-of-meshery-and-kanvas/infor-meshery.svg";
 
 const BannerWrapper = styled.div`
+  display: none;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
 
 .large-screen {
   display: flex;
@@ -194,46 +203,112 @@ const BannerWrapper = styled.div`
 }
 `;
 
+const CaseStudiesCount = 3;
+
+const caseStudies = [
+  {
+    title: "Discover how HPE uses Meshery to manage SPIRE",
+    link: "/resources/case-study/hpes-adoption-of-meshery-and-kanvas",
+    logoLeft: MesheryLogo,
+    logoRight: SpireLogo,
+    mobileImg: MesheryAndSpire,
+    altLeft: "meshery-logo",
+    altRight: "spire-logo",
+    altMobile: "meshery-and-spire"
+  },
+  {
+    title: "Discover how TCS Labs runs Meshery as the design plane of its IDP",
+    link: "/resources/case-study/tcs-labs-adoption-of-meshery-and-kanvas",
+    logoLeft: MesheryLogo,
+    logoRight: KanvasLogo,
+    mobileImg: TcsLabsMeshery,
+    altLeft: "meshery-logo",
+    altRight: "kanvas-logo",
+    altMobile: "tcs-labs-meshery"
+  },
+  {
+    title: "Discover how Infor uses Meshery for cloud platform engineering",
+    link: "/resources/case-study/infors-adoption-of-meshery-and-kanvas",
+    logoLeft: MesheryLogo,
+    logoRight: KanvasLogo,
+    mobileImg: InforMeshery,
+    altLeft: "meshery-logo",
+    altRight: "kanvas-logo",
+    altMobile: "infor-meshery"
+  }
+];
+
 const CaseStudyBanner = () => {
+  const [hoverIndex, setHoverIndex] = useState(null);
 
-  const [hover, setHover] = useState(false);
+  let initialValue;
+  try {
+    initialValue = sessionStorage.getItem("caseStudy") || 1;
+  } catch (error) {
+    console.error("Error in sessionStorage.getItem('caseStudy'):", error);
+    initialValue = 1;
+  }
 
-  const handleHover = () => {
-    setHover(true);
-  };
-
-  const handleLeave = () => {
-    setHover(false);
-  };
+  useEffect(() => {
+    let val = sessionStorage.getItem("caseStudy");
+    let currentClass = `casestudy${val}`;
+    let replaceClass = `casestudy${val - 1 == 0 ? CaseStudiesCount : val - 1}`;
+    if (!document.body.classList.contains(currentClass)) {
+      document.body.classList.replace(replaceClass, currentClass);
+    }
+    if (sessionStorage.getItem("caseStudy")) {
+      sessionStorage.setItem("caseStudy", (Number(initialValue) % CaseStudiesCount) + 1);
+    } else {
+      sessionStorage.setItem("caseStudy", 2);
+    }
+  }, []);
 
   return (
     <>
-      <a href="/resources/case-study/hpes-adoption-of-meshery-and-kanvas">
-        <BannerWrapper>
-          <div className="small-screen">
-            <div className="small-screen-desc">
-              <h2>Discover how HPE uses Meshery to manage SPIRE</h2>
-            </div>
-            <div className="meshery-and-spire">
-              <img src={MesheryAndSpire} alt="meshery-and-spire" />
-            </div>
-          </div>
-          <div className="large-screen">
-            <div className={`left-img ${hover ? "scale-on-hover" : ""}`} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
-              <img src={MesheryLogo} alt="meshery-logo" />
-            </div>
-            <div className={`desc ${hover ? "desc-hover" : ""}`} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
-              <h2>Discover how HPE uses Meshery to manage SPIRE</h2>
-              <div className="ribbon">
-                <span>Case Study</span>
+      {caseStudies.map((study, index) => {
+        const studyClass = `casestudy${index + 1}`;
+        const isHovered = hoverIndex === index;
+        return (
+          <BannerWrapper key={index} className={studyClass}>
+            <a href={study.link}>
+              <div className="small-screen">
+                <div className="small-screen-desc">
+                  <h2>{study.title}</h2>
+                </div>
+                <div className="meshery-and-spire">
+                  <img src={study.mobileImg} alt={study.altMobile} />
+                </div>
               </div>
-            </div>
-            <div className={`right-img ${hover ? "scale-on-hover" : ""}`} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
-              <img src={SpireLogo} alt="spire-logo" />
-            </div>
-          </div>
-        </BannerWrapper>
-      </a>
+              <div className="large-screen">
+                <div
+                  className={`left-img ${isHovered ? "scale-on-hover" : ""}`}
+                  onMouseEnter={() => setHoverIndex(index)}
+                  onMouseLeave={() => setHoverIndex(null)}
+                >
+                  <img src={study.logoLeft} alt={study.altLeft} />
+                </div>
+                <div
+                  className={`desc ${isHovered ? "desc-hover" : ""}`}
+                  onMouseEnter={() => setHoverIndex(index)}
+                  onMouseLeave={() => setHoverIndex(null)}
+                >
+                  <h2>{study.title}</h2>
+                  <div className="ribbon">
+                    <span>Case Study</span>
+                  </div>
+                </div>
+                <div
+                  className={`right-img ${isHovered ? "scale-on-hover" : ""}`}
+                  onMouseEnter={() => setHoverIndex(index)}
+                  onMouseLeave={() => setHoverIndex(null)}
+                >
+                  <img src={study.logoRight} alt={study.altRight} />
+                </div>
+              </div>
+            </a>
+          </BannerWrapper>
+        );
+      })}
     </>
   );
 };
