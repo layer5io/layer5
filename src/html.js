@@ -26,7 +26,12 @@ export default function HTML(props) {
                     document.body.classList.add('banner1');
                   else
                     document.body.classList.add('banner' + banner);
+                } catch (e) {
+                  console.error('Error in banner initialization:', e);
+                  if (!document.body.classList.contains('banner1')) document.body.classList.add('banner1');
+                }
 
+                try {
                   // Case study banner initialization
                   var caseStudy = sessionStorage.getItem('caseStudy');
                   if (caseStudy === null)
@@ -34,8 +39,7 @@ export default function HTML(props) {
                   else
                     document.body.classList.add('casestudy' + caseStudy);
                 } catch (e) {
-                  console.error('Error in banner initialization:', e);
-                  if (!document.body.classList.contains('banner1')) document.body.classList.add('banner1');
+                  console.error('Error in caseStudy initialization:', e);
                   if (!document.body.classList.contains('casestudy1')) document.body.classList.add('casestudy1');
                 }
               })();
