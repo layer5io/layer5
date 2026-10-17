@@ -250,16 +250,31 @@ const CaseStudyBanner = () => {
   }
 
   useEffect(() => {
-    let val = sessionStorage.getItem("caseStudy");
+    let val = initialValue;
+    try {
+      val = sessionStorage.getItem("caseStudy") || 1;
+    } catch (error) {
+      console.error("Error in sessionStorage.getItem('caseStudy'):", error);
+      val = 1;
+    }
+
     let currentClass = `casestudy${val}`;
     let replaceClass = `casestudy${val - 1 == 0 ? CaseStudiesCount : val - 1}`;
     if (!document.body.classList.contains(currentClass)) {
       document.body.classList.replace(replaceClass, currentClass);
     }
-    if (sessionStorage.getItem("caseStudy")) {
-      sessionStorage.setItem("caseStudy", (Number(initialValue) % CaseStudiesCount) + 1);
-    } else {
-      sessionStorage.setItem("caseStudy", 2);
+    if (!document.body.classList.contains(currentClass)) {
+      document.body.classList.add(currentClass);
+    }
+
+    try {
+      if (sessionStorage.getItem("caseStudy")) {
+        sessionStorage.setItem("caseStudy", (Number(initialValue) % CaseStudiesCount) + 1);
+      } else {
+        sessionStorage.setItem("caseStudy", 2);
+      }
+    } catch (error) {
+      console.error("Error in sessionStorage.setItem('caseStudy'):", error);
     }
   }, []);
 

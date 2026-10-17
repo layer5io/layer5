@@ -35,6 +35,8 @@ export default function HTML(props) {
                     document.body.classList.add('casestudy' + caseStudy);
                 } catch (e) {
                   console.error('Error in banner initialization:', e);
+                  if (!document.body.classList.contains('banner1')) document.body.classList.add('banner1');
+                  if (!document.body.classList.contains('casestudy1')) document.body.classList.add('casestudy1');
                 }
               })();
             `,
