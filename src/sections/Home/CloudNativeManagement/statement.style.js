@@ -97,9 +97,6 @@ const BannerSectionWrapper = styled.section`
         border-bottom-left-radius: 0.5rem;
     }
     .vidHero {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
         aspect-ratio: 16 / 9;
         object-fit: cover;
         position: relative;
