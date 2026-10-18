@@ -1,24 +1,21 @@
 import styled from "styled-components";
 export const ResourcesWrapper = styled.div`
   color: #000;
-  h2:not(.filter-title):not(.category_name):not(.subcategory_name):not(.accordion__heading) {
+  :where(h2) {
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
-  h4:not(.filter-title):not(.category_name):not(.subcategory_name):not(.accordion__heading),
-  h5:not(.filter-title):not(.category_name):not(.subcategory_name):not(.accordion__heading),
-  h6:not(.filter-title):not(.category_name):not(.subcategory_name):not(.accordion__heading) {
+  :where(h4, h5, h6) {
     margin-bottom: 0.5rem;
   }
-  h3:not(.filter-title):not(.category_name):not(.subcategory_name):not(.accordion__heading) {
+  :where(h3) {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
   }
-  ul,
-  ol {
+  :where(ul, ol) {
     margin-bottom: 1rem;
   }
-  
+
   div.comparison h2 {
     text-align: left;
     margin-top: 2rem;
@@ -41,73 +38,74 @@ export const ResourcesWrapper = styled.div`
 
   div.comparison th,
   div.comparison td {
-    border: 1px solid ${props => props.theme.borderColor || props.theme.primaryLightColor};
+    border: 1px solid
+      ${(props) => props.theme.borderColor || props.theme.primaryLightColor};
     padding: 0.75rem;
     text-align: left;
     vertical-align: top;
   }
 
   div.comparison th {
-    background-color: ${props => props.theme.secondaryLightColorTwo};
+    background-color: ${(props) => props.theme.secondaryLightColorTwo};
     font-weight: 600;
   }
 
   div.comparison td[data-status="yes"] {
-    color: ${props => props.theme.secondaryColor};
+    color: ${(props) => props.theme.secondaryColor};
     font-weight: 600;
   }
 
   div.comparison td[data-status="partial"] {
-    color: ${props => props.theme.highlightColor};
+    color: ${(props) => props.theme.highlightColor};
     font-weight: 600;
   }
 
   div.comparison td[data-status="no"] {
-    color: ${props => props.theme.errorColor};
+    color: ${(props) => props.theme.errorColor};
     font-weight: 600;
   }
-  
+
   .sub-heading {
     color: gray;
     position: relative;
     top: -10px;
   }
 
-  table{
-    color: ${props => props.theme.primaryColor};
+  table {
+    color: ${(props) => props.theme.primaryColor};
   }
 
   div.fact {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    color: ${props => props.theme.secondaryColor};
+    color: ${(props) => props.theme.secondaryColor};
     font-style: italic;
     font-size: 1.3rem;
     font-weight: 600;
     text-align: right;
-    border-right: 4px solid ${props => props.theme.secondaryColor};        
+    border-right: 4px solid ${(props) => props.theme.secondaryColor};
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-}
+  }
 
-div.fact-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  color: ${props => props.theme.secondaryColor};
-  font-style: italic;
-  font-size: 1.3rem;
-  font-weight: 600;
-  text-align: left;
-  border-left: 4px solid ${props => props.theme.secondaryColor};        
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
+  div.fact-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: ${(props) => props.theme.secondaryColor};
+    font-style: italic;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: left;
+    border-left: 4px solid ${(props) => props.theme.secondaryColor};
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 
   div.intro {
     padding-left: 3rem;
@@ -176,7 +174,7 @@ div.fact-left {
 
     @media only screen and (max-width: 568px) {
       width: 100%;
-  }
+    }
   }
 
   .image-right {
@@ -186,7 +184,7 @@ div.fact-left {
     box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
     @media only screen and (max-width: 568px) {
       width: 100%;
-  }
+    }
   }
   .image-right-no-shadow {
     width: 40%;
@@ -218,11 +216,11 @@ div.fact-left {
     color: #3c494f;
     text-align: center;
   }
-  .btn-center{
+  .btn-center {
     display: block;
     margin: auto;
   }
-  
+
   img.right {
     width: 40%;
     display: inline;
@@ -242,13 +240,13 @@ div.fact-left {
     position: relative;
     float: left;
     margin: 1rem 1rem 1rem 0rem;
-    p{
+    p {
       font-size: 0.9rem;
       font-weight: 15;
       text-align: center;
     }
-    img:hover{
-      cursor:pointer;
+    img:hover {
+      cursor: pointer;
     }
   }
   .center {
@@ -256,13 +254,13 @@ div.fact-left {
     position: relative;
     float: center;
     margin: 1rem auto 1rem auto;
-    p{
+    p {
       font-size: 0.9rem;
       font-weight: 15;
       text-align: center;
     }
-    img:hover{
-      cursor:pointer;
+    img:hover {
+      cursor: pointer;
     }
   }
   .right {
@@ -271,13 +269,13 @@ div.fact-left {
     position: relative;
     float: right;
     margin: 1rem 0 0 1rem;
-    p{
+    p {
       font-size: 0.9rem;
       font-weight: 15;
       text-align: center;
     }
-    img:hover{
-      cursor:pointer;
+    img:hover {
+      cursor: pointer;
     }
   }
   div.intro {
@@ -287,13 +285,12 @@ div.fact-left {
     font-size: 0.8rem;
     border-bottom: 1px dashed ${(props) => props.theme.primaryLightColor};
   }
-  
-  
+
   /* ==============
   styles for service-mesh-specifications 
   =======================*/
 
-  .slides-right{
+  .slides-right {
     width: 45%;
     display: inline;
     position: relative;
@@ -308,77 +305,77 @@ div.fact-left {
     margin: 1rem 2rem 1rem 0rem;
     box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
   }
-  .slides-left:hover{
-    cursor:pointer;
+  .slides-left:hover {
+    cursor: pointer;
   }
-  .slides-right:hover{
-    cursor:pointer;
+  .slides-right:hover {
+    cursor: pointer;
   }
   div.note {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    color: ${props => props.theme.secondaryColor};
+    color: ${(props) => props.theme.secondaryColor};
     font-style: italic;
     font-size: 1.3rem;
     font-weight: 600;
     text-align: right;
-    border-right: 4px solid ${props => props.theme.secondaryColor};        
+    border-right: 4px solid ${(props) => props.theme.secondaryColor};
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-}
-.status {
-  text-align: center;
-  padding-left: 2rem;
-}
-.iframe-container{
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  padding-top: 56.25%; 
-  margin-top: 1rem;
-  iframe{
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 80%;
-    height: 80%;
-    display: block;
-    margin-right: auto;
-    margin-left:auto;
   }
-}
-
-iframe{
-  padding-bottom: 2rem;
-}
-.Tutorial-btn{
-  text-align: center;
-}
-
-.get-start-kubernetes-resource {
-  img {
-    width: 25rem;
+  .status {
+    text-align: center;
+    padding-left: 2rem;
   }
-
-  @media screen and (max-width: 992px) {
-    img {
-      width: 18rem;
+  .iframe-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+    margin-top: 1rem;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 80%;
+      height: 80%;
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
     }
   }
-  @media screen and (max-width: 699px) {
+
+  iframe {
+    padding-bottom: 2rem;
+  }
+  .Tutorial-btn {
+    text-align: center;
+  }
+
+  .get-start-kubernetes-resource {
     img {
-      filter: brightness(0.5);
+      width: 25rem;
     }
-    .cta-content {
-      p {
-        color: black;
+
+    @media screen and (max-width: 992px) {
+      img {
+        width: 18rem;
+      }
+    }
+    @media screen and (max-width: 699px) {
+      img {
+        filter: brightness(0.5);
+      }
+      .cta-content {
+        p {
+          color: black;
+        }
       }
     }
   }
-}
 `;
