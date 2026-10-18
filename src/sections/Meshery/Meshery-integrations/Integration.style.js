@@ -7,10 +7,13 @@ export const HoneycombGrid = styled.div`
 
     h1 {
       line-height: 3.75rem;
+      color: ${(props) =>
+        props.isDark ? props.theme.text : props.theme.headingColor};
     }
 
     h2 {
       font-weight: normal;
+      color: ${(props) => props.theme.text};
     }
   }
 
@@ -34,11 +37,11 @@ export const HoneycombGrid = styled.div`
   }
 
   .items {
-    background-color: #d2d8da; //#E7EFF3;
+    background-color: ${(props) => props.theme.secondaryLightColor};
     padding: 0.625rem 1.5625rem;
     border-radius: 0.625rem;
     text-transform: uppercase;
-    color: #1e2117;
+    color: ${(props) => props.theme.text};
     font-size: 0.875rem;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
@@ -74,8 +77,7 @@ export const HoneycombGrid = styled.div`
     -webkit-transform: translateZ(0);
     display: flex;
     height: 100%;
-    background: ${(props) =>
-      props.isDark ? props.theme.radialToBlue : props.theme.grey212121ToWhite};
+    background: ${(props) => (props.isDark ? props.theme.radialToBlue : props.theme.grey212121ToWhite)};
     justify-content: center;
     align-items: center;
     padding: 0.625rem;
@@ -113,7 +115,7 @@ export const HoneycombGrid = styled.div`
         overflow: hidden;
         .title {
           line-height: 1.375rem;
-          color: ${(props) => props.theme.white};
+          color: ${(props) => props.theme.tertiaryColor};
           // margin-bottom: -2.7rem;
           font-size: 1.2rem;
           opacity: 0;

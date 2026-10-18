@@ -7,6 +7,21 @@ import EmptyResources from "../../Resources/Resources-error/emptyStateTemplate";
 import { Honeycomb, Hexagon } from "./Honeycomb/Honeycomb";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
+// These integrations use dark monochrome marks that need a light variant on
+// the dark hexagon background. Keep this list explicit so colored logos retain
+// the original colors in their integrationIcon assets.
+const DARK_MODE_LOGO_SLUGS = new Set([
+  "actions-runner-controller",
+  "aerospike-kubernetes-operator",
+  "github-actions-runner-operator",
+  "github-actions-runners",
+]);
+const DARK_AWS_LOGO_SLUGS = new Set([
+  "aws-opensearchservice-controller",
+  "aws-sqs-controller",
+  "aws-ssm-controller",
+]);
+
 const IntegrationsGrid = ({ category, count }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -265,7 +280,34 @@ const IntegrationsGrid = ({ category, count }) => {
             const status =
               item.frontmatter.status === "InProgress" ? true : false;
             const integrationIcon = item.frontmatter.integrationIcon.publicURL;
-            const darkModeIntegrationIcon = item.frontmatter.integrationIcon;
+            // Gatsby slugs are generated from titles (for example, the ARC
+            // title adds a suffix), so include the title and icon path when
+            // identifying these logos as well.
+            const integrationIdentifier = [
+              item.fields.slug,
+              item.frontmatter.title,
+              item.frontmatter.integrationIcon.publicURL,
+            ]
+              .join(" ")
+              .toLowerCase();
+            const isActionsRunnerController = integrationIdentifier.includes(
+              "actions-runner-controller",
+            );
+            const isDarkAwsLogo = [...DARK_AWS_LOGO_SLUGS].some((slug) =>
+              integrationIdentifier.includes(slug),
+            );
+            const isDarkModeLogo =
+              isDarkAwsLogo ||
+              isActionsRunnerController ||
+              [...DARK_MODE_LOGO_SLUGS].some((slug) =>
+                integrationIdentifier.includes(slug),
+              );
+            const darkModeIcon =
+              item.frontmatter.darkModeIntegrationIcon?.publicURL;
+            const iconSrc =
+              isDark && isDarkModeLogo && darkModeIcon
+                ? darkModeIcon
+                : integrationIcon;
             if (status) {
               return (
                 <Hexagon
@@ -275,15 +317,10 @@ const IntegrationsGrid = ({ category, count }) => {
                   <span className="integration-container">
                     <img
                       className="integration-icon"
-                      src={
-                        isDark && darkModeIntegrationIcon !== null
-                          ? darkModeIntegrationIcon.publicURL
-                          : integrationIcon
-                      }
+                      src={iconSrc}
                       alt={item.frontmatter.title}
                       height={70}
                       width={70}
-                      style={{ filter: "brightness(0) invert(1)" }}
                       loading="lazy"
                     />
                     <div className="integration-content">
@@ -303,28 +340,14 @@ const IntegrationsGrid = ({ category, count }) => {
                     <span className="integration-container">
                       <img
                         className="integration-icon"
-                        src={
-                          isDark && darkModeIntegrationIcon !== null
-                            ? darkModeIntegrationIcon.publicURL
-                            : integrationIcon
-                        }
+                        src={iconSrc}
                         alt={item.frontmatter.title}
                         height={70}
                         width={70}
-                        style={{
-                          filter:
-                            isDark && darkModeIntegrationIcon == null
-                              ? "brightness(0) invert(1)"
-                              : "none",
-                        }}
                         loading="lazy"
                       />
                       <div className="integration-content">
                         <div className="title">{item.frontmatter.title}</div>
-                        {/* <Button
-                        $secondary                        title="Learn More"
-                        className="learnMoreBtn"
-                      /> */}
                       </div>
                     </span>
                   </Hexagon>
