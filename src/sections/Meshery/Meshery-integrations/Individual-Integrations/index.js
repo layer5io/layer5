@@ -12,6 +12,7 @@ import HowMesheryWorksSpecs from "../../../../components/specs";
 import ModelComponents from "./ComponentsGrid";
 import CatalogGrid from "./CatalogGrid";
 import { ReactComponent as MesheryLogoBullet } from "../../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
+import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
 
 const IndividualIntegrations = ({ data, children }) => {
   const { frontmatter } = data.mdx;
@@ -63,10 +64,24 @@ const IndividualIntegrations = ({ data, children }) => {
   const isAwsItem = awsIntegrations.includes(frontmatter.title);
   const isGcpItem = gcpIntegrations.includes(frontmatter.title);
 
+  const { isDark } = useStyledDarkMode();
+  const heroIcon =
+    isDark && frontmatter.darkModeIntegrationIcon?.publicURL
+      ? frontmatter.darkModeIntegrationIcon
+      : frontmatter.integrationIcon || frontmatter.integrationIcon_svg;
+
+  const featureList = (frontmatter.featureList || []).filter(
+    (feature) => typeof feature === "string" && feature.trim().length > 0,
+  );
+
   return (
     <IntegrationPageWrapper>
       <section className="herosection">
-        <Image {...(frontmatter.integrationIcon || frontmatter.integrationIcon_svg)} alt={frontmatter.title} imgStyle={{ objectFit: "contain" }} />
+        <Image
+          {...heroIcon}
+          alt={frontmatter.title}
+          imgStyle={{ objectFit: "contain" }}
+        />
         <h2>
           {frontmatter.title} with <span className="hero-header">Kanvas</span>
         </h2>
@@ -76,7 +91,7 @@ const IndividualIntegrations = ({ data, children }) => {
         <div className="feature">
           <h2>Features</h2>
           <ul>
-            {frontmatter.featureList.map((feature, indx) => (
+            {featureList.map((feature, indx) => (
               <li key={indx}>
                 <MesheryLogoBullet
                   style={{
