@@ -7,9 +7,6 @@ import EmptyResources from "../../Resources/Resources-error/emptyStateTemplate";
 import { Honeycomb, Hexagon } from "./Honeycomb/Honeycomb";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
-// These integrations use dark monochrome marks that need a light variant on
-// the dark hexagon background. Keep this list explicit so colored logos retain
-// the original colors in their integrationIcon assets.
 const DARK_MODE_LOGO_SLUGS = new Set([
   "actions-runner-controller",
   "aerospike-kubernetes-operator",
@@ -280,9 +277,7 @@ const IntegrationsGrid = ({ category, count }) => {
             const status =
               item.frontmatter.status === "InProgress" ? true : false;
             const integrationIcon = item.frontmatter.integrationIcon.publicURL;
-            // Gatsby slugs are generated from titles (for example, the ARC
-            // title adds a suffix), so include the title and icon path when
-            // identifying these logos as well.
+
             const integrationIdentifier = [
               item.fields.slug,
               item.frontmatter.title,
