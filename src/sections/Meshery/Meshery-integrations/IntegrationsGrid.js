@@ -10,8 +10,18 @@ import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 const DARK_MODE_LOGO_SLUGS = new Set([
   "actions-runner-controller",
   "aerospike-kubernetes-operator",
+  "awx-operator",
+  "cloudnative-pg",
+  "contrail-analytics",
   "github-actions-runner-operator",
   "github-actions-runners",
+  "helm-controller",
+  "kommander",
+  "kong",
+  "kong-mesh",
+  "kuma",
+  "skooner",
+  "victoria-metrics-k8s-stack",
 ]);
 const DARK_AWS_LOGO_SLUGS = new Set([
   "aws-opensearchservice-controller",
