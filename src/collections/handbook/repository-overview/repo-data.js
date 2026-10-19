@@ -395,10 +395,7 @@ export const repo_data = [
         image: meshery,
         language: "TypeScript",
         maintainers_name: ["Yi Nuo", "Shiekh Mohammad"],
-        link: [
-          "https://layer5.io/community/members/yi-nuo",
-          "https://layer5.io/community/members/shiekh-mohammad",
-        ],
+        link:["", ""],
         description:
           "Agent-ergonomic AXI wrapper around mesheryctl with token-efficient TOON output.",
         repository: "https://github.com/meshery-extensions/mesheryctl-axi",
