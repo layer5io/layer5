@@ -7,10 +7,12 @@ export const HoneycombGrid = styled.div`
 
     h1 {
       line-height: 3.75rem;
+      color: ${(props) => props.theme.whiteToBlack};
     }
 
     h2 {
       font-weight: normal;
+      color: ${(props) => props.theme.whiteToBlack};
     }
   }
 
@@ -34,11 +36,11 @@ export const HoneycombGrid = styled.div`
   }
 
   .items {
-    background-color: #d2d8da; //#E7EFF3;
+    background-color: ${(props) => props.theme.grey212121ToGreyEEEEEE};
     padding: 0.625rem 1.5625rem;
     border-radius: 0.625rem;
     text-transform: uppercase;
-    color: #1e2117;
+    color: ${(props) => props.theme.whiteToBlack};
     font-size: 0.875rem;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
