@@ -7,14 +7,15 @@ program: "MLH Fellowship Program"
 programSlug: "mlh"
 published: true
 ---
-
 import { ProgramsWrapper } from "../Programs.style.js";
 import Button from "../../../reusecore/Button";
 import MlhLogo from "./mlh.svg";
+import MlhLogoDark from "./mlh-dark.svg";
 
 <ProgramsWrapper>
-<img src={MlhLogo} alt="mlh_logo" className="mlh_logo"/>
-<h2><b>MLH Fellowship Program</b></h2>
+  <img src={MlhLogo} alt="mlh_logo" className="mlh_logo mlh_logo--light"/>
+  <img src={MlhLogoDark} alt="mlh_logo" className="mlh_logo mlh_logo--dark"/>
+  <h2><b>MLH Fellowship Program</b></h2>
 <div>
 The Major League Hacking’s <a href="https://fellowship.mlh.io/">MLH Fellowship</a> is an internship alternative for software engineers. Instead of working on a project for just one company, you’ll contribute to Open Source projects that are used by companies around the world. You’ll collaborate with a group of 10 students under the guidance of a professional mentor whose only job is to help you successfully contribute.<br/>
 

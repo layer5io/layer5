@@ -174,9 +174,13 @@ export const HandbookWrapper = styled.div`
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
-    .codes{
-      width:75%;
-      margin-top:-2rem;
+    .codes {
+      width: 75%;
+      margin: 1rem 0;
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
     }
 
     .community-home-container{
