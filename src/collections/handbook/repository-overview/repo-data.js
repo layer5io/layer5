@@ -558,15 +558,6 @@ export const repo_data = [
         description: "Meshery adapter for management of Network Service Mesh.",
         repository: "https://github.com/layer5io/meshery-nsm",
       },
-      // {
-      //   project: "Meshery Adapter for Octarine",
-      //   image: meshery,
-      //   language: "Golang, gRPC",
-      //   maintainers_name: ["Lee Calcote"],
-      //   link: ["https://layer5.io/community/members/lee-calcote"],
-      //   description: "Meshery adapter for management of Octarine.",
-      //   repository: "https://github.com/layer5io/meshery-octarine",
-      // },
       {
         project: "Meshery Adapter for Traefik Mesh",
         image: traefikLogo,
@@ -602,6 +593,7 @@ export const repo_data = [
         link: ["#"],
         description: "Meshery adapter for management of Citrix CPX",
         repository: "https://github.com/layer5io/meshery-cpx",
+        accessRequired: "*archived",
       },
       {
         project: "Meshery Adapter for App Mesh",
@@ -611,6 +603,7 @@ export const repo_data = [
         link: ["https://layer5.io/community/members/antonette-caldwell"],
         description: "Meshery adapter for management of AWS App Mesh",
         repository: "https://github.com/layer5io/meshery-app-mesh",
+        accessRequired: "*archived",
       },
       {
         project: "Meshery Adapter for Tanzu Service Mesh",
@@ -621,6 +614,7 @@ export const repo_data = [
         description:
           "Meshery adapter for management of VMware Tanzu Service Mesh",
         repository: "https://github.com/layer5io/meshery-tanzu-sm",
+        accessRequired: "*archived",
       },
       {
         project: "Meshery Adapter for NGINX Service Mesh",
@@ -630,6 +624,7 @@ export const repo_data = [
         link: ["https://layer5.io/community/members/hussaina-begum"],
         description: "Meshery adapter for management of NGINX Service Mesh",
         repository: "https://github.com/layer5io/meshery-nginx-sm",
+        accessRequired: "*archived",
       },
       {
         project: "Meshery Adapter for Cilium Service Mesh",

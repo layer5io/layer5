@@ -69,19 +69,15 @@ const CookieConsent = () => {
     }
   }, []);
 
-  useEffect(() => {
-    if (!open) return undefined;
-
-    const timer = window.setTimeout(() => {
-      localStorage.setItem(STORAGE_KEY, "declined");
-      setOpen(false);
-    }, 3000);
-
-    return () => window.clearTimeout(timer);
-  }, [open]);
-
   const handleResponse = (response) => {
     localStorage.setItem(STORAGE_KEY, response);
+
+    window.dispatchEvent(
+      new CustomEvent("cookie-consent-changed", {
+        detail: response,
+      }),
+    );
+
     setOpen(false);
   };
 
