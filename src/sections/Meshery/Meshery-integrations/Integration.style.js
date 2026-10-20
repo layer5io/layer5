@@ -191,7 +191,7 @@ export const IntegrationsWrapper = styled.div`
   }
 `;
 
-export const Card = styled.div`
+export const IntegrationCard = styled.div`
   display: flex;
   margin: 5rem 1rem;
   gap: 5rem;
