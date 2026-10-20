@@ -117,10 +117,13 @@ const gatsbyBin = path.join(
   process.platform === "win32" ? "gatsby.cmd" : "gatsby",
 );
 
-const child = spawn(gatsbyBin, args, {
+const bin = process.platform === "win32" ? `"${gatsbyBin}"` : gatsbyBin;
+
+const child = spawn(bin, args, {
   env,
   stdio: "inherit",
   shell: process.platform === "win32",
+  windowsVerbatimArguments: process.platform === "win32",
 });
 
 const forward = (signal) => () => child.kill(signal);
