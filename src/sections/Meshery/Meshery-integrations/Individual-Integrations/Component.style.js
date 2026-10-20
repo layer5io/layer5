@@ -22,6 +22,33 @@ export const ComponentsWrapper = styled.div`
     object-fit: contain;
   }
 
+  .component-icon--dark {
+    display: none;
+  }
+
+  .component-icon--light {
+    display: block;
+  }
+
+  [data-theme="dark"] & .component-icon--dark {
+    display: block;
+  }
+
+  [data-theme="dark"] & .component-icon--light {
+    display: none;
+  }
+
+  ${(props) =>
+    props.theme.DarkTheme &&
+    `
+    .component-icon--dark {
+      display: block;
+    }
+    .component-icon--light {
+      display: none;
+    }
+  `}
+
   .componentsSection {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
