@@ -43,8 +43,6 @@ const ComponentsGrid = ({ frontmatter }) => {
           (await checkImageUrlValidity(component.whiteIcon.publicURL))
         ) {
           whiteIconUrl = component.whiteIcon.publicURL;
-        } else if (darkFallback && (await checkDarkFallback())) {
-          whiteIconUrl = darkFallback;
         }
 
         let colorIconUrl = null;
@@ -53,15 +51,31 @@ const ComponentsGrid = ({ frontmatter }) => {
           (await checkImageUrlValidity(component.colorIcon.publicURL))
         ) {
           colorIconUrl = component.colorIcon.publicURL;
-        } else if (colorFallback && (await checkColorFallback())) {
-          colorIconUrl = colorFallback;
         }
 
+        // Prefer component-level icons before falling back to integration-level icons
         if (!whiteIconUrl && colorIconUrl) {
           whiteIconUrl = colorIconUrl;
         }
         if (!colorIconUrl && whiteIconUrl) {
           colorIconUrl = whiteIconUrl;
+        }
+
+        // If the component has neither icon, fall back to integration icons
+        if (!whiteIconUrl) {
+          if (darkFallback && (await checkDarkFallback())) {
+            whiteIconUrl = darkFallback;
+          } else if (colorFallback && (await checkColorFallback())) {
+            whiteIconUrl = colorFallback;
+          }
+        }
+
+        if (!colorIconUrl) {
+          if (colorFallback && (await checkColorFallback())) {
+            colorIconUrl = colorFallback;
+          } else if (darkFallback && (await checkDarkFallback())) {
+            colorIconUrl = darkFallback;
+          }
         }
 
         if (whiteIconUrl || colorIconUrl) {
