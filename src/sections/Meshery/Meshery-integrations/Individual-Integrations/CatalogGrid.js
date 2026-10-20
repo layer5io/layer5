@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { ComponentsWrapper } from "./Component.style";
-import { CatalogCard, SistentThemeProviderWithoutBaseLine } from "@sistent/sistent";
+import {
+  CatalogCard,
+  SistentThemeProviderWithoutBaseLine,
+} from "@sistent/sistent";
 import axios from "axios";
 import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
 import Button from "../../../../reusecore/Button";
@@ -33,7 +36,7 @@ const CatalogGrid = ({ frontmatter }) => {
     fetchData();
   }, [designSize]);
 
-  return designs && designs.total_count > 0 ? (
+  return designs && designs.totalCount > 0 ? (
     <ComponentsWrapper
       style={{
         display: "flex",
@@ -43,11 +46,13 @@ const CatalogGrid = ({ frontmatter }) => {
     >
       <section className="heading">
         <h1>
-          {frontmatter.title} Designs ({designs.total_count})
+          {frontmatter.title} Designs ({designs.totalCount})
         </h1>
       </section>
       <section className="componentsSection">
-        <SistentThemeProviderWithoutBaseLine initialMode={isDark ? "dark" : "light"}>
+        <SistentThemeProviderWithoutBaseLine
+          initialMode={isDark ? "dark" : "light"}
+        >
           {designs?.patterns?.map((item, index) => {
             return (
               <CatalogCard
@@ -56,20 +61,20 @@ const CatalogGrid = ({ frontmatter }) => {
                   window.open(
                     `https://cloud.layer5.io/catalog/content/catalog/${item?.id}`,
                     "_blank",
-                    "noopener,noreferrer"
+                    "noopener,noreferrer",
                   );
                 }}
                 cardHeight="20rem"
                 cardWidth="16rem"
                 pattern={item}
                 type="Catalog"
-                patternType={item?.catalog_data?.type}
+                patternType={item?.catalogData?.type}
               />
             );
           })}
         </SistentThemeProviderWithoutBaseLine>
       </section>
-      {designSize <= designs?.total_count && (
+      {designSize < designs?.totalCount && (
         <Button
           $primary
           className="loadmore"
