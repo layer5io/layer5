@@ -2,12 +2,12 @@ import React from "react";
 import ListIntegration from "./list-integration.svg";
 import MissingIntegration from "./missing-integration.svg";
 import Button from "../../../reusecore/Button";
-import { Card } from "./Integration.style";
+import { IntegrationCard } from "./Integration.style";
 import ContactFormModal from "../../../components/Contact-Modal";
 
 const Card = () => {
   return (
-    <Card>
+    <IntegrationCard>
       <div className="container">
         <img src={MissingIntegration} alt="missing integration icon" />
         <h2>Missing an Integration?</h2>
@@ -24,7 +24,7 @@ const Card = () => {
         <p>Learn more about submitting an integration and partnership opportunities.</p>
         <ContactFormModal callout_text="Contact Us" form_header="Send Us An Email" />
       </div>
-    </Card>
+    </IntegrationCard>
   );
 };
 
