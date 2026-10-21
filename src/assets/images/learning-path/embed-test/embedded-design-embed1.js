@@ -1653,8 +1653,8 @@ const addStyles = () => {
       }
     }
      `,
-      head = document.head || document.getElementsByTagName("head")[0],
-      style = document.createElement("style");
+    head = document.head || document.getElementsByTagName("head")[0],
+    style = document.createElement("style");
 
   head.appendChild(style);
 
@@ -1669,7 +1669,7 @@ const addStyles = () => {
 
 const CreateToolBar = () => {
   const cyContainer = document.getElementById(
-    "embedded-design-a3d3f26e-4366-44e6-b211-1ba4e1a3e644"
+    "embedded-design-a3d3f26e-4366-44e6-b211-1ba4e1a3e644",
   );
   const toolbar = document.createElement("div");
   toolbar.innerHTML = `
@@ -1724,7 +1724,7 @@ const CreateToolBar = () => {
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOMContentLoaded");
   const embedContainer = document.getElementById(
-    "embedded-design-a3d3f26e-4366-44e6-b211-1ba4e1a3e644"
+    "embedded-design-a3d3f26e-4366-44e6-b211-1ba4e1a3e644",
   );
   embedContainer.classList.add("embed-design-container");
   const cyContainer = document.createElement("div");
@@ -1735,7 +1735,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var cy = (window.cy = cytoscape({
     container: document.getElementById(
-      "embedded-design-a3d3f26e-4366-44e6-b211-1ba4e1a3e644-cy"
+      "embedded-design-a3d3f26e-4366-44e6-b211-1ba4e1a3e644-cy",
     ),
 
     autounselectify: true,

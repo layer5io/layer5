@@ -9,12 +9,12 @@ const RowWrapper = styled.div`
     flex-wrap: wrap;
   }
   ${(props) =>
-  props.$Vcenter &&
+    props.$Vcenter &&
     css({
       "align-items": "center",
     })};
   ${(props) =>
-      props.$Hcenter &&
+    props.$Hcenter &&
     css({
       "justify-content": "center",
     })};

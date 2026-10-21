@@ -21,16 +21,16 @@ const data = {
                         name: "tcp-redis",
                         "node Port": null,
                         port: 6379,
-                        "target Port": "redis"
-                      }
+                        "target Port": "redis",
+                      },
                     ],
                     selector: {
                       "app.kubernetes.io/component": "replica",
                       "app.kubernetes.io/instance": "redis",
-                      "app.kubernetes.io/name": "redis"
+                      "app.kubernetes.io/name": "redis",
                     },
                     "session Affinity": "None",
-                    type: "ClusterIP"
+                    type: "ClusterIP",
                   },
                   name: "redis-replicas",
                   namespace: "default",
@@ -40,8 +40,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "Helm",
                     "app.kubernetes.io/name": "redis",
                     "app.kubernetes.io/version": "7.2.5",
-                    "helm.sh/chart": "redis-19.6.2"
-                  }
+                    "helm.sh/chart": "redis-19.6.2",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -72,7 +72,7 @@ const data = {
                         width: 20,
                         x: "10px",
                         y: "12px",
-                        "z-index": 9
+                        "z-index": 9,
                       },
                       styles:
                         '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
@@ -81,16 +81,16 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg",
                     },
                     position: { posX: -98.5, posY: -25 },
-                    whiteboardData: { style: {} }
-                  }
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Service"
-              }
-            }
-          }
+                type: "Service",
+              },
+            },
+          },
         },
         position: { x: -98.5, y: -25 },
         group: "nodes",
@@ -100,7 +100,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -117,12 +117,14 @@ const data = {
                 settings: {
                   spec: {
                     "cluster IP": "None",
-                    ports: [{ name: "tcp-redis", port: 6379, "target Port": "redis" }],
+                    ports: [
+                      { name: "tcp-redis", port: 6379, "target Port": "redis" },
+                    ],
                     selector: {
                       "app.kubernetes.io/instance": "redis",
-                      "app.kubernetes.io/name": "redis"
+                      "app.kubernetes.io/name": "redis",
                     },
-                    type: "ClusterIP"
+                    type: "ClusterIP",
                   },
                   name: "redis-headless",
                   namespace: "default",
@@ -131,8 +133,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "Helm",
                     "app.kubernetes.io/name": "redis",
                     "app.kubernetes.io/version": "7.2.5",
-                    "helm.sh/chart": "redis-19.6.2"
-                  }
+                    "helm.sh/chart": "redis-19.6.2",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -165,16 +167,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg",
                     },
-                    position: { posX: -8.13150501917703, posY: -106.31505019177011 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -8.13150501917703,
+                      posY: -106.31505019177011,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Service"
-              }
-            }
-          }
+                type: "Service",
+              },
+            },
+          },
         },
         position: { x: -8.13150501917703, y: -106.31505019177011 },
         group: "nodes",
@@ -184,7 +189,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -211,7 +216,7 @@ const data = {
                     "ping_readiness_local_and_master.sh":
                       'script_dir="$(dirname "$0")"\nexit_status=0\n"$script_dir/ping_readiness_local.sh" $1 || exit_status=$?\n"$script_dir/ping_readiness_master.sh" $1 || exit_status=$?\nexit $exit_status',
                     "ping_readiness_master.sh":
-                      '#!/bin/bash\n\n[[ -f $REDIS_MASTER_PASSWORD_FILE ]] && export REDIS_MASTER_PASSWORD="$(< "${REDIS_MASTER_PASSWORD_FILE}")"\n[[ -n "$REDIS_MASTER_PASSWORD" ]] && export REDISCLI_AUTH="$REDIS_MASTER_PASSWORD"\nresponse=$(\n  timeout -s 15 $1 \\\n  redis-cli \\\n    -h $REDIS_MASTER_HOST \\\n    -p $REDIS_MASTER_PORT_NUMBER \\\n    ping\n)\nif [ "$?" -eq "124" ]; then\n  echo "Timed out"\n  exit 1\nfi\nif [ "$response" != "PONG" ]; then\n  echo "$response"\n  exit 1\nfi'
+                      '#!/bin/bash\n\n[[ -f $REDIS_MASTER_PASSWORD_FILE ]] && export REDIS_MASTER_PASSWORD="$(< "${REDIS_MASTER_PASSWORD_FILE}")"\n[[ -n "$REDIS_MASTER_PASSWORD" ]] && export REDISCLI_AUTH="$REDIS_MASTER_PASSWORD"\nresponse=$(\n  timeout -s 15 $1 \\\n  redis-cli \\\n    -h $REDIS_MASTER_HOST \\\n    -p $REDIS_MASTER_PORT_NUMBER \\\n    ping\n)\nif [ "$?" -eq "124" ]; then\n  echo "Timed out"\n  exit 1\nfi\nif [ "$response" != "PONG" ]; then\n  echo "$response"\n  exit 1\nfi',
                   },
                   name: "redis-health",
                   namespace: "default",
@@ -220,8 +225,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "Helm",
                     "app.kubernetes.io/name": "redis",
                     "app.kubernetes.io/version": "7.2.5",
-                    "helm.sh/chart": "redis-19.6.2"
-                  }
+                    "helm.sh/chart": "redis-19.6.2",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -252,16 +257,16 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/configmap-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/configmap-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/configmap-white.svg",
                     },
                     position: { posX: -102, posY: 107 },
-                    whiteboardData: { style: {} }
-                  }
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ConfigMap"
-              }
-            }
-          }
+                type: "ConfigMap",
+              },
+            },
+          },
         },
         position: { x: -102, y: 107 },
         group: "nodes",
@@ -271,7 +276,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -292,9 +297,9 @@ const data = {
                       "match Labels": {
                         "app.kubernetes.io/component": "master",
                         "app.kubernetes.io/instance": "redis",
-                        "app.kubernetes.io/name": "redis"
-                      }
-                    }
+                        "app.kubernetes.io/name": "redis",
+                      },
+                    },
                   },
                   name: "redis-master",
                   namespace: "default",
@@ -304,8 +309,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "Helm",
                     "app.kubernetes.io/name": "redis",
                     "app.kubernetes.io/version": "7.2.5",
-                    "helm.sh/chart": "redis-19.6.2"
-                  }
+                    "helm.sh/chart": "redis-19.6.2",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -336,16 +341,16 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/poddisruptionbudget-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/poddisruptionbudget-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/poddisruptionbudget-white.svg",
                     },
                     position: { posX: 62, posY: -106 },
-                    whiteboardData: { style: {} }
-                  }
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "PodDisruptionBudget"
-              }
-            }
-          }
+                type: "PodDisruptionBudget",
+              },
+            },
+          },
         },
         position: { x: 62, y: -106 },
         group: "nodes",
@@ -355,7 +360,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -378,8 +383,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "Helm",
                     "app.kubernetes.io/name": "redis",
                     "app.kubernetes.io/version": "7.2.5",
-                    "helm.sh/chart": "redis-19.6.2"
-                  }
+                    "helm.sh/chart": "redis-19.6.2",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -410,16 +415,16 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/serviceaccount-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/serviceaccount-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/serviceaccount-white.svg",
                     },
                     position: { posX: -100.5, posY: 44 },
-                    whiteboardData: { style: {} }
-                  }
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ServiceAccount"
-              }
-            }
-          }
+                type: "ServiceAccount",
+              },
+            },
+          },
         },
         position: { x: -100.5, y: 44 },
         group: "nodes",
@@ -429,7 +434,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -450,9 +455,9 @@ const data = {
                       "match Labels": {
                         "app.kubernetes.io/component": "replica",
                         "app.kubernetes.io/instance": "redis",
-                        "app.kubernetes.io/name": "redis"
-                      }
-                    }
+                        "app.kubernetes.io/name": "redis",
+                      },
+                    },
                   },
                   name: "redis-replicas",
                   namespace: "default",
@@ -462,8 +467,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "Helm",
                     "app.kubernetes.io/name": "redis",
                     "app.kubernetes.io/version": "7.2.5",
-                    "helm.sh/chart": "redis-19.6.2"
-                  }
+                    "helm.sh/chart": "redis-19.6.2",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -494,16 +499,16 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/poddisruptionbudget-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/poddisruptionbudget-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/poddisruptionbudget-white.svg",
                     },
                     position: { posX: 36.5, posY: -31 },
-                    whiteboardData: { style: {} }
-                  }
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "PodDisruptionBudget"
-              }
-            }
-          }
+                type: "PodDisruptionBudget",
+              },
+            },
+          },
         },
         position: { x: 36.5, y: -31 },
         group: "nodes",
@@ -513,7 +518,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -537,8 +542,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "Helm",
                     "app.kubernetes.io/name": "redis",
                     "app.kubernetes.io/version": "7.2.5",
-                    "helm.sh/chart": "redis-19.6.2"
-                  }
+                    "helm.sh/chart": "redis-19.6.2",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -568,7 +573,7 @@ const data = {
                         height: 32,
                         padding: 1,
                         width: 32,
-                        "z-index": 4
+                        "z-index": 4,
                       },
                       styles:
                         '{"height":32,"width":32,"background-clip":"node","background-image-containment":"over","padding":1,"background-opacity":"0"}',
@@ -578,16 +583,16 @@ const data = {
                       svgComplete:
                         "ui/public/static/img/meshmodels/kubernetes/complete/secret-complete.svg",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/secret-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/secret-white.svg",
                     },
                     position: { posX: 17.5, posY: 108 },
-                    whiteboardData: { style: {} }
-                  }
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Secret"
-              }
-            }
-          }
+                type: "Secret",
+              },
+            },
+          },
         },
         position: { x: 17.5, y: 108 },
         group: "nodes",
@@ -597,7 +602,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -618,16 +623,16 @@ const data = {
                         name: "tcp-redis",
                         "node Port": null,
                         port: 6379,
-                        "target Port": "redis"
-                      }
+                        "target Port": "redis",
+                      },
                     ],
                     selector: {
                       "app.kubernetes.io/component": "master",
                       "app.kubernetes.io/instance": "redis",
-                      "app.kubernetes.io/name": "redis"
+                      "app.kubernetes.io/name": "redis",
                     },
                     "session Affinity": "None",
-                    type: "ClusterIP"
+                    type: "ClusterIP",
                   },
                   name: "redis-master",
                   namespace: "default",
@@ -637,8 +642,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "Helm",
                     "app.kubernetes.io/name": "redis",
                     "app.kubernetes.io/version": "7.2.5",
-                    "helm.sh/chart": "redis-19.6.2"
-                  }
+                    "helm.sh/chart": "redis-19.6.2",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -669,7 +674,7 @@ const data = {
                         width: 20,
                         x: "10px",
                         y: "12px",
-                        "z-index": 3
+                        "z-index": 3,
                       },
                       styles:
                         '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
@@ -678,16 +683,16 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg",
                     },
                     position: { posX: -31, posY: -25 },
-                    whiteboardData: { style: {} }
-                  }
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Service"
-              }
-            }
-          }
+                type: "Service",
+              },
+            },
+          },
         },
         position: { x: -31, y: -25 },
         group: "nodes",
@@ -697,7 +702,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -720,8 +725,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "Helm",
                     "app.kubernetes.io/name": "redis",
                     "app.kubernetes.io/version": "7.2.5",
-                    "helm.sh/chart": "redis-19.6.2"
-                  }
+                    "helm.sh/chart": "redis-19.6.2",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -752,16 +757,16 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/serviceaccount-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/serviceaccount-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/serviceaccount-white.svg",
                     },
                     position: { posX: 31, posY: 44 },
-                    whiteboardData: { style: {} }
-                  }
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ServiceAccount"
-              }
-            }
-          }
+                type: "ServiceAccount",
+              },
+            },
+          },
         },
         position: { x: 31, y: 44 },
         group: "nodes",
@@ -771,7 +776,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -793,8 +798,8 @@ const data = {
                       "match Labels": {
                         "app.kubernetes.io/component": "master",
                         "app.kubernetes.io/instance": "redis",
-                        "app.kubernetes.io/name": "redis"
-                      }
+                        "app.kubernetes.io/name": "redis",
+                      },
                     },
                     "service Name": "redis-headless",
                     template: {
@@ -807,7 +812,7 @@ const data = {
                           "checksum/scripts":
                             "bb405ab6e14129d9c1652d99ffde3146c358de2ef89164a4c63bb0b1894e7537",
                           "checksum/secret":
-                            "5a2e244602f54dd2801305480104d869c7af77c8e7a90cb53debc0f9849bc062"
+                            "5a2e244602f54dd2801305480104d869c7af77c8e7a90cb53debc0f9849bc062",
                         },
                         labels: {
                           "app.kubernetes.io/component": "master",
@@ -815,90 +820,102 @@ const data = {
                           "app.kubernetes.io/managed-by": "Helm",
                           "app.kubernetes.io/name": "redis",
                           "app.kubernetes.io/version": "7.2.5",
-                          "helm.sh/chart": "redis-19.6.2"
-                        }
+                          "helm.sh/chart": "redis-19.6.2",
+                        },
                       },
                       spec: {
                         affinity: {
                           "node Affinity": null,
                           "pod Affinity": null,
                           "pod Anti Affinity": {
-                            "preferred During Scheduling Ignored During Execution": [
-                              {
-                                "pod Affinity Term": {
-                                  "label Selector": {
-                                    "match Labels": {
-                                      "app.kubernetes.io/component": "master",
-                                      "app.kubernetes.io/instance": "redis",
-                                      "app.kubernetes.io/name": "redis"
-                                    }
+                            "preferred During Scheduling Ignored During Execution":
+                              [
+                                {
+                                  "pod Affinity Term": {
+                                    "label Selector": {
+                                      "match Labels": {
+                                        "app.kubernetes.io/component": "master",
+                                        "app.kubernetes.io/instance": "redis",
+                                        "app.kubernetes.io/name": "redis",
+                                      },
+                                    },
+                                    "topology Key": "kubernetes.io/hostname",
                                   },
-                                  "topology Key": "kubernetes.io/hostname"
+                                  weight: 1,
                                 },
-                                weight: 1
-                              }
-                            ]
-                          }
+                              ],
+                          },
                         },
                         "automount Service Account Token": false,
                         containers: [
                           {
                             args: [
                               "-c",
-                              "/opt/bitnami/scripts/start-scripts/start-master.sh"
+                              "/opt/bitnami/scripts/start-scripts/start-master.sh",
                             ],
                             command: ["/bin/bash"],
                             env: [
                               { name: "BITNAMI_DEBUG", value: "false" },
-                              { name: "REDIS_REPLICATION_MODE", value: "master" },
+                              {
+                                name: "REDIS_REPLICATION_MODE",
+                                value: "master",
+                              },
                               { name: "ALLOW_EMPTY_PASSWORD", value: "no" },
                               {
                                 name: "REDIS_PASSWORD",
                                 "value From": {
                                   "secret Key Ref": {
                                     key: "redis-password",
-                                    name: "redis"
-                                  }
-                                }
+                                    name: "redis",
+                                  },
+                                },
                               },
                               { name: "REDIS_TLS_ENABLED", value: "no" },
-                              { name: "REDIS_PORT", value: "6379" }
+                              { name: "REDIS_PORT", value: "6379" },
                             ],
                             image: "docker.io/bitnami/redis:7.2.5-debian-12-r2",
                             "image Pull Policy": "IfNotPresent",
                             "liveness Probe": {
                               exec: {
-                                command: ["sh", "-c", "/health/ping_liveness_local.sh 5"]
+                                command: [
+                                  "sh",
+                                  "-c",
+                                  "/health/ping_liveness_local.sh 5",
+                                ],
                               },
                               "failure Threshold": 5,
                               "initial Delay Seconds": 20,
                               "period Seconds": 5,
                               "success Threshold": 1,
-                              "timeout Seconds": 6
+                              "timeout Seconds": 6,
                             },
                             name: "redis",
                             ports: [{ "container Port": 6379, name: "redis" }],
                             "readiness Probe": {
                               exec: {
-                                command: ["sh", "-c", "/health/ping_readiness_local.sh 1"]
+                                command: [
+                                  "sh",
+                                  "-c",
+                                  "/health/ping_readiness_local.sh 1",
+                                ],
                               },
                               "failure Threshold": 5,
                               "initial Delay Seconds": 20,
                               "period Seconds": 5,
                               "success Threshold": 1,
-                              "timeout Seconds": 2
+                              "timeout Seconds": 2,
                             },
                             resources: {
                               limits: {
                                 cpu: "150m",
                                 "ephemeral-storage": "2Gi",
-                                memory: "192Mi"
+                                memory: "192Mi",
                               },
                               requests: {
                                 cpu: "100m",
                                 "ephemeral-storage": "50Mi",
-                                memory: "128Mi"
-                              }
+                                memory: "128Mi",
+                              },
                             },
                             "security Context": {
                               "allow Privilege Escalation": false,
@@ -908,57 +925,64 @@ const data = {
                               "run As Non Root": true,
                               "run As User": 1001,
                               "se Linux Options": {},
-                              "seccomp Profile": { type: "RuntimeDefault" }
+                              "seccomp Profile": { type: "RuntimeDefault" },
                             },
                             "volume Mounts": [
                               {
-                                "mount Path": "/opt/bitnami/scripts/start-scripts",
-                                name: "start-scripts"
+                                "mount Path":
+                                  "/opt/bitnami/scripts/start-scripts",
+                                name: "start-scripts",
                               },
                               { "mount Path": "/health", name: "health" },
                               { "mount Path": "/data", name: "redis-data" },
                               {
                                 "mount Path": "/opt/bitnami/redis/mounted-etc",
-                                name: "config"
+                                name: "config",
                               },
                               {
                                 "mount Path": "/opt/bitnami/redis/etc/",
                                 name: "empty-dir",
-                                "sub Path": "app-conf-dir"
+                                "sub Path": "app-conf-dir",
                               },
                               {
                                 "mount Path": "/tmp",
                                 name: "empty-dir",
-                                "sub Path": "tmp-dir"
-                              }
-                            ]
-                          }
+                                "sub Path": "tmp-dir",
+                              },
+                            ],
+                          },
                         ],
                         "enable Service Links": true,
                         "security Context": {
                           "fs Group": 1001,
                           "fs Group Change Policy": "Always",
                           "supplemental Groups": [],
-                          sysctls: []
+                          sysctls: [],
                         },
                         "service Account Name": "redis-master",
                         "termination Grace Period Seconds": 30,
                         volumes: [
                           {
-                            "config Map": { "default Mode": 493, name: "redis-scripts" },
-                            name: "start-scripts"
+                            "config Map": {
+                              "default Mode": 493,
+                              name: "redis-scripts",
+                            },
+                            name: "start-scripts",
                           },
                           {
-                            "config Map": { "default Mode": 493, name: "redis-health" },
-                            name: "health"
+                            "config Map": {
+                              "default Mode": 493,
+                              name: "redis-health",
+                            },
+                            name: "health",
                           },
                           {
                             "config Map": { name: "redis-configuration" },
-                            name: "config"
+                            name: "config",
                           },
-                          { "empty Dir": {}, name: "empty-dir" }
-                        ]
-                      }
+                          { "empty Dir": {}, name: "empty-dir" },
+                        ],
+                      },
                     },
                     "update Strategy": { type: "RollingUpdate" },
                     "volume Claim Templates": [
@@ -969,16 +993,16 @@ const data = {
                           labels: {
                             "app.kubernetes.io/component": "master",
                             "app.kubernetes.io/instance": "redis",
-                            "app.kubernetes.io/name": "redis"
+                            "app.kubernetes.io/name": "redis",
                           },
-                          name: "redis-data"
+                          name: "redis-data",
                         },
                         spec: {
                           "access Modes": ["ReadWriteOnce"],
-                          resources: { requests: { storage: "8Gi" } }
-                        }
-                      }
-                    ]
+                          resources: { requests: { storage: "8Gi" } },
+                        },
+                      },
+                    ],
                   },
                   name: "redis-master",
                   namespace: "default",
@@ -988,8 +1012,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "Helm",
                     "app.kubernetes.io/name": "redis",
                     "app.kubernetes.io/version": "7.2.5",
-                    "helm.sh/chart": "redis-19.6.2"
-                  }
+                    "helm.sh/chart": "redis-19.6.2",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1020,7 +1044,7 @@ const data = {
                         width: "15",
                         x: "12",
                         y: "20",
-                        "z-index": 11
+                        "z-index": 11,
                       },
                       styles:
                         '{"height":"15","width":"15","x":"12","y":"20","background-opacity":"0.2"}',
@@ -1030,16 +1054,16 @@ const data = {
                       svgComplete:
                         "ui/public/static/img/meshmodels/kubernetes/complete/statefulset-complete.svg",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/statefulset-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/statefulset-white.svg",
                     },
                     position: { posX: -38, posY: 104.5 },
-                    whiteboardData: { style: {} }
-                  }
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "StatefulSet"
-              }
-            }
-          }
+                type: "StatefulSet",
+              },
+            },
+          },
         },
         position: { x: -38, y: 104.5 },
         group: "nodes",
@@ -1049,7 +1073,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1071,8 +1095,8 @@ const data = {
                       "match Labels": {
                         "app.kubernetes.io/component": "replica",
                         "app.kubernetes.io/instance": "redis",
-                        "app.kubernetes.io/name": "redis"
-                      }
+                        "app.kubernetes.io/name": "redis",
+                      },
                     },
                     "service Name": "redis-headless",
                     template: {
@@ -1085,7 +1109,7 @@ const data = {
                           "checksum/scripts":
                             "bb405ab6e14129d9c1652d99ffde3146c358de2ef89164a4c63bb0b1894e7537",
                           "checksum/secret":
-                            "678ed249f7d80f884553ace4c8d9b747183e59b400408eb9d5fe607a76083ddc"
+                            "678ed249f7d80f884553ace4c8d9b747183e59b400408eb9d5fe607a76083ddc",
                         },
                         labels: {
                           "app.kubernetes.io/component": "replica",
@@ -1093,69 +1117,77 @@ const data = {
                           "app.kubernetes.io/managed-by": "Helm",
                           "app.kubernetes.io/name": "redis",
                           "app.kubernetes.io/version": "7.2.5",
-                          "helm.sh/chart": "redis-19.6.2"
-                        }
+                          "helm.sh/chart": "redis-19.6.2",
+                        },
                       },
                       spec: {
                         affinity: {
                           "node Affinity": null,
                           "pod Affinity": null,
                           "pod Anti Affinity": {
-                            "preferred During Scheduling Ignored During Execution": [
-                              {
-                                "pod Affinity Term": {
-                                  "label Selector": {
-                                    "match Labels": {
-                                      "app.kubernetes.io/component": "replica",
-                                      "app.kubernetes.io/instance": "redis",
-                                      "app.kubernetes.io/name": "redis"
-                                    }
+                            "preferred During Scheduling Ignored During Execution":
+                              [
+                                {
+                                  "pod Affinity Term": {
+                                    "label Selector": {
+                                      "match Labels": {
+                                        "app.kubernetes.io/component":
+                                          "replica",
+                                        "app.kubernetes.io/instance": "redis",
+                                        "app.kubernetes.io/name": "redis",
+                                      },
+                                    },
+                                    "topology Key": "kubernetes.io/hostname",
                                   },
-                                  "topology Key": "kubernetes.io/hostname"
+                                  weight: 1,
                                 },
-                                weight: 1
-                              }
-                            ]
-                          }
+                              ],
+                          },
                         },
                         "automount Service Account Token": false,
                         containers: [
                           {
                             args: [
                               "-c",
-                              "/opt/bitnami/scripts/start-scripts/start-replica.sh"
+                              "/opt/bitnami/scripts/start-scripts/start-replica.sh",
                             ],
                             command: ["/bin/bash"],
                             env: [
                               { name: "BITNAMI_DEBUG", value: "false" },
-                              { name: "REDIS_REPLICATION_MODE", value: "replica" },
+                              {
+                                name: "REDIS_REPLICATION_MODE",
+                                value: "replica",
+                              },
                               {
                                 name: "REDIS_MASTER_HOST",
                                 value:
-                                  "redis-master-0.redis-headless.default.svc.cluster.local"
+                                  "redis-master-0.redis-headless.default.svc.cluster.local",
                               },
-                              { name: "REDIS_MASTER_PORT_NUMBER", value: "6379" },
+                              {
+                                name: "REDIS_MASTER_PORT_NUMBER",
+                                value: "6379",
+                              },
                               { name: "ALLOW_EMPTY_PASSWORD", value: "no" },
                               {
                                 name: "REDIS_PASSWORD",
                                 "value From": {
                                   "secret Key Ref": {
                                     key: "redis-password",
-                                    name: "redis"
-                                  }
-                                }
+                                    name: "redis",
+                                  },
+                                },
                               },
                               {
                                 name: "REDIS_MASTER_PASSWORD",
                                 "value From": {
                                   "secret Key Ref": {
                                     key: "redis-password",
-                                    name: "redis"
-                                  }
-                                }
+                                    name: "redis",
+                                  },
+                                },
                               },
                               { name: "REDIS_TLS_ENABLED", value: "no" },
-                              { name: "REDIS_PORT", value: "6379" }
+                              { name: "REDIS_PORT", value: "6379" },
                             ],
                             image: "docker.io/bitnami/redis:7.2.5-debian-12-r2",
                             "image Pull Policy": "IfNotPresent",
@@ -1164,14 +1196,14 @@ const data = {
                                 command: [
                                   "sh",
                                   "-c",
-                                  "/health/ping_liveness_local_and_master.sh 5"
-                                ]
+                                  "/health/ping_liveness_local_and_master.sh 5",
+                                ],
                               },
                               "failure Threshold": 5,
                               "initial Delay Seconds": 20,
                               "period Seconds": 5,
                               "success Threshold": 1,
-                              "timeout Seconds": 6
+                              "timeout Seconds": 6,
                             },
                             name: "redis",
                             ports: [{ "container Port": 6379, name: "redis" }],
@@ -1180,26 +1212,26 @@ const data = {
                                 command: [
                                   "sh",
                                   "-c",
-                                  "/health/ping_readiness_local_and_master.sh 1"
-                                ]
+                                  "/health/ping_readiness_local_and_master.sh 1",
+                                ],
                               },
                               "failure Threshold": 5,
                               "initial Delay Seconds": 20,
                               "period Seconds": 5,
                               "success Threshold": 1,
-                              "timeout Seconds": 2
+                              "timeout Seconds": 2,
                             },
                             resources: {
                               limits: {
                                 cpu: "150m",
                                 "ephemeral-storage": "2Gi",
-                                memory: "192Mi"
+                                memory: "192Mi",
                               },
                               requests: {
                                 cpu: "100m",
                                 "ephemeral-storage": "50Mi",
-                                memory: "128Mi"
-                              }
+                                memory: "128Mi",
+                              },
                             },
                             "security Context": {
                               "allow Privilege Escalation": false,
@@ -1209,7 +1241,7 @@ const data = {
                               "run As Non Root": true,
                               "run As User": 1001,
                               "se Linux Options": {},
-                              "seccomp Profile": { type: "RuntimeDefault" }
+                              "seccomp Profile": { type: "RuntimeDefault" },
                             },
                             "startup Probe": {
                               "failure Threshold": 22,
@@ -1217,57 +1249,64 @@ const data = {
                               "period Seconds": 10,
                               "success Threshold": 1,
                               "tcp Socket": { port: "redis" },
-                              "timeout Seconds": 5
+                              "timeout Seconds": 5,
                             },
                             "volume Mounts": [
                               {
-                                "mount Path": "/opt/bitnami/scripts/start-scripts",
-                                name: "start-scripts"
+                                "mount Path":
+                                  "/opt/bitnami/scripts/start-scripts",
+                                name: "start-scripts",
                               },
                               { "mount Path": "/health", name: "health" },
                               { "mount Path": "/data", name: "redis-data" },
                               {
                                 "mount Path": "/opt/bitnami/redis/mounted-etc",
-                                name: "config"
+                                name: "config",
                               },
                               {
                                 "mount Path": "/opt/bitnami/redis/etc",
                                 name: "empty-dir",
-                                "sub Path": "app-conf-dir"
+                                "sub Path": "app-conf-dir",
                               },
                               {
                                 "mount Path": "/tmp",
                                 name: "empty-dir",
-                                "sub Path": "tmp-dir"
-                              }
-                            ]
-                          }
+                                "sub Path": "tmp-dir",
+                              },
+                            ],
+                          },
                         ],
                         "enable Service Links": true,
                         "security Context": {
                           "fs Group": 1001,
                           "fs Group Change Policy": "Always",
                           "supplemental Groups": [],
-                          sysctls: []
+                          sysctls: [],
                         },
                         "service Account Name": "redis-replica",
                         "termination Grace Period Seconds": 30,
                         volumes: [
                           {
-                            "config Map": { "default Mode": 493, name: "redis-scripts" },
-                            name: "start-scripts"
+                            "config Map": {
+                              "default Mode": 493,
+                              name: "redis-scripts",
+                            },
+                            name: "start-scripts",
                           },
                           {
-                            "config Map": { "default Mode": 493, name: "redis-health" },
-                            name: "health"
+                            "config Map": {
+                              "default Mode": 493,
+                              name: "redis-health",
+                            },
+                            name: "health",
                           },
                           {
                             "config Map": { name: "redis-configuration" },
-                            name: "config"
+                            name: "config",
                           },
-                          { "empty Dir": {}, name: "empty-dir" }
-                        ]
-                      }
+                          { "empty Dir": {}, name: "empty-dir" },
+                        ],
+                      },
                     },
                     "update Strategy": { type: "RollingUpdate" },
                     "volume Claim Templates": [
@@ -1278,16 +1317,16 @@ const data = {
                           labels: {
                             "app.kubernetes.io/component": "replica",
                             "app.kubernetes.io/instance": "redis",
-                            "app.kubernetes.io/name": "redis"
+                            "app.kubernetes.io/name": "redis",
                           },
-                          name: "redis-data"
+                          name: "redis-data",
                         },
                         spec: {
                           "access Modes": ["ReadWriteOnce"],
-                          resources: { requests: { storage: "8Gi" } }
-                        }
-                      }
-                    ]
+                          resources: { requests: { storage: "8Gi" } },
+                        },
+                      },
+                    ],
                   },
                   name: "redis-replicas",
                   namespace: "default",
@@ -1297,8 +1336,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "Helm",
                     "app.kubernetes.io/name": "redis",
                     "app.kubernetes.io/version": "7.2.5",
-                    "helm.sh/chart": "redis-19.6.2"
-                  }
+                    "helm.sh/chart": "redis-19.6.2",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1329,7 +1368,7 @@ const data = {
                         width: "15",
                         x: "12",
                         y: "20",
-                        "z-index": 14
+                        "z-index": 14,
                       },
                       styles:
                         '{"height":"15","width":"15","x":"12","y":"20","background-opacity":"0.2"}',
@@ -1339,16 +1378,16 @@ const data = {
                       svgComplete:
                         "ui/public/static/img/meshmodels/kubernetes/complete/statefulset-complete.svg",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/statefulset-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/statefulset-white.svg",
                     },
                     position: { posX: 98.5, posY: 41.5 },
-                    whiteboardData: { style: {} }
-                  }
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "StatefulSet"
-              }
-            }
-          }
+                type: "StatefulSet",
+              },
+            },
+          },
         },
         position: { x: 98.5, y: 41.5 },
         group: "nodes",
@@ -1358,7 +1397,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1377,7 +1416,7 @@ const data = {
                     "start-master.sh":
                       '#!/bin/bash\n\n[[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD="$(< "${REDIS_PASSWORD_FILE}")"\nif [[ -f /opt/bitnami/redis/mounted-etc/master.conf ]];then\n    cp /opt/bitnami/redis/mounted-etc/master.conf /opt/bitnami/redis/etc/master.conf\nfi\nif [[ -f /opt/bitnami/redis/mounted-etc/redis.conf ]];then\n    cp /opt/bitnami/redis/mounted-etc/redis.conf /opt/bitnami/redis/etc/redis.conf\nfi\nARGS=("--port" "${REDIS_PORT}")\nARGS+=("--requirepass" "${REDIS_PASSWORD}")\nARGS+=("--masterauth" "${REDIS_PASSWORD}")\nARGS+=("--include" "/opt/bitnami/redis/etc/redis.conf")\nARGS+=("--include" "/opt/bitnami/redis/etc/master.conf")\nexec redis-server "${ARGS[@]}"\n',
                     "start-replica.sh":
-                      '#!/bin/bash\n\nget_port() {\n    hostname="$1"\n    type="$2"\n\n    port_var=$(echo "${hostname^^}_SERVICE_PORT_$type" | sed "s/-/_/g")\n    port=${!port_var}\n\n    if [ -z "$port" ]; then\n        case $type in\n            "SENTINEL")\n                echo 26379\n                ;;\n            "REDIS")\n                echo 6379\n                ;;\n        esac\n    else\n        echo $port\n    fi\n}\n\nget_full_hostname() {\n    hostname="$1"\n    full_hostname="${hostname}.${HEADLESS_SERVICE}"\n    echo "${full_hostname}"\n}\n\nREDISPORT=$(get_port "$HOSTNAME" "REDIS")\nHEADLESS_SERVICE="redis-headless.default.svc.cluster.local"\n\n[[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD="$(< "${REDIS_PASSWORD_FILE}")"\n[[ -f $REDIS_MASTER_PASSWORD_FILE ]] && export REDIS_MASTER_PASSWORD="$(< "${REDIS_MASTER_PASSWORD_FILE}")"\nif [[ -f /opt/bitnami/redis/mounted-etc/replica.conf ]];then\n    cp /opt/bitnami/redis/mounted-etc/replica.conf /opt/bitnami/redis/etc/replica.conf\nfi\nif [[ -f /opt/bitnami/redis/mounted-etc/redis.conf ]];then\n    cp /opt/bitnami/redis/mounted-etc/redis.conf /opt/bitnami/redis/etc/redis.conf\nfi\n\necho "" >> /opt/bitnami/redis/etc/replica.conf\necho "replica-announce-port $REDISPORT" >> /opt/bitnami/redis/etc/replica.conf\necho "replica-announce-ip $(get_full_hostname "$HOSTNAME")" >> /opt/bitnami/redis/etc/replica.conf\nARGS=("--port" "${REDIS_PORT}")\nARGS+=("--replicaof" "${REDIS_MASTER_HOST}" "${REDIS_MASTER_PORT_NUMBER}")\nARGS+=("--requirepass" "${REDIS_PASSWORD}")\nARGS+=("--masterauth" "${REDIS_MASTER_PASSWORD}")\nARGS+=("--include" "/opt/bitnami/redis/etc/redis.conf")\nARGS+=("--include" "/opt/bitnami/redis/etc/replica.conf")\nexec redis-server "${ARGS[@]}"\n'
+                      '#!/bin/bash\n\nget_port() {\n    hostname="$1"\n    type="$2"\n\n    port_var=$(echo "${hostname^^}_SERVICE_PORT_$type" | sed "s/-/_/g")\n    port=${!port_var}\n\n    if [ -z "$port" ]; then\n        case $type in\n            "SENTINEL")\n                echo 26379\n                ;;\n            "REDIS")\n                echo 6379\n                ;;\n        esac\n    else\n        echo $port\n    fi\n}\n\nget_full_hostname() {\n    hostname="$1"\n    full_hostname="${hostname}.${HEADLESS_SERVICE}"\n    echo "${full_hostname}"\n}\n\nREDISPORT=$(get_port "$HOSTNAME" "REDIS")\nHEADLESS_SERVICE="redis-headless.default.svc.cluster.local"\n\n[[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD="$(< "${REDIS_PASSWORD_FILE}")"\n[[ -f $REDIS_MASTER_PASSWORD_FILE ]] && export REDIS_MASTER_PASSWORD="$(< "${REDIS_MASTER_PASSWORD_FILE}")"\nif [[ -f /opt/bitnami/redis/mounted-etc/replica.conf ]];then\n    cp /opt/bitnami/redis/mounted-etc/replica.conf /opt/bitnami/redis/etc/replica.conf\nfi\nif [[ -f /opt/bitnami/redis/mounted-etc/redis.conf ]];then\n    cp /opt/bitnami/redis/mounted-etc/redis.conf /opt/bitnami/redis/etc/redis.conf\nfi\n\necho "" >> /opt/bitnami/redis/etc/replica.conf\necho "replica-announce-port $REDISPORT" >> /opt/bitnami/redis/etc/replica.conf\necho "replica-announce-ip $(get_full_hostname "$HOSTNAME")" >> /opt/bitnami/redis/etc/replica.conf\nARGS=("--port" "${REDIS_PORT}")\nARGS+=("--replicaof" "${REDIS_MASTER_HOST}" "${REDIS_MASTER_PORT_NUMBER}")\nARGS+=("--requirepass" "${REDIS_PASSWORD}")\nARGS+=("--masterauth" "${REDIS_MASTER_PASSWORD}")\nARGS+=("--include" "/opt/bitnami/redis/etc/redis.conf")\nARGS+=("--include" "/opt/bitnami/redis/etc/replica.conf")\nexec redis-server "${ARGS[@]}"\n',
                   },
                   name: "redis-scripts",
                   namespace: "default",
@@ -1386,8 +1425,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "Helm",
                     "app.kubernetes.io/name": "redis",
                     "app.kubernetes.io/version": "7.2.5",
-                    "helm.sh/chart": "redis-19.6.2"
-                  }
+                    "helm.sh/chart": "redis-19.6.2",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1418,16 +1457,16 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/configmap-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/configmap-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/configmap-white.svg",
                     },
                     position: { posX: -34.5, posY: 44 },
-                    whiteboardData: { style: {} }
-                  }
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ConfigMap"
-              }
-            }
-          }
+                type: "ConfigMap",
+              },
+            },
+          },
         },
         position: { x: -34.5, y: 44 },
         group: "nodes",
@@ -1437,7 +1476,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1458,7 +1497,7 @@ const data = {
                     "redis.conf":
                       '# User-supplied common configuration:\n# Enable AOF https://redis.io/topics/persistence#append-only-file\nappendonly yes\n# Disable RDB persistence, AOF persistence already enabled.\nsave ""\n# End of common configuration',
                     "replica.conf":
-                      'dir /data\n# User-supplied replica configuration:\nrename-command FLUSHDB ""\nrename-command FLUSHALL ""\n# End of replica configuration'
+                      'dir /data\n# User-supplied replica configuration:\nrename-command FLUSHDB ""\nrename-command FLUSHALL ""\n# End of replica configuration',
                   },
                   name: "redis-configuration",
                   namespace: "default",
@@ -1467,8 +1506,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "Helm",
                     "app.kubernetes.io/name": "redis",
                     "app.kubernetes.io/version": "7.2.5",
-                    "helm.sh/chart": "redis-19.6.2"
-                  }
+                    "helm.sh/chart": "redis-19.6.2",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1499,16 +1538,16 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/configmap-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/configmap-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/configmap-white.svg",
                     },
                     position: { posX: -89, posY: -106 },
-                    whiteboardData: { style: {} }
-                  }
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ConfigMap"
-              }
-            }
-          }
+                type: "ConfigMap",
+              },
+            },
+          },
         },
         position: { x: -89, y: -106 },
         group: "nodes",
@@ -1518,7 +1557,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1539,10 +1578,10 @@ const data = {
                     "pod Selector": {
                       "match Labels": {
                         "app.kubernetes.io/instance": "redis",
-                        "app.kubernetes.io/name": "redis"
-                      }
+                        "app.kubernetes.io/name": "redis",
+                      },
                     },
-                    "policy Types": ["Ingress", "Egress"]
+                    "policy Types": ["Ingress", "Egress"],
                   },
                   name: "redis",
                   namespace: "default",
@@ -1551,8 +1590,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "Helm",
                     "app.kubernetes.io/name": "redis",
                     "app.kubernetes.io/version": "7.2.5",
-                    "helm.sh/chart": "redis-19.6.2"
-                  }
+                    "helm.sh/chart": "redis-19.6.2",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1579,16 +1618,16 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/kubernetes-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/kubernetes-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/kubernetes-white.svg",
                     },
                     position: { posX: 62.5, posY: 107 },
-                    whiteboardData: { style: {} }
-                  }
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "NetworkPolicy"
-              }
-            }
-          }
+                type: "NetworkPolicy",
+              },
+            },
+          },
         },
         position: { x: 62.5, y: 107 },
         group: "nodes",
@@ -1598,9 +1637,9 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
-      }
-    ]
+        classes: "",
+      },
+    ],
   },
   elementStyles: {
     "13f72f39-ca34-46b7-9369-c57e705f9144": {
@@ -2028,7 +2067,7 @@ const data = {
       "padding-top": "12px",
       paddingTop: "12px",
       "padding-bottom": "12px",
-      paddingBottom: "12px"
+      paddingBottom: "12px",
     },
     "d5a87d27-8891-4103-bf07-a611d3f28feb": {
       events: "yes",
@@ -2455,7 +2494,7 @@ const data = {
       "padding-top": "12px",
       paddingTop: "12px",
       "padding-bottom": "12px",
-      paddingBottom: "12px"
+      paddingBottom: "12px",
     },
     "b8e45445-623b-45e8-bcc5-c929897a26f0": {
       events: "yes",
@@ -2882,7 +2921,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "58b68215-37ec-420c-bdcf-d1891a8e64d7": {
       events: "yes",
@@ -3309,7 +3348,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "ba5208c6-8cd0-4892-a1ce-963b119dc06f": {
       events: "yes",
@@ -3736,7 +3775,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "2d0d2a71-ef39-4b07-a7bd-56ed39a116d1": {
       events: "yes",
@@ -4163,7 +4202,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "76832250-a439-46dc-951f-c146b1743fe1": {
       events: "yes",
@@ -4590,7 +4629,7 @@ const data = {
       "padding-top": "1px",
       paddingTop: "1px",
       "padding-bottom": "1px",
-      paddingBottom: "1px"
+      paddingBottom: "1px",
     },
     "fbdd7b0c-2f5f-4192-b17e-79b85331f109": {
       events: "yes",
@@ -5017,7 +5056,7 @@ const data = {
       "padding-top": "12px",
       paddingTop: "12px",
       "padding-bottom": "12px",
-      paddingBottom: "12px"
+      paddingBottom: "12px",
     },
     "a2e159e1-a6ee-424b-b284-252e56bef0e7": {
       events: "yes",
@@ -5444,7 +5483,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "e5817cf6-1c84-4aed-a8c4-d6fa34a5bfce": {
       events: "yes",
@@ -5871,7 +5910,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "4ebb716a-b777-46fb-a0c1-d15dfb47cb9f": {
       events: "yes",
@@ -6298,7 +6337,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "dcb9da42-2a2c-404c-a111-0e5edf77490a": {
       events: "yes",
@@ -6725,7 +6764,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "b652fdc8-3c49-4118-9f6a-ff53eaf592cc": {
       events: "yes",
@@ -7152,7 +7191,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "cf5ad900-f207-463d-814f-c0a1f7640a74": {
       events: "yes",
@@ -7579,9 +7618,9 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
-    }
-  }
+      paddingBottom: "6px",
+    },
+  },
 };
 
 const addStyles = () => {
@@ -7648,7 +7687,7 @@ const addStyles = () => {
 
 const CreateToolBar = () => {
   const cyContainer = document.getElementById(
-    "embedded-design-c3dcee44-6b8a-498f-a44c-66682ccf4d2a"
+    "embedded-design-c3dcee44-6b8a-498f-a44c-66682ccf4d2a",
   );
   const toolbar = document.createElement("div");
   toolbar.innerHTML = `
@@ -7701,7 +7740,7 @@ const CreateToolBar = () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const embedContainer = document.getElementById(
-    "embedded-design-c3dcee44-6b8a-498f-a44c-66682ccf4d2a"
+    "embedded-design-c3dcee44-6b8a-498f-a44c-66682ccf4d2a",
   );
   embedContainer.classList.add("embed-design-container");
   const cyContainer = document.createElement("div");
@@ -7712,7 +7751,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var cy = (window.cy = cytoscape({
     container: document.getElementById(
-      "embedded-design-c3dcee44-6b8a-498f-a44c-66682ccf4d2a-cy"
+      "embedded-design-c3dcee44-6b8a-498f-a44c-66682ccf4d2a-cy",
     ),
 
     autounselectify: true,
@@ -7721,13 +7760,13 @@ document.addEventListener("DOMContentLoaded", function () {
     minZoom: 0.5,
     maxZoom: 6.6,
     layout: {
-      name: "preset"
+      name: "preset",
     },
     elements: data.elements,
-    style: data.style
+    style: data.style,
   }));
 
-  Object.keys(data.elementStyles).forEach(id => {
+  Object.keys(data.elementStyles).forEach((id) => {
     cy.getElementById(id).style(data.elementStyles[id]);
   });
 

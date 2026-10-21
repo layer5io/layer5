@@ -24,7 +24,7 @@ const data = {
                           "dapr.io/control-plane": "operator",
                           "prometheus.io/path": "/",
                           "prometheus.io/port": "9090",
-                          "prometheus.io/scrape": "true"
+                          "prometheus.io/scrape": "true",
                         },
                         labels: {
                           app: "dapr-operator",
@@ -32,26 +32,27 @@ const data = {
                           "app.kubernetes.io/managed-by": "helm",
                           "app.kubernetes.io/name": "dapr",
                           "app.kubernetes.io/part-of": "dapr",
-                          "app.kubernetes.io/version": "1.14.0-rc.4"
-                        }
+                          "app.kubernetes.io/version": "1.14.0-rc.4",
+                        },
                       },
                       spec: {
                         affinity: {
                           "node Affinity": {
-                            "required During Scheduling Ignored During Execution": {
-                              "node Selector Terms": [
-                                {
-                                  "match Expressions": [
-                                    {
-                                      key: "kubernetes.io/os",
-                                      operator: "In",
-                                      values: ["linux"]
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          }
+                            "required During Scheduling Ignored During Execution":
+                              {
+                                "node Selector Terms": [
+                                  {
+                                    "match Expressions": [
+                                      {
+                                        key: "kubernetes.io/os",
+                                        operator: "In",
+                                        values: ["linux"],
+                                      },
+                                    ],
+                                  },
+                                ],
+                              },
+                          },
                         },
                         containers: [
                           {
@@ -66,16 +67,18 @@ const data = {
                               "/var/run/secrets/dapr.io/tls/ca.crt",
                               "--enable-metrics",
                               "--metrics-port",
-                              "9090"
+                              "9090",
                             ],
                             command: ["/operator"],
                             env: [
                               {
                                 name: "NAMESPACE",
                                 "value From": {
-                                  "field Ref": { "field Path": "metadata.namespace" }
-                                }
-                              }
+                                  "field Ref": {
+                                    "field Path": "metadata.namespace",
+                                  },
+                                },
+                              },
                             ],
                             image: "ghcr.io/dapr/operator:1.14.0-rc.4",
                             "image Pull Policy": "IfNotPresent",
@@ -83,49 +86,60 @@ const data = {
                               "failure Threshold": 5,
                               "http Get": { path: "/healthz", port: 8080 },
                               "initial Delay Seconds": 3,
-                              "period Seconds": 3
+                              "period Seconds": 3,
                             },
                             name: "dapr-operator",
                             ports: [
                               { "container Port": 6500 },
-                              { "container Port": 9090, name: "metrics", protocol: "TCP" }
+                              {
+                                "container Port": 9090,
+                                name: "metrics",
+                                protocol: "TCP",
+                              },
                             ],
                             "readiness Probe": {
                               "failure Threshold": 5,
                               "http Get": { path: "/healthz", port: 8080 },
                               "initial Delay Seconds": 3,
-                              "period Seconds": 3
+                              "period Seconds": 3,
                             },
                             resources: {},
                             "security Context": {
                               capabilities: { drop: ["ALL"] },
                               "read Only Root Filesystem": true,
-                              "run As Non Root": true
+                              "run As Non Root": true,
                             },
                             "volume Mounts": [
                               {
                                 "mount Path": "/var/run/secrets/dapr.io/tls",
                                 name: "dapr-trust-bundle",
-                                "read Only": true
+                                "read Only": true,
                               },
                               {
-                                "mount Path": "/var/run/secrets/dapr.io/sentrytoken",
+                                "mount Path":
+                                  "/var/run/secrets/dapr.io/sentrytoken",
                                 name: "dapr-identity-token",
-                                "read Only": true
+                                "read Only": true,
                               },
-                              { "mount Path": "/tmp", name: "dapr-operator-tmp" }
-                            ]
-                          }
+                              {
+                                "mount Path": "/tmp",
+                                name: "dapr-operator-tmp",
+                              },
+                            ],
+                          },
                         ],
                         "service Account Name": "dapr-operator",
                         volumes: [
                           {
-                            "empty Dir": { medium: "Memory", "size Limit": "2Mi" },
-                            name: "dapr-operator-tmp"
+                            "empty Dir": {
+                              medium: "Memory",
+                              "size Limit": "2Mi",
+                            },
+                            name: "dapr-operator-tmp",
                           },
                           {
                             "config Map": { name: "dapr-trust-bundle" },
-                            name: "dapr-trust-bundle"
+                            name: "dapr-trust-bundle",
                           },
                           {
                             name: "dapr-identity-token",
@@ -136,15 +150,15 @@ const data = {
                                     audience:
                                       "spiffe://cluster.local/ns/default/dapr-sentry",
                                     "expiration Seconds": 600,
-                                    path: "token"
-                                  }
-                                }
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    }
+                                    path: "token",
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                    },
                   },
                   name: "dapr-operator",
                   namespace: "default",
@@ -154,8 +168,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -166,7 +180,7 @@ const data = {
                           metadata: { port: 443, protocol: "TCP" },
                           source: "40fc8324-31d0-44a2-af15-b67e7ee01af4",
                           subType: "Network",
-                          target: "6c3ac91b-c3e2-4312-91b3-4e24841b152e"
+                          target: "6c3ac91b-c3e2-4312-91b3-4e24841b152e",
                         },
                         style: {
                           "control-point-distances": null,
@@ -182,9 +196,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "6c3ac91b-c3e2-4312-91b3-4e24841b152e",
@@ -208,7 +222,7 @@ const data = {
                       styleOverrides: {
                         "background-opacity": 0.5,
                         "border-width": 2,
-                        "z-index": 18
+                        "z-index": 18,
                       },
                       styles: '{"border-width":2,"background-opacity":0.5}',
                       subCategory: "",
@@ -217,16 +231,19 @@ const data = {
                       svgComplete:
                         "ui/public/static/img/meshmodels/kubernetes/complete/deployment-complete.svg",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg",
                     },
-                    position: { posX: 377.7879471782902, posY: 325.29051916135415 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 377.7879471782902,
+                      posY: 325.29051916135415,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Deployment"
-              }
-            }
-          }
+                type: "Deployment",
+              },
+            },
+          },
         },
         position: { x: 377.7879471782902, y: 325.29051916135415 },
         group: "nodes",
@@ -236,7 +253,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -255,10 +272,10 @@ const data = {
                     "cluster IP": "None",
                     ports: [
                       { name: "api", port: 50005 },
-                      { name: "raft-node", port: 8201 }
+                      { name: "raft-node", port: 8201 },
                     ],
                     "publish Not Ready Addresses": true,
-                    selector: { app: "dapr-placement-server" }
+                    selector: { app: "dapr-placement-server" },
                   },
                   name: "dapr-placement-server",
                   namespace: "default",
@@ -268,13 +285,13 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
                   },
                   annotations: {
                     "prometheus.io/path": "/",
                     "prometheus.io/port": "9090",
-                    "prometheus.io/scrape": "true"
-                  }
+                    "prometheus.io/scrape": "true",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -284,7 +301,7 @@ const data = {
                           id: "1251d4b1-46c4-47e5-9c3b-56602a045c27",
                           source: "74f0fc5f-c84a-4c8c-a201-a75200fb9c1e",
                           subType: "Annotation",
-                          target: "472662f9-4151-4987-8bb8-a43ead2f2e62"
+                          target: "472662f9-4151-4987-8bb8-a43ead2f2e62",
                         },
                         style: {
                           "control-point-distances": null,
@@ -300,9 +317,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "74f0fc5f-c84a-4c8c-a201-a75200fb9c1e",
@@ -330,7 +347,7 @@ const data = {
                         width: 20,
                         x: "10px",
                         y: "12px",
-                        "z-index": 16
+                        "z-index": 16,
                       },
                       styles:
                         '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
@@ -339,16 +356,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg",
                     },
-                    position: { posX: 332.0143313869707, posY: 632.3318293159355 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 332.0143313869707,
+                      posY: 632.3318293159355,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Service"
-              }
-            }
-          }
+                type: "Service",
+              },
+            },
+          },
         },
         position: { x: 332.0143313869707, y: 632.3318293159355 },
         group: "nodes",
@@ -358,7 +378,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -379,10 +399,10 @@ const data = {
                       { name: "api", port: 50006 },
                       { name: "etcd-client", port: 2379 },
                       { name: "etcd-httpclient", port: 2330 },
-                      { name: "etcd-peer", port: 2380 }
+                      { name: "etcd-peer", port: 2380 },
                     ],
                     "publish Not Ready Addresses": true,
-                    selector: { app: "dapr-scheduler-server" }
+                    selector: { app: "dapr-scheduler-server" },
                   },
                   name: "dapr-scheduler-server",
                   namespace: "default",
@@ -392,13 +412,13 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
                   },
                   annotations: {
                     "prometheus.io/path": "/",
                     "prometheus.io/port": "9090",
-                    "prometheus.io/scrape": "true"
-                  }
+                    "prometheus.io/scrape": "true",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -408,7 +428,7 @@ const data = {
                           id: "86d22457-aaae-4bd9-9b79-39d5dd3b7c93",
                           source: "787667bc-3cdf-4388-9f17-61df0e81a8d9",
                           subType: "Annotation",
-                          target: "4ada3a29-b9c1-4138-aeaf-58dbcb6a9ea9"
+                          target: "4ada3a29-b9c1-4138-aeaf-58dbcb6a9ea9",
                         },
                         style: {
                           "control-point-distances": null,
@@ -424,9 +444,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "787667bc-3cdf-4388-9f17-61df0e81a8d9",
@@ -454,7 +474,7 @@ const data = {
                         width: 20,
                         x: "10px",
                         y: "12px",
-                        "z-index": 29
+                        "z-index": 29,
                       },
                       styles:
                         '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
@@ -463,16 +483,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg",
                     },
-                    position: { posX: 751.7602273509872, posY: 403.08062156745495 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 751.7602273509872,
+                      posY: 403.08062156745495,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Service"
-              }
-            }
-          }
+                type: "Service",
+              },
+            },
+          },
         },
         position: { x: 751.7602273509872, y: 403.08062156745495 },
         group: "nodes",
@@ -482,7 +505,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -499,10 +522,15 @@ const data = {
                 settings: {
                   spec: {
                     ports: [
-                      { name: "grpc", port: 443, protocol: "TCP", "target Port": 50001 }
+                      {
+                        name: "grpc",
+                        port: 443,
+                        protocol: "TCP",
+                        "target Port": 50001,
+                      },
                     ],
                     selector: { app: "dapr-sentry" },
-                    type: "ClusterIP"
+                    type: "ClusterIP",
                   },
                   name: "dapr-sentry",
                   namespace: "default",
@@ -511,13 +539,13 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
                   },
                   annotations: {
                     "prometheus.io/path": "/",
                     "prometheus.io/port": "9090",
-                    "prometheus.io/scrape": "true"
-                  }
+                    "prometheus.io/scrape": "true",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -528,7 +556,7 @@ const data = {
                           metadata: { port: 443, protocol: "TCP" },
                           source: "484a881e-7cbc-4b14-9962-cd7fc4b1775d",
                           subType: "Network",
-                          target: "7a348b87-0a93-43b8-9920-a7eb6afe5941"
+                          target: "7a348b87-0a93-43b8-9920-a7eb6afe5941",
                         },
                         style: {
                           "control-point-distances": null,
@@ -544,9 +572,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "484a881e-7cbc-4b14-9962-cd7fc4b1775d",
@@ -574,7 +602,7 @@ const data = {
                         width: 20,
                         x: "10px",
                         y: "12px",
-                        "z-index": 35
+                        "z-index": 35,
                       },
                       styles:
                         '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
@@ -583,16 +611,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg",
                     },
-                    position: { posX: 448.6535707745119, posY: 577.2710372065272 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 448.6535707745119,
+                      posY: 577.2710372065272,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Service"
-              }
-            }
-          }
+                type: "Service",
+              },
+            },
+          },
         },
         position: { x: 448.6535707745119, y: 577.2710372065272 },
         group: "nodes",
@@ -602,7 +633,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -619,11 +650,21 @@ const data = {
                 settings: {
                   spec: {
                     ports: [
-                      { name: "grpc", port: 443, protocol: "TCP", "target Port": 6500 },
-                      { name: "legacy", port: 80, protocol: "TCP", "target Port": 6500 }
+                      {
+                        name: "grpc",
+                        port: 443,
+                        protocol: "TCP",
+                        "target Port": 6500,
+                      },
+                      {
+                        name: "legacy",
+                        port: 80,
+                        protocol: "TCP",
+                        "target Port": 6500,
+                      },
                     ],
                     selector: { app: "dapr-operator" },
-                    type: "ClusterIP"
+                    type: "ClusterIP",
                   },
                   name: "dapr-api",
                   namespace: "default",
@@ -632,13 +673,13 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
                   },
                   annotations: {
                     "prometheus.io/path": "/",
                     "prometheus.io/port": "9090",
-                    "prometheus.io/scrape": "true"
-                  }
+                    "prometheus.io/scrape": "true",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -649,7 +690,7 @@ const data = {
                           metadata: { port: 443, protocol: "TCP" },
                           source: "40fc8324-31d0-44a2-af15-b67e7ee01af4",
                           subType: "Network",
-                          target: "6c3ac91b-c3e2-4312-91b3-4e24841b152e"
+                          target: "6c3ac91b-c3e2-4312-91b3-4e24841b152e",
                         },
                         style: {
                           "control-point-distances": null,
@@ -665,9 +706,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "40fc8324-31d0-44a2-af15-b67e7ee01af4",
@@ -695,7 +736,7 @@ const data = {
                         width: 20,
                         x: "10px",
                         y: "12px",
-                        "z-index": 21
+                        "z-index": 21,
                       },
                       styles:
                         '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
@@ -704,16 +745,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg",
                     },
-                    position: { posX: 547.317785463231, posY: 531.6015608121858 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 547.317785463231,
+                      posY: 531.6015608121858,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Service"
-              }
-            }
-          }
+                type: "Service",
+              },
+            },
+          },
         },
         position: { x: 547.317785463231, y: 531.6015608121858 },
         group: "nodes",
@@ -723,7 +767,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -744,11 +788,11 @@ const data = {
                         name: "https",
                         port: 443,
                         protocol: "TCP",
-                        "target Port": "https"
-                      }
+                        "target Port": "https",
+                      },
                     ],
                     selector: { app: "dapr-sidecar-injector" },
-                    type: "ClusterIP"
+                    type: "ClusterIP",
                   },
                   name: "dapr-sidecar-injector",
                   namespace: "default",
@@ -757,13 +801,13 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
                   },
                   annotations: {
                     "prometheus.io/path": "/",
                     "prometheus.io/port": "9090",
-                    "prometheus.io/scrape": "true"
-                  }
+                    "prometheus.io/scrape": "true",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -774,7 +818,7 @@ const data = {
                           id: "9c3e106c-cac0-4291-87c8-7b25a08bf260",
                           source: "e5a5d1c1-ba59-4f76-b892-68374a602dc6",
                           subType: "Network",
-                          target: "33edf12d-9592-4f7b-8600-b7fe2d4364fe"
+                          target: "33edf12d-9592-4f7b-8600-b7fe2d4364fe",
                         },
                         style: {
                           "control-point-distances": null,
@@ -790,9 +834,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "e5a5d1c1-ba59-4f76-b892-68374a602dc6",
@@ -820,7 +864,7 @@ const data = {
                         width: 20,
                         x: "10px",
                         y: "12px",
-                        "z-index": 44
+                        "z-index": 44,
                       },
                       styles:
                         '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
@@ -829,16 +873,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg",
                     },
-                    position: { posX: 652.8572723478202, posY: 461.26822108624714 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 652.8572723478202,
+                      posY: 461.26822108624714,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Service"
-              }
-            }
-          }
+                type: "Service",
+              },
+            },
+          },
         },
         position: { x: 652.8572723478202, y: 461.26822108624714 },
         group: "nodes",
@@ -848,7 +895,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -866,7 +913,9 @@ const data = {
                   spec: {
                     "pod Management Policy": "Parallel",
                     replicas: 1,
-                    selector: { "match Labels": { app: "dapr-placement-server" } },
+                    selector: {
+                      "match Labels": { app: "dapr-placement-server" },
+                    },
                     "service Name": "dapr-placement-server",
                     template: {
                       metadata: {
@@ -874,7 +923,7 @@ const data = {
                           "dapr.io/control-plane": "placement",
                           "prometheus.io/path": "/",
                           "prometheus.io/port": "9090",
-                          "prometheus.io/scrape": "true"
+                          "prometheus.io/scrape": "true",
                         },
                         labels: {
                           app: "dapr-placement-server",
@@ -882,26 +931,27 @@ const data = {
                           "app.kubernetes.io/managed-by": "helm",
                           "app.kubernetes.io/name": "dapr",
                           "app.kubernetes.io/part-of": "dapr",
-                          "app.kubernetes.io/version": "1.14.0-rc.4"
-                        }
+                          "app.kubernetes.io/version": "1.14.0-rc.4",
+                        },
                       },
                       spec: {
                         affinity: {
                           "node Affinity": {
-                            "required During Scheduling Ignored During Execution": {
-                              "node Selector Terms": [
-                                {
-                                  "match Expressions": [
-                                    {
-                                      key: "kubernetes.io/os",
-                                      operator: "In",
-                                      values: ["linux"]
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          }
+                            "required During Scheduling Ignored During Execution":
+                              {
+                                "node Selector Terms": [
+                                  {
+                                    "match Expressions": [
+                                      {
+                                        key: "kubernetes.io/os",
+                                        operator: "In",
+                                        values: ["linux"],
+                                      },
+                                    ],
+                                  },
+                                ],
+                              },
+                          },
                         },
                         containers: [
                           {
@@ -921,22 +971,26 @@ const data = {
                               "--trust-domain=cluster.local",
                               "--trust-anchors-file=/var/run/secrets/dapr.io/tls/ca.crt",
                               "--sentry-address=dapr-sentry.default.svc.cluster.local:443",
-                              "--mode=kubernetes"
+                              "--mode=kubernetes",
                             ],
                             command: ["/placement"],
                             env: [
                               {
                                 name: "PLACEMENT_ID",
                                 "value From": {
-                                  "field Ref": { "field Path": "metadata.name" }
-                                }
+                                  "field Ref": {
+                                    "field Path": "metadata.name",
+                                  },
+                                },
                               },
                               {
                                 name: "NAMESPACE",
                                 "value From": {
-                                  "field Ref": { "field Path": "metadata.namespace" }
-                                }
-                              }
+                                  "field Ref": {
+                                    "field Path": "metadata.namespace",
+                                  },
+                                },
+                              },
                             ],
                             image: "ghcr.io/dapr/placement:1.14.0-rc.4",
                             "image Pull Policy": "IfNotPresent",
@@ -944,44 +998,49 @@ const data = {
                               "failure Threshold": 5,
                               "http Get": { path: "/healthz", port: 8080 },
                               "initial Delay Seconds": 10,
-                              "period Seconds": 3
+                              "period Seconds": 3,
                             },
                             name: "dapr-placement-server",
                             ports: [
                               { "container Port": 50005, name: "api" },
                               { "container Port": 8201, name: "raft-node" },
-                              { "container Port": 9090, name: "metrics", protocol: "TCP" }
+                              {
+                                "container Port": 9090,
+                                name: "metrics",
+                                protocol: "TCP",
+                              },
                             ],
                             "readiness Probe": {
                               "failure Threshold": 5,
                               "http Get": { path: "/healthz", port: 8080 },
                               "initial Delay Seconds": 3,
-                              "period Seconds": 3
+                              "period Seconds": 3,
                             },
                             resources: {},
                             "security Context": {
                               capabilities: { drop: ["ALL"] },
                               "read Only Root Filesystem": true,
-                              "run As User": 0
+                              "run As User": 0,
                             },
                             "volume Mounts": [
                               {
                                 "mount Path": "/var/run/secrets/dapr.io/tls",
                                 name: "dapr-trust-bundle",
-                                "read Only": true
+                                "read Only": true,
                               },
                               {
-                                "mount Path": "/var/run/secrets/dapr.io/sentrytoken",
-                                name: "dapr-identity-token"
-                              }
-                            ]
-                          }
+                                "mount Path":
+                                  "/var/run/secrets/dapr.io/sentrytoken",
+                                name: "dapr-identity-token",
+                              },
+                            ],
+                          },
                         ],
                         "service Account Name": "dapr-placement",
                         volumes: [
                           {
                             "config Map": { name: "dapr-trust-bundle" },
-                            name: "dapr-trust-bundle"
+                            name: "dapr-trust-bundle",
                           },
                           {
                             name: "dapr-identity-token",
@@ -992,15 +1051,15 @@ const data = {
                                     audience:
                                       "spiffe://cluster.local/ns/default/dapr-sentry",
                                     "expiration Seconds": 600,
-                                    path: "token"
-                                  }
-                                }
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    }
+                                    path: "token",
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                    },
                   },
                   name: "dapr-placement-server",
                   namespace: "default",
@@ -1010,8 +1069,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1021,7 +1080,7 @@ const data = {
                           id: "1251d4b1-46c4-47e5-9c3b-56602a045c27",
                           source: "74f0fc5f-c84a-4c8c-a201-a75200fb9c1e",
                           subType: "Annotation",
-                          target: "472662f9-4151-4987-8bb8-a43ead2f2e62"
+                          target: "472662f9-4151-4987-8bb8-a43ead2f2e62",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1037,9 +1096,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "472662f9-4151-4987-8bb8-a43ead2f2e62",
@@ -1067,7 +1126,7 @@ const data = {
                         width: "15",
                         x: "12",
                         y: "20",
-                        "z-index": 40
+                        "z-index": 40,
                       },
                       styles:
                         '{"height":"15","width":"15","x":"12","y":"20","background-opacity":"0.2"}',
@@ -1077,16 +1136,19 @@ const data = {
                       svgComplete:
                         "ui/public/static/img/meshmodels/kubernetes/complete/statefulset-complete.svg",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/statefulset-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/statefulset-white.svg",
                     },
-                    position: { posX: 178.51706919255705, posY: 449.90318309886123 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 178.51706919255705,
+                      posY: 449.90318309886123,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "StatefulSet"
-              }
-            }
-          }
+                type: "StatefulSet",
+              },
+            },
+          },
         },
         position: { x: 178.51706919255705, y: 449.90318309886123 },
         group: "nodes",
@@ -1096,7 +1158,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1114,7 +1176,9 @@ const data = {
                   spec: {
                     "pod Management Policy": "Parallel",
                     replicas: 1,
-                    selector: { "match Labels": { app: "dapr-scheduler-server" } },
+                    selector: {
+                      "match Labels": { app: "dapr-scheduler-server" },
+                    },
                     "service Name": "dapr-scheduler-server",
                     template: {
                       metadata: {
@@ -1122,7 +1186,7 @@ const data = {
                           "dapr.io/control-plane": "scheduler",
                           "prometheus.io/path": "/",
                           "prometheus.io/port": "9090",
-                          "prometheus.io/scrape": "true"
+                          "prometheus.io/scrape": "true",
                         },
                         labels: {
                           app: "dapr-scheduler-server",
@@ -1130,26 +1194,27 @@ const data = {
                           "app.kubernetes.io/managed-by": "helm",
                           "app.kubernetes.io/name": "dapr",
                           "app.kubernetes.io/part-of": "dapr",
-                          "app.kubernetes.io/version": "1.14.0-rc.4"
-                        }
+                          "app.kubernetes.io/version": "1.14.0-rc.4",
+                        },
                       },
                       spec: {
                         affinity: {
                           "node Affinity": {
-                            "required During Scheduling Ignored During Execution": {
-                              "node Selector Terms": [
-                                {
-                                  "match Expressions": [
-                                    {
-                                      key: "kubernetes.io/os",
-                                      operator: "In",
-                                      values: ["linux"]
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          }
+                            "required During Scheduling Ignored During Execution":
+                              {
+                                "node Selector Terms": [
+                                  {
+                                    "match Expressions": [
+                                      {
+                                        key: "kubernetes.io/os",
+                                        operator: "In",
+                                        values: ["linux"],
+                                      },
+                                    ],
+                                  },
+                                ],
+                              },
+                          },
                         },
                         containers: [
                           {
@@ -1178,28 +1243,32 @@ const data = {
                               "--trust-domain=cluster.local",
                               "--trust-anchors-file=/var/run/secrets/dapr.io/tls/ca.crt",
                               "--sentry-address=dapr-sentry.default.svc.cluster.local:443",
-                              "--mode=kubernetes"
+                              "--mode=kubernetes",
                             ],
                             command: ["/scheduler"],
                             env: [
                               {
                                 name: "SCHEDULER_ID",
                                 "value From": {
-                                  "field Ref": { "field Path": "metadata.name" }
-                                }
+                                  "field Ref": {
+                                    "field Path": "metadata.name",
+                                  },
+                                },
                               },
                               {
                                 name: "NAMESPACE",
                                 "value From": {
-                                  "field Ref": { "field Path": "metadata.namespace" }
-                                }
+                                  "field Ref": {
+                                    "field Path": "metadata.namespace",
+                                  },
+                                },
                               },
                               {
                                 name: "POD_IP",
                                 "value From": {
-                                  "field Ref": { "field Path": "status.podIP" }
-                                }
-                              }
+                                  "field Ref": { "field Path": "status.podIP" },
+                                },
+                              },
                             ],
                             image: "ghcr.io/dapr/scheduler:1.14.0-rc.4",
                             "image Pull Policy": "IfNotPresent",
@@ -1207,56 +1276,64 @@ const data = {
                               "failure Threshold": 5,
                               "http Get": { path: "/healthz", port: 8080 },
                               "initial Delay Seconds": 10,
-                              "period Seconds": 3
+                              "period Seconds": 3,
                             },
                             name: "dapr-scheduler-server",
                             ports: [
                               { "container Port": 50006, name: "api" },
                               { "container Port": 2379, name: "etcd-client" },
-                              { "container Port": 2330, name: "etcd-httpclient" },
+                              {
+                                "container Port": 2330,
+                                name: "etcd-httpclient",
+                              },
                               { "container Port": 2380, name: "etcd-peer" },
-                              { "container Port": 9090, name: "metrics", protocol: "TCP" }
+                              {
+                                "container Port": 9090,
+                                name: "metrics",
+                                protocol: "TCP",
+                              },
                             ],
                             "readiness Probe": {
                               "failure Threshold": 5,
                               "http Get": { path: "/healthz", port: 8080 },
                               "initial Delay Seconds": 3,
-                              "period Seconds": 3
+                              "period Seconds": 3,
                             },
                             resources: {},
                             "security Context": {
                               capabilities: { drop: ["ALL"] },
                               "read Only Root Filesystem": false,
-                              "run As Non Root": true
+                              "run As Non Root": true,
                             },
                             "volume Mounts": [
                               {
                                 "mount Path": "/var/run/data/dapr-scheduler/",
                                 name: "dapr-scheduler-data-dir",
-                                "read Only": false
+                                "read Only": false,
                               },
                               {
                                 "mount Path": "/var/run/secrets/dapr.io/tls",
                                 name: "dapr-trust-bundle",
-                                "read Only": true
+                                "read Only": true,
                               },
                               {
-                                "mount Path": "/var/run/secrets/dapr.io/sentrytoken",
-                                name: "dapr-identity-token"
-                              }
-                            ]
-                          }
+                                "mount Path":
+                                  "/var/run/secrets/dapr.io/sentrytoken",
+                                name: "dapr-identity-token",
+                              },
+                            ],
+                          },
                         ],
                         "security Context": { "fs Group": 65532 },
                         "service Account Name": "dapr-scheduler",
                         volumes: [
                           {
                             "empty Dir": { medium: "Memory" },
-                            name: "dapr-scheduler-data-dir"
+                            name: "dapr-scheduler-data-dir",
                           },
                           {
                             "config Map": { name: "dapr-trust-bundle" },
-                            name: "dapr-trust-bundle"
+                            name: "dapr-trust-bundle",
                           },
                           {
                             name: "dapr-identity-token",
@@ -1267,15 +1344,15 @@ const data = {
                                     audience:
                                       "spiffe://cluster.local/ns/default/dapr-sentry",
                                     "expiration Seconds": 600,
-                                    path: "token"
-                                  }
-                                }
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    }
+                                    path: "token",
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                    },
                   },
                   name: "dapr-scheduler-server",
                   namespace: "default",
@@ -1285,8 +1362,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1296,7 +1373,7 @@ const data = {
                           id: "86d22457-aaae-4bd9-9b79-39d5dd3b7c93",
                           source: "787667bc-3cdf-4388-9f17-61df0e81a8d9",
                           subType: "Annotation",
-                          target: "4ada3a29-b9c1-4138-aeaf-58dbcb6a9ea9"
+                          target: "4ada3a29-b9c1-4138-aeaf-58dbcb6a9ea9",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1312,9 +1389,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "4ada3a29-b9c1-4138-aeaf-58dbcb6a9ea9",
@@ -1342,7 +1419,7 @@ const data = {
                         width: "15",
                         x: "12",
                         y: "20",
-                        "z-index": 31
+                        "z-index": 31,
                       },
                       styles:
                         '{"height":"15","width":"15","x":"12","y":"20","background-opacity":"0.2"}',
@@ -1352,16 +1429,19 @@ const data = {
                       svgComplete:
                         "ui/public/static/img/meshmodels/kubernetes/complete/statefulset-complete.svg",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/statefulset-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/statefulset-white.svg",
                     },
-                    position: { posX: 622.8163964293032, posY: 266.6613299531768 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 622.8163964293032,
+                      posY: 266.6613299531768,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "StatefulSet"
-              }
-            }
-          }
+                type: "StatefulSet",
+              },
+            },
+          },
         },
         position: { x: 622.8163964293032, y: 266.6613299531768 },
         group: "nodes",
@@ -1371,7 +1451,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1395,7 +1475,7 @@ const data = {
                           "dapr.io/control-plane": "sentry",
                           "prometheus.io/path": "/",
                           "prometheus.io/port": "9090",
-                          "prometheus.io/scrape": "true"
+                          "prometheus.io/scrape": "true",
                         },
                         labels: {
                           app: "dapr-sentry",
@@ -1403,26 +1483,27 @@ const data = {
                           "app.kubernetes.io/managed-by": "helm",
                           "app.kubernetes.io/name": "dapr",
                           "app.kubernetes.io/part-of": "dapr",
-                          "app.kubernetes.io/version": "1.14.0-rc.4"
-                        }
+                          "app.kubernetes.io/version": "1.14.0-rc.4",
+                        },
                       },
                       spec: {
                         affinity: {
                           "node Affinity": {
-                            "required During Scheduling Ignored During Execution": {
-                              "node Selector Terms": [
-                                {
-                                  "match Expressions": [
-                                    {
-                                      key: "kubernetes.io/os",
-                                      operator: "In",
-                                      values: ["linux"]
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          }
+                            "required During Scheduling Ignored During Execution":
+                              {
+                                "node Selector Terms": [
+                                  {
+                                    "match Expressions": [
+                                      {
+                                        key: "kubernetes.io/os",
+                                        operator: "In",
+                                        values: ["linux"],
+                                      },
+                                    ],
+                                  },
+                                ],
+                              },
+                          },
                         },
                         containers: [
                           {
@@ -1433,16 +1514,18 @@ const data = {
                               "--metrics-port",
                               "9090",
                               "--trust-domain",
-                              "cluster.local"
+                              "cluster.local",
                             ],
                             command: ["/sentry"],
                             env: [
                               {
                                 name: "NAMESPACE",
                                 "value From": {
-                                  "field Ref": { "field Path": "metadata.namespace" }
-                                }
-                              }
+                                  "field Ref": {
+                                    "field Path": "metadata.namespace",
+                                  },
+                                },
+                              },
                             ],
                             image: "ghcr.io/dapr/sentry:1.14.0-rc.4",
                             "image Pull Policy": "IfNotPresent",
@@ -1450,43 +1533,48 @@ const data = {
                               "failure Threshold": 5,
                               "http Get": { path: "/healthz", port: 8080 },
                               "initial Delay Seconds": 3,
-                              "period Seconds": 3
+                              "period Seconds": 3,
                             },
                             name: "dapr-sentry",
                             ports: [
                               { "container Port": 50001 },
-                              { "container Port": 9090, name: "metrics", protocol: "TCP" }
+                              {
+                                "container Port": 9090,
+                                name: "metrics",
+                                protocol: "TCP",
+                              },
                             ],
                             "readiness Probe": {
                               "failure Threshold": 5,
                               "http Get": { path: "/healthz", port: 8080 },
                               "initial Delay Seconds": 3,
-                              "period Seconds": 3
+                              "period Seconds": 3,
                             },
                             resources: {},
                             "security Context": {
                               capabilities: { drop: ["ALL"] },
                               "read Only Root Filesystem": true,
-                              "run As Non Root": true
+                              "run As Non Root": true,
                             },
                             "volume Mounts": [
                               {
-                                "mount Path": "/var/run/secrets/dapr.io/credentials",
+                                "mount Path":
+                                  "/var/run/secrets/dapr.io/credentials",
                                 name: "credentials",
-                                "read Only": true
-                              }
-                            ]
-                          }
+                                "read Only": true,
+                              },
+                            ],
+                          },
                         ],
                         "service Account Name": "dapr-sentry",
                         volumes: [
                           {
                             name: "credentials",
-                            secret: { "secret Name": "dapr-trust-bundle" }
-                          }
-                        ]
-                      }
-                    }
+                            secret: { "secret Name": "dapr-trust-bundle" },
+                          },
+                        ],
+                      },
+                    },
                   },
                   name: "dapr-sentry",
                   namespace: "default",
@@ -1496,8 +1584,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1508,7 +1596,7 @@ const data = {
                           metadata: { port: 443, protocol: "TCP" },
                           source: "484a881e-7cbc-4b14-9962-cd7fc4b1775d",
                           subType: "Network",
-                          target: "7a348b87-0a93-43b8-9920-a7eb6afe5941"
+                          target: "7a348b87-0a93-43b8-9920-a7eb6afe5941",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1524,9 +1612,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "7a348b87-0a93-43b8-9920-a7eb6afe5941",
@@ -1550,7 +1638,7 @@ const data = {
                       styleOverrides: {
                         "background-opacity": 0.5,
                         "border-width": 2,
-                        "z-index": 32
+                        "z-index": 32,
                       },
                       styles: '{"border-width":2,"background-opacity":0.5}',
                       subCategory: "",
@@ -1559,16 +1647,19 @@ const data = {
                       svgComplete:
                         "ui/public/static/img/meshmodels/kubernetes/complete/deployment-complete.svg",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg",
                     },
-                    position: { posX: 278.1472037285166, posY: 390.59981455637393 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 278.1472037285166,
+                      posY: 390.59981455637393,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Deployment"
-              }
-            }
-          }
+                type: "Deployment",
+              },
+            },
+          },
         },
         position: { x: 278.1472037285166, y: 390.59981455637393 },
         group: "nodes",
@@ -1578,7 +1669,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1595,14 +1686,16 @@ const data = {
                 settings: {
                   spec: {
                     replicas: 1,
-                    selector: { "match Labels": { app: "dapr-sidecar-injector" } },
+                    selector: {
+                      "match Labels": { app: "dapr-sidecar-injector" },
+                    },
                     template: {
                       metadata: {
                         annotations: {
                           "dapr.io/control-plane": "injector",
                           "prometheus.io/path": "/",
                           "prometheus.io/port": "9090",
-                          "prometheus.io/scrape": "true"
+                          "prometheus.io/scrape": "true",
                         },
                         labels: {
                           app: "dapr-sidecar-injector",
@@ -1610,26 +1703,27 @@ const data = {
                           "app.kubernetes.io/managed-by": "helm",
                           "app.kubernetes.io/name": "dapr",
                           "app.kubernetes.io/part-of": "dapr",
-                          "app.kubernetes.io/version": "1.14.0-rc.4"
-                        }
+                          "app.kubernetes.io/version": "1.14.0-rc.4",
+                        },
                       },
                       spec: {
                         affinity: {
                           "node Affinity": {
-                            "required During Scheduling Ignored During Execution": {
-                              "node Selector Terms": [
-                                {
-                                  "match Expressions": [
-                                    {
-                                      key: "kubernetes.io/os",
-                                      operator: "In",
-                                      values: ["linux"]
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          }
+                            "required During Scheduling Ignored During Execution":
+                              {
+                                "node Selector Terms": [
+                                  {
+                                    "match Expressions": [
+                                      {
+                                        key: "kubernetes.io/os",
+                                        operator: "In",
+                                        values: ["linux"],
+                                      },
+                                    ],
+                                  },
+                                ],
+                              },
+                          },
                         },
                         containers: [
                           {
@@ -1640,55 +1734,73 @@ const data = {
                               "--metrics-port",
                               "9090",
                               "--healthz-port",
-                              "8080"
+                              "8080",
                             ],
                             command: ["/injector"],
                             env: [
                               {
                                 name: "DAPR_TRUST_ANCHORS_FILE",
-                                value: "/var/run/secrets/dapr.io/tls/ca.crt"
+                                value: "/var/run/secrets/dapr.io/tls/ca.crt",
                               },
                               {
                                 name: "DAPR_CONTROL_PLANE_TRUST_DOMAIN",
-                                value: "cluster.local"
+                                value: "cluster.local",
                               },
                               {
                                 name: "DAPR_SENTRY_ADDRESS",
-                                value: "dapr-sentry.default.svc.cluster.local:443"
+                                value:
+                                  "dapr-sentry.default.svc.cluster.local:443",
                               },
-                              { name: "KUBE_CLUSTER_DOMAIN", value: "cluster.local" },
+                              {
+                                name: "KUBE_CLUSTER_DOMAIN",
+                                value: "cluster.local",
+                              },
                               {
                                 name: "SIDECAR_IMAGE",
-                                value: "ghcr.io/dapr/daprd:1.14.0-rc.4"
+                                value: "ghcr.io/dapr/daprd:1.14.0-rc.4",
                               },
                               {
                                 name: "SIDECAR_IMAGE_PULL_POLICY",
-                                value: "IfNotPresent"
+                                value: "IfNotPresent",
                               },
-                              { name: "SIDECAR_RUN_AS_NON_ROOT", value: "true" },
-                              { name: "ENABLE_K8S_DOWNWARD_APIS", value: "false" },
-                              { name: "SIDECAR_DROP_ALL_CAPABILITIES", value: "false" },
+                              {
+                                name: "SIDECAR_RUN_AS_NON_ROOT",
+                                value: "true",
+                              },
+                              {
+                                name: "ENABLE_K8S_DOWNWARD_APIS",
+                                value: "false",
+                              },
+                              {
+                                name: "SIDECAR_DROP_ALL_CAPABILITIES",
+                                value: "false",
+                              },
                               {
                                 name: "SIDECAR_READ_ONLY_ROOT_FILESYSTEM",
-                                value: "true"
+                                value: "true",
                               },
                               {
                                 name: "NAMESPACE",
                                 "value From": {
-                                  "field Ref": { "field Path": "metadata.namespace" }
-                                }
+                                  "field Ref": {
+                                    "field Path": "metadata.namespace",
+                                  },
+                                },
                               },
                               {
                                 name: "IGNORE_ENTRYPOINT_TOLERATIONS",
                                 value:
-                                  '[{\\"effect\\":\\"NoSchedule\\",\\"key\\":\\"alibabacloud.com/eci\\"},{\\"effect\\":\\"NoSchedule\\",\\"key\\":\\"azure.com/aci\\"},{\\"effect\\":\\"NoSchedule\\",\\"key\\":\\"aws\\"},{\\"effect\\":\\"NoSchedule\\",\\"key\\":\\"huawei.com/cci\\"}]'
+                                  '[{\\"effect\\":\\"NoSchedule\\",\\"key\\":\\"alibabacloud.com/eci\\"},{\\"effect\\":\\"NoSchedule\\",\\"key\\":\\"azure.com/aci\\"},{\\"effect\\":\\"NoSchedule\\",\\"key\\":\\"aws\\"},{\\"effect\\":\\"NoSchedule\\",\\"key\\":\\"huawei.com/cci\\"}]',
                               },
                               { name: "ACTORS_ENABLED", value: "true" },
-                              { name: "ACTORS_SERVICE_NAME", value: "placement" },
+                              {
+                                name: "ACTORS_SERVICE_NAME",
+                                value: "placement",
+                              },
                               {
                                 name: "ACTORS_SERVICE_ADDRESS",
-                                value: "dapr-placement-server:50005"
-                              }
+                                value: "dapr-placement-server:50005",
+                              },
                             ],
                             image: "ghcr.io/dapr/injector:1.14.0-rc.4",
                             "image Pull Policy": "IfNotPresent",
@@ -1696,44 +1808,53 @@ const data = {
                               "failure Threshold": 5,
                               "http Get": { path: "/healthz", port: 8080 },
                               "initial Delay Seconds": 3,
-                              "period Seconds": 3
+                              "period Seconds": 3,
                             },
                             name: "dapr-sidecar-injector",
                             ports: [
-                              { "container Port": 4000, name: "https", protocol: "TCP" },
-                              { "container Port": 9090, name: "metrics", protocol: "TCP" }
+                              {
+                                "container Port": 4000,
+                                name: "https",
+                                protocol: "TCP",
+                              },
+                              {
+                                "container Port": 9090,
+                                name: "metrics",
+                                protocol: "TCP",
+                              },
                             ],
                             "readiness Probe": {
                               "failure Threshold": 5,
                               "http Get": { path: "/healthz", port: 8080 },
                               "initial Delay Seconds": 3,
-                              "period Seconds": 3
+                              "period Seconds": 3,
                             },
                             resources: {},
                             "security Context": {
                               capabilities: { drop: ["ALL"] },
                               "read Only Root Filesystem": true,
-                              "run As Non Root": true
+                              "run As Non Root": true,
                             },
                             "volume Mounts": [
                               {
                                 "mount Path": "/var/run/secrets/dapr.io/tls",
                                 name: "dapr-trust-bundle",
-                                "read Only": true
+                                "read Only": true,
                               },
                               {
-                                "mount Path": "/var/run/secrets/dapr.io/sentrytoken",
+                                "mount Path":
+                                  "/var/run/secrets/dapr.io/sentrytoken",
                                 name: "dapr-identity-token",
-                                "read Only": true
-                              }
-                            ]
-                          }
+                                "read Only": true,
+                              },
+                            ],
+                          },
                         ],
                         "service Account Name": "dapr-injector",
                         volumes: [
                           {
                             "config Map": { name: "dapr-trust-bundle" },
-                            name: "dapr-trust-bundle"
+                            name: "dapr-trust-bundle",
                           },
                           {
                             name: "dapr-identity-token",
@@ -1744,15 +1865,15 @@ const data = {
                                     audience:
                                       "spiffe://cluster.local/ns/default/dapr-sentry",
                                     "expiration Seconds": 600,
-                                    path: "token"
-                                  }
-                                }
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    }
+                                    path: "token",
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                    },
                   },
                   name: "dapr-sidecar-injector",
                   namespace: "default",
@@ -1762,8 +1883,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1774,7 +1895,7 @@ const data = {
                           id: "9c3e106c-cac0-4291-87c8-7b25a08bf260",
                           source: "e5a5d1c1-ba59-4f76-b892-68374a602dc6",
                           subType: "Network",
-                          target: "33edf12d-9592-4f7b-8600-b7fe2d4364fe"
+                          target: "33edf12d-9592-4f7b-8600-b7fe2d4364fe",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1790,9 +1911,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "33edf12d-9592-4f7b-8600-b7fe2d4364fe",
@@ -1816,7 +1937,7 @@ const data = {
                       styleOverrides: {
                         "background-opacity": 0.5,
                         "border-width": 2,
-                        "z-index": 33
+                        "z-index": 33,
                       },
                       styles: '{"border-width":2,"background-opacity":0.5}',
                       subCategory: "",
@@ -1825,16 +1946,19 @@ const data = {
                       svgComplete:
                         "ui/public/static/img/meshmodels/kubernetes/complete/deployment-complete.svg",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg",
                     },
-                    position: { posX: 510.3627567646936, posY: 295.8678168751967 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 510.3627567646936,
+                      posY: 295.8678168751967,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Deployment"
-              }
-            }
-          }
+                type: "Deployment",
+              },
+            },
+          },
         },
         position: { x: 510.3627567646936, y: 295.8678168751967 },
         group: "nodes",
@@ -1844,7 +1968,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1866,12 +1990,15 @@ const data = {
                       elementType: "FIELD_REF_NODE",
                       fieldPath: "spec.template.spec.containers[0]",
                       jsonSchemaPath:
-                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]"
+                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
                     },
                     id: "3b832f26-e503-4418-a757-95d1cfbed4f8",
                     label: "spec.template.spec.containers[0]",
                     "meshmodel-data": {
-                      category: { metadata: null, name: "Orchestration & Management" },
+                      category: {
+                        metadata: null,
+                        name: "Orchestration & Management",
+                      },
                       components: null,
                       description: "",
                       displayName: "Meshery Core",
@@ -1884,7 +2011,7 @@ const data = {
                           "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg"
+                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                       },
                       model: { version: "0.7.2" },
                       name: "meshery-core",
@@ -1893,7 +2020,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "App Definition and Development",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -1914,22 +2041,25 @@ const data = {
                         "ui/public/static/img/meshmodels/meshery-core/color/container-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg"
+                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg",
                     },
                     parent: "6c3ac91b-c3e2-4312-91b3-4e24841b152e",
-                    position: { posX: 377.7879471782902, posY: 316.29051916135415 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 377.7879471782902,
+                      posY: 316.29051916135415,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "Container"
-              }
-            }
+                type: "Container",
+              },
+            },
           },
           elementType: "FIELD_REF_NODE",
           fieldPath: "spec.template.spec.containers[0]",
           jsonSchemaPath:
             "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
-          parent: "6c3ac91b-c3e2-4312-91b3-4e24841b152e"
+          parent: "6c3ac91b-c3e2-4312-91b3-4e24841b152e",
         },
         position: { x: 377.7879471782902, y: 316.29051916135415 },
         group: "nodes",
@@ -1939,7 +2069,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1961,12 +2091,15 @@ const data = {
                       elementType: "FIELD_REF_NODE",
                       fieldPath: "spec.template.spec.containers[0]",
                       jsonSchemaPath:
-                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]"
+                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
                     },
                     id: "a2631701-195d-4d75-8d89-66527605a309",
                     label: "spec.template.spec.containers[0]",
                     "meshmodel-data": {
-                      category: { metadata: null, name: "Orchestration & Management" },
+                      category: {
+                        metadata: null,
+                        name: "Orchestration & Management",
+                      },
                       components: null,
                       description: "",
                       displayName: "Meshery Core",
@@ -1979,7 +2112,7 @@ const data = {
                           "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg"
+                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                       },
                       model: { version: "0.7.2" },
                       name: "meshery-core",
@@ -1988,7 +2121,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "App Definition and Development",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -2009,22 +2142,25 @@ const data = {
                         "ui/public/static/img/meshmodels/meshery-core/color/container-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg"
+                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg",
                     },
                     parent: "7a348b87-0a93-43b8-9920-a7eb6afe5941",
-                    position: { posX: 278.1472037285166, posY: 381.59981455637393 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 278.1472037285166,
+                      posY: 381.59981455637393,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "Container"
-              }
-            }
+                type: "Container",
+              },
+            },
           },
           elementType: "FIELD_REF_NODE",
           fieldPath: "spec.template.spec.containers[0]",
           jsonSchemaPath:
             "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
-          parent: "7a348b87-0a93-43b8-9920-a7eb6afe5941"
+          parent: "7a348b87-0a93-43b8-9920-a7eb6afe5941",
         },
         position: { x: 278.1472037285166, y: 381.59981455637393 },
         group: "nodes",
@@ -2034,7 +2170,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2056,12 +2192,15 @@ const data = {
                       elementType: "FIELD_REF_NODE",
                       fieldPath: "spec.template.spec.containers[0]",
                       jsonSchemaPath:
-                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]"
+                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
                     },
                     id: "ce8ea39e-efd7-40c3-bf8a-5e2a52cc0778",
                     label: "spec.template.spec.containers[0]",
                     "meshmodel-data": {
-                      category: { metadata: null, name: "Orchestration & Management" },
+                      category: {
+                        metadata: null,
+                        name: "Orchestration & Management",
+                      },
                       components: null,
                       description: "",
                       displayName: "Meshery Core",
@@ -2074,7 +2213,7 @@ const data = {
                           "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg"
+                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                       },
                       model: { version: "0.7.2" },
                       name: "meshery-core",
@@ -2083,7 +2222,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "App Definition and Development",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -2104,22 +2243,25 @@ const data = {
                         "ui/public/static/img/meshmodels/meshery-core/color/container-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg"
+                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg",
                     },
                     parent: "33edf12d-9592-4f7b-8600-b7fe2d4364fe",
-                    position: { posX: 510.3627567646936, posY: 286.8678168751967 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 510.3627567646936,
+                      posY: 286.8678168751967,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "Container"
-              }
-            }
+                type: "Container",
+              },
+            },
           },
           elementType: "FIELD_REF_NODE",
           fieldPath: "spec.template.spec.containers[0]",
           jsonSchemaPath:
             "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
-          parent: "33edf12d-9592-4f7b-8600-b7fe2d4364fe"
+          parent: "33edf12d-9592-4f7b-8600-b7fe2d4364fe",
         },
         position: { x: 510.3627567646936, y: 286.8678168751967 },
         group: "nodes",
@@ -2129,8 +2271,8 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
-      }
+        classes: "",
+      },
     ],
     edges: [
       {
@@ -2139,7 +2281,7 @@ const data = {
           metadata: { port: 443, protocol: "TCP" },
           source: "40fc8324-31d0-44a2-af15-b67e7ee01af4",
           subType: "Network",
-          target: "6c3ac91b-c3e2-4312-91b3-4e24841b152e"
+          target: "6c3ac91b-c3e2-4312-91b3-4e24841b152e",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2149,14 +2291,14 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
           id: "1251d4b1-46c4-47e5-9c3b-56602a045c27",
           source: "74f0fc5f-c84a-4c8c-a201-a75200fb9c1e",
           subType: "Annotation",
-          target: "472662f9-4151-4987-8bb8-a43ead2f2e62"
+          target: "472662f9-4151-4987-8bb8-a43ead2f2e62",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2166,14 +2308,14 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
           id: "86d22457-aaae-4bd9-9b79-39d5dd3b7c93",
           source: "787667bc-3cdf-4388-9f17-61df0e81a8d9",
           subType: "Annotation",
-          target: "4ada3a29-b9c1-4138-aeaf-58dbcb6a9ea9"
+          target: "4ada3a29-b9c1-4138-aeaf-58dbcb6a9ea9",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2183,7 +2325,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2191,7 +2333,7 @@ const data = {
           metadata: { port: 443, protocol: "TCP" },
           source: "484a881e-7cbc-4b14-9962-cd7fc4b1775d",
           subType: "Network",
-          target: "7a348b87-0a93-43b8-9920-a7eb6afe5941"
+          target: "7a348b87-0a93-43b8-9920-a7eb6afe5941",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2201,7 +2343,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2209,7 +2351,7 @@ const data = {
           id: "9c3e106c-cac0-4291-87c8-7b25a08bf260",
           source: "e5a5d1c1-ba59-4f76-b892-68374a602dc6",
           subType: "Network",
-          target: "33edf12d-9592-4f7b-8600-b7fe2d4364fe"
+          target: "33edf12d-9592-4f7b-8600-b7fe2d4364fe",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2219,9 +2361,9 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
-      }
-    ]
+        classes: "",
+      },
+    ],
   },
   elementStyles: {
     "6c3ac91b-c3e2-4312-91b3-4e24841b152e": {
@@ -2649,7 +2791,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "74f0fc5f-c84a-4c8c-a201-a75200fb9c1e": {
       events: "yes",
@@ -3076,7 +3218,7 @@ const data = {
       "padding-top": "12px",
       paddingTop: "12px",
       "padding-bottom": "12px",
-      paddingBottom: "12px"
+      paddingBottom: "12px",
     },
     "787667bc-3cdf-4388-9f17-61df0e81a8d9": {
       events: "yes",
@@ -3503,7 +3645,7 @@ const data = {
       "padding-top": "12px",
       paddingTop: "12px",
       "padding-bottom": "12px",
-      paddingBottom: "12px"
+      paddingBottom: "12px",
     },
     "484a881e-7cbc-4b14-9962-cd7fc4b1775d": {
       events: "yes",
@@ -3930,7 +4072,7 @@ const data = {
       "padding-top": "12px",
       paddingTop: "12px",
       "padding-bottom": "12px",
-      paddingBottom: "12px"
+      paddingBottom: "12px",
     },
     "40fc8324-31d0-44a2-af15-b67e7ee01af4": {
       events: "yes",
@@ -4357,7 +4499,7 @@ const data = {
       "padding-top": "12px",
       paddingTop: "12px",
       "padding-bottom": "12px",
-      paddingBottom: "12px"
+      paddingBottom: "12px",
     },
     "e5a5d1c1-ba59-4f76-b892-68374a602dc6": {
       events: "yes",
@@ -4784,7 +4926,7 @@ const data = {
       "padding-top": "12px",
       paddingTop: "12px",
       "padding-bottom": "12px",
-      paddingBottom: "12px"
+      paddingBottom: "12px",
     },
     "472662f9-4151-4987-8bb8-a43ead2f2e62": {
       events: "yes",
@@ -5211,7 +5353,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "4ada3a29-b9c1-4138-aeaf-58dbcb6a9ea9": {
       events: "yes",
@@ -5638,7 +5780,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "7a348b87-0a93-43b8-9920-a7eb6afe5941": {
       events: "yes",
@@ -6065,7 +6207,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "33edf12d-9592-4f7b-8600-b7fe2d4364fe": {
       events: "yes",
@@ -6492,7 +6634,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "3b832f26-e503-4418-a757-95d1cfbed4f8": {
       events: "yes",
@@ -6919,7 +7061,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "a2631701-195d-4d75-8d89-66527605a309": {
       events: "yes",
@@ -7346,7 +7488,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "ce8ea39e-efd7-40c3-bf8a-5e2a52cc0778": {
       events: "yes",
@@ -7773,7 +7915,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "92f785f6-2b19-4218-8c6c-c37b2df57410": {
       events: "yes",
@@ -8198,7 +8340,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "1251d4b1-46c4-47e5-9c3b-56602a045c27": {
       events: "yes",
@@ -8623,7 +8765,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "86d22457-aaae-4bd9-9b79-39d5dd3b7c93": {
       events: "yes",
@@ -9048,7 +9190,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "2e21ce73-db2a-4ee3-a531-02fd847689a6": {
       events: "yes",
@@ -9473,7 +9615,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "9c3e106c-cac0-4291-87c8-7b25a08bf260": {
       events: "yes",
@@ -9898,9 +10040,9 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
-    }
-  }
+      paddingBottom: "0px",
+    },
+  },
 };
 
 const addStyles = () => {
@@ -9967,7 +10109,7 @@ const addStyles = () => {
 
 const CreateToolBar = () => {
   const cyContainer = document.getElementById(
-    "embedded-design-f6439589-1722-4fbc-b0e5-49f8d7c0ab17"
+    "embedded-design-f6439589-1722-4fbc-b0e5-49f8d7c0ab17",
   );
   const toolbar = document.createElement("div");
   toolbar.innerHTML = `
@@ -10020,7 +10162,7 @@ const CreateToolBar = () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const embedContainer = document.getElementById(
-    "embedded-design-f6439589-1722-4fbc-b0e5-49f8d7c0ab17"
+    "embedded-design-f6439589-1722-4fbc-b0e5-49f8d7c0ab17",
   );
   embedContainer.classList.add("embed-design-container");
   const cyContainer = document.createElement("div");
@@ -10031,7 +10173,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var cy = (window.cy = cytoscape({
     container: document.getElementById(
-      "embedded-design-f6439589-1722-4fbc-b0e5-49f8d7c0ab17-cy"
+      "embedded-design-f6439589-1722-4fbc-b0e5-49f8d7c0ab17-cy",
     ),
 
     autounselectify: true,
@@ -10040,13 +10182,13 @@ document.addEventListener("DOMContentLoaded", function () {
     minZoom: 0.5,
     maxZoom: 6.6,
     layout: {
-      name: "preset"
+      name: "preset",
     },
     elements: data.elements,
-    style: data.style
+    style: data.style,
   }));
 
-  Object.keys(data.elementStyles).forEach(id => {
+  Object.keys(data.elementStyles).forEach((id) => {
     cy.getElementById(id).style(data.elementStyles[id]);
   });
 

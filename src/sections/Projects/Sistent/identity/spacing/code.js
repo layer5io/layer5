@@ -18,7 +18,6 @@ import {
 } from "@sistent/sistent";
 import CopyValue from "../../../../../components/CopyValue";
 
-
 // Table data
 const spacingTokens = [
   { token: "spacing-00", px: "0px (8 × 0)", rem: "0rem", size: 0 },
@@ -152,7 +151,9 @@ const SpacingCode = () => {
                         <StyledHeaderCell>Token</StyledHeaderCell>
                         <StyledHeaderCell>Pixel Value</StyledHeaderCell>
                         <StyledHeaderCell>REM Value</StyledHeaderCell>
-                        <StyledHeaderCell align="center">Visual</StyledHeaderCell>
+                        <StyledHeaderCell align="center">
+                          Visual
+                        </StyledHeaderCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>

@@ -5,7 +5,6 @@ import data from "../../../../assets/data/tutorials";
 import { TutorialsTableWrapper } from "./TutorialsTable.style";
 
 const TutorialsTable = () => {
-
   const columns = React.useMemo(
     () => [
       {
@@ -22,7 +21,7 @@ const TutorialsTable = () => {
               })}
             </span>
           );
-        }
+        },
       },
       {
         Header: "Topic",
@@ -35,12 +34,7 @@ const TutorialsTable = () => {
           return (
             <span className="newBadge">
               {value}
-              {isNew && (
-                <img
-                  src="/images/new-badge.png"
-                  alt="New"
-                />
-              )}
+              {isNew && <img src="/images/new-badge.png" alt="New" />}
             </span>
           );
         },
@@ -48,59 +42,80 @@ const TutorialsTable = () => {
       {
         Header: "Resources",
         id: "resources",
-        accessor: data => {
+        accessor: (data) => {
           return (
             <p>
-              {data.resources.slides ? <span><a href={data.resources.slides} target="_blank" rel="noreferrer">Slides</a></span> : ""}
+              {data.resources.slides ? (
+                <span>
+                  <a
+                    href={data.resources.slides}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Slides
+                  </a>
+                </span>
+              ) : (
+                ""
+              )}
               {data.resources.recording ? (
                 Array.isArray(data.resources.recording) ? (
                   data.resources.recording.map((rec, i) => (
                     <span key={i}>
-                      <a href={rec} target="_blank" rel="noreferrer">Recording {i + 1}</a>
+                      <a href={rec} target="_blank" rel="noreferrer">
+                        Recording {i + 1}
+                      </a>
                     </span>
                   ))
                 ) : (
-                  <span><a href={data.resources.recording} target="_blank" rel="noreferrer">Recording</a></span>
+                  <span>
+                    <a
+                      href={data.resources.recording}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Recording
+                    </a>
+                  </span>
                 )
-              ) : ""}
+              ) : (
+                ""
+              )}
             </p>
           );
-        }
+        },
       },
       {
         Header: "Presenters",
         id: "presenters",
-        accessor: data => {
+        accessor: (data) => {
           let output = [];
-          data.presenters.map(presenter => {
-            const e = presenter.link ? <Link to={presenter.link}>{presenter.name}</Link> : presenter.name;
+          data.presenters.map((presenter) => {
+            const e = presenter.link ? (
+              <Link to={presenter.link}>{presenter.name}</Link>
+            ) : (
+              presenter.name
+            );
             output.push(<span>{e}</span>);
           });
           return output;
-        }
+        },
       },
     ],
-    []
+    [],
   );
   const sortedData = React.useMemo(() => {
     return [...data].sort((a, b) => new Date(b.date) - new Date(a.date));
   }, []);
 
   const tableInstance = useTable({ columns, data: sortedData });
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = tableInstance;
-
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    tableInstance;
 
   return (
     <TutorialsTableWrapper>
       <table {...getTableProps()}>
         <thead>
-
           {headerGroups.map((headerGroup, index) => (
             <tr key={index} {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column, index) => (
@@ -133,4 +148,3 @@ const TutorialsTable = () => {
 };
 
 export default TutorialsTable;
-

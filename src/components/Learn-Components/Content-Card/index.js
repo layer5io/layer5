@@ -8,7 +8,11 @@ import ContentCardWrapper from "./content-card.style";
 // } from "react-icons/io5";
 
 const ContentCard = ({ chapterNum, chapter }) => (
-  <ContentCardWrapper id={chapter.frontmatter.courseTitle ? chapter.frontmatter.courseTitle : null}>
+  <ContentCardWrapper
+    id={
+      chapter.frontmatter.courseTitle ? chapter.frontmatter.courseTitle : null
+    }
+  >
     {/* <div className="chapter-content-div" id={chapter.frontmatter.courseTitle ? chapter.frontmatter.courseTitle : null} > */}
     <div className="chapter-content">
       <h2 className="chapter-number">{chapterNum}</h2>

@@ -23,7 +23,10 @@ const RotationalBanner = () => {
       document.body.classList.replace(replaceClass, currentClass);
     }
     if (sessionStorage.getItem("banner")) {
-      sessionStorage.setItem("banner", (Number(initialValue) % BannersCount) + 1);
+      sessionStorage.setItem(
+        "banner",
+        (Number(initialValue) % BannersCount) + 1,
+      );
     } else {
       sessionStorage.setItem("banner", 2);
     }

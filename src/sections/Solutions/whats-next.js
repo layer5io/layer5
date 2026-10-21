@@ -7,7 +7,7 @@ const WhatsNextWrapper = styled.section`
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  background: ${props => props.theme.blackToWhite};
+  background: ${(props) => props.theme.blackToWhite};
   padding: 6rem 0;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
@@ -45,7 +45,7 @@ const Title = styled.h2`
   font-family: "Qanelas Soft", sans-serif;
   font-weight: 600;
   font-size: 3rem;
-  color: ${props => props.theme.whiteToBlack};
+  color: ${(props) => props.theme.whiteToBlack};
   margin-bottom: 2rem;
   line-height: 1.2;
 
@@ -59,12 +59,12 @@ const Description = styled.p`
   font-weight: 400;
   font-size: 1.1rem;
   line-height: 1.6;
-  color: ${props => props.theme.text};
+  color: ${(props) => props.theme.text};
   margin: 0;
 `;
 
 const RightCard = styled.div`
-  background: #00B39F;
+  background: #00b39f;
   border-radius: 20px;
   padding: 52px 40px;
   display: flex;
@@ -128,7 +128,7 @@ const CallToAction = styled.a`
   }
 
   &::after {
-    content: '→';
+    content: "→";
     font-size: 1.2rem;
     transition: transform 0.3s ease;
   }
@@ -145,18 +145,23 @@ const WhatsNext = () => {
         <LeftContent>
           <Title>What's next? Get stuck in!</Title>
           <Description>
-                        Take the next step towards unlocking seamless cloud solutions to enhance
-                        your infrastructure. Discover the range of innovative products that are
-                        designed to resolve your challenges and bring your ideas to life!
+            Take the next step towards unlocking seamless cloud solutions to
+            enhance your infrastructure. Discover the range of innovative
+            products that are designed to resolve your challenges and bring your
+            ideas to life!
           </Description>
         </LeftContent>
         <RightCard>
           <CardTitle>Layer5's Cloud-Native Management (Setup?)</CardTitle>
           <CardDescription>
-                        See specific products that execute our solution propositions.
+            See specific products that execute our solution propositions.
           </CardDescription>
-          <CallToAction href="https://cloud.layer5.io/login" target="_blank" rel="noopener noreferrer">
-                        Set up your free account
+          <CallToAction
+            href="https://cloud.layer5.io/login"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Set up your free account
           </CallToAction>
         </RightCard>
       </Inner>

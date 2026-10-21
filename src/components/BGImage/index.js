@@ -1,6 +1,10 @@
 import React from "react";
-import { BGWrapper, FakeBGImg, FakeBGImgStatic, Content } from "./BGImage.styles";
-
+import {
+  BGWrapper,
+  FakeBGImg,
+  FakeBGImgStatic,
+  Content,
+} from "./BGImage.styles";
 
 const BGImg = ({ image, src, title, className, children }) => {
   return (
@@ -9,7 +13,13 @@ const BGImg = ({ image, src, title, className, children }) => {
       {src ? (
         <FakeBGImgStatic loading="eager" src={src} title={title} alt="" />
       ) : (
-        <FakeBGImg loading="eager" placeholder="none" image={image} title={title} alt=""/>
+        <FakeBGImg
+          loading="eager"
+          placeholder="none"
+          image={image}
+          title={title}
+          alt=""
+        />
       )}
     </BGWrapper>
   );

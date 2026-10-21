@@ -22,8 +22,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -31,10 +31,12 @@ const data = {
                       {
                         data: {
                           id: "5671621a-4dca-4163-8c5b-c3b66b2c0859",
-                          metadata: { binded_by: "c6e44479-39aa-4463-bad0-71b894a3d903" },
+                          metadata: {
+                            binded_by: "c6e44479-39aa-4463-bad0-71b894a3d903",
+                          },
                           source: "cabb4fe2-63ec-436b-a2b7-73fe0ec1ebcd",
                           subType: "Permission",
-                          target: "b07fafde-3889-46d3-a342-a1efaaf724af"
+                          target: "b07fafde-3889-46d3-a342-a1efaaf724af",
                         },
                         style: {
                           "control-point-distances": null,
@@ -50,9 +52,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "b07fafde-3889-46d3-a342-a1efaaf724af",
@@ -80,16 +82,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/serviceaccount-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/serviceaccount-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/serviceaccount-white.svg",
                     },
-                    position: { posX: 374.03610347681416, posY: 30.553932982434183 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 374.03610347681416,
+                      posY: 30.553932982434183,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ServiceAccount"
-              }
-            }
-          }
+                type: "ServiceAccount",
+              },
+            },
+          },
         },
         position: { x: 374.03610347681416, y: 30.553932982434183 },
         group: "nodes",
@@ -99,7 +104,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -120,8 +125,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -129,10 +134,12 @@ const data = {
                       {
                         data: {
                           id: "5671621a-4dca-4163-8c5b-c3b66b2c0859",
-                          metadata: { binded_by: "c6e44479-39aa-4463-bad0-71b894a3d903" },
+                          metadata: {
+                            binded_by: "c6e44479-39aa-4463-bad0-71b894a3d903",
+                          },
                           source: "cabb4fe2-63ec-436b-a2b7-73fe0ec1ebcd",
                           subType: "Permission",
-                          target: "b07fafde-3889-46d3-a342-a1efaaf724af"
+                          target: "b07fafde-3889-46d3-a342-a1efaaf724af",
                         },
                         style: {
                           "control-point-distances": null,
@@ -148,9 +155,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "cabb4fe2-63ec-436b-a2b7-73fe0ec1ebcd",
@@ -175,24 +182,28 @@ const data = {
                         width: "22px",
                         x: "8.5",
                         y: "7.5",
-                        "z-index": 28
+                        "z-index": 28,
                       },
-                      styles: '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
+                      styles:
+                        '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg",
                     },
-                    position: { posX: 157.25827529112755, posY: -28.57153390678638 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 157.25827529112755,
+                      posY: -28.57153390678638,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ClusterRole"
-              }
-            }
-          }
+                type: "ClusterRole",
+              },
+            },
+          },
         },
         position: { x: 157.25827529112755, y: -28.57153390678638 },
         group: "nodes",
@@ -202,7 +213,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -220,18 +231,18 @@ const data = {
                     {
                       "api Groups": ["authentication.k8s.io"],
                       resources: ["tokenreviews"],
-                      verbs: ["create"]
+                      verbs: ["create"],
                     },
                     {
                       "api Groups": ["dapr.io"],
                       resources: ["configurations"],
-                      verbs: ["list", "get", "watch"]
+                      verbs: ["list", "get", "watch"],
                     },
                     {
                       "api Groups": [""],
                       resources: ["pods"],
-                      verbs: ["list", "get", "watch"]
-                    }
+                      verbs: ["list", "get", "watch"],
+                    },
                   ],
                   name: "dapr-sentry",
                   labels: {
@@ -239,8 +250,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -248,10 +259,12 @@ const data = {
                       {
                         data: {
                           id: "1c6d4403-ee56-41fb-88b8-ddb2a67444c9",
-                          metadata: { binded_by: "86bd9f7b-9c9f-4e7a-9842-3525a325d580" },
+                          metadata: {
+                            binded_by: "86bd9f7b-9c9f-4e7a-9842-3525a325d580",
+                          },
                           source: "76c5bda5-0eb2-44f6-8f2d-b3d9f9ba4337",
                           subType: "Permission",
-                          target: "b55838ec-a9dc-48b4-8864-05a9bd33a0cd"
+                          target: "b55838ec-a9dc-48b4-8864-05a9bd33a0cd",
                         },
                         style: {
                           "control-point-distances": null,
@@ -267,9 +280,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "76c5bda5-0eb2-44f6-8f2d-b3d9f9ba4337",
@@ -294,24 +307,28 @@ const data = {
                         width: "22px",
                         x: "8.5",
                         y: "7.5",
-                        "z-index": 37
+                        "z-index": 37,
                       },
-                      styles: '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
+                      styles:
+                        '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg",
                     },
-                    position: { posX: 191.6387458311328, posY: -108.28139959631633 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 191.6387458311328,
+                      posY: -108.28139959631633,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ClusterRole"
-              }
-            }
-          }
+                type: "ClusterRole",
+              },
+            },
+          },
         },
         position: { x: 191.6387458311328, y: -108.28139959631633 },
         group: "nodes",
@@ -321,7 +338,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -343,8 +360,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -352,10 +369,12 @@ const data = {
                       {
                         data: {
                           id: "b1f21f3b-7824-43d7-87be-9c4db2cff585",
-                          metadata: { binded_by: "4f2e583f-21c7-4c41-80e9-8029395028fe" },
+                          metadata: {
+                            binded_by: "4f2e583f-21c7-4c41-80e9-8029395028fe",
+                          },
                           source: "bf4e20d2-7c87-41e5-9384-c72a73ec8c0a",
                           subType: "Permission",
-                          target: "b55838ec-a9dc-48b4-8864-05a9bd33a0cd"
+                          target: "b55838ec-a9dc-48b4-8864-05a9bd33a0cd",
                         },
                         style: {
                           "control-point-distances": null,
@@ -371,16 +390,18 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
                           id: "1c6d4403-ee56-41fb-88b8-ddb2a67444c9",
-                          metadata: { binded_by: "86bd9f7b-9c9f-4e7a-9842-3525a325d580" },
+                          metadata: {
+                            binded_by: "86bd9f7b-9c9f-4e7a-9842-3525a325d580",
+                          },
                           source: "76c5bda5-0eb2-44f6-8f2d-b3d9f9ba4337",
                           subType: "Permission",
-                          target: "b55838ec-a9dc-48b4-8864-05a9bd33a0cd"
+                          target: "b55838ec-a9dc-48b4-8864-05a9bd33a0cd",
                         },
                         style: {
                           "control-point-distances": null,
@@ -396,9 +417,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "b55838ec-a9dc-48b4-8864-05a9bd33a0cd",
@@ -426,16 +447,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/serviceaccount-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/serviceaccount-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/serviceaccount-white.svg",
                     },
-                    position: { posX: 401.436281961315, posY: -85.02703223923953 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 401.436281961315,
+                      posY: -85.02703223923953,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ServiceAccount"
-              }
-            }
-          }
+                type: "ServiceAccount",
+              },
+            },
+          },
         },
         position: { x: 401.436281961315, y: -85.02703223923953 },
         group: "nodes",
@@ -445,7 +469,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -463,10 +487,14 @@ const data = {
                   "role Ref": {
                     "api Group": "rbac.authorization.k8s.io",
                     kind: "Role",
-                    name: "dapr-sentry"
+                    name: "dapr-sentry",
                   },
                   subjects: [
-                    { kind: "ServiceAccount", name: "dapr-sentry", namespace: "default" }
+                    {
+                      kind: "ServiceAccount",
+                      name: "dapr-sentry",
+                      namespace: "default",
+                    },
                   ],
                   name: "dapr-sentry",
                   namespace: "default",
@@ -475,8 +503,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -505,7 +533,7 @@ const data = {
                         width: "25px",
                         x: "7",
                         y: "7",
-                        "z-index": 1006
+                        "z-index": 1006,
                       },
                       styles:
                         '{"height":"25px","width":"25px","x":"7", "y":"7","z-index":4}',
@@ -514,18 +542,21 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/rolebinding-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/rolebinding-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/rolebinding-white.svg",
                     },
-                    position: { posX: 305.692981116806, posY: -154.60013314304072 },
+                    position: {
+                      posX: 305.692981116806,
+                      posY: -154.60013314304072,
+                    },
                     whiteboardData: {
-                      style: { height: 10.5, width: 10.5, "z-index": 1000 }
-                    }
-                  }
+                      style: { height: 10.5, width: 10.5, "z-index": 1000 },
+                    },
+                  },
                 },
-                type: "RoleBinding"
-              }
-            }
-          }
+                type: "RoleBinding",
+              },
+            },
+          },
         },
         position: { x: 305.692981116806, y: -154.60013314304072 },
         group: "nodes",
@@ -535,7 +566,7 @@ const data = {
         locked: false,
         grabbable: false,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -553,14 +584,14 @@ const data = {
                   "role Ref": {
                     "api Group": "rbac.authorization.k8s.io",
                     kind: "Role",
-                    name: "dapr-injector"
+                    name: "dapr-injector",
                   },
                   subjects: [
                     {
                       kind: "ServiceAccount",
                       name: "dapr-injector",
-                      namespace: "default"
-                    }
+                      namespace: "default",
+                    },
                   ],
                   name: "dapr-injector",
                   namespace: "default",
@@ -569,8 +600,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -599,7 +630,7 @@ const data = {
                         width: "25px",
                         x: "7",
                         y: "7",
-                        "z-index": 1003
+                        "z-index": 1003,
                       },
                       styles:
                         '{"height":"25px","width":"25px","x":"7", "y":"7","z-index":4}',
@@ -608,18 +639,21 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/rolebinding-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/rolebinding-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/rolebinding-white.svg",
                     },
-                    position: { posX: -100.38446779578265, posY: 38.26540575198202 },
+                    position: {
+                      posX: -100.38446779578265,
+                      posY: 38.26540575198202,
+                    },
                     whiteboardData: {
-                      style: { height: 10.5, width: 10.5, "z-index": 1000 }
-                    }
-                  }
+                      style: { height: 10.5, width: 10.5, "z-index": 1000 },
+                    },
+                  },
                 },
-                type: "RoleBinding"
-              }
-            }
-          }
+                type: "RoleBinding",
+              },
+            },
+          },
         },
         position: { x: -100.38446779578265, y: 38.26540575198202 },
         group: "nodes",
@@ -629,7 +663,7 @@ const data = {
         locked: false,
         grabbable: false,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -646,14 +680,14 @@ const data = {
                   "role Ref": {
                     "api Group": "rbac.authorization.k8s.io",
                     kind: "ClusterRole",
-                    name: "dapr-operator-admin"
+                    name: "dapr-operator-admin",
                   },
                   subjects: [
                     {
                       kind: "ServiceAccount",
                       name: "dapr-operator",
-                      namespace: "default"
-                    }
+                      namespace: "default",
+                    },
                   ],
                   name: "dapr-operator-admin",
                   labels: {
@@ -661,8 +695,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -690,26 +724,30 @@ const data = {
                         width: "25px",
                         x: "7",
                         y: "7",
-                        "z-index": 1005
+                        "z-index": 1005,
                       },
-                      styles: '{"height":"25px","width":"25px","x":"7", "y":"7"}',
+                      styles:
+                        '{"height":"25px","width":"25px","x":"7", "y":"7"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrolebinding-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrolebinding-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrolebinding-white.svg",
                     },
-                    position: { posX: 210.3692700122395, posY: 92.64891366446741 },
+                    position: {
+                      posX: 210.3692700122395,
+                      posY: 92.64891366446741,
+                    },
                     whiteboardData: {
-                      style: { height: 10.5, width: 10.5, "z-index": 1000 }
-                    }
-                  }
+                      style: { height: 10.5, width: 10.5, "z-index": 1000 },
+                    },
+                  },
                 },
-                type: "ClusterRoleBinding"
-              }
-            }
-          }
+                type: "ClusterRoleBinding",
+              },
+            },
+          },
         },
         position: { x: 210.3692700122395, y: 92.64891366446741 },
         group: "nodes",
@@ -719,7 +757,7 @@ const data = {
         locked: false,
         grabbable: false,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -737,26 +775,32 @@ const data = {
                   rules: [
                     {
                       "api Groups": ["coordination.k8s.io"],
-                      "resource Names": ["operator.dapr.io", "webhooks.dapr.io"],
+                      "resource Names": [
+                        "operator.dapr.io",
+                        "webhooks.dapr.io",
+                      ],
                       resources: ["leases"],
-                      verbs: ["get", "list", "watch", "update", "create"]
+                      verbs: ["get", "list", "watch", "update", "create"],
                     },
                     {
                       "api Groups": [""],
-                      "resource Names": ["operator.dapr.io", "webhooks.dapr.io"],
+                      "resource Names": [
+                        "operator.dapr.io",
+                        "webhooks.dapr.io",
+                      ],
                       resources: ["configmaps"],
-                      verbs: ["get", "list", "watch", "update", "create"]
+                      verbs: ["get", "list", "watch", "update", "create"],
                     },
                     {
                       "api Groups": ["coordination.k8s.io"],
                       resources: ["leases"],
-                      verbs: ["create"]
+                      verbs: ["create"],
                     },
                     {
                       "api Groups": [""],
                       resources: ["configmaps", "events"],
-                      verbs: ["create"]
-                    }
+                      verbs: ["create"],
+                    },
                   ],
                   name: "dapr-operator",
                   namespace: "default",
@@ -765,8 +809,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -774,10 +818,12 @@ const data = {
                       {
                         data: {
                           id: "2d852a36-9434-4e3b-a471-9a106a6f28d1",
-                          metadata: { binded_by: "26f2ead6-5ab5-4598-b3f8-eb0534fa57b9" },
+                          metadata: {
+                            binded_by: "26f2ead6-5ab5-4598-b3f8-eb0534fa57b9",
+                          },
                           source: "bf3b8a3a-8206-4fd1-9a1d-90dacb4d410a",
                           subType: "Permission",
-                          target: "ec2dcead-f5d4-4f1f-a390-a52aaeb3615a"
+                          target: "ec2dcead-f5d4-4f1f-a390-a52aaeb3615a",
                         },
                         style: {
                           "control-point-distances": null,
@@ -793,9 +839,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "bf3b8a3a-8206-4fd1-9a1d-90dacb4d410a",
@@ -825,16 +871,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/role-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/role-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/role-white.svg",
                     },
-                    position: { posX: 92.29546789552991, posY: 253.52744464060152 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 92.29546789552991,
+                      posY: 253.52744464060152,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Role"
-              }
-            }
-          }
+                type: "Role",
+              },
+            },
+          },
         },
         position: { x: 92.29546789552991, y: 253.52744464060152 },
         group: "nodes",
@@ -844,7 +893,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -864,19 +913,19 @@ const data = {
                       "api Groups": [""],
                       "resource Names": ["dapr-trust-bundle"],
                       resources: ["secrets"],
-                      verbs: ["get", "update", "delete"]
+                      verbs: ["get", "update", "delete"],
                     },
                     {
                       "api Groups": [""],
                       "resource Names": ["dapr-trust-bundle"],
                       resources: ["configmaps"],
-                      verbs: ["get", "update", "watch", "list"]
+                      verbs: ["get", "update", "watch", "list"],
                     },
                     {
                       "api Groups": ["dapr.io"],
                       resources: ["configurations"],
-                      verbs: ["list", "get", "watch"]
-                    }
+                      verbs: ["list", "get", "watch"],
+                    },
                   ],
                   name: "dapr-sentry",
                   namespace: "default",
@@ -885,8 +934,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -894,10 +943,12 @@ const data = {
                       {
                         data: {
                           id: "b1f21f3b-7824-43d7-87be-9c4db2cff585",
-                          metadata: { binded_by: "4f2e583f-21c7-4c41-80e9-8029395028fe" },
+                          metadata: {
+                            binded_by: "4f2e583f-21c7-4c41-80e9-8029395028fe",
+                          },
                           source: "bf4e20d2-7c87-41e5-9384-c72a73ec8c0a",
                           subType: "Permission",
-                          target: "b55838ec-a9dc-48b4-8864-05a9bd33a0cd"
+                          target: "b55838ec-a9dc-48b4-8864-05a9bd33a0cd",
                         },
                         style: {
                           "control-point-distances": null,
@@ -913,9 +964,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "bf4e20d2-7c87-41e5-9384-c72a73ec8c0a",
@@ -941,7 +992,7 @@ const data = {
                         width: "22px",
                         x: "8.5",
                         y: "7.5",
-                        "z-index": 5
+                        "z-index": 5,
                       },
                       styles:
                         '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5","z-index":4}',
@@ -950,16 +1001,16 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/role-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/role-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/role-white.svg",
                     },
                     position: { posX: 209.5, posY: -224.5 },
-                    whiteboardData: { style: {} }
-                  }
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Role"
-              }
-            }
-          }
+                type: "Role",
+              },
+            },
+          },
         },
         position: { x: 209.5, y: -224.5 },
         group: "nodes",
@@ -969,7 +1020,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -984,7 +1035,13 @@ const data = {
               "7127921c-3827-4290-b444-c8f5d3feca5f": {
                 namespace: "default",
                 settings: {
-                  rules: [{ "api Groups": [""], resources: ["secrets"], verbs: ["get"] }],
+                  rules: [
+                    {
+                      "api Groups": [""],
+                      resources: ["secrets"],
+                      verbs: ["get"],
+                    },
+                  ],
                   name: "secret-reader",
                   namespace: "default",
                   labels: {
@@ -992,8 +1049,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1022,7 +1079,7 @@ const data = {
                         width: "22px",
                         x: "8.5",
                         y: "7.5",
-                        "z-index": 17
+                        "z-index": 17,
                       },
                       styles:
                         '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5","z-index":4}',
@@ -1031,16 +1088,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/role-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/role-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/role-white.svg",
                     },
-                    position: { posX: -123.02135697055762, posY: -34.66556807703557 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -123.02135697055762,
+                      posY: -34.66556807703557,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Role"
-              }
-            }
-          }
+                type: "Role",
+              },
+            },
+          },
         },
         position: { x: -123.02135697055762, y: -34.66556807703557 },
         group: "nodes",
@@ -1050,7 +1110,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1067,14 +1127,14 @@ const data = {
                   "role Ref": {
                     "api Group": "rbac.authorization.k8s.io",
                     kind: "ClusterRole",
-                    name: "dapr-scheduler"
+                    name: "dapr-scheduler",
                   },
                   subjects: [
                     {
                       kind: "ServiceAccount",
                       name: "dapr-scheduler",
-                      namespace: "default"
-                    }
+                      namespace: "default",
+                    },
                   ],
                   name: "dapr-scheduler",
                   labels: {
@@ -1082,8 +1142,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1111,26 +1171,30 @@ const data = {
                         width: "25px",
                         x: "7",
                         y: "7",
-                        "z-index": 1002
+                        "z-index": 1002,
                       },
-                      styles: '{"height":"25px","width":"25px","x":"7", "y":"7"}',
+                      styles:
+                        '{"height":"25px","width":"25px","x":"7", "y":"7"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrolebinding-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrolebinding-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrolebinding-white.svg",
                     },
-                    position: { posX: 265.7673155159593, posY: 1.0239635603203645 },
+                    position: {
+                      posX: 265.7673155159593,
+                      posY: 1.0239635603203645,
+                    },
                     whiteboardData: {
-                      style: { height: 10.5, width: 10.5, "z-index": 1000 }
-                    }
-                  }
+                      style: { height: 10.5, width: 10.5, "z-index": 1000 },
+                    },
+                  },
                 },
-                type: "ClusterRoleBinding"
-              }
-            }
-          }
+                type: "ClusterRoleBinding",
+              },
+            },
+          },
         },
         position: { x: 265.7673155159593, y: 1.0239635603203645 },
         group: "nodes",
@@ -1140,7 +1204,7 @@ const data = {
         locked: false,
         grabbable: false,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1157,10 +1221,14 @@ const data = {
                   "role Ref": {
                     "api Group": "rbac.authorization.k8s.io",
                     kind: "ClusterRole",
-                    name: "dapr-sentry"
+                    name: "dapr-sentry",
                   },
                   subjects: [
-                    { kind: "ServiceAccount", name: "dapr-sentry", namespace: "default" }
+                    {
+                      kind: "ServiceAccount",
+                      name: "dapr-sentry",
+                      namespace: "default",
+                    },
                   ],
                   name: "dapr-sentry",
                   labels: {
@@ -1168,8 +1236,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1197,26 +1265,30 @@ const data = {
                         width: "25px",
                         x: "7",
                         y: "7",
-                        "z-index": 1007
+                        "z-index": 1007,
                       },
-                      styles: '{"height":"25px","width":"25px","x":"7", "y":"7"}',
+                      styles:
+                        '{"height":"25px","width":"25px","x":"7", "y":"7"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrolebinding-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrolebinding-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrolebinding-white.svg",
                     },
-                    position: { posX: 296.64616062800906, posY: -96.64217330250379 },
+                    position: {
+                      posX: 296.64616062800906,
+                      posY: -96.64217330250379,
+                    },
                     whiteboardData: {
-                      style: { height: 10.5, width: 10.5, "z-index": 1000 }
-                    }
-                  }
+                      style: { height: 10.5, width: 10.5, "z-index": 1000 },
+                    },
+                  },
                 },
-                type: "ClusterRoleBinding"
-              }
-            }
-          }
+                type: "ClusterRoleBinding",
+              },
+            },
+          },
         },
         position: { x: 296.64616062800906, y: -96.64217330250379 },
         group: "nodes",
@@ -1226,7 +1298,7 @@ const data = {
         locked: false,
         grabbable: false,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1246,18 +1318,18 @@ const data = {
                       "api Groups": [""],
                       "resource Names": ["dapr-trust-bundle"],
                       resources: ["secrets"],
-                      verbs: ["get"]
+                      verbs: ["get"],
                     },
                     {
                       "api Groups": ["dapr.io"],
                       resources: ["configurations"],
-                      verbs: ["get"]
+                      verbs: ["get"],
                     },
                     {
                       "api Groups": ["apps"],
                       resources: ["statefulsets"],
-                      verbs: ["get"]
-                    }
+                      verbs: ["get"],
+                    },
                   ],
                   name: "dapr-injector",
                   namespace: "default",
@@ -1266,8 +1338,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1275,10 +1347,12 @@ const data = {
                       {
                         data: {
                           id: "0ba48862-cd1d-4509-b0d5-7084bf2f0d88",
-                          metadata: { binded_by: "c9bdb4ba-cf67-41a7-b95c-35bdc5ce6ae3" },
+                          metadata: {
+                            binded_by: "c9bdb4ba-cf67-41a7-b95c-35bdc5ce6ae3",
+                          },
                           source: "a40347a6-2990-411e-937a-702617b7000f",
                           subType: "Permission",
-                          target: "7c266d36-6aed-4a35-b8b4-dddacfaa33c6"
+                          target: "7c266d36-6aed-4a35-b8b4-dddacfaa33c6",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1294,9 +1368,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "a40347a6-2990-411e-937a-702617b7000f",
@@ -1322,7 +1396,7 @@ const data = {
                         width: "22px",
                         x: "8.5",
                         y: "7.5",
-                        "z-index": 13
+                        "z-index": 13,
                       },
                       styles:
                         '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5","z-index":4}',
@@ -1331,16 +1405,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/role-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/role-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/role-white.svg",
                     },
-                    position: { posX: -208.1844660638462, posY: 78.76521328705286 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -208.1844660638462,
+                      posY: 78.76521328705286,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Role"
-              }
-            }
-          }
+                type: "Role",
+              },
+            },
+          },
         },
         position: { x: -208.1844660638462, y: 78.76521328705286 },
         group: "nodes",
@@ -1350,7 +1427,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1372,8 +1449,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1381,10 +1458,12 @@ const data = {
                       {
                         data: {
                           id: "0ba48862-cd1d-4509-b0d5-7084bf2f0d88",
-                          metadata: { binded_by: "c9bdb4ba-cf67-41a7-b95c-35bdc5ce6ae3" },
+                          metadata: {
+                            binded_by: "c9bdb4ba-cf67-41a7-b95c-35bdc5ce6ae3",
+                          },
                           source: "a40347a6-2990-411e-937a-702617b7000f",
                           subType: "Permission",
-                          target: "7c266d36-6aed-4a35-b8b4-dddacfaa33c6"
+                          target: "7c266d36-6aed-4a35-b8b4-dddacfaa33c6",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1400,16 +1479,18 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
                           id: "adea5377-20b1-47e6-a27f-ba161d4ca3e5",
-                          metadata: { binded_by: "b9e4ec94-82be-46e2-9360-0333e86dc44a" },
+                          metadata: {
+                            binded_by: "b9e4ec94-82be-46e2-9360-0333e86dc44a",
+                          },
                           source: "2c12611c-0547-4d84-ab43-b3c341199b57",
                           subType: "Permission",
-                          target: "7c266d36-6aed-4a35-b8b4-dddacfaa33c6"
+                          target: "7c266d36-6aed-4a35-b8b4-dddacfaa33c6",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1425,9 +1506,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "7c266d36-6aed-4a35-b8b4-dddacfaa33c6",
@@ -1455,16 +1536,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/serviceaccount-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/serviceaccount-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/serviceaccount-white.svg",
                     },
-                    position: { posX: 7.152721373778723, posY: -2.135665993860548 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 7.152721373778723,
+                      posY: -2.135665993860548,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ServiceAccount"
-              }
-            }
-          }
+                type: "ServiceAccount",
+              },
+            },
+          },
         },
         position: { x: 7.152721373778723, y: -2.135665993860548 },
         group: "nodes",
@@ -1474,7 +1558,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1492,43 +1576,47 @@ const data = {
                     {
                       "api Groups": ["apiextensions.k8s.io"],
                       resources: ["customresourcedefinitions"],
-                      verbs: ["get", "patch"]
+                      verbs: ["get", "patch"],
                     },
                     {
                       "api Groups": ["apps"],
                       resources: ["deployments", "deployments/finalizers"],
-                      verbs: ["get", "list", "watch"]
+                      verbs: ["get", "list", "watch"],
                     },
                     {
                       "api Groups": ["apps"],
                       resources: ["deployments/finalizers"],
-                      verbs: ["update"]
+                      verbs: ["update"],
                     },
                     {
                       "api Groups": ["apps"],
                       resources: ["statefulsets", "statefulsets/finalizers"],
-                      verbs: ["get", "list", "watch"]
+                      verbs: ["get", "list", "watch"],
                     },
                     {
                       "api Groups": ["apps"],
                       resources: ["statefulsets/finalizers"],
-                      verbs: ["update"]
+                      verbs: ["update"],
                     },
                     {
                       "api Groups": [""],
                       resources: ["pods"],
-                      verbs: ["get", "list", "delete", "watch"]
+                      verbs: ["get", "list", "delete", "watch"],
                     },
                     {
                       "api Groups": [""],
                       resources: ["services", "services/finalizers"],
-                      verbs: ["get", "list", "watch", "update", "create"]
+                      verbs: ["get", "list", "watch", "update", "create"],
                     },
-                    { "api Groups": [""], resources: ["services"], verbs: ["delete"] },
+                    {
+                      "api Groups": [""],
+                      resources: ["services"],
+                      verbs: ["delete"],
+                    },
                     {
                       "api Groups": [""],
                       resources: ["secrets"],
-                      verbs: ["get", "list", "watch"]
+                      verbs: ["get", "list", "watch"],
                     },
                     {
                       "api Groups": ["dapr.io"],
@@ -1537,10 +1625,10 @@ const data = {
                         "configurations",
                         "subscriptions",
                         "resiliencies",
-                        "httpendpoints"
+                        "httpendpoints",
                       ],
-                      verbs: ["get", "list", "watch"]
-                    }
+                      verbs: ["get", "list", "watch"],
+                    },
                   ],
                   name: "dapr-operator-admin",
                   labels: {
@@ -1548,8 +1636,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1557,10 +1645,12 @@ const data = {
                       {
                         data: {
                           id: "fae58b9c-fb4a-4e27-8c2c-a5c6628231a1",
-                          metadata: { binded_by: "674e8273-f90a-45b8-aaa0-8cf23dc67ce4" },
+                          metadata: {
+                            binded_by: "674e8273-f90a-45b8-aaa0-8cf23dc67ce4",
+                          },
                           source: "bbbd5037-bc3e-4255-aa07-754479b3a169",
                           subType: "Permission",
-                          target: "ec2dcead-f5d4-4f1f-a390-a52aaeb3615a"
+                          target: "ec2dcead-f5d4-4f1f-a390-a52aaeb3615a",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1576,9 +1666,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "bbbd5037-bc3e-4255-aa07-754479b3a169",
@@ -1603,24 +1693,28 @@ const data = {
                         width: "22px",
                         x: "8.5",
                         y: "7.5",
-                        "z-index": 42
+                        "z-index": 42,
                       },
-                      styles: '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
+                      styles:
+                        '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg",
                     },
-                    position: { posX: 93.14788885436155, posY: 67.28200659681865 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 93.14788885436155,
+                      posY: 67.28200659681865,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ClusterRole"
-              }
-            }
-          }
+                type: "ClusterRole",
+              },
+            },
+          },
         },
         position: { x: 93.14788885436155, y: 67.28200659681865 },
         group: "nodes",
@@ -1630,7 +1724,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1652,8 +1746,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1661,10 +1755,12 @@ const data = {
                       {
                         data: {
                           id: "fae58b9c-fb4a-4e27-8c2c-a5c6628231a1",
-                          metadata: { binded_by: "674e8273-f90a-45b8-aaa0-8cf23dc67ce4" },
+                          metadata: {
+                            binded_by: "674e8273-f90a-45b8-aaa0-8cf23dc67ce4",
+                          },
                           source: "bbbd5037-bc3e-4255-aa07-754479b3a169",
                           subType: "Permission",
-                          target: "ec2dcead-f5d4-4f1f-a390-a52aaeb3615a"
+                          target: "ec2dcead-f5d4-4f1f-a390-a52aaeb3615a",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1680,16 +1776,18 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
                           id: "2d852a36-9434-4e3b-a471-9a106a6f28d1",
-                          metadata: { binded_by: "26f2ead6-5ab5-4598-b3f8-eb0534fa57b9" },
+                          metadata: {
+                            binded_by: "26f2ead6-5ab5-4598-b3f8-eb0534fa57b9",
+                          },
                           source: "bf3b8a3a-8206-4fd1-9a1d-90dacb4d410a",
                           subType: "Permission",
-                          target: "ec2dcead-f5d4-4f1f-a390-a52aaeb3615a"
+                          target: "ec2dcead-f5d4-4f1f-a390-a52aaeb3615a",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1705,9 +1803,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "ec2dcead-f5d4-4f1f-a390-a52aaeb3615a",
@@ -1735,16 +1833,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/serviceaccount-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/serviceaccount-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/serviceaccount-white.svg",
                     },
-                    position: { posX: 327.36033532281493, posY: 117.96597998943753 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 327.36033532281493,
+                      posY: 117.96597998943753,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ServiceAccount"
-              }
-            }
-          }
+                type: "ServiceAccount",
+              },
+            },
+          },
         },
         position: { x: 327.36033532281493, y: 117.96597998943753 },
         group: "nodes",
@@ -1754,7 +1855,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1775,8 +1876,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1784,10 +1885,12 @@ const data = {
                       {
                         data: {
                           id: "822760e3-df49-46ab-b033-bbe026f4b6d3",
-                          metadata: { binded_by: "7968b07e-1b76-433b-b1e3-d3f49b91d034" },
+                          metadata: {
+                            binded_by: "7968b07e-1b76-433b-b1e3-d3f49b91d034",
+                          },
                           source: "a8b21273-3bab-44d3-9a66-de1b98d25873",
                           subType: "Permission",
-                          target: "58aad7ba-7469-43d7-b2a3-d2e026780207"
+                          target: "58aad7ba-7469-43d7-b2a3-d2e026780207",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1803,9 +1906,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "a8b21273-3bab-44d3-9a66-de1b98d25873",
@@ -1827,22 +1930,26 @@ const data = {
                       status: "enabled",
                       styleOverrides:
                         '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
-                      styles: '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
+                      styles:
+                        '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg",
                     },
-                    position: { posX: 52.6644417286831, posY: -242.90694361246318 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 52.6644417286831,
+                      posY: -242.90694361246318,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ClusterRole"
-              }
-            }
-          }
+                type: "ClusterRole",
+              },
+            },
+          },
         },
         position: { x: 52.6644417286831, y: -242.90694361246318 },
         group: "nodes",
@@ -1852,7 +1959,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1870,7 +1977,7 @@ const data = {
                   "role Ref": {
                     "api Group": "rbac.authorization.k8s.io",
                     kind: "Role",
-                    name: "secret-reader"
+                    name: "secret-reader",
                   },
                   subjects: [{ kind: "ServiceAccount", name: "default" }],
                   name: "dapr-secret-reader",
@@ -1880,8 +1987,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1910,7 +2017,7 @@ const data = {
                         width: "25px",
                         x: "7",
                         y: "7",
-                        "z-index": 6
+                        "z-index": 6,
                       },
                       styles:
                         '{"height":"25px","width":"25px","x":"7", "y":"7","z-index":4}',
@@ -1919,16 +2026,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/rolebinding-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/rolebinding-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/rolebinding-white.svg",
                     },
-                    position: { posX: -58.69891676767308, posY: -108.65496952865225 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -58.69891676767308,
+                      posY: -108.65496952865225,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "RoleBinding"
-              }
-            }
-          }
+                type: "RoleBinding",
+              },
+            },
+          },
         },
         position: { x: -58.69891676767308, y: -108.65496952865225 },
         group: "nodes",
@@ -1938,7 +2048,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1955,14 +2065,14 @@ const data = {
                   "role Ref": {
                     "api Group": "rbac.authorization.k8s.io",
                     kind: "ClusterRole",
-                    name: "dapr-placement"
+                    name: "dapr-placement",
                   },
                   subjects: [
                     {
                       kind: "ServiceAccount",
                       name: "dapr-placement",
-                      namespace: "default"
-                    }
+                      namespace: "default",
+                    },
                   ],
                   name: "dapr-placement",
                   labels: {
@@ -1970,8 +2080,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1999,26 +2109,30 @@ const data = {
                         width: "25px",
                         x: "7",
                         y: "7",
-                        "z-index": 1002
+                        "z-index": 1002,
                       },
-                      styles: '{"height":"25px","width":"25px","x":"7", "y":"7"}',
+                      styles:
+                        '{"height":"25px","width":"25px","x":"7", "y":"7"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrolebinding-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrolebinding-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrolebinding-white.svg",
                     },
-                    position: { posX: 53.104663587540514, posY: -156.49224201034573 },
+                    position: {
+                      posX: 53.104663587540514,
+                      posY: -156.49224201034573,
+                    },
                     whiteboardData: {
-                      style: { height: 10.5, width: 10.5, "z-index": 1000 }
-                    }
-                  }
+                      style: { height: 10.5, width: 10.5, "z-index": 1000 },
+                    },
+                  },
                 },
-                type: "ClusterRoleBinding"
-              }
-            }
-          }
+                type: "ClusterRoleBinding",
+              },
+            },
+          },
         },
         position: { x: 53.108484307719166, y: -155.74224201034573 },
         group: "nodes",
@@ -2028,7 +2142,7 @@ const data = {
         locked: false,
         grabbable: false,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2052,8 +2166,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -2061,10 +2175,12 @@ const data = {
                       {
                         data: {
                           id: "822760e3-df49-46ab-b033-bbe026f4b6d3",
-                          metadata: { binded_by: "7968b07e-1b76-433b-b1e3-d3f49b91d034" },
+                          metadata: {
+                            binded_by: "7968b07e-1b76-433b-b1e3-d3f49b91d034",
+                          },
                           source: "a8b21273-3bab-44d3-9a66-de1b98d25873",
                           subType: "Permission",
-                          target: "58aad7ba-7469-43d7-b2a3-d2e026780207"
+                          target: "58aad7ba-7469-43d7-b2a3-d2e026780207",
                         },
                         style: {
                           "control-point-distances": null,
@@ -2080,9 +2196,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "58aad7ba-7469-43d7-b2a3-d2e026780207",
@@ -2110,16 +2226,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/serviceaccount-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/serviceaccount-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/serviceaccount-white.svg",
                     },
-                    position: { posX: 53.551444297316095, posY: -68.79005062656128 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 53.551444297316095,
+                      posY: -68.79005062656128,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ServiceAccount"
-              }
-            }
-          }
+                type: "ServiceAccount",
+              },
+            },
+          },
         },
         position: { x: 53.551444297316095, y: -68.79005062656128 },
         group: "nodes",
@@ -2129,7 +2248,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2146,14 +2265,14 @@ const data = {
                   "role Ref": {
                     "api Group": "rbac.authorization.k8s.io",
                     kind: "ClusterRole",
-                    name: "dapr-injector"
+                    name: "dapr-injector",
                   },
                   subjects: [
                     {
                       kind: "ServiceAccount",
                       name: "dapr-injector",
-                      namespace: "default"
-                    }
+                      namespace: "default",
+                    },
                   ],
                   name: "dapr-injector",
                   labels: {
@@ -2161,8 +2280,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -2190,26 +2309,30 @@ const data = {
                         width: "25px",
                         x: "7",
                         y: "7",
-                        "z-index": 1004
+                        "z-index": 1004,
                       },
-                      styles: '{"height":"25px","width":"25px","x":"7", "y":"7"}',
+                      styles:
+                        '{"height":"25px","width":"25px","x":"7", "y":"7"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrolebinding-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrolebinding-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrolebinding-white.svg",
                     },
-                    position: { posX: -20.61145101034368, posY: 101.04522547939919 },
+                    position: {
+                      posX: -20.61145101034368,
+                      posY: 101.04522547939919,
+                    },
                     whiteboardData: {
-                      style: { height: 10.5, width: 10.5, "z-index": 1000 }
-                    }
-                  }
+                      style: { height: 10.5, width: 10.5, "z-index": 1000 },
+                    },
+                  },
                 },
-                type: "ClusterRoleBinding"
-              }
-            }
-          }
+                type: "ClusterRoleBinding",
+              },
+            },
+          },
         },
         position: { x: -20.61145101034368, y: 101.04522547939919 },
         group: "nodes",
@@ -2219,7 +2342,7 @@ const data = {
         locked: false,
         grabbable: false,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2237,19 +2360,19 @@ const data = {
                     {
                       "api Groups": [""],
                       resources: ["serviceaccounts"],
-                      verbs: ["get", "list"]
+                      verbs: ["get", "list"],
                     },
                     {
                       "api Groups": ["admissionregistration.k8s.io"],
                       "resource Names": ["dapr-sidecar-injector"],
                       resources: ["mutatingwebhookconfigurations"],
-                      verbs: ["patch"]
+                      verbs: ["patch"],
                     },
                     {
                       "api Groups": ["dapr.io"],
                       resources: ["components"],
-                      verbs: ["get", "list"]
-                    }
+                      verbs: ["get", "list"],
+                    },
                   ],
                   name: "dapr-injector",
                   labels: {
@@ -2257,8 +2380,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -2266,10 +2389,12 @@ const data = {
                       {
                         data: {
                           id: "adea5377-20b1-47e6-a27f-ba161d4ca3e5",
-                          metadata: { binded_by: "b9e4ec94-82be-46e2-9360-0333e86dc44a" },
+                          metadata: {
+                            binded_by: "b9e4ec94-82be-46e2-9360-0333e86dc44a",
+                          },
                           source: "2c12611c-0547-4d84-ab43-b3c341199b57",
                           subType: "Permission",
-                          target: "7c266d36-6aed-4a35-b8b4-dddacfaa33c6"
+                          target: "7c266d36-6aed-4a35-b8b4-dddacfaa33c6",
                         },
                         style: {
                           "control-point-distances": null,
@@ -2285,9 +2410,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "2c12611c-0547-4d84-ab43-b3c341199b57",
@@ -2312,24 +2437,28 @@ const data = {
                         width: "22px",
                         x: "8.5",
                         y: "7.5",
-                        "z-index": 20
+                        "z-index": 20,
                       },
-                      styles: '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
+                      styles:
+                        '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg",
                     },
-                    position: { posX: -48.44008191751654, posY: 204.46566624587678 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -48.44008191751654,
+                      posY: 204.46566624587678,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ClusterRole"
-              }
-            }
-          }
+                type: "ClusterRole",
+              },
+            },
+          },
         },
         position: { x: -48.44008191751654, y: 204.46566624587678 },
         group: "nodes",
@@ -2339,7 +2468,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2357,14 +2486,14 @@ const data = {
                   "role Ref": {
                     "api Group": "rbac.authorization.k8s.io",
                     kind: "Role",
-                    name: "dapr-operator"
+                    name: "dapr-operator",
                   },
                   subjects: [
                     {
                       kind: "ServiceAccount",
                       name: "dapr-operator",
-                      namespace: "default"
-                    }
+                      namespace: "default",
+                    },
                   ],
                   name: "dapr-operator",
                   namespace: "default",
@@ -2373,8 +2502,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.14.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.14.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -2403,7 +2532,7 @@ const data = {
                         width: "25px",
                         x: "7",
                         y: "7",
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
                       styles:
                         '{"height":"25px","width":"25px","x":"7", "y":"7","z-index":4}',
@@ -2412,18 +2541,21 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/rolebinding-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/rolebinding-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/rolebinding-white.svg",
                     },
-                    position: { posX: 210.01118828592158, posY: 185.6410112350449 },
+                    position: {
+                      posX: 210.01118828592158,
+                      posY: 185.6410112350449,
+                    },
                     whiteboardData: {
-                      style: { height: 10.5, width: 10.5, "z-index": 1000 }
-                    }
-                  }
+                      style: { height: 10.5, width: 10.5, "z-index": 1000 },
+                    },
+                  },
                 },
-                type: "RoleBinding"
-              }
-            }
-          }
+                type: "RoleBinding",
+              },
+            },
+          },
         },
         position: { x: 210.01118828592158, y: 185.6410112350449 },
         group: "nodes",
@@ -2433,8 +2565,8 @@ const data = {
         locked: false,
         grabbable: false,
         pannable: false,
-        classes: ""
-      }
+        classes: "",
+      },
     ],
     edges: [
       {
@@ -2443,7 +2575,7 @@ const data = {
           metadata: { binded_by: "c6e44479-39aa-4463-bad0-71b894a3d903" },
           source: "cabb4fe2-63ec-436b-a2b7-73fe0ec1ebcd",
           subType: "Permission",
-          target: "b07fafde-3889-46d3-a342-a1efaaf724af"
+          target: "b07fafde-3889-46d3-a342-a1efaaf724af",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2453,7 +2585,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2461,7 +2593,7 @@ const data = {
           metadata: { binded_by: "86bd9f7b-9c9f-4e7a-9842-3525a325d580" },
           source: "76c5bda5-0eb2-44f6-8f2d-b3d9f9ba4337",
           subType: "Permission",
-          target: "b55838ec-a9dc-48b4-8864-05a9bd33a0cd"
+          target: "b55838ec-a9dc-48b4-8864-05a9bd33a0cd",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2471,7 +2603,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2479,7 +2611,7 @@ const data = {
           metadata: { binded_by: "4f2e583f-21c7-4c41-80e9-8029395028fe" },
           source: "bf4e20d2-7c87-41e5-9384-c72a73ec8c0a",
           subType: "Permission",
-          target: "b55838ec-a9dc-48b4-8864-05a9bd33a0cd"
+          target: "b55838ec-a9dc-48b4-8864-05a9bd33a0cd",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2489,7 +2621,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2497,7 +2629,7 @@ const data = {
           metadata: { binded_by: "26f2ead6-5ab5-4598-b3f8-eb0534fa57b9" },
           source: "bf3b8a3a-8206-4fd1-9a1d-90dacb4d410a",
           subType: "Permission",
-          target: "ec2dcead-f5d4-4f1f-a390-a52aaeb3615a"
+          target: "ec2dcead-f5d4-4f1f-a390-a52aaeb3615a",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2507,7 +2639,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2515,7 +2647,7 @@ const data = {
           metadata: { binded_by: "c9bdb4ba-cf67-41a7-b95c-35bdc5ce6ae3" },
           source: "a40347a6-2990-411e-937a-702617b7000f",
           subType: "Permission",
-          target: "7c266d36-6aed-4a35-b8b4-dddacfaa33c6"
+          target: "7c266d36-6aed-4a35-b8b4-dddacfaa33c6",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2525,7 +2657,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2533,7 +2665,7 @@ const data = {
           metadata: { binded_by: "b9e4ec94-82be-46e2-9360-0333e86dc44a" },
           source: "2c12611c-0547-4d84-ab43-b3c341199b57",
           subType: "Permission",
-          target: "7c266d36-6aed-4a35-b8b4-dddacfaa33c6"
+          target: "7c266d36-6aed-4a35-b8b4-dddacfaa33c6",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2543,7 +2675,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2551,7 +2683,7 @@ const data = {
           metadata: { binded_by: "674e8273-f90a-45b8-aaa0-8cf23dc67ce4" },
           source: "bbbd5037-bc3e-4255-aa07-754479b3a169",
           subType: "Permission",
-          target: "ec2dcead-f5d4-4f1f-a390-a52aaeb3615a"
+          target: "ec2dcead-f5d4-4f1f-a390-a52aaeb3615a",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2561,7 +2693,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2569,7 +2701,7 @@ const data = {
           metadata: { binded_by: "7968b07e-1b76-433b-b1e3-d3f49b91d034" },
           source: "a8b21273-3bab-44d3-9a66-de1b98d25873",
           subType: "Permission",
-          target: "58aad7ba-7469-43d7-b2a3-d2e026780207"
+          target: "58aad7ba-7469-43d7-b2a3-d2e026780207",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2579,9 +2711,9 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
-      }
-    ]
+        classes: "",
+      },
+    ],
   },
   elementStyles: {
     "b07fafde-3889-46d3-a342-a1efaaf724af": {
@@ -3009,7 +3141,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "cabb4fe2-63ec-436b-a2b7-73fe0ec1ebcd": {
       events: "yes",
@@ -3436,7 +3568,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "76c5bda5-0eb2-44f6-8f2d-b3d9f9ba4337": {
       events: "yes",
@@ -3863,7 +3995,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "b55838ec-a9dc-48b4-8864-05a9bd33a0cd": {
       events: "yes",
@@ -4290,7 +4422,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "4f2e583f-21c7-4c41-80e9-8029395028fe": {
       events: "yes",
@@ -4717,7 +4849,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "c9bdb4ba-cf67-41a7-b95c-35bdc5ce6ae3": {
       events: "yes",
@@ -5144,7 +5276,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "674e8273-f90a-45b8-aaa0-8cf23dc67ce4": {
       events: "yes",
@@ -5571,7 +5703,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "bf3b8a3a-8206-4fd1-9a1d-90dacb4d410a": {
       events: "yes",
@@ -5998,7 +6130,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "bf4e20d2-7c87-41e5-9384-c72a73ec8c0a": {
       events: "yes",
@@ -6425,7 +6557,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "7127921c-3827-4290-b444-c8f5d3feca5f": {
       events: "yes",
@@ -6852,7 +6984,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "c6e44479-39aa-4463-bad0-71b894a3d903": {
       events: "yes",
@@ -7279,7 +7411,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "86bd9f7b-9c9f-4e7a-9842-3525a325d580": {
       events: "yes",
@@ -7706,7 +7838,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "a40347a6-2990-411e-937a-702617b7000f": {
       events: "yes",
@@ -8133,7 +8265,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "7c266d36-6aed-4a35-b8b4-dddacfaa33c6": {
       events: "yes",
@@ -8560,7 +8692,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "bbbd5037-bc3e-4255-aa07-754479b3a169": {
       events: "yes",
@@ -8987,7 +9119,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "ec2dcead-f5d4-4f1f-a390-a52aaeb3615a": {
       events: "yes",
@@ -9414,7 +9546,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "a8b21273-3bab-44d3-9a66-de1b98d25873": {
       events: "yes",
@@ -9841,7 +9973,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "f6840034-c6a6-49a5-9ae0-edcf7f123184": {
       events: "yes",
@@ -10268,7 +10400,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "7968b07e-1b76-433b-b1e3-d3f49b91d034": {
       events: "yes",
@@ -10695,7 +10827,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "58aad7ba-7469-43d7-b2a3-d2e026780207": {
       events: "yes",
@@ -11122,7 +11254,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "b9e4ec94-82be-46e2-9360-0333e86dc44a": {
       events: "yes",
@@ -11549,7 +11681,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "2c12611c-0547-4d84-ab43-b3c341199b57": {
       events: "yes",
@@ -11976,7 +12108,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "26f2ead6-5ab5-4598-b3f8-eb0534fa57b9": {
       events: "yes",
@@ -12403,7 +12535,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "5671621a-4dca-4163-8c5b-c3b66b2c0859": {
       events: "yes",
@@ -12828,7 +12960,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "1c6d4403-ee56-41fb-88b8-ddb2a67444c9": {
       events: "yes",
@@ -13253,7 +13385,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "b1f21f3b-7824-43d7-87be-9c4db2cff585": {
       events: "yes",
@@ -13678,7 +13810,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "2d852a36-9434-4e3b-a471-9a106a6f28d1": {
       events: "yes",
@@ -14103,7 +14235,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "0ba48862-cd1d-4509-b0d5-7084bf2f0d88": {
       events: "yes",
@@ -14528,7 +14660,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "adea5377-20b1-47e6-a27f-ba161d4ca3e5": {
       events: "yes",
@@ -14953,7 +15085,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "fae58b9c-fb4a-4e27-8c2c-a5c6628231a1": {
       events: "yes",
@@ -15378,7 +15510,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "822760e3-df49-46ab-b033-bbe026f4b6d3": {
       events: "yes",
@@ -15803,9 +15935,9 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
-    }
-  }
+      paddingBottom: "0px",
+    },
+  },
 };
 
 const addStyles = () => {
@@ -15872,7 +16004,7 @@ const addStyles = () => {
 
 const CreateToolBar = () => {
   const cyContainer = document.getElementById(
-    "embedded-design-79476480-b3b3-4e47-8805-de2cd5735bb8"
+    "embedded-design-79476480-b3b3-4e47-8805-de2cd5735bb8",
   );
   const toolbar = document.createElement("div");
   toolbar.innerHTML = `
@@ -15925,7 +16057,7 @@ const CreateToolBar = () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const embedContainer = document.getElementById(
-    "embedded-design-79476480-b3b3-4e47-8805-de2cd5735bb8"
+    "embedded-design-79476480-b3b3-4e47-8805-de2cd5735bb8",
   );
   embedContainer.classList.add("embed-design-container");
   const cyContainer = document.createElement("div");
@@ -15936,7 +16068,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var cy = (window.cy = cytoscape({
     container: document.getElementById(
-      "embedded-design-79476480-b3b3-4e47-8805-de2cd5735bb8-cy"
+      "embedded-design-79476480-b3b3-4e47-8805-de2cd5735bb8-cy",
     ),
 
     autounselectify: true,
@@ -15945,13 +16077,13 @@ document.addEventListener("DOMContentLoaded", function () {
     minZoom: 0.5,
     maxZoom: 6.6,
     layout: {
-      name: "preset"
+      name: "preset",
     },
     elements: data.elements,
-    style: data.style
+    style: data.style,
   }));
 
-  Object.keys(data.elementStyles).forEach(id => {
+  Object.keys(data.elementStyles).forEach((id) => {
     cy.getElementById(id).style(data.elementStyles[id]);
   });
 

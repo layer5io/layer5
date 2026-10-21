@@ -20,7 +20,7 @@ const data = {
                       kind: "HTTPEndpoint",
                       "list Kind": "HTTPEndpointList",
                       plural: "httpendpoints",
-                      singular: "httpendpoint"
+                      singular: "httpendpoint",
                     },
                     scope: "Namespaced",
                     versions: [
@@ -34,22 +34,27 @@ const data = {
                               "api Version": {
                                 description:
                                   "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
-                                type: "string"
+                                type: "string",
                               },
                               auth: {
                                 description:
                                   "Auth represents authentication details for the component.",
-                                properties: { "secret Store": { type: "string" } },
+                                properties: {
+                                  "secret Store": { type: "string" },
+                                },
                                 required: ["secretStore"],
-                                type: "object"
+                                type: "object",
                               },
                               kind: {
                                 description:
                                   "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
-                                type: "string"
+                                type: "string",
                               },
                               metadata: { type: "object" },
-                              scopes: { items: { type: "string" }, type: "array" },
+                              scopes: {
+                                items: { type: "string" },
+                                type: "array",
+                              },
                               spec: {
                                 description:
                                   "HTTPEndpointSpec describes an access specification for allowing external service invocations.",
@@ -68,24 +73,25 @@ const data = {
                                               "SecretKeyRef is the reference of a value in a secret store component.",
                                             properties: {
                                               key: {
-                                                description: "Field in the secret.",
-                                                type: "string"
+                                                description:
+                                                  "Field in the secret.",
+                                                type: "string",
                                               },
                                               name: {
                                                 description: "Secret name.",
-                                                type: "string"
-                                              }
+                                                type: "string",
+                                              },
                                             },
                                             required: ["name"],
-                                            type: "object"
+                                            type: "object",
                                           },
                                           value: {
                                             description:
                                               "Value of the property, in plaintext.",
-                                            "x-kubernetes-preserve-unknown-fields": true
-                                          }
+                                            "x-kubernetes-preserve-unknown-fields": true,
+                                          },
                                         },
-                                        type: "object"
+                                        type: "object",
                                       },
                                       "private Key": {
                                         description:
@@ -96,31 +102,36 @@ const data = {
                                               "SecretKeyRef is the reference of a value in a secret store component.",
                                             properties: {
                                               key: {
-                                                description: "Field in the secret.",
-                                                type: "string"
+                                                description:
+                                                  "Field in the secret.",
+                                                type: "string",
                                               },
                                               name: {
                                                 description: "Secret name.",
-                                                type: "string"
-                                              }
+                                                type: "string",
+                                              },
                                             },
                                             required: ["name"],
-                                            type: "object"
+                                            type: "object",
                                           },
                                           value: {
                                             description:
                                               "Value of the property, in plaintext.",
-                                            "x-kubernetes-preserve-unknown-fields": true
-                                          }
+                                            "x-kubernetes-preserve-unknown-fields": true,
+                                          },
                                         },
-                                        type: "object"
+                                        type: "object",
                                       },
                                       renegotiation: {
                                         default: "Never",
                                         description:
                                           "Renegotiation sets the underlying tls negotiation strategy for an http channel.",
-                                        enum: ["Never", "OnceAsClient", "FreelyAsClient"],
-                                        type: "string"
+                                        enum: [
+                                          "Never",
+                                          "OnceAsClient",
+                                          "FreelyAsClient",
+                                        ],
+                                        type: "string",
                                       },
                                       "root CA": {
                                         description:
@@ -131,83 +142,86 @@ const data = {
                                               "SecretKeyRef is the reference of a value in a secret store component.",
                                             properties: {
                                               key: {
-                                                description: "Field in the secret.",
-                                                type: "string"
+                                                description:
+                                                  "Field in the secret.",
+                                                type: "string",
                                               },
                                               name: {
                                                 description: "Secret name.",
-                                                type: "string"
-                                              }
+                                                type: "string",
+                                              },
                                             },
                                             required: ["name"],
-                                            type: "object"
+                                            type: "object",
                                           },
                                           value: {
                                             description:
                                               "Value of the property, in plaintext.",
-                                            "x-kubernetes-preserve-unknown-fields": true
-                                          }
+                                            "x-kubernetes-preserve-unknown-fields": true,
+                                          },
                                         },
-                                        type: "object"
-                                      }
+                                        type: "object",
+                                      },
                                     },
-                                    type: "object"
+                                    type: "object",
                                   },
                                   headers: {
                                     items: {
-                                      description: "NameValuePair is a name/value pair.",
+                                      description:
+                                        "NameValuePair is a name/value pair.",
                                       properties: {
                                         "env Ref": {
                                           description:
                                             "EnvRef is the name of an environmental variable to read the value from.",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         name: {
                                           description: "Name of the property.",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         "secret Key Ref": {
                                           description:
                                             "SecretKeyRef is the reference of a value in a secret store component.",
                                           properties: {
                                             key: {
-                                              description: "Field in the secret.",
-                                              type: "string"
+                                              description:
+                                                "Field in the secret.",
+                                              type: "string",
                                             },
                                             name: {
                                               description: "Secret name.",
-                                              type: "string"
-                                            }
+                                              type: "string",
+                                            },
                                           },
                                           required: ["name"],
-                                          type: "object"
+                                          type: "object",
                                         },
                                         value: {
                                           description:
                                             "Value of the property, in plaintext.",
-                                          "x-kubernetes-preserve-unknown-fields": true
-                                        }
+                                          "x-kubernetes-preserve-unknown-fields": true,
+                                        },
                                       },
                                       required: ["name"],
-                                      type: "object"
+                                      type: "object",
                                     },
-                                    type: "array"
-                                  }
+                                    type: "array",
+                                  },
                                 },
                                 required: ["baseUrl"],
-                                type: "object"
-                              }
+                                type: "object",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         },
                         served: true,
-                        storage: true
-                      }
-                    ]
+                        storage: true,
+                      },
+                    ],
                   },
                   name: "httpendpoints.dapr.io",
-                  labels: { "app.kubernetes.io/part-of": "dapr" }
+                  labels: { "app.kubernetes.io/part-of": "dapr" },
                 },
                 traits: {
                   meshmap: {
@@ -237,16 +251,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/customresourcedefinition-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/customresourcedefinition-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/customresourcedefinition-white.svg",
                     },
-                    position: { posX: 608.3894897141281, posY: 360.25465896620716 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 608.3894897141281,
+                      posY: 360.25465896620716,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "CustomResourceDefinition"
-              }
-            }
-          }
+                type: "CustomResourceDefinition",
+              },
+            },
+          },
         },
         position: { x: 608.3894897141281, y: 360.25465896620716 },
         group: "nodes",
@@ -256,7 +273,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -277,7 +294,7 @@ const data = {
                       kind: "Resiliency",
                       "list Kind": "ResiliencyList",
                       plural: "resiliencies",
-                      singular: "resiliency"
+                      singular: "resiliency",
                     },
                     scope: "Namespaced",
                     versions: [
@@ -289,15 +306,18 @@ const data = {
                               "api Version": {
                                 description:
                                   "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
-                                type: "string"
+                                type: "string",
                               },
                               kind: {
                                 description:
                                   "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
-                                type: "string"
+                                type: "string",
                               },
                               metadata: { type: "object" },
-                              scopes: { items: { type: "string" }, type: "array" },
+                              scopes: {
+                                items: { type: "string" },
+                                type: "array",
+                              },
                               spec: {
                                 properties: {
                                   policies: {
@@ -308,11 +328,11 @@ const data = {
                                             interval: { type: "string" },
                                             "max Requests": { type: "integer" },
                                             timeout: { type: "string" },
-                                            trip: { type: "string" }
+                                            trip: { type: "string" },
                                           },
-                                          type: "object"
+                                          type: "object",
                                         },
-                                        type: "object"
+                                        type: "object",
                                       },
                                       retries: {
                                         additionalProperties: {
@@ -320,93 +340,107 @@ const data = {
                                             duration: { type: "string" },
                                             "max Interval": { type: "string" },
                                             "max Retries": { type: "integer" },
-                                            policy: { type: "string" }
+                                            policy: { type: "string" },
                                           },
-                                          type: "object"
+                                          type: "object",
                                         },
-                                        type: "object"
+                                        type: "object",
                                       },
                                       timeouts: {
-                                        additionalProperties: { type: "string" },
-                                        type: "object"
-                                      }
+                                        additionalProperties: {
+                                          type: "string",
+                                        },
+                                        type: "object",
+                                      },
                                     },
-                                    type: "object"
+                                    type: "object",
                                   },
                                   targets: {
                                     properties: {
                                       actors: {
                                         additionalProperties: {
                                           properties: {
-                                            "circuit Breaker": { type: "string" },
-                                            "circuit Breaker Cache Size": {
-                                              type: "integer"
+                                            "circuit Breaker": {
+                                              type: "string",
                                             },
-                                            "circuit Breaker Scope": { type: "string" },
+                                            "circuit Breaker Cache Size": {
+                                              type: "integer",
+                                            },
+                                            "circuit Breaker Scope": {
+                                              type: "string",
+                                            },
                                             retry: { type: "string" },
-                                            timeout: { type: "string" }
+                                            timeout: { type: "string" },
                                           },
-                                          type: "object"
+                                          type: "object",
                                         },
-                                        type: "object"
+                                        type: "object",
                                       },
                                       apps: {
                                         additionalProperties: {
                                           properties: {
-                                            "circuit Breaker": { type: "string" },
+                                            "circuit Breaker": {
+                                              type: "string",
+                                            },
                                             "circuit Breaker Cache Size": {
-                                              type: "integer"
+                                              type: "integer",
                                             },
                                             retry: { type: "string" },
-                                            timeout: { type: "string" }
+                                            timeout: { type: "string" },
                                           },
-                                          type: "object"
+                                          type: "object",
                                         },
-                                        type: "object"
+                                        type: "object",
                                       },
                                       components: {
                                         additionalProperties: {
                                           properties: {
                                             inbound: {
                                               properties: {
-                                                "circuit Breaker": { type: "string" },
+                                                "circuit Breaker": {
+                                                  type: "string",
+                                                },
                                                 retry: { type: "string" },
-                                                timeout: { type: "string" }
+                                                timeout: { type: "string" },
                                               },
-                                              type: "object"
+                                              type: "object",
                                             },
                                             outbound: {
                                               properties: {
-                                                "circuit Breaker": { type: "string" },
+                                                "circuit Breaker": {
+                                                  type: "string",
+                                                },
                                                 retry: { type: "string" },
-                                                timeout: { type: "string" }
+                                                timeout: { type: "string" },
                                               },
-                                              type: "object"
-                                            }
+                                              type: "object",
+                                            },
                                           },
-                                          type: "object"
+                                          type: "object",
                                         },
-                                        type: "object"
-                                      }
+                                        type: "object",
+                                      },
                                     },
-                                    type: "object"
-                                  }
+                                    type: "object",
+                                  },
                                 },
                                 required: ["policies", "targets"],
-                                type: "object"
-                              }
+                                type: "object",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         },
                         served: true,
-                        storage: true
-                      }
-                    ]
+                        storage: true,
+                      },
+                    ],
                   },
                   name: "resiliencies.dapr.io",
                   labels: { "app.kubernetes.io/part-of": "dapr" },
-                  annotations: { "controller-gen.kubebuilder.io/version": "v0.5.0" }
+                  annotations: {
+                    "controller-gen.kubebuilder.io/version": "v0.5.0",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -432,7 +466,7 @@ const data = {
                       styleOverrides: {
                         height: "-0.49278909077003785px",
                         width: "20px",
-                        "z-index": 1033
+                        "z-index": 1033,
                       },
                       styles: "",
                       subCategory: "",
@@ -440,16 +474,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/customresourcedefinition-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/customresourcedefinition-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/customresourcedefinition-white.svg",
                     },
-                    position: { posX: 548.5054272590844, posY: 195.322235233187 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 548.5054272590844,
+                      posY: 195.322235233187,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "CustomResourceDefinition"
-              }
-            }
-          }
+                type: "CustomResourceDefinition",
+              },
+            },
+          },
         },
         position: { x: 548.5054272590844, y: 195.322235233187 },
         group: "nodes",
@@ -459,7 +496,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -481,11 +518,11 @@ const data = {
                           service: {
                             name: "dapr-webhook",
                             namespace: "replaceme",
-                            path: "/convert"
-                          }
+                            path: "/convert",
+                          },
                         },
-                        "conversion Review Versions": ["v1", "v2alpha1"]
-                      }
+                        "conversion Review Versions": ["v1", "v2alpha1"],
+                      },
                     },
                     group: "dapr.io",
                     names: {
@@ -493,7 +530,7 @@ const data = {
                       kind: "Subscription",
                       "list Kind": "SubscriptionList",
                       plural: "subscriptions",
-                      singular: "subscription"
+                      singular: "subscription",
                     },
                     scope: "Namespaced",
                     versions: [
@@ -507,47 +544,53 @@ const data = {
                               "api Version": {
                                 description:
                                   "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
-                                type: "string"
+                                type: "string",
                               },
                               kind: {
                                 description:
                                   "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
-                                type: "string"
+                                type: "string",
                               },
                               metadata: { type: "object" },
-                              scopes: { items: { type: "string" }, type: "array" },
+                              scopes: {
+                                items: { type: "string" },
+                                type: "array",
+                              },
                               spec: {
                                 description:
                                   "SubscriptionSpec is the spec for an event subscription.",
                                 properties: {
                                   "bulk Subscribe": {
-                                    description: "Represents bulk subscribe properties",
+                                    description:
+                                      "Represents bulk subscribe properties",
                                     properties: {
                                       enabled: { type: "boolean" },
-                                      "max Await Duration Ms": { type: "integer" },
-                                      "max Messages Count": { type: "integer" }
+                                      "max Await Duration Ms": {
+                                        type: "integer",
+                                      },
+                                      "max Messages Count": { type: "integer" },
                                     },
                                     required: ["enabled"],
-                                    type: "object"
+                                    type: "object",
                                   },
                                   "dead Letter Topic": { type: "string" },
                                   metadata: {
                                     additionalProperties: { type: "string" },
-                                    type: "object"
+                                    type: "object",
                                   },
                                   pubsubname: { type: "string" },
                                   route: { type: "string" },
-                                  topic: { type: "string" }
+                                  topic: { type: "string" },
                                 },
                                 required: ["pubsubname", "route", "topic"],
-                                type: "object"
-                              }
+                                type: "object",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         },
                         served: true,
-                        storage: false
+                        storage: false,
                       },
                       {
                         name: "v2alpha1",
@@ -559,43 +602,49 @@ const data = {
                               "api Version": {
                                 description:
                                   "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
-                                type: "string"
+                                type: "string",
                               },
                               kind: {
                                 description:
                                   "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
-                                type: "string"
+                                type: "string",
                               },
                               metadata: { type: "object" },
-                              scopes: { items: { type: "string" }, type: "array" },
+                              scopes: {
+                                items: { type: "string" },
+                                type: "array",
+                              },
                               spec: {
                                 description:
                                   "SubscriptionSpec is the spec for an event subscription.",
                                 properties: {
                                   "bulk Subscribe": {
-                                    description: "Represents bulk subscribe properties",
+                                    description:
+                                      "Represents bulk subscribe properties",
                                     properties: {
                                       enabled: { type: "boolean" },
-                                      "max Await Duration Ms": { type: "integer" },
-                                      "max Messages Count": { type: "integer" }
+                                      "max Await Duration Ms": {
+                                        type: "integer",
+                                      },
+                                      "max Messages Count": { type: "integer" },
                                     },
                                     required: ["enabled"],
-                                    type: "object"
+                                    type: "object",
                                   },
                                   "dead Letter Topic": {
                                     description:
                                       "The optional dead letter queue for this topic to send events to.",
-                                    type: "string"
+                                    type: "string",
                                   },
                                   metadata: {
                                     additionalProperties: { type: "string" },
                                     description:
                                       "The optional metadata to provide the subscription.",
-                                    type: "object"
+                                    type: "object",
                                   },
                                   pubsubname: {
                                     description: "The PubSub component name.",
-                                    type: "string"
+                                    type: "string",
                                   },
                                   routes: {
                                     description:
@@ -603,7 +652,8 @@ const data = {
                                     properties: {
                                       default: { type: "string" },
                                       rules: {
-                                        description: "The list of rules for this topic.",
+                                        description:
+                                          "The list of rules for this topic.",
                                         items: {
                                           description:
                                             "Rule is used to specify the condition for sending a message to a specific path.",
@@ -611,41 +661,42 @@ const data = {
                                             match: {
                                               description:
                                                 "The optional CEL expression used to match the event. If the match is not specified, then the route is considered the default. The rules are tested in the order specified, so they should be define from most-to-least specific. The default route should appear last in the list.",
-                                              type: "string"
+                                              type: "string",
                                             },
                                             path: {
                                               description:
                                                 "The path for events that match this rule.",
-                                              type: "string"
-                                            }
+                                              type: "string",
+                                            },
                                           },
                                           required: ["match", "path"],
-                                          type: "object"
+                                          type: "object",
                                         },
-                                        type: "array"
-                                      }
+                                        type: "array",
+                                      },
                                     },
-                                    type: "object"
+                                    type: "object",
                                   },
                                   topic: {
-                                    description: "The topic name to subscribe to.",
-                                    type: "string"
-                                  }
+                                    description:
+                                      "The topic name to subscribe to.",
+                                    type: "string",
+                                  },
                                 },
                                 required: ["pubsubname", "routes", "topic"],
-                                type: "object"
-                              }
+                                type: "object",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         },
                         served: true,
-                        storage: true
-                      }
-                    ]
+                        storage: true,
+                      },
+                    ],
                   },
                   name: "subscriptions.dapr.io",
-                  labels: { "app.kubernetes.io/part-of": "dapr" }
+                  labels: { "app.kubernetes.io/part-of": "dapr" },
                 },
                 traits: {
                   meshmap: {
@@ -675,16 +726,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/customresourcedefinition-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/customresourcedefinition-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/customresourcedefinition-white.svg",
                     },
-                    position: { posX: 601.5201865278317, posY: 268.60289512375624 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 601.5201865278317,
+                      posY: 268.60289512375624,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "CustomResourceDefinition"
-              }
-            }
-          }
+                type: "CustomResourceDefinition",
+              },
+            },
+          },
         },
         position: { x: 601.5201865278317, y: 268.60289512375624 },
         group: "nodes",
@@ -694,7 +748,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -714,7 +768,7 @@ const data = {
                       categories: ["all", "dapr"],
                       kind: "Component",
                       plural: "components",
-                      singular: "component"
+                      singular: "component",
                     },
                     scope: "Namespaced",
                     versions: [
@@ -722,89 +776,98 @@ const data = {
                         name: "v1alpha1",
                         schema: {
                           "open APIV3Schema": {
-                            description: "Component describes an Dapr component type.",
+                            description:
+                              "Component describes an Dapr component type.",
                             properties: {
                               "api Version": {
                                 description:
                                   "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
-                                type: "string"
+                                type: "string",
                               },
                               auth: {
                                 description:
                                   "Auth represents authentication details for the component.",
-                                properties: { "secret Store": { type: "string" } },
+                                properties: {
+                                  "secret Store": { type: "string" },
+                                },
                                 required: ["secretStore"],
-                                type: "object"
+                                type: "object",
                               },
                               kind: {
                                 description:
                                   "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
-                                type: "string"
+                                type: "string",
                               },
                               metadata: { type: "object" },
-                              scopes: { items: { type: "string" }, type: "array" },
+                              scopes: {
+                                items: { type: "string" },
+                                type: "array",
+                              },
                               spec: {
-                                description: "ComponentSpec is the spec for a component.",
+                                description:
+                                  "ComponentSpec is the spec for a component.",
                                 properties: {
                                   "ignore Errors": { type: "boolean" },
                                   "init Timeout": { type: "string" },
                                   metadata: {
                                     items: {
-                                      description: "NameValuePair is a name/value pair.",
+                                      description:
+                                        "NameValuePair is a name/value pair.",
                                       properties: {
                                         "env Ref": {
                                           description:
                                             "EnvRef is the name of an environmental variable to read the value from.",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         name: {
                                           description: "Name of the property.",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         "secret Key Ref": {
                                           description:
                                             "SecretKeyRef is the reference of a value in a secret store component.",
                                           properties: {
                                             key: {
-                                              description: "Field in the secret.",
-                                              type: "string"
+                                              description:
+                                                "Field in the secret.",
+                                              type: "string",
                                             },
                                             name: {
                                               description: "Secret name.",
-                                              type: "string"
-                                            }
+                                              type: "string",
+                                            },
                                           },
                                           required: ["name"],
-                                          type: "object"
+                                          type: "object",
                                         },
                                         value: {
                                           description:
                                             "Value of the property, in plaintext.",
-                                          "x-kubernetes-preserve-unknown-fields": true
-                                        }
+                                          "x-kubernetes-preserve-unknown-fields": true,
+                                        },
                                       },
                                       required: ["name"],
-                                      type: "object"
+                                      type: "object",
                                     },
-                                    type: "array"
+                                    type: "array",
                                   },
                                   type: { type: "string" },
-                                  version: { type: "string" }
+                                  version: { type: "string" },
                                 },
                                 required: ["metadata", "type", "version"],
-                                type: "object"
-                              }
+                                type: "object",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         },
                         served: true,
-                        storage: true
-                      }
-                    ]
+                        storage: true,
+                      },
+                    ],
                   },
                   name: "components.dapr.io",
-                  labels: { "app.kubernetes.io/part-of": "dapr" }
+                  labels: { "app.kubernetes.io/part-of": "dapr" },
                 },
                 traits: {
                   meshmap: {
@@ -834,16 +897,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/customresourcedefinition-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/customresourcedefinition-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/customresourcedefinition-white.svg",
                     },
-                    position: { posX: 490.64709666756, posY: 268.6966891855644 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 490.64709666756,
+                      posY: 268.6966891855644,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "CustomResourceDefinition"
-              }
-            }
-          }
+                type: "CustomResourceDefinition",
+              },
+            },
+          },
         },
         position: { x: 490.64709666756, y: 268.6966891855644 },
         group: "nodes",
@@ -853,7 +919,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -873,7 +939,7 @@ const data = {
                       kind: "Configuration",
                       "list Kind": "ConfigurationList",
                       plural: "configurations",
-                      singular: "configuration"
+                      singular: "configuration",
                     },
                     scope: "Namespaced",
                     versions: [
@@ -887,12 +953,12 @@ const data = {
                               "api Version": {
                                 description:
                                   "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
-                                type: "string"
+                                type: "string",
                               },
                               kind: {
                                 description:
                                   "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
-                                type: "string"
+                                type: "string",
                               },
                               metadata: { type: "object" },
                               spec: {
@@ -910,7 +976,9 @@ const data = {
                                             "AppPolicySpec defines the policy data structure for each app.",
                                           properties: {
                                             "app Id": { type: "string" },
-                                            "default Action": { type: "string" },
+                                            "default Action": {
+                                              type: "string",
+                                            },
                                             namespace: { type: "string" },
                                             operations: {
                                               items: {
@@ -920,25 +988,25 @@ const data = {
                                                   action: { type: "string" },
                                                   "http Verb": {
                                                     items: { type: "string" },
-                                                    type: "array"
+                                                    type: "array",
                                                   },
-                                                  name: { type: "string" }
+                                                  name: { type: "string" },
                                                 },
                                                 required: ["action", "name"],
-                                                type: "object"
+                                                type: "object",
                                               },
-                                              type: "array"
+                                              type: "array",
                                             },
-                                            "trust Domain": { type: "string" }
+                                            "trust Domain": { type: "string" },
                                           },
                                           required: ["appId"],
-                                          type: "object"
+                                          type: "object",
                                         },
-                                        type: "array"
+                                        type: "array",
                                       },
-                                      "trust Domain": { type: "string" }
+                                      "trust Domain": { type: "string" },
                                     },
-                                    type: "object"
+                                    type: "object",
                                   },
                                   api: {
                                     description:
@@ -953,12 +1021,12 @@ const data = {
                                           properties: {
                                             name: { type: "string" },
                                             protocol: { type: "string" },
-                                            version: { type: "string" }
+                                            version: { type: "string" },
                                           },
                                           required: ["name", "version"],
-                                          type: "object"
+                                          type: "object",
                                         },
-                                        type: "array"
+                                        type: "array",
                                       },
                                       denied: {
                                         description:
@@ -969,15 +1037,15 @@ const data = {
                                           properties: {
                                             name: { type: "string" },
                                             protocol: { type: "string" },
-                                            version: { type: "string" }
+                                            version: { type: "string" },
                                           },
                                           required: ["name", "version"],
-                                          type: "object"
+                                          type: "object",
                                         },
-                                        type: "array"
-                                      }
+                                        type: "array",
+                                      },
                                     },
-                                    type: "object"
+                                    type: "object",
                                   },
                                   "app Http Pipeline": {
                                     description:
@@ -999,27 +1067,30 @@ const data = {
                                                       "SelectorField defines a selector fields.",
                                                     properties: {
                                                       field: { type: "string" },
-                                                      value: { type: "string" }
+                                                      value: { type: "string" },
                                                     },
-                                                    required: ["field", "value"],
-                                                    type: "object"
+                                                    required: [
+                                                      "field",
+                                                      "value",
+                                                    ],
+                                                    type: "object",
                                                   },
-                                                  type: "array"
-                                                }
+                                                  type: "array",
+                                                },
                                               },
                                               required: ["fields"],
-                                              type: "object"
+                                              type: "object",
                                             },
-                                            type: { type: "string" }
+                                            type: { type: "string" },
                                           },
                                           required: ["name", "type"],
-                                          type: "object"
+                                          type: "object",
                                         },
-                                        type: "array"
-                                      }
+                                        type: "array",
+                                      },
                                     },
                                     required: ["handlers"],
-                                    type: "object"
+                                    type: "object",
                                   },
                                   components: {
                                     description:
@@ -1029,10 +1100,10 @@ const data = {
                                         description:
                                           "Denylist of component types that cannot be instantiated",
                                         items: { type: "string" },
-                                        type: "array"
-                                      }
+                                        type: "array",
+                                      },
                                     },
-                                    type: "object"
+                                    type: "object",
                                   },
                                   features: {
                                     items: {
@@ -1040,12 +1111,12 @@ const data = {
                                         "FeatureSpec defines the features that are enabled/disabled.",
                                       properties: {
                                         enabled: { type: "boolean" },
-                                        name: { type: "string" }
+                                        name: { type: "string" },
                                       },
                                       required: ["enabled", "name"],
-                                      type: "object"
+                                      type: "object",
                                     },
-                                    type: "array"
+                                    type: "array",
                                   },
                                   "http Pipeline": {
                                     description:
@@ -1067,27 +1138,30 @@ const data = {
                                                       "SelectorField defines a selector fields.",
                                                     properties: {
                                                       field: { type: "string" },
-                                                      value: { type: "string" }
+                                                      value: { type: "string" },
                                                     },
-                                                    required: ["field", "value"],
-                                                    type: "object"
+                                                    required: [
+                                                      "field",
+                                                      "value",
+                                                    ],
+                                                    type: "object",
                                                   },
-                                                  type: "array"
-                                                }
+                                                  type: "array",
+                                                },
                                               },
                                               required: ["fields"],
-                                              type: "object"
+                                              type: "object",
                                             },
-                                            type: { type: "string" }
+                                            type: { type: "string" },
                                           },
                                           required: ["name", "type"],
-                                          type: "object"
+                                          type: "object",
                                         },
-                                        type: "array"
-                                      }
+                                        type: "array",
+                                      },
                                     },
                                     required: ["handlers"],
-                                    type: "object"
+                                    type: "object",
                                   },
                                   logging: {
                                     description:
@@ -1099,29 +1173,32 @@ const data = {
                                           enabled: {
                                             description:
                                               "Default value for enabling API logging. Sidecars can always override this by setting `--enable-api-logging` to true or false explicitly. The default value is false.",
-                                            type: "boolean"
+                                            type: "boolean",
                                           },
                                           "obfuscate URLs": {
                                             description:
                                               "When enabled, obfuscates the values of URLs in HTTP API logs, logging the route name rather than the full path being invoked, which could contain PII. Default: false. This option has no effect if API logging is disabled.",
-                                            type: "boolean"
+                                            type: "boolean",
                                           },
                                           "omit Health Checks": {
                                             description:
                                               "If true, health checks are not reported in API logs. Default: false. This option has no effect if API logging is disabled.",
-                                            type: "boolean"
-                                          }
+                                            type: "boolean",
+                                          },
                                         },
-                                        type: "object"
-                                      }
+                                        type: "object",
+                                      },
                                     },
-                                    type: "object"
+                                    type: "object",
                                   },
                                   mTLS: {
-                                    description: "MTLSSpec defines mTLS configuration.",
+                                    description:
+                                      "MTLSSpec defines mTLS configuration.",
                                     properties: {
                                       "allowed Clock Skew": { type: "string" },
-                                      "control Plane Trust Domain": { type: "string" },
+                                      "control Plane Trust Domain": {
+                                        type: "string",
+                                      },
                                       enabled: { type: "boolean" },
                                       "sentry Address": { type: "string" },
                                       "token Validators": {
@@ -1132,26 +1209,27 @@ const data = {
                                             "ValidatorSpec contains additional token validators to use.",
                                           properties: {
                                             name: {
-                                              description: "Name of the validator",
+                                              description:
+                                                "Name of the validator",
                                               enum: ["jwks"],
-                                              type: "string"
+                                              type: "string",
                                             },
                                             options: {
                                               description:
                                                 "Options for the validator, if any",
                                               type: "object",
-                                              "x-kubernetes-preserve-unknown-fields": true
-                                            }
+                                              "x-kubernetes-preserve-unknown-fields": true,
+                                            },
                                           },
                                           required: ["name"],
-                                          type: "object"
+                                          type: "object",
                                         },
-                                        type: "array"
+                                        type: "array",
                                       },
-                                      "workload Cert TTL": { type: "string" }
+                                      "workload Cert TTL": { type: "string" },
                                     },
                                     required: ["enabled"],
-                                    type: "object"
+                                    type: "object",
                                   },
                                   metric: {
                                     default: { enabled: true },
@@ -1166,10 +1244,10 @@ const data = {
                                           "increased Cardinality": {
                                             description:
                                               "If true, metrics for the HTTP server are collected with increased cardinality. The default is true in Dapr 1.13, but will be changed to false in 1.14+",
-                                            type: "boolean"
-                                          }
+                                            type: "boolean",
+                                          },
                                         },
-                                        type: "object"
+                                        type: "object",
                                       },
                                       rules: {
                                         items: {
@@ -1184,26 +1262,26 @@ const data = {
                                                   name: { type: "string" },
                                                   regex: {
                                                     additionalProperties: {
-                                                      type: "string"
+                                                      type: "string",
                                                     },
-                                                    type: "object"
-                                                  }
+                                                    type: "object",
+                                                  },
                                                 },
                                                 required: ["name", "regex"],
-                                                type: "object"
+                                                type: "object",
                                               },
-                                              type: "array"
+                                              type: "array",
                                             },
-                                            name: { type: "string" }
+                                            name: { type: "string" },
                                           },
                                           required: ["labels", "name"],
-                                          type: "object"
+                                          type: "object",
                                         },
-                                        type: "array"
-                                      }
+                                        type: "array",
+                                      },
                                     },
                                     required: ["enabled"],
-                                    type: "object"
+                                    type: "object",
                                   },
                                   metrics: {
                                     default: { enabled: true },
@@ -1218,10 +1296,10 @@ const data = {
                                           "increased Cardinality": {
                                             description:
                                               "If true, metrics for the HTTP server are collected with increased cardinality. The default is true in Dapr 1.13, but will be changed to false in 1.14+",
-                                            type: "boolean"
-                                          }
+                                            type: "boolean",
+                                          },
                                         },
-                                        type: "object"
+                                        type: "object",
                                       },
                                       rules: {
                                         items: {
@@ -1236,26 +1314,26 @@ const data = {
                                                   name: { type: "string" },
                                                   regex: {
                                                     additionalProperties: {
-                                                      type: "string"
+                                                      type: "string",
                                                     },
-                                                    type: "object"
-                                                  }
+                                                    type: "object",
+                                                  },
                                                 },
                                                 required: ["name", "regex"],
-                                                type: "object"
+                                                type: "object",
                                               },
-                                              type: "array"
+                                              type: "array",
                                             },
-                                            name: { type: "string" }
+                                            name: { type: "string" },
                                           },
                                           required: ["labels", "name"],
-                                          type: "object"
+                                          type: "object",
                                         },
-                                        type: "array"
-                                      }
+                                        type: "array",
+                                      },
                                     },
                                     required: ["enabled"],
-                                    type: "object"
+                                    type: "object",
                                   },
                                   "name Resolution": {
                                     description:
@@ -1266,12 +1344,16 @@ const data = {
                                         description:
                                           "DynamicValue is a dynamic value struct for the component.metadata pair value.",
                                         type: "object",
-                                        "x-kubernetes-preserve-unknown-fields": true
+                                        "x-kubernetes-preserve-unknown-fields": true,
                                       },
-                                      version: { type: "string" }
+                                      version: { type: "string" },
                                     },
-                                    required: ["component", "configuration", "version"],
-                                    type: "object"
+                                    required: [
+                                      "component",
+                                      "configuration",
+                                      "version",
+                                    ],
+                                    type: "object",
                                   },
                                   secrets: {
                                     description:
@@ -1284,23 +1366,25 @@ const data = {
                                           properties: {
                                             "allowed Secrets": {
                                               items: { type: "string" },
-                                              type: "array"
+                                              type: "array",
                                             },
-                                            "default Access": { type: "string" },
+                                            "default Access": {
+                                              type: "string",
+                                            },
                                             "denied Secrets": {
                                               items: { type: "string" },
-                                              type: "array"
+                                              type: "array",
                                             },
-                                            "store Name": { type: "string" }
+                                            "store Name": { type: "string" },
                                           },
                                           required: ["storeName"],
-                                          type: "object"
+                                          type: "object",
                                         },
-                                        type: "array"
-                                      }
+                                        type: "array",
+                                      },
                                     },
                                     required: ["scopes"],
-                                    type: "object"
+                                    type: "object",
                                   },
                                   tracing: {
                                     description:
@@ -1310,16 +1394,18 @@ const data = {
                                         description:
                                           "OtelSpec defines Otel exporter configurations.",
                                         properties: {
-                                          "endpoint Address": { type: "string" },
+                                          "endpoint Address": {
+                                            type: "string",
+                                          },
                                           "is Secure": { type: "boolean" },
-                                          protocol: { type: "string" }
+                                          protocol: { type: "string" },
                                         },
                                         required: [
                                           "endpointAddress",
                                           "isSecure",
-                                          "protocol"
+                                          "protocol",
                                         ],
-                                        type: "object"
+                                        type: "object",
                                       },
                                       "sampling Rate": { type: "string" },
                                       stdout: { type: "boolean" },
@@ -1327,36 +1413,42 @@ const data = {
                                         description:
                                           "ZipkinSpec defines Zipkin trace configurations.",
                                         properties: {
-                                          "endpoint Address": { type: "string" }
+                                          "endpoint Address": {
+                                            type: "string",
+                                          },
                                         },
                                         required: ["endpointAddress"],
-                                        type: "object"
-                                      }
+                                        type: "object",
+                                      },
                                     },
                                     required: ["samplingRate"],
-                                    type: "object"
+                                    type: "object",
                                   },
                                   wasm: {
                                     description:
                                       "WasmSpec describes the security profile for all Dapr Wasm components.",
-                                    properties: { "strict Sandbox": { type: "boolean" } },
-                                    type: "object"
-                                  }
+                                    properties: {
+                                      "strict Sandbox": { type: "boolean" },
+                                    },
+                                    type: "object",
+                                  },
                                 },
-                                type: "object"
-                              }
+                                type: "object",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         },
                         served: true,
-                        storage: true
-                      }
-                    ]
+                        storage: true,
+                      },
+                    ],
                   },
                   name: "configurations.dapr.io",
                   labels: { "app.kubernetes.io/part-of": "dapr" },
-                  annotations: { "controller-gen.kubebuilder.io/version": "v0.11.3" }
+                  annotations: {
+                    "controller-gen.kubebuilder.io/version": "v0.11.3",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1366,7 +1458,7 @@ const data = {
                           id: "9332958f-b8e4-4482-bc16-6a454fcc3ce6",
                           source: "ce351c45-cd51-4211-984b-112cdc405549",
                           subType: "Annotation",
-                          target: "d7a820d3-35e1-465d-acf6-2db813906825"
+                          target: "d7a820d3-35e1-465d-acf6-2db813906825",
                         },
                         style: {
                           "control-point-distances": "40px -40px",
@@ -1382,9 +1474,9 @@ const data = {
                           "taxi-direction": "downward",
                           "taxi-turn": "20px",
                           "taxi-turn-min-distance": "5px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "ce351c45-cd51-4211-984b-112cdc405549",
@@ -1411,16 +1503,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/customresourcedefinition-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/customresourcedefinition-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/customresourcedefinition-white.svg",
                     },
-                    position: { posX: 496.0299034975825, posY: 358.71250893735936 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 496.0299034975825,
+                      posY: 358.71250893735936,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "CustomResourceDefinition"
-              }
-            }
-          }
+                type: "CustomResourceDefinition",
+              },
+            },
+          },
         },
         position: { x: 496.0299034975825, y: 358.71250893735936 },
         group: "nodes",
@@ -1430,7 +1525,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1450,9 +1545,10 @@ const data = {
                       "allowed Clock Skew": "15m",
                       "control Plane Trust Domain": "cluster.local",
                       enabled: true,
-                      "sentry Address": "dapr-sentry.default.svc.cluster.local:443",
-                      "workload Cert TTL": "24h"
-                    }
+                      "sentry Address":
+                        "dapr-sentry.default.svc.cluster.local:443",
+                      "workload Cert TTL": "24h",
+                    },
                   },
                   name: "daprsystem",
                   namespace: "default",
@@ -1461,8 +1557,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "helm",
                     "app.kubernetes.io/name": "dapr",
                     "app.kubernetes.io/part-of": "dapr",
-                    "app.kubernetes.io/version": "1.13.0-rc.4"
-                  }
+                    "app.kubernetes.io/version": "1.13.0-rc.4",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1472,7 +1568,7 @@ const data = {
                           id: "9332958f-b8e4-4482-bc16-6a454fcc3ce6",
                           source: "ce351c45-cd51-4211-984b-112cdc405549",
                           subType: "Annotation",
-                          target: "d7a820d3-35e1-465d-acf6-2db813906825"
+                          target: "d7a820d3-35e1-465d-acf6-2db813906825",
                         },
                         style: {
                           "control-point-distances": "40px -40px",
@@ -1488,9 +1584,9 @@ const data = {
                           "taxi-direction": "downward",
                           "taxi-turn": "20px",
                           "taxi-turn-min-distance": "5px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "d7a820d3-35e1-465d-acf6-2db813906825",
@@ -1517,16 +1613,19 @@ const data = {
                         "ui/public/static/img/meshmodels/dapr/color/component-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/dapr/white/component-white.svg"
+                        "ui/public/static/img/meshmodels/dapr/white/component-white.svg",
                     },
-                    position: { posX: 365.12945944500854, posY: 336.4854352817223 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 365.12945944500854,
+                      posY: 336.4854352817223,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Configuration"
-              }
-            }
-          }
+                type: "Configuration",
+              },
+            },
+          },
         },
         position: { x: 365.12945944500854, y: 336.4854352817223 },
         group: "nodes",
@@ -1536,8 +1635,8 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
-      }
+        classes: "",
+      },
     ],
     edges: [
       {
@@ -1545,7 +1644,7 @@ const data = {
           id: "9332958f-b8e4-4482-bc16-6a454fcc3ce6",
           source: "ce351c45-cd51-4211-984b-112cdc405549",
           subType: "Annotation",
-          target: "d7a820d3-35e1-465d-acf6-2db813906825"
+          target: "d7a820d3-35e1-465d-acf6-2db813906825",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -1555,9 +1654,9 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
-      }
-    ]
+        classes: "",
+      },
+    ],
   },
   elementStyles: {
     "211155a6-49c3-456e-bff3-e207f7367472": {
@@ -1985,7 +2084,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "e62926ff-bf42-4997-8608-334b42b26580": {
       events: "yes",
@@ -2412,7 +2511,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "ee72071f-290a-4961-966d-9096ce4c1273": {
       events: "yes",
@@ -2839,7 +2938,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "2aba3320-f1ad-4bec-b29a-1be5011e10da": {
       events: "yes",
@@ -3266,7 +3365,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "ce351c45-cd51-4211-984b-112cdc405549": {
       events: "yes",
@@ -3693,7 +3792,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "d7a820d3-35e1-465d-acf6-2db813906825": {
       events: "yes",
@@ -4120,7 +4219,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "9332958f-b8e4-4482-bc16-6a454fcc3ce6": {
       events: "yes",
@@ -4549,9 +4648,9 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
-    }
-  }
+      paddingBottom: "0px",
+    },
+  },
 };
 
 const addStyles = () => {
@@ -4618,7 +4717,7 @@ const addStyles = () => {
 
 const CreateToolBar = () => {
   const cyContainer = document.getElementById(
-    "embedded-design-7eed863e-a37c-493f-a7b6-61e4b29bb678"
+    "embedded-design-7eed863e-a37c-493f-a7b6-61e4b29bb678",
   );
   const toolbar = document.createElement("div");
   toolbar.innerHTML = `
@@ -4671,7 +4770,7 @@ const CreateToolBar = () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const embedContainer = document.getElementById(
-    "embedded-design-7eed863e-a37c-493f-a7b6-61e4b29bb678"
+    "embedded-design-7eed863e-a37c-493f-a7b6-61e4b29bb678",
   );
   embedContainer.classList.add("embed-design-container");
   const cyContainer = document.createElement("div");
@@ -4682,7 +4781,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var cy = (window.cy = cytoscape({
     container: document.getElementById(
-      "embedded-design-7eed863e-a37c-493f-a7b6-61e4b29bb678-cy"
+      "embedded-design-7eed863e-a37c-493f-a7b6-61e4b29bb678-cy",
     ),
 
     autounselectify: true,
@@ -4691,13 +4790,13 @@ document.addEventListener("DOMContentLoaded", function () {
     minZoom: 0.5,
     maxZoom: 6.6,
     layout: {
-      name: "preset"
+      name: "preset",
     },
     elements: data.elements,
-    style: data.style
+    style: data.style,
   }));
 
-  Object.keys(data.elementStyles).forEach(id => {
+  Object.keys(data.elementStyles).forEach((id) => {
     cy.getElementById(id).style(data.elementStyles[id]);
   });
 

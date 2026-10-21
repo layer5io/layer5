@@ -23,7 +23,7 @@ const DiagramWrapper = styled.div`
     padding-top: 0;
     padding-bottom: 0;
   }
-  .image-wrapper{
+  .image-wrapper {
     border-radius: 0.25rem;
     overflow: hidden;
   }
@@ -130,14 +130,13 @@ const DiagramWrapper = styled.div`
             max-width: 90%;
             margin-bottom: 2rem;
           }
-        } 
+        }
       }
     }
   }
 `;
 
 const Kubernetes = () => {
-
   const { isDark } = useStyledDarkMode();
 
   return (
@@ -146,13 +145,19 @@ const Kubernetes = () => {
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={ConfigGIF} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
+              <img
+                src={ConfigGIF}
+                alt="Kubernetes Diagrams for anything"
+                className="kubernetes-image"
+              />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
             <h2 className="heading">Kubernetes made simple.</h2>
             {/* <h3 className="sub-heading">Visualize, configure, deploy.</h3> */}
-            <p className="caption">Ditch the code complexity. Design your Kubernetes clusters visually, then deploy with confidence.
+            <p className="caption">
+              Ditch the code complexity. Design your Kubernetes clusters
+              visually, then deploy with confidence.
             </p>
           </Col>
         </Row>
@@ -160,54 +165,96 @@ const Kubernetes = () => {
           <Col md={4} className="diagram-detail">
             <h2 className="heading">No Code Kubernetes Deployments</h2>
             <p className="caption">
-              Kanvas for Kubernetes empowers anyone to deploy production-ready infrastructure effortlessly. No coding experience? No problem! Kanvas offers all the tools you need to deploy and configure your software on Kubernetes, the top container orchestrator, without writing a single line of code. Perfect for beginners learning the ropes or seasoned professionals seeking streamlined workflows, Kanvas ensures success in deploying and managing your applications on Kubernetes.
+              Kanvas for Kubernetes empowers anyone to deploy production-ready
+              infrastructure effortlessly. No coding experience? No problem!
+              Kanvas offers all the tools you need to deploy and configure your
+              software on Kubernetes, the top container orchestrator, without
+              writing a single line of code. Perfect for beginners learning the
+              ropes or seasoned professionals seeking streamlined workflows,
+              Kanvas ensures success in deploying and managing your applications
+              on Kubernetes.
             </p>
           </Col>
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={DeployGIF} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
+              <img
+                src={DeployGIF}
+                alt="Kubernetes Diagrams for anything"
+                className="kubernetes-image"
+              />
             </div>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={DragDropGIF} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
+              <img
+                src={DragDropGIF}
+                alt="Kubernetes Diagrams for anything"
+                className="kubernetes-image"
+              />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
             <h2 className="heading">From Idea to Infrastructure in Seconds</h2>
             <p className="caption">
-            Unlock the power of cloud-native computing without the coding complexity. Kanvas' drag-and-drop interface lets you visualize and build your cloud infrastructure effortlessly.
+              Unlock the power of cloud-native computing without the coding
+              complexity. Kanvas' drag-and-drop interface lets you visualize and
+              build your cloud infrastructure effortlessly.
             </p>
-            <Link className="link" href="/cloud-native-management/kanvas/design">Learn more &rarr;</Link>
+            <Link
+              className="link"
+              href="/cloud-native-management/kanvas/design"
+            >
+              Learn more &rarr;
+            </Link>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={4} className="diagram-detail">
-            <h2 className="heading">Comprehensive Kubernetes Toolkit for Platform Engineers</h2>
+            <h2 className="heading">
+              Comprehensive Kubernetes Toolkit for Platform Engineers
+            </h2>
             <p className="caption">
-            Leverage an extensive and continuously updated library of Kubernetes components, meticulously designed for both diagramming and orchestration. Create accurate, industry-standard diagrams that communicate your infrastructure designs effectively across teams. Click "dry run" before deploying to ensure your configurations are error-free.
+              Leverage an extensive and continuously updated library of
+              Kubernetes components, meticulously designed for both diagramming
+              and orchestration. Create accurate, industry-standard diagrams
+              that communicate your infrastructure designs effectively across
+              teams. Click "dry run" before deploying to ensure your
+              configurations are error-free.
             </p>
           </Col>
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={IconLibraryGIF} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
+              <img
+                src={IconLibraryGIF}
+                alt="Kubernetes Diagrams for anything"
+                className="kubernetes-image"
+              />
             </div>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={isDark ? KubernetesCatalogDark : KubernetesCatalogDark} alt="Designing Kubernetes Diagrams with Kanvas" className="kubernetes-image" />
+              <img
+                src={isDark ? KubernetesCatalogDark : KubernetesCatalogDark}
+                alt="Designing Kubernetes Diagrams with Kanvas"
+                className="kubernetes-image"
+              />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
             <h2 className="heading">From Zero to Kubernetes in Minutes</h2>
             <p className="caption">
-            Fast-track your Kubernetes projects with our curated collection of quick-start templates for both diagramming and orchestration. These professional-grade blueprints are fully customizable, giving you the flexibility to adapt them to your unique requirements.
+              Fast-track your Kubernetes projects with our curated collection of
+              quick-start templates for both diagramming and orchestration.
+              These professional-grade blueprints are fully customizable, giving
+              you the flexibility to adapt them to your unique requirements.
             </p>
-            <Link className="link" href="/cloud-native-management/catalog">Explore Kubernetes templates &rarr;</Link>
+            <Link className="link" href="/cloud-native-management/catalog">
+              Explore Kubernetes templates &rarr;
+            </Link>
           </Col>
         </Row>
         <RelatedPicks heading="kubernetes" />

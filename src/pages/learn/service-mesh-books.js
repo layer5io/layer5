@@ -9,11 +9,15 @@ const BooksGridPage = ({ hide_path }) => {
     <>
       <BooksPage hide_path={hide_path} />
       <KanvasCTA />
-
     </>
   );
 };
 export default BooksGridPage;
 export const Head = () => {
-  return  <SEO title="Kubernetes Books" description="Learn Kubernetes and hundreds of other DevOps tools." />;
+  return (
+    <SEO
+      title="Kubernetes Books"
+      description="Learn Kubernetes and hundreds of other DevOps tools."
+    />
+  );
 };

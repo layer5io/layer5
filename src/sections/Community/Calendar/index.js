@@ -14,7 +14,6 @@ import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
 import { Link } from "gatsby";
 
 const Calendar = () => {
-
   const columns = React.useMemo(
     () => [
       {
@@ -28,7 +27,7 @@ const Calendar = () => {
       {
         Header: "Slack Channel",
         id: "slack_channel",
-        accessor: meet_links_data => {
+        accessor: (meet_links_data) => {
           return (
             <>
               {
@@ -38,59 +37,45 @@ const Calendar = () => {
               }
             </>
           );
-        }
+        },
       },
       {
         Header: "Meeting Minutes",
         id: "meeting_minutes",
-        accessor: meet_links_data => {
-          return (
-            <>
-              {
-                <a href={meet_links_data.meeting_minutes}>
-                  Minutes
-                </a>
-              }
-            </>
-          );
-        }
+        accessor: (meet_links_data) => {
+          return <>{<a href={meet_links_data.meeting_minutes}>Minutes</a>}</>;
+        },
       },
       {
         Header: "Meeting Link",
         id: "meeting_link",
-        accessor: meet_links_data => {
-          return (
-            <>
-              {
-                <a href={meet_links_data.meeting_link}>
-                  Zoom
-                </a>
-              }
-            </>
-          );
-        }
+        accessor: (meet_links_data) => {
+          return <>{<a href={meet_links_data.meeting_link}>Zoom</a>}</>;
+        },
       },
       {
         Header: "Meeting Recordings",
         id: "meeting_recordings",
-        accessor: meet_links_data => {
+        accessor: (meet_links_data) => {
           return (
             <>
-              {meet_links_data.slack_channel !== "#smi" ?
-                <a href={meet_links_data.meeting_recordings}>
-                  YouTube
-                </a> : "N/A"
-              }
+              {meet_links_data.slack_channel !== "#smi" ? (
+                <a href={meet_links_data.meeting_recordings}>YouTube</a>
+              ) : (
+                "N/A"
+              )}
             </>
           );
-        }
+        },
       },
     ],
-    []
+    [],
   );
 
-  const data = React.useMemo(() => meet_links_data.filter(m => !m.archived));
-  const archivedData = React.useMemo(() => meet_links_data.filter(m => m.archived));
+  const data = React.useMemo(() => meet_links_data.filter((m) => !m.archived));
+  const archivedData = React.useMemo(() =>
+    meet_links_data.filter((m) => m.archived),
+  );
 
   return (
     <CalendarStyleWrapper>
@@ -104,27 +89,32 @@ const Calendar = () => {
           <div className="calendar-wrapper">
             <div className="calendar-grid">
               <FullCalendar
-                plugins={[dayGridPlugin, interactionPlugin, googleCalendarPlugin]}
+                plugins={[
+                  dayGridPlugin,
+                  interactionPlugin,
+                  googleCalendarPlugin,
+                ]}
                 initialView="dayGridMonth"
                 googleCalendarApiKey="AIzaSyDcmx-nLYfqvrfpEmVJuclwt9akayYfUgg"
                 events={{
-                  googleCalendarId: "layer5.io_eh2aa9dpf1g40elvoc762jnphs@group.calendar.google.com",
+                  googleCalendarId:
+                    "layer5.io_eh2aa9dpf1g40elvoc762jnphs@group.calendar.google.com",
                 }}
                 buttonText={{
-                  today: "Today"
+                  today: "Today",
                 }}
                 customButtons={{
                   addToCalendar: {
                     text: "Add To Your Calendar",
                     click: function () {
                       window.open("https://bit.ly/3fz1Vfs", "_blank");
-                    }
-                  }
+                    },
+                  },
                 }}
                 headerToolbar={{
                   left: "prev,next today",
                   center: "title",
-                  right: "addToCalendar"
+                  right: "addToCalendar",
                 }}
                 showNonCurrentDates={false}
                 contentHeight={700}
@@ -138,10 +128,9 @@ const Calendar = () => {
           <div className="archived-meetings-section">
             <h2>Archived Meetings</h2>
             <p>These meeting series have concluded and are no longer active.</p>
-            <Table columns={columns} data={archivedData} showHeader = {false}/>
+            <Table columns={columns} data={archivedData} showHeader={false} />
           </div>
         )}
-
       </div>
       <br />
       <Container>
@@ -154,10 +143,21 @@ const Calendar = () => {
               <h1>Newcomers Welcome!</h1>
               <h3>Are you new to the community?</h3>
               <p className="invitation">
-                Begin your journey by <a href="https://slack.layer5.io">joining the community Slack</a>. Then, use the resources linked in our <Link to="/community/newcomers">Contributor's Journey Map </Link>
+                Begin your journey by{" "}
+                <a href="https://slack.layer5.io">
+                  joining the community Slack
+                </a>
+                . Then, use the resources linked in our{" "}
+                <Link to="/community/newcomers">
+                  Contributor's Journey Map{" "}
+                </Link>
                 and engage in the community and projects.
               </p>
-              <Button $primary title="See All Newcomers Resources" $url="/community/newcomers">
+              <Button
+                $primary
+                title="See All Newcomers Resources"
+                $url="/community/newcomers"
+              >
                 <FaUsers size={21} className="icon-left" />
               </Button>
             </div>

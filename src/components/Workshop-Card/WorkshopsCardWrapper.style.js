@@ -42,8 +42,8 @@ const WorkshopCardWrapper = styled.div`
     width: 100%;
     height: auto;
     margin-bottom: 1.25rem;
-    
-    img{
+
+    img {
       object-fit: contain !important;
     }
   }
@@ -55,10 +55,10 @@ const WorkshopCardWrapper = styled.div`
     transition: all 0.25s ease-in;
     box-shadow: 0 0 black;
 
-    .gatsby-image-wrapper,.old-gatsby-image-wrapper {
+    .gatsby-image-wrapper,
+    .old-gatsby-image-wrapper {
       height: 90%;
       max-height: 40rem;
-
     }
   }
 

@@ -56,21 +56,20 @@ const BlockquoteStyle = styled.div`
     font-style: italic;
     margin: 0;
     z-index: 1;
-    margin-top: .25rem;
+    margin-top: 0.25rem;
     margin-left: 1.4rem;
   }
   /* increase header size after 600px */
   @media all and (max-width: 600px) {
     .blockquote-quote {
-      font-size: 1.25rem;     
+      font-size: 1.25rem;
     }
     .blockquote-title {
-      font-size: .9rem;
+      font-size: 0.9rem;
     }
     .blockquote-person {
-      font-size: 1.1
+      font-size: 1.1;
     }
-    
   }
 `;
 BlockquoteStyle.displayName = "BlockquoteStyle";

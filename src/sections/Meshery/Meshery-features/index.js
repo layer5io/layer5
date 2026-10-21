@@ -13,24 +13,24 @@ import img4 from "./feature-images/meshery-catalog.webp";
 import img7 from "./feature-images/extensions.webp";
 
 const MesheryFeaturesWrapper = styled.div`
-    margin: auto;
+  margin: auto;
+  margin-top: 4rem;
+  width: 100%;
+
+  @media (max-width: 32rem) {
     margin-top: 4rem;
-    width: 100%;
-    
-    @media (max-width: 32rem){
-        margin-top: 4rem;
-    }
+  }
 
-    @media (max-width: 767px){
-        display: block;
-        visibility: visible;
-        opacity: 1;
-    }
+  @media (max-width: 767px) {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
 
-    .feature-expose {
+  .feature-expose {
     img {
       padding: 0 3rem 1rem;
-      height:20rem;
+      height: 20rem;
     }
   }
   .feature-expose-full {
@@ -38,10 +38,10 @@ const MesheryFeaturesWrapper = styled.div`
       padding: 0rem;
     }
   }
-  @media (max-width: 767px){ 
-    .feature-expose img { 
-      height: 15rem; 
-    } 
+  @media (max-width: 767px) {
+    .feature-expose img {
+      height: 15rem;
+    }
   }
 `;
 
@@ -57,16 +57,27 @@ const MesheryFeatures = () => {
               description:
                 "Visually and collaboratively design your cloud native infrastructure using Meshery's drag-and-drop designer. Leverage 300+ integrations and context-aware relationships between components.",
               learnMoreLink: "/kanvas",
-              content: <img src={img1} alt="Infrastructure as Design with Kanvas" loading="lazy" />,
+              content: (
+                <img
+                  src={img1}
+                  alt="Infrastructure as Design with Kanvas"
+                  loading="lazy"
+                />
+              ),
             },
             {
               id: "second",
               title: "Workspaces: Team Collaboration Hub",
               description:
                 "Your team's Google Drive for cloud native projects. Organize work, collaborate with teams, and control access to Environments and resources with shared workspaces.",
-              learnMoreLink: "https://docs.meshery.io/concepts/logical/workspaces",
+              learnMoreLink:
+                "https://docs.meshery.io/concepts/logical/workspaces",
               content: (
-                <img src={img2} alt="Workspaces Team Collaboration" loading="lazy" />
+                <img
+                  src={img2}
+                  alt="Workspaces Team Collaboration"
+                  loading="lazy"
+                />
               ),
             },
             {
@@ -74,9 +85,14 @@ const MesheryFeatures = () => {
               title: "Multi-Cluster Kubernetes Management",
               description:
                 "Manage multiple Kubernetes clusters across any infrastructure from a single console. Perform dry-run deployments and validate configurations before applying changes.",
-              learnMoreLink: "https://docs.meshery.io/guides/configuration-management/",
+              learnMoreLink:
+                "https://docs.meshery.io/guides/configuration-management/",
               content: (
-                <img src={multiClusterGif} alt="Workspaces Team Collaboration" loading="lazy" />
+                <img
+                  src={multiClusterGif}
+                  alt="Workspaces Team Collaboration"
+                  loading="lazy"
+                />
               ),
             },
             {
@@ -86,10 +102,16 @@ const MesheryFeatures = () => {
                 "Build your internal developer platform with Meshery's extensive extensibility. Includes REST/GraphQL APIs, gRPC adapters, hot-loadable ReactJS components, and Golang plugins.",
               content: (
                 <div className="feature-expose-full">
-                  <img src={img7} alt="Platform Engineering Extension Points" loading="lazy" />
+                  <img
+                    src={img7}
+                    alt="Platform Engineering Extension Points"
+                    loading="lazy"
+                  />
                   <p>
-                    Meshery's numerous extension points make it ideal as the foundation of your internal developer platform.
-                    Create custom models, import/export as OCI images, and extend functionality through multiple integration patterns.
+                    Meshery's numerous extension points make it ideal as the
+                    foundation of your internal developer platform. Create
+                    custom models, import/export as OCI images, and extend
+                    functionality through multiple integration patterns.
                   </p>
                 </div>
               ),
@@ -105,12 +127,14 @@ const MesheryFeatures = () => {
                 <div className="feature-expose">
                   <img src={img3} alt="Performance Management" loading="lazy" />
                   <p>
-                    Built-in statistical analysis, performance profiles for consistent testing,
-                    and integration with Prometheus and Grafana for comprehensive metrics collection.
+                    Built-in statistical analysis, performance profiles for
+                    consistent testing, and integration with Prometheus and
+                    Grafana for comprehensive metrics collection.
                   </p>
                   <p>
-                    Compare performance across infrastructure deployments, track application
-                    performance from version to version, and baseline your workload performance.
+                    Compare performance across infrastructure deployments, track
+                    application performance from version to version, and
+                    baseline your workload performance.
                   </p>
                 </div>
               ),
@@ -119,7 +143,8 @@ const MesheryFeatures = () => {
               id: "six",
               title: "Cloud Native Catalog and Patterns",
               description:
-                "Access 400+ curated design patterns and templates. Share, clone, and customize designs with built -in best practices for common deployment scenarios.", content: (
+                "Access 400+ curated design patterns and templates. Share, clone, and customize designs with built -in best practices for common deployment scenarios.",
+              content: (
                 <div className="feature-expose-full">
                   <img
                     src={img4}
@@ -127,9 +152,10 @@ const MesheryFeatures = () => {
                     loading="lazy"
                   />
                   <p>
-                    Design configurator with templates from the catalog, version control for
-                    infrastructure configurations, and export to multiple formats including
-                    Kubernetes Manifest, Helm Chart, and Docker Compose.
+                    Design configurator with templates from the catalog, version
+                    control for infrastructure configurations, and export to
+                    multiple formats including Kubernetes Manifest, Helm Chart,
+                    and Docker Compose.
                   </p>
                 </div>
               ),
@@ -139,7 +165,8 @@ const MesheryFeatures = () => {
               id: "seven",
               title: "Environments and GitOps Integration",
               description:
-                "Manage resources as groups with Environments. Get infrastructure snapshots in pull requests and preview deployments before merging changes.", content: (
+                "Manage resources as groups with Environments. Get infrastructure snapshots in pull requests and preview deployments before merging changes.",
+              content: (
                 <div className="feature-expose">
                   <img
                     src={img5}
@@ -147,12 +174,14 @@ const MesheryFeatures = () => {
                     loading="lazy"
                   />
                   <p>
-                    Environments make it easier to manage, share, and work with collections
-                    of resources as a group, instead of dealing with connections and credentials individually.
+                    Environments make it easier to manage, share, and work with
+                    collections of resources as a group, instead of dealing with
+                    connections and credentials individually.
                   </p>
                   <p>
-                    Visual insights in GitHub pull requests help verify workload designs
-                    and Kubernetes configurations before accepting and merging changes.
+                    Visual insights in GitHub pull requests help verify workload
+                    designs and Kubernetes configurations before accepting and
+                    merging changes.
                   </p>
                 </div>
               ),
@@ -162,7 +191,8 @@ const MesheryFeatures = () => {
               id: "eight",
               title: "Advanced Policy Management with OPA",
               description:
-                "Context-aware policies for applications using Open Policy Agent integration. Enforce configuration best practices without writing Rego query language.", content: (
+                "Context-aware policies for applications using Open Policy Agent integration. Enforce configuration best practices without writing Rego query language.",
+              content: (
                 <div className="feature-expose-full">
                   <img
                     src={img6}
@@ -170,12 +200,16 @@ const MesheryFeatures = () => {
                     loading="lazy"
                   />
                   <p>
-                    Meshery uses context-aware relationships to define how and when components interrelate with one another.
-                    Meshery supports a variety of relationships between components. These relationships are categorized into two types: semantic and non-semantic.
+                    Meshery uses context-aware relationships to define how and
+                    when components interrelate with one another. Meshery
+                    supports a variety of relationships between components.
+                    These relationships are categorized into two types: semantic
+                    and non-semantic.
                   </p>
                 </div>
               ),
-              learnMoreLink: "https://docs.meshery.io/concepts/logical/relationships#types-of-relationships",
+              learnMoreLink:
+                "https://docs.meshery.io/concepts/logical/relationships#types-of-relationships",
             },
           ]}
         />

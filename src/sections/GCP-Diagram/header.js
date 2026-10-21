@@ -79,9 +79,12 @@ const Header = () => {
         <Container>
           <Row className="row">
             <Col className="col header__detail" lg={6}>
-              <h1 className="header__title">Google Cloud Platform Diagram Tool</h1>
+              <h1 className="header__title">
+                Google Cloud Platform Diagram Tool
+              </h1>
               <p className="header__title_description">
-              Create GCP diagrams easily with predefined templates and symbols designed for professionals.
+                Create GCP diagrams easily with predefined templates and symbols
+                designed for professionals.
               </p>
               <div className="header__button_section">
                 <Button
@@ -93,7 +96,10 @@ const Header = () => {
               </div>
             </Col>
             <Col className="col catalog" lg={6}>
-              <img src={isDark ? GCPDiagramDark : GCPDiagramLight} alt="catalog" />
+              <img
+                src={isDark ? GCPDiagramDark : GCPDiagramLight}
+                alt="catalog"
+              />
             </Col>
           </Row>
         </Container>

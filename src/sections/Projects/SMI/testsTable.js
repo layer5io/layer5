@@ -5,7 +5,6 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
 function TestsTable() {
-
   const columns = React.useMemo(
     () => [
       {
@@ -25,7 +24,7 @@ function TestsTable() {
         accessor: "desc",
       },
     ],
-    []
+    [],
   );
 
   const test_data = React.useMemo(() => data.testDetails);
@@ -36,14 +35,10 @@ function TestsTable() {
         <Tab>Spec v0.6.0</Tab>
       </TabList>
       <TabPanel>
-        <Table
-          columns={columns}
-          data={test_data["0.6.0"]}
-        />
+        <Table columns={columns} data={test_data["0.6.0"]} />
       </TabPanel>
     </Tabs>
   );
 }
 
 export default TestsTable;
-

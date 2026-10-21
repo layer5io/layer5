@@ -25,7 +25,7 @@ const data = {
                           id: "24334889-927d-405f-a38a-cc33b8a7691b",
                           source: "2d6194b0-7d7c-4a1e-8320-ad0989932670",
                           subType: "Annotation",
-                          target: "0407e544-8ebd-4ac3-9e32-cc13e432168a"
+                          target: "0407e544-8ebd-4ac3-9e32-cc13e432168a",
                         },
                         style: {
                           "control-point-distances": null,
@@ -41,9 +41,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "0407e544-8ebd-4ac3-9e32-cc13e432168a",
@@ -69,7 +69,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -78,7 +78,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -99,16 +99,19 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws cognito-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws cognito-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws cognito-white.svg",
                     },
-                    position: { posX: 97.5098767775386, posY: 196.04610974008702 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 97.5098767775386,
+                      posY: 196.04610974008702,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS Cognito"
-              }
-            }
-          }
+                type: "AWS Cognito",
+              },
+            },
+          },
         },
         position: { x: 97.5098767775386, y: 196.04610974008702 },
         group: "nodes",
@@ -118,7 +121,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -143,7 +146,7 @@ const data = {
                           id: "5e77cc5c-c406-4c58-a3c9-dc8ccaab9879",
                           source: "4a568f39-05c8-4bb2-bf5b-adcccc09ffbd",
                           subType: "Annotation",
-                          target: "53aee2f7-f6f3-41b8-805b-d34a1b4db6c9"
+                          target: "53aee2f7-f6f3-41b8-805b-d34a1b4db6c9",
                         },
                         style: {
                           "control-point-distances": null,
@@ -159,9 +162,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "53aee2f7-f6f3-41b8-805b-d34a1b4db6c9",
@@ -187,7 +190,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -196,7 +199,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -217,16 +220,19 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws dynamodb-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws dynamodb-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws dynamodb-white.svg",
                     },
-                    position: { posX: 98.1557479255682, posY: 130.72638247947094 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 98.1557479255682,
+                      posY: 130.72638247947094,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS DynamoDB"
-              }
-            }
-          }
+                type: "AWS DynamoDB",
+              },
+            },
+          },
         },
         position: { x: 98.1557479255682, y: 130.72638247947094 },
         group: "nodes",
@@ -236,7 +242,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -261,7 +267,7 @@ const data = {
                           id: "f88d8404-8778-4184-b4b2-a80c95e14652",
                           source: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3",
                           subType: "Annotation",
-                          target: "e81196ef-bb66-46fd-9b31-5c648552bd9e"
+                          target: "e81196ef-bb66-46fd-9b31-5c648552bd9e",
                         },
                         style: {
                           "control-point-distances": "40px -40px",
@@ -277,8 +283,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -286,7 +292,7 @@ const data = {
                           id: "fe53a0a6-030f-4744-80ef-85bde6545fee",
                           source: "4d5691d0-7395-4177-8fdd-7f6c7be59312",
                           subType: "Annotation",
-                          target: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3"
+                          target: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3",
                         },
                         style: {
                           "control-point-distances": "40px -40px",
@@ -302,15 +308,18 @@ const data = {
                           "taxi-direction": "downward",
                           "taxi-turn": "20px",
                           "taxi-turn-min-distance": "5px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3",
                     label: "Section",
                     "meshmodel-data": {
-                      category: { metadata: null, name: "Orchestration & Management" },
+                      category: {
+                        metadata: null,
+                        name: "Orchestration & Management",
+                      },
                       components: null,
                       description: "",
                       displayName: "Meshery Shapes",
@@ -330,7 +339,7 @@ const data = {
                           "ui/public/static/img/meshmodels/meshery-flowchart/complete/decision-complete.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/meshery-shapes/white/meshery-shapes-white.svg"
+                          "ui/public/static/img/meshmodels/meshery-shapes/white/meshery-shapes-white.svg",
                       },
                       model: { version: "0.7.2" },
                       name: "meshery-shapes",
@@ -339,7 +348,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "App Definition and Development",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -363,7 +372,7 @@ const data = {
                         data: { label: "" },
                         height: "30px",
                         width: "30px",
-                        "z-index": 29
+                        "z-index": 29,
                       },
                       styles:
                         '{"height":"30px","width":"30px", "background-image":"none","border-width":1,"border-style":"dashed","background-opacity":0.1}',
@@ -372,16 +381,19 @@ const data = {
                         "ui/public/static/img/meshmodels/meshery-core/color/anchornode-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/meshery-core/white/anchornode-white.svg"
+                        "ui/public/static/img/meshmodels/meshery-core/white/anchornode-white.svg",
                     },
-                    position: { posX: 362.2400430471165, posY: 424.66778899795116 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 362.2400430471165,
+                      posY: 424.66778899795116,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "Section"
-              }
-            }
-          }
+                type: "Section",
+              },
+            },
+          },
         },
         position: { x: 362.2400430471165, y: 424.66778899795116 },
         group: "nodes",
@@ -391,7 +403,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -416,7 +428,7 @@ const data = {
                           id: "6d16c0d6-4086-4080-a8fe-8fbd54c986ca",
                           source: "4d5691d0-7395-4177-8fdd-7f6c7be59312",
                           subType: "Annotation",
-                          target: "be7b09a9-f09f-4721-8575-79833dd40cf8"
+                          target: "be7b09a9-f09f-4721-8575-79833dd40cf8",
                         },
                         style: {
                           "control-point-distances": "40px -40px",
@@ -432,15 +444,18 @@ const data = {
                           "taxi-direction": "downward",
                           "taxi-turn": "20px",
                           "taxi-turn-min-distance": "5px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "be7b09a9-f09f-4721-8575-79833dd40cf8",
                     label: "Section",
                     "meshmodel-data": {
-                      category: { metadata: null, name: "Orchestration & Management" },
+                      category: {
+                        metadata: null,
+                        name: "Orchestration & Management",
+                      },
                       components: null,
                       description: "",
                       displayName: "Meshery Shapes",
@@ -460,7 +475,7 @@ const data = {
                           "ui/public/static/img/meshmodels/meshery-flowchart/complete/decision-complete.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/meshery-shapes/white/meshery-shapes-white.svg"
+                          "ui/public/static/img/meshmodels/meshery-shapes/white/meshery-shapes-white.svg",
                       },
                       model: { version: "0.7.2" },
                       name: "meshery-shapes",
@@ -469,7 +484,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "App Definition and Development",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -493,7 +508,7 @@ const data = {
                         data: { label: "" },
                         height: "30px",
                         width: "30px",
-                        "z-index": 27
+                        "z-index": 27,
                       },
                       styles:
                         '{"height":"30px","width":"30px", "background-image":"none","border-width":1,"border-style":"dashed","background-opacity":0.1}',
@@ -502,16 +517,19 @@ const data = {
                         "ui/public/static/img/meshmodels/meshery-core/color/anchornode-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/meshery-core/white/anchornode-white.svg"
+                        "ui/public/static/img/meshmodels/meshery-core/white/anchornode-white.svg",
                     },
-                    position: { posX: 505.59619935829824, posY: 162.99975698559206 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 505.59619935829824,
+                      posY: 162.99975698559206,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "Section"
-              }
-            }
-          }
+                type: "Section",
+              },
+            },
+          },
         },
         position: { x: 505.59619935829824, y: 162.99975698559206 },
         group: "nodes",
@@ -521,7 +539,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -546,7 +564,7 @@ const data = {
                           id: "24334889-927d-405f-a38a-cc33b8a7691b",
                           source: "2d6194b0-7d7c-4a1e-8320-ad0989932670",
                           subType: "Annotation",
-                          target: "0407e544-8ebd-4ac3-9e32-cc13e432168a"
+                          target: "0407e544-8ebd-4ac3-9e32-cc13e432168a",
                         },
                         style: {
                           "control-point-distances": null,
@@ -562,8 +580,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -571,7 +589,7 @@ const data = {
                           id: "013745d4-6728-4a77-88c0-3e5ff2d13288",
                           source: "2d6194b0-7d7c-4a1e-8320-ad0989932670",
                           subType: "Annotation",
-                          target: "4d5691d0-7395-4177-8fdd-7f6c7be59312"
+                          target: "4d5691d0-7395-4177-8fdd-7f6c7be59312",
                         },
                         style: {
                           "control-point-distances": null,
@@ -587,8 +605,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -596,7 +614,7 @@ const data = {
                           id: "2bd29128-636d-470b-896a-ce3c80d2e6ff",
                           source: "fe1e6f32-b123-4f1d-8714-d07f54060519",
                           subType: "Annotation",
-                          target: "2d6194b0-7d7c-4a1e-8320-ad0989932670"
+                          target: "2d6194b0-7d7c-4a1e-8320-ad0989932670",
                         },
                         style: {
                           "control-point-distances": null,
@@ -612,8 +630,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -621,7 +639,7 @@ const data = {
                           id: "aaacebea-45b7-401c-b806-476dc2c90e4e",
                           source: "2d6194b0-7d7c-4a1e-8320-ad0989932670",
                           subType: "Annotation",
-                          target: "4a162da7-2c89-480a-aaed-e5dfdb573c98"
+                          target: "4a162da7-2c89-480a-aaed-e5dfdb573c98",
                         },
                         style: {
                           "control-point-distances": null,
@@ -637,9 +655,9 @@ const data = {
                           "taxi-direction": "downward",
                           "taxi-turn": "20px",
                           "taxi-turn-min-distance": "5px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "2d6194b0-7d7c-4a1e-8320-ad0989932670",
@@ -665,7 +683,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -674,7 +692,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -695,16 +713,19 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws s3 on outposts-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws s3 on outposts-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws s3 on outposts-white.svg",
                     },
-                    position: { posX: 96.99146760530162, posY: 267.94017298788566 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 96.99146760530162,
+                      posY: 267.94017298788566,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS S3 on Outposts"
-              }
-            }
-          }
+                type: "AWS S3 on Outposts",
+              },
+            },
+          },
         },
         position: { x: 96.99146760530162, y: 267.94017298788566 },
         group: "nodes",
@@ -714,7 +735,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -729,7 +750,10 @@ const data = {
             name: "Section",
             services: {
               "4a162da7-2c89-480a-aaed-e5dfdb573c98": {
-                settings: { label: "Store Management components3", name: "Section" },
+                settings: {
+                  label: "Store Management components3",
+                  name: "Section",
+                },
                 traits: {
                   meshmap: {
                     edges: [
@@ -739,7 +763,7 @@ const data = {
                           id: "aaacebea-45b7-401c-b806-476dc2c90e4e",
                           source: "2d6194b0-7d7c-4a1e-8320-ad0989932670",
                           subType: "Annotation",
-                          target: "4a162da7-2c89-480a-aaed-e5dfdb573c98"
+                          target: "4a162da7-2c89-480a-aaed-e5dfdb573c98",
                         },
                         style: {
                           "control-point-distances": null,
@@ -755,15 +779,18 @@ const data = {
                           "taxi-direction": "downward",
                           "taxi-turn": "20px",
                           "taxi-turn-min-distance": "5px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "4a162da7-2c89-480a-aaed-e5dfdb573c98",
                     label: "Section",
                     "meshmodel-data": {
-                      category: { metadata: null, name: "Orchestration & Management" },
+                      category: {
+                        metadata: null,
+                        name: "Orchestration & Management",
+                      },
                       components: null,
                       description: "",
                       displayName: "Meshery Shapes",
@@ -783,7 +810,7 @@ const data = {
                           "ui/public/static/img/meshmodels/meshery-flowchart/complete/decision-complete.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/meshery-shapes/white/meshery-shapes-white.svg"
+                          "ui/public/static/img/meshmodels/meshery-shapes/white/meshery-shapes-white.svg",
                       },
                       model: { version: "0.7.2" },
                       name: "meshery-shapes",
@@ -792,7 +819,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "App Definition and Development",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -816,7 +843,7 @@ const data = {
                         data: { label: "" },
                         height: "30px",
                         width: "30px",
-                        "z-index": 25
+                        "z-index": 25,
                       },
                       styles:
                         '{"height":"30px","width":"30px", "background-image":"none","border-width":1,"border-style":"dashed","background-opacity":0.1}',
@@ -825,16 +852,19 @@ const data = {
                         "ui/public/static/img/meshmodels/meshery-core/color/anchornode-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/meshery-core/white/anchornode-white.svg"
+                        "ui/public/static/img/meshmodels/meshery-core/white/anchornode-white.svg",
                     },
-                    position: { posX: 45.94665230810076, posY: 432.30537267894556 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 45.94665230810076,
+                      posY: 432.30537267894556,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "Section"
-              }
-            }
-          }
+                type: "Section",
+              },
+            },
+          },
         },
         position: { x: 45.94665230810076, y: 432.30537267894556 },
         group: "nodes",
@@ -844,7 +874,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -869,7 +899,7 @@ const data = {
                           id: "2bd29128-636d-470b-896a-ce3c80d2e6ff",
                           source: "fe1e6f32-b123-4f1d-8714-d07f54060519",
                           subType: "Annotation",
-                          target: "2d6194b0-7d7c-4a1e-8320-ad0989932670"
+                          target: "2d6194b0-7d7c-4a1e-8320-ad0989932670",
                         },
                         style: {
                           "control-point-distances": null,
@@ -885,9 +915,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "fe1e6f32-b123-4f1d-8714-d07f54060519",
@@ -913,7 +943,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -922,7 +952,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -943,16 +973,19 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws cloudfront-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws cloudfront-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws cloudfront-white.svg",
                     },
-                    position: { posX: 8.909150584128398, posY: 269.89443571173257 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 8.909150584128398,
+                      posY: 269.89443571173257,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS CloudFront"
-              }
-            }
-          }
+                type: "AWS CloudFront",
+              },
+            },
+          },
         },
         position: { x: 8.909150584128398, y: 269.89443571173257 },
         group: "nodes",
@@ -962,7 +995,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -987,7 +1020,7 @@ const data = {
                           id: "6d16c0d6-4086-4080-a8fe-8fbd54c986ca",
                           source: "4d5691d0-7395-4177-8fdd-7f6c7be59312",
                           subType: "Annotation",
-                          target: "be7b09a9-f09f-4721-8575-79833dd40cf8"
+                          target: "be7b09a9-f09f-4721-8575-79833dd40cf8",
                         },
                         style: {
                           "control-point-distances": "40px -40px",
@@ -1003,8 +1036,8 @@ const data = {
                           "taxi-direction": "downward",
                           "taxi-turn": "20px",
                           "taxi-turn-min-distance": "5px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -1012,7 +1045,7 @@ const data = {
                           id: "013745d4-6728-4a77-88c0-3e5ff2d13288",
                           source: "2d6194b0-7d7c-4a1e-8320-ad0989932670",
                           subType: "Annotation",
-                          target: "4d5691d0-7395-4177-8fdd-7f6c7be59312"
+                          target: "4d5691d0-7395-4177-8fdd-7f6c7be59312",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1028,8 +1061,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -1037,7 +1070,7 @@ const data = {
                           id: "fe53a0a6-030f-4744-80ef-85bde6545fee",
                           source: "4d5691d0-7395-4177-8fdd-7f6c7be59312",
                           subType: "Annotation",
-                          target: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3"
+                          target: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3",
                         },
                         style: {
                           "control-point-distances": "40px -40px",
@@ -1053,15 +1086,18 @@ const data = {
                           "taxi-direction": "downward",
                           "taxi-turn": "20px",
                           "taxi-turn-min-distance": "5px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "4d5691d0-7395-4177-8fdd-7f6c7be59312",
                     label: "Section",
                     "meshmodel-data": {
-                      category: { metadata: null, name: "Orchestration & Management" },
+                      category: {
+                        metadata: null,
+                        name: "Orchestration & Management",
+                      },
                       components: null,
                       description: "",
                       displayName: "Meshery Shapes",
@@ -1081,7 +1117,7 @@ const data = {
                           "ui/public/static/img/meshmodels/meshery-flowchart/complete/decision-complete.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/meshery-shapes/white/meshery-shapes-white.svg"
+                          "ui/public/static/img/meshmodels/meshery-shapes/white/meshery-shapes-white.svg",
                       },
                       model: { version: "0.7.2" },
                       name: "meshery-shapes",
@@ -1090,7 +1126,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "App Definition and Development",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -1115,7 +1151,7 @@ const data = {
                         data: { label: "" },
                         height: "30px",
                         width: "30px",
-                        "z-index": 24
+                        "z-index": 24,
                       },
                       styles:
                         '{"height":"30px","width":"30px", "background-image":"none","border-width":1,"border-style":"dashed","background-opacity":0.1}',
@@ -1124,16 +1160,19 @@ const data = {
                         "ui/public/static/img/meshmodels/meshery-core/color/anchornode-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/meshery-core/white/anchornode-white.svg"
+                        "ui/public/static/img/meshmodels/meshery-core/white/anchornode-white.svg",
                     },
-                    position: { posX: 221.57494165163456, posY: 266.5216682731481 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 221.57494165163456,
+                      posY: 266.5216682731481,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "Section"
-              }
-            }
-          }
+                type: "Section",
+              },
+            },
+          },
         },
         position: { x: 221.57494165163456, y: 266.5216682731481 },
         group: "nodes",
@@ -1143,7 +1182,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1158,7 +1197,10 @@ const data = {
             name: "AWS Lambda",
             services: {
               "4a568f39-05c8-4bb2-bf5b-adcccc09ffbd": {
-                settings: { label: "Lambda Setting Function", name: "AWS Lambda" },
+                settings: {
+                  label: "Lambda Setting Function",
+                  name: "AWS Lambda",
+                },
                 traits: {
                   meshmap: {
                     edges: [
@@ -1168,7 +1210,7 @@ const data = {
                           id: "a5cc1341-062d-41ed-b180-a3e058eb30e8",
                           source: "6e422442-670a-4fee-b031-790bcac94b32",
                           subType: "Annotation",
-                          target: "4a568f39-05c8-4bb2-bf5b-adcccc09ffbd"
+                          target: "4a568f39-05c8-4bb2-bf5b-adcccc09ffbd",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1184,8 +1226,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -1193,7 +1235,7 @@ const data = {
                           id: "5e77cc5c-c406-4c58-a3c9-dc8ccaab9879",
                           source: "4a568f39-05c8-4bb2-bf5b-adcccc09ffbd",
                           subType: "Annotation",
-                          target: "53aee2f7-f6f3-41b8-805b-d34a1b4db6c9"
+                          target: "53aee2f7-f6f3-41b8-805b-d34a1b4db6c9",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1209,9 +1251,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "4a568f39-05c8-4bb2-bf5b-adcccc09ffbd",
@@ -1237,7 +1279,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -1246,7 +1288,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -1267,16 +1309,19 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws lambda-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws lambda-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws lambda-white.svg",
                     },
-                    position: { posX: 261.31825398234383, posY: 132.03688126300244 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 261.31825398234383,
+                      posY: 132.03688126300244,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS Lambda"
-              }
-            }
-          }
+                type: "AWS Lambda",
+              },
+            },
+          },
         },
         position: { x: 261.31825398234383, y: 132.03688126300244 },
         group: "nodes",
@@ -1286,7 +1331,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1311,7 +1356,7 @@ const data = {
                           id: "f88d8404-8778-4184-b4b2-a80c95e14652",
                           source: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3",
                           subType: "Annotation",
-                          target: "e81196ef-bb66-46fd-9b31-5c648552bd9e"
+                          target: "e81196ef-bb66-46fd-9b31-5c648552bd9e",
                         },
                         style: {
                           "control-point-distances": "40px -40px",
@@ -1327,15 +1372,18 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "e81196ef-bb66-46fd-9b31-5c648552bd9e",
                     label: "Section",
                     "meshmodel-data": {
-                      category: { metadata: null, name: "Orchestration & Management" },
+                      category: {
+                        metadata: null,
+                        name: "Orchestration & Management",
+                      },
                       components: null,
                       description: "",
                       displayName: "Meshery Shapes",
@@ -1355,7 +1403,7 @@ const data = {
                           "ui/public/static/img/meshmodels/meshery-flowchart/complete/decision-complete.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/meshery-shapes/white/meshery-shapes-white.svg"
+                          "ui/public/static/img/meshmodels/meshery-shapes/white/meshery-shapes-white.svg",
                       },
                       model: { version: "0.7.2" },
                       name: "meshery-shapes",
@@ -1364,7 +1412,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "App Definition and Development",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -1388,7 +1436,7 @@ const data = {
                         data: { label: "" },
                         height: "30px",
                         width: "30px",
-                        "z-index": 30
+                        "z-index": 30,
                       },
                       styles:
                         '{"height":"30px","width":"30px", "background-image":"none","border-width":1,"border-style":"dashed","background-opacity":0.1}',
@@ -1397,16 +1445,19 @@ const data = {
                         "ui/public/static/img/meshmodels/meshery-core/color/anchornode-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/meshery-core/white/anchornode-white.svg"
+                        "ui/public/static/img/meshmodels/meshery-core/white/anchornode-white.svg",
                     },
-                    position: { posX: 573.0465396433461, posY: 394.832663325065 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 573.0465396433461,
+                      posY: 394.832663325065,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "Section"
-              }
-            }
-          }
+                type: "Section",
+              },
+            },
+          },
         },
         position: { x: 573.0465396433461, y: 394.832663325065 },
         group: "nodes",
@@ -1416,7 +1467,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1431,7 +1482,10 @@ const data = {
             name: "AWS CodePipeline",
             services: {
               "97c14fa4-3d59-44a5-a0d5-8e7e2234ef79": {
-                settings: { label: "AWS CodePipeline", name: "AWS CodePipeline" },
+                settings: {
+                  label: "AWS CodePipeline",
+                  name: "AWS CodePipeline",
+                },
                 traits: {
                   meshmap: {
                     edges: [
@@ -1441,7 +1495,7 @@ const data = {
                           id: "c40f1964-3162-4f31-8d4d-706c08287860",
                           source: "97c14fa4-3d59-44a5-a0d5-8e7e2234ef79",
                           subType: "Annotation",
-                          target: "6d3a6772-3c10-48c4-abb8-94cdc2cd465a"
+                          target: "6d3a6772-3c10-48c4-abb8-94cdc2cd465a",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1457,8 +1511,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -1466,7 +1520,7 @@ const data = {
                           id: "e1d137e9-5d73-4faf-bae9-d717b4f48fa5",
                           source: "97c14fa4-3d59-44a5-a0d5-8e7e2234ef79",
                           subType: "Annotation",
-                          target: "70c15791-e4c8-442c-a7b9-de0967e66f3b"
+                          target: "70c15791-e4c8-442c-a7b9-de0967e66f3b",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1482,9 +1536,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "97c14fa4-3d59-44a5-a0d5-8e7e2234ef79",
@@ -1510,7 +1564,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -1519,7 +1573,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -1541,18 +1595,21 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws codepipeline-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws codepipeline-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws codepipeline-white.svg",
                     },
                     parent: "e81196ef-bb66-46fd-9b31-5c648552bd9e",
-                    position: { posX: 573.0465396433461, posY: 389.5360029003525 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 573.0465396433461,
+                      posY: 389.5360029003525,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS CodePipeline"
-              }
-            }
+                type: "AWS CodePipeline",
+              },
+            },
           },
-          parent: "e81196ef-bb66-46fd-9b31-5c648552bd9e"
+          parent: "e81196ef-bb66-46fd-9b31-5c648552bd9e",
         },
         position: { x: 573.0465396433461, y: 389.5360029003525 },
         group: "nodes",
@@ -1562,7 +1619,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1587,7 +1644,7 @@ const data = {
                           id: "e487a7a5-5fac-4999-87ef-d172be1df5fd",
                           source: "08bf65d5-8248-4376-b1ee-793a57ec045e",
                           subType: "Annotation",
-                          target: "ecec6776-80af-4617-9319-42817ba98234"
+                          target: "ecec6776-80af-4617-9319-42817ba98234",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1603,8 +1660,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -1612,7 +1669,7 @@ const data = {
                           id: "412b08a0-ab17-43f6-a357-2c9ce30ec8b1",
                           source: "ad1c7db7-68ba-4d50-b2de-c33036fc9368",
                           subType: "Annotation",
-                          target: "ecec6776-80af-4617-9319-42817ba98234"
+                          target: "ecec6776-80af-4617-9319-42817ba98234",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1628,9 +1685,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "ecec6776-80af-4617-9319-42817ba98234",
@@ -1656,7 +1713,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -1665,7 +1722,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -1687,18 +1744,21 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws s3 on outposts-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws s3 on outposts-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws s3 on outposts-white.svg",
                     },
                     parent: "be7b09a9-f09f-4721-8575-79833dd40cf8",
-                    position: { posX: 531.2542463136316, posY: 126.81650958636415 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 531.2542463136316,
+                      posY: 126.81650958636415,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS S3 on Outposts"
-              }
-            }
+                type: "AWS S3 on Outposts",
+              },
+            },
           },
-          parent: "be7b09a9-f09f-4721-8575-79833dd40cf8"
+          parent: "be7b09a9-f09f-4721-8575-79833dd40cf8",
         },
         position: { x: 531.2542463136316, y: 126.81650958636415 },
         group: "nodes",
@@ -1708,7 +1768,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1723,7 +1783,10 @@ const data = {
             name: "AWS API Gateway",
             services: {
               "981d0823-2071-4308-90f9-b43a01777a3e": {
-                settings: { label: "Amazon API Gateway", name: "AWS API Gateway" },
+                settings: {
+                  label: "Amazon API Gateway",
+                  name: "AWS API Gateway",
+                },
                 traits: {
                   meshmap: {
                     edges: [],
@@ -1751,7 +1814,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -1760,7 +1823,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -1782,18 +1845,21 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws api gateway-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws api gateway-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws api gateway-white.svg",
                     },
                     parent: "4d5691d0-7395-4177-8fdd-7f6c7be59312",
-                    position: { posX: 201.44811730324156, posY: 258.6510920007653 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 201.44811730324156,
+                      posY: 258.6510920007653,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS API Gateway"
-              }
-            }
+                type: "AWS API Gateway",
+              },
+            },
           },
-          parent: "4d5691d0-7395-4177-8fdd-7f6c7be59312"
+          parent: "4d5691d0-7395-4177-8fdd-7f6c7be59312",
         },
         position: { x: 201.44811730324156, y: 258.6510920007653 },
         group: "nodes",
@@ -1803,7 +1869,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1828,7 +1894,7 @@ const data = {
                           id: "6bfa820c-7717-44c3-abc5-d36cc544ebda",
                           source: "8b7ec622-f5f9-4485-ab52-33c6ce6038ef",
                           subType: "Annotation",
-                          target: "906bfe13-9220-4eb4-8165-62c1b5a4e5d6"
+                          target: "906bfe13-9220-4eb4-8165-62c1b5a4e5d6",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1844,8 +1910,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -1853,7 +1919,7 @@ const data = {
                           id: "1a856427-72f4-4d72-9391-2bfaf1905cf9",
                           source: "906bfe13-9220-4eb4-8165-62c1b5a4e5d6",
                           subType: "Annotation",
-                          target: "8b7ec622-f5f9-4485-ab52-33c6ce6038ef"
+                          target: "8b7ec622-f5f9-4485-ab52-33c6ce6038ef",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1869,9 +1935,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "8b7ec622-f5f9-4485-ab52-33c6ce6038ef",
@@ -1897,7 +1963,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -1906,7 +1972,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -1928,18 +1994,21 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws amplify-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws amplify-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws amplify-white.svg",
                     },
                     parent: "4a162da7-2c89-480a-aaed-e5dfdb573c98",
-                    position: { posX: 5.432781679734359, posY: 424.3126093153078 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 5.432781679734359,
+                      posY: 424.3126093153078,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS Amplify"
-              }
-            }
+                type: "AWS Amplify",
+              },
+            },
           },
-          parent: "4a162da7-2c89-480a-aaed-e5dfdb573c98"
+          parent: "4a162da7-2c89-480a-aaed-e5dfdb573c98",
         },
         position: { x: 5.432781679734359, y: 424.3126093153078 },
         group: "nodes",
@@ -1949,7 +2018,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1974,7 +2043,7 @@ const data = {
                           id: "c40f1964-3162-4f31-8d4d-706c08287860",
                           source: "97c14fa4-3d59-44a5-a0d5-8e7e2234ef79",
                           subType: "Annotation",
-                          target: "6d3a6772-3c10-48c4-abb8-94cdc2cd465a"
+                          target: "6d3a6772-3c10-48c4-abb8-94cdc2cd465a",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1990,9 +2059,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "6d3a6772-3c10-48c4-abb8-94cdc2cd465a",
@@ -2018,7 +2087,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -2027,7 +2096,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -2049,18 +2118,21 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws codebuild-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws codebuild-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws codebuild-white.svg",
                     },
                     parent: "e81196ef-bb66-46fd-9b31-5c648552bd9e",
-                    position: { posX: 574.3489550303001, posY: 471.8621169553827 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 574.3489550303001,
+                      posY: 471.8621169553827,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS CodeBuild"
-              }
-            }
+                type: "AWS CodeBuild",
+              },
+            },
           },
-          parent: "e81196ef-bb66-46fd-9b31-5c648552bd9e"
+          parent: "e81196ef-bb66-46fd-9b31-5c648552bd9e",
         },
         position: { x: 574.3489550303001, y: 471.8621169553827 },
         group: "nodes",
@@ -2070,7 +2142,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2095,7 +2167,7 @@ const data = {
                           id: "dc6f0268-6cf9-46b3-b690-8c7ef601506a",
                           source: "60555bb9-fd44-44a1-9f6e-3c0eb3fa4187",
                           subType: "Annotation",
-                          target: "d93db70a-6b23-404e-b5f7-7de8c80466d5"
+                          target: "d93db70a-6b23-404e-b5f7-7de8c80466d5",
                         },
                         style: {
                           "control-point-distances": null,
@@ -2111,8 +2183,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -2120,7 +2192,7 @@ const data = {
                           id: "9e15a841-6339-4bee-ab2e-e98306bd7ba5",
                           source: "d93db70a-6b23-404e-b5f7-7de8c80466d5",
                           subType: "Annotation",
-                          target: "60555bb9-fd44-44a1-9f6e-3c0eb3fa4187"
+                          target: "60555bb9-fd44-44a1-9f6e-3c0eb3fa4187",
                         },
                         style: {
                           "control-point-distances": null,
@@ -2136,9 +2208,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "d93db70a-6b23-404e-b5f7-7de8c80466d5",
@@ -2164,7 +2236,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -2173,7 +2245,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -2195,18 +2267,21 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws neptune-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws neptune-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws neptune-white.svg",
                     },
                     parent: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3",
-                    position: { posX: 399.15364745291305, posY: 388.3935270056259 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 399.15364745291305,
+                      posY: 388.3935270056259,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS Neptune"
-              }
-            }
+                type: "AWS Neptune",
+              },
+            },
           },
-          parent: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3"
+          parent: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3",
         },
         position: { x: 399.15364745291305, y: 388.3935270056259 },
         group: "nodes",
@@ -2216,7 +2291,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2241,7 +2316,7 @@ const data = {
                           id: "dc6f0268-6cf9-46b3-b690-8c7ef601506a",
                           source: "60555bb9-fd44-44a1-9f6e-3c0eb3fa4187",
                           subType: "Annotation",
-                          target: "d93db70a-6b23-404e-b5f7-7de8c80466d5"
+                          target: "d93db70a-6b23-404e-b5f7-7de8c80466d5",
                         },
                         style: {
                           "control-point-distances": null,
@@ -2257,8 +2332,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -2266,7 +2341,7 @@ const data = {
                           id: "9e15a841-6339-4bee-ab2e-e98306bd7ba5",
                           source: "d93db70a-6b23-404e-b5f7-7de8c80466d5",
                           subType: "Annotation",
-                          target: "60555bb9-fd44-44a1-9f6e-3c0eb3fa4187"
+                          target: "60555bb9-fd44-44a1-9f6e-3c0eb3fa4187",
                         },
                         style: {
                           "control-point-distances": null,
@@ -2282,9 +2357,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "60555bb9-fd44-44a1-9f6e-3c0eb3fa4187",
@@ -2310,7 +2385,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -2319,7 +2394,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -2341,18 +2416,21 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws lambda-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws lambda-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws lambda-white.svg",
                     },
                     parent: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3",
-                    position: { posX: 329.04110084979044, posY: 389.3209748912059 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 329.04110084979044,
+                      posY: 389.3209748912059,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS Lambda"
-              }
-            }
+                type: "AWS Lambda",
+              },
+            },
           },
-          parent: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3"
+          parent: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3",
         },
         position: { x: 329.04110084979044, y: 389.3209748912059 },
         group: "nodes",
@@ -2362,7 +2440,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2387,7 +2465,7 @@ const data = {
                           id: "a5cc1341-062d-41ed-b180-a3e058eb30e8",
                           source: "6e422442-670a-4fee-b031-790bcac94b32",
                           subType: "Annotation",
-                          target: "4a568f39-05c8-4bb2-bf5b-adcccc09ffbd"
+                          target: "4a568f39-05c8-4bb2-bf5b-adcccc09ffbd",
                         },
                         style: {
                           "control-point-distances": null,
@@ -2403,9 +2481,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "6e422442-670a-4fee-b031-790bcac94b32",
@@ -2431,7 +2509,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -2440,7 +2518,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -2462,18 +2540,21 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws appsync-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws appsync-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws appsync-white.svg",
                     },
                     parent: "4d5691d0-7395-4177-8fdd-7f6c7be59312",
-                    position: { posX: 262.20176600002753, posY: 256.39224454553096 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 262.20176600002753,
+                      posY: 256.39224454553096,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS AppSync"
-              }
-            }
+                type: "AWS AppSync",
+              },
+            },
           },
-          parent: "4d5691d0-7395-4177-8fdd-7f6c7be59312"
+          parent: "4d5691d0-7395-4177-8fdd-7f6c7be59312",
         },
         position: { x: 262.20176600002753, y: 256.39224454553096 },
         group: "nodes",
@@ -2483,7 +2564,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2508,7 +2589,7 @@ const data = {
                           id: "a40e56a2-132a-4187-aca8-a8e9b1a72c07",
                           source: "4a47c821-bcf3-4621-9f0d-1d15fab35cdb",
                           subType: "Annotation",
-                          target: "a82b6183-e300-4f95-8afb-b0ca71354d95"
+                          target: "a82b6183-e300-4f95-8afb-b0ca71354d95",
                         },
                         style: {
                           "control-point-distances": null,
@@ -2524,8 +2605,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -2533,7 +2614,7 @@ const data = {
                           id: "ed1328e1-0cf6-4b1d-b7e8-05f2c5f2ab27",
                           source: "a82b6183-e300-4f95-8afb-b0ca71354d95",
                           subType: "Annotation",
-                          target: "4a47c821-bcf3-4621-9f0d-1d15fab35cdb"
+                          target: "4a47c821-bcf3-4621-9f0d-1d15fab35cdb",
                         },
                         style: {
                           "control-point-distances": null,
@@ -2549,9 +2630,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "4a47c821-bcf3-4621-9f0d-1d15fab35cdb",
@@ -2577,7 +2658,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -2586,7 +2667,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -2608,18 +2689,21 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws lambda-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws lambda-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws lambda-white.svg",
                     },
                     parent: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3",
-                    position: { posX: 325.82643864131995, posY: 442.9420509902764 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 325.82643864131995,
+                      posY: 442.9420509902764,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS Lambda"
-              }
-            }
+                type: "AWS Lambda",
+              },
+            },
           },
-          parent: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3"
+          parent: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3",
         },
         position: { x: 325.82643864131995, y: 442.9420509902764 },
         group: "nodes",
@@ -2629,7 +2713,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2654,7 +2738,7 @@ const data = {
                           id: "6bfa820c-7717-44c3-abc5-d36cc544ebda",
                           source: "8b7ec622-f5f9-4485-ab52-33c6ce6038ef",
                           subType: "Annotation",
-                          target: "906bfe13-9220-4eb4-8165-62c1b5a4e5d6"
+                          target: "906bfe13-9220-4eb4-8165-62c1b5a4e5d6",
                         },
                         style: {
                           "control-point-distances": null,
@@ -2670,8 +2754,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -2679,7 +2763,7 @@ const data = {
                           id: "1a856427-72f4-4d72-9391-2bfaf1905cf9",
                           source: "906bfe13-9220-4eb4-8165-62c1b5a4e5d6",
                           subType: "Annotation",
-                          target: "8b7ec622-f5f9-4485-ab52-33c6ce6038ef"
+                          target: "8b7ec622-f5f9-4485-ab52-33c6ce6038ef",
                         },
                         style: {
                           "control-point-distances": null,
@@ -2695,9 +2779,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "906bfe13-9220-4eb4-8165-62c1b5a4e5d6",
@@ -2723,7 +2807,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -2732,7 +2816,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -2754,18 +2838,21 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws s3 on outposts-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws s3 on outposts-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws s3 on outposts-white.svg",
                     },
                     parent: "4a162da7-2c89-480a-aaed-e5dfdb573c98",
-                    position: { posX: 90.46052293646716, posY: 422.29813604258334 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 90.46052293646716,
+                      posY: 422.29813604258334,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS S3 on Outposts"
-              }
-            }
+                type: "AWS S3 on Outposts",
+              },
+            },
           },
-          parent: "4a162da7-2c89-480a-aaed-e5dfdb573c98"
+          parent: "4a162da7-2c89-480a-aaed-e5dfdb573c98",
         },
         position: { x: 90.46052293646716, y: 422.29813604258334 },
         group: "nodes",
@@ -2775,7 +2862,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2792,7 +2879,7 @@ const data = {
               "08bf65d5-8248-4376-b1ee-793a57ec045e": {
                 settings: {
                   label: "Cost & Usage Report",
-                  name: "AWS Cost and Usage Report"
+                  name: "AWS Cost and Usage Report",
                 },
                 traits: {
                   meshmap: {
@@ -2803,7 +2890,7 @@ const data = {
                           id: "e487a7a5-5fac-4999-87ef-d172be1df5fd",
                           source: "08bf65d5-8248-4376-b1ee-793a57ec045e",
                           subType: "Annotation",
-                          target: "ecec6776-80af-4617-9319-42817ba98234"
+                          target: "ecec6776-80af-4617-9319-42817ba98234",
                         },
                         style: {
                           "control-point-distances": null,
@@ -2819,9 +2906,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "08bf65d5-8248-4376-b1ee-793a57ec045e",
@@ -2847,7 +2934,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -2856,7 +2943,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -2878,18 +2965,21 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws cost and usage report-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws cost and usage report-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws cost and usage report-white.svg",
                     },
                     parent: "be7b09a9-f09f-4721-8575-79833dd40cf8",
-                    position: { posX: 612.8923261029632, posY: 128.2970774209691 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 612.8923261029632,
+                      posY: 128.2970774209691,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS Cost and Usage Report"
-              }
-            }
+                type: "AWS Cost and Usage Report",
+              },
+            },
           },
-          parent: "be7b09a9-f09f-4721-8575-79833dd40cf8"
+          parent: "be7b09a9-f09f-4721-8575-79833dd40cf8",
         },
         position: { x: 612.8923261029632, y: 128.2970774209691 },
         group: "nodes",
@@ -2899,7 +2989,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2924,7 +3014,7 @@ const data = {
                           id: "e1d137e9-5d73-4faf-bae9-d717b4f48fa5",
                           source: "97c14fa4-3d59-44a5-a0d5-8e7e2234ef79",
                           subType: "Annotation",
-                          target: "70c15791-e4c8-442c-a7b9-de0967e66f3b"
+                          target: "70c15791-e4c8-442c-a7b9-de0967e66f3b",
                         },
                         style: {
                           "control-point-distances": null,
@@ -2940,9 +3030,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "70c15791-e4c8-442c-a7b9-de0967e66f3b",
@@ -2968,7 +3058,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -2977,7 +3067,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -2999,18 +3089,21 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws s3 on outposts-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws s3 on outposts-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws s3 on outposts-white.svg",
                     },
                     parent: "e81196ef-bb66-46fd-9b31-5c648552bd9e",
-                    position: { posX: 571.567063103897, posY: 299.8032096947473 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 571.567063103897,
+                      posY: 299.8032096947473,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS S3 on Outposts"
-              }
-            }
+                type: "AWS S3 on Outposts",
+              },
+            },
           },
-          parent: "e81196ef-bb66-46fd-9b31-5c648552bd9e"
+          parent: "e81196ef-bb66-46fd-9b31-5c648552bd9e",
         },
         position: { x: 571.567063103897, y: 299.8032096947473 },
         group: "nodes",
@@ -3020,7 +3113,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3035,7 +3128,10 @@ const data = {
             name: "AWS OpenSearch Service",
             services: {
               "a82b6183-e300-4f95-8afb-b0ca71354d95": {
-                settings: { label: "OpenSearch", name: "AWS OpenSearch Service" },
+                settings: {
+                  label: "OpenSearch",
+                  name: "AWS OpenSearch Service",
+                },
                 traits: {
                   meshmap: {
                     edges: [
@@ -3045,7 +3141,7 @@ const data = {
                           id: "a40e56a2-132a-4187-aca8-a8e9b1a72c07",
                           source: "4a47c821-bcf3-4621-9f0d-1d15fab35cdb",
                           subType: "Annotation",
-                          target: "a82b6183-e300-4f95-8afb-b0ca71354d95"
+                          target: "a82b6183-e300-4f95-8afb-b0ca71354d95",
                         },
                         style: {
                           "control-point-distances": null,
@@ -3061,8 +3157,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -3070,7 +3166,7 @@ const data = {
                           id: "ed1328e1-0cf6-4b1d-b7e8-05f2c5f2ab27",
                           source: "a82b6183-e300-4f95-8afb-b0ca71354d95",
                           subType: "Annotation",
-                          target: "4a47c821-bcf3-4621-9f0d-1d15fab35cdb"
+                          target: "4a47c821-bcf3-4621-9f0d-1d15fab35cdb",
                         },
                         style: {
                           "control-point-distances": null,
@@ -3086,9 +3182,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "a82b6183-e300-4f95-8afb-b0ca71354d95",
@@ -3114,7 +3210,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -3123,7 +3219,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -3145,18 +3241,21 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws opensearch service-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws opensearch service-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws opensearch service-white.svg",
                     },
                     parent: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3",
-                    position: { posX: 398.5439666158577, posY: 441.98664719537993 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 398.5439666158577,
+                      posY: 441.98664719537993,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS OpenSearch Service"
-              }
-            }
+                type: "AWS OpenSearch Service",
+              },
+            },
           },
-          parent: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3"
+          parent: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3",
         },
         position: { x: 398.5439666158577, y: 441.98664719537993 },
         group: "nodes",
@@ -3166,7 +3265,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3191,7 +3290,7 @@ const data = {
                           id: "e88a938e-f2c2-4ca8-9191-9e44ffce03fe",
                           source: "6acc7ded-abfe-4425-828f-01673da430bd",
                           subType: "Annotation",
-                          target: "43a60c7e-4e33-4c3a-a065-651ea9fdf8df"
+                          target: "43a60c7e-4e33-4c3a-a065-651ea9fdf8df",
                         },
                         style: {
                           "control-point-distances": null,
@@ -3207,8 +3306,8 @@ const data = {
                           "taxi-direction": "downward",
                           "taxi-turn": "20px",
                           "taxi-turn-min-distance": "5px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -3216,7 +3315,7 @@ const data = {
                           id: "e7d173a6-cddf-4988-81a1-14859637b28d",
                           source: "6acc7ded-abfe-4425-828f-01673da430bd",
                           subType: "Annotation",
-                          target: "ad1c7db7-68ba-4d50-b2de-c33036fc9368"
+                          target: "ad1c7db7-68ba-4d50-b2de-c33036fc9368",
                         },
                         style: {
                           "control-point-distances": null,
@@ -3232,9 +3331,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "6acc7ded-abfe-4425-828f-01673da430bd",
@@ -3260,7 +3359,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -3269,7 +3368,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -3291,18 +3390,21 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws lambda-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws lambda-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws lambda-white.svg",
                     },
                     parent: "be7b09a9-f09f-4721-8575-79833dd40cf8",
-                    position: { posX: 398.30007261363323, posY: 127.03599796818285 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 398.30007261363323,
+                      posY: 127.03599796818285,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS Lambda"
-              }
-            }
+                type: "AWS Lambda",
+              },
+            },
           },
-          parent: "be7b09a9-f09f-4721-8575-79833dd40cf8"
+          parent: "be7b09a9-f09f-4721-8575-79833dd40cf8",
         },
         position: { x: 398.30007261363323, y: 127.03599796818285 },
         group: "nodes",
@@ -3312,7 +3414,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3327,7 +3429,10 @@ const data = {
             name: "AWS S3 on Outposts",
             services: {
               "43a60c7e-4e33-4c3a-a065-651ea9fdf8df": {
-                settings: { label: "Result Bucket", name: "AWS S3 on Outposts" },
+                settings: {
+                  label: "Result Bucket",
+                  name: "AWS S3 on Outposts",
+                },
                 traits: {
                   meshmap: {
                     edges: [
@@ -3337,7 +3442,7 @@ const data = {
                           id: "e88a938e-f2c2-4ca8-9191-9e44ffce03fe",
                           source: "6acc7ded-abfe-4425-828f-01673da430bd",
                           subType: "Annotation",
-                          target: "43a60c7e-4e33-4c3a-a065-651ea9fdf8df"
+                          target: "43a60c7e-4e33-4c3a-a065-651ea9fdf8df",
                         },
                         style: {
                           "control-point-distances": null,
@@ -3353,9 +3458,9 @@ const data = {
                           "taxi-direction": "downward",
                           "taxi-turn": "20px",
                           "taxi-turn-min-distance": "5px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "43a60c7e-4e33-4c3a-a065-651ea9fdf8df",
@@ -3381,7 +3486,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -3390,7 +3495,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -3412,18 +3517,21 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws s3 on outposts-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws s3 on outposts-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws s3 on outposts-white.svg",
                     },
                     parent: "be7b09a9-f09f-4721-8575-79833dd40cf8",
-                    position: { posX: 610.6722157587719, posY: 181.18300438481998 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 610.6722157587719,
+                      posY: 181.18300438481998,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS S3 on Outposts"
-              }
-            }
+                type: "AWS S3 on Outposts",
+              },
+            },
           },
-          parent: "be7b09a9-f09f-4721-8575-79833dd40cf8"
+          parent: "be7b09a9-f09f-4721-8575-79833dd40cf8",
         },
         position: { x: 610.6722157587719, y: 181.18300438481998 },
         group: "nodes",
@@ -3433,7 +3541,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3458,7 +3566,7 @@ const data = {
                           id: "412b08a0-ab17-43f6-a357-2c9ce30ec8b1",
                           source: "ad1c7db7-68ba-4d50-b2de-c33036fc9368",
                           subType: "Annotation",
-                          target: "ecec6776-80af-4617-9319-42817ba98234"
+                          target: "ecec6776-80af-4617-9319-42817ba98234",
                         },
                         style: {
                           "control-point-distances": null,
@@ -3474,8 +3582,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -3483,7 +3591,7 @@ const data = {
                           id: "e7d173a6-cddf-4988-81a1-14859637b28d",
                           source: "6acc7ded-abfe-4425-828f-01673da430bd",
                           subType: "Annotation",
-                          target: "ad1c7db7-68ba-4d50-b2de-c33036fc9368"
+                          target: "ad1c7db7-68ba-4d50-b2de-c33036fc9368",
                         },
                         style: {
                           "control-point-distances": null,
@@ -3499,9 +3607,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "ad1c7db7-68ba-4d50-b2de-c33036fc9368",
@@ -3527,7 +3635,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -3536,7 +3644,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -3558,18 +3666,21 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws athena-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws athena-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws athena-white.svg",
                     },
                     parent: "be7b09a9-f09f-4721-8575-79833dd40cf8",
-                    position: { posX: 462.6671711863643, posY: 128.1141450454565 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 462.6671711863643,
+                      posY: 128.1141450454565,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS Athena"
-              }
-            }
+                type: "AWS Athena",
+              },
+            },
           },
-          parent: "be7b09a9-f09f-4721-8575-79833dd40cf8"
+          parent: "be7b09a9-f09f-4721-8575-79833dd40cf8",
         },
         position: { x: 462.6671711863643, y: 128.1141450454565 },
         group: "nodes",
@@ -3579,8 +3690,8 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
-      }
+        classes: "",
+      },
     ],
     edges: [
       {
@@ -3589,7 +3700,7 @@ const data = {
           id: "c40f1964-3162-4f31-8d4d-706c08287860",
           source: "97c14fa4-3d59-44a5-a0d5-8e7e2234ef79",
           subType: "Annotation",
-          target: "6d3a6772-3c10-48c4-abb8-94cdc2cd465a"
+          target: "6d3a6772-3c10-48c4-abb8-94cdc2cd465a",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -3599,7 +3710,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3607,7 +3718,7 @@ const data = {
           id: "e1d137e9-5d73-4faf-bae9-d717b4f48fa5",
           source: "97c14fa4-3d59-44a5-a0d5-8e7e2234ef79",
           subType: "Annotation",
-          target: "70c15791-e4c8-442c-a7b9-de0967e66f3b"
+          target: "70c15791-e4c8-442c-a7b9-de0967e66f3b",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -3617,7 +3728,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3625,7 +3736,7 @@ const data = {
           id: "24334889-927d-405f-a38a-cc33b8a7691b",
           source: "2d6194b0-7d7c-4a1e-8320-ad0989932670",
           subType: "Annotation",
-          target: "0407e544-8ebd-4ac3-9e32-cc13e432168a"
+          target: "0407e544-8ebd-4ac3-9e32-cc13e432168a",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -3635,7 +3746,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3643,7 +3754,7 @@ const data = {
           id: "5e77cc5c-c406-4c58-a3c9-dc8ccaab9879",
           source: "4a568f39-05c8-4bb2-bf5b-adcccc09ffbd",
           subType: "Annotation",
-          target: "53aee2f7-f6f3-41b8-805b-d34a1b4db6c9"
+          target: "53aee2f7-f6f3-41b8-805b-d34a1b4db6c9",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -3653,7 +3764,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3661,7 +3772,7 @@ const data = {
           id: "e487a7a5-5fac-4999-87ef-d172be1df5fd",
           source: "08bf65d5-8248-4376-b1ee-793a57ec045e",
           subType: "Annotation",
-          target: "ecec6776-80af-4617-9319-42817ba98234"
+          target: "ecec6776-80af-4617-9319-42817ba98234",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -3671,7 +3782,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3679,7 +3790,7 @@ const data = {
           id: "412b08a0-ab17-43f6-a357-2c9ce30ec8b1",
           source: "ad1c7db7-68ba-4d50-b2de-c33036fc9368",
           subType: "Annotation",
-          target: "ecec6776-80af-4617-9319-42817ba98234"
+          target: "ecec6776-80af-4617-9319-42817ba98234",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -3689,7 +3800,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3697,7 +3808,7 @@ const data = {
           id: "6bfa820c-7717-44c3-abc5-d36cc544ebda",
           source: "8b7ec622-f5f9-4485-ab52-33c6ce6038ef",
           subType: "Annotation",
-          target: "906bfe13-9220-4eb4-8165-62c1b5a4e5d6"
+          target: "906bfe13-9220-4eb4-8165-62c1b5a4e5d6",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -3707,7 +3818,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3715,7 +3826,7 @@ const data = {
           id: "1a856427-72f4-4d72-9391-2bfaf1905cf9",
           source: "906bfe13-9220-4eb4-8165-62c1b5a4e5d6",
           subType: "Annotation",
-          target: "8b7ec622-f5f9-4485-ab52-33c6ce6038ef"
+          target: "8b7ec622-f5f9-4485-ab52-33c6ce6038ef",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -3725,7 +3836,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3733,7 +3844,7 @@ const data = {
           id: "dc6f0268-6cf9-46b3-b690-8c7ef601506a",
           source: "60555bb9-fd44-44a1-9f6e-3c0eb3fa4187",
           subType: "Annotation",
-          target: "d93db70a-6b23-404e-b5f7-7de8c80466d5"
+          target: "d93db70a-6b23-404e-b5f7-7de8c80466d5",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -3743,7 +3854,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3751,7 +3862,7 @@ const data = {
           id: "9e15a841-6339-4bee-ab2e-e98306bd7ba5",
           source: "d93db70a-6b23-404e-b5f7-7de8c80466d5",
           subType: "Annotation",
-          target: "60555bb9-fd44-44a1-9f6e-3c0eb3fa4187"
+          target: "60555bb9-fd44-44a1-9f6e-3c0eb3fa4187",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -3761,7 +3872,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3769,7 +3880,7 @@ const data = {
           id: "f88d8404-8778-4184-b4b2-a80c95e14652",
           source: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3",
           subType: "Annotation",
-          target: "e81196ef-bb66-46fd-9b31-5c648552bd9e"
+          target: "e81196ef-bb66-46fd-9b31-5c648552bd9e",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -3779,7 +3890,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3787,7 +3898,7 @@ const data = {
           id: "fe53a0a6-030f-4744-80ef-85bde6545fee",
           source: "4d5691d0-7395-4177-8fdd-7f6c7be59312",
           subType: "Annotation",
-          target: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3"
+          target: "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -3797,7 +3908,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3805,7 +3916,7 @@ const data = {
           id: "6d16c0d6-4086-4080-a8fe-8fbd54c986ca",
           source: "4d5691d0-7395-4177-8fdd-7f6c7be59312",
           subType: "Annotation",
-          target: "be7b09a9-f09f-4721-8575-79833dd40cf8"
+          target: "be7b09a9-f09f-4721-8575-79833dd40cf8",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -3815,7 +3926,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3823,7 +3934,7 @@ const data = {
           id: "a5cc1341-062d-41ed-b180-a3e058eb30e8",
           source: "6e422442-670a-4fee-b031-790bcac94b32",
           subType: "Annotation",
-          target: "4a568f39-05c8-4bb2-bf5b-adcccc09ffbd"
+          target: "4a568f39-05c8-4bb2-bf5b-adcccc09ffbd",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -3833,7 +3944,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3841,7 +3952,7 @@ const data = {
           id: "013745d4-6728-4a77-88c0-3e5ff2d13288",
           source: "2d6194b0-7d7c-4a1e-8320-ad0989932670",
           subType: "Annotation",
-          target: "4d5691d0-7395-4177-8fdd-7f6c7be59312"
+          target: "4d5691d0-7395-4177-8fdd-7f6c7be59312",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -3851,7 +3962,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3859,7 +3970,7 @@ const data = {
           id: "2bd29128-636d-470b-896a-ce3c80d2e6ff",
           source: "fe1e6f32-b123-4f1d-8714-d07f54060519",
           subType: "Annotation",
-          target: "2d6194b0-7d7c-4a1e-8320-ad0989932670"
+          target: "2d6194b0-7d7c-4a1e-8320-ad0989932670",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -3869,7 +3980,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3877,7 +3988,7 @@ const data = {
           id: "aaacebea-45b7-401c-b806-476dc2c90e4e",
           source: "2d6194b0-7d7c-4a1e-8320-ad0989932670",
           subType: "Annotation",
-          target: "4a162da7-2c89-480a-aaed-e5dfdb573c98"
+          target: "4a162da7-2c89-480a-aaed-e5dfdb573c98",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -3887,7 +3998,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3895,7 +4006,7 @@ const data = {
           id: "a40e56a2-132a-4187-aca8-a8e9b1a72c07",
           source: "4a47c821-bcf3-4621-9f0d-1d15fab35cdb",
           subType: "Annotation",
-          target: "a82b6183-e300-4f95-8afb-b0ca71354d95"
+          target: "a82b6183-e300-4f95-8afb-b0ca71354d95",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -3905,7 +4016,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3913,7 +4024,7 @@ const data = {
           id: "ed1328e1-0cf6-4b1d-b7e8-05f2c5f2ab27",
           source: "a82b6183-e300-4f95-8afb-b0ca71354d95",
           subType: "Annotation",
-          target: "4a47c821-bcf3-4621-9f0d-1d15fab35cdb"
+          target: "4a47c821-bcf3-4621-9f0d-1d15fab35cdb",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -3923,7 +4034,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3931,7 +4042,7 @@ const data = {
           id: "e88a938e-f2c2-4ca8-9191-9e44ffce03fe",
           source: "6acc7ded-abfe-4425-828f-01673da430bd",
           subType: "Annotation",
-          target: "43a60c7e-4e33-4c3a-a065-651ea9fdf8df"
+          target: "43a60c7e-4e33-4c3a-a065-651ea9fdf8df",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -3941,7 +4052,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3949,7 +4060,7 @@ const data = {
           id: "e7d173a6-cddf-4988-81a1-14859637b28d",
           source: "6acc7ded-abfe-4425-828f-01673da430bd",
           subType: "Annotation",
-          target: "ad1c7db7-68ba-4d50-b2de-c33036fc9368"
+          target: "ad1c7db7-68ba-4d50-b2de-c33036fc9368",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -3959,9 +4070,9 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
-      }
-    ]
+        classes: "",
+      },
+    ],
   },
   elementStyles: {
     "0407e544-8ebd-4ac3-9e32-cc13e432168a": {
@@ -4389,7 +4500,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "53aee2f7-f6f3-41b8-805b-d34a1b4db6c9": {
       events: "yes",
@@ -4816,7 +4927,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "ccfa07d4-c955-4a32-a5c8-c7cda3a25ac3": {
       events: "yes",
@@ -5241,7 +5352,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "be7b09a9-f09f-4721-8575-79833dd40cf8": {
       events: "yes",
@@ -5666,7 +5777,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "2d6194b0-7d7c-4a1e-8320-ad0989932670": {
       events: "yes",
@@ -6093,7 +6204,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "4a162da7-2c89-480a-aaed-e5dfdb573c98": {
       events: "yes",
@@ -6518,7 +6629,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "fe1e6f32-b123-4f1d-8714-d07f54060519": {
       events: "yes",
@@ -6945,7 +7056,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "4d5691d0-7395-4177-8fdd-7f6c7be59312": {
       events: "yes",
@@ -7370,7 +7481,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "4a568f39-05c8-4bb2-bf5b-adcccc09ffbd": {
       events: "yes",
@@ -7797,7 +7908,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "e81196ef-bb66-46fd-9b31-5c648552bd9e": {
       events: "yes",
@@ -8222,7 +8333,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "97c14fa4-3d59-44a5-a0d5-8e7e2234ef79": {
       events: "yes",
@@ -8649,7 +8760,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "ecec6776-80af-4617-9319-42817ba98234": {
       events: "yes",
@@ -9076,7 +9187,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "981d0823-2071-4308-90f9-b43a01777a3e": {
       events: "yes",
@@ -9503,7 +9614,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "8b7ec622-f5f9-4485-ab52-33c6ce6038ef": {
       events: "yes",
@@ -9930,7 +10041,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "6d3a6772-3c10-48c4-abb8-94cdc2cd465a": {
       events: "yes",
@@ -10357,7 +10468,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "d93db70a-6b23-404e-b5f7-7de8c80466d5": {
       events: "yes",
@@ -10784,7 +10895,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "60555bb9-fd44-44a1-9f6e-3c0eb3fa4187": {
       events: "yes",
@@ -11211,7 +11322,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "6e422442-670a-4fee-b031-790bcac94b32": {
       events: "yes",
@@ -11638,7 +11749,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "4a47c821-bcf3-4621-9f0d-1d15fab35cdb": {
       events: "yes",
@@ -12065,7 +12176,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "906bfe13-9220-4eb4-8165-62c1b5a4e5d6": {
       events: "yes",
@@ -12492,7 +12603,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "08bf65d5-8248-4376-b1ee-793a57ec045e": {
       events: "yes",
@@ -12919,7 +13030,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "70c15791-e4c8-442c-a7b9-de0967e66f3b": {
       events: "yes",
@@ -13346,7 +13457,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "a82b6183-e300-4f95-8afb-b0ca71354d95": {
       events: "yes",
@@ -13773,7 +13884,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "6acc7ded-abfe-4425-828f-01673da430bd": {
       events: "yes",
@@ -14200,7 +14311,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "43a60c7e-4e33-4c3a-a065-651ea9fdf8df": {
       events: "yes",
@@ -14627,7 +14738,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "ad1c7db7-68ba-4d50-b2de-c33036fc9368": {
       events: "yes",
@@ -15054,7 +15165,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "c40f1964-3162-4f31-8d4d-706c08287860": {
       events: "yes",
@@ -15479,7 +15590,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "e1d137e9-5d73-4faf-bae9-d717b4f48fa5": {
       events: "yes",
@@ -15904,7 +16015,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "24334889-927d-405f-a38a-cc33b8a7691b": {
       events: "yes",
@@ -16329,7 +16440,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "5e77cc5c-c406-4c58-a3c9-dc8ccaab9879": {
       events: "yes",
@@ -16754,7 +16865,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "e487a7a5-5fac-4999-87ef-d172be1df5fd": {
       events: "yes",
@@ -17179,7 +17290,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "412b08a0-ab17-43f6-a357-2c9ce30ec8b1": {
       events: "yes",
@@ -17604,7 +17715,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "6bfa820c-7717-44c3-abc5-d36cc544ebda": {
       events: "yes",
@@ -18029,7 +18140,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "1a856427-72f4-4d72-9391-2bfaf1905cf9": {
       events: "yes",
@@ -18454,7 +18565,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "dc6f0268-6cf9-46b3-b690-8c7ef601506a": {
       events: "yes",
@@ -18879,7 +18990,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "9e15a841-6339-4bee-ab2e-e98306bd7ba5": {
       events: "yes",
@@ -19304,7 +19415,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "f88d8404-8778-4184-b4b2-a80c95e14652": {
       events: "yes",
@@ -19733,7 +19844,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "fe53a0a6-030f-4744-80ef-85bde6545fee": {
       events: "yes",
@@ -20162,7 +20273,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "6d16c0d6-4086-4080-a8fe-8fbd54c986ca": {
       events: "yes",
@@ -20591,7 +20702,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "a5cc1341-062d-41ed-b180-a3e058eb30e8": {
       events: "yes",
@@ -21016,7 +21127,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "013745d4-6728-4a77-88c0-3e5ff2d13288": {
       events: "yes",
@@ -21441,7 +21552,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "2bd29128-636d-470b-896a-ce3c80d2e6ff": {
       events: "yes",
@@ -21866,7 +21977,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "aaacebea-45b7-401c-b806-476dc2c90e4e": {
       events: "yes",
@@ -22291,7 +22402,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "a40e56a2-132a-4187-aca8-a8e9b1a72c07": {
       events: "yes",
@@ -22716,7 +22827,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "ed1328e1-0cf6-4b1d-b7e8-05f2c5f2ab27": {
       events: "yes",
@@ -23141,7 +23252,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "e88a938e-f2c2-4ca8-9191-9e44ffce03fe": {
       events: "yes",
@@ -23566,7 +23677,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "e7d173a6-cddf-4988-81a1-14859637b28d": {
       events: "yes",
@@ -23991,9 +24102,9 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
-    }
-  }
+      paddingBottom: "0px",
+    },
+  },
 };
 
 const addStyles = () => {
@@ -24060,7 +24171,7 @@ const addStyles = () => {
 
 const CreateToolBar = () => {
   const cyContainer = document.getElementById(
-    "embedded-design-79d1f362-39b3-46f2-b658-42a16984f88e"
+    "embedded-design-79d1f362-39b3-46f2-b658-42a16984f88e",
   );
   const toolbar = document.createElement("div");
   toolbar.innerHTML = `
@@ -24113,7 +24224,7 @@ const CreateToolBar = () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const embedContainer = document.getElementById(
-    "embedded-design-79d1f362-39b3-46f2-b658-42a16984f88e"
+    "embedded-design-79d1f362-39b3-46f2-b658-42a16984f88e",
   );
   embedContainer.classList.add("embed-design-container");
   const cyContainer = document.createElement("div");
@@ -24124,7 +24235,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var cy = (window.cy = cytoscape({
     container: document.getElementById(
-      "embedded-design-79d1f362-39b3-46f2-b658-42a16984f88e-cy"
+      "embedded-design-79d1f362-39b3-46f2-b658-42a16984f88e-cy",
     ),
 
     autounselectify: true,
@@ -24133,13 +24244,13 @@ document.addEventListener("DOMContentLoaded", function () {
     minZoom: 0.5,
     maxZoom: 6.6,
     layout: {
-      name: "preset"
+      name: "preset",
     },
     elements: data.elements,
-    style: data.style
+    style: data.style,
   }));
 
-  Object.keys(data.elementStyles).forEach(id => {
+  Object.keys(data.elementStyles).forEach((id) => {
     cy.getElementById(id).style(data.elementStyles[id]);
   });
 

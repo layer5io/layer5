@@ -12,8 +12,11 @@ const Meshery = () => {
 };
 export default Meshery;
 export const Head = () => {
-  return  <SEO title="GitOps with Meshery"
-    description="GitOps, lifecycle, performance, and configuration management for cloud native infrastructure as code. Manage your Kubernetes clusters visually. Use the catalog of patterns and best practices."
-    image="/images/solutions-gitops.webp"
-  />;
+  return (
+    <SEO
+      title="GitOps with Meshery"
+      description="GitOps, lifecycle, performance, and configuration management for cloud native infrastructure as code. Manage your Kubernetes clusters visually. Use the catalog of patterns and best practices."
+      image="/images/solutions-gitops.webp"
+    />
+  );
 };

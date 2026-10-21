@@ -17,12 +17,11 @@ import { GlobalStyle } from "../sections/app.style";
 import CookieConsent from "./CookieConsent";
 
 const Layout = ({ children }) => {
-
   return (
     <>
       <GlobalStyle />
       {/* <TopPromotionalBanner /> */}
-      <Navigation/>
+      <Navigation />
       <CookieConsent />
       {children}
       <ScrollToTopBtn />
@@ -32,7 +31,7 @@ const Layout = ({ children }) => {
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default Layout;

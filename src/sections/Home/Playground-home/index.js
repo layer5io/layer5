@@ -31,19 +31,17 @@ import tuf from "../../../collections/integrations/tuf/icons/color/tuf-color.svg
 import tikvoperator from "../../../collections/integrations/tikv-operator/icons/color/tikv-operator-color.svg";
 import vitess from "../../../collections/integrations/vitess/icons/color/vitess-color.svg";
 
-
 const ViewsSectionWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  .small-card-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 1rem;
+  }
 
-    .small-card-container {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .views-section {
+  .views-section {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -67,190 +65,180 @@ const ViewsSectionWrapper = styled.div`
       height: 600px;
       padding: 0 2%;
     }
-      
-}
-    .hero-text {
-        display: flex;
-        flex-direction: column;
-        flex: 0 0 50%;
-        max-width: 50%;
-        padding-bottom: 3rem;
-        @media only screen and (max-width: 767px) {
-          max-width: 100%;
-          justify-content: center;
-          text-align: center;
-          margin-top: 4rem;
-        }
-        @media only screen and (min-width: 768px) and (max-width: 1100px) {
-          padding-left: 1rem;
-        }
-
-          
+  }
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-bottom: 3rem;
+    @media only screen and (max-width: 767px) {
+      max-width: 100%;
+      justify-content: center;
+      text-align: center;
+      margin-top: 4rem;
     }
-
-    .hero-image {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        flex: 0 0 50%;
-        max-width: 50%;
-        overflow: hidden;
-        height: 100%;
-
-        @media only screen and (max-width: 767px) {
-          max-width: 100%;
-        }
+    @media only screen and (min-width: 768px) and (max-width: 1100px) {
+      padding-left: 1rem;
     }
-
-    h2 {
-      /* max-width: 90%; */
-      padding-bottom: 2%;
-    }
-  
-
-  h4 {
-      max-width: 90%;
-      @media only screen and (max-width: 767px) {
-        max-width: 100%;
-        }
   }
 
-   .hero-image {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        flex: 0 0 50%;
-        max-width: 50%;
+  .hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex: 0 0 50%;
+    max-width: 50%;
+    overflow: hidden;
+    height: 100%;
 
-        
-
-        svg {
-          align-items: center;
-          justify-content: center;
-          width: 70%;
-          .visualizer-views-colorMode_svg__colorMode1 {
-            fill: ${(props) => props.theme.whiteToGrey737373};
-            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-          }
-        }
-
-      
-        .visible {
-                opacity: 1;
-                transition: all 0.2s ease-in;
-        }
-
-        .not-visible {
-                opacity: 0;
-                transition: all 0.5s ease;
-        }
-
-        @media only screen and (max-width: 767px) {
-          max-width: 100%;
-        }
-
-    }
-
-    .overlay {
-        width: 483px;
-        height: 680px;
-    }
-
-
-    .container {
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem; 
-        height: 100%; 
-      }
-
-    .line {
-        position: relative;
-        height: 100%;
-        overflow: hidden;
-        width: 200px;
-    }
-
-    .scroll-track {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .scroll-down .scroll-track {
-        animation: scrollDown 35s linear infinite;
-    }
-
-    .scroll-up .scroll-track {
-        animation: scrollUp 35s linear infinite;
-    }
-
-    @keyframes scrollDown {
-        0% {
-            transform: translateY(-50%);
-        }
-        100% {
-            transform: translateY(0%);
-        }
-    }
-
-    @keyframes scrollUp {
-        0% {
-            transform: translateY(0%);
-        }
-        100% {
-            transform: translateY(-50%);
-        }
-    }
-
-    .box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height:150px;
-      padding: 2rem;
-      box-sizing: border-box;
-      background-color: ${(props) => props.theme.backgroundColor};
-      color: ${(props) => props.theme.whiteEightToBlack}; 
-      margin-bottom: 1rem; 
-      border-radius: 1rem;
-      //box-shadow: ${(props) => props.theme.boxShadowGreen00D3A9ToBlackTwoFive};
-    }
-    // .box:hover {
-    //   box-shadow: ${(props) => props.theme.boxShadowBlue477E96};
-    // }
-
-    .box .boxImg {
-      width: auto;
-      height: 60px;
+    @media only screen and (max-width: 767px) {
       max-width: 100%;
     }
-    
-    .box .boxText {
-      margin-top: 1rem;
-      text-align: center;
-      color: ${(props) => props.theme.whiteEightToBlack};
+  }
+
+  h2 {
+    /* max-width: 90%; */
+    padding-bottom: 2%;
+  }
+
+  h4 {
+    max-width: 90%;
+    @media only screen and (max-width: 767px) {
+      max-width: 100%;
+    }
+  }
+
+  .hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex: 0 0 50%;
+    max-width: 50%;
+
+    svg {
+      align-items: center;
+      justify-content: center;
+      width: 70%;
+      .visualizer-views-colorMode_svg__colorMode1 {
+        fill: ${(props) => props.theme.whiteToGrey737373};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
     }
 
-    @media only screen and (max-width: 700px) {
-      .hero-image {
-        display: none; 
-      }
-      .views-section {
-        padding: 2rem 2rem 0 2rem;
-        height: auto;
-      }
-      .small-card-container {
-        display: flex;
-        justify-content: center;
-      }
+    .visible {
+      opacity: 1;
+      transition: all 0.2s ease-in;
     }
 
+    .not-visible {
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+
+    @media only screen and (max-width: 767px) {
+      max-width: 100%;
+    }
+  }
+
+  .overlay {
+    width: 483px;
+    height: 680px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    height: 100%;
+  }
+
+  .line {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    width: 200px;
+  }
+
+  .scroll-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .scroll-down .scroll-track {
+    animation: scrollDown 35s linear infinite;
+  }
+
+  .scroll-up .scroll-track {
+    animation: scrollUp 35s linear infinite;
+  }
+
+  @keyframes scrollDown {
+    0% {
+      transform: translateY(-50%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
+  @keyframes scrollUp {
+    0% {
+      transform: translateY(0%);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+    padding: 2rem;
+    box-sizing: border-box;
+    background-color: ${(props) => props.theme.backgroundColor};
+    color: ${(props) => props.theme.whiteEightToBlack};
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    //box-shadow: ${(props) => props.theme.boxShadowGreen00D3A9ToBlackTwoFive};
+  }
+  // .box:hover {
+  //   box-shadow: ${(props) => props.theme.boxShadowBlue477E96};
+  // }
+
+  .box .boxImg {
+    width: auto;
+    height: 60px;
+    max-width: 100%;
+  }
+
+  .box .boxText {
+    margin-top: 1rem;
+    text-align: center;
+    color: ${(props) => props.theme.whiteEightToBlack};
+  }
+
+  @media only screen and (max-width: 700px) {
+    .hero-image {
+      display: none;
+    }
+    .views-section {
+      padding: 2rem 2rem 0 2rem;
+      height: auto;
+    }
+    .small-card-container {
+      display: flex;
+      justify-content: center;
+    }
+  }
 `;
 
 const KanvasVisualizerViews = () => {
@@ -270,7 +258,7 @@ const KanvasVisualizerViews = () => {
     { img: fluentd, name: "Fluentd" },
     { img: flux, name: "Flux" },
     { img: harbor, name: "Harbor" },
-    { img: helm, name: "Helm" }
+    { img: helm, name: "Helm" },
   ];
 
   const rightColumnItems = [
@@ -287,7 +275,7 @@ const KanvasVisualizerViews = () => {
     { img: spire, name: "SPIRE" },
     { img: tuf, name: "TUF" },
     { img: tikvoperator, name: "TiKV" },
-    { img: vitess, name: "Vitess" }
+    { img: vitess, name: "Vitess" },
   ];
 
   const renderColumn = (items, direction) => (
@@ -325,7 +313,6 @@ const KanvasVisualizerViews = () => {
           </div>
         </div>
         <div className="hero-text">
-
           <h2>
             <span>Manage your Cloud Native mess</span>
           </h2>

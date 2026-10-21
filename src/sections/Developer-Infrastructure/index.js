@@ -26,7 +26,8 @@ const KubernetesMultiCluster = () => {
       image: config_svg,
     },
     {
-      heading: "Continuous visibility across all of your clusters and workloads.",
+      heading:
+        "Continuous visibility across all of your clusters and workloads.",
       subtitle:
         "Import your existing Kubernetes, Helm, or Docker Compose applications. Interactively connect to terminal sessions or initiate and search log streams from your containers.",
       image: cluster_svg,
@@ -41,23 +42,29 @@ const KubernetesMultiCluster = () => {
   return (
     <MultiClusterWrapper>
       <FeatureHero data={data} />
-      <Feature/>
+      <Feature />
       <Container>
         <div className={"feature-use-container"}>
           <div>
             <h2 className={"use-heading"}>
               {" "}
-              Seamless Deployment Across Multiple Kubernetes Clusters {" "}
+              Seamless Deployment Across Multiple Kubernetes Clusters{" "}
             </h2>
           </div>
           <div className={"collaboration_display"}>
             {card_data.map((x) => (
-              <FeatureUseCard data={x} key={x.heading} $sm={12} $md={6} $lg={4} />
+              <FeatureUseCard
+                data={x}
+                key={x.heading}
+                $sm={12}
+                $md={6}
+                $lg={4}
+              />
             ))}
           </div>
         </div>
       </Container>
-      <Reviews/>
+      <Reviews />
     </MultiClusterWrapper>
   );
 };

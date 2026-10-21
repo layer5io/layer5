@@ -4,7 +4,7 @@ const docsIcon = ({
   width = "20px",
   height = "20px",
   fill = "currentColor",
-  style = {}
+  style = {},
 }) => (
   <svg
     width={width}

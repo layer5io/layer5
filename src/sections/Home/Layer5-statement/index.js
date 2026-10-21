@@ -24,27 +24,42 @@ const BannerDefault = () => {
                   $leftAlign={true}
                   $UniWidth="100%"
                 >
-                  <h4 className="statement">We make cloud native manageable by </h4>
+                  <h4 className="statement">
+                    We make cloud native manageable by{" "}
+                  </h4>
                   {/* <h4 className="statement">We make cloud native manageable by </h4> */}
                   <h2 className="statement">
                     <span>
-                      harnessing the unique position Kubernetes has in changing how developers write applications and how operators run modern infrastructure.
+                      harnessing the unique position Kubernetes has in changing
+                      how developers write applications and how operators run
+                      modern infrastructure.
                     </span>
                   </h2>
                   {/* <img className="Layer5Logo" src={Layer5Logo} /> */}
                   <h3 className="statement">
                     {/* Enablers of Engineers. Enablers of Speed. Enablers of Business. */}
-                    Layer5 empowers developers, operators, and service owners alike
+                    Layer5 empowers developers, operators, and service owners
+                    alike
                   </h3>
                   <div className="join-community">
-                    <Button $primary className="join-community-button" title="our projects" $url="/projects" />
+                    <Button
+                      $primary
+                      className="join-community-button"
+                      title="our projects"
+                      $url="/projects"
+                    />
                   </div>
                 </SectionTitle>
               </div>
             </div>
           </Col>
           <Col $sm={12} $md={6} $lg={6} className="right-col">
-            <img className="hero" src={imgHero} alt="Layer5 Kanvascreenshot" loading="lazy" />
+            <img
+              className="hero"
+              src={imgHero}
+              alt="Layer5 Kanvascreenshot"
+              loading="lazy"
+            />
           </Col>
         </Row>
       </div>

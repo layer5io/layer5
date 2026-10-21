@@ -3,18 +3,17 @@ import comingSoon from "./icons/coming-soon.webp";
 import React from "react";
 
 function generatePlans(data) {
-
   const tiers = {
-    "Free": {
+    Free: {
       tier: "Personal",
       featured: false,
       monthlyprice: 0,
       yearlyprice: 0,
       byline: "The basics for individuals and organizations",
       byline2: " Everything from Open Source, plus...",
-      button: ["Join for Free", "https://cloud.layer5.io"]
+      button: ["Join for Free", "https://cloud.layer5.io"],
     },
-    "TeamDesigner": {
+    TeamDesigner: {
       tier: "Team Designer",
       featured: true,
       monthlyprice: 16,
@@ -23,7 +22,7 @@ function generatePlans(data) {
       byline2: "← Everything included in Free, plus...",
       button: ["Start Free Trial", "https://cloud.layer5.io"],
     },
-    "TeamOperator": {
+    TeamOperator: {
       tier: "Team Operator",
       featured: false,
       monthlyprice: 16,
@@ -33,7 +32,7 @@ function generatePlans(data) {
       byline2: "← Everything included in Free, plus...",
       button: ["Start Free Trial", "https://cloud.layer5.io"],
     },
-    "Enterprise": {
+    Enterprise: {
       tier: "Enterprise",
       featured: false,
       monthlyprice: 44,
@@ -41,23 +40,24 @@ function generatePlans(data) {
       pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Flexible deployment, and MSP multi-tenancy.",
       byline2: "← Everything included in Team, plus...",
-      button: ["Contact Sales", "https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8"],
+      button: [
+        "Contact Sales",
+        "https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8",
+      ],
     },
   };
 
   const plans = Object.entries(tiers).map(([tierName, tierInfo]) => {
-
     const summary = data
       .flatMap((item) => {
         const tiers = item.subscription_tier.split("|");
         return tiers.map((tier) => ({
           ...item,
-          subscription_tier: tier.trim()
+          subscription_tier: tier.trim(),
         }));
       })
       .filter((item) => {
-        const matches =
-          item.subscription_tier === tierName; //&& !item.exclude === "x";
+        const matches = item.subscription_tier === tierName; //&& !item.exclude === "x";
         return matches;
       })
       .map((item, index) => {
@@ -74,14 +74,18 @@ function generatePlans(data) {
       })
       .sort((a, b) => {
         // Handle "add-on" category order - should come last
-        if (a.categoryOrder === "add-on" && b.categoryOrder !== "add-on") return 1;
-        if (a.categoryOrder !== "add-on" && b.categoryOrder === "add-on") return -1;
+        if (a.categoryOrder === "add-on" && b.categoryOrder !== "add-on")
+          return 1;
+        if (a.categoryOrder !== "add-on" && b.categoryOrder === "add-on")
+          return -1;
         if (a.categoryOrder === "add-on" && b.categoryOrder === "add-on") {
           return a.functionOrder - b.functionOrder;
         }
 
         // Normal numeric sorting for non add-on categories
-        return a.categoryOrder - b.categoryOrder || a.functionOrder - b.functionOrder;
+        return (
+          a.categoryOrder - b.categoryOrder || a.functionOrder - b.functionOrder
+        );
       });
     return {
       ...tierInfo,

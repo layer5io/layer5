@@ -11,5 +11,10 @@ const CookieNoticePage = () => {
 };
 export default CookieNoticePage;
 export const Head = () => {
-  return <SEO title="Cookie Notice" description="Learn how Layer5 uses cookies and how you can manage your preferences." />;
+  return (
+    <SEO
+      title="Cookie Notice"
+      description="Learn how Layer5 uses cookies and how you can manage your preferences."
+    />
+  );
 };

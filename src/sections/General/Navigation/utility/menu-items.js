@@ -209,7 +209,6 @@ const Data = {
           name: "Calendar",
           path: "/community/calendar",
         },
-
       ],
       actionItems: [
         // {

@@ -13,10 +13,9 @@ import Banner3SectionWrapper from "./banner3.style";
 const Banner3 = (props) => {
   return (
     <Banner3SectionWrapper {...props}>
-      <Container >
+      <Container>
         <Row>
           <Col $sm={8} $lg={8} className="section-title-wrapper">
-
             <SectionTitle
               className="section-title"
               $leftAlign={true}
@@ -24,17 +23,25 @@ const Banner3 = (props) => {
             >
               <h4>Industry-leading Cloud Native Management</h4>
               <h1>
-              expect <span>more</span> from your infrastructure
+                expect <span>more</span> from your infrastructure
               </h1>
             </SectionTitle>
-            <p>
-            an open source-first community of cloud native engineers
-            </p>
+            <p>an open source-first community of cloud native engineers</p>
             <VintageBox $right={true} $vintageOne={true}>
-              <Button $primary className="banner-btn one" title="Join in" $url="/community">
+              <Button
+                $primary
+                className="banner-btn one"
+                title="Join in"
+                $url="/community"
+              >
                 <FaMapMarkedAlt size={21} className="icon-left" />
               </Button>
-              <Button $primary className="banner-btn two" title="See our Projects" $url="/projects">
+              <Button
+                $primary
+                className="banner-btn two"
+                title="See our Projects"
+                $url="/projects"
+              >
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>
             </VintageBox>

@@ -1,7 +1,11 @@
 ### What is the use of this CTA:
+
 The **FeatureUseCard** component to show a simple feature card or list of feature cards
+
 ### How to use the CTA:
+
 To use this CTA :
+
 ```
 const featureCardData = [
     {
@@ -24,6 +28,7 @@ const featureCardData = [
     },
   ];
 ```
+
 ```
 {featureCardData.map((feature) => (
         <FeatureUseCard key={feature.heading} data={feature} sm={12} md={6} lg={6} />

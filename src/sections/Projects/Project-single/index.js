@@ -1,6 +1,5 @@
 import React from "react";
 
-
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 
@@ -10,14 +9,10 @@ const ProjectSingle = ({ data, children }) => {
   const { frontmatter } = data.mdx;
   return (
     <ProjectPageWrapper>
-      <PageHeader
-        title={frontmatter.title}
-      />
+      <PageHeader title={frontmatter.title} />
       <div className="single-post-wrapper">
         <Container>
-          <div className="single-project-block">
-            {children}
-          </div>
+          <div className="single-project-block">{children}</div>
         </Container>
       </div>
     </ProjectPageWrapper>

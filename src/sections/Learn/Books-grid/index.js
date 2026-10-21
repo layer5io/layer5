@@ -1,4 +1,3 @@
-
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import PageHeader from "../../../reusecore/PageHeader";
@@ -7,30 +6,33 @@ import Slider from "react-slick";
 import { BooksPageWrapper } from "./BooksGrid.style";
 
 const BooksPage = ({ hide_path }) => {
-  const data = useStaticQuery(
-    graphql`query allBooks {
-  allMdx(
-    filter: {fields: {collection: {eq: "service-mesh-books"}}, frontmatter: {published: {eq: true}}}
-    sort: {frontmatter: {date: ASC}}
-  ) {
-    nodes {
-      id
-      frontmatter {
-        title
-        author
-        abstract
-        cover {
-          extension
-          publicURL
+  const data = useStaticQuery(graphql`
+    query allBooks {
+      allMdx(
+        filter: {
+          fields: { collection: { eq: "service-mesh-books" } }
+          frontmatter: { published: { eq: true } }
+        }
+        sort: { frontmatter: { date: ASC } }
+      ) {
+        nodes {
+          id
+          frontmatter {
+            title
+            author
+            abstract
+            cover {
+              extension
+              publicURL
+            }
+          }
+          fields {
+            slug
+          }
         }
       }
-      fields {
-        slug
-      }
     }
-  }
-}`
-  );
+  `);
 
   let path = hide_path ? "" : "Books";
 
@@ -46,35 +48,40 @@ const BooksPage = ({ hide_path }) => {
         breakpoint: 1400,
         settings: {
           slidesToShow: 3,
-        }
+        },
       },
       {
         breakpoint: 700,
         settings: {
           slidesToShow: 2.25,
-        }
+        },
       },
       {
         breakpoint: 550,
         settings: {
           slidesToShow: 1.5,
-        }
+        },
       },
-    ]
+    ],
   };
 
   return (
     <BooksPageWrapper>
-      <PageHeader title="Service mesh with the best" path={path}/>
-      <h2 className="sub-heading">Learn to service mesh from the world’s authority </h2>
+      <PageHeader title="Service mesh with the best" path={path} />
+      <h2 className="sub-heading">
+        Learn to service mesh from the world’s authority{" "}
+      </h2>
       <div className="books_caraousel">
         <Slider {...settings}>
           {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
             <div className="book_image" key={id}>
               <div className="blog-slider_img">
-                <img src={frontmatter.cover.publicURL} alt={frontmatter.title} />
+                <img
+                  src={frontmatter.cover.publicURL}
+                  alt={frontmatter.title}
+                />
               </div>
-              <Link className="book-page_link" to={fields.slug}/>
+              <Link className="book-page_link" to={fields.slug} />
             </div>
           ))}
         </Slider>

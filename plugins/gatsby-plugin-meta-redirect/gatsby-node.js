@@ -30,7 +30,7 @@ async function writeRedirectsFile(redirects, folder, pathPrefix, siteUrl) {
     const FILE_PATH = path.join(
       folder,
       fromPath.replace(pathPrefix, ""),
-      "index.html"
+      "index.html",
     );
 
     const fileExists = await exists(FILE_PATH);

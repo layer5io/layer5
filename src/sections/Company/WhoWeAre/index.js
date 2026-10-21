@@ -4,11 +4,10 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 import WhoWeAreSectionWrapper from "./whoweare.style.js";
 import checkCircle from "./images/check-circle_lightgreen.svg";
 
-
 const WhoWeAre = () => {
   return (
     <WhoWeAreSectionWrapper id="whoweare">
-      <Container >
+      <Container>
         <Row $Vcenter={true}>
           <Col $xs={12} $sm={12} $lg={12}>
             <SectionTitle

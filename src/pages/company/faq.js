@@ -9,7 +9,6 @@ const FAQPage = () => {
     <>
       <FAQ category={["all"]} />
       <DiscussCallout />
-
     </>
   );
 };

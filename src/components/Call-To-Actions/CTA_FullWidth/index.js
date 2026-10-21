@@ -5,120 +5,139 @@ import Button from "../../../reusecore/Button";
 import { Categories } from "./cta_fullwidth_categories";
 
 const CTA_FullWidthWrapper = styled.div`
-    display: flex;
-    flex: 0 0 100%;
-    width: 98%;
-    height: 16rem;
-    margin: 1.5rem auto;
-    padding: 1rem; /* FIX: Added padding to improve CTA spacing */
-    box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 0.5rem;
-    background: rgba(201, 252, 246, 0.3);
+  display: flex;
+  flex: 0 0 100%;
+  width: 98%;
+  height: 16rem;
+  margin: 1.5rem auto;
+  padding: 1rem; /* FIX: Added padding to improve CTA spacing */
+  box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  background: rgba(201, 252, 246, 0.3);
 
-    a {
-        display: block;
+  a {
+    display: block;
+  }
+
+  img {
+    width: 16rem;
+    height: 16rem;
+    object-fit: cover;
+    pointer-events: none;
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+
+  .cta-content {
+    padding: 2rem;
+    display: flex;
+    flex: auto;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+
+    div {
+      flex: 1;
+      padding-right: 1rem;
     }
 
+    p {
+      margin-top: 0.5rem;
+    }
+
+    a {
+      flex: 0 0 auto;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .cta-content {
+      padding: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 992px) and (min-width: 699px) {
+    button {
+      min-width: 6.5rem;
+    }
+  }
+
+  @media screen and (max-width: 699px) {
+    display: flex;
+    flex-direction: column;
+    width: 18rem;
+    height: auto;
+    margin: 1.5rem auto;
+    border-radius: 0.25rem;
+
     img {
-        width: 16rem;
-        height: 16rem;
-        object-fit: cover;
-        pointer-events: none;
-        border-radius: 0.5rem 0 0 0.5rem;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 0.25rem 0.25rem 0 0;
     }
 
     .cta-content {
-        padding: 2rem;
-        display: flex;
-        flex: auto;
-        text-align: center;
-        align-items: center;
-        height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 1.5rem 1rem;
+      box-sizing: border-box;
 
-        div {
-          flex: 1;
-          padding-right: 1rem;
-        }
+      div {
+        flex: none;
+        width: 100%;
+        padding-right: 0;
+      }
 
-        p {
-            margin-top: 0.5rem;
-        }
-        
-        a {
-            flex: 0 0 auto;
-        }
-    }
+      p {
+        color: white;
+      }
 
-    @media screen and (max-width: 1200px) {
-      .cta-content {
-        padding: 1rem;
+      a {
+        flex: none;
+        margin-top: 1rem;
       }
     }
-
-    @media screen and (max-width: 992px) and (min-width: 699px) {
-        button {
-            min-width: 6.5rem;
-        }
-    }
-
-    @media screen and (max-width: 699px) {
-        display: flex;
-        flex-direction: column;
-        width: 18rem;
-        height: auto;
-        margin: 1.5rem auto;
-        border-radius: 0.25rem;
-
-        img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 0.25rem 0.25rem 0 0;
-        }
-
-        .cta-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            padding: 1.5rem 1rem;
-            box-sizing: border-box;
-
-            div {
-                flex: none;
-                width: 100%;
-                padding-right: 0;
-            }
-
-            p {
-                color: white;
-            }
-            
-            a {
-                flex: none;
-                margin-top: 1rem;
-            }  
-        }
-    }
+  }
 `;
 
 const defaultHeading = "Layer5 Community";
-const defaultContent = "Join the Layer5 community and explore the world of cloud native!";
+const defaultContent =
+  "Join the Layer5 community and explore the world of cloud native!";
 const defaultURL = "https://slack.layer5.io";
 
-const CTA_FullWidth = ({ alt, button_text, category, content, external_link, image, url, heading, ...props }) => {
+const CTA_FullWidth = ({
+  alt,
+  button_text,
+  category,
+  content,
+  external_link,
+  image,
+  url,
+  heading,
+  ...props
+}) => {
   return (
     <CTA_FullWidthWrapper {...props}>
       {category ? (
         <>
-          <img src={Categories[category]["Image"]} alt={Categories[category]["Image_Alt"]} />
+          <img
+            src={Categories[category]["Image"]}
+            alt={Categories[category]["Image_Alt"]}
+          />
           <div className="cta-content">
             <div>
               <h3>{Categories[category]["Heading"]}</h3>
               <p>{Categories[category]["Content"]}</p>
             </div>
-            <Button $primary title={Categories[category]["Button_Text"]} $url={Categories[category]["Link"]} $external={Categories[category]["Link_external"]} />
+            <Button
+              $primary
+              title={Categories[category]["Button_Text"]}
+              $url={Categories[category]["Link"]}
+              $external={Categories[category]["Link_external"]}
+            />
           </div>
         </>
       ) : (
@@ -129,7 +148,12 @@ const CTA_FullWidth = ({ alt, button_text, category, content, external_link, ima
               <h3>{heading ? heading : defaultHeading}</h3>
               <p>{content ? content : defaultContent}</p>
             </div>
-            <Button $primary title={button_text ? button_text : "Join Us"} $url={url ? url : defaultURL} $external={external_link ? true : false} />
+            <Button
+              $primary
+              title={button_text ? button_text : "Join Us"}
+              $url={url ? url : defaultURL}
+              $external={external_link ? true : false}
+            />
           </div>
         </>
       )}

@@ -29,7 +29,6 @@ const SeeYouWrapper = styled.div`
     }
 
     .pentagon {
-
       animation-duration: 4s;
       top: 0;
       right: 30%;
@@ -41,16 +40,13 @@ const SeeYouWrapper = styled.div`
       bottom: 20%;
       right: 10%;
       height: 75px;
-
     }
 
     .heptagon {
-
       animation-duration: 2s;
       bottom: -37.5px;
       left: 30%;
       height: 75px;
-
     }
 
     .cursor_1 {
@@ -58,7 +54,6 @@ const SeeYouWrapper = styled.div`
       bottom: 14%;
       right: 15%;
       height: 50px;
-
     }
 
     .cursor_2 {
@@ -66,13 +61,11 @@ const SeeYouWrapper = styled.div`
       bottom: 5%;
       left: 40%;
       height: 50px;
-
     }
 
     .playground-button {
       margin: 70px 0 5px 0;
     }
-
   }
 
   @keyframes floating {
@@ -92,7 +85,6 @@ const SeeYouWrapper = styled.div`
       visibility: hidden;
     }
   }
-  
 `;
 
 export default SeeYouWrapper;

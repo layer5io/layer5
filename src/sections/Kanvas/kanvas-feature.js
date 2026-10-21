@@ -4,7 +4,7 @@ import Button from "../../reusecore/Button";
 import { Container } from "../../reusecore/Layout";
 
 const KanvasSectionWrapper = styled.div`
-    .heading-section {
+  .heading-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,7 +12,7 @@ const KanvasSectionWrapper = styled.div`
     background: linear-gradient(123deg, #00b39f 60%, #00d3a9 100%);
     margin-bottom: 1rem;
   }
-    border: 1.5px solid ${(props) => props.theme.green00B39FToGreyB3B3B3};
+  border: 1.5px solid ${(props) => props.theme.green00B39FToGreyB3B3B3};
 
   h2 {
     text-align: center;
@@ -30,7 +30,7 @@ const KanvasSectionWrapper = styled.div`
 
   p.caption {
     font-style: normal;
-    font-family: 'Qanelas Soft', sans-serif;
+    font-family: "Qanelas Soft", sans-serif;
     font-weight: 300;
     font-size: 1.5rem;
     line-height: 2.125rem;
@@ -40,20 +40,20 @@ const KanvasSectionWrapper = styled.div`
   }
 `;
 const BtnContainer = styled.div`
-        display: flex;
-        gap: 40px;
-        flex-direction: row;
-        justify-content: center;
-        Button {
-            font-size: 18px;
-        }
+  display: flex;
+  gap: 40px;
+  flex-direction: row;
+  justify-content: center;
+  Button {
+    font-size: 18px;
+  }
 
-    @media (max-width: 418px) {
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-    }
+  @media (max-width: 418px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
 `;
 
 const KanvasFeatures = ({ style }) => {
@@ -65,10 +65,11 @@ const KanvasFeatures = ({ style }) => {
       <Container className="description-section">
         <p className="caption">
           Design and manage your infrastructure with Kanvas’s intuitive
-          drag-and-drop interface. Watch
-          the video to explore freestyle composition and powerful cluster management and learn more about Kanvas.
+          drag-and-drop interface. Watch the video to explore freestyle
+          composition and powerful cluster management and learn more about
+          Kanvas.
         </p>
-        <BtnContainer className="btn" style={style} >
+        <BtnContainer className="btn" style={style}>
           <Button
             $primary
             $external={true}

@@ -18,11 +18,11 @@ const data = {
                   spec: {
                     ports: [{ name: "http", port: 80, "target Port": 8080 }],
                     selector: { app: "frontend" },
-                    type: "ClusterIP"
+                    type: "ClusterIP",
                   },
                   name: "frontend",
                   namespace: "default",
-                  labels: { app: "frontend" }
+                  labels: { app: "frontend" },
                 },
                 traits: {
                   meshmap: {
@@ -33,7 +33,7 @@ const data = {
                           metadata: { port: 80, protocol: "TCP" },
                           source: "0e6386a1-879e-4515-aa50-cbbafdbfbda0",
                           subType: "Network",
-                          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a"
+                          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a",
                         },
                         style: {
                           "control-point-distances": null,
@@ -49,8 +49,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -58,7 +58,7 @@ const data = {
                           metadata: { port: 80, protocol: "TCP" },
                           source: "0e6386a1-879e-4515-aa50-cbbafdbfbda0",
                           subType: "Network",
-                          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4"
+                          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4",
                         },
                         style: {
                           "control-point-distances": null,
@@ -74,8 +74,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -83,7 +83,7 @@ const data = {
                           metadata: { port: 80, protocol: "TCP" },
                           source: "0e6386a1-879e-4515-aa50-cbbafdbfbda0",
                           subType: "Network",
-                          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2"
+                          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2",
                         },
                         style: {
                           "control-point-distances": null,
@@ -99,9 +99,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "0e6386a1-879e-4515-aa50-cbbafdbfbda0",
@@ -129,7 +129,7 @@ const data = {
                         width: 20,
                         x: "10px",
                         y: "12px",
-                        "z-index": 31
+                        "z-index": 31,
                       },
                       styles:
                         '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
@@ -138,16 +138,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg",
                     },
-                    position: { posX: 182.90118539173923, posY: 656.464770911417 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 182.90118539173923,
+                      posY: 656.464770911417,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Service"
-              }
-            }
-          }
+                type: "Service",
+              },
+            },
+          },
         },
         position: { x: 182.90118539173923, y: 656.464770911417 },
         group: "nodes",
@@ -157,7 +160,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -177,9 +180,9 @@ const data = {
                     template: {
                       metadata: {
                         annotations: {
-                          "sidecar.istio.io/rewrite App HTTP Probers": "true"
+                          "sidecar.istio.io/rewrite App HTTP Probers": "true",
                         },
-                        labels: { app: "frontend" }
+                        labels: { app: "frontend" },
                       },
                       spec: {
                         containers: [
@@ -188,31 +191,37 @@ const data = {
                               { name: "PORT", value: "8080" },
                               {
                                 name: "PRODUCT_CATALOG_SERVICE_ADDR",
-                                value: "productcatalogservice:3550"
+                                value: "productcatalogservice:3550",
                               },
                               {
                                 name: "CURRENCY_SERVICE_ADDR",
-                                value: "currencyservice:7000"
+                                value: "currencyservice:7000",
                               },
-                              { name: "CART_SERVICE_ADDR", value: "cartservice:7070" },
+                              {
+                                name: "CART_SERVICE_ADDR",
+                                value: "cartservice:7070",
+                              },
                               {
                                 name: "RECOMMENDATION_SERVICE_ADDR",
-                                value: "recommendationservice:8080"
+                                value: "recommendationservice:8080",
                               },
                               {
                                 name: "SHIPPING_SERVICE_ADDR",
-                                value: "shippingservice:50051"
+                                value: "shippingservice:50051",
                               },
                               {
                                 name: "CHECKOUT_SERVICE_ADDR",
-                                value: "checkoutservice:5050"
+                                value: "checkoutservice:5050",
                               },
-                              { name: "AD_SERVICE_ADDR", value: "adservice:9555" },
+                              {
+                                name: "AD_SERVICE_ADDR",
+                                value: "adservice:9555",
+                              },
                               {
                                 name: "SHOPPING_ASSISTANT_SERVICE_ADDR",
-                                value: "shoppingassistantservice:80"
+                                value: "shoppingassistantservice:80",
                               },
-                              { name: "ENABLE_PROFILER", value: "0" }
+                              { name: "ENABLE_PROFILER", value: "0" },
                             ],
                             image:
                               "gcr.io/google-samples/microservices-demo/frontend:v0.10.0",
@@ -221,13 +230,13 @@ const data = {
                                 "http Headers": [
                                   {
                                     name: "Cookie",
-                                    value: "shop_session-id=x-liveness-probe"
-                                  }
+                                    value: "shop_session-id=x-liveness-probe",
+                                  },
                                 ],
                                 path: "/_healthz",
-                                port: 8080
+                                port: 8080,
                               },
-                              "initial Delay Seconds": 10
+                              "initial Delay Seconds": 10,
                             },
                             name: "server",
                             ports: [{ "container Port": 8080 }],
@@ -236,39 +245,39 @@ const data = {
                                 "http Headers": [
                                   {
                                     name: "Cookie",
-                                    value: "shop_session-id=x-readiness-probe"
-                                  }
+                                    value: "shop_session-id=x-readiness-probe",
+                                  },
                                 ],
                                 path: "/_healthz",
-                                port: 8080
+                                port: 8080,
                               },
-                              "initial Delay Seconds": 10
+                              "initial Delay Seconds": 10,
                             },
                             resources: {
                               limits: { cpu: "200m", memory: "128Mi" },
-                              requests: { cpu: "100m", memory: "64Mi" }
+                              requests: { cpu: "100m", memory: "64Mi" },
                             },
                             "security Context": {
                               "allow Privilege Escalation": false,
                               capabilities: { drop: ["ALL"] },
                               privileged: false,
-                              "read Only Root Filesystem": true
-                            }
-                          }
+                              "read Only Root Filesystem": true,
+                            },
+                          },
                         ],
                         "security Context": {
                           "fs Group": 1000,
                           "run As Group": 1000,
                           "run As Non Root": true,
-                          "run As User": 1000
+                          "run As User": 1000,
                         },
-                        "service Account Name": "frontend"
-                      }
-                    }
+                        "service Account Name": "frontend",
+                      },
+                    },
                   },
                   name: "frontend",
                   namespace: "default",
-                  labels: { app: "frontend" }
+                  labels: { app: "frontend" },
                 },
                 traits: {
                   meshmap: {
@@ -279,7 +288,7 @@ const data = {
                           metadata: { port: 80, protocol: "TCP" },
                           source: "0e6386a1-879e-4515-aa50-cbbafdbfbda0",
                           subType: "Network",
-                          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a"
+                          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a",
                         },
                         style: {
                           "control-point-distances": null,
@@ -295,8 +304,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -304,7 +313,7 @@ const data = {
                           metadata: { port: 5000, protocol: "TCP" },
                           source: "8675d250-303e-40a3-827b-1c607bb938e8",
                           subType: "Network",
-                          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a"
+                          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a",
                         },
                         style: {
                           "control-point-distances": null,
@@ -320,8 +329,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -329,7 +338,7 @@ const data = {
                           metadata: { port: 80, protocol: "TCP" },
                           source: "29f9e730-d9bd-4b16-8c75-26b2a7d4aa66",
                           subType: "Network",
-                          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a"
+                          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a",
                         },
                         style: {
                           "control-point-distances": null,
@@ -345,8 +354,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -354,7 +363,7 @@ const data = {
                           metadata: { port: 8080, protocol: "TCP" },
                           source: "11d4f518-60c8-42eb-b3d4-53590ac9d053",
                           subType: "Network",
-                          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a"
+                          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a",
                         },
                         style: {
                           "control-point-distances": null,
@@ -370,9 +379,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a",
@@ -396,7 +405,7 @@ const data = {
                       styleOverrides: {
                         "background-opacity": 0.5,
                         "border-width": 2,
-                        "z-index": 12
+                        "z-index": 12,
                       },
                       styles: '{"border-width":2,"background-opacity":0.5}',
                       subCategory: "",
@@ -405,16 +414,19 @@ const data = {
                       svgComplete:
                         "ui/public/static/img/meshmodels/kubernetes/complete/deployment-complete.svg",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg",
                     },
-                    position: { posX: 449.40323658462137, posY: 394.9142581131965 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 449.40323658462137,
+                      posY: 394.9142581131965,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Deployment"
-              }
-            }
-          }
+                type: "Deployment",
+              },
+            },
+          },
         },
         position: { x: 449.40323658462137, y: 394.9142581131965 },
         group: "nodes",
@@ -424,7 +436,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -440,7 +452,9 @@ const data = {
                 namespace: "default",
                 settings: {
                   spec: {
-                    selector: { "match Labels": { app: "recommendationservice" } },
+                    selector: {
+                      "match Labels": { app: "recommendationservice" },
+                    },
                     template: {
                       metadata: { labels: { app: "recommendationservice" } },
                       spec: {
@@ -450,48 +464,48 @@ const data = {
                               { name: "PORT", value: "8080" },
                               {
                                 name: "PRODUCT_CATALOG_SERVICE_ADDR",
-                                value: "productcatalogservice:3550"
+                                value: "productcatalogservice:3550",
                               },
-                              { name: "DISABLE_PROFILER", value: "1" }
+                              { name: "DISABLE_PROFILER", value: "1" },
                             ],
                             image:
                               "gcr.io/google-samples/microservices-demo/recommendationservice:v0.10.0",
                             "liveness Probe": {
                               grpc: { port: 8080 },
-                              "period Seconds": 5
+                              "period Seconds": 5,
                             },
                             name: "server",
                             ports: [{ "container Port": 8080 }],
                             "readiness Probe": {
                               grpc: { port: 8080 },
-                              "period Seconds": 5
+                              "period Seconds": 5,
                             },
                             resources: {
                               limits: { cpu: "200m", memory: "450Mi" },
-                              requests: { cpu: "100m", memory: "220Mi" }
+                              requests: { cpu: "100m", memory: "220Mi" },
                             },
                             "security Context": {
                               "allow Privilege Escalation": false,
                               capabilities: { drop: ["ALL"] },
                               privileged: false,
-                              "read Only Root Filesystem": true
-                            }
-                          }
+                              "read Only Root Filesystem": true,
+                            },
+                          },
                         ],
                         "security Context": {
                           "fs Group": 1000,
                           "run As Group": 1000,
                           "run As Non Root": true,
-                          "run As User": 1000
+                          "run As User": 1000,
                         },
                         "service Account Name": "recommendationservice",
-                        "termination Grace Period Seconds": 5
-                      }
-                    }
+                        "termination Grace Period Seconds": 5,
+                      },
+                    },
                   },
                   name: "recommendationservice",
                   namespace: "default",
-                  labels: { app: "recommendationservice" }
+                  labels: { app: "recommendationservice" },
                 },
                 traits: {
                   meshmap: {
@@ -502,7 +516,7 @@ const data = {
                           metadata: { port: 80, protocol: "TCP" },
                           source: "0e6386a1-879e-4515-aa50-cbbafdbfbda0",
                           subType: "Network",
-                          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2"
+                          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2",
                         },
                         style: {
                           "control-point-distances": null,
@@ -518,8 +532,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -527,7 +541,7 @@ const data = {
                           metadata: { port: 8080, protocol: "TCP" },
                           source: "11d4f518-60c8-42eb-b3d4-53590ac9d053",
                           subType: "Network",
-                          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2"
+                          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2",
                         },
                         style: {
                           "control-point-distances": null,
@@ -543,8 +557,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -552,7 +566,7 @@ const data = {
                           metadata: { port: 5000, protocol: "TCP" },
                           source: "8675d250-303e-40a3-827b-1c607bb938e8",
                           subType: "Network",
-                          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2"
+                          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2",
                         },
                         style: {
                           "control-point-distances": null,
@@ -568,8 +582,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -577,7 +591,7 @@ const data = {
                           metadata: { port: 80, protocol: "TCP" },
                           source: "29f9e730-d9bd-4b16-8c75-26b2a7d4aa66",
                           subType: "Network",
-                          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2"
+                          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2",
                         },
                         style: {
                           "control-point-distances": null,
@@ -593,9 +607,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "ca155f07-aaaf-4109-8054-f87fe30d27b2",
@@ -619,7 +633,7 @@ const data = {
                       styleOverrides: {
                         "background-opacity": 0.5,
                         "border-width": 2,
-                        "z-index": 10
+                        "z-index": 10,
                       },
                       styles: '{"border-width":2,"background-opacity":0.5}',
                       subCategory: "",
@@ -628,16 +642,19 @@ const data = {
                       svgComplete:
                         "ui/public/static/img/meshmodels/kubernetes/complete/deployment-complete.svg",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg",
                     },
-                    position: { posX: 288.1481420147422, posY: 415.4915090502014 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 288.1481420147422,
+                      posY: 415.4915090502014,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Deployment"
-              }
-            }
-          }
+                type: "Deployment",
+              },
+            },
+          },
         },
         position: { x: 288.1481420147422, y: 415.4915090502014 },
         group: "nodes",
@@ -647,7 +664,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -665,11 +682,11 @@ const data = {
                   spec: {
                     ports: [{ name: "grpc", port: 8080, "target Port": 8080 }],
                     selector: { app: "recommendationservice" },
-                    type: "ClusterIP"
+                    type: "ClusterIP",
                   },
                   name: "recommendationservice",
                   namespace: "default",
-                  labels: { app: "recommendationservice" }
+                  labels: { app: "recommendationservice" },
                 },
                 traits: {
                   meshmap: {
@@ -680,7 +697,7 @@ const data = {
                           metadata: { port: 8080, protocol: "TCP" },
                           source: "11d4f518-60c8-42eb-b3d4-53590ac9d053",
                           subType: "Network",
-                          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a"
+                          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a",
                         },
                         style: {
                           "control-point-distances": null,
@@ -696,8 +713,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -705,7 +722,7 @@ const data = {
                           metadata: { port: 8080, protocol: "TCP" },
                           source: "11d4f518-60c8-42eb-b3d4-53590ac9d053",
                           subType: "Network",
-                          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4"
+                          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4",
                         },
                         style: {
                           "control-point-distances": null,
@@ -721,8 +738,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -730,7 +747,7 @@ const data = {
                           metadata: { port: 8080, protocol: "TCP" },
                           source: "11d4f518-60c8-42eb-b3d4-53590ac9d053",
                           subType: "Network",
-                          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2"
+                          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2",
                         },
                         style: {
                           "control-point-distances": null,
@@ -746,9 +763,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "11d4f518-60c8-42eb-b3d4-53590ac9d053",
@@ -778,16 +795,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg",
                     },
-                    position: { posX: 425.81935268307564, posY: 660.7516981899597 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 425.81935268307564,
+                      posY: 660.7516981899597,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Service"
-              }
-            }
-          }
+                type: "Service",
+              },
+            },
+          },
         },
         position: { x: 425.81935268307564, y: 660.7516981899597 },
         group: "nodes",
@@ -797,7 +817,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -821,46 +841,46 @@ const data = {
                           {
                             env: [
                               { name: "PORT", value: "8080" },
-                              { name: "DISABLE_PROFILER", value: "1" }
+                              { name: "DISABLE_PROFILER", value: "1" },
                             ],
                             image:
                               "gcr.io/google-samples/microservices-demo/emailservice:v0.10.0",
                             "liveness Probe": {
                               grpc: { port: 8080 },
-                              "period Seconds": 5
+                              "period Seconds": 5,
                             },
                             name: "server",
                             ports: [{ "container Port": 8080 }],
                             "readiness Probe": {
                               grpc: { port: 8080 },
-                              "period Seconds": 5
+                              "period Seconds": 5,
                             },
                             resources: {
                               limits: { cpu: "200m", memory: "128Mi" },
-                              requests: { cpu: "100m", memory: "64Mi" }
+                              requests: { cpu: "100m", memory: "64Mi" },
                             },
                             "security Context": {
                               "allow Privilege Escalation": false,
                               capabilities: { drop: ["ALL"] },
                               privileged: false,
-                              "read Only Root Filesystem": true
-                            }
-                          }
+                              "read Only Root Filesystem": true,
+                            },
+                          },
                         ],
                         "security Context": {
                           "fs Group": 1000,
                           "run As Group": 1000,
                           "run As Non Root": true,
-                          "run As User": 1000
+                          "run As User": 1000,
                         },
                         "service Account Name": "emailservice",
-                        "termination Grace Period Seconds": 5
-                      }
-                    }
+                        "termination Grace Period Seconds": 5,
+                      },
+                    },
                   },
                   name: "emailservice",
                   namespace: "default",
-                  labels: { app: "emailservice" }
+                  labels: { app: "emailservice" },
                 },
                 traits: {
                   meshmap: {
@@ -871,7 +891,7 @@ const data = {
                           metadata: { port: 80, protocol: "TCP" },
                           source: "0e6386a1-879e-4515-aa50-cbbafdbfbda0",
                           subType: "Network",
-                          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4"
+                          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4",
                         },
                         style: {
                           "control-point-distances": null,
@@ -887,8 +907,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -896,7 +916,7 @@ const data = {
                           metadata: { port: 8080, protocol: "TCP" },
                           source: "11d4f518-60c8-42eb-b3d4-53590ac9d053",
                           subType: "Network",
-                          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4"
+                          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4",
                         },
                         style: {
                           "control-point-distances": null,
@@ -912,8 +932,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -921,7 +941,7 @@ const data = {
                           metadata: { port: 5000, protocol: "TCP" },
                           source: "8675d250-303e-40a3-827b-1c607bb938e8",
                           subType: "Network",
-                          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4"
+                          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4",
                         },
                         style: {
                           "control-point-distances": null,
@@ -937,8 +957,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -946,7 +966,7 @@ const data = {
                           metadata: { port: 80, protocol: "TCP" },
                           source: "29f9e730-d9bd-4b16-8c75-26b2a7d4aa66",
                           subType: "Network",
-                          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4"
+                          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4",
                         },
                         style: {
                           "control-point-distances": null,
@@ -962,9 +982,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "ecfa1fe8-db99-44a8-acfa-61478c3904e4",
@@ -988,7 +1008,7 @@ const data = {
                       styleOverrides: {
                         "background-opacity": 0.5,
                         "border-width": 2,
-                        "z-index": 5
+                        "z-index": 5,
                       },
                       styles: '{"border-width":2,"background-opacity":0.5}',
                       subCategory: "",
@@ -997,16 +1017,19 @@ const data = {
                       svgComplete:
                         "ui/public/static/img/meshmodels/kubernetes/complete/deployment-complete.svg",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg",
                     },
-                    position: { posX: 622.0708576654108, posY: 401.77334175886483 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 622.0708576654108,
+                      posY: 401.77334175886483,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Deployment"
-              }
-            }
-          }
+                type: "Deployment",
+              },
+            },
+          },
         },
         position: { x: 622.0708576654108, y: 401.77334175886483 },
         group: "nodes",
@@ -1016,7 +1039,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1034,11 +1057,11 @@ const data = {
                   spec: {
                     ports: [{ name: "grpc", port: 5000, "target Port": 8080 }],
                     selector: { app: "emailservice" },
-                    type: "ClusterIP"
+                    type: "ClusterIP",
                   },
                   name: "emailservice",
                   namespace: "default",
-                  labels: { app: "emailservice" }
+                  labels: { app: "emailservice" },
                 },
                 traits: {
                   meshmap: {
@@ -1049,7 +1072,7 @@ const data = {
                           metadata: { port: 5000, protocol: "TCP" },
                           source: "8675d250-303e-40a3-827b-1c607bb938e8",
                           subType: "Network",
-                          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a"
+                          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1065,8 +1088,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -1074,7 +1097,7 @@ const data = {
                           metadata: { port: 5000, protocol: "TCP" },
                           source: "8675d250-303e-40a3-827b-1c607bb938e8",
                           subType: "Network",
-                          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4"
+                          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1090,8 +1113,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -1099,7 +1122,7 @@ const data = {
                           metadata: { port: 5000, protocol: "TCP" },
                           source: "8675d250-303e-40a3-827b-1c607bb938e8",
                           subType: "Network",
-                          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2"
+                          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1115,9 +1138,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "8675d250-303e-40a3-827b-1c607bb938e8",
@@ -1145,7 +1168,7 @@ const data = {
                         width: 20,
                         x: "10px",
                         y: "12px",
-                        "z-index": 23
+                        "z-index": 23,
                       },
                       styles:
                         '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
@@ -1154,16 +1177,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg",
                     },
-                    position: { posX: 784.7626398208856, posY: 653.035229088583 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 784.7626398208856,
+                      posY: 653.035229088583,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Service"
-              }
-            }
-          }
+                type: "Service",
+              },
+            },
+          },
         },
         position: { x: 784.7626398208856, y: 653.035229088583 },
         group: "nodes",
@@ -1173,7 +1199,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1191,11 +1217,11 @@ const data = {
                   spec: {
                     ports: [{ name: "http", port: 80, "target Port": 8080 }],
                     selector: { app: "frontend" },
-                    type: "LoadBalancer"
+                    type: "LoadBalancer",
                   },
                   name: "frontend-external",
                   namespace: "default",
-                  labels: { app: "frontend" }
+                  labels: { app: "frontend" },
                 },
                 traits: {
                   meshmap: {
@@ -1206,7 +1232,7 @@ const data = {
                           metadata: { port: 80, protocol: "TCP" },
                           source: "29f9e730-d9bd-4b16-8c75-26b2a7d4aa66",
                           subType: "Network",
-                          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a"
+                          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1222,8 +1248,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -1231,7 +1257,7 @@ const data = {
                           metadata: { port: 80, protocol: "TCP" },
                           source: "29f9e730-d9bd-4b16-8c75-26b2a7d4aa66",
                           subType: "Network",
-                          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4"
+                          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1247,8 +1273,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -1256,7 +1282,7 @@ const data = {
                           metadata: { port: 80, protocol: "TCP" },
                           source: "29f9e730-d9bd-4b16-8c75-26b2a7d4aa66",
                           subType: "Network",
-                          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2"
+                          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1272,9 +1298,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "29f9e730-d9bd-4b16-8c75-26b2a7d4aa66",
@@ -1302,7 +1328,7 @@ const data = {
                         width: 20,
                         x: "10px",
                         y: "12px",
-                        "z-index": 6
+                        "z-index": 6,
                       },
                       styles:
                         '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
@@ -1311,16 +1337,19 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg",
                     },
-                    position: { posX: 612.150079897649, posY: 655.6073854557085 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 612.150079897649,
+                      posY: 655.6073854557085,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Service"
-              }
-            }
-          }
+                type: "Service",
+              },
+            },
+          },
         },
         position: { x: 612.150079897649, y: 655.6073854557085 },
         group: "nodes",
@@ -1330,7 +1359,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1352,12 +1381,15 @@ const data = {
                       elementType: "FIELD_REF_NODE",
                       fieldPath: "spec.template.spec.containers[0]",
                       jsonSchemaPath:
-                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]"
+                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
                     },
                     id: "f55cbf76-10b6-464f-8123-1c4c3c252ac0",
                     label: "spec.template.spec.containers[0]",
                     "meshmodel-data": {
-                      category: { metadata: null, name: "Orchestration & Management" },
+                      category: {
+                        metadata: null,
+                        name: "Orchestration & Management",
+                      },
                       components: null,
                       description: "",
                       displayName: "Meshery Core",
@@ -1370,7 +1402,7 @@ const data = {
                           "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg"
+                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                       },
                       model: { version: "0.7.2" },
                       name: "meshery-core",
@@ -1379,7 +1411,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "App Definition and Development",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -1400,22 +1432,25 @@ const data = {
                         "ui/public/static/img/meshmodels/meshery-core/color/container-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg"
+                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg",
                     },
                     parent: "ecfa1fe8-db99-44a8-acfa-61478c3904e4",
-                    position: { posX: 622.0708576654108, posY: 392.77334175886483 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 622.0708576654108,
+                      posY: 392.77334175886483,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "Container"
-              }
-            }
+                type: "Container",
+              },
+            },
           },
           elementType: "FIELD_REF_NODE",
           fieldPath: "spec.template.spec.containers[0]",
           jsonSchemaPath:
             "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
-          parent: "ecfa1fe8-db99-44a8-acfa-61478c3904e4"
+          parent: "ecfa1fe8-db99-44a8-acfa-61478c3904e4",
         },
         position: { x: 622.0708576654108, y: 392.77334175886483 },
         group: "nodes",
@@ -1425,7 +1460,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1447,12 +1482,15 @@ const data = {
                       elementType: "FIELD_REF_NODE",
                       fieldPath: "spec.template.spec.containers[0]",
                       jsonSchemaPath:
-                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]"
+                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
                     },
                     id: "9be212fe-8fc7-42f9-b143-c758b1141931",
                     label: "spec.template.spec.containers[0]",
                     "meshmodel-data": {
-                      category: { metadata: null, name: "Orchestration & Management" },
+                      category: {
+                        metadata: null,
+                        name: "Orchestration & Management",
+                      },
                       components: null,
                       description: "",
                       displayName: "Meshery Core",
@@ -1465,7 +1503,7 @@ const data = {
                           "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg"
+                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                       },
                       model: { version: "0.7.2" },
                       name: "meshery-core",
@@ -1474,7 +1512,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "App Definition and Development",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -1495,22 +1533,25 @@ const data = {
                         "ui/public/static/img/meshmodels/meshery-core/color/container-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg"
+                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg",
                     },
                     parent: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a",
-                    position: { posX: 449.40323658462137, posY: 385.9142581131965 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 449.40323658462137,
+                      posY: 385.9142581131965,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "Container"
-              }
-            }
+                type: "Container",
+              },
+            },
           },
           elementType: "FIELD_REF_NODE",
           fieldPath: "spec.template.spec.containers[0]",
           jsonSchemaPath:
             "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
-          parent: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a"
+          parent: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a",
         },
         position: { x: 449.40323658462137, y: 385.9142581131965 },
         group: "nodes",
@@ -1520,7 +1561,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1542,12 +1583,15 @@ const data = {
                       elementType: "FIELD_REF_NODE",
                       fieldPath: "spec.template.spec.containers[0]",
                       jsonSchemaPath:
-                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]"
+                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
                     },
                     id: "08944c10-9985-484f-af99-433ea26b5648",
                     label: "spec.template.spec.containers[0]",
                     "meshmodel-data": {
-                      category: { metadata: null, name: "Orchestration & Management" },
+                      category: {
+                        metadata: null,
+                        name: "Orchestration & Management",
+                      },
                       components: null,
                       description: "",
                       displayName: "Meshery Core",
@@ -1560,7 +1604,7 @@ const data = {
                           "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg"
+                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                       },
                       model: { version: "0.7.2" },
                       name: "meshery-core",
@@ -1569,7 +1613,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "App Definition and Development",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -1590,22 +1634,25 @@ const data = {
                         "ui/public/static/img/meshmodels/meshery-core/color/container-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg"
+                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg",
                     },
                     parent: "ca155f07-aaaf-4109-8054-f87fe30d27b2",
-                    position: { posX: 288.1481420147422, posY: 406.4915090502014 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 288.1481420147422,
+                      posY: 406.4915090502014,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "Container"
-              }
-            }
+                type: "Container",
+              },
+            },
           },
           elementType: "FIELD_REF_NODE",
           fieldPath: "spec.template.spec.containers[0]",
           jsonSchemaPath:
             "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
-          parent: "ca155f07-aaaf-4109-8054-f87fe30d27b2"
+          parent: "ca155f07-aaaf-4109-8054-f87fe30d27b2",
         },
         position: { x: 288.1481420147422, y: 406.4915090502014 },
         group: "nodes",
@@ -1615,8 +1662,8 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
-      }
+        classes: "",
+      },
     ],
     edges: [
       {
@@ -1625,7 +1672,7 @@ const data = {
           metadata: { port: 80, protocol: "TCP" },
           source: "0e6386a1-879e-4515-aa50-cbbafdbfbda0",
           subType: "Network",
-          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a"
+          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -1635,7 +1682,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1643,7 +1690,7 @@ const data = {
           metadata: { port: 80, protocol: "TCP" },
           source: "0e6386a1-879e-4515-aa50-cbbafdbfbda0",
           subType: "Network",
-          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4"
+          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -1653,7 +1700,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1661,7 +1708,7 @@ const data = {
           metadata: { port: 80, protocol: "TCP" },
           source: "0e6386a1-879e-4515-aa50-cbbafdbfbda0",
           subType: "Network",
-          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2"
+          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -1671,7 +1718,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1679,7 +1726,7 @@ const data = {
           metadata: { port: 5000, protocol: "TCP" },
           source: "8675d250-303e-40a3-827b-1c607bb938e8",
           subType: "Network",
-          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a"
+          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -1689,7 +1736,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1697,7 +1744,7 @@ const data = {
           metadata: { port: 80, protocol: "TCP" },
           source: "29f9e730-d9bd-4b16-8c75-26b2a7d4aa66",
           subType: "Network",
-          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a"
+          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -1707,7 +1754,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1715,7 +1762,7 @@ const data = {
           metadata: { port: 8080, protocol: "TCP" },
           source: "11d4f518-60c8-42eb-b3d4-53590ac9d053",
           subType: "Network",
-          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a"
+          target: "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -1725,7 +1772,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1733,7 +1780,7 @@ const data = {
           metadata: { port: 8080, protocol: "TCP" },
           source: "11d4f518-60c8-42eb-b3d4-53590ac9d053",
           subType: "Network",
-          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2"
+          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -1743,7 +1790,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1751,7 +1798,7 @@ const data = {
           metadata: { port: 5000, protocol: "TCP" },
           source: "8675d250-303e-40a3-827b-1c607bb938e8",
           subType: "Network",
-          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2"
+          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -1761,7 +1808,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1769,7 +1816,7 @@ const data = {
           metadata: { port: 80, protocol: "TCP" },
           source: "29f9e730-d9bd-4b16-8c75-26b2a7d4aa66",
           subType: "Network",
-          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2"
+          target: "ca155f07-aaaf-4109-8054-f87fe30d27b2",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -1779,7 +1826,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1787,7 +1834,7 @@ const data = {
           metadata: { port: 8080, protocol: "TCP" },
           source: "11d4f518-60c8-42eb-b3d4-53590ac9d053",
           subType: "Network",
-          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4"
+          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -1797,7 +1844,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1805,7 +1852,7 @@ const data = {
           metadata: { port: 5000, protocol: "TCP" },
           source: "8675d250-303e-40a3-827b-1c607bb938e8",
           subType: "Network",
-          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4"
+          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -1815,7 +1862,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1823,7 +1870,7 @@ const data = {
           metadata: { port: 80, protocol: "TCP" },
           source: "29f9e730-d9bd-4b16-8c75-26b2a7d4aa66",
           subType: "Network",
-          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4"
+          target: "ecfa1fe8-db99-44a8-acfa-61478c3904e4",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -1833,9 +1880,9 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
-      }
-    ]
+        classes: "",
+      },
+    ],
   },
   elementStyles: {
     "0e6386a1-879e-4515-aa50-cbbafdbfbda0": {
@@ -2263,7 +2310,7 @@ const data = {
       "padding-top": "12px",
       paddingTop: "12px",
       "padding-bottom": "12px",
-      paddingBottom: "12px"
+      paddingBottom: "12px",
     },
     "c29c2cb0-ea8f-4cdb-b5b9-3a56a1190d2a": {
       events: "yes",
@@ -2690,7 +2737,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "ca155f07-aaaf-4109-8054-f87fe30d27b2": {
       events: "yes",
@@ -3117,7 +3164,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "11d4f518-60c8-42eb-b3d4-53590ac9d053": {
       events: "yes",
@@ -3544,7 +3591,7 @@ const data = {
       "padding-top": "12px",
       paddingTop: "12px",
       "padding-bottom": "12px",
-      paddingBottom: "12px"
+      paddingBottom: "12px",
     },
     "ecfa1fe8-db99-44a8-acfa-61478c3904e4": {
       events: "yes",
@@ -3971,7 +4018,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "8675d250-303e-40a3-827b-1c607bb938e8": {
       events: "yes",
@@ -4398,7 +4445,7 @@ const data = {
       "padding-top": "12px",
       paddingTop: "12px",
       "padding-bottom": "12px",
-      paddingBottom: "12px"
+      paddingBottom: "12px",
     },
     "29f9e730-d9bd-4b16-8c75-26b2a7d4aa66": {
       events: "yes",
@@ -4825,7 +4872,7 @@ const data = {
       "padding-top": "12px",
       paddingTop: "12px",
       "padding-bottom": "12px",
-      paddingBottom: "12px"
+      paddingBottom: "12px",
     },
     "f55cbf76-10b6-464f-8123-1c4c3c252ac0": {
       events: "yes",
@@ -5252,7 +5299,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "9be212fe-8fc7-42f9-b143-c758b1141931": {
       events: "yes",
@@ -5679,7 +5726,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "08944c10-9985-484f-af99-433ea26b5648": {
       events: "yes",
@@ -6106,7 +6153,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "13ad5901-4b3c-4721-b350-e63d71e0b7ea": {
       events: "yes",
@@ -6531,7 +6578,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "e4b17f59-dd58-464a-8b4c-e9a4d5b23220": {
       events: "yes",
@@ -6956,7 +7003,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "a791021f-ff7b-49c7-b6c0-1939f7214cbf": {
       events: "yes",
@@ -7381,7 +7428,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "69fedddd-97a4-4f5e-a965-c4acf10cfdce": {
       events: "yes",
@@ -7806,7 +7853,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "7108c819-f529-4d12-bd15-194b9e3dc17a": {
       events: "yes",
@@ -8231,7 +8278,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "0c4653ec-a6d0-4b2f-a205-a82898c4024a": {
       events: "yes",
@@ -8656,7 +8703,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "af0b1116-f6cf-4c9e-a593-13024db72a8b": {
       events: "yes",
@@ -9081,7 +9128,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "1e1930fe-39b2-445c-b44a-708a8bcbb46b": {
       events: "yes",
@@ -9506,7 +9553,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "49665763-5f76-487a-b3c1-d759027cfb1d": {
       events: "yes",
@@ -9931,7 +9978,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "e8d4b130-0b06-424e-be02-3e30070d7238": {
       events: "yes",
@@ -10356,7 +10403,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "f0bf41b9-e3dd-4297-b6da-e91e25ad028c": {
       events: "yes",
@@ -10781,7 +10828,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "eb391047-bd12-40f9-9720-083b5a228ad7": {
       events: "yes",
@@ -11206,9 +11253,9 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
-    }
-  }
+      paddingBottom: "0px",
+    },
+  },
 };
 
 const addStyles = () => {
@@ -11275,7 +11322,7 @@ const addStyles = () => {
 
 const CreateToolBar = () => {
   const cyContainer = document.getElementById(
-    "embedded-design-6dba7bde-82d7-4a75-9fde-39329a0c0e34"
+    "embedded-design-6dba7bde-82d7-4a75-9fde-39329a0c0e34",
   );
   const toolbar = document.createElement("div");
   toolbar.innerHTML = `
@@ -11328,7 +11375,7 @@ const CreateToolBar = () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const embedContainer = document.getElementById(
-    "embedded-design-6dba7bde-82d7-4a75-9fde-39329a0c0e34"
+    "embedded-design-6dba7bde-82d7-4a75-9fde-39329a0c0e34",
   );
   embedContainer.classList.add("embed-design-container");
   const cyContainer = document.createElement("div");
@@ -11339,7 +11386,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var cy = (window.cy = cytoscape({
     container: document.getElementById(
-      "embedded-design-6dba7bde-82d7-4a75-9fde-39329a0c0e34-cy"
+      "embedded-design-6dba7bde-82d7-4a75-9fde-39329a0c0e34-cy",
     ),
 
     autounselectify: true,
@@ -11348,13 +11395,13 @@ document.addEventListener("DOMContentLoaded", function () {
     minZoom: 0.5,
     maxZoom: 6.6,
     layout: {
-      name: "preset"
+      name: "preset",
     },
     elements: data.elements,
-    style: data.style
+    style: data.style,
   }));
 
-  Object.keys(data.elementStyles).forEach(id => {
+  Object.keys(data.elementStyles).forEach((id) => {
     cy.getElementById(id).style(data.elementStyles[id]);
   });
 

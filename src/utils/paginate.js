@@ -1,3 +1,3 @@
 export const paginate = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
+  setCurrentPage(pageNumber);
+};

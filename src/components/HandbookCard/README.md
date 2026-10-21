@@ -1,6 +1,9 @@
 ### What is the use of this CTA:
+
 The **HandbookCard** component to show a card with Read More link
+
 ### How to use the CTA:
+
 To use this CTA :
 
 ```

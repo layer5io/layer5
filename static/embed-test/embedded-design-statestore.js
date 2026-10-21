@@ -24,15 +24,18 @@ const data = {
                     metadata: [
                       {
                         name: "redisHost",
-                        "secret Key Ref": { key: "redis", name: "redis-password" },
-                        value: "redis-master.default.svc.cluster.local:6379"
-                      }
+                        "secret Key Ref": {
+                          key: "redis",
+                          name: "redis-password",
+                        },
+                        value: "redis-master.default.svc.cluster.local:6379",
+                      },
                     ],
                     type: "state.redis",
-                    version: "v1"
+                    version: "v1",
                   },
                   name: "state-store",
-                  namespace: "default"
+                  namespace: "default",
                 },
                 traits: {
                   meshmap: {
@@ -49,11 +52,12 @@ const data = {
                       id: "b53eccf2-d651-5afb-88a0-26387cd31ebb",
                       metadata: {
                         isAnnotation: false,
-                        source_uri: "https://wenerme.github.io/charts/dapr-1.12.3.tgz",
+                        source_uri:
+                          "https://wenerme.github.io/charts/dapr-1.12.3.tgz",
                         svgColor:
                           "ui/public/static/img/meshmodels/dapr/color/dapr-color.svg",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/dapr/white/dapr-white.svg"
+                          "ui/public/static/img/meshmodels/dapr/white/dapr-white.svg",
                       },
                       model: { version: "1.10.4" },
                       name: "dapr",
@@ -62,7 +66,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities: "",
@@ -505,7 +509,7 @@ const data = {
                         "z-index-compare": "manual",
                         zCompoundDepth: "auto",
                         zIndex: "3",
-                        zIndexCompare: "manual"
+                        zIndexCompare: "manual",
                       },
                       styles: "",
                       subCategory: "",
@@ -513,16 +517,19 @@ const data = {
                         "ui/public/static/img/meshmodels/dapr/color/component-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/dapr/white/component-white.svg"
+                        "ui/public/static/img/meshmodels/dapr/white/component-white.svg",
                     },
-                    position: { posX: -184.54261101613818, posY: -248.1110296798097 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: -184.54261101613818,
+                      posY: -248.1110296798097,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "Component"
-              }
-            }
-          }
+                type: "Component",
+              },
+            },
+          },
         },
         position: { x: -184.54261101613818, y: -248.1110296798097 },
         group: "nodes",
@@ -532,9 +539,9 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
-      }
-    ]
+        classes: "",
+      },
+    ],
   },
   elementStyles: {
     "942be105-a41a-40af-bc98-808cdf386a09": {
@@ -962,9 +969,9 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
-    }
-  }
+      paddingBottom: "6px",
+    },
+  },
 };
 
 const addStyles = () => {
@@ -1031,7 +1038,7 @@ const addStyles = () => {
 
 const CreateToolBar = () => {
   const cyContainer = document.getElementById(
-    "embedded-design-f0b9088c-ab17-41ee-9400-fcfc5f4d59a8"
+    "embedded-design-f0b9088c-ab17-41ee-9400-fcfc5f4d59a8",
   );
   const toolbar = document.createElement("div");
   toolbar.innerHTML = `
@@ -1084,7 +1091,7 @@ const CreateToolBar = () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const embedContainer = document.getElementById(
-    "embedded-design-f0b9088c-ab17-41ee-9400-fcfc5f4d59a8"
+    "embedded-design-f0b9088c-ab17-41ee-9400-fcfc5f4d59a8",
   );
   embedContainer.classList.add("embed-design-container");
   const cyContainer = document.createElement("div");
@@ -1095,7 +1102,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var cy = (window.cy = cytoscape({
     container: document.getElementById(
-      "embedded-design-f0b9088c-ab17-41ee-9400-fcfc5f4d59a8-cy"
+      "embedded-design-f0b9088c-ab17-41ee-9400-fcfc5f4d59a8-cy",
     ),
 
     autounselectify: true,
@@ -1104,13 +1111,13 @@ document.addEventListener("DOMContentLoaded", function () {
     minZoom: 0.5,
     maxZoom: 6.6,
     layout: {
-      name: "preset"
+      name: "preset",
     },
     elements: data.elements,
-    style: data.style
+    style: data.style,
   }));
 
-  Object.keys(data.elementStyles).forEach(id => {
+  Object.keys(data.elementStyles).forEach((id) => {
     cy.getElementById(id).style(data.elementStyles[id]);
   });
 

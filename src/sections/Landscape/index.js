@@ -25,7 +25,6 @@ import "regenerator-runtime/runtime";
 import useHasMounted from "../../utils/useHasMounted";
 
 const LandscapeGrid = () => {
-
   const hasMounted = useHasMounted();
 
   return (
@@ -34,12 +33,17 @@ const LandscapeGrid = () => {
       <div className="landscape-page-wrapper">
         <Container>
           <div>
-            <Row style={{
-              flexWrap: "wrap"
-            }} $Hcenter
+            <Row
+              style={{
+                flexWrap: "wrap",
+              }}
+              $Hcenter
             >
-              <h2 id="service-mesh-comparison-strength" className="sub-heading landscape-section-heading">
-                                Comparison of Service Mesh Strengths
+              <h2
+                id="service-mesh-comparison-strength"
+                className="sub-heading landscape-section-heading"
+              >
+                Comparison of Service Mesh Strengths
               </h2>
               <div className="strength-comparison-section">
                 <div className="comparison-mesh">
@@ -77,7 +81,8 @@ const LandscapeGrid = () => {
                   <div className="mesh-data">
                     <p>Interoperability with Existing Ingresses</p>
                   </div>
-                </div><div className="comparison-mesh">
+                </div>
+                <div className="comparison-mesh">
                   <div className="mesh-img">
                     <img src={NSM_Img} />
                     <h3>Network Service Mesh</h3>
@@ -88,13 +93,16 @@ const LandscapeGrid = () => {
                 </div>
               </div>
               <h2 className="sub-heading landscape-section-heading">
-                                Service Mesh Timeline
+                Service Mesh Timeline
               </h2>
-              <ServiceMeshTimeline  />
-              <h2 id="service-mesh-comaprison-matrix" className="sub-heading landscape-section-heading">
-                                Service Mesh Comparison Matrix
+              <ServiceMeshTimeline />
+              <h2
+                id="service-mesh-comaprison-matrix"
+                className="sub-heading landscape-section-heading"
+              >
+                Service Mesh Comparison Matrix
               </h2>
-              {hasMounted ?
+              {hasMounted ? (
                 <Tabs defaultIndex={2} className="landscape-table">
                   <TabList>
                     <Tab>Categories</Tab>
@@ -115,10 +123,20 @@ const LandscapeGrid = () => {
                     <Tools />
                   </TabPanel>
                 </Tabs>
-                : ""}
-              <h2 id="smi" className="sub-heading landscape-section-heading" >Service Mesh Interface Compliance</h2>
-              <h4 className="landscape-section-sub-heading">Is your service mesh compliant? <a href="/projects/service-mesh-interface-conformance">Find out</a>.</h4>
-              <SMI_Compatibility/>
+              ) : (
+                ""
+              )}
+              <h2 id="smi" className="sub-heading landscape-section-heading">
+                Service Mesh Interface Compliance
+              </h2>
+              <h4 className="landscape-section-sub-heading">
+                Is your service mesh compliant?{" "}
+                <a href="/projects/service-mesh-interface-conformance">
+                  Find out
+                </a>
+                .
+              </h4>
+              <SMI_Compatibility />
               <div className="Legend">
                 <span>Legend:</span>
                 <div className="Landscape">
@@ -135,17 +153,23 @@ const LandscapeGrid = () => {
                 </div>
               </div>
               <div className="AboutLandscape">
-                <img src={landscape}
-                  alt="Service Mesh Landscape"
-                />
+                <img src={landscape} alt="Service Mesh Landscape" />
                 <div>
-                  <p>The Service Mesh Landscape is a community-curated collection of service mesh projects.
-                  We encourage project maintainers to directly update and represent their service mesh’s functional
-                                    and non-functional details.
+                  <p>
+                    The Service Mesh Landscape is a community-curated collection
+                    of service mesh projects. We encourage project maintainers
+                    to directly update and represent their service mesh’s
+                    functional and non-functional details.
                   </p>
-                  <p className="text-gray">Found a discrepancy, missing or out-dated information?</p>
-                  <Button $primary $url="https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Flandscape&template=landscape.md&title=%5BLandscape%5D" $external={true}>
-                                        Let Us Know
+                  <p className="text-gray">
+                    Found a discrepancy, missing or out-dated information?
+                  </p>
+                  <Button
+                    $primary
+                    $url="https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Flandscape&template=landscape.md&title=%5BLandscape%5D"
+                    $external={true}
+                  >
+                    Let Us Know
                   </Button>
                 </div>
               </div>

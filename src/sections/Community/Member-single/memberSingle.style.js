@@ -235,7 +235,8 @@ export const MemberSingleWrapper = styled.div`
       }
 
       &:hover {
-        box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12),
+        box-shadow:
+          0 1px 1.5px 0 rgba(0, 0, 0, 0.12),
           0 1px 1px 0 rgba(0, 0, 0, 0.24);
         background: white;
 
@@ -255,8 +256,10 @@ export const MemberSingleWrapper = styled.div`
       }
 
       &:active {
-        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-          0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+        box-shadow:
+          0 4px 5px 0 rgba(0, 0, 0, 0.14),
+          0 1px 10px 0 rgba(0, 0, 0, 0.12),
+          0 2px 4px -1px rgba(0, 0, 0, 0.2);
       }
 
       svg {
@@ -283,14 +286,12 @@ export const MemberSingleWrapper = styled.div`
   .tooltip {
     position: relative;
     display: inline-block;
-   
   }
 
   .tooltip .tooltiptext {
-    
     font-size: 14px;
     visibility: hidden;
-   
+
     width: 100px;
     background-color: #333;
     color: #fff;
@@ -305,11 +306,11 @@ export const MemberSingleWrapper = styled.div`
     opacity: 0;
     transition: opacity 0.3s;
   }
-  .tooltip .small-tooltip{
-    width:150px;
+  .tooltip .small-tooltip {
+    width: 150px;
   }
-  .tooltip .large-tooltip{
-    width:200px;
+  .tooltip .large-tooltip {
+    width: 200px;
   }
 
   .tooltip:hover .tooltiptext {

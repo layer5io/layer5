@@ -154,7 +154,11 @@ export default function KanvasDesignFeatureCarousel() {
               <img
                 // width="85%"
                 // // height="90%"
-                style={{ border: "1px solid #444444", marginTop: "8px", borderRadius: "20px" }}
+                style={{
+                  border: "1px solid #444444",
+                  marginTop: "8px",
+                  borderRadius: "20px",
+                }}
                 src={content.img}
               />
             </div>

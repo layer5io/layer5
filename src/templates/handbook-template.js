@@ -39,9 +39,7 @@ export const query = graphql`
 const HandbookPage = ({ data, children }) => {
   return (
     <>
-      <HandbookSingle data={data}>
-        {children}
-      </HandbookSingle>
+      <HandbookSingle data={data}>{children}</HandbookSingle>
     </>
   );
 };
@@ -51,9 +49,6 @@ export default HandbookPage;
 export const Head = ({ data }) => {
   const { frontmatter } = data.mdx;
   return (
-    <SEO
-      title={frontmatter.title}
-      description={frontmatter.description}
-    />
+    <SEO title={frontmatter.title} description={frontmatter.description} />
   );
 };

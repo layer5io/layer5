@@ -25,9 +25,11 @@ const Catalog = () => {
   return (
     <Layer5Wrapper>
       <div className="post-content">
-        <Row style={{
-          flexWrap: "wrap"
-        }} className="brand-section"
+        <Row
+          style={{
+            flexWrap: "wrap",
+          }}
+          className="brand-section"
         >
           <Col $xs={12} $sm={6}>
             <h1 className="layerH3">Catalog</h1>
@@ -50,18 +52,20 @@ const Catalog = () => {
             </p>
           </Col>
         </Row>
-        <Row style={{
-          flexWrap: "wrap"
-        }}
+        <Row
+          style={{
+            flexWrap: "wrap",
+          }}
         >
           <Col $xs={12}>
             <h2 className="layerH3 in">Logos</h2>
           </Col>
         </Row>
         <ProjectItemWrapper id="projects">
-          <Row style={{
-            flexWrap: "wrap"
-          }}
+          <Row
+            style={{
+              flexWrap: "wrap",
+            }}
           >
             <div className="project__block__wrap">
               <Col $sm={12} $md={6} $lg={4}>
@@ -113,9 +117,10 @@ const Catalog = () => {
           </Row>
         </ProjectItemWrapper>
 
-        <Row style={{
-          flexWrap: "wrap"
-        }}
+        <Row
+          style={{
+            flexWrap: "wrap",
+          }}
         >
           <Col $xs={12}>
             <h2 className="layerH3 in">Colors</h2>
@@ -127,9 +132,11 @@ const Catalog = () => {
               white when using project colors as the background.
             </p>
           </Col>
-          <Row style={{
-            flexWrap: "wrap"
-          }} className="color-code-wrapper"
+          <Row
+            style={{
+              flexWrap: "wrap",
+            }}
+            className="color-code-wrapper"
           >
             <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
             <ColorBox

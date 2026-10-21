@@ -14,7 +14,7 @@ export const HeroWrapper = styled.div`
     padding: 1rem 0 2rem 0;
   }
 
-   .content {
+  .content {
     max-width: 34rem;
 
     @media (max-width: 1119px) {
@@ -32,9 +32,9 @@ export const HeroWrapper = styled.div`
       margin-top: 0;
     }
 
-    .subtitle{
+    .subtitle {
       font-weight: 600;
-      color: ${props => props.theme.primaryColor};
+      color: ${(props) => props.theme.primaryColor};
       margin-bottom: 1rem;
     }
 
@@ -73,7 +73,7 @@ export const HeroWrapper = styled.div`
       }
     }
   }
-    p.enddescr {
-      margin-top: 1rem;
-    }
+  p.enddescr {
+    margin-top: 1rem;
+  }
 `;

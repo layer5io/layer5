@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export default function useHasMounted() {
   const [hasMounted, setHasMounted] = React.useState(false);

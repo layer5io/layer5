@@ -3,7 +3,6 @@ import { non_functional } from "../../collections/landscape/non-functional";
 import Table from "../../components/Landscape-Table";
 
 function NonFunctional() {
-
   const columns = React.useMemo(
     () => [
       {
@@ -39,7 +38,7 @@ function NonFunctional() {
         accessor: "commercial",
       },
     ],
-    []
+    [],
   );
 
   const data = React.useMemo(() => non_functional);

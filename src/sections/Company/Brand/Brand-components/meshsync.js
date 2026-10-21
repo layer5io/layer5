@@ -9,23 +9,23 @@ import MeshSyncLight from "../../../../assets/images/meshsync/meshsync-light.web
 import MeshSync from "../../../../assets/images/meshsync/meshsync.webp";
 
 const MeshSyncWrapper = styled.section`
-    .sub-project {
-        margin-top: -2rem;
-    }
+  .sub-project {
+    margin-top: -2rem;
+  }
 `;
 
 const MeshSyncBrand = () => {
   return (
     <MeshSyncWrapper>
       <div className="post-content">
-        <Row style={{
-          flexWrap: "wrap"
-        }} className="sub-project brand-section"
+        <Row
+          style={{
+            flexWrap: "wrap",
+          }}
+          className="sub-project brand-section"
         >
           <Col $xs={12} $sm={6}>
-            <h2 className="layerH3">
-              MeshSync
-            </h2>
+            <h2 className="layerH3">MeshSync</h2>
           </Col>
           <Col $xs={12} $sm={6} className="download-button">
             <a href="/brand/meshsync-brand-kit.zip">
@@ -45,14 +45,13 @@ const MeshSyncBrand = () => {
             </p>
           </Col>
         </Row>
-        <Row style={{
-          flexWrap: "wrap"
-        }}
+        <Row
+          style={{
+            flexWrap: "wrap",
+          }}
         >
           <Col>
-            <h2 className="layerH3 in">
-              Logos
-            </h2>
+            <h2 className="layerH3 in">Logos</h2>
           </Col>
           <SRLWrapper>
             <Row $Vcenter className="ImgDiv">
@@ -65,14 +64,13 @@ const MeshSyncBrand = () => {
             </Row>
           </SRLWrapper>
         </Row>
-        <Row style={{
-          flexWrap: "wrap"
-        }}
+        <Row
+          style={{
+            flexWrap: "wrap",
+          }}
         >
           <Col>
-            <h2 className="layerH3 in">
-              Colors
-            </h2>
+            <h2 className="layerH3 in">Colors</h2>
           </Col>
           <Col>
             <p>
@@ -81,15 +79,36 @@ const MeshSyncBrand = () => {
               monochrome tonal when using a color background.
             </p>
           </Col>
-          <Row style={{
-            flexWrap: "wrap"
-          }} className="color-code-wrapper"
+          <Row
+            style={{
+              flexWrap: "wrap",
+            }}
+            className="color-code-wrapper"
           >
             <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
-            <ColorBox name="Caribbean Green" R="0" G="211" B="169" colorCode="#00D3A9" />
-            <ColorBox name="Casper" R="177" G="182" B="184" colorCode="#B1B6B8" />
+            <ColorBox
+              name="Caribbean Green"
+              R="0"
+              G="211"
+              B="169"
+              colorCode="#00D3A9"
+            />
+            <ColorBox
+              name="Casper"
+              R="177"
+              G="182"
+              B="184"
+              colorCode="#B1B6B8"
+            />
             <div className="white-color-box">
-              <ColorBox name="White" R="255" G="255" B="255" dark colorCode="#FFFFFF" />
+              <ColorBox
+                name="White"
+                R="255"
+                G="255"
+                B="255"
+                dark
+                colorCode="#FFFFFF"
+              />
             </div>
           </Row>
         </Row>

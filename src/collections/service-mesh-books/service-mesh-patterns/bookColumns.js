@@ -3,42 +3,53 @@ import { Link } from "gatsby";
 import layer5_img from "./layer5-white.webp";
 
 const sortByLen = (rowA, rowB, id, desc) => {
-
   if (rowA.original.subheading !== "bold") {
     if (rowA.original.subsection === rowB.original.subsection) {
-
-      return desc ? rowA.original.service_mesh_pattern.localeCompare(rowB.original.service_mesh_pattern) : rowA.original.service_mesh_pattern.localeCompare(rowB.original.service_mesh_pattern) ;
-
+      return desc
+        ? rowA.original.service_mesh_pattern.localeCompare(
+            rowB.original.service_mesh_pattern,
+          )
+        : rowA.original.service_mesh_pattern.localeCompare(
+            rowB.original.service_mesh_pattern,
+          );
     }
   }
 };
 
 export const Columns = [
   {
-    Header: () => <span>Authors: <a href="https://twitter.com/lcalcote">Lee Calcote</a>, <a href="https://twitter.com/sheriffjackson">Nic Jackson</a></span>,
+    Header: () => (
+      <span>
+        Authors: <a href="https://twitter.com/lcalcote">Lee Calcote</a>,{" "}
+        <a href="https://twitter.com/sheriffjackson">Nic Jackson</a>
+      </span>
+    ),
     columns: [
       {
         Header: "Service Mesh Pattern",
         accessor: "service_mesh_pattern",
         sortType: sortByLen,
-      }
+      },
     ],
-    accessor: "service_mesh"
+    accessor: "service_mesh",
   },
   {
-    Header: () => <Link to="/"><img src={layer5_img} alt="layer5"/></Link>,
+    Header: () => (
+      <Link to="/">
+        <img src={layer5_img} alt="layer5" />
+      </Link>
+    ),
     columns: [
       {
         Header: "Category",
         accessor: "category",
         sortType: sortByLen,
-        Filter: SelectColumnFilter
-      }
+        Filter: SelectColumnFilter,
+      },
     ],
-    accessor: "category_column"
-  }
+    accessor: "category_column",
+  },
 ];
-
 
 // Filter for selecting category
 function SelectColumnFilter({
@@ -48,8 +59,8 @@ function SelectColumnFilter({
   // using the preFilteredRows
   const options = React.useMemo(() => {
     const option = new Set();
-    preFilteredRows.forEach(row => {
-      if (row.values[id] !== undefined){
+    preFilteredRows.forEach((row) => {
+      if (row.values[id] !== undefined) {
         option.add(row.values[id]);
       }
     });
@@ -60,7 +71,7 @@ function SelectColumnFilter({
   return (
     <select
       value={filterValue}
-      onChange={e => {
+      onChange={(e) => {
         setFilter(e.target.value || undefined);
       }}
     >

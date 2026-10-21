@@ -8,7 +8,6 @@ import SetupPreReq from "../../../components/Learn-Components/Setup-Pre-Requisit
 import { Link } from "gatsby";
 // import TOC from "../../../components/Learn-Components/TOC-Learning-Path";
 
-
 const CoursesList = ({ coursesData, learnPath }) => {
   return (
     <CoursesListWrapper>
@@ -17,9 +16,7 @@ const CoursesList = ({ coursesData, learnPath }) => {
           <HiOutlineChevronLeft /> <h3>Learning Paths</h3>
         </Link>
       </div>
-      <PageHeader
-        title={learnPath}
-      />
+      <PageHeader title={learnPath} />
       <Container $sm={12} $lg={9} $xl={9}>
         {/* <Row className="course-list">
           <Col $sm={0} $lg={3} $xl={3}>
@@ -32,8 +29,18 @@ const CoursesList = ({ coursesData, learnPath }) => {
             <div className="learning-path-cards">
               {coursesData.map((tutorial, index) => {
                 return (
-                  <Col $sm={12} key={tutorial.id} name={tutorial.frontmatter.courseTitle}>
-                    <Link to={tutorial.fields.slug.startsWith("/") ? tutorial.fields.slug : `/${tutorial.fields.slug}`}>
+                  <Col
+                    $sm={12}
+                    key={tutorial.id}
+                    name={tutorial.frontmatter.courseTitle}
+                  >
+                    <Link
+                      to={
+                        tutorial.fields.slug.startsWith("/")
+                          ? tutorial.fields.slug
+                          : `/${tutorial.fields.slug}`
+                      }
+                    >
                       <ContentCard chapterNum={index + 1} chapter={tutorial} />
                     </Link>
                   </Col>

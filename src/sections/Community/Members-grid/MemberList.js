@@ -38,7 +38,10 @@ const MembersList = (props) => {
       if (badge === "meshmates" && member.frontmatter.meshmate === "yes")
         isApplicable++;
 
-      if (badge === "community_managers" && member.frontmatter.community_manager === "yes")
+      if (
+        badge === "community_managers" &&
+        member.frontmatter.community_manager === "yes"
+      )
         isApplicable++;
 
       if (member.frontmatter.badges?.includes(badge)) isApplicable++;

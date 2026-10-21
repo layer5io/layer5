@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { ComponentsWrapper } from "./Component.style";
-import { CatalogCard, SistentThemeProviderWithoutBaseLine } from "@sistent/sistent";
+import {
+  CatalogCard,
+  SistentThemeProviderWithoutBaseLine,
+} from "@sistent/sistent";
 import axios from "axios";
 import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
 import Button from "../../../../reusecore/Button";
@@ -47,7 +50,9 @@ const CatalogGrid = ({ frontmatter }) => {
         </h1>
       </section>
       <section className="componentsSection">
-        <SistentThemeProviderWithoutBaseLine initialMode={isDark ? "dark" : "light"}>
+        <SistentThemeProviderWithoutBaseLine
+          initialMode={isDark ? "dark" : "light"}
+        >
           {designs?.patterns?.map((item, index) => {
             return (
               <CatalogCard
@@ -56,7 +61,7 @@ const CatalogGrid = ({ frontmatter }) => {
                   window.open(
                     `https://cloud.layer5.io/catalog/content/catalog/${item?.id}`,
                     "_blank",
-                    "noopener,noreferrer"
+                    "noopener,noreferrer",
                   );
                 }}
                 cardHeight="20rem"

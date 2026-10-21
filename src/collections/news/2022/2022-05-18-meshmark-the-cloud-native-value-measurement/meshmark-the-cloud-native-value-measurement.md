@@ -9,13 +9,14 @@ category: "Press Release"
 presskit: "/press/kits/MeshMark-press-kit.zip"
 description: "Layer5, a provider of cloud native management software, announced today the general availability of the Meshery Docker Extension. Complementing Docker Desktop's role as the go-to Kubernetes environment for cloud native developers, the Meshery Docker Extension provides easy access to the next layer of cloud native infrastructure. As an inaugural Docker Extensions Partner and a maker of industry-defining, cloud native software, Layer5’s integration of Meshery provides a visual pathway for existing Docker Compose applications to move into Kubernetes and onto any Cloud."
 tags:
- - Announcements
- - Meshery
- - Docker
+  - Announcements
+  - Meshery
+  - Docker
 type: News
 resource: false
 published: true
 ---
+
 import { Link } from "gatsby";
 import Formula from "./MeshMark-Formula.webp";
 import MeshMapMeshmark from "./meshmark-score.webp";
@@ -87,6 +88,7 @@ Learn how we distill a variety of microarchitecture performance signals and appl
 </div>
 
 #### Resources
+
 <ul>
 <li>Attend <Link to="/community/events/servicemeshcon-eu-2022">MeshMark: the Cloud Native Value Measurement</Link> presentation at ServiceMeshCon EU 2022.</li>
 <li>Attend <Link to="/community/events/kubecon-cloudnativecon-eu-virtual-2022">CNCF Tag Network and Service Mesh Working Group Deep Dive</Link> at KubeCon EU 2022. </li>
@@ -96,10 +98,11 @@ Learn how we distill a variety of microarchitecture performance signals and appl
 </ul>
 
 ##### About Layer5, Inc.
+
 Layer5 offers cloud native application management by harnessing the unique position service meshes have in changing how developers write applications, how operators run modern infrastructure and how product owners manage their service offerings. For more information, visit <Link to="/">layer5.io</Link>
 
-##### About Service Mesh Performance 
-Hosted within the CNCF, <Link to="/projects/cloud-native-performance">Service Mesh Performance</Link> is a vendor-neutral cloud native performance measurement standard. Based on SMP, MeshMark provides a universal performance index to gauge your cloud native infrastructure’s efficiency and value. Visit <a href="https://smp-spec.io/">smp-spec.io</a>
+##### About Service Mesh Performance
 
+Hosted within the CNCF, <Link to="/projects/cloud-native-performance">Service Mesh Performance</Link> is a vendor-neutral cloud native performance measurement standard. Based on SMP, MeshMark provides a universal performance index to gauge your cloud native infrastructure’s efficiency and value. Visit <a href="https://smp-spec.io/">smp-spec.io</a>
 
 </NewsWrapper>

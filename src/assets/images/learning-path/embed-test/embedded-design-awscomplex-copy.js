@@ -24,7 +24,7 @@ const data = {
                           id: "18e451c9-3700-453c-abbc-89f504499443",
                           source: "6acc7ded-abfe-4425-828f-01673da430bd",
                           subType: "Annotation",
-                          target: "ad1c7db7-68ba-4d50-b2de-c33036fc9368"
+                          target: "ad1c7db7-68ba-4d50-b2de-c33036fc9368",
                         },
                         style: {
                           "control-point-distances": null,
@@ -40,9 +40,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "ad1c7db7-68ba-4d50-b2de-c33036fc9368",
@@ -68,7 +68,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -77,7 +77,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -99,16 +99,19 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws athena-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws athena-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws athena-white.svg",
                     },
-                    position: { posX: 738.2114583703113, posY: 236.65332668256434 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 738.2114583703113,
+                      posY: 236.65332668256434,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS Athena"
-              }
-            }
-          }
+                type: "AWS Athena",
+              },
+            },
+          },
         },
         position: { x: 738.2114583703113, y: 236.65332668256434 },
         group: "nodes",
@@ -118,7 +121,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -142,7 +145,7 @@ const data = {
                           id: "18e451c9-3700-453c-abbc-89f504499443",
                           source: "6acc7ded-abfe-4425-828f-01673da430bd",
                           subType: "Annotation",
-                          target: "ad1c7db7-68ba-4d50-b2de-c33036fc9368"
+                          target: "ad1c7db7-68ba-4d50-b2de-c33036fc9368",
                         },
                         style: {
                           "control-point-distances": null,
@@ -158,9 +161,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     fieldRefData: {},
                     id: "6acc7ded-abfe-4425-828f-01673da430bd",
@@ -186,7 +189,7 @@ const data = {
                           "ui/public/static/img/meshmodels/aws/color/aws-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg"
+                          "ui/public/static/img/meshmodels/aws/white/aws-white.svg",
                       },
                       model: { version: "1.0.0" },
                       name: "aws",
@@ -195,7 +198,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "Automation & Configuration",
-                      version: "v1.0.0"
+                      version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -214,7 +217,7 @@ const data = {
                         "background-color": "#ed7100",
                         "border-color": "#ca6907",
                         "border-style": "dotted",
-                        "z-index": 17
+                        "z-index": 17,
                       },
                       styles: "",
                       subCategory: "",
@@ -222,16 +225,19 @@ const data = {
                         "ui/public/static/img/meshmodels/aws/color/aws lambda-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws/white/aws lambda-white.svg"
+                        "ui/public/static/img/meshmodels/aws/white/aws lambda-white.svg",
                     },
-                    position: { posX: 587.4324475314369, posY: 235.1751190101363 },
-                    whiteboardData: {}
-                  }
+                    position: {
+                      posX: 587.4324475314369,
+                      posY: 235.1751190101363,
+                    },
+                    whiteboardData: {},
+                  },
                 },
-                type: "AWS Lambda"
-              }
-            }
-          }
+                type: "AWS Lambda",
+              },
+            },
+          },
         },
         position: { x: 587.4324475314369, y: 235.1751190101363 },
         group: "nodes",
@@ -241,8 +247,8 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
-      }
+        classes: "",
+      },
     ],
     edges: [
       {
@@ -250,7 +256,7 @@ const data = {
           id: "18e451c9-3700-453c-abbc-89f504499443",
           source: "6acc7ded-abfe-4425-828f-01673da430bd",
           subType: "Annotation",
-          target: "ad1c7db7-68ba-4d50-b2de-c33036fc9368"
+          target: "ad1c7db7-68ba-4d50-b2de-c33036fc9368",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -260,9 +266,9 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
-      }
-    ]
+        classes: "",
+      },
+    ],
   },
   elementStyles: {
     "ad1c7db7-68ba-4d50-b2de-c33036fc9368": {
@@ -690,7 +696,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "6acc7ded-abfe-4425-828f-01673da430bd": {
       events: "yes",
@@ -1117,7 +1123,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "18e451c9-3700-453c-abbc-89f504499443": {
       events: "yes",
@@ -1542,9 +1548,9 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
-    }
-  }
+      paddingBottom: "0px",
+    },
+  },
 };
 
 const addStyles = () => {
@@ -1611,7 +1617,7 @@ const addStyles = () => {
 
 const CreateToolBar = () => {
   const cyContainer = document.getElementById(
-    "embedded-design-bcd06a28-d728-43c1-b479-a9831acb2a83"
+    "embedded-design-bcd06a28-d728-43c1-b479-a9831acb2a83",
   );
   const toolbar = document.createElement("div");
   toolbar.innerHTML = `
@@ -1664,7 +1670,7 @@ const CreateToolBar = () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const embedContainer = document.getElementById(
-    "embedded-design-bcd06a28-d728-43c1-b479-a9831acb2a83"
+    "embedded-design-bcd06a28-d728-43c1-b479-a9831acb2a83",
   );
   embedContainer.classList.add("embed-design-container");
   const cyContainer = document.createElement("div");
@@ -1675,7 +1681,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var cy = (window.cy = cytoscape({
     container: document.getElementById(
-      "embedded-design-bcd06a28-d728-43c1-b479-a9831acb2a83-cy"
+      "embedded-design-bcd06a28-d728-43c1-b479-a9831acb2a83-cy",
     ),
 
     autounselectify: true,
@@ -1684,13 +1690,13 @@ document.addEventListener("DOMContentLoaded", function () {
     minZoom: 0.5,
     maxZoom: 6.6,
     layout: {
-      name: "preset"
+      name: "preset",
     },
     elements: data.elements,
-    style: data.style
+    style: data.style,
   }));
 
-  Object.keys(data.elementStyles).forEach(id => {
+  Object.keys(data.elementStyles).forEach((id) => {
     cy.getElementById(id).style(data.elementStyles[id]);
   });
 

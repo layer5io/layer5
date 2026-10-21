@@ -11,8 +11,9 @@ const GcpDiagramPage = () => {
   const { isDark } = useStyledDarkMode();
   let data = {
     heading: "GCP Orchestration and Diagramming Software",
-    sub_heading: "Orchestrate and design Google Cloud Platform architecture diagrams easily with predefined templates designed for professionals.",
-    image: isDark ? GCPDiagramDark : GCPDiagramDark
+    sub_heading:
+      "Orchestrate and design Google Cloud Platform architecture diagrams easily with predefined templates designed for professionals.",
+    image: isDark ? GCPDiagramDark : GCPDiagramDark,
   };
   return (
     <>

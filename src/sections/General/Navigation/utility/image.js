@@ -1,7 +1,6 @@
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-
 const Image = ({ childImageSharp, extension, publicURL, alt, ...rest }) => {
   if (!childImageSharp && extension === "svg") {
     return (
@@ -10,7 +9,13 @@ const Image = ({ childImageSharp, extension, publicURL, alt, ...rest }) => {
       </div>
     );
   } else {
-    return <GatsbyImage image={childImageSharp.gatsbyImageData} {...rest} alt={alt} />;
+    return (
+      <GatsbyImage
+        image={childImageSharp.gatsbyImageData}
+        {...rest}
+        alt={alt}
+      />
+    );
   }
 };
 

@@ -89,7 +89,13 @@ const KanvasHeroSection = () => {
 
         <h2>Design Your Kubernetes &amp; Cloud Native Infrastructure</h2>
 
-        <p>Kanvas is a visual designer for Kubernetes and cloud-native applications. It allows developers and platform engineers to design, deploy, and manage Kubernetes-based infrastructure through an intuitive graphical interface, simplifying cloud-native architecture and accelerating configuration. </p>
+        <p>
+          Kanvas is a visual designer for Kubernetes and cloud-native
+          applications. It allows developers and platform engineers to design,
+          deploy, and manage Kubernetes-based infrastructure through an
+          intuitive graphical interface, simplifying cloud-native architecture
+          and accelerating configuration.{" "}
+        </p>
       </div>
       <div className="hero-image">
         <img

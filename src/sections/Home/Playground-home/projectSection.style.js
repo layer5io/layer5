@@ -5,7 +5,6 @@ const ProjectItemWrapper = styled.section`
   unicode-bidi: isolate;
   position: relative;
 
-  
   .lp-jumbotron-content {
     padding: 6rem 0;
   }
@@ -20,50 +19,53 @@ const ProjectItemWrapper = styled.section`
     background-color: #09090a;
     color: #fff;
   }
-  .lp-jumbotron-grid, .lp-jumbotron-slides-grid {
+  .lp-jumbotron-grid,
+  .lp-jumbotron-slides-grid {
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 12rem 0;
-}
+  }
 
-.lp-jumbotron-header {
+  .lp-jumbotron-header {
     padding: 0 10rem 0 0;
     font-size: 2.8rem;
     font-weight: 600;
     line-height: 110%;
-    letter-spacing: -.056rem;
-}
+    letter-spacing: -0.056rem;
+  }
   @media (min-width: 768px) {
     .lp-jumbotron-content {
-        padding: 16rem 0;
-      }
-      .lp-jumbotron-container {
-        padding: 0 20rem;
-      }
-      .lp-jumbotron-main {
-        padding: 0 19rem 0 16rem;
-        border-radius: 4rem;
+      padding: 16rem 0;
     }
-    .lp-jumbotron-grid, .lp-jumbotron-slides-grid {
-        display: grid;
-        grid-template-columns: 47.6rem 1fr;
-        align-items: center;
-        gap: 0 19rem;
-        min-height: 75rem;
+    .lp-jumbotron-container {
+      padding: 0 20rem;
     }
-    .lp-jumbotron-grid-col.-right, .lp-jumbotron-slides-grid-col.-right {
-        order: 2;
+    .lp-jumbotron-main {
+      padding: 0 19rem 0 16rem;
+      border-radius: 4rem;
     }
-    .lp-jumbotron-grid-col.-left, .lp-jumbotron-slides-grid-col.-left {
-        order: 1;
+    .lp-jumbotron-grid,
+    .lp-jumbotron-slides-grid {
+      display: grid;
+      grid-template-columns: 47.6rem 1fr;
+      align-items: center;
+      gap: 0 19rem;
+      min-height: 75rem;
+    }
+    .lp-jumbotron-grid-col.-right,
+    .lp-jumbotron-slides-grid-col.-right {
+      order: 2;
+    }
+    .lp-jumbotron-grid-col.-left,
+    .lp-jumbotron-slides-grid-col.-left {
+      order: 1;
     }
     .lp-jumbotron-header {
-        padding: 0 10rem 0 0;
-        font-size: 4.8rem;
-        font-weight: 500;
-        letter-spacing: -.096rem;
-        
+      padding: 0 10rem 0 0;
+      font-size: 4.8rem;
+      font-weight: 500;
+      letter-spacing: -0.096rem;
     }
   }
 `;

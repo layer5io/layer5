@@ -5,11 +5,16 @@ import Playground from "../../sections/Playground";
 const PlaygroundPage = () => {
   return (
     <>
-      <Playground/>
+      <Playground />
     </>
   );
 };
 export default PlaygroundPage;
 export const Head = () => {
-  return <SEO title="Cloud Native Playground" description="Meshery CNCF Playground - The cloud native playground for Kubernetes and all CNCF projects" />;
+  return (
+    <SEO
+      title="Cloud Native Playground"
+      description="Meshery CNCF Playground - The cloud native playground for Kubernetes and all CNCF projects"
+    />
+  );
 };

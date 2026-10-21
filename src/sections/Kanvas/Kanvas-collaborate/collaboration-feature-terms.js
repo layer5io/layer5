@@ -31,7 +31,7 @@ const CollaborationFeatureCreateWrapper = styled.div`
     height: 200px;
     width: 200px;
     color: ${(props) => props.theme.text};
-    
+
     margin-left: 45px;
     margin-top: 10px;
     font-family: "Qanelas Soft";
@@ -48,7 +48,7 @@ const HeaderWrapper = styled.div`
     font-weight: 800;
     font-size: 42px;
     line-height: 50px;
-    color: #00B39F;
+    color: #00b39f;
   }
   .create,
   .repeat,
@@ -64,7 +64,6 @@ const HeaderWrapper = styled.div`
   .iterate {
     display: ${(props) => (props.hoveredWord === "Iterate" ? "block" : "none")};
   }
-  
 `;
 
 const DescriptionWrapper = styled.div`
@@ -83,7 +82,7 @@ const CreateWrapper = styled.div`
   left: 50%;
   transform: translateX(-50%);
  
-  transform: translateX(-50%) scale(${({ hoverWord }) => hoverWord ? "0.8" : "1.2"});
+  transform: translateX(-50%) scale(${({ hoverWord }) => (hoverWord ? "0.8" : "1.2")});
   transition: all 0.3s ease-in-out;
   &:hover {
     cursor: pointer;
@@ -94,7 +93,7 @@ const IterateWrapper = styled.div`
   bottom: 0;
   left: 0;
   left: -45px;
-  transform: scale(${({ hoverWord }) => hoverWord ? "0.8" : "1.2"});
+  transform: scale(${({ hoverWord }) => (hoverWord ? "0.8" : "1.2")});
   transition: all 0.3s ease-in-out;
   &:hover {
     cursor: pointer;
@@ -106,7 +105,7 @@ const RepeatWrapper = styled.div`
   bottom: 0;
   right: 0;
   right: -50px;
-  transform: scale(${({ hoverWord }) => hoverWord ? "0.8" : "1.2"});
+  transform: scale(${({ hoverWord }) => (hoverWord ? "0.8" : "1.2")});
   transition: all 0.3s ease-in-out;
   &:hover {
     cursor: pointer;
@@ -155,13 +154,22 @@ const CollaborationFeatureCreate = () => {
         </DescriptionWrapper>
       </div>
       <div className="hero-triangle">
-        <CreateWrapper onMouseEnter={() => handleWordHover("Create")} hoverWord={hoverWord.create}>
+        <CreateWrapper
+          onMouseEnter={() => handleWordHover("Create")}
+          hoverWord={hoverWord.create}
+        >
           Create
         </CreateWrapper>
-        <IterateWrapper onMouseEnter={() => handleWordHover("Iterate")} hoverWord={hoverWord.iterate}>
+        <IterateWrapper
+          onMouseEnter={() => handleWordHover("Iterate")}
+          hoverWord={hoverWord.iterate}
+        >
           Iterate
         </IterateWrapper>
-        <RepeatWrapper onMouseEnter={() => handleWordHover("Repeat")} hoverWord={hoverWord.repeat}>
+        <RepeatWrapper
+          onMouseEnter={() => handleWordHover("Repeat")}
+          hoverWord={hoverWord.repeat}
+        >
           Repeat
         </RepeatWrapper>
       </div>

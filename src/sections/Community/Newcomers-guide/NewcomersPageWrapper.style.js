@@ -95,7 +95,7 @@ export const NewcomersGuideWrapper = styled.section`
           max-height: 22rem;
           width: 21.875rem;
           .layer5-contributor_svg__colorMode1 {
-            fill: ${props => props.theme.whiteToBlack};
+            fill: ${(props) => props.theme.whiteToBlack};
           }
         }
       
@@ -103,7 +103,7 @@ export const NewcomersGuideWrapper = styled.section`
       h3{
         display:inline;
         padding-bottom: 0.3rem;
-        border-bottom: 2px solid ${props => props.theme.primaryLightColorTwo};
+        border-bottom: 2px solid ${(props) => props.theme.primaryLightColorTwo};
       }
       li{
         margin-bottom: 1rem;
@@ -271,4 +271,3 @@ export const NewcomersGuideWrapper = styled.section`
   }  
   }
 `;
-

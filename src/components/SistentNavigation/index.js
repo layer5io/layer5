@@ -12,13 +12,13 @@ const TOC = () => {
   const [expand, setExpand] = useState(false);
   const location = useLocation();
   const [expandGettingStarted, setExpandGettingStarted] = useState(
-    location.pathname.includes("/getting-started")
+    location.pathname.includes("/getting-started"),
   );
   const [expandIdentity, setExpandIdentity] = useState(
-    location.pathname.includes("/identity")
+    location.pathname.includes("/identity"),
   );
   const [expandComponent, setExpandComponent] = useState(
-    location.pathname.includes("/components")
+    location.pathname.includes("/components"),
   );
 
   const tocListRef = useRef(null);
@@ -63,7 +63,7 @@ const TOC = () => {
     <TOCWrapper>
       <div className="go-back">
         <Link to="/projects/sistent">
-          <HiOutlineChevronLeft/>
+          <HiOutlineChevronLeft />
           <h4>Table of Contents</h4>
         </Link>
         <div className="toc-toggle-btn">
@@ -103,10 +103,11 @@ const TOC = () => {
                 onClick={() => setExpandGettingStarted((prev) => !prev)}
               >
                 Getting Started
-                {expandGettingStarted ?
-                  <IoIosArrowDown style={{ zIndex: 2 }} /> :
+                {expandGettingStarted ? (
+                  <IoIosArrowDown style={{ zIndex: 2 }} />
+                ) : (
                   <IoIosArrowForward style={{ zIndex: 2 }} />
-                }
+                )}
               </li>
               {expandGettingStarted && (
                 <div className="getting-started-sublinks">
@@ -114,7 +115,9 @@ const TOC = () => {
                     <Link
                       to="/projects/sistent/getting-started/about"
                       className={`toc-sub-heading toc-sub-inline getting-started-item ${
-                        location.pathname.includes("/projects/sistent/getting-started/about")
+                        location.pathname.includes(
+                          "/projects/sistent/getting-started/about",
+                        )
                           ? "active"
                           : ""
                       }`}
@@ -127,7 +130,9 @@ const TOC = () => {
                     <Link
                       to="/projects/sistent/getting-started/installation"
                       className={`toc-sub-heading toc-sub-inline getting-started-item ${
-                        location.pathname.includes("/projects/sistent/getting-started/installation")
+                        location.pathname.includes(
+                          "/projects/sistent/getting-started/installation",
+                        )
                           ? "active"
                           : ""
                       }`}
@@ -140,7 +145,9 @@ const TOC = () => {
                     <Link
                       to="/projects/sistent/getting-started/usage"
                       className={`toc-sub-heading toc-sub-inline getting-started-item ${
-                        location.pathname.includes("/projects/sistent/getting-started/usage")
+                        location.pathname.includes(
+                          "/projects/sistent/getting-started/usage",
+                        )
                           ? "active"
                           : ""
                       }`}
@@ -153,7 +160,9 @@ const TOC = () => {
                     <Link
                       to="/projects/sistent/getting-started/tokens"
                       className={`toc-sub-heading toc-sub-inline getting-started-item ${
-                        location.pathname.includes("/projects/sistent/getting-started/tokens")
+                        location.pathname.includes(
+                          "/projects/sistent/getting-started/tokens",
+                        )
                           ? "active"
                           : ""
                       }`}
@@ -174,10 +183,11 @@ const TOC = () => {
                 onClick={() => setExpandIdentity((prev) => !prev)}
               >
                 Identity
-                {expandIdentity ?
-                  <IoIosArrowDown style={{ zIndex: 2 }}/> :
-                  <IoIosArrowForward style={{ zIndex: 2 }}/>
-                }
+                {expandIdentity ? (
+                  <IoIosArrowDown style={{ zIndex: 2 }} />
+                ) : (
+                  <IoIosArrowForward style={{ zIndex: 2 }} />
+                )}
               </div>
               {expandIdentity && (
                 <ul className="identity-sublinks">
@@ -186,7 +196,7 @@ const TOC = () => {
                       to="/projects/sistent/identity/color"
                       className={`toc-sub-heading toc-sub-inline identity-item ${
                         location.pathname.includes(
-                          "/projects/sistent/identity/color"
+                          "/projects/sistent/identity/color",
                         )
                           ? "active"
                           : ""
@@ -201,7 +211,7 @@ const TOC = () => {
                       to="/projects/sistent/identity/spacing"
                       className={`toc-sub-heading toc-sub-inline identity-item ${
                         location.pathname.includes(
-                          "/projects/sistent/identity/spacing"
+                          "/projects/sistent/identity/spacing",
                         )
                           ? "active"
                           : ""
@@ -216,7 +226,7 @@ const TOC = () => {
                       to="/projects/sistent/identity/typography"
                       className={`toc-sub-heading toc-sub-inline identity-item ${
                         location.pathname.includes(
-                          "/projects/sistent/identity/typography"
+                          "/projects/sistent/identity/typography",
                         )
                           ? "active"
                           : ""
@@ -237,10 +247,11 @@ const TOC = () => {
                 onClick={() => setExpandComponent((prev) => !prev)}
               >
                 Components
-                {expandComponent ?
-                  <IoIosArrowDown style={{ zIndex: 2 }}/> :
-                  <IoIosArrowForward style={{ zIndex: 2 }}/>
-                }
+                {expandComponent ? (
+                  <IoIosArrowDown style={{ zIndex: 2 }} />
+                ) : (
+                  <IoIosArrowForward style={{ zIndex: 2 }} />
+                )}
               </div>
               {expandComponent && (
                 <ul className="components-sublinks">
@@ -249,7 +260,8 @@ const TOC = () => {
                       <Link
                         to={component.url}
                         className={`toc-sub-heading toc-sub-inline components-item ${
-                          location.pathname.split("/")[4] === component.url.split("/")[4]
+                          location.pathname.split("/")[4] ===
+                          component.url.split("/")[4]
                             ? "active"
                             : ""
                         }`}

@@ -1,10 +1,8 @@
-
 import React from "react";
 import { ContentRowWrapper, ColumnWrapper } from "./snapshot.style";
-import {  Col } from "../../reusecore/Layout";
+import { Col } from "../../reusecore/Layout";
 
 export const ColumnContainer = ({ children }) => {
-
   return (
     <ColumnWrapper lg={5} md={6}>
       {children}
@@ -12,14 +10,8 @@ export const ColumnContainer = ({ children }) => {
   );
 };
 
-
 export const ContentRow = ({ children }) => {
-
-  return (
-    <ContentRowWrapper>
-      {children}
-    </ContentRowWrapper>
-  );
+  return <ContentRowWrapper>{children}</ContentRowWrapper>;
 };
 
 export const TextColumn = ({ children }) => {

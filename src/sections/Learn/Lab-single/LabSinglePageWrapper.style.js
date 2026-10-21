@@ -12,9 +12,9 @@ const LabSinglePageWrapper = styled.div`
 		font-weight: 600;
 		a {
 			display: flex;
-		    color: ${props => props.theme.primaryColor};
+		    color: ${(props) => props.theme.primaryColor};
 		    &:hover{
-		        color: ${props => props.theme.linkColor};
+		        color: ${(props) => props.theme.linkColor};
 			}
 			
 			h4 {
@@ -59,7 +59,7 @@ const LabSinglePageWrapper = styled.div`
 		color: white;
 		a {
 			display: flex;
-		    color: ${props => props.theme.linkColor};
+		    color: ${(props) => props.theme.linkColor};
 		    &:hover{
 		        color: white;
 			}

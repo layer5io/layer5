@@ -32,16 +32,23 @@ const About = () => {
                 <div className="about-text text-one">
                   <h1>About Us</h1>
                   <p>
-                    At Layer5, we champion <i>developer-defined</i> infrastructure, giving engineers the power to reshape application delivery. We empower operators in reimagining how they manage modern infrastructure: collaboratively.
+                    At Layer5, we champion <i>developer-defined</i>{" "}
+                    infrastructure, giving engineers the power to reshape
+                    application delivery. We empower operators in reimagining
+                    how they manage modern infrastructure: collaboratively.
                   </p>
                   <div className="head-images-mobile">
                     <img src={FiveIcon} alt="About Layer5" />
                   </div>
                   <p className="section-title">We are enablers.</p>
                   <p>
-                    We believe innovation is furthered by collaboration and that collaboration is enabled by infrastructure. Layer5 encourages organizations to view their infrastructure through a fresh lens, constantly asking, "What
-                    have you done for me lately?" Our suite of multi-cluster, multi-cloud infrastructure management products, with open source projects at their core, form the bedrock of our offerings.
-
+                    We believe innovation is furthered by collaboration and that
+                    collaboration is enabled by infrastructure. Layer5
+                    encourages organizations to view their infrastructure
+                    through a fresh lens, constantly asking, "What have you done
+                    for me lately?" Our suite of multi-cluster, multi-cloud
+                    infrastructure management products, with open source
+                    projects at their core, form the bedrock of our offerings.
                     Our cloud native application and infrastructure management
                     software enables organizations to expect more from their
                     infrastructure.
@@ -81,7 +88,12 @@ const About = () => {
                   </div>
                   <p className="section-title">We are principled.</p>
                   <p>
-                    We are proud of the inclusive and kind community and work environment we have built. We support each other as we work to solve important problems. We take our work seriously, and execute with integrity and in alignment with our core principles of paying it forward, challenging ourselves and those around to be and to do better.
+                    We are proud of the inclusive and kind community and work
+                    environment we have built. We support each other as we work
+                    to solve important problems. We take our work seriously, and
+                    execute with integrity and in alignment with our core
+                    principles of paying it forward, challenging ourselves and
+                    those around to be and to do better.
                   </p>
                 </div>
               </Col>
@@ -99,7 +111,7 @@ const About = () => {
         </Row>
       </Container>
       <Statement />
-      <Container >
+      <Container>
         <Row $Vcenter={true} className="aboutus-title">
           <Col $xs={12} $sm={12}>
             <Row $Vcenter={true} className="row-img-cont-1">
@@ -141,7 +153,7 @@ const About = () => {
         </Row>
       </Container>
       <WhoWeAre />
-      <Container >
+      <Container>
         <Row $Vcenter={true}>
           <Col $xs={12} $sm={12}>
             <SectionTitle
@@ -233,7 +245,8 @@ const About = () => {
             >
               {" "}
               <Button
-                $primary                id="contact"
+                $primary
+                id="contact"
                 className="about-button"
                 $url="/company/contact"
                 title="Contact Us"

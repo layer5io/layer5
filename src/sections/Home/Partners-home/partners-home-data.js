@@ -11,7 +11,8 @@ export const partners = [
   },
   {
     name: "Exoscale",
-    imageLink: () => import("../../../assets/images/partners/exoscale_black.svg"),
+    imageLink: () =>
+      import("../../../assets/images/partners/exoscale_black.svg"),
     imageRoute: "/partners#exoscale",
     innerDivStyle: "partner__block__inner",
     imageHeight: 130,
@@ -27,7 +28,8 @@ export const partners = [
   },
   {
     name: "University of Texas at Austin partnership with Layer5",
-    imageLink: () => import("../../../assets/images/partners/ut-austin_black.svg"),
+    imageLink: () =>
+      import("../../../assets/images/partners/ut-austin_black.svg"),
     imageRoute: "/partners#utaustin",
     innerDivStyle: "partner__block__inner horizontal",
     imageHeight: 78,
@@ -43,15 +45,18 @@ export const partners = [
   },
   {
     name: "Hashicorp partnership with Layer5",
-    imageLink: () => import("../../../assets/images/partners/hashicorp_vertical_black.svg"),
-    imageRoute: "/company/news/layer5-and-hashicorp-launch-service-mesh-partnership",
+    imageLink: () =>
+      import("../../../assets/images/partners/hashicorp_vertical_black.svg"),
+    imageRoute:
+      "/company/news/layer5-and-hashicorp-launch-service-mesh-partnership",
     innerDivStyle: "partner__block__inner",
     imageHeight: 113,
     imageWidth: 113,
   },
   {
     name: "Hewlett-Packard Enterprise",
-    imageLink: () => import("../../../assets/images/partners/hpe_side_black.svg"),
+    imageLink: () =>
+      import("../../../assets/images/partners/hpe_side_black.svg"),
     imageRoute: "/partners#hpe",
     innerDivStyle: "partner__block__inner",
     imageHeight: 69,
@@ -67,7 +72,8 @@ export const partners = [
   },
   {
     name: "Rackspace Technology",
-    imageLink: () => import("../../../assets/images/partners/rackspace_black.svg"),
+    imageLink: () =>
+      import("../../../assets/images/partners/rackspace_black.svg"),
     imageRoute: "/partners#rackspace",
     innerDivStyle: "partner__block__inner",
     imageHeight: 124,
@@ -91,7 +97,8 @@ export const partners = [
   },
   {
     name: "CNCF",
-    imageLink: () => import("../../../assets/images/partners/cncf/horizontal/black/cncf-black.svg"),
+    imageLink: () =>
+      import("../../../assets/images/partners/cncf/horizontal/black/cncf-black.svg"),
     imageRoute: "/partners#cncf",
     innerDivStyle: "partner__block__inner ",
     imageHeight: 130,
@@ -99,7 +106,8 @@ export const partners = [
   },
   {
     name: "Metabit Trading",
-    imageLink: () => import("../../../assets/images/partners/metabit-trading-logo-gray.svg"),
+    imageLink: () =>
+      import("../../../assets/images/partners/metabit-trading-logo-gray.svg"),
     imageRoute: "/partners#metabittrading",
     innerDivStyle: "partner__block__inner ",
     imageHeight: 130,
@@ -107,7 +115,8 @@ export const partners = [
   },
   {
     name: "DigitalOcean",
-    imageLink: () => import("../../../assets/images/partners/digitalocean-black.svg"),
+    imageLink: () =>
+      import("../../../assets/images/partners/digitalocean-black.svg"),
     imageRoute: "/partners#digitalocean",
     innerDivStyle: "partner__block__inner ",
     imageHeight: 533,
@@ -115,7 +124,8 @@ export const partners = [
   },
   {
     name: "Citibank",
-    imageLink: () => import("../../../assets/images/partners/citibank_black.svg"),
+    imageLink: () =>
+      import("../../../assets/images/partners/citibank_black.svg"),
     imageRoute: "/partners#citibank",
     innerDivStyle: "partner__block__inner ",
     imageHeight: 130,
@@ -123,7 +133,8 @@ export const partners = [
   },
   {
     name: "Aya Pay",
-    imageLink: () => import("../../../assets/images/partners/aya_pay_black.svg"),
+    imageLink: () =>
+      import("../../../assets/images/partners/aya_pay_black.svg"),
     imageRoute: "/partners",
     innerDivStyle: "partner__block__inner ",
     imageHeight: 130,

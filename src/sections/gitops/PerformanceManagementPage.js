@@ -1,5 +1,11 @@
 import React from "react";
-import { PageWrapper, ContentContainerWrapper, HeroContentContainerWrapper, Heading, Description } from "./snapshot.style";
+import {
+  PageWrapper,
+  ContentContainerWrapper,
+  HeroContentContainerWrapper,
+  Heading,
+  Description,
+} from "./snapshot.style";
 import Cone from "../../assets/images/gitops/conelight.svg";
 import SMPconfig from "../../assets/images/gitops/SMPconfig.webp";
 import SMPTestconfig from "../../assets/images/gitops/SMPTestConfig.webp";
@@ -14,7 +20,6 @@ import { ReactComponent as GithubLogo } from "../../assets/images/socialIcons/gi
 const PerformanceManagementPage = () => {
   return (
     <PageWrapper>
-
       <div className="gradient-wrapper" />
       <div className="gradient-wrapper-2" />
 
@@ -23,9 +28,15 @@ const PerformanceManagementPage = () => {
           <TextColumn>
             <Heading>Performance regressions begone</Heading>
             <Description>
-              Test your Kubernetes cluster and infrastructure implementation for conformance with the SMI specification
+              Test your Kubernetes cluster and infrastructure implementation for
+              conformance with the SMI specification
             </Description>
-            <Button primary className="learn-more-btn" title="Go to Documentation" url="https://cloud.layer5.io/connect/github/new" />
+            <Button
+              primary
+              className="learn-more-btn"
+              title="Go to Documentation"
+              url="https://cloud.layer5.io/connect/github/new"
+            />
           </TextColumn>
           <ColumnContainer>
             <SmpLogo className="stack-logo" />
@@ -36,8 +47,14 @@ const PerformanceManagementPage = () => {
 
       <ContentContainerWrapper>
         <ContentRow>
-          <ColumnContainer >
-            <img src={SMPconfig} className="code-screenshot" alt="SMPconfig" width={605} height={740} />
+          <ColumnContainer>
+            <img
+              src={SMPconfig}
+              className="code-screenshot"
+              alt="SMPconfig"
+              width={605}
+              height={740}
+            />
           </ColumnContainer>
           <ColumnContainer>
             <Heading>A sample configuration of the action</Heading>
@@ -53,10 +70,21 @@ const PerformanceManagementPage = () => {
           </ColumnContainer>
 
           <TextColumn>
-            <Heading>Using Meshery's Service Mesh Performance GitHub Action</Heading>
-            <SquarePoint>The Service Mesh Performance GitHub Action is available in the GitHub Marketplace.</SquarePoint>
-            <SquarePoint>You can create your own performance profiles to run repeatable tests with Meshery.</SquarePoint>
-            <SquarePoint>You can configure this action to trigger with each of your releases, on every pull request.</SquarePoint>
+            <Heading>
+              Using Meshery's Service Mesh Performance GitHub Action
+            </Heading>
+            <SquarePoint>
+              The Service Mesh Performance GitHub Action is available in the
+              GitHub Marketplace.
+            </SquarePoint>
+            <SquarePoint>
+              You can create your own performance profiles to run repeatable
+              tests with Meshery.
+            </SquarePoint>
+            <SquarePoint>
+              You can configure this action to trigger with each of your
+              releases, on every pull request.
+            </SquarePoint>
           </TextColumn>
         </ContentRow>
       </ContentContainerWrapper>
@@ -64,33 +92,47 @@ const PerformanceManagementPage = () => {
       <ContentContainerWrapper>
         <ContentRow>
           <TextColumn>
-            <Heading>A sample configuration <br /> of the action</Heading>
+            <Heading>
+              A sample configuration <br /> of the action
+            </Heading>
           </TextColumn>
-          <ColumnContainer >
-            <img src={SMPconfig} className="code-screenshot" alt="SMPconfig" width={605} height={740} />
+          <ColumnContainer>
+            <img
+              src={SMPconfig}
+              className="code-screenshot"
+              alt="SMPconfig"
+              width={605}
+              height={740}
+            />
           </ColumnContainer>
         </ContentRow>
       </ContentContainerWrapper>
 
       <ContentContainerWrapper>
         <ContentRow>
-          <ColumnContainer >
-            <img src={SMPTestconfig} className="code-screenshot" alt="SMPTestconfig" width={605} height={740} />
+          <ColumnContainer>
+            <img
+              src={SMPTestconfig}
+              className="code-screenshot"
+              alt="SMPTestconfig"
+              width={605}
+              height={740}
+            />
           </ColumnContainer>
           <TextColumn>
-            <Heading>Define your test <br /> configuration in an SMP compatible configuration file</Heading>
+            <Heading>
+              Define your test <br /> configuration in an SMP compatible
+              configuration file
+            </Heading>
           </TextColumn>
         </ContentRow>
       </ContentContainerWrapper>
 
-
-      <div className="reviews-container" >
-        <Reviews/>
+      <div className="reviews-container">
+        <Reviews />
       </div>
-
     </PageWrapper>
   );
 };
 
 export default PerformanceManagementPage;
-

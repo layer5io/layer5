@@ -18,9 +18,8 @@ import { ReactComponent as SMI } from "../../../assets/images/service-mesh-icons
 const ProudMaintainers = () => {
   return (
     <ProjectItemWrapper>
-      <Container >
+      <Container>
         <Row className="project-title">
-
           <SectionTitle $UniWidth="100%">
             <h4>Proudly maintaining and contributing</h4>
             <h2>
@@ -29,9 +28,11 @@ const ProudMaintainers = () => {
           </SectionTitle>
 
           <p className="project-text">
-            At Layer5, we champion developer-defined infrastructure, giving engineers the power to reshape application delivery. We empower operators in reimagining how they manage modern infrastructure: collaboratively.
+            At Layer5, we champion developer-defined infrastructure, giving
+            engineers the power to reshape application delivery. We empower
+            operators in reimagining how they manage modern infrastructure:
+            collaboratively.
           </p>
-
         </Row>
       </Container>
       <Row className="row">

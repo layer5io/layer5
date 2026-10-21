@@ -10,13 +10,15 @@ import Book_Giveaway from "../../assets/images/learn/istio-book-giveaway.webp";
 import JoinCommunity from "../Community/Join-community";
 // import Button from "../../reusecore/Button";
 
-
 const LearnPathsPage = () => {
   const data = useStaticQuery(graphql`
     query allLearnPath {
       learnPaths: allMdx(
         filter: {
-          fields: { collection: { eq: "content-learn" }, pageType: { eq: "learnpath" } }
+          fields: {
+            collection: { eq: "content-learn" }
+            pageType: { eq: "learnpath" }
+          }
         }
       ) {
         nodes {
@@ -78,11 +80,14 @@ const LearnPathsPage = () => {
       }
       allCourses: allMdx(
         filter: {
-          fields: { collection: { eq: "content-learn" },pageType: { eq: "course" } }
+          fields: {
+            collection: { eq: "content-learn" }
+            pageType: { eq: "course" }
+          }
         }
       ) {
-        nodes{
-          fields{
+        nodes {
+          fields {
             learnpath
           }
         }
@@ -90,8 +95,8 @@ const LearnPathsPage = () => {
     }
   `);
 
-
-  const getCoursesOfaLearningPath = (learnpath) => data.allCourses.nodes.filter(obj => obj.fields.learnpath === learnpath);
+  const getCoursesOfaLearningPath = (learnpath) =>
+    data.allCourses.nodes.filter((obj) => obj.fields.learnpath === learnpath);
 
   return (
     <LearnLayer5GridWrapper>
@@ -104,7 +109,13 @@ const LearnPathsPage = () => {
         <Row className="learning-path-cards">
           {data.learnPaths.nodes.map((tutorial) => (
             <Col $sm={6} key={tutorial.id} style={{ marginTop: "2rem" }}>
-              <CardComponent tutorial={tutorial} path={`/${tutorial.fields.slug}`} courseCount={getCoursesOfaLearningPath(tutorial.fields.learnpath).length} />
+              <CardComponent
+                tutorial={tutorial}
+                path={`/${tutorial.fields.slug}`}
+                courseCount={
+                  getCoursesOfaLearningPath(tutorial.fields.learnpath).length
+                }
+              />
             </Col>
           ))}
         </Row>
@@ -119,11 +130,13 @@ const LearnPathsPage = () => {
         <JoinCommunity
           image={Book_Giveaway}
           header={"Don't Learn Alone"}
-          text={"Check Out the Layer5 community, join us on Slack and learn with the community"}
+          text={
+            "Check Out the Layer5 community, join us on Slack and learn with the community"
+          }
           btn_primary={true}
         />
       </Container>
-    </LearnLayer5GridWrapper >
+    </LearnLayer5GridWrapper>
   );
 };
 

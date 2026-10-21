@@ -16,7 +16,7 @@ const BannerSectionWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: ${(props) => props.theme.blackToWhite };
+  background: ${(props) => props.theme.blackToWhite};
   padding: 3rem 2rem;
   min-height: 30rem;
   overflow: hidden;
@@ -43,14 +43,15 @@ const BackgroundContainer = styled.div`
 
 const SpiralLayer = styled(SpiralBg)`
   position: absolute;
-  bottom: 0;                  
+  bottom: 0;
   left: 50%;
-  transform: translateX(-35%); 
-  width: 100vw;             
-  height: auto;               
+  transform: translateX(-35%);
+  width: 100vw;
+  height: auto;
   z-index: 0;
-  
-  filter: blur(5px) ${(props) => props.theme.siteLinkBrightness ? `brightness(${props.theme.siteLinkBrightness})` : ""};
+
+  filter: blur(5px)
+    ${(props) => (props.theme.siteLinkBrightness ? `brightness(${props.theme.siteLinkBrightness})` : "")};
   will-change: filter;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
@@ -67,7 +68,9 @@ const GradientLayer = styled.div`
   height: 100%;
   z-index: 1;
 
-  background: ${(props) => props.theme.bannerGradientBackgroundToWhite || `
+  background: ${(props) =>
+    props.theme.bannerGradientBackgroundToWhite ||
+    `
     linear-gradient(
       180deg,
       rgba(0, 13, 18, 0.5)   0%,
@@ -83,7 +86,6 @@ const GradientLayer = styled.div`
   will-change: filter;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 `;
-
 
 const Inner = styled.div`
   position: relative;
@@ -127,7 +129,7 @@ const MainHeading = styled.h1`
   font-weight: 600;
   font-size: 64px;
   line-height: 1.1;
-  color: ${({ theme }) => theme.whiteToBlack };
+  color: ${({ theme }) => theme.whiteToBlack};
   margin: 0;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
@@ -142,10 +144,10 @@ const SubHeading = styled.h2`
   font-family: "Open Sans", sans‐serif;
   font-weight: 600;
   font-size: 24px;
-  line-height: 36px;       
-  letter-spacing: 0;       
-  vertical-align: middle;   
-  color: ${({ theme }) => theme.whiteToBlack };
+  line-height: 36px;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: ${({ theme }) => theme.whiteToBlack};
   margin: 0;
   max-width: 500px;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -160,7 +162,6 @@ const SubHeading = styled.h2`
     }
   }
 `;
-
 
 const BannerGraphic = styled.div`
   flex: 1 1 50%;
@@ -224,10 +225,7 @@ const BannerSection = () => {
 
       <Inner>
         <BannerText>
-          <MainHeading>
-            Cost, incident and chaos
-            oversight
-          </MainHeading>
+          <MainHeading>Cost, incident and chaos oversight</MainHeading>
 
           <SubHeading>
             Save cost, reduce risk and manage

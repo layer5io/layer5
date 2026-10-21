@@ -46,7 +46,7 @@ export const selectStyles = {
 
     ":before": {
       borderRadius: 10,
-      content: "\" \"",
+      content: '" "',
       display: "block",
 
       marginRight: 12,
@@ -66,15 +66,15 @@ export const selectStyles = {
       ? data.value === "inactive"
         ? "rgba(171, 171, 171, 1)"
         : data.value === ""
-        ? "white"
-        : "rgba(11, 177, 158, 1)"
+          ? "white"
+          : "rgba(11, 177, 158, 1)"
       : isFocused
-      ? data.value === "inactive"
-        ? "rgba(171, 171, 171, 0.30)"
-        : data.value === ""
-        ? "white"
-        : "rgba(11, 177, 158, 0.30)"
-      : "white",
+        ? data.value === "inactive"
+          ? "rgba(171, 171, 171, 0.30)"
+          : data.value === ""
+            ? "white"
+            : "rgba(11, 177, 158, 0.30)"
+        : "white",
 
     color: isSelected ? "white" : "grey",
 

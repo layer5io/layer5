@@ -555,7 +555,8 @@ const NavigationWrap = styled.header`
       max-height: 400px;
       overflow-y: scroll;
       scrollbar-width: thin;
-      scrollbar-color: ${(props) => props.theme.scrollbarColor} ${(props) => props.theme.body};
+      scrollbar-color: ${(props) => props.theme.scrollbarColor}
+        ${(props) => props.theme.body};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .mobile-dropdown::-webkit-scrollbar {
@@ -656,8 +657,8 @@ const NavigationWrap = styled.header`
       padding-top: 0.4rem;
     }
     .mobile-nested-menu {
-       font-size: 1.1rem;
-       margin-left: 1rem;
+      font-size: 1.1rem;
+      margin-left: 1rem;
     }
   }
 
@@ -772,7 +773,7 @@ const NavigationWrap = styled.header`
   .dark-theme-toggle {
     /* margin-left: 2rem; */
     visibility: ${(props) =>
-  typeof props.theme.DarkTheme === "boolean" ? "visible" : "hidden"};
+      typeof props.theme.DarkTheme === "boolean" ? "visible" : "hidden"};
   }
 
   .toggle {
@@ -794,7 +795,8 @@ const NavigationWrap = styled.header`
     --offset-diagonal: calc(var(--size) * 0.45);
     transform: scale(0.75);
     color: #3c494f;
-    box-shadow: inset 0 0 0 var(--size),
+    box-shadow:
+      inset 0 0 0 var(--size),
       calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
       var(--offset-orthogonal) 0 0 var(--ray-size),
       0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),

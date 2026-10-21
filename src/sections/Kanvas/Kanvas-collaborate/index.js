@@ -6,7 +6,6 @@ import CollaborationFeatureWork from "./collaboration-feature-work";
 
 import Reviews from "../../Pricing/review-slider";
 
-
 const KanvasCollaborate = () => {
   return (
     <KanvasCollaborateWrapper>

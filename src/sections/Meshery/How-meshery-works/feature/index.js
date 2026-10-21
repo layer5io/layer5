@@ -19,10 +19,7 @@ export default function Feature({
     <FeatureWrapper>
       <div className="root" ref={ref}>
         <div className="icon">
-          {React.isValidElement(icon)
-            ? icon
-            : <img src={icon} alt="title"/>
-          }
+          {React.isValidElement(icon) ? icon : <img src={icon} alt="title" />}
         </div>
         <div className="text">
           <h4>{title}</h4>
@@ -30,6 +27,5 @@ export default function Feature({
         </div>
       </div>
     </FeatureWrapper>
-
   );
 }

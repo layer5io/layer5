@@ -12,8 +12,11 @@ const Kubernetes = () => {
 };
 export default Kubernetes;
 export const Head = () => {
-  return <SEO title="Kubernetes Architecture Diagram"
-    description="Create your own Kubernetes diagrams with Kanvas."
-    image="/images/meshery-logo-dark-text.webp"
-  />;
+  return (
+    <SEO
+      title="Kubernetes Architecture Diagram"
+      description="Create your own Kubernetes diagrams with Kanvas."
+      image="/images/meshery-logo-dark-text.webp"
+    />
+  );
 };

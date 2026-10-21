@@ -9,18 +9,17 @@ import MeshLogoLightTextSide from "../../../../assets/images/meshery/full-logo/m
 import MeshDarkText from "../../../../assets/images/meshery/text-only/meshery-light-text.svg";
 import MeshLogoOnly from "../../../../assets/images/meshery/icon-only/meshery-logo-dark.webp";
 
-
 const MesheryBrand = () => {
   return (
     <div className="post-content">
-      <Row style={{
-        flexWrap: "wrap"
-      }} className="brand-section"
+      <Row
+        style={{
+          flexWrap: "wrap",
+        }}
+        className="brand-section"
       >
         <Col $xs={12} $sm={6}>
-          <h1 className="layerH3">
-            Meshery
-          </h1>
+          <h1 className="layerH3">Meshery</h1>
         </Col>
         <Col $xs={12} $sm={6} className="download-button">
           <a href="/brand/meshery-brand-kit.zip">
@@ -33,21 +32,20 @@ const MesheryBrand = () => {
           <p>
             The Meshery mark includes the Meshery name & logo, and any word,
             phrase, image, or other designation that identifies the source or
-            origin of any Layer5 projects. Please don’t modify the marks or
-            use them in a confusing way, including suggesting sponsorship or
-            endorsement by Layer5, or in a way that confuses Layer5 with
-            another brand (including your own).
+            origin of any Layer5 projects. Please don’t modify the marks or use
+            them in a confusing way, including suggesting sponsorship or
+            endorsement by Layer5, or in a way that confuses Layer5 with another
+            brand (including your own).
           </p>
         </Col>
       </Row>
-      <Row style={{
-        flexWrap: "wrap"
-      }}
+      <Row
+        style={{
+          flexWrap: "wrap",
+        }}
       >
         <Col>
-          <h2 className="layerH3 in">
-            Logos
-          </h2>
+          <h2 className="layerH3 in">Logos</h2>
         </Col>
         <SRLWrapper>
           <Row $Vcenter className="ImgDiv">
@@ -55,7 +53,10 @@ const MesheryBrand = () => {
               <img src={MeshDarkText} alt="MesheryDark Logo" />
             </Col>
             <Col $xs={12} $sm={4}>
-              <img src={MeshLogoLightTextSide} alt="MesheryLightTextSide Logo" />
+              <img
+                src={MeshLogoLightTextSide}
+                alt="MesheryLightTextSide Logo"
+              />
             </Col>
           </Row>
           <Row $Vcenter className="ImgDiv">
@@ -68,26 +69,31 @@ const MesheryBrand = () => {
           </Row>
         </SRLWrapper>
       </Row>
-      <Row style={{
-        flexWrap: "wrap"
-      }}
+      <Row
+        style={{
+          flexWrap: "wrap",
+        }}
       >
         <Col>
-          <h2 className="layerH3 in">
-            Colors
-          </h2>
+          <h2 className="layerH3 in">Colors</h2>
         </Col>
         <Col>
           <p>
-            The Meshery color palette consists of the $primary Meshery color
-            and additional shades. The Meshery logo should be white or
-            monochrome tonal when using a color background.
+            The Meshery color palette consists of the $primary Meshery color and
+            additional shades. The Meshery logo should be white or monochrome
+            tonal when using a color background.
           </p>
         </Col>
         <Row className="color-code-wrapper">
           <ColorBox name="Charcoal" R="60" G="73" B="79" colorCode="#3C494F" />
           <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
-          <ColorBox name="Caribbean Green" R="0" G="211" B="169" colorCode="#00D3A9" />
+          <ColorBox
+            name="Caribbean Green"
+            R="0"
+            G="211"
+            B="169"
+            colorCode="#00D3A9"
+          />
         </Row>
       </Row>
     </div>

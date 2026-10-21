@@ -20,20 +20,20 @@ const data = {
                         name: "ambassador-admin",
                         port: 8877,
                         protocol: "TCP",
-                        "target Port": "admin"
+                        "target Port": "admin",
                       },
                       {
                         name: "ambassador-snapshot",
                         port: 8005,
                         protocol: "TCP",
-                        "target Port": 8005
-                      }
+                        "target Port": 8005,
+                      },
                     ],
                     selector: {
                       "app.kubernetes.io/instance": "edge-stack",
-                      "app.kubernetes.io/name": "edge-stack"
+                      "app.kubernetes.io/name": "edge-stack",
                     },
-                    type: "ClusterIP"
+                    type: "ClusterIP",
                   },
                   name: "edge-stack-admin",
                   namespace: "ambassador",
@@ -43,10 +43,11 @@ const data = {
                     "app.kubernetes.io/name": "edge-stack",
                     "app.kubernetes.io/part-of": "edge-stack",
                     product: "aes",
-                    service: "ambassador-admin"
+                    service: "ambassador-admin",
                   },
                   annotations: {
-                    "a8r.io/bugs": "https://github.com/datawire/ambassador/issues",
+                    "a8r.io/bugs":
+                      "https://github.com/datawire/ambassador/issues",
                     "a8r.io/chat": "http://a8r.io/Slack",
                     "a8r.io/dependencies": "None",
                     "a8r.io/description":
@@ -55,8 +56,9 @@ const data = {
                       "https://www.getambassador.io/docs/edge-stack/latest/",
                     "a8r.io/owner": "Ambassador Labs",
                     "a8r.io/repository": "github.com/datawire/ambassador",
-                    "a8r.io/support": "https://www.getambassador.io/about-us/support/"
-                  }
+                    "a8r.io/support":
+                      "https://www.getambassador.io/about-us/support/",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -67,7 +69,7 @@ const data = {
                           metadata: { port: 8877, protocol: "TCP" },
                           source: "ea26ce7b-d71f-44bf-b123-56ec6c59d5d4",
                           subType: "Network",
-                          target: "7820034f-bd39-454e-b215-5bb8af95c405"
+                          target: "7820034f-bd39-454e-b215-5bb8af95c405",
                         },
                         style: {
                           "control-point-distances": null,
@@ -83,9 +85,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     id: "ea26ce7b-d71f-44bf-b123-56ec6c59d5d4",
                     "meshmodel-metadata": {
@@ -112,7 +114,7 @@ const data = {
                         width: 20,
                         x: "10px",
                         y: "12px",
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
                       styles:
                         '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
@@ -121,17 +123,20 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg",
                     },
-                    position: { posX: -198.84684251594268, posY: -93.93873708737009 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -198.84684251594268,
+                      posY: -93.93873708737009,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Service"
-              }
-            }
+                type: "Service",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: -198.84684251594268, y: -93.93873708737009 },
         group: "nodes",
@@ -141,7 +146,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -161,8 +166,8 @@ const data = {
                     selector: {
                       "match Labels": {
                         "app.kubernetes.io/instance": "edge-stack",
-                        "app.kubernetes.io/name": "edge-stack-agent"
-                      }
+                        "app.kubernetes.io/name": "edge-stack-agent",
+                      },
                     },
                     template: {
                       metadata: {
@@ -171,8 +176,8 @@ const data = {
                           "app.kubernetes.io/managed-by": "getambassador.io",
                           "app.kubernetes.io/name": "edge-stack-agent",
                           "app.kubernetes.io/part-of": "edge-stack",
-                          product: "aes"
-                        }
+                          product: "aes",
+                        },
                       },
                       spec: {
                         containers: [
@@ -181,38 +186,44 @@ const data = {
                               {
                                 name: "AGENT_NAMESPACE",
                                 "value From": {
-                                  "field Ref": { "field Path": "metadata.namespace" }
-                                }
+                                  "field Ref": {
+                                    "field Path": "metadata.namespace",
+                                  },
+                                },
                               },
                               {
                                 name: "AGENT_CONFIG_RESOURCE_NAME",
-                                value: "edge-stack-agent-cloud-token"
+                                value: "edge-stack-agent-cloud-token",
                               },
                               {
                                 name: "RPC_CONNECTION_ADDRESS",
-                                value: "https://app.getambassador.io/"
+                                value: "https://app.getambassador.io/",
                               },
                               {
                                 name: "AES_SNAPSHOT_URL",
                                 value:
-                                  "http://edge-stack-admin.ambassador:8005/snapshot-external"
+                                  "http://edge-stack-admin.ambassador:8005/snapshot-external",
                               },
-                              { name: "AES_REPORT_DIAGNOSTICS_TO_CLOUD", value: "true" },
+                              {
+                                name: "AES_REPORT_DIAGNOSTICS_TO_CLOUD",
+                                value: "true",
+                              },
                               {
                                 name: "AES_DIAGNOSTICS_URL",
                                 value:
-                                  "http://edge-stack-admin.ambassador:8877/ambassador/v0/diag/?json=true"
-                              }
+                                  "http://edge-stack-admin.ambassador:8877/ambassador/v0/diag/?json=true",
+                              },
                             ],
-                            image: "docker.io/ambassador/ambassador-agent:1.0.14",
+                            image:
+                              "docker.io/ambassador/ambassador-agent:1.0.14",
                             "image Pull Policy": "IfNotPresent",
                             name: "agent",
-                            ports: [{ "container Port": 8080, name: "http" }]
-                          }
+                            ports: [{ "container Port": 8080, name: "http" }],
+                          },
                         ],
-                        "service Account Name": "edge-stack-agent"
-                      }
-                    }
+                        "service Account Name": "edge-stack-agent",
+                      },
+                    },
                   },
                   name: "edge-stack-agent",
                   namespace: "ambassador",
@@ -221,8 +232,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "getambassador.io",
                     "app.kubernetes.io/name": "edge-stack-agent",
                     "app.kubernetes.io/part-of": "edge-stack",
-                    product: "aes"
-                  }
+                    product: "aes",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -233,7 +244,7 @@ const data = {
                           metadata: { port: 80, protocol: "TCP" },
                           source: "85d2f80c-eb5a-489e-89d7-5ad7c14142e1",
                           subType: "Network",
-                          target: "ae37bb96-b4e6-4b4f-9e13-ac47309cf6eb"
+                          target: "ae37bb96-b4e6-4b4f-9e13-ac47309cf6eb",
                         },
                         style: {
                           "control-point-distances": null,
@@ -249,9 +260,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     id: "ae37bb96-b4e6-4b4f-9e13-ac47309cf6eb",
                     "meshmodel-metadata": {
@@ -274,7 +285,7 @@ const data = {
                       styleOverrides: {
                         "background-opacity": 0.5,
                         "border-width": 2,
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
                       styles: '{"border-width":2,"background-opacity":0.5}',
                       subCategory: "",
@@ -283,17 +294,17 @@ const data = {
                       svgComplete:
                         "ui/public/static/img/meshmodels/kubernetes/complete/deployment-complete.svg",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg",
                     },
                     position: { posX: -210, posY: -206.5 },
-                    whiteboardData: { style: {} }
-                  }
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Deployment"
-              }
-            }
+                type: "Deployment",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: -214, y: -201.5 },
         group: "nodes",
@@ -303,7 +314,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -324,12 +335,15 @@ const data = {
                         "services",
                         "secrets",
                         "configmaps",
-                        "endpoints"
+                        "endpoints",
                       ],
-                      verbs: ["get", "list", "watch"]
+                      verbs: ["get", "list", "watch"],
                     },
                     {
-                      "api Groups": ["getambassador.io", "gateway.getambassador.io"],
+                      "api Groups": [
+                        "getambassador.io",
+                        "gateway.getambassador.io",
+                      ],
                       resources: ["*"],
                       verbs: [
                         "get",
@@ -338,39 +352,42 @@ const data = {
                         "update",
                         "patch",
                         "create",
-                        "delete"
-                      ]
+                        "delete",
+                      ],
                     },
                     {
                       "api Groups": ["getambassador.io"],
                       resources: ["mappings/status"],
-                      verbs: ["update"]
+                      verbs: ["update"],
                     },
                     {
                       "api Groups": ["networking.internal.knative.dev"],
                       resources: ["clusteringresses", "ingresses"],
-                      verbs: ["get", "list", "watch"]
+                      verbs: ["get", "list", "watch"],
                     },
                     {
                       "api Groups": ["networking.x-k8s.io"],
                       resources: ["*"],
-                      verbs: ["get", "list", "watch"]
+                      verbs: ["get", "list", "watch"],
                     },
                     {
                       "api Groups": ["networking.internal.knative.dev"],
-                      resources: ["ingresses/status", "clusteringresses/status"],
-                      verbs: ["update"]
+                      resources: [
+                        "ingresses/status",
+                        "clusteringresses/status",
+                      ],
+                      verbs: ["update"],
                     },
                     {
                       "api Groups": ["extensions", "networking.k8s.io"],
                       resources: ["ingresses", "ingressclasses"],
-                      verbs: ["get", "list", "watch"]
+                      verbs: ["get", "list", "watch"],
                     },
                     {
                       "api Groups": ["extensions", "networking.k8s.io"],
                       resources: ["ingresses/status"],
-                      verbs: ["update"]
-                    }
+                      verbs: ["update"],
+                    },
                   ],
                   name: "edge-stack-watch",
                   labels: {
@@ -379,8 +396,8 @@ const data = {
                     "app.kubernetes.io/name": "edge-stack",
                     "app.kubernetes.io/part-of": "edge-stack",
                     product: "aes",
-                    "rbac.getambassador.io/role-group": "edge-stack"
-                  }
+                    "rbac.getambassador.io/role-group": "edge-stack",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -407,25 +424,29 @@ const data = {
                         width: "22px",
                         x: "8.5",
                         y: "7.5",
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
-                      styles: '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
+                      styles:
+                        '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg",
                     },
-                    position: { posX: -196.9139109451896, posY: 170.61594866162295 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -196.9139109451896,
+                      posY: 170.61594866162295,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ClusterRole"
-              }
-            }
+                type: "ClusterRole",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: -196.9139109451896, y: 170.61594866162295 },
         group: "nodes",
@@ -435,7 +456,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -450,7 +471,9 @@ const data = {
                 namespace: "ambassador",
                 settings: {
                   spec: {
-                    config: { diagnostics: { allow_non_local: true, enabled: false } }
+                    config: {
+                      diagnostics: { allow_non_local: true, enabled: false },
+                    },
                   },
                   name: "ambassador",
                   namespace: "ambassador",
@@ -460,8 +483,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "getambassador.io",
                     "app.kubernetes.io/name": "edge-stack",
                     "app.kubernetes.io/part-of": "edge-stack",
-                    product: "aes"
-                  }
+                    product: "aes",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -485,17 +508,20 @@ const data = {
                         "ui/public/static/img/meshmodels/contrail-analytics/color/advancedcronjob-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws-node-termination-handler-2/white/terminator-white.svg"
+                        "ui/public/static/img/meshmodels/aws-node-termination-handler-2/white/terminator-white.svg",
                     },
-                    position: { posX: 33.76088445937175, posY: 194.02855363265516 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 33.76088445937175,
+                      posY: 194.02855363265516,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Module"
-              }
-            }
+                type: "Module",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: 33.76088445937175, y: 194.02855363265516 },
         group: "nodes",
@@ -505,7 +531,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -523,13 +549,20 @@ const data = {
                     {
                       "api Groups": [""],
                       resources: ["configmaps"],
-                      verbs: ["get", "list", "watch"]
+                      verbs: ["get", "list", "watch"],
                     },
                     {
                       "api Groups": [""],
                       resources: ["secrets"],
-                      verbs: ["get", "list", "watch", "create", "delete", "patch"]
-                    }
+                      verbs: [
+                        "get",
+                        "list",
+                        "watch",
+                        "create",
+                        "delete",
+                        "patch",
+                      ],
+                    },
                   ],
                   name: "edge-stack-agent-config",
                   namespace: "ambassador",
@@ -538,8 +571,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "getambassador.io",
                     "app.kubernetes.io/name": "edge-stack-agent",
                     "app.kubernetes.io/part-of": "edge-stack",
-                    product: "aes"
-                  }
+                    product: "aes",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -547,10 +580,12 @@ const data = {
                       {
                         data: {
                           id: "b512a101-6b54-4aa5-b8ce-66fc772bb362",
-                          metadata: { binded_by: "b2f3d75e-28fe-4359-b0b2-2287ced3d53c" },
+                          metadata: {
+                            binded_by: "b2f3d75e-28fe-4359-b0b2-2287ced3d53c",
+                          },
                           source: "03a72188-6643-4314-8c2a-0da6f6135675",
                           subType: "Permission",
-                          target: "e1a6aac1-3112-420f-b646-09dd7f71b29f"
+                          target: "e1a6aac1-3112-420f-b646-09dd7f71b29f",
                         },
                         style: {
                           "control-point-distances": null,
@@ -566,9 +601,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     id: "03a72188-6643-4314-8c2a-0da6f6135675",
                     "meshmodel-metadata": {
@@ -593,7 +628,7 @@ const data = {
                         width: "22px",
                         x: "8.5",
                         y: "7.5",
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
                       styles:
                         '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5","z-index":4}',
@@ -602,17 +637,20 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/role-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/role-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/role-white.svg",
                     },
-                    position: { posX: 295.4825008918432, posY: -52.09402193159565 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 295.4825008918432,
+                      posY: -52.09402193159565,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Role"
-              }
-            }
+                type: "Role",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: 295.4825008918432, y: -52.09402193159565 },
         group: "nodes",
@@ -622,7 +660,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -639,10 +677,11 @@ const data = {
                     "cluster Role Selectors": [
                       {
                         "match Labels": {
-                          "rbac.getambassador.io/role-group": "edge-stack-agent"
-                        }
-                      }
-                    ]
+                          "rbac.getambassador.io/role-group":
+                            "edge-stack-agent",
+                        },
+                      },
+                    ],
                   },
                   rules: [],
                   name: "edge-stack-agent",
@@ -651,8 +690,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "getambassador.io",
                     "app.kubernetes.io/name": "edge-stack-agent",
                     "app.kubernetes.io/part-of": "edge-stack",
-                    product: "aes"
-                  }
+                    product: "aes",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -660,10 +699,12 @@ const data = {
                       {
                         data: {
                           id: "6c978563-edd7-4c16-a09d-a1c63857df56",
-                          metadata: { binded_by: "52adbc0e-45f3-444d-80c5-2214aa2c7efc" },
+                          metadata: {
+                            binded_by: "52adbc0e-45f3-444d-80c5-2214aa2c7efc",
+                          },
                           source: "2a269e24-8a45-4b31-b1bd-bc3ab24943da",
                           subType: "Permission",
-                          target: "e1a6aac1-3112-420f-b646-09dd7f71b29f"
+                          target: "e1a6aac1-3112-420f-b646-09dd7f71b29f",
                         },
                         style: {
                           "control-point-distances": null,
@@ -679,9 +720,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     id: "2a269e24-8a45-4b31-b1bd-bc3ab24943da",
                     "meshmodel-metadata": {
@@ -705,25 +746,29 @@ const data = {
                         width: "22px",
                         x: "8.5",
                         y: "7.5",
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
-                      styles: '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
+                      styles:
+                        '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg",
                     },
-                    position: { posX: -109.42295929895602, posY: -94.20208496513351 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -109.42295929895602,
+                      posY: -94.20208496513351,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ClusterRole"
-              }
-            }
+                type: "ClusterRole",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: -109.42295929895602, y: -94.20208496513351 },
         group: "nodes",
@@ -733,7 +778,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -751,11 +796,11 @@ const data = {
                     hostname: "*",
                     prefix: "/documentation/",
                     rewrite: "/docs/",
-                    service: "127.0.0.1:8500"
+                    service: "127.0.0.1:8500",
                   },
                   name: "edge-stack-devportal",
                   namespace: "ambassador",
-                  labels: { product: "aes" }
+                  labels: { product: "aes" },
                 },
                 traits: {
                   meshmap: {
@@ -779,17 +824,20 @@ const data = {
                         "ui/public/static/img/meshmodels/contrail-analytics/color/advancedcronjob-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws-node-termination-handler-2/white/terminator-white.svg"
+                        "ui/public/static/img/meshmodels/aws-node-termination-handler-2/white/terminator-white.svg",
                     },
-                    position: { posX: -81.65617922147881, posY: 103.45456789446546 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -81.65617922147881,
+                      posY: 103.45456789446546,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Mapping"
-              }
-            }
+                type: "Mapping",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: -81.65617922147881, y: 103.45456789446546 },
         group: "nodes",
@@ -799,7 +847,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -816,8 +864,8 @@ const data = {
                     {
                       "api Groups": [""],
                       resources: ["pods"],
-                      verbs: ["get", "list", "watch"]
-                    }
+                      verbs: ["get", "list", "watch"],
+                    },
                   ],
                   name: "edge-stack-agent-pods",
                   labels: {
@@ -826,8 +874,8 @@ const data = {
                     "app.kubernetes.io/name": "edge-stack-agent",
                     "app.kubernetes.io/part-of": "edge-stack",
                     product: "aes",
-                    "rbac.getambassador.io/role-group": "edge-stack-agent"
-                  }
+                    "rbac.getambassador.io/role-group": "edge-stack-agent",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -854,25 +902,29 @@ const data = {
                         width: "22px",
                         x: "8.5",
                         y: "7.5",
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
-                      styles: '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
+                      styles:
+                        '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg",
                     },
-                    position: { posX: -309.5739517738905, posY: 169.12258581628592 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -309.5739517738905,
+                      posY: 169.12258581628592,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ClusterRole"
-              }
-            }
+                type: "ClusterRole",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: -309.5739517738905, y: 169.12258581628592 },
         group: "nodes",
@@ -882,7 +934,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -899,14 +951,14 @@ const data = {
                   "role Ref": {
                     "api Group": "rbac.authorization.k8s.io",
                     kind: "Role",
-                    name: "edge-stack-apiext"
+                    name: "edge-stack-apiext",
                   },
                   subjects: [
                     {
                       kind: "ServiceAccount",
                       name: "edge-stack",
-                      namespace: "ambassador"
-                    }
+                      namespace: "ambassador",
+                    },
                   ],
                   name: "edge-stack-apiext",
                   namespace: "emissary-system",
@@ -915,8 +967,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "getambassador.io",
                     "app.kubernetes.io/name": "edge-stack",
                     "app.kubernetes.io/part-of": "edge-stack",
-                    product: "aes"
-                  }
+                    product: "aes",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -944,7 +996,7 @@ const data = {
                         width: "25px",
                         x: "7",
                         y: "7",
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
                       styles:
                         '{"height":"25px","width":"25px","x":"7", "y":"7","z-index":4}',
@@ -953,19 +1005,22 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/rolebinding-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/rolebinding-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/rolebinding-white.svg",
                     },
-                    position: { posX: 346.8727982756046, posY: 23.40760899878753 },
+                    position: {
+                      posX: 346.8727982756046,
+                      posY: 23.40760899878753,
+                    },
                     whiteboardData: {
-                      style: { height: 10.5, width: 10.5, "z-index": 1000 }
-                    }
-                  }
+                      style: { height: 10.5, width: 10.5, "z-index": 1000 },
+                    },
+                  },
                 },
-                type: "RoleBinding"
-              }
-            }
+                type: "RoleBinding",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: 347.6227982756046, y: 23.404392608812962 },
         group: "nodes",
@@ -975,7 +1030,7 @@ const data = {
         locked: false,
         grabbable: false,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -992,7 +1047,7 @@ const data = {
                   data: { "license-key": "" },
                   type: "Opaque",
                   name: "edge-stack",
-                  namespace: "ambassador"
+                  namespace: "ambassador",
                 },
                 traits: {
                   meshmap: {
@@ -1021,7 +1076,7 @@ const data = {
                         height: 32,
                         padding: 1,
                         width: 32,
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
                       styles:
                         '{"height":32,"width":32,"background-clip":"node","background-image-containment":"over","padding":1,"background-opacity":"0"}',
@@ -1031,17 +1086,20 @@ const data = {
                       svgComplete:
                         "ui/public/static/img/meshmodels/kubernetes/complete/secret-complete.svg",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/secret-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/secret-white.svg",
                     },
-                    position: { posX: 191.18067179070817, posY: -209.99321184416115 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 191.18067179070817,
+                      posY: -209.99321184416115,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Secret"
-              }
-            }
+                type: "Secret",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: 191.18067179070817, y: -209.99321184416115 },
         group: "nodes",
@@ -1051,7 +1109,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1068,11 +1126,11 @@ const data = {
                   spec: {
                     ambassador_id: [],
                     protocol_version: "v3",
-                    service: "127.0.0.1:8500"
+                    service: "127.0.0.1:8500",
                   },
                   name: "edge-stack-ratelimit",
                   namespace: "ambassador",
-                  labels: { product: "aes" }
+                  labels: { product: "aes" },
                 },
                 traits: {
                   meshmap: {
@@ -1096,17 +1154,20 @@ const data = {
                         "ui/public/static/img/meshmodels/contrail-analytics/color/advancedcronjob-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws-node-termination-handler-2/white/terminator-white.svg"
+                        "ui/public/static/img/meshmodels/aws-node-termination-handler-2/white/terminator-white.svg",
                     },
-                    position: { posX: 29.745396893574124, posY: 103.43659795661924 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 29.745396893574124,
+                      posY: 103.43659795661924,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "RateLimitService"
-              }
-            }
+                type: "RateLimitService",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: 29.745396893574124, y: 103.43659795661924 },
         group: "nodes",
@@ -1116,7 +1177,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1134,11 +1195,11 @@ const data = {
                     hostname: "*",
                     prefix: "/openapi/",
                     rewrite: "",
-                    service: "127.0.0.1:8500"
+                    service: "127.0.0.1:8500",
                   },
                   name: "edge-stack-devportal-api",
                   namespace: "ambassador",
-                  labels: { product: "aes" }
+                  labels: { product: "aes" },
                 },
                 traits: {
                   meshmap: {
@@ -1162,17 +1223,20 @@ const data = {
                         "ui/public/static/img/meshmodels/contrail-analytics/color/advancedcronjob-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws-node-termination-handler-2/white/terminator-white.svg"
+                        "ui/public/static/img/meshmodels/aws-node-termination-handler-2/white/terminator-white.svg",
                     },
-                    position: { posX: -83.61922835879767, posY: 30.872046365596436 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -83.61922835879767,
+                      posY: 30.872046365596436,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Mapping"
-              }
-            }
+                type: "Mapping",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: -83.61922835879767, y: 30.872046365596436 },
         group: "nodes",
@@ -1182,7 +1246,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1203,8 +1267,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "getambassador.io",
                     "app.kubernetes.io/name": "edge-stack",
                     "app.kubernetes.io/part-of": "edge-stack",
-                    product: "aes"
-                  }
+                    product: "aes",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1212,10 +1276,12 @@ const data = {
                       {
                         data: {
                           id: "a5057394-11fe-4054-be97-c49522ca222b",
-                          metadata: { binded_by: "6f0697b8-61db-4db7-a1be-e3442b6513a7" },
+                          metadata: {
+                            binded_by: "6f0697b8-61db-4db7-a1be-e3442b6513a7",
+                          },
                           source: "2606ffde-8e48-4dc3-832a-00f8d2e8ba4a",
                           subType: "Permission",
-                          target: "72d5f647-0743-4556-b67b-977a43fd9c16"
+                          target: "72d5f647-0743-4556-b67b-977a43fd9c16",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1231,16 +1297,18 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
                           id: "41b8e93f-9c0b-4d35-8c44-dbc7712c34bf",
-                          metadata: { binded_by: "cca9bba7-04c3-4860-8d69-4cc317d31bd2" },
+                          metadata: {
+                            binded_by: "cca9bba7-04c3-4860-8d69-4cc317d31bd2",
+                          },
                           source: "57c11961-03d6-4931-83e8-4aecf19c5d07",
                           subType: "Permission",
-                          target: "72d5f647-0743-4556-b67b-977a43fd9c16"
+                          target: "72d5f647-0743-4556-b67b-977a43fd9c16",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1256,9 +1324,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     id: "72d5f647-0743-4556-b67b-977a43fd9c16",
                     "meshmodel-metadata": {
@@ -1285,17 +1353,20 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/serviceaccount-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/serviceaccount-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/serviceaccount-white.svg",
                     },
-                    position: { posX: 264.54872163442394, posY: 23.760657445153402 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 264.54872163442394,
+                      posY: 23.760657445153402,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ServiceAccount"
-              }
-            }
+                type: "ServiceAccount",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: 264.54872163442394, y: 23.760657445153402 },
         group: "nodes",
@@ -1305,7 +1376,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1322,14 +1393,14 @@ const data = {
                   "role Ref": {
                     "api Group": "rbac.authorization.k8s.io",
                     kind: "Role",
-                    name: "edge-stack-agent-config"
+                    name: "edge-stack-agent-config",
                   },
                   subjects: [
                     {
                       kind: "ServiceAccount",
                       name: "edge-stack-agent",
-                      namespace: "ambassador"
-                    }
+                      namespace: "ambassador",
+                    },
                   ],
                   name: "edge-stack-agent-config",
                   namespace: "ambassador",
@@ -1338,8 +1409,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "getambassador.io",
                     "app.kubernetes.io/name": "edge-stack-agent",
                     "app.kubernetes.io/part-of": "edge-stack",
-                    product: "aes"
-                  }
+                    product: "aes",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1367,7 +1438,7 @@ const data = {
                         width: "25px",
                         x: "7",
                         y: "7",
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
                       styles:
                         '{"height":"25px","width":"25px","x":"7", "y":"7","z-index":4}',
@@ -1376,19 +1447,22 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/rolebinding-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/rolebinding-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/rolebinding-white.svg",
                     },
-                    position: { posX: 208.93602291007795, posY: -74.73274401170643 },
+                    position: {
+                      posX: 208.93602291007795,
+                      posY: -74.73274401170643,
+                    },
                     whiteboardData: {
-                      style: { height: 10.5, width: 10.5, "z-index": 1000 }
-                    }
-                  }
+                      style: { height: 10.5, width: 10.5, "z-index": 1000 },
+                    },
+                  },
                 },
-                type: "RoleBinding"
-              }
-            }
+                type: "RoleBinding",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: 209.68602291007795, y: -74.53655992708474 },
         group: "nodes",
@@ -1398,7 +1472,7 @@ const data = {
         locked: false,
         grabbable: false,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1415,8 +1489,8 @@ const data = {
                     {
                       "api Groups": ["apps", "extensions"],
                       resources: ["deployments"],
-                      verbs: ["get", "list", "watch"]
-                    }
+                      verbs: ["get", "list", "watch"],
+                    },
                   ],
                   name: "edge-stack-agent-deployments",
                   labels: {
@@ -1425,8 +1499,8 @@ const data = {
                     "app.kubernetes.io/name": "edge-stack-agent",
                     "app.kubernetes.io/part-of": "edge-stack",
                     product: "aes",
-                    "rbac.getambassador.io/role-group": "edge-stack-agent"
-                  }
+                    "rbac.getambassador.io/role-group": "edge-stack-agent",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1453,25 +1527,29 @@ const data = {
                         width: "22px",
                         x: "8.5",
                         y: "7.5",
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
-                      styles: '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
+                      styles:
+                        '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg",
                     },
-                    position: { posX: -195.09674333732244, posY: 234.91026827368745 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -195.09674333732244,
+                      posY: 234.91026827368745,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ClusterRole"
-              }
-            }
+                type: "ClusterRole",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: -195.09674333732244, y: 234.91026827368745 },
         group: "nodes",
@@ -1481,7 +1559,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1502,8 +1580,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "getambassador.io",
                     "app.kubernetes.io/name": "edge-stack-agent",
                     "app.kubernetes.io/part-of": "edge-stack",
-                    product: "aes"
-                  }
+                    product: "aes",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1511,10 +1589,12 @@ const data = {
                       {
                         data: {
                           id: "6c978563-edd7-4c16-a09d-a1c63857df56",
-                          metadata: { binded_by: "52adbc0e-45f3-444d-80c5-2214aa2c7efc" },
+                          metadata: {
+                            binded_by: "52adbc0e-45f3-444d-80c5-2214aa2c7efc",
+                          },
                           source: "2a269e24-8a45-4b31-b1bd-bc3ab24943da",
                           subType: "Permission",
-                          target: "e1a6aac1-3112-420f-b646-09dd7f71b29f"
+                          target: "e1a6aac1-3112-420f-b646-09dd7f71b29f",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1530,16 +1610,18 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
                           id: "b512a101-6b54-4aa5-b8ce-66fc772bb362",
-                          metadata: { binded_by: "b2f3d75e-28fe-4359-b0b2-2287ced3d53c" },
+                          metadata: {
+                            binded_by: "b2f3d75e-28fe-4359-b0b2-2287ced3d53c",
+                          },
                           source: "03a72188-6643-4314-8c2a-0da6f6135675",
                           subType: "Permission",
-                          target: "e1a6aac1-3112-420f-b646-09dd7f71b29f"
+                          target: "e1a6aac1-3112-420f-b646-09dd7f71b29f",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1555,9 +1637,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     id: "e1a6aac1-3112-420f-b646-09dd7f71b29f",
                     "meshmodel-metadata": {
@@ -1584,17 +1666,20 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/serviceaccount-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/serviceaccount-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/serviceaccount-white.svg",
                     },
-                    position: { posX: 124.12767846780564, posY: -96.91680724195632 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 124.12767846780564,
+                      posY: -96.91680724195632,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ServiceAccount"
-              }
-            }
+                type: "ServiceAccount",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: 124.12767846780564, y: -96.91680724195632 },
         group: "nodes",
@@ -1604,7 +1689,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1621,14 +1706,14 @@ const data = {
                   spec: {
                     ports: [
                       { name: "http", port: 80, "target Port": 8080 },
-                      { name: "https", port: 443, "target Port": 8443 }
+                      { name: "https", port: 443, "target Port": 8443 },
                     ],
                     selector: {
                       "app.kubernetes.io/instance": "edge-stack",
                       "app.kubernetes.io/name": "edge-stack",
-                      profile: "main"
+                      profile: "main",
                     },
-                    type: "LoadBalancer"
+                    type: "LoadBalancer",
                   },
                   name: "edge-stack",
                   namespace: "ambassador",
@@ -1638,10 +1723,11 @@ const data = {
                     "app.kubernetes.io/managed-by": "getambassador.io",
                     "app.kubernetes.io/name": "edge-stack",
                     "app.kubernetes.io/part-of": "edge-stack",
-                    product: "aes"
+                    product: "aes",
                   },
                   annotations: {
-                    "a8r.io/bugs": "https://github.com/datawire/ambassador/issues",
+                    "a8r.io/bugs":
+                      "https://github.com/datawire/ambassador/issues",
                     "a8r.io/chat": "http://a8r.io/Slack",
                     "a8r.io/dependencies": "edge-stack-redis.ambassador",
                     "a8r.io/description":
@@ -1650,8 +1736,9 @@ const data = {
                       "https://www.getambassador.io/docs/edge-stack/latest/",
                     "a8r.io/owner": "Ambassador Labs",
                     "a8r.io/repository": "github.com/datawire/ambassador",
-                    "a8r.io/support": "https://www.getambassador.io/about-us/support/"
-                  }
+                    "a8r.io/support":
+                      "https://www.getambassador.io/about-us/support/",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1662,7 +1749,7 @@ const data = {
                           metadata: { port: 80, protocol: "TCP" },
                           source: "85d2f80c-eb5a-489e-89d7-5ad7c14142e1",
                           subType: "Network",
-                          target: "ae37bb96-b4e6-4b4f-9e13-ac47309cf6eb"
+                          target: "ae37bb96-b4e6-4b4f-9e13-ac47309cf6eb",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1678,8 +1765,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -1687,7 +1774,7 @@ const data = {
                           metadata: { port: 80, protocol: "TCP" },
                           source: "85d2f80c-eb5a-489e-89d7-5ad7c14142e1",
                           subType: "Network",
-                          target: "7820034f-bd39-454e-b215-5bb8af95c405"
+                          target: "7820034f-bd39-454e-b215-5bb8af95c405",
                         },
                         style: {
                           "control-point-distances": null,
@@ -1703,9 +1790,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     id: "85d2f80c-eb5a-489e-89d7-5ad7c14142e1",
                     "meshmodel-metadata": {
@@ -1732,7 +1819,7 @@ const data = {
                         width: 20,
                         x: "10px",
                         y: "12px",
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
                       styles:
                         '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
@@ -1741,17 +1828,20 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg",
                     },
-                    position: { posX: -324.05067925900386, posY: -207.89690283748368 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -324.05067925900386,
+                      posY: -207.89690283748368,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Service"
-              }
-            }
+                type: "Service",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: -324.05067925900386, y: -207.89690283748368 },
         group: "nodes",
@@ -1761,7 +1851,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1801,7 +1891,7 @@ const data = {
                         "background-opacity": 0.5,
                         "border-style": "dashed",
                         "border-width": 2,
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
                       styles:
                         '{"background-image":"none","border-width":2,"border-style":"dashed","background-opacity":0.5}',
@@ -1811,17 +1901,20 @@ const data = {
                       svgComplete:
                         "ui/public/static/img/meshmodels/kubernetes/complete/namespace-complete.svg",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/namespace-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/namespace-white.svg",
                     },
-                    position: { posX: 342.75291302579984, posY: -73.67563715459627 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 342.75291302579984,
+                      posY: -73.67563715459627,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Namespace"
-              }
-            }
+                type: "Namespace",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: 342.75291302579984, y: -73.67563715459627 },
         group: "nodes",
@@ -1831,7 +1924,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1848,29 +1941,29 @@ const data = {
                     {
                       "api Groups": [""],
                       resources: ["secrets"],
-                      verbs: ["get", "list", "watch", "create", "update"]
+                      verbs: ["get", "list", "watch", "create", "update"],
                     },
                     {
                       "api Groups": [""],
                       resources: ["events"],
-                      verbs: ["get", "list", "watch", "create", "patch"]
+                      verbs: ["get", "list", "watch", "create", "patch"],
                     },
                     {
                       "api Groups": ["coordination.k8s.io"],
                       resources: ["leases"],
-                      verbs: ["get", "create", "update"]
+                      verbs: ["get", "create", "update"],
                     },
                     {
                       "api Groups": [""],
                       resources: ["endpoints"],
-                      verbs: ["get", "list", "watch", "create", "update"]
-                    }
+                      verbs: ["get", "list", "watch", "create", "update"],
+                    },
                   ],
                   name: "edge-stack-aes",
                   labels: {
                     product: "aes",
-                    "rbac.getambassador.io/role-group": "edge-stack"
-                  }
+                    "rbac.getambassador.io/role-group": "edge-stack",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1897,25 +1990,29 @@ const data = {
                         width: "22px",
                         x: "8.5",
                         y: "7.5",
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
-                      styles: '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
+                      styles:
+                        '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg",
                     },
-                    position: { posX: -253.87549494996264, posY: 311.5619700135976 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -253.87549494996264,
+                      posY: 311.5619700135976,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ClusterRole"
-              }
-            }
+                type: "ClusterRole",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: -253.87549494996264, y: 311.5619700135976 },
         group: "nodes",
@@ -1925,7 +2022,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -1941,14 +2038,14 @@ const data = {
                   "role Ref": {
                     "api Group": "rbac.authorization.k8s.io",
                     kind: "ClusterRole",
-                    name: "edge-stack-agent"
+                    name: "edge-stack-agent",
                   },
                   subjects: [
                     {
                       kind: "ServiceAccount",
                       name: "edge-stack-agent",
-                      namespace: "ambassador"
-                    }
+                      namespace: "ambassador",
+                    },
                   ],
                   name: "edge-stack-agent",
                   labels: {
@@ -1956,8 +2053,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "getambassador.io",
                     "app.kubernetes.io/name": "edge-stack-agent",
                     "app.kubernetes.io/part-of": "edge-stack",
-                    product: "aes"
-                  }
+                    product: "aes",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -1984,27 +2081,31 @@ const data = {
                         width: "25px",
                         x: "7",
                         y: "7",
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
-                      styles: '{"height":"25px","width":"25px","x":"7", "y":"7"}',
+                      styles:
+                        '{"height":"25px","width":"25px","x":"7", "y":"7"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrolebinding-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrolebinding-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrolebinding-white.svg",
                     },
-                    position: { posX: 7.458636181584694, posY: -95.56068143070384 },
+                    position: {
+                      posX: 7.458636181584694,
+                      posY: -95.56068143070384,
+                    },
                     whiteboardData: {
-                      style: { height: 10.5, width: 10.5, "z-index": 1000 }
-                    }
-                  }
+                      style: { height: 10.5, width: 10.5, "z-index": 1000 },
+                    },
+                  },
                 },
-                type: "ClusterRoleBinding"
-              }
-            }
+                type: "ClusterRoleBinding",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: 7.458636181584694, y: -95.56068143070384 },
         group: "nodes",
@@ -2014,7 +2115,7 @@ const data = {
         locked: false,
         grabbable: false,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2031,13 +2132,14 @@ const data = {
                   spec: {
                     ports: [{ port: 6379, "target Port": 6379 }],
                     selector: { service: "ambassador-redis" },
-                    type: "ClusterIP"
+                    type: "ClusterIP",
                   },
                   name: "edge-stack-redis",
                   namespace: "ambassador",
                   labels: { product: "aes" },
                   annotations: {
-                    "a8r.io/bugs": "https://github.com/datawire/ambassador/issues",
+                    "a8r.io/bugs":
+                      "https://github.com/datawire/ambassador/issues",
                     "a8r.io/chat": "http://a8r.io/Slack",
                     "a8r.io/dependencies": "None",
                     "a8r.io/description":
@@ -2046,8 +2148,9 @@ const data = {
                       "https://www.getambassador.io/docs/edge-stack/latest/",
                     "a8r.io/owner": "Ambassador Labs",
                     "a8r.io/repository": "github.com/datawire/ambassador",
-                    "a8r.io/support": "https://www.getambassador.io/about-us/support/"
-                  }
+                    "a8r.io/support":
+                      "https://www.getambassador.io/about-us/support/",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -2077,7 +2180,7 @@ const data = {
                         width: 20,
                         x: "10px",
                         y: "12px",
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
                       styles:
                         '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
@@ -2086,17 +2189,20 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg",
                     },
-                    position: { posX: -7.349259242902012, posY: -212.33003514685115 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -7.349259242902012,
+                      posY: -212.33003514685115,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Service"
-              }
-            }
+                type: "Service",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: -7.349259242902012, y: -212.33003514685115 },
         group: "nodes",
@@ -2106,7 +2212,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2123,8 +2229,8 @@ const data = {
                     {
                       "api Groups": [""],
                       resources: ["configmaps"],
-                      verbs: ["get", "list", "watch"]
-                    }
+                      verbs: ["get", "list", "watch"],
+                    },
                   ],
                   name: "edge-stack-agent-configmaps",
                   labels: {
@@ -2133,8 +2239,8 @@ const data = {
                     "app.kubernetes.io/name": "edge-stack-agent",
                     "app.kubernetes.io/part-of": "edge-stack",
                     product: "aes",
-                    "rbac.getambassador.io/role-group": "edge-stack-agent"
-                  }
+                    "rbac.getambassador.io/role-group": "edge-stack-agent",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -2161,25 +2267,29 @@ const data = {
                         width: "22px",
                         x: "8.5",
                         y: "7.5",
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
-                      styles: '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
+                      styles:
+                        '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg",
                     },
-                    position: { posX: -303.1479223195309, posY: 99.20738766868892 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -303.1479223195309,
+                      posY: 99.20738766868892,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ClusterRole"
-              }
-            }
+                type: "ClusterRole",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: -303.1479223195309, y: 99.20738766868892 },
         group: "nodes",
@@ -2189,7 +2299,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2206,8 +2316,8 @@ const data = {
                     {
                       "api Groups": [""],
                       resources: ["endpoints"],
-                      verbs: ["get", "list", "watch"]
-                    }
+                      verbs: ["get", "list", "watch"],
+                    },
                   ],
                   name: "edge-stack-agent-endpoints",
                   labels: {
@@ -2216,8 +2326,8 @@ const data = {
                     "app.kubernetes.io/name": "edge-stack-agent",
                     "app.kubernetes.io/part-of": "edge-stack",
                     product: "aes",
-                    "rbac.getambassador.io/role-group": "edge-stack-agent"
-                  }
+                    "rbac.getambassador.io/role-group": "edge-stack-agent",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -2244,25 +2354,29 @@ const data = {
                         width: "22px",
                         x: "8.5",
                         y: "7.5",
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
-                      styles: '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
+                      styles:
+                        '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg",
                     },
-                    position: { posX: -199.36898475681346, posY: 31.00276479562943 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -199.36898475681346,
+                      posY: 31.00276479562943,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ClusterRole"
-              }
-            }
+                type: "ClusterRole",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: -199.36898475681346, y: 31.00276479562943 },
         group: "nodes",
@@ -2272,7 +2386,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2289,8 +2403,8 @@ const data = {
                     {
                       "api Groups": ["apiextensions.k8s.io"],
                       resources: ["customresourcedefinitions"],
-                      verbs: ["get", "list", "watch", "delete"]
-                    }
+                      verbs: ["get", "list", "watch", "delete"],
+                    },
                   ],
                   name: "edge-stack-crd",
                   labels: {
@@ -2299,8 +2413,8 @@ const data = {
                     "app.kubernetes.io/name": "edge-stack",
                     "app.kubernetes.io/part-of": "edge-stack",
                     product: "aes",
-                    "rbac.getambassador.io/role-group": "edge-stack"
-                  }
+                    "rbac.getambassador.io/role-group": "edge-stack",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -2327,25 +2441,29 @@ const data = {
                         width: "22px",
                         x: "8.5",
                         y: "7.5",
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
-                      styles: '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
+                      styles:
+                        '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg",
                     },
-                    position: { posX: -305.51419228489164, posY: 30.3148818791473 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -305.51419228489164,
+                      posY: 30.3148818791473,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ClusterRole"
-              }
-            }
+                type: "ClusterRole",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: -305.51419228489164, y: 30.3148818791473 },
         group: "nodes",
@@ -2355,7 +2473,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2371,14 +2489,14 @@ const data = {
                   "role Ref": {
                     "api Group": "rbac.authorization.k8s.io",
                     kind: "ClusterRole",
-                    name: "edge-stack"
+                    name: "edge-stack",
                   },
                   subjects: [
                     {
                       kind: "ServiceAccount",
                       name: "edge-stack",
-                      namespace: "ambassador"
-                    }
+                      namespace: "ambassador",
+                    },
                   ],
                   name: "edge-stack",
                   labels: {
@@ -2386,8 +2504,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "getambassador.io",
                     "app.kubernetes.io/name": "edge-stack",
                     "app.kubernetes.io/part-of": "edge-stack",
-                    product: "aes"
-                  }
+                    product: "aes",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -2409,26 +2527,31 @@ const data = {
                       shape: "round-rectangle",
                       shapePolygonPoints: "",
                       status: "enabled",
-                      styleOverrides: '{"height":"25px","width":"25px","x":"7", "y":"7"}',
-                      styles: '{"height":"25px","width":"25px","x":"7", "y":"7"}',
+                      styleOverrides:
+                        '{"height":"25px","width":"25px","x":"7", "y":"7"}',
+                      styles:
+                        '{"height":"25px","width":"25px","x":"7", "y":"7"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrolebinding-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrolebinding-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrolebinding-white.svg",
                     },
-                    position: { posX: 209.75345392287068, posY: 91.56692831691079 },
+                    position: {
+                      posX: 209.75345392287068,
+                      posY: 91.56692831691079,
+                    },
                     whiteboardData: {
-                      style: { height: 10.5, width: 10.5, "z-index": 1000 }
-                    }
-                  }
+                      style: { height: 10.5, width: 10.5, "z-index": 1000 },
+                    },
+                  },
                 },
-                type: "ClusterRoleBinding"
-              }
-            }
+                type: "ClusterRoleBinding",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: 209.75345392287068, y: 91.56692831691079 },
         group: "nodes",
@@ -2438,7 +2561,7 @@ const data = {
         locked: false,
         grabbable: false,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2456,11 +2579,11 @@ const data = {
                     hostname: "*",
                     prefix: "/docs/",
                     rewrite: "/docs/",
-                    service: "127.0.0.1:8500"
+                    service: "127.0.0.1:8500",
                   },
                   name: "edge-stack-devportal-demo",
                   namespace: "ambassador",
-                  labels: { product: "aes" }
+                  labels: { product: "aes" },
                 },
                 traits: {
                   meshmap: {
@@ -2484,17 +2607,20 @@ const data = {
                         "ui/public/static/img/meshmodels/contrail-analytics/color/advancedcronjob-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws-node-termination-handler-2/white/terminator-white.svg"
+                        "ui/public/static/img/meshmodels/aws-node-termination-handler-2/white/terminator-white.svg",
                     },
-                    position: { posX: -21.97511940973679, posY: 264.7527107229234 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -21.97511940973679,
+                      posY: 264.7527107229234,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Mapping"
-              }
-            }
+                type: "Mapping",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: -21.97511940973679, y: 264.7527107229234 },
         group: "nodes",
@@ -2504,7 +2630,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2521,10 +2647,10 @@ const data = {
                     "cluster Role Selectors": [
                       {
                         "match Labels": {
-                          "rbac.getambassador.io/role-group": "edge-stack"
-                        }
-                      }
-                    ]
+                          "rbac.getambassador.io/role-group": "edge-stack",
+                        },
+                      },
+                    ],
                   },
                   rules: [],
                   name: "edge-stack",
@@ -2533,8 +2659,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "getambassador.io",
                     "app.kubernetes.io/name": "edge-stack",
                     "app.kubernetes.io/part-of": "edge-stack",
-                    product: "aes"
-                  }
+                    product: "aes",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -2542,10 +2668,12 @@ const data = {
                       {
                         data: {
                           id: "a5057394-11fe-4054-be97-c49522ca222b",
-                          metadata: { binded_by: "6f0697b8-61db-4db7-a1be-e3442b6513a7" },
+                          metadata: {
+                            binded_by: "6f0697b8-61db-4db7-a1be-e3442b6513a7",
+                          },
                           source: "2606ffde-8e48-4dc3-832a-00f8d2e8ba4a",
                           subType: "Permission",
-                          target: "72d5f647-0743-4556-b67b-977a43fd9c16"
+                          target: "72d5f647-0743-4556-b67b-977a43fd9c16",
                         },
                         style: {
                           "control-point-distances": null,
@@ -2561,9 +2689,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     id: "2606ffde-8e48-4dc3-832a-00f8d2e8ba4a",
                     "meshmodel-metadata": {
@@ -2587,25 +2715,29 @@ const data = {
                         width: "22px",
                         x: "8.5",
                         y: "7.5",
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
-                      styles: '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
+                      styles:
+                        '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg",
                     },
-                    position: { posX: 154.58430395518326, posY: 159.83585887795064 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 154.58430395518326,
+                      posY: 159.83585887795064,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ClusterRole"
-              }
-            }
+                type: "ClusterRole",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: 154.58430395518326, y: 159.83585887795064 },
         group: "nodes",
@@ -2615,7 +2747,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2635,15 +2767,15 @@ const data = {
                     selector: {
                       "match Labels": {
                         "app.kubernetes.io/instance": "edge-stack",
-                        "app.kubernetes.io/name": "edge-stack"
-                      }
+                        "app.kubernetes.io/name": "edge-stack",
+                      },
                     },
                     strategy: { type: "RollingUpdate" },
                     template: {
                       metadata: {
                         annotations: {
                           "consul.hashicorp.com/connect-inject": "false",
-                          "sidecar.istio.io/inject": "false"
+                          "sidecar.istio.io/inject": "false",
                         },
                         labels: {
                           "app.kubernetes.io/instance": "edge-stack",
@@ -2651,24 +2783,25 @@ const data = {
                           "app.kubernetes.io/name": "edge-stack",
                           "app.kubernetes.io/part-of": "edge-stack",
                           product: "aes",
-                          profile: "main"
-                        }
+                          profile: "main",
+                        },
                       },
                       spec: {
                         affinity: {
                           "pod Anti Affinity": {
-                            "preferred During Scheduling Ignored During Execution": [
-                              {
-                                "pod Affinity Term": {
-                                  "label Selector": {
-                                    "match Labels": { service: "ambassador" }
+                            "preferred During Scheduling Ignored During Execution":
+                              [
+                                {
+                                  "pod Affinity Term": {
+                                    "label Selector": {
+                                      "match Labels": { service: "ambassador" },
+                                    },
+                                    "topology Key": "kubernetes.io/hostname",
                                   },
-                                  "topology Key": "kubernetes.io/hostname"
+                                  weight: 100,
                                 },
-                                weight: 100
-                              }
-                            ]
-                          }
+                              ],
+                          },
                         },
                         containers: [
                           {
@@ -2676,20 +2809,25 @@ const data = {
                               {
                                 name: "AMBASSADOR_NAMESPACE",
                                 "value From": {
-                                  "field Ref": { "field Path": "metadata.namespace" }
-                                }
+                                  "field Ref": {
+                                    "field Path": "metadata.namespace",
+                                  },
+                                },
                               },
                               {
                                 name: "AGENT_CONFIG_RESOURCE_NAME",
-                                value: "edge-stack-agent-cloud-token"
+                                value: "edge-stack-agent-cloud-token",
                               },
                               { name: "AMBASSADOR_DRAIN_TIME", value: "600" },
                               {
                                 name: "AMBASSADOR_INTERNAL_URL",
-                                value: "https://127.0.0.1:8443"
+                                value: "https://127.0.0.1:8443",
                               },
                               { name: "POLL_EVERY_SECS", value: "60" },
-                              { name: "REDIS_URL", value: "edge-stack-redis:6379" }
+                              {
+                                name: "REDIS_URL",
+                                value: "edge-stack-redis:6379",
+                              },
                             ],
                             image: "docker.io/datawire/aes:3.11.0",
                             "image Pull Policy": "IfNotPresent",
@@ -2697,39 +2835,41 @@ const data = {
                               "failure Threshold": 5,
                               "http Get": {
                                 path: "/ambassador/v0/check_alive",
-                                port: "admin"
+                                port: "admin",
                               },
                               "initial Delay Seconds": 60,
-                              "period Seconds": 10
+                              "period Seconds": 10,
                             },
                             name: "aes",
                             ports: [
                               { "container Port": 8080, name: "http" },
                               { "container Port": 8443, name: "https" },
-                              { "container Port": 8877, name: "admin" }
+                              { "container Port": 8877, name: "admin" },
                             ],
                             "readiness Probe": {
                               "failure Threshold": 5,
                               "http Get": {
                                 path: "/ambassador/v0/check_ready",
-                                port: "admin"
+                                port: "admin",
                               },
                               "initial Delay Seconds": 60,
-                              "period Seconds": 10
+                              "period Seconds": 10,
                             },
                             resources: {
                               limits: { cpu: "1000m", memory: "600Mi" },
-                              requests: { cpu: "200m", memory: "300Mi" }
+                              requests: { cpu: "200m", memory: "300Mi" },
                             },
-                            "security Context": { "allow Privilege Escalation": false },
+                            "security Context": {
+                              "allow Privilege Escalation": false,
+                            },
                             "volume Mounts": [
                               {
                                 "mount Path": "/tmp/ambassador-pod-info",
                                 name: "ambassador-pod-info",
-                                "read Only": true
-                              }
-                            ]
-                          }
+                                "read Only": true,
+                              },
+                            ],
+                          },
                         ],
                         "dns Policy": "ClusterFirst",
                         "host Network": false,
@@ -2737,14 +2877,14 @@ const data = {
                         "init Containers": [
                           {
                             args: [
-                              'deployment_name="emissary-apiext"\ndeployment_namespace="emissary-system"\nwhile true; do\n  echo "checking if deployment/$deployment_name in namespace: $deployment_namespace exists."\n  if kubectl get deployment "$deployment_name" -n $deployment_namespace > /dev/null 2>&1; then\n    echo "$deployment_name.$deployment_namespace exists."\n    echo "checking if $deployment_name.$deployment_namespace is fully available..."\n    kubectl wait --for=condition=available deployment/"$deployment_name" -n $deployment_namespace --timeout=5m\n    if [ $? -eq 0 ]; then\n      echo "$deployment_name.$deployment_namespace is available"\n      while true; do\n      desired_replicas=$(kubectl get deployment $deployment_name -n $deployment_namespace -o jsonpath=\'{.spec.replicas}\')\n      current_replicas=$(kubectl get deployment $deployment_name -n $deployment_namespace -o jsonpath=\'{.status.replicas}\')\n      if [[ $current_replicas != $desired_replicas ]]; then\n        echo "$deployment_name.$deployment_namespace is in the process of restarting. Have: $current_replicas, want $desired_replicas"\n        sleep 3\n      else\n        echo "$deployment_name.$deployment_namespace is fully ready and not currently restarting.  Have: $current_replicas, want $desired_replicas"\n        break\n      fi\n      done\n      break\n    else\n      echo "$deployment_name.$deployment_namespace did not become available within the timeout"\n    fi\n  else\n    echo "$deployment_name.$deployment_namespace does not exist yet. Waiting..."\n    sleep 3\n  fi\ndone\n'
+                              'deployment_name="emissary-apiext"\ndeployment_namespace="emissary-system"\nwhile true; do\n  echo "checking if deployment/$deployment_name in namespace: $deployment_namespace exists."\n  if kubectl get deployment "$deployment_name" -n $deployment_namespace > /dev/null 2>&1; then\n    echo "$deployment_name.$deployment_namespace exists."\n    echo "checking if $deployment_name.$deployment_namespace is fully available..."\n    kubectl wait --for=condition=available deployment/"$deployment_name" -n $deployment_namespace --timeout=5m\n    if [ $? -eq 0 ]; then\n      echo "$deployment_name.$deployment_namespace is available"\n      while true; do\n      desired_replicas=$(kubectl get deployment $deployment_name -n $deployment_namespace -o jsonpath=\'{.spec.replicas}\')\n      current_replicas=$(kubectl get deployment $deployment_name -n $deployment_namespace -o jsonpath=\'{.status.replicas}\')\n      if [[ $current_replicas != $desired_replicas ]]; then\n        echo "$deployment_name.$deployment_namespace is in the process of restarting. Have: $current_replicas, want $desired_replicas"\n        sleep 3\n      else\n        echo "$deployment_name.$deployment_namespace is fully ready and not currently restarting.  Have: $current_replicas, want $desired_replicas"\n        break\n      fi\n      done\n      break\n    else\n      echo "$deployment_name.$deployment_namespace did not become available within the timeout"\n    fi\n  else\n    echo "$deployment_name.$deployment_namespace does not exist yet. Waiting..."\n    sleep 3\n  fi\ndone\n',
                             ],
                             command: ["/bin/sh", "-c"],
                             image: "istio/kubectl:1.5.10",
                             "image Pull Policy": "IfNotPresent",
                             name: "wait-for-apiext",
-                            "security Context": { "run As User": 8888 }
-                          }
+                            "security Context": { "run As User": 8888 },
+                          },
                         ],
                         "restart Policy": "Always",
                         "security Context": { "run As User": 8888 },
@@ -2755,16 +2895,18 @@ const data = {
                             "downward API": {
                               items: [
                                 {
-                                  "field Ref": { "field Path": "metadata.labels" },
-                                  path: "labels"
-                                }
-                              ]
+                                  "field Ref": {
+                                    "field Path": "metadata.labels",
+                                  },
+                                  path: "labels",
+                                },
+                              ],
                             },
-                            name: "ambassador-pod-info"
-                          }
-                        ]
-                      }
-                    }
+                            name: "ambassador-pod-info",
+                          },
+                        ],
+                      },
+                    },
                   },
                   name: "edge-stack",
                   namespace: "ambassador",
@@ -2773,8 +2915,8 @@ const data = {
                     "app.kubernetes.io/managed-by": "getambassador.io",
                     "app.kubernetes.io/name": "edge-stack",
                     "app.kubernetes.io/part-of": "edge-stack",
-                    product: "aes"
-                  }
+                    product: "aes",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -2785,7 +2927,7 @@ const data = {
                           metadata: { port: 8877, protocol: "TCP" },
                           source: "ea26ce7b-d71f-44bf-b123-56ec6c59d5d4",
                           subType: "Network",
-                          target: "7820034f-bd39-454e-b215-5bb8af95c405"
+                          target: "7820034f-bd39-454e-b215-5bb8af95c405",
                         },
                         style: {
                           "control-point-distances": null,
@@ -2801,8 +2943,8 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
+                          width: "1.5px",
+                        },
                       },
                       {
                         data: {
@@ -2810,7 +2952,7 @@ const data = {
                           metadata: { port: 80, protocol: "TCP" },
                           source: "85d2f80c-eb5a-489e-89d7-5ad7c14142e1",
                           subType: "Network",
-                          target: "7820034f-bd39-454e-b215-5bb8af95c405"
+                          target: "7820034f-bd39-454e-b215-5bb8af95c405",
                         },
                         style: {
                           "control-point-distances": null,
@@ -2826,9 +2968,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     id: "7820034f-bd39-454e-b215-5bb8af95c405",
                     "meshmodel-metadata": {
@@ -2851,7 +2993,7 @@ const data = {
                       styleOverrides: {
                         "background-opacity": 0.5,
                         "border-width": 2,
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
                       styles: '{"border-width":2,"background-opacity":0.5}',
                       subCategory: "",
@@ -2860,17 +3002,20 @@ const data = {
                       svgComplete:
                         "ui/public/static/img/meshmodels/kubernetes/complete/deployment-complete.svg",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg",
                     },
-                    position: { posX: -315.6770218706996, posY: -92.38385319950324 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -315.6770218706996,
+                      posY: -92.38385319950324,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Deployment"
-              }
-            }
+                type: "Deployment",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: -319.6770218706996, y: -87.38385319950324 },
         group: "nodes",
@@ -2880,7 +3025,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2897,8 +3042,8 @@ const data = {
                     {
                       "api Groups": ["argoproj.io"],
                       resources: ["applications"],
-                      verbs: ["get", "list", "watch"]
-                    }
+                      verbs: ["get", "list", "watch"],
+                    },
                   ],
                   name: "edge-stack-agent-applications",
                   labels: {
@@ -2907,8 +3052,8 @@ const data = {
                     "app.kubernetes.io/name": "edge-stack-agent",
                     "app.kubernetes.io/part-of": "edge-stack",
                     product: "aes",
-                    "rbac.getambassador.io/role-group": "edge-stack-agent"
-                  }
+                    "rbac.getambassador.io/role-group": "edge-stack-agent",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -2935,25 +3080,29 @@ const data = {
                         width: "22px",
                         x: "8.5",
                         y: "7.5",
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
-                      styles: '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
+                      styles:
+                        '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg",
                     },
-                    position: { posX: -308.7925479375617, posY: 242.75817057380712 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -308.7925479375617,
+                      posY: 242.75817057380712,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ClusterRole"
-              }
-            }
+                type: "ClusterRole",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: -308.7925479375617, y: 242.75817057380712 },
         group: "nodes",
@@ -2963,7 +3112,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -2980,8 +3129,8 @@ const data = {
                     {
                       "api Groups": ["argoproj.io"],
                       resources: ["rollouts", "rollouts/status"],
-                      verbs: ["get", "list", "watch", "patch"]
-                    }
+                      verbs: ["get", "list", "watch", "patch"],
+                    },
                   ],
                   name: "edge-stack-agent-rollouts",
                   labels: {
@@ -2990,8 +3139,8 @@ const data = {
                     "app.kubernetes.io/name": "edge-stack-agent",
                     "app.kubernetes.io/part-of": "edge-stack",
                     product: "aes",
-                    "rbac.getambassador.io/role-group": "edge-stack-agent"
-                  }
+                    "rbac.getambassador.io/role-group": "edge-stack-agent",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -3018,25 +3167,29 @@ const data = {
                         width: "22px",
                         x: "8.5",
                         y: "7.5",
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
-                      styles: '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
+                      styles:
+                        '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/clusterrole-white.svg",
                     },
-                    position: { posX: -197.79571950353298, posY: 100.70236666790146 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -197.79571950353298,
+                      posY: 100.70236666790146,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "ClusterRole"
-              }
-            }
+                type: "ClusterRole",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: -197.79571950353298, y: 100.70236666790146 },
         group: "nodes",
@@ -3046,7 +3199,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3065,11 +3218,11 @@ const data = {
                     auth_service: "127.0.0.1:8500",
                     proto: "grpc",
                     protocol_version: "v3",
-                    status_on_error: { code: 504 }
+                    status_on_error: { code: 504 },
                   },
                   name: "edge-stack-auth",
                   namespace: "ambassador",
-                  labels: { product: "aes" }
+                  labels: { product: "aes" },
                 },
                 traits: {
                   meshmap: {
@@ -3093,17 +3246,20 @@ const data = {
                         "ui/public/static/img/meshmodels/contrail-analytics/color/advancedcronjob-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws-node-termination-handler-2/white/terminator-white.svg"
+                        "ui/public/static/img/meshmodels/aws-node-termination-handler-2/white/terminator-white.svg",
                     },
-                    position: { posX: -86.47117998364122, posY: 197.7352145639211 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -86.47117998364122,
+                      posY: 197.7352145639211,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "AuthService"
-              }
-            }
+                type: "AuthService",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: -86.47117998364122, y: 197.7352145639211 },
         group: "nodes",
@@ -3113,7 +3269,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3131,21 +3287,21 @@ const data = {
                     add_response_headers: {
                       "cache-control": {
                         append: false,
-                        value: "public, max-age=3600, immutable"
-                      }
+                        value: "public, max-age=3600, immutable",
+                      },
                     },
                     hostname: "*",
                     prefix: "/documentation/(assets|styles)/(.*)(.css)",
                     prefix_regex: true,
                     regex_rewrite: {
                       pattern: "/documentation/(.*)",
-                      substitution: "/docs/\\1"
+                      substitution: "/docs/\\1",
                     },
-                    service: "127.0.0.1:8500"
+                    service: "127.0.0.1:8500",
                   },
                   name: "edge-stack-devportal-assets",
                   namespace: "ambassador",
-                  labels: { product: "aes" }
+                  labels: { product: "aes" },
                 },
                 traits: {
                   meshmap: {
@@ -3169,17 +3325,20 @@ const data = {
                         "ui/public/static/img/meshmodels/contrail-analytics/color/advancedcronjob-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws-node-termination-handler-2/white/terminator-white.svg"
+                        "ui/public/static/img/meshmodels/aws-node-termination-handler-2/white/terminator-white.svg",
                     },
-                    position: { posX: 31.515573404609967, posY: 27.258787412602064 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 31.515573404609967,
+                      posY: 27.258787412602064,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Mapping"
-              }
-            }
+                type: "Mapping",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: 31.515573404609967, y: 27.258787412602064 },
         group: "nodes",
@@ -3189,7 +3348,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3207,8 +3366,8 @@ const data = {
                     {
                       "api Groups": ["apps"],
                       resources: ["deployments"],
-                      verbs: ["get", "list", "watch"]
-                    }
+                      verbs: ["get", "list", "watch"],
+                    },
                   ],
                   name: "edge-stack-apiext",
                   namespace: "emissary-system",
@@ -3218,8 +3377,8 @@ const data = {
                     "app.kubernetes.io/name": "edge-stack",
                     "app.kubernetes.io/part-of": "edge-stack",
                     product: "aes",
-                    "rbac.getambassador.io/role-group": "edge-stack"
-                  }
+                    "rbac.getambassador.io/role-group": "edge-stack",
+                  },
                 },
                 traits: {
                   meshmap: {
@@ -3227,10 +3386,12 @@ const data = {
                       {
                         data: {
                           id: "41b8e93f-9c0b-4d35-8c44-dbc7712c34bf",
-                          metadata: { binded_by: "cca9bba7-04c3-4860-8d69-4cc317d31bd2" },
+                          metadata: {
+                            binded_by: "cca9bba7-04c3-4860-8d69-4cc317d31bd2",
+                          },
                           source: "57c11961-03d6-4931-83e8-4aecf19c5d07",
                           subType: "Permission",
-                          target: "72d5f647-0743-4556-b67b-977a43fd9c16"
+                          target: "72d5f647-0743-4556-b67b-977a43fd9c16",
                         },
                         style: {
                           "control-point-distances": null,
@@ -3246,9 +3407,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px"
-                        }
-                      }
+                          width: "1.5px",
+                        },
+                      },
                     ],
                     id: "57c11961-03d6-4931-83e8-4aecf19c5d07",
                     "meshmodel-metadata": {
@@ -3273,7 +3434,7 @@ const data = {
                         width: "22px",
                         x: "8.5",
                         y: "7.5",
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
                       styles:
                         '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5","z-index":4}',
@@ -3282,17 +3443,20 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/role-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/role-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/role-white.svg",
                     },
-                    position: { posX: 430.90938215830056, posY: 23.04721643092434 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: 430.90938215830056,
+                      posY: 23.04721643092434,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Role"
-              }
-            }
+                type: "Role",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: 430.90938215830056, y: 23.04721643092434 },
         group: "nodes",
@@ -3302,7 +3466,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3318,7 +3482,9 @@ const data = {
                 settings: {
                   spec: {
                     replicas: 1,
-                    selector: { "match Labels": { service: "ambassador-redis" } },
+                    selector: {
+                      "match Labels": { service: "ambassador-redis" },
+                    },
                     template: {
                       metadata: { labels: { service: "ambassador-redis" } },
                       spec: {
@@ -3327,16 +3493,16 @@ const data = {
                             image: "redis:5.0.1",
                             "image Pull Policy": "IfNotPresent",
                             name: "redis",
-                            resources: {}
-                          }
+                            resources: {},
+                          },
                         ],
-                        "restart Policy": "Always"
-                      }
-                    }
+                        "restart Policy": "Always",
+                      },
+                    },
                   },
                   name: "edge-stack-redis",
                   namespace: "ambassador",
-                  labels: { product: "aes" }
+                  labels: { product: "aes" },
                 },
                 traits: {
                   meshmap: {
@@ -3362,7 +3528,7 @@ const data = {
                       styleOverrides: {
                         "background-opacity": 0.5,
                         "border-width": 2,
-                        "z-index": 1001
+                        "z-index": 1001,
                       },
                       styles: '{"border-width":2,"background-opacity":0.5}',
                       subCategory: "",
@@ -3371,17 +3537,20 @@ const data = {
                       svgComplete:
                         "ui/public/static/img/meshmodels/kubernetes/complete/deployment-complete.svg",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg"
+                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg",
                     },
-                    position: { posX: -105.5722605330142, posY: -207.37198914445776 },
-                    whiteboardData: { style: {} }
-                  }
+                    position: {
+                      posX: -105.5722605330142,
+                      posY: -207.37198914445776,
+                    },
+                    whiteboardData: { style: {} },
+                  },
                 },
-                type: "Deployment"
-              }
-            }
+                type: "Deployment",
+              },
+            },
           },
-          inventoryLength: 0
+          inventoryLength: 0,
         },
         position: { x: -109.5722605330142, y: -202.37198914445776 },
         group: "nodes",
@@ -3391,7 +3560,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -3408,13 +3577,13 @@ const data = {
                 description:
                   'Arguments to the entrypoint. The container image\'s CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container\'s environment. If a variable cannot be resolved, the reference in the input string will be unchanged. Double $$ are reduced to a single $, which allows for escaping the $(VAR_NAME) syntax: i.e. "$$(VAR_NAME)" will produce the string literal "$(VAR_NAME)". Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell',
                 items: { default: "", type: "string" },
-                type: "array"
+                type: "array",
               },
               command: {
                 description:
                   'Entrypoint array. Not executed within a shell. The container image\'s ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container\'s environment. If a variable cannot be resolved, the reference in the input string will be unchanged. Double $$ are reduced to a single $, which allows for escaping the $(VAR_NAME) syntax: i.e. "$$(VAR_NAME)" will produce the string literal "$(VAR_NAME)". Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell',
                 items: { default: "", type: "string" },
-                type: "array"
+                type: "array",
               },
               env: {
                 description:
@@ -3429,12 +3598,12 @@ const data = {
                           default: "",
                           description:
                             "Name of the environment variable. Must be a C_IDENTIFIER.",
-                          type: "string"
+                          type: "string",
                         },
                         value: {
                           description:
                             'Variable references $(VAR_NAME) are expanded using the previously defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. Double $$ are reduced to a single $, which allows for escaping the $(VAR_NAME) syntax: i.e. "$$(VAR_NAME)" will produce the string literal "$(VAR_NAME)". Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".',
-                          type: "string"
+                          type: "string",
                         },
                         "value From": {
                           allOf: [
@@ -3445,30 +3614,31 @@ const data = {
                                 "config Map Key Ref": {
                                   allOf: [
                                     {
-                                      description: "Selects a key from a Config Map.",
+                                      description:
+                                        "Selects a key from a Config Map.",
                                       properties: {
                                         key: {
                                           default: "",
                                           description: "The key to select.",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         name: {
                                           description:
                                             "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         optional: {
                                           description:
                                             "Specify whether the Config Map or its key must be defined",
-                                          type: "boolean"
-                                        }
+                                          type: "boolean",
+                                        },
                                       },
                                       required: ["key"],
                                       type: "object",
-                                      "x-kubernetes-map-type": "atomic"
-                                    }
+                                      "x-kubernetes-map-type": "atomic",
+                                    },
                                   ],
-                                  description: "Selects a key of a Config Map."
+                                  description: "Selects a key of a Config Map.",
                                 },
                                 "field Ref": {
                                   allOf: [
@@ -3479,22 +3649,22 @@ const data = {
                                         "api Version": {
                                           description:
                                             'Version of the schema the Field Path is written in terms of, defaults to "v1".',
-                                          type: "string"
+                                          type: "string",
                                         },
                                         "field Path": {
                                           default: "",
                                           description:
                                             "Path of the field to select in the specified API version.",
-                                          type: "string"
-                                        }
+                                          type: "string",
+                                        },
                                       },
                                       required: ["field Path"],
                                       type: "object",
-                                      "x-kubernetes-map-type": "atomic"
-                                    }
+                                      "x-kubernetes-map-type": "atomic",
+                                    },
                                   ],
                                   description:
-                                    "Selects a field of the pod: supports metadata.name, metadata.namespace, `metadata.labels['<KEY>']`, `metadata.annotations['<KEY>']`, spec.node Name, spec.service Account Name, status.host IP, status.pod IP, status.pod I Ps."
+                                    "Selects a field of the pod: supports metadata.name, metadata.namespace, `metadata.labels['<KEY>']`, `metadata.annotations['<KEY>']`, spec.node Name, spec.service Account Name, status.host IP, status.pod IP, status.pod I Ps.",
                                 },
                                 "resource Field Ref": {
                                   allOf: [
@@ -3505,7 +3675,7 @@ const data = {
                                         "container Name": {
                                           description:
                                             "Container name: required for volumes, optional for env vars",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         divisor: {
                                           allOf: [
@@ -3514,27 +3684,28 @@ const data = {
                                                 'Quantity is a fixed-point representation of a number. It provides convenient marshaling/unmarshaling in JSON and YAML, in addition to String() and As Int64() accessors. The serialization format is: ``` <quantity> ::= <signed Number><suffix> (Note that <suffix> may be empty, from the "" case in <decimal SI>.) <digit> ::= 0 | 1 | ... | 9 <digits> ::= <digit> | <digit><digits> <number> ::= <digits> | <digits>.<digits> | <digits>. | .<digits> <sign> ::= "+" | "-" <signed Number> ::= <number> | <sign><number> <suffix> ::= <binary SI> | <decimal Exponent> | <decimal SI> <binary SI> ::= Ki | Mi | Gi | Ti | Pi | Ei (International System of units; See: http://physics.nist.gov/cuu/Units/binary.html) <decimal SI> ::= m | "" | k | M | G | T | P | E (Note that 1024 = 1Ki but 1000 = 1k; I didn\'t choose the capitalization.) <decimal Exponent> ::= "e" <signed Number> | "E" <signed Number> ``` No matter which of the three exponent forms is used, no quantity may represent a number greater than 2^63-1 in magnitude, nor may it have more than 3 decimal places. Numbers larger or more precise will be capped or rounded up. (E.g.: 0.1m will rounded up to 1m.) This may be extended in the future if we require larger or smaller quantities. When a Quantity is parsed from a string, it will remember the type of suffix it had, and will use the same type again when it is serialized. Before serializing, Quantity will be put in "canonical form". This means that Exponent/suffix will be adjusted up or down (with a corresponding increase or decrease in Mantissa) such that: - No precision is lost - No fractional digits will be emitted - The exponent (or suffix) is as large as possible. The sign will be omitted unless the number is negative. Examples: - 1.5 will be serialized as "1500m" - 1.5Gi will be serialized as "1536Mi" Note that the quantity will NEVER be internally represented by a floating point number. That is the whole point of this exercise. Non-canonical values will still parse as long as they are well formed, but will be re-emitted in their canonical form. (So always use canonical form, or don\'t diff.) This format is intended to make it difficult to use these numbers without writing some sort of special handling code in the hopes that that will cause implementors to also use a fixed point implementation.',
                                               oneOf: [
                                                 { type: "string" },
-                                                { type: "number" }
-                                              ]
-                                            }
+                                                { type: "number" },
+                                              ],
+                                            },
                                           ],
                                           default: {},
                                           description:
-                                            'Specifies the output format of the exposed resources, defaults to "1"'
+                                            'Specifies the output format of the exposed resources, defaults to "1"',
                                         },
                                         resource: {
                                           default: "",
-                                          description: "Required: resource to select",
-                                          type: "string"
-                                        }
+                                          description:
+                                            "Required: resource to select",
+                                          type: "string",
+                                        },
                                       },
                                       required: ["resource"],
                                       type: "object",
-                                      "x-kubernetes-map-type": "atomic"
-                                    }
+                                      "x-kubernetes-map-type": "atomic",
+                                    },
                                   ],
                                   description:
-                                    "Selects a resource of the container: only resources limits and requests (limits.cpu, limits.memory, limits.ephemeral-storage, requests.cpu, requests.memory and requests.ephemeral-storage) are currently supported."
+                                    "Selects a resource of the container: only resources limits and requests (limits.cpu, limits.memory, limits.ephemeral-storage, requests.cpu, requests.memory and requests.ephemeral-storage) are currently supported.",
                                 },
                                 "secret Key Ref": {
                                   allOf: [
@@ -3546,44 +3717,44 @@ const data = {
                                           default: "",
                                           description:
                                             "The key of the secret to select from. Must be a valid secret key.",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         name: {
                                           description:
                                             "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         optional: {
                                           description:
                                             "Specify whether the Secret or its key must be defined",
-                                          type: "boolean"
-                                        }
+                                          type: "boolean",
+                                        },
                                       },
                                       required: ["key"],
                                       type: "object",
-                                      "x-kubernetes-map-type": "atomic"
-                                    }
+                                      "x-kubernetes-map-type": "atomic",
+                                    },
                                   ],
                                   description:
-                                    "Selects a key of a secret in the pod's namespace"
-                                }
+                                    "Selects a key of a secret in the pod's namespace",
+                                },
                               },
-                              type: "object"
-                            }
+                              type: "object",
+                            },
                           ],
                           description:
-                            "Source for the environment variable's value. Cannot be used if value is not empty."
-                        }
+                            "Source for the environment variable's value. Cannot be used if value is not empty.",
+                        },
                       },
                       required: ["name"],
-                      type: "object"
-                    }
+                      type: "object",
+                    },
                   ],
-                  default: {}
+                  default: {},
                 },
                 type: "array",
                 "x-kubernetes-patch-merge-key": "name",
-                "x-kubernetes-patch-strategy": "merge"
+                "x-kubernetes-patch-strategy": "merge",
               },
               "env From": {
                 description:
@@ -3603,23 +3774,23 @@ const data = {
                                 name: {
                                   description:
                                     "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
-                                  type: "string"
+                                  type: "string",
                                 },
                                 optional: {
                                   description:
                                     "Specify whether the Config Map must be defined",
-                                  type: "boolean"
-                                }
+                                  type: "boolean",
+                                },
                               },
-                              type: "object"
-                            }
+                              type: "object",
+                            },
                           ],
-                          description: "The Config Map to select from"
+                          description: "The Config Map to select from",
                         },
                         prefix: {
                           description:
                             "An optional identifier to prepend to each key in the Config Map. Must be a C_IDENTIFIER.",
-                          type: "string"
+                          type: "string",
                         },
                         "secret Ref": {
                           allOf: [
@@ -3630,37 +3801,37 @@ const data = {
                                 name: {
                                   description:
                                     "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
-                                  type: "string"
+                                  type: "string",
                                 },
                                 optional: {
                                   description:
                                     "Specify whether the Secret must be defined",
-                                  type: "boolean"
-                                }
+                                  type: "boolean",
+                                },
                               },
-                              type: "object"
-                            }
+                              type: "object",
+                            },
                           ],
-                          description: "The Secret to select from"
-                        }
+                          description: "The Secret to select from",
+                        },
                       },
-                      type: "object"
-                    }
+                      type: "object",
+                    },
                   ],
-                  default: {}
+                  default: {},
                 },
-                type: "array"
+                type: "array",
               },
               image: {
                 description:
                   "Container image name. More info: https://kubernetes.io/docs/concepts/containers/images This field is optional to allow higher level config management to default or override container images in workload controllers like Deployments and Stateful Sets.",
-                type: "string"
+                type: "string",
               },
               "image Pull Policy": {
                 description:
                   'Image pull policy. One of Always, Never, If Not Present. Defaults to Always if :latest tag is specified, or If Not Present otherwise. Cannot be updated. More info: https://kubernetes.io/docs/concepts/containers/images#updating-images Possible enum values: - `"Always"` means that kubelet always attempts to pull the latest image. Container will fail If the pull fails. - `"If Not Present"` means that kubelet pulls if the image isn\'t present on disk. Container will fail if the image isn\'t present and the pull fails. - `"Never"` means that kubelet never pulls an image, but only uses a local image. Container will fail if the image isn\'t present',
                 enum: ["Always", "IfNotPresent", "Never"],
-                type: "string"
+                type: "string",
               },
               lifecycle: {
                 allOf: [
@@ -3684,13 +3855,14 @@ const data = {
                                         description:
                                           "Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions ('|', etc) won't work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.",
                                         items: { default: "", type: "string" },
-                                        type: "array"
-                                      }
+                                        type: "array",
+                                      },
                                     },
-                                    type: "object"
-                                  }
+                                    type: "object",
+                                  },
                                 ],
-                                description: "Exec specifies the action to take."
+                                description:
+                                  "Exec specifies the action to take.",
                               },
                               "http Get": {
                                 allOf: [
@@ -3701,7 +3873,7 @@ const data = {
                                       host: {
                                         description:
                                           'Host name to connect to, defaults to the pod IP. You probably want to set "Host" in http Headers instead.',
-                                        type: "string"
+                                        type: "string",
                                       },
                                       "http Headers": {
                                         description:
@@ -3714,26 +3886,29 @@ const data = {
                                               properties: {
                                                 name: {
                                                   default: "",
-                                                  description: "The header field name",
-                                                  type: "string"
+                                                  description:
+                                                    "The header field name",
+                                                  type: "string",
                                                 },
                                                 value: {
                                                   default: "",
-                                                  description: "The header field value",
-                                                  type: "string"
-                                                }
+                                                  description:
+                                                    "The header field value",
+                                                  type: "string",
+                                                },
                                               },
                                               required: ["name", "value"],
-                                              type: "object"
-                                            }
+                                              type: "object",
+                                            },
                                           ],
-                                          default: {}
+                                          default: {},
                                         },
-                                        type: "array"
+                                        type: "array",
                                       },
                                       path: {
-                                        description: "Path to access on the HTTP server.",
-                                        type: "string"
+                                        description:
+                                          "Path to access on the HTTP server.",
+                                        type: "string",
                                       },
                                       port: {
                                         allOf: [
@@ -3743,27 +3918,27 @@ const data = {
                                             format: "int-or-string",
                                             oneOf: [
                                               { type: "integer" },
-                                              { type: "string" }
-                                            ]
-                                          }
+                                              { type: "string" },
+                                            ],
+                                          },
                                         ],
                                         default: {},
                                         description:
-                                          "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
+                                          "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
                                       },
                                       scheme: {
                                         description:
                                           'Scheme to use for connecting to the host. Defaults to HTTP. Possible enum values: - `"HTTP"` means that the scheme used will be http:// - `"HTTPS"` means that the scheme used will be https://',
                                         enum: ["HTTP", "HTTPS"],
-                                        type: "string"
-                                      }
+                                        type: "string",
+                                      },
                                     },
                                     required: ["port"],
-                                    type: "object"
-                                  }
+                                    type: "object",
+                                  },
                                 ],
                                 description:
-                                  "HTTP Get specifies the http request to perform."
+                                  "HTTP Get specifies the http request to perform.",
                               },
                               "tcp Socket": {
                                 allOf: [
@@ -3774,7 +3949,7 @@ const data = {
                                       host: {
                                         description:
                                           "Optional: Host name to connect to, defaults to the pod IP.",
-                                        type: "string"
+                                        type: "string",
                                       },
                                       port: {
                                         allOf: [
@@ -3784,28 +3959,28 @@ const data = {
                                             format: "int-or-string",
                                             oneOf: [
                                               { type: "integer" },
-                                              { type: "string" }
-                                            ]
-                                          }
+                                              { type: "string" },
+                                            ],
+                                          },
                                         ],
                                         default: {},
                                         description:
-                                          "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
-                                      }
+                                          "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
+                                      },
                                     },
                                     required: ["port"],
-                                    type: "object"
-                                  }
+                                    type: "object",
+                                  },
                                 ],
                                 description:
-                                  "Deprecated. TCP Socket is NOT supported as a Lifecycle Handler and kept for the backward compatibility. There are no validation of this field and lifecycle hooks will fail in runtime when tcp handler is specified."
-                              }
+                                  "Deprecated. TCP Socket is NOT supported as a Lifecycle Handler and kept for the backward compatibility. There are no validation of this field and lifecycle hooks will fail in runtime when tcp handler is specified.",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "Post Start is called immediately after a container is created. If the handler fails, the container is terminated and restarted according to its restart policy. Other management of the container blocks until the hook completes. More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks"
+                          "Post Start is called immediately after a container is created. If the handler fails, the container is terminated and restarted according to its restart policy. Other management of the container blocks until the hook completes. More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks",
                       },
                       "pre Stop": {
                         allOf: [
@@ -3823,13 +3998,14 @@ const data = {
                                         description:
                                           "Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions ('|', etc) won't work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.",
                                         items: { default: "", type: "string" },
-                                        type: "array"
-                                      }
+                                        type: "array",
+                                      },
                                     },
-                                    type: "object"
-                                  }
+                                    type: "object",
+                                  },
                                 ],
-                                description: "Exec specifies the action to take."
+                                description:
+                                  "Exec specifies the action to take.",
                               },
                               "http Get": {
                                 allOf: [
@@ -3840,7 +4016,7 @@ const data = {
                                       host: {
                                         description:
                                           'Host name to connect to, defaults to the pod IP. You probably want to set "Host" in http Headers instead.',
-                                        type: "string"
+                                        type: "string",
                                       },
                                       "http Headers": {
                                         description:
@@ -3853,26 +4029,29 @@ const data = {
                                               properties: {
                                                 name: {
                                                   default: "",
-                                                  description: "The header field name",
-                                                  type: "string"
+                                                  description:
+                                                    "The header field name",
+                                                  type: "string",
                                                 },
                                                 value: {
                                                   default: "",
-                                                  description: "The header field value",
-                                                  type: "string"
-                                                }
+                                                  description:
+                                                    "The header field value",
+                                                  type: "string",
+                                                },
                                               },
                                               required: ["name", "value"],
-                                              type: "object"
-                                            }
+                                              type: "object",
+                                            },
                                           ],
-                                          default: {}
+                                          default: {},
                                         },
-                                        type: "array"
+                                        type: "array",
                                       },
                                       path: {
-                                        description: "Path to access on the HTTP server.",
-                                        type: "string"
+                                        description:
+                                          "Path to access on the HTTP server.",
+                                        type: "string",
                                       },
                                       port: {
                                         allOf: [
@@ -3882,27 +4061,27 @@ const data = {
                                             format: "int-or-string",
                                             oneOf: [
                                               { type: "integer" },
-                                              { type: "string" }
-                                            ]
-                                          }
+                                              { type: "string" },
+                                            ],
+                                          },
                                         ],
                                         default: {},
                                         description:
-                                          "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
+                                          "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
                                       },
                                       scheme: {
                                         description:
                                           'Scheme to use for connecting to the host. Defaults to HTTP. Possible enum values: - `"HTTP"` means that the scheme used will be http:// - `"HTTPS"` means that the scheme used will be https://',
                                         enum: ["HTTP", "HTTPS"],
-                                        type: "string"
-                                      }
+                                        type: "string",
+                                      },
                                     },
                                     required: ["port"],
-                                    type: "object"
-                                  }
+                                    type: "object",
+                                  },
                                 ],
                                 description:
-                                  "HTTP Get specifies the http request to perform."
+                                  "HTTP Get specifies the http request to perform.",
                               },
                               "tcp Socket": {
                                 allOf: [
@@ -3913,7 +4092,7 @@ const data = {
                                       host: {
                                         description:
                                           "Optional: Host name to connect to, defaults to the pod IP.",
-                                        type: "string"
+                                        type: "string",
                                       },
                                       port: {
                                         allOf: [
@@ -3923,35 +4102,35 @@ const data = {
                                             format: "int-or-string",
                                             oneOf: [
                                               { type: "integer" },
-                                              { type: "string" }
-                                            ]
-                                          }
+                                              { type: "string" },
+                                            ],
+                                          },
                                         ],
                                         default: {},
                                         description:
-                                          "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
-                                      }
+                                          "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
+                                      },
                                     },
                                     required: ["port"],
-                                    type: "object"
-                                  }
+                                    type: "object",
+                                  },
                                 ],
                                 description:
-                                  "Deprecated. TCP Socket is NOT supported as a Lifecycle Handler and kept for the backward compatibility. There are no validation of this field and lifecycle hooks will fail in runtime when tcp handler is specified."
-                              }
+                                  "Deprecated. TCP Socket is NOT supported as a Lifecycle Handler and kept for the backward compatibility. There are no validation of this field and lifecycle hooks will fail in runtime when tcp handler is specified.",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "Pre Stop is called immediately before a container is terminated due to an API request or management event such as liveness/startup probe failure, preemption, resource contention, etc. The handler is not called if the container crashes or exits. The Pod's termination grace period countdown begins before the Pre Stop hook is executed. Regardless of the outcome of the handler, the container will eventually terminate within the Pod's termination grace period (unless delayed by finalizers). Other management of the container blocks until the hook completes or until the termination grace period is reached. More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks"
-                      }
+                          "Pre Stop is called immediately before a container is terminated due to an API request or management event such as liveness/startup probe failure, preemption, resource contention, etc. The handler is not called if the container crashes or exits. The Pod's termination grace period countdown begins before the Pre Stop hook is executed. Regardless of the outcome of the handler, the container will eventually terminate within the Pod's termination grace period (unless delayed by finalizers). Other management of the container blocks until the hook completes or until the termination grace period is reached. More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks",
+                      },
                     },
-                    type: "object"
-                  }
+                    type: "object",
+                  },
                 ],
                 description:
-                  "Actions that the management system should take in response to container lifecycle events. Cannot be updated."
+                  "Actions that the management system should take in response to container lifecycle events. Cannot be updated.",
               },
               "liveness Probe": {
                 allOf: [
@@ -3969,19 +4148,19 @@ const data = {
                                 description:
                                   "Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions ('|', etc) won't work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.",
                                 items: { default: "", type: "string" },
-                                type: "array"
-                              }
+                                type: "array",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
-                        description: "Exec specifies the action to take."
+                        description: "Exec specifies the action to take.",
                       },
                       "failure Threshold": {
                         description:
                           "Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       grpc: {
                         allOf: [
@@ -3992,21 +4171,21 @@ const data = {
                                 description:
                                   "Port number of the g RPC service. Number must be in the range 1 to 65535.",
                                 format: "int32",
-                                type: "integer"
+                                type: "integer",
                               },
                               service: {
                                 default: "",
                                 description:
                                   "Service is the name of the service to place in the g RPC Health Check Request (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by g RPC.",
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "GRPC specifies an action involving a GRPC port. This is a beta field and requires enabling GRPC Container Probe feature gate."
+                          "GRPC specifies an action involving a GRPC port. This is a beta field and requires enabling GRPC Container Probe feature gate.",
                       },
                       "http Get": {
                         allOf: [
@@ -4017,7 +4196,7 @@ const data = {
                               host: {
                                 description:
                                   'Host name to connect to, defaults to the pod IP. You probably want to set "Host" in http Headers instead.',
-                                type: "string"
+                                type: "string",
                               },
                               "http Headers": {
                                 description:
@@ -4031,25 +4210,26 @@ const data = {
                                         name: {
                                           default: "",
                                           description: "The header field name",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         value: {
                                           default: "",
                                           description: "The header field value",
-                                          type: "string"
-                                        }
+                                          type: "string",
+                                        },
                                       },
                                       required: ["name", "value"],
-                                      type: "object"
-                                    }
+                                      type: "object",
+                                    },
                                   ],
-                                  default: {}
+                                  default: {},
                                 },
-                                type: "array"
+                                type: "array",
                               },
                               path: {
-                                description: "Path to access on the HTTP server.",
-                                type: "string"
+                                description:
+                                  "Path to access on the HTTP server.",
+                                type: "string",
                               },
                               port: {
                                 allOf: [
@@ -4057,43 +4237,47 @@ const data = {
                                     description:
                                       "Int Or String is a type that can hold an int32 or a string. When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type. This allows you to have, for example, a JSON field that can accept a name or number.",
                                     format: "int-or-string",
-                                    oneOf: [{ type: "integer" }, { type: "string" }]
-                                  }
+                                    oneOf: [
+                                      { type: "integer" },
+                                      { type: "string" },
+                                    ],
+                                  },
                                 ],
                                 default: {},
                                 description:
-                                  "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
+                                  "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
                               },
                               scheme: {
                                 description:
                                   'Scheme to use for connecting to the host. Defaults to HTTP. Possible enum values: - `"HTTP"` means that the scheme used will be http:// - `"HTTPS"` means that the scheme used will be https://',
                                 enum: ["HTTP", "HTTPS"],
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
-                        description: "HTTP Get specifies the http request to perform."
+                        description:
+                          "HTTP Get specifies the http request to perform.",
                       },
                       "initial Delay Seconds": {
                         description:
                           "Number of seconds after the container has started before liveness probes are initiated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "period Seconds": {
                         description:
                           "How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "success Threshold": {
                         description:
                           "Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness and startup. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "tcp Socket": {
                         allOf: [
@@ -4104,7 +4288,7 @@ const data = {
                               host: {
                                 description:
                                   "Optional: Host name to connect to, defaults to the pod IP.",
-                                type: "string"
+                                type: "string",
                               },
                               port: {
                                 allOf: [
@@ -4112,45 +4296,48 @@ const data = {
                                     description:
                                       "Int Or String is a type that can hold an int32 or a string. When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type. This allows you to have, for example, a JSON field that can accept a name or number.",
                                     format: "int-or-string",
-                                    oneOf: [{ type: "integer" }, { type: "string" }]
-                                  }
+                                    oneOf: [
+                                      { type: "integer" },
+                                      { type: "string" },
+                                    ],
+                                  },
                                 ],
                                 default: {},
                                 description:
-                                  "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
-                              }
+                                  "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "TCP Socket specifies an action involving a TCP port."
+                          "TCP Socket specifies an action involving a TCP port.",
                       },
                       "termination Grace Period Seconds": {
                         description:
                           "Optional duration in seconds the pod needs to terminate gracefully upon probe failure. The grace period is the duration in seconds after the processes running in the pod are sent a termination signal and the time when the processes are forcibly halted with a kill signal. Set this value longer than the expected cleanup time for your process. If this value is nil, the pod's termination Grace Period Seconds will be used. Otherwise, this value overrides the value provided by the pod spec. Value must be non-negative integer. The value zero indicates stop immediately via the kill signal (no opportunity to shut down). This is a beta field and requires enabling Probe Termination Grace Period feature gate. Minimum value is 1. spec.termination Grace Period Seconds is used if unset.",
                         format: "int64",
-                        type: "integer"
+                        type: "integer",
                       },
                       "timeout Seconds": {
                         description:
                           "Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
                         format: "int32",
-                        type: "integer"
-                      }
+                        type: "integer",
+                      },
                     },
-                    type: "object"
-                  }
+                    type: "object",
+                  },
                 ],
                 description:
-                  "Periodic probe of container liveness. Container will be restarted if the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"
+                  "Periodic probe of container liveness. Container will be restarted if the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
               },
               name: {
                 default: "",
                 description:
                   "Name of the container specified as a DNS_LABEL. Each container in a pod must have a unique name (DNS_LABEL). Cannot be updated.",
-                type: "string"
+                type: "string",
               },
               ports: {
                 description:
@@ -4166,42 +4353,43 @@ const data = {
                           description:
                             "Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.",
                           format: "int32",
-                          type: "integer"
+                          type: "integer",
                         },
                         "host IP": {
-                          description: "What host IP to bind the external port to.",
-                          type: "string"
+                          description:
+                            "What host IP to bind the external port to.",
+                          type: "string",
                         },
                         "host Port": {
                           description:
                             "Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If Host Network is specified, this must match Container Port. Most containers do not need this.",
                           format: "int32",
-                          type: "integer"
+                          type: "integer",
                         },
                         name: {
                           description:
                             "If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services.",
-                          type: "string"
+                          type: "string",
                         },
                         protocol: {
                           default: "TCP",
                           description:
                             'Protocol for port. Must be UDP, TCP, or SCTP. Defaults to "TCP". Possible enum values: - `"SCTP"` is the SCTP protocol. - `"TCP"` is the TCP protocol. - `"UDP"` is the UDP protocol.',
                           enum: ["SCTP", "TCP", "UDP"],
-                          type: "string"
-                        }
+                          type: "string",
+                        },
                       },
                       required: ["container Port"],
-                      type: "object"
-                    }
+                      type: "object",
+                    },
                   ],
-                  default: {}
+                  default: {},
                 },
                 type: "array",
                 "x-kubernetes-list-map-keys": ["container Port", "protocol"],
                 "x-kubernetes-list-type": "map",
                 "x-kubernetes-patch-merge-key": "container Port",
-                "x-kubernetes-patch-strategy": "merge"
+                "x-kubernetes-patch-strategy": "merge",
               },
               "readiness Probe": {
                 allOf: [
@@ -4219,19 +4407,19 @@ const data = {
                                 description:
                                   "Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions ('|', etc) won't work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.",
                                 items: { default: "", type: "string" },
-                                type: "array"
-                              }
+                                type: "array",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
-                        description: "Exec specifies the action to take."
+                        description: "Exec specifies the action to take.",
                       },
                       "failure Threshold": {
                         description:
                           "Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       grpc: {
                         allOf: [
@@ -4242,21 +4430,21 @@ const data = {
                                 description:
                                   "Port number of the g RPC service. Number must be in the range 1 to 65535.",
                                 format: "int32",
-                                type: "integer"
+                                type: "integer",
                               },
                               service: {
                                 default: "",
                                 description:
                                   "Service is the name of the service to place in the g RPC Health Check Request (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by g RPC.",
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "GRPC specifies an action involving a GRPC port. This is a beta field and requires enabling GRPC Container Probe feature gate."
+                          "GRPC specifies an action involving a GRPC port. This is a beta field and requires enabling GRPC Container Probe feature gate.",
                       },
                       "http Get": {
                         allOf: [
@@ -4267,7 +4455,7 @@ const data = {
                               host: {
                                 description:
                                   'Host name to connect to, defaults to the pod IP. You probably want to set "Host" in http Headers instead.',
-                                type: "string"
+                                type: "string",
                               },
                               "http Headers": {
                                 description:
@@ -4281,25 +4469,26 @@ const data = {
                                         name: {
                                           default: "",
                                           description: "The header field name",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         value: {
                                           default: "",
                                           description: "The header field value",
-                                          type: "string"
-                                        }
+                                          type: "string",
+                                        },
                                       },
                                       required: ["name", "value"],
-                                      type: "object"
-                                    }
+                                      type: "object",
+                                    },
                                   ],
-                                  default: {}
+                                  default: {},
                                 },
-                                type: "array"
+                                type: "array",
                               },
                               path: {
-                                description: "Path to access on the HTTP server.",
-                                type: "string"
+                                description:
+                                  "Path to access on the HTTP server.",
+                                type: "string",
                               },
                               port: {
                                 allOf: [
@@ -4307,43 +4496,47 @@ const data = {
                                     description:
                                       "Int Or String is a type that can hold an int32 or a string. When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type. This allows you to have, for example, a JSON field that can accept a name or number.",
                                     format: "int-or-string",
-                                    oneOf: [{ type: "integer" }, { type: "string" }]
-                                  }
+                                    oneOf: [
+                                      { type: "integer" },
+                                      { type: "string" },
+                                    ],
+                                  },
                                 ],
                                 default: {},
                                 description:
-                                  "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
+                                  "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
                               },
                               scheme: {
                                 description:
                                   'Scheme to use for connecting to the host. Defaults to HTTP. Possible enum values: - `"HTTP"` means that the scheme used will be http:// - `"HTTPS"` means that the scheme used will be https://',
                                 enum: ["HTTP", "HTTPS"],
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
-                        description: "HTTP Get specifies the http request to perform."
+                        description:
+                          "HTTP Get specifies the http request to perform.",
                       },
                       "initial Delay Seconds": {
                         description:
                           "Number of seconds after the container has started before liveness probes are initiated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "period Seconds": {
                         description:
                           "How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "success Threshold": {
                         description:
                           "Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness and startup. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "tcp Socket": {
                         allOf: [
@@ -4354,7 +4547,7 @@ const data = {
                               host: {
                                 description:
                                   "Optional: Host name to connect to, defaults to the pod IP.",
-                                type: "string"
+                                type: "string",
                               },
                               port: {
                                 allOf: [
@@ -4362,39 +4555,42 @@ const data = {
                                     description:
                                       "Int Or String is a type that can hold an int32 or a string. When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type. This allows you to have, for example, a JSON field that can accept a name or number.",
                                     format: "int-or-string",
-                                    oneOf: [{ type: "integer" }, { type: "string" }]
-                                  }
+                                    oneOf: [
+                                      { type: "integer" },
+                                      { type: "string" },
+                                    ],
+                                  },
                                 ],
                                 default: {},
                                 description:
-                                  "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
-                              }
+                                  "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "TCP Socket specifies an action involving a TCP port."
+                          "TCP Socket specifies an action involving a TCP port.",
                       },
                       "termination Grace Period Seconds": {
                         description:
                           "Optional duration in seconds the pod needs to terminate gracefully upon probe failure. The grace period is the duration in seconds after the processes running in the pod are sent a termination signal and the time when the processes are forcibly halted with a kill signal. Set this value longer than the expected cleanup time for your process. If this value is nil, the pod's termination Grace Period Seconds will be used. Otherwise, this value overrides the value provided by the pod spec. Value must be non-negative integer. The value zero indicates stop immediately via the kill signal (no opportunity to shut down). This is a beta field and requires enabling Probe Termination Grace Period feature gate. Minimum value is 1. spec.termination Grace Period Seconds is used if unset.",
                         format: "int64",
-                        type: "integer"
+                        type: "integer",
                       },
                       "timeout Seconds": {
                         description:
                           "Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
                         format: "int32",
-                        type: "integer"
-                      }
+                        type: "integer",
+                      },
                     },
-                    type: "object"
-                  }
+                    type: "object",
+                  },
                 ],
                 description:
-                  "Periodic probe of container service readiness. Container will be removed from service endpoints if the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"
+                  "Periodic probe of container service readiness. Container will be removed from service endpoints if the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
               },
               resources: {
                 allOf: [
@@ -4408,14 +4604,14 @@ const data = {
                             {
                               description:
                                 'Quantity is a fixed-point representation of a number. It provides convenient marshaling/unmarshaling in JSON and YAML, in addition to String() and As Int64() accessors. The serialization format is: ``` <quantity> ::= <signed Number><suffix> (Note that <suffix> may be empty, from the "" case in <decimal SI>.) <digit> ::= 0 | 1 | ... | 9 <digits> ::= <digit> | <digit><digits> <number> ::= <digits> | <digits>.<digits> | <digits>. | .<digits> <sign> ::= "+" | "-" <signed Number> ::= <number> | <sign><number> <suffix> ::= <binary SI> | <decimal Exponent> | <decimal SI> <binary SI> ::= Ki | Mi | Gi | Ti | Pi | Ei (International System of units; See: http://physics.nist.gov/cuu/Units/binary.html) <decimal SI> ::= m | "" | k | M | G | T | P | E (Note that 1024 = 1Ki but 1000 = 1k; I didn\'t choose the capitalization.) <decimal Exponent> ::= "e" <signed Number> | "E" <signed Number> ``` No matter which of the three exponent forms is used, no quantity may represent a number greater than 2^63-1 in magnitude, nor may it have more than 3 decimal places. Numbers larger or more precise will be capped or rounded up. (E.g.: 0.1m will rounded up to 1m.) This may be extended in the future if we require larger or smaller quantities. When a Quantity is parsed from a string, it will remember the type of suffix it had, and will use the same type again when it is serialized. Before serializing, Quantity will be put in "canonical form". This means that Exponent/suffix will be adjusted up or down (with a corresponding increase or decrease in Mantissa) such that: - No precision is lost - No fractional digits will be emitted - The exponent (or suffix) is as large as possible. The sign will be omitted unless the number is negative. Examples: - 1.5 will be serialized as "1500m" - 1.5Gi will be serialized as "1536Mi" Note that the quantity will NEVER be internally represented by a floating point number. That is the whole point of this exercise. Non-canonical values will still parse as long as they are well formed, but will be re-emitted in their canonical form. (So always use canonical form, or don\'t diff.) This format is intended to make it difficult to use these numbers without writing some sort of special handling code in the hopes that that will cause implementors to also use a fixed point implementation.',
-                              oneOf: [{ type: "string" }, { type: "number" }]
-                            }
+                              oneOf: [{ type: "string" }, { type: "number" }],
+                            },
                           ],
-                          default: {}
+                          default: {},
                         },
                         description:
                           "Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/",
-                        type: "object"
+                        type: "object",
                       },
                       requests: {
                         additionalProperties: {
@@ -4423,22 +4619,22 @@ const data = {
                             {
                               description:
                                 'Quantity is a fixed-point representation of a number. It provides convenient marshaling/unmarshaling in JSON and YAML, in addition to String() and As Int64() accessors. The serialization format is: ``` <quantity> ::= <signed Number><suffix> (Note that <suffix> may be empty, from the "" case in <decimal SI>.) <digit> ::= 0 | 1 | ... | 9 <digits> ::= <digit> | <digit><digits> <number> ::= <digits> | <digits>.<digits> | <digits>. | .<digits> <sign> ::= "+" | "-" <signed Number> ::= <number> | <sign><number> <suffix> ::= <binary SI> | <decimal Exponent> | <decimal SI> <binary SI> ::= Ki | Mi | Gi | Ti | Pi | Ei (International System of units; See: http://physics.nist.gov/cuu/Units/binary.html) <decimal SI> ::= m | "" | k | M | G | T | P | E (Note that 1024 = 1Ki but 1000 = 1k; I didn\'t choose the capitalization.) <decimal Exponent> ::= "e" <signed Number> | "E" <signed Number> ``` No matter which of the three exponent forms is used, no quantity may represent a number greater than 2^63-1 in magnitude, nor may it have more than 3 decimal places. Numbers larger or more precise will be capped or rounded up. (E.g.: 0.1m will rounded up to 1m.) This may be extended in the future if we require larger or smaller quantities. When a Quantity is parsed from a string, it will remember the type of suffix it had, and will use the same type again when it is serialized. Before serializing, Quantity will be put in "canonical form". This means that Exponent/suffix will be adjusted up or down (with a corresponding increase or decrease in Mantissa) such that: - No precision is lost - No fractional digits will be emitted - The exponent (or suffix) is as large as possible. The sign will be omitted unless the number is negative. Examples: - 1.5 will be serialized as "1500m" - 1.5Gi will be serialized as "1536Mi" Note that the quantity will NEVER be internally represented by a floating point number. That is the whole point of this exercise. Non-canonical values will still parse as long as they are well formed, but will be re-emitted in their canonical form. (So always use canonical form, or don\'t diff.) This format is intended to make it difficult to use these numbers without writing some sort of special handling code in the hopes that that will cause implementors to also use a fixed point implementation.',
-                              oneOf: [{ type: "string" }, { type: "number" }]
-                            }
+                              oneOf: [{ type: "string" }, { type: "number" }],
+                            },
                           ],
-                          default: {}
+                          default: {},
                         },
                         description:
                           "Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/",
-                        type: "object"
-                      }
+                        type: "object",
+                      },
                     },
-                    type: "object"
-                  }
+                    type: "object",
+                  },
                 ],
                 default: {},
                 description:
-                  "Compute Resources required by this container. Cannot be updated. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
+                  "Compute Resources required by this container. Cannot be updated. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/",
               },
               "security Context": {
                 allOf: [
@@ -4449,7 +4645,7 @@ const data = {
                       "allow Privilege Escalation": {
                         description:
                           "Allow Privilege Escalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. Allow Privilege Escalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN Note that this field cannot be set when spec.os.name is windows.",
-                        type: "boolean"
+                        type: "boolean",
                       },
                       capabilities: {
                         allOf: [
@@ -4460,51 +4656,51 @@ const data = {
                               add: {
                                 description: "Added capabilities",
                                 items: { default: "", type: "string" },
-                                type: "array"
+                                type: "array",
                               },
                               drop: {
                                 description: "Removed capabilities",
                                 items: { default: "", type: "string" },
-                                type: "array"
-                              }
+                                type: "array",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "The capabilities to add/drop when running containers. Defaults to the default set of capabilities granted by the container runtime. Note that this field cannot be set when spec.os.name is windows."
+                          "The capabilities to add/drop when running containers. Defaults to the default set of capabilities granted by the container runtime. Note that this field cannot be set when spec.os.name is windows.",
                       },
                       privileged: {
                         description:
                           "Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false. Note that this field cannot be set when spec.os.name is windows.",
-                        type: "boolean"
+                        type: "boolean",
                       },
                       "proc Mount": {
                         description:
                           "proc Mount denotes the type of proc mount to use for the containers. The default is Default Proc Mount which uses the container runtime defaults for readonly paths and masked paths. This requires the Proc Mount Type feature flag to be enabled. Note that this field cannot be set when spec.os.name is windows.",
-                        type: "string"
+                        type: "string",
                       },
                       "read Only Root Filesystem": {
                         description:
                           "Whether this container has a read-only root filesystem. Default is false. Note that this field cannot be set when spec.os.name is windows.",
-                        type: "boolean"
+                        type: "boolean",
                       },
                       "run As Group": {
                         description:
                           "The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in Pod Security Context. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence. Note that this field cannot be set when spec.os.name is windows.",
                         format: "int64",
-                        type: "integer"
+                        type: "integer",
                       },
                       "run As Non Root": {
                         description:
                           "Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in Pod Security Context. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence.",
-                        type: "boolean"
+                        type: "boolean",
                       },
                       "run As User": {
                         description:
                           "The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in Pod Security Context. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence. Note that this field cannot be set when spec.os.name is windows.",
                         format: "int64",
-                        type: "integer"
+                        type: "integer",
                       },
                       "se Linux Options": {
                         allOf: [
@@ -4515,29 +4711,29 @@ const data = {
                               level: {
                                 description:
                                   "Level is SE Linux level label that applies to the container.",
-                                type: "string"
+                                type: "string",
                               },
                               role: {
                                 description:
                                   "Role is a SE Linux role label that applies to the container.",
-                                type: "string"
+                                type: "string",
                               },
                               type: {
                                 description:
                                   "Type is a SE Linux type label that applies to the container.",
-                                type: "string"
+                                type: "string",
                               },
                               user: {
                                 description:
                                   "User is a SE Linux user label that applies to the container.",
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "The SE Linux context to be applied to the container. If unspecified, the container runtime will allocate a random SE Linux context for each container. May also be set in Pod Security Context. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence. Note that this field cannot be set when spec.os.name is windows."
+                          "The SE Linux context to be applied to the container. If unspecified, the container runtime will allocate a random SE Linux context for each container. May also be set in Pod Security Context. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence. Note that this field cannot be set when spec.os.name is windows.",
                       },
                       "seccomp Profile": {
                         allOf: [
@@ -4548,15 +4744,19 @@ const data = {
                               "localhost Profile": {
                                 description:
                                   'localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work. Must be a descending path, relative to the kubelet\'s configured seccomp profile location. Must only be set if type is "Localhost".',
-                                type: "string"
+                                type: "string",
                               },
                               type: {
                                 default: "",
                                 description:
                                   'type indicates which kind of seccomp profile will be applied. Valid options are: Localhost - a profile defined in a file on the node should be used. Runtime Default - the container runtime default profile should be used. Unconfined - no profile should be applied. Possible enum values: - `"Localhost"` indicates a profile defined in a file on the node should be used. The file\'s location relative to <kubelet-root-dir>/seccomp. - `"Runtime Default"` represents the default container runtime seccomp profile. - `"Unconfined"` indicates no seccomp profile is applied (A.K.A. unconfined).',
-                                enum: ["Localhost", "RuntimeDefault", "Unconfined"],
-                                type: "string"
-                              }
+                                enum: [
+                                  "Localhost",
+                                  "RuntimeDefault",
+                                  "Unconfined",
+                                ],
+                                type: "string",
+                              },
                             },
                             required: ["type"],
                             type: "object",
@@ -4564,14 +4764,14 @@ const data = {
                               {
                                 discriminator: "type",
                                 "fields-to-discriminate By": {
-                                  "localhost Profile": "Localhost Profile"
-                                }
-                              }
-                            ]
-                          }
+                                  "localhost Profile": "Localhost Profile",
+                                },
+                              },
+                            ],
+                          },
                         ],
                         description:
-                          "The seccomp options to use by this container. If seccomp options are provided at both the pod & container level, the container options override the pod options. Note that this field cannot be set when spec.os.name is windows."
+                          "The seccomp options to use by this container. If seccomp options are provided at both the pod & container level, the container options override the pod options. Note that this field cannot be set when spec.os.name is windows.",
                       },
                       "windows Options": {
                         allOf: [
@@ -4582,36 +4782,36 @@ const data = {
                               "gmsa Credential Spec": {
                                 description:
                                   "GMSA Credential Spec is where the GMSA admission webhook (https://github.com/kubernetes-sigs/windows-gmsa) inlines the contents of the GMSA credential spec named by the GMSA Credential Spec Name field.",
-                                type: "string"
+                                type: "string",
                               },
                               "gmsa Credential Spec Name": {
                                 description:
                                   "GMSA Credential Spec Name is the name of the GMSA credential spec to use.",
-                                type: "string"
+                                type: "string",
                               },
                               "host Process": {
                                 description:
                                   "Host Process determines if a container should be run as a 'Host Process' container. This field is alpha-level and will only be honored by components that enable the Windows Host Process Containers feature flag. Setting this field without the feature flag will result in errors when validating the Pod. All of a Pod's containers must have the same effective Host Process value (it is not allowed to have a mix of Host Process containers and non-Host Process containers). In addition, if Host Process is true then Host Network must also be set to true.",
-                                type: "boolean"
+                                type: "boolean",
                               },
                               "run As User Name": {
                                 description:
                                   "The User Name in Windows to run the entrypoint of the container process. Defaults to the user specified in image metadata if unspecified. May also be set in Pod Security Context. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence.",
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "The Windows specific settings applied to all containers. If unspecified, the options from the Pod Security Context will be used. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence. Note that this field cannot be set when spec.os.name is linux."
-                      }
+                          "The Windows specific settings applied to all containers. If unspecified, the options from the Pod Security Context will be used. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence. Note that this field cannot be set when spec.os.name is linux.",
+                      },
                     },
-                    type: "object"
-                  }
+                    type: "object",
+                  },
                 ],
                 description:
-                  "Security Context defines the security options the container should be run with. If set, the fields of Security Context override the equivalent fields of Pod Security Context. More info: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/"
+                  "Security Context defines the security options the container should be run with. If set, the fields of Security Context override the equivalent fields of Pod Security Context. More info: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/",
               },
               "startup Probe": {
                 allOf: [
@@ -4629,19 +4829,19 @@ const data = {
                                 description:
                                   "Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions ('|', etc) won't work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.",
                                 items: { default: "", type: "string" },
-                                type: "array"
-                              }
+                                type: "array",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
-                        description: "Exec specifies the action to take."
+                        description: "Exec specifies the action to take.",
                       },
                       "failure Threshold": {
                         description:
                           "Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       grpc: {
                         allOf: [
@@ -4652,21 +4852,21 @@ const data = {
                                 description:
                                   "Port number of the g RPC service. Number must be in the range 1 to 65535.",
                                 format: "int32",
-                                type: "integer"
+                                type: "integer",
                               },
                               service: {
                                 default: "",
                                 description:
                                   "Service is the name of the service to place in the g RPC Health Check Request (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by g RPC.",
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "GRPC specifies an action involving a GRPC port. This is a beta field and requires enabling GRPC Container Probe feature gate."
+                          "GRPC specifies an action involving a GRPC port. This is a beta field and requires enabling GRPC Container Probe feature gate.",
                       },
                       "http Get": {
                         allOf: [
@@ -4677,7 +4877,7 @@ const data = {
                               host: {
                                 description:
                                   'Host name to connect to, defaults to the pod IP. You probably want to set "Host" in http Headers instead.',
-                                type: "string"
+                                type: "string",
                               },
                               "http Headers": {
                                 description:
@@ -4691,25 +4891,26 @@ const data = {
                                         name: {
                                           default: "",
                                           description: "The header field name",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         value: {
                                           default: "",
                                           description: "The header field value",
-                                          type: "string"
-                                        }
+                                          type: "string",
+                                        },
                                       },
                                       required: ["name", "value"],
-                                      type: "object"
-                                    }
+                                      type: "object",
+                                    },
                                   ],
-                                  default: {}
+                                  default: {},
                                 },
-                                type: "array"
+                                type: "array",
                               },
                               path: {
-                                description: "Path to access on the HTTP server.",
-                                type: "string"
+                                description:
+                                  "Path to access on the HTTP server.",
+                                type: "string",
                               },
                               port: {
                                 allOf: [
@@ -4717,43 +4918,47 @@ const data = {
                                     description:
                                       "Int Or String is a type that can hold an int32 or a string. When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type. This allows you to have, for example, a JSON field that can accept a name or number.",
                                     format: "int-or-string",
-                                    oneOf: [{ type: "integer" }, { type: "string" }]
-                                  }
+                                    oneOf: [
+                                      { type: "integer" },
+                                      { type: "string" },
+                                    ],
+                                  },
                                 ],
                                 default: {},
                                 description:
-                                  "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
+                                  "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
                               },
                               scheme: {
                                 description:
                                   'Scheme to use for connecting to the host. Defaults to HTTP. Possible enum values: - `"HTTP"` means that the scheme used will be http:// - `"HTTPS"` means that the scheme used will be https://',
                                 enum: ["HTTP", "HTTPS"],
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
-                        description: "HTTP Get specifies the http request to perform."
+                        description:
+                          "HTTP Get specifies the http request to perform.",
                       },
                       "initial Delay Seconds": {
                         description:
                           "Number of seconds after the container has started before liveness probes are initiated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "period Seconds": {
                         description:
                           "How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "success Threshold": {
                         description:
                           "Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness and startup. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "tcp Socket": {
                         allOf: [
@@ -4764,7 +4969,7 @@ const data = {
                               host: {
                                 description:
                                   "Optional: Host name to connect to, defaults to the pod IP.",
-                                type: "string"
+                                type: "string",
                               },
                               port: {
                                 allOf: [
@@ -4772,65 +4977,68 @@ const data = {
                                     description:
                                       "Int Or String is a type that can hold an int32 or a string. When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type. This allows you to have, for example, a JSON field that can accept a name or number.",
                                     format: "int-or-string",
-                                    oneOf: [{ type: "integer" }, { type: "string" }]
-                                  }
+                                    oneOf: [
+                                      { type: "integer" },
+                                      { type: "string" },
+                                    ],
+                                  },
                                 ],
                                 default: {},
                                 description:
-                                  "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
-                              }
+                                  "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "TCP Socket specifies an action involving a TCP port."
+                          "TCP Socket specifies an action involving a TCP port.",
                       },
                       "termination Grace Period Seconds": {
                         description:
                           "Optional duration in seconds the pod needs to terminate gracefully upon probe failure. The grace period is the duration in seconds after the processes running in the pod are sent a termination signal and the time when the processes are forcibly halted with a kill signal. Set this value longer than the expected cleanup time for your process. If this value is nil, the pod's termination Grace Period Seconds will be used. Otherwise, this value overrides the value provided by the pod spec. Value must be non-negative integer. The value zero indicates stop immediately via the kill signal (no opportunity to shut down). This is a beta field and requires enabling Probe Termination Grace Period feature gate. Minimum value is 1. spec.termination Grace Period Seconds is used if unset.",
                         format: "int64",
-                        type: "integer"
+                        type: "integer",
                       },
                       "timeout Seconds": {
                         description:
                           "Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
                         format: "int32",
-                        type: "integer"
-                      }
+                        type: "integer",
+                      },
                     },
-                    type: "object"
-                  }
+                    type: "object",
+                  },
                 ],
                 description:
-                  "Startup Probe indicates that the Pod has successfully initialized. If specified, no other probes are executed until this completes successfully. If this probe fails, the Pod will be restarted, just as if the liveness Probe failed. This can be used to provide different probe parameters at the beginning of a Pod's lifecycle, when it might take a long time to load data or warm a cache, than during steady-state operation. This cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"
+                  "Startup Probe indicates that the Pod has successfully initialized. If specified, no other probes are executed until this completes successfully. If this probe fails, the Pod will be restarted, just as if the liveness Probe failed. This can be used to provide different probe parameters at the beginning of a Pod's lifecycle, when it might take a long time to load data or warm a cache, than during steady-state operation. This cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
               },
               stdin: {
                 description:
                   "Whether this container should allocate a buffer for stdin in the container runtime. If this is not set, reads from stdin in the container will always result in EOF. Default is false.",
-                type: "boolean"
+                type: "boolean",
               },
               "stdin Once": {
                 description:
                   "Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdin Once is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF. Default is false",
-                type: "boolean"
+                type: "boolean",
               },
               "termination Message Path": {
                 description:
                   "Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Will be truncated by the node if greater than 4096 bytes. The total message length across all containers will be limited to 12kb. Defaults to /dev/termination-log. Cannot be updated.",
-                type: "string"
+                type: "string",
               },
               "termination Message Policy": {
                 description:
                   'Indicate how the termination message should be populated. File will use the contents of termination Message Path to populate the container status message on both success and failure. Fallback To Logs On Error will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated. Possible enum values: - `"Fallback To Logs On Error"` will read the most recent contents of the container logs for the container status message when the container exits with an error and the termination Message Path has no contents. - `"File"` is the default behavior and will set the container status message to the contents of the container\'s termination Message Path when the container exits.',
                 enum: ["FallbackToLogsOnError", "File"],
-                type: "string"
+                type: "string",
               },
               tty: {
                 description:
                   "Whether this container should allocate a TTY for itself, also requires 'stdin' to be true. Default is false.",
-                type: "boolean"
+                type: "boolean",
               },
               "volume Devices": {
                 description:
@@ -4845,24 +5053,24 @@ const data = {
                           default: "",
                           description:
                             "device Path is the path inside of the container that the device will be mapped to.",
-                          type: "string"
+                          type: "string",
                         },
                         name: {
                           default: "",
                           description:
                             "name must match the name of a persistent Volume Claim in the pod",
-                          type: "string"
-                        }
+                          type: "string",
+                        },
                       },
                       required: ["name", "device Path"],
-                      type: "object"
-                    }
+                      type: "object",
+                    },
                   ],
-                  default: {}
+                  default: {},
                 },
                 type: "array",
                 "x-kubernetes-patch-merge-key": "device Path",
-                "x-kubernetes-patch-strategy": "merge"
+                "x-kubernetes-patch-strategy": "merge",
               },
               "volume Mounts": {
                 description:
@@ -4877,52 +5085,52 @@ const data = {
                           default: "",
                           description:
                             "Path within the container at which the volume should be mounted. Must not contain ':'.",
-                          type: "string"
+                          type: "string",
                         },
                         "mount Propagation": {
                           description:
                             "mount Propagation determines how mounts are propagated from the host to container and the other way around. When not set, Mount Propagation None is used. This field is beta in 1.10.",
-                          type: "string"
+                          type: "string",
                         },
                         name: {
                           default: "",
                           description: "This must match the Name of a Volume.",
-                          type: "string"
+                          type: "string",
                         },
                         "read Only": {
                           description:
                             "Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.",
-                          type: "boolean"
+                          type: "boolean",
                         },
                         "sub Path": {
                           description:
                             "Path within the volume from which the container's volume should be mounted. Defaults to \"\" (volume's root).",
-                          type: "string"
+                          type: "string",
                         },
                         "sub Path Expr": {
                           description:
                             "Expanded path within the volume from which the container's volume should be mounted. Behaves similarly to Sub Path but environment variable references $(VAR_NAME) are expanded using the container's environment. Defaults to \"\" (volume's root). Sub Path Expr and Sub Path are mutually exclusive.",
-                          type: "string"
-                        }
+                          type: "string",
+                        },
                       },
                       required: ["name", "mount Path"],
-                      type: "object"
-                    }
+                      type: "object",
+                    },
                   ],
-                  default: {}
+                  default: {},
                 },
                 type: "array",
                 "x-kubernetes-patch-merge-key": "mount Path",
-                "x-kubernetes-patch-strategy": "merge"
+                "x-kubernetes-patch-strategy": "merge",
               },
               "working Dir": {
                 description:
                   "Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.",
-                type: "string"
-              }
+                type: "string",
+              },
             },
             required: ["name"],
-            type: "object"
+            type: "object",
           },
           componentDefinition: {
             id: "fcd41e59-cb70-481c-9302-9221e389087c",
@@ -4950,11 +5158,11 @@ const data = {
                   "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                 svgComplete: "",
                 svgWhite:
-                  "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg"
+                  "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
               },
               model: { version: "0.7.2" },
               components: null,
-              relationships: null
+              relationships: null,
             },
             metadata: {
               capabilities:
@@ -4975,22 +5183,24 @@ const data = {
                 "ui/public/static/img/meshmodels/meshery-core/color/container-color.svg",
               svgComplete: "",
               svgWhite:
-                "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg"
+                "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg",
             },
             component: {
               kind: "Container",
               version: "core.meshery.io/v1alpha1",
-              schema: "{}"
+              schema: "{}",
             },
-            duplicates: 6
+            duplicates: 6,
           },
           parent: "ae37bb96-b4e6-4b4f-9e13-ac47309cf6eb",
           id: "5be73225-ad10-42ed-a953-18233457dec8",
           config: {
             services: {
-              "5be73225-ad10-42ed-a953-18233457dec8": { settings: { name: "agent" } }
-            }
-          }
+              "5be73225-ad10-42ed-a953-18233457dec8": {
+                settings: { name: "agent" },
+              },
+            },
+          },
         },
         position: { x: -214, y: -210.5 },
         group: "nodes",
@@ -5000,7 +5210,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: "fieldRefNode"
+        classes: "fieldRefNode",
       },
       {
         data: {
@@ -5017,13 +5227,13 @@ const data = {
                 description:
                   'Arguments to the entrypoint. The container image\'s CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container\'s environment. If a variable cannot be resolved, the reference in the input string will be unchanged. Double $$ are reduced to a single $, which allows for escaping the $(VAR_NAME) syntax: i.e. "$$(VAR_NAME)" will produce the string literal "$(VAR_NAME)". Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell',
                 items: { default: "", type: "string" },
-                type: "array"
+                type: "array",
               },
               command: {
                 description:
                   'Entrypoint array. Not executed within a shell. The container image\'s ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container\'s environment. If a variable cannot be resolved, the reference in the input string will be unchanged. Double $$ are reduced to a single $, which allows for escaping the $(VAR_NAME) syntax: i.e. "$$(VAR_NAME)" will produce the string literal "$(VAR_NAME)". Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell',
                 items: { default: "", type: "string" },
-                type: "array"
+                type: "array",
               },
               env: {
                 description:
@@ -5038,12 +5248,12 @@ const data = {
                           default: "",
                           description:
                             "Name of the environment variable. Must be a C_IDENTIFIER.",
-                          type: "string"
+                          type: "string",
                         },
                         value: {
                           description:
                             'Variable references $(VAR_NAME) are expanded using the previously defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. Double $$ are reduced to a single $, which allows for escaping the $(VAR_NAME) syntax: i.e. "$$(VAR_NAME)" will produce the string literal "$(VAR_NAME)". Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".',
-                          type: "string"
+                          type: "string",
                         },
                         "value From": {
                           allOf: [
@@ -5054,30 +5264,31 @@ const data = {
                                 "config Map Key Ref": {
                                   allOf: [
                                     {
-                                      description: "Selects a key from a Config Map.",
+                                      description:
+                                        "Selects a key from a Config Map.",
                                       properties: {
                                         key: {
                                           default: "",
                                           description: "The key to select.",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         name: {
                                           description:
                                             "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         optional: {
                                           description:
                                             "Specify whether the Config Map or its key must be defined",
-                                          type: "boolean"
-                                        }
+                                          type: "boolean",
+                                        },
                                       },
                                       required: ["key"],
                                       type: "object",
-                                      "x-kubernetes-map-type": "atomic"
-                                    }
+                                      "x-kubernetes-map-type": "atomic",
+                                    },
                                   ],
-                                  description: "Selects a key of a Config Map."
+                                  description: "Selects a key of a Config Map.",
                                 },
                                 "field Ref": {
                                   allOf: [
@@ -5088,22 +5299,22 @@ const data = {
                                         "api Version": {
                                           description:
                                             'Version of the schema the Field Path is written in terms of, defaults to "v1".',
-                                          type: "string"
+                                          type: "string",
                                         },
                                         "field Path": {
                                           default: "",
                                           description:
                                             "Path of the field to select in the specified API version.",
-                                          type: "string"
-                                        }
+                                          type: "string",
+                                        },
                                       },
                                       required: ["field Path"],
                                       type: "object",
-                                      "x-kubernetes-map-type": "atomic"
-                                    }
+                                      "x-kubernetes-map-type": "atomic",
+                                    },
                                   ],
                                   description:
-                                    "Selects a field of the pod: supports metadata.name, metadata.namespace, `metadata.labels['<KEY>']`, `metadata.annotations['<KEY>']`, spec.node Name, spec.service Account Name, status.host IP, status.pod IP, status.pod I Ps."
+                                    "Selects a field of the pod: supports metadata.name, metadata.namespace, `metadata.labels['<KEY>']`, `metadata.annotations['<KEY>']`, spec.node Name, spec.service Account Name, status.host IP, status.pod IP, status.pod I Ps.",
                                 },
                                 "resource Field Ref": {
                                   allOf: [
@@ -5114,7 +5325,7 @@ const data = {
                                         "container Name": {
                                           description:
                                             "Container name: required for volumes, optional for env vars",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         divisor: {
                                           allOf: [
@@ -5123,27 +5334,28 @@ const data = {
                                                 'Quantity is a fixed-point representation of a number. It provides convenient marshaling/unmarshaling in JSON and YAML, in addition to String() and As Int64() accessors. The serialization format is: ``` <quantity> ::= <signed Number><suffix> (Note that <suffix> may be empty, from the "" case in <decimal SI>.) <digit> ::= 0 | 1 | ... | 9 <digits> ::= <digit> | <digit><digits> <number> ::= <digits> | <digits>.<digits> | <digits>. | .<digits> <sign> ::= "+" | "-" <signed Number> ::= <number> | <sign><number> <suffix> ::= <binary SI> | <decimal Exponent> | <decimal SI> <binary SI> ::= Ki | Mi | Gi | Ti | Pi | Ei (International System of units; See: http://physics.nist.gov/cuu/Units/binary.html) <decimal SI> ::= m | "" | k | M | G | T | P | E (Note that 1024 = 1Ki but 1000 = 1k; I didn\'t choose the capitalization.) <decimal Exponent> ::= "e" <signed Number> | "E" <signed Number> ``` No matter which of the three exponent forms is used, no quantity may represent a number greater than 2^63-1 in magnitude, nor may it have more than 3 decimal places. Numbers larger or more precise will be capped or rounded up. (E.g.: 0.1m will rounded up to 1m.) This may be extended in the future if we require larger or smaller quantities. When a Quantity is parsed from a string, it will remember the type of suffix it had, and will use the same type again when it is serialized. Before serializing, Quantity will be put in "canonical form". This means that Exponent/suffix will be adjusted up or down (with a corresponding increase or decrease in Mantissa) such that: - No precision is lost - No fractional digits will be emitted - The exponent (or suffix) is as large as possible. The sign will be omitted unless the number is negative. Examples: - 1.5 will be serialized as "1500m" - 1.5Gi will be serialized as "1536Mi" Note that the quantity will NEVER be internally represented by a floating point number. That is the whole point of this exercise. Non-canonical values will still parse as long as they are well formed, but will be re-emitted in their canonical form. (So always use canonical form, or don\'t diff.) This format is intended to make it difficult to use these numbers without writing some sort of special handling code in the hopes that that will cause implementors to also use a fixed point implementation.',
                                               oneOf: [
                                                 { type: "string" },
-                                                { type: "number" }
-                                              ]
-                                            }
+                                                { type: "number" },
+                                              ],
+                                            },
                                           ],
                                           default: {},
                                           description:
-                                            'Specifies the output format of the exposed resources, defaults to "1"'
+                                            'Specifies the output format of the exposed resources, defaults to "1"',
                                         },
                                         resource: {
                                           default: "",
-                                          description: "Required: resource to select",
-                                          type: "string"
-                                        }
+                                          description:
+                                            "Required: resource to select",
+                                          type: "string",
+                                        },
                                       },
                                       required: ["resource"],
                                       type: "object",
-                                      "x-kubernetes-map-type": "atomic"
-                                    }
+                                      "x-kubernetes-map-type": "atomic",
+                                    },
                                   ],
                                   description:
-                                    "Selects a resource of the container: only resources limits and requests (limits.cpu, limits.memory, limits.ephemeral-storage, requests.cpu, requests.memory and requests.ephemeral-storage) are currently supported."
+                                    "Selects a resource of the container: only resources limits and requests (limits.cpu, limits.memory, limits.ephemeral-storage, requests.cpu, requests.memory and requests.ephemeral-storage) are currently supported.",
                                 },
                                 "secret Key Ref": {
                                   allOf: [
@@ -5155,44 +5367,44 @@ const data = {
                                           default: "",
                                           description:
                                             "The key of the secret to select from. Must be a valid secret key.",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         name: {
                                           description:
                                             "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         optional: {
                                           description:
                                             "Specify whether the Secret or its key must be defined",
-                                          type: "boolean"
-                                        }
+                                          type: "boolean",
+                                        },
                                       },
                                       required: ["key"],
                                       type: "object",
-                                      "x-kubernetes-map-type": "atomic"
-                                    }
+                                      "x-kubernetes-map-type": "atomic",
+                                    },
                                   ],
                                   description:
-                                    "Selects a key of a secret in the pod's namespace"
-                                }
+                                    "Selects a key of a secret in the pod's namespace",
+                                },
                               },
-                              type: "object"
-                            }
+                              type: "object",
+                            },
                           ],
                           description:
-                            "Source for the environment variable's value. Cannot be used if value is not empty."
-                        }
+                            "Source for the environment variable's value. Cannot be used if value is not empty.",
+                        },
                       },
                       required: ["name"],
-                      type: "object"
-                    }
+                      type: "object",
+                    },
                   ],
-                  default: {}
+                  default: {},
                 },
                 type: "array",
                 "x-kubernetes-patch-merge-key": "name",
-                "x-kubernetes-patch-strategy": "merge"
+                "x-kubernetes-patch-strategy": "merge",
               },
               "env From": {
                 description:
@@ -5212,23 +5424,23 @@ const data = {
                                 name: {
                                   description:
                                     "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
-                                  type: "string"
+                                  type: "string",
                                 },
                                 optional: {
                                   description:
                                     "Specify whether the Config Map must be defined",
-                                  type: "boolean"
-                                }
+                                  type: "boolean",
+                                },
                               },
-                              type: "object"
-                            }
+                              type: "object",
+                            },
                           ],
-                          description: "The Config Map to select from"
+                          description: "The Config Map to select from",
                         },
                         prefix: {
                           description:
                             "An optional identifier to prepend to each key in the Config Map. Must be a C_IDENTIFIER.",
-                          type: "string"
+                          type: "string",
                         },
                         "secret Ref": {
                           allOf: [
@@ -5239,37 +5451,37 @@ const data = {
                                 name: {
                                   description:
                                     "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
-                                  type: "string"
+                                  type: "string",
                                 },
                                 optional: {
                                   description:
                                     "Specify whether the Secret must be defined",
-                                  type: "boolean"
-                                }
+                                  type: "boolean",
+                                },
                               },
-                              type: "object"
-                            }
+                              type: "object",
+                            },
                           ],
-                          description: "The Secret to select from"
-                        }
+                          description: "The Secret to select from",
+                        },
                       },
-                      type: "object"
-                    }
+                      type: "object",
+                    },
                   ],
-                  default: {}
+                  default: {},
                 },
-                type: "array"
+                type: "array",
               },
               image: {
                 description:
                   "Container image name. More info: https://kubernetes.io/docs/concepts/containers/images This field is optional to allow higher level config management to default or override container images in workload controllers like Deployments and Stateful Sets.",
-                type: "string"
+                type: "string",
               },
               "image Pull Policy": {
                 description:
                   'Image pull policy. One of Always, Never, If Not Present. Defaults to Always if :latest tag is specified, or If Not Present otherwise. Cannot be updated. More info: https://kubernetes.io/docs/concepts/containers/images#updating-images Possible enum values: - `"Always"` means that kubelet always attempts to pull the latest image. Container will fail If the pull fails. - `"If Not Present"` means that kubelet pulls if the image isn\'t present on disk. Container will fail if the image isn\'t present and the pull fails. - `"Never"` means that kubelet never pulls an image, but only uses a local image. Container will fail if the image isn\'t present',
                 enum: ["Always", "IfNotPresent", "Never"],
-                type: "string"
+                type: "string",
               },
               lifecycle: {
                 allOf: [
@@ -5293,13 +5505,14 @@ const data = {
                                         description:
                                           "Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions ('|', etc) won't work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.",
                                         items: { default: "", type: "string" },
-                                        type: "array"
-                                      }
+                                        type: "array",
+                                      },
                                     },
-                                    type: "object"
-                                  }
+                                    type: "object",
+                                  },
                                 ],
-                                description: "Exec specifies the action to take."
+                                description:
+                                  "Exec specifies the action to take.",
                               },
                               "http Get": {
                                 allOf: [
@@ -5310,7 +5523,7 @@ const data = {
                                       host: {
                                         description:
                                           'Host name to connect to, defaults to the pod IP. You probably want to set "Host" in http Headers instead.',
-                                        type: "string"
+                                        type: "string",
                                       },
                                       "http Headers": {
                                         description:
@@ -5323,26 +5536,29 @@ const data = {
                                               properties: {
                                                 name: {
                                                   default: "",
-                                                  description: "The header field name",
-                                                  type: "string"
+                                                  description:
+                                                    "The header field name",
+                                                  type: "string",
                                                 },
                                                 value: {
                                                   default: "",
-                                                  description: "The header field value",
-                                                  type: "string"
-                                                }
+                                                  description:
+                                                    "The header field value",
+                                                  type: "string",
+                                                },
                                               },
                                               required: ["name", "value"],
-                                              type: "object"
-                                            }
+                                              type: "object",
+                                            },
                                           ],
-                                          default: {}
+                                          default: {},
                                         },
-                                        type: "array"
+                                        type: "array",
                                       },
                                       path: {
-                                        description: "Path to access on the HTTP server.",
-                                        type: "string"
+                                        description:
+                                          "Path to access on the HTTP server.",
+                                        type: "string",
                                       },
                                       port: {
                                         allOf: [
@@ -5352,27 +5568,27 @@ const data = {
                                             format: "int-or-string",
                                             oneOf: [
                                               { type: "integer" },
-                                              { type: "string" }
-                                            ]
-                                          }
+                                              { type: "string" },
+                                            ],
+                                          },
                                         ],
                                         default: {},
                                         description:
-                                          "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
+                                          "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
                                       },
                                       scheme: {
                                         description:
                                           'Scheme to use for connecting to the host. Defaults to HTTP. Possible enum values: - `"HTTP"` means that the scheme used will be http:// - `"HTTPS"` means that the scheme used will be https://',
                                         enum: ["HTTP", "HTTPS"],
-                                        type: "string"
-                                      }
+                                        type: "string",
+                                      },
                                     },
                                     required: ["port"],
-                                    type: "object"
-                                  }
+                                    type: "object",
+                                  },
                                 ],
                                 description:
-                                  "HTTP Get specifies the http request to perform."
+                                  "HTTP Get specifies the http request to perform.",
                               },
                               "tcp Socket": {
                                 allOf: [
@@ -5383,7 +5599,7 @@ const data = {
                                       host: {
                                         description:
                                           "Optional: Host name to connect to, defaults to the pod IP.",
-                                        type: "string"
+                                        type: "string",
                                       },
                                       port: {
                                         allOf: [
@@ -5393,28 +5609,28 @@ const data = {
                                             format: "int-or-string",
                                             oneOf: [
                                               { type: "integer" },
-                                              { type: "string" }
-                                            ]
-                                          }
+                                              { type: "string" },
+                                            ],
+                                          },
                                         ],
                                         default: {},
                                         description:
-                                          "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
-                                      }
+                                          "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
+                                      },
                                     },
                                     required: ["port"],
-                                    type: "object"
-                                  }
+                                    type: "object",
+                                  },
                                 ],
                                 description:
-                                  "Deprecated. TCP Socket is NOT supported as a Lifecycle Handler and kept for the backward compatibility. There are no validation of this field and lifecycle hooks will fail in runtime when tcp handler is specified."
-                              }
+                                  "Deprecated. TCP Socket is NOT supported as a Lifecycle Handler and kept for the backward compatibility. There are no validation of this field and lifecycle hooks will fail in runtime when tcp handler is specified.",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "Post Start is called immediately after a container is created. If the handler fails, the container is terminated and restarted according to its restart policy. Other management of the container blocks until the hook completes. More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks"
+                          "Post Start is called immediately after a container is created. If the handler fails, the container is terminated and restarted according to its restart policy. Other management of the container blocks until the hook completes. More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks",
                       },
                       "pre Stop": {
                         allOf: [
@@ -5432,13 +5648,14 @@ const data = {
                                         description:
                                           "Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions ('|', etc) won't work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.",
                                         items: { default: "", type: "string" },
-                                        type: "array"
-                                      }
+                                        type: "array",
+                                      },
                                     },
-                                    type: "object"
-                                  }
+                                    type: "object",
+                                  },
                                 ],
-                                description: "Exec specifies the action to take."
+                                description:
+                                  "Exec specifies the action to take.",
                               },
                               "http Get": {
                                 allOf: [
@@ -5449,7 +5666,7 @@ const data = {
                                       host: {
                                         description:
                                           'Host name to connect to, defaults to the pod IP. You probably want to set "Host" in http Headers instead.',
-                                        type: "string"
+                                        type: "string",
                                       },
                                       "http Headers": {
                                         description:
@@ -5462,26 +5679,29 @@ const data = {
                                               properties: {
                                                 name: {
                                                   default: "",
-                                                  description: "The header field name",
-                                                  type: "string"
+                                                  description:
+                                                    "The header field name",
+                                                  type: "string",
                                                 },
                                                 value: {
                                                   default: "",
-                                                  description: "The header field value",
-                                                  type: "string"
-                                                }
+                                                  description:
+                                                    "The header field value",
+                                                  type: "string",
+                                                },
                                               },
                                               required: ["name", "value"],
-                                              type: "object"
-                                            }
+                                              type: "object",
+                                            },
                                           ],
-                                          default: {}
+                                          default: {},
                                         },
-                                        type: "array"
+                                        type: "array",
                                       },
                                       path: {
-                                        description: "Path to access on the HTTP server.",
-                                        type: "string"
+                                        description:
+                                          "Path to access on the HTTP server.",
+                                        type: "string",
                                       },
                                       port: {
                                         allOf: [
@@ -5491,27 +5711,27 @@ const data = {
                                             format: "int-or-string",
                                             oneOf: [
                                               { type: "integer" },
-                                              { type: "string" }
-                                            ]
-                                          }
+                                              { type: "string" },
+                                            ],
+                                          },
                                         ],
                                         default: {},
                                         description:
-                                          "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
+                                          "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
                                       },
                                       scheme: {
                                         description:
                                           'Scheme to use for connecting to the host. Defaults to HTTP. Possible enum values: - `"HTTP"` means that the scheme used will be http:// - `"HTTPS"` means that the scheme used will be https://',
                                         enum: ["HTTP", "HTTPS"],
-                                        type: "string"
-                                      }
+                                        type: "string",
+                                      },
                                     },
                                     required: ["port"],
-                                    type: "object"
-                                  }
+                                    type: "object",
+                                  },
                                 ],
                                 description:
-                                  "HTTP Get specifies the http request to perform."
+                                  "HTTP Get specifies the http request to perform.",
                               },
                               "tcp Socket": {
                                 allOf: [
@@ -5522,7 +5742,7 @@ const data = {
                                       host: {
                                         description:
                                           "Optional: Host name to connect to, defaults to the pod IP.",
-                                        type: "string"
+                                        type: "string",
                                       },
                                       port: {
                                         allOf: [
@@ -5532,35 +5752,35 @@ const data = {
                                             format: "int-or-string",
                                             oneOf: [
                                               { type: "integer" },
-                                              { type: "string" }
-                                            ]
-                                          }
+                                              { type: "string" },
+                                            ],
+                                          },
                                         ],
                                         default: {},
                                         description:
-                                          "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
-                                      }
+                                          "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
+                                      },
                                     },
                                     required: ["port"],
-                                    type: "object"
-                                  }
+                                    type: "object",
+                                  },
                                 ],
                                 description:
-                                  "Deprecated. TCP Socket is NOT supported as a Lifecycle Handler and kept for the backward compatibility. There are no validation of this field and lifecycle hooks will fail in runtime when tcp handler is specified."
-                              }
+                                  "Deprecated. TCP Socket is NOT supported as a Lifecycle Handler and kept for the backward compatibility. There are no validation of this field and lifecycle hooks will fail in runtime when tcp handler is specified.",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "Pre Stop is called immediately before a container is terminated due to an API request or management event such as liveness/startup probe failure, preemption, resource contention, etc. The handler is not called if the container crashes or exits. The Pod's termination grace period countdown begins before the Pre Stop hook is executed. Regardless of the outcome of the handler, the container will eventually terminate within the Pod's termination grace period (unless delayed by finalizers). Other management of the container blocks until the hook completes or until the termination grace period is reached. More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks"
-                      }
+                          "Pre Stop is called immediately before a container is terminated due to an API request or management event such as liveness/startup probe failure, preemption, resource contention, etc. The handler is not called if the container crashes or exits. The Pod's termination grace period countdown begins before the Pre Stop hook is executed. Regardless of the outcome of the handler, the container will eventually terminate within the Pod's termination grace period (unless delayed by finalizers). Other management of the container blocks until the hook completes or until the termination grace period is reached. More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks",
+                      },
                     },
-                    type: "object"
-                  }
+                    type: "object",
+                  },
                 ],
                 description:
-                  "Actions that the management system should take in response to container lifecycle events. Cannot be updated."
+                  "Actions that the management system should take in response to container lifecycle events. Cannot be updated.",
               },
               "liveness Probe": {
                 allOf: [
@@ -5578,19 +5798,19 @@ const data = {
                                 description:
                                   "Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions ('|', etc) won't work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.",
                                 items: { default: "", type: "string" },
-                                type: "array"
-                              }
+                                type: "array",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
-                        description: "Exec specifies the action to take."
+                        description: "Exec specifies the action to take.",
                       },
                       "failure Threshold": {
                         description:
                           "Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       grpc: {
                         allOf: [
@@ -5601,21 +5821,21 @@ const data = {
                                 description:
                                   "Port number of the g RPC service. Number must be in the range 1 to 65535.",
                                 format: "int32",
-                                type: "integer"
+                                type: "integer",
                               },
                               service: {
                                 default: "",
                                 description:
                                   "Service is the name of the service to place in the g RPC Health Check Request (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by g RPC.",
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "GRPC specifies an action involving a GRPC port. This is a beta field and requires enabling GRPC Container Probe feature gate."
+                          "GRPC specifies an action involving a GRPC port. This is a beta field and requires enabling GRPC Container Probe feature gate.",
                       },
                       "http Get": {
                         allOf: [
@@ -5626,7 +5846,7 @@ const data = {
                               host: {
                                 description:
                                   'Host name to connect to, defaults to the pod IP. You probably want to set "Host" in http Headers instead.',
-                                type: "string"
+                                type: "string",
                               },
                               "http Headers": {
                                 description:
@@ -5640,25 +5860,26 @@ const data = {
                                         name: {
                                           default: "",
                                           description: "The header field name",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         value: {
                                           default: "",
                                           description: "The header field value",
-                                          type: "string"
-                                        }
+                                          type: "string",
+                                        },
                                       },
                                       required: ["name", "value"],
-                                      type: "object"
-                                    }
+                                      type: "object",
+                                    },
                                   ],
-                                  default: {}
+                                  default: {},
                                 },
-                                type: "array"
+                                type: "array",
                               },
                               path: {
-                                description: "Path to access on the HTTP server.",
-                                type: "string"
+                                description:
+                                  "Path to access on the HTTP server.",
+                                type: "string",
                               },
                               port: {
                                 allOf: [
@@ -5666,43 +5887,47 @@ const data = {
                                     description:
                                       "Int Or String is a type that can hold an int32 or a string. When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type. This allows you to have, for example, a JSON field that can accept a name or number.",
                                     format: "int-or-string",
-                                    oneOf: [{ type: "integer" }, { type: "string" }]
-                                  }
+                                    oneOf: [
+                                      { type: "integer" },
+                                      { type: "string" },
+                                    ],
+                                  },
                                 ],
                                 default: {},
                                 description:
-                                  "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
+                                  "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
                               },
                               scheme: {
                                 description:
                                   'Scheme to use for connecting to the host. Defaults to HTTP. Possible enum values: - `"HTTP"` means that the scheme used will be http:// - `"HTTPS"` means that the scheme used will be https://',
                                 enum: ["HTTP", "HTTPS"],
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
-                        description: "HTTP Get specifies the http request to perform."
+                        description:
+                          "HTTP Get specifies the http request to perform.",
                       },
                       "initial Delay Seconds": {
                         description:
                           "Number of seconds after the container has started before liveness probes are initiated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "period Seconds": {
                         description:
                           "How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "success Threshold": {
                         description:
                           "Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness and startup. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "tcp Socket": {
                         allOf: [
@@ -5713,7 +5938,7 @@ const data = {
                               host: {
                                 description:
                                   "Optional: Host name to connect to, defaults to the pod IP.",
-                                type: "string"
+                                type: "string",
                               },
                               port: {
                                 allOf: [
@@ -5721,45 +5946,48 @@ const data = {
                                     description:
                                       "Int Or String is a type that can hold an int32 or a string. When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type. This allows you to have, for example, a JSON field that can accept a name or number.",
                                     format: "int-or-string",
-                                    oneOf: [{ type: "integer" }, { type: "string" }]
-                                  }
+                                    oneOf: [
+                                      { type: "integer" },
+                                      { type: "string" },
+                                    ],
+                                  },
                                 ],
                                 default: {},
                                 description:
-                                  "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
-                              }
+                                  "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "TCP Socket specifies an action involving a TCP port."
+                          "TCP Socket specifies an action involving a TCP port.",
                       },
                       "termination Grace Period Seconds": {
                         description:
                           "Optional duration in seconds the pod needs to terminate gracefully upon probe failure. The grace period is the duration in seconds after the processes running in the pod are sent a termination signal and the time when the processes are forcibly halted with a kill signal. Set this value longer than the expected cleanup time for your process. If this value is nil, the pod's termination Grace Period Seconds will be used. Otherwise, this value overrides the value provided by the pod spec. Value must be non-negative integer. The value zero indicates stop immediately via the kill signal (no opportunity to shut down). This is a beta field and requires enabling Probe Termination Grace Period feature gate. Minimum value is 1. spec.termination Grace Period Seconds is used if unset.",
                         format: "int64",
-                        type: "integer"
+                        type: "integer",
                       },
                       "timeout Seconds": {
                         description:
                           "Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
                         format: "int32",
-                        type: "integer"
-                      }
+                        type: "integer",
+                      },
                     },
-                    type: "object"
-                  }
+                    type: "object",
+                  },
                 ],
                 description:
-                  "Periodic probe of container liveness. Container will be restarted if the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"
+                  "Periodic probe of container liveness. Container will be restarted if the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
               },
               name: {
                 default: "",
                 description:
                   "Name of the container specified as a DNS_LABEL. Each container in a pod must have a unique name (DNS_LABEL). Cannot be updated.",
-                type: "string"
+                type: "string",
               },
               ports: {
                 description:
@@ -5775,42 +6003,43 @@ const data = {
                           description:
                             "Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.",
                           format: "int32",
-                          type: "integer"
+                          type: "integer",
                         },
                         "host IP": {
-                          description: "What host IP to bind the external port to.",
-                          type: "string"
+                          description:
+                            "What host IP to bind the external port to.",
+                          type: "string",
                         },
                         "host Port": {
                           description:
                             "Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If Host Network is specified, this must match Container Port. Most containers do not need this.",
                           format: "int32",
-                          type: "integer"
+                          type: "integer",
                         },
                         name: {
                           description:
                             "If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services.",
-                          type: "string"
+                          type: "string",
                         },
                         protocol: {
                           default: "TCP",
                           description:
                             'Protocol for port. Must be UDP, TCP, or SCTP. Defaults to "TCP". Possible enum values: - `"SCTP"` is the SCTP protocol. - `"TCP"` is the TCP protocol. - `"UDP"` is the UDP protocol.',
                           enum: ["SCTP", "TCP", "UDP"],
-                          type: "string"
-                        }
+                          type: "string",
+                        },
                       },
                       required: ["container Port"],
-                      type: "object"
-                    }
+                      type: "object",
+                    },
                   ],
-                  default: {}
+                  default: {},
                 },
                 type: "array",
                 "x-kubernetes-list-map-keys": ["container Port", "protocol"],
                 "x-kubernetes-list-type": "map",
                 "x-kubernetes-patch-merge-key": "container Port",
-                "x-kubernetes-patch-strategy": "merge"
+                "x-kubernetes-patch-strategy": "merge",
               },
               "readiness Probe": {
                 allOf: [
@@ -5828,19 +6057,19 @@ const data = {
                                 description:
                                   "Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions ('|', etc) won't work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.",
                                 items: { default: "", type: "string" },
-                                type: "array"
-                              }
+                                type: "array",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
-                        description: "Exec specifies the action to take."
+                        description: "Exec specifies the action to take.",
                       },
                       "failure Threshold": {
                         description:
                           "Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       grpc: {
                         allOf: [
@@ -5851,21 +6080,21 @@ const data = {
                                 description:
                                   "Port number of the g RPC service. Number must be in the range 1 to 65535.",
                                 format: "int32",
-                                type: "integer"
+                                type: "integer",
                               },
                               service: {
                                 default: "",
                                 description:
                                   "Service is the name of the service to place in the g RPC Health Check Request (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by g RPC.",
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "GRPC specifies an action involving a GRPC port. This is a beta field and requires enabling GRPC Container Probe feature gate."
+                          "GRPC specifies an action involving a GRPC port. This is a beta field and requires enabling GRPC Container Probe feature gate.",
                       },
                       "http Get": {
                         allOf: [
@@ -5876,7 +6105,7 @@ const data = {
                               host: {
                                 description:
                                   'Host name to connect to, defaults to the pod IP. You probably want to set "Host" in http Headers instead.',
-                                type: "string"
+                                type: "string",
                               },
                               "http Headers": {
                                 description:
@@ -5890,25 +6119,26 @@ const data = {
                                         name: {
                                           default: "",
                                           description: "The header field name",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         value: {
                                           default: "",
                                           description: "The header field value",
-                                          type: "string"
-                                        }
+                                          type: "string",
+                                        },
                                       },
                                       required: ["name", "value"],
-                                      type: "object"
-                                    }
+                                      type: "object",
+                                    },
                                   ],
-                                  default: {}
+                                  default: {},
                                 },
-                                type: "array"
+                                type: "array",
                               },
                               path: {
-                                description: "Path to access on the HTTP server.",
-                                type: "string"
+                                description:
+                                  "Path to access on the HTTP server.",
+                                type: "string",
                               },
                               port: {
                                 allOf: [
@@ -5916,43 +6146,47 @@ const data = {
                                     description:
                                       "Int Or String is a type that can hold an int32 or a string. When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type. This allows you to have, for example, a JSON field that can accept a name or number.",
                                     format: "int-or-string",
-                                    oneOf: [{ type: "integer" }, { type: "string" }]
-                                  }
+                                    oneOf: [
+                                      { type: "integer" },
+                                      { type: "string" },
+                                    ],
+                                  },
                                 ],
                                 default: {},
                                 description:
-                                  "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
+                                  "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
                               },
                               scheme: {
                                 description:
                                   'Scheme to use for connecting to the host. Defaults to HTTP. Possible enum values: - `"HTTP"` means that the scheme used will be http:// - `"HTTPS"` means that the scheme used will be https://',
                                 enum: ["HTTP", "HTTPS"],
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
-                        description: "HTTP Get specifies the http request to perform."
+                        description:
+                          "HTTP Get specifies the http request to perform.",
                       },
                       "initial Delay Seconds": {
                         description:
                           "Number of seconds after the container has started before liveness probes are initiated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "period Seconds": {
                         description:
                           "How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "success Threshold": {
                         description:
                           "Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness and startup. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "tcp Socket": {
                         allOf: [
@@ -5963,7 +6197,7 @@ const data = {
                               host: {
                                 description:
                                   "Optional: Host name to connect to, defaults to the pod IP.",
-                                type: "string"
+                                type: "string",
                               },
                               port: {
                                 allOf: [
@@ -5971,39 +6205,42 @@ const data = {
                                     description:
                                       "Int Or String is a type that can hold an int32 or a string. When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type. This allows you to have, for example, a JSON field that can accept a name or number.",
                                     format: "int-or-string",
-                                    oneOf: [{ type: "integer" }, { type: "string" }]
-                                  }
+                                    oneOf: [
+                                      { type: "integer" },
+                                      { type: "string" },
+                                    ],
+                                  },
                                 ],
                                 default: {},
                                 description:
-                                  "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
-                              }
+                                  "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "TCP Socket specifies an action involving a TCP port."
+                          "TCP Socket specifies an action involving a TCP port.",
                       },
                       "termination Grace Period Seconds": {
                         description:
                           "Optional duration in seconds the pod needs to terminate gracefully upon probe failure. The grace period is the duration in seconds after the processes running in the pod are sent a termination signal and the time when the processes are forcibly halted with a kill signal. Set this value longer than the expected cleanup time for your process. If this value is nil, the pod's termination Grace Period Seconds will be used. Otherwise, this value overrides the value provided by the pod spec. Value must be non-negative integer. The value zero indicates stop immediately via the kill signal (no opportunity to shut down). This is a beta field and requires enabling Probe Termination Grace Period feature gate. Minimum value is 1. spec.termination Grace Period Seconds is used if unset.",
                         format: "int64",
-                        type: "integer"
+                        type: "integer",
                       },
                       "timeout Seconds": {
                         description:
                           "Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
                         format: "int32",
-                        type: "integer"
-                      }
+                        type: "integer",
+                      },
                     },
-                    type: "object"
-                  }
+                    type: "object",
+                  },
                 ],
                 description:
-                  "Periodic probe of container service readiness. Container will be removed from service endpoints if the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"
+                  "Periodic probe of container service readiness. Container will be removed from service endpoints if the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
               },
               resources: {
                 allOf: [
@@ -6017,14 +6254,14 @@ const data = {
                             {
                               description:
                                 'Quantity is a fixed-point representation of a number. It provides convenient marshaling/unmarshaling in JSON and YAML, in addition to String() and As Int64() accessors. The serialization format is: ``` <quantity> ::= <signed Number><suffix> (Note that <suffix> may be empty, from the "" case in <decimal SI>.) <digit> ::= 0 | 1 | ... | 9 <digits> ::= <digit> | <digit><digits> <number> ::= <digits> | <digits>.<digits> | <digits>. | .<digits> <sign> ::= "+" | "-" <signed Number> ::= <number> | <sign><number> <suffix> ::= <binary SI> | <decimal Exponent> | <decimal SI> <binary SI> ::= Ki | Mi | Gi | Ti | Pi | Ei (International System of units; See: http://physics.nist.gov/cuu/Units/binary.html) <decimal SI> ::= m | "" | k | M | G | T | P | E (Note that 1024 = 1Ki but 1000 = 1k; I didn\'t choose the capitalization.) <decimal Exponent> ::= "e" <signed Number> | "E" <signed Number> ``` No matter which of the three exponent forms is used, no quantity may represent a number greater than 2^63-1 in magnitude, nor may it have more than 3 decimal places. Numbers larger or more precise will be capped or rounded up. (E.g.: 0.1m will rounded up to 1m.) This may be extended in the future if we require larger or smaller quantities. When a Quantity is parsed from a string, it will remember the type of suffix it had, and will use the same type again when it is serialized. Before serializing, Quantity will be put in "canonical form". This means that Exponent/suffix will be adjusted up or down (with a corresponding increase or decrease in Mantissa) such that: - No precision is lost - No fractional digits will be emitted - The exponent (or suffix) is as large as possible. The sign will be omitted unless the number is negative. Examples: - 1.5 will be serialized as "1500m" - 1.5Gi will be serialized as "1536Mi" Note that the quantity will NEVER be internally represented by a floating point number. That is the whole point of this exercise. Non-canonical values will still parse as long as they are well formed, but will be re-emitted in their canonical form. (So always use canonical form, or don\'t diff.) This format is intended to make it difficult to use these numbers without writing some sort of special handling code in the hopes that that will cause implementors to also use a fixed point implementation.',
-                              oneOf: [{ type: "string" }, { type: "number" }]
-                            }
+                              oneOf: [{ type: "string" }, { type: "number" }],
+                            },
                           ],
-                          default: {}
+                          default: {},
                         },
                         description:
                           "Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/",
-                        type: "object"
+                        type: "object",
                       },
                       requests: {
                         additionalProperties: {
@@ -6032,22 +6269,22 @@ const data = {
                             {
                               description:
                                 'Quantity is a fixed-point representation of a number. It provides convenient marshaling/unmarshaling in JSON and YAML, in addition to String() and As Int64() accessors. The serialization format is: ``` <quantity> ::= <signed Number><suffix> (Note that <suffix> may be empty, from the "" case in <decimal SI>.) <digit> ::= 0 | 1 | ... | 9 <digits> ::= <digit> | <digit><digits> <number> ::= <digits> | <digits>.<digits> | <digits>. | .<digits> <sign> ::= "+" | "-" <signed Number> ::= <number> | <sign><number> <suffix> ::= <binary SI> | <decimal Exponent> | <decimal SI> <binary SI> ::= Ki | Mi | Gi | Ti | Pi | Ei (International System of units; See: http://physics.nist.gov/cuu/Units/binary.html) <decimal SI> ::= m | "" | k | M | G | T | P | E (Note that 1024 = 1Ki but 1000 = 1k; I didn\'t choose the capitalization.) <decimal Exponent> ::= "e" <signed Number> | "E" <signed Number> ``` No matter which of the three exponent forms is used, no quantity may represent a number greater than 2^63-1 in magnitude, nor may it have more than 3 decimal places. Numbers larger or more precise will be capped or rounded up. (E.g.: 0.1m will rounded up to 1m.) This may be extended in the future if we require larger or smaller quantities. When a Quantity is parsed from a string, it will remember the type of suffix it had, and will use the same type again when it is serialized. Before serializing, Quantity will be put in "canonical form". This means that Exponent/suffix will be adjusted up or down (with a corresponding increase or decrease in Mantissa) such that: - No precision is lost - No fractional digits will be emitted - The exponent (or suffix) is as large as possible. The sign will be omitted unless the number is negative. Examples: - 1.5 will be serialized as "1500m" - 1.5Gi will be serialized as "1536Mi" Note that the quantity will NEVER be internally represented by a floating point number. That is the whole point of this exercise. Non-canonical values will still parse as long as they are well formed, but will be re-emitted in their canonical form. (So always use canonical form, or don\'t diff.) This format is intended to make it difficult to use these numbers without writing some sort of special handling code in the hopes that that will cause implementors to also use a fixed point implementation.',
-                              oneOf: [{ type: "string" }, { type: "number" }]
-                            }
+                              oneOf: [{ type: "string" }, { type: "number" }],
+                            },
                           ],
-                          default: {}
+                          default: {},
                         },
                         description:
                           "Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/",
-                        type: "object"
-                      }
+                        type: "object",
+                      },
                     },
-                    type: "object"
-                  }
+                    type: "object",
+                  },
                 ],
                 default: {},
                 description:
-                  "Compute Resources required by this container. Cannot be updated. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
+                  "Compute Resources required by this container. Cannot be updated. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/",
               },
               "security Context": {
                 allOf: [
@@ -6058,7 +6295,7 @@ const data = {
                       "allow Privilege Escalation": {
                         description:
                           "Allow Privilege Escalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. Allow Privilege Escalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN Note that this field cannot be set when spec.os.name is windows.",
-                        type: "boolean"
+                        type: "boolean",
                       },
                       capabilities: {
                         allOf: [
@@ -6069,51 +6306,51 @@ const data = {
                               add: {
                                 description: "Added capabilities",
                                 items: { default: "", type: "string" },
-                                type: "array"
+                                type: "array",
                               },
                               drop: {
                                 description: "Removed capabilities",
                                 items: { default: "", type: "string" },
-                                type: "array"
-                              }
+                                type: "array",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "The capabilities to add/drop when running containers. Defaults to the default set of capabilities granted by the container runtime. Note that this field cannot be set when spec.os.name is windows."
+                          "The capabilities to add/drop when running containers. Defaults to the default set of capabilities granted by the container runtime. Note that this field cannot be set when spec.os.name is windows.",
                       },
                       privileged: {
                         description:
                           "Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false. Note that this field cannot be set when spec.os.name is windows.",
-                        type: "boolean"
+                        type: "boolean",
                       },
                       "proc Mount": {
                         description:
                           "proc Mount denotes the type of proc mount to use for the containers. The default is Default Proc Mount which uses the container runtime defaults for readonly paths and masked paths. This requires the Proc Mount Type feature flag to be enabled. Note that this field cannot be set when spec.os.name is windows.",
-                        type: "string"
+                        type: "string",
                       },
                       "read Only Root Filesystem": {
                         description:
                           "Whether this container has a read-only root filesystem. Default is false. Note that this field cannot be set when spec.os.name is windows.",
-                        type: "boolean"
+                        type: "boolean",
                       },
                       "run As Group": {
                         description:
                           "The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in Pod Security Context. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence. Note that this field cannot be set when spec.os.name is windows.",
                         format: "int64",
-                        type: "integer"
+                        type: "integer",
                       },
                       "run As Non Root": {
                         description:
                           "Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in Pod Security Context. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence.",
-                        type: "boolean"
+                        type: "boolean",
                       },
                       "run As User": {
                         description:
                           "The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in Pod Security Context. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence. Note that this field cannot be set when spec.os.name is windows.",
                         format: "int64",
-                        type: "integer"
+                        type: "integer",
                       },
                       "se Linux Options": {
                         allOf: [
@@ -6124,29 +6361,29 @@ const data = {
                               level: {
                                 description:
                                   "Level is SE Linux level label that applies to the container.",
-                                type: "string"
+                                type: "string",
                               },
                               role: {
                                 description:
                                   "Role is a SE Linux role label that applies to the container.",
-                                type: "string"
+                                type: "string",
                               },
                               type: {
                                 description:
                                   "Type is a SE Linux type label that applies to the container.",
-                                type: "string"
+                                type: "string",
                               },
                               user: {
                                 description:
                                   "User is a SE Linux user label that applies to the container.",
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "The SE Linux context to be applied to the container. If unspecified, the container runtime will allocate a random SE Linux context for each container. May also be set in Pod Security Context. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence. Note that this field cannot be set when spec.os.name is windows."
+                          "The SE Linux context to be applied to the container. If unspecified, the container runtime will allocate a random SE Linux context for each container. May also be set in Pod Security Context. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence. Note that this field cannot be set when spec.os.name is windows.",
                       },
                       "seccomp Profile": {
                         allOf: [
@@ -6157,15 +6394,19 @@ const data = {
                               "localhost Profile": {
                                 description:
                                   'localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work. Must be a descending path, relative to the kubelet\'s configured seccomp profile location. Must only be set if type is "Localhost".',
-                                type: "string"
+                                type: "string",
                               },
                               type: {
                                 default: "",
                                 description:
                                   'type indicates which kind of seccomp profile will be applied. Valid options are: Localhost - a profile defined in a file on the node should be used. Runtime Default - the container runtime default profile should be used. Unconfined - no profile should be applied. Possible enum values: - `"Localhost"` indicates a profile defined in a file on the node should be used. The file\'s location relative to <kubelet-root-dir>/seccomp. - `"Runtime Default"` represents the default container runtime seccomp profile. - `"Unconfined"` indicates no seccomp profile is applied (A.K.A. unconfined).',
-                                enum: ["Localhost", "RuntimeDefault", "Unconfined"],
-                                type: "string"
-                              }
+                                enum: [
+                                  "Localhost",
+                                  "RuntimeDefault",
+                                  "Unconfined",
+                                ],
+                                type: "string",
+                              },
                             },
                             required: ["type"],
                             type: "object",
@@ -6173,14 +6414,14 @@ const data = {
                               {
                                 discriminator: "type",
                                 "fields-to-discriminate By": {
-                                  "localhost Profile": "Localhost Profile"
-                                }
-                              }
-                            ]
-                          }
+                                  "localhost Profile": "Localhost Profile",
+                                },
+                              },
+                            ],
+                          },
                         ],
                         description:
-                          "The seccomp options to use by this container. If seccomp options are provided at both the pod & container level, the container options override the pod options. Note that this field cannot be set when spec.os.name is windows."
+                          "The seccomp options to use by this container. If seccomp options are provided at both the pod & container level, the container options override the pod options. Note that this field cannot be set when spec.os.name is windows.",
                       },
                       "windows Options": {
                         allOf: [
@@ -6191,36 +6432,36 @@ const data = {
                               "gmsa Credential Spec": {
                                 description:
                                   "GMSA Credential Spec is where the GMSA admission webhook (https://github.com/kubernetes-sigs/windows-gmsa) inlines the contents of the GMSA credential spec named by the GMSA Credential Spec Name field.",
-                                type: "string"
+                                type: "string",
                               },
                               "gmsa Credential Spec Name": {
                                 description:
                                   "GMSA Credential Spec Name is the name of the GMSA credential spec to use.",
-                                type: "string"
+                                type: "string",
                               },
                               "host Process": {
                                 description:
                                   "Host Process determines if a container should be run as a 'Host Process' container. This field is alpha-level and will only be honored by components that enable the Windows Host Process Containers feature flag. Setting this field without the feature flag will result in errors when validating the Pod. All of a Pod's containers must have the same effective Host Process value (it is not allowed to have a mix of Host Process containers and non-Host Process containers). In addition, if Host Process is true then Host Network must also be set to true.",
-                                type: "boolean"
+                                type: "boolean",
                               },
                               "run As User Name": {
                                 description:
                                   "The User Name in Windows to run the entrypoint of the container process. Defaults to the user specified in image metadata if unspecified. May also be set in Pod Security Context. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence.",
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "The Windows specific settings applied to all containers. If unspecified, the options from the Pod Security Context will be used. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence. Note that this field cannot be set when spec.os.name is linux."
-                      }
+                          "The Windows specific settings applied to all containers. If unspecified, the options from the Pod Security Context will be used. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence. Note that this field cannot be set when spec.os.name is linux.",
+                      },
                     },
-                    type: "object"
-                  }
+                    type: "object",
+                  },
                 ],
                 description:
-                  "Security Context defines the security options the container should be run with. If set, the fields of Security Context override the equivalent fields of Pod Security Context. More info: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/"
+                  "Security Context defines the security options the container should be run with. If set, the fields of Security Context override the equivalent fields of Pod Security Context. More info: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/",
               },
               "startup Probe": {
                 allOf: [
@@ -6238,19 +6479,19 @@ const data = {
                                 description:
                                   "Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions ('|', etc) won't work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.",
                                 items: { default: "", type: "string" },
-                                type: "array"
-                              }
+                                type: "array",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
-                        description: "Exec specifies the action to take."
+                        description: "Exec specifies the action to take.",
                       },
                       "failure Threshold": {
                         description:
                           "Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       grpc: {
                         allOf: [
@@ -6261,21 +6502,21 @@ const data = {
                                 description:
                                   "Port number of the g RPC service. Number must be in the range 1 to 65535.",
                                 format: "int32",
-                                type: "integer"
+                                type: "integer",
                               },
                               service: {
                                 default: "",
                                 description:
                                   "Service is the name of the service to place in the g RPC Health Check Request (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by g RPC.",
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "GRPC specifies an action involving a GRPC port. This is a beta field and requires enabling GRPC Container Probe feature gate."
+                          "GRPC specifies an action involving a GRPC port. This is a beta field and requires enabling GRPC Container Probe feature gate.",
                       },
                       "http Get": {
                         allOf: [
@@ -6286,7 +6527,7 @@ const data = {
                               host: {
                                 description:
                                   'Host name to connect to, defaults to the pod IP. You probably want to set "Host" in http Headers instead.',
-                                type: "string"
+                                type: "string",
                               },
                               "http Headers": {
                                 description:
@@ -6300,25 +6541,26 @@ const data = {
                                         name: {
                                           default: "",
                                           description: "The header field name",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         value: {
                                           default: "",
                                           description: "The header field value",
-                                          type: "string"
-                                        }
+                                          type: "string",
+                                        },
                                       },
                                       required: ["name", "value"],
-                                      type: "object"
-                                    }
+                                      type: "object",
+                                    },
                                   ],
-                                  default: {}
+                                  default: {},
                                 },
-                                type: "array"
+                                type: "array",
                               },
                               path: {
-                                description: "Path to access on the HTTP server.",
-                                type: "string"
+                                description:
+                                  "Path to access on the HTTP server.",
+                                type: "string",
                               },
                               port: {
                                 allOf: [
@@ -6326,43 +6568,47 @@ const data = {
                                     description:
                                       "Int Or String is a type that can hold an int32 or a string. When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type. This allows you to have, for example, a JSON field that can accept a name or number.",
                                     format: "int-or-string",
-                                    oneOf: [{ type: "integer" }, { type: "string" }]
-                                  }
+                                    oneOf: [
+                                      { type: "integer" },
+                                      { type: "string" },
+                                    ],
+                                  },
                                 ],
                                 default: {},
                                 description:
-                                  "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
+                                  "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
                               },
                               scheme: {
                                 description:
                                   'Scheme to use for connecting to the host. Defaults to HTTP. Possible enum values: - `"HTTP"` means that the scheme used will be http:// - `"HTTPS"` means that the scheme used will be https://',
                                 enum: ["HTTP", "HTTPS"],
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
-                        description: "HTTP Get specifies the http request to perform."
+                        description:
+                          "HTTP Get specifies the http request to perform.",
                       },
                       "initial Delay Seconds": {
                         description:
                           "Number of seconds after the container has started before liveness probes are initiated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "period Seconds": {
                         description:
                           "How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "success Threshold": {
                         description:
                           "Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness and startup. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "tcp Socket": {
                         allOf: [
@@ -6373,7 +6619,7 @@ const data = {
                               host: {
                                 description:
                                   "Optional: Host name to connect to, defaults to the pod IP.",
-                                type: "string"
+                                type: "string",
                               },
                               port: {
                                 allOf: [
@@ -6381,65 +6627,68 @@ const data = {
                                     description:
                                       "Int Or String is a type that can hold an int32 or a string. When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type. This allows you to have, for example, a JSON field that can accept a name or number.",
                                     format: "int-or-string",
-                                    oneOf: [{ type: "integer" }, { type: "string" }]
-                                  }
+                                    oneOf: [
+                                      { type: "integer" },
+                                      { type: "string" },
+                                    ],
+                                  },
                                 ],
                                 default: {},
                                 description:
-                                  "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
-                              }
+                                  "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "TCP Socket specifies an action involving a TCP port."
+                          "TCP Socket specifies an action involving a TCP port.",
                       },
                       "termination Grace Period Seconds": {
                         description:
                           "Optional duration in seconds the pod needs to terminate gracefully upon probe failure. The grace period is the duration in seconds after the processes running in the pod are sent a termination signal and the time when the processes are forcibly halted with a kill signal. Set this value longer than the expected cleanup time for your process. If this value is nil, the pod's termination Grace Period Seconds will be used. Otherwise, this value overrides the value provided by the pod spec. Value must be non-negative integer. The value zero indicates stop immediately via the kill signal (no opportunity to shut down). This is a beta field and requires enabling Probe Termination Grace Period feature gate. Minimum value is 1. spec.termination Grace Period Seconds is used if unset.",
                         format: "int64",
-                        type: "integer"
+                        type: "integer",
                       },
                       "timeout Seconds": {
                         description:
                           "Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
                         format: "int32",
-                        type: "integer"
-                      }
+                        type: "integer",
+                      },
                     },
-                    type: "object"
-                  }
+                    type: "object",
+                  },
                 ],
                 description:
-                  "Startup Probe indicates that the Pod has successfully initialized. If specified, no other probes are executed until this completes successfully. If this probe fails, the Pod will be restarted, just as if the liveness Probe failed. This can be used to provide different probe parameters at the beginning of a Pod's lifecycle, when it might take a long time to load data or warm a cache, than during steady-state operation. This cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"
+                  "Startup Probe indicates that the Pod has successfully initialized. If specified, no other probes are executed until this completes successfully. If this probe fails, the Pod will be restarted, just as if the liveness Probe failed. This can be used to provide different probe parameters at the beginning of a Pod's lifecycle, when it might take a long time to load data or warm a cache, than during steady-state operation. This cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
               },
               stdin: {
                 description:
                   "Whether this container should allocate a buffer for stdin in the container runtime. If this is not set, reads from stdin in the container will always result in EOF. Default is false.",
-                type: "boolean"
+                type: "boolean",
               },
               "stdin Once": {
                 description:
                   "Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdin Once is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF. Default is false",
-                type: "boolean"
+                type: "boolean",
               },
               "termination Message Path": {
                 description:
                   "Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Will be truncated by the node if greater than 4096 bytes. The total message length across all containers will be limited to 12kb. Defaults to /dev/termination-log. Cannot be updated.",
-                type: "string"
+                type: "string",
               },
               "termination Message Policy": {
                 description:
                   'Indicate how the termination message should be populated. File will use the contents of termination Message Path to populate the container status message on both success and failure. Fallback To Logs On Error will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated. Possible enum values: - `"Fallback To Logs On Error"` will read the most recent contents of the container logs for the container status message when the container exits with an error and the termination Message Path has no contents. - `"File"` is the default behavior and will set the container status message to the contents of the container\'s termination Message Path when the container exits.',
                 enum: ["FallbackToLogsOnError", "File"],
-                type: "string"
+                type: "string",
               },
               tty: {
                 description:
                   "Whether this container should allocate a TTY for itself, also requires 'stdin' to be true. Default is false.",
-                type: "boolean"
+                type: "boolean",
               },
               "volume Devices": {
                 description:
@@ -6454,24 +6703,24 @@ const data = {
                           default: "",
                           description:
                             "device Path is the path inside of the container that the device will be mapped to.",
-                          type: "string"
+                          type: "string",
                         },
                         name: {
                           default: "",
                           description:
                             "name must match the name of a persistent Volume Claim in the pod",
-                          type: "string"
-                        }
+                          type: "string",
+                        },
                       },
                       required: ["name", "device Path"],
-                      type: "object"
-                    }
+                      type: "object",
+                    },
                   ],
-                  default: {}
+                  default: {},
                 },
                 type: "array",
                 "x-kubernetes-patch-merge-key": "device Path",
-                "x-kubernetes-patch-strategy": "merge"
+                "x-kubernetes-patch-strategy": "merge",
               },
               "volume Mounts": {
                 description:
@@ -6486,52 +6735,52 @@ const data = {
                           default: "",
                           description:
                             "Path within the container at which the volume should be mounted. Must not contain ':'.",
-                          type: "string"
+                          type: "string",
                         },
                         "mount Propagation": {
                           description:
                             "mount Propagation determines how mounts are propagated from the host to container and the other way around. When not set, Mount Propagation None is used. This field is beta in 1.10.",
-                          type: "string"
+                          type: "string",
                         },
                         name: {
                           default: "",
                           description: "This must match the Name of a Volume.",
-                          type: "string"
+                          type: "string",
                         },
                         "read Only": {
                           description:
                             "Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.",
-                          type: "boolean"
+                          type: "boolean",
                         },
                         "sub Path": {
                           description:
                             "Path within the volume from which the container's volume should be mounted. Defaults to \"\" (volume's root).",
-                          type: "string"
+                          type: "string",
                         },
                         "sub Path Expr": {
                           description:
                             "Expanded path within the volume from which the container's volume should be mounted. Behaves similarly to Sub Path but environment variable references $(VAR_NAME) are expanded using the container's environment. Defaults to \"\" (volume's root). Sub Path Expr and Sub Path are mutually exclusive.",
-                          type: "string"
-                        }
+                          type: "string",
+                        },
                       },
                       required: ["name", "mount Path"],
-                      type: "object"
-                    }
+                      type: "object",
+                    },
                   ],
-                  default: {}
+                  default: {},
                 },
                 type: "array",
                 "x-kubernetes-patch-merge-key": "mount Path",
-                "x-kubernetes-patch-strategy": "merge"
+                "x-kubernetes-patch-strategy": "merge",
               },
               "working Dir": {
                 description:
                   "Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.",
-                type: "string"
-              }
+                type: "string",
+              },
             },
             required: ["name"],
-            type: "object"
+            type: "object",
           },
           componentDefinition: {
             id: "fcd41e59-cb70-481c-9302-9221e389087c",
@@ -6559,11 +6808,11 @@ const data = {
                   "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                 svgComplete: "",
                 svgWhite:
-                  "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg"
+                  "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
               },
               model: { version: "0.7.2" },
               components: null,
-              relationships: null
+              relationships: null,
             },
             metadata: {
               capabilities:
@@ -6584,22 +6833,24 @@ const data = {
                 "ui/public/static/img/meshmodels/meshery-core/color/container-color.svg",
               svgComplete: "",
               svgWhite:
-                "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg"
+                "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg",
             },
             component: {
               kind: "Container",
               version: "core.meshery.io/v1alpha1",
-              schema: "{}"
+              schema: "{}",
             },
-            duplicates: 6
+            duplicates: 6,
           },
           parent: "7820034f-bd39-454e-b215-5bb8af95c405",
           id: "38554950-c97d-4c7c-93b5-8ed4c3f3442b",
           config: {
             services: {
-              "38554950-c97d-4c7c-93b5-8ed4c3f3442b": { settings: { name: "aes" } }
-            }
-          }
+              "38554950-c97d-4c7c-93b5-8ed4c3f3442b": {
+                settings: { name: "aes" },
+              },
+            },
+          },
         },
         position: { x: -319.6770218706996, y: -96.38385319950324 },
         group: "nodes",
@@ -6609,7 +6860,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: "fieldRefNode"
+        classes: "fieldRefNode",
       },
       {
         data: {
@@ -6626,13 +6877,13 @@ const data = {
                 description:
                   'Arguments to the entrypoint. The container image\'s CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container\'s environment. If a variable cannot be resolved, the reference in the input string will be unchanged. Double $$ are reduced to a single $, which allows for escaping the $(VAR_NAME) syntax: i.e. "$$(VAR_NAME)" will produce the string literal "$(VAR_NAME)". Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell',
                 items: { default: "", type: "string" },
-                type: "array"
+                type: "array",
               },
               command: {
                 description:
                   'Entrypoint array. Not executed within a shell. The container image\'s ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container\'s environment. If a variable cannot be resolved, the reference in the input string will be unchanged. Double $$ are reduced to a single $, which allows for escaping the $(VAR_NAME) syntax: i.e. "$$(VAR_NAME)" will produce the string literal "$(VAR_NAME)". Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell',
                 items: { default: "", type: "string" },
-                type: "array"
+                type: "array",
               },
               env: {
                 description:
@@ -6647,12 +6898,12 @@ const data = {
                           default: "",
                           description:
                             "Name of the environment variable. Must be a C_IDENTIFIER.",
-                          type: "string"
+                          type: "string",
                         },
                         value: {
                           description:
                             'Variable references $(VAR_NAME) are expanded using the previously defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. Double $$ are reduced to a single $, which allows for escaping the $(VAR_NAME) syntax: i.e. "$$(VAR_NAME)" will produce the string literal "$(VAR_NAME)". Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".',
-                          type: "string"
+                          type: "string",
                         },
                         "value From": {
                           allOf: [
@@ -6663,30 +6914,31 @@ const data = {
                                 "config Map Key Ref": {
                                   allOf: [
                                     {
-                                      description: "Selects a key from a Config Map.",
+                                      description:
+                                        "Selects a key from a Config Map.",
                                       properties: {
                                         key: {
                                           default: "",
                                           description: "The key to select.",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         name: {
                                           description:
                                             "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         optional: {
                                           description:
                                             "Specify whether the Config Map or its key must be defined",
-                                          type: "boolean"
-                                        }
+                                          type: "boolean",
+                                        },
                                       },
                                       required: ["key"],
                                       type: "object",
-                                      "x-kubernetes-map-type": "atomic"
-                                    }
+                                      "x-kubernetes-map-type": "atomic",
+                                    },
                                   ],
-                                  description: "Selects a key of a Config Map."
+                                  description: "Selects a key of a Config Map.",
                                 },
                                 "field Ref": {
                                   allOf: [
@@ -6697,22 +6949,22 @@ const data = {
                                         "api Version": {
                                           description:
                                             'Version of the schema the Field Path is written in terms of, defaults to "v1".',
-                                          type: "string"
+                                          type: "string",
                                         },
                                         "field Path": {
                                           default: "",
                                           description:
                                             "Path of the field to select in the specified API version.",
-                                          type: "string"
-                                        }
+                                          type: "string",
+                                        },
                                       },
                                       required: ["field Path"],
                                       type: "object",
-                                      "x-kubernetes-map-type": "atomic"
-                                    }
+                                      "x-kubernetes-map-type": "atomic",
+                                    },
                                   ],
                                   description:
-                                    "Selects a field of the pod: supports metadata.name, metadata.namespace, `metadata.labels['<KEY>']`, `metadata.annotations['<KEY>']`, spec.node Name, spec.service Account Name, status.host IP, status.pod IP, status.pod I Ps."
+                                    "Selects a field of the pod: supports metadata.name, metadata.namespace, `metadata.labels['<KEY>']`, `metadata.annotations['<KEY>']`, spec.node Name, spec.service Account Name, status.host IP, status.pod IP, status.pod I Ps.",
                                 },
                                 "resource Field Ref": {
                                   allOf: [
@@ -6723,7 +6975,7 @@ const data = {
                                         "container Name": {
                                           description:
                                             "Container name: required for volumes, optional for env vars",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         divisor: {
                                           allOf: [
@@ -6732,27 +6984,28 @@ const data = {
                                                 'Quantity is a fixed-point representation of a number. It provides convenient marshaling/unmarshaling in JSON and YAML, in addition to String() and As Int64() accessors. The serialization format is: ``` <quantity> ::= <signed Number><suffix> (Note that <suffix> may be empty, from the "" case in <decimal SI>.) <digit> ::= 0 | 1 | ... | 9 <digits> ::= <digit> | <digit><digits> <number> ::= <digits> | <digits>.<digits> | <digits>. | .<digits> <sign> ::= "+" | "-" <signed Number> ::= <number> | <sign><number> <suffix> ::= <binary SI> | <decimal Exponent> | <decimal SI> <binary SI> ::= Ki | Mi | Gi | Ti | Pi | Ei (International System of units; See: http://physics.nist.gov/cuu/Units/binary.html) <decimal SI> ::= m | "" | k | M | G | T | P | E (Note that 1024 = 1Ki but 1000 = 1k; I didn\'t choose the capitalization.) <decimal Exponent> ::= "e" <signed Number> | "E" <signed Number> ``` No matter which of the three exponent forms is used, no quantity may represent a number greater than 2^63-1 in magnitude, nor may it have more than 3 decimal places. Numbers larger or more precise will be capped or rounded up. (E.g.: 0.1m will rounded up to 1m.) This may be extended in the future if we require larger or smaller quantities. When a Quantity is parsed from a string, it will remember the type of suffix it had, and will use the same type again when it is serialized. Before serializing, Quantity will be put in "canonical form". This means that Exponent/suffix will be adjusted up or down (with a corresponding increase or decrease in Mantissa) such that: - No precision is lost - No fractional digits will be emitted - The exponent (or suffix) is as large as possible. The sign will be omitted unless the number is negative. Examples: - 1.5 will be serialized as "1500m" - 1.5Gi will be serialized as "1536Mi" Note that the quantity will NEVER be internally represented by a floating point number. That is the whole point of this exercise. Non-canonical values will still parse as long as they are well formed, but will be re-emitted in their canonical form. (So always use canonical form, or don\'t diff.) This format is intended to make it difficult to use these numbers without writing some sort of special handling code in the hopes that that will cause implementors to also use a fixed point implementation.',
                                               oneOf: [
                                                 { type: "string" },
-                                                { type: "number" }
-                                              ]
-                                            }
+                                                { type: "number" },
+                                              ],
+                                            },
                                           ],
                                           default: {},
                                           description:
-                                            'Specifies the output format of the exposed resources, defaults to "1"'
+                                            'Specifies the output format of the exposed resources, defaults to "1"',
                                         },
                                         resource: {
                                           default: "",
-                                          description: "Required: resource to select",
-                                          type: "string"
-                                        }
+                                          description:
+                                            "Required: resource to select",
+                                          type: "string",
+                                        },
                                       },
                                       required: ["resource"],
                                       type: "object",
-                                      "x-kubernetes-map-type": "atomic"
-                                    }
+                                      "x-kubernetes-map-type": "atomic",
+                                    },
                                   ],
                                   description:
-                                    "Selects a resource of the container: only resources limits and requests (limits.cpu, limits.memory, limits.ephemeral-storage, requests.cpu, requests.memory and requests.ephemeral-storage) are currently supported."
+                                    "Selects a resource of the container: only resources limits and requests (limits.cpu, limits.memory, limits.ephemeral-storage, requests.cpu, requests.memory and requests.ephemeral-storage) are currently supported.",
                                 },
                                 "secret Key Ref": {
                                   allOf: [
@@ -6764,44 +7017,44 @@ const data = {
                                           default: "",
                                           description:
                                             "The key of the secret to select from. Must be a valid secret key.",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         name: {
                                           description:
                                             "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         optional: {
                                           description:
                                             "Specify whether the Secret or its key must be defined",
-                                          type: "boolean"
-                                        }
+                                          type: "boolean",
+                                        },
                                       },
                                       required: ["key"],
                                       type: "object",
-                                      "x-kubernetes-map-type": "atomic"
-                                    }
+                                      "x-kubernetes-map-type": "atomic",
+                                    },
                                   ],
                                   description:
-                                    "Selects a key of a secret in the pod's namespace"
-                                }
+                                    "Selects a key of a secret in the pod's namespace",
+                                },
                               },
-                              type: "object"
-                            }
+                              type: "object",
+                            },
                           ],
                           description:
-                            "Source for the environment variable's value. Cannot be used if value is not empty."
-                        }
+                            "Source for the environment variable's value. Cannot be used if value is not empty.",
+                        },
                       },
                       required: ["name"],
-                      type: "object"
-                    }
+                      type: "object",
+                    },
                   ],
-                  default: {}
+                  default: {},
                 },
                 type: "array",
                 "x-kubernetes-patch-merge-key": "name",
-                "x-kubernetes-patch-strategy": "merge"
+                "x-kubernetes-patch-strategy": "merge",
               },
               "env From": {
                 description:
@@ -6821,23 +7074,23 @@ const data = {
                                 name: {
                                   description:
                                     "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
-                                  type: "string"
+                                  type: "string",
                                 },
                                 optional: {
                                   description:
                                     "Specify whether the Config Map must be defined",
-                                  type: "boolean"
-                                }
+                                  type: "boolean",
+                                },
                               },
-                              type: "object"
-                            }
+                              type: "object",
+                            },
                           ],
-                          description: "The Config Map to select from"
+                          description: "The Config Map to select from",
                         },
                         prefix: {
                           description:
                             "An optional identifier to prepend to each key in the Config Map. Must be a C_IDENTIFIER.",
-                          type: "string"
+                          type: "string",
                         },
                         "secret Ref": {
                           allOf: [
@@ -6848,37 +7101,37 @@ const data = {
                                 name: {
                                   description:
                                     "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
-                                  type: "string"
+                                  type: "string",
                                 },
                                 optional: {
                                   description:
                                     "Specify whether the Secret must be defined",
-                                  type: "boolean"
-                                }
+                                  type: "boolean",
+                                },
                               },
-                              type: "object"
-                            }
+                              type: "object",
+                            },
                           ],
-                          description: "The Secret to select from"
-                        }
+                          description: "The Secret to select from",
+                        },
                       },
-                      type: "object"
-                    }
+                      type: "object",
+                    },
                   ],
-                  default: {}
+                  default: {},
                 },
-                type: "array"
+                type: "array",
               },
               image: {
                 description:
                   "Container image name. More info: https://kubernetes.io/docs/concepts/containers/images This field is optional to allow higher level config management to default or override container images in workload controllers like Deployments and Stateful Sets.",
-                type: "string"
+                type: "string",
               },
               "image Pull Policy": {
                 description:
                   'Image pull policy. One of Always, Never, If Not Present. Defaults to Always if :latest tag is specified, or If Not Present otherwise. Cannot be updated. More info: https://kubernetes.io/docs/concepts/containers/images#updating-images Possible enum values: - `"Always"` means that kubelet always attempts to pull the latest image. Container will fail If the pull fails. - `"If Not Present"` means that kubelet pulls if the image isn\'t present on disk. Container will fail if the image isn\'t present and the pull fails. - `"Never"` means that kubelet never pulls an image, but only uses a local image. Container will fail if the image isn\'t present',
                 enum: ["Always", "IfNotPresent", "Never"],
-                type: "string"
+                type: "string",
               },
               lifecycle: {
                 allOf: [
@@ -6902,13 +7155,14 @@ const data = {
                                         description:
                                           "Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions ('|', etc) won't work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.",
                                         items: { default: "", type: "string" },
-                                        type: "array"
-                                      }
+                                        type: "array",
+                                      },
                                     },
-                                    type: "object"
-                                  }
+                                    type: "object",
+                                  },
                                 ],
-                                description: "Exec specifies the action to take."
+                                description:
+                                  "Exec specifies the action to take.",
                               },
                               "http Get": {
                                 allOf: [
@@ -6919,7 +7173,7 @@ const data = {
                                       host: {
                                         description:
                                           'Host name to connect to, defaults to the pod IP. You probably want to set "Host" in http Headers instead.',
-                                        type: "string"
+                                        type: "string",
                                       },
                                       "http Headers": {
                                         description:
@@ -6932,26 +7186,29 @@ const data = {
                                               properties: {
                                                 name: {
                                                   default: "",
-                                                  description: "The header field name",
-                                                  type: "string"
+                                                  description:
+                                                    "The header field name",
+                                                  type: "string",
                                                 },
                                                 value: {
                                                   default: "",
-                                                  description: "The header field value",
-                                                  type: "string"
-                                                }
+                                                  description:
+                                                    "The header field value",
+                                                  type: "string",
+                                                },
                                               },
                                               required: ["name", "value"],
-                                              type: "object"
-                                            }
+                                              type: "object",
+                                            },
                                           ],
-                                          default: {}
+                                          default: {},
                                         },
-                                        type: "array"
+                                        type: "array",
                                       },
                                       path: {
-                                        description: "Path to access on the HTTP server.",
-                                        type: "string"
+                                        description:
+                                          "Path to access on the HTTP server.",
+                                        type: "string",
                                       },
                                       port: {
                                         allOf: [
@@ -6961,27 +7218,27 @@ const data = {
                                             format: "int-or-string",
                                             oneOf: [
                                               { type: "integer" },
-                                              { type: "string" }
-                                            ]
-                                          }
+                                              { type: "string" },
+                                            ],
+                                          },
                                         ],
                                         default: {},
                                         description:
-                                          "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
+                                          "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
                                       },
                                       scheme: {
                                         description:
                                           'Scheme to use for connecting to the host. Defaults to HTTP. Possible enum values: - `"HTTP"` means that the scheme used will be http:// - `"HTTPS"` means that the scheme used will be https://',
                                         enum: ["HTTP", "HTTPS"],
-                                        type: "string"
-                                      }
+                                        type: "string",
+                                      },
                                     },
                                     required: ["port"],
-                                    type: "object"
-                                  }
+                                    type: "object",
+                                  },
                                 ],
                                 description:
-                                  "HTTP Get specifies the http request to perform."
+                                  "HTTP Get specifies the http request to perform.",
                               },
                               "tcp Socket": {
                                 allOf: [
@@ -6992,7 +7249,7 @@ const data = {
                                       host: {
                                         description:
                                           "Optional: Host name to connect to, defaults to the pod IP.",
-                                        type: "string"
+                                        type: "string",
                                       },
                                       port: {
                                         allOf: [
@@ -7002,28 +7259,28 @@ const data = {
                                             format: "int-or-string",
                                             oneOf: [
                                               { type: "integer" },
-                                              { type: "string" }
-                                            ]
-                                          }
+                                              { type: "string" },
+                                            ],
+                                          },
                                         ],
                                         default: {},
                                         description:
-                                          "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
-                                      }
+                                          "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
+                                      },
                                     },
                                     required: ["port"],
-                                    type: "object"
-                                  }
+                                    type: "object",
+                                  },
                                 ],
                                 description:
-                                  "Deprecated. TCP Socket is NOT supported as a Lifecycle Handler and kept for the backward compatibility. There are no validation of this field and lifecycle hooks will fail in runtime when tcp handler is specified."
-                              }
+                                  "Deprecated. TCP Socket is NOT supported as a Lifecycle Handler and kept for the backward compatibility. There are no validation of this field and lifecycle hooks will fail in runtime when tcp handler is specified.",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "Post Start is called immediately after a container is created. If the handler fails, the container is terminated and restarted according to its restart policy. Other management of the container blocks until the hook completes. More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks"
+                          "Post Start is called immediately after a container is created. If the handler fails, the container is terminated and restarted according to its restart policy. Other management of the container blocks until the hook completes. More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks",
                       },
                       "pre Stop": {
                         allOf: [
@@ -7041,13 +7298,14 @@ const data = {
                                         description:
                                           "Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions ('|', etc) won't work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.",
                                         items: { default: "", type: "string" },
-                                        type: "array"
-                                      }
+                                        type: "array",
+                                      },
                                     },
-                                    type: "object"
-                                  }
+                                    type: "object",
+                                  },
                                 ],
-                                description: "Exec specifies the action to take."
+                                description:
+                                  "Exec specifies the action to take.",
                               },
                               "http Get": {
                                 allOf: [
@@ -7058,7 +7316,7 @@ const data = {
                                       host: {
                                         description:
                                           'Host name to connect to, defaults to the pod IP. You probably want to set "Host" in http Headers instead.',
-                                        type: "string"
+                                        type: "string",
                                       },
                                       "http Headers": {
                                         description:
@@ -7071,26 +7329,29 @@ const data = {
                                               properties: {
                                                 name: {
                                                   default: "",
-                                                  description: "The header field name",
-                                                  type: "string"
+                                                  description:
+                                                    "The header field name",
+                                                  type: "string",
                                                 },
                                                 value: {
                                                   default: "",
-                                                  description: "The header field value",
-                                                  type: "string"
-                                                }
+                                                  description:
+                                                    "The header field value",
+                                                  type: "string",
+                                                },
                                               },
                                               required: ["name", "value"],
-                                              type: "object"
-                                            }
+                                              type: "object",
+                                            },
                                           ],
-                                          default: {}
+                                          default: {},
                                         },
-                                        type: "array"
+                                        type: "array",
                                       },
                                       path: {
-                                        description: "Path to access on the HTTP server.",
-                                        type: "string"
+                                        description:
+                                          "Path to access on the HTTP server.",
+                                        type: "string",
                                       },
                                       port: {
                                         allOf: [
@@ -7100,27 +7361,27 @@ const data = {
                                             format: "int-or-string",
                                             oneOf: [
                                               { type: "integer" },
-                                              { type: "string" }
-                                            ]
-                                          }
+                                              { type: "string" },
+                                            ],
+                                          },
                                         ],
                                         default: {},
                                         description:
-                                          "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
+                                          "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
                                       },
                                       scheme: {
                                         description:
                                           'Scheme to use for connecting to the host. Defaults to HTTP. Possible enum values: - `"HTTP"` means that the scheme used will be http:// - `"HTTPS"` means that the scheme used will be https://',
                                         enum: ["HTTP", "HTTPS"],
-                                        type: "string"
-                                      }
+                                        type: "string",
+                                      },
                                     },
                                     required: ["port"],
-                                    type: "object"
-                                  }
+                                    type: "object",
+                                  },
                                 ],
                                 description:
-                                  "HTTP Get specifies the http request to perform."
+                                  "HTTP Get specifies the http request to perform.",
                               },
                               "tcp Socket": {
                                 allOf: [
@@ -7131,7 +7392,7 @@ const data = {
                                       host: {
                                         description:
                                           "Optional: Host name to connect to, defaults to the pod IP.",
-                                        type: "string"
+                                        type: "string",
                                       },
                                       port: {
                                         allOf: [
@@ -7141,35 +7402,35 @@ const data = {
                                             format: "int-or-string",
                                             oneOf: [
                                               { type: "integer" },
-                                              { type: "string" }
-                                            ]
-                                          }
+                                              { type: "string" },
+                                            ],
+                                          },
                                         ],
                                         default: {},
                                         description:
-                                          "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
-                                      }
+                                          "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
+                                      },
                                     },
                                     required: ["port"],
-                                    type: "object"
-                                  }
+                                    type: "object",
+                                  },
                                 ],
                                 description:
-                                  "Deprecated. TCP Socket is NOT supported as a Lifecycle Handler and kept for the backward compatibility. There are no validation of this field and lifecycle hooks will fail in runtime when tcp handler is specified."
-                              }
+                                  "Deprecated. TCP Socket is NOT supported as a Lifecycle Handler and kept for the backward compatibility. There are no validation of this field and lifecycle hooks will fail in runtime when tcp handler is specified.",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "Pre Stop is called immediately before a container is terminated due to an API request or management event such as liveness/startup probe failure, preemption, resource contention, etc. The handler is not called if the container crashes or exits. The Pod's termination grace period countdown begins before the Pre Stop hook is executed. Regardless of the outcome of the handler, the container will eventually terminate within the Pod's termination grace period (unless delayed by finalizers). Other management of the container blocks until the hook completes or until the termination grace period is reached. More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks"
-                      }
+                          "Pre Stop is called immediately before a container is terminated due to an API request or management event such as liveness/startup probe failure, preemption, resource contention, etc. The handler is not called if the container crashes or exits. The Pod's termination grace period countdown begins before the Pre Stop hook is executed. Regardless of the outcome of the handler, the container will eventually terminate within the Pod's termination grace period (unless delayed by finalizers). Other management of the container blocks until the hook completes or until the termination grace period is reached. More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks",
+                      },
                     },
-                    type: "object"
-                  }
+                    type: "object",
+                  },
                 ],
                 description:
-                  "Actions that the management system should take in response to container lifecycle events. Cannot be updated."
+                  "Actions that the management system should take in response to container lifecycle events. Cannot be updated.",
               },
               "liveness Probe": {
                 allOf: [
@@ -7187,19 +7448,19 @@ const data = {
                                 description:
                                   "Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions ('|', etc) won't work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.",
                                 items: { default: "", type: "string" },
-                                type: "array"
-                              }
+                                type: "array",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
-                        description: "Exec specifies the action to take."
+                        description: "Exec specifies the action to take.",
                       },
                       "failure Threshold": {
                         description:
                           "Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       grpc: {
                         allOf: [
@@ -7210,21 +7471,21 @@ const data = {
                                 description:
                                   "Port number of the g RPC service. Number must be in the range 1 to 65535.",
                                 format: "int32",
-                                type: "integer"
+                                type: "integer",
                               },
                               service: {
                                 default: "",
                                 description:
                                   "Service is the name of the service to place in the g RPC Health Check Request (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by g RPC.",
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "GRPC specifies an action involving a GRPC port. This is a beta field and requires enabling GRPC Container Probe feature gate."
+                          "GRPC specifies an action involving a GRPC port. This is a beta field and requires enabling GRPC Container Probe feature gate.",
                       },
                       "http Get": {
                         allOf: [
@@ -7235,7 +7496,7 @@ const data = {
                               host: {
                                 description:
                                   'Host name to connect to, defaults to the pod IP. You probably want to set "Host" in http Headers instead.',
-                                type: "string"
+                                type: "string",
                               },
                               "http Headers": {
                                 description:
@@ -7249,25 +7510,26 @@ const data = {
                                         name: {
                                           default: "",
                                           description: "The header field name",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         value: {
                                           default: "",
                                           description: "The header field value",
-                                          type: "string"
-                                        }
+                                          type: "string",
+                                        },
                                       },
                                       required: ["name", "value"],
-                                      type: "object"
-                                    }
+                                      type: "object",
+                                    },
                                   ],
-                                  default: {}
+                                  default: {},
                                 },
-                                type: "array"
+                                type: "array",
                               },
                               path: {
-                                description: "Path to access on the HTTP server.",
-                                type: "string"
+                                description:
+                                  "Path to access on the HTTP server.",
+                                type: "string",
                               },
                               port: {
                                 allOf: [
@@ -7275,43 +7537,47 @@ const data = {
                                     description:
                                       "Int Or String is a type that can hold an int32 or a string. When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type. This allows you to have, for example, a JSON field that can accept a name or number.",
                                     format: "int-or-string",
-                                    oneOf: [{ type: "integer" }, { type: "string" }]
-                                  }
+                                    oneOf: [
+                                      { type: "integer" },
+                                      { type: "string" },
+                                    ],
+                                  },
                                 ],
                                 default: {},
                                 description:
-                                  "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
+                                  "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
                               },
                               scheme: {
                                 description:
                                   'Scheme to use for connecting to the host. Defaults to HTTP. Possible enum values: - `"HTTP"` means that the scheme used will be http:// - `"HTTPS"` means that the scheme used will be https://',
                                 enum: ["HTTP", "HTTPS"],
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
-                        description: "HTTP Get specifies the http request to perform."
+                        description:
+                          "HTTP Get specifies the http request to perform.",
                       },
                       "initial Delay Seconds": {
                         description:
                           "Number of seconds after the container has started before liveness probes are initiated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "period Seconds": {
                         description:
                           "How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "success Threshold": {
                         description:
                           "Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness and startup. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "tcp Socket": {
                         allOf: [
@@ -7322,7 +7588,7 @@ const data = {
                               host: {
                                 description:
                                   "Optional: Host name to connect to, defaults to the pod IP.",
-                                type: "string"
+                                type: "string",
                               },
                               port: {
                                 allOf: [
@@ -7330,45 +7596,48 @@ const data = {
                                     description:
                                       "Int Or String is a type that can hold an int32 or a string. When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type. This allows you to have, for example, a JSON field that can accept a name or number.",
                                     format: "int-or-string",
-                                    oneOf: [{ type: "integer" }, { type: "string" }]
-                                  }
+                                    oneOf: [
+                                      { type: "integer" },
+                                      { type: "string" },
+                                    ],
+                                  },
                                 ],
                                 default: {},
                                 description:
-                                  "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
-                              }
+                                  "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "TCP Socket specifies an action involving a TCP port."
+                          "TCP Socket specifies an action involving a TCP port.",
                       },
                       "termination Grace Period Seconds": {
                         description:
                           "Optional duration in seconds the pod needs to terminate gracefully upon probe failure. The grace period is the duration in seconds after the processes running in the pod are sent a termination signal and the time when the processes are forcibly halted with a kill signal. Set this value longer than the expected cleanup time for your process. If this value is nil, the pod's termination Grace Period Seconds will be used. Otherwise, this value overrides the value provided by the pod spec. Value must be non-negative integer. The value zero indicates stop immediately via the kill signal (no opportunity to shut down). This is a beta field and requires enabling Probe Termination Grace Period feature gate. Minimum value is 1. spec.termination Grace Period Seconds is used if unset.",
                         format: "int64",
-                        type: "integer"
+                        type: "integer",
                       },
                       "timeout Seconds": {
                         description:
                           "Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
                         format: "int32",
-                        type: "integer"
-                      }
+                        type: "integer",
+                      },
                     },
-                    type: "object"
-                  }
+                    type: "object",
+                  },
                 ],
                 description:
-                  "Periodic probe of container liveness. Container will be restarted if the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"
+                  "Periodic probe of container liveness. Container will be restarted if the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
               },
               name: {
                 default: "",
                 description:
                   "Name of the container specified as a DNS_LABEL. Each container in a pod must have a unique name (DNS_LABEL). Cannot be updated.",
-                type: "string"
+                type: "string",
               },
               ports: {
                 description:
@@ -7384,42 +7653,43 @@ const data = {
                           description:
                             "Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.",
                           format: "int32",
-                          type: "integer"
+                          type: "integer",
                         },
                         "host IP": {
-                          description: "What host IP to bind the external port to.",
-                          type: "string"
+                          description:
+                            "What host IP to bind the external port to.",
+                          type: "string",
                         },
                         "host Port": {
                           description:
                             "Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If Host Network is specified, this must match Container Port. Most containers do not need this.",
                           format: "int32",
-                          type: "integer"
+                          type: "integer",
                         },
                         name: {
                           description:
                             "If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services.",
-                          type: "string"
+                          type: "string",
                         },
                         protocol: {
                           default: "TCP",
                           description:
                             'Protocol for port. Must be UDP, TCP, or SCTP. Defaults to "TCP". Possible enum values: - `"SCTP"` is the SCTP protocol. - `"TCP"` is the TCP protocol. - `"UDP"` is the UDP protocol.',
                           enum: ["SCTP", "TCP", "UDP"],
-                          type: "string"
-                        }
+                          type: "string",
+                        },
                       },
                       required: ["container Port"],
-                      type: "object"
-                    }
+                      type: "object",
+                    },
                   ],
-                  default: {}
+                  default: {},
                 },
                 type: "array",
                 "x-kubernetes-list-map-keys": ["container Port", "protocol"],
                 "x-kubernetes-list-type": "map",
                 "x-kubernetes-patch-merge-key": "container Port",
-                "x-kubernetes-patch-strategy": "merge"
+                "x-kubernetes-patch-strategy": "merge",
               },
               "readiness Probe": {
                 allOf: [
@@ -7437,19 +7707,19 @@ const data = {
                                 description:
                                   "Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions ('|', etc) won't work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.",
                                 items: { default: "", type: "string" },
-                                type: "array"
-                              }
+                                type: "array",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
-                        description: "Exec specifies the action to take."
+                        description: "Exec specifies the action to take.",
                       },
                       "failure Threshold": {
                         description:
                           "Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       grpc: {
                         allOf: [
@@ -7460,21 +7730,21 @@ const data = {
                                 description:
                                   "Port number of the g RPC service. Number must be in the range 1 to 65535.",
                                 format: "int32",
-                                type: "integer"
+                                type: "integer",
                               },
                               service: {
                                 default: "",
                                 description:
                                   "Service is the name of the service to place in the g RPC Health Check Request (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by g RPC.",
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "GRPC specifies an action involving a GRPC port. This is a beta field and requires enabling GRPC Container Probe feature gate."
+                          "GRPC specifies an action involving a GRPC port. This is a beta field and requires enabling GRPC Container Probe feature gate.",
                       },
                       "http Get": {
                         allOf: [
@@ -7485,7 +7755,7 @@ const data = {
                               host: {
                                 description:
                                   'Host name to connect to, defaults to the pod IP. You probably want to set "Host" in http Headers instead.',
-                                type: "string"
+                                type: "string",
                               },
                               "http Headers": {
                                 description:
@@ -7499,25 +7769,26 @@ const data = {
                                         name: {
                                           default: "",
                                           description: "The header field name",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         value: {
                                           default: "",
                                           description: "The header field value",
-                                          type: "string"
-                                        }
+                                          type: "string",
+                                        },
                                       },
                                       required: ["name", "value"],
-                                      type: "object"
-                                    }
+                                      type: "object",
+                                    },
                                   ],
-                                  default: {}
+                                  default: {},
                                 },
-                                type: "array"
+                                type: "array",
                               },
                               path: {
-                                description: "Path to access on the HTTP server.",
-                                type: "string"
+                                description:
+                                  "Path to access on the HTTP server.",
+                                type: "string",
                               },
                               port: {
                                 allOf: [
@@ -7525,43 +7796,47 @@ const data = {
                                     description:
                                       "Int Or String is a type that can hold an int32 or a string. When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type. This allows you to have, for example, a JSON field that can accept a name or number.",
                                     format: "int-or-string",
-                                    oneOf: [{ type: "integer" }, { type: "string" }]
-                                  }
+                                    oneOf: [
+                                      { type: "integer" },
+                                      { type: "string" },
+                                    ],
+                                  },
                                 ],
                                 default: {},
                                 description:
-                                  "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
+                                  "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
                               },
                               scheme: {
                                 description:
                                   'Scheme to use for connecting to the host. Defaults to HTTP. Possible enum values: - `"HTTP"` means that the scheme used will be http:// - `"HTTPS"` means that the scheme used will be https://',
                                 enum: ["HTTP", "HTTPS"],
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
-                        description: "HTTP Get specifies the http request to perform."
+                        description:
+                          "HTTP Get specifies the http request to perform.",
                       },
                       "initial Delay Seconds": {
                         description:
                           "Number of seconds after the container has started before liveness probes are initiated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "period Seconds": {
                         description:
                           "How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "success Threshold": {
                         description:
                           "Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness and startup. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "tcp Socket": {
                         allOf: [
@@ -7572,7 +7847,7 @@ const data = {
                               host: {
                                 description:
                                   "Optional: Host name to connect to, defaults to the pod IP.",
-                                type: "string"
+                                type: "string",
                               },
                               port: {
                                 allOf: [
@@ -7580,39 +7855,42 @@ const data = {
                                     description:
                                       "Int Or String is a type that can hold an int32 or a string. When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type. This allows you to have, for example, a JSON field that can accept a name or number.",
                                     format: "int-or-string",
-                                    oneOf: [{ type: "integer" }, { type: "string" }]
-                                  }
+                                    oneOf: [
+                                      { type: "integer" },
+                                      { type: "string" },
+                                    ],
+                                  },
                                 ],
                                 default: {},
                                 description:
-                                  "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
-                              }
+                                  "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "TCP Socket specifies an action involving a TCP port."
+                          "TCP Socket specifies an action involving a TCP port.",
                       },
                       "termination Grace Period Seconds": {
                         description:
                           "Optional duration in seconds the pod needs to terminate gracefully upon probe failure. The grace period is the duration in seconds after the processes running in the pod are sent a termination signal and the time when the processes are forcibly halted with a kill signal. Set this value longer than the expected cleanup time for your process. If this value is nil, the pod's termination Grace Period Seconds will be used. Otherwise, this value overrides the value provided by the pod spec. Value must be non-negative integer. The value zero indicates stop immediately via the kill signal (no opportunity to shut down). This is a beta field and requires enabling Probe Termination Grace Period feature gate. Minimum value is 1. spec.termination Grace Period Seconds is used if unset.",
                         format: "int64",
-                        type: "integer"
+                        type: "integer",
                       },
                       "timeout Seconds": {
                         description:
                           "Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
                         format: "int32",
-                        type: "integer"
-                      }
+                        type: "integer",
+                      },
                     },
-                    type: "object"
-                  }
+                    type: "object",
+                  },
                 ],
                 description:
-                  "Periodic probe of container service readiness. Container will be removed from service endpoints if the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"
+                  "Periodic probe of container service readiness. Container will be removed from service endpoints if the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
               },
               resources: {
                 allOf: [
@@ -7626,14 +7904,14 @@ const data = {
                             {
                               description:
                                 'Quantity is a fixed-point representation of a number. It provides convenient marshaling/unmarshaling in JSON and YAML, in addition to String() and As Int64() accessors. The serialization format is: ``` <quantity> ::= <signed Number><suffix> (Note that <suffix> may be empty, from the "" case in <decimal SI>.) <digit> ::= 0 | 1 | ... | 9 <digits> ::= <digit> | <digit><digits> <number> ::= <digits> | <digits>.<digits> | <digits>. | .<digits> <sign> ::= "+" | "-" <signed Number> ::= <number> | <sign><number> <suffix> ::= <binary SI> | <decimal Exponent> | <decimal SI> <binary SI> ::= Ki | Mi | Gi | Ti | Pi | Ei (International System of units; See: http://physics.nist.gov/cuu/Units/binary.html) <decimal SI> ::= m | "" | k | M | G | T | P | E (Note that 1024 = 1Ki but 1000 = 1k; I didn\'t choose the capitalization.) <decimal Exponent> ::= "e" <signed Number> | "E" <signed Number> ``` No matter which of the three exponent forms is used, no quantity may represent a number greater than 2^63-1 in magnitude, nor may it have more than 3 decimal places. Numbers larger or more precise will be capped or rounded up. (E.g.: 0.1m will rounded up to 1m.) This may be extended in the future if we require larger or smaller quantities. When a Quantity is parsed from a string, it will remember the type of suffix it had, and will use the same type again when it is serialized. Before serializing, Quantity will be put in "canonical form". This means that Exponent/suffix will be adjusted up or down (with a corresponding increase or decrease in Mantissa) such that: - No precision is lost - No fractional digits will be emitted - The exponent (or suffix) is as large as possible. The sign will be omitted unless the number is negative. Examples: - 1.5 will be serialized as "1500m" - 1.5Gi will be serialized as "1536Mi" Note that the quantity will NEVER be internally represented by a floating point number. That is the whole point of this exercise. Non-canonical values will still parse as long as they are well formed, but will be re-emitted in their canonical form. (So always use canonical form, or don\'t diff.) This format is intended to make it difficult to use these numbers without writing some sort of special handling code in the hopes that that will cause implementors to also use a fixed point implementation.',
-                              oneOf: [{ type: "string" }, { type: "number" }]
-                            }
+                              oneOf: [{ type: "string" }, { type: "number" }],
+                            },
                           ],
-                          default: {}
+                          default: {},
                         },
                         description:
                           "Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/",
-                        type: "object"
+                        type: "object",
                       },
                       requests: {
                         additionalProperties: {
@@ -7641,22 +7919,22 @@ const data = {
                             {
                               description:
                                 'Quantity is a fixed-point representation of a number. It provides convenient marshaling/unmarshaling in JSON and YAML, in addition to String() and As Int64() accessors. The serialization format is: ``` <quantity> ::= <signed Number><suffix> (Note that <suffix> may be empty, from the "" case in <decimal SI>.) <digit> ::= 0 | 1 | ... | 9 <digits> ::= <digit> | <digit><digits> <number> ::= <digits> | <digits>.<digits> | <digits>. | .<digits> <sign> ::= "+" | "-" <signed Number> ::= <number> | <sign><number> <suffix> ::= <binary SI> | <decimal Exponent> | <decimal SI> <binary SI> ::= Ki | Mi | Gi | Ti | Pi | Ei (International System of units; See: http://physics.nist.gov/cuu/Units/binary.html) <decimal SI> ::= m | "" | k | M | G | T | P | E (Note that 1024 = 1Ki but 1000 = 1k; I didn\'t choose the capitalization.) <decimal Exponent> ::= "e" <signed Number> | "E" <signed Number> ``` No matter which of the three exponent forms is used, no quantity may represent a number greater than 2^63-1 in magnitude, nor may it have more than 3 decimal places. Numbers larger or more precise will be capped or rounded up. (E.g.: 0.1m will rounded up to 1m.) This may be extended in the future if we require larger or smaller quantities. When a Quantity is parsed from a string, it will remember the type of suffix it had, and will use the same type again when it is serialized. Before serializing, Quantity will be put in "canonical form". This means that Exponent/suffix will be adjusted up or down (with a corresponding increase or decrease in Mantissa) such that: - No precision is lost - No fractional digits will be emitted - The exponent (or suffix) is as large as possible. The sign will be omitted unless the number is negative. Examples: - 1.5 will be serialized as "1500m" - 1.5Gi will be serialized as "1536Mi" Note that the quantity will NEVER be internally represented by a floating point number. That is the whole point of this exercise. Non-canonical values will still parse as long as they are well formed, but will be re-emitted in their canonical form. (So always use canonical form, or don\'t diff.) This format is intended to make it difficult to use these numbers without writing some sort of special handling code in the hopes that that will cause implementors to also use a fixed point implementation.',
-                              oneOf: [{ type: "string" }, { type: "number" }]
-                            }
+                              oneOf: [{ type: "string" }, { type: "number" }],
+                            },
                           ],
-                          default: {}
+                          default: {},
                         },
                         description:
                           "Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/",
-                        type: "object"
-                      }
+                        type: "object",
+                      },
                     },
-                    type: "object"
-                  }
+                    type: "object",
+                  },
                 ],
                 default: {},
                 description:
-                  "Compute Resources required by this container. Cannot be updated. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
+                  "Compute Resources required by this container. Cannot be updated. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/",
               },
               "security Context": {
                 allOf: [
@@ -7667,7 +7945,7 @@ const data = {
                       "allow Privilege Escalation": {
                         description:
                           "Allow Privilege Escalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. Allow Privilege Escalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN Note that this field cannot be set when spec.os.name is windows.",
-                        type: "boolean"
+                        type: "boolean",
                       },
                       capabilities: {
                         allOf: [
@@ -7678,51 +7956,51 @@ const data = {
                               add: {
                                 description: "Added capabilities",
                                 items: { default: "", type: "string" },
-                                type: "array"
+                                type: "array",
                               },
                               drop: {
                                 description: "Removed capabilities",
                                 items: { default: "", type: "string" },
-                                type: "array"
-                              }
+                                type: "array",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "The capabilities to add/drop when running containers. Defaults to the default set of capabilities granted by the container runtime. Note that this field cannot be set when spec.os.name is windows."
+                          "The capabilities to add/drop when running containers. Defaults to the default set of capabilities granted by the container runtime. Note that this field cannot be set when spec.os.name is windows.",
                       },
                       privileged: {
                         description:
                           "Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false. Note that this field cannot be set when spec.os.name is windows.",
-                        type: "boolean"
+                        type: "boolean",
                       },
                       "proc Mount": {
                         description:
                           "proc Mount denotes the type of proc mount to use for the containers. The default is Default Proc Mount which uses the container runtime defaults for readonly paths and masked paths. This requires the Proc Mount Type feature flag to be enabled. Note that this field cannot be set when spec.os.name is windows.",
-                        type: "string"
+                        type: "string",
                       },
                       "read Only Root Filesystem": {
                         description:
                           "Whether this container has a read-only root filesystem. Default is false. Note that this field cannot be set when spec.os.name is windows.",
-                        type: "boolean"
+                        type: "boolean",
                       },
                       "run As Group": {
                         description:
                           "The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in Pod Security Context. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence. Note that this field cannot be set when spec.os.name is windows.",
                         format: "int64",
-                        type: "integer"
+                        type: "integer",
                       },
                       "run As Non Root": {
                         description:
                           "Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in Pod Security Context. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence.",
-                        type: "boolean"
+                        type: "boolean",
                       },
                       "run As User": {
                         description:
                           "The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in Pod Security Context. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence. Note that this field cannot be set when spec.os.name is windows.",
                         format: "int64",
-                        type: "integer"
+                        type: "integer",
                       },
                       "se Linux Options": {
                         allOf: [
@@ -7733,29 +8011,29 @@ const data = {
                               level: {
                                 description:
                                   "Level is SE Linux level label that applies to the container.",
-                                type: "string"
+                                type: "string",
                               },
                               role: {
                                 description:
                                   "Role is a SE Linux role label that applies to the container.",
-                                type: "string"
+                                type: "string",
                               },
                               type: {
                                 description:
                                   "Type is a SE Linux type label that applies to the container.",
-                                type: "string"
+                                type: "string",
                               },
                               user: {
                                 description:
                                   "User is a SE Linux user label that applies to the container.",
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "The SE Linux context to be applied to the container. If unspecified, the container runtime will allocate a random SE Linux context for each container. May also be set in Pod Security Context. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence. Note that this field cannot be set when spec.os.name is windows."
+                          "The SE Linux context to be applied to the container. If unspecified, the container runtime will allocate a random SE Linux context for each container. May also be set in Pod Security Context. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence. Note that this field cannot be set when spec.os.name is windows.",
                       },
                       "seccomp Profile": {
                         allOf: [
@@ -7766,15 +8044,19 @@ const data = {
                               "localhost Profile": {
                                 description:
                                   'localhost Profile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work. Must be a descending path, relative to the kubelet\'s configured seccomp profile location. Must only be set if type is "Localhost".',
-                                type: "string"
+                                type: "string",
                               },
                               type: {
                                 default: "",
                                 description:
                                   'type indicates which kind of seccomp profile will be applied. Valid options are: Localhost - a profile defined in a file on the node should be used. Runtime Default - the container runtime default profile should be used. Unconfined - no profile should be applied. Possible enum values: - `"Localhost"` indicates a profile defined in a file on the node should be used. The file\'s location relative to <kubelet-root-dir>/seccomp. - `"Runtime Default"` represents the default container runtime seccomp profile. - `"Unconfined"` indicates no seccomp profile is applied (A.K.A. unconfined).',
-                                enum: ["Localhost", "RuntimeDefault", "Unconfined"],
-                                type: "string"
-                              }
+                                enum: [
+                                  "Localhost",
+                                  "RuntimeDefault",
+                                  "Unconfined",
+                                ],
+                                type: "string",
+                              },
                             },
                             required: ["type"],
                             type: "object",
@@ -7782,14 +8064,14 @@ const data = {
                               {
                                 discriminator: "type",
                                 "fields-to-discriminate By": {
-                                  "localhost Profile": "Localhost Profile"
-                                }
-                              }
-                            ]
-                          }
+                                  "localhost Profile": "Localhost Profile",
+                                },
+                              },
+                            ],
+                          },
                         ],
                         description:
-                          "The seccomp options to use by this container. If seccomp options are provided at both the pod & container level, the container options override the pod options. Note that this field cannot be set when spec.os.name is windows."
+                          "The seccomp options to use by this container. If seccomp options are provided at both the pod & container level, the container options override the pod options. Note that this field cannot be set when spec.os.name is windows.",
                       },
                       "windows Options": {
                         allOf: [
@@ -7800,36 +8082,36 @@ const data = {
                               "gmsa Credential Spec": {
                                 description:
                                   "GMSA Credential Spec is where the GMSA admission webhook (https://github.com/kubernetes-sigs/windows-gmsa) inlines the contents of the GMSA credential spec named by the GMSA Credential Spec Name field.",
-                                type: "string"
+                                type: "string",
                               },
                               "gmsa Credential Spec Name": {
                                 description:
                                   "GMSA Credential Spec Name is the name of the GMSA credential spec to use.",
-                                type: "string"
+                                type: "string",
                               },
                               "host Process": {
                                 description:
                                   "Host Process determines if a container should be run as a 'Host Process' container. This field is alpha-level and will only be honored by components that enable the Windows Host Process Containers feature flag. Setting this field without the feature flag will result in errors when validating the Pod. All of a Pod's containers must have the same effective Host Process value (it is not allowed to have a mix of Host Process containers and non-Host Process containers). In addition, if Host Process is true then Host Network must also be set to true.",
-                                type: "boolean"
+                                type: "boolean",
                               },
                               "run As User Name": {
                                 description:
                                   "The User Name in Windows to run the entrypoint of the container process. Defaults to the user specified in image metadata if unspecified. May also be set in Pod Security Context. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence.",
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "The Windows specific settings applied to all containers. If unspecified, the options from the Pod Security Context will be used. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence. Note that this field cannot be set when spec.os.name is linux."
-                      }
+                          "The Windows specific settings applied to all containers. If unspecified, the options from the Pod Security Context will be used. If set in both Security Context and Pod Security Context, the value specified in Security Context takes precedence. Note that this field cannot be set when spec.os.name is linux.",
+                      },
                     },
-                    type: "object"
-                  }
+                    type: "object",
+                  },
                 ],
                 description:
-                  "Security Context defines the security options the container should be run with. If set, the fields of Security Context override the equivalent fields of Pod Security Context. More info: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/"
+                  "Security Context defines the security options the container should be run with. If set, the fields of Security Context override the equivalent fields of Pod Security Context. More info: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/",
               },
               "startup Probe": {
                 allOf: [
@@ -7847,19 +8129,19 @@ const data = {
                                 description:
                                   "Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions ('|', etc) won't work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.",
                                 items: { default: "", type: "string" },
-                                type: "array"
-                              }
+                                type: "array",
+                              },
                             },
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
-                        description: "Exec specifies the action to take."
+                        description: "Exec specifies the action to take.",
                       },
                       "failure Threshold": {
                         description:
                           "Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       grpc: {
                         allOf: [
@@ -7870,21 +8152,21 @@ const data = {
                                 description:
                                   "Port number of the g RPC service. Number must be in the range 1 to 65535.",
                                 format: "int32",
-                                type: "integer"
+                                type: "integer",
                               },
                               service: {
                                 default: "",
                                 description:
                                   "Service is the name of the service to place in the g RPC Health Check Request (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by g RPC.",
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "GRPC specifies an action involving a GRPC port. This is a beta field and requires enabling GRPC Container Probe feature gate."
+                          "GRPC specifies an action involving a GRPC port. This is a beta field and requires enabling GRPC Container Probe feature gate.",
                       },
                       "http Get": {
                         allOf: [
@@ -7895,7 +8177,7 @@ const data = {
                               host: {
                                 description:
                                   'Host name to connect to, defaults to the pod IP. You probably want to set "Host" in http Headers instead.',
-                                type: "string"
+                                type: "string",
                               },
                               "http Headers": {
                                 description:
@@ -7909,25 +8191,26 @@ const data = {
                                         name: {
                                           default: "",
                                           description: "The header field name",
-                                          type: "string"
+                                          type: "string",
                                         },
                                         value: {
                                           default: "",
                                           description: "The header field value",
-                                          type: "string"
-                                        }
+                                          type: "string",
+                                        },
                                       },
                                       required: ["name", "value"],
-                                      type: "object"
-                                    }
+                                      type: "object",
+                                    },
                                   ],
-                                  default: {}
+                                  default: {},
                                 },
-                                type: "array"
+                                type: "array",
                               },
                               path: {
-                                description: "Path to access on the HTTP server.",
-                                type: "string"
+                                description:
+                                  "Path to access on the HTTP server.",
+                                type: "string",
                               },
                               port: {
                                 allOf: [
@@ -7935,43 +8218,47 @@ const data = {
                                     description:
                                       "Int Or String is a type that can hold an int32 or a string. When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type. This allows you to have, for example, a JSON field that can accept a name or number.",
                                     format: "int-or-string",
-                                    oneOf: [{ type: "integer" }, { type: "string" }]
-                                  }
+                                    oneOf: [
+                                      { type: "integer" },
+                                      { type: "string" },
+                                    ],
+                                  },
                                 ],
                                 default: {},
                                 description:
-                                  "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
+                                  "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
                               },
                               scheme: {
                                 description:
                                   'Scheme to use for connecting to the host. Defaults to HTTP. Possible enum values: - `"HTTP"` means that the scheme used will be http:// - `"HTTPS"` means that the scheme used will be https://',
                                 enum: ["HTTP", "HTTPS"],
-                                type: "string"
-                              }
+                                type: "string",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
-                        description: "HTTP Get specifies the http request to perform."
+                        description:
+                          "HTTP Get specifies the http request to perform.",
                       },
                       "initial Delay Seconds": {
                         description:
                           "Number of seconds after the container has started before liveness probes are initiated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "period Seconds": {
                         description:
                           "How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "success Threshold": {
                         description:
                           "Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness and startup. Minimum value is 1.",
                         format: "int32",
-                        type: "integer"
+                        type: "integer",
                       },
                       "tcp Socket": {
                         allOf: [
@@ -7982,7 +8269,7 @@ const data = {
                               host: {
                                 description:
                                   "Optional: Host name to connect to, defaults to the pod IP.",
-                                type: "string"
+                                type: "string",
                               },
                               port: {
                                 allOf: [
@@ -7990,65 +8277,68 @@ const data = {
                                     description:
                                       "Int Or String is a type that can hold an int32 or a string. When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type. This allows you to have, for example, a JSON field that can accept a name or number.",
                                     format: "int-or-string",
-                                    oneOf: [{ type: "integer" }, { type: "string" }]
-                                  }
+                                    oneOf: [
+                                      { type: "integer" },
+                                      { type: "string" },
+                                    ],
+                                  },
                                 ],
                                 default: {},
                                 description:
-                                  "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
-                              }
+                                  "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.",
+                              },
                             },
                             required: ["port"],
-                            type: "object"
-                          }
+                            type: "object",
+                          },
                         ],
                         description:
-                          "TCP Socket specifies an action involving a TCP port."
+                          "TCP Socket specifies an action involving a TCP port.",
                       },
                       "termination Grace Period Seconds": {
                         description:
                           "Optional duration in seconds the pod needs to terminate gracefully upon probe failure. The grace period is the duration in seconds after the processes running in the pod are sent a termination signal and the time when the processes are forcibly halted with a kill signal. Set this value longer than the expected cleanup time for your process. If this value is nil, the pod's termination Grace Period Seconds will be used. Otherwise, this value overrides the value provided by the pod spec. Value must be non-negative integer. The value zero indicates stop immediately via the kill signal (no opportunity to shut down). This is a beta field and requires enabling Probe Termination Grace Period feature gate. Minimum value is 1. spec.termination Grace Period Seconds is used if unset.",
                         format: "int64",
-                        type: "integer"
+                        type: "integer",
                       },
                       "timeout Seconds": {
                         description:
                           "Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
                         format: "int32",
-                        type: "integer"
-                      }
+                        type: "integer",
+                      },
                     },
-                    type: "object"
-                  }
+                    type: "object",
+                  },
                 ],
                 description:
-                  "Startup Probe indicates that the Pod has successfully initialized. If specified, no other probes are executed until this completes successfully. If this probe fails, the Pod will be restarted, just as if the liveness Probe failed. This can be used to provide different probe parameters at the beginning of a Pod's lifecycle, when it might take a long time to load data or warm a cache, than during steady-state operation. This cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"
+                  "Startup Probe indicates that the Pod has successfully initialized. If specified, no other probes are executed until this completes successfully. If this probe fails, the Pod will be restarted, just as if the liveness Probe failed. This can be used to provide different probe parameters at the beginning of a Pod's lifecycle, when it might take a long time to load data or warm a cache, than during steady-state operation. This cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes",
               },
               stdin: {
                 description:
                   "Whether this container should allocate a buffer for stdin in the container runtime. If this is not set, reads from stdin in the container will always result in EOF. Default is false.",
-                type: "boolean"
+                type: "boolean",
               },
               "stdin Once": {
                 description:
                   "Whether the container runtime should close the stdin channel after it has been opened by a single attach. When stdin is true the stdin stream will remain open across multiple attach sessions. If stdin Once is set to true, stdin is opened on container start, is empty until the first client attaches to stdin, and then remains open and accepts data until the client disconnects, at which time stdin is closed and remains closed until the container is restarted. If this flag is false, a container processes that reads from stdin will never receive an EOF. Default is false",
-                type: "boolean"
+                type: "boolean",
               },
               "termination Message Path": {
                 description:
                   "Optional: Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Will be truncated by the node if greater than 4096 bytes. The total message length across all containers will be limited to 12kb. Defaults to /dev/termination-log. Cannot be updated.",
-                type: "string"
+                type: "string",
               },
               "termination Message Policy": {
                 description:
                   'Indicate how the termination message should be populated. File will use the contents of termination Message Path to populate the container status message on both success and failure. Fallback To Logs On Error will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated. Possible enum values: - `"Fallback To Logs On Error"` will read the most recent contents of the container logs for the container status message when the container exits with an error and the termination Message Path has no contents. - `"File"` is the default behavior and will set the container status message to the contents of the container\'s termination Message Path when the container exits.',
                 enum: ["FallbackToLogsOnError", "File"],
-                type: "string"
+                type: "string",
               },
               tty: {
                 description:
                   "Whether this container should allocate a TTY for itself, also requires 'stdin' to be true. Default is false.",
-                type: "boolean"
+                type: "boolean",
               },
               "volume Devices": {
                 description:
@@ -8063,24 +8353,24 @@ const data = {
                           default: "",
                           description:
                             "device Path is the path inside of the container that the device will be mapped to.",
-                          type: "string"
+                          type: "string",
                         },
                         name: {
                           default: "",
                           description:
                             "name must match the name of a persistent Volume Claim in the pod",
-                          type: "string"
-                        }
+                          type: "string",
+                        },
                       },
                       required: ["name", "device Path"],
-                      type: "object"
-                    }
+                      type: "object",
+                    },
                   ],
-                  default: {}
+                  default: {},
                 },
                 type: "array",
                 "x-kubernetes-patch-merge-key": "device Path",
-                "x-kubernetes-patch-strategy": "merge"
+                "x-kubernetes-patch-strategy": "merge",
               },
               "volume Mounts": {
                 description:
@@ -8095,52 +8385,52 @@ const data = {
                           default: "",
                           description:
                             "Path within the container at which the volume should be mounted. Must not contain ':'.",
-                          type: "string"
+                          type: "string",
                         },
                         "mount Propagation": {
                           description:
                             "mount Propagation determines how mounts are propagated from the host to container and the other way around. When not set, Mount Propagation None is used. This field is beta in 1.10.",
-                          type: "string"
+                          type: "string",
                         },
                         name: {
                           default: "",
                           description: "This must match the Name of a Volume.",
-                          type: "string"
+                          type: "string",
                         },
                         "read Only": {
                           description:
                             "Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.",
-                          type: "boolean"
+                          type: "boolean",
                         },
                         "sub Path": {
                           description:
                             "Path within the volume from which the container's volume should be mounted. Defaults to \"\" (volume's root).",
-                          type: "string"
+                          type: "string",
                         },
                         "sub Path Expr": {
                           description:
                             "Expanded path within the volume from which the container's volume should be mounted. Behaves similarly to Sub Path but environment variable references $(VAR_NAME) are expanded using the container's environment. Defaults to \"\" (volume's root). Sub Path Expr and Sub Path are mutually exclusive.",
-                          type: "string"
-                        }
+                          type: "string",
+                        },
                       },
                       required: ["name", "mount Path"],
-                      type: "object"
-                    }
+                      type: "object",
+                    },
                   ],
-                  default: {}
+                  default: {},
                 },
                 type: "array",
                 "x-kubernetes-patch-merge-key": "mount Path",
-                "x-kubernetes-patch-strategy": "merge"
+                "x-kubernetes-patch-strategy": "merge",
               },
               "working Dir": {
                 description:
                   "Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.",
-                type: "string"
-              }
+                type: "string",
+              },
             },
             required: ["name"],
-            type: "object"
+            type: "object",
           },
           componentDefinition: {
             id: "fcd41e59-cb70-481c-9302-9221e389087c",
@@ -8168,11 +8458,11 @@ const data = {
                   "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                 svgComplete: "",
                 svgWhite:
-                  "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg"
+                  "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
               },
               model: { version: "0.7.2" },
               components: null,
-              relationships: null
+              relationships: null,
             },
             metadata: {
               capabilities:
@@ -8193,22 +8483,24 @@ const data = {
                 "ui/public/static/img/meshmodels/meshery-core/color/container-color.svg",
               svgComplete: "",
               svgWhite:
-                "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg"
+                "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg",
             },
             component: {
               kind: "Container",
               version: "core.meshery.io/v1alpha1",
-              schema: "{}"
+              schema: "{}",
             },
-            duplicates: 6
+            duplicates: 6,
           },
           parent: "2ec38d0f-8c4e-4440-b3f0-991a64b8aed3",
           id: "de2f2bcd-70bf-4f72-8e6e-93c269a7e12d",
           config: {
             services: {
-              "de2f2bcd-70bf-4f72-8e6e-93c269a7e12d": { settings: { name: "redis" } }
-            }
-          }
+              "de2f2bcd-70bf-4f72-8e6e-93c269a7e12d": {
+                settings: { name: "redis" },
+              },
+            },
+          },
         },
         position: { x: -109.5722605330142, y: -211.37198914445776 },
         group: "nodes",
@@ -8218,8 +8510,8 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: "fieldRefNode"
-      }
+        classes: "fieldRefNode",
+      },
     ],
     edges: [
       {
@@ -8228,7 +8520,7 @@ const data = {
           metadata: { port: 8877, protocol: "TCP" },
           source: "ea26ce7b-d71f-44bf-b123-56ec6c59d5d4",
           subType: "Network",
-          target: "7820034f-bd39-454e-b215-5bb8af95c405"
+          target: "7820034f-bd39-454e-b215-5bb8af95c405",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -8238,7 +8530,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -8246,7 +8538,7 @@ const data = {
           metadata: { port: 80, protocol: "TCP" },
           source: "85d2f80c-eb5a-489e-89d7-5ad7c14142e1",
           subType: "Network",
-          target: "ae37bb96-b4e6-4b4f-9e13-ac47309cf6eb"
+          target: "ae37bb96-b4e6-4b4f-9e13-ac47309cf6eb",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -8256,7 +8548,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -8264,7 +8556,7 @@ const data = {
           metadata: { binded_by: "b2f3d75e-28fe-4359-b0b2-2287ced3d53c" },
           source: "03a72188-6643-4314-8c2a-0da6f6135675",
           subType: "Permission",
-          target: "e1a6aac1-3112-420f-b646-09dd7f71b29f"
+          target: "e1a6aac1-3112-420f-b646-09dd7f71b29f",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -8274,7 +8566,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -8282,7 +8574,7 @@ const data = {
           metadata: { binded_by: "52adbc0e-45f3-444d-80c5-2214aa2c7efc" },
           source: "2a269e24-8a45-4b31-b1bd-bc3ab24943da",
           subType: "Permission",
-          target: "e1a6aac1-3112-420f-b646-09dd7f71b29f"
+          target: "e1a6aac1-3112-420f-b646-09dd7f71b29f",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -8292,7 +8584,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -8300,7 +8592,7 @@ const data = {
           metadata: { binded_by: "6f0697b8-61db-4db7-a1be-e3442b6513a7" },
           source: "2606ffde-8e48-4dc3-832a-00f8d2e8ba4a",
           subType: "Permission",
-          target: "72d5f647-0743-4556-b67b-977a43fd9c16"
+          target: "72d5f647-0743-4556-b67b-977a43fd9c16",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -8310,7 +8602,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -8318,7 +8610,7 @@ const data = {
           metadata: { binded_by: "cca9bba7-04c3-4860-8d69-4cc317d31bd2" },
           source: "57c11961-03d6-4931-83e8-4aecf19c5d07",
           subType: "Permission",
-          target: "72d5f647-0743-4556-b67b-977a43fd9c16"
+          target: "72d5f647-0743-4556-b67b-977a43fd9c16",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -8328,7 +8620,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
+        classes: "",
       },
       {
         data: {
@@ -8336,7 +8628,7 @@ const data = {
           metadata: { port: 80, protocol: "TCP" },
           source: "85d2f80c-eb5a-489e-89d7-5ad7c14142e1",
           subType: "Network",
-          target: "7820034f-bd39-454e-b215-5bb8af95c405"
+          target: "7820034f-bd39-454e-b215-5bb8af95c405",
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -8346,9 +8638,9 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: ""
-      }
-    ]
+        classes: "",
+      },
+    ],
   },
   elementStyles: {
     "ea26ce7b-d71f-44bf-b123-56ec6c59d5d4": {
@@ -8776,7 +9068,7 @@ const data = {
       "padding-top": "12px",
       paddingTop: "12px",
       "padding-bottom": "12px",
-      paddingBottom: "12px"
+      paddingBottom: "12px",
     },
     "ae37bb96-b4e6-4b4f-9e13-ac47309cf6eb": {
       events: "yes",
@@ -9203,7 +9495,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "f345ac82-0446-49f6-8f80-833e99f459ff": {
       events: "yes",
@@ -9630,7 +9922,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "4ae1f64a-c8db-4e87-b95c-11efb4bcf693": {
       events: "yes",
@@ -10057,7 +10349,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "03a72188-6643-4314-8c2a-0da6f6135675": {
       events: "yes",
@@ -10484,7 +10776,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "2a269e24-8a45-4b31-b1bd-bc3ab24943da": {
       events: "yes",
@@ -10911,7 +11203,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "88657fea-8edf-4f54-bfc2-6c8f10d5c79e": {
       events: "yes",
@@ -11338,7 +11630,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "9def6980-7ca2-4738-8c66-c2bcae5b9111": {
       events: "yes",
@@ -11765,7 +12057,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "cca9bba7-04c3-4860-8d69-4cc317d31bd2": {
       events: "yes",
@@ -12192,7 +12484,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "bce4ed54-de41-4e1b-9a89-1ca92f0c2186": {
       events: "yes",
@@ -12619,7 +12911,7 @@ const data = {
       "padding-top": "1px",
       paddingTop: "1px",
       "padding-bottom": "1px",
-      paddingBottom: "1px"
+      paddingBottom: "1px",
     },
     "19cbe38e-f319-4ad2-bdab-10f1e02ae8e4": {
       events: "yes",
@@ -13046,7 +13338,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "9b50fcf5-b779-487a-b9b9-abf11867ac39": {
       events: "yes",
@@ -13473,7 +13765,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "72d5f647-0743-4556-b67b-977a43fd9c16": {
       events: "yes",
@@ -13900,7 +14192,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "b2f3d75e-28fe-4359-b0b2-2287ced3d53c": {
       events: "yes",
@@ -14327,7 +14619,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "566e169e-7254-45af-b507-1130adc5fd5b": {
       events: "yes",
@@ -14754,7 +15046,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "e1a6aac1-3112-420f-b646-09dd7f71b29f": {
       events: "yes",
@@ -15181,7 +15473,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "85d2f80c-eb5a-489e-89d7-5ad7c14142e1": {
       events: "yes",
@@ -15608,7 +15900,7 @@ const data = {
       "padding-top": "12px",
       paddingTop: "12px",
       "padding-bottom": "12px",
-      paddingBottom: "12px"
+      paddingBottom: "12px",
     },
     "36e37b78-07b2-41bc-bdbe-2810d680a0f5": {
       events: "yes",
@@ -16033,7 +16325,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "127a1758-2127-4a41-9424-7cfad71e1284": {
       events: "yes",
@@ -16460,7 +16752,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "52adbc0e-45f3-444d-80c5-2214aa2c7efc": {
       events: "yes",
@@ -16887,7 +17179,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "c460e7a0-abba-4480-afca-a347a6087bf7": {
       events: "yes",
@@ -17314,7 +17606,7 @@ const data = {
       "padding-top": "12px",
       paddingTop: "12px",
       "padding-bottom": "12px",
-      paddingBottom: "12px"
+      paddingBottom: "12px",
     },
     "f7e695ff-aee9-4b53-9433-ab7660f15a77": {
       events: "yes",
@@ -17741,7 +18033,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "d13c234a-efae-42ec-9884-3d08c65136c9": {
       events: "yes",
@@ -18168,7 +18460,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "127435b1-2c1e-4480-a448-706b70490870": {
       events: "yes",
@@ -18595,7 +18887,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "6f0697b8-61db-4db7-a1be-e3442b6513a7": {
       events: "yes",
@@ -19022,7 +19314,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "6ff12d76-a77d-4b52-afd6-d526e1bf11e0": {
       events: "yes",
@@ -19449,7 +19741,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "2606ffde-8e48-4dc3-832a-00f8d2e8ba4a": {
       events: "yes",
@@ -19876,7 +20168,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "7820034f-bd39-454e-b215-5bb8af95c405": {
       events: "yes",
@@ -20303,7 +20595,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "f06c301f-0315-4d83-a8d4-f288fe5a90a2": {
       events: "yes",
@@ -20730,7 +21022,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "009e0e4b-f78e-4ac7-b694-1ab69df6df2e": {
       events: "yes",
@@ -21157,7 +21449,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "406be56e-59bf-4d9d-9804-373299246102": {
       events: "yes",
@@ -21584,7 +21876,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "7f1fb9dc-fa87-433d-92b8-6ca923988187": {
       events: "yes",
@@ -22011,7 +22303,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "57c11961-03d6-4931-83e8-4aecf19c5d07": {
       events: "yes",
@@ -22438,7 +22730,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "2ec38d0f-8c4e-4440-b3f0-991a64b8aed3": {
       events: "yes",
@@ -22865,7 +23157,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "f064b241-19b0-4c0d-a7c6-dedc9a23f366": {
       events: "yes",
@@ -23290,7 +23582,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "d11b96ae-0cf4-4e4c-b9a3-50507b62d79e": {
       events: "yes",
@@ -23715,7 +24007,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "b512a101-6b54-4aa5-b8ce-66fc772bb362": {
       events: "yes",
@@ -24140,7 +24432,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "6c978563-edd7-4c16-a09d-a1c63857df56": {
       events: "yes",
@@ -24565,7 +24857,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "a5057394-11fe-4054-be97-c49522ca222b": {
       events: "yes",
@@ -24990,7 +25282,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "41b8e93f-9c0b-4d35-8c44-dbc7712c34bf": {
       events: "yes",
@@ -25415,7 +25707,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "2e82a347-0bab-4ed2-ac40-d413c256bab8": {
       events: "yes",
@@ -25840,7 +26132,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px"
+      paddingBottom: "0px",
     },
     "5be73225-ad10-42ed-a953-18233457dec8": {
       events: "yes",
@@ -26267,7 +26559,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "38554950-c97d-4c7c-93b5-8ed4c3f3442b": {
       events: "yes",
@@ -26694,7 +26986,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
+      paddingBottom: "6px",
     },
     "de2f2bcd-70bf-4f72-8e6e-93c269a7e12d": {
       events: "yes",
@@ -27121,9 +27413,9 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px"
-    }
-  }
+      paddingBottom: "6px",
+    },
+  },
 };
 
 const addStyles = () => {
@@ -27190,7 +27482,7 @@ const addStyles = () => {
 
 const CreateToolBar = () => {
   const cyContainer = document.getElementById(
-    "embedded-design-d429e684-c42a-4c14-816b-b4dddb4b6d40"
+    "embedded-design-d429e684-c42a-4c14-816b-b4dddb4b6d40",
   );
   const toolbar = document.createElement("div");
   toolbar.innerHTML = `
@@ -27243,7 +27535,7 @@ const CreateToolBar = () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const embedContainer = document.getElementById(
-    "embedded-design-d429e684-c42a-4c14-816b-b4dddb4b6d40"
+    "embedded-design-d429e684-c42a-4c14-816b-b4dddb4b6d40",
   );
   embedContainer.classList.add("embed-design-container");
   const cyContainer = document.createElement("div");
@@ -27254,7 +27546,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var cy = (window.cy = cytoscape({
     container: document.getElementById(
-      "embedded-design-d429e684-c42a-4c14-816b-b4dddb4b6d40-cy"
+      "embedded-design-d429e684-c42a-4c14-816b-b4dddb4b6d40-cy",
     ),
 
     autounselectify: true,
@@ -27263,13 +27555,13 @@ document.addEventListener("DOMContentLoaded", function () {
     minZoom: 0.5,
     maxZoom: 6.6,
     layout: {
-      name: "preset"
+      name: "preset",
     },
     elements: data.elements,
-    style: data.style
+    style: data.style,
   }));
 
-  Object.keys(data.elementStyles).forEach(id => {
+  Object.keys(data.elementStyles).forEach((id) => {
     cy.getElementById(id).style(data.elementStyles[id]);
   });
 

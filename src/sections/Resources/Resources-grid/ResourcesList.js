@@ -13,9 +13,8 @@ const ResourcesList = (props) => {
     setSearchQuery,
     searchQuery,
     ["frontmatter", "title"],
-    "id"
+    "id",
   );
-
 
   let data = [];
   let all = [];
@@ -37,7 +36,7 @@ const ResourcesList = (props) => {
   let productOptions = optionData.filter((data) => data.category === "Product");
   let techOptions = optionData.filter((data) => data.category === "Technology");
   let meshOptions = optionData.filter(
-    (data) => data.category === "Service Mesh"
+    (data) => data.category === "Service Mesh",
   );
 
   //mapping all filters to separate individual category filters
@@ -102,8 +101,8 @@ const ResourcesList = (props) => {
       if (totalTech === 0) techData = all;
       if (totalMesh === 0) meshData = all;
 
-      (result = [typeData, productData, techData, meshData]),
-      (data = result.reduce((a, b) => a.filter((c) => b.includes(c))));
+      ((result = [typeData, productData, techData, meshData]),
+        (data = result.reduce((a, b) => a.filter((c) => b.includes(c)))));
     });
   } else {
     queryResults.forEach((resources) => {
@@ -113,7 +112,6 @@ const ResourcesList = (props) => {
 
   return (
     <ResourcesGrid
-
       data={[...new Set(data)]}
       {...props}
       searchData={searchData}

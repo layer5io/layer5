@@ -1,1 +1,2 @@
-export const getActiveServiceMesh = (chapterData) => chapterData.fields.slug.split("/")[4];
+export const getActiveServiceMesh = (chapterData) =>
+  chapterData.fields.slug.split("/")[4];

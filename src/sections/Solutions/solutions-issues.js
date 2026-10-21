@@ -12,7 +12,7 @@ const IssuesSectionWrapper = styled.section`
 
   display: flex;
   justify-content: center;
-  background: ${(props) => props.theme.blackToWhite };
+  background: ${(props) => props.theme.blackToWhite};
   padding: 6rem 2rem;
   overflow: hidden;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -110,19 +110,34 @@ const IssuesSection = () => {
           <Columns>
             <Column>
               <IssuesText>
-                On the one hand, cloud adoption offers the ability to quickly scale resources up or down, yet enterprises might overprovision resources due to a lack of proper monitoring and scaling strategies.
+                On the one hand, cloud adoption offers the ability to quickly
+                scale resources up or down, yet enterprises might overprovision
+                resources due to a lack of proper monitoring and scaling
+                strategies.
               </IssuesText>
               <IssuesText>
-                Also, very often, cloud resources are provisioned but not actively utilized, which creates unwanted room for waste without proper resource management and much-needed de-provisioning, thus increasing running cost of these resources.
+                Also, very often, cloud resources are provisioned but not
+                actively utilized, which creates unwanted room for waste without
+                proper resource management and much-needed de-provisioning, thus
+                increasing running cost of these resources.
               </IssuesText>
             </Column>
 
             <Column>
               <IssuesText>
-                On some other occasions, some professionals have tools that already enable certain functionalities that ease workflow and implementation, and a lack of integration of these platforms can lead to further frustrations when implementing desired solutions. All of this can lead to higher, avoidable, and unnecessary costs.
+                On some other occasions, some professionals have tools that
+                already enable certain functionalities that ease workflow and
+                implementation, and a lack of integration of these platforms can
+                lead to further frustrations when implementing desired
+                solutions. All of this can lead to higher, avoidable, and
+                unnecessary costs.
               </IssuesText>
               <IssuesText>
-                Additionally, cloud environments are often distributed, dynamic, and composed of various interconnected services. This level of complexity can make it challenging to both identify the root cause of incidents and effectively coordinate controlled chaos experiments to test the resilience of cloud infrastructure.
+                Additionally, cloud environments are often distributed, dynamic,
+                and composed of various interconnected services. This level of
+                complexity can make it challenging to both identify the root
+                cause of incidents and effectively coordinate controlled chaos
+                experiments to test the resilience of cloud infrastructure.
               </IssuesText>
             </Column>
           </Columns>

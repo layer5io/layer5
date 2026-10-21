@@ -7,11 +7,15 @@ const Privacy = () => {
   return (
     <>
       <CompanyPrivacy />
-
     </>
   );
 };
 export default Privacy;
 export const Head = () => {
-  return <SEO title="Privacy" description="At Layer5, we value your right to privacy." />;
+  return (
+    <SEO
+      title="Privacy"
+      description="At Layer5, we value your right to privacy."
+    />
+  );
 };

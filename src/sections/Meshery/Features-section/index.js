@@ -53,7 +53,9 @@ const FeaturesSection = () => {
             <span>Meshery</span> supports the most service meshes.
           </h1> */}
           <p>
-            No matter where you run your workloads, Meshery's Kanvas makes Kubernetes and cloud infrastructure design intuitive and collaborative.
+            No matter where you run your workloads, Meshery's Kanvas makes
+            Kubernetes and cloud infrastructure design intuitive and
+            collaborative.
           </p>
         </div>
         <div className="smp-section">
@@ -62,7 +64,9 @@ const FeaturesSection = () => {
             <Col $xs={12} $xl={4} className="smp-section-data">
               <h2>The Visual Designer: Kanvas</h2>
               <p>
-                Drag, drop, and deploy your infrastructure with ease. Kanvas, built on Meshery, simplifies Kubernetes and cloud management through intuitive visual designer and operator.
+                Drag, drop, and deploy your infrastructure with ease. Kanvas,
+                built on Meshery, simplifies Kubernetes and cloud management
+                through intuitive visual designer and operator.
               </p>
             </Col>
             <Col $xs={12} $xl={8} className="smp-section-carousel">
@@ -85,7 +89,8 @@ const FeaturesSection = () => {
             <h3>One step to managing your microservices</h3>
             <h1>Cloud Native Application Management</h1>
             <p>
-              Confidently take full advantage of all that your infrastructure offers.
+              Confidently take full advantage of all that your infrastructure
+              offers.
             </p>
           </div>
           <div className="mesh-mngmnt-btn">

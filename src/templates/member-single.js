@@ -19,36 +19,38 @@ const LiteModeNotice = ({ entity }) => (
       {`This ${entity} page is skipped when BUILD_FULL_SITE=false to keep local builds fast.`}
     </p>
     <p style={{ marginTop: "0.75rem" }}>
-      Run <code>make site-full</code> (or set <code>BUILD_FULL_SITE=true</code>) to render the full content.
+      Run <code>make site-full</code> (or set <code>BUILD_FULL_SITE=true</code>)
+      to render the full content.
     </p>
   </section>
 );
 
-export const query = graphql`query MemberBySlug($slug: String!) {
-  mdx(fields: {slug: {eq: $slug}}) {
-    frontmatter {
-      name
-      position
-      github
-      twitter
-      layer5
-      meshmate
-      linkedin
-      location
-      badges
-      status
-      bio
-      executive_bio
-      image_path {
-        extension
-        publicURL
-        childImageSharp {
-          gatsbyImageData(width: 500, layout: CONSTRAINED)
+export const query = graphql`
+  query MemberBySlug($slug: String!) {
+    mdx(fields: { slug: { eq: $slug } }) {
+      frontmatter {
+        name
+        position
+        github
+        twitter
+        layer5
+        meshmate
+        linkedin
+        location
+        badges
+        status
+        bio
+        executive_bio
+        image_path {
+          extension
+          publicURL
+          childImageSharp {
+            gatsbyImageData(width: 500, layout: CONSTRAINED)
+          }
         }
       }
     }
   }
-}
 `;
 
 const MemberSinglePage = ({ data, children }) => {
@@ -58,18 +60,9 @@ const MemberSinglePage = ({ data, children }) => {
   }
 
   return (
-
     <>
-
-
-      <MemberSingle
-        frontmatter={frontmatter}
-      >
-        {children}
-      </MemberSingle>
-
+      <MemberSingle frontmatter={frontmatter}>{children}</MemberSingle>
     </>
-
   );
 };
 
@@ -86,5 +79,11 @@ export const Head = ({ data }) => {
     );
   }
 
-  return <SEO title={frontmatter.name} image={frontmatter.image_path?.publicURL} description={frontmatter.bio} />;
+  return (
+    <SEO
+      title={frontmatter.name}
+      image={frontmatter.image_path?.publicURL}
+      description={frontmatter.bio}
+    />
+  );
 };

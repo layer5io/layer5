@@ -38,7 +38,11 @@ const Inner = styled.div`
 `;
 
 const MainCard = styled.div`
-  background: linear-gradient(156.33deg, rgba(41, 59, 67, 0) -11.07%, #293b43 135.21%);
+  background: linear-gradient(
+    156.33deg,
+    rgba(41, 59, 67, 0) -11.07%,
+    #293b43 135.21%
+  );
   border-radius: 20px;
   padding: 3rem;
   display: flex;
@@ -82,7 +86,7 @@ const CardText = styled.li`
   font-weight: 400;
   font-size: 16px;
   line-height: 28px;
-  color: ${({ theme }) => theme.whiteToBlack };
+  color: ${({ theme }) => theme.whiteToBlack};
   margin: 0;
   list-style: disc;
 `;
@@ -117,7 +121,11 @@ const SmallCardsWrapper = styled.div`
 `;
 
 const SmallCard = styled.div`
-  background: linear-gradient(156.33deg, rgba(41, 59, 67, 0) -11.07%, #293b43 135.21%);
+  background: linear-gradient(
+    156.33deg,
+    rgba(41, 59, 67, 0) -11.07%,
+    #293b43 135.21%
+  );
   border-radius: 20px;
   padding: 2rem;
   display: flex;
@@ -140,7 +148,6 @@ const SmallCardText = styled.p`
   margin: 0;
 `;
 
-
 const OrganizeDeployments = () => {
   return (
     <OrganizeDeploymentsWrapper>
@@ -153,10 +160,14 @@ const OrganizeDeployments = () => {
             </CardHeader>
             <CardBody>
               <CardText>
-                Utilize Meshery's user-friendly interface, to manage service mesh deployments by observing for and de-provisioning specific mesh configurations that are no longer required.
+                Utilize Meshery's user-friendly interface, to manage service
+                mesh deployments by observing for and de-provisioning specific
+                mesh configurations that are no longer required.
               </CardText>
               <CardText>
-                Capture and sync your configuration changes and service mesh events across various service mesh implementations making use of the unified data plane that MeshSync provides.
+                Capture and sync your configuration changes and service mesh
+                events across various service mesh implementations making use of
+                the unified data plane that MeshSync provides.
               </CardText>
             </CardBody>
           </MainCardContent>
@@ -168,25 +179,29 @@ const OrganizeDeployments = () => {
           <SmallCard>
             <SmallCardIcon src={IntegrationIcon} alt="Integration" />
             <SmallCardText>
-              Integrate tools already in use and get rid of potential frustrations that could hinder maximum functionality.
+              Integrate tools already in use and get rid of potential
+              frustrations that could hinder maximum functionality.
             </SmallCardText>
           </SmallCard>
           <SmallCard>
             <SmallCardIcon src={MoneyIcon} alt="Compare cost" />
             <SmallCardText>
-              Compare cost incurred in running scenarios and configurations to value of deployed resources.
+              Compare cost incurred in running scenarios and configurations to
+              value of deployed resources.
             </SmallCardText>
           </SmallCard>
           <SmallCard>
             <SmallCardIcon src={PatternsIcon} alt="Predefined patterns" />
             <SmallCardText>
-              Predefined patterns provide design guides for configuration of service meshes to ensure resilience.
+              Predefined patterns provide design guides for configuration of
+              service meshes to ensure resilience.
             </SmallCardText>
           </SmallCard>
           <SmallCard>
             <SmallCardIcon src={ChaosIcon} alt="Chaos engineering" />
             <SmallCardText>
-              Incorporation of chaos engineering tools facilitates conduction of controlled chaos experiments.
+              Incorporation of chaos engineering tools facilitates conduction of
+              controlled chaos experiments.
             </SmallCardText>
           </SmallCard>
         </SmallCardsWrapper>

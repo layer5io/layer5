@@ -11,25 +11,25 @@ import Bookmarks from "../../../../assets/images/layer5/bookmarks.webp";
 import Layer5Icon from "../../../../../static/brand/layer5/5 icon/svg/light/5-light-no-trim.svg";
 
 const Layer5Wrapper = styled.section`
-    @media (max-width:575px){
-        .brandHeader{
-            padding: 3rem 0;
-        }
+  @media (max-width: 575px) {
+    .brandHeader {
+      padding: 3rem 0;
     }
+  }
 `;
 
 const Layer5Brand = () => {
   return (
     <Layer5Wrapper>
       <div className="post-content">
-        <Row style={{
-          flexWrap: "wrap"
-        }} className="brand-section"
+        <Row
+          style={{
+            flexWrap: "wrap",
+          }}
+          className="brand-section"
         >
           <Col $xs={12} $sm={6}>
-            <h1 className="layerH3">
-              Layer5
-            </h1>
+            <h1 className="layerH3">Layer5</h1>
           </Col>
           <Col $xs={12} $sm={6} className="download-button">
             <a href="/brand/layer5-brand-kit.zip">
@@ -49,14 +49,13 @@ const Layer5Brand = () => {
             </p>
           </Col>
         </Row>
-        <Row style={{
-          flexWrap: "wrap"
-        }}
+        <Row
+          style={{
+            flexWrap: "wrap",
+          }}
         >
           <Col $xs={12}>
-            <h2 className="layerH3 in">
-              Logos
-            </h2>
+            <h2 className="layerH3 in">Logos</h2>
           </Col>
           <SRLWrapper>
             <Row $Vcenter className="Layer5Logos">
@@ -65,20 +64,23 @@ const Layer5Brand = () => {
                 Primary Logo: broadly, and majorly applicable
               </Col>
               <Col $xs={12} $sm={6}>
-                <img src={Layer5Icon} alt="Layer5 Logo" className="Layer5Icon" />
+                <img
+                  src={Layer5Icon}
+                  alt="Layer5 Logo"
+                  className="Layer5Icon"
+                />
                 Layer5 Icon: suited for square-shaped display
               </Col>
             </Row>
           </SRLWrapper>
         </Row>
-        <Row style={{
-          flexWrap: "wrap"
-        }}
+        <Row
+          style={{
+            flexWrap: "wrap",
+          }}
         >
           <Col $xs={12}>
-            <h2 className="layerH3 in">
-              Colors
-            </h2>
+            <h2 className="layerH3 in">Colors</h2>
           </Col>
           <Col $xs={12}>
             <p>
@@ -87,43 +89,97 @@ const Layer5Brand = () => {
               when using project colors as the background.
             </p>
           </Col>
-          <Row style={{
-            flexWrap: "wrap"
-          }} className="color-code-wrapper"
+          <Row
+            style={{
+              flexWrap: "wrap",
+            }}
+            className="color-code-wrapper"
           >
             <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
-            <ColorBox name="Caribbean Green" R="0" G="211" B="169" colorCode="#00D3A9" />
+            <ColorBox
+              name="Caribbean Green"
+              R="0"
+              G="211"
+              B="169"
+              colorCode="#00D3A9"
+            />
             <div className="saffron-color-box">
-              <ColorBox name="Saffron" R="235" G="192" B="23" dark colorCode="#EBC017" />
+              <ColorBox
+                name="Saffron"
+                R="235"
+                G="192"
+                B="23"
+                dark
+                colorCode="#EBC017"
+              />
             </div>
             <div className="blond-color-box">
-              <ColorBox name="Blond" R="255" G="243" B="197" dark colorCode="#FFF3C5" />
+              <ColorBox
+                name="Blond"
+                R="255"
+                G="243"
+                B="197"
+                dark
+                colorCode="#FFF3C5"
+              />
             </div>
-            <ColorBox name="Light Slate Gray" R="122" G="132" B="142" colorCode="#7A848E" />
-            <ColorBox name="Dark Jungle Green" R="30" G="33" B="23" colorCode="#1E2117" />
-            <ColorBox name="Teal Blue" R="71" G="126" B="150" colorCode="#477E96" />
-            <ColorBox name="Casper" R="177" G="182" B="184" colorCode="#B1B6B8" />
+            <ColorBox
+              name="Light Slate Gray"
+              R="122"
+              G="132"
+              B="142"
+              colorCode="#7A848E"
+            />
+            <ColorBox
+              name="Dark Jungle Green"
+              R="30"
+              G="33"
+              B="23"
+              colorCode="#1E2117"
+            />
+            <ColorBox
+              name="Teal Blue"
+              R="71"
+              G="126"
+              B="150"
+              colorCode="#477E96"
+            />
+            <ColorBox
+              name="Casper"
+              R="177"
+              G="182"
+              B="184"
+              colorCode="#B1B6B8"
+            />
             <div className="white-color-box">
-              <ColorBox name="White" R="255" G="255" B="255" dark colorCode="#FFFFFF" />
+              <ColorBox
+                name="White"
+                R="255"
+                G="255"
+                B="255"
+                dark
+                colorCode="#FFFFFF"
+              />
             </div>
           </Row>
         </Row>
-        <Row style={{
-          flexWrap: "wrap"
-        }}
+        <Row
+          style={{
+            flexWrap: "wrap",
+          }}
         >
           <Col $xs={12}>
-            <h2 className="layerH3 in">
-              Bookmarks
-            </h2>
+            <h2 className="layerH3 in">Bookmarks</h2>
           </Col>
           <Col $xs={12}>
-            <p className="layerH3">
-              Media available for print.
-            </p>
+            <p className="layerH3">Media available for print.</p>
             <Row className="bookmarks">
               <Link to="/brand/bookmarks.pdf">
-                <img className="bookmarks" src={Bookmarks} alt="Layer5 and Meshery Bookmarks" />
+                <img
+                  className="bookmarks"
+                  src={Bookmarks}
+                  alt="Layer5 and Meshery Bookmarks"
+                />
               </Link>
             </Row>
           </Col>

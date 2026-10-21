@@ -11,8 +11,6 @@ import Academy2PNG from "./images/academy-2.webp";
 import Academy3PNG from "./images/academy-3.webp";
 import Academy4PNG from "./images/academy-4.webp";
 
-
-
 const PictureSliderWrapper = styled.div`
   width: 100%;
   max-width: 900px;
@@ -53,7 +51,7 @@ const PictureSliderWrapper = styled.div`
   @media (max-width: 850px) {
     .slick-prev,
     .slick-next {
-      display: none ;
+      display: none;
     }
   }
 `;
@@ -61,7 +59,7 @@ const PictureSliderWrapper = styled.div`
 const PictureSlider = ({ images }) => {
   const defaultData = [ChallangePNG, TutorialPNG, DesignPNG];
   const academyData = [Academy1PNG, Academy2PNG, Academy3PNG, Academy4PNG];
-  const data = images === "academy" ? academyData : (images || defaultData);
+  const data = images === "academy" ? academyData : images || defaultData;
 
   const settings = {
     dots: false,

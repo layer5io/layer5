@@ -33,25 +33,23 @@ function generateDetails(data) {
     { id: 11, name: "Academy", icon: Academy },
   ];
 
-  return categories.map(category => {
+  return categories.map((category) => {
     const features = data
-      .filter(
-        item =>
-          item.category === category.name)
-      .map(item => {
+      .filter((item) => item.category === category.name)
+      .map((item) => {
         const featureName = item.function;
         const description = item.feature;
         const documentedLink = item.docs;
         const featureWithLink = documentedLink ? (
           <div className="feature-link-container">
-            <span className="feature-name">{featureName}{" "}</span>
+            <span className="feature-name">{featureName} </span>
             <a
               href={documentedLink}
               target="_blank"
               rel="noopener noreferrer"
               className="feature-link"
             >
-              <Docs className="docs"/>
+              <Docs className="docs" />
             </a>
           </div>
         ) : (
@@ -62,29 +60,33 @@ function generateDetails(data) {
           feature: featureWithLink,
           description,
           free:
-            item.comparison_tiers.free === "X" || item.comparison_tiers.free === "x" ? (
+            item.comparison_tiers.free === "X" ||
+            item.comparison_tiers.free === "x" ? (
               <GiCheckMark className="yes-icon" />
             ) : (
               <MdClose className="no-icon" />
             ),
           teamDesigner:
-            item.comparison_tiers.teamDesigner === "X" || item.comparison_tiers.teamDesigner === "x" ? (
-              <GiCheckMark className = "yes-icon" />
+            item.comparison_tiers.teamDesigner === "X" ||
+            item.comparison_tiers.teamDesigner === "x" ? (
+              <GiCheckMark className="yes-icon" />
             ) : (
               <MdClose className="no-icon" />
             ),
           teamOperator:
-            item.comparison_tiers.teamOperator === "X" || item.comparison_tiers.teamOperator === "x" ? (
+            item.comparison_tiers.teamOperator === "X" ||
+            item.comparison_tiers.teamOperator === "x" ? (
               <GiCheckMark className="yes-icon" />
             ) : (
               <MdClose className="no-icon" />
             ),
           enterprise:
-          item.comparison_tiers.enterprise === "X" || item.comparison_tiers.enterprise === "x" ? (
-            <GiCheckMark className="yes-icon" />
-          ) : (
-            <MdClose className="no-icon" />
-          ),
+            item.comparison_tiers.enterprise === "X" ||
+            item.comparison_tiers.enterprise === "x" ? (
+              <GiCheckMark className="yes-icon" />
+            ) : (
+              <MdClose className="no-icon" />
+            ),
         };
       });
 

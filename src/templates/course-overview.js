@@ -4,7 +4,6 @@ import CourseOverview from "../sections/Learn-Layer5/Course-Overview";
 
 import SEO from "../components/seo";
 
-
 import SimpleReactLightbox from "simple-react-lightbox";
 
 export const query = graphql`
@@ -16,11 +15,10 @@ export const query = graphql`
       }
     ) {
       nodes {
-
         frontmatter {
           courseTitle
           description
-					themeColor
+          themeColor
           toc
 
           cardImage {
@@ -73,24 +71,21 @@ export const query = graphql`
     }
 
     serviceMeshesList: allMdx(
-      filter: {fields: {course: {eq: $course}, pageType: {eq: "chapter"}}}
-    ){
-        nodes {
-          fields {
-            section
-          }
+      filter: {
+        fields: { course: { eq: $course }, pageType: { eq: "chapter" } }
+      }
+    ) {
+      nodes {
+        fields {
+          section
         }
       }
+    }
   }
 `;
 const CourseOverviewTemplate = ({ data, children }) => {
-
-
   return (
-
     <>
-
-
       <SimpleReactLightbox>
         <CourseOverview
           course={data.courseByTitle.nodes[0]}
@@ -101,17 +96,17 @@ const CourseOverviewTemplate = ({ data, children }) => {
           {children}
         </CourseOverview>
       </SimpleReactLightbox>
-
     </>
-
   );
 };
 
 export default CourseOverviewTemplate;
 
 export const Head = ({ data }) => {
-  return <SEO
-    title={`${data.courseByTitle.nodes[0].frontmatter.courseTitle}`}
-    description="Learn Cloud Native: Kubernetes, Istio, Prometheus, Jaeger, Linkerd, Envoy, Open Policy Agent, Microservices, Docker..."
-  />;
+  return (
+    <SEO
+      title={`${data.courseByTitle.nodes[0].frontmatter.courseTitle}`}
+      description="Learn Cloud Native: Kubernetes, Istio, Prometheus, Jaeger, Linkerd, Envoy, Open Policy Agent, Microservices, Docker..."
+    />
+  );
 };

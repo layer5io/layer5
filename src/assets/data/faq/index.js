@@ -1,7 +1,5 @@
-
 const data = {
   faqs: [
-
     //
     // MESHERY
     //
@@ -23,7 +21,8 @@ const data = {
       category: "Meshery",
       subcategory: "General",
       answer: [
-        "Yes, as a management plane, Meshery provides value in a number of ways post-adoption Kubernetes. For example, Meshery analyzes your deployments in evaluation of cloud native best practices and patterns, highlighting where you might be deviating.","Meshery performs deep discovery of your environment and currently running applications and infrastructure.",
+        "Yes, as a management plane, Meshery provides value in a number of ways post-adoption Kubernetes. For example, Meshery analyzes your deployments in evaluation of cloud native best practices and patterns, highlighting where you might be deviating.",
+        "Meshery performs deep discovery of your environment and currently running applications and infrastructure.",
       ],
       link: "/cloud-native-management/meshery",
       linktext: "Meshery",
@@ -45,15 +44,16 @@ const data = {
         "The Cloud Native Playground (aka Meshery Playground) is a managed instance of Meshery that offers a sandbox environment in which half of Kanvas functionality is enabled (Designer mode) and the other half of Kanvas functionality is disabled (Visualizer mode).",
         "The sandbox environment is not connected to an active Kuberentes cluster, and as such, specific actions within Kanvas Designer are also disabled. Meshery and Kanvas are feature-rich, sophisticated management applications for cloud native infrastructure. To access their full set of capabilities, simply deploy your own copy of Meshery into the environment of your choosing.",
       ],
-    },    
+    },
     {
-      question: "Are designs that I create in the Meshery Playground saved or will I look any work that I do in the playground?",
+      question:
+        "Are designs that I create in the Meshery Playground saved or will I look any work that I do in the playground?",
       category: "Meshery",
       subcategory: "Playground",
       answer: [
         "All of the designs that you have created in the Meshery Playground are saved to your user account and will be available to you each time that you return to the Playground. The designs will also be available in your other Meshery deployments.",
       ],
-    },    
+    },
     {
       question: "Can I deploy Meshery and its integrations on-premises?",
       category: "Meshery",
@@ -61,8 +61,8 @@ const data = {
       link: "https://docs.meshery.io/installation/quick-start",
       linktext: "Quick Start Guide",
       answer: [
-        "Yes, Meshery can be deployed on-premises with a single command to download, install, and run your own instance of Meshery in your environment."
-      ]
+        "Yes, Meshery can be deployed on-premises with a single command to download, install, and run your own instance of Meshery in your environment.",
+      ],
     },
     {
       question: "Can I deploy Meshery on-premises?",
@@ -72,7 +72,7 @@ const data = {
         // "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
       ],
     },
-    
+
     //
     // LAYER5
     //
@@ -86,20 +86,22 @@ const data = {
         "Layer5 Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at privacy@layer5.io",
       ],
       link: "https://layer5.io/company/legal/sub-processors",
-      linktext: "Sub-Processors policy"
+      linktext: "Sub-Processors policy",
     },
     {
-      question: "What data is collection about me, how is it used and how long is it retained?",
+      question:
+        "What data is collection about me, how is it used and how long is it retained?",
       category: "Layer5 Cloud",
       subcategory: "Privacy",
       answer: [
         "Layer5 Cloud is hosted on AWS and Equinix data centers in US-based regions. If you need to know more about the data storage and compliance, please reach out to us at hello@layer5.io",
       ],
       link: "https://layer5.io/company/legal/privacy",
-      linktext: "Privacy Policy"
+      linktext: "Privacy Policy",
     },
     {
-      question: "Is it possible to migrate from managed Layer5 Cloud to self-hosted Layer5 Cloud on-premises?",
+      question:
+        "Is it possible to migrate from managed Layer5 Cloud to self-hosted Layer5 Cloud on-premises?",
       category: "Layer5 Cloud",
       subcategory: "Deployment",
       answer: [
@@ -108,8 +110,8 @@ const data = {
         "With a small number of manual steps, air-gapped deployments to run Meshery without internet access is also supported.",
       ],
       link: "https://docs.layer5.io/cloud/self-hosted/",
-      "linktext": "Self-hosting documentation",
-    },   
+      linktext: "Self-hosting documentation",
+    },
 
     // LAYER% COMMUNITY
     {
@@ -122,31 +124,36 @@ const data = {
       ],
     },
     {
-      question: "As a member of one of Layer5's GitHub organizations, What is expected of me?",
+      question:
+        "As a member of one of Layer5's GitHub organizations, What is expected of me?",
       category: "Layer5",
       subcategory: "Community",
       answer: [
         "As a member of one of Layer5's GitHub organizations, your user account is entitled with triage level permissions across all repositories in the org. You are expected to engage where the topic strikes your interest, triaging (assigning, clarifying, labeling, qualifying) any issue you feel comfortable doing so. You are encouraged to review any open pull request and offer feedback to or ask questions to the author.",
-        "Layer5 has a number of GitHub organziations in which it's projects are advanced. See the repository overview below."
+        "Layer5 has a number of GitHub organziations in which it's projects are advanced. See the repository overview below.",
       ],
       link: "/community/handbook/repository-overview",
       linktext: "Layer5 Repository Overview",
     },
     {
-      question: "As a community member, what can I expect from Layer5? What does Layer5 expect of me?",
+      question:
+        "As a community member, what can I expect from Layer5? What does Layer5 expect of me?",
       category: "Layer5",
       subcategory: "Community",
-      answer: ["The Layer5 community expects you to get as much or more out of your time than you give to the projects. We expect earnest effort from its contributors. What “earnest effort” means is different for each community member as all have different circumstances. Suffice to say, the more you put into your efforts, the greater your reward will be. Most community contributors stay with the project for many months, if not indefinitely. Length of involvement is entirely up to the individual community member. You can expect to be challenged, to be assisted, to learn, to be recognized for your effort and to have your contributions appreciated.",
+      answer: [
+        "The Layer5 community expects you to get as much or more out of your time than you give to the projects. We expect earnest effort from its contributors. What “earnest effort” means is different for each community member as all have different circumstances. Suffice to say, the more you put into your efforts, the greater your reward will be. Most community contributors stay with the project for many months, if not indefinitely. Length of involvement is entirely up to the individual community member. You can expect to be challenged, to be assisted, to learn, to be recognized for your effort and to have your contributions appreciated.",
         "As a member of the Layer5 community, you are expected to be a good representative of Layer5's cultures and values of helping fellow members and paying it forward as we all learn together. You are expected to offer your ideas and skills to help advance our community and its projects. You are expected to share your experiences with others, to be curious, to be helpful, to ask questions, to challenge others and to be challenged yourself, to spread the word about what we collectively do here, to invite new members, to learn, to share, to make friends, to build a network, to write blog posts, to tweet, to become maintainers, to become MeshMates, to earn an internship, to get hired by Layer5 - - any and all of these things.",
       ],
       link: "https://layer5.io/community/meshmates",
       linktext: "Reach out to a MeshMate to find out more",
     },
     {
-      question: "I see works of other contributors being highlighted. Will my contributions be highlighted, too?",
+      question:
+        "I see works of other contributors being highlighted. Will my contributions be highlighted, too?",
       category: "Layer5",
       subcategory: "Community",
-      answer: ["We might not get to everyone, but we try to elevate the works of all of our contributors. All of our community members are proud of their work and so are we! We want their work and names to be recognized across our collective technology industry. Make sure that you follow and engage with the Twitter, YouTube, and LinkedIn accounts."
+      answer: [
+        "We might not get to everyone, but we try to elevate the works of all of our contributors. All of our community members are proud of their work and so are we! We want their work and names to be recognized across our collective technology industry. Make sure that you follow and engage with the Twitter, YouTube, and LinkedIn accounts.",
       ],
       link: "https://x.com/layer5",
       linktext: "Layer5 on X",
@@ -155,12 +162,13 @@ const data = {
       question: "I am not a coder. Can I contribute, too?",
       category: "Layer5",
       subcategory: "Community",
-      answer: ["Yes! Some community members join to code open source projects, others jump in to put those projects to use, some are here to help cultivate and steward our community, while others are here just to hangout and absorb. All members are most welcome. Make sure that you introduce yourself in the Layer5 Slack and let other community members get acquainted with you and vice-versa."
+      answer: [
+        "Yes! Some community members join to code open source projects, others jump in to put those projects to use, some are here to help cultivate and steward our community, while others are here just to hangout and absorb. All members are most welcome. Make sure that you introduce yourself in the Layer5 Slack and let other community members get acquainted with you and vice-versa.",
       ],
       link: "https://layer5.io/blog/open-source/ways-to-contribute-at-layer5",
       linktext: "Ways to Contribute at Layer5",
     },
-    
+
     //
     // INTEGRATIONS
     //
@@ -170,7 +178,8 @@ const data = {
       category: "Meshery",
       subcategory: "Integrations",
       answer: [
-        "Yes, Meshery is not just an application. Meshery is an extensible platform. Customize Meshery using any of its purpose-built extension points.", "It is a set of microservices where the central component is itself called Meshery. Integrators may extend Meshery by taking advantage of designated Extension Points. Extension points come in various forms and are available through Meshery’s architecture.",
+        "Yes, Meshery is not just an application. Meshery is an extensible platform. Customize Meshery using any of its purpose-built extension points.",
+        "It is a set of microservices where the central component is itself called Meshery. Integrators may extend Meshery by taking advantage of designated Extension Points. Extension points come in various forms and are available through Meshery’s architecture.",
       ],
       link: "https://docs.meshery.io/extensibility",
       linktext: "Learn about Meshery's extensibility",
@@ -186,21 +195,22 @@ const data = {
       ],
     },
     {
-      question: "How does Meshery infuse GitOps practices into cloud native managemement?",
+      question:
+        "How does Meshery infuse GitOps practices into cloud native managemement?",
       category: "Meshery",
       subcategory: "Integrations",
       link: "https://layer5.io/cloud-native-management/meshery",
       linktext: "Run Meshery",
       answer: [
         "Multiple Meshery GitHub Actions help you integrate your Kubernetes operations and configuration management into a versioned, pipelined, declarative workflow. These GitHub Actions apply conformance to cloud native standards and performance management gates into your pipelines.",
-        "Meshery connects your GitHub repositories and imports your Kubernetes manifests, your Helm Charts, and your Docker Compose applications for visualization and configuration management using Meshery's advanced feature set."
+        "Meshery connects your GitHub repositories and imports your Kubernetes manifests, your Helm Charts, and your Docker Compose applications for visualization and configuration management using Meshery's advanced feature set.",
       ],
     },
 
     //
     // KANVAS
     //
-    
+
     {
       question: "Is Kanvas cloud or a self-hosted solution?",
       category: "Kanvas",
@@ -210,8 +220,8 @@ const data = {
       answer: [
         "Yes, Kanvas is available both as a hosted solution and is also deployable on-premises as a self-hosted solution.",
         "Kanvas can be self-hosted to keep your designs and applications internal to your premises. You can also choose to have Kanvas hosted as SaaS solution offered by Layer5.",
-        "Whether self-hosted or hosted by Layer5, we are here to support you."
-      ]
+        "Whether self-hosted or hosted by Layer5, we are here to support you.",
+      ],
     },
     // {
     //   question: "What is Kanvas early access program?",
@@ -240,11 +250,11 @@ const data = {
       link: "https://kanvas.new",
       linktext: "Open kanvas.new",
       answer: [
-       "Kanvas is available in beta today. Visit https://kanvas.new to use it.",
-       "Kanvas is cloud native collaboration tool for managing your infrastructure and applications. Kanvas has two modes: Visualizer for operating your actively running Kubernetes clusters and Designer for configuring your Kubernetes clusters and creating your creating your application deployments.",
+        "Kanvas is available in beta today. Visit https://kanvas.new to use it.",
+        "Kanvas is cloud native collaboration tool for managing your infrastructure and applications. Kanvas has two modes: Visualizer for operating your actively running Kubernetes clusters and Designer for configuring your Kubernetes clusters and creating your creating your application deployments.",
       ],
     },
-    
+
     //
     // PRICING
     //
@@ -253,11 +263,9 @@ const data = {
       question: "Can I upgrade my current plan or my Enterprise add-ons?",
       category: "Pricing",
       subcategory: "Plans",
-      answer: [
-        "Yes, upgrade at anytime."
-      ],
+      answer: ["Yes, upgrade at anytime."],
       linktext: "See upgrade options for my current plan",
-      link: "https://cloud.layer5.io/account/plans"
+      link: "https://cloud.layer5.io/account/plans",
     },
     {
       question: "Can I add my current plan or my Enterprise add-ons?",
@@ -265,11 +273,12 @@ const data = {
       subcategory: "Plans",
       answer: [
         "Add new packages at any time.",
-        "You might choose to add another package when your monthly active learner count is consistently over your existing package size."
-        ]
+        "You might choose to add another package when your monthly active learner count is consistently over your existing package size.",
+      ],
     },
     {
-      question: "Do I need to enter my credit card details to subscribe to the free plan?",
+      question:
+        "Do I need to enter my credit card details to subscribe to the free plan?",
       category: "Pricing",
       subcategory: "Plans",
       answer: [
@@ -292,17 +301,18 @@ const data = {
       subcategory: "Plans",
       answer: [
         "Yes! You are more than welcome to try the Free version.",
-        "If you and your team want to collaborate or need more advanced capabilities, then try the Enterprise Edition. To upgrade to Enterprise, please get in touch with us."
+        "If you and your team want to collaborate or need more advanced capabilities, then try the Enterprise Edition. To upgrade to Enterprise, please get in touch with us.",
       ],
     },
     {
-      question: "What happens if I accidentally don't renew or forget to renew my subscription?",
+      question:
+        "What happens if I accidentally don't renew or forget to renew my subscription?",
       category: "Pricing",
       subcategory: "Plans",
       answer: [
         "Your account will automatically transition to the Free plan. Layer5 Cloud and Kanvas will continue to operate under the Free tier features and usage limits.",
         "While your account will no longer be entitled to the features offered a paid plan, rest assured that your historical data will continue to be available to you.",
-        "Renew your subscription to have higher-level plan features reenabled at any time."
+        "Renew your subscription to have higher-level plan features reenabled at any time.",
       ],
     },
     {
@@ -311,26 +321,27 @@ const data = {
       subcategory: "Plans",
       answer: [
         "Both annual and monthly plans are available. Some plans have add-ons available.",
-        "If your level of use warrants custom pricing, let's talk adjust as needed."
+        "If your level of use warrants custom pricing, let's talk adjust as needed.",
       ],
       link: "mailto:sales@layer5.io",
       linktext: "Contact Sales",
     },
     {
-      question: "Do you have special pricing for open source / non-profit projects?",
+      question:
+        "Do you have special pricing for open source / non-profit projects?",
       category: "Pricing",
       subcategory: "Plans",
       answer: [
         "Yes, we offer significant discounts for open source projects. Visit open source pricing page and sign up with details of your open source project to apply for discount.",
       ],
       linktext: "Open source pricing",
-      link: "/pricing/open-source-program"
+      link: "/pricing/open-source-program",
     },
 
-    // 
+    //
     // Pricing: Academy
     //
-    
+
     {
       question: "What is the pricing structure of this add-on?",
       category: "Pricing",
@@ -338,17 +349,17 @@ const data = {
       answer: [
         "Layer5 Academy is available as an add-on to your Enterprise subscription, priced based on number of active learners.",
         "Academy functionality is conveniently divided into two offerings: theoretical learning (learning paths, certifications, challenges) and practical learning (hands-on labs in Kanvas).",
-      ]
+      ],
     },
     {
-      question: "What is an \"active\" learner?",
+      question: 'What is an "active" learner?',
       category: "Pricing",
       subcategory: "Academy",
       answer: [
         "An active learner is any user who has logged into the platform in a given month whether they are currently enrolled in a course or not. Only active learners count towards your package total. Only active learners are billable.",
         "A learner is any user who at any point accepted an invitation to join your Academy. Learners may or may not have registered for (enrolled in) any of your Academy's offerings.",
         "An enrolled learner is a user who is currently registered for an offering in your Academy's catalog of curricula. Enrolled learners not are always active learners as students may enroll in a course but not log in during a given month.",
-      ]
+      ],
     },
     {
       question: "Can I add more learners than my selected package allows?",
@@ -358,15 +369,16 @@ const data = {
         "Yes, whether you are currently subscribed under a monthly plan or a yearly plan, you can exceed your pre-selected package size without foreplanning.",
         "At the end of the month, any additional learners beyond your package size are charged at the same per-learner rate.",
         "For example, if you are on the 500-learner package and end the month with 510 active learners, you will be charged for your base 500 learners plus the cost of 10 additional learners.",
-      ]
+      ],
     },
     {
-      question: "What happens if number of active learners remains under my pre-selected plan size, say 2,500?",
+      question:
+        "What happens if number of active learners remains under my pre-selected plan size, say 2,500?",
       category: "Pricing",
       subcategory: "Academy",
       answer: [
         "You are simply billed for the number of learners under your selected plan size at the end of the month; e.g. 2,500 multiplied by the per-learner price in your subscription plan.",
-      ]
+      ],
     },
     {
       question: "How are active learners calculated?",
@@ -375,15 +387,16 @@ const data = {
       answer: [
         "Active learners are determined as the higher of your active learners or your plan's quota. For example, on the 500 learner plan, even if you have only 450 active learners, you will still be billed according to your plan size of 500 learners.",
         "Active learners are calculated at the end of each monthly billing cycle. For example, if you are subscribed to the 1,000 learner plan, have 900 active learners on the 1st of the month, 450 active learners on the 11th of the month, and 1,025 active learners on the 17th of the month, you will be billed for 1,025 active learners (1,025 times the per learner price in your subscription plan) as that is your highest count of active learners during the month.",
-      ]
+      ],
     },
     {
-      question: "Are learners who have withdrawn or who have completed offerings counted against my package total?",
+      question:
+        "Are learners who have withdrawn or who have completed offerings counted against my package total?",
       category: "Pricing",
       subcategory: "Academy",
       answer: [
         "No. Only users who are actively registered and have not yet completed or withdrawn from a course are counted as active users.",
-      ]
+      ],
     },
 
     {
@@ -392,10 +405,10 @@ const data = {
       subcategory: "Academy",
       answer: [
         "Yes, upgrade at anytime.",
-        "Upgraded pricing takes immediate effect with the remainder of your billing cycle prorated at your new, lower per learner rate."
+        "Upgraded pricing takes immediate effect with the remainder of your billing cycle prorated at your new, lower per learner rate.",
       ],
       linktext: "See upgrade options for my current plan",
-      link: "https://cloud.layer5.io/account/plans"
+      link: "https://cloud.layer5.io/account/plans",
     },
 
     //
@@ -408,10 +421,10 @@ const data = {
       subcategory: "Payments",
       answer: [
         "You can pay for Layer5 Team and Enterprise with a credit card or debit card. If you pay by credit card, billing receipts are available to Administrators for previous months under Billing History. For copies of your invoice, email Layer5 billing.",
-        "Layer5 also offers invoicing (ACH or wire). If you pay by ACH or wire, invoices are emailed to the billing email addresses near the 10th business day of each month. If you need an additional copy, email Layer5 billing. Details on where to remit payment can be found on the invoice. To change your payment method, contact your Customer Success Manager."
+        "Layer5 also offers invoicing (ACH or wire). If you pay by ACH or wire, invoices are emailed to the billing email addresses near the 10th business day of each month. If you need an additional copy, email Layer5 billing. Details on where to remit payment can be found on the invoice. To change your payment method, contact your Customer Success Manager.",
       ],
       linktext: "Contact Layer5 Billing",
-      link: "mailto:support@layer5.io"
+      link: "mailto:support@layer5.io",
     },
     {
       question: "When does the billing cycle start and stop?",
@@ -442,7 +455,8 @@ const data = {
       ],
     },
     {
-      question: "How can I unlock my account after several failed transactions?",
+      question:
+        "How can I unlock my account after several failed transactions?",
       category: "Billing",
       subcategory: "Payments",
       answer: [
@@ -450,7 +464,8 @@ const data = {
       ],
     },
     {
-      question: "What about refunds for yearly subscriptions if I cancel early?",
+      question:
+        "What about refunds for yearly subscriptions if I cancel early?",
       category: "Billing",
       subcategory: "Account Management",
       answer: [
@@ -459,7 +474,7 @@ const data = {
       ],
     },
 
-     //
+    //
     // CAREERS / INTERNSHIPS
     //
 
@@ -507,7 +522,8 @@ const data = {
       ],
     },
     {
-      question: "Are internships offered based on previous experiences or projects?",
+      question:
+        "Are internships offered based on previous experiences or projects?",
       category: "Careers",
       subcategory: "Internships",
       answer: [
@@ -520,10 +536,10 @@ const data = {
       subcategory: "Full-time",
       answer: [
         "Nearly perpetually, yes.",
-        "In support of individuals making an impact in our open source projects, we hire individuals directly from our community."
+        "In support of individuals making an impact in our open source projects, we hire individuals directly from our community.",
       ],
       link: "/careers",
-      linktext: "See open roles"
+      linktext: "See open roles",
     },
     // {
     //   question: "Is Layer5 hiring?",
@@ -534,11 +550,10 @@ const data = {
     //     "In support of individuals making an impact in our open source projects, we hire individuals directly from our community."
     //   ],
     // },
-    
+
     //
     // OTHER
     //
-
   ],
 };
 export default data;
