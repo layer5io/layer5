@@ -27,6 +27,9 @@ const SearchBox = ({
   const inputRef = useRef(null);
 
   const handleSearchClick = (e) => {
+    if (e && typeof e.preventDefault === "function") {
+      e.preventDefault();
+    }
     if (inputRef.current) {
       inputRef.current.focus();
     }
@@ -50,7 +53,9 @@ const SearchBox = ({
       currentPage != 1
     )
       paginate(1);
-    searchData(e);
+    if (searchData) {
+      searchData(e);
+    }
   };
 
   return (
