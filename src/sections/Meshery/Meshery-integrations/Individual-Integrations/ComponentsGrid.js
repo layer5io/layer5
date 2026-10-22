@@ -1,132 +1,63 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { ComponentsWrapper } from "./Component.style";
-import { checkImageUrlValidity } from "../../../../utils/imageValidate";
 
 const ComponentsGrid = ({ frontmatter }) => {
-  const [validComponents, setValidComponents] = useState([]);
+  const colorFallback =
+    frontmatter?.integrationIcon?.publicURL ||
+    frontmatter?.integrationIcon_svg?.publicURL ||
+    "";
+  const darkFallback =
+    frontmatter?.darkModeIntegrationIcon?.publicURL || colorFallback;
 
-  useEffect(() => {
-    let isMounted = true;
+  const components = (frontmatter?.components || []).map((component) => {
+    const colorIcon = component.colorIcon?.publicURL || colorFallback;
+    const whiteIcon =
+      component.whiteIcon?.publicURL || colorIcon || darkFallback;
 
-    const loadComponents = async () => {
-      const colorFallback =
-        frontmatter?.integrationIcon?.publicURL ||
-        frontmatter?.integrationIcon_svg?.publicURL ||
-        "";
-      const darkFallback =
-        frontmatter?.darkModeIntegrationIcon?.publicURL || colorFallback;
-
-      let isColorFallbackValid = null;
-      const checkColorFallback = async () => {
-        if (!colorFallback) return false;
-        if (isColorFallbackValid === null) {
-          isColorFallbackValid = await checkImageUrlValidity(colorFallback);
-        }
-        return isColorFallbackValid;
-      };
-
-      let isDarkFallbackValid = null;
-      const checkDarkFallback = async () => {
-        if (!darkFallback) return false;
-        if (isDarkFallbackValid === null) {
-          isDarkFallbackValid = await checkImageUrlValidity(darkFallback);
-        }
-        return isDarkFallbackValid;
-      };
-
-      const components = frontmatter?.components || [];
-
-      const promises = components.map(async (component) => {
-        let whiteIconUrl = null;
-        if (
-          component.whiteIcon?.publicURL &&
-          (await checkImageUrlValidity(component.whiteIcon.publicURL))
-        ) {
-          whiteIconUrl = component.whiteIcon.publicURL;
-        }
-
-        let colorIconUrl = null;
-        if (
-          component.colorIcon?.publicURL &&
-          (await checkImageUrlValidity(component.colorIcon.publicURL))
-        ) {
-          colorIconUrl = component.colorIcon.publicURL;
-        }
-
-        // Prefer component-level icons before falling back to integration-level icons
-        if (!whiteIconUrl && colorIconUrl) {
-          whiteIconUrl = colorIconUrl;
-        }
-        if (!colorIconUrl && whiteIconUrl) {
-          colorIconUrl = whiteIconUrl;
-        }
-
-        // If the component has neither icon, fall back to integration icons
-        if (!whiteIconUrl) {
-          if (darkFallback && (await checkDarkFallback())) {
-            whiteIconUrl = darkFallback;
-          } else if (colorFallback && (await checkColorFallback())) {
-            whiteIconUrl = colorFallback;
-          }
-        }
-
-        if (!colorIconUrl) {
-          if (colorFallback && (await checkColorFallback())) {
-            colorIconUrl = colorFallback;
-          } else if (darkFallback && (await checkDarkFallback())) {
-            colorIconUrl = darkFallback;
-          }
-        }
-
-        if (whiteIconUrl || colorIconUrl) {
-          return {
-            name: component.name,
-            whiteIcon: whiteIconUrl,
-            colorIcon: colorIconUrl,
-          };
-        }
-
-        return null;
-      });
-
-      const results = await Promise.all(promises);
-      if (isMounted) {
-        setValidComponents(results.filter(Boolean));
-      }
+    return {
+      name: component.name,
+      colorIcon,
+      whiteIcon,
     };
+  });
 
-    loadComponents();
-
-    return () => {
-      isMounted = false;
-    };
-  }, [frontmatter]);
+  const handleImageError = (fallback) => (e) => {
+    if (fallback && e.currentTarget.src !== fallback) {
+      e.currentTarget.src = fallback;
+    }
+  };
 
   return (
     <ComponentsWrapper>
       <section className="heading">
         <h1>
-          {frontmatter?.title} Components ({validComponents.length})
+          {frontmatter?.title} Components ({components.length})
         </h1>
       </section>
 
       <section className="componentsSection">
-        {validComponents.map((item, index) => (
+        {components.map((item, index) => (
           <div key={`${item.name}-${index}`} className="maincontainer">
             <div className="componentimg">
               {item.whiteIcon === item.colorIcon ? (
-                <img src={item.colorIcon} alt={item.name || ""} />
+                <img
+                  src={item.colorIcon}
+                  alt={item.name || ""}
+                  onError={handleImageError(colorFallback)}
+                />
               ) : (
                 <>
                   <img
                     src={item.whiteIcon}
                     alt={item.name || ""}
                     className="component-icon component-icon--dark"
+                    onError={handleImageError(darkFallback)}
                   />
                   <img
                     src={item.colorIcon}
                     alt={item.name || ""}
                     className="component-icon component-icon--light"
+                    onError={handleImageError(colorFallback)}
                   />
                 </>
               )}
