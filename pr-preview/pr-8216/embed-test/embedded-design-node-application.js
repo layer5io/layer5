@@ -18,11 +18,11 @@ const data = {
                   spec: {
                     ports: [{ port: 80, protocol: "TCP", "target Port": 3000 }],
                     selector: { app: "node" },
-                    type: "LoadBalancer",
+                    type: "LoadBalancer"
                   },
                   name: "nodeapp",
                   namespace: "default",
-                  labels: { app: "node" },
+                  labels: { app: "node" }
                 },
                 traits: {
                   meshmap: {
@@ -33,7 +33,7 @@ const data = {
                           metadata: { port: 80, protocol: "TCP" },
                           source: "cebbec75-e2c2-41f1-9308-81dc3c22918f",
                           subType: "Network",
-                          target: "b13f7f8a-ed79-4a8b-af64-ec87d406c288",
+                          target: "b13f7f8a-ed79-4a8b-af64-ec87d406c288"
                         },
                         style: {
                           "control-point-distances": null,
@@ -49,9 +49,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px",
-                        },
-                      },
+                          width: "1.5px"
+                        }
+                      }
                     ],
                     fieldRefData: {},
                     id: "cebbec75-e2c2-41f1-9308-81dc3c22918f",
@@ -79,7 +79,7 @@ const data = {
                         width: 20,
                         x: "10px",
                         y: "12px",
-                        "z-index": 6,
+                        "z-index": 6
                       },
                       styles:
                         '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
@@ -88,19 +88,16 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg",
+                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg"
                     },
-                    position: {
-                      posX: 169.28753088767232,
-                      posY: -53.13054002411085,
-                    },
-                    whiteboardData: { style: {} },
-                  },
+                    position: { posX: 169.28753088767232, posY: -53.13054002411085 },
+                    whiteboardData: { style: {} }
+                  }
                 },
-                type: "Service",
-              },
-            },
-          },
+                type: "Service"
+              }
+            }
+          }
         },
         position: { x: 169.28753088767232, y: -53.13054002411085 },
         group: "nodes",
@@ -110,7 +107,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: "",
+        classes: ""
       },
       {
         data: {
@@ -134,9 +131,9 @@ const data = {
                           "dapr.io/app-id": "nodeapp",
                           "dapr.io/app-port": "3000",
                           "dapr.io/enable-api-logging": "true",
-                          "dapr.io/enabled": "true",
+                          "dapr.io/enabled": "true"
                         },
-                        labels: { app: "node" },
+                        labels: { app: "node" }
                       },
                       spec: {
                         containers: [
@@ -145,15 +142,15 @@ const data = {
                             image: "ghcr.io/dapr/samples/hello-k8s-node:latest",
                             "image Pull Policy": "Always",
                             name: "node",
-                            ports: [{ "container Port": 3000 }],
-                          },
-                        ],
-                      },
-                    },
+                            ports: [{ "container Port": 3000 }]
+                          }
+                        ]
+                      }
+                    }
                   },
                   name: "nodeapp",
                   namespace: "default",
-                  labels: { app: "node" },
+                  labels: { app: "node" }
                 },
                 traits: {
                   meshmap: {
@@ -164,7 +161,7 @@ const data = {
                           metadata: { port: 80, protocol: "TCP" },
                           source: "cebbec75-e2c2-41f1-9308-81dc3c22918f",
                           subType: "Network",
-                          target: "b13f7f8a-ed79-4a8b-af64-ec87d406c288",
+                          target: "b13f7f8a-ed79-4a8b-af64-ec87d406c288"
                         },
                         style: {
                           "control-point-distances": null,
@@ -180,9 +177,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px",
-                        },
-                      },
+                          width: "1.5px"
+                        }
+                      }
                     ],
                     fieldRefData: {},
                     id: "b13f7f8a-ed79-4a8b-af64-ec87d406c288",
@@ -206,7 +203,7 @@ const data = {
                       styleOverrides: {
                         "background-opacity": 0.5,
                         "border-width": 2,
-                        "z-index": 5,
+                        "z-index": 5
                       },
                       styles: '{"border-width":2,"background-opacity":0.5}',
                       subCategory: "",
@@ -215,19 +212,16 @@ const data = {
                       svgComplete:
                         "ui/public/static/img/meshmodels/kubernetes/complete/deployment-complete.svg",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg",
+                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg"
                     },
-                    position: {
-                      posX: 58.82071973688275,
-                      posY: -21.976321871958703,
-                    },
-                    whiteboardData: { style: {} },
-                  },
+                    position: { posX: 58.82071973688275, posY: -21.976321871958703 },
+                    whiteboardData: { style: {} }
+                  }
                 },
-                type: "Deployment",
-              },
-            },
-          },
+                type: "Deployment"
+              }
+            }
+          }
         },
         position: { x: 58.82071973688275, y: -21.976321871958703 },
         group: "nodes",
@@ -237,7 +231,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: "",
+        classes: ""
       },
       {
         data: {
@@ -259,15 +253,12 @@ const data = {
                       elementType: "FIELD_REF_NODE",
                       fieldPath: "spec.template.spec.containers[0]",
                       jsonSchemaPath:
-                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
+                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]"
                     },
                     id: "03773f42-3aad-4f2f-8cf0-1d1c08ef63e6",
                     label: "spec.template.spec.containers[0]",
                     "meshmodel-data": {
-                      category: {
-                        metadata: null,
-                        name: "Orchestration & Management",
-                      },
+                      category: { metadata: null, name: "Orchestration & Management" },
                       components: null,
                       description: "",
                       displayName: "Meshery Core",
@@ -280,7 +271,7 @@ const data = {
                           "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
+                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg"
                       },
                       model: { version: "0.7.2" },
                       name: "meshery-core",
@@ -289,7 +280,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "App Definition and Development",
-                      version: "v1.0.0",
+                      version: "v1.0.0"
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -310,25 +301,22 @@ const data = {
                         "ui/public/static/img/meshmodels/meshery-core/color/container-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg",
+                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg"
                     },
                     parent: "b13f7f8a-ed79-4a8b-af64-ec87d406c288",
-                    position: {
-                      posX: 58.82071973688276,
-                      posY: -30.9763218719587,
-                    },
-                    whiteboardData: {},
-                  },
+                    position: { posX: 58.82071973688276, posY: -30.9763218719587 },
+                    whiteboardData: {}
+                  }
                 },
-                type: "Container",
-              },
-            },
+                type: "Container"
+              }
+            }
           },
           elementType: "FIELD_REF_NODE",
           fieldPath: "spec.template.spec.containers[0]",
           jsonSchemaPath:
             "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
-          parent: "b13f7f8a-ed79-4a8b-af64-ec87d406c288",
+          parent: "b13f7f8a-ed79-4a8b-af64-ec87d406c288"
         },
         position: { x: 58.82071973688276, y: -30.9763218719587 },
         group: "nodes",
@@ -338,8 +326,8 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: "",
-      },
+        classes: ""
+      }
     ],
     edges: [
       {
@@ -348,7 +336,7 @@ const data = {
           metadata: { port: 80, protocol: "TCP" },
           source: "cebbec75-e2c2-41f1-9308-81dc3c22918f",
           subType: "Network",
-          target: "b13f7f8a-ed79-4a8b-af64-ec87d406c288",
+          target: "b13f7f8a-ed79-4a8b-af64-ec87d406c288"
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -358,9 +346,9 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: "",
-      },
-    ],
+        classes: ""
+      }
+    ]
   },
   elementStyles: {
     "cebbec75-e2c2-41f1-9308-81dc3c22918f": {
@@ -788,7 +776,7 @@ const data = {
       "padding-top": "12px",
       paddingTop: "12px",
       "padding-bottom": "12px",
-      paddingBottom: "12px",
+      paddingBottom: "12px"
     },
     "b13f7f8a-ed79-4a8b-af64-ec87d406c288": {
       events: "yes",
@@ -1215,7 +1203,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px",
+      paddingBottom: "6px"
     },
     "03773f42-3aad-4f2f-8cf0-1d1c08ef63e6": {
       events: "yes",
@@ -1642,7 +1630,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px",
+      paddingBottom: "6px"
     },
     "318bad1d-f575-46fb-aef2-8ada2299ed01": {
       events: "yes",
@@ -2067,9 +2055,9 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px",
-    },
-  },
+      paddingBottom: "0px"
+    }
+  }
 };
 
 const addStyles = () => {
@@ -2136,7 +2124,7 @@ const addStyles = () => {
 
 const CreateToolBar = () => {
   const cyContainer = document.getElementById(
-    "embedded-design-13665e6e-53cc-4cf4-9e8e-280237428672",
+    "embedded-design-13665e6e-53cc-4cf4-9e8e-280237428672"
   );
   const toolbar = document.createElement("div");
   toolbar.innerHTML = `
@@ -2189,7 +2177,7 @@ const CreateToolBar = () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const embedContainer = document.getElementById(
-    "embedded-design-13665e6e-53cc-4cf4-9e8e-280237428672",
+    "embedded-design-13665e6e-53cc-4cf4-9e8e-280237428672"
   );
   embedContainer.classList.add("embed-design-container");
   const cyContainer = document.createElement("div");
@@ -2200,7 +2188,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var cy = (window.cy = cytoscape({
     container: document.getElementById(
-      "embedded-design-13665e6e-53cc-4cf4-9e8e-280237428672-cy",
+      "embedded-design-13665e6e-53cc-4cf4-9e8e-280237428672-cy"
     ),
 
     autounselectify: true,
@@ -2209,13 +2197,13 @@ document.addEventListener("DOMContentLoaded", function () {
     minZoom: 0.5,
     maxZoom: 6.6,
     layout: {
-      name: "preset",
+      name: "preset"
     },
     elements: data.elements,
-    style: data.style,
+    style: data.style
   }));
 
-  Object.keys(data.elementStyles).forEach((id) => {
+  Object.keys(data.elementStyles).forEach(id => {
     cy.getElementById(id).style(data.elementStyles[id]);
   });
 

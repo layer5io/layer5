@@ -51,8 +51,8 @@ const data = {
                     },
                     "meshmodel-metadata": {
                       capabilities:
-                        '{"designer":{"show-node-group-badge":false, "edit":{"config":false, "text":false,"lock":true,"shape":{"convert-shape":false},"style":true},"label":{"edit":true,"show":true,"sync-with-config-property":"label"}}}',
-                      defaultData: '{"label":""}',
+                        "{\"designer\":{\"show-node-group-badge\":false, \"edit\":{\"config\":false, \"text\":false,\"lock\":true,\"shape\":{\"convert-shape\":false},\"style\":true},\"label\":{\"edit\":true,\"show\":true,\"sync-with-config-property\":\"label\"}}}",
+                      defaultData: "{\"label\":\"\"}",
                       genealogy: "parent",
                       hasInvalidSchema: true,
                       isAnnotation: true,
@@ -72,7 +72,7 @@ const data = {
                         "z-index": 16,
                       },
                       styles:
-                        '{"height":"30px","width":"30px", "background-image":"none","border-width":1,"border-style":"dashed","background-opacity":0.1}',
+                        "{\"height\":\"30px\",\"width\":\"30px\", \"background-image\":\"none\",\"border-width\":1,\"border-style\":\"dashed\",\"background-opacity\":0.1}",
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/meshery-core/color/anchornode-color.svg",
@@ -173,7 +173,7 @@ const data = {
                         "z-index": 18,
                       },
                       styles:
-                        '{"height":"25px","width":"25px","x":"7", "y":"7"}',
+                        "{\"height\":\"25px\",\"width\":\"25px\",\"x\":\"7\", \"y\":\"7\"}",
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrolebinding-color.svg",
@@ -278,7 +278,7 @@ const data = {
                         "z-index": 12,
                       },
                       styles:
-                        '{"height":"25px","width":"25px","x":"7", "y":"7"}',
+                        "{\"height\":\"25px\",\"width\":\"25px\",\"x\":\"7\", \"y\":\"7\"}",
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrolebinding-color.svg",
@@ -375,7 +375,7 @@ const data = {
                         "z-index": 11,
                       },
                       styles:
-                        '{"height":"22px", "width":"22px", "x":"8.5", "y":"7.5"}',
+                        "{\"height\":\"22px\", \"width\":\"22px\", \"x\":\"8.5\", \"y\":\"7.5\"}",
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/clusterrole-color.svg",
@@ -450,7 +450,7 @@ const data = {
                     },
                     "meshmodel-metadata": {
                       capabilities:
-                        ' {\n  "designer": {\n    "edit": {\n      "shape": {\n        "convert-shape": false\n      }\n    }\n  }\n}',
+                        " {\n  \"designer\": {\n    \"edit\": {\n      \"shape\": {\n        \"convert-shape\": false\n      }\n    }\n  }\n}",
                       defaultData: "",
                       genealogy: "parent",
                       isAnnotation: false,
@@ -474,7 +474,7 @@ const data = {
                         "z-index": 14,
                       },
                       styles:
-                        '{"background-image":"none","border-width":2,"border-style":"dashed","background-opacity":0.5}',
+                        "{\"background-image\":\"none\",\"border-width\":2,\"border-style\":\"dashed\",\"background-opacity\":0.5}",
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/kubernetes/color/namespace-color.svg",
@@ -556,7 +556,7 @@ const data = {
                       version: "v1.0.0",
                     },
                     "meshmodel-metadata": {
-                      capabilities: '{"designer":{"edit":{"config":true}}}',
+                      capabilities: "{\"designer\":{\"edit\":{\"config\":true}}}",
                       defaultData: "",
                       genealogy: "",
                       isAnnotation: true,
@@ -573,7 +573,7 @@ const data = {
                         "z-index": 17,
                       },
                       styles:
-                        '{"height":"22px","width":"22px","x":"1.5px","y":"7.5px"}',
+                        "{\"height\":\"22px\",\"width\":\"22px\",\"x\":\"1.5px\",\"y\":\"7.5px\"}",
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/meshery-core/color/comment-color.svg",
@@ -4263,8 +4263,8 @@ const addStyles = () => {
  font-size: 1.25rem;
 }
 `,
-    head = document.head || document.getElementsByTagName("head")[0],
-    style = document.createElement("style");
+      head = document.head || document.getElementsByTagName("head")[0],
+      style = document.createElement("style");
 
   head.appendChild(style);
 
@@ -4279,7 +4279,7 @@ const addStyles = () => {
 
 const CreateToolBar = () => {
   const cyContainer = document.getElementById(
-    "embedded-design-6f2255ba-54bf-4cb8-9033-262b8464d5d2",
+    "embedded-design-6f2255ba-54bf-4cb8-9033-262b8464d5d2"
   );
   const toolbar = document.createElement("div");
   toolbar.innerHTML = `
@@ -4332,7 +4332,7 @@ const CreateToolBar = () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const embedContainer = document.getElementById(
-    "embedded-design-6f2255ba-54bf-4cb8-9033-262b8464d5d2",
+    "embedded-design-6f2255ba-54bf-4cb8-9033-262b8464d5d2"
   );
   embedContainer.classList.add("embed-design-container");
   const cyContainer = document.createElement("div");
@@ -4343,7 +4343,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var cy = (window.cy = cytoscape({
     container: document.getElementById(
-      "embedded-design-6f2255ba-54bf-4cb8-9033-262b8464d5d2-cy",
+      "embedded-design-6f2255ba-54bf-4cb8-9033-262b8464d5d2-cy"
     ),
 
     autounselectify: true,
