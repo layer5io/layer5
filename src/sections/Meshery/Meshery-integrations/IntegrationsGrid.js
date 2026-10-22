@@ -32,6 +32,7 @@ const DARK_MODE_LOGO_SLUGS = new Set([
   "aws-node-termination-handler",
   "aws-target-group-binding",
   "aws-vpc-cni",
+  "rustrial-aws-eks-iam-auth-controller",
 ]);
 const DARK_AWS_LOGO_SLUGS = new Set([
   "aws-opensearchservice-controller",
