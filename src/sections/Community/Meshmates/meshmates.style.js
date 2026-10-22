@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 const MeshMatesWrapper = styled.div`
   .hero {
+    @media (max-width: 991px) {
+      flex-wrap: wrap;
+    }
     p {
       margin: 1.875rem auto 1rem auto;
     }
@@ -21,6 +24,8 @@ const MeshMatesWrapper = styled.div`
       }
       svg {
         height: 25rem;
+        max-width: 100%;
+        min-width: 0;
         .meshmate-stack-colorMode_svg__colorMode1 {
           fill: ${(props) => props.theme.whiteToGreen3C494F};
         }
@@ -58,6 +63,11 @@ const MeshMatesWrapper = styled.div`
     }
   }
   .meshmate-meet {
+    .meshmate-meet-row {
+      @media (max-width: 991px) {
+        flex-wrap: wrap;
+      }
+    }
     margin: 4.25rem auto 2.75rem auto;
     h2 {
       margin-bottom: 1.875rem;

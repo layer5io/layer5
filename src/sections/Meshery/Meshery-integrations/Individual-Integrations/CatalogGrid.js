@@ -36,7 +36,7 @@ const CatalogGrid = ({ frontmatter }) => {
     fetchData();
   }, [designSize]);
 
-  return designs && designs.total_count > 0 ? (
+  return designs && designs.totalCount > 0 ? (
     <ComponentsWrapper
       style={{
         display: "flex",
@@ -46,7 +46,7 @@ const CatalogGrid = ({ frontmatter }) => {
     >
       <section className="heading">
         <h1>
-          {frontmatter.title} Designs ({designs.total_count})
+          {frontmatter.title} Designs ({designs.totalCount})
         </h1>
       </section>
       <section className="componentsSection">
@@ -68,13 +68,13 @@ const CatalogGrid = ({ frontmatter }) => {
                 cardWidth="16rem"
                 pattern={item}
                 type="Catalog"
-                patternType={item?.catalog_data?.type}
+                patternType={item?.catalogData?.type}
               />
             );
           })}
         </SistentThemeProviderWithoutBaseLine>
       </section>
-      {designSize <= designs?.total_count && (
+      {designSize < designs?.totalCount && (
         <Button
           $primary
           className="loadmore"

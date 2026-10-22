@@ -84,7 +84,7 @@ const FooterWrapper = styled.section`
     margin: 0 2.5rem 2rem 0;
     justify-content: flex-end;
 
-    span {
+    label {
       display: block;
       color: #ffffff;
     }

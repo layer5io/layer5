@@ -7,13 +7,10 @@ export const HoneycombGrid = styled.div`
 
     h1 {
       line-height: 3.75rem;
-      color: ${(props) =>
-        props.isDark ? props.theme.text : props.theme.headingColor};
     }
 
     h2 {
       font-weight: normal;
-      color: ${(props) => props.theme.text};
     }
   }
 
@@ -115,7 +112,7 @@ export const HoneycombGrid = styled.div`
         overflow: hidden;
         .title {
           line-height: 1.375rem;
-          color: ${(props) => props.theme.tertiaryColor};
+          color: ${(props) => props.theme.whiteToBlack};
           // margin-bottom: -2.7rem;
           font-size: 1.2rem;
           opacity: 0;

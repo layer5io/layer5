@@ -194,7 +194,7 @@ const Meshmates = () => {
           </p>
         </div>
         <div className="meshmate-meet">
-          <Row $Vcenter>
+          <Row className="meshmate-meet-row" $Vcenter>
             <Col $sm={12} $lg={6}>
               <h2> Meeting Your MeshMate </h2>
               <p>
