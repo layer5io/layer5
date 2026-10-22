@@ -9,7 +9,6 @@ const LITE_BUILD_PROFILES = Object.freeze({
   blog: ["members", "integrations", "news", "events", "resources"],
   content: ["members", "integrations"],
   core: ["members", "integrations", "blog", "news", "events", "resources"],
-  integrations: ["members", "blog", "news", "events", "resources"],
 });
 
 const BLOG_COLLECTION = "blog";
