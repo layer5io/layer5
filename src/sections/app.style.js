@@ -167,10 +167,26 @@ p {
     }
 }
   .slick-arrow {
-    &:hover,
-    &:focus {
+    &:hover {
       box-shadow: none;
+    }
+    &:focus:not(:focus-visible) {
       outline: none;
+      box-shadow: none;
+    }
+    &:focus-visible {
+      outline: none;
+      box-shadow: none;
+    }
+    &:focus-visible:before {
+      color: ${(props) => props.theme.secondaryColor};
+      filter: drop-shadow(0 0 4px ${(props) => props.theme.secondaryColor});
+      transition: all 0.2s ease-in-out;
+    }
+    &:focus-visible svg {
+      fill: ${(props) => props.theme.secondaryColor};
+      filter: drop-shadow(0 0 4px ${(props) => props.theme.secondaryColor});
+      transition: all 0.2s ease-in-out;
     }
   }
 a {
