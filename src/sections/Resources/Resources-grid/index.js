@@ -13,10 +13,11 @@ const getTime = (node) => {
 };
 
 const ResourceGrid = (props) => {
-  const hasQuery = Boolean(props.searchQuery);
+  const query = props.searchQuery || "";
+  const hasQuery = Boolean(query);
   const [choice, setChoice] = useState(null);
   const effectiveSort =
-    choice && choice.hasQuery === hasQuery
+    choice && choice.query === query
       ? choice.value
       : hasQuery
         ? "relevance"
@@ -64,7 +65,7 @@ const ResourceGrid = (props) => {
               aria-label="Sort by"
               value={effectiveSort}
               onChange={(e) => {
-                setChoice({ value: e.target.value, hasQuery });
+                setChoice({ value: e.target.value, query });
                 props.setCurrentPage(1);
               }}
             >
@@ -124,4 +125,5 @@ const ResourceGrid = (props) => {
     </ResourcePageWrapper>
   );
 };
+
 export default ResourceGrid;
