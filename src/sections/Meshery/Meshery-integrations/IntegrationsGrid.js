@@ -22,6 +22,17 @@ const DARK_MODE_LOGO_SLUGS = new Set([
   "kuma",
   "skooner",
   "victoria-metrics-k8s-stack",
+  "containerd",
+  "tuf",
+  "ngrok-operator",
+  "kube-rs",
+  "kubeform-provider-aws",
+  "wordpress-operator",
+  "scheduler-plugins",
+  "aws-node-termination-handler",
+  "aws-target-group-binding",
+  "aws-vpc-cni",
+  "intel-device-plugins-operator",
 ]);
 const DARK_AWS_LOGO_SLUGS = new Set([
   "aws-opensearchservice-controller",
