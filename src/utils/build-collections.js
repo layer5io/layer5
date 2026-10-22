@@ -12,12 +12,7 @@ const LITE_BUILD_PROFILES = Object.freeze({
 });
 
 const BLOG_COLLECTION = "blog";
-const BLOG_COLLECTION_DIR = path.join(
-  __dirname,
-  "..",
-  "collections",
-  BLOG_COLLECTION,
-);
+const BLOG_COLLECTION_DIR = path.join(__dirname, "..", "collections", BLOG_COLLECTION);
 const BLOG_YEAR_PATTERN = /^\d{4}$/;
 
 const isFullSiteBuild = (buildFullSite = process.env.BUILD_FULL_SITE) =>
@@ -31,8 +26,7 @@ const parseCsv = (value = "") =>
 
 const getExcludedCollections = ({
   isFullSiteBuild: shouldBuildFullSite = isFullSiteBuild(),
-  liteBuildProfile = process.env.LITE_BUILD_PROFILE ||
-    DEFAULT_LITE_BUILD_PROFILE,
+  liteBuildProfile = process.env.LITE_BUILD_PROFILE || DEFAULT_LITE_BUILD_PROFILE,
   buildCollectionsExclude = process.env.BUILD_COLLECTIONS_EXCLUDE,
 } = {}) => {
   if (shouldBuildFullSite) {
@@ -52,9 +46,7 @@ const getExcludedCollections = ({
 const listBlogYears = (blogDir = BLOG_COLLECTION_DIR) =>
   fs
     .readdirSync(blogDir, { withFileTypes: true })
-    .filter(
-      (entry) => entry.isDirectory() && BLOG_YEAR_PATTERN.test(entry.name),
-    )
+    .filter((entry) => entry.isDirectory() && BLOG_YEAR_PATTERN.test(entry.name))
     .map((entry) => entry.name)
     .sort();
 
@@ -82,11 +74,7 @@ const getBlogYearFilter = ({
   availableYears = listBlogYears(),
 } = {}) => {
   const years = parseBlogYears(blogYear);
-  const inactive = (reason) => ({
-    years: [],
-    ignoreGlobs: [],
-    inactiveReason: reason,
-  });
+  const inactive = (reason) => ({ years: [], ignoreGlobs: [], inactiveReason: reason });
 
   if (years.length === 0) {
     return inactive(null);

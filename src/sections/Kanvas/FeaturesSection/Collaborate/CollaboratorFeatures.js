@@ -12,57 +12,35 @@ import LinkArrowDark from "../../images/link-arrow-dark.svg";
 export default function CollaboratorFeatures({ features }) {
   const [activeExampleIndex, setActiveExampleIndex] = useState(0);
   const [viewportStatus, setViewportStatus] = useState(
-    new Array(features.length).fill(false),
+    new Array(features.length).fill(false)
   );
-  useGsapTimeline({
-    trigger: ".collaborator-trigger-container",
-    featureContainerName: ".collaborator-features",
-    yPercent: -300,
-  });
+  useGsapTimeline({ trigger: ".collaborator-trigger-container", featureContainerName: ".collaborator-features", yPercent: -300 });
   const [cursorOverArrow, setcursorOverArrow] = useState(false);
   const handleEnter = () => {
-    if (!cursorOverArrow) setcursorOverArrow(true);
+    if (!cursorOverArrow)
+      setcursorOverArrow(true);
   };
   const handleLeave = () => {
-    if (cursorOverArrow) setcursorOverArrow(false);
+    if (cursorOverArrow)
+      setcursorOverArrow(false);
   };
   return (
     <CollaboratorFeaturesWrapper>
       <Container className="collaborate-container collaborator-trigger-container">
         <div className="root">
           <Link to="/cloud-native-management/kanvas/collaborate">
-            <div
-              id="featureHeading"
-              className="fixed"
-              onMouseEnter={handleEnter}
-              onMouseLeave={handleLeave}
-            >
+            <div id="featureHeading" className="fixed" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
               <h1>Collaborate</h1>
               <div className="learn-more">
-                <h5
-                  style={
-                    cursorOverArrow
-                      ? { color: "#ffffff" }
-                      : { color: "#ececec" }
-                  }
-                >
-                  Learn more
-                </h5>
-                <img
-                  src={cursorOverArrow ? LinkArrow : LinkArrowDark}
-                  alt="Learn more"
-                  style={{ maxWidth: "15%" }}
-                  className={cursorOverArrow ? "arrow-enter" : "arrow"}
-                />
+                <h5 style={cursorOverArrow ? { color: "#ffffff" } : { color: "#ececec" }}>Learn more</h5>
+                <img src={cursorOverArrow ? LinkArrow : LinkArrowDark} alt="Learn more" style={{ maxWidth: "15%" }} className={cursorOverArrow ? "arrow-enter" : "arrow"} />
               </div>
             </div>
           </Link>
           <div className="g-grid-container contentContainer" id="add-border">
             <Link to="/cloud-native-management/kanvas/collaborate">
               <div className="diagram scroll hideInMobile">
-                <CollaboratorFeaturesDiagram
-                  activeExampleIndex={activeExampleIndex}
-                />
+                <CollaboratorFeaturesDiagram activeExampleIndex={activeExampleIndex} />
               </div>
             </Link>
             <ul className="features collaborator-features">
@@ -78,10 +56,7 @@ export default function CollaboratorFeatures({ features }) {
                       // our new activeExampleIndex. If it's been updated
                       // notify the subscriber.
                       const newExampleIndex = newStatusArray.lastIndexOf(true);
-                      if (
-                        activeExampleIndex !== newExampleIndex &&
-                        newExampleIndex !== -1
-                      ) {
+                      if (activeExampleIndex !== newExampleIndex && newExampleIndex !== -1) {
                         setActiveExampleIndex(newExampleIndex);
                       }
                     }}

@@ -35,15 +35,15 @@ const Image = ({
    */
   const computedWrapperStyle = fitContainer
     ? {
-        width: "100%",
-        height: "100%",
-        ...(resolvedAspectRatio ? { aspectRatio: resolvedAspectRatio } : {}),
-        ...style,
-      }
+      width: "100%",
+      height: "100%",
+      ...(resolvedAspectRatio ? { aspectRatio: resolvedAspectRatio } : {}),
+      ...style,
+    }
     : {
-        ...(resolvedAspectRatio ? { aspectRatio: resolvedAspectRatio } : {}),
-        ...style,
-      };
+      ...(resolvedAspectRatio ? { aspectRatio: resolvedAspectRatio } : {}),
+      ...style,
+    };
 
   const computedImgStyle = {
     objectFit: fitContainer ? "contain" : imgStyle?.objectFit || "cover",

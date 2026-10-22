@@ -8,6 +8,7 @@ const imgStyle = {
   marginRight: "1rem",
 };
 
+
 const BadgeItem = ({ title, description, image, href, to }) => {
   const content = (
     <>
@@ -45,7 +46,10 @@ const BadgeItem = ({ title, description, image, href, to }) => {
 BadgeItem.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.node,
-  image: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  image: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node,
+  ]),
   href: PropTypes.string,
   to: PropTypes.string,
 };

@@ -3,6 +3,7 @@ import { meshes } from "../../collections/landscape/meshes";
 import Table from "../../components/Landscape-Table";
 
 function Functional() {
+
   const columns = React.useMemo(
     () => [
       {
@@ -52,9 +53,9 @@ function Functional() {
       {
         Header: "SPIRE",
         accessor: "spire",
-      },
+      }
     ],
-    [],
+    []
   );
 
   const data = React.useMemo(() => meshes);
@@ -65,3 +66,4 @@ function Functional() {
 }
 
 export default Functional;
+

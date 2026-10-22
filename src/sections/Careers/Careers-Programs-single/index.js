@@ -5,18 +5,10 @@ import { Link } from "gatsby";
 import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
 import { Row, Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
-import ProgramsPageWrapper, {
-  dropdownTheme,
-  selectStyles,
-} from "./ProgramsSingle.style.js";
+import ProgramsPageWrapper, { dropdownTheme, selectStyles } from "./ProgramsSingle.style.js";
 
-const ProgramsSingle = ({
-  data,
-  children,
-  options,
-  setActiveOption,
-  activeOption,
-}) => {
+const ProgramsSingle = ({ data, children, options, setActiveOption, activeOption }) => {
+
   const { frontmatter } = data;
 
   return (
@@ -29,28 +21,31 @@ const ProgramsSingle = ({
               <h4>Go Back</h4>
             </Link>
           </div>
-          {Boolean(options) && (
+          {Boolean(options) &&
             <div className="selectWrapper">
-              {options.length > 1 && (
-                <Select
-                  name="Select Year of Program"
-                  defaultValue={options[activeOption]}
-                  isSearchable={false}
-                  styles={selectStyles}
-                  options={options}
-                  value={options[activeOption]}
-                  onChange={(e) => setActiveOption(e.value)}
-                  theme={dropdownTheme}
-                />
-              )}
+              {options.length > 1 && <Select
+                name="Select Year of Program"
+                defaultValue={options[activeOption]}
+                isSearchable={false}
+                styles={selectStyles}
+                options={options}
+                value={options[activeOption]}
+                onChange={(e) => setActiveOption(e.value)}
+                theme={dropdownTheme}
+              />}
             </div>
-          )}
+          }
         </Row>
       </Container>
-      <PageHeader title={frontmatter.title} />
+      <PageHeader
+        title={frontmatter.title}
+      />
       <div className="single-post-wrapper" id="programs">
         <Container>
-          <div className="single-post-block">{children}</div>
+
+          <div className="single-post-block">
+            {children}
+          </div>
         </Container>
       </div>
     </ProgramsPageWrapper>

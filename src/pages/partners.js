@@ -2,10 +2,12 @@ import React from "react";
 import SEO from "../components/seo";
 import Partner from "../sections/Partners";
 
+
 const Partners = () => {
   return (
     <>
-      <Partner />
+      <Partner  />
+
     </>
   );
 };

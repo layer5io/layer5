@@ -1,11 +1,7 @@
 ### What is the use of this CTA:
-
 The **CornerPopup** component is a popup which appears in left side of screen it consist of an image and a button which links to play.meshery.io
-
 ### How to use the CTA:
-
 To use this CTA simply use
-
 ```
 <CornerPopup />
 ```

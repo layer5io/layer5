@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 
-const useWindowHasScrolled = (initialState) => {
+const useWindowHasScrolled = initialState => {
   const [isMounted, setMounted] = useState(initialState);
 
-  const handleHasScrolled = () =>
-    window.scrollY > 0 ? setMounted(true) : setMounted(false);
+  const handleHasScrolled = () => window.scrollY > 0 ? setMounted(true) : setMounted(false);
 
   useEffect(() => {
     window.addEventListener("scroll", handleHasScrolled);

@@ -29,11 +29,9 @@ import mesheryWorship from "../../../../assets/images/five/meshery-worship.webp"
 const StickFigures = () => {
   return (
     <div className="post-content">
-      <Row
-        style={{
-          flexWrap: "wrap",
-        }}
-        className="brand-section"
+      <Row style={{
+        flexWrap: "wrap"
+      }} className="brand-section"
       >
         <Col $xs={12} $sm={6}>
           <h1 className="layerH3">
@@ -49,18 +47,17 @@ const StickFigures = () => {
         </Col>
         <Col>
           <p>
-            Introducing Five, a playful and dynamic visual language that
-            captures the essence of Layer5. These charming and minimalist
-            illustrations serve as the perfect embodiment of our brand's values
-            and offerings.
+            Introducing Five, a playful and dynamic visual language
+            that captures the essence of Layer5. These charming and
+            minimalist illustrations serve as the perfect embodiment of
+            our brand's values and offerings.
           </p>
         </Col>
       </Row>
 
-      <Row
-        style={{
-          flexWrap: "wrap",
-        }}
+      <Row style={{
+        flexWrap: "wrap"
+      }}
       >
         <Col>
           <h2 className="layerH3 in">Images</h2>
@@ -77,11 +74,7 @@ const StickFigures = () => {
         </Row>
         <Row $Vcenter className="fiveDiv">
           <Col $xs={12} $sm={6}>
-            <img
-              src={teamOfFives}
-              alt="Layer5 Mascot, Five"
-              className="five-image"
-            />
+            <img src={teamOfFives} alt="Layer5 Mascot, Five" className="five-image" />
             {/* <img src={f1} alt="Layer5 Mascot, Five" />
             <img src={f2} alt="Layer5 Mascot, Five" />
             <img src={f3} alt="Layer5 Mascot, Five" />
@@ -89,11 +82,7 @@ const StickFigures = () => {
             <img src={f5} alt="Layer5 Mascot, Five" /> */}
           </Col>
           <Col $xs={12} $sm={6}>
-            <img
-              src={resourcesSign}
-              alt="Layer5 Mascot, Five"
-              className="five-image"
-            />
+            <img src={resourcesSign} alt="Layer5 Mascot, Five" className="five-image" />
             {/* <img src={f13} alt="Layer5 Mascot, Five" />
             <img src={f14} alt="Layer5 Mascot, Five" />
             <img src={f15} alt="Layer5 Mascot, Five" />

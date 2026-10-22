@@ -18,17 +18,15 @@ import PlatformWrapper from "./platform-style";
 import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox";
 
 const Platform = () => {
-  const data = useStaticQuery(graphql`
-    query relatedBlogPosts {
+  const data = useStaticQuery(
+    graphql`query relatedBlogPosts {
       relatedPosts: allMdx(
         sort: { fields: { dateForSort: DESC } }
         filter: {
           fields: { collection: { eq: "blog" } }
           frontmatter: {
             published: { eq: true }
-            category: {
-              in: ["Docker", "Kubernetes", "Cloud Native", "Platform"]
-            }
+            category: { in: ["Docker", "Kubernetes", "Cloud Native", "Platform"] }
           }
         }
         limit: 6
@@ -71,23 +69,12 @@ const Platform = () => {
         <div className="platform-engineering-description">
           <h1>What is Platform Engineering </h1>
           <p>
-            Platform engineering can be defined as the process of designing,
-            building, and maintaining a stable and scalable foundation upon
-            which software applications and services can be developed, deployed,
-            and operated. It involves creating a set of reusable and
-            customizable components, tools, and frameworks that enable
-            developers to build and deploy applications with greater efficiency
-            and speed.
+            Platform engineering can be defined as the process of designing, building, and maintaining a stable and scalable foundation upon which software applications and services can be developed, deployed, and operated. It involves creating a set of reusable and customizable components, tools, and frameworks that enable developers to build and deploy applications with greater efficiency and speed.
           </p>
-          <StaticImage
-            src={MesheryIntegrationsImg}
-            alt="what is platform engineering"
-          />
+          <StaticImage src={MesheryIntegrationsImg} alt="what is platform engineering" />
         </div>
         <BestPracticesBanner />
-        <h1 style={{ textAlign: "center" }}>
-          Benefits of Platform Engineering
-        </h1>
+        <h1 style={{ textAlign: "center" }}>Benefits of Platform Engineering</h1>
         <PlatformSection
           heading="Visualize and Design Infrastructure Effortlessly"
           caption="Leverage the model and component library to visually design cloud-native infrastructure using pre-built tools and patterns. Simplify architecture creation with reusable components and drag-and-drop precision."
@@ -139,6 +126,7 @@ const Platform = () => {
   );
 };
 
+
 const PlatformSection = ({ heading, caption, image, $reverse }) => {
   return (
     <StyledRow className="platform" $reverse={$reverse}>
@@ -153,6 +141,7 @@ const PlatformSection = ({ heading, caption, image, $reverse }) => {
               <img src={image} alt={heading} />
             </SRLWrapper>
           </SimpleReactLightbox>
+
         </div>
       </Col>
     </StyledRow>
@@ -166,39 +155,39 @@ const StyledRow = styled(Row)`
   gap: 2rem;
   color: ${(props) => props.theme.tertiaryColor};
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-
+  
   @media (max-width: 768px) {
     flex-direction: column;
     padding: 2rem 0;
   }
-
+  
   @media (max-width: 468px) {
     flex-direction: column;
   }
-
+  
   .platform-detail {
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: ${(props) => props.theme.tertiaryColor};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-
+    
     @media (max-width: 767px) {
       order: 1;
     }
-
+    
     .heading {
       font-size: 3.125rem;
       line-height: 3.813rem;
       color: ${(props) => props.theme.tertiaryColor};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       margin-bottom: 2rem;
-
+      
       @media (max-width: 992px) {
         font-size: 2.8rem;
         line-height: 3rem;
       }
-
+      
       @media (max-width: 767px) {
         font-size: 2rem;
         line-height: 2.5rem;
@@ -207,13 +196,13 @@ const StyledRow = styled(Row)`
         padding-right: 100px;
         margin-bottom: 1rem;
       }
-
+      
       @media (max-width: 467px) {
         padding-left: 25px;
         padding-right: 25px;
       }
     }
-
+    
     .caption {
       font-weight: 400;
       font-size: 1.4rem;
@@ -221,7 +210,7 @@ const StyledRow = styled(Row)`
       color: ${(props) => props.theme.tertiaryColor};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       opacity: 0.8;
-
+      
       @media (max-width: 767px) {
         font-size: 1rem;
         line-height: 1.5rem;
@@ -229,14 +218,14 @@ const StyledRow = styled(Row)`
         padding-left: 100px;
         padding-right: 100px;
       }
-
+      
       @media (max-width: 467px) {
         padding-left: 25px;
         padding-right: 25px;
       }
     }
   }
-
+  
   .platform-image {
     display: flex;
     flex-direction: column;

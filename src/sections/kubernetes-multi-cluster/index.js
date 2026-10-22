@@ -40,30 +40,25 @@ const KubernetesMultiCluster = () => {
   return (
     <MultiClusterWrapper>
       <SolutionHero data={data} />
-      <Feature />
+      <Feature/>
       <Container>
         <div className={"feature-use-container"}>
           <div>
             <h2 className={"use-heading"}>
               {" "}
-              Wrangling your services one cluster at-a-time{" "}
+              Wrangling your services one cluster at-a-time {" "}
             </h2>
           </div>
           <div className={"collaboration_display"}>
             {card_data.map((x) => (
-              <FeatureUseCard
-                data={x}
-                key={x.heading}
-                $sm={12}
-                $md={6}
-                $lg={4}
-              />
+              <FeatureUseCard data={x} key={x.heading} $sm={12} $md={6} $lg={4} />
             ))}
           </div>
         </div>
       </Container>
-      <Reviews />
+      <Reviews/>
     </MultiClusterWrapper>
   );
 };
 export default KubernetesMultiCluster;
+

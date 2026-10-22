@@ -7,24 +7,24 @@ const elements = [
   // list of graph elements to start with
   {
     // node a
-    data: { id: "a" },
+    data: { id: "a" }
   },
   {
     // node b
-    data: { id: "b" },
+    data: { id: "b" }
   },
   {
     // node c
-    data: { id: "c" },
+    data: { id: "c" }
   },
   {
     // edge ab
-    data: { id: "ab", source: "a", target: "b" },
+    data: { id: "ab", source: "a", target: "b" }
   },
   {
     // edge ab
-    data: { id: "ac", source: "a", target: "c" },
-  },
+    data: { id: "ac", source: "a", target: "c" }
+  }
 ];
 
 const style = [
@@ -37,8 +37,8 @@ const style = [
       // 'background-fit': 'contain',
       // 'background-clip': 'none',
       // 'background-opacity': 1,
-      label: "data(id)",
-    },
+      label: "data(id)"
+    }
   },
 
   {
@@ -48,20 +48,20 @@ const style = [
       "line-color": "#ccc",
       "target-arrow-color": "#ccc",
       "target-arrow-shape": "triangle",
-      "curve-style": "bezier",
-    },
-  },
+      "curve-style": "bezier"
+    }
+  }
 ];
 
 const options = {
   elements,
-  style,
+  style
 };
 
 const CytoscapeDemo = () => {
   const [setMyCy] = useState();
 
-  const cyCallback = useCallback((cy) => {
+  const cyCallback = useCallback(cy => {
     setMyCy(cy);
   }, []);
 

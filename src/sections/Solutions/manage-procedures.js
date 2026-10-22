@@ -12,7 +12,7 @@ const ManageProceduresWrapper = styled.section`
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  background: ${(props) => props.theme.blackToWhite};
+  background: ${(props) => props.theme.blackToWhite };
   padding: 3rem 0;
   overflow: hidden;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -63,11 +63,7 @@ const CardsWrapper = styled.div`
 
 const Card = styled.div`
   flex: 1;
-  background: linear-gradient(
-    156.33deg,
-    rgba(41, 59, 67, 0.3) -11.07%,
-    #293b43 135.21%
-  );
+  background: linear-gradient(156.33deg, rgba(41, 59, 67, 0.3) -11.07%, #293b43 135.21%);
   border-radius: 20px;
   padding: 2rem;
   display: flex;
@@ -86,7 +82,7 @@ const CardTitle = styled.h3`
   font-weight: 600;
   font-size: 24px;
   line-height: 32px;
-  color: ${({ theme }) => theme.whiteToBlack};
+  color: ${({ theme }) => theme.whiteToBlack };
   margin: 0;
 `;
 
@@ -123,43 +119,28 @@ const ManageProcedures = () => {
             </CardHeader>
             <CardBody>
               <CardText>
-                Streamline and accelerate workflow while you monitor
-                infrastructure during controlled chaos tests and thus diminish
-                cost.
+                                Streamline and accelerate workflow while you monitor infrastructure during controlled chaos tests and thus diminish cost.
               </CardText>
               <CardText>
-                Further use data insights gathered while monitoring to optimize
-                your architecture.
+                                Further use data insights gathered while monitoring to optimize your architecture.
               </CardText>
             </CardBody>
-            <CardImage
-              src={OptimizeWorkflowImage}
-              alt="Optimize Workflow Diagram"
-            />
+            <CardImage src={OptimizeWorkflowImage} alt="Optimize Workflow Diagram" />
           </Card>
           <Card>
             <CardHeader>
-              <img
-                src={ExecuteWithEfficiencyIcon}
-                alt="Execute with efficiency"
-              />
+              <img src={ExecuteWithEfficiencyIcon} alt="Execute with efficiency" />
               <CardTitle>Execute with efficiency</CardTitle>
             </CardHeader>
             <CardBody>
               <CardText>
-                Spend less time learning and execute more with predefined
-                service mesh patterns that allow accurate configuration and
-                management of service meshes.
+                                Spend less time learning and execute more with predefined service mesh patterns that allow accurate configuration and management of service meshes.
               </CardText>
               <CardText>
-                Reduce human error, adjust traffic routing, and de-provision
-                services when no longer required.
+                                Reduce human error, adjust traffic routing, and de-provision services when no longer required.
               </CardText>
             </CardBody>
-            <CardImage
-              src={ExecuteWithEfficiencyImage}
-              alt="Execute with Efficiency Diagram"
-            />
+            <CardImage src={ExecuteWithEfficiencyImage} alt="Execute with Efficiency Diagram" />
           </Card>
         </CardsWrapper>
       </Inner>

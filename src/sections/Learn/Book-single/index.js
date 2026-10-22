@@ -1,5 +1,6 @@
 import React from "react";
 
+
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 
@@ -9,6 +10,7 @@ import { Link } from "gatsby";
 import BookSinglePageWrapper from "./BookSingle.style.js";
 
 const BookSingle = ({ data, children }) => {
+
   const { frontmatter } = data.mdx;
   return (
     <BookSinglePageWrapper>
@@ -18,10 +20,14 @@ const BookSingle = ({ data, children }) => {
           <h4>All Books</h4>
         </Link>
       </div>
-      <PageHeader title={frontmatter.title} />
+      <PageHeader
+        title={frontmatter.title}
+      />
       <div className="single-post-wrapper">
         <Container>
-          <div className="single-post-block">{children}</div>
+          <div className="single-post-block">
+            {children}
+          </div>
         </Container>
       </div>
     </BookSinglePageWrapper>

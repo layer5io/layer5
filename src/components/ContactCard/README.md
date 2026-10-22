@@ -1,11 +1,8 @@
 ### What is the use of this CTA:
-
 The **ContactCard** component is a a simple contact card Keep up to date with Layer5
 
 ### How to use the CTA:
-
 To use this CTA simply use
-
 ```
 <ContactCard />
 ```

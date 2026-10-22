@@ -9,11 +9,9 @@ import GNHWithName from "../../../../assets/images/nighthawk/with-name/SVG/night
 const Nighthawk = () => {
   return (
     <div className="post-content">
-      <Row
-        style={{
-          flexWrap: "wrap",
-        }}
-        className="brand-section"
+      <Row style={{
+        flexWrap: "wrap"
+      }} className="brand-section"
       >
         <Col $xs={12} $sm={6}>
           <h1 className="layerH3">
@@ -29,19 +27,18 @@ const Nighthawk = () => {
         </Col>
         <Col>
           <p>
-            The Nighthawk mark includes the Nighthawk name & logo and any word,
-            phrase, image, or other designation that identifies the source or
-            origin of any Layer5 projects. PLease don't modify the marks or use
-            them in a confusing way, including suggesting sponsorship or
+            The Nighthawk mark includes the Nighthawk name & logo and any
+            word, phrase, image, or other designation that identifies the source
+            or origin of any Layer5 projects. PLease don't modify the marks or
+            use them in a confusing way, including suggesting sponsorship or
             endorsement by Layer5 with another brand (including your own).
           </p>
         </Col>
       </Row>
 
-      <Row
-        style={{
-          flexWrap: "wrap",
-        }}
+      <Row style={{
+        flexWrap: "wrap"
+      }}
       >
         <Col>
           <h2 className="layerH3 in"> Logos </h2>

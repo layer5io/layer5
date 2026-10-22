@@ -7,45 +7,45 @@ import { FaTrophy } from "@react-icons/all-files/fa/FaTrophy";
 import Button from "../../reusecore/Button";
 
 const JourneySectionWrapper = styled.div`
-  .action-buttons {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    @media (max-width: 418px) {
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
+    .action-buttons{
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      @media (max-width: 418px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+       }
     }
-  }
   padding: 10px 0 80px 0;
   background-color: ${(props) => props.theme.body};
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-
+  
   .journey-header {
     text-align: center;
     margin-bottom: 50px;
-
+    
     h2 {
       font-size: 3.125rem;
       line-height: 3.813rem;
       color: ${(props) => props.theme.tertiaryColor};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       margin-bottom: 1.5rem;
-
+      
       @media (max-width: 992px) {
         font-size: 2.8rem;
         line-height: 3rem;
       }
-
+      
       @media (max-width: 767px) {
         font-size: 2rem;
         line-height: 2.5rem;
         padding: 0 25px;
       }
     }
-
+    
     p {
       font-size: 1.28rem;
       line-height: 2rem;
@@ -53,7 +53,7 @@ const JourneySectionWrapper = styled.div`
       margin: 0 auto;
       color: ${(props) => props.theme.tertiaryColor};
       opacity: 0.8;
-
+      
       @media (max-width: 767px) {
         font-size: 1rem;
         line-height: 1.5rem;
@@ -61,57 +61,51 @@ const JourneySectionWrapper = styled.div`
       }
     }
   }
-
+  
   .timeline-container {
     position: relative;
     padding: 20px 0;
     &:before {
-      content: "";
+      content: '';
       position: absolute;
       top: 50%;
       left: 0;
       right: 0;
       height: 4px;
-      background: linear-gradient(
-        90deg,
-        ${(props) => props.theme.secondaryColor} 0%,
-        ${(props) => props.theme.primaryColor} 100%
-      );
-      transform: translateY(60%);
+      background: linear-gradient(90deg, ${(props) => props.theme.secondaryColor} 0%, ${(props) => props.theme.primaryColor} 100%);
+        transform: translateY(60%);
       z-index: 1;
-
+      
       @media (max-width: 767px) {
         display: none;
       }
     }
-    .stepp {
-      z-index: 2;
-      padding: 0;
-      margin: 0 10px;
-      border-radius: 4%;
-      background: ${(props) => props.theme.grey212121ToWhite};
-      box-shadow: 0px 0px ${(props) => props.theme.projectShadowsize}
-        ${(props) => props.theme.whiteToGreyE6E6E6};
-      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-      &:hover {
-        box-shadow: 0px 0px 5px
-          ${(props) => props.theme.green00D3A9ToGreen3C494F};
-      }
-      @media (max-width: 767px) {
-        width: 80%;
-      }
+    .stepp{
+        z-index: 2;
+        padding: 0;
+        margin: 0 10px;
+        border-radius: 4%;
+        background: ${props => props.theme.grey212121ToWhite};
+        box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.whiteToGreyE6E6E6};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        &:hover{
+            box-shadow: 0px 0px 5px ${props => props.theme.green00D3A9ToGreen3C494F};
+        }
+        @media (max-width: 767px) {
+          width: 80%;
+        }
     }
     .timeline-row {
-      position: relative;
-      left: 0;
-      right: 0;
-      @media (max-width: 767px) {
+        position: relative;
+        left: 0;
+        right: 0;
+       @media (max-width: 767px) {
         justify-content: center;
         gap: 2rem;
-      }
+        }
     }
   }
-
+  
   .step-card {
     background-color: ${(props) => props.theme.secondaryButtonColor};
     border-radius: 10px;
@@ -122,14 +116,12 @@ const JourneySectionWrapper = styled.div`
     height: 100%;
     position: relative;
     z-index: 2;
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
-
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
     .step-number {
       background-color: ${(props) => props.theme.tertiaryColor};
       align-self: flex-start;
-      color: ${(props) => props.theme.body};
+      color:${(props) => props.theme.body};
       width: 40px;
       height: 40px;
       border-radius: 50%;
@@ -140,20 +132,20 @@ const JourneySectionWrapper = styled.div`
       font-size: 1.2rem;
       margin-bottom: 20px;
     }
-
+    
     .step-icon {
       font-size: 2.5rem;
       margin-bottom: 20px;
       color: ${(props) => props.theme.primaryColor};
     }
-
+    
     h3 {
       font-size: 1.5rem;
       margin-bottom: 15px;
       text-align: center;
       color: ${(props) => props.theme.tertiaryColor};
     }
-
+    
     p {
       font-size: 1rem;
       line-height: 1.6;
@@ -161,7 +153,7 @@ const JourneySectionWrapper = styled.div`
       opacity: 0.9;
       text-align: center;
     }
-
+    
     @media (max-width: 767px) {
       margin-bottom: 30px;
     }
@@ -174,36 +166,28 @@ const JourneySection = () => {
       number: "1",
       icon: <FaPencilRuler />,
       title: "Design and Publish",
-      description:
-        "Create your profile on Layer5 Cloud, share and discover best practices, reusable templates, and operational patterns for kubernetes.",
+      description: "Create your profile on Layer5 Cloud, share and discover best practices, reusable templates, and operational patterns for kubernetes."
     },
     {
       number: "2",
       icon: <FaChartLine />,
       title: "Engage and Measure",
-      description:
-        "Monitor your content's performance, gather feedback, and refine your approach based on real-time user interaction metrics.",
+      description: "Monitor your content's performance, gather feedback, and refine your approach based on real-time user interaction metrics."
     },
     {
       number: "3",
       icon: <FaTrophy />,
       title: "Grow and Get Recognized",
-      description:
-        "Build your reputation through badges and leaderboard positions while expanding your network in the cloud native community.",
-    },
+      description: "Build your reputation through badges and leaderboard positions while expanding your network in the cloud native community."
+    }
   ];
 
   return (
     <JourneySectionWrapper>
       <Container>
         <div className="journey-header">
-          <h2>
-            Expand Your Network and Visibility in the Cloud Native Community
-          </h2>
-          <p>
-            Connect with ambassadors, developer evangelists, maintainers, and
-            experts while collaborating on CNCF projects.
-          </p>
+          <h2>Expand Your Network and Visibility in the Cloud Native Community</h2>
+          <p>Connect with ambassadors, developer evangelists, maintainers, and experts while collaborating on CNCF projects.</p>
         </div>
         <div className="timeline-container">
           <Row className="timeline-row">

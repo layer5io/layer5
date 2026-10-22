@@ -232,11 +232,11 @@ export const HandbookWrapper = styled.div`
       transform: scale(0);
     }
     rect {
-      fill:  ${(props) => props.theme.grey313131ToGreenC9FCF6};
+      fill:  ${props => props.theme.grey313131ToGreenC9FCF6};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);  
     }
     path {
-      stroke: ${(props) => props.theme.green00D3A9ToGreen00B39F};
+      stroke: ${props => props.theme.green00D3A9ToGreen00B39F};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
@@ -379,7 +379,7 @@ export const HandbookWrapper = styled.div`
       }
       .text{
         p{
-          color: ${(props) => props.theme.tertiaryColor};
+          color: ${props => props.theme.tertiaryColor};
           transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
       }
@@ -392,7 +392,7 @@ export const HandbookWrapper = styled.div`
                   vertical-align: top;
               }
               .skill{
-                  color: ${(props) => props.theme.tertiaryColor};
+                  color: ${props => props.theme.tertiaryColor};
                   font-size: 16px;
                   padding: 0 0 1.25rem 1.8rem;
                   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -413,11 +413,11 @@ export const HandbookWrapper = styled.div`
     .content_type { 
       display: flex;
       flex-direction: column;
-      background: ${(props) => props.theme.grey212121ToWhite};
-      box-shadow: 0px 0px ${(props) => props.theme.projectShadowsize} ${(props) => props.theme.green00D3A9ToGreyE6E6E6};
+      background: ${props => props.theme.grey212121ToWhite};
+      box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.green00D3A9ToGreyE6E6E6};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       &:hover{
-        box-shadow: 0px 0px 5px ${(props) => props.theme.primaryColor};
+        box-shadow: 0px 0px 5px ${props => props.theme.primaryColor};
       }
       padding: 8% 6% 8% 6%;
       height: 220px;
@@ -428,11 +428,11 @@ export const HandbookWrapper = styled.div`
         margin-bottom: auto; 
         margin-top: 0.5rem;
         font-weight: 700;
-        color: ${(props) => props.theme.secondaryColor}
+        color: ${props => props.theme.secondaryColor}
       }
       p{
         font-weight: 300;
-        color: ${(props) => props.theme.text};
+        color: ${props => props.theme.text};
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       img{
@@ -493,7 +493,7 @@ export const HandbookWrapper = styled.div`
               padding: 1.25rem 0px;
           }
           p{
-              color: ${(props) => props.theme.tertiaryColor};
+              color: ${props => props.theme.tertiaryColor};
               transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
           }
       }
@@ -516,37 +516,37 @@ export const HandbookWrapper = styled.div`
       }
 
       .communitybridge_logo_svg__cls-1{
-        fill: ${(props) => props.theme.whiteToBlue003764};
+        fill: ${props => props.theme.whiteToBlue003764};
         transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
       .hacktoberfest_svg__cls-1 {
         transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        fill: ${(props) => props.theme.whiteToRed662839};
+        fill: ${props => props.theme.whiteToRed662839};
       }
 
       .lfx-white_svg__b{
-        fill: ${(props) => props.theme.whiteToBlue003764};
+        fill: ${props => props.theme.whiteToBlue003764};
         transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
       .lfx-white_svg__c{
-        fill: ${(props) => props.theme.whiteToBlue0096d6};
+        fill: ${props => props.theme.whiteToBlue0096d6};
         transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
       .layer5-colorMode_svg__colorMode1 {
-        fill: ${(props) => props.theme.whiteToGreen3C494F};
+        fill: ${props => props.theme.whiteToGreen3C494F};
         transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
       .mlh_svg__cls-1 {
-        fill: ${(props) => props.theme.whiteToBlack};
+        fill: ${props => props.theme.whiteToBlack};
         transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
       .sca_svg__fil0, .sca_svg__fil6 {
-        fill: ${(props) => props.theme.whiteToBlack};
+        fill: ${props => props.theme.whiteToBlack};
         transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       

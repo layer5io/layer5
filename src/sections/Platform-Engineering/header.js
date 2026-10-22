@@ -19,7 +19,7 @@ const PlatformEngineeringWrapper = styled.div`
       gap: 0.5rem;
       align-items: center;
       a {
-        color: ${(props) => props.theme.text};
+        color: ${props => props.theme.text};
         transition: padding 0.5s ease;
       }
       a:hover {
@@ -36,7 +36,7 @@ const PlatformEngineeringWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     min-height: 40rem;
-    background: ${(props) => (props.$isDark ? "linear-gradient(0deg, #121212 33.89%, rgba(0, 179, 159, 0.74) 99.81%)" : "linear-gradient(0deg, rgba(255, 255, 255, 0.38) 33.89%, rgba(0, 179, 159, 0.74) 99.81%)")};
+    background: ${(props) => props.$isDark ? "linear-gradient(0deg, #121212 33.89%, rgba(0, 179, 159, 0.74) 99.81%)" : "linear-gradient(0deg, rgba(255, 255, 255, 0.38) 33.89%, rgba(0, 179, 159, 0.74) 99.81%)"};
     .platform-header-row {
       justify-content: space-between;
       align-items: center;
@@ -81,8 +81,8 @@ const PlatformEngineeringWrapper = styled.div`
         padding-right: 0;
         text-align: center;
       }
-      .header-buttons {
-        justify-content: center;
+      .header-buttons{
+         justify-content: center;
       }
       .header-title {
         margin-bottom: 10px;
@@ -93,6 +93,7 @@ const PlatformEngineeringWrapper = styled.div`
     }
   }
 `;
+
 
 const Header = () => {
   const { isDark } = useStyledDarkMode();
@@ -105,9 +106,7 @@ const Header = () => {
               <h1 className="header-title">Platform Engineering</h1>
 
               <p className="header-title-description">
-                Deliver reliable self-service toolchains and workflows for all
-                dev teams, at scale, with observability, security, and
-                automation.
+                Deliver reliable self-service toolchains and workflows for all dev teams, at scale, with observability, security, and automation.
               </p>
               <div className="header-buttons">
                 <Button

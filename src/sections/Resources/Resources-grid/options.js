@@ -1,4 +1,4 @@
-export const options = [
+export const options =  [
   {
     category: "Type",
     subdata: [
@@ -14,8 +14,7 @@ export const options = [
       { id: 9, value: "Guide", label: "Guide" },
       { id: 10, value: "FAQ", label: "FAQ" },
       { id: 11, value: "Interview", label: "Interview" },
-      { id: 12, value: "Comparison", label: "Comparison" },
-    ],
+      { id: 12, value: "Comparison", label: "Comparison" }]
   },
   {
     category: "Product",
@@ -24,13 +23,8 @@ export const options = [
       { id: 1, value: "Kanvas", label: "Kanvas" },
       { id: 2, value: "Docker Extension", label: "Docker Extension" },
       { id: 3, value: "Service Mesh Performance", label: "SMP" },
-      {
-        id: 4,
-        value: "Service Mesh Landscape",
-        label: "Service Mesh Landscape",
-      },
-      { id: 5, value: "Nighthawk", label: "Nighthawk" },
-    ],
+      { id: 4, value: "Service Mesh Landscape", label: "Service Mesh Landscape" },
+      { id: 5, value: "Nighthawk", label: "Nighthawk" }]
   },
   {
     category: "Technology",
@@ -40,8 +34,7 @@ export const options = [
       { id: 2, value: "Docker", label: "Docker" },
       { id: 3, value: "JWT", label: "JWT" },
       { id: 4, value: "Kubernetes", label: "Kubernetes" },
-      { id: 5, value: "WebAssembly", label: "WebAssembly" },
-    ],
+      { id: 5, value: "WebAssembly", label: "WebAssembly" }]
   },
   {
     category: "Service Mesh",
@@ -52,7 +45,6 @@ export const options = [
       { id: 3, value: "Open Service Mesh", label: "Open Service Mesh" },
       { id: 4, value: "Kuma", label: "Kuma" },
       { id: 5, value: "Network Service Mesh", label: "Network Service Mesh" },
-      { id: 6, value: "Traefik Mesh", label: "Traefik Mesh" },
-    ],
+      { id: 6, value: "Traefik Mesh", label: "Traefik Mesh" }]
   },
 ];

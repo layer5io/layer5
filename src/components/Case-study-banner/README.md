@@ -1,11 +1,8 @@
 ### What is the use of this CTA:
-
 The **CaseStudyBanner** component is a banner of case study of how HPE uses Meshery to manage SPIRE
 
 ### How to use the CTA:
-
 To use this CTA simply use
-
 ```
 <CaseStudyBanner />
 ```

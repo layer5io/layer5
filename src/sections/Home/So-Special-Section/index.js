@@ -1,3 +1,4 @@
+
 import React, { useLayoutEffect, useState, useRef } from "react";
 import Slider from "react-slick";
 import SoSpecialWrapper from "./so-special-style";
@@ -11,52 +12,49 @@ const SoSpecial = () => {
   const [isClient, setIsClient] = useState(false);
   const [slidesToShowState, setSlidesToShowState] = useState(null);
   const sliderRef = useRef(null);
-  const data = useStaticQuery(graphql`
-    query newsList {
-      allMdx(
-        filter: {
-          fields: { collection: { eq: "news" } }
-          frontmatter: { published: { eq: true } }
+  const data = useStaticQuery(
+    graphql`query newsList {
+  allMdx(
+    filter: {fields: {collection: {eq: "news"}}, frontmatter: {published: {eq: true}}}
+    sort: {frontmatter: {date: DESC}}
+    limit: 8
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        author
+        eurl
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
         }
-        sort: { frontmatter: { date: DESC } }
-        limit: 8
-      ) {
-        nodes {
-          id
-          frontmatter {
-            title
-            author
-            eurl
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH)
-              }
-              extension
-              publicURL
-            }
-            thumbnail_svg {
-              extension
-              publicURL
-            }
-            darkthumbnail {
-              childImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH)
-              }
-              extension
-              publicURL
-            }
-            darkthumbnail_svg {
-              extension
-              publicURL
-            }
+        thumbnail_svg {
+          extension
+          publicURL
+        }
+        darkthumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
           }
-          fields {
-            slug
-          }
+          extension
+          publicURL
+        }
+        darkthumbnail_svg {
+          extension
+          publicURL
         }
       }
+      fields {
+        slug
+      }
     }
-  `);
+  }
+}`
+  );
   const settings = {
     dots: slidesToShowState <= 1,
     infinite: false,
@@ -68,10 +66,7 @@ const SoSpecial = () => {
   };
 
   const computeSlides = () => {
-    const w =
-      typeof window !== "undefined"
-        ? window.innerWidth || document.documentElement.clientWidth
-        : 1200;
+    const w = typeof window !== "undefined" ? (window.innerWidth || document.documentElement.clientWidth) : 1200;
     if (w <= 600) return 1;
     if (w <= 800) return 1.5;
     if (w <= 1024) return 2;
@@ -80,6 +75,7 @@ const SoSpecial = () => {
   };
 
   useLayoutEffect(() => {
+
     setIsClient(true);
     setSlidesToShowState(computeSlides());
 
@@ -92,11 +88,7 @@ const SoSpecial = () => {
           if (prev !== slides) return slides;
           return prev;
         });
-        if (
-          sliderRef.current &&
-          sliderRef.current.innerSlider &&
-          typeof sliderRef.current.innerSlider.onWindowResized === "function"
-        ) {
+        if (sliderRef.current && sliderRef.current.innerSlider && typeof sliderRef.current.innerSlider.onWindowResized === "function") {
           sliderRef.current.innerSlider.onWindowResized();
         }
       }, 100);
@@ -123,34 +115,32 @@ const SoSpecial = () => {
         <h1>We're making a splash</h1>
       </div>
       <div className="special_carousel">
-        <Slider
-          {...settings}
-          key={`review-slider-${slidesToShowState}`}
-          ref={sliderRef}
-        >
-          {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
-            <Button className="special-cont_btn" $url={fields.slug} key={id}>
-              <div id="special-cont">
-                <div id="special-cont_img">
-                  {/* {console.log("Dark Thumbnail:", frontmatter.darkthumbnail)}
+        <Slider {...settings} key={`review-slider-${slidesToShowState}`} ref={sliderRef}>
+          {
+            data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
+              <Button className="special-cont_btn" $url={fields.slug} key={id}>
+                <div id="special-cont" >
+                  <div id="special-cont_img">
+                    {/* {console.log("Dark Thumbnail:", frontmatter.darkthumbnail)}
                     {console.log("Thumbnail:", frontmatter.thumbnail)} */}
-                  <Image
-                    {...(frontmatter.thumbnail || frontmatter.thumbnail_svg)}
-                    imgStyle={{ objectFit: "contain" }}
-                    alt={frontmatter.title}
-                  />
-                  {/* <Image
+                    <Image
+                      {...(frontmatter.thumbnail || frontmatter.thumbnail_svg)}
+                      imgStyle={{ objectFit: "contain" }}
+                      alt={frontmatter.title}
+                    />
+                    {/* <Image
                       {...((isDark && frontmatter.darkthumbnail && frontmatter.darkthumbnail.publicURL) || frontmatter.thumbnail)}
                       imgStyle={{ objectFit: "contain" }}
                       alt={frontmatter.title}
                     /> */}
+                  </div>
+                  <div id="special-cont_content">
+                    <p className="special-cont_para">{frontmatter.title}</p>
+                  </div>
                 </div>
-                <div id="special-cont_content">
-                  <p className="special-cont_para">{frontmatter.title}</p>
-                </div>
-              </div>
-            </Button>
-          ))}
+              </Button>
+            ))}
+
         </Slider>
       </div>
       {/* <div className="so-special-foot">

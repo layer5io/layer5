@@ -13,11 +13,10 @@ const FeatureDetailsWrapper = styled.div`
     margin: 0;
     visibility: hidden;
     overflow: hidden;
-    transition:
-      opacity 0.2s ease-in-out,
-      max-height 0.3s ease-in-out 0.1s,
-      margin 0.3s ease-in-out 0.1s,
-      visibility 0s linear 0.4s;
+    transition: opacity 0.2s ease-in-out, 
+                max-height 0.3s ease-in-out 0.1s,
+                margin 0.3s ease-in-out 0.1s,
+                visibility 0s linear 0.4s;
   }
 
   .details > .open {
@@ -25,11 +24,10 @@ const FeatureDetailsWrapper = styled.div`
     opacity: 1;
     margin-bottom: 1rem;
     visibility: visible;
-    transition:
-      visibility 0s linear,
-      opacity 0.2s ease-in-out 0.1s,
-      max-height 0.3s ease-in-out 0.2s,
-      margin 0.3s ease-in-out 0.2s;
+    transition: visibility 0s linear,
+                opacity 0.2s ease-in-out 0.1s, 
+                max-height 0.3s ease-in-out 0.2s,
+                margin 0.3s ease-in-out 0.2s;
   }
 
   .toggle-icon {
@@ -73,13 +71,7 @@ const FeatureDetailsWrapper = styled.div`
   }
 `;
 
-const FeatureDetails = ({
-  category,
-  description,
-  tier,
-  children,
-  onToggle,
-}) => {
+const FeatureDetails = ({ category, description, tier, children, onToggle }) => {
   const [expand, setExpand] = React.useState(false);
 
   // Call onToggle when expand changes
@@ -107,12 +99,13 @@ const FeatureDetails = ({
         </h5>
         <div className="details">
           {description && (
-            <p
-              className={expand ? "open" : ""}
-              dangerouslySetInnerHTML={{ __html: description }}
-            />
+            <p className={expand ? "open" : ""} dangerouslySetInnerHTML={{ __html: description }} />
           )}
-          {children && <div className={expand ? "open" : ""}>{children}</div>}
+          {children && (
+            <div className={expand ? "open" : ""}>
+              {children}
+            </div>
+          )}
         </div>
       </div>
     </FeatureDetailsWrapper>

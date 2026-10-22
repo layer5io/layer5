@@ -12,7 +12,7 @@ const SearchBox = ({
   paginate,
   currentPage,
   classnames,
-  focusSearch,
+  focusSearch
 }) => {
   const handleChange = (e) => {
     if (hideFilter != undefined && setHideFilter != undefined) {

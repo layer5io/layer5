@@ -18,7 +18,7 @@ export const k8sService = () => {
   return {
     svg: "data:image/svg+xml;base64," + btoa(svg),
     width,
-    height,
+    height
   };
 };
 
@@ -33,7 +33,7 @@ export const clusterRole = () => {
   return {
     svg: "data:image/svg+xml;base64," + btoa(svg),
     width,
-    height,
+    height
   };
 };
 
@@ -45,7 +45,7 @@ export const kubePrometheus = () => {
   return {
     svg: "data:image/svg+xml;base64," + btoa(svg),
     width,
-    height,
+    height
   };
 };
 
@@ -76,7 +76,7 @@ export const NGINX = () => {
   return {
     svg: "data:image/svg+xml;base64," + btoa(svg),
     width,
-    height,
+    height
   };
 };
 
@@ -90,6 +90,6 @@ export const argoCD = () => {
   return {
     svg: "data:image/svg+xml;base64," + btoa(svg),
     width,
-    height,
+    height
   };
 };

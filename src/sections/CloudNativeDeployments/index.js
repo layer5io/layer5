@@ -41,30 +41,23 @@ const KubernetesMultiCluster = () => {
   return (
     <MultiClusterWrapper>
       <FeatureHero data={data} />
-      <Feature />
+      <Feature/>
       <Container>
         <div className={"feature-use-container"}>
           <div>
             <h2 className={"use-heading"}>
               {" "}
-              Seamless Deployment Across Multiple Kubernetes Clusters for Every
-              Meshery Design{" "}
+              Seamless Deployment Across Multiple Kubernetes Clusters for Every Meshery Design {" "}
             </h2>
           </div>
           <div className={"collaboration_display"}>
             {card_data.map((x) => (
-              <FeatureUseCard
-                data={x}
-                key={x.heading}
-                $sm={12}
-                $md={6}
-                $lg={4}
-              />
+              <FeatureUseCard data={x} key={x.heading} $sm={12} $md={6} $lg={4} />
             ))}
           </div>
         </div>
       </Container>
-      <Reviews />
+      <Reviews/>
     </MultiClusterWrapper>
   );
 };

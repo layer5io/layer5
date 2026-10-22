@@ -1,9 +1,6 @@
 ### What is the use of this CTA:
-
 The **handbook-navigation** component to show Table of contents for Newcomers Guide
-
 ### How to use the CTA:
-
 To use this CTA :
 
 ```

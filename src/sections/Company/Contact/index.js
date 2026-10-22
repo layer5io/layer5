@@ -22,11 +22,9 @@ const ContactPage = () => {
           title={"Get In Touch"}
           subtitle={"Let us know how we can help you."}
         />
-        <Row
-          style={{
-            flexWrap: "wrap",
-          }}
-          className="cards-container"
+        <Row style={{
+          flexWrap: "wrap"
+        }} className="cards-container"
         >
           <CardOutline
             link="/careers"
@@ -50,11 +48,9 @@ const ContactPage = () => {
             content="I would like to establish a partnership with Layer5"
           />
         </Row>
-        <Row
-          style={{
-            flexWrap: "wrap",
-          }}
-          className="contact-form-row"
+        <Row style={{
+          flexWrap: "wrap"
+        }} className="contact-form-row"
         >
           <Row
             onClick={function () {
@@ -70,16 +66,7 @@ const ContactPage = () => {
           </Row>
           <div className="contact-form" ref={expandForm}>
             <Container>
-              <Col
-                $lg={5}
-                $md={6}
-                $sm={12}
-                style={{
-                  padding: "0",
-                  marginLeft: "auto",
-                  marginRight: "auto",
-                }}
-              >
+              <Col $lg={5} $md={6} $sm={12} style={{ padding: "0", marginLeft: "auto", marginRight: "auto" }}>
                 <CommonForm
                   title="Contact us"
                   form="contact"

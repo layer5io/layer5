@@ -2,7 +2,7 @@
 
 Syntax-highlighted code (Prism, Night Owl palette) with line numbers and a Copy button.
 
-Fenced code blocks in MDX (` ```bash `) render through this component automatically via the `pre` mapping in `root-wrapper.js`. Use it directly in JSX or in MDX when you need a collapsible block or when the code lives in a JS string.
+Fenced code blocks in MDX (```` ```bash ````) render through this component automatically via the `pre` mapping in `root-wrapper.js`. Use it directly in JSX or in MDX when you need a collapsible block or when the code lives in a JS string.
 
 ### Usage
 
@@ -18,22 +18,19 @@ import Code from "../components/CodeBlock";
 In MDX, pass multi-line code as a template literal. A shell line continuation must be written as `\\`, because a lone `\` before a newline is a JavaScript line continuation and is silently dropped:
 
 ```mdx
-<Code
-  language="bash"
-  codeString={`kubectl exec --namespace=istio-system \\
-  my-pod -- curl -X POST http://localhost:15000/logging?level=debug`}
-/>
+<Code language="bash" codeString={`kubectl exec --namespace=istio-system \\
+  my-pod -- curl -X POST http://localhost:15000/logging?level=debug`} />
 ```
 
 ### Props
 
-| Prop          | Type    | Default | Description                                         |
-| ------------- | ------- | ------- | --------------------------------------------------- |
-| `codeString`  | string  |         | Code to render. Takes precedence over `code`.       |
-| `code`        | string  |         | Alias of `codeString`.                              |
-| `language`    | string  | `jsx`   | Prism language (`bash`, `yaml`, `json`, `go`, ...). |
-| `collapsible` | boolean | `false` | Hide the code behind a "Show Code" checkbox.        |
-| `name`        | string  |         | Unique id for the collapsible checkbox.             |
+| Prop          | Type    | Default | Description                                            |
+| ------------- | ------- | ------- | ------------------------------------------------------ |
+| `codeString`  | string  |         | Code to render. Takes precedence over `code`.          |
+| `code`        | string  |         | Alias of `codeString`.                                 |
+| `language`    | string  | `jsx`   | Prism language (`bash`, `yaml`, `json`, `go`, ...).    |
+| `collapsible` | boolean | `false` | Hide the code behind a "Show Code" checkbox.           |
+| `name`        | string  |         | Unique id for the collapsible checkbox.                |
 
 ### Layout
 
@@ -59,11 +56,7 @@ Keep both halves of that rule in place when changing the button's size or positi
 import { LineNo, Pre } from "../../CodeBlock";
 
 const Wrapper = styled.div`
-  ${Pre} {
-    height: 6rem;
-  }
-  ${LineNo} {
-    display: none;
-  }
+  ${Pre} { height: 6rem; }
+  ${LineNo} { display: none; }
 `;
 ```

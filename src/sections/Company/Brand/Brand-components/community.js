@@ -6,26 +6,28 @@ import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import MeshMateLogoLight from "../../../../assets/images/meshmate/meshmate-icon-white.webp";
 import MeshMateLogo from "../../../../assets/images/meshmate/meshmate-icon.webp";
 
+
 const CommunityBrand = () => {
   return (
     <div className="post-content">
-      <Row
-        style={{
-          flexWrap: "wrap",
-        }}
-        className="brand-section"
+      <Row style={{
+        flexWrap: "wrap"
+      }} className="brand-section"
       >
         <Col $xs={12} $sm={6}>
-          <h1 className="layerH3">Community</h1>
+          <h1 className="layerH3">
+            Community
+          </h1>
         </Col>
       </Row>
-      <Row
-        style={{
-          flexWrap: "wrap",
-        }}
+      <Row style={{
+        flexWrap: "wrap"
+      }}
       >
         <Col $xs={12} $sm={6}>
-          <h2 className="layerH3">MeshMate</h2>
+          <h2 className="layerH3">
+            MeshMate
+          </h2>
         </Col>
         <Col $xs={12} $sm={6} className="download-button">
           <a href="/brand/meshmate-brand-kit.zip">
@@ -38,26 +40,25 @@ const CommunityBrand = () => {
           <p>
             The MeshMate mark includes the MeshMate name & logo, and any word,
             phrase, image, or other designation that identifies the source or
-            origin of any Layer5 projects. Please don’t modify the marks or use
-            them in a confusing way, including suggesting sponsorship or
-            endorsement by Layer5, or in a way that confuses Layer5 with another
-            brand (including your own).
+            origin of any Layer5 projects. Please don’t modify the marks or
+            use them in a confusing way, including suggesting sponsorship or
+            endorsement by Layer5, or in a way that confuses Layer5 with
+            another brand (including your own).
           </p>
         </Col>
       </Row>
-      <Row
-        style={{
-          flexWrap: "wrap",
-        }}
+      <Row style={{
+        flexWrap: "wrap"
+      }}
       >
         <Col>
-          <h2 className="layerH3 in">Logos</h2>
+          <h2 className="layerH3 in">
+            Logos
+          </h2>
         </Col>
-        <Row
-          style={{
-            flexWrap: "wrap",
-          }}
-          className="ImgDiv"
+        <Row style={{
+          flexWrap: "wrap"
+        }} className="ImgDiv"
         >
           <Col $xs={12} $sm={3}>
             <img src={MeshMateLogo} alt="MeshMate Logo" />
@@ -67,13 +68,14 @@ const CommunityBrand = () => {
           </Col>
         </Row>
       </Row>
-      <Row
-        style={{
-          flexWrap: "wrap",
-        }}
+      <Row style={{
+        flexWrap: "wrap"
+      }}
       >
         <Col>
-          <h2 className="layerH3 in">Colors</h2>
+          <h2 className="layerH3 in">
+            Colors
+          </h2>
         </Col>
         <Col>
           <p>
@@ -82,30 +84,15 @@ const CommunityBrand = () => {
             monochrome tonal when using a color background.
           </p>
         </Col>
-        <Row
-          style={{
-            flexWrap: "wrap",
-          }}
-          className="color-code-wrapper"
+        <Row style={{
+          flexWrap: "wrap"
+        }} className="color-code-wrapper"
         >
           <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
-          <ColorBox
-            name="Caribbean Green"
-            R="0"
-            G="211"
-            B="169"
-            colorCode="#00D3A9"
-          />
+          <ColorBox name="Caribbean Green" R="0" G="211" B="169" colorCode="#00D3A9" />
           <ColorBox name="Casper" R="177" G="182" B="184" colorCode="#B1B6B8" />
           <div className="white-color-box">
-            <ColorBox
-              name="White"
-              R="255"
-              G="255"
-              B="255"
-              dark
-              colorCode="#FFFFFF"
-            />
+            <ColorBox name="White" R="255" G="255" B="255" dark colorCode="#FFFFFF" />
           </div>
         </Row>
       </Row>

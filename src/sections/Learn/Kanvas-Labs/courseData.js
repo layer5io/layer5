@@ -22,7 +22,7 @@ export const data = [
         info: "Learn how to run Meshery, install Istio and deploy a sample app",
         embed: "istio-meshery-adapter",
         link: "/learn/kanvas-labs/working-with-meshery-and-istio",
-        cover: istioLogo,
+        cover: istioLogo
       },
       {
         subId: "1b",
@@ -30,7 +30,7 @@ export const data = [
         info: "Learn how to run Meshery, install Linkerd and deploy a sample app",
         embed: "linkerd-meshery-adapter",
         link: "/learn/kanvas-labs/working-with-meshery-and-linkerd",
-        cover: linkerdLogo,
+        cover: linkerdLogo
       },
       {
         subId: "1c",
@@ -38,7 +38,7 @@ export const data = [
         info: "Learn how to run Meshery, install Consul and deploy a sample app",
         embed: "consul-meshery-adapter",
         link: "/learn/kanvas-labs/working-with-meshery-and-consul",
-        cover: consulLogo,
+        cover: consulLogo
       },
       {
         subId: "1d",
@@ -46,7 +46,7 @@ export const data = [
         info: "Learn how to run Meshery, install Kuma and deploy a sample app",
         embed: "kuma-meshery-adapter",
         link: "/learn/kanvas-labs/working-with-meshery-and-kuma",
-        cover: kumaLogo,
+        cover: kumaLogo
       },
       {
         subId: "1e",
@@ -54,7 +54,7 @@ export const data = [
         info: "Learn how to run Meshery, install NSM and deploy a sample app",
         embed: "nsm-meshery-adapter",
         link: "/learn/kanvas-labs/working-with-meshery-and-nsm",
-        cover: nsmLogo,
+        cover: nsmLogo
       },
       {
         subId: "1f",
@@ -62,7 +62,7 @@ export const data = [
         info: "Learn how to run Meshery, install Traefik and deploy a sample app",
         embed: "traefik-meshery-adapter",
         link: "/learn/kanvas-labs/working-with-meshery-and-traefik",
-        cover: traefikLogo,
+        cover: traefikLogo
       },
       {
         subId: "1g",
@@ -70,9 +70,9 @@ export const data = [
         info: "Learn how to run Meshery, install Open Service Mesh and deploy a sample app",
         embed: "osm-meshery-adapter",
         link: "/learn/kanvas-labs/working-with-meshery-and-open-service-mesh",
-        cover: osmLogo,
-      },
-    ],
+        cover: osmLogo
+      }
+    ]
   },
   {
     id: "2",
@@ -86,7 +86,7 @@ export const data = [
         info: "Learn how to do performance testing with Meshery",
         embed: "running-performance-tests",
         link: "/learn/kanvas-labs/running-performance-tests",
-        cover: smpLogo,
+        cover: smpLogo
       },
       {
         subId: "2b",
@@ -94,8 +94,8 @@ export const data = [
         info: "Traffic Management with Meshery",
         embed: "traffic-splitting",
         link: "/learn/kanvas-labs/traffic-splitting-with-meshery",
-        cover: smiLogo,
-      },
-    ],
+        cover: smiLogo
+      }
+    ]
   },
 ];

@@ -1,11 +1,8 @@
 ### What is the use of this CTA:
-
 The **ConformanceTestTable** component is a used to display a table with sorting options
 
 ### How to use the CTA:
-
 To use this CTA simply specify colums and data
-
 ```
 const columns = [
     {
@@ -41,9 +38,7 @@ const columns = [
     },
   ];
 ```
-
 and call the component
-
 ```
 <ConformanceTestTable columns={columns} data={data}/>
 ```

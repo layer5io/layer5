@@ -24,7 +24,7 @@ const data = {
                           id: "eb737818-c50a-4905-898f-b92d32dd774e",
                           source: "bfb77120-0e02-4230-8006-df9e0c5f9114",
                           subType: "Annotation",
-                          target: "3d435c5d-6bb2-4cf8-ac27-fd85d8917d7f",
+                          target: "3d435c5d-6bb2-4cf8-ac27-fd85d8917d7f"
                         },
                         style: {
                           "control-point-distances": null,
@@ -40,15 +40,15 @@ const data = {
                           "taxi-direction": "downward",
                           "taxi-turn": "20px",
                           "taxi-turn-min-distance": "5px",
-                          width: "1.5px",
-                        },
+                          width: "1.5px"
+                        }
                       },
                       {
                         data: {
                           id: "8a440141-95cc-4a54-b01f-4f14b809818d",
                           source: "afaa487a-076c-4cee-9510-570d67d75b4f",
                           subType: "Annotation",
-                          target: "3d435c5d-6bb2-4cf8-ac27-fd85d8917d7f",
+                          target: "3d435c5d-6bb2-4cf8-ac27-fd85d8917d7f"
                         },
                         style: {
                           "control-point-distances": "40px -40px",
@@ -64,18 +64,15 @@ const data = {
                           "taxi-direction": "downward",
                           "taxi-turn": "20px",
                           "taxi-turn-min-distance": "5px",
-                          width: "1.5px",
-                        },
-                      },
+                          width: "1.5px"
+                        }
+                      }
                     ],
                     fieldRefData: {},
                     id: "3d435c5d-6bb2-4cf8-ac27-fd85d8917d7f",
                     label: "Section",
                     "meshmodel-data": {
-                      category: {
-                        metadata: null,
-                        name: "Orchestration & Management",
-                      },
+                      category: { metadata: null, name: "Orchestration & Management" },
                       components: null,
                       description: "",
                       displayName: "Meshery Shapes",
@@ -88,7 +85,7 @@ const data = {
                           "ui/public/static/img/meshmodels/meshery-shapes/color/meshery-shapes-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/meshery-shapes/white/meshery-shapes-white.svg",
+                          "ui/public/static/img/meshmodels/meshery-shapes/white/meshery-shapes-white.svg"
                       },
                       model: { version: "0.7.1" },
                       name: "meshery-shapes",
@@ -97,7 +94,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "App Definition and Development",
-                      version: "v1.0.0",
+                      version: "v1.0.0"
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -120,7 +117,7 @@ const data = {
                         data: { label: "" },
                         height: "30px",
                         width: "30px",
-                        "z-index": 19,
+                        "z-index": 19
                       },
                       styles:
                         '{"height":"30px","width":"30px", "background-image":"none","border-width":1,"border-style":"dashed","background-opacity":0.1}',
@@ -129,19 +126,16 @@ const data = {
                         "ui/public/static/img/meshmodels/meshery-core/color/anchornode-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/meshery-core/white/anchornode-white.svg",
+                        "ui/public/static/img/meshmodels/meshery-core/white/anchornode-white.svg"
                     },
-                    position: {
-                      posX: -175.58637971030635,
-                      posY: -284.95453433709366,
-                    },
-                    whiteboardData: {},
-                  },
+                    position: { posX: -175.58637971030635, posY: -284.95453433709366 },
+                    whiteboardData: {}
+                  }
                 },
-                type: "Section",
-              },
-            },
-          },
+                type: "Section"
+              }
+            }
+          }
         },
         position: { x: -175.58637971030635, y: -284.95453433709366 },
         group: "nodes",
@@ -151,7 +145,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: "",
+        classes: ""
       },
       {
         data: {
@@ -169,11 +163,11 @@ const data = {
                   spec: {
                     ports: [{ port: 80, protocol: "TCP", "target Port": 3000 }],
                     selector: { app: "node" },
-                    type: "LoadBalancer",
+                    type: "LoadBalancer"
                   },
                   name: "nodeapp",
                   namespace: "default",
-                  labels: { app: "node" },
+                  labels: { app: "node" }
                 },
                 traits: {
                   meshmap: {
@@ -184,7 +178,7 @@ const data = {
                           metadata: { port: 80, protocol: "TCP" },
                           source: "ce761f19-b7b1-433d-83c4-6eb874380030",
                           subType: "Network",
-                          target: "8cb14ecd-d658-4ffa-bf94-beffb65c1837",
+                          target: "8cb14ecd-d658-4ffa-bf94-beffb65c1837"
                         },
                         style: {
                           "control-point-distances": null,
@@ -200,9 +194,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px",
-                        },
-                      },
+                          width: "1.5px"
+                        }
+                      }
                     ],
                     fieldRefData: {},
                     id: "ce761f19-b7b1-433d-83c4-6eb874380030",
@@ -230,7 +224,7 @@ const data = {
                         width: 20,
                         x: "10px",
                         y: "12px",
-                        "z-index": 15,
+                        "z-index": 15
                       },
                       styles:
                         '{"height":20,"width":20,"padding":12,"background-position-y":4.5,"x":"10px","y":"12px"}',
@@ -239,19 +233,16 @@ const data = {
                         "ui/public/static/img/meshmodels/kubernetes/color/service-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg",
+                        "ui/public/static/img/meshmodels/kubernetes/white/service-white.svg"
                     },
-                    position: {
-                      posX: -719.19810352028,
-                      posY: -233.49533623250176,
-                    },
-                    whiteboardData: { style: {} },
-                  },
+                    position: { posX: -719.19810352028, posY: -233.49533623250176 },
+                    whiteboardData: { style: {} }
+                  }
                 },
-                type: "Service",
-              },
-            },
-          },
+                type: "Service"
+              }
+            }
+          }
         },
         position: { x: -719.19810352028, y: -233.49533623250176 },
         group: "nodes",
@@ -261,7 +252,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: "",
+        classes: ""
       },
       {
         data: {
@@ -285,9 +276,9 @@ const data = {
                           "dapr.io/app-id": "nodeapp",
                           "dapr.io/app-port": "3000",
                           "dapr.io/enable-api-logging": "true",
-                          "dapr.io/enabled": "true",
+                          "dapr.io/enabled": "true"
                         },
-                        labels: { app: "node" },
+                        labels: { app: "node" }
                       },
                       spec: {
                         containers: [
@@ -301,7 +292,7 @@ const data = {
                             name: "daprd-sidecar",
                             ports: [{ "container Port": 3000 }],
                             "volume Devices": [],
-                            "volume Mounts": [],
+                            "volume Mounts": []
                           },
                           {
                             args: [],
@@ -312,15 +303,15 @@ const data = {
                             name: "node-app",
                             ports: [],
                             "volume Devices": [],
-                            "volume Mounts": [],
-                          },
-                        ],
-                      },
-                    },
+                            "volume Mounts": []
+                          }
+                        ]
+                      }
+                    }
                   },
                   name: "nodeapp",
                   namespace: "default",
-                  labels: { app: "node" },
+                  labels: { app: "node" }
                 },
                 traits: {
                   meshmap: {
@@ -331,7 +322,7 @@ const data = {
                           metadata: { port: 80, protocol: "TCP" },
                           source: "ce761f19-b7b1-433d-83c4-6eb874380030",
                           subType: "Network",
-                          target: "8cb14ecd-d658-4ffa-bf94-beffb65c1837",
+                          target: "8cb14ecd-d658-4ffa-bf94-beffb65c1837"
                         },
                         style: {
                           "control-point-distances": null,
@@ -347,9 +338,9 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px",
-                        },
-                      },
+                          width: "1.5px"
+                        }
+                      }
                     ],
                     fieldRefData: {},
                     id: "8cb14ecd-d658-4ffa-bf94-beffb65c1837",
@@ -795,7 +786,7 @@ const data = {
                         "z-index-compare": "manual",
                         zCompoundDepth: "auto",
                         zIndex: "3",
-                        zIndexCompare: "manual",
+                        zIndexCompare: "manual"
                       },
                       styles: '{"border-width":2,"background-opacity":0.5}',
                       subCategory: "",
@@ -804,19 +795,16 @@ const data = {
                       svgComplete:
                         "ui/public/static/img/meshmodels/kubernetes/complete/deployment-complete.svg",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg",
+                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg"
                     },
-                    position: {
-                      posX: -534.1631525646346,
-                      posY: -392.5175143523944,
-                    },
-                    whiteboardData: { style: {} },
-                  },
+                    position: { posX: -534.1631525646346, posY: -392.5175143523944 },
+                    whiteboardData: { style: {} }
+                  }
                 },
-                type: "Deployment",
-              },
-            },
-          },
+                type: "Deployment"
+              }
+            }
+          }
         },
         position: { x: -534.1631525646346, y: -392.5175143523944 },
         group: "nodes",
@@ -826,7 +814,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: "",
+        classes: ""
       },
       {
         data: {
@@ -849,9 +837,9 @@ const data = {
                         annotations: {
                           "dapr.io/app-id": "pythonapp",
                           "dapr.io/enable-api-logging": "true",
-                          "dapr.io/enabled": "true",
+                          "dapr.io/enabled": "true"
                         },
-                        labels: { app: "python" },
+                        labels: { app: "python" }
                       },
                       spec: {
                         containers: [
@@ -860,12 +848,11 @@ const data = {
                             command: [],
                             env: [],
                             "env From": [],
-                            image:
-                              "ghcr.io/dapr/samples/hello-k8s-python:latest",
+                            image: "ghcr.io/dapr/samples/hello-k8s-python:latest",
                             name: "python",
                             ports: [],
                             "volume Devices": [],
-                            "volume Mounts": [],
+                            "volume Mounts": []
                           },
                           {
                             args: [],
@@ -875,15 +862,15 @@ const data = {
                             name: "dapr-d sidecar",
                             ports: [],
                             "volume Devices": [],
-                            "volume Mounts": [],
-                          },
-                        ],
-                      },
-                    },
+                            "volume Mounts": []
+                          }
+                        ]
+                      }
+                    }
                   },
                   name: "pythonapp-deployment",
                   namespace: "default",
-                  labels: { app: "python" },
+                  labels: { app: "python" }
                 },
                 traits: {
                   meshmap: {
@@ -911,7 +898,7 @@ const data = {
                         "background-color": "rgb(66,99,235)",
                         "background-opacity": 0.5,
                         "border-style": "solid",
-                        "border-width": 2,
+                        "border-width": 2
                       },
                       styles: '{"border-width":2,"background-opacity":0.5}',
                       subCategory: "",
@@ -920,19 +907,16 @@ const data = {
                       svgComplete:
                         "ui/public/static/img/meshmodels/kubernetes/complete/deployment-complete.svg",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg",
+                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg"
                     },
-                    position: {
-                      posX: -99.44088937335948,
-                      posY: -612.3568858014587,
-                    },
-                    whiteboardData: { style: {} },
-                  },
+                    position: { posX: -99.44088937335948, posY: -612.3568858014587 },
+                    whiteboardData: { style: {} }
+                  }
                 },
-                type: "Deployment",
-              },
-            },
-          },
+                type: "Deployment"
+              }
+            }
+          }
         },
         position: { x: -99.44088937335948, y: -612.3568858014587 },
         group: "nodes",
@@ -942,7 +926,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: "",
+        classes: ""
       },
       {
         data: {
@@ -966,7 +950,7 @@ const data = {
                           id: "8a440141-95cc-4a54-b01f-4f14b809818d",
                           source: "afaa487a-076c-4cee-9510-570d67d75b4f",
                           subType: "Annotation",
-                          target: "3d435c5d-6bb2-4cf8-ac27-fd85d8917d7f",
+                          target: "3d435c5d-6bb2-4cf8-ac27-fd85d8917d7f"
                         },
                         style: {
                           "control-point-distances": "40px -40px",
@@ -982,18 +966,15 @@ const data = {
                           "taxi-direction": "downward",
                           "taxi-turn": "20px",
                           "taxi-turn-min-distance": "5px",
-                          width: "1.5px",
-                        },
-                      },
+                          width: "1.5px"
+                        }
+                      }
                     ],
                     fieldRefData: {},
                     id: "afaa487a-076c-4cee-9510-570d67d75b4f",
                     label: "TextBox",
                     "meshmodel-data": {
-                      category: {
-                        metadata: null,
-                        name: "Orchestration & Management",
-                      },
+                      category: { metadata: null, name: "Orchestration & Management" },
                       components: null,
                       description: "",
                       displayName: "Meshery Core",
@@ -1006,7 +987,7 @@ const data = {
                           "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
+                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg"
                       },
                       model: { version: "0.7.1" },
                       name: "meshery-core",
@@ -1015,7 +996,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "App Definition and Development",
-                      version: "v1.0.0",
+                      version: "v1.0.0"
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -1042,10 +1023,10 @@ const data = {
                         textOverlay: {
                           color: "rgb(208,2,27)",
                           content: "REDIS_STORE",
-                          "font-size": "65",
+                          "font-size": "65"
                         },
                         width: "115.7046155999951px",
-                        "z-index": 21,
+                        "z-index": 21
                       },
                       styles:
                         '{"height":"20px","width":"40px", "background-image":"none","border-width":1,"border-style":"dashed","background-opacity":0,"border-color":"#808080"}',
@@ -1054,19 +1035,16 @@ const data = {
                         "ui/public/static/img/meshmodels/contrail-analytics/color/advancedcronjob-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws-node-termination-handler-2/white/terminator-white.svg",
+                        "ui/public/static/img/meshmodels/aws-node-termination-handler-2/white/terminator-white.svg"
                     },
-                    position: {
-                      posX: 43.8927370532409,
-                      posY: -202.20268438740297,
-                    },
-                    whiteboardData: {},
-                  },
+                    position: { posX: 43.8927370532409, posY: -202.20268438740297 },
+                    whiteboardData: {}
+                  }
                 },
-                type: "TextBox",
-              },
-            },
-          },
+                type: "TextBox"
+              }
+            }
+          }
         },
         position: { x: 43.8927370532409, y: -202.20268438740297 },
         group: "nodes",
@@ -1076,7 +1054,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: "",
+        classes: ""
       },
       {
         data: {
@@ -1100,7 +1078,7 @@ const data = {
                           id: "8d8980fb-8e86-441a-8f25-62970a9a8e5c",
                           source: "b5583797-c9ae-446c-8a46-1febab50964a",
                           subType: "Annotation",
-                          target: "8845dc0d-bcd1-4e2b-9da1-2cc89147d98e",
+                          target: "8845dc0d-bcd1-4e2b-9da1-2cc89147d98e"
                         },
                         style: {
                           "control-point-distances": null,
@@ -1116,15 +1094,15 @@ const data = {
                           "taxi-direction": "downward",
                           "taxi-turn": "20px",
                           "taxi-turn-min-distance": "5px",
-                          width: "1.5px",
-                        },
+                          width: "1.5px"
+                        }
                       },
                       {
                         data: {
                           id: "269daf47-73bb-4091-933b-03753e378208",
                           source: "8845dc0d-bcd1-4e2b-9da1-2cc89147d98e",
                           subType: "Annotation",
-                          target: "bfb77120-0e02-4230-8006-df9e0c5f9114",
+                          target: "bfb77120-0e02-4230-8006-df9e0c5f9114"
                         },
                         style: {
                           "control-point-distances": "40px -40px",
@@ -1140,18 +1118,15 @@ const data = {
                           "taxi-direction": "downward",
                           "taxi-turn": "20px",
                           "taxi-turn-min-distance": "5px",
-                          width: "1.5px",
-                        },
-                      },
+                          width: "1.5px"
+                        }
+                      }
                     ],
                     fieldRefData: {},
                     id: "8845dc0d-bcd1-4e2b-9da1-2cc89147d98e",
                     label: "TextBox",
                     "meshmodel-data": {
-                      category: {
-                        metadata: null,
-                        name: "Orchestration & Management",
-                      },
+                      category: { metadata: null, name: "Orchestration & Management" },
                       components: null,
                       description: "",
                       displayName: "Meshery Core",
@@ -1164,7 +1139,7 @@ const data = {
                           "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
+                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg"
                       },
                       model: { version: "0.7.1" },
                       name: "meshery-core",
@@ -1173,7 +1148,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "App Definition and Development",
-                      version: "v1.0.0",
+                      version: "v1.0.0"
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -1200,10 +1175,10 @@ const data = {
                         textOverlay: {
                           color: "#000000",
                           content: "DAPR CONTROL PLANE",
-                          "font-size": "65",
+                          "font-size": "65"
                         },
                         width: "115.7046155999951px",
-                        "z-index": 20,
+                        "z-index": 20
                       },
                       styles:
                         '{"height":"20px","width":"40px", "background-image":"none","border-width":1,"border-style":"dashed","background-opacity":0,"border-color":"#808080"}',
@@ -1212,19 +1187,16 @@ const data = {
                         "ui/public/static/img/meshmodels/contrail-analytics/color/advancedcronjob-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/aws-node-termination-handler-2/white/terminator-white.svg",
+                        "ui/public/static/img/meshmodels/aws-node-termination-handler-2/white/terminator-white.svg"
                     },
-                    position: {
-                      posX: -342.4060419916933,
-                      posY: -568.9496014366352,
-                    },
-                    whiteboardData: {},
-                  },
+                    position: { posX: -342.4060419916933, posY: -568.9496014366352 },
+                    whiteboardData: {}
+                  }
                 },
-                type: "TextBox",
-              },
-            },
-          },
+                type: "TextBox"
+              }
+            }
+          }
         },
         position: { x: -342.4060419916933, y: -568.9496014366352 },
         group: "nodes",
@@ -1234,7 +1206,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: "",
+        classes: ""
       },
       {
         data: {
@@ -1257,10 +1229,7 @@ const data = {
                     id: "ed3a2ce4-de87-4961-bf77-2e5c96368627",
                     label: "NodeGroupInventoryWallet",
                     "meshmodel-data": {
-                      category: {
-                        metadata: null,
-                        name: "Orchestration & Management",
-                      },
+                      category: { metadata: null, name: "Orchestration & Management" },
                       components: null,
                       description: "",
                       displayName: "Meshery Core",
@@ -1273,7 +1242,7 @@ const data = {
                           "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
+                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg"
                       },
                       model: { version: "0.7.1" },
                       name: "meshery-core",
@@ -1282,7 +1251,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "App Definition and Development",
-                      version: "v1.0.0",
+                      version: "v1.0.0"
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -1304,7 +1273,7 @@ const data = {
                         data: { label: "" },
                         height: "30px",
                         width: "30px",
-                        "z-index": 17,
+                        "z-index": 17
                       },
                       styles:
                         '{"height":"30px","width":"30px", "background-image":"none","border-width":0,"border-style":"dashed","background-opacity":0}',
@@ -1313,21 +1282,18 @@ const data = {
                         "ui/public/static/img/meshmodels/meshery-core/color/anchornode-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/meshery-core/white/anchornode-white.svg",
+                        "ui/public/static/img/meshmodels/meshery-core/white/anchornode-white.svg"
                     },
                     parent: "8cb14ecd-d658-4ffa-bf94-beffb65c1837",
-                    position: {
-                      posX: -550.9469417172508,
-                      posY: -400.4690520360638,
-                    },
-                    whiteboardData: {},
-                  },
+                    position: { posX: -550.9469417172508, posY: -400.4690520360638 },
+                    whiteboardData: {}
+                  }
                 },
-                type: "NodeGroupInventoryWallet",
-              },
-            },
+                type: "NodeGroupInventoryWallet"
+              }
+            }
           },
-          parent: "8cb14ecd-d658-4ffa-bf94-beffb65c1837",
+          parent: "8cb14ecd-d658-4ffa-bf94-beffb65c1837"
         },
         position: { x: -550.9469417172508, y: -400.4690520360638 },
         group: "nodes",
@@ -1337,7 +1303,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: "",
+        classes: ""
       },
       {
         data: {
@@ -1359,7 +1325,7 @@ const data = {
                           id: "9d98e0d1-bec4-4908-891e-ff9458a28caf",
                           source: "d541b107-4229-40ee-8ab8-920adaa84651",
                           subType: "Annotation",
-                          target: "bfb77120-0e02-4230-8006-df9e0c5f9114",
+                          target: "bfb77120-0e02-4230-8006-df9e0c5f9114"
                         },
                         style: {
                           "control-point-distances": null,
@@ -1375,15 +1341,15 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px",
-                        },
+                          width: "1.5px"
+                        }
                       },
                       {
                         data: {
                           id: "75d2d58a-cdc3-4260-805c-770a1ba8bf73",
                           source: "bfb77120-0e02-4230-8006-df9e0c5f9114",
                           subType: "Annotation",
-                          target: "d541b107-4229-40ee-8ab8-920adaa84651",
+                          target: "d541b107-4229-40ee-8ab8-920adaa84651"
                         },
                         style: {
                           "control-point-distances": null,
@@ -1399,15 +1365,15 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "4px",
-                        },
+                          width: "4px"
+                        }
                       },
                       {
                         data: {
                           id: "eb737818-c50a-4905-898f-b92d32dd774e",
                           source: "bfb77120-0e02-4230-8006-df9e0c5f9114",
                           subType: "Annotation",
-                          target: "3d435c5d-6bb2-4cf8-ac27-fd85d8917d7f",
+                          target: "3d435c5d-6bb2-4cf8-ac27-fd85d8917d7f"
                         },
                         style: {
                           "control-point-distances": null,
@@ -1423,15 +1389,15 @@ const data = {
                           "taxi-direction": "downward",
                           "taxi-turn": "20px",
                           "taxi-turn-min-distance": "5px",
-                          width: "1.5px",
-                        },
+                          width: "1.5px"
+                        }
                       },
                       {
                         data: {
                           id: "269daf47-73bb-4091-933b-03753e378208",
                           source: "8845dc0d-bcd1-4e2b-9da1-2cc89147d98e",
                           subType: "Annotation",
-                          target: "bfb77120-0e02-4230-8006-df9e0c5f9114",
+                          target: "bfb77120-0e02-4230-8006-df9e0c5f9114"
                         },
                         style: {
                           "control-point-distances": "40px -40px",
@@ -1447,24 +1413,21 @@ const data = {
                           "taxi-direction": "downward",
                           "taxi-turn": "20px",
                           "taxi-turn-min-distance": "5px",
-                          width: "1.5px",
-                        },
-                      },
+                          width: "1.5px"
+                        }
+                      }
                     ],
                     elementType: "FIELD_REF_NODE",
                     fieldRefData: {
                       elementType: "FIELD_REF_NODE",
                       fieldPath: "spec.template.spec.containers[0]",
                       jsonSchemaPath:
-                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
+                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]"
                     },
                     id: "bfb77120-0e02-4230-8006-df9e0c5f9114",
                     label: "spec.template.spec.containers[0]",
                     "meshmodel-data": {
-                      category: {
-                        metadata: null,
-                        name: "Orchestration & Management",
-                      },
+                      category: { metadata: null, name: "Orchestration & Management" },
                       components: null,
                       description: "",
                       displayName: "Meshery Core",
@@ -1477,7 +1440,7 @@ const data = {
                           "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
+                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg"
                       },
                       model: { version: "0.7.2" },
                       name: "meshery-core",
@@ -1486,7 +1449,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "App Definition and Development",
-                      version: "v1.0.0",
+                      version: "v1.0.0"
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -1504,7 +1467,7 @@ const data = {
                         "background-color": "rgb(147,152,176)",
                         "background-opacity": 0.3,
                         shape: "rectangle",
-                        "z-index": 4,
+                        "z-index": 4
                       },
                       styles: "",
                       subCategory: "",
@@ -1512,25 +1475,22 @@ const data = {
                         "ui/public/static/img/meshmodels/meshery-core/color/container-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg",
+                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg"
                     },
                     parent: "8cb14ecd-d658-4ffa-bf94-beffb65c1837",
-                    position: {
-                      posX: -462.5315851697204,
-                      posY: -435.2674980251155,
-                    },
-                    whiteboardData: {},
-                  },
+                    position: { posX: -462.5315851697204, posY: -435.2674980251155 },
+                    whiteboardData: {}
+                  }
                 },
-                type: "Container",
-              },
-            },
+                type: "Container"
+              }
+            }
           },
           elementType: "FIELD_REF_NODE",
           fieldPath: "spec.template.spec.containers[0]",
           jsonSchemaPath:
             "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
-          parent: "8cb14ecd-d658-4ffa-bf94-beffb65c1837",
+          parent: "8cb14ecd-d658-4ffa-bf94-beffb65c1837"
         },
         position: { x: -462.5315851697204, y: -435.2674980251155 },
         group: "nodes",
@@ -1540,7 +1500,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: "",
+        classes: ""
       },
       {
         data: {
@@ -1562,7 +1522,7 @@ const data = {
                           id: "fe129b95-6234-4ae0-a326-1dd8d0bd360f",
                           source: "b5583797-c9ae-446c-8a46-1febab50964a",
                           subType: "Annotation",
-                          target: "ed4380c5-c801-42c7-ab86-7995c0ea3280",
+                          target: "ed4380c5-c801-42c7-ab86-7995c0ea3280"
                         },
                         style: {
                           "control-point-distances": null,
@@ -1578,15 +1538,15 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px",
-                        },
+                          width: "1.5px"
+                        }
                       },
                       {
                         data: {
                           id: "b388a285-9e41-4bab-b2a4-60601b7191cc",
                           source: "ed4380c5-c801-42c7-ab86-7995c0ea3280",
                           subType: "Annotation",
-                          target: "b5583797-c9ae-446c-8a46-1febab50964a",
+                          target: "b5583797-c9ae-446c-8a46-1febab50964a"
                         },
                         style: {
                           "control-point-distances": null,
@@ -1602,24 +1562,21 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px",
-                        },
-                      },
+                          width: "1.5px"
+                        }
+                      }
                     ],
                     elementType: "FIELD_REF_NODE",
                     fieldRefData: {
                       elementType: "FIELD_REF_NODE",
                       fieldPath: "spec.template.spec.containers[0]",
                       jsonSchemaPath:
-                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
+                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]"
                     },
                     id: "ed4380c5-c801-42c7-ab86-7995c0ea3280",
                     label: "spec.template.spec.containers[0]",
                     "meshmodel-data": {
-                      category: {
-                        metadata: null,
-                        name: "Orchestration & Management",
-                      },
+                      category: { metadata: null, name: "Orchestration & Management" },
                       components: null,
                       description: "",
                       displayName: "Meshery Core",
@@ -1632,7 +1589,7 @@ const data = {
                           "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
+                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg"
                       },
                       model: { version: "0.7.2" },
                       name: "meshery-core",
@@ -1641,7 +1598,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "App Definition and Development",
-                      version: "v1.0.0",
+                      version: "v1.0.0"
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -1655,35 +1612,29 @@ const data = {
                       shape: "circle",
                       shapePolygonPoints: "",
                       status: "enabled",
-                      styleOverrides: {
-                        "background-opacity": 0,
-                        "z-index": 16,
-                      },
+                      styleOverrides: { "background-opacity": 0, "z-index": 16 },
                       styles: "",
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/meshery-core/color/container-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg",
+                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg"
                     },
                     parent: "909bb49c-1966-411d-9d67-08409091e18b",
-                    position: {
-                      posX: -41.009463886844195,
-                      posY: -589.1634141041714,
-                    },
-                    whiteboardData: {},
-                  },
+                    position: { posX: -41.009463886844195, posY: -589.1634141041714 },
+                    whiteboardData: {}
+                  }
                 },
-                type: "Container",
-              },
-            },
+                type: "Container"
+              }
+            }
           },
           elementType: "FIELD_REF_NODE",
           fieldPath: "spec.template.spec.containers[0]",
           jsonSchemaPath:
             "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
-          parent: "909bb49c-1966-411d-9d67-08409091e18b",
+          parent: "909bb49c-1966-411d-9d67-08409091e18b"
         },
         position: { x: -41.009463886844195, y: -589.1634141041714 },
         group: "nodes",
@@ -1693,7 +1644,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: "",
+        classes: ""
       },
       {
         data: {
@@ -1715,7 +1666,7 @@ const data = {
                           id: "fe129b95-6234-4ae0-a326-1dd8d0bd360f",
                           source: "b5583797-c9ae-446c-8a46-1febab50964a",
                           subType: "Annotation",
-                          target: "ed4380c5-c801-42c7-ab86-7995c0ea3280",
+                          target: "ed4380c5-c801-42c7-ab86-7995c0ea3280"
                         },
                         style: {
                           "control-point-distances": null,
@@ -1731,15 +1682,15 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px",
-                        },
+                          width: "1.5px"
+                        }
                       },
                       {
                         data: {
                           id: "b388a285-9e41-4bab-b2a4-60601b7191cc",
                           source: "ed4380c5-c801-42c7-ab86-7995c0ea3280",
                           subType: "Annotation",
-                          target: "b5583797-c9ae-446c-8a46-1febab50964a",
+                          target: "b5583797-c9ae-446c-8a46-1febab50964a"
                         },
                         style: {
                           "control-point-distances": null,
@@ -1755,15 +1706,15 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px",
-                        },
+                          width: "1.5px"
+                        }
                       },
                       {
                         data: {
                           id: "8d8980fb-8e86-441a-8f25-62970a9a8e5c",
                           source: "b5583797-c9ae-446c-8a46-1febab50964a",
                           subType: "Annotation",
-                          target: "8845dc0d-bcd1-4e2b-9da1-2cc89147d98e",
+                          target: "8845dc0d-bcd1-4e2b-9da1-2cc89147d98e"
                         },
                         style: {
                           "control-point-distances": null,
@@ -1779,24 +1730,21 @@ const data = {
                           "taxi-direction": "downward",
                           "taxi-turn": "20px",
                           "taxi-turn-min-distance": "5px",
-                          width: "1.5px",
-                        },
-                      },
+                          width: "1.5px"
+                        }
+                      }
                     ],
                     elementType: "FIELD_REF_NODE",
                     fieldRefData: {
                       elementType: "FIELD_REF_NODE",
                       fieldPath: "spec.template.spec.containers[1]",
                       jsonSchemaPath:
-                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
+                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]"
                     },
                     id: "b5583797-c9ae-446c-8a46-1febab50964a",
                     label: "spec.template.spec.containers[1]",
                     "meshmodel-data": {
-                      category: {
-                        metadata: null,
-                        name: "Orchestration & Management",
-                      },
+                      category: { metadata: null, name: "Orchestration & Management" },
                       components: null,
                       description: "",
                       displayName: "Meshery Core",
@@ -1809,7 +1757,7 @@ const data = {
                           "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
+                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg"
                       },
                       model: { version: "0.7.2" },
                       name: "meshery-core",
@@ -1818,7 +1766,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "App Definition and Development",
-                      version: "v1.0.0",
+                      version: "v1.0.0"
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -1832,35 +1780,29 @@ const data = {
                       shape: "circle",
                       shapePolygonPoints: "",
                       status: "enabled",
-                      styleOverrides: {
-                        "background-opacity": 0,
-                        "z-index": 23,
-                      },
+                      styleOverrides: { "background-opacity": 0, "z-index": 23 },
                       styles: "",
                       subCategory: "",
                       svgColor:
                         "ui/public/static/img/meshmodels/meshery-core/color/container-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg",
+                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg"
                     },
                     parent: "909bb49c-1966-411d-9d67-08409091e18b",
-                    position: {
-                      posX: -143.37231485987476,
-                      posY: -653.550357498746,
-                    },
-                    whiteboardData: {},
-                  },
+                    position: { posX: -143.37231485987476, posY: -653.550357498746 },
+                    whiteboardData: {}
+                  }
                 },
-                type: "Container",
-              },
-            },
+                type: "Container"
+              }
+            }
           },
           elementType: "FIELD_REF_NODE",
           fieldPath: "spec.template.spec.containers[1]",
           jsonSchemaPath:
             "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
-          parent: "909bb49c-1966-411d-9d67-08409091e18b",
+          parent: "909bb49c-1966-411d-9d67-08409091e18b"
         },
         position: { x: -143.37231485987476, y: -653.550357498746 },
         group: "nodes",
@@ -1870,7 +1812,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: "",
+        classes: ""
       },
       {
         data: {
@@ -1892,7 +1834,7 @@ const data = {
                           id: "9d98e0d1-bec4-4908-891e-ff9458a28caf",
                           source: "d541b107-4229-40ee-8ab8-920adaa84651",
                           subType: "Annotation",
-                          target: "bfb77120-0e02-4230-8006-df9e0c5f9114",
+                          target: "bfb77120-0e02-4230-8006-df9e0c5f9114"
                         },
                         style: {
                           "control-point-distances": null,
@@ -1908,15 +1850,15 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "1.5px",
-                        },
+                          width: "1.5px"
+                        }
                       },
                       {
                         data: {
                           id: "75d2d58a-cdc3-4260-805c-770a1ba8bf73",
                           source: "bfb77120-0e02-4230-8006-df9e0c5f9114",
                           subType: "Annotation",
-                          target: "d541b107-4229-40ee-8ab8-920adaa84651",
+                          target: "d541b107-4229-40ee-8ab8-920adaa84651"
                         },
                         style: {
                           "control-point-distances": null,
@@ -1932,24 +1874,21 @@ const data = {
                           "taxi-direction": "auto",
                           "taxi-turn": "50%",
                           "taxi-turn-min-distance": "10px",
-                          width: "4px",
-                        },
-                      },
+                          width: "4px"
+                        }
+                      }
                     ],
                     elementType: "FIELD_REF_NODE",
                     fieldRefData: {
                       elementType: "FIELD_REF_NODE",
                       fieldPath: "spec.template.spec.containers[1]",
                       jsonSchemaPath:
-                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
+                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]"
                     },
                     id: "d541b107-4229-40ee-8ab8-920adaa84651",
                     label: "spec.template.spec.containers[1]",
                     "meshmodel-data": {
-                      category: {
-                        metadata: null,
-                        name: "Orchestration & Management",
-                      },
+                      category: { metadata: null, name: "Orchestration & Management" },
                       components: null,
                       description: "",
                       displayName: "Meshery Core",
@@ -1962,7 +1901,7 @@ const data = {
                           "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
+                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg"
                       },
                       model: { version: "0.7.2" },
                       name: "meshery-core",
@@ -1971,7 +1910,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "App Definition and Development",
-                      version: "v1.0.0",
+                      version: "v1.0.0"
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -1992,25 +1931,22 @@ const data = {
                         "ui/public/static/img/meshmodels/meshery-core/color/container-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg",
+                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg"
                     },
                     parent: "8cb14ecd-d658-4ffa-bf94-beffb65c1837",
-                    position: {
-                      posX: -613.2947199595487,
-                      posY: -367.7675306796733,
-                    },
-                    whiteboardData: {},
-                  },
+                    position: { posX: -613.2947199595487, posY: -367.7675306796733 },
+                    whiteboardData: {}
+                  }
                 },
-                type: "Container",
-              },
-            },
+                type: "Container"
+              }
+            }
           },
           elementType: "FIELD_REF_NODE",
           fieldPath: "spec.template.spec.containers[1]",
           jsonSchemaPath:
             "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
-          parent: "8cb14ecd-d658-4ffa-bf94-beffb65c1837",
+          parent: "8cb14ecd-d658-4ffa-bf94-beffb65c1837"
         },
         position: { x: -613.2947199595487, y: -367.7675306796733 },
         group: "nodes",
@@ -2020,7 +1956,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: "",
+        classes: ""
       },
       {
         data: {
@@ -2041,21 +1977,18 @@ const data = {
                     metadata: [
                       {
                         name: "redisHost",
-                        value: "redis-master.default.svc.cluster.local:6379",
+                        value: "redis-master.default.svc.cluster.local:6379"
                       },
                       {
                         name: "redisPassword",
-                        "secret Key Ref": {
-                          key: "redis-password",
-                          name: "redis",
-                        },
-                      },
+                        "secret Key Ref": { key: "redis-password", name: "redis" }
+                      }
                     ],
                     type: "state.redis",
-                    version: "v1",
+                    version: "v1"
                   },
                   name: "statestore",
-                  namespace: "default",
+                  namespace: "default"
                 },
                 traits: {
                   meshmap: {
@@ -2086,21 +2019,18 @@ const data = {
                         "ui/public/static/img/meshmodels/dapr/color/component-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/dapr/white/component-white.svg",
+                        "ui/public/static/img/meshmodels/dapr/white/component-white.svg"
                     },
                     parent: "3d435c5d-6bb2-4cf8-ac27-fd85d8917d7f",
-                    position: {
-                      posX: -175.58637971030635,
-                      posY: -293.95453433709366,
-                    },
-                    whiteboardData: { style: {} },
-                  },
+                    position: { posX: -175.58637971030635, posY: -293.95453433709366 },
+                    whiteboardData: { style: {} }
+                  }
                 },
-                type: "Component",
-              },
-            },
+                type: "Component"
+              }
+            }
           },
-          parent: "3d435c5d-6bb2-4cf8-ac27-fd85d8917d7f",
+          parent: "3d435c5d-6bb2-4cf8-ac27-fd85d8917d7f"
         },
         position: { x: -175.58637971030635, y: -293.95453433709366 },
         group: "nodes",
@@ -2110,8 +2040,8 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: "",
-      },
+        classes: ""
+      }
     ],
     edges: [
       {
@@ -2119,7 +2049,7 @@ const data = {
           id: "eb737818-c50a-4905-898f-b92d32dd774e",
           source: "bfb77120-0e02-4230-8006-df9e0c5f9114",
           subType: "Annotation",
-          target: "3d435c5d-6bb2-4cf8-ac27-fd85d8917d7f",
+          target: "3d435c5d-6bb2-4cf8-ac27-fd85d8917d7f"
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2129,14 +2059,14 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: "",
+        classes: ""
       },
       {
         data: {
           id: "8a440141-95cc-4a54-b01f-4f14b809818d",
           source: "afaa487a-076c-4cee-9510-570d67d75b4f",
           subType: "Annotation",
-          target: "3d435c5d-6bb2-4cf8-ac27-fd85d8917d7f",
+          target: "3d435c5d-6bb2-4cf8-ac27-fd85d8917d7f"
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2146,14 +2076,14 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: "",
+        classes: ""
       },
       {
         data: {
           id: "9d98e0d1-bec4-4908-891e-ff9458a28caf",
           source: "d541b107-4229-40ee-8ab8-920adaa84651",
           subType: "Annotation",
-          target: "bfb77120-0e02-4230-8006-df9e0c5f9114",
+          target: "bfb77120-0e02-4230-8006-df9e0c5f9114"
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2163,14 +2093,14 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: "",
+        classes: ""
       },
       {
         data: {
           id: "75d2d58a-cdc3-4260-805c-770a1ba8bf73",
           source: "bfb77120-0e02-4230-8006-df9e0c5f9114",
           subType: "Annotation",
-          target: "d541b107-4229-40ee-8ab8-920adaa84651",
+          target: "d541b107-4229-40ee-8ab8-920adaa84651"
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2180,14 +2110,14 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: "",
+        classes: ""
       },
       {
         data: {
           id: "269daf47-73bb-4091-933b-03753e378208",
           source: "8845dc0d-bcd1-4e2b-9da1-2cc89147d98e",
           subType: "Annotation",
-          target: "bfb77120-0e02-4230-8006-df9e0c5f9114",
+          target: "bfb77120-0e02-4230-8006-df9e0c5f9114"
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2197,7 +2127,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: "",
+        classes: ""
       },
       {
         data: {
@@ -2205,7 +2135,7 @@ const data = {
           metadata: { port: 80, protocol: "TCP" },
           source: "ce761f19-b7b1-433d-83c4-6eb874380030",
           subType: "Network",
-          target: "8cb14ecd-d658-4ffa-bf94-beffb65c1837",
+          target: "8cb14ecd-d658-4ffa-bf94-beffb65c1837"
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2215,14 +2145,14 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: "",
+        classes: ""
       },
       {
         data: {
           id: "fe129b95-6234-4ae0-a326-1dd8d0bd360f",
           source: "b5583797-c9ae-446c-8a46-1febab50964a",
           subType: "Annotation",
-          target: "ed4380c5-c801-42c7-ab86-7995c0ea3280",
+          target: "ed4380c5-c801-42c7-ab86-7995c0ea3280"
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2232,14 +2162,14 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: "",
+        classes: ""
       },
       {
         data: {
           id: "b388a285-9e41-4bab-b2a4-60601b7191cc",
           source: "ed4380c5-c801-42c7-ab86-7995c0ea3280",
           subType: "Annotation",
-          target: "b5583797-c9ae-446c-8a46-1febab50964a",
+          target: "b5583797-c9ae-446c-8a46-1febab50964a"
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2249,14 +2179,14 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: "",
+        classes: ""
       },
       {
         data: {
           id: "8d8980fb-8e86-441a-8f25-62970a9a8e5c",
           source: "b5583797-c9ae-446c-8a46-1febab50964a",
           subType: "Annotation",
-          target: "8845dc0d-bcd1-4e2b-9da1-2cc89147d98e",
+          target: "8845dc0d-bcd1-4e2b-9da1-2cc89147d98e"
         },
         position: { x: 0, y: 0 },
         group: "edges",
@@ -2266,9 +2196,9 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: true,
-        classes: "",
-      },
-    ],
+        classes: ""
+      }
+    ]
   },
   elementStyles: {
     "3d435c5d-6bb2-4cf8-ac27-fd85d8917d7f": {
@@ -2694,7 +2624,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px",
+      paddingBottom: "6px"
     },
     "ce761f19-b7b1-433d-83c4-6eb874380030": {
       events: "yes",
@@ -3121,7 +3051,7 @@ const data = {
       "padding-top": "12px",
       paddingTop: "12px",
       "padding-bottom": "12px",
-      paddingBottom: "12px",
+      paddingBottom: "12px"
     },
     "8cb14ecd-d658-4ffa-bf94-beffb65c1837": {
       events: "yes",
@@ -3548,7 +3478,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px",
+      paddingBottom: "6px"
     },
     "909bb49c-1966-411d-9d67-08409091e18b": {
       events: "yes",
@@ -3975,7 +3905,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px",
+      paddingBottom: "6px"
     },
     "afaa487a-076c-4cee-9510-570d67d75b4f": {
       events: "yes",
@@ -4400,7 +4330,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px",
+      paddingBottom: "6px"
     },
     "8845dc0d-bcd1-4e2b-9da1-2cc89147d98e": {
       events: "yes",
@@ -4825,7 +4755,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px",
+      paddingBottom: "6px"
     },
     "ed3a2ce4-de87-4961-bf77-2e5c96368627": {
       events: "yes",
@@ -5250,7 +5180,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px",
+      paddingBottom: "6px"
     },
     "bfb77120-0e02-4230-8006-df9e0c5f9114": {
       events: "yes",
@@ -5677,7 +5607,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px",
+      paddingBottom: "6px"
     },
     "ed4380c5-c801-42c7-ab86-7995c0ea3280": {
       events: "yes",
@@ -6104,7 +6034,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px",
+      paddingBottom: "6px"
     },
     "b5583797-c9ae-446c-8a46-1febab50964a": {
       events: "yes",
@@ -6531,7 +6461,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px",
+      paddingBottom: "6px"
     },
     "d541b107-4229-40ee-8ab8-920adaa84651": {
       events: "yes",
@@ -6958,7 +6888,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px",
+      paddingBottom: "6px"
     },
     "4f5fadd4-077b-4a03-85fa-805aa5acdf1b": {
       events: "yes",
@@ -7385,7 +7315,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px",
+      paddingBottom: "6px"
     },
     "eb737818-c50a-4905-898f-b92d32dd774e": {
       events: "yes",
@@ -7810,7 +7740,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px",
+      paddingBottom: "0px"
     },
     "8a440141-95cc-4a54-b01f-4f14b809818d": {
       events: "yes",
@@ -8239,7 +8169,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px",
+      paddingBottom: "0px"
     },
     "9d98e0d1-bec4-4908-891e-ff9458a28caf": {
       events: "yes",
@@ -8664,7 +8594,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px",
+      paddingBottom: "0px"
     },
     "75d2d58a-cdc3-4260-805c-770a1ba8bf73": {
       events: "yes",
@@ -9089,7 +9019,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px",
+      paddingBottom: "0px"
     },
     "269daf47-73bb-4091-933b-03753e378208": {
       events: "yes",
@@ -9518,7 +9448,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px",
+      paddingBottom: "0px"
     },
     "298816f9-9720-4581-970c-6e96492e3365": {
       events: "yes",
@@ -9943,7 +9873,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px",
+      paddingBottom: "0px"
     },
     "fe129b95-6234-4ae0-a326-1dd8d0bd360f": {
       events: "yes",
@@ -10368,7 +10298,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px",
+      paddingBottom: "0px"
     },
     "b388a285-9e41-4bab-b2a4-60601b7191cc": {
       events: "yes",
@@ -10793,7 +10723,7 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px",
+      paddingBottom: "0px"
     },
     "8d8980fb-8e86-441a-8f25-62970a9a8e5c": {
       events: "yes",
@@ -11218,9 +11148,9 @@ const data = {
       "padding-top": "0px",
       paddingTop: "0px",
       "padding-bottom": "0px",
-      paddingBottom: "0px",
-    },
-  },
+      paddingBottom: "0px"
+    }
+  }
 };
 
 const addStyles = () => {
@@ -11287,7 +11217,7 @@ const addStyles = () => {
 
 const CreateToolBar = () => {
   const cyContainer = document.getElementById(
-    "embedded-design-6fc310cc-d2b4-4434-bce1-e61bc04ebc17",
+    "embedded-design-6fc310cc-d2b4-4434-bce1-e61bc04ebc17"
   );
   const toolbar = document.createElement("div");
   toolbar.innerHTML = `
@@ -11340,7 +11270,7 @@ const CreateToolBar = () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const embedContainer = document.getElementById(
-    "embedded-design-6fc310cc-d2b4-4434-bce1-e61bc04ebc17",
+    "embedded-design-6fc310cc-d2b4-4434-bce1-e61bc04ebc17"
   );
   embedContainer.classList.add("embed-design-container");
   const cyContainer = document.createElement("div");
@@ -11351,7 +11281,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var cy = (window.cy = cytoscape({
     container: document.getElementById(
-      "embedded-design-6fc310cc-d2b4-4434-bce1-e61bc04ebc17-cy",
+      "embedded-design-6fc310cc-d2b4-4434-bce1-e61bc04ebc17-cy"
     ),
 
     autounselectify: true,
@@ -11360,13 +11290,13 @@ document.addEventListener("DOMContentLoaded", function () {
     minZoom: 0.5,
     maxZoom: 6.6,
     layout: {
-      name: "preset",
+      name: "preset"
     },
     elements: data.elements,
-    style: data.style,
+    style: data.style
   }));
 
-  Object.keys(data.elementStyles).forEach((id) => {
+  Object.keys(data.elementStyles).forEach(id => {
     cy.getElementById(id).style(data.elementStyles[id]);
   });
 

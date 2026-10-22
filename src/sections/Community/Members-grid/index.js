@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState , useEffect } from "react";
 // Libraries
 import { Link } from "gatsby";
 
@@ -13,10 +13,11 @@ import { MembersGridWrapper } from "./membersGrid.style";
 import communityImg from "../../../assets/images/community/community-green.svg";
 import { FaBook } from "@react-icons/all-files/fa/FaBook";
 import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
-import badgeImage from "../../../assets/images/recognition-program/recognition-program.webp";
+import  badgeImage from "../../../assets/images/recognition-program/recognition-program.webp";
 import { FaCertificate } from "@react-icons/all-files/fa/FaCertificate";
 
 const MembersGrid = (props) => {
+
   const [marginLeft, setMarginLeft] = useState("1.8rem");
 
   useEffect(() => {
@@ -41,10 +42,9 @@ const MembersGrid = (props) => {
       <div className="members-page-wrapper">
         <Container>
           <div className="members-profile-cards">
-            <Row
-              style={{
-                flexWrap: "wrap",
-              }}
+            <Row style={{
+              flexWrap: "wrap"
+            }}
             >
               {props?.data?.map(({ id, frontmatter, fields }) => (
                 <Col $xs={12} $sm={6} $md={6} $lg={4} $xl={3} key={id}>
@@ -79,14 +79,18 @@ const MembersGrid = (props) => {
                 We also spend a great deal of time trying to recognize and
                 uplift contributors on the Layer5 and Meshery Twitter accounts
                 whether "contribution" means code or any of the other various
-                forms of being involved in the projects and community. Likewise,
-                we try to lift up contributors' works on the{" "}
+                forms of being involved in the projects and community.
+                Likewise, we try to lift up contributors' works on the{" "}
                 <Link to="https://www.linkedin.com/company/layer5">Layer5</Link>
                 ,{" "}
                 <Link to="https://www.linkedin.com/showcase/meshery">
                   Meshery
                 </Link>
-                , <Link to="https://getnighthawk.dev/">Nighthawk</Link>, and{" "}
+                ,{" "}
+                <Link to="https://getnighthawk.dev/">
+                Nighthawk
+                </Link>
+                , and{" "}
                 <Link to="https://www.linkedin.com/showcase/kanvas-new">
                   Service Mesh Performance
                 </Link>{" "}
@@ -107,8 +111,7 @@ const MembersGrid = (props) => {
               <div className="">
                 <VintageBox $right={true} $vintageOne={true}>
                   <Button
-                    $primary
-                    className="banner-btn memberProfileBtn"
+                    $primary                    className="banner-btn memberProfileBtn"
                     title="Read the Community Handbook"
                     $url="/community/handbook"
                     $external={true}
@@ -117,8 +120,7 @@ const MembersGrid = (props) => {
                   </Button>
 
                   <Button
-                    $secondary
-                    className="banner-btn two memberProfileBtn"
+                    $secondary                    className="banner-btn two memberProfileBtn"
                     title="Join the Community"
                     $url="https://slack.layer5.io"
                   >
@@ -132,39 +134,30 @@ const MembersGrid = (props) => {
           <div className="AboutCommunity">
             <div>
               <h3 className="sectionTitle">Recognition Program</h3>
-              <img
-                className="badge-Img"
-                src={badgeImage}
-                alt="Recognition Program Logo"
-                style={{
-                  width: "22rem",
-                  height: "auto",
-                  marginLeft: marginLeft,
-                }}
+              <img className="badge-Img" src={badgeImage} alt="Recognition Program Logo" style={{
+                width: "22rem",
+                height: "auto",
+                marginLeft: marginLeft,
+              }}
               />
             </div>
             <div className="detailsCommunity">
               <p>
-                Layer5 badges are one of the many ways that we recognize the
-                efforts of our contributors and uplift our users. Layer5 badges
-                represent milestones that you achieve both in using and in
-                contributing to Layer5-supported open source projects. As a
-                contributor, this is how you demonstrate your ownership,
-                dedication, skills and loyalty to Layer5. As a user, this is how
-                you demonstrate your prowess.
+              Layer5 badges are one of the many ways that we recognize the efforts
+              of our contributors and uplift our users. Layer5 badges represent milestones
+              that you achieve both in using and in contributing to Layer5-supported
+              open source projects. As a contributor, this is how you demonstrate your ownership,
+              dedication, skills and loyalty to Layer5. As a user,
+              this is how you demonstrate your prowess.
               </p>
               <p>
-                Community members, whether users or contributors, receive badges
-                upon achieving various milestones throughout their journey.
-                These milestones can be related to community activities or
-                aspects of using or contributing to a project. Every community
-                member, whether contributing with code or not, has the
-                opportunity to earn any number of badges in recognition of your
-                achievements.
+              Community members, whether users or contributors, receive badges upon achieving various milestones throughout their journey. These milestones can be related to community activities or aspects of using or contributing to a project.
+              Every community member, whether contributing with code or not,
+              has the opportunity to earn any number of badges in
+              recognition of your achievements.
               </p>
               <p>
-                See what badges you can earn by visiting the Layer5 badges site.
-                Collect the whole set!
+              See what badges you can earn by visiting the Layer5 badges site. Collect the whole set!
               </p>
 
               <div>
@@ -191,6 +184,7 @@ const MembersGrid = (props) => {
               </div>
             </div>
           </div>
+
         </Container>
       </div>
     </MembersGridWrapper>

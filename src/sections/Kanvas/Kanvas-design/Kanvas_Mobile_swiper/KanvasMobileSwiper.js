@@ -10,6 +10,7 @@ import mergeDesign from "../images/merge-design.gif";
 import connectComponents from "../images/connect-components.gif";
 import shareDesign from "../images/share-design.gif";
 
+
 const CONTENT = [
   {
     title: "Confidently make changes to your infrastructure",
@@ -48,11 +49,7 @@ const Card = ({ title, description, img, readMoreLink }) => {
     <div className="card">
       <h2>{title}</h2>
       <p>{description}</p>
-      <img
-        style={{ border: "1px solid #444444", borderRadius: "10px" }}
-        src={img}
-        alt=""
-      />
+      <img style={{ border: "1px solid #444444", borderRadius: "10px" }} src={img} alt="" />
       {/* <a href={readMoreLink}>Read More</a> */}
     </div>
   );
@@ -63,8 +60,8 @@ export const KanvasMobileSwiper = () => {
     <SwiperContainer>
       <h2>Multi user real time collaboration</h2>
       <h6>
-        Designer and Operator live side-by-side, so all design work, from
-        ideation to operation, can be found in one place.
+        Designer and Operator live side-by-side, so all design work, from ideation to operation, can be found in one
+        place.
       </h6>
       <Swiper
         autoplay={{
@@ -83,12 +80,7 @@ export const KanvasMobileSwiper = () => {
         {CONTENT.map(({ title, description, img, readMoreLink, gradient }) => (
           <SwiperSlide key={title}>
             <div className={`card ${gradient}`}>
-              <Card
-                title={title}
-                description={description}
-                img={img}
-                readMoreLink={readMoreLink}
-              />
+              <Card title={title} description={description} img={img} readMoreLink={readMoreLink} />
             </div>
           </SwiperSlide>
         ))}
@@ -96,3 +88,4 @@ export const KanvasMobileSwiper = () => {
     </SwiperContainer>
   );
 };
+

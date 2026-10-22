@@ -333,9 +333,7 @@ const Footer = ({ location }) => {
                 action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb"
               >
                 <div>
-                  <label htmlFor="mce-EMAIL-2">
-                    Subscribe to our Newsletter
-                  </label>
+                  <label htmlFor="mce-EMAIL-2">Subscribe to our Newsletter</label>
                   <input
                     className="inputrow subscribe-email"
                     type="email"

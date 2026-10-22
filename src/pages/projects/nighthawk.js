@@ -7,17 +7,15 @@ import Subscribe from "../../sections/subscribe/subscribe";
 const NighthawkPage = () => {
   return (
     <>
-      <Nighthawk />
+      <Nighthawk  />
       <Subscribe />
+
     </>
   );
 };
 export default NighthawkPage;
 export const Head = () => {
-  return (
-    <SEO
-      title="Nighthawk"
-      description="Behavioral characterization of your microservices' performance"
-    />
-  );
+  return <SEO title="Nighthawk"
+    description="Behavioral characterization of your microservices' performance"
+  />;
 };

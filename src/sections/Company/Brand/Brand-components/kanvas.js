@@ -10,23 +10,23 @@ import Kanvas from "../../../../assets/images/kanvas/horizontal/kanvas-horizonta
 import KanvasTitle from "../../../../assets/images/kanvas/text-only/kanvas-text-color.svg";
 
 const KanvasWrapper = styled.section`
-  .sub-project {
-    margin-top: -2rem;
-  }
+    .sub-project {
+        margin-top: -2rem;
+    }
 `;
 
 const KanvasBrand = () => {
   return (
     <KanvasWrapper>
       <div className="post-content">
-        <Row
-          style={{
-            flexWrap: "wrap",
-          }}
-          className="sub-project brand-section"
+        <Row style={{
+          flexWrap: "wrap"
+        }} className="sub-project brand-section"
         >
           <Col $xs={12} $sm={6}>
-            <h2 className="layerH3">Kanvas</h2>
+            <h2 className="layerH3">
+              Kanvas
+            </h2>
           </Col>
           <Col $xs={12} $sm={6} className="download-button">
             <a href="/brand/kanvas-brand-kit.zip">
@@ -46,74 +46,52 @@ const KanvasBrand = () => {
             </p>
           </Col>
         </Row>
-        <Row
-          style={{
-            flexWrap: "wrap",
-          }}
+        <Row style={{
+          flexWrap: "wrap"
+        }}
         >
           <Col>
-            <h2 className="layerH3 in">Logos</h2>
+            <h2 className="layerH3 in">
+              Logos
+            </h2>
           </Col>
           <SRLWrapper>
             <Row $Vcenter className="ImgDiv">
               <Col $xs={12} $sm={4}>
-                <img
-                  src={Kanvas}
-                  style={{ minWidth: "200px" }}
-                  alt="Kanvas Logo"
-                />
+                <img src={Kanvas} style={{ minWidth: "200px" }} alt="Kanvas Logo" />
                 <h5>mark and text</h5>
               </Col>
               <Col $xs={12} $sm={4}>
-                <img
-                  src={KanvasTitle}
-                  style={{ minWidth: "200px" }}
-                  alt="KanvasTitle Text"
-                />
+                <img src={KanvasTitle} style={{ minWidth: "200px" }} alt="KanvasTitle Text" />
                 <h5>text only</h5>
               </Col>
               <Col $xs={12} $sm={4}>
-                <img
-                  src={KanvasIcon}
-                  style={{ minWidth: "100px" }}
-                  alt="KanvasLight Icon"
-                />
+                <img src={KanvasIcon} style={{ minWidth: "100px" }} alt="KanvasLight Icon" />
                 <h5>mark only</h5>
               </Col>
             </Row>
           </SRLWrapper>
         </Row>
-        <Row
-          style={{
-            flexWrap: "wrap",
-          }}
+        <Row style={{
+          flexWrap: "wrap"
+        }}
         >
           <Col>
-            <h2 className="layerH3 in">Colors</h2>
+            <h2 className="layerH3 in">
+              Colors
+            </h2>
           </Col>
           <Col>
             <p>
-              The Kanvas color palette consists of the primary Kanvas color and
-              additional shades. The Kanvas logo should be white or monochrome
-              tonal when using a color background.
+              The Kanvas color palette consists of the primary Kanvas color
+              and additional shades. The Kanvas logo should be white or
+              monochrome tonal when using a color background.
             </p>
           </Col>
           <Row className="color-code-wrapper">
             <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
-            <ColorBox
-              name="Caribbean Green"
-              R="0"
-              G="211"
-              B="169"
-              colorCode="#00D3A9"
-            />
-            <ColorBox
-              name="Charcoal"
-              R="60"
-              G="73"
-              B="79"
-              colorCode="#3C494F"
-            />
+            <ColorBox name="Caribbean Green" R="0" G="211" B="169" colorCode="#00D3A9" />
+            <ColorBox name="Charcoal" R="60" G="73" B="79" colorCode="#3C494F" />
           </Row>
         </Row>
       </div>

@@ -9,23 +9,23 @@ import MesheryOperatorDark from "../../../../assets/images/meshery-operator/mesh
 import MesheryOperator from "../../../../assets/images/meshery-operator/meshery-operator-white.webp";
 
 const MesheryOperatorWrapper = styled.section`
-  .sub-project {
-    margin-top: -2rem;
-  }
+    .sub-project {
+        margin-top: -2rem;
+    }
 `;
 
 const MesheryOperatorBrand = () => {
   return (
     <MesheryOperatorWrapper>
       <div className="post-content">
-        <Row
-          style={{
-            flexWrap: "wrap",
-          }}
-          className="sub-project brand-section"
+        <Row style={{
+          flexWrap: "wrap"
+        }} className="sub-project brand-section"
         >
           <Col $xs={12} $sm={6}>
-            <h2 className="layerH3">Meshery Operator</h2>
+            <h2 className="layerH3">
+              Meshery Operator
+            </h2>
           </Col>
           <Col $xs={12} $sm={6} className="download-button">
             <a href="/brand/meshery-operator-brand-kit.zip">
@@ -36,22 +36,23 @@ const MesheryOperatorBrand = () => {
           </Col>
           <Col>
             <p>
-              The Meshery Operator mark includes the Meshery Operator name &
-              logo, and any word, phrase, image, or other designation that
-              identifies the source or origin of any Layer5 projects. Please
-              don’t modify the marks or use them in a confusing way, including
-              suggesting sponsorship or endorsement by Layer5, or in a way that
-              confuses Layer5 with another brand (including your own).
+              The Meshery Operator mark includes the Meshery Operator name & logo, and any word,
+              phrase, image, or other designation that identifies the source or
+              origin of any Layer5 projects. Please don’t modify the marks or
+              use them in a confusing way, including suggesting sponsorship or
+              endorsement by Layer5, or in a way that confuses Layer5 with
+              another brand (including your own).
             </p>
           </Col>
         </Row>
-        <Row
-          style={{
-            flexWrap: "wrap",
-          }}
+        <Row style={{
+          flexWrap: "wrap"
+        }}
         >
           <Col>
-            <h2 className="layerH3 in">Logos</h2>
+            <h2 className="layerH3 in">
+              Logos
+            </h2>
           </Col>
           <SRLWrapper>
             <Row $Vcenter className="ImgDiv">
@@ -64,50 +65,30 @@ const MesheryOperatorBrand = () => {
             </Row>
           </SRLWrapper>
         </Row>
-        <Row
-          style={{
-            flexWrap: "wrap",
-          }}
+        <Row style={{
+          flexWrap: "wrap"
+        }}
         >
           <Col>
-            <h2 className="layerH3 in">Colors</h2>
+            <h2 className="layerH3 in">
+              Colors
+            </h2>
           </Col>
           <Col>
             <p>
-              The Meshery Operator color palette consists of the $primary
-              Meshery Operator color and additional shades. The Meshery Operator
-              logo should be white or monochrome tonal when using a color
-              background.
+              The Meshery Operator color palette consists of the $primary Meshery Operator color
+              and additional shades. The Meshery Operator logo should be white or
+              monochrome tonal when using a color background.
             </p>
           </Col>
-          <Row
-            style={{
-              flexWrap: "wrap",
-            }}
-            className="color-code-wrapper"
+          <Row style={{
+            flexWrap: "wrap"
+          }} className="color-code-wrapper"
           >
-            <ColorBox
-              name="Charcoal"
-              R="60"
-              G="73"
-              B="79"
-              colorCode="#3C494F"
-            />
+            <ColorBox name="Charcoal" R="60" G="73" B="79" colorCode="#3C494F" />
             <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
-            <ColorBox
-              name="Caribbean Green"
-              R="0"
-              G="211"
-              B="169"
-              colorCode="#00D3A9"
-            />
-            <ColorBox
-              name="Blue Bayoux"
-              R="100"
-              G="120"
-              B="129"
-              colorCode="#647881"
-            />
+            <ColorBox name="Caribbean Green" R="0" G="211" B="169" colorCode="#00D3A9" />
+            <ColorBox name="Blue Bayoux" R="100" G="120" B="129" colorCode="#647881" />
           </Row>
         </Row>
       </div>

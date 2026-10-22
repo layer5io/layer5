@@ -7,10 +7,7 @@ import PaginationWrapper from "./pagination.style";
 const STABLE_ROUTES = [
   // Getting Started
   { link: "/projects/sistent/getting-started/about", text: "About" },
-  {
-    link: "/projects/sistent/getting-started/installation",
-    text: "Installation",
-  },
+  { link: "/projects/sistent/getting-started/installation", text: "Installation" },
   { link: "/projects/sistent/getting-started/usage", text: "Usage" },
   { link: "/projects/sistent/getting-started/tokens", text: "Tokens" },
 
@@ -22,10 +19,7 @@ const STABLE_ROUTES = [
   { link: "/projects/sistent/identity/spacing/guidance", text: "Spacing" },
   { link: "/projects/sistent/identity/spacing/code", text: "Spacing" },
   { link: "/projects/sistent/identity/typography", text: "Typography" },
-  {
-    link: "/projects/sistent/identity/typography/guidance",
-    text: "Typography",
-  },
+  { link: "/projects/sistent/identity/typography/guidance", text: "Typography" },
   { link: "/projects/sistent/identity/typography/code", text: "Typography" },
 ];
 
@@ -40,7 +34,11 @@ const SistentPagination = () => {
 
   const data = useStaticQuery(graphql`
     query SistentPaginationNav {
-      allMdx(filter: { fields: { collection: { eq: "sistent" } } }) {
+      allMdx(
+        filter: {
+          fields: { collection: { eq: "sistent" } }
+        }
+      ) {
         nodes {
           frontmatter {
             name
@@ -60,10 +58,7 @@ const SistentPagination = () => {
   const publishedComponents = useMemo(() => {
     const published = new Set();
     data.allMdx.nodes.forEach((node) => {
-      if (
-        node.fields.pageType === "overview" &&
-        node.frontmatter.published === true
-      ) {
+      if (node.fields.pageType === "overview" && node.frontmatter.published === true) {
         published.add(node.frontmatter.component);
       }
     });
@@ -85,8 +80,7 @@ const SistentPagination = () => {
           return (a.componentSlug || "").localeCompare(b.componentSlug || "");
         }
         return (
-          (PAGE_TYPE_ORDER[a.pageType] || 99) -
-          (PAGE_TYPE_ORDER[b.pageType] || 99)
+          (PAGE_TYPE_ORDER[a.pageType] || 99) - (PAGE_TYPE_ORDER[b.pageType] || 99)
         );
       });
   }, [data.allMdx.nodes, publishedComponents]);
@@ -105,8 +99,7 @@ const SistentPagination = () => {
   useEffect(() => {
     const path = window.location.pathname;
     // Handle trailing slashes
-    const cleanPath =
-      path.endsWith("/") && path.length > 1 ? path.slice(0, -1) : path;
+    const cleanPath = path.endsWith("/") && path.length > 1 ? path.slice(0, -1) : path;
     const index = fullContentArray.findIndex((x) => x.link === cleanPath);
     setCurrentPage(index);
   }, [fullContentArray]);

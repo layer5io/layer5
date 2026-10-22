@@ -7,15 +7,11 @@ const TermsOfService = () => {
   return (
     <>
       <Terms />
+
     </>
   );
 };
 export default TermsOfService;
 export const Head = () => {
-  return (
-    <SEO
-      title="Terms of Service"
-      description="We believe innovation is furthered by collaboration and that collaboration is enabled by infrastructure."
-    />
-  );
+  return <SEO title="Terms of Service" description="We believe innovation is furthered by collaboration and that collaboration is enabled by infrastructure." />;
 };

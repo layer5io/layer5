@@ -18,7 +18,9 @@ const HandbookSingle = ({ data, children }) => {
       <HandbookTOC pages={allHandbookPages.nodes} currentSlug={currentSlug} />
       <div className="page-section">
         <Container>
-          <div className="content">{children}</div>
+          <div className="content">
+            {children}
+          </div>
           <HandbookPagination
             pages={allHandbookPages.nodes}
             currentSlug={currentSlug}

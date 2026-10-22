@@ -3,25 +3,25 @@ import styled from "styled-components";
 import Button from "../../reusecore/Button";
 
 const BtnContainer = styled.div`
-  display: flex;
-  gap: 40px;
-  flex-direction: row;
-  justify-content: center;
-  Button {
-    font-size: 18px;
-  }
+        display: flex;
+        gap: 40px;
+        flex-direction: row;
+        justify-content: center;
+        Button {
+            font-size: 18px;
+        }
 
-  @media (max-width: 418px) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-  }
+    @media (max-width: 418px) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+    }
 `;
 
 const KanvasBtn = ({ title, style }) => {
   return (
-    <BtnContainer className="btn" style={style}>
+    <BtnContainer className="btn" style={style} >
       <Button
         $primary
         $external={true}

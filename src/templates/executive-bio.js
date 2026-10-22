@@ -19,49 +19,47 @@ const LiteModeNotice = ({ entity }) => (
       {`This ${entity} page is skipped when BUILD_FULL_SITE=false to keep local builds fast.`}
     </p>
     <p style={{ marginTop: "0.75rem" }}>
-      Run <code>make site-full</code> (or set <code>BUILD_FULL_SITE=true</code>)
-      to render the full content.
+      Run <code>make site-full</code> (or set <code>BUILD_FULL_SITE=true</code>) to render the full content.
     </p>
   </section>
 );
 
-export const query = graphql`
-  query MemberBioBySlug($member: String!) {
-    allMdx(
-      filter: {
+export const query = graphql`query MemberBioBySlug($member: String!) {
+  allMdx(
+    filter: {
         fields: { collection: { eq: "members" } }
         frontmatter: { name: { eq: $member }, published: { eq: true } }
       }
-    ) {
-      nodes {
+  ) {
+    nodes {
         id
 
-        frontmatter {
-          name
-          position
-          github
-          twitter
-          email
-          profile
-          meshmate
-          linkedin
-          location
-          badges
-          bio
-          executive_bio
-          executive_position
-          company
-          executive_image {
-            extension
-            publicURL
-            childImageSharp {
-              gatsbyImageData(width: 500, layout: CONSTRAINED)
-            }
-          }
+    frontmatter {
+      name
+      position
+      github
+      twitter
+      email
+      profile
+      meshmate
+      linkedin
+      location
+      badges
+      bio
+      executive_bio
+      executive_position
+      company
+      executive_image {
+        extension
+        publicURL
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
       }
     }
+}
   }
+}
 `;
 
 const MemberBioSinglePage = ({ data, children }) => {
@@ -71,9 +69,18 @@ const MemberBioSinglePage = ({ data, children }) => {
   }
 
   return (
+
     <>
-      <MemberBio frontmatter={frontmatter}>{children}</MemberBio>
+
+
+      <MemberBio
+        frontmatter={frontmatter}
+      >
+        {children}
+      </MemberBio>
+
     </>
+
   );
 };
 
@@ -90,10 +97,5 @@ export const Head = ({ data }) => {
     );
   }
 
-  return (
-    <SEO
-      title={frontmatter.name}
-      image={frontmatter.executive_image?.publicURL}
-    />
-  );
+  return <SEO title={frontmatter.name} image={frontmatter.executive_image?.publicURL} />;
 };

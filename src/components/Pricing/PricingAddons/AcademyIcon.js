@@ -1,10 +1,5 @@
 import React from "react";
-const AcademyIcon = ({
-  width = "32px",
-  height = "32px",
-  primaryFill,
-  secondaryFill,
-}) => {
+const AcademyIcon = ({ width = "32px", height = "32px", primaryFill, secondaryFill }) => {
   return (
     <svg
       fill={primaryFill}

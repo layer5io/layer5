@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 
+
 import SEO from "../components/seo";
 
 import IndividualIntegrations from "../sections/Meshery/Meshery-integrations/Individual-Integrations";
@@ -19,15 +20,16 @@ const LiteModeNotice = ({ entity }) => (
       {`This ${entity} page is skipped when BUILD_FULL_SITE=false to keep local builds fast.`}
     </p>
     <p style={{ marginTop: "0.75rem" }}>
-      Run <code>make site-full</code> (or set <code>BUILD_FULL_SITE=true</code>)
-      to render the full content.
+      Run <code>make site-full</code> (or set <code>BUILD_FULL_SITE=true</code>) to render the full content.
     </p>
   </section>
 );
 
+
 export const query = graphql`
   query IntegrationsBySlug($slug: String!, $name: String!) {
-    mdx(fields: { slug: { eq: $slug } }) {
+    mdx(fields:{slug:{eq: $slug}}) {
+
       frontmatter {
         title
         subtitle
@@ -62,11 +64,7 @@ export const query = graphql`
       }
     }
     screenshots_raster: allFile(
-      filter: {
-        relativeDirectory: { eq: $name }
-        sourceInstanceName: { eq: "integrations" }
-        extension: { ne: "svg" }
-      }
+      filter: {relativeDirectory: {eq: $name}, sourceInstanceName: {eq: "integrations"}, extension: {ne: "svg"}}
     ) {
       nodes {
         extension
@@ -77,11 +75,7 @@ export const query = graphql`
       }
     }
     screenshots_svg: allFile(
-      filter: {
-        relativeDirectory: { eq: $name }
-        sourceInstanceName: { eq: "integrations" }
-        extension: { eq: "svg" }
-      }
+      filter: {relativeDirectory: {eq: $name}, sourceInstanceName: {eq: "integrations"}, extension: {eq: "svg"}}
     ) {
       nodes {
         extension
@@ -96,10 +90,18 @@ const Integrations = ({ data, children }) => {
     return <LiteModeNotice entity="integration" />;
   }
 
+
   return (
+
     <>
-      <IndividualIntegrations data={data}>{children}</IndividualIntegrations>
+
+
+      <IndividualIntegrations data={data}>
+        {children}
+      </IndividualIntegrations>
+
     </>
+
   );
 };
 export default Integrations;
@@ -115,11 +117,5 @@ export const Head = ({ data }) => {
     );
   }
 
-  return (
-    <SEO
-      title={frontmatter.title}
-      image={frontmatter.integrationIcon?.publicURL}
-      description={frontmatter.subtitle}
-    />
-  );
+  return <SEO title={frontmatter.title} image={frontmatter.integrationIcon?.publicURL} description={frontmatter.subtitle}/>;
 };

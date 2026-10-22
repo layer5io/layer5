@@ -20,9 +20,7 @@ export const copyToClipboard = async (str) => {
     textarea.select();
     textarea.setSelectionRange(0, textarea.value.length);
     if (!document.execCommand("copy")) {
-      throw new Error(
-        'document.execCommand("copy") was rejected by the browser',
-      );
+      throw new Error("document.execCommand(\"copy\") was rejected by the browser");
     }
   } finally {
     document.body.removeChild(textarea);

@@ -40,10 +40,7 @@ const MesheryTerminal = () => {
             lines: [
               {
                 frames: 5,
-                code: [
-                  "curl -L https://meshery.io/install | PLATFORM=kubernetes bash -",
-                  "curl -L https://meshery.io/install | PLATFORM=kubernetes bash -|",
-                ],
+                code: ["curl -L https://meshery.io/install | PLATFORM=kubernetes bash -", "curl -L https://meshery.io/install | PLATFORM=kubernetes bash -|"],
               },
             ],
           }}
@@ -53,19 +50,13 @@ const MesheryTerminal = () => {
               description: (
                 <>
                   <p>
-                    Meshery provides you with a clean, robust, streamlined
-                    command-line interface to manage your cloud native
-                    infrastructure.
+                    Meshery provides you with a clean, robust, streamlined command-line interface to manage your cloud native infrastructure.
                   </p>
                   <p>
-                    With <code>mesheryctl</code>, not only you can manage your
-                    infrastructure, but you can also manage their workloads,
-                    characterize performance, and apply well-architectued
-                    patterns.
+                    With <code>mesheryctl</code>, not only you can manage your infrastructure, but you can also manage their workloads, characterize performance, and apply well-architectued patterns.
                   </p>
                   <p>
-                    <code>mesheryctl</code> provides support for all of
-                    Meshery's features and many platforms.
+                    <code>mesheryctl</code> provides support for all of Meshery's features and many platforms.
                   </p>
                 </>
               ),
@@ -123,26 +114,27 @@ const MesheryTerminal = () => {
                   },
                   {
                     frames: 4,
-                    code: "Archive:  /Users/layer5/meshery.zip",
+                    code:
+                      "Archive:  /Users/layer5/meshery.zip",
                     color: "gray",
                   },
                   {
                     frames: 4,
                     code: "inflating: LICENSE",
                     indent: 1,
-                    short: true,
+                    short: true
                   },
                   {
                     frames: 2,
                     code: "inflating: README.md",
                     indent: 1,
-                    short: true,
+                    short: true
                   },
                   {
                     frames: 2,
                     code: "inflating: mesheryctl",
                     indent: 1,
-                    short: true,
+                    short: true
                   },
                   { code: " " },
                   {
@@ -233,17 +225,13 @@ const MesheryTerminal = () => {
               description: (
                 <>
                   <p>
-                    Meshery supports cloud native application patterns using a
-                    cloud-agnostic and application-holistic approach: designs.
+                    Meshery supports cloud native application patterns using a cloud-agnostic and application-holistic approach: designs.
                   </p>
                   <p>
-                    Meshery designs enable the practice of both configuring and
-                    operating functionality in a single, universal file.
+                    Meshery designs enable the practice of both configuring and operating functionality in a single, universal file.
                   </p>
                   <p>
-                    With a design, you can capture behavior in a single file.
-                    You can access infrastructure-specific differentiation while
-                    keeping your patterns short and simple.
+                    With a design, you can capture behavior in a single file. You can access infrastructure-specific differentiation while keeping your patterns short and simple.
                   </p>
                 </>
               ),
@@ -255,7 +243,7 @@ const MesheryTerminal = () => {
                 {
                   url: ImageHub,
                   alt: "Image Hub",
-                },
+                }
               ],
               terminal: {
                 frameLength: 100,
@@ -273,7 +261,8 @@ const MesheryTerminal = () => {
                   },
                   {
                     frames: 5,
-                    code: "✓ Meshery connected to Kubernetes at https://kubernetes.example.com:6443",
+                    code:
+                      "✓ Meshery connected to Kubernetes at https://kubernetes.example.com:6443",
                   },
                   {
                     frames: 2,
@@ -332,13 +321,15 @@ const MesheryTerminal = () => {
                   { code: "" },
                   {
                     frames: 2,
-                    code: "\nYour cloud native application pattern deployment was successful!",
+                    code:
+                      "\nYour cloud native application pattern deployment was successful!",
                     color: "gray",
                   },
                   { code: "" },
                   {
                     frames: 1,
-                    code: "\nDeployment URL: https://meshery.local/patterns",
+                    code:
+                      "\nDeployment URL: https://meshery.local/patterns",
                     color: "green",
                   },
                 ],
@@ -349,20 +340,13 @@ const MesheryTerminal = () => {
               description: (
                 <>
                   <p>
-                    Meshery provides cloud native infrastructure and application
-                    performance measurement and management.
+                    Meshery provides cloud native infrastructure and application performance measurement and management.
                   </p>
                   <p>
-                    Meshery natively supports the{" "}
-                    <Link to="/projects/cloud-native-performance">
-                      Cloud Native Performance
-                    </Link>{" "}
-                    (SMP) specification.
+                    Meshery natively supports the <Link to="/projects/cloud-native-performance">Cloud Native Performance</Link> (SMP) specification.
                   </p>
                   <p>
-                    Use performance test profiles to schedule and continuously
-                    verify your application is performing in accordance with
-                    your SLOs.
+                    Use performance test profiles to schedule and continuously verify your application is performing in accordance with your SLOs.
                   </p>
                 </>
               ),
@@ -370,7 +354,7 @@ const MesheryTerminal = () => {
                 {
                   url: SMP,
                   alt: "Cloud Native Performance",
-                },
+                }
               ],
               terminal: {
                 frameLength: 100,
@@ -388,7 +372,8 @@ const MesheryTerminal = () => {
                   },
                   {
                     frames: 2,
-                    code: "✓ Meshery connected to Kubernetes at https://kubernetes.example.com:6443",
+                    code:
+                      "✓ Meshery connected to Kubernetes at https://kubernetes.example.com:6443",
                   },
                   {
                     frames: 2,

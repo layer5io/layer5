@@ -8,14 +8,15 @@ import KanvasDesignFeatureCarousel from "./kanvas-design-features-carousel";
 
 import Reviews from "../../Pricing/review-slider";
 
+
 const KanvasDesign = () => {
   return (
     <KanvasDesignWrapper>
       <KanvasDesignBanner />
       <KanvasHeroSection />
       {/* <DesignDefault /> */}
-      <KanvasIntegrationsSection />
-      <KanvasMobileSwiper />
+      <KanvasIntegrationsSection/>
+      <KanvasMobileSwiper/>
       <KanvasDesignFeatureCarousel />
       <Reviews />
     </KanvasDesignWrapper>

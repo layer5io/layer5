@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as SCA } from "../../../collections/programs/sca-contributhon/sca.svg";
+import { ReactComponent as SCA }  from "../../../collections/programs/sca-contributhon/sca.svg";
 import { ReactComponent as MLH } from "../../../collections/programs/mlh-2020/mlh.svg";
 import { ReactComponent as LFX } from "../../../collections/programs/lfx-2022/lfx-white.svg";
 import { ReactComponent as Hacktoberfest } from "../../../assets/images/programs/hacktoberfest.svg";
@@ -51,7 +51,7 @@ export const programs_data = [
     description:
       "The Linux Foundation's CommunityBridge is building a healthy ecosystem around the open source software by funding projects, securing code, and connecting with talented developers. Layer5 has been participating in the  CommunityBridge's mentorship program since 2019.",
     buttonLink: "/programs/communitybridge",
-    imageLink: <Bridge alt="Bridge" />,
+    imageLink: <Bridge alt="Bridge"/>,
     imagePosition: "second",
   },
   {

@@ -1,11 +1,8 @@
 ### What is the use of this CTA:
-
 The **ContactCard** component is a card to unsubscribe from getting updates from Layer5
 
 ### How to use the CTA:
-
 To use this CTA simply use
-
 ```
 <ContactCard />
 ```

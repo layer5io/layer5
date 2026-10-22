@@ -4,24 +4,17 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import ProjectItemWrapper from "./projectSection.style";
 import CatalogLogo from "../../../assets/images/catalog-icon/catalog";
-import {
-  ThemeManagerContext,
-  ThemeManagerProvider,
-} from "../../../theme/app/ThemeManager";
+import { ThemeManagerContext, ThemeManagerProvider } from "../../../theme/app/ThemeManager";
 
 const Projects = () => {
   const { isDark, didLoad } = useContext(ThemeManagerContext);
 
-  const projectImage2_light =
-    "../../../assets/images/service-mesh-performance/icon/smp-light.svg";
+  const projectImage2_light = "../../../assets/images/service-mesh-performance/icon/smp-light.svg";
   const projectImage2_dark = "../../../assets/images/app/projects/smp.webp";
-  const projectImage3 =
-    "../../../assets/images/app/projects/meshery-logo-light.webp";
-  const projectImage4 =
-    "../../../assets/images/app/projects/nighthawk-logo.webp";
-  const kanvasLogo =
-    "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
-  if (!didLoad) {
+  const projectImage3 = "../../../assets/images/app/projects/meshery-logo-light.webp";
+  const projectImage4 = "../../../assets/images/app/projects/nighthawk-logo.webp";
+  const kanvasLogo = "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
+  if (!didLoad){
     return null;
   }
 
@@ -36,8 +29,7 @@ const Projects = () => {
               $UniWidth="75%"
             >
               <h2>
-                Operate cloud native infrastructure <span>with confidence</span>
-                .
+                Operate cloud native infrastructure <span>with confidence</span>.
               </h2>
             </SectionTitle>
           </div>
@@ -45,19 +37,9 @@ const Projects = () => {
         <Row>
           <div className="project__block__wrap">
             <Col $sm={12} $md={6} $lg={3}>
-              <Link
-                className="project-card"
-                to="/cloud-native-management/kanvas"
-              >
+              <Link className="project-card" to="/cloud-native-management/kanvas">
                 <div className="project__block__inner">
-                  <img
-                    loading="lazy"
-                    src={kanvasLogo}
-                    alt="Kanvas Logo"
-                    width="24"
-                    height="39"
-                    style={{ width: "24px", height: "39px" }}
-                  />
+                  <img loading="lazy" src={kanvasLogo} alt="Kanvas Logo" width="24" height="39" style={{ width: "24px", height: "39px" }} />
                   <p>Kanvas</p>
                   <h3>Collaborative GitOps</h3>
                   {/* <h3>Multiplayer Kubernetes by Design</h3> */}
@@ -65,49 +47,22 @@ const Projects = () => {
               </Link>
             </Col>
             <Col $sm={12} $md={6} $lg={3}>
-              <Link
-                className="project-card"
-                to="/cloud-native-management/meshery"
-              >
+              <Link className="project-card" to="/cloud-native-management/meshery">
                 <div className="project__block__inner">
-                  <img
-                    loading="lazy"
-                    src={projectImage3}
-                    alt="Meshery Logo"
-                    width="40"
-                    height="40"
-                    style={{ width: "40px", height: "40px" }}
-                  />
+                  <img loading="lazy" src={projectImage3} alt="Meshery Logo" width="40" height="40" style={{ width: "40px", height: "40px" }} />
                   <p>Meshery</p>
                   <h3>Cloud Native Management and Governance</h3>
                 </div>
               </Link>
             </Col>
             <Col $sm={12} $md={6} $lg={3}>
-              <Link
-                className="project-card"
-                to="/projects/cloud-native-performance"
-              >
+              <Link className="project-card" to="/projects/cloud-native-performance">
                 <div className="project__block__inner">
                   <ThemeManagerProvider>
-                    {isDark ? (
-                      <img
-                        loading="lazy"
-                        src={projectImage2_light}
-                        alt="Light Mode SMP Logo"
-                        width="98"
-                        height="40"
-                        style={{ width: "98px", height: "40px" }}
-                      />
+                    {( isDark ) ? (
+                      <img loading="lazy" src={projectImage2_light} alt="Light Mode SMP Logo" width="98" height="40" style={{ width: "98px", height: "40px" }} />
                     ) : (
-                      <img
-                        loading="lazy"
-                        src={projectImage2_dark}
-                        alt="Dark Mode SMP Logo"
-                        width="98"
-                        height="40"
-                        style={{ width: "98px", height: "40px" }}
-                      />
+                      <img loading="lazy" src={projectImage2_dark} alt="Dark Mode SMP Logo" width="98" height="40" style={{ width: "98px", height: "40px" }} />
                     )}
                   </ThemeManagerProvider>
                   <p>Cloud Native Performance</p>
@@ -118,31 +73,17 @@ const Projects = () => {
             <Col $sm={12} $md={6} $lg={3}>
               <Link className="project-card" to="/projects/nighthawk">
                 <div className="project__block__inner">
-                  <img
-                    loading="lazy"
-                    src={projectImage4}
-                    alt="Nighthawk Logo"
-                    width="50"
-                    height="40"
-                    style={{ width: "50px", height: "40px" }}
-                  />
+                  <img loading="lazy" src={projectImage4} alt="Nighthawk Logo" width="50" height="40" style={{ width: "50px", height: "40px" }} />
                   <p>Nighthawk</p>
                   <h3>Distributed Performance Management for Microservices</h3>
                 </div>
               </Link>
             </Col>
             <Col $sm={12} $md={6} $lg={3}>
-              <Link
-                className="project-card"
-                to="/cloud-native-management/catalog"
-              >
+              <Link className="project-card" to="/cloud-native-management/catalog">
                 <div className="project__block__inner">
                   {/* <StaticImage src={catalogLogo} alt="Meshery Catalog" height={40} /> */}
-                  <CatalogLogo
-                    height="40px"
-                    width="auto"
-                    style={{ margin: "10px auto", minHeight: "40px" }}
-                  />
+                  <CatalogLogo height="40px" width="auto" style={{ margin: "10px auto", minHeight: "40px" }} />
                   <p>Meshery Catalog</p>
                   <h3>Patterns and Templates</h3>
                 </div>

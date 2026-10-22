@@ -8,6 +8,7 @@ import { ReactComponent as KanvasLogo } from "./images/kanvas-icon.svg";
 import { ReactComponent as CNPLogo } from "./images/smp.svg";
 import { ReactComponent as NighthawkLogo } from "./images/nighthawk-logo.svg";
 
+
 const MinimizeComplexitySectionWrapper = styled.section`
   width: 100vw;
   position: relative;
@@ -93,7 +94,7 @@ const DescriptionText = styled.p`
   font-size: 16px;
   line-height: 28px;
   letter-spacing: 0;
-  color: ${({ theme }) => theme.whiteToBlack};
+  color: ${({ theme }) => theme.whiteToBlack };
   margin: 0;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
@@ -129,7 +130,7 @@ const ProductIcons = styled.div`
   @media (max-width: 430px) {
     flex-wrap: wrap;
     gap: 0.75rem;
-
+    
     svg {
       width: 40px;
       height: 40px;
@@ -142,7 +143,7 @@ const RightHeading = styled.h3`
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
-  color: ${({ theme }) => theme.whiteToBlack};
+  color: ${({ theme }) => theme.whiteToBlack };
   margin: 0 0 1.5rem 0;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 `;
@@ -203,75 +204,48 @@ const MinimizeComplexitySection = () => {
       <Container>
         <Inner>
           <MainHeading>
-            Minimize complexity and
-            <br />
-            automate workflows
+                        Minimize complexity and<br />
+                        automate workflows
           </MainHeading>
 
           <ContentWrapper>
             <LeftColumn>
               <DescriptionText>
-                Meshery helps users weigh the value of their cloud native
-                deployments against the overhead cost incurred in running
-                different deployment scenarios and different configurations.
-                This empowers them with much needed information they require to
-                optimize decision making for the business.
+                                Meshery helps users weigh the value of their cloud native deployments against the
+                                overhead cost incurred in running different deployment scenarios and different
+                                configurations. This empowers them with much needed information they require
+                                to optimize decision making for the business.
               </DescriptionText>
 
               <DescriptionText>
-                Predefined patterns and profiles are already setup to make the
-                configuration of service mesh and its features simpler both to
-                understand and execute. This reduces the learning curve required
-                to implement complex service mesh functionalities. Less time
-                spent learning means appropriate utilization of resources which
-                further minimizes incurred cost.
+                                Predefined patterns and profiles are already setup to make the configuration of
+                                service mesh and its features simpler both to understand and execute. This
+                                reduces the learning curve required to implement complex service mesh
+                                functionalities. Less time spent learning means appropriate utilization of
+                                resources which further minimizes incurred cost.
               </DescriptionText>
 
               <ProductsHeading>
-                Layer5 Products and Tools Deployed
+                                Layer5 Products and Tools Deployed
               </ProductsHeading>
 
               <ProductIcons>
-                <a
-                  href="https://meshery.io"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://meshery.io" target="_blank" rel="noopener noreferrer">
                   <MesheryLogo />
                 </a>
-                <a
-                  href="https://layer5.io/cloud-native-management/kanvas"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://layer5.io/cloud-native-management/kanvas" target="_blank" rel="noopener noreferrer">
                   <KanvasLogo />
                 </a>
-                <a
-                  href="https://docs.meshery.io/v0.6/concepts/architecture/meshsync"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://docs.meshery.io/v0.6/concepts/architecture/meshsync" target="_blank" rel="noopener noreferrer">
                   <MeshsyncLogo />
                 </a>
-                <a
-                  href="https://service-mesh-patterns.github.io/service-mesh-patterns/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://service-mesh-patterns.github.io/service-mesh-patterns/" target="_blank" rel="noopener noreferrer">
                   <ServiceMeshLogo />
                 </a>
-                <a
-                  href="https://smp-spec.io/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <CNPLogo style={{ width: "65px", height: "70px" }} />
+                <a href="https://smp-spec.io/" target="_blank" rel="noopener noreferrer">
+                  <CNPLogo style={{ width: "65px", height: "70px" }}/>
                 </a>
-                <a
-                  href="https://getnighthawk.dev/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://getnighthawk.dev/" target="_blank" rel="noopener noreferrer">
                   <NighthawkLogo />
                 </a>
               </ProductIcons>
@@ -279,9 +253,9 @@ const MinimizeComplexitySection = () => {
 
             <RightColumn>
               <RightHeading>
-                Expect efficiency when you apply our suggestions and utilize our
-                toolset with respect to incident management and chaos experiment
-                discharge. Achieve optimization as you:
+                                Expect efficiency when you apply our suggestions and utilize our
+                                toolset with respect to incident management and chaos
+                                experiment discharge. Achieve optimization as you:
               </RightHeading>
 
               <ChecklistItem>
@@ -289,10 +263,9 @@ const MinimizeComplexitySection = () => {
                   <CheckmarkSVG />
                 </CheckIcon>
                 <ChecklistText>
-                  Make use of our established service mesh patterns since they
-                  promote best practices for handling incidents and failures and
-                  will guide you on how to design and configure your service
-                  mesh for optimal resilience.
+                                    Make use of our established service mesh patterns since they promote best
+                                    practices for handling incidents and failures and will guide you on how to
+                                    design and configure your service mesh for optimal resilience.
                 </ChecklistText>
               </ChecklistItem>
 
@@ -301,9 +274,9 @@ const MinimizeComplexitySection = () => {
                   <CheckmarkSVG />
                 </CheckIcon>
                 <ChecklistText>
-                  Find in our playbooks, step-by-step procedures for
-                  identifying, diagnosing, and resolving common incidents that
-                  can occur in service mesh environments.
+                                    Find in our playbooks, step-by-step procedures for identifying, diagnosing,
+                                    and resolving common incidents that can occur in service mesh
+                                    environments.
                 </ChecklistText>
               </ChecklistItem>
 
@@ -312,10 +285,10 @@ const MinimizeComplexitySection = () => {
                   <CheckmarkSVG />
                 </CheckIcon>
                 <ChecklistText>
-                  Use Meshery's integration of the Chaos Toolkit and our readily
-                  available chaos experiment template to mitigate cost when you
-                  streamline and speed up workflow while defining and executing
-                  controlled chaos experiments on your service mesh deployments.
+                                    Use Meshery's integration of the Chaos Toolkit and our readily available
+                                    chaos experiment template to mitigate cost when you streamline and
+                                    speed up workflow while defining and executing controlled chaos
+                                    experiments on your service mesh deployments.
                 </ChecklistText>
               </ChecklistItem>
 
@@ -324,11 +297,10 @@ const MinimizeComplexitySection = () => {
                   <CheckmarkSVG />
                 </CheckIcon>
                 <ChecklistText>
-                  Accurately monitor applications and infrastructure during
-                  chaos tests. Using data-driven insights gained from
-                  monitoring, you are able to observe how the system behaves
-                  under stress and when failures occur and then make
-                  improvements in your architecture using this information.
+                                    Accurately monitor applications and infrastructure during chaos tests.
+                                    Using data-driven insights gained from monitoring, you are able to observe
+                                    how the system behaves under stress and when failures occur and then
+                                    make improvements in your architecture using this information.
                 </ChecklistText>
               </ChecklistItem>
             </RightColumn>

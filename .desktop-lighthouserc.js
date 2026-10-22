@@ -1,11 +1,11 @@
 module.exports = {
-  ci: {
-    collect: {
-      settings: {
-        preset: "desktop",
+  "ci": {
+    "collect": {
+      "settings": {
+        "preset": "desktop"
       },
-      staticDistDir: "./public",
-      url: [
+      "staticDistDir": "./public",
+      "url": [
         "http://localhost/404/index.html?desktop",
         "http://localhost/?desktop",
         "http://localhost/company/about/index.html?desktop",
@@ -24,16 +24,16 @@ module.exports = {
         "http://localhost/community/newcomers/index.html?desktop",
       ],
     },
-    assert: {
-      assertions: {
-        "categories:performance": ["warn", { minScore: 0.9 }],
-        "categories:accessibility": ["warn", { minScore: 0.9 }],
-        "categories:best-practices": ["warn", { minScore: 0.9 }],
-        "categories:seo": ["warn", { minScore: 0.9 }],
-      },
+    "assert": {
+      "assertions": {
+        "categories:performance": ["warn", { "minScore": .90 }],
+        "categories:accessibility": ["warn", { "minScore": .90 }],
+        "categories:best-practices": ["warn", { "minScore": .90 }],
+        "categories:seo": ["warn", { "minScore": .90 }],
+      }
     },
-    upload: {
-      target: "temporary-public-storage",
+    "upload": {
+      "target": "temporary-public-storage",
     },
-  },
+  }
 };

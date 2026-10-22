@@ -97,10 +97,7 @@ export const CopyButton = styled.button`
   font-size: 0.75rem;
   line-height: 1.25rem;
   cursor: pointer;
-  transition:
-    opacity 0.15s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
+  transition: opacity 0.15s ease, color 0.2s ease, border-color 0.2s ease;
 
   /* Revealed on hover or keyboard focus, so it never covers code at rest.
      Devices without hover always show it (see Pre's reserved padding). */

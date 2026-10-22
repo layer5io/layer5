@@ -1,8 +1,8 @@
 module.exports = {
-  ci: {
-    collect: {
-      staticDistDir: "./public",
-      url: [
+  "ci": {
+    "collect": {
+      "staticDistDir": "./public",
+      "url": [
         "http://localhost/404.html",
         "http://localhost/404/index.html",
         "http://localhost",
@@ -22,16 +22,16 @@ module.exports = {
         "http://localhost/community/newcomers/index.html",
       ],
     },
-    assert: {
-      assertions: {
-        "categories:performance": ["warn", { minScore: 0.9 }],
-        "categories:accessibility": ["warn", { minScore: 0.9 }],
-        "categories:best-practices": ["warn", { minScore: 0.9 }],
-        "categories:seo": ["warn", { minScore: 0.9 }],
-      },
+    "assert": {
+      "assertions": {
+        "categories:performance": ["warn", { "minScore": .90 }],
+        "categories:accessibility": ["warn", { "minScore": .90 }],
+        "categories:best-practices": ["warn", { "minScore": .90 }],
+        "categories:seo": ["warn", { "minScore": .90 }],
+      }
     },
-    upload: {
-      target: "temporary-public-storage",
+    "upload": {
+      "target": "temporary-public-storage",
     },
-  },
+  }
 };

@@ -12,19 +12,12 @@ const KanvasLabsPage = (props) => {
   }, []);
   return (
     <>
-      <KanvasLabs
-        selectedIndex={selectedIndex}
-        setSelectedIndex={setSelectedIndex}
-      />
+      <KanvasLabs selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />
+
     </>
   );
 };
 export default KanvasLabsPage;
 export const Head = () => {
-  return (
-    <SEO
-      title="Interactive DevOps, GitOps, and Cloud Native Labs"
-      description="Learn to manage Kubernetes, Prometheus, Meshery and all CNCF projects with experts from Layer5. Try an interactive cloud native lab."
-    />
-  );
+  return <SEO title="Interactive DevOps, GitOps, and Cloud Native Labs" description="Learn to manage Kubernetes, Prometheus, Meshery and all CNCF projects with experts from Layer5. Try an interactive cloud native lab." />;
 };

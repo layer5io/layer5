@@ -18,10 +18,10 @@ const Solutions = () => {
         <IssuesSection />
         <MinimizeComplexitySection />
         <ManageProcedures />
-        <OrganizeDeployments />
-        <Review />
-        <QASection />
-        <WhatsNext />
+        <OrganizeDeployments/>
+        <Review/>
+        <QASection/>
+        <WhatsNext/>
       </Container>
     </SolutionsWrapper>
   );

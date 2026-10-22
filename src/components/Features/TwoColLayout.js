@@ -36,9 +36,7 @@ const withIntersectionObserver = (WrappedComponent) => {
       const addClasses = (ref, index) => {
         if (ref) {
           observer.observe(ref);
-          ref.classList.add(
-            index % 2 === 0 ? "left-slide-in" : "right-slide-in",
-          );
+          ref.classList.add(index % 2 === 0 ? "left-slide-in" : "right-slide-in");
         }
       };
       containerRefs.current.forEach(addClasses);
@@ -58,13 +56,7 @@ const withIntersectionObserver = (WrappedComponent) => {
       };
     }, []);
 
-    return (
-      <WrappedComponent
-        {...props}
-        containerRefs={containerRefs}
-        contentRefs={contentRefs}
-      />
-    );
+    return <WrappedComponent {...props} containerRefs={containerRefs} contentRefs={contentRefs} />;
   };
 };
 const TwoColLayout = ({ containerRefs, contentRefs }) => {
@@ -74,43 +66,20 @@ const TwoColLayout = ({ containerRefs, contentRefs }) => {
       <Container ref={(el) => (containerRefs.current[0] = el)}>
         <ImageWrapper>
           <Link to="/solutions/architecture-diagram">
-            <img
-              src={isDark ? DiagrammingImageDark : DiagrammingImageLight}
-              alt="image"
-            />
+            <img src={isDark ? DiagrammingImageDark : DiagrammingImageLight} alt="image" />
           </Link>
         </ImageWrapper>
         <ContentWrapper ref={(el) => (contentRefs.current[0] = el)}>
           <h2>Simplify platform engineering</h2>
-          <p className="text">
-            Incorporate AWS, GCP and Kubernetes components into Kanvas designs
-            for comprehensive and intuitive system mapping, documentation, and
-            orchestration.
-          </p>
+          <p className="text">Incorporate AWS, GCP and Kubernetes components into Kanvas designs for comprehensive and intuitive system mapping, documentation, and orchestration.</p>
           <div className="small-card-container">
-            <Link
-              aria-label="aws"
-              className="small-card"
-              to="/cloud-native-management/generate-aws-architecture-diagram"
-            >
-              <img
-                alt="aws"
-                src={isDark ? AWSLogoDark : AWSLogoLight}
-                width={40}
-              />
+            <Link aria-label="aws" className="small-card" to="/cloud-native-management/generate-aws-architecture-diagram">
+              <img alt="aws" src={isDark ? AWSLogoDark : AWSLogoLight} width={40} />
             </Link>
-            <Link
-              aria-label="gcp"
-              className="small-card"
-              to="/cloud-native-management/generate-gcp-architecture-diagram"
-            >
+            <Link aria-label="gcp" className="small-card" to="/cloud-native-management/generate-gcp-architecture-diagram">
               <img alt="gcp" src={GCPLogo} width={40} />
             </Link>
-            <Link
-              aria-label="kubernetes"
-              className="small-card"
-              to="/cloud-native-management/generate-kubernetes-architecture-diagram"
-            >
+            <Link aria-label="kubernetes" className="small-card" to="/cloud-native-management/generate-kubernetes-architecture-diagram">
               <img alt="kubernetes" src={KubernetesLogo} width={40} />
             </Link>
           </div>
@@ -119,23 +88,13 @@ const TwoColLayout = ({ containerRefs, contentRefs }) => {
       <Container ref={(el) => (containerRefs.current[1] = el)}>
         <ImageWrapper>
           <Link to="/orchestration-management">
-            <img
-              src={isDark ? OrchestrationDark : OrchestrationLight}
-              alt="image"
-            />
+            <img src={isDark ? OrchestrationDark : OrchestrationLight} alt="image" />
           </Link>
         </ImageWrapper>
         <ContentWrapper ref={(el) => (contentRefs.current[1] = el)}>
           <h2>Conquer cognitive overload</h2>
-          <p className="text">
-            Unlock the power of visual orchestration. DevOps, platform
-            engineers, and SRE teams collaborate seamlessly, reduce cognitive
-            overload, and boost productivity. Experience operational harmony and
-            achieve more.
-          </p>
-          <Link to="/solutions/orchestration-management">
-            Learn more &rarr;
-          </Link>
+          <p className="text">Unlock the power of visual orchestration. DevOps, platform engineers, and SRE teams collaborate seamlessly, reduce cognitive overload, and boost productivity. Experience operational harmony and achieve more.</p>
+          <Link to="/solutions/orchestration-management">Learn more &rarr;</Link>
         </ContentWrapper>
       </Container>
     </Section>

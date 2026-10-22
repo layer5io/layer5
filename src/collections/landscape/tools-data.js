@@ -19,8 +19,7 @@ export const tools_data = [
     tool: "Meshery",
     link: "https://github.com/layer5io/meshery",
     language: "Golang",
-    written_for:
-      "Istio, Linkerd, Consul, Cilium Service Mesh, Network Service Mesh, App Mesh",
+    written_for: "Istio, Linkerd, Consul, Cilium Service Mesh, Network Service Mesh, App Mesh",
     supported_by: "Layer5",
     desc: "A service mesh playground to facilitate learning about functionality and performance of different service meshes. Meshery incorporates the collection and display of metrics from applications running in the playground.",
   },
@@ -76,8 +75,7 @@ export const tools_data = [
     tool: "Siege",
     link: "https://github.com/JoeDog/siege",
     language: "C++",
-    written_for:
-      "Reporting the total number of hits recorded, bytes transferred, response time, concurrency, and return status on web",
+    written_for: "Reporting the total number of hits recorded, bytes transferred, response time, concurrency, and return status on web",
     supported_by: "Jeffrey Fulmer",
     desc: "It is an http load tester and benchmarking utility.",
   },

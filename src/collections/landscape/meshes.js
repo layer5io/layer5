@@ -1,3 +1,4 @@
+
 export const meshes = [
   {
     name: "A10 Secure Service Mesh",
@@ -14,7 +15,7 @@ export const meshes = [
     encryption: "Yes",
     multi_tenant_score: 10,
     spiffe: "?",
-    spire: "?",
+    spire: "?"
   },
   {
     name: "App Mesh",
@@ -31,7 +32,7 @@ export const meshes = [
     encryption: "Yes",
     multi_tenant_score: 6,
     spiffe: "Not supported today, but in development",
-    spire: "Not supported today, but in development",
+    spire: "Not supported today, but in development"
   },
   {
     name: "Alibaba Cloud Service Mesh (ASM)",
@@ -48,7 +49,7 @@ export const meshes = [
     encryption: "Yes",
     multi_tenant_score: 10,
     spiffe: "?",
-    spire: "?",
+    spire: "?"
   },
   {
     name: "Aspen Mesh",
@@ -66,7 +67,7 @@ export const meshes = [
     multi_tenant_score: 10,
     netdev_persona_score: 6,
     spiffe: "?",
-    spire: "?",
+    spire: "?"
   },
   {
     name: "Cilium",
@@ -84,7 +85,7 @@ export const meshes = [
     multi_tenant_score: 1,
     netdev_persona_score: 4,
     spiffe: "?",
-    spire: "?",
+    spire: "?"
   },
   {
     name: "Citrix Service Mesh",
@@ -102,7 +103,7 @@ export const meshes = [
     multi_tenant_score: 1,
     netdev_persona_score: 9,
     spiffe: "Partial",
-    spire: "No",
+    spire: "No"
   },
   {
     name: "Consul",
@@ -129,7 +130,7 @@ export const meshes = [
     tspec: "No",
     tspeclink: "",
     spiffe: "Partial",
-    spire: "No",
+    spire: "No"
   },
   {
     name: "Flomesh Service Mesh (FSM)",
@@ -156,7 +157,7 @@ export const meshes = [
     tspec: "Yes",
     tspeclink: "https://github.com/flomesh-io/fsm#support",
     spiffe: "No",
-    spire: "No",
+    spire: "No"
   },
   {
     name: "Istio",
@@ -177,15 +178,13 @@ export const meshes = [
     tac: "Yes",
     taclink: "https://github.com/deislabs/smi-adapter-istio",
     tmetrics: "Yes",
-    tmetricslink:
-      "https://github.com/deislabs/smi-metrics/tree/master/pkg/istio",
+    tmetricslink: "https://github.com/deislabs/smi-metrics/tree/master/pkg/istio",
     tsplit: "Yes",
     tsplitlink: "https://github.com/deislabs/smi-adapter-istio",
     tspec: "Yes",
     tspeclink: "https://github.com/deislabs/smi-adapter-istio",
-    spiffe:
-      "Istio has partial SPIFFE support, but doesn't support the Workload API or Federation API currently, and thus is not interoperable with other SPIFFE implementations.",
-    spire: "Istio does not use SPIRE by default",
+    spiffe: "Istio has partial SPIFFE support, but doesn't support the Workload API or Federation API currently, and thus is not interoperable with other SPIFFE implementations.",
+    spire: "Istio does not use SPIRE by default"
   },
   {
     name: "Kuma",
@@ -203,7 +202,7 @@ export const meshes = [
     multi_tenant_score: 8,
     netdev_persona_score: 2,
     spiffe: "Yes",
-    spire: "No",
+    spire: "No"
   },
   {
     name: "Linkerd 1.x",
@@ -221,7 +220,7 @@ export const meshes = [
     multi_tenant_score: 1,
     netdev_persona_score: 5,
     spiffe: "SPIFFE IDs are not supported in Linkerd",
-    spire: "No",
+    spire: "No"
   },
   {
     name: "Linkerd 2.x(Conduit)",
@@ -242,14 +241,13 @@ export const meshes = [
     tac: "No",
     taclink: "",
     tmetrics: "Yes",
-    tmetricslink:
-      "https://github.com/deislabs/smi-metrics/tree/master/pkg/linkerd",
+    tmetricslink: "https://github.com/deislabs/smi-metrics/tree/master/pkg/linkerd",
     tsplit: "Yes",
     tsplitlink: "https://linkerd.io/2/features/traffic-split/",
     tspec: "No",
     tspeclink: "",
     spiffe: "No",
-    spire: "No",
+    spire: "No"
   },
   {
     name: "NGINX Service Mesh",
@@ -268,19 +266,15 @@ export const meshes = [
     netdev_persona_score: "?",
     smi: "",
     tac: "Yes",
-    taclink:
-      "https://docs.nginx.com/nginx-service-mesh/tutorials/accesscontrol-walkthrough/",
+    taclink: "https://docs.nginx.com/nginx-service-mesh/tutorials/accesscontrol-walkthrough/",
     tmetrics: "Yes",
-    tmetricslink:
-      "https://docs.nginx.com/nginx-service-mesh/usage/traffic-metrics/",
+    tmetricslink: "https://docs.nginx.com/nginx-service-mesh/usage/traffic-metrics/",
     tsplit: "Yes",
-    tsplitlink:
-      "https://docs.nginx.com/nginx-service-mesh/tutorials/trafficsplit-deployments/",
+    tsplitlink: "https://docs.nginx.com/nginx-service-mesh/tutorials/trafficsplit-deployments/",
     tspec: "Yes",
-    tspeclink:
-      "https://docs.nginx.com/nginx-service-mesh/usage/traffic-policies/",
+    tspeclink: "https://docs.nginx.com/nginx-service-mesh/usage/traffic-policies/",
     spiffe: "Yes",
-    spire: "Yes",
+    spire: "Yes"
   },
   {
     name: "Traefik Mesh",
@@ -307,7 +301,7 @@ export const meshes = [
     tspec: "Yes",
     tspeclink: "https://github.com/traefik/mesh",
     spiffe: "No",
-    spire: "No",
+    spire: "No"
   },
   {
     name: "Tencent Cloud Mesh (TCM)",
@@ -324,7 +318,7 @@ export const meshes = [
     encryption: "Yes",
     multi_tenant_score: 10,
     spiffe: "?",
-    spire: "?",
+    spire: "?"
   },
   {
     name: "Maistra",
@@ -341,7 +335,7 @@ export const meshes = [
     encryption: "Yes",
     multi_tenant_score: 10,
     spiffe: "Partial",
-    spire: "No",
+    spire: "No"
   },
   {
     name: "Mesher",
@@ -358,7 +352,7 @@ export const meshes = [
     encryption: "?",
     multi_tenant_score: 8,
     spiffe: "No",
-    spire: "No",
+    spire: "No"
   },
   {
     name: "SOFAMesh",
@@ -375,7 +369,7 @@ export const meshes = [
     multi_tenant_score: 8,
     netdev_persona_score: 7,
     spiffe: "Partial",
-    spire: "No",
+    spire: "No"
   },
   {
     name: "Octarine",
@@ -393,7 +387,7 @@ export const meshes = [
     multi_tenant_score: 10,
     netdev_persona_score: 8,
     spiffe: "No",
-    spire: "No",
+    spire: "No"
   },
   {
     name: "Open Service Mesh",
@@ -414,23 +408,19 @@ export const meshes = [
     tac: "Yes",
     taclink: "https://github.com/openservicemesh/osm#smi-specification-support",
     tmetrics: "Yes",
-    tmetricslink:
-      "https://github.com/openservicemesh/osm#smi-specification-support",
+    tmetricslink: "https://github.com/openservicemesh/osm#smi-specification-support",
     tsplit: "Yes",
-    tsplitlink:
-      "https://github.com/openservicemesh/osm#smi-specification-support",
+    tsplitlink: "https://github.com/openservicemesh/osm#smi-specification-support",
     tspec: "Yes",
-    tspeclink:
-      "https://github.com/openservicemesh/osm#smi-specification-support",
+    tspeclink: "https://github.com/openservicemesh/osm#smi-specification-support",
     spiffe: "No",
-    spire: "No",
+    spire: "No"
   },
   {
     name: "Rotor",
     link: "https://github.com/turbinelabs/",
     autoinject: "Project Shutdown",
-    tmp_link:
-      "https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c",
+    tmp_link: "https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c",
     tcp_web: "Project Shutdown",
     grpc: "Project Shutdown",
     h2: "Project Shutdown",
@@ -441,7 +431,7 @@ export const meshes = [
     tracing: "Project Shutdown",
     encryption: "Project Shutdown",
     spiffe: "No",
-    spire: "No",
+    spire: "No"
   },
   {
     name: "Yggdrasil",
@@ -458,7 +448,7 @@ export const meshes = [
     encryption: "Yes",
     multi_tenant_score: 1,
     spiffe: "No",
-    spire: "No",
+    spire: "No"
   },
   {
     name: "Zuul",
@@ -475,7 +465,7 @@ export const meshes = [
     encryption: "?",
     multi_tenant_score: 1,
     spiffe: "No",
-    spire: "No",
+    spire: "No"
   },
   {
     name: "Vulcand",
@@ -492,7 +482,7 @@ export const meshes = [
     encryption: "Yes",
     multi_tenant_score: 1,
     spiffe: "No",
-    spire: "No",
+    spire: "No"
   },
   {
     name: "Network Service Mesh",
@@ -509,6 +499,6 @@ export const meshes = [
     encryption: "?",
     multi_tenant_score: 1,
     spiffe: "Yes",
-    spire: "Yes",
-  },
+    spire: "Yes"
+  }
 ];

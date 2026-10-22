@@ -1,11 +1,8 @@
 ### What is the use of this CTA:
-
 The **CommonForm** component is a used to display a form with fields such as First name, last name, Email, Occupation, Organization / Company / School, What role best identifies you and a Submit button
 
 ### How to use the CTA:
-
 To use this CTA simply use
-
 ```
 <CommonForm
         title="Get the eBook"

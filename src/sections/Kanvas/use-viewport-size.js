@@ -4,9 +4,7 @@ const isClient = typeof document !== "undefined";
 
 const CALL_THRESHOLD_MS = 500;
 
-export const useViewportSize = (
-  { callTreshhold } = { callTreshhold: CALL_THRESHOLD_MS },
-) => {
+export const useViewportSize = ({ callTreshhold } = { callTreshhold: CALL_THRESHOLD_MS }) => {
   const resizeTimeout = useRef(null);
   const [windowSize, setWindowSize] = useState({
     width: isClient ? window.innerWidth : 0,

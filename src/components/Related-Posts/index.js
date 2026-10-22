@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState, useRef } from "react";
+import React, { useLayoutEffect, useState, useRef }  from "react";
 import { Link } from "gatsby";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 import Card from "../Card";
@@ -6,19 +6,15 @@ import RelatedPostsWrapper from "./relatedPosts.style";
 import { Col } from "../../reusecore/Layout";
 import Slider from "react-slick";
 
-const RelatedPosts = (props) => {
+const RelatedPosts = props => {
   const [isClient, setIsClient] = useState(false);
   const [slidesToShowState, setSlidesToShowState] = useState(null);
   const sliderRef = useRef(null);
 
-  const { postType, relatedPosts, mainHead, lastCardHead, linkToAllItems } =
-    props;
+  const { postType , relatedPosts , mainHead , lastCardHead , linkToAllItems } = props;
 
   const computeSlides = () => {
-    const w =
-      typeof window !== "undefined"
-        ? window.innerWidth || document.documentElement.clientWidth
-        : 1200;
+    const w = typeof window !== "undefined" ? (window.innerWidth || document.documentElement.clientWidth) : 1200;
     if (w <= 600) return 1;
     if (w <= 800) return 1.5;
     if (w <= 1024) return 2;
@@ -39,11 +35,7 @@ const RelatedPosts = (props) => {
           if (prev !== slides) return slides;
           return prev;
         });
-        if (
-          sliderRef.current &&
-          sliderRef.current.innerSlider &&
-          typeof sliderRef.current.innerSlider.onWindowResized === "function"
-        ) {
+        if (sliderRef.current && sliderRef.current.innerSlider && typeof sliderRef.current.innerSlider.onWindowResized === "function") {
           sliderRef.current.innerSlider.onWindowResized();
         }
       }, 100);
@@ -71,43 +63,41 @@ const RelatedPosts = (props) => {
     touchThreshold: 10,
   };
 
+
   return (
     <RelatedPostsWrapper>
       <div className="widgets-title">
         <h3>{mainHead}</h3>
       </div>
-      {isClient && (
-        <Slider
-          {...settings}
-          ref={sliderRef}
-          key={`review-slider-${slidesToShowState}`}
-        >
-          {postType === "blogs"
-            ? relatedPosts.map((item) => {
-                const post = item.post || item;
-                return (
-                  <Col className="cardCol" $xs={12} key={post.fields.slug}>
-                    <Card frontmatter={post.frontmatter} fields={post.fields} />
+      {
+        isClient &&
+                <Slider{...settings} ref={sliderRef} key={`review-slider-${slidesToShowState}`}>
+                  {
+                    postType === "blogs" ? relatedPosts.map((item) => {
+                      const post = item.post || item;
+                      return (
+                        <Col className="cardCol" $xs={12} key={post.fields.slug}>
+                          <Card frontmatter={post.frontmatter} fields={post.fields}/>
+                        </Col>
+                      );
+                    }) : relatedPosts.map((post) => {
+                      return (
+                        <Col className="cardCol" $xs={12} key={post.fields.slug}>
+                          <Card frontmatter={post.frontmatter} fields={post.fields}/>
+                        </Col>
+                      );
+                    })
+                  }
+                  <Col $xs={12} $lg={12} className="allBlogs">
+                    <div className="allBlogs_card">
+                      <Link to={linkToAllItems}>
+                        <h2>{lastCardHead}</h2>
+                        <IoIosArrowRoundForward/>
+                      </Link>
+                    </div>
                   </Col>
-                );
-              })
-            : relatedPosts.map((post) => {
-                return (
-                  <Col className="cardCol" $xs={12} key={post.fields.slug}>
-                    <Card frontmatter={post.frontmatter} fields={post.fields} />
-                  </Col>
-                );
-              })}
-          <Col $xs={12} $lg={12} className="allBlogs">
-            <div className="allBlogs_card">
-              <Link to={linkToAllItems}>
-                <h2>{lastCardHead}</h2>
-                <IoIosArrowRoundForward />
-              </Link>
-            </div>
-          </Col>
-        </Slider>
-      )}
+                </Slider>
+      }
     </RelatedPostsWrapper>
   );
 };

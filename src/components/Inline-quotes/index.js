@@ -14,9 +14,9 @@ const QuotesWrapper = styled.div`
     gap: 1.5rem;
     border: 2px solid transparent;
     border-image: linear-gradient(
-      to right bottom,
-      #00b39f,
-      ${(props) => (props.theme.DarkTheme ? "#121212" : "#fff")} 80%
+      to right bottom, 
+      #00b39f, 
+      ${props => props.theme.DarkTheme ? "#121212" : "#fff"} 80%
     );
     border-image-slice: 1 0 1 1;
     transition: border-image 0.6s ease-in-out;
@@ -34,22 +34,22 @@ const QuotesWrapper = styled.div`
 
   .border {
     border-image: linear-gradient(
-      to left top,
-      #00b39f,
-      ${(props) => (props.theme.DarkTheme ? "#121212" : "#fff")} 80%
+      to left top, 
+      #00b39f, 
+      ${props => props.theme.DarkTheme ? "#121212" : "#fff"} 80%
     );
     border-image-slice: 1 1 1 0;
   }
 
   h4 {
-    flex: ${(props) => (props.$onlyQuoteIsPresent ? "0 0 100%" : "0 0 65%")};
+    flex: ${props => props.$onlyQuoteIsPresent ? "0 0 100%" : "0 0 65%"};
     margin: 0;
-    color: ${(props) => props.theme.primaryColor};
+    color: ${props => props.theme.primaryColor};
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     font-weight: 100;
     font-style: italic;
     line-height: 1.6;
-    text-align: ${(props) => (props.$onlyQuoteIsPresent ? "center" : "right")};
+    text-align: ${props => props.$onlyQuoteIsPresent ? "center" : "right"};
 
     @media (max-width: 768px) {
       flex: 0 0 100%;
@@ -78,7 +78,7 @@ const QuotesWrapper = styled.div`
       padding: 0;
       text-align: center;
     }
-
+   
     h5 {
       margin: 0 0 0.5rem 0;
       padding: 0.1rem;
@@ -103,16 +103,14 @@ const QuotesWrapper = styled.div`
     height: 5rem;
     margin: 0;
     border: none;
-    border-left: 1px solid
-      ${(props) => (props.theme.DarkTheme ? "#444" : "#ddd")};
+    border-left: 1px solid ${props => props.theme.DarkTheme ? "#444" : "#ddd"};
 
     @media (max-width: 768px) {
       width: clamp(150px, 60%, 200px);
       height: 0;
       margin: 0.5rem auto;
       border-left: none;
-      border-top: 1px solid
-        ${(props) => (props.theme.DarkTheme ? "#444" : "#ddd")};
+      border-top: 1px solid ${props => props.theme.DarkTheme ? "#444" : "#ddd"};
     }
   }
 
@@ -140,10 +138,7 @@ const InlineQuotes = ({ person, title, quote, image }) => {
 
   return (
     <QuotesWrapper $onlyQuoteIsPresent={!showAuthorSection}>
-      <div
-        className={quoteInView ? "quote-box border" : "quote-box"}
-        ref={quoteRef}
-      >
+      <div className={quoteInView ? "quote-box border" : "quote-box"} ref={quoteRef}>
         <h4>❝ {quote} ❞</h4>
         {showAuthorSection && (
           <>

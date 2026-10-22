@@ -41,9 +41,9 @@ const FeaturesContainer = () => {
       redirectLink: "",
       desc: (
         <span>
-          Incorporate AWS <i>and</i> GCP components into Kanvas designs for
-          comprehensive <i>and</i> intuitive system mapping, documentation,{" "}
-          <i>and</i> orchestration.
+          Incorporate AWS <i>and</i>{" "} GCP components into Kanvas designs for
+          comprehensive <i>and</i>{" "} intuitive system mapping, documentation, <i>and</i>{" "}
+          orchestration.
         </span>
       ),
       imgLink: isDark ? AWSImage : AWSImageLight,
@@ -73,7 +73,7 @@ const FeaturesContainer = () => {
       desc: "Crafting cloud-native symphonies: Our engineering diagramming tool is your conductor's baton, turning Kubernetes infrastructure into a canvas for freestyle orchestration.",
       imgLink: isDark ? WhiteboardingImage : WhiteboardingImageLight,
       cursor: true,
-    },
+    }
   ];
 
   useEffect(() => {

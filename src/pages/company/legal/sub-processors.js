@@ -12,10 +12,5 @@ const CodeOfConduct = () => {
 };
 export default CodeOfConduct;
 export const Head = () => {
-  return (
-    <SEO
-      title="Sub-Processors"
-      description="Learn about the sub-processors we use to provide our services."
-    />
-  );
+  return <SEO title="Sub-Processors" description="Learn about the sub-processors we use to provide our services." />;
 };

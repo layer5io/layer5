@@ -1,11 +1,7 @@
 ### What is the use of this CTA:
-
 The **Features-carousel** component creates a carousel of Features card
-
 ### How to use the CTA:
-
 To use this CTA :
-
 ```
  const featuresData = [
     {
@@ -43,7 +39,6 @@ To use this CTA :
     },
   ];
 ```
-
 ```
 <Features features={featuresData} heading="Optional Heading" />
 ```
@@ -51,3 +46,4 @@ To use this CTA :
 ![image](https://github.com/layer5io/docs/assets/74408634/90314c89-6cc0-4170-94ae-81c602f74894)
 
 ![image](https://github.com/layer5io/docs/assets/74408634/7553c18e-8719-4bda-aa82-92eb111b99fb)
+

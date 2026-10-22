@@ -38,23 +38,17 @@ const BannerDefault = () => {
                       </div> */}
                       <div className="description">
                         <p>
-                          A cloud native manager that enables the design and
-                          management of all Kubernetes-based infrastructure and
-                          applications (multi-cloud).
+                          A cloud native manager that enables the design and management of all Kubernetes-based infrastructure and applications (multi-cloud).
                         </p>
                         <p>
-                          Among other features, As an extensible platform,
-                          Meshery offers visual and collaborative GitOps,
-                          freeing you from the chains of YAML while managing
-                          Kubernetes multi-cluster deployments.
+                          Among other features, As an extensible platform, Meshery offers visual and collaborative GitOps, freeing you from the chains of YAML while managing Kubernetes multi-cluster deployments.
                         </p>
                       </div>
                     </div>
                   </h3>
                   <div className="join-community">
                     <Button
-                      $primary
-                      className="join-community-button"
+                      $primary                      className="join-community-button"
                       title="Extend your control"
                       $url="/cloud-native-management/meshery"
                     />

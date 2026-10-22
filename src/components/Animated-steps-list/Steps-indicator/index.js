@@ -5,7 +5,10 @@ const StepsIndicator = ({ steps, activeIndex }) => {
   return (
     <StepsIndicatorWrapper>
       {steps.map((step, index) => (
-        <li key={step.name} className={index === activeIndex ? "active" : ""}>
+        <li
+          key={step.name}
+          className={index === activeIndex ? "active" : ""}
+        >
           {step.name}
         </li>
       ))}

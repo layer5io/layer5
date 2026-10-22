@@ -1,11 +1,8 @@
 ### What is the use of this CTA:
-
 The **Contact-Modal** component is a used to display a button with text when button is pressed a pop opens up with a title
 
 ### How to use the CTA:
-
 To use this CTA simply use
-
 ```
 <ContactFormModal callout_text="Open Contact Form" form_header="Contact Form"/>
 ```

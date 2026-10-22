@@ -3,13 +3,13 @@ import styled from "styled-components";
 import { Container } from "../../../reusecore/Layout";
 
 const MesheryQuotesWrapper = styled.div`
-  margin-top: 2rem;
-  margin-bottom: 6rem;
-  h2 {
-    margin: 0 auto 4rem auto;
-    max-width: 40%;
-    font-weight: 700;
-  }
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+    h2{
+      margin: 0 auto 4rem auto;
+      max-width: 40%;
+      font-weight: 700;
+    }
 `;
 
 // const quotes_data = [
@@ -29,6 +29,7 @@ const MesheryQuotesWrapper = styled.div`
 //     quote: "...the ability to benchmark Istio in MY cluster with MY workloads is just what I was looking for. I threw out my test scripts."
 //   },
 // ];
+
 
 const MesheryQuotes = () => {
   // const settings = {
@@ -74,3 +75,4 @@ const MesheryQuotes = () => {
 };
 
 export default MesheryQuotes;
+

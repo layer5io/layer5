@@ -5,27 +5,27 @@ import KanvasVisualizerViews from "../../Home/Playground-home";
 
 const ManageMeshWrapper = styled.div`
   margin: 4rem auto;
-  h2 {
+  h2{
     font-weight: 700;
   }
-  p {
+  p{
     margin-bottom: 2rem;
   }
   .banner-btn {
-    margin: 0rem 0.75rem 0 0;
-    color: white;
-    .button-icon {
-      margin-right: 0.625rem;
-    }
+      margin: 0rem 0.75rem 0 0;
+      color: white;
+      .button-icon{
+          margin-right: 0.625rem;
+      }    
   }
-
-  .multi-mesh-img {
+  
+  .multi-mesh-img{
     @media (max-width: 62rem) {
       margin-top: 2rem;
     }
   }
   @media (max-width: 62rem) {
-    text-align: center;
+     text-align: center;
   }
 `;
 

@@ -9,11 +9,7 @@ import RelatedPosts from "../../../components/Related-Posts";
 import BlogPageWrapper from "./blogSingle.style";
 import BlogPostSignOff from "../BlogPostSignOff";
 import RelatedPostsFactory from "../../../components/Related-Posts/relatedPostsFactory";
-import {
-  FacebookShareButton,
-  LinkedinShareButton,
-  TwitterShareButton,
-} from "react-share";
+import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from "react-share";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { AiOutlineTwitter } from "@react-icons/all-files/ai/AiOutlineTwitter";
 import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
@@ -28,72 +24,68 @@ import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 const BlogSingle = ({ data, children }) => {
   const location = useLocation();
   const { frontmatter, fields } = data.mdx;
-  const { relatedPosts: blogData, authors } = useStaticQuery(graphql`
-    query relatedPosts {
-      relatedPosts: allMdx(
-        sort: { fields: { dateForSort: DESC } }
-        filter: {
-          fields: { collection: { eq: "blog" } }
-          frontmatter: { published: { eq: true } }
+  const { relatedPosts: blogData, authors } = useStaticQuery(
+    graphql`query relatedPosts {
+  relatedPosts: allMdx(
+    sort: {fields: {dateForSort: DESC}}
+    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
+  ) {
+    nodes {
+      frontmatter {
+        title
+        date(formatString: "MMM Do YYYY")
+        author
+        category
+        tags
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
+          }
+          extension
+          publicURL
         }
-      ) {
-        nodes {
-          frontmatter {
-            title
-            date(formatString: "MMM Do YYYY")
-            author
-            category
-            tags
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData(width: 480, layout: CONSTRAINED)
-              }
-              extension
-              publicURL
-            }
-            darkthumbnail {
-              childImageSharp {
-                gatsbyImageData(width: 480, layout: CONSTRAINED)
-              }
-              extension
-              publicURL
-            }
+        darkthumbnail {
+          childImageSharp {
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
           }
-          fields {
-            slug
-          }
+          extension
+          publicURL
         }
       }
-      authors: allMdx(
-        sort: { frontmatter: { name: ASC } }
-        filter: {
-          fields: { collection: { eq: "members" } }
-          frontmatter: { published: { eq: true } }
-        }
-      ) {
-        nodes {
-          frontmatter {
-            bio
-            name
-            image_path {
-              childImageSharp {
-                gatsbyImageData(width: 500, layout: CONSTRAINED)
-              }
-              extension
-              publicURL
-            }
-          }
-          fields {
-            slug
-          }
-        }
+      fields {
+        slug
       }
     }
-  `);
+  }
+  authors: allMdx(
+    sort: {frontmatter: {name: ASC}}
+    filter: {fields: {collection: {eq: "members"}}, frontmatter: {published: {eq: true}}}
+  ) {
+    nodes {
+      frontmatter {
+        bio
+        name
+        image_path {
+          childImageSharp {
+            gatsbyImageData(width: 500, layout: CONSTRAINED)
+          }
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+      
+    }
+  }
+}`
+  );
 
   const posts = blogData.nodes;
-  const relatedPosts = new RelatedPostsFactory(posts, fields.slug)
-    .setMaxPosts(6)
+  const relatedPosts = new RelatedPostsFactory(
+    posts, fields.slug
+  ).setMaxPosts(6)
     .setCategory(frontmatter.category)
     .setTags(frontmatter.tags)
     .getPosts();
@@ -102,15 +94,9 @@ const BlogSingle = ({ data, children }) => {
   const { isDark } = useStyledDarkMode();
 
   const primaryThumbnail = frontmatter.thumbnail || frontmatter.thumbnail_svg;
-  const secondaryThumbnail =
-    frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg;
+  const secondaryThumbnail = frontmatter.darkthumbnail || frontmatter.darkthumbnail_svg;
   const heroThumbnail = (() => {
-    if (
-      isDark &&
-      secondaryThumbnail &&
-      (secondaryThumbnail?.publicURL !== primaryThumbnail?.publicURL ||
-        !primaryThumbnail)
-    ) {
+    if (isDark && secondaryThumbnail && (secondaryThumbnail?.publicURL !== primaryThumbnail?.publicURL || !primaryThumbnail)) {
       return secondaryThumbnail;
     }
 
@@ -125,19 +111,14 @@ const BlogSingle = ({ data, children }) => {
     }
   }, [copied]);
 
-  const authorInformation = authors.nodes.filter(
-    (author) => author.frontmatter.name === frontmatter.author,
-  )[0];
+  const authorInformation = authors.nodes.filter((author) => author.frontmatter.name === frontmatter.author)[0];
 
   const shareQuote = `Check out this post from layer5 "${frontmatter.title}"`;
 
   return (
     <BlogPageWrapper>
       <Container>
-        <AboutTheAuthor
-          authorInformation={authorInformation}
-          shareQuote={shareQuote}
-        />
+        <AboutTheAuthor authorInformation={authorInformation} shareQuote={shareQuote} />
         <div>
           <PageHeader
             title={frontmatter.title}
@@ -149,8 +130,12 @@ const BlogSingle = ({ data, children }) => {
             date={frontmatter.date}
           />
           <div className="single-post-wrapper">
-            <SRLWrapper>{children}</SRLWrapper>
-            <BlogPostSignOff author={{ name: frontmatter.author }} />
+            <SRLWrapper>
+              {children}
+            </SRLWrapper>
+            <BlogPostSignOff
+              author={{ name: frontmatter.author }}
+            />
             <div className="post-tag-container">
               <div className="post-share-mobile">
                 <div className="share-icons-container">
@@ -164,32 +149,29 @@ const BlogSingle = ({ data, children }) => {
                   <LinkedinShareButton url={location.href} title={shareQuote}>
                     <FaLinkedin />
                   </LinkedinShareButton>
-                  <CopyToClipboard
-                    text={location.href}
-                    title="Copy link"
-                    onCopy={() => setCopied(true)}
-                  >
+                  <CopyToClipboard text={location.href} title="Copy link" onCopy={() => setCopied(true)}>
                     <IoIosCopy />
                   </CopyToClipboard>
                 </div>
-                {copied ? <p className="link-copied-container">Copied</p> : ""}
+                {copied ? <p className="link-copied-container">
+                  Copied
+                </p> : ""}
               </div>
               <div className="post-info-block">
                 <div className="tags">
                   <span>Tags:</span>
                   <div>
-                    {frontmatter.tags &&
-                      frontmatter.tags.map((tag) => (
-                        <Link
-                          key={`${frontmatter.title}-${tag}`}
-                          to={`/blog/tag/${slugify(tag)}`}
-                        >
-                          {tag}
-                        </Link>
-                      ))}
+                    {frontmatter.tags && frontmatter.tags.map(tag => (
+                      <Link key={`${frontmatter.title}-${tag}`}
+                        to={`/blog/tag/${slugify(tag)}`}
+                      >{tag}
+                      </Link>
+                    ))}
                   </div>
                 </div>
-                <CTA_Bottom category={"Kanvas"} />
+                <CTA_Bottom
+                  category={"Kanvas"}
+                />
               </div>
             </div>
             <RelatedPosts

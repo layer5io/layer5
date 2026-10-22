@@ -88,8 +88,8 @@ import MesheryDesignEmbed from "@layer5/meshery-design-embed";
 
 <div className="intro">
   <p>
-    One-paragraph lede that opens with the problem. Platform engineers are busy
-    - give them a reason to keep reading in the first three sentences.
+    One-paragraph lede that opens with the problem. Platform engineers are busy -
+    give them a reason to keep reading in the first three sentences.
   </p>
 </div>
 

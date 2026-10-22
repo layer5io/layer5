@@ -23,24 +23,23 @@ const data = {
                         annotations: {
                           "dapr.io/app-id": "pythonapp",
                           "dapr.io/enable-api-logging": "true",
-                          "dapr.io/enabled": "true",
+                          "dapr.io/enabled": "true"
                         },
-                        labels: { app: "python" },
+                        labels: { app: "python" }
                       },
                       spec: {
                         containers: [
                           {
-                            image:
-                              "ghcr.io/dapr/samples/hello-k8s-python:latest",
-                            name: "python",
-                          },
-                        ],
-                      },
-                    },
+                            image: "ghcr.io/dapr/samples/hello-k8s-python:latest",
+                            name: "python"
+                          }
+                        ]
+                      }
+                    }
                   },
                   name: "pythonapp",
                   namespace: "default",
-                  labels: { app: "python" },
+                  labels: { app: "python" }
                 },
                 traits: {
                   meshmap: {
@@ -64,8 +63,7 @@ const data = {
                       shape: "round-rectangle",
                       shapePolygonPoints: "",
                       status: "enabled",
-                      styleOverrides:
-                        '{"border-width":2,"background-opacity":0.5}',
+                      styleOverrides: '{"border-width":2,"background-opacity":0.5}',
                       styles: '{"border-width":2,"background-opacity":0.5}',
                       subCategory: "",
                       svgColor:
@@ -73,16 +71,16 @@ const data = {
                       svgComplete:
                         "ui/public/static/img/meshmodels/kubernetes/complete/deployment-complete.svg",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg",
+                        "ui/public/static/img/meshmodels/kubernetes/white/deployment-white.svg"
                     },
                     position: { posX: -4, posY: 7 },
-                    whiteboardData: { style: {} },
-                  },
+                    whiteboardData: { style: {} }
+                  }
                 },
-                type: "Deployment",
-              },
-            },
-          },
+                type: "Deployment"
+              }
+            }
+          }
         },
         position: { x: -4, y: 7 },
         group: "nodes",
@@ -92,7 +90,7 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: "",
+        classes: ""
       },
       {
         data: {
@@ -114,15 +112,12 @@ const data = {
                       elementType: "FIELD_REF_NODE",
                       fieldPath: "spec.template.spec.containers[0]",
                       jsonSchemaPath:
-                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
+                        "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]"
                     },
                     id: "c19ba597-76f9-4e28-ac53-b95e98b7b7e0",
                     label: "spec.template.spec.containers[0]",
                     "meshmodel-data": {
-                      category: {
-                        metadata: null,
-                        name: "Orchestration & Management",
-                      },
+                      category: { metadata: null, name: "Orchestration & Management" },
                       components: null,
                       description: "",
                       displayName: "Meshery Core",
@@ -135,7 +130,7 @@ const data = {
                           "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
                         svgComplete: "",
                         svgWhite:
-                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg",
+                          "ui/public/static/img/meshmodels/meshery-core/color/meshery-core-color.svg"
                       },
                       model: { version: "0.7.2" },
                       name: "meshery-core",
@@ -144,7 +139,7 @@ const data = {
                       schemaVersion: "models.meshery.io/v1beta1",
                       status: "enabled",
                       subCategory: "App Definition and Development",
-                      version: "v1.0.0",
+                      version: "v1.0.0"
                     },
                     "meshmodel-metadata": {
                       capabilities:
@@ -165,22 +160,22 @@ const data = {
                         "ui/public/static/img/meshmodels/meshery-core/color/container-color.svg",
                       svgComplete: "",
                       svgWhite:
-                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg",
+                        "ui/public/static/img/meshmodels/meshery-core/white/container-white.svg"
                     },
                     parent: "01acbf25-3211-46fd-8c40-c7e5ba41546f",
                     position: { posX: -4, posY: -2 },
-                    whiteboardData: {},
-                  },
+                    whiteboardData: {}
+                  }
                 },
-                type: "Container",
-              },
-            },
+                type: "Container"
+              }
+            }
           },
           elementType: "FIELD_REF_NODE",
           fieldPath: "spec.template.spec.containers[0]",
           jsonSchemaPath:
             "properties.spec.allOf[0].properties.template.allOf[0].properties.spec.allOf[0].properties.containers.items.allOf[0]",
-          parent: "01acbf25-3211-46fd-8c40-c7e5ba41546f",
+          parent: "01acbf25-3211-46fd-8c40-c7e5ba41546f"
         },
         position: { x: -4, y: -2 },
         group: "nodes",
@@ -190,9 +185,9 @@ const data = {
         locked: false,
         grabbable: true,
         pannable: false,
-        classes: "",
-      },
-    ],
+        classes: ""
+      }
+    ]
   },
   elementStyles: {
     "01acbf25-3211-46fd-8c40-c7e5ba41546f": {
@@ -620,7 +615,7 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px",
+      paddingBottom: "6px"
     },
     "c19ba597-76f9-4e28-ac53-b95e98b7b7e0": {
       events: "yes",
@@ -1047,9 +1042,9 @@ const data = {
       "padding-top": "6px",
       paddingTop: "6px",
       "padding-bottom": "6px",
-      paddingBottom: "6px",
-    },
-  },
+      paddingBottom: "6px"
+    }
+  }
 };
 
 const addStyles = () => {
@@ -1116,7 +1111,7 @@ const addStyles = () => {
 
 const CreateToolBar = () => {
   const cyContainer = document.getElementById(
-    "embedded-design-03016ef6-7124-4169-a5c0-f403711d480d",
+    "embedded-design-03016ef6-7124-4169-a5c0-f403711d480d"
   );
   const toolbar = document.createElement("div");
   toolbar.innerHTML = `
@@ -1169,7 +1164,7 @@ const CreateToolBar = () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const embedContainer = document.getElementById(
-    "embedded-design-03016ef6-7124-4169-a5c0-f403711d480d",
+    "embedded-design-03016ef6-7124-4169-a5c0-f403711d480d"
   );
   embedContainer.classList.add("embed-design-container");
   const cyContainer = document.createElement("div");
@@ -1180,7 +1175,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var cy = (window.cy = cytoscape({
     container: document.getElementById(
-      "embedded-design-03016ef6-7124-4169-a5c0-f403711d480d-cy",
+      "embedded-design-03016ef6-7124-4169-a5c0-f403711d480d-cy"
     ),
 
     autounselectify: true,
@@ -1189,13 +1184,13 @@ document.addEventListener("DOMContentLoaded", function () {
     minZoom: 0.5,
     maxZoom: 6.6,
     layout: {
-      name: "preset",
+      name: "preset"
     },
     elements: data.elements,
-    style: data.style,
+    style: data.style
   }));
 
-  Object.keys(data.elementStyles).forEach((id) => {
+  Object.keys(data.elementStyles).forEach(id => {
     cy.getElementById(id).style(data.elementStyles[id]);
   });
 

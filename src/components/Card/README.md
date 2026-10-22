@@ -1,10 +1,8 @@
 ### What is the use of this CTA:
-
 The **Card** component is used to display a Card with title,date, external links etc
 
 ### How to use the CTA:
-
-Using `<Card frontmatter={frontmatter} fields={fields} />` will render the CTA
+Using `<Card frontmatter={frontmatter} fields={fields} />` will render the CTA 
 
 ```
 const frontmatter = {

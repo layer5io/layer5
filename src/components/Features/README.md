@@ -1,11 +1,7 @@
 ### What is the use of this CTA:
-
 The **Feature** component to show a feature with an customizable image/gif, title, description and the Learn More link
-
 ### How to use the CTA:
-
 To use this CTA :
-
 ```
 let title = "Collaborate with Precision";
   let show_custom_cursor = true;
@@ -16,7 +12,6 @@ let title = "Collaborate with Precision";
   let imgLink = "../a";
   let cursor = false;
 ```
-
 ```
 <Features
         key={title}

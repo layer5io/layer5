@@ -52,6 +52,8 @@ const CTAWrapper = styled.section`
       }
     }
   }
+
+
 `;
 
 const CTA_Book = () => {
@@ -76,17 +78,10 @@ const CTA_Book = () => {
           />
         </Col>
         <Col $xs={12} $sm={6} className="book_col book_img">
-          <Link
-            to={
-              "/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"
-            }
+          <Link to={"/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"}
             className="bookLink"
           >
-            <StaticImage
-              src={LearnBook}
-              alt="Book Image"
-              layout="constrained"
-            />
+            <StaticImage src={LearnBook} alt="Book Image" layout="constrained" />
           </Link>
         </Col>
       </Row>

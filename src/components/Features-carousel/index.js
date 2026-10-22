@@ -5,6 +5,7 @@ import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoun
 import { FeaturesWrapper } from "./FeaturesCarousel.style";
 import Slider from "react-slick";
 
+
 const Features = ({ features, heading }) => (
   <>
     {/* carousel rendered at smaller breakpoints */}
@@ -12,6 +13,7 @@ const Features = ({ features, heading }) => (
     <FeaturesList features={features} />
   </>
 );
+
 
 const FeaturesList = ({ features }) => {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -34,7 +36,9 @@ const FeaturesList = ({ features }) => {
         </ul>
         <div className="terminal-wrapper">
           <SimpleReactLightbox>
-            <SRLWrapper>{features[activeFeature].content}</SRLWrapper>
+            <SRLWrapper>
+              {features[activeFeature].content}
+            </SRLWrapper>
           </SimpleReactLightbox>
         </div>
       </div>
@@ -52,19 +56,14 @@ const FeaturesCarousel = ({ features, heading }) => {
           autoplaySpeed={3500}
           arrows={false}
           dots={true}
-          infinite={true}
+          infinite= {true}
           speed="500"
           slidesToShow={1}
           slidesToScroll={1}
         >
           {features.map((feature, stableIdx) => (
             <div key={stableIdx}>
-              <Feature
-                Element="div"
-                id={feature.id}
-                title={feature.title}
-                active
-              >
+              <Feature Element="div" id={feature.id} title={feature.title} active>
                 {feature.description}
               </Feature>
               <div className="terminal-wrapper">
@@ -78,15 +77,7 @@ const FeaturesCarousel = ({ features, heading }) => {
   );
 };
 
-const Feature = ({
-  children,
-  title,
-  active,
-  onClick,
-  learnMoreLink,
-  id,
-  Element = "li",
-}) => {
+const Feature = ({ children, title, active, onClick, learnMoreLink, id, Element = "li" }) => {
   return (
     <Element className={active ? "feature active-feature" : "feature"}>
       {onClick ? (
@@ -101,25 +92,26 @@ const Feature = ({
       ) : (
         <span className="heading">{title}</span>
       )}
-      <div className="body" id={`feature-${id}`}>
+      <div className="body" id={`feature-${id}`} >
         <p>{children}</p>
-        {learnMoreLink ? (
-          learnMoreLink.startsWith("/") ? (
-            <Link className="learn-more-link" to={learnMoreLink}>
-              Explore <IoIosArrowRoundForward />
-            </Link>
-          ) : (
-            <a
-              href={learnMoreLink}
-              className="learn-more-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Explore <IoIosArrowRoundForward />
-            </a>
-          )
-        ) : null}{" "}
-        {/* No link rendered if learnMoreLink is empty */}
+        {learnMoreLink
+          ? learnMoreLink.startsWith("/")
+            ? (
+              <Link className="learn-more-link" to={learnMoreLink}>
+          Explore <IoIosArrowRoundForward />
+              </Link>
+            )
+            : (
+              <a
+                href={learnMoreLink}
+                className="learn-more-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+          Explore <IoIosArrowRoundForward />
+              </a>
+            )
+          : null}    {/* No link rendered if learnMoreLink is empty */}
       </div>
     </Element>
   );

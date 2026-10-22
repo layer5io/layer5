@@ -19,7 +19,7 @@ overflow-y: hidden;
 }
 
 .smi-tooltip {
-	box-shadow: 1px 1px 6px -6px ${(props) => props.theme.primaryLightColorTwo};
+	box-shadow: 1px 1px 6px -6px ${props => props.theme.primaryLightColorTwo};
 	border-radius: .75rem;
 	line-height: 1.5rem;
 	transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -36,15 +36,15 @@ table {
     td {
         padding: 0.3rem;
         height: 4rem;
-        color: ${(props) => props.theme.text};
+        color: ${props => props.theme.text};
         text-align: center;
         font-size: 0.9rem;
         font-weight: 400;
-        border-bottom: 1px solid ${(props) => props.theme.grey212121ToGreyEFEFEF};
+        border-bottom: 1px solid ${props => props.theme.grey212121ToGreyEFEFEF};
 				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     th {
-        background: ${(props) => props.theme.grey404040ToGrey1E2117} ;
+        background: ${props => props.theme.grey404040ToGrey1E2117} ;
         color: #ffffff;
 				height: 4rem;
 				font-size: 1rem;
@@ -53,17 +53,17 @@ table {
     }
   
 	tr.primaryRow {
-		background: ${(props) => props.theme.body};
+		background: ${props => props.theme.body};
 		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		td {
-			border-right: 1px solid ${(props) => props.theme.body};
+			border-right: 1px solid ${props => props.theme.body};
 			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		}
 	}
 	tr.secondaryRow {
 		background: #efefef;
 		td {
-			border-right: 1px solid ${(props) => props.theme.body};
+			border-right: 1px solid ${props => props.theme.body};
 			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		}
 	}
@@ -87,7 +87,7 @@ table {
 	}
 	
 	td:hover{
-			box-shadow: 0px 0px 15px -10px ${(props) => props.theme.whiteToBlack};
+			box-shadow: 0px 0px 15px -10px ${props => props.theme.whiteToBlack};
 			transform: translateY(0px);
 		}
 	}

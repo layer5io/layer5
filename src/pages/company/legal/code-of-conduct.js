@@ -12,10 +12,5 @@ const CodeOfConduct = () => {
 };
 export default CodeOfConduct;
 export const Head = () => {
-  return (
-    <SEO
-      title="Code of Conduct"
-      description="Contact Layer5 for help with operating platform engineering. Layer5 is the maker of Kanvas and Meshery, native application and infrastructure management software for engineers who expect more from their infrastructure."
-    />
-  );
+  return <SEO title="Code of Conduct" description="Contact Layer5 for help with operating platform engineering. Layer5 is the maker of Kanvas and Meshery, native application and infrastructure management software for engineers who expect more from their infrastructure." />;
 };

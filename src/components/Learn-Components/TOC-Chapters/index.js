@@ -7,6 +7,7 @@ import TOCWrapper from "./toc.style";
 import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import { IoIosArrowDropdownCircle } from "@react-icons/all-files/io/IoIosArrowDropdownCircle";
 
+
 const TOC = ({ TOCData, courseData, chapterData, location }) => {
   const [path, setPath] = useState("");
   const [expand, setExpand] = useState(false);
@@ -18,27 +19,23 @@ const TOC = ({ TOCData, courseData, chapterData, location }) => {
     return newData;
   };
 
-  const availableChapters = TOCData.filter(
-    (toc) => toc.fields.section === getActiveServiceMesh(chapterData),
-  ).map((toc) => toc.fields.chapter);
+  const availableChapters = TOCData.filter(toc => toc.fields.section === getActiveServiceMesh(chapterData))
+    .map(toc => toc.fields.chapter);
 
   useEffect(() => {
     const path = location.pathname.split("/");
     if (path[2] === "learning-paths") {
       setPath(getCurrentPage(location));
-    } else return;
+    } else
+      return;
+
   }, [location.pathname]);
+
 
   return (
     <TOCWrapper>
       <div className="chapter-back">
-        <Link
-          to={
-            courseData.fields.slug.startsWith("/")
-              ? courseData.fields.slug
-              : `/${courseData.fields.slug}`
-          }
-        >
+        <Link to={courseData.fields.slug.startsWith("/") ? courseData.fields.slug : `/${courseData.fields.slug}`}>
           <HiOutlineChevronLeft />
           <h4>{courseData.frontmatter.courseTitle}</h4>
         </Link>
@@ -65,9 +62,7 @@ const TOC = ({ TOCData, courseData, chapterData, location }) => {
           {availableChapters.map((item) => (
             <li key={item} className={item === path ? "active-link" : ""}>
               <p className="toc-item" key={item}>
-                <Link
-                  to={`/learn/learning-paths/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${item}/`}
-                >
+                <Link to={`/learn/learning-paths/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${item}/`}>
                   {reformatTOC(item)}
                 </Link>
               </p>

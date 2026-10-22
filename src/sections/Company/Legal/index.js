@@ -14,6 +14,7 @@ const trustCenter = () => {
       </div>
 
       <div className="community-home-container">
+
         <LegalCard
           title="Privacy"
           description="Layer5 offers cloud native application management by harnessing the power of a developer-friendly applications management system that supports visualization of the modern infrastructure leading to effective operation with best practices."

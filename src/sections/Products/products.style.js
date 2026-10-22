@@ -170,11 +170,11 @@ const ProductWrapper = styled.section`
     margin: 2rem;
   }
   .card_head .logo {
-    flex-shrink: 0;
+    flex-shrink: 0;    
     height: 3rem;
     width: auto;
   }
-
+    
   .cards {
     display: flex;
     flex-wrap: wrap;
@@ -191,14 +191,14 @@ const ProductWrapper = styled.section`
     margin-bottom: 20px;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1rem;       
     margin-bottom: 20px;
   }
 
   .card_head .title {
     font-size: 32px;
     font-weight: 700;
-    margin: 0;
+    margin: 0;     
   }
   .card .text {
     padding-bottom: 2rem;
@@ -234,7 +234,7 @@ const ProductWrapper = styled.section`
   .iconss {
     display: flex;
     gap: 1rem;
-    margin-left: auto;
+    margin-left: auto; 
   }
   @media (max-width: 1141px) {
     .product_hero_img {

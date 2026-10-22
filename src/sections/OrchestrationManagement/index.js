@@ -17,38 +17,35 @@ import RelatedPicks from "../../components/RelatedPicks";
 let card_data = [
   {
     heading: "Self-service & Integrations",
-    subtitle:
-      "Empower DevOps teams with self-service capabilities for effortless infrastructure management. Seamlessly integrate with current tools and workflows for a smooth and efficient experience.",
-    image: SelfServiceAndIntegrationsGIF,
+    subtitle: "Empower DevOps teams with self-service capabilities for effortless infrastructure management. Seamlessly integrate with current tools and workflows for a smooth and efficient experience.",
+    image: SelfServiceAndIntegrationsGIF
   },
   {
     heading: "Validate your infra before deployment",
-    subtitle:
-      "Infrastructure is rigorously validated pre-deployment to ensure reliability, security, and optimal performance.",
-    image: Validate,
+    subtitle: "Infrastructure is rigorously validated pre-deployment to ensure reliability, security, and optimal performance.",
+    image: Validate
   },
   {
     heading: "Infrastructure provisioning",
-    subtitle:
-      "Automate infrastructure provisioning for efficient, ready-to-deploy designs, eliminating manual work for basic requests in development, QA, testing, and IT operations.",
-    image: DeployDesignsGIF,
+    subtitle: "Automate infrastructure provisioning for efficient, ready-to-deploy designs, eliminating manual work for basic requests in development, QA, testing, and IT operations.",
+    image: DeployDesignsGIF
   },
   {
     heading: "Manage resources with Environment",
-    subtitle:
-      "Simplify your workflow by effortlessly handling a bundle of resources as a unified group, eliminating the hassle of managing individual Connections and Credentials.",
-    image: EnvironmentsGIF,
+    subtitle: "Simplify your workflow by effortlessly handling a bundle of resources as a unified group, eliminating the hassle of managing individual Connections and Credentials.",
+    image: EnvironmentsGIF
   },
+
 ];
 
 const Orchestration = () => {
   const { isDark } = useStyledDarkMode();
   const data = {
     heading: "Insights Visualized into Action",
-    sub_heading:
-      "Optimize and streamline operations through strategic orchestration of your infrastructure.",
-    image: isDark ? OrchestrationImgDark : OrchestrationImgLight,
+    sub_heading: "Optimize and streamline operations through strategic orchestration of your infrastructure.",
+    image: isDark ? OrchestrationImgDark : OrchestrationImgLight
   };
+
 
   return (
     <OrchestrationWrapper>
@@ -57,20 +54,11 @@ const Orchestration = () => {
       <Container>
         <div className={"feature-use-container"}>
           <div>
-            <h2 className={"use-heading"}>
-              {" "}
-              Cloud Infra Provisioning with Speed and Control{" "}
-            </h2>
+            <h2 className={"use-heading"}> Cloud Infra Provisioning with Speed and Control </h2>
           </div>
           <div className={"collaboration_display"}>
             {card_data.map((x) => (
-              <FeatureUseCard
-                data={x}
-                key={x.heading}
-                $sm={12}
-                $md={6}
-                $lg={6}
-              />
+              <FeatureUseCard data={x} key={x.heading} $sm={12} $md={6} $lg={6} />
             ))}
           </div>
         </div>

@@ -1,24 +1,24 @@
 import styled from "styled-components";
 
 const HowitworksWrapper = styled.section`
-  // ul li:last-child {
-  //     padding-bottom: 120px;
-  //   }
+// ul li:last-child {
+//     padding-bottom: 120px;
+//   }
 
-  h2 {
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  }
+h2 {
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
 
   ul li:first-child {
     padding-top: 60px;
   }
-  .scroll {
+.scroll{
     position: sticky;
     top: calc(50vh - 249px);
-  }
-  .root {
+}
+.root {
     padding: 0 0;
-
+  
     & .headerWrapper {
       & h2 {
         text-align: center;
@@ -29,7 +29,7 @@ const HowitworksWrapper = styled.section`
           margin-bottom: 0;
         }
       }
-
+  
       & p {
         max-width: 818px;
         text-align: center;
@@ -38,12 +38,12 @@ const HowitworksWrapper = styled.section`
       }
     }
   }
-
+  
   .contentContainer {
     display: flex;
     justify-content: space-between;
     position: relative;
-
+  
     @media (max-width: 767px) {
       flex-direction: column;
     }
@@ -52,15 +52,15 @@ const HowitworksWrapper = styled.section`
       max-width: 470px;
       margin-left: 50px;
       padding-bottom: 50px;
-
+  
       @media (max-width: 1120px) {
         margin-left: 64px;
       }
-
+  
       @media (max-width: 1024px) {
         margin-left: 40px;
       }
-
+  
       @media (max-width: 767px) {
         margin-left: 0;
       }
@@ -69,33 +69,34 @@ const HowitworksWrapper = styled.section`
       }
     }
   }
-
+  
   .diagram {
-    margin-bottom: 150px;
+    margin-bottom:150px;
     width: 591px;
     max-width: 100%;
     position: sticky;
     top: calc(50vh - 249px);
     @media (max-width: 767px) {
-      display: none;
-    }
+        display: none;
+      }
   }
-
+  
   .features {
+      
     & > li {
       list-style: none;
-
+  
       & > div {
         list-style: none;
         padding-bottom: 150px;
-
+  
         @media (max-width: 767px) {
           padding-top: 0;
           margin-bottom: 0;
           padding-bottom: 50px;
         }
       }
-
+  
       &:last-child {
         & > div {
           padding-bottom: 600px;
@@ -106,17 +107,19 @@ const HowitworksWrapper = styled.section`
           }
         }
       }
-
+  
       &:first-child {
         & > div {
           padding-top: 108px;
-          @media (max-width: 1120px) {
+          @media (max-width:  1120px) {
             padding-top: 64px;
           }
         }
       }
     }
   }
+   
+
 `;
 
 export default HowitworksWrapper;

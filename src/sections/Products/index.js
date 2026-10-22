@@ -17,6 +17,7 @@ import { Row } from "../../reusecore/Layout";
 import Reviews from "../Pricing/review-slider";
 import options from "../Pricing/generatePlans";
 
+
 const CardsData = [
   {
     id: 1,
@@ -25,15 +26,15 @@ const CardsData = [
     icon: [codicon, desktop],
     text: "GitOps-infused cloud native visual designer for Kubernetes and cloud native infrastucture.",
     //as there is no soluton page.
-    url: "/cloud-native-management/kanvas",
+    url: "/cloud-native-management/kanvas"
   },
   {
     id: 2,
     logo: mesheryLogo,
     title: "Meshery",
-    icon: ["", desktop],
+    icon: ["",desktop],
     text: "As a self-service engineering platform, Meshery enables collaborative design and operation of cloud native infrastructure.",
-    url: "/cloud-native-management/meshery",
+    url: "/cloud-native-management/meshery"
   },
   {
     id: 3,
@@ -42,7 +43,7 @@ const CardsData = [
     icon: [cloudicon, codicon, desktop],
     text: "The Meshery Remote Provider with identity and collaboration services, private catalogs, GitOps, and multi-Meshery management.",
     //as there is no soluton page.
-    url: "https://docs.layer5.io/cloud",
+    url: "https://docs.layer5.io/cloud"
   },
 ];
 
@@ -72,22 +73,8 @@ const index = () => {
                 flexibility, elevating operations to new efficiencies.{" "}
               </p>
               <div className="btn">
-                <Button
-                  secondary
-                  className="banner-btn two"
-                  $external={true}
-                  title="Explore Now"
-                  $url="https://cloud.layer5.io/"
-                />
-                <Button
-                  id="book-a-demo"
-                  aria-label="Book a demo"
-                  primary
-                  className="banner-btn book-a-demo"
-                  $external={true}
-                  title="Book a demo"
-                  $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true"
-                />
+                <Button secondary className="banner-btn two" $external={true} title="Explore Now" $url="https://cloud.layer5.io/"/>
+                <Button id="book-a-demo" aria-label="Book a demo" primary className="banner-btn book-a-demo" $external={true} title="Book a demo" $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
               </div>
             </div>
             <div className="product_hero_img">
@@ -118,9 +105,7 @@ const index = () => {
                     <div className="text">{card.text}</div>
                     <div className="card_bottom">
                       {/* <Link className="learn" > */}
-                      <a className="learn" href={card.url}>
-                        Learn more
-                      </a>
+                      <a className="learn" href={card.url}>Learn more</a>
                       {/* </Link> */}
                       {/* TEMPORARY COMMENTED BUTTON  */}
                       {/* <div className="btns">
@@ -133,33 +118,16 @@ const index = () => {
             </div>
           </div>
           <div className="freeTry">
-            <img
-              className="bgSvgLeft"
-              src={isDark ? darkbgSvg : lightbgSvg}
-              alt=""
-            />
-            <img
-              className="bgSvgRight"
-              src={isDark ? darkbgSvg : lightbgSvg}
-              alt=""
-            />
+            <img className="bgSvgLeft" src={isDark ? darkbgSvg : lightbgSvg} alt="" />
+            <img className="bgSvgRight" src={isDark ? darkbgSvg : lightbgSvg} alt="" />
             <div className="headers rotate gap">
               <h1 className="header-heading">
                 Unlock Your <span>Potential </span> with Free Tier Account!
               </h1>
               <p className="paraInfo">
-                Embrace the future of technology and embark on a transformative
-                journey with our comprehensive range of products prepared to
-                meet your needs. Elevate, Innovate, and conquer the cloud with
-                us today!
+                Embrace the future of technology and embark on a transformative journey with our comprehensive range of products prepared to meet your needs. Elevate, Innovate, and conquer the cloud with us today!
               </p>
-              <Button
-                button
-                secondary
-                className="banner-btn two"
-                title="Open Playground"
-                $url="https://play.meshery.io"
-              />
+              <Button button secondary className="banner-btn two" title="Open Playground" $url="https://play.meshery.io" />
             </div>
           </div>
           <div className="headers bot_gap">
@@ -167,51 +135,31 @@ const index = () => {
               <span>Plans</span> For Every Team Size
             </h1>
             <p className="paraInfo">
-              Choose the ideal plan to propel your infrastructure goals. From
-              startups to seasoned enterprises, we have a plan designed to fit
-              your unique needs.
+              Choose the ideal plan to propel your infrastructure goals. From startups to seasoned enterprises, we have a plan designed to fit your unique needs.
             </p>
           </div>
 
-          <PlanCard planData={options} />
+          <PlanCard planData={options}/>
 
           <Row $Vcenter $Hcenter className={"comparison-button"}>
-            <Button
-              $primary
-              title="Feature Comparison"
-              $url={"/pricing/#feature-comparison"}
-            />
+            <Button $primary title="Feature Comparison" $url={"/pricing/#feature-comparison"}/>
           </Row>
 
           <div className="headers gap">
             <h1 className="header-heading">
-              Don’t Just Take Our Word For It,{" "}
-              <span
-                style={{
-                  fontWeight: "bolder",
-                }}
-              >
-                Experience
-              </span>{" "}
-              It!
+              Don’t Just Take Our Word For It, <span style={{
+                fontWeight: "bolder",
+              }}
+              >Experience
+              </span> It!
             </h1>
             <div className="paras">
-              <p>
-                See how our products can transform your cloud experience today.
-              </p>
+              <p>See how our products can transform your cloud experience today.</p>
               <p className="paraInfo">
-                Book to see it in action! Our experts are eager to guide you
-                through the incredible possibilities that Layer5 offers. Take
-                this opportunity to discover what more your infrastructure can
-                do for you!
+              Book to see it in action! Our experts are eager to guide you through the incredible possibilities that Layer5 offers. Take this opportunity to discover what more your infrastructure can do for you!
               </p>
             </div>
-            <Button
-              $external={true}
-              $primary
-              title="Book a Demo"
-              $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true"
-            />
+            <Button $external={true} $primary title="Book a Demo" $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
           </div>
         </div>
       </ProductsWrapper>

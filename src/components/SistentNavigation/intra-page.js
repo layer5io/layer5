@@ -72,7 +72,7 @@ function IntraPage() {
           id: a.id,
           link: `#${a.id}`,
           text: a.id,
-        })),
+        }))
       );
     }
   }, []);

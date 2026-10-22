@@ -5,7 +5,7 @@ const useDataList = (
   setSearchQuery,
   searchQuery,
   paramsIndex,
-  paramSearch,
+  paramSearch
 ) => {
   const [dataList, setDataList] = useState(data);
   const [search, setSearch] = useState([]);
@@ -38,7 +38,7 @@ const useDataList = (
     setSearchResults(queryResult);
   };
 
-  return { queryResults, searchData, setDataList, dataList };
+  return { queryResults, searchData, setDataList,dataList };
 };
 
 export default useDataList;

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 // Components
 import SEO from "../../components/seo";
 
+
 import MultipleMembers from "../../sections/Community/Members-grid/MemberList";
 import Dropdown from "../../sections/Community/Members-grid/Dropdown";
 import { DropdownWrapper } from "../../components/dropdownLayouts/labels.style";
@@ -262,21 +263,16 @@ const MembersPage = () => {
   const handleChange = (value) => setMembers(value);
   return (
     <>
-      <Dropdown
-        options={options}
-        defaultOption={activeMember}
-        handleChange={handleChange}
-      />
+      <Dropdown options={options} defaultOption={activeMember} handleChange={handleChange} />
       <MultipleMembers members={members} />
+
     </>
   );
 };
 export default MembersPage;
 export const Head = () => {
-  return (
-    <SEO
-      title="Members"
-      description="An award-winning open source community with a warm and welcoming collection of contributors."
-    />
-  );
+  return <SEO
+    title="Members"
+    description="An award-winning open source community with a warm and welcoming collection of contributors."
+  />;
 };

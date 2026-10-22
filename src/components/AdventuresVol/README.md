@@ -5,11 +5,10 @@ Any MDX file can have these CTA's, and you don't need to import them explicitly.
 Just calling the component like `<AdventuresVolh />` would do the trick.
 
 ### How to use the CTA:
-
 Using `<AdventuresVolh />` will render the CTA with the no data in the component.
 
 ```
-<AdventuresVol
+<AdventuresVol 
   title="This is an example title"
   description="This is an example description"
   to="https://example.com"     // Always provide the http/https header for the link if external link or start with '/' in case of internal link

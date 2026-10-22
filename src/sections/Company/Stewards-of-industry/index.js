@@ -7,19 +7,23 @@ import { BgImage } from "gbimage-bridge";
 import useHasMounted from "../../../utils/useHasMounted";
 
 const StewardsOfIndustry = () => {
-  const { backgroundImage123 } = useStaticQuery(graphql`
-    query {
-      backgroundImage123: file(relativePath: { eq: "stewards/stewards.webp" }) {
-        childImageSharp {
-          gatsbyImageData(
-            width: 2000
-            quality: 50
-            webpOptions: { quality: 70 }
-          )
+  const { backgroundImage123 } = useStaticQuery(
+    graphql`
+      query {
+        backgroundImage123: file(
+          relativePath: { eq: "stewards/stewards.webp" }
+        ) {
+          childImageSharp {
+            gatsbyImageData(
+              width: 2000
+              quality: 50
+              webpOptions: { quality: 70 }
+            )
+          }
         }
       }
-    }
-  `);
+    `
+  );
 
   const hasMounted = useHasMounted();
 
@@ -31,8 +35,7 @@ const StewardsOfIndustry = () => {
         <h1 className="section-header">Creators of cloud native standards</h1>
         <h2>Open source leaders</h2>
         <Button
-          $primary
-          className="section-button"
+          $primary          className="section-button"
           title="See our Projects"
           $url="/projects"
         />

@@ -10,45 +10,42 @@ import { useStaticQuery, graphql } from "gatsby";
  */
 const DataWrapper = (WrappedComponent) => {
   return (props) => {
-    const data = useStaticQuery(graphql`
-      query allMembers {
-        allMdx(
-          sort: { frontmatter: { name: ASC } }
-          filter: {
-            fields: { collection: { eq: "members" } }
-            frontmatter: { published: { eq: true } }
+    const data = useStaticQuery(
+      graphql`query allMembers {
+  allMdx(
+    sort: {frontmatter: {name: ASC}}
+    filter: {fields: {collection: {eq: "members"}}, frontmatter: {published: {eq: true}}}
+  ) {
+    nodes {
+      id
+      frontmatter {
+        name
+        github
+        twitter
+        status
+        meshmate
+        maintainer
+        linkedin
+        location
+        badges
+        bio
+        emeritus
+        community_manager
+        image_path {
+          childImageSharp {
+            gatsbyImageData(width: 200, layout: CONSTRAINED)
           }
-        ) {
-          nodes {
-            id
-            frontmatter {
-              name
-              github
-              twitter
-              status
-              meshmate
-              maintainer
-              linkedin
-              location
-              badges
-              bio
-              emeritus
-              community_manager
-              image_path {
-                childImageSharp {
-                  gatsbyImageData(width: 200, layout: CONSTRAINED)
-                }
-                extension
-                publicURL
-              }
-            }
-            fields {
-              slug
-            }
-          }
+          extension
+          publicURL
         }
       }
-    `);
+      fields {
+        slug
+      }
+    }
+  }
+}`
+    );
 
     return <WrappedComponent allMembers={data} {...props} />;
   };
