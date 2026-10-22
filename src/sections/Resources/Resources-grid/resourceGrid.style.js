@@ -8,19 +8,72 @@ export const ResourcePageWrapper = styled.div`
     .search{
         display:flex;
         justify-content:flex-end;
+        align-items:center;
         width:100%;
-        
         margin-bottom: 0.8rem;
-        .searchBox{
-            flex:0 0 50%;
-            @media only screen and (max-width:990px){
-                
-                    flex:0 0 100%;
-                    max-width:100%;
-                
+    .searchBox{
+            flex: 0 1 400px;
+            min-width:0;
+            & > div,
+            .search-box{
+                width: 100%;
+                max-width: 100%;
+            }
+            @media only screen and (max-width: 990px){
+                flex: 1 1 auto;
+                min-width: 0;
+                .search-box{
+                    width: 100%;
+                }
             }
         }
-        
+                            .sortBox {
+      align-self: stretch;
+      margin-right: 1rem;
+      @media only screen and (max-width: 600px) {
+        order: 2;
+        margin-right: 0;
+        margin-left: 1rem;
+      }
+      .sortDropdown {
+        height: 100%;
+        padding: 15px 40px 15px 15px;
+        border-radius: 5px;
+        border: 1px solid ${(props) => props.theme.headingColor};
+        background-color: ${(props) => props.theme.shadowDarkColor};
+        color: ${(props) => props.theme.text};
+        font-size: 0.9rem;
+        cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 16px;
+
+        &:focus {
+          outline: 2px solid #00b39f;
+          outline-offset: 2px;
+        }
+
+        option {
+          color: ${(props) => props.theme.text};
+          background-color: ${(props) => props.theme.shadowDarkColor};
+        }
+
+        @media only screen and (max-width: 600px) {
+          width: 48px;
+          height:48px;
+          padding: 0;
+          font-size:0;
+          color: transparent;
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round'%3e%3cline x1='4' y1='7' x2='20' y2='7'/%3e%3cline x1='4' y1='12' x2='15' y2='12'/%3e%3cline x1='4' y1='17' x2='10' y2='17'/%3e%3c/svg%3e");
+          background-position: center;
+          background-size: 22px;
+        }
+      }
+    }
     }
     .post-content-block{
         height: 7rem;
