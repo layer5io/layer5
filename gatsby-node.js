@@ -1108,7 +1108,23 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
         __dirname,
         "src/shims/mui-icons-material.js",
       ),
+      punycode: require.resolve("punycode/"),
     };
+
+    // Gatsby's build-html (SSR) stage marks every Node builtin -- including the
+    // deprecated `punycode` -- as a webpack external, so the SSR bundle emits
+    // `require("punycode")` and Node loads its deprecated core module (DEP0040).
+    // webpack consults `externals` before `resolve.alias`, so the alias above is
+    // ignored for SSR. Drop punycode from externals here so it is bundled from the
+    // userland `punycode` package (via the alias) instead of the core module.
+    if (Array.isArray(config.externals)) {
+      for (const external of config.externals) {
+        if (external && typeof external === "object") {
+          delete external.punycode;
+          delete external["node:punycode"];
+        }
+      }
+    }
 
     const miniCssExtractPlugin = config.plugins.find(
       (plugin) => plugin.constructor.name === "MiniCssExtractPlugin",
