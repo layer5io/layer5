@@ -166,7 +166,7 @@ const CommunityPage = () => {
           </Row>
         </Container>
         <Container>
-          <Row className="meshmate">
+          <Row className="meshmate" $Vcenter>
             <Col className="content" $sm={12} $lg={6}>
               <h1 className="onboarding">
                 An onboarding and mentoring program
@@ -202,12 +202,7 @@ const CommunityPage = () => {
           </Row>
         </Container>
         <Container>
-          <Row
-            style={{
-              flexWrap: "wrap",
-            }}
-            className="newcomers-section"
-          >
+          <Row className="newcomers-section">
             <Col $xs={12} $lg={6} className="map">
               <NewcomersMap />
             </Col>

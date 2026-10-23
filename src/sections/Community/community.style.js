@@ -122,8 +122,10 @@ const CommunitySectionWrapper = styled.div`
     }
   }
   .meshmate {
+    @media (max-width: 991px) {
+      flex-wrap: wrap;
+    }
     margin-top: 5rem;
-    flex-wrap: wrap;
     .content {
       h1,
       h3,

@@ -34,7 +34,7 @@ const NewcomersMapWrapper = styled.div`
     cursor: pointer;
     path {
       fill: ${(props) =>
-        props.handleHover ? (props) => props.theme.secondaryColor : "#3c494e"};
+  props.handleHover ? (props) => props.theme.secondaryColor : "#3c494e"};
       transition: 0.5s;
     }
     &:hover {
@@ -55,6 +55,14 @@ const NewcomersMapWrapper = styled.div`
     }
   }
 `;
+
+const handleNavigate = (path) => (e) => {
+  if (e.metaKey || e.ctrlKey) {
+    window.open(path, "_blank", "noopener,noreferrer");
+  } else {
+    navigate(path);
+  }
+};
 
 const NewcomersMap = ({ handleMouseHover = false }) => {
   return (
@@ -322,11 +330,11 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
           role="link"
           tabIndex={0}
           aria-label="find a meshmate"
-          onClick={() => navigate("/community/meshmates")}
+          onClick={handleNavigate("/community/meshmates")}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
               e.preventDefault();
-              navigate("/community/meshmates");
+              handleNavigate("/community/meshmates")(e);
             }
           }}
         >
@@ -411,11 +419,11 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
           role="link"
           tabIndex={0}
           aria-label="community calendar"
-          onClick={() => navigate("/community/calendar")}
+          onClick={handleNavigate("/community/calendar")}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
               e.preventDefault();
-              navigate("/community/calendar");
+              handleNavigate("/community/calendar")(e);
             }
           }}
         >
@@ -546,11 +554,11 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
           role="link"
           tabIndex={0}
           aria-label="Repository Overview"
-          onClick={() => navigate("/community/handbook/repository-overview")}
+          onClick={handleNavigate("/community/handbook/repository-overview")}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
               e.preventDefault();
-              navigate("/community/handbook/repository-overview");
+              handleNavigate("/community/handbook/repository-overview")(e);
             }
           }}
         >
