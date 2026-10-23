@@ -4,13 +4,9 @@ import { Row, Col } from "../../../reusecore/Layout";
 import Pagination from "./paginate";
 import SearchBox from "../../../reusecore/Search";
 import EmptyResources from "../Resources-error/emptyStateTemplate";
+import { sortResources, paginateResources } from "../../../utils/resource-sort";
 
 import { ResourcePageWrapper } from "./resourceGrid.style";
-
-const getTime = (node) => {
-  const t = new Date(node.fields?.dateForSort).getTime();
-  return Number.isNaN(t) || t <= 0 ? null : t;
-};
 
 const ResourceGrid = (props) => {
   const query = props.searchQuery || "";
@@ -23,28 +19,13 @@ const ResourceGrid = (props) => {
         ? "relevance"
         : "latest";
 
-  const sortResources = (nodes) => {
-    if (effectiveSort === "relevance") return nodes;
-
-    const direction = effectiveSort === "oldest" ? 1 : -1;
-    return nodes.slice().sort((a, b) => {
-      const ta = getTime(a);
-      const tb = getTime(b);
-      if (ta === null && tb === null) return 0;
-      if (ta === null) return 1;
-      if (tb === null) return -1;
-      return direction * (ta - tb);
-    });
-  };
-
   // Get current posts
-  const indexOfLastPost = props.currentPage * props.postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - props.postsPerPage;
-  const sortedData = sortResources(props.data);
-  const searchedResource =
-    props.postsPerPage > 0
-      ? sortedData.slice(indexOfFirstPost, indexOfLastPost)
-      : sortedData;
+  const sortedData = sortResources(props.data, effectiveSort);
+  const searchedResource = paginateResources(
+    sortedData,
+    props.currentPage,
+    props.postsPerPage
+  );
 
   const paginate = (pageNumber) => {
     props.setCurrentPage(pageNumber);
