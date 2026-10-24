@@ -1,5 +1,5 @@
 import * as JsSearch from "js-search";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 const useDataList = (
   data,
   setSearchQuery,
@@ -11,6 +11,7 @@ const useDataList = (
   const [search, setSearch] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const pendingText = useRef(null);
   const queryResults = searchQuery ? searchResults : dataList;
   useEffect(() => {
     rebuildIndex();
@@ -19,6 +20,13 @@ const useDataList = (
   useEffect(() => {
     rebuildIndex();
   }, []);
+
+  useEffect(() => {
+    if (pendingText.current !== null && typeof search.search === "function") {
+      setSearchResults(search.search(pendingText.current));
+      pendingText.current = null;
+    }
+  }, [search]);
 
   const rebuildIndex = () => {
     const dataToSearch = new JsSearch.Search(paramSearch);
@@ -32,13 +40,27 @@ const useDataList = (
     setIsLoading(false);
   };
 
-  const searchData = (e) => {
-    const queryResult = search.search(e.target.value);
-    setSearchQuery(e.target.value.trim());
-    setSearchResults(queryResult);
+  const searchByText = (text) => {
+    setSearchQuery(text.trim());
+    if (typeof search.search !== "function") {
+      pendingText.current = text;
+      return;
+    }
+    setSearchResults(search.search(text));
   };
 
-  return { queryResults, searchData, setDataList,dataList };
+  const searchData = (e) => {
+    searchByText(e.target.value);
+  };
+
+  return {
+    queryResults,
+    searchData,
+    searchByText,
+    isLoading,
+    setDataList,
+    dataList,
+  };
 };
 
 export default useDataList;
