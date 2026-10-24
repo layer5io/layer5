@@ -1,5 +1,5 @@
 import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
-import React from "react";
+import React, { useId, useRef } from "react";
 import { SearchWrapper } from "./searchbox.style";
 import Button from "../../reusecore/Button";
 import { DebounceInput } from "react-debounce-input";
@@ -12,8 +12,32 @@ const SearchBox = ({
   paginate,
   currentPage,
   classnames,
-  focusSearch
+  focusSearch,
+  ariaLabel,
+  "aria-label": aria_label,
+  id,
+  name,
+  autoComplete,
+  onSearchClick,
 }) => {
+  const generatedId = useId();
+  const inputId = id || generatedId;
+  const inputName = name || id || "search";
+  const accessibleLabel = ariaLabel || aria_label || "Search";
+  const inputRef = useRef(null);
+
+  const handleSearchClick = (e) => {
+    if (e && typeof e.preventDefault === "function") {
+      e.preventDefault();
+    }
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+    if (onSearchClick) {
+      onSearchClick(e);
+    }
+  };
+
   const handleChange = (e) => {
     if (hideFilter != undefined && setHideFilter != undefined) {
       if (e.target.value.length > 0) {
@@ -29,13 +53,17 @@ const SearchBox = ({
       currentPage != 1
     )
       paginate(1);
-    searchData(e);
+    if (searchData) {
+      searchData(e);
+    }
   };
 
   return (
     <SearchWrapper>
       <div className={`search-box ${classnames ? classnames.join(" ") : ""}`}>
         <DebounceInput
+          id={inputId}
+          name={inputName}
           type="text"
           value={searchQuery}
           minLength={1}
@@ -43,9 +71,12 @@ const SearchBox = ({
           onChange={(e) => handleChange(e)}
           placeholder="Search..."
           autoFocus={focusSearch}
+          aria-label={accessibleLabel}
+          autoComplete={autoComplete}
+          inputRef={inputRef}
         />
-        <Button aria-label="search icon">
-          <FaSearch />
+        <Button type="button" aria-label="Search" onClick={handleSearchClick}>
+          <FaSearch aria-hidden="true" />
         </Button>
       </div>
     </SearchWrapper>
