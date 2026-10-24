@@ -45,9 +45,6 @@ const MembersPage = () => {
     setFilter([]);
     setCurrentPage(1);
     updateUrl([]);
-    document
-      .querySelectorAll('input[type="checkbox"]')
-      .forEach((el) => (el.checked = false));
   };
   return (
     <>
