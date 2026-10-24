@@ -32,13 +32,17 @@ const useDataList = (
     setIsLoading(false);
   };
 
-  const searchData = (e) => {
-    const queryResult = search.search(e.target.value);
-    setSearchQuery(e.target.value.trim());
-    setSearchResults(queryResult);
+  const searchByText = (text) => {
+    if (!search || typeof search.search !== "function") return;
+    setSearchQuery(text.trim());
+    setSearchResults(search.search(text));
   };
 
-  return { queryResults, searchData, setDataList,dataList };
+  const searchData = (e) => {
+    searchByText(e.target.value);
+  };
+
+  return { queryResults, searchData, searchByText, isLoading, setDataList, dataList };
 };
 
 export default useDataList;

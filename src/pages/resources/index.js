@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // Components
 import SEO from "../../components/seo";
 
@@ -13,18 +13,35 @@ const MembersPage = () => {
   const [filter, setFilter] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(12);
+  useEffect(() => {
+    const filters = new URLSearchParams(window.location.search).getAll("filter");
+    if (filters.length > 0) setFilter(filters);
+  }, []);
+  const updateUrl = (filters) => {
+    const params = new URLSearchParams(window.location.search);
+    params.delete("filter");
+    filters.forEach((value) => params.append("filter", value));
+    const query = params.toString();
+    window.history.replaceState(
+      window.history.state,
+      "",
+      `${window.location.pathname}${query ? `?${query}` : ""}`
+    );
+  };
   const handleChange = () => {
-    var checkboxes = document.querySelectorAll("input[type=checkbox]:checked");
+    var checkboxes = document.querySelectorAll("input[type=checkbox][value]:checked");
     var filters = [];
     for (var i = 0; i < checkboxes.length; i++) {
       filters.push(checkboxes[i].value);
     }
     setFilter(filters);
     setCurrentPage(1);
+    updateUrl(filters);
   };
   const clear = () => {
     setFilter([]);
     setCurrentPage(1);
+    updateUrl([]);
     document.querySelectorAll("input[type=\"checkbox\"]")
       .forEach(el => el.checked = false);
   };

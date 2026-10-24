@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 // Components
 import ResourcesGrid from "./index";
@@ -8,7 +8,7 @@ import useDataList from "../../../utils/usedataList";
 
 const ResourcesList = (props) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const { queryResults, searchData } = useDataList(
+  const { queryResults, searchData, searchByText, isLoading } = useDataList(
     props.allResources.allMdx.nodes,
     setSearchQuery,
     searchQuery,
@@ -16,6 +16,27 @@ const ResourcesList = (props) => {
     "id"
   );
 
+  const searchRestored = useRef(false);
+
+  useEffect(() => {
+    if (isLoading || searchRestored.current) return;
+    searchRestored.current = true;
+    const q = new URLSearchParams(window.location.search).get("q");
+    if (q) searchByText(q);
+  }, [isLoading]);
+
+  useEffect(() => {
+    if (!searchRestored.current) return;
+    const params = new URLSearchParams(window.location.search);
+    if (searchQuery) params.set("q", searchQuery);
+    else params.delete("q");
+    const query = params.toString();
+    window.history.replaceState(
+      window.history.state,
+      "",
+      `${window.location.pathname}${query ? `?${query}` : ""}`
+    );
+  }, [searchQuery]);
 
   let data = [];
   let all = [];
