@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 // Components
 import SEO from "../../components/seo";
 
+
 import ResourcesList from "../../sections/Resources/Resources-grid/ResourcesList";
 import ResourcesNavigation from "../../sections/Resources/Resources-grid/filters";
 import ServiceMeshFocused from "../../sections/Home/Service-mesh-focussed";
@@ -48,48 +49,28 @@ const MembersPage = () => {
   };
   return (
     <>
-      <PageHeader
-        title="Cloud Native Resources"
-        path="Resources"
-        subtitle="Learn how to provision, secure, connect, and manage your applications on Kubernetes"
-        img={RssFeedIcon}
-      />
+      <PageHeader title="Cloud Native Resources" path="Resources" subtitle="Learn how to provision, secure, connect, and manage your applications on Kubernetes" img={RssFeedIcon} />
       {/* RSS feed disabled */}
       {/* feedlink="/resources/feed.xml" */}
       <Container>
-        <Row
-          style={{
-            flexWrap: "wrap",
-          }}
+        <Row style={{
+          flexWrap: "wrap"
+        }}
         >
           <Col $xs={12} $lg={3}>
-            <ResourcesNavigation
-              handleChange={handleChange}
-              clear={clear}
-              resources={filter}
-            />
+            <ResourcesNavigation handleChange={handleChange} clear={clear} resources={filter} />
           </Col>
           <Col $xs={12} $lg={9}>
-            <ResourcesList
-              resource={filter}
-              currentPage={currentPage}
-              postsPerPage={postsPerPage}
-              setCurrentPage={setCurrentPage}
-            />
+            <ResourcesList resource={filter} currentPage={currentPage} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
           </Col>
         </Row>
         <ServiceMeshFocused bookName={"service-mesh-patterns"} />
       </Container>
+
     </>
   );
 };
 export default MembersPage;
 export const Head = () => {
-  return (
-    <SEO
-      title="Cloud Native Resources"
-      description="Learn how to provision, secure, connect, and manage your applications with GitOps and DevOps techniques running in Kubernetes or Cloud. Site Reliability Engineering and Platform Engineering tips and tricks."
-      canonical="https://layer5.io/resources"
-    />
-  );
+  return <SEO title="Cloud Native Resources" description="Learn how to provision, secure, connect, and manage your applications with GitOps and DevOps techniques running in Kubernetes or Cloud. Site Reliability Engineering and Platform Engineering tips and tricks." canonical="https://layer5.io/resources" />;
 };
