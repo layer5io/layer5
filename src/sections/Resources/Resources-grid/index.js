@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../../../components/Card";
 import { Row, Col } from "../../../reusecore/Layout";
 import Pagination from "./paginate";
@@ -18,6 +18,10 @@ const ResourceGrid = (props) => {
       : hasQuery
         ? "relevance"
         : "latest";
+
+  useEffect(() => {
+    setChoice(null);
+  }, [query]);
 
   // Get current posts
   const sortedData = sortResources(props.data, effectiveSort);
