@@ -46,7 +46,7 @@ const MemberSingle = ({ frontmatter, children }) => {
     <MemberSingleWrapper>
       <Container>
         <div>
-          <Row className="profile-header" >
+          <Row className="profile-header">
             <Col xs={12} sm={12} lg={6}>
               <div className="backBtn">
                 <Link to="/community/members">
@@ -273,7 +273,7 @@ const MemberSingle = ({ frontmatter, children }) => {
                       {badges.includes("ui-ux") && (
                         <div className="tooltip">
                           <li>
-                            <Link to="../../handbook/designer">
+                            <Link to="/community/handbook/design-with-layer5">
                               <img
                                 className="profile-social-links"
                                 src={uiuxrLogo}
@@ -287,7 +287,7 @@ const MemberSingle = ({ frontmatter, children }) => {
                       {badges.includes("writer") && (
                         <div className="tooltip">
                           <li>
-                            <Link to="../../handbook/writing-program">
+                            <Link to="/community/handbook/writing-program">
                               <img
                                 className="profile-social-links"
                                 src={writerIcon}
@@ -402,7 +402,8 @@ const MemberSingle = ({ frontmatter, children }) => {
             <Col className="start-contributing" $sm={12} $lg={12}>
               <p> Would you Like a Member Profile?</p>
               <Button
-                $primary                title="Start Contributing Today"
+                $primary
+                title="Start Contributing Today"
                 $url="/community"
               />
             </Col>
