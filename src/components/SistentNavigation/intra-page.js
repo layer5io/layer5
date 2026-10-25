@@ -60,14 +60,22 @@ const JoinCommunityWrapper = styled.div`
   }
 `;
 
-function IntraPage() {
-  const [contents, setContents] = useState([]);
+function IntraPage({ contents: providedContents }) {
+  const [scannedContents, setScannedContents] = useState([]);
+
+  // Pages that build their own layout pass an explicit list of sections.
+  // Pages rendered through the MDX template instead expose their sections
+  // as anchors inside `.main-content`, which are discovered here.
+  const hasProvidedContents = Boolean(providedContents && providedContents.length);
 
   useEffect(() => {
+    if (hasProvidedContents) {
+      return;
+    }
     const anchors = document.querySelectorAll(".main-content > a");
     console.log(anchors);
     if (anchors) {
-      setContents(
+      setScannedContents(
         Array.from(anchors).map((a) => ({
           id: a.id,
           link: `#${a.id}`,
@@ -75,7 +83,9 @@ function IntraPage() {
         }))
       );
     }
-  }, []);
+  }, [hasProvidedContents]);
+
+  const contents = hasProvidedContents ? providedContents : scannedContents;
 
   const [intapath, setIntapath] = useState(null);
   useEffect(() => {
