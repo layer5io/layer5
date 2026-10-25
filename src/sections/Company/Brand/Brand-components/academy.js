@@ -51,21 +51,23 @@ const AcademyBrand = () => {
           flexWrap: "wrap"
         }}
         >
-          <Col>
+          <Col $xs={12}>
             <h2 className="layerH3 in">
               Logos
             </h2>
           </Col>
-          <SRLWrapper>
-            <Row $Vcenter className="ImgDiv">
-              <Col $xs={12} $sm={4}>
-                <img src={AcademyIcon} style={{ minWidth: "200px" }} alt="Academy Logo" />
-              </Col>
-              <Col $xs={12} $sm={4}>
-                <img src={AcademyLight} style={{ minWidth: "200px" }} alt="AcademyLight Logo" />
-              </Col>
-            </Row>
-          </SRLWrapper>
+          <Col $xs={12}>
+            <SRLWrapper>
+              <Row $Vcenter $Hcenter className="ImgDiv">
+                <Col $xs={12} $sm={4}>
+                  <img src={AcademyIcon} style={{ width: "100%", maxWidth: "200px", display: "block", margin: "auto" }} alt="Academy Logo" />
+                </Col>
+                <Col $xs={12} $sm={4} className="logo">
+                  <img src={AcademyLight} style={{ width: "100%", maxWidth: "200px", display: "block", margin: "auto" }} alt="AcademyLight Logo" />
+                </Col>
+              </Row>
+            </SRLWrapper>
+          </Col>
         </Row>
         <Row style={{
           flexWrap: "wrap"
