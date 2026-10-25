@@ -5,9 +5,12 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 import GCPCatalogDark from "./images/gcp-catalog-dark.svg";
 import RelatedPicks from "../../components/RelatedPicks";
 // import DeployGIF from "./images/gcp-deploy.gif";
-import DragNDropGIF from "./images/gcp-drag-drop.gif";
-import IconsLibraryGIF from "./images/gcp-icon-library.gif";
+import DragNDropVideo from "./images/gcp-drag-drop.mp4";
+import DragNDropPoster from "./images/gcp-drag-drop-poster.webp";
+import IconsLibraryVideo from "./images/gcp-icon-library.mp4";
+import IconsLibraryPoster from "./images/gcp-icon-library-poster.webp";
 import { Link } from "gatsby";
+import AutoVideo from "../../components/AutoVideo";
 
 const DiagramWrapper = styled.div`
   min-height: fit-content;
@@ -163,7 +166,7 @@ const Gcp = () => {
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={DragNDropGIF} alt="GCP Diagrams for anything" className="GCP-image" />
+              <AutoVideo src={DragNDropVideo} poster={DragNDropPoster} width={1258} height={680} alt="GCP Diagrams for anything" className="GCP-image" />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
@@ -183,7 +186,7 @@ const Gcp = () => {
           </Col>
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={IconsLibraryGIF} alt="GCP Diagrams for anything" className="GCP-image" />
+              <AutoVideo src={IconsLibraryVideo} poster={IconsLibraryPoster} width={1258} height={680} alt="GCP Diagrams for anything" className="GCP-image" />
             </div>
           </Col>
         </Row>
