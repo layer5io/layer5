@@ -27,14 +27,14 @@ const DiscussCallout = () => {
                         Discussion Forum
                       </p>
 
-                      <button>
+                      <div className="logo-wrapper">
                         <img
                           className="logo"
                           alt="Discuss"
                           src={Discuss}
                           loading="lazy"
                         />
-                      </button>
+                      </div>
                     </div>
                   </SectionTitle>
                 </div>
