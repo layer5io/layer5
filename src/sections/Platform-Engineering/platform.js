@@ -243,9 +243,6 @@ const StyledRow = styled(Row)`
 
       img {
         cursor: zoom-in;
-      }
-
-      img, video {
         width: 600px;
         height: 300px;
         object-fit: contain;
@@ -260,6 +257,19 @@ const StyledRow = styled(Row)`
           width: 100%;
           height: 180px;
           object-fit: contain;
+        }
+      }
+
+      video {
+        width: auto;
+        max-height: 300px;
+
+        @media (max-width: 767px) {
+          max-height: 200px;
+        }
+
+        @media (max-width: 467px) {
+          max-height: 180px;
         }
       }
     }
