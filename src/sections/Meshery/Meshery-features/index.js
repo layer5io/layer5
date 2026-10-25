@@ -80,7 +80,7 @@ const MesheryFeatures = () => {
                 "Manage multiple Kubernetes clusters across any infrastructure from a single console. Perform dry-run deployments and validate configurations before applying changes.",
               learnMoreLink: "https://docs.meshery.io/guides/configuration-management/",
               content: (
-                <AutoVideo src={multiClusterVideo} poster={multiClusterPoster} width={758} height={722} alt="Workspaces Team Collaboration" />
+                <AutoVideo src={multiClusterVideo} poster={multiClusterPoster} width={758} height={722} alt="Multi-Cluster Kubernetes Management" />
               ),
             },
             {
