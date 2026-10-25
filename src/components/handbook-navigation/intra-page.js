@@ -6,11 +6,8 @@ const JoinCommunityWrapper = styled.div`
     display: none;
   }
   .intra-page {
-    position: sticky;
-    top: 10rem;
-    right: 0rem;
     margin-right: 1rem;
-    padding-bottom: 5rem;
+    padding-bottom: 3rem;
     padding-right: 2rem;
     align-items: left;
     justify-content: space-around;
@@ -19,7 +16,6 @@ const JoinCommunityWrapper = styled.div`
     overflow: hidden;
     ul {
       list-style: none;
-      top: 3rem;
       li {
         padding-bottom: 0.5rem;
         padding-top: 0.5rem;
