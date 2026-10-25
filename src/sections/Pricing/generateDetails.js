@@ -50,6 +50,7 @@ function generateDetails(data) {
               target="_blank"
               rel="noopener noreferrer"
               className="feature-link"
+              aria-label={`${featureName} documentation (opens in new tab)`}
             >
               <Docs className="docs"/>
             </a>
