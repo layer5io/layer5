@@ -1,34 +1,46 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import PopOutCard from "../../../components/PopOutCardCarousel";
+import AutoVideo from "../../../components/AutoVideo";
 
-import dragDrop from "./images/drag-drop-components.gif";
-import mergeDesign from "./images/merge-design.gif";
-import connectComponents from "./images/connect-components.gif";
-import shareDesign from "./images/share-design.gif";
+import dragDrop from "./images/drag-drop-components.mp4";
+import dragDropPoster from "./images/drag-drop-components-poster.webp";
+import mergeDesign from "./images/merge-design.mp4";
+import mergeDesignPoster from "./images/merge-design-poster.webp";
+import connectComponents from "./images/connect-components.mp4";
+import connectComponentsPoster from "./images/connect-components-poster.webp";
+import shareDesign from "./images/share-design.mp4";
+import shareDesignPoster from "./images/share-design-poster.webp";
+
+export const KANVAS_VIDEOS = {
+  dragDrop: { src: dragDrop, poster: dragDropPoster, width: 1796, height: 932 },
+  mergeDesign: { src: mergeDesign, poster: mergeDesignPoster, width: 1544, height: 878 },
+  connectComponents: { src: connectComponents, poster: connectComponentsPoster, width: 1788, height: 926 },
+  shareDesign: { src: shareDesign, poster: shareDesignPoster, width: 1470, height: 788 },
+};
 
 const CONTENT = [
   {
     title: "Confidently make changes to your infrastructure",
-    img: dragDrop,
+    video: KANVAS_VIDEOS.dragDrop,
     description:
       "Kanvas automatically catalogs and provides insight into all of your services, datastores and the connections between them, allowing teams to deeply understand application architecture.",
   },
   {
     title: "Visualize and automate infrastructure understanding",
-    img: mergeDesign,
+    video: KANVAS_VIDEOS.mergeDesign,
     description:
       "Kanvaselps automate infrastructure understanding from the architecture to a single PR so your team can ship, refactor and onboard to legacy or existing applications faster.",
   },
   {
     title: "Make working across services as easy as working across files",
-    img: connectComponents,
+    video: KANVAS_VIDEOS.connectComponents,
     description:
       "Get automatic visibility into how your services interact in your application so you can confidently change, update or migrate to microservices.",
   },
   {
     title: "Stop finger-pointing",
-    img: shareDesign,
+    video: KANVAS_VIDEOS.shareDesign,
     description:
       "Share your designs publically or in private to collaborate with others in real-time.",
   },
@@ -151,11 +163,10 @@ export default function KanvasDesignFeatureCarousel() {
               <p>{content.description}</p>
             </div>
             <div className="img">
-              <img
-                // width="85%"
-                // // height="90%"
+              <AutoVideo
+                {...content.video}
+                active={cardIndices[i] === 0}
                 style={{ border: "1px solid #444444", marginTop: "8px", borderRadius: "20px" }}
-                src={content.img}
               />
             </div>
           </PopOutCard>
