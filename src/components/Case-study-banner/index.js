@@ -60,9 +60,11 @@ const BannerWrapper = styled.div`
       text-align: center;
       width: 80%;
       color: #fff;
+      padding: 0 3.5rem 0 1.5rem;
 
       @media screen and (max-width: 800px) {
         font-size: 1.25rem;
+        padding: 0 2.5rem 0 1rem;
       }
       @media screen and (max-width: 600px) {
         font-size: 1rem;
