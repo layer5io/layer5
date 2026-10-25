@@ -115,9 +115,9 @@ const ComponentsGrid = ({ frontmatter }) => {
     };
   }, [frontmatter, darkModeActive, fallbackIcon]);
 
-  const handleImageError = (indexToRemove) => {
+  const handleImageError = (nameToRemove) => {
     setValidComponents((prev) =>
-      prev.filter((_, idx) => idx !== indexToRemove),
+      prev.filter((item) => item.name !== nameToRemove),
     );
   };
 
@@ -130,8 +130,8 @@ const ComponentsGrid = ({ frontmatter }) => {
       </section>
 
       <section className="componentsSection">
-        {validComponents.map((item, index) => (
-          <div key={`${item.name}-${index}`} className="maincontainer">
+        {validComponents.map((item) => (
+          <div key={item.name} className="maincontainer">
             <div className="componentimg">
               {item.preferredIcon && (
                 <img
@@ -139,7 +139,7 @@ const ComponentsGrid = ({ frontmatter }) => {
                   alt={item.name || ""}
                   onError={(e) => {
                     e.currentTarget.onerror = null;
-                    handleImageError(index);
+                    handleImageError(item.name);
                   }}
                 />
               )}
