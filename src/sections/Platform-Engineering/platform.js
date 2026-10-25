@@ -10,7 +10,9 @@ import Workspace from "./images/workspace.webp";
 import DeliveryCylesImg from "./images/delivery-cycles.webp";
 import ScaleDevopsImg from "./images/scale-devops-practices.webp";
 import CatalogImg from "./images/catalog-light.svg";
-import ComponentLibrary from "./images/components.gif";
+import ComponentLibrary from "./images/components.mp4";
+import ComponentLibraryPoster from "./images/components-poster.webp";
+import AutoVideo from "../../components/AutoVideo";
 import Integrations from "../../sections/Home/Playground-home";
 import InlineQuotes from "../../components/Inline-quotes";
 import Maxi from "../../collections/members/maximiliano-churichi/Maximiliano-Churichi.webp";
@@ -78,7 +80,7 @@ const Platform = () => {
         <PlatformSection
           heading="Visualize and Design Infrastructure Effortlessly"
           caption="Leverage the model and component library to visually design cloud-native infrastructure using pre-built tools and patterns. Simplify architecture creation with reusable components and drag-and-drop precision."
-          image={ComponentLibrary}
+          video={{ src: ComponentLibrary, poster: ComponentLibraryPoster, width: 754, height: 608 }}
         />
 
         <PlatformSection
@@ -127,7 +129,7 @@ const Platform = () => {
 };
 
 
-const PlatformSection = ({ heading, caption, image, $reverse }) => {
+const PlatformSection = ({ heading, caption, image, video, $reverse }) => {
   return (
     <StyledRow className="platform" $reverse={$reverse}>
       <Col $md={6} className="platform-detail">
@@ -136,12 +138,15 @@ const PlatformSection = ({ heading, caption, image, $reverse }) => {
       </Col>
       <Col $md={6} className="platform-image">
         <div className="img-wrapper">
-          <SimpleReactLightbox>
-            <SRLWrapper>
-              <img src={image} alt={heading} />
-            </SRLWrapper>
-          </SimpleReactLightbox>
-
+          {video ? (
+            <AutoVideo {...video} alt={heading} />
+          ) : (
+            <SimpleReactLightbox>
+              <SRLWrapper>
+                <img src={image} alt={heading} />
+              </SRLWrapper>
+            </SimpleReactLightbox>
+          )}
         </div>
       </Col>
     </StyledRow>
@@ -235,9 +240,12 @@ const StyledRow = styled(Row)`
       display: flex;
       justify-content: center;
       align-items: center;
-      cursor: zoom-in;
 
       img {
+        cursor: zoom-in;
+      }
+
+      img, video {
         width: 600px;
         height: 300px;
         object-fit: contain;
