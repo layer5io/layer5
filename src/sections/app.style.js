@@ -329,6 +329,25 @@ section{
   }
 }
 
+// Case Study Display
+.casestudy1 {
+  .casestudy1 {
+    display: block !important;
+  }
+}
+
+.casestudy2 {
+  .casestudy2 {
+    display: block !important;
+  }
+}
+
+.casestudy3 {
+  .casestudy3 {
+    display: block !important;
+  }
+}
+
 /* Modal CSS Ends */
 `;
 
