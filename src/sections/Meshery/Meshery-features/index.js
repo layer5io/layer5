@@ -36,6 +36,10 @@ const MesheryFeaturesWrapper = styled.div`
       padding: 0 3rem 1rem;
       height:20rem;
     }
+    .feature-video {
+      max-width: calc(100% - 6rem);
+      margin-bottom: 1rem;
+    }
   }
   .feature-expose-full {
     img {
@@ -107,7 +111,7 @@ const MesheryFeatures = () => {
               learnMoreLink: "https://playground.meshery.io/performance",
               content: (
                 <div className="feature-expose">
-                  <AutoVideo src={img3} poster={img3Poster} width={854} height={480} alt="Performance Management" />
+                  <AutoVideo src={img3} poster={img3Poster} width={854} height={480} alt="Performance Management" className="feature-video" />
                   <p>
                     Built-in statistical analysis, performance profiles for consistent testing,
                     and integration with Prometheus and Grafana for comprehensive metrics collection.
