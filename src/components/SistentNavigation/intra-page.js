@@ -27,11 +27,11 @@ const JoinCommunityWrapper = styled.div`
     overflow: hidden;
 
     .list {
-      color: #000000;
+      color: ${(props) => props.theme.menuColor};
     }
     .active {
-      font-weight: 5000;
-      color: #000000;
+      font-weight: 700;
+      color: ${(props) => props.theme.secondaryColor};
     }
 
     ul {
