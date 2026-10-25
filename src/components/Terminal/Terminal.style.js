@@ -106,7 +106,7 @@ export const TerminalWrapper = styled.div`
         color: var(--white);
       }
 
-      wrap-word: normal;
+      overflow-wrap: anywhere;
       
       @media (min-width: 768px){
         font-size: 13.5px;
