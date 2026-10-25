@@ -51,10 +51,12 @@ const PageHeaderWrapper = styled.div`
     justify-content: center;
     margin-top: 1.5rem;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 
     h5 {
       display: inline-block;
-      margin: 0 0.4rem;
+      margin: 0 0.4rem 0 0;
       opacity: 0.7;
     }
 
