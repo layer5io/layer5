@@ -68,14 +68,13 @@ const AutoVideo = ({ src, poster, width, height, alt, className, style, active =
   };
 
   return (
-    <AutoVideoWrapper>
+    <AutoVideoWrapper className={className}>
       <video
         ref={ref}
         src={started ? src : undefined}
         poster={poster}
         width={width}
         height={height}
-        className={className}
         style={style}
         aria-label={alt}
         muted
