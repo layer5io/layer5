@@ -162,11 +162,6 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
           </Col>
           <Col $md={12} $lg={4} $xl={5}>
             <div className="service-meshes-you-can-learn">
-              {console.log(
-                "lenght of the service mesh array: ",
-                availableServiceMeshes.length,
-              )}
-              {console.log("array: ", availableServiceMeshes)}
               {serviceMeshImages.length !== 0 &&
                 availableServiceMeshesWithImages.length != 0 && (
                   <>

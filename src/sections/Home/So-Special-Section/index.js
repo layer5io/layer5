@@ -121,8 +121,6 @@ const SoSpecial = () => {
               <Button className="special-cont_btn" $url={fields.slug} key={id}>
                 <div id="special-cont" >
                   <div id="special-cont_img">
-                    {/* {console.log("Dark Thumbnail:", frontmatter.darkthumbnail)}
-                    {console.log("Thumbnail:", frontmatter.thumbnail)} */}
                     <Image
                       {...(frontmatter.thumbnail || frontmatter.thumbnail_svg)}
                       imgStyle={{ objectFit: "contain" }}
