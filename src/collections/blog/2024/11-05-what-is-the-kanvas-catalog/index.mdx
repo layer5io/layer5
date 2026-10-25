@@ -25,9 +25,15 @@ import importDesignPanelPNG from "./import-designs-panel.png";
 import renderedDesignPNG from "../../../../assets/images/kanvas/gifs/rendered-design.webp";
 import designPannelOpener from "./designs-panel-opener.png";
 import designerDockPNG from "./designer-dock.png";
-import catalogGIF from "../../../../assets/images/kanvas/gifs/catalog.gif";
-import publishToCatalogGIF from "./publish-to-catalog.gif";
-import getStartedWithDesignerGIF from "../../../../assets/images/kanvas/gifs/start-from-scratch.gif";
+import AutoVideo from "../../../../components/AutoVideo";
+import catalogVideo from "../../../../assets/images/kanvas/gifs/catalog.mp4";
+import catalogPoster from "../../../../assets/images/kanvas/gifs/catalog-poster.webp";
+import publishToCatalogVideo from "./publish-to-catalog.mp4";
+import publishToCatalogPoster from "./publish-to-catalog-poster.webp";
+import getStartedWithDesignerVideo from "../../../../assets/images/kanvas/gifs/start-from-scratch.mp4";
+import getStartedWithDesignerPoster from "../../../../assets/images/kanvas/gifs/start-from-scratch-poster.webp";
+import importDesignVideo from "./import-design.mp4";
+import importDesignPoster from "./import-design-poster.webp";
 
 <BlogWrapper>
 
@@ -61,18 +67,18 @@ Begin by creating a new design from scratch, using existing design patterns and 
 **From Scratch**:
 
 - Open the Designs panel, Select and arrange components from the Designer Dock on the Kanvas, and customize with connections, labels, and properties.
-  <img src={getStartedWithDesignerGIF} />
+  <AutoVideo src={getStartedWithDesignerVideo} poster={getStartedWithDesignerPoster} width={1914} height={878} />
 
 **From a Template**:
 
 - Start from a pre-built template or clone an existing design from the Catalog. This allows you to build on established designs for a quicker start.
-  <img src={catalogGIF} />
+  <AutoVideo src={catalogVideo} poster={catalogPoster} width={1920} height={860} />
 
 **Import a Design**: 
 
 
 -   Access the Kanvas Designer and select the "Import" button in the left Designs panel. Import your own designs from local filesystem or from a remote URL directly into the Catalog. Upload a file or provide a URL for Docker Compose, Helm Charts, Meshery Designs or Kubernetes Manifests. Choose to either import as new or merge into current design that you have open in Kanvas.
-    <img src="/blog/2024/11-05-what-is-the-kanvas-catalog/import-design-gif.gif" />
+    <AutoVideo src={importDesignVideo} poster={importDesignPoster} width={1916} height={874} />
 
 Kanvas will convert these into a usable design based on their configurations.
    
@@ -83,18 +89,18 @@ Kanvas will convert these into a usable design based on their configurations.
 Make your designs accessible to others by publishing them in the Catalog:
 
 - In the designs panel, locate your design and hover over it to access quick actions. Select the info button (marked with an "i") and add any necessary details for the review process, such as relevant technologies, descriptions, and considerations and click Publish button. Once approved by the Maintainers, your design becomes available to the broader community in Kanvas catalog.
-  <img src={getStartedWithDesignerGIF} alt="Animated walkthrough of creating a design from scratch in the Kanvas Designer" />
+  <AutoVideo src={getStartedWithDesignerVideo} poster={getStartedWithDesignerPoster} width={1914} height={878} alt="Animated walkthrough of creating a design from scratch in the Kanvas Designer" />
 
 **From a Template**:
 
 - Start from a pre-built template or clone an existing design from the Catalog. This allows you to build on established designs for a quicker start.
-  <img src={catalogGIF} alt="Animated view of selecting and cloning templates from the Kanvas Catalog" />
+  <AutoVideo src={catalogVideo} poster={catalogPoster} width={1920} height={860} alt="Animated view of selecting and cloning templates from the Kanvas Catalog" />
 
 **Import a Design**: 
 
 
 -   Access the Kanvas Designer and select the "Import" button in the left Designs panel. Import your own designs from local filesystem or from a remote URL directly into the Catalog. Upload a file or provide a URL for Docker Compose, Helm Charts, Meshery Designs or Kubernetes Manifests. Choose to either import as new or merge into current design that you have open in Kanvas.
-    <img src="/blog/2024/11-05-what-is-the-kanvas-catalog/import-design-gif.gif" alt="Animated demonstration of importing a design into Kanvas from a local file or remote URL" />
+    <AutoVideo src={importDesignVideo} poster={importDesignPoster} width={1916} height={874} alt="Animated demonstration of importing a design into Kanvas from a local file or remote URL" />
 
 Kanvas will convert these into a usable design based on their configurations.
    
@@ -105,7 +111,7 @@ Kanvas will convert these into a usable design based on their configurations.
 Make your designs accessible to others by publishing them in the Catalog:
 
 - In the designs panel, locate your design and hover over it to access quick actions. Select the info button (marked with an "i") and add any necessary details for the review process, such as relevant technologies, descriptions, and considerations and click Publish button. Once approved by the Maintainers, your design becomes available to the broader community in Kanvas catalog.
-<img src={publishToCatalogGIF} alt="Animated demonstration of publishing a design from the Kanvas Designer to the Kanvas Catalog" />
+<AutoVideo src={publishToCatalogVideo} poster={publishToCatalogPoster} width={1920} height={878} alt="Animated demonstration of publishing a design from the Kanvas Designer to the Kanvas Catalog" />
 
 
 #### Share your designs
