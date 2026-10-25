@@ -39,7 +39,6 @@ const ResourceGrid = (props) => {
               ariaLabel="Search resources"
               id="resource-search"
               name="resource-search"
-              autoComplete="off"
             />
           </div>
         </div>

@@ -13,17 +13,14 @@ const SearchBox = ({
   currentPage,
   classnames,
   focusSearch,
-  ariaLabel,
-  "aria-label": aria_label,
+  ariaLabel = "Search",
   id,
   name,
-  autoComplete,
-  onSearchClick,
+  autoComplete = "off",
 }) => {
   const generatedId = useId();
   const inputId = id || generatedId;
   const inputName = name || id || "search";
-  const accessibleLabel = ariaLabel || aria_label || "Search";
   const inputRef = useRef(null);
 
   const handleSearchClick = (e) => {
@@ -32,9 +29,6 @@ const SearchBox = ({
     }
     if (inputRef.current) {
       inputRef.current.focus();
-    }
-    if (onSearchClick) {
-      onSearchClick(e);
     }
   };
 
@@ -71,7 +65,7 @@ const SearchBox = ({
           onChange={(e) => handleChange(e)}
           placeholder="Search..."
           autoFocus={focusSearch}
-          aria-label={accessibleLabel}
+          aria-label={ariaLabel}
           autoComplete={autoComplete}
           inputRef={inputRef}
         />
