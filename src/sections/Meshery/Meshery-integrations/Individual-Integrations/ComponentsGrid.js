@@ -22,7 +22,8 @@ const ComponentsGrid = ({ frontmatter }) => {
   });
 
   const handleImageError = (fallback) => (e) => {
-    if (fallback && e.currentTarget.src !== fallback) {
+    if (fallback && e.currentTarget.getAttribute("src") !== fallback) {
+      e.currentTarget.onerror = null;
       e.currentTarget.src = fallback;
     }
   };
