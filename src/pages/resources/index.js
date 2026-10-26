@@ -30,14 +30,11 @@ const MembersPage = () => {
       `${window.location.pathname}${query ? `?${query}` : ""}${window.location.hash}`,
     );
   };
-  const handleChange = () => {
-    var checkboxes = document.querySelectorAll(
-      "input[type=checkbox][value]:checked",
-    );
-    var filters = [];
-    for (var i = 0; i < checkboxes.length; i++) {
-      filters.push(checkboxes[i].value);
-    }
+  const handleChange = (e) => {
+    const { value, checked } = e.target;
+    const filters = checked
+      ? [...new Set([...filter, value])]
+      : filter.filter((f) => f !== value);
     setFilter(filters);
     setCurrentPage(1);
     updateUrl(filters);

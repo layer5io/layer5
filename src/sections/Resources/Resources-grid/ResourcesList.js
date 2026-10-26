@@ -123,9 +123,9 @@ const ResourcesList = (props) => {
       if (totalTech === 0) techData = all;
       if (totalMesh === 0) meshData = all;
 
-      (result = [typeData, productData,techData, meshData]),
+      (result = [typeData, productData, techData, meshData]),
       (data = result.reduce((a, b) => a.filter((c) => b.includes(c))));
-        });
+    });
   } else {
     queryResults.forEach((resources) => {
       data.push(resources);
