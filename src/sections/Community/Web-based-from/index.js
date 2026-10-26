@@ -212,30 +212,30 @@ const WebBasedForm = () => {
         </p>
 
         <div className="center">
-          <div className={role === "Contributor" ? "option active" : "option"} onClick={() => {
+          <button type="button" aria-pressed={role === "Contributor"} className={role === "Contributor" ? "option active" : "option"} onClick={() => {
             setRole("Contributor");
           }}
           >
             I'm here as a Contributor
-          </div>
-          <div className={role === "Developer" ? "option active" : "option"} onClick={() => {
+          </button>
+          <button type="button" aria-pressed={role === "Developer"} className={role === "Developer" ? "option active" : "option"} onClick={() => {
             setRole("Developer");
           }}
           >
             I'm here as a User
-          </div>
-          <div className={role === "User" ? "option active" : "option"} onClick={() => {
+          </button>
+          <button type="button" aria-pressed={role === "User"} className={role === "User" ? "option active" : "option"} onClick={() => {
             setRole("User");
           }}
           >
             I'm here as a User and Contributor
-          </div>
-          <div className={role === "Bystander" ? "option active" : "option"} onClick={() => {
+          </button>
+          <button type="button" aria-pressed={role === "Bystander"} className={role === "Bystander" ? "option active" : "option"} onClick={() => {
             setRole("Bystander");
           }}
           >
             I'm here as a Bystander <br /><small>(here to learn and absorb passively)</small>
-          </div>
+          </button>
           <br /><br />
           <div className="btn-wrapper">
             <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous Step</button>
@@ -648,7 +648,7 @@ const WebBasedForm = () => {
           }
           {
             stepNumber === 1 &&
-            <MemberFormSecond />
+            MemberFormSecond()
           }
           {
             stepNumber === 2 &&

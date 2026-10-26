@@ -227,6 +227,14 @@ const Webform = styled.div`
         color: #00B39F;
         text-align: center;
         padding: 25px 10px; 
+        border: none;
+        font: inherit;
+        display: block;
+        width: calc(100% - 10px);
+    }
+    .option:focus-visible{
+        outline: 2px solid #00B39F;
+        outline-offset: 2px;
     }
     .option:hover{
         background-color: #00B39F;
