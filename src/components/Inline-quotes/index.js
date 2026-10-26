@@ -21,7 +21,7 @@ const QuotesWrapper = styled.div`
     border-image-slice: 1 0 1 1;
     transition: border-image 0.6s ease-in-out;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       flex-direction: column;
       padding: 1.5rem 1rem;
       gap: 1rem;
@@ -51,7 +51,7 @@ const QuotesWrapper = styled.div`
     line-height: 1.6;
     text-align: ${props => props.$onlyQuoteIsPresent ? "center" : "right"};
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       flex: 0 0 100%;
       text-align: center;
       line-height: 1.5;
@@ -74,7 +74,7 @@ const QuotesWrapper = styled.div`
     padding: 0 1rem;
     text-align: left;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       padding: 0;
       text-align: center;
     }
@@ -105,7 +105,7 @@ const QuotesWrapper = styled.div`
     border: none;
     border-left: 1px solid ${props => props.theme.DarkTheme ? "#444" : "#ddd"};
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       width: clamp(150px, 60%, 200px);
       height: 0;
       margin: 0.5rem auto;
@@ -119,7 +119,7 @@ const QuotesWrapper = styled.div`
     align-items: center;
     gap: 1rem;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       flex-direction: column;
       gap: 0.75rem;
     }
