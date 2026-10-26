@@ -14,9 +14,17 @@ const MembersPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(12);
   useEffect(() => {
-    const filters = new URLSearchParams(window.location.search).getAll(
+    const rawFilters = new URLSearchParams(window.location.search).getAll(
       "filter",
     );
+    const filters = [
+      ...new Set(
+        rawFilters
+          .flatMap((f) => f.split(","))
+          .map((f) => f.trim())
+          .filter(Boolean),
+      ),
+    ];
     if (filters.length > 0) setFilter(filters);
   }, []);
   const updateUrl = (filters) => {

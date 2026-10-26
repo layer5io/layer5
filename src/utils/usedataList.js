@@ -12,7 +12,7 @@ const useDataList = (
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const pendingText = useRef(null);
-  const queryResults = searchQuery ? searchResults : dataList;
+  const queryResults = searchQuery && searchQuery.trim() ? searchResults : dataList;
   useEffect(() => {
     rebuildIndex();
   }, [dataList]);
@@ -23,7 +23,7 @@ const useDataList = (
 
   useEffect(() => {
     if (pendingText.current !== null && typeof search.search === "function") {
-      setSearchResults(search.search(pendingText.current));
+      setSearchResults(search.search(pendingText.current.trim()));
       pendingText.current = null;
     }
   }, [search]);
@@ -41,12 +41,12 @@ const useDataList = (
   };
 
   const searchByText = (text) => {
-    setSearchQuery(text.trim());
+    setSearchQuery(text);
     if (typeof search.search !== "function") {
       pendingText.current = text;
       return;
     }
-    setSearchResults(search.search(text));
+    setSearchResults(search.search(text.trim()));
   };
 
   const searchData = (e) => {

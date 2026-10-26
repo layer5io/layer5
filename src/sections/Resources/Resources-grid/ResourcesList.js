@@ -19,6 +19,12 @@ const ResourcesList = (props) => {
   const searchRestored = useRef(false);
 
   useEffect(() => {
+    if (!new URLSearchParams(window.location.search).get("q")) {
+      searchRestored.current = true;
+    }
+  }, []);
+
+  useEffect(() => {
     if (isLoading || searchRestored.current) return;
     searchRestored.current = true;
     const q = new URLSearchParams(window.location.search).get("q");
@@ -28,7 +34,7 @@ const ResourcesList = (props) => {
   useEffect(() => {
     if (!searchRestored.current) return;
     const params = new URLSearchParams(window.location.search);
-    if (searchQuery) params.set("q", searchQuery);
+    if (searchQuery.trim()) params.set("q", searchQuery.trim());
     else params.delete("q");
     const query = params.toString();
     window.history.replaceState(
