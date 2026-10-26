@@ -24,6 +24,7 @@ const isCollectionEnabled = (collection) =>
   !excludedCollections.has(collection);
 
 const { loadRedirects } = require("./src/utils/redirects.js");
+const { createPagePathGuard } = require("./src/utils/page-path-guard");
 const dev404PageSource =
   require.resolve("gatsby/dist/internal-plugins/dev-404-page/raw_dev-404-page.js");
 
@@ -51,7 +52,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const redirects = loadRedirects();
   redirects.forEach((redirect) => createRedirect(redirect)); // Handles all hardcoded ones dynamically
   // Create Pages
-  const { createPage } = actions;
+  const findDuplicatePage = createPagePathGuard();
+  const createPage = (page) => {
+    const previous = findDuplicatePage(page);
+    if (previous) {
+      reporter.panicOnBuild(
+        `Duplicate page path "${page.path}" from ${previous} and ${page.component}. Give one of them a unique title or permalink.`,
+      );
+    }
+    return actions.createPage(page);
+  };
 
   const envCreatePage = (props) => {
     const pageProps = {
@@ -454,12 +464,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const BlogTags = res.data.blogTags.group;
   if (isCollectionEnabled("blog")) {
+    // Tags differing only by case (e.g. "DevOps" and "devops") share one page.
+    const tagsBySlug = new Map();
     BlogTags.forEach((tag) => {
+      const slug = slugify(tag.fieldValue);
+      tagsBySlug.set(slug, [...(tagsBySlug.get(slug) || []), tag.fieldValue]);
+    });
+    tagsBySlug.forEach((tags, slug) => {
       envCreatePage({
-        path: `/blog/tag/${slugify(tag.fieldValue)}`,
+        path: `/blog/tag/${slug}`,
         component: blogTagListTemplate,
         context: {
-          tag: tag.fieldValue,
+          tag: tags[0],
+          tags,
         },
       });
     });
@@ -1108,7 +1125,23 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
         __dirname,
         "src/shims/mui-icons-material.js",
       ),
+      punycode: require.resolve("punycode/"),
     };
+
+    // Gatsby's build-html (SSR) stage marks every Node builtin -- including the
+    // deprecated `punycode` -- as a webpack external, so the SSR bundle emits
+    // `require("punycode")` and Node loads its deprecated core module (DEP0040).
+    // webpack consults `externals` before `resolve.alias`, so the alias above is
+    // ignored for SSR. Drop punycode from externals here so it is bundled from the
+    // userland `punycode` package (via the alias) instead of the core module.
+    if (Array.isArray(config.externals)) {
+      for (const external of config.externals) {
+        if (external && typeof external === "object") {
+          delete external.punycode;
+          delete external["node:punycode"];
+        }
+      }
+    }
 
     const miniCssExtractPlugin = config.plugins.find(
       (plugin) => plugin.constructor.name === "MiniCssExtractPlugin",
