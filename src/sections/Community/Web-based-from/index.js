@@ -159,8 +159,8 @@ const WebBasedForm = () => {
               <Field type="url" placeholder="https://twitter.com/" className="text-field" id="twitter" name="twitter" pattern="http(s?)(:\/\/)((www.)?)(twitter|x).com(\/)([a-zA-z0-9\-_]+)" />
               <label htmlFor="linkedin" className="form-name">Linkedin</label>
               <Field type="url" placeholder="https://www.linkedin.com/" className="text-field" id="linkedin" name="linkedin" />
-              <label htmlFor="tshirtSize" className="form-name">T-shirt size</label>
-              <div role="group" aria-labelledby="my-radio-group">
+              <label id="tshirtSize-label" className="form-name">T-shirt size</label>
+              <div role="group" aria-labelledby="tshirtSize-label">
                 <label>
                   <Field type="radio" name="tshirtSize" value="XS" />
                 XS
@@ -522,8 +522,8 @@ const WebBasedForm = () => {
               <span className="checkbox-label">Other</span>
             </label>
 
-            <label htmlFor="interestToShareContribution" className="form-name">Now or eventually, would you like to speak or write about your works in the community and/or on the projects?<span className="required-sign">*</span></label>
-            <div role="group" aria-labelledby="my-radio-group">
+            <label id="interestToShareContribution-label" className="form-name">Now or eventually, would you like to speak or write about your works in the community and/or on the projects?<span className="required-sign">*</span></label>
+            <div role="group" aria-labelledby="interestToShareContribution-label">
               <label>
                 <Field type="radio" name="interestToShareContribution" value="Yes" required />
                 Yes
