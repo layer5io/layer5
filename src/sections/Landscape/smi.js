@@ -3,6 +3,8 @@ import Table from "../../components/SMI-Table";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { smi_data } from "../../collections/landscape/smi";
 
+const specOrder = ["traffic-access", "traffic-split", "traffic-spec"];
+
 function SMI_Compatibility() {
 
   const columns = React.useMemo(
@@ -37,7 +39,10 @@ function SMI_Compatibility() {
 
   const smiData = React.useMemo(() => smi_data.reduce((grouped, result) => {
     const ver = result.more_details[0].smi_version.split("/")[0];
-    (grouped[ver] = grouped[ver] || []).push(result);
+    (grouped[ver] = grouped[ver] || []).push({
+      ...result,
+      more_details: [...result.more_details].sort((a, b) => specOrder.indexOf(a.smi_specification) - specOrder.indexOf(b.smi_specification)),
+    });
     return grouped;
   }, {}), []);
 
