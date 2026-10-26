@@ -5,6 +5,7 @@ import SEO from "../../components/seo";
 
 import ResourcesList from "../../sections/Resources/Resources-grid/ResourcesList";
 import ResourcesNavigation from "../../sections/Resources/Resources-grid/filters";
+import { options } from "../../sections/Resources/Resources-grid/options";
 import ServiceMeshFocused from "../../sections/Home/Service-mesh-focussed";
 import { Row, Col, Container } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
@@ -17,12 +18,14 @@ const MembersPage = () => {
     const rawFilters = new URLSearchParams(window.location.search).getAll(
       "filter",
     );
+    const validValues = options.flatMap((o) => o.subdata.map((x) => x.value));
     const filters = [
       ...new Set(
         rawFilters
           .flatMap((f) => f.split(","))
           .map((f) => f.trim())
-          .filter(Boolean),
+          .filter(Boolean)
+          .filter((f) => validValues.includes(f)),
       ),
     ];
     if (filters.length > 0) setFilter(filters);

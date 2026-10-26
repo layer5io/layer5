@@ -34,6 +34,7 @@ const ResourcesList = (props) => {
   useEffect(() => {
     if (!searchRestored.current) return;
     const params = new URLSearchParams(window.location.search);
+    if (!searchQuery.trim() && !params.has("q")) return;
     if (searchQuery.trim()) params.set("q", searchQuery.trim());
     else params.delete("q");
     const query = params.toString();

@@ -1,5 +1,5 @@
 import * as JsSearch from "js-search";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 const useDataList = (
   data,
   setSearchQuery,
@@ -11,7 +11,6 @@ const useDataList = (
   const [search, setSearch] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const pendingText = useRef(null);
   const queryResults = searchQuery && searchQuery.trim() ? searchResults : dataList;
   useEffect(() => {
     rebuildIndex();
@@ -20,13 +19,6 @@ const useDataList = (
   useEffect(() => {
     rebuildIndex();
   }, []);
-
-  useEffect(() => {
-    if (pendingText.current !== null && typeof search.search === "function") {
-      setSearchResults(search.search(pendingText.current.trim()));
-      pendingText.current = null;
-    }
-  }, [search]);
 
   const rebuildIndex = () => {
     const dataToSearch = new JsSearch.Search(paramSearch);
@@ -42,10 +34,6 @@ const useDataList = (
 
   const searchByText = (text) => {
     setSearchQuery(text);
-    if (typeof search.search !== "function") {
-      pendingText.current = text;
-      return;
-    }
     setSearchResults(search.search(text.trim()));
   };
 
