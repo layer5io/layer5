@@ -233,7 +233,7 @@ const Webform = styled.div`
         width: calc(100% - 10px);
     }
     .option:focus-visible{
-        outline: 2px solid ${props => props.theme.green009A89ToGreen00B39F};
+        outline: 2px solid ${props => props.theme.green00B39FToGreen3C494F};
         outline-offset: 2px;
     }
     .option:hover{
