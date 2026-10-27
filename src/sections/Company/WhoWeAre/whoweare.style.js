@@ -24,7 +24,6 @@ const AboutSectionWrapper = styled.section`
       }
     h3 {
         margin: 1.7vw;
-        pa
       }
       
     .row {
@@ -44,7 +43,6 @@ const AboutSectionWrapper = styled.section`
       margin-inline-start: 0px;
       margin-inline-end: 0px;
   }
-  }
 	.columnWrap {
 		display: flex;
 		flex-flow: column wrap;
@@ -53,11 +51,15 @@ const AboutSectionWrapper = styled.section`
     
 	}
   .second-row{
+      justify-content:center;
       margin:2rem 5rem;
     }
     .third-row{
       justify-content:center;
       margin:2rem 5rem;
+    }
+  .row, .second-row, .third-row {
+      flex-wrap: wrap;
     }
 	.item {
     height: 100%;
@@ -120,14 +122,10 @@ const AboutSectionWrapper = styled.section`
   }
   @media screen and (max-width:991px)
   {
-    .row{
-      margin:0rem;
-    }
-    .second-row{
-      margin:0rem;
-    }
-    .third-row{
-      margin:0rem;
+    display: flex;
+    flex-wrap: wrap;
+    .row, .second-row, .third-row {
+      display: contents;
     }
     .col{
       margin:1rem 0rem;

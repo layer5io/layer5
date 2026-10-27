@@ -28,7 +28,7 @@
     "lint": "eslint --fix .",
     "checklint": "eslint .",
     "check:contributing-versions": "node .github/scripts/check-contributing-versions.cjs",
-    "test:unit": "node --test src/utils/build-collections.test.js",
+    "test:unit": "node --test src/utils/build-collections.test.js src/utils/page-path-guard.test.js",
     "pretest": "eslint --ignore-path .gitignore .",
     "deploy": "gatsby build && gh-pages -d public -b master",
     "noIndex": "gatsby build && echo 'User-agent: *\nDisallow: /' > public/robots.txt",
@@ -135,9 +135,11 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "patch-package": "^8.0.1",
+    "punycode": "^2.3.1",
     "rimraf": "^6.1.2"
   },
   "overrides": {
-    "sharp": "$sharp"
+    "sharp": "$sharp",
+    "punycode": "^2.3.1"
   }
 }

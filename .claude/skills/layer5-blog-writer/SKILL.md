@@ -11,8 +11,8 @@ You create complete, publication-ready blog posts for [layer5.io/blog](https://l
 1. A fully-formed `index.mdx` at the correct path in the Layer5 repo
 2. A branded hero image (raster, 1200x630) in the same directory
 3. A linted post and a green local build
-4. A signed-off commit on a dedicated branch in an isolated worktree
-5. A pull request merged after CI passes (regular fast-forward, no review wait)
+4. A signed-off commit on a dedicated branch in a leased treehouse worktree
+5. A pull request landed through no-mistakes (at most three runs)
 6. A brief handoff note covering what was created and the merged PR URL
 
 ## Layer5 Brand Voice
@@ -84,23 +84,19 @@ Before writing:
 
 ### Step 4 - Set up the git worktree
 
-All file writes for this blog post happen inside an isolated git worktree, never in the main checkout. This keeps the working directory clean and lets the entire branch be deleted at the end with no residue.
+All file writes for this blog post happen inside a leased treehouse worktree, never in the main clone. Other agent sessions and the no-mistakes pipeline share the main clone. Never create a worktree with `git worktree add` or a second clone.
 
 ```bash
-REPO_ROOT=$(git -C "$(pwd)" rev-parse --show-toplevel)
 SLUG="kebab-case-descriptive-slug"   # matches the folder name under src/collections/blog/YYYY/
 BRANCH="blog/${SLUG}"
-WORKTREE_DIR="${REPO_ROOT}/.claude/worktrees/blog-${SLUG}"
 
-git -C "$REPO_ROOT" fetch origin master
-git -C "$REPO_ROOT" worktree add -b "$BRANCH" "$WORKTREE_DIR" origin/master
+# Prints the worktree path; capture it
+WORKTREE_DIR=$(treehouse get --lease -b "$BRANCH")
 
 cd "$WORKTREE_DIR"
 ```
 
-`<repo>/.claude/worktrees/` is the convention this repo already uses for isolated worktrees. Treat `$WORKTREE_DIR` as the working root for every later step. Every path below (e.g. `src/collections/blog/...`) is relative to `$WORKTREE_DIR`.
-
-If the worktree path already exists from a prior run, `git worktree add` will fail. Pick a different slug, or run `git worktree remove "$WORKTREE_DIR"` first. Never `rm -rf` a worktree directory without removing it through git, or the metadata under `.git/worktrees/` will go stale.
+Treat `$WORKTREE_DIR` as the working root for every later step. Every path below (e.g. `src/collections/blog/...`) is relative to `$WORKTREE_DIR`. `treehouse status` lists the pool.
 
 ### Step 5 - Write the blog post
 
@@ -270,9 +266,9 @@ lost by scoping locally - it just happens on the runner instead of on your lapto
 - [ ] Technical posts: consider `resource: true`
 - [ ] The post reads as the author's own work. Naming an AI product is fine when it is the subject matter; claiming AI authorship is not
 
-### Step 8 - Commit, push, auto-merge, and remove the worktree
+### Step 8 - Commit, land through no-mistakes, and return the worktree
 
-Land the post on `master` without leaving a PR open for review. The repo's standard merge strategy is regular fast-forward; the workflow below produces a single signed-off commit on top of `origin/master` and merges it via `gh pr merge --merge --delete-branch`.
+Land the post through the no-mistakes pipeline, which reviews, tests, pushes, and opens the pull request. Use at most three runs per pull request; after the third, merge the pull request as it stands and open an issue for anything still flagged.
 
 **Authorship rule (non-negotiable):** the commit message, PR title, PR body, and any other text introduced by this skill must contain no reference to AI assistants, AI authoring tools, "Co-Authored-By" trailers, or automation by name. The signoff is the user's configured `user.name <user.email>`, appended only by `git commit -s`. Do not add `--author`, do not add trailers, do not add "generated with" lines.
 
@@ -289,33 +285,23 @@ git add "$POST_DIR"
 git status --short          # confirm nothing unexpected is staged
 git commit -s -m "blog: ${TITLE}"
 
-# Push and open the PR
-git push -u origin "$BRANCH"
-PR_URL=$(gh pr create \
-  --base master \
-  --head "$BRANCH" \
-  --title "blog: ${TITLE}" \
-  --body "Adds the \`${SLUG}\` blog post under \`src/collections/blog/\`.")
+# Validate, push, and open the PR (a clone without a `no-mistakes` remote needs `no-mistakes init` once)
+no-mistakes axi run --intent "Publish the ${SLUG} blog post"
+no-mistakes axi status      # current step and findings; answer a review gate with `no-mistakes axi respond`
+```
 
-# Wait for CI before merging. checks.yml runs `npm run build` and eslint; a
-# broken MDX post that lands on master breaks the production deploy.
-gh pr checks "$PR_URL" --watch
+Once the pull request has merged, release the worktree:
 
-# Merge only once checks are green (regular fast-forward, no review wait)
-gh pr merge --merge --delete-branch "$PR_URL"
-
-# Tear down the worktree once the merge is confirmed
-cd "$REPO_ROOT"
-git worktree remove "$WORKTREE_DIR"
-git -C "$REPO_ROOT" pull --ff-only origin master
+```bash
+treehouse return "$WORKTREE_DIR"
 ```
 
 Failure handling:
 
-- **Never merge without green checks.** `gh pr merge` fires immediately by default; if it is called before CI finishes, a post that fails the build can land on `master` and surface only in the deploy workflow. `gh pr checks --watch` is what makes the local build in Step 7b a double check rather than the only check.
-- If `gh pr checks` reports a failure, fix it in the worktree, commit with `-s`, push, and let the checks rerun. Do not merge past a red check.
-- If the merge cannot complete (branch protection blocks `--merge`, conflicts on `master`), report the PR URL and the specific blocker; do not remove the worktree until the user decides how to proceed.
-- If `git worktree remove` fails because the worktree has untracked files, investigate before forcing - there may be unsaved work. A leftover `hero-image.svg` from `--keep-svg` is the usual culprit; delete it rather than committing it.
+- **Never merge without green checks.** checks.yml runs `npm run build` and eslint; a broken MDX post that lands on `master` breaks the production deploy. The local build in Step 7b is a double check, not the only check.
+- If the pipeline or CI reports a failure, fix it in the worktree, commit with `-s`, and rerun, counting against the three-run limit.
+- If the merge cannot complete (branch protection, conflicts on `master`), report the PR URL and the specific blocker; do not return the worktree until the user decides how to proceed.
+- If `treehouse return` complains about untracked files, investigate before forcing - there may be unsaved work. A leftover `hero-image.svg` from `--keep-svg` is the usual culprit; delete it rather than committing it.
 
 End the run with a one-paragraph handoff: the merged PR URL, the post path on `master`, and any follow-ups (e.g. broken cross-links, a Kanvas design ID still to be confirmed).
 
