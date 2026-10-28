@@ -126,6 +126,7 @@ const FencedCode = ({ children, ...preProps }) => {
 };
 
 const components = {
+  GatedIframe,
   iframe: GatedIframe,
   pre: FencedCode,
   img: OptimizedImage,

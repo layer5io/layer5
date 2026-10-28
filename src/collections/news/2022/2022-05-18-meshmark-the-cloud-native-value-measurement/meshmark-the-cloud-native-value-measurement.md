@@ -83,7 +83,7 @@ A Mesh Utilization Efficiency (MUE) is a calculated, combined ratio of specific 
 
 Learn how we distill a variety of microarchitecture performance signals and application key performance indicators into a simple measurement scale. Join the open source effort and explore the other side of the performance measurement coin: <i>value measurement</i>.
 <div>
-<iframe width="100%" height="315" style={{marginRight: "1.5rem", marginLeft: "1.5rem"}} src="https://www.youtube-nocookie.com/embed/yvqn6ckO7BI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<GatedIframe width="100%" height="315" style={{marginRight: "1.5rem", marginLeft: "1.5rem"}} src="https://www.youtube-nocookie.com/embed/yvqn6ckO7BI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></GatedIframe>
 <p style={{fontStyle: "italic", fontSize: "1rem", marginLeft: "1rem"}}>MeshMark in Meshery (an excerpt from ServiceMeshCon EU 2022 demo)</p>
 </div>
 

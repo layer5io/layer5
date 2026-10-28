@@ -33,15 +33,30 @@ const Placeholder = styled.div`
   }
 `;
 
-const isThirdParty = (url) => {
-  if (!url || typeof url !== "string") return false;
-  return (
-    url.includes("youtube.com") ||
-    url.includes("youtube-nocookie.com") ||
-    url.includes("youtu.be") ||
-    url.includes("docs.google.com/presentation") ||
-    url.includes("soundcloud.com")
-  );
+const getEmbedType = (src) => {
+  if (!src || typeof src !== "string") return null;
+  try {
+    const url = new URL(src, "https://layer5.io");
+    const host = url.hostname.toLowerCase();
+    if (
+      host === "youtube.com" ||
+      host === "www.youtube.com" ||
+      host === "youtube-nocookie.com" ||
+      host === "www.youtube-nocookie.com" ||
+      host === "youtu.be"
+    ) {
+      return "youtube";
+    }
+    if (
+      host === "docs.google.com" &&
+      url.pathname.toLowerCase().startsWith("/presentation")
+    ) {
+      return "presentation";
+    }
+  } catch {
+    return null;
+  }
+  return null;
 };
 
 const GatedIframe = (props) => {
@@ -58,13 +73,24 @@ const GatedIframe = (props) => {
       setHasConsent(event.detail === "accepted");
     };
 
+    const onStorage = (event) => {
+      if (event.key === "cookie_consent") {
+        setHasConsent(event.newValue === "accepted");
+      }
+    };
+
     window.addEventListener("cookie-consent-changed", onConsentChanged);
+    window.addEventListener("storage", onStorage);
+
     return () => {
       window.removeEventListener("cookie-consent-changed", onConsentChanged);
+      window.removeEventListener("storage", onStorage);
     };
   }, []);
 
-  if (!isThirdParty(src) || hasConsent || loaded) {
+  const embedType = getEmbedType(src);
+
+  if (!embedType || hasConsent || loaded) {
     return (
       <iframe
         src={src}
@@ -78,8 +104,8 @@ const GatedIframe = (props) => {
     );
   }
 
-  const isVideo = src.includes("youtube") || src.includes("youtu.be");
-  const isPresentation = src.includes("presentation");
+  const isVideo = embedType === "youtube";
+  const isPresentation = embedType === "presentation";
 
   const label = isVideo
     ? "Load Video"
