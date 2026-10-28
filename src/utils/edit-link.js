@@ -15,7 +15,7 @@ const decodePath = (raw) => {
   }
 };
 
-const sourceFromComponent = (component) => {
+const sourceFromComponent = (component, root) => {
   if (typeof component !== "string") return "";
   const q = component.indexOf("?");
   if (q === -1) return component;
@@ -28,11 +28,19 @@ const sourceFromComponent = (component) => {
   const exportAt = raw.indexOf("&export=");
   const contentPath = exportAt === -1 ? raw : raw.slice(0, exportAt);
 
-  return decodePath(contentPath) || component.slice(0, q);
+  const decoded = decodePath(contentPath);
+  if (decoded !== contentPath && (root || path.isAbsolute(contentPath))) {
+    const rawAbs = path.isAbsolute(contentPath)
+      ? contentPath
+      : path.resolve(root, contentPath);
+    if (fs.existsSync(rawAbs)) return contentPath;
+  }
+
+  return decoded || component.slice(0, q);
 };
 
 const toEditUrl = (component, root) => {
-  const src = sourceFromComponent(component || "");
+  const src = sourceFromComponent(component || "", root);
   if (!src) return null;
 
   const abs = path.isAbsolute(src) ? src : path.resolve(root, src);

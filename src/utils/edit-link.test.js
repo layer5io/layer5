@@ -2,6 +2,8 @@
 
 const { describe, it } = require("node:test");
 const assert = require("node:assert/strict");
+const fs = require("fs");
+const os = require("os");
 const path = require("path");
 
 const { sourceFromComponent, toEditUrl } = require("./edit-link");
@@ -39,7 +41,27 @@ describe("sourceFromComponent", () => {
     );
     const component = `${src("src", "templates", "member-single.js")}?__contentFilePath=${encodeURIComponent(mdx)}`;
 
-    assert.equal(sourceFromComponent(component), mdx);
+    assert.equal(sourceFromComponent(component, ROOT), mdx);
+  });
+
+  it("prefers the raw content path when a file with percent sequences exists on disk", () => {
+    const tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), "edit-link-"));
+    try {
+      const literalFile = path.join(tmpRoot, "chapter%20one.mdx");
+      fs.writeFileSync(literalFile, "# Chapter 1\n");
+      const component = `${path.join(tmpRoot, "template.js")}?__contentFilePath=chapter%20one.mdx`;
+
+      assert.equal(
+        sourceFromComponent(component, tmpRoot),
+        "chapter%20one.mdx",
+      );
+      assert.equal(
+        toEditUrl(component, tmpRoot),
+        `${REPO_URL}/blob/master/chapter%2520one.mdx`,
+      );
+    } finally {
+      fs.rmSync(tmpRoot, { recursive: true, force: true });
+    }
   });
 
   it("preserves literal plus signs in file paths", () => {
