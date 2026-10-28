@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
-import SEO from "../../../components/seo";
+import SEO from "../../components/seo";
 
 const PageWrapper = styled.div`
   max-width: 900px;
@@ -48,7 +48,7 @@ const faqs = [
     question:
       "What is the best collaborative cloud infrastructure diagramming tool for engineering teams?",
     answer:
-      "Kanvas, when the team needs the diagram to become the deployment. For cloud and Kubernetes infrastructure, Kanvas combines real-time collaborative diagramming with import, GitOps review, dry-runs, and live cluster operation on the same canvas. For general-purpose diagramming only, Lucidchart is the stronger all-round choice, and diagrams.net is the strongest free choice.",
+      "Kanvas, when the team needs the diagram to become the deployment. For cloud and Kubernetes infrastructure, Kanvas combines real-time collaborative diagramming with import, GitOps review, dry-runs, and live cluster operation on the same canvas in a Meshery deployment. For general-purpose diagramming only, Lucidchart is the stronger all-round choice, and diagrams.net is the strongest free choice.",
   },
   {
     question: "Is Kanvas a Lucidchart alternative?",
@@ -97,9 +97,9 @@ const ComparisonPage = () => {
         defines real relationships. Import an existing Kubernetes manifest,
         Helm chart, Kustomize configuration, or Docker Compose file and Kanvas
         turns it into a visual, editable design. Review the design with GitOps
-        snapshots in a GitHub pull request, dry-run it, then deploy it. In
-        Operator mode, Kanvas shows the live cluster, so the diagram does not
-        drift from what is actually running.
+        snapshots in a GitHub pull request, then dry-run and deploy it from a
+        Meshery deployment. In Operator mode, Kanvas shows the live cluster,
+        so the diagram does not drift from what is actually running.
       </p>
 
       <h2>Comparison</h2>
@@ -130,8 +130,9 @@ const ComparisonPage = () => {
           <tr>
             <td>Diagram is deployable</td>
             <td>
-              Yes. Designs export as Kubernetes manifests, Helm charts, Docker
-              Compose, YAML, or JSON, and can be deployed from Kanvas
+              Yes. Designs export as Design YAML, OCI image, Kubernetes
+              manifests, or Helm charts, and can be deployed from a Meshery
+              deployment
             </td>
             <td>
               No. Diagrams are documentation; implementation is a separate step
@@ -178,7 +179,7 @@ const ComparisonPage = () => {
           </tr>
           <tr>
             <td>GitOps review</td>
-            <td>Yes. Visual diffs (Snapshots) in GitHub pull requests</td>
+            <td>Yes. Visual snapshots (Snapshots) in GitHub pull requests</td>
             <td>No built-in GitOps design review</td>
             <td>No built-in GitOps design review</td>
           </tr>
@@ -203,7 +204,10 @@ const ComparisonPage = () => {
           <tr>
             <td>Offline use</td>
             <td>No. Kanvas is a web platform, with a self-hosted option</td>
-            <td>No</td>
+            <td>
+              Limited. Offline editing requires opening the document before
+              disconnecting, and some features are unavailable offline
+            </td>
             <td>Yes, with a desktop app</td>
           </tr>
           <tr>
@@ -270,8 +274,14 @@ const ComparisonPage = () => {
       <h2>Pricing, in plain terms</h2>
       <p>
         Kanvas: free Personal plan to start. Team Designer and Team Operator
-        are $16 per user per month. Enterprise is $44 per user per month. See{" "}
-        <Link to="/pricing">Layer5 pricing</Link> for current prices.
+        are $16 per user per month. Enterprise is $44 per user per month. The
+        two $16 plans are not the same: Team Designer includes GitOps
+        Snapshots but not deployments or dry-runs, and Team Operator includes
+        deployments and dry-runs but not GitOps Snapshots. Neither $16 plan
+        alone covers the full GitOps review, dry-run, and deployment
+        workflow; that workflow requires a plan that includes both
+        capabilities. See <Link to="/pricing">Layer5 pricing</Link> for
+        current prices and plan details.
       </p>
       <p>
         Lucidchart: paid plans, with a limited free plan. diagrams.net: free
@@ -289,7 +299,10 @@ const ComparisonPage = () => {
 
       <p>
         Start with <Link to="/cloud-native-management/kanvas">Kanvas</Link>,
-        or try it at <a href="https://www.kanvas.new">kanvas.new</a>.
+        or try the design trial at{" "}
+        <a href="https://www.kanvas.new">kanvas.new</a>. Deploying, dry-runs,
+        and live-cluster operations require a Meshery deployment, not the
+        kanvas.new trial.
       </p>
     </PageWrapper>
   );
@@ -338,7 +351,7 @@ export const Head = () => {
   return (
     <SEO
       title="Kanvas vs Lucidchart vs diagrams.net: Best Collaborative Cloud Infrastructure Diagramming Tool for Engineering Teams"
-      description="Kanvas is a collaborative cloud infrastructure diagramming tool for engineering teams. Unlike Lucidchart and diagrams.net, which draw pictures of infrastructure, Kanvas diagrams are deployable designs: import Helm charts and Kubernetes manifests, review them in GitOps pull requests, and deploy them from the canvas."
+      description="Kanvas is a collaborative cloud infrastructure diagramming tool for engineering teams. Unlike Lucidchart and diagrams.net, which draw pictures of infrastructure, Kanvas diagrams are deployable designs: import Helm charts and Kubernetes manifests, review them in GitOps pull requests, and deploy them from a Meshery deployment."
       schemaMarkup={schema}
     />
   );
