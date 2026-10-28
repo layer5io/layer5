@@ -44,6 +44,16 @@ const toEditUrl = (component, root) => {
   if (!src) return null;
 
   const abs = path.isAbsolute(src) ? src : path.resolve(root, src);
+  const hasContentPath =
+    typeof component === "string" && component.includes(CONTENT_PARAM);
+  const templatesRoot = path.resolve(root, "src", "templates");
+  if (
+    !hasContentPath &&
+    (abs === templatesRoot || abs.startsWith(`${templatesRoot}${path.sep}`))
+  ) {
+    return null;
+  }
+
   const rel = path.relative(root, abs);
   if (!rel || rel === ".." || rel.startsWith(`..${path.sep}`)) return null;
   if (path.isAbsolute(rel)) return null;

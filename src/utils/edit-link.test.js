@@ -128,6 +128,33 @@ describe("toEditUrl", () => {
     );
   });
 
+  it("rejects a queryless template component", () => {
+    assert.equal(
+      toEditUrl(src("src", "templates", "member-single.js"), ROOT),
+      null,
+    );
+    assert.equal(
+      toEditUrl(src("src", "templates", "lite-placeholder.js"), ROOT),
+      null,
+    );
+  });
+
+  it("keeps a template component that carries a content path", () => {
+    const mdx = src(
+      "src",
+      "collections",
+      "members",
+      "Ibrahim Mbaziira",
+      "index.mdx",
+    );
+    const component = `${src("src", "templates", "member-single.js")}?__contentFilePath=${mdx}`;
+
+    assert.equal(
+      toEditUrl(component, ROOT),
+      `${REPO_URL}/blob/master/src/collections/members/Ibrahim%20Mbaziira/index.mdx`,
+    );
+  });
+
   it("links the MDX file for collection pages and encodes spaces", () => {
     const mdx = src(
       "src",
