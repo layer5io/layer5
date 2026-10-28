@@ -11,6 +11,16 @@ const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
 const config = require("./gatsby-config");
+const { toEditUrl } = require("./src/utils/edit-link.js");
+
+exports.onCreatePage = ({ page }) => {
+  const editUrl = toEditUrl(page.component, __dirname);
+  if (editUrl) {
+    page.context = { ...page.context, editUrl };
+  }
+  return page;
+};
+
 const {
   getExcludedCollections,
   isFullSiteBuild,

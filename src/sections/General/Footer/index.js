@@ -7,82 +7,8 @@ import Button from "../../../reusecore/Button";
 import FooterWrapper from "./footer.style";
 import bubblesElement from "./images/bubbles-element.svg";
 
-const Footer = ({ location }) => {
+const Footer = ({ editUrl }) => {
   var currentYear = new Date().getFullYear();
-
-  const getUrl = (pathname) => {
-    // remove ".html" that results in live production build
-    if (pathname.endsWith(".html")) {
-      pathname = pathname.replace(".html", "");
-    }
-
-    const indexUrl = [
-      "/",
-      "/blog",
-      "/careers",
-      "/meshery",
-      "/kanvas",
-      "/community",
-      "/handbook",
-      "projects",
-      "/resources",
-      "/learn",
-    ];
-
-    const test = {
-      mdx: function (path) {
-        let returnPath = "";
-        return (
-          [
-            "/blog/",
-            "/careers/",
-            "/community/events",
-            "/integrations/",
-            "/landscape/",
-            "/members/",
-            "/news/",
-            "/programs",
-            "/projects/",
-            "/resources/",
-            "/workshops/",
-          ].some((check) => {
-            returnPath = check;
-            return path.startsWith(check);
-          }) && `src/collections${returnPath}`
-        );
-      },
-
-      learningPath: function (path) {
-        return (
-          path.startsWith("/learn/learning-paths/") &&
-          `content-learn${pathname.replace("learn/learning-paths/", "")}`
-        );
-      },
-
-      communityMember: function (path) {
-        if (path.startsWith("/community/members/")) {
-          const memberId = path.replace("/community/members/", "");
-          return `src/collections/members/${memberId}/index.mdx`;
-        }
-        return null;
-      },
-    };
-
-    if (pathname.startsWith("/community/handbook/")) {
-      const page = pathname.replace("/community/handbook/", "");
-      return `https://github.com/layer5io/layer5/blob/master/src/pages/community/handbook/${page}.js`;
-    }
-
-    return test.mdx(pathname)
-      ? `https://github.com/layer5io/layer5/tree/master/${test.mdx(pathname)}`
-      : test.learningPath(pathname)
-        ? `https://github.com/layer5io/layer5/tree/master/${test.learningPath(pathname)}`
-        : test.communityMember(pathname)
-          ? `https://github.com/layer5io/layer5/blob/master/${test.communityMember(pathname)}`
-          : `https://github.com/layer5io/layer5/blob/master/src/pages${
-              pathname == "/" ? "" : pathname
-            }${indexUrl.some((str) => pathname.endsWith(str)) ? "/index" : ""}.js`;
-  };
 
   return (
     <FooterWrapper>
@@ -333,7 +259,9 @@ const Footer = ({ location }) => {
                 action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb"
               >
                 <div>
-                  <label htmlFor="mce-EMAIL-2">Subscribe to our Newsletter</label>
+                  <label htmlFor="mce-EMAIL-2">
+                    Subscribe to our Newsletter
+                  </label>
                   <input
                     className="inputrow subscribe-email"
                     type="email"
@@ -364,15 +292,13 @@ const Footer = ({ location }) => {
             </p>
 
             <ul className="misc-links">
-              <li className="edit-page">
-                <a
-                  href={getUrl(location.pathname)}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Edit This Page
-                </a>
-              </li>
+              {editUrl && (
+                <li className="edit-page">
+                  <a href={editUrl} target="_blank" rel="noreferrer">
+                    Edit This Page
+                  </a>
+                </li>
+              )}
               <li>
                 <a
                   className="status-link"
