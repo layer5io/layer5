@@ -143,7 +143,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
       </div>
       <div className="content-section-container" id="toc">
         <Row className="content-section">
-          <Col $md={12} $lg={8} $xl={7}>
+          <Col $md={12} $lg={12} $xl={7}>
             <h2 className="overview">Overview</h2>
             <SRLWrapper>{children}</SRLWrapper>
             <h2 className="course-toc">Table Of Contents</h2>
@@ -160,7 +160,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
               );
             })}
           </Col>
-          <Col $md={12} $lg={4} $xl={5}>
+          <Col $md={12} $lg={12} $xl={5}>
             <div className="service-meshes-you-can-learn">
               {console.log(
                 "lenght of the service mesh array: ",
