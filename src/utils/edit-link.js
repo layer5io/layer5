@@ -29,11 +29,11 @@ const sourceFromComponent = (component, root) => {
   const contentPath = exportAt === -1 ? raw : raw.slice(0, exportAt);
 
   const decoded = decodePath(contentPath);
-  if (decoded !== contentPath && (root || path.isAbsolute(contentPath))) {
-    const rawAbs = path.isAbsolute(contentPath)
-      ? contentPath
-      : path.resolve(root, contentPath);
-    if (fs.existsSync(rawAbs)) return contentPath;
+  if (decoded !== contentPath && root) {
+    const resolve = (candidate) =>
+      path.isAbsolute(candidate) ? candidate : path.resolve(root, candidate);
+    if (fs.existsSync(resolve(contentPath))) return contentPath;
+    if (fs.existsSync(resolve(decoded))) return decoded;
   }
 
   return decoded || component.slice(0, q);

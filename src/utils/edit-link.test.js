@@ -64,6 +64,23 @@ describe("sourceFromComponent", () => {
     }
   });
 
+  it("falls back to the decoded path when only it exists on disk", () => {
+    const tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), "edit-link-"));
+    try {
+      const decodedFile = path.join(tmpRoot, "chapter one.mdx");
+      fs.writeFileSync(decodedFile, "# Chapter 1\n");
+      const component = `${path.join(tmpRoot, "template.js")}?__contentFilePath=chapter%20one.mdx`;
+
+      assert.equal(sourceFromComponent(component, tmpRoot), "chapter one.mdx");
+      assert.equal(
+        toEditUrl(component, tmpRoot),
+        `${REPO_URL}/blob/master/chapter%20one.mdx`,
+      );
+    } finally {
+      fs.rmSync(tmpRoot, { recursive: true, force: true });
+    }
+  });
+
   it("preserves literal plus signs in file paths", () => {
     const mdx = src(
       "src",
