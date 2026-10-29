@@ -230,9 +230,8 @@ import * as Sistent from "@sistent/sistent";`,
 
   iconUsage: `import { 
   Button, 
-  IconButton, 
-  Stack,
-  Tooltip
+  IconButton,
+  Stack
 } from "@sistent/sistent";
 import { 
   Search as SearchIcon,
@@ -261,17 +260,13 @@ function IconExamples() {
       </Button>
       
       {/* Icon-only buttons */}
-      <Tooltip title="Menu">
-        <IconButton aria-label="menu" size="large">
-          <MenuIcon />
-        </IconButton>
-      </Tooltip>
-      
-      <Tooltip title="Add to favorites">
-        <IconButton aria-label="favorite" color="secondary">
-          <FavoriteIcon />
-        </IconButton>
-      </Tooltip>
+      <IconButton aria-label="menu" size="large">
+        <MenuIcon />
+      </IconButton>
+
+      <IconButton aria-label="favorite" color="secondary">
+        <FavoriteIcon />
+      </IconButton>
     </Stack>
   );
 }`,
