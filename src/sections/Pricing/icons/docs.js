@@ -4,9 +4,12 @@ const docsIcon = ({
   width = "20px",
   height = "20px",
   fill = "currentColor",
-  style = {}
+  style = {},
+  className
 }) => (
   <svg
+    className={className}
+    aria-hidden="true"
     width={width}
     height={height}
     fill={fill}
