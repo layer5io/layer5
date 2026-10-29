@@ -194,6 +194,19 @@ const IntegrationsGrid = ({ category, count }) => {
     setIntegrationCollection();
   };
 
+  // Mobile dropdown: picking a category shows only that category.
+  const selectCategory = (categoryName) => {
+    let tempCategoryList = [...categoryNameList];
+    tempCategoryList.forEach((item) => {
+      item.isSelected = item.name === categoryName;
+    });
+    setcategoryNameList([...tempCategoryList]);
+    setIntegrationCollection();
+  };
+
+  const selectedCategory =
+    categoryNameList.find((item) => item.isSelected) ?? categoryNameList[0];
+
   const setIntegrationCollection = () => {
     if (categoryNameList[0].isSelected) {
       setIntegrationList([...data.allMdx.nodes]);
@@ -233,7 +246,7 @@ const IntegrationsGrid = ({ category, count }) => {
       />
 
       <section style={{ margin: "0 2.6rem" }}>
-        <IntegrationSlider {...settings}>
+        <IntegrationSlider {...settings} className="category-slider">
           {!hideFilter &&
             categoryNameList.map((item) => {
               return (
@@ -247,6 +260,22 @@ const IntegrationsGrid = ({ category, count }) => {
               );
             })}
         </IntegrationSlider>
+        {!hideFilter && (
+          <div className="category-dropdown">
+            <label htmlFor="integration-category">Category</label>
+            <select
+              id="integration-category"
+              value={selectedCategory.name}
+              onChange={(event) => selectCategory(event.target.value)}
+            >
+              {categoryNameList.map((item) => (
+                <option key={item.id} value={item.name}>
+                  {`${item.name} (${item.count})`}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
       </section>
 
       {searchQuery.length > 0 && queryResults.length < 1 ? (
