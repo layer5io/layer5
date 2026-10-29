@@ -204,8 +204,8 @@ const IntegrationsGrid = ({ category, count }) => {
     setIntegrationCollection();
   };
 
-  const selectedCategory =
-    categoryNameList.find((item) => item.isSelected) ?? categoryNameList[0];
+  // Desktop chips allow several categories; name that state instead of hiding it.
+  const selectedCategories = categoryNameList.filter((item) => item.isSelected);
 
   const setIntegrationCollection = () => {
     if (categoryNameList[0].isSelected) {
@@ -265,9 +265,18 @@ const IntegrationsGrid = ({ category, count }) => {
             <label htmlFor="integration-category">Category</label>
             <select
               id="integration-category"
-              value={selectedCategory.name}
+              value={
+                selectedCategories.length === 1
+                  ? selectedCategories[0].name
+                  : ""
+              }
               onChange={(event) => selectCategory(event.target.value)}
             >
+              {selectedCategories.length > 1 && (
+                <option value="" disabled>
+                  {`Multiple (${selectedCategories.length})`}
+                </option>
+              )}
               {categoryNameList.map((item) => (
                 <option key={item.id} value={item.name}>
                   {`${item.name} (${item.count})`}
