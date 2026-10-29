@@ -208,16 +208,17 @@ section{
 
 .Modal {
     position: absolute;
-    inset: 50% auto -45% 50%;
+    inset: 50% auto auto 50%;
     border: 1px solid rgb(204, 204, 204);
     background: ${(props) => props.theme.body};
     border-radius: 0.5rem;
     padding: 20px;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    max-width: 50rem;
-    max-height: 40rem;
-    overflow-y: hidden;
+    max-width: min(50rem, calc(100vw - 2rem));
+    max-height: calc(100vh - 2rem);
+    max-height: calc(100dvh - 2rem);
+    overflow-y: auto;
 
     &:focus:not(:focus-visible) {
         outline: none;
@@ -262,6 +263,7 @@ section{
 .form-frame {
     height: 36rem;
     width: 35rem;
+    max-width: 100%;
     border: none;
     overflow: hidden;
 }
@@ -294,13 +296,19 @@ section{
 @media screen and (max-width: 765px) {
     .form-frame {
         width: 25rem;
-        height: 30rem;
+        height: 40rem;
     }
 }
 @media screen and (max-width: 500px) {
+    .Modal .close-modal-btn {
+        position: sticky;
+        float: right;
+        top: 0;
+        z-index: 1;
+    }
     .form-frame {
         width: 22rem;
-        height: 26rem;
+        height: 44rem;
     }
 }
 
