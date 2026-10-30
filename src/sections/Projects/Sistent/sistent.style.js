@@ -1022,6 +1022,21 @@ const SistentWrapper = styled.div`
       font-size: 12px;
     }
   }
+
+  .parameter-table-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+    }
+
+    table {
+      margin-left: 0;
+    }
+  }
 `;
 
 export default SistentWrapper;

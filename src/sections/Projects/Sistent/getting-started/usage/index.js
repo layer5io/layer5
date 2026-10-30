@@ -417,50 +417,57 @@ const SistentUsage = () => {
 
                 <div className="parameter-table">
                   <h4>Theme Provider Props</h4>
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Prop</th>
-                        <th>Type</th>
-                        <th>Default</th>
-                        <th>Description</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>initialMode</code>
-                        </td>
-                        <td>
-                          <code>"light" | "dark" | "system"</code>
-                        </td>
-                        <td>
-                          <code>"system"</code>
-                        </td>
-                        <td>Sets the initial color mode</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>theme</code>
-                        </td>
-                        <td>
-                          <code>Theme</code>
-                        </td>
-                        <td>Default theme</td>
-                        <td>Custom theme object</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>children</code>
-                        </td>
-                        <td>
-                          <code>ReactNode</code>
-                        </td>
-                        <td>-</td>
-                        <td>Your application components</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <div
+                    className="parameter-table-wrapper"
+                    role="region"
+                    aria-label="Theme Provider Props table"
+                    tabIndex={0}
+                  >
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Prop</th>
+                          <th>Type</th>
+                          <th>Default</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <code>initialMode</code>
+                          </td>
+                          <td>
+                            <code>"light" | "dark" | "system"</code>
+                          </td>
+                          <td>
+                            <code>"system"</code>
+                          </td>
+                          <td>Sets the initial color mode</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <code>theme</code>
+                          </td>
+                          <td>
+                            <code>Theme</code>
+                          </td>
+                          <td>Default theme</td>
+                          <td>Custom theme object</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <code>children</code>
+                          </td>
+                          <td>
+                            <code>ReactNode</code>
+                          </td>
+                          <td>-</td>
+                          <td>Your application components</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
 
                 <Alert severity="warning" sx={{ my: 3 }}>
