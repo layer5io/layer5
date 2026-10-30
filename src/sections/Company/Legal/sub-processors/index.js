@@ -129,6 +129,22 @@ const subProcessorData = [
         hostingRegions: "United States",
         additionalInfo: "Used for communicating service status and incidents to users.",
       },
+      {
+        name: "Mailchimp (Intuit Inc.)",
+        applicableServices: "Website newsletter and community mailing lists",
+        typeOfService: "Email marketing platform",
+        dataShared: "Email addresses of newsletter subscribers",
+        hostingRegions: "United States",
+        additionalInfo: "Used to send newsletters and community updates to people who subscribe.",
+      },
+      {
+        name: "Google LLC",
+        applicableServices: "Layer5 websites (Google Analytics, Google Tag Manager), Google Groups",
+        typeOfService: "Website analytics and mailing lists",
+        dataShared: "Website usage data (pages visited, device and browser information) and mailing list email addresses",
+        hostingRegions: "United States",
+        additionalInfo: "Analytics only loads after you accept cookies.",
+      },
     ],
   },
   {
@@ -178,6 +194,16 @@ const subProcessorData = [
         name: "Atlassian StatusPage",
         contactInfo: "Atlassian, Inc.<br />350 Bush Street, 6th Floor<br />San Francisco, CA 94104<br />USA<br />dpo@atlassian.com<br /><a href=\"https://www.atlassian.com/contact\">https://www.atlassian.com/contact</a>",
         dataProtectionAddendum: "<a href=\"https://www.atlassian.com/legal/privacy-policy\">https://www.atlassian.com/legal/privacy-policy</a>",
+      },
+      {
+        name: "Mailchimp (Intuit Inc.)",
+        contactInfo: "The Rocket Science Group LLC d/b/a Mailchimp<br />405 N Angier Ave. NE<br />Atlanta, GA 30308<br />USA<br />privacy@mailchimp.com<br /><a href=\"https://mailchimp.com/contact/\">https://mailchimp.com/contact/</a>",
+        dataProtectionAddendum: "<a href=\"https://mailchimp.com/legal/data-processing-addendum/\">https://mailchimp.com/legal/data-processing-addendum/</a>",
+      },
+      {
+        name: "Google LLC",
+        contactInfo: "Google LLC<br />1600 Amphitheatre Parkway<br />Mountain View, CA 94043<br />USA<br /><a href=\"https://support.google.com/policies/answer/9581826\">https://support.google.com/policies/answer/9581826</a>",
+        dataProtectionAddendum: "<a href=\"https://business.safety.google/processorterms/\">https://business.safety.google/processorterms/</a>",
       },
     ],
   },
@@ -298,7 +324,7 @@ const SubProcessors = () => {
               </SistentThemeProvider>)}
               <p>
                 <small>
-                  <i>Last Updated: Sept 25th, 2025</i>
+                  <i>Last Updated: Oct 30th, 2026</i>
                 </small>
               </p>
             </Col>
