@@ -45,10 +45,16 @@ const AutoVideo = ({ src, poster, width, height, alt, className, style, active =
   const [paused, setPaused] = useState(false);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) setPaused(true);
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const onMotionChange = () => motion.matches && setPaused(true);
+    onMotionChange();
+    motion.addEventListener("change", onMotionChange);
     const observer = new IntersectionObserver(([entry]) => setNear(entry.isIntersecting), { rootMargin: "200px" });
     observer.observe(ref.current);
-    return () => observer.disconnect();
+    return () => {
+      motion.removeEventListener("change", onMotionChange);
+      observer.disconnect();
+    };
   }, []);
 
   useEffect(() => {
