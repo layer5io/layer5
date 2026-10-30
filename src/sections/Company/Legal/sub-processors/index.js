@@ -203,7 +203,7 @@ const subProcessorData = [
       {
         name: "Google LLC",
         contactInfo: "Google LLC<br />1600 Amphitheatre Parkway<br />Mountain View, CA 94043<br />USA<br /><a href=\"https://support.google.com/policies/answer/9581826\">https://support.google.com/policies/answer/9581826</a>",
-        dataProtectionAddendum: "<a href=\"https://business.safety.google/processorterms/\">https://business.safety.google/processorterms/</a>",
+        dataProtectionAddendum: "<a href=\"https://business.safety.google/adsprocessorterms/\">https://business.safety.google/adsprocessorterms/</a>",
       },
     ],
   },
