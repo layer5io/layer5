@@ -259,7 +259,8 @@ section{
     flex: 1;
     display: flex;
     justify-content: center;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .teaser-modal {
