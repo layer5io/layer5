@@ -452,7 +452,7 @@ Embed videos using a standard iframe wrapped in a `<div>`:
   <iframe
     width="800"
     height="490"
-    src="https://www.youtube.com/embed/VIDEO_ID"
+    src="https://www.youtube-nocookie.com/embed/VIDEO_ID"
     title="YouTube video player"
     frameBorder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
