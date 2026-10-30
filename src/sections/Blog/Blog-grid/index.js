@@ -61,10 +61,9 @@ const BlogGrid = ({
                 />
               </div>
               <div className="blog-grid-wrapper">
-                <Row
-                  style={{
-                    flexWrap: "wrap",
-                  }}
+                <Row style={{
+                  flexWrap: "wrap"
+                }}
                 >
                   {queryResults.length < 1 && (
                     <Col $xs={12} $sm={6}>
@@ -72,17 +71,11 @@ const BlogGrid = ({
                     </Col>
                   )}
 
-                  {searchedPosts.length > 0 &&
-                    searchedPosts.map(({ id, frontmatter, fields }, index) => (
-                      <Col key={id} $xs={12} $sm={6}>
-                        <Card
-                          frontmatter={frontmatter}
-                          fields={fields}
-                          loading={index === 0 ? "eager" : "lazy"}
-                          fetchpriority={index === 0 ? "high" : "auto"}
-                        />
-                      </Col>
-                    ))}
+                  {searchedPosts.length > 0 && searchedPosts.map(({ id, frontmatter, fields }, index) => (
+                    <Col key={id} $xs={12} $sm={6}>
+                      <Card frontmatter={frontmatter} fields={fields} loading={index === 0 ? "eager" : "lazy"} fetchpriority={index === 0 ? "high" : "auto"} />
+                    </Col>
+                  ))}
                   <Col>
                     {searchedPosts.length > 0 && (
                       <Pagination

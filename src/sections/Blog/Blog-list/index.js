@@ -28,9 +28,8 @@ const BlogList = ({
   const header = tag
     ? `${totalCount} post${totalCount === 1 ? "" : "s"} tagged with "${tag}"`
     : category
-      ? `${totalCount} post${
-          totalCount === 1 ? "" : "s"
-        } categorized as "${category}"`
+      ? `${totalCount} post${totalCount === 1 ? "" : "s"
+      } categorized as "${category}"`
       : "Blog";
 
   // Change page
@@ -48,10 +47,9 @@ const BlogList = ({
       />
       <div className="blog-page-wrapper">
         <Container>
-          <Row
-            style={{
-              flexWrap: "wrap",
-            }}
+          <Row style={{
+            flexWrap: "wrap"
+          }}
           >
             <Col $xs={12} $lg={8}>
               {!pageContext.tag && !pageContext.category ? (
@@ -85,22 +83,15 @@ const BlogList = ({
                 />
               )}
               <div className="blog-list-wrapper">
-                <Row
-                  style={{
-                    flexWrap: "wrap",
-                  }}
-                  className="blog-lists"
+                <Row style={{
+                  flexWrap: "wrap"
+                }}
+                className="blog-lists"
                 >
                   {searchedPosts.length > 0 &&
                     searchedPosts?.map(({ id, frontmatter, fields }, index) => (
                       <Col $xs={12} key={id}>
-                        <Card
-                          frontmatter={frontmatter}
-                          fields={fields}
-                          loading={index === 0 ? "eager" : "lazy"}
-                          fetchpriority={index === 0 ? "high" : "auto"}
-                          listView={true}
-                        />
+                        <Card frontmatter={frontmatter} fields={fields} loading={index === 0 ? "eager" : "lazy"} fetchpriority={index === 0 ? "high" : "auto"} listView={true} />
                       </Col>
                     ))}
                   <Col>
