@@ -1022,6 +1022,17 @@ const SistentWrapper = styled.div`
       font-size: 12px;
     }
   }
+
+  .parameter-table-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    table {
+      margin-left: 0;
+    }
+  }
 `;
 
 export default SistentWrapper;
