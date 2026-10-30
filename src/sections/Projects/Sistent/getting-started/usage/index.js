@@ -417,7 +417,12 @@ const SistentUsage = () => {
 
                 <div className="parameter-table">
                   <h4>Theme Provider Props</h4>
-                  <div className="parameter-table-wrapper">
+                  <div
+                    className="parameter-table-wrapper"
+                    role="region"
+                    aria-label="Theme Provider Props table"
+                    tabIndex={0}
+                  >
                     <table>
                       <thead>
                         <tr>
