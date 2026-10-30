@@ -159,8 +159,8 @@ const WebBasedForm = () => {
               <Field type="url" placeholder="https://twitter.com/" className="text-field" id="twitter" name="twitter" pattern="http(s?)(:\/\/)((www.)?)(twitter|x).com(\/)([a-zA-z0-9\-_]+)" />
               <label htmlFor="linkedin" className="form-name">Linkedin</label>
               <Field type="url" placeholder="https://www.linkedin.com/" className="text-field" id="linkedin" name="linkedin" />
-              <label htmlFor="tshirtSize" className="form-name">T-shirt size</label>
-              <div role="group" aria-labelledby="my-radio-group">
+              <label id="tshirtSize-label" className="form-name">T-shirt size</label>
+              <div role="group" aria-labelledby="tshirtSize-label">
                 <label>
                   <Field type="radio" name="tshirtSize" value="XS" />
                 XS
@@ -212,30 +212,30 @@ const WebBasedForm = () => {
         </p>
 
         <div className="center">
-          <div className={role === "Contributor" ? "option active" : "option"} onClick={() => {
+          <button type="button" aria-pressed={role === "Contributor"} className={role === "Contributor" ? "option active" : "option"} onClick={() => {
             setRole("Contributor");
           }}
           >
             I'm here as a Contributor
-          </div>
-          <div className={role === "Developer" ? "option active" : "option"} onClick={() => {
+          </button>
+          <button type="button" aria-pressed={role === "Developer"} className={role === "Developer" ? "option active" : "option"} onClick={() => {
             setRole("Developer");
           }}
           >
             I'm here as a User
-          </div>
-          <div className={role === "User" ? "option active" : "option"} onClick={() => {
+          </button>
+          <button type="button" aria-pressed={role === "User"} className={role === "User" ? "option active" : "option"} onClick={() => {
             setRole("User");
           }}
           >
             I'm here as a User and Contributor
-          </div>
-          <div className={role === "Bystander" ? "option active" : "option"} onClick={() => {
+          </button>
+          <button type="button" aria-pressed={role === "Bystander"} className={role === "Bystander" ? "option active" : "option"} onClick={() => {
             setRole("Bystander");
           }}
           >
             I'm here as a Bystander <br /><small>(here to learn and absorb passively)</small>
-          </div>
+          </button>
           <br /><br />
           <div className="btn-wrapper">
             <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous Step</button>
@@ -522,8 +522,8 @@ const WebBasedForm = () => {
               <span className="checkbox-label">Other</span>
             </label>
 
-            <label htmlFor="interestToShareContribution" className="form-name">Now or eventually, would you like to speak or write about your works in the community and/or on the projects?<span className="required-sign">*</span></label>
-            <div role="group" aria-labelledby="my-radio-group">
+            <label id="interestToShareContribution-label" className="form-name">Now or eventually, would you like to speak or write about your works in the community and/or on the projects?<span className="required-sign">*</span></label>
+            <div role="group" aria-labelledby="interestToShareContribution-label">
               <label>
                 <Field type="radio" name="interestToShareContribution" value="Yes" required />
                 Yes
@@ -648,7 +648,7 @@ const WebBasedForm = () => {
           }
           {
             stepNumber === 1 &&
-            <MemberFormSecond />
+            MemberFormSecond()
           }
           {
             stepNumber === 2 &&
