@@ -107,7 +107,7 @@ const subProcessorData = [
       },
       {
         name: "Celonis, Inc. (make.com)",
-        applicableServices: "Layer5 Cloud (for workflow automation), open source community, Slack, and MailChimp",
+        applicableServices: "Layer5 Cloud (for workflow automation), open source community, Slack, and Mailchimp",
         typeOfService: "Workflow automation platform",
         dataShared: "Workflow data and user information",
         hostingRegions: "United States",
