@@ -58,8 +58,11 @@ const AutoVideo = ({ src, poster, width, height, alt, className, style, active =
   useEffect(() => {
     const video = ref.current;
     if (!started) return;
-    if (near && active && !paused) video.play().catch(() => {});
-    else video.pause();
+    if (near && active && !paused) {
+      video.play().catch((e) => e.name === "NotAllowedError" && setPaused(true));
+    } else {
+      video.pause();
+    }
   }, [src, started, near, active, paused]);
 
   const toggle = (e) => {
