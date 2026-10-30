@@ -142,7 +142,7 @@ const subProcessorData = [
         applicableServices: "Layer5 websites (Google Analytics, Google Tag Manager), Google Groups",
         typeOfService: "Website analytics and mailing lists",
         dataShared: "Website usage data (pages visited, device and browser information) and mailing list email addresses",
-        hostingRegions: "United States",
+        hostingRegions: "United States and other countries where Google operates data centers",
         additionalInfo: "Analytics only loads after you accept cookies.",
       },
     ],
