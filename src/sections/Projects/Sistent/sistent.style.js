@@ -1027,7 +1027,11 @@ const SistentWrapper = styled.div`
     width: 100%;
     max-width: 100%;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+    }
 
     table {
       margin-left: 0;
