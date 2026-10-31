@@ -194,6 +194,19 @@ const IntegrationsGrid = ({ category, count }) => {
     setIntegrationCollection();
   };
 
+  // Mobile dropdown: picking a category shows only that category.
+  const selectCategory = (categoryName) => {
+    let tempCategoryList = [...categoryNameList];
+    tempCategoryList.forEach((item) => {
+      item.isSelected = item.name === categoryName;
+    });
+    setcategoryNameList([...tempCategoryList]);
+    setIntegrationCollection();
+  };
+
+  // Desktop chips allow several categories; name that state instead of hiding it.
+  const selectedCategories = categoryNameList.filter((item) => item.isSelected);
+
   const setIntegrationCollection = () => {
     if (categoryNameList[0].isSelected) {
       setIntegrationList([...data.allMdx.nodes]);
@@ -233,7 +246,7 @@ const IntegrationsGrid = ({ category, count }) => {
       />
 
       <section style={{ margin: "0 2.6rem" }}>
-        <IntegrationSlider {...settings}>
+        <IntegrationSlider {...settings} className="category-slider">
           {!hideFilter &&
             categoryNameList.map((item) => {
               return (
@@ -247,6 +260,31 @@ const IntegrationsGrid = ({ category, count }) => {
               );
             })}
         </IntegrationSlider>
+        {!hideFilter && (
+          <div className="category-dropdown">
+            <label htmlFor="integration-category">Category</label>
+            <select
+              id="integration-category"
+              value={
+                selectedCategories.length === 1
+                  ? selectedCategories[0].name
+                  : ""
+              }
+              onChange={(event) => selectCategory(event.target.value)}
+            >
+              {selectedCategories.length > 1 && (
+                <option value="" disabled>
+                  {`Multiple (${selectedCategories.length})`}
+                </option>
+              )}
+              {categoryNameList.map((item) => (
+                <option key={item.id} value={item.name}>
+                  {`${item.name} (${item.count})`}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
       </section>
 
       {searchQuery.length > 0 && queryResults.length < 1 ? (
