@@ -132,10 +132,17 @@ const FooterWrapper = styled.section`
 			padding: 0;
 			li {
 				display: inline-flex;
-				a {
+				a, .cookie-settings {
 					color: #CCCCCC;
 				}
-				a:hover {
+				.cookie-settings {
+					background: none;
+					border: none;
+					padding: 0;
+					font: inherit;
+					cursor: pointer;
+				}
+				a:hover, .cookie-settings:hover {
 					color: ${(props) => props.theme.secondaryColor};
 				}
 			}

@@ -67,6 +67,11 @@ const CookieConsent = () => {
     if (!consent) {
       setOpen(true);
     }
+
+    // Lets the footer "Cookie Settings" link reopen the banner.
+    const reopen = () => setOpen(true);
+    window.addEventListener("open-cookie-settings", reopen);
+    return () => window.removeEventListener("open-cookie-settings", reopen);
   }, []);
 
   const handleResponse = (response) => {
@@ -97,6 +102,14 @@ const CookieConsent = () => {
               rel="noopener noreferrer"
             >
               Privacy Policy
+            </Link>
+            ,{" "}
+            <Link
+              to="/company/legal/cookie-notice"
+              target="_self"
+              rel="noopener noreferrer"
+            >
+              Cookie Notice
             </Link>{" "}
             or visit our{" "}
             <Link to="/company/legal" target="_self" rel="noopener noreferrer">
