@@ -28,8 +28,24 @@ const PictureSliderWrapper = styled.div`
 
     .slick-prev,
     .slick-next {
+      z-index: 1;
+
       &:before {
         color: ${(props) => props.theme.tertiaryColor};
+      }
+    }
+
+    /* The default slick theme places the arrows 25px outside the slider
+       (left/right: -25px). Inside a full-width carousel on small viewports
+       that pushes them past the screen edge, so they get clipped. Keep
+       them within the carousel bounds on mobile. */
+    @media (max-width: 850px) {
+      .slick-prev {
+        left: 8px;
+      }
+
+      .slick-next {
+        right: 8px;
       }
     }
   }
@@ -47,13 +63,6 @@ const PictureSliderWrapper = styled.div`
         max-height: 500px;
         object-fit: contain;
       }
-    }
-  }
-
-  @media (max-width: 850px) {
-    .slick-prev,
-    .slick-next {
-      display: none ;
     }
   }
 `;
@@ -77,7 +86,6 @@ const PictureSlider = ({ images }) => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: false,
           autoplay: true,
         },
       },
@@ -86,7 +94,6 @@ const PictureSlider = ({ images }) => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: false,
           autoplay: true,
         },
       },
