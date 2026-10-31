@@ -14,6 +14,12 @@ import {
   CardContent,
   Typography,
   Alert,
+  IconButton,
+  Tooltip,
+  SearchIcon,
+  MenuIcon,
+  DownloadIcon,
+  FavoriteIcon,
 } from "@sistent/sistent";
 
 const contents = [
@@ -232,13 +238,11 @@ import * as Sistent from "@sistent/sistent";`,
   Button, 
   IconButton, 
   Stack,
-  Tooltip
-} from "@sistent/sistent";
-import { 
-  Search as SearchIcon,
-  Menu as MenuIcon,
-  Download as DownloadIcon,
-  Favorite as FavoriteIcon
+  Tooltip,
+  SearchIcon,
+  MenuIcon,
+  DownloadIcon,
+  FavoriteIcon
 } from "@sistent/sistent";
 
 function IconExamples() {
@@ -635,16 +639,25 @@ const SistentUsage = () => {
                           flexWrap: "wrap",
                         }}
                       >
-                        <Button startIcon="🔍" variant="contained">
+                        <Button startIcon={<SearchIcon />} variant="contained">
                           Search
                         </Button>
-                        <Button endIcon="📥" variant="outlined">
+                        <Button endIcon={<DownloadIcon />} variant="outlined">
                           Download
                         </Button>
-                        <Button variant="text">Menu ☰</Button>
-                        <Button variant="contained" color="secondary">
-                          ❤️
-                        </Button>
+                        <Tooltip title="Menu">
+                          <IconButton aria-label="menu" size="large">
+                            <MenuIcon />
+                          </IconButton>
+                        </Tooltip>
+                        <Tooltip title="Add to favorites">
+                          <IconButton
+                            aria-label="favorite"
+                            color="secondary"
+                          >
+                            <FavoriteIcon />
+                          </IconButton>
+                        </Tooltip>
                       </div>
                     </SistentThemeProvider>
                   </div>
