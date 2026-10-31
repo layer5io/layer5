@@ -32,9 +32,7 @@ export const ResourcePageWrapper = styled.div`
             align-self: stretch;
             margin-right: 1rem;
             @media only screen and (max-width: 600px) {
-                order: 2;
-                margin-right: 0;
-                margin-left: 1rem;
+                margin-right: 0.5rem;
             }
             .sortDropdown {
                 height: 100%;
