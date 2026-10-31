@@ -11,7 +11,7 @@ function generatePlans(data) {
       monthlyprice: 0,
       yearlyprice: 0,
       byline: "The basics for individuals and organizations",
-      byline2: " Everything from Open Source, plus...",
+      byline2: "← Everything from Open Source, plus...",
       button: ["Join for Free", "https://cloud.layer5.io"]
     },
     "TeamDesigner": {
@@ -20,7 +20,7 @@ function generatePlans(data) {
       monthlyprice: 16,
       yearlyprice: 164,
       byline: "Advanced collaboration for declarative DevOps",
-      byline2: "← Everything included in Free, plus...",
+      byline2: "← Everything included in Personal, plus...",
       button: ["Start Free Trial", "https://cloud.layer5.io"],
     },
     "TeamOperator": {
@@ -30,7 +30,7 @@ function generatePlans(data) {
       yearlyprice: 164,
       // pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Advanced collaboration for imperative DevOps",
-      byline2: "← Everything included in Free, plus...",
+      byline2: "← Everything included in Personal, plus...",
       button: ["Start Free Trial", "https://cloud.layer5.io"],
     },
     "Enterprise": {
@@ -40,7 +40,7 @@ function generatePlans(data) {
       yearlyprice: 449,
       pricing_coming_soon: <img src={comingSoon} alt="Coming Soon" />,
       byline: "Flexible deployment, and MSP multi-tenancy.",
-      byline2: "← Everything included in Team, plus...",
+      byline2: "← Everything included in Team Designer and Team Operator, plus...",
       button: ["Contact Sales", "https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8"],
     },
   };
