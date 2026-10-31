@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // Components
 import SEO from "../../components/seo";
 
 
 import ResourcesList from "../../sections/Resources/Resources-grid/ResourcesList";
 import ResourcesNavigation from "../../sections/Resources/Resources-grid/filters";
+import { options } from "../../sections/Resources/Resources-grid/options";
 import ServiceMeshFocused from "../../sections/Home/Service-mesh-focussed";
 import { Row, Col, Container } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
@@ -13,20 +14,46 @@ const MembersPage = () => {
   const [filter, setFilter] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(12);
-  const handleChange = () => {
-    var checkboxes = document.querySelectorAll("input[type=checkbox]:checked");
-    var filters = [];
-    for (var i = 0; i < checkboxes.length; i++) {
-      filters.push(checkboxes[i].value);
-    }
+  useEffect(() => {
+    const rawFilters = new URLSearchParams(window.location.search).getAll(
+      "filter",
+    );
+    const validValues = options.flatMap((o) => o.subdata.map((x) => x.value));
+    const filters = [
+      ...new Set(
+        rawFilters
+          .flatMap((f) => f.split(","))
+          .map((f) => f.trim())
+          .filter(Boolean)
+          .filter((f) => validValues.includes(f)),
+      ),
+    ];
+    if (filters.length > 0) setFilter(filters);
+  }, []);
+  const updateUrl = (filters) => {
+    const params = new URLSearchParams(window.location.search);
+    params.delete("filter");
+    filters.forEach((value) => params.append("filter", value));
+    const query = params.toString();
+    window.history.replaceState(
+      window.history.state,
+      "",
+      `${window.location.pathname}${query ? `?${query}` : ""}${window.location.hash}`,
+    );
+  };
+  const handleChange = (e) => {
+    const { value, checked } = e.target;
+    const filters = checked
+      ? [...new Set([...filter, value])]
+      : filter.filter((f) => f !== value);
     setFilter(filters);
     setCurrentPage(1);
+    updateUrl(filters);
   };
   const clear = () => {
     setFilter([]);
     setCurrentPage(1);
-    document.querySelectorAll("input[type=\"checkbox\"]")
-      .forEach(el => el.checked = false);
+    updateUrl([]);
   };
   return (
     <>

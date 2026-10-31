@@ -11,7 +11,7 @@ const useDataList = (
   const [search, setSearch] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const queryResults = searchQuery ? searchResults : dataList;
+  const queryResults = searchQuery && searchQuery.trim() ? searchResults : dataList;
   useEffect(() => {
     rebuildIndex();
   }, [dataList]);
@@ -32,13 +32,23 @@ const useDataList = (
     setIsLoading(false);
   };
 
-  const searchData = (e) => {
-    const queryResult = search.search(e.target.value);
-    setSearchQuery(e.target.value.trim());
-    setSearchResults(queryResult);
+  const searchByText = (text) => {
+    setSearchQuery(text);
+    setSearchResults(search.search(text.trim()));
   };
 
-  return { queryResults, searchData, setDataList,dataList };
+  const searchData = (e) => {
+    searchByText(e.target.value);
+  };
+
+  return {
+    queryResults,
+    searchData,
+    searchByText,
+    isLoading,
+    setDataList,
+    dataList,
+  };
 };
 
 export default useDataList;
