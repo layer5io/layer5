@@ -63,10 +63,40 @@ const IndividualIntegrations = ({ data, children }) => {
   const isAwsItem = awsIntegrations.includes(frontmatter.title);
   const isGcpItem = gcpIntegrations.includes(frontmatter.title);
 
+  const featureList = (frontmatter.featureList || []).filter(
+    (feature) => typeof feature === "string" && feature.trim().length > 0,
+  );
+
+  const defaultHeroIcon =
+    frontmatter.integrationIcon || frontmatter.integrationIcon_svg;
+
   return (
     <IntegrationPageWrapper>
       <section className="herosection">
-        <Image {...(frontmatter.integrationIcon || frontmatter.integrationIcon_svg)} alt={frontmatter.title} imgStyle={{ objectFit: "contain" }} />
+        {frontmatter.darkModeIntegrationIcon?.publicURL ? (
+          <>
+            <div className="hero-icon hero-icon--dark">
+              <Image
+                {...frontmatter.darkModeIntegrationIcon}
+                alt={frontmatter.title}
+                imgStyle={{ objectFit: "contain" }}
+              />
+            </div>
+            <div className="hero-icon hero-icon--light">
+              <Image
+                {...defaultHeroIcon}
+                alt={frontmatter.title}
+                imgStyle={{ objectFit: "contain" }}
+              />
+            </div>
+          </>
+        ) : (
+          <Image
+            {...defaultHeroIcon}
+            alt={frontmatter.title}
+            imgStyle={{ objectFit: "contain" }}
+          />
+        )}
         <h2>
           {frontmatter.title} with <span className="hero-header">Kanvas</span>
         </h2>
@@ -76,7 +106,7 @@ const IndividualIntegrations = ({ data, children }) => {
         <div className="feature">
           <h2>Features</h2>
           <ul>
-            {frontmatter.featureList.map((feature, indx) => (
+            {featureList.map((feature, indx) => (
               <li key={indx}>
                 <MesheryLogoBullet
                   style={{

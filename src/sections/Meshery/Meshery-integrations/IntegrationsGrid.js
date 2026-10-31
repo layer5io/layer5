@@ -264,8 +264,13 @@ const IntegrationsGrid = ({ category, count }) => {
           renderItem={(item) => {
             const status =
               item.frontmatter.status === "InProgress" ? true : false;
-            const integrationIcon = item.frontmatter.integrationIcon.publicURL;
-            const darkModeIntegrationIcon = item.frontmatter.integrationIcon;
+            const integrationIcon = item.frontmatter.integrationIcon?.publicURL;
+            const hasDedicatedDarkIcon = Boolean(
+              item.frontmatter.darkModeIntegrationIcon,
+            );
+            const darkModeIntegrationIcon =
+              item.frontmatter.darkModeIntegrationIcon ||
+              item.frontmatter.integrationIcon;
             if (status) {
               return (
                 <Hexagon
@@ -276,7 +281,7 @@ const IntegrationsGrid = ({ category, count }) => {
                     <img
                       className="integration-icon"
                       src={
-                        isDark && darkModeIntegrationIcon !== null
+                        isDark && darkModeIntegrationIcon
                           ? darkModeIntegrationIcon.publicURL
                           : integrationIcon
                       }
@@ -304,7 +309,7 @@ const IntegrationsGrid = ({ category, count }) => {
                       <img
                         className="integration-icon"
                         src={
-                          isDark && darkModeIntegrationIcon !== null
+                          isDark && darkModeIntegrationIcon
                             ? darkModeIntegrationIcon.publicURL
                             : integrationIcon
                         }
@@ -313,7 +318,7 @@ const IntegrationsGrid = ({ category, count }) => {
                         width={70}
                         style={{
                           filter:
-                            isDark && darkModeIntegrationIcon == null
+                            isDark && !hasDedicatedDarkIcon
                               ? "brightness(0) invert(1)"
                               : "none",
                         }}
