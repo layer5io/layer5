@@ -97,6 +97,14 @@ const CookieConsent = () => {
             &quot;Accept&quot;, you consent to our use of cookies. Read more in
             our{" "}
             <Link
+              to="/company/legal/cookie-notice"
+              target="_self"
+              rel="noopener noreferrer"
+            >
+              Cookie Notice
+            </Link>
+            ,{" "}
+            <Link
               to="/company/legal/privacy"
               target="_self"
               rel="noopener noreferrer"
