@@ -6,13 +6,13 @@ const ComponentsGrid = ({ frontmatter }) => {
     frontmatter?.integrationIcon?.publicURL ||
     frontmatter?.integrationIcon_svg?.publicURL ||
     "";
-  const darkFallback =
-    frontmatter?.darkModeIntegrationIcon?.publicURL || colorFallback;
+  const darkIconFallback = frontmatter?.darkModeIntegrationIcon?.publicURL;
+  const darkFallback = darkIconFallback || colorFallback;
 
   const components = (frontmatter?.components || []).map((component) => {
     const colorIcon = component.colorIcon?.publicURL || colorFallback;
     const whiteIcon =
-      component.whiteIcon?.publicURL || colorIcon || darkFallback;
+      component.whiteIcon?.publicURL || darkIconFallback || colorIcon;
 
     return {
       name: component.name,
