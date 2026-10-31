@@ -49,7 +49,16 @@ const BlogGrid = ({
                   setListView={setListView}
                   setGridView={setGridView}
                 />
-                <SearchBox searchQuery={searchQuery} searchData={searchData} paginate={paginate} currentPage={currentPage} focusSearch={true}/>
+                <SearchBox
+                  searchQuery={searchQuery}
+                  searchData={searchData}
+                  paginate={paginate}
+                  currentPage={currentPage}
+                  focusSearch={true}
+                  ariaLabel="Search blog posts"
+                  id="blog-search"
+                  name="blog-search"
+                />
               </div>
               <div className="blog-grid-wrapper">
                 <Row style={{

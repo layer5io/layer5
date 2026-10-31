@@ -62,12 +62,25 @@ const BlogList = ({
                   <SearchBox
                     searchQuery={searchQuery}
                     searchData={searchData}
-                    paginate={paginate} currentPage={currentPage}
+                    paginate={paginate}
+                    currentPage={currentPage}
                     focusSearch={true}
+                    ariaLabel="Search blog posts"
+                    id="blog-search"
+                    name="blog-search"
                   />
                 </div>
               ) : (
-                <SearchBox searchQuery={searchQuery} searchData={searchData} paginate={paginate} currentPage={currentPage} focusSearch={true} />
+                <SearchBox
+                  searchQuery={searchQuery}
+                  searchData={searchData}
+                  paginate={paginate}
+                  currentPage={currentPage}
+                  focusSearch={true}
+                  ariaLabel="Search blog posts"
+                  id="blog-search"
+                  name="blog-search"
+                />
               )}
               <div className="blog-list-wrapper">
                 <Row style={{
