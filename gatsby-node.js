@@ -71,7 +71,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         `Duplicate page path "${page.path}" from ${previous} and ${page.component}. Give one of them a unique title or permalink.`,
       );
     }
-    return actions.createPage(page);
+
+    const editUrl = toEditUrl(page.component, __dirname);
+    return actions.createPage(
+      editUrl ? { ...page, context: { ...page.context, editUrl } } : page,
+    );
   };
 
   const envCreatePage = (props) => {
