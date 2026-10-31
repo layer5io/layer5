@@ -190,6 +190,15 @@ const BannerWrapper = styled.div`
     margin-top: 5%;
   width: 80%;
   border: 1px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
   }
 }
 `;
