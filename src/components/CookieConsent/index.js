@@ -67,6 +67,11 @@ const CookieConsent = () => {
     if (!consent) {
       setOpen(true);
     }
+
+    // Lets the footer's "Cookie Settings" link reopen the banner.
+    const reopen = () => setOpen(true);
+    window.addEventListener("open-cookie-settings", reopen);
+    return () => window.removeEventListener("open-cookie-settings", reopen);
   }, []);
 
   const handleResponse = (response) => {
