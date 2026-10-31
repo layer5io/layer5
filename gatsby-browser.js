@@ -53,6 +53,9 @@ function initGTM() {
 window.addEventListener("cookie-consent-changed", (event) => {
   if (event.detail === "accepted") {
     initGTM();
+  } else if (window.gtmDidInit) {
+    // GTM can't be unloaded once running, so reload to withdraw consent right away.
+    window.location.reload();
   }
 });
 

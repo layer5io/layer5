@@ -391,6 +391,17 @@ const Footer = ({ location }) => {
               <li>
                 <a href="/company/legal/terms-of-service">Terms</a>
               </li>
+              <li>
+                <button
+                  type="button"
+                  className="cookie-settings"
+                  onClick={() =>
+                    window.dispatchEvent(new Event("open-cookie-settings"))
+                  }
+                >
+                  Cookie Settings
+                </button>
+              </li>
             </ul>
           </div>
         </Row>
