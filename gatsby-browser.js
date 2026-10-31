@@ -50,12 +50,22 @@ function initGTM() {
   document.head.appendChild(script);
 }
 
-window.addEventListener("cookie-consent-changed", (event) => {
-  if (event.detail === "accepted") {
+function handleConsentChange(consent) {
+  if (consent === "accepted") {
     initGTM();
   } else if (window.gtmDidInit) {
     // GTM can't be unloaded once running, so reload to withdraw consent right away.
     window.location.reload();
+  }
+}
+
+window.addEventListener("cookie-consent-changed", (event) => {
+  handleConsentChange(event.detail);
+});
+// A choice made in another tab only reaches this one through the storage event.
+window.addEventListener("storage", (event) => {
+  if (event.key === STORAGE_KEY) {
+    handleConsentChange(event.newValue);
   }
 });
 
