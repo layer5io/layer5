@@ -7,6 +7,37 @@ import EmptyResources from "../../Resources/Resources-error/emptyStateTemplate";
 import { Honeycomb, Hexagon } from "./Honeycomb/Honeycomb";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
+const DARK_MODE_LOGO_SLUGS = new Set([
+  "actions-runner-controller-arc",
+  "aerospike-kubernetes-operator",
+  "awx-operator",
+  "cloudnativepg",
+  "contrail-analytics",
+  "github-actions-runner-operator",
+  "github-actions-runners",
+  "helm-controller",
+  "kommander",
+  "kong-api-gateway",
+  "kong-mesh",
+  "kuma",
+  "skooner",
+  "victoria-metrics-k8s-stack",
+  "containerd",
+  "tuf",
+  "ngrok-operator",
+  "kube-rs",
+  "kubeform-provider-aws",
+  "wordpress-operator",
+  "scheduler-plugins",
+  "aws-node-termination-handler",
+  "aws-target-group-binding",
+  "aws-vpc-cni",
+  "rustrial-aws-eks-iam-auth-controller",
+  "aws-opensearch-service",
+  "aws-simple-queuing-service",
+  "aws-systems-manager",
+]);
+
 const IntegrationsGrid = ({ category, count }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -265,7 +296,15 @@ const IntegrationsGrid = ({ category, count }) => {
             const status =
               item.frontmatter.status === "InProgress" ? true : false;
             const integrationIcon = item.frontmatter.integrationIcon.publicURL;
-            const darkModeIntegrationIcon = item.frontmatter.integrationIcon;
+
+            const integrationSlug = item.fields.slug.split("/").pop();
+            const isDarkModeLogo = DARK_MODE_LOGO_SLUGS.has(integrationSlug);
+            const darkModeIcon =
+              item.frontmatter.darkModeIntegrationIcon?.publicURL;
+            const iconSrc =
+              isDark && isDarkModeLogo && darkModeIcon
+                ? darkModeIcon
+                : integrationIcon;
             if (status) {
               return (
                 <Hexagon
@@ -275,15 +314,10 @@ const IntegrationsGrid = ({ category, count }) => {
                   <span className="integration-container">
                     <img
                       className="integration-icon"
-                      src={
-                        isDark && darkModeIntegrationIcon !== null
-                          ? darkModeIntegrationIcon.publicURL
-                          : integrationIcon
-                      }
+                      src={iconSrc}
                       alt={item.frontmatter.title}
                       height={70}
                       width={70}
-                      style={{ filter: "brightness(0) invert(1)" }}
                       loading="lazy"
                     />
                     <div className="integration-content">
@@ -303,28 +337,14 @@ const IntegrationsGrid = ({ category, count }) => {
                     <span className="integration-container">
                       <img
                         className="integration-icon"
-                        src={
-                          isDark && darkModeIntegrationIcon !== null
-                            ? darkModeIntegrationIcon.publicURL
-                            : integrationIcon
-                        }
+                        src={iconSrc}
                         alt={item.frontmatter.title}
                         height={70}
                         width={70}
-                        style={{
-                          filter:
-                            isDark && darkModeIntegrationIcon == null
-                              ? "brightness(0) invert(1)"
-                              : "none",
-                        }}
                         loading="lazy"
                       />
                       <div className="integration-content">
                         <div className="title">{item.frontmatter.title}</div>
-                        {/* <Button
-                        $secondary                        title="Learn More"
-                        className="learnMoreBtn"
-                      /> */}
                       </div>
                     </span>
                   </Hexagon>
