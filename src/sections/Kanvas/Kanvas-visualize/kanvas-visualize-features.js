@@ -288,81 +288,105 @@ const KanvasisualizerFeatures = () => {
             </a>
           </Col>
           <Col $sm={12} $md={6} $lg={4}>
-            <div
-              className={
-                isHovered && hoveredFeature != "Feature4"
-                  ? "project__block__inner darken"
-                  : "project__block__inner"
-              }
-              onMouseOver={() => handleMouseOver(4)}
-              onMouseOut={handleMouseOut}
+            <a
+              href="https://docs.layer5.io/kanvas/operator"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                display: "block",
+              }}
             >
-              <div className="feature-image">
-                <img
-                  src={TimelineDVRClock}
-                  alt="Timeline"
-                  style={{ position: "absolute", width: "80%" }}
-                />
-                <img
-                  src={TimelineDVR}
-                  alt=""
-                  className={
-                    hoveredFeature == "Feature4"
-                      ? "secondary-image-visible"
-                      : "secondary-image"
-                  }
-                  style={{ width: "80%" }}
-                />
+              <div
+                className={
+                  isHovered && hoveredFeature != "Feature4"
+                    ? "project__block__inner darken"
+                    : "project__block__inner"
+                }
+                onMouseOver={() => handleMouseOver(4)}
+                onMouseOut={handleMouseOut}
+              >
+                <div className="docs-icon-wrapper">
+                  <DocsIcon />
+                </div>
+                <div className="feature-image">
+                  <img
+                    src={TimelineDVRClock}
+                    alt="Timeline"
+                    style={{ position: "absolute", width: "80%" }}
+                  />
+                  <img
+                    src={TimelineDVR}
+                    alt=""
+                    className={
+                      hoveredFeature == "Feature4"
+                        ? "secondary-image-visible"
+                        : "secondary-image"
+                    }
+                    style={{ width: "80%" }}
+                  />
+                </div>
+                <h3>Timeline (DVR)</h3>
+                <p>
+                  Playback service transactions. Scrub over the history of
+                  changes to your deployments.
+                </p>
               </div>
-              <h3>Timeline (DVR)</h3>
-              <p>
-                Playback service transactions. Scrub over the history of changes
-                to your deployments.
-              </p>
-            </div>
+            </a>
           </Col>
           <Col $sm={12} $md={6} $lg={4}>
-            <div
-              className={
-                isHovered && hoveredFeature != "Feature5"
-                  ? "project__block__inner darken"
-                  : "project__block__inner"
-              }
-              onMouseOver={() => handleMouseOver(5)}
-              onMouseOut={handleMouseOut}
+            <a
+              href="https://docs.layer5.io/kanvas/operator/performance-testing"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                display: "block",
+              }}
             >
-              <div className="feature-image">
-                <img
-                  src={
-                    isDark
-                      ? ServicePerformanceGearDark
-                      : ServicePerformanceGearLight
-                  }
-                  alt="Service Performance"
-                  style={{ position: "absolute", zIndex: "0" }}
-                />
-                <ServicePerformanceMeter
-                  alt=""
-                  className={
-                    hoveredFeature == "Feature5"
-                      ? "meter-visible"
-                      : "secondary-image"
-                  }
-                  style={{
-                    height: "auto",
-                    width: "70%",
-                    position: "relative",
-                    zIndex: "10",
-                    transformOrigin: "center center",
-                  }}
-                />
+              <div
+                className={
+                  isHovered && hoveredFeature != "Feature5"
+                    ? "project__block__inner darken"
+                    : "project__block__inner"
+                }
+                onMouseOver={() => handleMouseOver(5)}
+                onMouseOut={handleMouseOut}
+              >
+                <div className="docs-icon-wrapper">
+                  <DocsIcon />
+                </div>
+                <div className="feature-image">
+                  <img
+                    src={
+                      isDark
+                        ? ServicePerformanceGearDark
+                        : ServicePerformanceGearLight
+                    }
+                    alt="Service Performance"
+                    style={{ position: "absolute", zIndex: "0" }}
+                  />
+                  <ServicePerformanceMeter
+                    alt=""
+                    className={
+                      hoveredFeature == "Feature5"
+                        ? "meter-visible"
+                        : "secondary-image"
+                    }
+                    style={{
+                      height: "auto",
+                      width: "70%",
+                      position: "relative",
+                      zIndex: "10",
+                      transformOrigin: "center center",
+                    }}
+                  />
+                </div>
+                <h3>Service Performance</h3>
+                <p>
+                  Continuous visibility across all of your clusters and
+                  workloads metrics.
+                </p>
               </div>
-              <h3>Service Performance</h3>
-              <p>
-                Continuous visibility across all of your clusters and workloads
-                metrics.
-              </p>
-            </div>
+            </a>
           </Col>
           <Col $sm={12} $md={6} $lg={4}>
             <a
