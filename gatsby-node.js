@@ -10,6 +10,7 @@ const fs = require("fs");
 const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
+const RelatedPostsFactory = require("./src/components/Related-Posts/relatedPostsFactory");
 const config = require("./gatsby-config");
 const { toEditUrl } = require("./src/utils/edit-link.js");
 
@@ -130,12 +131,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const res = await graphql(`
     {
       blogPosts: allMdx(
+        sort: { fields: { dateForSort: DESC } }
         filter: {
           fields: { collection: { eq: "blog" } }
           frontmatter: { published: { eq: true } }
         }
       ) {
         nodes {
+          frontmatter {
+            author
+            category
+            tags
+          }
           fields {
             slug
           }
@@ -449,11 +456,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   if (isCollectionEnabled("blog")) {
     blogs.forEach((blog) => {
+      const relatedPosts = new RelatedPostsFactory(blogs, blog.fields.slug)
+        .setMaxPosts(6)
+        .setCategory(blog.frontmatter.category)
+        .setTags(blog.frontmatter.tags)
+        .getPosts();
+
       envCreatePage({
         path: blog.fields.slug,
         component: `${blogPostTemplate}?__contentFilePath=${blog.internal.contentFilePath}`,
         context: {
           slug: blog.fields.slug,
+          relatedSlugs: relatedPosts.map(({ post }) => post.fields.slug),
+          author: blog.frontmatter.author || "",
         },
       });
     });
