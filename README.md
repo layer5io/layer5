@@ -39,7 +39,6 @@
 </p>
 <br />
 
-
 <p style="clear:both;">
 <h2><a href="https://layer5.io/kanvas">Kanvas</a></h2>
 <a href="https://layer5.io/kanvas">
@@ -63,12 +62,12 @@ alt="Nighthawk" align="left" />
 
 <p style="clear:both;">
 <h2><a href="https://cloud.layer5.io/catalog">Cloud Native Catalog</a></h2>
-<a href="">
+<a href="https://cloud.layer5.io/catalog">
   <img src=".github/assets/images/catalog/catalog.svg"
 style="float:left;margin:10px;" width="125px"
 alt="Meshery Catalog" align="left" />
 </a>
-<a href="">Layer5 Catalog</a> As a central hub for sharing cloud native infrastructure designs, Meshery Catalog enables the exchange of the best practices, reusable templates, and Kubernetes-based operational patterns for multi-cluster Kubernetes clusters and distributed applications. Meshery Catalog serves as a marketplace full of curated cloud native infrastructure configurations and operational patterns perfect for DevOps engineers who seek to leverage and contribute to Meshery's large collection of design patterns. [Docs](https://docs.layer5.io/cloud/catalog)
+<a href="https://cloud.layer5.io/catalog">Layer5 Catalog</a> As a central hub for sharing cloud native infrastructure designs, Meshery Catalog enables the exchange of the best practices, reusable templates, and Kubernetes-based operational patterns for multi-cluster Kubernetes clusters and distributed applications. Meshery Catalog serves as a marketplace full of curated cloud native infrastructure configurations and operational patterns perfect for DevOps engineers who seek to leverage and contribute to Meshery's large collection of design patterns. [Docs](https://docs.layer5.io/cloud/catalog)
 <br /><br /><br />
 </p>
 
@@ -83,7 +82,6 @@ alt="Meshery Catalog" align="left" />
 </p>
 <br />
 
-
 <hr />
 <br />
 <hr />
@@ -96,7 +94,6 @@ alt="Meshery Catalog" align="left" />
 <br /><br /><br />
 </p>
 <br />
-
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/projects/cloud-native-performance">Cloud Native Performance</a></h2>
@@ -112,7 +109,6 @@ The <a href="https://layer5.io/projects/cloud-native-performance">Cloud Native P
 </p>
 <br />
 
-
 <!-- <p style="clear:both;">
 <h2><a href="https://layer5.io/projects/image-hub">Image Hub</a></h2>
 <a href="https://layer5.io/projects/image-hub"><img src=".github/assets/images/image-hub/layer5-image-hub.webp"
@@ -123,7 +119,6 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
 <br /><br /><br />
 </p>
 <br /> -->
-
 
 <p style="clear:both;">
  <h2><a href="https://github.com/meshery/meshery-operator">Meshery Operator</a></h2>
@@ -136,7 +131,6 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
 </p>
 <br />
 
-
 <p style="clear:both;">
 <h2><a href="https://layer5.io/projects/sistent">Sistent</a></h2>
 <a href="https://layer5.io/projects/sistent">
@@ -148,8 +142,6 @@ Sistent is a design system and component library that streamlines the design and
 <br /><br /><br />
 </p>
 <br />
-
-
 
 <p style="clear:both;">
 <h1><a name="contributing"></a><a name="community"></a> <a href="https://layer5.io/community">Community</a> and <a href="https://layer5.io/community/handbook">Contributions</a></h1>
@@ -187,4 +179,3 @@ Sistent is a design system and component library that streamlines the design and
 ### License
 
 All of Layer5's projects are available as open source under the terms of the [Apache 2.0 License](https://opensource.org/licenses/Apache-2.0).
-

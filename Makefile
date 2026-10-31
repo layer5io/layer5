@@ -23,12 +23,15 @@ setup:
 site:
 	@echo "🏗️  Building lightweight site version ($(or $(LITE_BUILD_PROFILE),core) profile)..."
 	@echo "   Use LITE_BUILD_PROFILE=content make site to include content collections while still skipping the heaviest routes."
-	@npx cross-env BUILD_FULL_SITE=false LITE_BUILD_PROFILE=$(or $(LITE_BUILD_PROFILE),core) BLOG_YEAR=$(or $(BLOG_YEAR),) GATSBY_CPU_COUNT=4 SHARP_CONCURRENCY=4 UV_THREADPOOL_SIZE=4 NODE_OPTIONS=--max-old-space-size=8192 env-cmd -f .env.development gatsby develop
+	@npx cross-env BUILD_FULL_SITE=false LITE_BUILD_PROFILE=$(or $(LITE_BUILD_PROFILE),core) BLOG_YEAR=$(or $(BLOG_YEAR),) env-cmd -f .env.development node scripts/run-gatsby.js develop
 
-## Run blog-only dev server (2026 posts only, much faster builds).
+# Latest year directory under src/collections/blog, e.g. 2026.
+LATEST_BLOG_YEAR := $(shell ls src/collections/blog | grep -E '^[0-9]{4}$$' | sort | tail -n 1)
+
+## Run blog-only dev server scoped to the latest blog year (override: BLOG_YEAR=2025,2026).
 site-blog:
-	@echo "🏗️  Building lightweight site version with blog collection only..."
-	LITE_BUILD_PROFILE=blog BLOG_YEAR=2026 $(MAKE) site
+	@echo "🏗️  Building lightweight site version with blog posts from $(or $(BLOG_YEAR),$(LATEST_BLOG_YEAR)) only..."
+	LITE_BUILD_PROFILE=blog BLOG_YEAR=$(or $(BLOG_YEAR),$(LATEST_BLOG_YEAR)) $(MAKE) site
 
 # "make site-full" forces the dev server to include every collection.
 ## Run a full build of layer5.io on your local machine.
@@ -38,7 +41,7 @@ site-full:
 
 ## Run layer5.io on your local machine. Alternate method.
 site-fast:
-	BUILD_FULL_SITE=false LITE_BUILD_PROFILE=core GATSBY_CPU_COUNT=4 SHARP_CONCURRENCY=4 UV_THREADPOOL_SIZE=4 NODE_OPTIONS=--max-old-space-size=8192 gatsby develop
+	BUILD_FULL_SITE=false LITE_BUILD_PROFILE=core node scripts/run-gatsby.js develop
 
 ## Build layer5.io on your local machine.
 build:

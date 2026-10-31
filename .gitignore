@@ -101,3 +101,4 @@ spreadsheet.csv
 # Python cache (Claude skill scripts)
 __pycache__/
 *.pyc
+.vs/

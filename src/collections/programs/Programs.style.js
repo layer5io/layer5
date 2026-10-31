@@ -86,7 +86,20 @@ export const ProgramsWrapper = styled.div`
   .gsod-table-container {
     overflow-x: auto;
   }
-  .mlh_logo {
+
+.mlh_logo.mlh_logo--dark {
+  display: none;
+}
+
+[data-theme="dark"] & .mlh_logo--light {
+  display: none;
+}
+
+[data-theme="dark"] & .mlh_logo--dark {
+  display: inline-block;
+}
+
+.mlh_logo {
     width: 19vw;
     float: right;
     margin-left: 40px;
@@ -117,7 +130,7 @@ export const ProgramsWrapper = styled.div`
       display: block;
       float: none;
       width: 35vw;
-      margin: 0 auto 40px auto;
+      margin: 0 auto 40px auto !important;
     }
   }
   .lfx_logo {

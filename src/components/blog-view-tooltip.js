@@ -2,7 +2,7 @@ import React from "react";
 import { Row } from "../reusecore/Layout";
 import { TiThList } from "@react-icons/all-files/ti/TiThList";
 import { BsGrid3X3GapFill } from "@react-icons/all-files/bs/BsGrid3X3GapFill";
-import { CustomTooltip } from "@sistent/sistent";
+import HoverTooltip from "./HoverTooltip";
 import styled from "styled-components";
 
 export const ToolTipWrapper = styled.div`
@@ -39,16 +39,16 @@ const BlogViewToolTip = ({ isListView, setListView, setGridView }) => {
   return (
     <ToolTipWrapper>
       <Row className="border">
-        <CustomTooltip title="Grid View" placement="top">
+        <HoverTooltip title="Grid View">
           <a onClick={setGridView} className={`${!isListView && "active"}`}>
             <BsGrid3X3GapFill size={22} />
           </a>
-        </CustomTooltip>
-        <CustomTooltip title="List View" placement="top">
+        </HoverTooltip>
+        <HoverTooltip title="List View">
           <a onClick={setListView} className={`${isListView && "active"}`}>
             <TiThList size={22} />
           </a>
-        </CustomTooltip>
+        </HoverTooltip>
       </Row>
     </ToolTipWrapper>
   );
