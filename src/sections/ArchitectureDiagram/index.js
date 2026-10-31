@@ -6,10 +6,14 @@ import Partners from "../Home/Partners-home";
 import SeeYou from "../SeeYou";
 import FeatureHero from "../FeatureHero";
 import FeatureUseCard from "../../components/FeatureUseCard";
-import collaborationGIF from "./images/collaboration.gif";
-import optimizedGIF from "./images/optimized.gif";
-import customizationGIF from "./images/customization.gif";
-import shapesAndTemplatesGIF from "./images/shapes-and-templates.gif";
+import collaborationVideo from "./images/collaboration.mp4";
+import collaborationPoster from "./images/collaboration-poster.webp";
+import optimizedVideo from "./images/optimized.mp4";
+import optimizedPoster from "./images/optimized-poster.webp";
+import customizationVideo from "./images/customization.mp4";
+import customizationPoster from "./images/customization-poster.webp";
+import shapesAndTemplatesVideo from "./images/shapes-and-templates.mp4";
+import shapesAndTemplatesPoster from "./images/shapes-and-templates-poster.webp";
 import RelatedPicks from "../../components/RelatedPicks";
 let data = {
   heading: "Design Architecture Diagrams Online",
@@ -21,22 +25,22 @@ let card_data = [
   {
     heading: "Numerous Architecture Diagram Shapes & Templates",
     subtitle: "Designing visually striking and logical architecture diagram is much easier than you imagine. Simply drag and drop the pre-made shapes or templates that can fit your needs to the canvas, the architecture diagram in your mind will abruptly appear in front of you.",
-    image: shapesAndTemplatesGIF
+    video: { src: shapesAndTemplatesVideo, poster: shapesAndTemplatesPoster, width: 1258, height: 680 }
   },
   {
     heading: "Powerful Customizability",
     subtitle: "Customize fonts, sizes, alignments, and styles easily according to your needs. In a word, you can customize everything to create the most engaging architecture diagram.",
-    image: customizationGIF
+    video: { src: customizationVideo, poster: customizationPoster, width: 1258, height: 680 }
   },
   {
     heading: "Cloud collaboration",
     subtitle: "With cloud-based architecture diagram tool, you can efficiently collaborate with your team members at any time, anywhere.",
-    image: collaborationGIF
+    video: { src: collaborationVideo, poster: collaborationPoster, width: 1258, height: 678 }
   },
   {
     heading: "AWS, GCP and K8s optimized",
     subtitle: "Capture your key services with smart components for EC2, ELB, Lambda, RDS, DynamoDB, Kinesis, etc.",
-    image: optimizedGIF
+    video: { src: optimizedVideo, poster: optimizedPoster, width: 1258, height: 680 }
   },
 
 ];

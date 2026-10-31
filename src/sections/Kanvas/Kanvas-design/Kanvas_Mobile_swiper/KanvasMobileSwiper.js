@@ -5,37 +5,35 @@ import SwiperContainer from "./mobile-swiper.style.js";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards, Pagination, Navigation, Autoplay } from "swiper/modules";
-import dragDrop from "../images/drag-drop-components.gif";
-import mergeDesign from "../images/merge-design.gif";
-import connectComponents from "../images/connect-components.gif";
-import shareDesign from "../images/share-design.gif";
+import AutoVideo from "../../../../components/AutoVideo";
+import { KANVAS_VIDEOS } from "../kanvas-design-features-carousel";
 
 
 const CONTENT = [
   {
     title: "Confidently make changes to your infrastructure",
-    img: dragDrop,
+    video: KANVAS_VIDEOS.dragDrop,
     description:
       "Kanvas automatically catalogs and provides insight into all of your services, datastores and the connections between them, allowing teams to deeply understand application architecture.",
     gradient: "one",
   },
   {
     title: "Understand your infrastructure with visualization and automation",
-    img: mergeDesign,
+    video: KANVAS_VIDEOS.mergeDesign,
     description:
       "Kanvaselps your team automate infrastructure understanding from the architecture to a single PR so your team can ship, refactor and onboard to legacy or existing applications faster.",
     gradient: "two",
   },
   {
     title: "Make working across services as easy as working across files",
-    img: connectComponents,
+    video: KANVAS_VIDEOS.connectComponents,
     description:
       "Get automatic visibility into how your services interact in your application so you can confidently change, update or migrate to microservices.",
     gradient: "three",
   },
   {
     title: "Stop finger-pointing",
-    img: shareDesign,
+    video: KANVAS_VIDEOS.shareDesign,
     description:
       "Share your designs publically or in private to collaborate with others in real-time.",
     gradient: "four",
@@ -44,12 +42,12 @@ const CONTENT = [
 
 //readMoreLink is available if link is uncommented below
 // eslint-disable-next-line no-unused-vars
-const Card = ({ title, description, img, readMoreLink }) => {
+const Card = ({ title, description, video, active, readMoreLink }) => {
   return (
     <div className="card">
       <h2>{title}</h2>
       <p>{description}</p>
-      <img style={{ border: "1px solid #444444", borderRadius: "10px" }} src={img} alt="" />
+      <AutoVideo {...video} active={active} style={{ border: "1px solid #444444", borderRadius: "10px", width: "100%" }} />
       {/* <a href={readMoreLink}>Read More</a> */}
     </div>
   );
@@ -77,11 +75,13 @@ export const KanvasMobileSwiper = () => {
         navigation={false}
         className="mySwiper"
       >
-        {CONTENT.map(({ title, description, img, readMoreLink, gradient }) => (
+        {CONTENT.map(({ title, description, video, readMoreLink, gradient }) => (
           <SwiperSlide key={title}>
-            <div className={`card ${gradient}`}>
-              <Card title={title} description={description} img={img} readMoreLink={readMoreLink} />
-            </div>
+            {({ isActive }) => (
+              <div className={`card ${gradient}`}>
+                <Card title={title} description={description} video={video} active={isActive} readMoreLink={readMoreLink} />
+              </div>
+            )}
           </SwiperSlide>
         ))}
       </Swiper>
