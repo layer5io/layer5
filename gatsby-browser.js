@@ -50,10 +50,17 @@ function initGTM() {
   document.head.appendChild(script);
 }
 
-window.addEventListener("cookie-consent-changed", (event) => {
-  if (event.detail === "accepted") {
+function handleConsentChange(consent) {
+  if (consent === "accepted") {
     initGTM();
+  } else if (window.gtmDidInit) {
+    // GTM can't be unloaded once running, so reload to stop it.
+    window.location.reload();
   }
+}
+
+window.addEventListener("cookie-consent-changed", (event) => {
+  handleConsentChange(event.detail);
 });
 
 export { wrapRootElement } from "./root-wrapper";
