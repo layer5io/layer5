@@ -62,6 +62,12 @@ function handleConsentChange(consent) {
 window.addEventListener("cookie-consent-changed", (event) => {
   handleConsentChange(event.detail);
 });
+// A choice made in another tab only reaches this one through the storage event.
+window.addEventListener("storage", (event) => {
+  if (event.key === STORAGE_KEY) {
+    handleConsentChange(event.newValue);
+  }
+});
 
 export { wrapRootElement } from "./root-wrapper";
 export { wrapPageElement } from "./page-wrapper";
