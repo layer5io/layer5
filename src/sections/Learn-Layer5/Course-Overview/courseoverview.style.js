@@ -87,6 +87,7 @@ export const CourseOverviewWrapper = styled.div`
   }
 
   .content-section {
+    flex-wrap: wrap;
     padding: 2rem 0rem;
     margin: 1rem 0rem;
     .chapter-link {
