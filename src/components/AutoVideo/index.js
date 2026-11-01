@@ -86,6 +86,7 @@ const AutoVideo = ({ src, poster, width, height, alt, className, style, active =
         height={height}
         style={style}
         aria-label={alt}
+        aria-hidden={alt ? undefined : true}
         muted
         loop
         playsInline
