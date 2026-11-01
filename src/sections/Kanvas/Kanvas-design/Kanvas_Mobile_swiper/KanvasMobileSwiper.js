@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards, Pagination, Navigation, Autoplay } from "swiper/modules";
 import AutoVideo from "../../../../components/AutoVideo";
-import { KANVAS_VIDEOS } from "../kanvas-design-features-carousel";
+import { KANVAS_VIDEOS } from "../kanvas-videos";
 
 
 const CONTENT = [
