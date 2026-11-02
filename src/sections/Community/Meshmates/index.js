@@ -136,7 +136,7 @@ const Meshmates = () => {
           <p> Meshtees are encouraged to reach out to any MeshMate directly in order to pair up. Introduce yourself either on in the <a href="https://discuss.meshery.io/c/community/12">Layer5 discussion forum</a>. Help your MeshMate understand your current skills, ideal topics of learning, and areas of passion. Doing so will help them to point out various aspects of projects that you might find your first foothold. </p>
         </div>
         <div className="meshmate-meet">
-          <Row $Vcenter>
+          <Row className="meshmate-meet-row" $Vcenter>
             <Col $sm={12} $lg={6}>
               <h2> Meeting Your MeshMate </h2>
               <p>After pairing up on the <a href="https://discuss.meshery.io/c/community/12">Layer5 discussion forum</a>, the community Slack’s video chat or Google Hangouts are both available for your use as tools for getting to know one another. While getting acquainted and onboarding into the community, we suggest the following goals: </p>
