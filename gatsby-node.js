@@ -10,6 +10,7 @@ const fs = require("fs");
 const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
+const RelatedPostsFactory = require("./src/components/Related-Posts/relatedPostsFactory");
 const config = require("./gatsby-config");
 const {
   getExcludedCollections,
@@ -24,6 +25,7 @@ const isCollectionEnabled = (collection) =>
   !excludedCollections.has(collection);
 
 const { loadRedirects } = require("./src/utils/redirects.js");
+const { createPagePathGuard } = require("./src/utils/page-path-guard");
 const dev404PageSource =
   require.resolve("gatsby/dist/internal-plugins/dev-404-page/raw_dev-404-page.js");
 
@@ -51,7 +53,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const redirects = loadRedirects();
   redirects.forEach((redirect) => createRedirect(redirect)); // Handles all hardcoded ones dynamically
   // Create Pages
-  const { createPage } = actions;
+  const findDuplicatePage = createPagePathGuard();
+  const createPage = (page) => {
+    const previous = findDuplicatePage(page);
+    if (previous) {
+      reporter.panicOnBuild(
+        `Duplicate page path "${page.path}" from ${previous} and ${page.component}. Give one of them a unique title or permalink.`,
+      );
+    }
+    return actions.createPage(page);
+  };
 
   const envCreatePage = (props) => {
     const pageProps = {
@@ -110,12 +121,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const res = await graphql(`
     {
       blogPosts: allMdx(
+        sort: { fields: { dateForSort: DESC } }
         filter: {
           fields: { collection: { eq: "blog" } }
           frontmatter: { published: { eq: true } }
         }
       ) {
         nodes {
+          frontmatter {
+            author
+            category
+            tags
+          }
           fields {
             slug
           }
@@ -429,11 +446,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   if (isCollectionEnabled("blog")) {
     blogs.forEach((blog) => {
+      const relatedPosts = new RelatedPostsFactory(blogs, blog.fields.slug)
+        .setMaxPosts(6)
+        .setCategory(blog.frontmatter.category)
+        .setTags(blog.frontmatter.tags)
+        .getPosts();
+
       envCreatePage({
         path: blog.fields.slug,
         component: `${blogPostTemplate}?__contentFilePath=${blog.internal.contentFilePath}`,
         context: {
           slug: blog.fields.slug,
+          relatedSlugs: relatedPosts.map(({ post }) => post.fields.slug),
+          author: blog.frontmatter.author || "",
         },
       });
     });
@@ -454,12 +479,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const BlogTags = res.data.blogTags.group;
   if (isCollectionEnabled("blog")) {
+    // Tags differing only by case (e.g. "DevOps" and "devops") share one page.
+    const tagsBySlug = new Map();
     BlogTags.forEach((tag) => {
+      const slug = slugify(tag.fieldValue);
+      tagsBySlug.set(slug, [...(tagsBySlug.get(slug) || []), tag.fieldValue]);
+    });
+    tagsBySlug.forEach((tags, slug) => {
       envCreatePage({
-        path: `/blog/tag/${slugify(tag.fieldValue)}`,
+        path: `/blog/tag/${slug}`,
         component: blogTagListTemplate,
         context: {
-          tag: tag.fieldValue,
+          tag: tags[0],
+          tags,
         },
       });
     });
