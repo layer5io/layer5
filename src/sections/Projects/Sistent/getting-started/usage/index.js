@@ -626,6 +626,7 @@ const SistentUsage = () => {
                       initialMode={isDark ? "dark" : "light"}
                     >
                       <div
+                        className="icon-showcase"
                         style={{
                           display: "flex",
                           gap: "12px",
