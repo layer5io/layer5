@@ -1,5 +1,5 @@
 import React from "react";
-import { navigate } from "gatsby";
+import { navigate, withPrefix } from "gatsby";
 import styled from "styled-components";
 
 const NewcomersMapWrapper = styled.div`
@@ -34,7 +34,7 @@ const NewcomersMapWrapper = styled.div`
     cursor: pointer;
     path {
       fill: ${(props) =>
-  props.handleHover ? (props) => props.theme.secondaryColor : "#3c494e"};
+        props.handleHover ? (props) => props.theme.secondaryColor : "#3c494e"};
       transition: 0.5s;
     }
     &:hover {
@@ -56,13 +56,17 @@ const NewcomersMapWrapper = styled.div`
   }
 `;
 
-const handleNavigate = (path) => (e) => {
-  if (e.metaKey || e.ctrlKey) {
-    window.open(path, "_blank", "noopener,noreferrer");
-  } else {
-    navigate(path);
-  }
-};
+const handleNavigate =
+  (path, newTab = false) =>
+  (e) => {
+    if (e.button === 2) return;
+    if (newTab || e.button === 1 || e.metaKey || e.ctrlKey) {
+      if (e.preventDefault) e.preventDefault();
+      window.open(withPrefix(path), "_blank", "noopener,noreferrer");
+    } else if (e.button === 0 || e.button === undefined) {
+      navigate(path);
+    }
+  };
 
 const NewcomersMap = ({ handleMouseHover = false }) => {
   return (
@@ -223,21 +227,21 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
           role="link"
           tabIndex={0}
           aria-label="Newcomer's Guide"
-          onClick={() =>
-            window.open(
-              "/community/handbook/about#Newcomer's%20Path",
-              "_blank",
-              "noopener,noreferrer",
-            )
-          }
+          onClick={handleNavigate(
+            "/community/handbook/about#Newcomer's%20Path",
+            true,
+          )}
+          onAuxClick={handleNavigate(
+            "/community/handbook/about#Newcomer's%20Path",
+            true,
+          )}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
               e.preventDefault();
-              window.open(
+              handleNavigate(
                 "/community/handbook/about#Newcomer's%20Path",
-                "_blank",
-                "noopener,noreferrer",
-              );
+                true,
+              )(e);
             }
           }}
         >
@@ -331,6 +335,7 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
           tabIndex={0}
           aria-label="find a meshmate"
           onClick={handleNavigate("/community/meshmates")}
+          onAuxClick={handleNavigate("/community/meshmates")}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
               e.preventDefault();
@@ -420,6 +425,7 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
           tabIndex={0}
           aria-label="community calendar"
           onClick={handleNavigate("/community/calendar")}
+          onAuxClick={handleNavigate("/community/calendar")}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
               e.preventDefault();
@@ -505,17 +511,12 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
           role="link"
           tabIndex={0}
           aria-label="Community Guide"
-          onClick={() =>
-            window.open("/community/handbook", "_blank", "noopener,noreferrer")
-          }
+          onClick={handleNavigate("/community/handbook", true)}
+          onAuxClick={handleNavigate("/community/handbook", true)}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
               e.preventDefault();
-              window.open(
-                "/community/handbook",
-                "_blank",
-                "noopener,noreferrer",
-              );
+              handleNavigate("/community/handbook", true)(e);
             }
           }}
         >
@@ -555,6 +556,7 @@ const NewcomersMap = ({ handleMouseHover = false }) => {
           tabIndex={0}
           aria-label="Repository Overview"
           onClick={handleNavigate("/community/handbook/repository-overview")}
+          onAuxClick={handleNavigate("/community/handbook/repository-overview")}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
               e.preventDefault();
