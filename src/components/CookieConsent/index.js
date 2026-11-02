@@ -67,6 +67,11 @@ const CookieConsent = () => {
     if (!consent) {
       setOpen(true);
     }
+
+    // Lets the footer's "Cookie Settings" link reopen the banner.
+    const reopen = () => setOpen(true);
+    window.addEventListener("open-cookie-settings", reopen);
+    return () => window.removeEventListener("open-cookie-settings", reopen);
   }, []);
 
   const handleResponse = (response) => {
@@ -91,6 +96,14 @@ const CookieConsent = () => {
             We use cookies to enhance your browsing experience. By clicking
             &quot;Accept&quot;, you consent to our use of cookies. Read more in
             our{" "}
+            <Link
+              to="/company/legal/cookie-notice"
+              target="_self"
+              rel="noopener noreferrer"
+            >
+              Cookie Notice
+            </Link>
+            ,{" "}
             <Link
               to="/company/legal/privacy"
               target="_self"
