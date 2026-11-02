@@ -141,6 +141,7 @@ const FooterWrapper = styled.section`
 					padding: 0;
 					font: inherit;
 					cursor: pointer;
+					box-shadow: none;
 				}
 				a:hover, button:hover {
 					color: ${(props) => props.theme.secondaryColor};
