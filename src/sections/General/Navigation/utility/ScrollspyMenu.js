@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link } from "gatsby";
 import Card from "./Card";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
-import KanvasCard from "./KanvasCard";
+import loadable from "@loadable/component";
+const KanvasCard = loadable(() => import("./KanvasCard"));
 
 const ScrollspyMenu = ({ menuItems, ...props }) => {
   const { blogData, className } = props;
