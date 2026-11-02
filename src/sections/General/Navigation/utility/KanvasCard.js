@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "gatsby";
 import { ReactComponent as IngressGatewayImage } from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/ingress-gateway-partial-colorMode.svg";
 import { ReactComponent as KubernetesImage } from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/kubernetes-navbar.svg";
 import { ReactComponent as KubernetesImage1 } from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/kubernetes-navbar-light.svg";
@@ -12,7 +11,7 @@ import EmptyDark from "../../../../sections/Kanvas/Kanvas-collaborate/images/ban
 import { useInView } from "react-intersection-observer";
 import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
 
-const KanvasCard = ({ onClick }) => {
+const KanvasCard = () => {
   const { isDark } = useStyledDarkMode();
   const [imageInView, setimageInView] = useState(false);
 
@@ -27,27 +26,15 @@ const KanvasCard = ({ onClick }) => {
   }, [inView, imageInView]);
 
   return (
-    <Link
-      to="/cloud-native-management/kanvas"
-      onClick={onClick}
-    >
-      <div className="single-card">
-        <div className="transition-container" ref={transitionRef}>
-          <img className="canvas" src={isDark ? EmptyDark : EmptyLight} alt="" />
-          <ServiceIntefaceImage className="service-interface" alt="ServiceIntefaceImage" />
-          <IngressGatewayImage alt="IngressGatewayImage" className={imageInView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"} />
-          {isDark ? <KubernetesImage className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" /> : <KubernetesImage1 className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" />}
-          <PodImage className={imageInView ? "pod-transition pod" : "pod"} alt="PodImage" />
-          <PrometheusImage className={imageInView ? "prometheus-transition prometheus" : "prometheus"} alt="PrometheusImage" />
-          <img className={imageInView ? "supporting-arrows-transition supporting-arrows" : "supporting-arrows"} src={SupportingArrows} alt="" />
-        </div>
-        <div className="card-text">
-          <p>Kanvas</p>
-          <h6>Stop finger-pointing.</h6>
-          <h6>Start collaborating.</h6>
-        </div>
-      </div>
-    </Link>
+    <div className="transition-container" ref={transitionRef}>
+      <img className="canvas" src={isDark ? EmptyDark : EmptyLight} alt="" />
+      <ServiceIntefaceImage className="service-interface" alt="ServiceIntefaceImage" />
+      <IngressGatewayImage alt="IngressGatewayImage" className={imageInView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"} />
+      {isDark ? <KubernetesImage className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" /> : <KubernetesImage1 className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" />}
+      <PodImage className={imageInView ? "pod-transition pod" : "pod"} alt="PodImage" />
+      <PrometheusImage className={imageInView ? "prometheus-transition prometheus" : "prometheus"} alt="PrometheusImage" />
+      <img className={imageInView ? "supporting-arrows-transition supporting-arrows" : "supporting-arrows"} src={SupportingArrows} alt="" />
+    </div>
   );
 };
 
