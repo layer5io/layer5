@@ -141,7 +141,7 @@ const IntegrationsGrid = ({ category, count }) => {
       }
     });
     setcategoryNameList([...tempCategoryList]);
-    setIntegrationCollection();
+    setIntegrationCollection(tempCategoryList);
   };
 
   const setCategory = () => {
@@ -156,7 +156,7 @@ const IntegrationsGrid = ({ category, count }) => {
       tempCategoryList[0].isSelected = true;
     }
     setcategoryNameList([...tempCategoryList]);
-    setIntegrationCollection();
+    setIntegrationCollection(tempCategoryList);
   };
 
   const setFilter = (event) => {
@@ -191,29 +191,30 @@ const IntegrationsGrid = ({ category, count }) => {
     }
 
     setcategoryNameList([...tempCategoryList]);
-    setIntegrationCollection();
+    setIntegrationCollection(tempCategoryList);
   };
 
   // Mobile dropdown: picking a category shows only that category.
   const selectCategory = (categoryName) => {
-    let tempCategoryList = [...categoryNameList];
-    tempCategoryList.forEach((item) => {
-      item.isSelected = item.name === categoryName;
-    });
+    const tempCategoryList = categoryNameList.map((item) => ({
+      ...item,
+      isSelected: item.name === categoryName,
+    }));
     setcategoryNameList([...tempCategoryList]);
-    setIntegrationCollection();
+    setIntegrationCollection(tempCategoryList);
   };
 
   // Desktop chips allow several categories; name that state instead of hiding it.
   const selectedCategories = categoryNameList.filter((item) => item.isSelected);
 
-  const setIntegrationCollection = () => {
-    if (categoryNameList[0].isSelected) {
+  // Filter from the list just built, not from state that has not updated yet.
+  const setIntegrationCollection = (categoryList) => {
+    if (categoryList[0].isSelected) {
       setIntegrationList([...data.allMdx.nodes]);
       return;
     }
     let tempIntegrationCollection = [];
-    categoryNameList.forEach((item) => {
+    categoryList.forEach((item) => {
       if (item.isSelected) {
         data.allMdx.nodes.forEach((integration) => {
           if (integration.frontmatter.category == item.name) {
