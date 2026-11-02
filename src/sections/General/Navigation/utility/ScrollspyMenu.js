@@ -128,7 +128,23 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                   <Card frontmatter={blogData[activeState.name].nodes[0].frontmatter} fields={blogData[activeState.name].nodes[0].fields} />
                   <Card frontmatter={blogData[activeState.name].nodes[1].frontmatter} fields={blogData[activeState.name].nodes[1].fields} />
                 </div>) : (
-                <KanvasCard onClick={handleLinkClick} />)
+                <KanvasCard
+                  onClick={handleLinkClick}
+                  fallback={
+                    <Link
+                      to="/cloud-native-management/kanvas"
+                      onClick={handleLinkClick}
+                    >
+                      <div className="single-card">
+                        <div className="card-text">
+                          <p>Kanvas</p>
+                          <h6>Stop finger-pointing.</h6>
+                          <h6>Start collaborating.</h6>
+                        </div>
+                      </div>
+                    </Link>
+                  }
+                />)
               }
             </div>
           </ul>
