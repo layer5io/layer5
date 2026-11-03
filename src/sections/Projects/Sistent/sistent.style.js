@@ -40,11 +40,20 @@ const SistentWrapper = styled.div`
   }
   .page-container {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 2rem;
+    justify-content: start;
+    gap: 3rem;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+
+    .page-section > div:first-child {
+      max-width: none;
+    }
+
     @media screen and (max-width: 750px) {
       display: block;
+      padding: 0;
     }
   }
 
