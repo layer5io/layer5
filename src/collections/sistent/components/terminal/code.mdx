@@ -1,0 +1,145 @@
+---
+title: Terminal Code
+component: terminal
+description: Terminal is a styled console window component used to display command-line output, code snippets, and log-style text in a familiar terminal-like interface.
+
+---
+
+Terminal displays static, pre-defined lines of text in a console-style window. It is composed of a title bar and a scrollable content area.
+
+<a id="Basic Terminal">
+  <h2>Basic Terminal</h2>
+</a>
+
+A simple terminal with a title and a few lines of output.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Terminal
+          title="bash"
+          lines={[
+            { code: '$ npm install @sistent/sistent' },
+            { code: 'Installing dependencies...', color: '#66a2ff' },
+            { code: 'Done in 2.3s', color: '#4caf50' }
+          ]}
+        />
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-terminal" collapsible code={`  <SistentThemeProvider>
+       <Terminal
+         title="bash"
+         lines={[
+           { code: '$ npm install @sistent/sistent' },
+           { code: 'Installing dependencies...', color: '#66a2ff' },
+           { code: 'Done in 2.3s', color: '#4caf50' }
+         ]}
+       />
+  </SistentThemeProvider>`} />
+</div>
+
+<a id="Terminal without Title">
+  <h2>Terminal without Title</h2>
+</a>
+
+The `title` prop is optional and can be omitted when no additional context is needed.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Terminal
+          lines={[
+            { code: '$ git status' },
+            { code: 'On branch master', color: '#bdbec2' },
+            { code: 'nothing to commit, working tree clean', color: '#4caf50' }
+          ]}
+        />
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="terminal-no-title" collapsible code={`  <SistentThemeProvider>
+       <Terminal
+         lines={[
+           { code: '$ git status' },
+           { code: 'On branch master', color: '#bdbec2' },
+           { code: 'nothing to commit, working tree clean', color: '#4caf50' }
+         ]}
+       />
+  </SistentThemeProvider>`} />
+</div>
+
+<a id="Indented Output">
+  <h2>Indented Output</h2>
+</a>
+
+Use the `indent` property on individual lines to represent nested or hierarchical output, such as a file tree.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Terminal
+          title="file tree"
+          lines={[
+            { code: 'src/' },
+            { code: 'components/', indent: 1 },
+            { code: 'Terminal.tsx', indent: 2 },
+            { code: 'index.ts', indent: 2 }
+          ]}
+        />
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="terminal-indented" collapsible code={`  <SistentThemeProvider>
+       <Terminal
+         title="file tree"
+         lines={[
+           { code: 'src/' },
+           { code: 'components/', indent: 1 },
+           { code: 'Terminal.tsx', indent: 2 },
+           { code: 'index.ts', indent: 2 }
+         ]}
+       />
+  </SistentThemeProvider>`} />
+</div>
+
+<a id="Compact Lines">
+  <h2>Compact Lines</h2>
+</a>
+
+Setting `short` on a line reduces its line height, useful for displaying denser output such as multi-line logs.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Terminal
+          title="logs"
+          noScroll
+          lines={[
+            { code: '[INFO] Starting server...', short: true },
+            { code: '[INFO] Listening on port 3000', short: true },
+            { code: '[WARN] No .env file found', short: true, color: '#e2b93b' },
+            { code: '[INFO] Ready', short: true, color: '#4caf50' }
+          ]}
+        />
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="terminal-compact" collapsible code={`  <SistentThemeProvider>
+       <Terminal
+         title="logs"
+         noScroll
+         lines={[
+           { code: '[INFO] Starting server...', short: true },
+           { code: '[INFO] Listening on port 3000', short: true },
+           { code: '[WARN] No .env file found', short: true, color: '#e2b93b' },
+           { code: '[INFO] Ready', short: true, color: '#4caf50' }
+         ]}
+       />
+  </SistentThemeProvider>`} />
+</div>
