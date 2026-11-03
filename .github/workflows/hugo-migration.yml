@@ -1,0 +1,63 @@
+name: hugo-migration
+
+on:
+  push:
+    branches: [hugo]
+    paths:
+      - 'hugo/**'
+      - '.github/workflows/hugo-migration.yml'
+  pull_request:
+    branches: [hugo]
+    paths:
+      - 'hugo/**'
+      - '.github/workflows/hugo-migration.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: "hugo-migration-${{ github.ref }}"
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: hugo
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10        # the Gatsby job needed far more; this is a tripwire for regressions
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22     # only for migration tooling + Pagefind; not used to build the site
+
+      # Hugo version pin: 0.145.0 (tested locally with v0.162.1+extended; versions should be aligned)
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.145.0"
+          extended: true
+
+      - name: Tooling tests
+        run: node --test "scripts/test/*.test.mjs"
+
+      - name: Build site
+        run: hugo --minify --gc --logLevel warn --printPathWarnings
+
+      - name: Search index (Pagefind)
+        run: npx -y pagefind --site public
+
+      - name: Link check (internal)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --offline --no-progress --root-dir "${{ github.workspace }}/hugo/public" 'hugo/public/**/*.html'
+          fail: true
+
+      - name: Benchmark (1,210 synthetic pages)
+        run: ./scripts/bench.sh
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: hugo/public
+          retention-days: 7
