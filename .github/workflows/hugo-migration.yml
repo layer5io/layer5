@@ -32,10 +32,10 @@ jobs:
         with:
           node-version: 22     # only for migration tooling + Pagefind; not used to build the site
 
-      # Hugo version pin: 0.145.0 (tested locally with v0.162.1+extended; versions should be aligned)
+      # Hugo version pin: 0.162.1 (verified locally and on Linux in WSL)
       - uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "0.145.0"
+          hugo-version: "0.162.1"
           extended: true
 
       - name: Tooling tests
