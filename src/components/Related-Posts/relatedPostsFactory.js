@@ -1,5 +1,5 @@
-import includes from "lodash/includes";
-import orderBy from "lodash/orderBy";
+const includes = require("lodash/includes");
+const orderBy = require("lodash/orderBy");
 
 class RelatedPostsFactory {
   constructor(posts, currentPostSlug) {
@@ -66,7 +66,7 @@ class RelatedPostsFactory {
       const tagPoint = 1;
       const slug = getSlug(post);
 
-      post.frontmatter.tags.forEach((tag) => {
+      (post.frontmatter.tags || []).forEach((tag) => {
         if (includes(tags, tag)) {
           identityMap[slug].points += tagPoint;
         }
@@ -91,4 +91,4 @@ class RelatedPostsFactory {
   }
 }
 
-export default RelatedPostsFactory;
+module.exports = RelatedPostsFactory;
