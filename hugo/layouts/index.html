@@ -1,0 +1,47 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <h1 class="hero__title">Cloud native infrastructure, managed together.</h1>
+      <p class="lede">Meshery and the Layer5 community give teams one place to design, deploy and operate Kubernetes and the services around it.</p>
+      <p class="hero__cta">
+        {{ partial "shortcode-button.html" (dict "url" "/cloud-native-management/meshery/integrations/" "text" "Browse integrations" "style" "primary") }}
+        {{ partial "shortcode-button.html" (dict "url" "/handbook/" "text" "Join the community" "style" "ghost") }}
+      </p>
+    </div>
+    <div class="hero__terminal" aria-label="Example: install Meshery">
+      <div class="terminal" data-terminal>
+        <div class="terminal__bar"><span>~/meshery</span><button class="terminal__copy" type="button" data-copy>Copy</button></div>
+<pre><code>brew install mesheryctl
+mesheryctl system start
+mesheryctl system dashboard</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ $integrations := where site.RegularPages "Section" "integrations" }}
+<section class="wrap block">
+  <div class="block__head">
+    <h2>Integrations</h2>
+    <a href="{{ with site.GetPage "/integrations" }}{{ .RelPermalink }}{{ end }}">All {{ len $integrations }} in this build</a>
+  </div>
+  <div class="grid grid--4">
+    {{ range first 4 $integrations.ByTitle }}{{ partial "integration-card.html" . }}{{ end }}
+  </div>
+</section>
+
+<section class="wrap block">
+  <div class="block__head">
+    <h2>Latest from the blog</h2>
+    <a href="{{ with site.GetPage "/blog" }}{{ .RelPermalink }}{{ end }}">All posts</a>
+  </div>
+  <div class="grid grid--3">
+    {{ range first 3 (where site.RegularPages "Section" "blog").ByDate.Reverse }}{{ partial "post-card.html" . }}{{ end }}
+  </div>
+</section>
+
+<section class="wrap block">
+  {{ partial "shortcode-cta.html" (dict "title" "Help move layer5.io to Hugo" "description" "Pick a good first issue, convert one shortcode, and see your change build in under a second." "button_text" "See the migration dashboard" "button_url" "/migration/") }}
+</section>
+{{ end }}

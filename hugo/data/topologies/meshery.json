@@ -1,0 +1,14 @@
+{
+  "layout": "cose",
+  "elements": [
+    {"data": {"id": "meshery", "label": "Meshery Server"}},
+    {"data": {"id": "cluster", "label": "Kubernetes"}},
+    {"data": {"id": "adapter", "label": "Adapters"}},
+    {"data": {"id": "ui", "label": "Meshery UI"}},
+    {"data": {"id": "cli", "label": "mesheryctl"}},
+    {"data": {"source": "ui", "target": "meshery"}},
+    {"data": {"source": "cli", "target": "meshery"}},
+    {"data": {"source": "meshery", "target": "adapter"}},
+    {"data": {"source": "adapter", "target": "cluster"}}
+  ]
+}

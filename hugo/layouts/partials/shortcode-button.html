@@ -1,0 +1,3 @@
+{{- $url := .url -}}
+{{- $ext := or (hasPrefix $url "http://") (hasPrefix $url "https://") -}}
+<a class="btn btn-{{ .style | default "primary" }}" href="{{ if $ext }}{{ $url }}{{ else }}{{ $url | relURL }}{{ end }}"{{ if $ext }} target="_blank" rel="noopener"{{ end }}>{{ .text }}</a>

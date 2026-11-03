@@ -1,0 +1,8 @@
+{{ $p := .Paginator }}
+{{ if gt $p.TotalPages 1 }}
+<nav class="pagination" aria-label="Pagination" data-pagefind-ignore>
+  {{ if $p.HasPrev }}<a rel="prev" href="{{ $p.Prev.URL }}">Newer posts</a>{{ else }}<span></span>{{ end }}
+  <span class="muted">Page {{ $p.PageNumber }} of {{ $p.TotalPages }}</span>
+  {{ if $p.HasNext }}<a rel="next" href="{{ $p.Next.URL }}">Older posts</a>{{ else }}<span></span>{{ end }}
+</nav>
+{{ end }}

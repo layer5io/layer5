@@ -1,0 +1,30 @@
+{{/*
+  Responsive, lazy, WebP <picture> from a page-bundle resource.
+  Usage: {{ partial "responsive-image.html" (dict "page" . "src" "cover.png" "alt" "..." "sizes" "(min-width: 60rem) 48rem, 100vw" "eager" false) }}
+  - Skips processing for SVG/GIF (Hugo can't resize them) and never upscales.
+  - Emits width/height so there is zero layout shift.
+*/}}
+{{- $img := .page.Resources.GetMatch .src -}}
+{{- if $img -}}
+  {{- $alt := .alt | default "" -}}
+  {{- $loading := cond (.eager | default false) "eager" "lazy" -}}
+  {{- if or (strings.HasSuffix $img.Name ".svg") (strings.HasSuffix $img.Name ".gif") -}}
+    <img src="{{ $img.RelPermalink }}" alt="{{ $alt }}" loading="{{ $loading }}" decoding="async">
+  {{- else -}}
+    {{- $set := slice -}}
+    {{- range $w := slice 480 800 1200 1600 -}}
+      {{- if lt $w $img.Width -}}
+        {{- $r := $img.Resize (printf "%dx webp q85" $w) -}}
+        {{- $set = $set | append (printf "%s %dw" $r.RelPermalink $r.Width) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $full := $img.Resize (printf "%dx webp q85" (int (math.Min $img.Width 2000))) -}}
+    {{- $set = $set | append (printf "%s %dw" $full.RelPermalink $full.Width) -}}
+    <picture>
+      <source type="image/webp" srcset="{{ delimit $set ", " }}" sizes="{{ .sizes | default "100vw" }}">
+      <img src="{{ $img.RelPermalink }}" alt="{{ $alt }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="{{ $loading }}" decoding="async">
+    </picture>
+  {{- end -}}
+{{- else -}}
+  {{- warnf "responsive-image: %q not found in bundle of %s" .src .page.File.Path -}}
+{{- end -}}

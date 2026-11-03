@@ -1,0 +1,11 @@
+{{ define "main" }}
+<section class="wrap">
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+  <ul class="plain list-rows">
+    {{ range .Pages.ByTitle }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Summary }}<span class="muted"> — {{ . | plainify | truncate 120 }}</span>{{ end }}</li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

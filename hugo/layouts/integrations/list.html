@@ -1,0 +1,21 @@
+{{ define "main" }}
+<section class="wrap" data-filter-root>
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}<p class="lede">{{ . | plainify }}</p>{{ end }}
+  {{ $cats := slice }}
+  {{ range .Pages }}{{ with .Params.category }}{{ $cats = $cats | append . }}{{ end }}{{ end }}
+  <div class="filters" data-pagefind-ignore>
+    <label class="sr-only" for="f-q">Filter integrations</label>
+    <input id="f-q" type="search" placeholder="Filter by name…" data-filter-input autocomplete="off">
+    <div class="chips" role="group" aria-label="Category">
+      <button type="button" class="chip" data-filter-chip="" aria-pressed="true">All</button>
+      {{ range $cats | uniq | sort }}<button type="button" class="chip" data-filter-chip="{{ . }}" aria-pressed="false">{{ . }}</button>{{ end }}
+    </div>
+    <p class="muted" role="status" aria-live="polite"><span data-filter-count>{{ len .Pages }}</span> of {{ len .Pages }} shown</p>
+  </div>
+  <div class="grid grid--4">
+    {{ range .Pages.ByTitle }}{{ partial "integration-card.html" . }}{{ end }}
+  </div>
+  <p class="muted" data-filter-empty hidden>No integrations match. Clear the filter to see everything.</p>
+</section>
+{{ end }}

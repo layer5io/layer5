@@ -1,0 +1,6 @@
+{{- /* {{< card title="…" url="…" >}}body{{< /card >}} */ -}}
+{{- $url := .Get "url" -}}
+<div class="card"><div class="card__body">
+  <h3>{{ with $url }}<a href="{{ . }}">{{ $.Get "title" }}</a>{{ else }}{{ .Get "title" }}{{ end }}</h3>
+  <div class="muted">{{ .Inner | markdownify }}</div>
+</div></div>

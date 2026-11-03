@@ -1,0 +1,21 @@
+<footer class="site-footer" data-pagefind-ignore>
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-title">Stay in the loop</p>
+      <p class="muted">Release notes, community calls and new integrations. No spam.</p>
+      {{ partial "newsletter.html" . }}
+    </div>
+    <div>
+      <p class="footer-title">Explore</p>
+      <ul class="plain">
+        {{ range site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
+        <li><a href="{{ "index.xml" | relURL }}">RSS</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-title">Build</p>
+      <p class="muted">Built by Hugo {{ hugo.Version }} in {{ now.Format "2006-01-02" }}. No Node.js required to build.</p>
+      <p><a href="{{ site.Params.repo }}">github.com/layer5io/layer5</a></p>
+    </div>
+  </div>
+</footer>

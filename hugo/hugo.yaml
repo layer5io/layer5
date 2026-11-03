@@ -1,0 +1,77 @@
+# Layer5.io — Hugo POC configuration
+# Requires Hugo Extended >= 0.128 (tested target: latest)
+baseURL: https://layer5.io/
+title: Layer5
+locale: en-us
+timeZone: UTC
+enableRobotsTXT: true
+enableGitInfo: false
+
+# Events are future-dated; Hugo hides future content by default.
+buildFuture: true
+
+pagination:
+  pagerSize: 9
+
+taxonomies:
+  tag: tags
+  category: categories
+  program: programs
+
+# Workstream 4: preserve Gatsby URL patterns.
+# NOTE: verify against the live sitemap with `make verify-urls` before trusting these.
+permalinks:
+  blog: /blog/:year/:slug/
+  news: /company/news/:slug/
+  events: /community/events/:slug/
+  integrations: /cloud-native-management/meshery/integrations/:slug/
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true        # MDX content contains inline HTML
+  highlight:
+    noClasses: false
+    lineNos: false
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3
+
+mediaTypes:
+  text/netlify:
+    delimiter: ""
+    suffixes: [""]
+
+# Workstream 4: Netlify / Cloudflare Pages style _redirects built from `aliases`
+outputFormats:
+  Redirects:
+    mediaType: text/netlify
+    baseName: _redirects
+    isPlainText: true
+    notAlternative: true
+outputs:
+  home: [HTML, RSS, Redirects]
+  section: [HTML, RSS]
+
+related:
+  includeNewer: true
+  threshold: 60
+  indices:
+    - { name: tags, weight: 100 }
+    - { name: categories, weight: 80 }
+    - { name: date, weight: 10 }
+
+params:
+  description: Layer5 — the cloud native management company, home of Meshery.
+  repo: https://github.com/layer5io/layer5
+  forms:
+    # Point at the real Layer5 / HubSpot endpoint. Empty = demo mode (no network call).
+    newsletter: ""
+
+menus:
+  main:
+    - { name: Cloud Native Management, url: /cloud-native-management/meshery/integrations/, weight: 10 }
+    - { name: Blog, url: /blog/, weight: 20 }
+    - { name: Community, url: /members/, weight: 30 }
+    - { name: Handbook, url: /handbook/, weight: 40 }
+    - { name: Migration, url: /migration/, weight: 50 }

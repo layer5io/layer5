@@ -1,0 +1,10 @@
+<article class="card">
+  {{ with .Params.thumbnail }}
+    <a class="card__media" href="{{ $.RelPermalink }}" tabindex="-1" aria-hidden="true">{{ partial "responsive-image.html" (dict "page" $ "src" . "alt" "" "sizes" "(min-width: 60rem) 22rem, 100vw") }}</a>
+  {{ end }}
+  <div class="card__body">
+    <p class="meta">{{ .Date.Format "Jan 2, 2006" }}{{ with .Params.categories }} · {{ delimit . ", " }}{{ end }}</p>
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <p class="muted">{{ .Summary | plainify | truncate 140 }}</p>
+  </div>
+</article>

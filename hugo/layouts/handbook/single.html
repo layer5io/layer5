@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="wrap docs">
+  <nav class="docs__nav" aria-label="Handbook" data-pagefind-ignore>
+    <p class="footer-title">{{ .CurrentSection.Title }}</p>
+    <ul class="plain">
+      {{ $here := . }}
+      {{ range .CurrentSection.Pages.ByWeight }}<li><a href="{{ .RelPermalink }}"{{ if eq .RelPermalink $here.RelPermalink }} aria-current="page"{{ end }}>{{ .Title }}</a></li>{{ end }}
+    </ul>
+  </nav>
+  <article class="docs__body">
+    <h1>{{ .Title }}</h1>
+    <div class="prose">{{ .Content }}</div>
+  </article>
+  <aside class="docs__toc" data-pagefind-ignore>
+    <p class="footer-title">On this page</p>
+    {{ .TableOfContents }}
+  </aside>
+</div>
+{{ end }}
