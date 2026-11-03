@@ -4,7 +4,7 @@ import Step from "./Step";
 
 const StepsList = ({ steps, className, onFocusedIndexChanged }) => {
   const [viewportStatus, setViewportStatus] = useState(
-    new Array(steps.length).fill(false)
+    new Array(steps.length).fill(false),
   );
   const [focusedStepIndex, setFocusedStepIndex] = useState(0);
   return (
@@ -13,6 +13,8 @@ const StepsList = ({ steps, className, onFocusedIndexChanged }) => {
         {steps.map((step, index) => (
           <Step
             key={step.name}
+            {...step}
+            id={step.id || step.name.toLowerCase().replace(/\s+/g, "-")}
             onInViewStatusChanged={(status) => {
               // Determine the new status array of the view status
               const newStatusArray = [...viewportStatus];
@@ -28,7 +30,6 @@ const StepsList = ({ steps, className, onFocusedIndexChanged }) => {
                 onFocusedIndexChanged(newFocusIndex);
               }
             }}
-            {...step}
           />
         ))}
       </ul>
