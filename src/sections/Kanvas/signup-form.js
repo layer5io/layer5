@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Container, Row, Col } from "../../reusecore/Layout";
 
 import CommonForm from "../../components/CommonForm";
+import GatedIframe from "../../components/GatedIframe";
 
 const SignupFormWrapper = styled.div`
   .desc-text {
@@ -46,10 +47,10 @@ const SignupForm = ({ targetRef }) => {
                 <a target="_blank" href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA" rel="noreferrer">
                   <img src={KanvasDrafts} alt="Kanvas Draft" /></a><br />
                 <p><a target="_blank" href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA" rel="noreferrer">Vote for your favorite design</a></p> */}
-                <iframe
+                <GatedIframe
                   width="95%"
                   height="100%"
-                  src="https://www.youtube.com/embed/034nVaQUyME?si=Xip0JqrwiG2QY5vp"
+                  src="https://www.youtube-nocookie.com/embed/034nVaQUyME?si=Xip0JqrwiG2QY5vp"
                   allow="autoplay"
                   style={{ border: "0" }}
                   allowfullscreen
