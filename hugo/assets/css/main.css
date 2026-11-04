@@ -132,3 +132,371 @@ th, td { text-align: left; padding: .6rem .8rem; border-bottom: 1px solid var(--
 @media (max-width: 62rem) { .docs { grid-template-columns: 1fr; } .docs__nav, .docs__toc { position: static; } .hero__grid, .footer-grid { grid-template-columns: 1fr; } }
 @media (max-width: 40rem) { .hide-sm { display: none; } .site-header__inner { gap: .75rem; } }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }
+
+/* callout */
+.callout {
+  --callout-color: var(--accent);
+  margin-block: 1.75rem;
+  border: 1px solid color-mix(in srgb, var(--callout-color) 35%, var(--line));
+  border-left: 4px solid var(--callout-color);
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: .95rem;
+  background: color-mix(in srgb, var(--callout-color) 6%, var(--surface));
+}
+.callout--note { --callout-color: #477dff; }
+.callout--tip { --callout-color: #00a98c; }
+.callout--warning { --callout-color: #b58a00; }
+.callout--caution { --callout-color: #e36b19; }
+.callout--important { --callout-color: #b32700; }
+.callout__header {
+  padding: .55rem 1rem;
+  background: color-mix(in srgb, var(--callout-color) 13%, var(--surface));
+}
+.callout__title {
+  font-weight: 700;
+  font-size: .9rem;
+  color: var(--callout-color);
+}
+.callout__body { padding: .75rem 1rem; }
+.callout__body p { line-height: 1.65; }
+.callout__body p:last-child { margin-bottom: 0; }
+.callout__body ul, .callout__body ol { padding-left: 1.4rem; }
+.callout__body li { line-height: 1.65; margin-bottom: .25rem; }
+.callout__body code {
+  font-size: .875em;
+  padding: .1em .3em;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--callout-color) 12%, var(--surface));
+}
+
+/* blockquotes */
+.layer5-blockquote {
+  max-width: 620px;
+  margin: 1.5rem auto;
+  padding: 0 10px;
+}
+.layer5-blockquote__quote {
+  position: relative;
+  padding: 1.25rem;
+  border: 2px solid var(--line);
+  border-radius: 20px;
+  color: var(--text);
+  font-size: 1.35rem;
+  line-height: 1.4;
+}
+.layer5-blockquote__person {
+  margin: .8rem 0 0 2rem;
+  font-weight: 600;
+}
+.layer5-blockquote__title {
+  margin-left: 2rem;
+  color: var(--muted);
+  font-size: 1rem;
+  font-style: italic;
+}
+.layer5-blockquote--alt .layer5-blockquote__quote {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  line-height: 1.25;
+  border-left: 4px solid var(--accent);
+  border-radius: 0;
+}
+.layer5-blockquote--alt .layer5-blockquote__person {
+  text-align: right;
+}
+.layer5-blockquote--alt .layer5-blockquote__title {
+  text-align: right;
+}
+
+/* InlineQuotes */
+.inline-quote {
+  margin: 5% 0;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.inline-quote__box {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right bottom, #00b39f, var(--surface) 80%);
+  border-image-slice: 1 0 1 1;
+  transition: border-image 0.6s ease-in-out;
+}
+
+.inline-quote__text {
+  flex: 0 0 65%;
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 100;
+  font-style: italic;
+  line-height: 1.6;
+  text-align: right;
+}
+
+.inline-quote__box--quote-only .inline-quote__text {
+  flex: 0 0 100%;
+  text-align: center;
+}
+
+.inline-quote__divider {
+  align-self: stretch;
+  height: 5rem;
+  margin: 0;
+  border: 0;
+  border-left: 1px solid var(--line);
+}
+
+.inline-quote__author {
+  display: flex;
+  flex: 2 1 0;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.inline-quote__portrait {
+  flex-shrink: 0;
+  width: clamp(72px, 10vw, 96px);
+  height: clamp(72px, 10vw, 96px);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.inline-quote__source {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 1rem;
+  text-align: left;
+}
+
+.inline-quote__source h5 {
+  margin: 0 0 0.5rem;
+  padding: 0.1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.inline-quote__source p {
+  margin: 0;
+  font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .inline-quote__box {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .inline-quote__text,
+  .inline-quote__box--quote-only .inline-quote__text {
+    flex: 0 0 100%;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .inline-quote__divider {
+    width: clamp(150px, 60%, 200px);
+    height: 0;
+    margin: 0.5rem auto;
+    border: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .inline-quote__author {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .inline-quote__source {
+    padding: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .inline-quote__box {
+    padding: 1rem 0.75rem;
+  }
+
+  .inline-quote__source p {
+    line-height: 1.3;
+  }
+}
+
+/* Sistent modal action layout */
+.sistent-action-box {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  gap: 1rem;
+}
+
+/* Meet the Maintainer blog layout */
+.meet-the-maintainer .interviewer {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.meet-the-maintainer .interviewer span,
+.meet-the-maintainer .interviewee span {
+  font-weight: 600;
+  font-style: normal;
+}
+
+.meet-the-maintainer .interviewee {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: var(--text);
+  font-style: italic;
+  text-align: left;
+  border-left: 2px solid var(--accent);
+  padding-left: 2rem;
+}
+
+.meet-the-maintainer .interviewee p::before {
+  content: "\201C";
+}
+
+.meet-the-maintainer .interviewee p::after {
+  content: "\201D";
+}
+
+.meet-the-maintainer .note {
+  margin: 1rem;
+  padding: 2rem;
+  display: flex;
+  border: 1px solid var(--meshkit-primary-light);
+}
+
+.meet-the-maintainer .note img {
+  margin-right: 3rem;
+}
+
+.meet-the-maintainer .centered-text {
+  padding: 2rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Meshkit and Meshery Adapter Library */
+.meshkit-meshery-adapter-lib .fact {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: var(--meshkit-secondary);
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: right;
+  border-right: 4px solid var(--meshkit-secondary);
+  padding: 1rem 2rem;
+}
+
+.meshkit-meshery-adapter-lib .note {
+  margin: 1rem;
+  padding: 2rem;
+  display: flex;
+  border: 1px solid var(--meshkit-primary-light);
+}
+
+.meshkit-meshery-adapter-lib .note img {
+  margin-right: 3rem;
+}
+
+.meshkit-meshery-adapter-lib .centered-text {
+  padding: 2rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Original Gatsby Meshkit theme colours */
+:root {
+  --meshkit-secondary: #00b39f;
+  --meshkit-primary-light: #3b3b3b;
+}
+
+html[data-theme="dark"] {
+  --meshkit-secondary: #00b39f;
+  --meshkit-primary-light: #2C2C2C;
+}
+
+/* Buf Protocol article */
+.buf-protocol .fact {
+  color: var(--meshkit-secondary);
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: right;
+  border-right: 4px solid var(--meshkit-secondary);
+  padding: 1rem 2rem;
+}
+
+.buf-protocol .fact-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: var(--meshkit-secondary);
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: left;
+  border-left: 4px solid var(--meshkit-secondary);
+  padding: 1rem 2rem;
+}
+
+.buf-protocol .fact-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: var(--meshkit-secondary);
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  border-left: 4px solid var(--meshkit-secondary);
+  border-right: 4px solid var(--meshkit-secondary);
+  padding: 1rem 2rem;
+}
+
+.buf-protocol .problem-image {
+  display: inline;
+  float: right;
+  max-width: 200px;
+  width: 80%;
+  padding: 1.25rem;
+}
+
+.buf-protocol .note {
+  margin: 1rem;
+  padding: 2rem;
+  display: flex;
+  border: 1px solid var(--meshkit-primary-light);
+}
+
+.buf-protocol .note img {
+  margin-right: 3rem;
+}
+
+.buf-protocol .centered-text {
+  padding: 2rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .buf-protocol .problem-image {
+    display: flex;
+    margin: auto;
+    float: none;
+  }
+}

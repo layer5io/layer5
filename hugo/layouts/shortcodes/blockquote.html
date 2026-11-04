@@ -1,0 +1,8 @@
+﻿{{- $quote := .Get "quote" -}}
+{{- $person := .Get "person" -}}
+{{- $title := .Get "title" -}}
+<div class="layer5-blockquote">
+  <div class="layer5-blockquote__quote">{{ $quote }}</div>
+  {{ with $person }}<div class="layer5-blockquote__person">{{ . }}</div>{{ end }}
+  {{ with $title }}<div class="layer5-blockquote__title">{{ . }}</div>{{ end }}
+</div>

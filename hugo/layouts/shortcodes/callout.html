@@ -1,0 +1,12 @@
+﻿{{- $type := .Get "type" | default "note" -}}
+{{- $labels := dict "note" "Note" "tip" "Tip" "warning" "Warning" "caution" "Caution" "important" "Important" -}}
+{{- if not (index $labels $type) -}}
+  {{- $type = "note" -}}
+{{- end -}}
+{{- $title := .Get "title" | default (index $labels $type) -}}
+<aside class="callout callout--{{ $type }}" role="note">
+  <div class="callout__header">
+    <span class="callout__title">{{ $title }}</span>
+  </div>
+  <div class="callout__body">{{ .Inner | markdownify }}</div>
+</aside>

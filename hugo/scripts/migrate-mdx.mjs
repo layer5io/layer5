@@ -31,6 +31,10 @@ export const COMPONENTS = {
   Accordion:     { shortcode: 'accordion',      paired: true },
   AccordionItem: { shortcode: 'accordion-item', paired: true },
   Card:          { shortcode: 'card',           paired: true },
+  Callout: { shortcode: 'callout', paired: true },
+  BlockquoteAlt: { shortcode: 'blockquote-alt', paired: false },
+  Blockquote: { shortcode: 'blockquote', paired: false },
+  InlineQuotes: { shortcode: 'inline-quotes', paired: false },
 };
 export const UNWRAP = new Set([
   'BlogWrapper',
@@ -139,6 +143,16 @@ function buildShortcode(spec, tag, children, ctx) {
   const attrs = new Map();
   for (const a of tag.attrs) {
     if (DROP_ATTRS.has(a.key)) { ctx.count('droppedAttrs'); continue; }
+    if (tag.name === 'InlineQuotes' && a.key === 'image' && !a.literal) {
+      const imported = ctx.imports?.get(a.value);
+      if (imported) {
+        attrs.set('image', imported.image);
+        if (imported.imagePage) attrs.set('image_page', imported.imagePage);
+      } else {
+        ctx.warn(`<InlineQuotes> image import "${a.value}" could not be resolved`);
+      }
+      continue;
+    }
     const key = spec.alias?.[a.key] ?? snake(a.key);
     attrs.set(key, a.value);
   }
@@ -157,16 +171,44 @@ function buildShortcode(spec, tag, children, ctx) {
 /* ---------------------------------------------------------------- body conversion */
 function convertSegment(text, ctx) {
   let out = '', i = 0;
-  const re = /<([A-Z][\w.]*)(?![\w.])/g;
+  const re = /<(?:([A-Z][\w.]*)(?![\w.])|(img)(?![\w.]))/g;
   while (true) {
     re.lastIndex = i;
     const m = re.exec(text);
     if (!m) { out += text.slice(i); break; }
     out += text.slice(i, m.index);
-    const name = m[1];
+    const name = m[1] || m[2];
     const tag = parseOpenTag(text, m.index);
     const spec = COMPONENTS[name];
     if (!tag) { ctx.warn(`could not parse <${name}> tag; left as-is`); out += '<'; i = m.index + 1; continue; }
+
+    if (name === 'img') {
+      const attrs = tag.attrs.map((attr) => {
+        let value = attr.value;
+
+        if (attr.key === 'className') return 'class="' + value + '"';
+
+        if (attr.key === 'src' && !attr.literal) {
+          const imported = ctx.imports?.get(value);
+          if (imported) {
+            value = imported.image;
+          attr.literal = true;
+          } else {
+            ctx.warn('<img> source import "' + value + '" could not be resolved');
+            return attr.key + '={' + value + '}';
+          }
+        }
+
+        return attr.literal
+          ? attr.key + '="' + value.replace(/&/g, '&amp;').replace(/"/g, '&quot;') + '"'
+          : attr.key + '={' + value + '}';
+      });
+
+      ctx.component('img');
+      out += '<img ' + attrs.join(' ') + (tag.selfClosing ? ' />' : '>');
+      i = tag.end;
+      continue;
+    }
     if (name === 'Code' || name === 'CodeBlock') {
       const codeAttr = tag.attrs.find((attr) =>
         attr.key === 'codeString' || attr.key === 'code'
@@ -251,7 +293,84 @@ function convertSegment(text, ctx) {
       continue;
     }
 
-    if (UNWRAP.has(name)) {
+    if (name === 'ActionBox') {
+      const closing = tag.selfClosing ? null : findClose(text, tag.end, name);
+      if (!tag.selfClosing && !closing) {
+        ctx.warn('<ActionBox> has no closing tag; left as-is');
+        out += text.slice(m.index, tag.end);
+        i = tag.end;
+        continue;
+      }
+      const children = tag.selfClosing ? '' : convertSegment(text.slice(tag.end, closing.start), ctx);
+      ctx.component(name);
+      out += '<div class="sistent-action-box">' + children + '</div>';
+      i = tag.selfClosing ? tag.end : closing.end;
+      continue;
+    }
+    if (name === 'MeetTheMaintainer') {
+    const closing = tag.selfClosing ? null : findClose(text, tag.end, name);
+
+    if (!tag.selfClosing && !closing) {
+      ctx.warn('<MeetTheMaintainer> has no closing tag; left as-is');
+      out += text.slice(m.index, tag.end);
+      i = tag.end;
+      continue;
+    }
+
+    const children = tag.selfClosing
+      ? ''
+      : convertSegment(text.slice(tag.end, closing.start), ctx)
+          .replace(/\bclassName=/g, 'class=');
+
+    ctx.component(name);
+    out += '<div class="meet-the-maintainer">' + children + '</div>';
+    i = tag.selfClosing ? tag.end : closing.end;
+    continue;
+  }
+
+  if (name === 'MeshkitMesheryAdapterLib') {
+    const closing = tag.selfClosing ? null : findClose(text, tag.end, name);
+
+    if (!tag.selfClosing && !closing) {
+      ctx.warn('<MeshkitMesheryAdapterLib> has no closing tag; left as-is');
+      out += text.slice(m.index, tag.end);
+      i = tag.end;
+      continue;
+    }
+
+    const children = tag.selfClosing
+      ? ''
+      : convertSegment(text.slice(tag.end, closing.start), ctx)
+          .replace(/\bclassName=/g, 'class=');
+
+    ctx.component(name);
+    out += '<div class="meshkit-meshery-adapter-lib">' + children + '</div>';
+    i = tag.selfClosing ? tag.end : closing.end;
+    continue;
+  }
+
+  if (name === 'BufProtocol') {
+    const closing = tag.selfClosing ? null : findClose(text, tag.end, name);
+
+    if (!tag.selfClosing && !closing) {
+      ctx.warn('<BufProtocol> has no closing tag; left as-is');
+      out += text.slice(m.index, tag.end);
+      i = tag.end;
+      continue;
+    }
+
+    const children = tag.selfClosing
+      ? ''
+      : convertSegment(text.slice(tag.end, closing.start), ctx)
+          .replace(/\bclassName=/g, 'class=');
+
+    ctx.component(name);
+    out += '<div class="buf-protocol">' + children + '</div>';
+    i = tag.selfClosing ? tag.end : closing.end;
+    continue;
+  }
+
+  if (UNWRAP.has(name)) {
       if (tag.selfClosing) {
         ctx.component(name);
         i = tag.end;
@@ -280,7 +399,18 @@ function convertSegment(text, ctx) {
       if (!(prev && ctx.masked?.[+prev[1]] === marker.trim())) out += marker;
       out += text.slice(m.index, tag.end); i = tag.end; continue;
     }
-    tag.problems.forEach((p) => ctx.warn(`<${name}>: ${p}`));
+    const resolvedInlineQuoteImage =
+      name === 'InlineQuotes' &&
+      tag.attrs.some((a) =>
+        a.key === 'image' && !a.literal && ctx.imports?.has(a.value)
+      );
+
+    tag.problems
+      .filter((p) => !(
+        resolvedInlineQuoteImage &&
+        p === 'non-literal expression for "image"'
+      ))
+      .forEach((p) => ctx.warn(`<${name}>: ${p}`));
     let children = '', end = tag.end;
     if (!tag.selfClosing) {
       const c = findClose(text, tag.end, name);
@@ -297,33 +427,46 @@ function convertSegment(text, ctx) {
 
 /** Convert an MDX body. Code fences and inline code are protected. */
 export function convertBody(body, ctx) {
-  const lines = body.split('\n');
-  const chunks = []; let buf = [], inFence = null;
-  for (const line of lines) {
-    const f = /^\s*(```+|~~~+)/.exec(line);
-    if (f && !inFence) { chunks.push({ code: false, text: buf.join('\n') }); buf = [line]; inFence = f[1][0]; }
-    else if (f && inFence && f[1][0] === inFence) { buf.push(line); chunks.push({ code: true, text: buf.join('\n') }); buf = []; inFence = null; }
-    else buf.push(line);
+  const masked = [];
+
+  // Protect fenced code blocks across the entire body.
+  let t = body.replace(
+    /(^|\n)([ \t]*)([\x60]{3,}|~{3,})[^\n]*\n[\s\S]*?(?:\n[ \t]*\3[ \t]*(?=\n|$)|$)/g,
+    (block) => '\u0000' + (masked.push(block) - 1) + '\u0000'
+  );
+
+  // Protect inline code, but leave template literals in JSX attributes readable.
+  t = t.replace(/\{\s*\x60[^\x60]*\x60\s*\}|\x60[^\x60]*\x60|\x60[^\n]+/g, (s) =>
+    s.startsWith('{') ? s : '\u0000' + (masked.push(s) - 1) + '\u0000'
+  );
+
+  t = t.replace(
+    /^import\s+(?:[\w$]+\s*,?\s*)?(?:\{[^}]*\}|\*\s+as\s+[\w$]+)?\s*from\s+["'][^"']+["'];?[ \t]*\r?\n/gm,
+    () => { ctx.count('importsRemoved'); return ''; }
+  );
+  t = t.replace(
+    /^import\s+["'][^"']+["'];?[ \t]*\r?\n/gm,
+    () => { ctx.count('importsRemoved'); return ''; }
+  );
+
+  if (/^export\s/m.test(t)) {
+    ctx.warn('contains export statements (MDX exports are not supported in Hugo)');
   }
-  chunks.push({ code: !!inFence, text: buf.join('\n') });
 
-  return chunks.map((c) => {
-    if (c.code) return c.text;
-    const masked = []; // protect inline code
-    // `{`template literal`}` attribute values are left alone so the tag parser can read them
-    let t = c.text.replace(/\{\s*`[^`]*`\s*\}|`[^`\n]+`/g, (s) => (s[0] === '{' ? s : `\u0000${masked.push(s) - 1}\u0000`));
-    t = t.replace(/^import\s+(?:[\w$]+\s*,?\s*)?(?:\{[^}]*\}|\*\s+as\s+[\w$]+)?\s*from\s+['"][^'"]+['"];?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
-    t = t.replace(/^import\s+['"][^'"]+['"];?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
-    if (/^export\s/m.test(t)) ctx.warn('contains `export` statements (MDX exports are not supported in Hugo)');
-    t = t.replace(/\{\/\*([\s\S]*?)\*\/\}/g, '<!--$1-->');
-    t = t.replace(/<!--[\s\S]*?-->/g, (s) => `\u0000${masked.push(s) - 1}\u0000`); // never scan inside comments
-    ctx.masked = masked;
-    t = convertSegment(t, ctx);
-    while (/\u0000\d+\u0000/.test(t)) t = t.replace(/\u0000(\d+)\u0000/g, (_, n) => masked[+n]);
-    return t;
-  }).join('\n').replace(/\n{3,}/g, '\n\n');
+  t = t.replace(/\{\s*\/\*([\s\S]*?)\*\/\s*\}/g, '<!--$1-->');
+  t = t.replace(/<!--[\s\S]*?-->/g, (s) =>
+    '\u0000' + (masked.push(s) - 1) + '\u0000'
+  );
+
+  ctx.masked = masked;
+  t = convertSegment(t, ctx);
+
+  while (/\u0000\d+\u0000/.test(t)) {
+    t = t.replace(/\u0000(\d+)\u0000/g, (_, n) => masked[+n]);
+  }
+
+  return t.replace(/\n{3,}/g, '\n\n');
 }
-
 /* ---------------------------------------------------------------- front matter */
 export function convertFrontMatter(fm, slug, ctx) {
   const lines = fm.replace(/\r\n/g, '\n').split('\n'); const out = []; let hasSlug = false;
@@ -344,9 +487,39 @@ export function convertFrontMatter(fm, slug, ctx) {
   return out.join('\n');
 }
 
-export function convertFile(source, { slug, file = '' } = {}) {
+function collectImageImports(body, file, sourceRoot) {
+  const imports = new Map();
+  if (!sourceRoot || !file) return imports;
+
+  const sourceFile = path.resolve(sourceRoot, file);
+  const importRe = /^\s*import\s+([A-Za-z_$][\w$]*)\s+from\s+(['"])([^'"]+)\2;?\s*$/gm;
+  let match;
+
+  while ((match = importRe.exec(body))) {
+    const [, identifier, , importPath] = match;
+    if (!/\.(?:avif|gif|jpe?g|png|svg|webp)$/i.test(importPath)) continue;
+
+    const absolute = path.resolve(path.dirname(sourceFile), importPath);
+    const relative = path.relative(sourceRoot, absolute);
+    if (relative.startsWith('..') || path.isAbsolute(relative)) continue;
+
+    const parts = relative.split(path.sep);
+    const imported = { image: path.basename(relative) };
+
+    if (parts[0] === 'members' && parts.length > 1) {
+      imported.imagePage = `/members/${parts.slice(1, -1).join('/')}`;
+    }
+
+    imports.set(identifier, imported);
+  }
+
+  return imports;
+}
+
+export function convertFile(source, { slug, file = '', sourceRoot = undefined } = {}) {
   const stats = { components: {}, unknown: {}, counters: {}, warnings: [] };
   const ctx = {
+    imports: collectImageImports(source, file, sourceRoot),
     warn: (m) => stats.warnings.push(m),
     unknown: (n) => { stats.unknown[n] = (stats.unknown[n] || 0) + 1; },
     component: (n) => { stats.components[n] = (stats.components[n] || 0) + 1; },
@@ -386,7 +559,7 @@ export function migrate({ src, dest, dryRun = false }) {
     report.files++; col.files++;
     const base = path.basename(file, ext);
     const slug = base === 'index' ? path.basename(path.dirname(file)) : base;
-    const { output, stats } = convertFile(fs.readFileSync(file, 'utf8'), { slug, file: rel });
+    const { output, stats } = convertFile(fs.readFileSync(file, 'utf8'), { slug, file: rel, sourceRoot: src });
     for (const [k, v] of Object.entries(stats.components)) bump(report.components, k, v);
     for (const [k, v] of Object.entries(stats.unknown)) bump(report.unknown, k, v);
     if (stats.warnings.length) { report.withWarnings++; col.withWarnings++; stats.warnings.forEach((w) => report.warnings.push({ file: rel, message: w })); }

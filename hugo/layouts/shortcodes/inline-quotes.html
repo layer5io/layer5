@@ -1,0 +1,35 @@
+﻿{{- $quote := .Get "quote" -}}
+{{- $person := .Get "person" -}}
+{{- $title := .Get "title" -}}
+{{- $imageName := .Get "image" -}}
+{{- $imagePage := .Get "image_page" -}}
+{{- $image := false -}}
+
+{{- if $imageName -}}
+  {{- if $imagePage -}}
+    {{- with site.GetPage $imagePage -}}
+      {{- $image = .Resources.GetMatch $imageName -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $image = .Page.Resources.GetMatch $imageName -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $showAuthor := or $person $title $imageName -}}
+<section class="inline-quote">
+  <div class="inline-quote__box{{ if not $showAuthor }} inline-quote__box--quote-only{{ end }}">
+    <h4 class="inline-quote__text">{{ $quote }}</h4>
+    {{- if $showAuthor }}
+      <hr class="inline-quote__divider">
+      <div class="inline-quote__author">
+        {{- with $image }}
+          <img class="inline-quote__portrait" src="{{ .RelPermalink }}" alt="{{ $person | default "Quote author" }}" loading="lazy">
+        {{- end }}
+        <div class="inline-quote__source">
+          {{- with $person }}<h5>{{ . }}</h5>{{ end }}
+          {{- with $title }}<p>{{ . }}</p>{{ end }}
+        </div>
+      </div>
+    {{- end }}
+  </div>
+</section>
