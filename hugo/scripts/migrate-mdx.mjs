@@ -70,7 +70,7 @@ export function parseOpenTag(text, start) {
       problems.push(`spread/expression attribute ${raw.slice(0, 40)}`);
       i = next; continue;
     }
-    const an = /^[\w:.-]+/.exec(text.slice(i));
+    const an = /^\$?[\w:.-]+/.exec(text.slice(i));
     if (!an) return null;
     const key = an[0]; i += key.length;
     while (isWs(text[i])) i++;
@@ -153,7 +153,8 @@ function buildShortcode(spec, tag, children, ctx) {
       }
       continue;
     }
-    const key = spec.alias?.[a.key] ?? snake(a.key);
+    const attrName = a.key.replace(/^\$/ , '');
+    const key = spec.alias?.[attrName] ?? snake(attrName);
     attrs.set(key, a.value);
   }
   let body = children?.trim() ?? '';

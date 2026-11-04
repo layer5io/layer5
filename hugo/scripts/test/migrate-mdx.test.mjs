@@ -242,3 +242,13 @@ test('img tags resolve imported image identifiers to quoted paths', () => {
   assert.doesNotMatch(output, /src=\\{Problems\\}/);
   assert.equal(stats.warnings.length, 0);
 });
+
+test('Button supports styled $ attributes', () => {
+  const input = '<Button $secondary title="RSVP for office hours" $url="https://example.com" $external={true} />';
+  const { output, stats } = convertFile(input, { slug: 'button-test' });
+
+  assert.equal(stats.components.Button, 1);
+  assert.equal(stats.warnings.some((w) => /Button/.test(w)), false);
+  assert.doesNotMatch(output, /<Button/);
+  assert.match(output, /button/);
+});
