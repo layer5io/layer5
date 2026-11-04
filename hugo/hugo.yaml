@@ -18,14 +18,6 @@ taxonomies:
   category: categories
   program: programs
 
-# Workstream 4: preserve Gatsby URL patterns.
-# NOTE: verify against the live sitemap with `make verify-urls` before trusting these.
-permalinks:
-  blog: /blog/:year/:slug/
-  news: /company/news/:slug/
-  events: /community/events/:slug/
-  integrations: /cloud-native-management/meshery/integrations/:slug/
-
 markup:
   goldmark:
     renderer:

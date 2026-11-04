@@ -9,6 +9,7 @@
     "index": "pagefind --site public"
   },
   "devDependencies": {
+    "gray-matter": "^4.0.3",
     "pagefind": "^1.1.0"
   }
 }

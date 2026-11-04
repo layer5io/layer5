@@ -22,6 +22,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import matter from 'gray-matter';
 
 /* ---------------------------------------------------------------- component map */
 export const COMPONENTS = {
@@ -207,13 +208,158 @@ export function convertBody(body, ctx) {
   }).join('\n').replace(/\n{3,}/g, '\n\n');
 }
 
+/* ---------------------------------------------------------------- Gatsby slugify */
+
+/**
+ * Port of src/utils/slugify.js from Gatsby.
+ * Keep this implementation identical to preserve existing URL behavior.
+ */
+export function slugify(text) {
+  return text.toString().toLowerCase()
+    .replace(/\s+/g, "-")       // Replace spaces with -
+    .replace(/[^\w\-]+/g, "")   // Remove all non-word chars
+    .replace(/\-\-+/g, "-")     // Replace multiple - with single -
+    .replace(/^-+/, "")         // Trim - from start of text
+    .replace(/-+$/, "");        // Trim - from end of text
+}
+
+/* ---------------------------------------------------------------- Gatsby URL resolution */
+
+const PAGE_COLLECTIONS = new Set([
+  'blog',
+  'news',
+  'service-mesh-books',
+  'workshops',
+  'kanvas-labs',
+  'resources',
+  'members',
+  'handbook',
+  'events',
+  'programs',
+  'careers',
+  'integrations',
+  'sistent',
+]);
+
+const NON_PAGE_COLLECTIONS = new Set([
+  'projects',
+  'use-cases',
+  'service-mesh-workshops',
+]);
+
+const PUBLISHED_COLLECTIONS = new Set([
+  'blog',
+  'news',
+  'service-mesh-books',
+  'resources',
+  'members',
+  'integrations',
+  'events',
+  'programs',
+  'careers',
+]);
+
+/**
+ * Resolve the individual page URL using Gatsby's onCreateNode and createPages
+ * rules. Returns null when Gatsby does not create an individual page.
+ */
+export function resolveGatsbyUrl({
+  collection,
+  frontmatter = {},
+  relativeDirectory = '',
+  fileName = '',
+}) {
+  if (!PAGE_COLLECTIONS.has(collection)) return null;
+
+  // These collections are queried with published: true in createPages.
+  if (
+    PUBLISHED_COLLECTIONS.has(collection) &&
+    frontmatter.published !== true
+  ) {
+    return null;
+  }
+
+  // Gatsby's events slug rule requires a title.
+  if (collection === 'events' && !frontmatter.title) return null;
+
+  let route;
+
+  // Gatsby checks permalink before its collection-specific switch.
+  if (frontmatter.permalink) {
+    route = `/${collection}/${frontmatter.permalink}`;
+  } else {
+    switch (collection) {
+      case 'blog':
+      case 'resources':
+        route = `/${collection}/${slugify(frontmatter.category)}/${slugify(frontmatter.title)}`;
+        break;
+
+      case 'news':
+        route = `/company/news/${slugify(frontmatter.title)}`;
+        break;
+
+      case 'service-mesh-books':
+      case 'workshops':
+      case 'kanvas-labs':
+        route = `/learn/${collection}/${slugify(frontmatter.title)}`;
+        break;
+
+      case 'members':
+        route = `/community/members/${slugify(frontmatter.name)}`;
+        break;
+
+      case 'handbook':
+        route = `/community/handbook/${slugify(frontmatter.title)}`;
+        break;
+
+      case 'events':
+        route = `/community/events/${slugify(frontmatter.title)}`;
+        break;
+
+      case 'sistent': {
+        const componentSlug = relativeDirectory
+          .split('/')
+          .filter(Boolean)
+          .pop();
+
+        if (!componentSlug) return null;
+
+        const suffix = fileName === 'index' ? '' : `/${fileName}`;
+        route = `/projects/sistent/components/${componentSlug}${suffix}`;
+        break;
+      }
+
+      default:
+        // Gatsby's default collection route.
+        route = `/${collection}/${slugify(frontmatter.title)}`;
+    }
+  }
+
+  // Gatsby's createPages adds this prefix to integration page paths.
+  if (collection === 'integrations') {
+    route = `/cloud-native-management/meshery${route}`;
+  }
+
+  // The migration plan uses trailing-slash URLs.
+  return route.endsWith('/') ? route : `${route}/`;
+}
+
 /* ---------------------------------------------------------------- front matter */
-export function convertFrontMatter(fm, slug, ctx) {
+export function convertFrontMatter(
+  fm,
+  slug,
+  ctx,
+  url = null,
+  renderNever = false,
+) {
   const lines = fm.split('\n'); const out = []; let hasSlug = false;
   for (const line of lines) {
     let m;
     if ((m = /^redirect_from\s*:(.*)$/.exec(line))) { out.push(`aliases:${m[1]}`); ctx.count('redirectFrom'); continue; }
-    if ((m = /^published\s*:\s*(true|false)\s*$/.exec(line))) { if (m[1] === 'false') out.push('draft: true'); continue; }
+    if ((m = /^published\s*:\s*(true|false)\s*(?:#.*)?$/i.exec(line))) {
+      if (m[1].toLowerCase() === 'false') out.push('draft: true');
+      continue;
+    }
     if ((m = /^(thumbnail|image|cover)\s*:\s*(.*)$/.exec(line))) {
       const v = m[2].trim().replace(/^['"]|['"]$/g, '');
       if (/^\.\.\//.test(v) || /^\/?(static|assets|src)\//.test(v)) { ctx.warn(`${m[1]}: "${v}" is outside the page bundle — move it next to index.md`); out.push(line); }
@@ -221,28 +367,94 @@ export function convertFrontMatter(fm, slug, ctx) {
       continue;
     }
     if (/^slug\s*:/.test(line)) hasSlug = true;
+    if (url && /^url\s*:/.test(line)) continue;
     out.push(line);
   }
   if (!hasSlug && slug) { out.push(`slug: ${slug}`); ctx.count('slugAdded'); }
+  if (url) out.push(`url: ${JSON.stringify(url)}`);
+  if (renderNever) {
+    out.push('_build:');
+    out.push('  render: never');
+  }
   return out.join('\n');
 }
 
-export function convertFile(source, { slug, file = '' } = {}) {
+export function convertFile(source, {
+  slug,
+  file = '',
+  collection,
+  relativeDirectory = '',
+  fileName = '',
+} = {}) {
   const stats = { components: {}, unknown: {}, counters: {}, warnings: [] };
+
   const ctx = {
     warn: (m) => stats.warnings.push(m),
     unknown: (n) => { stats.unknown[n] = (stats.unknown[n] || 0) + 1; },
     component: (n) => { stats.components[n] = (stats.components[n] || 0) + 1; },
     count: (k) => { stats.counters[k] = (stats.counters[k] || 0) + 1; },
   };
+
   const fmMatch = /^---\r?\n([\s\S]*?)\r?\n---[ \t]*(?:\r?\n|$)/.exec(source);
+
   let fm = '', body = source;
-  if (fmMatch) { fm = fmMatch[1]; body = source.slice(fmMatch[0].length); }
-  else ctx.warn('no front matter found; generated a minimal one');
-  const newFm = fmMatch ? convertFrontMatter(fm, slug, ctx) : `title: ${slug ?? path.basename(file)}${slug ? `\nslug: ${slug}` : ''}`;
+
+  if (fmMatch) {
+    fm = fmMatch[1];
+    body = source.slice(fmMatch[0].length);
+  } else {
+    ctx.warn('no front matter found; generated a minimal one');
+  }
+
+  const frontmatter = fmMatch ? matter(source).data : {};
+
+  const url = resolveGatsbyUrl({
+    collection,
+    frontmatter,
+    relativeDirectory,
+    fileName,
+  });
+
+  const renderNever = NON_PAGE_COLLECTIONS.has(collection);
+
+  const newFm = fmMatch
+    ? convertFrontMatter(fm, slug, ctx, url, renderNever)
+    : `title: ${slug ?? path.basename(file)}${slug ? `\nslug: ${slug}` : ''}${url ? `\nurl: "${url}"` : ''}`;
+
   const newBody = convertBody(body.replace(/\r\n/g, '\n'), ctx).replace(/^\n+/, '');
-  if (stats.unknown && Object.keys(stats.unknown).length) ctx.warn(`unknown components: ${Object.keys(stats.unknown).join(', ')}`);
-  return { output: `---\n${newFm}\n---\n\n${newBody.trimEnd()}\n`, stats };
+
+  if (Object.keys(stats.unknown).length) {
+    ctx.warn(`unknown components: ${Object.keys(stats.unknown).join(', ')}`);
+  }
+
+  return {
+    output: `---\n${newFm}\n---\n\n${newBody.trimEnd()}\n`,
+    stats,
+  };
+}
+
+function createExecutiveBioPage(output, {
+  bioUrl,
+  memberPagePath,
+}) {
+  const match = /^---\r?\n([\s\S]*?)\r?\n---[ \t]*(?:\r?\n|$)/.exec(output);
+
+  if (!match) {
+    throw new Error('Cannot generate executive bio page without frontmatter');
+  }
+
+  const frontmatter = match[1]
+    .split('\n')
+    .filter((line) => !/^url\s*:/.test(line));
+
+  frontmatter.push(`url: ${JSON.stringify(bioUrl)}`);
+  frontmatter.push('type: members');
+  frontmatter.push('layout: executive-bio');
+  frontmatter.push(`member_page_path: ${JSON.stringify(memberPagePath)}`);
+
+  const body = output.slice(match[0].length);
+
+  return `---\n${frontmatter.join('\n')}\n---\n\n${body}`;
 }
 
 /* ---------------------------------------------------------------- filesystem driver */
@@ -255,27 +467,172 @@ function* walk(dir) {
 }
 
 export function migrate({ src, dest, dryRun = false }) {
-  const report = { generated: new Date().toISOString(), dryRun, files: 0, converted: 0, withWarnings: 0, assetsCopied: 0,
-    components: {}, unknown: {}, byCollection: {}, warnings: [] };
-  const bump = (o, k, n = 1) => { o[k] = (o[k] || 0) + n; };
+  const report = {
+    generated: new Date().toISOString(),
+    dryRun,
+    files: 0,
+    converted: 0,
+    withWarnings: 0,
+    assetsCopied: 0,
+    components: {},
+    unknown: {},
+    byCollection: {},
+    warnings: [],
+  };
+
+  const urlRegistry = new Map();
+
+  const registerUrl = (url, file) => {
+    if (!url) return;
+
+    const existingFile = urlRegistry.get(url);
+
+    if (existingFile) {
+      throw new Error(
+        `Duplicate URL detected: "${url}"\n` +
+        `  First:  ${existingFile}\n` +
+        `  Second: ${file}`,
+      );
+    }
+
+    urlRegistry.set(url, file);
+  };
+
+  const bump = (o, k, n = 1) => {
+    o[k] = (o[k] || 0) + n;
+  };
+
   for (const file of walk(src)) {
     const rel = path.relative(src, file);
     const collection = rel.split(path.sep)[0];
     const ext = path.extname(file);
     const isDoc = ext === '.mdx' || ext === '.md';
-    const target = path.join(dest, isDoc ? rel.replace(/\.mdx?$/, '.md') : rel);
-    const col = (report.byCollection[collection] ||= { files: 0, converted: 0, withWarnings: 0 });
-    if (!isDoc) { if (!dryRun) { fs.mkdirSync(path.dirname(target), { recursive: true }); fs.copyFileSync(file, target); } report.assetsCopied++; continue; }
-    report.files++; col.files++;
+
+    const target = path.join(
+      dest,
+      isDoc ? rel.replace(/\.mdx?$/, '.md') : rel,
+    );
+
+    const col = (report.byCollection[collection] ||= {
+      files: 0,
+      converted: 0,
+      withWarnings: 0,
+    });
+
+    // Copy assets without attempting MDX conversion.
+    if (!isDoc) {
+      if (!dryRun) {
+        fs.mkdirSync(path.dirname(target), { recursive: true });
+        fs.copyFileSync(file, target);
+      }
+
+      report.assetsCopied++;
+      continue;
+    }
+
+    report.files++;
+    col.files++;
+
+    const source = fs.readFileSync(file, 'utf8');
+    const frontmatter = matter(source).data;
+
     const base = path.basename(file, ext);
-    const slug = base === 'index' ? path.basename(path.dirname(file)) : base;
-    const { output, stats } = convertFile(fs.readFileSync(file, 'utf8'), { slug, file: rel });
-    for (const [k, v] of Object.entries(stats.components)) bump(report.components, k, v);
-    for (const [k, v] of Object.entries(stats.unknown)) bump(report.unknown, k, v);
-    if (stats.warnings.length) { report.withWarnings++; col.withWarnings++; stats.warnings.forEach((w) => report.warnings.push({ file: rel, message: w })); }
-    if (!dryRun) { fs.mkdirSync(path.dirname(target), { recursive: true }); fs.writeFileSync(target, output); }
-    report.converted++; col.converted++;
+    const slug = base === 'index'
+      ? path.basename(path.dirname(file))
+      : base;
+
+    const relativeDirectory = path.dirname(rel)
+      .split(path.sep)
+      .join('/');
+
+    const fileName = path.basename(file, ext);
+
+    // Convert the original document.
+    const { output, stats } = convertFile(source, {
+      slug,
+      file: rel,
+      collection,
+      relativeDirectory,
+      fileName,
+    });
+
+    const resolvedUrl = resolveGatsbyUrl({
+      collection,
+      frontmatter,
+      relativeDirectory,
+      fileName,
+    });
+
+    registerUrl(resolvedUrl, rel);
+
+    for (const [k, v] of Object.entries(stats.components)) {
+      bump(report.components, k, v);
+    }
+
+    for (const [k, v] of Object.entries(stats.unknown)) {
+      bump(report.unknown, k, v);
+    }
+
+    if (stats.warnings.length) {
+      report.withWarnings++;
+      col.withWarnings++;
+
+      stats.warnings.forEach((w) => {
+        report.warnings.push({
+          file: rel,
+          message: w,
+        });
+      });
+    }
+
+    // Write the converted original document.
+    if (!dryRun) {
+      fs.mkdirSync(path.dirname(target), { recursive: true });
+      fs.writeFileSync(target, output);
+    }
+
+    // Generate an additional page for eligible executive members.
+    if (
+      collection === 'members' &&
+      fileName === 'index' &&
+      frontmatter.published === true &&
+      frontmatter.executive_bio === true
+    ) {
+      const memberUrl = resolveGatsbyUrl({
+        collection,
+        frontmatter,
+        relativeDirectory,
+        fileName,
+      });
+
+      if (memberUrl) {
+        const bioUrl = `${memberUrl}bio/`;
+        registerUrl(bioUrl, `${rel} (executive bio)`);
+        const bioOutput = createExecutiveBioPage(output, {
+          bioUrl,
+          memberPagePath: `/members/${slug}`,
+        });
+
+        const bioTarget = path.join(
+          dest,
+          'member-bios',
+          `${slug}.md`,
+        );
+
+        if (!dryRun) {
+          fs.mkdirSync(path.dirname(bioTarget), {
+            recursive: true,
+          });
+
+          fs.writeFileSync(bioTarget, bioOutput);
+        }
+      }
+    }
+
+    report.converted++;
+    col.converted++;
   }
+
   return report;
 }
 
