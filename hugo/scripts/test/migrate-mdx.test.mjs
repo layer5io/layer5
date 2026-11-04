@@ -4,11 +4,33 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { convertFile, migrate, resolveGatsbyUrl, slugify } from '../migrate-mdx.mjs';
+import { convertFile, migrate, parseFrontMatter, resolveGatsbyUrl, slugify } from '../migrate-mdx.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const fx = path.join(here, 'fixtures/collections');
 const run = () => convertFile(fs.readFileSync(path.join(fx, 'blog/sample-post/index.mdx'), 'utf8'), { slug: 'sample-post' });
+
+test('front matter: unquoted dates remain strings', () => {
+  const source = `---
+title: Example
+date: 2026-11-05
+---
+
+Example content.
+`;
+
+  const frontmatter = parseFrontMatter(source);
+
+  assert.equal(frontmatter.date, '2026-11-05');
+  assert.equal(typeof frontmatter.date, 'string');
+  const { output } = convertFile(source, {
+    slug: 'example',
+    collection: 'blog',
+  });
+
+  assert.match(output, /^date: 2026-11-05$/m);
+  assert.doesNotMatch(output, /2026-11-05T00:00:00/);
+});
 
 test('slugify matches Gatsby behavior', () => {
   assert.equal(slugify('Hello World'), 'hello-world');

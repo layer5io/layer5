@@ -23,6 +23,20 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import matter from 'gray-matter';
+import yaml from 'js-yaml';
+
+const matterOptions = {
+  engines: {
+    yaml: {
+      parse: (str) => yaml.safeLoad(str, { schema: yaml.JSON_SCHEMA }),
+      stringify: (data) => yaml.safeDump(data, { schema: yaml.JSON_SCHEMA }),
+    },
+  },
+};
+
+export function parseFrontMatter(source) {
+  return matter(source, matterOptions).data;
+}
 
 /* ---------------------------------------------------------------- component map */
 export const COMPONENTS = {
@@ -414,7 +428,7 @@ export function convertFile(source, {
     ctx.warn('no front matter found; generated a minimal one');
   }
 
-  const frontmatter = fmMatch ? matter(source).data : {};
+  const frontmatter = fmMatch ? parseFrontMatter(source) : {};
 
   const url = resolveGatsbyUrl({
     collection,
@@ -550,7 +564,7 @@ export function migrate({ src, dest, dryRun = false }) {
     col.files++;
 
     const source = fs.readFileSync(file, 'utf8');
-    const frontmatter = matter(source).data;
+    const frontmatter = parseFrontMatter(source);
 
     const base = path.basename(file, ext);
     const slug = base === 'index'
