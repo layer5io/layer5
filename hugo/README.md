@@ -3,6 +3,7 @@
 This repository is a proof of concept (POC) for migrating [layer5.io](https://layer5.io) from Gatsby to Hugo. The current Gatsby site build is resource-heavy, leading to high memory usage and slow CI build times; this Hugo version is being built in parallel to deliver near-instant builds. Parity with the current site comes first, with no redesign.
 
 <!-- TODO: add link to main migration tracking epic -->
+
 > **Tracking Epic**: [TODO: add migration epic link] <!-- TODO: add epic link --> | **Community Chat**: [TODO: add Slack/forum channel link] <!-- TODO: add chat channel link -->
 
 ## How the migration works
@@ -14,13 +15,13 @@ This repository is a proof of concept (POC) for migrating [layer5.io](https://la
 
 ## Status
 
-| Piece | Status | Notes |
-|---|---|---|
-| Site build | **Working** | Compiles clean HTML into `public/` with zero template errors. |
-| Tooling tests | **23 passed** | 23 of 23 unit tests pass (`make test`). |
-| Sample content | **Placeholder** | Minimal sample content to test components; real content will migrate from `layer5`. |
-| Netlify redirects | **Working** | Generates extensionless `public/_redirects` from page aliases. |
-| Performance benchmarks | **Informal** | Windows numbers are approximate Go memory; true peak RSS is only measured on Linux CI. |
+| Piece                  | Status          | Notes                                                                                  |
+| ---------------------- | --------------- | -------------------------------------------------------------------------------------- |
+| Site build             | **Working**     | Compiles clean HTML into `public/` with zero template errors.                          |
+| Tooling tests          | **43 passed**   | 43 of 43 unit tests pass (`make test`).                                                |
+| Sample content         | **Placeholder** | Minimal sample content to test components; real content will migrate from `layer5`.    |
+| Netlify redirects      | **Working**     | Generates extensionless `public/_redirects` from page aliases.                         |
+| Performance benchmarks | **Informal**    | Windows numbers are approximate Go memory; true peak RSS is only measured on Linux CI. |
 
 > [!WARNING]
 > No performance figure in this repo should be treated as an official result yet. Plan targets (< 6 s, < 250 MB) are goals, not measurements.
@@ -28,14 +29,15 @@ This repository is a proof of concept (POC) for migrating [layer5.io](https://la
 ## Quick start
 
 ### Prerequisites
+
 - **Hugo Extended**: CI pins `0.145.0`; verified locally with `v0.162.1+extended` (version pin is being reviewed).
 - **Node.js**: Version 18 or newer (used solely for tooling in `scripts/` and Pagefind).
 - **Make**: Standard command runner.
-*(Verified on Windows x64; native macOS and Linux environments are untested on this dev machine).*
+  _(Verified on Windows x64; native macOS and Linux environments are untested on this dev machine)._
 
 ```bash
 make serve         # Start local dev server with live reload at http://localhost:1313/ (verified on Windows)
-make test          # Run all 23 migration tooling unit tests (verified on Windows)
+make test          # Run the migration tooling unit tests
 make build         # Compile minified production site to ./public (verified on Windows)
 make bench         # Run 1,210-page synthetic build benchmark (verified on Windows; approx Go memory)
 make index         # Build Pagefind search index (untested; requires network for npx on first run)
@@ -60,25 +62,26 @@ make migrate-dry   # Dry-run MDX converter against layer5 collections (reads ../
 6. **Review**: A maintainer will review your pull request.
 
 ### Definition of Done for PRs
+
 - [ ] `make serve` runs without template or build errors.
-- [ ] `make test` passes (all 23 tests pass).
+- [ ] `make test` passes.
 - [ ] Verified in both light and dark theme modes.
 - [ ] URL parity is preserved (`make verify-urls` clean for touched collections).
 - [ ] [docs/CHEATSHEET.md](docs/CHEATSHEET.md) updated if shortcodes or attributes changed.
 
 ## Repo map
 
-| Path | Description |
-|---|---|
-| `layouts/` | Hugo templates for home, sections, handbook, members, and partials. |
-| `layouts/shortcodes/` | Hugo shortcodes replacing React components (`button`, `terminal`, `accordion`, etc.). |
-| `assets/` | Site styling (CSS variables mapped to Sistent tokens) and client-side scripts (`main.js`). |
-| `static/js/` | Optional libraries (`topology.js`, `calendar.js`) loaded only on pages requiring them. |
-| `content/` | Sample content bundles (`blog/`, `handbook/`, `members/`, `integrations/`). |
-| `data/migration.json` | Migration metrics and collection counts displayed on `/migration/`. |
-| `scripts/` | Tooling: `migrate-mdx.mjs` (converter), `verify-urls.mjs` (URL checker), `bench.mjs` (benchmark). |
-| `docs/` | Contributor cheatsheet, starter issues, demo script, maintainer notes, and first-run report. |
-| `.github/workflows/` | CI workflow (`hugo.yml`) running builds, link checks, and Linux benchmarks. |
+| Path                  | Description                                                                                       |
+| --------------------- | ------------------------------------------------------------------------------------------------- |
+| `layouts/`            | Hugo templates for home, sections, handbook, members, and partials.                               |
+| `layouts/shortcodes/` | Hugo shortcodes replacing React components (`button`, `terminal`, `accordion`, etc.).             |
+| `assets/`             | Site styling (CSS variables mapped to Sistent tokens) and client-side scripts (`main.js`).        |
+| `static/js/`          | Optional libraries (`topology.js`, `calendar.js`) loaded only on pages requiring them.            |
+| `content/`            | Sample content bundles (`blog/`, `handbook/`, `members/`, `integrations/`).                       |
+| `data/migration.json` | Migration metrics and collection counts displayed on `/migration/`.                               |
+| `scripts/`            | Tooling: `migrate-mdx.mjs` (converter), `verify-urls.mjs` (URL checker), `bench.mjs` (benchmark). |
+| `docs/`               | Contributor cheatsheet, starter issues, demo script, maintainer notes, and first-run report.      |
+| `.github/workflows/`  | CI workflow (`hugo.yml`) running builds, link checks, and Linux benchmarks.                       |
 
 ## Design notes
 
