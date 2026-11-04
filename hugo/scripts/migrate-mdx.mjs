@@ -32,6 +32,17 @@ export const COMPONENTS = {
   AccordionItem: { shortcode: 'accordion-item', paired: true },
   Card:          { shortcode: 'card',           paired: true },
 };
+export const UNWRAP = new Set([
+  'BlogWrapper',
+  'ResourcesWrapper',
+  'NewsWrapper',
+  'ProgramsWrapper',
+  'CareerWrapper',
+  'BookWrapper',
+  'EventWrapper',
+  'ProjectWrapper',
+]);
+
 const DROP_ATTRS = new Set(['className', 'class', 'style', 'key', 'ref']);
 
 /* ---------------------------------------------------------------- tag scanner */
@@ -156,6 +167,112 @@ function convertSegment(text, ctx) {
     const tag = parseOpenTag(text, m.index);
     const spec = COMPONENTS[name];
     if (!tag) { ctx.warn(`could not parse <${name}> tag; left as-is`); out += '<'; i = m.index + 1; continue; }
+    if (name === 'Code' || name === 'CodeBlock') {
+      const codeAttr = tag.attrs.find((attr) =>
+        attr.key === 'codeString' || attr.key === 'code'
+      );
+      const languageAttr = tag.attrs.find((attr) => attr.key === 'language');
+      const collapsibleAttr = tag.attrs.find((attr) => attr.key === 'collapsible');
+
+      const unsupported =
+        !tag.selfClosing ||
+        tag.problems.length > 0 ||
+        !codeAttr ||
+        !codeAttr.literal;
+
+      if (unsupported) {
+        ctx.warn(`<${name}> has unsupported or dynamic code props; left unchanged`);
+        out += text.slice(m.index, tag.end);
+        i = tag.end;
+        continue;
+      }
+
+      const code = codeAttr.value.replace(/\\r\\n/g, '\n').replace(/\\n/g, '\n').replace(/\r\n/g, '\n').replace(/\n+$/, '');
+      const language = languageAttr?.literal ? languageAttr.value : 'jsx';
+      const longestFence = Math.max(0, ...(code.match(/\x60+/g) || []).map((f) => f.length));
+      const fence = '\x60'.repeat(Math.max(3, longestFence + 1));
+
+      if (collapsibleAttr?.value === 'true') {
+        ctx.warn(`<${name}> collapsible behavior is not supported in Markdown; code preserved as a fence`);
+      }
+      ctx.component(name);
+      out += fence + language + '\n' + code + '\n' + fence;
+      i = tag.end;
+      continue;
+    }
+
+    if (name === 'Link') {
+      if (tag.selfClosing) {
+        ctx.warn('<Link> is self-closing; left unchanged');
+        out += text.slice(m.index, tag.end);
+        i = tag.end;
+        continue;
+      }
+
+      const closing = findClose(text, tag.end, name);
+
+      if (!closing) {
+        ctx.warn('<Link> has no closing tag; left unchanged');
+        out += text.slice(m.index, tag.end);
+        i = tag.end;
+        continue;
+      }
+
+      const target = tag.attrs.find(
+        (attr) => attr.key === 'to' || attr.key === 'href'
+      );
+
+      if (!target || !target.literal) {
+        ctx.warn('<Link> has a missing or dynamic URL; left unchanged');
+        out += text.slice(m.index, closing.end);
+        i = closing.end;
+        continue;
+      }
+
+      const children = convertSegment(
+        text.slice(tag.end, closing.start),
+        ctx
+      );
+
+      const url = target.value
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;');
+
+      ctx.component('Link');
+      const hasNonTextChildren =
+        /<(?:img|picture|video|audio|iframe|svg|canvas|object|embed)\b/i.test(children) ||
+        /<[A-Z][\w.]*(?=\s|\/?>)/.test(children) ||
+        /!\[[^\]]*\]\([^)]*\)/.test(children);
+
+      out += hasNonTextChildren
+        ? '<a href="' + url + '">' + children + '</a>'
+        : '[' + children + '](' + target.value + ')';
+      i = closing.end;
+      continue;
+    }
+
+    if (UNWRAP.has(name)) {
+      if (tag.selfClosing) {
+        ctx.component(name);
+        i = tag.end;
+        continue;
+      }
+
+      const closing = findClose(text, tag.end, name);
+      if (!closing) {
+        ctx.warn(`<${name}> has no closing tag; left as-is`);
+        out += text.slice(m.index, tag.end);
+        i = tag.end;
+        continue;
+      }
+
+      const children = convertSegment(text.slice(tag.end, closing.start), ctx);
+      ctx.component(name);
+      out += children;
+      i = closing.end;
+      continue;
+    }
+
     if (!spec) {
       ctx.unknown(name);
       const marker = `<!-- TODO(mdx): unconverted component <${name}> -->\n`;
@@ -209,7 +326,7 @@ export function convertBody(body, ctx) {
 
 /* ---------------------------------------------------------------- front matter */
 export function convertFrontMatter(fm, slug, ctx) {
-  const lines = fm.split('\n'); const out = []; let hasSlug = false;
+  const lines = fm.replace(/\r\n/g, '\n').split('\n'); const out = []; let hasSlug = false;
   for (const line of lines) {
     let m;
     if ((m = /^redirect_from\s*:(.*)$/.exec(line))) { out.push(`aliases:${m[1]}`); ctx.count('redirectFrom'); continue; }

@@ -91,3 +91,57 @@ test('migrate(): maps index.mdx → index.md, copies assets, reports per collect
   migrate({ src: fx, dest: dry, dryRun: true });
   assert.deepEqual(fs.readdirSync(dry), []);
 });
+
+test('Link: text-only children become Markdown links', () => {
+  const { output } = convertFile('<Link to="/docs">Read documentation</Link>');
+  assert.match(output, /\[Read documentation\]\(\/docs\)/);
+  assert.doesNotMatch(output, /<a href=/);
+});
+
+test('Link: image children remain HTML anchors', () => {
+  const { output } = convertFile('<Link to="/community"><img src="/logo.png" alt="Logo" /></Link>');
+  assert.match(output, /<a href="\/community"><img src="\/logo.png"/);
+});
+
+test('Link: inline text formatting is preserved in Markdown links', () => {
+  const { output } = convertFile('<Link to="/docs">Read <strong>important</strong> documentation</Link>');
+  assert.match(output, /\[Read <strong>important<\/strong> documentation\]\(\/docs\)/);
+});
+
+test('Link: custom JSX children remain inside HTML anchors', () => {
+  const { output } = convertFile('<Link to="/docs"><Icon /></Link>');
+  assert.match(output, /<a href="\/docs">[\s\S]*<Icon \/>[\s\S]*<\/a>/);
+});
+
+test('layout wrappers are unwrapped and their children are preserved', () => {
+  const wrappers = [
+    'BlogWrapper',
+    'ResourcesWrapper',
+    'NewsWrapper',
+    'ProgramsWrapper',
+    'CareerWrapper',
+    'BookWrapper',
+    'EventWrapper',
+    'ProjectWrapper'
+  ];
+
+  for (const wrapper of wrappers) {
+    const { output, stats } = convertFile(
+      '<' + wrapper + '>Preserved content</' + wrapper + '>'
+    );
+
+    assert.match(output, /Preserved content/);
+    assert.doesNotMatch(output, new RegExp('<\\/?' + wrapper + '[\\s>]'));
+    assert.equal(stats.components[wrapper], 1);
+    assert.equal(stats.unknown[wrapper], undefined);
+  }
+});
+
+
+test('Code: collapsible blocks preserve code as fences', () => {
+  const input = '<Code language="bash" collapsible codeString={`npm install`} />';
+  const { output, stats } = convertFile(input);
+
+  assert.match(output, /```bash\nnpm install\n```/);
+  assert.ok(stats.warnings.some((warning) => warning.includes('collapsible behavior is not supported')));
+});
