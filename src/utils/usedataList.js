@@ -1,5 +1,5 @@
 import * as JsSearch from "js-search";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 const useDataList = (
   data,
   setSearchQuery,
@@ -9,9 +9,14 @@ const useDataList = (
 ) => {
   const [dataList, setDataList] = useState(data);
   const [search, setSearch] = useState([]);
-  const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const queryResults = searchQuery && searchQuery.trim() ? searchResults : dataList;
+  const isIndexReady = typeof search.search === "function";
+  const trimmedQuery = searchQuery ? searchQuery.trim() : "";
+  const searchResults = useMemo(
+    () => (isIndexReady && trimmedQuery ? search.search(trimmedQuery) : []),
+    [search, isIndexReady, trimmedQuery]
+  );
+  const queryResults = trimmedQuery && isIndexReady ? searchResults : dataList;
   useEffect(() => {
     rebuildIndex();
   }, [dataList]);
@@ -34,7 +39,6 @@ const useDataList = (
 
   const searchByText = (text) => {
     setSearchQuery(text);
-    setSearchResults(search.search(text.trim()));
   };
 
   const searchData = (e) => {
