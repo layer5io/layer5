@@ -110,8 +110,8 @@
   "aaa5778d.js": "aaa5778d-4d09b911adab49680000.js",
   "ac581ebe.js": "ac581ebe-d8f297aa0b7917a0edd2.js",
   "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff.js": "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff-a49d57499f0546cd498e.js",
-  "app-4ec779fe3557bcc2aa93.js.LICENSE.txt": "app-4ec779fe3557bcc2aa93.js.LICENSE.txt",
-  "app.js": "app-4ec779fe3557bcc2aa93.js",
+  "app-fb5ea39fd4680f0549cc.js.LICENSE.txt": "app-fb5ea39fd4680f0549cc.js.LICENSE.txt",
+  "app.js": "app-fb5ea39fd4680f0549cc.js",
   "b5f6012b.js": "b5f6012b-0d788a08c9a6ff5be2b5.js",
   "b86f5c214c12e4ff0a2572240ee8191e9020f93a.js": "b86f5c214c12e4ff0a2572240ee8191e9020f93a-aab9a0b2cdb7ee4a4f71.js",
   "b94c7d6e898e669bbfd99da21b2e9e67976b8f68.js": "b94c7d6e898e669bbfd99da21b2e9e67976b8f68-29ed6451ccaef992cd70.js",
@@ -206,7 +206,7 @@
   "component---src-pages-projects-sistent-identity-typography-guidance-js.js": "component---src-pages-projects-sistent-identity-typography-guidance-js-76fc272b47d5b3141bd5.js",
   "component---src-pages-projects-sistent-identity-typography-index-js.js": "component---src-pages-projects-sistent-identity-typography-index-js-be0f1807b72cb52240b8.js",
   "component---src-pages-projects-sistent-index-js.js": "component---src-pages-projects-sistent-index-js-926299bea671a28c9f71.js",
-  "component---src-pages-resources-index-js.js": "component---src-pages-resources-index-js-8c85c9d177d18540f763.js",
+  "component---src-pages-resources-index-js.js": "component---src-pages-resources-index-js-94b2935849b872246d0b.js",
   "component---src-pages-service-mesh-landscape-js.js": "component---src-pages-service-mesh-landscape-js-cdd3d82d095a553c6039.js",
   "component---src-pages-solutions-architecture-diagram-index-js.js": "component---src-pages-solutions-architecture-diagram-index-js-1f606728e70d0708722e.js",
   "component---src-pages-solutions-cloud-native-deployments-by-diagram-index-js.js": "component---src-pages-solutions-cloud-native-deployments-by-diagram-index-js-2e42b86ed23dad59ad8b.js",
@@ -1417,7 +1417,7 @@
   "df18e479ce8e72266cd145663c053fb977e36673.js": "df18e479ce8e72266cd145663c053fb977e36673-20aa77e720457ba019cd.js",
   "docker-extension-meshery.webp": "static/docker-extension-meshery-cb982c9b29d0d733ad35f70f47ff872b.webp",
   "drag-drop.gif": "static/drag-drop-54b3364ed849d70025c05e318957d344.gif",
-  "e42cfe12fb7ec22a8db88b95d2b16bbf959cbe95.js": "e42cfe12fb7ec22a8db88b95d2b16bbf959cbe95-bbd9d2c594503fba35b9.js",
+  "e42cfe12fb7ec22a8db88b95d2b16bbf959cbe95.js": "e42cfe12fb7ec22a8db88b95d2b16bbf959cbe95-5131967e9dd2346ee4b5.js",
   "e7bcb41739ed08c1352b96f1dace04a339d70a87.js": "e7bcb41739ed08c1352b96f1dace04a339d70a87-00d7b63bbf2e54750bdd.js",
   "e863f33c.js": "e863f33c-e333f6a7422fdda7c465.js",
   "e8f15dfa2629e581b186b0f18395acd97c3621e4.js": "e8f15dfa2629e581b186b0f18395acd97c3621e4-5701133036477238b5eb.js",
@@ -2122,5 +2122,5 @@
   "static/yash-sharma.webp": "static/yash-sharma-54aa26b6e5743f0557cfc76aa9797f2d.webp",
   "static/yogi.webp": "static/yogi-d00ca1cc48ab74938a23d4359ef3fb01.webp",
   "styles.css": "styles.603c38f52676bf07acba.css",
-  "webpack-runtime.js": "webpack-runtime-96d38ca5ef5f461c228c.js"
+  "webpack-runtime.js": "webpack-runtime-be8699a647a8f19e8f70.js"
 }
