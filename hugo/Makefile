@@ -12,9 +12,9 @@ build:           ## production build into ./public
 	$(HUGO) --minify --gc
 
 index: build     ## build + Pagefind search index
-	npx -y pagefind --site public
+	npx pagefind --site public
 
-test:            ## unit tests for the migration tooling (Node >= 18, no install needed)
+test:            ## unit tests for the migration tooling (requires make setup)
 	node --test "scripts/test/*.test.mjs"
 
 bench:           ## 1,210-page synthetic build: wall time + peak RAM

@@ -28,10 +28,20 @@ This repository is a proof of concept (POC) for migrating [layer5.io](https://la
 
 ## Quick start
 
+### Install dependencies
+
+From the repository root, run:
+
+```bash
+make setup
+```
+
+This installs the root Layer5.io Gatsby dependencies and Hugo migration tooling dependencies.
+
 ### Prerequisites
 
-- **Hugo Extended**: CI pins `0.145.0`; verified locally with `v0.162.1+extended` (version pin is being reviewed).
-- **Node.js**: Version 18 or newer (used solely for tooling in `scripts/` and Pagefind).
+- **Hugo Extended**: Version `0.162.1` (matches the CI version pin).
+- **Node.js**: Version `22` (used for migration tooling and Pagefind).
 - **Make**: Standard command runner.
   _(Verified on Windows x64; native macOS and Linux environments are untested on this dev machine)._
 
@@ -56,7 +66,7 @@ make migrate-dry   # Dry-run MDX converter against layer5 collections (reads ../
    git checkout -b feature/your-feature-name
    cd hugo
    ```
-3. **Make your change**: Work inside `hugo/`. Keep changes minimal. Run `make serve` to test locally and `make test` to ensure tooling passes.
+3. **Make your change**: From the repository root, run `make setup` to install dependencies. Then work inside `hugo/`. Keep changes minimal. Run `make serve` to test locally and `make test` to ensure tooling passes.
 4. **Visual checks**: For any visual or layout changes, attach before/after screenshots in both light and dark mode.
 5. **Open a PR**: Open a pull request against the `hugo` branch of `layer5io/layer5` (not `master`), referencing the issue (e.g., `Refs layer5io/layer5#123`). Sign off your commits (`git commit -s`); check CONTRIBUTING in `layer5io/layer5` for the current rules.
 6. **Review**: A maintainer will review your pull request.
