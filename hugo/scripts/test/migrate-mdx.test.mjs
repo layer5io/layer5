@@ -64,6 +64,78 @@ test('Gatsby URL resolver: collection-specific routes', () => {
     }),
     '/community/members/lee-calcote/',
   );
+
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'members',
+      frontmatter: {
+        published: true,
+        name: 'Yash Sharma',
+        permalink: 'yash-sharma-2',
+      },
+    }),
+    '/members/yash-sharma-2/',
+  );
+
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'resources',
+      frontmatter: {
+        published: true,
+        category: 'Case Study',
+        title: 'A Cloud Native Story',
+      },
+    }),
+    '/resources/case-study/a-cloud-native-story/',
+  );
+
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'service-mesh-books',
+      frontmatter: { published: true, title: 'Service Mesh Patterns' },
+    }),
+    '/learn/service-mesh-books/service-mesh-patterns/',
+  );
+
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'workshops',
+      frontmatter: { title: 'Meshery Workshop', published: false },
+    }),
+    '/learn/workshops/meshery-workshop/',
+  );
+
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'kanvas-labs',
+      frontmatter: { title: 'Kanvas Lab' },
+    }),
+    '/learn/kanvas-labs/kanvas-lab/',
+  );
+
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'handbook',
+      frontmatter: { title: 'Contributing to Layer5' },
+    }),
+    '/community/handbook/contributing-to-layer5/',
+  );
+
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'events',
+      frontmatter: { published: true, title: 'Community Call' },
+    }),
+    '/community/events/community-call/',
+  );
+
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'programs',
+      frontmatter: { published: true, title: 'Summer of Code' },
+    }),
+    '/programs/summer-of-code/',
+  );
 });
 
 test('Gatsby URL resolver: integration prefix is applied after slug resolution', () => {
@@ -84,6 +156,19 @@ test('Gatsby URL resolver: integration prefix is applied after slug resolution',
   );
 });
 
+test('Gatsby URL resolver: explicit permalinks retain Gatsby paths, including dot segments', () => {
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'programs',
+      frontmatter: {
+        published: true,
+        permalink: '../careers/internships/',
+      },
+    }),
+    '/programs/../careers/internships/',
+  );
+});
+
 test('Gatsby URL resolver: Sistent routes follow directory and filename', () => {
   assert.equal(
     resolveGatsbyUrl({
@@ -101,6 +186,32 @@ test('Gatsby URL resolver: Sistent routes follow directory and filename', () => 
       fileName: 'guidance',
     }),
     '/projects/sistent/components/navigation-navbar/guidance/',
+  );
+
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'sistent',
+      fileName: 'index',
+    }),
+    '/projects/sistent/components/',
+  );
+});
+
+test('Gatsby URL resolver: missing published event title fails like Gatsby page creation', () => {
+  assert.throws(
+    () => resolveGatsbyUrl({
+      collection: 'events',
+      frontmatter: { published: true },
+    }),
+    /Gatsby would create a page with an empty path/,
+  );
+
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'events',
+      frontmatter: { published: true, permalink: 'community-call' },
+    }),
+    '/events/community-call/',
   );
 });
 
@@ -149,7 +260,29 @@ Project description.
     fileName: 'example-project',
   });
 
-  assert.match(output, /^_build:\n  render: never$/m);
+  assert.match(output, /^build:\n  render: never$/m);
+});
+
+test('data-only collections without frontmatter are not rendered as individual Hugo pages', () => {
+  const { output } = convertFile('Data-only content.', {
+    slug: 'example-project',
+    collection: 'projects',
+    file: 'projects/example-project.mdx',
+  });
+
+  assert.match(output, /build:\n  render: never/);
+  assert.doesNotMatch(output, /draft:\s*true/);
+});
+
+test('documents without the required published flag remain drafts', () => {
+  const { output } = convertFile('Resource content.', {
+    slug: 'academy-vs-moocit',
+    collection: 'resources',
+    file: 'resources/academy-vs-moocit/index.mdx',
+  });
+
+  assert.match(output, /draft: true/);
+  assert.doesNotMatch(output, /url:/);
 });
 
 test('normal blog content does not get render: never', () => {
@@ -172,6 +305,49 @@ Blog content.
 
   assert.doesNotMatch(output, /render:\s*never/);
   assert.match(output, /url: "\/blog\/cloud-native\/sample-blog\/"/);
+});
+
+test('published:false becomes a draft only for Gatsby-filtered collections', () => {
+  const source = `---
+title: Unpublished Workshop
+published: false
+---
+
+Workshop content.
+`;
+
+  const { output } = convertFile(source, {
+    slug: 'unpublished-workshop',
+    collection: 'workshops',
+    file: 'workshops/unpublished-workshop.mdx',
+    relativeDirectory: 'workshops',
+    fileName: 'unpublished-workshop',
+  });
+
+  assert.doesNotMatch(output, /draft:\s*true/);
+  assert.match(output, /url: "\/learn\/workshops\/unpublished-workshop\/"/);
+  assert.doesNotMatch(output, /published:/);
+});
+
+test('source url is replaced by Gatsby URL generation and removed when no page is created', () => {
+  const source = `---
+title: Unpublished Blog
+category: Cloud Native
+published: false
+url: /not-a-gatsby-url/
+---
+
+Draft content.
+`;
+
+  const { output } = convertFile(source, {
+    slug: 'unpublished-blog',
+    collection: 'blog',
+    file: 'blog/unpublished-blog.mdx',
+  });
+
+  assert.match(output, /draft: true/);
+  assert.doesNotMatch(output, /url:/);
 });
 
 test('unpublished blog content becomes a draft without disabling rendering', () => {
@@ -253,8 +429,11 @@ test('front matter: aliases, thumbnail, slug, published', () => {
   assert.match(fm, /slug: sample-post/);
 });
 
-test('published:false → draft:true; plain markdown passes through', () => {
-  const { output } = convertFile(fs.readFileSync(path.join(fx, 'members/jane.md'), 'utf8'), { slug: 'jane' });
+test('member without published:true becomes a draft; plain markdown passes through', () => {
+  const { output } = convertFile(
+    fs.readFileSync(path.join(fx, 'members/jane.md'), 'utf8'),
+    { slug: 'jane', collection: 'members' },
+  );
   assert.match(output, /draft: true/);
   assert.match(output, /Plain markdown, no components\./);
 });
@@ -334,7 +513,7 @@ executive_bio: false`,
   assert.match(bio, /url: "\/community\/members\/lee-calcote\/bio\/"/);
   assert.match(bio, /type: members/);
   assert.match(bio, /layout: executive-bio/);
-  assert.match(bio, /member_page_path: "\/members\/lee"/);
+  assert.match(bio, /member_page_path: "\/community\/members\/lee-calcote\/"/);
   assert.match(bio, /Lee Calcote executive biography\./);
 
   const generatedBios = fs.readdirSync(bioDir);

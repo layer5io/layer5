@@ -279,15 +279,18 @@ export function resolveGatsbyUrl({
     return null;
   }
 
-  // Gatsby's events slug rule requires a title.
-  if (collection === 'events' && !frontmatter.title) return null;
-
   let route;
 
   // Gatsby checks permalink before its collection-specific switch.
   if (frontmatter.permalink) {
     route = `/${collection}/${frontmatter.permalink}`;
   } else {
+    if (collection === 'events' && !frontmatter.title) {
+      throw new Error(
+        'Published Gatsby event has no title or permalink; Gatsby would create a page with an empty path',
+      );
+    }
+
     switch (collection) {
       case 'blog':
       case 'resources':
@@ -317,13 +320,7 @@ export function resolveGatsbyUrl({
         break;
 
       case 'sistent': {
-        const componentSlug = relativeDirectory
-          .split('/')
-          .filter(Boolean)
-          .pop();
-
-        if (!componentSlug) return null;
-
+        const componentSlug = relativeDirectory.split('/').pop();
         const suffix = fileName === 'index' ? '' : `/${fileName}`;
         route = `/projects/sistent/components/${componentSlug}${suffix}`;
         break;
@@ -351,13 +348,23 @@ export function convertFrontMatter(
   ctx,
   url = null,
   renderNever = false,
+  draft = false,
 ) {
-  const lines = fm.split('\n'); const out = []; let hasSlug = false;
+  const lines = fm.split('\n'); const out = []; let hasSlug = false; let hasDraft = false;
   for (const line of lines) {
     let m;
     if ((m = /^redirect_from\s*:(.*)$/.exec(line))) { out.push(`aliases:${m[1]}`); ctx.count('redirectFrom'); continue; }
-    if ((m = /^published\s*:\s*(true|false)\s*(?:#.*)?$/i.exec(line))) {
-      if (m[1].toLowerCase() === 'false') out.push('draft: true');
+    if (/^published\s*:/i.test(line)) {
+      if (draft && !hasDraft) { out.push('draft: true'); hasDraft = true; }
+      continue;
+    }
+    if (/^draft\s*:/.test(line)) {
+      if (draft) {
+        if (!hasDraft) out.push('draft: true');
+      } else {
+        out.push(line);
+      }
+      hasDraft = true;
       continue;
     }
     if ((m = /^(thumbnail|image|cover)\s*:\s*(.*)$/.exec(line))) {
@@ -367,13 +374,14 @@ export function convertFrontMatter(
       continue;
     }
     if (/^slug\s*:/.test(line)) hasSlug = true;
-    if (url && /^url\s*:/.test(line)) continue;
+    if (/^url\s*:/.test(line)) continue;
     out.push(line);
   }
   if (!hasSlug && slug) { out.push(`slug: ${slug}`); ctx.count('slugAdded'); }
+  if (draft && !hasDraft) out.push('draft: true');
   if (url) out.push(`url: ${JSON.stringify(url)}`);
   if (renderNever) {
-    out.push('_build:');
+    out.push('build:');
     out.push('  render: never');
   }
   return out.join('\n');
@@ -416,10 +424,18 @@ export function convertFile(source, {
   });
 
   const renderNever = NON_PAGE_COLLECTIONS.has(collection);
+  const draft = PUBLISHED_COLLECTIONS.has(collection) &&
+    frontmatter.published !== true;
 
   const newFm = fmMatch
-    ? convertFrontMatter(fm, slug, ctx, url, renderNever)
-    : `title: ${slug ?? path.basename(file)}${slug ? `\nslug: ${slug}` : ''}${url ? `\nurl: "${url}"` : ''}`;
+    ? convertFrontMatter(fm, slug, ctx, url, renderNever, draft)
+    : [
+      `title: ${slug ?? path.basename(file)}`,
+      ...(slug ? [`slug: ${slug}`] : []),
+      ...(draft ? ['draft: true'] : []),
+      ...(url ? [`url: ${JSON.stringify(url)}`] : []),
+      ...(renderNever ? ['build:', '  render: never'] : []),
+    ].join('\n');
 
   const newBody = convertBody(body.replace(/\r\n/g, '\n'), ctx).replace(/^\n+/, '');
 
@@ -610,7 +626,7 @@ export function migrate({ src, dest, dryRun = false }) {
         registerUrl(bioUrl, `${rel} (executive bio)`);
         const bioOutput = createExecutiveBioPage(output, {
           bioUrl,
-          memberPagePath: `/members/${slug}`,
+          memberPagePath: memberUrl,
         });
 
         const bioTarget = path.join(
