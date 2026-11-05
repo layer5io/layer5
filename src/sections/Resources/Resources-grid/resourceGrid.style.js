@@ -18,7 +18,6 @@ export const ResourcePageWrapper = styled.div`
             & > div,
             .search-box{
                 width: 100%;
-                max-width: 100%;
             }
             @media only screen and (max-width:990px){
                 flex: 1 1 auto;
