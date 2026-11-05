@@ -171,10 +171,13 @@ jobs:
               core.info(`Found ${runs.total_count} workflow run(s) awaiting approval`);
 
               // Filter runs for this PR's branch/SHA
+              // Only approve runs from this repository, so a fork branch
+              // with the same name as a Copilot branch is never approved
               const pendingRuns = runs.workflow_runs.filter(run => {
+                const isSameRepo = run.head_repository?.full_name === `${context.repo.owner}/${context.repo.repo}`;
                 const matchesSha = headSha && run.head_sha === headSha;
                 const matchesRef = headRef && run.head_branch === headRef;
-                return matchesSha || matchesRef;
+                return isSameRepo && (matchesSha || matchesRef);
               });
 
               core.info(`Found ${pendingRuns.length} pending run(s) for this PR`);
