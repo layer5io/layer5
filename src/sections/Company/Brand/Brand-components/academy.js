@@ -20,14 +20,14 @@ const AcademyBrand = () => {
   return (
     <AcademyWrapper>
       <div className="post-content">
-        <Row style={{
-          flexWrap: "wrap"
-        }} className="brand-section"
+        <Row
+          style={{
+            flexWrap: "wrap",
+          }}
+          className="brand-section"
         >
           <Col $xs={12} $sm={6}>
-            <h1 className="layerH3">
-              Academy
-            </h1>
+            <h1 className="layerH3">Academy</h1>
           </Col>
           <Col $xs={12} $sm={6} className="download-button">
             <a href="/brand/academy-brand-kit.zip">
@@ -47,34 +47,52 @@ const AcademyBrand = () => {
             </p>
           </Col>
         </Row>
-        <Row style={{
-          flexWrap: "wrap"
-        }}
+        <Row
+          style={{
+            flexWrap: "wrap",
+          }}
         >
           <Col>
-            <h2 className="layerH3 in">
-              Logos
-            </h2>
+            <h2 className="layerH3 in">Logos</h2>
           </Col>
-          <SRLWrapper>
-            <Row $Vcenter className="ImgDiv">
-              <Col $xs={12} $sm={4}>
-                <img src={AcademyIcon} style={{ minWidth: "200px" }} alt="Academy Logo" />
-              </Col>
-              <Col $xs={12} $sm={4}>
-                <img src={AcademyLight} style={{ minWidth: "200px" }} alt="AcademyLight Logo" />
-              </Col>
-            </Row>
-          </SRLWrapper>
+          <Col $xs={12}>
+            <SRLWrapper>
+              <Row $Vcenter $Hcenter className="ImgDiv">
+                <Col $xs={12} $sm={4}>
+                  <img
+                    src={AcademyIcon}
+                    style={{
+                      width: "100%",
+                      maxWidth: "200px",
+                      display: "block",
+                      margin: "auto",
+                    }}
+                    alt="Academy Logo"
+                  />
+                </Col>
+                <Col $xs={12} $sm={4} className="logo">
+                  <img
+                    src={AcademyLight}
+                    style={{
+                      width: "100%",
+                      maxWidth: "200px",
+                      display: "block",
+                      margin: "auto",
+                    }}
+                    alt="AcademyLight Logo"
+                  />
+                </Col>
+              </Row>
+            </SRLWrapper>
+          </Col>
         </Row>
-        <Row style={{
-          flexWrap: "wrap"
-        }}
+        <Row
+          style={{
+            flexWrap: "wrap",
+          }}
         >
           <Col $xs={12}>
-            <h2 className="layerH3 in">
-              Colors
-            </h2>
+            <h2 className="layerH3 in">Colors</h2>
           </Col>
           <Col $xs={12}>
             <p>
@@ -83,14 +101,29 @@ const AcademyBrand = () => {
               monochrome tonal when using a color background.
             </p>
           </Col>
-          <Row style={{
-            flexWrap: "wrap"
-          }} className="color-code-wrapper"
+          <Row
+            style={{
+              flexWrap: "wrap",
+            }}
+            className="color-code-wrapper"
           >
             <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
-            <ColorBox name="Caribbean Green" R="0" G="211" B="169" colorCode="#00D3A9" />
+            <ColorBox
+              name="Caribbean Green"
+              R="0"
+              G="211"
+              B="169"
+              colorCode="#00D3A9"
+            />
             <div className="white-color-box">
-              <ColorBox name="White" R="255" G="255" B="255" dark colorCode="#FFFFFF" />
+              <ColorBox
+                name="White"
+                R="255"
+                G="255"
+                B="255"
+                dark
+                colorCode="#FFFFFF"
+              />
             </div>
           </Row>
         </Row>
