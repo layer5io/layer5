@@ -14,6 +14,11 @@ import {
   CardContent,
   Typography,
   Alert,
+  IconButton,
+  SearchIcon,
+  MenuIcon,
+  DownloadIcon,
+  FavoriteIcon,
 } from "@sistent/sistent";
 
 const contents = [
@@ -230,15 +235,12 @@ import * as Sistent from "@sistent/sistent";`,
 
   iconUsage: `import { 
   Button, 
-  IconButton, 
+  IconButton,
   Stack,
-  Tooltip
-} from "@sistent/sistent";
-import { 
-  Search as SearchIcon,
-  Menu as MenuIcon,
-  Download as DownloadIcon,
-  Favorite as FavoriteIcon
+  SearchIcon,
+  MenuIcon,
+  DownloadIcon,
+  FavoriteIcon
 } from "@sistent/sistent";
 
 function IconExamples() {
@@ -261,17 +263,13 @@ function IconExamples() {
       </Button>
       
       {/* Icon-only buttons */}
-      <Tooltip title="Menu">
-        <IconButton aria-label="menu" size="large">
-          <MenuIcon />
-        </IconButton>
-      </Tooltip>
-      
-      <Tooltip title="Add to favorites">
-        <IconButton aria-label="favorite" color="secondary">
-          <FavoriteIcon />
-        </IconButton>
-      </Tooltip>
+      <IconButton aria-label="menu" size="large">
+        <MenuIcon />
+      </IconButton>
+
+      <IconButton aria-label="favorite" color="secondary">
+        <FavoriteIcon />
+      </IconButton>
     </Stack>
   );
 }`,
@@ -628,6 +626,7 @@ const SistentUsage = () => {
                       initialMode={isDark ? "dark" : "light"}
                     >
                       <div
+                        className="icon-showcase"
                         style={{
                           display: "flex",
                           gap: "12px",
@@ -635,16 +634,18 @@ const SistentUsage = () => {
                           flexWrap: "wrap",
                         }}
                       >
-                        <Button startIcon="🔍" variant="contained">
+                        <Button startIcon={<SearchIcon />} variant="contained">
                           Search
                         </Button>
-                        <Button endIcon="📥" variant="outlined">
+                        <Button endIcon={<DownloadIcon />} variant="outlined">
                           Download
                         </Button>
-                        <Button variant="text">Menu ☰</Button>
-                        <Button variant="contained" color="secondary">
-                          ❤️
-                        </Button>
+                        <IconButton aria-label="menu" size="large">
+                          <MenuIcon />
+                        </IconButton>
+                        <IconButton aria-label="favorite" color="secondary">
+                          <FavoriteIcon />
+                        </IconButton>
                       </div>
                     </SistentThemeProvider>
                   </div>
