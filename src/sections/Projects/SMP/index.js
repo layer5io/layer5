@@ -8,7 +8,9 @@ import { Row, Col, Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import KanvasCTA from "../../Kanvas/kanvas-cta";
 
-import example from "../../../assets/images/smp-page/service-mesh-performance-specification-example.gif";
+import example from "../../../assets/images/smp-page/service-mesh-performance-specification-example.mp4";
+import examplePoster from "../../../assets/images/smp-page/service-mesh-performance-specification-example-poster.webp";
+import AutoVideo from "../../../components/AutoVideo";
 import smp from "../../../assets/images/smp-page/smp-white.svg";
 
 const heroImageSrc = withPrefix("/images/lite/smp-hero.webp");
@@ -53,7 +55,7 @@ const SMPPage = () => {
             <h3>SMP is a collaborative effort of Layer5, UT Austin, Intel, Red Hat, HashiCorp, Google and The Linux Foundation.</h3>
             <Row>
               <Col $lg={6}>
-                <img src={example} className="smp-example" alt="example: smp in action"></img>
+                <AutoVideo src={example} poster={examplePoster} width={1382} height={1134} className="smp-example" alt="example: smp in action" />
               </Col>
               <Col className="features" $lg={6}>
                 <h1> SMP accounts for details of:</h1>

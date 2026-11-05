@@ -5,10 +5,14 @@ import Partners from "../Home/Partners-home";
 import SeeYou from "../SeeYou";
 import FeatureHero from "../FeatureHero";
 import FeatureUseCard from "../../components/FeatureUseCard";
-import SelfServiceAndIntegrationsGIF from "./images/self-service-and-integration.gif";
-import DeployDesignsGIF from "./images/deploy-designs.gif";
-import EnvironmentsGIF from "./images/environments.gif";
-import Validate from "./images/validate.gif";
+import SelfServiceAndIntegrationsVideo from "./images/self-service-and-integration.mp4";
+import SelfServiceAndIntegrationsPoster from "./images/self-service-and-integration-poster.webp";
+import DeployDesignsVideo from "./images/deploy-designs.mp4";
+import DeployDesignsPoster from "./images/deploy-designs-poster.webp";
+import EnvironmentsVideo from "./images/environments.mp4";
+import EnvironmentsPoster from "./images/environments-poster.webp";
+import Validate from "./images/validate.mp4";
+import ValidatePoster from "./images/validate-poster.webp";
 import OrchestrationImgDark from "../../components/Features/images/orchestration.svg";
 import OrchestrationImgLight from "../../components/Features/images/orchestration-light.svg";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
@@ -18,22 +22,22 @@ let card_data = [
   {
     heading: "Self-service & Integrations",
     subtitle: "Empower DevOps teams with self-service capabilities for effortless infrastructure management. Seamlessly integrate with current tools and workflows for a smooth and efficient experience.",
-    image: SelfServiceAndIntegrationsGIF
+    video: { src: SelfServiceAndIntegrationsVideo, poster: SelfServiceAndIntegrationsPoster, width: 1258, height: 678 }
   },
   {
     heading: "Validate your infra before deployment",
     subtitle: "Infrastructure is rigorously validated pre-deployment to ensure reliability, security, and optimal performance.",
-    image: Validate
+    video: { src: Validate, poster: ValidatePoster, width: 1258, height: 678 }
   },
   {
     heading: "Infrastructure provisioning",
     subtitle: "Automate infrastructure provisioning for efficient, ready-to-deploy designs, eliminating manual work for basic requests in development, QA, testing, and IT operations.",
-    image: DeployDesignsGIF
+    video: { src: DeployDesignsVideo, poster: DeployDesignsPoster, width: 1258, height: 678 }
   },
   {
     heading: "Manage resources with Environment",
     subtitle: "Simplify your workflow by effortlessly handling a bundle of resources as a unified group, eliminating the hassle of managing individual Connections and Credentials.",
-    image: EnvironmentsGIF
+    video: { src: EnvironmentsVideo, poster: EnvironmentsPoster, width: 1258, height: 680 }
   },
 
 ];

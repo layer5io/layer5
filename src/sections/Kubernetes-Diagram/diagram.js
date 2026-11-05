@@ -4,11 +4,16 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 import KubernetesCatalogDark from "./images/kubernetes-catalog-dark.svg";
 import RelatedPicks from "../../components/RelatedPicks";
-import ConfigGIF from "./images/config.gif";
-import DeployGIF from "./images/deploy.gif";
-import DragDropGIF from "./images/drag-drop.gif";
-import IconLibraryGIF from "./images/icon-library.gif";
+import ConfigVideo from "./images/config.mp4";
+import ConfigPoster from "./images/config-poster.webp";
+import DeployVideo from "./images/deploy.mp4";
+import DeployPoster from "./images/deploy-poster.webp";
+import DragDropVideo from "./images/drag-drop.mp4";
+import DragDropPoster from "./images/drag-drop-poster.webp";
+import IconLibraryVideo from "./images/icon-library.mp4";
+import IconLibraryPoster from "./images/icon-library-poster.webp";
 import { Link } from "gatsby";
+import AutoVideo from "../../components/AutoVideo";
 
 const DiagramWrapper = styled.div`
   min-height: fit-content;
@@ -146,7 +151,7 @@ const Kubernetes = () => {
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={ConfigGIF} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
+              <AutoVideo src={ConfigVideo} poster={ConfigPoster} width={1258} height={680} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
@@ -165,14 +170,14 @@ const Kubernetes = () => {
           </Col>
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={DeployGIF} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
+              <AutoVideo src={DeployVideo} poster={DeployPoster} width={1258} height={680} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
             </div>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={DragDropGIF} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
+              <AutoVideo src={DragDropVideo} poster={DragDropPoster} width={1258} height={680} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
@@ -192,7 +197,7 @@ const Kubernetes = () => {
           </Col>
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={IconLibraryGIF} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
+              <AutoVideo src={IconLibraryVideo} poster={IconLibraryPoster} width={1258} height={680} alt="Kubernetes Diagrams for anything" className="kubernetes-image" />
             </div>
           </Col>
         </Row>
