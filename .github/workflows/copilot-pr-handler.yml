@@ -52,12 +52,12 @@ jobs:
     name: Handle Copilot PR
     runs-on: ubuntu-24.04
     # Only run for the layer5io/layer5 repository
-    # Only run for PRs from the Copilot SWE agent (copilot[bot])
+    # Only run for PRs from the Copilot SWE agent (its PRs are opened as "Copilot")
     if: |
       github.repository == 'layer5io/layer5' &&
       (
         github.event_name == 'workflow_dispatch' ||
-        github.event.pull_request.user.login == 'copilot[bot]'
+        github.event.pull_request.user.login == 'Copilot'
       )
 
     steps:
