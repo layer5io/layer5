@@ -66,6 +66,9 @@ jobs:
       # Step 1: Introspect and log all relevant context for debugging
       # -------------------------------------------------------------------------
       - name: 🔍 Introspect Inputs and Context
+        # Pass the branch name via env so it is never parsed as shell code
+        env:
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref || 'N/A' }}
         run: |
           echo "::group::Workflow Context"
           echo "Event Name: ${{ github.event_name }}"
@@ -78,7 +81,7 @@ jobs:
           echo "PR Author: ${{ github.event.pull_request.user.login || 'N/A' }}"
           echo "PR Draft Status: ${{ github.event.pull_request.draft || 'N/A' }}"
           echo "PR Head SHA: ${{ github.event.pull_request.head.sha || 'N/A' }}"
-          echo "PR Head Ref: ${{ github.event.pull_request.head.ref || 'N/A' }}"
+          echo "PR Head Ref: $PR_HEAD_REF"
           echo "::endgroup::"
 
           echo "::group::Debug Settings"
