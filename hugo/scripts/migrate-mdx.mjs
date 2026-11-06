@@ -14,7 +14,8 @@
  *   2. Converts known JSX components to Hugo shortcodes (see COMPONENTS).
  *   3. Leaves code fences and inline code untouched.
  *   4. Rewrites front matter: redirect_from → aliases, published:false → draft:true,
- *      ./thumbnail → bundle-relative, and guarantees a `slug` (so permalinks are deterministic).
+ *      ./thumbnail → bundle-relative, copies ../ front-matter images into the page bundle,
+ *      and guarantees a `slug` (so permalinks are deterministic).
  *   5. Flags anything it cannot convert with a <!-- TODO(mdx) --> marker AND a report entry,
  *      instead of silently dropping it.
  *
@@ -469,7 +470,10 @@ export function convertFrontMatter(fm, slug, ctx) {
 
     if ((m = IMAGE_KEY.exec(line))) {
       const v = m[2].trim().replace(/^['"]|['"]$/g, '');
-      if (/^\.\.\//.test(v) || /^\/?(static|assets|src)\//.test(v)) {
+      const name = /^\.\.\//.test(v) && ctx.bundle?.(v);
+      if (name) {
+        out.push(`${m[1]}: ${name}`);
+      } else if (/^\.\.\//.test(v) || /^\/?(static|assets|src)\//.test(v)) {
         ctx.warn(`${m[1]}: "${v}" is outside the page bundle — move it next to index.md`);
         out.push(line);
       } else {
@@ -488,10 +492,14 @@ export function convertFrontMatter(fm, slug, ctx) {
   return out.join('\n');
 }
 
-export function convertFile(source, { slug, file = '', collection } = {}) {
+/**
+ * `dir` is the source document's folder. When given, `../` front-matter images are resolved against it,
+ * listed in stats.assets for the caller to copy into the bundle, and the value is rewritten to the file name.
+ */
+export function convertFile(source, { slug, file = '', collection, dir } = {}) {
   const normFile = file ? file.replace(/\\/g, '/').replace(/^\/+/, '') : '';
   const resolvedCollection = collection ?? (normFile.includes('/') ? normFile.split('/')[0] : '');
-  const stats = { components: {}, unknown: {}, counters: {}, warnings: [] };
+  const stats = { components: {}, unknown: {}, counters: {}, warnings: [], assets: [] };
   const ctx = {
     file: normFile,
     collection: resolvedCollection,
@@ -499,6 +507,16 @@ export function convertFile(source, { slug, file = '', collection } = {}) {
     unknown: (n) => { stats.unknown[n] = (stats.unknown[n] || 0) + 1; },
     component: (n) => { stats.components[n] = (stats.components[n] || 0) + 1; },
     count: (k) => { stats.counters[k] = (stats.counters[k] || 0) + 1; },
+    bundle: dir && ((v) => {
+      const from = path.resolve(dir, v); const name = path.basename(from);
+      // missing file, or a different file already owns this name in the bundle: leave it for the outside-bundle warning
+      const local = path.join(dir, name);
+      if (!fs.existsSync(from) || (fs.existsSync(local) && local !== from)
+        || stats.assets.some((a) => a.name === name && a.from !== from)) return null;
+      if (!stats.assets.some((a) => a.from === from)) stats.assets.push({ from, name });
+      ctx.count('assetsBundled');
+      return name;
+    }),
   };
   const fmMatch = /^---\r?\n([\s\S]*?)\r?\n---[ \t]*(?:\r?\n|$)/.exec(source);
   let fm = '', body = source;
@@ -685,7 +703,7 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
   );
   const report = {
     generated: new Date().toISOString(), dryRun, excluded: [...excludeSet], excludedFiles: 0,
-    files: 0, converted: 0, withWarnings: 0, assetsCopied: 0,
+    files: 0, converted: 0, withWarnings: 0, assetsCopied: 0, assetsBundled: 0,
     templatesSkipped: 0, skippedTemplates: [], assetsRenamed: 0, assetRenames: [],
     emptyAssets: [], transcodeFailures: [], renameCollisions: [], assetsTranscoded: [],
     components: {}, unknown: {}, byCollection: {}, warnings: []
@@ -866,7 +884,7 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
       sourceText = rewriteAssetReferences(sourceText, dirRenames);
     }
 
-    const { output, stats } = convertFile(sourceText, { slug, file: rel, collection });
+    const { output, stats } = convertFile(sourceText, { slug, file: rel, collection, dir: path.dirname(file) });
     for (const [k, v] of Object.entries(stats.components)) bump(report.components, k, v);
     for (const [k, v] of Object.entries(stats.unknown)) bump(report.unknown, k, v);
     if (stats.warnings.length) {
@@ -876,7 +894,9 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
     if (!dryRun) {
       fs.mkdirSync(path.dirname(target), { recursive: true });
       fs.writeFileSync(target, output);
+      stats.assets.forEach((a) => fs.copyFileSync(a.from, path.join(path.dirname(target), a.name)));
     }
+    report.assetsBundled += stats.assets.length;
     report.converted++; col.converted++;
   }
   return report;
@@ -910,7 +930,7 @@ function main() {
   if (get('--report')) fs.writeFileSync(get('--report'), JSON.stringify(report, null, 2));
   if (get('--progress') && !dryRun) updateProgress(get('--progress'), report);
   const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k}×${v}`).join(', ') || '—';
-  console.log(`${dryRun ? '[dry-run] ' : ''}${report.converted}/${report.files} documents converted, ${report.assetsCopied} assets, ${report.templatesSkipped} templates skipped, ${report.withWarnings} with warnings`);
+  console.log(`${dryRun ? '[dry-run] ' : ''}${report.converted}/${report.files} documents converted, ${report.assetsCopied} assets (+${report.assetsBundled} pulled into bundles), ${report.templatesSkipped} templates skipped, ${report.withWarnings} with warnings`);
   if (report.excluded?.length) {
     console.log(`Excluded collections (${report.excluded.join(', ')}): ${report.excludedFiles} files skipped`);
   }

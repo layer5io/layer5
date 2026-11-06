@@ -74,6 +74,25 @@ test('front matter: dark and SVG thumbnail keys are checked like thumbnail', () 
   assert.ok(stats.warnings.some((w) => /^darkthumbnail_svg: .* outside the page bundle/.test(w)));
 });
 
+test('front matter: ../ images are pulled into the bundle when the source folder is known', () => {
+  const dir = path.join(fx, 'blog/sample-post');
+  const { output, stats } = convertFile(fs.readFileSync(path.join(dir, 'index.mdx'), 'utf8'), { slug: 'sample-post', dir });
+  assert.match(output, /^darkthumbnail: logo\.svg$/m);
+  assert.deepEqual(stats.assets, [{ from: path.join(here, 'fixtures/assets/logo.svg'), name: 'logo.svg' }]);
+  assert.ok(!stats.warnings.some((w) => /outside the page bundle/.test(w)));
+});
+
+test('front matter: missing or clashing ../ images keep the warning and the original path', () => {
+  const dir = path.join(fx, 'blog/sample-post');
+  // cover.png already lives in the bundle, so the shared cover.png must not replace it
+  const fm = 'title: T\nimage: ../../../assets/cover.png\ncover: ../../../assets/nope.png';
+  const { output, stats } = convertFile(`---\n${fm}\n---\nBody\n`, { slug: 't', dir });
+  assert.match(output, /^image: \.\.\/\.\.\/\.\.\/assets\/cover\.png$/m);
+  assert.match(output, /^cover: \.\.\/\.\.\/\.\.\/assets\/nope\.png$/m);
+  assert.deepEqual(stats.assets, []);
+  assert.equal(stats.warnings.filter((w) => /outside the page bundle/.test(w)).length, 2);
+});
+
 test('published:false → draft:true; plain markdown passes through', () => {
   const { output } = convertFile(fs.readFileSync(path.join(fx, 'members/jane.md'), 'utf8'), { slug: 'jane' });
   assert.match(output, /draft: true/);
@@ -93,6 +112,9 @@ test('migrate(): maps index.mdx → index.md, copies assets, reports per collect
   assert.equal(r.assetsCopied, 1);
   assert.ok(fs.existsSync(path.join(dest, 'blog/sample-post/index.md')));
   assert.ok(fs.existsSync(path.join(dest, 'blog/sample-post/cover.png')));
+  assert.equal(r.assetsBundled, 1);
+  assert.ok(fs.existsSync(path.join(dest, 'blog/sample-post/logo.svg')));
+  assert.match(fs.readFileSync(path.join(dest, 'blog/sample-post/index.md'), 'utf8'), /^darkthumbnail: logo\.svg$/m);
   assert.equal(r.byCollection.blog.converted, 1);
   assert.equal(r.byCollection.members.converted, 1);
   const dry = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-dry-'));
