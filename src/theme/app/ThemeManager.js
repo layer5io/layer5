@@ -44,13 +44,8 @@ export const ThemeManagerProvider = (props) => {
   const [themeSetting, setThemeSetting] = useState(ThemeSetting.SYSTEM);
   const [didLoad, setDidLoad] = useState(false);
   
-  const [isDark, setIsDark] = useState(() => {
-    if (isBrowser) {
-      if (window.__theme === ThemeSetting.DARK) return true;
-      if (window.__theme === ThemeSetting.LIGHT) return false;
-    }
-    return false;
-  });
+  // Start light to match SSR; the mount effect below applies the real theme
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     if (!isBrowser) return;
