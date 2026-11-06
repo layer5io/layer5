@@ -185,7 +185,7 @@ jobs:
   prune:
     needs: manage-preview
     runs-on: ubuntu-24.04
-    if: ${{ !cancelled() && needs.manage-preview.outputs.action != 'closed' }}
+    if: ${{ needs.manage-preview.result == 'success' && needs.manage-preview.outputs.action != 'closed' }}
     outputs:
       removed_prs: ${{ steps.prune-previews.outputs.removed_prs }}
       removed_prs_json: ${{ steps.prune-previews.outputs.removed_prs_json }}
