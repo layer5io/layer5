@@ -1,3 +1,4 @@
 {{- $url := .url -}}
-{{- $ext := or (hasPrefix $url "http://") (hasPrefix $url "https://") (hasPrefix $url "#") (hasPrefix $url "mailto:") -}}
-<a class="btn btn-{{ .style | default "primary" }}" href="{{ if $ext }}{{ $url }}{{ else }}{{ $url | strings.TrimPrefix "/" | relURL }}{{ end }}"{{ if and $ext (not (hasPrefix $url "#")) }} target="_blank" rel="noopener"{{ end }}>{{ .text }}</a>
+{{- $isHttp := or (hasPrefix $url "http://") (hasPrefix $url "https://") -}}
+{{- $ext := or $isHttp (hasPrefix $url "#") (hasPrefix $url "mailto:") -}}
+<a class="btn btn-{{ .style | default "primary" }}" href="{{ if $ext }}{{ $url }}{{ else }}{{ $url | strings.TrimPrefix "/" | relURL }}{{ end }}"{{ if $isHttp }} target="_blank" rel="noopener"{{ end }}>{{ .text }}</a>
