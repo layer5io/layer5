@@ -55,7 +55,7 @@ jobs:
         working-directory: hugo
         run: |
           hugo --minify --gc --baseURL "https://${{ env.PREVIEW_HOST }}/hugo-preview/pr-${{ github.event.pull_request.number }}/" --environment preview
-          npx -y pagefind@^1.1.0 --site public
+          npx -y pagefind@1.6.0 --site public
 
       - name: Save PR Metadata
         run: |
