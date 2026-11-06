@@ -82,7 +82,7 @@ We welcome everyone to review Pull Requests. It is a great way to learn, network
 
 ## Style Guide
 
-The Layer5 website is hosted in this repository and is built using Gatsbyjs. Before opening a Pull Request, please review the [design doc](https://docs.google.com/document/d/1rvUZy2_S1a2_14BAQIg6b9cMhUuu04kYzkOPDPaPptI/edit#) to learn more about the structure of the website. Once a Pull Request has been submitted, a preview deployment will be built and made available to you and other contributors on your PR to review.
+The Layer5 website is hosted in this repository and is built using Gatsbyjs. Before opening a Pull Request, please review the [Layer5 site map](https://www.figma.com/file/5ZwEkSJwUPitURD59YHMEN/Layer5-Designs) in Figma to understand how the pages of the website relate to each other and the high-level data flow between them. Once a Pull Request has been submitted, a preview deployment will be built and made available to you and other contributors on your PR to review.
 
 ## Discussion Forum
 
