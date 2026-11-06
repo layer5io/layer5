@@ -1,5 +1,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="base-url" content="{{ "" | relURL }}">
+{{- if eq hugo.Environment "preview" }}
+<meta name="robots" content="noindex,nofollow">
+{{- end }}
 <title>{{ if .IsHome }}{{ site.Title }} — {{ site.Params.description }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
 {{/* Theme: inline + synchronous so there is never a flash of the wrong theme (Workstream 2). */}}
 <script>

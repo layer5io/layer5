@@ -2,7 +2,9 @@
 (() => {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-  const base = document.documentElement.dataset.base || '/';
+  const baseMeta = $('meta[name="base-url"]')?.getAttribute('content');
+  const rawBase = baseMeta || document.documentElement.dataset.base || '/';
+  const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
   const html = document.documentElement;
 
   /* Theme toggle (initial theme is set by the inline <head> script) */
@@ -54,7 +56,7 @@
   const loadSearch = () => searchReady ||= new Promise((resolve) => {
     const css = Object.assign(document.createElement('link'), { rel: 'stylesheet', href: `${base}pagefind/pagefind-ui.css` });
     const js = Object.assign(document.createElement('script'), { src: `${base}pagefind/pagefind-ui.js` });
-    js.onload = () => { new window.PagefindUI({ element: '#search', showSubResults: true, showImages: false }); resolve(true); };
+    js.onload = () => { new window.PagefindUI({ element: '#search', showSubResults: true, showImages: false, bundlePath: `${base}pagefind/` }); resolve(true); };
     js.onerror = () => { $('.search-missing', dlg).hidden = false; resolve(false); };
     document.head.append(css, js);
   });

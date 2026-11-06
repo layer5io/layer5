@@ -8,7 +8,11 @@
     <div>
       <p class="footer-title">Explore</p>
       <ul class="plain">
-        {{ range site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
+        {{ range site.Menus.main }}
+          {{ $menuUrl := .URL }}
+          {{ with .Page }}{{ $menuUrl = .RelPermalink }}{{ end }}
+          <li><a href="{{ $menuUrl }}">{{ .Name }}</a></li>
+        {{ end }}
         <li><a href="{{ "index.xml" | relURL }}">RSS</a></li>
       </ul>
     </div>
