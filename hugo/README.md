@@ -17,7 +17,7 @@ This repository is a proof of concept (POC) for migrating [layer5.io](https://la
 | Piece | Status | Notes |
 |---|---|---|
 | Site build | **Working** | Compiles clean HTML into `public/` with zero template errors. |
-| Tooling tests | **23 passed** | 23 of 23 unit tests pass (`make test`). |
+| Tooling tests | **26 passed** | 26 of 26 unit tests pass (`make test`). |
 | Sample content | **Placeholder** | Minimal sample content to test components; real content will migrate from `layer5`. |
 | Netlify redirects | **Working** | Generates extensionless `public/_redirects` from page aliases. |
 | Performance benchmarks | **Informal** | Windows numbers are approximate Go memory; true peak RSS is only measured on Linux CI. |
@@ -35,7 +35,7 @@ This repository is a proof of concept (POC) for migrating [layer5.io](https://la
 
 ```bash
 make serve         # Start local dev server with live reload at http://localhost:1313/ (verified on Windows)
-make test          # Run all 23 migration tooling unit tests (verified on Windows)
+make test          # Run all 26 migration tooling unit tests (verified on Windows)
 make build         # Compile minified production site to ./public (verified on Windows)
 make bench         # Run 1,210-page synthetic build benchmark (verified on Windows; approx Go memory)
 make index         # Build Pagefind search index (untested; requires network for npx on first run)
@@ -61,7 +61,7 @@ make migrate-dry   # Dry-run MDX converter against layer5 collections (reads ../
 
 ### Definition of Done for PRs
 - [ ] `make serve` runs without template or build errors.
-- [ ] `make test` passes (all 23 tests pass).
+- [ ] `make test` passes (all 26 tests pass).
 - [ ] Verified in both light and dark theme modes.
 - [ ] URL parity is preserved (`make verify-urls` clean for touched collections).
 - [ ] [docs/CHEATSHEET.md](docs/CHEATSHEET.md) updated if shortcodes or attributes changed.
