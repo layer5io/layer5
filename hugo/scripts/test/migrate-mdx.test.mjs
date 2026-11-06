@@ -66,6 +66,14 @@ test('front matter: aliases, thumbnail, slug, published', () => {
   assert.match(fm, /slug: sample-post/);
 });
 
+test('front matter: dark and SVG thumbnail keys are checked like thumbnail', () => {
+  const fm = 'title: T\ndarkthumbnail: ./dark.png\nthumbnail_svg: ../../shared.svg\ndarkthumbnail_svg: ../../shared-dark.svg';
+  const { output, stats } = convertFile(`---\n${fm}\n---\nBody\n`, { slug: 't' });
+  assert.match(output, /^darkthumbnail: dark\.png$/m);
+  assert.ok(stats.warnings.some((w) => /^thumbnail_svg: .* outside the page bundle/.test(w)));
+  assert.ok(stats.warnings.some((w) => /^darkthumbnail_svg: .* outside the page bundle/.test(w)));
+});
+
 test('published:false → draft:true; plain markdown passes through', () => {
   const { output } = convertFile(fs.readFileSync(path.join(fx, 'members/jane.md'), 'utf8'), { slug: 'jane' });
   assert.match(output, /draft: true/);

@@ -415,6 +415,9 @@ export function convertBody(body, ctx) {
 }
 
 /* ---------------------------------------------------------------- front matter */
+// Every front-matter key that holds an image path. Blog posts also carry dark-mode and SVG variants.
+const IMAGE_KEY = /^(thumbnail|darkthumbnail|thumbnail_svg|darkthumbnail_svg|image|cover)\s*:\s*(.*)$/;
+
 export function convertFrontMatter(fm, slug, ctx) {
   const lines = fm.split('\n').map((l) => l.replace(/\r$/, ''));
   const out = [];
@@ -464,7 +467,7 @@ export function convertFrontMatter(fm, slug, ctx) {
       continue;
     }
 
-    if ((m = /^(thumbnail|image|cover)\s*:\s*(.*)$/.exec(line))) {
+    if ((m = IMAGE_KEY.exec(line))) {
       const v = m[2].trim().replace(/^['"]|['"]$/g, '');
       if (/^\.\.\//.test(v) || /^\/?(static|assets|src)\//.test(v)) {
         ctx.warn(`${m[1]}: "${v}" is outside the page bundle — move it next to index.md`);
