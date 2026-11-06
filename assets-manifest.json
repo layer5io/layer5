@@ -111,8 +111,8 @@
   "ac581ebe.js": "ac581ebe-d8f297aa0b7917a0edd2.js",
   "ac7852211896a4b8cebddf1c8d3946508e2192f2.js": "ac7852211896a4b8cebddf1c8d3946508e2192f2-8cf3e8fd0090075bcce6.js",
   "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff.js": "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff-4194885a44cc2e5a5363.js",
-  "app-b39f31ca54871e9d3ebc.js.LICENSE.txt": "app-b39f31ca54871e9d3ebc.js.LICENSE.txt",
-  "app.js": "app-b39f31ca54871e9d3ebc.js",
+  "app-ad89e4416827db9675dd.js.LICENSE.txt": "app-ad89e4416827db9675dd.js.LICENSE.txt",
+  "app.js": "app-ad89e4416827db9675dd.js",
   "b5f6012b.js": "b5f6012b-0d788a08c9a6ff5be2b5.js",
   "b94c7d6e898e669bbfd99da21b2e9e67976b8f68.js": "b94c7d6e898e669bbfd99da21b2e9e67976b8f68-29ed6451ccaef992cd70.js",
   "ba5828f4dac0658416d102e02536a23fbd61d3fb.js": "ba5828f4dac0658416d102e02536a23fbd61d3fb-3b825dbbc3a0851515d7.js",
@@ -173,7 +173,7 @@
   "component---src-pages-deploy-service-mesh-js.js": "component---src-pages-deploy-service-mesh-js-049f0795e7cb297506ed.js",
   "component---src-pages-docker-extension-meshery-js.js": "component---src-pages-docker-extension-meshery-js-b1e3ed262d2cfc251ff0.js",
   "component---src-pages-embed-js.js": "component---src-pages-embed-js-50daa11f4a0cc9d1a6ae.js",
-  "component---src-pages-index-js.js": "component---src-pages-index-js-41bb3c20acc07adffac6.js",
+  "component---src-pages-index-js.js": "component---src-pages-index-js-4bdee66dbc8a8f5ad830.js",
   "component---src-pages-learn-academy-js.js": "component---src-pages-learn-academy-js-dbd18576c26f2a6d6717.js",
   "component---src-pages-learn-index-js.js": "component---src-pages-learn-index-js-6c771d286c9c25affbb9.js",
   "component---src-pages-learn-kanvas-labs-js.js": "component---src-pages-learn-kanvas-labs-js-6852c9f68a917e365914.js",
@@ -1437,7 +1437,7 @@
   "framework-68cec114a4c8cc45b448.js.LICENSE.txt": "framework-68cec114a4c8cc45b448.js.LICENSE.txt",
   "framework.js": "framework-68cec114a4c8cc45b448.js",
   "icon-library.gif": "static/icon-library-7a9eca699194351110d483fc21317036.gif",
-  "integration-image-colorMode.svg": "static/integration-image-colorMode.154ef79b.svg",
+  "integration-image-colorMode.svg": "static/integration-image-colorMode.90d3dccb.svg",
   "kubernetes.svg": "static/kubernetes.1984069f.svg",
   "layer5-products-overview-dark.svg": "static/layer5-products-overview-dark.e3465d19.svg",
   "layer5-products-overview.svg": "static/layer5-products-overview.e3465d19.svg",
@@ -2123,5 +2123,5 @@
   "static/yash-sharma.webp": "static/yash-sharma-54aa26b6e5743f0557cfc76aa9797f2d.webp",
   "static/yogi.webp": "static/yogi-d00ca1cc48ab74938a23d4359ef3fb01.webp",
   "styles.css": "styles.36a061adc6a8dfab5924.css",
-  "webpack-runtime.js": "webpack-runtime-3cbf13986211c94df496.js"
+  "webpack-runtime.js": "webpack-runtime-ca69c035c23dff67f3da.js"
 }
