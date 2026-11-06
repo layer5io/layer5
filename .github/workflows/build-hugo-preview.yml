@@ -16,6 +16,9 @@ concurrency:
   group: hugo-preview-${{ github.event.pull_request.number || github.run_id }}
   cancel-in-progress: true
 
+env:
+  PREVIEW_HOST: layer5.io
+
 defaults:
   run:
     shell: bash
@@ -51,7 +54,7 @@ jobs:
         if: github.event.action != 'closed'
         working-directory: hugo
         run: |
-          hugo --minify --gc --baseURL "https://layer5.io/hugo-preview/pr-${{ github.event.pull_request.number }}/" --environment preview
+          hugo --minify --gc --baseURL "https://${{ env.PREVIEW_HOST }}/hugo-preview/pr-${{ github.event.pull_request.number }}/" --environment preview
           npx -y pagefind --site public
 
       - name: Save PR Metadata
