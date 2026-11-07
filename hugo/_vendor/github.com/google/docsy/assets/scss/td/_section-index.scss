@@ -1,0 +1,17 @@
+.section-index {
+  .entry {
+    padding: 0.75rem;
+  }
+
+  h5 {
+    margin-bottom: 0;
+
+    a {
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  p {
+    margin-top: 0;
+  }
+}

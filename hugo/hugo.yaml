@@ -7,6 +7,14 @@ timeZone: UTC
 enableRobotsTXT: true
 enableGitInfo: false
 
+module:
+  hugoVersion:
+    extended: true
+    min: "0.128.0"
+  imports:
+    - path: github.com/google/docsy
+    - path: github.com/google/docsy/dependencies
+
 # Events are future-dated; Hugo hides future content by default.
 buildFuture: true
 

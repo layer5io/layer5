@@ -1,0 +1,18 @@
+@if $enable-dark-mode {
+  [data-bs-theme='light'] {
+    @import 'chroma/light';
+  }
+
+  [data-bs-theme='dark'] {
+    @import 'chroma/dark';
+
+    .chroma {
+      background-color: var(--td-pre-bg);
+
+      // Color tuning for the `native` Chroma style:
+      .go {
+        color: #cccccc95;
+      }
+    }
+  }
+}

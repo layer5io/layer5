@@ -1,0 +1,3 @@
+{{ with or .Description .Summary site.Params.description | plainify | htmlUnescape -}}
+  {{ trim . "\n\r\t " -}}
+{{ end -}}

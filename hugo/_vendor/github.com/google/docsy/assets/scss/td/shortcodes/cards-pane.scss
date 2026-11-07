@@ -1,0 +1,29 @@
+.td-card-group.card-group {
+  @extend .td-max-width-on-larger-screens;
+}
+
+.td-card {
+  &.card {
+    @extend .td-max-width-on-larger-screens;
+
+    .highlight {
+      border: none;
+      margin: 0;
+    }
+  }
+
+  .card-header.code {
+    background-color: $card-bg;
+  }
+
+  .card-body {
+    &.code {
+      background-color: $card-bg;
+      padding: 0 0 0 1ex;
+    }
+
+    pre {
+      margin: 0;
+    }
+  }
+}
