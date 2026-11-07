@@ -109,7 +109,7 @@ const FaqSectionWrapper = styled.section`
     
     h3 {
       margin-bottom: 1rem;
-      color: ${props => props.theme.textColor};
+      color: ${props => props.theme.text};
     }
     
     p {
