@@ -124,6 +124,14 @@ test('published: false does not overwrite existing draft: false', () => {
   assert.equal(matches.length, 1);
 });
 
+test('published: false warns when meeting an existing draft: false', () => {
+  const input = '---\ntitle: "Conflict Test"\ndraft: false\npublished: false\n---\nHello world\n';
+  const { output, stats } = convertFile(input, { slug: 'test-conflict' });
+  assert.match(output, /draft: false/);
+  assert.doesNotMatch(output, /draft: true/);
+  assert.ok(stats.warnings.some((w) => w.includes('published: false') && w.includes('draft: false')));
+});
+
 test('published: invalid value triggers warning and preserves line', () => {
   const input = '---\ntitle: "Invalid Test"\npublished: not-a-date-or-bool\n---\nHello world\n';
   const { output, stats } = convertFile(input, { slug: 'test-invalid' });
@@ -184,7 +192,30 @@ test('rewriteAssetReferences updates bundled references in frontmatter and markd
   assert.match(output, /\{\{< responsive-image src="hero-image\.jpg" >\}\}/);
 });
 
-test('migrate() handles zero-byte SVGs by warning and logging to zeroByteSvgs without placeholder', () => {
+test('rewriteAssetReferences boundary-aware: thumb-image.png next to image.png, https URL, code fence', () => {
+  const input = [
+    'Here is image.png and thumb-image.png.',
+    'Also https://example.com/assets/image.png and ./image.png.',
+    '```markdown',
+    'Code block with image.png and ./image.png untouched',
+    '```',
+    'Final text with ./image.png.'
+  ].join('\n');
+
+  const renames = { 'image.png': 'image.jpg' };
+  const output = rewriteAssetReferences(input, renames);
+
+  // 1. Bare name image.png replaced, but thumb-image.png preserved
+  assert.match(output, /Here is image\.jpg and thumb-image\.png\./);
+  // 2. HTTPS URL untouched, while ./image.png is replaced
+  assert.match(output, /https:\/\/example\.com\/assets\/image\.png and \.\/image\.jpg\./);
+  // 3. Inside code fence untouched
+  assert.match(output, /```markdown\nCode block with image\.png and \.\/image\.png untouched\n```/);
+  // 4. Outside code fence replaced
+  assert.match(output, /Final text with \.\/image\.jpg\./);
+});
+
+test('migrate() handles zero-byte SVGs by warning and logging to emptyAssets without placeholder', () => {
   const tempSrc = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-src-'));
   const tempDest = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-dest-'));
   const colDir = path.join(tempSrc, 'integrations/test-crd/icons');
@@ -192,9 +223,114 @@ test('migrate() handles zero-byte SVGs by warning and logging to zeroByteSvgs wi
   fs.writeFileSync(path.join(colDir, 'empty.svg'), Buffer.alloc(0));
 
   const report = migrate({ src: tempSrc, dest: tempDest, dryRun: false });
-  assert.equal(report.zeroByteSvgs.length, 1);
+  assert.equal(report.emptyAssets.length, 1);
   assert.ok(report.warnings.some((w) => w.message.includes('zero-byte asset')));
   const targetSvg = path.join(tempDest, 'integrations/test-crd/icons/empty.svg');
   assert.ok(fs.existsSync(targetSvg));
   assert.equal(fs.statSync(targetSvg).size, 0); // Preserved as zero-byte, no placeholder written
+});
+
+test('transcodeAvifToWebp failure does not copy AVIF, records transcodeFailures and warning', () => {
+  const tempSrc = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-avif-src-'));
+  const tempDest = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-avif-dest-'));
+  const colDir = path.join(tempSrc, 'news/test-post');
+  fs.mkdirSync(colDir, { recursive: true });
+  const avifHeader = Buffer.from('\x00\x00\x00\x1cftypavifdummydata', 'binary');
+  fs.writeFileSync(path.join(colDir, 'sample.avif'), avifHeader);
+
+  // Mock execFileFn that always fails (both magick, convert, and python fail)
+  const mockFailingExec = () => {
+    throw new Error('Command failed');
+  };
+
+  const report = migrate({
+    src: tempSrc,
+    dest: tempDest,
+    dryRun: false,
+    execFileFn: mockFailingExec,
+  });
+
+  assert.equal(report.transcodeFailures.length, 1);
+  assert.equal(report.transcodeFailures[0], 'news/test-post/sample.avif');
+  assert.ok(report.warnings.some((w) => w.message.includes('AVIF transcoding to WebP failed')));
+  // Verify destination file was NOT copied
+  assert.equal(fs.existsSync(path.join(tempDest, 'news/test-post/sample.webp')), false);
+  assert.equal(fs.existsSync(path.join(tempDest, 'news/test-post/sample.avif')), false);
+  assert.equal(report.assetsCopied, 0);
+});
+
+test('rename collision detection skips rename and never overwrites existing target', () => {
+  const tempSrc = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-col-src-'));
+  const tempDest = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-col-dest-'));
+  const colDir = path.join(tempSrc, 'blog/post');
+  fs.mkdirSync(colDir, { recursive: true });
+
+  // hero.png contains JPEG magic bytes (would normalize to hero.jpg)
+  const jpegBytes = Buffer.from([0xFF, 0xD8, 0xFF, 0xE0, 0x00, 0x10]);
+  fs.writeFileSync(path.join(colDir, 'hero.png'), jpegBytes);
+  // But hero.jpg already exists!
+  const originalHeroJpg = Buffer.from('original hero.jpg content');
+  fs.writeFileSync(path.join(colDir, 'hero.jpg'), originalHeroJpg);
+
+  const report = migrate({ src: tempSrc, dest: tempDest, dryRun: false });
+
+  assert.equal(report.renameCollisions.length, 1);
+  assert.equal(report.renameCollisions[0].from, 'blog/post/hero.png');
+  assert.equal(report.renameCollisions[0].target, 'hero.jpg');
+  assert.ok(report.warnings.some((w) => w.message.includes('rename collision')));
+
+  // hero.jpg in destination must have the original content (never overwritten)
+  const destHeroJpg = fs.readFileSync(path.join(tempDest, 'blog/post/hero.jpg'), 'utf8');
+  assert.equal(destHeroJpg, 'original hero.jpg content');
+  // hero.png was copied under its original name without renaming
+  assert.ok(fs.existsSync(path.join(tempDest, 'blog/post/hero.png')));
+});
+
+test('subfolder renames and .avif -> .webp renames are keyed and rewritten in documents', () => {
+  const tempSrc = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-sub-src-'));
+  const tempDest = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-sub-dest-'));
+  const postDir = path.join(tempSrc, 'blog/subfolder-test');
+  const iconsDir = path.join(postDir, 'icons');
+  fs.mkdirSync(iconsDir, { recursive: true });
+
+  // Subfolder asset: icons/icon.png has JPEG magic bytes -> normalizes to icons/icon.jpg
+  const jpegBytes = Buffer.from([0xFF, 0xD8, 0xFF, 0xE0, 0x00, 0x10]);
+  fs.writeFileSync(path.join(iconsDir, 'icon.png'), jpegBytes);
+
+  // AVIF asset with .avif extension -> transcodes to banner.webp
+  const avifBytes = Buffer.from('\x00\x00\x00\x1cftypavifdummy', 'binary');
+  fs.writeFileSync(path.join(postDir, 'banner.avif'), avifBytes);
+
+  // Document referencing subfolder asset and avif asset
+  const docContent = [
+    '---',
+    'title: "Subfolder Test"',
+    'thumbnail: ./banner.avif',
+    '---',
+    'Here is ![Icon](./icons/icon.png) and ![BareIcon](icons/icon.png).',
+    'Banner: {{< responsive-image src="banner.avif" >}}'
+  ].join('\n');
+  fs.writeFileSync(path.join(postDir, 'index.mdx'), docContent);
+
+  // Mock execFileFn that creates a dummy webp file on transcode
+  const mockExec = (cmd, args) => {
+    const destFile = args[1] || args[3]; // magick [src, dest] or python [-c, script, src, dest]
+    fs.writeFileSync(destFile, Buffer.from('RIFF\x00\x00\x00\x00WEBPVP8 ', 'binary'));
+  };
+
+  const report = migrate({ src: tempSrc, dest: tempDest, dryRun: false, execFileFn: mockExec });
+
+  // 1. .avif -> .webp is recorded in assetRenames and assetsTranscoded
+  assert.ok(report.assetRenames.some((r) => r.from.endsWith('banner.avif') && r.to === 'banner.webp'));
+  assert.ok(report.assetsTranscoded.some((t) => t.endsWith('banner.avif')));
+
+  // 2. Subfolder rename is recorded in assetRenames
+  assert.ok(report.assetRenames.some((r) => r.from.endsWith('icons/icon.png') && r.to === 'icon.jpg'));
+
+  // 3. Document references are rewritten
+  const convertedDoc = fs.readFileSync(path.join(tempDest, 'blog/subfolder-test/index.md'), 'utf8');
+  assert.match(convertedDoc, /thumbnail: banner\.webp/);
+  assert.match(convertedDoc, /!\[Icon\]\(\.\/icons\/icon\.jpg\)/);
+  assert.match(convertedDoc, /!\[BareIcon\]\(icons\/icon\.jpg\)/);
+  assert.match(convertedDoc, /src="banner\.webp"/);
 });

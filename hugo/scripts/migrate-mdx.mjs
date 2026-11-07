@@ -3,6 +3,8 @@
  * migrate-mdx.mjs — Gatsby MDX → Hugo Markdown converter (Workstream 1).
  *
  * Zero dependencies (Node >= 18). Safe by default: use --dry-run first.
+ * Optional dependencies: ImageMagick (`magick` or non-Windows `convert`) or Python 3
+ * with Pillow (`PIL`) for AVIF -> WebP raster asset transcoding.
  *
  *   node scripts/migrate-mdx.mjs --src ../src/collections --dest content --dry-run --report report.json
  *   node scripts/migrate-mdx.mjs --src ../src/collections --dest content --progress data/migration.json
@@ -22,7 +24,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 
 /* ---------------------------------------------------------------- component map */
 export const COMPONENTS = {
@@ -214,6 +216,7 @@ export function convertFrontMatter(fm, slug, ctx) {
   const out = [];
   let hasSlug = false;
   const hasDraft = lines.some((l) => /^\s*draft\s*:/i.test(l));
+  const hasDraftFalse = lines.some((l) => /^\s*draft\s*:\s*false\b/i.test(l));
 
   for (const line of lines) {
     let m;
@@ -230,8 +233,12 @@ export function convertFrontMatter(fm, slug, ctx) {
 
       // 1. Only act on boolean values (case-insensitive)
       if (lower === 'true' || lower === 'false') {
-        if (lower === 'false' && !hasDraft) {
-          out.push('draft: true');
+        if (lower === 'false') {
+          if (hasDraftFalse) {
+            ctx.warn('published: false ignored because draft: false is already present');
+          } else if (!hasDraft) {
+            out.push('draft: true');
+          }
         }
         continue;
       }
@@ -334,25 +341,84 @@ export function normalizeAssetFilename(filename, format) {
 }
 
 export function rewriteAssetReferences(text, renames) {
-  if (!renames || Object.keys(renames).length === 0) return text;
-  let out = text;
-  for (const [oldName, newName] of Object.entries(renames)) {
-    if (oldName === newName) continue;
-    out = out.split(oldName).join(newName);
+  if (!renames || Object.keys(renames).length === 0 || !text) return text;
+
+  // Protect code fences (``` or ~~~) so code blocks are untouched
+  const lines = text.split('\n');
+  const chunks = [];
+  let buf = [], inFence = null;
+  for (const line of lines) {
+    const f = /^\s*(```+|~~~+)/.exec(line);
+    if (f && !inFence) {
+      chunks.push({ code: false, text: buf.join('\n') });
+      buf = [line];
+      inFence = f[1][0];
+    } else if (f && inFence && f[1][0] === inFence) {
+      buf.push(line);
+      chunks.push({ code: true, text: buf.join('\n') });
+      buf = [];
+      inFence = null;
+    } else {
+      buf.push(line);
+    }
   }
-  return out;
+  chunks.push({ code: !!inFence, text: buf.join('\n') });
+
+  // Filter and sort renames by old path length descending so longer subpaths match first
+  const entries = Object.entries(renames)
+    .filter(([oldPath, newPath]) => oldPath !== newPath)
+    .sort((a, b) => b[0].length - a[0].length);
+
+  if (entries.length === 0) return text;
+
+  const escapeRegExp = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+  const processChunk = (chunkText) => {
+    // Protect URLs (https:// or http://)
+    const urls = [];
+    let t = chunkText.replace(/https?:\/\/[^\s)'"]+/g, (u) => `\u0000URL_${urls.push(u) - 1}\u0000`);
+
+    // Match boundary-aware bare name or ./name only
+    for (const [oldPath, newPath] of entries) {
+      const esc = escapeRegExp(oldPath);
+      const regex = new RegExp(`(?<![\\w.-]|/)(\\./)?${esc}(?![\\w/-]|\\.[a-zA-Z0-9_-])`, 'g');
+      t = t.replace(regex, (_, prefix) => (prefix ? './' : '') + newPath);
+    }
+
+    // Restore protected URLs
+    t = t.replace(/\u0000URL_(\d+)\u0000/g, (_, i) => urls[+i]);
+    return t;
+  };
+
+  return chunks.map((c) => (c.code ? c.text : processChunk(c.text))).join('\n');
 }
 
-export function transcodeAvifToWebp(srcFile, destFile) {
+export function transcodeAvifToWebp(srcFile, destFile, { execFileFn = execFileSync } = {}) {
+  // 1. Try ImageMagick 7 (magick)
   try {
-    execSync(`convert "${srcFile}" "${destFile}"`, { stdio: 'ignore' });
+    execFileFn('magick', [srcFile, destFile], { stdio: 'ignore' });
+    return true;
+  } catch {}
+
+  // 2. Fall back to ImageMagick 6 (convert) on non-Windows only
+  if (process.platform !== 'win32') {
+    try {
+      execFileFn('convert', [srcFile, destFile], { stdio: 'ignore' });
+      return true;
+    } catch {}
+  }
+
+  // 3. Try Python with Pillow (PIL) via argv
+  const pyCode = 'import sys; from PIL import Image; Image.open(sys.argv[1]).save(sys.argv[2], "WEBP")';
+  try {
+    execFileFn('python3', ['-c', pyCode, srcFile, destFile], { stdio: 'ignore' });
     return true;
   } catch {}
   try {
-    const py = `python3 -c "from PIL import Image; Image.open('${srcFile.replace(/\\/g, '/')}').save('${destFile.replace(/\\/g, '/')}', 'WEBP')"`;
-    execSync(py, { stdio: 'ignore' });
+    execFileFn('python', ['-c', pyCode, srcFile, destFile], { stdio: 'ignore' });
     return true;
   } catch {}
+
   return false;
 }
 
@@ -365,16 +431,33 @@ function* walk(dir) {
   }
 }
 
-export function migrate({ src, dest, dryRun = false }) {
+export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync }) {
   const report = {
     generated: new Date().toISOString(), dryRun, files: 0, converted: 0, withWarnings: 0, assetsCopied: 0,
     templatesSkipped: 0, skippedTemplates: [], assetsRenamed: 0, assetRenames: [],
-    zeroByteSvgs: [], assetsTranscoded: [], components: {}, unknown: {}, byCollection: {}, warnings: []
+    emptyAssets: [], transcodeFailures: [], renameCollisions: [], assetsTranscoded: [],
+    components: {}, unknown: {}, byCollection: {}, warnings: []
   };
   const bump = (o, k, n = 1) => { o[k] = (o[k] || 0) + n; };
   const allFiles = [...walk(src)];
   const docFiles = [];
   const renamesByDir = new Map();
+  const writtenTargets = new Set();
+
+  function registerRename(fileDir, oldBaseName, newBaseName) {
+    let curDir = fileDir;
+    while (true) {
+      const oldRel = path.relative(curDir, path.join(fileDir, oldBaseName)).replace(/\\/g, '/');
+      const newRel = path.relative(curDir, path.join(fileDir, newBaseName)).replace(/\\/g, '/');
+      const map = renamesByDir.get(curDir) || {};
+      map[oldRel] = newRel;
+      renamesByDir.set(curDir, map);
+      if (curDir === src || path.relative(src, curDir) === '') break;
+      const parent = path.dirname(curDir);
+      if (parent === curDir || path.relative(src, parent).startsWith('..')) break;
+      curDir = parent;
+    }
+  }
 
   // Pass 1: assets
   for (const file of allFiles) {
@@ -395,39 +478,92 @@ export function migrate({ src, dest, dryRun = false }) {
     const format = sniffImageFormat(fileBuf);
     const dir = path.dirname(file);
     const oldName = path.basename(file);
-    let newName = oldName;
+    const relNorm = rel.replace(/\\/g, '/');
 
     if (format === 'empty') {
-      report.zeroByteSvgs.push(rel.replace(/\\/g, '/'));
-      report.warnings.push({ file: rel, message: 'zero-byte asset' });
-    } else if (format === 'avif') {
-      // Transcode AVIF to WebP (e.g. news-hero.webp)
-      const target = path.join(dest, rel.replace(/\.avif$/, '.webp'));
+      report.emptyAssets.push(relNorm);
+      report.warnings.push({ file: relNorm, message: 'zero-byte asset' });
+      const targetDir = path.dirname(path.join(dest, rel));
+      const target = path.join(targetDir, oldName);
       if (!dryRun) {
-        fs.mkdirSync(path.dirname(target), { recursive: true });
-        const ok = transcodeAvifToWebp(file, target);
-        if (!ok) fs.copyFileSync(file, target);
+        fs.mkdirSync(targetDir, { recursive: true });
+        fs.copyFileSync(file, target);
       }
-      report.assetsTranscoded.push(rel.replace(/\\/g, '/'));
+      writtenTargets.add(target);
       report.assetsCopied++;
       continue;
-    } else {
-      newName = normalizeAssetFilename(oldName, format);
+    }
+
+    if (format === 'avif') {
+      const lowerExt = ext.toLowerCase();
+      const newName = lowerExt === '.avif' ? `${path.basename(file, ext)}.webp` : oldName;
+      const targetDir = path.dirname(path.join(dest, rel));
+      const target = path.join(targetDir, newName);
+
       if (newName !== oldName) {
-        const renames = renamesByDir.get(dir) || {};
-        renames[oldName] = newName;
-        renamesByDir.set(dir, renames);
+        if (fs.existsSync(path.join(dir, newName)) || writtenTargets.has(target)) {
+          report.renameCollisions.push({ from: relNorm, target: newName });
+          report.warnings.push({ file: relNorm, message: `rename collision: ${newName} already exists, skipping rename` });
+          const fallbackTarget = path.join(targetDir, oldName);
+          if (!dryRun) {
+            fs.mkdirSync(targetDir, { recursive: true });
+            const ok = transcodeAvifToWebp(file, fallbackTarget, { execFileFn });
+            if (!ok) {
+              report.transcodeFailures.push(relNorm);
+              report.warnings.push({ file: relNorm, message: 'AVIF transcoding to WebP failed' });
+              continue;
+            }
+          }
+          writtenTargets.add(fallbackTarget);
+          report.assetsTranscoded.push(relNorm);
+          report.assetsCopied++;
+          continue;
+        }
+      }
+
+      if (!dryRun) {
+        fs.mkdirSync(targetDir, { recursive: true });
+        const ok = transcodeAvifToWebp(file, target, { execFileFn });
+        if (!ok) {
+          report.transcodeFailures.push(relNorm);
+          report.warnings.push({ file: relNorm, message: 'AVIF transcoding to WebP failed' });
+          continue;
+        }
+      }
+      writtenTargets.add(target);
+      report.assetsTranscoded.push(relNorm);
+      report.assetsCopied++;
+
+      if (newName !== oldName) {
         report.assetsRenamed++;
-        report.assetRenames.push({ from: rel.replace(/\\/g, '/'), to: newName });
+        report.assetRenames.push({ from: relNorm, to: newName });
+        registerRename(dir, oldName, newName);
+      }
+      continue;
+    }
+
+    let newName = normalizeAssetFilename(oldName, format);
+    const targetDir = path.dirname(path.join(dest, rel));
+    let target = path.join(targetDir, newName);
+
+    if (newName !== oldName) {
+      if (fs.existsSync(path.join(dir, newName)) || writtenTargets.has(target)) {
+        report.renameCollisions.push({ from: relNorm, target: newName });
+        report.warnings.push({ file: relNorm, message: `rename collision: ${newName} already exists, skipping rename` });
+        newName = oldName;
+        target = path.join(targetDir, oldName);
+      } else {
+        report.assetsRenamed++;
+        report.assetRenames.push({ from: relNorm, to: newName });
+        registerRename(dir, oldName, newName);
       }
     }
 
-    const targetDir = path.dirname(path.join(dest, rel));
-    const target = path.join(targetDir, newName);
     if (!dryRun) {
       fs.mkdirSync(targetDir, { recursive: true });
       fs.copyFileSync(file, target);
     }
+    writtenTargets.add(target);
     report.assetsCopied++;
   }
 
@@ -497,16 +633,30 @@ function main() {
     console.log(`Skipped template items (${report.skippedTemplates.length}):`);
     report.skippedTemplates.forEach((t) => console.log(`  - ${t}`));
   }
-  if (report.zeroByteSvgs?.length) {
-    console.log(`Zero-byte SVGs warning list (${report.zeroByteSvgs.length}):`);
-    report.zeroByteSvgs.forEach((s) => console.log(`  - ${s}`));
+  if (report.emptyAssets?.length) {
+    console.log(`Zero-byte SVGs warning list (${report.emptyAssets.length}):`);
+    report.emptyAssets.forEach((s) => console.log(`  - ${s}`));
   }
   if (report.assetRenames?.length) {
     console.log(`Normalized mismatched assets (${report.assetRenames.length}):`);
     report.assetRenames.forEach((r) => console.log(`  - ${r.from} -> ${r.to}`));
   }
+  if (report.renameCollisions?.length) {
+    console.log(`Rename collisions skipped (${report.renameCollisions.length}):`);
+    report.renameCollisions.forEach((c) => console.log(`  - ${c.from} -> ${c.target} (target already exists)`));
+  }
+  if (report.transcodeFailures?.length) {
+    console.log(`AVIF transcode failures (${report.transcodeFailures.length}):`);
+    report.transcodeFailures.forEach((f) => console.log(`  - ${f}`));
+  }
   console.log(`components → shortcodes: ${top(report.components)}`);
   console.log(`unknown components:      ${top(report.unknown)}`);
-  if (args.includes('--strict') && report.withWarnings) process.exit(1);
+
+  if (report.transcodeFailures?.length) {
+    process.exit(1);
+  }
+  if (args.includes('--strict') && (report.withWarnings || report.transcodeFailures?.length)) {
+    process.exit(1);
+  }
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) main();
