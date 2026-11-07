@@ -139,4 +139,4 @@ Repository administrators should verify the following GitHub settings:
    - If branch protection is enabled on `gh-pages`, ensure `github-actions[bot]` has bypass privileges or permission to push commits directly, otherwise the preview deploy step will be blocked.
 4. **Default Branch Requirement for `workflow_run`**:
    - GitHub Actions requires that any workflow triggered by `workflow_run` exists on the repository's default branch (`master`).
-   - Consequently, `.github/workflows/deploy-hugo-preview.yml` must be merged to `master`. It will remain idle until `Build Hugo PR Preview` runs.
+   - Consequently, `.github/workflows/deploy-hugo-preview.yml` is already merged to `master`, so it will pick up builds from this PR.
