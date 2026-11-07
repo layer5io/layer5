@@ -1,0 +1,16 @@
+# Collections whose missing URLs verify-urls.mjs reports without failing CI.
+# Names come from COLLECTIONS in verify-urls.mjs; "pages" is everything else.
+# When a collection's Phase 3 issue closes, delete its line here in the same PR.
+# This list only ever shrinks: never add a collection back.
+blog
+events
+files
+handbook
+integrations
+learn
+members
+news
+pages
+programs
+resources
+sistent
