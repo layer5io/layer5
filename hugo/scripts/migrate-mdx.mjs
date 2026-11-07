@@ -291,6 +291,21 @@ export function convertFile(source, { slug, file = '' } = {}) {
   return { output: `---\n${newFm}\n---\n\n${newBody.trimEnd()}\n`, stats };
 }
 
+/* ---------------------------------------------------------------- template filter */
+export const TEMPLATE_ALLOWLIST = [
+  'blog/blog-template',
+  'blog/meetTheMaintainer-template',
+  'events/Z_event-template',
+  'members/_member-profile-template',
+  'news/news-template',
+  'resources/resources-template',
+];
+
+export function isTemplatePath(rel) {
+  const norm = rel.replace(/\\/g, '/').replace(/^\/+/, '');
+  return TEMPLATE_ALLOWLIST.some((prefix) => norm === prefix || norm.startsWith(prefix + '/'));
+}
+
 /* ---------------------------------------------------------------- filesystem driver */
 function* walk(dir) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -302,10 +317,15 @@ function* walk(dir) {
 
 export function migrate({ src, dest, dryRun = false }) {
   const report = { generated: new Date().toISOString(), dryRun, files: 0, converted: 0, withWarnings: 0, assetsCopied: 0,
-    components: {}, unknown: {}, byCollection: {}, warnings: [] };
+    templatesSkipped: 0, skippedTemplates: [], components: {}, unknown: {}, byCollection: {}, warnings: [] };
   const bump = (o, k, n = 1) => { o[k] = (o[k] || 0) + n; };
   for (const file of walk(src)) {
     const rel = path.relative(src, file);
+    if (isTemplatePath(rel)) {
+      report.templatesSkipped++;
+      report.skippedTemplates.push(rel.replace(/\\/g, '/'));
+      continue;
+    }
     const collection = rel.split(path.sep)[0];
     const ext = path.extname(file);
     const isDoc = ext === '.mdx' || ext === '.md';
@@ -352,7 +372,11 @@ function main() {
   if (get('--report')) fs.writeFileSync(get('--report'), JSON.stringify(report, null, 2));
   if (get('--progress') && !dryRun) updateProgress(get('--progress'), report);
   const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k}×${v}`).join(', ') || '—';
-  console.log(`${dryRun ? '[dry-run] ' : ''}${report.converted}/${report.files} documents converted, ${report.assetsCopied} assets, ${report.withWarnings} with warnings`);
+  console.log(`${dryRun ? '[dry-run] ' : ''}${report.converted}/${report.files} documents converted, ${report.assetsCopied} assets, ${report.templatesSkipped} templates skipped, ${report.withWarnings} with warnings`);
+  if (report.skippedTemplates?.length) {
+    console.log(`Skipped template items (${report.skippedTemplates.length}):`);
+    report.skippedTemplates.forEach((t) => console.log(`  - ${t}`));
+  }
   console.log(`components → shortcodes: ${top(report.components)}`);
   console.log(`unknown components:      ${top(report.unknown)}`);
   if (args.includes('--strict') && report.withWarnings) process.exit(1);

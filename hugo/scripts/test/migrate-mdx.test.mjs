@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { convertFile, migrate } from '../migrate-mdx.mjs';
+import { convertFile, migrate, isTemplatePath } from '../migrate-mdx.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const fx = path.join(here, 'fixtures/collections');
@@ -129,4 +129,25 @@ test('published: invalid value triggers warning and preserves line', () => {
   const { output, stats } = convertFile(input, { slug: 'test-invalid' });
   assert.match(output, /published: not-a-date-or-bool/);
   assert.ok(stats.warnings.some((w) => w.includes('published: invalid value')));
+});
+
+test('template skip: skips exact allowlist authoring templates and preserves integration components', () => {
+  // Exact 6 authoring template roots and their sample assets
+  assert.equal(isTemplatePath('blog/blog-template/index.mdx'), true);
+  assert.equal(isTemplatePath('blog/blog-template/gsoc.webp'), true);
+  assert.equal(isTemplatePath('blog/meetTheMaintainer-template/index.mdx'), true);
+  assert.equal(isTemplatePath('events/Z_event-template/index.mdx'), true);
+  assert.equal(isTemplatePath('events/Z_event-template/servicemeshcon22.webp'), true);
+  assert.equal(isTemplatePath('members/_member-profile-template/index.mdx'), true);
+  assert.equal(isTemplatePath('members/_member-profile-template/display-picture.webp'), true);
+  assert.equal(isTemplatePath('news/news-template/0000-00-00-news-title/index.mdx'), true);
+  assert.equal(isTemplatePath('news/news-template/0000-00-00-news-title/sample.webp'), true);
+  assert.equal(isTemplatePath('resources/resources-template/index.mdx'), true);
+
+  // Integration component icons MUST NOT be skipped
+  assert.equal(isTemplatePath('integrations/argo-workflows/icons/components/workflow-template/icons/color/workflow-template-color.svg'), false);
+  assert.equal(isTemplatePath('integrations/aws-ec2-controller/icons/components/launch-template/icons/color/launch-template-color.svg'), false);
+  assert.equal(isTemplatePath('integrations/gatekeeper/icons/components/constraint-template/icons/color/constraint-template-color.svg'), false);
+  assert.equal(isTemplatePath('integrations/karpenter/icons/components/aws-node-template/icons/white/aws-node-template-white.svg'), false);
+  assert.equal(isTemplatePath('integrations/clickhouse/icons/components/click-house-installation-template/icons/color/click-house-installation-template-color.svg'), false);
 });
