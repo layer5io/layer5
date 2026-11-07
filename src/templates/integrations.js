@@ -39,6 +39,10 @@ export const query = graphql`
           extension
           publicURL
         }
+        darkModeIntegrationIcon {
+          extension
+          publicURL
+        }
         docURL
         category
         components {
