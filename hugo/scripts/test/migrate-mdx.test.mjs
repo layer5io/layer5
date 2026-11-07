@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { convertFile, migrate, isTemplatePath } from '../migrate-mdx.mjs';
+import { convertFile, migrate, isTemplatePath, sniffImageFormat, normalizeAssetFilename, rewriteAssetReferences } from '../migrate-mdx.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const fx = path.join(here, 'fixtures/collections');
@@ -150,4 +150,51 @@ test('template skip: skips exact allowlist authoring templates and preserves int
   assert.equal(isTemplatePath('integrations/gatekeeper/icons/components/constraint-template/icons/color/constraint-template-color.svg'), false);
   assert.equal(isTemplatePath('integrations/karpenter/icons/components/aws-node-template/icons/white/aws-node-template-white.svg'), false);
   assert.equal(isTemplatePath('integrations/clickhouse/icons/components/click-house-installation-template/icons/color/click-house-installation-template-color.svg'), false);
+});
+
+test('sniffImageFormat detects binary headers and empty files', () => {
+  // JPEG
+  assert.equal(sniffImageFormat(Buffer.from([0xFF, 0xD8, 0xFF, 0xE0])), 'jpeg');
+  // PNG
+  assert.equal(sniffImageFormat(Buffer.from([0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A])), 'png');
+  // WebP
+  assert.equal(sniffImageFormat(Buffer.from('RIFF\x00\x00\x00\x00WEBPVP8 ', 'binary')), 'webp');
+  // AVIF
+  assert.equal(sniffImageFormat(Buffer.from('\x00\x00\x00\x1cftypavif', 'binary')), 'avif');
+  // Empty
+  assert.equal(sniffImageFormat(Buffer.alloc(0)), 'empty');
+  // SVG
+  assert.equal(sniffImageFormat(Buffer.from('<svg xmlns="http://www.w3.org/2000/svg"></svg>')), 'svg');
+});
+
+test('normalizeAssetFilename calculates correct extension based on magic bytes', () => {
+  assert.equal(normalizeAssetFilename('hero-image.png', 'jpeg'), 'hero-image.jpg');
+  assert.equal(normalizeAssetFilename('gemini-cli-hero.png', 'webp'), 'gemini-cli-hero.webp');
+  assert.equal(normalizeAssetFilename('kcd_chennai.webp', 'png'), 'kcd_chennai.png');
+  assert.equal(normalizeAssetFilename('correct.png', 'png'), 'correct.png');
+  assert.equal(normalizeAssetFilename('icon.svg', 'empty'), 'icon.svg');
+});
+
+test('rewriteAssetReferences updates bundled references in frontmatter and markdown body', () => {
+  const input = '---\ntitle: "Test"\nthumbnail: ./hero-image.png\n---\nHere is ![Hero](./hero-image.png) and {{< responsive-image src="hero-image.png" >}}';
+  const renames = { 'hero-image.png': 'hero-image.jpg' };
+  const output = rewriteAssetReferences(input, renames);
+  assert.match(output, /thumbnail: \.\/hero-image\.jpg/);
+  assert.match(output, /!\[Hero\]\(\.\/hero-image\.jpg\)/);
+  assert.match(output, /\{\{< responsive-image src="hero-image\.jpg" >\}\}/);
+});
+
+test('migrate() handles zero-byte SVGs by warning and logging to zeroByteSvgs without placeholder', () => {
+  const tempSrc = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-src-'));
+  const tempDest = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-dest-'));
+  const colDir = path.join(tempSrc, 'integrations/test-crd/icons');
+  fs.mkdirSync(colDir, { recursive: true });
+  fs.writeFileSync(path.join(colDir, 'empty.svg'), Buffer.alloc(0));
+
+  const report = migrate({ src: tempSrc, dest: tempDest, dryRun: false });
+  assert.equal(report.zeroByteSvgs.length, 1);
+  assert.ok(report.warnings.some((w) => w.message.includes('zero-byte asset')));
+  const targetSvg = path.join(tempDest, 'integrations/test-crd/icons/empty.svg');
+  assert.ok(fs.existsSync(targetSvg));
+  assert.equal(fs.statSync(targetSvg).size, 0); // Preserved as zero-byte, no placeholder written
 });

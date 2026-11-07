@@ -22,6 +22,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { execSync } from 'node:child_process';
 
 /* ---------------------------------------------------------------- component map */
 export const COMPONENTS = {
@@ -306,6 +307,55 @@ export function isTemplatePath(rel) {
   return TEMPLATE_ALLOWLIST.some((prefix) => norm === prefix || norm.startsWith(prefix + '/'));
 }
 
+/* ---------------------------------------------------------------- asset format detection & normalization */
+export function sniffImageFormat(buf) {
+  if (!buf || buf.length === 0) return 'empty';
+  if (buf.length >= 3 && buf[0] === 0xFF && buf[1] === 0xD8 && buf[2] === 0xFF) return 'jpeg';
+  if (buf.length >= 8 && buf[0] === 0x89 && buf[1] === 0x50 && buf[2] === 0x4E && buf[3] === 0x47 &&
+      buf[4] === 0x0D && buf[5] === 0x0A && buf[6] === 0x1A && buf[7] === 0x0A) return 'png';
+  if (buf.length >= 12 && buf.subarray(0, 4).toString('ascii') === 'RIFF' &&
+      buf.subarray(8, 12).toString('ascii') === 'WEBP') return 'webp';
+  if (buf.length >= 12 && (buf.subarray(4, 12).toString('ascii') === 'ftypavif' ||
+      (buf.subarray(4, 8).toString('ascii') === 'ftyp' && buf.subarray(8, 12).toString('ascii') === 'mif1'))) return 'avif';
+  if (buf.length >= 4 && buf.subarray(0, 4).toString('ascii') === 'GIF8') return 'gif';
+  const head = buf.subarray(0, Math.min(buf.length, 500)).toString('utf8');
+  if (/<svg[\s>]/i.test(head) || /<\?xml[\s\S]*?<svg/i.test(head)) return 'svg';
+  return 'unknown';
+}
+
+export function normalizeAssetFilename(filename, format) {
+  const ext = path.extname(filename).toLowerCase();
+  if (format === 'empty' || format === 'unknown' || format === 'svg' || format === 'gif') return filename;
+  const base = path.basename(filename, ext);
+  if (format === 'jpeg' && ext !== '.jpg' && ext !== '.jpeg') return `${base}.jpg`;
+  if (format === 'png' && ext !== '.png') return `${base}.png`;
+  if (format === 'webp' && ext !== '.webp') return `${base}.webp`;
+  return filename;
+}
+
+export function rewriteAssetReferences(text, renames) {
+  if (!renames || Object.keys(renames).length === 0) return text;
+  let out = text;
+  for (const [oldName, newName] of Object.entries(renames)) {
+    if (oldName === newName) continue;
+    out = out.split(oldName).join(newName);
+  }
+  return out;
+}
+
+export function transcodeAvifToWebp(srcFile, destFile) {
+  try {
+    execSync(`convert "${srcFile}" "${destFile}"`, { stdio: 'ignore' });
+    return true;
+  } catch {}
+  try {
+    const py = `python3 -c "from PIL import Image; Image.open('${srcFile.replace(/\\/g, '/')}').save('${destFile.replace(/\\/g, '/')}', 'WEBP')"`;
+    execSync(py, { stdio: 'ignore' });
+    return true;
+  } catch {}
+  return false;
+}
+
 /* ---------------------------------------------------------------- filesystem driver */
 function* walk(dir) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -316,30 +366,100 @@ function* walk(dir) {
 }
 
 export function migrate({ src, dest, dryRun = false }) {
-  const report = { generated: new Date().toISOString(), dryRun, files: 0, converted: 0, withWarnings: 0, assetsCopied: 0,
-    templatesSkipped: 0, skippedTemplates: [], components: {}, unknown: {}, byCollection: {}, warnings: [] };
+  const report = {
+    generated: new Date().toISOString(), dryRun, files: 0, converted: 0, withWarnings: 0, assetsCopied: 0,
+    templatesSkipped: 0, skippedTemplates: [], assetsRenamed: 0, assetRenames: [],
+    zeroByteSvgs: [], assetsTranscoded: [], components: {}, unknown: {}, byCollection: {}, warnings: []
+  };
   const bump = (o, k, n = 1) => { o[k] = (o[k] || 0) + n; };
-  for (const file of walk(src)) {
+  const allFiles = [...walk(src)];
+  const docFiles = [];
+  const renamesByDir = new Map();
+
+  // Pass 1: assets
+  for (const file of allFiles) {
     const rel = path.relative(src, file);
     if (isTemplatePath(rel)) {
       report.templatesSkipped++;
       report.skippedTemplates.push(rel.replace(/\\/g, '/'));
       continue;
     }
-    const collection = rel.split(path.sep)[0];
     const ext = path.extname(file);
     const isDoc = ext === '.mdx' || ext === '.md';
-    const target = path.join(dest, isDoc ? rel.replace(/\.mdx?$/, '.md') : rel);
+    if (isDoc) {
+      docFiles.push(file);
+      continue;
+    }
+
+    const fileBuf = fs.readFileSync(file);
+    const format = sniffImageFormat(fileBuf);
+    const dir = path.dirname(file);
+    const oldName = path.basename(file);
+    let newName = oldName;
+
+    if (format === 'empty') {
+      report.zeroByteSvgs.push(rel.replace(/\\/g, '/'));
+      report.warnings.push({ file: rel, message: 'zero-byte asset' });
+    } else if (format === 'avif') {
+      // Transcode AVIF to WebP (e.g. news-hero.webp)
+      const target = path.join(dest, rel.replace(/\.avif$/, '.webp'));
+      if (!dryRun) {
+        fs.mkdirSync(path.dirname(target), { recursive: true });
+        const ok = transcodeAvifToWebp(file, target);
+        if (!ok) fs.copyFileSync(file, target);
+      }
+      report.assetsTranscoded.push(rel.replace(/\\/g, '/'));
+      report.assetsCopied++;
+      continue;
+    } else {
+      newName = normalizeAssetFilename(oldName, format);
+      if (newName !== oldName) {
+        const renames = renamesByDir.get(dir) || {};
+        renames[oldName] = newName;
+        renamesByDir.set(dir, renames);
+        report.assetsRenamed++;
+        report.assetRenames.push({ from: rel.replace(/\\/g, '/'), to: newName });
+      }
+    }
+
+    const targetDir = path.dirname(path.join(dest, rel));
+    const target = path.join(targetDir, newName);
+    if (!dryRun) {
+      fs.mkdirSync(targetDir, { recursive: true });
+      fs.copyFileSync(file, target);
+    }
+    report.assetsCopied++;
+  }
+
+  // Pass 2: docs
+  for (const file of docFiles) {
+    const rel = path.relative(src, file);
+    const collection = rel.split(path.sep)[0];
+    const ext = path.extname(file);
+    const target = path.join(dest, rel.replace(/\.mdx?$/, '.md'));
     const col = (report.byCollection[collection] ||= { files: 0, converted: 0, withWarnings: 0 });
-    if (!isDoc) { if (!dryRun) { fs.mkdirSync(path.dirname(target), { recursive: true }); fs.copyFileSync(file, target); } report.assetsCopied++; continue; }
+
     report.files++; col.files++;
     const base = path.basename(file, ext);
     const slug = base === 'index' ? path.basename(path.dirname(file)) : base;
-    const { output, stats } = convertFile(fs.readFileSync(file, 'utf8'), { slug, file: rel });
+
+    let sourceText = fs.readFileSync(file, 'utf8');
+    const dirRenames = renamesByDir.get(path.dirname(file));
+    if (dirRenames) {
+      sourceText = rewriteAssetReferences(sourceText, dirRenames);
+    }
+
+    const { output, stats } = convertFile(sourceText, { slug, file: rel });
     for (const [k, v] of Object.entries(stats.components)) bump(report.components, k, v);
     for (const [k, v] of Object.entries(stats.unknown)) bump(report.unknown, k, v);
-    if (stats.warnings.length) { report.withWarnings++; col.withWarnings++; stats.warnings.forEach((w) => report.warnings.push({ file: rel, message: w })); }
-    if (!dryRun) { fs.mkdirSync(path.dirname(target), { recursive: true }); fs.writeFileSync(target, output); }
+    if (stats.warnings.length) {
+      report.withWarnings++; col.withWarnings++;
+      stats.warnings.forEach((w) => report.warnings.push({ file: rel, message: w }));
+    }
+    if (!dryRun) {
+      fs.mkdirSync(path.dirname(target), { recursive: true });
+      fs.writeFileSync(target, output);
+    }
     report.converted++; col.converted++;
   }
   return report;
@@ -376,6 +496,14 @@ function main() {
   if (report.skippedTemplates?.length) {
     console.log(`Skipped template items (${report.skippedTemplates.length}):`);
     report.skippedTemplates.forEach((t) => console.log(`  - ${t}`));
+  }
+  if (report.zeroByteSvgs?.length) {
+    console.log(`Zero-byte SVGs warning list (${report.zeroByteSvgs.length}):`);
+    report.zeroByteSvgs.forEach((s) => console.log(`  - ${s}`));
+  }
+  if (report.assetRenames?.length) {
+    console.log(`Normalized mismatched assets (${report.assetRenames.length}):`);
+    report.assetRenames.forEach((r) => console.log(`  - ${r.from} -> ${r.to}`));
   }
   console.log(`components → shortcodes: ${top(report.components)}`);
   console.log(`unknown components:      ${top(report.unknown)}`);
