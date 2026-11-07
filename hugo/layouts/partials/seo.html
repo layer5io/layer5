@@ -1,6 +1,7 @@
 {{- $desc := .Description | default .Summary | default site.Params.description | plainify | truncate 200 -}}
+{{- $defaultImage := site.Params.image | default "/images/layer5-gradient.webp" | absURL -}}
 {{- $image := "" -}}
-{{- with .Params.thumbnail }}{{ with $.Resources.GetMatch . }}{{ $image = (.Resize "1200x webp q85").Permalink }}{{ end }}{{ end -}}
+{{- with .Params.thumbnail }}{{ with $.Resources.GetMatch (strings.TrimPrefix "./" .) }}{{ if reflect.IsImageResourceProcessable . }}{{ $image = (.Resize "1200x webp q85").Permalink }}{{ else }}{{ $image = $defaultImage }}{{ end }}{{ end }}{{ end -}}
 <meta name="description" content="{{ $desc }}">
 <link rel="canonical" href="{{ .Permalink }}">
 <meta property="og:site_name" content="{{ site.Title }}">
