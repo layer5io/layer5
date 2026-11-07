@@ -30,13 +30,18 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22     # only for migration tooling + Pagefind; not used to build the site
+          node-version: 22
+          cache: npm
+          cache-dependency-path: hugo/package-lock.json
 
       # Hugo version pin: 0.162.1 (verified locally and on Linux in WSL)
       - uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: "0.162.1"
           extended: true
+
+      - name: Install tooling dependencies
+        run: npm ci
 
       - name: Tooling tests
         run: node --test "scripts/test/*.test.mjs"
@@ -45,7 +50,7 @@ jobs:
         run: hugo --minify --gc --logLevel warn --printPathWarnings
 
       - name: Search index (Pagefind)
-        run: npx -y pagefind --site public
+        run: npx pagefind --site public
 
       - name: Link check (internal)
         uses: lycheeverse/lychee-action@v2

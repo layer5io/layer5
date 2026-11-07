@@ -14,9 +14,10 @@
 
 include .github/build/Makefile.show-help.mk
 
-## Install layer5.io dependencies your local machine.
+## Install Layer5.io Gatsby and Hugo migration tooling dependencies.
 setup:
 	npm install --legacy-peer-deps
+	cd hugo && npm ci
 
 # "make site" - The default lightweight build keeps the dev server fast by skipping heavy collections.
 ## Run a partial build of layer5.io on your local machine.
