@@ -13,7 +13,7 @@
   {{ end }}
   {{ if gt (len .TableOfContents) 80 }}<aside class="toc" data-pagefind-ignore><p class="footer-title">On this page</p>{{ .TableOfContents }}</aside>{{ end }}
   <div class="prose">{{ .Content }}</div>
-  {{ with .Params.tags }}<ul class="chips plain">{{ range . }}<li><a class="chip" href="{{ printf "/tags/%s/" (. | urlize) | relURL }}">#{{ . }}</a></li>{{ end }}</ul>{{ end }}
+  {{ with .Params.tags }}<ul class="chips plain">{{ range . }}<li><a class="chip" href="{{ printf "tags/%s/" (. | urlize) | relURL }}">#{{ . }}</a></li>{{ end }}</ul>{{ end }}
 </article>
 {{ with first 3 (site.RegularPages.Related .) }}
 <section class="wrap block" data-pagefind-ignore>

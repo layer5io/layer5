@@ -1,13 +1,15 @@
 <header class="site-header" data-pagefind-ignore>
   <div class="wrap site-header__inner">
-    <a class="brand" href="{{ "/" | relURL }}" aria-label="Layer5 home">
+    <a class="brand" href="{{ site.Home.RelPermalink }}" aria-label="Layer5 home">
       <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path d="M16 2 3 9l13 7 13-7z" fill="var(--accent)"/><path d="m3 15 13 7 13-7" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linejoin="round"/><path d="m3 21 13 7 13-7" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linejoin="round" opacity=".55"/></svg>
       <span>Layer5</span>
     </a>
     <nav class="nav" aria-label="Primary">
       {{ $current := . }}
       {{ range site.Menus.main }}
-        <a href="{{ .URL }}"{{ if or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }} aria-current="page"{{ end }}>{{ .Name }}</a>
+        {{ $menuUrl := .URL }}
+        {{ with .Page }}{{ $menuUrl = .RelPermalink }}{{ end }}
+        <a href="{{ $menuUrl }}"{{ if or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }} aria-current="page"{{ end }}>{{ .Name }}</a>
       {{ end }}
     </nav>
     <div class="tools">
