@@ -91,3 +91,42 @@ test('migrate(): maps index.mdx → index.md, copies assets, reports per collect
   migrate({ src: fx, dest: dry, dryRun: true });
   assert.deepEqual(fs.readdirSync(dry), []);
 });
+
+test('published: TRUE (uppercase boolean) is stripped without error', () => {
+  const input = '---\ntitle: "Uppercase Test"\npublished: TRUE\n---\nHello world\n';
+  const { output, stats } = convertFile(input, { slug: 'test-true' });
+  assert.doesNotMatch(output, /published/i);
+  assert.doesNotMatch(output, /draft/i);
+  assert.equal(stats.warnings.length, 0);
+});
+
+test('published: false with trailing comment converts to draft: true', () => {
+  const input = '---\ntitle: "Comment Test"\npublished: false # Mandatory field for Gatsby\n---\nHello world\n';
+  const { output, stats } = convertFile(input, { slug: 'test-comment' });
+  assert.match(output, /draft: true/);
+  assert.doesNotMatch(output, /published/);
+  assert.equal(stats.warnings.length, 0);
+});
+
+test('published: ISO date maps to publishDate and preserves date string', () => {
+  const input = '---\ntitle: "Date Test"\npublished: 2026-03-25\n---\nHello world\n';
+  const { output, stats } = convertFile(input, { slug: 'test-date' });
+  assert.match(output, /publishDate: 2026-03-25/);
+  assert.doesNotMatch(output, /^published:/m);
+  assert.equal(stats.warnings.length, 0);
+});
+
+test('published: false does not overwrite existing draft: false', () => {
+  const input = '---\ntitle: "Existing Draft Test"\ndraft: false\npublished: false\n---\nHello world\n';
+  const { output, stats } = convertFile(input, { slug: 'test-draft' });
+  assert.match(output, /draft: false/);
+  const matches = output.match(/draft:/g);
+  assert.equal(matches.length, 1);
+});
+
+test('published: invalid value triggers warning and preserves line', () => {
+  const input = '---\ntitle: "Invalid Test"\npublished: not-a-date-or-bool\n---\nHello world\n';
+  const { output, stats } = convertFile(input, { slug: 'test-invalid' });
+  assert.match(output, /published: not-a-date-or-bool/);
+  assert.ok(stats.warnings.some((w) => w.includes('published: invalid value')));
+});

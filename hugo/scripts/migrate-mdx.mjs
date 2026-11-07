@@ -209,21 +209,67 @@ export function convertBody(body, ctx) {
 
 /* ---------------------------------------------------------------- front matter */
 export function convertFrontMatter(fm, slug, ctx) {
-  const lines = fm.split('\n'); const out = []; let hasSlug = false;
+  const lines = fm.split('\n').map((l) => l.replace(/\r$/, ''));
+  const out = [];
+  let hasSlug = false;
+  const hasDraft = lines.some((l) => /^\s*draft\s*:/i.test(l));
+
   for (const line of lines) {
     let m;
-    if ((m = /^redirect_from\s*:(.*)$/.exec(line))) { out.push(`aliases:${m[1]}`); ctx.count('redirectFrom'); continue; }
-    if ((m = /^published\s*:\s*(true|false)\s*$/.exec(line))) { if (m[1] === 'false') out.push('draft: true'); continue; }
-    if ((m = /^(thumbnail|image|cover)\s*:\s*(.*)$/.exec(line))) {
-      const v = m[2].trim().replace(/^['"]|['"]$/g, '');
-      if (/^\.\.\//.test(v) || /^\/?(static|assets|src)\//.test(v)) { ctx.warn(`${m[1]}: "${v}" is outside the page bundle — move it next to index.md`); out.push(line); }
-      else out.push(`${m[1]}: ${v.replace(/^\.\//, '')}`);
+    if ((m = /^redirect_from\s*:(.*)$/.exec(line))) {
+      out.push(`aliases:${m[1]}`);
+      ctx.count('redirectFrom');
       continue;
     }
+
+    if ((m = /^published\s*:\s*(.*)$/.exec(line))) {
+      const rawVal = m[1].trim();
+      const valWithoutComment = rawVal.replace(/\s*#.*$/, '').trim();
+      const lower = valWithoutComment.toLowerCase();
+
+      // 1. Only act on boolean values (case-insensitive)
+      if (lower === 'true' || lower === 'false') {
+        if (lower === 'false' && !hasDraft) {
+          out.push('draft: true');
+        }
+        continue;
+      }
+
+      // 2. Placeholder comment template line (e.g. published: # comment)
+      if (rawVal.startsWith('#') || rawVal === '') {
+        continue;
+      }
+
+      // 3. Restrict date branch strictly to ISO dates (YYYY-MM-DD...)
+      if (/^\d{4}-\d{2}-\d{2}/.test(valWithoutComment)) {
+        out.push(`publishDate: ${valWithoutComment}`);
+        continue;
+      }
+
+      // 4. Neither boolean nor ISO date: warn and preserve
+      ctx.warn(`published: invalid value "${rawVal}" (expected boolean or ISO date)`);
+      out.push(line);
+      continue;
+    }
+
+    if ((m = /^(thumbnail|image|cover)\s*:\s*(.*)$/.exec(line))) {
+      const v = m[2].trim().replace(/^['"]|['"]$/g, '');
+      if (/^\.\.\//.test(v) || /^\/?(static|assets|src)\//.test(v)) {
+        ctx.warn(`${m[1]}: "${v}" is outside the page bundle — move it next to index.md`);
+        out.push(line);
+      } else {
+        out.push(`${m[1]}: ${v.replace(/^\.\//, '')}`);
+      }
+      continue;
+    }
+
     if (/^slug\s*:/.test(line)) hasSlug = true;
     out.push(line);
   }
-  if (!hasSlug && slug) { out.push(`slug: ${slug}`); ctx.count('slugAdded'); }
+  if (!hasSlug && slug) {
+    out.push(`slug: ${slug}`);
+    ctx.count('slugAdded');
+  }
   return out.join('\n');
 }
 
