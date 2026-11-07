@@ -36,6 +36,11 @@ const CollaborationFeatureWrapper = styled.div`
   .hero-image {
     flex: 0 0 50%;
     max-width: 50%;
+    @media only screen and (max-width: 767px) {
+      flex: 0 0 auto;
+      max-width: 100%;
+      width: 100%;
+    }
   }
 
   img {
@@ -55,6 +60,8 @@ const CollaborationFeatureWrapper = styled.div`
 
     @media only screen and (max-width: 767px) {
       width: 100%;
+      height: auto;
+      object-fit: contain;
     }
   }
 
