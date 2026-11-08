@@ -94,9 +94,10 @@ function main() {
   const a = process.argv.slice(2); const get = (f) => { const i = a.indexOf(f); return i < 0 ? undefined : a[i + 1]; };
   let oldPath = get('--old');
   const invPath = get('--inventory'), publicDir = get('--public');
-  // Hugo writes a sitemap into public/. Without one the Hugo URL and "new in Hugo" counts are 0.
+  // Hugo writes a sitemap into public/. The Hugo URL and "new in Hugo" counts come from it.
   const builtSitemap = publicDir && path.join(publicDir, 'sitemap.xml');
   const newPath = get('--new') || (builtSitemap && fs.existsSync(builtSitemap) ? builtSitemap : undefined);
+  const hasSitemap = Boolean(newPath && fs.existsSync(newPath));
   if (!oldPath && !invPath && fs.existsSync('.bench/gatsby-sitemap.xml')) {
     console.warn('Warning: --old not specified. Falling back to cached benchmark sitemap (.bench/gatsby-sitemap.xml).');
     oldPath = '.bench/gatsby-sitemap.xml';
@@ -111,7 +112,7 @@ function main() {
   console.log(`Comparing Gatsby URLs: ${invPath || oldPath}\nAgainst Hugo build:    ${[publicDir, newPath].filter(Boolean).join(' + ')}`);
   const r = compare({
     oldXml: oldPath ? fs.readFileSync(oldPath, 'utf8') : '', oldUrls,
-    newXml: newPath && fs.existsSync(newPath) ? fs.readFileSync(newPath, 'utf8') : '',
+    newXml: hasSitemap ? fs.readFileSync(newPath, 'utf8') : '',
     redirectsTxt: redirectsPath && fs.existsSync(redirectsPath) ? fs.readFileSync(redirectsPath, 'utf8') : '',
     ...(publicDir ? scanPublic(publicDir, oldUrls || locs(fs.readFileSync(oldPath, 'utf8'))) : {}),
     ignore: get('--ignore') ? new RegExp(get('--ignore')) : null,
@@ -123,7 +124,10 @@ function main() {
   for (const x of rows) {
     console.log(`  ${x.collection.padEnd(13)} MISSING: ${String(x.missing).padStart(4)} of ${String(x.urls).padStart(4)}   redirected: ${String(x.redirected).padStart(3)}${x.allowed ? '   (allow-listed, reported only)' : ''}`);
   }
-  console.log(`\nGatsby URLs: ${r.oldCount}  Hugo URLs: ${r.newCount}  same-or-redirected: ${r.present.length + r.redirected.length}  MISSING: ${r.missing.length}  new in Hugo: ${r.added.length}`);
+  // Without a sitemap there is nothing to count, so print n/a rather than a misleading 0.
+  const [hugoUrls, newInHugo] = hasSitemap ? [r.newCount, r.added.length] : ['n/a', 'n/a'];
+  console.log(`\nGatsby URLs: ${r.oldCount}  Hugo URLs: ${hugoUrls}  same-or-redirected: ${r.present.length + r.redirected.length}  MISSING: ${r.missing.length}  new in Hugo: ${newInHugo}`);
+  if (!hasSitemap) console.log('(No Hugo sitemap.xml found, so Hugo URLs and new in Hugo are not counted.)');
   if (get('--report')) {
     fs.mkdirSync(path.dirname(get('--report')), { recursive: true });
     fs.writeFileSync(get('--report'), JSON.stringify({ collections: rows, missing: r.missing, redirected: r.redirected, added: r.added }, null, 2) + '\n');

@@ -90,3 +90,15 @@ test('CLI: --public reads the built sitemap for the Hugo URL count when --new is
   assert.match(out, /Gatsby URLs: 2 {2}Hugo URLs: 3 {2}same-or-redirected: 2 {2}MISSING: 0 {2}new in Hugo: 1/);
   fs.rmSync(dir, { recursive: true });
 });
+
+test('CLI: without a Hugo sitemap the Hugo counts say n/a instead of 0', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'verify-urls-'));
+  const put = (p, s) => { fs.mkdirSync(path.dirname(path.join(dir, p)), { recursive: true }); fs.writeFileSync(path.join(dir, p), s); };
+  put('public/index.html', '<title>Home</title>');
+  put('public/blog/a/index.html', '<title>A</title>');
+  put('inventory.json', JSON.stringify({ urls: [{ url: '/' }, { url: '/blog/a/' }] }));
+  const script = fileURLToPath(new URL('../verify-urls.mjs', import.meta.url));
+  const out = execFileSync(process.execPath, [script, '--inventory', path.join(dir, 'inventory.json'), '--public', path.join(dir, 'public')], { encoding: 'utf8' });
+  assert.match(out, /Gatsby URLs: 2 {2}Hugo URLs: n\/a {2}same-or-redirected: 2 {2}MISSING: 0 {2}new in Hugo: n\/a/);
+  fs.rmSync(dir, { recursive: true });
+});
