@@ -26,7 +26,9 @@ export const ThemeManagerContext = createContext(defaultState);
 const isBrowser = typeof window !== "undefined";
 
 const systemDarkModeSetting = () =>
-  isBrowser && window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+  isBrowser && window.matchMedia
+    ? window.matchMedia("(prefers-color-scheme: dark)")
+    : null;
 
 const isDarkModeActive = () => {
   return !!systemDarkModeSetting()?.matches;
@@ -43,7 +45,7 @@ const applyThemeToDOM = (theme) => {
 export const ThemeManagerProvider = (props) => {
   const [themeSetting, setThemeSetting] = useState(ThemeSetting.SYSTEM);
   const [didLoad, setDidLoad] = useState(false);
-  
+
   const [isDark, setIsDark] = useState(() => {
     if (isBrowser) {
       if (window.__theme === ThemeSetting.DARK) return true;
@@ -52,50 +54,80 @@ export const ThemeManagerProvider = (props) => {
     return false;
   });
 
+  const applyThemePreference = useCallback((preference) => {
+    const isSystem =
+      preference === null ||
+      preference === ThemeSetting.SYSTEM ||
+      (preference !== ThemeSetting.LIGHT && preference !== ThemeSetting.DARK);
+
+    const resolvedTheme = isSystem
+      ? isDarkModeActive()
+        ? ThemeSetting.DARK
+        : ThemeSetting.LIGHT
+      : preference;
+
+    setThemeSetting(isSystem ? ThemeSetting.SYSTEM : preference);
+    setIsDark(resolvedTheme === ThemeSetting.DARK);
+    applyThemeToDOM(resolvedTheme);
+  }, []);
+
   useEffect(() => {
     if (!isBrowser) return;
 
-    const root = window.document.documentElement;
-    const initialColorValue = (root.style.getPropertyValue("--initial-color-mode") || "").trim();
-    const actualTheme = window.__theme || initialColorValue || ThemeSetting.DARK;
-    
-    // Get stored theme from localStorage
     const storedTheme = localStorage.getItem(DarkThemeKey);
 
-    if (storedTheme && storedTheme !== ThemeSetting.SYSTEM) {
-      const isDarkTheme = storedTheme === ThemeSetting.DARK;
-      setIsDark(isDarkTheme);
-      setThemeSetting(storedTheme);
-      applyThemeToDOM(storedTheme);
-    } else if (actualTheme) {
-      setIsDark(actualTheme === ThemeSetting.DARK);
-      setThemeSetting(ThemeSetting.SYSTEM);
-    } else {
-      // Fallback to system preference
-      const systemIsDark = isDarkModeActive();
-      setIsDark(systemIsDark);
-      const theme = systemIsDark ? ThemeSetting.DARK : ThemeSetting.LIGHT;
-      applyThemeToDOM(theme);
-    }
+    applyThemePreference(storedTheme);
 
     setDidLoad(true);
-  }, []);
+  }, [applyThemePreference]);
 
-   // Listen to system color scheme changes only when on SYSTEM mode
+  // Listen to system color scheme changes only when on SYSTEM mode
   useEffect(() => {
     if (!isBrowser || themeSetting !== ThemeSetting.SYSTEM) return;
 
     const darkModeMediaQuery = systemDarkModeSetting();
     if (!darkModeMediaQuery) return;
 
-    const handleChange = (e) => {
-      setIsDark(e.matches);
-      applyThemeToDOM(e.matches ? ThemeSetting.DARK : ThemeSetting.LIGHT);
+    const handleChange = () => {
+      const storedTheme = localStorage.getItem(DarkThemeKey);
+
+      // Only follow OS changes when no explicit preference exists.
+      if (
+        storedTheme !== ThemeSetting.LIGHT &&
+        storedTheme !== ThemeSetting.DARK
+      ) {
+        applyThemePreference(storedTheme);
+      }
     };
 
     darkModeMediaQuery.addEventListener("change", handleChange);
-    return () => darkModeMediaQuery.removeEventListener("change", handleChange);
-  }, [themeSetting]);
+
+    return () => {
+      darkModeMediaQuery.removeEventListener("change", handleChange);
+    };
+  }, [themeSetting, applyThemePreference]);
+
+  useEffect(() => {
+    if (!isBrowser) return;
+
+    const handleStorageChange = (event) => {
+      // Ignore changes from sessionStorage or unrelated localStorage keys.
+      if (event.storageArea !== window.localStorage) return;
+      if (event.key !== DarkThemeKey && event.key !== null) return;
+
+      // event.newValue is null when the theme key is removed.
+      // event.key is null when localStorage.clear() is called.
+      const newPreference = event.key === null ? null : event.newValue;
+
+      applyThemePreference(newPreference);
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, [applyThemePreference]);
 
   const toggleDark = useCallback(() => {
     if (!isBrowser) return;
@@ -103,11 +135,11 @@ export const ThemeManagerProvider = (props) => {
     const newIsDark = !isDark;
     const newTheme = newIsDark ? ThemeSetting.DARK : ThemeSetting.LIGHT;
 
-      // Update state
+    // Update state
     setIsDark(newIsDark);
     setThemeSetting(newTheme);
 
-     // Apply to DOM immediately
+    // Apply to DOM immediately
     applyThemeToDOM(newTheme);
 
     // Persist to localStorage
@@ -139,17 +171,17 @@ export const ThemeManagerProvider = (props) => {
           return;
       }
 
-        // Update state
+      // Update state
       setIsDark(newIsDark);
       setThemeSetting(setting);
 
       // Apply to DOM immediately
       applyThemeToDOM(themeToApply);
 
-       // Persist to localStorage
+      // Persist to localStorage
       localStorage.setItem(DarkThemeKey, setting);
     },
-    [isDark]
+    [isDark],
   );
 
   return (
