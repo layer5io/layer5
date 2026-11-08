@@ -111,8 +111,8 @@
   "aaa5778d.js": "aaa5778d-7cb243715dc3f420f8f8.js",
   "ac581ebe.js": "ac581ebe-d8f297aa0b7917a0edd2.js",
   "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff.js": "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff-a49d57499f0546cd498e.js",
-  "app-1ab3414b2735126b0723.js.LICENSE.txt": "app-1ab3414b2735126b0723.js.LICENSE.txt",
-  "app.js": "app-1ab3414b2735126b0723.js",
+  "app-37104d2af4683ff43309.js.LICENSE.txt": "app-37104d2af4683ff43309.js.LICENSE.txt",
+  "app.js": "app-37104d2af4683ff43309.js",
   "b5f6012b.js": "b5f6012b-0d788a08c9a6ff5be2b5.js",
   "b94c7d6e898e669bbfd99da21b2e9e67976b8f68.js": "b94c7d6e898e669bbfd99da21b2e9e67976b8f68-29ed6451ccaef992cd70.js",
   "ba5828f4dac0658416d102e02536a23fbd61d3fb.js": "ba5828f4dac0658416d102e02536a23fbd61d3fb-680d94241fafedb1da8d.js",
@@ -121,7 +121,7 @@
   "be8468a7f31feaa6d37ce23e9b25e80115261bb4.js": "be8468a7f31feaa6d37ce23e9b25e80115261bb4-23e84b8e69cdc03d3eb8.js",
   "c2bcf2fcb9cc985e567e340450119f2a9cad74ae.js": "c2bcf2fcb9cc985e567e340450119f2a9cad74ae-4060482d2a1c60ba38c0.js",
   "c50bacb0.js": "c50bacb0-00b6cd00424e14aa3d4f.js",
-  "c81cdc0683fe3677cc2abc6fe2f2136c9a4985d7.js": "c81cdc0683fe3677cc2abc6fe2f2136c9a4985d7-10ec79dec7b96387c0f5.js",
+  "c81cdc0683fe3677cc2abc6fe2f2136c9a4985d7.js": "c81cdc0683fe3677cc2abc6fe2f2136c9a4985d7-d70ea1566a80cc85e23b.js",
   "catalog.png": "static/catalog-1a65561af4fcb4d8f51b2c10e4406216.png",
   "cb24a44fe9306554c9a53ab3776539c436724304.js": "cb24a44fe9306554c9a53ab3776539c436724304-76e6ab6bfc7220a8a59e.js",
   "cdfd8999.js": "cdfd8999-f3806a357cabced23c29.js",
@@ -2127,5 +2127,5 @@
   "static/yash-sharma.webp": "static/yash-sharma-54aa26b6e5743f0557cfc76aa9797f2d.webp",
   "static/yogi.webp": "static/yogi-d00ca1cc48ab74938a23d4359ef3fb01.webp",
   "styles.css": "styles.e4c6b1d4a846f94125a9.css",
-  "webpack-runtime.js": "webpack-runtime-4aba2ec1cac4c6d546d5.js"
+  "webpack-runtime.js": "webpack-runtime-3a9198afe6c8db931eac.js"
 }
