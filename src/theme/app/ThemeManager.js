@@ -76,7 +76,18 @@ export const ThemeManagerProvider = (props) => {
 
     const storedTheme = localStorage.getItem(DarkThemeKey);
 
-    applyThemePreference(storedTheme);
+    // When following the system preference, trust the pre-paint value
+    // from onRenderBody.js so the first React render matches what was painted.
+    if (
+      (storedTheme === null || storedTheme === ThemeSetting.SYSTEM) &&
+      window.__theme
+    ) {
+      setThemeSetting(ThemeSetting.SYSTEM);
+      setIsDark(window.__theme === ThemeSetting.DARK);
+      applyThemeToDOM(window.__theme);
+    } else {
+      applyThemePreference(storedTheme);
+    }
 
     setDidLoad(true);
   }, [applyThemePreference]);
