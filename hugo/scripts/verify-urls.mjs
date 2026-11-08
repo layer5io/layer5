@@ -93,7 +93,10 @@ export const readAllowList = (txt) => new Set(txt.split('\n').map((l) => l.repla
 function main() {
   const a = process.argv.slice(2); const get = (f) => { const i = a.indexOf(f); return i < 0 ? undefined : a[i + 1]; };
   let oldPath = get('--old');
-  const invPath = get('--inventory'), newPath = get('--new'), publicDir = get('--public');
+  const invPath = get('--inventory'), publicDir = get('--public');
+  // Hugo writes a sitemap into public/. Without one the Hugo URL and "new in Hugo" counts are 0.
+  const builtSitemap = publicDir && path.join(publicDir, 'sitemap.xml');
+  const newPath = get('--new') || (builtSitemap && fs.existsSync(builtSitemap) ? builtSitemap : undefined);
   if (!oldPath && !invPath && fs.existsSync('.bench/gatsby-sitemap.xml')) {
     console.warn('Warning: --old not specified. Falling back to cached benchmark sitemap (.bench/gatsby-sitemap.xml).');
     oldPath = '.bench/gatsby-sitemap.xml';

@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 import { compare, norm, isAliasStub, scanPublic, collectionOf, perCollection, readAllowList } from '../verify-urls.mjs';
 
 const xml = (...u) => `<urlset>${u.map((x) => `<url><loc>${x}</loc></url>`).join('')}</urlset>`;
@@ -74,4 +76,17 @@ test('perCollection: missing URLs fail only outside the allow-list', () => {
   const r = { present: ['/blog/a/'], redirected: [], missing: ['/blog/b/', '/community/members/x/'] };
   const rows = perCollection(r, readAllowList('# comment\nmembers\n'));
   assert.deepEqual(rows.map((x) => [x.collection, x.urls, x.missing, x.fails]), [['blog', 2, 1, true], ['members', 1, 1, false]]);
+});
+
+test('CLI: --public reads the built sitemap for the Hugo URL count when --new is not given', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'verify-urls-'));
+  const put = (p, s) => { fs.mkdirSync(path.dirname(path.join(dir, p)), { recursive: true }); fs.writeFileSync(path.join(dir, p), s); };
+  put('public/index.html', '<title>Home</title>');
+  put('public/blog/a/index.html', '<title>A</title>');
+  put('public/sitemap.xml', xml('https://layer5.io/', 'https://layer5.io/blog/a/', 'https://layer5.io/new/'));
+  put('inventory.json', JSON.stringify({ urls: [{ url: '/' }, { url: '/blog/a/' }] }));
+  const script = fileURLToPath(new URL('../verify-urls.mjs', import.meta.url));
+  const out = execFileSync(process.execPath, [script, '--inventory', path.join(dir, 'inventory.json'), '--public', path.join(dir, 'public')], { encoding: 'utf8' });
+  assert.match(out, /Gatsby URLs: 2 {2}Hugo URLs: 3 {2}same-or-redirected: 2 {2}MISSING: 0 {2}new in Hugo: 1/);
+  fs.rmSync(dir, { recursive: true });
 });
