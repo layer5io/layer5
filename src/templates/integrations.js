@@ -64,7 +64,7 @@ export const query = graphql`
       }
     }
     screenshots_raster: allFile(
-      filter: {relativeDirectory: {eq: $name}, sourceInstanceName: {eq: "integrations"}, extension: {ne: "svg"}}
+      filter: {relativeDirectory: {eq: $name}, sourceInstanceName: {eq: "collections"}, extension: {ne: "svg"}}
     ) {
       nodes {
         extension
@@ -75,7 +75,7 @@ export const query = graphql`
       }
     }
     screenshots_svg: allFile(
-      filter: {relativeDirectory: {eq: $name}, sourceInstanceName: {eq: "integrations"}, extension: {eq: "svg"}}
+      filter: {relativeDirectory: {eq: $name}, sourceInstanceName: {eq: "collections"}, extension: {eq: "svg"}}
     ) {
       nodes {
         extension
