@@ -5,7 +5,6 @@ import BrandGuideImg from "../../../../assets/images/Brand-Guide/brand-guide.web
 
 import { Row, Col } from "../../../../reusecore/Layout";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import { Link } from "gatsby";
 
 const Layer5Wrapper = styled.section`
     @media (max-width:575px){
