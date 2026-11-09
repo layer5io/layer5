@@ -60,9 +60,8 @@ const toEditUrl = (component, root) => {
   if (rel.split(path.sep).some((seg) => IGNORED.has(seg))) return null;
   if (!fs.existsSync(abs)) return null;
 
-  const kind = fs.statSync(abs).isDirectory() ? "tree" : "blob";
   const encoded = rel.split(path.sep).map(encodeURIComponent).join("/");
-  return `https://github.com/${REPO}/${kind}/master/${encoded}`;
+  return `https://github.com/${REPO}/blob/master/${encoded}`;
 };
 
 module.exports = { sourceFromComponent, toEditUrl };

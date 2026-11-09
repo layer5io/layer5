@@ -17,11 +17,12 @@ import { GlobalStyle } from "../sections/app.style";
 import CookieConsent from "./CookieConsent";
 
 const Layout = ({ children, pageContext }) => {
+
   return (
     <>
       <GlobalStyle />
       {/* <TopPromotionalBanner /> */}
-      <Navigation />
+      <Navigation/>
       <CookieConsent />
       {children}
       <ScrollToTopBtn />

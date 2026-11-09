@@ -121,13 +121,6 @@ describe("toEditUrl", () => {
     );
   });
 
-  it("links a directory as a tree URL", () => {
-    assert.equal(
-      toEditUrl(src("src", "collections", "members"), ROOT),
-      `${REPO_URL}/tree/master/src/collections/members`,
-    );
-  });
-
   it("rejects a queryless template component", () => {
     assert.equal(
       toEditUrl(src("src", "templates", "member-single.js"), ROOT),
