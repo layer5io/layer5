@@ -103,7 +103,7 @@ const MemberSingle = ({ frontmatter, children }) => {
                       {badges.includes("smp") && (
                         <div className="tooltip">
                           <li>
-                            <Link to="/projects/service-mesh-performance">
+                            <Link to="/projects/cloud-native-performance">
                               <img
                                 className="profile-social-links"
                                 src={smpLogo}
