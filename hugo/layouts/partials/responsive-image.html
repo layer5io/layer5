@@ -4,11 +4,12 @@
   - Skips processing for SVG/GIF (Hugo can't resize them) and never upscales.
   - Emits width/height so there is zero layout shift.
 */}}
-{{- $img := .page.Resources.GetMatch .src -}}
+{{- $src := strings.TrimPrefix "./" .src -}}
+{{- $img := .page.Resources.GetMatch $src -}}
 {{- if $img -}}
   {{- $alt := .alt | default "" -}}
   {{- $loading := cond (.eager | default false) "eager" "lazy" -}}
-  {{- if or (strings.HasSuffix $img.Name ".svg") (strings.HasSuffix $img.Name ".gif") -}}
+  {{- if or (not (reflect.IsImageResourceProcessable $img)) (strings.HasSuffix $img.Name ".gif") -}}
     <img src="{{ $img.RelPermalink }}" alt="{{ $alt }}" loading="{{ $loading }}" decoding="async">
   {{- else -}}
     {{- $set := slice -}}

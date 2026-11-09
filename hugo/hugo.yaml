@@ -63,6 +63,7 @@ related:
 
 params:
   description: Layer5 — the cloud native management company, home of Meshery.
+  image: /images/layer5-gradient.webp
   repo: https://github.com/layer5io/layer5
   forms:
     # Point at the real Layer5 / HubSpot endpoint. Empty = demo mode (no network call).
