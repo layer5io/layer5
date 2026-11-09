@@ -5,7 +5,7 @@ import BrandGuideImg from "../../../../assets/images/Brand-Guide/brand-guide.web
 
 import { Row, Col } from "../../../../reusecore/Layout";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import { Link } from "gatsby";
+import { withPrefix } from "gatsby";
 
 const Layer5Wrapper = styled.section`
     @media (max-width:575px){
@@ -30,7 +30,7 @@ const BrandGuide = () => {
               </h1>
             </Col>
             <Col $xs={12} $sm={6} className="download-button">
-              <a href="/brand/brand-guide.pdf">
+              <a href={withPrefix("/brand/brand-guide.pdf")}>
                 <Button $primary title="Download Brand Guide" $external={false}>
                   <FiDownloadCloud size={21} className="icon-left" />
                 </Button>
@@ -45,9 +45,9 @@ const BrandGuide = () => {
           <Row>
             <Col $xs={12}>
               <Row className="bookmarks">
-                <Link to="/brand/brand-guide.pdf">
+                <a href={withPrefix("/brand/brand-guide.pdf")} target="_blank" rel="noreferrer">
                   <img className="bookmarks" src={BrandGuideImg} alt="Layer5 Brand Guide" />
-                </Link>
+                </a>
               </Row>
             </Col>
           </Row>
