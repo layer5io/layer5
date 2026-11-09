@@ -4,6 +4,7 @@ import Code from "./src/components/CodeBlock";
 import CTA_ImageOnly from "./src/components/Call-To-Actions/CTA_ImageOnly";
 import CTA_FullWidth from "./src/components/Call-To-Actions/CTA_FullWidth";
 import CTA_Bottom from "./src/components/Call-To-Actions/CTA_Bottom";
+import GatedIframe from "./src/components/GatedIframe";
 import { ContextWrapper } from "./context-wrapper";
 import { IoIosCopy } from "@react-icons/all-files/io/IoIosCopy";
 import { IoIosCheckmark } from "@react-icons/all-files/io/IoIosCheckmark";
@@ -125,6 +126,8 @@ const FencedCode = ({ children, ...preProps }) => {
 };
 
 const components = {
+  GatedIframe,
+  iframe: GatedIframe,
   pre: FencedCode,
   img: OptimizedImage,
   code: InlineCode,
