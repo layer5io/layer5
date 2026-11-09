@@ -83,13 +83,16 @@ export const BooksPageWrapper = styled.div`
             margin-bottom: 4rem;
         }
 
+        .slick-slide > div{
+            padding: 0 0.75rem;
+        }
         .book_image{
-            width: 20rem !important;
+            width: 100% !important;
         }
 
         .blog-slider_img{
             img{
-                width: 20rem;
+                width: 100%;
                 max-height: 26rem;
             }
         }
