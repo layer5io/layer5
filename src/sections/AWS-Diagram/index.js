@@ -13,7 +13,10 @@ const AwsDiagramPage = () => {
   let data = {
     heading: "AWS Orchestration and Diagramming Software",
     sub_heading: "Orchestrate and Design Amazon Web Services architecture diagrams easily with predefined templates and symbols designed for professionals.",
-    image: isDark ? AWSDark : AWSDark
+    image: isDark ? AWSDark : AWSDark,
+    ctaTitle: "Try Kanvas Now!",
+    ctaUrl: "/cloud-native-management/kanvas",
+    ctaExternal: false
   };
   return (
     <>
