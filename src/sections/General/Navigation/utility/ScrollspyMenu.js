@@ -1,28 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
 import Card from "./Card";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
-import { ReactComponent as IngressGatewayImage } from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/ingress-gateway-partial-colorMode.svg";
-import { ReactComponent as KubernetesImage } from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/kubernetes-navbar.svg";
-import { ReactComponent as KubernetesImage1 } from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/kubernetes-navbar-light.svg";
-import { ReactComponent as PodImage } from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/pod-partial-colorMode.svg";
-import { ReactComponent as PrometheusImage } from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/prometheus-partial-colorMode.svg";
-import { ReactComponent as ServiceIntefaceImage } from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/service-interface-partial-colorMode.svg";
-import SupportingArrows from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/supporting-arrows.svg";
-import EmptyLight from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/empty-light.svg";
-import EmptyDark from "../../../../sections/Kanvas/Kanvas-collaborate/images/banner-transitions/empty-dark.svg";
-import { useInView } from "react-intersection-observer";
-import { useStyledDarkMode } from "../../../../theme/app/useStyledDarkMode";
+import loadable from "@loadable/component";
+const KanvasCard = loadable(() => import("./KanvasCard"));
 
 const ScrollspyMenu = ({ menuItems, ...props }) => {
   const { blogData, className } = props;
-  const { isDark } = useStyledDarkMode();
 
   const addAllClasses = className ? [className] : [""];
   const [activeState, setActiveState] = useState(null);
 
   const [isWrapVisible, setIsWrapperVisible] = useState(false);
-  const [imageInView, setimageInView] = useState(false);
 
   const handleMouseOver = (index) => {
     setActiveState(menuItems[index]);
@@ -41,16 +30,6 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
     setIsWrapperVisible(false);
     setActiveState(null);
   };
-
-  const [transitionRef, inView] = useInView({ threshold: 0.7 });
-
-  useEffect(() => {
-    if (inView && !imageInView) {
-      setimageInView(true);
-    } else if (imageInView && !inView) {
-      setimageInView(false);
-    }
-  }, [inView, imageInView]);
 
   return (
     <ul className={addAllClasses.join(" ")} onMouseEnter={wrapDisplay} onMouseLeave={wrapNone}>
@@ -149,29 +128,19 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                   <Card frontmatter={blogData[activeState.name].nodes[0].frontmatter} fields={blogData[activeState.name].nodes[0].fields} />
                   <Card frontmatter={blogData[activeState.name].nodes[1].frontmatter} fields={blogData[activeState.name].nodes[1].fields} />
                 </div>) : (
-                <>
-                  <Link
-                    to="/cloud-native-management/kanvas"
-                    onClick={handleLinkClick}
-                  >
-                    <div className="single-card">
-                      <div className="transition-container" ref={transitionRef}>
-                        <img className="canvas" src={isDark ? EmptyDark : EmptyLight} alt="" />
-                        <ServiceIntefaceImage className="service-interface" alt="ServiceIntefaceImage" />
-                        <IngressGatewayImage alt="IngressGatewayImage" className={imageInView ? "ingress-gateway-transition ingress-gateway" : "ingress-gateway"} />
-                        {isDark ? <KubernetesImage className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" /> : <KubernetesImage1 className={imageInView ? "kubernetes-transition kubernetes" : "kubernetes"} alt="KubernetesImage" />}
-                        <PodImage className={imageInView ? "pod-transition pod" : "pod"} alt="PodImage" />
-                        <PrometheusImage className={imageInView ? "prometheus-transition prometheus" : "prometheus"} alt="PrometheusImage" />
-                        <img className={imageInView ? "supporting-arrows-transition supporting-arrows" : "supporting-arrows"} src={SupportingArrows} alt="" />
-                      </div>
-                      <div className="card-text">
-                        <p>Kanvas</p>
-                        <h6>Stop finger-pointing.</h6>
-                        <h6>Start collaborating.</h6>
-                      </div>
+                <Link
+                  to="/cloud-native-management/kanvas"
+                  onClick={handleLinkClick}
+                >
+                  <div className="single-card">
+                    <KanvasCard />
+                    <div className="card-text">
+                      <p>Kanvas</p>
+                      <h6>Stop finger-pointing.</h6>
+                      <h6>Start collaborating.</h6>
                     </div>
-                  </Link>
-                </>)
+                  </div>
+                </Link>)
               }
             </div>
           </ul>
