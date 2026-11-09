@@ -1,0 +1,12 @@
+---
+name: Peace Onyekachi
+position: Contributor
+image_path: ./peace-ofodile.jpeg
+twitter: peace_ofodile
+github: Code-Ebullient
+blurb: Mesh Head
+status: Inactive
+slug: peace-onyekachi
+---
+
+

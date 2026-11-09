@@ -1,0 +1,12 @@
+---
+name: Karen Hippitaku
+position: Designer
+image_path: ./karen-hippitaku.webp
+twitter: KarenHippitaku
+github: KarenHippitaku
+blurb: Mesh Head
+status: Inactive
+slug: karen-hippitaku
+---
+
+

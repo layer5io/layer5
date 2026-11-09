@@ -1,0 +1,10 @@
+---
+title: AWS orchestration and architecture diagramming
+redirectLink: /cloud-native-management/generate-aws-architecture-diagram
+darkimgsrc: ./aws.svg
+lightimgsrc: ./aws-light.svg
+category: supportedplatform
+slug: aws-orchestration-and-architecture-diagramming
+---
+
+

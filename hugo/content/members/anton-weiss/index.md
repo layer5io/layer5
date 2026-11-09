@@ -1,0 +1,15 @@
+---
+name: Anton Weiss
+position: Contributor
+image_path: ./anton-weiss.webp
+github: antweiss
+twitter: antweiss
+linkedin: antonweiss
+badges:
+ - meshery
+blurb: Mesh Head
+status: Inactive
+slug: anton-weiss
+---
+
+

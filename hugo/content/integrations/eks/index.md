@@ -1,0 +1,30 @@
+---
+title: AWS Elastic Kubernetes Service
+permalink: eks
+subtitle: Diagram and configure your AWS Elastic Kubernetes Service clusters
+integrationIcon: icons/color/eks-color.svg
+darkModeIntegrationIcon: icons/white/eks-white.svg
+docURL: https://docs.meshery.io/installation/kubernetes/eks
+description: 
+category: Orchestration & Management
+subcategory: Scheduling & Orchestration
+registrant: Artifact Hub
+components: []
+featureList: [
+  "Save and share EKS configuration templates",
+  "Ensure multi-tenancy enforcement",
+  "Dry run your EKS configuration changes"
+]
+workingSlides: [
+  ../_images/kanvas-visualizer.png,
+  ../_images/kanvas-designer.png
+]
+howItWorks: "Collaborative Infrastructure as Design"
+howItWorksDetails: "Collaboratively manage infrastructure with your coworkers synchronously sharing the same designs."
+slug: eks
+---
+
+<p>
+Amazon Elastic Kubernetes Service (EKS) is a managed service and certified Kubernetes conformant to run Kubernetes on AWS and on-premises.
+</p>
+<p>Take advantage of Meshery's multi-cluster Kubernetes management features in your EKS environments. Design, build, and automate anything for your work by integrating apps like EKS to create visual automated workflows. Choose from hundreds of ready-made design patterns or use our no-code designer, Kanvas to connect to apps not yet in our library.</p>

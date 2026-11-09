@@ -1,10 +1,48 @@
-{{ define "main" }}
+﻿{{ define "main" }}
 <article class="wrap prose-wrap">
-  <div class="avatar avatar--lg" aria-hidden="true">{{ substr .Title 0 1 }}</div>
-  <h1>{{ .Title }}</h1>
-  <p class="lede">{{ .Params.role }}</p>
+  {{ $name := .Params.name | default .Title }}
+  {{ $role := .Params.position | default .Params.role }}
+  {{ $imagePath := strings.TrimPrefix "./" .Params.image_path }}
+
+  {{ with .Resources.GetMatch $imagePath }}
+    <img class="avatar avatar--lg" src="{{ .RelPermalink }}" alt="{{ $name }}" loading="lazy">
+  {{ else }}
+    <div class="avatar avatar--lg" aria-hidden="true">{{ substr $name 0 1 }}</div>
+  {{ end }}
+
+  <h1>{{ $name }}</h1>
+  {{ with $role }}<p class="lede">{{ . }}</p>{{ end }}
+
+  {{ with .Params.location }}
+    <p class="muted">📍 {{ . }}</p>
+  {{ end }}
+
+  {{ with .Params.bio }}
+    <div class="prose"><p>{{ . }}</p></div>
+  {{ end }}
+
+  <div class="member-social">
+    {{ with $.Params.github }}
+      <a href="{{ printf "https://github.com/%s" . }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+    {{ end }}
+    {{ with $.Params.linkedin }}
+      <a href="{{ printf "https://www.linkedin.com/in/%s/" . }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    {{ end }}
+    {{ with $.Params.twitter }}
+      <a href="{{ printf "https://twitter.com/%s" . }}" target="_blank" rel="noopener noreferrer">Twitter</a>
+    {{ end }}
+  </div>
+
   <div class="prose">{{ .Content }}</div>
+
   {{ $posts := where (where site.RegularPages "Section" "blog") "Params.author" .File.ContentBaseName }}
-  {{ with $posts }}<h2>Posts by {{ $.Title }}</h2><ul class="plain list-rows">{{ range .ByDate.Reverse }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}</ul>{{ end }}
+  {{ with $posts }}
+    <h2>Posts by {{ $name }}</h2>
+    <ul class="plain list-rows">
+      {{ range .ByDate.Reverse }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  {{ end }}
 </article>
 {{ end }}

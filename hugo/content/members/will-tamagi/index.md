@@ -1,0 +1,11 @@
+---
+name: Will Tamagi
+position: Contributor
+image_path: ./will-tamagi.webp
+github: wdtamagi
+blurb: Mesh Head
+status: Inactive
+slug: will-tamagi
+---
+
+

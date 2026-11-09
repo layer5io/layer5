@@ -1,0 +1,15 @@
+---
+name: Jome Favourite
+position: Contributor
+image_path: ./jome-favourite.webp
+github: jomefavourite
+twitter: FavouriteJome1
+linkedin: favourite-jome-677766184
+location: Nigeria
+bio: Aspiring Fullstack Developer, with an enthusiasm for learning. 
+blurb: Mesh Head
+status: Inactive
+slug: jome-favourite
+---
+
+

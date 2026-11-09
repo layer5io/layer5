@@ -1,14 +1,24 @@
-{{ define "main" }}
+﻿{{ define "main" }}
 <section class="wrap">
   <h1>{{ .Title }}</h1>
   {{ with .Content }}<p class="lede">{{ . | plainify }}</p>{{ end }}
+
   <div class="grid grid--4">
     {{ range .Pages.ByWeight }}
+      {{ $member := . }}
+      {{ $name := .Params.name | default .Title }}
+      {{ $role := .Params.position | default .Params.role }}
+      {{ $imagePath := strings.TrimPrefix "./" .Params.image_path }}
+
       <a class="card card--link" href="{{ .RelPermalink }}">
         <div class="card__body">
-          <div class="avatar" aria-hidden="true">{{ substr .Title 0 1 }}</div>
-          <h3>{{ .Title }}</h3>
-          <p class="muted">{{ .Params.role }}</p>
+          {{ with $member.Resources.GetMatch $imagePath }}
+            <img class="avatar avatar--photo" src="{{ .RelPermalink }}" alt="{{ $name }}" loading="lazy">
+          {{ else }}
+            <div class="avatar" aria-hidden="true">{{ substr $name 0 1 }}</div>
+          {{ end }}
+          <h3>{{ $name }}</h3>
+          {{ with $role }}<p class="muted">{{ . }}</p>{{ end }}
         </div>
       </a>
     {{ end }}

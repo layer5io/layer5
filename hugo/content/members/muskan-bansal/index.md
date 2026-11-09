@@ -1,0 +1,12 @@
+---
+name: Muskan Bansal
+position: Contributor
+image_path: ./muskan-bansal.webp
+github: crustyy
+twitter: ""
+blurb: Mesh Head
+status: Inactive
+slug: muskan-bansal
+---
+
+

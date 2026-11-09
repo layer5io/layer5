@@ -25,6 +25,7 @@ permalinks:
   news: /company/news/:slug/
   events: /community/events/:slug/
   integrations: /cloud-native-management/meshery/integrations/:slug/
+  members: /community/members/:slug/
 
 markup:
   goldmark:
@@ -72,6 +73,6 @@ menus:
   main:
     - { name: Cloud Native Management, url: /cloud-native-management/meshery/integrations/, weight: 10 }
     - { name: Blog, url: /blog/, weight: 20 }
-    - { name: Community, url: /members/, weight: 30 }
+    - { name: Community, url: /community/members/, weight: 30 }
     - { name: Handbook, url: /handbook/, weight: 40 }
     - { name: Migration, url: /migration/, weight: 50 }

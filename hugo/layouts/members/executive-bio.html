@@ -1,0 +1,49 @@
+﻿{{ define "main" }}
+{{ $member := site.GetPage (printf "members/%s" .Params.member) }}
+
+{{ if $member }}
+<article class="wrap prose-wrap executive-bio">
+  <header>
+    <h1>{{ $member.Params.name }}</h1>
+    <p class="lede">
+      {{ $member.Params.executive_position }}, {{ $member.Params.company }}
+    </p>
+  </header>
+
+  {{ $imagePath := strings.TrimPrefix "./" $member.Params.executive_image }}
+{{ $image := $member.Resources.GetMatch $imagePath }}
+  {{ with $image }}
+    <img src="{{ .RelPermalink }}" alt="{{ $member.Params.name }}" class="avatar avatar--lg">
+  {{ end }}
+
+  <h2>Executive Bio</h2>
+  <div class="prose">
+    {{ $member.Content }}
+  </div>
+
+  <div class="member-social">
+    {{ with $member.Params.profile }}
+      <a href="{{ . }}">Download Profile</a>
+    {{ end }}
+    {{ with $member.Params.github }}
+      <a href="https://github.com/{{ . }}">GitHub</a>
+    {{ end }}
+    {{ with $member.Params.twitter }}
+      <a href="https://twitter.com/{{ . }}">Twitter</a>
+    {{ end }}
+    {{ with $member.Params.linkedin }}
+      <a href="https://linkedin.com/in/{{ . }}">LinkedIn</a>
+    {{ end }}
+    {{ with $member.Params.email }}
+      <a href="mailto:{{ . }}">Email</a>
+    {{ end }}
+  </div>
+
+  <a href="{{ $member.RelPermalink }}">← Go Back to Member Profile</a>
+</article>
+{{ else }}
+<p>Member profile not found.</p>
+{{ end }}
+{{ end }}
+
+

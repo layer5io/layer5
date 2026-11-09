@@ -1,0 +1,12 @@
+---
+name: Rohit Agarwal
+position: Contributor
+image_path: ./rohit-argarwal.webp
+github: ""
+twitter: rohitag2503
+blurb: Mesh Head
+status: Inactive
+slug: rohit-agarwal
+---
+
+

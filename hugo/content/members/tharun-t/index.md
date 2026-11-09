@@ -1,0 +1,17 @@
+---
+name: Tharun T
+position: Contributor
+image_path: ./tharun-t.webp
+github: dottharun
+twitter: dottharun
+linkedin: tharuntchn
+layer5: 0e0f60e5-fb6c-4006-9b1f-74cfa51dc659
+location: India
+bio: "Hello there, I am an undergraduate student from Indian Institute of Technology Varanasi, excited to do impactful work in Software Development and web development"
+badges: 
+  - meshery
+status: Inactive 
+slug: tharun-t
+---
+
+

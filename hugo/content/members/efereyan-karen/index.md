@@ -1,0 +1,16 @@
+---
+name: Efereyan Karen
+position: Contributor
+image_path: ./efereyan-karen.jpeg
+github: KarenEfereyan
+twitter: EfereyanK
+linkedin: karen-efereyan-6918aa12b
+blurb: Mesh Head
+status: Inactive
+badges:
+location: Nigeria
+bio: Full stack developer passionate about crafting amazing digital experiences for end users of software products.
+slug: efereyan-karen
+---
+
+

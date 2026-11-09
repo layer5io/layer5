@@ -1,0 +1,16 @@
+---
+name: Ashparsh Pandey
+position: Contributor
+image_path: ./ashparsh-pandey.webp
+github: Ashparshp
+twitter: ashparsh_
+linkedin: ashparsh
+location: Uttar Pradesh, India 
+bio: Hello! CS student here, passionate about coding and creating. Exploring the tech world. Let's connect and code something awesome.
+badges: 
+    - community
+status: Inactive
+slug: ashparsh-pandey
+---
+
+

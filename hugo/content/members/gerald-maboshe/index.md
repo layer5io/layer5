@@ -1,0 +1,19 @@
+---
+name: Gerald Maboshe
+position: Contributor
+image_path: ./gerald-maboshe.webp
+github: geraldmaboshe
+twitter: geraldmaboshe
+linkedin: geraldmaboshe
+blurb: Mesh Head
+status: Inactive
+badges: 
+ - smp
+ - landscape
+ - ui-ux 
+location: Lusaka, Zambia
+bio: I am currently working as a Software Engineer. I love everything, Community and Open Source.
+slug: gerald-maboshe
+---
+
+

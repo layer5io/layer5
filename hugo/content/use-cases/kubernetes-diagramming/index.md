@@ -1,0 +1,10 @@
+---
+title: Kubernetes orchestration and architecture diagramming
+redirectLink: /cloud-native-management/generate-kubernetes-architecture-diagram
+darkimgsrc: ./kubernetes.svg
+lightimgsrc: ./kubernetes-light.svg
+category: supportedplatform
+slug: kubernetes-orchestration-and-architecture-diagramming
+---
+
+
