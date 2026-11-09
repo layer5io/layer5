@@ -88,12 +88,12 @@ export const BooksPageWrapper = styled.div`
         }
         
         .book_image{
-            width: 20rem !important;
+            width: 100% !important;
         }
 
         .blog-slider_img{
             img{
-                width: 20rem;
+                width: 100%;
                 max-height: 26rem;
             }
         }
