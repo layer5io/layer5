@@ -1,0 +1,436 @@
+---
+title: Table Code
+component: table
+description: A table displays structured data in rows and columns, enabling users to scan, compare, and interact with information efficiently.
+---
+
+import { useState } from "react";
+import { ResponsiveDataTable, NoSsr, Table, TableHead, TableBody, TableRow, TableCell, Checkbox, TableContainer, Paper } from "@sistent/sistent";
+
+export const BasicTableDemo = () => {
+  const columns = [
+    { name: "name", label: "Name" },
+    { name: "env", label: "Environment" },
+    { name: "status", label: "Status" },
+  ];
+  const data = [
+    ["meshery", "production", "Running"],
+    ["nighthawk", "staging", "Stopped"],
+    ["kanvas", "development", "Running"],
+  ];
+  const [tableCols, updateCols] = useState(columns);
+  const [columnVisibility, setColumnVisibility] = useState({});
+  const options = {
+    filter: false, download: false, print: false, viewColumns: false,
+    selectableRows: "none", responsive: "standard", pagination: false,
+    search: false, elevation: 1,
+  };
+  return (
+    <NoSsr>
+      <ResponsiveDataTable
+        columns={columns}
+        data={data}
+        options={options}
+        tableCols={tableCols}
+        updateCols={updateCols}
+        columnVisibility={columnVisibility}
+      />
+    </NoSsr>
+  );
+};
+
+export const SortableTableDemo = () => {
+  const columns = [
+    { name: "name", label: "Name" },
+    { name: "version", label: "Version" },
+  ];
+  const data = [
+    ["meshery", "v0.7.1"],
+    ["kanvas", "v0.5.0"],
+    ["nighthawk", "v0.9.3"],
+  ];
+  const [tableCols, updateCols] = useState(columns);
+  const [columnVisibility, setColumnVisibility] = useState({});
+  const options = {
+    filter: false, download: false, print: false, viewColumns: false,
+    selectableRows: "none", responsive: "standard", pagination: false,
+    search: false, sort: true, elevation: 1,
+  };
+  return (
+    <NoSsr>
+      <ResponsiveDataTable
+        columns={columns}
+        data={data}
+        options={options}
+        tableCols={tableCols}
+        updateCols={updateCols}
+        columnVisibility={columnVisibility}
+      />
+    </NoSsr>
+  );
+};
+
+export const SelectableTableDemo = () => {
+  const data = [
+    { name: "Alice", env: "production" },
+    { name: "Bob", env: "staging" },
+    { name: "Charlie", env: "development" },
+  ];
+  const [selected, setSelected] = useState([]);
+  const isSelected = (index) => selected.indexOf(index) !== -1;
+  const handleSelectAll = () => {
+    if (selected.length === data.length) {
+      setSelected([]);
+    } else {
+      setSelected(data.map((_, i) => i));
+    }
+  };
+  const handleSelect = (index) => {
+    const pos = selected.indexOf(index);
+    if (pos === -1) {
+      setSelected([...selected, index]);
+    } else {
+      setSelected(selected.filter((i) => i !== index));
+    }
+  };
+  return (
+    <TableContainer component={Paper} elevation={1}>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell padding="checkbox">
+              <Checkbox
+                indeterminate={selected.length > 0 && selected.length < data.length}
+                checked={data.length > 0 && selected.length === data.length}
+                onChange={handleSelectAll}
+              />
+            </TableCell>
+            <TableCell><strong>Name</strong></TableCell>
+            <TableCell><strong>Environment</strong></TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {data.map((row, index) => (
+            <TableRow
+              key={row.name}
+              hover
+              selected={isSelected(index)}
+              onClick={() => handleSelect(index)}
+              sx={{ cursor: "pointer" }}
+            >
+              <TableCell padding="checkbox">
+                <Checkbox checked={isSelected(index)} />
+              </TableCell>
+              <TableCell>{row.name}</TableCell>
+              <TableCell>{row.env}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
+};
+
+export const PaginatedTableDemo = () => {
+  const columns = [
+    { name: "name", label: "Name" },
+    { name: "owner", label: "Owner" },
+    { name: "age", label: "Age" },
+    { name: "status", label: "Status" },
+  ];
+  const data = Array.from({ length: 20 }, (_, i) => [
+    "service-" + (i + 1),
+    i % 3 === 0 ? "Alice" : i % 3 === 1 ? "Bob" : "Charlie",
+    (i + 1) + " months ago",
+    i % 2 === 0 ? "Running" : "Stopped",
+  ]);
+  const [tableCols, updateCols] = useState(columns);
+  const [columnVisibility, setColumnVisibility] = useState({});
+  const options = {
+    filter: false, download: false, print: false, viewColumns: false,
+    selectableRows: "none", responsive: "standard", pagination: true,
+    rowsPerPage: 5, rowsPerPageOptions: [5, 10, 20], elevation: 1,
+  };
+  return (
+    <NoSsr>
+      <ResponsiveDataTable
+        columns={columns}
+        data={data}
+        options={options}
+        tableCols={tableCols}
+        updateCols={updateCols}
+        columnVisibility={columnVisibility}
+      />
+    </NoSsr>
+  );
+};
+
+Tables communicate actions and data to users and can be placed at several places throughout the user interface.
+
+<a id="Basic Table">
+  <h2>Basic Table</h2>
+</a>
+
+A minimal read-only table with a header row and data rows.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <BasicTableDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-table" collapsible code={`import { useState } from "react";
+import { ResponsiveDataTable, NoSsr } from "@sistent/sistent";
+
+const columns = [
+  { name: "name", label: "Name" },
+  { name: "env", label: "Environment" },
+  { name: "status", label: "Status" },
+];
+
+const data = [
+  ["meshery", "production", "Running"],
+  ["nighthawk", "staging", "Stopped"],
+  ["kanvas", "development", "Running"],
+];
+
+export default function BasicTable() {
+  const [tableCols, updateCols] = useState(columns);
+  const [columnVisibility, setColumnVisibility] = useState({});
+
+  const options = {
+    filter: false,
+    download: false,
+    print: false,
+    viewColumns: false,
+    selectableRows: "none",
+    responsive: "standard",
+    pagination: false,
+    search: false,
+    elevation: 1,
+  };
+
+  return (
+    <NoSsr>
+      <ResponsiveDataTable
+        columns={columns}
+        data={data}
+        options={options}
+        tableCols={tableCols}
+        updateCols={updateCols}
+        columnVisibility={columnVisibility}
+      />
+    </NoSsr>
+  );
+}`} />
+</div>
+
+<a id="Sortable Table">
+  <h2>Sortable Table</h2>
+</a>
+
+Clicking a column header sorts rows ascending or descending by that column.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SortableTableDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="sortable-table" collapsible code={`import { useState } from "react";
+import { ResponsiveDataTable, NoSsr } from "@sistent/sistent";
+
+const columns = [
+  { name: "name", label: "Name" },
+  { name: "version", label: "Version" },
+];
+
+const data = [
+  ["meshery", "v0.7.1"],
+  ["kanvas", "v0.5.0"],
+  ["nighthawk", "v0.9.3"],
+];
+
+export default function SortableTable() {
+  const [tableCols, updateCols] = useState(columns);
+  const [columnVisibility, setColumnVisibility] = useState({});
+
+  const options = {
+    filter: false,
+    download: false,
+    print: false,
+    viewColumns: false,
+    selectableRows: "none",
+    responsive: "standard",
+    pagination: false,
+    search: false,
+    sort: true,
+    elevation: 1,
+  };
+
+  return (
+    <NoSsr>
+      <ResponsiveDataTable
+        columns={columns}
+        data={data}
+        options={options}
+        tableCols={tableCols}
+        updateCols={updateCols}
+        columnVisibility={columnVisibility}
+      />
+    </NoSsr>
+  );
+}`} />
+</div>
+
+<a id="Selectable Rows Table">
+  <h2>Selectable Rows Table</h2>
+</a>
+
+Place a <code>Checkbox</code> in the first cell of each row and in the header row for select-all behaviour.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SelectableTableDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="selectable-table" collapsible code={`import { useState } from "react";
+import {
+  Table, TableHead, TableBody, TableRow, TableCell,
+  Checkbox, TableContainer, Paper,
+} from "@sistent/sistent";
+
+const data = [
+  { name: "Alice", env: "production" },
+  { name: "Bob", env: "staging" },
+  { name: "Charlie", env: "development" },
+];
+
+export default function SelectableTable() {
+  const [selected, setSelected] = useState([]);
+
+  const isSelected = (index) => selected.indexOf(index) !== -1;
+
+  const handleSelectAll = () => {
+    if (selected.length === data.length) {
+      setSelected([]);
+    } else {
+      setSelected(data.map((_, i) => i));
+    }
+  };
+
+  const handleSelect = (index) => {
+    const pos = selected.indexOf(index);
+    if (pos === -1) {
+      setSelected([...selected, index]);
+    } else {
+      setSelected(selected.filter((i) => i !== index));
+    }
+  };
+
+  return (
+    <TableContainer component={Paper} elevation={1}>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell padding="checkbox">
+              <Checkbox
+                indeterminate={
+                  selected.length > 0 &&
+                  selected.length < data.length
+                }
+                checked={
+                  data.length > 0 &&
+                  selected.length === data.length
+                }
+                onChange={handleSelectAll}
+              />
+            </TableCell>
+            <TableCell>Name</TableCell>
+            <TableCell>Environment</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {data.map((row, index) => (
+            <TableRow
+              key={row.name}
+              hover
+              selected={isSelected(index)}
+              onClick={() => handleSelect(index)}
+              sx={{ cursor: "pointer" }}
+            >
+              <TableCell padding="checkbox">
+                <Checkbox checked={isSelected(index)} />
+              </TableCell>
+              <TableCell>{row.name}</TableCell>
+              <TableCell>{row.env}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
+}`} />
+</div>
+
+<a id="Paginated Table">
+  <h2>Paginated Table</h2>
+</a>
+
+<code>ResponsiveDataTable</code> from <code>@sistent/sistent</code> provides built-in pagination, column visibility, and responsive layout controls.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PaginatedTableDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="paginated-table" collapsible code={`import { useState } from "react";
+import { ResponsiveDataTable, NoSsr } from "@sistent/sistent";
+
+const columns = [
+  { name: "name", label: "Name" },
+  { name: "owner", label: "Owner" },
+  { name: "age", label: "Age" },
+  { name: "status", label: "Status" },
+];
+
+const data = Array.from({ length: 20 }, (_, i) => [
+  "service-" + (i + 1),
+  i % 3 === 0 ? "Alice" : i % 3 === 1 ? "Bob" : "Charlie",
+  (i + 1) + " months ago",
+  i % 2 === 0 ? "Running" : "Stopped",
+]);
+
+export default function PaginatedTable() {
+  const [tableCols, updateCols] = useState(columns);
+  const [columnVisibility, setColumnVisibility] = useState({});
+
+  const options = {
+    filter: false,
+    download: false,
+    print: false,
+    viewColumns: false,
+    selectableRows: "none",
+    responsive: "standard",
+    pagination: true,
+    rowsPerPage: 5,
+    rowsPerPageOptions: [5, 10, 20],
+    elevation: 1,
+  };
+
+  return (
+    <NoSsr>
+      <ResponsiveDataTable
+        columns={columns}
+        data={data}
+        options={options}
+        tableCols={tableCols}
+        updateCols={updateCols}
+        columnVisibility={columnVisibility}
+      />
+    </NoSsr>
+  );
+}`} />
+</div>

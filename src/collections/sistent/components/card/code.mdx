@@ -1,0 +1,167 @@
+---
+title: Card Code
+component: card
+description: A card is a contained surface that groups related information and actions about a single subject, making content easy to scan and interact with.
+---
+
+import { Card, Button } from "@sistent/sistent";
+
+The Card component wraps MUI's Card and works with Sistent's theming out of the box. Here are the most common usage patterns.
+
+<a id="Basic Card">
+  <h2>Basic Card</h2>
+</a>
+
+A basic card with some content inside. By default it uses the elevated style with a subtle shadow.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', justifyContent: 'center', padding: '16px' }}>
+        <Card style={{ width: 300, padding: '16px' }}>
+          Simple card content
+        </Card>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-card" collapsible code={`<SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  <Card style={{ width: 300, padding: "16px" }}>
+    Simple card content
+  </Card>
+</SistentThemeProvider>`} />
+</div>
+
+<a id="Outlined Card">
+  <h2>Outlined Card</h2>
+</a>
+
+Use `variant="outlined"` to get a card with a border instead of a shadow. Useful when the background is already elevated or when you want a lighter visual style.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', justifyContent: 'center', padding: '16px' }}>
+        <Card variant="outlined" style={{ width: 300, padding: '16px' }}>
+          Outlined card content
+        </Card>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="outlined-card" collapsible code={`<SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  <Card variant="outlined" style={{ width: 300, padding: "16px" }}>
+    Outlined card content
+  </Card>
+</SistentThemeProvider>`} />
+</div>
+
+<a id="Elevation">
+  <h2>Elevation</h2>
+</a>
+
+The `elevation` prop controls shadow depth. Values go from 0 (flat) to 24 (maximum depth). Most cards in practice sit between 1 and 8.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', padding: '16px' }}>
+        <Card elevation={1} style={{ padding: '16px' }}>Elevation 1</Card>
+        <Card elevation={4} style={{ padding: '16px' }}>Elevation 4</Card>
+        <Card elevation={8} style={{ padding: '16px' }}>Elevation 8</Card>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="card-elevation" collapsible code={`<SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  <Card elevation={1} style={{ padding: "16px" }}>Elevation 1</Card>
+  <Card elevation={4} style={{ padding: "16px" }}>Elevation 4</Card>
+  <Card elevation={8} style={{ padding: "16px" }}>Elevation 8</Card>
+</SistentThemeProvider>`} />
+</div>
+
+<a id="Square Corners">
+  <h2>Square Corners</h2>
+</a>
+
+Cards have rounded corners by default. Set `square` to `true` to remove the rounding for a more geometric look.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', padding: '16px' }}>
+        <Card style={{ width: 200, padding: '16px' }}>Rounded</Card>
+        <Card square style={{ width: 200, padding: '16px' }}>Square</Card>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="card-corners" collapsible code={`<SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  <Card style={{ width: 200, padding: "16px" }}>Rounded</Card>
+  <Card square style={{ width: 200, padding: "16px" }}>Square</Card>
+</SistentThemeProvider>`} />
+</div>
+
+<a id="Clickable Card">
+  <h2>Clickable Card</h2>
+</a>
+
+To make the entire card interactive, add an `onClick` handler and update the cursor style. This pattern is common in grid layouts where each card is a navigation target.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', justifyContent: 'center', padding: '16px' }}>
+        <Card
+          style={{ width: 300, padding: '16px', cursor: 'pointer' }}
+          onClick={() => alert('Card clicked')}
+        >
+          Click anywhere on this card
+        </Card>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="clickable-card" collapsible code={`<SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  <Card
+    style={{ width: 300, padding: "16px", cursor: "pointer" }}
+    onClick={() => console.log("Card clicked")}
+  >
+    Click anywhere on this card
+  </Card>
+</SistentThemeProvider>`} />
+</div>
+
+<a id="Card with Header and Actions">
+  <h2>Card with Header and Actions</h2>
+</a>
+
+A common real-world pattern — a card with a title, a short description, and action buttons at the bottom.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <div style={{ display: 'flex', justifyContent: 'center', padding: '16px' }}>
+        <Card style={{ width: 300 }}>
+          <div style={{ padding: '16px' }}>
+            <h3 style={{ margin: '0 0 8px' }}>Card Title</h3>
+            <p style={{ margin: 0, color: 'gray' }}>A short description about what this card represents and why it matters.</p>
+          </div>
+          <div style={{ padding: '8px 16px 16px', display: 'flex', gap: '8px' }}>
+            <Button variant="contained" size="small">Action</Button>
+            <Button variant="outlined" size="small">Cancel</Button>
+          </div>
+        </Card>
+      </div>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="card-with-actions" collapsible code={`<SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  <Card style={{ width: 300 }}>
+    <div style={{ padding: "16px" }}>
+      <h3 style={{ margin: "0 0 8px" }}>Card Title</h3>
+      <p style={{ margin: 0, color: "gray" }}>
+        A short description about what this card represents.
+      </p>
+    </div>
+    <div style={{ padding: "8px 16px 16px", display: "flex", gap: "8px" }}>
+      <Button variant="contained" size="small">Action</Button>
+      <Button variant="outlined" size="small">Cancel</Button>
+    </div>
+  </Card>
+</SistentThemeProvider>`} />
+</div>

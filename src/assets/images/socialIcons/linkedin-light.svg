@@ -1,0 +1,11 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530 530" width="530" height="530">
+	<title>New Project</title>
+	<defs>
+		<image  width="530" height="530" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhIAAAISAQMAAACj87T8AAAAAXNSR0IB2cksfwAAAANQTFRFAAAAp3o92gAAAAF0Uk5TAEDm2GYAAAA6SURBVHic7cEBDQAAAMKg909tDjegAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA3A4zIAAHD1zgsAAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+		.s0 { fill: #006699 } 
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+	<path id="Layer" fill-rule="evenodd" class="s0" d="m521 45.9v438.2c0 20.4-16.5 36.9-36.9 36.9h-438.2c-20.4 0-36.9-16.5-36.9-36.9v-438.2c0-20.4 16.5-36.9 36.9-36.9h438.2c20.4 0 36.9 16.5 36.9 36.9zm-330.4 162.5h-62.3v187.6h62.3zm4.1-58c-0.4-18.4-13.5-32.4-34.8-32.4-21.4 0-35.3 14-35.3 32.4 0 18 13.5 32.4 34.4 32.4h0.4c21.8 0 35.3-14.4 35.3-32.4zm220.7 138c0-57.6-30.7-84.4-71.8-84.4-33 0-47.9 18.2-56.1 31v-26.6h-62.4c0.8 17.6 0 187.6 0 187.6h62.4v-104.8c0-5.6 0.4-11.2 2-15.2 4.5-11.2 14.8-22.8 32-22.8 22.6 0 31.6 17.2 31.6 42.4v100.4h62.3z"/>
+</svg>

@@ -1,0 +1,190 @@
+import styled from "styled-components";
+
+const InternshipSectionWrapper = styled.div`
+p{
+  color: ${props => props.theme.whiteEightToBlack};
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+}
+  h1 {
+    margin-bottom: 1rem;
+    color: ${props => props.theme.text};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .grid {
+    margin: 1rem 0;
+  }
+
+  .oppurtunities {
+    margin: 3rem auto;
+    text-align: center;
+    span {
+      font-weight: 400;
+    }
+  }
+  .oppurtunities > div {
+    margin: 3rem 0;
+  }
+
+  .opportunity-col {
+    flex: 0 0 33.333333%;
+    max-width: 100%;
+    margin: 1rem 0;
+    padding: 0 1rem;
+  }
+  @media only screen and (max-width: 1200px) {
+    .opportunity-col {
+      flex: 0 0 50%;
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    .opportunity-col {
+      flex: 0 0 100%;
+    }
+  }
+
+  .opportunity-card {
+    width: 21rem;
+    height: 15rem;
+    margin: auto;
+    padding: 0.5rem;
+    background:  ${props => props.theme.grey212121ToGreyF5F5F5};
+    text-align: center;
+    border-bottom: 5px solid ${(props) => props.theme.secondaryColor};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .text {
+      height: inherit;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h3 {
+      font-weight: 500;
+      transition: transform 0.7s ease-in-out;
+    }
+    p {
+      margin: 0.5rem 0;
+      color: ${props => props.theme.whiteEightToBlackEight};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .peek-card {
+      position: absolute;
+      height: inherit;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+      visibility: hidden;
+      z-index:1030;
+      transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out,
+        visibility 0.7s ease-in-out;
+    }
+    &:hover {
+      box-shadow: 0px 4px 20px 4px ${(props) => props.theme.shadowLightColor};
+
+      .text {
+        width: 75%;
+        transform: translateX(2%);
+        text-align: left;
+      }
+
+      h3 {
+        transform: translateX(2%);
+        text-align: left;
+        transition: transform 0.7s ease-in-out;
+      }
+
+      p {
+        transform: translateX(2%);
+        text-align: left;
+        transition: transform 0.7s ease-in-out;
+      }
+      .peek-card {
+        visibility: visible;
+        transform: rotate(-2deg);
+        opacity: 1;
+      }
+    }
+  }
+
+  .full_time {
+    .opportunity-card {
+      height: 15rem;
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    .opportunity-card {
+      height: 12.5rem;
+    }
+  }
+
+  .partner-image {
+    height: 13rem;
+    margin-bottom: 0.25rem;
+
+    img {
+      width: 22rem;
+      height: inherit;
+      border-radius: 0.5rem;
+    }
+  }
+
+  .partners-card {
+    display: block;
+    width: max-content;
+    background:  ${props => props.theme.grey050505ToGreyF1F2F1};
+    border-radius: 1rem;
+    text-align: center;
+    justify-content: space-between;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    
+    h5 {
+      display: inline-flex;
+      font-weight: 400;
+      line-height: 3.5rem;
+    }
+    &:hover {
+      .arrow_icon {
+        color: white;
+        background: #00d3a9;
+        left: 0.2rem;
+      }
+    }
+  }
+  .arrow_icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    min-width: auto;
+    margin: auto 0 auto 0.5rem;
+    padding: 0;
+    font-size: 1.25rem;
+    border-radius: 1rem;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+
+  .partner-col {
+    display: flex;
+    justify-content: center;
+    flex: 0 0 50%;
+    max-width: 100%;
+  }
+
+  .oppurtunities_row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0 -1rem;
+  }
+`;
+
+export default InternshipSectionWrapper;

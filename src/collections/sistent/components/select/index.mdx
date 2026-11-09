@@ -1,0 +1,241 @@
+---
+name: "Select"
+title: Select
+published: true
+component: select
+description: Select component is a dropdown menu for selecting an option from a list.
+---
+
+import { useState } from "react";
+import { FormControl, InputLabel, MenuItem, Select, OutlinedInput, Box } from "@sistent/sistent";
+
+export const BasicSelectDemo = ({ variant, ...props }) => {
+  const [age, setAge] = useState("");
+  const handleChange = (event) => setAge(event.target.value);
+  const labelId = `demo-select-${variant || 'outlined'}-label`;
+  return (
+    <FormControl sx={{ width: "200px" }} variant={variant} {...props}>
+      <InputLabel id={labelId}>Age</InputLabel>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+        labelId={labelId}
+        id={`demo-select-${variant || 'outlined'}`}
+        value={age}
+        label="Age"
+        onChange={handleChange}
+      >
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+export const AutoWidthSelectDemo = () => {
+  const [age, setAge] = useState("");
+  const handleChange = (event) => setAge(event.target.value);
+  return (
+    <FormControl sx={{ minWidth: "120px", m: 1 }}>
+      <InputLabel id="demo-simple-select-autowidth-label">Age</InputLabel>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+        labelId="demo-simple-select-autowidth-label"
+        id="demo-simple-select-autowidth"
+        value={age}
+        onChange={handleChange}
+        autoWidth
+        label="Age"
+      >
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+export const SmallSelectDemo = () => {
+  const [age, setAge] = useState("");
+  const handleChange = (event) => setAge(event.target.value);
+  return (
+    <FormControl sx={{ minWidth: "80px", m: 1 }} size="small">
+      <InputLabel id="demo-simple-select-small-label">Age</InputLabel>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+        labelId="demo-simple-select-small-label"
+        id="demo-simple-select-small"
+        value={age}
+        label="Age"
+        onChange={handleChange}
+      >
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+export const FullWidthSelectDemo = () => {
+  const [age, setAge] = useState("");
+  const handleChange = (event) => setAge(event.target.value);
+  return (
+    <FormControl fullWidth sx={{ m: 1 }}>
+      <InputLabel id="demo-simple-select-fullwidth-label">Age</InputLabel>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+        labelId="demo-simple-select-fullwidth-label"
+        id="demo-simple-select-fullwidth"
+        value={age}
+        label="Age"
+        onChange={handleChange}
+      >
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+export const MultipleSelectDemo = () => {
+  const [names, setNames] = useState([]);
+  const handleChange = (event) => {
+    const { target: { value } } = event;
+    setNames(typeof value === 'string' ? value.split(',') : value);
+  };
+  return (
+    <FormControl sx={{ width: "200px" }}>
+      <InputLabel id="demo-multiple-name-label">Age</InputLabel>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+        labelId="demo-multiple-name-label"
+        id="demo-multiple-name"
+        multiple
+        value={names}
+        onChange={handleChange}
+        label="Age"
+        input={<OutlinedInput label="Name" />}
+      >
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+The Select component is a versatile and customizable element commonly used in forms and user interfaces. It is designed to present a list of options for users to choose from, either as a single selection or multiple selections. This component plays a vital role in collecting user-provided information efficiently and intuitively.
+
+<a id="Types">
+  <h2>Types</h2>
+</a>
+
+<p>
+  To accommodate various design styles and use cases, the select
+  component offers numerous customizable properties. Developers can
+  customize how the component display the labels or selected option to
+  improve user experience.
+</p>
+
+<h3>Outlined</h3>
+<p>
+  The default style is "outlined," featuring a thin line around the
+  selection area. The label appears above the selection, and the
+  dropdown menu is displayed below it.
+</p>
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <BasicSelectDemo variant="outlined" />
+  </ThemeWrapper>
+</Row>
+
+<h3>Filled</h3>
+<p>
+  Filled select feature a background color fill. Depending on the
+  theme or intended action, the color fill ican range from a primary
+  brand color to any other applicable color in a brand's color
+  palette.
+</p>
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <BasicSelectDemo variant="filled" />
+  </ThemeWrapper>
+</Row>
+
+<h3>Standard</h3>
+<p>
+  The standard style features a simple underline below the selection
+  area.
+</p>
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <BasicSelectDemo variant="standard" />
+  </ThemeWrapper>
+</Row>
+
+<a id="Sizes">
+  <h2>Sizes</h2>
+</a>
+
+<p>
+  The select component can be adjusted in size to accommodate various
+  use cases. These size adjustments typically affect the height of the
+  component, while the width adjusts to fit the content. The height of
+  the select component is derived from our spacing system to maintain
+  consistency. We offer multiple sizes to meet different needs.
+</p>
+
+<h3>Auto width</h3>
+<p>
+  The width of the component can scale automatically to fit the
+  content it contains. This ensures that the select component is
+  appropriately sized based on the options available, providing a
+  better user experience.
+</p>
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <AutoWidthSelectDemo />
+  </ThemeWrapper>
+</Row>
+
+<h3>Small</h3>
+<p>
+  The small size select component is designed to fit into more compact
+  spaces within a user interface. It is particularly useful when you
+  need to conserve space or when the select component is part of a
+  form with other small-sized elements. This ensures a consistent and
+  visually appealing layout.
+</p>
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <SmallSelectDemo />
+  </ThemeWrapper>
+</Row>
+
+<h3>Full width</h3>
+<p>
+  Full width select are more efficient in mobile designs and rightly
+  so in order to offer users with a wider touch area since the input
+  devices - the fingers, are a lot larger than the cursor on a desktop
+  or larger screen.
+</p>
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <FullWidthSelectDemo />
+  </ThemeWrapper>
+</Row>
+
+<a id="Multiple select">
+  <h2>Multiple select</h2>
+</a>
+
+<p>Multiple select component allows users to select more than one.</p>
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <MultipleSelectDemo />
+  </ThemeWrapper>
+</Row>

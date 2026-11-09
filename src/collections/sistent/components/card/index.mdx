@@ -1,0 +1,107 @@
+---
+name: "Card"
+title: Card
+published: true
+component: card
+description: A card is a contained surface that groups related information and actions about a single subject, making content easy to scan and interact with.
+---
+
+import { Card } from "@sistent/sistent";
+
+Cards are versatile containers that bring together content and actions around a single topic. They give users a clean, scannable way to browse and interact with information — whether that's a product, a profile, a post, or anything in between. Cards can live in grids, lists, or standalone layouts, and they scale well across screen sizes.
+
+<a id="Types">
+  <h2>Types</h2>
+</a>
+
+Cards come in a few configurations depending on how much visual weight and interactivity you need. Choosing the right one helps keep the interface consistent and easy to navigate.
+
+<h3>Elevated</h3>
+
+The default card type. It uses a drop shadow to sit above the background, creating a sense of depth. This is the most common type and works well for content-heavy layouts where you need clear separation between items.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%', padding: '16px' }}>
+      <Card style={{ width: 280, padding: '16px' }}>
+        <p style={{ margin: 0 }}>Elevated Card</p>
+      </Card>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<h3>Outlined</h3>
+
+An outlined card drops the shadow and uses a border instead. It's a good pick when you want a lighter look, or when the background is already elevated and adding more depth would feel cluttered.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%', padding: '16px' }}>
+      <Card variant="outlined" style={{ width: 280, padding: '16px' }}>
+        <p style={{ margin: 0 }}>Outlined Card</p>
+      </Card>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Elevation">
+  <h2>Elevation</h2>
+</a>
+
+The `elevation` prop lets you control how prominent a card feels. Values range from 0 (flat, no shadow) all the way up to 24 (maximum depth). Most cards in practice sit between 1 and 8 — high enough to stand out without feeling heavy.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', padding: '16px', width: '100%' }}>
+      <Card elevation={1} style={{ padding: '16px' }}>Elevation 1 — subtle</Card>
+      <Card elevation={4} style={{ padding: '16px' }}>Elevation 4 — moderate</Card>
+      <Card elevation={8} style={{ padding: '16px' }}>Elevation 8 — prominent</Card>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Interactivity">
+  <h2>Interactivity</h2>
+</a>
+
+Cards can be made clickable by wrapping them in an action area or by setting the `onClick` handler directly. When a card is interactive, it should have a clear hover and focus state so users know it's actionable.
+
+<h3>Clickable Card</h3>
+
+Use a clickable card when the entire surface should trigger a navigation or action. This is common in grids where each card represents a destination — like a product page or a settings section.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%', padding: '16px' }}>
+      <Card
+        style={{ width: 280, padding: '16px', cursor: 'pointer' }}
+        onClick={() => {}}
+      >
+        <p style={{ margin: 0 }}>Click me</p>
+      </Card>
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<h3>Non-interactive Card</h3>
+
+Not every card needs to be clickable. When a card is purely informational — like a stats panel or a summary block — it should not have hover effects or pointer cursors, since those signal interactivity that doesn't exist.
+
+<a id="Raised Corners">
+  <h2>Corners</h2>
+</a>
+
+By default, cards have rounded corners. If you need a more geometric, grid-aligned look, you can use the `square` prop to remove the rounding entirely.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', padding: '16px' }}>
+      <Card style={{ width: 200, padding: '16px' }}>
+        <p style={{ margin: 0 }}>Rounded (default)</p>
+      </Card>
+      <Card square style={{ width: 200, padding: '16px' }}>
+        <p style={{ margin: 0 }}>Square corners</p>
+      </Card>
+    </div>
+  </ThemeWrapper>
+</Row>

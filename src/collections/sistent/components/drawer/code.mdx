@@ -1,0 +1,289 @@
+---
+title: Drawer Code
+component: drawer
+description: Code examples demonstrating different drawer variants and use cases.
+---
+
+import { useState } from "react";
+import { Drawer, Button, List, ListItem, Box, Divider, Typography } from "@sistent/sistent";
+
+export const TemporaryDrawerDemo = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button onClick={() => setOpen(true)} variant="contained" label="Open drawer" />
+      <Drawer open={open} onClose={() => setOpen(false)}>
+        <Box sx={{ width: 250 }} role="presentation" onClick={() => setOpen(false)}>
+          <List>
+            {["Inbox", "Starred", "Send email", "Drafts"].map((text) => (
+              <ListItem key={text}><Typography>{text}</Typography></ListItem>
+            ))}
+          </List>
+          <Divider />
+          <List>
+            {["All mail", "Trash", "Spam"].map((text) => (
+              <ListItem key={text}><Typography>{text}</Typography></ListItem>
+            ))}
+          </List>
+        </Box>
+      </Drawer>
+    </>
+  );
+};
+
+export const AnchorsDrawerDemo = () => {
+  const [anchorState, setAnchorState] = useState({ left: false, right: false, top: false, bottom: false });
+  const toggleAnchor = (anchor, open) => (event) => {
+    if (event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) return;
+    setAnchorState({ ...anchorState, [anchor]: open });
+  };
+  const anchorList = (anchor) => (
+    <Box
+      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+      role="presentation"
+      onClick={toggleAnchor(anchor, false)}
+      onKeyDown={toggleAnchor(anchor, false)}
+    >
+      <List>
+        {["Inbox", "Starred", "Send email", "Drafts"].map((text) => (
+          <ListItem key={text}><Typography>{text}</Typography></ListItem>
+        ))}
+      </List>
+      <Divider />
+      <List>
+        {["All mail", "Trash", "Spam"].map((text) => (
+          <ListItem key={text}><Typography>{text}</Typography></ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+  return (
+    <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
+      {["left", "right", "top", "bottom"].map((anchor) => (
+        <>
+          <Button onClick={toggleAnchor(anchor, true)} variant="contained" label={anchor} key={`btn-${anchor}`} />
+          <Drawer anchor={anchor} open={anchorState[anchor]} onClose={toggleAnchor(anchor, false)} key={`drawer-${anchor}`}>
+            {anchorList(anchor)}
+          </Drawer>
+        </>
+      ))}
+    </Box>
+  );
+};
+
+export const PersistentDrawerDemo = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <Box sx={{ display: "flex" }}>
+      <Button
+        onClick={() => setOpen(!open)}
+        variant="contained"
+        label={open ? "Close" : "Open"}
+      />
+      <Drawer
+        variant="persistent"
+        anchor="left"
+        open={open}
+      >
+        <Box sx={{ width: 240, p: 2 }}>
+          <List>
+            {["Inbox", "Starred", "Send email"].map((text) => (
+              <ListItem key={text}><Typography>{text}</Typography></ListItem>
+            ))}
+          </List>
+        </Box>
+      </Drawer>
+    </Box>
+  );
+};
+
+export const PermanentDrawerDemo = () => (
+  <Box sx={{ display: "flex", height: 300, border: "1px solid #ddd" }}>
+    <Drawer
+      variant="permanent"
+      anchor="left"
+      sx={{
+        width: 240,
+        flexShrink: 0,
+        "& .MuiDrawer-paper": { width: 240, boxSizing: "border-box", position: "relative" },
+      }}
+    >
+      <Box sx={{ overflow: "auto", p: 2 }}>
+        <List>
+          {["Inbox", "Starred", "Send email", "Drafts"].map((text) => (
+            <ListItem key={text}><Typography>{text}</Typography></ListItem>
+          ))}
+        </List>
+        <Divider />
+        <List>
+          {["All mail", "Trash", "Spam"].map((text) => (
+            <ListItem key={text}><Typography>{text}</Typography></ListItem>
+          ))}
+        </List>
+      </Box>
+    </Drawer>
+    <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Typography>Page content goes here</Typography>
+    </Box>
+  </Box>
+);
+
+Code examples demonstrating different drawer variants and use cases.
+
+<a id="Temporary Drawer">
+  <h2>Temporary Drawer</h2>
+</a>
+
+Opens on top of content, closes when clicking outside or selecting an item.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <TemporaryDrawerDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="drawer-temporary" collapsible code={`<Button onClick={() => setOpen(true)} variant="contained" label="Open drawer" />
+<Drawer open={open} onClose={() => setOpen(false)}>
+  <Box sx={{ width: 250 }} role="presentation" onClick={() => setOpen(false)}>
+    <List>
+      {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text) => (
+        <ListItem key={text}>
+          <Typography>{text}</Typography>
+        </ListItem>
+      ))}
+    </List>
+    <Divider />
+    <List>
+      {['All mail', 'Trash', 'Spam'].map((text) => (
+        <ListItem key={text}>
+          <Typography>{text}</Typography>
+        </ListItem>
+      ))}
+    </List>
+  </Box>
+</Drawer>`} />
+</div>
+
+<a id="Anchor Positions">
+  <h2>Anchor Positions</h2>
+</a>
+
+Drawers can slide in from any edge: left, right, top, or bottom.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <AnchorsDrawerDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="drawer-anchors" collapsible code={`{['left', 'right', 'top', 'bottom'].map((anchor) => (
+  <React.Fragment key={anchor}>
+    <Button 
+      onClick={() => setState({ ...state, [anchor]: true })} 
+      variant="contained" 
+      label={anchor} 
+    />
+    <Drawer
+      anchor={anchor}
+      open={state[anchor]}
+      onClose={() => setState({ ...state, [anchor]: false })}
+    >
+      <Box
+        sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+        role="presentation"
+        onClick={() => setState({ ...state, [anchor]: false })}
+      >
+        {/* Drawer Content */}
+      </Box>
+    </Drawer>
+  </React.Fragment>
+))}`} />
+</div>
+
+<a id="Persistent Drawer">
+  <h2>Persistent Drawer</h2>
+</a>
+
+Sits alongside content, can be toggled open/closed, and maintains state.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PersistentDrawerDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="drawer-persistent" collapsible code={`<Box sx={{ display: 'flex' }}>
+  <Button
+    onClick={() => setOpen(!open)}
+    variant="contained"
+    label={open ? 'Close' : 'Open'}
+  />
+  <Drawer
+    variant="persistent"
+    anchor="left"
+    open={open}
+  >
+    <Box sx={{ width: 240, p: 2 }}>
+      <List>
+        {['Inbox', 'Starred', 'Send email'].map((text) => (
+          <ListItem key={text}>
+            <Typography>{text}</Typography>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  </Drawer>
+  <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+    <Typography>Main Content</Typography>
+  </Box>
+</Box>`} />
+</div>
+
+<a id="Permanent Drawer">
+  <h2>Permanent Drawer</h2>
+</a>
+
+Always visible drawer pinned to the side. Ideal for desktop applications with consistent navigation.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <PermanentDrawerDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="drawer-permanent" collapsible code={`<Box sx={{ display: 'flex' }}>
+  <Drawer
+    variant="permanent"
+    anchor="left"
+    sx={{
+      width: 240,
+      flexShrink: 0,
+      '& .MuiDrawer-paper': {
+        width: 240,
+        boxSizing: 'border-box',
+      },
+    }}
+  >
+    <Box sx={{ overflow: 'auto', p: 2 }}>
+      <List>
+        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text) => (
+          <ListItem key={text}>
+            <Typography>{text}</Typography>
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+      <List>
+        {['All mail', 'Trash', 'Spam'].map((text) => (
+          <ListItem key={text}>
+            <Typography>{text}</Typography>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  </Drawer>
+  <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+    <Typography>Page content goes here</Typography>
+  </Box>
+</Box>`} />
+</div>

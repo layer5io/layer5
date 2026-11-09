@@ -1,0 +1,127 @@
+---
+title: Permissions Guidance
+component: permissions
+description: Design principles, placement strategies, user experience guidance, and accessibility considerations for Permission Shield, Permission Provider, and 403 context cards.
+---
+
+import { Box, Button, PermissionProvider, PermissionShield } from "@sistent/sistent";
+
+export const sampleKey = {
+  id: "389fa12b-4578-4392-a10c-99d821ef34a1",
+  function: "Publish Design",
+  description: "Publish architectural designs and patterns to the public cloud catalog.",
+  category: "Catalog Management",
+  subcategory: "Publication"
+};
+
+export const sampleContext = {
+  userName: "Ada Lovelace",
+  orgName: "Layer5 Cloud",
+  roleNames: ["Designer"]
+};
+
+export const GuidanceExample = () => (
+  <PermissionProvider userHasPermission={() => false} userContext={sampleContext}>
+    <Box sx={{ display: "flex", justifyContent: "center", width: "100%", maxWidth: 320, p: 2 }}>
+      <PermissionShield permissionKey={sampleKey} variant="inline">
+        <Button variant="contained" color="primary" fullWidth>
+          Publish to Catalog
+        </Button>
+      </PermissionShield>
+    </Box>
+  </PermissionProvider>
+);
+
+Providing actionable, transparent feedback is essential when guiding users through permission-controlled cloud environments. The following guidelines help teams effectively implement authorization gates.
+
+<a id="When-to-Use">
+  <h2>When to Use: Shield vs. Hide</h2>
+</a>
+
+Different UI surfaces require different authorization degradation strategies. Sistent supports two primary actions: **`showShield`** and **`hide`**.
+
+<h3>Use `showShield` (or `permissionAction="showShield"`) when:</h3>
+
+* **In-Page Affordances:** The user is on a workspace, project, or settings page where an action button (e.g., "Deploy Pattern", "Add Node", "Export Telemetry") is visible to all members but executable only by admins or operators.
+* **Educational Discoverability:** You want the user to know that a capability exists, understand what role or key is required, and request access from an administrator.
+* **Contextual Forms:** Fields, menu items, or inputs where certain actions are restricted to specific roles.
+
+<h3>Use `hide` (or `permissionAction="hide"`) when:</h3>
+
+* **Primary Navigation Menus:** Navbars and sidebar menus should hide unreachable top-level sections and pages to prevent menu bloat and clutter.
+* **Destructive Admin Consoles:** Management consoles that are irrelevant to non-admin tenants.
+* **Extension Points:** Pluggable cards or sidebar panels intended only for privileged roles.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+      <GuidanceExample />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Supported-Components">
+  <h2>Supported Base Components</h2>
+</a>
+
+Sistent base components natively support `permissionKey` and `permissionAction` without needing a manual `<PermissionShield>` wrapper:
+
+* **`<Button permissionKey={...} permissionAction="showShield" | "hide" />`**
+* **`<IconButton permissionKey={...} permissionAction="showShield" | "hide" />`**
+* **`<MenuItem permissionKey={...} permissionAction="showShield" | "hide" />`**
+* **`<ListItem permissionKey={...} permissionAction="showShield" | "hide" />`**
+* **`<ListItemButton permissionKey={...} permissionAction="showShield" | "hide" />`**
+
+When `permissionAction="showShield"` is used on these components:
+* `Button`, `ListItem`, `ListItemButton`, and `MenuItem` default to the **inline** shield variant.
+* `IconButton` defaults to the **badge** shield variant.
+
+<a id="Anatomy">
+  <h2>Anatomy of the Shield & Tooltip</h2>
+</a>
+
+The `PermissionShield` tooltip contains structured metadata designed to resolve access requests efficiently:
+
+1. **Authorization Header:** Clear title indicating `AUTHORIZATION REQUIRED`.
+2. **Requirement Combinator:** Explains whether the user requires all keys (`Needs all of:`) or any single key (`Needs any of:`).
+3. **Key Metadata Blocks:** For each unmet key, displays:
+   * **Copy Key ID Trigger:** Clicking the key icon copies the canonical UUID to clipboard for sharing with system administrators.
+   * **Permission Function Name:** Clear human-readable action name (e.g., *"Create Workspace"*).
+   * **Description:** Explanatory copy clarifying what capability the key grants.
+   * **Category & Subcategory Chips:** Granular taxonomy tags for quick categorization.
+   * **Key Reference Link:** Direct link to official permissions documentation.
+4. **Active User Context:** Displays the current user's name, active organization, and **Assigned Roles**.
+5. **Support Callout:** Prompt directing the user to contact their organization administrator.
+
+<a id="User-Context-Contract">
+  <h2>The Assigned Roles Contract</h2>
+</a>
+
+<p>
+  <strong>Critical Invariant:</strong> The user context rendered inside the tooltip and 403 context cards must <em>always</em> reflect the roles the user is <strong>assigned</strong> in the active organization, never the organization's total role catalog.
+</p>
+
+* Displaying the org role catalog mistakenly informs users that they possess roles they do not hold.
+* When a user holds no assigned roles in the active tenant space, the component cleanly reports `Role(s): None`.
+
+<a id="Multi-Tenancy">
+  <h2>Multi-Tenant Organization Switching</h2>
+</a>
+
+When users encounter a 403 Access Denied page, the `useAccessibleOrgs` hook queries other organizations the user belongs to in parallel. If the user possesses the required permission in a sibling organization, an Organization Switcher dropdown allows instant switching without leaving the flow.
+
+<a id="Accessibility">
+  <h2>Accessibility & Keyboard Navigation</h2>
+</a>
+
+* **Non-Obstructive Dimming:** Guarded children receive `opacity: 0.5` and `pointer-events: none` while remaining in the accessibility tree.
+* **Focusable Shield Trigger:** The shield icon trigger is keyboard-focusable with `tabIndex="0"` and triggers via <kbd>Enter</kbd> or <kbd>Space</kbd>.
+* **Screen Reader Labels:** Copy triggers supply descriptive `aria-label` tags (e.g. `aria-label="Copy key ID for Create Workspace"`).
+* **Click-Away Dismissal:** Tooltips automatically close when the user clicks outside or focuses another element.
+
+<a id="Performance">
+  <h2>Performance Tips</h2>
+</a>
+
+* **Memoized Evaluator:** Pass a stable or memoized `userHasPermission` function to `PermissionProvider` to avoid unnecessary re-renders of the component tree.
+* **Lazy Org Evaluation:** The `useAccessibleOrgs` hook is designed specifically for 403 error pages. Do not mount it on high-frequency navigation bars.

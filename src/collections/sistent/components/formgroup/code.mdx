@@ -1,0 +1,149 @@
+---
+title: Form Group Code
+component: formgroup
+description: FormGroup is a wrapper component used to group multiple form controls such as checkboxes or switches together, providing consistent spacing and layout.
+---
+
+import { useState } from "react";
+import { FormGroup, FormControlLabel, FormControl, FormLabel, Checkbox, Switch } from "@sistent/sistent";
+
+export const BasicFormGroupCodeDemo = () => {
+  const [state, setState] = useState({
+    option1: false,
+    option2: true,
+  });
+  const handleChange = (event) => {
+    setState({ ...state, [event.target.name]: event.target.checked });
+  };
+  return (
+    <FormGroup>
+      <FormControlLabel
+        control={<Checkbox checked={state.option1} onChange={handleChange} name="option1" />}
+        label="Option One"
+      />
+      <FormControlLabel
+        control={<Checkbox checked={state.option2} onChange={handleChange} name="option2" />}
+        label="Option Two"
+      />
+    </FormGroup>
+  );
+};
+
+export const RowFormGroupCodeDemo = () => {
+  return (
+    <FormGroup row>
+      <FormControlLabel control={<Checkbox defaultChecked />} label="Option A" />
+      <FormControlLabel control={<Checkbox />} label="Option B" />
+      <FormControlLabel control={<Checkbox />} label="Option C" />
+    </FormGroup>
+  );
+};
+
+export const SwitchFormGroupCodeDemo = () => {
+  return (
+    <FormGroup>
+      <FormControlLabel control={<Switch defaultChecked />} label="Email Notifications" />
+      <FormControlLabel control={<Switch />} label="Push Notifications" />
+      <FormControlLabel control={<Switch />} label="SMS Notifications" />
+    </FormGroup>
+  );
+};
+
+export const AccessibleFormGroupCodeDemo = () => {
+  return (
+    <FormControl component="fieldset">
+      <FormLabel component="legend">Select Preferences</FormLabel>
+      <FormGroup>
+        <FormControlLabel control={<Checkbox defaultChecked />} label="Option A" />
+        <FormControlLabel control={<Checkbox />} label="Option B" />
+        <FormControlLabel control={<Checkbox />} label="Option C" />
+      </FormGroup>
+    </FormControl>
+  );
+};
+
+<a id="Basic-Usage">
+  <h2>Basic Usage</h2>
+</a>
+
+The most common use case for FormGroup is grouping checkboxes together with labels.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <BasicFormGroupCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-form-group" collapsible code={`<SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  <FormGroup>
+    <FormControlLabel control={<Checkbox />} label="Option One" />
+    <FormControlLabel control={<Checkbox defaultChecked />} label="Option Two" />
+  </FormGroup>
+</SistentThemeProvider>`} />
+</div>
+
+<a id="Row-Layout">
+  <h2>Row Layout</h2>
+</a>
+
+Use the <code>row</code> prop to display form controls horizontally.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <RowFormGroupCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="row-form-group" collapsible code={`<SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  <FormGroup row>
+    <FormControlLabel control={<Checkbox defaultChecked />} label="Option A" />
+    <FormControlLabel control={<Checkbox />} label="Option B" />
+    <FormControlLabel control={<Checkbox />} label="Option C" />
+  </FormGroup>
+</SistentThemeProvider>`} />
+</div>
+
+<a id="With-Switches">
+  <h2>With Switches</h2>
+</a>
+
+FormGroup works seamlessly with Switch components for toggle-based settings.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SwitchFormGroupCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="switch-form-group" collapsible code={`<SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  <FormGroup>
+    <FormControlLabel control={<Switch defaultChecked />} label="Email Notifications" />
+    <FormControlLabel control={<Switch />} label="Push Notifications" />
+    <FormControlLabel control={<Switch />} label="SMS Notifications" />
+  </FormGroup>
+</SistentThemeProvider>`} />
+</div>
+
+<a id="Accessible-Group">
+  <h2>Accessible Group</h2>
+</a>
+
+Wrap FormGroup inside a <code>FormControl</code> with a <code>FormLabel</code> for full accessibility support.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <AccessibleFormGroupCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="accessible-form-group" collapsible code={`<SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
+  <FormControl component="fieldset">
+    <FormLabel component="legend">Select Preferences</FormLabel>
+    <FormGroup>
+      <FormControlLabel control={<Checkbox defaultChecked />} label="Option A" />
+      <FormControlLabel control={<Checkbox />} label="Option B" />
+      <FormControlLabel control={<Checkbox />} label="Option C" />
+    </FormGroup>
+  </FormControl>
+</SistentThemeProvider>`} />
+</div>

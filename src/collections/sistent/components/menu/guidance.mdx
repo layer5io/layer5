@@ -1,0 +1,110 @@
+---
+title: Menu Guidance
+component: menu
+description: A menu displays a list of contextual actions or choices anchored to a trigger.
+---
+
+import { useState } from "react";
+import { Box, Button, Divider, Menu, MenuItem } from "@sistent/sistent";
+
+export const ActionMenuDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => setAnchorEl(event.currentTarget);
+  const handleClose = () => setAnchorEl(null);
+
+  return (
+    <Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
+      <Button variant="contained" label="Actions" onClick={handleClick} />
+      <Menu
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        disableScrollLock
+        marginThreshold={null}
+      >
+        <MenuItem onClick={handleClose}>Edit</MenuItem>
+        <MenuItem onClick={handleClose}>Share</MenuItem>
+        <Divider />
+        <MenuItem onClick={handleClose}>Delete</MenuItem>
+      </Menu>
+    </Box>
+  );
+};
+
+export const StateMenuDemo = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => setAnchorEl(event.currentTarget);
+  const handleClose = () => setAnchorEl(null);
+
+  return (
+    <Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
+      <Button variant="outlined" label="View" onClick={handleClick} />
+      <Menu
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        disableScrollLock
+        marginThreshold={null}
+      >
+        <MenuItem selected onClick={handleClose}>Compact</MenuItem>
+        <MenuItem onClick={handleClose}>Comfortable</MenuItem>
+        <MenuItem disabled>Custom</MenuItem>
+      </Menu>
+    </Box>
+  );
+};
+
+Menus should expose a focused set of actions. Keep them short, predictable, and tied to the element that opened them.
+
+<a id="Usage">
+  <h2>Usage</h2>
+</a>
+
+<h3>Contextual Actions</h3>
+
+Use menus for actions that relate to the current page, selected item, or nearby control.
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <ActionMenuDemo />
+  </ThemeWrapper>
+</Row>
+
+<h3>Selection States</h3>
+
+Use selected items to show the current choice and disabled items for unavailable options. Avoid hiding unavailable options when their presence helps explain the interface.
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <StateMenuDemo />
+  </ThemeWrapper>
+</Row>
+
+<a id="Content">
+  <h2>Content</h2>
+</a>
+
+<h3>Labels</h3>
+
+Menu item labels should be concise and action-oriented. Start with a verb for commands, such as Edit, Share, or Delete.
+
+<h3>Grouping</h3>
+
+Group related actions with dividers. Keep destructive actions visually separated and place them after common actions.
+
+<h3>Length</h3>
+
+Keep menus short enough to scan quickly. If the list grows long or needs filtering, use a fuller selection pattern instead of a menu.
+
+<a id="Behavior">
+  <h2>Behavior</h2>
+</a>
+
+<ul>
+  <li>Open the menu from a clear trigger and anchor it to that trigger.</li>
+  <li>Close the menu after an item is selected or when focus moves away.</li>
+  <li>Use <code>disableScrollLock</code> and <code>{'marginThreshold={null}'}</code> in these docs so opened menus stay aligned during page scrolling.</li>
+  <li>Keep keyboard navigation intact by using MenuItem inside Menu or MenuList.</li>
+</ul>

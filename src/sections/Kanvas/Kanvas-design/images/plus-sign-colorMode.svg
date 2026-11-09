@@ -1,0 +1,10 @@
+<svg width="36" height="36" viewBox="-16 -13 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+.colorMode1 {
+    stroke: #666;
+    stroke-opacity: 0.5
+}
+</style>
+<path d="M17.5 14L17.5 23" class="colorMode1"/>
+<line x1="22" y1="18.7354" x2="13" y2="18.7354" class="colorMode1"/>
+</svg>

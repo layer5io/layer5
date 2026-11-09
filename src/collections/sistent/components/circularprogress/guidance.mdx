@@ -1,0 +1,148 @@
+---
+title: Circular Progress Guidance
+component: circularprogress
+description: The Circular Progress component displays a circular loading indicator that represents either determinate or indeterminate progress in your application. It's commonly used to show loading states, progress of operations, or completion percentages.
+---
+
+import { CircularProgress, Button } from "@sistent/sistent";
+import { useState } from "react";
+
+export const SizingDemo = () => {
+  const [size, setSize] = useState(40);
+  const maxSize = 80;
+  const minSize = 20;
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
+      <CircularProgress size={size} />
+      <div style={{ marginLeft: "20px", display: "flex", gap: "10px" }}>
+        <Button
+          variant="contained"
+          label="Decrease Size"
+          size="medium"
+          onClick={() => {
+            if (size > minSize) {
+              setSize(size - 10);
+            }
+          }}
+          disabled={size <= minSize}
+        />
+        <Button
+          variant="contained"
+          label="Increase Size"
+          size="medium"
+          onClick={() => {
+            if (size < maxSize) {
+              setSize(size + 10);
+            }
+          }}
+          disabled={size >= maxSize}
+        />
+      </div>
+    </div>
+  );
+};
+
+export const ThicknessDemo = () => {
+  const [thickness, setThickness] = useState(4);
+  const maxThickness = 10;
+  const minThickness = 1;
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
+      <CircularProgress thickness={thickness} />
+      <div style={{ marginLeft: "20px", display: "flex", gap: "10px" }}>
+        <Button
+          variant="contained"
+          label="Decrease Thickness"
+          size="medium"
+          onClick={() => {
+            if (thickness > minThickness) {
+              setThickness(thickness - 1);
+            }
+          }}
+          disabled={thickness <= minThickness}
+        />
+        <Button
+          variant="contained"
+          label="Increase Thickness"
+          size="medium"
+          onClick={() => {
+            if (thickness < maxThickness) {
+              setThickness(thickness + 1);
+            }
+          }}
+          disabled={thickness >= maxThickness}
+        />
+      </div>
+    </div>
+  );
+};
+
+export const ColorsDemo = () => {
+  const [currentColor, setCurrentColor] = useState("primary");
+  const colors = ["primary", "secondary", "success", "error", "warning", "info"];
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
+      <CircularProgress color={currentColor} />
+      <div style={{ marginLeft: "20px", display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "center" }}>
+        {colors.map((color) => (
+          <Button
+            key={color}
+            variant={currentColor === color ? "contained" : "outlined"}
+            label={color.charAt(0).toUpperCase() + color.slice(1)}
+            size="small"
+            onClick={() => setCurrentColor(color)}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+Proper usage of the Circular Progress component can enhance user experience by visually indicating progress status. Below are some guidelines to ensure effective implementation.
+
+<a id="Usage">
+  <h2>Usage</h2>
+</a>
+
+To use the Circular Progress component, include it in your layout with the desired `variant` prop to specify whether it should be determinate or indeterminate. For example:
+
+- `variant="indeterminate"` for continuous loading.
+- `variant="determinate"` for specific progress indication.
+
+The `value` prop is required for determinate progress to indicate how far along the task is, ranging from 0 to 100.
+
+<a id="Sizing">
+  <h3>Sizing</h3>
+</a>
+
+Adjust the size of the Circular Progress component using the `size` prop. For example, set `size={60}` to increase the diameter of the circular loader.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <SizingDemo />
+  </ThemeWrapper>
+</Row>
+
+<a id="Thickness">
+  <h3>Thickness</h3>
+</a>
+
+Control the thickness of the circular progress arc using the `thickness` prop. This allows for customization of the loader's appearance.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <ThicknessDemo />
+  </ThemeWrapper>
+</Row>
+
+<a id="Colors">
+  <h3>Colors</h3>
+</a>
+
+Customize the color of the Circular Progress component using the `color` prop. Available colors include primary, secondary, success, error, warning, and info to match your design system.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <ColorsDemo />
+  </ThemeWrapper>
+</Row>

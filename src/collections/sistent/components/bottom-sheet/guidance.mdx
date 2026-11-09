@@ -1,0 +1,95 @@
+---
+title: BottomSheet Guidance
+component: bottom-sheet
+description: This guide provides comprehensive information on when and how to use the BottomSheet component effectively in your applications
+---
+
+import { useState } from "react";
+import { Box, Button, BottomSheet, Typography, TextField } from "@sistent/sistent";
+
+export const BasicBottomSheetGuidance = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button variant="contained" onClick={() => setOpen(true)}>Open Basic BottomSheet</Button>
+      <BottomSheet open={open} onClose={() => setOpen(false)} title="Quick Actions">
+        <Typography>This bottom sheet provides access to quick actions and supplementary content.</Typography>
+      </BottomSheet>
+    </>
+  );
+};
+
+export const ActionBottomSheetGuidance = () => {
+  const [open, setOpen] = useState(false);
+  const CustomInput = ({ inputLabel, placeholder }) => (
+    <Box sx={{ mb: 2 }}>
+      <Typography variant="subtitle1" gutterBottom>{inputLabel}</Typography>
+      <TextField label={placeholder} variant="outlined" fullWidth />
+    </Box>
+  );
+  return (
+    <>
+      <Button variant="contained" onClick={() => setOpen(true)}>Edit Profile</Button>
+      <BottomSheet open={open} onClose={() => setOpen(false)} title="Edit Profile" maxHeight="90vh">
+        <Box sx={{ mb: 3 }}>
+          <Typography variant="body1">Update your profile details below:</Typography>
+        </Box>
+        <CustomInput inputLabel="Display Name" placeholder="Enter display name" />
+        <CustomInput inputLabel="Status" placeholder="Enter status message" />
+        <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
+          <Button variant="contained" onClick={() => setOpen(false)}>Save Changes</Button>
+        </Box>
+      </BottomSheet>
+    </>
+  );
+};
+
+<a id="basic-bottom-sheet">
+  <h2>Basic BottomSheet</h2>
+</a>
+
+Use for presenting supplementary information, filters, or simple interactions. Keep content focused and provide clear ways to dismiss the sheet.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+      <BasicBottomSheetGuidance />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="action-bottom-sheet">
+  <h2>Action BottomSheet</h2>
+</a>
+
+Perfect for task completion with forms on mobile layouts. Utilize the <code>maxHeight</code> property to ensure the sheet provides enough space without covering the entire screen.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+      <ActionBottomSheetGuidance />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Usage Guidelines">
+  <h2>When to Use BottomSheets</h2>
+</a>
+
+<ul>
+  <li><p>Providing supplementary content or contextual actions on mobile interfaces</p></li>
+  <li><p>Presenting filters, settings, or share menus without navigating to a new page</p></li>
+  <li><p>When the content is secondary but requires a dedicated view area</p></li>
+  <li><p>As a responsive alternative to dropdowns or large dialogs that would otherwise crowd the screen</p></li>
+</ul>
+
+<a id="Best Practices">
+  <h2>Best Practices</h2>
+</a>
+
+<ul>
+  <li><p><b>Height Management:</b> Avoid bottom sheets that span the full height of the screen. Use the <code>maxHeight</code> property to ensure users maintain context of the underlying page. The default is 80vh.</p></li>
+  <li><p><b>Content Density:</b> Keep content concise and actionable. Avoid overwhelming users with dense text or overly complex forms in a bottom sheet.</p></li>
+  <li><p><b>Accessibility:</b> Provide meaningful <code>closeButtonAriaLabel</code> values, especially when the default "Close" is not sufficiently descriptive for the context.</p></li>
+  <li><p><b>Focus and Dismissal:</b> BottomSheet inherits focus management and backdrop/escape key dismissal from the underlying Dialog component, ensuring accessibility standards are maintained.</p></li>
+</ul>

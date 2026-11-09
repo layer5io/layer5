@@ -1,0 +1,65 @@
+---
+name: "Form Control"
+title: Form Control
+published: true
+component: formcontrol
+description: FormControl is a context provider component that provides context such as filled/focused/error/required for form inputs.
+---
+
+import { useState } from "react";
+import { FormControl, OutlinedInput, InputLabel, Box } from "@sistent/sistent";
+
+export const BasicFormControlDemo = () => {
+  const [value, setValue] = useState("");
+
+  return (
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 2, width: "300px", justifyContent: 'center' }}>
+      <FormControl fullWidth sx={{ m: 1 }}>
+        <InputLabel htmlFor="email-input">Email Address</InputLabel>
+        <OutlinedInput
+          id="email-input"
+          label="Email Address"
+          placeholder="example@domain.com"
+          type="email"
+          aria-describedby="email-helper-text"
+        />
+      </FormControl>
+    </Box>
+  );
+};
+
+<a id="Usage">
+  <h2>Usage</h2>
+</a>
+The `FormControl` component is a wrapper that provides context for form inputs.
+Relying on the context provides high flexibility and ensures that the state always
+stays consistent across the children of the `FormControl`. This context is used by
+the following components:
+* `FormLabel`
+* `FormHelperText`
+* `Input`
+* `InputLabel`
+
+**Warning:** You should only ever have one input-like component (Input, Select, etc.)
+inside a single FormControl. If you have multiple, the state logic will break.
+<a id="Example">
+  <h2>Example</h2>
+</a>
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <BasicFormControlDemo />
+  </ThemeWrapper>
+</Row>
+
+<a id="Accessibility">
+  <h2>Accessibility</h2>
+</a>
+
+FormControl automatically handles accessibility attributes and provides proper labeling for screen readers. It ensures that form controls are properly associated with their labels and error states.
+
+<a id="Further">
+  <h2>Learn More</h2>
+</a>
+
+Visit the **Guidance** tab for best practices and the **Code** tab for implementation details.

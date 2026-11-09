@@ -1,0 +1,97 @@
+---
+name: "RadioGroup"
+title: RadioGroup
+published: true
+component: radiogroup
+description: The RadioGroup component allows users to select one option from a set of mutually exclusive choices. It ensures accessibility and consistency within the Sistent design system.
+---
+
+import { useState } from "react";
+import { RadioGroup, Radio, FormControlLabel } from "@sistent/sistent";
+
+export const BasicRadioGroupDemo = () => {
+  const [selectedBasicOption, setSelectedBasicOption] = useState("Layer5");
+  const handleBasicChange = (event) => setSelectedBasicOption(event.target.value);
+  return (
+    <Row $Hcenter className="image-container">
+      <RadioGroup value={selectedBasicOption} onChange={handleBasicChange}>
+        <FormControlLabel value="Layer5" control={<Radio />} label="Layer5" />
+        <FormControlLabel value="Meshery" control={<Radio />} label="Meshery" />
+        <FormControlLabel value="Kanvas" control={<Radio />} label="Kanvas" />
+      </RadioGroup>
+    </Row>
+  );
+};
+
+export const DisabledRadioGroupDemo = () => {
+  const [selectedDisabledOption, setSelectedDisabledOption] = useState("Layer5");
+  const handleDisabledChange = (event) => setSelectedDisabledOption(event.target.value);
+  return (
+    <Row $Hcenter className="image-container">
+      <RadioGroup value={selectedDisabledOption} onChange={handleDisabledChange}>
+        <FormControlLabel value="Layer5" control={<Radio />} label="Layer5" />
+        <FormControlLabel value="Meshery-Cloud (Disabled)" control={<Radio />} label="Meshery-Cloud (Private)" disabled />
+        <FormControlLabel value="Sistent Design System" control={<Radio />} label="Sistent Design System" />
+      </RadioGroup>
+    </Row>
+  );
+};
+
+export const RowRadioGroupDemo = () => {
+  const [selectedRowOption, setSelectedRowOption] = useState("Layer5");
+  const handleRowChange = (event) => setSelectedRowOption(event.target.value);
+  return (
+    <Row $Hcenter className="image-container">
+      <RadioGroup row value={selectedRowOption} onChange={handleRowChange}>
+        <FormControlLabel value="Contributor" control={<Radio />} label="Contributor" />
+        <FormControlLabel value="Community" control={<Radio />} label="Community Member" />
+        <FormControlLabel value="Maintainer" control={<Radio />} label="Maintainer" />
+      </RadioGroup>
+    </Row>
+  );
+};
+
+export const LabelPlacementRadioGroupDemo = () => {
+  const [selectedLabelOption, setSelectedLabelOption] = useState("end");
+  const handleLabelChange = (event) => setSelectedLabelOption(event.target.value);
+  return (
+    <Row $Hcenter className="image-container">
+      <RadioGroup row value={selectedLabelOption} onChange={handleLabelChange}>
+        <FormControlLabel value="end" control={<Radio />} label="End (Default)" labelPlacement="end" />
+        <FormControlLabel value="top" control={<Radio />} label="Top" labelPlacement="top" />
+        <FormControlLabel value="bottom" control={<Radio />} label="Bottom" labelPlacement="bottom" />
+        <FormControlLabel value="start" control={<Radio />} label="Start" labelPlacement="start" />
+      </RadioGroup>
+    </Row>
+  );
+};
+
+
+The RadioGroup component in React is used to present a set of mutually exclusive options, where only one option can be selected at a time. It is commonly used in forms and settings.
+
+<a id="Usage"><h2>How to use</h2></a>
+<p>The examples below demonstrate different ways to use the RadioGroup component.</p>
+
+<h3>Basic RadioGroup</h3>
+<p>Select one option from a simple vertical list.</p>
+<ThemeWrapper>
+  <BasicRadioGroupDemo />
+</ThemeWrapper>
+
+<h3>Disabled Options</h3>
+<p>One of the options is disabled and cannot be selected.</p>
+<ThemeWrapper>
+  <DisabledRadioGroupDemo />
+</ThemeWrapper>
+
+<h3>Row Layout</h3>
+<p>Options are displayed in a horizontal row.</p>
+<ThemeWrapper>
+  <RowRadioGroupDemo />
+</ThemeWrapper>
+
+<h3>Label Placement</h3>
+<p>You can change the placement of the label with the <code>labelPlacement</code> prop.</p>
+<ThemeWrapper>
+  <LabelPlacementRadioGroupDemo />
+</ThemeWrapper>

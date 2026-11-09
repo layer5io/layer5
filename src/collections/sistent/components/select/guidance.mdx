@@ -1,0 +1,255 @@
+---
+title: Select Guidance
+component: select
+description: Select component is a dropdown menu for selecting an option from a list.
+---
+
+import { useState } from "react";
+import { FormHelperText, Grid } from "@mui/material";
+import { FormControl, InputLabel, MenuItem, Select, ListSubheader, OutlinedInput, Box } from "@sistent/sistent";
+
+export const StateSelectDemo = (props) => {
+  const [age, setAge] = useState("");
+  const handleChange = (event) => setAge(event.target.value);
+  return (
+    <FormControl sx={{ width: "200px" }} {...props}>
+      <InputLabel id="demo-simple-select-state-label">Age</InputLabel>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+        labelId="demo-simple-select-state-label"
+        id="demo-simple-select-state"
+        value={age}
+        label="Age"
+        onChange={handleChange}
+        {...props}
+      >
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+export const HelperSelectDemo = () => {
+  return (
+    <Grid
+      gap={2}
+      container
+      sx={{
+        width: "100%",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <FormControl sx={{ width: "200px" }}>
+        <InputLabel id="demo-select-label">Age</InputLabel>
+        <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+          labelId="demo-select-label"
+          id="demo-select"
+          label="Age"
+        >
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+        <FormHelperText>With label + Helper text</FormHelperText>
+      </FormControl>
+      <FormControl sx={{ width: "200px" }}>
+        <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }} id="demo-select-without-label">
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+        <FormHelperText>Without label</FormHelperText>
+      </FormControl>
+    </Grid>
+  );
+};
+
+export const PlaceholderSelectDemo = () => {
+  const [age, setAge] = useState("");
+  const handleChange = (event) => setAge(event.target.value);
+  return (
+    <FormControl sx={{ width: "200px" }}>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+        id="demo-select-placeholder"
+        value={age}
+        onChange={handleChange}
+        displayEmpty
+        renderValue={(selected) => {
+          if (selected === "") {
+            return <em>Select an age</em>;
+          }
+          return selected;
+        }}
+      >
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+export const GroupingSelectDemo = () => {
+  return (
+    <FormControl sx={{ width: "200px" }}>
+      <InputLabel id="demo-select-label-grouped">Age</InputLabel>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+        labelId="demo-select-label-grouped"
+        id="demo-select-grouped"
+        label="Age"
+      >
+        <ListSubheader muiSkipListHighlight>Group 1</ListSubheader>
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <ListSubheader muiSkipListHighlight>Group 2</ListSubheader>
+        <MenuItem value={30}>Thirty</MenuItem>
+        <MenuItem value={40}>Fourty</MenuItem>
+        <ListSubheader muiSkipListHighlight>Group 3</ListSubheader>
+        <MenuItem value={50}>Fifty</MenuItem>
+        <MenuItem value={60}>Sixty</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+export const MultipleSelectDemo = () => {
+  const [names, setNames] = useState([]);
+  const handleChange = (event) => {
+    const { target: { value } } = event;
+    setNames(typeof value === 'string' ? value.split(',') : value);
+  };
+  return (
+    <FormControl sx={{ width: "200px" }}>
+      <InputLabel id="demo-multiple-name-label">Age</InputLabel>
+      <Select MenuProps={{ disableScrollLock: true, marginThreshold: null }}
+        multiple
+        labelId="demo-multiple-name-label"
+        id="demo-multiple-name"
+        value={names}
+        onChange={handleChange}
+        label="Age"
+        input={<OutlinedInput label="Name" />}
+      >
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Select>
+    </FormControl>
+  );
+};
+
+<a id="Functions">
+  <h2>Functions</h2>
+</a>
+
+<p>
+  The select component can exhibit different state based on the
+  context and user input. Since it is usually used within a form
+  component, these states can act in response to the user input for
+  other components in the form.
+</p>
+
+<h3>Disabled</h3>
+<p>
+  If the component is disabled, the dropdown menu won't display when
+  user clicks on the selection area. This behavior is useful when the
+  user is not allowed to select any option.
+</p>
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <StateSelectDemo disabled />
+  </ThemeWrapper>
+</Row>
+
+<h3>Error</h3>
+<p>
+  This behavior is used to indicate that the user has made an error or
+  the selection is not compatible with other form components.
+</p>
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <StateSelectDemo error renderValue={(value) => `⚠️  - ${value}`} />
+  </ThemeWrapper>
+</Row>
+
+<h3>Required</h3>
+<p>
+  If specified, the select component will be required to have an input
+  from the user. An asterisk will be displayed next to the label to
+  let the user know that the input is required.
+</p>
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <StateSelectDemo required />
+  </ThemeWrapper>
+</Row>
+
+<a id="Customization">
+  <h2>Customization</h2>
+</a>
+
+<p>
+  Additional props can be added to the select component to customize
+  its label and dropdown menu to provide use with more context of
+  their selection.
+</p>
+
+<h3>Label and helper text</h3>
+<p>
+  The label is optional. If provided, helper text is displayed below
+  the component to give the user more context about the component.
+</p>
+
+<ThemeWrapper>
+  <HelperSelectDemo />
+</ThemeWrapper>
+
+<h3>Placeholder</h3>
+<p>
+  A placeholder is a short hint or description that is displayed
+  inside an input field or select component before the user enters a
+  value. It provides a clue to the user about what kind of information
+  is expected in the field. The placeholder text disappears when the
+  user starts typing or selects an option.
+</p>
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <PlaceholderSelectDemo />
+  </ThemeWrapper>
+</Row>
+
+<h3>Grouping</h3>
+<p>
+  If the selection options are organized into groups, their groups can
+  be displayed within the dropdown menu to assist users in making
+  their selection.
+</p>
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <GroupingSelectDemo />
+  </ThemeWrapper>
+</Row>
+
+<a id="Multiple select">
+  <h2>Multiple select</h2>
+</a>
+
+<p>
+  The multiple select component allows users to select more than one
+  option from the dropdown list. This is useful in scenarios where
+  multiple selections are required, such as selecting multiple tags,
+  categories, or items.
+</p>
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <MultipleSelectDemo />
+  </ThemeWrapper>
+</Row>

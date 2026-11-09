@@ -1,0 +1,137 @@
+---
+title: Switch Code
+component: switch
+description: The Switch component allows users to toggle a setting between two states—on or off.
+---
+
+import { useState } from "react";
+import { Switch, FormControlLabel } from "@sistent/sistent";
+
+export const codes = [
+  `  <SistentThemeProvider>
+      <Switch/>
+  </SistentThemeProvider>`,
+  `  <SistentThemeProvider>
+      <Switch checked={false} disabled />
+  </SistentThemeProvider>`,
+  `  <SistentThemeProvider>
+      <FormControlLabel
+        control={
+          <Switch
+            checked={checked}
+            onChange={handleChange}
+            name="demoSwitch"
+            color="primary"
+          />
+        }
+        label="Enable Notifications"
+      />
+  </SistentThemeProvider>`,
+  `  <SistentThemeProvider>
+      <Switch
+        size="small"
+        checked={checked}
+        onChange={handleChange}
+        inputProps={{ 'aria-label': 'toggle something' }}
+      />
+  </SistentThemeProvider>`,
+];
+
+export const BasicSwitchCodeDemo = () => {
+  const [checked, setChecked] = useState(true);
+  const handleChange = (event) => setChecked(event.target.checked);
+  return <Switch checked={checked} onChange={handleChange} />;
+};
+
+export const LabeledSwitchCodeDemo = () => {
+  const [checked, setChecked] = useState(true);
+  const handleChange = (event) => setChecked(event.target.checked);
+  return (
+    <FormControlLabel
+      control={
+        <Switch
+          checked={checked}
+          onChange={handleChange}
+          name="demoSwitch"
+          color="primary"
+        />
+      }
+      label="Enable Notifications"
+    />
+  );
+};
+
+export const SmallSwitchCodeDemo = () => {
+  const [checked, setChecked] = useState(true);
+  const handleChange = (event) => setChecked(event.target.checked);
+  return (
+    <Switch
+      size="small"
+      checked={checked}
+      onChange={handleChange}
+      inputProps={{ "aria-label": "toggle something" }}
+    />
+  );
+};
+
+
+
+<a id="Basic Switch">
+  <h2>Basic Switch</h2>
+</a>
+<p>
+  This is the default switch style used to represent changes between two states.
+</p>
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <BasicSwitchCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-switch" collapsible code={codes[0]} />
+</div>
+
+<a id="Disabled Switch">
+  <h2>Disabled Switch</h2>
+</a>
+<p>
+  Disabled switches show the state but are not interactive.
+</p>
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <Switch checked={false} disabled />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="disabled-switch" collapsible code={codes[1]} />
+</div>
+
+<a id="Labeled Switch">
+  <h2>Labeled Switch</h2>
+</a>
+<p>
+  Labels describe the action being toggled and improve accessibility.
+</p>
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <LabeledSwitchCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="labeled-switch" collapsible code={codes[2]} />
+</div>
+
+<a id="Small Switch">
+  <h2>Small Switch</h2>
+</a>
+<p>
+  Use the <code>size="small"</code> prop for a more compact version.
+</p>
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+      <SmallSwitchCodeDemo />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="small-switch" collapsible code={codes[3]} />
+</div>

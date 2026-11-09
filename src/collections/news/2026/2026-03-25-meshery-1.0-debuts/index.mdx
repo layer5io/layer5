@@ -1,0 +1,86 @@
+---
+type: News
+title: "Meshery 1.0 debuts, offering new layer of control for cloud-native infrastructure"
+subtitle: "Meshery 1.0 adds a visual control layer to simplify managing cloud-native infrastructure."
+date: 2026-03-25 12:15:05 +0000
+author: "Sean Michael Kerner"
+thumbnail: ./news-hero.webp
+darkthumbnail: ./news-hero.webp
+description: "Meshery 1.0 adds a visual control layer that simplifies management of cloud-native infrastructure."
+category: Press Release
+tags: ["Meshery"]
+presskit: ""
+resource: false
+published: true
+source_url: "https://www.networkworld.com/article/4150130/meshery-1-0-debuts-offering-new-layer-of-control-for-cloud-native-infrastructure.html"
+
+---
+
+{/* A template and instructions for creating news entries. Any styles to be defined can be defined in News.style.js and the class can be used here */}
+
+import { NewsWrapper } from "../../News.style.js";
+
+<NewsWrapper>
+Open-source Meshery provides a workspace to design and operate Kubernetes-based infrastructure, showing engineering teams what their infrastructure looks like, how components relate, where configurations conflict, and the impact of proposed changes. 
+
+Managing Kubernetes infrastructure across multi-cloud environments has long produced YAML sprawl, configuration drift, and tribal knowledge that lives in individuals rather than systems. AI tools that generate infrastructure configurations faster than teams can review them have made that issue harder to contain. It’s a problem that the open-source Meshery technology was built to solve. Meshery v1.0 is now out, providing a visual management and governance platform for cloud native infrastructure.
+
+Meshery began six years ago as an effort led by Layer5, with a service mesh focus, but it has since expanded well beyond it. Today the platform supports more than 300 integrations across AWS, Azure, GCP and open-source projects. The project ranks as the sixth highest-velocity project in the Cloud Native Computing Foundation (CNCF), with a 350% increase in code commits over the past year, 3,000 contributors, and 10,000 GitHub stars.
+
+"It’s a multi-layer visual designer and visual operator," Lee Calcote, Layer5 founder and Meshery creator, told Network World.Meshery began six years ago as an effort led by Layer5, with a service mesh focus, but it has since expanded well beyond it. Today the platform supports more than 300 integrations across AWS, Azure, GCP and open-source projects. The project ranks as the sixth highest-velocity project in the Cloud Native Computing Foundation (CNCF), with a 350% increase in code commits over the past year, 3,000 contributors, and 10,000 GitHub stars.
+
+## What Meshery does
+
+Despite its name, Meshery is not a service mesh tool. Calcote said the project has spent years trying to shake "that explicit and restrictive connotation." Service mesh was one early use case handled through adapters, but the platform was always built to manage anything that can be described in Kubernetes terms. Calcote said the intent from the start is to be something of a cloud management platform.
+
+In practical terms, Meshery gives engineering teams a shared workspace to design, visualize, and operate Kubernetes-based infrastructure. Rather than working directly against YAML files or Helm charts, teams work with visual representations of their infrastructure inside a component called Kanvas. The visual layout is semantically meaningful: components, their relationships and their configurations are all represented as a connected diagram rather than disconnected text files.
+
+The core unit is a design, a YAML or JSON document representing declarative infrastructure intent. It functions similarly to a shared document in a collaborative editing tool. Teams can leave comments and record architectural decisions inside a design, giving new team members context on why particular configuration choices were made. Kanvas shipped in two forms with v1.0. Kanvas Designer, now generally available, is a drag-and-drop interface for building and modifying infrastructure designs. Kanvas Operator, currently in beta, provides a real-time live view of running clusters for SRE and platform teams.
+
+Meshery is Kubernetes-centric but does not require Kubernetes to run. It does more when Kubernetes is present, but it can also be used to stand up greenfield infrastructure or to discover and document what is already running in a brownfield environment.
+
+Validation runs automatically through an embedded Open Policy Agent (OPA) policy engine on every design change. The engine applies a deterministic rule set across thousands of components and cloud services, identifying relationships between components and flagging configuration issues before changes are applied.
+
+## Where Meshery fits against IaC and infrastructure management tools
+
+There are a lot of different tools in the infrastructure space, including Infrastructure-as-Code (IaC). Tools like Terraform, Pulumi, Spacelift and Crossplane are common points of comparison for Meshery.
+
+Meshery does not replace IaC tooling. Calcote explained that Meshery uses the Helm package manager internally for deployments and can consume Crossplane composite resource definitions, sitting above those tools rather than alongside them.
+
+Where IaC tools manage infrastructure state through code and pipelines, Meshery adds the visual governance layer on top: showing teams what their infrastructure looks like, how components relate, where configurations conflict, and what a proposed change will actually do before it is applied.
+
+Calcote described it as an abstraction on top of Kubernetes custom resource definitions (CRDs), similar in concept to how Crossplane manages them but operating at a higher level across the full stack.
+
+## Networking capabilities
+
+Managing and understanding cloud-native network configuration is part of Meshery.
+
+Meshery includes a built-in load generator called Nighthawk, a C++ tool developed in collaboration with the Envoy project. Nighthawk generates HTTP and gRPC traffic against target infrastructure, measures latency percentiles and throughput and renders results as visual graphs inside Meshery.
+
+Calcote cited Intel as a user that applied the tool to iteratively deploy infrastructure configurations, run performance tests, adjust settings and retest in successive cycles.
+
+A GitHub Action integrates Meshery into GitOps pipelines. When a configuration change is committed, the action can deploy the infrastructure change, run a defined performance test against specified endpoints and return results plus a visual diagram snapshot directly in the pull request. Teams can set throughput and latency thresholds to gate deployments automatically based on the results.
+
+Meshery is also being used to help organizations migrate from the nginx ingress controller, which is no longer supported in Kubernetes. That technology had been widely deployed to help manage network traffic. Calcote noted that getting senior SREs and junior DevOps engineers aligned on what a configuration change actually involves is as much a coordination problem as a technical one.
+
+Teams are also turning to LLMs for quick answers on how to handle the migration, and in environments where AI tooling is built into pipelines, configuration recommendations are arriving faster than teams can meaningfully review them. The visual rendering that Meshery provides addresses that directly.
+
+## What changed in v1.0
+
+Calcote described v1.0 as a maturity milestone rather than a feature release. "It’s a polishing of the work that we’ve been doing for years," he said.
+
+Two structural changes accompany the v1.0 release. Meshery restructured its GitHub footprint into two organizations: github.com/meshery for the core platform, including Meshery Operator and MeshSync, and github.com/meshery-extensions for the 300-plus integrations and adapters. The separation allows the extension community to iterate independently without affecting core platform stability.
+
+Layer5 also launched the Certified Meshery Contributor program alongside v1.0, which the project describes as the first contributor certification in the CNCF. The free program includes five exams covering Meshery’s server, CLI, UI, models and extensibility domains. It is aimed at practitioners working in Go, React and OpenAPI.
+
+## What comes next
+
+The primary post-1.0 roadmap item is a bring-your-own LLM integration. Currently the OPA policy engine operates deterministically. The planned integration will let users direct infrastructure queries to an LLM of their choice.
+
+"Since Meshery is looking at your actively running infrastructure, you may want to ask any number of questions about optimization, about configuration changes that you might like to do," Calcote said.
+
+A parallel workstream will give users the option to choose between the existing deterministic ruleset and LLM-based assessment for the same governance tasks the policy engine handles today, including evaluating cost, security and resiliency tradeoffs.
+
+Looking further ahead, Calcote described a vision for Meshery becoming a standard format for sharing and presenting infrastructure designs. "It becomes the canonical way of expressing these concepts, with the added benefit that whatever architecture you’re trying to promote, that it’s also deployable," Calcote said.
+
+</NewsWrapper>

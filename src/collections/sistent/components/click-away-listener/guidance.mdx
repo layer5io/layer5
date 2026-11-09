@@ -1,0 +1,41 @@
+---
+title: ClickAwayListener Guidance
+component: click-away-listener
+description: ClickAwayListener detects clicks outside a target region and helps close transient UI elements safely.
+---
+
+
+ClickAwayListener is a utility component intended for dismissible UI patterns. It should be used only when a specific interaction area must remain open until the user clicks or touches outside it.
+
+<a id="When to use">
+  <h2>When to use</h2>
+</a>
+
+Use ClickAwayListener for interface patterns such as:
+
+- dropdown menus
+- popovers and overlays
+- small panels or tooltips with interactive content
+- custom context menus
+
+It is not necessary for static or permanently visible elements.
+
+<a id="Best practices">
+  <h2>Best practices</h2>
+</a>
+
+<h3>Keep the active area clear</h3>
+
+Wrap only the actual interactive region that should remain open. Avoid enclosing large page sections that may unintentionally close when users interact with nearby controls.
+
+<h3>Use clear dismiss behavior</h3>
+
+When the active UI is visible, provide an explicit closing affordance such as a close button, and also close it with ClickAwayListener for an expected fallback experience.
+
+<h3>Preserve accessibility</h3>
+
+Ensure the wrapped content remains keyboard-accessible. The click-away behavior should not interfere with focus-managed keyboard navigation.
+
+<h3>Combine with state management</h3>
+
+Use `onClickAway` to update component state and hide the transient UI. If an open panel has nested interactive controls, keep them inside the wrapped element so they do not trigger a false outside click.
