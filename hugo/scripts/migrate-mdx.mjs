@@ -35,6 +35,7 @@ export const COMPONENTS = {
   BlockquoteAlt: { shortcode: 'blockquote-alt', paired: false },
   Blockquote: { shortcode: 'blockquote', paired: false },
   InlineQuotes: { shortcode: 'inline-quotes', paired: false },
+  JourneySection: { shortcode: 'journey-section', paired: false },
 };
 export const UNWRAP = new Set([
   'BlogWrapper',
@@ -45,6 +46,7 @@ export const UNWRAP = new Set([
   'BookWrapper',
   'EventWrapper',
   'ProjectWrapper',
+  'ThemeWrapper',
 ]);
 
 const DROP_ATTRS = new Set(['className', 'class', 'style', 'key', 'ref']);
@@ -371,6 +373,41 @@ function convertSegment(text, ctx) {
     continue;
   }
 
+  if (name === 'Row' || name === 'Col') {
+    const closing = tag.selfClosing ? null : findClose(text, tag.end, name);
+    if (!tag.selfClosing && !closing) {
+      ctx.warn(`<${name}> has no closing tag; left as-is`);
+      out += text.slice(m.index, tag.end);
+      i = tag.end;
+      continue;
+    }
+
+    const attrs = new Map(tag.attrs.map(a => [a.key, a.value]));
+    const className = attrs.get('className') || attrs.get('class') || '';
+    const classes = [name.toLowerCase(), className].filter(Boolean).join(' ');
+    const children = tag.selfClosing ? '' :
+      convertSegment(text.slice(tag.end, closing.start), ctx);
+
+    let html = `<div class="${classes}"`;
+    if (name === 'Row') {
+      if (attrs.has('$vcenter')) html += ' data-vcenter="true"';
+      if (attrs.has('$Hcenter')) html += ' data-hcenter="true"';
+    } else {
+      for (const key of ['$xs', '$sm', '$md', '$lg', '$xl',
+        'offsetXs', 'offsetSm', 'offsetMd', 'offsetLg', 'offsetXl', 'order']) {
+        if (attrs.has(key)) {
+          const dataKey = key.replace(/^\$/, '').replace(/[A-Z]/g, c => '-' + c.toLowerCase());
+          html += ` data-${dataKey}="${attrs.get(key)}"`;
+        }
+      }
+    }
+
+    ctx.component(name);
+    out += html + '>' + children + '</div>';
+    i = tag.selfClosing ? tag.end : closing.end;
+    continue;
+  }
+
   if (UNWRAP.has(name)) {
       if (tag.selfClosing) {
         ctx.component(name);
@@ -450,6 +487,10 @@ export function convertBody(body, ctx) {
     () => { ctx.count('importsRemoved'); return ''; }
   );
 
+  t = t.replace(
+    /^export\s+const\s+JourneySection\s*=\s*\(\)\s*=>\s*\{[\s\S]*?^\};[ \t]*\r?\n?/m,
+    () => { ctx.count('exportsRemoved'); return ''; }
+  );
   if (/^export\s/m.test(t)) {
     ctx.warn('contains export statements (MDX exports are not supported in Hugo)');
   }
@@ -474,7 +515,7 @@ export function convertFrontMatter(fm, slug, ctx) {
   for (const line of lines) {
     let m;
     if ((m = /^redirect_from\s*:(.*)$/.exec(line))) { out.push(`aliases:${m[1]}`); ctx.count('redirectFrom'); continue; }
-    if ((m = /^published\s*:\s*(true|false)\s*$/.exec(line))) { if (m[1] === 'false') out.push('draft: true'); continue; }
+    if ((m = /^published\s*:\s*(true|false)(?:\s+#.*)?\s*$/i.exec(line))) { if (m[1].toLowerCase() === 'false') out.push('draft: true'); continue; }
     if ((m = /^(thumbnail|image|cover)\s*:\s*(.*)$/.exec(line))) {
       const v = m[2].trim().replace(/^['"]|['"]$/g, '');
       if (/^\.\.\//.test(v) || /^\/?(static|assets|src)\//.test(v)) { ctx.warn(`${m[1]}: "${v}" is outside the page bundle — move it next to index.md`); out.push(line); }
@@ -545,13 +586,39 @@ function* walk(dir) {
   }
 }
 
-export function migrate({ src, dest, dryRun = false }) {
+function gatsbySlug(source, collection, fallback) {
+  const match = source.match(/^---\s*\r?\n([\s\S]*?)\r?\n---/);
+  const fm = match ? match[1] : '';
+
+  const getField = (key) => {
+    const field = fm.match(new RegExp(`^${key}\\s*:\\s*(.*?)\\s*$`, 'm'));
+    if (!field) return '';
+    return field[1].trim().replace(/^(['"])(.*)\1$/, '$2');
+  };
+
+  const permalink = getField('permalink');
+  if (permalink && permalink !== '#') {
+    return permalink.replace(/^\/+|\/+$/g, '');
+  }
+
+  const value = collection === 'members' ? getField('name') : getField('title');
+  if (!value) return fallback;
+
+  return value.toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w\-]+/g, '')
+    .replace(/\-\-+/g, '-')
+    .replace(/^-+/, '')
+    .replace(/-+$/, '');
+}
+export function migrate({ src, dest, dryRun = false, exclude = [] }) {
   const report = { generated: new Date().toISOString(), dryRun, files: 0, converted: 0, withWarnings: 0, assetsCopied: 0,
     components: {}, unknown: {}, byCollection: {}, warnings: [] };
   const bump = (o, k, n = 1) => { o[k] = (o[k] || 0) + n; };
   for (const file of walk(src)) {
     const rel = path.relative(src, file);
     const collection = rel.split(path.sep)[0];
+    if (exclude.includes(collection)) continue;
     const ext = path.extname(file);
     const isDoc = ext === '.mdx' || ext === '.md';
     const target = path.join(dest, isDoc ? rel.replace(/\.mdx?$/, '.md') : rel);
@@ -559,8 +626,10 @@ export function migrate({ src, dest, dryRun = false }) {
     if (!isDoc) { if (!dryRun) { fs.mkdirSync(path.dirname(target), { recursive: true }); fs.copyFileSync(file, target); } report.assetsCopied++; continue; }
     report.files++; col.files++;
     const base = path.basename(file, ext);
-    const slug = base === 'index' ? path.basename(path.dirname(file)) : base;
-    const { output, stats } = convertFile(fs.readFileSync(file, 'utf8'), { slug, file: rel, sourceRoot: src });
+    const source = fs.readFileSync(file, 'utf8');
+    const fallback = base === 'index' ? path.basename(path.dirname(file)) : base;
+    const slug = gatsbySlug(source, collection, fallback);
+    const { output, stats } = convertFile(source, { slug, file: rel, sourceRoot: src });
     for (const [k, v] of Object.entries(stats.components)) bump(report.components, k, v);
     for (const [k, v] of Object.entries(stats.unknown)) bump(report.unknown, k, v);
     if (stats.warnings.length) { report.withWarnings++; col.withWarnings++; stats.warnings.forEach((w) => report.warnings.push({ file: rel, message: w })); }
@@ -589,11 +658,12 @@ function main() {
   const defaultSrc = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../src/collections');
   const src = get('--src') || (fs.existsSync(defaultSrc) ? defaultSrc : undefined);
   if (args.includes('--help') || !src) {
-    console.log('Usage: migrate-mdx.mjs [--src <collections dir>] [--dest content] [--dry-run] [--report report.json] [--progress data/migration.json] [--strict]');
+    console.log('Usage: migrate-mdx.mjs [--src <collections dir>] [--dest content] [--dry-run] [--report report.json] [--progress data/migration.json] [--exclude collection,...] [--strict]');
     process.exit(args.includes('--help') ? 0 : 1);
   }
   const dryRun = args.includes('--dry-run');
-  const report = migrate({ src, dest: get('--dest') || 'content', dryRun });
+  const exclude = (get('--exclude') || '').split(',').filter(Boolean);
+  const report = migrate({ src, dest: get('--dest') || 'content', dryRun, exclude });
   if (get('--report')) fs.writeFileSync(get('--report'), JSON.stringify(report, null, 2));
   if (get('--progress') && !dryRun) updateProgress(get('--progress'), report);
   const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k}×${v}`).join(', ') || '—';

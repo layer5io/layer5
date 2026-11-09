@@ -252,3 +252,172 @@ test('Button supports styled $ attributes', () => {
   assert.doesNotMatch(output, /<Button/);
   assert.match(output, /button/);
 });
+
+test('migrate excludes selected collections', () => {
+  const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'mdx-exclude-'));
+  const src = path.join(temp, 'src');
+  const dest = path.join(temp, 'content');
+
+  try {
+    for (const collection of ['sistent', 'blog']) {
+      const folder = path.join(src, collection);
+      fs.mkdirSync(folder, { recursive: true });
+      fs.writeFileSync(
+        path.join(folder, 'index.mdx'),
+        '<Button title="Test">Click</Button>'
+      );
+    }
+
+    const report = migrate({
+      src,
+      dest,
+      dryRun: false,
+      exclude: ['sistent'],
+    });
+
+    assert.equal(report.files, 1);
+    assert.equal(fs.existsSync(path.join(dest, 'sistent', 'index.md')), false);
+    assert.equal(fs.existsSync(path.join(dest, 'blog', 'index.md')), true);
+  } finally {
+    fs.rmSync(temp, { recursive: true, force: true });
+  }
+});
+
+test('ThemeWrapper is unwrapped and preserves nested content', () => {
+  const input = '<ThemeWrapper><div>Nested content</div></ThemeWrapper>';
+  const { output, stats } = convertFile(input);
+
+  assert.doesNotMatch(output, /ThemeWrapper/);
+  assert.doesNotMatch(output, /<div class="unknown"/);
+  assert.match(output, /Nested content/);
+  assert.equal(stats.components.ThemeWrapper, 1);
+  assert.equal(stats.unknown.ThemeWrapper, undefined);
+});
+
+test('Row preserves layout class and centering props', () => {
+  const { output, stats } = convertFile(
+    '<Row className="newcomers-journey" $vcenter $Hcenter><p>Content</p></Row>'
+  );
+
+  assert.match(output, /class="row newcomers-journey/);
+  assert.match(output, /data-vcenter="true"/);
+  assert.match(output, /data-hcenter="true"/);
+  assert.match(output, /Content/);
+  assert.equal(stats.unknown.Row, undefined);
+});
+
+test('Col preserves responsive widths and offsets', () => {
+  const { output, stats } = convertFile(
+    '<Col $xs={12} $sm={6} $lg={4} offsetMd={2} className="qualification-col"><p>Content</p></Col>'
+  );
+
+  assert.match(output, /class="col qualification-col/);
+  assert.match(output, /data-xs="12"/);
+  assert.match(output, /data-sm="6"/);
+  assert.match(output, /data-lg="4"/);
+  assert.match(output, /data-offset-md="2"/);
+  assert.equal(stats.unknown.Col, undefined);
+});
+
+test('JourneySection converts to a Hugo shortcode', () => {
+  const { output } = convertFile('<JourneySection />', { slug: 'about' });
+  assert.match(output, /\{\{< journey-section >\}\}/);
+});
+
+test('JourneySection export is removed while its shortcode is preserved', () => {
+  const input = [
+    'export const JourneySection = () => {',
+    '  return (<div>React implementation</div>);',
+    '};',
+    '',
+    '<JourneySection />'
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'about' });
+
+  assert.doesNotMatch(output, /export const JourneySection/);
+  assert.doesNotMatch(output, /React implementation/);
+  assert.match(output, /\{\{< journey-section >\}\}/);
+  assert.equal(stats.counters.exportsRemoved, 1);
+});
+test('published: TRUE is removed without creating a draft', () => {
+  const { output } = convertFile('---\ntitle: Test\npublished: TRUE\n---\nContent', { slug: 'test' });
+  assert.doesNotMatch(output, /published:/);
+  assert.doesNotMatch(output, /draft: true/);
+});
+
+test('published: FALSE becomes draft: true', () => {
+  const { output } = convertFile('---\ntitle: Test\npublished: FALSE\n---\nContent', { slug: 'test' });
+  assert.match(output, /draft: true/);
+});
+
+test('published: FALSE with comment creates a draft', () => {
+  const { output } = convertFile(
+    '---\ntitle: Test\npublished: FALSE # unpublished\n---\nContent',
+    { slug: 'test' }
+  );
+
+  assert.match(output, /draft: true/);
+  assert.doesNotMatch(output, /published:/);
+});
+
+test('published: TRUE with comment does not create a draft', () => {
+  const { output } = convertFile(
+    '---\ntitle: Test\npublished: TRUE # published\n---\nContent',
+    { slug: 'test' }
+  );
+
+  assert.doesNotMatch(output, /published:/);
+  assert.doesNotMatch(output, /draft: true/);
+});
+
+test('integration slug uses Gatsby title slugification', () => {
+  const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'mdx-slug-'));
+  const src = path.join(temp, 'src');
+  const dest = path.join(temp, 'content');
+  try {
+    const folder = path.join(src, 'integrations', 'sample');
+    fs.mkdirSync(folder, { recursive: true });
+    fs.writeFileSync(path.join(folder, 'index.mdx'),
+      '---\ntitle: Actions Runner Controller (ARC)\n---\nContent');
+    migrate({ src, dest });
+    const migrated = fs.readFileSync(path.join(dest, 'integrations', 'sample', 'index.md'), 'utf8');
+    assert.match(migrated, /slug: actions-runner-controller-arc/);
+  } finally {
+    fs.rmSync(temp, { recursive: true, force: true });
+  }
+});
+
+test('member slug uses Gatsby name slugification', () => {
+  const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'mdx-member-slug-'));
+  const src = path.join(temp, 'src');
+  const dest = path.join(temp, 'content');
+  try {
+    const folder = path.join(src, 'members', 'sample');
+    fs.mkdirSync(folder, { recursive: true });
+    fs.writeFileSync(path.join(folder, 'index.mdx'),
+      '---\nname: Ankit Rewar\n---\nContent');
+    migrate({ src, dest });
+    const migrated = fs.readFileSync(path.join(dest, 'members', 'sample', 'index.md'), 'utf8');
+    assert.match(migrated, /slug: ankit-rewar/);
+  } finally {
+    fs.rmSync(temp, { recursive: true, force: true });
+  }
+});
+
+test('explicit permalink takes precedence over title slug', () => {
+  const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'mdx-permalink-'));
+  const src = path.join(temp, 'src');
+  const dest = path.join(temp, 'content');
+  try {
+    const folder = path.join(src, 'integrations', 'sample');
+    fs.mkdirSync(folder, { recursive: true });
+    fs.writeFileSync(path.join(folder, 'index.mdx'),
+      '---\ntitle: Example Integration\npermalink: /custom/example/\n---\nContent');
+    migrate({ src, dest });
+    const migrated = fs.readFileSync(path.join(dest, 'integrations', 'sample', 'index.md'), 'utf8');
+    assert.match(migrated, /slug: custom\/example/);
+  } finally {
+    fs.rmSync(temp, { recursive: true, force: true });
+  }
+});
