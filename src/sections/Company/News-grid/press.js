@@ -89,7 +89,7 @@ const Press = () => {
             </a>
           </Col>
           <Col $xs={12} $md={4}>
-            <Link to="/brand">
+            <Link to="/company/brand">
               <div className="press_card">
                 <h5>Brand Kit</h5>
                 <p>Get our brand, logo assets and more.</p>

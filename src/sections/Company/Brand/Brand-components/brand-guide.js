@@ -45,9 +45,9 @@ const BrandGuide = () => {
           <Row>
             <Col $xs={12}>
               <Row className="bookmarks">
-                <Link to="/brand/brand-guide.pdf">
+                <a href="/brand/brand-guide.pdf" target="_blank" rel="noreferrer">
                   <img className="bookmarks" src={BrandGuideImg} alt="Layer5 Brand Guide" />
-                </Link>
+                </a>
               </Row>
             </Col>
           </Row>

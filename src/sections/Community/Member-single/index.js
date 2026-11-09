@@ -195,7 +195,7 @@ const MemberSingle = ({ frontmatter, children }) => {
                       {badges.includes("kanvas") && (
                         <div className="tooltip">
                           <li>
-                            <Link to="/kanvas">
+                            <Link to="/cloud-native-management/kanvas">
                               <img
                                 className="profile-social-links"
                                 src={KanvasLogo}

@@ -80,10 +80,10 @@ const SistentAbout = () => {
               <h3>Layer5 Brand Resources</h3>
               <ul>
                 <li>
-                  <Link to="/brand/brand-guide.pdf">Brand Guide</Link>
+                  <a href="/brand/brand-guide.pdf" target="_blank" rel="noreferrer">Brand Guide</a>
                 </li>
                 <li>
-                  <Link to="/brand">Logos and Brand Kits</Link>
+                  <Link to="/company/brand">Logos and Brand Kits</Link>
                 </li>
               </ul>
               <a id="Installation">

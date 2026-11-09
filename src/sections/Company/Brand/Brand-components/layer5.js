@@ -122,9 +122,9 @@ const Layer5Brand = () => {
               Media available for print.
             </p>
             <Row className="bookmarks">
-              <Link to="/brand/bookmarks.pdf">
+              <a href="/brand/bookmarks.pdf" target="_blank" rel="noreferrer">
                 <img className="bookmarks" src={Bookmarks} alt="Layer5 and Meshery Bookmarks" />
-              </Link>
+              </a>
             </Row>
           </Col>
         </Row>
