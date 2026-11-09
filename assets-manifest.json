@@ -111,8 +111,8 @@
   "aaa5778d.js": "aaa5778d-7cb243715dc3f420f8f8.js",
   "ac581ebe.js": "ac581ebe-d8f297aa0b7917a0edd2.js",
   "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff.js": "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff-4194885a44cc2e5a5363.js",
-  "app-96ced6a0446af5695f35.js.LICENSE.txt": "app-96ced6a0446af5695f35.js.LICENSE.txt",
-  "app.js": "app-96ced6a0446af5695f35.js",
+  "app-eabe2d929fbcfe1dbb40.js.LICENSE.txt": "app-eabe2d929fbcfe1dbb40.js.LICENSE.txt",
+  "app.js": "app-eabe2d929fbcfe1dbb40.js",
   "b5f6012b.js": "b5f6012b-0d788a08c9a6ff5be2b5.js",
   "b94c7d6e898e669bbfd99da21b2e9e67976b8f68.js": "b94c7d6e898e669bbfd99da21b2e9e67976b8f68-29ed6451ccaef992cd70.js",
   "ba5828f4dac0658416d102e02536a23fbd61d3fb.js": "ba5828f4dac0658416d102e02536a23fbd61d3fb-3b825dbbc3a0851515d7.js",
@@ -173,7 +173,7 @@
   "component---src-pages-deploy-service-mesh-js.js": "component---src-pages-deploy-service-mesh-js-049f0795e7cb297506ed.js",
   "component---src-pages-docker-extension-meshery-js.js": "component---src-pages-docker-extension-meshery-js-b1e3ed262d2cfc251ff0.js",
   "component---src-pages-embed-js.js": "component---src-pages-embed-js-50daa11f4a0cc9d1a6ae.js",
-  "component---src-pages-index-js.js": "component---src-pages-index-js-3636b5d1b41a630759b7.js",
+  "component---src-pages-index-js.js": "component---src-pages-index-js-3113e609511145fa2c08.js",
   "component---src-pages-learn-academy-js.js": "component---src-pages-learn-academy-js-dbd18576c26f2a6d6717.js",
   "component---src-pages-learn-index-js.js": "component---src-pages-learn-index-js-6c771d286c9c25affbb9.js",
   "component---src-pages-learn-kanvas-labs-js.js": "component---src-pages-learn-kanvas-labs-js-6852c9f68a917e365914.js",
@@ -1434,7 +1434,7 @@
   "f79bb285.js": "f79bb285-de23948cc5c568691759.js",
   "fb60d2e75ba6150616697bdc0d45988f14e9977b.js": "fb60d2e75ba6150616697bdc0d45988f14e9977b-f72148c54a57609b9935.js",
   "fdd77c08323b387feda7bfc3988af6fb633e209b.js": "fdd77c08323b387feda7bfc3988af6fb633e209b-777eb37e67c4a0d88550.js",
-  "figure1.webp": "static/figure1-945a12ca03127e744034f1333e7a3a6e.webp",
+  "figure1.webp": "static/figure1-af740ed1ba314b3196bae4081ed294d3.webp",
   "figure2.webp": "static/figure2-357540a30490cd773fe343e618b20e51.webp",
   "figure3.webp": "static/figure3-7c0067fea03f8b378147cc3238bf5002.webp",
   "figure4.webp": "static/figure4-4461bc5b118cfc06cef4a38196ec52ec.webp",
@@ -2127,5 +2127,5 @@
   "static/yash-sharma.webp": "static/yash-sharma-54aa26b6e5743f0557cfc76aa9797f2d.webp",
   "static/yogi.webp": "static/yogi-d00ca1cc48ab74938a23d4359ef3fb01.webp",
   "styles.css": "styles.36a061adc6a8dfab5924.css",
-  "webpack-runtime.js": "webpack-runtime-034b7b82116c9fd87900.js"
+  "webpack-runtime.js": "webpack-runtime-014352e94b777821eab0.js"
 }
