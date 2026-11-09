@@ -86,7 +86,6 @@ export const BooksPageWrapper = styled.div`
         .slick-slide > div{
             padding: 0 0.75rem;
         }
-        
         .book_image{
             width: 100% !important;
         }
