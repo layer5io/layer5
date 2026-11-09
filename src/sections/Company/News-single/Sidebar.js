@@ -123,7 +123,7 @@ const NewsSidebar = (props) => {
             <div className="chapter-link">
               <Button $primary title="Try Now!"
                 className="btn"
-                $url="/kanvas"
+                $url="/cloud-native-management/kanvas"
                 $external={false}
               />
             </div>

@@ -5,6 +5,7 @@ import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
+import { withPrefix } from "gatsby";
 import Layer5WhiteBg from "../../../../../static/brand/layer5/layer5-only/png/layer5-white-bg.webp";
 import Bookmarks from "../../../../assets/images/layer5/bookmarks.webp";
 import Layer5Icon from "../../../../../static/brand/layer5/5 icon/svg/light/5-light-no-trim.svg";
@@ -121,7 +122,7 @@ const Layer5Brand = () => {
               Media available for print.
             </p>
             <Row className="bookmarks">
-              <a href="/brand/bookmarks.pdf" target="_blank" rel="noreferrer">
+              <a href={withPrefix("/brand/bookmarks.pdf")} target="_blank" rel="noreferrer">
                 <img className="bookmarks" src={Bookmarks} alt="Layer5 and Meshery Bookmarks" />
               </a>
             </Row>
