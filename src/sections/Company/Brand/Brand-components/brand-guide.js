@@ -30,7 +30,7 @@ const BrandGuide = () => {
               </h1>
             </Col>
             <Col $xs={12} $sm={6} className="download-button">
-              <a href="/brand/brand-guide.pdf">
+              <a href={withPrefix("/brand/brand-guide.pdf")}>
                 <Button $primary title="Download Brand Guide" $external={false}>
                   <FiDownloadCloud size={21} className="icon-left" />
                 </Button>

@@ -32,7 +32,7 @@ const Layer5Brand = () => {
             </h1>
           </Col>
           <Col $xs={12} $sm={6} className="download-button">
-            <a href="/brand/layer5-brand-kit.zip">
+            <a href={withPrefix("/brand/layer5-brand-kit.zip")}>
               <Button $primary title="Download Logo Assets" $external={false}>
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>
