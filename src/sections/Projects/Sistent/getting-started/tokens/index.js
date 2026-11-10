@@ -272,12 +272,12 @@ const SistentTokens = () => {
                       <Typography
                         variant="h1"
                         gutterBottom
-                        sx={{
-                          "@media (max-width: 599px)": {
+                        sx={(theme) => ({
+                          [theme.breakpoints.down("sm")]: {
                             fontSize: "clamp(2rem, 10vw, 4rem)",
                             overflowWrap: "anywhere",
                           },
-                        }}
+                        })}
                       >
                         Heading 1
                       </Typography>
