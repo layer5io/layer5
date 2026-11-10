@@ -114,7 +114,6 @@ const MembersGrid = (props) => {
                     $primary                    className="banner-btn memberProfileBtn"
                     title="Read the Community Handbook"
                     $url="/community/handbook"
-                    $external={true}
                   >
                     <FaBook size={21} className="icon-left" />
                   </Button>
@@ -123,6 +122,7 @@ const MembersGrid = (props) => {
                     $secondary                    className="banner-btn two memberProfileBtn"
                     title="Join the Community"
                     $url="https://slack.layer5.io"
+                    $external={true}
                   >
                     <FaUsers size={21} className="icon-left" />
                   </Button>
@@ -161,9 +161,9 @@ const MembersGrid = (props) => {
               </p>
 
               <div>
-                <VintageBox right={true} vintageOne={true}>
+                <VintageBox $right={true} $vintageOne={true}>
                   <Button
-                    primary
+                    $primary
                     className="banner-btn memberProfileBtn"
                     title="Collect Badges"
                     $url="https://badges.layer5.io/"
@@ -173,10 +173,11 @@ const MembersGrid = (props) => {
                   </Button>
 
                   <Button
-                    secondary
+                    $secondary
                     className="banner-btn two memberProfileBtn"
                     title="Join the Community"
                     $url="https://slack.layer5.io"
+                    $external={true}
                   >
                     <FaUsers size={21} className="icon-left" />
                   </Button>
