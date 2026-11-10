@@ -69,6 +69,7 @@ The Layer5 website (https://layer5.io) is a Gatsby.js-based static site that ser
   fix: correct broken link in footer
   docs: update AGENTS.md with LLM instructions
   ```
+- **Sign off commits**: Sign off every commit using `git commit -s`.
 - **Testing**: Ensure generated code passes `make setup` and `make site` without errors. Test for responsiveness across devices.
 - Verifying your fix: The website takes a long time to build. Don't interrupt the build when checking terminal output. Don't hail victory on a fix before you have ACTUALLY verified the solution. Wait for the website to be running, for you to actually \`curl\` a page and verify rendered content.
 
