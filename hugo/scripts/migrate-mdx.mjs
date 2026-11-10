@@ -249,7 +249,7 @@ export function convertFrontMatter(fm, slug, ctx) {
       }
 
       // 3. Restrict date branch strictly to ISO dates (YYYY-MM-DD...)
-      if (/^\d{4}-\d{2}-\d{2}/.test(valWithoutComment)) {
+      if (/^\d{4}-\d{2}-\d{2}([T ]\d{2}:\d{2}(:\d{2})?)?$/.test(valWithoutComment)) {
         out.push(`publishDate: ${valWithoutComment}`);
         continue;
       }

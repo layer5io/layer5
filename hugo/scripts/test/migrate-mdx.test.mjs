@@ -116,6 +116,36 @@ test('published: ISO date maps to publishDate and preserves date string', () => 
   assert.equal(stats.warnings.length, 0);
 });
 
+test('published: malformed date suffix (2026-03-25-draft) is not converted, stays published, and warns', () => {
+  const input = '---\ntitle: "Malformed Date Test"\npublished: 2026-03-25-draft\n---\nHello world\n';
+  const { output, stats } = convertFile(input, { slug: 'test-date-draft' });
+  assert.doesNotMatch(output, /^publishDate:/m);
+  assert.match(output, /^published: 2026-03-25-draft$/m);
+  assert.ok(stats.warnings.some((w) => w.includes('published: invalid value')));
+});
+
+test('published: ISO datetime with T and seconds or space and minutes maps to publishDate', () => {
+  const inputT = '---\ntitle: "DateTime T Test"\npublished: 2026-03-25T10:00:00\n---\nHello world\n';
+  const resT = convertFile(inputT, { slug: 'test-datetime-t' });
+  assert.match(resT.output, /^publishDate: 2026-03-25T10:00:00$/m);
+  assert.doesNotMatch(resT.output, /^published:/m);
+  assert.equal(resT.stats.warnings.length, 0);
+
+  const inputSpace = '---\ntitle: "DateTime Space Test"\npublished: 2026-03-25 10:00\n---\nHello world\n';
+  const resSpace = convertFile(inputSpace, { slug: 'test-datetime-space' });
+  assert.match(resSpace.output, /^publishDate: 2026-03-25 10:00$/m);
+  assert.doesNotMatch(resSpace.output, /^published:/m);
+  assert.equal(resSpace.stats.warnings.length, 0);
+});
+
+test('published: valid ISO date with trailing YAML comment converts to publishDate', () => {
+  const input = '---\ntitle: "Date Comment Test"\npublished: 2026-03-25 # scheduled release\n---\nHello world\n';
+  const { output, stats } = convertFile(input, { slug: 'test-date-comment' });
+  assert.match(output, /^publishDate: 2026-03-25$/m);
+  assert.doesNotMatch(output, /^published:/m);
+  assert.equal(stats.warnings.length, 0);
+});
+
 test('published: false does not overwrite existing draft: false', () => {
   const input = '---\ntitle: "Existing Draft Test"\ndraft: false\npublished: false\n---\nHello world\n';
   const { output, stats } = convertFile(input, { slug: 'test-draft' });
