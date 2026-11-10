@@ -14,7 +14,6 @@ type: News
 ---
 
 import { NewsWrapper } from "../../News.style.js";
-import { Link } from "gatsby";
 
 <NewsWrapper>
 
@@ -47,7 +46,7 @@ Argo is a suite of packages that help direct jobs on Kubernetes to aid a continu
 
 ### Service Mesh Tools
 <br />
-Linkerd is a highly performant developer-favorite service mesh comprised of a control plane to apply configurations and a data plane that deploys its own unique proxy. This proxy can apply consistent security, observability, monitoring and telemetry features across distributed microservices. Other service mesh tools from CNCF include Kuma, Open Service Mesh (OSM), <Link to="/projects/service-mesh-interface-conformance">Service Mesh Interface (SMI) </Link> , <Link to="/meshery">Meshery</Link> and <Link to="/projects/cloud-native-performance">Service Mesh Performance(SMP)</Link>.
+Linkerd is a highly performant developer-favorite service mesh comprised of a control plane to apply configurations and a data plane that deploys its own unique proxy. This proxy can apply consistent security, observability, monitoring and telemetry features across distributed microservices. Other service mesh tools from CNCF include Kuma, Open Service Mesh (OSM), [Service Mesh Interface (SMI)](/projects/service-mesh-interface-conformance), [Meshery](/meshery) and [Service Mesh Performance(SMP)](/projects/cloud-native-performance).
 <br /> <br />
 
 ### Service Proxies
@@ -102,7 +101,7 @@ KubeEdge helps extend cloud-native capabilities into edge computing. It’s spec
 
 ### The Forecast Looks Cloud-Native
 <br />
-By 2023, the <Link to="https://containerjournal.com/features/majority-of-apps-will-use-cloud-native-development-by-2023/">majority of applications will be cloud-native</Link>. The cloud-native world is here to stay, and open source is the foundation to support our new era of microservices, containerization and DevOps.
+By 2023, the <a href="https://containerjournal.com/features/majority-of-apps-will-use-cloud-native-development-by-2023/" target="_blank" rel="noreferrer">majority of applications will be cloud-native</a>. The cloud-native world is here to stay, and open source is the foundation to support our new era of microservices, containerization and DevOps.
 
 Although you could technically self-host your way through development and operations using these open source projects, organizations will most likely adopt a blend of open source, proprietary and as-a-service cloud offerings to get the job done. Regardless, it’s cool to know what’s available for free use.
 
