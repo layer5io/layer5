@@ -269,7 +269,16 @@ const SistentTokens = () => {
                 <div className="items">
                   <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                     <Box>
-                      <Typography variant="h1" gutterBottom>
+                      <Typography
+                        variant="h1"
+                        gutterBottom
+                        sx={{
+                          "@media (max-width: 599px)": {
+                            fontSize: "clamp(2rem, 10vw, 4rem)",
+                            overflowWrap: "anywhere",
+                          },
+                        }}
+                      >
                         Heading 1
                       </Typography>
                       <Typography variant="h3" gutterBottom>
