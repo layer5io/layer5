@@ -281,10 +281,26 @@ const SistentTokens = () => {
                       >
                         Heading 1
                       </Typography>
-                      <Typography variant="h3" gutterBottom>
+                      <Typography
+                        variant="h3"
+                        gutterBottom
+                        sx={(theme) => ({
+                          [theme.breakpoints.down("sm")]: {
+                            fontSize: "clamp(1.5rem, 8vw, 2rem)",
+                          },
+                        })}
+                      >
                         Heading 3
                       </Typography>
-                      <Typography variant="h6" gutterBottom>
+                      <Typography
+                        variant="h6"
+                        gutterBottom
+                        sx={(theme) => ({
+                          [theme.breakpoints.down("sm")]: {
+                            fontSize: "clamp(1rem, 5vw, 1.25rem)",
+                          },
+                        })}
+                      >
                         Heading 6
                       </Typography>
                       <Typography variant="body1" gutterBottom>
