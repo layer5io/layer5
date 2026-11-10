@@ -281,12 +281,62 @@ test('transcodeAvifToWebp failure does not copy AVIF, records transcodeFailures 
   });
 
   assert.equal(report.transcodeFailures.length, 1);
-  assert.equal(report.transcodeFailures[0], 'news/test-post/sample.avif');
+  assert.equal(report.transcodeFailures[0].file, 'news/test-post/sample.avif');
+  assert.deepEqual(report.transcodeFailures[0].referencedBy, []);
   assert.ok(report.warnings.some((w) => w.message.includes('AVIF transcoding to WebP failed')));
   // Verify destination file was NOT copied
   assert.equal(fs.existsSync(path.join(tempDest, 'news/test-post/sample.webp')), false);
   assert.equal(fs.existsSync(path.join(tempDest, 'news/test-post/sample.avif')), false);
   assert.equal(report.assetsCopied, 0);
+});
+
+test('transcodeFailures records referencing docs (boundary-aware, ignoring code fences and URLs)', () => {
+  const tempSrc = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-avif-refs-src-'));
+  const tempDest = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-avif-refs-dest-'));
+  const postDir = path.join(tempSrc, 'news/test-post');
+  const subDir = path.join(postDir, 'assets');
+  fs.mkdirSync(subDir, { recursive: true });
+
+  const avifHeader = Buffer.from('\x00\x00\x00\x1cftypavifdummydata', 'binary');
+  fs.writeFileSync(path.join(subDir, 'news-hero.webp'), avifHeader);
+
+  // Same-folder doc references ./news-hero.webp
+  fs.writeFileSync(
+    path.join(subDir, 'sub.mdx'),
+    '---\ntitle: "Sub"\n---\n![Hero](./news-hero.webp)\n'
+  );
+  // Parent-folder doc references assets/news-hero.webp
+  fs.writeFileSync(
+    path.join(postDir, 'index.mdx'),
+    '---\ntitle: "Parent"\nthumbnail: assets/news-hero.webp\n---\nHello\n'
+  );
+  // Unrelated doc in same folder only has a code fence, URL, and partial prefix match
+  fs.writeFileSync(
+    path.join(subDir, 'ignored.mdx'),
+    [
+      '---',
+      'title: "Ignored"',
+      '---',
+      'See https://example.com/news-hero.webp and other-news-hero.webp.',
+      '```md',
+      '![Fence](./news-hero.webp)',
+      '```',
+    ].join('\n')
+  );
+
+  const report = migrate({
+    src: tempSrc,
+    dest: tempDest,
+    dryRun: false,
+    execFileFn: () => { throw new Error('Command failed'); },
+  });
+
+  assert.equal(report.transcodeFailures.length, 1);
+  assert.equal(report.transcodeFailures[0].file, 'news/test-post/assets/news-hero.webp');
+  assert.deepEqual(
+    report.transcodeFailures[0].referencedBy.sort(),
+    ['news/test-post/assets/sub.mdx', 'news/test-post/index.mdx']
+  );
 });
 
 test('rename collision detection skips rename and never overwrites existing target', () => {

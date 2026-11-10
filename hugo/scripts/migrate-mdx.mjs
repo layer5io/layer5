@@ -340,10 +340,15 @@ export function normalizeAssetFilename(filename, format) {
   return filename;
 }
 
-export function rewriteAssetReferences(text, renames) {
-  if (!renames || Object.keys(renames).length === 0 || !text) return text;
+function escapeRegExp(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
 
-  // Protect code fences (``` or ~~~) so code blocks are untouched
+function assetRefRegExp(relPath) {
+  return new RegExp(`(?<![\\w.-]|/)(\\./)?${escapeRegExp(relPath)}(?![\\w/-]|\\.[a-zA-Z0-9_-])`, 'g');
+}
+
+function splitCodeFenceChunks(text) {
   const lines = text.split('\n');
   const chunks = [];
   let buf = [], inFence = null;
@@ -363,6 +368,21 @@ export function rewriteAssetReferences(text, renames) {
     }
   }
   chunks.push({ code: !!inFence, text: buf.join('\n') });
+  return chunks;
+}
+
+function withMaskedNonCodeChunks(text, fn) {
+  return splitCodeFenceChunks(text).map((c) => {
+    if (c.code) return c.text;
+    const urls = [];
+    let t = c.text.replace(/https?:\/\/[^\s)'"]+/g, (u) => `\u0000URL_${urls.push(u) - 1}\u0000`);
+    t = fn(t);
+    return t.replace(/\u0000URL_(\d+)\u0000/g, (_, i) => urls[+i]);
+  }).join('\n');
+}
+
+export function rewriteAssetReferences(text, renames) {
+  if (!renames || Object.keys(renames).length === 0 || !text) return text;
 
   // Filter and sort renames by old path length descending so longer subpaths match first
   const entries = Object.entries(renames)
@@ -371,26 +391,24 @@ export function rewriteAssetReferences(text, renames) {
 
   if (entries.length === 0) return text;
 
-  const escapeRegExp = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-  const processChunk = (chunkText) => {
-    // Protect URLs (https:// or http://)
-    const urls = [];
-    let t = chunkText.replace(/https?:\/\/[^\s)'"]+/g, (u) => `\u0000URL_${urls.push(u) - 1}\u0000`);
-
-    // Match boundary-aware bare name or ./name only
+  return withMaskedNonCodeChunks(text, (t) => {
     for (const [oldPath, newPath] of entries) {
-      const esc = escapeRegExp(oldPath);
-      const regex = new RegExp(`(?<![\\w.-]|/)(\\./)?${esc}(?![\\w/-]|\\.[a-zA-Z0-9_-])`, 'g');
-      t = t.replace(regex, (_, prefix) => (prefix ? './' : '') + newPath);
+      t = t.replace(assetRefRegExp(oldPath), (_, prefix) => (prefix ? './' : '') + newPath);
     }
-
-    // Restore protected URLs
-    t = t.replace(/\u0000URL_(\d+)\u0000/g, (_, i) => urls[+i]);
     return t;
-  };
+  });
+}
 
-  return chunks.map((c) => (c.code ? c.text : processChunk(c.text))).join('\n');
+export function findAssetReferences(text, assetPaths) {
+  if (!assetPaths?.length || !text) return [];
+  const found = new Set();
+  withMaskedNonCodeChunks(text, (t) => {
+    for (const p of assetPaths) {
+      if (!found.has(p) && assetRefRegExp(p).test(t)) found.add(p);
+    }
+    return t;
+  });
+  return [...found];
 }
 
 export function transcodeAvifToWebp(srcFile, destFile, { execFileFn = execFileSync } = {}) {
@@ -442,21 +460,40 @@ export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync }
   const allFiles = [...walk(src)];
   const docFiles = [];
   const renamesByDir = new Map();
+  const failedTranscodesByDir = new Map();
   const writtenTargets = new Set();
 
-  function registerRename(fileDir, oldBaseName, newBaseName) {
+  function forEachAncestorDir(fileDir, fn) {
     let curDir = fileDir;
     while (true) {
-      const oldRel = path.relative(curDir, path.join(fileDir, oldBaseName)).replace(/\\/g, '/');
-      const newRel = path.relative(curDir, path.join(fileDir, newBaseName)).replace(/\\/g, '/');
-      const map = renamesByDir.get(curDir) || {};
-      map[oldRel] = newRel;
-      renamesByDir.set(curDir, map);
+      fn(curDir);
       if (curDir === src || path.relative(src, curDir) === '') break;
       const parent = path.dirname(curDir);
       if (parent === curDir || path.relative(src, parent).startsWith('..')) break;
       curDir = parent;
     }
+  }
+
+  function registerRename(fileDir, oldBaseName, newBaseName) {
+    forEachAncestorDir(fileDir, (curDir) => {
+      const oldRel = path.relative(curDir, path.join(fileDir, oldBaseName)).replace(/\\/g, '/');
+      const newRel = path.relative(curDir, path.join(fileDir, newBaseName)).replace(/\\/g, '/');
+      const map = renamesByDir.get(curDir) || {};
+      map[oldRel] = newRel;
+      renamesByDir.set(curDir, map);
+    });
+  }
+
+  function recordTranscodeFailure(fileDir, baseName, relNorm) {
+    const entry = { file: relNorm, referencedBy: [] };
+    report.transcodeFailures.push(entry);
+    report.warnings.push({ file: relNorm, message: 'AVIF transcoding to WebP failed' });
+    forEachAncestorDir(fileDir, (curDir) => {
+      const relToDocDir = path.relative(curDir, path.join(fileDir, baseName)).replace(/\\/g, '/');
+      const map = failedTranscodesByDir.get(curDir) || new Map();
+      map.set(relToDocDir, entry);
+      failedTranscodesByDir.set(curDir, map);
+    });
   }
 
   // Pass 1: assets
@@ -509,8 +546,7 @@ export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync }
             fs.mkdirSync(targetDir, { recursive: true });
             const ok = transcodeAvifToWebp(file, fallbackTarget, { execFileFn });
             if (!ok) {
-              report.transcodeFailures.push(relNorm);
-              report.warnings.push({ file: relNorm, message: 'AVIF transcoding to WebP failed' });
+              recordTranscodeFailure(dir, oldName, relNorm);
               continue;
             }
           }
@@ -525,8 +561,7 @@ export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync }
         fs.mkdirSync(targetDir, { recursive: true });
         const ok = transcodeAvifToWebp(file, target, { execFileFn });
         if (!ok) {
-          report.transcodeFailures.push(relNorm);
-          report.warnings.push({ file: relNorm, message: 'AVIF transcoding to WebP failed' });
+          recordTranscodeFailure(dir, oldName, relNorm);
           continue;
         }
       }
@@ -580,6 +615,13 @@ export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync }
     const slug = base === 'index' ? path.basename(path.dirname(file)) : base;
 
     let sourceText = fs.readFileSync(file, 'utf8');
+    const dirFailures = failedTranscodesByDir.get(path.dirname(file));
+    if (dirFailures) {
+      const docRel = rel.replace(/\\/g, '/');
+      for (const ref of findAssetReferences(sourceText, [...dirFailures.keys()])) {
+        dirFailures.get(ref).referencedBy.push(docRel);
+      }
+    }
     const dirRenames = renamesByDir.get(path.dirname(file));
     if (dirRenames) {
       sourceText = rewriteAssetReferences(sourceText, dirRenames);
@@ -647,7 +689,10 @@ function main() {
   }
   if (report.transcodeFailures?.length) {
     console.log(`AVIF transcode failures (${report.transcodeFailures.length}):`);
-    report.transcodeFailures.forEach((f) => console.log(`  - ${f}`));
+    report.transcodeFailures.forEach((f) => {
+      const refs = f.referencedBy?.length ? ` (referenced by: ${f.referencedBy.join(', ')})` : '';
+      console.log(`  - ${f.file}${refs}`);
+    });
   }
   console.log(`components → shortcodes: ${top(report.components)}`);
   console.log(`unknown components:      ${top(report.unknown)}`);
