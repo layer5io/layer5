@@ -384,7 +384,10 @@ function convertSegment(text, ctx) {
 
     const attrs = new Map(tag.attrs.map(a => [a.key, a.value]));
     const className = attrs.get('className') || attrs.get('class') || '';
-    const classes = [name.toLowerCase(), className].filter(Boolean).join(' ');
+    const escapedClassName = className
+      .replace(/&/g, '&amp;')
+      .replace(/"/g, '&quot;');
+    const classes = [name.toLowerCase(), escapedClassName].filter(Boolean).join(' ');
     const children = tag.selfClosing ? '' :
       convertSegment(text.slice(tag.end, closing.start), ctx);
 

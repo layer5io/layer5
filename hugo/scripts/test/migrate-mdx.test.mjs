@@ -421,3 +421,11 @@ test('explicit permalink takes precedence over title slug', () => {
     fs.rmSync(temp, { recursive: true, force: true });
   }
 });
+
+test('Row escapes quotes and ampersands in className', () => {
+  const { output } = convertFile(
+    `<Row className='layout "broken" & special'><p>Content</p></Row>`
+  );
+
+  assert.match(output, /class="row layout &quot;broken&quot; &amp; special"/);
+});
