@@ -269,10 +269,21 @@ const SistentTokens = () => {
                 <div className="items">
                   <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                     <Box>
-                      <Typography variant="h1" gutterBottom>
+                      {/* Responsive sizes for the MUI-default heading variants
+                          (h1 renders at 6rem by default, which overflows
+                          360-414px viewports); desktop values are unchanged. */}
+                      <Typography
+                        variant="h1"
+                        gutterBottom
+                        sx={{ fontSize: { xs: "2.75rem", sm: "6rem" } }}
+                      >
                         Heading 1
                       </Typography>
-                      <Typography variant="h3" gutterBottom>
+                      <Typography
+                        variant="h3"
+                        gutterBottom
+                        sx={{ fontSize: { xs: "2rem", sm: "3rem" } }}
+                      >
                         Heading 3
                       </Typography>
                       <Typography variant="h6" gutterBottom>
