@@ -2,7 +2,7 @@
 /**
  * migrate-mdx.mjs — Gatsby MDX → Hugo Markdown converter (Workstream 1).
  *
- * Zero dependencies (Node >= 18). Safe by default: use --dry-run first.
+ * Requires gray-matter and js-yaml (Node >= 18). Safe by default: use --dry-run first.
  * Optional dependencies: ImageMagick (`magick` or non-Windows `convert`) or Python 3
  * with Pillow (`PIL`) for AVIF -> WebP raster asset transcoding.
  *
@@ -13,7 +13,7 @@
  *   1. Strips `import … from …` lines.
  *   2. Converts known JSX components to Hugo shortcodes (see COMPONENTS).
  *   3. Leaves code fences and inline code untouched.
- *   4. Rewrites front matter: redirect_from → aliases, published:false → draft:true,
+ *   4. Rewrites front matter: redirect_from → aliases, Gatsby-filtered unpublished content → drafts,
  *      ./thumbnail → bundle-relative, and guarantees a `slug` (so permalinks are deterministic).
  *   5. Flags anything it cannot convert with a <!-- TODO(mdx) --> marker AND a report entry,
  *      instead of silently dropping it.
@@ -25,6 +25,21 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { execFileSync } from 'node:child_process';
+import matter from 'gray-matter';
+import yaml from 'js-yaml';
+
+const matterOptions = {
+  engines: {
+    yaml: {
+      parse: (str) => yaml.safeLoad(str, { schema: yaml.JSON_SCHEMA }),
+      stringify: (data) => yaml.safeDump(data, { schema: yaml.JSON_SCHEMA }),
+    },
+  },
+};
+
+export function parseFrontMatter(source) {
+  return matter(source, matterOptions).data;
+}
 
 /* ---------------------------------------------------------------- component map */
 export const COMPONENTS = {
@@ -211,7 +226,134 @@ export function convertBody(body, ctx) {
 }
 
 /* ---------------------------------------------------------------- front matter */
-export function convertFrontMatter(fm, slug, ctx) {
+export function slugify(text) {
+  return text.toString().toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w-]+/g, '')
+    .replace(/-+/g, '-')
+    .replace(/^-+/, '')
+    .replace(/-+$/, '');
+}
+
+const PAGE_COLLECTIONS = new Set([
+  'blog',
+  'news',
+  'service-mesh-books',
+  'workshops',
+  'kanvas-labs',
+  'resources',
+  'members',
+  'handbook',
+  'events',
+  'programs',
+  'careers',
+  'integrations',
+  'sistent',
+  'content-learn',
+]);
+
+const NON_PAGE_COLLECTIONS = new Set([
+  'landscape',
+  'projects',
+  'use-cases',
+  'service-mesh-workshops',
+]);
+
+const PUBLISHED_COLLECTIONS = new Set([
+  'blog',
+  'news',
+  'service-mesh-books',
+  'resources',
+  'members',
+  'integrations',
+  'events',
+  'programs',
+  'careers',
+]);
+
+export function resolveGatsbyUrl({
+  collection,
+  frontmatter = {},
+  relativeDirectory = '',
+  fileName = '',
+  file = '',
+}) {
+  if (!PAGE_COLLECTIONS.has(collection)) return null;
+
+  if (collection === 'content-learn') {
+    const parsedFile = path.posix.parse(file.replace(/\\/g, '/'));
+    const name = parsedFile.name === 'index' ? '' : parsedFile.name;
+    const contentPath = path.posix.join('/', parsedFile.dir, name);
+    const depth = contentPath.split('/').filter(Boolean).length;
+
+    if (depth < 1 || depth > 4) return null;
+    return `/learn/learning-paths${contentPath}`;
+  }
+
+  if (
+    PUBLISHED_COLLECTIONS.has(collection) &&
+    frontmatter.published !== true
+  ) {
+    return null;
+  }
+
+  let route;
+
+  if (frontmatter.permalink) {
+    route = `/${collection}/${frontmatter.permalink}`;
+  } else {
+    if (collection === 'events' && !frontmatter.title) {
+      throw new Error(
+        'Published Gatsby event has no title or permalink; Gatsby would create a page with an empty path',
+      );
+    }
+
+    switch (collection) {
+      case 'blog':
+      case 'resources':
+        route = `/${collection}/${slugify(frontmatter.category)}/${slugify(frontmatter.title)}`;
+        break;
+      case 'news':
+        route = `/company/news/${slugify(frontmatter.title)}`;
+        break;
+      case 'service-mesh-books':
+      case 'workshops':
+      case 'kanvas-labs':
+        route = `/learn/${collection}/${slugify(frontmatter.title)}`;
+        break;
+      case 'members':
+        route = `/community/members/${frontmatter.permalink ?? slugify(frontmatter.name)}`;
+        break;
+      case 'handbook':
+        route = `/community/handbook/${slugify(frontmatter.title)}`;
+        break;
+      case 'events':
+        route = `/community/events/${slugify(frontmatter.title)}`;
+        break;
+      case 'sistent': {
+        const componentSlug = relativeDirectory.split('/').pop();
+        const suffix = fileName === 'index' ? '' : `/${fileName}`;
+        route = `/projects/sistent/components/${componentSlug}${suffix}`;
+        break;
+      }
+      default:
+        route = `/${collection}/${slugify(frontmatter.title)}`;
+    }
+  }
+
+  if (collection === 'integrations') {
+    route = `/cloud-native-management/meshery${route}`;
+  }
+
+  return route.replace(/\/+$/, '') || '/';
+}
+
+export function convertFrontMatter(fm, slug, ctx, {
+  collection,
+  url,
+  unpublished = false,
+  renderNever = false,
+} = {}) {
   const lines = fm.split('\n').map((l) => l.replace(/\r$/, ''));
   const out = [];
   let hasSlug = false;
@@ -233,8 +375,11 @@ export function convertFrontMatter(fm, slug, ctx) {
 
       // 1. Only act on boolean values (case-insensitive)
       if (lower === 'true' || lower === 'false') {
-        if (lower === 'false') {
-          if (hasDraftFalse) {
+        if (
+          lower === 'false' &&
+          (PUBLISHED_COLLECTIONS.has(collection) || collection == null)
+        ) {
+          if (hasDraftFalse && !unpublished) {
             ctx.warn('published: false ignored because draft: false is already present');
           } else if (!hasDraft) {
             out.push('draft: true');
@@ -272,16 +417,37 @@ export function convertFrontMatter(fm, slug, ctx) {
     }
 
     if (/^slug\s*:/.test(line)) hasSlug = true;
+    if (/^url\s*:/i.test(line) && (url || unpublished)) continue;
+    if (/^draft\s*:/i.test(line) && unpublished) {
+      if (!out.some((entry) => /^draft\s*:/i.test(entry))) {
+        out.push('draft: true');
+      }
+      continue;
+    }
     out.push(line);
   }
   if (!hasSlug && slug) {
     out.push(`slug: ${slug}`);
     ctx.count('slugAdded');
   }
+  if (unpublished && !out.some((line) => /^draft\s*:/i.test(line))) {
+    out.push('draft: true');
+  }
+  if (url) out.push(`url: ${JSON.stringify(url)}`);
+  if (renderNever) {
+    out.push('build:');
+    out.push('  render: never');
+  }
   return out.join('\n');
 }
 
-export function convertFile(source, { slug, file = '' } = {}) {
+export function convertFile(source, {
+  slug,
+  file = '',
+  collection,
+  relativeDirectory = '',
+  fileName = '',
+} = {}) {
   const stats = { components: {}, unknown: {}, counters: {}, warnings: [] };
   const ctx = {
     warn: (m) => stats.warnings.push(m),
@@ -293,10 +459,60 @@ export function convertFile(source, { slug, file = '' } = {}) {
   let fm = '', body = source;
   if (fmMatch) { fm = fmMatch[1]; body = source.slice(fmMatch[0].length); }
   else ctx.warn('no front matter found; generated a minimal one');
-  const newFm = fmMatch ? convertFrontMatter(fm, slug, ctx) : `title: ${slug ?? path.basename(file)}${slug ? `\nslug: ${slug}` : ''}`;
+  const frontmatter = fmMatch ? parseFrontMatter(source) : {};
+  const resolvedCollection = collection ?? (file ? file.replace(/\\/g, '/').split('/')[0] : undefined);
+  const resolvedFileName = fileName || path.basename(file, path.extname(file));
+  const resolvedDirectory = relativeDirectory || path.dirname(file).replace(/\\/g, '/');
+  const url = resolveGatsbyUrl({
+    collection: resolvedCollection,
+    frontmatter,
+    relativeDirectory: resolvedDirectory,
+    fileName: resolvedFileName,
+    file,
+  });
+  const unpublished = PUBLISHED_COLLECTIONS.has(resolvedCollection) &&
+    frontmatter.published !== true;
+  const renderNever = NON_PAGE_COLLECTIONS.has(resolvedCollection) ||
+    (resolvedCollection === 'content-learn' && url === null);
+  const newFm = fmMatch
+    ? convertFrontMatter(fm, slug, ctx, {
+      collection: resolvedCollection,
+      url,
+      unpublished,
+      renderNever,
+    })
+    : [
+      `title: ${slug ?? path.basename(file)}`,
+      ...(slug ? [`slug: ${slug}`] : []),
+      ...(unpublished ? ['draft: true'] : []),
+      ...(url ? [`url: ${JSON.stringify(url)}`] : []),
+      ...(renderNever ? ['build:', '  render: never'] : []),
+    ].join('\n');
   const newBody = convertBody(body.replace(/\r\n/g, '\n'), ctx).replace(/^\n+/, '');
   if (stats.unknown && Object.keys(stats.unknown).length) ctx.warn(`unknown components: ${Object.keys(stats.unknown).join(', ')}`);
-  return { output: `---\n${newFm}\n---\n\n${newBody.trimEnd()}\n`, stats };
+  return {
+    output: `---\n${newFm}\n---\n\n${newBody.trimEnd()}\n`,
+    stats,
+    frontmatter,
+    url,
+  };
+}
+
+function createExecutiveBioPage(output, { bioUrl, memberPagePath }) {
+  const match = /^---\r?\n([\s\S]*?)\r?\n---[ \t]*(?:\r?\n|$)/.exec(output);
+  if (!match) {
+    throw new Error('Cannot generate executive bio page without frontmatter');
+  }
+
+  const frontmatter = match[1]
+    .split('\n')
+    .filter((line) => !/^url\s*:/i.test(line));
+  frontmatter.push(`url: ${JSON.stringify(bioUrl)}`);
+  frontmatter.push('type: members');
+  frontmatter.push('layout: executive-bio');
+  frontmatter.push(`member_page_path: ${JSON.stringify(memberPagePath)}`);
+
+  return `---\n${frontmatter.join('\n')}\n---\n\n${output.slice(match[0].length)}`;
 }
 
 /* ---------------------------------------------------------------- template filter */
@@ -458,10 +674,25 @@ export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync }
   };
   const bump = (o, k, n = 1) => { o[k] = (o[k] || 0) + n; };
   const allFiles = [...walk(src)];
+  const isContentLearnSource = path.basename(path.resolve(src)) === 'content-learn';
   const docFiles = [];
   const renamesByDir = new Map();
   const failedTranscodesByDir = new Map();
   const writtenTargets = new Set();
+  const urlRegistry = new Map();
+
+  function registerUrl(url, source) {
+    if (!url) return;
+    const existingSource = urlRegistry.get(url);
+    if (existingSource) {
+      throw new Error(
+        `Duplicate URL detected: "${url}"\n` +
+        `  First:  ${existingSource}\n` +
+        `  Second: ${source}`,
+      );
+    }
+    urlRegistry.set(url, source);
+  }
 
   function forEachAncestorDir(fileDir, fn) {
     let curDir = fileDir;
@@ -605,7 +836,7 @@ export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync }
   // Pass 2: docs
   for (const file of docFiles) {
     const rel = path.relative(src, file);
-    const collection = rel.split(path.sep)[0];
+    const collection = isContentLearnSource ? 'content-learn' : rel.split(path.sep)[0];
     const ext = path.extname(file);
     const target = path.join(dest, rel.replace(/\.mdx?$/, '.md'));
     const col = (report.byCollection[collection] ||= { files: 0, converted: 0, withWarnings: 0 });
@@ -627,7 +858,16 @@ export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync }
       sourceText = rewriteAssetReferences(sourceText, dirRenames);
     }
 
-    const { output, stats } = convertFile(sourceText, { slug, file: rel });
+    const fileName = path.basename(file, ext);
+    const relativeDirectory = path.dirname(rel).replace(/\\/g, '/');
+    const { output, stats, frontmatter, url } = convertFile(sourceText, {
+      slug,
+      file: rel,
+      collection,
+      relativeDirectory,
+      fileName,
+    });
+    registerUrl(url, rel);
     for (const [k, v] of Object.entries(stats.components)) bump(report.components, k, v);
     for (const [k, v] of Object.entries(stats.unknown)) bump(report.unknown, k, v);
     if (stats.warnings.length) {
@@ -638,6 +878,26 @@ export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync }
       fs.mkdirSync(path.dirname(target), { recursive: true });
       fs.writeFileSync(target, output);
     }
+
+    if (
+      collection === 'members' &&
+      frontmatter.published === true &&
+      frontmatter.executive_bio === true &&
+      url
+    ) {
+      const bioUrl = `${url}/bio`;
+      registerUrl(bioUrl, `${rel} (executive bio)`);
+      const bioOutput = createExecutiveBioPage(output, {
+        bioUrl,
+        memberPagePath: url,
+      });
+      const bioTarget = path.join(dest, 'member-bios', `${slug}.md`);
+      if (!dryRun) {
+        fs.mkdirSync(path.dirname(bioTarget), { recursive: true });
+        fs.writeFileSync(bioTarget, bioOutput);
+      }
+    }
+
     report.converted++; col.converted++;
   }
   return report;

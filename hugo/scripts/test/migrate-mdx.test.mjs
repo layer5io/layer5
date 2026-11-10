@@ -4,11 +4,28 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { convertFile, migrate, isTemplatePath, sniffImageFormat, normalizeAssetFilename, rewriteAssetReferences } from '../migrate-mdx.mjs';
+import {
+  convertFile,
+  migrate,
+  isTemplatePath,
+  sniffImageFormat,
+  normalizeAssetFilename,
+  rewriteAssetReferences,
+  parseFrontMatter,
+  resolveGatsbyUrl,
+  slugify,
+} from '../migrate-mdx.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const fx = path.join(here, 'fixtures/collections');
+const sourceCollections = path.resolve(here, '../../../src/collections');
 const run = () => convertFile(fs.readFileSync(path.join(fx, 'blog/sample-post/index.mdx'), 'utf8'), { slug: 'sample-post' });
+const writeDoc = (root, relativePath, frontmatter, body = 'Test content.\n') => {
+  const file = path.join(root, relativePath);
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, `---\n${frontmatter}\n---\n\n${body}`);
+  return file;
+};
 
 test('imports (single-line, multi-line, default) are removed', () => {
   const { output, stats } = run();
@@ -413,4 +430,442 @@ test('subfolder renames and .avif -> .webp renames are keyed and rewritten in do
   assert.match(convertedDoc, /!\[Icon\]\(\.\/icons\/icon\.jpg\)/);
   assert.match(convertedDoc, /!\[BareIcon\]\(icons\/icon\.jpg\)/);
   assert.match(convertedDoc, /src="banner\.webp"/);
+});
+
+test('frontmatter parser keeps unquoted dates as strings and parses multiline fields', () => {
+  const parsed = parseFrontMatter([
+    '---',
+    'title: "A quoted: title"',
+    'date: 2026-11-05',
+    'description: >',
+    '  A multiline',
+    '  description.',
+    'published: true',
+    '---',
+  ].join('\n'));
+
+  assert.equal(parsed.title, 'A quoted: title');
+  assert.equal(parsed.date, '2026-11-05');
+  assert.equal(typeof parsed.date, 'string');
+  assert.equal(parsed.description, 'A multiline description.\n');
+  assert.equal(parsed.published, true);
+});
+
+test('slugify follows Gatsby punctuation and whitespace behavior', () => {
+  assert.equal(slugify('Hello, World!'), 'hello-world');
+  assert.equal(slugify('  Multiple   Spaces  '), 'multiple-spaces');
+  assert.equal(slugify('A---B'), 'a-b');
+  assert.equal(slugify('C++ & C#'), 'c-c');
+  assert.equal(slugify('café'), 'caf');
+});
+
+test('Gatsby URL resolution covers collection routes with Gatsby trailingSlash never', () => {
+  const cases = [
+    ['blog', { published: true, category: 'Cloud Native', title: 'Hello, World!' }, '/blog/cloud-native/hello-world'],
+    ['news', { published: true, title: 'Layer5 Joins CNCF' }, '/company/news/layer5-joins-cncf'],
+    ['events', { published: true, title: 'Community Call' }, '/community/events/community-call'],
+    ['integrations', { published: true, title: 'GitLab Runner Operator' }, '/cloud-native-management/meshery/integrations/gitlab-runner-operator'],
+    ['resources', { published: true, category: 'Case Study', title: 'A Cloud Native Story' }, '/resources/case-study/a-cloud-native-story'],
+    ['members', { published: true, name: 'Lee Calcote' }, '/community/members/lee-calcote'],
+    ['handbook', { title: 'Contributing to Layer5' }, '/community/handbook/contributing-to-layer5'],
+    ['service-mesh-books', { published: true, title: 'Service Mesh Patterns' }, '/learn/service-mesh-books/service-mesh-patterns'],
+    ['workshops', { published: false, title: 'Meshery Workshop' }, '/learn/workshops/meshery-workshop'],
+    ['kanvas-labs', { title: 'Kanvas Lab' }, '/learn/kanvas-labs/kanvas-lab'],
+    ['programs', { published: true, title: 'Summer of Code' }, '/programs/summer-of-code'],
+    ['careers', { published: true, title: 'Software Engineer' }, '/careers/software-engineer'],
+  ];
+
+  for (const [collection, frontmatter, expected] of cases) {
+    assert.equal(resolveGatsbyUrl({ collection, frontmatter }), expected, collection);
+  }
+});
+
+test('explicit permalink wins, preserves dot segments, and follows Gatsby trailingSlash never', () => {
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'programs',
+      frontmatter: { published: true, permalink: '../careers/internships/' },
+    }),
+    '/programs/../careers/internships',
+  );
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'integrations',
+      frontmatter: { published: true, permalink: 'eks' },
+    }),
+    '/cloud-native-management/meshery/integrations/eks',
+  );
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'members',
+      frontmatter: { published: true, name: 'Yash Sharma', permalink: 'yash-sharma-2' },
+    }),
+    '/members/yash-sharma-2',
+  );
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'members',
+      frontmatter: { published: true, name: 'Fallback Name', permalink: '' },
+    }),
+    '/community/members',
+  );
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'members',
+      frontmatter: { published: true, name: 'Fallback Name', permalink: 0 },
+    }),
+    '/community/members/0',
+  );
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'members',
+      frontmatter: { published: true, name: 'Fallback Name', permalink: false },
+    }),
+    '/community/members/false',
+  );
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'programs',
+      frontmatter: { published: true, permalink: 'custom/path/' },
+    }),
+    '/programs/custom/path',
+  );
+});
+
+test('Sistent index and non-index documents map to distinct routes', () => {
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'sistent',
+      relativeDirectory: 'sistent/components/divider',
+      fileName: 'index',
+    }),
+    '/projects/sistent/components/divider',
+  );
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'sistent',
+      relativeDirectory: 'sistent/components/navigation-navbar',
+      fileName: 'guidance',
+    }),
+    '/projects/sistent/components/navigation-navbar/guidance',
+  );
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'sistent',
+      relativeDirectory: 'sistent/components/navigation-navbar',
+      fileName: 'code',
+    }),
+    '/projects/sistent/components/navigation-navbar/code',
+  );
+});
+
+test('Gatsby publication filtering applies only to filtered collections', () => {
+  const filteredCollections = [
+    ['blog', { category: 'News', title: 'Draft post' }],
+    ['news', { title: 'Draft news' }],
+    ['service-mesh-books', { title: 'Draft book' }],
+    ['resources', { category: 'News', title: 'Draft resource' }],
+    ['members', { name: 'Draft member' }],
+    ['integrations', { title: 'Draft integration' }],
+    ['events', { title: 'Draft event' }],
+    ['programs', { title: 'Draft program' }],
+    ['careers', { title: 'Draft career' }],
+  ];
+
+  for (const [collection, frontmatter] of filteredCollections) {
+    assert.equal(
+      resolveGatsbyUrl({ collection, frontmatter: { ...frontmatter, published: false } }),
+      null,
+      `${collection} published:false`,
+    );
+    assert.equal(
+      resolveGatsbyUrl({ collection, frontmatter }),
+      null,
+      `${collection} missing published`,
+    );
+    assert.ok(
+      resolveGatsbyUrl({ collection, frontmatter: { ...frontmatter, published: true } }),
+      `${collection} published:true`,
+    );
+  }
+
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'blog',
+      frontmatter: { published: true, category: 'News', title: 'Published post' },
+    }),
+    '/blog/news/published-post',
+  );
+  assert.throws(
+    () => resolveGatsbyUrl({ collection: 'events', frontmatter: { published: true } }),
+    /Gatsby would create a page with an empty path/,
+  );
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'workshops',
+      frontmatter: { published: false, title: 'Still a Gatsby page' },
+    }),
+    '/learn/workshops/still-a-gatsby-page',
+  );
+  assert.equal(
+    resolveGatsbyUrl({
+      collection: 'projects',
+      frontmatter: { title: 'Data', permalink: 'explicit-data-path' },
+    }),
+    null,
+  );
+});
+
+test('content-learn routes follow Gatsby createFilePath depth and ignore frontmatter permalink', () => {
+  const routeFor = (file) => resolveGatsbyUrl({
+    collection: 'content-learn',
+    file,
+    frontmatter: { permalink: 'not-used' },
+  });
+
+  assert.equal(
+    routeFor('mastering-service-meshes-for-developers/index.mdx'),
+    '/learn/learning-paths/mastering-service-meshes-for-developers',
+  );
+  assert.equal(
+    routeFor('mastering-service-meshes-for-developers/introduction/index.mdx'),
+    '/learn/learning-paths/mastering-service-meshes-for-developers/introduction',
+  );
+  assert.equal(
+    routeFor('path/course/section/chapter/index.mdx'),
+    '/learn/learning-paths/path/course/section/chapter',
+  );
+  assert.equal(routeFor('path/course/section/chapter/lesson/index.mdx'), null);
+});
+
+test('migrate recognizes a content-learn source root and suppresses paths Gatsby does not create', () => {
+  const parent = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-learn-src-'));
+  const src = path.join(parent, 'content-learn');
+  const dest = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-learn-dest-'));
+  writeDoc(
+    src,
+    'mastering-meshery/introduction-to-meshery/index.mdx',
+    'title: Introduction to Meshery\npermalink: ignored-by-gatsby',
+  );
+  writeDoc(
+    src,
+    'mastering-meshery/section/chapter/lesson/too-deep.mdx',
+    'title: Not a Gatsby page',
+  );
+
+  migrate({ src, dest });
+
+  const chapter = fs.readFileSync(
+    path.join(dest, 'mastering-meshery/introduction-to-meshery/index.md'),
+    'utf8',
+  );
+  assert.match(chapter, /^url: "\/learn\/learning-paths\/mastering-meshery\/introduction-to-meshery"$/m);
+  assert.match(chapter, /^permalink: ignored-by-gatsby$/m);
+
+  const tooDeep = fs.readFileSync(
+    path.join(dest, 'mastering-meshery/section/chapter/lesson/too-deep.md'),
+    'utf8',
+  );
+  assert.match(tooDeep, /^build:\n  render: never$/m);
+  assert.doesNotMatch(tooDeep, /^url:/m);
+});
+
+test('real Gatsby source documents reproduce their onCreateNode routes', () => {
+  const sourceDocument = (relativePath) => {
+    const source = fs.readFileSync(path.join(sourceCollections, relativePath), 'utf8');
+    const collection = relativePath.split(path.sep)[0];
+    const ext = path.extname(relativePath);
+    const fileName = path.basename(relativePath, ext);
+    return convertFile(source, {
+      collection,
+      file: relativePath,
+      fileName,
+      relativeDirectory: path.dirname(relativePath).replace(/\\/g, '/'),
+      slug: fileName === 'index' ? path.basename(path.dirname(relativePath)) : fileName,
+    });
+  };
+
+  assert.equal(
+    sourceDocument('programs/layer5/index.mdx').url,
+    '/programs/../careers/internships',
+  );
+  assert.equal(
+    sourceDocument('members/yash-sharma-2/index.mdx').url,
+    '/members/yash-sharma-2',
+  );
+  assert.equal(
+    sourceDocument('integrations/eks/index.mdx').url,
+    '/cloud-native-management/meshery/integrations/eks',
+  );
+  assert.equal(
+    sourceDocument('resources/case-study/tcs-labs-adoption-of-meshery-and-kanvas/index.mdx').url,
+    '/resources/case-study/tcs-labs-adoption-of-meshery-and-kanvas',
+  );
+  assert.equal(
+    sourceDocument('members/lee-calcote/index.mdx').url,
+    '/community/members/lee-calcote',
+  );
+});
+
+test('generated Gatsby URL overrides source url; unpublished filtered pages do not retain it', () => {
+  const published = convertFile(
+    '---\ntitle: "Generated Route"\ncategory: "Cloud Native"\npublished: true\nurl: /source-route/\n---\nBody\n',
+    { slug: 'generated-route', collection: 'blog' },
+  );
+  assert.equal(published.url, '/blog/cloud-native/generated-route');
+  assert.match(published.output, /^url: "\/blog\/cloud-native\/generated-route"$/m);
+  assert.doesNotMatch(published.output, /\/source-route\//);
+
+  const unpublished = convertFile(
+    '---\ntitle: Hidden\ncategory: News\npublished: false\nurl: /source-route/\n---\nBody\n',
+    { slug: 'hidden', collection: 'blog' },
+  );
+  assert.equal(unpublished.url, null);
+  assert.match(unpublished.output, /^draft: true$/m);
+  assert.doesNotMatch(unpublished.output, /^url:/m);
+
+  const hiddenWithDraftFalse = convertFile(
+    '---\ntitle: Hidden\ncategory: News\npublished: false\ndraft: false\n---\nBody\n',
+    { slug: 'hidden', collection: 'blog' },
+  );
+  assert.match(hiddenWithDraftFalse.output, /^draft: true$/m);
+  assert.doesNotMatch(hiddenWithDraftFalse.output, /^draft: false$/m);
+});
+
+test('published:false does not hide Gatsby pages in unfiltered collections', () => {
+  const converted = convertFile(
+    '---\ntitle: "Workshop"\npublished: false\nurl: /source-route/\n---\nBody\n',
+    { slug: 'workshop', collection: 'workshops' },
+  );
+  assert.equal(converted.url, '/learn/workshops/workshop');
+  assert.match(converted.output, /^url: "\/learn\/workshops\/workshop"$/m);
+  assert.doesNotMatch(converted.output, /^draft:/m);
+  assert.doesNotMatch(converted.output, /\/source-route\//);
+});
+
+test('data-only content keeps source url and is not rendered as an individual page', () => {
+  const converted = convertFile(
+    '---\ntitle: Example Project\npublished: false\nurl: /project-data/\n---\nBody\n',
+    { slug: 'example-project', collection: 'projects' },
+  );
+  assert.match(converted.output, /^url: \/project-data\/$/m);
+  assert.match(converted.output, /^build:\n  render: never$/m);
+  assert.doesNotMatch(converted.output, /^draft:/m);
+  assert.equal(converted.url, null);
+
+  const landscape = convertFile('---\ntitle: Landscape item\n---\nBody\n', {
+    slug: 'landscape-item',
+    collection: 'landscape',
+  });
+  assert.match(landscape.output, /^build:\n  render: never$/m);
+  assert.equal(landscape.url, null);
+});
+
+test('migrate detects duplicate generated URLs and reports both documents', () => {
+  const src = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-duplicate-src-'));
+  const dest = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-duplicate-dest-'));
+  const frontmatter = 'title: Duplicate Post\ncategory: Engineering\npublished: true';
+  writeDoc(src, 'blog/first/index.mdx', frontmatter);
+  writeDoc(src, 'blog/second/index.mdx', frontmatter);
+
+  assert.throws(
+    () => migrate({ src, dest }),
+    (error) => {
+      assert.match(error.message, /Duplicate URL detected/);
+      assert.match(error.message, /blog\/first\/index\.mdx/);
+      assert.match(error.message, /blog\/second\/index\.mdx/);
+      assert.match(error.message, /\/blog\/engineering\/duplicate-post/);
+      return true;
+    },
+  );
+});
+
+test('migrate detects duplicate generated URLs during dry-run', () => {
+  const src = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-dry-duplicate-src-'));
+  const dest = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-dry-duplicate-dest-'));
+  const frontmatter = 'title: Same Post\ncategory: Engineering\npublished: true';
+  writeDoc(src, 'blog/first/index.mdx', frontmatter);
+  writeDoc(src, 'blog/second/index.mdx', frontmatter);
+
+  assert.throws(() => migrate({ src, dest, dryRun: true }), /Duplicate URL detected/);
+  assert.deepEqual(fs.readdirSync(dest), []);
+});
+
+test('migrate detects duplicate explicit permalinks', () => {
+  const src = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-permalink-duplicate-src-'));
+  const dest = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-permalink-duplicate-dest-'));
+  writeDoc(
+    src,
+    'blog/first/index.mdx',
+    'title: First Post\ncategory: Engineering\npublished: true\npermalink: shared/',
+  );
+  writeDoc(
+    src,
+    'blog/second/index.mdx',
+    'title: Second Post\ncategory: Engineering\npublished: true\npermalink: shared/',
+  );
+
+  assert.throws(() => migrate({ src, dest }), /Duplicate URL detected/);
+});
+
+test('migrate ignores unpublished and data-only documents in duplicate URL detection', () => {
+  const src = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-nonpage-duplicate-src-'));
+  const dest = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-nonpage-duplicate-dest-'));
+  writeDoc(src, 'blog/first/index.mdx', 'title: Hidden\ncategory: Engineering\npublished: false');
+  writeDoc(src, 'blog/second/index.mdx', 'title: Hidden\ncategory: Engineering\npublished: false');
+  writeDoc(src, 'projects/first.mdx', 'title: Shared data');
+  writeDoc(src, 'projects/second.mdx', 'title: Shared data');
+
+  assert.doesNotThrow(() => migrate({ src, dest, dryRun: true }));
+});
+
+test('migrate generates executive bio pages and includes their URLs in duplicate detection', () => {
+  const src = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-bio-src-'));
+  const dest = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-bio-dest-'));
+  writeDoc(
+    src,
+    'members/lee/index.mdx',
+    'name: Lee Calcote\npublished: true\nexecutive_bio: true',
+    'Executive biography.\n',
+  );
+  migrate({ src, dest });
+
+  const bioPath = path.join(dest, 'member-bios', 'lee.md');
+  assert.ok(fs.existsSync(bioPath));
+  const bio = fs.readFileSync(bioPath, 'utf8');
+  assert.match(bio, /^url: "\/community\/members\/lee-calcote\/bio"$/m);
+  assert.match(bio, /^member_page_path: "\/community\/members\/lee-calcote"$/m);
+
+  writeDoc(
+    src,
+    'members/nina/profile.mdx',
+    'name: Nina Member\npublished: true\nexecutive_bio: true',
+    'Non-index executive biography.\n',
+  );
+  migrate({ src, dest });
+  const nonIndexBio = fs.readFileSync(path.join(dest, 'member-bios', 'profile.md'), 'utf8');
+  assert.match(nonIndexBio, /^url: "\/community\/members\/nina-member\/bio"$/m);
+
+  const duplicateSrc = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-bio-duplicate-src-'));
+  const duplicateDest = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-bio-duplicate-dest-'));
+  writeDoc(
+    duplicateSrc,
+    'members/lee/index.mdx',
+    'name: Lee Calcote\npublished: true\nexecutive_bio: true\npermalink: shared',
+  );
+  writeDoc(
+    duplicateSrc,
+    'members/other/index.mdx',
+    'name: Other Member\npublished: true\npermalink: shared/bio/',
+  );
+
+  assert.throws(
+    () => migrate({ src: duplicateSrc, dest: duplicateDest }),
+    (error) => {
+      assert.match(error.message, /Duplicate URL detected/);
+      assert.match(error.message, /executive bio/);
+      assert.match(error.message, /members\/other\/index\.mdx/);
+      return true;
+    },
+  );
 });
