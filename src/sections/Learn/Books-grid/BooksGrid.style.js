@@ -122,4 +122,50 @@ export const BooksPageWrapper = styled.div`
             }
         }
     }
+        @media screen and (max-width: 550px){
+        .slick-list{
+            padding: 6rem 0 !important;
+        }
+
+        .slick-arrow{
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid #00b39f;
+            cursor: pointer;
+        }
+
+        .slick-prev{
+            left: 0.5rem;
+        }
+
+        .slick-next{
+            right: 0.5rem;
+        }
+
+        .slick-prev::before,
+        .slick-next::before{
+            font-family: inherit;
+            font-size: 1.5rem;
+            line-height: 1;
+            color: #fff;
+            opacity: 1;
+        }
+
+        .slick-prev::before{
+            content: "‹";
+        }
+
+        .slick-next::before{
+            content: "›";
+        }
+    }    
 `;
