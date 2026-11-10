@@ -75,7 +75,7 @@ const SMPPage = () => {
                     <td className="feature"> Statistical analysis of performance results </td>
                   </tr>
                 </table>
-                <Button $primary title="Learn More" $url="https://smp-spec.io"></Button>
+                <Button $primary title="Learn More" $url="https://smp-spec.io" $external={true}></Button>
               </Col>
             </Row>
           </div>
@@ -146,7 +146,7 @@ const SMPPage = () => {
         <div className="cncf-callout">
           <h1> Join the CNCF Cloud Native Working Group </h1>
           <h4> Learn more about these initiatives</h4>
-          <Button $primary title="Learn More" $url="https://smp-spec.io"></Button>
+          <Button $primary title="Learn More" $url="https://smp-spec.io" $external={true}></Button>
         </div>
         <KanvasCTA />
       </SMPWrapper>
