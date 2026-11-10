@@ -60,7 +60,7 @@ const GitOpsPage = () => {
                 $primary
                 className="learn-more-btn"
                 title="Read More"
-                $url="https://layer5.io/resources/cloud-native/what-is-gitops"
+                $url="/resources/cloud-native/what-is-gitops"
               />
             </div>
           </Col>
@@ -80,7 +80,7 @@ const GitOpsPage = () => {
             <SquarePoint>Connect Kanvas to your GitHub repo and see changes pull request-to-pull request</SquarePoint>
             <SquarePoint>Get snapshots of your infrastructure directly in your PRs</SquarePoint>
             <div className="buttons-container">
-              <Button $primary className="learn-more-btn" title="Install" $url="https://cloud.layer5.io/connect/github/new"/>
+              <Button $primary className="learn-more-btn" title="Install" $url="https://cloud.layer5.io/connect/github/new" $external={true}/>
               <Button $secondary className="learn-more-btn" title="Learn More" $url="/solutions/gitops/snapshot"/>
             </div>
           </Col>
@@ -102,7 +102,7 @@ const GitOpsPage = () => {
             <SquarePoint>Define your performance profiles upfront. See statistcal analysis with microservice latency and throughput quartiles</SquarePoint>
             <SquarePoint>Meshery includes your choice of load generator, so that you can meausure your way</SquarePoint>
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <Button $primary className="learn-more-btn" title="Install" $url="https://github.com/marketplace/actions/performance-testing-with-meshery"/>
+              <Button $primary className="learn-more-btn" title="Install" $url="https://github.com/marketplace/actions/performance-testing-with-meshery" $external={true}/>
             </div>
           </Col>
           <Col $lg={6} $md={6} className="hero-image" style={{ display: "flex", justifyContent: "flex-end" }} >

@@ -195,7 +195,7 @@ const WebBasedForm = () => {
               <Field type="url" className="text-field" id="picture" name="picture"  validate={validatePictureUrl}/>
               {errors.picture && touched.picture && <div style={{ margin: "0px", color: "red", fontSize: "16px" }}>{errors.picture}</div>}
               <p className="para label">Please provide a link to your profile photo. Profile photos are used for <Link to="/community/members">community member profiles</Link> of longstanding community members.</p>
-              <Button secondary type="submit" className="btn" title="Next Step" /> <br /><br /><br /><br />
+              <Button $secondary type="submit" className="btn" title="Next Step" /> <br /><br /><br /><br />
             </Form>
           )}
         </Formik>
@@ -627,8 +627,8 @@ const WebBasedForm = () => {
           <h2>Welcome to the Layer5 Community!</h2>
           <h4>Resources are on their way. See these in the meantime:</h4>
           <div className="btn-box">
-            <Button $primary className="btn-one" type="button" title="Community Handbook" $url="https://layer5.io/community/handbook" />
-            <Button $secondary className="btn-two" type="button" title="Newcomers Roadmap" $url="https://layer5.io/community/newcomers" />
+            <Button $primary className="btn-one" type="button" title="Community Handbook" $url="/community/handbook" />
+            <Button $secondary className="btn-two" type="button" title="Newcomers Roadmap" $url="/community/newcomers" />
           </div>
           <p>We are pleased to have you as a new member! You have been added to the community mailing list. You can also access the <Link to="/community/calendar">community calendar</Link> to stay updated on weekly meetings. If you prefer not to receive emails, you can <Link to="/unsubscribe">unsubscribe</Link> at anytime.</p>
         </div>
