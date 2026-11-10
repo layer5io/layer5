@@ -102,7 +102,7 @@ KubeEdge helps extend cloud-native capabilities into edge computing. It’s spec
 
 ### The Forecast Looks Cloud-Native
 <br />
-By 2023, the <Link to="https://containerjournal.com/features/majority-of-apps-will-use-cloud-native-development-by-2023/">majority of applications will be cloud-native</Link>. The cloud-native world is here to stay, and open source is the foundation to support our new era of microservices, containerization and DevOps.
+By 2023, the <a href="https://containerjournal.com/features/majority-of-apps-will-use-cloud-native-development-by-2023/" target="_blank" rel="noreferrer">majority of applications will be cloud-native</a>. The cloud-native world is here to stay, and open source is the foundation to support our new era of microservices, containerization and DevOps.
 
 Although you could technically self-host your way through development and operations using these open source projects, organizations will most likely adopt a blend of open source, proprietary and as-a-service cloud offerings to get the job done. Regardless, it’s cool to know what’s available for free use.
 
