@@ -221,31 +221,41 @@ const Banner1SectionWrapper = styled.section`
         }
     }
     @media only screen and (max-width: 767px) {
-        min-height: 320px;
-        padding: 1.2rem 0 1.5rem 0;
+        min-height: auto;
+        padding: 1.5rem 0 0 0;
         .video-wrapper {
             width: 100%;
             padding-bottom: 56.25%; /* Maintain 16:9 aspect ratio */
         }
         .section-title-wrapper {
             min-width: 100%;
+            text-align: center;
         }
         .video-col{
             display: none;
         }
         .section-title {
+            text-align: center !important;
             h1 {
-                margin: 0rem;
-                font-size: 1.82rem;
+                margin: 0 auto 0.6rem auto;
+                font-size: 2.1rem;
+                line-height: 2.5rem;
+                max-width: 18ch;
+                text-align: center !important;
             }
             h2 {
-                font-size: 1.15rem;
-                width: 80%;
+                font-size: 1.2rem;
+                width: 100%;
+                margin: 0 auto 1.2rem auto;
+                text-align: center !important;
             }
         }
         p {
             font-size: 1.1rem;
             width:60%;
+        }
+        .vintage-box-container {
+            justify-content: center;
         }
         .vintage-box{
              &:before{
@@ -257,13 +267,27 @@ const Banner1SectionWrapper = styled.section`
     }
     }
     @media only screen and (max-width: 480px) {
-        min-height: 180px;
-        padding: 0.7rem 0 1rem 0;
+        min-height: auto;
+        padding: 1.5rem 0 0 0;
         .video-wrapper {
             width: 100%;
             padding-bottom: 60%;
         }
-        padding: 2rem 0;
+        .section-title {
+            h1 {
+                margin: 0 auto 0.6rem auto;
+                font-size: 1.95rem;
+                line-height: 2.35rem;
+                max-width: 12ch;
+                text-align: center !important;
+            }
+            h2 {
+                font-size: 1.1rem;
+                width: 100%;
+                margin: 0 auto 1.2rem auto;
+                text-align: center !important;
+            }
+        }
         .vintage-box{
             &:before{
                 content: none;
@@ -271,15 +295,20 @@ const Banner1SectionWrapper = styled.section`
         }
 	}
     @media only screen and (max-width: 430px) {
-        padding: 1rem 0;
+        padding: 1.2rem 0 0 0;
         .section-title {
             h1 {
-                margin: 0rem;
-                font-size: 1.8rem;
+                margin: 0 auto 0.6rem auto;
+                font-size: 1.85rem;
+                line-height: 2.25rem;
+                max-width: 12ch;
+                text-align: center !important;
             }
             h2 {
-                font-size: 1rem;
-                width: 80%;
+                font-size: 1.05rem;
+                width: 100%;
+                margin: 0 auto 1.2rem auto;
+                text-align: center !important;
             }
         }
         p {
@@ -300,13 +329,17 @@ const Banner1SectionWrapper = styled.section`
      @media only screen and (max-width: 380px) {
         .section-title{
             h1 {
-                font-size: 1.6rem;
-                line-height: 1.7rem;
+                margin: 0 auto 0.6rem auto;
+                font-size: 1.65rem;
+                line-height: 2rem;
+                max-width: 12ch;
+                text-align: center !important;
                 /* margin: 0 0 30px 0; */
             }
             h2 {
                 font-size: 1rem;
                 width:100%;
+                text-align: center !important;
             }
         }
         p {
@@ -321,8 +354,11 @@ const Banner1SectionWrapper = styled.section`
      @media only screen and (max-width: 330px) {
         .section-title{
             h1 {
+                margin: 0 auto 0.6rem auto;
                 font-size: 23px;
-                line-height: 35px;
+                line-height: 30px;
+                max-width: 12ch;
+                text-align: center !important;
             }
         }
      }
