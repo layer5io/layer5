@@ -18,7 +18,6 @@ published: true
 
 import { BlogWrapper } from "../../Blog.style.js";
 import { MeshkitMesheryAdapterLib } from "./MeshkitMesheryAdapterLib.style";
-import { Link } from "gatsby";
 
 import mesheryAdapterLibrary from "./meshery-adapter-library.svg";
 import malOverview from "./meshery-adapter-library-overview.webp";
@@ -129,7 +128,7 @@ spec:
 
 ## Meshery Adapters
 
-Meshery adapters are management plane components and manage the lifecycle of cloud native infra. This includes installation and deletion, configuration, and verification that an installation follows recommended practices. As example use of Meshery adapters is for purposes of compliance verification, actively attesting whether whether infrastructure complies to an open standard, like that of <Link to="/blog/announcements/a-standard-interface-for-service-meshes">Service Mesh Interface</Link>. Meshery adapters support management of multiple versions of their respective capabilites and also come bundled with sample applications that can be deployed for easy and quick exploration of infrastructure (or other) capabilities. <div className="fact">Meshery adapters extend Meshery's core functionality housed within Meshery Server, often deepening Meshery's ability to manage the lifecycle infratructure, but not limited to those use cases. Adapters have been known to act as engineering workflow facilititors, providing gate reviews, sending emails, and so on.</div>
+Meshery adapters are management plane components and manage the lifecycle of cloud native infra. This includes installation and deletion, configuration, and verification that an installation follows recommended practices. As example use of Meshery adapters is for purposes of compliance verification, actively attesting whether whether infrastructure complies to an open standard, like that of [Service Mesh Interface](/blog/announcements/a-standard-interface-for-service-meshes). Meshery adapters support management of multiple versions of their respective capabilites and also come bundled with sample applications that can be deployed for easy and quick exploration of infrastructure (or other) capabilities. <div className="fact">Meshery adapters extend Meshery's core functionality housed within Meshery Server, often deepening Meshery's ability to manage the lifecycle infratructure, but not limited to those use cases. Adapters have been known to act as engineering workflow facilititors, providing gate reviews, sending emails, and so on.</div>
 
 A Meshery adapter is a gRPC server that exposes the `MeshServiceServer` interface:
 
