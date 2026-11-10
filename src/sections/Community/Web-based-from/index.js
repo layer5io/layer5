@@ -404,7 +404,7 @@ const WebBasedForm = () => {
               />
               <span className="checkbox-label">None of the above</span>
             </label>
-            <p className="form-name"><Link to="https://layer5.io/community/meshmates">Layer5 MeshMates</Link> is a community member mentoring program aimed at individuals new to open source or simply new to Layer5 projects. Is this program of interest to you?</p>
+            <p className="form-name"><Link to="/community/meshmates">Layer5 MeshMates</Link> is a community member mentoring program aimed at individuals new to open source or simply new to Layer5 projects. Is this program of interest to you?</p>
             <label>
               <Field type="checkbox"
                 name="meshMate"
@@ -554,7 +554,7 @@ const WebBasedForm = () => {
     return (
       <Container>
         <h2 className="title">Expectations and Programs FAQ</h2>
-        <p>Commonly asked questions about general engagement expectations and information focal to internship programs. See the <Link to="/community">Layer5 Community</Link> and <Link to="/programs">Open Source Internship Programs</Link> for additional information.</p>
+        <p>Commonly asked questions about general engagement expectations and information focal to internship programs. See the <Link to="/community">Layer5 Community</Link> and <Link to="/careers/programs">Open Source Internship Programs</Link> for additional information.</p>
         <Formik
           initialValues={{
             expect: false,

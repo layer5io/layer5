@@ -165,13 +165,13 @@ const MemberSingle = ({ frontmatter, children }) => {
                       {badges.includes("docs") && (
                         <div className="tooltip">
                           <li>
-                            <Link to="https://docs.meshery.io/">
+                            <a href="https://docs.meshery.io/" target="_blank" rel="noreferrer">
                               <img
                                 className="profile-social-links"
                                 src={docsLogo}
                                 alt="Docs logo"
                               />
-                            </Link>
+                            </a>
                           </li>
                           <span className="tooltip-text docs">Docs</span>
                         </div>
@@ -179,13 +179,13 @@ const MemberSingle = ({ frontmatter, children }) => {
                       {badges.includes("meshery-catalog") && (
                         <div className="tooltip">
                           <li>
-                            <Link to="https://meshery.io/catalog">
+                            <a href="https://meshery.io/catalog" target="_blank" rel="noreferrer">
                               <img
                                 className="profile-social-links"
                                 src={mesheryCatalogLogo}
                                 alt="Meshery Catalog logo"
                               />
-                            </Link>
+                            </a>
                           </li>
                           <span className="tooltip-text meshery-catalog">
                             Meshery-catalog

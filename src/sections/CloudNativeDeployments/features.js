@@ -172,7 +172,7 @@ const Feature = () => {
             <p className="caption">
             Deploy designs, apply patterns, manage and operate your deployments in real-time. Bring all your Kubernetes clusters under a common point of management.
             </p>
-            <Link className="link" to="/cloud-native-management/kanvas/visualize">Learn more &rarr;</Link>
+            <Link className="link" to="/cloud-native-management/kanvas/operate">Learn more &rarr;</Link>
           </Col>
           <Col md={6} className="diagram-image">
             <div className="image-wrapper">
