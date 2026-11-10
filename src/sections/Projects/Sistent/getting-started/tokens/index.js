@@ -274,7 +274,7 @@ const SistentTokens = () => {
                         gutterBottom
                         sx={(theme) => ({
                           [theme.breakpoints.down("sm")]: {
-                            fontSize: "clamp(2rem, 10vw, 4rem)",
+                            fontSize: "clamp(1.75rem, 8vw, 3rem)",
                             overflowWrap: "anywhere",
                           },
                         })}
@@ -286,7 +286,7 @@ const SistentTokens = () => {
                         gutterBottom
                         sx={(theme) => ({
                           [theme.breakpoints.down("sm")]: {
-                            fontSize: "clamp(1.5rem, 8vw, 2rem)",
+                            fontSize: "clamp(1.25rem, 6.5vw, 2rem)",
                           },
                         })}
                       >
