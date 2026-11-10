@@ -3,6 +3,8 @@
  * migrate-mdx.mjs — Gatsby MDX → Hugo Markdown converter (Workstream 1).
  *
  * Zero dependencies (Node >= 18). Safe by default: use --dry-run first.
+ * Optional dependencies: ImageMagick (`magick` or non-Windows `convert`) or Python 3
+ * with Pillow (`PIL`) for AVIF -> WebP raster asset transcoding.
  *
  *   node scripts/migrate-mdx.mjs --src ../src/collections --dest content --dry-run --report report.json
  *   node scripts/migrate-mdx.mjs --src ../src/collections --dest content --progress data/migration.json
@@ -22,6 +24,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { execFileSync } from 'node:child_process';
 
 /* ---------------------------------------------------------------- component map */
 export const COMPONENTS = {
@@ -209,21 +212,72 @@ export function convertBody(body, ctx) {
 
 /* ---------------------------------------------------------------- front matter */
 export function convertFrontMatter(fm, slug, ctx) {
-  const lines = fm.split('\n'); const out = []; let hasSlug = false;
+  const lines = fm.split('\n').map((l) => l.replace(/\r$/, ''));
+  const out = [];
+  let hasSlug = false;
+  const hasDraft = lines.some((l) => /^\s*draft\s*:/i.test(l));
+  const hasDraftFalse = lines.some((l) => /^\s*draft\s*:\s*false\b/i.test(l));
+
   for (const line of lines) {
     let m;
-    if ((m = /^redirect_from\s*:(.*)$/.exec(line))) { out.push(`aliases:${m[1]}`); ctx.count('redirectFrom'); continue; }
-    if ((m = /^published\s*:\s*(true|false)\s*$/.exec(line))) { if (m[1] === 'false') out.push('draft: true'); continue; }
-    if ((m = /^(thumbnail|image|cover)\s*:\s*(.*)$/.exec(line))) {
-      const v = m[2].trim().replace(/^['"]|['"]$/g, '');
-      if (/^\.\.\//.test(v) || /^\/?(static|assets|src)\//.test(v)) { ctx.warn(`${m[1]}: "${v}" is outside the page bundle — move it next to index.md`); out.push(line); }
-      else out.push(`${m[1]}: ${v.replace(/^\.\//, '')}`);
+    if ((m = /^redirect_from\s*:(.*)$/.exec(line))) {
+      out.push(`aliases:${m[1]}`);
+      ctx.count('redirectFrom');
       continue;
     }
+
+    if ((m = /^published\s*:\s*(.*)$/.exec(line))) {
+      const rawVal = m[1].trim();
+      const valWithoutComment = rawVal.replace(/\s*#.*$/, '').trim();
+      const lower = valWithoutComment.toLowerCase();
+
+      // 1. Only act on boolean values (case-insensitive)
+      if (lower === 'true' || lower === 'false') {
+        if (lower === 'false') {
+          if (hasDraftFalse) {
+            ctx.warn('published: false ignored because draft: false is already present');
+          } else if (!hasDraft) {
+            out.push('draft: true');
+          }
+        }
+        continue;
+      }
+
+      // 2. Placeholder comment template line (e.g. published: # comment)
+      if (rawVal.startsWith('#') || rawVal === '') {
+        continue;
+      }
+
+      // 3. Restrict date branch strictly to ISO dates (YYYY-MM-DD...)
+      if (/^\d{4}-\d{2}-\d{2}([T ]\d{2}:\d{2}(:\d{2})?)?$/.test(valWithoutComment)) {
+        out.push(`publishDate: ${valWithoutComment}`);
+        continue;
+      }
+
+      // 4. Neither boolean nor ISO date: warn and preserve
+      ctx.warn(`published: invalid value "${rawVal}" (expected boolean or ISO date)`);
+      out.push(line);
+      continue;
+    }
+
+    if ((m = /^(thumbnail|image|cover)\s*:\s*(.*)$/.exec(line))) {
+      const v = m[2].trim().replace(/^['"]|['"]$/g, '');
+      if (/^\.\.\//.test(v) || /^\/?(static|assets|src)\//.test(v)) {
+        ctx.warn(`${m[1]}: "${v}" is outside the page bundle — move it next to index.md`);
+        out.push(line);
+      } else {
+        out.push(`${m[1]}: ${v.replace(/^\.\//, '')}`);
+      }
+      continue;
+    }
+
     if (/^slug\s*:/.test(line)) hasSlug = true;
     out.push(line);
   }
-  if (!hasSlug && slug) { out.push(`slug: ${slug}`); ctx.count('slugAdded'); }
+  if (!hasSlug && slug) {
+    out.push(`slug: ${slug}`);
+    ctx.count('slugAdded');
+  }
   return out.join('\n');
 }
 
@@ -245,6 +299,147 @@ export function convertFile(source, { slug, file = '' } = {}) {
   return { output: `---\n${newFm}\n---\n\n${newBody.trimEnd()}\n`, stats };
 }
 
+/* ---------------------------------------------------------------- template filter */
+export const TEMPLATE_ALLOWLIST = [
+  'blog/blog-template',
+  'blog/meetTheMaintainer-template',
+  'events/Z_event-template',
+  'members/_member-profile-template',
+  'news/news-template',
+  'resources/resources-template',
+];
+
+export function isTemplatePath(rel) {
+  const norm = rel.replace(/\\/g, '/').replace(/^\/+/, '');
+  return TEMPLATE_ALLOWLIST.some((prefix) => norm === prefix || norm.startsWith(prefix + '/'));
+}
+
+/* ---------------------------------------------------------------- asset format detection & normalization */
+export function sniffImageFormat(buf) {
+  if (!buf || buf.length === 0) return 'empty';
+  if (buf.length >= 3 && buf[0] === 0xFF && buf[1] === 0xD8 && buf[2] === 0xFF) return 'jpeg';
+  if (buf.length >= 8 && buf[0] === 0x89 && buf[1] === 0x50 && buf[2] === 0x4E && buf[3] === 0x47 &&
+      buf[4] === 0x0D && buf[5] === 0x0A && buf[6] === 0x1A && buf[7] === 0x0A) return 'png';
+  if (buf.length >= 12 && buf.subarray(0, 4).toString('ascii') === 'RIFF' &&
+      buf.subarray(8, 12).toString('ascii') === 'WEBP') return 'webp';
+  if (buf.length >= 12 && (buf.subarray(4, 12).toString('ascii') === 'ftypavif' ||
+      (buf.subarray(4, 8).toString('ascii') === 'ftyp' && buf.subarray(8, 12).toString('ascii') === 'mif1'))) return 'avif';
+  if (buf.length >= 4 && buf.subarray(0, 4).toString('ascii') === 'GIF8') return 'gif';
+  const head = buf.subarray(0, Math.min(buf.length, 500)).toString('utf8');
+  if (/<svg[\s>]/i.test(head) || /<\?xml[\s\S]*?<svg/i.test(head)) return 'svg';
+  return 'unknown';
+}
+
+export function normalizeAssetFilename(filename, format) {
+  const ext = path.extname(filename).toLowerCase();
+  if (format === 'empty' || format === 'unknown' || format === 'svg' || format === 'gif') return filename;
+  const base = path.basename(filename, ext);
+  if (format === 'jpeg' && ext !== '.jpg' && ext !== '.jpeg') return `${base}.jpg`;
+  if (format === 'png' && ext !== '.png') return `${base}.png`;
+  if (format === 'webp' && ext !== '.webp') return `${base}.webp`;
+  return filename;
+}
+
+function escapeRegExp(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function assetRefRegExp(relPath) {
+  return new RegExp(`(?<![\\w.-]|/)(\\./)?${escapeRegExp(relPath)}(?![\\w/-]|\\.[a-zA-Z0-9_-])`, 'g');
+}
+
+function splitCodeFenceChunks(text) {
+  const lines = text.split('\n');
+  const chunks = [];
+  let buf = [], inFence = null;
+  for (const line of lines) {
+    const f = /^\s*(```+|~~~+)/.exec(line);
+    if (f && !inFence) {
+      chunks.push({ code: false, text: buf.join('\n') });
+      buf = [line];
+      inFence = f[1][0];
+    } else if (f && inFence && f[1][0] === inFence) {
+      buf.push(line);
+      chunks.push({ code: true, text: buf.join('\n') });
+      buf = [];
+      inFence = null;
+    } else {
+      buf.push(line);
+    }
+  }
+  chunks.push({ code: !!inFence, text: buf.join('\n') });
+  return chunks;
+}
+
+function withMaskedNonCodeChunks(text, fn) {
+  return splitCodeFenceChunks(text).map((c) => {
+    if (c.code) return c.text;
+    const urls = [];
+    let t = c.text.replace(/https?:\/\/[^\s)'"]+/g, (u) => `\u0000URL_${urls.push(u) - 1}\u0000`);
+    t = fn(t);
+    return t.replace(/\u0000URL_(\d+)\u0000/g, (_, i) => urls[+i]);
+  }).join('\n');
+}
+
+export function rewriteAssetReferences(text, renames) {
+  if (!renames || Object.keys(renames).length === 0 || !text) return text;
+
+  // Filter and sort renames by old path length descending so longer subpaths match first
+  const entries = Object.entries(renames)
+    .filter(([oldPath, newPath]) => oldPath !== newPath)
+    .sort((a, b) => b[0].length - a[0].length);
+
+  if (entries.length === 0) return text;
+
+  return withMaskedNonCodeChunks(text, (t) => {
+    for (const [oldPath, newPath] of entries) {
+      t = t.replace(assetRefRegExp(oldPath), (_, prefix) => (prefix ? './' : '') + newPath);
+    }
+    return t;
+  });
+}
+
+export function findAssetReferences(text, assetPaths) {
+  if (!assetPaths?.length || !text) return [];
+  const found = new Set();
+  withMaskedNonCodeChunks(text, (t) => {
+    for (const p of assetPaths) {
+      if (!found.has(p) && assetRefRegExp(p).test(t)) found.add(p);
+    }
+    return t;
+  });
+  return [...found];
+}
+
+export function transcodeAvifToWebp(srcFile, destFile, { execFileFn = execFileSync } = {}) {
+  // 1. Try ImageMagick 7 (magick)
+  try {
+    execFileFn('magick', [srcFile, destFile], { stdio: 'ignore' });
+    return true;
+  } catch {}
+
+  // 2. Fall back to ImageMagick 6 (convert) on non-Windows only
+  if (process.platform !== 'win32') {
+    try {
+      execFileFn('convert', [srcFile, destFile], { stdio: 'ignore' });
+      return true;
+    } catch {}
+  }
+
+  // 3. Try Python with Pillow (PIL) via argv
+  const pyCode = 'import sys; from PIL import Image; Image.open(sys.argv[1]).save(sys.argv[2], "WEBP")';
+  try {
+    execFileFn('python3', ['-c', pyCode, srcFile, destFile], { stdio: 'ignore' });
+    return true;
+  } catch {}
+  try {
+    execFileFn('python', ['-c', pyCode, srcFile, destFile], { stdio: 'ignore' });
+    return true;
+  } catch {}
+
+  return false;
+}
+
 /* ---------------------------------------------------------------- filesystem driver */
 function* walk(dir) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -254,26 +449,195 @@ function* walk(dir) {
   }
 }
 
-export function migrate({ src, dest, dryRun = false }) {
-  const report = { generated: new Date().toISOString(), dryRun, files: 0, converted: 0, withWarnings: 0, assetsCopied: 0,
-    components: {}, unknown: {}, byCollection: {}, warnings: [] };
+export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync }) {
+  const report = {
+    generated: new Date().toISOString(), dryRun, files: 0, converted: 0, withWarnings: 0, assetsCopied: 0,
+    templatesSkipped: 0, skippedTemplates: [], assetsRenamed: 0, assetRenames: [],
+    emptyAssets: [], transcodeFailures: [], renameCollisions: [], assetsTranscoded: [],
+    components: {}, unknown: {}, byCollection: {}, warnings: []
+  };
   const bump = (o, k, n = 1) => { o[k] = (o[k] || 0) + n; };
-  for (const file of walk(src)) {
+  const allFiles = [...walk(src)];
+  const docFiles = [];
+  const renamesByDir = new Map();
+  const failedTranscodesByDir = new Map();
+  const writtenTargets = new Set();
+
+  function forEachAncestorDir(fileDir, fn) {
+    let curDir = fileDir;
+    while (true) {
+      fn(curDir);
+      if (curDir === src || path.relative(src, curDir) === '') break;
+      const parent = path.dirname(curDir);
+      if (parent === curDir || path.relative(src, parent).startsWith('..')) break;
+      curDir = parent;
+    }
+  }
+
+  function registerRename(fileDir, oldBaseName, newBaseName) {
+    forEachAncestorDir(fileDir, (curDir) => {
+      const oldRel = path.relative(curDir, path.join(fileDir, oldBaseName)).replace(/\\/g, '/');
+      const newRel = path.relative(curDir, path.join(fileDir, newBaseName)).replace(/\\/g, '/');
+      const map = renamesByDir.get(curDir) || {};
+      map[oldRel] = newRel;
+      renamesByDir.set(curDir, map);
+    });
+  }
+
+  function recordTranscodeFailure(fileDir, baseName, relNorm) {
+    const entry = { file: relNorm, referencedBy: [] };
+    report.transcodeFailures.push(entry);
+    report.warnings.push({ file: relNorm, message: 'AVIF transcoding to WebP failed' });
+    forEachAncestorDir(fileDir, (curDir) => {
+      const relToDocDir = path.relative(curDir, path.join(fileDir, baseName)).replace(/\\/g, '/');
+      const map = failedTranscodesByDir.get(curDir) || new Map();
+      map.set(relToDocDir, entry);
+      failedTranscodesByDir.set(curDir, map);
+    });
+  }
+
+  // Pass 1: assets
+  for (const file of allFiles) {
+    const rel = path.relative(src, file);
+    if (isTemplatePath(rel)) {
+      report.templatesSkipped++;
+      report.skippedTemplates.push(rel.replace(/\\/g, '/'));
+      continue;
+    }
+    const ext = path.extname(file);
+    const isDoc = ext === '.mdx' || ext === '.md';
+    if (isDoc) {
+      docFiles.push(file);
+      continue;
+    }
+
+    const fileBuf = fs.readFileSync(file);
+    const format = sniffImageFormat(fileBuf);
+    const dir = path.dirname(file);
+    const oldName = path.basename(file);
+    const relNorm = rel.replace(/\\/g, '/');
+
+    if (format === 'empty') {
+      report.emptyAssets.push(relNorm);
+      report.warnings.push({ file: relNorm, message: 'zero-byte asset' });
+      const targetDir = path.dirname(path.join(dest, rel));
+      const target = path.join(targetDir, oldName);
+      if (!dryRun) {
+        fs.mkdirSync(targetDir, { recursive: true });
+        fs.copyFileSync(file, target);
+      }
+      writtenTargets.add(target);
+      report.assetsCopied++;
+      continue;
+    }
+
+    if (format === 'avif') {
+      const lowerExt = ext.toLowerCase();
+      const newName = lowerExt === '.avif' ? `${path.basename(file, ext)}.webp` : oldName;
+      const targetDir = path.dirname(path.join(dest, rel));
+      const target = path.join(targetDir, newName);
+
+      if (newName !== oldName) {
+        if (fs.existsSync(path.join(dir, newName)) || writtenTargets.has(target)) {
+          report.renameCollisions.push({ from: relNorm, target: newName });
+          report.warnings.push({ file: relNorm, message: `rename collision: ${newName} already exists, skipping rename` });
+          const fallbackTarget = path.join(targetDir, oldName);
+          if (!dryRun) {
+            fs.mkdirSync(targetDir, { recursive: true });
+            const ok = transcodeAvifToWebp(file, fallbackTarget, { execFileFn });
+            if (!ok) {
+              recordTranscodeFailure(dir, oldName, relNorm);
+              continue;
+            }
+          }
+          writtenTargets.add(fallbackTarget);
+          report.assetsTranscoded.push(relNorm);
+          report.assetsCopied++;
+          continue;
+        }
+      }
+
+      if (!dryRun) {
+        fs.mkdirSync(targetDir, { recursive: true });
+        const ok = transcodeAvifToWebp(file, target, { execFileFn });
+        if (!ok) {
+          recordTranscodeFailure(dir, oldName, relNorm);
+          continue;
+        }
+      }
+      writtenTargets.add(target);
+      report.assetsTranscoded.push(relNorm);
+      report.assetsCopied++;
+
+      if (newName !== oldName) {
+        report.assetsRenamed++;
+        report.assetRenames.push({ from: relNorm, to: newName });
+        registerRename(dir, oldName, newName);
+      }
+      continue;
+    }
+
+    let newName = normalizeAssetFilename(oldName, format);
+    const targetDir = path.dirname(path.join(dest, rel));
+    let target = path.join(targetDir, newName);
+
+    if (newName !== oldName) {
+      if (fs.existsSync(path.join(dir, newName)) || writtenTargets.has(target)) {
+        report.renameCollisions.push({ from: relNorm, target: newName });
+        report.warnings.push({ file: relNorm, message: `rename collision: ${newName} already exists, skipping rename` });
+        newName = oldName;
+        target = path.join(targetDir, oldName);
+      } else {
+        report.assetsRenamed++;
+        report.assetRenames.push({ from: relNorm, to: newName });
+        registerRename(dir, oldName, newName);
+      }
+    }
+
+    if (!dryRun) {
+      fs.mkdirSync(targetDir, { recursive: true });
+      fs.copyFileSync(file, target);
+    }
+    writtenTargets.add(target);
+    report.assetsCopied++;
+  }
+
+  // Pass 2: docs
+  for (const file of docFiles) {
     const rel = path.relative(src, file);
     const collection = rel.split(path.sep)[0];
     const ext = path.extname(file);
-    const isDoc = ext === '.mdx' || ext === '.md';
-    const target = path.join(dest, isDoc ? rel.replace(/\.mdx?$/, '.md') : rel);
+    const target = path.join(dest, rel.replace(/\.mdx?$/, '.md'));
     const col = (report.byCollection[collection] ||= { files: 0, converted: 0, withWarnings: 0 });
-    if (!isDoc) { if (!dryRun) { fs.mkdirSync(path.dirname(target), { recursive: true }); fs.copyFileSync(file, target); } report.assetsCopied++; continue; }
+
     report.files++; col.files++;
     const base = path.basename(file, ext);
     const slug = base === 'index' ? path.basename(path.dirname(file)) : base;
-    const { output, stats } = convertFile(fs.readFileSync(file, 'utf8'), { slug, file: rel });
+
+    let sourceText = fs.readFileSync(file, 'utf8');
+    const dirFailures = failedTranscodesByDir.get(path.dirname(file));
+    if (dirFailures) {
+      const docRel = rel.replace(/\\/g, '/');
+      for (const ref of findAssetReferences(sourceText, [...dirFailures.keys()])) {
+        dirFailures.get(ref).referencedBy.push(docRel);
+      }
+    }
+    const dirRenames = renamesByDir.get(path.dirname(file));
+    if (dirRenames) {
+      sourceText = rewriteAssetReferences(sourceText, dirRenames);
+    }
+
+    const { output, stats } = convertFile(sourceText, { slug, file: rel });
     for (const [k, v] of Object.entries(stats.components)) bump(report.components, k, v);
     for (const [k, v] of Object.entries(stats.unknown)) bump(report.unknown, k, v);
-    if (stats.warnings.length) { report.withWarnings++; col.withWarnings++; stats.warnings.forEach((w) => report.warnings.push({ file: rel, message: w })); }
-    if (!dryRun) { fs.mkdirSync(path.dirname(target), { recursive: true }); fs.writeFileSync(target, output); }
+    if (stats.warnings.length) {
+      report.withWarnings++; col.withWarnings++;
+      stats.warnings.forEach((w) => report.warnings.push({ file: rel, message: w }));
+    }
+    if (!dryRun) {
+      fs.mkdirSync(path.dirname(target), { recursive: true });
+      fs.writeFileSync(target, output);
+    }
     report.converted++; col.converted++;
   }
   return report;
@@ -306,9 +670,38 @@ function main() {
   if (get('--report')) fs.writeFileSync(get('--report'), JSON.stringify(report, null, 2));
   if (get('--progress') && !dryRun) updateProgress(get('--progress'), report);
   const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k}×${v}`).join(', ') || '—';
-  console.log(`${dryRun ? '[dry-run] ' : ''}${report.converted}/${report.files} documents converted, ${report.assetsCopied} assets, ${report.withWarnings} with warnings`);
+  console.log(`${dryRun ? '[dry-run] ' : ''}${report.converted}/${report.files} documents converted, ${report.assetsCopied} assets, ${report.templatesSkipped} templates skipped, ${report.withWarnings} with warnings`);
+  if (report.skippedTemplates?.length) {
+    console.log(`Skipped template items (${report.skippedTemplates.length}):`);
+    report.skippedTemplates.forEach((t) => console.log(`  - ${t}`));
+  }
+  if (report.emptyAssets?.length) {
+    console.log(`Zero-byte SVGs warning list (${report.emptyAssets.length}):`);
+    report.emptyAssets.forEach((s) => console.log(`  - ${s}`));
+  }
+  if (report.assetRenames?.length) {
+    console.log(`Normalized mismatched assets (${report.assetRenames.length}):`);
+    report.assetRenames.forEach((r) => console.log(`  - ${r.from} -> ${r.to}`));
+  }
+  if (report.renameCollisions?.length) {
+    console.log(`Rename collisions skipped (${report.renameCollisions.length}):`);
+    report.renameCollisions.forEach((c) => console.log(`  - ${c.from} -> ${c.target} (target already exists)`));
+  }
+  if (report.transcodeFailures?.length) {
+    console.log(`AVIF transcode failures (${report.transcodeFailures.length}):`);
+    report.transcodeFailures.forEach((f) => {
+      const refs = f.referencedBy?.length ? ` (referenced by: ${f.referencedBy.join(', ')})` : '';
+      console.log(`  - ${f.file}${refs}`);
+    });
+  }
   console.log(`components → shortcodes: ${top(report.components)}`);
   console.log(`unknown components:      ${top(report.unknown)}`);
-  if (args.includes('--strict') && report.withWarnings) process.exit(1);
+
+  if (report.transcodeFailures?.length) {
+    process.exit(1);
+  }
+  if (args.includes('--strict') && (report.withWarnings || report.transcodeFailures?.length)) {
+    process.exit(1);
+  }
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) main();
