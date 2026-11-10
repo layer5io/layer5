@@ -111,8 +111,8 @@
   "aaa5778d.js": "aaa5778d-7cb243715dc3f420f8f8.js",
   "ac581ebe.js": "ac581ebe-d8f297aa0b7917a0edd2.js",
   "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff.js": "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff-a49d57499f0546cd498e.js",
-  "app-a5bb4df8d6cedda3210c.js.LICENSE.txt": "app-a5bb4df8d6cedda3210c.js.LICENSE.txt",
-  "app.js": "app-a5bb4df8d6cedda3210c.js",
+  "app-e1efa4649bf3bf196158.js.LICENSE.txt": "app-e1efa4649bf3bf196158.js.LICENSE.txt",
+  "app.js": "app-e1efa4649bf3bf196158.js",
   "b5f6012b.js": "b5f6012b-0d788a08c9a6ff5be2b5.js",
   "b94c7d6e898e669bbfd99da21b2e9e67976b8f68.js": "b94c7d6e898e669bbfd99da21b2e9e67976b8f68-29ed6451ccaef992cd70.js",
   "ba5828f4dac0658416d102e02536a23fbd61d3fb.js": "ba5828f4dac0658416d102e02536a23fbd61d3fb-680d94241fafedb1da8d.js",
@@ -292,7 +292,7 @@
   "component---src-templates-blog-single-js-content-file-path-src-collections-blog-2023-06-30-bind-kubernetes-service-account-with-cluster-role-index-mdx.js": "component---src-templates-blog-single-js-content-file-path-src-collections-blog-2023-06-30-bind-kubernetes-service-account-with-cluster-role-index-mdx-d6317f763699610a8242.js",
   "component---src-templates-blog-single-js-content-file-path-src-collections-blog-2023-08-11-layer-5-hashicorp-open-source-index-mdx.js": "component---src-templates-blog-single-js-content-file-path-src-collections-blog-2023-08-11-layer-5-hashicorp-open-source-index-mdx-bc9c7072915f5a56bb7f.js",
   "component---src-templates-blog-single-js-content-file-path-src-collections-blog-2023-08-21-layer-5-badge-program-index-mdx.js": "component---src-templates-blog-single-js-content-file-path-src-collections-blog-2023-08-21-layer-5-badge-program-index-mdx-65953135eb832da0019f.js",
-  "component---src-templates-blog-single-js-content-file-path-src-collections-blog-2023-08-23-importance-of-github-stars-index-mdx.js": "component---src-templates-blog-single-js-content-file-path-src-collections-blog-2023-08-23-importance-of-github-stars-index-mdx-26381c16a7651ea11576.js",
+  "component---src-templates-blog-single-js-content-file-path-src-collections-blog-2023-08-23-importance-of-github-stars-index-mdx.js": "component---src-templates-blog-single-js-content-file-path-src-collections-blog-2023-08-23-importance-of-github-stars-index-mdx-40014adc9c3d8d3392ca.js",
   "component---src-templates-blog-single-js-content-file-path-src-collections-blog-2023-09-28-hacktoberfest-2023-index-mdx.js": "component---src-templates-blog-single-js-content-file-path-src-collections-blog-2023-09-28-hacktoberfest-2023-index-mdx-9f3a84bc7620bfb07eaa.js",
   "component---src-templates-blog-single-js-content-file-path-src-collections-blog-2023-12-13-k-8-s-1-29-release-index-mdx.js": "component---src-templates-blog-single-js-content-file-path-src-collections-blog-2023-12-13-k-8-s-1-29-release-index-mdx-04e9377fe792bc94ab07.js",
   "component---src-templates-blog-single-js-content-file-path-src-collections-blog-2023-2023-09-05-unlocking-the-power-of-webassembly-in-service-mesh-management-index-mdx.js": "component---src-templates-blog-single-js-content-file-path-src-collections-blog-2023-2023-09-05-unlocking-the-power-of-webassembly-in-service-mesh-management-index-mdx-c2efaa0818f704b0a3cb.js",
@@ -2127,5 +2127,5 @@
   "static/yash-sharma.webp": "static/yash-sharma-54aa26b6e5743f0557cfc76aa9797f2d.webp",
   "static/yogi.webp": "static/yogi-d00ca1cc48ab74938a23d4359ef3fb01.webp",
   "styles.css": "styles.88a23fb34264de511e7f.css",
-  "webpack-runtime.js": "webpack-runtime-48ae051a5eaed2a2141e.js"
+  "webpack-runtime.js": "webpack-runtime-81252f4e00e0497f0520.js"
 }
