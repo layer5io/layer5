@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { withPrefix } from "gatsby";
 import BrandPageWrapper from "./brandPage.style";
 import { Row, Col } from "../../../reusecore/Layout";
 import Layer5Brand from "./Brand-components/layer5";
@@ -203,7 +204,7 @@ const Brand = () => {
           in a way not covered by these guidelines, please contact us and
           include a visual mockup of intended use.
         </p>
-        <a href="/brand/brand-kit.zip">
+        <a href={withPrefix("/brand/brand-kit.zip")}>
           <Button $primary title="Download Brand Kit">
             <FiDownloadCloud size={21} className="icon-left" />
           </Button>
