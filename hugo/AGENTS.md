@@ -248,6 +248,6 @@ Layer5 has custom agents available for specialized tasks. These agents provide d
 @blog-writer Create a blog post about [topic]
 ```
 
-For detailed examples and advanced usage, see `.github/agents/USAGE_EXAMPLES.md`.
+For detailed examples and advanced usage, see `.github/agents/blog-writer.md`.
 
 By following these guidelines, LLMs can contribute high-quality content and code to the Layer5 website, enhancing its role as a hub for the cloud native community.
