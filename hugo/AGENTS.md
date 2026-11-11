@@ -13,7 +13,7 @@ Hugo renders Markdown content and Go templates to plain HTML at build time. Ther
 ### 1. Content Generation Guidelines
 
 - **Tone and Style**: Use a professional yet approachable tone. Content should be clear, concise, and welcoming to both technical and non-technical audiences. Align with Layer5's mission of empowering engineers to "expect more from their infrastructure."
-- **Markdown Usage**: All content is written in Markdown (`.md`) files under `content/`. Hugo does not support MDX or inline React components. To embed reusable elements (callouts, CTAs, block quotes, embeds), use Hugo shortcodes from `layouts/shortcodes/`, for example `{{< blockquote >}}...{{< /blockquote >}}`.
+- **Markdown Usage**: All content is written in Markdown (`.md`) files under `content/`. Hugo does not support MDX or inline React components. Use Markdown (`>`) for block quotes. To embed reusable elements, use available Hugo shortcodes from `layouts/shortcodes/`, for example `{{< terminal >}}...{{< /terminal >}}`.
 - **Frontmatter**: Include appropriate frontmatter in every content file. Hugo uses the `title`, `date`, `description`, and `draft` fields natively. The Gatsby `path` field is replaced by `url` (full override) or `slug` (last segment only). Example:
 
   ```yaml
@@ -46,7 +46,7 @@ Hugo renders Markdown content and Go templates to plain HTML at build time. Ther
   - `data/`: YAML, TOML, or JSON data files accessible from templates (for example, member lists or project metadata).
   - `i18n/`: Translation strings, if the site is multilingual.
   - `archetypes/`: Templates for new content created with `hugo new`.
-  - `hugo.toml` (or `config/`): Site configuration, menus, taxonomies, params, and module imports. This replaces `gatsby-config.js`.
+  - `hugo.yaml` (or `config/`): Site configuration, menus, taxonomies, params, and module imports. This replaces `gatsby-config.js`.
   - `go.mod`: Present when the site uses Hugo Modules.
 - **Templates**: Write templates in Go template syntax. Prefer partials for repeated markup and keep logic in templates minimal. Use `partialCached` for partials that do not change per page.
 - **Replaces Gatsby's dynamic page generation**: `gatsby-node.js` logic is replaced by Hugo's built-in content sections, taxonomies, list/single templates, and `_content.gotmpl` content adapters. Do not add custom build scripts for page generation if Hugo can do it natively.
@@ -54,8 +54,38 @@ Hugo renders Markdown content and Go templates to plain HTML at build time. Ther
 
   ```go-html-template
   {{/* callout: highlights a note. Usage: {{< callout >}}Text{{< /callout >}} */}}
-  <aside class="callout" role="note">
-    {{ .Inner | markdownify }}
+  {{- $type := .Get "type" | default "note" -}}
+
+  {{- $titles := dict
+    "note" "Note"
+    "tip" "Tip"
+    "warning" "Warning"
+    "caution" "Caution"
+    "important" "Important"
+  -}}
+
+  {{- $icons := dict
+    "note" "info"
+    "tip" "lightbulb"
+    "warning" "alert-triangle"
+    "caution" "alert-circle"
+    "important" "alert-octagon"
+  -}}
+
+  {{- $title := index $titles $type | default "Note" -}}
+  {{- $icon := index $icons $type | default "info" -}}
+
+  <aside class="callout callout--{{ $type }}" role="note">
+    <div class="callout__header">
+      <span class="callout__icon" aria-hidden="true">
+        {{ partial "icons.html" $icon }}
+      </span>
+      <span class="callout__title">{{ $title }}</span>
+    </div>
+
+    <div class="callout__content">
+      {{ .Inner | markdownify }}
+    </div>
   </aside>
   ```
 
@@ -177,7 +207,7 @@ Explore Meshery Docs for advanced configurations.
 
 ## Troubleshooting
 
-- **Build Errors**: Run `hugo --gc --minify --printPathWarnings` and read the error message; Hugo reports the template or content file and line number. Check `hugo.toml` for misconfigured params, menus, or module imports.
+- **Build Errors**: Run `hugo --gc --minify --printPathWarnings` and read the error message; Hugo reports the template or content file and line number. Check `hugo.yaml` for misconfigured params, menus, or module imports.
 - **Content Issues**: Validate frontmatter syntax (YAML indentation, quoting). A page that does not appear is usually `draft: true`, a future `date`, or an `expiryDate` in the past. Run `hugo server -D --buildFuture` to check.
 - **Shortcode Errors**: Make sure shortcodes are closed correctly (`{{< x >}}...{{< /x >}}`) and that the file name in `layouts/shortcodes/` matches the name used in content.
 - **Missing Styles or Scripts**: Hugo Pipes resources must be fetched from `assets/`, not `static/`. Check that the path passed to `resources.Get` is correct. The extended edition of Hugo is required for SCSS.
@@ -199,10 +229,7 @@ Layer5 has custom agents available for specialized tasks. These agents provide d
 
 **Documentation**:
 
-- Configuration: `.github/agents/blog-writer.yml`
-- Full guide: `.github/agents/README.md`
-- Usage examples: `.github/agents/USAGE_EXAMPLES.md`
-- Quick reference: `.github/agents/QUICK_REFERENCE.md`
+- Configuration: `.github/agents/blog-writer.md`
 
 **Key features**:
 

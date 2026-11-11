@@ -1,1 +1,1 @@
-[AGENTS.md](./AGENTS.md)
+Follow the instructions in [AGENTS.md](./AGENTS.md)
