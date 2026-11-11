@@ -506,12 +506,14 @@ The design system is implemented with Hugo templates, HTML, CSS/Sass, and small 
 
 ### 11.1 Project structure
 
-Use Hugo's standard project directories and keep to the structure established in the repository:
+Follow Hugo's standard project structure and the conventions already established in this repository.
+
+The following directory tree is an illustrative example of how responsibilities can be organized. It is not a requirement to create every directory or file shown. Always inspect the existing repository structure before adding, moving, or reorganizing files.
 
 ```text
 assets/
   css/
-    tokens.css
+    main.css
     base.css
     layout.css
     components/
@@ -519,18 +521,37 @@ assets/
       card.css
       callout.css
       blockquote.css
+  js/
   fonts/
+
 layouts/
   _default/
   partials/
     head/
       theme-init.html
   shortcodes/
+
+content/
+data/
+i18n/
+archetypes/
+
 static/
   fonts/
+  images/
 ```
 
-The structure is a logical separation of responsibilities. Existing repository conventions take precedence over creating duplicate or parallel directories.
+Directory responsibilities:
+
+- **`assets/`**: Source files processed by Hugo Pipes, including stylesheets, JavaScript, and fonts or images that require processing.
+- **`layouts/`**: Hugo templates, including base templates, page layouts, reusable partials, and shortcodes.
+- **`content/`**: Markdown content, organized into sections and page bundles.
+- **`data/`**: Structured data files consumed by Hugo templates.
+- **`i18n/`**: Translation files for multilingual content.
+- **`archetypes/`**: Templates used when creating new content with `hugo new`.
+- **`static/`**: Files copied directly to the generated site without Hugo Pipes processing, such as fonts, images, and downloadable assets.
+
+Keep stylesheets and component styles organized according to the repository's existing conventions. Avoid creating duplicate directories or introducing a new organizational structure when an appropriate one already exists.
 
 ### 11.2 Stylesheet processing
 
