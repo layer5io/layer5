@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  PREVIEW_RETENTION_LIMIT: 3
+  PREVIEW_RETENTION_LIMIT: 1
 
 jobs:
   manage-preview:
@@ -23,6 +23,7 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     outputs:
       action: ${{ steps.meta.outputs.action }}
+      pre_removed_prs_json: ${{ steps.prepare-previews.outputs.removed_prs_json }}
 
     steps:
       - name: Harden Runner
@@ -66,6 +67,69 @@ jobs:
           echo "action=$ACTION" >> "$GITHUB_OUTPUT"
           echo "pr_number=$PR_NUM" >> "$GITHUB_OUTPUT"
           echo "sha=$SHA" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout gh-pages before preview deployment
+        if: steps.meta.outputs.action != 'closed'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+          persist-credentials: true
+          sparse-checkout: |
+            pr-preview
+          path: gh-pages-maintenance
+
+      - name: Remove stale previews before deployment
+        id: prepare-previews
+        if: steps.meta.outputs.action != 'closed'
+        env:
+          PR_NUM: ${{ steps.meta.outputs.pr_number }}
+        run: |
+          cd gh-pages-maintenance
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          echo "removed_prs_json=[]" >> "$GITHUB_OUTPUT"
+
+          outcome=""
+          attempts=5
+
+          for attempt in $(seq 1 "$attempts"); do
+            git fetch --quiet origin gh-pages
+            git reset --quiet --hard FETCH_HEAD
+            mkdir -p pr-preview
+            removed_prs=()
+
+            while IFS= read -r preview; do
+              [ "$preview" = "pr-$PR_NUM" ] && continue
+              rm -rf -- "pr-preview/$preview"
+              removed_prs+=("${preview#pr-}")
+            done < <(find pr-preview -mindepth 1 -maxdepth 1 -type d -name 'pr-*' -printf '%f\n')
+
+            if git diff --quiet -- pr-preview; then
+              outcome="noop"
+              break
+            fi
+
+            git add pr-preview
+            git commit --quiet -m "Remove stale PR previews before deployment"
+
+            if git push origin HEAD:gh-pages; then
+              outcome="pushed"
+              break
+            fi
+
+            echo "Preview cleanup push lost the race (attempt ${attempt}/${attempts}); re-syncing gh-pages and retrying..."
+            sleep "$(( attempt * 5 + RANDOM % 5 ))"
+          done
+
+          if [ -z "$outcome" ]; then
+            echo "::error::Could not remove stale previews after ${attempts} attempts."
+            exit 1
+          fi
+
+          if [ "${#removed_prs[@]}" -gt 0 ]; then
+            echo "removed_prs_json=$(printf '%s\n' "${removed_prs[@]}" | sort -u | jq -R . | jq -sc .)" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Deploy PR preview
         id: preview
@@ -227,11 +291,15 @@ jobs:
       - name: Comment on pruned previews
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
         env:
-          REMOVED_PRS_JSON: ${{ steps.prune-previews.outputs.removed_prs_json }}
+          PRE_REMOVED_PRS_JSON: ${{ needs.manage-preview.outputs.pre_removed_prs_json }}
+          POST_REMOVED_PRS_JSON: ${{ steps.prune-previews.outputs.removed_prs_json }}
           PREVIEW_RETENTION_LIMIT: ${{ env.PREVIEW_RETENTION_LIMIT }}
         with:
           script: |
-            const removedPrs = JSON.parse(process.env.REMOVED_PRS_JSON);
+            const removedPrs = new Set([
+              ...JSON.parse(process.env.PRE_REMOVED_PRS_JSON || "[]"),
+              ...JSON.parse(process.env.POST_REMOVED_PRS_JSON || "[]"),
+            ]);
             const retentionLimit = process.env.PREVIEW_RETENTION_LIMIT;
             const header = "pr-preview";
             const marker = `<!-- Sticky Pull Request Comment${header} -->`;
