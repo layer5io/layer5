@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import MesheryLogo from "../../../assets/images/meshery/meshery-logo-complete-white-side.svg";
 import { MesheryPlatformsWrapper } from "./MesheryPlatforms.style";
 import { Col, Container, Row } from "../../../reusecore/Layout";
@@ -212,8 +212,12 @@ const supported_platforms = [
   },
 ];
 
+const PLATFORM_SELECT_EVENT = "meshery:select-platform";
+
 const MesheryPlatforms = () => {
   const [currentPlatform, setCurrentPlatform] = useState({});
+  const [scrollRequest, setScrollRequest] = useState(0);
+  const instructionsRef = useRef(null);
 
   const hasSelectedSamePlatform = (index) =>
     currentPlatform.name === supported_platforms[index].name;
@@ -227,30 +231,48 @@ const MesheryPlatforms = () => {
   };
 
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace("#", "").toLowerCase();
+    const selectPlatformByHash = (rawHash) => {
+      const hash = (rawHash || "").replace("#", "").toLowerCase();
       if (!hash) return;
 
+      const normalizedHash = hash.replace(/[^a-z0-9]/g, "");
       const platform = supported_platforms.find(
         (p) =>
           p.name.toLowerCase() === hash ||
-          p.name.toLowerCase().replace(/[^a-z0-9]/g, "") ===
-            hash.replace(/[^a-z0-9]/g, ""),
+          p.name.toLowerCase().replace(/[^a-z0-9]/g, "") === normalizedHash,
       );
 
       if (platform) {
         setCurrentPlatform(platform);
-        const section = document.getElementById("getting-started-platforms");
-        if (section) {
-          section.scrollIntoView({ behavior: "smooth" });
-        }
+        setScrollRequest((n) => n + 1);
       }
+    };
+
+    const handleHashChange = () => {
+      selectPlatformByHash(window.location.hash);
+    };
+
+    const handlePlatformSelect = (event) => {
+      selectPlatformByHash(event.detail?.hash || window.location.hash);
     };
 
     handleHashChange();
     window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
+    window.addEventListener(PLATFORM_SELECT_EVENT, handlePlatformSelect);
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+      window.removeEventListener(PLATFORM_SELECT_EVENT, handlePlatformSelect);
+    };
   }, []);
+
+  useEffect(() => {
+    if (scrollRequest > 0 && instructionsRef.current) {
+      instructionsRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [scrollRequest]);
 
   const docsUrl =
     currentPlatform.docs || "https://docs.meshery.io/installation/";
@@ -292,17 +314,23 @@ const MesheryPlatforms = () => {
             </Col>
           ))}
         </Row>
-        <Container
-          style={{
-            transition: "height 0.5s ease-in-out",
-            height: installationStepsHeight,
-            overflow: "hidden",
-          }}
+        <div
+          id="getting-started-instructions"
+          ref={instructionsRef}
+          style={{ scrollMarginTop: "7rem" }}
         >
-          <Row className="installation-steps">
-            {currentPlatform.name && currentPlatform.steps}
-          </Row>
-        </Container>
+          <Container
+            style={{
+              transition: "height 0.5s ease-in-out",
+              height: installationStepsHeight,
+              overflow: "hidden",
+            }}
+          >
+            <Row className="installation-steps">
+              {currentPlatform.name && currentPlatform.steps}
+            </Row>
+          </Container>
+        </div>
         <Row $Hcenter className="step-2">
           <Col>
             <h2>

@@ -15,38 +15,22 @@ import Docker from "../Meshery-platforms/supported-icons/docker.svg";
 import OAM from "../../../assets/images/partners/oam.svg";
 import ImageHub from "../../../assets/images/image-hub/layer5-image-hub.svg";
 import SMP from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
-const MesheryTerminal = () => {
-  const handleLogoClick = (e) => {
-    const img = e.target.closest(".logo-list img");
-    if (!img) return;
-    const alt = img.getAttribute("alt");
-    const linkMap = {
-      Homebrew: "#homebrew",
-      Kubernetes: "#kubernetes",
-      Minikube: "#minikube",
-      "AWS Elastic Kubernetes Service": "#eks",
-      "Meshery Helm Chart": "#helm",
-      WSL2: "#wsl2",
-      GKE: "#gke",
-      Docker: "#docker",
-      "Open Application Model": "https://oam.dev",
-      "Image Hub": "/projects/image-hub",
-      "Cloud Native Performance": "/projects/cloud-native-performance",
-    };
-    const target = linkMap[alt];
-    if (target) {
-      if (target.startsWith("http")) {
-        window.open(target, "_blank", "noopener,noreferrer");
-      } else if (target.startsWith("#")) {
-        window.location.hash = target;
-      } else {
-        window.location.href = target;
-      }
-    }
-  };
+const PLATFORM_SELECT_EVENT = "meshery:select-platform";
 
+const handlePlatformSelect = (hash) => (e) => {
+  e.preventDefault();
+  if (window.location.hash.toLowerCase() !== hash.toLowerCase()) {
+    window.location.hash = hash;
+  } else {
+    window.dispatchEvent(
+      new CustomEvent(PLATFORM_SELECT_EVENT, { detail: { hash } }),
+    );
+  }
+};
+
+const MesheryTerminal = () => {
   return (
-    <MesheryWrapper onClick={handleLogoClick}>
+    <MesheryWrapper>
       <Container>
         <Hero
           title="Single Step Installation"
@@ -138,7 +122,10 @@ const MesheryTerminal = () => {
                   alt: "Docker",
                   link: "#docker",
                 },
-              ],
+              ].map((logo) => ({
+                ...logo,
+                onClick: handlePlatformSelect(logo.link),
+              })),
               terminal: {
                 frameLength: 100,
                 loop: false,
