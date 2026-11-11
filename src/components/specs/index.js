@@ -11,19 +11,15 @@ const HowMesheryWorksSpecs = ({ title, desc, btnUrl }) => {
     <SpecsWrapper>
       <div className="management-plane">
         <Container>
-          <Row $Vcenter>
-            <Col className="text" xs={12} lg={6}>
+          <Row className="management-plane-row" $Vcenter>
+            <Col className="text" $xs={12} $lg={6}>
               <h2>{title}</h2>
               <p>{desc}</p>
               <VintageBox left={true} vintageTwo={true}>
-                <Button
-                  $primary
-                  $url={btnUrl}
-                  title="Learn More"
-                />
+                <Button $primary $url={btnUrl} title="Learn More" />
               </VintageBox>
             </Col>
-            <Col className="card" xs={12} lg={6}>
+            <Col className="card" $xs={12} $lg={6}>
               <DataCard />
             </Col>
           </Row>
