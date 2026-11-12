@@ -165,7 +165,7 @@ function buildShortcode(spec, tag, children, ctx, rawTag = '') {
   }
   if (externalTrue) {
     const resolvedUrl = (attrs.get('url') ?? '').trim();
-    if (!/^https?:\/\//i.test(resolvedUrl)) {
+    if (resolvedUrl && !/^https?:\/\//i.test(resolvedUrl)) {
       const loc = ctx.file ? `${ctx.file}: ` : '';
       const tagSnippet = rawTag.replace(/\s+/g, ' ').trim() || `<${tag.name}>`;
       ctx.warn(`${loc}<${tag.name}> has external="true" on non-http(s) URL "${resolvedUrl}" (${tagSnippet}); review manually`);
