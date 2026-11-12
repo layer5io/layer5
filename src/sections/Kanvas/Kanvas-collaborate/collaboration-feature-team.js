@@ -23,6 +23,8 @@ const CollaborationFeatureWrapper = styled.div`
     flex: 0 0 40%;
     max-width: 40%;
     @media only screen and (max-width: 767px) {
+      flex: none;
+      width: 100%;
       max-width: 100%;
     }
   }
@@ -36,6 +38,12 @@ const CollaborationFeatureWrapper = styled.div`
   .hero-image {
     flex: 0 0 50%;
     max-width: 50%;
+    @media only screen and (max-width: 767px) {
+      flex: none;
+      max-width: 100%;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
   }
 
   img {
@@ -55,6 +63,9 @@ const CollaborationFeatureWrapper = styled.div`
 
     @media only screen and (max-width: 767px) {
       width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
   }
 
@@ -99,6 +110,10 @@ const StyledDiv = styled.div`
   @media only screen and (max-width: 767px) {
     flex-direction: column;
     text-align: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
   }
 `;
 
