@@ -40,9 +40,10 @@ export const COMPONENTS = {
   Accordion:     { shortcode: 'accordion',      paired: true },
   AccordionItem: { shortcode: 'accordion-item', paired: true },
   Card:          { shortcode: 'card',           paired: true },
+  Link:          { custom: 'link' },
 };
 const COLLECTION_EXCLUDED_COMPONENTS = {
-  sistent: new Set(['Button', 'CTA_FullWidth', 'Terminal', 'Accordion', 'AccordionItem', 'Card']),
+  sistent: new Set(['Button', 'CTA_FullWidth', 'Terminal', 'Accordion', 'AccordionItem', 'Card', 'Link']),
 };
 const DROP_ATTRS = new Set(['className', 'class', 'style', 'key', 'ref']);
 
@@ -91,7 +92,10 @@ export function parseOpenTag(text, start) {
       const str = /^(["'`])([\s\S]*)\1$/.exec(inner);
       if (str && !(str[1] === '`' && str[2].includes('${'))) attrs.push({ key, value: cleanAttrVal(str[2]), literal: true });
       else if (/^(-?\d+(\.\d+)?|true|false)$/.test(inner)) attrs.push({ key, value: inner, literal: true });
-      else { attrs.push({ key, value: inner, literal: false }); problems.push(`non-literal expression for "${key}"`); }
+      else {
+        attrs.push({ key, value: inner, literal: false });
+        if (key !== 'key' && key !== 'ref') problems.push(`non-literal expression for "${key}"`);
+      }
       i = next;
     } else return null;
   }
@@ -183,6 +187,56 @@ function buildShortcode(spec, tag, children, ctx, rawTag = '') {
   return open;
 }
 
+/** Normalize a <Link to="..."> URL or return null if bare-relative. */
+function normalizeLinkUrl(raw) {
+  const u = raw.trim();
+  if (/^https?:\/\/layer5\.io(?=[/?#]|$)/i.test(u)) {
+    const rest = u.replace(/^https?:\/\/layer5\.io/i, '');
+    if (!rest) return '/';
+    return rest.startsWith('/') ? rest : `/${rest}`;
+  }
+  if (
+    u.startsWith('/') ||
+    u.startsWith('#') ||
+    /^(?:https?:|mailto:|tel:)/i.test(u)
+  ) {
+    return u;
+  }
+  return null;
+}
+
+function convertLink(tag, children, ctx, rawTag, rawFull) {
+  const loc = ctx.file ? `${ctx.file}: ` : '';
+  const tagSnippet = rawTag.replace(/\s+/g, ' ').trim() || '<Link>';
+  const toAttr = tag.attrs.find((a) => a.key === 'to');
+  if (!toAttr) {
+    ctx.warn(`${loc}<Link> missing "to" attribute (${tagSnippet}); left as-is`);
+    return rawFull;
+  }
+  if (!toAttr.literal) {
+    return rawFull;
+  }
+  const url = normalizeLinkUrl(toAttr.value);
+  if (url === null) {
+    ctx.warn(`${loc}<Link> has bare-relative "to" value "${toAttr.value}" (${tagSnippet}); review manually`);
+    return rawFull;
+  }
+  const classAttr = tag.attrs.find((a) => a.key === 'className' || a.key === 'class');
+  const targetAttr = tag.attrs.find((a) => a.key === 'target');
+  const relAttr = tag.attrs.find((a) => a.key === 'rel');
+  const hasRichChild = /<[A-Za-z!/]|{{[<%]/.test(children);
+  if (!classAttr && !targetAttr && !relAttr && !hasRichChild) {
+    const label = children.replace(/\s+/g, ' ').trim();
+    const mdUrl = /[\s()]/.test(url) ? `<${url}>` : url;
+    return `[${label}](${mdUrl})`;
+  }
+  const parts = [`to=${fmtValue(url)}`];
+  if (classAttr && classAttr.value.trim()) parts.push(`class=${fmtValue(classAttr.value)}`);
+  if (targetAttr && targetAttr.value.trim()) parts.push(`target=${fmtValue(targetAttr.value)}`);
+  if (relAttr && relAttr.value.trim()) parts.push(`rel=${fmtValue(relAttr.value)}`);
+  return `{{< link ${parts.join(' ')} >}}${children.trim()}{{< /link >}}`;
+}
+
 /* ---------------------------------------------------------------- body conversion */
 function convertSegment(text, ctx) {
   let out = '', i = 0;
@@ -212,7 +266,11 @@ function convertSegment(text, ctx) {
       end = c.end;
     }
     ctx.component(name);
-    out += buildShortcode(spec, tag, children, ctx, text.slice(m.index, tag.end));
+    if (spec.custom === 'link') {
+      out += convertLink(tag, children, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
+    } else {
+      out += buildShortcode(spec, tag, children, ctx, text.slice(m.index, tag.end));
+    }
     i = end;
   }
   return out;
