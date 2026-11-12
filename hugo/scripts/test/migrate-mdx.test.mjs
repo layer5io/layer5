@@ -18,7 +18,7 @@ test('imports (single-line, multi-line, default) are removed', () => {
 
 test('Button children and aliases become shortcode params', () => {
   const { output } = run();
-  assert.match(output, /\{\{< button url="\/join" primary="true" text="Join Us" >\}\}/);
+  assert.match(output, /\{\{< button url="\/join" style="primary" text="Join Us" >\}\}/);
   assert.match(output, /\{\{< button url="\/docs" text="Read docs" >\}\}/);
 });
 
@@ -461,4 +461,135 @@ test('sistent collection does not map Sistent React components to marketing shor
     file: 'blog/post/index.mdx',
   });
   assert.match(blogRes.output, /\{\{< button url="\/join" text="Join" >\}\}/);
+});
+
+test('parseOpenTag parses styled-components $-prefixed props and $Button maps cleanly', () => {
+  const input = [
+    '---',
+    'title: "Transient Button Test"',
+    '---',
+    '<Button $secondary title="RSVP" $url="\u200bhttps://sched.co/1BZJl" $external={ true } />',
+    '',
+    '<Button className="image-right-no-shadow"secondary title="See All Projects" $url="/projects" $external={ false } />',
+    '',
+    '<Button $primary $url="/join">Join Us</Button>',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'transient-test', file: 'blog/transient-test/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.equal(stats.components.Button, 3);
+  assert.match(output, /\{\{< button style="secondary" text="RSVP" url="https:\/\/sched\.co\/1BZJl" >\}\}/);
+  assert.match(output, /\{\{< button style="secondary" text="See All Projects" url="\/projects" >\}\}/);
+  assert.match(output, /\{\{< button style="primary" url="\/join" text="Join Us" >\}\}/);
+  assert.doesNotMatch(output, /\$/);
+  assert.doesNotMatch(output, /\u200b/);
+  assert.doesNotMatch(output, /external=/);
+  assert.equal(convertFile(output, { slug: 'transient-test', file: 'blog/transient-test/index.mdx' }).output, output);
+});
+
+test('parseOpenTag parses $-prefixed props on unmapped tags without syntax parse failure', () => {
+  const input = '---\ntitle: "Col Test"\n---\n<Col $xs={12} $lg={6}>Body</Col>\n';
+  const { output, stats } = convertFile(input, { slug: 'col-test', file: 'careers/col-test/index.mdx' });
+  assert.equal(stats.unknown.Col, 1);
+  assert.ok(!stats.warnings.some((w) => w.includes('could not parse')));
+  assert.match(output, /<!-- TODO\(mdx\): unconverted component <Col> -->/);
+});
+
+test('Button preserves explicit text over title attribute when both are provided', () => {
+  const input = '---\ntitle: "Text Priority"\n---\n<Button title="Tooltip" text="Explicit Text" $url="/docs" />\n';
+  const { output } = convertFile(input, { slug: 'text-prio', file: 'blog/text-prio/index.mdx' });
+  assert.match(output, /\{\{< button text="Explicit Text" url="\/docs" >\}\}/);
+});
+
+test('zero-width stripping targets U+200B only and preserves ZWJ emoji, U+200C, and U+FEFF', () => {
+  const input = [
+    '---',
+    'title: "ZWSP Only"',
+    '---',
+    '<Button\u200B $primary $url="https://example.com/\u200Bpath" $title="Dev👨\u200D💻\u200C\uFEFFx" />',
+  ].join('\n');
+  const { output } = convertFile(input, { slug: 'zwsp', file: 'blog/zwsp/index.mdx' });
+  assert.doesNotMatch(output, /\u200B/);
+  assert.match(output, /url="https:\/\/example\.com\/path"/);
+  assert.match(output, /text="Dev👨\u200D💻\u200C\uFEFFx"/);
+});
+
+test('migrate() without exclude leaves sistent Button and Card unconverted while converting blog', () => {
+  const tempSrc = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-noexcl-src-'));
+  const tempDest = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-noexcl-dest-'));
+  try {
+    fs.mkdirSync(path.join(tempSrc, 'blog/post'), { recursive: true });
+    fs.mkdirSync(path.join(tempSrc, 'sistent/components/button'), { recursive: true });
+    fs.writeFileSync(
+      path.join(tempSrc, 'blog/post/index.mdx'),
+      '---\ntitle: "Blog"\n---\n<Button url="/join">Join</Button>\n<Card title="C" text="T" link="/x" />\n'
+    );
+    fs.writeFileSync(
+      path.join(tempSrc, 'sistent/components/button/index.mdx'),
+      '---\ntitle: "Sistent"\n---\n<Button variant="contained">Click</Button>\n<Card elevation={2}>Box</Card>\n'
+    );
+
+    const report = migrate({ src: tempSrc, dest: tempDest, dryRun: false });
+
+    assert.equal(report.files, 2);
+    assert.equal(report.excludedFiles, 0);
+    assert.equal(report.components.Button, 1);
+    assert.equal(report.components.Card, 1);
+    assert.equal(report.unknown.Button, 1);
+    assert.equal(report.unknown.Card, 1);
+    const sistentOut = fs.readFileSync(path.join(tempDest, 'sistent/components/button/index.md'), 'utf8');
+    assert.doesNotMatch(sistentOut, /\{\{<\s*(button|card)\b/);
+    assert.match(sistentOut, /<!-- TODO\(mdx\): unconverted component <Button> -->/);
+    assert.match(sistentOut, /<!-- TODO\(mdx\): unconverted component <Card> -->/);
+    const blogOut = fs.readFileSync(path.join(tempDest, 'blog/post/index.md'), 'utf8');
+    assert.match(blogOut, /\{\{< button url="\/join" text="Join" >\}\}/);
+    assert.match(blogOut, /\{\{< card title="C" text="T" link="\/x" >\}\}/);
+  } finally {
+    fs.rmSync(tempSrc, { recursive: true, force: true });
+    fs.rmSync(tempDest, { recursive: true, force: true });
+  }
+});
+
+test('migrate() with exclude is idempotent when run sequentially on its own output', () => {
+  const tempSrc = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-idemp-src-'));
+  const tempDest1 = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-idemp-d1-'));
+  const tempDest2 = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-idemp-d2-'));
+  try {
+    fs.mkdirSync(path.join(tempSrc, 'blog/post'), { recursive: true });
+    fs.mkdirSync(path.join(tempSrc, 'sistent/comp'), { recursive: true });
+    fs.writeFileSync(
+      path.join(tempSrc, 'blog/post/index.mdx'),
+      '---\ntitle: "Idemp"\n---\n<Button $secondary $url="https://example.com/\u200Ba" $external={true}>Go</Button>\n'
+    );
+    fs.writeFileSync(path.join(tempSrc, 'sistent/comp/index.mdx'), '---\ntitle: "S"\n---\n<Button>S</Button>\n');
+
+    migrate({ src: tempSrc, dest: tempDest1, dryRun: false, exclude: ['sistent'] });
+    migrate({ src: tempDest1, dest: tempDest2, dryRun: false, exclude: ['sistent'] });
+
+    const out1 = fs.readFileSync(path.join(tempDest1, 'blog/post/index.md'), 'utf8');
+    const out2 = fs.readFileSync(path.join(tempDest2, 'blog/post/index.md'), 'utf8');
+    assert.match(out1, /\{\{< button style="secondary" url="https:\/\/example\.com\/a" text="Go" >\}\}/);
+    assert.equal(out2, out1);
+  } finally {
+    fs.rmSync(tempSrc, { recursive: true, force: true });
+    fs.rmSync(tempDest1, { recursive: true, force: true });
+    fs.rmSync(tempDest2, { recursive: true, force: true });
+  }
+});
+
+test('Button external={true} warns with file and tag on non-http(s) URL while dropping redundant http(s) external', () => {
+  const rel = 'events/2024/kubecon-EU-2024/index.mdx';
+  const input = [
+    '---',
+    'title: "PDF Button Test"',
+    '---',
+    '<Button secondary title="Slides" url="/cncf-tag-network/slides.pdf" external={ true } />',
+    '<Button $secondary title="External" $url="https://example.com" $external={ true } />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'kubecon-eu-2024', file: rel });
+  assert.match(output, /\{\{< button style="secondary" text="Slides" url="\/cncf-tag-network\/slides\.pdf" >\}\}/);
+  assert.match(output, /\{\{< button style="secondary" text="External" url="https:\/\/example\.com" >\}\}/);
+  assert.doesNotMatch(output, /external=/);
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /events\/2024\/kubecon-EU-2024\/index\.mdx/);
+  assert.match(stats.warnings[0], /<Button secondary title="Slides" url="\/cncf-tag-network\/slides\.pdf" external=\{ true \} \/>/);
 });

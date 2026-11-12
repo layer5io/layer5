@@ -28,7 +28,13 @@ import { execFileSync } from 'node:child_process';
 
 /* ---------------------------------------------------------------- component map */
 export const COMPONENTS = {
-  Button:        { shortcode: 'button',         text: true, alias: { to: 'url', href: 'url', link: 'url' } },
+  Button: {
+    shortcode: 'button',
+    text: true,
+    alias: { to: 'url', href: 'url', link: 'url', title: 'text' },
+    flagValues: { primary: ['style', 'primary'], secondary: ['style', 'secondary'] },
+    drop: new Set(['external']),
+  },
   CTA_FullWidth: { shortcode: 'cta-fullwidth' },
   Terminal:      { shortcode: 'terminal',       paired: true, bodyAttr: 'code' },
   Accordion:     { shortcode: 'accordion',      paired: true },
@@ -48,6 +54,8 @@ export function resolveComponentSpec(name, collection = '') {
 
 /* ---------------------------------------------------------------- tag scanner */
 const isWs = (c) => c === ' ' || c === '\n' || c === '\t' || c === '\r';
+const isTagWs = (c) => isWs(c) || c === '\u200B';
+const cleanAttrVal = (v) => v.replace(/\u200B/g, '');
 
 /** Parse an opening tag starting at text[start] === '<'. Returns null if malformed. */
 export function parseOpenTag(text, start) {
@@ -59,7 +67,7 @@ export function parseOpenTag(text, start) {
   const attrs = [];
   const problems = [];
   while (i < text.length) {
-    while (isWs(text[i])) i++;
+    while (isTagWs(text[i])) i++;
     if (text.startsWith('/>', i)) return { name, attrs, problems, end: i + 2, selfClosing: true };
     if (text[i] === '>') return { name, attrs, problems, end: i + 1, selfClosing: false };
     if (text[i] === '{') { // {...spread}
@@ -67,21 +75,21 @@ export function parseOpenTag(text, start) {
       problems.push(`spread/expression attribute ${raw.slice(0, 40)}`);
       i = next; continue;
     }
-    const an = /^[\w:.-]+/.exec(text.slice(i));
+    const an = /^[\w$:.-]+/.exec(text.slice(i));
     if (!an) return null;
     const key = an[0]; i += key.length;
-    while (isWs(text[i])) i++;
+    while (isTagWs(text[i])) i++;
     if (text[i] !== '=') { attrs.push({ key, value: 'true', literal: true }); continue; }
-    i++; while (isWs(text[i])) i++;
+    i++; while (isTagWs(text[i])) i++;
     if (text[i] === '"' || text[i] === "'") {
       const q = text[i]; const j = text.indexOf(q, i + 1);
       if (j === -1) return null;
-      attrs.push({ key, value: text.slice(i + 1, j), literal: true }); i = j + 1;
+      attrs.push({ key, value: cleanAttrVal(text.slice(i + 1, j)), literal: true }); i = j + 1;
     } else if (text[i] === '{') {
       const [raw, next] = readBraces(text, i);
       const inner = raw.slice(1, -1).trim();
       const str = /^(["'`])([\s\S]*)\1$/.exec(inner);
-      if (str && !(str[1] === '`' && str[2].includes('${'))) attrs.push({ key, value: str[2], literal: true });
+      if (str && !(str[1] === '`' && str[2].includes('${'))) attrs.push({ key, value: cleanAttrVal(str[2]), literal: true });
       else if (/^(-?\d+(\.\d+)?|true|false)$/.test(inner)) attrs.push({ key, value: inner, literal: true });
       else { attrs.push({ key, value: inner, literal: false }); problems.push(`non-literal expression for "${key}"`); }
       i = next;
@@ -136,12 +144,32 @@ function fmtValue(v) {
   return `"${flat.replace(/"/g, '&quot;')}"`;
 }
 
-function buildShortcode(spec, tag, children, ctx) {
+function buildShortcode(spec, tag, children, ctx, rawTag = '') {
   const attrs = new Map();
+  let externalTrue = false;
   for (const a of tag.attrs) {
-    if (DROP_ATTRS.has(a.key)) { ctx.count('droppedAttrs'); continue; }
-    const key = spec.alias?.[a.key] ?? snake(a.key);
+    const baseKey = a.key.startsWith('$') ? a.key.slice(1) : a.key;
+    if (baseKey === 'external' && a.value === 'true') externalTrue = true;
+    if (DROP_ATTRS.has(a.key) || DROP_ATTRS.has(baseKey) || spec.drop?.has(a.key) || spec.drop?.has(baseKey)) {
+      ctx.count('droppedAttrs');
+      continue;
+    }
+    const flagEntry = spec.flagValues?.[baseKey];
+    if (flagEntry) {
+      if (a.value !== 'false') attrs.set(flagEntry[0], flagEntry[1]);
+      continue;
+    }
+    const key = spec.alias?.[a.key] ?? spec.alias?.[baseKey] ?? snake(baseKey);
+    if (baseKey === 'title' && key === 'text' && attrs.has('text')) continue;
     attrs.set(key, a.value);
+  }
+  if (externalTrue) {
+    const resolvedUrl = (attrs.get('url') ?? '').trim();
+    if (!/^https?:\/\//i.test(resolvedUrl)) {
+      const loc = ctx.file ? `${ctx.file}: ` : '';
+      const tagSnippet = rawTag.replace(/\s+/g, ' ').trim() || `<${tag.name}>`;
+      ctx.warn(`${loc}<${tag.name}> has external="true" on non-http(s) URL "${resolvedUrl}" (${tagSnippet}); review manually`);
+    }
   }
   let body = children?.trim() ?? '';
   if (spec.bodyAttr && attrs.has(spec.bodyAttr)) { body = attrs.get(spec.bodyAttr); attrs.delete(spec.bodyAttr); }
@@ -184,7 +212,7 @@ function convertSegment(text, ctx) {
       end = c.end;
     }
     ctx.component(name);
-    out += buildShortcode(spec, tag, children, ctx);
+    out += buildShortcode(spec, tag, children, ctx, text.slice(m.index, tag.end));
     i = end;
   }
   return out;
@@ -295,6 +323,7 @@ export function convertFile(source, { slug, file = '', collection } = {}) {
   const resolvedCollection = collection ?? (normFile.includes('/') ? normFile.split('/')[0] : '');
   const stats = { components: {}, unknown: {}, counters: {}, warnings: [] };
   const ctx = {
+    file: normFile,
     collection: resolvedCollection,
     warn: (m) => stats.warnings.push(m),
     unknown: (n) => { stats.unknown[n] = (stats.unknown[n] || 0) + 1; },
