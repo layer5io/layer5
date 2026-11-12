@@ -49,10 +49,11 @@ export const COMPONENTS = {
   ProjectWrapper:   { custom: 'unwrap' },
   ResourcesWrapper: { custom: 'unwrap' },
   BookWrapper:      { custom: 'unwrap' },
+  Code:             { custom: 'code' },
 };
 const COLLECTION_EXCLUDED_COMPONENTS = {
   sistent: new Set([
-    'Button', 'CTA_FullWidth', 'Terminal', 'Accordion', 'AccordionItem', 'Card', 'Link',
+    'Button', 'CTA_FullWidth', 'Terminal', 'Accordion', 'AccordionItem', 'Card', 'Link', 'Code',
     'BlogWrapper', 'CareerWrapper', 'EventWrapper', 'NewsWrapper',
     'ProgramsWrapper', 'ProjectWrapper', 'ResourcesWrapper', 'BookWrapper',
   ]),
@@ -249,6 +250,26 @@ function convertLink(tag, children, ctx, rawTag, rawFull) {
   return `{{< link ${parts.join(' ')} >}}${children.trim()}{{< /link >}}`;
 }
 
+function convertCode(tag, ctx, rawTag, rawFull) {
+  const loc = ctx.file ? `${ctx.file}: ` : '';
+  const tagSnippet = rawTag.replace(/\s+/g, ' ').trim() || '<Code>';
+  const codeAttr = tag.attrs.find((a) => a.key === 'codeString');
+  if (!codeAttr) {
+    ctx.warn(`${loc}<Code> missing "codeString" attribute (${tagSnippet}); left as-is`);
+    return rawFull;
+  }
+  if (!codeAttr.literal) {
+    return rawFull;
+  }
+  const langAttr = tag.attrs.find((a) => a.key === 'language');
+  const lang = (langAttr?.literal ? langAttr.value.trim() : '') || 'text';
+  const codeBody = codeAttr.value.replace(/\\`/g, '`').replace(/\r\n/g, '\n').replace(/^\n/, '').replace(/\n$/, '');
+  const backtickRuns = codeBody.match(/`+/g) || [];
+  const maxRun = backtickRuns.reduce((m, s) => Math.max(m, s.length), 0);
+  const fence = '`'.repeat(Math.max(3, maxRun + 1));
+  return `${fence}${lang}\n${codeBody}\n${fence}`;
+}
+
 /* ---------------------------------------------------------------- body conversion */
 function convertSegment(text, ctx) {
   let out = '', i = 0;
@@ -281,6 +302,8 @@ function convertSegment(text, ctx) {
     ctx.component(name);
     if (spec.custom === 'link') {
       out += convertLink(tag, children, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
+    } else if (spec.custom === 'code') {
+      out += convertCode(tag, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
     } else if (spec.custom === 'unwrap') {
       out += text.slice(m.index, tag.end) + children + `</${name}>`;
     } else {
@@ -379,7 +402,7 @@ export function convertBody(body, ctx) {
     if (c.code) return c.text;
     const masked = []; // protect inline code
     // `{`template literal`}` attribute values are left alone so the tag parser can read them
-    let t = c.text.replace(/\{\s*`[^`]*`\s*\}|`[^`\n]+`/g, (s) => (s[0] === '{' ? s : `\u0000${masked.push(s) - 1}\u0000`));
+    let t = c.text.replace(/\{\s*`(?:\\.|[^`\\])*`\s*\}|`[^`\n]+`/g, (s) => (s[0] === '{' ? s : `\u0000${masked.push(s) - 1}\u0000`));
     t = t.replace(/^import\s+(?:[\w$]+\s*,?\s*)?(?:\{[^}]*\}|\*\s+as\s+[\w$]+)?\s*from\s+['"][^'"]+['"];?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
     t = t.replace(/^import\s+['"][^'"]+['"];?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
     if (/^export\s/m.test(t)) ctx.warn('contains `export` statements (MDX exports are not supported in Hugo)');

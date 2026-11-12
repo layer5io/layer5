@@ -702,6 +702,24 @@ test('Wrappers unwrap all 8 collection wrappers, dedent common indent, and prese
 });
 
 
+test('Code converts self-closing template-literal codeString to fenced code block with dynamic fence and text fallback', () => {
+  const input = [
+    '---',
+    'title: "Code Test"',
+    '---',
+    '<Code language="bash" codeString={`npm install\nnpm test`} />',
+    '<Code codeString={`git status`} />',
+    '<Code language="md" codeString={`here is \\`\\`\\`nested\\`\\`\\` fence`} />',
+    '<Code language="bash" codeString={`echo ${userVar}`} />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'code-test', file: 'handbook/contribution/index.mdx' });
+  assert.match(output, /```bash\nnpm install\nnpm test\n```/);
+  assert.match(output, /```text\ngit status\n```/);
+  assert.match(output, /````md\nhere is ```nested``` fence\n````/);
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /non-literal expression for "codeString"/);
+  assert.match(output, /<Code language="bash" codeString=\{`echo \$\{userVar\}`\} \/>/);
+});
 
 
 test('Wrappers warn and leave tag as-is when body has mixed 0-space and 4+ space lines after dedent', () => {
