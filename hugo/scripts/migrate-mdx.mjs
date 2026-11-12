@@ -449,19 +449,45 @@ function* walk(dir) {
   }
 }
 
+const DOC_RE = /\.mdx?$/;
+const INDEX_RE = /^index\.mdx?$/;
+
+/**
+ * Folders that must become Hugo branch bundles (_index.md). A folder qualifies when it has
+ * an index.md(x) AND either (a) holds another .md(x) page beside it (code.mdx, guidance.mdx), or
+ * (b) has any .md(x) anywhere below it (course -> chapter -> section). Everything else stays a
+ * leaf bundle (index.md).
+ */
+export function findBranchDirs(files, root) {
+  const docs = files.filter((f) => DOC_RE.test(f));
+  const indexDirs = new Set(docs.filter((f) => INDEX_RE.test(path.basename(f))).map((f) => path.dirname(f)));
+  const branch = new Set();
+  for (const f of docs) {
+    const dir = path.dirname(f);
+    if (!INDEX_RE.test(path.basename(f))) branch.add(dir); // (a)
+    for (let a = path.dirname(dir); a !== root && a.startsWith(root); a = path.dirname(a)) branch.add(a); // (b)
+  }
+  return new Set([...branch].filter((d) => indexDirs.has(d)));
+}
+
 export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync }) {
   const report = {
     generated: new Date().toISOString(), dryRun, files: 0, converted: 0, withWarnings: 0, assetsCopied: 0,
     templatesSkipped: 0, skippedTemplates: [], assetsRenamed: 0, assetRenames: [],
     emptyAssets: [], transcodeFailures: [], renameCollisions: [], assetsTranscoded: [],
+    pagesOut: 0, branchBundles: 0, collisions: [],
     components: {}, unknown: {}, byCollection: {}, warnings: []
   };
   const bump = (o, k, n = 1) => { o[k] = (o[k] || 0) + n; };
-  const allFiles = [...walk(src)];
+  const root = path.resolve(src);
+  const allFiles = [...walk(root)];
+  // templates are skipped, so they must not turn a folder into a branch bundle
+  const branchDirs = findBranchDirs(allFiles.filter((f) => !isTemplatePath(path.relative(src, f))), root);
   const docFiles = [];
   const renamesByDir = new Map();
   const failedTranscodesByDir = new Map();
   const writtenTargets = new Set();
+  const written = new Map(); // lower-cased output path -> source path, so two sources never write one file
 
   function forEachAncestorDir(fileDir, fn) {
     let curDir = fileDir;
@@ -510,6 +536,14 @@ export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync }
       docFiles.push(file);
       continue;
     }
+
+    // two assets whose paths differ only by case would overwrite each other on a case-insensitive filesystem
+    const assetKey = rel.toLowerCase();
+    if (written.has(assetKey)) {
+      report.collisions.push({ output: rel, sources: [written.get(assetKey), rel] });
+      continue;
+    }
+    written.set(assetKey, rel);
 
     const fileBuf = fs.readFileSync(file);
     const format = sniffImageFormat(fileBuf);
@@ -607,10 +641,17 @@ export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync }
     const rel = path.relative(src, file);
     const collection = rel.split(path.sep)[0];
     const ext = path.extname(file);
-    const target = path.join(dest, rel.replace(/\.mdx?$/, '.md'));
-    const col = (report.byCollection[collection] ||= { files: 0, converted: 0, withWarnings: 0 });
+    // An index file in a folder that also holds other pages must be _index.md. As index.md it would
+    // make a leaf bundle and Hugo would turn its sibling pages into unrendered resources.
+    const isBranchIndex = INDEX_RE.test(path.basename(file)) && branchDirs.has(path.dirname(file));
+    const outRel = isBranchIndex ? path.join(path.dirname(rel), '_index.md') : rel.replace(DOC_RE, '.md');
+    const target = path.join(dest, outRel);
+    const col = (report.byCollection[collection] ||= { files: 0, converted: 0, pagesOut: 0, branchBundles: 0, withWarnings: 0 });
 
     report.files++; col.files++;
+    const key = outRel.toLowerCase();
+    if (written.has(key)) { report.collisions.push({ output: outRel, sources: [written.get(key), rel] }); continue; }
+    written.set(key, rel);
     const base = path.basename(file, ext);
     const slug = base === 'index' ? path.basename(path.dirname(file)) : base;
 
@@ -639,6 +680,8 @@ export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync }
       fs.writeFileSync(target, output);
     }
     report.converted++; col.converted++;
+    report.pagesOut++; col.pagesOut++;
+    if (isBranchIndex) { report.branchBundles++; col.branchBundles++; }
   }
   return report;
 }
@@ -696,7 +739,12 @@ function main() {
   }
   console.log(`components → shortcodes: ${top(report.components)}`);
   console.log(`unknown components:      ${top(report.unknown)}`);
-
+  for (const [name, c] of Object.entries(report.byCollection).sort(([a], [b]) => a.localeCompare(b))) {
+    const flag = c.files === c.pagesOut ? 'ok      ' : 'MISMATCH';
+    console.log(`  ${flag} ${name}: ${c.files} documents in -> ${c.pagesOut} pages out (${c.branchBundles} branch bundles)`);
+  }
+  for (const c of report.collisions) console.error(`COLLISION: ${c.sources.join(' + ')} both write ${c.output}`);
+  if (report.collisions.length) process.exit(1);
   if (report.transcodeFailures?.length) {
     process.exit(1);
   }

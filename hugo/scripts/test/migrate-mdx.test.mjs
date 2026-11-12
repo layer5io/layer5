@@ -414,3 +414,74 @@ test('subfolder renames and .avif -> .webp renames are keyed and rewritten in do
   assert.match(convertedDoc, /!\[BareIcon\]\(icons\/icon\.jpg\)/);
   assert.match(convertedDoc, /src="banner\.webp"/);
 });
+
+/* ---- branch bundles (#8302) ---- */
+function tree(files) {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-src-'));
+  for (const [rel, text] of Object.entries(files)) {
+    const p = path.join(root, rel);
+    fs.mkdirSync(path.dirname(p), { recursive: true });
+    fs.writeFileSync(p, text);
+  }
+  return root;
+}
+const doc = (t) => `---\ntitle: ${t}\n---\n\nBody of ${t}.\n`;
+const outDir = () => fs.mkdtempSync(path.join(os.tmpdir(), 'l5-out-'));
+const has = (d, r) => fs.existsSync(path.join(d, r));
+
+test('branch bundle: index + code + guidance become _index.md + sibling pages; assets copied', () => {
+  const src = tree({
+    'sistent/button/index.mdx': doc('Button'), 'sistent/button/code.mdx': doc('Button code'),
+    'sistent/button/guidance.mdx': doc('Button guidance'), 'sistent/button/diagram.svg': '<svg/>',
+    'sistent/badge/index.mdx': doc('Badge'), // lone index stays a leaf bundle
+  });
+  const dest = outDir(); const r = migrate({ src, dest });
+  assert.ok(has(dest, 'sistent/button/_index.md'));
+  assert.ok(!has(dest, 'sistent/button/index.md'));
+  assert.ok(has(dest, 'sistent/button/code.md') && has(dest, 'sistent/button/guidance.md'));
+  assert.ok(has(dest, 'sistent/button/diagram.svg'));
+  assert.ok(has(dest, 'sistent/badge/index.md') && !has(dest, 'sistent/badge/_index.md'));
+  assert.deepEqual([r.byCollection.sistent.files, r.byCollection.sistent.pagesOut, r.byCollection.sistent.branchBundles], [4, 4, 1]);
+});
+
+test('branch bundle: nested course/chapter/section; only the deepest level stays a leaf', () => {
+  const src = tree({
+    'learn/course/index.mdx': doc('Course'), 'learn/course/chapter/index.mdx': doc('Chapter'),
+    'learn/course/chapter/section/index.mdx': doc('Section'),
+  });
+  const dest = outDir(); const r = migrate({ src, dest });
+  assert.ok(has(dest, 'learn/course/_index.md') && has(dest, 'learn/course/chapter/_index.md'));
+  assert.ok(has(dest, 'learn/course/chapter/section/index.md'));
+  assert.deepEqual([r.files, r.pagesOut, r.branchBundles], [3, 3, 2]);
+});
+
+test('branch bundle: folder names with spaces work; no _index.md is invented without an index', () => {
+  const src = tree({
+    'members/Jane Doe/index.mdx': doc('Jane'), 'members/Jane Doe/talks/index.mdx': doc('Talks'),
+    'events/2026/summit.mdx': doc('Summit'), 'events/2026/call/index.mdx': doc('Call'),
+  });
+  const dest = outDir(); migrate({ src, dest });
+  assert.ok(has(dest, 'members/Jane Doe/_index.md') && has(dest, 'members/Jane Doe/talks/index.md'));
+  assert.ok(has(dest, 'events/2026/summit.md') && has(dest, 'events/2026/call/index.md'));
+  assert.ok(!has(dest, 'events/2026/_index.md'));
+});
+
+test('documents in = pages out; two sources writing one page is reported, not overwritten', () => {
+  const r = migrate({ src: tree({ 'blog/a.mdx': doc('one'), 'blog/a.md': doc('two') }), dest: outDir() });
+  assert.deepEqual([r.files, r.pagesOut, r.collisions.length], [2, 1, 1]);
+});
+
+test('dry-run reports the same branch bundles and writes nothing', () => {
+  const src = tree({ 'sistent/button/index.mdx': doc('B'), 'sistent/button/code.mdx': doc('C') });
+  const real = migrate({ src, dest: outDir() });
+  const dry = outDir(); const d = migrate({ src, dest: dry, dryRun: true });
+  assert.deepEqual(fs.readdirSync(dry), []);
+  assert.deepEqual([d.pagesOut, d.branchBundles], [real.pagesOut, real.branchBundles]);
+});
+
+test('assets: two files whose paths differ only by case are reported, not overwritten', (t) => {
+  const src = tree({ 'blog/post/index.mdx': doc('Post'), 'blog/post/Cover.png': 'a', 'blog/post/cover.png': 'b' });
+  if (fs.readdirSync(path.join(src, 'blog/post')).length < 3) return t.skip('case-insensitive filesystem');
+  const r = migrate({ src, dest: outDir() });
+  assert.deepEqual([r.collisions.length, r.assetsCopied], [1, 1]);
+});
