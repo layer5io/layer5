@@ -46,13 +46,20 @@ export const BooksPageWrapper = styled.div`
     }
 
     .book_image{
-        width: 30rem !important;
+        width: 100% !important;
+        max-width: 30rem;
         transition: all 0.5s ease-in-out;
+    }
+
+    /* Same slide padding as the 1050px block, so cover spacing is consistent above 1050px. */
+    .slick-slide > div{
+        padding: 0 0.75rem;
     }
 
     .blog-slider_img{
         img{
-            width: 30rem;
+            width: 100%;
+            max-width: 30rem;
             height: inherit;
             max-height: 37.5rem;
             display: block;
