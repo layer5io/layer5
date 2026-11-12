@@ -65,7 +65,6 @@ const CollaborationFeatureWrapper = styled.div`
       width: 100%;
       max-width: 100%;
       height: auto;
-      object-fit: contain;
       display: block;
     }
   }
