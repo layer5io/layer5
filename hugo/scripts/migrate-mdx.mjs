@@ -39,11 +39,23 @@ export const COMPONENTS = {
   Terminal:      { shortcode: 'terminal',       paired: true, bodyAttr: 'code' },
   Accordion:     { shortcode: 'accordion',      paired: true },
   AccordionItem: { shortcode: 'accordion-item', paired: true },
-  Card:          { shortcode: 'card',           paired: true },
-  Link:          { custom: 'link' },
+  Card:             { shortcode: 'card',           paired: true },
+  Link:             { custom: 'link' },
+  BlogWrapper:      { custom: 'unwrap' },
+  CareerWrapper:    { custom: 'unwrap' },
+  EventWrapper:     { custom: 'unwrap' },
+  NewsWrapper:      { custom: 'unwrap' },
+  ProgramsWrapper:  { custom: 'unwrap' },
+  ProjectWrapper:   { custom: 'unwrap' },
+  ResourcesWrapper: { custom: 'unwrap' },
+  BookWrapper:      { custom: 'unwrap' },
 };
 const COLLECTION_EXCLUDED_COMPONENTS = {
-  sistent: new Set(['Button', 'CTA_FullWidth', 'Terminal', 'Accordion', 'AccordionItem', 'Card', 'Link']),
+  sistent: new Set([
+    'Button', 'CTA_FullWidth', 'Terminal', 'Accordion', 'AccordionItem', 'Card', 'Link',
+    'BlogWrapper', 'CareerWrapper', 'EventWrapper', 'NewsWrapper',
+    'ProgramsWrapper', 'ProjectWrapper', 'ResourcesWrapper', 'BookWrapper',
+  ]),
 };
 const DROP_ATTRS = new Set(['className', 'class', 'style', 'key', 'ref']);
 
@@ -257,6 +269,7 @@ function convertSegment(text, ctx) {
       if (!(prev && ctx.masked?.[+prev[1]] === marker.trim())) out += marker;
       out += text.slice(m.index, tag.end); i = tag.end; continue;
     }
+    if (spec.custom === 'unwrap') { out += text.slice(m.index, tag.end); i = tag.end; continue; }
     tag.problems.forEach((p) => ctx.warn(`<${name}>: ${p}`));
     let children = '', end = tag.end;
     if (!tag.selfClosing) {
@@ -268,6 +281,8 @@ function convertSegment(text, ctx) {
     ctx.component(name);
     if (spec.custom === 'link') {
       out += convertLink(tag, children, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
+    } else if (spec.custom === 'unwrap') {
+      out += text.slice(m.index, tag.end) + children + `</${name}>`;
     } else {
       out += buildShortcode(spec, tag, children, ctx, text.slice(m.index, tag.end));
     }
@@ -276,17 +291,89 @@ function convertSegment(text, ctx) {
   return out;
 }
 
+/** Dedent a wrapper body by its common non-empty indent, never modifying fenced code blocks. */
+function dedentWrapperBody(inner) {
+  const trimmed = inner.replace(/^(?:[ \t]*\n)+/, '').replace(/(?:\n[ \t]*)+$/, '');
+  if (!trimmed) return { text: '', hasIndentHazard: false };
+  const lines = trimmed.split('\n');
+  const inFenceFlags = new Array(lines.length).fill(false);
+  let fenceChar = null;
+  for (let idx = 0; idx < lines.length; idx++) {
+    const f = /^\s*(```+|~~~+)/.exec(lines[idx]);
+    if (f && !fenceChar) { fenceChar = f[1][0]; inFenceFlags[idx] = true; }
+    else if (f && fenceChar && f[1][0] === fenceChar) { inFenceFlags[idx] = true; fenceChar = null; }
+    else if (fenceChar) { inFenceFlags[idx] = true; }
+  }
+  let minIndent = Infinity;
+  for (let idx = 0; idx < lines.length; idx++) {
+    if (inFenceFlags[idx] || !lines[idx].trim()) continue;
+    const m = /^( +)/.exec(lines[idx]);
+    const indent = m ? m[1].length : 0;
+    if (indent < minIndent) minIndent = indent;
+  }
+  const dedentedLines = (!Number.isFinite(minIndent) || minIndent === 0)
+    ? lines
+    : lines.map((line, idx) => (inFenceFlags[idx] || !line.trim() ? line : line.slice(minIndent)));
+  let prevBlank = true;
+  let hasIndentHazard = false;
+  for (let idx = 0; idx < dedentedLines.length; idx++) {
+    if (inFenceFlags[idx]) { prevBlank = false; continue; }
+    if (!dedentedLines[idx].trim()) { prevBlank = true; continue; }
+    if (prevBlank && /^ {4,}/.test(dedentedLines[idx])) { hasIndentHazard = true; break; }
+    prevBlank = false;
+  }
+  return { text: dedentedLines.join('\n'), hasIndentHazard };
+}
+
+/** Unwrap collection wrapper tags (e.g. <BlogWrapper>...</BlogWrapper>) outside fenced code blocks. */
+function unwrapCollectionWrappers(body, ctx) {
+  const chunks = splitCodeFenceChunks(body);
+  const maskedFences = [];
+  const joined = chunks.map((c) => (c.code ? `\u0000WRAP_FENCE_${maskedFences.push(c.text) - 1}\u0000` : c.text)).join('\n');
+  let out = '', i = 0;
+  const re = /<([A-Z][\w.]*)(?![\w.])/g;
+  while (true) {
+    re.lastIndex = i;
+    const m = re.exec(joined);
+    if (!m) { out += joined.slice(i); break; }
+    const name = m[1];
+    const spec = resolveComponentSpec(name, ctx.collection);
+    if (spec?.custom !== 'unwrap') {
+      out += joined.slice(i, m.index + 1);
+      i = m.index + 1;
+      continue;
+    }
+    const tag = parseOpenTag(joined, m.index);
+    if (!tag || tag.selfClosing) {
+      out += joined.slice(i, m.index + 1);
+      i = m.index + 1;
+      continue;
+    }
+    const c = findClose(joined, tag.end, name);
+    if (!c) {
+      ctx.warn(`<${name}> has no closing tag; left as-is`);
+      out += joined.slice(i, tag.end);
+      i = tag.end;
+      continue;
+    }
+    const rawInner = joined.slice(tag.end, c.start).replace(/\u0000WRAP_FENCE_(\d+)\u0000/g, (_, n) => maskedFences[+n]);
+    const { text: dedentedText, hasIndentHazard } = dedentWrapperBody(rawInner);
+    if (hasIndentHazard) {
+      ctx.warn(`<${name}>: wrapper body has 4+ space indented line after dedent; left as-is for manual review`);
+      out += joined.slice(i, c.end);
+    } else {
+      ctx.component(name);
+      out += joined.slice(i, m.index) + dedentedText;
+    }
+    i = c.end;
+  }
+  return out.replace(/\u0000WRAP_FENCE_(\d+)\u0000/g, (_, n) => maskedFences[+n]);
+}
+
 /** Convert an MDX body. Code fences and inline code are protected. */
 export function convertBody(body, ctx) {
-  const lines = body.split('\n');
-  const chunks = []; let buf = [], inFence = null;
-  for (const line of lines) {
-    const f = /^\s*(```+|~~~+)/.exec(line);
-    if (f && !inFence) { chunks.push({ code: false, text: buf.join('\n') }); buf = [line]; inFence = f[1][0]; }
-    else if (f && inFence && f[1][0] === inFence) { buf.push(line); chunks.push({ code: true, text: buf.join('\n') }); buf = []; inFence = null; }
-    else buf.push(line);
-  }
-  chunks.push({ code: !!inFence, text: buf.join('\n') });
+  const unwrapped = unwrapCollectionWrappers(body, ctx);
+  const chunks = splitCodeFenceChunks(unwrapped);
 
   return chunks.map((c) => {
     if (c.code) return c.text;

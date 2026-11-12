@@ -664,3 +664,59 @@ test('Link warns and preserves tag for bare-relative and non-literal `to` values
   assert.match(output, /<Link to="newcomer">Newcomer<\/Link>/);
   assert.match(output, /<Link to=\{link\[index\]\} key=\{index\}>Dynamic<\/Link>/);
 });
+
+
+test('Wrappers unwrap all 8 collection wrappers, dedent common indent, and preserve fenced code blocks', () => {
+  const input = [
+    '---',
+    'title: "Wrapper Test"',
+    '---',
+    '<CareerWrapper>',
+    '    <div className="body-sections">',
+    '      <h3>Responsibilities</h3>',
+    '      <Link to="/careers/programs">Programs</Link>',
+    '    </div>',
+    '</CareerWrapper>',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'swe', file: 'careers/software-engineer/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.doesNotMatch(output, /CareerWrapper/);
+  assert.match(output, /\n<div className="body-sections">\n  <h3>Responsibilities<\/h3>\n  \[Programs\]\(\/careers\/programs\)\n<\/div>\n/);
+
+  const withFence = [
+    '---',
+    'title: "Fence Wrapper"',
+    '---',
+    '<BlogWrapper>',
+    '    Intro text.',
+    '```bash',
+    '    indented_inside_fence',
+    '```',
+    '    Outro text.',
+    '</BlogWrapper>',
+  ].join('\n');
+  const res = convertFile(withFence, { slug: 'fence', file: 'blog/post/index.mdx' });
+  assert.equal(res.stats.warnings.length, 0);
+  assert.doesNotMatch(res.output, /BlogWrapper/);
+  assert.match(res.output, /\nIntro text\.\n```bash\n    indented_inside_fence\n```\nOutro text\.\n/);
+});
+
+
+
+
+test('Wrappers warn and leave tag as-is when body has mixed 0-space and 4+ space lines after dedent', () => {
+  const input = [
+    '---',
+    'title: "Mixed Indent Wrapper"',
+    '---',
+    '<BlogWrapper>',
+    '    <h4 className="date">October 04 to 09, 2021</h4>',
+    'Regular 0-space line with <Link to="/blog">link</Link>.',
+    '</BlogWrapper>',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'ccoss', file: 'blog/2021/ccoss/index.mdx' });
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /4\+ space indented line after dedent/);
+  assert.match(output, /<BlogWrapper>/);
+  assert.match(output, /\[link\]\(\/blog\)/);
+});
