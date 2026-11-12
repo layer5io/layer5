@@ -51,6 +51,7 @@ export const BooksPageWrapper = styled.div`
         transition: all 0.5s ease-in-out;
     }
 
+    /* Same slide padding as the 1050px block, so cover spacing is consistent above 1050px. */
     .slick-slide > div{
         padding: 0 0.75rem;
     }
