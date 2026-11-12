@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { flushSync } from "react-dom";
 import styled from "styled-components";
 
 const AutoVideoWrapper = styled.span`
@@ -77,7 +78,17 @@ const AutoVideo = ({ src, poster, width, height, alt, className, style, active =
 
   const toggle = (e) => {
     e.stopPropagation();
-    setPaused((p) => !p);
+    const video = ref.current;
+    if (!paused) {
+      video.pause();
+      setPaused(true);
+      return;
+    }
+    flushSync(() => {
+      setStarted(true);
+      setPaused(false);
+    });
+    video.play().catch((err) => err.name === "NotAllowedError" && setPaused(true));
   };
 
   return (
