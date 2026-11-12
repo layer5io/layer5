@@ -71,6 +71,14 @@ const BlockquoteStyle = styled.div`
         }
     }
 
+    /* No attribution (common in blog posts): the person/title lines are
+       empty, so reserve room for the bubble tail, which hangs 60px below
+       the quote (h4:after above), instead of letting it overlap the text
+       that follows the blockquote. */
+    &.blockquote-no-attribution .blockquote {
+        margin-bottom: 60px;
+    }
+
     /* Blockquote subheader */
     .person {
         position: relative;     

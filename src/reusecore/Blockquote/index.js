@@ -11,6 +11,11 @@ const Blockquote = ({
   if (className){
     AllClasses.push(className);
   }
+  if (!props.person && !props.title){
+    // Without an attribution, nothing sits under the quote bubble, so its
+    // tail (drawn 60px below the bubble) needs clearance of its own.
+    AllClasses.push("blockquote-no-attribution");
+  }
   return (
     <React.Fragment>
       {
