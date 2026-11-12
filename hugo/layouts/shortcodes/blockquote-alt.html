@@ -1,0 +1,17 @@
+{{- /* {{< blockquote-alt quote="…" person="…" title="…" style="…" >}} */ -}}
+{{- $quote := .Get "quote" | default "" -}}
+{{- $person := .Get "person" | default "" -}}
+{{- $title := .Get "title" | default "" -}}
+{{- $style := .Get "style" | default "" -}}
+<figure class="blockquote blockquote--alt"{{ with $style }} style="{{ . | safeCSS }}"{{ end }}>
+  <blockquote class="blockquote__quote">
+    <p>{{ $quote }}</p>
+  </blockquote>
+  {{- if or $person $title }}
+  <figcaption class="blockquote__cite">
+    {{- with $person }}<cite class="blockquote__person">{{ . }}</cite>{{ end -}}
+    {{- if and $person $title }}<span class="blockquote__sep" aria-hidden="true"> — </span>{{ end -}}
+    {{- with $title }}<span class="blockquote__title">{{ . }}</span>{{ end -}}
+  </figcaption>
+  {{- end }}
+</figure>

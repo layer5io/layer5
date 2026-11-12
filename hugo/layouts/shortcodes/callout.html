@@ -1,0 +1,10 @@
+{{- /* {{< callout type="note|tip" title="…" >}}body{{< /callout >}} */ -}}
+{{- $rawType := .Get "type" | default "note" | lower -}}
+{{- $type := cond (eq $rawType "tip") "tip" "note" -}}
+{{- $title := .Get "title" | default "" -}}
+<aside class="callout callout--{{ $type }}" role="note">
+  {{- with $title }}
+  <p class="callout__title">{{ . }}</p>
+  {{- end }}
+  <div class="callout__body">{{ .Inner | markdownify }}</div>
+</aside>

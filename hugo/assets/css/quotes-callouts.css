@@ -16,8 +16,15 @@
   border-top: 4px solid var(--accent, #00b39f);
 }
 
-.blockquote__quote {
+.prose .blockquote__quote,
+.prose .inline-quote__quote {
   margin: 0;
+  padding: 0;
+  border-left: none;
+  color: inherit;
+}
+
+.blockquote__quote {
   font-size: 1.05rem;
   line-height: 1.65;
 }
