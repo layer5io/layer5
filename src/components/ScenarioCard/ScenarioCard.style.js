@@ -75,6 +75,7 @@ export const ScenarioCardWrapper = styled.div`
 
   .sub-content {
     display: block;
+    color: white;
     text-align: center;
     margin-top: 4rem;
     width: 100%;
@@ -84,7 +85,6 @@ export const ScenarioCardWrapper = styled.div`
         color: white;
       }
     }
-    justify-content: center;
     margin-top: 4rem;
     width: 100%;
   }
