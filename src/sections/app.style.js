@@ -207,17 +207,19 @@ section{
 /* Modal styling needs to be applied to the global CSS */
 
 .Modal {
-    position: absolute;
-    inset: 50% auto -45% 50%;
-    border: 1px solid rgb(204, 204, 204);
-    background: ${(props) => props.theme.body};
-    border-radius: 0.5rem;
-    padding: 20px;
-    margin-right: -50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 50rem;
-    max-height: 40rem;
-    overflow-y: hidden;
+    width: min(50rem, calc(100vw - 2rem));
+    max-height: calc(100vh - 2rem);
+    background: ${(props) => props.theme.body};
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 
     &:focus:not(:focus-visible) {
         outline: none;
@@ -230,6 +232,7 @@ section{
         position: absolute;
         right: 0.5rem;
         top: 0.75rem;
+        z-index: 10;
 
         svg {
             font-size: 2rem;
@@ -239,7 +242,7 @@ section{
 
     .modal-heading {
         text-align: center;
-
+        margin-bottom: 0.5rem;
     }
 }
 
@@ -252,18 +255,67 @@ section{
 }
 
 .contact-form {
-    margin: auto -1rem;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .teaser-modal {
-  margin: 1rem -2rem;
+    margin: 1rem -2rem;
 }
 
 .form-frame {
-    height: 36rem;
-    width: 35rem;
+    display: block;
+    width: 100%;
+    max-width: 35rem;
+    height: min(36rem, 70vh);
     border: none;
-    overflow: hidden;
+    margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 765px) {
+    .form-frame {
+        height: min(32rem, 75vh);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .Modal {
+        width: calc(100vw - 1rem);
+        padding: 1.25rem 0;
+    }
+
+    .form-frame {
+        width: 440px;
+        max-width: 440px;
+        height: 38rem;
+        transform: scale(0.82);
+        transform-origin: top center;
+        margin-bottom: -15%;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .contact-form {
+        display: block;
+        overflow-x: auto;
+        overflow-y: auto;
+        min-width: 0;
+        width: 100%;
+    }
+
+    .form-frame {
+        transform: none;
+        width: 440px;
+        max-width: none;
+        height: 38rem;
+        margin: 0;
+    }
 }
 
 /* Modal CSS Ends */
@@ -290,18 +342,6 @@ section{
 
 .fa-sun {
   color: yellow;
-}
-@media screen and (max-width: 765px) {
-    .form-frame {
-        width: 25rem;
-        height: 30rem;
-    }
-}
-@media screen and (max-width: 500px) {
-    .form-frame {
-        width: 22rem;
-        height: 26rem;
-    }
 }
 
 // Banner Display
