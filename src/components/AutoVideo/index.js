@@ -54,7 +54,7 @@ const AutoVideo = ({ src, poster, width, height, alt, className, style, active =
       setNear(true);
       return () => motion.removeEventListener("change", onMotionChange);
     }
-    const observer = new IntersectionObserver(([entry]) => setNear(entry.isIntersecting), { rootMargin: "200px" });
+    const observer = new IntersectionObserver(([entry]) => setNear(entry.isIntersecting && entry.target.getClientRects().length > 0), { rootMargin: "200px" });
     observer.observe(ref.current);
     return () => {
       motion.removeEventListener("change", onMotionChange);
