@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { convertFile, migrate, isTemplatePath, sniffImageFormat, normalizeAssetFilename, rewriteAssetReferences } from '../migrate-mdx.mjs';
+import { convertFile, migrate, parseExcludeArg, isTemplatePath, sniffImageFormat, normalizeAssetFilename, rewriteAssetReferences } from '../migrate-mdx.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const fx = path.join(here, 'fixtures/collections');
@@ -413,4 +413,52 @@ test('subfolder renames and .avif -> .webp renames are keyed and rewritten in do
   assert.match(convertedDoc, /!\[Icon\]\(\.\/icons\/icon\.jpg\)/);
   assert.match(convertedDoc, /!\[BareIcon\]\(icons\/icon\.jpg\)/);
   assert.match(convertedDoc, /src="banner\.webp"/);
+});
+
+test('parseExcludeArg supports comma-separated, = syntax, and repeated --exclude flags', () => {
+  assert.deepEqual(
+    parseExcludeArg(['--exclude', 'sistent, members', '--exclude=workshops', '--exclude', '/sistent/']),
+    ['sistent', 'members', 'workshops']
+  );
+  assert.deepEqual(parseExcludeArg(['--dry-run']), []);
+});
+
+test('migrate() with exclude skips excluded collections (docs and assets)', () => {
+  const tempSrc = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-excl-src-'));
+  const tempDest = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-excl-dest-'));
+  try {
+    fs.mkdirSync(path.join(tempSrc, 'blog/post'), { recursive: true });
+    fs.mkdirSync(path.join(tempSrc, 'sistent/components/button'), { recursive: true });
+    fs.writeFileSync(path.join(tempSrc, 'blog/post/index.mdx'), '---\ntitle: "Blog"\n---\nHello\n');
+    fs.writeFileSync(path.join(tempSrc, 'sistent/components/button/index.mdx'), '---\ntitle: "Sistent Button"\n---\n<Button onClick={fn}>Click</Button>\n');
+    fs.writeFileSync(path.join(tempSrc, 'sistent/components/button/preview.png'), Buffer.from('png'));
+
+    const report = migrate({ src: tempSrc, dest: tempDest, dryRun: false, exclude: ['sistent'] });
+
+    assert.equal(report.files, 1);
+    assert.equal(report.converted, 1);
+    assert.equal(report.excludedFiles, 2);
+    assert.deepEqual(report.excluded, ['sistent']);
+    assert.equal(report.byCollection.sistent, undefined);
+    assert.equal(fs.existsSync(path.join(tempDest, 'sistent')), false);
+    assert.equal(fs.existsSync(path.join(tempDest, 'blog/post/index.md')), true);
+  } finally {
+    fs.rmSync(tempSrc, { recursive: true, force: true });
+    fs.rmSync(tempDest, { recursive: true, force: true });
+  }
+});
+
+test('sistent collection does not map Sistent React components to marketing shortcodes', () => {
+  const input = '---\ntitle: "Sistent Button"\n---\n<Button onClick={() => {}} disabled>Submit</Button>\n';
+  const sistentRes = convertFile(input, { slug: 'button', file: 'sistent/components/button/index.mdx' });
+  assert.doesNotMatch(sistentRes.output, /\{\{< button/);
+  assert.match(sistentRes.output, /<!-- TODO\(mdx\): unconverted component <Button> -->/);
+  assert.equal(sistentRes.stats.unknown.Button, 1);
+  assert.equal(sistentRes.stats.components.Button, undefined);
+
+  const blogRes = convertFile('---\ntitle: "Blog Button"\n---\n<Button url="/join">Join</Button>\n', {
+    slug: 'post',
+    file: 'blog/post/index.mdx',
+  });
+  assert.match(blogRes.output, /\{\{< button url="\/join" text="Join" >\}\}/);
 });

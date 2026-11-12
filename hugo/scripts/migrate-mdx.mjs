@@ -35,7 +35,16 @@ export const COMPONENTS = {
   AccordionItem: { shortcode: 'accordion-item', paired: true },
   Card:          { shortcode: 'card',           paired: true },
 };
+const COLLECTION_EXCLUDED_COMPONENTS = {
+  sistent: new Set(['Button', 'CTA_FullWidth', 'Terminal', 'Accordion', 'AccordionItem', 'Card']),
+};
 const DROP_ATTRS = new Set(['className', 'class', 'style', 'key', 'ref']);
+
+/** Resolve a component mapping for the active collection. */
+export function resolveComponentSpec(name, collection = '') {
+  if (collection && COLLECTION_EXCLUDED_COMPONENTS[collection]?.has(name)) return null;
+  return COMPONENTS[name] || null;
+}
 
 /* ---------------------------------------------------------------- tag scanner */
 const isWs = (c) => c === ' ' || c === '\n' || c === '\t' || c === '\r';
@@ -157,7 +166,7 @@ function convertSegment(text, ctx) {
     out += text.slice(i, m.index);
     const name = m[1];
     const tag = parseOpenTag(text, m.index);
-    const spec = COMPONENTS[name];
+    const spec = resolveComponentSpec(name, ctx.collection);
     if (!tag) { ctx.warn(`could not parse <${name}> tag; left as-is`); out += '<'; i = m.index + 1; continue; }
     if (!spec) {
       ctx.unknown(name);
@@ -281,9 +290,12 @@ export function convertFrontMatter(fm, slug, ctx) {
   return out.join('\n');
 }
 
-export function convertFile(source, { slug, file = '' } = {}) {
+export function convertFile(source, { slug, file = '', collection } = {}) {
+  const normFile = file ? file.replace(/\\/g, '/').replace(/^\/+/, '') : '';
+  const resolvedCollection = collection ?? (normFile.includes('/') ? normFile.split('/')[0] : '');
   const stats = { components: {}, unknown: {}, counters: {}, warnings: [] };
   const ctx = {
+    collection: resolvedCollection,
     warn: (m) => stats.warnings.push(m),
     unknown: (n) => { stats.unknown[n] = (stats.unknown[n] || 0) + 1; },
     component: (n) => { stats.components[n] = (stats.components[n] || 0) + 1; },
@@ -449,9 +461,31 @@ function* walk(dir) {
   }
 }
 
-export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync }) {
+/** Parse --exclude CLI arguments (comma-separated and/or repeated flags). */
+export function parseExcludeArg(args) {
+  const out = new Set();
+  for (let i = 0; i < args.length; i++) {
+    let raw;
+    if (args[i] === '--exclude' && i + 1 < args.length) raw = args[++i];
+    else if (args[i].startsWith('--exclude=')) raw = args[i].slice('--exclude='.length);
+    if (raw) {
+      for (const item of raw.split(',')) {
+        const norm = item.trim().replace(/\\/g, '/').replace(/^\/+|\/+$/g, '');
+        if (norm) out.add(norm);
+      }
+    }
+  }
+  return [...out];
+}
+
+export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = execFileSync }) {
+  const excludeList = Array.isArray(exclude) ? exclude : String(exclude).split(',');
+  const excludeSet = new Set(
+    excludeList.map((s) => String(s).trim().replace(/\\/g, '/').replace(/^\/+|\/+$/g, '')).filter(Boolean)
+  );
   const report = {
-    generated: new Date().toISOString(), dryRun, files: 0, converted: 0, withWarnings: 0, assetsCopied: 0,
+    generated: new Date().toISOString(), dryRun, excluded: [...excludeSet], excludedFiles: 0,
+    files: 0, converted: 0, withWarnings: 0, assetsCopied: 0,
     templatesSkipped: 0, skippedTemplates: [], assetsRenamed: 0, assetRenames: [],
     emptyAssets: [], transcodeFailures: [], renameCollisions: [], assetsTranscoded: [],
     components: {}, unknown: {}, byCollection: {}, warnings: []
@@ -499,9 +533,15 @@ export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync }
   // Pass 1: assets
   for (const file of allFiles) {
     const rel = path.relative(src, file);
+    const relNorm = rel.replace(/\\/g, '/');
+    const topCollection = relNorm.split('/')[0];
+    if (excludeSet.has(topCollection)) {
+      report.excludedFiles++;
+      continue;
+    }
     if (isTemplatePath(rel)) {
       report.templatesSkipped++;
-      report.skippedTemplates.push(rel.replace(/\\/g, '/'));
+      report.skippedTemplates.push(relNorm);
       continue;
     }
     const ext = path.extname(file);
@@ -515,7 +555,6 @@ export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync }
     const format = sniffImageFormat(fileBuf);
     const dir = path.dirname(file);
     const oldName = path.basename(file);
-    const relNorm = rel.replace(/\\/g, '/');
 
     if (format === 'empty') {
       report.emptyAssets.push(relNorm);
@@ -627,7 +666,7 @@ export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync }
       sourceText = rewriteAssetReferences(sourceText, dirRenames);
     }
 
-    const { output, stats } = convertFile(sourceText, { slug, file: rel });
+    const { output, stats } = convertFile(sourceText, { slug, file: rel, collection });
     for (const [k, v] of Object.entries(stats.components)) bump(report.components, k, v);
     for (const [k, v] of Object.entries(stats.unknown)) bump(report.unknown, k, v);
     if (stats.warnings.length) {
@@ -662,15 +701,19 @@ function main() {
   const defaultSrc = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../src/collections');
   const src = get('--src') || (fs.existsSync(defaultSrc) ? defaultSrc : undefined);
   if (args.includes('--help') || !src) {
-    console.log('Usage: migrate-mdx.mjs [--src <collections dir>] [--dest content] [--dry-run] [--report report.json] [--progress data/migration.json] [--strict]');
+    console.log('Usage: migrate-mdx.mjs [--src <collections dir>] [--dest content] [--exclude <col1,col2>] [--dry-run] [--report report.json] [--progress data/migration.json] [--strict]');
     process.exit(args.includes('--help') ? 0 : 1);
   }
   const dryRun = args.includes('--dry-run');
-  const report = migrate({ src, dest: get('--dest') || 'content', dryRun });
+  const exclude = parseExcludeArg(args);
+  const report = migrate({ src, dest: get('--dest') || 'content', dryRun, exclude });
   if (get('--report')) fs.writeFileSync(get('--report'), JSON.stringify(report, null, 2));
   if (get('--progress') && !dryRun) updateProgress(get('--progress'), report);
   const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k}×${v}`).join(', ') || '—';
   console.log(`${dryRun ? '[dry-run] ' : ''}${report.converted}/${report.files} documents converted, ${report.assetsCopied} assets, ${report.templatesSkipped} templates skipped, ${report.withWarnings} with warnings`);
+  if (report.excluded?.length) {
+    console.log(`Excluded collections (${report.excluded.join(', ')}): ${report.excludedFiles} files skipped`);
+  }
   if (report.skippedTemplates?.length) {
     console.log(`Skipped template items (${report.skippedTemplates.length}):`);
     report.skippedTemplates.forEach((t) => console.log(`  - ${t}`));
