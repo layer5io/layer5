@@ -1,0 +1,35 @@
+{{- /* {{< inline-quotes quote="…" person="…" title="…" image="…" >}} */ -}}
+{{- $quote := .Get "quote" | default "" -}}
+{{- $person := .Get "person" | default "" -}}
+{{- $title := .Get "title" | default "" -}}
+{{- $image := .Get "image" | default "" -}}
+{{- $imgSrc := "" -}}
+{{- if $image -}}
+  {{- $res := .Page.Resources.GetMatch $image -}}
+  {{- if $res -}}
+    {{- $imgSrc = $res.RelPermalink -}}
+  {{- else if or (hasPrefix $image "http://") (hasPrefix $image "https://") -}}
+    {{- $imgSrc = $image -}}
+  {{- else if hasPrefix $image "/" -}}
+    {{- $imgSrc = strings.TrimPrefix "/" $image | relURL -}}
+  {{- end -}}
+{{- end -}}
+<figure class="inline-quote">
+  {{- with $imgSrc }}
+  <div class="inline-quote__media">
+    <img src="{{ . }}" alt="{{ $person | default "Quote author" }}" loading="lazy">
+  </div>
+  {{- end }}
+  <div class="inline-quote__body">
+    <blockquote class="inline-quote__quote">
+      <p>{{ $quote }}</p>
+    </blockquote>
+    {{- if or $person $title }}
+    <figcaption class="inline-quote__cite">
+      {{- with $person }}<cite class="inline-quote__person">{{ . }}</cite>{{ end -}}
+      {{- if and $person $title }}<span class="inline-quote__sep" aria-hidden="true"> — </span>{{ end -}}
+      {{- with $title }}<span class="inline-quote__title">{{ . }}</span>{{ end -}}
+    </figcaption>
+    {{- end }}
+  </div>
+</figure>
