@@ -449,8 +449,8 @@ function* walk(dir) {
   }
 }
 
-export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync }) {
-  const report = {
+export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync, collection: collectionName, report: sharedReport }) {
+  const report = sharedReport || {
     generated: new Date().toISOString(), dryRun, files: 0, converted: 0, withWarnings: 0, assetsCopied: 0,
     templatesSkipped: 0, skippedTemplates: [], assetsRenamed: 0, assetRenames: [],
     emptyAssets: [], transcodeFailures: [], renameCollisions: [], assetsTranscoded: [],
@@ -605,7 +605,7 @@ export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync }
   // Pass 2: docs
   for (const file of docFiles) {
     const rel = path.relative(src, file);
-    const collection = rel.split(path.sep)[0];
+    const collection = collectionName || rel.split(path.sep)[0];
     const ext = path.extname(file);
     const target = path.join(dest, rel.replace(/\.mdx?$/, '.md'));
     const col = (report.byCollection[collection] ||= { files: 0, converted: 0, withWarnings: 0 });
@@ -666,7 +666,19 @@ function main() {
     process.exit(args.includes('--help') ? 0 : 1);
   }
   const dryRun = args.includes('--dry-run');
-  const report = migrate({ src, dest: get('--dest') || 'content', dryRun });
+    const destRoot = get('--dest') || 'content';
+  const srcs = args.flatMap((a, i) => (a === '--src' ? [args[i + 1]] : []));
+  let report;
+  for (const s of srcs.length ? srcs : [src]) {
+    const learn = path.basename(path.resolve(s)) === 'content-learn';
+    report = migrate({
+      src: s,
+      dest: learn ? path.join(destRoot, 'learn', 'learning-paths') : destRoot,
+      dryRun,
+      collection: learn ? 'content-learn' : undefined,
+      report
+    });
+  }
   if (get('--report')) fs.writeFileSync(get('--report'), JSON.stringify(report, null, 2));
   if (get('--progress') && !dryRun) updateProgress(get('--progress'), report);
   const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k}×${v}`).join(', ') || '—';

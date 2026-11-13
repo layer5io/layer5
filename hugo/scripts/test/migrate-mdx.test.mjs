@@ -4,10 +4,12 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
 import { convertFile, migrate, isTemplatePath, sniffImageFormat, normalizeAssetFilename, rewriteAssetReferences } from '../migrate-mdx.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const fx = path.join(here, 'fixtures/collections');
+const script = path.join(here, '../migrate-mdx.mjs');
 const run = () => convertFile(fs.readFileSync(path.join(fx, 'blog/sample-post/index.mdx'), 'utf8'), { slug: 'sample-post' });
 
 test('imports (single-line, multi-line, default) are removed', () => {
@@ -413,4 +415,21 @@ test('subfolder renames and .avif -> .webp renames are keyed and rewritten in do
   assert.match(convertedDoc, /!\[Icon\]\(\.\/icons\/icon\.jpg\)/);
   assert.match(convertedDoc, /!\[BareIcon\]\(icons\/icon\.jpg\)/);
   assert.match(convertedDoc, /src="banner\.webp"/);
+});
+test('CLI: repeated --src maps content-learn to learn/learning-paths and merges the report', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-multi-'));
+  const learn = path.join(tmp, 'content-learn');
+  const cols = path.join(tmp, 'collections');
+  fs.mkdirSync(path.join(learn, 'mastering-x/course-a'), { recursive: true });
+  fs.writeFileSync(path.join(learn, 'mastering-x/course-a/index.mdx'), '---\ntitle: "Course A"\n---\nHello\n');
+  fs.mkdirSync(path.join(cols, 'blog/post'), { recursive: true });
+  fs.writeFileSync(path.join(cols, 'blog/post/index.mdx'), '---\ntitle: "Post"\n---\nHello\n');
+  const dest = path.join(tmp, 'out');
+  const report = path.join(tmp, 'report.json');
+  execFileSync(process.execPath, [script, '--src', cols, '--src', learn, '--dest', dest, '--report', report]);
+  assert.ok(fs.existsSync(path.join(dest, 'blog/post/index.md')));
+  assert.ok(fs.existsSync(path.join(dest, 'learn/learning-paths/mastering-x/course-a/index.md')));
+  const r = JSON.parse(fs.readFileSync(report, 'utf8'));
+  assert.equal(r.files, 2);
+  assert.deepEqual(Object.keys(r.byCollection).sort(), ['blog', 'content-learn']);
 });
