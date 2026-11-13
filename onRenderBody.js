@@ -1,6 +1,8 @@
 import React from "react";
 import { DarkThemeKey, ThemeSetting } from "./src/theme/app/ThemeManager.js";
 import lighttheme, { darktheme } from "./src/theme/app/themeStyles";
+import QanelasSoftRegular from "./static/fonts/qanelas-soft/QanelasSoftRegular.woff2";
+import QanelasSoftSemiBold from "./static/fonts/qanelas-soft/QanelasSoftSemiBold.woff2";
 
 const themes = { light: lighttheme, dark: darktheme };
 
@@ -76,5 +78,11 @@ const MagicScriptTag = (props) => {
 // FIX: Using setHeadComponents instead of setPreBodyComponents ensures the script runs
 // strictly in the <head>, blocking the first paint until the theme is applied and completely eliminating FOUC.
 export const onRenderBody = ( { setHeadComponents }) => {
-  setHeadComponents([<MagicScriptTag key="theme-injection" theme={themes} />]);
+  setHeadComponents([
+    <MagicScriptTag key="theme-injection" theme={themes} />,
+    // Imported through webpack so the href matches the hashed URL fonts.css requests.
+    ...[QanelasSoftRegular, QanelasSoftSemiBold].map((href) => (
+      <link key={href} rel="preload" href={href} as="font" type="font/woff2" crossOrigin="anonymous" />
+    )),
+  ]);
 };
