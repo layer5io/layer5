@@ -39,10 +39,24 @@ export const COMPONENTS = {
   Terminal:      { shortcode: 'terminal',       paired: true, bodyAttr: 'code' },
   Accordion:     { shortcode: 'accordion',      paired: true },
   AccordionItem: { shortcode: 'accordion-item', paired: true },
-  Card:          { shortcode: 'card',           paired: true },
+  Card:             { shortcode: 'card',           paired: true },
+  Link:             { custom: 'link' },
+  BlogWrapper:      { custom: 'unwrap' },
+  CareerWrapper:    { custom: 'unwrap' },
+  EventWrapper:     { custom: 'unwrap' },
+  NewsWrapper:      { custom: 'unwrap' },
+  ProgramsWrapper:  { custom: 'unwrap' },
+  ProjectWrapper:   { custom: 'unwrap' },
+  ResourcesWrapper: { custom: 'unwrap' },
+  BookWrapper:      { custom: 'unwrap' },
+  Code:             { custom: 'code' },
 };
 const COLLECTION_EXCLUDED_COMPONENTS = {
-  sistent: new Set(['Button', 'CTA_FullWidth', 'Terminal', 'Accordion', 'AccordionItem', 'Card']),
+  sistent: new Set([
+    'Button', 'CTA_FullWidth', 'Terminal', 'Accordion', 'AccordionItem', 'Card', 'Link', 'Code',
+    'BlogWrapper', 'CareerWrapper', 'EventWrapper', 'NewsWrapper',
+    'ProgramsWrapper', 'ProjectWrapper', 'ResourcesWrapper', 'BookWrapper',
+  ]),
 };
 const DROP_ATTRS = new Set(['className', 'class', 'style', 'key', 'ref']);
 
@@ -91,7 +105,10 @@ export function parseOpenTag(text, start) {
       const str = /^(["'`])([\s\S]*)\1$/.exec(inner);
       if (str && !(str[1] === '`' && str[2].includes('${'))) attrs.push({ key, value: cleanAttrVal(str[2]), literal: true });
       else if (/^(-?\d+(\.\d+)?|true|false)$/.test(inner)) attrs.push({ key, value: inner, literal: true });
-      else { attrs.push({ key, value: inner, literal: false }); problems.push(`non-literal expression for "${key}"`); }
+      else {
+        attrs.push({ key, value: inner, literal: false });
+        if (key !== 'key' && key !== 'ref') problems.push(`non-literal expression for "${key}"`);
+      }
       i = next;
     } else return null;
   }
@@ -183,6 +200,76 @@ function buildShortcode(spec, tag, children, ctx, rawTag = '') {
   return open;
 }
 
+/** Normalize a <Link to="..."> URL or return null if bare-relative. */
+function normalizeLinkUrl(raw) {
+  const u = raw.trim();
+  if (/^https?:\/\/layer5\.io(?=[/?#]|$)/i.test(u)) {
+    const rest = u.replace(/^https?:\/\/layer5\.io/i, '');
+    if (!rest) return '/';
+    return rest.startsWith('/') ? rest : `/${rest}`;
+  }
+  if (
+    u.startsWith('/') ||
+    u.startsWith('#') ||
+    /^(?:https?:|mailto:|tel:)/i.test(u)
+  ) {
+    return u;
+  }
+  return null;
+}
+
+function convertLink(tag, children, ctx, rawTag, rawFull) {
+  const loc = ctx.file ? `${ctx.file}: ` : '';
+  const tagSnippet = rawTag.replace(/\s+/g, ' ').trim() || '<Link>';
+  const toAttr = tag.attrs.find((a) => a.key === 'to');
+  if (!toAttr) {
+    ctx.warn(`${loc}<Link> missing "to" attribute (${tagSnippet}); left as-is`);
+    return rawFull;
+  }
+  if (!toAttr.literal) {
+    return rawFull;
+  }
+  const url = normalizeLinkUrl(toAttr.value);
+  if (url === null) {
+    ctx.warn(`${loc}<Link> has bare-relative "to" value "${toAttr.value}" (${tagSnippet}); review manually`);
+    return rawFull;
+  }
+  const classAttr = tag.attrs.find((a) => a.key === 'className' || a.key === 'class');
+  const targetAttr = tag.attrs.find((a) => a.key === 'target');
+  const relAttr = tag.attrs.find((a) => a.key === 'rel');
+  const hasRichChild = /<[A-Za-z!/]|{{[<%]/.test(children);
+  if (!classAttr && !targetAttr && !relAttr && !hasRichChild) {
+    const label = children.replace(/\s+/g, ' ').trim();
+    const mdUrl = /[\s()]/.test(url) ? `<${url}>` : url;
+    return `[${label}](${mdUrl})`;
+  }
+  const parts = [`to=${fmtValue(url)}`];
+  if (classAttr && classAttr.value.trim()) parts.push(`class=${fmtValue(classAttr.value)}`);
+  if (targetAttr && targetAttr.value.trim()) parts.push(`target=${fmtValue(targetAttr.value)}`);
+  if (relAttr && relAttr.value.trim()) parts.push(`rel=${fmtValue(relAttr.value)}`);
+  return `{{< link ${parts.join(' ')} >}}${children.trim()}{{< /link >}}`;
+}
+
+function convertCode(tag, ctx, rawTag, rawFull) {
+  const loc = ctx.file ? `${ctx.file}: ` : '';
+  const tagSnippet = rawTag.replace(/\s+/g, ' ').trim() || '<Code>';
+  const codeAttr = tag.attrs.find((a) => a.key === 'codeString');
+  if (!codeAttr) {
+    ctx.warn(`${loc}<Code> missing "codeString" attribute (${tagSnippet}); left as-is`);
+    return rawFull;
+  }
+  if (!codeAttr.literal) {
+    return rawFull;
+  }
+  const langAttr = tag.attrs.find((a) => a.key === 'language');
+  const lang = (langAttr?.literal ? langAttr.value.trim() : '') || 'text';
+  const codeBody = codeAttr.value.replace(/\\`/g, '`').replace(/\r\n/g, '\n').replace(/^\n/, '').replace(/\n$/, '');
+  const backtickRuns = codeBody.match(/`+/g) || [];
+  const maxRun = backtickRuns.reduce((m, s) => Math.max(m, s.length), 0);
+  const fence = '`'.repeat(Math.max(3, maxRun + 1));
+  return `${fence}${lang}\n${codeBody}\n${fence}`;
+}
+
 /* ---------------------------------------------------------------- body conversion */
 function convertSegment(text, ctx) {
   let out = '', i = 0;
@@ -203,6 +290,7 @@ function convertSegment(text, ctx) {
       if (!(prev && ctx.masked?.[+prev[1]] === marker.trim())) out += marker;
       out += text.slice(m.index, tag.end); i = tag.end; continue;
     }
+    if (spec.custom === 'unwrap') { out += text.slice(m.index, tag.end); i = tag.end; continue; }
     tag.problems.forEach((p) => ctx.warn(`<${name}>: ${p}`));
     let children = '', end = tag.end;
     if (!tag.selfClosing) {
@@ -212,29 +300,108 @@ function convertSegment(text, ctx) {
       end = c.end;
     }
     ctx.component(name);
-    out += buildShortcode(spec, tag, children, ctx, text.slice(m.index, tag.end));
+    if (spec.custom === 'link') {
+      out += convertLink(tag, children, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
+    } else if (spec.custom === 'code') {
+      out += convertCode(tag, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
+    } else {
+      out += buildShortcode(spec, tag, children, ctx, text.slice(m.index, tag.end));
+    }
     i = end;
   }
   return out;
 }
 
+/** Dedent a wrapper body by its common non-empty indent, never modifying fenced code blocks. */
+function dedentWrapperBody(inner) {
+  const trimmed = inner.replace(/^(?:[ \t]*\n)+/, '').replace(/(?:\n[ \t]*)+$/, '');
+  if (!trimmed) return { text: '', hasIndentHazard: false };
+  const lines = trimmed.split('\n');
+  const inFenceFlags = new Array(lines.length).fill(false);
+  let fenceChar = null;
+  let fenceLen = 0;
+  for (let idx = 0; idx < lines.length; idx++) {
+    const f = /^\s*(```+|~~~+)/.exec(lines[idx]);
+    if (f && !fenceChar) { fenceChar = f[1][0]; fenceLen = f[1].length; inFenceFlags[idx] = true; }
+    else if (f && fenceChar && f[1][0] === fenceChar && f[1].length >= fenceLen) { inFenceFlags[idx] = true; fenceChar = null; }
+    else if (fenceChar) { inFenceFlags[idx] = true; }
+  }
+  let minIndent = Infinity;
+  for (let idx = 0; idx < lines.length; idx++) {
+    if (inFenceFlags[idx] || !lines[idx].trim()) continue;
+    const m = /^( +)/.exec(lines[idx]);
+    const indent = m ? m[1].length : 0;
+    if (indent < minIndent) minIndent = indent;
+  }
+  const dedentedLines = (!Number.isFinite(minIndent) || minIndent === 0)
+    ? lines
+    : lines.map((line, idx) => (inFenceFlags[idx] || !line.trim() ? line : line.slice(minIndent)));
+  let prevBlank = true;
+  let hasIndentHazard = false;
+  for (let idx = 0; idx < dedentedLines.length; idx++) {
+    if (inFenceFlags[idx]) { prevBlank = false; continue; }
+    if (!dedentedLines[idx].trim()) { prevBlank = true; continue; }
+    if (prevBlank && /^ {4,}/.test(dedentedLines[idx])) { hasIndentHazard = true; break; }
+    prevBlank = false;
+  }
+  return { text: dedentedLines.join('\n'), hasIndentHazard };
+}
+
+/** Unwrap collection wrapper tags (e.g. <BlogWrapper>...</BlogWrapper>) outside fenced code blocks. */
+function unwrapCollectionWrappers(body, ctx) {
+  const chunks = splitCodeFenceChunks(body);
+  const maskedFences = [];
+  const joined = chunks.map((c) => (c.code ? `\u0000WRAP_FENCE_${maskedFences.push(c.text) - 1}\u0000` : c.text)).join('\n');
+  let out = '', i = 0;
+  const re = /<([A-Z][\w.]*)(?![\w.])/g;
+  while (true) {
+    re.lastIndex = i;
+    const m = re.exec(joined);
+    if (!m) { out += joined.slice(i); break; }
+    const name = m[1];
+    const spec = resolveComponentSpec(name, ctx.collection);
+    if (spec?.custom !== 'unwrap') {
+      out += joined.slice(i, m.index + 1);
+      i = m.index + 1;
+      continue;
+    }
+    const tag = parseOpenTag(joined, m.index);
+    if (!tag || tag.selfClosing) {
+      out += joined.slice(i, m.index + 1);
+      i = m.index + 1;
+      continue;
+    }
+    const c = findClose(joined, tag.end, name);
+    if (!c) {
+      ctx.warn(`<${name}> has no closing tag; left as-is`);
+      out += joined.slice(i, tag.end);
+      i = tag.end;
+      continue;
+    }
+    const rawInner = joined.slice(tag.end, c.start).replace(/\u0000WRAP_FENCE_(\d+)\u0000/g, (_, n) => maskedFences[+n]);
+    const { text: dedentedText, hasIndentHazard } = dedentWrapperBody(rawInner);
+    if (hasIndentHazard) {
+      ctx.warn(`<${name}>: wrapper body has 4+ space indented line after dedent; left as-is for manual review`);
+      out += joined.slice(i, c.end);
+    } else {
+      ctx.component(name);
+      out += joined.slice(i, m.index) + dedentedText;
+    }
+    i = c.end;
+  }
+  return out.replace(/\u0000WRAP_FENCE_(\d+)\u0000/g, (_, n) => maskedFences[+n]);
+}
+
 /** Convert an MDX body. Code fences and inline code are protected. */
 export function convertBody(body, ctx) {
-  const lines = body.split('\n');
-  const chunks = []; let buf = [], inFence = null;
-  for (const line of lines) {
-    const f = /^\s*(```+|~~~+)/.exec(line);
-    if (f && !inFence) { chunks.push({ code: false, text: buf.join('\n') }); buf = [line]; inFence = f[1][0]; }
-    else if (f && inFence && f[1][0] === inFence) { buf.push(line); chunks.push({ code: true, text: buf.join('\n') }); buf = []; inFence = null; }
-    else buf.push(line);
-  }
-  chunks.push({ code: !!inFence, text: buf.join('\n') });
+  const unwrapped = unwrapCollectionWrappers(body, ctx);
+  const chunks = splitCodeFenceChunks(unwrapped);
 
   return chunks.map((c) => {
     if (c.code) return c.text;
     const masked = []; // protect inline code
     // `{`template literal`}` attribute values are left alone so the tag parser can read them
-    let t = c.text.replace(/\{\s*`[^`]*`\s*\}|`[^`\n]+`/g, (s) => (s[0] === '{' ? s : `\u0000${masked.push(s) - 1}\u0000`));
+    let t = c.text.replace(/\{\s*`(?:\\.|[^`\\])*`\s*\}|`[^`\n]+`/g, (s) => (s[0] === '{' ? s : `\u0000${masked.push(s) - 1}\u0000`));
     t = t.replace(/^import\s+(?:[\w$]+\s*,?\s*)?(?:\{[^}]*\}|\*\s+as\s+[\w$]+)?\s*from\s+['"][^'"]+['"];?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
     t = t.replace(/^import\s+['"][^'"]+['"];?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
     if (/^export\s/m.test(t)) ctx.warn('contains `export` statements (MDX exports are not supported in Hugo)');
@@ -392,14 +559,15 @@ function assetRefRegExp(relPath) {
 function splitCodeFenceChunks(text) {
   const lines = text.split('\n');
   const chunks = [];
-  let buf = [], inFence = null;
+  let buf = [], inFence = null, fenceLen = 0;
   for (const line of lines) {
     const f = /^\s*(```+|~~~+)/.exec(line);
     if (f && !inFence) {
       chunks.push({ code: false, text: buf.join('\n') });
       buf = [line];
       inFence = f[1][0];
-    } else if (f && inFence && f[1][0] === inFence) {
+      fenceLen = f[1].length;
+    } else if (f && inFence && f[1][0] === inFence && f[1].length >= fenceLen) {
       buf.push(line);
       chunks.push({ code: true, text: buf.join('\n') });
       buf = [];

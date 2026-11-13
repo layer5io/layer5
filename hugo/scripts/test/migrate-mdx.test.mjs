@@ -593,3 +593,169 @@ test('Button external={true} warns with file and tag on non-http(s) URL while dr
   assert.match(stats.warnings[0], /events\/2024\/kubecon-EU-2024\/index\.mdx/);
   assert.match(stats.warnings[0], /<Button secondary title="Slides" url="\/cncf-tag-network\/slides\.pdf" external=\{ true \} \/>/);
 });
+
+
+test('Link converts site-relative, layer5.io (with query/anchor), external, mailto, tel, anchor, and // URLs', () => {
+  const input = [
+    '---',
+    'title: "Links"',
+    '---',
+    '- <Link to="/community/meshmates">MeshMates</Link>',
+    '- <Link to="https://layer5.io/projects/meshery?tab=overview#install">Meshery</Link>',
+    '- <Link to="https://layer5.io">Home</Link>',
+    '- <Link to="https://github.com/layer5io/layer5">GitHub</Link>',
+    '- <Link to="mailto:community@layer5.io">Email</Link>',
+    '- <Link to="tel:+1234567890">Phone</Link>',
+    '- <Link to="#section">Jump</Link>',
+    '- <Link to="//example.com/path">ProtoRel</Link>',
+    '- <Link to="/blog">\n    Multiline\n    Label\n  </Link>',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'links', file: 'blog/post/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.match(output, /- \[MeshMates\]\(\/community\/meshmates\)/);
+  assert.match(output, /- \[Meshery\]\(\/projects\/meshery\?tab=overview#install\)/);
+  assert.match(output, /- \[Home\]\(\/\)/);
+  assert.match(output, /- \[GitHub\]\(https:\/\/github\.com\/layer5io\/layer5\)/);
+  assert.match(output, /- \[Email\]\(mailto:community@layer5\.io\)/);
+  assert.match(output, /- \[Phone\]\(tel:\+1234567890\)/);
+  assert.match(output, /- \[Jump\]\(#section\)/);
+  assert.match(output, /- \[ProtoRel\]\(\/\/example\.com\/path\)/);
+  assert.match(output, /- \[Multiline Label\]\(\/blog\)/);
+});
+
+test('Link emits {{< link >}} shortcode for className, target/rel, or HTML/JSX children', () => {
+  const input = [
+    '---',
+    'title: "Rich Links"',
+    '---',
+    '<Link className="highlight" to="/community/meshmates">MeshMates</Link>',
+    '<Link className="mute" to="https://layer5.io/projects/cloud-native-performance">CNP</Link>',
+    '<Link to="/blog" className="project-card" key="1"><div className="content_type"><h5>Blog</h5></div></Link>',
+    '<Link to="https://example.com" target="_blank" rel="noopener">Ext</Link>',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'rich-links', file: 'handbook/writing-program/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.match(output, /\{\{< link to="\/community\/meshmates" class="highlight" >\}\}MeshMates\{\{< \/link >\}\}/);
+  assert.match(output, /\{\{< link to="\/projects\/cloud-native-performance" class="mute" >\}\}CNP\{\{< \/link >\}\}/);
+  assert.match(output, /\{\{< link to="\/blog" class="project-card" >\}\}<div className="content_type"><h5>Blog<\/h5><\/div>\{\{< \/link >\}\}/);
+  assert.match(output, /\{\{< link to="https:\/\/example\.com" target="_blank" rel="noopener" >\}\}Ext\{\{< \/link >\}\}/);
+});
+
+test('Link warns and preserves tag for bare-relative and non-literal `to` values', () => {
+  const rel = 'programs/lfx-2025/lfx-2025.mdx';
+  const input = [
+    '---',
+    'title: "Bad Links"',
+    '---',
+    '<Link to="newcomer">Newcomer</Link>',
+    '<Link to="community/members/mia-grenell">Mia</Link>',
+    '<Link to="">Empty</Link>',
+    '<Link to="../../articles/kubernetes/management-of-kubernetes">K8s</Link>',
+    '<Link to={link[index]} key={index}>Dynamic</Link>',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'lfx-2025', file: rel });
+  assert.equal(stats.warnings.length, 5);
+  assert.ok(!stats.warnings.some((w) => w.includes('non-literal expression for "key"')));
+  assert.ok(stats.warnings.some((w) => w.includes(rel) && w.includes('bare-relative "to" value "newcomer"')));
+  assert.ok(stats.warnings.some((w) => w.includes(rel) && w.includes('bare-relative "to" value "community/members/mia-grenell"')));
+  assert.ok(stats.warnings.some((w) => w.includes(rel) && w.includes('bare-relative "to" value ""')));
+  assert.ok(stats.warnings.some((w) => w.includes(rel) && w.includes('bare-relative "to" value "../../articles/kubernetes/management-of-kubernetes"')));
+  assert.ok(stats.warnings.some((w) => w.includes('non-literal expression for "to"')));
+  assert.match(output, /<Link to="newcomer">Newcomer<\/Link>/);
+  assert.match(output, /<Link to=\{link\[index\]\} key=\{index\}>Dynamic<\/Link>/);
+});
+
+
+test('Wrappers unwrap all 8 collection wrappers, dedent common indent, and preserve fenced code blocks', () => {
+  const input = [
+    '---',
+    'title: "Wrapper Test"',
+    '---',
+    '<CareerWrapper>',
+    '    <div className="body-sections">',
+    '      <h3>Responsibilities</h3>',
+    '      <Link to="/careers/programs">Programs</Link>',
+    '    </div>',
+    '</CareerWrapper>',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'swe', file: 'careers/software-engineer/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.doesNotMatch(output, /CareerWrapper/);
+  assert.match(output, /\n<div className="body-sections">\n  <h3>Responsibilities<\/h3>\n  \[Programs\]\(\/careers\/programs\)\n<\/div>\n/);
+
+  const withFence = [
+    '---',
+    'title: "Fence Wrapper"',
+    '---',
+    '<BlogWrapper>',
+    '    Intro text.',
+    '```bash',
+    '    indented_inside_fence',
+    '```',
+    '    Outro text.',
+    '</BlogWrapper>',
+  ].join('\n');
+  const res = convertFile(withFence, { slug: 'fence', file: 'blog/post/index.mdx' });
+  assert.equal(res.stats.warnings.length, 0);
+  assert.doesNotMatch(res.output, /BlogWrapper/);
+  assert.match(res.output, /\nIntro text\.\n```bash\n    indented_inside_fence\n```\nOutro text\.\n/);
+});
+
+
+test('Wrappers do not let a shorter fence run close a longer fenced block when dedenting', () => {
+  const input = [
+    '---',
+    'title: "Long Fence Wrapper"',
+    '---',
+    '<BlogWrapper>',
+    '    Intro text.',
+    '````md',
+    '    ```nested',
+    '        deeply indented',
+    '````',
+    '    Outro text.',
+    '</BlogWrapper>',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'long-fence', file: 'blog/post/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.doesNotMatch(output, /BlogWrapper/);
+  assert.match(output, /\nIntro text\.\n````md\n    ```nested\n        deeply indented\n````\nOutro text\.\n/);
+});
+
+
+test('Code converts self-closing template-literal codeString to fenced code block with dynamic fence and text fallback', () => {
+  const input = [
+    '---',
+    'title: "Code Test"',
+    '---',
+    '<Code language="bash" codeString={`npm install\nnpm test`} />',
+    '<Code codeString={`git status`} />',
+    '<Code language="md" codeString={`here is \\`\\`\\`nested\\`\\`\\` fence`} />',
+    '<Code language="bash" codeString={`echo ${userVar}`} />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'code-test', file: 'handbook/contribution/index.mdx' });
+  assert.match(output, /```bash\nnpm install\nnpm test\n```/);
+  assert.match(output, /```text\ngit status\n```/);
+  assert.match(output, /````md\nhere is ```nested``` fence\n````/);
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /non-literal expression for "codeString"/);
+  assert.match(output, /<Code language="bash" codeString=\{`echo \$\{userVar\}`\} \/>/);
+});
+
+
+test('Wrappers warn and leave tag as-is when body has mixed 0-space and 4+ space lines after dedent', () => {
+  const input = [
+    '---',
+    'title: "Mixed Indent Wrapper"',
+    '---',
+    '<BlogWrapper>',
+    '    <h4 className="date">October 04 to 09, 2021</h4>',
+    'Regular 0-space line with <Link to="/blog">link</Link>.',
+    '</BlogWrapper>',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'ccoss', file: 'blog/2021/ccoss/index.mdx' });
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /4\+ space indented line after dedent/);
+  assert.match(output, /<BlogWrapper>/);
+  assert.match(output, /\[link\]\(\/blog\)/);
+});
