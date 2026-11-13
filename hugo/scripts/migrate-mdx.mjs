@@ -304,8 +304,6 @@ function convertSegment(text, ctx) {
       out += convertLink(tag, children, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
     } else if (spec.custom === 'code') {
       out += convertCode(tag, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
-    } else if (spec.custom === 'unwrap') {
-      out += text.slice(m.index, tag.end) + children + `</${name}>`;
     } else {
       out += buildShortcode(spec, tag, children, ctx, text.slice(m.index, tag.end));
     }
@@ -321,10 +319,11 @@ function dedentWrapperBody(inner) {
   const lines = trimmed.split('\n');
   const inFenceFlags = new Array(lines.length).fill(false);
   let fenceChar = null;
+  let fenceLen = 0;
   for (let idx = 0; idx < lines.length; idx++) {
     const f = /^\s*(```+|~~~+)/.exec(lines[idx]);
-    if (f && !fenceChar) { fenceChar = f[1][0]; inFenceFlags[idx] = true; }
-    else if (f && fenceChar && f[1][0] === fenceChar) { inFenceFlags[idx] = true; fenceChar = null; }
+    if (f && !fenceChar) { fenceChar = f[1][0]; fenceLen = f[1].length; inFenceFlags[idx] = true; }
+    else if (f && fenceChar && f[1][0] === fenceChar && f[1].length >= fenceLen) { inFenceFlags[idx] = true; fenceChar = null; }
     else if (fenceChar) { inFenceFlags[idx] = true; }
   }
   let minIndent = Infinity;
@@ -560,14 +559,15 @@ function assetRefRegExp(relPath) {
 function splitCodeFenceChunks(text) {
   const lines = text.split('\n');
   const chunks = [];
-  let buf = [], inFence = null;
+  let buf = [], inFence = null, fenceLen = 0;
   for (const line of lines) {
     const f = /^\s*(```+|~~~+)/.exec(line);
     if (f && !inFence) {
       chunks.push({ code: false, text: buf.join('\n') });
       buf = [line];
       inFence = f[1][0];
-    } else if (f && inFence && f[1][0] === inFence) {
+      fenceLen = f[1].length;
+    } else if (f && inFence && f[1][0] === inFence && f[1].length >= fenceLen) {
       buf.push(line);
       chunks.push({ code: true, text: buf.join('\n') });
       buf = [];

@@ -702,6 +702,27 @@ test('Wrappers unwrap all 8 collection wrappers, dedent common indent, and prese
 });
 
 
+test('Wrappers do not let a shorter fence run close a longer fenced block when dedenting', () => {
+  const input = [
+    '---',
+    'title: "Long Fence Wrapper"',
+    '---',
+    '<BlogWrapper>',
+    '    Intro text.',
+    '````md',
+    '    ```nested',
+    '        deeply indented',
+    '````',
+    '    Outro text.',
+    '</BlogWrapper>',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'long-fence', file: 'blog/post/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.doesNotMatch(output, /BlogWrapper/);
+  assert.match(output, /\nIntro text\.\n````md\n    ```nested\n        deeply indented\n````\nOutro text\.\n/);
+});
+
+
 test('Code converts self-closing template-literal codeString to fenced code block with dynamic fence and text fallback', () => {
   const input = [
     '---',
