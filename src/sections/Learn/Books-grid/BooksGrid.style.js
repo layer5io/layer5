@@ -46,13 +46,20 @@ export const BooksPageWrapper = styled.div`
     }
 
     .book_image{
-        width: 30rem !important;
+        width: 100% !important;
+        max-width: 30rem;
         transition: all 0.5s ease-in-out;
+    }
+
+    /* Same slide padding as the 1050px block, so cover spacing is consistent above 1050px. */
+    .slick-slide > div{
+        padding: 0 0.75rem;
     }
 
     .blog-slider_img{
         img{
-            width: 30rem;
+            width: 100%;
+            max-width: 30rem;
             height: inherit;
             max-height: 37.5rem;
             display: block;
@@ -83,13 +90,16 @@ export const BooksPageWrapper = styled.div`
             margin-bottom: 4rem;
         }
 
+        .slick-slide > div{
+            padding: 0 0.75rem;
+        }
         .book_image{
-            width: 20rem !important;
+            width: 100% !important;
         }
 
         .blog-slider_img{
             img{
-                width: 20rem;
+                width: 100%;
                 max-height: 26rem;
             }
         }
@@ -119,4 +129,50 @@ export const BooksPageWrapper = styled.div`
             }
         }
     }
+        @media screen and (max-width: 550px){
+        .slick-list{
+            padding: 6rem 0 !important;
+        }
+
+        .slick-arrow{
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid #00b39f;
+            cursor: pointer;
+        }
+
+        .slick-prev{
+            left: 0.5rem;
+        }
+
+        .slick-next{
+            right: 0.5rem;
+        }
+
+        .slick-prev::before,
+        .slick-next::before{
+            font-family: inherit;
+            font-size: 1.5rem;
+            line-height: 1;
+            color: #fff;
+            opacity: 1;
+        }
+
+        .slick-prev::before{
+            content: "‹";
+        }
+
+        .slick-next::before{
+            content: "›";
+        }
+    }    
 `;

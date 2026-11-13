@@ -103,7 +103,7 @@ const NewcomersGuide = () => {
                 $primary
                 className="newcomers-form"
                 title="Submit a Member Form"
-                $url="/newcomer"
+                $url="/newcomers"
                 $external={false}
               />
             </Col>
