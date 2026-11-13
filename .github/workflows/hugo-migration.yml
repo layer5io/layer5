@@ -61,3 +61,36 @@ jobs:
           name: site
           path: hugo/public
           retention-days: 7
+
+  # Every live Gatsby URL must still work on Hugo (#8300).
+  # Collections in hugo/scripts/verify-urls.allow only report. Remove one there to make it a gate.
+  verify-urls:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: hugo/public
+
+      - name: URL inventory (deployed Gatsby site on gh-pages)
+        run: make url-inventory
+
+      - name: Verify URLs (MISSING per collection)
+        run: make check-urls
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: url-report
+          path: |
+            hugo/.bench/url-inventory.json
+            hugo/.bench/verify-urls.json
+          retention-days: 7
