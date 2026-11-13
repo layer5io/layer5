@@ -131,6 +131,7 @@ const Chapters = ({
                   {...meshImage.imagepath}
                   className="docker"
                   alt={sm.section}
+                  fitContainer
                 />
               </Link>
             </CustomTooltip>
