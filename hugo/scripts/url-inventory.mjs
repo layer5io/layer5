@@ -1,27 +1,19 @@
 #!/usr/bin/env node
 /**
- * url-inventory.mjs: every URL the live Gatsby site serves, and where each one comes from.
- * verify-urls.mjs --inventory reads the result. The sitemap alone is not enough: redirect sources
- * and pages that gatsby-plugin-sitemap leaves out are not in it.
+ * url-inventory.mjs: every URL the live Gatsby site serves, for verify-urls.mjs --inventory.
+ * The sitemap alone misses redirect sources and pages gatsby-plugin-sitemap leaves out.
  *
- *   make url-inventory     # reads the deployed build on gh-pages, no Gatsby build needed
+ *   make url-inventory   # reads the deployed build on gh-pages
  *
- *   node scripts/url-inventory.mjs --out .bench/url-inventory.json \
- *     --gatsby-files .bench/gatsby-files.txt    # paths of a Gatsby build, one per line (git ls-tree of gh-pages)
- *     --gatsby-public ../public                 # or the public/ folder of a local `gatsby build`
- *     --sitemap .bench/gatsby-sitemap.xml       # live sitemap <urlset>
- *     --redirects ../src/utils/redirects.yaml   # createRedirect sources
- *     --collections ../src/collections          # MDX front matter with redirect_from
- *
- * Every source is optional and repeatable. Each row lists all the sources that have its URL.
+ * Sources, all optional and repeatable: --gatsby-files (path list), --gatsby-public (local build),
+ * --sitemap, --redirects (redirects.yaml), --collections (redirect_from front matter).
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { norm, locs } from './verify-urls.mjs';
 
-// PR previews and Gatsby internals live on gh-pages too, but they are not site URLs.
-// GitHub Pages serves 404.html for unknown paths, so the 404 page is not a URL to keep.
+// Previews, Gatsby internals and the 404 page live on gh-pages but are not site URLs.
 const SKIP = /^(pr-preview|hugo-preview|_gatsby)\/|^404(\.html|\/index\.html)$/;
 
 // 'blog/a/index.html' → '/blog/a/', 'mail/x.html' → '/mail/x.html'. Not a page → null.

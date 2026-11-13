@@ -62,8 +62,8 @@ jobs:
           path: hugo/public
           retention-days: 7
 
-  # Every URL the live Gatsby site serves must still work on Hugo (P1-02, #8300).
-  # Collections listed in hugo/scripts/verify-urls.allow only report. Delete a line there to make that collection a gate.
+  # Every live Gatsby URL must still work on Hugo (#8300).
+  # Collections in hugo/scripts/verify-urls.allow only report. Remove one there to make it a gate.
   verify-urls:
     needs: build
     runs-on: ubuntu-latest
