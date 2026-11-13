@@ -64,7 +64,7 @@ const MesheryFeatures = () => {
               title: "Infrastructure as Design with Kanvas",
               description:
                 "Visually and collaboratively design your cloud native infrastructure using Meshery's drag-and-drop designer. Leverage 300+ integrations and context-aware relationships between components.",
-              learnMoreLink: "/kanvas",
+              learnMoreLink: "/cloud-native-management/kanvas",
               content: <img src={img1} alt="Infrastructure as Design with Kanvas" loading="lazy" />,
             },
             {
@@ -141,7 +141,7 @@ const MesheryFeatures = () => {
                   </p>
                 </div>
               ),
-              learnMoreLink: "/catalog",
+              learnMoreLink: "/cloud-native-management/catalog",
             },
             {
               id: "seven",
@@ -164,7 +164,7 @@ const MesheryFeatures = () => {
                   </p>
                 </div>
               ),
-              learnMoreLink: "/concepts/logical/environments",
+              learnMoreLink: "https://docs.meshery.io/concepts/logical/environments",
             },
             {
               id: "eight",

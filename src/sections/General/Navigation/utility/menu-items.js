@@ -307,7 +307,7 @@ const Data = {
         // },
         {
           actionName: "Layer5 in the news",
-          actionLink: "/news",
+          actionLink: "/company/news",
         },
         {
           actionName: "Recent announcements",

@@ -86,9 +86,9 @@ const Header = () => {
               <div className="header__button_section">
                 <Button
                   $primary
-                  title="Try Kanvasow!"
-                  $external={true}
-                  url="/kanvas"
+                  title="Try Kanvas Now!"
+                  $external={false}
+                  $url="/cloud-native-management/kanvas"
                 />
               </div>
             </Col>

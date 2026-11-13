@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
+import { withPrefix } from "gatsby";
 import BrandPageWrapper from "./brandPage.style";
 import { Row, Col } from "../../../reusecore/Layout";
 import Layer5Brand from "./Brand-components/layer5";
-// import MesheryBrand from "./Brand-components/meshery";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import loadable from "@loadable/component";
 
-// const MeshSyncBrand = loadable(() => import("./Brand-components/meshsync"));
-// const MesheryOperatorBrand = loadable(() => import("./Brand-components/meshery-operator"));
 const ImageHubBrand = loadable(() => import("./Brand-components/imagehub"));
 const SMPBrand = loadable(() => import("./Brand-components/smp"));
 const CommunityBrand = loadable(() => import("./Brand-components/community"));
@@ -53,8 +51,6 @@ const getDimensions = (ele) => {
 // Functions to make scroll with speed control
 // Element to move, element or px from, element or px to, time in ms to animate
 const scrollTo = (element, sectionId, duration = 2000) => {
-  // Sections for disabled brand kits are commented out, so their refs
-  // stay null. Bail out instead of throwing on element.offsetTop.
   if (!element) return;
   // Update URL hash
   if (sectionId) {
@@ -113,9 +109,6 @@ const Brand = () => {
 
   const headerRef = useRef(null);
   const layer5Ref = useRef(null);
-  const mesheryRef = useRef(null);
-  const meshsyncRef = useRef(null);
-  const mesheryOperatorRef = useRef(null);
   const imageHubRef = useRef(null);
   const meshMasterRef = useRef(null);
   const smpRef = useRef(null);
@@ -131,9 +124,6 @@ const Brand = () => {
 
   const sectionRefs = [
     { section: "Layer5", ref: layer5Ref },
-    { section: "Meshery", ref: mesheryRef },
-    { section: "MeshSync", ref: meshsyncRef },
-    { section: "MesheryOperator", ref: mesheryOperatorRef },
     { section: "ImageHub", ref: imageHubRef },
     { section: "SMP", ref: smpRef },
     { section: "MeshMark", ref: meshmarkRef },
@@ -151,9 +141,6 @@ const Brand = () => {
   const sectionIdMap = {
     layer5: layer5Ref,
     "social-backgrounds": SocialBackgroundsRef,
-    meshery: mesheryRef,
-    meshsync: meshsyncRef,
-    "meshery-operator": mesheryOperatorRef,
     "image-hub": imageHubRef,
     smp: smpRef,
     meshmark: meshmarkRef,
@@ -217,7 +204,7 @@ const Brand = () => {
           in a way not covered by these guidelines, please contact us and
           include a visual mockup of intended use.
         </p>
-        <a href="/brand/brand-kit.zip">
+        <a href={withPrefix("/brand/brand-kit.zip")}>
           <Button $primary title="Download Brand Kit">
             <FiDownloadCloud size={21} className="icon-left" />
           </Button>
@@ -238,15 +225,6 @@ const Brand = () => {
           >
             <SocialBackgrounds />
           </div>
-          {/* <div className="section" id="meshery" ref={mesheryRef}>
-            <MesheryBrand />
-          </div>
-          <div className="section" id="meshsync" ref={meshsyncRef}>
-            <MeshSyncBrand />
-          </div>
-          <div className="section" id="meshery-operator" ref={mesheryOperatorRef}>
-            <MesheryOperatorBrand />
-          </div> */}
           <div className="section" id="image-hub" ref={imageHubRef}>
             <ImageHubBrand />
           </div>
@@ -306,36 +284,6 @@ const Brand = () => {
               }}
             >
               <span> Layer5 Social Backgrounds </span>
-            </p>
-            <p
-              className={`header_link ${
-                visibleSection === "Meshery" ? "selected" : ""
-              }`}
-              onClick={() => {
-                scrollTo(mesheryRef.current, "meshery");
-              }}
-            >
-              <span>Meshery</span>
-            </p>
-            <p
-              className={`header_link ${
-                visibleSection === "MeshSync" ? "selected" : ""
-              }`}
-              onClick={() => {
-                scrollTo(meshsyncRef.current, "meshsync");
-              }}
-            >
-              <span>MeshSync</span>
-            </p>
-            <p
-              className={`header_link ${
-                visibleSection === "MesheryOperator" ? "selected" : ""
-              }`}
-              onClick={() => {
-                scrollTo(mesheryOperatorRef.current, "meshery-operator");
-              }}
-            >
-              <span>Meshery Operator</span>
             </p>
             <p
               className={`header_link ${

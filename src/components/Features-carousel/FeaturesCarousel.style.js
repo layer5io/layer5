@@ -78,7 +78,7 @@ export const FeaturesWrapper = styled.div`
 
       @media (min-width: 768px) {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         grid-column-gap: 40px;
         min-height: auto;
         overflow-anchor: none;
@@ -114,7 +114,7 @@ export const FeaturesWrapper = styled.div`
       & .body {
         opacity: 1;
         font-size: 1rem;
-        max-height: 200px;
+        max-height: none;
 
         @media (min-width: 768px){
             color: ${props => props.theme.white};
@@ -164,7 +164,7 @@ export const FeaturesWrapper = styled.div`
       & > div {
         max-width: 100%;
         @media (max-width: 768px) {
-            maxHeight: 380px;
+            max-height: 380px;
             height: 380px;
             overflow-y:scroll;
         }
@@ -177,16 +177,14 @@ export const FeaturesWrapper = styled.div`
       }
 
       @media (min-width: 768px) {
-        width: 400px;
+        width: 100%;
+        min-width: 0;
 
         & > div {
           height: auto;
         }
       }
 
-      @media (min-width: 900px) {
-        width: 600px;
-      }
     }
 
     .learn-more-link {

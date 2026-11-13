@@ -174,7 +174,7 @@ const Gcp = () => {
             <p className="caption">
               Kanvas allow you to drag, drop and connect all your cloud components together simply and easily - no-code required!
             </p>
-            <Link className="link" href="/cloud-native-management/kanvas/design">Learn more &rarr;</Link>
+            <Link className="link" to="/cloud-native-management/kanvas/design">Learn more &rarr;</Link>
           </Col>
         </Row>
         <Row className="catalog">
@@ -201,7 +201,7 @@ const Gcp = () => {
             <p className="caption">
               Jumpstart your projects with our quick-start templates designed for both GCP diagramming and orchestration management. Access a range of professionally crafted templates that are fully customizable, ensuring you can tailor them to your specific needs.
             </p>
-            <Link className="link" href="/cloud-native-management/catalog">Learn more &rarr;</Link>
+            <Link className="link" to="/cloud-native-management/catalog">Learn more &rarr;</Link>
           </Col>
         </Row>
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { graphql, useStaticQuery, Link } from "gatsby";
+import { Link } from "gatsby";
 
 import { SRLWrapper } from "simple-react-lightbox";
 import slugify from "../../../utils/slugify";
@@ -8,7 +8,6 @@ import PageHeader from "../../../reusecore/PageHeader";
 import RelatedPosts from "../../../components/Related-Posts";
 import BlogPageWrapper from "./blogSingle.style";
 import BlogPostSignOff from "../BlogPostSignOff";
-import RelatedPostsFactory from "../../../components/Related-Posts/relatedPostsFactory";
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from "react-share";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { AiOutlineTwitter } from "@react-icons/all-files/ai/AiOutlineTwitter";
@@ -21,74 +20,12 @@ import CTA_Bottom from "../../../components/Call-To-Actions/CTA_Bottom";
 import AboutTheAuthor from "./author";
 import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
-const BlogSingle = ({ data, children }) => {
+const BlogSingle = ({ data, pageContext, children }) => {
   const location = useLocation();
-  const { frontmatter, fields } = data.mdx;
-  const { relatedPosts: blogData, authors } = useStaticQuery(
-    graphql`query relatedPosts {
-  relatedPosts: allMdx(
-    sort: {fields: {dateForSort: DESC}}
-    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
-  ) {
-    nodes {
-      frontmatter {
-        title
-        date(formatString: "MMM Do YYYY")
-        author
-        category
-        tags
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData(width: 480, layout: CONSTRAINED)
-          }
-          extension
-          publicURL
-        }
-        darkthumbnail {
-          childImageSharp {
-            gatsbyImageData(width: 480, layout: CONSTRAINED)
-          }
-          extension
-          publicURL
-        }
-      }
-      fields {
-        slug
-      }
-    }
-  }
-  authors: allMdx(
-    sort: {frontmatter: {name: ASC}}
-    filter: {fields: {collection: {eq: "members"}}, frontmatter: {published: {eq: true}}}
-  ) {
-    nodes {
-      frontmatter {
-        bio
-        name
-        image_path {
-          childImageSharp {
-            gatsbyImageData(width: 500, layout: CONSTRAINED)
-          }
-          extension
-          publicURL
-        }
-      }
-      fields {
-        slug
-      }
-      
-    }
-  }
-}`
-  );
-
-  const posts = blogData.nodes;
-  const relatedPosts = new RelatedPostsFactory(
-    posts, fields.slug
-  ).setMaxPosts(6)
-    .setCategory(frontmatter.category)
-    .setTags(frontmatter.tags)
-    .getPosts();
+  const { frontmatter } = data.mdx;
+  const relatedPosts = pageContext.relatedSlugs
+    .map((slug) => data.relatedPosts.nodes.find((post) => post.fields.slug === slug))
+    .filter(Boolean);
 
   const [copied, setCopied] = useState(false);
   const { isDark } = useStyledDarkMode();
@@ -111,7 +48,7 @@ const BlogSingle = ({ data, children }) => {
     }
   }, [copied]);
 
-  const authorInformation = authors.nodes.filter((author) => author.frontmatter.name === frontmatter.author)[0];
+  const authorInformation = data.author;
 
   const shareQuote = `Check out this post from layer5 "${frontmatter.title}"`;
 
