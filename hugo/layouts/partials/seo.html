@@ -1,0 +1,23 @@
+{{- $desc := .Description | default .Summary | default site.Params.description | plainify | truncate 200 -}}
+{{- $defaultImage := site.Params.image | default "/images/layer5-gradient.webp" | absURL -}}
+{{- $image := "" -}}
+{{- with .Params.thumbnail }}{{ with $.Resources.GetMatch (strings.TrimPrefix "./" .) }}{{ if reflect.IsImageResourceProcessable . }}{{ $image = (.Resize "1200x webp q85").Permalink }}{{ else }}{{ $image = $defaultImage }}{{ end }}{{ end }}{{ end -}}
+{{- $image = $image | default $defaultImage -}}
+<meta name="description" content="{{ $desc }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:type" content="{{ if eq .Section "blog" }}{{ if .IsPage }}article{{ else }}website{{ end }}{{ else }}website{{ end }}">
+{{ with $image }}<meta property="og:image" content="{{ . }}">{{ end }}
+<meta name="twitter:card" content="summary_large_image">
+{{ if and .IsPage (eq .Section "blog") }}
+{{- $ld := dict "@context" "https://schema.org" "@type" "BlogPosting" "headline" .Title "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00") "mainEntityOfPage" .Permalink "description" $desc -}}
+{{- with $image }}{{ $ld = merge $ld (dict "image" .) }}{{ end -}}
+<script type="application/ld+json">{{ $ld | jsonify | safeJS }}</script>
+{{ end }}
+{{ if .IsHome }}
+{{- $org := dict "@context" "https://schema.org" "@type" "Organization" "name" site.Title "url" site.Home.Permalink "sameAs" (slice site.Params.repo) -}}
+<script type="application/ld+json">{{ $org | jsonify | safeJS }}</script>
+{{ end }}

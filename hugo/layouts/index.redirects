@@ -1,0 +1,6 @@
+{{- /* Workstream 4: generate Netlify/Cloudflare-Pages _redirects from every page's `aliases`. */ -}}
+{{- range $p := site.AllPages -}}
+{{- range $a := $p.Aliases }}
+{{ $a }} {{ $p.RelPermalink }} 301
+{{- end -}}
+{{- end }}

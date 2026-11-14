@@ -1,0 +1,24 @@
+{{ define "main" }}
+<article class="wrap prose-wrap">
+  <header class="post-head">
+    <p class="meta">{{ .Date.Format "January 2, 2006" }} · {{ .ReadingTime }} min read{{ with .Params.categories }} · {{ delimit . ", " }}{{ end }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.author }}
+      {{ $m := site.GetPage (printf "/members/%s" .) }}
+      <p class="byline">By {{ if $m }}<a href="{{ $m.RelPermalink }}">{{ $m.Title }}</a>{{ else }}{{ . }}{{ end }}</p>
+    {{ end }}
+  </header>
+  {{ with .Params.thumbnail }}
+    <figure class="post-cover">{{ partial "responsive-image.html" (dict "page" $ "src" . "alt" $.Title "sizes" "(min-width: 60rem) 48rem, 100vw" "eager" true) }}</figure>
+  {{ end }}
+  {{ if gt (len .TableOfContents) 80 }}<aside class="toc" data-pagefind-ignore><p class="footer-title">On this page</p>{{ .TableOfContents }}</aside>{{ end }}
+  <div class="prose">{{ .Content }}</div>
+  {{ with .Params.tags }}<ul class="chips plain">{{ range . }}<li><a class="chip" href="{{ printf "tags/%s/" (. | urlize) | relURL }}">#{{ . }}</a></li>{{ end }}</ul>{{ end }}
+</article>
+{{ with first 3 (site.RegularPages.Related .) }}
+<section class="wrap block" data-pagefind-ignore>
+  <h2>Related posts</h2>
+  <div class="grid grid--3">{{ range . }}{{ partial "post-card.html" . }}{{ end }}</div>
+</section>
+{{ end }}
+{{ end }}

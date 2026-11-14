@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section class="wrap">
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}<p class="lede">{{ . | plainify }}</p>{{ end }}
+  <div class="grid grid--4">
+    {{ range .Pages.ByWeight }}
+      <a class="card card--link" href="{{ .RelPermalink }}">
+        <div class="card__body">
+          <div class="avatar" aria-hidden="true">{{ substr .Title 0 1 }}</div>
+          <h3>{{ .Title }}</h3>
+          <p class="muted">{{ .Params.role }}</p>
+        </div>
+      </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

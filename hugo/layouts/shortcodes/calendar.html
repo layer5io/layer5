@@ -1,0 +1,7 @@
+{{- /* {{< calendar >}} — month grid built from content/events; @fullcalendar loads lazily. */ -}}
+{{- $events := slice -}}
+{{- range where site.RegularPages "Section" "events" -}}
+  {{- $events = $events | append (dict "title" .Title "start" (.Date.Format "2006-01-02") "url" .RelPermalink) -}}
+{{- end -}}
+<div class="calendar" data-calendar="{{ $events | jsonify }}" aria-label="Community calendar"></div>
+<noscript><ul>{{ range where site.RegularPages "Section" "events" }}<li><a href="{{ .RelPermalink }}">{{ .Date.Format "Jan 2" }} — {{ .Title }}</a></li>{{ end }}</ul></noscript>

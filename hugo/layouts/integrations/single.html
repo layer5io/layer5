@@ -1,0 +1,17 @@
+{{ define "main" }}
+<article class="wrap prose-wrap">
+  <p class="meta"><a href="{{ .Parent.RelPermalink }}">Integrations</a> / {{ .Params.category }}</p>
+  <h1>{{ .Title }}</h1>
+  <p class="lede">{{ .Params.summary | default .Description }}</p>
+  <dl class="facts">
+    {{ with .Params.category }}<div><dt>Category</dt><dd>{{ . }}</dd></div>{{ end }}
+    {{ with .Params.status }}<div><dt>Status</dt><dd>{{ . }}</dd></div>{{ end }}
+    {{ with .Params.docs }}<div><dt>Docs</dt><dd><a href="{{ . }}" rel="noopener">{{ . }}</a></dd></div>{{ end }}
+  </dl>
+  {{ with .Params.components }}
+    <h2>Components</h2>
+    <ul class="chips plain">{{ range . }}<li class="chip chip--static">{{ . }}</li>{{ end }}</ul>
+  {{ end }}
+  <div class="prose">{{ .Content }}</div>
+</article>
+{{ end }}

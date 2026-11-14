@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section class="wrap">
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}<p class="lede">{{ . | plainify }}</p>{{ end }}
+  {{ with site.Taxonomies.categories }}
+  <ul class="chips plain" aria-label="Categories" data-pagefind-ignore>
+    {{ range .Alphabetical }}<li><a class="chip" href="{{ .Page.RelPermalink }}">{{ .Page.Title }} <span class="muted">{{ .Count }}</span></a></li>{{ end }}
+  </ul>
+  {{ end }}
+  {{ $pag := .Paginate (.Pages.ByDate.Reverse) }}
+  <div class="grid grid--3">
+    {{ range $pag.Pages }}{{ partial "post-card.html" . }}{{ end }}
+  </div>
+  {{ partial "pagination.html" . }}
+</section>
+{{ end }}

@@ -1,0 +1,10 @@
+{{ define "main" }}
+<article class="wrap prose-wrap">
+  <div class="avatar avatar--lg" aria-hidden="true">{{ substr .Title 0 1 }}</div>
+  <h1>{{ .Title }}</h1>
+  <p class="lede">{{ .Params.role }}</p>
+  <div class="prose">{{ .Content }}</div>
+  {{ $posts := where (where site.RegularPages "Section" "blog") "Params.author" .File.ContentBaseName }}
+  {{ with $posts }}<h2>Posts by {{ $.Title }}</h2><ul class="plain list-rows">{{ range .ByDate.Reverse }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}</ul>{{ end }}
+</article>
+{{ end }}

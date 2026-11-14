@@ -1,0 +1,7 @@
+<a class="card card--link" href="{{ .RelPermalink }}" data-filter-item data-category="{{ .Params.category }}" data-name="{{ .Title | lower }}">
+  <div class="card__body">
+    <h3>{{ .Title }}</h3>
+    <p class="muted">{{ .Params.summary | default .Description }}</p>
+    <p class="meta"><span class="chip chip--static">{{ .Params.category }}</span>{{ with .Params.status }} <span class="meta">{{ . }}</span>{{ end }}</p>
+  </div>
+</a>

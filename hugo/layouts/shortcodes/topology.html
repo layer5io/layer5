@@ -1,0 +1,7 @@
+{{- /* {{< topology name="meshery" height="360" >}} — reads data/topologies/<name>.json; Cytoscape loads lazily when scrolled into view. */ -}}
+{{- $g := index site.Data.topologies (.Get "name") -}}
+{{- if $g -}}
+<div class="topology" data-cytoscape-graph="{{ $g | jsonify }}" style="height: {{ .Get "height" | default "360" }}px" role="img" aria-label="{{ .Get "label" | default "Architecture topology diagram" }}"></div>
+{{- else -}}
+  {{- errorf "topology shortcode: no data/topologies/%s.json (%s)" (.Get "name") .Position -}}
+{{- end -}}

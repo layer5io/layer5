@@ -1,0 +1,9 @@
+User-agent: *
+{{- if or (eq hugo.Environment "preview") (eq (getenv "HUGO_PREVIEW") "true") }}
+Disallow: /
+{{- else }}
+Disallow: /hugo-preview/
+Disallow: /pr-preview/
+Allow: /
+Sitemap: {{ "sitemap.xml" | absURL }}
+{{- end }}

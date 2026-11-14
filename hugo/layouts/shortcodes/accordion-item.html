@@ -1,0 +1,4 @@
+<details class="accordion__item"{{ if .Get "open" }} open{{ end }}>
+  <summary>{{ .Get "title" }}</summary>
+  <div class="accordion__panel">{{ .Inner | markdownify }}</div>
+</details>

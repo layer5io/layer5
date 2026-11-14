@@ -1,0 +1,14 @@
+{
+  "name": "layer5-hugo-poc",
+  "private": true,
+  "description": "Build-time tooling only. Nothing here ships to the browser.",
+  "scripts": {
+    "test": "node --test \"scripts/test/*.test.mjs\"",
+    "migrate": "node scripts/migrate-mdx.mjs",
+    "verify-urls": "node scripts/verify-urls.mjs",
+    "index": "pagefind --site public"
+  },
+  "devDependencies": {
+    "pagefind": "^1.1.0"
+  }
+}

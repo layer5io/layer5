@@ -1,0 +1,33 @@
+{
+  "generated": "2026-11-02",
+  "source": "seed from the migration plan (estimates) and POC sample content",
+  "collections": [
+    {"name": "blog", "estimate": 200, "converted": 3, "owner": ""},
+    {"name": "integrations", "estimate": 300, "converted": 8, "owner": ""},
+    {"name": "members", "estimate": 200, "converted": 4, "owner": ""},
+    {"name": "handbook", "estimate": 60, "converted": 2, "owner": ""},
+    {"name": "events", "estimate": 40, "converted": 2, "owner": ""},
+    {"name": "news", "estimate": 40, "converted": 1, "owner": ""},
+    {"name": "programs", "estimate": 20, "converted": 0, "owner": ""},
+    {"name": "resources", "estimate": 100, "converted": 0, "owner": ""},
+    {"name": "service-mesh-books", "estimate": 10, "converted": 0, "owner": ""},
+    {"name": "workshops", "estimate": 30, "converted": 0, "owner": ""},
+    {"name": "sistent", "estimate": 50, "converted": 0, "owner": ""}
+  ],
+  "budget": [
+    {"metric": "Full site build", "gatsby": "12–22 min (CI)", "target": "< 6 s", "measured": ""},
+    {"metric": "Peak build memory", "gatsby": "8–16+ GB", "target": "< 250 MB", "measured": ""},
+    {"metric": "Dev server start", "gatsby": "45–90 s (lite)", "target": "< 800 ms", "measured": ""},
+    {"metric": "Lighthouse (perf / SEO / a11y)", "gatsby": "not recorded", "target": "95 / 100 / 100", "measured": ""}
+  ],
+  "shortcodes": [
+    {"name": "button", "jsx": "Button", "status": "done in POC"},
+    {"name": "cta-fullwidth", "jsx": "CTA_FullWidth", "status": "done in POC"},
+    {"name": "terminal", "jsx": "Terminal", "status": "done in POC"},
+    {"name": "accordion", "jsx": "Accordion", "status": "done in POC"},
+    {"name": "card", "jsx": "Card", "status": "done in POC"},
+    {"name": "topology", "jsx": "Cytoscape graph", "status": "done in POC"},
+    {"name": "calendar", "jsx": "FullCalendar", "status": "done in POC"},
+    {"name": "meshery-embed", "jsx": "meshery-design-embed", "status": "open: good first issue"}
+  ]
+}

@@ -1,0 +1,7 @@
+{{ define "main" }}
+<article class="wrap prose-wrap">
+  <h1>{{ .Title }}</h1>
+  {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+  <div class="prose">{{ .Content }}</div>
+</article>
+{{ end }}

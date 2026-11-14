@@ -1,0 +1,6 @@
+{{- /* {{< terminal >}}cmd{{< /terminal >}} or {{< terminal code="cmd" >}} — replaces <Terminal> */ -}}
+{{- $code := .Get "code" | default .Inner | strings.TrimSpace -}}
+<div class="terminal" data-terminal>
+  <div class="terminal__bar"><span>{{ .Get "title" | default "terminal" }}</span><button class="terminal__copy" type="button" data-copy>Copy</button></div>
+  <pre><code>{{ $code }}</code></pre>
+</div>

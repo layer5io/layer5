@@ -1,0 +1,9 @@
+<div class="cta">
+  <div>
+    <h2>{{ .title }}</h2>
+    {{ with .description }}<p>{{ . }}</p>{{ end }}
+  </div>
+  <div class="cta__actions">
+    {{ with .button_url }}{{ partial "shortcode-button.html" (dict "url" . "text" ($.button_text | default "Learn more") "style" "invert") }}{{ end }}
+  </div>
+</div>

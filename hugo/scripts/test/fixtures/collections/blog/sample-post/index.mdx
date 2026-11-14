@@ -1,0 +1,41 @@
+---
+title: Sample Post
+date: 2024-03-02
+published: true
+thumbnail: ./cover.png
+redirect_from:
+  - /blog/old-sample/
+---
+import { Button } from "../../../reusecore/Button";
+import {
+  CTA_FullWidth,
+  Other
+} from "../../../components/CTA";
+import Terminal from '../../../components/Terminal'
+
+{/* an MDX comment */}
+
+Intro with inline code `<Button>` that must not change.
+
+<Button url="/join" primary>Join Us</Button>
+
+<Button to='/docs' text="Read docs" />
+
+<CTA_FullWidth title='Say "hi"' description={"Short pitch"} buttonText="Go" buttonUrl="https://layer5.io" className="x" />
+
+<Terminal code={`mesheryctl system start`} />
+
+<Terminal>
+brew install mesheryctl
+</Terminal>
+
+```jsx
+<Button url="/inside-fence">Untouched</Button>
+```
+
+<Accordion>
+  <AccordionItem title="Q1">Answer **one**</AccordionItem>
+  <AccordionItem title="Q2">Answer two</AccordionItem>
+</Accordion>
+
+<FancyThing foo="bar" />
