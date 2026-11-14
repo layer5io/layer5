@@ -22,7 +22,7 @@ const TOCWrapper = styled.div`
       &:hover {
         svg,
         h4 {
-          color: #3c494f;
+          color: ${(props) => props.theme.green00B39FToGreen3C494F};
         }
       }
     }
