@@ -96,11 +96,10 @@ const SPECIAL = {
     kind: "error-page",
     note: "Production returns 200 both with and without the trailing slash (every other page 301s the slashless form). Hugo serves this from its 404 template, not a normal route.",
   },
-  "/community/Loader.style/": {
-    kind: "helper-file",
-    note: "Styled-components spinner wrapper, not a page. Live on production only because the file sits in src/pages. Maintainers decide whether to move it to src/components.",
-  },
 };
+// Helper-looking files in src/pages (styling helpers, stories, _private files) are not routes.
+// They are excluded from pages, URLs, phase counts and owner history.
+const HELPER_RE = /\.styles?\.[jt]sx?$|\.stories\.|(^|\/)_[^/]*$/;
 const MAINTAINERS = ["leecalcote", "lee calcote", "maanvi212006"];
 const EXCLUDE = new Set(
   [...MAINTAINERS, ...(opt("exclude") ?? "").split(",")]
@@ -534,9 +533,10 @@ async function verifyLive(rows, base) {
 async function main() {
   if (!fs.existsSync(PAGES)) throw new Error(`No src/pages under ${ROOT}. Run on a branch that still has the Gatsby source.`);
   const allPageDirFiles = walk(PAGES);
-  const files = allPageDirFiles.filter(isPage).sort();
+  const pageCandidates = allPageDirFiles.filter(isPage).sort();
+  const files = pageCandidates.filter((f) => !HELPER_RE.test(rel(f)));
+  const helperFiles = pageCandidates.filter((f) => HELPER_RE.test(rel(f))).map(rel);
   const skippedFiles = allPageDirFiles.filter((f) => !isPage(f)).map(rel).sort();
-  const helperLooking = files.filter((f) => /\.styles?\.[jt]sx?$|\.stories\.|(^|\/)_[^/]*$/.test(rel(f))).map(rel);
   const rows = [], firstByUrl = new Map(), duplicates = [], unmatched = [];
   const areaPaths = new Map();
 
@@ -608,6 +608,7 @@ async function main() {
     issues,
     area_owners: areaOwners,
     owners,
+    helper_files: helperFiles,
     pages: ordered,
   };
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
@@ -617,7 +618,7 @@ async function main() {
   console.log(`Wrote ${rel(OUT)}: ${files.length} page files -> ${firstByUrl.size} unique URLs.`);
   console.log(`src/pages holds ${allPageDirFiles.length} files: ${files.length} counted as pages, ${skippedFiles.length} not.`);
   if (skippedFiles.length) console.log(`  not counted: ${skippedFiles.join(", ")}`);
-  if (helperLooking.length) console.log(`  counted, but they look like helper files rather than pages: ${helperLooking.join(", ")}`);
+  if (helperFiles.length) console.log(`  helper files excluded (listed under helper_files, not pages or routes): ${helperFiles.join(", ")}`);
   const special = ordered.filter((r) => r.special);
   if (special.length) console.log(`Special pages kept on purpose: ${special.map((r) => `${r.url} (${r.special})`).join(", ")}`);
   console.log(`Owner history: ${REF ?? "HEAD"} (commits since ${SINCE}; >= ${MIN_COMMITS} commits across >= ${MIN_MONTHS} months)`);
