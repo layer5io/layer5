@@ -16,7 +16,7 @@ import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
 import CookieConsent from "./CookieConsent";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, pageContext }) => {
 
   return (
     <>
@@ -26,13 +26,14 @@ const Layout = ({ children }) => {
       <CookieConsent />
       {children}
       <ScrollToTopBtn />
-      <Footer location={children.props.location} />
+      <Footer editUrl={pageContext?.editUrl} />
     </>
   );
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  pageContext: PropTypes.object,
 };
 
 export default Layout;
