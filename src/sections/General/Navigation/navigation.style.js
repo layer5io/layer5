@@ -660,13 +660,12 @@ const NavigationWrap = styled.header`
     .mobile-nav-item-header > .menu-item {
       flex: 1;
     }
-
     .mobile-submenu-toggle {
       display: flex;
       align-items: center;
       justify-content: center;
-      min-width: 40px;
-      min-height: 40px;
+      min-width: 44px;
+      min-height: 44px;
       padding: 8px;
       border: none;
       background: transparent;
@@ -674,7 +673,6 @@ const NavigationWrap = styled.header`
       cursor: pointer;
       font-size: 24px;
     }
-
     .mobile-submenu-toggle span {
       display: inline-block;
       transition: transform 0.2s ease;
