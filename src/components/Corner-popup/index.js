@@ -22,11 +22,20 @@ const CornerPopup = () => {
       <div>
         <div className="popup">
           <div className="popup-inner">
-            <div className="close-btn" onClick={() => setShowPopup(false)}>
-              <CloseIcon />
-            </div>
+            <button
+              type="button"
+              className="close-btn"
+              aria-label="Close popup"
+              onClick={() => setShowPopup(false)}
+            >
+              <CloseIcon aria-hidden="true" focusable="false" />
+            </button>
             <a href="https://play.meshery.io/">
-              <img className="popup-image" src={popupImageSmall} />
+              <img
+                className="popup-image"
+                src={popupImageSmall}
+                alt="Explore Meshery's cloud native playground"
+              />
             </a>
             <Button $primary className="explore-playground-button" title="Access Playground" $url="https://play.meshery.io/" $external={true}/>
           </div>
