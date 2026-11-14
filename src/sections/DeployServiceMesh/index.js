@@ -13,7 +13,7 @@ import { Link } from "gatsby";
 import bookCover from "../../assets/images/learn/book-cover.webp";
 
 const RangeSlider = memo(
-  ({ label, onChange, value, ...sliderProps }) => {
+  ({ label, onChange, value, factorId, ...sliderProps }) => {
     const [sliderVal, setSliderVal] = useState(0);
     const [mouseState, setMouseState] = useState(null);
 
@@ -22,6 +22,9 @@ const RangeSlider = memo(
     }, [value]);
     const changeCallback = e => {
       setSliderVal(e.target.value);
+      if (mouseState !== "down") {
+        onChange(e.target.value);
+      }
     };
 
     const sliderStyle = {
@@ -45,7 +48,8 @@ const RangeSlider = memo(
           value={sliderVal}
           {...sliderProps}
           className="slider"
-          id="myRange"
+          id={`${factorId}-slider`}
+          aria-labelledby={`${factorId}-label`}
           style={sliderStyle}
           onChange={changeCallback}
           onMouseDown={() => setMouseState("down")}
@@ -324,31 +328,31 @@ const ServiceMesh = () => {
           </div>
           <div>
             <div className="range-slider">
-              <div id="slider">
-                <h4>
+              <div className="slider-container">
+                <h4 id="dsm-interservice-communication-label">
                   Interservice Communication
                 </h4>
-                <RangeSlider {...sliderProps1}/>
+                <RangeSlider {...sliderProps1} factorId="dsm-interservice-communication"/>
                 <h5>
                   {parentVal1}
                 </h5>
               </div>
 
-              <div id="slider">
-                <h4>
+              <div className="slider-container">
+                <h4 id="dsm-observability-label">
                   Observability
                 </h4>
-                <RangeSlider {...sliderProps2}/>
+                <RangeSlider {...sliderProps2} factorId="dsm-observability"/>
                 <h5>
                   {parentVal2}
                 </h5>
               </div>
 
-              <div id="slider">
-                <h4>
+              <div className="slider-container">
+                <h4 id="dsm-api-perspective-label">
                   Perspective from which you think of your APIs
                 </h4>
-                <RangeSlider {...sliderProps3}/>
+                <RangeSlider {...sliderProps3} factorId="dsm-api-perspective"/>
                 <h5>
                   {parentVal3}
                 </h5>
@@ -377,51 +381,51 @@ const ServiceMesh = () => {
             }
             <div className={!flag ? "blur" : ""}>
               <div className="range-slider">
-                <div id="slider">
-                  <h4>
+                <div className="slider-container">
+                  <h4 id="dsm-security-model-label">
                         Security Model
                   </h4>
-                  <RangeSlider {...sliderProps4}/>
+                  <RangeSlider {...sliderProps4} factorId="dsm-security-model"/>
                   <h5>
                     {parentVal4}
                   </h5>
                 </div>
 
-                <div id="slider">
-                  <h4>
+                <div className="slider-container">
+                  <h4 id="dsm-service-count-label">
                         # of services
                   </h4>
-                  <RangeSlider {...sliderProps5}/>
+                  <RangeSlider {...sliderProps5} factorId="dsm-service-count"/>
                   <h5>
                     {parentVal5}
                   </h5>
                 </div>
 
-                <div id="slider">
-                  <h4>
+                <div className="slider-container">
+                  <h4 id="dsm-service-reliability-label">
                         Service reliability
                   </h4>
-                  <RangeSlider {...sliderProps6}/>
+                  <RangeSlider {...sliderProps6} factorId="dsm-service-reliability"/>
                   <h5>
                     {parentVal6}
                   </h5>
                 </div>
 
-                <div id="slider">
-                  <h4>
+                <div className="slider-container">
+                  <h4 id="dsm-organization-size-label">
                         Size of your organization
                   </h4>
-                  <RangeSlider {...sliderProps7}/>
+                  <RangeSlider {...sliderProps7} factorId="dsm-organization-size"/>
                   <h5>
                     {parentVal7}
                   </h5>
                 </div>
 
-                <div id="slider">
-                  <h4>
+                <div className="slider-container">
+                  <h4 id="dsm-stack-diversity-label">
                         Diversity of application stack
                   </h4>
-                  <RangeSlider {...sliderProps8}/>
+                  <RangeSlider {...sliderProps8} factorId="dsm-stack-diversity"/>
                   <h5>
                     {parentVal8}
                   </h5>
