@@ -192,6 +192,12 @@ const BannerWrapper = styled.div`
     margin-top: 5%;
   width: 80%;
   border: 1px solid #fff;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
   }
 }
 `;
