@@ -269,13 +269,38 @@ const SistentTokens = () => {
                 <div className="items">
                   <SistentThemeProvider initialMode={isDark ? "dark" : "light"}>
                     <Box>
-                      <Typography variant="h1" gutterBottom>
+                      <Typography
+                        variant="h1"
+                        gutterBottom
+                        sx={(theme) => ({
+                          [theme.breakpoints.down("sm")]: {
+                            fontSize: "clamp(1.75rem, 8vw, 3rem)",
+                            overflowWrap: "anywhere",
+                          },
+                        })}
+                      >
                         Heading 1
                       </Typography>
-                      <Typography variant="h3" gutterBottom>
+                      <Typography
+                        variant="h3"
+                        gutterBottom
+                        sx={(theme) => ({
+                          [theme.breakpoints.down("sm")]: {
+                            fontSize: "clamp(1.25rem, 6.5vw, 2rem)",
+                          },
+                        })}
+                      >
                         Heading 3
                       </Typography>
-                      <Typography variant="h6" gutterBottom>
+                      <Typography
+                        variant="h6"
+                        gutterBottom
+                        sx={(theme) => ({
+                          [theme.breakpoints.down("sm")]: {
+                            fontSize: "clamp(1rem, 5vw, 1.25rem)",
+                          },
+                        })}
+                      >
                         Heading 6
                       </Typography>
                       <Typography variant="body1" gutterBottom>
