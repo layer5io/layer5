@@ -54,6 +54,44 @@ export const HoneycombGrid = styled.div`
     color: ${(props) => props.theme.white};
   }
 
+  /* Category dropdown replaces the slider on mobile only. */
+  .category-dropdown {
+    display: none;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+      color: ${(props) => props.theme.whiteToBlack};
+    }
+
+    select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid ${(props) => props.theme.headingColor};
+      border-radius: 0.625rem;
+      background-color: transparent;
+      color: ${(props) => props.theme.whiteToBlack};
+      font-size: 1rem;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      option {
+        color: #1e2117;
+      }
+    }
+  }
+
+  @media (max-width: 540px) {
+    .category-slider {
+      display: none;
+    }
+
+    .category-dropdown {
+      display: block;
+    }
+  }
+
   ul {
     margin: 2.5rem 0 0 0;
     padding-left: 50px;
