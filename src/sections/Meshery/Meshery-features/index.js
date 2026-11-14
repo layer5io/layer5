@@ -3,11 +3,15 @@ import styled from "styled-components";
 import { Container } from "../../../reusecore/Layout";
 // import Terminal from "../../../components/Terminal";
 import Features from "../../../components/Features-carousel";
-import img3 from "./feature-images/meshery-performance.gif";
+import img3 from "./feature-images/meshery-performance.mp4";
+import img3Poster from "./feature-images/meshery-performance-poster.webp";
 import img5 from "./feature-images/meshery-snapshot.webp";
 import img6 from "./feature-images/edge_mount_relationship_pod_persistent_volume.svg";
-import img2 from "./feature-images/workspace.gif";
-import multiClusterGif from "./feature-images/multi-cluster-management.gif";
+import img2 from "./feature-images/workspace.mp4";
+import img2Poster from "./feature-images/workspace-poster.webp";
+import multiClusterVideo from "./feature-images/multi-cluster-management.mp4";
+import multiClusterPoster from "./feature-images/multi-cluster-management-poster.webp";
+import AutoVideo from "../../../components/AutoVideo";
 import img1 from "./feature-images/KanvasDesigner.webp";
 import img4 from "./feature-images/meshery-catalog.webp";
 import img7 from "./feature-images/extensions.webp";
@@ -31,6 +35,10 @@ const MesheryFeaturesWrapper = styled.div`
     img {
       padding: 0 3rem 1rem;
       height:20rem;
+    }
+    .feature-video {
+      max-width: calc(100% - 6rem);
+      margin-bottom: 1rem;
     }
   }
   .feature-expose-full {
@@ -66,7 +74,7 @@ const MesheryFeatures = () => {
                 "Your team's Google Drive for cloud native projects. Organize work, collaborate with teams, and control access to Environments and resources with shared workspaces.",
               learnMoreLink: "https://docs.meshery.io/concepts/logical/workspaces",
               content: (
-                <img src={img2} alt="Workspaces Team Collaboration" loading="lazy" />
+                <AutoVideo src={img2} poster={img2Poster} width={1048} height={840} alt="Workspaces Team Collaboration" />
               ),
             },
             {
@@ -76,7 +84,7 @@ const MesheryFeatures = () => {
                 "Manage multiple Kubernetes clusters across any infrastructure from a single console. Perform dry-run deployments and validate configurations before applying changes.",
               learnMoreLink: "https://docs.meshery.io/guides/configuration-management/",
               content: (
-                <img src={multiClusterGif} alt="Workspaces Team Collaboration" loading="lazy" />
+                <AutoVideo src={multiClusterVideo} poster={multiClusterPoster} width={758} height={722} alt="Multi-Cluster Kubernetes Management" />
               ),
             },
             {
@@ -103,7 +111,7 @@ const MesheryFeatures = () => {
               learnMoreLink: "https://playground.meshery.io/performance",
               content: (
                 <div className="feature-expose">
-                  <img src={img3} alt="Performance Management" loading="lazy" />
+                  <AutoVideo src={img3} poster={img3Poster} width={854} height={480} alt="Performance Management" className="feature-video" />
                   <p>
                     Built-in statistical analysis, performance profiles for consistent testing,
                     and integration with Prometheus and Grafana for comprehensive metrics collection.

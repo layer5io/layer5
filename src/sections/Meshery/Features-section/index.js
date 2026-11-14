@@ -2,17 +2,19 @@ import React from "react";
 import { Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import Slider from "react-slick";
-import Slide1 from "../../../assets/images/kanvas/gifs/start-from-scratch.gif";
-import Slide2 from "../../../assets/images/kanvas/gifs/catalog.gif";
+import Slide1 from "../../../assets/images/kanvas/gifs/start-from-scratch.mp4";
+import Slide1Poster from "../../../assets/images/kanvas/gifs/start-from-scratch-poster.webp";
+import Slide2 from "../../../assets/images/kanvas/gifs/catalog.mp4";
+import Slide2Poster from "../../../assets/images/kanvas/gifs/catalog-poster.webp";
 import Slide3 from "../../../assets/images/kanvas/gifs/rendered-design.webp";
 import FeaturesSectionWrapper from "./features-section.style";
+import AutoVideo from "../../../components/AutoVideo";
 
 import { StaticImage } from "gatsby-plugin-image";
 
-const slide2Path = "../../../assets/images/kanvas/gifs/catalog.gif";
 const slide3Path = "../../../assets/images/kanvas/gifs/rendered-design.webp";
 
-const slides_list = [Slide1, Slide2, Slide3];
+const slides_list = [Slide1Poster, Slide2Poster, Slide3];
 
 const FeaturesSection = () => {
   var settings = {
@@ -68,10 +70,10 @@ const FeaturesSection = () => {
             <Col $xs={12} $xl={8} className="smp-section-carousel">
               <Slider {...settings}>
                 <div>
-                  <img src={Slide1} alt="Slide 1" />
+                  <AutoVideo src={Slide1} poster={Slide1Poster} width={1914} height={878} alt="Slide 1" />
                 </div>
                 <div>
-                  <StaticImage src={slide2Path} alt="Slide 2" loading="lazy" />
+                  <AutoVideo src={Slide2} poster={Slide2Poster} width={1920} height={860} alt="Slide 2" />
                 </div>
                 <div>
                   <StaticImage src={slide3Path} alt="Slide 3" loading="lazy" />

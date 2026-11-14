@@ -11,7 +11,7 @@ const FeatureUseCardWrapper = styled.div`
     border: 1px solid var(--grey-light, #A0AAAA);
     margin: 0 auto 10px auto;
     
-    img{
+    img, video{
       border-radius: 0.5rem;
     }
     
