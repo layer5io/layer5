@@ -140,7 +140,7 @@ const Feature = () => {
             <p className="caption">
             Effortlessly create software architectures, application architectures and system architectures in minutes.
             </p>
-            <Link className="link" href="/solutions/architecture-diagram">Learn more &rarr;</Link>
+            <Link className="link" to="/solutions/architecture-diagram">Learn more &rarr;</Link>
           </Col>
         </Row>
         <Row className="catalog">
@@ -151,7 +151,7 @@ const Feature = () => {
             <p className="caption">
             Optimize and streamline operations through strategic orchestration of your infrastructure.
             </p>
-            <Link className="link" href="/solutions/orchestration-management">Learn more &rarr;</Link>
+            <Link className="link" to="/solutions/orchestration-management">Learn more &rarr;</Link>
           </Col>
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">

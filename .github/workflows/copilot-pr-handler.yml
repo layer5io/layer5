@@ -52,11 +52,12 @@ jobs:
     name: Handle Copilot PR
     runs-on: ubuntu-24.04
     # Only run for the layer5io/layer5 repository
-    # Only run for PRs from the Copilot SWE agent (copilot[bot])
+    # Only run for PRs from the Copilot SWE agent (opened as "Copilot"; "copilot[bot]" kept as a fallback)
     if: |
       github.repository == 'layer5io/layer5' &&
       (
         github.event_name == 'workflow_dispatch' ||
+        github.event.pull_request.user.login == 'Copilot' ||
         github.event.pull_request.user.login == 'copilot[bot]'
       )
 
@@ -65,6 +66,9 @@ jobs:
       # Step 1: Introspect and log all relevant context for debugging
       # -------------------------------------------------------------------------
       - name: 🔍 Introspect Inputs and Context
+        # Pass the branch name via env so it is never parsed as shell code
+        env:
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref || 'N/A' }}
         run: |
           echo "::group::Workflow Context"
           echo "Event Name: ${{ github.event_name }}"
@@ -77,7 +81,7 @@ jobs:
           echo "PR Author: ${{ github.event.pull_request.user.login || 'N/A' }}"
           echo "PR Draft Status: ${{ github.event.pull_request.draft || 'N/A' }}"
           echo "PR Head SHA: ${{ github.event.pull_request.head.sha || 'N/A' }}"
-          echo "PR Head Ref: ${{ github.event.pull_request.head.ref || 'N/A' }}"
+          echo "PR Head Ref: $PR_HEAD_REF"
           echo "::endgroup::"
 
           echo "::group::Debug Settings"
@@ -170,10 +174,13 @@ jobs:
               core.info(`Found ${runs.total_count} workflow run(s) awaiting approval`);
 
               // Filter runs for this PR's branch/SHA
+              // Only approve runs from this repository, so a fork branch
+              // with the same name as a Copilot branch is never approved
               const pendingRuns = runs.workflow_runs.filter(run => {
+                const isSameRepo = run.head_repository?.full_name === `${context.repo.owner}/${context.repo.repo}`;
                 const matchesSha = headSha && run.head_sha === headSha;
                 const matchesRef = headRef && run.head_branch === headRef;
-                return matchesSha || matchesRef;
+                return isSameRepo && (matchesSha || matchesRef);
               });
 
               core.info(`Found ${pendingRuns.length} pending run(s) for this PR`);

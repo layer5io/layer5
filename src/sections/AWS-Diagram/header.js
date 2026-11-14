@@ -124,8 +124,8 @@ const Header = () => {
                 <Button
                   $primary
                   title="Try Kanvas Now!"
-                  $external={true}
-                  $url="/kanvas"
+                  $external={false}
+                  $url="/cloud-native-management/kanvas"
                 />
               </div>
             </Col>

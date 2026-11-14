@@ -10,9 +10,14 @@ import useHasMounted from "../../utils/useHasMounted";
 
 const RelatedResources = props => {
 
-  const { resourceType , relatedResources , mainHead , lastCardHead , linkToAllItems } = props;
+  const { resourceType , relatedResources , mainHead , lastCardHead , linkToAllItems, fitContainer } = props;
 
   const hasMounted = useHasMounted();
+
+  const shouldFitContainer = (frontmatter) => {
+    if (typeof fitContainer === "boolean") return fitContainer;
+    return frontmatter?.type === "Article" || frontmatter?.type === "Comparison";
+  };
 
   return (
     <RelatedResourcesWrapper>
@@ -33,13 +38,13 @@ const RelatedResources = props => {
                     resourceType === "resources" ? relatedResources.map(({ resource }) => {
                       return (
                         <Col className="cardCol" $xs={12} key={resource.fields.slug}>
-                          <Card frontmatter={resource.frontmatter} fields={resource.fields}/>
+                          <Card frontmatter={resource.frontmatter} fields={resource.fields} fitContainer={shouldFitContainer(resource.frontmatter)}/>
                         </Col>
                       );
                     }) : relatedResources.map((resource) => {
                       return (
                         <Col className="cardCol" $xs={12} key={resource.fields.slug}>
-                          <Card frontmatter={resource.frontmatter} fields={resource.fields}/>
+                          <Card frontmatter={resource.frontmatter} fields={resource.fields} fitContainer={shouldFitContainer(resource.frontmatter)}/>
                         </Col>
                       );
                     })

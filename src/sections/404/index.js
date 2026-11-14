@@ -117,8 +117,8 @@ const L404 = () => {
       const issueBody = encodeURIComponent(
         "### Description\n\n" +
           "Broken link encountered on the Layer5 website.\n\n" +
-          `- Broken URL: ${brokenUrl}\n` +
-          `- Referrer: ${referrer}\n\n` +
+          `- Broken URL: \`${brokenUrl}\`\n` +
+          `- Referrer: \`${referrer}\`\n\n` +
           "### Expected Behavior\n\n" +
           "The requested page should resolve successfully instead of returning a 404 page.\n\n" +
           "### Screenshots\n\n" +

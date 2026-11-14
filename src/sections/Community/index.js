@@ -160,6 +160,7 @@ const CommunityPage = () => {
                   $primary
                   title="Explore Badges Now"
                   $url="https://badges.layer5.io"
+                  $external={true}
                 />
               </Col>
             </div>

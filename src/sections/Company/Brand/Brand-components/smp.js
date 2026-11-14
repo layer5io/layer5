@@ -1,4 +1,5 @@
 import React from "react";
+import { withPrefix } from "gatsby";
 import styled from "styled-components";
 import { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
@@ -32,7 +33,7 @@ const SMPBrand = () => {
             </h1>
           </Col>
           <Col $xs={12} $sm={6} className="download-button">
-            <a href="/brand/smp-brand-kit.zip">
+            <a href={withPrefix("/brand/smp-brand-kit.zip")}>
               <Button $primary title="Download Logo Assets" $external={true}>
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>

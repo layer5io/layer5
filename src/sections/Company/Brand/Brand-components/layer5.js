@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
 import { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
+import { withPrefix } from "gatsby";
 import Layer5WhiteBg from "../../../../../static/brand/layer5/layer5-only/png/layer5-white-bg.webp";
 import Bookmarks from "../../../../assets/images/layer5/bookmarks.webp";
 import Layer5Icon from "../../../../../static/brand/layer5/5 icon/svg/light/5-light-no-trim.svg";
@@ -32,7 +32,7 @@ const Layer5Brand = () => {
             </h1>
           </Col>
           <Col $xs={12} $sm={6} className="download-button">
-            <a href="/brand/layer5-brand-kit.zip">
+            <a href={withPrefix("/brand/layer5-brand-kit.zip")}>
               <Button $primary title="Download Logo Assets" $external={false}>
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>
@@ -122,9 +122,9 @@ const Layer5Brand = () => {
               Media available for print.
             </p>
             <Row className="bookmarks">
-              <Link to="/brand/bookmarks.pdf">
+              <a href={withPrefix("/brand/bookmarks.pdf")} target="_blank" rel="noreferrer">
                 <img className="bookmarks" src={Bookmarks} alt="Layer5 and Meshery Bookmarks" />
-              </Link>
+              </a>
             </Row>
           </Col>
         </Row>

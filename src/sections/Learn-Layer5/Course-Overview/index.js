@@ -77,7 +77,12 @@ const CourseOverview = ({ course, chapters, serviceMeshesList, children }) => {
 
       return (
         <div className="service-mesh-courses" key={index}>
-          <Image {...meshImage.imagepath} className="docker" alt={sm} />
+          <Image
+            {...meshImage.imagepath}
+            className="docker"
+            alt={sm}
+            fitContainer
+          />
         </div>
       );
     });

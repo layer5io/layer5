@@ -100,7 +100,7 @@ const NewsSidebar = (props) => {
             <FiDownloadCloud size={21} className="icon-left" />
           </Button>
         </a> : ""}
-      <Link to="/brand">
+      <Link to="/company/brand">
         <Button $secondary title="Layer5 brand kit" $external={true} />
       </Link>
       <a href="mailto:press@layer5.io" target="_blank" rel="noreferrer">
@@ -111,7 +111,7 @@ const NewsSidebar = (props) => {
           <p>press@layer5.io</p>
         </div>
       </a>
-      <Link to="/kanvas">
+      <Link to="/cloud-native-management/kanvas">
         <div className="cta">
           <h4 className="cta_heading">
         Kanvas
@@ -123,7 +123,7 @@ const NewsSidebar = (props) => {
             <div className="chapter-link">
               <Button $primary title="Try Now!"
                 className="btn"
-                $url="/kanvas"
+                $url="/cloud-native-management/kanvas"
                 $external={false}
               />
             </div>

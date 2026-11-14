@@ -219,9 +219,9 @@ const CookieNotice = () => {
               <p className="address">
                 <b>Layer5, Inc</b>
                 <br />
-              1000 Congress Avenue
+              701 Brazos Street, Suite 1600
                 <br />
-              Austin, Texas 78735
+              Austin, Texas 78701
                 <br />
               Email Address: <a href="mailto:privacy@layer5.io">privacy@layer5.io</a>
                 <br />

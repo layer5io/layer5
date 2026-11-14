@@ -1,6 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Table from "../../components/SMI-Table";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { smi_data } from "../../collections/landscape/smi";
+
+const specOrder = ["traffic-access", "traffic-split", "traffic-spec"];
 
 function SMI_Compatibility() {
 
@@ -34,59 +37,14 @@ function SMI_Compatibility() {
     []
   );
 
-  const [smiData, setSmiData] = useState(0);
-
-  useEffect(() => {
-    fetch("https://cloud.layer5.io/api/smi/results/public")
-      .then(response => response.json())
-      // Group by SMI-spec version
-      .then(results => {
-        let res = results.results.reduce( (reducedResults, currVal) => {
-          (reducedResults[currVal.more_details[0].smi_version.split("/")[0]] = reducedResults[currVal.more_details[0].smi_version.split("/")[0]] || []).push(currVal);
-          return reducedResults;
-        }, {});
-
-        return res;
-      })
-      // Group by Mesh
-      .then(result => {
-        let res = result;
-        Object.keys(result).map( key => {
-          res[key] = result[key].reduce( (redArr, currVal) => {
-            (redArr[currVal["mesh_name"]] = redArr[currVal["mesh_name"]] || []).push(currVal);
-            return redArr;
-          }, {});
-        });
-        return res;
-      })
-      // Find Latest test
-      .then( result => {
-        Object.keys(result).map( version => {
-          Object.keys(result[version]).map( mesh => {
-            result[version][mesh] = result[version][mesh].reduce((redObj, currVal) => {
-              return redObj.created_at > currVal.created_at ? redObj : currVal;
-            });
-          });
-        });
-        return result;
-      })
-      //Save
-      .then(res => {
-        let data = {};
-        Object.keys(res).map (ver => {
-          Object.keys(res[ver]).map(mesh => {
-            (data[ver] = data[ver] || []).push(res[ver][mesh]);
-          });
-        });
-
-        setSmiData(data);
-      });
-
-  }, []);
-
-  if (smiData == 0) {
-    return (<div></div>);
-  }
+  const smiData = React.useMemo(() => smi_data.reduce((grouped, result) => {
+    const ver = result.more_details[0].smi_version.split("/")[0];
+    (grouped[ver] = grouped[ver] || []).push({
+      ...result,
+      more_details: [...result.more_details].sort((a, b) => specOrder.indexOf(a.smi_specification) - specOrder.indexOf(b.smi_specification)),
+    });
+    return grouped;
+  }, {}), []);
 
   return (
     <Tabs style={{ overflow: "auto", whiteSpace: "nowrap" }} className="landscape-table">

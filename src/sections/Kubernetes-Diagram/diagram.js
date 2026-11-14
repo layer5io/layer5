@@ -180,7 +180,7 @@ const Kubernetes = () => {
             <p className="caption">
             Unlock the power of cloud-native computing without the coding complexity. Kanvas' drag-and-drop interface lets you visualize and build your cloud infrastructure effortlessly.
             </p>
-            <Link className="link" href="/cloud-native-management/kanvas/design">Learn more &rarr;</Link>
+            <Link className="link" to="/cloud-native-management/kanvas/design">Learn more &rarr;</Link>
           </Col>
         </Row>
         <Row className="catalog">
@@ -207,7 +207,7 @@ const Kubernetes = () => {
             <p className="caption">
             Fast-track your Kubernetes projects with our curated collection of quick-start templates for both diagramming and orchestration. These professional-grade blueprints are fully customizable, giving you the flexibility to adapt them to your unique requirements.
             </p>
-            <Link className="link" href="/cloud-native-management/catalog">Explore Kubernetes templates &rarr;</Link>
+            <Link className="link" to="/cloud-native-management/catalog">Explore Kubernetes templates &rarr;</Link>
           </Col>
         </Row>
         <RelatedPicks heading="kubernetes" />

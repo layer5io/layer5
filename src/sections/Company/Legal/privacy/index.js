@@ -375,9 +375,9 @@ const Privacy = () => {
               <p className="address">
                 <b>Layer5, Inc</b>
                 <br />
-              1000 Congress Avenue
+              701 Brazos Street, Suite 1600
                 <br />
-              Austin, Texas 78735
+              Austin, Texas 78701
                 <br />
               Email Address: legal@layer5.io
                 <br />

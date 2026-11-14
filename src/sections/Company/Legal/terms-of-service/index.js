@@ -143,8 +143,8 @@ Layer5 does not knowingly collect, either online or offline, personal informatio
               <p>Layer5 welcomes your questions or comments regarding the Terms:</p>
               <p className="address">
               Layer5, Inc<br />
-              1000 Congress Avenue<br />
-              Austin, Texas 78735<br />
+              701 Brazos Street, Suite 1600<br />
+              Austin, Texas 78701<br />
               Email Address: legal@layer5.io<br />
               Telephone number: 512-810-8200
               </p>

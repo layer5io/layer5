@@ -616,7 +616,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         component: `${integrationTemplate}?__contentFilePath=${integration.internal.contentFilePath}`,
         context: {
           slug: integration.fields.slug,
-          name: "_images/" + integration.fields.slug.split("/")[2],
+          name: "integrations/_images/" + integration.fields.slug.split("/")[2],
         },
       });
     });

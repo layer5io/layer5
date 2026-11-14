@@ -35,9 +35,9 @@ const FeatureHero = (props) => {
           <p className={"whiteboard-text"}>{props.data.sub_heading}</p>
           <Button
             $primary
-            title="Try Now!"
-            $url="https://cloud.layer5.io"
-            $external={true}
+            title={props.data.ctaTitle ?? "Try Now!"}
+            $url={props.data.ctaUrl ?? "https://cloud.layer5.io"}
+            $external={props.data.ctaExternal ?? true}
           />
         </div>
         <div className={"whiteboard-image"}>

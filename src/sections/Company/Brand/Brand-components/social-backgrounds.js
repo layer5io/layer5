@@ -1,4 +1,5 @@
 import React from "react";
+import { withPrefix } from "gatsby";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import Button from "../../../../reusecore/Button";
 import { Col, Row } from "../../../../reusecore/Layout";
@@ -17,7 +18,7 @@ const SocialBackgrounds = () => {
           </h1>
         </Col>
         <Col xs={12} sm={6} className="download-button">
-          <a href="/brand/layer5-social-backgrounds.zip">
+          <a href={withPrefix("/brand/layer5-social-backgrounds.zip")}>
             <Button $primary title="Download Social Backgrounds">
               <FiDownloadCloud size={21} className="icon-left" />
             </Button>

@@ -34,7 +34,7 @@ const TeaserModal = (props) => {
         ariaHideApp={false}
         contentLabel={title}
       >
-        <Button secondary className="close-modal-btn" onClick={closeModal}>
+        <Button $secondary className="close-modal-btn" onClick={closeModal} aria-label="Close modal">
           {" "}
           <GrFormClose />
         </Button>

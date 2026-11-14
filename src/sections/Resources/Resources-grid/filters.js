@@ -122,7 +122,7 @@ const Navigation = (props) => {
 
                       type.fieldValue === x.value &&
                           <>
-                            <input type="checkbox"  value={x.value} onChange={props.handleChange} />
+                            <input type="checkbox" value={x.value} checked={props.resources.includes(x.value)} onChange={props.handleChange} />
                             <span> {x.label}</span>
                             <span key={x.id}  className="total">({type.totalCount})</span>
                           </>
@@ -157,7 +157,7 @@ const Navigation = (props) => {
 
                       product.fieldValue === x.value &&
                          <>
-                           <input type="checkbox"  value={x.value} onChange={props.handleChange} />
+                           <input type="checkbox" value={x.value} checked={props.resources.includes(x.value)} onChange={props.handleChange} />
                            <span> {x.label}</span>
                            <span key={x.id}  className="total">({product.totalCount})</span>
                          </>
@@ -192,7 +192,7 @@ const Navigation = (props) => {
 
                       technology.fieldValue === x.value &&
                          <>
-                           <input type="checkbox"  value={x.value} onChange={props.handleChange} />
+                           <input type="checkbox" value={x.value} checked={props.resources.includes(x.value)} onChange={props.handleChange} />
                            <span> {x.label}</span>
                            <span key={x.id}  className="total">({technology.totalCount})</span>
                          </>
@@ -228,7 +228,7 @@ const Navigation = (props) => {
 
                       mesh.fieldValue === x.value &&
                          <>
-                           <input type="checkbox"  value={x.value} onChange={props.handleChange} />
+                           <input type="checkbox" value={x.value} checked={props.resources.includes(x.value)} onChange={props.handleChange} />
                            <span> {x.label}</span>
                            <span key={x.id}  className="total">({mesh.totalCount})</span>
                          </>

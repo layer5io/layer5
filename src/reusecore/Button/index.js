@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import BtnStyle from "./btn.style";
-import { Link } from "gatsby";
+import { Link, withPrefix } from "gatsby";
 const Button = ({
   className,
   children,
@@ -23,13 +23,17 @@ const Button = ({
       {props.title}
     </BtnStyle>;
 
+  const externalHref =
+    props.$url && props.$url.startsWith("/") && !props.$url.startsWith("//")
+      ? withPrefix(props.$url)
+      : props.$url;
 
   return (
     <React.Fragment>
       {
         props.$url ?
           (props.$external ?
-            <a href={props.$url} target="_blank" rel="noreferrer">{initalButton}</a> : <Link to={props.$url}>{initalButton}</Link>)
+            <a href={externalHref} target="_blank" rel="noreferrer">{initalButton}</a> : <Link to={props.$url}>{initalButton}</Link>)
           : initalButton
       }
     </React.Fragment>

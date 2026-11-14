@@ -1,5 +1,5 @@
 import * as JsSearch from "js-search";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 const useDataList = (
   data,
   setSearchQuery,
@@ -9,9 +9,14 @@ const useDataList = (
 ) => {
   const [dataList, setDataList] = useState(data);
   const [search, setSearch] = useState([]);
-  const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const queryResults = searchQuery ? searchResults : dataList;
+  const isIndexReady = typeof search.search === "function";
+  const trimmedQuery = searchQuery ? searchQuery.trim() : "";
+  const searchResults = useMemo(
+    () => (isIndexReady && trimmedQuery ? search.search(trimmedQuery) : []),
+    [search, isIndexReady, trimmedQuery]
+  );
+  const queryResults = trimmedQuery && isIndexReady ? searchResults : dataList;
   useEffect(() => {
     rebuildIndex();
   }, [dataList]);
@@ -32,13 +37,22 @@ const useDataList = (
     setIsLoading(false);
   };
 
-  const searchData = (e) => {
-    const queryResult = search.search(e.target.value);
-    setSearchQuery(e.target.value.trim());
-    setSearchResults(queryResult);
+  const searchByText = (text) => {
+    setSearchQuery(text);
   };
 
-  return { queryResults, searchData, setDataList,dataList };
+  const searchData = (e) => {
+    searchByText(e.target.value);
+  };
+
+  return {
+    queryResults,
+    searchData,
+    searchByText,
+    isLoading,
+    setDataList,
+    dataList,
+  };
 };
 
 export default useDataList;
