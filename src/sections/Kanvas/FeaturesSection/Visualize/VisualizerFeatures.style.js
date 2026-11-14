@@ -3,8 +3,13 @@ import styled from "styled-components";
 const VisualizerFeaturesWrapper = styled.section`
   margin-top: 1rem;
 
-  .visualizer-trigger-container{
+  .visualizer-trigger-container {
     padding: 0;
+
+    @media (max-width: 991px) {
+      margin-top: 6vw;
+      padding: 0 1rem;
+    }
   }
 
   .scroll {
@@ -20,12 +25,13 @@ const VisualizerFeaturesWrapper = styled.section`
       display: none;
     }
 
-    @media (min-width: 799px) {
+    @media (min-width: 992px) {
       max-height: 600px;
     }
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
       flex-direction: column;
       align-items: center;
+      overflow: visible;
     }
     & > ul {
       position: relative;
@@ -33,8 +39,11 @@ const VisualizerFeaturesWrapper = styled.section`
       padding-left: 0;
       padding-right: 2rem;
 
-      @media (max-width: 767px) {
+      @media (max-width: 991px) {
         padding-right: 0;
+        text-align: center;
+        max-width: 600px;
+        width: 100%;
       }
 
       @media (max-width: 500px) {
@@ -50,20 +59,15 @@ const VisualizerFeaturesWrapper = styled.section`
     position: sticky;
     top: 0;
     z-index: -1;
-    margin-top:auto;
-    margin-bottom:auto;
-    height:100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
 
     @media (max-width: 1200px) {
       min-width: 32rem;
     }
     @media (max-width: 992px) {
       min-width: 24rem;
-    }
-    @media (max-width: 767px) {
-      max-height: 400px;
-      padding-right: 0;
-      min-width: 25rem;
     }
   }
 
@@ -75,10 +79,15 @@ const VisualizerFeaturesWrapper = styled.section`
       font-weight: 600;
       padding-top: 1rem;
       padding-bottom: 1rem;
-    
-      @media (max-width: 767px) {
+
+      @media (max-width: 991px) {
         font-size: 1.75rem;
       }
+    }
+
+    @media (max-width: 991px) {
+      margin-bottom: 2rem;
+      border-radius: 4px;
     }
   }
 
@@ -93,8 +102,8 @@ const VisualizerFeaturesWrapper = styled.section`
     height: 90px;
 
     @media screen and (max-width: 992px) {
-        height: 73px;
-      }
+      height: 73px;
+    }
 
     a {
       display: flex;
@@ -117,14 +126,33 @@ const VisualizerFeaturesWrapper = styled.section`
     & > li {
       list-style: none;
 
+      @media (max-width: 991px) {
+        border: 2px solid #00b39f;
+        box-shadow: 0px 4px 10px 0px rgb(0 0 0 / 25%);
+        border-radius: 8px;
+        padding: 2.5rem 1.5rem;
+        margin-bottom: 2rem;
+        width: 100%;
+        box-sizing: border-box;
+        transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &:hover {
+          border-color: #ebc017;
+        }
+      }
+
       & > div {
         list-style: none;
         padding-bottom: 150px;
 
-        @media (max-width: 767px) {
+        @media (max-width: 991px) {
           padding-top: 0;
           margin-bottom: 0;
-          padding-bottom: 50px;
+          padding-bottom: 0;
         }
       }
 
@@ -132,7 +160,7 @@ const VisualizerFeaturesWrapper = styled.section`
         & > div {
           padding-bottom: 600px;
           margin-bottom: -200px;
-          @media (max-width: 767px) {
+          @media (max-width: 991px) {
             padding-bottom: 0;
             margin-bottom: 0;
           }
@@ -145,6 +173,9 @@ const VisualizerFeaturesWrapper = styled.section`
           @media (max-width: 1120px) {
             padding-top: 64px;
           }
+          @media (max-width: 991px) {
+            padding-top: 0;
+          }
         }
       }
     }
@@ -153,10 +184,19 @@ const VisualizerFeaturesWrapper = styled.section`
   .visualizer-trigger-container {
     &:hover {
       .fixed {
-        background: #EBC017;
+        background: #ebc017;
+        & > h1 {
+          color: #000000;
+        }
+        .learn-more h5 {
+          color: #000000 !important;
+        }
       }
       #add-border {
-        border-color: #EBC017;
+        border-color: #ebc017;
+      }
+      .visualizer-features > li {
+        border-color: #ebc017;
       }
     }
   }
@@ -180,12 +220,17 @@ const VisualizerFeaturesWrapper = styled.section`
     border-width: 0px 2px 2px 2px;
     box-shadow: 0px 6px 5px 0px rgb(0 0 0 / 25%);
     transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-  }
-  .hideInMobile{
-    @media (max-width: 799px) {
-      display:none;
+
+    @media (max-width: 991px) {
+      border: none;
+      box-shadow: none;
     }
-}
+  }
+  .hideInMobile {
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
 
   .arrow {
     transition: all 0.5s;
