@@ -266,6 +266,19 @@ const PlanCardWrapper = styled.section`
       width: 50%;
     }
   }
+ 
+  @media (max-width: 400px) {
+    .pricing-table {
+      min-width: 0;
+      padding: 1.5rem 0.75rem;
+    }
+    .price-container {
+      transform: scale(1);
+    }
+    .plan-card-col {
+      width: 100%;
+    }
+  }
 `;
 
 export default PlanCardWrapper;
