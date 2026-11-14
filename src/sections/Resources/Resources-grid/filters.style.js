@@ -6,7 +6,13 @@ export const ResourceNavigationWrapper = styled.div`
     margin-bottom:1rem;
     font-size: 1.5rem;
     border-bottom: 2px solid rgba(153, 151, 151, 0.2);
-    span{
+    span,
+    button.clear-enabled,
+    button.clear-disabled{
+      background: none;
+      border: none;
+      padding: 0;
+      font: inherit;
       float: right;
       font-size: 0.9rem;
       color: ${(props) => props.theme.primaryColor};
@@ -24,7 +30,8 @@ export const ResourceNavigationWrapper = styled.div`
   .heading-name{
     margin: 0 0 0.3rem 0;
   }
-  .heading-name>span:hover{
+  .heading-name>span:hover,
+  .heading-name>button:hover{
     color: ${(props) => props.theme.secondaryColor};
   }
 
@@ -137,6 +144,13 @@ input[type="checkbox"] {
             vertical-align: bottom;
           }
             .toggle-btn{
+                background: none;
+                border: none;
+                padding: 0;
+                width: 100%;
+                text-align: left;
+                font: inherit;
+                color: inherit;
                 p{
                     display:inline;
                 }
