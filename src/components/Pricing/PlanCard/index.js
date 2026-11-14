@@ -10,10 +10,13 @@ const PlanCard = ({ planData, isYearly, currency }) => {
     return <div>No plan data available</div>;
   }
   const planLink = {
-    "Personal": "https://cloud.layer5.io/account/plans",
-    "Team Designer": "https://cloud.layer5.io/account/plans/upgrade?plan=49b77ce8-eeea-4ec4-adf3-48979a14b140",
-    "Team Operator": "https://cloud.layer5.io/account/plans/upgrade?plan=f7a5b2b5-b36b-421e-9211-f4dfb204e5b3",
-    "Enterprise": "https://cloud.layer5.io/account/plans/upgrade?plan=ad68ce59-8c5a-42b0-955c-9b2b2f7c98e3"
+    Personal: "https://cloud.layer5.io/account/plans",
+    "Team Designer":
+      "https://cloud.layer5.io/account/plans/upgrade?plan=49b77ce8-eeea-4ec4-adf3-48979a14b140",
+    "Team Operator":
+      "https://cloud.layer5.io/account/plans/upgrade?plan=f7a5b2b5-b36b-421e-9211-f4dfb204e5b3",
+    Enterprise:
+      "https://cloud.layer5.io/account/plans/upgrade?plan=ad68ce59-8c5a-42b0-955c-9b2b2f7c98e3",
   };
 
   const formatPrice = (price) => {
@@ -29,86 +32,113 @@ const PlanCard = ({ planData, isYearly, currency }) => {
     <PlanCardWrapper>
       <Container>
         <Row $Hcenter className="plan-card-row">
-          {planData.map((x) => (
-            // <Col $xl={4} $lg={2} $md={1} $sm={1} key={x.tier}>
-            <Col key={x.tier} className="plan-card-col">
-              <div className={`${x.featured ? "featured" : ""} pricing-table`}>
+          {planData.map((x) => {
+            const isComingSoon = x.button?.[0] === "Coming Soon";
+            const buttonLabel =
+              x.button?.[0] ??
+              (x.tier === "Personal" ? "Join for Free" : "Subscribe");
+            const buttonUrl = isComingSoon
+              ? undefined
+              : x.tier === "Enterprise"
+                ? (x.button?.[1] ?? planLink[x.tier])
+                : (planLink[x.tier] ??
+                  x.button?.[1] ??
+                  "https://cloud.layer5.io/account/plans");
 
-                {x.tier === "Personal" ? <div className="pricing-label">Free Forever</div> : null}
-
-                {x.tier === "Team Designer" ? <div className="featured-label">Most Popular</div> : null}
-
-                {/* {x.pricing_coming_soon && (
-                  <div className="pricing_coming_soon">
-                    {x.pricing_coming_soon}
-                  </div>
-                )} */}
-
-                <h2>{x.tier}</h2>
-                <h5 className="byline">{x.byline}</h5>
-
-                <div className="price-container">
-
-                  <div className="price">
-                    <span className="price-amount">
-                      <sup><strong>{getCurrencySymbol(currency)}</strong></sup>
-                      {isYearly
-                        ? formatPrice(x.yearlyprice)
-                        : formatPrice(x.monthlyprice)}
-                    </span>
-                    <span className="currency">{Currencies[currency]?.name ?? "USD"}</span>
-                    <span className="price-per">per user /{isYearly ? "year" : "month"}</span>
-                  </div>
-
-                </div>
-
-
-                <Button
-                  // disabled={x.tier === "Team Operator"}
-                  $primary
-                  className={
-                    x.button[0] === "Coming Soon"
-                      ? "price-button-disabled"
-                      : "price-button-link"
-                  }
-                  $url={planLink[x.tier] ?? "https://cloud.layer5.io/account/plans"}
+            return (
+              // <Col $xl={4} $lg={2} $md={1} $sm={1} key={x.tier}>
+              <Col key={x.tier} className="plan-card-col">
+                <div
+                  className={`${x.featured ? "featured" : ""} pricing-table`}
                 >
-                  {x.tier === "Personal" ? "Join for Free" : "Subscribe"}
-                </Button>
+                  {x.tier === "Personal" ? (
+                    <div className="pricing-label">Free Forever</div>
+                  ) : null}
 
-                <h6>{x.byline2}</h6>
+                  {x.tier === "Team Designer" ? (
+                    <div className="featured-label">Most Popular</div>
+                  ) : null}
 
-                <div className="pricing-features">
-                  {x.summary &&
-                    x.summary.map((t, index) => {
-                      // Check if this is the first add-on feature
-                      const isFirstAddOn = t.categoryOrder === "add-on" &&
-                        (index === 0 || x.summary[index - 1].categoryOrder !== "add-on");
+                  {/* {x.pricing_coming_soon && (
+                    <div className="pricing_coming_soon">
+                      {x.pricing_coming_soon}
+                    </div>
+                  )} */}
 
-                      return (
-                        <div key={t.id}>
-                          {isFirstAddOn && (
-                            <div className="add-on-separator">
-                              <span className="add-on-label">Add-on Features</span>
-                              <hr className="add-on-line" />
+                  <h2>{x.tier}</h2>
+                  <h5 className="byline">{x.byline}</h5>
 
+                  <div className="price-container">
+                    <div className="price">
+                      <span className="price-amount">
+                        <sup>
+                          <strong>{getCurrencySymbol(currency)}</strong>
+                        </sup>
+                        {isYearly
+                          ? formatPrice(x.yearlyprice)
+                          : formatPrice(x.monthlyprice)}
+                      </span>
+                      <span className="currency">
+                        {Currencies[currency]?.name ?? "USD"}
+                      </span>
+                      <span className="price-per">
+                        per user /{isYearly ? "year" : "month"}
+                      </span>
+                    </div>
+                  </div>
+
+                  <Button
+                    $primary
+                    disabled={isComingSoon}
+                    $external={Boolean(
+                      buttonUrl && buttonUrl.startsWith("http"),
+                    )}
+                    className={
+                      isComingSoon
+                        ? "price-button-disabled"
+                        : "price-button-link"
+                    }
+                    $url={buttonUrl}
+                  >
+                    {buttonLabel}
+                  </Button>
+
+                  <h6>{x.byline2}</h6>
+
+                  <div className="pricing-features">
+                    {x.summary &&
+                      x.summary.map((t, index) => {
+                        // Check if this is the first add-on feature
+                        const isFirstAddOn =
+                          t.categoryOrder === "add-on" &&
+                          (index === 0 ||
+                            x.summary[index - 1].categoryOrder !== "add-on");
+
+                        return (
+                          <div key={t.id}>
+                            {isFirstAddOn && (
+                              <div className="add-on-separator">
+                                <span className="add-on-label">
+                                  Add-on Features
+                                </span>
+                                <hr className="add-on-line" />
+                              </div>
+                            )}
+                            <div className="feature">
+                              <FeatureDetails
+                                category={t.category}
+                                description={t.description}
+                                tier={t.tier}
+                              />
                             </div>
-                          )}
-                          <div className="feature">
-                            <FeatureDetails
-                              category={t.category}
-                              description={t.description}
-                              tier={t.tier}
-                            />
                           </div>
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
+                  </div>
                 </div>
-
-              </div>
-            </Col>
-          ))}
+              </Col>
+            );
+          })}
         </Row>
       </Container>
     </PlanCardWrapper>
