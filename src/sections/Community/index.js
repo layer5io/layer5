@@ -160,13 +160,14 @@ const CommunityPage = () => {
                   $primary
                   title="Explore Badges Now"
                   $url="https://badges.layer5.io"
+                  $external={true}
                 />
               </Col>
             </div>
           </Row>
         </Container>
         <Container>
-          <Row className="meshmate">
+          <Row className="meshmate" $Vcenter>
             <Col className="content" $sm={12} $lg={6}>
               <h1 className="onboarding">
                 An onboarding and mentoring program

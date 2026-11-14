@@ -1,4 +1,5 @@
 import React from "react";
+import { withPrefix } from "gatsby";
 import styled from "styled-components";
 import { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
@@ -28,7 +29,7 @@ const MesheryOperatorBrand = () => {
             </h2>
           </Col>
           <Col $xs={12} $sm={6} className="download-button">
-            <a href="/brand/meshery-operator-brand-kit.zip">
+            <a href={withPrefix("/brand/meshery-operator-brand-kit.zip")}>
               <Button $primary title="Download Logo Assets" $external={true}>
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>

@@ -5,11 +5,12 @@ export const HoneycombGrid = styled.div`
 
   display: flex;
   text-align: left;
+  margin: 0;
 
   ul {
     font-size: 0;
     line-height: 0;
-    height: ${(props) => (props.$height === 0 ? "unset" : `calc(${props.$height}px + var(--hex-size, 150px) * 0.31)`)};
+    height: ${(props) => (props.$height === 0 ? "unset" : `${props.$height}px`)};
 
     &:before {
       content: "";

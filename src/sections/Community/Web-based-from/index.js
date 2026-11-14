@@ -159,8 +159,8 @@ const WebBasedForm = () => {
               <Field type="url" placeholder="https://twitter.com/" className="text-field" id="twitter" name="twitter" pattern="http(s?)(:\/\/)((www.)?)(twitter|x).com(\/)([a-zA-z0-9\-_]+)" />
               <label htmlFor="linkedin" className="form-name">Linkedin</label>
               <Field type="url" placeholder="https://www.linkedin.com/" className="text-field" id="linkedin" name="linkedin" />
-              <label htmlFor="tshirtSize" className="form-name">T-shirt size</label>
-              <div role="group" aria-labelledby="my-radio-group">
+              <label id="tshirtSize-label" className="form-name">T-shirt size</label>
+              <div role="group" aria-labelledby="tshirtSize-label">
                 <label>
                   <Field type="radio" name="tshirtSize" value="XS" />
                 XS
@@ -195,7 +195,7 @@ const WebBasedForm = () => {
               <Field type="url" className="text-field" id="picture" name="picture"  validate={validatePictureUrl}/>
               {errors.picture && touched.picture && <div style={{ margin: "0px", color: "red", fontSize: "16px" }}>{errors.picture}</div>}
               <p className="para label">Please provide a link to your profile photo. Profile photos are used for <Link to="/community/members">community member profiles</Link> of longstanding community members.</p>
-              <Button secondary type="submit" className="btn" title="Next Step" /> <br /><br /><br /><br />
+              <Button $secondary type="submit" className="btn" title="Next Step" /> <br /><br /><br /><br />
             </Form>
           )}
         </Formik>
@@ -212,30 +212,30 @@ const WebBasedForm = () => {
         </p>
 
         <div className="center">
-          <div className={role === "Contributor" ? "option active" : "option"} onClick={() => {
+          <button type="button" aria-pressed={role === "Contributor"} className={role === "Contributor" ? "option active" : "option"} onClick={() => {
             setRole("Contributor");
           }}
           >
             I'm here as a Contributor
-          </div>
-          <div className={role === "Developer" ? "option active" : "option"} onClick={() => {
+          </button>
+          <button type="button" aria-pressed={role === "Developer"} className={role === "Developer" ? "option active" : "option"} onClick={() => {
             setRole("Developer");
           }}
           >
             I'm here as a User
-          </div>
-          <div className={role === "User" ? "option active" : "option"} onClick={() => {
+          </button>
+          <button type="button" aria-pressed={role === "User"} className={role === "User" ? "option active" : "option"} onClick={() => {
             setRole("User");
           }}
           >
             I'm here as a User and Contributor
-          </div>
-          <div className={role === "Bystander" ? "option active" : "option"} onClick={() => {
+          </button>
+          <button type="button" aria-pressed={role === "Bystander"} className={role === "Bystander" ? "option active" : "option"} onClick={() => {
             setRole("Bystander");
           }}
           >
             I'm here as a Bystander <br /><small>(here to learn and absorb passively)</small>
-          </div>
+          </button>
           <br /><br />
           <div className="btn-wrapper">
             <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous Step</button>
@@ -404,7 +404,7 @@ const WebBasedForm = () => {
               />
               <span className="checkbox-label">None of the above</span>
             </label>
-            <p className="form-name"><Link to="https://layer5.io/community/meshmates">Layer5 MeshMates</Link> is a community member mentoring program aimed at individuals new to open source or simply new to Layer5 projects. Is this program of interest to you?</p>
+            <p className="form-name"><Link to="/community/meshmates">Layer5 MeshMates</Link> is a community member mentoring program aimed at individuals new to open source or simply new to Layer5 projects. Is this program of interest to you?</p>
             <label>
               <Field type="checkbox"
                 name="meshMate"
@@ -522,8 +522,8 @@ const WebBasedForm = () => {
               <span className="checkbox-label">Other</span>
             </label>
 
-            <label htmlFor="interestToShareContribution" className="form-name">Now or eventually, would you like to speak or write about your works in the community and/or on the projects?<span className="required-sign">*</span></label>
-            <div role="group" aria-labelledby="my-radio-group">
+            <label id="interestToShareContribution-label" className="form-name">Now or eventually, would you like to speak or write about your works in the community and/or on the projects?<span className="required-sign">*</span></label>
+            <div role="group" aria-labelledby="interestToShareContribution-label">
               <label>
                 <Field type="radio" name="interestToShareContribution" value="Yes" required />
                 Yes
@@ -554,7 +554,7 @@ const WebBasedForm = () => {
     return (
       <Container>
         <h2 className="title">Expectations and Programs FAQ</h2>
-        <p>Commonly asked questions about general engagement expectations and information focal to internship programs. See the <Link to="/community">Layer5 Community</Link> and <Link to="/programs">Open Source Internship Programs</Link> for additional information.</p>
+        <p>Commonly asked questions about general engagement expectations and information focal to internship programs. See the <Link to="/community">Layer5 Community</Link> and <Link to="/careers/programs">Open Source Internship Programs</Link> for additional information.</p>
         <Formik
           initialValues={{
             expect: false,
@@ -627,8 +627,8 @@ const WebBasedForm = () => {
           <h2>Welcome to the Layer5 Community!</h2>
           <h4>Resources are on their way. See these in the meantime:</h4>
           <div className="btn-box">
-            <Button $primary className="btn-one" type="button" title="Community Handbook" $url="https://layer5.io/community/handbook" />
-            <Button $secondary className="btn-two" type="button" title="Newcomers Roadmap" $url="https://layer5.io/community/newcomers" />
+            <Button $primary className="btn-one" type="button" title="Community Handbook" $url="/community/handbook" />
+            <Button $secondary className="btn-two" type="button" title="Newcomers Roadmap" $url="/community/newcomers" />
           </div>
           <p>We are pleased to have you as a new member! You have been added to the community mailing list. You can also access the <Link to="/community/calendar">community calendar</Link> to stay updated on weekly meetings. If you prefer not to receive emails, you can <Link to="/unsubscribe">unsubscribe</Link> at anytime.</p>
         </div>
@@ -648,7 +648,7 @@ const WebBasedForm = () => {
           }
           {
             stepNumber === 1 &&
-            <MemberFormSecond />
+            MemberFormSecond()
           }
           {
             stepNumber === 2 &&

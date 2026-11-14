@@ -84,7 +84,7 @@ const FooterWrapper = styled.section`
 		margin: 0 2.5rem 2rem 0;
 		justify-content: flex-end;
 
-		span {
+		label {
 			display: block;
 			color: #FFFFFF;
 		}
@@ -132,10 +132,18 @@ const FooterWrapper = styled.section`
 			padding: 0;
 			li {
 				display: inline-flex;
-				a {
+				a, button {
 					color: #CCCCCC;
 				}
-				a:hover {
+				button {
+					background: none;
+					border: none;
+					padding: 0;
+					font: inherit;
+					cursor: pointer;
+					box-shadow: none;
+				}
+				a:hover, button:hover {
 					color: ${(props) => props.theme.secondaryColor};
 				}
 			}

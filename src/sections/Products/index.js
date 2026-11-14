@@ -73,8 +73,8 @@ const index = () => {
                 flexibility, elevating operations to new efficiencies.{" "}
               </p>
               <div className="btn">
-                <Button secondary className="banner-btn two" $external={true} title="Explore Now" $url="https://cloud.layer5.io/"/>
-                <Button id="book-a-demo" aria-label="Book a demo" primary className="banner-btn book-a-demo" $external={true} title="Book a demo" $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
+                <Button $secondary className="banner-btn two" $external={true} title="Explore Now" $url="https://cloud.layer5.io/"/>
+                <Button id="book-a-demo" aria-label="Book a demo" $primary className="banner-btn book-a-demo" $external={true} title="Book a demo" $url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" />
               </div>
             </div>
             <div className="product_hero_img">
@@ -127,7 +127,7 @@ const index = () => {
               <p className="paraInfo">
                 Embrace the future of technology and embark on a transformative journey with our comprehensive range of products prepared to meet your needs. Elevate, Innovate, and conquer the cloud with us today!
               </p>
-              <Button button secondary className="banner-btn two" title="Open Playground" $url="https://play.meshery.io" />
+              <Button button $secondary className="banner-btn two" title="Open Playground" $url="https://play.meshery.io" $external={true} />
             </div>
           </div>
           <div className="headers bot_gap">

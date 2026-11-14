@@ -142,7 +142,7 @@ const Feature = () => {
             <p className="caption">
             From the convenience of your Docker Desktop interface, connect Meshery with your Kubernetes cluster. Watch as MeshSync discovers all of your Kuberentes clusters.
             </p>
-            <Link className="link" href="/docker-extension-meshery">Learn more &rarr;</Link>
+            <Link className="link" to="/docker-extension-meshery">Learn more &rarr;</Link>
           </Col>
         </Row>
         <Row className="catalog">
@@ -153,7 +153,7 @@ const Feature = () => {
             <p className="caption">
             The Kubernetes operator for Meshery, supports discovery and eventing of greenfield and brownfield of your workloads, services, deployments, replicasets, pods, containers, services, persistent volumes and all of your Kubernetes-based infrastructure.
             </p>
-            <Link className="link" href="/cloud-native-management/meshery/meshery-operator">Learn more &rarr;</Link>
+            <Link className="link" to="/cloud-native-management/meshery/meshery-operator">Learn more &rarr;</Link>
           </Col>
           <Col md={6} className="catalog-image">
             <div className="image-wrapper">
