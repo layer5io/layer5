@@ -51,6 +51,7 @@ const RangeSlider = memo(
           onChange={changeCallback}
           onMouseDown={() => setMouseState("down")}
           onMouseUp={() => setMouseState("up")}
+          onKeyUp={() => onChange(sliderVal)}
         />
         <span className="bubble tooltiptext" style={bubbleStyle}>{label}</span>
       </div>
