@@ -308,9 +308,19 @@ export const HandbookWrapper = styled.div`
       margin: 2.5rem 0 3rem 0rem;
 
       /* The extra right margin is only needed when both columns sit
-         side by side (desktop). */
-      @media (min-width: 992px){
+         side by side (wide desktop). */
+      @media (min-width: 1300px){
         margin: 2.5rem 5rem 3rem 0rem;
+      }
+
+      /* The Col component splits the row in half from 992px, but the two
+         columns only have enough room from ~1300px. Until then they stay
+         full width and the map is stacked on the next row. */
+      @media (min-width: 992px) and (max-width: 1299px){
+        > .col{
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
       }
 
       h2{
@@ -348,12 +358,23 @@ export const HandbookWrapper = styled.div`
       }
     }
 
-    /* Once the journey columns are stacked, keep the "Start Here" label
-       aligned with the centered heading. */
-    @media (max-width: 991px){
+    /* While the journey columns are stacked, the "Start Here" label sits
+       under the centered heading and the arrow points down at the map. */
+    @media (max-width: 1299px){
       .heading-start{
+        flex-direction: column;
+        align-items: center;
         align-self: center;
         margin-right: 0;
+
+        h5{
+          margin-right: 0;
+          margin-bottom: 0.5rem;
+        }
+        img{
+          /* The arrow points right by default, rotate it to point down. */
+          transform: rotate(90deg);
+        }
       }
     }
 
