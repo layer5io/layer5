@@ -27,7 +27,7 @@ export const MeetupStyle = styled.div`
             border-radius: 0;
             cursor: pointer;
             padding: 0.5rem 2rem;
-            background: ${props => props.theme.body};;
+            background: ${props => props.theme.body};
             transition: all 0.2s ease-in;
         }
         .active{
