@@ -149,6 +149,27 @@ export const HandbookWrapper = styled.div`
     .table-container {
       width: 100%;
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: ${(props) => props.theme.primaryLightColor} transparent;
+      margin-bottom: 2rem;
+
+      table {
+        min-width: 650px;
+        width: 100%;
+        margin: 1rem 0;
+      }
+
+      &::-webkit-scrollbar {
+        height: 6px;
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: ${(props) => props.theme.primaryLightColor};
+        border-radius: 4px;
+      }
     }
 
     td, th {
@@ -167,6 +188,7 @@ export const HandbookWrapper = styled.div`
     .linkscol{
       text-align: center;
       width:8%;
+      min-width: 50px;
     }
 
     tbody:nth-child(even) {
@@ -263,7 +285,7 @@ export const HandbookWrapper = styled.div`
 
     .project-org-list{
       a{
-        margin-right .3rem;
+        margin-right: .3rem;
       }
       img{
         height: auto;
@@ -473,7 +495,7 @@ export const HandbookWrapper = styled.div`
       font-style: italic;
     }
     details.invite-only {
-      margin: 1rem;
+      margin: 1rem 0;
       padding: 1rem;
       background-color: ${(props) => props.theme.grey313131ToGreenC9FCF6};
       span {
