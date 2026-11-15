@@ -27,7 +27,7 @@ export const MeetupStyle = styled.div`
             border-radius: 0;
             cursor: pointer;
             padding: 0.5rem 2rem;
-            background: ${props => props.theme.body};;
+            background: ${props => props.theme.body};
             transition: all 0.2s ease-in;
         }
         .active{
@@ -65,5 +65,17 @@ export const MeetupStyle = styled.div`
 
     .post-title{
         text-align: center;
+    }
+
+    .post-thumb-block {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: ${props => props.theme.grey212121ToWhite};
+
+        .gatsby-image-wrapper img,
+        .old-gatsby-image-wrapper img {
+            object-fit: contain;
+        }
     }
 `;
