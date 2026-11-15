@@ -323,8 +323,27 @@ export const HandbookWrapper = styled.div`
     .newcomers-journey{
       text-align: center;
       display: flex;
+      /* Allows the journey columns to stack instead of overflowing
+         horizontally on viewports where they are full width (tablets). */
+      flex-wrap: wrap;
       align-items: center;
-      margin: 2.5rem 5rem 3rem 0rem;
+      margin: 2.5rem 0 3rem 0rem;
+
+      /* The extra right margin is only needed when both columns sit
+         side by side (wide desktop). */
+      @media (min-width: 1300px){
+        margin: 2.5rem 5rem 3rem 0rem;
+      }
+
+      /* The Col component splits the row in half from 992px, but the two
+         columns only have enough room from ~1300px. Until then they stay
+         full width and the map is stacked on the next row. */
+      @media (min-width: 992px) and (max-width: 1299px){
+        > .col{
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+      }
 
       h2{
         margin-bottom: 2rem;
@@ -358,6 +377,26 @@ export const HandbookWrapper = styled.div`
       img:hover{
         padding-left: 1rem;
         transition: .5s;
+      }
+    }
+
+    /* While the journey columns are stacked, the "Start Here" label sits
+       under the centered heading and the arrow points down at the map. */
+    @media (max-width: 1299px){
+      .heading-start{
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+        margin-right: 0;
+
+        h5{
+          margin-right: 0;
+          margin-bottom: 0.5rem;
+        }
+        img{
+          /* The arrow points right by default, rotate it to point down. */
+          transform: rotate(90deg);
+        }
       }
     }
 
