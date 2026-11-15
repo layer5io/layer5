@@ -15,31 +15,37 @@ const HandbookTOC = ({ pages, currentSlug }) => {
           <HiOutlineChevronLeft />
           <h4>Table of Contents</h4>
         </Link>
-        <div className="toc-toggle-btn">
+
+        <button
+          type="button"
+          className="toc-toggle-btn"
+          onClick={() => setExpand(!expand)}
+          aria-label={
+            expand ? "Collapse table of contents" : "Expand table of contents"
+          }
+          aria-expanded={expand}
+          aria-controls="handbook-toc-list"
+        >
           {expand ? (
-            <IoMdClose
-              className="toc-menu-icon"
-              onClick={function () {
-                setExpand(!expand);
-              }}
-            />
+            <IoMdClose className="toc-menu-icon" aria-hidden="true" />
           ) : (
             <IoIosArrowDropdownCircle
               className="toc-menu-icon"
-              onClick={function () {
-                setExpand(!expand);
-              }}
+              aria-hidden="true"
             />
           )}
-        </div>
+        </button>
       </div>
-      <div className="toc-list">
+
+      <div className="toc-list" id="handbook-toc-list">
         <ul className={`toc-ul ${expand ? "toc-ul-open" : ""}`}>
           {pages.map((page, index) => (
             <li key={index}>
               <Link
                 to={page.fields.slug}
-                className={`toc-sub-heading toc-sub-inline${page.fields.slug === currentSlug ? " active" : ""}`}
+                className={`toc-sub-heading toc-sub-inline${
+                  page.fields.slug === currentSlug ? " active" : ""
+                }`}
               >
                 {page.frontmatter.title}
               </Link>
