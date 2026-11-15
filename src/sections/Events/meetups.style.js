@@ -66,17 +66,4 @@ export const MeetupStyle = styled.div`
     .post-title{
         text-align: center;
     }
-
-    .post-thumb-block {
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: ${props => props.theme.grey212121ToWhite};
-
-        .gatsby-image-wrapper img,
-        .old-gatsby-image-wrapper img {
-            object-fit: contain;
-        }
-    }
 `;
