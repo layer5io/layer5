@@ -121,6 +121,7 @@ export const HandbookWrapper = styled.div`
     table {
       border-collapse: collapse;
       width: 98%;
+      min-width: 650px;
       margin: 1rem 0 2rem 0;
       .github-icon{
         height: 1.7rem;
@@ -149,6 +150,8 @@ export const HandbookWrapper = styled.div`
     .table-container {
       width: 100%;
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 2rem;
     }
 
     td, th {
@@ -167,6 +170,7 @@ export const HandbookWrapper = styled.div`
     .linkscol{
       text-align: center;
       width:8%;
+      min-width: 50px;
     }
 
     tbody:nth-child(even) {
@@ -263,7 +267,7 @@ export const HandbookWrapper = styled.div`
 
     .project-org-list{
       a{
-        margin-right .3rem;
+        margin-right: .3rem;
       }
       img{
         height: auto;
@@ -473,7 +477,7 @@ export const HandbookWrapper = styled.div`
       font-style: italic;
     }
     details.invite-only {
-      margin: 1rem;
+      margin: 1rem 0;
       padding: 1rem;
       background-color: ${(props) => props.theme.grey313131ToGreenC9FCF6};
       span {
