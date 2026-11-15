@@ -150,6 +150,8 @@ export const HandbookWrapper = styled.div`
       width: 100%;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: ${(props) => props.theme.primaryLightColor} transparent;
       margin-bottom: 2rem;
 
       table {
