@@ -121,7 +121,6 @@ export const HandbookWrapper = styled.div`
     table {
       border-collapse: collapse;
       width: 98%;
-      min-width: 650px;
       margin: 1rem 0 2rem 0;
       .github-icon{
         height: 1.7rem;
@@ -152,6 +151,23 @@ export const HandbookWrapper = styled.div`
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       margin-bottom: 2rem;
+
+      table {
+        min-width: 650px;
+        width: 100%;
+        margin: 1rem 0;
+      }
+
+      &::-webkit-scrollbar {
+        height: 6px;
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: ${(props) => props.theme.primaryLightColor};
+        border-radius: 4px;
+      }
     }
 
     td, th {
