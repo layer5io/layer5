@@ -6,6 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { convertFile, migrate, isTemplatePath, sniffImageFormat, normalizeAssetFilename, rewriteAssetReferences } from '../migrate-mdx.mjs';
+import { convertFile, migrate, parseExcludeArg, isTemplatePath, sniffImageFormat, normalizeAssetFilename, rewriteAssetReferences } from '../migrate-mdx.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const fx = path.join(here, 'fixtures/collections');
@@ -20,7 +21,7 @@ test('imports (single-line, multi-line, default) are removed', () => {
 
 test('Button children and aliases become shortcode params', () => {
   const { output } = run();
-  assert.match(output, /\{\{< button url="\/join" primary="true" text="Join Us" >\}\}/);
+  assert.match(output, /\{\{< button url="\/join" style="primary" text="Join Us" >\}\}/);
   assert.match(output, /\{\{< button url="\/docs" text="Read docs" >\}\}/);
 });
 
@@ -432,4 +433,349 @@ test('CLI: repeated --src maps content-learn to learn/learning-paths and merges 
   const r = JSON.parse(fs.readFileSync(report, 'utf8'));
   assert.equal(r.files, 2);
   assert.deepEqual(Object.keys(r.byCollection).sort(), ['blog', 'content-learn']);
+});
+
+test('parseExcludeArg supports comma-separated, = syntax, and repeated --exclude flags', () => {
+  assert.deepEqual(
+    parseExcludeArg(['--exclude', 'sistent, members', '--exclude=workshops', '--exclude', '/sistent/']),
+    ['sistent', 'members', 'workshops']
+  );
+  assert.deepEqual(parseExcludeArg(['--dry-run']), []);
+});
+
+test('migrate() with exclude skips excluded collections (docs and assets)', () => {
+  const tempSrc = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-excl-src-'));
+  const tempDest = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-excl-dest-'));
+  try {
+    fs.mkdirSync(path.join(tempSrc, 'blog/post'), { recursive: true });
+    fs.mkdirSync(path.join(tempSrc, 'sistent/components/button'), { recursive: true });
+    fs.writeFileSync(path.join(tempSrc, 'blog/post/index.mdx'), '---\ntitle: "Blog"\n---\nHello\n');
+    fs.writeFileSync(path.join(tempSrc, 'sistent/components/button/index.mdx'), '---\ntitle: "Sistent Button"\n---\n<Button onClick={fn}>Click</Button>\n');
+    fs.writeFileSync(path.join(tempSrc, 'sistent/components/button/preview.png'), Buffer.from('png'));
+
+    const report = migrate({ src: tempSrc, dest: tempDest, dryRun: false, exclude: ['sistent'] });
+
+    assert.equal(report.files, 1);
+    assert.equal(report.converted, 1);
+    assert.equal(report.excludedFiles, 2);
+    assert.deepEqual(report.excluded, ['sistent']);
+    assert.equal(report.byCollection.sistent, undefined);
+    assert.equal(fs.existsSync(path.join(tempDest, 'sistent')), false);
+    assert.equal(fs.existsSync(path.join(tempDest, 'blog/post/index.md')), true);
+  } finally {
+    fs.rmSync(tempSrc, { recursive: true, force: true });
+    fs.rmSync(tempDest, { recursive: true, force: true });
+  }
+});
+
+test('sistent collection does not map Sistent React components to marketing shortcodes', () => {
+  const input = '---\ntitle: "Sistent Button"\n---\n<Button onClick={() => {}} disabled>Submit</Button>\n';
+  const sistentRes = convertFile(input, { slug: 'button', file: 'sistent/components/button/index.mdx' });
+  assert.doesNotMatch(sistentRes.output, /\{\{< button/);
+  assert.match(sistentRes.output, /<!-- TODO\(mdx\): unconverted component <Button> -->/);
+  assert.equal(sistentRes.stats.unknown.Button, 1);
+  assert.equal(sistentRes.stats.components.Button, undefined);
+
+  const blogRes = convertFile('---\ntitle: "Blog Button"\n---\n<Button url="/join">Join</Button>\n', {
+    slug: 'post',
+    file: 'blog/post/index.mdx',
+  });
+  assert.match(blogRes.output, /\{\{< button url="\/join" text="Join" >\}\}/);
+});
+
+test('parseOpenTag parses styled-components $-prefixed props and $Button maps cleanly', () => {
+  const input = [
+    '---',
+    'title: "Transient Button Test"',
+    '---',
+    '<Button $secondary title="RSVP" $url="\u200bhttps://sched.co/1BZJl" $external={ true } />',
+    '',
+    '<Button className="image-right-no-shadow"secondary title="See All Projects" $url="/projects" $external={ false } />',
+    '',
+    '<Button $primary $url="/join">Join Us</Button>',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'transient-test', file: 'blog/transient-test/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.equal(stats.components.Button, 3);
+  assert.match(output, /\{\{< button style="secondary" text="RSVP" url="https:\/\/sched\.co\/1BZJl" >\}\}/);
+  assert.match(output, /\{\{< button style="secondary" text="See All Projects" url="\/projects" >\}\}/);
+  assert.match(output, /\{\{< button style="primary" url="\/join" text="Join Us" >\}\}/);
+  assert.doesNotMatch(output, /\$/);
+  assert.doesNotMatch(output, /\u200b/);
+  assert.doesNotMatch(output, /external=/);
+  assert.equal(convertFile(output, { slug: 'transient-test', file: 'blog/transient-test/index.mdx' }).output, output);
+});
+
+test('parseOpenTag parses $-prefixed props on unmapped tags without syntax parse failure', () => {
+  const input = '---\ntitle: "Col Test"\n---\n<Col $xs={12} $lg={6}>Body</Col>\n';
+  const { output, stats } = convertFile(input, { slug: 'col-test', file: 'careers/col-test/index.mdx' });
+  assert.equal(stats.unknown.Col, 1);
+  assert.ok(!stats.warnings.some((w) => w.includes('could not parse')));
+  assert.match(output, /<!-- TODO\(mdx\): unconverted component <Col> -->/);
+});
+
+test('Button preserves explicit text over title attribute when both are provided', () => {
+  const input = '---\ntitle: "Text Priority"\n---\n<Button title="Tooltip" text="Explicit Text" $url="/docs" />\n';
+  const { output } = convertFile(input, { slug: 'text-prio', file: 'blog/text-prio/index.mdx' });
+  assert.match(output, /\{\{< button text="Explicit Text" url="\/docs" >\}\}/);
+});
+
+test('zero-width stripping targets U+200B only and preserves ZWJ emoji, U+200C, and U+FEFF', () => {
+  const input = [
+    '---',
+    'title: "ZWSP Only"',
+    '---',
+    '<Button\u200B $primary $url="https://example.com/\u200Bpath" $title="Dev👨\u200D💻\u200C\uFEFFx" />',
+  ].join('\n');
+  const { output } = convertFile(input, { slug: 'zwsp', file: 'blog/zwsp/index.mdx' });
+  assert.doesNotMatch(output, /\u200B/);
+  assert.match(output, /url="https:\/\/example\.com\/path"/);
+  assert.match(output, /text="Dev👨\u200D💻\u200C\uFEFFx"/);
+});
+
+test('migrate() without exclude leaves sistent Button and Card unconverted while converting blog', () => {
+  const tempSrc = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-noexcl-src-'));
+  const tempDest = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-noexcl-dest-'));
+  try {
+    fs.mkdirSync(path.join(tempSrc, 'blog/post'), { recursive: true });
+    fs.mkdirSync(path.join(tempSrc, 'sistent/components/button'), { recursive: true });
+    fs.writeFileSync(
+      path.join(tempSrc, 'blog/post/index.mdx'),
+      '---\ntitle: "Blog"\n---\n<Button url="/join">Join</Button>\n<Card title="C" text="T" link="/x" />\n'
+    );
+    fs.writeFileSync(
+      path.join(tempSrc, 'sistent/components/button/index.mdx'),
+      '---\ntitle: "Sistent"\n---\n<Button variant="contained">Click</Button>\n<Card elevation={2}>Box</Card>\n'
+    );
+
+    const report = migrate({ src: tempSrc, dest: tempDest, dryRun: false });
+
+    assert.equal(report.files, 2);
+    assert.equal(report.excludedFiles, 0);
+    assert.equal(report.components.Button, 1);
+    assert.equal(report.components.Card, 1);
+    assert.equal(report.unknown.Button, 1);
+    assert.equal(report.unknown.Card, 1);
+    const sistentOut = fs.readFileSync(path.join(tempDest, 'sistent/components/button/index.md'), 'utf8');
+    assert.doesNotMatch(sistentOut, /\{\{<\s*(button|card)\b/);
+    assert.match(sistentOut, /<!-- TODO\(mdx\): unconverted component <Button> -->/);
+    assert.match(sistentOut, /<!-- TODO\(mdx\): unconverted component <Card> -->/);
+    const blogOut = fs.readFileSync(path.join(tempDest, 'blog/post/index.md'), 'utf8');
+    assert.match(blogOut, /\{\{< button url="\/join" text="Join" >\}\}/);
+    assert.match(blogOut, /\{\{< card title="C" text="T" link="\/x" >\}\}/);
+  } finally {
+    fs.rmSync(tempSrc, { recursive: true, force: true });
+    fs.rmSync(tempDest, { recursive: true, force: true });
+  }
+});
+
+test('migrate() with exclude is idempotent when run sequentially on its own output', () => {
+  const tempSrc = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-idemp-src-'));
+  const tempDest1 = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-idemp-d1-'));
+  const tempDest2 = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-idemp-d2-'));
+  try {
+    fs.mkdirSync(path.join(tempSrc, 'blog/post'), { recursive: true });
+    fs.mkdirSync(path.join(tempSrc, 'sistent/comp'), { recursive: true });
+    fs.writeFileSync(
+      path.join(tempSrc, 'blog/post/index.mdx'),
+      '---\ntitle: "Idemp"\n---\n<Button $secondary $url="https://example.com/\u200Ba" $external={true}>Go</Button>\n'
+    );
+    fs.writeFileSync(path.join(tempSrc, 'sistent/comp/index.mdx'), '---\ntitle: "S"\n---\n<Button>S</Button>\n');
+
+    migrate({ src: tempSrc, dest: tempDest1, dryRun: false, exclude: ['sistent'] });
+    migrate({ src: tempDest1, dest: tempDest2, dryRun: false, exclude: ['sistent'] });
+
+    const out1 = fs.readFileSync(path.join(tempDest1, 'blog/post/index.md'), 'utf8');
+    const out2 = fs.readFileSync(path.join(tempDest2, 'blog/post/index.md'), 'utf8');
+    assert.match(out1, /\{\{< button style="secondary" url="https:\/\/example\.com\/a" text="Go" >\}\}/);
+    assert.equal(out2, out1);
+  } finally {
+    fs.rmSync(tempSrc, { recursive: true, force: true });
+    fs.rmSync(tempDest1, { recursive: true, force: true });
+    fs.rmSync(tempDest2, { recursive: true, force: true });
+  }
+});
+
+test('Button external={true} warns with file and tag on non-http(s) URL while dropping redundant http(s) external', () => {
+  const rel = 'events/2024/kubecon-EU-2024/index.mdx';
+  const input = [
+    '---',
+    'title: "PDF Button Test"',
+    '---',
+    '<Button secondary title="Slides" url="/cncf-tag-network/slides.pdf" external={ true } />',
+    '<Button $secondary title="External" $url="https://example.com" $external={ true } />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'kubecon-eu-2024', file: rel });
+  assert.match(output, /\{\{< button style="secondary" text="Slides" url="\/cncf-tag-network\/slides\.pdf" >\}\}/);
+  assert.match(output, /\{\{< button style="secondary" text="External" url="https:\/\/example\.com" >\}\}/);
+  assert.doesNotMatch(output, /external=/);
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /events\/2024\/kubecon-EU-2024\/index\.mdx/);
+  assert.match(stats.warnings[0], /<Button secondary title="Slides" url="\/cncf-tag-network\/slides\.pdf" external=\{ true \} \/>/);
+});
+
+
+test('Link converts site-relative, layer5.io (with query/anchor), external, mailto, tel, anchor, and // URLs', () => {
+  const input = [
+    '---',
+    'title: "Links"',
+    '---',
+    '- <Link to="/community/meshmates">MeshMates</Link>',
+    '- <Link to="https://layer5.io/projects/meshery?tab=overview#install">Meshery</Link>',
+    '- <Link to="https://layer5.io">Home</Link>',
+    '- <Link to="https://github.com/layer5io/layer5">GitHub</Link>',
+    '- <Link to="mailto:community@layer5.io">Email</Link>',
+    '- <Link to="tel:+1234567890">Phone</Link>',
+    '- <Link to="#section">Jump</Link>',
+    '- <Link to="//example.com/path">ProtoRel</Link>',
+    '- <Link to="/blog">\n    Multiline\n    Label\n  </Link>',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'links', file: 'blog/post/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.match(output, /- \[MeshMates\]\(\/community\/meshmates\)/);
+  assert.match(output, /- \[Meshery\]\(\/projects\/meshery\?tab=overview#install\)/);
+  assert.match(output, /- \[Home\]\(\/\)/);
+  assert.match(output, /- \[GitHub\]\(https:\/\/github\.com\/layer5io\/layer5\)/);
+  assert.match(output, /- \[Email\]\(mailto:community@layer5\.io\)/);
+  assert.match(output, /- \[Phone\]\(tel:\+1234567890\)/);
+  assert.match(output, /- \[Jump\]\(#section\)/);
+  assert.match(output, /- \[ProtoRel\]\(\/\/example\.com\/path\)/);
+  assert.match(output, /- \[Multiline Label\]\(\/blog\)/);
+});
+
+test('Link emits {{< link >}} shortcode for className, target/rel, or HTML/JSX children', () => {
+  const input = [
+    '---',
+    'title: "Rich Links"',
+    '---',
+    '<Link className="highlight" to="/community/meshmates">MeshMates</Link>',
+    '<Link className="mute" to="https://layer5.io/projects/cloud-native-performance">CNP</Link>',
+    '<Link to="/blog" className="project-card" key="1"><div className="content_type"><h5>Blog</h5></div></Link>',
+    '<Link to="https://example.com" target="_blank" rel="noopener">Ext</Link>',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'rich-links', file: 'handbook/writing-program/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.match(output, /\{\{< link to="\/community\/meshmates" class="highlight" >\}\}MeshMates\{\{< \/link >\}\}/);
+  assert.match(output, /\{\{< link to="\/projects\/cloud-native-performance" class="mute" >\}\}CNP\{\{< \/link >\}\}/);
+  assert.match(output, /\{\{< link to="\/blog" class="project-card" >\}\}<div className="content_type"><h5>Blog<\/h5><\/div>\{\{< \/link >\}\}/);
+  assert.match(output, /\{\{< link to="https:\/\/example\.com" target="_blank" rel="noopener" >\}\}Ext\{\{< \/link >\}\}/);
+});
+
+test('Link warns and preserves tag for bare-relative and non-literal `to` values', () => {
+  const rel = 'programs/lfx-2025/lfx-2025.mdx';
+  const input = [
+    '---',
+    'title: "Bad Links"',
+    '---',
+    '<Link to="newcomer">Newcomer</Link>',
+    '<Link to="community/members/mia-grenell">Mia</Link>',
+    '<Link to="">Empty</Link>',
+    '<Link to="../../articles/kubernetes/management-of-kubernetes">K8s</Link>',
+    '<Link to={link[index]} key={index}>Dynamic</Link>',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'lfx-2025', file: rel });
+  assert.equal(stats.warnings.length, 5);
+  assert.ok(!stats.warnings.some((w) => w.includes('non-literal expression for "key"')));
+  assert.ok(stats.warnings.some((w) => w.includes(rel) && w.includes('bare-relative "to" value "newcomer"')));
+  assert.ok(stats.warnings.some((w) => w.includes(rel) && w.includes('bare-relative "to" value "community/members/mia-grenell"')));
+  assert.ok(stats.warnings.some((w) => w.includes(rel) && w.includes('bare-relative "to" value ""')));
+  assert.ok(stats.warnings.some((w) => w.includes(rel) && w.includes('bare-relative "to" value "../../articles/kubernetes/management-of-kubernetes"')));
+  assert.ok(stats.warnings.some((w) => w.includes('non-literal expression for "to"')));
+  assert.match(output, /<Link to="newcomer">Newcomer<\/Link>/);
+  assert.match(output, /<Link to=\{link\[index\]\} key=\{index\}>Dynamic<\/Link>/);
+});
+
+
+test('Wrappers unwrap all 8 collection wrappers, dedent common indent, and preserve fenced code blocks', () => {
+  const input = [
+    '---',
+    'title: "Wrapper Test"',
+    '---',
+    '<CareerWrapper>',
+    '    <div className="body-sections">',
+    '      <h3>Responsibilities</h3>',
+    '      <Link to="/careers/programs">Programs</Link>',
+    '    </div>',
+    '</CareerWrapper>',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'swe', file: 'careers/software-engineer/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.doesNotMatch(output, /CareerWrapper/);
+  assert.match(output, /\n<div className="body-sections">\n  <h3>Responsibilities<\/h3>\n  \[Programs\]\(\/careers\/programs\)\n<\/div>\n/);
+
+  const withFence = [
+    '---',
+    'title: "Fence Wrapper"',
+    '---',
+    '<BlogWrapper>',
+    '    Intro text.',
+    '```bash',
+    '    indented_inside_fence',
+    '```',
+    '    Outro text.',
+    '</BlogWrapper>',
+  ].join('\n');
+  const res = convertFile(withFence, { slug: 'fence', file: 'blog/post/index.mdx' });
+  assert.equal(res.stats.warnings.length, 0);
+  assert.doesNotMatch(res.output, /BlogWrapper/);
+  assert.match(res.output, /\nIntro text\.\n```bash\n    indented_inside_fence\n```\nOutro text\.\n/);
+});
+
+
+test('Wrappers do not let a shorter fence run close a longer fenced block when dedenting', () => {
+  const input = [
+    '---',
+    'title: "Long Fence Wrapper"',
+    '---',
+    '<BlogWrapper>',
+    '    Intro text.',
+    '````md',
+    '    ```nested',
+    '        deeply indented',
+    '````',
+    '    Outro text.',
+    '</BlogWrapper>',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'long-fence', file: 'blog/post/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.doesNotMatch(output, /BlogWrapper/);
+  assert.match(output, /\nIntro text\.\n````md\n    ```nested\n        deeply indented\n````\nOutro text\.\n/);
+});
+
+
+test('Code converts self-closing template-literal codeString to fenced code block with dynamic fence and text fallback', () => {
+  const input = [
+    '---',
+    'title: "Code Test"',
+    '---',
+    '<Code language="bash" codeString={`npm install\nnpm test`} />',
+    '<Code codeString={`git status`} />',
+    '<Code language="md" codeString={`here is \\`\\`\\`nested\\`\\`\\` fence`} />',
+    '<Code language="bash" codeString={`echo ${userVar}`} />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'code-test', file: 'handbook/contribution/index.mdx' });
+  assert.match(output, /```bash\nnpm install\nnpm test\n```/);
+  assert.match(output, /```text\ngit status\n```/);
+  assert.match(output, /````md\nhere is ```nested``` fence\n````/);
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /non-literal expression for "codeString"/);
+  assert.match(output, /<Code language="bash" codeString=\{`echo \$\{userVar\}`\} \/>/);
+});
+
+
+test('Wrappers warn and leave tag as-is when body has mixed 0-space and 4+ space lines after dedent', () => {
+  const input = [
+    '---',
+    'title: "Mixed Indent Wrapper"',
+    '---',
+    '<BlogWrapper>',
+    '    <h4 className="date">October 04 to 09, 2021</h4>',
+    'Regular 0-space line with <Link to="/blog">link</Link>.',
+    '</BlogWrapper>',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'ccoss', file: 'blog/2021/ccoss/index.mdx' });
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /4\+ space indented line after dedent/);
+  assert.match(output, /<BlogWrapper>/);
+  assert.match(output, /\[link\]\(\/blog\)/);
 });

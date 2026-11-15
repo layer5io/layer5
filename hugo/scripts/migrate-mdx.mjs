@@ -28,17 +28,48 @@ import { execFileSync } from 'node:child_process';
 
 /* ---------------------------------------------------------------- component map */
 export const COMPONENTS = {
-  Button:        { shortcode: 'button',         text: true, alias: { to: 'url', href: 'url', link: 'url' } },
+  Button: {
+    shortcode: 'button',
+    text: true,
+    alias: { to: 'url', href: 'url', link: 'url', title: 'text' },
+    flagValues: { primary: ['style', 'primary'], secondary: ['style', 'secondary'] },
+    drop: new Set(['external']),
+  },
   CTA_FullWidth: { shortcode: 'cta-fullwidth' },
   Terminal:      { shortcode: 'terminal',       paired: true, bodyAttr: 'code' },
   Accordion:     { shortcode: 'accordion',      paired: true },
   AccordionItem: { shortcode: 'accordion-item', paired: true },
-  Card:          { shortcode: 'card',           paired: true },
+  Card:             { shortcode: 'card',           paired: true },
+  Link:             { custom: 'link' },
+  BlogWrapper:      { custom: 'unwrap' },
+  CareerWrapper:    { custom: 'unwrap' },
+  EventWrapper:     { custom: 'unwrap' },
+  NewsWrapper:      { custom: 'unwrap' },
+  ProgramsWrapper:  { custom: 'unwrap' },
+  ProjectWrapper:   { custom: 'unwrap' },
+  ResourcesWrapper: { custom: 'unwrap' },
+  BookWrapper:      { custom: 'unwrap' },
+  Code:             { custom: 'code' },
+};
+const COLLECTION_EXCLUDED_COMPONENTS = {
+  sistent: new Set([
+    'Button', 'CTA_FullWidth', 'Terminal', 'Accordion', 'AccordionItem', 'Card', 'Link', 'Code',
+    'BlogWrapper', 'CareerWrapper', 'EventWrapper', 'NewsWrapper',
+    'ProgramsWrapper', 'ProjectWrapper', 'ResourcesWrapper', 'BookWrapper',
+  ]),
 };
 const DROP_ATTRS = new Set(['className', 'class', 'style', 'key', 'ref']);
 
+/** Resolve a component mapping for the active collection. */
+export function resolveComponentSpec(name, collection = '') {
+  if (collection && COLLECTION_EXCLUDED_COMPONENTS[collection]?.has(name)) return null;
+  return COMPONENTS[name] || null;
+}
+
 /* ---------------------------------------------------------------- tag scanner */
 const isWs = (c) => c === ' ' || c === '\n' || c === '\t' || c === '\r';
+const isTagWs = (c) => isWs(c) || c === '\u200B';
+const cleanAttrVal = (v) => v.replace(/\u200B/g, '');
 
 /** Parse an opening tag starting at text[start] === '<'. Returns null if malformed. */
 export function parseOpenTag(text, start) {
@@ -50,7 +81,7 @@ export function parseOpenTag(text, start) {
   const attrs = [];
   const problems = [];
   while (i < text.length) {
-    while (isWs(text[i])) i++;
+    while (isTagWs(text[i])) i++;
     if (text.startsWith('/>', i)) return { name, attrs, problems, end: i + 2, selfClosing: true };
     if (text[i] === '>') return { name, attrs, problems, end: i + 1, selfClosing: false };
     if (text[i] === '{') { // {...spread}
@@ -58,23 +89,26 @@ export function parseOpenTag(text, start) {
       problems.push(`spread/expression attribute ${raw.slice(0, 40)}`);
       i = next; continue;
     }
-    const an = /^[\w:.-]+/.exec(text.slice(i));
+    const an = /^[\w$:.-]+/.exec(text.slice(i));
     if (!an) return null;
     const key = an[0]; i += key.length;
-    while (isWs(text[i])) i++;
+    while (isTagWs(text[i])) i++;
     if (text[i] !== '=') { attrs.push({ key, value: 'true', literal: true }); continue; }
-    i++; while (isWs(text[i])) i++;
+    i++; while (isTagWs(text[i])) i++;
     if (text[i] === '"' || text[i] === "'") {
       const q = text[i]; const j = text.indexOf(q, i + 1);
       if (j === -1) return null;
-      attrs.push({ key, value: text.slice(i + 1, j), literal: true }); i = j + 1;
+      attrs.push({ key, value: cleanAttrVal(text.slice(i + 1, j)), literal: true }); i = j + 1;
     } else if (text[i] === '{') {
       const [raw, next] = readBraces(text, i);
       const inner = raw.slice(1, -1).trim();
       const str = /^(["'`])([\s\S]*)\1$/.exec(inner);
-      if (str && !(str[1] === '`' && str[2].includes('${'))) attrs.push({ key, value: str[2], literal: true });
+      if (str && !(str[1] === '`' && str[2].includes('${'))) attrs.push({ key, value: cleanAttrVal(str[2]), literal: true });
       else if (/^(-?\d+(\.\d+)?|true|false)$/.test(inner)) attrs.push({ key, value: inner, literal: true });
-      else { attrs.push({ key, value: inner, literal: false }); problems.push(`non-literal expression for "${key}"`); }
+      else {
+        attrs.push({ key, value: inner, literal: false });
+        if (key !== 'key' && key !== 'ref') problems.push(`non-literal expression for "${key}"`);
+      }
       i = next;
     } else return null;
   }
@@ -127,12 +161,32 @@ function fmtValue(v) {
   return `"${flat.replace(/"/g, '&quot;')}"`;
 }
 
-function buildShortcode(spec, tag, children, ctx) {
+function buildShortcode(spec, tag, children, ctx, rawTag = '') {
   const attrs = new Map();
+  let externalTrue = false;
   for (const a of tag.attrs) {
-    if (DROP_ATTRS.has(a.key)) { ctx.count('droppedAttrs'); continue; }
-    const key = spec.alias?.[a.key] ?? snake(a.key);
+    const baseKey = a.key.startsWith('$') ? a.key.slice(1) : a.key;
+    if (baseKey === 'external' && a.value === 'true') externalTrue = true;
+    if (DROP_ATTRS.has(a.key) || DROP_ATTRS.has(baseKey) || spec.drop?.has(a.key) || spec.drop?.has(baseKey)) {
+      ctx.count('droppedAttrs');
+      continue;
+    }
+    const flagEntry = spec.flagValues?.[baseKey];
+    if (flagEntry) {
+      if (a.value !== 'false') attrs.set(flagEntry[0], flagEntry[1]);
+      continue;
+    }
+    const key = spec.alias?.[a.key] ?? spec.alias?.[baseKey] ?? snake(baseKey);
+    if (baseKey === 'title' && key === 'text' && attrs.has('text')) continue;
     attrs.set(key, a.value);
+  }
+  if (externalTrue) {
+    const resolvedUrl = (attrs.get('url') ?? '').trim();
+    if (resolvedUrl && !/^https?:\/\//i.test(resolvedUrl)) {
+      const loc = ctx.file ? `${ctx.file}: ` : '';
+      const tagSnippet = rawTag.replace(/\s+/g, ' ').trim() || `<${tag.name}>`;
+      ctx.warn(`${loc}<${tag.name}> has external="true" on non-http(s) URL "${resolvedUrl}" (${tagSnippet}); review manually`);
+    }
   }
   let body = children?.trim() ?? '';
   if (spec.bodyAttr && attrs.has(spec.bodyAttr)) { body = attrs.get(spec.bodyAttr); attrs.delete(spec.bodyAttr); }
@@ -146,6 +200,76 @@ function buildShortcode(spec, tag, children, ctx) {
   return open;
 }
 
+/** Normalize a <Link to="..."> URL or return null if bare-relative. */
+function normalizeLinkUrl(raw) {
+  const u = raw.trim();
+  if (/^https?:\/\/layer5\.io(?=[/?#]|$)/i.test(u)) {
+    const rest = u.replace(/^https?:\/\/layer5\.io/i, '');
+    if (!rest) return '/';
+    return rest.startsWith('/') ? rest : `/${rest}`;
+  }
+  if (
+    u.startsWith('/') ||
+    u.startsWith('#') ||
+    /^(?:https?:|mailto:|tel:)/i.test(u)
+  ) {
+    return u;
+  }
+  return null;
+}
+
+function convertLink(tag, children, ctx, rawTag, rawFull) {
+  const loc = ctx.file ? `${ctx.file}: ` : '';
+  const tagSnippet = rawTag.replace(/\s+/g, ' ').trim() || '<Link>';
+  const toAttr = tag.attrs.find((a) => a.key === 'to');
+  if (!toAttr) {
+    ctx.warn(`${loc}<Link> missing "to" attribute (${tagSnippet}); left as-is`);
+    return rawFull;
+  }
+  if (!toAttr.literal) {
+    return rawFull;
+  }
+  const url = normalizeLinkUrl(toAttr.value);
+  if (url === null) {
+    ctx.warn(`${loc}<Link> has bare-relative "to" value "${toAttr.value}" (${tagSnippet}); review manually`);
+    return rawFull;
+  }
+  const classAttr = tag.attrs.find((a) => a.key === 'className' || a.key === 'class');
+  const targetAttr = tag.attrs.find((a) => a.key === 'target');
+  const relAttr = tag.attrs.find((a) => a.key === 'rel');
+  const hasRichChild = /<[A-Za-z!/]|{{[<%]/.test(children);
+  if (!classAttr && !targetAttr && !relAttr && !hasRichChild) {
+    const label = children.replace(/\s+/g, ' ').trim();
+    const mdUrl = /[\s()]/.test(url) ? `<${url}>` : url;
+    return `[${label}](${mdUrl})`;
+  }
+  const parts = [`to=${fmtValue(url)}`];
+  if (classAttr && classAttr.value.trim()) parts.push(`class=${fmtValue(classAttr.value)}`);
+  if (targetAttr && targetAttr.value.trim()) parts.push(`target=${fmtValue(targetAttr.value)}`);
+  if (relAttr && relAttr.value.trim()) parts.push(`rel=${fmtValue(relAttr.value)}`);
+  return `{{< link ${parts.join(' ')} >}}${children.trim()}{{< /link >}}`;
+}
+
+function convertCode(tag, ctx, rawTag, rawFull) {
+  const loc = ctx.file ? `${ctx.file}: ` : '';
+  const tagSnippet = rawTag.replace(/\s+/g, ' ').trim() || '<Code>';
+  const codeAttr = tag.attrs.find((a) => a.key === 'codeString');
+  if (!codeAttr) {
+    ctx.warn(`${loc}<Code> missing "codeString" attribute (${tagSnippet}); left as-is`);
+    return rawFull;
+  }
+  if (!codeAttr.literal) {
+    return rawFull;
+  }
+  const langAttr = tag.attrs.find((a) => a.key === 'language');
+  const lang = (langAttr?.literal ? langAttr.value.trim() : '') || 'text';
+  const codeBody = codeAttr.value.replace(/\\`/g, '`').replace(/\r\n/g, '\n').replace(/^\n/, '').replace(/\n$/, '');
+  const backtickRuns = codeBody.match(/`+/g) || [];
+  const maxRun = backtickRuns.reduce((m, s) => Math.max(m, s.length), 0);
+  const fence = '`'.repeat(Math.max(3, maxRun + 1));
+  return `${fence}${lang}\n${codeBody}\n${fence}`;
+}
+
 /* ---------------------------------------------------------------- body conversion */
 function convertSegment(text, ctx) {
   let out = '', i = 0;
@@ -157,7 +281,7 @@ function convertSegment(text, ctx) {
     out += text.slice(i, m.index);
     const name = m[1];
     const tag = parseOpenTag(text, m.index);
-    const spec = COMPONENTS[name];
+    const spec = resolveComponentSpec(name, ctx.collection);
     if (!tag) { ctx.warn(`could not parse <${name}> tag; left as-is`); out += '<'; i = m.index + 1; continue; }
     if (!spec) {
       ctx.unknown(name);
@@ -166,6 +290,7 @@ function convertSegment(text, ctx) {
       if (!(prev && ctx.masked?.[+prev[1]] === marker.trim())) out += marker;
       out += text.slice(m.index, tag.end); i = tag.end; continue;
     }
+    if (spec.custom === 'unwrap') { out += text.slice(m.index, tag.end); i = tag.end; continue; }
     tag.problems.forEach((p) => ctx.warn(`<${name}>: ${p}`));
     let children = '', end = tag.end;
     if (!tag.selfClosing) {
@@ -175,29 +300,108 @@ function convertSegment(text, ctx) {
       end = c.end;
     }
     ctx.component(name);
-    out += buildShortcode(spec, tag, children, ctx);
+    if (spec.custom === 'link') {
+      out += convertLink(tag, children, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
+    } else if (spec.custom === 'code') {
+      out += convertCode(tag, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
+    } else {
+      out += buildShortcode(spec, tag, children, ctx, text.slice(m.index, tag.end));
+    }
     i = end;
   }
   return out;
 }
 
+/** Dedent a wrapper body by its common non-empty indent, never modifying fenced code blocks. */
+function dedentWrapperBody(inner) {
+  const trimmed = inner.replace(/^(?:[ \t]*\n)+/, '').replace(/(?:\n[ \t]*)+$/, '');
+  if (!trimmed) return { text: '', hasIndentHazard: false };
+  const lines = trimmed.split('\n');
+  const inFenceFlags = new Array(lines.length).fill(false);
+  let fenceChar = null;
+  let fenceLen = 0;
+  for (let idx = 0; idx < lines.length; idx++) {
+    const f = /^\s*(```+|~~~+)/.exec(lines[idx]);
+    if (f && !fenceChar) { fenceChar = f[1][0]; fenceLen = f[1].length; inFenceFlags[idx] = true; }
+    else if (f && fenceChar && f[1][0] === fenceChar && f[1].length >= fenceLen) { inFenceFlags[idx] = true; fenceChar = null; }
+    else if (fenceChar) { inFenceFlags[idx] = true; }
+  }
+  let minIndent = Infinity;
+  for (let idx = 0; idx < lines.length; idx++) {
+    if (inFenceFlags[idx] || !lines[idx].trim()) continue;
+    const m = /^( +)/.exec(lines[idx]);
+    const indent = m ? m[1].length : 0;
+    if (indent < minIndent) minIndent = indent;
+  }
+  const dedentedLines = (!Number.isFinite(minIndent) || minIndent === 0)
+    ? lines
+    : lines.map((line, idx) => (inFenceFlags[idx] || !line.trim() ? line : line.slice(minIndent)));
+  let prevBlank = true;
+  let hasIndentHazard = false;
+  for (let idx = 0; idx < dedentedLines.length; idx++) {
+    if (inFenceFlags[idx]) { prevBlank = false; continue; }
+    if (!dedentedLines[idx].trim()) { prevBlank = true; continue; }
+    if (prevBlank && /^ {4,}/.test(dedentedLines[idx])) { hasIndentHazard = true; break; }
+    prevBlank = false;
+  }
+  return { text: dedentedLines.join('\n'), hasIndentHazard };
+}
+
+/** Unwrap collection wrapper tags (e.g. <BlogWrapper>...</BlogWrapper>) outside fenced code blocks. */
+function unwrapCollectionWrappers(body, ctx) {
+  const chunks = splitCodeFenceChunks(body);
+  const maskedFences = [];
+  const joined = chunks.map((c) => (c.code ? `\u0000WRAP_FENCE_${maskedFences.push(c.text) - 1}\u0000` : c.text)).join('\n');
+  let out = '', i = 0;
+  const re = /<([A-Z][\w.]*)(?![\w.])/g;
+  while (true) {
+    re.lastIndex = i;
+    const m = re.exec(joined);
+    if (!m) { out += joined.slice(i); break; }
+    const name = m[1];
+    const spec = resolveComponentSpec(name, ctx.collection);
+    if (spec?.custom !== 'unwrap') {
+      out += joined.slice(i, m.index + 1);
+      i = m.index + 1;
+      continue;
+    }
+    const tag = parseOpenTag(joined, m.index);
+    if (!tag || tag.selfClosing) {
+      out += joined.slice(i, m.index + 1);
+      i = m.index + 1;
+      continue;
+    }
+    const c = findClose(joined, tag.end, name);
+    if (!c) {
+      ctx.warn(`<${name}> has no closing tag; left as-is`);
+      out += joined.slice(i, tag.end);
+      i = tag.end;
+      continue;
+    }
+    const rawInner = joined.slice(tag.end, c.start).replace(/\u0000WRAP_FENCE_(\d+)\u0000/g, (_, n) => maskedFences[+n]);
+    const { text: dedentedText, hasIndentHazard } = dedentWrapperBody(rawInner);
+    if (hasIndentHazard) {
+      ctx.warn(`<${name}>: wrapper body has 4+ space indented line after dedent; left as-is for manual review`);
+      out += joined.slice(i, c.end);
+    } else {
+      ctx.component(name);
+      out += joined.slice(i, m.index) + dedentedText;
+    }
+    i = c.end;
+  }
+  return out.replace(/\u0000WRAP_FENCE_(\d+)\u0000/g, (_, n) => maskedFences[+n]);
+}
+
 /** Convert an MDX body. Code fences and inline code are protected. */
 export function convertBody(body, ctx) {
-  const lines = body.split('\n');
-  const chunks = []; let buf = [], inFence = null;
-  for (const line of lines) {
-    const f = /^\s*(```+|~~~+)/.exec(line);
-    if (f && !inFence) { chunks.push({ code: false, text: buf.join('\n') }); buf = [line]; inFence = f[1][0]; }
-    else if (f && inFence && f[1][0] === inFence) { buf.push(line); chunks.push({ code: true, text: buf.join('\n') }); buf = []; inFence = null; }
-    else buf.push(line);
-  }
-  chunks.push({ code: !!inFence, text: buf.join('\n') });
+  const unwrapped = unwrapCollectionWrappers(body, ctx);
+  const chunks = splitCodeFenceChunks(unwrapped);
 
   return chunks.map((c) => {
     if (c.code) return c.text;
     const masked = []; // protect inline code
     // `{`template literal`}` attribute values are left alone so the tag parser can read them
-    let t = c.text.replace(/\{\s*`[^`]*`\s*\}|`[^`\n]+`/g, (s) => (s[0] === '{' ? s : `\u0000${masked.push(s) - 1}\u0000`));
+    let t = c.text.replace(/\{\s*`(?:\\.|[^`\\])*`\s*\}|`[^`\n]+`/g, (s) => (s[0] === '{' ? s : `\u0000${masked.push(s) - 1}\u0000`));
     t = t.replace(/^import\s+(?:[\w$]+\s*,?\s*)?(?:\{[^}]*\}|\*\s+as\s+[\w$]+)?\s*from\s+['"][^'"]+['"];?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
     t = t.replace(/^import\s+['"][^'"]+['"];?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
     if (/^export\s/m.test(t)) ctx.warn('contains `export` statements (MDX exports are not supported in Hugo)');
@@ -281,9 +485,13 @@ export function convertFrontMatter(fm, slug, ctx) {
   return out.join('\n');
 }
 
-export function convertFile(source, { slug, file = '' } = {}) {
+export function convertFile(source, { slug, file = '', collection } = {}) {
+  const normFile = file ? file.replace(/\\/g, '/').replace(/^\/+/, '') : '';
+  const resolvedCollection = collection ?? (normFile.includes('/') ? normFile.split('/')[0] : '');
   const stats = { components: {}, unknown: {}, counters: {}, warnings: [] };
   const ctx = {
+    file: normFile,
+    collection: resolvedCollection,
     warn: (m) => stats.warnings.push(m),
     unknown: (n) => { stats.unknown[n] = (stats.unknown[n] || 0) + 1; },
     component: (n) => { stats.components[n] = (stats.components[n] || 0) + 1; },
@@ -351,14 +559,15 @@ function assetRefRegExp(relPath) {
 function splitCodeFenceChunks(text) {
   const lines = text.split('\n');
   const chunks = [];
-  let buf = [], inFence = null;
+  let buf = [], inFence = null, fenceLen = 0;
   for (const line of lines) {
     const f = /^\s*(```+|~~~+)/.exec(line);
     if (f && !inFence) {
       chunks.push({ code: false, text: buf.join('\n') });
       buf = [line];
       inFence = f[1][0];
-    } else if (f && inFence && f[1][0] === inFence) {
+      fenceLen = f[1].length;
+    } else if (f && inFence && f[1][0] === inFence && f[1].length >= fenceLen) {
       buf.push(line);
       chunks.push({ code: true, text: buf.join('\n') });
       buf = [];
@@ -449,9 +658,31 @@ function* walk(dir) {
   }
 }
 
-export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync, collection: collectionName, report: sharedReport }) {
-  const report = sharedReport || {
-    generated: new Date().toISOString(), dryRun, files: 0, converted: 0, withWarnings: 0, assetsCopied: 0,
+/** Parse --exclude CLI arguments (comma-separated and/or repeated flags). */
+export function parseExcludeArg(args) {
+  const out = new Set();
+  for (let i = 0; i < args.length; i++) {
+    let raw;
+    if (args[i] === '--exclude' && i + 1 < args.length) raw = args[++i];
+    else if (args[i].startsWith('--exclude=')) raw = args[i].slice('--exclude='.length);
+    if (raw) {
+      for (const item of raw.split(',')) {
+        const norm = item.trim().replace(/\\/g, '/').replace(/^\/+|\/+$/g, '');
+        if (norm) out.add(norm);
+      }
+    }
+  }
+  return [...out];
+}
+
+export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = execFileSync }) {
+  const excludeList = Array.isArray(exclude) ? exclude : String(exclude).split(',');
+  const excludeSet = new Set(
+    excludeList.map((s) => String(s).trim().replace(/\\/g, '/').replace(/^\/+|\/+$/g, '')).filter(Boolean)
+  );
+  const report = {
+    generated: new Date().toISOString(), dryRun, excluded: [...excludeSet], excludedFiles: 0,
+    files: 0, converted: 0, withWarnings: 0, assetsCopied: 0,
     templatesSkipped: 0, skippedTemplates: [], assetsRenamed: 0, assetRenames: [],
     emptyAssets: [], transcodeFailures: [], renameCollisions: [], assetsTranscoded: [],
     components: {}, unknown: {}, byCollection: {}, warnings: []
@@ -499,9 +730,15 @@ export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync, 
   // Pass 1: assets
   for (const file of allFiles) {
     const rel = path.relative(src, file);
+    const relNorm = rel.replace(/\\/g, '/');
+    const topCollection = relNorm.split('/')[0];
+    if (excludeSet.has(topCollection)) {
+      report.excludedFiles++;
+      continue;
+    }
     if (isTemplatePath(rel)) {
       report.templatesSkipped++;
-      report.skippedTemplates.push(rel.replace(/\\/g, '/'));
+      report.skippedTemplates.push(relNorm);
       continue;
     }
     const ext = path.extname(file);
@@ -515,7 +752,6 @@ export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync, 
     const format = sniffImageFormat(fileBuf);
     const dir = path.dirname(file);
     const oldName = path.basename(file);
-    const relNorm = rel.replace(/\\/g, '/');
 
     if (format === 'empty') {
       report.emptyAssets.push(relNorm);
@@ -627,7 +863,7 @@ export function migrate({ src, dest, dryRun = false, execFileFn = execFileSync, 
       sourceText = rewriteAssetReferences(sourceText, dirRenames);
     }
 
-    const { output, stats } = convertFile(sourceText, { slug, file: rel });
+    const { output, stats } = convertFile(sourceText, { slug, file: rel, collection });
     for (const [k, v] of Object.entries(stats.components)) bump(report.components, k, v);
     for (const [k, v] of Object.entries(stats.unknown)) bump(report.unknown, k, v);
     if (stats.warnings.length) {
@@ -662,7 +898,7 @@ function main() {
   const defaultSrc = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../src/collections');
   const src = get('--src') || (fs.existsSync(defaultSrc) ? defaultSrc : undefined);
   if (args.includes('--help') || !src) {
-    console.log('Usage: migrate-mdx.mjs [--src <collections dir>] [--dest content] [--dry-run] [--report report.json] [--progress data/migration.json] [--strict]');
+    console.log('Usage: migrate-mdx.mjs [--src <collections dir>] [--dest content] [--exclude <col1,col2>] [--dry-run] [--report report.json] [--progress data/migration.json] [--strict]');
     process.exit(args.includes('--help') ? 0 : 1);
   }
   const dryRun = args.includes('--dry-run');
@@ -683,6 +919,9 @@ function main() {
   if (get('--progress') && !dryRun) updateProgress(get('--progress'), report);
   const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k}×${v}`).join(', ') || '—';
   console.log(`${dryRun ? '[dry-run] ' : ''}${report.converted}/${report.files} documents converted, ${report.assetsCopied} assets, ${report.templatesSkipped} templates skipped, ${report.withWarnings} with warnings`);
+  if (report.excluded?.length) {
+    console.log(`Excluded collections (${report.excluded.join(', ')}): ${report.excludedFiles} files skipped`);
+  }
   if (report.skippedTemplates?.length) {
     console.log(`Skipped template items (${report.skippedTemplates.length}):`);
     report.skippedTemplates.forEach((t) => console.log(`  - ${t}`));
