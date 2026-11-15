@@ -109,8 +109,8 @@
   "aaa5778d.js": "aaa5778d-ab69d4809846369a38e1.js",
   "ac581ebe.js": "ac581ebe-d8f297aa0b7917a0edd2.js",
   "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff.js": "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff-91b5d651b934470f4810.js",
-  "app-d3e918ba7b42659e5751.js.LICENSE.txt": "app-d3e918ba7b42659e5751.js.LICENSE.txt",
-  "app.js": "app-d3e918ba7b42659e5751.js",
+  "app-764b8fbdccb4582cc38c.js.LICENSE.txt": "app-764b8fbdccb4582cc38c.js.LICENSE.txt",
+  "app.js": "app-764b8fbdccb4582cc38c.js",
   "b5f6012b.js": "b5f6012b-0d788a08c9a6ff5be2b5.js",
   "b94c7d6e898e669bbfd99da21b2e9e67976b8f68.js": "b94c7d6e898e669bbfd99da21b2e9e67976b8f68-29ed6451ccaef992cd70.js",
   "ba5828f4dac0658416d102e02536a23fbd61d3fb.js": "ba5828f4dac0658416d102e02536a23fbd61d3fb-680d94241fafedb1da8d.js",
@@ -418,7 +418,7 @@
   "component---src-templates-event-single-js-content-file-path-src-collections-events-2026-kubecon-india-2026-index-mdx.js": "component---src-templates-event-single-js-content-file-path-src-collections-events-2026-kubecon-india-2026-index-mdx-b1fbd47186576008d380.js",
   "component---src-templates-event-single-js-content-file-path-src-collections-events-2026-kubecon-na-2026-index-mdx.js": "component---src-templates-event-single-js-content-file-path-src-collections-events-2026-kubecon-na-2026-index-mdx-7b198fded292abe7f734.js",
   "component---src-templates-event-single-js-content-file-path-src-collections-events-2027-kubecon-eu-2027-index-mdx.js": "component---src-templates-event-single-js-content-file-path-src-collections-events-2027-kubecon-eu-2027-index-mdx-9a5040833f41b720ebde.js",
-  "component---src-templates-events-js.js": "component---src-templates-events-js-b06367a33bb70518f278.js",
+  "component---src-templates-events-js.js": "component---src-templates-events-js-ffb7f53bf4ed0bc6f07d.js",
   "component---src-templates-executive-bio-js-content-file-path-src-collections-members-lee-calcote-index-mdx.js": "component---src-templates-executive-bio-js-content-file-path-src-collections-members-lee-calcote-index-mdx-efefbeee7b897efc060a.js",
   "component---src-templates-handbook-template-js-content-file-path-src-collections-handbook-about-index-mdx.js": "component---src-templates-handbook-template-js-content-file-path-src-collections-handbook-about-index-mdx-3de6fb61b8fae6f122c4.js",
   "component---src-templates-handbook-template-js-content-file-path-src-collections-handbook-code-of-conduct-index-mdx.js": "component---src-templates-handbook-template-js-content-file-path-src-collections-handbook-code-of-conduct-index-mdx-c1fcd54b4e8cf3200ebf.js",
@@ -1440,7 +1440,7 @@
   "framework-68cec114a4c8cc45b448.js.LICENSE.txt": "framework-68cec114a4c8cc45b448.js.LICENSE.txt",
   "framework.js": "framework-68cec114a4c8cc45b448.js",
   "icon-library.gif": "static/icon-library-7a9eca699194351110d483fc21317036.gif",
-  "integration-image-colorMode.svg": "static/integration-image-colorMode.154ef79b.svg",
+  "integration-image-colorMode.svg": "static/integration-image-colorMode.90d3dccb.svg",
   "kubernetes.svg": "static/kubernetes.1984069f.svg",
   "layer5-products-overview-dark.svg": "static/layer5-products-overview-dark.e3465d19.svg",
   "layer5-products-overview.svg": "static/layer5-products-overview.e3465d19.svg",
@@ -2119,5 +2119,5 @@
   "static/yash-sharma.webp": "static/yash-sharma-54aa26b6e5743f0557cfc76aa9797f2d.webp",
   "static/yogi.webp": "static/yogi-d00ca1cc48ab74938a23d4359ef3fb01.webp",
   "styles.css": "styles.952024e98164fe40bc15.css",
-  "webpack-runtime.js": "webpack-runtime-2d9dcf2d32fc70610027.js"
+  "webpack-runtime.js": "webpack-runtime-1236388a3673586f720e.js"
 }
