@@ -109,8 +109,8 @@
   "aaa5778d.js": "aaa5778d-ab69d4809846369a38e1.js",
   "ac581ebe.js": "ac581ebe-d8f297aa0b7917a0edd2.js",
   "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff.js": "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff-91b5d651b934470f4810.js",
-  "app-104126dfffdcbd33a695.js.LICENSE.txt": "app-104126dfffdcbd33a695.js.LICENSE.txt",
-  "app.js": "app-104126dfffdcbd33a695.js",
+  "app-65e4cb71528b285ea468.js.LICENSE.txt": "app-65e4cb71528b285ea468.js.LICENSE.txt",
+  "app.js": "app-65e4cb71528b285ea468.js",
   "b5f6012b.js": "b5f6012b-0d788a08c9a6ff5be2b5.js",
   "b94c7d6e898e669bbfd99da21b2e9e67976b8f68.js": "b94c7d6e898e669bbfd99da21b2e9e67976b8f68-29ed6451ccaef992cd70.js",
   "ba5828f4dac0658416d102e02536a23fbd61d3fb.js": "ba5828f4dac0658416d102e02536a23fbd61d3fb-680d94241fafedb1da8d.js",
@@ -178,7 +178,7 @@
   "component---src-pages-learn-kanvas-labs-js.js": "component---src-pages-learn-kanvas-labs-js-a2a6ce38778a9fcd6da8.js",
   "component---src-pages-learn-learning-paths-js.js": "component---src-pages-learn-learning-paths-js-4c7715f6241d56a22132.js",
   "component---src-pages-learn-service-mesh-books-js.js": "component---src-pages-learn-service-mesh-books-js-76ed1a413d23edc912d9.js",
-  "component---src-pages-learn-workshops-js.js": "component---src-pages-learn-workshops-js-54094f29ed4426d553e8.js",
+  "component---src-pages-learn-workshops-js.js": "component---src-pages-learn-workshops-js-7839d356db12a4201771.js",
   "component---src-pages-newcomers-js.js": "component---src-pages-newcomers-js-572cdd56b035991119a8.js",
   "component---src-pages-partners-js.js": "component---src-pages-partners-js-7344b3bf2063ef269153.js",
   "component---src-pages-pricing-index-js.js": "component---src-pages-pricing-index-js-ef7a3cd02eb45e4dc8c2.js",
@@ -2119,5 +2119,5 @@
   "static/yash-sharma.webp": "static/yash-sharma-54aa26b6e5743f0557cfc76aa9797f2d.webp",
   "static/yogi.webp": "static/yogi-d00ca1cc48ab74938a23d4359ef3fb01.webp",
   "styles.css": "styles.d365d126c53ffee5e968.css",
-  "webpack-runtime.js": "webpack-runtime-7513ebaa76fe37a72de7.js"
+  "webpack-runtime.js": "webpack-runtime-20be102b998fe58317a2.js"
 }
