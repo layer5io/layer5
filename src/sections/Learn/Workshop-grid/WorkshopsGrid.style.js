@@ -62,6 +62,8 @@ export const WorkshopPageWrapper = styled.div`
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
+		position: relative;
+		z-index: 1;
 	}
 
 	a.readmeBtn {
@@ -94,7 +96,7 @@ export const WorkshopPageWrapper = styled.div`
 		}
 	}
 
-	.readmreBtn:after {
+	.readmeBtn:after {
 		content: '';
 		position: absolute;
 		top: -22rem;
@@ -227,4 +229,5 @@ export const WorkshopPageWrapper = styled.div`
 		a {
 			margin: auto;
 		}
+	}
 `;
