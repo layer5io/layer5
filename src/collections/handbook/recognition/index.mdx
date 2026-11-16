@@ -27,7 +27,7 @@ import { activityBadges, projectBadges, specialBadges } from "./badges-data";
 
 
 export const tableWrap = { overflowX: "auto" };
-export const table = { width: "100%", borderCollapse: "collapse", marginBottom: "2rem" };
+export const table = { minWidth: "650px", width: "100%", borderCollapse: "collapse", marginBottom: "2rem" };
 export const theadRow = { borderBottom: "2px solid var(--text-color, #ddd)", backgroundColor: "rgba(0, 0, 0, 0.05)" };
 export const th = { textAlign: "left", padding: "12px", fontWeight: 600 };
 export const recognitionsstyle = { marginBottom: "0.5rem" };
@@ -73,8 +73,8 @@ Member profiles carry a number of specific designations, depending upon how a co
 
 Badges are awarded to community members who have been consistently engaged and impactful within a given area of the community or on a specific project. Every community member, whether contributing with code or not, has the opportunity to obtain any number of badges of recognition of their efforts. Community members are encouraged to collect the whole set!
 
-<div style={tableWrap}>
-  <h4>Activity Badges</h4>
+<h4>Activity Badges</h4>
+<div className="table-container">
   <table style={table}>
     <thead>
       <tr style={theadRow}>
@@ -96,8 +96,10 @@ Badges are awarded to community members who have been consistently engaged and i
       ))}
     </tbody>
   </table>
+</div>
 
-  <h4>Project Badges</h4>
+<h4>Project Badges</h4>
+<div className="table-container">
   <table style={table}>
     <thead>
       <tr style={theadRow}>
@@ -119,8 +121,10 @@ Badges are awarded to community members who have been consistently engaged and i
       ))}
     </tbody>
   </table>
+</div>
 
-  <h4>Special Recognition Badges</h4>
+<h4>Special Recognition Badges</h4>
+<div className="table-container">
   <table style={table}>
     <thead>
       <tr style={theadRow}>
