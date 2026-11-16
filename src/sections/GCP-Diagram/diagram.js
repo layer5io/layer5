@@ -166,7 +166,7 @@ const Gcp = () => {
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <AutoVideo src={DragNDropVideo} poster={DragNDropPoster} width={1258} height={680} alt="GCP Diagrams for anything" className="GCP-image" />
+              <AutoVideo src={DragNDropVideo} poster={DragNDropPoster} width={1258} height={680} alt="GCP Diagrams for anything" className="gcp-image" />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
@@ -186,14 +186,14 @@ const Gcp = () => {
           </Col>
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <AutoVideo src={IconsLibraryVideo} poster={IconsLibraryPoster} width={1258} height={680} alt="GCP Diagrams for anything" className="GCP-image" />
+              <AutoVideo src={IconsLibraryVideo} poster={IconsLibraryPoster} width={1258} height={680} alt="GCP Diagrams for anything" className="gcp-image" />
             </div>
           </Col>
         </Row>
         <Row className="catalog">
           <Col md={8} className="diagram-image">
             <div className="image-wrapper">
-              <img src={GCPCatalogDark} alt="Designing GCP Diagrams with Kanvas" className="GCP-image" />
+              <img src={GCPCatalogDark} alt="Designing GCP Diagrams with Kanvas" className="gcp-image" />
             </div>
           </Col>
           <Col md={4} className="diagram-detail">
