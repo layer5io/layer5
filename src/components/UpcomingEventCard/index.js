@@ -36,6 +36,7 @@ const UpcomingEvents = ({ data }) => {
                           alt={item.frontmatter.title}
                           width={480}
                           height={270}
+                          fitContainer={true}
                         />
                       </Link>
                     </div>
