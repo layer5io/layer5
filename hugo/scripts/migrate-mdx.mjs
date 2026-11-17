@@ -496,7 +496,7 @@ export function convertFrontMatter(fm, slug, ctx) {
  * `dir` is the source document's folder. When given, `../` front-matter images are resolved against it,
  * listed in stats.assets for the caller to copy into the bundle, and the value is rewritten to the file name.
  */
-export function convertFile(source, { slug, file = '', collection, dir } = {}) {
+export function convertFile(source, { slug, file = '', collection, dir, taken = () => false } = {}) {
   const normFile = file ? file.replace(/\\/g, '/').replace(/^\/+/, '') : '';
   const resolvedCollection = collection ?? (normFile.includes('/') ? normFile.split('/')[0] : '');
   const stats = { components: {}, unknown: {}, counters: {}, warnings: [], assets: [] };
@@ -511,8 +511,10 @@ export function convertFile(source, { slug, file = '', collection, dir } = {}) {
       const from = path.resolve(dir, v); const name = path.basename(from);
       // missing file, or a different file already owns this name in the bundle: leave it for the outside-bundle warning
       const local = path.join(dir, name);
-      if (!fs.existsSync(from) || (fs.existsSync(local) && local !== from)
+      if (!fs.existsSync(from) || (fs.existsSync(local) && local !== from) || taken(name)
         || stats.assets.some((a) => a.name === name && a.from !== from)) return null;
+      const format = sniffImageFormat(fs.readFileSync(from));
+      if (format === 'empty' || format === 'avif' || normalizeAssetFilename(name, format) !== name) return null;
       if (!stats.assets.some((a) => a.from === from)) stats.assets.push({ from, name });
       ctx.count('assetsBundled');
       return name;
@@ -884,7 +886,11 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
       sourceText = rewriteAssetReferences(sourceText, dirRenames);
     }
 
-    const { output, stats } = convertFile(sourceText, { slug, file: rel, collection, dir: path.dirname(file) });
+    const { output, stats } = convertFile(sourceText, {
+      slug, file: rel, collection,
+      dir: base === 'index' ? path.dirname(file) : undefined,
+      taken: (name) => writtenTargets.has(path.join(path.dirname(target), name)),
+    });
     for (const [k, v] of Object.entries(stats.components)) bump(report.components, k, v);
     for (const [k, v] of Object.entries(stats.unknown)) bump(report.unknown, k, v);
     if (stats.warnings.length) {
