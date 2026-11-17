@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <rect width="200" height="200" rx="32" fill="#141414" stroke="#00D3A9" stroke-width="4"/>
+  <g transform="translate(24, 45) scale(0.9)">
+    <path d="M0 40 L35 20 L35 60 L0 40 Z" fill="#00D3A9"/>
+    <path d="M42 40 L77 20 L77 60 L42 40 Z" fill="#00D3A9" opacity="0.75"/>
+    <path d="M84 40 L119 20 L119 60 L84 40 Z" fill="#00D3A9" opacity="0.45"/>
+  </g>
+  <text x="100" y="146" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">TCS LABS</text>
+</svg>
+
