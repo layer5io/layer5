@@ -20,11 +20,13 @@ jobs:
     timeout-minutes: 120
     steps:
       - name: Collect pages from sitemap
+        shell: bash
         run: |
-          curl -fsSL https://layer5.io/sitemap-index.xml -o sitemap-index.xml
+          set -euo pipefail
+          curl -fsSL --connect-timeout 10 --max-time 60 --retry 3 --retry-delay 2 https://layer5.io/sitemap-index.xml -o sitemap-index.xml
           grep -o '<loc>[^<]*</loc>' sitemap-index.xml | sed -e 's/<[^>]*>//g' > sitemap-files.txt
           while IFS= read -r sitemap; do
-            curl -fsSL "$sitemap"
+            curl -fsSL --connect-timeout 10 --max-time 60 --retry 3 --retry-delay 2 "$sitemap"
           done < sitemap-files.txt | grep -o '<loc>[^<]*</loc>' | sed -e 's/<[^>]*>//g' | sort -u > layer5-urls.txt
           test -s layer5-urls.txt
 
@@ -61,14 +63,21 @@ jobs:
           if-no-files-found: warn
 
       - name: Create or update tracking issue
-        if: steps.lychee.outputs.exit_code != '0'
+        if: steps.lychee.outputs.exit_code != '' && steps.lychee.outputs.exit_code != '0'
+        shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
+          set -euo pipefail
+          if [ ! -f broken-links.md ]; then
+            printf 'broken-links.md was not generated; refusing to update the tracking issue.\n' >&2
+            exit 1
+          fi
           {
-            printf 'The scheduled [broken link check](%s) found broken links on https://layer5.io.\n\n' "$RUN_URL"
+            printf '<!-- broken-link-check-tracker -->\n'
+            printf 'The latest [broken link check](%s) found broken links on https://layer5.io.\n\n' "$RUN_URL"
             printf 'The full report is available in the `broken-links-report` artifact on the workflow run.\n\n'
             printf '<details><summary>Broken link report</summary>\n\n'
             head -n 200 broken-links.md
@@ -77,7 +86,14 @@ jobs:
           if [ "$(wc -l < broken-links.md)" -gt 200 ]; then
             printf '\n_Report truncated. See the workflow artifact for the complete report._\n' >> issue-body.md
           fi
-          issue_number=$(gh issue list --state open --search 'Broken links found on layer5.io in:title' --json number --jq '.[0].number')
+          issue_number=$(gh issue list --state open --limit 100 --search 'Broken links found on layer5.io in:title' --json number,title --jq 'first(.[] | select(.title == "Broken links found on layer5.io") | .number)')
+          if [ -n "$issue_number" ]; then
+            issue_body=$(gh issue view "$issue_number" --json body --jq '.body')
+            case "$issue_body" in
+              *'<!-- broken-link-check-tracker -->'*) ;;
+              *) issue_number="" ;;
+            esac
+          fi
           if [ -n "$issue_number" ]; then
             gh issue edit "$issue_number" --body-file issue-body.md
           else
@@ -86,11 +102,20 @@ jobs:
 
       - name: Close tracking issue when links are healthy
         if: steps.lychee.outputs.exit_code == '0'
+        shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
         run: |
-          issue_number=$(gh issue list --state open --search 'Broken links found on layer5.io in:title' --json number --jq '.[0].number')
+          set -euo pipefail
+          issue_number=$(gh issue list --state open --limit 100 --search 'Broken links found on layer5.io in:title' --json number,title --jq 'first(.[] | select(.title == "Broken links found on layer5.io") | .number)')
           if [ -n "$issue_number" ]; then
-            gh issue close "$issue_number" --comment "The latest scheduled broken link check found no broken links. Closing this issue."
+            issue_body=$(gh issue view "$issue_number" --json body --jq '.body')
+            case "$issue_body" in
+              *'<!-- broken-link-check-tracker -->'*) ;;
+              *) issue_number="" ;;
+            esac
+          fi
+          if [ -n "$issue_number" ]; then
+            gh issue close "$issue_number" --comment "The latest broken link check found no broken links. Closing this issue."
           fi
