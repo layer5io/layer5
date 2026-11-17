@@ -1,56 +1,69 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { ComponentsWrapper } from "./Component.style";
-import { checkImageUrlValidity } from "../../../../utils/imageValidate";
 
 const ComponentsGrid = ({ frontmatter }) => {
-  const components = frontmatter.components.map((component) => {
-    const { name, colorIcon } = component; // currently we don't have description for components
-    return { name, colorIcon };
-  });
-  const [validComponents, setValidComponents] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const promises = components.map(async (item) => {
-        const isSvgPathValid = await checkImageUrlValidity(
-          item.colorIcon.publicURL
-        );
-        if (isSvgPathValid) {
-          return item;
-        } else {
-          item.colorIcon.publicURL = frontmatter.integrationIcon.publicURL;
-          return item; // Return fallback image
-        }
-      });
+  const colorFallback =
+    frontmatter?.integrationIcon?.publicURL ||
+    frontmatter?.integrationIcon_svg?.publicURL ||
+    "";
+  const darkIconFallback = frontmatter?.darkModeIntegrationIcon?.publicURL;
+  const darkFallback = darkIconFallback || colorFallback;
 
-      const validItems = await Promise.all(promises);
-      // Filter out null values (items that are not valid)
-      const filteredValidComponents = validItems.filter(
-        (item) => item !== null
-      );
+  const components = (frontmatter?.components || []).map((component) => {
+    const colorIcon = component.colorIcon?.publicURL || colorFallback;
+    const whiteIcon =
+      component.whiteIcon?.publicURL || darkIconFallback || colorIcon;
 
-      setValidComponents(filteredValidComponents);
+    return {
+      name: component.name,
+      colorIcon,
+      whiteIcon,
     };
+  });
 
-    fetchData();
-  }, []);
+  const handleImageError = (fallback) => (e) => {
+    if (fallback && e.currentTarget.getAttribute("src") !== fallback) {
+      e.currentTarget.onerror = null;
+      e.currentTarget.src = fallback;
+    }
+  };
 
   return (
     <ComponentsWrapper>
       <section className="heading">
         <h1>
-          {frontmatter.title} Components ({components.length})
+          {frontmatter?.title} Components ({components.length})
         </h1>
       </section>
 
       <section className="componentsSection">
-        {validComponents.map((item) => (
-          <div key={item.id} className="maincontainer">
+        {components.map((item, index) => (
+          <div key={`${item.name}-${index}`} className="maincontainer">
             <div className="componentimg">
-              <img src={item.colorIcon.publicURL} alt={item.name} />
+              {item.whiteIcon === item.colorIcon ? (
+                <img
+                  src={item.colorIcon}
+                  alt={item.name || ""}
+                  onError={handleImageError(colorFallback)}
+                />
+              ) : (
+                <>
+                  <img
+                    src={item.whiteIcon}
+                    alt={item.name || ""}
+                    className="component-icon component-icon--dark"
+                    onError={handleImageError(darkFallback)}
+                  />
+                  <img
+                    src={item.colorIcon}
+                    alt={item.name || ""}
+                    className="component-icon component-icon--light"
+                    onError={handleImageError(colorFallback)}
+                  />
+                </>
+              )}
             </div>
-            <p className="items">{item.name.replaceAll("-", " ")}</p>
-            {/* <div className="textcontent">
-            </div> */}
+            <p className="items">{item.name?.replaceAll("-", " ") || ""}</p>
           </div>
         ))}
       </section>

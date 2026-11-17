@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-
 export const BGWrapper = styled.div`
   position: relative;
   width: 100%;
   margin: 0 auto;
+  overflow: hidden;
 `;
 
 export const FakeBGImg = styled(GatsbyImage)`
@@ -13,14 +13,15 @@ export const FakeBGImg = styled(GatsbyImage)`
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   max-height: 32rem;
   z-index: 0;
   border-radius: 10px;
-  opacity:1;
-  @media (min-width: 768px){
-    opacity:0;
+  opacity: 0.22;
+  @media (min-width: 768px) {
+    opacity: 0;
     display: none !important;
-  } 
+  }
 `;
 
 export const FakeBGImgStatic = styled.img`
@@ -28,13 +29,15 @@ export const FakeBGImgStatic = styled.img`
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   max-height: 32rem;
   z-index: 0;
   border-radius: 10px;
-  opacity: 1;
+  opacity: 0.22;
   object-fit: cover;
+  pointer-events: none;
 
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     opacity: 0;
     display: none !important;
   }
@@ -45,9 +48,8 @@ export const Content = styled.div`
   width: 100%;
   height: 100%;
   z-index: 2;
-  @media (max-width: 767px){
-    position: absolute;
+  @media (max-width: 767px) {
     display: flex;
     justify-content: center;
-  } 
+  }
 `;

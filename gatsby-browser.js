@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick-theme.css";
 export const disableCorePrefetching = () =>
   process.env.NODE_ENV === "development";
 
-const GTM_DELAY_MS = 3500;
 const GTM_INIT_EVENTS = ["scroll", "mousemove", "touchstart"];
 
 function addInitListeners() {
@@ -19,6 +18,7 @@ function removeInitListeners() {
     document.removeEventListener(eventName, initGTMOnEvent);
   });
 }
+const STORAGE_KEY = "cookie_consent";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize GTM after a short delay unless user interaction triggers it first.
@@ -29,9 +29,21 @@ addInitListeners();
 
 function initGTMOnEvent() {
   initGTM();
+
+  if (window.gtmDidInit) {
+    event.currentTarget.removeEventListener(event.type, initGTMOnEvent);
+  }
+}
+
+function hasGTMConsent() {
+  return localStorage.getItem(STORAGE_KEY) === "accepted";
 }
 
 function initGTM() {
+  if (!hasGTMConsent()) {
+    return false;
+  }
+
   if (window.gtmDidInit) {
     return false;
   }
@@ -54,6 +66,25 @@ function initGTM() {
   script.src = "https://www.googletagmanager.com/gtm.js?id=GTM-PS26QB9";
   document.head.appendChild(script);
 }
+
+function handleConsentChange(consent) {
+  if (consent === "accepted") {
+    initGTM();
+  } else if (window.gtmDidInit) {
+    // GTM can't be unloaded once running, so reload to stop it.
+    window.location.reload();
+  }
+}
+
+window.addEventListener("cookie-consent-changed", (event) => {
+  handleConsentChange(event.detail);
+});
+// A choice made in another tab only reaches this one through the storage event.
+window.addEventListener("storage", (event) => {
+  if (event.key === STORAGE_KEY) {
+    handleConsentChange(event.newValue);
+  }
+});
 
 export { wrapRootElement } from "./root-wrapper";
 export { wrapPageElement } from "./page-wrapper";

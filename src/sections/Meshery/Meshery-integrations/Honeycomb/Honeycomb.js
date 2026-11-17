@@ -1,76 +1,93 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { HoneycombGrid } from "./Honeycomb.style";
+
+// Hexagon (cell) size for each viewport band. Keeping the hexagons sized to
+// the viewport lets the staggered honeycomb "mesh" layout (float + shape-outside)
+// work at every responsive width instead of degrading into a flat grid.
+const hexSizeForWidth = (width) => {
+  if (width <= 340) return 64;
+  if (width <= 430) return 72;
+  if (width <= 540) return 84;
+  if (width <= 767) return 110;
+  if (width <= 1023) return 130;
+  return 150;
+};
+
+// useLayoutEffect is a no-op (with a warning) during Gatsby's server-side
+// render, so fall back to useEffect there and only measure in the browser.
+const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
+
+// The resize event fires continuously while the user drags a window border
+// or resizes on mobile. layoutHoneycomb measures every child via
+// getBoundingClientRect, so running it on every tick is expensive. Debounce
+// to a trailing call so layout only recomputes once resizing settles.
+const debounce = (fn, delay) => {
+  let timer = null;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), delay);
+  };
+};
 
 const Honeycomb = (props) => {
   const { items, renderItem } = props;
   const [height, setHeight] = useState(0);
-  const [newheight, setNewHeight] = useState(0);
+  const [hexSize, setHexSize] = useState(150);
   const gridRef = useRef(null);
 
-  const setHoneycombHeight = () => {
-    // Total horizontal available space for hexagons
-    const availableWidth = gridRef
-      ? gridRef.current.offsetWidth
-      : window.innerWidth;
+  const layoutHoneycomb = () => {
+    const grid = gridRef.current;
+    if (!grid) return;
 
-    // No. of hexagons that can be adjusted in first and second row
-    let firstRow = Math.floor((availableWidth - 100) / 156); // a
-    let secondRow = Math.floor((availableWidth - 178) / 156); // b
+    // The ul width depends on the current hex size. Use the viewport width
+    // that the breakpoints are defined for.
+    const availableWidth = window.innerWidth;
+    const W = hexSizeForWidth(availableWidth);
 
-    // Here the size of hexagons is 100px so the height reduces accordingly
-    if (availableWidth <= 334) {
-      firstRow = Math.floor((availableWidth - 100) / 106); // a
-      secondRow = Math.floor((availableWidth - 118) / 106); // b
+    if (!grid.children.length) {
+      setHexSize(W);
+      setHeight(0);
+      return;
     }
 
-    if (availableWidth <= 334 && availableWidth >= 308) {
-      firstRow = 2 ;
-      secondRow = 1;
-    }
+    // Make sure the hexagons are sized for this viewport, then temporarily
+    // grow the grid tall enough for every hexagon to wrap into place (the
+    // shape-outside float pattern repeats indefinitely, so any sufficiently
+    // tall value lays the rows out identically). Measuring the real content
+    // afterwards and shrinking the grid to fit avoids leaving blank space
+    // below the mesh whenever the row count is hard to predict analytically.
+    grid.style.setProperty("--hex-size", `${W}px`);
+    const upperBoundHeight = items.length * (W * 1.3) + W;
+    grid.style.height = `${upperBoundHeight}px`;
 
-    // No. of first-second row pairs possible
-    let pairsCount = Math.floor(items.length / (firstRow + secondRow));
+    const gridTop = grid.getBoundingClientRect().top;
+    let maxBottom = 0;
+    Array.from(grid.children).forEach((li) => {
+      const bottom = li.getBoundingClientRect().bottom - gridTop;
+      if (bottom > maxBottom) maxBottom = bottom;
+    });
 
-    // If some integrations are not part of the pairs
-    if (pairsCount * (firstRow + secondRow) < items.length) {
-      // Calculate left off hexagons
-      const left = items.length - pairsCount * (firstRow + secondRow);
-
-      //if the innerWidth is less than 334px
-      if (availableWidth < 335) {
-        if (left <= firstRow) {
-          setNewHeight(pairsCount * 181 + 87);
-        } else {
-          setNewHeight(pairsCount * 181 + 181);
-        }
-      }
-
-      if (left <= firstRow) {
-        setHeight(pairsCount * 272 + 130);
-      } else {
-        setHeight(pairsCount * 272 + 272);
-      }
-
-    } else {
-      //if the innerWidth is less than 334px
-      if (availableWidth < 335) {
-        !isNaN(pairsCount) && setNewHeight(pairsCount * 181);
-      } // All hexagons are covered in n pairs of 2 rows ( first row with a hexagons and second row with b hexagons )
-      !isNaN(pairsCount) && setHeight(pairsCount * 272);
-    }
+    grid.style.height = "";
+    setHexSize(W);
+    setHeight(Math.ceil(maxBottom));
   };
 
+  useIsomorphicLayoutEffect(() => {
+    layoutHoneycomb();
+  }, [items]);
+
   useEffect(() => {
-    window.addEventListener("resize", setHoneycombHeight);
-    setHoneycombHeight();
+    const debouncedLayout = debounce(layoutHoneycomb, 150);
+    window.addEventListener("resize", debouncedLayout);
     return () => {
-      window.removeEventListener("resize", setHoneycombHeight);
+      window.removeEventListener("resize", debouncedLayout);
     };
   }, [items]);
 
   return (
     <div>
-      <HoneycombGrid $height={height} $heightforSmall={newheight} >
+      <HoneycombGrid $height={height} style={{ "--hex-size": `${hexSize}px` }}>
         <ul ref={gridRef}>
           {items.map((item, key) => (
             <li key={key}>{renderItem(item)}</li>

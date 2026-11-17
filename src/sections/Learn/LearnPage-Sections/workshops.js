@@ -109,9 +109,9 @@ export const WorkshopsListWrapper = styled.div`
       padding: 8rem 4.5rem;
     }
     .workshops-card {
-      flex: 0 0 50%;
-      max-width: 50%;
-      margin: 1rem auto;
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+      margin: 1rem 0;
     }
 
     .feedback-section {

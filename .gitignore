@@ -59,7 +59,6 @@ typings/
 *.tgz
 
 # dotenv environment variable files
-.env
 
 # gatsby files
 .cache/
@@ -82,7 +81,6 @@ yarn.lock
 .yarn-integrity
 
 #IDE Files
-.vscode
 .claude/*
 !.claude/skills
 
@@ -101,3 +99,5 @@ spreadsheet.csv
 # Python cache (Claude skill scripts)
 __pycache__/
 *.pyc
+.vs/
+config.bat

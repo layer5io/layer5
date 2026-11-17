@@ -1,4 +1,5 @@
 import React from "react";
+import { withPrefix } from "gatsby";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import Button from "../../../../reusecore/Button";
 import { Col, Row } from "../../../../reusecore/Layout";
@@ -39,7 +40,7 @@ const StickFigures = () => {
           </h1>
         </Col>
         <Col $xs={12} $sm={6} className="download-button">
-          <a href="/brand/five-mascot-kit.zip">
+          <a href={withPrefix("/brand/five-mascot-kit.zip")}>
             <Button $primary title="Download Logo Assets" $external={true}>
               <FiDownloadCloud size={21} className="icon-left" />
             </Button>
