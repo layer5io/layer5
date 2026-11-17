@@ -22,7 +22,9 @@ const Solutions = () => {
         <OrganizeDeployments/>
         <Review/>
         <QASection/>
-        <CaseStudyBanner caseStudy="tcs" />
+      </Container>
+      <CaseStudyBanner caseStudy="tcs" />
+      <Container>
         <WhatsNext/>
       </Container>
     </SolutionsWrapper>

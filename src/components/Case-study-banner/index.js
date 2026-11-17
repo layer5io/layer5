@@ -79,8 +79,9 @@ const BannerWrapper = styled.div`
   .left-img > * {
     transition: transform 0.4s ease;
     transform: skewX(25deg);
-    width: 40%;
-    max-height: 80px;
+    width: auto;
+    height: 85px;
+    max-width: 60%;
     object-fit: contain;
   }
 
@@ -98,12 +99,16 @@ const BannerWrapper = styled.div`
 
     h2 {
       text-align: center;
-      width: 80%;
+      width: 85%;
       color: #fff;
-      padding: 0 3.5rem 0 1.5rem;
+      padding: 0 4rem 0 2rem;
       margin: 0;
-      line-height: 1.4;
+      line-height: 1.35;
+      font-size: 1.65rem;
 
+      @media screen and (max-width: 1200px) {
+        font-size: 1.45rem;
+      }
       @media screen and (max-width: 800px) {
         font-size: 1.25rem;
         padding: 0 2.5rem 0 1rem;
@@ -137,8 +142,9 @@ const BannerWrapper = styled.div`
   .right-img > * {
     transition: transform 0.4s ease;
     transform: skewX(25deg);
-    width: 40%;
-    max-height: 80px;
+    width: auto;
+    height: 85px;
+    max-width: 60%;
     object-fit: contain;
   }
 
