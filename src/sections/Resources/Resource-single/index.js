@@ -22,6 +22,7 @@ const ResourceSingle = ({ data, children }) => {
     nodes {
       frontmatter {
         title
+        type
         date(formatString: "MMM Do YYYY")
         author
         category

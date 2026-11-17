@@ -6,6 +6,22 @@ export const IntegrationPageWrapper = styled.section`
 	.old-gatsby-image-wrapper img{
 		height: 90px;
 	}
+
+	.hero-icon--dark {
+		display: none;
+	}
+
+	.hero-icon--light {
+		display: block;
+	}
+
+	[data-theme="dark"] & .hero-icon--dark {
+		display: block;
+	}
+
+	[data-theme="dark"] & .hero-icon--light {
+		display: none;
+	}
 	.herosection{
 		display: flex;
 		flex-direction: column;

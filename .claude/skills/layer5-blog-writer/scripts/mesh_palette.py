@@ -307,18 +307,28 @@ SCRIM_OPACITY = (0.62, 0.34, 0.0)   # inner, mid, outer stops
 # Bounding box for --sign-text, in the POSE's OWN viewBox coordinate space
 # (not canvas pixels) - it inherits the same transform used to place the
 # mascot, so these numbers don't change if the canvas layout changes. cx/cy =
-# text block center, max_width = wrap width, font_size in viewBox units,
-# rotation in degrees (signs are rarely level). Calibrated by rendering each
-# pose with placeholder text and eyeballing it - see Step 6 in SKILL.md before
-# adding a new zone.
+# center of the blank surface, max_width/max_height = the usable box inside
+# its drawn edges, font_size = the preferred size in viewBox units, and
+# min_font_size = the smallest size the generator may shrink to before it
+# refuses the text. rotation is in degrees (signs are rarely level).
+#
+# Calibrate by MEASURING, not eyeballing: rasterize the pose on its own at
+# viewBox size (scripts/rasterize.py pose.svg out.png <w> <h>) and read the
+# surface's inner edges off a per-row / per-column dark-pixel profile. The
+# 2.0.0 zones were eyeballed; both were wider than the surface they sat on
+# and centered above it, so two-line text crossed the signpost's top edge.
 
 SIGN_TEXT_ZONES = {
     "blank-signpost": {   # SVG/Artboard 23.svg, viewBox 0 0 612 792
-        "cx": 310, "cy": 300, "max_width": 260, "font_size": 34, "rotation": 0,
+        # Board edges measured at x 198-405, y 266-346.
+        "cx": 302, "cy": 306, "max_width": 180, "max_height": 66,
+        "font_size": 30, "min_font_size": 18, "rotation": 0,
         "color": CHARCOAL,
     },
     "blank-book": {   # SVG/Artboard 36.svg, viewBox 0 0 529.17 622.85
-        "cx": 268, "cy": 305, "max_width": 190, "font_size": 22, "rotation": 0,
+        # Pages measured at x 195-372, y 208-355; spine at x 284.
+        "cx": 283, "cy": 282, "max_width": 150, "max_height": 110,
+        "font_size": 22, "min_font_size": 14, "rotation": 0,
         "color": EERIE_BLACK,
     },
 }

@@ -48,7 +48,11 @@ const CornerPopupWrapper = styled.div`
     cursor: pointer;
     width: 24px;
     height: 24px;
+    padding: 0;
+    border: 0;
+    background: transparent;
     color: ${(props) => props.theme.whiteToBlack};
+    display: block;
     svg {
       width: 100%;
       height: 100%;

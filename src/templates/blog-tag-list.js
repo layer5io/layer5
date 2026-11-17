@@ -5,10 +5,10 @@ import SEO from "../components/seo";
 import BlogList from "../sections/Blog/Blog-list";
 import { graphql } from "gatsby";
 
-export const query = graphql`query BlogsByTags($tag: String!) {
+export const query = graphql`query BlogsByTags($tags: [String!]!) {
   allMdx(
     sort: {fields: {dateForSort: DESC}}
-    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {tags: {in: [$tag]}, published: {eq: true}}}
+    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {tags: {in: $tags}, published: {eq: true}}}
   ) {
     nodes {
       id
