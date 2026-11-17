@@ -5,16 +5,29 @@ import "slick-carousel/slick/slick-theme.css";
 export const disableCorePrefetching = () =>
   process.env.NODE_ENV === "development";
 
+const GTM_INIT_EVENTS = ["scroll", "mousemove", "touchstart"];
+
+function addInitListeners() {
+  GTM_INIT_EVENTS.forEach((eventName) => {
+    document.addEventListener(eventName, initGTMOnEvent);
+  });
+}
+
+function removeInitListeners() {
+  GTM_INIT_EVENTS.forEach((eventName) => {
+    document.removeEventListener(eventName, initGTMOnEvent);
+  });
+}
 const STORAGE_KEY = "cookie_consent";
 
 document.addEventListener("DOMContentLoaded", () => {
-  /** init gtm after 3500 seconds - this could be adjusted */
-  setTimeout(initGTM, 3500);
+  // Initialize GTM after a short delay unless user interaction triggers it first.
+  setTimeout(initGTM, GTM_DELAY_MS);
 });
-document.addEventListener("scroll", initGTMOnEvent);
-document.addEventListener("mousemove", initGTMOnEvent);
-document.addEventListener("touchstart", initGTMOnEvent);
-function initGTMOnEvent(event) {
+
+addInitListeners();
+
+function initGTMOnEvent() {
   initGTM();
 
   if (window.gtmDidInit) {
@@ -25,6 +38,7 @@ function initGTMOnEvent(event) {
 function hasGTMConsent() {
   return localStorage.getItem(STORAGE_KEY) === "accepted";
 }
+
 function initGTM() {
   if (!hasGTMConsent()) {
     return false;
@@ -33,7 +47,10 @@ function initGTM() {
   if (window.gtmDidInit) {
     return false;
   }
+
   window.gtmDidInit = true; // flag to ensure script does not get added to DOM more than once.
+  removeInitListeners();
+
   const script = document.createElement("script");
   script.type = "text/javascript";
   script.async = true;
