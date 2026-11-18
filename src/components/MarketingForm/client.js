@@ -275,6 +275,18 @@ function marketingPreferencesUrl(token) {
   return `${url}?token=${encodeURIComponent(token)}`;
 }
 
+function fieldsFromFormData(formData) {
+  const fields = {};
+  formData.forEach((value, key) => {
+    if (Object.prototype.hasOwnProperty.call(fields, key)) {
+      fields[key] = [].concat(fields[key], value);
+    } else {
+      fields[key] = value;
+    }
+  });
+  return fields;
+}
+
 function buildMarketingRequest(formType, fields) {
   const spec = resolveMarketingForm(formType);
   return {
@@ -398,6 +410,7 @@ module.exports = {
   mesheryCloudBase,
   marketingPreferencesUrl,
   resolveMarketingForm,
+  fieldsFromFormData,
   buildMarketingRequest,
   submissionMessage,
   submitMarketingForm,

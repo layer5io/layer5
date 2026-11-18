@@ -2,6 +2,7 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const {
   buildMarketingRequest,
+  fieldsFromFormData,
   marketingPreferencesUrl,
   submitMarketingForm,
   submissionMessage,
@@ -132,6 +133,22 @@ test("sends only known interest slugs and accepted fields", () => {
   assert.equal(request.body.audience, undefined);
   assert.equal(request.body.message, undefined);
   assert.equal(request.body.users, undefined);
+});
+
+test("keeps every repeated form field", () => {
+  const formData = new FormData();
+  formData.append("email", "ada@example.com");
+  formData.append("interests", "meshery");
+  formData.append("interests", "smp");
+  const request = buildMarketingRequest(
+    "footer-subscribe",
+    fieldsFromFormData(formData),
+  );
+  assert.deepEqual(request.body.interests, [
+    "meshery",
+    "smp",
+    "community-newsletter",
+  ]);
 });
 
 test("rejects an unknown form type", () => {

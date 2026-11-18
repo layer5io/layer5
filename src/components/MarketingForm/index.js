@@ -1,6 +1,7 @@
 import React, { useId, useState } from "react";
 import { Field } from "formik";
 import {
+  fieldsFromFormData,
   marketingPreferencesUrl,
   submissionMessage,
   submitMarketingForm,
@@ -66,10 +67,7 @@ export const useMarketingForm = (formType) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const fields = Object.fromEntries(
-      new FormData(event.currentTarget).entries(),
-    );
-    return submit(fields);
+    return submit(fieldsFromFormData(new FormData(event.currentTarget)));
   };
 
   return { status, message, submit, handleSubmit };
