@@ -41,6 +41,14 @@ jobs:
       - name: Tooling tests
         run: node --test "scripts/test/*.test.mjs"
 
+      - name: Verify CONVERTER_REPORT is fresh
+        run: |
+          node scripts/generate-converter-report.mjs
+          git diff --exit-code docs/CONVERTER_REPORT.md
+
+      - name: Verify converter idempotency
+        run: node scripts/check-idempotency.mjs
+
       - name: Build site
         run: hugo --minify --gc --logLevel warn --printPathWarnings
 
