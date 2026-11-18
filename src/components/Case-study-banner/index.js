@@ -6,7 +6,9 @@ import MesheryLogo from "../../assets/images/meshery/icon-only/meshery-logo-ligh
 import KanvasLogo from "../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 import SpireLogo from "../../collections/integrations/spire/icons/color/spire-color.svg";
 import InforLogo from "./icons/infor-logo.svg";
-import TCSLogo from "./icons/tcs-labs-logo.svg";
+import TCSLogoLight from "./icons/tcs-labs-logo-light.svg";
+import TCSLogoDark from "./icons/tcs-labs-logo-dark.svg";
+import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
 import MesheryAndHPE from "../../collections/resources/case-study/hpes-adoption-of-meshery-and-kanvas/meshery-and-hpe.svg";
 import InforMeshery from "../../collections/resources/case-study/infors-adoption-of-meshery-and-kanvas/infor-meshery.svg";
@@ -40,7 +42,8 @@ const CASE_STUDY_PRESETS = {
     link: "/resources/case-study/tcs-labs-adoption-of-meshery-and-kanvas",
     leftLogo: KanvasLogo,
     leftAlt: "Kanvas Logo",
-    rightLogo: TCSLogo,
+    rightLogo: TCSLogoLight,
+    rightLogoDark: TCSLogoDark,
     rightAlt: "TCS Labs Logo",
     mobileGraphic: TCSMeshery,
     mobileAlt: "TCS Labs Meshery Case Study",
@@ -144,7 +147,7 @@ const BannerWrapper = styled.div`
     transform: skewX(25deg);
     width: auto;
     height: 85px;
-    max-width: 60%;
+    max-width: 75%;
     object-fit: contain;
   }
 
@@ -256,12 +259,14 @@ const CaseStudyBanner = ({
   leftLogo,
   leftAlt,
   rightLogo,
+  rightLogoDark,
   rightAlt,
   mobileGraphic,
   mobileAlt,
   ribbonText,
   className,
 }) => {
+  const { isDark } = useStyledDarkMode();
   const presetKey = (caseStudy || "hpe").toLowerCase();
   const preset = Object.prototype.hasOwnProperty.call(CASE_STUDY_PRESETS, presetKey)
     ? CASE_STUDY_PRESETS[presetKey]
@@ -271,7 +276,11 @@ const CaseStudyBanner = ({
   const resolvedLink = link || preset.link;
   const resolvedLeftLogo = leftLogo || preset.leftLogo;
   const resolvedLeftAlt = leftAlt || preset.leftAlt;
-  const resolvedRightLogo = rightLogo || preset.rightLogo;
+  const defaultRightLogo = isDark
+    ? (preset.rightLogo || preset.rightLogoLight)
+    : (preset.rightLogoDark || preset.rightLogo);
+  const resolvedRightLogo =
+    (isDark ? rightLogo : (rightLogoDark || rightLogo)) || defaultRightLogo;
   const resolvedRightAlt = rightAlt || preset.rightAlt;
   const resolvedMobileGraphic = mobileGraphic || preset.mobileGraphic;
   const resolvedMobileAlt = mobileAlt || preset.mobileAlt;
@@ -319,6 +328,7 @@ CaseStudyBanner.propTypes = {
   leftLogo: PropTypes.string,
   leftAlt: PropTypes.string,
   rightLogo: PropTypes.string,
+  rightLogoDark: PropTypes.string,
   rightAlt: PropTypes.string,
   mobileGraphic: PropTypes.string,
   mobileAlt: PropTypes.string,
