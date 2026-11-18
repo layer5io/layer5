@@ -65,6 +65,156 @@ const validatePictureUrl = (value) => {
   return error;
 };
 
+const MemberFormFour = ({
+  submit,
+  status,
+  message,
+  memberFormOne,
+  role,
+  third,
+  saved,
+  onPrevious,
+  onComplete,
+}) => {
+  return (
+    <Container>
+      <h2 className="title">Expectations and Programs FAQ</h2>
+      <p>
+        Commonly asked questions about general engagement expectations and
+        information focal to internship programs. See the{" "}
+        <Link to="/community">Layer5 Community</Link> and{" "}
+        <Link to="/careers/programs">Open Source Internship Programs</Link>{" "}
+        for additional information.
+      </p>
+      <Formik
+        initialValues={{
+          expect: false,
+          highlighted: false,
+          paid: false,
+          affiliated: false,
+          help: saved.help ? saved.help : "",
+        }}
+        onSubmit={async (values) => {
+          const result = await submit({
+            ...memberFormOne,
+            role,
+            ...third,
+            ...values,
+          });
+          if (!result) {
+            return;
+          }
+          onComplete(values);
+        }}
+      >
+        <Form className="form">
+          <p className="form-name">
+            What can I expect from Layer5? What does Layer5 expect of me?
+          </p>
+          <p className="para label">
+            The Layer5 community expects you to get as much or more out of
+            your time than you give to the projects. We expect earnest effort
+            from its contributors. What “earnest effort” means is different
+            for each community member as all have different circumstances.
+            Suffice to say, the more you put into your efforts, the greater
+            your reward will be. Most community contributors stay with the
+            project for many months, if not indefinitely. Length of
+            involvement is entirely up to the individual community member.
+          </p>
+          <label>
+            <Field type="checkbox" name="expect" className="form-check" />
+            <span>Ok</span>
+          </label>
+          <p className="form-name">
+            I see works of other contributors being highlighted in the
+            Layer5social channels.
+          </p>
+          <p className="para label">
+            We try to elevate the works of our contributors. All of our
+            community members are proud of their work and so are we! We want
+            their work and names to be recognized across our collective
+            technology industry. Be sure to follow and engage with these
+            Twitter accounts, YouTube, and LinkedIn accounts.
+          </p>
+          <label>
+            <Field
+              type="checkbox"
+              name="highlighted"
+              className="form-check"
+            />
+            <span>Ok</span>
+          </label>
+          <p className="form-name">
+            Are community contributors paid? Are internships paid? What do I
+            get in return?
+          </p>
+          <p className="para label">
+            With few exceptions, generally community contributors and interns
+            are not paid. Those that participate through Google Summer of Code
+            or LFX do receive a stipend at the culmination of their
+            internship. The largest return on time invested in the community
+            for any contributor is the knowledge, relationships, recognition,
+            and experience gained throughout their engagement. Their
+            participation affords them an opportunity to work with world-class
+            engineers, gives focus and purpose to their learning efforts on
+            technologies they otherwise may not understand, and exposes their
+            work broadly to the Cloud Native community. Letters of
+            recommendation, mentorship and coaching, introduction to engineers
+            at globally-recognized technology companies, potential contract or
+            full-time work at Layer5, public writing and speaking
+            opportunities are all examples of benefits those that participate
+            can receive for their time spent.
+          </p>
+          <label>
+            <Field type="checkbox" name="paid" className="form-check" />
+            <span>Ok</span>
+          </label>
+          <p className="form-name">
+            I see other contributors have affiliated themselves with Layer5 on
+            LinkedIn. Am I encouraged to do the same?
+          </p>
+          <p className="para label">
+            Yes! We welcome you to affiliate with the community and projects.
+            We consider this affiliation helpful in boosting your profile and
+            resume in context of job searches and overall in general. Be sure
+            to update your profile, and be social about your activities. We
+            love to highlight our members!
+          </p>
+          <label>
+            <Field type="checkbox" name="affiliated" className="form-check" />
+            <span>Ok</span>
+          </label>
+          <p className="form-name">
+            Is there anything else we should know about you? How can we help
+            you?
+          </p>
+          <Field type="text" className="text-field" name="help" />
+          <MarketingStatus
+            status={status}
+            message={status === "error" ? message : ""}
+          />
+          <br />
+          <br />
+          <div className="btn-wrapper">
+            <button type="button" onClick={onPrevious} className="btn-prev">
+              <span className="back">&larr;</span> Previous Step
+            </button>
+            <Button
+              $secondary
+              type="submit"
+              className="btn-next"
+              title="Complete"
+              disabled={status === "submitting"}
+            />
+          </div>
+          <br />
+          <br />
+        </Form>
+      </Formik>
+    </Container>
+  );
+};
+
 const WebBasedForm = () => {
   const [stepNumber, setStepNumber] = useState(0);
   const [role, setRole] = useState("");
@@ -859,148 +1009,6 @@ const WebBasedForm = () => {
     );
   };
 
-  const MemberFormFour = () => {
-    return (
-      <Container>
-        <h2 className="title">Expectations and Programs FAQ</h2>
-        <p>
-          Commonly asked questions about general engagement expectations and
-          information focal to internship programs. See the{" "}
-          <Link to="/community">Layer5 Community</Link> and{" "}
-          <Link to="/careers/programs">Open Source Internship Programs</Link>{" "}
-          for additional information.
-        </p>
-        <Formik
-          initialValues={{
-            expect: false,
-            highlighted: false,
-            paid: false,
-            affiliated: false,
-            help: MemberFormFourValue.help ? MemberFormFourValue.help : "",
-          }}
-          onSubmit={async (values) => {
-            const result = await submit({
-              ...memberFormOne,
-              role,
-              ...MemberFormThirdValue,
-              ...values,
-            });
-            if (!result) {
-              return;
-            }
-            setMemberFormFourValue(values);
-            setStepNumber(4);
-            window.scrollTo(0, 0);
-          }}
-        >
-          <Form className="form">
-            <p className="form-name">
-              What can I expect from Layer5? What does Layer5 expect of me?
-            </p>
-            <p className="para label">
-              The Layer5 community expects you to get as much or more out of
-              your time than you give to the projects. We expect earnest effort
-              from its contributors. What “earnest effort” means is different
-              for each community member as all have different circumstances.
-              Suffice to say, the more you put into your efforts, the greater
-              your reward will be. Most community contributors stay with the
-              project for many months, if not indefinitely. Length of
-              involvement is entirely up to the individual community member.
-            </p>
-            <label>
-              <Field type="checkbox" name="expect" className="form-check" />
-              <span>Ok</span>
-            </label>
-            <p className="form-name">
-              I see works of other contributors being highlighted in the
-              Layer5social channels.
-            </p>
-            <p className="para label">
-              We try to elevate the works of our contributors. All of our
-              community members are proud of their work and so are we! We want
-              their work and names to be recognized across our collective
-              technology industry. Be sure to follow and engage with these
-              Twitter accounts, YouTube, and LinkedIn accounts.
-            </p>
-            <label>
-              <Field
-                type="checkbox"
-                name="highlighted"
-                className="form-check"
-              />
-              <span>Ok</span>
-            </label>
-            <p className="form-name">
-              Are community contributors paid? Are internships paid? What do I
-              get in return?
-            </p>
-            <p className="para label">
-              With few exceptions, generally community contributors and interns
-              are not paid. Those that participate through Google Summer of Code
-              or LFX do receive a stipend at the culmination of their
-              internship. The largest return on time invested in the community
-              for any contributor is the knowledge, relationships, recognition,
-              and experience gained throughout their engagement. Their
-              participation affords them an opportunity to work with world-class
-              engineers, gives focus and purpose to their learning efforts on
-              technologies they otherwise may not understand, and exposes their
-              work broadly to the Cloud Native community. Letters of
-              recommendation, mentorship and coaching, introduction to engineers
-              at globally-recognized technology companies, potential contract or
-              full-time work at Layer5, public writing and speaking
-              opportunities are all examples of benefits those that participate
-              can receive for their time spent.
-            </p>
-            <label>
-              <Field type="checkbox" name="paid" className="form-check" />
-              <span>Ok</span>
-            </label>
-            <p className="form-name">
-              I see other contributors have affiliated themselves with Layer5 on
-              LinkedIn. Am I encouraged to do the same?
-            </p>
-            <p className="para label">
-              Yes! We welcome you to affiliate with the community and projects.
-              We consider this affiliation helpful in boosting your profile and
-              resume in context of job searches and overall in general. Be sure
-              to update your profile, and be social about your activities. We
-              love to highlight our members!
-            </p>
-            <label>
-              <Field type="checkbox" name="affiliated" className="form-check" />
-              <span>Ok</span>
-            </label>
-            <p className="form-name">
-              Is there anything else we should know about you? How can we help
-              you?
-            </p>
-            <Field type="text" className="text-field" name="help" />
-            <MarketingStatus
-              status={status}
-              message={status === "error" ? message : ""}
-            />
-            <br />
-            <br />
-            <div className="btn-wrapper">
-              <button onClick={laststep} className="btn-prev">
-                <span className="back">&larr;</span> Previous Step
-              </button>
-              <Button
-                $secondary
-                type="submit"
-                className="btn-next"
-                title="Complete"
-                disabled={status === "submitting"}
-              />
-            </div>
-            <br />
-            <br />
-          </Form>
-        </Formik>
-      </Container>
-    );
-  };
-
   const FinalForm = () => {
     return (
       <Container>
@@ -1044,7 +1052,23 @@ const WebBasedForm = () => {
           {stepNumber === 0 && <MemberFormStart />}
           {stepNumber === 1 && MemberFormSecond()}
           {stepNumber === 2 && <MemberFormThird />}
-          {stepNumber === 3 && <MemberFormFour />}
+          {stepNumber === 3 && (
+            <MemberFormFour
+              submit={submit}
+              status={status}
+              message={message}
+              memberFormOne={memberFormOne}
+              role={role}
+              third={MemberFormThirdValue}
+              saved={MemberFormFourValue}
+              onPrevious={laststep}
+              onComplete={(values) => {
+                setMemberFormFourValue(values);
+                setStepNumber(4);
+                window.scrollTo(0, 0);
+              }}
+            />
+          )}
           {stepNumber === 4 && <FinalForm />}
         </div>
       </div>

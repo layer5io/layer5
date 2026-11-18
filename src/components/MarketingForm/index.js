@@ -37,7 +37,14 @@ export const MarketingHoneypot = ({ formik = false, value, onChange }) => {
   );
 };
 
-export const MarketingStatus = ({ status, message }) => {
+export const MarketingStatus = ({
+  status,
+  message,
+  pendingMessage = "Sending…",
+}) => {
+  if (status === "submitting") {
+    return <p role="status">{pendingMessage}</p>;
+  }
   if (!message || (status !== "success" && status !== "error")) {
     return null;
   }

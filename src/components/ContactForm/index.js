@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Button from "../../reusecore/Button";
 import { Field, Form, Formik } from "formik";
 import logo from "../../assets/images/app/layer5.svg";
@@ -11,7 +11,14 @@ import {
 
 const ContactForm = ({ embedded = false }) => {
   const [submit, setSubmit] = useState(false);
+  const confirmationRef = useRef(null);
   const { status, message, submit: submitForm } = useMarketingForm("contact");
+
+  useEffect(() => {
+    if (submit && confirmationRef.current) {
+      confirmationRef.current.focus();
+    }
+  }, [submit]);
 
   if (submit) {
     const shownForm = document.querySelector(".showForm");
@@ -20,8 +27,10 @@ const ContactForm = ({ embedded = false }) => {
     }
     return (
       <ContactFormWrapper className={embedded ? "embedded" : ""}>
-        <div className="form-submitted">
-          <h2 className="text-2xl">Thanks for contacting us!</h2>
+        <div className="form-submitted" role="status" aria-live="polite">
+          <h2 className="text-2xl" tabIndex={-1} ref={confirmationRef}>
+            Thanks for contacting us!
+          </h2>
           <p className="text-md">We'll get back to you as soon as we can.</p>
         </div>
       </ContactFormWrapper>
@@ -64,7 +73,6 @@ const ContactForm = ({ embedded = false }) => {
               id="firstname"
               name="firstname"
               maxLength="32"
-              pattern="[A-Za-z]{1,32}"
               required
               onInvalid={(e) =>
                 e.target.setCustomValidity("Please fill-in this field")
@@ -80,7 +88,6 @@ const ContactForm = ({ embedded = false }) => {
               id="lastname"
               name="lastname"
               maxLength="32"
-              pattern="[A-Za-z]{1,32}"
               required
               onInvalid={(e) =>
                 e.target.setCustomValidity("Please fill-in this field")

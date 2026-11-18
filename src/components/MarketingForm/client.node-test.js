@@ -111,7 +111,8 @@ test("flattens wrapped form payloads and keeps stored fields", () => {
   assert.equal(request.body.role, "Contributor");
   assert.equal(request.body.subscribed, false);
   assert.equal(request.body.interests, undefined);
-  assert.equal(request.body.message, undefined);
+  assert.match(request.body.message, /projects: Meshery, Kanvas/);
+  assert.match(request.body.message, /interests: Service mesh tutorials/);
   assert.equal(request.body.projects, undefined);
 });
 
@@ -131,7 +132,8 @@ test("sends only known interest slugs and accepted fields", () => {
   assert.equal(request.body.projectname, "Meshery");
   assert.equal(request.body.scope, undefined);
   assert.equal(request.body.audience, undefined);
-  assert.equal(request.body.message, undefined);
+  assert.match(request.body.message, /users: Platform teams/);
+  assert.match(request.body.message, /license: Apache 2.0/);
   assert.equal(request.body.users, undefined);
 });
 

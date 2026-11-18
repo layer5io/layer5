@@ -185,7 +185,63 @@ function addInterests(body, slugs) {
   body.interests = (body.interests || []).concat(next);
 }
 
-function assignValue(body, key, value) {
+const PRESERVED_ANSWERS = {
+  newcomers: new Set([
+    "projects",
+    "tutorials",
+    "meshMate",
+    "interests",
+    "profiency",
+    "interestToShareContribution",
+    "areaOfFocus",
+    "expect",
+    "highlighted",
+    "paid",
+    "affiliated",
+    "help",
+  ]),
+  "open-source-pricing": new Set([
+    "users",
+    "sponsors",
+    "commercialization",
+    "license",
+  ]),
+};
+
+function noteAnswer(notes, key, value) {
+  if (Array.isArray(value)) {
+    const parts = value
+      .map((item) => (item == null ? "" : String(item).trim()))
+      .filter(Boolean);
+    if (parts.length) {
+      notes.push(`${key}: ${parts.join(", ")}`);
+    }
+    return;
+  }
+  if (typeof value === "boolean") {
+    notes.push(`${key}: ${value ? "yes" : "no"}`);
+    return;
+  }
+  if (value == null) {
+    return;
+  }
+  const text = String(value).trim();
+  if (text) {
+    notes.push(`${key}: ${text}`);
+  }
+}
+
+function assignValue(body, notes, formType, key, value) {
+  const preserved = PRESERVED_ANSWERS[formType];
+  if (
+    key &&
+    preserved &&
+    preserved.has(key) &&
+    (Array.isArray(value) || typeof value !== "object")
+  ) {
+    noteAnswer(notes, key, value);
+    return;
+  }
   if (value == null || key === "form") {
     return;
   }
@@ -202,7 +258,7 @@ function assignValue(body, key, value) {
   }
   if (typeof value === "object") {
     Object.keys(value).forEach((child) => {
-      assignValue(body, child, value[child]);
+      assignValue(body, notes, formType, child, value[child]);
     });
     return;
   }
@@ -254,7 +310,12 @@ function assignValue(body, key, value) {
 
 function toMarketingBody(fields, spec) {
   const body = {};
-  assignValue(body, null, fields || {});
+  const notes = [];
+  assignValue(body, notes, spec.formType, null, fields || {});
+  if (notes.length) {
+    const extra = notes.join("\n");
+    body.message = body.message ? `${body.message}\n${extra}` : extra;
+  }
   if (!Object.prototype.hasOwnProperty.call(body, "company_website")) {
     body.company_website = "";
   }

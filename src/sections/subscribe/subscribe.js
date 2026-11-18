@@ -55,7 +55,11 @@ const subscribe = ({ msg = "Layer5" }) => {
                       disabled={status === "submitting"}
                     />
                   </div>
-                  <MarketingStatus status={status} message={message} />
+                  <MarketingStatus
+                    status={status}
+                    message={message}
+                    pendingMessage="Subscribing…"
+                  />
                 </Row>
               )}
             </Col>
