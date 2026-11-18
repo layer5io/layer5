@@ -409,6 +409,7 @@ export function stripExportConst(text, ctx) {
     out += text.slice(i, m.index);
     let j = m.index + m[0].length;
     let depth = 0, q = null, inLineComment = false, inBlockComment = false;
+    let terminated = false;
     while (j < text.length) {
       const c = text[j], next = text[j + 1];
       if (inLineComment) { if (c === '\n') inLineComment = false; j++; continue; }
@@ -420,6 +421,7 @@ export function stripExportConst(text, ctx) {
       if (c === '{' || c === '[' || c === '(') { depth++; j++; continue; }
       if (c === '}' || c === ']' || c === ')') { if (depth > 0) depth--; j++; continue; }
       if (c === ';' && depth === 0) {
+        terminated = true;
         j++;
         while (j < text.length && (text[j] === ' ' || text[j] === '\t')) j++;
         if (j < text.length && text[j] === '\r') j++;
@@ -427,6 +429,13 @@ export function stripExportConst(text, ctx) {
         break;
       }
       j++;
+    }
+    if (!terminated) {
+      // No terminator found: leave the statement in place instead of
+      // dropping the rest of the file; convertBody already warns on
+      // leftover `export` statements.
+      out += text.slice(m.index);
+      break;
     }
     if (ctx?.count) ctx.count('exportsRemoved');
     i = j;

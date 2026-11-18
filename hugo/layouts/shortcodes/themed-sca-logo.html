@@ -1,5 +1,8 @@
+{{- $dark := "images/programs/sca-dark.svg" | relURL -}}
+{{- $light := "images/programs/sca.svg" | relURL -}}
+{{- with .Page.Resources.GetMatch "sca-dark.svg" }}{{ $dark = .RelPermalink }}{{ end -}}
+{{- with .Page.Resources.GetMatch "sca.svg" }}{{ $light = .RelPermalink }}{{ end -}}
 <picture class="sca-logo-picture">
-  <source srcset="{{ "sca-dark.svg" | relURL }}" media="(prefers-color-scheme: dark)">
-  <img src="{{ "sca.svg" | relURL }}" alt="She Code Africa logo" class="sca_logo">
+  <source srcset="{{ $dark }}" media="(prefers-color-scheme: dark)">
+  <img src="{{ $light }}" alt="She Code Africa logo" class="sca_logo">
 </picture>
-

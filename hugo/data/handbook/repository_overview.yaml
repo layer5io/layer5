@@ -68,7 +68,7 @@
         - "https://layer5.io/community/members/aabid-sofi"
       description: A collaborative, visual topology to design and operate cloud native infrastructure.
       repository: "https://github.com/layer5labs/meshery-extensions"
-      accessRequired: *program participation required
+      accessRequired: "*program participation required"
     - project: Discussion Forum
       image: /images/layer5/5 icon/svg/light/5-light-bg.svg
       site: "https://discuss.meshery.io"
@@ -105,7 +105,7 @@
       link:
         - "#"
       repository: "https://github.com/layer5io/meshery-cloud"
-      accessRequired: *program participation required
+      accessRequired: "*program participation required"
     - project: Recognition Program
       image: /images/recognition-program/recognition-program.webp
       site: "https://badges.layer5.io/"
@@ -266,7 +266,7 @@
         - "#"
       description: A utility for validating the conformance of service mesh implementations and their adherence to the Service Mesh Interface specifications.
       repository: "https://github.com/layer5io/meshery-smi-conformance-action"
-      accessRequired: *archived
+      accessRequired: "*archived"
     - project: Meshery Operator
       image: /images/meshery-operator/meshery-operator.svg
       language: Golang, Kubernetes Operator
@@ -303,7 +303,7 @@
         - "#"
       description: A Meshery Remote Provider.
       repository: "https://github.com/layer5io/meshery-cloud"
-      accessRequired: *program participation required
+      accessRequired: "*program participation required"
     - project: Kanvas Snapshot
       image: /images/kanvas/icon-only/kanvas-icon-color.svg
       site: "https://layer5.io/solutions/gitops/snapshot"
@@ -503,7 +503,7 @@
         - "#"
       description: Meshery adapter for management of Citrix CPX
       repository: "https://github.com/layer5io/meshery-cpx"
-      accessRequired: *archived
+      accessRequired: "*archived"
     - project: Meshery Adapter for App Mesh
       image: /images/service-mesh-icons/aws-app-mesh.svg
       language: Golang, gRPC
@@ -513,7 +513,7 @@
         - "https://layer5.io/community/members/antonette-caldwell"
       description: Meshery adapter for management of AWS App Mesh
       repository: "https://github.com/layer5io/meshery-app-mesh"
-      accessRequired: *archived
+      accessRequired: "*archived"
     - project: Meshery Adapter for Tanzu Service Mesh
       image: /images/meshery/icon-only/meshery-logo-light.svg
       language: Golang, gRPC
@@ -523,7 +523,7 @@
         - "https://layer5.io/community/members/hussaina-begum"
       description: Meshery adapter for management of VMware Tanzu Service Mesh
       repository: "https://github.com/layer5io/meshery-tanzu-sm"
-      accessRequired: *archived
+      accessRequired: "*archived"
     - project: Meshery Adapter for NGINX Service Mesh
       image: /images/service-mesh-icons/nginx-service-mesh.svg
       language: Golang, gRPC
@@ -533,7 +533,7 @@
         - "https://layer5.io/community/members/hussaina-begum"
       description: Meshery adapter for management of NGINX Service Mesh
       repository: "https://github.com/layer5io/meshery-nginx-sm"
-      accessRequired: *archived
+      accessRequired: "*archived"
     - project: Meshery Adapter for Cilium Service Mesh
       image: /images/service-mesh-icons/cilium.svg
       language: Golang, gRPC

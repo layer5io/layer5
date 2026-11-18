@@ -879,6 +879,22 @@ test('stripExportConst removes export const statements deterministically while p
   assert.match(stats.warnings[0], /contains `export` statements/);
 });
 
+test('stripExportConst leaves unterminated export const untouched and warns', () => {
+  const input = [
+    '---',
+    'title: "Unterminated Export"',
+    '---',
+    'export const data = programs_data',
+    '',
+    'Content continues.',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'unterminated-test', file: 'programs/test/index.mdx' });
+  assert.match(output, /export const data = programs_data/);
+  assert.match(output, /Content continues\./);
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /contains `export` statements/);
+});
+
 test('LfxLogoImage, ThemedScaLogo, and JourneySection convert to shortcodes', () => {
   const input = [
     '---',

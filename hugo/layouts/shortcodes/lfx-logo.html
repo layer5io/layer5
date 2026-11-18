@@ -1,5 +1,8 @@
+{{- $dark := "images/programs/lfx-white.svg" | relURL -}}
+{{- $light := "images/programs/Linux_Foundation_logo.svg" | relURL -}}
+{{- with .Page.Resources.GetMatch "lfx-white.svg" }}{{ $dark = .RelPermalink }}{{ end -}}
+{{- with .Page.Resources.GetMatch "Linux_Foundation_logo.svg" }}{{ $light = .RelPermalink }}{{ end -}}
 <picture class="lfx-logo-picture">
-  <source srcset="{{ "lfx-white.svg" | relURL }}" media="(prefers-color-scheme: dark)">
-  <img src="{{ "Linux_Foundation_logo.svg" | relURL }}" alt="LFX logo" class="lfx_logo">
+  <source srcset="{{ $dark }}" media="(prefers-color-scheme: dark)">
+  <img src="{{ $light }}" alt="LFX logo" class="lfx_logo">
 </picture>
-

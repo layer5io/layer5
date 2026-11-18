@@ -3,10 +3,9 @@
     <h2>Contributor's Journey</h2>
     <div class="heading-start">
       <h5>Start Here</h5>
+      {{- $arrow := "images/newcomers-guide/long-arrow.svg" | relURL -}}
+      {{- with .Page.Resources.GetMatch "long-arrow.svg" }}{{ $arrow = .RelPermalink }}{{ end -}}
+      <img class="heading-start__arrow" src="{{ $arrow }}" alt="Contributor Journey arrow">
     </div>
   </div>
-  <div class="newcomers-map-container">
-    {{ partial "responsive-image.html" (dict "page" .Page "src" "long-arrow.svg" "alt" "Contributor Journey") }}
-  </div>
 </div>
-
