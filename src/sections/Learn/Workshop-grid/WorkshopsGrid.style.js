@@ -127,7 +127,7 @@ export const WorkshopPageWrapper = styled.div`
   .active {
     display: block;
     width: 100%;
-    height: 100%;
+    height: auto;
     padding: 1.5rem;
   }
 
@@ -168,7 +168,7 @@ export const WorkshopPageWrapper = styled.div`
     background-color: ${(props) => props.theme.grey212121ToWhite};
     width: 100%;
     display: block;
-    height: 100%;
+    height: calc(100% - 1.25rem);
     position: relative;
     border-radius: 0.3125rem;
     margin-bottom: 1.25rem;
