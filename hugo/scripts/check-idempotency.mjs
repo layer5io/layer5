@@ -5,35 +5,45 @@ import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { migrate } from './migrate-mdx.mjs';
 
-function compareDirs(dirA, dirB, rel = '') {
-  const currentRel = path.join(dirA, rel);
-  if (!fs.existsSync(currentRel)) return [];
-  const entriesA = fs.readdirSync(currentRel);
-  const diffs = [];
-
-  for (const entry of entriesA) {
-    const pA = path.join(dirA, rel, entry);
-    const pB = path.join(dirB, rel, entry);
-    const relFile = path.join(rel, entry).replace(/\\/g, '/');
-
-    if (!fs.existsSync(pB)) {
-      diffs.push(`Missing in destination: ${relFile}`);
-      continue;
-    }
-
-    const statA = fs.statSync(pA);
-    const statB = fs.statSync(pB);
-
-    if (statA.isDirectory()) {
-      diffs.push(...compareDirs(dirA, dirB, path.join(rel, entry)));
+function getAllFiles(dir, base = '') {
+  const current = path.join(dir, base);
+  if (!fs.existsSync(current)) return [];
+  const entries = fs.readdirSync(current, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    const rel = path.join(base, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...getAllFiles(dir, rel));
     } else {
-      const bA = fs.readFileSync(pA);
-      const bB = fs.readFileSync(pB);
-      if (!bA.equals(bB)) {
-        diffs.push(`Byte diff in ${relFile}: run1=${bA.length}b, run2=${bB.length}b`);
-      }
+      files.push(rel.replace(/\\/g, '/'));
     }
   }
+  return files;
+}
+
+export function compareDirs(dirA, dirB) {
+  const filesA = new Set(getAllFiles(dirA));
+  const filesB = new Set(getAllFiles(dirB));
+  const diffs = [];
+
+  for (const file of filesA) {
+    if (!filesB.has(file)) {
+      diffs.push(`Missing in run 2 output: ${file}`);
+      continue;
+    }
+    const bA = fs.readFileSync(path.join(dirA, file));
+    const bB = fs.readFileSync(path.join(dirB, file));
+    if (!bA.equals(bB)) {
+      diffs.push(`Byte diff in ${file}: run1=${bA.length}b, run2=${bB.length}b`);
+    }
+  }
+
+  for (const file of filesB) {
+    if (!filesA.has(file)) {
+      diffs.push(`Added in run 2 output: ${file}`);
+    }
+  }
+
   return diffs;
 }
 
@@ -50,7 +60,7 @@ export function checkIdempotency(options = {}) {
     console.log(`[idempotency] Run 2: converting ${tmp1} -> ${tmp2}...`);
     migrate({ src: tmp1, dest: tmp2, dryRun: false, exclude: ['sistent'] });
 
-    console.log('[idempotency] Comparing output files byte-for-byte...');
+    console.log('[idempotency] Comparing output files byte-for-byte (bidirectional)...');
     const diffs = compareDirs(tmp1, tmp2);
 
     if (diffs.length > 0) {
@@ -71,4 +81,3 @@ export function checkIdempotency(options = {}) {
 if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
   checkIdempotency();
 }
-

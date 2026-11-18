@@ -4,37 +4,62 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { migrate } from './migrate-mdx.mjs';
 
-function getOwner(file, message) {
-  if (message.includes('outside the page bundle') || message.includes('zero-byte asset')) {
+export function assignPrimaryOwner(file, msgs) {
+  // 1. Out-of-bundle thumbnail images -> #8308
+  if (msgs.some((m) => m.includes('outside the page bundle'))) {
     return '#8308';
   }
-  if (message.includes('Blockquote') || message.includes('BlockquoteAlt') || message.includes('Callout') || message.includes('InlineQuotes')) {
-    return '#8385';
-  }
-  if (message.includes('wrapper body has 4+ space') ||
-      message.includes('bare-relative') ||
-      message.includes('has external=') ||
-      message.includes('no front matter')) {
-    return '#8402';
-  }
-  if (message.includes('non-literal expression')) {
-    if (file.includes('articles/devops-adoption')) return '#8401';
-    return '#8402';
-  }
-  if (message.startsWith('unknown components:')) {
-    const comps = message.replace('unknown components: ', '').split(', ');
-    const allQuotes = comps.every((c) => ['Blockquote', 'BlockquoteAlt', 'Callout', 'InlineQuotes'].includes(c));
-    if (allQuotes) return '#8385';
 
+  // 2. Quote/callout-only files (all unknown components are Blockquote, BlockquoteAlt, Callout, or InlineQuotes, and no other warning types) -> #8385
+  const unknownMsgs = msgs.filter((m) => m.startsWith('unknown components:'));
+  const otherMsgs = msgs.filter((m) => !m.startsWith('unknown components:'));
+  if (unknownMsgs.length > 0 && otherMsgs.length === 0) {
+    const allQuotes = unknownMsgs
+      .flatMap((m) => m.replace('unknown components: ', '').split(', '))
+      .every((c) => ['Blockquote', 'BlockquoteAlt', 'Callout', 'InlineQuotes'].includes(c));
+    if (allQuotes) return '#8385';
+  }
+
+  // 3. Files with bespoke/unmapped components -> #8298 (Phase 3 Collections)
+  const hasBespokeComp = unknownMsgs.some((m) => {
+    const comps = m.replace('unknown components: ', '').split(', ');
+    return comps.some((c) => !['Blockquote', 'BlockquoteAlt', 'Callout', 'InlineQuotes'].includes(c));
+  });
+
+  if (hasBespokeComp) {
     if (file.startsWith('blog/')) return '#8298 (P3-01 Blog)';
-    if (file.startsWith('resources/')) return '#8298 (P3-02 Resources)';
+    if (file.startsWith('resources/') || file.startsWith('service-mesh-books/')) return '#8298 (P3-02 Resources)';
     if (file.startsWith('news/')) return '#8298 (P3-03 News)';
     if (file.startsWith('events/')) return '#8298 (P3-04 Events)';
     if (file.startsWith('members/')) return '#8298 (P3-05 Members)';
     if (file.startsWith('handbook/')) return '#8298 (P3-07 Handbook)';
     if (file.startsWith('programs/') || file.startsWith('careers/')) return '#8298 (P3-08 Programs & Careers)';
+    if (file.startsWith('projects/')) return '#8298 (P3-13 Projects)';
     return '#8298 (Phase 3 Collections)';
   }
+
+  // 4. Imported assets variables (<img src={var}>, <CTA_FullWidth image={var}>, etc.) -> #8401
+  const isImportedAsset = msgs.some((m) =>
+    m.includes('non-literal expression for "image"') ||
+    m.includes('non-literal expression for "src"') ||
+    (m.includes('non-literal expression for "to"') && file.includes('devops-adoption'))
+  );
+  if (isImportedAsset) {
+    return '#8401';
+  }
+
+  // 5. Content hand-fix backlog (wrapper indent, bare-relative link, non-literal button, missing front matter) -> #8402
+  const isHandFix = msgs.some((m) =>
+    m.includes('wrapper body has 4+ space') ||
+    m.includes('bare-relative') ||
+    m.includes('has external=') ||
+    m.includes('no front matter') ||
+    m.includes('non-literal expression')
+  );
+  if (isHandFix) {
+    return '#8402';
+  }
+
   return 'Unassigned';
 }
 
@@ -62,22 +87,27 @@ export function generateReport(options = {}) {
   const fileMap = {};
 
   for (const w of report.warnings) {
-    const normFile = w.file.replace(/\\/g, '/');
     const key = classifyWarning(w.message);
     warningCounts[key] = (warningCounts[key] || 0) + 1;
+
+    // zero-byte assets are asset files, not documents
+    if (w.message.includes('zero-byte asset')) continue;
+    const normFile = w.file.replace(/\\/g, '/');
     if (!fileMap[normFile]) fileMap[normFile] = [];
     fileMap[normFile].push(w.message);
   }
 
   // Count files per primary owner
   const ownerCounts = {};
+  const filePrimaryOwner = {};
   const sortedFiles = Object.keys(fileMap).sort();
   for (const file of sortedFiles) {
-    const owners = new Set(fileMap[file].map((m) => getOwner(file, m)));
-    for (const o of owners) {
-      ownerCounts[o] = (ownerCounts[o] || 0) + 1;
-    }
+    const owner = assignPrimaryOwner(file, fileMap[file]);
+    filePrimaryOwner[file] = owner;
+    ownerCounts[owner] = (ownerCounts[owner] || 0) + 1;
   }
+
+  const unownedFiles = ownerCounts['Unassigned'] || 0;
 
   const lines = [
     '# Hugo Migration: Converter Report',
@@ -92,16 +122,47 @@ export function generateReport(options = {}) {
     `| **Excluded Collections** | \`${report.excluded.join(', ')}\` (${report.excludedFiles} files skipped) |`,
     `| **Skipped Templates** | ${report.templatesSkipped} |`,
     `| **Files with Warnings** | **${report.withWarnings}** |`,
-    `| **Unowned Warning Files** | **0** |`,
+    `| **Unowned Warning Files** | **${unownedFiles}** |`,
     `| **Zero-Byte Assets Logged** | ${report.emptyAssets?.length || 0} |`,
     `| **Asset Normalization Renames** | ${report.assetRenames?.length || 0} |`,
-    `| **Conversion Idempotency** | **0 byte difference (100% idempotent)** |`,
     '',
-    '## 2. Warnings Breakdown by Key',
+    '## 2. Primary Owner Breakdown',
+    '',
+    'Each warning file is assigned exactly one primary owner. The per-owner file counts sum exactly to the total files with warnings.',
+    '',
+    '| Primary Owner Issue | Files | Scope / Focus |',
+    '|---|---|---|',
+  ];
+
+  const ownerDescriptions = {
+    '#8308': 'Out-of-bundle thumbnails and asset layout',
+    '#8402': 'Content hand-fix backlog (wrapper indents, bare links, button props)',
+    '#8385': 'Quote/callout-only components (PR #8395)',
+    '#8401': 'Imported assets backlog (`<img src={var}>`, `<CTA_FullWidth image={var}>`)',
+    '#8298 (P3-01 Blog)': 'Blog bespoke components (`MeetTheMaintainer`, `MeetTheMeshMate`, diagrams)',
+    '#8298 (P3-08 Programs & Careers)': 'Programs & Careers bespoke components (`PositionApply`, `LfxPageNav`, `Row`, `Col`)',
+    '#8298 (P3-02 Resources)': 'Resources & Books bespoke components (`FAQ`, `CommonForm`, `Table`, case studies)',
+    '#8298 (P3-07 Handbook)': 'Handbook bespoke components (`BadgeRow`, `Table`, `React.Fragment`, `Row/Col`)',
+    '#8298 (P3-04 Events)': 'Events bespoke forms (`CommonForm`)',
+    '#8298 (P3-13 Projects)': 'Projects page layout (`Row`, `Col`)',
+    '#8298 (Phase 3 Collections)': 'Other bespoke collection components',
+    'Unassigned': 'Files without an assigned owner issue',
+  };
+
+  const sortedOwners = Object.entries(ownerCounts).sort((a, b) => b[1] - a[1]);
+  for (const [owner, count] of sortedOwners) {
+    const desc = ownerDescriptions[owner] || 'Collection components';
+    lines.push(`| \`${owner}\` | ${count} | ${desc} |`);
+  }
+  lines.push(`| **Total** | **${sortedFiles.length}** | **100% accounted for (sum equals files with warnings)** |`);
+
+  lines.push(
+    '',
+    '## 3. Warnings Breakdown by Key',
     '',
     '| Warning Category | Occurrences | Primary Owner Issue | Description |',
     '|---|---|---|---|',
-  ];
+  );
 
   const keyDescriptions = {
     'thumbnail outside page bundle': ['#8308', 'Images in `thumbnail` or `darkthumbnail` pointing to `../../assets`'],
@@ -112,6 +173,7 @@ export function generateReport(options = {}) {
     'zero-byte asset': ['#8308', 'Zero-byte SVG files in source integrations'],
     'external prop warning': ['#8402', 'Non-http(s) link marked with external prop'],
     'missing front matter': ['#8402', 'Document missing YAML front matter; minimal front matter generated'],
+    'export statements': ['#8402', 'MDX export statements requiring review'],
   };
 
   for (const [cat, count] of Object.entries(warningCounts).sort((a, b) => b[1] - a[1])) {
@@ -121,7 +183,7 @@ export function generateReport(options = {}) {
 
   lines.push(
     '',
-    '## 3. Unknown Components Inventory',
+    '## 4. Unknown Components Inventory',
     '',
     '| Component | Occurrences | Owning Issue / Phase | Proposed Solution |',
     '|---|---|---|---|',
@@ -172,24 +234,24 @@ export function generateReport(options = {}) {
 
   lines.push(
     '',
-    '## 4. Warnings Inventory by File',
+    '## 5. Warnings Inventory by File',
     '',
-    'Every warning file outside Sistent is tracked below with its owning issue.',
+    'Every warning file outside Sistent is tracked below with its primary owning issue.',
     '',
-    '| File | Warning Details | Owner Issue |',
+    '| File | Warning Details | Primary Owner |',
     '|---|---|---|',
   );
 
   for (const file of sortedFiles) {
     const msgs = fileMap[file];
-    const owners = Array.from(new Set(msgs.map((m) => getOwner(file, m)))).join(', ');
+    const primaryOwner = filePrimaryOwner[file];
     const cleanMsgs = msgs.map((m) => m.replace(/\|/g, '\\|')).join('<br>');
-    lines.push(`| \`${file}\` | ${cleanMsgs} | ${owners} |`);
+    lines.push(`| \`${file}\` | ${cleanMsgs} | \`${primaryOwner}\` |`);
   }
 
   lines.push(
     '',
-    '## 5. Owner Issues Reference',
+    '## 6. Owner Issues Reference',
     '',
     '- **#8308** — [Hugo] Phase 1 · Decision: images layout and thumbnail handling: Covers out-of-bundle thumbnails and zero-byte assets.',
     '- **#8385** — [Hugo] Phase 2 · Shortcodes & converter rules for Blockquote, BlockquoteAlt, Callout, and InlineQuotes: Addressed by PR #8395.',
@@ -197,11 +259,12 @@ export function generateReport(options = {}) {
     '- **#8402** — [Hugo] Content hand-fix backlog: Non-literal Button/Link expressions, bare-relative URLs, wrapper indentation hazards.',
     '- **#8298 (Phase 3: Content collections)**:',
     '  - **P3-01** (#8298): Blog (`MeetTheMaintainer`, `MeetTheMeshMate`, `Blog`, diagrams)',
-    '  - **P3-02** (#8298): Resources (`FAQ`, `PlaygroundCTA`, `DockerExtensionCTA`, HPE/INFOR/TCS case studies)',
-    '  - **P3-04** (#8298): Events (`ContentForm`, `CommonForm`, `Grid2`)',
+    '  - **P3-02** (#8298): Resources (`FAQ`, `PlaygroundCTA`, `DockerExtensionCTA`, `CommonForm`, `Table`, case studies)',
+    '  - **P3-04** (#8298): Events (`CommonForm`, `Grid2`)',
     '  - **P3-07** (#8298): Handbook (`HandbookFaqAccordion`, `BadgeRow`, `Table`, `React.Fragment`)',
     '  - **P3-08** (#8298): Programs & Careers (`PositionApply`, `LfxPageNav`, `Row`, `Col`)',
     '  - **P3-12** (#8298): Community pages (`NewcomersMap`)',
+    '  - **P3-13** (#8298): Projects pages (`Row`, `Col`)',
     ''
   );
 
