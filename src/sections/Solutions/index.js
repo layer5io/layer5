@@ -9,6 +9,7 @@ import OrganizeDeployments from "./organize-deployments";
 import Review from "./review";
 import QASection from "./qa-section";
 import WhatsNext from "./whats-next";
+import CaseStudyBanner from "../../components/Case-study-banner";
 
 const Solutions = () => {
   return (
@@ -21,6 +22,9 @@ const Solutions = () => {
         <OrganizeDeployments/>
         <Review/>
         <QASection/>
+      </Container>
+      <CaseStudyBanner caseStudy="tcs" />
+      <Container>
         <WhatsNext/>
       </Container>
     </SolutionsWrapper>
