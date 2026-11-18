@@ -9,7 +9,7 @@
 | **Documents Converted** | 1006 / 1006 |
 | **Excluded Collections** | `sistent` (138 files skipped) |
 | **Skipped Templates** | 11 |
-| **Files with Warnings** | **129** |
+| **Files with Warnings** | **110** |
 | **Unowned Warning Files** | **0** |
 | **Zero-Byte Assets Logged** | 6 |
 | **Asset Normalization Renames** | 26 |
@@ -20,24 +20,24 @@ Each warning file is assigned exactly one primary owner. The per-owner file coun
 
 | Primary Owner Issue | Files | Scope / Focus |
 |---|---|---|
-| `#8308` | 37 | Out-of-bundle thumbnails and asset layout |
 | `#8402` | 23 | Content hand-fix backlog (wrapper indents, bare links, button props) |
-| `#8385` | 20 | Quote/callout-only components (PR #8395) |
+| `#8385` | 22 | Quote/callout-only components (PR #8395) |
 | `#8298 (P3-01 Blog)` | 16 | Blog bespoke components (`MeetTheMaintainer`, `MeetTheMeshMate`, diagrams) |
+| `#8308` | 16 | Out-of-bundle thumbnails and asset layout |
 | `#8401` | 11 | Imported assets backlog (`<img src={var}>`, `<CTA_FullWidth image={var}>`) |
 | `#8298 (P3-08 Programs & Careers)` | 8 | Programs & Careers bespoke components (`PositionApply`, `LfxPageNav`, `Row`, `Col`) |
 | `#8298 (P3-02 Resources)` | 7 | Resources & Books bespoke components (`FAQ`, `CommonForm`, `Table`, case studies) |
 | `#8298 (P3-07 Handbook)` | 5 | Handbook bespoke components (`BadgeRow`, `Table`, `React.Fragment`, `Row/Col`) |
 | `#8298 (P3-04 Events)` | 1 | Events bespoke forms (`CommonForm`) |
 | `#8298 (P3-13 Projects)` | 1 | Projects page layout (`Row`, `Col`) |
-| **Total** | **129** | **100% accounted for (sum equals files with warnings)** |
+| **Total** | **110** | **100% accounted for (sum equals files with warnings)** |
 
 ## 3. Warnings Breakdown by Key
 
 | Warning Category | Occurrences | Primary Owner Issue | Description |
 |---|---|---|---|
-| `thumbnail outside page bundle` | 71 | #8308 | Images in `thumbnail` or `darkthumbnail` pointing to `../../assets` |
 | `unknown components` | 70 | #8385 / Phase 3 | Components not yet mapped to Hugo shortcodes |
+| `thumbnail outside page bundle` | 32 | #8308 | Images in `thumbnail` or `darkthumbnail` pointing to `../../assets` |
 | `wrapper indent hazard` | 19 | #8402 | Wrapper bodies with 4+ space indents that could trigger Markdown code blocks |
 | `non-literal prop expression` | 16 | #8401 / #8402 | JSX expression props (e.g. `image={var}`, `$url={link}`) |
 | `bare-relative link` | 7 | #8402 | Links with bare-relative paths (e.g. `<Link to="newcomer">`) |
@@ -114,25 +114,19 @@ Every warning file outside Sistent is tracked below with its primary owning issu
 | `blog/2023/05-24-meet-the-meshmate-yash-sharma/index.mdx` | unknown components: MeetTheMeshMate | `#8298 (P3-01 Blog)` |
 | `blog/2023/08-21-layer5-badge-program/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review<br>unknown components: Blog | `#8298 (P3-01 Blog)` |
 | `blog/2023/09-28-hacktoberfest-2023/index.mdx` | unknown components: BlockquoteAlt | `#8385` |
-| `blog/2023/2023-09-05-unlocking-the-power-of-webassembly-in-service-mesh-management/index.mdx` | thumbnail: "../../../../assets/images/partners/intel-grey.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/partners/intel_white.webp" is outside the page bundle — move it next to index.md | `#8308` |
 | `blog/2024/02-13-what-is-platform-engineering/index.mdx` | <CTA_FullWidth>: non-literal expression for "image" | `#8401` |
 | `blog/2024/02-24-open-container-image-meshery/index.mdx` | <CTA_FullWidth>: non-literal expression for "image" | `#8401` |
-| `blog/2024/04-26-docker-compose-with-meshery/index.mdx` | thumbnail: "../../../../assets/images/dockercompose-logo/dockercompose-logo.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/dockercompose-logo/dockercompose-logo.webp" is outside the page bundle — move it next to index.md | `#8308` |
-| `blog/2024/05-07-mythical-engineer/index.mdx` | thumbnail: "../../../../assets/images/five/SVG/layer5-five-mascot-means-business.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/five/SVG/layer5-five-mascot-means-business.webp" is outside the page bundle — move it next to index.md | `#8308` |
 | `blog/2024/05-12-cost-of-observability/index.mdx` | unknown components: Blockquote | `#8385` |
-| `blog/2024/06-13-2024/index.mdx` | thumbnail: "../../../../assets/images/layer5/layer5-only/svg/layer5-black.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/layer5/layer5-only/svg/layer5-light-bg.webp" is outside the page bundle — move it next to index.md | `#8308` |
 | `blog/2024/06-21-meshery-5000-star-milestone/index.mdx` | unknown components: Blockquote | `#8385` |
 | `blog/2024/07-01-meet-the-maintainer-xin-huang/index.mdx` | unknown components: MeetTheMaintainer | `#8298 (P3-01 Blog)` |
 | `blog/2024/09-08-meet-the-maintainer-hussaina-begum/index.mdx` | unknown components: MeetTheMaintainer | `#8298 (P3-01 Blog)` |
 | `blog/2024/09-27-meet-the-maintainer-aisuko-li/index.mdx` | unknown components: MeetTheMaintainer | `#8298 (P3-01 Blog)` |
-| `blog/2024/10-09-docker-build-warning/index.mdx` | thumbnail: "../../../../assets/images/docker-extension/docker-extension-meshery-logo.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/docker-extension/docker-extension-meshery-logo.webp" is outside the page bundle — move it next to index.md<br>unknown components: BlockquoteAlt | `#8308` |
+| `blog/2024/10-09-docker-build-warning/index.mdx` | unknown components: BlockquoteAlt | `#8385` |
 | `blog/2024/10-22-meet-the-maintainer-aadhitya-amarendiran/index.mdx` | unknown components: MeetTheMaintainer | `#8298 (P3-01 Blog)` |
 | `blog/2024/11-01-meet-the-maintainer-yash-sharma/index.mdx` | unknown components: MeetTheMaintainer | `#8298 (P3-01 Blog)` |
-| `blog/2024/11-05-what-is-the-kanvas-catalog/index.mdx` | thumbnail: "../../../../assets/images/catalog-icon/catalog2.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/catalog-icon/catalog.webp" is outside the page bundle — move it next to index.md | `#8308` |
 | `blog/2025/05-28-meet-the-maintainer-ian-whitney/index.mdx` | unknown components: MeetTheMaintainer | `#8298 (P3-01 Blog)` |
 | `blog/2025/08-27-meet-the-maintainer-aabid-sofi/index.mdx` | unknown components: MeetTheMaintainer | `#8298 (P3-01 Blog)` |
 | `blog/2025/11-03-2025-understanding-configmaps/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `blog/2025/11-19-kanvas-like-miro-but-more/index.mdx` | thumbnail: "../../../../assets/images/kanvas/icon-only/kanvas-icon-color.png" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/kanvas/icon-only/kanvas-icon-white.png" is outside the page bundle — move it next to index.md | `#8308` |
 | `blog/2025/12-28-gemini-cli-trusted-directories/index.mdx` | <CTA_FullWidth>: non-literal expression for "image"<br>unknown components: Blockquote | `#8401` |
 | `blog/2026/02-25-my-journey-to-lfx-at-layer5-raunak-madan/post.mdx` | unknown components: Blockquote | `#8385` |
 | `blog/2026/03-02-meshery-hits-10000-github-stars/index.mdx` | <CTA_FullWidth>: non-literal expression for "image"<br>unknown components: Blockquote, Callout | `#8401` |
@@ -160,11 +154,9 @@ Every warning file outside Sistent is tracked below with its primary owning issu
 | `handbook/recognition/index.mdx` | unknown components: BadgeRow | `#8298 (P3-07 Handbook)` |
 | `handbook/repository-overview/index.mdx` | <Link>: non-literal expression for "to"<br><Link>: non-literal expression for "to"<br>unknown components: React.Fragment | `#8298 (P3-07 Handbook)` |
 | `handbook/writing-program/index.mdx` | unknown components: Row, Col, ContentForm | `#8298 (P3-07 Handbook)` |
-| `news/2021/2021-10-13-cncf-adopts-meshery/index.mdx` | thumbnail: "../../../../assets/images/meshery/full-logo/meshery-logo-light-text-side.png" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/meshery/full-logo/meshery-logo-light-text-side.png" is outside the page bundle — move it next to index.md | `#8308` |
-| `news/2021/2021-10-13-cncf-adopts-service-mesh-performance-standard/index.mdx` | thumbnail: "../../../../assets/images/service-mesh-performance/horizontal/smp-dark-text-side.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/service-mesh-performance/horizontal/smp-dark-text-side.webp" is outside the page bundle — move it next to index.md | `#8308` |
 | `news/2022/2022-05-10-layer5-joins-docker-extension-program-bringing-kubernetes-and-service-mesh-management-to-docker-with-meshery/index.mdx` | unknown components: BlockquoteAlt, Blockquote | `#8385` |
 | `news/2022/2022-05-18-meshmark-the-cloud-native-value-measurement/meshmark-the-cloud-native-value-measurement.md` | thumbnail: "../../../../assets/images/meshmark/stacked/meshmark-dark-full.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/meshmark/stacked/meshmark-dark-full.webp" is outside the page bundle — move it next to index.md<br>unknown components: BlockquoteAlt, Blockquote | `#8308` |
-| `news/2024/2024-11-12-layer5-launches-kanvas-a-collaborative-platform-for-cloud-native-infrastructure/index.mdx` | thumbnail: "../../../../assets/images/kanvas/stacked/kanvas-stacked-color.png" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/kanvas/stacked/kanvas-stacked-partial-color.png" is outside the page bundle — move it next to index.md<br>unknown components: BlockquoteAlt, Blockquote | `#8308` |
+| `news/2024/2024-11-12-layer5-launches-kanvas-a-collaborative-platform-for-cloud-native-infrastructure/index.mdx` | unknown components: BlockquoteAlt, Blockquote | `#8385` |
 | `news/2025/2025-11-05-sixth-highest-velocity/index.mdx` | unknown components: BlockquoteAlt, Blockquote | `#8385` |
 | `news/2025/2025-11-11-kanvas-ga-release/index.mdx` | unknown components: BlockquoteAlt, Blockquote | `#8385` |
 | `news/2025/2025-11-16-cncf-honors-innovators-and-defenders-community-awards/index.mdx` | unknown components: Blockquote | `#8385` |
@@ -176,21 +168,13 @@ Every warning file outside Sistent is tracked below with its primary owning issu
 | `programs/hacktoberfest-2020/index.mdx` | programs/hacktoberfest-2020/index.mdx: <Link> has bare-relative "to" value "newcomer" (<Link className="highlight" to="newcomer">); review manually | `#8402` |
 | `programs/hacktoberfest-2021/index.mdx` | programs/hacktoberfest-2021/index.mdx: <Link> has bare-relative "to" value "newcomer" (<Link className="highlight" to="newcomer">); review manually | `#8402` |
 | `programs/hacktoberfest-2022/index.mdx` | programs/hacktoberfest-2022/index.mdx: <Link> has bare-relative "to" value "newcomer" (<Link className="highlight" to="newcomer">); review manually | `#8402` |
-| `programs/layer5/index.mdx` | darkthumbnail_svg: "../../../assets/images/layer5/layer5-only/svg/layer5-light-no-trim.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `programs/lfx-2025/lfx-2025.mdx` | programs/lfx-2025/lfx-2025.mdx: <Link> has bare-relative "to" value "" (<Link to ="">); review manually<br>programs/lfx-2025/lfx-2025.mdx: <Link> has bare-relative "to" value "community/members/mia-grenell" (<Link to ="community/members/mia-grenell">); review manually<br>programs/lfx-2025/lfx-2025.mdx: <Link> has bare-relative "to" value "" (<Link to ="">); review manually | `#8402` |
 | `programs/lfx-2026/lfx-2026.mdx` | unknown components: LfxPageNav | `#8298 (P3-08 Programs & Careers)` |
 | `programs/sca-contributhon/index.mdx` | <ProgramsWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
 | `projects/distributed-performance-management/index.mdx` | unknown components: Row, Col | `#8298 (P3-13 Projects)` |
-| `resources/articles/consul-service-mesh/index.mdx` | thumbnail: "../../../../assets/images/service-mesh-icons/consul.svg" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/service-mesh-icons/consul.svg" is outside the page bundle — move it next to index.md | `#8308` |
-| `resources/articles/deploying-istio/index.mdx` | thumbnail: "../../../../assets/images/service-mesh-icons/istio.svg" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/service-mesh-icons/istio.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `resources/articles/devops-adoption/index.mdx` | <Link>: non-literal expression for "to"<br><Link>: non-literal expression for "to" | `#8401` |
 | `resources/articles/gitops/what-is-gitops.mdx` | thumbnail: "../../../../assets/images/socialIcons/github-dark.svg" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/socialIcons/github-light.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `resources/articles/istio-at-a-glance/istio-at-a-glance.mdx` | thumbnail: "../../../../assets/images/service-mesh-icons/istio.svg" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/service-mesh-icons/istio.svg" is outside the page bundle — move it next to index.md | `#8308` |
-| `resources/articles/istio-authorization policy/index.mdx` | thumbnail: "../../../../assets/images/service-mesh-icons/istio.svg" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/service-mesh-icons/istio.svg" is outside the page bundle — move it next to index.md | `#8308` |
-| `resources/articles/istio-pilot/index.mdx` | thumbnail: "../../../../assets/images/service-mesh-icons/istio.svg" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/service-mesh-icons/istio.svg" is outside the page bundle — move it next to index.md | `#8308` |
-| `resources/articles/istio-service-mesh/index.mdx` | thumbnail: "../../../../assets/images/service-mesh-icons/istio.svg" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/service-mesh-icons/istio-white.svg" is outside the page bundle — move it next to index.md | `#8308` |
-| `resources/articles/istio-service-proxy/index.mdx` | thumbnail: "../../../../assets/images/service-mesh-icons/envoy/icon/color/envoy-icon-color.svg" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/service-mesh-icons/envoy/icon/color/envoy-icon-color.svg" is outside the page bundle — move it next to index.md | `#8308` |
-| `resources/articles/istio-virtual-service/index.mdx` | thumbnail: "../../../../assets/images/service-mesh-icons/istio.svg" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/service-mesh-icons/istio.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `resources/articles/kubernetes/archtiecture-101/k8s-architecture-101.mdx` | thumbnail: "../kubernetes.svg" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../kubernetes.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `resources/articles/kubernetes/getting-started-with-kubernetes/index.mdx` | <CTA_FullWidth>: non-literal expression for "image" | `#8401` |
 | `resources/articles/kubernetes/management-of-kubernetes/index.mdx` | <CTA_FullWidth>: non-literal expression for "image" | `#8401` |
@@ -199,7 +183,6 @@ Every warning file outside Sistent is tracked below with its primary owning issu
 | `resources/case-study/hpes-adoption-of-meshery-and-kanvas/index.mdx` | unknown components: HPEintro, HPEfacts, HPEbenefits, InlineQuotes | `#8298 (P3-02 Resources)` |
 | `resources/case-study/infors-adoption-of-meshery-and-kanvas/index.mdx` | unknown components: INFORintro, INFORfacts, InlineQuotes, INFORbenefits | `#8298 (P3-02 Resources)` |
 | `resources/case-study/tcs-labs-adoption-of-meshery-and-kanvas/index.mdx` | unknown components: TCSintro, TCSfacts, InlineQuotes, TCSbenefits | `#8298 (P3-02 Resources)` |
-| `resources/comparison/layer5-academy-vs-moocit/index.mdx` | thumbnail: "../../../../assets/images/academy/academy-layer5.svg" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/academy/academy-layer5-light.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `resources/faq/internship-faq.mdx` | thumbnail: "../../../assets/images/workshops/workshops.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../assets/images/workshops/workshops.webp" is outside the page bundle — move it next to index.md<br>unknown components: FAQ | `#8308` |
 | `resources/faq/layer5-faq.mdx` | thumbnail: "../../../assets/images/layer5/layer5-only/png/layer5-gradient.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../assets/images/layer5/layer5-only/png/layer5-gradient.webp" is outside the page bundle — move it next to index.md<br>unknown components: FAQ | `#8308` |
 | `resources/faq/meshery-faq.mdx` | thumbnail: "../../../assets/images/meshery/text-only/meshery-logo-dark-text.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../assets/images/meshery/text-only/meshery-logo-dark-text.webp" is outside the page bundle — move it next to index.md<br>unknown components: FAQ | `#8308` |
@@ -216,8 +199,6 @@ Every warning file outside Sistent is tracked below with its primary owning issu
 | `service-mesh-books/service-mesh-patterns/index.mdx` | unknown components: Table | `#8298 (P3-02 Resources)` |
 | `service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-Edition/index.mdx` | unknown components: CommonForm | `#8298 (P3-02 Resources)` |
 | `service-mesh-books/the-enterprise-path-to-service-mesh-architectures/index.mdx` | unknown components: CommonForm | `#8298 (P3-02 Resources)` |
-| `use-cases/commenting/index.mdx` | thumbnail_svg: "../../../assets/images/comments/comment.svg" is outside the page bundle — move it next to index.md | `#8308` |
-| `use-cases/whiteboarding/index.mdx` | thumbnail_svg: "../../../assets/images/whiteboard/whiteboard.svg" is outside the page bundle — move it next to index.md | `#8308` |
 
 ## 6. Owner Issues Reference
 
