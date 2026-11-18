@@ -1,0 +1,38 @@
+<div class="repository-overview">
+  {{ range site.Data.handbook.repository_overview }}
+    <h3>{{ .category }} Projects</h3>
+    <div class="table-container">
+      <table class="repo-table">
+        <thead>
+          <tr>
+            <th>Site</th>
+            <th>Project</th>
+            <th>Framework</th>
+            <th>Maintainers</th>
+            <th>Repo</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range .subdata }}
+            <tr>
+              <td>
+                {{ if .site }}<a href="{{ .site }}" target="_blank" rel="noreferrer">{{ end }}
+                {{ if .image }}<img class="site-icon" src="{{ .image | relURL }}" alt="{{ .project }}">{{ end }}
+                {{ if .site }}</a>{{ end }}
+              </td>
+              <td>{{ .project }}</td>
+              <td>{{ .language }}</td>
+              <td>{{ delimit .maintainers_name ", " }}</td>
+              <td>
+                {{ if .repository }}
+                  <a href="{{ .repository }}" target="_blank" rel="noreferrer">GitHub</a>
+                {{ end }}
+              </td>
+            </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+  {{ end }}
+</div>
+
