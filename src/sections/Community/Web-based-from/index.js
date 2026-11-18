@@ -196,7 +196,12 @@ const MemberFormFour = ({
           <br />
           <br />
           <div className="btn-wrapper">
-            <button type="button" onClick={onPrevious} className="btn-prev">
+            <button
+              type="button"
+              onClick={onPrevious}
+              className="btn-prev"
+              disabled={status === "submitting"}
+            >
               <span className="back">&larr;</span> Previous Step
             </button>
             <Button
