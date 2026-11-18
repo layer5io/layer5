@@ -546,6 +546,9 @@ export const HandbookWrapper = styled.div`
     /* mentorship programs styling */
     .explain-2{
       padding: 25px 0px;
+      > div {
+        flex-wrap: wrap;
+      }
       .text{
           padding: 1.25rem 1.25rem 0px 1.25rem;
           h2{
