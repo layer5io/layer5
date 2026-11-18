@@ -185,7 +185,7 @@ const IntegrationsGrid = ({ category, count }) => {
       }
     });
     setcategoryNameList([...tempCategoryList]);
-    setIntegrationCollection();
+    setIntegrationCollection(tempCategoryList);
   };
 
   const setCategory = () => {
@@ -200,7 +200,7 @@ const IntegrationsGrid = ({ category, count }) => {
       tempCategoryList[0].isSelected = true;
     }
     setcategoryNameList([...tempCategoryList]);
-    setIntegrationCollection();
+    setIntegrationCollection(tempCategoryList);
   };
 
   const setFilter = (event) => {
@@ -235,16 +235,30 @@ const IntegrationsGrid = ({ category, count }) => {
     }
 
     setcategoryNameList([...tempCategoryList]);
-    setIntegrationCollection();
+    setIntegrationCollection(tempCategoryList);
   };
 
-  const setIntegrationCollection = () => {
-    if (categoryNameList[0].isSelected) {
+  // Mobile dropdown: picking a category shows only that category.
+  const selectCategory = (categoryName) => {
+    const tempCategoryList = categoryNameList.map((item) => ({
+      ...item,
+      isSelected: item.name === categoryName,
+    }));
+    setcategoryNameList([...tempCategoryList]);
+    setIntegrationCollection(tempCategoryList);
+  };
+
+  // Desktop chips allow several categories; name that state instead of hiding it.
+  const selectedCategories = categoryNameList.filter((item) => item.isSelected);
+
+  // Filter from the list just built, not from state that has not updated yet.
+  const setIntegrationCollection = (categoryList) => {
+    if (categoryList[0].isSelected) {
       setIntegrationList([...data.allMdx.nodes]);
       return;
     }
     let tempIntegrationCollection = [];
-    categoryNameList.forEach((item) => {
+    categoryList.forEach((item) => {
       if (item.isSelected) {
         data.allMdx.nodes.forEach((integration) => {
           if (integration.frontmatter.category == item.name) {
@@ -277,7 +291,7 @@ const IntegrationsGrid = ({ category, count }) => {
       />
 
       <section style={{ margin: "0 2.6rem" }}>
-        <IntegrationSlider {...settings}>
+        <IntegrationSlider {...settings} className="category-slider">
           {!hideFilter &&
             categoryNameList.map((item) => {
               return (
@@ -291,6 +305,31 @@ const IntegrationsGrid = ({ category, count }) => {
               );
             })}
         </IntegrationSlider>
+        {!hideFilter && (
+          <div className="category-dropdown">
+            <label htmlFor="integration-category">Category</label>
+            <select
+              id="integration-category"
+              value={
+                selectedCategories.length === 1
+                  ? selectedCategories[0].name
+                  : ""
+              }
+              onChange={(event) => selectCategory(event.target.value)}
+            >
+              {selectedCategories.length > 1 && (
+                <option value="" disabled>
+                  {`Multiple (${selectedCategories.length})`}
+                </option>
+              )}
+              {categoryNameList.map((item) => (
+                <option key={item.id} value={item.name}>
+                  {`${item.name} (${item.count})`}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
       </section>
 
       {searchQuery.length > 0 && queryResults.length < 1 ? (
