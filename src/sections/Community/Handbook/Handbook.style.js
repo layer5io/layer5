@@ -560,6 +560,7 @@ export const HandbookWrapper = styled.div`
       }
       img, svg {
           height: auto;
+          max-width: 100%;
           width: 23rem;
           display: block;
           margin-left: auto;
@@ -636,7 +637,7 @@ export const HandbookWrapper = styled.div`
       }
   }
 
-  @media only screen and (min-width: 765px){
+  @media only screen and (min-width: 1200px){
     .first {
       .list{
         display:flex;
