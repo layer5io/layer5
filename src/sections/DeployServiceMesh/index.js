@@ -64,9 +64,8 @@ const ServiceMesh = () => {
       email,
       firstName: first,
       lastName: second,
-      org,
+      organization: org,
       scope: "Meshery",
-      subscribed: true,
       company_website: companyWebsite,
       message: [
         `Interservice communication: ${parentVal1}`,

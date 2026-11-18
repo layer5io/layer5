@@ -1,8 +1,12 @@
 import React, { useId, useState } from "react";
 import { Field } from "formik";
-import { submissionMessage, submitMarketingForm } from "./client";
+import {
+  marketingPreferencesUrl,
+  submissionMessage,
+  submitMarketingForm,
+} from "./client";
 
-export { submitMarketingForm, submissionMessage };
+export { marketingPreferencesUrl, submitMarketingForm, submissionMessage };
 
 const honeypotStyle = {
   position: "absolute",

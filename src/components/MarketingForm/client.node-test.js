@@ -2,6 +2,7 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const {
   buildMarketingRequest,
+  marketingPreferencesUrl,
   submitMarketingForm,
   submissionMessage,
   mesheryCloudBase,
@@ -102,30 +103,35 @@ test("flattens wrapped form payloads and keeps stored fields", () => {
   assert.equal(request.body.firstName, "Ada");
   assert.equal(request.body.lastName, "Lovelace");
   assert.equal(request.body.email, "ada@example.com");
-  assert.equal(request.body.org, "Analytical Engines");
+  assert.equal(request.body.organization, "Analytical Engines");
+  assert.equal(request.body.org, undefined);
   assert.equal(request.body.occupation, "Programmer");
   assert.equal(request.body.github, "https://github.com/ada");
   assert.equal(request.body.role, "Contributor");
-  assert.equal(request.body.subscribed, undefined);
+  assert.equal(request.body.subscribed, false);
   assert.equal(request.body.interests, undefined);
-  assert.match(request.body.message, /projects: Meshery, Kanvas/);
-  assert.match(request.body.message, /interests: Service mesh tutorials/);
+  assert.equal(request.body.message, undefined);
+  assert.equal(request.body.projects, undefined);
 });
 
-test("keeps interest slugs and folds other open-source answers into message", () => {
+test("sends only known interest slugs and accepted fields", () => {
   const request = buildMarketingRequest("open-source-pricing", {
     email: "a@example.com",
     firstname: "A",
     lastname: "B",
     projectname: "Meshery",
-    interests: ["meshery"],
+    interests: ["meshery", "not-a-real-interest"],
+    scope: "Not a scope",
+    audience: "not-an-audience",
     users: "Platform teams",
     license: "Apache 2.0",
   });
   assert.deepEqual(request.body.interests, ["meshery"]);
   assert.equal(request.body.projectname, "Meshery");
-  assert.match(request.body.message, /users: Platform teams/);
-  assert.match(request.body.message, /license: Apache 2.0/);
+  assert.equal(request.body.scope, undefined);
+  assert.equal(request.body.audience, undefined);
+  assert.equal(request.body.message, undefined);
+  assert.equal(request.body.users, undefined);
 });
 
 test("rejects an unknown form type", () => {
@@ -171,11 +177,33 @@ test("posts JSON and reports success and error states", async () => {
           fetchImpl: async () => ({
             ok: false,
             status: 429,
+            headers: { get: (name) => (name === "Retry-After" ? "60" : "") },
             text: async () => "too many requests",
           }),
         },
       ),
-    (error) => error.code === "http-429" && /wait a minute/.test(error.message),
+    (error) => error.code === "http-429" && /60 seconds/.test(error.message),
+  );
+
+  await assert.rejects(
+    () =>
+      submitMarketingForm(
+        "contact",
+        { email: "a@example.com" },
+        {
+          fetchImpl: async () => ({
+            ok: false,
+            status: 400,
+            json: async () => ({
+              long_description: "scope is not a known choice",
+              short_description: "The marketing request could not be accepted",
+            }),
+          }),
+        },
+      ),
+    (error) =>
+      error.code === "http-400" &&
+      error.message === "scope is not a known choice",
   );
 
   await assert.rejects(
@@ -191,6 +219,27 @@ test("posts JSON and reports success and error states", async () => {
       ),
     (error) => error.code === "network",
   );
+});
+
+test("builds the preference center URL from the cloud host", () => {
+  const previous = process.env.GATSBY_MESHERY_CLOUD_BASE;
+  process.env.GATSBY_MESHERY_CLOUD_BASE = "https://cloud.example.test/";
+  try {
+    assert.equal(
+      marketingPreferencesUrl(),
+      "https://cloud.example.test/api/marketing/preferences",
+    );
+    assert.equal(
+      marketingPreferencesUrl("a b"),
+      "https://cloud.example.test/api/marketing/preferences?token=a%20b",
+    );
+  } finally {
+    if (previous === undefined) {
+      delete process.env.GATSBY_MESHERY_CLOUD_BASE;
+    } else {
+      process.env.GATSBY_MESHERY_CLOUD_BASE = previous;
+    }
+  }
 });
 
 test("describes community registration and unsubscribe", () => {

@@ -5,6 +5,7 @@ import Button from "../../reusecore/Button";
 import {
   MarketingHoneypot,
   MarketingStatus,
+  marketingPreferencesUrl,
   useMarketingForm,
 } from "../MarketingForm";
 import hero from "./hero.webp";
@@ -109,7 +110,10 @@ const CommunityCallCard = ({ hero_image }) => {
             </form>
           )}
         </Row>
-        <p className="unsubscribe"> You can unsubscribe any time. No spam. </p>
+        <p className="unsubscribe">
+          You can <a href={marketingPreferencesUrl()}>unsubscribe</a> any time.
+          No spam.
+        </p>
       </div>
     </CommunityCallCardWrapper>
   );

@@ -8,6 +8,7 @@ import { Link } from "gatsby";
 import {
   MarketingHoneypot,
   MarketingStatus,
+  marketingPreferencesUrl,
   useMarketingForm,
 } from "../../../components/MarketingForm";
 
@@ -1027,7 +1028,7 @@ const WebBasedForm = () => {
             the community mailing list. You can also access the{" "}
             <Link to="/community/calendar">community calendar</Link> to stay
             updated on weekly meetings. If you prefer not to receive emails, you
-            can <Link to="/unsubscribe">unsubscribe</Link> at anytime.
+            can <a href={marketingPreferencesUrl()}>unsubscribe</a> at anytime.
           </p>
         </div>
       </Container>

@@ -89,6 +89,30 @@ const FORM_CATALOG = {
   },
 };
 
+const AUDIENCES = new Set(["layer5", "meshery-community", "smp"]);
+
+const SCOPES = new Set([
+  "Meshery",
+  "SMP",
+  "SMI",
+  "GetNighthawk",
+  "Landscape",
+  "Community",
+]);
+
+const INTERESTS = new Set([
+  "learn-service-mesh",
+  "community-newsletter",
+  "careers",
+  "meshery",
+  "smp",
+  "service-mesh-patterns",
+  "getnighthawk",
+  "smi",
+  "press-analysts",
+  "press-journalists",
+]);
+
 const CANONICAL = {
   email: "email",
   EMAIL: "email",
@@ -100,13 +124,10 @@ const CANONICAL = {
   LNAME: "lastName",
   phone: "phone",
   PHONE: "phone",
-  audience: "audience",
   subject: "subject",
   message: "message",
-  scope: "scope",
   occupation: "occupation",
   organization: "organization",
-  org: "org",
   role: "role",
   github: "github",
   twitter: "twitter",
@@ -149,77 +170,81 @@ function resolveMarketingForm(formType) {
   return spec;
 }
 
-function appendExtra(extras, key, value) {
-  extras.push(`${key}: ${value}`);
+function isOptIn(value) {
+  if (typeof value === "boolean") {
+    return value;
+  }
+  return CHECKED.has(String(value).trim().toLowerCase());
 }
 
-function assignValue(body, extras, key, value) {
+function addInterests(body, slugs) {
+  const next = slugs.filter((slug) => INTERESTS.has(slug));
+  if (!next.length) {
+    return;
+  }
+  body.interests = (body.interests || []).concat(next);
+}
+
+function assignValue(body, key, value) {
   if (value == null || key === "form") {
     return;
   }
   if (Array.isArray(value)) {
-    const parts = value
-      .map((item) => (item == null ? "" : String(item).trim()))
-      .filter(Boolean);
-    if (!parts.length) {
-      return;
-    }
     if (key === "interests") {
-      body.interests = (body.interests || []).concat(parts);
-      return;
+      addInterests(
+        body,
+        value
+          .map((item) => (item == null ? "" : String(item).trim()))
+          .filter(Boolean),
+      );
     }
-    appendExtra(extras, key, parts.join(", "));
     return;
   }
   if (typeof value === "object") {
     Object.keys(value).forEach((child) => {
-      assignValue(body, extras, child, value[child]);
+      assignValue(body, child, value[child]);
     });
     return;
   }
-  if (typeof value === "boolean") {
-    if (key === "subscribed" || key === "newsletter") {
-      if (value) {
-        body.subscribed = true;
-      }
-      return;
-    }
-    appendExtra(extras, key, value ? "yes" : "no");
+  if (key === "subscribed" || key === "newsletter") {
+    body.subscribed = isOptIn(value);
     return;
   }
-  if (typeof value === "number") {
-    if (Number.isFinite(value)) {
-      appendExtra(extras, key, value);
-    }
+  if (typeof value !== "string") {
     return;
   }
-  const text = String(value).trim();
+  const text = value.trim();
   if (!text) {
     return;
   }
-  if (key === "subscribed" || key === "newsletter") {
-    if (CHECKED.has(text.toLowerCase())) {
-      body.subscribed = true;
+  if (key === "interests") {
+    addInterests(body, [text]);
+    return;
+  }
+  if (key === "org" || key === "organization") {
+    if (!body.organization) {
+      body.organization = text;
     }
     return;
   }
-  if (key === "interests") {
-    appendExtra(extras, key, text);
+  if (key === "scope") {
+    if (SCOPES.has(text)) {
+      body.scope = text;
+    }
+    return;
+  }
+  if (key === "audience") {
+    if (AUDIENCES.has(text)) {
+      body.audience = text;
+    }
     return;
   }
   const canonical = CANONICAL[key];
   if (!canonical) {
-    appendExtra(extras, key, text);
     return;
   }
   if (canonical === "company_website") {
     body.company_website = text;
-    return;
-  }
-  if (canonical === "org" || canonical === "organization") {
-    if (!body.org && !body.organization) {
-      body[canonical] = text;
-    }
     return;
   }
   if (!body[canonical]) {
@@ -229,21 +254,25 @@ function assignValue(body, extras, key, value) {
 
 function toMarketingBody(fields, spec) {
   const body = {};
-  const extras = [];
-  assignValue(body, extras, null, fields || {});
-  if (extras.length) {
-    const extraText = extras.join("\n");
-    body.message = body.message ? `${body.message}\n${extraText}` : extraText;
-  }
+  assignValue(body, null, fields || {});
   if (!Object.prototype.hasOwnProperty.call(body, "company_website")) {
     body.company_website = "";
   }
   if (spec.interests && spec.interests.length) {
-    const selected = new Set(body.interests || []);
-    spec.interests.forEach((interest) => selected.add(interest));
-    body.interests = Array.from(selected);
+    addInterests(body, spec.interests);
+  }
+  if (body.interests) {
+    body.interests = Array.from(new Set(body.interests));
   }
   return body;
+}
+
+function marketingPreferencesUrl(token) {
+  const url = `${mesheryCloudBase()}/api/marketing/preferences`;
+  if (!token) {
+    return url;
+  }
+  return `${url}?token=${encodeURIComponent(token)}`;
 }
 
 function buildMarketingRequest(formType, fields) {
@@ -277,9 +306,46 @@ function submissionMessage(formType, result) {
   return "Thanks. We received your submission.";
 }
 
+async function meshkitMessage(response) {
+  let data;
+  try {
+    data = await response.json();
+  } catch (error) {
+    return error && error.name ? "" : "";
+  }
+  const detail =
+    data &&
+    (data.long_description ||
+      data.longDescription ||
+      data.short_description ||
+      data.shortDescription);
+  if (typeof detail !== "string") {
+    return "";
+  }
+  const cleaned = detail.replace(/[\r\n]+/g, " ").trim();
+  if (!cleaned || cleaned.length > 300 || /[<>]/.test(cleaned)) {
+    return "";
+  }
+  return cleaned;
+}
+
 async function errorMessageFrom(response) {
   if (response.status === 429) {
-    return "Too many submissions. Please wait a minute and try again.";
+    const retryAfter =
+      response.headers && response.headers.get
+        ? response.headers.get("Retry-After")
+        : "";
+    const seconds = Number.parseInt(retryAfter, 10);
+    if (Number.isFinite(seconds) && seconds > 0) {
+      return `Too many submissions. Please wait ${seconds} seconds and try again.`;
+    }
+    return "Too many submissions. Please wait and try again.";
+  }
+  if (response.status === 400 || response.status === 500) {
+    const detail = await meshkitMessage(response);
+    if (detail) {
+      return detail;
+    }
   }
   if (response.status === 400) {
     return "Please check the form and try again.";
@@ -317,13 +383,20 @@ async function submitMarketingForm(formType, fields, options) {
   try {
     return await response.json();
   } catch (error) {
-    return { status: "accepted", notified: false, cause: error && error.name };
+    return {
+      status: "accepted",
+      notified: error ? false : false,
+    };
   }
 }
 
 module.exports = {
+  AUDIENCES,
+  SCOPES,
+  INTERESTS,
   FORM_CATALOG,
   mesheryCloudBase,
+  marketingPreferencesUrl,
   resolveMarketingForm,
   buildMarketingRequest,
   submissionMessage,
