@@ -6,7 +6,7 @@ const DeployServiceMeshWrapper = styled.div`
     }
     h3.sub-heading {
         margin-top: 2rem;
-        color: ${props => props.theme.white};
+        color: ${(props) => props.theme.white};
     }
     .hero{
         background-color: #EBC017;
@@ -136,6 +136,8 @@ const DeployServiceMeshWrapper = styled.div`
             top: -1px;
             left: 50%;
           }
+      }
+
       .slider {
         -webkit-appearance: none;
         width: 100%;
@@ -281,8 +283,8 @@ const DeployServiceMeshWrapper = styled.div`
         line-height: 1.25rem;
         text-align: center;
         width: 300px;
-        color: ${props => props.theme.white};
-        background: ${props => props.theme.tertiaryColor};
+        color: ${(props) => props.theme.white};
+        background: ${(props) => props.theme.tertiaryColor};
         z-index: 3000;
         border-bottom-right-radius: 0.8rem;
         border-bottom-left-radius: 0.8rem;

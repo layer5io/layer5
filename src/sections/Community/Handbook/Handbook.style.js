@@ -546,6 +546,9 @@ export const HandbookWrapper = styled.div`
     /* mentorship programs styling */
     .explain-2{
       padding: 25px 0px;
+      > div {
+        flex-wrap: wrap;
+      }
       .text{
           padding: 1.25rem 1.25rem 0px 1.25rem;
           h2{
@@ -560,6 +563,7 @@ export const HandbookWrapper = styled.div`
       }
       img, svg {
           height: auto;
+          max-width: 100%;
           width: 23rem;
           display: block;
           margin-left: auto;
@@ -636,7 +640,7 @@ export const HandbookWrapper = styled.div`
       }
   }
 
-  @media only screen and (min-width: 765px){
+  @media only screen and (min-width: 1200px){
     .first {
       .list{
         display:flex;

@@ -381,7 +381,7 @@ const Privacy = () => {
                 <br />
               Email Address: legal@layer5.io
                 <br />
-              Telephone number: 512-810-8200
+              Telephone number: 512-548-9675
               </p>
               <p>
                 <small>
