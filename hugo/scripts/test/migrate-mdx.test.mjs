@@ -823,3 +823,90 @@ test('Wrappers warn and leave tag as-is when body has mixed 0-space and 4+ space
   assert.match(output, /<BlogWrapper>/);
   assert.match(output, /\[link\]\(\/blog\)/);
 });
+
+test('CodeBlock converts self-closing code or codeString attribute to fenced code block with jsx default fallback', () => {
+  const input = [
+    '---',
+    'title: "CodeBlock Test"',
+    '---',
+    '<CodeBlock name="basic-accordion" collapsible code={`<Accordion>',
+    '  <Typography>Panel 1</Typography>',
+    '</Accordion>`} />',
+    '<CodeBlock language="bash" code={`mesheryctl system start`} />',
+    '<CodeBlock name="nested" code={`const x = \\`\\`\\`fence\\`\\`\\`;`} />',
+    '<CodeBlock name="dynamic" code={basicCode} />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'codeblock-test', file: 'sistent/components/accordion/code.mdx' });
+  assert.match(output, /```jsx\n<Accordion>\n  <Typography>Panel 1<\/Typography>\n<\/Accordion>\n```/);
+  assert.match(output, /```bash\nmesheryctl system start\n```/);
+  assert.match(output, /````jsx\nconst x = ```fence```;\n````/);
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /non-literal expression for "code"/);
+  assert.match(output, /<CodeBlock name="dynamic" code=\{basicCode\} \/>/);
+});
+
+test('stripExportConst removes export const statements deterministically while preserving code fences and flagging other exports', () => {
+  const input = [
+    '---',
+    'title: "Export Strip Test"',
+    '---',
+    'export const data = programs_data;',
+    'export const tableWrap = { overflowX: "auto" };',
+    'export const faqData = [',
+    '  {',
+    '    question: "Is this open source?",',
+    '    answer: "Yes, Apache V2."',
+    '  }',
+    '];',
+    'export const JourneySection = () => {',
+    '  const [hover, setHover] = useState(false);',
+    '  return <div className="journey">Hello</div>;',
+    '};',
+    '```javascript',
+    'export const preservedInFence = true;',
+    '```',
+    'export default function Page() { return null; }',
+    'Content continues after exports.',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'export-test', file: 'handbook/about/index.mdx' });
+  assert.doesNotMatch(output, /export const data/);
+  assert.doesNotMatch(output, /export const tableWrap/);
+  assert.doesNotMatch(output, /export const faqData/);
+  assert.doesNotMatch(output, /export const JourneySection/);
+  assert.match(output, /export const preservedInFence = true;/);
+  assert.match(output, /Content continues after exports\./);
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /contains `export` statements/);
+});
+
+test('stripExportConst leaves unterminated export const untouched and warns', () => {
+  const input = [
+    '---',
+    'title: "Unterminated Export"',
+    '---',
+    'export const data = programs_data',
+    '',
+    'Content continues.',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'unterminated-test', file: 'programs/test/index.mdx' });
+  assert.match(output, /export const data = programs_data/);
+  assert.match(output, /Content continues\./);
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /contains `export` statements/);
+});
+
+test('LfxLogoImage, ThemedScaLogo, and JourneySection convert to shortcodes', () => {
+  const input = [
+    '---',
+    'title: "Shortcode Components"',
+    '---',
+    '<LfxLogoImage />',
+    '<ThemedScaLogo />',
+    '<JourneySection />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'shortcodes', file: 'programs/lfx-2021/lfx-2021.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.match(output, /\{\{< lfx-logo >\}\}/);
+  assert.match(output, /\{\{< themed-sca-logo >\}\}/);
+  assert.match(output, /\{\{< journey-section >\}\}/);
+});

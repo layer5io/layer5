@@ -1,0 +1,12 @@
+<div class="handbook-faq-accordion">
+  {{ $faqs := site.Data.handbook.faq }}
+  {{ range $faqs }}
+    <details class="faq-item">
+      <summary><h5>{{ .question }}</h5></summary>
+      <div class="faq-answer">
+        {{ .answer | markdownify }}
+      </div>
+    </details>
+  {{ end }}
+</div>
+

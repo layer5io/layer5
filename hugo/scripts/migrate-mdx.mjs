@@ -51,6 +51,10 @@ export const COMPONENTS = {
   ResourcesWrapper: { custom: 'unwrap' },
   BookWrapper:      { custom: 'unwrap' },
   Code:             { custom: 'code' },
+  CodeBlock:        { custom: 'code' },
+  LfxLogoImage:     { shortcode: 'lfx-logo' },
+  ThemedScaLogo:    { shortcode: 'themed-sca-logo' },
+  JourneySection:   { shortcode: 'journey-section' },
 };
 const COLLECTION_EXCLUDED_COMPONENTS = {
   sistent: new Set([
@@ -253,17 +257,17 @@ function convertLink(tag, children, ctx, rawTag, rawFull) {
 
 function convertCode(tag, ctx, rawTag, rawFull) {
   const loc = ctx.file ? `${ctx.file}: ` : '';
-  const tagSnippet = rawTag.replace(/\s+/g, ' ').trim() || '<Code>';
-  const codeAttr = tag.attrs.find((a) => a.key === 'codeString');
+  const tagSnippet = rawTag.replace(/\s+/g, ' ').trim() || `<${tag.name}>`;
+  const codeAttr = tag.attrs.find((a) => a.key === 'codeString' || a.key === 'code');
   if (!codeAttr) {
-    ctx.warn(`${loc}<Code> missing "codeString" attribute (${tagSnippet}); left as-is`);
+    ctx.warn(`${loc}<${tag.name}> missing "codeString" attribute (${tagSnippet}); left as-is`);
     return rawFull;
   }
   if (!codeAttr.literal) {
     return rawFull;
   }
   const langAttr = tag.attrs.find((a) => a.key === 'language');
-  const lang = (langAttr?.literal ? langAttr.value.trim() : '') || 'text';
+  const lang = (langAttr?.literal ? langAttr.value.trim() : '') || (tag.name === 'CodeBlock' ? 'jsx' : 'text');
   const codeBody = codeAttr.value.replace(/\\`/g, '`').replace(/\r\n/g, '\n').replace(/^\n/, '').replace(/\n$/, '');
   const backtickRuns = codeBody.match(/`+/g) || [];
   const maxRun = backtickRuns.reduce((m, s) => Math.max(m, s.length), 0);
@@ -393,6 +397,52 @@ function unwrapCollectionWrappers(body, ctx) {
   return out.replace(/\u0000WRAP_FENCE_(\d+)\u0000/g, (_, n) => maskedFences[+n]);
 }
 
+/** Strip `export const ...;` statements deterministically outside code fences. */
+export function stripExportConst(text, ctx) {
+  let out = '';
+  let i = 0;
+  const re = /^[ \t]*export\s+const\s+/gm;
+  while (true) {
+    re.lastIndex = i;
+    const m = re.exec(text);
+    if (!m) { out += text.slice(i); break; }
+    out += text.slice(i, m.index);
+    let j = m.index + m[0].length;
+    let depth = 0, q = null, inLineComment = false, inBlockComment = false;
+    let terminated = false;
+    while (j < text.length) {
+      const c = text[j], next = text[j + 1];
+      if (inLineComment) { if (c === '\n') inLineComment = false; j++; continue; }
+      if (inBlockComment) { if (c === '*' && next === '/') { inBlockComment = false; j += 2; continue; } j++; continue; }
+      if (q) { if (c === '\\') { j += 2; continue; } if (c === q) { q = null; } j++; continue; }
+      if (c === '/' && next === '/') { inLineComment = true; j += 2; continue; }
+      if (c === '/' && next === '*') { inBlockComment = true; j += 2; continue; }
+      if (c === '"' || c === "'" || c === '`') { q = c; j++; continue; }
+      if (c === '{' || c === '[' || c === '(') { depth++; j++; continue; }
+      if (c === '}' || c === ']' || c === ')') { if (depth > 0) depth--; j++; continue; }
+      if (c === ';' && depth === 0) {
+        terminated = true;
+        j++;
+        while (j < text.length && (text[j] === ' ' || text[j] === '\t')) j++;
+        if (j < text.length && text[j] === '\r') j++;
+        if (j < text.length && text[j] === '\n') j++;
+        break;
+      }
+      j++;
+    }
+    if (!terminated) {
+      // No terminator found: leave the statement in place instead of
+      // dropping the rest of the file; convertBody already warns on
+      // leftover `export` statements.
+      out += text.slice(m.index);
+      break;
+    }
+    if (ctx?.count) ctx.count('exportsRemoved');
+    i = j;
+  }
+  return out;
+}
+
 /** Convert an MDX body. Code fences and inline code are protected. */
 export function convertBody(body, ctx) {
   const unwrapped = unwrapCollectionWrappers(body, ctx);
@@ -405,6 +455,7 @@ export function convertBody(body, ctx) {
     let t = c.text.replace(/\{\s*`(?:\\.|[^`\\])*`\s*\}|`[^`\n]+`/g, (s) => (s[0] === '{' ? s : `\u0000${masked.push(s) - 1}\u0000`));
     t = t.replace(/^import\s+(?:[\w$]+\s*,?\s*)?(?:\{[^}]*\}|\*\s+as\s+[\w$]+)?\s*from\s+['"][^'"]+['"];?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
     t = t.replace(/^import\s+['"][^'"]+['"];?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
+    t = stripExportConst(t, ctx);
     if (/^export\s/m.test(t)) ctx.warn('contains `export` statements (MDX exports are not supported in Hugo)');
     t = t.replace(/\{\/\*([\s\S]*?)\*\/\}/g, '<!--$1-->');
     t = t.replace(/<!--[\s\S]*?-->/g, (s) => `\u0000${masked.push(s) - 1}\u0000`); // never scan inside comments
