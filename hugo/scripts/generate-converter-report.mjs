@@ -20,22 +20,22 @@ export function assignPrimaryOwner(file, msgs) {
     if (allQuotes) return '#8385';
   }
 
-  // 3. Files with bespoke/unmapped components -> #8298 (Phase 3 Collections)
+  // 3. Files with bespoke/unmapped components -> Phase 3 Sub-issues
   const hasBespokeComp = unknownMsgs.some((m) => {
     const comps = m.replace('unknown components: ', '').split(', ');
     return comps.some((c) => !['Blockquote', 'BlockquoteAlt', 'Callout', 'InlineQuotes'].includes(c));
   });
 
   if (hasBespokeComp) {
-    if (file.startsWith('blog/')) return '#8298 (P3-01 Blog)';
-    if (file.startsWith('resources/') || file.startsWith('service-mesh-books/')) return '#8298 (P3-02 Resources)';
-    if (file.startsWith('news/')) return '#8298 (P3-03 News)';
-    if (file.startsWith('events/')) return '#8298 (P3-04 Events)';
-    if (file.startsWith('members/')) return '#8298 (P3-05 Members)';
-    if (file.startsWith('handbook/')) return '#8298 (P3-07 Handbook)';
-    if (file.startsWith('programs/') || file.startsWith('careers/')) return '#8298 (P3-08 Programs & Careers)';
-    if (file.startsWith('projects/')) return '#8298 (P3-13 Projects)';
-    return '#8298 (Phase 3 Collections)';
+    if (file.startsWith('blog/')) return '#8453';
+    if (file.startsWith('resources/') || file.startsWith('service-mesh-books/')) return '#8454';
+    if (file.startsWith('news/')) return '#8298';
+    if (file.startsWith('events/')) return '#8455';
+    if (file.startsWith('members/')) return '#8298';
+    if (file.startsWith('handbook/')) return '#8456';
+    if (file.startsWith('programs/') || file.startsWith('careers/')) return '#8457';
+    if (file.startsWith('projects/')) return '#8458';
+    return '#8298';
   }
 
   // 4. Imported assets variables (<img src={var}>, <CTA_FullWidth image={var}>, etc.) -> #8401
@@ -80,6 +80,11 @@ export function generateReport(options = {}) {
   const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
   const src = options.src || path.join(rootDir, 'src/collections');
   const outPath = options.out || path.join(rootDir, 'hugo/docs/CONVERTER_REPORT.md');
+
+  const assetsDir = path.join(rootDir, 'src/assets');
+  if (!fs.existsSync(assetsDir)) {
+    throw new Error(`src/assets directory is required to generate report; ensure full checkout at ${assetsDir}`);
+  }
 
   const report = migrate({ src, dest: 'content', dryRun: true, exclude: ['sistent'] });
 
@@ -129,6 +134,7 @@ export function generateReport(options = {}) {
     '## 2. Primary Owner Breakdown',
     '',
     'Each warning file is assigned exactly one primary owner. The per-owner file counts sum exactly to the total files with warnings.',
+    'Each file lists one primary owner; a file only becomes warning-free when all of its warnings are fixed.',
     '',
     '| Primary Owner Issue | Files | Scope / Focus |',
     '|---|---|---|',
@@ -139,13 +145,13 @@ export function generateReport(options = {}) {
     '#8402': 'Content hand-fix backlog (wrapper indents, bare links, button props)',
     '#8385': 'Quote/callout-only components (PR #8395)',
     '#8401': 'Imported assets backlog (`<img src={var}>`, `<CTA_FullWidth image={var}>`)',
-    '#8298 (P3-01 Blog)': 'Blog bespoke components (`MeetTheMaintainer`, `MeetTheMeshMate`, diagrams)',
-    '#8298 (P3-08 Programs & Careers)': 'Programs & Careers bespoke components (`PositionApply`, `LfxPageNav`, `Row`, `Col`)',
-    '#8298 (P3-02 Resources)': 'Resources & Books bespoke components (`FAQ`, `CommonForm`, `Table`, case studies)',
-    '#8298 (P3-07 Handbook)': 'Handbook bespoke components (`BadgeRow`, `Table`, `React.Fragment`, `Row/Col`)',
-    '#8298 (P3-04 Events)': 'Events bespoke forms (`CommonForm`)',
-    '#8298 (P3-13 Projects)': 'Projects page layout (`Row`, `Col`)',
-    '#8298 (Phase 3 Collections)': 'Other bespoke collection components',
+    '#8453': 'P3-01 Blog bespoke components (`MeetTheMaintainer`, `MeetTheMeshMate`, diagrams)',
+    '#8457': 'P3-08 Programs & Careers bespoke components (`PositionApply`, `LfxPageNav`, `Row`, `Col`)',
+    '#8454': 'P3-02 Resources & Books bespoke components (`FAQ`, `CommonForm`, `Table`, case studies)',
+    '#8456': 'P3-07 Handbook bespoke components (`BadgeRow`, `Table`, `React.Fragment`, `Row/Col`)',
+    '#8455': 'P3-04 Events bespoke forms (`CommonForm`, `Grid2`)',
+    '#8458': 'P3-13 Projects page layout (`Row`, `Col`)',
+    '#8298': 'Other Phase 3 bespoke collection components',
     'Unassigned': 'Files without an assigned owner issue',
   };
 
@@ -194,36 +200,36 @@ export function generateReport(options = {}) {
     BlockquoteAlt: ['#8385 (P2-05)', '`{{< blockquote-alt >}}` shortcode (PR #8395)'],
     Callout: ['#8385 (P2-05)', '`{{< callout >}}` shortcode (PR #8395)'],
     InlineQuotes: ['#8385 (P2-05)', '`{{< inline-quotes >}}` shortcode (PR #8395)'],
-    Col: ['#8298 (P3-08 Programs / Careers)', 'Container grid column layout partial/shortcode'],
-    Row: ['#8298 (P3-08 Programs / Careers)', 'Container grid row layout partial/shortcode'],
-    Grid2: ['#8298 (P3-04 Events)', 'Event grid container'],
-    MeetTheMaintainer: ['#8298 (P3-01 Blog)', 'Blog interview header component'],
-    MeetTheMeshMate: ['#8298 (P3-01 Blog)', 'Blog MeshMate profile component'],
-    Blog: ['#8298 (P3-01 Blog)', 'Bespoke blog listing component'],
-    MeshkitMesheryAdapterLib: ['#8298 (P3-01 Blog)', 'Architecture diagram component in blog post'],
-    BufProtocol: ['#8298 (P3-01 Blog)', 'Bespoke SVG diagram component in blog post'],
-    PerfbytesPodcast: ['#8298 (P3-01 Blog)', 'Audio/podcast player embed in blog post'],
-    PositionApply: ['#8298 (P3-08 Careers)', 'Job application CTA button/link'],
-    LfxPageNav: ['#8298 (P3-08 Programs)', 'LFX program navigation pills'],
-    NewcomersMap: ['#8298 (P3-12 Community)', 'Interactive/SVG newcomer roadmap component'],
-    ContentForm: ['#8298 (P3-04 Events)', 'Event speaker registration form island'],
-    CommonForm: ['#8298 (P3-04 Events)', 'Event signup form island'],
-    BadgeRow: ['#8298 (P3-07 Handbook)', 'Handbook recognition badge row component'],
-    HandbookFaqAccordion: ['#8298 (P3-07 Handbook)', 'FAQ accordion rendering `site.Data.handbook.faq`'],
-    React_Fragment: ['#8298 (P3-07 Handbook)', 'React wrapper in repository overview maintainer loop'],
-    Table: ['#8298 (P3-07 Handbook)', 'HTML table wrapper in handbook'],
-    FAQ: ['#8298 (P3-02 Resources)', 'Resources FAQ accordion component'],
-    PlaygroundCTA: ['#8298 (P3-02 Resources)', 'Meshery playground banner CTA'],
-    DockerExtensionCTA: ['#8298 (P3-02 Resources)', 'Docker extension banner CTA'],
-    HPEintro: ['#8298 (P3-02 Resources)', 'HPE case study intro block'],
-    HPEfacts: ['#8298 (P3-02 Resources)', 'HPE case study facts sidebar'],
-    HPEbenefits: ['#8298 (P3-02 Resources)', 'HPE case study benefits section'],
-    INFORintro: ['#8298 (P3-02 Resources)', 'Infor case study intro block'],
-    INFORfacts: ['#8298 (P3-02 Resources)', 'Infor case study facts sidebar'],
-    INFORbenefits: ['#8298 (P3-02 Resources)', 'Infor case study benefits section'],
-    TCSintro: ['#8298 (P3-02 Resources)', 'TCS case study intro block'],
-    TCSfacts: ['#8298 (P3-02 Resources)', 'TCS case study facts sidebar'],
-    TCSbenefits: ['#8298 (P3-02 Resources)', 'TCS case study benefits section'],
+    Col: ['#8457 (P3-08) / #8458 (P3-13)', 'Container grid column layout partial/shortcode'],
+    Row: ['#8457 (P3-08) / #8458 (P3-13)', 'Container grid row layout partial/shortcode'],
+    Grid2: ['#8455 (P3-04)', 'Event grid container'],
+    MeetTheMaintainer: ['#8453 (P3-01)', 'Blog interview header component'],
+    MeetTheMeshMate: ['#8453 (P3-01)', 'Blog MeshMate profile component'],
+    Blog: ['#8453 (P3-01)', 'Bespoke blog listing component'],
+    MeshkitMesheryAdapterLib: ['#8453 (P3-01)', 'Architecture diagram component in blog post'],
+    BufProtocol: ['#8453 (P3-01)', 'Bespoke SVG diagram component in blog post'],
+    PerfbytesPodcast: ['#8453 (P3-01)', 'Audio/podcast player embed in blog post'],
+    PositionApply: ['#8457 (P3-08)', 'Job application CTA button/link'],
+    LfxPageNav: ['#8457 (P3-08)', 'LFX program navigation pills'],
+    NewcomersMap: ['#8298 (P3-12)', 'Interactive/SVG newcomer roadmap component'],
+    ContentForm: ['#8455 (P3-04)', 'Event speaker registration form island'],
+    CommonForm: ['#8455 (P3-04)', 'Event signup form island'],
+    BadgeRow: ['#8456 (P3-07)', 'Handbook recognition badge row component'],
+    HandbookFaqAccordion: ['#8456 (P3-07)', 'FAQ accordion rendering `site.Data.handbook.faq`'],
+    React_Fragment: ['#8456 (P3-07)', 'React wrapper in repository overview maintainer loop'],
+    Table: ['#8456 (P3-07)', 'HTML table wrapper in handbook'],
+    FAQ: ['#8454 (P3-02)', 'Resources FAQ accordion component'],
+    PlaygroundCTA: ['#8454 (P3-02)', 'Meshery playground banner CTA'],
+    DockerExtensionCTA: ['#8454 (P3-02)', 'Docker extension banner CTA'],
+    HPEintro: ['#8454 (P3-02)', 'HPE case study intro block'],
+    HPEfacts: ['#8454 (P3-02)', 'HPE case study facts sidebar'],
+    HPEbenefits: ['#8454 (P3-02)', 'HPE case study benefits section'],
+    INFORintro: ['#8454 (P3-02)', 'Infor case study intro block'],
+    INFORfacts: ['#8454 (P3-02)', 'Infor case study facts sidebar'],
+    INFORbenefits: ['#8454 (P3-02)', 'Infor case study benefits section'],
+    TCSintro: ['#8454 (P3-02)', 'TCS case study intro block'],
+    TCSfacts: ['#8454 (P3-02)', 'TCS case study facts sidebar'],
+    TCSbenefits: ['#8454 (P3-02)', 'TCS case study benefits section'],
   };
 
   for (const [comp, count] of Object.entries(report.unknown).sort((a, b) => b[1] - a[1])) {
@@ -257,14 +263,12 @@ export function generateReport(options = {}) {
     '- **#8385** — [Hugo] Phase 2 · Shortcodes & converter rules for Blockquote, BlockquoteAlt, Callout, and InlineQuotes: Addressed by PR #8395.',
     '- **#8401** — [Hugo] Imported assets backlog: Local images and PDFs referenced as imported JSX variables.',
     '- **#8402** — [Hugo] Content hand-fix backlog: Non-literal Button/Link expressions, bare-relative URLs, wrapper indentation hazards.',
-    '- **#8298 (Phase 3: Content collections)**:',
-    '  - **P3-01** (#8298): Blog (`MeetTheMaintainer`, `MeetTheMeshMate`, `Blog`, diagrams)',
-    '  - **P3-02** (#8298): Resources (`FAQ`, `PlaygroundCTA`, `DockerExtensionCTA`, `CommonForm`, `Table`, case studies)',
-    '  - **P3-04** (#8298): Events (`CommonForm`, `Grid2`)',
-    '  - **P3-07** (#8298): Handbook (`HandbookFaqAccordion`, `BadgeRow`, `Table`, `React.Fragment`)',
-    '  - **P3-08** (#8298): Programs & Careers (`PositionApply`, `LfxPageNav`, `Row`, `Col`)',
-    '  - **P3-12** (#8298): Community pages (`NewcomersMap`)',
-    '  - **P3-13** (#8298): Projects pages (`Row`, `Col`)',
+    '- **#8453** — [Hugo] Phase 3 · Blog bespoke components (P3-01): `MeetTheMaintainer`, `MeetTheMeshMate`, diagrams.',
+    '- **#8454** — [Hugo] Phase 3 · Resources bespoke components and case study blocks (P3-02): Case study blocks, `FAQ`, `PlaygroundCTA`, `DockerExtensionCTA`.',
+    '- **#8455** — [Hugo] Phase 3 · Events forms and layout components (P3-04): `CommonForm`, `ContentForm`, `Grid2`.',
+    '- **#8456** — [Hugo] Phase 3 · Handbook bespoke components (P3-07): `BadgeRow`, `Table`, `HandbookFaqAccordion`, `React.Fragment`.',
+    '- **#8457** — [Hugo] Phase 3 · Programs & Careers bespoke components (P3-08): `PositionApply`, `LfxPageNav`, `Row`, `Col`.',
+    '- **#8458** — [Hugo] Phase 3 · Projects layout components (P3-13): `Row`, `Col`.',
     ''
   );
 
