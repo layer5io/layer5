@@ -69,6 +69,8 @@ export const COMPONENTS = {
   MeetTheMeshMate:  { shortcode: 'meet-the-meshmate', paired: true },
   MeshkitMesheryAdapterLib: { shortcode: 'meshkit-meshery-adapter-lib', paired: true },
   PerfbytesPodcast: { shortcode: 'perfbytes-podcast', paired: true },
+  Row:              { custom: 'strip' },
+  Col:              { custom: 'strip' },
 };
 const COLLECTION_EXCLUDED_COMPONENTS = {
   sistent: new Set([
@@ -79,7 +81,11 @@ const COLLECTION_EXCLUDED_COMPONENTS = {
     'LfxLogoImage', 'ThemedScaLogo', 'JourneySection',
     'Grid2', 'CommonForm', 'ContentForm',
     'Blog', 'BufProtocol', 'MeetTheMaintainer', 'MeetTheMeshMate', 'MeshkitMesheryAdapterLib', 'PerfbytesPodcast',
+    'Row', 'Col',
   ]),
+  // Handbook Row/Col carry responsive $lg/$md/$sm props and className hooks: they need the
+  // P3-07 grid shortcodes (#8456), so keep them out of the prop-less strip here.
+  handbook: new Set(['Row', 'Col']),
 };
 const DROP_ATTRS = new Set(['className', 'class', 'style', 'key', 'ref']);
 
@@ -567,6 +573,40 @@ function convertSegment(text, ctx) {
       const prev = /\u0000(\d+)\u0000\n$/.exec(out); // marker already there from an earlier run?
       if (!(prev && ctx.masked?.[+prev[1]] === marker.trim())) out += marker;
       out += text.slice(m.index, tag.end); i = tag.end; continue;
+    }
+    if (spec.custom === 'strip') {
+      // Prop-less layout containers (e.g. a bare <Row>/<Col> pair) are dropped and their
+      // children converted; any attribute means real layout (responsive widths, className
+      // hooks), so those stay in the unknown report for shortcode work instead of being
+      // silently flattened.
+      if (tag.attrs.length || tag.problems.length) {
+        ctx.unknown(name);
+        const marker = `<!-- TODO(mdx): unconverted component <${name}> -->\n`;
+        const prev = /\u0000(\d+)\u0000\n$/.exec(out);
+        if (!(prev && ctx.masked?.[+prev[1]] === marker.trim())) out += marker;
+        out += text.slice(m.index, tag.end); i = tag.end; continue;
+      }
+      if (tag.selfClosing) { ctx.component(name); i = tag.end; continue; }
+      const c = findClose(text, tag.end, name);
+      if (!c) {
+        ctx.unknown(name);
+        ctx.warn(`<${name}> has no closing tag; left as-is`);
+        out += text.slice(m.index, tag.end);
+        i = tag.end;
+        continue;
+      }
+      const { text: children, hasIndentHazard } = dedentWrapperBody(text.slice(tag.end, c.start));
+      if (hasIndentHazard) {
+        ctx.unknown(name);
+        ctx.warn(`<${name}>: body has 4+ space indented line after dedent; left as-is for manual review`);
+        out += text.slice(m.index, c.end);
+        i = c.end;
+        continue;
+      }
+      out += convertSegment(children, ctx);
+      ctx.component(name);
+      i = c.end;
+      continue;
     }
     if (spec.custom === 'unwrap') { out += text.slice(m.index, tag.end); i = tag.end; continue; }
 

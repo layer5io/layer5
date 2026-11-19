@@ -9,7 +9,7 @@
 | **Documents Converted** | 1006 / 1006 |
 | **Excluded Collections** | `sistent` (138 files skipped) |
 | **Skipped Templates** | 11 |
-| **Files with Warnings** | **90** |
+| **Files with Warnings** | **89** |
 | **Unowned Warning Files** | **0** |
 | **Zero-Byte Assets Logged** | 4 |
 | **Asset Normalization Renames** | 26 |
@@ -27,8 +27,7 @@ Each file lists one primary owner; a file only becomes warning-free when all of 
 | `#8454` | 8 | P3-02 Resources & Books bespoke components (`FAQ`, `CommonForm`, `Table`, case studies) |
 | `#8456` | 5 | P3-07 Handbook bespoke components & data loops (`BadgeRow`, `Table`, `React.Fragment`, `Row/Col`, `mentorship-programs`, `recognition`, `repository-overview`) |
 | `#8401` | 1 | Imported assets backlog (`<img src={var}>`, `<CTA_FullWidth image={var}>`) |
-| `#8458` | 1 | P3-13 Projects page layout (`Row`, `Col`) |
-| **Total** | **90** | **100% accounted for (sum equals files with warnings)** |
+| **Total** | **89** | **100% accounted for (sum equals files with warnings)** |
 
 ## 3. Warnings Breakdown by Key
 
@@ -36,7 +35,7 @@ Each file lists one primary owner; a file only becomes warning-free when all of 
 |---|---|---|---|
 | `asset outside page bundle` | 127 | #8308 | Images or assets pointing to `../../assets` outside the page bundle |
 | `non-literal prop expression` | 42 | #8401 / #8402 | JSX expression props (e.g. `image={var}`, `$url={link}`) |
-| `unknown components` | 22 | Phase 3 | Components not yet mapped to Hugo shortcodes |
+| `unknown components` | 21 | Phase 3 | Components not yet mapped to Hugo shortcodes |
 | `wrapper indent hazard` | 19 | #8402 | Wrapper bodies with 4+ space indents that could trigger Markdown code blocks |
 | `bare-relative link` | 7 | #8402 | Links with bare-relative paths (e.g. `<Link to="newcomer">`) |
 | `zero-byte asset` | 4 | #8308 | Zero-byte SVG files in source integrations |
@@ -47,9 +46,9 @@ Each file lists one primary owner; a file only becomes warning-free when all of 
 
 | Component | Occurrences | Owning Issue / Phase | Proposed Solution |
 |---|---|---|---|
-| `<Col>` | 25 | #8457 (P3-08) / #8458 (P3-13) | Container grid column layout partial/shortcode |
+| `<Col>` | 24 | #8457 (P3-08) / #8458 (P3-13) | Container grid column layout partial/shortcode |
 | `<PositionApply>` | 7 | #8457 (P3-08) | Job application CTA button/link |
-| `<Row>` | 5 | #8457 (P3-08) / #8458 (P3-13) | Container grid row layout partial/shortcode |
+| `<Row>` | 4 | #8457 (P3-08) / #8458 (P3-13) | Container grid row layout partial/shortcode |
 | `<BadgeRow>` | 3 | #8456 (P3-07) | Handbook recognition badge row component |
 | `<FAQ>` | 3 | #8454 (P3-02) | Resources FAQ accordion component |
 | `<React.Fragment>` | 2 | #8456 (P3-07) | React wrapper in repository overview maintainer loop |
@@ -141,7 +140,6 @@ Every warning file outside Sistent is tracked below with its primary owning issu
 | `programs/lfx-2025/lfx-2025.mdx` | programs/lfx-2025/lfx-2025.mdx: <Link> has bare-relative "to" value "" (<Link to ="">); review manually<br>programs/lfx-2025/lfx-2025.mdx: <Link> has bare-relative "to" value "community/members/mia-grenell" (<Link to ="community/members/mia-grenell">); review manually<br>programs/lfx-2025/lfx-2025.mdx: <Link> has bare-relative "to" value "" (<Link to ="">); review manually | `#8402` |
 | `programs/lfx-2026/lfx-2026.mdx` | unknown components: LfxPageNav | `#8457` |
 | `programs/sca-contributhon/index.mdx` | <ProgramsWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `projects/distributed-performance-management/index.mdx` | unknown components: Row, Col | `#8458` |
 | `resources/articles/gitops/what-is-gitops.mdx` | thumbnail: "../../../../assets/images/socialIcons/github-dark.svg" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/socialIcons/github-light.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `resources/articles/istio-at-a-glance/istio-at-a-glance.mdx` | thumbnail: "../../../../assets/images/service-mesh-icons/istio.svg" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/service-mesh-icons/istio.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `resources/articles/kubernetes/archtiecture-101/k8s-architecture-101.mdx` | thumbnail: "../kubernetes.svg" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../kubernetes.svg" is outside the page bundle — move it next to index.md | `#8308` |
