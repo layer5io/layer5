@@ -128,17 +128,6 @@ const TOCWrapper = styled.div`
       margin-left: 0;
     }
 
-    ul,
-    .toc-ul,
-    .toc-ul-open {
-      white-space: normal;
-    }
-
-    .toc-sub-heading {
-      white-space: normal;
-      overflow-wrap: anywhere;
-    }
-
     .toc-ul {
       opacity: 0;
       height: 0;
