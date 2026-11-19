@@ -414,7 +414,12 @@ export function stripExportConst(text, ctx) {
       const c = text[j], next = text[j + 1];
       if (inLineComment) { if (c === '\n') inLineComment = false; j++; continue; }
       if (inBlockComment) { if (c === '*' && next === '/') { inBlockComment = false; j += 2; continue; } j++; continue; }
-      if (q) { if (c === '\\') { j += 2; continue; } if (c === q) { q = null; } j++; continue; }
+      if (q) {
+        if (c === '\n' && q !== '`') { q = null; }
+        else if (c === '\\') { j += 2; continue; }
+        else if (c === q) { q = null; j++; continue; }
+        else { j++; continue; }
+      }
       if (c === '/' && next === '/') { inLineComment = true; j += 2; continue; }
       if (c === '/' && next === '*') { inBlockComment = true; j += 2; continue; }
       if (c === '"' || c === "'" || c === '`') { q = c; j++; continue; }
