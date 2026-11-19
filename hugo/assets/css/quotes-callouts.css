@@ -1,0 +1,144 @@
+/* Shortcode styles for Blockquote, BlockquoteAlt, Callout, and InlineQuotes.
+   Uses existing main.css custom properties with fallbacks until P2-01 tokens land. */
+
+.blockquote {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface, #ffffff);
+  border: 1px solid var(--line, #d6e2df);
+  border-left: 4px solid var(--accent, #00b39f);
+  border-radius: var(--radius, 10px);
+  color: var(--text, #12201d);
+}
+
+.blockquote--alt {
+  border-left-width: 1px;
+  border-top: 4px solid var(--accent, #00b39f);
+}
+
+.prose .blockquote__quote,
+.prose .inline-quote__quote {
+  margin: 0;
+  padding: 0;
+  border-left: none;
+  color: inherit;
+}
+
+.blockquote__quote {
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.blockquote__quote p:last-child {
+  margin-bottom: 0;
+}
+
+.blockquote__cite {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted, #52645f);
+}
+
+.blockquote__person {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--text, #12201d);
+}
+
+.callout {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background: var(--surface, #ffffff);
+  border: 1px solid var(--line, #d6e2df);
+  border-left: 4px solid var(--accent-ink, #00695c);
+  border-radius: var(--radius, 10px);
+  color: var(--text, #12201d);
+}
+
+.callout--tip {
+  border-left-color: var(--accent, #00b39f);
+}
+
+.callout__title {
+  margin: 0 0 0.4rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--accent-ink, #00695c);
+}
+
+.callout__body > :last-child {
+  margin-bottom: 0;
+}
+
+.inline-quote {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  background: var(--surface, #ffffff);
+  border: 1px solid var(--line, #d6e2df);
+  border-radius: var(--radius, 10px);
+  color: var(--text, #12201d);
+}
+
+.inline-quote__media {
+  flex: 0 0 4.5rem;
+}
+
+.inline-quote__media img {
+  width: 4.5rem;
+  height: 4.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--line, #d6e2df);
+}
+
+.inline-quote__quote {
+  margin: 0;
+  font-style: italic;
+}
+
+.inline-quote__quote p:last-child {
+  margin-bottom: 0;
+}
+
+.inline-quote__cite {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--muted, #52645f);
+}
+
+.inline-quote__person {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--text, #12201d);
+}
+
+html[data-theme="dark"] .blockquote,
+html[data-theme="dark"] .callout,
+html[data-theme="dark"] .inline-quote {
+  background: var(--surface, #121c19);
+  border-color: var(--line, #223430);
+  color: var(--text, #e4efec);
+}
+
+html[data-theme="dark"] .blockquote {
+  border-left-color: var(--accent, #00d3a9);
+}
+
+html[data-theme="dark"] .blockquote--alt {
+  border-left-color: var(--line, #223430);
+  border-top-color: var(--accent, #00d3a9);
+}
+
+html[data-theme="dark"] .callout__title {
+  color: var(--accent-ink, #3ee6c3);
+}
+
+@media (max-width: 640px) {
+  .inline-quote {
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+}

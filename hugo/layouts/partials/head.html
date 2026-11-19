@@ -17,6 +17,8 @@
 </script>
 {{ $css := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ $quotesCss := resources.Get "css/quotes-callouts.css" | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $quotesCss.RelPermalink }}" integrity="{{ $quotesCss.Data.Integrity }}">
 {{ partial "seo.html" . }}
 {{ range .AlternativeOutputFormats -}}
   {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
