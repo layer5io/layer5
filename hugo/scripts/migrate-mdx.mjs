@@ -55,12 +55,18 @@ export const COMPONENTS = {
   LfxLogoImage:     { shortcode: 'lfx-logo' },
   ThemedScaLogo:    { shortcode: 'themed-sca-logo' },
   JourneySection:   { shortcode: 'journey-section' },
+  Blockquote:       { shortcode: 'blockquote' },
+  BlockquoteAlt:    { shortcode: 'blockquote-alt' },
+  Callout:          { shortcode: 'callout',        paired: true },
+  InlineQuotes:     { shortcode: 'inline-quotes' },
 };
 const COLLECTION_EXCLUDED_COMPONENTS = {
   sistent: new Set([
     'Button', 'CTA_FullWidth', 'Terminal', 'Accordion', 'AccordionItem', 'Card', 'Link', 'Code',
     'BlogWrapper', 'CareerWrapper', 'EventWrapper', 'NewsWrapper',
     'ProgramsWrapper', 'ProjectWrapper', 'ResourcesWrapper', 'BookWrapper',
+    'Blockquote', 'BlockquoteAlt', 'Callout', 'InlineQuotes',
+    'LfxLogoImage', 'ThemedScaLogo', 'JourneySection',
   ]),
 };
 const DROP_ATTRS = new Set(['className', 'class', 'style', 'key', 'ref']);

@@ -910,3 +910,29 @@ test('LfxLogoImage, ThemedScaLogo, and JourneySection convert to shortcodes', ()
   assert.match(output, /\{\{< themed-sca-logo >\}\}/);
   assert.match(output, /\{\{< journey-section >\}\}/);
 });
+
+test('Blockquote, BlockquoteAlt, Callout, and InlineQuotes convert to Hugo shortcodes and respect sistent exclusion', () => {
+  const input = [
+    '---',
+    'title: "Quote and Callout Test"',
+    '---',
+    '<Blockquote quote="Meshery is great." person="Prateek Tripathy" title="Maintainer" />',
+    '<BlockquoteAlt quote="Community first." person="Michael Gfeller" />',
+    '<Callout type="tip" title="No Cluster Required">Install mesheryctl to get started.</Callout>',
+    '<InlineQuotes quote="Decisive for productivity." person="Mohd Hamza Shaikh" title="Platform Engineer" />',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'quote-test', file: 'blog/2026/quote-test/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.match(output, /\{\{< blockquote quote="Meshery is great\." person="Prateek Tripathy" title="Maintainer" >\}\}/);
+  assert.match(output, /\{\{< blockquote-alt quote="Community first\." person="Michael Gfeller" >\}\}/);
+  assert.match(output, /\{\{< callout type="tip" title="No Cluster Required" >\}\}\nInstall mesheryctl to get started\.\n\{\{< \/callout >\}\}/);
+  assert.match(output, /\{\{< inline-quotes quote="Decisive for productivity\." person="Mohd Hamza Shaikh" title="Platform Engineer" >\}\}/);
+
+  // Sistent collection guard
+  const sistentRes = convertFile(input, { slug: 'quote-sistent', file: 'sistent/quote-test/index.mdx' });
+  assert.match(sistentRes.output, /<!-- TODO\(mdx\): unconverted component <Blockquote> -->/);
+  assert.match(sistentRes.output, /<!-- TODO\(mdx\): unconverted component <Callout> -->/);
+  assert.equal(sistentRes.stats.unknown.Blockquote, 1);
+  assert.equal(sistentRes.stats.unknown.Callout, 1);
+});
