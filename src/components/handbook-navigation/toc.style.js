@@ -53,7 +53,7 @@ const TOCWrapper = styled.div`
     font-weight: 300;
     font-size: 1.15rem;
     white-space: normal;
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
   }
 
   .toc-sub-inline {
@@ -136,7 +136,7 @@ const TOCWrapper = styled.div`
 
     .toc-sub-heading {
       white-space: normal;
-      overflow-wrap: break-word;
+      overflow-wrap: anywhere;
     }
 
     .toc-ul {
