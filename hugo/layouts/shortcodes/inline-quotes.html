@@ -12,6 +12,8 @@
     {{- $imgSrc = $image -}}
   {{- else if hasPrefix $image "/" -}}
     {{- $imgSrc = strings.TrimPrefix "/" $image | relURL -}}
+  {{- else -}}
+    {{- $imgSrc = $image | relURL -}}
   {{- end -}}
 {{- end -}}
 <figure class="inline-quote">
