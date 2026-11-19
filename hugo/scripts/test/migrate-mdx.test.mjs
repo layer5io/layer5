@@ -936,3 +936,58 @@ test('Blockquote, BlockquoteAlt, Callout, and InlineQuotes convert to Hugo short
   assert.equal(sistentRes.stats.unknown.Blockquote, 1);
   assert.equal(sistentRes.stats.unknown.Callout, 1);
 });
+
+test('Row/Col: prop-less layout tags are stripped, children kept, and counted as converted (projects)', () => {
+  const input = [
+    '---',
+    'title: "Distributed Performance Management"',
+    '---',
+    '<ProjectWrapper>',
+    '<Row>',
+    '<Col>',
+    '<div>',
+    '<h3>Purpose and Overview</h3>',
+    '</div>',
+    '</Col>',
+    '</Row>',
+    '</ProjectWrapper>',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'dpm', file: 'projects/dpm/index.mdx' });
+  assert.doesNotMatch(output, /<\/?(Row|Col)>/);
+  assert.doesNotMatch(output, /TODO\(mdx\): unconverted component <(Row|Col)>/);
+  assert.match(output, /<h3>Purpose and Overview<\/h3>/);
+  assert.equal(stats.components.Row, 1);
+  assert.equal(stats.components.Col, 1);
+  assert.equal(stats.unknown.Row, undefined);
+  assert.equal(stats.unknown.Col, undefined);
+  assert.equal(convertFile(output, { slug: 'dpm', file: 'projects/dpm/index.mdx' }).output, output);
+});
+
+test('Row/Col: attribute-carrying tags stay in the unknown report instead of being silently flattened', () => {
+  const input = '---\ntitle: "Grid"\n---\n<Row className="newcomers-journey">\n<Col $sm={12} $lg={6}>Body</Col>\n</Row>\n';
+  const { output, stats } = convertFile(input, { slug: 'grid', file: 'blog/grid/index.mdx' });
+  assert.equal(stats.unknown.Row, 1);
+  assert.equal(stats.unknown.Col, 1);
+  assert.equal(stats.components.Row, undefined);
+  assert.equal(stats.components.Col, undefined);
+  assert.match(output, /TODO\(mdx\): unconverted component <Row>/);
+  assert.match(output, /TODO\(mdx\): unconverted component <Col>/);
+  assert.match(output, /<Col \$sm=\{12\} \$lg=\{6\}>/);
+});
+
+test('Row/Col: handbook rows keep their unknown warnings (P3-07 grid shortcodes scope)', () => {
+  const input = '---\ntitle: "Writing Program"\n---\n<Row>\n<Col>Body</Col>\n</Row>\n';
+  const { output, stats } = convertFile(input, { slug: 'writing-program', file: 'handbook/writing-program/index.mdx' });
+  assert.equal(stats.unknown.Row, 1);
+  assert.equal(stats.unknown.Col, 1);
+  assert.equal(stats.components.Row, undefined);
+  assert.match(output, /TODO\(mdx\): unconverted component <Row>/);
+});
+
+test('Row/Col: sistent React docs rows remain unconverted', () => {
+  const input = '---\ntitle: "Grid Demo"\n---\n<Row><Col>demo</Col></Row>\n';
+  const { stats } = convertFile(input, { slug: 'grid', file: 'sistent/components/grid/index.mdx' });
+  assert.equal(stats.unknown.Row, 1);
+  assert.equal(stats.unknown.Col, 1);
+  assert.equal(stats.components.Row, undefined);
+});
