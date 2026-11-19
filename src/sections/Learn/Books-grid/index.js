@@ -57,11 +57,7 @@ const BooksPage = ({ hide_path }) => {
       {
         breakpoint: 550,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          centerMode: true,
-          centerPadding: "0px",
-          swipeToSlide: true,
+          slidesToShow: 1.5,
         }
       },
     ]
