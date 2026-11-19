@@ -9,6 +9,8 @@ const TOCWrapper = styled.div`
   margin-bottom: 3rem;
   width: 15rem;
   padding-bottom: 2rem;
+  overflow-wrap: break-word;
+  word-break: normal;
 
   @media screen and (min-width: 1280px) and (max-width: 1350px) {
     margin-left: 0.2rem;
@@ -50,6 +52,8 @@ const TOCWrapper = styled.div`
     margin-top: 1rem;
     font-weight: 300;
     font-size: 1.15rem;
+    white-space: normal;
+    overflow-wrap: break-word;
   }
 
   .toc-sub-inline {
@@ -64,7 +68,7 @@ const TOCWrapper = styled.div`
   ul {
     display: flex;
     flex-direction: column;
-    white-space: nowrap;
+    white-space: normal;
   }
 
   .toc-ul {
@@ -114,13 +118,25 @@ const TOCWrapper = styled.div`
 
   @media only screen and (max-width: 750px) {
     position: initial;
-    margin-right: 3rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
     width: auto;
     .toc-toggle-btn {
       display: inline-flex;
     }
     .go-back {
       margin-left: 0;
+    }
+
+    ul,
+    .toc-ul,
+    .toc-ul-open {
+      white-space: normal;
+    }
+
+    .toc-sub-heading {
+      white-space: normal;
+      overflow-wrap: break-word;
     }
 
     .toc-ul {
