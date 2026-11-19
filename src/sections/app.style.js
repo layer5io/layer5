@@ -263,7 +263,7 @@ section{
     height: 36rem;
     width: 35rem;
     border: none;
-    overflow: hidden;
+    overflow: auto;
 }
 
 /* Modal CSS Ends */
