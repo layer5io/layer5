@@ -9,7 +9,7 @@ const TOCWrapper = styled.div`
   margin-bottom: 3rem;
   width: 15rem;
   padding-bottom: 2rem;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
   word-break: normal;
 
   @media screen and (min-width: 1280px) and (max-width: 1350px) {
