@@ -87,7 +87,7 @@ const TwoColLayout = ({ containerRefs, contentRefs }) => {
       </Container>
       <Container ref={(el) => (containerRefs.current[1] = el)}>
         <ImageWrapper>
-          <Link to="/orchestration-management">
+          <Link to="/solutions/orchestration-management">
             <img src={isDark ? OrchestrationDark : OrchestrationLight} alt="image" />
           </Link>
         </ImageWrapper>
