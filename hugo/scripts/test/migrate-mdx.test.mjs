@@ -1386,6 +1386,16 @@ test('Row/Col: prop-less layout tags are stripped, children kept, and counted as
   assert.equal(convertFile(output, { slug: 'dpm', file: 'projects/dpm/index.mdx' }).output, output);
 });
 
+test('Row/Col: an unclosed prop-less tag stays in the unknown report instead of dropping out of it', () => {
+  const input = '---\ntitle: "Unclosed"\n---\n<Row>\n<Col>Body</Col>\n';
+  const { output, stats } = convertFile(input, { slug: 'unclosed', file: 'projects/unclosed/index.mdx' });
+  assert.equal(stats.unknown.Row, 1);
+  assert.equal(stats.components.Row, undefined);
+  assert.equal(stats.components.Col, 1);
+  assert.match(output, /<Row>/);
+  assert.ok(stats.warnings.some((w) => /<Row> has no closing tag/.test(w)));
+});
+
 test('Row/Col: attribute-carrying tags stay in the unknown report instead of being silently flattened', () => {
   const input = '---\ntitle: "Grid"\n---\n<Row className="newcomers-journey">\n<Col $sm={12} $lg={6}>Body</Col>\n</Row>\n';
   const { output, stats } = convertFile(input, { slug: 'grid', file: 'blog/grid/index.mdx' });
