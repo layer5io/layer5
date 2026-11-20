@@ -321,7 +321,7 @@ function convertSegment(text, ctx) {
       }
       if (tag.selfClosing) { ctx.component(name); i = tag.end; continue; }
       const c = findClose(text, tag.end, name);
-      if (!c) { ctx.warn(`<${name}> has no closing tag; left as-is`); out += text.slice(m.index, tag.end); i = tag.end; continue; }
+      if (!c) { ctx.unknown(name); ctx.warn(`<${name}> has no closing tag; left as-is`); out += text.slice(m.index, tag.end); i = tag.end; continue; }
       out += convertSegment(text.slice(tag.end, c.start), ctx);
       ctx.component(name);
       i = c.end;
