@@ -105,6 +105,12 @@ const ContactFormWrapper = styled.section`
       font-size: 0.8rem;
     }
   }
+
+  &.embedded .form {
+    width: 100%;
+    margin: 0;
+    padding: 0 1rem 1rem;
+  }
 `;
 
 export default ContactFormWrapper;
