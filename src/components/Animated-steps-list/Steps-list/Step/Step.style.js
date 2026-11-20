@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StepWrapper = styled.li`
-    width: 314px;
+    width: 24rem;
     
     @media (max-width: 850px) {
         width: unset;

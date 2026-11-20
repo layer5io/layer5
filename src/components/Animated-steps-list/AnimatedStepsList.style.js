@@ -3,6 +3,16 @@ import styled from "styled-components";
 export const AnimatedStepsListWrapper = styled.div`
   .animated-steps-list {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @media (min-width: 1200px) {
+      margin-right: calc(
+        -1 * clamp(0px, calc((100vw - 1170px) / 2 - 40px), 140px)
+      );
+      width: calc(100% + clamp(0px, calc((100vw - 1170px) / 2 - 40px), 140px));
+    }
+
     & .indicator-wrapper {
       & > ul {
         position: sticky;
@@ -10,7 +20,7 @@ export const AnimatedStepsListWrapper = styled.div`
         padding-bottom: 395px;
       }
 
-      margin-right: 115px;
+      margin-right: 2rem;
       @media (max-width: 1119px) {
         display: none;
       }
@@ -18,17 +28,20 @@ export const AnimatedStepsListWrapper = styled.div`
 
     & .steps-list {
       margin-bottom: 46px;
+      flex-shrink: 0;
     }
 
     & .terminal-wrapper {
-      margin-left: 150px;
+      margin-left: 4rem;
       position: sticky;
       top: 148px;
       align-self: flex-start;
       box-shadow: rgb(0 0 0 / 0.35) 7px 10px 25px;
+      flex: 1;
+      min-width: 0;
 
       @media (max-width: 1119px) {
-        margin-left: 75px;
+        margin-left: 2.5rem;
       }
 
       @media (max-width: 850px) {
@@ -38,78 +51,7 @@ export const AnimatedStepsListWrapper = styled.div`
       & > * {
         /* Child should not be sticky now; allow natural flow */
         margin-top: 0;
-
-        @media (min-width: 850px) {
-          max-width: 450px;
-        }
-
-        @media (min-width: 875px) {
-          max-width: 475px;
-        }
-
-        @media (min-width: 900px) {
-          max-width: 520px;
-        }
-
-        @media (min-width: 950px) {
-          max-width: 545px;
-        }
-
-        @media (min-width: 1000px) {
-          max-width: 570px;
-        }
-
-        @media (min-width: 1050px) {
-          max-width: 605px;
-        }
-
-        @media (min-width: 1120px) {
-          max-width: 465px;
-        }
-
-        @media (min-width: 1150px) {
-          max-width: 515px;
-        }
-
-        @media (min-width: 1200px) {
-          max-width: 565px;
-        }
-
-        @media (min-width: 1250px) {
-          max-width: 615px;
-        }
-
-        @media (min-width: 1300px) {
-          max-width: 645px;
-        }
-
-        @media (min-width: 1350px) {
-          max-width: 670px;
-        }
-
-        @media (min-width: 1400px) {
-          max-width: 695px;
-        }
-
-        @media (min-width: 1450px) {
-          max-width: 720px;
-        }
-
-        @media (min-width: 1500px) {
-          max-width: 745px;
-        }
-
-        @media (min-width: 1550px) {
-          max-width: 770px;
-        }
-
-        @media (min-width: 1600px) {
-          max-width: 795px;
-        }
-
-        @media (min-width: 1650px) {
-          max-width: unset;
-        }
+        max-width: 100%;
       }
     }
   }
