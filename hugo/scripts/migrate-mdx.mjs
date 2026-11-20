@@ -338,11 +338,15 @@ function jsxStyleToCss(val) {
   const propRe = /([\w-]+)\s*:\s*["']([^"']+)["']/g;
   const props = [];
   let m;
+  let lastIndex = 0;
   while ((m = propRe.exec(trimmed)) !== null) {
+    if (trimmed.slice(lastIndex, m.index).replace(/[\s,]/g, '')) return null;
     const k = m[1].replace(/([A-Z])/g, '-$1').toLowerCase();
     props.push(`${k}: ${m[2]}`);
+    lastIndex = propRe.lastIndex;
   }
-  return props.length ? props.join('; ') : null;
+  if (trimmed.slice(lastIndex).replace(/[\s,]/g, '') || !props.length) return null;
+  return props.join('; ');
 }
 
 /* ---------------------------------------------------------------- body conversion */

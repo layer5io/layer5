@@ -1026,3 +1026,18 @@ test('imported assets conversion is idempotent', () => {
   const twice = convertFile(once, { slug: 'idemp-test', file: 'blog/idemp-test/index.mdx' }).output;
   assert.equal(twice, once);
 });
+
+test('jsxStyleToCss preserves tag with warning when mixed non-string props cannot be safely converted', () => {
+  const input = [
+    '---',
+    'title: "Style Test"',
+    '---',
+    '<img src="./img.png" style={{color: "red", marginTop: 8}} />',
+    '<img src="./valid.png" style={{color: "blue", display: "block"}} />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'style-test', file: 'blog/style-test/index.mdx' });
+  assert.match(output, /<img src="\.\/img\.png" style=\{\{color: "red", marginTop: 8\}\} \/>/);
+  assert.match(output, /<img src="\.\/valid\.png" style="color: blue; display: block" \/>/);
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /non-literal expression for "style" on <img>/);
+});
