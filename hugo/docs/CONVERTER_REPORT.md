@@ -26,7 +26,7 @@ Each file lists one primary owner; a file only becomes warning-free when all of 
 | `#8453` | 16 | P3-01 Blog bespoke components (`MeetTheMaintainer`, `MeetTheMeshMate`, diagrams) |
 | `#8454` | 10 | P3-02 Resources & Books bespoke components (`FAQ`, `CommonForm`, `Table`, case studies) |
 | `#8457` | 8 | P3-08 Programs & Careers bespoke components (`PositionApply`, `LfxPageNav`, `Row`, `Col`) |
-| `#8456` | 5 | P3-07 Handbook bespoke components (`BadgeRow`, `Table`, `React.Fragment`, `Row/Col`) |
+| `#8456` | 5 | P3-07 Handbook bespoke components & data loops (`BadgeRow`, `Table`, `React.Fragment`, `Row/Col`, `mentorship-programs`, `recognition`, `repository-overview`) |
 | `#8401` | 1 | Imported assets backlog (`<img src={var}>`, `<CTA_FullWidth image={var}>`) |
 | `#8455` | 1 | P3-04 Events bespoke forms (`CommonForm`, `Grid2`) |
 | `#8458` | 1 | P3-13 Projects page layout (`Row`, `Col`) |
@@ -195,6 +195,6 @@ Every warning file outside Sistent is tracked below with its primary owning issu
 - **#8453** — [Hugo] Phase 3 · Blog bespoke components (P3-01): `MeetTheMaintainer`, `MeetTheMeshMate`, diagrams.
 - **#8454** — [Hugo] Phase 3 · Resources bespoke components and case study blocks (P3-02): Case study blocks, `FAQ`, `PlaygroundCTA`, `DockerExtensionCTA`.
 - **#8455** — [Hugo] Phase 3 · Events forms and layout components (P3-04): `CommonForm`, `ContentForm`, `Grid2`.
-- **#8456** — [Hugo] Phase 3 · Handbook bespoke components (P3-07): `BadgeRow`, `Table`, `HandbookFaqAccordion`, `React.Fragment`.
+- **#8456** — [Hugo] Phase 3 · Handbook bespoke components and data loops (P3-07): `BadgeRow`, `Table`, `HandbookFaqAccordion`, `React.Fragment`, data loops (`mentorship-programs`, `recognition`, `repository-overview`).
 - **#8457** — [Hugo] Phase 3 · Programs & Careers bespoke components (P3-08): `PositionApply`, `LfxPageNav`, `Row`, `Col`.
 - **#8458** — [Hugo] Phase 3 · Projects layout components (P3-13): `Row`, `Col`.
