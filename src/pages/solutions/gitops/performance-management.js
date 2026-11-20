@@ -6,9 +6,8 @@ import PerformanceManagementPage from "../../../sections/gitops/PerformanceManag
 export default PerformanceManagementPage;
 
 export const Head = () => {
-  // TODO Change this
-  return  <SEO title="GitOps with Meshery"
-    description="GitOps, lifecycle, performance, and configuration management for cloud native infrastructure as code. Manage your Kubernetes clusters visually. Use the catalog of patterns and best practices."
+  return  <SEO title="Performance Management with Meshery"
+    description="Run repeatable performance tests for Kubernetes and service meshes with Meshery. Define performance profiles and automate conformance testing in GitHub Actions."
     image="/images/meshery-logo-dark-text.webp"
   />;
 };

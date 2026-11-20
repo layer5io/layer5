@@ -1,7 +1,7 @@
-# Mascot Five — Pose Index
+# Mascot Five - Pose Index
 
 This is the single source of truth for which Five pose to use in a hero image. There is no
-separate keyword-matching script — **you** (the model executing the skill) read this table at
+separate keyword-matching script - **you** (the model executing the skill) read this table at
 Step 6, pick the pose whose description best fits the post's topic and tone, and pass its SVG
 path straight to `--five-pose`. A human reading the post's title/angle and skimming this table
 would land on the same pick most of the time; that's the bar.
@@ -20,11 +20,11 @@ pose, and all 41 are listed here.
 **How to pick:** scan the Tags column for the post's theme first; if nothing matches well, prefer
 `climbing-stairs` as the neutral default (plain forward motion, no props or logos to clash with an
 unrelated topic) rather than picking something thematically forced. Don't reuse the same pose
-across back-to-back posts if you can help it — the point of this collection is variety.
+across back-to-back posts if you can help it - the point of this collection is variety.
 
 **Blank signage:** two poses have genuinely empty surfaces you can drop post-specific text or a
 logo onto via `--sign-text` (see Step 6 in SKILL.md for the exact flag). No other pose has usable
-blank space — the rest either have no signage at all or already have a Layer5/Meshery logo baked
+blank space - the rest either have no signage at all or already have a Layer5/Meshery logo baked
 into the illustration, which must never be replaced or covered.
 
 ## Named / activity poses
@@ -60,16 +60,16 @@ into the illustration, which must never be replaced or covered.
 | key-and-shield          | `SVG/Artboard 17.svg` | Holding a key up to a padlock/shield                                     | security, access control, authentication, encryption, unlock, protect                             | none                   | no                                                                               |
 | kicking-ball-to-friend  | `SVG/Artboard 19.svg` | Kicking a Layer5-pattern ball to a smaller Five                          | collaboration, teamwork, community, sharing, pass-it-on, mentoring                                | Layer5 (pattern motif) | no                                                                               |
 | team-sign               | `SVG/Artboard 21.svg` | Two Fives together holding a Layer5 sign                                 | community, team, partnership, together, collaboration, pair (two-figure composition)              | Layer5                 | no                                                                               |
-| blank-signpost          | `SVG/Artboard 23.svg` | Standing on a grassy mound, holding a **blank** wooden signpost overhead | generic announcement, custom message, placeholder                                                 | none                   | **yes — sign board, large, top-center**                                          |
+| blank-signpost          | `SVG/Artboard 23.svg` | Standing on a grassy mound, holding a **blank** wooden signpost overhead | generic announcement, custom message, placeholder                                                 | none                   | **yes - sign board, large, top-center**                                          |
 | meshery-sign-tilted     | `SVG/Artboard 24.svg` | Holding up a tilted framed Meshery sign                                  | meshery, announcement, presenting, showcase                                                       | Meshery                | no                                                                               |
 | walking-to-meshery-sign | `SVG/Artboard 26.svg` | Walking with a backpack toward a Meshery road sign                       | getting started, onboarding, journey, adoption, migration, exploring meshery                      | Meshery                | no                                                                               |
 | magnet-pulling-logo     | `SVG/Artboard 27.svg` | Reaching out with a horseshoe magnet, pulling in the Layer5 logo         | attraction, adoption, community growth, drawing users in, gravity                                 | Layer5                 | no                                                                               |
 | hanging-from-bar        | `SVG/Artboard 28.svg` | Hanging from a bar, worried expression                                   | struggling, hanging on, stress, tough situation, endurance, incident                              | none                   | no                                                                               |
 | mirror-reflection       | `SVG/Artboard 30.svg` | Looking at own reflection in a mirror                                    | reflection, introspection, review, retrospective, observability, self-assessment, monitoring      | none                   | no                                                                               |
 | recliner-meshery-sign   | `SVG/Artboard 32.svg` | Relaxing in a recliner holding a Meshery sign                            | relaxed, ease, comfort, low-maintenance, effortless operations, downtime                          | Meshery                | no                                                                               |
-| open-door               | `SVG/Artboard 33.svg` | Standing beside an open door, gesturing forward                          | opportunity, new beginning, open access, invitation, entry point, welcome                         | none                   | door panel is empty but not a natural text surface — not recommended for overlay |
+| open-door               | `SVG/Artboard 33.svg` | Standing beside an open door, gesturing forward                          | opportunity, new beginning, open access, invitation, entry point, welcome                         | none                   | door panel is empty but not a natural text surface - not recommended for overlay |
 | presenting-to-group     | `SVG/Artboard 34.svg` | Presenting a Meshery slide to a seated group at a table                  | presentation, meeting, team review, community talk, roadmap review, workshop                      | Meshery                | no                                                                               |
-| blank-book              | `SVG/Artboard 36.svg` | Two Fives holding open a **blank** book                                  | documentation, learning, tutorial, guide, knowledge base, changelog                               | none                   | **yes — open book pages, center**                                                |
+| blank-book              | `SVG/Artboard 36.svg` | Two Fives holding open a **blank** book                                  | documentation, learning, tutorial, guide, knowledge base, changelog                               | none                   | **yes - open book pages, center**                                                |
 | spray-canister          | `SVG/Artboard 37.svg` | Spraying from a Layer5 canister/extinguisher                             | fix, remediate, put out fires, incident response, resolve, troubleshoot                           | Layer5                 | no                                                                               |
 | cheering                | `SVG/Artboard 40.svg` | Arms up cheering under the Meshery wordmark                              | celebration, success, milestone, achievement, launch, win, excitement                             | Meshery                | no                                                                               |
 | bursting-through        | `SVG/Artboard 41.svg` | Bursting head-first through a torn opening beside the Layer5 wordmark    | breakthrough, launch, arrival, big reveal, breaking news, general availability (landscape-framed) | Layer5                 | no                                                                               |
@@ -81,7 +81,7 @@ into the illustration, which must never be replaced or covered.
 
 | ID          | SVG path              | Why excluded                                                                                                                                                     |
 | ----------- | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| driving-car | `SVG/Artboard 31.svg` | Five is a small passenger inside a car illustration, not a standalone figure — looks wrong at the large mascot treatment this skill uses. Don't select this one. |
+| driving-car | `SVG/Artboard 31.svg` | Five is a small passenger inside a car illustration, not a standalone figure - looks wrong at the large mascot treatment this skill uses. Don't select this one. |
 
 ## How a pose gets sized
 
@@ -93,10 +93,10 @@ scale used to wobble from post to post.
 
 ## Adding new poses
 
-1. Drop the SVG into `assets/mascot-five/SVG/`. Vector only — no raster poses.
+1. Drop the SVG into `assets/mascot-five/SVG/`. Vector only - no raster poses.
 2. Run `python3 scripts/measure_pose_bounds.py` to refresh `pose-bounds.json`. Skipping this is not
    fatal, but the generator will warn and fall back to artboard sizing for that pose.
-3. Add a row here with a real description and tags — an untagged pose won't get picked, because
+3. Add a row here with a real description and tags - an untagged pose won't get picked, because
    nothing will match it in Step 6.
 4. If it has genuinely blank space suited to custom text, note it in the Blank signage column,
    calibrate a bounding box in `scripts/mesh_palette.py` (`SIGN_TEXT_ZONES`), and register the

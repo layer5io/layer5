@@ -38,18 +38,18 @@ drift apart silently the way `Security`, `Internship Programs`, and `Programs` p
 | GCP                  | GCP-specific content, GKE                                    |
 | Azure                | Azure-specific content, AKS                                  |
 
-## Tags (2–5 per post — prefer high-frequency ones first)
+## Tags (2–5 per post - prefer high-frequency ones first)
 
 ### High-frequency
 
-- `Open Source` — OSS projects, contributions, culture
-- `Meshery` — anything involving the Meshery platform
-- `Community` — events, contributor stories, programs
-- `Kubernetes` — Kubernetes tutorials, operations
+- `Open Source` - OSS projects, contributions, culture
+- `Meshery` - anything involving the Meshery platform
+- `Community` - events, contributor stories, programs
+- `Kubernetes` - Kubernetes tutorials, operations
 - `ai` - AI/ML topics, LLMs, AI tools (**lowercase** - this is intentional and matches the existing codebase convention; do NOT use `AI` or `Ai`)
-- `Meet The Maintainer` — interview series
-- `docker` — containers, Docker ecosystem
-- `Service Mesh` — service mesh topics
+- `Meet The Maintainer` - interview series
+- `docker` - containers, Docker ecosystem
+- `Service Mesh` - service mesh topics
 
 ### Technical
 

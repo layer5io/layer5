@@ -9,7 +9,7 @@ import BlogSingle from "../sections/Blog/Blog-single";
 
 
 import SimpleReactLightbox from "simple-react-lightbox";
-export const query = graphql`query BlogsBySlug($slug: String!) {
+export const query = graphql`query BlogsBySlug($slug: String!, $relatedSlugs: [String], $author: String) {
   mdx(fields: {slug: {eq: $slug}}) {
 
     frontmatter {
@@ -47,10 +47,57 @@ export const query = graphql`query BlogsBySlug($slug: String!) {
       slug
     }
   }
+  relatedPosts: allMdx(filter: {fields: {slug: {in: $relatedSlugs}}}) {
+    nodes {
+      frontmatter {
+        title
+        date(formatString: "MMM Do YYYY")
+        author
+        category
+        tags
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
+          }
+          extension
+          publicURL
+        }
+        darkthumbnail {
+          childImageSharp {
+            gatsbyImageData(width: 480, layout: CONSTRAINED)
+          }
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+  author: mdx(
+    fields: {collection: {eq: "members"}}
+    frontmatter: {name: {eq: $author}, published: {eq: true}}
+  ) {
+    frontmatter {
+      bio
+      name
+      image_path {
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED)
+        }
+        extension
+        publicURL
+      }
+    }
+    fields {
+      slug
+    }
+  }
 }
 `;
 
-const BlogSinglePage = ({ data, children }) => {
+const BlogSinglePage = ({ data, pageContext, children }) => {
 
 
   return (
@@ -59,7 +106,7 @@ const BlogSinglePage = ({ data, children }) => {
 
 
       <SimpleReactLightbox>
-        <BlogSingle  data={data} >
+        <BlogSingle  data={data} pageContext={pageContext} >
           {children}
         </BlogSingle>
       </SimpleReactLightbox>
