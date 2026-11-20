@@ -143,7 +143,7 @@ const Projects = () => {
                     <img src={cpu} alt="cpu image" />
                   </div>
                   <h2>SCHEDULING AND ANALYSIS</h2>
-                  <p>Nighthawk integrates with <Link to="/meshery">Meshery</Link> and provides you with the ability to schedule performance tests or insert them into your CI pipeline.</p>
+                  <p>Nighthawk integrates with <Link to="/cloud-native-management/meshery">Meshery</Link> and provides you with the ability to schedule performance tests or insert them into your CI pipeline.</p>
                   <p>Adaptive analysis in which you may run multi-stage performance tests and persist their results in a historical archive is also enabled through integration with Meshery.</p>
                 </div>
               </CardsContainer>

@@ -170,16 +170,28 @@ const EnterpriseSectionWrapper = styled.section`
       .audience-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+        padding: 0 1rem;
       }
-      
+
       .demo-card {
         order: 2;
+        padding: 1.25rem;
       }
-      
+
+      .demo-card .demo-content-alt .progress-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+      }
+
+      .demo-card .demo-content-alt .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
       .audience-text {
         order: 1;
         text-align: center;
-        
+
         h2 {
           font-size: 2rem;
         }

@@ -2,7 +2,7 @@
 name: 👨‍🏫 Engagement Request
 about: Request for a workshop, consulting, or other
 title: ''
-labels: 'kind/engagement'
+labels: 'kind/engagement, help wanted'
 assignees: ''
 ---
 **Current Behavior**
