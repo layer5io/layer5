@@ -86,7 +86,7 @@ const DeployServiceMeshWrapper = styled.div`
                 margin-left: auto;
             }
         }
-        #slider{
+        .slider-container{
             display: flex;
             padding: 40px
             h4{
