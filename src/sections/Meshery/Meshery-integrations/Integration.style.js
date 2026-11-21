@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Slider from "react-slick";
 
 export const HoneycombGrid = styled.div`
   .heading {
@@ -31,27 +30,6 @@ export const HoneycombGrid = styled.div`
     margin: 2.5625rem 1.2rem;
     gap: 0.625rem;
     justify-content: center;
-  }
-
-  .items {
-    background-color: ${(props) => props.theme.secondaryLightColor};
-    padding: 0.625rem 1.5625rem;
-    border-radius: 0.625rem;
-    text-transform: uppercase;
-    color: ${(props) => props.theme.text};
-    font-size: 0.875rem;
-    cursor: pointer;
-    transition: all 0.1s ease-in-out;
-
-    &:hover {
-      opacity: 0.8;
-      box-shadow: 0px 0px 6px -2px rgb(60, 73, 79);
-    }
-  }
-
-  .selected {
-    background-color: ${(props) => props.theme.darkJungleGreenColor};
-    color: ${(props) => props.theme.white};
   }
 
   ul {
@@ -228,71 +206,203 @@ export const IntegrationCard = styled.div`
   // }
 `;
 
-export const IntegrationSlider = styled(Slider)`
-  .slick-prev:hover,
-  .slick-next:hover {
-    box-shadow: none;
-    outline: none;
-  }
+const getFadeBg = (props) =>
+  props.theme.DarkTheme ? "rgba(18,18,18,0.85)" : "rgba(255,255,255,0.85)";
 
-  .slick-arrow {
-    width: 2rem;
-    height: 3rem;
-  }
+const getChipBg = (props) =>
+  props.theme.DarkTheme
+    ? "rgba(255,255,255,0.08)"
+    : props.theme.darkJungleGreenColor;
 
-  .slick-list {
-    padding-top: 0.2rem;
-  }
+const getChipColor = (props) =>
+  props.theme.DarkTheme ? "rgba(255,255,255,0.7)" : "#ffffff";
 
-  .slick-disabled {
-    pointer-events: none;
-    opacity: 0.3;
-  }
+const getChipHoverBg = (props) =>
+  props.theme.DarkTheme ? "rgba(255,255,255,0.14)" : "#2d3328";
 
-  .slick-arrow:before {
-    color: ${(props) => props.theme.whiteToBlack};
-    font-size: 4rem;
-    display: inline-block;
-    height: 1rem;
-    -webkit-text-size-adjust: none;
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  }
+const getFocusOutline = (props) =>
+  props.theme.DarkTheme ? props.theme.keppelColor : "#006d60";
 
-  .slick-arrow:hover:before {
-    color: #00b39f;
-  }
+const getFocusShadow = (props) =>
+  props.theme.DarkTheme ? "rgba(0,211,169,0.35)" : "rgba(0,179,159,0.3)";
 
-  .slick-slide {
-    width: auto !important;
-    margin: 0 0.5rem;
-  }
+const getSelectedBg = (props) =>
+  props.theme.DarkTheme ? "rgba(0,211,169,0.15)" : "#f0fdfb";
 
-  .slick-next {
-    right: -2.5rem;
-  }
+const getSelectedColor = (props) =>
+  props.theme.DarkTheme ? props.theme.keppelColor : "#006d60";
 
-  .slick-prev {
-    left: -2.5rem;
-  }
+const getSelectedBorder = (props) =>
+  props.theme.DarkTheme ? props.theme.keppelColor : "#008a7a";
 
-  .slick-prev:before {
-    content: "‹";
-    line-height: 0;
-    opacity: 1;
-  }
+const getSelectedHoverBg = (props) =>
+  props.theme.DarkTheme ? "rgba(0,211,169,0.22)" : "#e0f9f5";
 
-  .slick-track {
+const getSelectedHoverColor = (props) =>
+  props.theme.DarkTheme ? props.theme.keppelColor : "#00594f";
+
+const getSelectedHoverBorder = (props) =>
+  props.theme.DarkTheme ? props.theme.keppelColor : "#006d60";
+
+const getSelectedHoverShadow = (props) =>
+  props.theme.DarkTheme ? "rgba(0,211,169,0.2)" : "rgba(0,179,159,0.18)";
+
+export const CategoryFilterBar = styled.div`
+  position: relative;
+  margin: 1.5rem 0 2rem;
+  padding: 0 0.5rem;
+
+  .category-chips-wrapper {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0;
+
+    @media screen and (max-width: 768px) {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      justify-content: flex-start;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x proximity;
+      gap: 0.625rem;
+      padding: 0.5rem 1.5rem;
+      margin: 0 -1.5rem;
+
+      /* Hide scrollbar but keep functionality */
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
   }
 
-  .slick-next:before {
-    content: "›";
-    line-height: 0;
-    opacity: 1;
+  /* Left overflow fade indicator for mobile scroll */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 2.5rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+
+    @media screen and (max-width: 768px) {
+      opacity: 1;
+      background: linear-gradient(to left, transparent, ${getFadeBg});
+    }
   }
 
-  .slick-prev,
-  .slick-next {
-    top: 1.5rem;
+  /* Right overflow fade indicator for mobile scroll */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 2.5rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+
+    @media screen and (max-width: 768px) {
+      opacity: 1;
+      background: linear-gradient(to right, transparent, ${getFadeBg});
+    }
+  }
+
+  .category-chip {
+    /* ── Inactive (default) = dark / filled ── */
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 1.125rem;
+    border-radius: 2rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    border: 1.5px solid transparent;
+    outline: none;
+    scroll-snap-align: start;
+
+    background: ${getChipBg};
+    color: ${getChipColor};
+
+    transition:
+      background 0.25s ease,
+      color 0.25s ease,
+      border-color 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.15s ease;
+
+    &:hover {
+      background: ${getChipHoverBg};
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    &:focus-visible {
+      outline: 2px solid ${getFocusOutline};
+      outline-offset: 2px;
+      border-color: ${(props) => props.theme.keppelColor};
+      box-shadow: 0 0 0 3px ${getFocusShadow};
+    }
+
+    &:active {
+      transform: scale(0.97);
+    }
+
+    /* ── Active / Selected = light / outlined ── */
+    &.selected {
+      background: ${getSelectedBg};
+      color: ${getSelectedColor};
+      border-color: ${getSelectedBorder};
+      font-weight: 700;
+
+      &:hover {
+        background: ${getSelectedHoverBg};
+        color: ${getSelectedHoverColor};
+        border-color: ${getSelectedHoverBorder};
+        box-shadow: 0 2px 12px ${getSelectedHoverShadow};
+      }
+
+      .chip-count {
+        opacity: 0.9;
+        font-weight: 600;
+      }
+    }
+
+    .chip-count {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      opacity: 0.7;
+      margin-left: 0.125rem;
+    }
+
+    /* Touch-friendly sizing on mobile */
+    @media screen and (max-width: 768px) {
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
+      min-height: 2.25rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .category-chip {
+      transition: none;
+    }
+    .category-chips-wrapper {
+      scroll-behavior: auto;
+    }
   }
 `;
