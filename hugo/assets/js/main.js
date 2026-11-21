@@ -85,6 +85,49 @@
     });
   });
 
+  /* {{< common-form >}} and {{< content-form >}}: post to the meshery-cloud marketing API, or demo mode without an endpoint */
+  const anonEmail = /@(?:duck\.com|protonmail\.com|anonaddy\.me|tuta\.io)$/i;
+  const toBody = {
+    common: (f) => Object.fromEntries(Object.entries(f).filter(([k, v]) => v.trim() || k === 'company_website')),
+    content: (f) => {
+      const [firstName, ...rest] = f.name.trim().split(/\s+/);
+      const message = [
+        `Content type: ${f.content}`, f.title && `Title: ${f.title}`, f.details && `Details: ${f.details}`,
+        f.comment && `Comments: ${f.comment}`, `Slack member: ${f.slack}`, f.slackName && `Slack username: ${f.slackName}`,
+      ].filter(Boolean).join('\n');
+      return { email: f.email, firstName, lastName: rest.join(' ') || firstName, subject: f.title || `Writing program: ${f.content}`, message, scope: 'Community', company_website: f.company_website };
+    },
+  };
+  $$('[data-marketing-form]').forEach((form) => {
+    const status = $('.form-status', form);
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) { status.textContent = 'Please fill in the required fields.'; form.reportValidity(); return; }
+      const fields = Object.fromEntries(new FormData(form));
+      if ('noAnon' in form.dataset && anonEmail.test(fields.email)) { status.textContent = 'Please use a non-anonymous email address.'; return; }
+      const endpoint = form.dataset.endpoint;
+      if (!endpoint) { status.textContent = 'Demo mode: no endpoint configured, nothing was sent.'; return; }
+      const button = $('[type="submit"]', form);
+      button.disabled = true;
+      status.textContent = 'Sending…';
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST', credentials: 'omit', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(toBody[form.dataset.marketingForm](fields)),
+        });
+        if (res.ok) {
+          form.hidden = true;
+          const done = form.nextElementSibling;
+          done.hidden = false;
+          done.focus();
+          return;
+        }
+        status.textContent = res.status === 429 ? 'Too many submissions. Please wait and try again.' : 'We could not submit this form. Please try again.';
+      } catch (_) { status.textContent = 'We could not reach the server. Please try again.'; }
+      button.disabled = false;
+    });
+  });
+
   /* Lazy widgets: loaded only when the hook exists, and only when visible */
   const lazy = (selector, loader) => {
     const els = $$(selector); if (!els.length) return;
