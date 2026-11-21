@@ -11,7 +11,7 @@
 | **Skipped Templates** | 11 |
 | **Files with Warnings** | **100** |
 | **Unowned Warning Files** | **0** |
-| **Zero-Byte Assets Logged** | 6 |
+| **Zero-Byte Assets Logged** | 4 |
 | **Asset Normalization Renames** | 26 |
 
 ## 2. Primary Owner Breakdown
@@ -41,7 +41,7 @@ Each file lists one primary owner; a file only becomes warning-free when all of 
 | `unknown components` | 41 | Phase 3 | Components not yet mapped to Hugo shortcodes |
 | `wrapper indent hazard` | 19 | #8402 | Wrapper bodies with 4+ space indents that could trigger Markdown code blocks |
 | `bare-relative link` | 7 | #8402 | Links with bare-relative paths (e.g. `<Link to="newcomer">`) |
-| `zero-byte asset` | 6 | #8308 | Zero-byte SVG files in source integrations |
+| `zero-byte asset` | 4 | #8308 | Zero-byte SVG files in source integrations |
 | `external prop warning` | 1 | #8402 | Non-http(s) link marked with external prop |
 | `missing front matter` | 1 | #8402 | Document missing YAML front matter; minimal front matter generated |
 
