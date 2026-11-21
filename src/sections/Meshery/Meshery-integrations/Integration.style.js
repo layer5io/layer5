@@ -257,9 +257,9 @@ export const CategoryFilterBar = styled.div`
         to left,
         transparent,
         ${(props) =>
-  props.theme.DarkTheme
-    ? "rgba(18,18,18,0.85)"
-    : "rgba(255,255,255,0.85)"}
+          props.theme.DarkTheme
+            ? "rgba(18,18,18,0.85)"
+            : "rgba(255,255,255,0.85)"}
       );
     }
   }
@@ -283,9 +283,9 @@ export const CategoryFilterBar = styled.div`
         to right,
         transparent,
         ${(props) =>
-      props.theme.DarkTheme
-        ? "rgba(18,18,18,0.85)"
-        : "rgba(255,255,255,0.85)"}
+          props.theme.DarkTheme
+            ? "rgba(18,18,18,0.85)"
+            : "rgba(255,255,255,0.85)"}
       );
     }
   }
@@ -309,11 +309,11 @@ export const CategoryFilterBar = styled.div`
     scroll-snap-align: start;
 
     background: ${(props) =>
-          props.theme.DarkTheme
-            ? "rgba(255,255,255,0.08)"
-            : props.theme.darkJungleGreenColor};
+      props.theme.DarkTheme
+        ? "rgba(255,255,255,0.08)"
+        : props.theme.darkJungleGreenColor};
     color: ${(props) =>
-              props.theme.DarkTheme ? "rgba(255,255,255,0.7)" : "#ffffff"};
+      props.theme.DarkTheme ? "rgba(255,255,255,0.7)" : "#ffffff"};
 
     transition:
       background 0.25s ease,
@@ -324,18 +324,22 @@ export const CategoryFilterBar = styled.div`
 
     &:hover {
       background: ${(props) =>
-                props.theme.DarkTheme ? "rgba(255,255,255,0.14)" : "#2d3328"};
+        props.theme.DarkTheme ? "rgba(255,255,255,0.14)" : "#2d3328"};
       transform: translateY(-1px);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
 
     &:focus-visible {
+      outline: 2px solid
+        ${(props) =>
+          props.theme.DarkTheme ? props.theme.keppelColor : "#006d60"};
+      outline-offset: 2px;
       border-color: ${(props) => props.theme.keppelColor};
       box-shadow: 0 0 0 3px
         ${(props) =>
-                  props.theme.DarkTheme
-                    ? "rgba(0,211,169,0.35)"
-                    : "rgba(0,179,159,0.3)"};
+          props.theme.DarkTheme
+            ? "rgba(0,211,169,0.35)"
+            : "rgba(0,179,159,0.3)"};
     }
 
     &:active {
@@ -345,25 +349,30 @@ export const CategoryFilterBar = styled.div`
     /* ── Active / Selected = light / outlined ── */
     &.selected {
       background: ${(props) =>
-                      props.theme.DarkTheme ? "rgba(0,211,169,0.15)" : "#f0fdfb"};
+        props.theme.DarkTheme ? "rgba(0,211,169,0.15)" : "#f0fdfb"};
       color: ${(props) =>
-                        props.theme.DarkTheme
-                          ? props.theme.keppelColor
-                          : props.theme.secondaryColor};
+        props.theme.DarkTheme ? props.theme.keppelColor : "#006d60"};
       border-color: ${(props) =>
-                            props.theme.DarkTheme
-                              ? props.theme.keppelColor
-                              : props.theme.secondaryColor};
+        props.theme.DarkTheme ? props.theme.keppelColor : "#008a7a"};
       font-weight: 700;
 
       &:hover {
         background: ${(props) =>
-                                props.theme.DarkTheme ? "rgba(0,211,169,0.22)" : "#e0f9f5"};
+          props.theme.DarkTheme ? "rgba(0,211,169,0.22)" : "#e0f9f5"};
+        color: ${(props) =>
+          props.theme.DarkTheme ? props.theme.keppelColor : "#00594f"};
+        border-color: ${(props) =>
+          props.theme.DarkTheme ? props.theme.keppelColor : "#006d60"};
         box-shadow: 0 2px 12px
           ${(props) =>
-                                  props.theme.DarkTheme
-                                    ? "rgba(0,211,169,0.2)"
-                                    : "rgba(0,179,159,0.18)"};
+            props.theme.DarkTheme
+              ? "rgba(0,211,169,0.2)"
+              : "rgba(0,179,159,0.18)"};
+      }
+
+      .chip-count {
+        opacity: 0.9;
+        font-weight: 600;
       }
     }
 
