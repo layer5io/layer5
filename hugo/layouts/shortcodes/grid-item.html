@@ -1,0 +1,16 @@
+{{- /* {{< grid-item xs="12" md="6" >}}body{{< /grid-item >}}: columns out of 12 per MUI breakpoint (xs, sm, md, lg, xl). An unset size uses the next smaller one. */ -}}
+{{- $span := "12" -}}
+{{- $vars := slice -}}
+{{- range $bp := slice "xs" "sm" "md" "lg" "xl" -}}
+  {{- with $.Get $bp -}}
+    {{- if findRE `^([1-9]|1[0-2])$` . -}}
+      {{- $span = . -}}
+    {{- else -}}
+      {{- warnf "grid-item shortcode on %s: %s=%q is not a column count from 1 to 12 (ignored)" $.Page.Path $bp . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $vars = $vars | append (printf "--%s: %s" $bp $span) -}}
+{{- end -}}
+<div class="grid__item" style="{{ delimit $vars "; " | safeCSS }}">
+{{ .Inner | markdownify }}
+</div>

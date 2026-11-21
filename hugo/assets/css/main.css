@@ -69,6 +69,13 @@ kbd { font: .75rem var(--mono); border: 1px solid var(--line); border-radius: 4p
 .block { padding-block: 2.5rem; } .block__head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
 .grid { display: grid; gap: 1.1rem; margin-top: 1rem; }
 .grid--3 { grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); } .grid--4 { grid-template-columns: repeat(auto-fill, minmax(13.5rem, 1fr)); }
+/* {{< grid >}}: 12 columns with MUI's sm/md/lg/xl breakpoints, spans set per item by {{< grid-item >}} */
+.grid--12 { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--grid-gap); margin-block: 1.5rem; }
+.grid__item { grid-column: span var(--xs); min-width: 0; }
+@media (min-width: 37.5rem) { .grid__item { grid-column: span var(--sm); } }
+@media (min-width: 56.25rem) { .grid__item { grid-column: span var(--md); } }
+@media (min-width: 75rem) { .grid__item { grid-column: span var(--lg); } }
+@media (min-width: 96rem) { .grid__item { grid-column: span var(--xl); } }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; color: inherit; text-decoration: none; }
 .card--link:hover { border-color: var(--accent); }
 .card__media img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
