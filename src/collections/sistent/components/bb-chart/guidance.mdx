@@ -1,0 +1,129 @@
+---
+title: BBChart Guidance
+component: bb-chart
+description: BBChart is a chart component for displaying data through interactive visualizations, including line, bar, area, gauge, and donut charts. It is commonly used for telemetry, monitoring, metrics, and data visualization.
+---
+
+import { BBChart } from "@sistent/sistent";
+
+BBChart provides a reusable interface for displaying data visualizations across Layer5 applications. It is built on Billboard.js and accepts chart configuration through the `options` prop. Use the chart configuration that best represents the data and the relationship you want users to understand.
+
+<a id="When to Use">
+  <h2>When to Use</h2>
+</a>
+
+<h3>Use BBChart when</h3>
+
+- You need to visualize numerical or categorical data
+- You need to communicate trends across a sequence of values
+- You need to compare values between categories
+- You need to display telemetry or system metrics
+- You need to show resource or service utilization
+- You need to represent the composition of a total
+- You need to display a metric against a defined range
+- You need to provide users with interactive access to data values
+
+<h3>Choose a chart type based on the data</h3>
+
+- Use a **line chart** to show trends or changes across an ordered sequence of values.
+- Use a **bar chart** to compare values across discrete categories.
+- Use an **area chart** when the trend and magnitude of values are both important.
+- Use a **gauge chart** to display a single value against a defined range.
+- Use a **donut chart** to show how categories contribute to a total.
+
+<h3>Avoid using BBChart when</h3>
+
+- The information can be communicated more clearly using a simple value or text
+- The dataset is too small to benefit from visualization
+- A chart would introduce unnecessary visual complexity
+- A table is more appropriate because users need to inspect exact values across many rows
+- The chart would contain too many categories or data series to remain readable
+
+<a id="Chart Options">
+  <h2>Chart Options</h2>
+</a>
+
+BBChart accepts Billboard.js chart configuration through the `options` prop. The `options` object defines the data displayed by the chart and controls properties such as the chart type, axes, tooltips, legends, and chart-specific behavior.
+
+<h3>Data</h3>
+
+Use the `data` option to define the values displayed in the chart. The `columns` property can be used to provide named data series.
+
+```javascript
+data: {
+  columns: [
+    ["CPU", 30, 45, 42, 60],
+    ["Memory", 50, 52, 51, 58]
+  ],
+  type: "line"
+}
+```
+
+<h3>Light and Dark Themes</h3>
+
+BBChart can be used with both light and dark application themes. Keep chart configuration aligned with the surrounding UI so that labels, axes, legends, and tooltips remain readable.
+
+For theme-aware applications, use the theme provided by the surrounding Sistent components and configure Billboard.js styling as needed.
+
+```javascript
+const options = {
+  data: {
+    columns: [
+      ["CPU", 30, 45, 42, 60],
+      ["Memory", 50, 52, 51, 58]
+    ],
+    type: "line"
+  },
+  axis: {
+    x: {
+      type: "category",
+      categories: ["Mon", "Tue", "Wed", "Thu"]
+    }
+  },
+  tooltip: {
+    show: true
+  }
+};
+``` 
+
+<h3>Tooltips</h3>
+
+Use the `tooltip` option to control how values are displayed when users interact with chart data.
+
+```javascript
+const options = {
+  data: {
+    columns: [
+      ["CPU", 30, 45, 42, 60],
+      ["Memory", 50, 52, 51, 58]
+    ],
+    type: "line"
+  },
+  tooltip: {
+    show: true
+  }
+};
+```
+
+<h3>Time-Series Axes</h3>
+
+Use a time-series axis when the x-axis represents dates or timestamps.
+
+```javascript
+data: {
+  x: "x",
+  columns: [
+    ["x", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21"],
+    ["Requests", 30, 45, 42, 60]
+  ],
+  type: "line"
+},
+axis: {
+  x: {
+    type: "timeseries",
+    tick: {
+      format: "%Y-%m-%d"
+    }
+  }
+}
+```
