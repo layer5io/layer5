@@ -1127,3 +1127,68 @@ test('parseOpenTag parses static object and array literals as literal: true whil
   const second = convertFile(output, { slug: 'obj-e2e', file: 'blog/obj-e2e/index.mdx' }).output;
   assert.equal(second, output);
 });
+
+test('Blog bespoke components convert to paired Hugo shortcodes and respect sistent exclusion (P3-01)', () => {
+  const input = [
+    '---',
+    'title: "Blog Bespoke Test"',
+    '---',
+    '<MeetTheMaintainer>',
+    '<div className="interviewer"><span>Lee:</span> Welcome!</div>',
+    '</MeetTheMaintainer>',
+    '<MeetTheMeshMate>',
+    '<div className="intro">Introducing our MeshMate</div>',
+    '</MeetTheMeshMate>',
+    '<MeshkitMesheryAdapterLib>',
+    '<div className="fact">MeshKit fact</div>',
+    '</MeshkitMesheryAdapterLib>',
+    '<BufProtocol>',
+    '<div className="fact">Buf fact</div>',
+    '</BufProtocol>',
+    '<PerfbytesPodcast>',
+    '<div className="answer">Podcast answer</div>',
+    '</PerfbytesPodcast>',
+    '<Blog>',
+    '<div className="badge-grid"><div><span>Badge</span></div></div>',
+    '</Blog>',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'bespoke-test', file: 'blog/2026/bespoke-test/index.mdx' });
+  assert.deepEqual(stats.warnings, []);
+  assert.match(output, /\{\{< meet-the-maintainer >\}\}\n[\s\S]*\{\{< \/meet-the-maintainer >\}\}/);
+  assert.match(output, /\{\{< meet-the-meshmate >\}\}\n[\s\S]*\{\{< \/meet-the-meshmate >\}\}/);
+  assert.match(output, /\{\{< meshkit-meshery-adapter-lib >\}\}\n[\s\S]*\{\{< \/meshkit-meshery-adapter-lib >\}\}/);
+  assert.match(output, /\{\{< buf-protocol >\}\}\n[\s\S]*\{\{< \/buf-protocol >\}\}/);
+  assert.match(output, /\{\{< perfbytes-podcast >\}\}\n[\s\S]*\{\{< \/perfbytes-podcast >\}\}/);
+  assert.match(output, /\{\{< blog >\}\}\n[\s\S]*\{\{< \/blog >\}\}/);
+  assert.equal(stats.components.MeetTheMaintainer, 1);
+  assert.equal(stats.components.MeetTheMeshMate, 1);
+  assert.equal(stats.components.MeshkitMesheryAdapterLib, 1);
+  assert.equal(stats.components.BufProtocol, 1);
+  assert.equal(stats.components.PerfbytesPodcast, 1);
+  assert.equal(stats.components.Blog, 1);
+
+  // Idempotency: re-running on output yields identical output
+  const rerun = convertFile(output, { slug: 'bespoke-test', file: 'blog/2026/bespoke-test/index.mdx' });
+  assert.equal(rerun.output, output);
+
+  // Sistent guard: components are skipped for sistent docs
+  const sistentRes = convertFile(input, { slug: 'bespoke-test', file: 'sistent/bespoke-test/index.mdx' });
+  assert.equal(sistentRes.stats.unknown.MeetTheMaintainer, 1);
+  assert.equal(sistentRes.stats.unknown.MeetTheMeshMate, 1);
+  assert.equal(sistentRes.stats.unknown.MeshkitMesheryAdapterLib, 1);
+  assert.equal(sistentRes.stats.unknown.BufProtocol, 1);
+  assert.equal(sistentRes.stats.unknown.PerfbytesPodcast, 1);
+  assert.equal(sistentRes.stats.unknown.Blog, 1);
+});
+
+test('Blog bespoke components preserve warnings on non-literal props and unclosed tags', () => {
+  const unclosed = '---\ntitle: "Unclosed"\n---\n<MeetTheMaintainer>\nContent\n';
+  const res1 = convertFile(unclosed, { slug: 'unclosed', file: 'blog/2026/unclosed/index.mdx' });
+  assert.ok(res1.stats.warnings.some((w) => /<MeetTheMaintainer> has no closing tag/.test(w)));
+  assert.match(res1.output, /<MeetTheMaintainer>/);
+
+  const nonLiteral = '---\ntitle: "NonLiteral"\n---\n<Blog customProp={someVar}>Body</Blog>\n';
+  const res2 = convertFile(nonLiteral, { slug: 'nonliteral', file: 'blog/2026/nonliteral/index.mdx' });
+  assert.ok(res2.stats.warnings.some((w) => /non-literal expression for "customProp"/.test(w)));
+});
