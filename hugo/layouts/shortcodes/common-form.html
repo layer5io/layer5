@@ -1,0 +1,44 @@
+{{- /* {{< common-form form="epsma-book" title="…" submit_title="…" >}}shown after a successful submit{{< /common-form >}}
+   Posts to /api/marketing/forms/<form> on site.Params.forms.marketing. account_desc is accepted and unused, as on Gatsby. */ -}}
+{{- $form := .Get "form" | default "contact" -}}
+{{- if in (slice "contact" "open-source-pricing") $form -}}
+  {{- warnf "common-form shortcode on %s: the extra fields of form %q are not ported yet" .Page.Path $form -}}
+{{- end -}}
+{{- $base := strings.TrimSuffix "/" (site.Params.forms.marketing | default "") -}}
+{{- $id := printf "common-form-%d" .Ordinal -}}
+<section class="lead-form">
+  <form data-marketing-form="common" data-endpoint="{{ with $base }}{{ . }}/api/marketing/forms/{{ $form }}{{ end }}" data-no-anon novalidate>
+    {{- with .Get "title" }}
+    <h2>{{ . }}</h2>
+    {{- end }}
+    <label for="{{ $id }}-first">First Name <span class="req" aria-hidden="true">*</span></label>
+    <input id="{{ $id }}-first" name="firstName" maxlength="32" required autocomplete="given-name">
+    <label for="{{ $id }}-last">Last Name <span class="req" aria-hidden="true">*</span></label>
+    <input id="{{ $id }}-last" name="lastName" maxlength="32" required autocomplete="family-name">
+    <label for="{{ $id }}-email">Email Address <span class="req" aria-hidden="true">*</span></label>
+    <input id="{{ $id }}-email" name="email" type="email" required autocomplete="email">
+    <label for="{{ $id }}-occupation">Occupation / Title <span class="req" aria-hidden="true">*</span></label>
+    <input id="{{ $id }}-occupation" name="occupation" required autocomplete="organization-title">
+    <label for="{{ $id }}-org">Organization / Company / School <span class="req" aria-hidden="true">*</span></label>
+    <input id="{{ $id }}-org" name="organization" required autocomplete="organization">
+    <label for="{{ $id }}-role">What role best identifies you? <span class="req" aria-hidden="true">*</span></label>
+    <select id="{{ $id }}-role" name="role" required>
+      <option value="" disabled selected hidden>Select your role</option>
+      {{- range slice "Architect" "Backend Engineer" "Business Operations" "Data Analyst" "Designer" "Developer" "DevOps Engineer" "Executive" "Frontend Engineer" "Fullstack Engineer" "IT Operations" "Manager" "Marketing" "Media/Analyst" "Platform Engineer" "Professor/Academic" "Product Manager" "Sales" "Sales Engineer" "Site Reliability Engineer" "Student" "Other" }}
+      <option>{{ . }}</option>
+      {{- end }}
+    </select>
+    {{- partial "marketing-honeypot.html" $id }}
+    <p class="form-status" role="status" aria-live="polite"></p>
+    <button class="btn btn-primary" type="submit">{{ .Get "submit_button_title" | default "Submit" }}</button>
+  </form>
+  <div class="lead-form__done" tabindex="-1" hidden>
+    {{- with .Get "submit_title" }}
+    <h2>{{ . }}</h2>
+    {{- end }}
+    {{- with .Inner }}
+    {{ . | $.Page.RenderString (dict "display" "block") }}
+    {{- end }}
+    {{ partial "marketing-thanks.html" }}
+  </div>
+</section>

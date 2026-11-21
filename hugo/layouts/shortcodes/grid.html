@@ -1,0 +1,9 @@
+{{- /* {{< grid spacing="2" >}}{{< grid-item … >}}…{{< /grid >}}: a 12-column grid. spacing is in 8px steps, like MUI Grid2. */ -}}
+{{- $spacing := .Get "spacing" | default "0" -}}
+{{- if not (findRE `^\d+(\.\d+)?$` $spacing) -}}
+  {{- warnf "grid shortcode on %s: spacing %q is not a number (using 0)" .Page.Path $spacing -}}
+  {{- $spacing = "0" -}}
+{{- end -}}
+<div class="grid grid--12" style="{{ printf "--grid-gap: %vrem" (mul (float $spacing) 0.5) | safeCSS }}">
+{{ .Inner }}
+</div>

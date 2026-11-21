@@ -68,6 +68,8 @@ params:
   forms:
     # Point at the real Layer5 / HubSpot endpoint. Empty = demo mode (no network call).
     newsletter: ""
+    # Base URL of the meshery-cloud marketing form API for common-form and content-form (https://cloud.layer5.io). Empty = demo mode.
+    marketing: ""
 
 menus:
   main:
