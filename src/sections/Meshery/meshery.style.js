@@ -8,6 +8,10 @@ const MesheryWrapper = styled.section`
   flex-direction: column;
   width: 100%;
 
+  .logo-list img {
+    cursor: pointer;
+  }
+
   .info {
     position: relative;
     overflow: hidden;
