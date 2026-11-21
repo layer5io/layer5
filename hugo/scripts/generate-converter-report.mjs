@@ -5,12 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { migrate } from './migrate-mdx.mjs';
 
 export function assignPrimaryOwner(file, msgs) {
-  // 1. Out-of-bundle thumbnail images -> #8308
-  if (msgs.some((m) => m.includes('outside the page bundle'))) {
-    return '#8308';
-  }
-
-  // 2. Quote/callout-only files (all unknown components are Blockquote, BlockquoteAlt, Callout, or InlineQuotes, and no other warning types) -> #8385
+  // 1. Quote/callout-only files (all unknown components are Blockquote, BlockquoteAlt, Callout, or InlineQuotes, and no other warning types) -> #8385
   const unknownMsgs = msgs.filter((m) => m.startsWith('unknown components:'));
   const otherMsgs = msgs.filter((m) => !m.startsWith('unknown components:'));
   if (unknownMsgs.length > 0 && otherMsgs.length === 0) {
@@ -20,11 +15,15 @@ export function assignPrimaryOwner(file, msgs) {
     if (allQuotes) return '#8385';
   }
 
-  // 3. Files with bespoke/unmapped components -> Phase 3 Sub-issues
+  // 2. Files with bespoke/unmapped components or handbook data loops -> Phase 3 Sub-issues
   const hasBespokeComp = unknownMsgs.some((m) => {
     const comps = m.replace('unknown components: ', '').split(', ');
     return comps.some((c) => !['Blockquote', 'BlockquoteAlt', 'Callout', 'InlineQuotes'].includes(c));
   });
+
+  if (file.startsWith('handbook/') && (hasBespokeComp || msgs.some((m) => m.includes('non-literal expression')))) {
+    return '#8456';
+  }
 
   if (hasBespokeComp) {
     if (file.startsWith('blog/')) return '#8453';
@@ -38,14 +37,20 @@ export function assignPrimaryOwner(file, msgs) {
     return '#8298';
   }
 
-  // 4. Imported assets variables (<img src={var}>, <CTA_FullWidth image={var}>, etc.) -> #8401
+  // 3. Unresolved imported assets variables (<img src={var}>, <CTA_FullWidth image={var}>, etc.) -> #8401
   const isImportedAsset = msgs.some((m) =>
     m.includes('non-literal expression for "image"') ||
     m.includes('non-literal expression for "src"') ||
+    m.includes('non-literal expression for "href"') ||
     (m.includes('non-literal expression for "to"') && file.includes('devops-adoption'))
   );
   if (isImportedAsset) {
     return '#8401';
+  }
+
+  // 4. Out-of-bundle assets (when not overshadowed by bespoke components or unresolvable imported assets) -> #8308
+  if (msgs.some((m) => m.includes('outside the page bundle'))) {
+    return '#8308';
   }
 
   // 5. Content hand-fix backlog (wrapper indent, bare-relative link, non-literal button, missing front matter) -> #8402
@@ -64,7 +69,7 @@ export function assignPrimaryOwner(file, msgs) {
 }
 
 function classifyWarning(msg) {
-  if (msg.includes('is outside the page bundle')) return 'thumbnail outside page bundle';
+  if (msg.includes('is outside the page bundle')) return 'asset outside page bundle';
   if (msg.startsWith('unknown components:')) return 'unknown components';
   if (msg.includes('wrapper body has 4+ space')) return 'wrapper indent hazard';
   if (msg.includes('non-literal expression')) return 'non-literal prop expression';
@@ -148,7 +153,7 @@ export function generateReport(options = {}) {
     '#8453': 'P3-01 Blog bespoke components (`MeetTheMaintainer`, `MeetTheMeshMate`, diagrams)',
     '#8457': 'P3-08 Programs & Careers bespoke components (`PositionApply`, `LfxPageNav`, `Row`, `Col`)',
     '#8454': 'P3-02 Resources & Books bespoke components (`FAQ`, `CommonForm`, `Table`, case studies)',
-    '#8456': 'P3-07 Handbook bespoke components (`BadgeRow`, `Table`, `React.Fragment`, `Row/Col`)',
+    '#8456': 'P3-07 Handbook bespoke components & data loops (`BadgeRow`, `Table`, `React.Fragment`, `Row/Col`, `mentorship-programs`, `recognition`, `repository-overview`)',
     '#8455': 'P3-04 Events bespoke forms (`CommonForm`, `Grid2`)',
     '#8458': 'P3-13 Projects page layout (`Row`, `Col`)',
     '#8298': 'Other Phase 3 bespoke collection components',
@@ -171,8 +176,8 @@ export function generateReport(options = {}) {
   );
 
   const keyDescriptions = {
-    'thumbnail outside page bundle': ['#8308', 'Images in `thumbnail` or `darkthumbnail` pointing to `../../assets`'],
-    'unknown components': ['#8385 / Phase 3', 'Components not yet mapped to Hugo shortcodes'],
+    'asset outside page bundle': ['#8308', 'Images or assets pointing to `../../assets` outside the page bundle'],
+    'unknown components': ['Phase 3', 'Components not yet mapped to Hugo shortcodes'],
     'wrapper indent hazard': ['#8402', 'Wrapper bodies with 4+ space indents that could trigger Markdown code blocks'],
     'non-literal prop expression': ['#8401 / #8402', 'JSX expression props (e.g. `image={var}`, `$url={link}`)'],
     'bare-relative link': ['#8402', 'Links with bare-relative paths (e.g. `<Link to="newcomer">`)'],
@@ -266,7 +271,7 @@ export function generateReport(options = {}) {
     '- **#8453** — [Hugo] Phase 3 · Blog bespoke components (P3-01): `MeetTheMaintainer`, `MeetTheMeshMate`, diagrams.',
     '- **#8454** — [Hugo] Phase 3 · Resources bespoke components and case study blocks (P3-02): Case study blocks, `FAQ`, `PlaygroundCTA`, `DockerExtensionCTA`.',
     '- **#8455** — [Hugo] Phase 3 · Events forms and layout components (P3-04): `CommonForm`, `ContentForm`, `Grid2`.',
-    '- **#8456** — [Hugo] Phase 3 · Handbook bespoke components (P3-07): `BadgeRow`, `Table`, `HandbookFaqAccordion`, `React.Fragment`.',
+    '- **#8456** — [Hugo] Phase 3 · Handbook bespoke components and data loops (P3-07): `BadgeRow`, `Table`, `HandbookFaqAccordion`, `React.Fragment`, data loops (`mentorship-programs`, `recognition`, `repository-overview`).',
     '- **#8457** — [Hugo] Phase 3 · Programs & Careers bespoke components (P3-08): `PositionApply`, `LfxPageNav`, `Row`, `Col`.',
     '- **#8458** — [Hugo] Phase 3 · Projects layout components (P3-13): `Row`, `Col`.',
     ''
