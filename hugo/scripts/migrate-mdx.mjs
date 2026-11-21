@@ -59,6 +59,8 @@ export const COMPONENTS = {
   BlockquoteAlt:    { shortcode: 'blockquote-alt' },
   Callout:          { shortcode: 'callout',        paired: true },
   InlineQuotes:     { shortcode: 'inline-quotes' },
+  Row:              { custom: 'strip' },
+  Col:              { custom: 'strip' },
 };
 const COLLECTION_EXCLUDED_COMPONENTS = {
   sistent: new Set([
@@ -67,7 +69,11 @@ const COLLECTION_EXCLUDED_COMPONENTS = {
     'ProgramsWrapper', 'ProjectWrapper', 'ResourcesWrapper', 'BookWrapper',
     'Blockquote', 'BlockquoteAlt', 'Callout', 'InlineQuotes',
     'LfxLogoImage', 'ThemedScaLogo', 'JourneySection',
+    'Row', 'Col',
   ]),
+  // Handbook Row/Col carry responsive $lg/$md/$sm props and className hooks: they need the
+  // P3-07 grid shortcodes (#8456), so keep them out of the prop-less strip here.
+  handbook: new Set(['Row', 'Col']),
 };
 const DROP_ATTRS = new Set(['className', 'class', 'style', 'key', 'ref']);
 
@@ -300,6 +306,26 @@ function convertSegment(text, ctx) {
       const prev = /\u0000(\d+)\u0000\n$/.exec(out); // marker already there from an earlier run?
       if (!(prev && ctx.masked?.[+prev[1]] === marker.trim())) out += marker;
       out += text.slice(m.index, tag.end); i = tag.end; continue;
+    }
+    if (spec.custom === 'strip') {
+      // Prop-less layout containers (e.g. a bare <Row>/<Col> pair) are dropped and their
+      // children converted; any attribute means real layout (responsive widths, className
+      // hooks), so those stay in the unknown report for shortcode work instead of being
+      // silently flattened.
+      if (tag.attrs.length || tag.problems.length) {
+        ctx.unknown(name);
+        const marker = `<!-- TODO(mdx): unconverted component <${name}> -->\n`;
+        const prev = /\u0000(\d+)\u0000\n$/.exec(out);
+        if (!(prev && ctx.masked?.[+prev[1]] === marker.trim())) out += marker;
+        out += text.slice(m.index, tag.end); i = tag.end; continue;
+      }
+      if (tag.selfClosing) { ctx.component(name); i = tag.end; continue; }
+      const c = findClose(text, tag.end, name);
+      if (!c) { ctx.unknown(name); ctx.warn(`<${name}> has no closing tag; left as-is`); out += text.slice(m.index, tag.end); i = tag.end; continue; }
+      out += convertSegment(text.slice(tag.end, c.start), ctx);
+      ctx.component(name);
+      i = c.end;
+      continue;
     }
     if (spec.custom === 'unwrap') { out += text.slice(m.index, tag.end); i = tag.end; continue; }
     tag.problems.forEach((p) => ctx.warn(`<${name}>: ${p}`));

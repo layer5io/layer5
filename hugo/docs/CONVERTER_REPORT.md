@@ -9,7 +9,7 @@
 | **Documents Converted** | 1006 / 1006 |
 | **Excluded Collections** | `sistent` (138 files skipped) |
 | **Skipped Templates** | 11 |
-| **Files with Warnings** | **93** |
+| **Files with Warnings** | **92** |
 | **Unowned Warning Files** | **0** |
 | **Zero-Byte Assets Logged** | 6 |
 | **Asset Normalization Renames** | 26 |
@@ -29,14 +29,13 @@ Each file lists one primary owner; a file only becomes warning-free when all of 
 | `#8454` | 7 | P3-02 Resources & Books bespoke components (`FAQ`, `CommonForm`, `Table`, case studies) |
 | `#8456` | 5 | P3-07 Handbook bespoke components (`BadgeRow`, `Table`, `React.Fragment`, `Row/Col`) |
 | `#8455` | 1 | P3-04 Events bespoke forms (`CommonForm`, `Grid2`) |
-| `#8458` | 1 | P3-13 Projects page layout (`Row`, `Col`) |
-| **Total** | **93** | **100% accounted for (sum equals files with warnings)** |
+| **Total** | **92** | **100% accounted for (sum equals files with warnings)** |
 
 ## 3. Warnings Breakdown by Key
 
 | Warning Category | Occurrences | Primary Owner Issue | Description |
 |---|---|---|---|
-| `unknown components` | 41 | #8385 / Phase 3 | Components not yet mapped to Hugo shortcodes |
+| `unknown components` | 40 | #8385 / Phase 3 | Components not yet mapped to Hugo shortcodes |
 | `non-literal prop expression` | 33 | #8401 / #8402 | JSX expression props (e.g. `image={var}`, `$url={link}`) |
 | `thumbnail outside page bundle` | 32 | #8308 | Images in `thumbnail` or `darkthumbnail` pointing to `../../assets` |
 | `wrapper indent hazard` | 19 | #8402 | Wrapper bodies with 4+ space indents that could trigger Markdown code blocks |
@@ -49,10 +48,10 @@ Each file lists one primary owner; a file only becomes warning-free when all of 
 
 | Component | Occurrences | Owning Issue / Phase | Proposed Solution |
 |---|---|---|---|
-| `<Col>` | 25 | #8457 (P3-08) / #8458 (P3-13) | Container grid column layout partial/shortcode |
+| `<Col>` | 24 | #8457 (P3-08) / #8458 (P3-13) | Container grid column layout partial/shortcode |
 | `<MeetTheMaintainer>` | 11 | #8453 (P3-01) | Blog interview header component |
 | `<PositionApply>` | 7 | #8457 (P3-08) | Job application CTA button/link |
-| `<Row>` | 5 | #8457 (P3-08) / #8458 (P3-13) | Container grid row layout partial/shortcode |
+| `<Row>` | 4 | #8457 (P3-08) / #8458 (P3-13) | Container grid row layout partial/shortcode |
 | `<Grid2>` | 3 | #8455 (P3-04) | Event grid container |
 | `<BadgeRow>` | 3 | #8456 (P3-07) | Handbook recognition badge row component |
 | `<FAQ>` | 3 | #8454 (P3-02) | Resources FAQ accordion component |
@@ -150,7 +149,6 @@ Every warning file outside Sistent is tracked below with its primary owning issu
 | `programs/lfx-2025/lfx-2025.mdx` | programs/lfx-2025/lfx-2025.mdx: <Link> has bare-relative "to" value "" (<Link to ="">); review manually<br>programs/lfx-2025/lfx-2025.mdx: <Link> has bare-relative "to" value "community/members/mia-grenell" (<Link to ="community/members/mia-grenell">); review manually<br>programs/lfx-2025/lfx-2025.mdx: <Link> has bare-relative "to" value "" (<Link to ="">); review manually | `#8402` |
 | `programs/lfx-2026/lfx-2026.mdx` | unknown components: LfxPageNav | `#8457` |
 | `programs/sca-contributhon/index.mdx` | <ProgramsWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `projects/distributed-performance-management/index.mdx` | unknown components: Row, Col | `#8458` |
 | `resources/articles/devops-adoption/index.mdx` | <Link>: non-literal expression for "to"<br><Link>: non-literal expression for "to" | `#8401` |
 | `resources/articles/gitops/what-is-gitops.mdx` | thumbnail: "../../../../assets/images/socialIcons/github-dark.svg" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/socialIcons/github-light.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `resources/articles/istio-at-a-glance/istio-at-a-glance.mdx` | thumbnail: "../../../../assets/images/service-mesh-icons/istio.svg" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/service-mesh-icons/istio.svg" is outside the page bundle — move it next to index.md | `#8308` |
