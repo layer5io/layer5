@@ -130,6 +130,13 @@ th, td { text-align: left; padding: .6rem .8rem; border-bottom: 1px solid var(--
 .footer-grid { display: grid; gap: 2rem; grid-template-columns: 1.4fr 1fr 1fr; } .footer-title { font-weight: 700; margin-bottom: .5rem; } .footer-grid li { margin-bottom: .3rem; }
 .newsletter { display: flex; gap: .5rem; flex-wrap: wrap; } .newsletter input { flex: 1 1 12rem; padding: .65rem .8rem; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--text); font: inherit; }
 .form-status { flex-basis: 100%; margin: 0; font-size: .9rem; min-height: 1.4em; }
+.lead-form { max-width: 36rem; margin-block: 2rem; padding: 1.5rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.lead-form form { display: grid; gap: .35rem; } .lead-form h2 { margin: 0 0 .5rem; }
+.lead-form label, .lead-form legend { font-weight: 600; margin-top: .6rem; } .lead-form .req { color: var(--accent-ink); }
+.lead-form input:not([type="radio"]), .lead-form select { padding: .65rem .8rem; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--text); font: inherit; }
+.lead-form fieldset { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .2rem 1.2rem; } .lead-form legend { padding: 0; }
+.lead-form fieldset label { font-weight: 400; margin-top: .3rem; display: inline-flex; align-items: center; gap: .4rem; }
+.lead-form .btn { justify-self: start; } .lead-form__team { font-weight: 600; }
 .search-dialog { width: min(100% - 2rem, 42rem); max-height: 80vh; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); color: var(--text); padding: 1rem; }
 .search-dialog::backdrop { background: rgb(0 0 0 / .55); } .search-dialog__bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: .75rem; }
 .search-dialog { --pagefind-ui-scale: .9; --pagefind-ui-primary: var(--accent-ink); --pagefind-ui-text: var(--text); --pagefind-ui-background: var(--surface); --pagefind-ui-border: var(--line); --pagefind-ui-font: var(--font); }
