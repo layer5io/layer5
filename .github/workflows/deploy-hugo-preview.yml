@@ -1,0 +1,329 @@
+name: Hugo Preview Post-Build
+
+on:
+  workflow_run:
+    workflows: ["Build Hugo PR Preview"]
+    types: [completed]
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: read
+
+concurrency:
+  group: hugo-preview-post-build-deploy
+  cancel-in-progress: false
+
+env:
+  PREVIEW_HOST: layer5.io
+  PREVIEW_RETENTION_LIMIT: 3
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  manage-preview:
+    runs-on: ubuntu-24.04
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    outputs:
+      action: ${{ steps.validate.outputs.action }}
+      pr_number: ${{ steps.validate.outputs.pr_number }}
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+        with:
+          egress-policy: audit
+
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Download Artifact
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: hugo-pr-preview
+          path: temp-artifact
+          merge-multiple: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+
+      - name: Validate untrusted artifact metadata
+        id: validate
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            const metaDir = path.join(process.cwd(), 'temp-artifact', 'pr-meta');
+            if (!fs.existsSync(metaDir)) {
+              core.setFailed('Missing pr-meta directory in downloaded artifact');
+              return;
+            }
+
+            const actionPath = path.join(metaDir, 'action');
+            const numberPath = path.join(metaDir, 'number');
+            const shaPath = path.join(metaDir, 'sha');
+            const baseRefPath = path.join(metaDir, 'base_ref');
+
+            if (!fs.existsSync(actionPath) || !fs.existsSync(numberPath) || !fs.existsSync(shaPath) || !fs.existsSync(baseRefPath)) {
+              core.setFailed('Missing one or more required metadata files (action, number, sha, base_ref)');
+              return;
+            }
+
+            const action = fs.readFileSync(actionPath, 'utf8').trim();
+            const prNumberStr = fs.readFileSync(numberPath, 'utf8').trim();
+            const sha = fs.readFileSync(shaPath, 'utf8').trim();
+            const baseRef = fs.readFileSync(baseRefPath, 'utf8').trim();
+
+            const validActions = ['opened', 'reopened', 'synchronize', 'closed'];
+            if (!validActions.includes(action)) {
+              core.setFailed(`Invalid action in metadata: "${action}"`);
+              return;
+            }
+
+            if (!/^\d+$/.test(prNumberStr)) {
+              core.setFailed(`Invalid PR number in metadata (must be integer): "${prNumberStr}"`);
+              return;
+            }
+            const prNumber = parseInt(prNumberStr, 10);
+
+            if (!/^[0-9a-f]{40}$/i.test(sha)) {
+              core.setFailed(`Invalid commit SHA format in metadata: "${sha}"`);
+              return;
+            }
+
+            core.info(`Verifying PR #${prNumber} via GitHub API...`);
+            let pr;
+            try {
+              const res = await github.rest.pulls.get({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: prNumber,
+              });
+              pr = res.data;
+            } catch (err) {
+              core.setFailed(`GitHub API failed to retrieve PR #${prNumber}: ${err.message}`);
+              return;
+            }
+
+            if (pr.base.ref !== 'hugo') {
+              core.setFailed(`PR #${prNumber} targets base ref "${pr.base.ref}", expected "hugo". Deployment rejected.`);
+              return;
+            }
+
+            const workflowRunHeadSha = context.payload.workflow_run.head_sha;
+            if (sha !== workflowRunHeadSha) {
+              core.setFailed(`Artifact SHA (${sha}) does not match workflow_run.head_sha (${workflowRunHeadSha})`);
+              return;
+            }
+
+            if (action === 'closed') {
+              if (pr.state !== 'closed') {
+                core.setFailed(`Metadata specifies action "closed", but PR #${prNumber} state is "${pr.state}"`);
+                return;
+              }
+            } else {
+              if (pr.state !== 'open') {
+                core.setFailed(`Metadata specifies action "${action}", but PR #${prNumber} state is "${pr.state}"`);
+                return;
+              }
+            }
+
+            core.info(`PR #${prNumber} validated: target=hugo, head_sha=${sha}, state=${pr.state}`);
+            core.setOutput('action', action);
+            core.setOutput('pr_number', String(prNumber));
+            core.setOutput('sha', sha);
+
+      - name: Deploy Hugo PR preview
+        id: preview
+        if: steps.validate.outputs.action != 'closed'
+        uses: rossjrw/pr-preview-action@ffa7509e91a3ec8dfc2e5536c4d5c1acdf7a6de9 # v1.8.1
+        with:
+          source-dir: ./temp-artifact/hugo/public
+          preview-branch: gh-pages
+          umbrella-dir: hugo-preview
+          pr-number: ${{ steps.validate.outputs.pr_number }}
+          pages-base-url: ${{ env.PREVIEW_HOST }}
+          action: deploy
+          wait-for-pages-deployment: false
+          comment: false
+
+      - name: Comment PR with Preview URL
+        if: steps.validate.outputs.action != 'closed'
+        uses: marocchino/sticky-pull-request-comment@5770ad5eb8f42dd2c4f34da00c94c5381e49af88 # v3.0.5
+        with:
+          header: hugo-pr-preview
+          number: ${{ steps.validate.outputs.pr_number }}
+          message: |
+            🚀 Hugo preview deployment: https://${{ env.PREVIEW_HOST }}/hugo-preview/pr-${{ steps.validate.outputs.pr_number }}/
+            > *Note: Preview may take a moment to be served by GitHub Pages. Please refresh if loading.*
+
+      - name: Cleanup Hugo PR preview on close
+        if: steps.validate.outputs.action == 'closed'
+        uses: rossjrw/pr-preview-action@ffa7509e91a3ec8dfc2e5536c4d5c1acdf7a6de9 # v1.8.1
+        with:
+          preview-branch: gh-pages
+          umbrella-dir: hugo-preview
+          pr-number: ${{ steps.validate.outputs.pr_number }}
+          pages-base-url: ${{ env.PREVIEW_HOST }}
+          action: remove
+
+      - name: Comment preview removal on close
+        if: steps.validate.outputs.action == 'closed'
+        uses: marocchino/sticky-pull-request-comment@5770ad5eb8f42dd2c4f34da00c94c5381e49af88 # v3.0.5
+        with:
+          header: hugo-pr-preview
+          number: ${{ steps.validate.outputs.pr_number }}
+          message: |
+            Hugo preview removed because the pull request was closed.
+
+  prune:
+    needs: manage-preview
+    runs-on: ubuntu-24.04
+    if: ${{ needs.manage-preview.result == 'success' && needs.manage-preview.outputs.action != 'closed' }}
+    outputs:
+      removed_prs: ${{ steps.prune-previews.outputs.removed_prs }}
+      removed_prs_json: ${{ steps.prune-previews.outputs.removed_prs_json }}
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+        with:
+          egress-policy: audit
+
+      - name: Checkout gh-pages for preview retention
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+          persist-credentials: true
+          sparse-checkout: |
+            hugo-preview
+          path: gh-pages-maintenance
+
+      - name: Prune old Hugo PR previews
+        id: prune-previews
+        continue-on-error: true
+        run: |
+          cd gh-pages-maintenance
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          {
+            echo "removed_prs="
+            echo "removed_prs_json=[]"
+          } >> "$GITHUB_OUTPUT"
+
+          removed_prs=()
+          outcome=""
+          attempts=5
+
+          for attempt in $(seq 1 "$attempts"); do
+            git fetch --quiet origin gh-pages
+            git reset --quiet --hard FETCH_HEAD
+            mkdir -p hugo-preview
+
+            mapfile -t previews < <(
+              while IFS= read -r preview; do
+                timestamp="$(git log -1 --format=%ct -- "hugo-preview/$preview" 2>/dev/null || echo 0)"
+                printf '%s %s\n' "$timestamp" "$preview"
+              done < <(find hugo-preview -mindepth 1 -maxdepth 1 -type d -name 'pr-*' -printf '%f\n') \
+                | sort -nr \
+                | awk '{print $2}'
+            )
+
+            removed_prs=()
+            if (( ${#previews[@]} > PREVIEW_RETENTION_LIMIT )); then
+              for preview in "${previews[@]:PREVIEW_RETENTION_LIMIT}"; do
+                rm -rf "hugo-preview/$preview"
+                removed_prs+=("${preview#pr-}")
+              done
+            fi
+
+            if git diff --quiet -- hugo-preview; then
+              outcome="noop"
+              break
+            fi
+
+            git add hugo-preview
+            git commit --quiet -m "Prune old Hugo PR previews"
+
+            if git push origin HEAD:gh-pages; then
+              outcome="pushed"
+              break
+            fi
+
+            echo "Prune push lost race (attempt ${attempt}/${attempts}); retrying..."
+            sleep "$(( attempt * 5 + RANDOM % 5 ))"
+          done
+
+          if [ -z "$outcome" ]; then
+            echo "::warning::Could not prune old Hugo PR previews after ${attempts} attempts; next run will retry."
+            removed_prs=()
+          fi
+
+          if [ "${#removed_prs[@]}" -eq 0 ]; then
+            {
+              echo "removed_prs="
+              echo "removed_prs_json=[]"
+            } >> "$GITHUB_OUTPUT"
+          else
+            {
+              echo "removed_prs=$(IFS=,; echo "${removed_prs[*]}")"
+              echo "removed_prs_json=$(printf '%s\n' "${removed_prs[@]}" | jq -R . | jq -sc .)"
+            } >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Comment on pruned previews
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        env:
+          REMOVED_PRS_JSON: ${{ steps.prune-previews.outputs.removed_prs_json }}
+          PREVIEW_RETENTION_LIMIT: ${{ env.PREVIEW_RETENTION_LIMIT }}
+        with:
+          script: |
+            const removedPrs = JSON.parse(process.env.REMOVED_PRS_JSON);
+            const retentionLimit = process.env.PREVIEW_RETENTION_LIMIT;
+            const header = "hugo-pr-preview";
+            const marker = `<!-- Sticky Pull Request Comment${header} -->`;
+
+            for (const prNumber of removedPrs) {
+              const body =
+                `Hugo preview deployment for PR #${prNumber} removed.\n\n` +
+                `This PR preview was automatically pruned because we keep only the ${retentionLimit} most recently updated Hugo previews on GitHub Pages to stay within deployment size limits.\n\n` +
+                `If needed, push a new commit to this PR to generate a fresh preview.\n` +
+                `${marker}`;
+
+              const { data: comments } = await github.rest.issues.listComments({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: Number(prNumber),
+                per_page: 100,
+              });
+
+              const existingComment = [...comments].reverse().find((comment) =>
+                comment.user?.login === "github-actions[bot]" &&
+                comment.body?.includes(marker)
+              );
+
+              if (existingComment) {
+                await github.rest.issues.updateComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  comment_id: existingComment.id,
+                  body,
+                });
+                continue;
+              }
+
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: Number(prNumber),
+                body,
+              });
+            }

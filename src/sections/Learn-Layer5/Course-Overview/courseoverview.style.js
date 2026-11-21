@@ -10,7 +10,7 @@ export const CourseOverviewWrapper = styled.div`
       display: flex;
       align-items: center;
       text-decoration: none;
-      color: ${props => props.theme.whiteToBlack};
+      color: ${(props) => props.theme.whiteToBlack};
     }
     h4 {
       line-height: 1.75rem;
@@ -20,15 +20,14 @@ export const CourseOverviewWrapper = styled.div`
     svg {
       font-size: 1.15rem;
     }
-    @media(max-width: 745px)
-    {
+    @media (max-width: 745px) {
       margin: 4rem 0 0 1rem;
     }
   }
   .course-overview-hero {
     display: flex;
-  justify-content: center;   /* center horizontally */
-  align-items: center;
+    justify-content: center; /* center horizontally */
+    align-items: center;
   }
   .course-info-content {
     width: 50%;
@@ -56,25 +55,25 @@ export const CourseOverviewWrapper = styled.div`
     }
   }
   .course-hero-head-image {
-  margin-top: 50px;
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  div {
-    width: 100%;
+    margin-top: 50px;
+    width: 50%;
     display: flex;
-    justify-content: center;   
-  }
+    justify-content: center;
+    align-items: center;
 
-  img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;    
-    object-fit: contain;   
+    div {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: contain;
+    }
   }
-}
 
   .course-hero-head {
     h2 {
@@ -101,7 +100,7 @@ export const CourseOverviewWrapper = styled.div`
 
   .course-toc {
     margin-top: 1.75rem;
-    color: ${props => props.theme.whiteSixToBlackSix};
+    color: ${(props) => props.theme.whiteSixToBlackSix};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
@@ -119,17 +118,26 @@ export const CourseOverviewWrapper = styled.div`
   }
 
   .service-mesh-courses {
+    width: 2.5rem;
+    height: 2.5rem;
     display: inline-flex;
-    padding: 0 1rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0 1rem;
+    padding: 0;
+
+    .gatsby-image-wrapper,
+    .old-gatsby-image-wrapper,
     img {
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
   }
 
-  .start-again-button{
+  .start-again-button {
     margin-left: 1rem;
-    background: ${props => props.theme.highlightColor} !important;
+    background: ${(props) => props.theme.highlightColor} !important;
   }
 
   .course {
@@ -176,4 +184,3 @@ export const CourseOverviewWrapper = styled.div`
     }
   }
 `;
-

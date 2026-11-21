@@ -242,6 +242,9 @@ const SistentWrapper = styled.div`
     stroke: ${(props) => props.theme.green00D3A9ToGreen00B39F};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
+  .icon-showcase path {
+    stroke: none;
+  }
   svg {
     color: "red";
   }
