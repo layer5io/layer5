@@ -38,21 +38,13 @@ export const HoneycombGrid = styled.div`
     padding-right: 50px;
   }
 
-  /* Give the hexagons more room on small screens so the honeycomb pattern
-     (staggered rows) keeps its shape. */
-  @media (max-width: 540px) {
-    ul {
-      padding-left: 12px;
-      padding-right: 12px;
-    }
-  }
-
   .container-active,
   .container-inactive {
     -webkit-transform: translateZ(0);
     display: flex;
     height: 100%;
-    background: ${(props) => (props.isDark ? props.theme.radialToBlue : props.theme.grey212121ToWhite)};
+    background: ${(props) =>
+      props.isDark ? props.theme.radialToBlue : props.theme.grey212121ToWhite};
     justify-content: center;
     align-items: center;
     padding: 0.625rem;
@@ -206,47 +198,6 @@ export const IntegrationCard = styled.div`
   // }
 `;
 
-const getFadeBg = (props) =>
-  props.theme.DarkTheme ? "rgba(18,18,18,0.85)" : "rgba(255,255,255,0.85)";
-
-const getChipBg = (props) =>
-  props.theme.DarkTheme
-    ? "rgba(255,255,255,0.08)"
-    : props.theme.darkJungleGreenColor;
-
-const getChipColor = (props) =>
-  props.theme.DarkTheme ? "rgba(255,255,255,0.7)" : "#ffffff";
-
-const getChipHoverBg = (props) =>
-  props.theme.DarkTheme ? "rgba(255,255,255,0.14)" : "#2d3328";
-
-const getFocusOutline = (props) =>
-  props.theme.DarkTheme ? props.theme.keppelColor : "#006d60";
-
-const getFocusShadow = (props) =>
-  props.theme.DarkTheme ? "rgba(0,211,169,0.35)" : "rgba(0,179,159,0.3)";
-
-const getSelectedBg = (props) =>
-  props.theme.DarkTheme ? "rgba(0,211,169,0.15)" : "#f0fdfb";
-
-const getSelectedColor = (props) =>
-  props.theme.DarkTheme ? props.theme.keppelColor : "#006d60";
-
-const getSelectedBorder = (props) =>
-  props.theme.DarkTheme ? props.theme.keppelColor : "#008a7a";
-
-const getSelectedHoverBg = (props) =>
-  props.theme.DarkTheme ? "rgba(0,211,169,0.22)" : "#e0f9f5";
-
-const getSelectedHoverColor = (props) =>
-  props.theme.DarkTheme ? props.theme.keppelColor : "#00594f";
-
-const getSelectedHoverBorder = (props) =>
-  props.theme.DarkTheme ? props.theme.keppelColor : "#006d60";
-
-const getSelectedHoverShadow = (props) =>
-  props.theme.DarkTheme ? "rgba(0,211,169,0.2)" : "rgba(0,179,159,0.18)";
-
 export const CategoryFilterBar = styled.div`
   position: relative;
   margin: 1.5rem 0 2rem;
@@ -294,7 +245,11 @@ export const CategoryFilterBar = styled.div`
 
     @media screen and (max-width: 768px) {
       opacity: 1;
-      background: linear-gradient(to left, transparent, ${getFadeBg});
+      background: linear-gradient(
+        to left,
+        transparent,
+        ${(props) => props.theme.categoryFilterFadeBg}
+      );
     }
   }
 
@@ -313,7 +268,11 @@ export const CategoryFilterBar = styled.div`
 
     @media screen and (max-width: 768px) {
       opacity: 1;
-      background: linear-gradient(to right, transparent, ${getFadeBg});
+      background: linear-gradient(
+        to right,
+        transparent,
+        ${(props) => props.theme.categoryFilterFadeBg}
+      );
     }
   }
 
@@ -335,8 +294,8 @@ export const CategoryFilterBar = styled.div`
     outline: none;
     scroll-snap-align: start;
 
-    background: ${getChipBg};
-    color: ${getChipColor};
+    background: ${(props) => props.theme.categoryChipBg};
+    color: ${(props) => props.theme.categoryChipColor};
 
     transition:
       background 0.25s ease,
@@ -346,16 +305,16 @@ export const CategoryFilterBar = styled.div`
       transform 0.15s ease;
 
     &:hover {
-      background: ${getChipHoverBg};
+      background: ${(props) => props.theme.categoryChipHoverBg};
       transform: translateY(-1px);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
 
     &:focus-visible {
-      outline: 2px solid ${getFocusOutline};
+      outline: 2px solid ${(props) => props.theme.categoryChipFocusOutline};
       outline-offset: 2px;
       border-color: ${(props) => props.theme.keppelColor};
-      box-shadow: 0 0 0 3px ${getFocusShadow};
+      box-shadow: 0 0 0 3px ${(props) => props.theme.categoryChipFocusShadow};
     }
 
     &:active {
@@ -364,16 +323,17 @@ export const CategoryFilterBar = styled.div`
 
     /* ── Active / Selected = light / outlined ── */
     &.selected {
-      background: ${getSelectedBg};
-      color: ${getSelectedColor};
-      border-color: ${getSelectedBorder};
+      background: ${(props) => props.theme.categoryChipSelectedBg};
+      color: ${(props) => props.theme.categoryChipSelectedColor};
+      border-color: ${(props) => props.theme.categoryChipSelectedBorder};
       font-weight: 700;
 
       &:hover {
-        background: ${getSelectedHoverBg};
-        color: ${getSelectedHoverColor};
-        border-color: ${getSelectedHoverBorder};
-        box-shadow: 0 2px 12px ${getSelectedHoverShadow};
+        background: ${(props) => props.theme.categoryChipSelectedHoverBg};
+        color: ${(props) => props.theme.categoryChipSelectedHoverColor};
+        border-color: ${(props) => props.theme.categoryChipSelectedHoverBorder};
+        box-shadow: 0 2px 12px
+          ${(props) => props.theme.categoryChipSelectedHoverShadow};
       }
 
       .chip-count {
