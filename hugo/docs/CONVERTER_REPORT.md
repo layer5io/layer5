@@ -9,7 +9,7 @@
 | **Documents Converted** | 1006 / 1006 |
 | **Excluded Collections** | `sistent` (138 files skipped) |
 | **Skipped Templates** | 11 |
-| **Files with Warnings** | **100** |
+| **Files with Warnings** | **97** |
 | **Unowned Warning Files** | **0** |
 | **Zero-Byte Assets Logged** | 4 |
 | **Asset Normalization Renames** | 26 |
@@ -24,13 +24,12 @@ Each file lists one primary owner; a file only becomes warning-free when all of 
 | `#8308` | 34 | Out-of-bundle thumbnails and asset layout |
 | `#8402` | 24 | Content hand-fix backlog (wrapper indents, bare links, button props) |
 | `#8453` | 16 | P3-01 Blog bespoke components (`MeetTheMaintainer`, `MeetTheMeshMate`, diagrams) |
-| `#8454` | 10 | P3-02 Resources & Books bespoke components (`FAQ`, `CommonForm`, `Table`, case studies) |
 | `#8457` | 8 | P3-08 Programs & Careers bespoke components (`PositionApply`, `LfxPageNav`, `Row`, `Col`) |
+| `#8454` | 8 | P3-02 Resources & Books bespoke components (`FAQ`, `CommonForm`, `Table`, case studies) |
 | `#8456` | 5 | P3-07 Handbook bespoke components & data loops (`BadgeRow`, `Table`, `React.Fragment`, `Row/Col`, `mentorship-programs`, `recognition`, `repository-overview`) |
 | `#8401` | 1 | Imported assets backlog (`<img src={var}>`, `<CTA_FullWidth image={var}>`) |
-| `#8455` | 1 | P3-04 Events bespoke forms (`CommonForm`, `Grid2`) |
 | `#8458` | 1 | P3-13 Projects page layout (`Row`, `Col`) |
-| **Total** | **100** | **100% accounted for (sum equals files with warnings)** |
+| **Total** | **97** | **100% accounted for (sum equals files with warnings)** |
 
 ## 3. Warnings Breakdown by Key
 
@@ -38,7 +37,7 @@ Each file lists one primary owner; a file only becomes warning-free when all of 
 |---|---|---|---|
 | `asset outside page bundle` | 127 | #8308 | Images or assets pointing to `../../assets` outside the page bundle |
 | `non-literal prop expression` | 57 | #8401 / #8402 | JSX expression props (e.g. `image={var}`, `$url={link}`) |
-| `unknown components` | 41 | Phase 3 | Components not yet mapped to Hugo shortcodes |
+| `unknown components` | 38 | Phase 3 | Components not yet mapped to Hugo shortcodes |
 | `wrapper indent hazard` | 19 | #8402 | Wrapper bodies with 4+ space indents that could trigger Markdown code blocks |
 | `bare-relative link` | 7 | #8402 | Links with bare-relative paths (e.g. `<Link to="newcomer">`) |
 | `zero-byte asset` | 4 | #8308 | Zero-byte SVG files in source integrations |
@@ -53,18 +52,15 @@ Each file lists one primary owner; a file only becomes warning-free when all of 
 | `<MeetTheMaintainer>` | 11 | #8453 (P3-01) | Blog interview header component |
 | `<PositionApply>` | 7 | #8457 (P3-08) | Job application CTA button/link |
 | `<Row>` | 5 | #8457 (P3-08) / #8458 (P3-13) | Container grid row layout partial/shortcode |
-| `<Grid2>` | 3 | #8455 (P3-04) | Event grid container |
 | `<BadgeRow>` | 3 | #8456 (P3-07) | Handbook recognition badge row component |
 | `<FAQ>` | 3 | #8454 (P3-02) | Resources FAQ accordion component |
 | `<React.Fragment>` | 2 | #8456 (P3-07) | React wrapper in repository overview maintainer loop |
-| `<CommonForm>` | 2 | #8455 (P3-04) | Event signup form island |
 | `<MeshkitMesheryAdapterLib>` | 1 | #8453 (P3-01) | Architecture diagram component in blog post |
 | `<BufProtocol>` | 1 | #8453 (P3-01) | Bespoke SVG diagram component in blog post |
 | `<PerfbytesPodcast>` | 1 | #8453 (P3-01) | Audio/podcast player embed in blog post |
 | `<MeetTheMeshMate>` | 1 | #8453 (P3-01) | Blog MeshMate profile component |
 | `<Blog>` | 1 | #8453 (P3-01) | Bespoke blog listing component |
 | `<HandbookFaqAccordion>` | 1 | #8456 (P3-07) | FAQ accordion rendering `site.Data.handbook.faq` |
-| `<ContentForm>` | 1 | #8455 (P3-04) | Event speaker registration form island |
 | `<LfxPageNav>` | 1 | #8457 (P3-08) | LFX program navigation pills |
 | `<HPEintro>` | 1 | #8454 (P3-02) | HPE case study intro block |
 | `<HPEfacts>` | 1 | #8454 (P3-02) | HPE case study facts sidebar |
@@ -141,7 +137,6 @@ Every warning file outside Sistent is tracked below with its primary owning issu
 | `events/2022/servicemeshcon-EU-2022/index.mdx` | <img>: "../../../../assets/images/layer5/layer5-only/svg/layer5-no-trim.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../../assets/images/partners/intel_blue.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `events/2024/kubecon-EU-2024/index.mdx` | events/2024/kubecon-EU-2024/index.mdx: <Button> has external="true" on non-http(s) URL "/cncf-tag-network/KubeCon-EU-2024-CNCF-TAG-Network.pdf" (<Button secondary title="KubeCon EU 2024 CNCF TAG Network Slide" url="/cncf-tag-network/KubeCon-EU-2024-CNCF-TAG-Network.pdf" external={ true } />); review manually | `#8402` |
 | `events/2024/making-the-cncf-landscape-interactive-with-meshery/index.mdx` | <Button>: non-literal expression for "style" | `#8402` |
-| `events/2025/hacktoberfest-2025/index.mdx` | unknown components: Grid2 | `#8455` |
 | `handbook/community/index.mdx` | <img>: "../code-of-conduct/bullet.svg" is outside the page bundle — move it next to index.md<br><img>: "../code-of-conduct/bullet.svg" is outside the page bundle — move it next to index.md<br><img>: "../code-of-conduct/bullet.svg" is outside the page bundle — move it next to index.md<br><img>: "../code-of-conduct/bullet.svg" is outside the page bundle — move it next to index.md<br><img>: "../code-of-conduct/bullet.svg" is outside the page bundle — move it next to index.md<br><img>: "../code-of-conduct/bullet.svg" is outside the page bundle — move it next to index.md<br><img>: "../code-of-conduct/bullet.svg" is outside the page bundle — move it next to index.md<br><img>: "../code-of-conduct/bullet.svg" is outside the page bundle — move it next to index.md<br><img>: "../code-of-conduct/bullet.svg" is outside the page bundle — move it next to index.md<br><img>: "../code-of-conduct/bullet.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `handbook/connect-with-us/index.mdx` | <img>: "../../../assets/images/socialIcons/twitter.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/socialIcons/mail_keppel.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/socialIcons/youtube-light.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/socialIcons/github-light.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/socialIcons/linkedin-light.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/socialIcons/docker-light.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/socialIcons/slack-light.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `handbook/faq/index.mdx` | unknown components: HandbookFaqAccordion | `#8456` |
@@ -150,7 +145,7 @@ Every warning file outside Sistent is tracked below with its primary owning issu
 | `handbook/recognition/index.mdx` | non-literal expression for "style" on <h3><br>non-literal expression for "style" on <div><br>non-literal expression for "style" on <table><br>non-literal expression for "style" on <tr><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <table><br>non-literal expression for "style" on <tr><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <table><br>non-literal expression for "style" on <tr><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>unknown components: BadgeRow | `#8456` |
 | `handbook/repository-overview/index.mdx` | <img>: "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshery/icon-only/meshery-logo-light.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshery-operator/meshery-operator-dark.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshsync/meshsync.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/service-mesh-performance/icon/smp-dark.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshery-extensions/icon-only/meshery-extensions-color.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/academy/academy.svg" is outside the page bundle — move it next to index.md<br>non-literal expression for "key" on <div><br>non-literal expression for "key" on <table><br>non-literal expression for "key" on <tbody><br>non-literal expression for "href" on <a><br>non-literal expression for "src" on <img><br><Link>: non-literal expression for "to"<br>non-literal expression for "href" on <a><br><img>: "../../../assets/images/socialIcons/github.svg" is outside the page bundle — move it next to index.md<br>non-literal expression for "key" on <div><br>non-literal expression for "key" on <table><br>non-literal expression for "key" on <tbody><br>non-literal expression for "className" on <tr><br>non-literal expression for "className" on <img><br>non-literal expression for "src" on <img><br><Link>: non-literal expression for "to"<br>non-literal expression for "href" on <a><br><img>: "../../../assets/images/socialIcons/github.svg" is outside the page bundle — move it next to index.md<br>unknown components: React.Fragment | `#8456` |
 | `handbook/security-vulnerabilities/index.mdx` | <img>: "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshery/icon-only/meshery-logo-light.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshery-operator/meshery-operator-dark.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshsync/meshsync.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/service-mesh-performance/icon/smp-dark.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshery-extensions/icon-only/meshery-extensions-color.svg" is outside the page bundle — move it next to index.md | `#8308` |
-| `handbook/writing-program/index.mdx` | unknown components: Row, Col, ContentForm | `#8456` |
+| `handbook/writing-program/index.mdx` | unknown components: Row, Col | `#8456` |
 | `news/2022/2022-05-18-meshmark-the-cloud-native-value-measurement/meshmark-the-cloud-native-value-measurement.md` | thumbnail: "../../../../assets/images/meshmark/stacked/meshmark-dark-full.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/meshmark/stacked/meshmark-dark-full.webp" is outside the page bundle — move it next to index.md<br><Blockquote>: non-literal expression for "style" | `#8308` |
 | `programs/communitybridge/index.mdx` | <ProgramsWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
 | `programs/gsoc-2021/index.mdx` | <ProgramsWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
@@ -183,8 +178,6 @@ Every warning file outside Sistent is tracked below with its primary owning issu
 | `resources/tutorials/tutorial-on-gatsby.mdx` | thumbnail: "../../../assets/images/tutorials/intro-to-gatsby.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../assets/images/tutorials/intro-to-gatsby.webp" is outside the page bundle — move it next to index.md | `#8308` |
 | `resources/tutorials/working-with-meshery-docs-and-jekyll.mdx` | thumbnail: "../../../assets/images/tutorials/docs-jekyll.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../assets/images/tutorials/docs-jekyll.webp" is outside the page bundle — move it next to index.md | `#8308` |
 | `service-mesh-books/service-mesh-patterns/index.mdx` | unknown components: Table | `#8454` |
-| `service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-Edition/index.mdx` | unknown components: CommonForm | `#8454` |
-| `service-mesh-books/the-enterprise-path-to-service-mesh-architectures/index.mdx` | unknown components: CommonForm | `#8454` |
 
 ## 6. Owner Issues Reference
 
