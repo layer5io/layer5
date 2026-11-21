@@ -36,7 +36,7 @@ const HandbookFaqWrapper = styled.div`
       }
 
       > div {
-        &:focus {
+        &:focus:not(:focus-visible) {
           outline: none;
         }
       }

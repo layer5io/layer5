@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { HiOutlineChevronLeft } from "@react-icons/all-files/hi/HiOutlineChevronLeft";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
@@ -21,6 +21,19 @@ const TOC = () => {
     location.pathname.includes("/components")
   );
 
+  const tocListRef = useRef(null);
+
+  useEffect(() => {
+    try {
+      const saved = sessionStorage.getItem("sistent-toc-scroll");
+      if (saved && tocListRef.current) {
+        tocListRef.current.scrollTop = Number(saved) || 0;
+      }
+    } catch (e) {
+      console.warn("Could not restore Sistent TOC scroll position:", e);
+    }
+  }, []);
+
   // Fetch component data dynamically from GraphQL
   const data = useStaticQuery(graphql`
     query SistentComponentsNav {
@@ -41,7 +54,9 @@ const TOC = () => {
     }
   `);
 
-  const sortedComponentArray = data.allMdx.nodes.map((node) => ({
+  const sortedComponentArray = data.allMdx.nodes
+   .filter((node) => node.frontmatter.name && node.frontmatter.component)
+   .map((node) => ({
     name: node.frontmatter.name,
     url: `/projects/sistent/components/${node.frontmatter.component}`,
   }));
@@ -71,7 +86,17 @@ const TOC = () => {
           )}
         </div>
       </div>
-      <div className="toc-list">
+      <div
+        className="toc-list"
+        ref={tocListRef}
+        onScroll={(e) => {
+          try {
+            sessionStorage.setItem("sistent-toc-scroll", e.target.scrollTop);
+          } catch {
+            // Ignore storage errors
+          }
+        }}
+      >
         <ul className={`toc-ul ${expand ? "toc-ul-open" : ""}`}>
           <li>
             <div>

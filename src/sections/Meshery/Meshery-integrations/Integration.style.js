@@ -38,13 +38,21 @@ export const HoneycombGrid = styled.div`
     padding-right: 50px;
   }
 
+  /* Give the hexagons more room on small screens so the honeycomb pattern
+     (staggered rows) keeps its shape. */
+  @media (max-width: 540px) {
+    ul {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+
   .container-active,
   .container-inactive {
     -webkit-transform: translateZ(0);
     display: flex;
     height: 100%;
-    background: ${(props) =>
-      props.isDark ? props.theme.radialToBlue : props.theme.grey212121ToWhite};
+    background: ${(props) => (props.isDark ? props.theme.radialToBlue : props.theme.grey212121ToWhite)};
     justify-content: center;
     align-items: center;
     padding: 0.625rem;
@@ -249,9 +257,9 @@ export const CategoryFilterBar = styled.div`
         to left,
         transparent,
         ${(props) =>
-          props.theme.DarkTheme
-            ? "rgba(18,18,18,0.85)"
-            : "rgba(255,255,255,0.85)"}
+  props.theme.DarkTheme
+    ? "rgba(18,18,18,0.85)"
+    : "rgba(255,255,255,0.85)"}
       );
     }
   }
@@ -275,9 +283,9 @@ export const CategoryFilterBar = styled.div`
         to right,
         transparent,
         ${(props) =>
-          props.theme.DarkTheme
-            ? "rgba(18,18,18,0.85)"
-            : "rgba(255,255,255,0.85)"}
+      props.theme.DarkTheme
+        ? "rgba(18,18,18,0.85)"
+        : "rgba(255,255,255,0.85)"}
       );
     }
   }
@@ -301,11 +309,11 @@ export const CategoryFilterBar = styled.div`
     scroll-snap-align: start;
 
     background: ${(props) =>
-      props.theme.DarkTheme
-        ? "rgba(255,255,255,0.08)"
-        : props.theme.darkJungleGreenColor};
+          props.theme.DarkTheme
+            ? "rgba(255,255,255,0.08)"
+            : props.theme.darkJungleGreenColor};
     color: ${(props) =>
-      props.theme.DarkTheme ? "rgba(255,255,255,0.7)" : "#ffffff"};
+              props.theme.DarkTheme ? "rgba(255,255,255,0.7)" : "#ffffff"};
 
     transition:
       background 0.25s ease,
@@ -316,7 +324,7 @@ export const CategoryFilterBar = styled.div`
 
     &:hover {
       background: ${(props) =>
-        props.theme.DarkTheme ? "rgba(255,255,255,0.14)" : "#2d3328"};
+                props.theme.DarkTheme ? "rgba(255,255,255,0.14)" : "#2d3328"};
       transform: translateY(-1px);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
@@ -325,9 +333,9 @@ export const CategoryFilterBar = styled.div`
       border-color: ${(props) => props.theme.keppelColor};
       box-shadow: 0 0 0 3px
         ${(props) =>
-          props.theme.DarkTheme
-            ? "rgba(0,211,169,0.35)"
-            : "rgba(0,179,159,0.3)"};
+                  props.theme.DarkTheme
+                    ? "rgba(0,211,169,0.35)"
+                    : "rgba(0,179,159,0.3)"};
     }
 
     &:active {
@@ -337,25 +345,25 @@ export const CategoryFilterBar = styled.div`
     /* ── Active / Selected = light / outlined ── */
     &.selected {
       background: ${(props) =>
-        props.theme.DarkTheme ? "rgba(0,211,169,0.15)" : "#f0fdfb"};
+                      props.theme.DarkTheme ? "rgba(0,211,169,0.15)" : "#f0fdfb"};
       color: ${(props) =>
-        props.theme.DarkTheme
-          ? props.theme.keppelColor
-          : props.theme.secondaryColor};
+                        props.theme.DarkTheme
+                          ? props.theme.keppelColor
+                          : props.theme.secondaryColor};
       border-color: ${(props) =>
-        props.theme.DarkTheme
-          ? props.theme.keppelColor
-          : props.theme.secondaryColor};
+                            props.theme.DarkTheme
+                              ? props.theme.keppelColor
+                              : props.theme.secondaryColor};
       font-weight: 700;
 
       &:hover {
         background: ${(props) =>
-          props.theme.DarkTheme ? "rgba(0,211,169,0.22)" : "#e0f9f5"};
+                                props.theme.DarkTheme ? "rgba(0,211,169,0.22)" : "#e0f9f5"};
         box-shadow: 0 2px 12px
           ${(props) =>
-            props.theme.DarkTheme
-              ? "rgba(0,211,169,0.2)"
-              : "rgba(0,179,159,0.18)"};
+                                  props.theme.DarkTheme
+                                    ? "rgba(0,211,169,0.2)"
+                                    : "rgba(0,179,159,0.18)"};
       }
     }
 

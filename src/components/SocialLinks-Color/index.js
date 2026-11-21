@@ -24,7 +24,7 @@ const SocialLinksColor = () => {
         <Row className="social_icons">
           <CustomTooltip title="Layer5 Discussion Forum" {...tooltipProps}>
             <a
-              href="https://discuss.layer5.io"
+              href="https://discuss.meshery.io"
               target="_blank"
               rel="noreferrer"
             >
@@ -58,6 +58,7 @@ const SocialLinksColor = () => {
               target="_blank"
               rel="noreferrer"
               className="footer_twitter"
+              aria-label="Follow Layer5 on X (Twitter)"
             >
               <TwitterIcon />
             </a>

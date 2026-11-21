@@ -10,11 +10,15 @@ published: true
 
 import { ProgramsWrapper } from "../Programs.style.js";
 import Button from "../../../reusecore/Button";
-import lfx_logo from "./Linux_Foundation_logo.svg";
+import LfxLogo from "./lfx-white.svg";
+import LfxLogoLight from "./Linux_Foundation_logo.svg";
+import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
+
+export const LfxLogoImage = () => { const { isDark } = useStyledDarkMode(); return <img src={isDark ? LfxLogo : LfxLogoLight} alt="LFX logo" />; };
 
 <ProgramsWrapper>
 
-<img src={lfx_logo} alt="lfx_logo" />
+<LfxLogoImage />
 <h3>Linux Foundation 2022 Program Timeline</h3>
 
 <div>

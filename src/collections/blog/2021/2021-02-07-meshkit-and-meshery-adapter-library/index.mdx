@@ -18,7 +18,6 @@ published: true
 
 import { BlogWrapper } from "../../Blog.style.js";
 import { MeshkitMesheryAdapterLib } from "./MeshkitMesheryAdapterLib.style";
-import { Link } from "gatsby";
 
 import mesheryAdapterLibrary from "./meshery-adapter-library.svg";
 import malOverview from "./meshery-adapter-library-overview.webp";
@@ -46,7 +45,7 @@ This package provides a Kubernetes and a Helm client that implements functionali
 Another advantage MeshKit that it is not necessary to use the command line versions of these tools, providing a more tailored experience for developers,
 and better logging and error handling integration.
 
-<Link to="https://github.com/layer5io/meshkit">MeshKit</Link> is simple and straight
+<a href="https://github.com/layer5io/meshkit" target="_blank" rel="noreferrer">MeshKit</a> is simple and straight
 forward to use, as the following code example illustrates.{" "}
 
 ```go
@@ -129,7 +128,7 @@ spec:
 
 ## Meshery Adapters
 
-Meshery adapters are management plane components and manage the lifecycle of cloud native infra. This includes installation and deletion, configuration, and verification that an installation follows recommended practices. As example use of Meshery adapters is for purposes of compliance verification, actively attesting whether whether infrastructure complies to an open standard, like that of <Link to="/blog/announcements/a-standard-interface-for-service-meshes">Service Mesh Interface</Link>. Meshery adapters support management of multiple versions of their respective capabilites and also come bundled with sample applications that can be deployed for easy and quick exploration of infrastructure (or other) capabilities. <div className="fact">Meshery adapters extend Meshery's core functionality housed within Meshery Server, often deepening Meshery's ability to manage the lifecycle infratructure, but not limited to those use cases. Adapters have been known to act as engineering workflow facilititors, providing gate reviews, sending emails, and so on.</div>
+Meshery adapters are management plane components and manage the lifecycle of cloud native infra. This includes installation and deletion, configuration, and verification that an installation follows recommended practices. As example use of Meshery adapters is for purposes of compliance verification, actively attesting whether whether infrastructure complies to an open standard, like that of [Service Mesh Interface](/blog/announcements/a-standard-interface-for-service-meshes). Meshery adapters support management of multiple versions of their respective capabilites and also come bundled with sample applications that can be deployed for easy and quick exploration of infrastructure (or other) capabilities. <div className="fact">Meshery adapters extend Meshery's core functionality housed within Meshery Server, often deepening Meshery's ability to manage the lifecycle infratructure, but not limited to those use cases. Adapters have been known to act as engineering workflow facilititors, providing gate reviews, sending emails, and so on.</div>
 
 A Meshery adapter is a gRPC server that exposes the `MeshServiceServer` interface:
 
@@ -223,7 +222,7 @@ The `service` is a struct that holds all the parameters that specify an adapter 
 Extracting common code from adapters to the two new libraries has proven to be a worthwhile investment. It led to cleaner code as well as cleaner application architecture, shortened implementation time for new adapters considerably, and upleveled the quality of Meshery's adapters through consistency of implementation.
 
 
-<div className="intro">P.S. If these topics excite you and you want to explore the beautiful realm of cloud native infrastructure, come and say "Hi" on the community <Link to="http://slack.layer5.io">Slack</Link> and you are sure to be warmly welcomed. <span>😀</span></div>
+<div className="intro">P.S. If these topics excite you and you want to explore the beautiful realm of cloud native infrastructure, come and say "Hi" on the community <a href="http://slack.layer5.io" target="_blank" rel="noreferrer">Slack</a> and you are sure to be warmly welcomed. <span>😀</span></div>
 
 </MeshkitMesheryAdapterLib>
 </BlogWrapper>

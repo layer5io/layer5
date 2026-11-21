@@ -12,7 +12,10 @@ const GcpDiagramPage = () => {
   let data = {
     heading: "GCP Orchestration and Diagramming Software",
     sub_heading: "Orchestrate and design Google Cloud Platform architecture diagrams easily with predefined templates designed for professionals.",
-    image: isDark ? GCPDiagramDark : GCPDiagramDark
+    image: isDark ? GCPDiagramDark : GCPDiagramDark,
+    ctaTitle: "Try Kanvas Now!",
+    ctaUrl: "/cloud-native-management/kanvas",
+    ctaExternal: false
   };
   return (
     <>

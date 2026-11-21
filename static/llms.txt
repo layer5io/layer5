@@ -26,6 +26,6 @@
 
 ## Collaboration & Governance
 - [Layer5 Community](https://slack.layer5.io): Primary real-time hub (10k+ members) for cloud native engineering.
-- [Discussion Forum](https://discuss.layer5.io): Async architectural decision-making and technical support.
+- [Discussion Forum](https://discuss.meshery.io): Async architectural decision-making and technical support.
 - [Community Handbook](https://layer5.io/community/handbook): Operational procedures and project governance.
 

@@ -2,25 +2,24 @@ import { useEffect, useState } from "react";
 
 const useScrollPosition = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [ticking, setTicking] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
+    // Local, not state: this throttle flag must not trigger re-renders or
+    // re-run the effect (which would re-attach the listener every frame).
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(() => {
+          setScrollPosition(window.scrollY);
+          ticking = false;
+        });
+      }
     };
-  }, [ticking]);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  function handleScroll() {
-    if (!ticking) {
-      window.requestAnimationFrame(function () {
-        setScrollPosition(window.scrollY);
-        setTicking(false);
-      });
-      setTicking(true);
-    }
-  }
   return scrollPosition;
 };
 
