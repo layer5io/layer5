@@ -332,17 +332,62 @@ export function checkAssetResolvable(importPath, ctx = {}) {
   return /\.(png|jpe?g|webp|avif|svg|gif|pdf|ico|mp4|webm)$/i.test(importPath);
 }
 
+const UNITLESS_CSS_PROPS = new Set([
+  'animation-iteration-count',
+  'border-image-outset',
+  'border-image-slice',
+  'border-image-width',
+  'box-flex',
+  'box-flex-group',
+  'box-ordinal-group',
+  'column-count',
+  'columns',
+  'flex',
+  'flex-grow',
+  'flex-positive',
+  'flex-shrink',
+  'flex-negative',
+  'flex-order',
+  'grid-row',
+  'grid-row-end',
+  'grid-row-span',
+  'grid-row-start',
+  'grid-column',
+  'grid-column-end',
+  'grid-column-span',
+  'grid-column-start',
+  'font-weight',
+  'line-clamp',
+  'line-height',
+  'opacity',
+  'order',
+  'orphans',
+  'tab-size',
+  'widows',
+  'z-index',
+  'zoom',
+  'fill-opacity',
+  'flood-opacity',
+  'stop-opacity',
+  'stroke-dasharray',
+  'stroke-dashoffset',
+  'stroke-miterlimit',
+  'stroke-opacity',
+  'stroke-width',
+]);
+
 function jsxStyleToCss(val) {
   const trimmed = val.replace(/^\{|\}$/g, '').trim();
   if (!trimmed) return null;
-  const propRe = /([\w-]+)\s*:\s*["']([^"']+)["']/g;
+  const propRe = /([\w-]+)\s*:\s*(?:["']([^"']*)["']|(-?\d+(?:\.\d+)?))/g;
   const props = [];
   let m;
   let lastIndex = 0;
   while ((m = propRe.exec(trimmed)) !== null) {
     if (trimmed.slice(lastIndex, m.index).replace(/[\s,]/g, '')) return null;
     const k = m[1].replace(/([A-Z])/g, '-$1').toLowerCase();
-    props.push(`${k}: ${m[2]}`);
+    const v = m[2] !== undefined ? m[2] : (UNITLESS_CSS_PROPS.has(k) || m[3] === '0' ? m[3] : `${m[3]}px`);
+    props.push(`${k}: ${v}`);
     lastIndex = propRe.lastIndex;
   }
   if (trimmed.slice(lastIndex).replace(/[\s,]/g, '') || !props.length) return null;

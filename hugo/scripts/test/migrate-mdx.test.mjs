@@ -1027,17 +1027,19 @@ test('imported assets conversion is idempotent', () => {
   assert.equal(twice, once);
 });
 
-test('jsxStyleToCss preserves tag with warning when mixed non-string props cannot be safely converted', () => {
+test('jsxStyleToCss converts string and numeric literal style props to CSS strings and preserves non-literal expressions with warning', () => {
   const input = [
     '---',
     'title: "Style Test"',
     '---',
-    '<img src="./img.png" style={{color: "red", marginTop: 8}} />',
+    '<img src="./img.png" style={{color: "red", width: someVar}} />',
     '<img src="./valid.png" style={{color: "blue", display: "block"}} />',
+    '<img src="./numeric.png" style={{width: 100, zIndex: 10, marginTop: 8, opacity: 0.5}} />',
   ].join('\n');
   const { output, stats } = convertFile(input, { slug: 'style-test', file: 'blog/style-test/index.mdx' });
-  assert.match(output, /<img src="\.\/img\.png" style=\{\{color: "red", marginTop: 8\}\} \/>/);
+  assert.match(output, /<img src="\.\/img\.png" style=\{\{color: "red", width: someVar\}\} \/>/);
   assert.match(output, /<img src="\.\/valid\.png" style="color: blue; display: block" \/>/);
+  assert.match(output, /<img src="\.\/numeric\.png" style="width: 100px; z-index: 10; margin-top: 8px; opacity: 0.5" \/>/);
   assert.equal(stats.warnings.length, 1);
   assert.match(stats.warnings[0], /non-literal expression for "style" on <img>/);
 });

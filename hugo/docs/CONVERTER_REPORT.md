@@ -37,7 +37,7 @@ Each file lists one primary owner; a file only becomes warning-free when all of 
 | Warning Category | Occurrences | Primary Owner Issue | Description |
 |---|---|---|---|
 | `asset outside page bundle` | 127 | #8308 | Images or assets pointing to `../../assets` outside the page bundle |
-| `non-literal prop expression` | 60 | #8401 / #8402 | JSX expression props (e.g. `image={var}`, `$url={link}`) |
+| `non-literal prop expression` | 57 | #8401 / #8402 | JSX expression props (e.g. `image={var}`, `$url={link}`) |
 | `unknown components` | 41 | Phase 3 | Components not yet mapped to Hugo shortcodes |
 | `wrapper indent hazard` | 19 | #8402 | Wrapper bodies with 4+ space indents that could trigger Markdown code blocks |
 | `bare-relative link` | 7 | #8402 | Links with bare-relative paths (e.g. `<Link to="newcomer">`) |
@@ -90,7 +90,7 @@ Every warning file outside Sistent is tracked below with its primary owning issu
 | `blog/2021/2021-02-07-meshkit-and-meshery-adapter-library/index.mdx` | unknown components: MeshkitMesheryAdapterLib | `#8453` |
 | `blog/2021/2021-04-05-meshmate-of-the-year-2020-nikhil-ladha/index.mdx` | <img>: "../../../../assets/images/meshmate/meshmate-stack.svg" is outside the page bundle — move it next to index.md<br><Blockquote>: non-literal expression for "style"<br><BlockquoteAlt>: non-literal expression for "style"<br><BlockquoteAlt>: non-literal expression for "style"<br><BlockquoteAlt>: non-literal expression for "style"<br><BlockquoteAlt>: non-literal expression for "style" | `#8308` |
 | `blog/2021/2021-04-16-meet-the-maintainer-jash-patel/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review<br>unknown components: MeetTheMaintainer | `#8453` |
-| `blog/2021/2021-04-19-announcing-meshery-v0.5/index.mdx` | <img>: "../../../../assets/images/layer5/layer5-only/svg/layer5-no-trim.svg" is outside the page bundle — move it next to index.md<br>non-literal expression for "style" on <p> | `#8308` |
+| `blog/2021/2021-04-19-announcing-meshery-v0.5/index.mdx` | <img>: "../../../../assets/images/layer5/layer5-only/svg/layer5-no-trim.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `blog/2021/2021-04-24-buf-protocols/index.mdx` | unknown components: BufProtocol | `#8453` |
 | `blog/2021/2021-06-25-she-code-africa-contributhon-boot-camp/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
 | `blog/2021/2021-09-20-service-mesh-specifications-and-why-they-matter/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
@@ -158,7 +158,7 @@ Every warning file outside Sistent is tracked below with its primary owning issu
 | `programs/hacktoberfest-2021/index.mdx` | programs/hacktoberfest-2021/index.mdx: <Link> has bare-relative "to" value "newcomer" (<Link className="highlight" to="newcomer">); review manually | `#8402` |
 | `programs/hacktoberfest-2022/index.mdx` | programs/hacktoberfest-2022/index.mdx: <Link> has bare-relative "to" value "newcomer" (<Link className="highlight" to="newcomer">); review manually | `#8402` |
 | `programs/lfx-2025/lfx-2025.mdx` | programs/lfx-2025/lfx-2025.mdx: <Link> has bare-relative "to" value "" (<Link to ="">); review manually<br>programs/lfx-2025/lfx-2025.mdx: <Link> has bare-relative "to" value "community/members/mia-grenell" (<Link to ="community/members/mia-grenell">); review manually<br>programs/lfx-2025/lfx-2025.mdx: <Link> has bare-relative "to" value "" (<Link to ="">); review manually | `#8402` |
-| `programs/lfx-2026/lfx-2026.mdx` | non-literal expression for "style" on <div><br>non-literal expression for "style" on <div><br>unknown components: LfxPageNav | `#8457` |
+| `programs/lfx-2026/lfx-2026.mdx` | unknown components: LfxPageNav | `#8457` |
 | `programs/sca-contributhon/index.mdx` | <ProgramsWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
 | `projects/distributed-performance-management/index.mdx` | unknown components: Row, Col | `#8458` |
 | `resources/articles/gitops/what-is-gitops.mdx` | thumbnail: "../../../../assets/images/socialIcons/github-dark.svg" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/socialIcons/github-light.svg" is outside the page bundle — move it next to index.md | `#8308` |
