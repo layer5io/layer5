@@ -1,10 +1,15 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, withPrefix } from "gatsby";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 import { BiLinkExternal } from "@react-icons/all-files/bi/BiLinkExternal";
 import Image from "../image";
 import { CardWrapper } from "./Card.style";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
+
+// Root-relative eurl values are site assets (e.g. PDFs), so they need the
+// path prefix on prefixed builds. External URLs stay unchanged.
+const resolveExternalUrl = (url) =>
+  url.startsWith("/") && !url.startsWith("//") ? withPrefix(url) : url;
 
 const Card = ({
   frontmatter,
@@ -74,7 +79,7 @@ const Card = ({
                 </Link>
                 <a
                   className="external-link-btn"
-                  href={frontmatter.eurl}
+                  href={resolveExternalUrl(frontmatter.eurl)}
                   target="_blank"
                   rel="noreferrer noopener"
                   aria-label={`Visit external link for ${frontmatter.title}`}
@@ -95,7 +100,7 @@ const Card = ({
             {(!fields || !fields.slug) && frontmatter.eurl && (
               <a
                 className="external-link-btn"
-                href={frontmatter.eurl}
+                href={resolveExternalUrl(frontmatter.eurl)}
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label={`Visit external link for ${frontmatter.title}`}

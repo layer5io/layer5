@@ -26,8 +26,9 @@ const MembersPage = ({ location }) => {
           .filter((f) => validValues.includes(f)),
       ),
     ];
-    if (filters.length > 0) setFilter(filters);
-  }, [location.search]);
+    setFilter(filters);
+    setCurrentPage(1);
+  }, [location.key, location.search]);
   const updateUrl = (filters) => {
     window.history.replaceState(
       window.history.state,
@@ -63,7 +64,7 @@ const MembersPage = ({ location }) => {
             <ResourcesNavigation handleChange={handleChange} clear={clear} resources={filter} />
           </Col>
           <Col $xs={12} $lg={9}>
-            <ResourcesList resource={filter} currentPage={currentPage} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
+            <ResourcesList location={location} resource={filter} currentPage={currentPage} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
           </Col>
         </Row>
         <ServiceMeshFocused bookName={"service-mesh-patterns"} />
