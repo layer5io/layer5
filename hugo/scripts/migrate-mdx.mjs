@@ -443,7 +443,9 @@ function convertSegment(text, ctx) {
         }
       }
 
-      if (tagChanged && !hasUnresolved) {
+      const spreadProblems = tag.problems.filter((p) => p.startsWith('spread/expression attribute'));
+      if (spreadProblems.length) spreadProblems.forEach((p) => ctx.warn(`<${name}>: ${p}`));
+      if (tagChanged && !hasUnresolved && !spreadProblems.length) {
         const attrParts = [];
         for (const a of tag.attrs) {
           const key = a.key === 'className' ? 'class' : a.key;
