@@ -8,10 +8,6 @@ export const HPEfacts = styled("table")(({ theme }) => ({
   color: `${theme.text}`,
   border: `1px solid ${theme.primaryLightColor}`,
 
-  " > tbody > tr:first-child": {
-    padding: "0rem",
-  },
-
   " > tbody > tr:first-child th": {
     h4: {
       color: `${theme.white}`,
