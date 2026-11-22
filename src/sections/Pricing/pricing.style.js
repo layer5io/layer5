@@ -142,6 +142,7 @@ const PricingWrapper = styled.section`
     max-width: 1600px;
     position: relative;
     width: 100%;
+    padding: 0 2rem
     margin: -6rem auto;
     display: flex;
     flex-wrap: wrap;
