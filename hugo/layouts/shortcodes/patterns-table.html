@@ -1,0 +1,25 @@
+<div class="patterns-table-wrapper">
+  <table class="patterns-table">
+    <thead>
+      <tr>
+        <th>Service Mesh Pattern</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{- range site.Data.service_mesh_patterns }}
+        {{- if eq .subheading "bold" }}
+          <tr class="patterns-table__area-row">
+            <th colspan="2" class="patterns-table__area-heading">{{ .service_mesh_pattern }}</th>
+          </tr>
+        {{- else }}
+          <tr>
+            <td>{{ .service_mesh_pattern }}</td>
+            <td>{{ .category }}</td>
+          </tr>
+        {{- end }}
+      {{- end }}
+    </tbody>
+  </table>
+</div>
+

@@ -1,0 +1,29 @@
+{{- $category := .Get "category" | default "" -}}
+<div class="faq-accordion">
+  {{- $faqs := site.Data.faq -}}
+  {{- range $faqs -}}
+    {{- $match := true -}}
+    {{- if $category -}}
+      {{- $match = eq (lower .category) (lower $category) -}}
+    {{- end -}}
+    {{- if $match -}}
+      <details class="faq-item">
+        <summary><h5>{{ .question }}</h5></summary>
+        <div class="faq-answer">
+          {{- if reflect.IsSlice .answer -}}
+            {{- range .answer }}
+              <p>{{ . | markdownify }}</p>
+            {{- end -}}
+          {{- else -}}
+            {{ .answer | markdownify }}
+          {{- end -}}
+          {{- $link := .link -}}
+          {{- $linktext := .linktext | default "Learn more" -}}
+          {{- with $link }}
+            <p><a href="{{ . | relURL }}">{{ $linktext }} &rarr;</a></p>
+          {{- end }}
+        </div>
+      </details>
+    {{- end -}}
+  {{- end -}}
+</div>
