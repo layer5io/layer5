@@ -936,3 +936,110 @@ test('Blockquote, BlockquoteAlt, Callout, and InlineQuotes convert to Hugo short
   assert.equal(sistentRes.stats.unknown.Blockquote, 1);
   assert.equal(sistentRes.stats.unknown.Callout, 1);
 });
+
+test('img with imported identifier rewrites to literal src and normalizes className to class', () => {
+  const input = [
+    '---',
+    'title: "Image Import Test"',
+    '---',
+    'import SmiLogo from "./smi-logo.webp";',
+    '<img className="image-left" src={SmiLogo} alt="SMI Logo" />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'img-test', file: 'blog/img-test/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.doesNotMatch(output, /import\s+SmiLogo/);
+  assert.match(output, /<img class="image-left" src="\.\/smi-logo\.webp" alt="SMI Logo" \/>/);
+});
+
+test('Link to={ImportedPdf} resolves imported PDF to literal link', () => {
+  const input = [
+    '---',
+    'title: "PDF Import Test"',
+    '---',
+    'import DevOps from "./devops-adoption.pdf";',
+    'In this <Link to={DevOps}>infographic</Link>, we highlight metrics.',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'pdf-test', file: 'resources/pdf-test/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.doesNotMatch(output, /import\s+DevOps/);
+  assert.match(output, /\[infographic\]\(\.\/devops-adoption\.pdf\)/);
+});
+
+test('CTA_FullWidth image={var} resolves imported asset and warns if outside page bundle', () => {
+  const input = [
+    '---',
+    'title: "CTA Image Test"',
+    '---',
+    'import banner from "../../../../assets/images/banner.png";',
+    '<CTA_FullWidth title="Get Started" image={banner} />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'cta-test', file: 'resources/cta-test/index.mdx' });
+  assert.match(output, /\{\{< cta-fullwidth title="Get Started" image="\.\.\/\.\.\/\.\.\/\.\.\/assets\/images\/banner\.png" >\}\}/);
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /outside the page bundle/);
+});
+
+test('multiple imports per file are all resolved across HTML and Component tags', () => {
+  const input = [
+    '---',
+    'title: "Multi Import Test"',
+    '---',
+    'import icon1 from "./icon1.svg";',
+    'import icon2 from "./icon2.svg";',
+    'import pdfDoc from "./doc.pdf";',
+    '<img src={icon1} alt="Icon 1" />',
+    '<img src={icon2} alt="Icon 2" />',
+    '<Link to={pdfDoc}>Download</Link>',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'multi-test', file: 'blog/multi-test/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.match(output, /<img src="\.\/icon1\.svg" alt="Icon 1" \/>/);
+  assert.match(output, /<img src="\.\/icon2\.svg" alt="Icon 2" \/>/);
+  assert.match(output, /\[Download\]\(\.\/doc\.pdf\)/);
+});
+
+test('unresolved identifier leaves tag intact and emits non-literal expression warning', () => {
+  const input = [
+    '---',
+    'title: "Unresolved Test"',
+    '---',
+    '<img src={missingBadge} alt="Badge" />',
+    '<CTA_FullWidth image={missingCta} />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'unresolved-test', file: 'events/unresolved-test/index.mdx' });
+  assert.match(output, /<img src=\{missingBadge\} alt="Badge" \/>/);
+  assert.match(output, /<CTA_FullWidth image=\{missingCta\} \/>/);
+  assert.equal(stats.warnings.length, 2);
+  assert.match(stats.warnings[0], /non-literal expression for "src" on <img>/);
+  assert.match(stats.warnings[1], /<CTA_FullWidth>: non-literal expression for "image"/);
+});
+
+test('imported assets conversion is idempotent', () => {
+  const input = [
+    '---',
+    'title: "Idempotency Test"',
+    '---',
+    'import logo from "./logo.png";',
+    '<img className="test" src={logo} alt="Logo" />',
+  ].join('\n');
+  const once = convertFile(input, { slug: 'idemp-test', file: 'blog/idemp-test/index.mdx' }).output;
+  const twice = convertFile(once, { slug: 'idemp-test', file: 'blog/idemp-test/index.mdx' }).output;
+  assert.equal(twice, once);
+});
+
+test('jsxStyleToCss converts string and numeric literal style props to CSS strings and preserves non-literal expressions with warning', () => {
+  const input = [
+    '---',
+    'title: "Style Test"',
+    '---',
+    '<img src="./img.png" style={{color: "red", width: someVar}} />',
+    '<img src="./valid.png" style={{color: "blue", display: "block"}} />',
+    '<img src="./numeric.png" style={{width: 100, zIndex: 10, marginTop: 8, opacity: 0.5}} />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'style-test', file: 'blog/style-test/index.mdx' });
+  assert.match(output, /<img src="\.\/img\.png" style=\{\{color: "red", width: someVar\}\} \/>/);
+  assert.match(output, /<img src="\.\/valid\.png" style="color: blue; display: block" \/>/);
+  assert.match(output, /<img src="\.\/numeric\.png" style="width: 100px; z-index: 10; margin-top: 8px; opacity: 0.5" \/>/);
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /non-literal expression for "style" on <img>/);
+});
