@@ -10,12 +10,12 @@ import ServiceMeshFocused from "../../sections/Home/Service-mesh-focussed";
 import { Row, Col, Container } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import RssFeedIcon from "../../assets/images/socialIcons/rss-sign.svg";
-const MembersPage = () => {
+const MembersPage = ({ location }) => {
   const [filter, setFilter] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(12);
   useEffect(() => {
-    const rawFilters = getFiltersFromSearch(window.location.search);
+    const rawFilters = getFiltersFromSearch(location.search);
     const validValues = options.flatMap((o) => o.subdata.map((x) => x.value));
     const filters = [
       ...new Set(
@@ -27,7 +27,7 @@ const MembersPage = () => {
       ),
     ];
     if (filters.length > 0) setFilter(filters);
-  }, []);
+  }, [location.search]);
   const updateUrl = (filters) => {
     window.history.replaceState(
       window.history.state,
