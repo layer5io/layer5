@@ -219,6 +219,13 @@ section{
     max-height: 40rem;
     overflow-y: hidden;
 
+    @media screen and (max-width: 500px) {
+        max-width: 95vw;
+        max-height: 90vh;
+        padding: 1rem 0.5rem;
+        overflow-y: auto;
+    }
+
     &:focus:not(:focus-visible) {
         outline: none;
     }
@@ -295,12 +302,16 @@ section{
     .form-frame {
         width: 25rem;
         height: 30rem;
+        max-width: 90vw;
     }
 }
 @media screen and (max-width: 500px) {
     .form-frame {
-        width: 22rem;
-        height: 26rem;
+        width: 100%;
+        max-width: calc(95vw - 1rem);
+        height: auto;
+        max-height: 75vh;
+        overflow-y: auto;
     }
 }
 
