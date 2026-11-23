@@ -57,8 +57,14 @@ export const COMPONENTS = {
   JourneySection:   { shortcode: 'journey-section' },
   Blockquote:       { shortcode: 'blockquote' },
   BlockquoteAlt:    { shortcode: 'blockquote-alt' },
+  Blog:             { shortcode: 'blog',           paired: true },
+  BufProtocol:      { shortcode: 'buf-protocol',   paired: true },
   Callout:          { shortcode: 'callout',        paired: true },
   InlineQuotes:     { shortcode: 'inline-quotes' },
+  MeetTheMaintainer: { shortcode: 'meet-the-maintainer', paired: true },
+  MeetTheMeshMate:  { shortcode: 'meet-the-meshmate', paired: true },
+  MeshkitMesheryAdapterLib: { shortcode: 'meshkit-meshery-adapter-lib', paired: true },
+  PerfbytesPodcast: { shortcode: 'perfbytes-podcast', paired: true },
 };
 const COLLECTION_EXCLUDED_COMPONENTS = {
   sistent: new Set([
@@ -67,6 +73,7 @@ const COLLECTION_EXCLUDED_COMPONENTS = {
     'ProgramsWrapper', 'ProjectWrapper', 'ResourcesWrapper', 'BookWrapper',
     'Blockquote', 'BlockquoteAlt', 'Callout', 'InlineQuotes',
     'LfxLogoImage', 'ThemedScaLogo', 'JourneySection',
+    'Blog', 'BufProtocol', 'MeetTheMaintainer', 'MeetTheMeshMate', 'MeshkitMesheryAdapterLib', 'PerfbytesPodcast',
   ]),
 };
 const DROP_ATTRS = new Set(['className', 'class', 'style', 'key', 'ref']);
