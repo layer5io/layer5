@@ -95,7 +95,6 @@ const JourneySectionWrapper = styled.div`
           box-sizing: border-box;
           flex: 0 0 calc(33.333% - 20px);
           max-width: calc(33.333% - 20px);
-          width: calc(33.333% - 20px);
         }
         @media (max-width: 767px) {
           width: 80%;
