@@ -111,8 +111,8 @@
   "aaa5778d.js": "aaa5778d-17a0d0e77461390c30b4.js",
   "ac581ebe.js": "ac581ebe-d8f297aa0b7917a0edd2.js",
   "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff.js": "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff-c1455546bda3dfe200c8.js",
-  "app-74fe789e2aaa295db275.js.LICENSE.txt": "app-74fe789e2aaa295db275.js.LICENSE.txt",
-  "app.js": "app-74fe789e2aaa295db275.js",
+  "app-b71950961b495dc571d2.js.LICENSE.txt": "app-b71950961b495dc571d2.js.LICENSE.txt",
+  "app.js": "app-b71950961b495dc571d2.js",
   "b5f6012b.js": "b5f6012b-0d788a08c9a6ff5be2b5.js",
   "b94c7d6e898e669bbfd99da21b2e9e67976b8f68.js": "b94c7d6e898e669bbfd99da21b2e9e67976b8f68-c41c7d24dd9cb777d7a6.js",
   "ba5828f4dac0658416d102e02536a23fbd61d3fb.js": "ba5828f4dac0658416d102e02536a23fbd61d3fb-680d94241fafedb1da8d.js",
@@ -212,7 +212,7 @@
   "component---src-pages-solutions-architecture-diagram-index-js.js": "component---src-pages-solutions-architecture-diagram-index-js-2b04b3cdac8d63acd5b3.js",
   "component---src-pages-solutions-cloud-native-deployments-by-diagram-index-js.js": "component---src-pages-solutions-cloud-native-deployments-by-diagram-index-js-945c7d2f727abc432ca5.js",
   "component---src-pages-solutions-developer-defined-infrastructure-index-js.js": "component---src-pages-solutions-developer-defined-infrastructure-index-js-7f8347f438c0ba108024.js",
-  "component---src-pages-solutions-devrel-platform-for-kubernetes-and-cloud-native-content-index-js.js": "component---src-pages-solutions-devrel-platform-for-kubernetes-and-cloud-native-content-index-js-e1bd47d60e491cc94905.js",
+  "component---src-pages-solutions-devrel-platform-for-kubernetes-and-cloud-native-content-index-js.js": "component---src-pages-solutions-devrel-platform-for-kubernetes-and-cloud-native-content-index-js-d33f40594f97be3bc900.js",
   "component---src-pages-solutions-gitops-index-js.js": "component---src-pages-solutions-gitops-index-js-39a2d319274a1efd9e8b.js",
   "component---src-pages-solutions-gitops-performance-management-js.js": "component---src-pages-solutions-gitops-performance-management-js-3b4a95a8846006639506.js",
   "component---src-pages-solutions-gitops-snapshot-js.js": "component---src-pages-solutions-gitops-snapshot-js-e931adc664fe9433a211.js",
@@ -2120,5 +2120,5 @@
   "static/yash-sharma.webp": "static/yash-sharma-54aa26b6e5743f0557cfc76aa9797f2d.webp",
   "static/yogi.webp": "static/yogi-d00ca1cc48ab74938a23d4359ef3fb01.webp",
   "styles.css": "styles.51b3a82324e0c6df3359.css",
-  "webpack-runtime.js": "webpack-runtime-290d4ac3b2329c0614ed.js"
+  "webpack-runtime.js": "webpack-runtime-3326353882b3df044e46.js"
 }
