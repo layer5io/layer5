@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { convertFile, migrate, parseExcludeArg, isTemplatePath, sniffImageFormat, normalizeAssetFilename, rewriteAssetReferences } from '../migrate-mdx.mjs';
+import { convertFile, migrate, parseExcludeArg, isTemplatePath, sniffImageFormat, normalizeAssetFilename, rewriteAssetReferences, parseOpenTag } from '../migrate-mdx.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const fx = path.join(here, 'fixtures/collections');
@@ -1027,6 +1027,22 @@ test('imported assets conversion is idempotent', () => {
   assert.equal(twice, once);
 });
 
+test('lowercase HTML tag with spread attribute and imported identifier preserves tag and props with warning', () => {
+  const input = [
+    '---',
+    'title: "Spread Guard Test"',
+    '---',
+    'import logo from "./logo.png";',
+    '<img {...props} src={logo} alt="Logo" />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'spread-guard-test', file: 'blog/spread-guard-test/index.mdx' });
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /<img>: spread\/expression attribute \{\.\.\.props\}/);
+  assert.match(output, /<img \{\.\.\.props\} src=\{logo\} alt="Logo" \/>/);
+  const rerun = convertFile(output, { slug: 'spread-guard-test', file: 'blog/spread-guard-test/index.mdx' });
+  assert.equal(rerun.output, output);
+});
+
 test('jsxStyleToCss converts string and numeric literal style props to CSS strings and preserves non-literal expressions with warning', () => {
   const input = [
     '---',
@@ -1042,4 +1058,72 @@ test('jsxStyleToCss converts string and numeric literal style props to CSS strin
   assert.match(output, /<img src="\.\/numeric\.png" style="width: 100px; z-index: 10; margin-top: 8px; opacity: 0.5" \/>/);
   assert.equal(stats.warnings.length, 1);
   assert.match(stats.warnings[0], /non-literal expression for "style" on <img>/);
+});
+
+test('convertBody masks code fences so paired tags enclosing code blocks match their closing tag', () => {
+  const input = [
+    '---',
+    'title: "Fence Masking Test"',
+    '---',
+    '<Card>',
+    'Here is some code:',
+    '```go',
+    'package main',
+    'import "fmt"',
+    'func main() {',
+    '    fmt.Println("hello world")',
+    '}',
+    '```',
+    'End of card.',
+    '</Card>',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'fence-test', file: 'blog/fence-test/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.match(output, /\{\{< card >\}\}/);
+  assert.match(output, /```go\npackage main\nimport "fmt"\nfunc main\(\) \{\n    fmt\.Println\("hello world"\)\n\}\n```/);
+  assert.match(output, /\{\{< \/card >\}\}/);
+
+  // Idempotency check
+  const second = convertFile(output, { slug: 'fence-test', file: 'blog/fence-test/index.mdx' }).output;
+  assert.equal(second, output);
+});
+
+test('parseOpenTag parses static object and array literals as literal: true while flagging dynamic expressions', () => {
+  const snippet = '<CustomTag staticObj={{ key: "val", count: 42, active: true }} staticArr={[{ href: "#1", label: "One" }]} dynamicObj={{ key: someVar }} dynamicCall={getValues()} />';
+  const tag = parseOpenTag(snippet, 0);
+
+  const staticObjAttr = tag.attrs.find((a) => a.key === 'staticObj');
+  const staticArrAttr = tag.attrs.find((a) => a.key === 'staticArr');
+  const dynamicObjAttr = tag.attrs.find((a) => a.key === 'dynamicObj');
+  const dynamicCallAttr = tag.attrs.find((a) => a.key === 'dynamicCall');
+
+  assert.equal(staticObjAttr.literal, true);
+  assert.equal(staticArrAttr.literal, true);
+  assert.equal(dynamicObjAttr.literal, false);
+  assert.equal(dynamicCallAttr.literal, false);
+
+  assert.ok(tag.problems.includes('non-literal expression for "dynamicObj"'));
+  assert.ok(tag.problems.includes('non-literal expression for "dynamicCall"'));
+  assert.ok(!tag.problems.some((p) => p.includes('staticObj')));
+  assert.ok(!tag.problems.some((p) => p.includes('staticArr')));
+
+  // End-to-end test with HTML tag & style props
+  const input = [
+    '---',
+    'title: "Object Literal E2E Test"',
+    '---',
+    '<img src="./test.png" style={{ color: "red", marginTop: 12 }} />',
+    '<img src="./dynamic.png" style={{ color: dynamicColor }} />',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'obj-e2e', file: 'blog/obj-e2e/index.mdx' });
+  assert.match(output, /<img src="\.\/test\.png" style="color: red; margin-top: 12px" \/>/);
+  assert.match(output, /<img src="\.\/dynamic\.png" style=\{\{ color: dynamicColor \}\} \/>/);
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /non-literal expression for "style" on <img>/);
+
+  // Idempotency check
+  const second = convertFile(output, { slug: 'obj-e2e', file: 'blog/obj-e2e/index.mdx' }).output;
+  assert.equal(second, output);
 });
