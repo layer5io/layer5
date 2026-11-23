@@ -1027,6 +1027,22 @@ test('imported assets conversion is idempotent', () => {
   assert.equal(twice, once);
 });
 
+test('lowercase HTML tag with spread attribute and imported identifier preserves tag and props with warning', () => {
+  const input = [
+    '---',
+    'title: "Spread Guard Test"',
+    '---',
+    'import logo from "./logo.png";',
+    '<img {...props} src={logo} alt="Logo" />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'spread-guard-test', file: 'blog/spread-guard-test/index.mdx' });
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /<img>: spread\/expression attribute \{\.\.\.props\}/);
+  assert.match(output, /<img \{\.\.\.props\} src=\{logo\} alt="Logo" \/>/);
+  const rerun = convertFile(output, { slug: 'spread-guard-test', file: 'blog/spread-guard-test/index.mdx' });
+  assert.equal(rerun.output, output);
+});
+
 test('jsxStyleToCss converts string and numeric literal style props to CSS strings and preserves non-literal expressions with warning', () => {
   const input = [
     '---',
