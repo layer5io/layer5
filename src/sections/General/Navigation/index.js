@@ -23,6 +23,7 @@ import KanvasIcon from "./utility/KanvasIcon.js";
 import Layer5CloudDarkIcon from "./utility/Layer5CloudDarkIcon.svg";
 import Layer5CloudLightIcon from "./utility/Layer5CloudLightIcon.svg";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward.js";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const Navigation = () => {
   let data = useStaticQuery(graphql`
@@ -397,17 +398,25 @@ const Navigation = () => {
                               }`}
                               aria-label={`Toggle ${menu.name} submenu`}
                               aria-expanded={isExpanded}
+                              aria-controls={
+                                isExpanded
+                                  ? `mobile-submenu-${index}`
+                                  : undefined
+                              }
                               onClick={() =>
                                 setExpandedMobileMenu(isExpanded ? null : index)
                               }
                             >
-                              <span aria-hidden="true">⌄</span>
+                              <ExpandMoreIcon aria-hidden="true" />
                             </button>
                           )}
                         </div>
 
                         {hasSubmenu && isExpanded && (
-                          <ul className="mobile-submenu">
+                          <ul
+                            id={`mobile-submenu-${index}`}
+                            className="mobile-submenu"
+                          >
                             {menu.subItems &&
                               menu.subItems.map((subItems, subIndex) => (
                                 <li

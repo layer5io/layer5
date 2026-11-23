@@ -623,7 +623,6 @@ const NavigationWrap = styled.header`
     }
     .mobile-nav-item {
       padding: 1px;
-
       ul:after {
         content: "";
         display: block;
@@ -632,31 +631,26 @@ const NavigationWrap = styled.header`
         margin: 10px;
         background: ${(props) => props.theme.greyC1C1C1ToGreyB3B3B3};
       }
-
       .menu-item {
-        font-size: 1.25rem;
         font-weight: 600;
         line-height: 2rem;
+        font-size: 1.25rem;
       }
-
       a:before {
         content: none;
       }
-
       .mobile-submenu {
         display: block;
         margin: 0;
         padding: 0 0 8px 10px;
       }
     }
-
     .mobile-nav-item-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       width: 100%;
     }
-
     .mobile-nav-item-header > .menu-item {
       flex: 1;
     }
@@ -671,15 +665,17 @@ const NavigationWrap = styled.header`
       background: transparent;
       color: inherit;
       cursor: pointer;
-      font-size: 24px;
     }
-    .mobile-submenu-toggle span {
-      display: inline-block;
+    .mobile-submenu-toggle svg {
+      font-size: 28px;
       transition: transform 0.2s ease;
     }
-
-    .mobile-submenu-toggle.is-open span {
+    .mobile-submenu-toggle.is-open svg {
       transform: rotate(180deg);
+    }
+    .mobile-submenu-toggle:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: -2px;
     }
     .mobile-nav-subitem {
       padding-left: 10px;
@@ -812,6 +808,7 @@ const NavigationWrap = styled.header`
     visibility: ${(props) =>
       typeof props.theme.DarkTheme === "boolean" ? "visible" : "hidden"};
   }
+
   .toggle {
     --size: 1.5rem;
     appearance: none;
