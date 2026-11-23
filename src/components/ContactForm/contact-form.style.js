@@ -48,7 +48,7 @@ const ContactFormWrapper = styled.section`
     @media (max-width: 500px) {
       width: 100%;
       margin: 10px auto;
-      padding: 0 5px;
+      padding: 0 0.5rem;
     }
 
     .radio-field {
