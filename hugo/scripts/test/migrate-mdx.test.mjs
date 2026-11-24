@@ -1060,6 +1060,85 @@ test('jsxStyleToCss converts string and numeric literal style props to CSS strin
   assert.match(stats.warnings[0], /non-literal expression for "style" on <img>/);
 });
 
+test('Grid2 converts to grid and grid-item shortcodes with spacing and breakpoint sizes', () => {
+  const input = [
+    '---',
+    'title: "Grid Test"',
+    '---',
+    '<Grid2 container spacing={2} style={{ margin: "30px 0" }}>',
+    '  <Grid2 size={{ xs: 12, md: 6 }}>',
+    '    <h3>Event Details</h3>',
+    '    <p>October 3rd</p>',
+    '  </Grid2>',
+    '  <Grid2 size={4}>',
+    '    Earn a badge',
+    '  </Grid2>',
+    '</Grid2>',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'grid-test', file: 'events/2025/grid-test/index.mdx' });
+  assert.deepEqual(stats.warnings, []);
+  assert.match(output, /\{\{< grid spacing="2" >\}\}\n[\s\S]*\n\{\{< \/grid >\}\}/);
+  assert.match(output, /\{\{< grid-item xs="12" md="6" >\}\}\n<h3>Event Details<\/h3>\n<p>October 3rd<\/p>\n\{\{< \/grid-item >\}\}/);
+  assert.match(output, /\{\{< grid-item xs="4" >\}\}\nEarn a badge\n\{\{< \/grid-item >\}\}/);
+  assert.doesNotMatch(output, /Grid2|margin/);
+});
+
+test('Grid2 with a size or prop it cannot map warns and stays as-is', () => {
+  const input = [
+    '---',
+    'title: "Grid Test"',
+    '---',
+    '<Grid2 size="grow">Auto</Grid2>',
+    '<Grid2 size={{ xs: 12, md: "auto" }}>Mixed</Grid2>',
+    '<Grid2 container direction="row">Row</Grid2>',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'grid-test', file: 'events/2025/grid-test/index.mdx' });
+  assert.equal(stats.warnings.length, 3);
+  assert.match(stats.warnings[0], /<Grid2>: unsupported size="grow"; left as-is/);
+  assert.match(stats.warnings[1], /<Grid2>: unsupported size=\{\{ xs: 12, md: "auto" \}\}; left as-is/);
+  assert.match(stats.warnings[2], /<Grid2>: unsupported direction="row"; left as-is/);
+  assert.match(output, /<Grid2 size="grow">Auto<\/Grid2>/);
+  assert.doesNotMatch(output, /grid-item|\{\{< grid/);
+});
+
+test('CommonForm and ContentForm convert to form shortcodes and respect sistent exclusion', () => {
+  const input = [
+    '---',
+    'title: "Form Test"',
+    '---',
+    '<CommonForm',
+    '  title="Get the Free eBook"',
+    '  form="epsma-book"',
+    '  submit_title="Your copy will arrive shortly."',
+    '  submit_body={',
+    '    <>',
+    '      While waiting, take a free{" "}',
+    '      <a href="https://layer5.io/learn/learning-paths">learning path</a>.',
+    '    </>',
+    '  }',
+    '/>',
+    '<ContentForm />',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'form-test', file: 'service-mesh-books/form-test/index.mdx' });
+  assert.deepEqual(stats.warnings, []);
+  assert.match(output, /\{\{< common-form title="Get the Free eBook" form="epsma-book" submit_title="Your copy will arrive shortly\." >\}\}\nWhile waiting, take a free <a href="https:\/\/layer5\.io\/learn\/learning-paths">learning path<\/a>\.\n\{\{< \/common-form >\}\}/);
+  assert.match(output, /\{\{< content-form >\}\}/);
+
+  const sistentRes = convertFile('---\ntitle: "x"\n---\n<Grid2 container><Grid2 size={6}>A</Grid2></Grid2>\n<ContentForm />', { slug: 'form-sistent', file: 'sistent/form-test/index.mdx' });
+  assert.equal(sistentRes.stats.unknown.Grid2, 2);
+  assert.equal(sistentRes.stats.unknown.ContentForm, 1);
+});
+
+test('CommonForm whose submit_body is not text or a fragment warns and stays as-is', () => {
+  const input = '---\ntitle: "x"\n---\n<CommonForm form="epsma-book" submit_body={<span>{name}</span>} />';
+  const { output, stats } = convertFile(input, { slug: 'form-test', file: 'service-mesh-books/form-test/index.mdx' });
+  assert.deepEqual(stats.warnings, ['<CommonForm>: submit_body is not text or a <>…</> fragment; left as-is']);
+  assert.match(output, /<CommonForm form="epsma-book" submit_body=\{<span>\{name\}<\/span>\} \/>/);
+});
+
 test('convertBody masks code fences so paired tags enclosing code blocks match their closing tag', () => {
   const input = [
     '---',

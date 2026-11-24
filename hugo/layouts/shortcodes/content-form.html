@@ -1,0 +1,41 @@
+{{- /* {{< content-form >}}: Writing Program proposal form. Posts to /api/marketing/forms/contact on site.Params.forms.marketing. */ -}}
+{{- $base := strings.TrimSuffix "/" (site.Params.forms.marketing | default "") -}}
+{{- $id := printf "content-form-%d" .Ordinal -}}
+<section class="lead-form">
+  <form data-marketing-form="content" data-endpoint="{{ with $base }}{{ . }}/api/marketing/forms/contact{{ end }}" novalidate>
+    <label for="{{ $id }}-email">Email Address <span class="req" aria-hidden="true">*</span></label>
+    <input id="{{ $id }}-email" name="email" type="email" required autocomplete="email">
+    <label for="{{ $id }}-name">Name <span class="req" aria-hidden="true">*</span></label>
+    <input id="{{ $id }}-name" name="name" required autocomplete="name">
+    <fieldset>
+      <legend>Are you a member of the Layer5 Slack Community? <span class="req" aria-hidden="true">*</span></legend>
+      <label><input type="radio" name="slack" value="yes" required> Yes</label>
+      <label><input type="radio" name="slack" value="no"> No</label>
+    </fieldset>
+    <label for="{{ $id }}-slack-name">If yes, please mention your username on Slack. If no, you are welcome to join <a href="https://slack.layer5.io/">slack.layer5.io</a></label>
+    <input id="{{ $id }}-slack-name" name="slackName" maxlength="32">
+    <fieldset>
+      <legend>Choose the type of content <span class="req" aria-hidden="true">*</span></legend>
+      <label><input type="radio" name="content" value="blog" required> Blog Post</label>
+      <label><input type="radio" name="content" value="article"> Article</label>
+      <label><input type="radio" name="content" value="tutorial"> Tutorial</label>
+      <label><input type="radio" name="content" value="workshop"> Workshop</label>
+      <label><input type="radio" name="content" value="event"> Event</label>
+      <label><input type="radio" name="content" value="other"> Other</label>
+    </fieldset>
+    <label for="{{ $id }}-title">Title</label>
+    <input id="{{ $id }}-title" name="title">
+    <label for="{{ $id }}-details">Details</label>
+    <input id="{{ $id }}-details" name="details">
+    <label for="{{ $id }}-comment">Comments</label>
+    <input id="{{ $id }}-comment" name="comment">
+    {{- partial "marketing-honeypot.html" $id }}
+    <p class="form-status" role="status" aria-live="polite"></p>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+  <div class="lead-form__done" tabindex="-1" hidden>
+    <h2>Thank you for your interest in the Layer5 Writing Program!</h2>
+    <p>You will soon receive detailed guidance from our content team. We'll get back to you as soon as we can.</p>
+    {{ partial "marketing-thanks.html" }}
+  </div>
+</section>

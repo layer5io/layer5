@@ -61,6 +61,10 @@ export const COMPONENTS = {
   BufProtocol:      { shortcode: 'buf-protocol',   paired: true },
   Callout:          { shortcode: 'callout',        paired: true },
   InlineQuotes:     { shortcode: 'inline-quotes' },
+  // exprAttrs: JSX expression props the custom converter reads or drops itself, so they neither warn nor block conversion
+  Grid2:            { custom: 'grid', exprAttrs: new Set(['size', 'spacing', 'style']) },
+  CommonForm:       { custom: 'common-form', exprAttrs: new Set(['submit_body']) },
+  ContentForm:      { shortcode: 'content-form' },
   MeetTheMaintainer: { shortcode: 'meet-the-maintainer', paired: true },
   MeetTheMeshMate:  { shortcode: 'meet-the-meshmate', paired: true },
   MeshkitMesheryAdapterLib: { shortcode: 'meshkit-meshery-adapter-lib', paired: true },
@@ -73,6 +77,7 @@ const COLLECTION_EXCLUDED_COMPONENTS = {
     'ProgramsWrapper', 'ProjectWrapper', 'ResourcesWrapper', 'BookWrapper',
     'Blockquote', 'BlockquoteAlt', 'Callout', 'InlineQuotes',
     'LfxLogoImage', 'ThemedScaLogo', 'JourneySection',
+    'Grid2', 'CommonForm', 'ContentForm',
     'Blog', 'BufProtocol', 'MeetTheMaintainer', 'MeetTheMeshMate', 'MeshkitMesheryAdapterLib', 'PerfbytesPodcast',
   ]),
 };
@@ -411,6 +416,62 @@ function jsxStyleToCss(val) {
   return props.join('; ');
 }
 
+const GRID_BREAKPOINTS = new Set(['xs', 'sm', 'md', 'lg', 'xl']);
+
+/** Parse a Grid2 size expression such as `{ xs: 12, md: 6 }` into [breakpoint, columns] pairs, or null. */
+function parseGridSize(expr) {
+  const obj = /^\{([\s\S]*)\}$/.exec(expr.trim());
+  if (!obj) return null;
+  const pairs = obj[1].split(',').map((s) => s.trim()).filter(Boolean).map((s) => /^(\w+)\s*:\s*(\d+)$/.exec(s));
+  if (!pairs.length || pairs.some((m) => !m || !GRID_BREAKPOINTS.has(m[1]))) return null;
+  return pairs.map(([, bp, n]) => [bp, n]);
+}
+
+/** <Grid2 container spacing={2}> becomes {{< grid >}}, <Grid2 size={…}> becomes {{< grid-item >}}. */
+function convertGrid(tag, children, ctx, rawFull) {
+  const container = tag.attrs.some((a) => a.key === 'container' && a.value !== 'false');
+  const params = [];
+  for (const a of tag.attrs) {
+    if (a.key === 'container' || DROP_ATTRS.has(a.key)) continue;
+    const sizes = !container && a.key === 'size' && (/^\d+$/.test(a.value) ? [['xs', a.value]] : parseGridSize(a.value));
+    if (sizes) params.push(...sizes);
+    else if (container && a.key === 'spacing' && a.literal && /^\d+(\.\d+)?$/.test(a.value)) params.push(['spacing', a.value]);
+    else {
+      const braced = !a.literal || a.value.startsWith('{');
+      ctx.warn(`<Grid2>: unsupported ${a.key}=${braced ? `{${a.value}}` : `"${a.value}"`}; left as-is`);
+      return rawFull;
+    }
+  }
+  const { text, hasIndentHazard } = dedentWrapperBody(children);
+  if (hasIndentHazard) {
+    ctx.warn('<Grid2>: body has 4+ space indented line after dedent; left as-is for manual review');
+    return rawFull;
+  }
+  const shortcode = container ? 'grid' : 'grid-item';
+  const attrStr = params.map(([k, v]) => ` ${k}=${fmtValue(v)}`).join('');
+  return `{{< ${shortcode}${attrStr} >}}\n${text}\n{{< /${shortcode} >}}`;
+}
+
+/** Text of a JSX fragment like <>Take a{" "}<a href="…">path</a>.</>, or null if it holds other expressions. */
+function jsxFragmentText(expr) {
+  const m = /^<>([\s\S]*)<\/>$/.exec(expr.trim());
+  if (!m) return null;
+  const text = m[1].replace(/\{\s*(["'])\s*\1\s*\}/g, ' ');
+  return /[{}]/.test(text) ? null : text.replace(/\s+/g, ' ').trim();
+}
+
+/** <CommonForm …> becomes a paired {{< common-form >}} whose body is the submit_body shown after submitting. */
+function convertCommonForm(tag, ctx, rawTag, rawFull) {
+  const bodyAttr = tag.attrs.find((a) => a.key === 'submit_body');
+  const body = !bodyAttr ? '' : bodyAttr.literal ? bodyAttr.value : jsxFragmentText(bodyAttr.value);
+  if (body === null) {
+    ctx.warn('<CommonForm>: submit_body is not text or a <>…</> fragment; left as-is');
+    return rawFull;
+  }
+  const rest = { ...tag, attrs: tag.attrs.filter((a) => a !== bodyAttr) };
+  return buildShortcode({ shortcode: 'common-form', paired: true }, rest, body, ctx, rawTag);
+}
+
 /* ---------------------------------------------------------------- body conversion */
 function convertSegment(text, ctx) {
   let out = '', i = 0;
@@ -510,7 +571,7 @@ function convertSegment(text, ctx) {
     if (spec.custom === 'unwrap') { out += text.slice(m.index, tag.end); i = tag.end; continue; }
 
     const hasUnresolvedNonLiteral = tag.attrs.some(
-      (a) => !a.literal && !DROP_ATTRS.has(a.key) && a.key !== 'key' && a.key !== 'ref' && !spec.drop?.has(a.key)
+      (a) => !a.literal && !DROP_ATTRS.has(a.key) && a.key !== 'key' && a.key !== 'ref' && !spec.drop?.has(a.key) && !spec.exprAttrs?.has(a.key)
     );
     if (hasUnresolvedNonLiteral) {
       tag.problems.forEach((p) => ctx.warn(`<${name}>: ${p}`));
@@ -523,7 +584,9 @@ function convertSegment(text, ctx) {
       i = end;
       continue;
     }
-    tag.problems.forEach((p) => ctx.warn(`<${name}>: ${p}`));
+    tag.problems
+      .filter((p) => !spec.exprAttrs?.has(/^non-literal expression for "(.+)"$/.exec(p)?.[1]))
+      .forEach((p) => ctx.warn(`<${name}>: ${p}`));
     let children = '', end = tag.end;
     if (!tag.selfClosing) {
       const c = findClose(text, tag.end, name);
@@ -536,6 +599,10 @@ function convertSegment(text, ctx) {
       out += convertLink(tag, children, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
     } else if (spec.custom === 'code') {
       out += convertCode(tag, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
+    } else if (spec.custom === 'grid') {
+      out += convertGrid(tag, children, ctx, text.slice(m.index, end));
+    } else if (spec.custom === 'common-form') {
+      out += convertCommonForm(tag, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
     } else {
       out += buildShortcode(spec, tag, children, ctx, text.slice(m.index, tag.end));
     }
