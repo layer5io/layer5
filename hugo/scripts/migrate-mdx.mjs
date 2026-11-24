@@ -617,8 +617,7 @@ function convertSegment(text, ctx) {
       }
     }
 
-    const rawSpec = resolveComponentSpec(name, ctx.collection);
-    const spec = ((name === 'Col' || name === 'Row') && tag && !tag.attrs.length) ? null : rawSpec;
+    const spec = resolveComponentSpec(name, ctx.collection);
     if (!spec) {
       ctx.unknown(name);
       const marker = `<!-- TODO(mdx): unconverted component <${name}> -->\n`;
@@ -628,8 +627,9 @@ function convertSegment(text, ctx) {
     }
     if (spec.custom === 'unwrap') { out += text.slice(m.index, tag.end); i = tag.end; continue; }
 
+    const isAttrDropped = (k) => (!spec.keepClass || (k !== 'className' && k !== 'class')) && (DROP_ATTRS.has(k) || spec.drop?.has(k));
     const hasUnresolvedNonLiteral = tag.attrs.some(
-      (a) => !a.literal && !DROP_ATTRS.has(a.key) && a.key !== 'key' && a.key !== 'ref' && !spec.drop?.has(a.key) && !spec.exprAttrs?.has(a.key)
+      (a) => !a.literal && !isAttrDropped(a.key) && a.key !== 'key' && a.key !== 'ref' && !spec.exprAttrs?.has(a.key)
     );
     if (hasUnresolvedNonLiteral) {
       tag.problems.forEach((p) => ctx.warn(`<${name}>: ${p}`));
