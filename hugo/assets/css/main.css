@@ -129,6 +129,34 @@ th, td { text-align: left; padding: .6rem .8rem; border-bottom: 1px solid var(--
 .pagination { display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; }
 .list-rows li { padding: .6rem 0; border-bottom: 1px solid var(--line); }
 
+/* blog bespoke components */
+.meet-the-maintainer, .meet-the-meshmate, .meshkit-meshery-adapter-lib, .buf-protocol, .perfbytes-podcast, .blog-badge-layout { margin-block: 1rem; }
+.meet-the-maintainer .interviewer, .meet-the-meshmate .interviewer { margin-top: 1.25rem; text-align: left; }
+.meet-the-maintainer .interviewer span, .meet-the-meshmate .interviewer span { font-weight: 600; font-style: normal; }
+.meet-the-maintainer .interviewee, .meet-the-meshmate .interviewee { display: flex; flex-direction: column; justify-content: flex-start; color: var(--text); font-style: italic; text-align: left; border-left: 2px solid var(--accent); padding-left: 2rem; margin-block: 0.75rem; }
+.meet-the-maintainer .interviewee span, .meet-the-meshmate .interviewee span { font-weight: 600; font-style: normal; }
+.meet-the-maintainer .interviewee p::before, .meet-the-meshmate .interviewee p::before { content: '“'; }
+.meet-the-maintainer .interviewee p::after, .meet-the-meshmate .interviewee p::after { content: '”'; }
+.meet-the-meshmate .intro { word-spacing: 0.5rem; }
+.meet-the-maintainer .note, .meet-the-meshmate .note, .meshkit-meshery-adapter-lib .note, .buf-protocol .note { margin: 1rem 0; padding: 1.5rem 2rem; display: flex; align-items: center; border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: var(--radius); background: var(--surface); }
+.meet-the-maintainer .note img, .meet-the-meshmate .note img, .meshkit-meshery-adapter-lib .note img, .buf-protocol .note img { margin-right: 2rem; }
+.meet-the-maintainer .centered-text, .meet-the-meshmate .centered-text, .meshkit-meshery-adapter-lib .centered-text, .buf-protocol .centered-text { padding-block: 1.5rem; font-size: 1.2rem; font-weight: 600; text-align: center; }
+.meshkit-meshery-adapter-lib .fact, .buf-protocol .fact { display: flex; flex-direction: column; justify-content: flex-start; color: var(--accent-ink); font-style: italic; font-size: 1.25rem; font-weight: 600; text-align: right; border-right: 4px solid var(--accent); padding: 0.75rem 1.5rem; margin-block: 1rem; }
+.buf-protocol .fact-left { display: flex; flex-direction: column; justify-content: flex-start; color: var(--accent-ink); font-style: italic; font-size: 1.25rem; font-weight: 600; text-align: left; border-left: 4px solid var(--accent); padding: 0.75rem 1.5rem; margin-block: 1rem; }
+.buf-protocol .fact-center { display: flex; flex-direction: column; justify-content: flex-start; color: var(--accent-ink); font-style: italic; font-size: 1.25rem; font-weight: 600; text-align: center; border-left: 4px solid var(--accent); border-right: 4px solid var(--accent); padding: 0.75rem 1.5rem; margin-block: 1rem; }
+.buf-protocol .problem-image { display: inline; float: right; max-width: 200px; width: 80%; padding: 1.25rem; }
+@media (min-width: 48rem) { .buf-protocol .problem-image { display: flex; margin-inline: auto; float: none; } }
+.perfbytes-podcast .answer { margin: 1rem 0; display: flex; flex-direction: column; justify-content: flex-start; color: var(--text); font-style: italic; text-align: left; border-left: 2px solid var(--accent); padding-left: 2rem; }
+.perfbytes-podcast .answer span { font-weight: 600; font-style: normal; }
+.blog-badge-layout img.badge-modal { display: inline; float: right; margin: .5rem; max-width: min(100%, 625px); }
+.blog-badge-layout .badge-grid { display: flex; flex-wrap: wrap; text-align: center; flex-direction: row; justify-content: center; gap: 1rem; margin-block: 1.5rem; }
+.blog-badge-layout .badge-grid > div { display: flex; flex-direction: column; flex-grow: 1; flex-basis: 18%; max-width: 20%; margin: 0.5rem; align-items: center; }
+.blog-badge-layout .badge-grid > div > span { font-weight: bold; padding-top: 0.8rem; }
+.blog-badge-layout .badge-grid > div > img { max-width: 225px; height: auto; }
+@media (max-width: 75rem) { .blog-badge-layout .badge-grid > div { max-width: 29%; flex-basis: 28%; } }
+@media (max-width: 62rem) { .blog-badge-layout .badge-grid > div { max-width: 45%; flex-basis: 44%; } }
+@media (max-width: 42rem) { .blog-badge-layout .badge-grid > div { max-width: 95%; flex-basis: 95%; } }
+
 @media (max-width: 62rem) { .docs { grid-template-columns: 1fr; } .docs__nav, .docs__toc { position: static; } .hero__grid, .footer-grid { grid-template-columns: 1fr; } }
 @media (max-width: 40rem) { .hide-sm { display: none; } .site-header__inner { gap: .75rem; } }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }

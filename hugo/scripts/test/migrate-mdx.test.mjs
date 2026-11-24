@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { convertFile, migrate, parseExcludeArg, isTemplatePath, sniffImageFormat, normalizeAssetFilename, rewriteAssetReferences } from '../migrate-mdx.mjs';
+import { convertFile, migrate, parseExcludeArg, isTemplatePath, sniffImageFormat, normalizeAssetFilename, rewriteAssetReferences, parseOpenTag } from '../migrate-mdx.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const fx = path.join(here, 'fixtures/collections');
@@ -66,6 +66,67 @@ test('front matter: aliases, thumbnail, slug, published', () => {
   assert.match(fm, /slug: sample-post/);
 });
 
+test('front matter: dark and SVG thumbnail keys are checked like thumbnail', () => {
+  const fm = 'title: T\ndarkthumbnail: ./dark.png\nthumbnail_svg: ../../shared.svg\ndarkthumbnail_svg: ../../shared-dark.svg';
+  const { output, stats } = convertFile(`---\n${fm}\n---\nBody\n`, { slug: 't' });
+  assert.match(output, /^darkthumbnail: dark\.png$/m);
+  assert.ok(stats.warnings.some((w) => /^thumbnail_svg: .* outside the page bundle/.test(w)));
+  assert.ok(stats.warnings.some((w) => /^darkthumbnail_svg: .* outside the page bundle/.test(w)));
+});
+
+test('front matter: ../ images are pulled into the bundle when the source folder is known', () => {
+  const dir = path.join(fx, 'blog/sample-post');
+  const { output, stats } = convertFile(fs.readFileSync(path.join(dir, 'index.mdx'), 'utf8'), { slug: 'sample-post', dir });
+  assert.match(output, /^darkthumbnail: logo\.svg$/m);
+  assert.deepEqual(stats.assets, [{ from: path.join(here, 'fixtures/assets/logo.svg'), name: 'logo.svg' }]);
+  assert.ok(!stats.warnings.some((w) => /outside the page bundle/.test(w)));
+});
+
+test('front matter: missing or clashing ../ images keep the warning and the original path', () => {
+  const dir = path.join(fx, 'blog/sample-post');
+  // cover.png already lives in the bundle, so the shared cover.png must not replace it
+  const fm = 'title: T\nimage: ../../../assets/cover.png\ncover: ../../../assets/nope.png';
+  const { output, stats } = convertFile(`---\n${fm}\n---\nBody\n`, { slug: 't', dir });
+  assert.match(output, /^image: \.\.\/\.\.\/\.\.\/assets\/cover\.png$/m);
+  assert.match(output, /^cover: \.\.\/\.\.\/\.\.\/assets\/nope\.png$/m);
+  assert.deepEqual(stats.assets, []);
+  assert.equal(stats.warnings.filter((w) => /outside the page bundle/.test(w)).length, 2);
+});
+
+test('front matter: misnamed or already-taken ../ images keep the warning and the original path', () => {
+  const src = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-bundle-'));
+  const dir = path.join(src, 'blog/post');
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(src, 'blog/misnamed.jpg'), Buffer.from([0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A]));
+  fs.writeFileSync(path.join(src, 'blog/logo.svg'), '<svg></svg>');
+  const fm = 'title: T\nthumbnail: ../misnamed.jpg\ndarkthumbnail: ../logo.svg';
+  const { output, stats } = convertFile(`---\n${fm}\n---\nBody\n`, { slug: 't', dir, taken: (n) => n === 'logo.svg' });
+  assert.match(output, /^thumbnail: \.\.\/misnamed\.jpg$/m);
+  assert.match(output, /^darkthumbnail: \.\.\/logo\.svg$/m);
+  assert.deepEqual(stats.assets, []);
+  assert.equal(stats.warnings.filter((w) => /outside the page bundle/.test(w)).length, 2);
+});
+
+test('migrate(): ../ images are only bundled for index pages and never overwrite a renamed asset', () => {
+  const src = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-bundle-src-'));
+  const dest = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-bundle-dest-'));
+  const png = Buffer.from([0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A]);
+  fs.mkdirSync(path.join(src, 'blog/post'), { recursive: true });
+  fs.mkdirSync(path.join(src, 'blog/shared'), { recursive: true });
+  fs.writeFileSync(path.join(src, 'blog/post/photo.jpg'), png);
+  fs.writeFileSync(path.join(src, 'blog/shared/photo.png'), Buffer.concat([png, Buffer.from('shared')]));
+  fs.writeFileSync(path.join(src, 'blog/shared/leaf.svg'), '<svg></svg>');
+  fs.writeFileSync(path.join(src, 'blog/post/index.mdx'), '---\ntitle: P\nthumbnail: ./photo.jpg\ndarkthumbnail: ../shared/photo.png\n---\nBody\n');
+  fs.writeFileSync(path.join(src, 'blog/leaf.mdx'), '---\ntitle: L\nthumbnail: ../blog/shared/leaf.svg\n---\nBody\n');
+
+  const r = migrate({ src, dest });
+  assert.equal(r.assetsBundled, 0);
+  assert.deepEqual(fs.readFileSync(path.join(dest, 'blog/post/photo.png')), png);
+  assert.match(fs.readFileSync(path.join(dest, 'blog/post/index.md'), 'utf8'), /^darkthumbnail: \.\.\/shared\/photo\.png$/m);
+  assert.ok(!fs.existsSync(path.join(dest, 'blog/leaf.svg')));
+  assert.ok(r.warnings.some((w) => /leaf\.mdx$/.test(w.file) && /thumbnail: .* outside the page bundle/.test(w.message)));
+});
+
 test('published:false → draft:true; plain markdown passes through', () => {
   const { output } = convertFile(fs.readFileSync(path.join(fx, 'members/jane.md'), 'utf8'), { slug: 'jane' });
   assert.match(output, /draft: true/);
@@ -85,6 +146,9 @@ test('migrate(): maps index.mdx → index.md, copies assets, reports per collect
   assert.equal(r.assetsCopied, 1);
   assert.ok(fs.existsSync(path.join(dest, 'blog/sample-post/index.md')));
   assert.ok(fs.existsSync(path.join(dest, 'blog/sample-post/cover.png')));
+  assert.equal(r.assetsBundled, 1);
+  assert.ok(fs.existsSync(path.join(dest, 'blog/sample-post/logo.svg')));
+  assert.match(fs.readFileSync(path.join(dest, 'blog/sample-post/index.md'), 'utf8'), /^darkthumbnail: logo\.svg$/m);
   assert.equal(r.byCollection.blog.converted, 1);
   assert.equal(r.byCollection.members.converted, 1);
   const dry = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-dry-'));
@@ -758,4 +822,373 @@ test('Wrappers warn and leave tag as-is when body has mixed 0-space and 4+ space
   assert.match(stats.warnings[0], /4\+ space indented line after dedent/);
   assert.match(output, /<BlogWrapper>/);
   assert.match(output, /\[link\]\(\/blog\)/);
+});
+
+test('CodeBlock converts self-closing code or codeString attribute to fenced code block with jsx default fallback', () => {
+  const input = [
+    '---',
+    'title: "CodeBlock Test"',
+    '---',
+    '<CodeBlock name="basic-accordion" collapsible code={`<Accordion>',
+    '  <Typography>Panel 1</Typography>',
+    '</Accordion>`} />',
+    '<CodeBlock language="bash" code={`mesheryctl system start`} />',
+    '<CodeBlock name="nested" code={`const x = \\`\\`\\`fence\\`\\`\\`;`} />',
+    '<CodeBlock name="dynamic" code={basicCode} />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'codeblock-test', file: 'sistent/components/accordion/code.mdx' });
+  assert.match(output, /```jsx\n<Accordion>\n  <Typography>Panel 1<\/Typography>\n<\/Accordion>\n```/);
+  assert.match(output, /```bash\nmesheryctl system start\n```/);
+  assert.match(output, /````jsx\nconst x = ```fence```;\n````/);
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /non-literal expression for "code"/);
+  assert.match(output, /<CodeBlock name="dynamic" code=\{basicCode\} \/>/);
+});
+
+test('stripExportConst removes export const statements deterministically while preserving code fences and flagging other exports', () => {
+  const input = [
+    '---',
+    'title: "Export Strip Test"',
+    '---',
+    'export const data = programs_data;',
+    'export const tableWrap = { overflowX: "auto" };',
+    'export const faqData = [',
+    '  {',
+    '    question: "Is this open source?",',
+    '    answer: "Yes, Apache V2."',
+    '  }',
+    '];',
+    'export const JourneySection = () => {',
+    '  const [hover, setHover] = useState(false);',
+    '  return <div className="journey">Hello</div>;',
+    '};',
+    '```javascript',
+    'export const preservedInFence = true;',
+    '```',
+    'export default function Page() { return null; }',
+    'Content continues after exports.',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'export-test', file: 'handbook/about/index.mdx' });
+  assert.doesNotMatch(output, /export const data/);
+  assert.doesNotMatch(output, /export const tableWrap/);
+  assert.doesNotMatch(output, /export const faqData/);
+  assert.doesNotMatch(output, /export const JourneySection/);
+  assert.match(output, /export const preservedInFence = true;/);
+  assert.match(output, /Content continues after exports\./);
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /contains `export` statements/);
+});
+
+test('stripExportConst leaves unterminated export const untouched and warns', () => {
+  const input = [
+    '---',
+    'title: "Unterminated Export"',
+    '---',
+    'export const data = programs_data',
+    '',
+    'Content continues.',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'unterminated-test', file: 'programs/test/index.mdx' });
+  assert.match(output, /export const data = programs_data/);
+  assert.match(output, /Content continues\./);
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /contains `export` statements/);
+});
+
+test('LfxLogoImage, ThemedScaLogo, and JourneySection convert to shortcodes', () => {
+  const input = [
+    '---',
+    'title: "Shortcode Components"',
+    '---',
+    '<LfxLogoImage />',
+    '<ThemedScaLogo />',
+    '<JourneySection />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'shortcodes', file: 'programs/lfx-2021/lfx-2021.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.match(output, /\{\{< lfx-logo >\}\}/);
+  assert.match(output, /\{\{< themed-sca-logo >\}\}/);
+  assert.match(output, /\{\{< journey-section >\}\}/);
+});
+
+test('Blockquote, BlockquoteAlt, Callout, and InlineQuotes convert to Hugo shortcodes and respect sistent exclusion', () => {
+  const input = [
+    '---',
+    'title: "Quote and Callout Test"',
+    '---',
+    '<Blockquote quote="Meshery is great." person="Prateek Tripathy" title="Maintainer" />',
+    '<BlockquoteAlt quote="Community first." person="Michael Gfeller" />',
+    '<Callout type="tip" title="No Cluster Required">Install mesheryctl to get started.</Callout>',
+    '<InlineQuotes quote="Decisive for productivity." person="Mohd Hamza Shaikh" title="Platform Engineer" />',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'quote-test', file: 'blog/2026/quote-test/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.match(output, /\{\{< blockquote quote="Meshery is great\." person="Prateek Tripathy" title="Maintainer" >\}\}/);
+  assert.match(output, /\{\{< blockquote-alt quote="Community first\." person="Michael Gfeller" >\}\}/);
+  assert.match(output, /\{\{< callout type="tip" title="No Cluster Required" >\}\}\nInstall mesheryctl to get started\.\n\{\{< \/callout >\}\}/);
+  assert.match(output, /\{\{< inline-quotes quote="Decisive for productivity\." person="Mohd Hamza Shaikh" title="Platform Engineer" >\}\}/);
+
+  // Sistent collection guard
+  const sistentRes = convertFile(input, { slug: 'quote-sistent', file: 'sistent/quote-test/index.mdx' });
+  assert.match(sistentRes.output, /<!-- TODO\(mdx\): unconverted component <Blockquote> -->/);
+  assert.match(sistentRes.output, /<!-- TODO\(mdx\): unconverted component <Callout> -->/);
+  assert.equal(sistentRes.stats.unknown.Blockquote, 1);
+  assert.equal(sistentRes.stats.unknown.Callout, 1);
+});
+
+test('img with imported identifier rewrites to literal src and normalizes className to class', () => {
+  const input = [
+    '---',
+    'title: "Image Import Test"',
+    '---',
+    'import SmiLogo from "./smi-logo.webp";',
+    '<img className="image-left" src={SmiLogo} alt="SMI Logo" />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'img-test', file: 'blog/img-test/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.doesNotMatch(output, /import\s+SmiLogo/);
+  assert.match(output, /<img class="image-left" src="\.\/smi-logo\.webp" alt="SMI Logo" \/>/);
+});
+
+test('Link to={ImportedPdf} resolves imported PDF to literal link', () => {
+  const input = [
+    '---',
+    'title: "PDF Import Test"',
+    '---',
+    'import DevOps from "./devops-adoption.pdf";',
+    'In this <Link to={DevOps}>infographic</Link>, we highlight metrics.',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'pdf-test', file: 'resources/pdf-test/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.doesNotMatch(output, /import\s+DevOps/);
+  assert.match(output, /\[infographic\]\(\.\/devops-adoption\.pdf\)/);
+});
+
+test('CTA_FullWidth image={var} resolves imported asset and warns if outside page bundle', () => {
+  const input = [
+    '---',
+    'title: "CTA Image Test"',
+    '---',
+    'import banner from "../../../../assets/images/banner.png";',
+    '<CTA_FullWidth title="Get Started" image={banner} />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'cta-test', file: 'resources/cta-test/index.mdx' });
+  assert.match(output, /\{\{< cta-fullwidth title="Get Started" image="\.\.\/\.\.\/\.\.\/\.\.\/assets\/images\/banner\.png" >\}\}/);
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /outside the page bundle/);
+});
+
+test('multiple imports per file are all resolved across HTML and Component tags', () => {
+  const input = [
+    '---',
+    'title: "Multi Import Test"',
+    '---',
+    'import icon1 from "./icon1.svg";',
+    'import icon2 from "./icon2.svg";',
+    'import pdfDoc from "./doc.pdf";',
+    '<img src={icon1} alt="Icon 1" />',
+    '<img src={icon2} alt="Icon 2" />',
+    '<Link to={pdfDoc}>Download</Link>',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'multi-test', file: 'blog/multi-test/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.match(output, /<img src="\.\/icon1\.svg" alt="Icon 1" \/>/);
+  assert.match(output, /<img src="\.\/icon2\.svg" alt="Icon 2" \/>/);
+  assert.match(output, /\[Download\]\(\.\/doc\.pdf\)/);
+});
+
+test('unresolved identifier leaves tag intact and emits non-literal expression warning', () => {
+  const input = [
+    '---',
+    'title: "Unresolved Test"',
+    '---',
+    '<img src={missingBadge} alt="Badge" />',
+    '<CTA_FullWidth image={missingCta} />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'unresolved-test', file: 'events/unresolved-test/index.mdx' });
+  assert.match(output, /<img src=\{missingBadge\} alt="Badge" \/>/);
+  assert.match(output, /<CTA_FullWidth image=\{missingCta\} \/>/);
+  assert.equal(stats.warnings.length, 2);
+  assert.match(stats.warnings[0], /non-literal expression for "src" on <img>/);
+  assert.match(stats.warnings[1], /<CTA_FullWidth>: non-literal expression for "image"/);
+});
+
+test('imported assets conversion is idempotent', () => {
+  const input = [
+    '---',
+    'title: "Idempotency Test"',
+    '---',
+    'import logo from "./logo.png";',
+    '<img className="test" src={logo} alt="Logo" />',
+  ].join('\n');
+  const once = convertFile(input, { slug: 'idemp-test', file: 'blog/idemp-test/index.mdx' }).output;
+  const twice = convertFile(once, { slug: 'idemp-test', file: 'blog/idemp-test/index.mdx' }).output;
+  assert.equal(twice, once);
+});
+
+test('lowercase HTML tag with spread attribute and imported identifier preserves tag and props with warning', () => {
+  const input = [
+    '---',
+    'title: "Spread Guard Test"',
+    '---',
+    'import logo from "./logo.png";',
+    '<img {...props} src={logo} alt="Logo" />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'spread-guard-test', file: 'blog/spread-guard-test/index.mdx' });
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /<img>: spread\/expression attribute \{\.\.\.props\}/);
+  assert.match(output, /<img \{\.\.\.props\} src=\{logo\} alt="Logo" \/>/);
+  const rerun = convertFile(output, { slug: 'spread-guard-test', file: 'blog/spread-guard-test/index.mdx' });
+  assert.equal(rerun.output, output);
+});
+
+test('jsxStyleToCss converts string and numeric literal style props to CSS strings and preserves non-literal expressions with warning', () => {
+  const input = [
+    '---',
+    'title: "Style Test"',
+    '---',
+    '<img src="./img.png" style={{color: "red", width: someVar}} />',
+    '<img src="./valid.png" style={{color: "blue", display: "block"}} />',
+    '<img src="./numeric.png" style={{width: 100, zIndex: 10, marginTop: 8, opacity: 0.5}} />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'style-test', file: 'blog/style-test/index.mdx' });
+  assert.match(output, /<img src="\.\/img\.png" style=\{\{color: "red", width: someVar\}\} \/>/);
+  assert.match(output, /<img src="\.\/valid\.png" style="color: blue; display: block" \/>/);
+  assert.match(output, /<img src="\.\/numeric\.png" style="width: 100px; z-index: 10; margin-top: 8px; opacity: 0.5" \/>/);
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /non-literal expression for "style" on <img>/);
+});
+
+test('convertBody masks code fences so paired tags enclosing code blocks match their closing tag', () => {
+  const input = [
+    '---',
+    'title: "Fence Masking Test"',
+    '---',
+    '<Card>',
+    'Here is some code:',
+    '```go',
+    'package main',
+    'import "fmt"',
+    'func main() {',
+    '    fmt.Println("hello world")',
+    '}',
+    '```',
+    'End of card.',
+    '</Card>',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'fence-test', file: 'blog/fence-test/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.match(output, /\{\{< card >\}\}/);
+  assert.match(output, /```go\npackage main\nimport "fmt"\nfunc main\(\) \{\n    fmt\.Println\("hello world"\)\n\}\n```/);
+  assert.match(output, /\{\{< \/card >\}\}/);
+
+  // Idempotency check
+  const second = convertFile(output, { slug: 'fence-test', file: 'blog/fence-test/index.mdx' }).output;
+  assert.equal(second, output);
+});
+
+test('parseOpenTag parses static object and array literals as literal: true while flagging dynamic expressions', () => {
+  const snippet = '<CustomTag staticObj={{ key: "val", count: 42, active: true }} staticArr={[{ href: "#1", label: "One" }]} dynamicObj={{ key: someVar }} dynamicCall={getValues()} />';
+  const tag = parseOpenTag(snippet, 0);
+
+  const staticObjAttr = tag.attrs.find((a) => a.key === 'staticObj');
+  const staticArrAttr = tag.attrs.find((a) => a.key === 'staticArr');
+  const dynamicObjAttr = tag.attrs.find((a) => a.key === 'dynamicObj');
+  const dynamicCallAttr = tag.attrs.find((a) => a.key === 'dynamicCall');
+
+  assert.equal(staticObjAttr.literal, true);
+  assert.equal(staticArrAttr.literal, true);
+  assert.equal(dynamicObjAttr.literal, false);
+  assert.equal(dynamicCallAttr.literal, false);
+
+  assert.ok(tag.problems.includes('non-literal expression for "dynamicObj"'));
+  assert.ok(tag.problems.includes('non-literal expression for "dynamicCall"'));
+  assert.ok(!tag.problems.some((p) => p.includes('staticObj')));
+  assert.ok(!tag.problems.some((p) => p.includes('staticArr')));
+
+  // End-to-end test with HTML tag & style props
+  const input = [
+    '---',
+    'title: "Object Literal E2E Test"',
+    '---',
+    '<img src="./test.png" style={{ color: "red", marginTop: 12 }} />',
+    '<img src="./dynamic.png" style={{ color: dynamicColor }} />',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'obj-e2e', file: 'blog/obj-e2e/index.mdx' });
+  assert.match(output, /<img src="\.\/test\.png" style="color: red; margin-top: 12px" \/>/);
+  assert.match(output, /<img src="\.\/dynamic\.png" style=\{\{ color: dynamicColor \}\} \/>/);
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /non-literal expression for "style" on <img>/);
+
+  // Idempotency check
+  const second = convertFile(output, { slug: 'obj-e2e', file: 'blog/obj-e2e/index.mdx' }).output;
+  assert.equal(second, output);
+});
+
+test('Blog bespoke components convert to paired Hugo shortcodes and respect sistent exclusion (P3-01)', () => {
+  const input = [
+    '---',
+    'title: "Blog Bespoke Test"',
+    '---',
+    '<MeetTheMaintainer>',
+    '<div className="interviewer"><span>Lee:</span> Welcome!</div>',
+    '</MeetTheMaintainer>',
+    '<MeetTheMeshMate>',
+    '<div className="intro">Introducing our MeshMate</div>',
+    '</MeetTheMeshMate>',
+    '<MeshkitMesheryAdapterLib>',
+    '<div className="fact">MeshKit fact</div>',
+    '</MeshkitMesheryAdapterLib>',
+    '<BufProtocol>',
+    '<div className="fact">Buf fact</div>',
+    '</BufProtocol>',
+    '<PerfbytesPodcast>',
+    '<div className="answer">Podcast answer</div>',
+    '</PerfbytesPodcast>',
+    '<Blog>',
+    '<div className="badge-grid"><div><span>Badge</span></div></div>',
+    '</Blog>',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'bespoke-test', file: 'blog/2026/bespoke-test/index.mdx' });
+  assert.deepEqual(stats.warnings, []);
+  assert.match(output, /\{\{< meet-the-maintainer >\}\}\n[\s\S]*\{\{< \/meet-the-maintainer >\}\}/);
+  assert.match(output, /\{\{< meet-the-meshmate >\}\}\n[\s\S]*\{\{< \/meet-the-meshmate >\}\}/);
+  assert.match(output, /\{\{< meshkit-meshery-adapter-lib >\}\}\n[\s\S]*\{\{< \/meshkit-meshery-adapter-lib >\}\}/);
+  assert.match(output, /\{\{< buf-protocol >\}\}\n[\s\S]*\{\{< \/buf-protocol >\}\}/);
+  assert.match(output, /\{\{< perfbytes-podcast >\}\}\n[\s\S]*\{\{< \/perfbytes-podcast >\}\}/);
+  assert.match(output, /\{\{< blog >\}\}\n[\s\S]*\{\{< \/blog >\}\}/);
+  assert.equal(stats.components.MeetTheMaintainer, 1);
+  assert.equal(stats.components.MeetTheMeshMate, 1);
+  assert.equal(stats.components.MeshkitMesheryAdapterLib, 1);
+  assert.equal(stats.components.BufProtocol, 1);
+  assert.equal(stats.components.PerfbytesPodcast, 1);
+  assert.equal(stats.components.Blog, 1);
+
+  // Idempotency: re-running on output yields identical output
+  const rerun = convertFile(output, { slug: 'bespoke-test', file: 'blog/2026/bespoke-test/index.mdx' });
+  assert.equal(rerun.output, output);
+
+  // Sistent guard: components are skipped for sistent docs
+  const sistentRes = convertFile(input, { slug: 'bespoke-test', file: 'sistent/bespoke-test/index.mdx' });
+  assert.equal(sistentRes.stats.unknown.MeetTheMaintainer, 1);
+  assert.equal(sistentRes.stats.unknown.MeetTheMeshMate, 1);
+  assert.equal(sistentRes.stats.unknown.MeshkitMesheryAdapterLib, 1);
+  assert.equal(sistentRes.stats.unknown.BufProtocol, 1);
+  assert.equal(sistentRes.stats.unknown.PerfbytesPodcast, 1);
+  assert.equal(sistentRes.stats.unknown.Blog, 1);
+});
+
+test('Blog bespoke components preserve warnings on non-literal props and unclosed tags', () => {
+  const unclosed = '---\ntitle: "Unclosed"\n---\n<MeetTheMaintainer>\nContent\n';
+  const res1 = convertFile(unclosed, { slug: 'unclosed', file: 'blog/2026/unclosed/index.mdx' });
+  assert.ok(res1.stats.warnings.some((w) => /<MeetTheMaintainer> has no closing tag/.test(w)));
+  assert.match(res1.output, /<MeetTheMaintainer>/);
+
+  const nonLiteral = '---\ntitle: "NonLiteral"\n---\n<Blog customProp={someVar}>Body</Blog>\n';
+  const res2 = convertFile(nonLiteral, { slug: 'nonliteral', file: 'blog/2026/nonliteral/index.mdx' });
+  assert.ok(res2.stats.warnings.some((w) => /non-literal expression for "customProp"/.test(w)));
 });

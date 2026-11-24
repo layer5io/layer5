@@ -14,7 +14,8 @@
  *   2. Converts known JSX components to Hugo shortcodes (see COMPONENTS).
  *   3. Leaves code fences and inline code untouched.
  *   4. Rewrites front matter: redirect_from → aliases, published:false → draft:true,
- *      ./thumbnail → bundle-relative, and guarantees a `slug` (so permalinks are deterministic).
+ *      ./thumbnail → bundle-relative, copies ../ front-matter images into the page bundle,
+ *      and guarantees a `slug` (so permalinks are deterministic).
  *   5. Flags anything it cannot convert with a <!-- TODO(mdx) --> marker AND a report entry,
  *      instead of silently dropping it.
  *
@@ -50,12 +51,29 @@ export const COMPONENTS = {
   ResourcesWrapper: { custom: 'unwrap' },
   BookWrapper:      { custom: 'unwrap' },
   Code:             { custom: 'code' },
+  CodeBlock:        { custom: 'code' },
+  LfxLogoImage:     { shortcode: 'lfx-logo' },
+  ThemedScaLogo:    { shortcode: 'themed-sca-logo' },
+  JourneySection:   { shortcode: 'journey-section' },
+  Blockquote:       { shortcode: 'blockquote' },
+  BlockquoteAlt:    { shortcode: 'blockquote-alt' },
+  Blog:             { shortcode: 'blog',           paired: true },
+  BufProtocol:      { shortcode: 'buf-protocol',   paired: true },
+  Callout:          { shortcode: 'callout',        paired: true },
+  InlineQuotes:     { shortcode: 'inline-quotes' },
+  MeetTheMaintainer: { shortcode: 'meet-the-maintainer', paired: true },
+  MeetTheMeshMate:  { shortcode: 'meet-the-meshmate', paired: true },
+  MeshkitMesheryAdapterLib: { shortcode: 'meshkit-meshery-adapter-lib', paired: true },
+  PerfbytesPodcast: { shortcode: 'perfbytes-podcast', paired: true },
 };
 const COLLECTION_EXCLUDED_COMPONENTS = {
   sistent: new Set([
     'Button', 'CTA_FullWidth', 'Terminal', 'Accordion', 'AccordionItem', 'Card', 'Link', 'Code',
     'BlogWrapper', 'CareerWrapper', 'EventWrapper', 'NewsWrapper',
     'ProgramsWrapper', 'ProjectWrapper', 'ResourcesWrapper', 'BookWrapper',
+    'Blockquote', 'BlockquoteAlt', 'Callout', 'InlineQuotes',
+    'LfxLogoImage', 'ThemedScaLogo', 'JourneySection',
+    'Blog', 'BufProtocol', 'MeetTheMaintainer', 'MeetTheMeshMate', 'MeshkitMesheryAdapterLib', 'PerfbytesPodcast',
   ]),
 };
 const DROP_ATTRS = new Set(['className', 'class', 'style', 'key', 'ref']);
@@ -74,7 +92,7 @@ const cleanAttrVal = (v) => v.replace(/\u200B/g, '');
 /** Parse an opening tag starting at text[start] === '<'. Returns null if malformed. */
 export function parseOpenTag(text, start) {
   let i = start + 1;
-  const nm = /^[A-Za-z_][\w.]*/.exec(text.slice(i));
+  const nm = /^[A-Za-z_][\w.-]*/.exec(text.slice(i));
   if (!nm) return null;
   const name = nm[0];
   i += name.length;
@@ -106,8 +124,18 @@ export function parseOpenTag(text, start) {
       if (str && !(str[1] === '`' && str[2].includes('${'))) attrs.push({ key, value: cleanAttrVal(str[2]), literal: true });
       else if (/^(-?\d+(\.\d+)?|true|false)$/.test(inner)) attrs.push({ key, value: inner, literal: true });
       else {
-        attrs.push({ key, value: inner, literal: false });
-        if (key !== 'key' && key !== 'ref') problems.push(`non-literal expression for "${key}"`);
+        const stripped = inner
+          .replace(/"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'/g, '')
+          .replace(/\b(true|false|null)\b/g, '')
+          .replace(/-?\d+(\.\d+)?/g, '')
+          .replace(/\b[a-zA-Z_$][\w$]*\s*:/g, '')
+          .replace(/\s+/g, '');
+        if (/^[{}[\],]*$/.test(stripped)) {
+          attrs.push({ key, value: inner, literal: true });
+        } else {
+          attrs.push({ key, value: inner, literal: false });
+          if (key !== 'key' && key !== 'ref') problems.push(`non-literal expression for "${key}"`);
+        }
       }
       i = next;
     } else return null;
@@ -211,6 +239,7 @@ function normalizeLinkUrl(raw) {
   if (
     u.startsWith('/') ||
     u.startsWith('#') ||
+    u.startsWith('./') ||
     /^(?:https?:|mailto:|tel:)/i.test(u)
   ) {
     return u;
@@ -252,17 +281,17 @@ function convertLink(tag, children, ctx, rawTag, rawFull) {
 
 function convertCode(tag, ctx, rawTag, rawFull) {
   const loc = ctx.file ? `${ctx.file}: ` : '';
-  const tagSnippet = rawTag.replace(/\s+/g, ' ').trim() || '<Code>';
-  const codeAttr = tag.attrs.find((a) => a.key === 'codeString');
+  const tagSnippet = rawTag.replace(/\s+/g, ' ').trim() || `<${tag.name}>`;
+  const codeAttr = tag.attrs.find((a) => a.key === 'codeString' || a.key === 'code');
   if (!codeAttr) {
-    ctx.warn(`${loc}<Code> missing "codeString" attribute (${tagSnippet}); left as-is`);
+    ctx.warn(`${loc}<${tag.name}> missing "codeString" attribute (${tagSnippet}); left as-is`);
     return rawFull;
   }
   if (!codeAttr.literal) {
     return rawFull;
   }
   const langAttr = tag.attrs.find((a) => a.key === 'language');
-  const lang = (langAttr?.literal ? langAttr.value.trim() : '') || 'text';
+  const lang = (langAttr?.literal ? langAttr.value.trim() : '') || (tag.name === 'CodeBlock' ? 'jsx' : 'text');
   const codeBody = codeAttr.value.replace(/\\`/g, '`').replace(/\r\n/g, '\n').replace(/^\n/, '').replace(/\n$/, '');
   const backtickRuns = codeBody.match(/`+/g) || [];
   const maxRun = backtickRuns.reduce((m, s) => Math.max(m, s.length), 0);
@@ -270,10 +299,122 @@ function convertCode(tag, ctx, rawTag, rawFull) {
   return `${fence}${lang}\n${codeBody}\n${fence}`;
 }
 
+export function recordImports(text) {
+  const imports = new Map();
+  const importRe = /^import\s+([\s\S]*?)\s+from\s+['"]([^'"]+)['"][ \t]*;?[ \t]*$/gm;
+  let m;
+  while ((m = importRe.exec(text)) !== null) {
+    const clause = m[1].trim();
+    const importPath = m[2].trim();
+    const defaultMatch = /^([\w$]+)(?:\s*,\s*[\s\S]+)?$/.exec(clause);
+    if (defaultMatch && !clause.startsWith('{') && !clause.startsWith('*')) {
+      imports.set(defaultMatch[1], importPath);
+    }
+    const nsMatch = /\*\s+as\s+([\w$]+)/.exec(clause);
+    if (nsMatch) {
+      imports.set(nsMatch[1], importPath);
+    }
+    const namedMatch = /\{([\s\S]*?)\}/.exec(clause);
+    if (namedMatch) {
+      const parts = namedMatch[1].split(',');
+      for (const p of parts) {
+        const item = p.trim();
+        if (!item) continue;
+        const aliasMatch = /^([\w$]+)\s+as\s+([\w$]+)$/.exec(item);
+        if (aliasMatch) {
+          imports.set(aliasMatch[2], importPath);
+        } else if (/^[\w$]+$/.test(item)) {
+          imports.set(item, importPath);
+        }
+      }
+    }
+  }
+  return imports;
+}
+
+export function checkAssetResolvable(importPath, ctx = {}) {
+  if (ctx.dir) {
+    const target = importPath.startsWith('/')
+      ? path.resolve('static', importPath.slice(1))
+      : path.resolve(ctx.dir, importPath);
+    return fs.existsSync(target);
+  }
+  if (ctx.file) {
+    const docDir = path.dirname(ctx.file);
+    const target = importPath.startsWith('/')
+      ? path.resolve('static', importPath.slice(1))
+      : path.resolve('src/collections', docDir, importPath);
+    if (fs.existsSync(target)) return true;
+  }
+  return /\.(png|jpe?g|webp|avif|svg|gif|pdf|ico|mp4|webm)$/i.test(importPath);
+}
+
+const UNITLESS_CSS_PROPS = new Set([
+  'animation-iteration-count',
+  'border-image-outset',
+  'border-image-slice',
+  'border-image-width',
+  'box-flex',
+  'box-flex-group',
+  'box-ordinal-group',
+  'column-count',
+  'columns',
+  'flex',
+  'flex-grow',
+  'flex-positive',
+  'flex-shrink',
+  'flex-negative',
+  'flex-order',
+  'grid-row',
+  'grid-row-end',
+  'grid-row-span',
+  'grid-row-start',
+  'grid-column',
+  'grid-column-end',
+  'grid-column-span',
+  'grid-column-start',
+  'font-weight',
+  'line-clamp',
+  'line-height',
+  'opacity',
+  'order',
+  'orphans',
+  'tab-size',
+  'widows',
+  'z-index',
+  'zoom',
+  'fill-opacity',
+  'flood-opacity',
+  'stop-opacity',
+  'stroke-dasharray',
+  'stroke-dashoffset',
+  'stroke-miterlimit',
+  'stroke-opacity',
+  'stroke-width',
+]);
+
+function jsxStyleToCss(val) {
+  const trimmed = val.replace(/^\{|\}$/g, '').trim();
+  if (!trimmed) return null;
+  const propRe = /([\w-]+)\s*:\s*(?:["']([^"']*)["']|(-?\d+(?:\.\d+)?))/g;
+  const props = [];
+  let m;
+  let lastIndex = 0;
+  while ((m = propRe.exec(trimmed)) !== null) {
+    if (trimmed.slice(lastIndex, m.index).replace(/[\s,]/g, '')) return null;
+    const k = m[1].replace(/([A-Z])/g, '-$1').toLowerCase();
+    const v = m[2] !== undefined ? m[2] : (UNITLESS_CSS_PROPS.has(k) || m[3] === '0' ? m[3] : `${m[3]}px`);
+    props.push(`${k}: ${v}`);
+    lastIndex = propRe.lastIndex;
+  }
+  if (trimmed.slice(lastIndex).replace(/[\s,]/g, '') || !props.length) return null;
+  return props.join('; ');
+}
+
 /* ---------------------------------------------------------------- body conversion */
 function convertSegment(text, ctx) {
   let out = '', i = 0;
-  const re = /<([A-Z][\w.]*)(?![\w.])/g;
+  const re = /<([A-Za-z][\w.-]*)(?![\w.-])/g;
   while (true) {
     re.lastIndex = i;
     const m = re.exec(text);
@@ -281,8 +422,84 @@ function convertSegment(text, ctx) {
     out += text.slice(i, m.index);
     const name = m[1];
     const tag = parseOpenTag(text, m.index);
+    if (!tag) {
+      if (name[0] === name[0].toUpperCase()) ctx.warn(`could not parse <${name}> tag; left as-is`);
+      out += '<';
+      i = m.index + 1;
+      continue;
+    }
+
+    const isHtml = name[0] === name[0].toLowerCase();
+    if (isHtml) {
+      let tagChanged = false;
+      let hasUnresolved = false;
+      for (const a of tag.attrs) {
+        if (a.key === 'style' && a.value.startsWith('{')) {
+          const css = jsxStyleToCss(a.value);
+          if (css) {
+            a.value = css;
+            a.literal = true;
+            tagChanged = true;
+            continue;
+          } else {
+            hasUnresolved = true;
+            ctx.warn(`non-literal expression for "style" on <${name}>`);
+            continue;
+          }
+        }
+        if (!a.literal) {
+          const varName = a.value;
+          const impPath = ctx.imports?.get(varName);
+          if (impPath && checkAssetResolvable(impPath, ctx)) {
+            a.value = impPath;
+            a.literal = true;
+            tagChanged = true;
+            if (impPath.startsWith('../') || impPath.startsWith('/')) {
+              ctx.warn(`<${name}>: "${impPath}" is outside the page bundle — move it next to index.md`);
+            }
+          } else {
+            hasUnresolved = true;
+            ctx.warn(`non-literal expression for "${a.key}" on <${name}>`);
+          }
+        }
+      }
+
+      const spreadProblems = tag.problems.filter((p) => p.startsWith('spread/expression attribute'));
+      if (spreadProblems.length) spreadProblems.forEach((p) => ctx.warn(`<${name}>: ${p}`));
+      if (tagChanged && !hasUnresolved && !spreadProblems.length) {
+        const attrParts = [];
+        for (const a of tag.attrs) {
+          const key = a.key === 'className' ? 'class' : a.key;
+          attrParts.push(`${key}="${a.value.replace(/"/g, '&quot;')}"`);
+        }
+        const rendered = `<${name}${attrParts.length ? ' ' + attrParts.join(' ') : ''}${tag.selfClosing ? ' />' : '>'}`;
+        out += rendered;
+        i = tag.end;
+        continue;
+      }
+
+      out += text.slice(m.index, tag.end);
+      i = tag.end;
+      continue;
+    }
+
+    // Component tag (uppercase)
+    for (const a of tag.attrs) {
+      if (!a.literal) {
+        const varName = a.value;
+        const impPath = ctx.imports?.get(varName);
+        if (impPath && checkAssetResolvable(impPath, ctx)) {
+          a.value = impPath;
+          a.literal = true;
+          tag.problems = tag.problems.filter((p) => !p.includes(`non-literal expression for "${a.key}"`));
+          if (impPath.startsWith('../') || impPath.startsWith('/')) {
+            ctx.warn(`<${name}>: "${impPath}" is outside the page bundle — move it next to index.md`);
+          }
+        }
+      }
+    }
+
     const spec = resolveComponentSpec(name, ctx.collection);
-    if (!tag) { ctx.warn(`could not parse <${name}> tag; left as-is`); out += '<'; i = m.index + 1; continue; }
     if (!spec) {
       ctx.unknown(name);
       const marker = `<!-- TODO(mdx): unconverted component <${name}> -->\n`;
@@ -291,6 +508,21 @@ function convertSegment(text, ctx) {
       out += text.slice(m.index, tag.end); i = tag.end; continue;
     }
     if (spec.custom === 'unwrap') { out += text.slice(m.index, tag.end); i = tag.end; continue; }
+
+    const hasUnresolvedNonLiteral = tag.attrs.some(
+      (a) => !a.literal && !DROP_ATTRS.has(a.key) && a.key !== 'key' && a.key !== 'ref' && !spec.drop?.has(a.key)
+    );
+    if (hasUnresolvedNonLiteral) {
+      tag.problems.forEach((p) => ctx.warn(`<${name}>: ${p}`));
+      let end = tag.end;
+      if (!tag.selfClosing) {
+        const c = findClose(text, tag.end, name);
+        if (c) end = c.end;
+      }
+      out += text.slice(m.index, end);
+      i = end;
+      continue;
+    }
     tag.problems.forEach((p) => ctx.warn(`<${name}>: ${p}`));
     let children = '', end = tag.end;
     if (!tag.selfClosing) {
@@ -392,29 +624,86 @@ function unwrapCollectionWrappers(body, ctx) {
   return out.replace(/\u0000WRAP_FENCE_(\d+)\u0000/g, (_, n) => maskedFences[+n]);
 }
 
+/** Strip `export const ...;` statements deterministically outside code fences. */
+export function stripExportConst(text, ctx) {
+  let out = '';
+  let i = 0;
+  const re = /^[ \t]*export\s+const\s+/gm;
+  while (true) {
+    re.lastIndex = i;
+    const m = re.exec(text);
+    if (!m) { out += text.slice(i); break; }
+    out += text.slice(i, m.index);
+    let j = m.index + m[0].length;
+    let depth = 0, q = null, inLineComment = false, inBlockComment = false;
+    let terminated = false;
+    while (j < text.length) {
+      const c = text[j], next = text[j + 1];
+      if (inLineComment) { if (c === '\n') inLineComment = false; j++; continue; }
+      if (inBlockComment) { if (c === '*' && next === '/') { inBlockComment = false; j += 2; continue; } j++; continue; }
+      if (q) {
+        if (c === '\n' && q !== '`') { q = null; }
+        else if (c === '\\') { j += 2; continue; }
+        else if (c === q) { q = null; j++; continue; }
+        else { j++; continue; }
+      }
+      if (c === '/' && next === '/') { inLineComment = true; j += 2; continue; }
+      if (c === '/' && next === '*') { inBlockComment = true; j += 2; continue; }
+      if (c === '"' || c === "'" || c === '`') { q = c; j++; continue; }
+      if (c === '{' || c === '[' || c === '(') { depth++; j++; continue; }
+      if (c === '}' || c === ']' || c === ')') { if (depth > 0) depth--; j++; continue; }
+      if (c === ';' && depth === 0) {
+        terminated = true;
+        j++;
+        while (j < text.length && (text[j] === ' ' || text[j] === '\t')) j++;
+        if (j < text.length && text[j] === '\r') j++;
+        if (j < text.length && text[j] === '\n') j++;
+        break;
+      }
+      j++;
+    }
+    if (!terminated) {
+      // No terminator found: leave the statement in place instead of
+      // dropping the rest of the file; convertBody already warns on
+      // leftover `export` statements.
+      out += text.slice(m.index);
+      break;
+    }
+    if (ctx?.count) ctx.count('exportsRemoved');
+    i = j;
+  }
+  return out;
+}
+
 /** Convert an MDX body. Code fences and inline code are protected. */
 export function convertBody(body, ctx) {
+  if (!ctx.imports) {
+    ctx.imports = recordImports(body);
+  }
   const unwrapped = unwrapCollectionWrappers(body, ctx);
   const chunks = splitCodeFenceChunks(unwrapped);
-
-  return chunks.map((c) => {
-    if (c.code) return c.text;
-    const masked = []; // protect inline code
-    // `{`template literal`}` attribute values are left alone so the tag parser can read them
-    let t = c.text.replace(/\{\s*`(?:\\.|[^`\\])*`\s*\}|`[^`\n]+`/g, (s) => (s[0] === '{' ? s : `\u0000${masked.push(s) - 1}\u0000`));
-    t = t.replace(/^import\s+(?:[\w$]+\s*,?\s*)?(?:\{[^}]*\}|\*\s+as\s+[\w$]+)?\s*from\s+['"][^'"]+['"];?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
-    t = t.replace(/^import\s+['"][^'"]+['"];?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
-    if (/^export\s/m.test(t)) ctx.warn('contains `export` statements (MDX exports are not supported in Hugo)');
-    t = t.replace(/\{\/\*([\s\S]*?)\*\/\}/g, '<!--$1-->');
-    t = t.replace(/<!--[\s\S]*?-->/g, (s) => `\u0000${masked.push(s) - 1}\u0000`); // never scan inside comments
-    ctx.masked = masked;
-    t = convertSegment(t, ctx);
-    while (/\u0000\d+\u0000/.test(t)) t = t.replace(/\u0000(\d+)\u0000/g, (_, n) => masked[+n]);
-    return t;
-  }).join('\n').replace(/\n{3,}/g, '\n\n');
+  const maskedFences = [];
+  let t = chunks.map((c) => (c.code ? `\u0000FENCE_${maskedFences.push(c.text) - 1}\u0000` : c.text)).join('\n');
+  const masked = []; // protect inline code
+  // `{`template literal`}` attribute values are left alone so the tag parser can read them
+  t = t.replace(/\{\s*`(?:\\.|[^`\\])*`\s*\}|`[^`\n]+`/g, (s) => (s[0] === '{' ? s : `\u0000${masked.push(s) - 1}\u0000`));
+  t = t.replace(/^import\s+(?:[\w$]+\s*,?\s*)?(?:\{[^}]*\}|\*\s+as\s+[\w$]+)?\s*from\s+['"][^'"]+['"][ \t]*;?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
+  t = t.replace(/^import\s+['"][^'"]+['"][ \t]*;?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
+  t = stripExportConst(t, ctx);
+  if (/^export\s/m.test(t)) ctx.warn('contains `export` statements (MDX exports are not supported in Hugo)');
+  t = t.replace(/\{\/\*([\s\S]*?)\*\/\}/g, '<!--$1-->');
+  t = t.replace(/<!--[\s\S]*?-->/g, (s) => `\u0000${masked.push(s) - 1}\u0000`); // never scan inside comments
+  ctx.masked = masked;
+  t = convertSegment(t, ctx);
+  while (/\u0000\d+\u0000/.test(t)) t = t.replace(/\u0000(\d+)\u0000/g, (_, n) => masked[+n]);
+  t = t.replace(/\u0000FENCE_(\d+)\u0000/g, (_, n) => maskedFences[+n]);
+  return t.replace(/\n{3,}/g, '\n\n');
 }
 
 /* ---------------------------------------------------------------- front matter */
+// Every front-matter key that holds an image path. Blog posts also carry dark-mode and SVG variants.
+const IMAGE_KEY = /^(thumbnail|darkthumbnail|thumbnail_svg|darkthumbnail_svg|image|cover)\s*:\s*(.*)$/;
+
 export function convertFrontMatter(fm, slug, ctx) {
   const lines = fm.split('\n').map((l) => l.replace(/\r$/, ''));
   const out = [];
@@ -464,9 +753,12 @@ export function convertFrontMatter(fm, slug, ctx) {
       continue;
     }
 
-    if ((m = /^(thumbnail|image|cover)\s*:\s*(.*)$/.exec(line))) {
+    if ((m = IMAGE_KEY.exec(line))) {
       const v = m[2].trim().replace(/^['"]|['"]$/g, '');
-      if (/^\.\.\//.test(v) || /^\/?(static|assets|src)\//.test(v)) {
+      const name = /^\.\.\//.test(v) && ctx.bundle?.(v);
+      if (name) {
+        out.push(`${m[1]}: ${name}`);
+      } else if (/^\.\.\//.test(v) || /^\/?(static|assets|src)\//.test(v)) {
         ctx.warn(`${m[1]}: "${v}" is outside the page bundle — move it next to index.md`);
         out.push(line);
       } else {
@@ -485,17 +777,35 @@ export function convertFrontMatter(fm, slug, ctx) {
   return out.join('\n');
 }
 
-export function convertFile(source, { slug, file = '', collection } = {}) {
+/**
+ * `dir` is the source document's folder. When given, `../` front-matter images are resolved against it,
+ * listed in stats.assets for the caller to copy into the bundle, and the value is rewritten to the file name.
+ */
+export function convertFile(source, { slug, file = '', collection, dir, taken = () => false } = {}) {
   const normFile = file ? file.replace(/\\/g, '/').replace(/^\/+/, '') : '';
   const resolvedCollection = collection ?? (normFile.includes('/') ? normFile.split('/')[0] : '');
-  const stats = { components: {}, unknown: {}, counters: {}, warnings: [] };
+  const stats = { components: {}, unknown: {}, counters: {}, warnings: [], assets: [] };
   const ctx = {
     file: normFile,
     collection: resolvedCollection,
+    dir,
+    imports: recordImports(source),
     warn: (m) => stats.warnings.push(m),
     unknown: (n) => { stats.unknown[n] = (stats.unknown[n] || 0) + 1; },
     component: (n) => { stats.components[n] = (stats.components[n] || 0) + 1; },
     count: (k) => { stats.counters[k] = (stats.counters[k] || 0) + 1; },
+    bundle: dir && ((v) => {
+      const from = path.resolve(dir, v); const name = path.basename(from);
+      // missing file, or a different file already owns this name in the bundle: leave it for the outside-bundle warning
+      const local = path.join(dir, name);
+      if (!fs.existsSync(from) || (fs.existsSync(local) && local !== from) || taken(name)
+        || stats.assets.some((a) => a.name === name && a.from !== from)) return null;
+      const format = sniffImageFormat(fs.readFileSync(from));
+      if (format === 'empty' || format === 'avif' || normalizeAssetFilename(name, format) !== name) return null;
+      if (!stats.assets.some((a) => a.from === from)) stats.assets.push({ from, name });
+      ctx.count('assetsBundled');
+      return name;
+    }),
   };
   const fmMatch = /^---\r?\n([\s\S]*?)\r?\n---[ \t]*(?:\r?\n|$)/.exec(source);
   let fm = '', body = source;
@@ -682,7 +992,7 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
   );
   const report = {
     generated: new Date().toISOString(), dryRun, excluded: [...excludeSet], excludedFiles: 0,
-    files: 0, converted: 0, withWarnings: 0, assetsCopied: 0,
+    files: 0, converted: 0, withWarnings: 0, assetsCopied: 0, assetsBundled: 0,
     templatesSkipped: 0, skippedTemplates: [], assetsRenamed: 0, assetRenames: [],
     emptyAssets: [], transcodeFailures: [], renameCollisions: [], assetsTranscoded: [],
     components: {}, unknown: {}, byCollection: {}, warnings: []
@@ -863,7 +1173,11 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
       sourceText = rewriteAssetReferences(sourceText, dirRenames);
     }
 
-    const { output, stats } = convertFile(sourceText, { slug, file: rel, collection });
+    const { output, stats } = convertFile(sourceText, {
+      slug, file: rel, collection,
+      dir: base === 'index' ? path.dirname(file) : undefined,
+      taken: (name) => writtenTargets.has(path.join(path.dirname(target), name)),
+    });
     for (const [k, v] of Object.entries(stats.components)) bump(report.components, k, v);
     for (const [k, v] of Object.entries(stats.unknown)) bump(report.unknown, k, v);
     if (stats.warnings.length) {
@@ -873,7 +1187,9 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
     if (!dryRun) {
       fs.mkdirSync(path.dirname(target), { recursive: true });
       fs.writeFileSync(target, output);
+      stats.assets.forEach((a) => fs.copyFileSync(a.from, path.join(path.dirname(target), a.name)));
     }
+    report.assetsBundled += stats.assets.length;
     report.converted++; col.converted++;
   }
   return report;
@@ -907,7 +1223,7 @@ function main() {
   if (get('--report')) fs.writeFileSync(get('--report'), JSON.stringify(report, null, 2));
   if (get('--progress') && !dryRun) updateProgress(get('--progress'), report);
   const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k}×${v}`).join(', ') || '—';
-  console.log(`${dryRun ? '[dry-run] ' : ''}${report.converted}/${report.files} documents converted, ${report.assetsCopied} assets, ${report.templatesSkipped} templates skipped, ${report.withWarnings} with warnings`);
+  console.log(`${dryRun ? '[dry-run] ' : ''}${report.converted}/${report.files} documents converted, ${report.assetsCopied} assets (+${report.assetsBundled} pulled into bundles), ${report.templatesSkipped} templates skipped, ${report.withWarnings} with warnings`);
   if (report.excluded?.length) {
     console.log(`Excluded collections (${report.excluded.join(', ')}): ${report.excludedFiles} files skipped`);
   }

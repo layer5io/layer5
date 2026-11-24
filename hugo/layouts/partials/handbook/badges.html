@@ -1,0 +1,41 @@
+<div class="badges-overview">
+  {{ with site.Data.handbook.badges }}
+    {{ if .activity }}
+      <h4>Activity Badges</h4>
+      <div class="badge-grid">
+        {{ range .activity }}
+          <div class="badge-card">
+            {{ if .image }}<img src="{{ .image | relURL }}" alt="{{ .name }}">{{ end }}
+            <h5>{{ .name }}</h5>
+            <p>{{ .description | markdownify }}</p>
+          </div>
+        {{ end }}
+      </div>
+    {{ end }}
+    {{ if .projects }}
+      <h4>Project Badges</h4>
+      <div class="badge-grid">
+        {{ range .projects }}
+          <div class="badge-card">
+            {{ if .image }}<img src="{{ .image | relURL }}" alt="{{ .name }}">{{ end }}
+            <h5>{{ .name }}</h5>
+            <p>{{ .description | markdownify }}</p>
+          </div>
+        {{ end }}
+      </div>
+    {{ end }}
+    {{ if .specials }}
+      <h4>Special Badges</h4>
+      <div class="badge-grid">
+        {{ range .specials }}
+          <div class="badge-card">
+            {{ if .image }}<img src="{{ .image | relURL }}" alt="{{ .name }}">{{ end }}
+            <h5>{{ .name }}</h5>
+            <p>{{ .description | markdownify }}</p>
+          </div>
+        {{ end }}
+      </div>
+    {{ end }}
+  {{ end }}
+</div>
+

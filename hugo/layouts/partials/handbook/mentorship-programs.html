@@ -1,0 +1,15 @@
+<div class="mentorship-programs-list">
+  {{ range site.Data.handbook.mentorship_programs }}
+    <div class="program-item {{ .imagePosition }}">
+      <h2>{{ .name }}</h2>
+      <p>{{ .description }}</p>
+      {{ if .buttonLink }}
+        <a href="{{ .buttonLink | relURL }}" class="btn btn-primary">Learn More</a>
+      {{ end }}
+      {{ if .image }}
+        <img src="{{ .image | relURL }}" alt="{{ .name }}" loading="lazy">
+      {{ end }}
+    </div>
+  {{ end }}
+</div>
+
