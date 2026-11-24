@@ -31,7 +31,7 @@ const PlanCardWrapper = styled.section`
       color: ${(props) => props.theme.primaryColor}; 
     }
     .price-amount {
-      font-size: 3rem; 
+      font-size: 2.5rem; 
       color: ${(props) => props.theme.primaryColor};
       > sup {
         font-weight: 200;
@@ -48,7 +48,7 @@ const PlanCardWrapper = styled.section`
       margin-left: .25rem;
       align-self: center;
       font-weight: 200;
-      font-size: .75rem;
+      font-size: .6rem;
       letter-spacing: -.025rem;
       color: ${(props) => props.theme.primaryColor}; 
     }
