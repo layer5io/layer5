@@ -1,0 +1,121 @@
+name: Broken Link Check
+
+on:
+  schedule:
+    - cron: "0 0 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: broken-link-check
+  cancel-in-progress: false
+
+jobs:
+  broken-link-check:
+    name: Broken Link Check
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - name: Collect pages from sitemap
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fsSL --connect-timeout 10 --max-time 60 --retry 3 --retry-delay 2 https://layer5.io/sitemap-index.xml -o sitemap-index.xml
+          grep -o '<loc>[^<]*</loc>' sitemap-index.xml | sed -e 's/<[^>]*>//g' > sitemap-files.txt
+          while IFS= read -r sitemap; do
+            curl -fsSL --connect-timeout 10 --max-time 60 --retry 3 --retry-delay 2 "$sitemap"
+          done < sitemap-files.txt | grep -o '<loc>[^<]*</loc>' | sed -e 's/<[^>]*>//g' | sort -u > layer5-urls.txt
+          test -s layer5-urls.txt
+
+      - name: Check for broken links
+        id: lychee
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8
+        with:
+          args: >-
+            --no-progress
+            --max-concurrency 16
+            --timeout 30
+            --max-retries 2
+            --max-redirects 10
+            --accept "100..=103,200..=299,302,429"
+            --exclude "^mailto:"
+            --exclude "^tel:"
+            --exclude "^https://layer5\.io/cdn-cgi/l/email-protection"
+            --exclude "^https://cloud\.layer5\.io/login"
+            --exclude-all-private
+            --files-from layer5-urls.txt
+          fail: false
+          output: broken-links.md
+          jobSummary: true
+          token: ${{ github.token }}
+          lycheeVersion: v0.24.2
+
+      - name: Upload broken link report
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: broken-links-report
+          path: broken-links.md
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Create or update tracking issue
+        if: steps.lychee.outputs.exit_code != '' && steps.lychee.outputs.exit_code != '0'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          if [ ! -f broken-links.md ]; then
+            printf 'broken-links.md was not generated; refusing to update the tracking issue.\n' >&2
+            exit 1
+          fi
+          {
+            printf '<!-- broken-link-check-tracker -->\n'
+            printf 'The latest [broken link check](%s) found broken links on https://layer5.io.\n\n' "$RUN_URL"
+            printf 'The full report is available in the `broken-links-report` artifact on the workflow run.\n\n'
+            printf '<details><summary>Broken link report</summary>\n\n'
+            head -n 200 broken-links.md
+            printf '\n</details>\n'
+          } > issue-body.md
+          if [ "$(wc -l < broken-links.md)" -gt 200 ]; then
+            printf '\n_Report truncated. See the workflow artifact for the complete report._\n' >> issue-body.md
+          fi
+          issue_number=$(gh issue list --state open --limit 100 --search 'Broken links found on layer5.io in:title' --json number,title --jq 'first(.[] | select(.title == "Broken links found on layer5.io") | .number)')
+          if [ -n "$issue_number" ]; then
+            issue_body=$(gh issue view "$issue_number" --json body --jq '.body')
+            case "$issue_body" in
+              *'<!-- broken-link-check-tracker -->'*) ;;
+              *) issue_number="" ;;
+            esac
+          fi
+          if [ -n "$issue_number" ]; then
+            gh issue edit "$issue_number" --body-file issue-body.md
+          else
+            gh issue create --title "Broken links found on layer5.io" --body-file issue-body.md --label "kind/bug" --label "help wanted"
+          fi
+
+      - name: Close tracking issue when links are healthy
+        if: steps.lychee.outputs.exit_code == '0'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          issue_number=$(gh issue list --state open --limit 100 --search 'Broken links found on layer5.io in:title' --json number,title --jq 'first(.[] | select(.title == "Broken links found on layer5.io") | .number)')
+          if [ -n "$issue_number" ]; then
+            issue_body=$(gh issue view "$issue_number" --json body --jq '.body')
+            case "$issue_body" in
+              *'<!-- broken-link-check-tracker -->'*) ;;
+              *) issue_number="" ;;
+            esac
+          fi
+          if [ -n "$issue_number" ]; then
+            gh issue close "$issue_number" --comment "The latest broken link check found no broken links. Closing this issue."
+          fi
