@@ -9,7 +9,7 @@
 | **Documents Converted** | 1006 / 1006 |
 | **Excluded Collections** | `sistent` (138 files skipped) |
 | **Skipped Templates** | 11 |
-| **Files with Warnings** | **97** |
+| **Files with Warnings** | **90** |
 | **Unowned Warning Files** | **0** |
 | **Zero-Byte Assets Logged** | 4 |
 | **Asset Normalization Renames** | 26 |
@@ -21,23 +21,22 @@ Each file lists one primary owner; a file only becomes warning-free when all of 
 
 | Primary Owner Issue | Files | Scope / Focus |
 |---|---|---|
-| `#8308` | 34 | Out-of-bundle thumbnails and asset layout |
-| `#8402` | 24 | Content hand-fix backlog (wrapper indents, bare links, button props) |
-| `#8453` | 16 | P3-01 Blog bespoke components (`MeetTheMaintainer`, `MeetTheMeshMate`, diagrams) |
+| `#8308` | 45 | Out-of-bundle thumbnails and asset layout |
+| `#8402` | 22 | Content hand-fix backlog (wrapper indents, bare links, button props) |
 | `#8457` | 8 | P3-08 Programs & Careers bespoke components (`PositionApply`, `LfxPageNav`, `Row`, `Col`) |
 | `#8454` | 8 | P3-02 Resources & Books bespoke components (`FAQ`, `CommonForm`, `Table`, case studies) |
 | `#8456` | 5 | P3-07 Handbook bespoke components & data loops (`BadgeRow`, `Table`, `React.Fragment`, `Row/Col`, `mentorship-programs`, `recognition`, `repository-overview`) |
 | `#8401` | 1 | Imported assets backlog (`<img src={var}>`, `<CTA_FullWidth image={var}>`) |
 | `#8458` | 1 | P3-13 Projects page layout (`Row`, `Col`) |
-| **Total** | **97** | **100% accounted for (sum equals files with warnings)** |
+| **Total** | **90** | **100% accounted for (sum equals files with warnings)** |
 
 ## 3. Warnings Breakdown by Key
 
 | Warning Category | Occurrences | Primary Owner Issue | Description |
 |---|---|---|---|
 | `asset outside page bundle` | 127 | #8308 | Images or assets pointing to `../../assets` outside the page bundle |
-| `non-literal prop expression` | 57 | #8401 / #8402 | JSX expression props (e.g. `image={var}`, `$url={link}`) |
-| `unknown components` | 38 | Phase 3 | Components not yet mapped to Hugo shortcodes |
+| `non-literal prop expression` | 42 | #8401 / #8402 | JSX expression props (e.g. `image={var}`, `$url={link}`) |
+| `unknown components` | 22 | Phase 3 | Components not yet mapped to Hugo shortcodes |
 | `wrapper indent hazard` | 19 | #8402 | Wrapper bodies with 4+ space indents that could trigger Markdown code blocks |
 | `bare-relative link` | 7 | #8402 | Links with bare-relative paths (e.g. `<Link to="newcomer">`) |
 | `zero-byte asset` | 4 | #8308 | Zero-byte SVG files in source integrations |
@@ -49,17 +48,11 @@ Each file lists one primary owner; a file only becomes warning-free when all of 
 | Component | Occurrences | Owning Issue / Phase | Proposed Solution |
 |---|---|---|---|
 | `<Col>` | 25 | #8457 (P3-08) / #8458 (P3-13) | Container grid column layout partial/shortcode |
-| `<MeetTheMaintainer>` | 11 | #8453 (P3-01) | Blog interview header component |
 | `<PositionApply>` | 7 | #8457 (P3-08) | Job application CTA button/link |
 | `<Row>` | 5 | #8457 (P3-08) / #8458 (P3-13) | Container grid row layout partial/shortcode |
 | `<BadgeRow>` | 3 | #8456 (P3-07) | Handbook recognition badge row component |
 | `<FAQ>` | 3 | #8454 (P3-02) | Resources FAQ accordion component |
 | `<React.Fragment>` | 2 | #8456 (P3-07) | React wrapper in repository overview maintainer loop |
-| `<MeshkitMesheryAdapterLib>` | 1 | #8453 (P3-01) | Architecture diagram component in blog post |
-| `<BufProtocol>` | 1 | #8453 (P3-01) | Bespoke SVG diagram component in blog post |
-| `<PerfbytesPodcast>` | 1 | #8453 (P3-01) | Audio/podcast player embed in blog post |
-| `<MeetTheMeshMate>` | 1 | #8453 (P3-01) | Blog MeshMate profile component |
-| `<Blog>` | 1 | #8453 (P3-01) | Bespoke blog listing component |
 | `<HandbookFaqAccordion>` | 1 | #8456 (P3-07) | FAQ accordion rendering `site.Data.handbook.faq` |
 | `<LfxPageNav>` | 1 | #8457 (P3-08) | LFX program navigation pills |
 | `<HPEintro>` | 1 | #8454 (P3-02) | HPE case study intro block |
@@ -82,49 +75,43 @@ Every warning file outside Sistent is tracked below with its primary owning issu
 | File | Warning Details | Primary Owner |
 |---|---|---|
 | `blog/2020/2020-03-11-deploying-linkerd-with-meshery/index.mdx` | <img>: "../../../../assets/images/service-mesh-icons/istio.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../../assets/images/service-mesh-icons/linkerd.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../../assets/images/service-mesh-icons/consul.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../../assets/images/service-mesh-icons/octarine.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../../assets/images/service-mesh-icons/nsm.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../../assets/images/service-mesh-icons/maesh.webp" is outside the page bundle — move it next to index.md<br><img>: "../../../../assets/images/service-mesh-icons/aws-app-mesh.webp" is outside the page bundle — move it next to index.md<br><img>: "../../../../assets/images/service-mesh-icons/kuma.svg" is outside the page bundle — move it next to index.md | `#8308` |
-| `blog/2021/2021-02-04-meet-the-maintainer-michael-gfeller/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review<br><img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md<br>unknown components: MeetTheMaintainer | `#8453` |
-| `blog/2021/2021-02-07-meshkit-and-meshery-adapter-library/index.mdx` | unknown components: MeshkitMesheryAdapterLib | `#8453` |
-| `blog/2021/2021-04-05-meshmate-of-the-year-2020-nikhil-ladha/index.mdx` | <img>: "../../../../assets/images/meshmate/meshmate-stack.svg" is outside the page bundle — move it next to index.md<br><Blockquote>: non-literal expression for "style"<br><BlockquoteAlt>: non-literal expression for "style"<br><BlockquoteAlt>: non-literal expression for "style"<br><BlockquoteAlt>: non-literal expression for "style"<br><BlockquoteAlt>: non-literal expression for "style" | `#8308` |
-| `blog/2021/2021-04-16-meet-the-maintainer-jash-patel/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review<br>unknown components: MeetTheMaintainer | `#8453` |
+| `blog/2021/2021-02-04-meet-the-maintainer-michael-gfeller/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review<br><img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md | `#8308` |
+| `blog/2021/2021-04-05-meshmate-of-the-year-2020-nikhil-ladha/index.mdx` | <img>: "../../../../assets/images/meshmate/meshmate-stack.svg" is outside the page bundle — move it next to index.md | `#8308` |
+| `blog/2021/2021-04-16-meet-the-maintainer-jash-patel/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
 | `blog/2021/2021-04-19-announcing-meshery-v0.5/index.mdx` | <img>: "../../../../assets/images/layer5/layer5-only/svg/layer5-no-trim.svg" is outside the page bundle — move it next to index.md | `#8308` |
-| `blog/2021/2021-04-24-buf-protocols/index.mdx` | unknown components: BufProtocol | `#8453` |
 | `blog/2021/2021-06-25-she-code-africa-contributhon-boot-camp/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
 | `blog/2021/2021-09-20-service-mesh-specifications-and-why-they-matter/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
 | `blog/2021/2021-10-01-pipelining-service-mesh-specifications/index.mdx` | <img>: "../../../../assets/images/service-mesh-performance/horizontal/smp-dark-text-side.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../../assets/images/service-mesh-icons/service-mesh-interface/horizontal-stackedtext/color/servicemeshinterface-horizontal-stackedtext-color.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../../assets/images/socialIcons/github_black.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../../assets/images/socialIcons/github_black.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `blog/2021/2021-10-04-ccoss-meshery-event/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
 | `blog/2021/2021-10-09-an-introduction-to-meshery/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review<br><img>: "../../../../assets/images/meshery/icon-only/meshery-logo-light.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../../assets/images/meshery-operator/meshery-operator.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `blog/2022/2022-01-07-Recap-KubeCon-China-TAG-Network-talk/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `blog/2022/2022-01-22-the-story-of-meshery-1000-stars/index.mdx` | <Blockquote>: non-literal expression for "style"<br><Blockquote>: non-literal expression for "style"<br><Blockquote>: non-literal expression for "style" | `#8402` |
 | `blog/2022/2022-05-10-dockercon-22-hashicorp-talk/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `blog/2022/2022-05-20-meshmate-of-the-year-2021-aditya-chatterjee/index.mdx` | <img>: "../../../../assets/images/meshmate/meshmate-stack.svg" is outside the page bundle — move it next to index.md<br><Blockquote>: non-literal expression for "style"<br><BlockquoteAlt>: non-literal expression for "style" | `#8308` |
+| `blog/2022/2022-05-20-meshmate-of-the-year-2021-aditya-chatterjee/index.mdx` | <img>: "../../../../assets/images/meshmate/meshmate-stack.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `blog/2022/2022-05-27-debug-envoy-proxy/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `blog/2022/2022-06-01-perfbytes-podcast/index.mdx` | unknown components: PerfbytesPodcast | `#8453` |
 | `blog/2022/2022-06-07-week-open-source-contributions-with-layer5/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review<br><img>: "../../../../assets/images/meshmate/meshmate-icon.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `blog/2022/2022-07-28-managing-multiple-clusters-with-meshery/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
 | `blog/2022/2022-10-19-kubeconna2022/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
 | `blog/2023/04-12-meshery-surpasses-1000-contributors/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `blog/2023/05-24-meet-the-meshmate-yash-sharma/index.mdx` | <img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md<br>unknown components: MeetTheMeshMate | `#8453` |
-| `blog/2023/08-21-layer5-badge-program/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review<br>unknown components: Blog | `#8453` |
+| `blog/2023/05-24-meet-the-meshmate-yash-sharma/index.mdx` | <img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md | `#8308` |
+| `blog/2023/08-21-layer5-badge-program/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
 | `blog/2024/02-13-what-is-platform-engineering/index.mdx` | <CTA_FullWidth>: "../../../../assets/images/meshery/icon-only/meshery-logo-shadow.webp" is outside the page bundle — move it next to index.md | `#8308` |
 | `blog/2024/02-24-open-container-image-meshery/index.mdx` | <CTA_FullWidth>: "../../../../assets/images/meshery/icon-only/meshery-logo-shadow.webp" is outside the page bundle — move it next to index.md | `#8308` |
 | `blog/2024/04-26-docker-compose-with-meshery/index.mdx` | <img>: "../../../../assets/images/dockercompose-logo/dockercompose-logo.webp" is outside the page bundle — move it next to index.md<br><img>: "../../../../assets/images/partners/docker.svg" is outside the page bundle — move it next to index.md | `#8308` |
-| `blog/2024/06-21-meshery-5000-star-milestone/index.mdx` | <Blockquote>: non-literal expression for "style"<br><Blockquote>: non-literal expression for "style" | `#8402` |
-| `blog/2024/07-01-meet-the-maintainer-xin-huang/index.mdx` | <img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md<br>unknown components: MeetTheMaintainer | `#8453` |
-| `blog/2024/09-08-meet-the-maintainer-hussaina-begum/index.mdx` | <img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md<br>unknown components: MeetTheMaintainer | `#8453` |
-| `blog/2024/09-27-meet-the-maintainer-aisuko-li/index.mdx` | <img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md<br>unknown components: MeetTheMaintainer | `#8453` |
-| `blog/2024/10-09-docker-build-warning/index.mdx` | <BlockquoteAlt>: non-literal expression for "style" | `#8402` |
-| `blog/2024/10-22-meet-the-maintainer-aadhitya-amarendiran/index.mdx` | <img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md<br>unknown components: MeetTheMaintainer | `#8453` |
-| `blog/2024/11-01-meet-the-maintainer-yash-sharma/index.mdx` | <img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md<br>unknown components: MeetTheMaintainer | `#8453` |
+| `blog/2024/07-01-meet-the-maintainer-xin-huang/index.mdx` | <img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md | `#8308` |
+| `blog/2024/09-08-meet-the-maintainer-hussaina-begum/index.mdx` | <img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md | `#8308` |
+| `blog/2024/09-27-meet-the-maintainer-aisuko-li/index.mdx` | <img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md | `#8308` |
+| `blog/2024/10-22-meet-the-maintainer-aadhitya-amarendiran/index.mdx` | <img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md | `#8308` |
+| `blog/2024/11-01-meet-the-maintainer-yash-sharma/index.mdx` | <img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `blog/2024/11-05-what-is-the-kanvas-catalog/index.mdx` | <img>: "../../../../assets/images/kanvas/gifs/start-from-scratch.gif" is outside the page bundle — move it next to index.md<br><img>: "../../../../assets/images/kanvas/gifs/catalog.gif" is outside the page bundle — move it next to index.md<br><img>: "../../../../assets/images/kanvas/gifs/rendered-design.webp" is outside the page bundle — move it next to index.md<br><img>: "../../../../assets/images/kanvas/gifs/start-from-scratch.gif" is outside the page bundle — move it next to index.md<br><img>: "../../../../assets/images/kanvas/gifs/catalog.gif" is outside the page bundle — move it next to index.md<br><img>: "../../../../assets/images/kanvas/gifs/rendered-design.webp" is outside the page bundle — move it next to index.md | `#8308` |
-| `blog/2025/05-28-meet-the-maintainer-ian-whitney/index.mdx` | <img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md<br>unknown components: MeetTheMaintainer | `#8453` |
-| `blog/2025/08-27-meet-the-maintainer-aabid-sofi/index.mdx` | <img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md<br>unknown components: MeetTheMaintainer | `#8453` |
+| `blog/2025/05-28-meet-the-maintainer-ian-whitney/index.mdx` | <img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md | `#8308` |
+| `blog/2025/08-27-meet-the-maintainer-aabid-sofi/index.mdx` | <img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `blog/2025/11-03-2025-understanding-configmaps/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
 | `blog/2025/12-28-gemini-cli-trusted-directories/index.mdx` | <CTA_FullWidth>: "../../../../assets/images/layer5/5 icon/png/light/5-light-no-trim.webp" is outside the page bundle — move it next to index.md | `#8308` |
 | `blog/2026/03-02-meshery-hits-10000-github-stars/index.mdx` | <CTA_FullWidth>: "../../../../assets/images/meshery/icon-only/meshery-logo-shadow.webp" is outside the page bundle — move it next to index.md | `#8308` |
-| `blog/2026/03-26-meet-the-maintainer-sangram-rath/index.mdx` | <img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md<br>unknown components: MeetTheMaintainer | `#8453` |
+| `blog/2026/03-26-meet-the-maintainer-sangram-rath/index.mdx` | <img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `blog/2026/04-02-open-source-maintenance-ai-contributors/index.mdx` | non-literal expression for "src" on <img><br><CTA_FullWidth>: "../../../../assets/images/meshery/icon-only/meshery-logo-shadow.webp" is outside the page bundle — move it next to index.md | `#8401` |
 | `blog/2026/04-03-claude-code-skills-not-found-sessionstart-hook/index.mdx` | <CTA_FullWidth>: "../../../../assets/images/meshery/icon-only/meshery-logo-shadow.webp" is outside the page bundle — move it next to index.md | `#8308` |
-| `blog/2026/06-22-meet-the-maintainer-mia-grenell/index.mdx` | <img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md<br>unknown components: MeetTheMaintainer | `#8453` |
+| `blog/2026/06-22-meet-the-maintainer-mia-grenell/index.mdx` | <img>: "../../../../assets/images/app/hero/forklift.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `blog/2026/09-14-disable-claude-code-session-feedback-survey/index.mdx` | <CTA_FullWidth>: "../../../../assets/images/meshery/icon-only/meshery-logo-shadow.webp" is outside the page bundle — move it next to index.md | `#8308` |
 | `blog/2026/09-16-ai-system-1-versus-system-2-tasks/index.mdx` | <CTA_FullWidth>: "../../../../assets/images/meshery/icon-only/meshery-logo-shadow.webp" is outside the page bundle — move it next to index.md | `#8308` |
 | `careers/digital-marketing-internship/index.mdx` | unknown components: Col, PositionApply | `#8457` |
@@ -136,7 +123,6 @@ Every warning file outside Sistent is tracked below with its primary owning issu
 | `careers/ux-engineer/index.mdx` | unknown components: Col, PositionApply | `#8457` |
 | `events/2022/servicemeshcon-EU-2022/index.mdx` | <img>: "../../../../assets/images/layer5/layer5-only/svg/layer5-no-trim.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../../assets/images/partners/intel_blue.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `events/2024/kubecon-EU-2024/index.mdx` | events/2024/kubecon-EU-2024/index.mdx: <Button> has external="true" on non-http(s) URL "/cncf-tag-network/KubeCon-EU-2024-CNCF-TAG-Network.pdf" (<Button secondary title="KubeCon EU 2024 CNCF TAG Network Slide" url="/cncf-tag-network/KubeCon-EU-2024-CNCF-TAG-Network.pdf" external={ true } />); review manually | `#8402` |
-| `events/2024/making-the-cncf-landscape-interactive-with-meshery/index.mdx` | <Button>: non-literal expression for "style" | `#8402` |
 | `handbook/community/index.mdx` | <img>: "../code-of-conduct/bullet.svg" is outside the page bundle — move it next to index.md<br><img>: "../code-of-conduct/bullet.svg" is outside the page bundle — move it next to index.md<br><img>: "../code-of-conduct/bullet.svg" is outside the page bundle — move it next to index.md<br><img>: "../code-of-conduct/bullet.svg" is outside the page bundle — move it next to index.md<br><img>: "../code-of-conduct/bullet.svg" is outside the page bundle — move it next to index.md<br><img>: "../code-of-conduct/bullet.svg" is outside the page bundle — move it next to index.md<br><img>: "../code-of-conduct/bullet.svg" is outside the page bundle — move it next to index.md<br><img>: "../code-of-conduct/bullet.svg" is outside the page bundle — move it next to index.md<br><img>: "../code-of-conduct/bullet.svg" is outside the page bundle — move it next to index.md<br><img>: "../code-of-conduct/bullet.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `handbook/connect-with-us/index.mdx` | <img>: "../../../assets/images/socialIcons/twitter.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/socialIcons/mail_keppel.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/socialIcons/youtube-light.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/socialIcons/github-light.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/socialIcons/linkedin-light.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/socialIcons/docker-light.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/socialIcons/slack-light.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `handbook/faq/index.mdx` | unknown components: HandbookFaqAccordion | `#8456` |
@@ -146,7 +132,7 @@ Every warning file outside Sistent is tracked below with its primary owning issu
 | `handbook/repository-overview/index.mdx` | <img>: "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshery/icon-only/meshery-logo-light.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshery-operator/meshery-operator-dark.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshsync/meshsync.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/service-mesh-performance/icon/smp-dark.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshery-extensions/icon-only/meshery-extensions-color.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/academy/academy.svg" is outside the page bundle — move it next to index.md<br>non-literal expression for "key" on <div><br>non-literal expression for "key" on <table><br>non-literal expression for "key" on <tbody><br>non-literal expression for "href" on <a><br>non-literal expression for "src" on <img><br><Link>: non-literal expression for "to"<br>non-literal expression for "href" on <a><br><img>: "../../../assets/images/socialIcons/github.svg" is outside the page bundle — move it next to index.md<br>non-literal expression for "key" on <div><br>non-literal expression for "key" on <table><br>non-literal expression for "key" on <tbody><br>non-literal expression for "className" on <tr><br>non-literal expression for "className" on <img><br>non-literal expression for "src" on <img><br><Link>: non-literal expression for "to"<br>non-literal expression for "href" on <a><br><img>: "../../../assets/images/socialIcons/github.svg" is outside the page bundle — move it next to index.md<br>unknown components: React.Fragment | `#8456` |
 | `handbook/security-vulnerabilities/index.mdx` | <img>: "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshery/icon-only/meshery-logo-light.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshery-operator/meshery-operator-dark.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshsync/meshsync.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/service-mesh-performance/icon/smp-dark.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshery-extensions/icon-only/meshery-extensions-color.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `handbook/writing-program/index.mdx` | unknown components: Row, Col | `#8456` |
-| `news/2022/2022-05-18-meshmark-the-cloud-native-value-measurement/meshmark-the-cloud-native-value-measurement.md` | thumbnail: "../../../../assets/images/meshmark/stacked/meshmark-dark-full.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/meshmark/stacked/meshmark-dark-full.webp" is outside the page bundle — move it next to index.md<br><Blockquote>: non-literal expression for "style" | `#8308` |
+| `news/2022/2022-05-18-meshmark-the-cloud-native-value-measurement/meshmark-the-cloud-native-value-measurement.md` | thumbnail: "../../../../assets/images/meshmark/stacked/meshmark-dark-full.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/meshmark/stacked/meshmark-dark-full.webp" is outside the page bundle — move it next to index.md | `#8308` |
 | `programs/communitybridge/index.mdx` | <ProgramsWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
 | `programs/gsoc-2021/index.mdx` | <ProgramsWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
 | `programs/hacktoberfest-2020/index.mdx` | programs/hacktoberfest-2020/index.mdx: <Link> has bare-relative "to" value "newcomer" (<Link className="highlight" to="newcomer">); review manually | `#8402` |

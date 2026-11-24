@@ -57,12 +57,18 @@ export const COMPONENTS = {
   JourneySection:   { shortcode: 'journey-section' },
   Blockquote:       { shortcode: 'blockquote' },
   BlockquoteAlt:    { shortcode: 'blockquote-alt' },
+  Blog:             { shortcode: 'blog',           paired: true },
+  BufProtocol:      { shortcode: 'buf-protocol',   paired: true },
   Callout:          { shortcode: 'callout',        paired: true },
   InlineQuotes:     { shortcode: 'inline-quotes' },
   // exprAttrs: JSX expression props the custom converter reads or drops itself, so they neither warn nor block conversion
   Grid2:            { custom: 'grid', exprAttrs: new Set(['size', 'spacing', 'style']) },
   CommonForm:       { custom: 'common-form', exprAttrs: new Set(['submit_body']) },
   ContentForm:      { shortcode: 'content-form' },
+  MeetTheMaintainer: { shortcode: 'meet-the-maintainer', paired: true },
+  MeetTheMeshMate:  { shortcode: 'meet-the-meshmate', paired: true },
+  MeshkitMesheryAdapterLib: { shortcode: 'meshkit-meshery-adapter-lib', paired: true },
+  PerfbytesPodcast: { shortcode: 'perfbytes-podcast', paired: true },
 };
 const COLLECTION_EXCLUDED_COMPONENTS = {
   sistent: new Set([
@@ -72,6 +78,7 @@ const COLLECTION_EXCLUDED_COMPONENTS = {
     'Blockquote', 'BlockquoteAlt', 'Callout', 'InlineQuotes',
     'LfxLogoImage', 'ThemedScaLogo', 'JourneySection',
     'Grid2', 'CommonForm', 'ContentForm',
+    'Blog', 'BufProtocol', 'MeetTheMaintainer', 'MeetTheMeshMate', 'MeshkitMesheryAdapterLib', 'PerfbytesPodcast',
   ]),
 };
 const DROP_ATTRS = new Set(['className', 'class', 'style', 'key', 'ref']);
@@ -122,8 +129,18 @@ export function parseOpenTag(text, start) {
       if (str && !(str[1] === '`' && str[2].includes('${'))) attrs.push({ key, value: cleanAttrVal(str[2]), literal: true });
       else if (/^(-?\d+(\.\d+)?|true|false)$/.test(inner)) attrs.push({ key, value: inner, literal: true });
       else {
-        attrs.push({ key, value: inner, literal: false });
-        if (key !== 'key' && key !== 'ref') problems.push(`non-literal expression for "${key}"`);
+        const stripped = inner
+          .replace(/"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'/g, '')
+          .replace(/\b(true|false|null)\b/g, '')
+          .replace(/-?\d+(\.\d+)?/g, '')
+          .replace(/\b[a-zA-Z_$][\w$]*\s*:/g, '')
+          .replace(/\s+/g, '');
+        if (/^[{}[\],]*$/.test(stripped)) {
+          attrs.push({ key, value: inner, literal: true });
+        } else {
+          attrs.push({ key, value: inner, literal: false });
+          if (key !== 'key' && key !== 'ref') problems.push(`non-literal expression for "${key}"`);
+        }
       }
       i = next;
     } else return null;
@@ -416,11 +433,12 @@ function convertGrid(tag, children, ctx, rawFull) {
   const params = [];
   for (const a of tag.attrs) {
     if (a.key === 'container' || DROP_ATTRS.has(a.key)) continue;
-    const sizes = !container && a.key === 'size' && (a.literal ? (/^\d+$/.test(a.value) ? [['xs', a.value]] : null) : parseGridSize(a.value));
+    const sizes = !container && a.key === 'size' && (/^\d+$/.test(a.value) ? [['xs', a.value]] : parseGridSize(a.value));
     if (sizes) params.push(...sizes);
     else if (container && a.key === 'spacing' && a.literal && /^\d+(\.\d+)?$/.test(a.value)) params.push(['spacing', a.value]);
     else {
-      ctx.warn(`<Grid2>: unsupported ${a.key}=${a.literal ? `"${a.value}"` : `{${a.value}}`}; left as-is`);
+      const braced = !a.literal || a.value.startsWith('{');
+      ctx.warn(`<Grid2>: unsupported ${a.key}=${braced ? `{${a.value}}` : `"${a.value}"`}; left as-is`);
       return rawFull;
     }
   }
@@ -477,16 +495,20 @@ function convertSegment(text, ctx) {
       let tagChanged = false;
       let hasUnresolved = false;
       for (const a of tag.attrs) {
-        if (!a.literal) {
-          if (a.key === 'style') {
-            const css = jsxStyleToCss(a.value);
-            if (css) {
-              a.value = css;
-              a.literal = true;
-              tagChanged = true;
-              continue;
-            }
+        if (a.key === 'style' && a.value.startsWith('{')) {
+          const css = jsxStyleToCss(a.value);
+          if (css) {
+            a.value = css;
+            a.literal = true;
+            tagChanged = true;
+            continue;
+          } else {
+            hasUnresolved = true;
+            ctx.warn(`non-literal expression for "style" on <${name}>`);
+            continue;
           }
+        }
+        if (!a.literal) {
           const varName = a.value;
           const impPath = ctx.imports?.get(varName);
           if (impPath && checkAssetResolvable(impPath, ctx)) {
@@ -727,23 +749,22 @@ export function convertBody(body, ctx) {
   }
   const unwrapped = unwrapCollectionWrappers(body, ctx);
   const chunks = splitCodeFenceChunks(unwrapped);
-
-  return chunks.map((c) => {
-    if (c.code) return c.text;
-    const masked = []; // protect inline code
-    // `{`template literal`}` attribute values are left alone so the tag parser can read them
-    let t = c.text.replace(/\{\s*`(?:\\.|[^`\\])*`\s*\}|`[^`\n]+`/g, (s) => (s[0] === '{' ? s : `\u0000${masked.push(s) - 1}\u0000`));
-    t = t.replace(/^import\s+(?:[\w$]+\s*,?\s*)?(?:\{[^}]*\}|\*\s+as\s+[\w$]+)?\s*from\s+['"][^'"]+['"][ \t]*;?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
-    t = t.replace(/^import\s+['"][^'"]+['"][ \t]*;?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
-    t = stripExportConst(t, ctx);
-    if (/^export\s/m.test(t)) ctx.warn('contains `export` statements (MDX exports are not supported in Hugo)');
-    t = t.replace(/\{\/\*([\s\S]*?)\*\/\}/g, '<!--$1-->');
-    t = t.replace(/<!--[\s\S]*?-->/g, (s) => `\u0000${masked.push(s) - 1}\u0000`); // never scan inside comments
-    ctx.masked = masked;
-    t = convertSegment(t, ctx);
-    while (/\u0000\d+\u0000/.test(t)) t = t.replace(/\u0000(\d+)\u0000/g, (_, n) => masked[+n]);
-    return t;
-  }).join('\n').replace(/\n{3,}/g, '\n\n');
+  const maskedFences = [];
+  let t = chunks.map((c) => (c.code ? `\u0000FENCE_${maskedFences.push(c.text) - 1}\u0000` : c.text)).join('\n');
+  const masked = []; // protect inline code
+  // `{`template literal`}` attribute values are left alone so the tag parser can read them
+  t = t.replace(/\{\s*`(?:\\.|[^`\\])*`\s*\}|`[^`\n]+`/g, (s) => (s[0] === '{' ? s : `\u0000${masked.push(s) - 1}\u0000`));
+  t = t.replace(/^import\s+(?:[\w$]+\s*,?\s*)?(?:\{[^}]*\}|\*\s+as\s+[\w$]+)?\s*from\s+['"][^'"]+['"][ \t]*;?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
+  t = t.replace(/^import\s+['"][^'"]+['"][ \t]*;?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
+  t = stripExportConst(t, ctx);
+  if (/^export\s/m.test(t)) ctx.warn('contains `export` statements (MDX exports are not supported in Hugo)');
+  t = t.replace(/\{\/\*([\s\S]*?)\*\/\}/g, '<!--$1-->');
+  t = t.replace(/<!--[\s\S]*?-->/g, (s) => `\u0000${masked.push(s) - 1}\u0000`); // never scan inside comments
+  ctx.masked = masked;
+  t = convertSegment(t, ctx);
+  while (/\u0000\d+\u0000/.test(t)) t = t.replace(/\u0000(\d+)\u0000/g, (_, n) => masked[+n]);
+  t = t.replace(/\u0000FENCE_(\d+)\u0000/g, (_, n) => maskedFences[+n]);
+  return t.replace(/\n{3,}/g, '\n\n');
 }
 
 /* ---------------------------------------------------------------- front matter */

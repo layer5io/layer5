@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { convertFile, migrate, parseExcludeArg, isTemplatePath, sniffImageFormat, normalizeAssetFilename, rewriteAssetReferences } from '../migrate-mdx.mjs';
+import { convertFile, migrate, parseExcludeArg, isTemplatePath, sniffImageFormat, normalizeAssetFilename, rewriteAssetReferences, parseOpenTag } from '../migrate-mdx.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const fx = path.join(here, 'fixtures/collections');
@@ -1027,6 +1027,22 @@ test('imported assets conversion is idempotent', () => {
   assert.equal(twice, once);
 });
 
+test('lowercase HTML tag with spread attribute and imported identifier preserves tag and props with warning', () => {
+  const input = [
+    '---',
+    'title: "Spread Guard Test"',
+    '---',
+    'import logo from "./logo.png";',
+    '<img {...props} src={logo} alt="Logo" />',
+  ].join('\n');
+  const { output, stats } = convertFile(input, { slug: 'spread-guard-test', file: 'blog/spread-guard-test/index.mdx' });
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /<img>: spread\/expression attribute \{\.\.\.props\}/);
+  assert.match(output, /<img \{\.\.\.props\} src=\{logo\} alt="Logo" \/>/);
+  const rerun = convertFile(output, { slug: 'spread-guard-test', file: 'blog/spread-guard-test/index.mdx' });
+  assert.equal(rerun.output, output);
+});
+
 test('jsxStyleToCss converts string and numeric literal style props to CSS strings and preserves non-literal expressions with warning', () => {
   const input = [
     '---',
@@ -1121,4 +1137,137 @@ test('CommonForm whose submit_body is not text or a fragment warns and stays as-
   const { output, stats } = convertFile(input, { slug: 'form-test', file: 'service-mesh-books/form-test/index.mdx' });
   assert.deepEqual(stats.warnings, ['<CommonForm>: submit_body is not text or a <>…</> fragment; left as-is']);
   assert.match(output, /<CommonForm form="epsma-book" submit_body=\{<span>\{name\}<\/span>\} \/>/);
+});
+
+test('convertBody masks code fences so paired tags enclosing code blocks match their closing tag', () => {
+  const input = [
+    '---',
+    'title: "Fence Masking Test"',
+    '---',
+    '<Card>',
+    'Here is some code:',
+    '```go',
+    'package main',
+    'import "fmt"',
+    'func main() {',
+    '    fmt.Println("hello world")',
+    '}',
+    '```',
+    'End of card.',
+    '</Card>',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'fence-test', file: 'blog/fence-test/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.match(output, /\{\{< card >\}\}/);
+  assert.match(output, /```go\npackage main\nimport "fmt"\nfunc main\(\) \{\n    fmt\.Println\("hello world"\)\n\}\n```/);
+  assert.match(output, /\{\{< \/card >\}\}/);
+
+  // Idempotency check
+  const second = convertFile(output, { slug: 'fence-test', file: 'blog/fence-test/index.mdx' }).output;
+  assert.equal(second, output);
+});
+
+test('parseOpenTag parses static object and array literals as literal: true while flagging dynamic expressions', () => {
+  const snippet = '<CustomTag staticObj={{ key: "val", count: 42, active: true }} staticArr={[{ href: "#1", label: "One" }]} dynamicObj={{ key: someVar }} dynamicCall={getValues()} />';
+  const tag = parseOpenTag(snippet, 0);
+
+  const staticObjAttr = tag.attrs.find((a) => a.key === 'staticObj');
+  const staticArrAttr = tag.attrs.find((a) => a.key === 'staticArr');
+  const dynamicObjAttr = tag.attrs.find((a) => a.key === 'dynamicObj');
+  const dynamicCallAttr = tag.attrs.find((a) => a.key === 'dynamicCall');
+
+  assert.equal(staticObjAttr.literal, true);
+  assert.equal(staticArrAttr.literal, true);
+  assert.equal(dynamicObjAttr.literal, false);
+  assert.equal(dynamicCallAttr.literal, false);
+
+  assert.ok(tag.problems.includes('non-literal expression for "dynamicObj"'));
+  assert.ok(tag.problems.includes('non-literal expression for "dynamicCall"'));
+  assert.ok(!tag.problems.some((p) => p.includes('staticObj')));
+  assert.ok(!tag.problems.some((p) => p.includes('staticArr')));
+
+  // End-to-end test with HTML tag & style props
+  const input = [
+    '---',
+    'title: "Object Literal E2E Test"',
+    '---',
+    '<img src="./test.png" style={{ color: "red", marginTop: 12 }} />',
+    '<img src="./dynamic.png" style={{ color: dynamicColor }} />',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'obj-e2e', file: 'blog/obj-e2e/index.mdx' });
+  assert.match(output, /<img src="\.\/test\.png" style="color: red; margin-top: 12px" \/>/);
+  assert.match(output, /<img src="\.\/dynamic\.png" style=\{\{ color: dynamicColor \}\} \/>/);
+  assert.equal(stats.warnings.length, 1);
+  assert.match(stats.warnings[0], /non-literal expression for "style" on <img>/);
+
+  // Idempotency check
+  const second = convertFile(output, { slug: 'obj-e2e', file: 'blog/obj-e2e/index.mdx' }).output;
+  assert.equal(second, output);
+});
+
+test('Blog bespoke components convert to paired Hugo shortcodes and respect sistent exclusion (P3-01)', () => {
+  const input = [
+    '---',
+    'title: "Blog Bespoke Test"',
+    '---',
+    '<MeetTheMaintainer>',
+    '<div className="interviewer"><span>Lee:</span> Welcome!</div>',
+    '</MeetTheMaintainer>',
+    '<MeetTheMeshMate>',
+    '<div className="intro">Introducing our MeshMate</div>',
+    '</MeetTheMeshMate>',
+    '<MeshkitMesheryAdapterLib>',
+    '<div className="fact">MeshKit fact</div>',
+    '</MeshkitMesheryAdapterLib>',
+    '<BufProtocol>',
+    '<div className="fact">Buf fact</div>',
+    '</BufProtocol>',
+    '<PerfbytesPodcast>',
+    '<div className="answer">Podcast answer</div>',
+    '</PerfbytesPodcast>',
+    '<Blog>',
+    '<div className="badge-grid"><div><span>Badge</span></div></div>',
+    '</Blog>',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'bespoke-test', file: 'blog/2026/bespoke-test/index.mdx' });
+  assert.deepEqual(stats.warnings, []);
+  assert.match(output, /\{\{< meet-the-maintainer >\}\}\n[\s\S]*\{\{< \/meet-the-maintainer >\}\}/);
+  assert.match(output, /\{\{< meet-the-meshmate >\}\}\n[\s\S]*\{\{< \/meet-the-meshmate >\}\}/);
+  assert.match(output, /\{\{< meshkit-meshery-adapter-lib >\}\}\n[\s\S]*\{\{< \/meshkit-meshery-adapter-lib >\}\}/);
+  assert.match(output, /\{\{< buf-protocol >\}\}\n[\s\S]*\{\{< \/buf-protocol >\}\}/);
+  assert.match(output, /\{\{< perfbytes-podcast >\}\}\n[\s\S]*\{\{< \/perfbytes-podcast >\}\}/);
+  assert.match(output, /\{\{< blog >\}\}\n[\s\S]*\{\{< \/blog >\}\}/);
+  assert.equal(stats.components.MeetTheMaintainer, 1);
+  assert.equal(stats.components.MeetTheMeshMate, 1);
+  assert.equal(stats.components.MeshkitMesheryAdapterLib, 1);
+  assert.equal(stats.components.BufProtocol, 1);
+  assert.equal(stats.components.PerfbytesPodcast, 1);
+  assert.equal(stats.components.Blog, 1);
+
+  // Idempotency: re-running on output yields identical output
+  const rerun = convertFile(output, { slug: 'bespoke-test', file: 'blog/2026/bespoke-test/index.mdx' });
+  assert.equal(rerun.output, output);
+
+  // Sistent guard: components are skipped for sistent docs
+  const sistentRes = convertFile(input, { slug: 'bespoke-test', file: 'sistent/bespoke-test/index.mdx' });
+  assert.equal(sistentRes.stats.unknown.MeetTheMaintainer, 1);
+  assert.equal(sistentRes.stats.unknown.MeetTheMeshMate, 1);
+  assert.equal(sistentRes.stats.unknown.MeshkitMesheryAdapterLib, 1);
+  assert.equal(sistentRes.stats.unknown.BufProtocol, 1);
+  assert.equal(sistentRes.stats.unknown.PerfbytesPodcast, 1);
+  assert.equal(sistentRes.stats.unknown.Blog, 1);
+});
+
+test('Blog bespoke components preserve warnings on non-literal props and unclosed tags', () => {
+  const unclosed = '---\ntitle: "Unclosed"\n---\n<MeetTheMaintainer>\nContent\n';
+  const res1 = convertFile(unclosed, { slug: 'unclosed', file: 'blog/2026/unclosed/index.mdx' });
+  assert.ok(res1.stats.warnings.some((w) => /<MeetTheMaintainer> has no closing tag/.test(w)));
+  assert.match(res1.output, /<MeetTheMaintainer>/);
+
+  const nonLiteral = '---\ntitle: "NonLiteral"\n---\n<Blog customProp={someVar}>Body</Blog>\n';
+  const res2 = convertFile(nonLiteral, { slug: 'nonliteral', file: 'blog/2026/nonliteral/index.mdx' });
+  assert.ok(res2.stats.warnings.some((w) => /non-literal expression for "customProp"/.test(w)));
 });
