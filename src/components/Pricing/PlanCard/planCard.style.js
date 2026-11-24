@@ -13,14 +13,14 @@ const PlanCardWrapper = styled.section`
     background-color: #f9f9f9;
     gap: 22rem;
   }
-  .price-container {  
+  .price-container {
     transform: scale(1.15);
     align-items: baseline;
     .price {
       display: flex;
       align-items: baseline;
       font-weight: bold;
-      color: ${(props) => props.theme.whiteToBlack}; 
+      color: ${(props) => props.theme.whiteToBlack};
       white-space: nowrap; /* Prevent line breaks in price text */
       justify-content: center;
     }
@@ -28,10 +28,10 @@ const PlanCardWrapper = styled.section`
       font-size: 1rem;
       align-self: flex-start;
       font-weight: thin;
-      color: ${(props) => props.theme.primaryColor}; 
+      color: ${(props) => props.theme.primaryColor};
     }
     .price-amount {
-      font-size: 2.5rem; 
+      font-size: 2.5rem;
       color: ${(props) => props.theme.primaryColor};
       > sup {
         font-weight: 200;
@@ -39,18 +39,18 @@ const PlanCardWrapper = styled.section`
       }
     }
     .currency {
-      font-size: .65rem;
+      font-size: 0.65rem;
       font-weight: normal;
-      color: ${(props) => props.theme.primaryColor}; 
+      color: ${(props) => props.theme.primaryColor};
       align-content: baseline;
     }
     .price-per {
-      margin-left: .25rem;
+      margin-left: 0.25rem;
       align-self: center;
       font-weight: 200;
-      font-size: .6rem;
-      letter-spacing: -.025rem;
-      color: ${(props) => props.theme.primaryColor}; 
+      font-size: 0.6rem;
+      letter-spacing: -0.025rem;
+      color: ${(props) => props.theme.primaryColor};
     }
   }
   .pricing-button {
@@ -61,7 +61,9 @@ const PlanCardWrapper = styled.section`
     background-color: #007bff;
     color: white;
     cursor: pointer;
-    &:hover {background-color: #0056b3;}
+    &:hover {
+      background-color: #0056b3;
+    }
   }
   .pricing-table {
     width: 100%;
@@ -85,7 +87,7 @@ const PlanCardWrapper = styled.section`
       font-size: 0.75rem;
       font-weight: 500;
       top: 0rem;
-      right: .9rem;
+      right: 0.9rem;
       color: #eee;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
@@ -98,12 +100,12 @@ const PlanCardWrapper = styled.section`
       font-size: 0.75rem;
       font-weight: 500;
       top: 0rem;
-      right: .9rem;
+      right: 0.9rem;
       color: #111;
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     h6 {
-      font-size: .9rem;
+      font-size: 0.9rem;
       margin-top: 1rem;
       color: ${(props) => props.theme.tealBlue};
     }
@@ -122,14 +124,16 @@ const PlanCardWrapper = styled.section`
     background-color: ${(props) => props.theme.grey212121ToWhite};
     box-shadow: 0px 2px 12px 0px rgb(0, 179, 159, 0.7);
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-    &:hover { box-shadow: 0px 2px 16px rgb(235, 192, 23, 0.9); }
+    &:hover {
+      box-shadow: 0px 2px 16px rgb(235, 192, 23, 0.9);
+    }
   }
   .byline {
     /* color: ${(props) => props.theme.greyC8C8C8ToGreen3C494F}; */
     color: ${(props) => props.theme.blueE0FFFCToBlue477E96};
-    margin-top: -.5rem;
+    margin-top: -0.5rem;
     margin-bottom: 2.5rem;
-    font-size: .9rem;
+    font-size: 0.9rem;
     font-weight: 400;
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     justify-content: center;
@@ -178,12 +182,12 @@ const PlanCardWrapper = styled.section`
         font-weight: bold;
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
-        .check {
-          padding-right: 0.2rem;
-          vertical-align: middle;
-          color: ${(props) => props.theme.secondaryColor};
-        }
+      .check {
+        padding-right: 0.2rem;
+        vertical-align: middle;
+        color: ${(props) => props.theme.secondaryColor};
       }
+    }
   }
   .price-tag {
     margin-top: 2rem;
@@ -201,11 +205,11 @@ const PlanCardWrapper = styled.section`
       font-size: 40px;
     }
     &.after {
-    color: #3b3b3b;
-    font-weight: 500;
+      color: #3b3b3b;
+      font-weight: 500;
     }
   }
-.price-button-disabled {
+  .price-button-disabled {
     width: 100%;
     background: rgb(0, 179, 158, 0.6);
     display: block;
@@ -216,52 +220,50 @@ const PlanCardWrapper = styled.section`
       box-shadow: none;
     }
   }
-.price-button-link {
-  color: #fff;
-  display: block;
-  margin: 2rem auto 0;
-  padding: 1rem 2rem;
-  width: 100%;
-  text-align: center;
-  font-weight: 500;
-  transition: 0.3s;
-  background: ${(props) => props.theme.secondaryColor};
-
-}
-.addon-chip {
-  background-color: rgba(0, 179, 159, 0.15);
-  color: ${(props) => props.theme.text.light};
-  border: 1px solid;
-  border-color: ${(props) => props.theme.secondaryColor};
-  min-width: 40%;
-  justify-content: flex-start;
-  display: flex;
-}
-.addon-chip .MuiChip-icon {
+  .price-button-link {
+    color: #fff;
+    display: block;
+    margin: 2rem auto 0;
+    padding: 1rem 2rem;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    transition: 0.3s;
+    background: ${(props) => props.theme.secondaryColor};
+  }
+  .addon-chip {
+    background-color: rgba(0, 179, 159, 0.15);
+    color: ${(props) => props.theme.text.light};
+    border: 1px solid;
+    border-color: ${(props) => props.theme.secondaryColor};
+    min-width: 40%;
+    justify-content: flex-start;
+    display: flex;
+  }
+  .addon-chip .MuiChip-icon {
     color: ${(props) => props.theme.secondaryColor};
     line-height: 1rem;
-}
-
-.MuiTypography-root {
-  font-family: "Qanelas Soft", "Open Sans", sans-serif;
-}
-  .MuiSlider-root {
-  "& .MuiSlider-mark": {
-    fontSize: "12px",
-    color: ${(props) => props.theme.text.light};
-  },
-  "& .MuiSlider-markLabel": {
-    fontSize: "12px",
-    color: ${(props) => props.theme.secondaryColor};
-  },
   }
-});
-  .plan-card-row{
+
+  .MuiTypography-root {
+    font-family: "Qanelas Soft", "Open Sans", sans-serif;
+  }
+  .MuiSlider-root {
+    .MuiSlider-mark {
+      font-size: 12px;
+      color: ${(props) => props.theme.text.light};
+    }
+    .MuiSlider-markLabel {
+      font-size: 12px;
+      color: ${(props) => props.theme.secondaryColor};
+    }
+  }
+  .plan-card-row {
     @media (max-width: 1304px) {
       flex-wrap: wrap;
     }
   }
-  .plan-card-col{
+  .plan-card-col {
     @media (min-width: 768px) and (max-width: 1304px) {
       width: 50%;
     }
