@@ -594,15 +594,17 @@ function convertSegment(text, ctx) {
       children = convertSegment(text.slice(tag.end, c.start), ctx);
       end = c.end;
     }
-    ctx.component(name);
+    const rawFull = text.slice(m.index, end);
+    const countIfConverted = (converted) => { if (converted !== rawFull) ctx.component(name); return converted; };
+    if (spec.custom !== 'grid' && spec.custom !== 'common-form') ctx.component(name);
     if (spec.custom === 'link') {
       out += convertLink(tag, children, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
     } else if (spec.custom === 'code') {
       out += convertCode(tag, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
     } else if (spec.custom === 'grid') {
-      out += convertGrid(tag, children, ctx, text.slice(m.index, end));
+      out += countIfConverted(convertGrid(tag, children, ctx, rawFull));
     } else if (spec.custom === 'common-form') {
-      out += convertCommonForm(tag, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
+      out += countIfConverted(convertCommonForm(tag, ctx, text.slice(m.index, tag.end), rawFull));
     } else {
       out += buildShortcode(spec, tag, children, ctx, text.slice(m.index, tag.end));
     }
