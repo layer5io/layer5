@@ -142,7 +142,7 @@ export function parseOpenTag(text, start) {
       const [raw, next] = readBraces(text, i);
       const inner = raw.slice(1, -1).trim();
       const str = /^(["'`])([\s\S]*)\1$/.exec(inner);
-      const arr = /^\[\s*(["'])([\s\S]*?)\1\s*\]$/.exec(inner);
+      const arr = /^\[\s*(["'])([^"']*)\1\s*\]$/.exec(inner);
       if (str && !(str[1] === '`' && str[2].includes('${'))) attrs.push({ key, value: cleanAttrVal(str[2]), literal: true });
       else if (arr) attrs.push({ key, value: cleanAttrVal(arr[2]), literal: true });
       else if (/^(-?\d+(\.\d+)?|true|false)$/.test(inner)) attrs.push({ key, value: inner, literal: true });
