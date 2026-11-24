@@ -64,7 +64,8 @@ const TOCWrapper = styled.div`
   ul {
     display: flex;
     flex-direction: column;
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .toc-ul {
