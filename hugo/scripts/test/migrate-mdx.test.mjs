@@ -1101,6 +1101,13 @@ test('Grid2 with a size or prop it cannot map warns and stays as-is', () => {
   assert.match(stats.warnings[2], /<Grid2>: unsupported direction="row"; left as-is/);
   assert.match(output, /<Grid2 size="grow">Auto<\/Grid2>/);
   assert.doesNotMatch(output, /grid-item|\{\{< grid/);
+  assert.equal(stats.components.Grid2, undefined);
+});
+
+test('only the Grid2 tags that convert are counted in the report', () => {
+  const input = '---\ntitle: "x"\n---\n<Grid2 size={6}>A</Grid2>\n<Grid2 size="grow">B</Grid2>';
+  const { stats } = convertFile(input, { slug: 'grid-count', file: 'events/2025/grid-count/index.mdx' });
+  assert.equal(stats.components.Grid2, 1);
 });
 
 test('CommonForm and ContentForm convert to form shortcodes and respect sistent exclusion', () => {
@@ -1126,6 +1133,8 @@ test('CommonForm and ContentForm convert to form shortcodes and respect sistent 
   assert.deepEqual(stats.warnings, []);
   assert.match(output, /\{\{< common-form title="Get the Free eBook" form="epsma-book" submit_title="Your copy will arrive shortly\." >\}\}\nWhile waiting, take a free <a href="https:\/\/layer5\.io\/learn\/learning-paths">learning path<\/a>\.\n\{\{< \/common-form >\}\}/);
   assert.match(output, /\{\{< content-form >\}\}/);
+  assert.equal(stats.components.CommonForm, 1);
+  assert.equal(stats.components.ContentForm, 1);
 
   const sistentRes = convertFile('---\ntitle: "x"\n---\n<Grid2 container><Grid2 size={6}>A</Grid2></Grid2>\n<ContentForm />', { slug: 'form-sistent', file: 'sistent/form-test/index.mdx' });
   assert.equal(sistentRes.stats.unknown.Grid2, 2);
@@ -1137,6 +1146,7 @@ test('CommonForm whose submit_body is not text or a fragment warns and stays as-
   const { output, stats } = convertFile(input, { slug: 'form-test', file: 'service-mesh-books/form-test/index.mdx' });
   assert.deepEqual(stats.warnings, ['<CommonForm>: submit_body is not text or a <>…</> fragment; left as-is']);
   assert.match(output, /<CommonForm form="epsma-book" submit_body=\{<span>\{name\}<\/span>\} \/>/);
+  assert.equal(stats.components.CommonForm, undefined);
 });
 
 test('convertBody masks code fences so paired tags enclosing code blocks match their closing tag', () => {
