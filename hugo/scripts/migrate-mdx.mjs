@@ -587,6 +587,7 @@ function convertSegment(text, ctx) {
     tag.problems
       .filter((p) => !spec.exprAttrs?.has(/^non-literal expression for "(.+)"$/.exec(p)?.[1]))
       .forEach((p) => ctx.warn(`<${name}>: ${p}`));
+    const countsBefore = ctx.snapshotComponents();
     let children = '', end = tag.end;
     if (!tag.selfClosing) {
       const c = findClose(text, tag.end, name);
@@ -595,7 +596,11 @@ function convertSegment(text, ctx) {
       end = c.end;
     }
     const rawFull = text.slice(m.index, end);
-    const countIfConverted = (converted) => { if (converted !== rawFull) ctx.component(name); return converted; };
+    // a wrapper left as-is also discards the inner conversions, so their counts go too
+    const countIfConverted = (converted) => {
+      if (converted !== rawFull) ctx.component(name); else ctx.restoreComponents(countsBefore);
+      return converted;
+    };
     if (spec.custom !== 'grid' && spec.custom !== 'common-form') ctx.component(name);
     if (spec.custom === 'link') {
       out += convertLink(tag, children, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
@@ -862,6 +867,8 @@ export function convertFile(source, { slug, file = '', collection, dir, taken = 
     warn: (m) => stats.warnings.push(m),
     unknown: (n) => { stats.unknown[n] = (stats.unknown[n] || 0) + 1; },
     component: (n) => { stats.components[n] = (stats.components[n] || 0) + 1; },
+    snapshotComponents: () => ({ ...stats.components }),
+    restoreComponents: (s) => { Object.keys(stats.components).forEach((k) => delete stats.components[k]); Object.assign(stats.components, s); },
     count: (k) => { stats.counters[k] = (stats.counters[k] || 0) + 1; },
     bundle: dir && ((v) => {
       const from = path.resolve(dir, v); const name = path.basename(from);
