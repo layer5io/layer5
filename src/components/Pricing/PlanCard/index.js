@@ -66,14 +66,23 @@ const PlanCard = ({ planData, isYearly, currency }) => {
                 <Button
                   // disabled={x.tier === "Team Operator"}
                   $primary
+                  disabled={x.button?.[0] === "Coming Soon"}
+                  $external={Boolean(
+                    x.button?.[0] !== "Coming Soon" &&
+                    (x.button?.[1] ?? planLink[x.tier] ?? "https://cloud.layer5.io/account/plans").startsWith("http")
+                  )}
                   className={
-                    x.button[0] === "Coming Soon"
+                    x.button?.[0] === "Coming Soon"
                       ? "price-button-disabled"
                       : "price-button-link"
                   }
-                  $url={planLink[x.tier] ?? "https://cloud.layer5.io/account/plans"}
+                  $url={
+                    x.button?.[0] === "Coming Soon"
+                      ? undefined
+                      : (x.button?.[1] ?? planLink[x.tier] ?? "https://cloud.layer5.io/account/plans")
+                  }
                 >
-                  {x.tier === "Personal" ? "Join for Free" : "Subscribe"}
+                  {x.button?.[0] ?? (x.tier === "Personal" ? "Join for Free" : "Subscribe")}
                 </Button>
 
                 <h6>{x.byline2}</h6>
