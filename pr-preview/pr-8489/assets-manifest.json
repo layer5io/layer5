@@ -111,8 +111,8 @@
   "aaa5778d.js": "aaa5778d-0d24139745fc22936ada.js",
   "ac581ebe.js": "ac581ebe-d8f297aa0b7917a0edd2.js",
   "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff.js": "acf8f1d7eae75e3466fba11dc4ad63bf7bf526ff-fbddd534b9d0e8cbfdaf.js",
-  "app-e36981648da5e152b254.js.LICENSE.txt": "app-e36981648da5e152b254.js.LICENSE.txt",
-  "app.js": "app-e36981648da5e152b254.js",
+  "app-9cf1b78b0b5a8e27b326.js.LICENSE.txt": "app-9cf1b78b0b5a8e27b326.js.LICENSE.txt",
+  "app.js": "app-9cf1b78b0b5a8e27b326.js",
   "b5f6012b.js": "b5f6012b-0d788a08c9a6ff5be2b5.js",
   "b94c7d6e898e669bbfd99da21b2e9e67976b8f68.js": "b94c7d6e898e669bbfd99da21b2e9e67976b8f68-c41c7d24dd9cb777d7a6.js",
   "ba5828f4dac0658416d102e02536a23fbd61d3fb.js": "ba5828f4dac0658416d102e02536a23fbd61d3fb-680d94241fafedb1da8d.js",
@@ -342,7 +342,7 @@
   "component---src-templates-blog-single-js-content-file-path-src-collections-blog-2026-09-16-ai-system-1-versus-system-2-tasks-index-mdx.js": "component---src-templates-blog-single-js-content-file-path-src-collections-blog-2026-09-16-ai-system-1-versus-system-2-tasks-index-mdx-3426708c1493e5b5da51.js",
   "component---src-templates-blog-tag-list-js.js": "component---src-templates-blog-tag-list-js-be7e6412b460489fe6c0.js",
   "component---src-templates-book-single-js-content-file-path-src-collections-service-mesh-books-istio-up-and-running-index-mdx.js": "component---src-templates-book-single-js-content-file-path-src-collections-service-mesh-books-istio-up-and-running-index-mdx-038a7ad9638f8a9227ac.js",
-  "component---src-templates-book-single-js-content-file-path-src-collections-service-mesh-books-service-mesh-patterns-index-mdx.js": "component---src-templates-book-single-js-content-file-path-src-collections-service-mesh-books-service-mesh-patterns-index-mdx-15331ce0258ad0b5e89c.js",
+  "component---src-templates-book-single-js-content-file-path-src-collections-service-mesh-books-service-mesh-patterns-index-mdx.js": "component---src-templates-book-single-js-content-file-path-src-collections-service-mesh-books-service-mesh-patterns-index-mdx-ba712c05213a07ddd255.js",
   "component---src-templates-book-single-js-content-file-path-src-collections-service-mesh-books-the-enterprise-path-to-service-mesh-architectures-2nd-edition-index-mdx.js": "component---src-templates-book-single-js-content-file-path-src-collections-service-mesh-books-the-enterprise-path-to-service-mesh-architectures-2nd-edition-index-mdx-950c401073d711e8a31e.js",
   "component---src-templates-book-single-js-content-file-path-src-collections-service-mesh-books-the-enterprise-path-to-service-mesh-architectures-index-mdx.js": "component---src-templates-book-single-js-content-file-path-src-collections-service-mesh-books-the-enterprise-path-to-service-mesh-architectures-index-mdx-8a128000c8c87923df6b.js",
   "component---src-templates-career-single-js-content-file-path-src-collections-careers-digital-marketing-internship-index-mdx.js": "component---src-templates-career-single-js-content-file-path-src-collections-careers-digital-marketing-internship-index-mdx-92415cfe6ceec8a3b3ad.js",
@@ -2119,5 +2119,5 @@
   "static/yash-sharma.webp": "static/yash-sharma-54aa26b6e5743f0557cfc76aa9797f2d.webp",
   "static/yogi.webp": "static/yogi-d00ca1cc48ab74938a23d4359ef3fb01.webp",
   "styles.css": "styles.3492a43a77573e77f695.css",
-  "webpack-runtime.js": "webpack-runtime-6da9d2700dc596fe27fd.js"
+  "webpack-runtime.js": "webpack-runtime-f7773ad04fa4140e0ca9.js"
 }
