@@ -153,7 +153,7 @@ export function parseOpenTag(text, start) {
           .replace(/-?\d+(\.\d+)?/g, '')
           .replace(/\b[a-zA-Z_$][\w$]*\s*:/g, '')
           .replace(/\s+/g, '');
-        if (/^[{}[\],]*$/.test(stripped)) {
+        if (!/^\[\s*["'`]/.test(inner) && /^[{}[\],]*$/.test(stripped)) {
           attrs.push({ key, value: inner, literal: true });
         } else {
           attrs.push({ key, value: inner, literal: false });

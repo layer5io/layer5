@@ -1439,8 +1439,7 @@ test('FAQ single-element array prop is extracted as literal, multi-element array
   assert.match(singleOut, /\{\{< faq category="careers" >\}\}/);
 
   const multi = '---\ntitle: "Multi FAQ"\n---\n<FAQ category={["careers", "internships"]} />\n';
-  const { output: multiOut } = convertFile(multi, { slug: 'multi-faq', file: 'resources/multi-faq/index.mdx' });
-  // Verify multi-element array is not mangled into a single concatenated string value
-  assert.doesNotMatch(multiOut, /category="careers\\", \\"internships"/);
-  assert.doesNotMatch(multiOut, /category="careers", "internships"/);
+  const { output: multiOut, stats: multiStats } = convertFile(multi, { slug: 'multi-faq', file: 'resources/multi-faq/index.mdx' });
+  assert.ok(multiStats.warnings.some((w) => /non-literal expression for "category"/.test(w)));
+  assert.ok(multiOut.includes('<FAQ category={["careers", "internships"]} />'));
 });
