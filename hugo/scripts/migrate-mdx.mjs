@@ -3,6 +3,8 @@
  * migrate-mdx.mjs — Gatsby MDX → Hugo Markdown converter (Workstream 1).
  *
  * Zero dependencies (Node >= 18). Safe by default: use --dry-run first.
+ * Optional dependencies: ImageMagick (`magick` or non-Windows `convert`) or Python 3
+ * with Pillow (`PIL`) for AVIF -> WebP raster asset transcoding.
  *
  *   node scripts/migrate-mdx.mjs --src ../src/collections --dest content --dry-run --report report.json
  *   node scripts/migrate-mdx.mjs --src ../src/collections --dest content --progress data/migration.json
@@ -12,7 +14,8 @@
  *   2. Converts known JSX components to Hugo shortcodes (see COMPONENTS).
  *   3. Leaves code fences and inline code untouched.
  *   4. Rewrites front matter: redirect_from → aliases, published:false → draft:true,
- *      ./thumbnail → bundle-relative, and guarantees a `slug` (so permalinks are deterministic).
+ *      ./thumbnail → bundle-relative, copies ../ front-matter images into the page bundle,
+ *      and guarantees a `slug` (so permalinks are deterministic).
  *   5. Flags anything it cannot convert with a <!-- TODO(mdx) --> marker AND a report entry,
  *      instead of silently dropping it.
  *
@@ -22,32 +25,86 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { execFileSync } from 'node:child_process';
 
 /* ---------------------------------------------------------------- component map */
 export const COMPONENTS = {
-  Button:        { shortcode: 'button',         text: true, alias: { to: 'url', href: 'url', link: 'url' } },
+  Button: {
+    shortcode: 'button',
+    text: true,
+    alias: { to: 'url', href: 'url', link: 'url', title: 'text' },
+    flagValues: { primary: ['style', 'primary'], secondary: ['style', 'secondary'] },
+    drop: new Set(['external']),
+  },
   CTA_FullWidth: { shortcode: 'cta-fullwidth' },
   Terminal:      { shortcode: 'terminal',       paired: true, bodyAttr: 'code' },
   Accordion:     { shortcode: 'accordion',      paired: true },
   AccordionItem: { shortcode: 'accordion-item', paired: true },
-  Card:          { shortcode: 'card',           paired: true },
+  Card:             { shortcode: 'card',           paired: true },
+  Link:             { custom: 'link' },
+  BlogWrapper:      { custom: 'unwrap' },
+  CareerWrapper:    { custom: 'unwrap' },
+  EventWrapper:     { custom: 'unwrap' },
+  NewsWrapper:      { custom: 'unwrap' },
+  ProgramsWrapper:  { custom: 'unwrap' },
+  ProjectWrapper:   { custom: 'unwrap' },
+  ResourcesWrapper: { custom: 'unwrap' },
+  BookWrapper:      { custom: 'unwrap' },
+  Code:             { custom: 'code' },
+  CodeBlock:        { custom: 'code' },
+  LfxLogoImage:     { shortcode: 'lfx-logo' },
+  ThemedScaLogo:    { shortcode: 'themed-sca-logo' },
+  JourneySection:   { shortcode: 'journey-section' },
+  Blockquote:       { shortcode: 'blockquote' },
+  BlockquoteAlt:    { shortcode: 'blockquote-alt' },
+  Blog:             { shortcode: 'blog',           paired: true },
+  BufProtocol:      { shortcode: 'buf-protocol',   paired: true },
+  Callout:          { shortcode: 'callout',        paired: true },
+  InlineQuotes:     { shortcode: 'inline-quotes' },
+  // exprAttrs: JSX expression props the custom converter reads or drops itself, so they neither warn nor block conversion
+  Grid2:            { custom: 'grid', exprAttrs: new Set(['size', 'spacing', 'style']) },
+  CommonForm:       { custom: 'common-form', exprAttrs: new Set(['submit_body']) },
+  ContentForm:      { shortcode: 'content-form' },
+  MeetTheMaintainer: { shortcode: 'meet-the-maintainer', paired: true },
+  MeetTheMeshMate:  { shortcode: 'meet-the-meshmate', paired: true },
+  MeshkitMesheryAdapterLib: { shortcode: 'meshkit-meshery-adapter-lib', paired: true },
+  PerfbytesPodcast: { shortcode: 'perfbytes-podcast', paired: true },
+};
+const COLLECTION_EXCLUDED_COMPONENTS = {
+  sistent: new Set([
+    'Button', 'CTA_FullWidth', 'Terminal', 'Accordion', 'AccordionItem', 'Card', 'Link', 'Code',
+    'BlogWrapper', 'CareerWrapper', 'EventWrapper', 'NewsWrapper',
+    'ProgramsWrapper', 'ProjectWrapper', 'ResourcesWrapper', 'BookWrapper',
+    'Blockquote', 'BlockquoteAlt', 'Callout', 'InlineQuotes',
+    'LfxLogoImage', 'ThemedScaLogo', 'JourneySection',
+    'Grid2', 'CommonForm', 'ContentForm',
+    'Blog', 'BufProtocol', 'MeetTheMaintainer', 'MeetTheMeshMate', 'MeshkitMesheryAdapterLib', 'PerfbytesPodcast',
+  ]),
 };
 const DROP_ATTRS = new Set(['className', 'class', 'style', 'key', 'ref']);
 
+/** Resolve a component mapping for the active collection. */
+export function resolveComponentSpec(name, collection = '') {
+  if (collection && COLLECTION_EXCLUDED_COMPONENTS[collection]?.has(name)) return null;
+  return COMPONENTS[name] || null;
+}
+
 /* ---------------------------------------------------------------- tag scanner */
 const isWs = (c) => c === ' ' || c === '\n' || c === '\t' || c === '\r';
+const isTagWs = (c) => isWs(c) || c === '\u200B';
+const cleanAttrVal = (v) => v.replace(/\u200B/g, '');
 
 /** Parse an opening tag starting at text[start] === '<'. Returns null if malformed. */
 export function parseOpenTag(text, start) {
   let i = start + 1;
-  const nm = /^[A-Za-z_][\w.]*/.exec(text.slice(i));
+  const nm = /^[A-Za-z_][\w.-]*/.exec(text.slice(i));
   if (!nm) return null;
   const name = nm[0];
   i += name.length;
   const attrs = [];
   const problems = [];
   while (i < text.length) {
-    while (isWs(text[i])) i++;
+    while (isTagWs(text[i])) i++;
     if (text.startsWith('/>', i)) return { name, attrs, problems, end: i + 2, selfClosing: true };
     if (text[i] === '>') return { name, attrs, problems, end: i + 1, selfClosing: false };
     if (text[i] === '{') { // {...spread}
@@ -55,23 +112,36 @@ export function parseOpenTag(text, start) {
       problems.push(`spread/expression attribute ${raw.slice(0, 40)}`);
       i = next; continue;
     }
-    const an = /^[\w:.-]+/.exec(text.slice(i));
+    const an = /^[\w$:.-]+/.exec(text.slice(i));
     if (!an) return null;
     const key = an[0]; i += key.length;
-    while (isWs(text[i])) i++;
+    while (isTagWs(text[i])) i++;
     if (text[i] !== '=') { attrs.push({ key, value: 'true', literal: true }); continue; }
-    i++; while (isWs(text[i])) i++;
+    i++; while (isTagWs(text[i])) i++;
     if (text[i] === '"' || text[i] === "'") {
       const q = text[i]; const j = text.indexOf(q, i + 1);
       if (j === -1) return null;
-      attrs.push({ key, value: text.slice(i + 1, j), literal: true }); i = j + 1;
+      attrs.push({ key, value: cleanAttrVal(text.slice(i + 1, j)), literal: true }); i = j + 1;
     } else if (text[i] === '{') {
       const [raw, next] = readBraces(text, i);
       const inner = raw.slice(1, -1).trim();
       const str = /^(["'`])([\s\S]*)\1$/.exec(inner);
-      if (str && !(str[1] === '`' && str[2].includes('${'))) attrs.push({ key, value: str[2], literal: true });
+      if (str && !(str[1] === '`' && str[2].includes('${'))) attrs.push({ key, value: cleanAttrVal(str[2]), literal: true });
       else if (/^(-?\d+(\.\d+)?|true|false)$/.test(inner)) attrs.push({ key, value: inner, literal: true });
-      else { attrs.push({ key, value: inner, literal: false }); problems.push(`non-literal expression for "${key}"`); }
+      else {
+        const stripped = inner
+          .replace(/"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'/g, '')
+          .replace(/\b(true|false|null)\b/g, '')
+          .replace(/-?\d+(\.\d+)?/g, '')
+          .replace(/\b[a-zA-Z_$][\w$]*\s*:/g, '')
+          .replace(/\s+/g, '');
+        if (/^[{}[\],]*$/.test(stripped)) {
+          attrs.push({ key, value: inner, literal: true });
+        } else {
+          attrs.push({ key, value: inner, literal: false });
+          if (key !== 'key' && key !== 'ref') problems.push(`non-literal expression for "${key}"`);
+        }
+      }
       i = next;
     } else return null;
   }
@@ -124,12 +194,32 @@ function fmtValue(v) {
   return `"${flat.replace(/"/g, '&quot;')}"`;
 }
 
-function buildShortcode(spec, tag, children, ctx) {
+function buildShortcode(spec, tag, children, ctx, rawTag = '') {
   const attrs = new Map();
+  let externalTrue = false;
   for (const a of tag.attrs) {
-    if (DROP_ATTRS.has(a.key)) { ctx.count('droppedAttrs'); continue; }
-    const key = spec.alias?.[a.key] ?? snake(a.key);
+    const baseKey = a.key.startsWith('$') ? a.key.slice(1) : a.key;
+    if (baseKey === 'external' && a.value === 'true') externalTrue = true;
+    if (DROP_ATTRS.has(a.key) || DROP_ATTRS.has(baseKey) || spec.drop?.has(a.key) || spec.drop?.has(baseKey)) {
+      ctx.count('droppedAttrs');
+      continue;
+    }
+    const flagEntry = spec.flagValues?.[baseKey];
+    if (flagEntry) {
+      if (a.value !== 'false') attrs.set(flagEntry[0], flagEntry[1]);
+      continue;
+    }
+    const key = spec.alias?.[a.key] ?? spec.alias?.[baseKey] ?? snake(baseKey);
+    if (baseKey === 'title' && key === 'text' && attrs.has('text')) continue;
     attrs.set(key, a.value);
+  }
+  if (externalTrue) {
+    const resolvedUrl = (attrs.get('url') ?? '').trim();
+    if (resolvedUrl && !/^https?:\/\//i.test(resolvedUrl)) {
+      const loc = ctx.file ? `${ctx.file}: ` : '';
+      const tagSnippet = rawTag.replace(/\s+/g, ' ').trim() || `<${tag.name}>`;
+      ctx.warn(`${loc}<${tag.name}> has external="true" on non-http(s) URL "${resolvedUrl}" (${tagSnippet}); review manually`);
+    }
   }
   let body = children?.trim() ?? '';
   if (spec.bodyAttr && attrs.has(spec.bodyAttr)) { body = attrs.get(spec.bodyAttr); attrs.delete(spec.bodyAttr); }
@@ -143,10 +233,249 @@ function buildShortcode(spec, tag, children, ctx) {
   return open;
 }
 
+/** Normalize a <Link to="..."> URL or return null if bare-relative. */
+function normalizeLinkUrl(raw) {
+  const u = raw.trim();
+  if (/^https?:\/\/layer5\.io(?=[/?#]|$)/i.test(u)) {
+    const rest = u.replace(/^https?:\/\/layer5\.io/i, '');
+    if (!rest) return '/';
+    return rest.startsWith('/') ? rest : `/${rest}`;
+  }
+  if (
+    u.startsWith('/') ||
+    u.startsWith('#') ||
+    u.startsWith('./') ||
+    /^(?:https?:|mailto:|tel:)/i.test(u)
+  ) {
+    return u;
+  }
+  return null;
+}
+
+function convertLink(tag, children, ctx, rawTag, rawFull) {
+  const loc = ctx.file ? `${ctx.file}: ` : '';
+  const tagSnippet = rawTag.replace(/\s+/g, ' ').trim() || '<Link>';
+  const toAttr = tag.attrs.find((a) => a.key === 'to');
+  if (!toAttr) {
+    ctx.warn(`${loc}<Link> missing "to" attribute (${tagSnippet}); left as-is`);
+    return rawFull;
+  }
+  if (!toAttr.literal) {
+    return rawFull;
+  }
+  const url = normalizeLinkUrl(toAttr.value);
+  if (url === null) {
+    ctx.warn(`${loc}<Link> has bare-relative "to" value "${toAttr.value}" (${tagSnippet}); review manually`);
+    return rawFull;
+  }
+  const classAttr = tag.attrs.find((a) => a.key === 'className' || a.key === 'class');
+  const targetAttr = tag.attrs.find((a) => a.key === 'target');
+  const relAttr = tag.attrs.find((a) => a.key === 'rel');
+  const hasRichChild = /<[A-Za-z!/]|{{[<%]/.test(children);
+  if (!classAttr && !targetAttr && !relAttr && !hasRichChild) {
+    const label = children.replace(/\s+/g, ' ').trim();
+    const mdUrl = /[\s()]/.test(url) ? `<${url}>` : url;
+    return `[${label}](${mdUrl})`;
+  }
+  const parts = [`to=${fmtValue(url)}`];
+  if (classAttr && classAttr.value.trim()) parts.push(`class=${fmtValue(classAttr.value)}`);
+  if (targetAttr && targetAttr.value.trim()) parts.push(`target=${fmtValue(targetAttr.value)}`);
+  if (relAttr && relAttr.value.trim()) parts.push(`rel=${fmtValue(relAttr.value)}`);
+  return `{{< link ${parts.join(' ')} >}}${children.trim()}{{< /link >}}`;
+}
+
+function convertCode(tag, ctx, rawTag, rawFull) {
+  const loc = ctx.file ? `${ctx.file}: ` : '';
+  const tagSnippet = rawTag.replace(/\s+/g, ' ').trim() || `<${tag.name}>`;
+  const codeAttr = tag.attrs.find((a) => a.key === 'codeString' || a.key === 'code');
+  if (!codeAttr) {
+    ctx.warn(`${loc}<${tag.name}> missing "codeString" attribute (${tagSnippet}); left as-is`);
+    return rawFull;
+  }
+  if (!codeAttr.literal) {
+    return rawFull;
+  }
+  const langAttr = tag.attrs.find((a) => a.key === 'language');
+  const lang = (langAttr?.literal ? langAttr.value.trim() : '') || (tag.name === 'CodeBlock' ? 'jsx' : 'text');
+  const codeBody = codeAttr.value.replace(/\\`/g, '`').replace(/\r\n/g, '\n').replace(/^\n/, '').replace(/\n$/, '');
+  const backtickRuns = codeBody.match(/`+/g) || [];
+  const maxRun = backtickRuns.reduce((m, s) => Math.max(m, s.length), 0);
+  const fence = '`'.repeat(Math.max(3, maxRun + 1));
+  return `${fence}${lang}\n${codeBody}\n${fence}`;
+}
+
+export function recordImports(text) {
+  const imports = new Map();
+  const importRe = /^import\s+([\s\S]*?)\s+from\s+['"]([^'"]+)['"][ \t]*;?[ \t]*$/gm;
+  let m;
+  while ((m = importRe.exec(text)) !== null) {
+    const clause = m[1].trim();
+    const importPath = m[2].trim();
+    const defaultMatch = /^([\w$]+)(?:\s*,\s*[\s\S]+)?$/.exec(clause);
+    if (defaultMatch && !clause.startsWith('{') && !clause.startsWith('*')) {
+      imports.set(defaultMatch[1], importPath);
+    }
+    const nsMatch = /\*\s+as\s+([\w$]+)/.exec(clause);
+    if (nsMatch) {
+      imports.set(nsMatch[1], importPath);
+    }
+    const namedMatch = /\{([\s\S]*?)\}/.exec(clause);
+    if (namedMatch) {
+      const parts = namedMatch[1].split(',');
+      for (const p of parts) {
+        const item = p.trim();
+        if (!item) continue;
+        const aliasMatch = /^([\w$]+)\s+as\s+([\w$]+)$/.exec(item);
+        if (aliasMatch) {
+          imports.set(aliasMatch[2], importPath);
+        } else if (/^[\w$]+$/.test(item)) {
+          imports.set(item, importPath);
+        }
+      }
+    }
+  }
+  return imports;
+}
+
+export function checkAssetResolvable(importPath, ctx = {}) {
+  if (ctx.dir) {
+    const target = importPath.startsWith('/')
+      ? path.resolve('static', importPath.slice(1))
+      : path.resolve(ctx.dir, importPath);
+    return fs.existsSync(target);
+  }
+  if (ctx.file) {
+    const docDir = path.dirname(ctx.file);
+    const target = importPath.startsWith('/')
+      ? path.resolve('static', importPath.slice(1))
+      : path.resolve('src/collections', docDir, importPath);
+    if (fs.existsSync(target)) return true;
+  }
+  return /\.(png|jpe?g|webp|avif|svg|gif|pdf|ico|mp4|webm)$/i.test(importPath);
+}
+
+const UNITLESS_CSS_PROPS = new Set([
+  'animation-iteration-count',
+  'border-image-outset',
+  'border-image-slice',
+  'border-image-width',
+  'box-flex',
+  'box-flex-group',
+  'box-ordinal-group',
+  'column-count',
+  'columns',
+  'flex',
+  'flex-grow',
+  'flex-positive',
+  'flex-shrink',
+  'flex-negative',
+  'flex-order',
+  'grid-row',
+  'grid-row-end',
+  'grid-row-span',
+  'grid-row-start',
+  'grid-column',
+  'grid-column-end',
+  'grid-column-span',
+  'grid-column-start',
+  'font-weight',
+  'line-clamp',
+  'line-height',
+  'opacity',
+  'order',
+  'orphans',
+  'tab-size',
+  'widows',
+  'z-index',
+  'zoom',
+  'fill-opacity',
+  'flood-opacity',
+  'stop-opacity',
+  'stroke-dasharray',
+  'stroke-dashoffset',
+  'stroke-miterlimit',
+  'stroke-opacity',
+  'stroke-width',
+]);
+
+function jsxStyleToCss(val) {
+  const trimmed = val.replace(/^\{|\}$/g, '').trim();
+  if (!trimmed) return null;
+  const propRe = /([\w-]+)\s*:\s*(?:["']([^"']*)["']|(-?\d+(?:\.\d+)?))/g;
+  const props = [];
+  let m;
+  let lastIndex = 0;
+  while ((m = propRe.exec(trimmed)) !== null) {
+    if (trimmed.slice(lastIndex, m.index).replace(/[\s,]/g, '')) return null;
+    const k = m[1].replace(/([A-Z])/g, '-$1').toLowerCase();
+    const v = m[2] !== undefined ? m[2] : (UNITLESS_CSS_PROPS.has(k) || m[3] === '0' ? m[3] : `${m[3]}px`);
+    props.push(`${k}: ${v}`);
+    lastIndex = propRe.lastIndex;
+  }
+  if (trimmed.slice(lastIndex).replace(/[\s,]/g, '') || !props.length) return null;
+  return props.join('; ');
+}
+
+const GRID_BREAKPOINTS = new Set(['xs', 'sm', 'md', 'lg', 'xl']);
+
+/** Parse a Grid2 size expression such as `{ xs: 12, md: 6 }` into [breakpoint, columns] pairs, or null. */
+function parseGridSize(expr) {
+  const obj = /^\{([\s\S]*)\}$/.exec(expr.trim());
+  if (!obj) return null;
+  const pairs = obj[1].split(',').map((s) => s.trim()).filter(Boolean).map((s) => /^(\w+)\s*:\s*(\d+)$/.exec(s));
+  if (!pairs.length || pairs.some((m) => !m || !GRID_BREAKPOINTS.has(m[1]))) return null;
+  return pairs.map(([, bp, n]) => [bp, n]);
+}
+
+/** <Grid2 container spacing={2}> becomes {{< grid >}}, <Grid2 size={…}> becomes {{< grid-item >}}. */
+function convertGrid(tag, children, ctx, rawFull) {
+  const container = tag.attrs.some((a) => a.key === 'container' && a.value !== 'false');
+  const params = [];
+  for (const a of tag.attrs) {
+    if (a.key === 'container' || DROP_ATTRS.has(a.key)) continue;
+    const sizes = !container && a.key === 'size' && (/^\d+$/.test(a.value) ? [['xs', a.value]] : parseGridSize(a.value));
+    if (sizes) params.push(...sizes);
+    else if (container && a.key === 'spacing' && a.literal && /^\d+(\.\d+)?$/.test(a.value)) params.push(['spacing', a.value]);
+    else {
+      const braced = !a.literal || a.value.startsWith('{');
+      ctx.warn(`<Grid2>: unsupported ${a.key}=${braced ? `{${a.value}}` : `"${a.value}"`}; left as-is`);
+      return rawFull;
+    }
+  }
+  const { text, hasIndentHazard } = dedentWrapperBody(children);
+  if (hasIndentHazard) {
+    ctx.warn('<Grid2>: body has 4+ space indented line after dedent; left as-is for manual review');
+    return rawFull;
+  }
+  const shortcode = container ? 'grid' : 'grid-item';
+  const attrStr = params.map(([k, v]) => ` ${k}=${fmtValue(v)}`).join('');
+  return `{{< ${shortcode}${attrStr} >}}\n${text}\n{{< /${shortcode} >}}`;
+}
+
+/** Text of a JSX fragment like <>Take a{" "}<a href="…">path</a>.</>, or null if it holds other expressions. */
+function jsxFragmentText(expr) {
+  const m = /^<>([\s\S]*)<\/>$/.exec(expr.trim());
+  if (!m) return null;
+  const text = m[1].replace(/\{\s*(["'])\s*\1\s*\}/g, ' ');
+  return /[{}]/.test(text) ? null : text.replace(/\s+/g, ' ').trim();
+}
+
+/** <CommonForm …> becomes a paired {{< common-form >}} whose body is the submit_body shown after submitting. */
+function convertCommonForm(tag, ctx, rawTag, rawFull) {
+  const bodyAttr = tag.attrs.find((a) => a.key === 'submit_body');
+  const body = !bodyAttr ? '' : bodyAttr.literal ? bodyAttr.value : jsxFragmentText(bodyAttr.value);
+  if (body === null) {
+    ctx.warn('<CommonForm>: submit_body is not text or a <>…</> fragment; left as-is');
+    return rawFull;
+  }
+  const rest = { ...tag, attrs: tag.attrs.filter((a) => a !== bodyAttr) };
+  return buildShortcode({ shortcode: 'common-form', paired: true }, rest, body, ctx, rawTag);
+}
+
 /* ---------------------------------------------------------------- body conversion */
 function convertSegment(text, ctx) {
   let out = '', i = 0;
-  const re = /<([A-Z][\w.]*)(?![\w.])/g;
+  const re = /<([A-Za-z][\w.-]*)(?![\w.-])/g;
   while (true) {
     re.lastIndex = i;
     const m = re.exec(text);
@@ -154,8 +483,84 @@ function convertSegment(text, ctx) {
     out += text.slice(i, m.index);
     const name = m[1];
     const tag = parseOpenTag(text, m.index);
-    const spec = COMPONENTS[name];
-    if (!tag) { ctx.warn(`could not parse <${name}> tag; left as-is`); out += '<'; i = m.index + 1; continue; }
+    if (!tag) {
+      if (name[0] === name[0].toUpperCase()) ctx.warn(`could not parse <${name}> tag; left as-is`);
+      out += '<';
+      i = m.index + 1;
+      continue;
+    }
+
+    const isHtml = name[0] === name[0].toLowerCase();
+    if (isHtml) {
+      let tagChanged = false;
+      let hasUnresolved = false;
+      for (const a of tag.attrs) {
+        if (a.key === 'style' && a.value.startsWith('{')) {
+          const css = jsxStyleToCss(a.value);
+          if (css) {
+            a.value = css;
+            a.literal = true;
+            tagChanged = true;
+            continue;
+          } else {
+            hasUnresolved = true;
+            ctx.warn(`non-literal expression for "style" on <${name}>`);
+            continue;
+          }
+        }
+        if (!a.literal) {
+          const varName = a.value;
+          const impPath = ctx.imports?.get(varName);
+          if (impPath && checkAssetResolvable(impPath, ctx)) {
+            a.value = impPath;
+            a.literal = true;
+            tagChanged = true;
+            if (impPath.startsWith('../') || impPath.startsWith('/')) {
+              ctx.warn(`<${name}>: "${impPath}" is outside the page bundle — move it next to index.md`);
+            }
+          } else {
+            hasUnresolved = true;
+            ctx.warn(`non-literal expression for "${a.key}" on <${name}>`);
+          }
+        }
+      }
+
+      const spreadProblems = tag.problems.filter((p) => p.startsWith('spread/expression attribute'));
+      if (spreadProblems.length) spreadProblems.forEach((p) => ctx.warn(`<${name}>: ${p}`));
+      if (tagChanged && !hasUnresolved && !spreadProblems.length) {
+        const attrParts = [];
+        for (const a of tag.attrs) {
+          const key = a.key === 'className' ? 'class' : a.key;
+          attrParts.push(`${key}="${a.value.replace(/"/g, '&quot;')}"`);
+        }
+        const rendered = `<${name}${attrParts.length ? ' ' + attrParts.join(' ') : ''}${tag.selfClosing ? ' />' : '>'}`;
+        out += rendered;
+        i = tag.end;
+        continue;
+      }
+
+      out += text.slice(m.index, tag.end);
+      i = tag.end;
+      continue;
+    }
+
+    // Component tag (uppercase)
+    for (const a of tag.attrs) {
+      if (!a.literal) {
+        const varName = a.value;
+        const impPath = ctx.imports?.get(varName);
+        if (impPath && checkAssetResolvable(impPath, ctx)) {
+          a.value = impPath;
+          a.literal = true;
+          tag.problems = tag.problems.filter((p) => !p.includes(`non-literal expression for "${a.key}"`));
+          if (impPath.startsWith('../') || impPath.startsWith('/')) {
+            ctx.warn(`<${name}>: "${impPath}" is outside the page bundle — move it next to index.md`);
+          }
+        }
+      }
+    }
+
+    const spec = resolveComponentSpec(name, ctx.collection);
     if (!spec) {
       ctx.unknown(name);
       const marker = `<!-- TODO(mdx): unconverted component <${name}> -->\n`;
@@ -163,7 +568,25 @@ function convertSegment(text, ctx) {
       if (!(prev && ctx.masked?.[+prev[1]] === marker.trim())) out += marker;
       out += text.slice(m.index, tag.end); i = tag.end; continue;
     }
-    tag.problems.forEach((p) => ctx.warn(`<${name}>: ${p}`));
+    if (spec.custom === 'unwrap') { out += text.slice(m.index, tag.end); i = tag.end; continue; }
+
+    const hasUnresolvedNonLiteral = tag.attrs.some(
+      (a) => !a.literal && !DROP_ATTRS.has(a.key) && a.key !== 'key' && a.key !== 'ref' && !spec.drop?.has(a.key) && !spec.exprAttrs?.has(a.key)
+    );
+    if (hasUnresolvedNonLiteral) {
+      tag.problems.forEach((p) => ctx.warn(`<${name}>: ${p}`));
+      let end = tag.end;
+      if (!tag.selfClosing) {
+        const c = findClose(text, tag.end, name);
+        if (c) end = c.end;
+      }
+      out += text.slice(m.index, end);
+      i = end;
+      continue;
+    }
+    tag.problems
+      .filter((p) => !spec.exprAttrs?.has(/^non-literal expression for "(.+)"$/.exec(p)?.[1]))
+      .forEach((p) => ctx.warn(`<${name}>: ${p}`));
     let children = '', end = tag.end;
     if (!tag.selfClosing) {
       const c = findClose(text, tag.end, name);
@@ -172,68 +595,284 @@ function convertSegment(text, ctx) {
       end = c.end;
     }
     ctx.component(name);
-    out += buildShortcode(spec, tag, children, ctx);
+    if (spec.custom === 'link') {
+      out += convertLink(tag, children, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
+    } else if (spec.custom === 'code') {
+      out += convertCode(tag, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
+    } else if (spec.custom === 'grid') {
+      out += convertGrid(tag, children, ctx, text.slice(m.index, end));
+    } else if (spec.custom === 'common-form') {
+      out += convertCommonForm(tag, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
+    } else {
+      out += buildShortcode(spec, tag, children, ctx, text.slice(m.index, tag.end));
+    }
     i = end;
+  }
+  return out;
+}
+
+/** Dedent a wrapper body by its common non-empty indent, never modifying fenced code blocks. */
+function dedentWrapperBody(inner) {
+  const trimmed = inner.replace(/^(?:[ \t]*\n)+/, '').replace(/(?:\n[ \t]*)+$/, '');
+  if (!trimmed) return { text: '', hasIndentHazard: false };
+  const lines = trimmed.split('\n');
+  const inFenceFlags = new Array(lines.length).fill(false);
+  let fenceChar = null;
+  let fenceLen = 0;
+  for (let idx = 0; idx < lines.length; idx++) {
+    const f = /^\s*(```+|~~~+)/.exec(lines[idx]);
+    if (f && !fenceChar) { fenceChar = f[1][0]; fenceLen = f[1].length; inFenceFlags[idx] = true; }
+    else if (f && fenceChar && f[1][0] === fenceChar && f[1].length >= fenceLen) { inFenceFlags[idx] = true; fenceChar = null; }
+    else if (fenceChar) { inFenceFlags[idx] = true; }
+  }
+  let minIndent = Infinity;
+  for (let idx = 0; idx < lines.length; idx++) {
+    if (inFenceFlags[idx] || !lines[idx].trim()) continue;
+    const m = /^( +)/.exec(lines[idx]);
+    const indent = m ? m[1].length : 0;
+    if (indent < minIndent) minIndent = indent;
+  }
+  const dedentedLines = (!Number.isFinite(minIndent) || minIndent === 0)
+    ? lines
+    : lines.map((line, idx) => (inFenceFlags[idx] || !line.trim() ? line : line.slice(minIndent)));
+  let prevBlank = true;
+  let hasIndentHazard = false;
+  for (let idx = 0; idx < dedentedLines.length; idx++) {
+    if (inFenceFlags[idx]) { prevBlank = false; continue; }
+    if (!dedentedLines[idx].trim()) { prevBlank = true; continue; }
+    if (prevBlank && /^ {4,}/.test(dedentedLines[idx])) { hasIndentHazard = true; break; }
+    prevBlank = false;
+  }
+  return { text: dedentedLines.join('\n'), hasIndentHazard };
+}
+
+/** Unwrap collection wrapper tags (e.g. <BlogWrapper>...</BlogWrapper>) outside fenced code blocks. */
+function unwrapCollectionWrappers(body, ctx) {
+  const chunks = splitCodeFenceChunks(body);
+  const maskedFences = [];
+  const joined = chunks.map((c) => (c.code ? `\u0000WRAP_FENCE_${maskedFences.push(c.text) - 1}\u0000` : c.text)).join('\n');
+  let out = '', i = 0;
+  const re = /<([A-Z][\w.]*)(?![\w.])/g;
+  while (true) {
+    re.lastIndex = i;
+    const m = re.exec(joined);
+    if (!m) { out += joined.slice(i); break; }
+    const name = m[1];
+    const spec = resolveComponentSpec(name, ctx.collection);
+    if (spec?.custom !== 'unwrap') {
+      out += joined.slice(i, m.index + 1);
+      i = m.index + 1;
+      continue;
+    }
+    const tag = parseOpenTag(joined, m.index);
+    if (!tag || tag.selfClosing) {
+      out += joined.slice(i, m.index + 1);
+      i = m.index + 1;
+      continue;
+    }
+    const c = findClose(joined, tag.end, name);
+    if (!c) {
+      ctx.warn(`<${name}> has no closing tag; left as-is`);
+      out += joined.slice(i, tag.end);
+      i = tag.end;
+      continue;
+    }
+    const rawInner = joined.slice(tag.end, c.start).replace(/\u0000WRAP_FENCE_(\d+)\u0000/g, (_, n) => maskedFences[+n]);
+    const { text: dedentedText, hasIndentHazard } = dedentWrapperBody(rawInner);
+    if (hasIndentHazard) {
+      ctx.warn(`<${name}>: wrapper body has 4+ space indented line after dedent; left as-is for manual review`);
+      out += joined.slice(i, c.end);
+    } else {
+      ctx.component(name);
+      out += joined.slice(i, m.index) + dedentedText;
+    }
+    i = c.end;
+  }
+  return out.replace(/\u0000WRAP_FENCE_(\d+)\u0000/g, (_, n) => maskedFences[+n]);
+}
+
+/** Strip `export const ...;` statements deterministically outside code fences. */
+export function stripExportConst(text, ctx) {
+  let out = '';
+  let i = 0;
+  const re = /^[ \t]*export\s+const\s+/gm;
+  while (true) {
+    re.lastIndex = i;
+    const m = re.exec(text);
+    if (!m) { out += text.slice(i); break; }
+    out += text.slice(i, m.index);
+    let j = m.index + m[0].length;
+    let depth = 0, q = null, inLineComment = false, inBlockComment = false;
+    let terminated = false;
+    while (j < text.length) {
+      const c = text[j], next = text[j + 1];
+      if (inLineComment) { if (c === '\n') inLineComment = false; j++; continue; }
+      if (inBlockComment) { if (c === '*' && next === '/') { inBlockComment = false; j += 2; continue; } j++; continue; }
+      if (q) {
+        if (c === '\n' && q !== '`') { q = null; }
+        else if (c === '\\') { j += 2; continue; }
+        else if (c === q) { q = null; j++; continue; }
+        else { j++; continue; }
+      }
+      if (c === '/' && next === '/') { inLineComment = true; j += 2; continue; }
+      if (c === '/' && next === '*') { inBlockComment = true; j += 2; continue; }
+      if (c === '"' || c === "'" || c === '`') { q = c; j++; continue; }
+      if (c === '{' || c === '[' || c === '(') { depth++; j++; continue; }
+      if (c === '}' || c === ']' || c === ')') { if (depth > 0) depth--; j++; continue; }
+      if (c === ';' && depth === 0) {
+        terminated = true;
+        j++;
+        while (j < text.length && (text[j] === ' ' || text[j] === '\t')) j++;
+        if (j < text.length && text[j] === '\r') j++;
+        if (j < text.length && text[j] === '\n') j++;
+        break;
+      }
+      j++;
+    }
+    if (!terminated) {
+      // No terminator found: leave the statement in place instead of
+      // dropping the rest of the file; convertBody already warns on
+      // leftover `export` statements.
+      out += text.slice(m.index);
+      break;
+    }
+    if (ctx?.count) ctx.count('exportsRemoved');
+    i = j;
   }
   return out;
 }
 
 /** Convert an MDX body. Code fences and inline code are protected. */
 export function convertBody(body, ctx) {
-  const lines = body.split('\n');
-  const chunks = []; let buf = [], inFence = null;
-  for (const line of lines) {
-    const f = /^\s*(```+|~~~+)/.exec(line);
-    if (f && !inFence) { chunks.push({ code: false, text: buf.join('\n') }); buf = [line]; inFence = f[1][0]; }
-    else if (f && inFence && f[1][0] === inFence) { buf.push(line); chunks.push({ code: true, text: buf.join('\n') }); buf = []; inFence = null; }
-    else buf.push(line);
+  if (!ctx.imports) {
+    ctx.imports = recordImports(body);
   }
-  chunks.push({ code: !!inFence, text: buf.join('\n') });
-
-  return chunks.map((c) => {
-    if (c.code) return c.text;
-    const masked = []; // protect inline code
-    // `{`template literal`}` attribute values are left alone so the tag parser can read them
-    let t = c.text.replace(/\{\s*`[^`]*`\s*\}|`[^`\n]+`/g, (s) => (s[0] === '{' ? s : `\u0000${masked.push(s) - 1}\u0000`));
-    t = t.replace(/^import\s+(?:[\w$]+\s*,?\s*)?(?:\{[^}]*\}|\*\s+as\s+[\w$]+)?\s*from\s+['"][^'"]+['"];?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
-    t = t.replace(/^import\s+['"][^'"]+['"];?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
-    if (/^export\s/m.test(t)) ctx.warn('contains `export` statements (MDX exports are not supported in Hugo)');
-    t = t.replace(/\{\/\*([\s\S]*?)\*\/\}/g, '<!--$1-->');
-    t = t.replace(/<!--[\s\S]*?-->/g, (s) => `\u0000${masked.push(s) - 1}\u0000`); // never scan inside comments
-    ctx.masked = masked;
-    t = convertSegment(t, ctx);
-    while (/\u0000\d+\u0000/.test(t)) t = t.replace(/\u0000(\d+)\u0000/g, (_, n) => masked[+n]);
-    return t;
-  }).join('\n').replace(/\n{3,}/g, '\n\n');
+  const unwrapped = unwrapCollectionWrappers(body, ctx);
+  const chunks = splitCodeFenceChunks(unwrapped);
+  const maskedFences = [];
+  let t = chunks.map((c) => (c.code ? `\u0000FENCE_${maskedFences.push(c.text) - 1}\u0000` : c.text)).join('\n');
+  const masked = []; // protect inline code
+  // `{`template literal`}` attribute values are left alone so the tag parser can read them
+  t = t.replace(/\{\s*`(?:\\.|[^`\\])*`\s*\}|`[^`\n]+`/g, (s) => (s[0] === '{' ? s : `\u0000${masked.push(s) - 1}\u0000`));
+  t = t.replace(/^import\s+(?:[\w$]+\s*,?\s*)?(?:\{[^}]*\}|\*\s+as\s+[\w$]+)?\s*from\s+['"][^'"]+['"][ \t]*;?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
+  t = t.replace(/^import\s+['"][^'"]+['"][ \t]*;?[ \t]*\r?\n?/gm, () => { ctx.count('importsRemoved'); return ''; });
+  t = stripExportConst(t, ctx);
+  if (/^export\s/m.test(t)) ctx.warn('contains `export` statements (MDX exports are not supported in Hugo)');
+  t = t.replace(/\{\/\*([\s\S]*?)\*\/\}/g, '<!--$1-->');
+  t = t.replace(/<!--[\s\S]*?-->/g, (s) => `\u0000${masked.push(s) - 1}\u0000`); // never scan inside comments
+  ctx.masked = masked;
+  t = convertSegment(t, ctx);
+  while (/\u0000\d+\u0000/.test(t)) t = t.replace(/\u0000(\d+)\u0000/g, (_, n) => masked[+n]);
+  t = t.replace(/\u0000FENCE_(\d+)\u0000/g, (_, n) => maskedFences[+n]);
+  return t.replace(/\n{3,}/g, '\n\n');
 }
 
 /* ---------------------------------------------------------------- front matter */
+// Every front-matter key that holds an image path. Blog posts also carry dark-mode and SVG variants.
+const IMAGE_KEY = /^(thumbnail|darkthumbnail|thumbnail_svg|darkthumbnail_svg|image|cover)\s*:\s*(.*)$/;
+
 export function convertFrontMatter(fm, slug, ctx) {
-  const lines = fm.split('\n'); const out = []; let hasSlug = false;
+  const lines = fm.split('\n').map((l) => l.replace(/\r$/, ''));
+  const out = [];
+  let hasSlug = false;
+  const hasDraft = lines.some((l) => /^\s*draft\s*:/i.test(l));
+  const hasDraftFalse = lines.some((l) => /^\s*draft\s*:\s*false\b/i.test(l));
+
   for (const line of lines) {
     let m;
-    if ((m = /^redirect_from\s*:(.*)$/.exec(line))) { out.push(`aliases:${m[1]}`); ctx.count('redirectFrom'); continue; }
-    if ((m = /^published\s*:\s*(true|false)\s*$/.exec(line))) { if (m[1] === 'false') out.push('draft: true'); continue; }
-    if ((m = /^(thumbnail|image|cover)\s*:\s*(.*)$/.exec(line))) {
-      const v = m[2].trim().replace(/^['"]|['"]$/g, '');
-      if (/^\.\.\//.test(v) || /^\/?(static|assets|src)\//.test(v)) { ctx.warn(`${m[1]}: "${v}" is outside the page bundle — move it next to index.md`); out.push(line); }
-      else out.push(`${m[1]}: ${v.replace(/^\.\//, '')}`);
+    if ((m = /^redirect_from\s*:(.*)$/.exec(line))) {
+      out.push(`aliases:${m[1]}`);
+      ctx.count('redirectFrom');
       continue;
     }
+
+    if ((m = /^published\s*:\s*(.*)$/.exec(line))) {
+      const rawVal = m[1].trim();
+      const valWithoutComment = rawVal.replace(/\s*#.*$/, '').trim();
+      const lower = valWithoutComment.toLowerCase();
+
+      // 1. Only act on boolean values (case-insensitive)
+      if (lower === 'true' || lower === 'false') {
+        if (lower === 'false') {
+          if (hasDraftFalse) {
+            ctx.warn('published: false ignored because draft: false is already present');
+          } else if (!hasDraft) {
+            out.push('draft: true');
+          }
+        }
+        continue;
+      }
+
+      // 2. Placeholder comment template line (e.g. published: # comment)
+      if (rawVal.startsWith('#') || rawVal === '') {
+        continue;
+      }
+
+      // 3. Restrict date branch strictly to ISO dates (YYYY-MM-DD...)
+      if (/^\d{4}-\d{2}-\d{2}([T ]\d{2}:\d{2}(:\d{2})?)?$/.test(valWithoutComment)) {
+        out.push(`publishDate: ${valWithoutComment}`);
+        continue;
+      }
+
+      // 4. Neither boolean nor ISO date: warn and preserve
+      ctx.warn(`published: invalid value "${rawVal}" (expected boolean or ISO date)`);
+      out.push(line);
+      continue;
+    }
+
+    if ((m = IMAGE_KEY.exec(line))) {
+      const v = m[2].trim().replace(/^['"]|['"]$/g, '');
+      const name = /^\.\.\//.test(v) && ctx.bundle?.(v);
+      if (name) {
+        out.push(`${m[1]}: ${name}`);
+      } else if (/^\.\.\//.test(v) || /^\/?(static|assets|src)\//.test(v)) {
+        ctx.warn(`${m[1]}: "${v}" is outside the page bundle — move it next to index.md`);
+        out.push(line);
+      } else {
+        out.push(`${m[1]}: ${v.replace(/^\.\//, '')}`);
+      }
+      continue;
+    }
+
     if (/^slug\s*:/.test(line)) hasSlug = true;
     out.push(line);
   }
-  if (!hasSlug && slug) { out.push(`slug: ${slug}`); ctx.count('slugAdded'); }
+  if (!hasSlug && slug) {
+    out.push(`slug: ${slug}`);
+    ctx.count('slugAdded');
+  }
   return out.join('\n');
 }
 
-export function convertFile(source, { slug, file = '' } = {}) {
-  const stats = { components: {}, unknown: {}, counters: {}, warnings: [] };
+/**
+ * `dir` is the source document's folder. When given, `../` front-matter images are resolved against it,
+ * listed in stats.assets for the caller to copy into the bundle, and the value is rewritten to the file name.
+ */
+export function convertFile(source, { slug, file = '', collection, dir, taken = () => false } = {}) {
+  const normFile = file ? file.replace(/\\/g, '/').replace(/^\/+/, '') : '';
+  const resolvedCollection = collection ?? (normFile.includes('/') ? normFile.split('/')[0] : '');
+  const stats = { components: {}, unknown: {}, counters: {}, warnings: [], assets: [] };
   const ctx = {
+    file: normFile,
+    collection: resolvedCollection,
+    dir,
+    imports: recordImports(source),
     warn: (m) => stats.warnings.push(m),
     unknown: (n) => { stats.unknown[n] = (stats.unknown[n] || 0) + 1; },
     component: (n) => { stats.components[n] = (stats.components[n] || 0) + 1; },
     count: (k) => { stats.counters[k] = (stats.counters[k] || 0) + 1; },
+    bundle: dir && ((v) => {
+      const from = path.resolve(dir, v); const name = path.basename(from);
+      // missing file, or a different file already owns this name in the bundle: leave it for the outside-bundle warning
+      const local = path.join(dir, name);
+      if (!fs.existsSync(from) || (fs.existsSync(local) && local !== from) || taken(name)
+        || stats.assets.some((a) => a.name === name && a.from !== from)) return null;
+      const format = sniffImageFormat(fs.readFileSync(from));
+      if (format === 'empty' || format === 'avif' || normalizeAssetFilename(name, format) !== name) return null;
+      if (!stats.assets.some((a) => a.from === from)) stats.assets.push({ from, name });
+      ctx.count('assetsBundled');
+      return name;
+    }),
   };
   const fmMatch = /^---\r?\n([\s\S]*?)\r?\n---[ \t]*(?:\r?\n|$)/.exec(source);
   let fm = '', body = source;
@@ -245,6 +884,148 @@ export function convertFile(source, { slug, file = '' } = {}) {
   return { output: `---\n${newFm}\n---\n\n${newBody.trimEnd()}\n`, stats };
 }
 
+/* ---------------------------------------------------------------- template filter */
+export const TEMPLATE_ALLOWLIST = [
+  'blog/blog-template',
+  'blog/meetTheMaintainer-template',
+  'events/Z_event-template',
+  'members/_member-profile-template',
+  'news/news-template',
+  'resources/resources-template',
+];
+
+export function isTemplatePath(rel) {
+  const norm = rel.replace(/\\/g, '/').replace(/^\/+/, '');
+  return TEMPLATE_ALLOWLIST.some((prefix) => norm === prefix || norm.startsWith(prefix + '/'));
+}
+
+/* ---------------------------------------------------------------- asset format detection & normalization */
+export function sniffImageFormat(buf) {
+  if (!buf || buf.length === 0) return 'empty';
+  if (buf.length >= 3 && buf[0] === 0xFF && buf[1] === 0xD8 && buf[2] === 0xFF) return 'jpeg';
+  if (buf.length >= 8 && buf[0] === 0x89 && buf[1] === 0x50 && buf[2] === 0x4E && buf[3] === 0x47 &&
+      buf[4] === 0x0D && buf[5] === 0x0A && buf[6] === 0x1A && buf[7] === 0x0A) return 'png';
+  if (buf.length >= 12 && buf.subarray(0, 4).toString('ascii') === 'RIFF' &&
+      buf.subarray(8, 12).toString('ascii') === 'WEBP') return 'webp';
+  if (buf.length >= 12 && (buf.subarray(4, 12).toString('ascii') === 'ftypavif' ||
+      (buf.subarray(4, 8).toString('ascii') === 'ftyp' && buf.subarray(8, 12).toString('ascii') === 'mif1'))) return 'avif';
+  if (buf.length >= 4 && buf.subarray(0, 4).toString('ascii') === 'GIF8') return 'gif';
+  const head = buf.subarray(0, Math.min(buf.length, 500)).toString('utf8');
+  if (/<svg[\s>]/i.test(head) || /<\?xml[\s\S]*?<svg/i.test(head)) return 'svg';
+  return 'unknown';
+}
+
+export function normalizeAssetFilename(filename, format) {
+  const ext = path.extname(filename).toLowerCase();
+  if (format === 'empty' || format === 'unknown' || format === 'svg' || format === 'gif') return filename;
+  const base = path.basename(filename, ext);
+  if (format === 'jpeg' && ext !== '.jpg' && ext !== '.jpeg') return `${base}.jpg`;
+  if (format === 'png' && ext !== '.png') return `${base}.png`;
+  if (format === 'webp' && ext !== '.webp') return `${base}.webp`;
+  return filename;
+}
+
+function escapeRegExp(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function assetRefRegExp(relPath) {
+  return new RegExp(`(?<![\\w.-]|/)(\\./)?${escapeRegExp(relPath)}(?![\\w/-]|\\.[a-zA-Z0-9_-])`, 'g');
+}
+
+function splitCodeFenceChunks(text) {
+  const lines = text.split('\n');
+  const chunks = [];
+  let buf = [], inFence = null, fenceLen = 0;
+  for (const line of lines) {
+    const f = /^\s*(```+|~~~+)/.exec(line);
+    if (f && !inFence) {
+      chunks.push({ code: false, text: buf.join('\n') });
+      buf = [line];
+      inFence = f[1][0];
+      fenceLen = f[1].length;
+    } else if (f && inFence && f[1][0] === inFence && f[1].length >= fenceLen) {
+      buf.push(line);
+      chunks.push({ code: true, text: buf.join('\n') });
+      buf = [];
+      inFence = null;
+    } else {
+      buf.push(line);
+    }
+  }
+  chunks.push({ code: !!inFence, text: buf.join('\n') });
+  return chunks;
+}
+
+function withMaskedNonCodeChunks(text, fn) {
+  return splitCodeFenceChunks(text).map((c) => {
+    if (c.code) return c.text;
+    const urls = [];
+    let t = c.text.replace(/https?:\/\/[^\s)'"]+/g, (u) => `\u0000URL_${urls.push(u) - 1}\u0000`);
+    t = fn(t);
+    return t.replace(/\u0000URL_(\d+)\u0000/g, (_, i) => urls[+i]);
+  }).join('\n');
+}
+
+export function rewriteAssetReferences(text, renames) {
+  if (!renames || Object.keys(renames).length === 0 || !text) return text;
+
+  // Filter and sort renames by old path length descending so longer subpaths match first
+  const entries = Object.entries(renames)
+    .filter(([oldPath, newPath]) => oldPath !== newPath)
+    .sort((a, b) => b[0].length - a[0].length);
+
+  if (entries.length === 0) return text;
+
+  return withMaskedNonCodeChunks(text, (t) => {
+    for (const [oldPath, newPath] of entries) {
+      t = t.replace(assetRefRegExp(oldPath), (_, prefix) => (prefix ? './' : '') + newPath);
+    }
+    return t;
+  });
+}
+
+export function findAssetReferences(text, assetPaths) {
+  if (!assetPaths?.length || !text) return [];
+  const found = new Set();
+  withMaskedNonCodeChunks(text, (t) => {
+    for (const p of assetPaths) {
+      if (!found.has(p) && assetRefRegExp(p).test(t)) found.add(p);
+    }
+    return t;
+  });
+  return [...found];
+}
+
+export function transcodeAvifToWebp(srcFile, destFile, { execFileFn = execFileSync } = {}) {
+  // 1. Try ImageMagick 7 (magick)
+  try {
+    execFileFn('magick', [srcFile, destFile], { stdio: 'ignore' });
+    return true;
+  } catch {}
+
+  // 2. Fall back to ImageMagick 6 (convert) on non-Windows only
+  if (process.platform !== 'win32') {
+    try {
+      execFileFn('convert', [srcFile, destFile], { stdio: 'ignore' });
+      return true;
+    } catch {}
+  }
+
+  // 3. Try Python with Pillow (PIL) via argv
+  const pyCode = 'import sys; from PIL import Image; Image.open(sys.argv[1]).save(sys.argv[2], "WEBP")';
+  try {
+    execFileFn('python3', ['-c', pyCode, srcFile, destFile], { stdio: 'ignore' });
+    return true;
+  } catch {}
+  try {
+    execFileFn('python', ['-c', pyCode, srcFile, destFile], { stdio: 'ignore' });
+    return true;
+  } catch {}
+
+  return false;
+}
+
 /* ---------------------------------------------------------------- filesystem driver */
 function* walk(dir) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -254,26 +1035,228 @@ function* walk(dir) {
   }
 }
 
-export function migrate({ src, dest, dryRun = false }) {
-  const report = { generated: new Date().toISOString(), dryRun, files: 0, converted: 0, withWarnings: 0, assetsCopied: 0,
-    components: {}, unknown: {}, byCollection: {}, warnings: [] };
+/** Parse --exclude CLI arguments (comma-separated and/or repeated flags). */
+export function parseExcludeArg(args) {
+  const out = new Set();
+  for (let i = 0; i < args.length; i++) {
+    let raw;
+    if (args[i] === '--exclude' && i + 1 < args.length) raw = args[++i];
+    else if (args[i].startsWith('--exclude=')) raw = args[i].slice('--exclude='.length);
+    if (raw) {
+      for (const item of raw.split(',')) {
+        const norm = item.trim().replace(/\\/g, '/').replace(/^\/+|\/+$/g, '');
+        if (norm) out.add(norm);
+      }
+    }
+  }
+  return [...out];
+}
+
+export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = execFileSync }) {
+  const excludeList = Array.isArray(exclude) ? exclude : String(exclude).split(',');
+  const excludeSet = new Set(
+    excludeList.map((s) => String(s).trim().replace(/\\/g, '/').replace(/^\/+|\/+$/g, '')).filter(Boolean)
+  );
+  const report = {
+    generated: new Date().toISOString(), dryRun, excluded: [...excludeSet], excludedFiles: 0,
+    files: 0, converted: 0, withWarnings: 0, assetsCopied: 0, assetsBundled: 0,
+    templatesSkipped: 0, skippedTemplates: [], assetsRenamed: 0, assetRenames: [],
+    emptyAssets: [], transcodeFailures: [], renameCollisions: [], assetsTranscoded: [],
+    components: {}, unknown: {}, byCollection: {}, warnings: []
+  };
   const bump = (o, k, n = 1) => { o[k] = (o[k] || 0) + n; };
-  for (const file of walk(src)) {
+  const allFiles = [...walk(src)];
+  const docFiles = [];
+  const renamesByDir = new Map();
+  const failedTranscodesByDir = new Map();
+  const writtenTargets = new Set();
+
+  function forEachAncestorDir(fileDir, fn) {
+    let curDir = fileDir;
+    while (true) {
+      fn(curDir);
+      if (curDir === src || path.relative(src, curDir) === '') break;
+      const parent = path.dirname(curDir);
+      if (parent === curDir || path.relative(src, parent).startsWith('..')) break;
+      curDir = parent;
+    }
+  }
+
+  function registerRename(fileDir, oldBaseName, newBaseName) {
+    forEachAncestorDir(fileDir, (curDir) => {
+      const oldRel = path.relative(curDir, path.join(fileDir, oldBaseName)).replace(/\\/g, '/');
+      const newRel = path.relative(curDir, path.join(fileDir, newBaseName)).replace(/\\/g, '/');
+      const map = renamesByDir.get(curDir) || {};
+      map[oldRel] = newRel;
+      renamesByDir.set(curDir, map);
+    });
+  }
+
+  function recordTranscodeFailure(fileDir, baseName, relNorm) {
+    const entry = { file: relNorm, referencedBy: [] };
+    report.transcodeFailures.push(entry);
+    report.warnings.push({ file: relNorm, message: 'AVIF transcoding to WebP failed' });
+    forEachAncestorDir(fileDir, (curDir) => {
+      const relToDocDir = path.relative(curDir, path.join(fileDir, baseName)).replace(/\\/g, '/');
+      const map = failedTranscodesByDir.get(curDir) || new Map();
+      map.set(relToDocDir, entry);
+      failedTranscodesByDir.set(curDir, map);
+    });
+  }
+
+  // Pass 1: assets
+  for (const file of allFiles) {
+    const rel = path.relative(src, file);
+    const relNorm = rel.replace(/\\/g, '/');
+    const topCollection = relNorm.split('/')[0];
+    if (excludeSet.has(topCollection)) {
+      report.excludedFiles++;
+      continue;
+    }
+    if (isTemplatePath(rel)) {
+      report.templatesSkipped++;
+      report.skippedTemplates.push(relNorm);
+      continue;
+    }
+    const ext = path.extname(file);
+    const isDoc = ext === '.mdx' || ext === '.md';
+    if (isDoc) {
+      docFiles.push(file);
+      continue;
+    }
+
+    const fileBuf = fs.readFileSync(file);
+    const format = sniffImageFormat(fileBuf);
+    const dir = path.dirname(file);
+    const oldName = path.basename(file);
+
+    if (format === 'empty') {
+      report.emptyAssets.push(relNorm);
+      report.warnings.push({ file: relNorm, message: 'zero-byte asset' });
+      const targetDir = path.dirname(path.join(dest, rel));
+      const target = path.join(targetDir, oldName);
+      if (!dryRun) {
+        fs.mkdirSync(targetDir, { recursive: true });
+        fs.copyFileSync(file, target);
+      }
+      writtenTargets.add(target);
+      report.assetsCopied++;
+      continue;
+    }
+
+    if (format === 'avif') {
+      const lowerExt = ext.toLowerCase();
+      const newName = lowerExt === '.avif' ? `${path.basename(file, ext)}.webp` : oldName;
+      const targetDir = path.dirname(path.join(dest, rel));
+      const target = path.join(targetDir, newName);
+
+      if (newName !== oldName) {
+        if (fs.existsSync(path.join(dir, newName)) || writtenTargets.has(target)) {
+          report.renameCollisions.push({ from: relNorm, target: newName });
+          report.warnings.push({ file: relNorm, message: `rename collision: ${newName} already exists, skipping rename` });
+          const fallbackTarget = path.join(targetDir, oldName);
+          if (!dryRun) {
+            fs.mkdirSync(targetDir, { recursive: true });
+            const ok = transcodeAvifToWebp(file, fallbackTarget, { execFileFn });
+            if (!ok) {
+              recordTranscodeFailure(dir, oldName, relNorm);
+              continue;
+            }
+          }
+          writtenTargets.add(fallbackTarget);
+          report.assetsTranscoded.push(relNorm);
+          report.assetsCopied++;
+          continue;
+        }
+      }
+
+      if (!dryRun) {
+        fs.mkdirSync(targetDir, { recursive: true });
+        const ok = transcodeAvifToWebp(file, target, { execFileFn });
+        if (!ok) {
+          recordTranscodeFailure(dir, oldName, relNorm);
+          continue;
+        }
+      }
+      writtenTargets.add(target);
+      report.assetsTranscoded.push(relNorm);
+      report.assetsCopied++;
+
+      if (newName !== oldName) {
+        report.assetsRenamed++;
+        report.assetRenames.push({ from: relNorm, to: newName });
+        registerRename(dir, oldName, newName);
+      }
+      continue;
+    }
+
+    let newName = normalizeAssetFilename(oldName, format);
+    const targetDir = path.dirname(path.join(dest, rel));
+    let target = path.join(targetDir, newName);
+
+    if (newName !== oldName) {
+      if (fs.existsSync(path.join(dir, newName)) || writtenTargets.has(target)) {
+        report.renameCollisions.push({ from: relNorm, target: newName });
+        report.warnings.push({ file: relNorm, message: `rename collision: ${newName} already exists, skipping rename` });
+        newName = oldName;
+        target = path.join(targetDir, oldName);
+      } else {
+        report.assetsRenamed++;
+        report.assetRenames.push({ from: relNorm, to: newName });
+        registerRename(dir, oldName, newName);
+      }
+    }
+
+    if (!dryRun) {
+      fs.mkdirSync(targetDir, { recursive: true });
+      fs.copyFileSync(file, target);
+    }
+    writtenTargets.add(target);
+    report.assetsCopied++;
+  }
+
+  // Pass 2: docs
+  for (const file of docFiles) {
     const rel = path.relative(src, file);
     const collection = rel.split(path.sep)[0];
     const ext = path.extname(file);
-    const isDoc = ext === '.mdx' || ext === '.md';
-    const target = path.join(dest, isDoc ? rel.replace(/\.mdx?$/, '.md') : rel);
+    const target = path.join(dest, rel.replace(/\.mdx?$/, '.md'));
     const col = (report.byCollection[collection] ||= { files: 0, converted: 0, withWarnings: 0 });
-    if (!isDoc) { if (!dryRun) { fs.mkdirSync(path.dirname(target), { recursive: true }); fs.copyFileSync(file, target); } report.assetsCopied++; continue; }
+
     report.files++; col.files++;
     const base = path.basename(file, ext);
     const slug = base === 'index' ? path.basename(path.dirname(file)) : base;
-    const { output, stats } = convertFile(fs.readFileSync(file, 'utf8'), { slug, file: rel });
+
+    let sourceText = fs.readFileSync(file, 'utf8');
+    const dirFailures = failedTranscodesByDir.get(path.dirname(file));
+    if (dirFailures) {
+      const docRel = rel.replace(/\\/g, '/');
+      for (const ref of findAssetReferences(sourceText, [...dirFailures.keys()])) {
+        dirFailures.get(ref).referencedBy.push(docRel);
+      }
+    }
+    const dirRenames = renamesByDir.get(path.dirname(file));
+    if (dirRenames) {
+      sourceText = rewriteAssetReferences(sourceText, dirRenames);
+    }
+
+    const { output, stats } = convertFile(sourceText, {
+      slug, file: rel, collection,
+      dir: base === 'index' ? path.dirname(file) : undefined,
+      taken: (name) => writtenTargets.has(path.join(path.dirname(target), name)),
+    });
     for (const [k, v] of Object.entries(stats.components)) bump(report.components, k, v);
     for (const [k, v] of Object.entries(stats.unknown)) bump(report.unknown, k, v);
-    if (stats.warnings.length) { report.withWarnings++; col.withWarnings++; stats.warnings.forEach((w) => report.warnings.push({ file: rel, message: w })); }
-    if (!dryRun) { fs.mkdirSync(path.dirname(target), { recursive: true }); fs.writeFileSync(target, output); }
+    if (stats.warnings.length) {
+      report.withWarnings++; col.withWarnings++;
+      stats.warnings.forEach((w) => report.warnings.push({ file: rel, message: w }));
+    }
+    if (!dryRun) {
+      fs.mkdirSync(path.dirname(target), { recursive: true });
+      fs.writeFileSync(target, output);
+      stats.assets.forEach((a) => fs.copyFileSync(a.from, path.join(path.dirname(target), a.name)));
+    }
+    report.assetsBundled += stats.assets.length;
     report.converted++; col.converted++;
   }
   return report;
@@ -298,17 +1281,50 @@ function main() {
   const defaultSrc = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../src/collections');
   const src = get('--src') || (fs.existsSync(defaultSrc) ? defaultSrc : undefined);
   if (args.includes('--help') || !src) {
-    console.log('Usage: migrate-mdx.mjs [--src <collections dir>] [--dest content] [--dry-run] [--report report.json] [--progress data/migration.json] [--strict]');
+    console.log('Usage: migrate-mdx.mjs [--src <collections dir>] [--dest content] [--exclude <col1,col2>] [--dry-run] [--report report.json] [--progress data/migration.json] [--strict]');
     process.exit(args.includes('--help') ? 0 : 1);
   }
   const dryRun = args.includes('--dry-run');
-  const report = migrate({ src, dest: get('--dest') || 'content', dryRun });
+  const exclude = parseExcludeArg(args);
+  const report = migrate({ src, dest: get('--dest') || 'content', dryRun, exclude });
   if (get('--report')) fs.writeFileSync(get('--report'), JSON.stringify(report, null, 2));
   if (get('--progress') && !dryRun) updateProgress(get('--progress'), report);
   const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k}×${v}`).join(', ') || '—';
-  console.log(`${dryRun ? '[dry-run] ' : ''}${report.converted}/${report.files} documents converted, ${report.assetsCopied} assets, ${report.withWarnings} with warnings`);
+  console.log(`${dryRun ? '[dry-run] ' : ''}${report.converted}/${report.files} documents converted, ${report.assetsCopied} assets (+${report.assetsBundled} pulled into bundles), ${report.templatesSkipped} templates skipped, ${report.withWarnings} with warnings`);
+  if (report.excluded?.length) {
+    console.log(`Excluded collections (${report.excluded.join(', ')}): ${report.excludedFiles} files skipped`);
+  }
+  if (report.skippedTemplates?.length) {
+    console.log(`Skipped template items (${report.skippedTemplates.length}):`);
+    report.skippedTemplates.forEach((t) => console.log(`  - ${t}`));
+  }
+  if (report.emptyAssets?.length) {
+    console.log(`Zero-byte SVGs warning list (${report.emptyAssets.length}):`);
+    report.emptyAssets.forEach((s) => console.log(`  - ${s}`));
+  }
+  if (report.assetRenames?.length) {
+    console.log(`Normalized mismatched assets (${report.assetRenames.length}):`);
+    report.assetRenames.forEach((r) => console.log(`  - ${r.from} -> ${r.to}`));
+  }
+  if (report.renameCollisions?.length) {
+    console.log(`Rename collisions skipped (${report.renameCollisions.length}):`);
+    report.renameCollisions.forEach((c) => console.log(`  - ${c.from} -> ${c.target} (target already exists)`));
+  }
+  if (report.transcodeFailures?.length) {
+    console.log(`AVIF transcode failures (${report.transcodeFailures.length}):`);
+    report.transcodeFailures.forEach((f) => {
+      const refs = f.referencedBy?.length ? ` (referenced by: ${f.referencedBy.join(', ')})` : '';
+      console.log(`  - ${f.file}${refs}`);
+    });
+  }
   console.log(`components → shortcodes: ${top(report.components)}`);
   console.log(`unknown components:      ${top(report.unknown)}`);
-  if (args.includes('--strict') && report.withWarnings) process.exit(1);
+
+  if (report.transcodeFailures?.length) {
+    process.exit(1);
+  }
+  if (args.includes('--strict') && (report.withWarnings || report.transcodeFailures?.length)) {
+    process.exit(1);
+  }
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) main();

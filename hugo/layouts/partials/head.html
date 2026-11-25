@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="base-url" content="{{ "" | relURL }}">
-{{- if eq hugo.Environment "preview" }}
+{{- if or (eq hugo.Environment "preview") (eq (getenv "HUGO_PREVIEW") "true") }}
 <meta name="robots" content="noindex,nofollow">
 {{- end }}
 <title>{{ if .IsHome }}{{ site.Title }} — {{ site.Params.description }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
@@ -17,6 +17,8 @@
 </script>
 {{ $css := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ $quotesCss := resources.Get "css/quotes-callouts.css" | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $quotesCss.RelPermalink }}" integrity="{{ $quotesCss.Data.Integrity }}">
 {{ partial "seo.html" . }}
 {{ range .AlternativeOutputFormats -}}
   {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}

@@ -1,10 +1,25 @@
 {{ define "main" }}
-<section class="wrap">
+<section class="wrap" data-filter-root>
   <h1>{{ .Title }}</h1>
   {{ with .Content }}<p class="lede">{{ . | plainify }}</p>{{ end }}
+
+  {{ $roles := slice }}
+  {{ range .Pages.ByWeight }}{{ with .Params.role }}{{ $roles = $roles | append . }}{{ end }}{{ end }}
+
+  <div class="filters" data-pagefind-ignore>
+    <button type="button" class="chip" data-filter-chip="" aria-pressed="true">All</button>
+    {{ range uniq $roles | sort }}
+      <button type="button" class="chip" data-filter-chip="{{ . }}" aria-pressed="false">{{ . }}</button>
+    {{ end }}
+    <p class="muted" role="status" aria-live="polite"><span data-filter-count>{{ len .Pages }}</span> of {{ len .Pages }} shown</p>
+  </div>
+
   <div class="grid grid--4">
     {{ range .Pages.ByWeight }}
-      <a class="card card--link" href="{{ .RelPermalink }}">
+      <a class="card card--link" href="{{ .RelPermalink }}"
+         data-filter-item
+         data-category="{{ .Params.role }}"
+         data-name="{{ .Title | lower }}">
         <div class="card__body">
           <div class="avatar" aria-hidden="true">{{ substr .Title 0 1 }}</div>
           <h3>{{ .Title }}</h3>
@@ -13,5 +28,6 @@
       </a>
     {{ end }}
   </div>
+  <p class="muted" data-filter-empty hidden>No members match. Clear the filter to see everyone.</p>
 </section>
 {{ end }}

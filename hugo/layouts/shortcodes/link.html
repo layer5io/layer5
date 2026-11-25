@@ -1,0 +1,8 @@
+{{- $to := .Get "to" | default "" -}}
+{{- $class := .Get "class" | default "" -}}
+{{- $target := .Get "target" | default "" -}}
+{{- $rel := .Get "rel" | default "" -}}
+{{- if and (strings.HasPrefix $to "/") (not (strings.HasPrefix $to "//")) -}}
+  {{- $to = strings.TrimPrefix "/" $to | relURL -}}
+{{- end -}}
+<a href="{{ $to | safeURL }}"{{ with $class }} class="{{ . }}"{{ end }}{{ with $target }} target="{{ . }}"{{ end }}{{ with $rel }} rel="{{ . }}"{{ end }}>{{- .Inner | strings.TrimSpace | safeHTML -}}</a>

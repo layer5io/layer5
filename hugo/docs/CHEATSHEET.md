@@ -21,6 +21,16 @@
 - One-line fix for "my page 404s": check `slug:` in front matter and the `permalinks:` block in `hugo.yaml`.
 - Run `make serve`. Errors name the file and line; shortcode errors show the page that called them.
 
+## Where images go
+| The image is… | Put it in | Use it with |
+|---|---|---|
+| used by one page (thumbnail, `darkthumbnail`, inline figure) | the page bundle, next to `index.md` | `thumbnail: cover.png` / `responsive-image.html` |
+| shared by layouts (logos, icons, illustrations) | `assets/images/`, same sub-path as `src/assets/images/` | `resources.Get "images/…"` |
+| a file that must keep its exact URL (brand kit, press, fonts) | `static/` | a plain `/path` link |
+
+- Front matter never points outside the bundle. The migration script copies `../` images into the bundle and rewrites the path to the file name. If it can't (file missing, or the name is taken), it leaves the path and warns.
+- SVGs are copied as-is; only raster images (PNG, JPG, WebP) get resized.
+
 ## Add a shortcode in 5 minutes
 1. `layouts/shortcodes/my-thing.html` — read params with `.Get "name"`, body with `.Inner`.
 2. Add it to `COMPONENTS` in `scripts/migrate-mdx.mjs` and a case in `scripts/test/`.

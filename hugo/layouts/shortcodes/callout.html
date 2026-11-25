@@ -1,0 +1,13 @@
+{{- /* {{< callout type="note|tip" title="…" >}}body{{< /callout >}} */ -}}
+{{- $rawType := .Get "type" | default "note" | lower -}}
+{{- if not (in (slice "note" "tip") $rawType) -}}
+  {{- warnf "callout shortcode on %s: unknown type %q, expected \"note\" or \"tip\" (defaulting to note)" .Page.Path $rawType -}}
+{{- end -}}
+{{- $type := cond (eq $rawType "tip") "tip" "note" -}}
+{{- $title := .Get "title" | default "" -}}
+<aside class="callout callout--{{ $type }}" role="note">
+  {{- with $title }}
+  <p class="callout__title">{{ . }}</p>
+  {{- end }}
+  <div class="callout__body">{{ .Inner | markdownify }}</div>
+</aside>
