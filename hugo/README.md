@@ -102,3 +102,22 @@ make migrate-dry   # Dry-run MDX converter against layer5 collections (reads ../
 - **Page bundle**: A directory containing an `index.md` file along with its co-located assets and images.
 - **MDX**: Markdown with embedded React components, used by the existing Gatsby site.
 - **Pagefind**: A lightweight client-side search library that indexes static HTML output.
+
+## Hosting and redirects
+
+**Decision (2026-11-03, #8307):**
+
+- **Hosting:** GitHub Pages stays in production for the cutover. Only the build
+  step changes, so no DNS change is needed. PR previews (`pr-preview/`) and
+  `.well-known/` keep working. Cloudflare will be revisited after cutover as a
+  separate project.
+- **Redirects:** Hugo `aliases` generate HTML stubs (meta refresh + canonical),
+  the same mechanism as today. GitHub Pages ignores `_redirects`, so the
+  `Redirects` output format is not used.
+- **Trailing slashes:** canonical, `og:url`, sitemap and internal links use
+  `/path/` (Hugo's default), which returns `200`. Old slash-less URLs keep
+  working via the GitHub Pages `301`.
+
+**Deploy notes:** `.github/workflows/build-and-deploy-site.yml` deploys with
+`clean: true`; `pr-preview`, `hugo-preview` and `.well-known` are excluded from
+cleaning and must stay excluded.

@@ -47,13 +47,12 @@ Measured from running `make bench` against the synthetic 1,210-page test suite:
 ---
 
 ## 4. Redirects Verification
-- **Status**: **Verified and working.**
-- `public/_redirects` is generated at the root of `public/` (without any `.txt` extension).
-- Contents verified:
-  ```
-  /blog/meshery/getting-started /blog/2026/getting-started-with-meshery/ 301
-  ```
-  This matches the alias configured in `content/blog/getting-started-with-meshery/index.md`.
+- **Superseded (#<issue>)**: production is GitHub Pages, which ignores `_redirects`.
+  The `Redirects` output format and `layouts/index.redirects` were removed; §2.A is
+  kept for history only.
+- Redirects are Hugo `aliases` HTML stubs (meta refresh + canonical). Verify with:
+  `public/blog/meshery/getting-started/index.html` exists and its refresh/canonical
+  point to `/blog/2026/getting-started-with-meshery/`.
 
 ---
 

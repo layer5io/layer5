@@ -37,20 +37,8 @@ markup:
     startLevel: 2
     endLevel: 3
 
-mediaTypes:
-  text/netlify:
-    delimiter: ""
-    suffixes: [""]
-
-# Workstream 4: Netlify / Cloudflare Pages style _redirects built from `aliases`
-outputFormats:
-  Redirects:
-    mediaType: text/netlify
-    baseName: _redirects
-    isPlainText: true
-    notAlternative: true
 outputs:
-  home: [HTML, RSS, Redirects]
+  home: [HTML, RSS]
   section: [HTML, RSS]
 
 related:
