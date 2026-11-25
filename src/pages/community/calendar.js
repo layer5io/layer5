@@ -2,7 +2,7 @@ import React from "react";
 import SEO from "../../components/seo";
 
 import loadable from "@loadable/component";
-import Loader from "./Loader.style";
+import Loader from "../../sections/Community/Calendar/loader.style";
 import LoadingIcon from "../../assets/images/LoadingIcon";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
