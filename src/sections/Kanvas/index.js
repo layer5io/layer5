@@ -56,6 +56,7 @@ const Kanvas = (props) => {
                       src="../../assets/images/kanvas/KanvasDesigner.webp"
                       alt="Designer Mode"
                       className="designer-img modes-image"
+                      objectFit="contain"
                       style={{ aspectRatio: "16/9" }}
                     />
                   ),
@@ -69,6 +70,7 @@ const Kanvas = (props) => {
                       src="../../assets/images/kanvas/KanvasVisualizer.webp"
                       alt="Operator Mode"
                       className="modes-image"
+                      objectFit="contain"
                       style={{ aspectRatio: "16/9" }}
                     />
                   ),
