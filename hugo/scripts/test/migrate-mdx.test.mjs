@@ -1110,6 +1110,13 @@ test('only the Grid2 tags that convert are counted in the report', () => {
   assert.equal(stats.components.Grid2, 1);
 });
 
+test('a Grid2 left as-is does not count the Grid2 tags converted inside it', () => {
+  const input = '---\ntitle: "x"\n---\n<Grid2 container direction="row"><Grid2 size={6}>A</Grid2></Grid2>';
+  const { output, stats } = convertFile(input, { slug: 'grid-nested', file: 'events/2025/grid-nested/index.mdx' });
+  assert.match(output, /<Grid2 container direction="row"><Grid2 size=\{6\}>A<\/Grid2><\/Grid2>/);
+  assert.equal(stats.components.Grid2, undefined);
+});
+
 test('CommonForm and ContentForm convert to form shortcodes and respect sistent exclusion', () => {
   const input = [
     '---',
