@@ -4,11 +4,18 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import logo from "../../../assets/images/layer5/layer5-only/svg/layer5-light-bg.svg";
 import SocialLinksColor from "../../../components/SocialLinks-Color";
 import Button from "../../../reusecore/Button";
+import {
+  MarketingHoneypot,
+  MarketingStatus,
+  useMarketingForm,
+} from "../../../components/MarketingForm";
 import FooterWrapper from "./footer.style";
 import bubblesElement from "./images/bubbles-element.svg";
 
 const Footer = ({ location }) => {
   var currentYear = new Date().getFullYear();
+  const { status, message, handleSubmit } =
+    useMarketingForm("footer-subscribe");
 
   const getUrl = (pathname) => {
     // remove ".html" that results in live production build
@@ -327,33 +334,39 @@ const Footer = ({ location }) => {
               </div>
             </Row>
             <Row className="subscribe">
-              <form
-                name="contactform"
-                method="post"
-                action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb"
-              >
-                <div>
-                  <label htmlFor="mce-EMAIL-2">Subscribe to our Newsletter</label>
-                  <input
-                    className="inputrow subscribe-email"
-                    type="email"
-                    placeholder="Email Address"
-                    name="EMAIL"
-                    id="mce-EMAIL-2"
-                    onInvalid={(e) =>
-                      e.target.setCustomValidity("Please fill-in this field")
-                    }
-                    onInput={(e) => e.target.setCustomValidity("")}
-                    required
-                  />
-                  <Button
-                    $secondary
-                    title="Subscribe"
-                    aria-label="Subscribe"
-                    id="mc-embedded-subscribe-2"
-                  />
-                </div>
-              </form>
+              {status === "success" ? (
+                <MarketingStatus status={status} message={message} />
+              ) : (
+                <form name="contactform" method="post" onSubmit={handleSubmit}>
+                  <div>
+                    <label htmlFor="mce-EMAIL-2">
+                      Subscribe to our Newsletter
+                    </label>
+                    <input
+                      className="inputrow subscribe-email"
+                      type="email"
+                      placeholder="Email Address"
+                      name="EMAIL"
+                      id="mce-EMAIL-2"
+                      onInvalid={(e) =>
+                        e.target.setCustomValidity("Please fill-in this field")
+                      }
+                      onInput={(e) => e.target.setCustomValidity("")}
+                      required
+                    />
+                    <MarketingHoneypot />
+                    <Button
+                      $secondary
+                      type="submit"
+                      title="Subscribe"
+                      aria-label="Subscribe"
+                      id="mc-embedded-subscribe-2"
+                      disabled={status === "submitting"}
+                    />
+                    <MarketingStatus status={status} message={message} />
+                  </div>
+                </form>
+              )}
             </Row>
           </Col>
         </Row>

@@ -17,6 +17,7 @@ const DataWrapper = (WrappedComponent) => {
       frontmatter {
         title
         type
+        eurl
         technology
         product
         mesh

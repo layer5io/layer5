@@ -146,7 +146,7 @@ Layer5 does not knowingly collect, either online or offline, personal informatio
               701 Brazos Street, Suite 1600<br />
               Austin, Texas 78701<br />
               Email Address: legal@layer5.io<br />
-              Telephone number: 512-810-8200
+              Telephone number: 512-548-9675
               </p>
               <p><i>Last Updated: April 15th, 2025</i></p>
             </Col>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "gatsby";
 
 import { SRLWrapper } from "simple-react-lightbox";
@@ -9,7 +9,9 @@ import { ChapterWrapper } from "./chapters.style";
 import { CustomTooltip } from "@sistent/sistent";
 import Pagination from "../../../components/Learn-Components/Pagination";
 import QuizModal from "../../../components/Learn-Components/QuizModal";
-
+// "View this design in Meshery Cloud" badge rendered by @layer5/meshery-design-embed.
+const EMBED_BADGE_SELECTOR =
+  'a[href^="https://cloud.layer5.io/catalog/content/design/"] > img';
 const Chapters = ({
   chapterData,
   courseData,
@@ -20,6 +22,31 @@ const Chapters = ({
 }) => {
   const { frontmatter } = chapterData;
   const [showQuizModal, setShowQuizModal] = useState(false);
+  const chapterDataRef = useRef(null);
+  // simple-react-lightbox adds every <img> wrapped in an <a> to its gallery,
+  // which includes the badge of an embedded design. That link points to a web
+  // page, not an image, so navigating to its slide spins forever. The lightbox
+  // skips images with role="presentation", so mark the badge that way.
+  useEffect(() => {
+    const root = chapterDataRef.current;
+    if (!root) return undefined;
+
+    const excludeEmbedBadges = () => {
+      root.querySelectorAll(EMBED_BADGE_SELECTOR).forEach((img) => {
+        img.setAttribute("role", "presentation");
+        // The image was the link's only accessible name; keep one on the link.
+        const link = img.parentElement;
+        if (!link.hasAttribute("aria-label")) {
+          link.setAttribute("aria-label", "View this design in Meshery Cloud");
+        }
+      });
+    };
+
+    excludeEmbedBadges();
+    const observer = new MutationObserver(excludeEmbedBadges);
+    observer.observe(root, { childList: true, subtree: true });
+    return () => observer.disconnect();
+  }, []);
 
   const serviceMeshImages = courseData.frontmatter.meshesYouLearn || [];
   const tableOfContents = TOCData.filter((node) => !!node.fields.section).map(
@@ -172,7 +199,7 @@ const Chapters = ({
             </div>
           </Col>
           <Col $sm={12} $md={9}>
-            <div className="chapter-data">
+            <div className="chapter-data" ref={chapterDataRef}>
               <h1 className="chapter-heading">{frontmatter.chapterTitle}</h1>
               <SRLWrapper>{children}</SRLWrapper>
             </div>

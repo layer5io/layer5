@@ -18,6 +18,19 @@ const ResourcesList = (props) => {
 
   const searchRestored = useRef(false);
 
+  // Keep the search text in sync with the URL after in-app navigations
+  // (e.g. picking "Case Studies" from the menu while on /resources).
+  const locationKey = props.location?.key;
+  const locationSearch = props.location?.search;
+  const isFirstLocation = useRef(true);
+  useEffect(() => {
+    if (isFirstLocation.current) {
+      isFirstLocation.current = false;
+      return;
+    }
+    searchByText(new URLSearchParams(locationSearch).get("q") || "");
+  }, [locationKey, locationSearch]);
+
   useEffect(() => {
     if (!new URLSearchParams(window.location.search).get("q")) {
       searchRestored.current = true;

@@ -26,7 +26,6 @@ import BadgeRow from "./BadgeRow";
 import { activityBadges, projectBadges, specialBadges } from "./badges-data";
 
 
-export const tableWrap = { overflowX: "auto" };
 export const table = { width: "100%", borderCollapse: "collapse", marginBottom: "2rem" };
 export const theadRow = { borderBottom: "2px solid var(--text-color, #ddd)", backgroundColor: "rgba(0, 0, 0, 0.05)" };
 export const th = { textAlign: "left", padding: "12px", fontWeight: 600 };
@@ -73,8 +72,8 @@ Member profiles carry a number of specific designations, depending upon how a co
 
 Badges are awarded to community members who have been consistently engaged and impactful within a given area of the community or on a specific project. Every community member, whether contributing with code or not, has the opportunity to obtain any number of badges of recognition of their efforts. Community members are encouraged to collect the whole set!
 
-<div style={tableWrap}>
-  <h4>Activity Badges</h4>
+<h4 id="activity-badges">Activity Badges</h4>
+<div className="table-container" tabIndex={0} role="region" aria-labelledby="activity-badges" aria-label="Activity Badges">
   <table style={table}>
     <thead>
       <tr style={theadRow}>
@@ -96,8 +95,10 @@ Badges are awarded to community members who have been consistently engaged and i
       ))}
     </tbody>
   </table>
+</div>
 
-  <h4>Project Badges</h4>
+<h4 id="project-badges">Project Badges</h4>
+<div className="table-container" tabIndex={0} role="region" aria-labelledby="project-badges" aria-label="Project Badges">
   <table style={table}>
     <thead>
       <tr style={theadRow}>
@@ -119,8 +120,10 @@ Badges are awarded to community members who have been consistently engaged and i
       ))}
     </tbody>
   </table>
+</div>
 
-  <h4>Special Recognition Badges</h4>
+<h4 id="special-recognition-badges">Special Recognition Badges</h4>
+<div className="table-container" tabIndex={0} role="region" aria-labelledby="special-recognition-badges" aria-label="Special Recognition Badges">
   <table style={table}>
     <thead>
       <tr style={theadRow}>
