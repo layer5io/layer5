@@ -1,7 +1,7 @@
 import React from "react";
 import { withPrefix } from "gatsby";
 import styled from "styled-components";
-import { SRLWrapper } from "simple-react-lightbox";
+import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
@@ -62,49 +62,51 @@ const MeshMarkBrand = () => {
               Logos
             </h2>
           </Col>
-          <SRLWrapper>
-            <Row $Vcenter className="ImgDiv smp-logo">
-              <Col $xs={12} $sm={4}>
-                <img src={MeshmarkDark} alt="MeshmarkDark Logo" />
-              </Col>
-              <Col $xs={12} $sm={4}>
-                <div className="logo">
-                  <img src={MeshmarkWhite} alt="MeshMarkWhite Logo" />
-                </div>
-              </Col>
-              <Col $xs={12} $sm={4}>
-                <div className="logo">
-                  <img src={MeshmarkLight} alt="MeshmarkLightLogo" />
-                </div>
-              </Col>
-            </Row>
-            <Row $Vcenter className="ImgDiv MeshMark-logo">
-              <Col $xs={12} $sm={4}>
-                <img src={MeshmarkDarkTextSide} alt="MeshMarkDarkTextSide Logo" />
-              </Col>
-              <Col $xs={12} $sm={4}>
-                <div className="logo">
-                  <img src={MeshmarkWhiteTextSide} alt="MeshMarkWhiteTextSide Logo" />
-                </div>
-              </Col>
-              <Col $xs={12} $sm={4}>
-                <div className="logo">
-                  <img src={MeshmarkLightTextSide} alt="MeshmarkLightTextSide Logo" />
-                </div>
-              </Col>
-            </Row>
-            <Row $Vcenter className="ImgDiv smp-logo">
-              <Col $xs={12} $sm={4}>
-                <img src={MeshmarkTextLight} alt="MeshmarkTextLight Logo" />
-              </Col>
-              <Col $xs={12} $sm={4}>
-                <img src={MeshmarkTextBlue} alt="MeshMarkTextBlue Logo" />
-              </Col>
-              <Col $xs={12} $sm={4}>
-                <img src={MeshmarkTextDark} alt="MeshmarkTextDark Logo" />
-              </Col>
-            </Row>
-          </SRLWrapper>
+          <SimpleReactLightbox>
+            <SRLWrapper>
+              <Row $Vcenter className="ImgDiv smp-logo">
+                <Col $xs={12} $sm={4}>
+                  <img src={MeshmarkDark} alt="MeshmarkDark Logo" />
+                </Col>
+                <Col $xs={12} $sm={4}>
+                  <div className="logo">
+                    <img src={MeshmarkWhite} alt="MeshMarkWhite Logo" />
+                  </div>
+                </Col>
+                <Col $xs={12} $sm={4}>
+                  <div className="logo">
+                    <img src={MeshmarkLight} alt="MeshmarkLightLogo" />
+                  </div>
+                </Col>
+              </Row>
+              <Row $Vcenter className="ImgDiv MeshMark-logo">
+                <Col $xs={12} $sm={4}>
+                  <img src={MeshmarkDarkTextSide} alt="MeshMarkDarkTextSide Logo" />
+                </Col>
+                <Col $xs={12} $sm={4}>
+                  <div className="logo">
+                    <img src={MeshmarkWhiteTextSide} alt="MeshMarkWhiteTextSide Logo" />
+                  </div>
+                </Col>
+                <Col $xs={12} $sm={4}>
+                  <div className="logo">
+                    <img src={MeshmarkLightTextSide} alt="MeshmarkLightTextSide Logo" />
+                  </div>
+                </Col>
+              </Row>
+              <Row $Vcenter className="ImgDiv smp-logo">
+                <Col $xs={12} $sm={4}>
+                  <img src={MeshmarkTextLight} alt="MeshmarkTextLight Logo" />
+                </Col>
+                <Col $xs={12} $sm={4}>
+                  <img src={MeshmarkTextBlue} alt="MeshMarkTextBlue Logo" />
+                </Col>
+                <Col $xs={12} $sm={4}>
+                  <img src={MeshmarkTextDark} alt="MeshmarkTextDark Logo" />
+                </Col>
+              </Row>
+            </SRLWrapper>
+          </SimpleReactLightbox>
         </Row>
         <Row style={{
           flexWrap: "wrap"
