@@ -77,6 +77,8 @@ kbd { font: .75rem var(--mono); border: 1px solid var(--line); border-radius: 4p
 @media (min-width: 75rem) { .grid__item { grid-column: span var(--lg); } }
 @media (min-width: 96rem) { .grid__item { grid-column: span var(--xl); } }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; color: inherit; text-decoration: none; }
+.prose .book .card, .book img.card { background: transparent; border: none; display: inline-block; border-radius: 2px; margin: 0.5rem 0 1rem 0; transition: box-shadow .25s; }
+.prose .book .card:hover, .book img.card:hover { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); }
 .card--link:hover { border-color: var(--accent); }
 .card__media img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
 .card__body { padding: 1.1rem; } .card__body h3 a { color: inherit; text-decoration: none; } .card__body h3 a:hover { text-decoration: underline; }

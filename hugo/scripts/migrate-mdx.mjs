@@ -102,6 +102,14 @@ const COLLECTION_EXCLUDED_COMPONENTS = {
     'TCSbenefits', 'TCSfacts', 'TCSintro',
   ]),
 };
+const HTML_ATTR_RENAMES = {
+  className: 'class',
+  frameBorder: 'frameborder',
+  htmlFor: 'for',
+  marginHeight: 'marginheight',
+  marginWidth: 'marginwidth',
+  colSpan: 'colspan',
+};
 const DROP_ATTRS = new Set(['className', 'class', 'style', 'key', 'ref']);
 
 /** Resolve a component mapping for the active collection. */
@@ -541,6 +549,10 @@ function convertSegment(text, ctx) {
       let tagChanged = false;
       let hasUnresolved = false;
       for (const a of tag.attrs) {
+        if (ctx.collection !== 'sistent' && Object.hasOwn(HTML_ATTR_RENAMES, a.key)) {
+          a.key = HTML_ATTR_RENAMES[a.key];
+          tagChanged = true;
+        }
         if (a.key === 'style' && a.value.startsWith('{')) {
           const css = jsxStyleToCss(a.value);
           if (css) {
@@ -576,8 +588,7 @@ function convertSegment(text, ctx) {
       if (tagChanged && !hasUnresolved && !spreadProblems.length) {
         const attrParts = [];
         for (const a of tag.attrs) {
-          const key = a.key === 'className' ? 'class' : a.key;
-          attrParts.push(`${key}="${a.value.replace(/"/g, '&quot;')}"`);
+          attrParts.push(`${a.key}="${a.value.replace(/"/g, '&quot;')}"`);
         }
         const rendered = `<${name}${attrParts.length ? ' ' + attrParts.join(' ') : ''}${tag.selfClosing ? ' />' : '>'}`;
         out += rendered;

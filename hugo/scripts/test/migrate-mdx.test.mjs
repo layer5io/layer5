@@ -701,7 +701,7 @@ test('Link emits {{< link >}} shortcode for className, target/rel, or HTML/JSX c
   assert.equal(stats.warnings.length, 0);
   assert.match(output, /\{\{< link to="\/community\/meshmates" class="highlight" >\}\}MeshMates\{\{< \/link >\}\}/);
   assert.match(output, /\{\{< link to="\/projects\/cloud-native-performance" class="mute" >\}\}CNP\{\{< \/link >\}\}/);
-  assert.match(output, /\{\{< link to="\/blog" class="project-card" >\}\}<div className="content_type"><h5>Blog<\/h5><\/div>\{\{< \/link >\}\}/);
+  assert.match(output, /\{\{< link to="\/blog" class="project-card" >\}\}<div class="content_type"><h5>Blog<\/h5><\/div>\{\{< \/link >\}\}/);
   assert.match(output, /\{\{< link to="https:\/\/example\.com" target="_blank" rel="noopener" >\}\}Ext\{\{< \/link >\}\}/);
 });
 
@@ -745,7 +745,7 @@ test('Wrappers unwrap all 8 collection wrappers, dedent common indent, and prese
   const { output, stats } = convertFile(input, { slug: 'swe', file: 'careers/software-engineer/index.mdx' });
   assert.equal(stats.warnings.length, 0);
   assert.doesNotMatch(output, /CareerWrapper/);
-  assert.match(output, /\n<div className="body-sections">\n  <h3>Responsibilities<\/h3>\n  \[Programs\]\(\/careers\/programs\)\n<\/div>\n/);
+  assert.match(output, /\n<div class="body-sections">\n  <h3>Responsibilities<\/h3>\n  \[Programs\]\(\/careers\/programs\)\n<\/div>\n/);
 
   const withFence = [
     '---',
@@ -1483,4 +1483,51 @@ test('PositionApply, LfxPageNav, Col, and Row convert to shortcodes, preserve pr
   assert.match(sistentRes.output, /<!-- TODO\(mdx\): unconverted component <LfxPageNav> -->/);
   assert.equal(sistentRes.stats.unknown.PositionApply, 1);
   assert.equal(sistentRes.stats.unknown.LfxPageNav, 1);
+});
+
+test('lowercase HTML tags rewrite React camelCase attributes to standard HTML outside code fences and respect sistent exclusion', () => {
+  const input = [
+    '---',
+    'title: "HTML Attrs Test"',
+    '---',
+    'import heroImg from "./hero.png";',
+    '',
+    '<div className="outer">',
+    '  <p className="lead">Hello <a href="/about" className="cta-link">world</a></p>',
+    '  <img src={heroImg} className="hero-pic" alt="Hero" />',
+    '  <img src="./static.png" className="static-pic" alt="Static" />',
+    '  <label htmlFor="email-input">Email</label>',
+    '  <iframe src="https://example.com" frameBorder="0" marginHeight="0" marginWidth="0"></iframe>',
+    '  <table><tr><td colSpan="2">Cell</td></tr></table>',
+    '</div>',
+    '',
+    '```jsx',
+    '<div className="untouched-in-fence"><label htmlFor="f">F</label></div>',
+    '```',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'html-attrs', file: 'blog/2026/html-attrs/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.match(output, /<div class="outer">/);
+  assert.match(output, /<p class="lead">Hello <a href="\/about" class="cta-link">world<\/a><\/p>/);
+  assert.match(output, /<img src="\.\/hero\.png" class="hero-pic" alt="Hero" \/>/);
+  assert.match(output, /<img src="\.\/static\.png" class="static-pic" alt="Static" \/>/);
+  assert.match(output, /<label for="email-input">Email<\/label>/);
+  assert.match(output, /<iframe src="https:\/\/example\.com" frameborder="0" marginheight="0" marginwidth="0">/);
+  assert.match(output, /<td colspan="2">Cell<\/td>/);
+  assert.match(output, /<div className="untouched-in-fence"><label htmlFor="f">F<\/label><\/div>/);
+
+  // Idempotency
+  const rerun = convertFile(output, { slug: 'html-attrs', file: 'blog/2026/html-attrs/index.mdx' });
+  assert.equal(rerun.output, output);
+
+  // Sistent guard
+  const sistentRes = convertFile(input, { slug: 'html-attrs', file: 'sistent/html-attrs/index.mdx' });
+  assert.match(sistentRes.output, /<div className="outer">/);
+  assert.match(sistentRes.output, /<label htmlFor="email-input">/);
+
+  // Scoped .book .card check
+  const book = '---\ntitle: "Book"\n---\n<BookWrapper><div className="book"><img className="card" src="./cover.webp" alt="Cover" /></div></BookWrapper>\n';
+  const bookOut = convertFile(book, { slug: 'book', file: 'service-mesh-books/book/index.mdx' });
+  assert.match(bookOut.output, /<div class="book"><img class="card" src="\.\/cover\.webp" alt="Cover" \/><\/div>/);
 });
