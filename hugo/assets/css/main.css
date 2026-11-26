@@ -233,11 +233,17 @@ th, td { text-align: left; padding: .6rem .8rem; border-bottom: 1px solid var(--
 .col { flex: 1 0 0%; }
 .col--xs-12 { flex: 0 0 100%; max-width: 100%; }
 .col--xs-6 { flex: 0 0 50%; max-width: 50%; }
+@media (min-width: 36rem) {
+  .col--sm-6 { flex: 0 0 50%; max-width: 50%; }
+  .col--sm-12 { flex: 0 0 100%; max-width: 100%; }
+}
 @media (min-width: 48rem) {
-  .col--md-7 { flex: 0 0 58.333333%; max-width: 58.333333%; }
   .col--md-5 { flex: 0 0 41.666667%; max-width: 41.666667%; }
+  .col--md-6 { flex: 0 0 50%; max-width: 50%; }
+  .col--md-7 { flex: 0 0 58.333333%; max-width: 58.333333%; }
 }
 @media (min-width: 62rem) {
+  .col--lg-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
   .col--lg-6 { flex: 0 0 50%; max-width: 50%; }
   .col--lg-12 { flex: 0 0 100%; max-width: 100%; }
 }

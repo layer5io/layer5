@@ -1444,7 +1444,7 @@ test('FAQ single-element array prop is extracted as literal, multi-element array
   assert.ok(multiOut.includes('<FAQ category={["careers", "internships"]} />'));
 });
 
-test('PositionApply, LfxPageNav, Col, and Row convert to shortcodes, preserve prop-less Col/Row, and respect sistent exclusion', () => {
+test('PositionApply, LfxPageNav, Col, and Row convert to shortcodes, handle prop-less tags, and respect sistent exclusion', () => {
   const input = [
     '---',
     'title: "Programs & Careers Bespoke Test"',
@@ -1471,18 +1471,77 @@ test('PositionApply, LfxPageNav, Col, and Row convert to shortcodes, preserve pr
   assert.match(output, /\{\{< lfx-page-nav >\}\}\n- \[Spring 2026 Projects\]\(#spring-2026\)\n- \[Summer 2026 Projects\]\(#summer-2026\)\n\{\{< \/lfx-page-nav >\}\}/);
   assert.match(output, /\{\{< row class="qualification-row" >\}\}/);
   assert.match(output, /\{\{< col xs="12" lg="6" class="qualification-col" >\}\}\n\s*Desired qualifications\n\s*\{\{< \/col >\}\}/);
-  // Prop-less Row and Col are left unconverted for PR #8465
-  assert.match(output, /<!-- TODO\(mdx\): unconverted component <Row> -->/);
-  assert.match(output, /<!-- TODO\(mdx\): unconverted component <Col> -->/);
-  assert.equal(stats.unknown.Row, 1);
-  assert.equal(stats.unknown.Col, 1);
+  assert.match(output, /\{\{< row >\}\}\n\s*\{\{< col >\}\}\n\s*Propless content\n\s*\{\{< \/col >\}\}\n\s*\{\{< \/row >\}\}/);
+  assert.equal(stats.unknown.Row, undefined);
+  assert.equal(stats.unknown.Col, undefined);
+  assert.equal(stats.components.Row, 2);
+  assert.equal(stats.components.Col, 2);
 
   // Sistent collection guard
   const sistentRes = convertFile(input, { slug: 'sistent-test', file: 'sistent/programs-test/index.mdx' });
   assert.match(sistentRes.output, /<!-- TODO\(mdx\): unconverted component <PositionApply> -->/);
   assert.match(sistentRes.output, /<!-- TODO\(mdx\): unconverted component <LfxPageNav> -->/);
+  assert.match(sistentRes.output, /<!-- TODO\(mdx\): unconverted component <Row> -->/);
+  assert.match(sistentRes.output, /<!-- TODO\(mdx\): unconverted component <Col> -->/);
   assert.equal(sistentRes.stats.unknown.PositionApply, 1);
   assert.equal(sistentRes.stats.unknown.LfxPageNav, 1);
+  assert.equal(sistentRes.stats.unknown.Row, 2);
+  assert.equal(sistentRes.stats.unknown.Col, 2);
+});
+
+test('Row/Col: nested Row inside Col, code fences untouched, indented content, non-literal props, and idempotency', () => {
+  const input = [
+    '---',
+    'title: "Row Col Nested & Edge Cases"',
+    '---',
+    '<Col $lg={12}>',
+    '  <Row>',
+    '    <Col>',
+    '      Nested content with indentation',
+    '    </Col>',
+    '  </Row>',
+    '</Col>',
+    '',
+    '```jsx',
+    '<Row>',
+    '  <Col $sm={12}>Code fence Col</Col>',
+    '</Row>',
+    '```',
+    '',
+    '<Row className={dynamicClass}>',
+    '  <Col $sm={computedWidth}>Non-literal</Col>',
+    '</Row>',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'nested-test', file: 'projects/nested-test/index.mdx' });
+
+  // Nested Row inside Col converts cleanly
+  assert.match(output, /\{\{< col lg="12" >\}\}\n\s*\{\{< row >\}\}\n\s*\{\{< col >\}\}\n\s*Nested content with indentation\n\s*\{\{< \/col >\}\}\n\s*\{\{< \/row >\}\}\n\s*\{\{< \/col >\}\}/);
+
+  // Code fence untouched byte-for-byte
+  assert.match(output, /```jsx\n<Row>\n  <Col \$sm=\{12\}>Code fence Col<\/Col>\n<\/Row>\n```/);
+
+  // Non-literal props on Row and Col are flagged and preserved as-is
+  const nonLiteralInput = [
+    '---',
+    'title: "Non-literal test"',
+    '---',
+    '<Row className={dynamicClass}>Dynamic Row</Row>',
+    '<Col $sm={computedWidth}>Non-literal Col</Col>',
+  ].join('\n');
+  const nonLitRes = convertFile(nonLiteralInput, { slug: 'non-lit', file: 'projects/non-lit/index.mdx' });
+  assert.ok(nonLitRes.stats.warnings.some((w) => /<Row>: non-literal expression for "className"/.test(w)));
+  assert.ok(nonLitRes.stats.warnings.some((w) => /<Col>: non-literal expression for "\$sm"/.test(w)));
+  assert.match(nonLitRes.output, /<Row className=\{dynamicClass\}>Dynamic Row<\/Row>/);
+  assert.match(nonLitRes.output, /<Col \$sm=\{computedWidth\}>Non-literal Col<\/Col>/);
+
+  // Converted counts match top-level and nested converted elements
+  assert.equal(stats.components.Row, 1);
+  assert.equal(stats.components.Col, 2);
+
+  // Idempotency: re-running on output produces identical bytes
+  const rerun = convertFile(output, { slug: 'nested-test', file: 'projects/nested-test/index.mdx' });
+  assert.equal(rerun.output, output);
 });
 
 test('lowercase HTML tags rewrite React camelCase attributes to standard HTML outside code fences and respect sistent exclusion', () => {
