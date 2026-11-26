@@ -21,7 +21,7 @@ bench:           ## 1,210-page synthetic build: wall time + peak RAM
 	node scripts/bench.mjs
 
 verify-urls:     ## fail if a live Gatsby URL would 404 (needs .bench/gatsby-sitemap.xml)
-	$(HUGO) --minify --gc && node scripts/verify-urls.mjs --old .bench/gatsby-sitemap.xml --new public/sitemap.xml --redirects public/_redirects
+	$(HUGO) --minify --gc && node scripts/verify-urls.mjs --old .bench/gatsby-sitemap.xml --new public/sitemap.xml --public public
 
 migrate-dry:     ## dry-run the MDX converter against layer5 collections: make migrate-dry [SRC=../src/collections]
 	node scripts/migrate-mdx.mjs --src $(SRC) --dest content --dry-run --report .bench/migration-report.json

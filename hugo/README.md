@@ -19,7 +19,7 @@ This repository is a proof of concept (POC) for migrating [layer5.io](https://la
 | Site build | **Working** | Compiles clean HTML into `public/` with zero template errors. |
 | Tooling tests | **64 passed** | 64 of 64 unit tests pass (`make test`). |
 | Sample content | **Placeholder** | Minimal sample content to test components; real content will migrate from `layer5`. |
-| Netlify redirects | **Working** | Generates extensionless `public/_redirects` from page aliases. |
+| Redirects | **Working** | Hugo `aliases` generate HTML stubs (meta refresh + canonical). GitHub Pages ignores `_redirects`, so none is generated. |
 | Performance benchmarks | **Informal** | Windows numbers are approximate Go memory; true peak RSS is only measured on Linux CI. |
 
 > [!WARNING]
