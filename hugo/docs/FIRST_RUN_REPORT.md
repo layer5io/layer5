@@ -47,7 +47,7 @@ Measured from running `make bench` against the synthetic 1,210-page test suite:
 ---
 
 ## 4. Redirects Verification
-- **Superseded (#<issue>)**: production is GitHub Pages, which ignores `_redirects`.
+- **Superseded (#8307)**: production is GitHub Pages, which ignores `_redirects`.
   The `Redirects` output format and `layouts/index.redirects` were removed; §2.A is
   kept for history only.
 - Redirects are Hugo `aliases` HTML stubs (meta refresh + canonical). Verify with:
