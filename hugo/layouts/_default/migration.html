@@ -52,7 +52,6 @@
           <th>Area</th>
           <th>Owner</th>
           <th>Status</th>
-          <th>Evidence</th>
         </tr>
       </thead>
       <tbody>
@@ -61,7 +60,6 @@
           <td>{{ $area }}</td>
           <td>{{ $o.proposed_owner | default "unassigned" }}</td>
           <td>{{ $o.owner_status }}</td>
-          <td class="muted">{{ $o.evidence }}</td>
         </tr>
         {{ end }}
       </tbody>

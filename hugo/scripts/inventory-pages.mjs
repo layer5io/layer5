@@ -12,7 +12,7 @@
  *     source: src/pages/index.js
  *     area: Products
  *     phase3: P3-11
- *     proposed_owner: "@someone"        # from git history since 2026-01-01, maintainers confirm
+ *     proposed_owner: Name    # from MANUAL_OWNERS below, maintainers confirm
  *     owner_status: proposed
  *     status: not started
  *     special: error-page               # only on pages listed in SPECIAL (see CONFIG); with a "note"
@@ -25,9 +25,9 @@
  *     features: [carousel, gsap]
  *     data: ["graphql: allMdx"]
  *
- * Owners: one per area, nobody proposed twice. Candidates come from git history; each one must be a
- * GitHub CONTRIBUTOR (author_association), so maintainers/members are never proposed. This needs the
- * GitHub CLI signed in (gh auth login), or run with --no-github to skip that check.
+ * Owners: one fixed name per area, taken from MANUAL_OWNERS below (no git history, no GitHub lookup).
+ * To change an owner, edit MANUAL_OWNERS and re-run. NOTE: re-running regenerates the whole YAML,
+ * including every page "status", so only re-run while nothing has been started.
  *
  * Usage (script lives in hugo/scripts; run from anywhere):
  *   node hugo/scripts/inventory-pages.mjs                       # generate + self-check
@@ -35,21 +35,16 @@
  *   node hugo/scripts/inventory-pages.mjs --sitemap=<sitemap url>     # URLs exist on the live site
  *   node hugo/scripts/inventory-pages.mjs --verify-live[=https://layer5.io]   # URL <-> source file vs production
  *   node hugo/scripts/inventory-pages.mjs --cross-check         # Babel imports vs an independent regex scan
- *   node hugo/scripts/inventory-pages.mjs --no-owners           # skip owner lookup entirely (fast)
- *   node hugo/scripts/inventory-pages.mjs --ref=upstream/master # owner history ref (default: upstream/master if it exists, else HEAD)
- *   node hugo/scripts/inventory-pages.mjs --exclude=a,b         # extra logins/names never proposed as owners
- *   node hugo/scripts/inventory-pages.mjs --no-github           # skip the GitHub "Contributor" check
- *   other: --since=2026-01-01 --min-commits=2 --min-months=1 --repo=layer5io/layer5 --no-trailing-slash --out=FILE --root=DIR
+ *   node hugo/scripts/inventory-pages.mjs --no-owners           # leave every owner unassigned
+ *   other: --no-trailing-slash --out=FILE --root=DIR
  *
  * Needs Node >= 18 and @babel/parser, @babel/traverse, js-yaml (normally already in node_modules via
  * Gatsby; otherwise: npm i -D @babel/parser @babel/traverse js-yaml).
- * Owners need history: git fetch upstream master --shallow-since=2026-01-01
  */
 /* global process, console, fetch, URL, AbortSignal */
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { execFileSync } from "node:child_process";
 import { parse } from "@babel/parser";
 import traverseModule from "@babel/traverse";
 import * as yamlNs from "js-yaml";
@@ -65,14 +60,6 @@ const SRC = path.join(ROOT, "src");
 const PAGES = path.join(SRC, "pages");
 const OUT = opt("out") ?? path.join(ROOT, "hugo/data/pages-inventory.yaml");
 const TRAILING = !flag("no-trailing-slash");
-const SINCE = opt("since") ?? "2026-01-01";
-const MIN_COMMITS = Number(opt("min-commits") ?? 2);
-const MIN_MONTHS = Number(opt("min-months") ?? 1);
-const REF = opt("ref") ?? ["upstream/master", "upstream/main"].find((r) => {
-  try { execFileSync("git", ["rev-parse", "--verify", "--quiet", r], { cwd: ROOT, stdio: "ignore" }); return true; } catch { return false; }
-});
-const GITHUB_REPO = opt("repo") ?? "layer5io/layer5";
-const USE_GITHUB = !flag("no-github");
 const PHASE3_ISSUES = {
   "P3-10": "Pages: Company + legal",
   "P3-11": "Pages: home, products, solutions",
@@ -91,6 +78,17 @@ const RULES = [
   [/^\/(learn|landscape|service-mesh-landscape)(\/|$)/, "Learn", "P3-13"],
   [/^\/projects(\/|$)/, "Projects/Sistent", "P3-13"],
 ];
+// Owners are fixed by hand (area -> name). One person may hold more than one area.
+// Every page in an area gets that area's owner, with owner_status "proposed".
+const MANUAL_OWNERS = {
+  "Products": "Vedant Satbhai",
+  "Community": "Mahak Gupta",
+  "Learn": "Tejaswi Verma",
+  "Company": "Ankit Rewar",
+  "Solutions": "Ankit Rewar",
+  "Blog/News/Resources": "Parth Gartan",
+  "Projects/Sistent": "Parth Gartan",
+};
 const SPECIAL = {
   "/404/": {
     kind: "error-page",
@@ -98,15 +96,8 @@ const SPECIAL = {
   },
 };
 // Helper-looking files in src/pages (styling helpers, stories, _private files) are not routes.
-// They are excluded from pages, URLs, phase counts and owner history.
+// They are excluded from pages, URLs and phase counts.
 const HELPER_RE = /\.styles?\.[jt]sx?$|\.stories\.|(^|\/)_[^/]*$/;
-const MAINTAINERS = ["leecalcote", "lee calcote", "maanvi212006"];
-const EXCLUDE = new Set(
-  [...MAINTAINERS, ...(opt("exclude") ?? "").split(",")]
-    .map((s) => s.trim().replace(/^@/, "").toLowerCase())
-    .filter(Boolean)
-);
-const NO_OWNER_AREAS = new Set(["Unassigned"]);
 const COMPONENT_ROOTS = ["src/components"];
 const FEATURE_MAP = [
   [/^(gsap|@gsap\/.*)$/, "gsap"],
@@ -339,110 +330,23 @@ function explore(entry, stopAtSections) {
 function describeEntry(abs) {
   const pg = explore(abs, true);
   const allFeatures = [...pg.features], allData = [...pg.data];
-  const ownerPaths = [rel(abs)];
   const sections = [];
   for (const [name, entry] of [...pg.sections].sort(([a], [b]) => (a < b ? -1 : 1))) {
     const s = explore(entry, false);
     allFeatures.push(...s.features); allData.push(...s.data);
     sections.push({ name, components: [...s.components].sort(), features: uniq(s.features), data: uniq(s.data) });
-    ownerPaths.push(path.basename(entry).startsWith("index.") ? rel(path.dirname(entry)) : rel(entry));
   }
-  return { sections, page_components: [...pg.components].sort(), features: uniq(allFeatures), data: uniq(allData), ownerPaths };
+  return { sections, page_components: [...pg.components].sort(), features: uniq(allFeatures), data: uniq(allData) };
 }
 
-const ghCache = new Map();
-const ownerSkipped = [];
-class GhUnavailable extends Error {}
-let ghFailStreak = 0, ghDown = false, ghUnverified = 0;
-const sleepSync = (ms) => { const end = Date.now() + ms; while (Date.now() < end); };   // short pause between retries
-
-function gh(apiPath) {
-  if (ghDown) throw new GhUnavailable("GitHub was unreachable earlier in this run");
-  let last = "";
-  for (let attempt = 1; attempt <= 3; attempt++) {
-    try {
-      const out = JSON.parse(execFileSync("gh", ["api", apiPath], { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"], timeout: 45000 }));
-      ghFailStreak = 0;
-      return out;
-    } catch (e) {
-      last = String(e.stderr || e.message).split("\n")[0].replace(/^Get "[^"]*": /, "");
-      if (/auth login|not logged in|bad credentials|HTTP 401|GH_TOKEN/i.test(last)) {
-        throw new Error(`GitHub login problem: ${last}. Run "gh auth login", or use --no-github.`);
-      }
-      if (attempt < 3) sleepSync(2000 * attempt);
-    }
-  }
-  if (++ghFailStreak >= 2) ghDown = true;
-  throw new GhUnavailable(last);
-}
-function loginFor(email) {
-  const k = `login:${email}`;
-  if (!ghCache.has(k)) ghCache.set(k, gh(`repos/${GITHUB_REPO}/commits?author=${encodeURIComponent(email)}&per_page=1`)[0]?.author?.login ?? null);
-  return ghCache.get(k);
-}
-function associationFor(login) {
-  const k = `assoc:${login}`;
-  if (!ghCache.has(k)) {
-    const q = encodeURIComponent(`repo:${GITHUB_REPO} is:pr is:merged author:${login}`);
-    ghCache.set(k, gh(`search/issues?q=${q}&per_page=1&sort=created&order=desc`).items?.[0]?.author_association ?? "UNKNOWN");
-  }
-  return ghCache.get(k);
-}
-
-function rankCandidates(paths) {
-  let log;
-  try {
-    log = execFileSync("git", ["log", "--no-merges", `--since=${SINCE}`, "--format=%aN%x09%aE%x09%ad", "--date=format:%Y-%m", ...(REF ? [REF] : []), "--", ...paths],
-      { cwd: ROOT, encoding: "utf8", maxBuffer: 256 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] });
-  } catch (e) {
-    ownerSkipped.push(`git history unavailable (${e.message.split("\n")[0]})`);
-    return [];
-  }
-  const by = new Map();
-  for (const line of log.split("\n").filter(Boolean)) {
-    const [name, email, month] = line.split("\t");
-    if (/\[bot\]|dependabot|github-actions|renovate/i.test(`${name} ${email}`)) continue;
-    const m = email.match(/^(?:\d+\+)?([^@]+)@users\.noreply\.github\.com$/);
-    const login = m ? m[1] : null;
-    if ([name, email, login].some((x) => x && EXCLUDE.has(x.toLowerCase()))) continue;
-    const key = login ?? email.toLowerCase();
-    const e = by.get(key) ?? { name, email, login, commits: 0, months: new Set() };
-    e.commits++; e.months.add(month); by.set(key, e);
-  }
-  return [...by.values()]
-    .filter((e) => e.commits >= MIN_COMMITS && e.months.size >= MIN_MONTHS)
-    .map((e) => ({ ...e, months: e.months.size }));
-}
-
-function assignOwners(areaPaths) {
-  const owners = {}, pairs = [];
-  for (const [area, paths] of [...areaPaths].sort(([a], [b]) => (a < b ? -1 : 1))) {
-    if (NO_OWNER_AREAS.has(area)) { owners[area] = { owner_status: "unassigned", evidence: "placeholder area, no owner proposed" }; continue; }
-    owners[area] = { owner_status: "unassigned", evidence: `no eligible contributor with >= ${MIN_COMMITS} commits across >= ${MIN_MONTHS} months since ${SINCE}` };
-    for (const c of rankCandidates([...paths].sort())) pairs.push({ area, ...c });
-  }
-  pairs.sort((a, b) => b.commits - a.commits || b.months - a.months || a.area.localeCompare(b.area));
-
-  const used = new Set();
-  for (const p of pairs) {
-    if (owners[p.area].proposed_owner) continue;
-    let login = p.login, assoc = null;
-    try {
-      if (USE_GITHUB && !login) login = loginFor(p.email);
-      if (USE_GITHUB && !login) { ownerSkipped.push(`${p.area}: ${p.name} <${p.email}> has no linked GitHub account`); continue; }
-      if (login && EXCLUDE.has(login.toLowerCase())) { ownerSkipped.push(`${p.area}: @${login} is excluded (maintainer)`); continue; }
-      if (used.has((login ? `@${login}` : p.name).toLowerCase())) { ownerSkipped.push(`${p.area}: ${login ? `@${login}` : p.name} already owns another area`); continue; }
-      if (USE_GITHUB) assoc = associationFor(login);
-    } catch (e) {
-      if (!(e instanceof GhUnavailable)) throw e;
-      ghUnverified++;
-      ownerSkipped.push(`${p.area}: ${p.login ? `@${p.login}` : p.name} could not be checked on GitHub (${e.message})`);
-      continue;
-    }
-    const id = login ? `@${login}` : p.name;
-    if (USE_GITHUB && assoc !== "CONTRIBUTOR") { ownerSkipped.push(`${p.area}: ${id} is ${assoc}, not CONTRIBUTOR`); continue; }
-    used.add(id.toLowerCase());
-    owners[p.area] = { proposed_owner: id, owner_status: "proposed", evidence: `${p.commits} commits across ${p.months} months since ${SINCE}${USE_GITHUB ? "; GitHub: CONTRIBUTOR" : ""}` };
+// Owners come only from MANUAL_OWNERS (area -> name). Areas not listed there stay unassigned.
+function assignOwners(areas) {
+  const owners = {};
+  for (const area of [...areas].sort()) {
+    const name = flag("no-owners") ? null : MANUAL_OWNERS[area];
+    owners[area] = name
+      ? { proposed_owner: name, owner_status: "proposed" }
+      : { owner_status: "unassigned" };
   }
   return owners;
 }
@@ -538,7 +442,7 @@ async function main() {
   const helperFiles = pageCandidates.filter((f) => HELPER_RE.test(rel(f))).map(rel);
   const skippedFiles = allPageDirFiles.filter((f) => !isPage(f)).map(rel).sort();
   const rows = [], firstByUrl = new Map(), duplicates = [], unmatched = [];
-  const areaPaths = new Map();
+  const areas = new Set();
 
   for (const abs of files) {
     const relPage = path.relative(PAGES, abs).split(path.sep).join("/");
@@ -548,9 +452,7 @@ async function main() {
     const rule = RULES.find(([re]) => re.test(url));
     if (!rule) unmatched.push(url);
     const [, area, phase3] = rule ?? [null, "Unassigned", "needs decision"];
-    const set = areaPaths.get(area) ?? new Set();
-    d.ownerPaths.forEach((p) => set.add(p));
-    areaPaths.set(area, set);
+    areas.add(area);
 
     const row = {
       url, source: rel(abs), area, phase3,
@@ -565,9 +467,7 @@ async function main() {
     rows.push(row);
   }
 
-  const areaOwners = flag("no-owners")
-    ? Object.fromEntries([...areaPaths.keys()].sort().map((a) => [a, { owner_status: "unassigned", evidence: "skipped (--no-owners)" }]))
-    : assignOwners(areaPaths);
+  const areaOwners = assignOwners(areas);
   for (const r of rows) {
     const o = areaOwners[r.area];
     if (o.proposed_owner) r.proposed_owner = o.proposed_owner;
@@ -578,13 +478,13 @@ async function main() {
     ({ url, source, area, phase3, ...(proposed_owner ? { proposed_owner } : {}), owner_status, status, ...rest }));
   ordered.sort((a, b) => a.phase3.localeCompare(b.phase3) || a.area.localeCompare(b.area) || a.url.localeCompare(b.url));
 
+  // One person can own more than one area, so the summary lists areas per person.
   const owners = {};
   for (const [area, o] of Object.entries(areaOwners)) {
     if (!o.proposed_owner) continue;
-    owners[o.proposed_owner] = {
-      area, evidence: o.evidence,
-      pages: ordered.filter((r) => r.area === area).length,
-    };
+    const e = (owners[o.proposed_owner] ??= { areas: [], pages: 0 });
+    e.areas.push(area);
+    e.pages += ordered.filter((r) => r.area === area).length;
   }
 
   const issues = {};
@@ -599,8 +499,7 @@ async function main() {
     generated: new Date().toISOString().slice(0, 10),
     source: "generated by hugo/scripts/inventory-pages.mjs from src/pages (do not edit by hand)",
     url_convention: TRAILING ? "trailing-slash (matches hugo.yaml; final call is #8307)" : "no-trailing-slash",
-    owner_window: `commits since ${SINCE}${REF ? ` on ${REF}` : ""}`,
-    owner_rule: `one owner per area, no repeats; ${USE_GITHUB ? "GitHub author_association must be CONTRIBUTOR; " : ""}maintainers excluded`,
+    owner_rule: "owners are assigned by name from MANUAL_OWNERS in the script; one owner per area, one person may hold more than one area; maintainers confirm",
     totals: {
       page_files: files.length, unique_urls: firstByUrl.size, dynamic: ordered.filter((r) => r.dynamic).length,
       special: ordered.filter((r) => r.special).length, by_phase3: byPhase,
@@ -621,16 +520,10 @@ async function main() {
   if (helperFiles.length) console.log(`  helper files excluded (listed under helper_files, not pages or routes): ${helperFiles.join(", ")}`);
   const special = ordered.filter((r) => r.special);
   if (special.length) console.log(`Special pages kept on purpose: ${special.map((r) => `${r.url} (${r.special})`).join(", ")}`);
-  console.log(`Owner history: ${REF ?? "HEAD"} (commits since ${SINCE}; >= ${MIN_COMMITS} commits across >= ${MIN_MONTHS} months)`);
-  try {
-    if (!flag("no-owners") && execFileSync("git", ["rev-parse", "--is-shallow-repository"], { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim() === "true") {
-      console.log(`Note: shallow clone, so owner evidence may be incomplete. Run: git fetch upstream master --shallow-since=${SINCE}`);
-    }
-  } catch { /* not a git repo */ }
-  console.log("\nProposed owners:");
-  for (const [a, o] of Object.entries(areaOwners)) console.log(`  ${a}: ${o.proposed_owner ?? "(unassigned)"}  [${o.evidence}]`);
-  if (ownerSkipped.length) console.log(`\nOwner candidates skipped:\n  ${[...new Set(ownerSkipped)].join("\n  ")}`);
-  if (ghUnverified) console.log(`\n${ghUnverified} owner candidate(s) could not be checked because GitHub did not answer, so they were NOT proposed. Check your connection (curl -sI https://api.github.com), then re-run. --no-github skips the Contributor check instead.`);
+  console.log("\nProposed owners (from MANUAL_OWNERS):");
+  for (const [a, o] of Object.entries(areaOwners)) console.log(`  ${a}: ${o.proposed_owner ?? "(unassigned)"}`);
+  const staleOwnerAreas = Object.keys(MANUAL_OWNERS).filter((a) => !areas.has(a));
+  if (staleOwnerAreas.length) console.log(`\nMANUAL_OWNERS lists areas that have no pages: ${staleOwnerAreas.join(", ")}`);
   if (duplicates.length) console.log(`\nDuplicate URLs (two files map to one route):\n  ${duplicates.join("\n  ")}`);
   if (unmatched.length) console.log(`\nNo area/phase3 rule matched (marked needs decision):\n  ${unmatched.join("\n  ")}`);
   if (unmapped.size) {
