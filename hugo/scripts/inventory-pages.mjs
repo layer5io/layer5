@@ -524,6 +524,8 @@ async function main() {
   for (const [a, o] of Object.entries(areaOwners)) console.log(`  ${a}: ${o.proposed_owner ?? "(unassigned)"}`);
   const staleOwnerAreas = Object.keys(MANUAL_OWNERS).filter((a) => !areas.has(a));
   if (staleOwnerAreas.length) console.log(`\nMANUAL_OWNERS lists areas that have no pages: ${staleOwnerAreas.join(", ")}`);
+  const ownerlessAreas = [...areas].filter((a) => !MANUAL_OWNERS[a] && a !== "Unassigned");
+  if (ownerlessAreas.length) console.log(`\nAreas with pages but no owner in MANUAL_OWNERS: ${ownerlessAreas.join(", ")}`);
   if (duplicates.length) console.log(`\nDuplicate URLs (two files map to one route):\n  ${duplicates.join("\n  ")}`);
   if (unmatched.length) console.log(`\nNo area/phase3 rule matched (marked needs decision):\n  ${unmatched.join("\n  ")}`);
   if (unmapped.size) {
