@@ -171,6 +171,38 @@ th, td { text-align: left; padding: .6rem .8rem; border-bottom: 1px solid var(--
 @media (max-width: 62rem) { .blog-badge-layout .badge-grid > div { max-width: 45%; flex-basis: 44%; } }
 @media (max-width: 42rem) { .blog-badge-layout .badge-grid > div { max-width: 95%; flex-basis: 95%; } }
 
+/* case studies bespoke components */
+.case-study-intro { display: flex; padding: 1.5rem 2rem; font-style: italic; font-size: 1.4rem; color: var(--text); border-top: 1px dashed var(--line); border-bottom: 1px dashed var(--line); margin-bottom: 1.5rem; background: var(--bg); }
+.case-study-facts { width: 100%; background-color: var(--surface); border-radius: var(--radius); margin-bottom: 1.5rem; color: var(--text); border: 1px solid var(--line); border-collapse: collapse; }
+.case-study-facts tr:first-child th, .case-study-facts tr:first-child td { background-color: var(--accent); color: #ffffff; padding: .6rem; text-align: center; }
+.case-study-facts tr:first-child h4 { color: #ffffff; margin: 0; }
+.case-study-facts td { padding: 1rem; color: var(--text); border-bottom: 1px solid var(--line); }
+.case-study-facts td img { display: inline-block; margin-right: .5rem; vertical-align: middle; }
+.case-study-benefits { border: 1px solid var(--accent); border-radius: var(--radius); padding: 1.75rem; box-shadow: rgba(0, 179, 159, 0.2) 0px 10px 25px; color: var(--text); background: var(--surface); margin-block: 1rem; }
+
+/* CTAs */
+.playground-cta, .docker-extension-cta { border-radius: 2rem; padding: 2rem; text-align: center; margin: 2rem auto; border: 1px solid var(--line); background: var(--surface); }
+.playground-cta h2, .docker-extension-cta h2 { color: var(--text); margin-bottom: 0.5rem; }
+.playground-cta h4 { color: var(--muted); font-weight: 500; margin-bottom: 1.25rem; }
+.playground-cta__actions, .docker-extension-cta__actions { margin-top: 1rem; }
+
+/* FAQ */
+.faq-accordion { display: grid; gap: .75rem; margin-block: 1.5rem; }
+.faq-item { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.25rem; }
+.faq-item summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary h5 { margin: 0; font-size: 1.05rem; }
+.faq-item[open] summary { margin-bottom: .75rem; color: var(--accent); }
+.faq-answer { color: var(--text); }
+.faq-answer p:last-child { margin-bottom: 0; }
+
+/* Patterns table */
+.patterns-table-wrapper { overflow-x: auto; margin-block: 2rem; }
+.patterns-table { width: 100%; border-collapse: collapse; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.patterns-table th, .patterns-table td { padding: .75rem 1rem; border-bottom: 1px solid var(--line); text-align: left; }
+.patterns-table thead th { background: var(--bg); font-weight: 700; color: var(--text); }
+.patterns-table__area-heading { background: color-mix(in srgb, var(--accent) 15%, var(--surface)); color: var(--text); font-weight: 700; font-size: 1.1rem; padding: .75rem 1rem; }
+
 @media (max-width: 62rem) { .docs { grid-template-columns: 1fr; } .docs__nav, .docs__toc { position: static; } .hero__grid, .footer-grid { grid-template-columns: 1fr; } }
 @media (max-width: 40rem) { .hide-sm { display: none; } .site-header__inner { gap: .75rem; } }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }

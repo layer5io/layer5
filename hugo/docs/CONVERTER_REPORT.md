@@ -9,7 +9,7 @@
 | **Documents Converted** | 1006 / 1006 |
 | **Excluded Collections** | `sistent` (138 files skipped) |
 | **Skipped Templates** | 11 |
-| **Files with Warnings** | **90** |
+| **Files with Warnings** | **87** |
 | **Unowned Warning Files** | **0** |
 | **Zero-Byte Assets Logged** | 4 |
 | **Asset Normalization Renames** | 26 |
@@ -21,14 +21,13 @@ Each file lists one primary owner; a file only becomes warning-free when all of 
 
 | Primary Owner Issue | Files | Scope / Focus |
 |---|---|---|
-| `#8308` | 45 | Out-of-bundle thumbnails and asset layout |
-| `#8402` | 22 | Content hand-fix backlog (wrapper indents, bare links, button props) |
+| `#8308` | 49 | Out-of-bundle thumbnails and asset layout |
+| `#8402` | 23 | Content hand-fix backlog (wrapper indents, bare links, button props) |
 | `#8457` | 8 | P3-08 Programs & Careers bespoke components (`PositionApply`, `LfxPageNav`, `Row`, `Col`) |
-| `#8454` | 8 | P3-02 Resources & Books bespoke components (`FAQ`, `CommonForm`, `Table`, case studies) |
 | `#8456` | 5 | P3-07 Handbook bespoke components & data loops (`BadgeRow`, `Table`, `React.Fragment`, `Row/Col`, `mentorship-programs`, `recognition`, `repository-overview`) |
 | `#8401` | 1 | Imported assets backlog (`<img src={var}>`, `<CTA_FullWidth image={var}>`) |
 | `#8458` | 1 | P3-13 Projects page layout (`Row`, `Col`) |
-| **Total** | **90** | **100% accounted for (sum equals files with warnings)** |
+| **Total** | **87** | **100% accounted for (sum equals files with warnings)** |
 
 ## 3. Warnings Breakdown by Key
 
@@ -36,8 +35,8 @@ Each file lists one primary owner; a file only becomes warning-free when all of 
 |---|---|---|---|
 | `asset outside page bundle` | 127 | #8308 | Images or assets pointing to `../../assets` outside the page bundle |
 | `non-literal prop expression` | 42 | #8401 / #8402 | JSX expression props (e.g. `image={var}`, `$url={link}`) |
-| `unknown components` | 22 | Phase 3 | Components not yet mapped to Hugo shortcodes |
 | `wrapper indent hazard` | 19 | #8402 | Wrapper bodies with 4+ space indents that could trigger Markdown code blocks |
+| `unknown components` | 14 | Phase 3 | Components not yet mapped to Hugo shortcodes |
 | `bare-relative link` | 7 | #8402 | Links with bare-relative paths (e.g. `<Link to="newcomer">`) |
 | `zero-byte asset` | 4 | #8308 | Zero-byte SVG files in source integrations |
 | `external prop warning` | 1 | #8402 | Non-http(s) link marked with external prop |
@@ -51,22 +50,9 @@ Each file lists one primary owner; a file only becomes warning-free when all of 
 | `<PositionApply>` | 7 | #8457 (P3-08) | Job application CTA button/link |
 | `<Row>` | 5 | #8457 (P3-08) / #8458 (P3-13) | Container grid row layout partial/shortcode |
 | `<BadgeRow>` | 3 | #8456 (P3-07) | Handbook recognition badge row component |
-| `<FAQ>` | 3 | #8454 (P3-02) | Resources FAQ accordion component |
 | `<React.Fragment>` | 2 | #8456 (P3-07) | React wrapper in repository overview maintainer loop |
 | `<HandbookFaqAccordion>` | 1 | #8456 (P3-07) | FAQ accordion rendering `site.Data.handbook.faq` |
 | `<LfxPageNav>` | 1 | #8457 (P3-08) | LFX program navigation pills |
-| `<HPEintro>` | 1 | #8454 (P3-02) | HPE case study intro block |
-| `<HPEfacts>` | 1 | #8454 (P3-02) | HPE case study facts sidebar |
-| `<HPEbenefits>` | 1 | #8454 (P3-02) | HPE case study benefits section |
-| `<INFORintro>` | 1 | #8454 (P3-02) | Infor case study intro block |
-| `<INFORfacts>` | 1 | #8454 (P3-02) | Infor case study facts sidebar |
-| `<INFORbenefits>` | 1 | #8454 (P3-02) | Infor case study benefits section |
-| `<TCSintro>` | 1 | #8454 (P3-02) | TCS case study intro block |
-| `<TCSfacts>` | 1 | #8454 (P3-02) | TCS case study facts sidebar |
-| `<TCSbenefits>` | 1 | #8454 (P3-02) | TCS case study benefits section |
-| `<PlaygroundCTA>` | 1 | #8454 (P3-02) | Meshery playground banner CTA |
-| `<DockerExtensionCTA>` | 1 | #8454 (P3-02) | Docker extension banner CTA |
-| `<Table>` | 1 | #8456 (P3-07) | HTML table wrapper in handbook |
 
 ## 5. Warnings Inventory by File
 
@@ -147,23 +133,20 @@ Every warning file outside Sistent is tracked below with its primary owning issu
 | `resources/articles/kubernetes/archtiecture-101/k8s-architecture-101.mdx` | thumbnail: "../kubernetes.svg" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../kubernetes.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `resources/articles/layer5-academy-vs-moocit/index.mdx` | no front matter found; generated a minimal one | `#8402` |
 | `resources/articles/value-of-a-service-mesh/index.mdx` | <ResourcesWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `resources/case-study/hpes-adoption-of-meshery-and-kanvas/index.mdx` | <InlineQuotes>: "../../../../collections/members/maximiliano-churichi/Maximiliano-Churichi.webp" is outside the page bundle — move it next to index.md<br>unknown components: HPEintro, HPEfacts, HPEbenefits | `#8454` |
-| `resources/case-study/infors-adoption-of-meshery-and-kanvas/index.mdx` | unknown components: INFORintro, INFORfacts, INFORbenefits | `#8454` |
-| `resources/case-study/tcs-labs-adoption-of-meshery-and-kanvas/index.mdx` | unknown components: TCSintro, TCSfacts, TCSbenefits | `#8454` |
-| `resources/faq/internship-faq.mdx` | thumbnail: "../../../assets/images/workshops/workshops.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../assets/images/workshops/workshops.webp" is outside the page bundle — move it next to index.md<br>unknown components: FAQ | `#8454` |
-| `resources/faq/layer5-faq.mdx` | thumbnail: "../../../assets/images/layer5/layer5-only/png/layer5-gradient.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../assets/images/layer5/layer5-only/png/layer5-gradient.webp" is outside the page bundle — move it next to index.md<br>unknown components: FAQ | `#8454` |
-| `resources/faq/meshery-faq.mdx` | thumbnail: "../../../assets/images/meshery/text-only/meshery-logo-dark-text.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../assets/images/meshery/text-only/meshery-logo-dark-text.webp" is outside the page bundle — move it next to index.md<br>unknown components: FAQ | `#8454` |
+| `resources/case-study/hpes-adoption-of-meshery-and-kanvas/index.mdx` | <InlineQuotes>: "../../../../collections/members/maximiliano-churichi/Maximiliano-Churichi.webp" is outside the page bundle — move it next to index.md | `#8308` |
+| `resources/faq/internship-faq.mdx` | thumbnail: "../../../assets/images/workshops/workshops.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../assets/images/workshops/workshops.webp" is outside the page bundle — move it next to index.md | `#8308` |
+| `resources/faq/layer5-faq.mdx` | thumbnail: "../../../assets/images/layer5/layer5-only/png/layer5-gradient.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../assets/images/layer5/layer5-only/png/layer5-gradient.webp" is outside the page bundle — move it next to index.md | `#8308` |
+| `resources/faq/meshery-faq.mdx` | thumbnail: "../../../assets/images/meshery/text-only/meshery-logo-dark-text.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../assets/images/meshery/text-only/meshery-logo-dark-text.webp" is outside the page bundle — move it next to index.md | `#8308` |
 | `resources/recorded-webinars/introduction-to-meshery.mdx` | thumbnail: "../../../assets/images/meshery/full-logo/meshery-logo-light-text.svg" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../assets/images/meshery/full-logo/meshery-logo-light-text.svg" is outside the page bundle — move it next to index.md | `#8308` |
 | `resources/tutorials/beginner-guide-to-contributing-to-meshery-and-mesheryctl.mdx` | thumbnail: "../../../assets/images/tutorials/intro-meshery-ctl.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../assets/images/tutorials/intro-meshery-ctl.webp" is outside the page bundle — move it next to index.md | `#8308` |
 | `resources/tutorials/contributing-to-meshery-API-swagger-documentation.mdx` | thumbnail: "../../../assets/images/tutorials/swagger-logo.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../assets/images/tutorials/swagger-logo.webp" is outside the page bundle — move it next to index.md | `#8308` |
-| `resources/tutorials/docker-swarm/index.mdx` | resources/tutorials/docker-swarm/index.mdx: <Link> has bare-relative "to" value "../../articles/kubernetes/management-of-kubernetes" (<Link to="../../articles/kubernetes/management-of-kubernetes">); review manually<br>unknown components: PlaygroundCTA, DockerExtensionCTA | `#8454` |
+| `resources/tutorials/docker-swarm/index.mdx` | resources/tutorials/docker-swarm/index.mdx: <Link> has bare-relative "to" value "../../articles/kubernetes/management-of-kubernetes" (<Link to="../../articles/kubernetes/management-of-kubernetes">); review manually | `#8402` |
 | `resources/tutorials/introduction-to-all-layer5-repositories.mdx` | thumbnail: "../../../assets/images/tutorials/all-repos-layer5.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../assets/images/tutorials/all-repos-layer5.webp" is outside the page bundle — move it next to index.md | `#8308` |
 | `resources/tutorials/introduction-to-contributing-to-meshery.mdx` | thumbnail: "../../../assets/images/tutorials/intro-to-meshery.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../assets/images/tutorials/intro-to-meshery.webp" is outside the page bundle — move it next to index.md | `#8308` |
 | `resources/tutorials/introduction-to-meshey-ctl.mdx` | thumbnail: "../../../assets/images/tutorials/golang-meshery-ctl.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../assets/images/tutorials/golang-meshery-ctl.webp" is outside the page bundle — move it next to index.md | `#8308` |
 | `resources/tutorials/tutorial-on-contributing-to-layer5-and-working-with-git.mdx` | thumbnail: "../../../assets/images/tutorials/layer5-walkthrough.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../assets/images/tutorials/layer5-walkthrough.webp" is outside the page bundle — move it next to index.md | `#8308` |
 | `resources/tutorials/tutorial-on-gatsby.mdx` | thumbnail: "../../../assets/images/tutorials/intro-to-gatsby.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../assets/images/tutorials/intro-to-gatsby.webp" is outside the page bundle — move it next to index.md | `#8308` |
 | `resources/tutorials/working-with-meshery-docs-and-jekyll.mdx` | thumbnail: "../../../assets/images/tutorials/docs-jekyll.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../assets/images/tutorials/docs-jekyll.webp" is outside the page bundle — move it next to index.md | `#8308` |
-| `service-mesh-books/service-mesh-patterns/index.mdx` | unknown components: Table | `#8454` |
 
 ## 6. Owner Issues Reference
 

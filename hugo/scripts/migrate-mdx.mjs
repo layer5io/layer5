@@ -60,6 +60,14 @@ export const COMPONENTS = {
   Blog:             { shortcode: 'blog',           paired: true },
   BufProtocol:      { shortcode: 'buf-protocol',   paired: true },
   Callout:          { shortcode: 'callout',        paired: true },
+  DockerExtensionCTA: { shortcode: 'docker-extension-cta' },
+  FAQ:              { shortcode: 'faq' },
+  HPEbenefits:      { shortcode: 'case-study-benefits', paired: true },
+  HPEfacts:         { shortcode: 'case-study-facts',    paired: true },
+  HPEintro:         { shortcode: 'case-study-intro',    paired: true },
+  INFORbenefits:    { shortcode: 'case-study-benefits', paired: true },
+  INFORfacts:       { shortcode: 'case-study-facts',    paired: true },
+  INFORintro:       { shortcode: 'case-study-intro',    paired: true },
   InlineQuotes:     { shortcode: 'inline-quotes' },
   // exprAttrs: JSX expression props the custom converter reads or drops itself, so they neither warn nor block conversion
   Grid2:            { custom: 'grid', exprAttrs: new Set(['size', 'spacing', 'style']) },
@@ -69,6 +77,11 @@ export const COMPONENTS = {
   MeetTheMeshMate:  { shortcode: 'meet-the-meshmate', paired: true },
   MeshkitMesheryAdapterLib: { shortcode: 'meshkit-meshery-adapter-lib', paired: true },
   PerfbytesPodcast: { shortcode: 'perfbytes-podcast', paired: true },
+  PlaygroundCTA:    { shortcode: 'playground-cta' },
+  Table:            { shortcode: 'patterns-table' },
+  TCSbenefits:      { shortcode: 'case-study-benefits', paired: true },
+  TCSfacts:         { shortcode: 'case-study-facts',    paired: true },
+  TCSintro:         { shortcode: 'case-study-intro',    paired: true },
 };
 const COLLECTION_EXCLUDED_COMPONENTS = {
   sistent: new Set([
@@ -78,7 +91,10 @@ const COLLECTION_EXCLUDED_COMPONENTS = {
     'Blockquote', 'BlockquoteAlt', 'Callout', 'InlineQuotes',
     'LfxLogoImage', 'ThemedScaLogo', 'JourneySection',
     'Grid2', 'CommonForm', 'ContentForm',
-    'Blog', 'BufProtocol', 'MeetTheMaintainer', 'MeetTheMeshMate', 'MeshkitMesheryAdapterLib', 'PerfbytesPodcast',
+    'Blog', 'BufProtocol', 'DockerExtensionCTA', 'FAQ', 'HPEbenefits', 'HPEfacts', 'HPEintro',
+    'INFORbenefits', 'INFORfacts', 'INFORintro', 'MeetTheMaintainer', 'MeetTheMeshMate',
+    'MeshkitMesheryAdapterLib', 'PerfbytesPodcast', 'PlaygroundCTA', 'Table',
+    'TCSbenefits', 'TCSfacts', 'TCSintro',
   ]),
 };
 const DROP_ATTRS = new Set(['className', 'class', 'style', 'key', 'ref']);
@@ -126,7 +142,9 @@ export function parseOpenTag(text, start) {
       const [raw, next] = readBraces(text, i);
       const inner = raw.slice(1, -1).trim();
       const str = /^(["'`])([\s\S]*)\1$/.exec(inner);
+      const arr = /^\[\s*(["'])([^"']*)\1\s*\]$/.exec(inner);
       if (str && !(str[1] === '`' && str[2].includes('${'))) attrs.push({ key, value: cleanAttrVal(str[2]), literal: true });
+      else if (arr) attrs.push({ key, value: cleanAttrVal(arr[2]), literal: true });
       else if (/^(-?\d+(\.\d+)?|true|false)$/.test(inner)) attrs.push({ key, value: inner, literal: true });
       else {
         const stripped = inner
@@ -135,7 +153,7 @@ export function parseOpenTag(text, start) {
           .replace(/-?\d+(\.\d+)?/g, '')
           .replace(/\b[a-zA-Z_$][\w$]*\s*:/g, '')
           .replace(/\s+/g, '');
-        if (/^[{}[\],]*$/.test(stripped)) {
+        if (!/^\[\s*["'`]/.test(inner) && /^[{}[\],]*$/.test(stripped)) {
           attrs.push({ key, value: inner, literal: true });
         } else {
           attrs.push({ key, value: inner, literal: false });

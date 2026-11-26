@@ -1359,3 +1359,87 @@ test('assets: two files whose paths differ only by case are reported, not overwr
   const r = migrate({ src, dest: outDir() });
   assert.deepEqual([r.collisions.length, r.assetsCopied], [1, 1]);
 });
+
+test('Resources bespoke components and case studies convert to Hugo shortcodes (P3-02)', () => {
+  const input = [
+    '---',
+    'title: "Resources Bespoke Test"',
+    '---',
+    '<HPEintro>HPE intro paragraph</HPEintro>',
+    '<HPEfacts><tr><td>HPE fact</td></tr></HPEfacts>',
+    '<HPEbenefits>HPE benefit</HPEbenefits>',
+    '<INFORintro>Infor intro</INFORintro>',
+    '<INFORfacts><tr><td>Infor fact</td></tr></INFORfacts>',
+    '<INFORbenefits>Infor benefit</INFORbenefits>',
+    '<TCSintro>TCS intro</TCSintro>',
+    '<TCSfacts><tr><td>TCS fact</td></tr></TCSfacts>',
+    '<TCSbenefits>TCS benefit</TCSbenefits>',
+    '<PlaygroundCTA />',
+    '<DockerExtensionCTA />',
+    '<FAQ category={["careers"]} />',
+    '<FAQ category="Meshery" />',
+    '<Table />',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'resources-test', file: 'resources/case-study/resources-test/index.mdx' });
+  assert.deepEqual(stats.warnings, []);
+  assert.match(output, /\{\{< case-study-intro >\}\}\nHPE intro paragraph\n\{\{< \/case-study-intro >\}\}/);
+  assert.match(output, /\{\{< case-study-facts >\}\}\n<tr><td>HPE fact<\/td><\/tr>\n\{\{< \/case-study-facts >\}\}/);
+  assert.match(output, /\{\{< case-study-benefits >\}\}\nHPE benefit\n\{\{< \/case-study-benefits >\}\}/);
+  assert.match(output, /\{\{< case-study-intro >\}\}\nInfor intro\n\{\{< \/case-study-intro >\}\}/);
+  assert.match(output, /\{\{< case-study-facts >\}\}\n<tr><td>Infor fact<\/td><\/tr>\n\{\{< \/case-study-facts >\}\}/);
+  assert.match(output, /\{\{< case-study-benefits >\}\}\nInfor benefit\n\{\{< \/case-study-benefits >\}\}/);
+  assert.match(output, /\{\{< case-study-intro >\}\}\nTCS intro\n\{\{< \/case-study-intro >\}\}/);
+  assert.match(output, /\{\{< case-study-facts >\}\}\n<tr><td>TCS fact<\/td><\/tr>\n\{\{< \/case-study-facts >\}\}/);
+  assert.match(output, /\{\{< case-study-benefits >\}\}\nTCS benefit\n\{\{< \/case-study-benefits >\}\}/);
+  assert.match(output, /\{\{< playground-cta >\}\}/);
+  assert.match(output, /\{\{< docker-extension-cta >\}\}/);
+  assert.match(output, /\{\{< faq category="careers" >\}\}/);
+  assert.match(output, /\{\{< faq category="Meshery" >\}\}/);
+  assert.match(output, /\{\{< patterns-table >\}\}/);
+
+  assert.equal(stats.components.HPEintro, 1);
+  assert.equal(stats.components.HPEfacts, 1);
+  assert.equal(stats.components.HPEbenefits, 1);
+  assert.equal(stats.components.INFORintro, 1);
+  assert.equal(stats.components.INFORfacts, 1);
+  assert.equal(stats.components.INFORbenefits, 1);
+  assert.equal(stats.components.TCSintro, 1);
+  assert.equal(stats.components.TCSfacts, 1);
+  assert.equal(stats.components.TCSbenefits, 1);
+  assert.equal(stats.components.PlaygroundCTA, 1);
+  assert.equal(stats.components.DockerExtensionCTA, 1);
+  assert.equal(stats.components.FAQ, 2);
+  assert.equal(stats.components.Table, 1);
+
+  // Idempotency
+  const rerun = convertFile(output, { slug: 'resources-test', file: 'resources/case-study/resources-test/index.mdx' });
+  assert.equal(rerun.output, output);
+
+  // Sistent guard
+  const sistentRes = convertFile(input, { slug: 'resources-test', file: 'sistent/resources-test/index.mdx' });
+  assert.equal(sistentRes.stats.unknown.Table, 1);
+  assert.equal(sistentRes.stats.unknown.FAQ, 2);
+  assert.equal(sistentRes.stats.unknown.PlaygroundCTA, 1);
+  assert.equal(sistentRes.stats.unknown.DockerExtensionCTA, 1);
+  assert.equal(sistentRes.stats.unknown.HPEintro, 1);
+});
+
+test('FAQ preserves warning on unsupported non-literal expression', () => {
+  const input = '---\ntitle: "Bad FAQ"\n---\n<FAQ category={someFunction()} />\n';
+  const { output, stats } = convertFile(input, { slug: 'bad-faq', file: 'resources/bad-faq/index.mdx' });
+  assert.ok(stats.warnings.some((w) => /non-literal expression for "category"/.test(w)));
+  assert.match(output, /<FAQ category=\{someFunction\(\)\} \/>/);
+});
+
+test('FAQ single-element array prop is extracted as literal, multi-element array falls through safely', () => {
+  const single = '---\ntitle: "Single FAQ"\n---\n<FAQ category={["careers"]} />\n';
+  const { output: singleOut, stats: singleStats } = convertFile(single, { slug: 'single-faq', file: 'resources/single-faq/index.mdx' });
+  assert.equal(singleStats.warnings.length, 0);
+  assert.match(singleOut, /\{\{< faq category="careers" >\}\}/);
+
+  const multi = '---\ntitle: "Multi FAQ"\n---\n<FAQ category={["careers", "internships"]} />\n';
+  const { output: multiOut, stats: multiStats } = convertFile(multi, { slug: 'multi-faq', file: 'resources/multi-faq/index.mdx' });
+  assert.ok(multiStats.warnings.some((w) => /non-literal expression for "category"/.test(w)));
+  assert.ok(multiOut.includes('<FAQ category={["careers", "internships"]} />'));
+});
