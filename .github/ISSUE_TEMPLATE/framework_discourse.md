@@ -2,7 +2,7 @@
 name: Discuss Forum
 about: Report an issue to help us improve the discuss forum
 title: ''
-labels: 'framework/discourse'
+labels: 'framework/discourse, help wanted'
 assignees: ''
 ---
 ### Description

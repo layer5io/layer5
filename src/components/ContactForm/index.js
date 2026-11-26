@@ -1,30 +1,36 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Button from "../../reusecore/Button";
-import axios from "axios";
 import { Field, Form, Formik } from "formik";
 import logo from "../../assets/images/app/layer5.svg";
 import ContactFormWrapper from "./contact-form.style";
+import {
+  MarketingHoneypot,
+  MarketingStatus,
+  useMarketingForm,
+} from "../MarketingForm";
 
-const ContactForm = () => {
-  const [memberFormOne, setmemberFormOne] = useState({});
+const ContactForm = ({ embedded = false }) => {
   const [submit, setSubmit] = useState(false);
+  const confirmationRef = useRef(null);
+  const { status, message, submit: submitForm } = useMarketingForm("contact");
 
   useEffect(() => {
-    if (submit) {
-      // Webhook to handle all event forms and all signup forms, except for the community member form.
-      axios.post("https://hook.us1.make.com/nficb3d7swqkclkl467st4hp4cg65u8o", {
-        memberFormOne,
-      });
-      window.scrollTo(0, 700);
+    if (submit && confirmationRef.current) {
+      confirmationRef.current.focus();
     }
   }, [submit]);
 
   if (submit) {
-    document.querySelector(".showForm").style.height = "20rem";
+    const shownForm = document.querySelector(".showForm");
+    if (shownForm) {
+      shownForm.style.height = "20rem";
+    }
     return (
-      <ContactFormWrapper>
-        <div className="form-submitted">
-          <h2 className="text-2xl">Thanks for contacting us!</h2>
+      <ContactFormWrapper className={embedded ? "embedded" : ""}>
+        <div className="form-submitted" role="status" aria-live="polite">
+          <h2 className="text-2xl" tabIndex={-1} ref={confirmationRef}>
+            Thanks for contacting us!
+          </h2>
           <p className="text-md">We'll get back to you as soon as we can.</p>
         </div>
       </ContactFormWrapper>
@@ -32,7 +38,7 @@ const ContactForm = () => {
   }
 
   return (
-    <ContactFormWrapper>
+    <ContactFormWrapper className={embedded ? "embedded" : ""}>
       <div className="form-data">
         <Formik
           initialValues={{
@@ -43,11 +49,15 @@ const ContactForm = () => {
             subject: "",
             message: "",
             scope: "",
+            company_website: "",
             form: "contact",
           }}
-          onSubmit={(values) => {
-            setmemberFormOne(values);
-            setSubmit(true);
+          onSubmit={async (values) => {
+            const result = await submitForm(values);
+            if (result) {
+              setSubmit(true);
+              window.scrollTo(0, 700);
+            }
           }}
         >
           <Form className="form" method="post">
@@ -63,7 +73,6 @@ const ContactForm = () => {
               id="firstname"
               name="firstname"
               maxLength="32"
-              pattern="[A-Za-z]{1,32}"
               required
               onInvalid={(e) =>
                 e.target.setCustomValidity("Please fill-in this field")
@@ -79,7 +88,6 @@ const ContactForm = () => {
               id="lastname"
               name="lastname"
               maxLength="32"
-              pattern="[A-Za-z]{1,32}"
               required
               onInvalid={(e) =>
                 e.target.setCustomValidity("Please fill-in this field")
@@ -131,16 +139,17 @@ const ContactForm = () => {
               }
               onInput={(e) => e.target.setCustomValidity("")}
             />
-            <label htmlFor="scope" className="form-name">
+            <label id="scope-label" className="form-name">
               Scope of Question <span className="required-sign">*</span>
             </label>
-            <div aria-labelledby="my-radio-group">
+            <div role="radiogroup" aria-labelledby="scope-label">
               <label>
                 <Field
                   className="radio-field"
                   type="radio"
                   name="scope"
                   value="Meshery"
+                  required
                 />
                 Meshery
               </label>
@@ -204,11 +213,18 @@ const ContactForm = () => {
                   <span>Subscribe to our newsletter</span>
                 </label>
               </div>
+              <MarketingHoneypot formik />
+              <MarketingStatus
+                status={status}
+                message={status === "error" ? message : ""}
+              />
               <div className="form-submit">
                 <Button
-                  $secondary                  type="submit"
+                  $secondary
+                  type="submit"
                   className="btn-next"
                   title="Submit"
+                  disabled={status === "submitting"}
                 />
               </div>
             </div>
