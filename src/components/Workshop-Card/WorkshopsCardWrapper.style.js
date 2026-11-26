@@ -13,7 +13,7 @@ const WorkshopCardWrapper = styled.div`
   .main {
     display: block;
     width: 100%;
-    height: 25rem;
+    height: auto;
     transition: all 0.25s ease-in;
   }
 
@@ -33,8 +33,27 @@ const WorkshopCardWrapper = styled.div`
   .image-container {
     display: block;
     width: 100%;
-    height: 65%;
+    aspect-ratio: 16 / 9;
+    background-color: #103230;
     overflow: hidden;
+
+    .image {
+      width: 100%;
+      height: 100%;
+    }
+
+    .gatsby-image-wrapper,
+    .old-gatsby-image-wrapper {
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain !important;
+      object-position: center;
+    }
   }
 
   .image-container-open {
@@ -42,8 +61,8 @@ const WorkshopCardWrapper = styled.div`
     width: 100%;
     height: auto;
     margin-bottom: 1.25rem;
-    
-    img{
+
+    img {
       object-fit: contain !important;
     }
   }
@@ -55,17 +74,16 @@ const WorkshopCardWrapper = styled.div`
     transition: all 0.25s ease-in;
     box-shadow: 0 0 black;
 
-    .gatsby-image-wrapper,.old-gatsby-image-wrapper {
-      height: 90%;
+    .gatsby-image-wrapper,
+    .old-gatsby-image-wrapper {
       max-height: 40rem;
-
     }
   }
 
   .card-content {
     display: block;
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 1rem 3.5rem;
     transition: all 0.25s ease-in;
   }
 

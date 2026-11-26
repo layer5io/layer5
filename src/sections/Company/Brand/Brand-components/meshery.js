@@ -1,5 +1,6 @@
 import React from "react";
-import { SRLWrapper } from "simple-react-lightbox";
+import { withPrefix } from "gatsby";
+import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
@@ -23,7 +24,7 @@ const MesheryBrand = () => {
           </h1>
         </Col>
         <Col $xs={12} $sm={6} className="download-button">
-          <a href="/brand/meshery-brand-kit.zip">
+          <a href={withPrefix("/brand/meshery-brand-kit.zip")}>
             <Button $primary title="Download Logo Assets" $external={true}>
               <FiDownloadCloud size={21} className="icon-left" />
             </Button>
@@ -49,24 +50,26 @@ const MesheryBrand = () => {
             Logos
           </h2>
         </Col>
-        <SRLWrapper>
-          <Row $Vcenter className="ImgDiv">
-            <Col $xs={12} $sm={4}>
-              <img src={MeshDarkText} alt="MesheryDark Logo" />
-            </Col>
-            <Col $xs={12} $sm={4}>
-              <img src={MeshLogoLightTextSide} alt="MesheryLightTextSide Logo" />
-            </Col>
-          </Row>
-          <Row $Vcenter className="ImgDiv">
-            <Col $xs={12} $sm={4}>
-              <img src={MeshLogoLightText} alt="MesheryLightText Logo" />
-            </Col>
-            <Col $xs={12} $sm={4}>
-              <img src={MeshLogoOnly} alt="Meshery Logo" />
-            </Col>
-          </Row>
-        </SRLWrapper>
+        <SimpleReactLightbox>
+          <SRLWrapper>
+            <Row $Vcenter className="ImgDiv">
+              <Col $xs={12} $sm={4}>
+                <img src={MeshDarkText} alt="MesheryDark Logo" />
+              </Col>
+              <Col $xs={12} $sm={4}>
+                <img src={MeshLogoLightTextSide} alt="MesheryLightTextSide Logo" />
+              </Col>
+            </Row>
+            <Row $Vcenter className="ImgDiv">
+              <Col $xs={12} $sm={4}>
+                <img src={MeshLogoLightText} alt="MesheryLightText Logo" />
+              </Col>
+              <Col $xs={12} $sm={4}>
+                <img src={MeshLogoOnly} alt="Meshery Logo" />
+              </Col>
+            </Row>
+          </SRLWrapper>
+        </SimpleReactLightbox>
       </Row>
       <Row style={{
         flexWrap: "wrap"

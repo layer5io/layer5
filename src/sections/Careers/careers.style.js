@@ -55,6 +55,7 @@ const CareersSectionWrapper = styled.div`
   @media only screen and (max-width: 996px) {
     .videoText {
       flex-wrap: wrap;
+      flex-direction: column;
     }
     .introText {
       width: 100%;

@@ -302,8 +302,7 @@ module.exports = {
                   }
                 }
                 allMdx(
-                  sort: {frontmatter: {date: DESC}}
-                  limit: 100
+                  sort: {fields: {dateForSort: DESC}}
                   filter: {
                     frontmatter: {
                       published: { eq: true }
@@ -602,7 +601,7 @@ module.exports = {
               host: siteRootUrl,
               sitemap: `${siteRootUrl}/sitemap-index.xml`,
               policy: [
-                { userAgent: "*", allow: "/", disallow: ["/pr-preview/"] },
+                { userAgent: "*", allow: "/", disallow: ["/pr-preview/", "/hugo-preview/"] },
               ],
             },
           },

@@ -37,6 +37,7 @@ const CommentsWrapper = styled.div`
       background: ${props => props.theme.green009A89ToGreen00B39F};
       font-weight: bold;
     }
+  }
 
 
 `;
