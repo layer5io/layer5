@@ -9,7 +9,7 @@
 | **Documents Converted** | 1006 / 1006 |
 | **Excluded Collections** | `sistent` (138 files skipped) |
 | **Skipped Templates** | 11 |
-| **Files with Warnings** | **77** |
+| **Files with Warnings** | **79** |
 | **Unowned Warning Files** | **0** |
 | **Zero-Byte Assets Logged** | 4 |
 | **Asset Normalization Renames** | 26 |
@@ -22,10 +22,10 @@ Each file lists one primary owner; a file only becomes warning-free when all of 
 | Primary Owner Issue | Files | Scope / Focus |
 |---|---|---|
 | `#8308` | 49 | Out-of-bundle thumbnails and asset layout |
-| `#8402` | 23 | Content hand-fix backlog (wrapper indents, bare links, button props) |
+| `#8402` | 25 | Content hand-fix backlog (wrapper indents, bare links, button props) |
 | `#8456` | 4 | P3-07 Handbook bespoke components & data loops (`BadgeRow`, `Table`, `React.Fragment`, `Row/Col`, `mentorship-programs`, `recognition`, `repository-overview`) |
 | `#8401` | 1 | Imported assets backlog (`<img src={var}>`, `<CTA_FullWidth image={var}>`) |
-| **Total** | **77** | **100% accounted for (sum equals files with warnings)** |
+| **Total** | **79** | **100% accounted for (sum equals files with warnings)** |
 
 ## 3. Warnings Breakdown by Key
 
@@ -37,6 +37,7 @@ Each file lists one primary owner; a file only becomes warning-free when all of 
 | `bare-relative link` | 7 | #8402 | Links with bare-relative paths (e.g. `<Link to="newcomer">`) |
 | `zero-byte asset` | 4 | #8308 | Zero-byte SVG files in source integrations |
 | `unknown components` | 3 | Phase 3 | Components not yet mapped to Hugo shortcodes |
+| `duplicate alias` | 2 | #8402 | Manual review |
 | `external prop warning` | 1 | #8402 | Non-http(s) link marked with external prop |
 | `missing front matter` | 1 | #8402 | Document missing YAML front matter; minimal front matter generated |
 
@@ -104,9 +105,11 @@ Every warning file outside Sistent is tracked below with its primary owning issu
 | `handbook/recognition/index.mdx` | non-literal expression for "style" on <h3><br>non-literal expression for "style" on <div><br>non-literal expression for "style" on <table><br>non-literal expression for "style" on <tr><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <table><br>non-literal expression for "style" on <tr><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <table><br>non-literal expression for "style" on <tr><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>unknown components: BadgeRow | `#8456` |
 | `handbook/repository-overview/index.mdx` | <img>: "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshery/icon-only/meshery-logo-light.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshery-operator/meshery-operator-dark.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshsync/meshsync.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/service-mesh-performance/icon/smp-dark.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshery-extensions/icon-only/meshery-extensions-color.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/academy/academy.svg" is outside the page bundle — move it next to index.md<br>non-literal expression for "key" on <div><br>non-literal expression for "key" on <table><br>non-literal expression for "key" on <tbody><br>non-literal expression for "href" on <a><br>non-literal expression for "src" on <img><br><Link>: non-literal expression for "to"<br>non-literal expression for "href" on <a><br><img>: "../../../assets/images/socialIcons/github.svg" is outside the page bundle — move it next to index.md<br>non-literal expression for "key" on <div><br>non-literal expression for "key" on <table><br>non-literal expression for "key" on <tbody><br>non-literal expression for "class" on <tr><br>non-literal expression for "class" on <img><br>non-literal expression for "src" on <img><br><Link>: non-literal expression for "to"<br>non-literal expression for "href" on <a><br><img>: "../../../assets/images/socialIcons/github.svg" is outside the page bundle — move it next to index.md<br>unknown components: React.Fragment | `#8456` |
 | `handbook/security-vulnerabilities/index.mdx` | <img>: "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshery/icon-only/meshery-logo-light.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshery-operator/meshery-operator-dark.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshsync/meshsync.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/service-mesh-performance/icon/smp-dark.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg" is outside the page bundle — move it next to index.md<br><img>: "../../../assets/images/meshery-extensions/icon-only/meshery-extensions-color.svg" is outside the page bundle — move it next to index.md | `#8308` |
+| `news/2021/2021-06-18-5-lesser-known-but-extremely-powerful-Kubernetes-service-mesh-tools/index.mdx` | duplicate alias "/news/service-mesh-offers-promising-solution-for-cloud-native-networking/" also claimed by news/2020/2020-12-04-service-mesh-offers-promising-solution-for-cloud-native-networking/index.mdx | `#8402` |
 | `news/2022/2022-05-18-meshmark-the-cloud-native-value-measurement/meshmark-the-cloud-native-value-measurement.md` | thumbnail: "../../../../assets/images/meshmark/stacked/meshmark-dark-full.webp" is outside the page bundle — move it next to index.md<br>darkthumbnail: "../../../../assets/images/meshmark/stacked/meshmark-dark-full.webp" is outside the page bundle — move it next to index.md | `#8308` |
 | `programs/communitybridge/index.mdx` | <ProgramsWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
 | `programs/gsoc-2021/index.mdx` | <ProgramsWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
+| `programs/gsoc-2023/index.mdx` | duplicate alias "/gsoc/2022/" also claimed by programs/gsoc-2022/index.mdx | `#8402` |
 | `programs/hacktoberfest-2020/index.mdx` | programs/hacktoberfest-2020/index.mdx: <Link> has bare-relative "to" value "newcomer" (<Link className="highlight" to="newcomer">); review manually | `#8402` |
 | `programs/hacktoberfest-2021/index.mdx` | programs/hacktoberfest-2021/index.mdx: <Link> has bare-relative "to" value "newcomer" (<Link className="highlight" to="newcomer">); review manually | `#8402` |
 | `programs/hacktoberfest-2022/index.mdx` | programs/hacktoberfest-2022/index.mdx: <Link> has bare-relative "to" value "newcomer" (<Link className="highlight" to="newcomer">); review manually | `#8402` |

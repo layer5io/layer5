@@ -37,55 +37,55 @@ export const COMPONENTS = {
     drop: new Set(['external']),
   },
   CTA_FullWidth: { shortcode: 'cta-fullwidth' },
-  Terminal:      { shortcode: 'terminal',       paired: true, bodyAttr: 'code' },
-  Accordion:     { shortcode: 'accordion',      paired: true },
+  Terminal: { shortcode: 'terminal', paired: true, bodyAttr: 'code' },
+  Accordion: { shortcode: 'accordion', paired: true },
   AccordionItem: { shortcode: 'accordion-item', paired: true },
-  Card:             { shortcode: 'card',           paired: true },
-  Link:             { custom: 'link' },
-  BlogWrapper:      { custom: 'unwrap' },
-  CareerWrapper:    { custom: 'unwrap' },
-  EventWrapper:     { custom: 'unwrap' },
-  NewsWrapper:      { custom: 'unwrap' },
-  ProgramsWrapper:  { custom: 'unwrap' },
-  ProjectWrapper:   { custom: 'unwrap' },
+  Card: { shortcode: 'card', paired: true },
+  Link: { custom: 'link' },
+  BlogWrapper: { custom: 'unwrap' },
+  CareerWrapper: { custom: 'unwrap' },
+  EventWrapper: { custom: 'unwrap' },
+  NewsWrapper: { custom: 'unwrap' },
+  ProgramsWrapper: { custom: 'unwrap' },
+  ProjectWrapper: { custom: 'unwrap' },
   ResourcesWrapper: { custom: 'unwrap' },
-  BookWrapper:      { custom: 'unwrap' },
-  Code:             { custom: 'code' },
-  CodeBlock:        { custom: 'code' },
-  LfxLogoImage:     { shortcode: 'lfx-logo' },
-  ThemedScaLogo:    { shortcode: 'themed-sca-logo' },
-  JourneySection:   { shortcode: 'journey-section' },
-  Blockquote:       { shortcode: 'blockquote' },
-  BlockquoteAlt:    { shortcode: 'blockquote-alt' },
-  Blog:             { shortcode: 'blog',           paired: true },
-  BufProtocol:      { shortcode: 'buf-protocol',   paired: true },
-  Callout:          { shortcode: 'callout',        paired: true },
-  Col:              { shortcode: 'col',            paired: true, keepClass: true, alias: { className: 'class' } },
+  BookWrapper: { custom: 'unwrap' },
+  Code: { custom: 'code' },
+  CodeBlock: { custom: 'code' },
+  LfxLogoImage: { shortcode: 'lfx-logo' },
+  ThemedScaLogo: { shortcode: 'themed-sca-logo' },
+  JourneySection: { shortcode: 'journey-section' },
+  Blockquote: { shortcode: 'blockquote' },
+  BlockquoteAlt: { shortcode: 'blockquote-alt' },
+  Blog: { shortcode: 'blog', paired: true },
+  BufProtocol: { shortcode: 'buf-protocol', paired: true },
+  Callout: { shortcode: 'callout', paired: true },
+  Col: { shortcode: 'col', paired: true, keepClass: true, alias: { className: 'class' } },
   DockerExtensionCTA: { shortcode: 'docker-extension-cta' },
-  FAQ:              { shortcode: 'faq' },
-  HPEbenefits:      { shortcode: 'case-study-benefits', paired: true },
-  HPEfacts:         { shortcode: 'case-study-facts',    paired: true },
-  HPEintro:         { shortcode: 'case-study-intro',    paired: true },
-  INFORbenefits:    { shortcode: 'case-study-benefits', paired: true },
-  INFORfacts:       { shortcode: 'case-study-facts',    paired: true },
-  INFORintro:       { shortcode: 'case-study-intro',    paired: true },
-  InlineQuotes:     { shortcode: 'inline-quotes' },
+  FAQ: { shortcode: 'faq' },
+  HPEbenefits: { shortcode: 'case-study-benefits', paired: true },
+  HPEfacts: { shortcode: 'case-study-facts', paired: true },
+  HPEintro: { shortcode: 'case-study-intro', paired: true },
+  INFORbenefits: { shortcode: 'case-study-benefits', paired: true },
+  INFORfacts: { shortcode: 'case-study-facts', paired: true },
+  INFORintro: { shortcode: 'case-study-intro', paired: true },
+  InlineQuotes: { shortcode: 'inline-quotes' },
   // exprAttrs: JSX expression props the custom converter reads or drops itself, so they neither warn nor block conversion
-  Grid2:            { custom: 'grid', exprAttrs: new Set(['size', 'spacing', 'style']) },
-  CommonForm:       { custom: 'common-form', exprAttrs: new Set(['submit_body']) },
-  ContentForm:      { shortcode: 'content-form' },
-  LfxPageNav:       { custom: 'lfx-page-nav' },
+  Grid2: { custom: 'grid', exprAttrs: new Set(['size', 'spacing', 'style']) },
+  CommonForm: { custom: 'common-form', exprAttrs: new Set(['submit_body']) },
+  ContentForm: { shortcode: 'content-form' },
+  LfxPageNav: { custom: 'lfx-page-nav' },
   MeetTheMaintainer: { shortcode: 'meet-the-maintainer', paired: true },
-  MeetTheMeshMate:  { shortcode: 'meet-the-meshmate', paired: true },
+  MeetTheMeshMate: { shortcode: 'meet-the-meshmate', paired: true },
   MeshkitMesheryAdapterLib: { shortcode: 'meshkit-meshery-adapter-lib', paired: true },
   PerfbytesPodcast: { shortcode: 'perfbytes-podcast', paired: true },
-  PlaygroundCTA:    { shortcode: 'playground-cta' },
-  PositionApply:    { shortcode: 'position-apply' },
-  Row:              { shortcode: 'row',            paired: true, keepClass: true, alias: { className: 'class' } },
-  Table:            { shortcode: 'patterns-table' },
-  TCSbenefits:      { shortcode: 'case-study-benefits', paired: true },
-  TCSfacts:         { shortcode: 'case-study-facts',    paired: true },
-  TCSintro:         { shortcode: 'case-study-intro',    paired: true },
+  PlaygroundCTA: { shortcode: 'playground-cta' },
+  PositionApply: { shortcode: 'position-apply' },
+  Row: { shortcode: 'row', paired: true, keepClass: true, alias: { className: 'class' } },
+  Table: { shortcode: 'patterns-table' },
+  TCSbenefits: { shortcode: 'case-study-benefits', paired: true },
+  TCSfacts: { shortcode: 'case-study-facts', paired: true },
+  TCSintro: { shortcode: 'case-study-intro', paired: true },
 };
 const COLLECTION_EXCLUDED_COMPONENTS = {
   sistent: new Set([
@@ -845,11 +845,38 @@ export function convertFrontMatter(fm, slug, ctx) {
   const hasDraft = lines.some((l) => /^\s*draft\s*:/i.test(l));
   const hasDraftFalse = lines.some((l) => /^\s*draft\s*:\s*false\b/i.test(l));
 
-  for (const line of lines) {
+  for (let idx = 0; idx < lines.length; idx++) {
+    const line = lines[idx];
     let m;
-    if ((m = /^redirect_from\s*:(.*)$/.exec(line))) {
-      out.push(`aliases:${m[1]}`);
-      ctx.count('redirectFrom');
+    if ((m = /^(?:redirect_from|aliases)\s*:(.*)$/.exec(line))) {
+      const rest = m[1].trim();
+      const canonAlias = (raw) => {
+        const unquoted = raw.trim().replace(/^['"]|['"]$/g, '');
+        return unquoted.startsWith('/') && !/\.[a-z0-9]+$/i.test(unquoted)
+          ? (unquoted === '/' ? '/' : `${unquoted.replace(/\/+$/, '')}/`)
+          : unquoted;
+      };
+      const seen = new Set();
+      const items = [];
+      const addAlias = (raw) => {
+        const canon = canonAlias(raw);
+        if (!canon) return;
+        const key = canon.toLowerCase();
+        if (!seen.has(key)) { seen.add(key); items.push(canon); }
+      };
+      if (!rest) {
+        while (idx + 1 < lines.length && /^\s*-\s+/.test(lines[idx + 1])) {
+          idx++;
+          addAlias(lines[idx].replace(/^\s*-\s+/, ''));
+        }
+      } else if (rest.startsWith('[') && rest.endsWith(']')) {
+        for (const part of rest.slice(1, -1).split(',')) addAlias(part);
+      } else {
+        addAlias(rest);
+      }
+      out.push('aliases:');
+      for (const item of items) out.push(`  - ${item}`);
+      if (/^redirect_from\s*:/.test(line)) ctx.count('redirectFrom');
       continue;
     }
 
@@ -973,11 +1000,11 @@ export function sniffImageFormat(buf) {
   if (!buf || buf.length === 0) return 'empty';
   if (buf.length >= 3 && buf[0] === 0xFF && buf[1] === 0xD8 && buf[2] === 0xFF) return 'jpeg';
   if (buf.length >= 8 && buf[0] === 0x89 && buf[1] === 0x50 && buf[2] === 0x4E && buf[3] === 0x47 &&
-      buf[4] === 0x0D && buf[5] === 0x0A && buf[6] === 0x1A && buf[7] === 0x0A) return 'png';
+    buf[4] === 0x0D && buf[5] === 0x0A && buf[6] === 0x1A && buf[7] === 0x0A) return 'png';
   if (buf.length >= 12 && buf.subarray(0, 4).toString('ascii') === 'RIFF' &&
-      buf.subarray(8, 12).toString('ascii') === 'WEBP') return 'webp';
+    buf.subarray(8, 12).toString('ascii') === 'WEBP') return 'webp';
   if (buf.length >= 12 && (buf.subarray(4, 12).toString('ascii') === 'ftypavif' ||
-      (buf.subarray(4, 8).toString('ascii') === 'ftyp' && buf.subarray(8, 12).toString('ascii') === 'mif1'))) return 'avif';
+    (buf.subarray(4, 8).toString('ascii') === 'ftyp' && buf.subarray(8, 12).toString('ascii') === 'mif1'))) return 'avif';
   if (buf.length >= 4 && buf.subarray(0, 4).toString('ascii') === 'GIF8') return 'gif';
   const head = buf.subarray(0, Math.min(buf.length, 500)).toString('utf8');
   if (/<svg[\s>]/i.test(head) || /<\?xml[\s\S]*?<svg/i.test(head)) return 'svg';
@@ -1071,14 +1098,14 @@ export function transcodeAvifToWebp(srcFile, destFile, { execFileFn = execFileSy
   try {
     execFileFn('magick', [srcFile, destFile], { stdio: 'ignore' });
     return true;
-  } catch {}
+  } catch { }
 
   // 2. Fall back to ImageMagick 6 (convert) on non-Windows only
   if (process.platform !== 'win32') {
     try {
       execFileFn('convert', [srcFile, destFile], { stdio: 'ignore' });
       return true;
-    } catch {}
+    } catch { }
   }
 
   // 3. Try Python with Pillow (PIL) via argv
@@ -1086,11 +1113,11 @@ export function transcodeAvifToWebp(srcFile, destFile, { execFileFn = execFileSy
   try {
     execFileFn('python3', ['-c', pyCode, srcFile, destFile], { stdio: 'ignore' });
     return true;
-  } catch {}
+  } catch { }
   try {
     execFileFn('python', ['-c', pyCode, srcFile, destFile], { stdio: 'ignore' });
     return true;
-  } catch {}
+  } catch { }
 
   return false;
 }
@@ -1160,11 +1187,31 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
   const allFiles = [...walk(root)];
   // templates are skipped, so they must not turn a folder into a branch bundle
   const branchDirs = findBranchDirs(allFiles.filter((f) => !isTemplatePath(path.relative(src, f))), root);
+  // Folders with non-index docs and sibling assets must become leaf bundles (<dir>/<docBase>/index.md)
+  // so Hugo publishes sibling assets next to each page while preserving every page URL.
+  const dirInventory = new Map();
+  for (const file of allFiles) {
+    const relNorm = path.relative(src, file).replace(/\\/g, '/');
+    const topCollection = relNorm.split('/')[0];
+    if (excludeSet.has(topCollection) || isTemplatePath(path.relative(src, file))) continue;
+    const d = path.dirname(file);
+    let entry = dirInventory.get(d);
+    if (!entry) { entry = { docs: [], assets: 0 }; dirInventory.set(d, entry); }
+    if (DOC_RE.test(file)) entry.docs.push(file);
+    else entry.assets++;
+  }
+  const promoteDocsByDir = new Map();
+  for (const [d, entry] of dirInventory.entries()) {
+    if (entry.docs.length > 0 && entry.assets > 0 && !entry.docs.some((f) => INDEX_RE.test(path.basename(f)))) {
+      promoteDocsByDir.set(d, entry.docs.map((f) => path.basename(f, path.extname(f))));
+    }
+  }
   const docFiles = [];
   const renamesByDir = new Map();
   const failedTranscodesByDir = new Map();
   const writtenTargets = new Set();
   const written = new Map(); // lower-cased output path -> source path, so two sources never write one file
+  const seenAliases = new Map(); // lower-cased canonical alias -> first source rel
 
   function forEachAncestorDir(fileDir, fn) {
     let curDir = fileDir;
@@ -1294,15 +1341,18 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
     }
 
     let newName = normalizeAssetFilename(oldName, format);
-    const targetDir = path.dirname(path.join(dest, rel));
-    let target = path.join(targetDir, newName);
+    const promotedBases = promoteDocsByDir.get(dir);
+    const targetDirs = promotedBases
+      ? promotedBases.map((b) => path.join(path.dirname(path.join(dest, rel)), b))
+      : [path.dirname(path.join(dest, rel))];
+    let target = path.join(targetDirs[0], newName);
 
     if (newName !== oldName) {
-      if (fs.existsSync(path.join(dir, newName)) || writtenTargets.has(target)) {
+      if (fs.existsSync(path.join(dir, newName)) || targetDirs.some((td) => writtenTargets.has(path.join(td, newName)))) {
         report.renameCollisions.push({ from: relNorm, target: newName });
         report.warnings.push({ file: relNorm, message: `rename collision: ${newName} already exists, skipping rename` });
         newName = oldName;
-        target = path.join(targetDir, oldName);
+        target = path.join(targetDirs[0], oldName);
       } else {
         report.assetsRenamed++;
         report.assetRenames.push({ from: relNorm, to: newName });
@@ -1310,12 +1360,15 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
       }
     }
 
-    if (!dryRun) {
-      fs.mkdirSync(targetDir, { recursive: true });
-      fs.copyFileSync(file, target);
+    for (const td of targetDirs) {
+      const t = path.join(td, newName);
+      if (!dryRun) {
+        fs.mkdirSync(td, { recursive: true });
+        fs.copyFileSync(file, t);
+      }
+      writtenTargets.add(t);
+      report.assetsCopied++;
     }
-    writtenTargets.add(target);
-    report.assetsCopied++;
   }
 
   // Pass 2: docs
@@ -1326,7 +1379,13 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
     // An index file in a folder that also holds other pages must be _index.md. As index.md it would
     // make a leaf bundle and Hugo would turn its sibling pages into unrendered resources.
     const isBranchIndex = INDEX_RE.test(path.basename(file)) && branchDirs.has(path.dirname(file));
-    const outRel = isBranchIndex ? path.join(path.dirname(rel), '_index.md') : rel.replace(DOC_RE, '.md');
+    const isPromotedLeaf = promoteDocsByDir.has(path.dirname(file));
+    const base = path.basename(file, ext);
+    const outRel = isBranchIndex
+      ? path.join(path.dirname(rel), '_index.md')
+      : isPromotedLeaf
+        ? path.join(path.dirname(rel), base, 'index.md')
+        : rel.replace(DOC_RE, '.md');
     const target = path.join(dest, outRel);
     const col = (report.byCollection[collection] ||= { files: 0, converted: 0, pagesOut: 0, branchBundles: 0, withWarnings: 0 });
 
@@ -1334,7 +1393,6 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
     const key = outRel.toLowerCase();
     if (written.has(key)) { report.collisions.push({ output: outRel, sources: [written.get(key), rel] }); continue; }
     written.set(key, rel);
-    const base = path.basename(file, ext);
     const slug = base === 'index' ? path.basename(path.dirname(file)) : base;
 
     let sourceText = fs.readFileSync(file, 'utf8');
@@ -1355,6 +1413,23 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
       dir: base === 'index' ? path.dirname(file) : undefined,
       taken: (name) => writtenTargets.has(path.join(path.dirname(target), name)),
     });
+    const fmAliasMatch = output.match(/^---\n([\s\S]*?)\n---/);
+    if (fmAliasMatch) {
+      const aliasBlock = fmAliasMatch[1].match(/^aliases:\s*\n((?:\s+-\s+[^\n]+\n?)*)/m);
+      if (aliasBlock) {
+        for (const itemLine of aliasBlock[1].split('\n')) {
+          const am = /^\s+-\s+(.+)$/.exec(itemLine);
+          if (!am) continue;
+          const aliasVal = am[1].trim().replace(/^['"]|['"]$/g, '');
+          const aliasKey = aliasVal.toLowerCase();
+          if (seenAliases.has(aliasKey)) {
+            stats.warnings.push(`duplicate alias "${aliasVal}" also claimed by ${seenAliases.get(aliasKey)}`);
+          } else {
+            seenAliases.set(aliasKey, rel.replace(/\\/g, '/'));
+          }
+        }
+      }
+    }
     for (const [k, v] of Object.entries(stats.components)) bump(report.components, k, v);
     for (const [k, v] of Object.entries(stats.unknown)) bump(report.unknown, k, v);
     if (stats.warnings.length) {
