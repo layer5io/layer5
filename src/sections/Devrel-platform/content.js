@@ -183,6 +183,9 @@ const DevrelContentWrapper = styled.div`
             top: 10.75rem;
             left: calc(50% + 2rem);
           }
+          .meshmate-badge {
+            width: 90%;
+          }
         }
       }
     }
