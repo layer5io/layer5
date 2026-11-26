@@ -1590,3 +1590,47 @@ test('lowercase HTML tags rewrite React camelCase attributes to standard HTML ou
   const bookOut = convertFile(book, { slug: 'book', file: 'service-mesh-books/book/index.mdx' });
   assert.match(bookOut.output, /<div class="book"><img class="card" src="\.\/cover\.webp" alt="Cover" \/><\/div>/);
 });
+
+test('non-index docs with sibling assets promote to leaf bundles, remain idempotent, and respect sistent exclusion', () => {
+  const src = tree({
+    'programs/lfx-2023/lfx-2023.mdx': doc('LFX 2023') + '\n![Logo](./logo.svg)\n',
+    'programs/lfx-2023/logo.svg': '<svg></svg>',
+    'resources/articles/wasm/part-a.mdx': doc('Part A') + '\n![Fig](./fig.svg)\n',
+    'resources/articles/wasm/part-b.mdx': doc('Part B') + '\n![Fig](./fig.svg)\n',
+    'resources/articles/wasm/fig.svg': '<svg></svg>',
+    'sistent/comp/comp.mdx': doc('Sistent Comp'),
+    'sistent/comp/icon.svg': '<svg></svg>',
+  });
+  const dest = outDir();
+  const r1 = migrate({ src, dest, exclude: ['sistent'] });
+  assert.ok(fs.existsSync(path.join(dest, 'programs/lfx-2023/lfx-2023/index.md')));
+  assert.ok(fs.existsSync(path.join(dest, 'programs/lfx-2023/lfx-2023/logo.svg')));
+  assert.ok(fs.existsSync(path.join(dest, 'resources/articles/wasm/part-a/index.md')));
+  assert.ok(fs.existsSync(path.join(dest, 'resources/articles/wasm/part-a/fig.svg')));
+  assert.ok(fs.existsSync(path.join(dest, 'resources/articles/wasm/part-b/index.md')));
+  assert.ok(fs.existsSync(path.join(dest, 'resources/articles/wasm/part-b/fig.svg')));
+  assert.ok(!fs.existsSync(path.join(dest, 'sistent/comp/comp/index.md')));
+  assert.equal(r1.pagesOut, 3);
+
+  // Idempotency on promoted output
+  const dest2 = outDir();
+  migrate({ src: dest, dest: dest2, exclude: ['sistent'] });
+  assert.equal(
+    fs.readFileSync(path.join(dest, 'programs/lfx-2023/lfx-2023/index.md'), 'utf8'),
+    fs.readFileSync(path.join(dest2, 'programs/lfx-2023/lfx-2023/index.md'), 'utf8')
+  );
+  assert.ok(fs.existsSync(path.join(dest2, 'programs/lfx-2023/lfx-2023/logo.svg')));
+});
+
+test('redirect_from canonicalizes trailing slashes, deduplicates within a file, and warns on cross-file duplicates', () => {
+  const src = tree({
+    'blog/a/index.mdx': '---\ntitle: "A"\nredirect_from:\n  - /old/path/\n  - /old/path\n---\nBody A\n',
+    'blog/b/index.mdx': '---\ntitle: "B"\nredirect_from:\n  - /old/path/\n---\nBody B\n',
+  });
+  const dest = outDir();
+  const r = migrate({ src, dest });
+  const aOut = fs.readFileSync(path.join(dest, 'blog/a/index.md'), 'utf8');
+  assert.match(aOut, /aliases:\n  - \/old\/path\/\n/);
+  assert.equal(aOut.match(/\/old\/path/g).length, 1);
+  assert.ok(r.warnings.some((w) => w.file.replace(/\\/g, '/') === 'blog/b/index.mdx' && /duplicate alias "\/old\/path\/"/.test(w.message)));
+});
