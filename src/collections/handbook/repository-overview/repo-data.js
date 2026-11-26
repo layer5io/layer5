@@ -49,8 +49,8 @@ export const repo_data = [
         image: meshery,
         site: "http://docs.meshery.io",
         language: "Hugo",
-        maintainers_name: ["Vacant"],
-        link: [""],
+        maintainers_name: ["Mia Grenell"],
+        link: ["https://layer5.io/community/members/mia-grenell"],
         repository: "https://github.com/meshery/meshery/tree/master/docs",
       },
       {
