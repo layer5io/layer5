@@ -37,55 +37,55 @@ export const COMPONENTS = {
     drop: new Set(['external']),
   },
   CTA_FullWidth: { shortcode: 'cta-fullwidth' },
-  Terminal:      { shortcode: 'terminal',       paired: true, bodyAttr: 'code' },
-  Accordion:     { shortcode: 'accordion',      paired: true },
+  Terminal: { shortcode: 'terminal', paired: true, bodyAttr: 'code' },
+  Accordion: { shortcode: 'accordion', paired: true },
   AccordionItem: { shortcode: 'accordion-item', paired: true },
-  Card:             { shortcode: 'card',           paired: true },
-  Link:             { custom: 'link' },
-  BlogWrapper:      { custom: 'unwrap' },
-  CareerWrapper:    { custom: 'unwrap' },
-  EventWrapper:     { custom: 'unwrap' },
-  NewsWrapper:      { custom: 'unwrap' },
-  ProgramsWrapper:  { custom: 'unwrap' },
-  ProjectWrapper:   { custom: 'unwrap' },
+  Card: { shortcode: 'card', paired: true },
+  Link: { custom: 'link' },
+  BlogWrapper: { custom: 'unwrap' },
+  CareerWrapper: { custom: 'unwrap' },
+  EventWrapper: { custom: 'unwrap' },
+  NewsWrapper: { custom: 'unwrap' },
+  ProgramsWrapper: { custom: 'unwrap' },
+  ProjectWrapper: { custom: 'unwrap' },
   ResourcesWrapper: { custom: 'unwrap' },
-  BookWrapper:      { custom: 'unwrap' },
-  Code:             { custom: 'code' },
-  CodeBlock:        { custom: 'code' },
-  LfxLogoImage:     { shortcode: 'lfx-logo' },
-  ThemedScaLogo:    { shortcode: 'themed-sca-logo' },
-  JourneySection:   { shortcode: 'journey-section' },
-  Blockquote:       { shortcode: 'blockquote' },
-  BlockquoteAlt:    { shortcode: 'blockquote-alt' },
-  Blog:             { shortcode: 'blog',           paired: true },
-  BufProtocol:      { shortcode: 'buf-protocol',   paired: true },
-  Callout:          { shortcode: 'callout',        paired: true },
-  Col:              { shortcode: 'col',            paired: true, keepClass: true, alias: { className: 'class' } },
+  BookWrapper: { custom: 'unwrap' },
+  Code: { custom: 'code' },
+  CodeBlock: { custom: 'code' },
+  LfxLogoImage: { shortcode: 'lfx-logo' },
+  ThemedScaLogo: { shortcode: 'themed-sca-logo' },
+  JourneySection: { shortcode: 'journey-section' },
+  Blockquote: { shortcode: 'blockquote' },
+  BlockquoteAlt: { shortcode: 'blockquote-alt' },
+  Blog: { shortcode: 'blog', paired: true },
+  BufProtocol: { shortcode: 'buf-protocol', paired: true },
+  Callout: { shortcode: 'callout', paired: true },
+  Col: { shortcode: 'col', paired: true, keepClass: true, alias: { className: 'class' } },
   DockerExtensionCTA: { shortcode: 'docker-extension-cta' },
-  FAQ:              { shortcode: 'faq' },
-  HPEbenefits:      { shortcode: 'case-study-benefits', paired: true },
-  HPEfacts:         { shortcode: 'case-study-facts',    paired: true },
-  HPEintro:         { shortcode: 'case-study-intro',    paired: true },
-  INFORbenefits:    { shortcode: 'case-study-benefits', paired: true },
-  INFORfacts:       { shortcode: 'case-study-facts',    paired: true },
-  INFORintro:       { shortcode: 'case-study-intro',    paired: true },
-  InlineQuotes:     { shortcode: 'inline-quotes' },
+  FAQ: { shortcode: 'faq' },
+  HPEbenefits: { shortcode: 'case-study-benefits', paired: true },
+  HPEfacts: { shortcode: 'case-study-facts', paired: true },
+  HPEintro: { shortcode: 'case-study-intro', paired: true },
+  INFORbenefits: { shortcode: 'case-study-benefits', paired: true },
+  INFORfacts: { shortcode: 'case-study-facts', paired: true },
+  INFORintro: { shortcode: 'case-study-intro', paired: true },
+  InlineQuotes: { shortcode: 'inline-quotes' },
   // exprAttrs: JSX expression props the custom converter reads or drops itself, so they neither warn nor block conversion
-  Grid2:            { custom: 'grid', exprAttrs: new Set(['size', 'spacing', 'style']) },
-  CommonForm:       { custom: 'common-form', exprAttrs: new Set(['submit_body']) },
-  ContentForm:      { shortcode: 'content-form' },
-  LfxPageNav:       { custom: 'lfx-page-nav' },
+  Grid2: { custom: 'grid', exprAttrs: new Set(['size', 'spacing', 'style']) },
+  CommonForm: { custom: 'common-form', exprAttrs: new Set(['submit_body']) },
+  ContentForm: { shortcode: 'content-form' },
+  LfxPageNav: { custom: 'lfx-page-nav' },
   MeetTheMaintainer: { shortcode: 'meet-the-maintainer', paired: true },
-  MeetTheMeshMate:  { shortcode: 'meet-the-meshmate', paired: true },
+  MeetTheMeshMate: { shortcode: 'meet-the-meshmate', paired: true },
   MeshkitMesheryAdapterLib: { shortcode: 'meshkit-meshery-adapter-lib', paired: true },
   PerfbytesPodcast: { shortcode: 'perfbytes-podcast', paired: true },
-  PlaygroundCTA:    { shortcode: 'playground-cta' },
-  PositionApply:    { shortcode: 'position-apply' },
-  Row:              { shortcode: 'row',            paired: true, keepClass: true, alias: { className: 'class' } },
-  Table:            { shortcode: 'patterns-table' },
-  TCSbenefits:      { shortcode: 'case-study-benefits', paired: true },
-  TCSfacts:         { shortcode: 'case-study-facts',    paired: true },
-  TCSintro:         { shortcode: 'case-study-intro',    paired: true },
+  PlaygroundCTA: { shortcode: 'playground-cta' },
+  PositionApply: { shortcode: 'position-apply' },
+  Row: { shortcode: 'row', paired: true, keepClass: true, alias: { className: 'class' } },
+  Table: { shortcode: 'patterns-table' },
+  TCSbenefits: { shortcode: 'case-study-benefits', paired: true },
+  TCSfacts: { shortcode: 'case-study-facts', paired: true },
+  TCSintro: { shortcode: 'case-study-intro', paired: true },
 };
 const COLLECTION_EXCLUDED_COMPONENTS = {
   sistent: new Set([
@@ -850,28 +850,32 @@ export function convertFrontMatter(fm, slug, ctx) {
     let m;
     if ((m = /^(?:redirect_from|aliases)\s*:(.*)$/.exec(line))) {
       const rest = m[1].trim();
+      const canonAlias = (raw) => {
+        const unquoted = raw.trim().replace(/^['"]|['"]$/g, '');
+        return unquoted.startsWith('/') && !/\.[a-z0-9]+$/i.test(unquoted)
+          ? (unquoted === '/' ? '/' : `${unquoted.replace(/\/+$/, '')}/`)
+          : unquoted;
+      };
+      const seen = new Set();
+      const items = [];
+      const addAlias = (raw) => {
+        const canon = canonAlias(raw);
+        if (!canon) return;
+        const key = canon.toLowerCase();
+        if (!seen.has(key)) { seen.add(key); items.push(canon); }
+      };
       if (!rest) {
-        const seen = new Set();
-        const items = [];
         while (idx + 1 < lines.length && /^\s*-\s+/.test(lines[idx + 1])) {
           idx++;
-          const rawItem = lines[idx].replace(/^\s*-\s+/, '').trim();
-          const unquoted = rawItem.replace(/^['"]|['"]$/g, '');
-          const canon = unquoted.startsWith('/') && !/\.[a-z0-9]+$/i.test(unquoted)
-            ? (unquoted === '/' ? '/' : `${unquoted.replace(/\/+$/, '')}/`)
-            : unquoted;
-          const key = canon.toLowerCase();
-          if (!seen.has(key)) {
-            seen.add(key);
-            items.push(canon);
-          }
+          addAlias(lines[idx].replace(/^\s*-\s+/, ''));
         }
-        out.push('aliases:');
-        for (const item of items) out.push(`  - ${item}`);
-        if (/^redirect_from\s*:/.test(line)) ctx.count('redirectFrom');
-        continue;
+      } else if (rest.startsWith('[') && rest.endsWith(']')) {
+        for (const part of rest.slice(1, -1).split(',')) addAlias(part);
+      } else {
+        addAlias(rest);
       }
-      out.push(`aliases:${m[1]}`);
+      out.push('aliases:');
+      for (const item of items) out.push(`  - ${item}`);
       if (/^redirect_from\s*:/.test(line)) ctx.count('redirectFrom');
       continue;
     }
@@ -996,11 +1000,11 @@ export function sniffImageFormat(buf) {
   if (!buf || buf.length === 0) return 'empty';
   if (buf.length >= 3 && buf[0] === 0xFF && buf[1] === 0xD8 && buf[2] === 0xFF) return 'jpeg';
   if (buf.length >= 8 && buf[0] === 0x89 && buf[1] === 0x50 && buf[2] === 0x4E && buf[3] === 0x47 &&
-      buf[4] === 0x0D && buf[5] === 0x0A && buf[6] === 0x1A && buf[7] === 0x0A) return 'png';
+    buf[4] === 0x0D && buf[5] === 0x0A && buf[6] === 0x1A && buf[7] === 0x0A) return 'png';
   if (buf.length >= 12 && buf.subarray(0, 4).toString('ascii') === 'RIFF' &&
-      buf.subarray(8, 12).toString('ascii') === 'WEBP') return 'webp';
+    buf.subarray(8, 12).toString('ascii') === 'WEBP') return 'webp';
   if (buf.length >= 12 && (buf.subarray(4, 12).toString('ascii') === 'ftypavif' ||
-      (buf.subarray(4, 8).toString('ascii') === 'ftyp' && buf.subarray(8, 12).toString('ascii') === 'mif1'))) return 'avif';
+    (buf.subarray(4, 8).toString('ascii') === 'ftyp' && buf.subarray(8, 12).toString('ascii') === 'mif1'))) return 'avif';
   if (buf.length >= 4 && buf.subarray(0, 4).toString('ascii') === 'GIF8') return 'gif';
   const head = buf.subarray(0, Math.min(buf.length, 500)).toString('utf8');
   if (/<svg[\s>]/i.test(head) || /<\?xml[\s\S]*?<svg/i.test(head)) return 'svg';
@@ -1094,14 +1098,14 @@ export function transcodeAvifToWebp(srcFile, destFile, { execFileFn = execFileSy
   try {
     execFileFn('magick', [srcFile, destFile], { stdio: 'ignore' });
     return true;
-  } catch {}
+  } catch { }
 
   // 2. Fall back to ImageMagick 6 (convert) on non-Windows only
   if (process.platform !== 'win32') {
     try {
       execFileFn('convert', [srcFile, destFile], { stdio: 'ignore' });
       return true;
-    } catch {}
+    } catch { }
   }
 
   // 3. Try Python with Pillow (PIL) via argv
@@ -1109,11 +1113,11 @@ export function transcodeAvifToWebp(srcFile, destFile, { execFileFn = execFileSy
   try {
     execFileFn('python3', ['-c', pyCode, srcFile, destFile], { stdio: 'ignore' });
     return true;
-  } catch {}
+  } catch { }
   try {
     execFileFn('python', ['-c', pyCode, srcFile, destFile], { stdio: 'ignore' });
     return true;
-  } catch {}
+  } catch { }
 
   return false;
 }

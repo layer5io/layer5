@@ -1626,11 +1626,15 @@ test('redirect_from canonicalizes trailing slashes, deduplicates within a file, 
   const src = tree({
     'blog/a/index.mdx': '---\ntitle: "A"\nredirect_from:\n  - /old/path/\n  - /old/path\n---\nBody A\n',
     'blog/b/index.mdx': '---\ntitle: "B"\nredirect_from:\n  - /old/path/\n---\nBody B\n',
+    'blog/c/index.mdx': '---\ntitle: "C"\nredirect_from: /old/path\n---\nBody C\n',
   });
   const dest = outDir();
   const r = migrate({ src, dest });
   const aOut = fs.readFileSync(path.join(dest, 'blog/a/index.md'), 'utf8');
   assert.match(aOut, /aliases:\n  - \/old\/path\/\n/);
   assert.equal(aOut.match(/\/old\/path/g).length, 1);
+  const cOut = fs.readFileSync(path.join(dest, 'blog/c/index.md'), 'utf8');
+  assert.match(cOut, /aliases:\n  - \/old\/path\/\n/);
   assert.ok(r.warnings.some((w) => w.file.replace(/\\/g, '/') === 'blog/b/index.mdx' && /duplicate alias "\/old\/path\/"/.test(w.message)));
+  assert.ok(r.warnings.some((w) => w.file.replace(/\\/g, '/') === 'blog/c/index.mdx' && /duplicate alias "\/old\/path\/"/.test(w.message)));
 });
