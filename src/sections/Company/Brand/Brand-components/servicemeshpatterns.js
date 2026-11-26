@@ -1,6 +1,6 @@
 import React from "react";
 import { withPrefix } from "gatsby";
-import { SRLWrapper } from "simple-react-lightbox";
+import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
@@ -48,23 +48,25 @@ const ServiceMeshPatterns = () => {
             Logos
           </h2>
         </Col>
-        <SRLWrapper>
-          <Row $Vcenter className="ImgDiv smp-logo">
-            <Col $xs={12} $sm={4}>
-              <img src={SmpLogo} alt="Smp Logo" />
-            </Col>
-            <Col $xs={12} $sm={4}>
-              <div className="logo">
-                <img src={SmpWhite} alt="SmpWhite Logo" />
-              </div>
-            </Col>
-            <Col $xs={12} $sm={4}>
-              <div className="logo">
-                <img src={SmpTxt} alt="SmpTxt Logo" />
-              </div>
-            </Col>
-          </Row>
-        </SRLWrapper>
+        <SimpleReactLightbox>
+          <SRLWrapper>
+            <Row $Vcenter className="ImgDiv smp-logo">
+              <Col $xs={12} $sm={4}>
+                <img src={SmpLogo} alt="Smp Logo" />
+              </Col>
+              <Col $xs={12} $sm={4}>
+                <div className="logo">
+                  <img src={SmpWhite} alt="SmpWhite Logo" />
+                </div>
+              </Col>
+              <Col $xs={12} $sm={4}>
+                <div className="logo">
+                  <img src={SmpTxt} alt="SmpTxt Logo" />
+                </div>
+              </Col>
+            </Row>
+          </SRLWrapper>
+        </SimpleReactLightbox>
       </Row>
       <Row style={{
         flexWrap: "wrap"

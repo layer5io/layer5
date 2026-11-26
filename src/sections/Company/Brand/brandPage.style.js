@@ -29,7 +29,7 @@ const BrandPageWrapper = styled.section`
 	}
 
 	.logo {
-		background: ${props => props.theme.DarkTheme ? "none" : props.theme.blackToGreen3C494F};
+		background: ${ props => props.theme.blackToGreen3C494F};
 		padding: 0.95rem;
 		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
