@@ -1,6 +1,6 @@
 {{ define "main" }}
-{{ $d := site.Data.migration }}
-{{ $inv := index site.Data "pages-inventory" }}
+{{ $d := hugo.Data.migration }}
+{{ $inv := index hugo.Data "pages-inventory" }}
 <section class="wrap">
   <h1>{{ .Title }}</h1>
   <p class="lede">{{ .Description }}</p>

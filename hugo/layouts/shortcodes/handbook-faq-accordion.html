@@ -1,5 +1,5 @@
 <div class="handbook-faq-accordion">
-  {{ $faqs := site.Data.handbook.faq }}
+  {{ $faqs := hugo.Data.handbook.faq }}
   {{ range $faqs }}
     <details class="faq-item">
       <summary><h5>{{ .question }}</h5></summary>
