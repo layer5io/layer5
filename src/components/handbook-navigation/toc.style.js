@@ -9,6 +9,8 @@ const TOCWrapper = styled.div`
   margin-bottom: 3rem;
   width: 15rem;
   padding-bottom: 2rem;
+  overflow-wrap: anywhere;
+  word-break: normal;
 
   @media screen and (min-width: 1280px) and (max-width: 1350px) {
     margin-left: 0.2rem;
@@ -37,7 +39,7 @@ const TOCWrapper = styled.div`
       &:hover {
         svg,
         h4 {
-          color: #3c494f;
+          color: ${(props) => props.theme.green00B39FToGreen3C494F};
         }
       }
     }
@@ -50,6 +52,8 @@ const TOCWrapper = styled.div`
     margin-top: 1rem;
     font-weight: 300;
     font-size: 1.15rem;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .toc-sub-inline {
@@ -64,7 +68,7 @@ const TOCWrapper = styled.div`
   ul {
     display: flex;
     flex-direction: column;
-    white-space: nowrap;
+    white-space: normal;
   }
 
   .toc-ul {
@@ -114,7 +118,8 @@ const TOCWrapper = styled.div`
 
   @media only screen and (max-width: 750px) {
     position: initial;
-    margin-right: 3rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
     width: auto;
     .toc-toggle-btn {
       display: inline-flex;

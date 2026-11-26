@@ -40,6 +40,17 @@ const ContactFormWrapper = styled.section`
     width: 40%;
     margin: 40px 40px;
 
+    @media (max-width: 992px) {
+      width: 70%;
+      margin: 20px auto;
+    }
+
+    @media (max-width: 500px) {
+      width: 100%;
+      margin: 10px auto;
+      padding: 0 0.5rem;
+    }
+
     .radio-field {
       margin-top: 1rem;
     }
@@ -110,6 +121,10 @@ const ContactFormWrapper = styled.section`
     width: 100%;
     margin: 0;
     padding: 0 1rem 1rem;
+
+    @media (max-width: 500px) {
+      padding: 0 0.5rem 0.5rem;
+    }
   }
 `;
 

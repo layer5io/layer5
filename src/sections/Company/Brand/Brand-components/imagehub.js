@@ -1,6 +1,6 @@
 import React from "react";
 import { withPrefix } from "gatsby";
-import { SRLWrapper } from "simple-react-lightbox";
+import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
@@ -48,16 +48,18 @@ const ImageHubBrand = () => {
             Logos
           </h2>
         </Col>
-        <SRLWrapper>
-          <Row $Vcenter className="ImgDiv">
-            <Col $xs={12} $sm={3}>
-              <img src={ImageHub} alt="ImageHub Logo" />
-            </Col>
-            <Col $xs={12} $sm={3} className="logo">
-              <img src={ImageHubWhite} alt="ImageHubWhite Logo" />
-            </Col>
-          </Row>
-        </SRLWrapper>
+        <SimpleReactLightbox>
+          <SRLWrapper>
+            <Row $Vcenter className="ImgDiv">
+              <Col $xs={12} $sm={3}>
+                <img src={ImageHub} alt="ImageHub Logo" />
+              </Col>
+              <Col $xs={12} $sm={3} className="logo">
+                <img src={ImageHubWhite} alt="ImageHubWhite Logo" />
+              </Col>
+            </Row>
+          </SRLWrapper>
+        </SimpleReactLightbox>
       </Row>
       <Row style={{
         flexWrap: "wrap"

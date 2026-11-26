@@ -209,7 +209,6 @@ const Data = {
           name: "Calendar",
           path: "/community/calendar",
         },
-
       ],
       actionItems: [
         // {
@@ -262,6 +261,11 @@ const Data = {
           path: "https://docs.layer5.io/videos",
           sepLine: true,
           externalLink: true,
+        },
+        {
+          name: "Case Studies",
+          path: "/resources?filter=Case%20Study",
+          sepLine: true,
         },
         // {
         //   name: "News",
