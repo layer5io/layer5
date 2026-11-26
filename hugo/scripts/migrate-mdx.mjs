@@ -60,6 +60,7 @@ export const COMPONENTS = {
   Blog:             { shortcode: 'blog',           paired: true },
   BufProtocol:      { shortcode: 'buf-protocol',   paired: true },
   Callout:          { shortcode: 'callout',        paired: true },
+  Col:              { shortcode: 'col',            paired: true, keepClass: true, alias: { className: 'class' } },
   DockerExtensionCTA: { shortcode: 'docker-extension-cta' },
   FAQ:              { shortcode: 'faq' },
   HPEbenefits:      { shortcode: 'case-study-benefits', paired: true },
@@ -73,11 +74,14 @@ export const COMPONENTS = {
   Grid2:            { custom: 'grid', exprAttrs: new Set(['size', 'spacing', 'style']) },
   CommonForm:       { custom: 'common-form', exprAttrs: new Set(['submit_body']) },
   ContentForm:      { shortcode: 'content-form' },
+  LfxPageNav:       { custom: 'lfx-page-nav' },
   MeetTheMaintainer: { shortcode: 'meet-the-maintainer', paired: true },
   MeetTheMeshMate:  { shortcode: 'meet-the-meshmate', paired: true },
   MeshkitMesheryAdapterLib: { shortcode: 'meshkit-meshery-adapter-lib', paired: true },
   PerfbytesPodcast: { shortcode: 'perfbytes-podcast', paired: true },
   PlaygroundCTA:    { shortcode: 'playground-cta' },
+  PositionApply:    { shortcode: 'position-apply' },
+  Row:              { shortcode: 'row',            paired: true, keepClass: true, alias: { className: 'class' } },
   Table:            { shortcode: 'patterns-table' },
   TCSbenefits:      { shortcode: 'case-study-benefits', paired: true },
   TCSfacts:         { shortcode: 'case-study-facts',    paired: true },
@@ -89,6 +93,7 @@ const COLLECTION_EXCLUDED_COMPONENTS = {
     'BlogWrapper', 'CareerWrapper', 'EventWrapper', 'NewsWrapper',
     'ProgramsWrapper', 'ProjectWrapper', 'ResourcesWrapper', 'BookWrapper',
     'Blockquote', 'BlockquoteAlt', 'Callout', 'InlineQuotes',
+    'Col', 'LfxPageNav', 'PositionApply', 'Row',
     'LfxLogoImage', 'ThemedScaLogo', 'JourneySection',
     'Grid2', 'CommonForm', 'ContentForm',
     'Blog', 'BufProtocol', 'DockerExtensionCTA', 'FAQ', 'HPEbenefits', 'HPEfacts', 'HPEintro',
@@ -218,7 +223,8 @@ function buildShortcode(spec, tag, children, ctx, rawTag = '') {
   for (const a of tag.attrs) {
     const baseKey = a.key.startsWith('$') ? a.key.slice(1) : a.key;
     if (baseKey === 'external' && a.value === 'true') externalTrue = true;
-    if (DROP_ATTRS.has(a.key) || DROP_ATTRS.has(baseKey) || spec.drop?.has(a.key) || spec.drop?.has(baseKey)) {
+    const isClassAttr = a.key === 'className' || a.key === 'class';
+    if ((!spec.keepClass || !isClassAttr) && (DROP_ATTRS.has(a.key) || DROP_ATTRS.has(baseKey) || spec.drop?.has(a.key) || spec.drop?.has(baseKey))) {
       ctx.count('droppedAttrs');
       continue;
     }
@@ -490,6 +496,28 @@ function convertCommonForm(tag, ctx, rawTag, rawFull) {
   return buildShortcode({ shortcode: 'common-form', paired: true }, rest, body, ctx, rawTag);
 }
 
+function convertLfxPageNav(tag, ctx, rawTag, rawFull) {
+  const loc = ctx.file ? `${ctx.file}: ` : '';
+  const tagSnippet = rawTag.replace(/\s+/g, ' ').trim() || '<LfxPageNav>';
+  const itemsAttr = tag.attrs.find((a) => a.key === 'items');
+  if (!itemsAttr) {
+    ctx.warn(`${loc}<LfxPageNav> missing "items" attribute (${tagSnippet}); left as-is`);
+    return rawFull;
+  }
+  const itemRegex = /\{\s*href:\s*["']([^"']+)["'],\s*label:\s*["']([^"']+)["']\s*\}/g;
+  const items = [];
+  let m;
+  while ((m = itemRegex.exec(itemsAttr.value)) !== null) {
+    items.push({ href: m[1], label: m[2] });
+  }
+  if (!items.length) {
+    ctx.warn(`${loc}<LfxPageNav> unparseable "items" attribute (${tagSnippet}); left as-is`);
+    return rawFull;
+  }
+  const lines = items.map((it) => `- [${it.label}](${it.href})`).join('\n');
+  return `{{< lfx-page-nav >}}\n${lines}\n{{< /lfx-page-nav >}}`;
+}
+
 /* ---------------------------------------------------------------- body conversion */
 function convertSegment(text, ctx) {
   let out = '', i = 0;
@@ -578,7 +606,8 @@ function convertSegment(text, ctx) {
       }
     }
 
-    const spec = resolveComponentSpec(name, ctx.collection);
+    const rawSpec = resolveComponentSpec(name, ctx.collection);
+    const spec = ((name === 'Col' || name === 'Row') && tag && !tag.attrs.length) ? null : rawSpec;
     if (!spec) {
       ctx.unknown(name);
       const marker = `<!-- TODO(mdx): unconverted component <${name}> -->\n`;
@@ -628,6 +657,8 @@ function convertSegment(text, ctx) {
       out += countIfConverted(convertGrid(tag, children, ctx, rawFull));
     } else if (spec.custom === 'common-form') {
       out += countIfConverted(convertCommonForm(tag, ctx, text.slice(m.index, tag.end), rawFull));
+    } else if (spec.custom === 'lfx-page-nav') {
+      out += convertLfxPageNav(tag, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
     } else {
       out += buildShortcode(spec, tag, children, ctx, text.slice(m.index, tag.end));
     }

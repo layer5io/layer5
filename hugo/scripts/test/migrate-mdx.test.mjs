@@ -551,11 +551,11 @@ test('parseOpenTag parses styled-components $-prefixed props and $Button maps cl
 });
 
 test('parseOpenTag parses $-prefixed props on unmapped tags without syntax parse failure', () => {
-  const input = '---\ntitle: "Col Test"\n---\n<Col $xs={12} $lg={6}>Body</Col>\n';
-  const { output, stats } = convertFile(input, { slug: 'col-test', file: 'careers/col-test/index.mdx' });
-  assert.equal(stats.unknown.Col, 1);
+  const input = '---\ntitle: "Unmapped Test"\n---\n<UnmappedGrid $xs={12} $lg={6}>Body</UnmappedGrid>\n';
+  const { output, stats } = convertFile(input, { slug: 'unmapped-test', file: 'careers/unmapped-test/index.mdx' });
+  assert.equal(stats.unknown.UnmappedGrid, 1);
   assert.ok(!stats.warnings.some((w) => w.includes('could not parse')));
-  assert.match(output, /<!-- TODO\(mdx\): unconverted component <Col> -->/);
+  assert.match(output, /<!-- TODO\(mdx\): unconverted component <UnmappedGrid> -->/);
 });
 
 test('Button preserves explicit text over title attribute when both are provided', () => {
@@ -1442,4 +1442,45 @@ test('FAQ single-element array prop is extracted as literal, multi-element array
   const { output: multiOut, stats: multiStats } = convertFile(multi, { slug: 'multi-faq', file: 'resources/multi-faq/index.mdx' });
   assert.ok(multiStats.warnings.some((w) => /non-literal expression for "category"/.test(w)));
   assert.ok(multiOut.includes('<FAQ category={["careers", "internships"]} />'));
+});
+
+test('PositionApply, LfxPageNav, Col, and Row convert to shortcodes, preserve prop-less Col/Row, and respect sistent exclusion', () => {
+  const input = [
+    '---',
+    'title: "Programs & Careers Bespoke Test"',
+    '---',
+    '<PositionApply />',
+    '<LfxPageNav items={[',
+    '  { href: "#spring-2026", label: "Spring 2026 Projects" },',
+    '  { href: "#summer-2026", label: "Summer 2026 Projects" },',
+    ']} />',
+    '<Row className="qualification-row">',
+    '  <Col $xs={12} $lg={6} className="qualification-col">',
+    '    Desired qualifications',
+    '  </Col>',
+    '</Row>',
+    '<Row>',
+    '  <Col>',
+    '    Propless content',
+    '  </Col>',
+    '</Row>',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'careers-test', file: 'careers/software-engineer/index.mdx' });
+  assert.match(output, /\{\{< position-apply >\}\}/);
+  assert.match(output, /\{\{< lfx-page-nav >\}\}\n- \[Spring 2026 Projects\]\(#spring-2026\)\n- \[Summer 2026 Projects\]\(#summer-2026\)\n\{\{< \/lfx-page-nav >\}\}/);
+  assert.match(output, /\{\{< row class="qualification-row" >\}\}/);
+  assert.match(output, /\{\{< col xs="12" lg="6" class="qualification-col" >\}\}\n\s*Desired qualifications\n\s*\{\{< \/col >\}\}/);
+  // Prop-less Row and Col are left unconverted for PR #8465
+  assert.match(output, /<!-- TODO\(mdx\): unconverted component <Row> -->/);
+  assert.match(output, /<!-- TODO\(mdx\): unconverted component <Col> -->/);
+  assert.equal(stats.unknown.Row, 1);
+  assert.equal(stats.unknown.Col, 1);
+
+  // Sistent collection guard
+  const sistentRes = convertFile(input, { slug: 'sistent-test', file: 'sistent/programs-test/index.mdx' });
+  assert.match(sistentRes.output, /<!-- TODO\(mdx\): unconverted component <PositionApply> -->/);
+  assert.match(sistentRes.output, /<!-- TODO\(mdx\): unconverted component <LfxPageNav> -->/);
+  assert.equal(sistentRes.stats.unknown.PositionApply, 1);
+  assert.equal(sistentRes.stats.unknown.LfxPageNav, 1);
 });

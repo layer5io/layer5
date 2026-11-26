@@ -1,0 +1,9 @@
+{{- $xs := .Get "xs" | default "" -}}
+{{- $sm := .Get "sm" | default "" -}}
+{{- $md := .Get "md" | default "" -}}
+{{- $lg := .Get "lg" | default "" -}}
+{{- $xl := .Get "xl" | default "" -}}
+{{- $class := .Get "class" | default (.Get "className" | default "") -}}
+<div class="col{{ with $xs }} col--xs-{{ . }}{{ end }}{{ with $sm }} col--sm-{{ . }}{{ end }}{{ with $md }} col--md-{{ . }}{{ end }}{{ with $lg }} col--lg-{{ . }}{{ end }}{{ with $xl }} col--xl-{{ . }}{{ end }}{{ with $class }} {{ . }}{{ end }}">
+  {{ .Inner | markdownify }}
+</div>
