@@ -91,6 +91,11 @@ const JourneySectionWrapper = styled.div`
         &:hover{
             box-shadow: 0px 0px 5px ${props => props.theme.green00D3A9ToGreen3C494F};
         }
+        @media (min-width: 768px) {
+          box-sizing: border-box;
+          flex: 0 0 calc(33.333% - 20px);
+          max-width: calc(33.333% - 20px);
+        }
         @media (max-width: 767px) {
           width: 80%;
         }

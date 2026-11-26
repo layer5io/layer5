@@ -209,7 +209,6 @@ const Data = {
           name: "Calendar",
           path: "/community/calendar",
         },
-
       ],
       actionItems: [
         // {
@@ -263,6 +262,11 @@ const Data = {
           sepLine: true,
           externalLink: true,
         },
+        {
+          name: "Case Studies",
+          path: "/resources?filter=Case%20Study",
+          sepLine: true,
+        },
         // {
         //   name: "News",
         //   path: "/news",
@@ -307,7 +311,7 @@ const Data = {
         // },
         {
           actionName: "Layer5 in the news",
-          actionLink: "/news",
+          actionLink: "/company/news",
         },
         {
           actionName: "Recent announcements",
