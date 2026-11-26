@@ -8,6 +8,8 @@ import { SistentLayout } from "../sections/Projects/Sistent/sistent-layout";
 import TabButton from "../reusecore/Button";
 import { Col, Row } from "../reusecore/Layout";
 import CodeBlock from "../components/CodeBlock";
+import { SistentThemeProvider, Button, Terminal } from "@sistent/sistent";
+import { useStyledDarkMode } from "../theme/app/useStyledDarkMode";
 import { SistentThemeProvider, Button } from "@sistent/sistent";
 import ThemeWrapper from "../sections/Projects/Sistent/theme-wrapper";
 import SEO from "../components/seo";
@@ -22,6 +24,11 @@ const shortcodes = {
   SistentThemeProvider,
   ThemeWrapper,
   Button,
+  Terminal,
+  Col,
+  Row,
+  CodeBlock,
+  FaArrowRight
   Col,
   Row,
   CodeBlock,
@@ -74,6 +81,9 @@ const SistentComponentTemplate = ({ data, children, pageContext }) => {
             )}
           </div>
 
+          <div className="main-content">
+            {children}
+          </div>
           <div className="main-content">{children}</div>
         </MDXProvider>
       </div>
