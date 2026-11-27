@@ -400,11 +400,11 @@ function resolveImportedAssetAttr(a, ctx, tagName) {
   const varName = a.value;
   const impPath = ctx.imports?.get(varName);
   if (impPath && checkAssetResolvable(impPath, ctx)) {
-    const bundledName = (ctx.bundle && ctx.collection === 'content-learn' && (impPath.startsWith('../') || impPath.startsWith('/')))
+    const bundledName = (ctx.bundle && ctx.collection !== 'sistent' && (impPath.startsWith('../') || (ctx.collection === 'content-learn' && impPath.startsWith('/'))))
       ? ctx.bundle(impPath)
       : null;
     if (bundledName) {
-      a.value = bundledName;
+      a.value = ctx.collection === 'content-learn' ? bundledName : `./${bundledName}`;
       a.literal = true;
       return true;
     } else {
@@ -606,6 +606,26 @@ function convertSegment(text, ctx) {
             hasUnresolved = true;
             ctx.warn(`non-literal expression for "${a.key}" on <${name}>`);
           }
+        } else if (ctx.collection !== 'sistent' && (a.key === 'src' || a.key === 'href')) {
+          if (a.value.startsWith('../')) {
+            const bundled = ctx.bundle?.(a.value);
+            if (bundled) {
+              a.value = `./${bundled}`;
+              tagChanged = true;
+            } else {
+              ctx.warn(`<${name}>: "${a.value}" is outside the page bundle — move it next to index.md`);
+            }
+          } else if (a.value.startsWith('/static/') || a.value.startsWith('/assets/') || a.value.startsWith('/src/')) {
+            ctx.warn(`<${name}>: "${a.value}" is outside the page bundle — move it next to index.md`);
+          } else if (name === 'img' && a.key === 'src' && a.value.startsWith('/') && ctx.dir && ctx.file) {
+            const relDir = `/${path.dirname(ctx.file).replace(/\\/g, '/')}/`;
+            if (a.value.startsWith(relDir)) {
+              const localName = a.value.slice(relDir.length);
+              if (!localName.includes('/') && !fs.existsSync(path.join(ctx.dir, localName))) {
+                ctx.warn(`<${name}>: "${a.value}" is missing from the page bundle`);
+              }
+            }
+          }
         }
       }
 
@@ -629,8 +649,21 @@ function convertSegment(text, ctx) {
 
     // Component tag (uppercase)
     for (const a of tag.attrs) {
-      if (!a.literal && resolveImportedAssetAttr(a, ctx, name)) {
-        tag.problems = tag.problems.filter((p) => !p.includes(`non-literal expression for "${a.key}"`));
+      if (!a.literal) {
+        if (resolveImportedAssetAttr(a, ctx, name)) {
+          tag.problems = tag.problems.filter((p) => !p.includes(`non-literal expression for "${a.key}"`));
+        }
+      } else if (ctx.collection !== 'sistent' && /^(?:image|src|img|thumbnail|icon)$/i.test(a.key)) {
+        if (a.value.startsWith('../')) {
+          const bundled = ctx.bundle?.(a.value);
+          if (bundled) {
+            a.value = `./${bundled}`;
+          } else {
+            ctx.warn(`<${name}>: "${a.value}" is outside the page bundle — move it next to index.md`);
+          }
+        } else if (a.value.startsWith('/static/') || a.value.startsWith('/assets/') || a.value.startsWith('/src/')) {
+          ctx.warn(`<${name}>: "${a.value}" is outside the page bundle — move it next to index.md`);
+        }
       }
     }
 
@@ -846,6 +879,14 @@ export function convertBody(body, ctx) {
   t = t.replace(/<!--[\s\S]*?-->/g, (s) => `\u0000${masked.push(s) - 1}\u0000`); // never scan inside comments
   ctx.masked = masked;
   t = convertSegment(t, ctx);
+  if (ctx.collection !== 'sistent') {
+    t = t.replace(/!\[([^\]]*)\]\((\.\.\/[^)\s]+)(\s+"[^"]*"|\s+'[^']*')?\)/g, (full, alt, url, title = '') => {
+      const bundled = ctx.bundle?.(url);
+      if (bundled) return `![${alt}](./${bundled}${title})`;
+      ctx.warn(`![${alt}]: "${url}" is outside the page bundle — move it next to index.md`);
+      return full;
+    });
+  }
   while (/\u0000\d+\u0000/.test(t)) t = t.replace(/\u0000(\d+)\u0000/g, (_, n) => masked[+n]);
   t = t.replace(/\u0000FENCE_(\d+)\u0000/g, (_, n) => maskedFences[+n]);
   return t.replace(/\n{3,}/g, '\n\n');
@@ -1418,18 +1459,22 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
     const isBranchIndex = (isIndexName && branchDirs.has(path.dirname(file))) || path.basename(file, ext) === '_index';
     const base = path.basename(file, ext);
     const isPromotedLeaf = promoteDocsByDir.get(path.dirname(file))?.includes(base);
-    const outRel = isBranchIndex
+    const canPromoteBundle = !isBranchIndex && !isIndexName && !isPromotedLeaf && collection !== 'sistent';
+    let outRel = isBranchIndex
       ? path.join(path.dirname(rel), '_index.md')
       : isPromotedLeaf
         ? path.join(path.dirname(rel), base, 'index.md')
         : rel.replace(DOC_RE, '.md');
-    const target = path.join(dest, outRel);
+    let target = path.join(dest, outRel);
+    const bundleDir = canPromoteBundle ? path.join(dest, path.dirname(rel), base) : path.dirname(target);
     const col = (report.byCollection[collection] ||= { files: 0, converted: 0, pagesOut: 0, branchBundles: 0, withWarnings: 0 });
 
     report.files++; col.files++;
-    const key = path.join(dest, outRel).toLowerCase();
-    if (written.has(key)) { report.collisions.push({ output: outRel, sources: [written.get(key), rel] }); continue; }
-    written.set(key, rel);
+    if (!canPromoteBundle) {
+      const key = path.join(dest, outRel).toLowerCase();
+      if (written.has(key)) { report.collisions.push({ output: outRel, sources: [written.get(key), rel] }); continue; }
+      written.set(key, rel);
+    }
     const slug = isIndexName ? path.basename(path.dirname(file)) : base;
 
     let sourceText = fs.readFileSync(file, 'utf8');
@@ -1448,11 +1493,12 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
     const isLeaf = (isIndexName && !isBranchIndex) || isPromotedLeaf;
     const { output, stats } = convertFile(sourceText, {
       slug, file: rel, collection,
-      dir: (base === 'index' || collection === 'content-learn') ? path.dirname(file) : undefined,
+      dir: ((!isBranchIndex || collection === 'content-learn') && collection !== 'sistent') ? path.dirname(file) : undefined,
       isIndex: isIndexName || isPromotedLeaf,
       renames: dirRenames,
       taken: (name, from) => {
-        const destPath = path.join(path.dirname(target), name);
+        if (canPromoteBundle && name.toLowerCase() === 'index.md') return true;
+        const destPath = path.join(bundleDir, name);
         const lowerKey = destPath.toLowerCase();
         if (written.has(lowerKey)) return true;
         if (writtenTargets.has(destPath)) {
@@ -1466,6 +1512,15 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
         return false;
       },
     });
+    if (canPromoteBundle) {
+      if (stats.assets.length > 0) {
+        outRel = path.join(path.dirname(rel), base, 'index.md');
+        target = path.join(dest, outRel);
+      }
+      const key = path.join(dest, outRel).toLowerCase();
+      if (written.has(key)) { report.collisions.push({ output: outRel, sources: [written.get(key), rel] }); continue; }
+      written.set(key, rel);
+    }
     for (const a of stats.assets) {
       const destPath = path.join(path.dirname(target), a.name);
       writtenTargets.add(destPath);
