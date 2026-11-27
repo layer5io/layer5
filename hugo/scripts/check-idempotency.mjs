@@ -76,6 +76,35 @@ export function checkIdempotency(options = {}) {
       fs.rmSync(tmp2, { recursive: true, force: true });
     } catch {}
   }
+
+  const learnSrc = options.learnSrc || path.join(rootDir, 'content-learn');
+  if (fs.existsSync(learnSrc)) {
+    const learnTmp1 = fs.mkdtempSync(path.join(os.tmpdir(), 'hugo-idemp-learn-1-'));
+    const learnTmp2 = fs.mkdtempSync(path.join(os.tmpdir(), 'hugo-idemp-learn-2-'));
+    try {
+      console.log(`[idempotency] Run 1 (content-learn): converting ${learnSrc} -> ${learnTmp1}...`);
+      migrate({ src: learnSrc, dest: learnTmp1, dryRun: false, collection: 'content-learn' });
+
+      console.log(`[idempotency] Run 2 (content-learn): converting ${learnTmp1} -> ${learnTmp2}...`);
+      migrate({ src: learnTmp1, dest: learnTmp2, dryRun: false, collection: 'content-learn' });
+
+      console.log('[idempotency] Comparing content-learn output files byte-for-byte (bidirectional)...');
+      const learnDiffs = compareDirs(learnTmp1, learnTmp2);
+
+      if (learnDiffs.length > 0) {
+        console.error(`[idempotency] FAIL (content-learn): ${learnDiffs.length} differences detected between runs:`);
+        learnDiffs.slice(0, 30).forEach((d) => console.error(`  - ${d}`));
+        process.exit(1);
+      }
+
+      console.log('[idempotency] SUCCESS (content-learn): Conversion is 100% idempotent (0 byte differences).');
+    } finally {
+      try {
+        fs.rmSync(learnTmp1, { recursive: true, force: true });
+        fs.rmSync(learnTmp2, { recursive: true, force: true });
+      } catch {}
+    }
+  }
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {

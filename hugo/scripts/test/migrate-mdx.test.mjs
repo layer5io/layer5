@@ -4,10 +4,12 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
 import { convertFile, migrate, parseExcludeArg, isTemplatePath, sniffImageFormat, normalizeAssetFilename, rewriteAssetReferences, parseOpenTag } from '../migrate-mdx.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const fx = path.join(here, 'fixtures/collections');
+const script = path.join(here, '../migrate-mdx.mjs');
 const run = () => convertFile(fs.readFileSync(path.join(fx, 'blog/sample-post/index.mdx'), 'utf8'), { slug: 'sample-post' });
 
 test('imports (single-line, multi-line, default) are removed', () => {
@@ -477,6 +479,296 @@ test('subfolder renames and .avif -> .webp renames are keyed and rewritten in do
   assert.match(convertedDoc, /!\[Icon\]\(\.\/icons\/icon\.jpg\)/);
   assert.match(convertedDoc, /!\[BareIcon\]\(icons\/icon\.jpg\)/);
   assert.match(convertedDoc, /src="banner\.webp"/);
+});
+test('CLI: repeated --src maps content-learn to learn/learning-paths and merges the report', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-multi-'));
+  const learn = path.join(tmp, 'content-learn');
+  const cols = path.join(tmp, 'collections');
+  fs.mkdirSync(path.join(learn, 'mastering-x/course-a'), { recursive: true });
+  fs.writeFileSync(path.join(learn, 'mastering-x/course-a/index.mdx'), '---\ntitle: "Course A"\n---\nHello\n');
+  fs.mkdirSync(path.join(cols, 'blog/post'), { recursive: true });
+  fs.writeFileSync(path.join(cols, 'blog/post/index.mdx'), '---\ntitle: "Post"\n---\nHello\n');
+  const dest = path.join(tmp, 'out');
+  const report = path.join(tmp, 'report.json');
+  execFileSync(process.execPath, [script, '--src', cols, '--src', learn, '--dest', dest, '--report', report]);
+  assert.ok(fs.existsSync(path.join(dest, 'blog/post/index.md')));
+  assert.ok(fs.existsSync(path.join(dest, 'learn/learning-paths/mastering-x/course-a/index.md')));
+  const r = JSON.parse(fs.readFileSync(report, 'utf8'));
+  assert.equal(r.files, 2);
+  assert.deepEqual(Object.keys(r.byCollection).sort(), ['blog', 'content-learn']);
+});
+
+test('ChapterStyle converts to paired shortcode and cardImage is bundled', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-learn-'));
+  const sharedImg = path.join(tmp, 'assets/academy-layer5.svg');
+  fs.mkdirSync(path.dirname(sharedImg), { recursive: true });
+  fs.writeFileSync(sharedImg, '<svg></svg>');
+  const learn = path.join(tmp, 'content-learn/course');
+  fs.mkdirSync(learn, { recursive: true });
+  const mdx = `---
+title: "Course"
+cardImage: "../../assets/academy-layer5.svg"
+---
+import { ChapterStyle } from "../chapters.style.js";
+
+<ChapterStyle>
+
+Hello Chapter
+
+</ChapterStyle>
+`;
+  fs.writeFileSync(path.join(learn, 'index.mdx'), mdx);
+  const chapterMdx = `---
+title: "Chapter 1"
+---
+import img1 from "../../assets/academy-layer5.svg";
+
+<ChapterStyle>
+
+<img src={img1} />
+
+</ChapterStyle>
+`;
+  fs.writeFileSync(path.join(learn, 'chapter.mdx'), chapterMdx);
+  const dest = path.join(tmp, 'out');
+  migrate({ src: path.join(tmp, 'content-learn'), dest, collection: 'content-learn' });
+  const converted = fs.readFileSync(path.join(dest, 'course/_index.md'), 'utf8');
+  assert.match(converted, /^cardImage: academy-layer5\.svg$/m);
+  assert.match(converted, /\{\{< chapter-style >\}\}/);
+  assert.match(converted, /\{\{< \/chapter-style >\}\}/);
+  assert.ok(fs.existsSync(path.join(dest, 'course/academy-layer5.svg')));
+  const convertedChapter = fs.readFileSync(path.join(dest, 'course/chapter/index.md'), 'utf8');
+  assert.match(convertedChapter, /src="academy-layer5\.svg"/);
+  assert.ok(fs.existsSync(path.join(dest, 'course/chapter/academy-layer5.svg')));
+});
+
+test('asset collision is tracked for normalized extension across sources', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-norm-col-'));
+  const srcA = path.join(tmp, 'srcA');
+  const srcB = path.join(tmp, 'srcB');
+  fs.mkdirSync(path.join(srcA, 'images'), { recursive: true });
+  fs.mkdirSync(path.join(srcB, 'images'), { recursive: true });
+  const png = Buffer.from('89504e470d0a1a0a0000000d49484452000000010000000108060000001f15c4890000000a49444154789c63000100000500010d0a2db40000000049454e44ae426082', 'hex');
+  fs.writeFileSync(path.join(srcA, 'images/hero.jpg'), png);
+  fs.writeFileSync(path.join(srcB, 'images/hero.png'), png);
+  const dest = path.join(tmp, 'out');
+  const writtenAssets = new Map();
+  const writtenTargets = new Set();
+  const reportA = migrate({ src: srcA, dest, writtenAssets, writtenTargets });
+  const reportB = migrate({ src: srcB, dest, report: reportA, writtenAssets, writtenTargets });
+  assert.equal(reportB.collisions.length, 1);
+  assert.equal(reportB.assetsCopied, 1);
+});
+
+test('learning chapter resolving imported local asset with normalized extension', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-learn-norm-'));
+  const learn = path.join(tmp, 'content-learn/course');
+  fs.mkdirSync(learn, { recursive: true });
+  fs.writeFileSync(path.join(learn, 'index.mdx'), '---\ntitle: "Course"\n---\n');
+  const png = Buffer.from('89504e470d0a1a0a0000000d49484452000000010000000108060000001f15c4890000000a49444154789c63000100000500010d0a2db40000000049454e44ae426082', 'hex');
+  fs.writeFileSync(path.join(learn, 'photo.jpg'), png);
+  const chapterMdx = `---
+title: "Chapter"
+---
+import photo from "./photo.jpg";
+
+<img src={photo} />
+`;
+  fs.writeFileSync(path.join(learn, 'chapter.mdx'), chapterMdx);
+  const dest = path.join(tmp, 'out');
+  migrate({ src: path.join(tmp, 'content-learn'), dest, collection: 'content-learn' });
+  const converted = fs.readFileSync(path.join(dest, 'course/chapter/index.md'), 'utf8');
+  assert.match(converted, /src="(?:\.\/)?photo\.png"/);
+  assert.ok(fs.existsSync(path.join(dest, 'course/chapter/photo.png')));
+});
+
+test('shared bundledOwners allows same external asset reuse across migration roots', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-share-owners-'));
+  const sharedImg = path.join(tmp, 'shared/logo.svg');
+  fs.mkdirSync(path.dirname(sharedImg), { recursive: true });
+  fs.writeFileSync(sharedImg, '<svg></svg>');
+  const srcA = path.join(tmp, 'srcA/course');
+  const srcB = path.join(tmp, 'srcB/course');
+  fs.mkdirSync(srcA, { recursive: true });
+  fs.mkdirSync(srcB, { recursive: true });
+  fs.writeFileSync(path.join(srcA, 'chapA.mdx'), '---\ntitle: "A"\n---\nimport img from "../../shared/logo.svg";\n\n<img src={img} />\n');
+  fs.writeFileSync(path.join(srcB, 'chapB.mdx'), '---\ntitle: "B"\n---\nimport img from "../../shared/logo.svg";\n\n<img src={img} />\n');
+  const dest = path.join(tmp, 'out');
+  const writtenTargets = new Set();
+  const bundledOwners = new Map();
+  const writtenAssets = new Map();
+  const reportA = migrate({ src: path.join(tmp, 'srcA'), dest, collection: 'content-learn', writtenTargets, bundledOwners, writtenAssets });
+  const reportB = migrate({ src: path.join(tmp, 'srcB'), dest, collection: 'content-learn', report: reportA, writtenTargets, bundledOwners, writtenAssets });
+  const docB = fs.readFileSync(path.join(dest, 'course/chapB/index.md'), 'utf8');
+  assert.match(docB, /src="logo\.svg"/);
+  assert.equal(reportB.warnings.filter((w) => w.message.includes('outside the page bundle')).length, 0);
+});
+
+test('ordinary asset in subsequent source collides with earlier bundled asset', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-bundled-col-'));
+  const sharedImg = path.join(tmp, 'shared/logo.svg');
+  fs.mkdirSync(path.dirname(sharedImg), { recursive: true });
+  fs.writeFileSync(sharedImg, '<svg></svg>');
+  const srcA = path.join(tmp, 'srcA/course');
+  const srcB = path.join(tmp, 'srcB');
+  fs.mkdirSync(srcA, { recursive: true });
+  fs.mkdirSync(path.join(srcB, 'course/chap'), { recursive: true });
+  fs.writeFileSync(path.join(srcA, 'chap.mdx'), '---\ntitle: "Chap"\n---\nimport img from "../../shared/logo.svg";\n\n<img src={img} />\n');
+  fs.writeFileSync(path.join(srcB, 'course/chap/logo.svg'), '<svg>diff</svg>');
+  const dest = path.join(tmp, 'out');
+  const writtenTargets = new Set();
+  const bundledOwners = new Map();
+  const writtenAssets = new Map();
+  const reportA = migrate({ src: path.join(tmp, 'srcA'), dest, collection: 'content-learn', writtenTargets, bundledOwners, writtenAssets });
+  const reportB = migrate({ src: path.join(tmp, 'srcB'), dest, collection: 'content-learn', report: reportA, writtenTargets, bundledOwners, writtenAssets });
+  assert.equal(reportB.collisions.length, 1);
+});
+
+test('case-insensitive ownership check rejects conflicting bundled asset across sources', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-case-bundle-'));
+  const img1 = path.join(tmp, 'shared/Logo.svg');
+  const img2Path = path.join(tmp, 'other/logo.svg');
+  fs.mkdirSync(path.dirname(img1), { recursive: true });
+  fs.mkdirSync(path.dirname(img2Path), { recursive: true });
+  fs.writeFileSync(img1, '<svg>1</svg>');
+  fs.writeFileSync(img2Path, '<svg>2</svg>');
+  const srcA = path.join(tmp, 'srcA/course');
+  const srcB = path.join(tmp, 'srcB/course');
+  fs.mkdirSync(srcA, { recursive: true });
+  fs.mkdirSync(srcB, { recursive: true });
+  fs.writeFileSync(path.join(srcA, 'chap.mdx'), '---\ntitle: "Chap A"\n---\nimport img from "../../shared/Logo.svg";\n\n<img src={img} />\n');
+  fs.writeFileSync(path.join(srcB, 'chap.mdx'), '---\ntitle: "Chap B"\n---\nimport img from "../../other/logo.svg";\n\n<img src={img} />\n');
+  const dest = path.join(tmp, 'out');
+  const writtenTargets = new Set();
+  const bundledOwners = new Map();
+  const writtenAssets = new Map();
+  const reportA = migrate({ src: path.join(tmp, 'srcA'), dest, collection: 'content-learn', writtenTargets, bundledOwners, writtenAssets });
+  const reportB = migrate({ src: path.join(tmp, 'srcB'), dest, collection: 'content-learn', report: reportA, writtenTargets, bundledOwners, writtenAssets });
+  assert.equal(reportB.warnings.some((w) => w.message.includes('outside the page bundle')), true);
+});
+
+test('Link with imported asset in learning chapter converts to markdown link', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-link-asset-'));
+  const learn = path.join(tmp, 'content-learn/course');
+  fs.mkdirSync(learn, { recursive: true });
+  fs.writeFileSync(path.join(learn, 'index.mdx'), '---\ntitle: "Course"\n---\n');
+  fs.writeFileSync(path.join(learn, 'notes.pdf'), '%PDF-dummy');
+  const mdx = `---
+title: "Chapter"
+---
+import notes from "./notes.pdf";
+
+<Link to={notes}>Download Notes</Link>
+`;
+  fs.writeFileSync(path.join(learn, 'chapter.mdx'), mdx);
+  const dest = path.join(tmp, 'out');
+  migrate({ src: path.join(tmp, 'content-learn'), dest, collection: 'content-learn' });
+  const converted = fs.readFileSync(path.join(dest, 'course/chapter/index.md'), 'utf8');
+  assert.match(converted, /\[Download Notes\]\((?:\.\/)?notes\.pdf\)/);
+});
+
+test('bundled asset matching planned document output is rejected', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-doc-bundle-col-'));
+  const learn = path.join(tmp, 'content-learn/course');
+  const shared = path.join(tmp, 'shared');
+  fs.mkdirSync(learn, { recursive: true });
+  fs.mkdirSync(shared, { recursive: true });
+  fs.writeFileSync(path.join(shared, 'index.md'), '# External Shared');
+  const mdx = `---
+title: "Original Chapter"
+---
+import doc from "../../shared/index.md";
+
+<a href={doc}>External</a>
+`;
+  fs.writeFileSync(path.join(learn, 'chapter.mdx'), mdx);
+  const dest = path.join(tmp, 'out');
+  const report = migrate({ src: path.join(tmp, 'content-learn'), dest, collection: 'content-learn' });
+  const doc = fs.readFileSync(path.join(dest, 'course/chapter/index.md'), 'utf8');
+  assert.match(doc, /Original Chapter/);
+  assert.equal(report.warnings.some((w) => w.message.includes('outside the page bundle')), true);
+});
+
+test('content-learn nested chapter promotes to leaf bundle and references bundled image by bare name', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-learn-nested-'));
+  const assetDir = path.join(tmp, 'src/assets/images');
+  fs.mkdirSync(assetDir, { recursive: true });
+  fs.writeFileSync(path.join(assetDir, 'lifecycle.png'), '<png>');
+
+  const chapterDir = path.join(tmp, 'content-learn/mastering-meshery/introduction-to-meshery/meshery');
+  fs.mkdirSync(chapterDir, { recursive: true });
+  fs.writeFileSync(
+    path.join(tmp, 'content-learn/mastering-meshery/index.mdx'),
+    '---\ntitle: "Mastering Meshery"\n---\n'
+  );
+  fs.writeFileSync(
+    path.join(tmp, 'content-learn/mastering-meshery/introduction-to-meshery/index.mdx'),
+    '---\ntitle: "Intro"\n---\n'
+  );
+  fs.writeFileSync(
+    path.join(chapterDir, 'lifecycle.mdx'),
+    `---
+docType: "Chapter"
+title: "Lifecycle"
+---
+import { ChapterStyle } from "../../../chapters.style.js";
+import lifeImg from "../../../../src/assets/images/lifecycle.png";
+
+<ChapterStyle>
+
+<a href={lifeImg}>
+  <img src={lifeImg} />
+</a>
+
+</ChapterStyle>
+`
+  );
+
+  const dest = path.join(tmp, 'out');
+  migrate({ src: path.join(tmp, 'content-learn'), dest, collection: 'content-learn' });
+
+  const outDoc = path.join(dest, 'mastering-meshery/introduction-to-meshery/meshery/lifecycle/index.md');
+  const outImg = path.join(dest, 'mastering-meshery/introduction-to-meshery/meshery/lifecycle/lifecycle.png');
+  assert.ok(fs.existsSync(outDoc), 'leaf bundle index.md should exist');
+  assert.ok(fs.existsSync(outImg), 'bundled image should exist in leaf bundle folder');
+
+  const content = fs.readFileSync(outDoc, 'utf8');
+  assert.match(content, /src="lifecycle\.png"/, 'image src should be bare name');
+  assert.match(content, /href="lifecycle\.png"/, 'link href should be bare name');
+  assert.match(content, /\{\{< chapter-style >\}\}/);
+});
+
+test('exclude collectionName skips content-learn source', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-learn-ex-'));
+  const learn = path.join(tmp, 'content-learn/mastering-x');
+  fs.mkdirSync(learn, { recursive: true });
+  fs.writeFileSync(path.join(learn, 'index.mdx'), '---\ntitle: "Course"\n---\nHello');
+  fs.writeFileSync(path.join(learn, 'photo.png'), 'fake');
+  const dest = path.join(tmp, 'out');
+  const report = migrate({ src: path.join(tmp, 'content-learn'), dest, collection: 'content-learn', exclude: ['content-learn'] });
+  assert.equal(report.converted, 0);
+  assert.equal(report.assetsCopied, 0);
+  assert.equal(report.excludedFiles, 2);
+});
+
+test('two sources with identical relative asset paths in disjoint destinations do not collide', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-disjoint-'));
+  const srcA = path.join(tmp, 'srcA');
+  const srcB = path.join(tmp, 'srcB');
+  fs.mkdirSync(path.join(srcA, 'images'), { recursive: true });
+  fs.mkdirSync(path.join(srcB, 'images'), { recursive: true });
+  const png = Buffer.from('89504e470d0a1a0a0000000d49484452000000010000000108060000001f15c4890000000a49444154789c63000100000500010d0a2db40000000049454e44ae426082', 'hex');
+  fs.writeFileSync(path.join(srcA, 'images/logo.png'), png);
+  fs.writeFileSync(path.join(srcB, 'images/logo.png'), png);
+  const dest = path.join(tmp, 'out');
+  const written = new Map();
+  const writtenAssets = new Map();
+  let report = migrate({ src: srcA, dest: path.join(dest, 'a'), written, writtenAssets });
+  report = migrate({ src: srcB, dest: path.join(dest, 'b'), written, writtenAssets, report });
+  assert.equal(report.collisions.length, 0);
+  assert.equal(report.assetsCopied, 2);
+  assert.ok(fs.existsSync(path.join(dest, 'a/images/logo.png')));
+  assert.ok(fs.existsSync(path.join(dest, 'b/images/logo.png')));
 });
 
 test('parseExcludeArg supports comma-separated, = syntax, and repeated --exclude flags', () => {

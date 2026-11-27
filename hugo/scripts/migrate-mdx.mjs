@@ -41,6 +41,7 @@ export const COMPONENTS = {
   Accordion: { shortcode: 'accordion', paired: true },
   AccordionItem: { shortcode: 'accordion-item', paired: true },
   Card: { shortcode: 'card', paired: true },
+  ChapterStyle: { shortcode: 'chapter-style', paired: true },
   Link: { custom: 'link' },
   BlogWrapper: { custom: 'unwrap' },
   CareerWrapper: { custom: 'unwrap' },
@@ -277,6 +278,7 @@ function normalizeLinkUrl(raw) {
     u.startsWith('/') ||
     u.startsWith('#') ||
     u.startsWith('./') ||
+    ((u.startsWith('../') || !u.includes('/')) && /\.(pdf|png|jpe?g|webp|avif|svg|gif|ico|zip|gz|tar|mp4|webm)$/i.test(u)) ||
     /^(?:https?:|mailto:|tel:)/i.test(u)
   ) {
     return u;
@@ -371,6 +373,13 @@ export function recordImports(text) {
 
 export function checkAssetResolvable(importPath, ctx = {}) {
   if (ctx.dir) {
+    if (ctx.renames) {
+      for (const [oldRel, newRel] of Object.entries(ctx.renames)) {
+        if (newRel === importPath || `./${newRel}` === importPath) {
+          if (fs.existsSync(path.resolve(ctx.dir, oldRel))) return true;
+        }
+      }
+    }
     const target = importPath.startsWith('/')
       ? path.resolve('static', importPath.slice(1))
       : path.resolve(ctx.dir, importPath);
@@ -384,6 +393,30 @@ export function checkAssetResolvable(importPath, ctx = {}) {
     if (fs.existsSync(target)) return true;
   }
   return /\.(png|jpe?g|webp|avif|svg|gif|pdf|ico|mp4|webm)$/i.test(importPath);
+}
+
+function resolveImportedAssetAttr(a, ctx, tagName) {
+  if (a.literal) return false;
+  const varName = a.value;
+  const impPath = ctx.imports?.get(varName);
+  if (impPath && checkAssetResolvable(impPath, ctx)) {
+    const bundledName = (ctx.bundle && ctx.collection === 'content-learn' && (impPath.startsWith('../') || impPath.startsWith('/')))
+      ? ctx.bundle(impPath)
+      : null;
+    if (bundledName) {
+      a.value = bundledName;
+      a.literal = true;
+      return true;
+    } else {
+      a.value = impPath;
+      a.literal = true;
+      if (impPath.startsWith('../') || impPath.startsWith('/')) {
+        ctx.warn(`<${tagName}>: "${impPath}" is outside the page bundle — move it next to index.md`);
+      }
+      return true;
+    }
+  }
+  return false;
 }
 
 const UNITLESS_CSS_PROPS = new Set([
@@ -567,15 +600,8 @@ function convertSegment(text, ctx) {
           }
         }
         if (!a.literal) {
-          const varName = a.value;
-          const impPath = ctx.imports?.get(varName);
-          if (impPath && checkAssetResolvable(impPath, ctx)) {
-            a.value = impPath;
-            a.literal = true;
+          if (resolveImportedAssetAttr(a, ctx, name)) {
             tagChanged = true;
-            if (impPath.startsWith('../') || impPath.startsWith('/')) {
-              ctx.warn(`<${name}>: "${impPath}" is outside the page bundle — move it next to index.md`);
-            }
           } else {
             hasUnresolved = true;
             ctx.warn(`non-literal expression for "${a.key}" on <${name}>`);
@@ -603,17 +629,8 @@ function convertSegment(text, ctx) {
 
     // Component tag (uppercase)
     for (const a of tag.attrs) {
-      if (!a.literal) {
-        const varName = a.value;
-        const impPath = ctx.imports?.get(varName);
-        if (impPath && checkAssetResolvable(impPath, ctx)) {
-          a.value = impPath;
-          a.literal = true;
-          tag.problems = tag.problems.filter((p) => !p.includes(`non-literal expression for "${a.key}"`));
-          if (impPath.startsWith('../') || impPath.startsWith('/')) {
-            ctx.warn(`<${name}>: "${impPath}" is outside the page bundle — move it next to index.md`);
-          }
-        }
+      if (!a.literal && resolveImportedAssetAttr(a, ctx, name)) {
+        tag.problems = tag.problems.filter((p) => !p.includes(`non-literal expression for "${a.key}"`));
       }
     }
 
@@ -836,7 +853,7 @@ export function convertBody(body, ctx) {
 
 /* ---------------------------------------------------------------- front matter */
 // Every front-matter key that holds an image path. Blog posts also carry dark-mode and SVG variants.
-const IMAGE_KEY = /^(thumbnail|darkthumbnail|thumbnail_svg|darkthumbnail_svg|image|cover)\s*:\s*(.*)$/;
+const IMAGE_KEY = /^(thumbnail|darkthumbnail|thumbnail_svg|darkthumbnail_svg|image|cover|cardImage)\s*:\s*(.*)$/;
 
 export function convertFrontMatter(fm, slug, ctx) {
   const lines = fm.split('\n').map((l) => l.replace(/\r$/, ''));
@@ -942,7 +959,7 @@ export function convertFrontMatter(fm, slug, ctx) {
  * `dir` is the source document's folder. When given, `../` front-matter images are resolved against it,
  * listed in stats.assets for the caller to copy into the bundle, and the value is rewritten to the file name.
  */
-export function convertFile(source, { slug, file = '', collection, dir, taken = () => false } = {}) {
+export function convertFile(source, { slug, file = '', collection, dir, renames, taken = () => false, isIndex = false } = {}) {
   const normFile = file ? file.replace(/\\/g, '/').replace(/^\/+/, '') : '';
   const resolvedCollection = collection ?? (normFile.includes('/') ? normFile.split('/')[0] : '');
   const stats = { components: {}, unknown: {}, counters: {}, warnings: [], assets: [] };
@@ -950,6 +967,8 @@ export function convertFile(source, { slug, file = '', collection, dir, taken = 
     file: normFile,
     collection: resolvedCollection,
     dir,
+    renames,
+    isIndex,
     imports: recordImports(source),
     warn: (m) => stats.warnings.push(m),
     unknown: (n) => { stats.unknown[n] = (stats.unknown[n] || 0) + 1; },
@@ -961,7 +980,7 @@ export function convertFile(source, { slug, file = '', collection, dir, taken = 
       const from = path.resolve(dir, v); const name = path.basename(from);
       // missing file, or a different file already owns this name in the bundle: leave it for the outside-bundle warning
       const local = path.join(dir, name);
-      if (!fs.existsSync(from) || (fs.existsSync(local) && local !== from) || taken(name)
+      if (!fs.existsSync(from) || (fs.existsSync(local) && local !== from) || taken(name, from)
         || stats.assets.some((a) => a.name === name && a.from !== from)) return null;
       const format = sniffImageFormat(fs.readFileSync(from));
       if (format === 'empty' || format === 'avif' || normalizeAssetFilename(name, format) !== name) return null;
@@ -1149,7 +1168,7 @@ export function parseExcludeArg(args) {
 }
 
 const DOC_RE = /\.mdx?$/;
-const INDEX_RE = /^index\.mdx?$/;
+const INDEX_RE = /^_?index\.mdx?$/;
 
 /**
  * Folders that must become Hugo branch bundles (_index.md). A folder qualifies when it has
@@ -1169,12 +1188,12 @@ export function findBranchDirs(files, root) {
   return new Set([...branch].filter((d) => indexDirs.has(d)));
 }
 
-export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = execFileSync }) {
+export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = execFileSync, collection: collectionName, report: sharedReport, written: sharedWritten, writtenAssets: sharedWrittenAssets, writtenTargets: sharedWrittenTargets, bundledOwners: sharedBundledOwners }) {
   const excludeList = Array.isArray(exclude) ? exclude : String(exclude).split(',');
   const excludeSet = new Set(
     excludeList.map((s) => String(s).trim().replace(/\\/g, '/').replace(/^\/+|\/+$/g, '')).filter(Boolean)
   );
-  const report = {
+  const report = sharedReport || {
     generated: new Date().toISOString(), dryRun, excluded: [...excludeSet], excludedFiles: 0,
     files: 0, converted: 0, withWarnings: 0, assetsCopied: 0, assetsBundled: 0,
     templatesSkipped: 0, skippedTemplates: [], assetsRenamed: 0, assetRenames: [],
@@ -1200,17 +1219,27 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
     if (DOC_RE.test(file)) entry.docs.push(file);
     else entry.assets++;
   }
+  const isLearnSrc = collectionName === 'content-learn' || path.basename(path.resolve(src)) === 'content-learn';
   const promoteDocsByDir = new Map();
   for (const [d, entry] of dirInventory.entries()) {
-    if (entry.docs.length > 0 && entry.assets > 0 && !entry.docs.some((f) => INDEX_RE.test(path.basename(f)))) {
-      promoteDocsByDir.set(d, entry.docs.map((f) => path.basename(f, path.extname(f))));
+    const isLearnDir = isLearnSrc || d.replace(/\\/g, '/').split('/').includes('content-learn');
+    const hasIndex = entry.docs.some((f) => INDEX_RE.test(path.basename(f)));
+    if (entry.docs.length > 0 && (entry.assets > 0 || isLearnDir) && (!hasIndex || isLearnDir)) {
+      const docsToPromote = isLearnDir
+        ? entry.docs.filter((f) => !INDEX_RE.test(path.basename(f)))
+        : entry.docs;
+      if (docsToPromote.length > 0) {
+        promoteDocsByDir.set(d, docsToPromote.map((f) => path.basename(f, path.extname(f))));
+      }
     }
   }
   const docFiles = [];
   const renamesByDir = new Map();
   const failedTranscodesByDir = new Map();
-  const writtenTargets = new Set();
-  const written = new Map(); // lower-cased output path -> source path, so two sources never write one file
+  const writtenTargets = sharedWrittenTargets || new Set();
+  const bundledOwners = sharedBundledOwners || new Map();
+  const written = sharedWritten || new Map(); // lower-cased output path -> source path, so two sources never write one file
+  const writtenAssets = sharedWrittenAssets || new Map();
   const seenAliases = new Map(); // lower-cased canonical alias -> first source rel
 
   function forEachAncestorDir(fileDir, fn) {
@@ -1251,7 +1280,7 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
     const rel = path.relative(src, file);
     const relNorm = rel.replace(/\\/g, '/');
     const topCollection = relNorm.split('/')[0];
-    if (excludeSet.has(topCollection)) {
+    if (excludeSet.has(topCollection) || (collectionName && excludeSet.has(collectionName))) {
       report.excludedFiles++;
       continue;
     }
@@ -1268,57 +1297,55 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
     }
 
     // two assets whose paths differ only by case would overwrite each other on a case-insensitive filesystem
-    const assetKey = rel.toLowerCase();
-    if (written.has(assetKey)) {
-      report.collisions.push({ output: rel, sources: [written.get(assetKey), rel] });
-      continue;
-    }
-    written.set(assetKey, rel);
-
     const fileBuf = fs.readFileSync(file);
     const format = sniffImageFormat(fileBuf);
     const dir = path.dirname(file);
     const oldName = path.basename(file);
+    const targetDir = path.dirname(path.join(dest, rel));
 
     if (format === 'empty') {
+      const target = path.join(targetDir, oldName);
+      const targetKey = target.toLowerCase();
+      if (writtenAssets.has(targetKey)) {
+        report.collisions.push({ output: relNorm, sources: [writtenAssets.get(targetKey), rel] });
+        continue;
+      }
+      writtenAssets.set(targetKey, rel);
+      writtenTargets.add(target);
       report.emptyAssets.push(relNorm);
       report.warnings.push({ file: relNorm, message: 'zero-byte asset' });
-      const targetDir = path.dirname(path.join(dest, rel));
-      const target = path.join(targetDir, oldName);
       if (!dryRun) {
         fs.mkdirSync(targetDir, { recursive: true });
         fs.copyFileSync(file, target);
       }
-      writtenTargets.add(target);
       report.assetsCopied++;
       continue;
     }
 
     if (format === 'avif') {
       const lowerExt = ext.toLowerCase();
-      const newName = lowerExt === '.avif' ? `${path.basename(file, ext)}.webp` : oldName;
-      const targetDir = path.dirname(path.join(dest, rel));
-      const target = path.join(targetDir, newName);
+      let newName = lowerExt === '.avif' ? `${path.basename(file, ext)}.webp` : oldName;
+      let target = path.join(targetDir, newName);
+      let isRenamed = newName !== oldName;
 
-      if (newName !== oldName) {
-        if (fs.existsSync(path.join(dir, newName)) || writtenTargets.has(target)) {
+      if (isRenamed) {
+        if (fs.existsSync(path.join(dir, newName)) || writtenTargets.has(target) || writtenAssets.has(target.toLowerCase())) {
           report.renameCollisions.push({ from: relNorm, target: newName });
           report.warnings.push({ file: relNorm, message: `rename collision: ${newName} already exists, skipping rename` });
-          const fallbackTarget = path.join(targetDir, oldName);
-          if (!dryRun) {
-            fs.mkdirSync(targetDir, { recursive: true });
-            const ok = transcodeAvifToWebp(file, fallbackTarget, { execFileFn });
-            if (!ok) {
-              recordTranscodeFailure(dir, oldName, relNorm);
-              continue;
-            }
-          }
-          writtenTargets.add(fallbackTarget);
-          report.assetsTranscoded.push(relNorm);
-          report.assetsCopied++;
-          continue;
+          newName = oldName;
+          target = path.join(targetDir, oldName);
+          isRenamed = false;
         }
       }
+
+      const targetKey = target.toLowerCase();
+      const outRel = path.join(path.dirname(rel), newName).replace(/\\/g, '/');
+      if (writtenAssets.has(targetKey)) {
+        report.collisions.push({ output: outRel, sources: [writtenAssets.get(targetKey), rel] });
+        continue;
+      }
+      writtenAssets.set(targetKey, rel);
+      writtenTargets.add(target);
 
       if (!dryRun) {
         fs.mkdirSync(targetDir, { recursive: true });
@@ -1328,11 +1355,10 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
           continue;
         }
       }
-      writtenTargets.add(target);
       report.assetsTranscoded.push(relNorm);
       report.assetsCopied++;
 
-      if (newName !== oldName) {
+      if (isRenamed) {
         report.assetsRenamed++;
         report.assetRenames.push({ from: relNorm, to: newName });
         registerRename(dir, oldName, newName);
@@ -1346,19 +1372,29 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
       ? promotedBases.map((b) => path.join(path.dirname(path.join(dest, rel)), b))
       : [path.dirname(path.join(dest, rel))];
     let target = path.join(targetDirs[0], newName);
+    let isRenamed = newName !== oldName;
 
-    if (newName !== oldName) {
-      if (fs.existsSync(path.join(dir, newName)) || targetDirs.some((td) => writtenTargets.has(path.join(td, newName)))) {
+    if (isRenamed) {
+      if (fs.existsSync(path.join(dir, newName)) || targetDirs.some((td) => writtenTargets.has(path.join(td, newName))) || writtenAssets.has(target.toLowerCase())) {
         report.renameCollisions.push({ from: relNorm, target: newName });
         report.warnings.push({ file: relNorm, message: `rename collision: ${newName} already exists, skipping rename` });
         newName = oldName;
         target = path.join(targetDirs[0], oldName);
+        isRenamed = false;
       } else {
         report.assetsRenamed++;
         report.assetRenames.push({ from: relNorm, to: newName });
         registerRename(dir, oldName, newName);
       }
     }
+
+    const targetKey = target.toLowerCase();
+    const outRel = path.join(path.dirname(rel), newName).replace(/\\/g, '/');
+    if (writtenAssets.has(targetKey)) {
+      report.collisions.push({ output: outRel, sources: [writtenAssets.get(targetKey), rel] });
+      continue;
+    }
+    writtenAssets.set(targetKey, rel);
 
     for (const td of targetDirs) {
       const t = path.join(td, newName);
@@ -1374,13 +1410,14 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
   // Pass 2: docs
   for (const file of docFiles) {
     const rel = path.relative(src, file);
-    const collection = rel.split(path.sep)[0];
+    const collection = collectionName || rel.split(path.sep)[0];
     const ext = path.extname(file);
     // An index file in a folder that also holds other pages must be _index.md. As index.md it would
     // make a leaf bundle and Hugo would turn its sibling pages into unrendered resources.
-    const isBranchIndex = INDEX_RE.test(path.basename(file)) && branchDirs.has(path.dirname(file));
-    const isPromotedLeaf = promoteDocsByDir.has(path.dirname(file));
+    const isIndexName = INDEX_RE.test(path.basename(file));
+    const isBranchIndex = (isIndexName && branchDirs.has(path.dirname(file))) || path.basename(file, ext) === '_index';
     const base = path.basename(file, ext);
+    const isPromotedLeaf = promoteDocsByDir.get(path.dirname(file))?.includes(base);
     const outRel = isBranchIndex
       ? path.join(path.dirname(rel), '_index.md')
       : isPromotedLeaf
@@ -1390,10 +1427,10 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
     const col = (report.byCollection[collection] ||= { files: 0, converted: 0, pagesOut: 0, branchBundles: 0, withWarnings: 0 });
 
     report.files++; col.files++;
-    const key = outRel.toLowerCase();
+    const key = path.join(dest, outRel).toLowerCase();
     if (written.has(key)) { report.collisions.push({ output: outRel, sources: [written.get(key), rel] }); continue; }
     written.set(key, rel);
-    const slug = base === 'index' ? path.basename(path.dirname(file)) : base;
+    const slug = isIndexName ? path.basename(path.dirname(file)) : base;
 
     let sourceText = fs.readFileSync(file, 'utf8');
     const dirFailures = failedTranscodesByDir.get(path.dirname(file));
@@ -1408,11 +1445,33 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
       sourceText = rewriteAssetReferences(sourceText, dirRenames);
     }
 
+    const isLeaf = (isIndexName && !isBranchIndex) || isPromotedLeaf;
     const { output, stats } = convertFile(sourceText, {
       slug, file: rel, collection,
-      dir: base === 'index' ? path.dirname(file) : undefined,
-      taken: (name) => writtenTargets.has(path.join(path.dirname(target), name)),
+      dir: (base === 'index' || collection === 'content-learn') ? path.dirname(file) : undefined,
+      isIndex: isIndexName || isPromotedLeaf,
+      renames: dirRenames,
+      taken: (name, from) => {
+        const destPath = path.join(path.dirname(target), name);
+        const lowerKey = destPath.toLowerCase();
+        if (written.has(lowerKey)) return true;
+        if (writtenTargets.has(destPath)) {
+          const owner = bundledOwners.get(destPath);
+          return owner && from ? owner !== from : true;
+        }
+        if (writtenAssets.has(lowerKey)) {
+          const owner = writtenAssets.get(lowerKey);
+          return owner && from ? owner !== from : true;
+        }
+        return false;
+      },
     });
+    for (const a of stats.assets) {
+      const destPath = path.join(path.dirname(target), a.name);
+      writtenTargets.add(destPath);
+      bundledOwners.set(destPath, a.from);
+      writtenAssets.set(destPath.toLowerCase(), a.from);
+    }
     const fmAliasMatch = output.match(/^---\n([\s\S]*?)\n---/);
     if (fmAliasMatch) {
       const aliasBlock = fmAliasMatch[1].match(/^aliases:\s*\n((?:\s+-\s+[^\n]+\n?)*)/m);
@@ -1473,7 +1532,28 @@ function main() {
   }
   const dryRun = args.includes('--dry-run');
   const exclude = parseExcludeArg(args);
-  const report = migrate({ src, dest: get('--dest') || 'content', dryRun, exclude });
+  const destRoot = get('--dest') || 'content';
+  const srcs = args.flatMap((a, i) => (a === '--src' ? [args[i + 1]] : []));
+  const written = new Map();
+  const writtenAssets = new Map();
+  const writtenTargets = new Set();
+  const bundledOwners = new Map();
+  let report;
+  for (const s of srcs.length ? srcs : [src]) {
+    const learn = path.basename(path.resolve(s)) === 'content-learn';
+    report = migrate({
+      src: s,
+      dest: learn ? path.join(destRoot, 'learn', 'learning-paths') : destRoot,
+      dryRun,
+      exclude,
+      collection: learn ? 'content-learn' : undefined,
+      report,
+      written,
+      writtenAssets,
+      writtenTargets,
+      bundledOwners
+    });
+  }
   if (get('--report')) fs.writeFileSync(get('--report'), JSON.stringify(report, null, 2));
   if (get('--progress') && !dryRun) updateProgress(get('--progress'), report);
   const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k}×${v}`).join(', ') || '—';
