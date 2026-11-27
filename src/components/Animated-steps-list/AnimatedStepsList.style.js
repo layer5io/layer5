@@ -18,7 +18,7 @@ export const AnimatedStepsListWrapper = styled.div`
       }
 
       margin-right: 115px;
-      @media (max-width: 1119px) {
+      @media (max-width: 1199px) {
         display: none;
       }
     }
@@ -36,7 +36,7 @@ export const AnimatedStepsListWrapper = styled.div`
       /* Let the terminal shrink to the space left in the row */
       min-width: 0;
 
-      @media (max-width: 1119px) {
+      @media (max-width: 1199px) {
         margin-left: 75px;
       }
 
