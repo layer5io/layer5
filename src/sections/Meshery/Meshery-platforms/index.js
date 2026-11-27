@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "gatsby";
 import MesheryLogo from "../../../assets/images/meshery/meshery-logo-complete-white-side.svg";
 import { MesheryPlatformsWrapper } from "./MesheryPlatforms.style";
 import { Col, Container, Row } from "../../../reusecore/Layout";
@@ -25,12 +26,12 @@ const supported_platforms = [
       <>
         <h2>MacOS User</h2>
         <h4>Install on Mac using Homebrew:</h4>
-        <Code codeString={dedent`brew install mesheryctl
-        mesheryctl system start`
-        }
+        <Code
+          codeString={dedent`brew install mesheryctl
+        mesheryctl system start`}
         />
       </>
-    )
+    ),
   },
   {
     icon: Docker,
@@ -38,20 +39,20 @@ const supported_platforms = [
     steps: (
       <>
         <h2>Docker User</h2>
-        <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=docker bash -`
-        }
+        <Code
+          codeString={dedent`curl -L https://meshery.io/install | PLATFORM=docker bash -`}
         />
         <h2 style={{ marginTop: "20px" }}>Using mesheryctl</h2>
-        <Code codeString={dedent`mesheryctl system context create docker --platform docker --set
-        mesheryctl system start`
-        }
+        <Code
+          codeString={dedent`mesheryctl system context create docker --platform docker --set
+        mesheryctl system start`}
         />
         <h2 style={{ marginTop: "20px" }}>Docker Extension</h2>
-        <Code codeString={dedent`docker extension install meshery/docker-extension-meshery:stable-latest`
-        }
+        <Code
+          codeString={dedent`docker extension install meshery/docker-extension-meshery:stable-latest`}
         />
       </>
-    )
+    ),
   },
   {
     icon: EKS,
@@ -59,11 +60,12 @@ const supported_platforms = [
     steps: (
       <>
         <h2>AWS Elastic Kubernetes Service User</h2>
-        <Code codeString={dedent`mesheryctl system config eks
+        <Code
+          codeString={dedent`mesheryctl system config eks
       mesheryctl system start`}
         />
       </>
-    )
+    ),
   },
   {
     icon: GKE,
@@ -71,12 +73,13 @@ const supported_platforms = [
     steps: (
       <>
         <h2>Google Kubernetes Engine User</h2>
-        <Code codeString={dedent`mesheryctl system config gke --token *PATH_TO_TOKEN*
+        <Code
+          codeString={dedent`mesheryctl system config gke --token *PATH_TO_TOKEN*
         ./generate_kubeconfig_gke.sh cluster-admin-sa-gke default
         mesheryctl system start`}
         />
       </>
-    )
+    ),
   },
   {
     icon: Helm,
@@ -85,16 +88,18 @@ const supported_platforms = [
       <>
         <h2>Helm Chart</h2>
         <p>Install on Kubernetes using Helm:</p>
-        <Code codeString={dedent`helm repo add meshery https://meshery.io/charts/
+        <Code
+          codeString={dedent`helm repo add meshery https://meshery.io/charts/
              helm install my-meshery meshery/meshery --version 2.1.2`}
         />
-        <h3  style={{ marginTop: "20px" }}>Using kubectl</h3>
-        <Code codeString={dedent`kubectl create ns meshery
+        <h3 style={{ marginTop: "20px" }}>Using kubectl</h3>
+        <Code
+          codeString={dedent`kubectl create ns meshery
         helm repo add meshery https://meshery.io/charts
         helm install meshery meshery/meshery -n meshery`}
         />
       </>
-    )
+    ),
   },
   {
     icon: HomeBrew,
@@ -103,11 +108,12 @@ const supported_platforms = [
       <>
         <h2>Brew User</h2>
         <h4>Install on Mac or Linux using Homebrew:</h4>
-        <Code codeString={dedent`brew install mesheryctl
+        <Code
+          codeString={dedent`brew install mesheryctl
         mesheryctl system start`}
         />
       </>
-    )
+    ),
   },
   // {
   //   icon: Kind,
@@ -128,12 +134,12 @@ const supported_platforms = [
     steps: (
       <>
         <h2>Kubernetes User</h2>
-        <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=kubernetes bash -
-        mesheryctl system start`
-        }
+        <Code
+          codeString={dedent`curl -L https://meshery.io/install | PLATFORM=kubernetes bash -
+        mesheryctl system start`}
         />
       </>
-    )
+    ),
   },
   {
     icon: Linux,
@@ -141,11 +147,15 @@ const supported_platforms = [
     steps: (
       <>
         <h3>Install Using Kubernetes</h3>
-        <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=kubernetes bash -`}/>
+        <Code
+          codeString={dedent`curl -L https://meshery.io/install | PLATFORM=kubernetes bash -`}
+        />
         <h3 style={{ marginTop: "20px" }}>Install Using Docker</h3>
-        <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=docker bash -` }/>
+        <Code
+          codeString={dedent`curl -L https://meshery.io/install | PLATFORM=docker bash -`}
+        />
       </>
-    )
+    ),
   },
   {
     icon: Minikube,
@@ -153,11 +163,11 @@ const supported_platforms = [
     steps: (
       <>
         <h2>Minikube User</h2>
-        <Code codeString={dedent`mesheryctl system config minikube -t ~/Downloads/auth.json`
-        }
+        <Code
+          codeString={dedent`mesheryctl system config minikube -t ~/Downloads/auth.json`}
         />
       </>
-    )
+    ),
   },
   {
     icon: AKS,
@@ -166,12 +176,12 @@ const supported_platforms = [
       <>
         <h2>Azure Kubernetes Service User</h2>
         <p>Install mesheryctl and configure Meshery to communicate with AKS.</p>
-        <Code codeString={dedent`mesheryctl system config aks
-        mesheryctl system start`
-        }
+        <Code
+          codeString={dedent`mesheryctl system config aks
+        mesheryctl system start`}
         />
       </>
-    )
+    ),
   },
   {
     icon: WSL2,
@@ -180,26 +190,55 @@ const supported_platforms = [
       <>
         <h2>Windows User</h2>
         <p>
-          Download and unzip mesheryctl from the <a href="https://github.com/layer5io/meshery/releases/">Meshery releases page</a>. Add mesheryctl to your PATH for ease of use. Then, execute:
+          Download and unzip mesheryctl from the{" "}
+          <a href="https://github.com/layer5io/meshery/releases/">
+            Meshery releases page
+          </a>
+          . Add mesheryctl to your PATH for ease of use. Then, execute:
         </p>
-        <Code codeString={dedent`mesheryctl system start`}/>
+        <Code codeString={dedent`mesheryctl system start`} />
       </>
-    )
-  }
+    ),
+  },
 ];
 
-const MesheryPlatforms = () => {
+const MesheryPlatforms = ({ selectedPlatform }) => {
   const [currentPlatform, setCurrentPlatform] = useState({});
-  const [installationStepsHeight,setInstallationStepsHeight] = useState(currentPlatform.name ? "200px" : 0);
+  const [installationStepsHeight, setInstallationStepsHeight] = useState(
+    currentPlatform.name ? "200px" : 0,
+  );
 
-  const hasSelectedSamePlatform = (index) => currentPlatform.name === supported_platforms[index].name;
+  useEffect(() => {
+    if (!selectedPlatform?.name) {
+      return;
+    }
+    const matchedPlatform = supported_platforms.find(
+      (platform) =>
+        platform.name.toLowerCase() === selectedPlatform.name.toLowerCase(),
+    );
+    if (matchedPlatform) {
+      setCurrentPlatform(matchedPlatform);
+      setInstallationStepsHeight("200px");
+
+      const rafId = window.requestAnimationFrame(() => {
+        const platformEl = document.getElementById(
+          `platform-${matchedPlatform.name.toLowerCase()}`,
+        );
+        if (platformEl) {
+          platformEl.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      });
+      return () => window.cancelAnimationFrame(rafId);
+    }
+  }, [selectedPlatform]);
+
+  const hasSelectedSamePlatform = (index) =>
+    currentPlatform.name === supported_platforms[index].name;
 
   const changeCurrentPlatformState = (index) => {
     if (currentPlatform.name && hasSelectedSamePlatform(index))
       setCurrentPlatform({});
-    else
-      setCurrentPlatform(supported_platforms[index]);
-
+    else setCurrentPlatform(supported_platforms[index]);
   };
 
   const changeCurrentPlatform = (index) => {
@@ -211,20 +250,29 @@ const MesheryPlatforms = () => {
     setInstallationStepsHeight(currentPlatform.name ? 0 : "200px");
   };
 
-
   return (
     <MesheryPlatformsWrapper>
       <div className="content">
         <Row $Hcenter className="step-1">
-          <p>Start managing cloud native infrastructure easily with a single command. </p>
-          <h2><span>Step 1:</span> Choose your platform</h2>
+          <p>
+            Start managing cloud native infrastructure easily with a single
+            command.{" "}
+          </p>
+          <h2>
+            <span>Step 1:</span> Choose your platform
+          </h2>
         </Row>
         <Row className="supported-platforms">
           {supported_platforms.map((platform, index) => (
             <Col $xs={6} $sm={4} $md={3} $lg={2} key={platform.name}>
               <Button
-                className={currentPlatform.name && currentPlatform.name === supported_platforms[index].name
-                  ? "single-platform single-platform-selected " : "single-platform "}
+                id={`platform-${platform.name.toLowerCase()}`}
+                className={
+                  currentPlatform.name &&
+                  currentPlatform.name === supported_platforms[index].name
+                    ? "single-platform single-platform-selected "
+                    : "single-platform "
+                }
                 onClick={() => changeCurrentPlatform(index)}
               >
                 <img src={platform.icon} alt={platform.name} />
@@ -232,22 +280,44 @@ const MesheryPlatforms = () => {
             </Col>
           ))}
         </Row>
-        <Container style={{ transition: "height 0.5s ease-in-out", height: (currentPlatform.name === "Docker" || currentPlatform.name === "Helm" || currentPlatform.name === "Linux" )  ? "30rem" : installationStepsHeight, overflow: "hidden" }}>
-          <Row className="installation-steps" >
+        <Container
+          style={{
+            transition: "height 0.5s ease-in-out",
+            height:
+              currentPlatform.name === "Docker" ||
+              currentPlatform.name === "Helm" ||
+              currentPlatform.name === "Linux"
+                ? "30rem"
+                : installationStepsHeight,
+            overflow: "hidden",
+          }}
+        >
+          <Row className="installation-steps">
             {currentPlatform.name && currentPlatform.steps}
           </Row>
         </Container>
         <Row $Hcenter className="step-2">
           <Col>
-            <h2><span>Step 2:</span> Manage your Cloud Native Infra</h2>
-            <p>There is no step 2. Login and manage cloud native infrastructure! For more detailed instructions, visit <a href="https://docs.meshery.io">Meshery Docs</a></p>
-            <img src={MesheryLogo} alt="Meshery" className="meshery-logo" />
+            <h2>
+              <span>Step 2:</span> Manage your Cloud Native Infra
+            </h2>
+            <p>
+              There is no step 2. Login and manage cloud native infrastructure!
+              For more detailed instructions, visit{" "}
+              <a href="https://docs.meshery.io">Meshery Docs</a>
+            </p>
+            <Link
+              to="/cloud-native-management/meshery"
+              className="meshery-logo-link"
+              aria-label="Meshery"
+            >
+              <img src={MesheryLogo} alt="Meshery" className="meshery-logo" />
+            </Link>
           </Col>
         </Row>
       </div>
     </MesheryPlatformsWrapper>
   );
-
 };
 
 export default MesheryPlatforms;
