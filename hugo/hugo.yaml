@@ -1,5 +1,5 @@
 # Layer5.io — Hugo POC configuration
-# Requires Hugo Extended >= 0.128 (tested target: latest)
+# Requires Hugo Extended >= 0.156.0 (CI pin: 0.162.1)
 baseURL: https://layer5.io/
 title: Layer5
 locale: en-us
