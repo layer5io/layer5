@@ -21,6 +21,7 @@ import wasm from "../../../assets/images/webassembly/webssembly_icon.svg";
 import recognitionLogo from "../../../assets/images/recognition-program/recognition-program.webp";
 import kanvasLogo from "../../../assets/images/kanvas/icon-only/kanvas-icon-color.svg";
 import sistent from "../../../assets/images/sistent/icon-only/sistent-icon-color.svg";
+import blowhorn from "../../../assets/images/blowhorn/blowhorn-icon.svg";
 
 export const repo_data = [
   {
@@ -243,6 +244,30 @@ export const repo_data = [
         maintainers_name: ["Sheikh Mohammad"],
         link: ["https://layer5.io/community/members/sheikh-mohammad"],
         repository: "https://github.com/meshery-extensions/kanvas-site",
+      },
+      {
+        project: "Blowhorn.ai",
+        image: blowhorn,
+        site: "https://blowhorn.ai/",
+        language: "Hugo and Docsy",
+        maintainers_name: ["Lee Calcote", "Yi Nuo"],
+        link: [
+          "https://layer5.io/community/members/lee-calcote",
+          "https://layer5.io/community/members/yi-nuo",
+        ],
+        repository: "https://github.com/blowhorn-ai/blowhorn-site",
+      },
+      {
+        project: "Tells",
+        image: blowhorn,
+        site: "https://tells.blowhorn.ai/",
+        language: "JavaScript, Vite and Cloudflare Workers",
+        maintainers_name: ["Lee Calcote", "Yi Nuo"],
+        link: [
+          "https://layer5.io/community/members/lee-calcote",
+          "https://layer5.io/community/members/yi-nuo",
+        ],
+        repository: "https://github.com/blowhorn-ai/tells",
       },
     ],
   },
