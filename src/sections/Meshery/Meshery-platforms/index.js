@@ -257,6 +257,7 @@ const MesheryPlatforms = ({ selectedPlatform }) => {
   const changeCurrentPlatform = (index) => {
     clearPendingPlatformTimer();
     if (currentPlatform.name && !hasSelectedSamePlatform(index)) {
+      setInstallationStepsHeight("200px");
       changeCurrentPlatformState(index);
       return;
     }

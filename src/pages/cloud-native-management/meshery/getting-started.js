@@ -16,7 +16,7 @@ const MesheryMainPage = () => {
   const [selectedPlatform, setSelectedPlatform] = useState(null);
 
   const handlePlatformSelect = (platformName) => {
-    setSelectedPlatform({ name: platformName, key: Date.now() });
+    setSelectedPlatform({ name: platformName });
   };
 
   return (
