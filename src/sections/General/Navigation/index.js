@@ -23,6 +23,7 @@ import KanvasIcon from "./utility/KanvasIcon.js";
 import Layer5CloudDarkIcon from "./utility/Layer5CloudDarkIcon.svg";
 import Layer5CloudLightIcon from "./utility/Layer5CloudLightIcon.svg";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward.js";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const Navigation = () => {
   let data = useStaticQuery(graphql`
@@ -200,6 +201,7 @@ const Navigation = () => {
   const themeToggler = () => toggleDark();
   const [userData, setUserData] = useState(null);
   const dropDownRef = useRef();
+  const [expandedMobileMenu, setExpandedMobileMenu] = useState(null);
   const navWrapRef = useRef();
   const accountDropdownRef = useRef();
 
@@ -289,6 +291,7 @@ const Navigation = () => {
 
   const closeDropDown = () => {
     dropDownRef.current.classList.remove("expand");
+    setExpandedMobileMenu(null);
   };
 
   const changeDropdownState = () => {
@@ -361,128 +364,166 @@ const Navigation = () => {
             <div className="mobile-dropdown-container" ref={dropDownRef}>
               <div className="mobile-dropdown">
                 <ul className="mobile-collapsed">
-                  {Data.menuItems.map((menu, index) => (
-                    <li
-                      key={index}
-                      className={
-                        menu.subItems !== undefined
-                          ? "mobile-nav-item has-dropdown"
-                          : "mobile-nav-item"
-                      }
-                    >
-                      <Link
-                        to={menu.path}
-                        onClick={changeDropdownState}
-                        className="menu-item"
-                        activeClassName="nav-link-active"
+                  {Data.menuItems.map((menu, index) => {
+                    const hasSubmenu =
+                      (menu.subItems && menu.subItems.length > 0) ||
+                      (menu.actionItems && menu.actionItems.length > 0);
+
+                    const isExpanded = expandedMobileMenu === index;
+
+                    return (
+                      <li
+                        key={index}
+                        className={`mobile-nav-item${
+                          hasSubmenu ? " has-dropdown" : ""
+                        }${isExpanded ? " is-expanded" : ""}`}
                       >
-                        {menu.name}
-                      </Link>
-                      <ul>
-                        {menu.subItems !== undefined &&
-                          menu.subItems.map((subItems, index) => {
-                            return (
-                              <li key={index} className="mobile-nav-subitem">
-                                {subItems.externalLink ? (
-                                  <a
-                                    href={subItems.path}
-                                    target="_blank"
-                                    onClick={() => {
-                                      changeDropdownState();
-                                      closeDropDown();
-                                    }}
-                                    className="mobile-sub-menu-item"
-                                    rel="noreferrer"
-                                  >
-                                    {subItems.name}
-                                  </a>
-                                ) : (
-                                  <Link
-                                    to={subItems.path}
-                                    onClick={() => {
-                                      changeDropdownState();
-                                      closeDropDown();
-                                    }}
-                                    className={
-                                      subItems.sepLine
-                                        ? "mobile-sub-menu-item"
-                                        : "mobile-nested-menu"
-                                    }
-                                    activeClassName="nav-link-active"
-                                  >
-                                    {subItems.name}
-                                  </Link>
-                                )}
-                              </li>
-                            );
-                          })}
-                        {menu.actionItems !== undefined &&
-                          menu.actionItems.map((actionItem, index) =>
-                            actionItem.actionName === "Join the discussion" ? (
-                              <a
-                                key={index}
-                                href={actionItem.actionLink}
-                                target="_blank"
-                                className="mobile-sub-action-item"
-                                rel="noreferrer"
-                                onClick={() => {
-                                  changeDropdownState();
-                                  closeDropDown();
-                                }}
-                              >
-                                <span className="readmore-btn">
-                                  {actionItem.actionName}{" "}
-                                  <IoIosArrowRoundForward />
-                                </span>
-                              </a>
-                            ) : (
-                              <Link
-                                key={index}
-                                to={actionItem.actionLink}
-                                partiallyActive={true}
-                                className="mobile-sub-action-item"
-                                onClick={() => {
-                                  changeDropdownState();
-                                  closeDropDown();
-                                }}
-                              >
-                                <span className="readmore-btn">
-                                  {actionItem.actionName}{" "}
-                                  <IoIosArrowRoundForward />
-                                </span>
-                              </Link>
-                            ),
+                        <div className="mobile-nav-item-header">
+                          <Link
+                            to={menu.path}
+                            onClick={changeDropdownState}
+                            className="menu-item"
+                            activeClassName="nav-link-active"
+                          >
+                            {menu.name}
+                          </Link>
+
+                          {hasSubmenu && (
+                            <button
+                              type="button"
+                              className={`mobile-submenu-toggle ${
+                                isExpanded ? "is-open" : ""
+                              }`}
+                              aria-label={`Toggle ${menu.name} submenu`}
+                              aria-expanded={isExpanded}
+                              aria-controls={
+                                isExpanded
+                                  ? `mobile-submenu-${index}`
+                                  : undefined
+                              }
+                              onClick={() =>
+                                setExpandedMobileMenu(isExpanded ? null : index)
+                              }
+                            >
+                              <ExpandMoreIcon aria-hidden="true" />
+                            </button>
                           )}
-                      </ul>
-                    </li>
-                  ))}
-                </ul>
-                {!userData && (
-                  <div>
-                    <ul>
-                      <li>
-                        <Button
-                          id="get-started"
-                          $secondary
-                          className="banner-btn two"
-                          title="Get Started"
-                          $url="https://cloud.layer5.io/login"
-                          $external={true}
-                        />
+                        </div>
+
+                        {hasSubmenu && isExpanded && (
+                          <ul
+                            id={`mobile-submenu-${index}`}
+                            className="mobile-submenu"
+                          >
+                            {menu.subItems &&
+                              menu.subItems.map((subItems, subIndex) => (
+                                <li
+                                  key={subIndex}
+                                  className="mobile-nav-subitem"
+                                >
+                                  {subItems.externalLink ? (
+                                    <a
+                                      href={subItems.path}
+                                      target="_blank"
+                                      onClick={() => {
+                                        changeDropdownState();
+                                        closeDropDown();
+                                      }}
+                                      className="mobile-sub-menu-item"
+                                      rel="noreferrer"
+                                    >
+                                      {subItems.name}
+                                    </a>
+                                  ) : (
+                                    <Link
+                                      to={subItems.path}
+                                      onClick={() => {
+                                        changeDropdownState();
+                                        closeDropDown();
+                                      }}
+                                      className={
+                                        subItems.sepLine
+                                          ? "mobile-sub-menu-item"
+                                          : "mobile-nested-menu"
+                                      }
+                                      activeClassName="nav-link-active"
+                                    >
+                                      {subItems.name}
+                                    </Link>
+                                  )}
+                                </li>
+                              ))}
+
+                            {menu.actionItems &&
+                              menu.actionItems.map((actionItem, actionIndex) =>
+                                actionItem.actionName ===
+                                "Join the discussion" ? (
+                                  <li key={actionIndex}>
+                                    <a
+                                      href={actionItem.actionLink}
+                                      target="_blank"
+                                      className="mobile-sub-action-item"
+                                      rel="noreferrer"
+                                      onClick={() => {
+                                        changeDropdownState();
+                                        closeDropDown();
+                                      }}
+                                    >
+                                      <span className="readmore-btn">
+                                        {actionItem.actionName}{" "}
+                                        <IoIosArrowRoundForward />
+                                      </span>
+                                    </a>
+                                  </li>
+                                ) : (
+                                  <li key={actionIndex}>
+                                    <Link
+                                      to={actionItem.actionLink}
+                                      partiallyActive={true}
+                                      className="mobile-sub-action-item"
+                                      onClick={() => {
+                                        changeDropdownState();
+                                        closeDropDown();
+                                      }}
+                                    >
+                                      <span className="readmore-btn">
+                                        {actionItem.actionName}{" "}
+                                        <IoIosArrowRoundForward />
+                                      </span>
+                                    </Link>
+                                  </li>
+                                ),
+                              )}
+                          </ul>
+                        )}
                       </li>
-                    </ul>
-                  </div>
-                )}
-                <div>
-                  <ul>
-                    <li className="mobile-nav-item">
-                      {/* <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" className="menu-item">Book Demo</a> */}
-                      <a href="https://play.meshery.io" className="menu-item">
-                        Playground
-                      </a>
+                    );
+                  })}
+                </ul>
+
+                <ul className="mobile-cta-list">
+                  {!userData && (
+                    <li className="mobile-cta-item">
+                      <Button
+                        id="get-started"
+                        $secondary
+                        className="banner-btn two"
+                        title="Get Started"
+                        $url="https://cloud.layer5.io/login"
+                        $external={true}
+                      />
                     </li>
-                  </ul>
-                </div>
+                  )}
+                  <li className="mobile-cta-item">
+                    {/* <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" className="menu-item">Book Demo</a> */}
+                    <a
+                      href="https://play.meshery.io"
+                      className="mobile-cta-outline"
+                    >
+                      Playground
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
             <ScrollspyMenu

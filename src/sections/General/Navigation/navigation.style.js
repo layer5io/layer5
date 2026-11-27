@@ -547,13 +547,15 @@ const NavigationWrap = styled.header`
     }
     .mobile-dropdown {
       position: relative;
-      padding: 10px 0 10px 15px;
+      padding: 10px 15px;
       display: block;
       background: ${(props) => props.theme.grey141414ToGreyFAFAFA};
-      border-radius: 10px;
+      border: 1px solid ${(props) => props.theme.greyC1C1C1ToGreyB3B3B3}66;
+      border-radius: 12px;
       box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
-      max-height: 400px;
-      overflow-y: scroll;
+      max-height: calc(100vh - 100px);
+      max-height: calc(100dvh - 100px);
+      overflow-y: auto;
       scrollbar-width: thin;
       scrollbar-color: ${(props) => props.theme.scrollbarColor} ${(props) => props.theme.body};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -621,17 +623,10 @@ const NavigationWrap = styled.header`
       }
     }
     .mobile-nav-item {
-      padding: 1px;
-      ul:after {
-        content: "";
-        display: block;
-        height: 1px;
-        width: 40%;
-        margin: 10px;
-        background: ${(props) => props.theme.greyC1C1C1ToGreyB3B3B3};
-      }
+      padding: 1px 0;
+      border-bottom: 1px solid
+        ${(props) => props.theme.greyC1C1C1ToGreyB3B3B3}33;
       .menu-item {
-        font-size: 16px;
         font-weight: 600;
         line-height: 2rem;
         font-size: 1.25rem;
@@ -639,9 +634,97 @@ const NavigationWrap = styled.header`
       a:before {
         content: none;
       }
-      ul {
-        display: list-item;
-      }
+    }
+    .mobile-nav-item.is-expanded > .mobile-nav-item-header .menu-item,
+    .mobile-nav-item.is-expanded
+      > .mobile-nav-item-header
+      .mobile-submenu-toggle {
+      color: ${(props) => props.theme.menuHoverColor};
+    }
+    .mobile-nav-item-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      min-height: 48px;
+    }
+    .mobile-nav-item-header > .menu-item {
+      flex: 1;
+    }
+    .mobile-submenu-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+      padding: 8px;
+      border: none;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+    }
+    .mobile-submenu-toggle svg {
+      font-size: 28px;
+      transition: transform 0.2s ease;
+    }
+    .mobile-submenu-toggle.is-open svg {
+      transform: rotate(180deg);
+    }
+    .mobile-submenu-toggle:hover,
+    .mobile-submenu-toggle:active {
+      background: transparent;
+      box-shadow: none;
+    }
+    .mobile-submenu-toggle:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: -2px;
+    }
+    .mobile-submenu {
+      display: block;
+      margin: 0 0 8px 6px;
+      padding: 0 0 0 14px;
+      border-left: 2px solid ${(props) => props.theme.menuHoverColor}66;
+    }
+    .mobile-cta-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 0;
+      padding: 14px 0 4px;
+      list-style: none;
+    }
+    .mobile-cta-item a {
+      display: block;
+      width: 100%;
+      padding: 0;
+    }
+    .mobile-cta-item a:before {
+      content: none;
+    }
+    .mobile-cta-item .appion__btn {
+      width: 100%;
+      min-height: 52px;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .mobile-cta-item a.mobile-cta-outline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      min-height: 52px;
+      padding: 0 12px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      color: ${(props) => props.theme.menuHoverColor};
+      border: 2px solid ${(props) => props.theme.menuHoverColor};
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    .mobile-cta-outline:hover {
+      color: #ffffff;
+      background: ${(props) => props.theme.menuHoverColor};
     }
     .mobile-nav-subitem {
       padding-left: 10px;
@@ -652,7 +735,7 @@ const NavigationWrap = styled.header`
     }
     .mobile-sub-action-item {
       font-size: 1.1rem;
-      padding-left: 30px;
+      padding-left: 10px;
       padding-top: 0.4rem;
     }
     .mobile-nested-menu {
