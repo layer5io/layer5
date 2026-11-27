@@ -38,6 +38,7 @@ const DataWrapper = (WrappedComponent) => {
       }
       fields {
         slug
+        dateForSort
       }
     }
   }
