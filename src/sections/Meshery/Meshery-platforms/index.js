@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "gatsby";
 import MesheryLogo from "../../../assets/images/meshery/meshery-logo-complete-white-side.svg";
 import { MesheryPlatformsWrapper } from "./MesheryPlatforms.style";
@@ -207,6 +207,18 @@ const MesheryPlatforms = ({ selectedPlatform }) => {
   const [installationStepsHeight, setInstallationStepsHeight] = useState(
     currentPlatform.name ? "200px" : 0,
   );
+  const platformTimerRef = useRef(null);
+
+  const clearPendingPlatformTimer = () => {
+    if (platformTimerRef.current !== null) {
+      clearTimeout(platformTimerRef.current);
+      platformTimerRef.current = null;
+    }
+  };
+
+  useEffect(() => {
+    return () => clearPendingPlatformTimer();
+  }, []);
 
   useEffect(() => {
     if (!selectedPlatform?.name) {
@@ -217,6 +229,7 @@ const MesheryPlatforms = ({ selectedPlatform }) => {
         platform.name.toLowerCase() === selectedPlatform.name.toLowerCase(),
     );
     if (matchedPlatform) {
+      clearPendingPlatformTimer();
       setCurrentPlatform(matchedPlatform);
       setInstallationStepsHeight("200px");
 
@@ -242,11 +255,15 @@ const MesheryPlatforms = ({ selectedPlatform }) => {
   };
 
   const changeCurrentPlatform = (index) => {
+    clearPendingPlatformTimer();
     if (currentPlatform.name && !hasSelectedSamePlatform(index)) {
       changeCurrentPlatformState(index);
       return;
     }
-    setTimeout(() => changeCurrentPlatformState(index), 500);
+    platformTimerRef.current = setTimeout(() => {
+      platformTimerRef.current = null;
+      changeCurrentPlatformState(index);
+    }, 500);
     setInstallationStepsHeight(currentPlatform.name ? 0 : "200px");
   };
 
