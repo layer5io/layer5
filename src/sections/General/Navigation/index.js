@@ -291,11 +291,11 @@ const Navigation = () => {
 
   const closeDropDown = () => {
     dropDownRef.current.classList.remove("expand");
+    setExpandedMobileMenu(null);
   };
 
   const changeDropdownState = () => {
     setExpand(false);
-    setExpandedMobileMenu(null);
     closeDropDown();
   };
 
@@ -374,11 +374,9 @@ const Navigation = () => {
                     return (
                       <li
                         key={index}
-                        className={
-                          hasSubmenu
-                            ? "mobile-nav-item has-dropdown"
-                            : "mobile-nav-item"
-                        }
+                        className={`mobile-nav-item${
+                          hasSubmenu ? " has-dropdown" : ""
+                        }${isExpanded ? " is-expanded" : ""}`}
                       >
                         <div className="mobile-nav-item-header">
                           <Link
@@ -503,32 +501,29 @@ const Navigation = () => {
                   })}
                 </ul>
 
-                {!userData && (
-                  <div>
-                    <ul>
-                      <li>
-                        <Button
-                          id="get-started"
-                          $secondary
-                          className="banner-btn two"
-                          title="Get Started"
-                          $url="https://cloud.layer5.io/login"
-                          $external={true}
-                        />
-                      </li>
-                    </ul>
-                  </div>
-                )}
-                <div>
-                  <ul>
-                    <li className="mobile-nav-item">
-                      {/* <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" className="menu-item">Book Demo</a> */}
-                      <a href="https://play.meshery.io" className="menu-item">
-                        Playground
-                      </a>
+                <ul className="mobile-cta-list">
+                  {!userData && (
+                    <li className="mobile-cta-item">
+                      <Button
+                        id="get-started"
+                        $secondary
+                        className="banner-btn two"
+                        title="Get Started"
+                        $url="https://cloud.layer5.io/login"
+                        $external={true}
+                      />
                     </li>
-                  </ul>
-                </div>
+                  )}
+                  <li className="mobile-cta-item">
+                    {/* <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3pmcApaDP4xd8hvG5fy8ylxuFxD3akIRc5vpWJ60q-HemQi80SFFAVftbiIsq9pgiA2o8yvU56?gv=true" className="menu-item">Book Demo</a> */}
+                    <a
+                      href="https://play.meshery.io"
+                      className="mobile-cta-outline"
+                    >
+                      Playground
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
             <ScrollspyMenu

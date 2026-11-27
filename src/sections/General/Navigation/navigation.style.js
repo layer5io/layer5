@@ -547,16 +547,17 @@ const NavigationWrap = styled.header`
     }
     .mobile-dropdown {
       position: relative;
-      padding: 10px 0 10px 15px;
+      padding: 10px 15px;
       display: block;
       background: ${(props) => props.theme.grey141414ToGreyFAFAFA};
-      border-radius: 10px;
+      border: 1px solid ${(props) => props.theme.greyC1C1C1ToGreyB3B3B3}66;
+      border-radius: 12px;
       box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
-      max-height: 400px;
-      overflow-y: scroll;
+      max-height: calc(100vh - 100px);
+      max-height: calc(100dvh - 100px);
+      overflow-y: auto;
       scrollbar-width: thin;
-      scrollbar-color: ${(props) => props.theme.scrollbarColor}
-        ${(props) => props.theme.body};
+      scrollbar-color: ${(props) => props.theme.scrollbarColor} ${(props) => props.theme.body};
       transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .mobile-dropdown::-webkit-scrollbar {
@@ -622,15 +623,9 @@ const NavigationWrap = styled.header`
       }
     }
     .mobile-nav-item {
-      padding: 1px;
-      ul:after {
-        content: "";
-        display: block;
-        height: 1px;
-        width: 40%;
-        margin: 10px;
-        background: ${(props) => props.theme.greyC1C1C1ToGreyB3B3B3};
-      }
+      padding: 1px 0;
+      border-bottom: 1px solid
+        ${(props) => props.theme.greyC1C1C1ToGreyB3B3B3}33;
       .menu-item {
         font-weight: 600;
         line-height: 2rem;
@@ -639,17 +634,19 @@ const NavigationWrap = styled.header`
       a:before {
         content: none;
       }
-      .mobile-submenu {
-        display: block;
-        margin: 0;
-        padding: 0 0 8px 10px;
-      }
+    }
+    .mobile-nav-item.is-expanded > .mobile-nav-item-header .menu-item,
+    .mobile-nav-item.is-expanded
+      > .mobile-nav-item-header
+      .mobile-submenu-toggle {
+      color: ${(props) => props.theme.menuHoverColor};
     }
     .mobile-nav-item-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       width: 100%;
+      min-height: 48px;
     }
     .mobile-nav-item-header > .menu-item {
       flex: 1;
@@ -677,6 +674,45 @@ const NavigationWrap = styled.header`
       outline: 2px solid currentColor;
       outline-offset: -2px;
     }
+    .mobile-submenu {
+      display: block;
+      margin: 0 0 8px 6px;
+      padding: 0 0 0 14px;
+      border-left: 2px solid ${(props) => props.theme.menuHoverColor}66;
+    }
+    .mobile-cta-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 0;
+      padding: 14px 0 4px;
+      list-style: none;
+    }
+    .mobile-cta-item a,
+    .mobile-cta-item .appion__btn {
+      width: 100%;
+    }
+    .mobile-cta-item a {
+      display: block;
+    }
+    .mobile-cta-outline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      color: ${(props) => props.theme.menuHoverColor};
+      border: 2px solid ${(props) => props.theme.menuHoverColor};
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    .mobile-cta-outline:hover {
+      color: #ffffff;
+      background: ${(props) => props.theme.menuHoverColor};
+    }
     .mobile-nav-subitem {
       padding-left: 10px;
       padding-top: 0.4rem;
@@ -686,12 +722,12 @@ const NavigationWrap = styled.header`
     }
     .mobile-sub-action-item {
       font-size: 1.1rem;
-      padding-left: 30px;
+      padding-left: 10px;
       padding-top: 0.4rem;
     }
     .mobile-nested-menu {
-      font-size: 1.1rem;
-      margin-left: 1rem;
+       font-size: 1.1rem;
+       margin-left: 1rem;
     }
   }
 
@@ -806,7 +842,7 @@ const NavigationWrap = styled.header`
   .dark-theme-toggle {
     /* margin-left: 2rem; */
     visibility: ${(props) =>
-      typeof props.theme.DarkTheme === "boolean" ? "visible" : "hidden"};
+  typeof props.theme.DarkTheme === "boolean" ? "visible" : "hidden"};
   }
 
   .toggle {
@@ -828,8 +864,7 @@ const NavigationWrap = styled.header`
     --offset-diagonal: calc(var(--size) * 0.45);
     transform: scale(0.75);
     color: #3c494f;
-    box-shadow:
-      inset 0 0 0 var(--size),
+    box-shadow: inset 0 0 0 var(--size),
       calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
       var(--offset-orthogonal) 0 0 var(--ray-size),
       0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
