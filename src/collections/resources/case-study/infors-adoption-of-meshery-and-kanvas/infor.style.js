@@ -3,13 +3,10 @@ import styled from "styled-components";
 export const INFORfacts = styled("table")(({ theme }) => ({
   backgroundColor: `${theme.elevationColor}`,
   borderRadius: "0.5rem",
-  marginBottom: "1rem",
+  marginTop: "2.5rem",
+  marginBottom: "2.5rem",
   color: `${theme.text}`,
   border: `1px solid ${theme.primaryLightColor}`,
-
-  " > tbody > tr:first-child": {
-    padding: "0rem",
-  },
 
   " > tbody > tr:first-child th": {
     h4: {
@@ -22,13 +19,19 @@ export const INFORfacts = styled("table")(({ theme }) => ({
   },
 
   " > tbody > tr > td": {
-    padding: "1rem",
+    padding: "2rem",
     color: `${theme.text}`,
   },
   "> tbody > tr > td > img": {
     marginRight: ".5rem",
     marginBottom: "0rem",
     paddingBottom: "0rem",
+  },
+  "@media screen and (max-width: 768px)": {
+    " > tbody, > tbody > tr, > tbody > tr > th, > tbody > tr > td": {
+      display: "block",
+      width: "100%",
+    },
   },
 }));
 
