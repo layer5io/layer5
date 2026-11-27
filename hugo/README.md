@@ -9,7 +9,7 @@ This repository is a proof of concept (POC) for migrating [layer5.io](https://la
 
 - **Converting content**: An automated script converts legacy MDX content into standard Hugo Markdown with YAML front matter.
 - **Rebuilding components**: React and Gatsby components are ported to lightweight, reusable Hugo shortcodes.
-- **Protecting URLs**: A verification tool compares the live Gatsby sitemap against the new site to ensure zero 404s.
+- **Protecting URLs**: A verification tool checks every URL the live Gatsby site serves against the new site to ensure zero 404s.
 - **Safe cutover**: The Gatsby site is kept operational as an immediate rollback target until the Hugo migration passes all checks.
 
 ## Status
@@ -17,7 +17,7 @@ This repository is a proof of concept (POC) for migrating [layer5.io](https://la
 | Piece | Status | Notes |
 |---|---|---|
 | Site build | **Working** | Compiles clean HTML into `public/` with zero template errors. |
-| Tooling tests | **87 passed** | 87 of 87 unit tests pass (`make test`). |
+| Tooling tests | **112 tests** | All pass (`make test`); one is skipped on case-insensitive filesystems such as macOS. |
 | Sample content | **Placeholder** | Minimal sample content to test components; real content will migrate from `layer5`. |
 | Redirects | **Working** | Hugo `aliases` generate HTML stubs (meta refresh + canonical). GitHub Pages ignores `_redirects`, so none is generated. |
 | Performance benchmarks | **Informal** | Windows numbers are approximate Go memory; true peak RSS is only measured on Linux CI. |
@@ -35,11 +35,11 @@ This repository is a proof of concept (POC) for migrating [layer5.io](https://la
 
 ```bash
 make serve         # Start local dev server with live reload at http://localhost:1313/ (verified on Windows)
-make test          # Run all 87 migration tooling unit tests (verified on Windows)
+make test          # Run all migration tooling unit tests (verified on Windows)
 make build         # Compile minified production site to ./public (verified on Windows)
 make bench         # Run 1,210-page synthetic build benchmark (verified on Windows; approx Go memory)
 make index         # Build Pagefind search index (untested; requires network for npx on first run)
-make verify-urls   # Verify URL parity (untested; requires downloading .bench/gatsby-sitemap.xml)
+make verify-urls   # Build, then report live URLs Hugo would 404, per collection (see "Keeping every URL working")
 make migrate-dry   # Dry-run MDX converter against layer5 collections (reads ../src/collections)
 ```
 
@@ -61,7 +61,7 @@ make migrate-dry   # Dry-run MDX converter against layer5 collections (reads ../
 
 ### Definition of Done for PRs
 - [ ] `make serve` runs without template or build errors.
-- [ ] `make test` passes (all 87 tests pass).
+- [ ] `make test` passes (all tests pass).
 - [ ] Verified in both light and dark theme modes.
 - [ ] URL parity is preserved (`make verify-urls` clean for touched collections).
 - [ ] [docs/CHEATSHEET.md](docs/CHEATSHEET.md) updated if shortcodes or attributes changed.
@@ -85,6 +85,15 @@ make migrate-dry   # Dry-run MDX converter against layer5 collections (reads ../
 - **Zero third-party requests on normal pages**: Uses system fonts, inline SVGs, and no tracking scripts.
 - **Token-based theme**: CSS variables provide dark/light modes and map cleanly to Sistent design tokens.
 - **Accessibility floor**: Visible focus states, keyboard navigation, skip links, and `prefers-reduced-motion` support.
+
+## Keeping every URL working
+
+Every URL that works on layer5.io today must keep working after the cutover, either as a page or as a redirect.
+
+- `make url-inventory` writes `.bench/url-inventory.json`, one row per live URL with the sources that list it. The main source is the Gatsby build deployed to the `gh-pages` branch: every `index.html` and other HTML file there is a URL. Only its file list is fetched, so no Gatsby build is needed. It also reads the live sitemap, `src/utils/redirects.yaml` and `redirect_from` in `src/collections`. To use a local `gatsby build` instead, run `node scripts/url-inventory.mjs --gatsby-public ../public`.
+- `make verify-urls` builds the site and checks each URL against `public/`. A URL passes when Hugo writes a page there or an alias stub (`<path>/index.html` with `http-equiv="refresh"`). It prints `MISSING: N` for each collection. `make check-urls` runs the same check on an existing `public/`.
+- CI runs the check on every PR to `hugo` in the `verify-urls` job and uploads the full list as the `url-report` artifact.
+- Collections listed in `scripts/verify-urls.allow` are only reported. When a collection's Phase 3 issue closes, delete its line in the same PR. From then on a missing URL in that collection fails CI. The list only ever shrinks.
 
 ## Learn more
 

@@ -59,7 +59,8 @@ export function assignPrimaryOwner(file, msgs) {
     m.includes('bare-relative') ||
     m.includes('has external=') ||
     m.includes('no front matter') ||
-    m.includes('non-literal expression')
+    m.includes('non-literal expression') ||
+    m.includes('duplicate alias')
   );
   if (isHandFix) {
     return '#8402';
@@ -78,6 +79,7 @@ function classifyWarning(msg) {
   if (msg.includes('contains `export`')) return 'export statements';
   if (msg.includes('has external=')) return 'external prop warning';
   if (msg.includes('no front matter')) return 'missing front matter';
+  if (msg.includes('duplicate alias')) return 'duplicate alias';
   return msg;
 }
 

@@ -1,0 +1,6 @@
+{{- $id := .Get "id" | default "" -}}
+{{- $class := .Get "class" | default (.Get "className" | default "") -}}
+<div{{ with $id }} id="{{ . }}"{{ end }} class="row{{ with $class }} {{ . }}{{ end }}">
+  {{ .Inner | markdownify }}
+</div>
+

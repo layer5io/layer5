@@ -551,11 +551,11 @@ test('parseOpenTag parses styled-components $-prefixed props and $Button maps cl
 });
 
 test('parseOpenTag parses $-prefixed props on unmapped tags without syntax parse failure', () => {
-  const input = '---\ntitle: "Col Test"\n---\n<Col $xs={12} $lg={6}>Body</Col>\n';
-  const { output, stats } = convertFile(input, { slug: 'col-test', file: 'careers/col-test/index.mdx' });
-  assert.equal(stats.unknown.Col, 1);
+  const input = '---\ntitle: "Unmapped Test"\n---\n<UnmappedGrid $xs={12} $lg={6}>Body</UnmappedGrid>\n';
+  const { output, stats } = convertFile(input, { slug: 'unmapped-test', file: 'careers/unmapped-test/index.mdx' });
+  assert.equal(stats.unknown.UnmappedGrid, 1);
   assert.ok(!stats.warnings.some((w) => w.includes('could not parse')));
-  assert.match(output, /<!-- TODO\(mdx\): unconverted component <Col> -->/);
+  assert.match(output, /<!-- TODO\(mdx\): unconverted component <UnmappedGrid> -->/);
 });
 
 test('Button preserves explicit text over title attribute when both are provided', () => {
@@ -701,7 +701,7 @@ test('Link emits {{< link >}} shortcode for className, target/rel, or HTML/JSX c
   assert.equal(stats.warnings.length, 0);
   assert.match(output, /\{\{< link to="\/community\/meshmates" class="highlight" >\}\}MeshMates\{\{< \/link >\}\}/);
   assert.match(output, /\{\{< link to="\/projects\/cloud-native-performance" class="mute" >\}\}CNP\{\{< \/link >\}\}/);
-  assert.match(output, /\{\{< link to="\/blog" class="project-card" >\}\}<div className="content_type"><h5>Blog<\/h5><\/div>\{\{< \/link >\}\}/);
+  assert.match(output, /\{\{< link to="\/blog" class="project-card" >\}\}<div class="content_type"><h5>Blog<\/h5><\/div>\{\{< \/link >\}\}/);
   assert.match(output, /\{\{< link to="https:\/\/example\.com" target="_blank" rel="noopener" >\}\}Ext\{\{< \/link >\}\}/);
 });
 
@@ -745,7 +745,7 @@ test('Wrappers unwrap all 8 collection wrappers, dedent common indent, and prese
   const { output, stats } = convertFile(input, { slug: 'swe', file: 'careers/software-engineer/index.mdx' });
   assert.equal(stats.warnings.length, 0);
   assert.doesNotMatch(output, /CareerWrapper/);
-  assert.match(output, /\n<div className="body-sections">\n  <h3>Responsibilities<\/h3>\n  \[Programs\]\(\/careers\/programs\)\n<\/div>\n/);
+  assert.match(output, /\n<div class="body-sections">\n  <h3>Responsibilities<\/h3>\n  \[Programs\]\(\/careers\/programs\)\n<\/div>\n/);
 
   const withFence = [
     '---',
@@ -1101,6 +1101,20 @@ test('Grid2 with a size or prop it cannot map warns and stays as-is', () => {
   assert.match(stats.warnings[2], /<Grid2>: unsupported direction="row"; left as-is/);
   assert.match(output, /<Grid2 size="grow">Auto<\/Grid2>/);
   assert.doesNotMatch(output, /grid-item|\{\{< grid/);
+  assert.equal(stats.components.Grid2, undefined);
+});
+
+test('only the Grid2 tags that convert are counted in the report', () => {
+  const input = '---\ntitle: "x"\n---\n<Grid2 size={6}>A</Grid2>\n<Grid2 size="grow">B</Grid2>';
+  const { stats } = convertFile(input, { slug: 'grid-count', file: 'events/2025/grid-count/index.mdx' });
+  assert.equal(stats.components.Grid2, 1);
+});
+
+test('a Grid2 left as-is does not count the Grid2 tags converted inside it', () => {
+  const input = '---\ntitle: "x"\n---\n<Grid2 container direction="row"><Grid2 size={6}>A</Grid2></Grid2>';
+  const { output, stats } = convertFile(input, { slug: 'grid-nested', file: 'events/2025/grid-nested/index.mdx' });
+  assert.match(output, /<Grid2 container direction="row"><Grid2 size=\{6\}>A<\/Grid2><\/Grid2>/);
+  assert.equal(stats.components.Grid2, undefined);
 });
 
 test('CommonForm and ContentForm convert to form shortcodes and respect sistent exclusion', () => {
@@ -1126,6 +1140,8 @@ test('CommonForm and ContentForm convert to form shortcodes and respect sistent 
   assert.deepEqual(stats.warnings, []);
   assert.match(output, /\{\{< common-form title="Get the Free eBook" form="epsma-book" submit_title="Your copy will arrive shortly\." >\}\}\nWhile waiting, take a free <a href="https:\/\/layer5\.io\/learn\/learning-paths">learning path<\/a>\.\n\{\{< \/common-form >\}\}/);
   assert.match(output, /\{\{< content-form >\}\}/);
+  assert.equal(stats.components.CommonForm, 1);
+  assert.equal(stats.components.ContentForm, 1);
 
   const sistentRes = convertFile('---\ntitle: "x"\n---\n<Grid2 container><Grid2 size={6}>A</Grid2></Grid2>\n<ContentForm />', { slug: 'form-sistent', file: 'sistent/form-test/index.mdx' });
   assert.equal(sistentRes.stats.unknown.Grid2, 2);
@@ -1137,6 +1153,7 @@ test('CommonForm whose submit_body is not text or a fragment warns and stays as-
   const { output, stats } = convertFile(input, { slug: 'form-test', file: 'service-mesh-books/form-test/index.mdx' });
   assert.deepEqual(stats.warnings, ['<CommonForm>: submit_body is not text or a <>…</> fragment; left as-is']);
   assert.match(output, /<CommonForm form="epsma-book" submit_body=\{<span>\{name\}<\/span>\} \/>/);
+  assert.equal(stats.components.CommonForm, undefined);
 });
 
 test('convertBody masks code fences so paired tags enclosing code blocks match their closing tag', () => {
@@ -1270,4 +1287,354 @@ test('Blog bespoke components preserve warnings on non-literal props and unclose
   const nonLiteral = '---\ntitle: "NonLiteral"\n---\n<Blog customProp={someVar}>Body</Blog>\n';
   const res2 = convertFile(nonLiteral, { slug: 'nonliteral', file: 'blog/2026/nonliteral/index.mdx' });
   assert.ok(res2.stats.warnings.some((w) => /non-literal expression for "customProp"/.test(w)));
+});
+
+/* ---- branch bundles (#8302) ---- */
+function tree(files) {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-src-'));
+  for (const [rel, text] of Object.entries(files)) {
+    const p = path.join(root, rel);
+    fs.mkdirSync(path.dirname(p), { recursive: true });
+    fs.writeFileSync(p, text);
+  }
+  return root;
+}
+const doc = (t) => `---\ntitle: ${t}\n---\n\nBody of ${t}.\n`;
+const outDir = () => fs.mkdtempSync(path.join(os.tmpdir(), 'l5-out-'));
+const has = (d, r) => fs.existsSync(path.join(d, r));
+
+test('branch bundle: index + code + guidance become _index.md + sibling pages; assets copied', () => {
+  const src = tree({
+    'sistent/button/index.mdx': doc('Button'), 'sistent/button/code.mdx': doc('Button code'),
+    'sistent/button/guidance.mdx': doc('Button guidance'), 'sistent/button/diagram.svg': '<svg/>',
+    'sistent/badge/index.mdx': doc('Badge'), // lone index stays a leaf bundle
+  });
+  const dest = outDir(); const r = migrate({ src, dest });
+  assert.ok(has(dest, 'sistent/button/_index.md'));
+  assert.ok(!has(dest, 'sistent/button/index.md'));
+  assert.ok(has(dest, 'sistent/button/code.md') && has(dest, 'sistent/button/guidance.md'));
+  assert.ok(has(dest, 'sistent/button/diagram.svg'));
+  assert.ok(has(dest, 'sistent/badge/index.md') && !has(dest, 'sistent/badge/_index.md'));
+  assert.deepEqual([r.byCollection.sistent.files, r.byCollection.sistent.pagesOut, r.byCollection.sistent.branchBundles], [4, 4, 1]);
+});
+
+test('branch bundle: nested course/chapter/section; only the deepest level stays a leaf', () => {
+  const src = tree({
+    'learn/course/index.mdx': doc('Course'), 'learn/course/chapter/index.mdx': doc('Chapter'),
+    'learn/course/chapter/section/index.mdx': doc('Section'),
+  });
+  const dest = outDir(); const r = migrate({ src, dest });
+  assert.ok(has(dest, 'learn/course/_index.md') && has(dest, 'learn/course/chapter/_index.md'));
+  assert.ok(has(dest, 'learn/course/chapter/section/index.md'));
+  assert.deepEqual([r.files, r.pagesOut, r.branchBundles], [3, 3, 2]);
+});
+
+test('branch bundle: folder names with spaces work; no _index.md is invented without an index', () => {
+  const src = tree({
+    'members/Jane Doe/index.mdx': doc('Jane'), 'members/Jane Doe/talks/index.mdx': doc('Talks'),
+    'events/2026/summit.mdx': doc('Summit'), 'events/2026/call/index.mdx': doc('Call'),
+  });
+  const dest = outDir(); migrate({ src, dest });
+  assert.ok(has(dest, 'members/Jane Doe/_index.md') && has(dest, 'members/Jane Doe/talks/index.md'));
+  assert.ok(has(dest, 'events/2026/summit.md') && has(dest, 'events/2026/call/index.md'));
+  assert.ok(!has(dest, 'events/2026/_index.md'));
+});
+
+test('documents in = pages out; two sources writing one page is reported, not overwritten', () => {
+  const r = migrate({ src: tree({ 'blog/a.mdx': doc('one'), 'blog/a.md': doc('two') }), dest: outDir() });
+  assert.deepEqual([r.files, r.pagesOut, r.collisions.length], [2, 1, 1]);
+});
+
+test('dry-run reports the same branch bundles and writes nothing', () => {
+  const src = tree({ 'sistent/button/index.mdx': doc('B'), 'sistent/button/code.mdx': doc('C') });
+  const real = migrate({ src, dest: outDir() });
+  const dry = outDir(); const d = migrate({ src, dest: dry, dryRun: true });
+  assert.deepEqual(fs.readdirSync(dry), []);
+  assert.deepEqual([d.pagesOut, d.branchBundles], [real.pagesOut, real.branchBundles]);
+});
+
+test('assets: two files whose paths differ only by case are reported, not overwritten', (t) => {
+  const src = tree({ 'blog/post/index.mdx': doc('Post'), 'blog/post/Cover.png': 'a', 'blog/post/cover.png': 'b' });
+  if (fs.readdirSync(path.join(src, 'blog/post')).length < 3) return t.skip('case-insensitive filesystem');
+  const r = migrate({ src, dest: outDir() });
+  assert.deepEqual([r.collisions.length, r.assetsCopied], [1, 1]);
+});
+
+test('Resources bespoke components and case studies convert to Hugo shortcodes (P3-02)', () => {
+  const input = [
+    '---',
+    'title: "Resources Bespoke Test"',
+    '---',
+    '<HPEintro>HPE intro paragraph</HPEintro>',
+    '<HPEfacts><tr><td>HPE fact</td></tr></HPEfacts>',
+    '<HPEbenefits>HPE benefit</HPEbenefits>',
+    '<INFORintro>Infor intro</INFORintro>',
+    '<INFORfacts><tr><td>Infor fact</td></tr></INFORfacts>',
+    '<INFORbenefits>Infor benefit</INFORbenefits>',
+    '<TCSintro>TCS intro</TCSintro>',
+    '<TCSfacts><tr><td>TCS fact</td></tr></TCSfacts>',
+    '<TCSbenefits>TCS benefit</TCSbenefits>',
+    '<PlaygroundCTA />',
+    '<DockerExtensionCTA />',
+    '<FAQ category={["careers"]} />',
+    '<FAQ category="Meshery" />',
+    '<Table />',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'resources-test', file: 'resources/case-study/resources-test/index.mdx' });
+  assert.deepEqual(stats.warnings, []);
+  assert.match(output, /\{\{< case-study-intro >\}\}\nHPE intro paragraph\n\{\{< \/case-study-intro >\}\}/);
+  assert.match(output, /\{\{< case-study-facts >\}\}\n<tr><td>HPE fact<\/td><\/tr>\n\{\{< \/case-study-facts >\}\}/);
+  assert.match(output, /\{\{< case-study-benefits >\}\}\nHPE benefit\n\{\{< \/case-study-benefits >\}\}/);
+  assert.match(output, /\{\{< case-study-intro >\}\}\nInfor intro\n\{\{< \/case-study-intro >\}\}/);
+  assert.match(output, /\{\{< case-study-facts >\}\}\n<tr><td>Infor fact<\/td><\/tr>\n\{\{< \/case-study-facts >\}\}/);
+  assert.match(output, /\{\{< case-study-benefits >\}\}\nInfor benefit\n\{\{< \/case-study-benefits >\}\}/);
+  assert.match(output, /\{\{< case-study-intro >\}\}\nTCS intro\n\{\{< \/case-study-intro >\}\}/);
+  assert.match(output, /\{\{< case-study-facts >\}\}\n<tr><td>TCS fact<\/td><\/tr>\n\{\{< \/case-study-facts >\}\}/);
+  assert.match(output, /\{\{< case-study-benefits >\}\}\nTCS benefit\n\{\{< \/case-study-benefits >\}\}/);
+  assert.match(output, /\{\{< playground-cta >\}\}/);
+  assert.match(output, /\{\{< docker-extension-cta >\}\}/);
+  assert.match(output, /\{\{< faq category="careers" >\}\}/);
+  assert.match(output, /\{\{< faq category="Meshery" >\}\}/);
+  assert.match(output, /\{\{< patterns-table >\}\}/);
+
+  assert.equal(stats.components.HPEintro, 1);
+  assert.equal(stats.components.HPEfacts, 1);
+  assert.equal(stats.components.HPEbenefits, 1);
+  assert.equal(stats.components.INFORintro, 1);
+  assert.equal(stats.components.INFORfacts, 1);
+  assert.equal(stats.components.INFORbenefits, 1);
+  assert.equal(stats.components.TCSintro, 1);
+  assert.equal(stats.components.TCSfacts, 1);
+  assert.equal(stats.components.TCSbenefits, 1);
+  assert.equal(stats.components.PlaygroundCTA, 1);
+  assert.equal(stats.components.DockerExtensionCTA, 1);
+  assert.equal(stats.components.FAQ, 2);
+  assert.equal(stats.components.Table, 1);
+
+  // Idempotency
+  const rerun = convertFile(output, { slug: 'resources-test', file: 'resources/case-study/resources-test/index.mdx' });
+  assert.equal(rerun.output, output);
+
+  // Sistent guard
+  const sistentRes = convertFile(input, { slug: 'resources-test', file: 'sistent/resources-test/index.mdx' });
+  assert.equal(sistentRes.stats.unknown.Table, 1);
+  assert.equal(sistentRes.stats.unknown.FAQ, 2);
+  assert.equal(sistentRes.stats.unknown.PlaygroundCTA, 1);
+  assert.equal(sistentRes.stats.unknown.DockerExtensionCTA, 1);
+  assert.equal(sistentRes.stats.unknown.HPEintro, 1);
+});
+
+test('FAQ preserves warning on unsupported non-literal expression', () => {
+  const input = '---\ntitle: "Bad FAQ"\n---\n<FAQ category={someFunction()} />\n';
+  const { output, stats } = convertFile(input, { slug: 'bad-faq', file: 'resources/bad-faq/index.mdx' });
+  assert.ok(stats.warnings.some((w) => /non-literal expression for "category"/.test(w)));
+  assert.match(output, /<FAQ category=\{someFunction\(\)\} \/>/);
+});
+
+test('FAQ single-element array prop is extracted as literal, multi-element array falls through safely', () => {
+  const single = '---\ntitle: "Single FAQ"\n---\n<FAQ category={["careers"]} />\n';
+  const { output: singleOut, stats: singleStats } = convertFile(single, { slug: 'single-faq', file: 'resources/single-faq/index.mdx' });
+  assert.equal(singleStats.warnings.length, 0);
+  assert.match(singleOut, /\{\{< faq category="careers" >\}\}/);
+
+  const multi = '---\ntitle: "Multi FAQ"\n---\n<FAQ category={["careers", "internships"]} />\n';
+  const { output: multiOut, stats: multiStats } = convertFile(multi, { slug: 'multi-faq', file: 'resources/multi-faq/index.mdx' });
+  assert.ok(multiStats.warnings.some((w) => /non-literal expression for "category"/.test(w)));
+  assert.ok(multiOut.includes('<FAQ category={["careers", "internships"]} />'));
+});
+
+test('PositionApply, LfxPageNav, Col, and Row convert to shortcodes, handle prop-less tags, and respect sistent exclusion', () => {
+  const input = [
+    '---',
+    'title: "Programs & Careers Bespoke Test"',
+    '---',
+    '<PositionApply />',
+    '<LfxPageNav items={[',
+    '  { href: "#spring-2026", label: "Spring 2026 Projects" },',
+    '  { href: "#summer-2026", label: "Summer 2026 Projects" },',
+    ']} />',
+    '<Row className="qualification-row">',
+    '  <Col $xs={12} $lg={6} className="qualification-col">',
+    '    Desired qualifications',
+    '  </Col>',
+    '</Row>',
+    '<Row>',
+    '  <Col>',
+    '    Propless content',
+    '  </Col>',
+    '</Row>',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'careers-test', file: 'careers/software-engineer/index.mdx' });
+  assert.match(output, /\{\{< position-apply >\}\}/);
+  assert.match(output, /\{\{< lfx-page-nav >\}\}\n- \[Spring 2026 Projects\]\(#spring-2026\)\n- \[Summer 2026 Projects\]\(#summer-2026\)\n\{\{< \/lfx-page-nav >\}\}/);
+  assert.match(output, /\{\{< row class="qualification-row" >\}\}/);
+  assert.match(output, /\{\{< col xs="12" lg="6" class="qualification-col" >\}\}\n\s*Desired qualifications\n\s*\{\{< \/col >\}\}/);
+  assert.match(output, /\{\{< row >\}\}\n\s*\{\{< col >\}\}\n\s*Propless content\n\s*\{\{< \/col >\}\}\n\s*\{\{< \/row >\}\}/);
+  assert.equal(stats.unknown.Row, undefined);
+  assert.equal(stats.unknown.Col, undefined);
+  assert.equal(stats.components.Row, 2);
+  assert.equal(stats.components.Col, 2);
+
+  // Sistent collection guard
+  const sistentRes = convertFile(input, { slug: 'sistent-test', file: 'sistent/programs-test/index.mdx' });
+  assert.match(sistentRes.output, /<!-- TODO\(mdx\): unconverted component <PositionApply> -->/);
+  assert.match(sistentRes.output, /<!-- TODO\(mdx\): unconverted component <LfxPageNav> -->/);
+  assert.match(sistentRes.output, /<!-- TODO\(mdx\): unconverted component <Row> -->/);
+  assert.match(sistentRes.output, /<!-- TODO\(mdx\): unconverted component <Col> -->/);
+  assert.equal(sistentRes.stats.unknown.PositionApply, 1);
+  assert.equal(sistentRes.stats.unknown.LfxPageNav, 1);
+  assert.equal(sistentRes.stats.unknown.Row, 2);
+  assert.equal(sistentRes.stats.unknown.Col, 2);
+});
+
+test('Row/Col: nested Row inside Col, code fences untouched, indented content, non-literal props, and idempotency', () => {
+  const input = [
+    '---',
+    'title: "Row Col Nested & Edge Cases"',
+    '---',
+    '<Col $lg={12}>',
+    '  <Row>',
+    '    <Col>',
+    '      Nested content with indentation',
+    '    </Col>',
+    '  </Row>',
+    '</Col>',
+    '',
+    '```jsx',
+    '<Row>',
+    '  <Col $sm={12}>Code fence Col</Col>',
+    '</Row>',
+    '```',
+    '',
+    '<Row className={dynamicClass}>',
+    '  <Col $sm={computedWidth}>Non-literal</Col>',
+    '</Row>',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'nested-test', file: 'projects/nested-test/index.mdx' });
+
+  // Nested Row inside Col converts cleanly
+  assert.match(output, /\{\{< col lg="12" >\}\}\n\s*\{\{< row >\}\}\n\s*\{\{< col >\}\}\n\s*Nested content with indentation\n\s*\{\{< \/col >\}\}\n\s*\{\{< \/row >\}\}\n\s*\{\{< \/col >\}\}/);
+
+  // Code fence untouched byte-for-byte
+  assert.match(output, /```jsx\n<Row>\n  <Col \$sm=\{12\}>Code fence Col<\/Col>\n<\/Row>\n```/);
+
+  // Non-literal props on Row and Col are flagged and preserved as-is
+  const nonLiteralInput = [
+    '---',
+    'title: "Non-literal test"',
+    '---',
+    '<Row className={dynamicClass}>Dynamic Row</Row>',
+    '<Col $sm={computedWidth}>Non-literal Col</Col>',
+  ].join('\n');
+  const nonLitRes = convertFile(nonLiteralInput, { slug: 'non-lit', file: 'projects/non-lit/index.mdx' });
+  assert.ok(nonLitRes.stats.warnings.some((w) => /<Row>: non-literal expression for "className"/.test(w)));
+  assert.ok(nonLitRes.stats.warnings.some((w) => /<Col>: non-literal expression for "\$sm"/.test(w)));
+  assert.match(nonLitRes.output, /<Row className=\{dynamicClass\}>Dynamic Row<\/Row>/);
+  assert.match(nonLitRes.output, /<Col \$sm=\{computedWidth\}>Non-literal Col<\/Col>/);
+
+  // Converted counts match top-level and nested converted elements
+  assert.equal(stats.components.Row, 1);
+  assert.equal(stats.components.Col, 2);
+
+  // Idempotency: re-running on output produces identical bytes
+  const rerun = convertFile(output, { slug: 'nested-test', file: 'projects/nested-test/index.mdx' });
+  assert.equal(rerun.output, output);
+});
+
+test('lowercase HTML tags rewrite React camelCase attributes to standard HTML outside code fences and respect sistent exclusion', () => {
+  const input = [
+    '---',
+    'title: "HTML Attrs Test"',
+    '---',
+    'import heroImg from "./hero.png";',
+    '',
+    '<div className="outer">',
+    '  <p className="lead">Hello <a href="/about" className="cta-link">world</a></p>',
+    '  <img src={heroImg} className="hero-pic" alt="Hero" />',
+    '  <img src="./static.png" className="static-pic" alt="Static" />',
+    '  <label htmlFor="email-input">Email</label>',
+    '  <iframe src="https://example.com" frameBorder="0" marginHeight="0" marginWidth="0"></iframe>',
+    '  <table><tr><td colSpan="2">Cell</td></tr></table>',
+    '</div>',
+    '',
+    '```jsx',
+    '<div className="untouched-in-fence"><label htmlFor="f">F</label></div>',
+    '```',
+  ].join('\n');
+
+  const { output, stats } = convertFile(input, { slug: 'html-attrs', file: 'blog/2026/html-attrs/index.mdx' });
+  assert.equal(stats.warnings.length, 0);
+  assert.match(output, /<div class="outer">/);
+  assert.match(output, /<p class="lead">Hello <a href="\/about" class="cta-link">world<\/a><\/p>/);
+  assert.match(output, /<img src="\.\/hero\.png" class="hero-pic" alt="Hero" \/>/);
+  assert.match(output, /<img src="\.\/static\.png" class="static-pic" alt="Static" \/>/);
+  assert.match(output, /<label for="email-input">Email<\/label>/);
+  assert.match(output, /<iframe src="https:\/\/example\.com" frameborder="0" marginheight="0" marginwidth="0">/);
+  assert.match(output, /<td colspan="2">Cell<\/td>/);
+  assert.match(output, /<div className="untouched-in-fence"><label htmlFor="f">F<\/label><\/div>/);
+
+  // Idempotency
+  const rerun = convertFile(output, { slug: 'html-attrs', file: 'blog/2026/html-attrs/index.mdx' });
+  assert.equal(rerun.output, output);
+
+  // Sistent guard
+  const sistentRes = convertFile(input, { slug: 'html-attrs', file: 'sistent/html-attrs/index.mdx' });
+  assert.match(sistentRes.output, /<div className="outer">/);
+  assert.match(sistentRes.output, /<label htmlFor="email-input">/);
+
+  // Scoped .book .card check
+  const book = '---\ntitle: "Book"\n---\n<BookWrapper><div className="book"><img className="card" src="./cover.webp" alt="Cover" /></div></BookWrapper>\n';
+  const bookOut = convertFile(book, { slug: 'book', file: 'service-mesh-books/book/index.mdx' });
+  assert.match(bookOut.output, /<div class="book"><img class="card" src="\.\/cover\.webp" alt="Cover" \/><\/div>/);
+});
+
+test('non-index docs with sibling assets promote to leaf bundles, remain idempotent, and respect sistent exclusion', () => {
+  const src = tree({
+    'programs/lfx-2023/lfx-2023.mdx': doc('LFX 2023') + '\n![Logo](./logo.svg)\n',
+    'programs/lfx-2023/logo.svg': '<svg></svg>',
+    'resources/articles/wasm/part-a.mdx': doc('Part A') + '\n![Fig](./fig.svg)\n',
+    'resources/articles/wasm/part-b.mdx': doc('Part B') + '\n![Fig](./fig.svg)\n',
+    'resources/articles/wasm/fig.svg': '<svg></svg>',
+    'sistent/comp/comp.mdx': doc('Sistent Comp'),
+    'sistent/comp/icon.svg': '<svg></svg>',
+  });
+  const dest = outDir();
+  const r1 = migrate({ src, dest, exclude: ['sistent'] });
+  assert.ok(fs.existsSync(path.join(dest, 'programs/lfx-2023/lfx-2023/index.md')));
+  assert.ok(fs.existsSync(path.join(dest, 'programs/lfx-2023/lfx-2023/logo.svg')));
+  assert.ok(fs.existsSync(path.join(dest, 'resources/articles/wasm/part-a/index.md')));
+  assert.ok(fs.existsSync(path.join(dest, 'resources/articles/wasm/part-a/fig.svg')));
+  assert.ok(fs.existsSync(path.join(dest, 'resources/articles/wasm/part-b/index.md')));
+  assert.ok(fs.existsSync(path.join(dest, 'resources/articles/wasm/part-b/fig.svg')));
+  assert.ok(!fs.existsSync(path.join(dest, 'sistent/comp/comp/index.md')));
+  assert.equal(r1.pagesOut, 3);
+
+  // Idempotency on promoted output
+  const dest2 = outDir();
+  migrate({ src: dest, dest: dest2, exclude: ['sistent'] });
+  assert.equal(
+    fs.readFileSync(path.join(dest, 'programs/lfx-2023/lfx-2023/index.md'), 'utf8'),
+    fs.readFileSync(path.join(dest2, 'programs/lfx-2023/lfx-2023/index.md'), 'utf8')
+  );
+  assert.ok(fs.existsSync(path.join(dest2, 'programs/lfx-2023/lfx-2023/logo.svg')));
+});
+
+test('redirect_from canonicalizes trailing slashes, deduplicates within a file, and warns on cross-file duplicates', () => {
+  const src = tree({
+    'blog/a/index.mdx': '---\ntitle: "A"\nredirect_from:\n  - /old/path/\n  - /old/path\n---\nBody A\n',
+    'blog/b/index.mdx': '---\ntitle: "B"\nredirect_from:\n  - /old/path/\n---\nBody B\n',
+    'blog/c/index.mdx': '---\ntitle: "C"\nredirect_from: /old/path\n---\nBody C\n',
+  });
+  const dest = outDir();
+  const r = migrate({ src, dest });
+  const aOut = fs.readFileSync(path.join(dest, 'blog/a/index.md'), 'utf8');
+  assert.match(aOut, /aliases:\n  - \/old\/path\/\n/);
+  assert.equal(aOut.match(/\/old\/path/g).length, 1);
+  const cOut = fs.readFileSync(path.join(dest, 'blog/c/index.md'), 'utf8');
+  assert.match(cOut, /aliases:\n  - \/old\/path\/\n/);
+  assert.ok(r.warnings.some((w) => w.file.replace(/\\/g, '/') === 'blog/b/index.mdx' && /duplicate alias "\/old\/path\/"/.test(w.message)));
+  assert.ok(r.warnings.some((w) => w.file.replace(/\\/g, '/') === 'blog/c/index.mdx' && /duplicate alias "\/old\/path\/"/.test(w.message)));
 });

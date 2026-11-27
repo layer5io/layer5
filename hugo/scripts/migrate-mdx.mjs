@@ -37,38 +37,55 @@ export const COMPONENTS = {
     drop: new Set(['external']),
   },
   CTA_FullWidth: { shortcode: 'cta-fullwidth' },
-  Terminal:      { shortcode: 'terminal',       paired: true, bodyAttr: 'code' },
-  Accordion:     { shortcode: 'accordion',      paired: true },
+  Terminal: { shortcode: 'terminal', paired: true, bodyAttr: 'code' },
+  Accordion: { shortcode: 'accordion', paired: true },
   AccordionItem: { shortcode: 'accordion-item', paired: true },
-  Card:             { shortcode: 'card',           paired: true },
-  Link:             { custom: 'link' },
-  BlogWrapper:      { custom: 'unwrap' },
-  CareerWrapper:    { custom: 'unwrap' },
-  EventWrapper:     { custom: 'unwrap' },
-  NewsWrapper:      { custom: 'unwrap' },
-  ProgramsWrapper:  { custom: 'unwrap' },
-  ProjectWrapper:   { custom: 'unwrap' },
+  Card: { shortcode: 'card', paired: true },
+  Link: { custom: 'link' },
+  BlogWrapper: { custom: 'unwrap' },
+  CareerWrapper: { custom: 'unwrap' },
+  EventWrapper: { custom: 'unwrap' },
+  NewsWrapper: { custom: 'unwrap' },
+  ProgramsWrapper: { custom: 'unwrap' },
+  ProjectWrapper: { custom: 'unwrap' },
   ResourcesWrapper: { custom: 'unwrap' },
-  BookWrapper:      { custom: 'unwrap' },
-  Code:             { custom: 'code' },
-  CodeBlock:        { custom: 'code' },
-  LfxLogoImage:     { shortcode: 'lfx-logo' },
-  ThemedScaLogo:    { shortcode: 'themed-sca-logo' },
-  JourneySection:   { shortcode: 'journey-section' },
-  Blockquote:       { shortcode: 'blockquote' },
-  BlockquoteAlt:    { shortcode: 'blockquote-alt' },
-  Blog:             { shortcode: 'blog',           paired: true },
-  BufProtocol:      { shortcode: 'buf-protocol',   paired: true },
-  Callout:          { shortcode: 'callout',        paired: true },
-  InlineQuotes:     { shortcode: 'inline-quotes' },
+  BookWrapper: { custom: 'unwrap' },
+  Code: { custom: 'code' },
+  CodeBlock: { custom: 'code' },
+  LfxLogoImage: { shortcode: 'lfx-logo' },
+  ThemedScaLogo: { shortcode: 'themed-sca-logo' },
+  JourneySection: { shortcode: 'journey-section' },
+  Blockquote: { shortcode: 'blockquote' },
+  BlockquoteAlt: { shortcode: 'blockquote-alt' },
+  Blog: { shortcode: 'blog', paired: true },
+  BufProtocol: { shortcode: 'buf-protocol', paired: true },
+  Callout: { shortcode: 'callout', paired: true },
+  Col: { shortcode: 'col', paired: true, keepClass: true, alias: { className: 'class' } },
+  DockerExtensionCTA: { shortcode: 'docker-extension-cta' },
+  FAQ: { shortcode: 'faq' },
+  HPEbenefits: { shortcode: 'case-study-benefits', paired: true },
+  HPEfacts: { shortcode: 'case-study-facts', paired: true },
+  HPEintro: { shortcode: 'case-study-intro', paired: true },
+  INFORbenefits: { shortcode: 'case-study-benefits', paired: true },
+  INFORfacts: { shortcode: 'case-study-facts', paired: true },
+  INFORintro: { shortcode: 'case-study-intro', paired: true },
+  InlineQuotes: { shortcode: 'inline-quotes' },
   // exprAttrs: JSX expression props the custom converter reads or drops itself, so they neither warn nor block conversion
-  Grid2:            { custom: 'grid', exprAttrs: new Set(['size', 'spacing', 'style']) },
-  CommonForm:       { custom: 'common-form', exprAttrs: new Set(['submit_body']) },
-  ContentForm:      { shortcode: 'content-form' },
+  Grid2: { custom: 'grid', exprAttrs: new Set(['size', 'spacing', 'style']) },
+  CommonForm: { custom: 'common-form', exprAttrs: new Set(['submit_body']) },
+  ContentForm: { shortcode: 'content-form' },
+  LfxPageNav: { custom: 'lfx-page-nav' },
   MeetTheMaintainer: { shortcode: 'meet-the-maintainer', paired: true },
-  MeetTheMeshMate:  { shortcode: 'meet-the-meshmate', paired: true },
+  MeetTheMeshMate: { shortcode: 'meet-the-meshmate', paired: true },
   MeshkitMesheryAdapterLib: { shortcode: 'meshkit-meshery-adapter-lib', paired: true },
   PerfbytesPodcast: { shortcode: 'perfbytes-podcast', paired: true },
+  PlaygroundCTA: { shortcode: 'playground-cta' },
+  PositionApply: { shortcode: 'position-apply' },
+  Row: { shortcode: 'row', paired: true, keepClass: true, alias: { className: 'class' } },
+  Table: { shortcode: 'patterns-table' },
+  TCSbenefits: { shortcode: 'case-study-benefits', paired: true },
+  TCSfacts: { shortcode: 'case-study-facts', paired: true },
+  TCSintro: { shortcode: 'case-study-intro', paired: true },
 };
 const COLLECTION_EXCLUDED_COMPONENTS = {
   sistent: new Set([
@@ -76,10 +93,22 @@ const COLLECTION_EXCLUDED_COMPONENTS = {
     'BlogWrapper', 'CareerWrapper', 'EventWrapper', 'NewsWrapper',
     'ProgramsWrapper', 'ProjectWrapper', 'ResourcesWrapper', 'BookWrapper',
     'Blockquote', 'BlockquoteAlt', 'Callout', 'InlineQuotes',
+    'Col', 'LfxPageNav', 'PositionApply', 'Row',
     'LfxLogoImage', 'ThemedScaLogo', 'JourneySection',
     'Grid2', 'CommonForm', 'ContentForm',
-    'Blog', 'BufProtocol', 'MeetTheMaintainer', 'MeetTheMeshMate', 'MeshkitMesheryAdapterLib', 'PerfbytesPodcast',
+    'Blog', 'BufProtocol', 'DockerExtensionCTA', 'FAQ', 'HPEbenefits', 'HPEfacts', 'HPEintro',
+    'INFORbenefits', 'INFORfacts', 'INFORintro', 'MeetTheMaintainer', 'MeetTheMeshMate',
+    'MeshkitMesheryAdapterLib', 'PerfbytesPodcast', 'PlaygroundCTA', 'Table',
+    'TCSbenefits', 'TCSfacts', 'TCSintro',
   ]),
+};
+const HTML_ATTR_RENAMES = {
+  className: 'class',
+  frameBorder: 'frameborder',
+  htmlFor: 'for',
+  marginHeight: 'marginheight',
+  marginWidth: 'marginwidth',
+  colSpan: 'colspan',
 };
 const DROP_ATTRS = new Set(['className', 'class', 'style', 'key', 'ref']);
 
@@ -126,7 +155,9 @@ export function parseOpenTag(text, start) {
       const [raw, next] = readBraces(text, i);
       const inner = raw.slice(1, -1).trim();
       const str = /^(["'`])([\s\S]*)\1$/.exec(inner);
+      const arr = /^\[\s*(["'])([^"']*)\1\s*\]$/.exec(inner);
       if (str && !(str[1] === '`' && str[2].includes('${'))) attrs.push({ key, value: cleanAttrVal(str[2]), literal: true });
+      else if (arr) attrs.push({ key, value: cleanAttrVal(arr[2]), literal: true });
       else if (/^(-?\d+(\.\d+)?|true|false)$/.test(inner)) attrs.push({ key, value: inner, literal: true });
       else {
         const stripped = inner
@@ -135,7 +166,7 @@ export function parseOpenTag(text, start) {
           .replace(/-?\d+(\.\d+)?/g, '')
           .replace(/\b[a-zA-Z_$][\w$]*\s*:/g, '')
           .replace(/\s+/g, '');
-        if (/^[{}[\],]*$/.test(stripped)) {
+        if (!/^\[\s*["'`]/.test(inner) && /^[{}[\],]*$/.test(stripped)) {
           attrs.push({ key, value: inner, literal: true });
         } else {
           attrs.push({ key, value: inner, literal: false });
@@ -200,7 +231,8 @@ function buildShortcode(spec, tag, children, ctx, rawTag = '') {
   for (const a of tag.attrs) {
     const baseKey = a.key.startsWith('$') ? a.key.slice(1) : a.key;
     if (baseKey === 'external' && a.value === 'true') externalTrue = true;
-    if (DROP_ATTRS.has(a.key) || DROP_ATTRS.has(baseKey) || spec.drop?.has(a.key) || spec.drop?.has(baseKey)) {
+    const isClassAttr = a.key === 'className' || a.key === 'class';
+    if ((!spec.keepClass || !isClassAttr) && (DROP_ATTRS.has(a.key) || DROP_ATTRS.has(baseKey) || spec.drop?.has(a.key) || spec.drop?.has(baseKey))) {
       ctx.count('droppedAttrs');
       continue;
     }
@@ -472,6 +504,28 @@ function convertCommonForm(tag, ctx, rawTag, rawFull) {
   return buildShortcode({ shortcode: 'common-form', paired: true }, rest, body, ctx, rawTag);
 }
 
+function convertLfxPageNav(tag, ctx, rawTag, rawFull) {
+  const loc = ctx.file ? `${ctx.file}: ` : '';
+  const tagSnippet = rawTag.replace(/\s+/g, ' ').trim() || '<LfxPageNav>';
+  const itemsAttr = tag.attrs.find((a) => a.key === 'items');
+  if (!itemsAttr) {
+    ctx.warn(`${loc}<LfxPageNav> missing "items" attribute (${tagSnippet}); left as-is`);
+    return rawFull;
+  }
+  const itemRegex = /\{\s*href:\s*["']([^"']+)["'],\s*label:\s*["']([^"']+)["']\s*\}/g;
+  const items = [];
+  let m;
+  while ((m = itemRegex.exec(itemsAttr.value)) !== null) {
+    items.push({ href: m[1], label: m[2] });
+  }
+  if (!items.length) {
+    ctx.warn(`${loc}<LfxPageNav> unparseable "items" attribute (${tagSnippet}); left as-is`);
+    return rawFull;
+  }
+  const lines = items.map((it) => `- [${it.label}](${it.href})`).join('\n');
+  return `{{< lfx-page-nav >}}\n${lines}\n{{< /lfx-page-nav >}}`;
+}
+
 /* ---------------------------------------------------------------- body conversion */
 function convertSegment(text, ctx) {
   let out = '', i = 0;
@@ -495,6 +549,10 @@ function convertSegment(text, ctx) {
       let tagChanged = false;
       let hasUnresolved = false;
       for (const a of tag.attrs) {
+        if (ctx.collection !== 'sistent' && Object.hasOwn(HTML_ATTR_RENAMES, a.key)) {
+          a.key = HTML_ATTR_RENAMES[a.key];
+          tagChanged = true;
+        }
         if (a.key === 'style' && a.value.startsWith('{')) {
           const css = jsxStyleToCss(a.value);
           if (css) {
@@ -530,8 +588,7 @@ function convertSegment(text, ctx) {
       if (tagChanged && !hasUnresolved && !spreadProblems.length) {
         const attrParts = [];
         for (const a of tag.attrs) {
-          const key = a.key === 'className' ? 'class' : a.key;
-          attrParts.push(`${key}="${a.value.replace(/"/g, '&quot;')}"`);
+          attrParts.push(`${a.key}="${a.value.replace(/"/g, '&quot;')}"`);
         }
         const rendered = `<${name}${attrParts.length ? ' ' + attrParts.join(' ') : ''}${tag.selfClosing ? ' />' : '>'}`;
         out += rendered;
@@ -570,8 +627,9 @@ function convertSegment(text, ctx) {
     }
     if (spec.custom === 'unwrap') { out += text.slice(m.index, tag.end); i = tag.end; continue; }
 
+    const isAttrDropped = (k) => (!spec.keepClass || (k !== 'className' && k !== 'class')) && (DROP_ATTRS.has(k) || spec.drop?.has(k));
     const hasUnresolvedNonLiteral = tag.attrs.some(
-      (a) => !a.literal && !DROP_ATTRS.has(a.key) && a.key !== 'key' && a.key !== 'ref' && !spec.drop?.has(a.key) && !spec.exprAttrs?.has(a.key)
+      (a) => !a.literal && !isAttrDropped(a.key) && a.key !== 'key' && a.key !== 'ref' && !spec.exprAttrs?.has(a.key)
     );
     if (hasUnresolvedNonLiteral) {
       tag.problems.forEach((p) => ctx.warn(`<${name}>: ${p}`));
@@ -587,6 +645,7 @@ function convertSegment(text, ctx) {
     tag.problems
       .filter((p) => !spec.exprAttrs?.has(/^non-literal expression for "(.+)"$/.exec(p)?.[1]))
       .forEach((p) => ctx.warn(`<${name}>: ${p}`));
+    const countsBefore = ctx.snapshotComponents();
     let children = '', end = tag.end;
     if (!tag.selfClosing) {
       const c = findClose(text, tag.end, name);
@@ -594,15 +653,23 @@ function convertSegment(text, ctx) {
       children = convertSegment(text.slice(tag.end, c.start), ctx);
       end = c.end;
     }
-    ctx.component(name);
+    const rawFull = text.slice(m.index, end);
+    // a wrapper left as-is also discards the inner conversions, so their counts go too
+    const countIfConverted = (converted) => {
+      if (converted !== rawFull) ctx.component(name); else ctx.restoreComponents(countsBefore);
+      return converted;
+    };
+    if (spec.custom !== 'grid' && spec.custom !== 'common-form') ctx.component(name);
     if (spec.custom === 'link') {
       out += convertLink(tag, children, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
     } else if (spec.custom === 'code') {
       out += convertCode(tag, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
     } else if (spec.custom === 'grid') {
-      out += convertGrid(tag, children, ctx, text.slice(m.index, end));
+      out += countIfConverted(convertGrid(tag, children, ctx, rawFull));
     } else if (spec.custom === 'common-form') {
-      out += convertCommonForm(tag, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
+      out += countIfConverted(convertCommonForm(tag, ctx, text.slice(m.index, tag.end), rawFull));
+    } else if (spec.custom === 'lfx-page-nav') {
+      out += convertLfxPageNav(tag, ctx, text.slice(m.index, tag.end), text.slice(m.index, end));
     } else {
       out += buildShortcode(spec, tag, children, ctx, text.slice(m.index, tag.end));
     }
@@ -778,11 +845,38 @@ export function convertFrontMatter(fm, slug, ctx) {
   const hasDraft = lines.some((l) => /^\s*draft\s*:/i.test(l));
   const hasDraftFalse = lines.some((l) => /^\s*draft\s*:\s*false\b/i.test(l));
 
-  for (const line of lines) {
+  for (let idx = 0; idx < lines.length; idx++) {
+    const line = lines[idx];
     let m;
-    if ((m = /^redirect_from\s*:(.*)$/.exec(line))) {
-      out.push(`aliases:${m[1]}`);
-      ctx.count('redirectFrom');
+    if ((m = /^(?:redirect_from|aliases)\s*:(.*)$/.exec(line))) {
+      const rest = m[1].trim();
+      const canonAlias = (raw) => {
+        const unquoted = raw.trim().replace(/^['"]|['"]$/g, '');
+        return unquoted.startsWith('/') && !/\.[a-z0-9]+$/i.test(unquoted)
+          ? (unquoted === '/' ? '/' : `${unquoted.replace(/\/+$/, '')}/`)
+          : unquoted;
+      };
+      const seen = new Set();
+      const items = [];
+      const addAlias = (raw) => {
+        const canon = canonAlias(raw);
+        if (!canon) return;
+        const key = canon.toLowerCase();
+        if (!seen.has(key)) { seen.add(key); items.push(canon); }
+      };
+      if (!rest) {
+        while (idx + 1 < lines.length && /^\s*-\s+/.test(lines[idx + 1])) {
+          idx++;
+          addAlias(lines[idx].replace(/^\s*-\s+/, ''));
+        }
+      } else if (rest.startsWith('[') && rest.endsWith(']')) {
+        for (const part of rest.slice(1, -1).split(',')) addAlias(part);
+      } else {
+        addAlias(rest);
+      }
+      out.push('aliases:');
+      for (const item of items) out.push(`  - ${item}`);
+      if (/^redirect_from\s*:/.test(line)) ctx.count('redirectFrom');
       continue;
     }
 
@@ -860,6 +954,8 @@ export function convertFile(source, { slug, file = '', collection, dir, taken = 
     warn: (m) => stats.warnings.push(m),
     unknown: (n) => { stats.unknown[n] = (stats.unknown[n] || 0) + 1; },
     component: (n) => { stats.components[n] = (stats.components[n] || 0) + 1; },
+    snapshotComponents: () => ({ ...stats.components }),
+    restoreComponents: (s) => { Object.keys(stats.components).forEach((k) => delete stats.components[k]); Object.assign(stats.components, s); },
     count: (k) => { stats.counters[k] = (stats.counters[k] || 0) + 1; },
     bundle: dir && ((v) => {
       const from = path.resolve(dir, v); const name = path.basename(from);
@@ -904,11 +1000,11 @@ export function sniffImageFormat(buf) {
   if (!buf || buf.length === 0) return 'empty';
   if (buf.length >= 3 && buf[0] === 0xFF && buf[1] === 0xD8 && buf[2] === 0xFF) return 'jpeg';
   if (buf.length >= 8 && buf[0] === 0x89 && buf[1] === 0x50 && buf[2] === 0x4E && buf[3] === 0x47 &&
-      buf[4] === 0x0D && buf[5] === 0x0A && buf[6] === 0x1A && buf[7] === 0x0A) return 'png';
+    buf[4] === 0x0D && buf[5] === 0x0A && buf[6] === 0x1A && buf[7] === 0x0A) return 'png';
   if (buf.length >= 12 && buf.subarray(0, 4).toString('ascii') === 'RIFF' &&
-      buf.subarray(8, 12).toString('ascii') === 'WEBP') return 'webp';
+    buf.subarray(8, 12).toString('ascii') === 'WEBP') return 'webp';
   if (buf.length >= 12 && (buf.subarray(4, 12).toString('ascii') === 'ftypavif' ||
-      (buf.subarray(4, 8).toString('ascii') === 'ftyp' && buf.subarray(8, 12).toString('ascii') === 'mif1'))) return 'avif';
+    (buf.subarray(4, 8).toString('ascii') === 'ftyp' && buf.subarray(8, 12).toString('ascii') === 'mif1'))) return 'avif';
   if (buf.length >= 4 && buf.subarray(0, 4).toString('ascii') === 'GIF8') return 'gif';
   const head = buf.subarray(0, Math.min(buf.length, 500)).toString('utf8');
   if (/<svg[\s>]/i.test(head) || /<\?xml[\s\S]*?<svg/i.test(head)) return 'svg';
@@ -1002,14 +1098,14 @@ export function transcodeAvifToWebp(srcFile, destFile, { execFileFn = execFileSy
   try {
     execFileFn('magick', [srcFile, destFile], { stdio: 'ignore' });
     return true;
-  } catch {}
+  } catch { }
 
   // 2. Fall back to ImageMagick 6 (convert) on non-Windows only
   if (process.platform !== 'win32') {
     try {
       execFileFn('convert', [srcFile, destFile], { stdio: 'ignore' });
       return true;
-    } catch {}
+    } catch { }
   }
 
   // 3. Try Python with Pillow (PIL) via argv
@@ -1017,11 +1113,11 @@ export function transcodeAvifToWebp(srcFile, destFile, { execFileFn = execFileSy
   try {
     execFileFn('python3', ['-c', pyCode, srcFile, destFile], { stdio: 'ignore' });
     return true;
-  } catch {}
+  } catch { }
   try {
     execFileFn('python', ['-c', pyCode, srcFile, destFile], { stdio: 'ignore' });
     return true;
-  } catch {}
+  } catch { }
 
   return false;
 }
@@ -1052,6 +1148,27 @@ export function parseExcludeArg(args) {
   return [...out];
 }
 
+const DOC_RE = /\.mdx?$/;
+const INDEX_RE = /^index\.mdx?$/;
+
+/**
+ * Folders that must become Hugo branch bundles (_index.md). A folder qualifies when it has
+ * an index.md(x) AND either (a) holds another .md(x) page beside it (code.mdx, guidance.mdx), or
+ * (b) has any .md(x) anywhere below it (course -> chapter -> section). Everything else stays a
+ * leaf bundle (index.md).
+ */
+export function findBranchDirs(files, root) {
+  const docs = files.filter((f) => DOC_RE.test(f));
+  const indexDirs = new Set(docs.filter((f) => INDEX_RE.test(path.basename(f))).map((f) => path.dirname(f)));
+  const branch = new Set();
+  for (const f of docs) {
+    const dir = path.dirname(f);
+    if (!INDEX_RE.test(path.basename(f))) branch.add(dir); // (a)
+    for (let a = path.dirname(dir); a !== root && a.startsWith(root); a = path.dirname(a)) branch.add(a); // (b)
+  }
+  return new Set([...branch].filter((d) => indexDirs.has(d)));
+}
+
 export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = execFileSync }) {
   const excludeList = Array.isArray(exclude) ? exclude : String(exclude).split(',');
   const excludeSet = new Set(
@@ -1062,14 +1179,39 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
     files: 0, converted: 0, withWarnings: 0, assetsCopied: 0, assetsBundled: 0,
     templatesSkipped: 0, skippedTemplates: [], assetsRenamed: 0, assetRenames: [],
     emptyAssets: [], transcodeFailures: [], renameCollisions: [], assetsTranscoded: [],
+    pagesOut: 0, branchBundles: 0, collisions: [],
     components: {}, unknown: {}, byCollection: {}, warnings: []
   };
   const bump = (o, k, n = 1) => { o[k] = (o[k] || 0) + n; };
-  const allFiles = [...walk(src)];
+  const root = path.resolve(src);
+  const allFiles = [...walk(root)];
+  // templates are skipped, so they must not turn a folder into a branch bundle
+  const branchDirs = findBranchDirs(allFiles.filter((f) => !isTemplatePath(path.relative(src, f))), root);
+  // Folders with non-index docs and sibling assets must become leaf bundles (<dir>/<docBase>/index.md)
+  // so Hugo publishes sibling assets next to each page while preserving every page URL.
+  const dirInventory = new Map();
+  for (const file of allFiles) {
+    const relNorm = path.relative(src, file).replace(/\\/g, '/');
+    const topCollection = relNorm.split('/')[0];
+    if (excludeSet.has(topCollection) || isTemplatePath(path.relative(src, file))) continue;
+    const d = path.dirname(file);
+    let entry = dirInventory.get(d);
+    if (!entry) { entry = { docs: [], assets: 0 }; dirInventory.set(d, entry); }
+    if (DOC_RE.test(file)) entry.docs.push(file);
+    else entry.assets++;
+  }
+  const promoteDocsByDir = new Map();
+  for (const [d, entry] of dirInventory.entries()) {
+    if (entry.docs.length > 0 && entry.assets > 0 && !entry.docs.some((f) => INDEX_RE.test(path.basename(f)))) {
+      promoteDocsByDir.set(d, entry.docs.map((f) => path.basename(f, path.extname(f))));
+    }
+  }
   const docFiles = [];
   const renamesByDir = new Map();
   const failedTranscodesByDir = new Map();
   const writtenTargets = new Set();
+  const written = new Map(); // lower-cased output path -> source path, so two sources never write one file
+  const seenAliases = new Map(); // lower-cased canonical alias -> first source rel
 
   function forEachAncestorDir(fileDir, fn) {
     let curDir = fileDir;
@@ -1124,6 +1266,14 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
       docFiles.push(file);
       continue;
     }
+
+    // two assets whose paths differ only by case would overwrite each other on a case-insensitive filesystem
+    const assetKey = rel.toLowerCase();
+    if (written.has(assetKey)) {
+      report.collisions.push({ output: rel, sources: [written.get(assetKey), rel] });
+      continue;
+    }
+    written.set(assetKey, rel);
 
     const fileBuf = fs.readFileSync(file);
     const format = sniffImageFormat(fileBuf);
@@ -1191,15 +1341,18 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
     }
 
     let newName = normalizeAssetFilename(oldName, format);
-    const targetDir = path.dirname(path.join(dest, rel));
-    let target = path.join(targetDir, newName);
+    const promotedBases = promoteDocsByDir.get(dir);
+    const targetDirs = promotedBases
+      ? promotedBases.map((b) => path.join(path.dirname(path.join(dest, rel)), b))
+      : [path.dirname(path.join(dest, rel))];
+    let target = path.join(targetDirs[0], newName);
 
     if (newName !== oldName) {
-      if (fs.existsSync(path.join(dir, newName)) || writtenTargets.has(target)) {
+      if (fs.existsSync(path.join(dir, newName)) || targetDirs.some((td) => writtenTargets.has(path.join(td, newName)))) {
         report.renameCollisions.push({ from: relNorm, target: newName });
         report.warnings.push({ file: relNorm, message: `rename collision: ${newName} already exists, skipping rename` });
         newName = oldName;
-        target = path.join(targetDir, oldName);
+        target = path.join(targetDirs[0], oldName);
       } else {
         report.assetsRenamed++;
         report.assetRenames.push({ from: relNorm, to: newName });
@@ -1207,12 +1360,15 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
       }
     }
 
-    if (!dryRun) {
-      fs.mkdirSync(targetDir, { recursive: true });
-      fs.copyFileSync(file, target);
+    for (const td of targetDirs) {
+      const t = path.join(td, newName);
+      if (!dryRun) {
+        fs.mkdirSync(td, { recursive: true });
+        fs.copyFileSync(file, t);
+      }
+      writtenTargets.add(t);
+      report.assetsCopied++;
     }
-    writtenTargets.add(target);
-    report.assetsCopied++;
   }
 
   // Pass 2: docs
@@ -1220,11 +1376,23 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
     const rel = path.relative(src, file);
     const collection = rel.split(path.sep)[0];
     const ext = path.extname(file);
-    const target = path.join(dest, rel.replace(/\.mdx?$/, '.md'));
-    const col = (report.byCollection[collection] ||= { files: 0, converted: 0, withWarnings: 0 });
+    // An index file in a folder that also holds other pages must be _index.md. As index.md it would
+    // make a leaf bundle and Hugo would turn its sibling pages into unrendered resources.
+    const isBranchIndex = INDEX_RE.test(path.basename(file)) && branchDirs.has(path.dirname(file));
+    const isPromotedLeaf = promoteDocsByDir.has(path.dirname(file));
+    const base = path.basename(file, ext);
+    const outRel = isBranchIndex
+      ? path.join(path.dirname(rel), '_index.md')
+      : isPromotedLeaf
+        ? path.join(path.dirname(rel), base, 'index.md')
+        : rel.replace(DOC_RE, '.md');
+    const target = path.join(dest, outRel);
+    const col = (report.byCollection[collection] ||= { files: 0, converted: 0, pagesOut: 0, branchBundles: 0, withWarnings: 0 });
 
     report.files++; col.files++;
-    const base = path.basename(file, ext);
+    const key = outRel.toLowerCase();
+    if (written.has(key)) { report.collisions.push({ output: outRel, sources: [written.get(key), rel] }); continue; }
+    written.set(key, rel);
     const slug = base === 'index' ? path.basename(path.dirname(file)) : base;
 
     let sourceText = fs.readFileSync(file, 'utf8');
@@ -1245,6 +1413,23 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
       dir: base === 'index' ? path.dirname(file) : undefined,
       taken: (name) => writtenTargets.has(path.join(path.dirname(target), name)),
     });
+    const fmAliasMatch = output.match(/^---\n([\s\S]*?)\n---/);
+    if (fmAliasMatch) {
+      const aliasBlock = fmAliasMatch[1].match(/^aliases:\s*\n((?:\s+-\s+[^\n]+\n?)*)/m);
+      if (aliasBlock) {
+        for (const itemLine of aliasBlock[1].split('\n')) {
+          const am = /^\s+-\s+(.+)$/.exec(itemLine);
+          if (!am) continue;
+          const aliasVal = am[1].trim().replace(/^['"]|['"]$/g, '');
+          const aliasKey = aliasVal.toLowerCase();
+          if (seenAliases.has(aliasKey)) {
+            stats.warnings.push(`duplicate alias "${aliasVal}" also claimed by ${seenAliases.get(aliasKey)}`);
+          } else {
+            seenAliases.set(aliasKey, rel.replace(/\\/g, '/'));
+          }
+        }
+      }
+    }
     for (const [k, v] of Object.entries(stats.components)) bump(report.components, k, v);
     for (const [k, v] of Object.entries(stats.unknown)) bump(report.unknown, k, v);
     if (stats.warnings.length) {
@@ -1258,6 +1443,8 @@ export function migrate({ src, dest, dryRun = false, exclude = [], execFileFn = 
     }
     report.assetsBundled += stats.assets.length;
     report.converted++; col.converted++;
+    report.pagesOut++; col.pagesOut++;
+    if (isBranchIndex) { report.branchBundles++; col.branchBundles++; }
   }
   return report;
 }
@@ -1319,7 +1506,12 @@ function main() {
   }
   console.log(`components → shortcodes: ${top(report.components)}`);
   console.log(`unknown components:      ${top(report.unknown)}`);
-
+  for (const [name, c] of Object.entries(report.byCollection).sort(([a], [b]) => a.localeCompare(b))) {
+    const flag = c.files === c.pagesOut ? 'ok      ' : 'MISMATCH';
+    console.log(`  ${flag} ${name}: ${c.files} documents in -> ${c.pagesOut} pages out (${c.branchBundles} branch bundles)`);
+  }
+  for (const c of report.collisions) console.error(`COLLISION: ${c.sources.join(' + ')} both write ${c.output}`);
+  if (report.collisions.length) process.exit(1);
   if (report.transcodeFailures?.length) {
     process.exit(1);
   }
