@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { SRLWrapper } from "simple-react-lightbox";
+import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
@@ -58,18 +58,20 @@ const Layer5Brand = () => {
               Logos
             </h2>
           </Col>
-          <SRLWrapper>
-            <Row $Vcenter className="Layer5Logos">
-              <Col $xs={12} $sm={6}>
-                <img src={Layer5WhiteBg} alt="Layer5 Logo" />
-                Primary Logo: broadly, and majorly applicable
-              </Col>
-              <Col $xs={12} $sm={6}>
-                <img src={Layer5Icon} alt="Layer5 Logo" className="Layer5Icon" />
-                Layer5 Icon: suited for square-shaped display
-              </Col>
-            </Row>
-          </SRLWrapper>
+          <SimpleReactLightbox>
+            <SRLWrapper>
+              <Row $Vcenter className="Layer5Logos">
+                <Col $xs={12} $sm={6}>
+                  <img src={Layer5WhiteBg} alt="Layer5 Logo" />
+                  Primary Logo: broadly, and majorly applicable
+                </Col>
+                <Col $xs={12} $sm={6}>
+                  <img src={Layer5Icon} alt="Layer5 Logo" className="Layer5Icon" />
+                  Layer5 Icon: suited for square-shaped display
+                </Col>
+              </Row>
+            </SRLWrapper>
+          </SimpleReactLightbox>
         </Row>
         <Row style={{
           flexWrap: "wrap"

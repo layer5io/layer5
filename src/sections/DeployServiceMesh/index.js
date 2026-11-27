@@ -11,50 +11,56 @@ import Button from "../../reusecore/Button";
 import { Link } from "gatsby";
 import bookCover from "../../assets/images/learn/book-cover.webp";
 
-const RangeSlider = memo(({ label, onChange, value, ...sliderProps }) => {
-  const [sliderVal, setSliderVal] = useState(0);
-  const [mouseState, setMouseState] = useState(null);
+const RangeSlider = memo(
+  ({ label, onChange, value, factorId, ...sliderProps }) => {
+    const [sliderVal, setSliderVal] = useState(0);
+    const [mouseState, setMouseState] = useState(null);
 
-  useEffect(() => {
-    setSliderVal(value);
-  }, [value]);
-  const changeCallback = (e) => {
-    setSliderVal(e.target.value);
-  };
+    useEffect(() => {
+      setSliderVal(value);
+    }, [value]);
+    const changeCallback = (e) => {
+      setSliderVal(e.target.value);
+      if (mouseState !== "down") {
+        onChange(e.target.value);
+      }
+    };
 
-  const sliderStyle = {
-    backgroundImage: `-webkit-gradient(linear,left top,right top,color-stop(${sliderVal / 100}, #0098A6),color-stop(${sliderVal / 100}, #D2CECC))`,
-  };
+    const sliderStyle = {
+      backgroundImage: `-webkit-gradient(linear,left top,right top,color-stop(${sliderVal / 100}, #0098A6),color-stop(${sliderVal / 100}, #D2CECC))`,
+    };
 
-  const bubbleStyle = {
-    left: `calc(${sliderVal}%)`,
-  };
+    const bubbleStyle = {
+      left: `calc(${sliderVal}%)`,
+    };
 
-  useEffect(() => {
-    if (mouseState === "up") {
-      onChange(sliderVal);
-    }
-  }, [mouseState]);
-  return (
-    <div className="slidecontainer tooltip">
-      {/* <p>{label}</p> */}
-      <input
-        type="range"
-        value={sliderVal}
-        {...sliderProps}
-        className="slider"
-        id="myRange"
-        style={sliderStyle}
-        onChange={changeCallback}
-        onMouseDown={() => setMouseState("down")}
-        onMouseUp={() => setMouseState("up")}
-      />
-      <span className="bubble tooltiptext" style={bubbleStyle}>
-        {label}
-      </span>
-    </div>
-  );
-});
+    useEffect(() => {
+      if (mouseState === "up") {
+        onChange(sliderVal);
+      }
+    }, [mouseState]);
+    return (
+      <div className="slidecontainer tooltip">
+        {/* <p>{label}</p> */}
+        <input
+          type="range"
+          value={sliderVal}
+          {...sliderProps}
+          className="slider"
+          id={`${factorId}-slider`}
+          aria-labelledby={`${factorId}-label`}
+          style={sliderStyle}
+          onChange={changeCallback}
+          onMouseDown={() => setMouseState("down")}
+          onMouseUp={() => setMouseState("up")}
+        />
+        <span className="bubble tooltiptext" style={bubbleStyle}>
+          {label}
+        </span>
+      </div>
+    );
+  },
+);
 
 const ServiceMesh = () => {
   const { status, message, submit } = useMarketingForm("questionnaire");
@@ -378,21 +384,28 @@ const ServiceMesh = () => {
           </div>
           <div>
             <div className="range-slider">
-              <div id="slider">
-                <h4>Interservice Communication</h4>
-                <RangeSlider {...sliderProps1} />
+              <div className="slider-container">
+                <h4 id="dsm-interservice-communication-label">
+                  Interservice Communication
+                </h4>
+                <RangeSlider
+                  {...sliderProps1}
+                  factorId="dsm-interservice-communication"
+                />
                 <h5>{parentVal1}</h5>
               </div>
 
-              <div id="slider">
-                <h4>Observability</h4>
-                <RangeSlider {...sliderProps2} />
+              <div className="slider-container">
+                <h4 id="dsm-observability-label">Observability</h4>
+                <RangeSlider {...sliderProps2} factorId="dsm-observability" />
                 <h5>{parentVal2}</h5>
               </div>
 
-              <div id="slider">
-                <h4>Perspective from which you think of your APIs</h4>
-                <RangeSlider {...sliderProps3} />
+              <div className="slider-container">
+                <h4 id="dsm-api-perspective-label">
+                  Perspective from which you think of your APIs
+                </h4>
+                <RangeSlider {...sliderProps3} factorId="dsm-api-perspective" />
                 <h5>{parentVal3}</h5>
               </div>
             </div>
@@ -454,33 +467,51 @@ const ServiceMesh = () => {
             )}
             <div className={!flag ? "blur" : ""}>
               <div className="range-slider">
-                <div id="slider">
-                  <h4>Security Model</h4>
-                  <RangeSlider {...sliderProps4} />
+                <div className="slider-container">
+                  <h4 id="dsm-security-model-label">Security Model</h4>
+                  <RangeSlider
+                    {...sliderProps4}
+                    factorId="dsm-security-model"
+                  />
                   <h5>{parentVal4}</h5>
                 </div>
 
-                <div id="slider">
-                  <h4># of services</h4>
-                  <RangeSlider {...sliderProps5} />
+                <div className="slider-container">
+                  <h4 id="dsm-service-count-label"># of services</h4>
+                  <RangeSlider {...sliderProps5} factorId="dsm-service-count" />
                   <h5>{parentVal5}</h5>
                 </div>
 
-                <div id="slider">
-                  <h4>Service reliability</h4>
-                  <RangeSlider {...sliderProps6} />
+                <div className="slider-container">
+                  <h4 id="dsm-service-reliability-label">
+                    Service reliability
+                  </h4>
+                  <RangeSlider
+                    {...sliderProps6}
+                    factorId="dsm-service-reliability"
+                  />
                   <h5>{parentVal6}</h5>
                 </div>
 
-                <div id="slider">
-                  <h4>Size of your organization</h4>
-                  <RangeSlider {...sliderProps7} />
+                <div className="slider-container">
+                  <h4 id="dsm-organization-size-label">
+                    Size of your organization
+                  </h4>
+                  <RangeSlider
+                    {...sliderProps7}
+                    factorId="dsm-organization-size"
+                  />
                   <h5>{parentVal7}</h5>
                 </div>
 
-                <div id="slider">
-                  <h4>Diversity of application stack</h4>
-                  <RangeSlider {...sliderProps8} />
+                <div className="slider-container">
+                  <h4 id="dsm-stack-diversity-label">
+                    Diversity of application stack
+                  </h4>
+                  <RangeSlider
+                    {...sliderProps8}
+                    factorId="dsm-stack-diversity"
+                  />
                   <h5>{parentVal8}</h5>
                 </div>
               </div>
