@@ -1,14 +1,15 @@
 #!/usr/bin/env node
 /**
  * verify-urls.mjs — SEO safety net for Workstream 4.
- * Every live Gatsby URL must still exist in the Hugo build: as a page, as an alias stub
- * (<path>/index.html with http-equiv="refresh") or in _redirects.
+ * Every live Gatsby URL must still exist in the Hugo build: as a page or as an alias stub
+ * (<path>/index.html with http-equiv="refresh"). Production is GitHub Pages, which ignores
+ * redirect files, so none is read unless --redirects <file> is passed.
  *
  *   make url-inventory && make verify-urls
  *   node scripts/verify-urls.mjs --inventory .bench/url-inventory.json --public public --allow scripts/verify-urls.allow
  *
  * The older sitemap-to-sitemap mode still works:
- *   hugo --minify && node scripts/verify-urls.mjs --old .bench/gatsby-sitemap.xml --new public/sitemap.xml --redirects public/_redirects
+ *   hugo --minify && node scripts/verify-urls.mjs --old .bench/gatsby-sitemap.xml --new public/sitemap.xml --public public
  *
  * Exit code 1 when a URL is unaccounted for, so it can gate CI. With --allow, missing URLs in the
  * listed collections are reported but don't fail.
@@ -104,11 +105,11 @@ function main() {
   }
   if ((!oldPath && !invPath) || (!newPath && !publicDir)) {
     console.error('Usage: verify-urls.mjs (--inventory <url-inventory.json> | --old <gatsby sitemap.xml>) (--public <hugo public/> | --new <hugo sitemap.xml>)\n'
-      + '                      [--redirects public/_redirects] [--allow <collections file>] [--ignore <regex>] [--report <json>]');
+      + '                      [--allow <collections file>] [--ignore <regex>] [--report <json>]');
     process.exit(2);
   }
   const oldUrls = invPath ? JSON.parse(fs.readFileSync(invPath, 'utf8')).urls.map((x) => x.url) : null;
-  const redirectsPath = get('--redirects') || (publicDir && path.join(publicDir, '_redirects'));
+  const redirectsPath = get('--redirects');
   console.log(`Comparing Gatsby URLs: ${invPath || oldPath}\nAgainst Hugo build:    ${[publicDir, newPath].filter(Boolean).join(' + ')}`);
   const r = compare({
     oldXml: oldPath ? fs.readFileSync(oldPath, 'utf8') : '', oldUrls,

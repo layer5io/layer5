@@ -17,9 +17,9 @@ This repository is a proof of concept (POC) for migrating [layer5.io](https://la
 | Piece | Status | Notes |
 |---|---|---|
 | Site build | **Working** | Compiles clean HTML into `public/` with zero template errors. |
-| Tooling tests | **64 passed** | 64 of 64 unit tests pass (`make test`). |
+| Tooling tests | **112 tests** | All pass (`make test`); one is skipped on case-insensitive filesystems such as macOS. |
 | Sample content | **Placeholder** | Minimal sample content to test components; real content will migrate from `layer5`. |
-| Netlify redirects | **Working** | Generates extensionless `public/_redirects` from page aliases. |
+| Redirects | **Working** | Hugo `aliases` generate HTML stubs (meta refresh + canonical). GitHub Pages ignores `_redirects`, so none is generated. |
 | Performance benchmarks | **Informal** | Windows numbers are approximate Go memory; true peak RSS is only measured on Linux CI. |
 
 > [!WARNING]
@@ -35,7 +35,7 @@ This repository is a proof of concept (POC) for migrating [layer5.io](https://la
 
 ```bash
 make serve         # Start local dev server with live reload at http://localhost:1313/ (verified on Windows)
-make test          # Run all 64 migration tooling unit tests (verified on Windows)
+make test          # Run all migration tooling unit tests (verified on Windows)
 make build         # Compile minified production site to ./public (verified on Windows)
 make bench         # Run 1,210-page synthetic build benchmark (verified on Windows; approx Go memory)
 make index         # Build Pagefind search index (untested; requires network for npx on first run)
@@ -61,7 +61,7 @@ make migrate-dry   # Dry-run MDX converter against layer5 collections (reads ../
 
 ### Definition of Done for PRs
 - [ ] `make serve` runs without template or build errors.
-- [ ] `make test` passes (all 64 tests pass).
+- [ ] `make test` passes (all tests pass).
 - [ ] Verified in both light and dark theme modes.
 - [ ] URL parity is preserved (`make verify-urls` clean for touched collections).
 - [ ] [docs/CHEATSHEET.md](docs/CHEATSHEET.md) updated if shortcodes or attributes changed.
@@ -91,7 +91,7 @@ make migrate-dry   # Dry-run MDX converter against layer5 collections (reads ../
 Every URL that works on layer5.io today must keep working after the cutover, either as a page or as a redirect.
 
 - `make url-inventory` writes `.bench/url-inventory.json`, one row per live URL with the sources that list it. The main source is the Gatsby build deployed to the `gh-pages` branch: every `index.html` and other HTML file there is a URL. Only its file list is fetched, so no Gatsby build is needed. It also reads the live sitemap, `src/utils/redirects.yaml` and `redirect_from` in `src/collections`. To use a local `gatsby build` instead, run `node scripts/url-inventory.mjs --gatsby-public ../public`.
-- `make verify-urls` builds the site and checks each URL against `public/`. A URL passes when Hugo writes a page there, an alias stub (`<path>/index.html` with `http-equiv="refresh"`) or a `_redirects` entry. It prints `MISSING: N` for each collection. `make check-urls` runs the same check on an existing `public/`.
+- `make verify-urls` builds the site and checks each URL against `public/`. A URL passes when Hugo writes a page there or an alias stub (`<path>/index.html` with `http-equiv="refresh"`). It prints `MISSING: N` for each collection. `make check-urls` runs the same check on an existing `public/`.
 - CI runs the check on every PR to `hugo` in the `verify-urls` job and uploads the full list as the `url-report` artifact.
 - Collections listed in `scripts/verify-urls.allow` are only reported. When a collection's Phase 3 issue closes, delete its line in the same PR. From then on a missing URL in that collection fails CI. The list only ever shrinks.
 
@@ -111,3 +111,22 @@ Every URL that works on layer5.io today must keep working after the cutover, eit
 - **Page bundle**: A directory containing an `index.md` file along with its co-located assets and images.
 - **MDX**: Markdown with embedded React components, used by the existing Gatsby site.
 - **Pagefind**: A lightweight client-side search library that indexes static HTML output.
+
+## Hosting and redirects
+
+**Decision (2026-11-03, #8307):**
+
+- **Hosting:** GitHub Pages stays in production for the cutover. Only the build
+  step changes, so no DNS change is needed. PR previews (`pr-preview/`) and
+  `.well-known/` keep working. Cloudflare will be revisited after cutover as a
+  separate project.
+- **Redirects:** Hugo `aliases` generate HTML stubs (meta refresh + canonical),
+  the same mechanism as today. GitHub Pages ignores `_redirects`, so the
+  `Redirects` output format is not used.
+- **Trailing slashes:** canonical, `og:url`, sitemap and internal links use
+  `/path/` (Hugo's default), which returns `200`. Old slash-less URLs keep
+  working via the GitHub Pages `301`.
+
+**Deploy notes:** `.github/workflows/build-and-deploy-site.yml` deploys with
+`clean: true`; `pr-preview`, `hugo-preview` and `.well-known` are excluded from
+cleaning and must stay excluded.
