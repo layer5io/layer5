@@ -3,6 +3,22 @@ import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 import { Container } from "../../reusecore/Layout";
 
+import Mutual_tls from "../../assets/images/kanvas/catalog-card-images/mutual-tls.svg";
+import Retries from "../../assets/images/kanvas/catalog-card-images/retries.svg";
+import Traces from "../../assets/images/kanvas/catalog-card-images/traces.svg";
+import Denial from "../../assets/images/kanvas/catalog-card-images/denial.svg";
+import Correlate_event from "../../assets/images/kanvas/catalog-card-images/correlate-event.svg";
+import Only_wagent from "../../assets/images/kanvas/catalog-card-images/only-wagent.svg";
+import Node_agent from "../../assets/images/kanvas/catalog-card-images/node-agent.svg";
+import Single_tenant from "../../assets/images/kanvas/catalog-card-images/single-tenant.svg";
+import Pre_provision from "../../assets/images/kanvas/catalog-card-images/pre-provision.svg";
+import Circuit_breaker from "../../assets/images/kanvas/catalog-card-images/circuit-breaker.svg";
+import Retry_deadline from "../../assets/images/kanvas/catalog-card-images/retry-deadline.svg";
+import Singleton from "../../assets/images/kanvas/catalog-card-images/singleton.svg";
+import Jwt_transformer from "../../assets/images/kanvas/catalog-card-images/jwt.svg";
+import Multicluster from "../../assets/images/kanvas/catalog-card-images/multicluster.svg";
+import Http_metrics from "../../assets/images/kanvas/catalog-card-images/http.svg";
+
 const CatalogWrapper = styled.div`
 
 margin: 1rem 0;
@@ -208,6 +224,7 @@ h3.containerCaption {
 }
 
 #carousel{
+  img,
   .gatsby-image-wrapper{
     transition: all .5s ease;
   }
@@ -449,49 +466,49 @@ const Catalog = () => {
             <div className="container">
               <div id="carousel">
                 <div className="slide one">
-                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/mutual-tls.svg" alt="Kanvas Mutual TLS security feature for Kubernetes workloads" placeholder="none" />
+                  <img src={Mutual_tls} alt="Kanvas Mutual TLS security feature for Kubernetes workloads" loading="lazy" width="101" height="117" />
                 </div>
                 <div className="slide two">
-                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/retries.svg" alt="Kanvas dashboard showing service retries in Kubernetes visualization" placeholder="none" />
+                  <img src={Retries} alt="Kanvas dashboard showing service retries in Kubernetes visualization" loading="lazy" width="101" height="117" />
                 </div>
                 <div className="slide three">
-                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/traces.svg"  alt="Kanvas tracing visualization for distributed Kubernetes services" placeholder="none" />
+                  <img src={Traces} alt="Kanvas tracing visualization for distributed Kubernetes services" loading="lazy" width="101" height="117" />
                 </div>
                 <div className="slide four">
-                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/denial.svg" alt="Access denial control feature in Kanvas service mesh" placeholder="none" />
+                  <img src={Denial} alt="Access denial control feature in Kanvas service mesh" loading="lazy" width="101" height="117" />
                 </div>
                 <div className="slide five">
-                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/correlate-event.svg" alt="Event correlation view in Kanvas dashboard" placeholder="none" />
+                  <img src={Correlate_event} alt="Event correlation view in Kanvas dashboard" loading="lazy" width="101" height="117" />
                 </div>
                 <div className="slide six">
-                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/only-wagent.svg" alt="Kanvas only agent monitoring feature for clusters" placeholder="none" />
+                  <img src={Only_wagent} alt="Kanvas only agent monitoring feature for clusters" loading="lazy" width="101" height="117" />
                 </div>
                 <div className="slide seven">
-                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/node-agent.svg" alt="Kanvas node agent metrics visualization for Kubernetes" placeholder="none" />
+                  <img src={Node_agent} alt="Kanvas node agent metrics visualization for Kubernetes" loading="lazy" width="101" height="117" />
                 </div>
                 <div className="slide eight">
-                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/single-tenant.svg" alt="Single tenant Kubernetes deployment dashboard in Kanvas" placeholder="none" />
+                  <img src={Single_tenant} alt="Single tenant Kubernetes deployment dashboard in Kanvas" loading="lazy" width="101" height="117" />
                 </div>
                 <div className="slide nine">
-                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/pre-provision.svg" alt="Kanvas pre-provisioning configuration for Kubernetes clusters" placeholder="none" />
+                  <img src={Pre_provision} alt="Kanvas pre-provisioning configuration for Kubernetes clusters" loading="lazy" width="101" height="117" />
                 </div>
                 <div className="slide ten">
-                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/circuit-breaker.svg"  alt="Circuit breaker monitoring in Kanvas service mesh" placeholder="none" />
+                  <img src={Circuit_breaker} alt="Circuit breaker monitoring in Kanvas service mesh" loading="lazy" width="101" height="117" />
                 </div>
                 <div className="slide eleven">
-                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/retry-deadline.svg"  alt="Retry deadline feature in Kanvas observability dashboard" placeholder="none" />
+                  <img src={Retry_deadline} alt="Retry deadline feature in Kanvas observability dashboard" loading="lazy" width="101" height="117" />
                 </div>
                 <div className="slide twelve">
-                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/singleton.svg" alt="Singleton service pattern visualization in Kanvas" placeholder="none" />
+                  <img src={Singleton} alt="Singleton service pattern visualization in Kanvas" loading="lazy" width="101" height="117" />
                 </div>
                 <div className="slide thirteen">
-                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/jwt.svg" alt="JWT transformer process view in Kanvas Kubernetes dashboard" placeholder="none" />
+                  <img src={Jwt_transformer} alt="JWT transformer process view in Kanvas Kubernetes dashboard" loading="lazy" width="101" height="117" />
                 </div>
                 <div className="slide fourteen">
-                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/multicluster.svg" alt="Multi-cluster management view in Kanvas" placeholder="none" />
+                  <img src={Multicluster} alt="Multi-cluster management view in Kanvas" loading="lazy" width="101" height="117" />
                 </div>
                 <div className="slide fifteen">
-                  <StaticImage src="../../assets/images/kanvas/catalog-card-images/http.svg" alt="HTTP metrics monitoring dashboard in Kanvas for Kubernetes" placeholder="none" />
+                  <img src={Http_metrics} alt="HTTP metrics monitoring dashboard in Kanvas for Kubernetes" loading="lazy" width="101" height="117" />
                 </div>
               </div>
             </div>

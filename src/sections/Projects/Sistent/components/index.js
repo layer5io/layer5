@@ -53,7 +53,13 @@ const SistentComponents = ({ data }) => {
             </div>
             <div className="main-content">
               <div className="search-container">
-                <SearchBox searchQuery={searchQuery} searchData={searchData} />
+                <SearchBox
+                  searchQuery={searchQuery}
+                  searchData={searchData}
+                  ariaLabel="Search components"
+                  id="component-search"
+                  name="component-search"
+                />
               </div>
               <div className="product_cards">
                 <div className="cards">

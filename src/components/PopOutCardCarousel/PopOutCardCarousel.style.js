@@ -141,6 +141,7 @@ const PopOutCardWrapper = styled.div`
           opacity: 1;
           transition: opacity .95s;
         }
+      }
     `}
 
 `;

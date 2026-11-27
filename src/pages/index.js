@@ -38,7 +38,7 @@ const IndexPage = () => {
       {/*<ContactCard />*/}
       {/* <SoSpecial  /> */}
       {/* <CloudNativeLeaders /> */}
-      <CaseStudyBanner/>
+      <CaseStudyBanner caseStudy="hpe" />
       {/* <ServiceMeshFocussed bookName={"enterprise-path"} /> */}
       {/* <EngineerEnabler /> */}
       <SubscribeSection />

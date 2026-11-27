@@ -1,4 +1,5 @@
 import React from "react";
+import { withPrefix } from "gatsby";
 import styled from "styled-components";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
@@ -33,7 +34,7 @@ const Catalog = () => {
             <h1 className="layerH3">Catalog</h1>
           </Col>
           <Col $xs={12} $sm={6} className="download-button">
-            <a href="/brand/catalog-brand-kit.zip">
+            <a href={withPrefix("/brand/catalog-brand-kit.zip")}>
               <Button $primary title="Download Logo Assets" $external={false}>
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>

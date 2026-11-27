@@ -81,24 +81,24 @@ const MembersGrid = (props) => {
                 whether "contribution" means code or any of the other various
                 forms of being involved in the projects and community.
                 Likewise, we try to lift up contributors' works on the{" "}
-                <Link to="https://www.linkedin.com/company/layer5">Layer5</Link>
+                <a href="https://www.linkedin.com/company/layer5" target="_blank" rel="noreferrer">Layer5</a>
                 ,{" "}
-                <Link to="https://www.linkedin.com/showcase/meshery">
+                <a href="https://www.linkedin.com/showcase/meshery" target="_blank" rel="noreferrer">
                   Meshery
-                </Link>
+                </a>
                 ,{" "}
-                <Link to="https://getnighthawk.dev/">
+                <a href="https://getnighthawk.dev/" target="_blank" rel="noreferrer">
                 Nighthawk
-                </Link>
+                </a>
                 , and{" "}
-                <Link to="https://www.linkedin.com/showcase/kanvas-new">
+                <a href="https://www.linkedin.com/showcase/kanvas-new" target="_blank" rel="noreferrer">
                   Service Mesh Performance
-                </Link>{" "}
+                </a>{" "}
                 LinkedIn pages, too. We openly and publicly share our community
                 meetings on{" "}
-                <Link to="https://www.youtube.com/Layer5io?sub_confirmation=1">
+                <a href="https://www.youtube.com/Layer5io?sub_confirmation=1" target="_blank" rel="noreferrer">
                   YouTube
-                </Link>
+                </a>
                 .
               </p>
 
@@ -114,7 +114,6 @@ const MembersGrid = (props) => {
                     $primary                    className="banner-btn memberProfileBtn"
                     title="Read the Community Handbook"
                     $url="/community/handbook"
-                    $external={true}
                   >
                     <FaBook size={21} className="icon-left" />
                   </Button>
@@ -123,6 +122,7 @@ const MembersGrid = (props) => {
                     $secondary                    className="banner-btn two memberProfileBtn"
                     title="Join the Community"
                     $url="https://slack.layer5.io"
+                    $external={true}
                   >
                     <FaUsers size={21} className="icon-left" />
                   </Button>
@@ -161,9 +161,9 @@ const MembersGrid = (props) => {
               </p>
 
               <div>
-                <VintageBox right={true} vintageOne={true}>
+                <VintageBox $right={true} $vintageOne={true}>
                   <Button
-                    primary
+                    $primary
                     className="banner-btn memberProfileBtn"
                     title="Collect Badges"
                     $url="https://badges.layer5.io/"
@@ -173,10 +173,11 @@ const MembersGrid = (props) => {
                   </Button>
 
                   <Button
-                    secondary
+                    $secondary
                     className="banner-btn two memberProfileBtn"
                     title="Join the Community"
                     $url="https://slack.layer5.io"
+                    $external={true}
                   >
                     <FaUsers size={21} className="icon-left" />
                   </Button>

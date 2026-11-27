@@ -1,17 +1,21 @@
 import React from "react";
 
 import Button from "../../reusecore/Button";
+import {
+  MarketingHoneypot,
+  MarketingStatus,
+  useMarketingForm,
+} from "../../components/MarketingForm";
 import SubscribeLearnWrapper from "./subscribeLearn.style";
 
 const SubscribeLearnPath = () => {
+  const { status, message, handleSubmit } =
+    useMarketingForm("footer-subscribe");
+
   return (
     <SubscribeLearnWrapper>
       <div>
-        <form
-          name="contactform"
-          method="post"
-          action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb"
-        >
+        <form name="contactform" method="post" onSubmit={handleSubmit}>
           <div>
             <span>
               <h2>Join the Layer5 community</h2>
@@ -22,19 +26,33 @@ const SubscribeLearnPath = () => {
                 </p>
               </div>
             </span>
-            <div className="subscribe">
-              <input
-                className="inputrow subscribe-email"
-                type="email"
-                placeholder="Email Address"
-                name="EMAIL"
-                id="mce-EMAIL"
-                required
-                onInvalid={e => e.target.setCustomValidity("Please fill-in this field")}
-                onInput={e => e.target.setCustomValidity("")}
-              />
-              <Button $secondary title="Subscribe" id="mc-embedded-subscribe" />
-            </div>
+            {status === "success" ? (
+              <MarketingStatus status={status} message={message} />
+            ) : (
+              <div className="subscribe">
+                <input
+                  className="inputrow subscribe-email"
+                  type="email"
+                  placeholder="Email Address"
+                  name="EMAIL"
+                  id="mce-EMAIL"
+                  required
+                  onInvalid={(e) =>
+                    e.target.setCustomValidity("Please fill-in this field")
+                  }
+                  onInput={(e) => e.target.setCustomValidity("")}
+                />
+                <MarketingHoneypot />
+                <Button
+                  $secondary
+                  type="submit"
+                  title="Subscribe"
+                  id="mc-embedded-subscribe"
+                  disabled={status === "submitting"}
+                />
+                <MarketingStatus status={status} message={message} />
+              </div>
+            )}
           </div>
         </form>
       </div>
