@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 // Components
 import ResourcesGrid from "./index";
@@ -8,7 +8,7 @@ import useDataList from "../../../utils/usedataList";
 
 const ResourcesList = (props) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const { queryResults, searchData } = useDataList(
+  const { queryResults, searchData, searchByText, isLoading } = useDataList(
     props.allResources.allMdx.nodes,
     setSearchQuery,
     searchQuery,
@@ -16,6 +16,47 @@ const ResourcesList = (props) => {
     "id"
   );
 
+  const searchRestored = useRef(false);
+
+  // Keep the search text in sync with the URL after in-app navigations
+  // (e.g. picking "Case Studies" from the menu while on /resources).
+  const locationKey = props.location?.key;
+  const locationSearch = props.location?.search;
+  const isFirstLocation = useRef(true);
+  useEffect(() => {
+    if (isFirstLocation.current) {
+      isFirstLocation.current = false;
+      return;
+    }
+    searchByText(new URLSearchParams(locationSearch).get("q") || "");
+  }, [locationKey, locationSearch]);
+
+  useEffect(() => {
+    if (!new URLSearchParams(window.location.search).get("q")) {
+      searchRestored.current = true;
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isLoading || searchRestored.current) return;
+    searchRestored.current = true;
+    const q = new URLSearchParams(window.location.search).get("q");
+    if (q) searchByText(q);
+  }, [isLoading]);
+
+  useEffect(() => {
+    if (!searchRestored.current) return;
+    const params = new URLSearchParams(window.location.search);
+    if (!searchQuery.trim() && !params.has("q")) return;
+    if (searchQuery.trim()) params.set("q", searchQuery.trim());
+    else params.delete("q");
+    const query = params.toString();
+    window.history.replaceState(
+      window.history.state,
+      "",
+      `${window.location.pathname}${query ? `?${query}` : ""}${window.location.hash}`,
+    );
+  }, [searchQuery]);
 
   let data = [];
   let all = [];

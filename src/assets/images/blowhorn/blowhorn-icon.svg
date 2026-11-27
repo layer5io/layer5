@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="5.8 15.5 102.5 102.5" role="img" aria-label="Blowhorn icon"><title>Blowhorn icon</title><g transform="translate(56 50) rotate(-15) scale(0.8)" fill="#EE5A44"><path d="M-7.02 -2.66 L-26.50 -15.66 A3.0 3.0 0 0 0 -31.50 -12.34 L-26.98 10.66 Z M5.26 -0.33 L-15.89 -31.10 A3.3 3.3 0 0 0 -22.11 -28.90 L-19.26 8.33 Z M16.76 1.51 L-0.66 -37.65 A3.4 3.4 0 0 0 -7.34 -36.35 L-8.76 6.49 Z M26.37 2.18 L12.17 -30.47 A3.2 3.2 0 0 0 5.83 -29.53 L1.63 5.82 Z M31.00 6.00 L24.80 -16.00 A2.8 2.8 0 0 0 19.20 -16.00 L13.00 6.00 Z M-26 10 L28 10 L28 -4 Q28 -12 22 -12 L-18 -12 Q-26 -12 -26 -6 Z"/></g>
+  <rect x="13" y="59" width="21" height="20" rx="6" fill="#3C494F"/>
+  <path d="M32 57 C60 55 78 46 88 33 L88 105 C78 92 60 83 32 81 Z" fill="#00B39F" stroke="#00B39F" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M61 86.5 C56.5 97 57 110 64 113.5 C69 115.5 72.5 111 71.8 105.5 C75 111.5 80.5 112.5 82.2 107 C84 100.5 80.5 93.5 76 90 Z" fill="#EE5A44"/>
+  <ellipse cx="90" cy="69" rx="11" ry="37.5" fill="#EBC017"/>
+  <ellipse cx="92.5" cy="69" rx="5.5" ry="29.5" fill="#3C494F"/>
+  <circle cx="50" cy="67" r="7.2" fill="#FFFFFF"/><circle cx="52.6" cy="68.2" r="3.6" fill="#1E2117"/>
+  <path d="M39.5 55.2 L61.5 60.2 L60.6 65 L40 59.6 Z" fill="#1E2117" stroke="#1E2117" stroke-width="1.2" stroke-linejoin="round"/>
+  </svg>

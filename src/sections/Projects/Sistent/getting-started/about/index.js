@@ -5,7 +5,7 @@ import TOC from "../../../../../components/SistentNavigation";
 import IntraPage from "../../../../../components/SistentNavigation/intra-page";
 import SistentPagination from "../../../../../components/SistentNavigation/pagination";
 
-import { Link } from "gatsby";
+import { Link, withPrefix } from "gatsby";
 import { useStyledDarkMode } from "../../../../../theme/app/useStyledDarkMode";
 import CodeBlock from "../../../../../components/CodeBlock";
 import { SistentThemeProvider, Button } from "@sistent/sistent";
@@ -80,10 +80,10 @@ const SistentAbout = () => {
               <h3>Layer5 Brand Resources</h3>
               <ul>
                 <li>
-                  <Link to="/brand/brand-guide.pdf">Brand Guide</Link>
+                  <a href={withPrefix("/brand/brand-guide.pdf")} target="_blank" rel="noreferrer">Brand Guide</a>
                 </li>
                 <li>
-                  <Link to="/brand">Logos and Brand Kits</Link>
+                  <Link to="/company/brand">Logos and Brand Kits</Link>
                 </li>
               </ul>
               <a id="Installation">

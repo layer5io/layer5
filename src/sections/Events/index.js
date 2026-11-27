@@ -71,6 +71,7 @@ const Meetups = ({ data, pageContext }) => {
                     <Card
                       frontmatter={category.frontmatter}
                       fields={category.fields}
+                      fitContainer={true}
                     />
                   </Col>
                 ))}
@@ -80,6 +81,7 @@ const Meetups = ({ data, pageContext }) => {
                     <Card
                       frontmatter={event.frontmatter}
                       fields={event.fields}
+                      fitContainer={true}
                     />
                   </Col>
                 ))}
@@ -89,6 +91,7 @@ const Meetups = ({ data, pageContext }) => {
                     <Card
                       frontmatter={workshop.frontmatter}
                       fields={workshop.fields}
+                      fitContainer={true}
                     />
                   </Col>
                 ))}
@@ -98,6 +101,7 @@ const Meetups = ({ data, pageContext }) => {
                     <Card
                       frontmatter={meetup.frontmatter}
                       fields={meetup.fields}
+                      fitContainer={true}
                     />
                   </Col>
                 ))}

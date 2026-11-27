@@ -242,6 +242,9 @@ const SistentWrapper = styled.div`
     stroke: ${(props) => props.theme.green00D3A9ToGreen00B39F};
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
+  .icon-showcase path {
+    stroke: none;
+  }
   svg {
     color: "red";
   }
@@ -1020,6 +1023,21 @@ const SistentWrapper = styled.div`
 
     .icon-name {
       font-size: 12px;
+    }
+  }
+
+  .parameter-table-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+    }
+
+    table {
+      margin-left: 0;
     }
   }
 `;
