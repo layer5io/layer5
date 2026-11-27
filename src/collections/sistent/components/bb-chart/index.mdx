@@ -10,8 +10,8 @@ import { BBChart } from "@sistent/sistent";
 
 BBChart is a chart component built with Billboard.js that provides a way to visualize data across dashboards, telemetry views, and other data-driven interfaces. It accepts Billboard.js chart options through the `options` prop and supports multiple chart types.
 
-<a id="Line Chart">
-  <h2>Line Chart</h2>
+<a id="line-chart">
+  <h3>Line Chart</h3>
 </a>
 
 Line charts are useful for displaying changes and trends in data over a sequence of values, such as CPU or memory usage over time.
@@ -22,15 +22,15 @@ Line charts are useful for displaying changes and trends in data over a sequence
       options={{
         data: {
           columns: [
-            ["CPU", 30, 45, 42, 60, 55, 70],
-            ["Memory", 50, 52, 51, 58, 61, 65]
+            ["CPU", 30, 45, 42, 60, 55, 70, 75],
+            ["Memory", 50, 52, 51, 58, 61, 65, 68]
           ],
           type: "line"
         },
         axis: {
           x: {
             type: "category",
-            categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+            categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
           }
         }
       }}
