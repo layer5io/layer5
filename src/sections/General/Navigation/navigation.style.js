@@ -670,6 +670,11 @@ const NavigationWrap = styled.header`
     .mobile-submenu-toggle.is-open svg {
       transform: rotate(180deg);
     }
+    .mobile-submenu-toggle:hover,
+    .mobile-submenu-toggle:active {
+      background: transparent;
+      box-shadow: none;
+    }
     .mobile-submenu-toggle:focus-visible {
       outline: 2px solid currentColor;
       outline-offset: -2px;
@@ -688,19 +693,27 @@ const NavigationWrap = styled.header`
       padding: 14px 0 4px;
       list-style: none;
     }
-    .mobile-cta-item a,
-    .mobile-cta-item .appion__btn {
-      width: 100%;
-    }
     .mobile-cta-item a {
       display: block;
+      width: 100%;
+      padding: 0;
     }
-    .mobile-cta-outline {
+    .mobile-cta-item a:before {
+      content: none;
+    }
+    .mobile-cta-item .appion__btn {
+      width: 100%;
+      min-height: 52px;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .mobile-cta-item a.mobile-cta-outline {
       display: flex;
       align-items: center;
       justify-content: center;
       box-sizing: border-box;
-      padding: 12px;
+      min-height: 52px;
+      padding: 0 12px;
       font-size: 16px;
       font-weight: 600;
       text-decoration: none;
