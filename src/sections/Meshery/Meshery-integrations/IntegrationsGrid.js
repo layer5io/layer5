@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
-import { HoneycombGrid, IntegrationSlider } from "./Integration.style";
+import { HoneycombGrid, CategoryFilterBar } from "./Integration.style";
 import useDataList from "../../../utils/usedataList";
 import SearchBox from "../../../reusecore/Search";
 import EmptyResources from "../../Resources/Resources-error/emptyStateTemplate";
@@ -81,37 +81,6 @@ const IntegrationsGrid = ({ category, count }) => {
       }
     }
   `);
-
-  const settings = {
-    initialSlide: 0,
-    variableWidth: true,
-    infinite: false,
-    slidesToShow: 5.25,
-    swipeToSlide: true,
-    slidesToScroll: 1,
-    // useTransform: false,
-
-    responsive: [
-      {
-        breakpoint: 900,
-        settings: {
-          initialSlide: 0,
-          infinite: false,
-          arrows: true,
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 500,
-        settings: {
-          initialSlide: 0,
-          arrows: true,
-          infinite: false,
-          slidesToShow: 1.5,
-        },
-      },
-    ],
-  };
 
   const [searchQuery, setSearchQuery] = useState("");
   const { queryResults, searchData } = useDataList(
@@ -203,27 +172,23 @@ const IntegrationsGrid = ({ category, count }) => {
     setIntegrationCollection();
   };
 
-  const setFilter = (event) => {
+  const setFilter = (selectedCategory) => {
     let count = 0;
     let tempCategoryList = [...categoryNameList];
-    let selectedCategory = event.target.innerHTML.includes("&amp;")
-      ? event.target.innerHTML.replace("&amp;", "&")
-      : event.target.innerHTML;
-    selectedCategory = selectedCategory.split("(")[0].trim();
 
     if (selectedCategory === "All") {
       tempCategoryList.forEach((item) => {
-        if (item.isSelected & (item.name != "All")) {
+        if (item.isSelected && item.name !== "All") {
           item.isSelected = false;
         }
       });
     }
 
     tempCategoryList.forEach((item) => {
-      if (item.name == selectedCategory) {
+      if (item.name === selectedCategory) {
         item.isSelected = !item.isSelected;
       }
-      if (item.isSelected && item.name != "All") {
+      if (item.isSelected && item.name !== "All") {
         count++;
       }
     });
@@ -279,21 +244,36 @@ const IntegrationsGrid = ({ category, count }) => {
         name="integration-search"
       />
 
-      <section style={{ margin: "0 2.6rem" }}>
-        <IntegrationSlider {...settings}>
-          {!hideFilter &&
-            categoryNameList.map((item) => {
-              return (
-                <p
-                  key={item.id}
-                  className={item.isSelected ? "items selected" : "items"}
-                  onClick={setFilter}
-                >
-                  {`${item.name} (${item.count})`}
-                </p>
-              );
-            })}
-        </IntegrationSlider>
+      <section>
+        {!hideFilter && (
+          <CategoryFilterBar>
+            <div
+              className="category-chips-wrapper"
+              role="group"
+              aria-label="Filter integrations by category"
+            >
+              {categoryNameList.map((item) => {
+                return (
+                  <button
+                    key={item.id}
+                    type="button"
+                    className={
+                      item.isSelected
+                        ? "category-chip selected"
+                        : "category-chip"
+                    }
+                    onClick={() => setFilter(item.name)}
+                    data-category={item.name}
+                    aria-pressed={item.isSelected}
+                  >
+                    {item.name}
+                    <span className="chip-count">({item.count})</span>
+                  </button>
+                );
+              })}
+            </div>
+          </CategoryFilterBar>
+        )}
       </section>
 
       {searchQuery.length > 0 && queryResults.length < 1 ? (
