@@ -109,7 +109,7 @@ test('front matter: misnamed or already-taken ../ images keep the warning and th
   assert.equal(stats.warnings.filter((w) => /outside the page bundle/.test(w)).length, 2);
 });
 
-test('migrate(): ../ images are only bundled for index pages and never overwrite a renamed asset', () => {
+test('migrate(): ../ images promote non-index pages to leaf bundles and never overwrite a renamed asset', () => {
   const src = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-bundle-src-'));
   const dest = fs.mkdtempSync(path.join(os.tmpdir(), 'l5-bundle-dest-'));
   const png = Buffer.from([0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A]);
@@ -122,11 +122,11 @@ test('migrate(): ../ images are only bundled for index pages and never overwrite
   fs.writeFileSync(path.join(src, 'blog/leaf.mdx'), '---\ntitle: L\nthumbnail: ../blog/shared/leaf.svg\n---\nBody\n');
 
   const r = migrate({ src, dest });
-  assert.equal(r.assetsBundled, 0);
+  assert.equal(r.assetsBundled, 1);
   assert.deepEqual(fs.readFileSync(path.join(dest, 'blog/post/photo.png')), png);
   assert.match(fs.readFileSync(path.join(dest, 'blog/post/index.md'), 'utf8'), /^darkthumbnail: \.\.\/shared\/photo\.png$/m);
-  assert.ok(!fs.existsSync(path.join(dest, 'blog/leaf.svg')));
-  assert.ok(r.warnings.some((w) => /leaf\.mdx$/.test(w.file) && /thumbnail: .* outside the page bundle/.test(w.message)));
+  assert.ok(fs.existsSync(path.join(dest, 'blog/leaf/index.md')));
+  assert.ok(fs.existsSync(path.join(dest, 'blog/leaf/leaf.svg')));
 });
 
 test('published:false → draft:true; plain markdown passes through', () => {
@@ -1929,4 +1929,75 @@ test('redirect_from canonicalizes trailing slashes, deduplicates within a file, 
   assert.match(cOut, /aliases:\n  - \/old\/path\/\n/);
   assert.ok(r.warnings.some((w) => w.file.replace(/\\/g, '/') === 'blog/b/index.mdx' && /duplicate alias "\/old\/path\/"/.test(w.message)));
   assert.ok(r.warnings.some((w) => w.file.replace(/\\/g, '/') === 'blog/c/index.mdx' && /duplicate alias "\/old\/path\/"/.test(w.message)));
+});
+
+test('Option 1 asset bundling copies out-of-bundle body images, shortcodes, and markdown images, handles collisions, stays idempotent, and respects sistent', () => {
+  const pngBytes = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
+  const src = tree({
+    'assets/shared/hero.png': pngBytes,
+    'assets/shared/dup.png': pngBytes,
+    'blog/post1/index.mdx': [
+      '---',
+      'title: "Post 1"',
+      'thumbnail: ../../assets/shared/hero.png',
+      '---',
+      'import Hero from "../../assets/shared/hero.png";',
+      '',
+      '<img src={Hero} alt="h" />',
+      '<CTA_FullWidth image="../../assets/shared/hero.png" />',
+      '![md](../../assets/shared/hero.png)',
+      '![md-titled](../../assets/shared/hero.png "Hero Title")',
+      '![md-single](../../assets/shared/hero.png \'Single Title\')',
+      '<img src="../../assets/shared/dup.png" alt="d" />',
+    ].join('\n'),
+    'blog/post1/dup.png': pngBytes, // local file already owns dup.png -> collision!
+    'sistent/comp/index.mdx': '---\ntitle: "S"\n---\n<img src="../../assets/shared/hero.png" alt="s" />\n',
+  });
+  const dest = outDir();
+  const r = migrate({ src, dest, exclude: ['sistent'] });
+  assert.ok(fs.existsSync(path.join(dest, 'blog/post1/hero.png')));
+  const out = fs.readFileSync(path.join(dest, 'blog/post1/index.md'), 'utf8');
+  assert.match(out, /thumbnail: hero\.png/);
+  assert.match(out, /<img src="\.\/hero\.png" alt="h" \/>/);
+  assert.match(out, /\{\{< cta-fullwidth image="\.\/hero\.png" >\}\}/);
+  assert.match(out, /!\[md\]\(\.\/hero\.png\)/);
+  assert.match(out, /!\[md-titled\]\(\.\/hero\.png "Hero Title"\)/);
+  assert.match(out, /!\[md-single\]\(\.\/hero\.png 'Single Title'\)/);
+  // dup.png collision keeps original path and warns
+  assert.match(out, /<img src="\.\.\/\.\.\/assets\/shared\/dup\.png" alt="d" \/>/);
+  assert.ok(r.warnings.some((w) => /dup\.png.*outside the page bundle/.test(w.message)));
+  // Sistent excluded
+  assert.ok(!fs.existsSync(path.join(dest, 'sistent/comp/hero.png')));
+
+  // Idempotency
+  const dest2 = outDir();
+  migrate({ src: dest, dest: dest2, exclude: ['sistent'] });
+  assert.equal(fs.readFileSync(path.join(dest2, 'blog/post1/index.md'), 'utf8'), out);
+});
+
+test('Option 1 asset bundling checks promoted bundle directory in taken() for non-index docs', () => {
+  const pngA = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0x01]);
+  const pngB = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0x02]);
+  const src = tree({
+    'shared/a/hero.png': pngA,
+    'shared/b/hero.png': pngB,
+    'blog/guide/hero.png': pngA,
+    'blog/guide/index.mdx': '---\ntitle: "Guide"\n---\nGuide\n',
+    'blog/guide.mdx': '---\ntitle: "Guide Doc"\n---\n![h](./shared/b/hero.png)\n![h2](../shared/b/hero.png)\n',
+  });
+  const dest = outDir();
+  const r = migrate({ src, dest });
+  assert.ok(fs.existsSync(path.join(dest, 'blog/guide/hero.png')));
+  // blog/guide.mdx promotes to blog/guide/index.md only if it bundles; hero.png in blog/guide/ is already owned by blog/guide/hero.png (pngA)
+  assert.equal(Buffer.compare(fs.readFileSync(path.join(dest, 'blog/guide/hero.png')), pngA), 0);
+  assert.ok(r.warnings.some((w) => w.file.replace(/\\/g, '/') === 'blog/guide.mdx' && /outside the page bundle/.test(w.message)));
+});
+
+test('warns when own-bundle root-relative img src is missing from page bundle', () => {
+  const src = tree({
+    'blog/2024/post/index.mdx': '---\ntitle: "Post"\n---\n<img src="/blog/2024/post/missing.gif" alt="m" />\n',
+  });
+  const dest = outDir();
+  const r = migrate({ src, dest });
+  assert.ok(r.warnings.some((w) => w.file.replace(/\\/g, '/') === 'blog/2024/post/index.mdx' && /missing from the page bundle/.test(w.message)));
 });
