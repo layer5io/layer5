@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const TableWrapper = styled.div`
+  overflow: auto;
+
   table {
     border-collapse: collapse;
     box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.2);
