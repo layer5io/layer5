@@ -2001,3 +2001,20 @@ test('warns when own-bundle root-relative img src is missing from page bundle', 
   const r = migrate({ src, dest });
   assert.ok(r.warnings.some((w) => w.file.replace(/\\/g, '/') === 'blog/2024/post/index.mdx' && /missing from the page bundle/.test(w.message)));
 });
+
+test('own-bundle root-relative img src rewrites to ./localName and respects sistent exclusion', () => {
+  const src = tree({
+    'blog/2024/post/index.mdx': '---\ntitle: "Post"\n---\n<img src="/blog/2024/post/pic.png" alt="ok" />\n<img src="/blog/2024/post/missing.png" alt="miss" />\n<img src="/blog/2024/post/" alt="dir" />\n',
+    'blog/2024/post/pic.png': 'PNG',
+    'sistent/comp/index.mdx': '---\ntitle: "Sistent"\n---\n<img src="/sistent/comp/pic.png" alt="sistent" />\n',
+    'sistent/comp/pic.png': 'PNG',
+  });
+  const dest = outDir();
+  migrate({ src, dest });
+  const blogOut = fs.readFileSync(path.join(dest, 'blog/2024/post/index.md'), 'utf8');
+  assert.match(blogOut, /<img src="\.\/pic\.png" alt="ok" \/>/);
+  assert.match(blogOut, /<img src="\/blog\/2024\/post\/missing\.png" alt="miss" \/>/);
+  assert.match(blogOut, /<img src="\/blog\/2024\/post\/" alt="dir" \/>/);
+  const sistentOut = fs.readFileSync(path.join(dest, 'sistent/comp/index.md'), 'utf8');
+  assert.match(sistentOut, /<img src="\/sistent\/comp\/pic\.png" alt="sistent" \/>/);
+});
