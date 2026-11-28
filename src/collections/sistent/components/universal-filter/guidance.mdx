@@ -1,0 +1,113 @@
+---
+title: Universal Filter Guidance
+component: universal-filter
+description: The Universal Filter provides a single, reusable control for filtering tables and catalogs across multiple attributes, with optional date-range selection.
+---
+
+The UniversalFilter is designed to be dropped beside any table or catalog toolbar. Applying it consistently keeps filtering behaviour predictable as users move between Meshery, Kanvas, and Layer5 Cloud.
+
+<a id="Do">
+  <h2>Do</h2>
+</a>
+
+<ul>
+  <li>Place the filter in the toolbar of the view it filters, next to the search field and to the right of the data set title.</li>
+  <li>Keep <code>selectedFilters</code> in the parent so the applied values can drive the query that fetches rows.</li>
+  <li>Use <code>All</code> as the reset value for an attribute — the component treats it as &quot;not filtered&quot; and excludes it from the badge count.</li>
+  <li>Perform the data fetch inside <code>handleApplyFilter</code>, which receives the freshly applied values as its argument.</li>
+  <li>Give every instance a unique <code>id</code>, and a <code>data-testid</code> when the view carries more than one filter.</li>
+  <li>Combine the filter with a separate search input for free-text queries, and reset pagination to the first page whenever filters are applied.</li>
+</ul>
+
+<a id="Dont">
+  <h2>Don&#39;t</h2>
+</a>
+
+<ul>
+  <li>Use it for a single attribute — a lone select or chip group is lighter and clearer.</li>
+  <li>Re-fetch on every dropdown change; the component intentionally batches changes behind <strong>Apply</strong>.</li>
+  <li>Load unbounded option lists into a filter group. Beyond roughly a dozen options, use a searchable field instead.</li>
+  <li>Read <code>selectedFilters</code> as a free-form value — it is a flat map of attribute key to a single selected value.</li>
+  <li>Enable <code>datePicker</code> without also supplying <code>selectedDateRange</code> and <code>setSelectedDateRange</code>; the date section is skipped unless all three are present.</li>
+</ul>
+
+<a id="Filter Schemas">
+  <h2>Filter Schemas</h2>
+</a>
+
+<p>
+  The <code>filters</code> prop is a record keyed by attribute. Each entry supplies the label shown above the select and the options offered inside it. The key is what appears in <code>selectedFilters</code>, so name it after the query parameter it maps to.
+</p>
+
+<div className="table-container">
+  <table className="props-table">
+    <thead>
+      <tr>
+        <th>Field</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>string</code></td>
+        <td>Human-readable label rendered above the select, for example <code>&quot;Visibility&quot;</code>.</td>
+      </tr>
+      <tr>
+        <td><code>options</code></td>
+        <td><code>&#123; label: string; value: string &#125;[]</code></td>
+        <td>Choices for the attribute. <code>value</code> is what lands in <code>selectedFilters</code>; <code>label</code> is what the user reads.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ul>
+  <li>Declare schema objects outside the component, or memoise them — a new object identity on every render re-creates the panel contents.</li>
+  <li>Order keys by how often they are used; the panel renders them top to bottom in declaration order.</li>
+  <li>Keep <code>value</code> aligned with the API contract so applied filters can be forwarded to the backend without translation.</li>
+  <li>If a stored value is no longer present in <code>options</code>, the select falls back to the first available option rather than rendering blank.</li>
+</ul>
+
+<a id="Date Range Filtering">
+  <h2>Date Range Filtering</h2>
+</a>
+
+<p>
+  Set <code>datePicker</code> and supply a controlled <code>selectedDateRange</code> of the shape <code>&#123; startDate: Date; endDate: Date &#125;</code> together with its setter. The section renders a quick-range select and a pair of date-time pickers.
+</p>
+
+<ul>
+  <li>The range is <strong>applied immediately</strong> when it changes — unlike the attribute selects, it does not wait for <strong>Apply</strong>. Keep the handler cheap, or debounce the fetch it triggers.</li>
+  <li>The pickers keep the range coherent: moving the start past the end pushes the end forward, and moving the end before the start pulls the start back.</li>
+  <li>Seed <code>selectedDateRange</code> with a sensible default window rather than leaving it empty, so the view always has a bounded query.</li>
+  <li>The date pickers rely on the optional peer dependencies <code>@mui/x-date-pickers</code> and <code>date-fns</code>. Install both in any project that enables <code>datePicker</code>.</li>
+</ul>
+
+<a id="Quick Date Options">
+  <h2>Quick Date Options</h2>
+</a>
+
+<p>
+  Quick ranges are presets that fill both pickers in one action. When <code>quickDateRanges</code> is omitted, the component ships with <em>Last 7 days</em>, <em>Last 30 days</em>, <em>Last 3 months</em>, <em>Last 6 months</em>, and <em>Last 1 year</em>.
+</p>
+
+<ul>
+  <li>Each option is <code>&#123; label: string; getRange: () =&gt; &#123; startDate: Date; endDate: Date &#125; &#125;</code>. Compute dates inside <code>getRange</code> so &quot;last 7 days&quot; stays relative to now.</li>
+  <li>Override the defaults only when the domain calls for it — an audit log may want <em>Last 24 hours</em>, a billing view <em>This month</em>.</li>
+  <li>Keep labels short and unambiguous; they are read in a narrow select and repeated on mobile in the bottom sheet.</li>
+  <li>The quick-range select does not stay visually selected after use. It is an action that seeds the pickers, and the resulting window is shown by the start and end fields.</li>
+</ul>
+
+<a id="Active Filters">
+  <h2>Active Filters</h2>
+</a>
+
+<ul>
+  <li>The badge counts entries in <code>selectedFilters</code> whose value is set and is not <code>All</code>, giving users a glance-able sense of how narrow the current view is.</li>
+  <li>To clear everything, reset <code>selectedFilters</code> to <code>All</code> for each key and call the same handler the filter uses, so the data set and the badge stay in step.</li>
+  <li>Set <code>showAllOption</code> to <code>false</code> only when an attribute must always be constrained; the badge will then include that attribute permanently.</li>
+  <li>For views where the applied filters need to stay visible after the panel closes, render chips from <code>selectedFilters</code> beside the trigger — the state already lives in the parent.</li>
+  <li>Reflect applied filters in the URL when the view is shareable, so a filtered table survives a reload.</li>
+</ul>
