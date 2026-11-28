@@ -5,7 +5,7 @@
 {{- $image := .Get "image" | default "" -}}
 {{- $imgSrc := "" -}}
 {{- if $image -}}
-  {{- $res := .Page.Resources.GetMatch $image -}}
+  {{- $res := .Page.Resources.GetMatch (strings.TrimPrefix "./" $image) -}}
   {{- if $res -}}
     {{- $imgSrc = $res.RelPermalink -}}
   {{- else if or (hasPrefix $image "http://") (hasPrefix $image "https://") -}}
