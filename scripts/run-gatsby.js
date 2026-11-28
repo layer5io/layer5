@@ -103,34 +103,61 @@ if (!/--max-old-space-size/.test(env.NODE_OPTIONS || "")) {
   env.NODE_OPTIONS = `${env.NODE_OPTIONS || ""} ${heapFlag}`.trim();
 }
 
-const args = process.argv.slice(2);
-console.info(
-  `[run-gatsby] ${totalGb.toFixed(1)} GB RAM / ${cores} cores -> ` +
-    `workers=${env.GATSBY_CPU_COUNT} sharp=${env.SHARP_CONCURRENCY} heap=${heapMb}MB`,
-);
-
-const gatsbyBin = path.join(
-  __dirname,
-  "..",
-  "node_modules",
-  ".bin",
-  process.platform === "win32" ? "gatsby.cmd" : "gatsby",
-);
-
-const child = spawn(gatsbyBin, args, {
-  env,
-  stdio: "inherit",
-  shell: process.platform === "win32",
-});
-
-const forward = (signal) => () => child.kill(signal);
-process.on("SIGINT", forward("SIGINT"));
-process.on("SIGTERM", forward("SIGTERM"));
-
-child.on("exit", (code, signal) => {
-  if (signal) {
-    process.kill(process.pid, signal);
-    return;
+/**
+ * Resolve the Gatsby binary, preferring Windows shims in order.
+ *
+ * npm creates gatsby.cmd, while pnpm may create gatsby.exe. Bun's .bunx file
+ * is metadata, so use Gatsby's Node CLI entrypoint when that is the only shim.
+ * Non-Windows behavior is unchanged (plain `gatsby`).
+ */
+const resolveGatsbyBin = ({
+  platform = process.platform,
+  existsSync = require("fs").existsSync,
+  binDir = path.join(__dirname, "..", "node_modules", ".bin"),
+} = {}) => {
+  if (platform === "win32") {
+    for (const candidate of ["gatsby.cmd", "gatsby.exe"]) {
+      const full = path.join(binDir, candidate);
+      if (existsSync(full)) return full;
+    }
+    if (existsSync(path.join(binDir, "gatsby.bunx"))) {
+      return path.resolve(binDir, "..", "gatsby-cli", "cli.js");
+    }
   }
-  process.exit(code ?? 0);
-});
+  return path.join(binDir, "gatsby");
+};
+
+const gatsbyBin = resolveGatsbyBin();
+
+if (require.main === module) {
+  const args = process.argv.slice(2);
+  console.info(
+    `[run-gatsby] ${totalGb.toFixed(1)} GB RAM / ${cores} cores -> ` +
+      `workers=${env.GATSBY_CPU_COUNT} sharp=${env.SHARP_CONCURRENCY} heap=${heapMb}MB`,
+  );
+
+  const isNodeEntrypoint = gatsbyBin.endsWith(".js");
+  const child = spawn(
+    isNodeEntrypoint ? process.execPath : gatsbyBin,
+    isNodeEntrypoint ? [gatsbyBin, ...args] : args,
+    {
+      env,
+      stdio: "inherit",
+      shell: process.platform === "win32" && !isNodeEntrypoint,
+    },
+  );
+
+  const forward = (signal) => () => child.kill(signal);
+  process.on("SIGINT", forward("SIGINT"));
+  process.on("SIGTERM", forward("SIGTERM"));
+
+  child.on("exit", (code, signal) => {
+    if (signal) {
+      process.kill(process.pid, signal);
+      return;
+    }
+    process.exit(code ?? 0);
+  });
+}
+
+module.exports = { resolveGatsbyBin };
