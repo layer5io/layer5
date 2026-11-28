@@ -130,8 +130,9 @@ const LearnerSectionWrapper = styled.section`
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
+        padding: 0 1rem;
       }
-      
+
       .audience-text h2 {
         font-size: 2rem;
       }
@@ -140,6 +141,15 @@ const LearnerSectionWrapper = styled.section`
         text-align: left;
         margin-bottom: 2rem;
         display: block;
+      }
+
+      .stats-container .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .stats-container .stats-grid .stat-item {
+        padding: 1rem;
       }
     }
   }

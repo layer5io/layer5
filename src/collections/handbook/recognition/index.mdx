@@ -26,7 +26,6 @@ import BadgeRow from "./BadgeRow";
 import { activityBadges, projectBadges, specialBadges } from "./badges-data";
 
 
-export const tableWrap = { overflowX: "auto" };
 export const table = { width: "100%", borderCollapse: "collapse", marginBottom: "2rem" };
 export const theadRow = { borderBottom: "2px solid var(--text-color, #ddd)", backgroundColor: "rgba(0, 0, 0, 0.05)" };
 export const th = { textAlign: "left", padding: "12px", fontWeight: 600 };
@@ -56,7 +55,7 @@ As an open source-first community, we very much appreciate the engagement of ind
 
 <a id="Membership"><h3>Membership to the Github organizations</h3></a>
 
-Membership to the Github organizations is a significant milestone for contributors who have shown persistent commitment and dedication to Layer5 projects. It is not solely about writing code but rather the consistency of engagement and alignment of mentality. Those who have been actively involved in the community for several months, making updates, helping others, attending meetings, and demonstrating a willingness to learn and share their knowledge, are the ones who are likely to receive an invite. Such individuals demonstrate a genuine desire to improve themselves, others, and the projects they are working on. Depending on the number of contributions made across the five GitHub organizations of Layer5, contributors can expect to receive an invitation to any or all of these organizations. We value and appreciate the hard work and dedication of our contributors, and we are delighted to reward their efforts with access to our Github organizations. Our <Link to="https://layer5.io/community/community-managers">Community Managers</Link> and <Link to="https://layer5.io/community/meshmates"> MeshMates</Link> recognize potential contributors on a weekly basis and typically invite individuals after 6 to 8 weeks of continuous, active participation.
+Membership to the Github organizations is a significant milestone for contributors who have shown persistent commitment and dedication to Layer5 projects. It is not solely about writing code but rather the consistency of engagement and alignment of mentality. Those who have been actively involved in the community for several months, making updates, helping others, attending meetings, and demonstrating a willingness to learn and share their knowledge, are the ones who are likely to receive an invite. Such individuals demonstrate a genuine desire to improve themselves, others, and the projects they are working on. Depending on the number of contributions made across the five GitHub organizations of Layer5, contributors can expect to receive an invitation to any or all of these organizations. We value and appreciate the hard work and dedication of our contributors, and we are delighted to reward their efforts with access to our Github organizations. Our [Community Managers](/community/community-managers) and [MeshMates](/community/meshmates) recognize potential contributors on a weekly basis and typically invite individuals after 6 to 8 weeks of continuous, active participation.
 
 <a id="Community_member_profile">
   <h3><Link to="/community/members">Community Member Profiles</Link></h3>
@@ -73,8 +72,8 @@ Member profiles carry a number of specific designations, depending upon how a co
 
 Badges are awarded to community members who have been consistently engaged and impactful within a given area of the community or on a specific project. Every community member, whether contributing with code or not, has the opportunity to obtain any number of badges of recognition of their efforts. Community members are encouraged to collect the whole set!
 
-<div style={tableWrap}>
-  <h4>Activity Badges</h4>
+<h4 id="activity-badges">Activity Badges</h4>
+<div className="table-container" tabIndex={0} role="region" aria-labelledby="activity-badges" aria-label="Activity Badges">
   <table style={table}>
     <thead>
       <tr style={theadRow}>
@@ -96,8 +95,10 @@ Badges are awarded to community members who have been consistently engaged and i
       ))}
     </tbody>
   </table>
+</div>
 
-  <h4>Project Badges</h4>
+<h4 id="project-badges">Project Badges</h4>
+<div className="table-container" tabIndex={0} role="region" aria-labelledby="project-badges" aria-label="Project Badges">
   <table style={table}>
     <thead>
       <tr style={theadRow}>
@@ -119,8 +120,10 @@ Badges are awarded to community members who have been consistently engaged and i
       ))}
     </tbody>
   </table>
+</div>
 
-  <h4>Special Recognition Badges</h4>
+<h4 id="special-recognition-badges">Special Recognition Badges</h4>
+<div className="table-container" tabIndex={0} role="region" aria-labelledby="special-recognition-badges" aria-label="Special Recognition Badges">
   <table style={table}>
     <thead>
       <tr style={theadRow}>

@@ -1,6 +1,7 @@
 import React from "react";
+import { withPrefix } from "gatsby";
 import styled from "styled-components";
-import { SRLWrapper } from "simple-react-lightbox";
+import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
@@ -29,7 +30,7 @@ const KanvasBrand = () => {
             </h2>
           </Col>
           <Col $xs={12} $sm={6} className="download-button">
-            <a href="/brand/kanvas-brand-kit.zip">
+            <a href={withPrefix("/brand/kanvas-brand-kit.zip")}>
               <Button $primary title="Download Logo Assets" $external={true}>
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>
@@ -55,22 +56,24 @@ const KanvasBrand = () => {
               Logos
             </h2>
           </Col>
-          <SRLWrapper>
-            <Row $Vcenter className="ImgDiv">
-              <Col $xs={12} $sm={4}>
-                <img src={Kanvas} style={{ minWidth: "200px" }} alt="Kanvas Logo" />
-                <h5>mark and text</h5>
-              </Col>
-              <Col $xs={12} $sm={4}>
-                <img src={KanvasTitle} style={{ minWidth: "200px" }} alt="KanvasTitle Text" />
-                <h5>text only</h5>
-              </Col>
-              <Col $xs={12} $sm={4}>
-                <img src={KanvasIcon} style={{ minWidth: "100px" }} alt="KanvasLight Icon" />
-                <h5>mark only</h5>
-              </Col>
-            </Row>
-          </SRLWrapper>
+          <SimpleReactLightbox>
+            <SRLWrapper>
+              <Row $Vcenter className="ImgDiv">
+                <Col $xs={12} $sm={4}>
+                  <img src={Kanvas} style={{ minWidth: "200px" }} alt="Kanvas Logo" />
+                  <h5>mark and text</h5>
+                </Col>
+                <Col $xs={12} $sm={4}>
+                  <img src={KanvasTitle} style={{ minWidth: "200px" }} alt="KanvasTitle Text" />
+                  <h5>text only</h5>
+                </Col>
+                <Col $xs={12} $sm={4}>
+                  <img src={KanvasIcon} style={{ minWidth: "100px" }} alt="KanvasLight Icon" />
+                  <h5>mark only</h5>
+                </Col>
+              </Row>
+            </SRLWrapper>
+          </SimpleReactLightbox>
         </Row>
         <Row style={{
           flexWrap: "wrap"
