@@ -28,7 +28,7 @@ This repository is a proof of concept (POC) for migrating [layer5.io](https://la
 ## Quick start
 
 ### Prerequisites
-- **Hugo Extended**: Minimum `0.156.0` (required for `hugo.Data` / `hugo.Sites`); CI pins `0.162.1` (`.github/workflows/hugo-migration.yml`, `.github/workflows/build-hugo-preview.yml`).
+- **Hugo Extended**: Minimum `0.157.0` (required for `reflect.IsImageResourceProcessable`, `hugo.Data`, and `hugo.Sites`); CI pins `0.162.1` (`.github/workflows/hugo-migration.yml`, `.github/workflows/build-hugo-preview.yml`).
 - **Node.js**: Version 18 or newer (used solely for tooling in `scripts/` and Pagefind).
 - **Make**: Standard command runner.
 *(Verified on Windows x64; native macOS and Linux environments are untested on this dev machine).*
