@@ -621,8 +621,13 @@ function convertSegment(text, ctx) {
             const relDir = `/${path.dirname(ctx.file).replace(/\\/g, '/')}/`;
             if (a.value.startsWith(relDir)) {
               const localName = a.value.slice(relDir.length);
-              if (!localName.includes('/') && !fs.existsSync(path.join(ctx.dir, localName))) {
-                ctx.warn(`<${name}>: "${a.value}" is missing from the page bundle`);
+              if (localName && !localName.includes('/')) {
+                if (fs.existsSync(path.join(ctx.dir, localName))) {
+                  a.value = `./${localName}`;
+                  tagChanged = true;
+                } else {
+                  ctx.warn(`<${name}>: "${a.value}" is missing from the page bundle`);
+                }
               }
             }
           }
