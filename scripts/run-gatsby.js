@@ -123,13 +123,20 @@ const resolveGatsbyBin = ({
     if (existsSync(path.join(binDir, "gatsby.bunx"))) {
       return path.resolve(binDir, "..", "gatsby-cli", "cli.js");
     }
+    return null;
   }
   return path.join(binDir, "gatsby");
 };
 
-const gatsbyBin = resolveGatsbyBin();
-
 if (require.main === module) {
+  const gatsbyBin = resolveGatsbyBin();
+  if (!gatsbyBin) {
+    console.error(
+      "[run-gatsby] No Gatsby Windows launcher found. Install the project dependencies.",
+    );
+    process.exit(1);
+  }
+
   const args = process.argv.slice(2);
   console.info(
     `[run-gatsby] ${totalGb.toFixed(1)} GB RAM / ${cores} cores -> ` +
@@ -137,15 +144,22 @@ if (require.main === module) {
   );
 
   const isNodeEntrypoint = gatsbyBin.endsWith(".js");
-  const child = spawn(
-    isNodeEntrypoint ? process.execPath : gatsbyBin,
-    isNodeEntrypoint ? [gatsbyBin, ...args] : args,
-    {
-      env,
-      stdio: "inherit",
-      shell: process.platform === "win32" && !isNodeEntrypoint,
-    },
-  );
+  const isCmdShim = gatsbyBin.endsWith(".cmd");
+  let command = isNodeEntrypoint ? process.execPath : gatsbyBin;
+  let childArgs = isNodeEntrypoint ? [gatsbyBin, ...args] : args;
+  if (isCmdShim) {
+    const cmdArgs = args.map((arg) => {
+      const quoted = arg.replace(/(\\*)"/g, '$1$1\\"').replace(/\\+$/, "$&$&");
+      return `"${quoted}"`.replace(/([()%!^"<>&| \t])/g, "^^^$1");
+    });
+    command = process.env.ComSpec || "cmd.exe";
+    childArgs = ["/d", "/v:off", "/s", "/c", `""${gatsbyBin}" ${cmdArgs.join(" ")}"`];
+  }
+  const child = spawn(command, childArgs, {
+    env,
+    stdio: "inherit",
+    windowsVerbatimArguments: isCmdShim,
+  });
 
   const forward = (signal) => () => child.kill(signal);
   process.on("SIGINT", forward("SIGINT"));
