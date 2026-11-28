@@ -10,6 +10,12 @@ import AcademyIcon from "../../../../assets/images/academy/academy-layer5.svg";
 import AcademyLight from "../../../../assets/images/academy/academy-layer5-light.svg";
 
 const AcademyWrapper = styled.section`
+  .academy-logo-light {
+    background: ${props => props.theme.DarkTheme ? "none" : props.theme.blackToGreen3C494F};
+    padding: 0.95rem;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
   @media (max-width: 575px) {
     .brandHeader {
       padding: 3rem 0;
@@ -57,18 +63,38 @@ const AcademyBrand = () => {
               Logos
             </h2>
           </Col>
-          <SimpleReactLightbox>
-            <SRLWrapper>
-              <Row $Vcenter className="ImgDiv">
-                <Col $xs={12} $sm={4}>
-                  <img src={AcademyIcon} style={{ minWidth: "200px" }} alt="Academy Logo" />
-                </Col>
-                <Col $xs={12} $sm={4}>
-                  <img src={AcademyLight} style={{ minWidth: "200px" }} alt="AcademyLight Logo" />
-                </Col>
-              </Row>
-            </SRLWrapper>
-          </SimpleReactLightbox>
+          <Col $xs={12}>
+            <SimpleReactLightbox>
+              <SRLWrapper>
+                <Row $Vcenter $Hcenter className="ImgDiv">
+                  <Col $xs={12} $sm={4}>
+                    <img
+                      src={AcademyIcon}
+                      style={{
+                        width: "100%",
+                        maxWidth: "200px",
+                        display: "block",
+                        margin: "auto",
+                      }}
+                      alt="Academy Logo"
+                    />
+                  </Col>
+                  <Col $xs={12} $sm={4} className="academy-logo-light">
+                    <img
+                      src={AcademyLight}
+                      style={{
+                        width: "100%",
+                        maxWidth: "200px",
+                        display: "block",
+                        margin: "auto",
+                      }}
+                      alt="AcademyLight Logo"
+                    />
+                  </Col>
+                </Row>
+              </SRLWrapper>
+            </SimpleReactLightbox>
+          </Col>
         </Row>
         <Row style={{
           flexWrap: "wrap"
