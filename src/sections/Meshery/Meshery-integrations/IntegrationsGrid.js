@@ -82,7 +82,6 @@ const IntegrationsGrid = ({ category, count }) => {
     }
   `);
 
-
   const [searchQuery, setSearchQuery] = useState("");
   const { queryResults, searchData } = useDataList(
     data.allMdx.nodes,
@@ -173,26 +172,23 @@ const IntegrationsGrid = ({ category, count }) => {
     setIntegrationCollection();
   };
 
-  const setFilter = (event) => {
+  const setFilter = (selectedCategory) => {
     let count = 0;
     let tempCategoryList = [...categoryNameList];
-    const btn = event.currentTarget;
-    let selectedCategory =
-      btn.getAttribute("data-category") || btn.textContent.split("(")[0].trim();
 
     if (selectedCategory === "All") {
       tempCategoryList.forEach((item) => {
-        if (item.isSelected & (item.name != "All")) {
+        if (item.isSelected && item.name !== "All") {
           item.isSelected = false;
         }
       });
     }
 
     tempCategoryList.forEach((item) => {
-      if (item.name == selectedCategory) {
+      if (item.name === selectedCategory) {
         item.isSelected = !item.isSelected;
       }
-      if (item.isSelected && item.name != "All") {
+      if (item.isSelected && item.name !== "All") {
         count++;
       }
     });
@@ -266,7 +262,7 @@ const IntegrationsGrid = ({ category, count }) => {
                         ? "category-chip selected"
                         : "category-chip"
                     }
-                    onClick={setFilter}
+                    onClick={() => setFilter(item.name)}
                     data-category={item.name}
                     aria-pressed={item.isSelected}
                   >

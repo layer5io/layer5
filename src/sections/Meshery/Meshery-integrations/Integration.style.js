@@ -38,13 +38,21 @@ export const HoneycombGrid = styled.div`
     padding-right: 50px;
   }
 
+  /* Give the hexagons more room on small screens so the honeycomb pattern
+     (staggered rows) keeps its shape. */
+  @media (max-width: 540px) {
+    ul {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+
   .container-active,
   .container-inactive {
     -webkit-transform: translateZ(0);
     display: flex;
     height: 100%;
-    background: ${(props) =>
-      props.isDark ? props.theme.radialToBlue : props.theme.grey212121ToWhite};
+    background: ${(props) => (props.isDark ? props.theme.radialToBlue : props.theme.grey212121ToWhite)};
     justify-content: center;
     align-items: center;
     padding: 0.625rem;
@@ -202,6 +210,7 @@ export const CategoryFilterBar = styled.div`
   position: relative;
   margin: 1.5rem 0 2rem;
   padding: 0 0.5rem;
+  overflow-x: clip;
 
   .category-chips-wrapper {
     display: flex;
@@ -227,29 +236,6 @@ export const CategoryFilterBar = styled.div`
       &::-webkit-scrollbar {
         display: none;
       }
-    }
-  }
-
-  /* Left overflow fade indicator for mobile scroll */
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 2.5rem;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 2;
-
-    @media screen and (max-width: 768px) {
-      opacity: 1;
-      background: linear-gradient(
-        to left,
-        transparent,
-        ${(props) => props.theme.categoryFilterFadeBg}
-      );
     }
   }
 
