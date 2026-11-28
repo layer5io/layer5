@@ -9,7 +9,7 @@
 | **Documents Converted** | 1006 / 1006 |
 | **Excluded Collections** | `sistent` (138 files skipped) |
 | **Skipped Templates** | 11 |
-| **Files with Warnings** | **34** |
+| **Files with Warnings** | **15** |
 | **Unowned Warning Files** | **1** |
 | **Zero-Byte Assets Logged** | 4 |
 | **Asset Normalization Renames** | 26 |
@@ -21,18 +21,17 @@ Each file lists one primary owner; a file only becomes warning-free when all of 
 
 | Primary Owner Issue | Files | Scope / Focus |
 |---|---|---|
-| `#8402` | 28 | Content hand-fix backlog (wrapper indents, bare links, button props) |
+| `#8402` | 9 | Content hand-fix backlog (wrapper indents, bare links, button props) |
 | `#8456` | 4 | P3-07 Handbook bespoke components & data loops (`BadgeRow`, `Table`, `React.Fragment`, `Row/Col`, `mentorship-programs`, `recognition`, `repository-overview`) |
 | `Unassigned` | 1 | Files without an assigned owner issue |
 | `#8401` | 1 | Imported assets backlog (`<img src={var}>`, `<CTA_FullWidth image={var}>`) |
-| **Total** | **34** | **100% accounted for (sum equals files with warnings)** |
+| **Total** | **15** | **100% accounted for (sum equals files with warnings)** |
 
 ## 3. Warnings Breakdown by Key
 
 | Warning Category | Occurrences | Primary Owner Issue | Description |
 |---|---|---|---|
 | `non-literal prop expression` | 42 | #8401 / #8402 | JSX expression props (e.g. `image={var}`, `$url={link}`) |
-| `wrapper indent hazard` | 19 | #8402 | Wrapper bodies with 4+ space indents that could trigger Markdown code blocks |
 | `bare-relative link` | 7 | #8402 | Links with bare-relative paths (e.g. `<Link to="newcomer">`) |
 | `zero-byte asset` | 4 | #8308 | Zero-byte SVG files in source integrations |
 | `unknown components` | 3 | Phase 3 | Components not yet mapped to Hugo shortcodes |
@@ -55,22 +54,7 @@ Every warning file outside Sistent is tracked below with its primary owning issu
 
 | File | Warning Details | Primary Owner |
 |---|---|---|
-| `blog/2021/2021-02-04-meet-the-maintainer-michael-gfeller/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `blog/2021/2021-04-16-meet-the-maintainer-jash-patel/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `blog/2021/2021-06-25-she-code-africa-contributhon-boot-camp/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `blog/2021/2021-09-20-service-mesh-specifications-and-why-they-matter/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `blog/2021/2021-10-04-ccoss-meshery-event/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `blog/2021/2021-10-09-an-introduction-to-meshery/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `blog/2022/2022-01-07-Recap-KubeCon-China-TAG-Network-talk/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `blog/2022/2022-05-10-dockercon-22-hashicorp-talk/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `blog/2022/2022-05-27-debug-envoy-proxy/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `blog/2022/2022-06-07-week-open-source-contributions-with-layer5/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `blog/2022/2022-07-28-managing-multiple-clusters-with-meshery/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `blog/2022/2022-10-19-kubeconna2022/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `blog/2023/04-12-meshery-surpasses-1000-contributors/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `blog/2023/08-21-layer5-badge-program/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
 | `blog/2024/11-05-what-is-the-kanvas-catalog/index.mdx` | <img>: "/blog/2024/11-05-what-is-the-kanvas-catalog/import-design-gif.gif" is missing from the page bundle<br><img>: "/blog/2024/11-05-what-is-the-kanvas-catalog/import-design-gif.gif" is missing from the page bundle | `Unassigned` |
-| `blog/2025/11-03-2025-understanding-configmaps/index.mdx` | <BlogWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
 | `blog/2026/04-02-open-source-maintenance-ai-contributors/index.mdx` | non-literal expression for "src" on <img> | `#8401` |
 | `events/2024/kubecon-EU-2024/index.mdx` | events/2024/kubecon-EU-2024/index.mdx: <Button> has external="true" on non-http(s) URL "/cncf-tag-network/KubeCon-EU-2024-CNCF-TAG-Network.pdf" (<Button secondary title="KubeCon EU 2024 CNCF TAG Network Slide" url="/cncf-tag-network/KubeCon-EU-2024-CNCF-TAG-Network.pdf" external={ true } />); review manually | `#8402` |
 | `handbook/faq/index.mdx` | unknown components: HandbookFaqAccordion | `#8456` |
@@ -78,16 +62,12 @@ Every warning file outside Sistent is tracked below with its primary owning issu
 | `handbook/recognition/index.mdx` | non-literal expression for "style" on <h3><br>non-literal expression for "style" on <div><br>non-literal expression for "style" on <table><br>non-literal expression for "style" on <tr><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <table><br>non-literal expression for "style" on <tr><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <table><br>non-literal expression for "style" on <tr><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>non-literal expression for "style" on <th><br>unknown components: BadgeRow | `#8456` |
 | `handbook/repository-overview/index.mdx` | non-literal expression for "key" on <div><br>non-literal expression for "key" on <table><br>non-literal expression for "key" on <tbody><br>non-literal expression for "href" on <a><br>non-literal expression for "src" on <img><br><Link>: non-literal expression for "to"<br>non-literal expression for "href" on <a><br>non-literal expression for "key" on <div><br>non-literal expression for "key" on <table><br>non-literal expression for "key" on <tbody><br>non-literal expression for "class" on <tr><br>non-literal expression for "class" on <img><br>non-literal expression for "src" on <img><br><Link>: non-literal expression for "to"<br>non-literal expression for "href" on <a><br>unknown components: React.Fragment | `#8456` |
 | `news/2021/2021-06-18-5-lesser-known-but-extremely-powerful-Kubernetes-service-mesh-tools/index.mdx` | duplicate alias "/news/service-mesh-offers-promising-solution-for-cloud-native-networking/" also claimed by news/2020/2020-12-04-service-mesh-offers-promising-solution-for-cloud-native-networking/index.mdx | `#8402` |
-| `programs/communitybridge/index.mdx` | <ProgramsWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
-| `programs/gsoc-2021/index.mdx` | <ProgramsWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
 | `programs/gsoc-2023/index.mdx` | duplicate alias "/gsoc/2022/" also claimed by programs/gsoc-2022/index.mdx | `#8402` |
 | `programs/hacktoberfest-2020/index.mdx` | programs/hacktoberfest-2020/index.mdx: <Link> has bare-relative "to" value "newcomer" (<Link className="highlight" to="newcomer">); review manually | `#8402` |
 | `programs/hacktoberfest-2021/index.mdx` | programs/hacktoberfest-2021/index.mdx: <Link> has bare-relative "to" value "newcomer" (<Link className="highlight" to="newcomer">); review manually | `#8402` |
 | `programs/hacktoberfest-2022/index.mdx` | programs/hacktoberfest-2022/index.mdx: <Link> has bare-relative "to" value "newcomer" (<Link className="highlight" to="newcomer">); review manually | `#8402` |
 | `programs/lfx-2025/lfx-2025.mdx` | programs/lfx-2025/lfx-2025.mdx: <Link> has bare-relative "to" value "" (<Link to ="">); review manually<br>programs/lfx-2025/lfx-2025.mdx: <Link> has bare-relative "to" value "community/members/mia-grenell" (<Link to ="community/members/mia-grenell">); review manually<br>programs/lfx-2025/lfx-2025.mdx: <Link> has bare-relative "to" value "" (<Link to ="">); review manually | `#8402` |
-| `programs/sca-contributhon/index.mdx` | <ProgramsWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
 | `resources/articles/layer5-academy-vs-moocit/index.mdx` | no front matter found; generated a minimal one | `#8402` |
-| `resources/articles/value-of-a-service-mesh/index.mdx` | <ResourcesWrapper>: wrapper body has 4+ space indented line after dedent; left as-is for manual review | `#8402` |
 | `resources/tutorials/docker-swarm/index.mdx` | resources/tutorials/docker-swarm/index.mdx: <Link> has bare-relative "to" value "../../articles/kubernetes/management-of-kubernetes" (<Link to="../../articles/kubernetes/management-of-kubernetes">); review manually | `#8402` |
 
 ## 6. Owner Issues Reference

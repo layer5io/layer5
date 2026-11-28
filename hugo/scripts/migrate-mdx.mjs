@@ -507,11 +507,7 @@ function convertGrid(tag, children, ctx, rawFull) {
       return rawFull;
     }
   }
-  const { text, hasIndentHazard } = dedentWrapperBody(children);
-  if (hasIndentHazard) {
-    ctx.warn('<Grid2>: body has 4+ space indented line after dedent; left as-is for manual review');
-    return rawFull;
-  }
+  const { text } = dedentWrapperBody(children);
   const shortcode = container ? 'grid' : 'grid-item';
   const attrStr = params.map(([k, v]) => ` ${k}=${fmtValue(v)}`).join('');
   return `{{< ${shortcode}${attrStr} >}}\n${text}\n{{< /${shortcode} >}}`;
@@ -736,7 +732,7 @@ function convertSegment(text, ctx) {
 /** Dedent a wrapper body by its common non-empty indent, never modifying fenced code blocks. */
 function dedentWrapperBody(inner) {
   const trimmed = inner.replace(/^(?:[ \t]*\n)+/, '').replace(/(?:\n[ \t]*)+$/, '');
-  if (!trimmed) return { text: '', hasIndentHazard: false };
+  if (!trimmed) return { text: '' };
   const lines = trimmed.split('\n');
   const inFenceFlags = new Array(lines.length).fill(false);
   let fenceChar = null;
@@ -757,15 +753,14 @@ function dedentWrapperBody(inner) {
   const dedentedLines = (!Number.isFinite(minIndent) || minIndent === 0)
     ? lines
     : lines.map((line, idx) => (inFenceFlags[idx] || !line.trim() ? line : line.slice(minIndent)));
-  let prevBlank = true;
-  let hasIndentHazard = false;
-  for (let idx = 0; idx < dedentedLines.length; idx++) {
-    if (inFenceFlags[idx]) { prevBlank = false; continue; }
-    if (!dedentedLines[idx].trim()) { prevBlank = true; continue; }
-    if (prevBlank && /^ {4,}/.test(dedentedLines[idx])) { hasIndentHazard = true; break; }
-    prevBlank = false;
-  }
-  return { text: dedentedLines.join('\n'), hasIndentHazard };
+  // In MDX v3, 4+ space indentation inside JSX wrappers is JSX/HTML/list indentation, not an indented code block.
+  // Clamp non-fenced 4+ space lines (0 spaces for HTML/JSX tags, 2 spaces for list items and continuation prose) so unwrapping never creates <pre><code> blocks or splits list continuations.
+  const normalizedLines = dedentedLines.map((line, idx) => {
+    if (inFenceFlags[idx] || !/^ {4,}/.test(line)) return line;
+    if (/^ {4,}</.test(line)) return line.replace(/^ +/, '');
+    return '  ' + line.replace(/^ +/, '');
+  });
+  return { text: normalizedLines.join('\n') };
 }
 
 /** Unwrap collection wrapper tags (e.g. <BlogWrapper>...</BlogWrapper>) outside fenced code blocks. */
@@ -800,14 +795,9 @@ function unwrapCollectionWrappers(body, ctx) {
       continue;
     }
     const rawInner = joined.slice(tag.end, c.start).replace(/\u0000WRAP_FENCE_(\d+)\u0000/g, (_, n) => maskedFences[+n]);
-    const { text: dedentedText, hasIndentHazard } = dedentWrapperBody(rawInner);
-    if (hasIndentHazard) {
-      ctx.warn(`<${name}>: wrapper body has 4+ space indented line after dedent; left as-is for manual review`);
-      out += joined.slice(i, c.end);
-    } else {
-      ctx.component(name);
-      out += joined.slice(i, m.index) + dedentedText;
-    }
+    const { text: dedentedText } = dedentWrapperBody(rawInner);
+    ctx.component(name);
+    out += joined.slice(i, m.index) + dedentedText;
     i = c.end;
   }
   return out.replace(/\u0000WRAP_FENCE_(\d+)\u0000/g, (_, n) => maskedFences[+n]);
