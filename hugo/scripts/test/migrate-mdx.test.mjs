@@ -1099,20 +1099,40 @@ test('Code converts self-closing template-literal codeString to fenced code bloc
 });
 
 
-test('Wrappers warn and leave tag as-is when body has mixed 0-space and 4+ space lines after dedent', () => {
+test('Wrappers dedent mixed 0-space and 4+ space lines safely without indented code blocks', () => {
   const input = [
     '---',
     'title: "Mixed Indent Wrapper"',
     '---',
     '<BlogWrapper>',
     '    <h4 className="date">October 04 to 09, 2021</h4>',
+    '    <div className="intro">',
+    '      Nested HTML text',
+    '    </div>',
+    '',
+    '1. First item:',
+    '',
+    '      * Nested item',
+    '',
+    '      Continuation paragraph',
+    '',
+    '```yaml',
+    'spec:',
+    '    indentedKey: true',
+    '```',
+    '',
     'Regular 0-space line with <Link to="/blog">link</Link>.',
     '</BlogWrapper>',
   ].join('\n');
   const { output, stats } = convertFile(input, { slug: 'ccoss', file: 'blog/2021/ccoss/index.mdx' });
-  assert.equal(stats.warnings.length, 1);
-  assert.match(stats.warnings[0], /4\+ space indented line after dedent/);
-  assert.match(output, /<BlogWrapper>/);
+  assert.equal(stats.warnings.length, 0);
+  assert.doesNotMatch(output, /<BlogWrapper>/);
+  assert.match(output, /^<h4 class="date">October 04 to 09, 2021<\/h4>$/m);
+  assert.match(output, /^<div class="intro">$/m);
+  assert.match(output, /^  Nested HTML text$/m);
+  assert.match(output, /^  \* Nested item$/m);
+  assert.match(output, /^  Continuation paragraph$/m);
+  assert.match(output, /^    indentedKey: true$/m);
   assert.match(output, /\[link\]\(\/blog\)/);
 });
 
