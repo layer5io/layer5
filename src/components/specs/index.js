@@ -12,7 +12,7 @@ const HowMesheryWorksSpecs = ({ title, desc, btnUrl }) => {
       <div className="management-plane">
         <Container>
           <Row $Vcenter>
-            <Col className="text" xs={12} lg={6}>
+            <Col className="text" $xs={12} $md={6} $lg={6}>
               <h2>{title}</h2>
               <p>{desc}</p>
               <VintageBox left={true} vintageTwo={true}>
@@ -23,7 +23,7 @@ const HowMesheryWorksSpecs = ({ title, desc, btnUrl }) => {
                 />
               </VintageBox>
             </Col>
-            <Col className="card" xs={12} lg={6}>
+            <Col className="card" $xs={12} $md={6} $lg={6}>
               <DataCard />
             </Col>
           </Row>
