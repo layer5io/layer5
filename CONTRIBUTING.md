@@ -596,6 +596,13 @@ collections (members, integrations, blog, news, events, resources) so that the
 data layer stays small. Use `make site-full` only when you are changing one of
 those collections — it is several times more expensive.
 
+#### Running Gatsby on native Windows
+
+The Gatsby wrapper used by `npm run develop` and `npm run build` checks for
+`gatsby.cmd`, `gatsby.exe`, and `gatsby.bunx` in `node_modules/.bin`, in that order.
+If it reports that no Gatsby Windows launcher was found, install the project
+dependencies and retry.
+
 #### Running on a memory-constrained machine
 
 `make site` and `npm run build` go through `scripts/run-gatsby.js`, which reads
@@ -604,7 +611,7 @@ sharp concurrency, and V8 heap ceiling from them. There is nothing to tune by
 hand, and you should not need to set `NODE_OPTIONS` yourself. If you do set any
 of `GATSBY_CPU_COUNT`, `SHARP_CONCURRENCY`, or `NODE_OPTIONS`, your value wins.
 
-On Windows, two things matter beyond the repository itself:
+If you run Gatsby in WSL on Windows, use the following settings:
 
 1. **Clone into the WSL filesystem, not `/mnt/c`.** Gatsby watches thousands of
    files; across the `/mnt/c` 9p bridge every one of those stat calls crosses a

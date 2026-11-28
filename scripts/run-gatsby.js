@@ -103,34 +103,64 @@ if (!/--max-old-space-size/.test(env.NODE_OPTIONS || "")) {
   env.NODE_OPTIONS = `${env.NODE_OPTIONS || ""} ${heapFlag}`.trim();
 }
 
-const args = process.argv.slice(2);
-console.info(
-  `[run-gatsby] ${totalGb.toFixed(1)} GB RAM / ${cores} cores -> ` +
-    `workers=${env.GATSBY_CPU_COUNT} sharp=${env.SHARP_CONCURRENCY} heap=${heapMb}MB`,
-);
-
-const gatsbyBin = path.join(
-  __dirname,
-  "..",
-  "node_modules",
-  ".bin",
-  process.platform === "win32" ? "gatsby.cmd" : "gatsby",
-);
-
-const child = spawn(gatsbyBin, args, {
-  env,
-  stdio: "inherit",
-  shell: process.platform === "win32",
-});
-
-const forward = (signal) => () => child.kill(signal);
-process.on("SIGINT", forward("SIGINT"));
-process.on("SIGTERM", forward("SIGTERM"));
-
-child.on("exit", (code, signal) => {
-  if (signal) {
-    process.kill(process.pid, signal);
-    return;
+/**
+ * Resolve the executable or Node entrypoint for the installed Gatsby launcher.
+ */
+const resolveGatsbyBin = ({
+  platform = process.platform,
+  existsSync = require("fs").existsSync,
+  binDir = path.join(__dirname, "..", "node_modules", ".bin"),
+} = {}) => {
+  if (platform === "win32") {
+    if (existsSync(path.join(binDir, "gatsby.cmd"))) {
+      // npm's batch shim can misinterpret shell metacharacters in checkout paths.
+      return path.resolve(binDir, "..", "gatsby", "cli.js");
+    }
+    const exe = path.join(binDir, "gatsby.exe");
+    if (existsSync(exe)) return exe;
+    if (existsSync(path.join(binDir, "gatsby.bunx"))) {
+      // Bun's .bunx file is metadata for its launcher, so run the CLI with Node.
+      return path.resolve(binDir, "..", "gatsby-cli", "cli.js");
+    }
+    return null;
   }
-  process.exit(code ?? 0);
-});
+  return path.join(binDir, "gatsby");
+};
+
+if (require.main === module) {
+  const gatsbyBin = resolveGatsbyBin();
+  if (!gatsbyBin) {
+    console.error(
+      "[run-gatsby] No Gatsby Windows launcher found. Install the project dependencies.",
+    );
+    process.exit(1);
+  }
+
+  const args = process.argv.slice(2);
+  console.info(
+    `[run-gatsby] ${totalGb.toFixed(1)} GB RAM / ${cores} cores -> ` +
+      `workers=${env.GATSBY_CPU_COUNT} sharp=${env.SHARP_CONCURRENCY} heap=${heapMb}MB`,
+  );
+
+  const isNodeEntrypoint = gatsbyBin.endsWith(".js");
+  const command = isNodeEntrypoint ? process.execPath : gatsbyBin;
+  const childArgs = isNodeEntrypoint ? [gatsbyBin, ...args] : args;
+  const child = spawn(command, childArgs, {
+    env,
+    stdio: "inherit",
+  });
+
+  const forward = (signal) => () => child.kill(signal);
+  process.on("SIGINT", forward("SIGINT"));
+  process.on("SIGTERM", forward("SIGTERM"));
+
+  child.on("exit", (code, signal) => {
+    if (signal) {
+      process.kill(process.pid, signal);
+      return;
+    }
+    process.exit(code ?? 0);
+  });
+}
+
+module.exports = { resolveGatsbyBin };
