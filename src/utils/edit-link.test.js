@@ -102,6 +102,20 @@ describe("sourceFromComponent", () => {
     assert.equal(sourceFromComponent(component), mdx);
   });
 
+  it("resolves __contentFilePath regardless of parameter order", () => {
+    const mdx = src("src", "collections", "blog", "2026", "post", "index.mdx");
+    const component = `${src("src", "templates", "blog-single.js")}?export=default&__contentFilePath=${mdx}`;
+
+    assert.equal(sourceFromComponent(component), mdx);
+  });
+
+  it("ignores extra parameters that follow the content path", () => {
+    const mdx = src("src", "collections", "blog", "2026", "post", "index.mdx");
+    const component = `${src("src", "templates", "blog-single.js")}?__contentFilePath=${mdx}&foo=bar`;
+
+    assert.equal(sourceFromComponent(component), mdx);
+  });
+
   it("falls back to the component path when no content path is present", () => {
     const component = `${src("src", "pages", "404.js")}?export=default`;
 
@@ -128,6 +142,16 @@ describe("toEditUrl", () => {
     );
     assert.equal(
       toEditUrl(src("src", "templates", "lite-placeholder.js"), ROOT),
+      null,
+    );
+  });
+
+  it("rejects a template with an empty content path", () => {
+    assert.equal(
+      toEditUrl(
+        `${src("src", "templates", "member-single.js")}?__contentFilePath=`,
+        ROOT,
+      ),
       null,
     );
   });
@@ -199,5 +223,103 @@ describe("toEditUrl", () => {
 
   it("returns null for an empty component", () => {
     assert.equal(toEditUrl("", ROOT), null);
+  });
+
+  it("rejects a symlink that escapes the repository", (t) => {
+    const tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), "edit-link-"));
+    const outside = fs.mkdtempSync(path.join(os.tmpdir(), "edit-link-outside-"));
+    try {
+      const target = path.join(outside, "secret.mdx");
+      fs.writeFileSync(target, "# secret\n");
+      const link = path.join(tmpRoot, "escape.mdx");
+      try {
+        fs.symlinkSync(target, link);
+      } catch (err) {
+        if (err.code === "EPERM" || err.code === "EACCES") {
+          t.skip("symlinks not supported on this platform");
+          return;
+        }
+        throw err;
+      }
+
+      assert.equal(toEditUrl(link, tmpRoot), null);
+    } finally {
+      fs.rmSync(tmpRoot, { recursive: true, force: true });
+      fs.rmSync(outside, { recursive: true, force: true });
+    }
+  });
+
+  it("resolves a symlink that stays inside the repository", (t) => {
+    const tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), "edit-link-"));
+    try {
+      const target = path.join(tmpRoot, "real.mdx");
+      fs.writeFileSync(target, "# real\n");
+      const link = path.join(tmpRoot, "alias.mdx");
+      try {
+        fs.symlinkSync(target, link);
+      } catch (err) {
+        if (err.code === "EPERM" || err.code === "EACCES") {
+          t.skip("symlinks not supported on this platform");
+          return;
+        }
+        throw err;
+      }
+
+      assert.equal(
+        toEditUrl(link, tmpRoot),
+        `${REPO_URL}/blob/master/real.mdx`,
+      );
+    } finally {
+      fs.rmSync(tmpRoot, { recursive: true, force: true });
+    }
+  });
+});
+
+describe("integration: representative page sources", () => {
+  it("resolves a regular Gatsby page", () => {
+    assert.equal(
+      toEditUrl(src("src", "pages", "404.js"), ROOT),
+      `${REPO_URL}/blob/master/src/pages/404.js`,
+    );
+  });
+
+  it("resolves a directory-based index route", () => {
+    assert.equal(
+      toEditUrl(src("src", "pages", "pricing", "index.js"), ROOT),
+      `${REPO_URL}/blob/master/src/pages/pricing/index.js`,
+    );
+  });
+
+  it("resolves an MDX collection page through __contentFilePath", () => {
+    const mdx = src(
+      "src",
+      "collections",
+      "service-mesh-books",
+      "service-mesh-patterns",
+      "index.mdx",
+    );
+    const component = `${src("src", "templates", "book-single.js")}?__contentFilePath=${mdx}&export=default`;
+
+    assert.equal(
+      toEditUrl(component, ROOT),
+      `${REPO_URL}/blob/master/src/collections/service-mesh-books/service-mesh-patterns/index.mdx`,
+    );
+  });
+
+  it("resolves a Sistent component page (createPages at gatsby-node.js:822)", () => {
+    const mdx = src(
+      "src",
+      "collections",
+      "sistent",
+      "components",
+      "accordion",
+      "index.mdx",
+    );
+    const component = `${src("src", "templates", "sistent-component.js")}?__contentFilePath=${mdx}&export=default`;
+
+    assert.equal(
+      toEditUrl(component, ROOT),
+      `${REPO_URL}/blob/master/src/collections/sistent/components/accordion/index.mdx`,
+    );
   });
 });
