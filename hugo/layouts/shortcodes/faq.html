@@ -1,6 +1,6 @@
 {{- $category := .Get "category" | default "" -}}
 <div class="faq-accordion">
-  {{- $faqs := site.Data.faq -}}
+  {{- $faqs := hugo.Data.faq -}}
   {{- range $faqs -}}
     {{- $match := true -}}
     {{- if $category -}}
