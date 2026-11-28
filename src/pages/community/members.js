@@ -162,6 +162,14 @@ const options = [
     className: "allOptions",
   },
   {
+    label: "Employee",
+    value: "employee",
+    color: lighttheme.linkColor,
+    isFixed: true,
+    icon: icon5,
+    className: "allOptions",
+  },
+  {
     label: "STATUS",
     value: "",
     color: lighttheme.linkColor,
@@ -265,6 +273,6 @@ export default MembersPage;
 export const Head = () => {
   return <SEO
     title="Members"
-    description="An awarding-winning, open source community with a warm and welcoming collection of contributors."
+    description="An award-winning open source community with a warm and welcoming collection of contributors."
   />;
 };

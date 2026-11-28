@@ -1,0 +1,370 @@
+---
+title: AppBar Code
+component: appbar
+description: An app bar is a header component that displays information and actions relating to the current screen, providing navigation, branding, and key functionality.
+---
+
+import { useState } from 'react';
+import { 
+  AppBar, Toolbar, Typography, IconButton, Button, 
+  Menu, MenuIcon, MenuItem, Box, Avatar, Container, Tooltip 
+} from "@sistent/sistent";
+
+export const basicCode = `import { AppBar, Toolbar, Typography } from "@sistent/sistent";
+
+<AppBar position="static">
+  <Toolbar>
+    <Typography variant="h6" component="div">
+      My App
+    </Typography>
+  </Toolbar>
+</AppBar>`;
+
+export const navCode = `import { AppBar, Toolbar, Typography, Button } from "@sistent/sistent";
+
+<AppBar position="static">
+  <Toolbar>
+    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+      My App
+    </Typography>
+    <Button color="inherit">Home</Button>
+    <Button color="inherit">About</Button>
+    <Button color="inherit">Contact</Button>
+  </Toolbar>
+</AppBar>`;
+
+export const responsiveCode = `import React from 'react';
+import { 
+  AppBar, Toolbar, Typography, IconButton, Button, 
+  Menu, MenuIcon, MenuItem, Box, Avatar, Tooltip 
+} from "@sistent/sistent";
+
+function AppBarWithMenu() {
+  const pages = ['Products', 'Pricing', 'Blog'];
+  const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
+  return (
+    <AppBar position="static">
+      <Toolbar disableGutters>
+        <Typography
+          variant="h6"
+          noWrap
+          component="a"
+          href="#app-bar-with-responsive-menu"
+          sx={{
+            mr: 2,
+            display: { xs: 'none', md: 'flex' },
+            fontFamily: 'monospace',
+            fontWeight: 700,
+            letterSpacing: '.3rem',
+            color: 'inherit',
+            textDecoration: 'none',
+          }}
+        >
+          LOGO
+        </Typography>
+
+        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleOpenNavMenu}
+            color="inherit"
+          >
+            <MenuIcon />
+          </IconButton>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorElNav}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'left',
+            }}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
+            sx={{ display: { xs: 'block', md: 'none' } }}
+          >
+            {pages.map((page) => (
+              <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+              </MenuItem>
+            ))}
+          </Menu>
+        </Box>
+        <Typography
+          variant="h5"
+          noWrap
+          component="a"
+          href="#app-bar-with-responsive-menu"
+          sx={{
+            mr: 2,
+            display: { xs: 'flex', md: 'none' },
+            flexGrow: 1,
+            fontFamily: 'monospace',
+            fontWeight: 700,
+            letterSpacing: '.3rem',
+            color: 'inherit',
+            textDecoration: 'none',
+          }}
+        >
+          LOGO
+        </Typography>
+        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          {pages.map((page) => (
+            <Button
+              key={page}
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, display: 'block' }}
+            >
+              {page}
+            </Button>
+          ))}
+        </Box>
+        <Box sx={{ flexGrow: 0 }}>
+          <Tooltip title="Open settings">
+            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+            </IconButton>
+          </Tooltip>
+          <Menu
+            sx={{ mt: '45px' }}
+            id="menu-appbar"
+            anchorEl={anchorElUser}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            open={Boolean(anchorElUser)}
+            onClose={handleCloseUserMenu}
+          >
+            {settings.map((setting) => (
+              <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
+              </MenuItem>
+            ))}
+          </Menu>
+        </Box>
+      </Toolbar>
+    </AppBar>
+  );
+}`;
+
+export const ResponsiveAppBar = () => {
+  const pages = ['Products', 'Pricing', 'Blog'];
+  const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
+  return (
+    <AppBar position="static">
+      <Toolbar disableGutters>
+        <Typography
+          variant="h6"
+          noWrap
+          component="a"
+          href="#app-bar-with-responsive-menu"
+          sx={{
+            mr: 2,
+            display: { xs: 'none', md: 'flex' },
+            fontFamily: 'monospace',
+            fontWeight: 700,
+            letterSpacing: '.3rem',
+            color: 'inherit',
+            textDecoration: 'none',
+          }}
+        >
+          LOGO
+        </Typography>
+
+        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleOpenNavMenu}
+            color="inherit"
+          >
+            <MenuIcon />
+          </IconButton>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorElNav}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'left',
+            }}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
+            sx={{ display: { xs: 'block', md: 'none' } }}
+          >
+            {pages.map((page) => (
+              <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+              </MenuItem>
+            ))}
+          </Menu>
+        </Box>
+        <Typography
+          variant="h5"
+          noWrap
+          component="a"
+          href="#app-bar-with-responsive-menu"
+          sx={{
+            mr: 2,
+            display: { xs: 'flex', md: 'none' },
+            flexGrow: 1,
+            fontFamily: 'monospace',
+            fontWeight: 700,
+            letterSpacing: '.3rem',
+            color: 'inherit',
+            textDecoration: 'none',
+          }}
+        >
+          LOGO
+        </Typography>
+        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          {pages.map((page) => (
+            <Button
+              key={page}
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, display: 'block' }}
+            >
+              {page}
+            </Button>
+          ))}
+        </Box>
+        <Box sx={{ flexGrow: 0 }}>
+          <Tooltip title="Open settings">
+            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+            </IconButton>
+          </Tooltip>
+          <Menu
+            sx={{ mt: '45px' }}
+            id="menu-appbar"
+            anchorEl={anchorElUser}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            open={Boolean(anchorElUser)}
+            onClose={handleCloseUserMenu}
+          >
+            {settings.map((setting) => (
+              <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
+              </MenuItem>
+            ))}
+          </Menu>
+        </Box>
+      </Toolbar>
+    </AppBar>
+  );
+}
+
+The AppBar component works seamlessly with Sistent's theming system.
+
+## Basic AppBar
+The simplest app bar includes just a toolbar with a title.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6" component="div">
+              My App
+            </Typography>
+          </Toolbar>
+        </AppBar>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="basic-appbar" collapsible code={basicCode} />
+</div>
+
+## AppBar with Navigation
+Add navigation links to the right side of the app bar.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              My App
+            </Typography>
+            <Button color="inherit" sx={{ textTransform: 'none', marginRight: '16px' }}>Home</Button>
+            <Button color="inherit" sx={{ textTransform: 'none' }}>About</Button>
+          </Toolbar>
+        </AppBar>
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="appbar-navigation" collapsible code={navCode} />
+</div>
+
+## AppBar with User Menu
+Create an interactive user menu with Avatar and Menu components.
+
+<div className="showcase">
+  <div className="items">
+    <ThemeWrapper>
+        <ResponsiveAppBar />
+    </ThemeWrapper>
+  </div>
+  <CodeBlock name="appbar-user-menu" collapsible code={responsiveCode} />
+</div>

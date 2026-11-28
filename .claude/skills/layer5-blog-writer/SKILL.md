@@ -1,15 +1,19 @@
 ---
 name: layer5-blog-writer
+version: 2.0.1
 description: Creates complete, publication-ready blog posts for layer5.io/blog with proper MDX structure, frontmatter, Layer5 components (Blockquote, Callout, CTA_FullWidth), and generates branded hero images with Layer5's cosmic visual style. Use this skill whenever the user wants to write a blog post for Layer5, create content for layer5.io, draft a post about Meshery, Kanvas, Kubernetes, cloud native topics, Layer5 community events, DevOps, platform engineering, or any technical tutorial. Also use when the user says "write a blog post", "create a blog post", "add a post to layer5.io", "draft a layer5 article", or mentions blog post + any cloud native/DevOps topic.
 ---
 
 # Layer5 Blog Writer
 
-You create complete, publication-ready blog posts for [layer5.io/blog](https://layer5.io/blog) and generate branded hero images. You produce:
+You create complete, publication-ready blog posts for [layer5.io/blog](https://layer5.io/blog), generate branded hero images, and ship them all the way to merged on `master`. You produce:
 
 1. A fully-formed `index.mdx` at the correct path in the Layer5 repo
-2. A branded hero image (SVG) in the same directory
-3. A brief handoff note covering what was created
+2. A branded hero image (raster, 1200x630) in the same directory
+3. A linted post and a green local build
+4. A signed-off commit on a dedicated branch in a leased treehouse worktree
+5. A pull request landed through no-mistakes (at most three runs)
+6. A brief handoff note covering what was created and the merged PR URL
 
 ## Layer5 Brand Voice
 
@@ -43,11 +47,11 @@ What they care about: reducing toil, shipping faster, keeping their cluster heal
 
 ## Workflow
 
-### Step 1 — Clarify intent (if needed)
+### Step 1 - Clarify intent (if needed)
 
 Ask one focused question if the topic is unclear. If you can infer enough, proceed. Typical defaults: author = "Layer5 Team", date = today.
 
-### Step 2 — Research from authoritative docs
+### Step 2 - Research from authoritative docs
 
 Both documentation sites are cloned locally. Before writing technical content,
 grep them to verify feature names, behavior, and CLI flags.
@@ -66,7 +70,7 @@ See `references/docs-sources.md` for the full path-to-URL mapping and search pat
 
 **Pin versions in install commands.** Never use `releases/latest`, `:latest` tags, or unversioned URLs in tutorials. Pin to a specific release (e.g. `v0.104.0`, `v1.23.0`). Unpinned commands break silently weeks later when upstream ships a breaking change, and the reader blames the blog post. If you don't know the current version, grep the docs or check the project's GitHub releases page and use the latest stable version explicitly.
 
-### Step 3 — Plan the post
+### Step 3 - Plan the post
 
 Before writing:
 
@@ -78,96 +82,242 @@ Before writing:
 - **Resource flag**: Worth adding `resource: true`?
 - **Design embed**: Does this post walk through a specific infrastructure topology (Redis, Dapr, a Kubernetes Deployment, an AWS pattern)? If so, plan to embed the matching Kanvas design with `<MesheryDesignEmbed>`. The available designs and their IDs are in `references/blog-structure.md`.
 
-### Step 4 — Write the blog post
+### Step 4 - Set up the git worktree
+
+All file writes for this blog post happen inside a leased treehouse worktree, never in the main clone. Other agent sessions and the no-mistakes pipeline share the main clone. Never create a worktree with `git worktree add` or a second clone.
+
+```bash
+SLUG="kebab-case-descriptive-slug"   # matches the folder name under src/collections/blog/YYYY/
+BRANCH="blog/${SLUG}"
+
+# Prints the worktree path; capture it
+WORKTREE_DIR=$(treehouse get --lease -b "$BRANCH")
+
+cd "$WORKTREE_DIR"
+```
+
+Treat `$WORKTREE_DIR` as the working root for every later step. Every path below (e.g. `src/collections/blog/...`) is relative to `$WORKTREE_DIR`. `treehouse status` lists the pool.
+
+### Step 5 - Write the blog post
 
 Read `references/blog-structure.md` for the full format spec.
 
-**File path:**
+**File path (inside the worktree):**
 
 ```
 src/collections/blog/YYYY/MM-DD-descriptive-slug/index.mdx
 ```
 
-Work from the root of the Layer5 repo. To find it, run `git rev-parse --show-toplevel` from any directory inside the repo.
+### Step 6 - Generate the hero image
 
-### Step 5 — Generate the hero image
+First, **pick a Five pose deliberately.** Read `references/mascot-five-index.md` - it's the
+complete, human-maintained catalog of all 41 poses in `assets/mascot-five/SVG/` (description,
+topical tags, whether a Layer5/Meshery logo is already baked in, and whether the pose has genuine
+blank signage). Scan the tags for the post's actual theme and pick the best match yourself; don't
+default to the same pose across posts. If nothing fits well, fall back to the `climbing-stairs`
+pose (plain forward motion, no props that could clash with an unrelated topic) rather than forcing
+a thematic pick that doesn't hold up.
+
+If the chosen pose has blank signage (currently `blank-signpost` or `blank-book` - the index says
+so explicitly), you can put post-specific text on it with `--sign-text`: a product name or a short
+callout of one to three words, not the post's title. The generator wraps and shrinks the text to
+fit the measured surface and exits with an error rather than truncating when it cannot fit, so
+shorten the text if that happens. Don't pass `--sign-text` for any other pose - the generator warns
+and ignores it unless the pose has a calibrated zone.
 
 ```bash
 python3 "<skill_dir>/scripts/generate_hero_image.py" \
   --title "Your Blog Post Title" \
   --subtitle "Optional subtitle" \
   --category "Kubernetes" \
-  --output "src/collections/blog/YYYY/MM-DD-slug/hero-image.svg" \
-  --repo-root /path/to/layer5/repo
+  --five-pose "SVG/pondering-wondering-questioning-confused-thinking.svg" \
+  --date "Month DD, YYYY" \
+  --author "Layer5 Team" \
+  --output "src/collections/blog/YYYY/MM-DD-slug/hero-image.jpg" \
+  --repo-root "$WORKTREE_DIR"
 ```
 
-Produces a fully SVG-native 1200x630 image that:
+**The output is a raster, and that is not negotiable.** `--output` must be `.jpg` (recommended),
+`.png`, or `.webp`; the generator refuses `.svg` outright. SVG is composed internally and thrown
+away, because a shipped SVG breaks two things at once:
 
-- Generates a **multi-stop gradient background** matching Layer5's official illustration technique (extracted from Artboard 1.svg and chs-2-intro.svg reference files). Uses overlapping full-canvas rectangles with 10-16 stop linear/radial gradients and `stop-opacity` for compositing - NOT blurred ellipses.
-- The signature Layer5 gradient ramp has 16 stops transitioning from Dark Jungle Green (#1E2117) through Charcoal (#3C494F), six intermediate blue-greens (#375154, #305D5D, #266E6A, #1A847B, #0B9E8F), Keppel (#00B39F), to Caribbean Green (#00D3A9). Equivalent ramps exist for Saffron and Steel Teal. These intermediate colors create the rich, deep transitions characteristic of Layer5 illustrations.
-- Full brand palette: Eerie Black (#1E2117), Charcoal (#3C494F), Steel Teal (#477E96), Keppel (#00B39F), Caribbean Green (#00D3A9), Saffron (#EBC017), Banana Mania (#FFF3C5)
-- White clearing uses the exact radial gradient from chs-2-intro.svg: white at center through #F7FCFC, #E2F6F4, #BFEBE7, #8FDDD4, #52CBBE, #12B8A6 to Keppel at edge
-- Selects a composition preset by `--category`:
-  - **Corner Warmth** (daytime): Saffron upper-left sun, Keppel/Caribbean Green at right edge and bottom, Dark Jungle Green base at lower-left, massive white clearing center-right. NO Steel Teal or Charcoal. Reference: "4000 members", "Recognition Program", "layer5-hero.webp"
-  - **Deep Space** (night): Steel Teal dominates upper sky, Charcoal at lower corners with extra diagonal darkness, Saffron warm star upper-right, tighter white clearing. Reference: "Meet Five", "Adventures of Five Vol 2" cover
-- Overlays a real Five mascot SVG at ~95% image height (large, prominent) from a curated set of 10 standalone poses
-- Embeds Qanelas Soft font (from `static/fonts/qanelas-soft/`) for brand-accurate typography
-- Adds an off-center white/off-white glow close behind Five so the black skeleton reads clearly - this is NOT a centered radial spotlight
+- `og:image` and `twitter:image` resolve to the thumbnail's `publicURL`
+  (`src/templates/blog-single.js` into `src/components/seo.js`). X, LinkedIn, Facebook, and Slack
+  do not render SVG social cards, so an SVG thumbnail unfurls with **no image at all**.
+- `childImageSharp` is null for SVG, so `src/components/image.js` falls back to a bare `<img src>`:
+  no srcset, no WebP/AVIF, no blur-up, and the blog index downloads the full-size file to paint a
+  ~350px card.
+
+JPEG at q88 measures ~70KB against ~310KB for the equivalent SVG, is visually indistinguishable
+(mean delta 1.1/255), and lets `gatsby-plugin-sharp` generate modern formats for on-page display
+while crawlers still get a JPEG. Rasterizing also bakes the type, so no Qanelas Soft binary is
+committed - the old SVG heroes were 73% base64 OTF of a commercially licensed font, once per post.
+
+Rasterizing needs a Chrome/Chromium binary for every format, and Pillow (`pip install pillow`) for
+JPEG/WebP; PNG does not need Pillow. If a requirement is missing the generator exits with an error
+and writes no raster; output is deterministic per title, so rerun the same command once it is
+installed. Without `--keep-svg` nothing is written into the post directory on failure. With
+`--keep-svg` the working SVG is written there before rasterizing, so it remains after a failure -
+never commit it.
+
+Produces a 1200x630 image that:
+
+- Renders a **real interpolated mesh gradient** background: brand-color control points scattered
+  across the canvas, blended by inverse-distance weighting, rendered at low resolution and upscaled
+  - the upscale is what produces the soft, organic blend (the same trick behind tools like Figma's
+    mesh-gradient plugin). If a generated image ever looks muddy or gray, the bug is in the
+    interpolation math or an underpowered `IDW_POWER`, not something to work around with more
+    gradient layers.
+- **All colors, compositions, and layouts live in `scripts/mesh_palette.py`**, not in the generator.
+  If a hero needs adjusting - a composition feels too dark, an accent hue is off-brand - edit that
+  file. Nothing else needs to change.
+- **Varies per post, deliberately.** `--category` picks a _tone_ (warm or cool), and a hash of the
+  title picks the composition within that tone, the layout, and the contrast device. There are 10
+  compositions, 4 layouts (the mascot sits left or right, centered or grounded), and 3 devices. An
+  earlier version mapped 22 categories onto 2 compositions with one fixed layout; two posts in the
+  same category differed by a mean of 8/255 across the background, which is below perceptual
+  threshold, and every hero read as one template with the words swapped.
+- **Is deterministic.** The same title always produces a byte-identical image, so a hero can be
+  regenerated. Selection uses `zlib.crc32`, not Python's `hash()`, which is salted per process and
+  previously produced a different image on every run of the same command.
+- **Sizes the mascot from its measured artwork**, via `assets/mascot-five/pose-bounds.json`, not
+  from its Illustrator artboard. Artboards are not tight - `pondering` paints 113 units of ink in a
+  529-unit-wide viewBox - so artboard sizing rendered some poses a quarter of the intended size.
+- Keeps a margin from every canvas edge and never lets the footer band cover the mascot's feet.
+- Places a feathered contrast device behind Five whose **alpha is solved against the background it
+  has to lift**, targeting a luminance of 206. Light compositions get a whisper; dark ones get a
+  real light source. A fixed opacity either punched a white hole through light backgrounds or left
+  the line art unreadable on dark ones.
+- Footer shows the **publish date on the left and the author on the right** (`--date` / `--author`).
+  Defaults to today's date and "Layer5 Team" if omitted.
 
 **Five mascot rules:**
 
-- Uses real SVG assets from `src/assets/images/five/SVG/` - curated standalone poses only (no scenes with vehicles, furniture, or complex props)
-- Five's colors are never modified: black skeleton, teal (#00B39F) shoes and hands
-- Five appears large (occupying the right ~42% of the frame, nearly full height) - not a small decorative accent
+- Uses the SVG assets in `assets/mascot-five/SVG/` (this skill's own bundled collection, not
+  `src/assets/images/five/` - a separate, thinner set used elsewhere on the site).
+- Five's illustrated colors are never modified. They are **not** just black-and-teal - several poses
+  have incidental shading grays, near-blacks, and prop colors (a brown rake handle, a yellow spray
+  canister) baked into the artwork. Contrast comes from the device placed behind Five, never from
+  recoloring the SVG.
+- `SVG/Artboard 31.svg` (Five driving a car) is excluded from rotation - Five is a small passenger
+  there, not a standalone figure, and looks wrong at this scale. Don't select it.
 
-Pass `--repo-root` as the absolute path to the Layer5 repo root (use `git rev-parse --show-toplevel` from inside the repo). Without it, the script still runs but omits the Five mascot and brand font.
-
-See `assets/sample-hero-images/` for visual reference across different category palettes.
+`--repo-root` is only used to find the Qanelas Soft font (`static/fonts/qanelas-soft/`) - pass the
+worktree root (`$WORKTREE_DIR` from Step 4). Without it the script still runs and falls back to a
+system sans-serif.
 
 Update frontmatter:
 
 ```yaml
-thumbnail: ./hero-image.svg
-darkthumbnail: ./hero-image.svg
+thumbnail: ./hero-image.jpg
+darkthumbnail: ./hero-image.jpg
 ```
 
-### Step 6 — Final quality check
+### Step 7 - Final quality check
 
-**Structure and components:**
+Run from inside `$WORKTREE_DIR`. Do not proceed to Step 8 until both gates pass.
 
-- [ ] All frontmatter fields present (see `references/blog-structure.md` for the complete list)
-- [ ] `published: true` (or `false` for draft)
-- [ ] Date format exactly: `YYYY-MM-DD HH:MM:SS +/-HHMM` (quoted in frontmatter)
-- [ ] At least one image with descriptive alt text
-- [ ] At least one `<CTA_FullWidth>` or `<KanvasCTA>`
-- [ ] At least one `<Blockquote>` for emphasis
-- [ ] Posts about specific infrastructure patterns: `<MesheryDesignEmbed>` with a matching design from the table in `references/blog-structure.md`
-- [ ] Multiple `<Link>` components for internal navigation
-- [ ] `className` in JSX (not `class`)
-- [ ] No em dashes (`—`) anywhere - hyphens (`-`) only
-- [ ] Opening lede wrapped in `<div className="intro">`
-- [ ] Closing next-steps wrapped in `<div className="outro">`
-- [ ] Technical posts: consider `resource: true`
-- [ ] Tags and categories from the approved list (see `references/tags-categories.md`)
+#### 7a. Run the linter
 
-**Technical accuracy (tutorials and how-to posts):**
+```bash
+python3 "<skill_dir>/scripts/check_post.py" "src/collections/blog/YYYY/MM-DD-slug/index.mdx"
+```
+
+Exit code 0 means clean. It asserts the mechanical half of this step: required frontmatter fields,
+the exact `YYYY-MM-DD HH:MM:SS +/-HHMM` date format, thumbnails that exist and are rasters rather
+than SVG, category and tags matching `references/tags-categories.md` (case-sensitively), presence
+of `intro`/`outro`/`<Blockquote>`/a CTA, a body image repeating the thumbnail, `className` rather than `class`, en/em dashes, brand
+capitalization in prose, unpinned `:latest` versions, and AI-authorship trailers. It also
+cross-checks the taxonomy doc against `CATEGORY_TONE` in `mesh_palette.py` so the two cannot drift.
+
+This replaced a hand-ticked checklist. Every item above was previously a prose assertion an agent
+could tick by eye, and the first run of the linter against the two posts already merged to `master`
+found an SVG thumbnail on both and a `Meshmates` capitalization error - none of which the checklist
+had caught.
+
+#### 7b. Build the blog collection
+
+```bash
+BUILD_FULL_SITE=false LITE_BUILD_PROFILE=blog NODE_OPTIONS=--max-old-space-size=8192 npx gatsby build
+```
+
+The post is MDX compiled at build time, so an unclosed tag, a bad component import, or a missing
+image import fails the build. That is what this step is for.
+
+**Build the blog collection, not the whole site.** `npm run build` sets `BUILD_FULL_SITE=true` and
+compiles members, integrations, news, events, and resources as well - none of which a blog post can
+break, and all of which cost many minutes. The `blog` profile in
+`src/utils/build-collections.js` in the layer5 site repo excludes exactly those.
+`npm run dev` (which is `develop:lite` on the `core` profile) is the wrong tool here too: `core`
+excludes `blog`, so it would skip the very thing you are trying to compile.
+
+CI (`.github/workflows/checks.yml`) runs the full-site build on the PR, so full-site coverage is not
+lost by scoping locally - it just happens on the runner instead of on your laptop.
+
+#### 7c. Judgement calls the linter cannot make
 
 - [ ] Every shell command sequence is internally consistent - read them top to bottom as if executing on a fresh cluster. If step N disables or skips a component, no later step can reference that component
-- [ ] Install commands pin explicit versions (`v0.104.0`, not `releases/latest` or `:latest`)
 - [ ] Namespace, service name, and label selectors are consistent across all commands
-- [ ] `kubectl port-forward`, `kubectl get`, and `kubectl logs` commands reference resources that were actually created by preceding steps
+- [ ] `kubectl port-forward`, `kubectl get`, and `kubectl logs` reference resources that preceding steps actually created
 - [ ] If the post references a Meshery or Kanvas feature, grep the docs repos to confirm the feature name and CLI flags are current
+- [ ] Every in-body image (diagram, screenshot, chart) has descriptive alt text. Do not embed the hero: the blog template already renders `thumbnail` above the title, and the linter flags a repeat
+- [ ] Multiple `<Link>` components for internal navigation
+- [ ] Posts about specific infrastructure patterns embed `<MesheryDesignEmbed>` with a matching design from the table in `references/blog-structure.md`
+- [ ] Technical posts: consider `resource: true`
+- [ ] The post reads as the author's own work. Naming an AI product is fine when it is the subject matter; claiming AI authorship is not
 
-**Brand and taxonomy:**
+### Step 8 - Commit, land through no-mistakes, and return the worktree
 
-- [ ] Brand names use exact capitalization: MeshMates, Meshery, mesheryctl, Kanvas, Layer5, KubeCon, GitOps, DevOps, OpenTelemetry
-- [ ] Tags match the approved list casing exactly (e.g. `ai` is lowercase, `Open Source` is title case) - see `references/tags-categories.md`
-- [ ] Category is exactly one from the approved list
+Land the post through the no-mistakes pipeline, which reviews, tests, pushes, and opens the pull request. Use at most three runs per pull request; after the third, merge the pull request as it stands and open an issue for anything still flagged.
+
+**Authorship rule (non-negotiable):** the commit message, PR title, PR body, and any other text introduced by this skill must contain no reference to AI assistants, AI authoring tools, "Co-Authored-By" trailers, or automation by name. The signoff is the user's configured `user.name <user.email>`, appended only by `git commit -s`. Do not add `--author`, do not add trailers, do not add "generated with" lines.
+
+```bash
+# Run from inside $WORKTREE_DIR
+cd "$WORKTREE_DIR"
+
+TITLE="<the blog post's title>"   # same as the post's frontmatter title
+POST_DIR="src/collections/blog/YYYY/MM-DD-${SLUG}"
+
+# Stage only this post's directory. Never `git add` the whole year folder -
+# that sweeps up any unrelated stray file sitting in it.
+git add "$POST_DIR"
+git status --short          # confirm nothing unexpected is staged
+git commit -s -m "blog: ${TITLE}"
+
+# Validate, push, and open the PR (a clone without a `no-mistakes` remote needs `no-mistakes init` once)
+no-mistakes axi run --intent "Publish the ${SLUG} blog post"
+no-mistakes axi status      # current step and findings; answer a review gate with `no-mistakes axi respond`
+```
+
+Once the pull request has merged, release the worktree:
+
+```bash
+treehouse return "$WORKTREE_DIR"
+```
+
+Failure handling:
+
+- **Never merge without green checks.** checks.yml runs `npm run build` and eslint; a broken MDX post that lands on `master` breaks the production deploy. The local build in Step 7b is a double check, not the only check.
+- If the pipeline or CI reports a failure, fix it in the worktree, commit with `-s`, and rerun, counting against the three-run limit.
+- If the merge cannot complete (branch protection, conflicts on `master`), report the PR URL and the specific blocker; do not return the worktree until the user decides how to proceed.
+- If `treehouse return` complains about untracked files, investigate before forcing - there may be unsaved work. A leftover `hero-image.svg` from `--keep-svg` is the usual culprit; delete it rather than committing it.
+
+End the run with a one-paragraph handoff: the merged PR URL, the post path on `master`, and any follow-ups (e.g. broken cross-links, a Kanvas design ID still to be confirmed).
 
 ## Reference files
 
-- **`references/blog-structure.md`** — Complete MDX format, frontmatter fields, all component patterns including `<MesheryDesignEmbed>` with the full table of available designs. Read before writing.
-- **`references/tags-categories.md`** — Approved tags and categories.
-- **`references/docs-sources.md`** — Local doc repo paths, URL mappings, and grep patterns for fact-checking.
-- **`scripts/generate_hero_image.py`** — Fully SVG-native hero image generator using Layer5's freeform gradient background style and full brand palette.
-- **`assets/sample-hero-images/`** — Four canonical hero image examples showing the visual style, Five mascot treatment, freeform gradient composition, and full brand palette across different category palettes (Kubernetes, Observability, Platform Engineering, Community). Read these before generating an image to calibrate visual expectations.
+- **`references/blog-structure.md`** - Complete MDX format, frontmatter fields, all component patterns including `<MesheryDesignEmbed>` with the full table of available designs. Read before writing.
+- **`references/tags-categories.md`** - Approved tags and categories, and the source of truth `check_post.py` validates against.
+- **`references/docs-sources.md`** - Local doc repo paths, URL mappings, and grep patterns for fact-checking.
+- **`references/mascot-five-index.md`** - Catalog of all 41 Five poses: description, topical tags, baked-in logo, and blank-signage flag. Read before Step 6 and pick a pose deliberately - this is the only place pose selection happens, there's no keyword-matching logic in the script.
+- **`scripts/generate_hero_image.py`** - Hero image generator. Composes the mesh-gradient background and mascot in SVG, then rasterizes. Deterministic per title.
+- **`scripts/mesh_palette.py`** - All hero-image colors, compositions, layouts, and contrast devices. Edit this file, not the generator, when the look needs to change.
+- **`scripts/rasterize.py`** - SVG to JPEG/PNG/WebP via headless Chrome. Documents why heroes ship as rasters.
+- **`scripts/measure_pose_bounds.py`** - Regenerates `assets/mascot-five/pose-bounds.json`. Run after adding or replacing a pose.
+- **`scripts/check_post.py`** - Post linter used in Step 7a. Exit code 0 means clean.
+- **`scripts/sync_skill.sh`** - Mirrors this skill from its canonical copy in layer5io/layer5 to `~/.claude/skills/`, `~/.agents/skills/`, and any vendored copies passed as arguments; `--check` reports drift by content. Run after changing anything here.
+- **`assets/mascot-five/SVG/`** - The Five pose collection, indexed by `references/mascot-five-index.md`. Vector only.
+- **`assets/mascot-five/pose-bounds.json`** - Measured visible-ink box per pose. The generator sizes the mascot from this, not from the artboard.
+- **`assets/sample-hero-images/`** - Canonical hero examples across compositions, layouts, and poses. Look at these before generating to calibrate visual expectations.
+- **`CHANGELOG.md`** - What changed between skill versions and why.

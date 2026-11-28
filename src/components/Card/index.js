@@ -1,33 +1,51 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, withPrefix } from "gatsby";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 import { BiLinkExternal } from "@react-icons/all-files/bi/BiLinkExternal";
 import Image from "../image";
 import { CardWrapper } from "./Card.style";
 import { useStyledDarkMode } from "../../theme/app/useStyledDarkMode";
 
+// Root-relative eurl values are site assets (e.g. PDFs), so they need the
+// path prefix on prefixed builds. External URLs stay unchanged.
+const resolveExternalUrl = (url) =>
+  url.startsWith("/") && !url.startsWith("//") ? withPrefix(url) : url;
+
 const Card = ({
   frontmatter,
   fields,
   loading = "lazy",
   fetchpriority = "auto",
+  listView = false,
+  fitContainer = false,
 }) => {
   const { isDark } = useStyledDarkMode();
+  const thumbnail =
+    isDark &&
+    frontmatter.darkthumbnail &&
+    frontmatter.darkthumbnail.publicURL !== frontmatter.thumbnail?.publicURL
+      ? frontmatter.darkthumbnail
+      : frontmatter.thumbnail;
+
+  const thumbnailWidth =
+    thumbnail?.childImageSharp?.gatsbyImageData?.width || 480;
+  const thumbnailHeight =
+    thumbnail?.childImageSharp?.gatsbyImageData?.height || 270;
+
   return (
-    <CardWrapper fixed={!!frontmatter.abstract}>
+    <CardWrapper $listView={listView} $fitContainer={fitContainer}>
       <div className="post-block">
         <div className="post-thumb-block">
           <Image
-            {...(isDark &&
-            frontmatter.darkthumbnail &&
-            frontmatter.darkthumbnail.publicURL !==
-              frontmatter.thumbnail.publicURL
-              ? frontmatter.darkthumbnail
-              : frontmatter.thumbnail)}
-            imgStyle={{ objectFit: "cover" }}
+            {...thumbnail}
+            fitContainer={fitContainer}
+            imgStyle={{ objectFit: fitContainer ? "contain" : "cover" }}
             loading={loading}
             fetchpriority={fetchpriority}
             alt={frontmatter.title}
+            width={thumbnailWidth}
+            height={thumbnailHeight}
+            aspectRatio={16 / 9}
           />
         </div>
         <div className="post-content-block">
@@ -61,7 +79,7 @@ const Card = ({
                 </Link>
                 <a
                   className="external-link-btn"
-                  href={frontmatter.eurl}
+                  href={resolveExternalUrl(frontmatter.eurl)}
                   target="_blank"
                   rel="noreferrer noopener"
                   aria-label={`Visit external link for ${frontmatter.title}`}
@@ -82,7 +100,7 @@ const Card = ({
             {(!fields || !fields.slug) && frontmatter.eurl && (
               <a
                 className="external-link-btn"
-                href={frontmatter.eurl}
+                href={resolveExternalUrl(frontmatter.eurl)}
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label={`Visit external link for ${frontmatter.title}`}

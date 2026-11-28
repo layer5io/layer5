@@ -37,6 +37,9 @@ const DiscussWrapper = styled.div`
             border-radius: 25px;
             .card {
                 height:20rem;
+                width: 18rem;
+                max-width: 100%;
+                box-sizing: border-box;
                 -webkit-transition: 450ms all;
                 transition: 450ms all;
                 margin: auto;
@@ -57,8 +60,7 @@ const DiscussWrapper = styled.div`
                     margin-bottom: 0rem;
                     margin-top: 1rem;
                 }
-                &:hover,
-                &:focus {
+                &:focus:not(:focus-visible) {
                    outline: none;
                 }
                 &:hover{
@@ -68,7 +70,6 @@ const DiscussWrapper = styled.div`
                 }
             }
         }
-    }
 
     button{
         color: #1E2117;
@@ -118,8 +119,7 @@ const DiscussWrapper = styled.div`
                     }
                 }
             }
-        }
-     
+
         @media only screen and (max-width: 992px){
             .card-align{
               padding:1.1rem 0;

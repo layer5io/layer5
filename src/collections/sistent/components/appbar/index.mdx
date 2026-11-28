@@ -1,0 +1,40 @@
+---
+name: "AppBar"
+title: AppBar
+published: true
+component: appbar
+description: An app bar is a header component that displays information and actions relating to the current screen, providing navigation, branding, and key functionality.
+---
+
+import { AppBar, Button, Toolbar, Typography, IconButton, Menu, MenuItem, Box, MenuIcon } from "@sistent/sistent";
+
+The App Bar is a foundational component that serves as the header of your application or page. It displays information about the current screen, provides access to key navigation options, and houses important actions. App bars are essential for establishing consistent navigation and branding throughout an application.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            News
+          </Typography>
+          <Button color="inherit">Login</Button>
+        </Toolbar>
+      </AppBar>
+    </Box>
+  </ThemeWrapper>
+</Row>
+
+App bars typically use the `Toolbar` component to organize their content.
+The Toolbar helps maintain consistent spacing and alignment of elements within
+the app bar. A typical app bar contains branding, navigation elements, and
+actions organized within a Toolbar component for proper alignment and spacing.

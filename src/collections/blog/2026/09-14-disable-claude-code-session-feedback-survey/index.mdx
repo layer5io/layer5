@@ -1,0 +1,163 @@
+---
+title: "How to disable 'How is Claude doing this session?'"
+subtitle: "Stop Claude Code session feedback survey interruptions."
+date: "2026-09-14 10:00:00 -0500"
+author: Layer5 Team
+thumbnail: ./hero-image.jpg
+darkthumbnail: ./hero-image.jpg
+description: "Claude Code keeps asking 'How is Claude doing this session?' mid-task. Set feedbackSurveyRate to 0 and CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY=1 to end it."
+type: Blog
+category: AI
+tags:
+  - ai
+  - Engineering
+  - devops
+  - Troubleshooting
+featured: false
+published: true
+resource: true
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import { Link } from "gatsby";
+import Blockquote from "../../../../reusecore/Blockquote";
+import Callout from "../../../../reusecore/Callout";
+import CTA_FullWidth from "../../../../components/Call-To-Actions/CTA_FullWidth";
+import CTAImg from "../../../../assets/images/meshery/icon-only/meshery-logo-shadow.webp";
+
+<BlogWrapper>
+
+<div className="intro">
+  <p>
+    You are forty minutes into a gnarly refactor. Claude Code has the plan loaded, the failing tests pinned, and you are mid-thought on the next instruction. Then it appears: <em>"How is Claude doing this session?"</em> Your focus breaks, your next keystrokes are now aimed at a rating prompt instead of your agent, and the session you carefully steered drifts sideways. The prompt is the Claude Code session quality survey, and two lines of configuration make sure you never see it again.
+  </p>
+</div>
+
+## What the Session Quality Survey Actually Is
+
+The prompt is a product satisfaction metric, not a bug report. According to the data usage section of the official Claude Code documentation, answering it - including choosing "Dismiss" - records only your rating. No transcript, input, or output is collected by the rating itself.
+
+The rating can be followed by a second, separate prompt: <em>"Can Anthropic look at your session transcript to help us improve Claude Code?"</em> That one matters more:
+
+- **Yes** uploads your conversation transcript, any subagent transcripts, and the raw session log. Known API key and token patterns are redacted, but source code and file contents go as-is. Shared transcripts are retained for up to six months. On Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, and signed-in Claude apps gateway sessions, **Yes** writes the same bundle to <code>~/.claude/feedback-bundles/</code> instead, and nothing leaves your machine until you forward that file.
+- **No** declines without sending anything.
+- **Don't ask again** declines and suppresses the follow-up in future sessions.
+
+Nothing is uploaded unless you pick **Yes**. So this is not a privacy emergency. It is a focus problem, and for engineers running long agentic sessions, focus is the whole game.
+
+<Blockquote quote="An agent session is a flow state you share with a machine. Any prompt that asks for your attention without advancing the work is a tax on that flow." />
+
+## Option 1: Set feedbackSurveyRate to 0
+
+Claude Code exposes a settings key, <code>feedbackSurveyRate</code>, that controls how often the survey appears. It takes a probability between <code>0</code> and <code>1</code>. Set it to <code>0</code> and the survey never rolls a hit.
+
+Add it to your user settings file, <code>~/.claude/settings.json</code>, so it applies to every project on your machine:
+
+```json
+{
+  "feedbackSurveyRate": 0
+}
+```
+
+If you only want it gone in one repository, put the same key in that repository's <code>.claude/settings.json</code> (shared with your team) or <code>.claude/settings.local.json</code> (just for you). The key is valid in any settings file.
+
+<Callout type="tip" title="Let Claude Code make the change">
+  <p>Prefer not to hand-edit JSON? Ask Claude Code to disable the "How is Claude doing this session?" prompt. It will ask whether you want user-level or project-level scope and write <code>feedbackSurveyRate: 0</code> for you. Pick user-level if you never want to see it anywhere.</p>
+</Callout>
+
+## Option 2: The Hard Off Switch
+
+<code>feedbackSurveyRate</code> tunes frequency. If you want an explicit off switch, Claude Code also honors an environment variable:
+
+```bash
+export CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY=1
+```
+
+A shell export only covers sessions launched from that shell. The desktop app and IDE extensions do not read your <code>.zshrc</code>. Every environment variable Claude Code supports can also live in the <code>env</code> block of <code>settings.json</code>, which covers every surface that reads your settings. In <code>~/.claude/settings.json</code>:
+
+```json
+{
+  "feedbackSurveyRate": 0,
+  "env": {
+    "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1"
+  }
+}
+```
+
+This is the configuration we recommend: belt and suspenders, both in the one file every Claude Code client reads.
+
+## Apply It Without Clobbering Your Settings
+
+Your <code>~/.claude/settings.json</code> probably already holds permissions, hooks, and plugins. Do not paste over it. Merge the two keys in with <code>jq</code>, which preserves everything else, including any existing <code>env</code> entries:
+
+```bash
+f="$HOME/.claude/settings.json"
+[ -f "$f" ] || echo '{}' > "$f"
+jq '.feedbackSurveyRate = 0 | .env.CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY = "1"' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
+```
+
+Verify the result:
+
+```bash
+jq '{feedbackSurveyRate, survey_disabled: .env.CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY}' "$HOME/.claude/settings.json"
+```
+
+You should see <code>"feedbackSurveyRate": 0</code> and <code>"survey_disabled": "1"</code>. Start a new session so Claude Code picks up the change.
+
+## Why the Survey Can Come Back
+
+You set it at user level, and a week later the prompt shows up again inside one particular repository. That is settings precedence at work. Claude Code resolves each key from the highest-priority file that sets it:
+
+1. Managed settings (your organization)
+2. Command line (<code>claude --settings</code>)
+3. Project local (<code>.claude/settings.local.json</code>)
+4. Shared project (<code>.claude/settings.json</code>)
+5. User (<code>~/.claude/settings.json</code>)
+
+A repository that commits a nonzero <code>feedbackSurveyRate</code> in its shared <code>.claude/settings.json</code> outranks your user-level <code>0</code>. Setting the environment variable alongside the rate key closes that gap for everyday use, and a quick <code>grep -r feedbackSurveyRate .claude/</code> in the offending repo will confirm the culprit.
+
+Organizations can also deliberately opt surveys back in. Teams that block nonessential traffic but collect ratings through their own <Link to="/blog/category/observability">OpenTelemetry</Link> collector can set <code>CLAUDE_CODE_ENABLE_FEEDBACK_SURVEY_FOR_OTEL=1</code> in managed settings. If that is your situation, the survey is a policy decision, and the conversation belongs with your platform team rather than your dotfiles.
+
+<Callout type="note" title="Using Amazon Bedrock, Google Cloud, or Microsoft Foundry?">
+  <p>Third-party providers turn off metrics, error reports, and <code>/feedback</code> uploads by default, but session quality surveys are an exception and run regardless of provider. The same two settings apply to you.</p>
+</Callout>
+
+## Skip the Bigger Hammers Unless You Mean It
+
+Three broader variables also suppress the survey: <code>DISABLE_TELEMETRY</code>, <code>DO_NOT_TRACK</code>, and <code>CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC</code>. They work, but they take more with them than you might want:
+
+- <code>DISABLE_TELEMETRY</code> and <code>CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC</code> also disable the feature-flag evaluation that Remote Control depends on.
+- <code>CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC</code> shuts off all nonessential traffic at once, not just the survey.
+- These variables only check whether they are set. <code>DISABLE_TELEMETRY=0</code> still disables telemetry. To turn the behavior back off, unset the variable or set it to an empty string.
+
+If your goal is "stop interrupting me," target the survey directly. Reach for the broad switches only when you actually want the broader outcome.
+
+## Roll It Out to Your Whole Team
+
+If the survey annoys you, it is annoying everyone on your team who runs agents all day. A few ways to fix it once:
+
+- **Per repository:** commit <code>"feedbackSurveyRate": 0</code> and the <code>env</code> entry to <code>.claude/settings.json</code>. Everyone who clones the repo inherits it.
+- **Per organization:** push the same keys through managed settings so no project file can override them.
+- **Per developer:** add the <code>jq</code> merge above to your onboarding or dotfiles bootstrap script.
+
+Treat agent configuration the way you treat any other developer platform setting: versioned, reviewed, and consistent. We make the same argument for <Link to="/blog/ai/agentsmd-one-file-to-guide-them-all">AGENTS.md</Link> instruction files, and it applies just as well to the knobs that decide when your agent is allowed to interrupt you. If you have hit other Claude Code configuration snags, see <Link to="/blog/engineering/why-claude-code-cant-find-your-tools">why Claude Code can't find your tools</Link> and <Link to="/blog/engineering/claude-code-skills-not-found-after-npx-install">Claude Code skills not found after npx install</Link>.
+
+<Blockquote quote="Engineers should expect more from their infrastructure, and that includes the tools that sit in the terminal next to them." />
+
+<CTA_FullWidth
+  image={CTAImg}
+  heading="Put Your Infrastructure on Autopilot, Not Your Attention"
+  alt="Meshery - Cloud Native Manager"
+  content="Meshery is the open source, cloud native management plane for designing, deploying, and operating Kubernetes and cloud native infrastructure."
+  button_text="Get Meshery"
+  url="/cloud-native-management/meshery"
+  external_link={false}
+/>
+
+<div className="outro">
+  <p>
+    Tuning your AI tooling for long, uninterrupted sessions? Share your setup with the <Link to="/community">Layer5 community</Link> on <a href="https://slack.layer5.io" target="_blank" rel="noopener noreferrer">Slack</a>, where platform engineers compare notes on agent configuration every day.
+  </p>
+</div>
+
+</BlogWrapper>

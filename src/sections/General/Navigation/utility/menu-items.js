@@ -134,7 +134,7 @@ const Data = {
     //     },
     //     {
     //       name: "Forum",
-    //       path: "https://discuss.layer5.io",
+    //       path: "https://discuss.meshery.io",
     //       sepLine: true,
     //       externalLink: true
     //     },
@@ -157,7 +157,7 @@ const Data = {
     //   actionItems: [
     // {
     //   actionName: "Join the discussion",
-    //   actionLink: "https://discuss.layer5.io",
+    //   actionLink: "https://discuss.meshery.io",
     // },
     //     // {
     //     //   actionName: "Free service mesh training",
@@ -209,7 +209,6 @@ const Data = {
           name: "Calendar",
           path: "/community/calendar",
         },
-
       ],
       actionItems: [
         // {
@@ -223,7 +222,7 @@ const Data = {
         },
         {
           actionName: "Discussion forum",
-          actionLink: "https://discuss.layer5.io",
+          actionLink: "https://discuss.meshery.io",
           external: true,
         },
         {
@@ -263,6 +262,11 @@ const Data = {
           sepLine: true,
           externalLink: true,
         },
+        {
+          name: "Case Studies",
+          path: "/resources?filter=Case%20Study",
+          sepLine: true,
+        },
         // {
         //   name: "News",
         //   path: "/news",
@@ -283,7 +287,7 @@ const Data = {
         },
         // {
         //   name: "Forum",
-        //   path: "https://discuss.layer5.io",
+        //   path: "https://discuss.meshery.io",
         //   sepLine: true,
         //   externalLink: true
         // },
@@ -307,7 +311,7 @@ const Data = {
         // },
         {
           actionName: "Layer5 in the news",
-          actionLink: "/news",
+          actionLink: "/company/news",
         },
         {
           actionName: "Recent announcements",

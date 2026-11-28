@@ -90,7 +90,7 @@ Learn how we distill a variety of microarchitecture performance signals and appl
 <ul>
 <li>Attend <Link to="/community/events/servicemeshcon-eu-2022">MeshMark: the Cloud Native Value Measurement</Link> presentation at ServiceMeshCon EU 2022.</li>
 <li>Attend <Link to="/community/events/kubecon-cloudnativecon-eu-virtual-2022">CNCF Tag Network and Service Mesh Working Group Deep Dive</Link> at KubeCon EU 2022. </li>
-<li>Subscribe to the <a href="https://smp-spec.io/subscribe">project newsletter</a> and engage in the <a href="https://discuss.layer5.io/">discussion forum</a>.</li>
+<li>Subscribe to the <a href="https://smp-spec.io/subscribe">project newsletter</a> and engage in the <a href="https://discuss.meshery.io/">discussion forum</a>.</li>
 <li>Learn more about <a href="https://smp-spec.io/meshmark">MeshMark</a> on the <a href="https://smp-spec.io">Service Mesh Performance</a> website.</li>
 <li>Follow <a href="https://twitter.com/smp_spec">@smp_spec</a>, <a href="https://twitter.com/mesheryio">@mesheryio</a>, <a href="https://twitter.com/layer5">@layer5</a> on Twitter.</li>
 </ul>

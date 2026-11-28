@@ -35,14 +35,15 @@ const LazyPartnerImage = ({ partner }) => {
     });
   }, [partner.imageLink]);
 
-  if (!imageSrc) return null;
-
   return (
     <img
       className="partner-image"
       id={partner.name}
       loading="lazy"
-      src={imageSrc}
+      src={
+        imageSrc ||
+        `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='${partner.imageWidth}' height='${partner.imageHeight}'/%3E`
+      }
       alt={partner.name}
       width={partner.imageWidth}
       height={partner.imageHeight}

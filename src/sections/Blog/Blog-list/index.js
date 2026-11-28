@@ -62,12 +62,25 @@ const BlogList = ({
                   <SearchBox
                     searchQuery={searchQuery}
                     searchData={searchData}
-                    paginate={paginate} currentPage={currentPage}
+                    paginate={paginate}
+                    currentPage={currentPage}
                     focusSearch={true}
+                    ariaLabel="Search blog posts"
+                    id="blog-search"
+                    name="blog-search"
                   />
                 </div>
               ) : (
-                <SearchBox searchQuery={searchQuery} searchData={searchData} paginate={paginate} currentPage={currentPage} focusSearch={true} />
+                <SearchBox
+                  searchQuery={searchQuery}
+                  searchData={searchData}
+                  paginate={paginate}
+                  currentPage={currentPage}
+                  focusSearch={true}
+                  ariaLabel="Search blog posts"
+                  id="blog-search"
+                  name="blog-search"
+                />
               )}
               <div className="blog-list-wrapper">
                 <Row style={{
@@ -78,7 +91,7 @@ const BlogList = ({
                   {searchedPosts.length > 0 &&
                     searchedPosts?.map(({ id, frontmatter, fields }, index) => (
                       <Col $xs={12} key={id}>
-                        <Card frontmatter={frontmatter} fields={fields} loading={index === 0 ? "eager" : "lazy"} fetchpriority={index === 0 ? "high" : "auto"} />
+                        <Card frontmatter={frontmatter} fields={fields} loading={index === 0 ? "eager" : "lazy"} fetchpriority={index === 0 ? "high" : "auto"} listView={true} />
                       </Col>
                     ))}
                   <Col>

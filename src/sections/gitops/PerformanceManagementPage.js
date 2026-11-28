@@ -25,7 +25,7 @@ const PerformanceManagementPage = () => {
             <Description>
               Test your Kubernetes cluster and infrastructure implementation for conformance with the SMI specification
             </Description>
-            <Button primary className="learn-more-btn" title="Go to Documentation" url="https://cloud.layer5.io/connect/github/new" />
+            <Button $primary $external={true} className="learn-more-btn" title="Go to Documentation" $url="https://docs.meshery.io/guides/performance-management/performance-management/" />
           </TextColumn>
           <ColumnContainer>
             <SmpLogo className="stack-logo" />

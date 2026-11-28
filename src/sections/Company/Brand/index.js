@@ -1,19 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
+import { withPrefix } from "gatsby";
 import BrandPageWrapper from "./brandPage.style";
 import { Row, Col } from "../../../reusecore/Layout";
 import Layer5Brand from "./Brand-components/layer5";
-import MesheryBrand from "./Brand-components/meshery";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import loadable from "@loadable/component";
 
-const MeshSyncBrand = loadable(() => import("./Brand-components/meshsync"));
-const MesheryOperatorBrand = loadable(() => import("./Brand-components/meshery-operator"));
 const ImageHubBrand = loadable(() => import("./Brand-components/imagehub"));
 const SMPBrand = loadable(() => import("./Brand-components/smp"));
 const CommunityBrand = loadable(() => import("./Brand-components/community"));
 const Button = loadable(() => import("../../../reusecore/Button"));
 const NightHawk = loadable(() => import("./Brand-components/nighthawk"));
-const ServiceMeshPatterns = loadable(() => import("./Brand-components/servicemeshpatterns"));
+const ServiceMeshPatterns = loadable(
+  () => import("./Brand-components/servicemeshpatterns"),
+);
 const MeshMasterBrand = loadable(() => import("./Brand-components/meshmaster"));
 const MeshMarkBrand = loadable(() => import("./Brand-components/meshmark"));
 const KanvasBrand = loadable(() => import("./Brand-components/kanvas"));
@@ -21,12 +21,14 @@ const BrandGuide = loadable(() => import("./Brand-components/brand-guide"));
 const StickFigures = loadable(() => import("./Brand-components/stickfigures"));
 const Catalog = loadable(() => import("./Brand-components/catalog"));
 const Academy = loadable(() => import("./Brand-components/academy"));
-const SocialBackgrounds = loadable(() => import("./Brand-components/social-backgrounds"));
+const SocialBackgrounds = loadable(
+  () => import("./Brand-components/social-backgrounds"),
+);
 
 const getDimensions = (ele) => {
   let dummyheight = 0,
-      dummyoffsetTop = 0,
-      dummyoffsetBottom = 0;
+    dummyoffsetTop = 0,
+    dummyoffsetBottom = 0;
   if (ele) {
     const { height } = ele.getBoundingClientRect();
     const offsetTop = ele.offsetTop;
@@ -49,6 +51,7 @@ const getDimensions = (ele) => {
 // Functions to make scroll with speed control
 // Element to move, element or px from, element or px to, time in ms to animate
 const scrollTo = (element, sectionId, duration = 2000) => {
+  if (!element) return;
   // Update URL hash
   if (sectionId) {
     window.history.pushState(null, null, `#${sectionId}`);
@@ -106,9 +109,6 @@ const Brand = () => {
 
   const headerRef = useRef(null);
   const layer5Ref = useRef(null);
-  const mesheryRef = useRef(null);
-  const meshsyncRef = useRef(null);
-  const mesheryOperatorRef = useRef(null);
   const imageHubRef = useRef(null);
   const meshMasterRef = useRef(null);
   const smpRef = useRef(null);
@@ -124,9 +124,6 @@ const Brand = () => {
 
   const sectionRefs = [
     { section: "Layer5", ref: layer5Ref },
-    { section: "Meshery", ref: mesheryRef },
-    { section: "MeshSync", ref: meshsyncRef },
-    { section: "MesheryOperator", ref: mesheryOperatorRef },
     { section: "ImageHub", ref: imageHubRef },
     { section: "SMP", ref: smpRef },
     { section: "MeshMark", ref: meshmarkRef },
@@ -142,22 +139,19 @@ const Brand = () => {
   ];
 
   const sectionIdMap = {
-    "layer5": layer5Ref,
+    layer5: layer5Ref,
     "social-backgrounds": SocialBackgroundsRef,
-    "meshery": mesheryRef,
-    "meshsync": meshsyncRef,
-    "meshery-operator": mesheryOperatorRef,
     "image-hub": imageHubRef,
-    "smp": smpRef,
-    "meshmark": meshmarkRef,
+    smp: smpRef,
+    meshmark: meshmarkRef,
     "service-mesh-patterns": servicemeshpatternsRef,
-    "nighthawk": nightHawkRef,
-    "meshmate": meshmateRef,
-    "meshmaster": meshMasterRef,
-    "kanvas": kanvasRef,
-    "catalog": CatalogRef,
-    "academy": AcademyRef,
-    "five": stickfiguresRef
+    nighthawk: nightHawkRef,
+    meshmate: meshmateRef,
+    meshmaster: meshMasterRef,
+    kanvas: kanvasRef,
+    catalog: CatalogRef,
+    academy: AcademyRef,
+    five: stickfiguresRef,
   };
 
   // Handle initial hash navigation on page load
@@ -210,7 +204,7 @@ const Brand = () => {
           in a way not covered by these guidelines, please contact us and
           include a visual mockup of intended use.
         </p>
-        <a href="/brand/brand-kit.zip">
+        <a href={withPrefix("/brand/brand-kit.zip")}>
           <Button $primary title="Download Brand Kit">
             <FiDownloadCloud size={21} className="icon-left" />
           </Button>
@@ -224,17 +218,12 @@ const Brand = () => {
           <div className="section" id="layer5" ref={layer5Ref}>
             <Layer5Brand />
           </div>
-          <div className="section" id="social-backgrounds" ref={SocialBackgroundsRef}>
+          <div
+            className="section"
+            id="social-backgrounds"
+            ref={SocialBackgroundsRef}
+          >
             <SocialBackgrounds />
-          </div>
-          <div className="section" id="meshery" ref={mesheryRef}>
-            <MesheryBrand />
-          </div>
-          <div className="section" id="meshsync" ref={meshsyncRef}>
-            <MeshSyncBrand />
-          </div>
-          <div className="section" id="meshery-operator" ref={mesheryOperatorRef}>
-            <MesheryOperatorBrand />
           </div>
           <div className="section" id="image-hub" ref={imageHubRef}>
             <ImageHubBrand />
@@ -245,7 +234,11 @@ const Brand = () => {
           <div className="section" id="meshmark" ref={meshmarkRef}>
             <MeshMarkBrand />
           </div>
-          <div className="section" id="service-mesh-patterns" ref={servicemeshpatternsRef}>
+          <div
+            className="section"
+            id="service-mesh-patterns"
+            ref={servicemeshpatternsRef}
+          >
             <ServiceMeshPatterns />
           </div>
           <div className="section" id="nighthawk" ref={nightHawkRef}>
@@ -294,36 +287,6 @@ const Brand = () => {
             </p>
             <p
               className={`header_link ${
-                visibleSection === "Meshery" ? "selected" : ""
-              }`}
-              onClick={() => {
-                scrollTo(mesheryRef.current, "meshery");
-              }}
-            >
-              <span>Meshery</span>
-            </p>
-            <p
-              className={`header_link ${
-                visibleSection === "MeshSync" ? "selected" : ""
-              }`}
-              onClick={() => {
-                scrollTo(meshsyncRef.current, "meshsync");
-              }}
-            >
-              <span>MeshSync</span>
-            </p>
-            <p
-              className={`header_link ${
-                visibleSection === "MesheryOperator" ? "selected" : ""
-              }`}
-              onClick={() => {
-                scrollTo(mesheryOperatorRef.current, "meshery-operator");
-              }}
-            >
-              <span>Meshery Operator</span>
-            </p>
-            <p
-              className={`header_link ${
                 visibleSection === "ImageHub" ? "selected" : ""
               }`}
               onClick={() => {
@@ -357,7 +320,10 @@ const Brand = () => {
                 visibleSection === "ServiceMeshPatterns" ? "selected" : ""
               }`}
               onClick={() => {
-                scrollTo(servicemeshpatternsRef.current, "service-mesh-patterns");
+                scrollTo(
+                  servicemeshpatternsRef.current,
+                  "service-mesh-patterns",
+                );
               }}
             >
               <span>Cloud Native Patterns</span>

@@ -2,7 +2,7 @@ import React from "react";
 import { useTable } from "react-table";
 import { TableWrapper } from "./MeetInfoTable.style";
 
-const Table = ({ columns, data }) => {
+const Table = ({ columns, data, showHeader = true }) => {
   const {
     getTableProps,
     getTableBodyProps,
@@ -16,12 +16,16 @@ const Table = ({ columns, data }) => {
 
   return (
     <TableWrapper>
-      <h1 className="meetings-table-title">
-        <a href="#meetings">Layer5 Meetings</a>
-      </h1>
-      <h3 className="meetings-table-subtitle">
-        Everyone is welcome to join. Engage!
-      </h3>
+      {showHeader && (
+  <>
+    <h1 className="meetings-table-title">
+      <a href="#meetings">Layer5 Meetings</a>
+    </h1>
+    <h3 className="meetings-table-subtitle">
+      Everyone is welcome to join. Engage!
+    </h3>
+  </>
+)}
       <table name="meetings" id="meetings" {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (

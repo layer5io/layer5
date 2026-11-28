@@ -2,9 +2,11 @@
 
 const {
   DEFAULT_LITE_BUILD_PROFILE,
+  getBlogYearFilter,
   getExcludedCollections,
   isFullSiteBuild,
 } = require("./src/utils/build-collections");
+const rehypeFixDomNesting = require("./rehype-fix-dom-nesting");
 
 const isDevelopment = process.env.NODE_ENV === "development";
 const isProduction = process.env.NODE_ENV === "production";
@@ -25,9 +27,14 @@ const isLiteDevBuild = isDevelopment && !shouldBuildFullSite;
 const excludedCollections = getExcludedCollections({
   isFullSiteBuild: shouldBuildFullSite,
 });
-const collectionIgnoreGlobs = excludedCollections.map(
-  (name) => `**/${name}/**`,
-);
+const blogYearFilter = getBlogYearFilter({
+  isFullSiteBuild: shouldBuildFullSite,
+  excludedCollections,
+});
+const collectionIgnoreGlobs = [
+  ...excludedCollections.map((name) => `**/${name}/**`),
+  ...blogYearFilter.ignoreGlobs,
+];
 const devFlags = isDevelopment
   ? {
       PARALLEL_SOURCING: false,
@@ -40,6 +47,15 @@ collectionIgnoreGlobs.length > 0
       `Build Scope excludes (${process.env.LITE_BUILD_PROFILE || DEFAULT_LITE_BUILD_PROFILE}): ${excludedCollections.join(", ")}`,
     )
   : console.info("Build Scope includes all collections");
+if (blogYearFilter.years.length > 0) {
+  console.info(
+    `Build Scope blog years (BLOG_YEAR): ${blogYearFilter.years.join(", ")}`,
+  );
+} else if (blogYearFilter.inactiveReason) {
+  console.warn(
+    `BLOG_YEAR=${process.env.BLOG_YEAR} ignored: ${blogYearFilter.inactiveReason}`,
+  );
+}
 module.exports = {
   ...(pathPrefix != null ? { pathPrefix } : {}),
   siteMetadata: {
@@ -286,12 +302,10 @@ module.exports = {
                   }
                 }
                 allMdx(
-                  sort: {frontmatter: {date: DESC}}
-                  limit: 50
+                  sort: {fields: {dateForSort: DESC}}
                   filter: {
                     frontmatter: {
                       published: { eq: true }
-                      category: { in: ["Meshery", "Announcements", "Events"] }
                     }
                     fields: { collection: { in: ["blog", "resources", "news", "events"] } }
                   }
@@ -321,15 +335,24 @@ module.exports = {
             `,
                   serialize: ({ query: { site, allMdx } }) => {
                     const targetTags = ["Community", "Meshery", "mesheryctl"];
+                    const targetCategories = [
+                      "Meshery",
+                      "Announcements",
+                      "Events",
+                    ];
 
                     return allMdx.nodes
                       .filter((node) => {
+                        const isEvent = node.fields.collection === "events";
+                        const hasCategory =
+                          node.frontmatter.category &&
+                          targetCategories.includes(node.frontmatter.category);
                         const hasTag =
                           node.frontmatter.tags &&
                           node.frontmatter.tags.some((t) =>
                             targetTags.includes(t),
                           );
-                        return hasTag;
+                        return isEvent || (hasCategory && hasTag);
                       })
                       .slice(0, 30)
                       .map((node) => {
@@ -477,12 +500,6 @@ module.exports = {
               ],
             },
           },
-          {
-            resolve: "gatsby-plugin-purgecss",
-            options: {
-              printRejected: true,
-            },
-          },
         ]
       : []),
     // End of Production-only Plugins
@@ -503,6 +520,11 @@ module.exports = {
       options: {
         extensions: [".mdx", ".md"],
         gatsbyRemarkPlugins: [],
+        mdxOptions: {
+          // Keeps MDX from emitting block-level content inside <p>, which the
+          // browser's parser re-shapes and React then fails to hydrate.
+          rehypePlugins: [rehypeFixDomNesting],
+        },
       },
     },
     {
@@ -534,9 +556,7 @@ module.exports = {
         name: "images",
         path: `${__dirname}/src/assets/images`,
         ignore: [
-          "**/*.svg",
           "**/learning-path/**",
-          "**/service-mesh-icons/**",
           "**/app/**",
           "**/learn-layer5/**",
           "**/careers/**",
@@ -580,7 +600,9 @@ module.exports = {
             options: {
               host: siteRootUrl,
               sitemap: `${siteRootUrl}/sitemap-index.xml`,
-              policy: [{ userAgent: "*", allow: "/" }],
+              policy: [
+                { userAgent: "*", allow: "/", disallow: ["/pr-preview/", "/hugo-preview/"] },
+              ],
             },
           },
         ]

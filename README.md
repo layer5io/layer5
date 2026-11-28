@@ -9,12 +9,14 @@
 <p align="center">
 <a href="https://github.com/layer5io/layer5/graphs/contributors" alt="GitHub contributors">
 <img src="https://img.shields.io/github/contributors/layer5io/layer5.svg" /></a>
-<a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+(org%3Alayer5io+OR+org%3Ameshery+OR+org%3Alayer5labs+OR+org%3Aservice-mesh-performance+OR+org%3Aservice-mesh-patterns+OR+org%3Ameshery-extensions)+label%3A%22help+wanted%22" alt="Help wanted GitHub issues">
+<a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+(org%3Alayer5io+OR+org%3Ameshery+OR+org%3Alayer5labs+OR+org%3Aservice-mesh-performance+OR+org%3Aservice-mesh-patterns+OR+org%3Ameshery-extensions+OR+org%3Ablowhorn-ai)+label%3A%22help+wanted%22" alt="Help wanted GitHub issues">
 <img src="https://img.shields.io/github/issues/layer5io/layer5/help%20wanted.svg?color=%23DDDD00" /></a>
 <a href="https://slack.layer5.io" alt="S/lack">
 <img src="https://img.shields.io/badge/Slack-@layer5.svg?logo=slack" /></a>
 <a href="https://twitter.com/layer5" alt="Twitter Follow">
 <img src="https://img.shields.io/twitter/follow/layer5.svg?label=Follow+Layer5&style=social" /></a>
+<a href="https://bsky.app/profile/layer5.bsky.social" alt="Bluesky Follow">
+<img src="https://img.shields.io/badge/Bluesky-@layer5.svg?logo=bluesky&logoColor=white&color=0285FF" /></a>
 <a href="https://github.com/layer5io/layer5/blob/master/LICENSE" alt="License">
 <img src="https://img.shields.io/github/license/layer5io/layer5.svg" /></a>
 </p>
@@ -36,7 +38,6 @@
 <br /><br /><br/>
 </p>
 <br />
-
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/kanvas">Kanvas</a></h2>
@@ -61,12 +62,12 @@ alt="Nighthawk" align="left" />
 
 <p style="clear:both;">
 <h2><a href="https://cloud.layer5.io/catalog">Cloud Native Catalog</a></h2>
-<a href="">
+<a href="https://cloud.layer5.io/catalog">
   <img src=".github/assets/images/catalog/catalog.svg"
 style="float:left;margin:10px;" width="125px"
 alt="Meshery Catalog" align="left" />
 </a>
-<a href="">Layer5 Catalog</a> As a central hub for sharing cloud native infrastructure designs, Meshery Catalog enables the exchange of the best practices, reusable templates, and Kubernetes-based operational patterns for multi-cluster Kubernetes clusters and distributed applications. Meshery Catalog serves as a marketplace full of curated cloud native infrastructure configurations and operational patterns perfect for DevOps engineers who seek to leverage and contribute to Meshery's large collection of design patterns. [Docs](https://docs.layer5.io/cloud/catalog)
+<a href="https://cloud.layer5.io/catalog">Layer5 Catalog</a> As a central hub for sharing cloud native infrastructure designs, Meshery Catalog enables the exchange of the best practices, reusable templates, and Kubernetes-based operational patterns for multi-cluster Kubernetes clusters and distributed applications. Meshery Catalog serves as a marketplace full of curated cloud native infrastructure configurations and operational patterns perfect for DevOps engineers who seek to leverage and contribute to Meshery's large collection of design patterns. [Docs](https://docs.layer5.io/cloud/catalog)
 <br /><br /><br />
 </p>
 
@@ -81,7 +82,6 @@ alt="Meshery Catalog" align="left" />
 </p>
 <br />
 
-
 <hr />
 <br />
 <hr />
@@ -94,7 +94,6 @@ alt="Meshery Catalog" align="left" />
 <br /><br /><br />
 </p>
 <br />
-
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/projects/cloud-native-performance">Cloud Native Performance</a></h2>
@@ -110,7 +109,6 @@ The <a href="https://layer5.io/projects/cloud-native-performance">Cloud Native P
 </p>
 <br />
 
-
 <!-- <p style="clear:both;">
 <h2><a href="https://layer5.io/projects/image-hub">Image Hub</a></h2>
 <a href="https://layer5.io/projects/image-hub"><img src=".github/assets/images/image-hub/layer5-image-hub.webp"
@@ -122,7 +120,6 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
 </p>
 <br /> -->
 
-
 <p style="clear:both;">
  <h2><a href="https://github.com/meshery/meshery-operator">Meshery Operator</a></h2>
  <a href="https://meshery.io">
@@ -133,7 +130,6 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
  <br /><br /><br /><br />
 </p>
 <br />
-
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/projects/sistent">Sistent</a></h2>
@@ -147,14 +143,12 @@ Sistent is a design system and component library that streamlines the design and
 </p>
 <br />
 
-
-
 <p style="clear:both;">
 <h1><a name="contributing"></a><a name="community"></a> <a href="https://layer5.io/community">Community</a> and <a href="https://layer5.io/community/handbook">Contributions</a></h1>
 <p> We warmly welcome all contributors! Our projects are community-built and each welcomes open collaboration. As you get started, please review this project's <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">contributing guidelines</a>. Whether you are a user or code contributor and whether you're opening an <a href="/../../issues">issue</a> or a <a href="/../../pulls">pull request</a>, know that any form of your engagement is considered contribution and is appreciated. Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
 </p>
 <p>
-  Join us in the <a href="https://discuss.layer5.io">discussion forum</a> and on <a href="https://slack.layer5.io"><img src=".github/assets/images/slack.webp" height="16px" align="bottom" /> Slack</a> to learn more about Layer5 and its community! Make sure you see the <a href="https://layer5.io/community/newcomers">newcomer's guide</a> for a tour of resources available to you.
+  Join us in the <a href="https://discuss.meshery.io">discussion forum</a> and on <a href="https://slack.layer5.io"><img src=".github/assets/images/slack.webp" height="16px" align="bottom" /> Slack</a> to learn more about Layer5 and its community! Make sure you see the <a href="https://layer5.io/community/newcomers">newcomer's guide</a> for a tour of resources available to you.
 </p>
 <p>
 <a href="https://slack.meshery.io">
@@ -170,10 +164,10 @@ Sistent is a design system and component library that streamlines the design and
 ✔️ <em><strong>Watch</strong></em> community <a href="http://youtube.com/Layer5io?sub_confirmation=1">meeting recordings</a>.<br />
 ✔️ <em>Fill-in</em> a <a href="https://layer5.io/newcomers">community member form</a> to gain access to community resources.
 <br />
-✔️ <em><strong>Discuss</strong></em> in the <a href="https://discuss.layer5.io">Community Forum</a>.<br />
+✔️ <em><strong>Discuss</strong></em> in the <a href="https://discuss.meshery.io">Community Forum</a>.<br />
 ✔️ <em><strong>Explore more</strong></em> in the <a href="https://layer5.io/community/handbook">Community Handbook</a>.<br />
 </p>
-<div align="center"><i>Not sure where to start?</i> Grab an open issue with the <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+(org%3Alayer5io+OR+org%3Ameshery+OR+org%3Alayer5labs+OR+org%3Aservice-mesh-performance+OR+org%3Aservice-mesh-patterns+OR+org%3Ameshery-extensions)+label%3A%22help+wanted%22">help-wanted label</a>.
+<div align="center"><i>Not sure where to start?</i> Grab an open issue with the <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+(org%3Alayer5io+OR+org%3Ameshery+OR+org%3Alayer5labs+OR+org%3Aservice-mesh-performance+OR+org%3Aservice-mesh-patterns+OR+org%3Ameshery-extensions+OR+org%3Ablowhorn-ai)+label%3A%22help+wanted%22">help-wanted label</a>.
 </div>
 <br />
 <ul>
@@ -185,4 +179,3 @@ Sistent is a design system and component library that streamlines the design and
 ### License
 
 All of Layer5's projects are available as open source under the terms of the [Apache 2.0 License](https://opensource.org/licenses/Apache-2.0).
-

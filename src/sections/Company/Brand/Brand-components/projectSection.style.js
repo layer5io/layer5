@@ -38,6 +38,7 @@ const ProjectItemWrapper = styled.section`
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+    }
     .project__block__inner { 
         display: flex;
         margin-bottom: 2rem;

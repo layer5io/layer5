@@ -1,0 +1,245 @@
+---
+name: "NavigationNavbar"
+title: NavigationNavbar
+published: true
+component: navigation-navbar
+description: The NavigationNavbar component is a structured, responsive vertical menu system ideal for application sidebars, supporting a single level of nesting and integrated declarative permission gating.
+---
+
+import { useState } from "react";
+
+import {
+  NavigationNavbar,
+  PermissionProvider,
+  DashboardIcon,
+  CatalogIcon,
+  LogoutIcon,
+  SettingsIcon,
+  CredentialIcon,
+  TeamsIcon,
+  GroupIcon
+} from "@sistent/sistent";
+
+import LayersIcon from "@mui/icons-material/Layers";
+import WorkspacesIcon from "@mui/icons-material/Workspaces";
+import CloudIcon from "@mui/icons-material/Cloud";
+import IntegrationInstructionsIcon from "@mui/icons-material/IntegrationInstructions";
+import DesignServicesIcon from "@mui/icons-material/DesignServices";
+import ViewModuleIcon from "@mui/icons-material/ViewModule";
+import PersonIcon from "@mui/icons-material/Person";
+import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+
+export const BasicNavigationDemo = () => {
+  const items = [
+    {
+      id: "dashboard",
+      title: "Dashboard",
+      icon: <DashboardIcon />,
+      onClick: () => console.log("Navigate to /dashboard")
+    },
+    {
+      id: "spaces",
+      title: "Spaces",
+      icon: <LayersIcon fontSize="small" />,
+      onClick: () => console.log("Navigate to /spaces/overview")
+    },
+    {
+      id: "catalog",
+      title: "Catalog",
+      icon: <CatalogIcon />,
+      onClick: () => console.log("Navigate to /catalog"),
+      addDivider: true
+    },
+    {
+      id: "logout",
+      title: "Logout",
+      icon: <LogoutIcon />,
+      onClick: () => console.log("Logging out…")
+    }
+  ];
+
+  return <NavigationNavbar navigationItems={items} />;
+};
+
+export const NestedNavigationDemo = () => {
+  const items = [
+    {
+      id: "spaces",
+      title: "Spaces",
+      icon: <LayersIcon fontSize="small" />,
+      onClick: () => console.log("Navigate to /spaces/overview"),
+      subItems: [
+        {
+          id: "workspaces",
+          title: "Workspaces",
+          icon: <WorkspacesIcon fontSize="small" />,
+          onClick: () => console.log("Navigate to /spaces/workspaces")
+        },
+        {
+          id: "environments",
+          title: "Environments",
+          icon: <CloudIcon fontSize="small" />,
+          onClick: () => console.log("Navigate to /spaces/environments")
+        },
+        {
+          id: "integrations",
+          title: "Integrations",
+          icon: <IntegrationInstructionsIcon fontSize="small" />,
+          onClick: () => console.log("Navigate to /spaces/integrations")
+        }
+      ]
+    },
+    {
+      id: "catalog",
+      title: "Catalog",
+      icon: <CatalogIcon />,
+      onClick: () => console.log("Navigate to /catalog"),
+      subItems: [
+        {
+          id: "designs",
+          title: "My Designs",
+          icon: <DesignServicesIcon fontSize="small" />,
+          onClick: () => console.log("Navigate to /catalog/content/my-designs")
+        },
+        {
+          id: "views",
+          title: "My Views",
+          icon: <ViewModuleIcon fontSize="small" />,
+          onClick: () => console.log("Navigate to /catalog/content/my-views")
+        }
+      ]
+    }
+  ];
+
+  return <NavigationNavbar navigationItems={items} />;
+};
+
+export const PermissionNavigationDemo = () => {
+  const mockUserContext = {
+    userName: "Demo User",
+    orgName: "Layer5 Cloud",
+    roleNames: ["Team Member"]
+  };
+
+  const viewUsersKey = {
+    id: "b3d7a1f0-4c2e-4a8b-9f6d-1e5c3a7b2d9e",
+    function: "View All Users",
+    description: "View all registered users across the organization.",
+    category: "Identity & Access",
+    subcategory: "Users"
+  };
+
+  const viewTeamsKey = {
+    id: "c4e8b2f1-5d3f-4b9c-a07e-2f6d4b8c3e0f",
+    function: "View All Teams",
+    description: "View all teams within the organization.",
+    category: "Identity & Access",
+    subcategory: "Teams"
+  };
+
+  const viewRolesKey = {
+    id: "d5f9c3f2-6e4f-4c0d-b18f-3f7e5c9d4f1f",
+    function: "View All Roles",
+    description: "View all roles and their assigned permissions.",
+    category: "Identity & Access",
+    subcategory: "Roles"
+  };
+
+  const items = [
+    {
+      id: "identity",
+      title: "Identity",
+      icon: <AdminPanelSettingsIcon fontSize="small" />,
+      permissionKey: { anyOf: [viewUsersKey, viewTeamsKey, viewRolesKey] },
+      permissionAction: "showShield",
+      onClick: () => console.log("Navigate to /identity/overview"),
+      subItems: [
+        {
+          id: "users",
+          title: "Users",
+          icon: <PersonIcon fontSize="small" />,
+          permissionKey: viewUsersKey,
+          permissionAction: "hide",
+          onClick: () => console.log("Navigate to /identity/users")
+        },
+        {
+          id: "teams",
+          title: "Teams",
+          icon: <TeamsIcon />,
+          permissionKey: viewTeamsKey,
+          permissionAction: "hide",
+          onClick: () => console.log("Navigate to /identity/teams")
+        },
+        {
+          id: "roles",
+          title: "Roles",
+          icon: <CredentialIcon />,
+          permissionKey: viewRolesKey,
+          permissionAction: "hide",
+          onClick: () => console.log("Navigate to /identity/roles")
+        }
+      ]
+    }
+  ];
+
+  return (
+    <PermissionProvider userHasPermission={() => false} userContext={mockUserContext}>
+      <NavigationNavbar navigationItems={items} />
+    </PermissionProvider>
+  );
+};
+
+The **NavigationNavbar** component provides a structured, responsive vertical menu system ideal for application sidebars and settings panels. It supports a single level of collapsible nesting and integrates natively with Sistent's declarative authorization system to render unauthorized items as inert and display standard permission shields.
+
+<a id="basic-navigation-navbar">
+  <h2>Basic NavigationNavbar</h2>
+</a>
+
+A basic flat navigation list. Each item receives an icon, a title, and an `onClick` callback. Because `NavigationNavbar` relies entirely on external routing logic, developers must handle route matching and custom active styles (e.g., via customized `title` nodes) directly.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px', margin: '0 auto' }}>
+      <BasicNavigationDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Usage">
+  <h2>Usage</h2>
+</a>
+
+The `NavigationNavbar` component is highly versatile and accommodates several structural patterns:
+
+- **Basic Navigation:** Flat menu lists for simple application routing.
+- **Nested Navigation:** Single-level accordion menus for grouping related views.
+- **Permission-Gated Navigation:** Items that automatically lock themselves and display a `PermissionShield` tooltip when users lack authorization.
+- **Mobile-Only Navigation:** Items that can be dynamically hidden on desktop layouts using the `showOnWeb` property.
+
+<a id="nested-navigation-navbar">
+  <h2>Nested NavigationNavbar</h2>
+</a>
+
+Group related links under a collapsible parent item by providing a <code>subItems</code> array. The navbar natively manages accordion state to ensure only one nested section is open at a time. *Note: Nesting is strictly limited to one level deep.*
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px', margin: '0 auto' }}>
+      <NestedNavigationDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="permission-gated-navigation-navbar">
+  <h2>Permission-Gated NavigationNavbar</h2>
+</a>
+
+`NavigationNavbar` deeply integrates with Sistent's `PermissionProvider`. By supplying a <code>permissionKey</code> to any item, the component automatically blocks unauthorized clicks and prevents unauthorized parent items from expanding, rendering them completely inert while displaying a standard shield tooltip.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '400px', margin: '0 auto' }}>
+      <PermissionNavigationDemo />
+    </div>
+  </ThemeWrapper>
+</Row>

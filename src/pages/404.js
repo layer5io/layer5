@@ -7,11 +7,10 @@ const NotFoundPage = () => {
   return (
     <>
       <L404 />
-
     </>
   );
 };
 export const Head = () => {
-  return <SEO title="What a mesh!" />;
+  return <SEO title="Merge conflict!" />;
 };
 export default NotFoundPage;

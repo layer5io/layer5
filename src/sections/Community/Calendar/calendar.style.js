@@ -99,6 +99,21 @@ const CalendarStyleWrapper = styled.div`
             border: calc(var(--fc-daygrid-event-dot-width, 8px) / 3) solid var(--fc-event-border-color, #ffffff)
         }
     }
+    .archived-meetings-section {
+        opacity: 0.6;
+        margin-top: 2rem;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+    }
 `;
 
 export default CalendarStyleWrapper;

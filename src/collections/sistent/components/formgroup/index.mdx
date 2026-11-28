@@ -1,0 +1,66 @@
+---
+name: "Form Group"
+title: Form Group
+published: true
+component: formgroup
+description: FormGroup is a wrapper component used to group multiple form controls such as checkboxes or switches together, providing consistent spacing and layout.
+---
+
+import { useState } from "react";
+import { FormGroup, FormControlLabel, Checkbox } from "@sistent/sistent";
+
+export const BasicFormGroupDemo = () => {
+  const [state, setState] = useState({
+    option1: false,
+    option2: true,
+  });
+
+  const handleChange = (event) => {
+    setState({ ...state, [event.target.name]: event.target.checked});
+  };
+
+  return (
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <FormGroup>
+        <FormControlLabel
+          control={<Checkbox checked={state.option1} onChange={handleChange} name="option1" />}
+          label="Option One"
+        />
+        <FormControlLabel
+          control={<Checkbox checked={state.option2} onChange={handleChange} name="option2" />}
+          label="Option Two"
+        />
+      </FormGroup>
+    </div>
+  );
+};
+
+<a id="Usage">
+  <h2>Usage</h2>
+</a>
+
+The `FormGroup` component is a wrapper used to group form controls like checkboxes and switches together. It provides consistent vertical or horizontal layout and spacing for multiple related form inputs.
+
+It is commonly used alongside `FormControlLabel` to pair each control with a descriptive label.
+
+<a id="Example">
+  <h2>Example</h2>
+</a>
+
+<Row $Hcenter className="image-container">
+  <ThemeWrapper>
+    <BasicFormGroupDemo />
+  </ThemeWrapper>
+</Row>
+
+<a id="Accessibility">
+  <h2>Accessibility</h2>
+</a>
+
+FormGroup works best when wrapped inside a `FormControl` with a `FormLabel` to provide a group label for screen readers. This ensures assistive technologies can correctly identify and describe the group of related controls.
+
+<a id="Further">
+  <h2>Learn More</h2>
+</a>
+
+Visit the **Guidance** tab for best practices and the **Code** tab for implementation details.

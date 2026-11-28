@@ -83,15 +83,20 @@ const cookieData = [
   },
 ];
 
+// Create custom theme with Qanelas Soft font family
+const customTheme = createTheme({
+  typography: {
+    fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
+  },
+});
+
 const CookieNotice = () => {
   const { isDark } = useStyledDarkMode();
+  const [didLoad, setDidLoad] = React.useState(false);
 
-  // Create custom theme with Qanelas Soft font family
-  const customTheme = createTheme({
-    typography: {
-      fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
-    },
-  });
+  React.useEffect(() => {
+    setDidLoad(true);
+  }, []);
 
   return (
     <TermsWrapper>
@@ -153,7 +158,7 @@ const CookieNotice = () => {
               <p>
               Third-party cookies are set by domains other than Layer5’s to support analytics, advertising, or other functionalities. These cookies may collect data across multiple websites to tailor ads based on your interests. Below is a list of third-party providers we use, along with their purposes and opt-out options:
               </p>
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"} theme={customTheme}>
+              {didLoad && (<SistentThemeProvider key={isDark ? "dark" : "light"} initialMode={isDark ? "dark" : "light"} theme={customTheme}>
                 <Row className="table-container" $Hcenter>
                   <Col md={12} sx={{ px: 0 }}>
                     <StyledTableContainer>
@@ -190,7 +195,7 @@ const CookieNotice = () => {
                     </StyledTableContainer>
                   </Col>
                 </Row>
-              </SistentThemeProvider>
+              </SistentThemeProvider>)}
               <p>
               You can also opt out of certain third-party cookies via the <a href="https://optout.aboutads.info">Digital Advertising Alliance’s opt-out tool</a> or, for European visitors, <a href="https://www.youronlinechoices.eu">Your Online Choices</a>.
               </p>
@@ -214,13 +219,13 @@ const CookieNotice = () => {
               <p className="address">
                 <b>Layer5, Inc</b>
                 <br />
-              1000 Congress Avenue
+              701 Brazos Street, Suite 1600
                 <br />
-              Austin, Texas 78735
+              Austin, Texas 78701
                 <br />
               Email Address: <a href="mailto:privacy@layer5.io">privacy@layer5.io</a>
                 <br />
-              Telephone number: 512-810-8200
+              Telephone number: 512-548-9675
               </p>
               <p>
                 <small>

@@ -73,7 +73,7 @@ const ImageHubPage = () => {
             <VintageBox $right={true} $vintageOne={true}>
               <Button className="margin4" $primary title="Layer5 and HashiCorp" $url="/partners"></Button>
               &nbsp;
-              <Button $secondary title="Discuss WASM Filters" $url="https://discuss.layer5.io/c/webassembly-filters/11" $external={true}></Button>
+              <Button $secondary title="Discuss WASM Filters" $url="https://discuss.meshery.io/c/webassembly-filters/11" $external={true}></Button>
             </VintageBox>
 
             <p><br />

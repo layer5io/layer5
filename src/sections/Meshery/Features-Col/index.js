@@ -72,12 +72,12 @@ const Features = () => {
         return response.json();
       })
       .then((resultcount) => {
-        if (resultcount && typeof resultcount.total_runs === "number") {
-          setPerformanceCount(resultcount.total_runs);
+        if (resultcount && typeof resultcount.totalRuns === "number") {
+          setPerformanceCount(resultcount.totalRuns);
         }
       })
       .catch((error) => {
-        console.log("Failed to fetch performance count:", error.message);
+        console.error("Failed to fetch performance count:", error.message);
       // Keep default value of 0 if fetch fails
       });
   }, []);
