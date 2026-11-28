@@ -214,9 +214,6 @@ const DeployServiceMeshWrapper = styled.div`
         display: flex;
         margin: auto;
         background: #00B39F;
-        .book_col {
-            max-height: 40rem;
-        }
         .text{
             padding: 5rem 5rem 5rem 13rem;
             @media screen and (max-width: 1200px) {
