@@ -11,7 +11,7 @@
 const { describe, it } = require("node:test");
 const assert = require("node:assert/strict");
 const { spawnSync } = require("node:child_process");
-const { copyFileSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } = require("node:fs");
+const { copyFileSync, existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } = require("node:fs");
 const path = require("node:path");
 
 const { resolveGatsbyBin } = require("./run-gatsby");
@@ -30,7 +30,7 @@ describe("resolveGatsbyBin (win32)", () => {
       binDir,
       existsSync: stubExists(["gatsby.cmd", "gatsby.exe", "gatsby.bunx"]),
     });
-    assert.equal(bin, path.join(binDir, "gatsby.cmd"));
+    assert.equal(bin, path.resolve(binDir, "..", "gatsby", "cli.js"));
   });
 
   it("falls back to gatsby.exe when gatsby.cmd is missing", () => {
@@ -64,7 +64,7 @@ describe("resolveGatsbyBin (win32)", () => {
 describe("Windows Gatsby wrapper", { skip: process.platform !== "win32" }, () => {
   for (const shim of ["gatsby.cmd", "gatsby.exe", "gatsby.bunx"]) {
     it(`forwards arguments through ${shim} from a literal checkout path`, (t) => {
-      const root = mkdtempSync(path.join(__dirname, "gatsby fixture %GATSBY_FIXTURE_NAME% "));
+      const root = mkdtempSync(path.join(__dirname, "gatsby fixture R&D %GATSBY_FIXTURE_NAME% "));
       t.after(() => rmSync(root, { recursive: true, force: true }));
       const wrapper = path.join(root, "scripts", "run-gatsby.js");
       const bin = path.join(root, binDir);
@@ -75,14 +75,30 @@ describe("Windows Gatsby wrapper", { skip: process.platform !== "win32" }, () =>
 
       const args = ["develop", "--host", "local dev & test", "", 'a"b', "dir\\"];
       const cli = "console.log(JSON.stringify(process.argv.slice(2)));";
-      const fixture = path.join(root, "fixture cli.js");
-      writeFileSync(fixture, cli);
       let wrapperArgs = args;
       if (shim === "gatsby.exe") {
+        const fixture = path.join(root, "fixture cli.js");
+        writeFileSync(fixture, cli);
         copyFileSync(process.execPath, launcher);
         wrapperArgs = [fixture, ...args];
       } else if (shim === "gatsby.cmd") {
-        writeFileSync(launcher, '@"%GATSBY_FIXTURE_NODE%" "%GATSBY_FIXTURE_CLI%" %*\r\n');
+        const cliDir = path.resolve(bin, "..", "gatsby");
+        mkdirSync(cliDir);
+        writeFileSync(path.join(cliDir, "cli.js"), `#!/usr/bin/env node\n${cli}\n`);
+        writeFileSync(path.join(cliDir, "package.json"), JSON.stringify({
+          name: "gatsby",
+          version: "1.0.0",
+          bin: { gatsby: "cli.js" },
+        }));
+        writeFileSync(path.join(root, "package.json"), "{}");
+        const npm = spawnSync("npm rebuild --offline --ignore-scripts", {
+          cwd: root,
+          shell: true,
+          encoding: "utf8",
+          env: { ...process.env, npm_config_cache: path.join(root, "npm-cache") },
+        });
+        assert.equal(npm.status, 0, npm.stderr || npm.error?.message);
+        assert.ok(existsSync(launcher), "npm rebuild must generate gatsby.cmd");
       } else {
         writeFileSync(launcher, "");
         const cliDir = path.resolve(bin, "..", "gatsby-cli");
@@ -95,8 +111,6 @@ describe("Windows Gatsby wrapper", { skip: process.platform !== "win32" }, () =>
         env: {
           ...process.env,
           GATSBY_FIXTURE_NAME: "expanded",
-          GATSBY_FIXTURE_NODE: process.execPath,
-          GATSBY_FIXTURE_CLI: fixture,
         },
       });
       assert.equal(result.status, 0, result.stderr);

@@ -106,8 +106,8 @@ if (!/--max-old-space-size/.test(env.NODE_OPTIONS || "")) {
 /**
  * Resolve the Gatsby binary, preferring Windows shims in order.
  *
- * npm creates gatsby.cmd, while pnpm may create gatsby.exe. Bun's .bunx file
- * is metadata, so use Gatsby's Node CLI entrypoint when that is the only shim.
+ * npm's gatsby.cmd and Bun's gatsby.bunx select their Node CLI entrypoints,
+ * while pnpm's gatsby.exe can run directly.
  * Non-Windows behavior is unchanged (plain `gatsby`).
  */
 const resolveGatsbyBin = ({
@@ -116,10 +116,11 @@ const resolveGatsbyBin = ({
   binDir = path.join(__dirname, "..", "node_modules", ".bin"),
 } = {}) => {
   if (platform === "win32") {
-    for (const candidate of ["gatsby.cmd", "gatsby.exe"]) {
-      const full = path.join(binDir, candidate);
-      if (existsSync(full)) return full;
+    if (existsSync(path.join(binDir, "gatsby.cmd"))) {
+      return path.resolve(binDir, "..", "gatsby", "cli.js");
     }
+    const exe = path.join(binDir, "gatsby.exe");
+    if (existsSync(exe)) return exe;
     if (existsSync(path.join(binDir, "gatsby.bunx"))) {
       return path.resolve(binDir, "..", "gatsby-cli", "cli.js");
     }
@@ -144,25 +145,11 @@ if (require.main === module) {
   );
 
   const isNodeEntrypoint = gatsbyBin.endsWith(".js");
-  const isCmdShim = gatsbyBin.endsWith(".cmd");
-  let command = isNodeEntrypoint ? process.execPath : gatsbyBin;
-  let childArgs = isNodeEntrypoint ? [gatsbyBin, ...args] : args;
-  if (isCmdShim) {
-    const cmdArgs = args.map((arg) => {
-      const quoted = arg.replace(/(\\*)"/g, '$1$1\\"').replace(/\\+$/, "$&$&");
-      return `"${quoted}"`.replace(/([()%!^"<>&| \t])/g, "^^^$1");
-    });
-    command = process.env.ComSpec || "cmd.exe";
-    env.LAYER5_GATSBY_CMD = gatsbyBin;
-    childArgs = [
-      "/d", "/v:off", "/s", "/c",
-      `""%LAYER5_GATSBY_CMD%" ${cmdArgs.join(" ")}"`,
-    ];
-  }
+  const command = isNodeEntrypoint ? process.execPath : gatsbyBin;
+  const childArgs = isNodeEntrypoint ? [gatsbyBin, ...args] : args;
   const child = spawn(command, childArgs, {
     env,
     stdio: "inherit",
-    windowsVerbatimArguments: isCmdShim,
   });
 
   const forward = (signal) => () => child.kill(signal);
