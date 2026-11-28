@@ -116,7 +116,7 @@ const Header = () => {
                   $url="https://kanvas.new"
                 />
                 <span className="see-doc-link">
-                  <Link to={"/kanvas"}>See Documentation</Link>
+                  <Link to="/cloud-native-management/kanvas">See Documentation</Link>
                   <FaArrowRight />
                 </span>
               </div>

@@ -81,6 +81,17 @@ const KanvasWrapper = styled.div`
       .mobile-modes{
         margin-top: 3rem;
         display: block;
+        overflow: hidden;
+        .terminal-wrapper > div {
+          height: auto;
+          max-height: none;
+          overflow: hidden;
+        }
+
+        .modes-image {
+          width: 100%;
+          height: auto;
+        }
       }
     }
 

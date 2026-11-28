@@ -1,0 +1,260 @@
+---
+name: "Permissions"
+title: Permissions
+published: true
+component: permissions
+description: The Permissions component suite provides declarative authorization control, contextual permission shields, actionable feedback, and multi-tenant access management in Sistent.
+---
+
+import { useState } from "react";
+import {
+  Box,
+  Button,
+  Chip,
+  Grid,
+  IconButton,
+  MenuItem,
+  ListItem,
+  ListItemButton,
+  PermissionProvider,
+  PermissionSessionContext,
+  PermissionShield,
+  Typography
+} from "@sistent/sistent";
+
+export const samplePermissionKey = {
+  id: "49a5b3a4-846c-4861-bf96-981cf26d70bc",
+  function: "Create Workspace",
+  description: "Create and configure collaborative workspaces within an organization.",
+  category: "Workspace Management",
+  subcategory: "Configuration"
+};
+
+export const sampleMultiKeys = {
+  anyOf: [
+    {
+      id: "73f9821a-6df2-4211-9a74-21950e39c4d2",
+      function: "View All Organizations",
+      description: "Read organization profiles and configurations across all tenant spaces.",
+      category: "Identity & Access",
+      subcategory: "Organizations"
+    },
+    {
+      id: "84e2714c-1983-4a6c-9c71-081cb409ef12",
+      function: "View Org",
+      description: "Read details and membership of the current organization.",
+      category: "Identity & Access",
+      subcategory: "Organizations"
+    }
+  ]
+};
+
+export const mockUserContext = {
+  userName: "Ada Lovelace",
+  orgName: "Layer5 Cloud",
+  roleNames: ["Team Member"]
+};
+
+export const InlineShieldDemo = () => {
+  return (
+    <PermissionProvider
+      userHasPermission={() => false}
+      userContext={mockUserContext}
+    >
+      <Box sx={{ display: "flex", justifyContent: "center", width: "100%", maxWidth: 360, p: 2 }}>
+        <PermissionShield permissionKey={samplePermissionKey} variant="inline">
+          <Button variant="contained" color="primary" fullWidth>
+            Create Workspace
+          </Button>
+        </PermissionShield>
+      </Box>
+    </PermissionProvider>
+  );
+};
+
+export const BadgeShieldDemo = () => {
+  return (
+    <PermissionProvider
+      userHasPermission={() => false}
+      userContext={mockUserContext}
+    >
+      <Box sx={{ display: "flex", justifyContent: "center", gap: 3, width: "100%", p: 2 }}>
+        <PermissionShield permissionKey={samplePermissionKey} variant="badge">
+          <Button variant="outlined" color="primary">
+            Export Design
+          </Button>
+        </PermissionShield>
+        <PermissionShield permissionKey={sampleMultiKeys} variant="badge">
+          <Button variant="contained" color="secondary">
+            Manage Roles
+          </Button>
+        </PermissionShield>
+      </Box>
+    </PermissionProvider>
+  );
+};
+
+export const NativeComponentPropDemo = () => {
+  return (
+    <PermissionProvider
+      userHasPermission={() => false}
+      userContext={mockUserContext}
+    >
+      <Box sx={{ display: "flex", justifyContent: "center", gap: 2, width: "100%", p: 2, flexWrap: "wrap" }}>
+        <Button
+          variant="contained"
+          color="primary"
+          permissionKey={samplePermissionKey}
+          permissionAction="showShield"
+        >
+          Native Button Gating
+        </Button>
+        <Button
+          variant="outlined"
+          color="secondary"
+          permissionKey={samplePermissionKey}
+          permissionAction="hide"
+        >
+          Hidden Button (renders null)
+        </Button>
+      </Box>
+    </PermissionProvider>
+  );
+};
+
+export const SessionContextCardDemo = () => {
+  return (
+    <PermissionProvider
+      userHasPermission={() => false}
+      userContext={mockUserContext}
+    >
+      <Box sx={{ width: "100%", maxWidth: 520, p: 2 }}>
+        <PermissionSessionContext
+          variant="card"
+          permissionKey={samplePermissionKey}
+        />
+      </Box>
+    </PermissionProvider>
+  );
+};
+
+export const GrantedAffordanceDemo = () => {
+  return (
+    <PermissionProvider
+      userHasPermission={() => true}
+      userContext={mockUserContext}
+    >
+      <Box sx={{ display: "flex", justifyContent: "center", width: "100%", maxWidth: 360, p: 2 }}>
+        <PermissionShield permissionKey={samplePermissionKey} variant="inline">
+          <Button variant="contained" color="primary" fullWidth>
+            Authorized Action
+          </Button>
+        </PermissionShield>
+      </Box>
+    </PermissionProvider>
+  );
+};
+
+The **Permissions** component suite provides a unified, declarative authorization architecture for cloud-native user interfaces. Rather than scattering manual permission checks throughout codebases, Sistent delivers a cohesive system of providers, visual shield wrappers, native component props, contextual 403 cards, and multi-tenant organization hooks.
+
+<a id="Architecture">
+  <h2>Architecture & Building Blocks</h2>
+</a>
+
+The Sistent Permission System is built on core pillars:
+
+1. **`PermissionProvider`**: The root context provider supplying authorization evaluators (`userHasPermission`) and active user context (`userContext`) to the entire component tree.
+2. **`PermissionShield`**: The declarative UI wrapper that overlays actionable tooltips onto unauthorized affordances without losing discoverability.
+3. **Native Component Props (`permissionKey` & `permissionAction`)**: Direct gating support built into Sistent base components (`Button`, `IconButton`, `MenuItem`, `ListItem`, `ListItemButton`).
+4. **`PermissionSessionContext`**: The standalone authorization context component displayed inside tooltips and on dedicated 403 error pages.
+5. **`useAccessibleOrgs`**: The multi-tenant organization switching hook for 403 error views.
+
+<a id="Variants">
+  <h2>Shield Variants</h2>
+</a>
+
+`PermissionShield` offers two distinct presentation variants depending on the layout and density of the guarded element:
+
+<h3>Inline Variant (Default)</h3>
+
+The **Inline** variant centers a security shield trigger on the right side of the guarded element. It is ideal for full-width buttons, form inputs, list items, and standard rectangular controls.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+      <InlineShieldDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<h3>Badge Variant</h3>
+
+The **Badge** variant renders a compact shield badge anchored to the corner of the guarded affordance. It is designed for icon buttons, compact toolbars, chips, and standalone action pills.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+      <BadgeShieldDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Native-Gating">
+  <h2>Native Component Gating</h2>
+</a>
+
+In addition to wrapping elements with `<PermissionShield>`, Sistent base components natively accept `permissionKey` and `permissionAction` props:
+
+* **`Button`**
+* **`IconButton`**
+* **`MenuItem`**
+* **`ListItem`** & **`ListItemButton`**
+
+When `permissionAction="showShield"` (the default), the component automatically wraps itself in `PermissionShield`. When `permissionAction="hide"`, the component automatically renders `null` if the user lacks the required permission.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+      <NativeComponentPropDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Permission-Context-Card">
+  <h2>Permission Session Context Card (403 Pages)</h2>
+</a>
+
+When users navigate directly to a restricted URL or access-denied route, `PermissionSessionContext` renders as a full-page **card** variant. It provides complete transparency into the missing keys, categorized tags, and assigned roles.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+      <SessionContextCardDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Authorized-State">
+  <h2>Authorized State (Pass-Through)</h2>
+</a>
+
+When the active user possesses the required permission key, `PermissionShield` seamlessly passes through the child component without dimming, overlaying icons, or intercepting pointer events.
+
+<Row className="image-container">
+  <ThemeWrapper>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+      <GrantedAffordanceDemo />
+    </div>
+  </ThemeWrapper>
+</Row>
+
+<a id="Key-Features">
+  <h2>Key Features</h2>
+</a>
+
+* **Declarative Key Specs:** Accepts single permission keys or composite logical sets (`anyOf` / `allOf`).
+* **Native Component Integration:** Pass `permissionKey` and `permissionAction` directly to `Button`, `IconButton`, `MenuItem`, `ListItem`, and `ListItemButton`.
+* **Interactive Key Copying:** Users and administrators can copy the exact permission UUID to clipboard with one click.
+* **Assigned Role Clarity:** Context cards show the user's actual assigned roles in the active organization, preventing confusion with the global role catalog.
+* **Conflict-Free Tooltips:** Global event coordination guarantees only one shield tooltip is open across the entire interface at any time.
+* **Multi-Tenant Org Switching:** Pairs with the `useAccessibleOrgs` hook to guide users to switch to an authorized organization.

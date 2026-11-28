@@ -109,7 +109,7 @@ const FaqSectionWrapper = styled.section`
     
     h3 {
       margin-bottom: 1rem;
-      color: ${props => props.theme.textColor};
+      color: ${props => props.theme.text};
     }
     
     p {
@@ -134,7 +134,7 @@ const FaqSectionWrapper = styled.section`
         color: ${props => props.theme.white};
       }
       > div {
-        &:focus {
+        &:focus:not(:focus-visible) {
           outline: none;
         }
       }

@@ -131,15 +131,20 @@ const privacyData = [
   },
 ];
 
+// Create custom theme with Qanelas Soft font family
+const customTheme = createTheme({
+  typography: {
+    fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
+  },
+});
+
 const Privacy = () => {
   const { isDark } = useStyledDarkMode();
+  const [didLoad, setDidLoad] = React.useState(false);
 
-  // Create custom theme with Qanelas Soft font family
-  const customTheme = createTheme({
-    typography: {
-      fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
-    },
-  });
+  React.useEffect(() => {
+    setDidLoad(true);
+  }, []);
 
   return (
     <TermsWrapper>
@@ -187,7 +192,7 @@ const Privacy = () => {
               <p>
               We process your personal data for a variety of purposes depending on how you interact with us. The table below details what we collect, why we collect it, and the legal justification (lawful basis) under the GDPR for doing so.
               </p>
-              <SistentThemeProvider initialMode={isDark ? "dark" : "light"} theme={customTheme}>
+              {didLoad && (<SistentThemeProvider key={isDark ? "dark" : "light"} initialMode={isDark ? "dark" : "light"} theme={customTheme}>
                 <Row className="table-container" $Hcenter>
                   <Col md={12} sx={{ px: 0 }}>
                     <StyledTableContainer>
@@ -230,7 +235,7 @@ const Privacy = () => {
                     </StyledTableContainer>
                   </Col>
                 </Row>
-              </SistentThemeProvider>
+              </SistentThemeProvider>)}
               <h3>Cookies and Tracking Technologies</h3>
               <p>
               We use cookies and similar technologies on our website to help it function, to analyze performance, and to personalize your experience. A cookie is a small text file stored on your device.
@@ -370,13 +375,13 @@ const Privacy = () => {
               <p className="address">
                 <b>Layer5, Inc</b>
                 <br />
-              1000 Congress Avenue
+              701 Brazos Street, Suite 1600
                 <br />
-              Austin, Texas 78735
+              Austin, Texas 78701
                 <br />
               Email Address: legal@layer5.io
                 <br />
-              Telephone number: 512-810-8200
+              Telephone number: 512-548-9675
               </p>
               <p>
                 <small>

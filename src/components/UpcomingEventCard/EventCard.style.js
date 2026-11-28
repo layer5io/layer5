@@ -26,6 +26,15 @@ const UpcomingEventsWrapper = styled.div`
     align-items: center;
     justify-content: center;
     overflow: hidden;
+
+    a {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .gatsby-image-wrapper {
       width: 100%;
       height: 100%;

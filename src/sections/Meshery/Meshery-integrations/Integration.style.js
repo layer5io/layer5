@@ -34,11 +34,11 @@ export const HoneycombGrid = styled.div`
   }
 
   .items {
-    background-color: #d2d8da; //#E7EFF3;
+    background-color: ${(props) => props.theme.secondaryLightColor};
     padding: 0.625rem 1.5625rem;
     border-radius: 0.625rem;
     text-transform: uppercase;
-    color: #1e2117;
+    color: ${(props) => props.theme.text};
     font-size: 0.875rem;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
@@ -51,7 +51,7 @@ export const HoneycombGrid = styled.div`
 
   .selected {
     background-color: ${(props) => props.theme.darkJungleGreenColor};
-    color: ${(props) => props.theme.whiteToBlack};
+    color: ${(props) => props.theme.white};
   }
 
   ul {
@@ -60,13 +60,21 @@ export const HoneycombGrid = styled.div`
     padding-right: 50px;
   }
 
+  /* Give the hexagons more room on small screens so the honeycomb pattern
+     (staggered rows) keeps its shape. */
+  @media (max-width: 540px) {
+    ul {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+
   .container-active,
   .container-inactive {
     -webkit-transform: translateZ(0);
     display: flex;
     height: 100%;
-    background: ${(props) =>
-      props.isDark ? props.theme.radialToBlue : props.theme.grey212121ToWhite};
+    background: ${(props) => (props.isDark ? props.theme.radialToBlue : props.theme.grey212121ToWhite)};
     justify-content: center;
     align-items: center;
     padding: 0.625rem;

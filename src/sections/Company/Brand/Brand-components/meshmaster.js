@@ -1,5 +1,6 @@
 import React from "react";
-import { SRLWrapper } from "simple-react-lightbox";
+import { withPrefix } from "gatsby";
+import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
@@ -21,7 +22,7 @@ const MeshMasterBrand = () => {
           </h1>
         </Col>
         <Col $xs={12} $sm={6} className="download-button">
-          <a href="/brand/meshmasters-brand-kit.zip">
+          <a href={withPrefix("/brand/meshmasters-brand-kit.zip")}>
             <Button $primary title="Download Logo Assets" $external={true}>
               <FiDownloadCloud size={21} className="icon-left" />
             </Button>
@@ -47,22 +48,24 @@ const MeshMasterBrand = () => {
             Logos
           </h2>
         </Col>
-        <SRLWrapper>
-          <Row $Vcenter className="ImgDiv">
-            <Col $xs={12} $sm={4}>
-              <img src={MeshMasterFull} alt="Meshmaster Full Logo" />
-              <h5>mark and text</h5>
-            </Col>
-            <Col $xs={12} $sm={4}>
-              <img src={MeshMasterText} alt="Meshmaster Text" />
-              <h5>text only</h5>
-            </Col>
-            <Col $xs={12} $sm={4}>
-              <img src={MeshMasterIcon} style={{ minWidth: "100px" }} alt="Meshmaster Icon" />
-              <h5>mark only</h5>
-            </Col>
-          </Row>
-        </SRLWrapper>
+        <SimpleReactLightbox>
+          <SRLWrapper>
+            <Row $Vcenter className="ImgDiv">
+              <Col $xs={12} $sm={4}>
+                <img src={MeshMasterFull} alt="Meshmaster Full Logo" />
+                <h5>mark and text</h5>
+              </Col>
+              <Col $xs={12} $sm={4}>
+                <img src={MeshMasterText} alt="Meshmaster Text" />
+                <h5>text only</h5>
+              </Col>
+              <Col $xs={12} $sm={4}>
+                <img src={MeshMasterIcon} style={{ minWidth: "100px" }} alt="Meshmaster Icon" />
+                <h5>mark only</h5>
+              </Col>
+            </Row>
+          </SRLWrapper>
+        </SimpleReactLightbox>
       </Row>
       <Row style={{
         flexWrap: "wrap"

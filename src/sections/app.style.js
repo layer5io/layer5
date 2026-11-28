@@ -20,8 +20,13 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  *:focus {
+  *:focus:not(:focus-visible) {
     outline: none;
+  }
+
+  *:focus-visible {
+    outline: 3px solid ${(props) => props.theme.secondaryColor};
+    outline-offset: 3px;
   }
   ::-webkit-scrollbar {
     width: 0.5rem; 
@@ -207,13 +212,26 @@ section{
     border: 1px solid rgb(204, 204, 204);
     background: ${(props) => props.theme.body};
     border-radius: 0.5rem;
-    outline: none;
     padding: 20px;
     margin-right: -50%;
     transform: translate(-50%, -50%);
     max-width: 50rem;
     max-height: 40rem;
     overflow-y: hidden;
+
+    @media screen and (max-height: 800px), screen and (max-width: 768px) {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    @media screen and (max-width: 500px) {
+        max-width: 95vw;
+        padding: 1rem 0.5rem;
+    }
+
+    &:focus:not(:focus-visible) {
+        outline: none;
+    }
 
     .close-modal-btn {
         min-width: 2rem;
@@ -255,7 +273,7 @@ section{
     height: 36rem;
     width: 35rem;
     border: none;
-    overflow: hidden;
+    overflow: auto;
 }
 
 /* Modal CSS Ends */
@@ -283,16 +301,23 @@ section{
 .fa-sun {
   color: yellow;
 }
+@media screen and (max-height: 800px) {
+    .form-frame {
+        height: min(30rem, 75vh);
+    }
+}
 @media screen and (max-width: 765px) {
     .form-frame {
         width: 25rem;
-        height: 30rem;
+        max-width: 90vw;
+        height: min(30rem, 75vh);
     }
 }
 @media screen and (max-width: 500px) {
     .form-frame {
-        width: 22rem;
-        height: 26rem;
+        width: 100%;
+        max-width: calc(95vw - 1rem);
+        height: min(26rem, 70vh);
     }
 }
 

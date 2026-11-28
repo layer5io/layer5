@@ -3,14 +3,10 @@ import React from "react";
 import SEO from "../../components/seo";
 import Brand from "../../sections/Company/Brand";
 
-import SimpleReactLightbox from "simple-react-lightbox";
 const BrandPage = () => {
   return (
     <>
-      <SimpleReactLightbox>
-        <Brand />
-      </SimpleReactLightbox>
-
+      <Brand />
     </>
   );
 };

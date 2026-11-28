@@ -11,11 +11,11 @@ permissions:
   actions: read
 
 concurrency:
-  group: preview-post-build-${{ github.event.workflow_run.head_branch }}
+  group: preview-post-build-${{ github.event.workflow_run.head_repository.full_name }}-${{ github.event.workflow_run.head_branch }}
   cancel-in-progress: false
 
 env:
-  PREVIEW_RETENTION_LIMIT: 6
+  PREVIEW_RETENTION_LIMIT: 3
 
 jobs:
   manage-preview:
@@ -118,7 +118,7 @@ jobs:
     # emitted a usable close event.
     needs: manage-preview
     runs-on: ubuntu-24.04
-    if: needs.manage-preview.outputs.action != 'closed'
+    if: ${{ !cancelled() && needs.manage-preview.outputs.action != 'closed' }}
     outputs:
       removed_prs: ${{ steps.prune-previews.outputs.removed_prs }}
       removed_prs_json: ${{ steps.prune-previews.outputs.removed_prs_json }}
