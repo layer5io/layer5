@@ -190,6 +190,4 @@ export const ProgramsWrapper = styled.div`
         text-decoration: underline;
       }
     }
-  }
-  }
 `;

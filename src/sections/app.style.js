@@ -219,6 +219,16 @@ section{
     max-height: 40rem;
     overflow-y: hidden;
 
+    @media screen and (max-height: 800px), screen and (max-width: 768px) {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    @media screen and (max-width: 500px) {
+        max-width: 95vw;
+        padding: 1rem 0.5rem;
+    }
+
     &:focus:not(:focus-visible) {
         outline: none;
     }
@@ -291,16 +301,23 @@ section{
 .fa-sun {
   color: yellow;
 }
+@media screen and (max-height: 800px) {
+    .form-frame {
+        height: min(30rem, 75vh);
+    }
+}
 @media screen and (max-width: 765px) {
     .form-frame {
         width: 25rem;
-        height: 30rem;
+        max-width: 90vw;
+        height: min(30rem, 75vh);
     }
 }
 @media screen and (max-width: 500px) {
     .form-frame {
-        width: 22rem;
-        height: 26rem;
+        width: 100%;
+        max-width: calc(95vw - 1rem);
+        height: min(26rem, 70vh);
     }
 }
 

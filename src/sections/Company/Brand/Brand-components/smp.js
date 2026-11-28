@@ -1,7 +1,7 @@
 import React from "react";
 import { withPrefix } from "gatsby";
 import styled from "styled-components";
-import { SRLWrapper } from "simple-react-lightbox";
+import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
@@ -59,38 +59,40 @@ const SMPBrand = () => {
               Logos
             </h2>
           </Col>
-          <SRLWrapper>
-            <Row $Vcenter className="ImgDiv smp-logo">
-              <Col $xs={12} $sm={4}>
-                <img src={SmpDark} alt="SmpDark Logo" />
-              </Col>
-              <Col $xs={12} $sm={4}>
-                <div className="logo">
-                  <img src={SmpWhite} alt="SmpWhite Logo" />
-                </div>
-              </Col>
-              <Col $xs={12} $sm={4}>
-                <div className="logo">
-                  <img src={SmpLight} alt="SmpLight Logo" />
-                </div>
-              </Col>
-            </Row>
-            <Row $Vcenter className="ImgDiv smp-logo">
-              <Col $xs={12} $sm={4}>
-                <img src={SmPDarkTextSide} alt="SmpDarkTextSide Logo" />
-              </Col>
-              <Col $xs={12} $sm={4}>
-                <div className="logo">
-                  <img src={SmPWhiteTextSide} alt="SmPWhiteTextSide Logo" />
-                </div>
-              </Col>
-              <Col $xs={12} $sm={4}>
-                <div className="logo">
-                  <img src={SmPLightTextSide} alt="SmPLightTextSide Logo" />
-                </div>
-              </Col>
-            </Row>
-          </SRLWrapper>
+          <SimpleReactLightbox>
+            <SRLWrapper>
+              <Row $Vcenter className="ImgDiv smp-logo">
+                <Col $xs={12} $sm={4}>
+                  <img src={SmpDark} alt="SmpDark Logo" />
+                </Col>
+                <Col $xs={12} $sm={4}>
+                  <div className="logo">
+                    <img src={SmpWhite} alt="SmpWhite Logo" />
+                  </div>
+                </Col>
+                <Col $xs={12} $sm={4}>
+                  <div className="logo">
+                    <img src={SmpLight} alt="SmpLight Logo" />
+                  </div>
+                </Col>
+              </Row>
+              <Row $Vcenter className="ImgDiv smp-logo">
+                <Col $xs={12} $sm={4}>
+                  <img src={SmPDarkTextSide} alt="SmpDarkTextSide Logo" />
+                </Col>
+                <Col $xs={12} $sm={4}>
+                  <div className="logo">
+                    <img src={SmPWhiteTextSide} alt="SmPWhiteTextSide Logo" />
+                  </div>
+                </Col>
+                <Col $xs={12} $sm={4}>
+                  <div className="logo">
+                    <img src={SmPLightTextSide} alt="SmPLightTextSide Logo" />
+                  </div>
+                </Col>
+              </Row>
+            </SRLWrapper>
+          </SimpleReactLightbox>
         </Row>
         <Row style={{
           flexWrap: "wrap"
