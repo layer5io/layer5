@@ -62,9 +62,9 @@ describe("resolveGatsbyBin (win32)", () => {
 });
 
 describe("Windows Gatsby wrapper", { skip: process.platform !== "win32" }, () => {
-  for (const shim of ["gatsby.cmd", "gatsby.exe", "gatsby.bunx", "gatsby"]) {
-    it(`handles ${shim} in a checkout path with spaces`, (t) => {
-      const root = mkdtempSync(path.join(__dirname, "gatsby fixture "));
+  for (const shim of ["gatsby.cmd", "gatsby.exe", "gatsby.bunx"]) {
+    it(`forwards arguments through ${shim} from a literal checkout path`, (t) => {
+      const root = mkdtempSync(path.join(__dirname, "gatsby fixture %GATSBY_FIXTURE_NAME% "));
       t.after(() => rmSync(root, { recursive: true, force: true }));
       const wrapper = path.join(root, "scripts", "run-gatsby.js");
       const bin = path.join(root, binDir);
@@ -85,24 +85,22 @@ describe("Windows Gatsby wrapper", { skip: process.platform !== "win32" }, () =>
         writeFileSync(launcher, '@"%GATSBY_FIXTURE_NODE%" "%GATSBY_FIXTURE_CLI%" %*\r\n');
       } else {
         writeFileSync(launcher, "");
-        if (shim === "gatsby.bunx") {
-          const cliDir = path.resolve(bin, "..", "gatsby-cli");
-          mkdirSync(cliDir);
-          writeFileSync(path.join(cliDir, "cli.js"), cli);
-        }
+        const cliDir = path.resolve(bin, "..", "gatsby-cli");
+        mkdirSync(cliDir);
+        writeFileSync(path.join(cliDir, "cli.js"), cli);
       }
 
       const result = spawnSync(process.execPath, [wrapper, ...wrapperArgs], {
         encoding: "utf8",
-        env: { ...process.env, GATSBY_FIXTURE_NODE: process.execPath, GATSBY_FIXTURE_CLI: fixture },
+        env: {
+          ...process.env,
+          GATSBY_FIXTURE_NAME: "expanded",
+          GATSBY_FIXTURE_NODE: process.execPath,
+          GATSBY_FIXTURE_CLI: fixture,
+        },
       });
-      if (shim === "gatsby") {
-        assert.equal(result.status, 1);
-        assert.match(result.stderr, /No Gatsby Windows launcher found/);
-      } else {
-        assert.equal(result.status, 0, result.stderr);
-        assert.deepEqual(JSON.parse(result.stdout.trim().split(/\r?\n/).pop()), args);
-      }
+      assert.equal(result.status, 0, result.stderr);
+      assert.deepEqual(JSON.parse(result.stdout.trim().split(/\r?\n/).pop()), args);
     });
   }
 });

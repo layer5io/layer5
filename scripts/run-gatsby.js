@@ -153,7 +153,11 @@ if (require.main === module) {
       return `"${quoted}"`.replace(/([()%!^"<>&| \t])/g, "^^^$1");
     });
     command = process.env.ComSpec || "cmd.exe";
-    childArgs = ["/d", "/v:off", "/s", "/c", `""${gatsbyBin}" ${cmdArgs.join(" ")}"`];
+    env.LAYER5_GATSBY_CMD = gatsbyBin;
+    childArgs = [
+      "/d", "/v:off", "/s", "/c",
+      `""%LAYER5_GATSBY_CMD%" ${cmdArgs.join(" ")}"`,
+    ];
   }
   const child = spawn(command, childArgs, {
     env,
