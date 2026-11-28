@@ -24,7 +24,7 @@ const MeshSectionWrapper = styled.section`
         }
    }
    .side{
-       vertical-align: center;
+       vertical-align: middle;
       
    }
    .mesh-image{
