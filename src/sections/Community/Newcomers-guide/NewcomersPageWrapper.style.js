@@ -269,6 +269,5 @@ export const NewcomersGuideWrapper = styled.section`
         margin-bottom: 1.5rem;
       }
   }  
-  }
 `;
 
