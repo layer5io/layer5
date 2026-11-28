@@ -104,11 +104,7 @@ if (!/--max-old-space-size/.test(env.NODE_OPTIONS || "")) {
 }
 
 /**
- * Resolve the Gatsby binary, preferring Windows shims in order.
- *
- * npm's gatsby.cmd and Bun's gatsby.bunx select their Node CLI entrypoints,
- * while pnpm's gatsby.exe can run directly.
- * Non-Windows behavior is unchanged (plain `gatsby`).
+ * Resolve the executable or Node entrypoint for the installed Gatsby launcher.
  */
 const resolveGatsbyBin = ({
   platform = process.platform,
@@ -117,11 +113,13 @@ const resolveGatsbyBin = ({
 } = {}) => {
   if (platform === "win32") {
     if (existsSync(path.join(binDir, "gatsby.cmd"))) {
+      // npm's batch shim can misinterpret shell metacharacters in checkout paths.
       return path.resolve(binDir, "..", "gatsby", "cli.js");
     }
     const exe = path.join(binDir, "gatsby.exe");
     if (existsSync(exe)) return exe;
     if (existsSync(path.join(binDir, "gatsby.bunx"))) {
+      // Bun's .bunx file is metadata for its launcher, so run the CLI with Node.
       return path.resolve(binDir, "..", "gatsby-cli", "cli.js");
     }
     return null;
